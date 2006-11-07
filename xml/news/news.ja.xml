@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.28 2006/08/22 06:52:04 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.29 2006/11/07 22:30:20 dmrrsn Exp $</cvsid>
 
 <newsitem>
 	<date>2006-08-19</date>
@@ -58,7 +58,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 			</p>
 			<p><em>"fink --version" が "0.8.1.cvs" または "0.8.1.rsync" と表示する場合、特にすることはありません。</em></p>
 			<p>
-				<varlink url="news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</varlink>、
+				<varlink url="news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</varlink>、
 				"10.4" ツリーへの以降方法は2種類あります。
 			</p>
 			<p>

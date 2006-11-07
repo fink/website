@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2006-08-21T19:15:46+02:00</dc:date>
+    <dc:date>2006-11-07T14:31:33-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#19%2F08%2F2006%20Serveur%20inacessible%20-%20Solutions">
       <title>Serveur inacessible - Solutions</title>
@@ -33,7 +33,7 @@
       <description>
 <p>L'arborescence "10.4-transitional" fut créée pour résoudre de façon provisoire les incompatibilités entre binaires construits à partir de GCC 3.3 (le compilateur par défaut du système Mac OS X 10.3) et GCC 4.0 (le compilateur par défaut du système Mac OS X 10.4). À présent que Fink utilise GCC 4.0, l'arborescence "10.4-transitional" sera gelée à partir du 1er août 2006. Seule l'arborescence "10.4" sera gérée à partir de cette date.</p>
 <p>Si la commande "fink --version" a pour résultat "0.8.1.cvs" ou "0.8.1.rsync", vous n'avez rien à faire.</p>
-<p>Comme nous l'avons déjà écrit <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">précédemment</a>, il y a deux façcons de passer à l'arborescence "10.4".</p>
+<p>Comme nous l'avons déjà écrit <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">précédemment</a>, il y a deux façcons de passer à l'arborescence "10.4".</p>
 <p>Le moyen le plus simple est de supprimer l'installation de Fink et d'en récréer une nouvelle en utilisant l'installeur 0.8.1 disponible sur la <a href="http://fink.sourceforge.net/download">page de téléchargement</a>.</p>
 <p>Un autre moyen consiste à télécharger le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">script de mise à jour</a> et de lire les instructions dans le fichier README pour mettre à jour l'installation existante sans la supprimer. Cette méthode reconstruit l'installation Fink à partir du source et met à jour toute l'installation. Notez que le processus peut prendre un certain temps selon l'installation.</p>
 <p>Nous avons reçu des rapports très encourageants sur l'utilisation du script ; de nombreux utilisateurs sont déjà passés à la nouvelle arborescence. Si vous rencontrez des problèmes, veuillez en faire part sur les <a href="http://fink.sourceforge.net/lists">listes de discussions</a>.
@@ -42,7 +42,7 @@
       <content:encoded>
 <p>L'arborescence "10.4-transitional" fut créée pour résoudre de façon provisoire les incompatibilités entre binaires construits à partir de GCC 3.3 (le compilateur par défaut du système Mac OS X 10.3) et GCC 4.0 (le compilateur par défaut du système Mac OS X 10.4). À présent que Fink utilise GCC 4.0, l'arborescence "10.4-transitional" sera gelée à partir du 1er août 2006. Seule l'arborescence "10.4" sera gérée à partir de cette date.</p>
 <p>Si la commande "fink --version" a pour résultat "0.8.1.cvs" ou "0.8.1.rsync", vous n'avez rien à faire.</p>
-<p>Comme nous l'avons déjà écrit <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">précédemment</a>, il y a deux façcons de passer à l'arborescence "10.4".</p>
+<p>Comme nous l'avons déjà écrit <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">précédemment</a>, il y a deux façcons de passer à l'arborescence "10.4".</p>
 <p>Le moyen le plus simple est de supprimer l'installation de Fink et d'en récréer une nouvelle en utilisant l'installeur 0.8.1 disponible sur la <a href="http://fink.sourceforge.net/download">page de téléchargement</a>.</p>
 <p>Un autre moyen consiste à télécharger le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">script de mise à jour</a> et de lire les instructions dans le fichier README pour mettre à jour l'installation existante sans la supprimer. Cette méthode reconstruit l'installation Fink à partir du source et met à jour toute l'installation. Notez que le processus peut prendre un certain temps selon l'installation.</p>
 <p>Nous avons reçu des rapports très encourageants sur l'utilisation du script ; de nombreux utilisateurs sont déjà passés à la nouvelle arborescence. Si vous rencontrez des problèmes, veuillez en faire part sur les <a href="http://fink.sourceforge.net/lists">listes de discussions</a>.

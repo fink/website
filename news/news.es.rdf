@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2006-08-21T19:15:46+02:00</dc:date>
+    <dc:date>2006-11-07T14:31:33-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available">
       <title>Server down; workarounds available</title>
@@ -97,7 +97,7 @@ package database</a> which is a few weeks out of date.
 			</p>
 			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
 			<p>
-				As we mentioned <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
 				there are 2 ways to make the switch to the supported "10.4" tree.
 			</p>
 			<p>
@@ -128,7 +128,7 @@ package database</a> which is a few weeks out of date.
 			</p>
 			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
 			<p>
-				As we mentioned <a href="http://fink.sourceforge.net/news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
 				there are 2 ways to make the switch to the supported "10.4" tree.
 			</p>
 			<p>

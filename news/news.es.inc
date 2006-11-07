@@ -43,7 +43,7 @@ package database</a> which is a few weeks out of date.
 			</p>
 			<p><b>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</b></p>
 			<p>
-				As we mentioned <a href="<?php print $root; ?>news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				As we mentioned <a href="<?php print $root; ?>news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
 				there are 2 ways to make the switch to the supported "10.4" tree.
 			</p>
 			<p>

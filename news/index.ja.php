@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/08/22 06:52:04';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/11/07 22:30:20';
 $metatags = '';
 
 include_once "header.inc";
@@ -53,7 +53,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 			</p>
 			<p><b>"fink --version" が "0.8.1.cvs" または "0.8.1.rsync" と表示する場合、特にすることはありません。</b></p>
 			<p>
-				<a href="<?php print $root; ?>news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</a>、
+				<a href="<?php print $root; ?>news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</a>、
 				"10.4" ツリーへの以降方法は2種類あります。
 			</p>
 			<p>
