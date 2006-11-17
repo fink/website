@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.77 2006/09/26 18:31:50 bmaret Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.78 2006/11/17 17:56:11 dmrrsn Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1603,6 +1603,19 @@ fink install libiconv</codeblock>
 2) Reinstall BSD.pkg (from your main OS install)</p>
       </answer>
     </faqentry>
+    <faqentry name="gettext-tools">
+      <question>
+        <p>Fink refuses to update the <code>gettext</code> package,
+complaining that the dependencies are in an inconsistent state.</p>
+      </question>
+      <answer>
+        <p>After running <code>fink selfupdate</code> to be sure you
+have the latest versions, try <code>fink update gettext-tools</code>.
+An old version of the <code>gettext-tools</code> package may be 
+preventing you from updating <code>gettext</code>.</p>
+      </answer>
+    </faqentry>
+
     <faqentry name="all-others">
       <question>
         <p>I'm having issues with a package that isn't listed here.</p>

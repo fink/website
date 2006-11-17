@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
-$cvs_author = 'Author: bmaret';
-$cvs_date = 'Date: 2006/09/26 18:31:50';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/11/17 17:56:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -89,8 +89,17 @@ fink install libiconv</pre></div>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
     </a>
+    <a name="gettext-tools">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink refuses to update the <code>gettext</code> package,
+complaining that the dependencies are in an inconsistent state.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> After running <code>fink selfupdate</code> to be sure you
+have the latest versions, try <code>fink update gettext-tools</code>.
+An old version of the <code>gettext-tools</code> package may be 
+preventing you from updating <code>gettext</code>.</p></div>
+    </a>
+
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I'm having issues with a package that isn't listed here.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
       up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
