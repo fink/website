@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: msachs';
-$cvs_date = 'Date: 2006/09/18 14:34:38';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/11/18 18:18:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -876,13 +876,17 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
 Additional parameters to pass to the configure script. (See
-CompileScript for details.)  If a build is being done
+CompileScript for details.)  
+For packages not of <code>Type: Perl</code>, the parameter
+<code>--prefix=%p</code> is prepended to this value.
+As of fink &gt; 0.13.7, this field will also work with perl modules
+<code>Type: Perl</code>; the default perl Makefile.PL
+string is prepended to the value supplied for <code>ConfigureParams</code>.
+</p><p>
+If a build is being done
 with test suites enabled, the value of the <code>TestConfigureParams</code>
-field will be appended to this.
+field will be appended to the normal <code>ConfigureParams</code> value.
 
-As of fink &gt; 0.13.7, this parameter will also work with perl modules
-<code>Type: Perl</code>, and will append to the default perl Makefile.PL
-string.
 </p>
 <p>
   Starting in fink-0.22.0, this field supports conditionals. The

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: msachs';
-$cvs_date = 'Date: 2006/09/18 14:34:38';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2006/11/18 18:18:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -213,7 +213,10 @@ in commands.
 </td></tr><tr valign="top"><td>%c</td><td>
 <p>
 the parameters for <b>c</b>onfigure: <code>--prefix=%p</code> plus anything
-specified with ConfigureParams
+specified with ConfigureParams.  (The behavior is different when the package
+has <code>Type: perl</code>; in that case, the default flags for
+building a perl package are used instead of <code>--prefix=%p</code>
+in the definition of <code>%c</code>.)
 </p>
 </td></tr><tr valign="top"><td>%m</td><td>
 <p>

@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.88 2006/09/18 14:34:38 msachs Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.89 2006/11/18 18:18:55 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -341,7 +341,10 @@ in commands.
 <itemd>
 <p>
 the parameters for <em>c</em>onfigure: <code>--prefix=%p</code> plus anything
-specified with ConfigureParams
+specified with ConfigureParams.  (The behavior is different when the package
+has <code>Type: perl</code>; in that case, the default flags for
+building a perl package are used instead of <code>--prefix=%p</code>
+in the definition of <code>%c</code>.)
 </p>
 </itemd></item>
 
@@ -2432,13 +2435,17 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 <itemd>
 <p>
 Additional parameters to pass to the configure script. (See
-CompileScript for details.)  If a build is being done
+CompileScript for details.)  
+For packages not of <code>Type: Perl</code>, the parameter
+<code>--prefix=%p</code> is prepended to this value.
+As of fink > 0.13.7, this field will also work with perl modules
+<code>Type: Perl</code>; the default perl Makefile.PL
+string is prepended to the value supplied for <code>ConfigureParams</code>.
+</p><p>
+If a build is being done
 with test suites enabled, the value of the <code>TestConfigureParams</code>
-field will be appended to this.
+field will be appended to the normal <code>ConfigureParams</code> value.
 
-As of fink > 0.13.7, this parameter will also work with perl modules
-<code>Type: Perl</code>, and will append to the default perl Makefile.PL
-string.
 </p>
 <p>
   Starting in fink-0.22.0, this field supports conditionals. The
