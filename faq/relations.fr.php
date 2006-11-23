@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Relations";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/10/02 17:13:32';
+$cvs_date = 'Date: 2006/11/23 21:16:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="mirrors.php?phpLang=fr" title="Miroirs de Fink"><link rel="prev" href="general.php?phpLang=fr" title="Questions générales">';
 
 
@@ -15,7 +15,7 @@ include_once "header.fr.inc";
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Nous essayons. Parfois, c'est facile et tout le monde en profite à la prochaine version du paquet. Malheureusement, ce n'est pas toujours si simple avec la plupart des paquets. Quelques problèmes courants :</p><ul>
 <li>Le mainteneur du paquet Fink est très occupé et n'a pas le temps de renvoyer la rustine et des explications détaillées aux mainteneurs situés en amont.</li>
 <li>Les mainteneurs situés en amont rejette la rustine. Il peut y avoir de très bonnes raisons à cela. La plupart des mainteneurs situés en amont ont fortement intérêt à conserver un code source pur, des contrôles de configuration clairs et à maintenir la compatibilité avec les autres plates-formes.</li>
-<li>Les mainteneurs situés en amont acceptent la rustine, mais cela peut prendre des semaines ou   des mois avant qu'ils ne produisent une nouvelle version de leur paquet.</li>
+<li>Les mainteneurs situés en amont acceptent la rustine, mais cela peut prendre des semaines ou des mois avant qu'ils ne produisent une nouvelle version de leur paquet.</li>
 <li>Le paquet a été abandonné par ses auteurs et il n'existe pas de nouvelle version dans laquelle la rustine peut être intégrée.</li>
 </ul></div>
 </a>
@@ -25,7 +25,7 @@ include_once "header.fr.inc";
 </a>
 <a name="apple">
 <div class="question"><p><b><? echo FINK_Q ; ?>2.3: Quelles sont vos relations avec Apple ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> <a href="http://www.apple.com/">Apple</a> sait que Fink existe et nous a apporté son soutien dans le cadre de ses relations avec les projets Open Source. Durant l'été et l'automne 2001, Apple nous a fourni les sources des pré-versions  de Mac OS X dans l'espoir que les paquets Fink puissent être adaptés à temps pour la version officielle. Citation : <b>"Nous espérons que cela mettra en évidence notre engagement, que d'aucuns mettent en doute. Nous nous affirmerons dans les projets open source au fil du temps."</b> Merci Apple !</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> <a href="http://www.apple.com/">Apple</a> sait que Fink existe et nous a apporté son soutien dans le cadre de ses relations avec les projets Open Source. Durant l'été et l'automne 2001, Apple nous a fourni les sources des pré-versions de Mac OS X dans l'espoir que les paquets Fink puissent être adaptés à temps pour la version officielle. Citation : <b>"Nous espérons que cela mettra en évidence notre engagement, que d'aucuns mettent en doute. Nous nous affirmerons dans les projets open source au fil du temps."</b> Merci Apple !</p></div>
 </a>
 <a name="darwinports">
 <div class="question"><p><b><? echo FINK_Q ; ?>2.4: Quelles sont vos relations avec DarwinPorts ?</b></p></div>

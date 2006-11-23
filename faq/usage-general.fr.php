@@ -1,8 +1,8 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/10/02 17:13:32';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation de certains paquets">';
+$cvs_date = 'Date: 2006/11/23 21:16:22';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets">';
 
 
 include_once "header.fr.inc";
@@ -37,10 +37,10 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les librairies) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle  --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement (par exemple <b>foo-1.0-1-dev</b>) des paquets librairies que vous utilisez, s'ils ne sont pas déjà installés.</p></div>
+export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les librairies) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement (par exemple <b>foo-1.0-1-dev</b>) des paquets librairies que vous utilisez, s'ils ne sont pas déjà installés.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
-<div class="question"><p><b><? echo FINK_Q ; ?>8.4: Impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>8.4: Il est impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> X11 d'Apple ne garde pas trace des variables d'environnement de Fink, ce qui signifie que le menu Applications n'a pas le PATH correct pour trouver les applications Fink. Vous pouvez résoudre ce problème en ajoutant devant le nom d'une application installée via Fink la commande suivante :</p><pre>source /sw/bin/init.sh ;</pre><p>Par exemple, si vous voulez lancer GIMP installé via Fink, saisissez :</p><pre>source /sw/bin/init.sh ; gimp</pre><p>dans le champ "Command" en regard de la ligne GIMP.</p><p>Vous pouvez aussi modifier le fichier .xinitrc, situé dans votre répertoire utilisateur, et ajoutez la commande suivante :</p><pre>source /sw/bin/init.sh</pre><p>après la première ligne.</p></div>
 </a>
 <a name="x-options">
@@ -79,7 +79,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajoute
 <p>Représente l'environnement d'exécution de Java (JRE), qui fait partie de OS X (et des mises à jour d'Apple). Voir la <a href="http://www.apple.com/java">page Java d'Apple</a> pour de plus amples informations.</p>
 </li>
 <li>system-javaXXX-dev : [paquet virtuel correspondant aux headers de développement Java X.X.X]
-<p>Représente le SDK (kit de développement) de Java, qui doit être téléchargé et installé à partir de <a href="http://connect.apple.com">connect.apple.com</a> (enregistrement gratuit obligatoire). Si vous avez mis à jour le JRE, il est possible que le SDK ne soit pas automatiquement mis à jour (ou même qu'il ait été supprimé). Vérifiez systématiquement le SDK après installation ou mise à jour du JRE,  et téléchargez-le et installez-le si nécessaire. Voir aussi <a href="comp-general.php?phpLang=fr#system-java">cette QFP</a>.</p>
+<p>Représente le SDK (kit de développement) de Java, qui doit être téléchargé et installé à partir de <a href="http://connect.apple.com">connect.apple.com</a> (enregistrement gratuit obligatoire). Si vous avez mis à jour le JRE, il est possible que le SDK ne soit pas automatiquement mis à jour (ou même qu'il ait été supprimé). Vérifiez systématiquement le SDK après installation ou mise à jour du JRE, et téléchargez-le et installez-le si nécessaire. Voir aussi <a href="comp-general.php?phpLang=fr#system-java">cette QFP</a>.</p>
 </li>
 <li>system-java3d : [paquet virtuel représentant Java3D]</li>
 <li>system-javaai : [paquet virtuel représent Java Advanced Imaging]

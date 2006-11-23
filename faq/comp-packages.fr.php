@@ -1,13 +1,13 @@
 <?
 $title = "Q.F.P. - Compilation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/10/02 17:13:32';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes de compilation généraux">';
+$cvs_date = 'Date: 2006/11/23 21:16:22';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation">';
 
 
 include_once "header.fr.inc";
 ?>
-<h1>Q.F.P. - 7. Problèmes de compilation de certains paquets</h1>
+<h1>Q.F.P. - 7. Problèmes de compilation spécifiques à certains paquets</h1>
 
 
 <a name="libgtop">
@@ -18,7 +18,7 @@ endif</pre></div>
 </a>
 <a name="cant-install-xfree">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.2: Lors d'une tentative de passage aux paquets XFree86 de Fink, il est impossible d'installer <code>xfree86-base</code> ou <code>xfree86</code>, car ces paquets entrent en conflit avec <code>system-xfree86</code>.</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Toutes les variantes de X11, doivent, malheureusement, être installées au même endroit /usr/X11R6. C'est pourquoi, les paquets de Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> s'installent également à cet endroit. Néanmoins, comme Fink ne supprime pas les fichiers qui ne figurent pas dans sa base de données, il ne remplace pas automatiquement une installation de X11 faite hors de Fink.</p><p></p><p>Voici comment procéder :</p><p></p><p> <b>Note : les utilisateurs de 10.2.x ayant une version de Fink à jour  (&gt;=0.16.2) et les utilisateurs de 10.3.x doivent sauter l'étape 1 ci-dessous (de toute façon, elle ne fonctionne pas pour eux).</b>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Toutes les variantes de X11, doivent, malheureusement, être installées au même endroit /usr/X11R6. C'est pourquoi, les paquets de Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> s'installent également à cet endroit. Néanmoins, comme Fink ne supprime pas les fichiers qui ne figurent pas dans sa base de données, il ne remplace pas automatiquement une installation de X11 faite hors de Fink.</p><p></p><p>Voici comment procéder :</p><p></p><p> <b>Note : les utilisateurs de 10.2.x ayant une version de Fink à jour (&gt;=0.16.2) et les utilisateurs de 10.3.x doivent sauter l'étape 1 ci-dessous (de toute façon, elle ne fonctionne pas pour eux).</b>
 </p><p>1. Supprimez <code>system-xfree86</code>. Si vous n'avez aucun paquet qui dépend de X11, c'est tout simple. Toutefois, il est fréquent que de nombreux paquets dépendant de X11 soient installés. Dans ce cas, au lieu de tous les désinstaller, vous pouvez utiliser :</p><pre>sudo dpkg --remove --force-depends system-xfree86</pre><p>pour supprimer system-xfree86, ce qui laisse tout le reste en place. Si <code>system-xfree86</code> n'est pas installé, passez à l'étape 3.</p><p>2. Supprimez XFree86 avec :</p><pre>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</pre><p>Si vous aviez installé Apple X11 auparavant, supprimez également l'application X11.</p><p>3. Pour installer XFree86-4.2.1, installez les paquets Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> comme vous le faites d'habitude : "<code>fink install</code>" pour les utilisateurs de sources, "<code>apt-get install</code>" ou <code>dselect</code> pour les utilisateurs de binaires.</p><p>- ou -</p><p>3a. Pour installer XFree86-4.3.x ou une version postérieure, installez le paquet Fink <code>xfree86</code> via "fink install xfree86". La version la plus récente (XFree86-4.4.x à la date du 25 mai 2004) n'est pas encore dans la distribution binaire et n'est disponible que dans l'arborescence instable [ voir <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">comment installer un paquet instable</a>.</p></div>
 </a>
 <a name="change-thread-nothread">
@@ -38,12 +38,12 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce message quelque peu abscons signifie que vous devez installer les Developer Tools de décembre 2002.</p></div>
 </a>
 <a name="libiconv-gettext">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.5: Impossible de mettre à jour libiconv <code>libiconv</code>.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>7.5: Il est impossible de mettre à jour libiconv <code>libiconv</code>.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez apparaître des messages d'erreur semblables au suivant :</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>vous pouvez résoudre le problème en exécutant :</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
 </a>
  <a name="cplusplus-filt">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.6: Impossible d'installer <code>g77</code> car le fichier <code>c++filt</code> n'existe pas. Où le récupérer ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>7.6: Il est impossible d'installer <code>g77</code> car le fichier <code>c++filt</code> n'existe pas. Où le récupérer ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous avez des erreurs similaires à la suivante :</p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>après être passé sous Tiger, vous devez suivre les étapes suivantes :</p><ul>
 <li>Désinstallez l'ancienne version des Outils de développements (Developer Tools) en exécutant la commande :
 <pre>/Developer/Tools/uninstall-devtools.pl</pre> 
@@ -51,8 +51,12 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 <li>Réinstallez <code>BSD.pkg</code> à partir du DVD d'installation du système Tiger.</li>
 </ul><p>Si le fichier <code>/usr/bin/c++filt</code> n'apparaît pas, recommencez les deux étapes précédentes jusqu'à ce qu'il apparaisse.</p></div>
 </a>
+<a name="gettext-tools">
+<div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink refuse de mettre à jour le paquet <code>gettext</code>, car les dépendances sont incompatibles entre elles. Que faire ?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Exécutez d'abord la commande <code>fink selfupdate</code> pour vous assurer que vous avez bien les dernières versions des paquets. Puis exécutez la commande <code>fink update gettext-tools</code>. Une ancienne version de <code>gettext-tools</code> peut empêcher la mise à jour de <code>gettext</code>.</p></div>
+</a>
 <a name="all-others">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.7: Des problèmes apparaissent avec un paquet qui n'est pas mentionné ici.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>7.8: Des problèmes apparaissent avec un paquet qui n'est pas mentionné ici. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Comme les problèmes sur les paquets ont tendance à être transitoires, nous avons décidé de les mettre sur le wiki de Fink. Voyez la page <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues</a>.</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:

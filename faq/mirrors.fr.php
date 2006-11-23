@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Miroirs";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/10/02 17:13:32';
+$cvs_date = 'Date: 2006/11/23 21:16:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)"><link rel="prev" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets">';
 
 
@@ -24,11 +24,11 @@ include_once "header.fr.inc";
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Tous les miroirs Fink sont fusionnés sous le nom de domaine finkmirrors.net. Vous trouverez de plus amples informations sur le site web http://finkmirrors.net/.</p></div>
 </a>
 <a name="when-not">
-<div class="question"><p><b><? echo FINK_Q ; ?>3.4: Impossible de se connecter au serveur rsync. Que faire ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>3.4: Il est impossible de se connecter au serveur rsync. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Il arrive que certains murs pare-feu particulièrement efficaces vous empêchent de vous connecter à des services rsync. Dans ce cas, continuez à utiliser la méthode CVS.</p></div>
 </a>
 <a name="otherinfogone">
-<div class="question"><p><b><? echo FINK_Q ; ?>3.5: Après passage à la méthode rsync, tous les fichiers info des arborescences inutilisées ont disparu.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>3.5: Après passage à la méthode rsync, tous les fichiers info des arborescences inutilisées ont disparu. Que se passe-t-il ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> C'est normal. La méthode rsync ne met à jour que l'arborescence active, par exemple 10.3, et supprime tous les répertoires CVS.</p></div>
 </a>
 <a name="howswitch">
