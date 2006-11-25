@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.38 2006/08/04 21:44:56 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.39 2006/11/25 05:41:37 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -331,12 +331,12 @@ dselect からパッケージを選択してインストールする場合、 ro
 <li>
 <p><em>cvs-proxy</em> パッケージを、次のコマンドでインストールする:</p>
 <p>
-<code>fink install <em>cvs-proxy</em>
+<code>fink --use-binary-dist install <em>cvs-proxy</em>
 </code>
 </p>
 </li>
 <li>
-<p>パッケージを次のコマンドでアップデートする:</p>
+<p>次のコマンドで CVS 更新に変更する:</p>
 <p>
 <code>fink selfupdate-cvs</code>
 </p>
@@ -1230,7 +1230,7 @@ rerun ranlib(1) (can't load from it)</codeblock>
 </faqentry>
 <faqentry name="basic-headers" >
 <question>
-<p><filename>stddef.h</filename> | <filename>wchar.h</filename> | <filename>crt1.o</filename> が見つからない、
+<p><filename>stddef.h</filename> | <filename>wchar.h</filename> | <filename>stdlib.h</filename> | <filename>crt1.o</filename> が見つからない、
 あるいは、&quot;C compiler cannot create executables&quot; というメッセージが出ます。
 これはどこにありますか?</p>
 </question>
@@ -1268,7 +1268,14 @@ rerun ranlib(1) (can't load from it)</codeblock>
 <p>freetype に関係したエラーが出ます。</p> 
 </question> 
 <answer> 
-<p>freetype に関係したエラーにはいくつかありますが、もしこのようなものであれば:</p> 
+<p>freetype に関係したエラーにはいくつかありますが、以下のものであれば:</p>
+<codeblock>/usr/bin/ld: can't locate file for: -lfreetype</codeblock>
+<p>外来の <filename>freetype-config</filename> があるかどうか、以下のコマンドを実行して確認します。</p>
+<codeblock>where freetype-config</codeblock>
+<p>(<filename>tcsh</filename> の場合)</p>
+<codeblock>type -a freetype-config</codeblock>
+<p>(<filename>bash</filename> の場合)。 Mono フレームワークは、 <filename>/usr/bin/freetype-config</filename> をインストールし、フレームワーク内へのシンボリックリンクを作ることが知られています。</p>
+<p>もしこのようなものであれば:</p> 
 <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token 
@@ -1311,8 +1318,8 @@ Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
 <codeblock>ld: Undefined symbols: 
 _FT_Access_Frame </codeblock> 
 <p>おそらく X11 インストールの残りファイルが原因です。
-X11 SDK を再インストールしてみて下さい。
-エラーが以下のようであれば:</p> 
+X11 SDK を再インストールしてみて下さい。</p> 
+<p>最後に、エラーが以下のようであれば:</p> 
 <codeblock>dyld: klines Undefined symbols: 
 /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame </codeblock>
 <p>おそらく Jaguar 上で<code>gcc3.3</code> でコンパイルしたバイナリが  Panther 上で動作しないためです。
@@ -1502,6 +1509,13 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
         </p>
       </answer>
     </faqentry>
+<faqentry name="libtool-unrecognized-dynamic">
+  <question><p>I get <quote>unrecognized option `-dynamic'</quote> errors from <filename>libtool</filename>.</p></question>
+<answer><p>This error:</p>
+<codeblock> libtool: unrecognized option `-dynamic'</codeblock>
+<p>typically means that you've replaced Apple's <filename>/usr/bin/libtool</filename> with a GNU <filename>libtool</filename>.  Unfortunately, the two <code>libtools</code> <em>do not</em> do the same thing.</p>
+<p>The only way to solve this is to get a working Apple <filename>libtool</filename> from somewhere.  It is installed as part of the <filename>DeveloperTools.pkg</filename> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <filename>/Library/Receipts</filename> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></answer>
+</faqentry>
 </chapter>
 <chapter filename="comp-packages" >
 <title>コンパイルの問題 - 特定のバージョン</title>
@@ -1627,6 +1641,18 @@ fink install libiconv</codeblock>
 2) Reinstall BSD.pkg (from your main OS install)</p>
       </answer>
     </faqentry>
+    <faqentry name="gettext-tools">
+      <question>
+        <p>Fink が、 <code>gettext</code> の依存性に矛盾があるとだけ表示し、更新してくれません。</p>
+      </question>
+      <answer>
+        <p>
+          <code>fink selfupdate</code> を実行して最新にした後、
+          <code>fink update gettext-tools</code> としてみてください。
+          古いバージョンの <code>gettext-tools</code> が <code>gettext</code> の更新を妨害していた可能性があります。
+        </p>
+      </answer>
+    </faqentry>
     <faqentry name="all-others">
       <question>
         <p>ここに載っていないパッケージで問題があります。</p>
@@ -1708,14 +1734,17 @@ setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
-setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;</codeblock>
+setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
+setenv MACOSX_DEPLOYMENT_TARGET 10.4</codeblock>
 <p>-bash-</p> 
 <codeblock>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
-export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock> 
+export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
+export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
+<p>(ビルドシステムは OS 10.4 以降と仮定)</p>
 <p>これを起動ファイル (.cshrc か .profile) に追加すると、自動的に設定されて便利です。
 この環境変数を使わないパッケージの場合、
 &quot;-I/sw/include&quot; (ヘッダ用) and &quot;-L/sw/lib&quot; (ライブラリ用)

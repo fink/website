@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Часто задаваемые вопросы Fink </title>
     <shorttitle>Ч.З.В.</shorttitle>
-    <cvsid>$Id: faq.ru.xml,v 1.7 2006/06/09 14:57:47 dmrrsn Exp $</cvsid>
+    <cvsid>$Id: faq.ru.xml,v 1.8 2006/11/25 05:41:37 babayoshihiko Exp $</cvsid>
     <preface>
         <p>Ниже вы найдете список Ч.З.В. о Fink. Как и большинство
             Ч.З.В., некоторые из них реальные, а некоторые
@@ -399,12 +399,12 @@
                     <li>
                         <p>Инсталлируйте пакет <em>cvs-proxy</em> при помощи команды:</p>
                         <p>
-                            <code>fink install <em>cvs-proxy</em>
+                            <code>fink --use-binary-dist install <em>cvs-proxy</em>
                             </code>
                         </p>
                     </li>
                     <li>
-                        <p>После этого пакеты обновляются при помощи команд:</p>
+                        <p><!-- start translation -->Switch to the CVS update method with the command<!-- end translation -->:</p>
                         <p>
                             <code>fink selfupdate-cvs</code>
                         </p>
@@ -543,6 +543,38 @@
                     selfupdate-rsync</code>), если хотите.</p>
             </answer>
         </faqentry>
+    <!-- start translation -->
+    <faqentry name="unstable-onepackage">
+      <question>
+        <p>Do I <em>really</em> need to enable all of unstable just to install
+        one unstable package that I want?</p>
+      </question>
+      <answer>
+        <p>No, but it is highly recommended you do.  Mixing and matching can
+        cause unforeseen issues that make it difficult to debug problems when
+        they do arise.</p>
+        <p>That said, if you only want one or two specific packages, and nothing
+        else from unstable, then you need to switch over to CVS updating (i.e.
+        use <code>fink selfupdate-cvs</code>), because rsync only updates the
+        trees that are active in your <filename>fink.conf</filename>. Edit
+        <filename>/sw/etc/fink.conf</filename> and add <code>local/main</code>
+        to the <code>Trees:</code> line, if not present. Then you'll need to
+        run <code>fink selfupdate</code> to download the package description
+        files. Now copy the relevant <code>.info</code> files (and their
+        associated <code>.patch</code> files, if there are any) from
+        <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (or
+        <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) to
+        <filename>/sw/fink/dists/local/main/finkinfo</filename>. However, note
+        that your package may depend on other packages (or particular
+        versions) which are also only in unstable. You will have to move their
+        <code>.info</code> and <code>.patch</code> files as well. After you
+        move all of the files, make sure to run <code>fink index</code>, so
+        that Fink's record of available packages is updated. Once you're done
+        you can switch back to rsync (<code>fink selfupdate-rsync</code>) if
+        you want.</p>
+      </answer>
+    </faqentry>
+    <!-- end translation -->
         <faqentry name="sudo">
             <question>
                 <p>Мне надоело каждый раз печатать свой пароль в sudo.
@@ -588,10 +620,8 @@
                     <code>/sw/etc/apt/sources.list</code> в текстовом редакторе.
                     Удалите строки, упоминающие debian.org и замените их
                     следующим:</p>
-                <codeblock>deb http://us.dl.sourceforge.net/fink/direct_download
-                    release main crypto deb
-                    http://us.dl.sourceforge.net/fink/direct_download current
-                    main crypto</codeblock>
+                <codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
+deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeblock>
                 <p>(Если вы живете в Европе, можете использовать
                     <code>eu.dl.sourceforge.net</code> вместо <code>us.dl.sourceforge.net</code>)</p>
                 <p>Для исправления через dselect выполните снова "[A]ccess", выберите метод
@@ -613,25 +643,25 @@
             </question>
             <answer>
                 <p>Если сообщение следующее:</p>
-                <codeblock>Can't exec "cvs": No such file or directory at
-                    /sw/lib/perl5/Fink/Services.pm line 216,
-                    &lt;STDIN&gt; line 3. ### execution of cvs failed,
-                    exit code -1</codeblock>
+                <codeblock>Can't exec "cvs": No such file or directory at 
+/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
+### execution of cvs failed, exit code -1</codeblock>
                 <p>то вам надо инсталлировать инструменты разработчика - Developer Tools.</p>
                 <p>Но если последняя строка следующая: </p>
                 <codeblock>### execution of su failed, exit code 1</codeblock>
                 <p>то надо сделать обратный просмотр для
                     уточнения ошибки. Если вы увидите сообщение, что вам отказано в соединении:</p>
-                <codeblock>(Logging in to anonymous@fink.cvs.sourceforge.net) CVS
-                    password: cvs [login aborted]: connect to
-                    fink.cvs.sourceforge.net:2401 failed: Connection refused ###
-                    execution of su failed, exit code 1 Failed: Logging into the
-                    CVS server for anonymous read-only access failed.</codeblock>
+                <codeblock>(Logging in to anonymous@fink.cvs.sourceforge.net)
+CVS password:
+cvs [login aborted]: connect to fink.cvs.sourceforge.net:2401 failed: 
+Connection refused
+### execution of su failed, exit code 1
+Failed: Logging into the CVS server for anonymous read-only access failed.</codeblock>
                 <p>или сообщение типа следующего:</p>
-                <codeblock>cvs [update aborted]: recv() from server
-                    fink.cvs.sourceforge.net: Connection reset by peer ### execution
-                    of su failed, exit code 1 Failed: Updating using CVS failed.
-                    Check the error messages above.</codeblock>
+                <codeblock>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net: 
+Connection reset by peer 
+### execution of su failed, exit code 1 
+Failed: Updating using CVS failed. Check the error messages above.</codeblock>
                 <p>или</p>
                 <codeblock>cvs [update aborted]: End of file received from server</codeblock>
                 <p>или</p>
@@ -641,32 +671,31 @@
                 <p>Другое объяснение: у вас нет соответствующих разрешений в ваших каталогах 
                     CVS, в этом случае вы получите сообщения "Permission
                     denied":</p>
-                <codeblock>cvs update: in directory 10.2/stable/main: cvs
-                    update: cannot open CVS/Entries for reading: No such file or
-                    directory cvs server: Updating 10.2/stable/main cvs update:
-                    cannot write 10.2/stable/main/.cvsignore: Permission denied
-                    cvs [update aborted]: cannot make directory
-                    10.2/stable/main/finkinfo: No such file or directory ###
-                    execution of su failed, exit code 1 Failed: Updating using
-                    CVS failed. Check the error messages above.</codeblock>
+                <codeblock>cvs update: in directory 10.2/stable/main: 
+cvs update: cannot open CVS/Entries for reading: No such file or directory
+cvs server: Updating 10.2/stable/main 
+cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
+cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: 
+No such file or directory 
+### execution of su failed, exit code 1 Failed: 
+Updating using CVS failed. Check the error messages above.</codeblock>
                 <p>В данном случае вам надо перенастроить свои каталоги cvs. Используйте команду </p>
-                <codeblock>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf
-                    {}\ ; fink selfupdate-cvs</codeblock>
+                <codeblock>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {}\
+; fink selfupdate-cvs</codeblock>
                 <p>Если вы не увидите вышеуказанных сообщений,
                     это почти всегда означает, что вы модифицировали файл на вашем дереве
                     /sw/fink/dists и теперь координатор изменил его.
                     Просмотрите ввод selfupdate-cvs в строках, начинающихся с
-                     "C", так-то:</p>
-                <codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
-                    ... (other info and patch files) ... ### execution of su
-                    failed, exit code 1 Failed: Updating using CVS failed. Check
-                    the error messages above.</codeblock>
-                <p>"C" означает, что у CVS был конфликт при попытке обновления
+                     &quot;C&quot;, так-то:</p>
+                <codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info 
+... (other info and patch files) ... 
+### execution of su failed, exit code 1 
+Failed: Updating using CVS failed. Check the error messages above.</codeblock>
+                <p>&quot;C&quot; означает, что у CVS был конфликт при попытке обновления
                     последней версии. Исправление заключается в удалении всех файлов, начинающихся
-                    с "C" при вводе selfupdate-cvs; затем надо попробовать снова:</p>
-                <codeblock>sudo rm
-                    /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
-                    fink selfupdate-cvs</codeblock>
+                    с &quot;C&quot; при вводе selfupdate-cvs; затем надо попробовать снова:</p>
+                <codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+fink selfupdate-cvs</codeblock>
             </answer>
         </faqentry>
         <faqentry name="kernel-panics">
@@ -736,29 +765,34 @@
         </faqentry>
         <faqentry name="fink-not-found">
             <question>
-                <p>Получаю сообщения об ошибке "command not found", когда запускаю Fink или
+                <p>Получаю сообщения об ошибке &quot;command not found&quot;, когда запускаю Fink или
                     то, что инсталлировано при помощи Fink.</p>
             </question>
             <answer>
-                <p>Если это происходит все время, это значит, что вы могли неумышленно
-                    модифицировать (или не модифицировать) ваши скрипты инициализации. Выполните скрипт
-                    <filename>/sw/bin/pathsetup.command</filename>
-                    (двойным щелчком в искателе (Finder) или терминале),
-                    который попытается определить вашу конфигурацию инициализации.
-                    Затем вам надо будет начать новый сеанс терминала для
-                    загрузки ваших настроек среды. <em>Прим.:</em> для
-                    <code>fink-0.18.3</code> и <code>fink-0.19.2</code> скрипт
-                    был  изменен на
-                    <filename>/sw/bin/pathsetup.sh</filename> и должен выполняться в 
-                    терминале.</p>
-                <p>С другой стороны, если у вас проблемы только в терминале Apple X11,
-                    вероятно, это означает, что вам надо создать файл
-                        <link
-                    url="http://fink.sourceforge.net/doc/x11/run-xfree86.php#xinitrc">.xinitrc</link>
-                    и добавить строку</p>
-                <codeblock>. /sw/bin/init.sh</codeblock>
-                <p>где-нибудь в начале (т.е. перед запуском любой программы).
-                    После этого надо перезапустить X11 (если вы ее выполняете).</p>
+            <!-- start translation -->
+          <p>If this always happens, then you may have inadvertently
+        modified (or failed to modify) your startup scripts. Run the
+        <filename>/sw/bin/pathsetup.sh</filename> script in a terminal
+        window. This program will attempt to detect your default shell
+        and add a command to load Fink's shell initialization script
+        into your shell's configuration. You'll then need to open a
+        new terminal session so that your environment settings are
+        loaded. <em>Note:</em> Some older versions fink called this
+        script <filename>pathsetup.command</filename> instead
+        of <filename>pathsetup.sh</filename>. Alternately, you can run
+        the <filename>pathsetup.app</filename> application on the Fink
+        binary distribution disk image.</p>
+        <p>On the other hand, if you only have problems in the Apple X11
+        terminal, the easy solution is to modify the "Terminal" entry in the X11 Application menu via the <em>Applications-&gt;Customize Menu... </em>option.  Instead of just</p>
+        <codeblock>xterm</codeblock>
+        <p>change the command field to read</p>
+        <codeblock>xterm -ls</codeblock>
+        <p><code>ls</code> here means <quote>login shell</quote>, and the result is that your full login setup gets used (just like the OS X Terminal).</p>
+        <p>These <filename>/sw/bin/init.*</filename> scripts do much
+	more than just add <filename>/sw/bin</filename> to your PATH.
+	Many packages will not work correctly without these additional
+	actions.</p>
+	        <!-- end translation -->
             </answer>
         </faqentry>
         <faqentry name="invisible-sw">
@@ -779,7 +813,7 @@
         <faqentry name="install-info-bad">
             <question>
                 <p>Не могу ничего инсталлировать из-за следующей ошибки:
-                    "install-info: unrecognized option `--infodir=/sw/share/info'"</p>
+                    &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</p>
             </question>
             <answer>
                 <p>Обычно это происходит из-за проблемы в вашем PATH. Напечатайте в окне
@@ -807,11 +841,9 @@
             </question>
             <answer>
                 <p>Обычно такие ошибки имеют следующую форму:</p>
-                <codeblock>files list file for package <em>packagename</em>
-                    contains empty filename</codeblock>
+                <codeblock>files list file for package <em>packagename</em> contains empty filename</codeblock>
                 <p>или</p>
-                <codeblock>files list file for package <em>packagename</em> is
-                    missing final newline</codeblock>
+                <codeblock>files list file for package <em>packagename</em> is missing final newline</codeblock>
                 <p>Это исправляется без труда. Если у вас в системе имеется файл .deb
                     для пакета, содержащего ошибку,
                     проверьте его целостность при помощи </p>
@@ -838,17 +870,18 @@
                     Сначала надо стать суперпользователем при помощи <code>sudo -s</code>
                     (при необходимости введите свой административный пароль пользователя) и
                     затем использовать следующую команду:</p>
-                <codeblock>dpkg -c <em>full-path-to-debfile</em> | awk '{if ($6
-                    == "./"){ print "/."; } \ else if (substr($6, length($6), 1)
-                    == "/")\ {print substr($6, 2, length($6) - 2); } \ else {
-                    print substr($6, 2, length($6) - 1);}}'\ &gt; /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
+                    <codeblock>dpkg -c <em>full-path-to-debfile</em> | awk '{if ($6 == "./"){ print "/."; } \
+else if (substr($6, length($6), 1) == "/")\
+{print substr($6, 2, length($6) - 2); } \
+else { print substr($6, 2, length($6) - 1);}}'\ 
+&gt; /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
                 <p>например:</p>
-                <codeblock>dpkg -c
-                    /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb |
-                    awk \ '{if ($6 == "./") { print "/."; } \ else if
-                    (substr($6, length($6), 1) == "/") \ {print substr($6, 2,
-                    length($6) - 2); } \ else { print substr($6, 2, length($6) -
-                    1);}}' \ &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+                <codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
+'{if ($6 == "./") { print "/."; } \
+else if (substr($6, length($6), 1) == "/") \
+{print substr($6, 2, length($6) - 2); } \
+else { print substr($6, 2, length($6) - 1);}}' \ 
+&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
                 <p>Это поможет извлечь содержимое файла  .deb,
                     удалить все, кроме названий файлов, и внести их в файл
                     .list.</p>
@@ -880,9 +913,14 @@
             <answer>
                 <p>ПО устарело.</p>
                 <p>Если вы получаете сообщение об ошибке, подобное такому:</p>
-                <codeblock>dyld: perl Undefined symbols: _Perl_safefree
-                    _Perl_safemalloc _Perl_saferealloc _Perl_sv_2pv
-                    _perl_call_sv _perl_eval_sv _perl_get_sv</codeblock>
+                <codeblock>dyld: perl Undefined symbols: 
+_Perl_safefree
+_Perl_safemalloc 
+_Perl_saferealloc 
+_Perl_sv_2pv 
+_perl_call_sv
+_perl_eval_sv 
+_perl_get_sv</codeblock>
                 <p>то вероятнее всего вы обновили Perl до
                     новой версии и теперь <filename>storable-pm</filename> нуждается
                     в обновлении. Вам следует обновить Fink. В ходе обновления
@@ -892,9 +930,10 @@
                     того, надо также обновить <filename>storable-pm</filename>.</p>
                 <p>В случае OS 10.1.x надо применить следующие команды (вам понадобятся
                     Developer Tools):</p>
-                <codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp sudo mv
-                    /sw/lib/perl5/darwin/auto/Storable /tmp fink rebuild
-                    storable-pm fink selfupdate-cvs</codeblock>
+                <codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp 
+sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp 
+fink rebuild storable-pm 
+fink selfupdate-cvs</codeblock>
             </answer>
         </faqentry>
         <faqentry name="cant-upgrade">
@@ -909,16 +948,16 @@
                     <code>fink</code> вручную. Соответствующие команды:</p>
                 <ul>
                     <li>
-                        <em>10.3.x:</em> (дистрибуция 0.7.1) <codeblock>curl -O
-                            http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
-                            sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb rm
-                            fink_0.22.4-1_darwin-powerpc.deb fink selfupdate</codeblock>
+                        <em>10.3.x:</em> (дистрибуция 0.7.1) <codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
+rm fink_0.22.4-1_darwin-powerpc.deb
+fink selfupdate</codeblock>
                     </li>
                     <li>
-                        <em>10.2.x:</em> (дистрибуция 0.6.3) <codeblock>curl -O
-                            http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
-                            sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb rm
-                            fink_0.18.3-1_darwin-powerpc.deb fink selfupdate</codeblock>
+                        <em>10.2.x:</em> (дистрибуция 0.6.3) <codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
+rm fink_0.18.3-1_darwin-powerpc.deb
+fink selfupdate</codeblock>
                     </li>
                 </ul>
             </answer>
@@ -939,32 +978,41 @@
             </question>
             <answer>
                 <p>Если вы видите что-то вроде следующего: </p>
-                <codeblock>Err file: local/main Packages File not found Ign
-                    file: local/main Release Err file: stable/main Packages File
-                    not found Ign file: stable/main Release Err file:
-                    stable/crypto Packages File not found Ign file:
-                    stable/crypto Release Hit http://us.dl.sourceforge.net
-                    10.3/release/main Packages Hit http://us.dl.sourceforge.net
-                    10.3/release/main Release Hit http://us.dl.sourceforge.net
-                    10.3/release/crypto Packages Hit
-                    http://us.dl.sourceforge.net 10.3/release/crypto Release Hit
-                    http://us.dl.sourceforge.net 10.3/current/main Packages Hit
-                    http://us.dl.sourceforge.net 10.3/current/main Release Hit
-                    http://us.dl.sourceforge.net 10.3/current/crypto Packages
-                    Hit http://us.dl.sourceforge.net 10.3/current/crypto Release
-                    Failed to fetch
-                    file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
-                    File not found Failed to fetch
-                    file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
-                    File not found Failed to fetch
-                    file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
-                    File not found Reading Package Lists... Done Building
-                    Dependency Tree...Done E: Some index files failed to
-                    download, they have been ignored, or old ones used instead.
-                    update available list script returned error exit status 1.</codeblock>
+                <codeblock>Err file: local/main Packages 
+File not found 
+Ign file: local/main Release 
+Err file: stable/main Packages 
+File not found 
+Ign file: stable/main Release 
+Err file: stable/crypto Packages 
+File not found 
+Ign file: stable/crypto Release 
+...
+Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
+File not found 
+Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
+File not found
+Failed to fetch file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
+File not found 
+Reading Package Lists... Done 
+Building Dependency Tree...Done 
+E: Some index files failed to download, 
+they have been ignored, or old ones used instead. 
+update available list script returned error exit status 1.</codeblock>
                 <p>то вам надо запустить <code>fink
                     scanpackages</code>. Это поможет найти 
                     файлы.</p>
+                <!-- start translation -->
+                <p>If you get an error of the following form:</p>
+        <codeblock>W: Couldn't stat source package list file: unstable/main Packages
+(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+powerpc_Packages) - stat (2 No such file or directory)</codeblock>
+        <p>then you should run</p>
+        <codeblock>
+sudo apt-get update
+fink scanpackages
+</codeblock>
+        <p>to fix it.</p><!-- end translation -->
             </answer>
         </faqentry>
         <faqentry name="wrong-tree">
@@ -988,23 +1036,22 @@
             </question>
             <answer>
                 <p>Ошибки типа:</p>
-                <codeblock>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf
-                    - ### execution of gzip failed, exit code 139</codeblock>
+                <codeblock>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
+### execution of gzip failed, exit code 139</codeblock>
                 <p>или</p>
-                <codeblock>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar
-                    -xf - gzip: stdout: Broken pipe ### execution of gzip
-                    failed, exit code 138</codeblock>
+                <codeblock>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
+gzip: stdout: Broken pipe 
+### execution of gzip failed, exit code 138</codeblock>
                 <p>или</p>
-                <codeblock>dpkg-deb -b root-base-files-1.9.0-1
-                    /sw/fink/dists/unstable/main/binary-darwin-powerpc/base ###
-                    execution of dpkg-deb failed, exit code 1 Failed: can't
-                    create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
+                <codeblock>dpkg-deb -b root-base-files-1.9.0-1 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
+
+### execution of dpkg-deb failed, exit code 1
+Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
                 <p>или ошибки сегментации при использовании утилитов из <code>
                     fileutils</code>, н-р <code>ls</code> или <code>mv</code>,
                     вероятно обусловлены предварительно связывающей ошибкой в библиотеке и
                     могут быть устранены следующим образом:</p>
-                <codeblock>sudo
-                    /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
+                <codeblock>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
             </answer>
         </faqentry>
         <faqentry name="pathsetup-keeps-running">
@@ -1030,16 +1077,18 @@
             </question>
             <answer>
                 <p>Если сообщение об ошибке выглядит так:</p>
-                <codeblock>This first test is designed to die, so please ignore
-                    the error message on the next line. # Looks like your test
-                    died before it could output anything.
-                    ./00compile............................ok
-                    ./Base/initialize......................ok
-                    ./Base/param...........................ok
-                    ./Base/param_boolean...................ok
-                    ./Command/cat..........................ok
-                    ./Command/chowname.....................# Failed test
-                    (./Command/chowname.t at line 27) # got: 'root' # expected: 'nobody'</codeblock>
+                <codeblock>This first test is designed to die, so please ignore the error
+message on the next line.
+# Looks like your test died before it could output anything.
+./00compile............................ok
+./Base/initialize......................ok
+./Base/param...........................ok
+./Base/param_boolean...................ok
+./Command/cat..........................ok
+./Command/chowname.....................#     
+Failed test (./Command/chowname.t at line 27)
+#          got: 'root'
+#     expected: 'nobody'</codeblock>
                 <p>то надо использовать <em>Get Info</em> на носителе/сегменте,
                     где Fink инсталлирован, и отменить выбор "Ignore ownership".</p>
             </answer>
@@ -1063,13 +1112,95 @@
             </question>
             <answer>
                 <p>Эта ошибка:</p>
-                <codeblock>Failed: Can't move "/sw/fink" out of the way.</codeblock>
+                <codeblock>Failed: Can't move &quot;/sw/fink&quot; out of the way.</codeblock>
                 <p>обычно обусловлена, хотя и утверждает иное, ошибками
                     разрешений в одном из временных каталогов, создаваемых
                     в процессе автообновления - <code>selfupdate</code>. Удалите</p>
                 <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
             </answer>
         </faqentry>
+    <!-- start translation -->
+    <faqentry name="four-oh-three">
+      <question>
+        <p>I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</p>
+      </question>
+      <answer>
+        <p>There have been problems with the Sourceforge download servers, and therefore we are moving the binary distribution repository for this very reason.</p>
+        <ul>
+          <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
+<codeblock>fink reinstall fink</codeblock>
+<p>or</p>
+<codeblock>sudo apt-get install --reinstall fink</codeblock>
+<p>(if for whatever reason you don't want to use the source distribution).</p>
+</li>
+          <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <filename>sources.list</filename> file as root, e.g..via
+<codeblock>sudo pico /sw/etc/apt/sources.list</codeblock>
+<p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with "Official binary distribution:" thusly:</p>
+<codeblock># Official binary distribution: download location for packages
+# from the latest release
+deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
+<p>The above of course assumes you're on 10.3.  If you're on a different OS replace <code>10.3</code> with what your current distribution is.</p>
+<p>Then save your work and quit the editor.  Now update your binary package list again.</p>
+</li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="fc-cache">
+      <question>
+        <p>I get a message that says &quot;No fonts found&quot;.</p>
+      </question>
+      <answer>
+        <p>If you see the following (so far only seen on OS 10.4):</p>
+        <codeblock>No fonts found; this probably means that the fontconfig
+library is not correctly configured. You may need to
+edit the fonts.conf configuration file. More information
+about fontconfig can be found in the fontconfig(3) manual
+page and on http://fontconfig.org.</codeblock>
+        <p>then you can fix it by running</p>
+        <codeblock>sudo fc-cache</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="non-admin-installer">
+      <question>
+        <p> I can't install Fink via the Installer package, because I get &quot;volume doesn't support symlinks&quot; errors.</p>
+      </question>
+      <answer>
+        <p>This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p>
+        <p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility (from the Utilities sub-folder in your Applications folder), select the hard drive in question, choose the <em>First Aid</em> tab, and press <em>Repair Disk Permissions</em>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="wrong-arch">
+      <question>
+        <p>I can't update Fink, because <quote>package architecture (darwin-i386) does not match system (darwin-powerpc).</quote>
+</p>
+      </question>
+      <answer>
+        <p>This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p>
+        <codeblock>sudo rm -rf /sw</codeblock>
+        <p>and then download the disk image for Intel machines from <link url="http://fink.sourceforge.net/download/index.php">the downloads page</link>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="sf-cvs-2006">
+	      <question>
+		<p>I haven't been able to do a cvs selfupdate.</p>
+	      </question>
+	      <answer>
+		<p>If you get errors that include lines like:</p>
+		<codeblock>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</codeblock>
+		<p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p>
+<codeblock>
+sudo apt-get update ; sudo apt-get install fink-mirrors
+</codeblock>  
+	      </answer>
+	      </faqentry>
+	      <!-- end translation -->
     </chapter>
     <chapter filename="comp-general">
         <title>Проблемы компиляции  - Общие вопросы</title>
@@ -1103,8 +1234,8 @@
                 <p>Если сообщение в такой форме:</p>
                 <codeblock>make: command not found</codeblock>
                 <p>или</p>
-                <codeblock>Can't exec "make": No such file or directory at
-                    /sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
+                <codeblock>Can't exec &quot;make&quot;: 
+No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
                 <p>это значит, что вам надо инсталлировать Developer Tools.</p>
                 <p>С другой стороны, если сообщение об ошибке выглядит таким образом: </p>
                 <codeblock>make: illegal option -- C</codeblock>
@@ -1171,9 +1302,8 @@
                 <p>Это новая проблема в связи с инструментами за декабрь 2002 г. Вы можете иногда
                     получать сообщения такого типа (с выбором libgdk-pixbuf как пример):</p>
                 <codeblock>ld: warning dynamic shared library:
-                    /sw/lib/libgdk-pixbuf.dylib not made a weak library in
-                    output with MACOSX_DEPLOYMENT_TARGET environment variable
-                    set to: 10.1</codeblock>
+/sw/lib/libgdk-pixbuf.dylib not made a weak library in output with
+MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</codeblock>
                 <p>Можете считать их безобидными. Если разбирает любопытство, просмотрите
                     заметки о выпусках версий в каталоге документации разработчика,
                     в частности что касается GCC и компоновщика, для получения более подробных сведений.
@@ -1200,10 +1330,11 @@
                     с ошибкой надо произвести поиск в компоновке несуществующего
                     файла, н-р если у вас что-то вроде этого: </p>
                 <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
-                    /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ mv: cannot stat
-                    `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': No such
-                    file or directory ### execution of mv failed, exit code 1
-                    Failed: installing foo-0.1.2-3 failed</codeblock>
+/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ 
+mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+No such file or directory 
+### execution of mv failed, exit code 1 
+Failed: installing foo-0.1.2-3 failed</codeblock>
                 <p>надо искать <filename>libbar</filename>
                     где-то в выводе вашей попытки компоновки. </p>
             </answer>
@@ -1215,8 +1346,7 @@
             </question>
             <answer>
                 <p>Эти ошибки иногда выглядят так:</p>
-                <codeblock>Failed: Internal error: node for system-xfree86
-                    already exists</codeblock>
+                <codeblock>Failed: Internal error: node for system-xfree86 already exists</codeblock>
                 <p>Проблема заключается в том, что процессор взаимозависимости запутался из-за
                     изменений в некоторых информационных файлах пакета. Для решения проблемы надо:</p>
                 <ul>
@@ -1262,8 +1392,9 @@
             <answer>
                 <p>Ввод дает намек на то, что делать. Обычно сообщение
                     выглядит так:</p>
-                <codeblock>ld: table of contents for archive: /sw/lib/libintl.a
-                    is out of date; rerun ranlib(1) (can't load from it)</codeblock>
+                <codeblock>ld: table of contents for archive: 
+/sw/lib/libintl.a is out of date; 
+rerun ranlib(1) (can't load from it)</codeblock>
                 <p>Надо применить ranlib (в качестве суперпользователя) в любой
                     библиотеке, где возникла проблема. В качестве примера, для 
                     вышеприведенного случая надо выполнить:</p>
@@ -1281,24 +1412,21 @@
                         install atlas</code>.</p>
             </answer>
         </faqentry>
-        <faqentry name="basic-headers">
-            <question>
-                <p>Получил сообщения о том, что у меня не хватает 
-                    <filename>stddef.h</filename>, <filename>wchar.h</filename> и
-                     <filename>crt1.o</filename> или что мой С-компилятор не может создать выполняемые файлы ("C compiler
-                    cannot create executables").</p>
-            </question>
-            <answer>
-                <p>Обе проблемы обычно обусловлены отсутствием
-                    основных заголовков, предоставляемых пакетом DevSDK в
-                    Developer Tools. Проверьте наличие
-                    <filename>/Library/Receipts/DevSDK.pkg</filename> в вашей
-                    системе. В случае отсутствия снова запустите инсталлятор Developer Tools
-                    и инсталлируйте пакет DevSDK при помощи Custom Install.</p>
-                <p>Ошибка "cannot create executables" также может возникать,
-                    когда ваша версия Developer Tools предназначена для более ранней версии OS.</p>
-            </answer>
-        </faqentry>
+    <!-- start translation -->
+    <faqentry name="basic-headers">
+      <question>
+        <p>I get messages saying that I'm missing <filename>stddef.h</filename> | <filename>wchar.h</filename> | <filename>stdlib.h</filename> | <filename>crt1.o</filename>, or that my <quote>C compiler cannot create executables</quote>.</p>
+      </question>
+      <answer>
+        <p>Both of these problems are typically due to the absence of essential headers that are provided by the DevSDK package of
+        the Developer Tools. Check whether
+        <filename>/Library/Receipts/DevSDK.pkg</filename> exists on your
+        system. If not, then run the Dev Tools Installer again, and install
+        the DevSDK package using a Custom Install.</p>
+        <p>The <quote>cannot create executables</quote> error can also occur when your Developer Tools version is for an earlier OS version.</p>
+      </answer>
+    </faqentry>
+    <!-- end translation -->
         <faqentry name="multiple-dependencies">
             <question>
                 <p>Не могу сделать обновление, т.к. Fink не может разрешить конфликт версий многих взаимозависимостей ("unable to resolve version
@@ -1330,46 +1458,70 @@
                 <p>Получаю сообщения об ошибках с упоминанием freetype.</p>
             </question>
             <answer>
-                <p>Есть несколько видов таких ошибок. Если сообщение
+                <p>Есть несколько видов таких ошибок. <!-- start translation -->If you get the following:</p>
+<codeblock>/usr/bin/ld: can't locate file for: -lfreetype</codeblock>
+<p>check whether you have an extraneous <filename>freetype-config</filename> excutable by running</p>
+<codeblock>where freetype-config</codeblock>
+<p>if you're using <filename>tcsh</filename>, or</p>
+<codeblock>type -a freetype-config</codeblock>
+<p>if you're using <filename>bash</filename>.  The Mono Framework has been known to install a <filename>/usr/bin/freetype-config</filename> that is a symbolic link to a file in that framework.</p>
+<!-- end translation -->
+<p>Если сообщение
                     выглядит так:</p>
-                <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: error:
-                    parse error before '*' token
-                    /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse
-                    error before '*' token
-                    /sw/include/pango-1.0/pango/pangoft2.h:61: error: parse
-                    error before '*' token
-                    /sw/include/pango-1.0/pango/pangoft2.h:86: error: parse
-                    error before "pango_ft2_font_get_face"
-                    /sw/include/pango-1.0/pango/pangoft2.h:86: warning: data
-                    definition has no type or storage class make[2]: ***
-                    [rsvg-gz.lo] Error 1 make[1]: *** [all-recursive] Error 1
-                    make: *** [all-recursive-am] Error 2 ### execution of make
-                    failed, exit code 2 Failed: compiling librsvg2-2.4.0-3 failed</codeblock>
+                <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: 
+error: parse error before '*' token 
+/sw/include/pango-1.0/pango/pangoft2.h:57:
+error: parse error before '*' token
+/sw/include/pango-1.0/pango/pangoft2.h:61: 
+error: parse error before '*' token 
+/sw/include/pango-1.0/pango/pangoft2.h:86: 
+error: parse error before "pango_ft2_font_get_face"
+/sw/include/pango-1.0/pango/pangoft2.h:86: 
+warning: data definition has no type or storage class 
+make[2]: *** [rsvg-gz.lo] Error 1
+make[1]: *** [all-recursive] Error 1 
+make: *** [all-recursive-am] Error 2 
+### execution of make failed, exit code 2 
+Failed: compiling librsvg2-2.4.0-3 failed</codeblock>
                 <p>или</p>
-                <codeblock>In file included from vteft2.c:32: vteglyph.h:64:
-                    error: parse error before "FT_Library" vteglyph.h:64:
-                    warning: no semicolon at end of struct or union vteft2.c: In
-                    function `_vte_ft2_get_text_width': vteft2.c:236: error:
-                    dereferencing pointer to incomplete type vteft2.c: In
-                    function `_vte_ft2_get_text_height': vteft2.c:244: error:
-                    dereferencing pointer to incomplete type vteft2.c: In
-                    function `_vte_ft2_get_text_ascent': vteft2.c:252: error:
-                    dereferencing pointer to incomplete type vteft2.c: In
-                    function `_vte_ft2_draw_text': vteft2.c:294: error:
-                    dereferencing pointer to incomplete type vteft2.c:295:
-                    error: dereferencing pointer to incomplete type make[2]: ***
-                    [vteft2.lo] Error 1 make[1]: *** [all-recursive] Error 1
-                    make: *** [all] Error 2 ### execution of make failed, exit
-                    code 2 Failed: compiling vte-0.11.10-3 failed</codeblock>
+                <codeblock>In file included from vteft2.c:32: 
+vteglyph.h:64: error:
+parse error before "FT_Library" 
+vteglyph.h:64: warning: 
+no semicolon at end of struct or union vteft2.c: 
+In function `_vte_ft2_get_text_width': 
+vteft2.c:236: error: 
+dereferencing pointer to incomplete type 
+vteft2.c: In function `_vte_ft2_get_text_height':
+vteft2.c:244: error: 
+dereferencing pointer to incomplete type
+vteft2.c: In function `_vte_ft2_get_text_ascent': 
+vteft2.c:252: error:
+dereferencing pointer to incomplete type 
+vteft2.c: In function `_vte_ft2_draw_text': 
+vteft2.c:294: error: 
+dereferencing pointer to incomplete type 
+vteft2.c:295: error: 
+dereferencing pointer to incomplete type
+make[2]: *** [vteft2.lo] Error 1 
+make[1]: *** [all-recursive] Error 1 
+make: *** [all] Error 2 
+### execution of make failed, exit code 2
+Failed: compiling vte-0.11.10-3 failed</codeblock>
                 <p>или</p>
-                <codeblock>checking for
-                    freetype-config.../usr/X11R6/bin/freetype-config checking
-                    For sufficiently new FreeType (at least 2.0.1)... no
-                    configure: error: pangoxft Pango backend found but did not
-                    find freetype libraries make: *** No targets specified and
-                    no makefile found. Stop. ### execution of
-                    LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2 Failed:
-                    compiling gtk+2-2.2.4-2 failed</codeblock>
+                <codeblock>checking for freetype-config.../usr/X11R6/bin/freetype-config 
+checking For sufficiently new FreeType (at least 2.0.1)... no 
+configure: error: pangoxft 
+Pango backend found but did not find freetype libraries 
+make: *** No targets specified and no makefile found. Stop. 
+### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2 
+Failed: compiling gtk+2-2.2.4-2 failed</codeblock><codeblock>checking for freetype-config.../usr/X11R6/bin/freetype-config 
+checking For sufficiently new FreeType (at least 2.0.1)... no 
+configure: error: pangoxft 
+Pango backend found but did not find freetype libraries 
+make: *** No targets specified and no makefile found. Stop. 
+### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2 
+Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
                 <p>значит, проблема возникла из-за путаницы между заголовками в пакете
                     <code>freetype</code> | <code>freetype-hinting</code>
                     и заголовками <code>freetype2</code>, сопровождающими 
@@ -1379,10 +1531,11 @@
                     другой стороны, если ваша ошибка выглядит так:</p>
                 <codeblock>ld: Undefined symbols: _FT_Access_Frame</codeblock>
                 <p>это обычно по причине файла, оставшегося после предыдущей
-                    инсталляции X11. Инсталлируйте снова X11 SDK. Наконец, если у вас
+                    инсталляции X11. Инсталлируйте снова X11 SDK.</p> 
+<p>Наконец, если у вас
                     появляется сообщение об ошибке типа</p>
-                <codeblock>dyld: klines Undefined symbols:
-                    /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame</codeblock>
+                <codeblock>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
+undefined reference to _FT_Access_Frame</codeblock>
                 <p>это значит, что у вас наверное бинарная версия, построенная вместе с
                     <code>gcc3.3</code> в Jaguar, но не работающая в Panther.
                     Теперь существует обновление и таким образом вам просто надо обновить
@@ -1397,15 +1550,14 @@
             <answer>
                 <p>Если сообщение выглядит так: </p>
                 <codeblock>unix_dl.c: In function `rep_open_dl_library':
-                    unix_dl.c:328: warning: assignment discards qualifiers from
-                    pointer target type unix_dl.c: In function
-                    `rep_find_c_symbol': unix_dl.c:466: error: `Dl_info'
-                    undeclared (first use in this function) unix_dl.c:466:
-                    error: (Each undeclared identifier is reported only once
-                    unix_dl.c:466: error: for each function it appears in.)
-                    unix_dl.c:466: error: parse error before "info"
-                    unix_dl.c:467: error: `info' undeclared (first use in this
-                    function) make[1]: *** [unix_dl.lo] Error 1</codeblock>
+unix_dl.c:328: warning: assignment discards qualifiers from pointer target type 
+unix_dl.c: In function `rep_find_c_symbol': 
+unix_dl.c:466: error: `Dl_info' undeclared (first use in this function)
+unix_dl.c:466: error: (Each undeclared identifier is reported only once 
+unix_dl.c:466: error: for each function it appears in.)
+unix_dl.c:466: error: parse error before "info" 
+unix_dl.c:467: error: `info' undeclared (first use in this function) 
+make[1]: *** [unix_dl.lo] Error 1</codeblock>
                 <p>то скорее всего ваш файл заголовка
                     <code>/usr/local/include/dlfcn.h</code> несовместим
                     с Panther. Надо его убрать.</p>
@@ -1413,8 +1565,8 @@
                     заменить этот файл заголовка, а также библиотеку
                     <code>/usr/local/lib/libdl.dylib</code> на символические указатели (алиасы)
                   встроенных файлов Panther</p>
-                <codeblock>sudo ln -s /usr/include/dlfcn.h
-                    /usr/local/include/dlfcn.h sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
+                <codeblock>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
+sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
             </answer>
         </faqentry>
         <faqentry name="gcc2">
@@ -1518,6 +1670,46 @@
                     сделать это самостоятельно.</p>
             </answer>
         </faqentry>
+    <!-- start translation -->
+    <faqentry name="gettext">
+      <question>
+        <p>Whenever I try to build from source, Fink keeps waffling between <code>gettext-dev</code> and <code>libgettext3-dev</code>.</p>
+      </question>
+      <answer>
+        <p>Some packages that need <code>gettext</code> headers to build have been updated to use <code>libgettext3-dev</code> and some still use <code>gettext-dev</code>.  Consequently, Fink may try to switch to whichever one isn't currently installed in order to satisfy a build dependency for some package that you're trying to update.  In addition, the <code>fink </code> tool treats <code>gettext-dev</code> as essential, and will install it any time you selfupdate.</p>
+        <p>Similar behavior can happen for other pairs of packages, too. </p>
+        <p>Unfortunately, due to limitations in the build-dependency engine, you may find that your build bombs because you've swapped in one of these but some later package in your build chain wants the other one.  You can usually proceed by repeating your update command again.</p>
+        <p>In extreme cases you may wind up having to install those packages which build-depend on <code>gettext-dev</code> separately from those which want <code>libgettext3-dev</code> (or whichever pair are causing problems).  You may even have to install packages one by one.</p>
+        <p>A permanent fix should hopefully be available in <code>fink-0.24.9</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="python-mods">
+      <question>
+        <p>I get errors involving <code>MACOSX_DEPLOYMENT_TARGET </code>when I try to build a Python module.</p>
+      </question>
+      <answer>
+        <p>For errors that look like the following:</p>
+        <codeblock>running build
+running build_ext
+Traceback (most recent call last):
+  File "setup_socket_ssl.py", line 21, in ?
+    depends = ['socketmodule.h'] )
+  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
+### execution of /sw/bin/python2.4 failed, exit code 1</codeblock>
+        <p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <em>10.4-transitional</em> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p>
+        <p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p>
+        <p>For runtime errors that give the same type of error message as above, rebuild the module after rebuilding the appropriate <code>python2*</code> package.</p>
+      </answer>
+    </faqentry>
+<faqentry name="libtool-unrecognized-dynamic">
+  <question><p>I get <quote>unrecognized option `-dynamic'</quote> errors from <filename>libtool</filename>.</p></question>
+<answer><p>This error:</p>
+<codeblock> libtool: unrecognized option `-dynamic'</codeblock>
+<p>typically means that you've replaced Apple's <filename>/usr/bin/libtool</filename> with a GNU <filename>libtool</filename>.  Unfortunately, the two <code>libtools</code> <em>do not</em> do the same thing.</p>
+<p>The only way to solve this is to get a working Apple <filename>libtool</filename> from somewhere.  It is installed as part of the <filename>DeveloperTools.pkg</filename> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <filename>/Library/Receipts</filename> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></answer>
+</faqentry>
+<!-- end translation -->
     </chapter>
     <chapter filename="comp-packages">
         <title>Проблемы компиляции - специальные пакеты</title>
@@ -1534,7 +1726,9 @@
                     сделать комментарий вне проблемных строк. </p>
                 <p>Если хотите сохранить эхоотображение, можно сделать
                     нечто вроде следующего:</p>
-                <codeblock>if ( $?prompt) then echo Hello endif</codeblock>
+                <codeblock>if ( $?prompt) then 
+	echo Hello 
+endif</codeblock>
             </answer>
         </faqentry>
         <faqentry name="cant-install-xfree">
@@ -1594,18 +1788,18 @@
                     переключиться между связными и несвязными версиями
                     Fink, надо вручную удалить старую версию. Это выполняется
                     на строке команд при помощи команд:</p>
-                <codeblock>sudo dpkg -r --force-depends xfree86-base sudo dpkg
-                    -r --force-depends xfree86-shlibs sudo dpkg -r
-                    --force-depends xfree86-rootless sudo dpkg -r
-                    --force-depends xfree86-rootless-shlibs</codeblock>
+                <codeblock>sudo dpkg -r --force-depends xfree86-base 
+sudo dpkg -r --force-depends xfree86-shlibs 
+sudo dpkg -r --force-depends xfree86-rootless 
+sudo dpkg -r --force-depends xfree86-rootless-shlibs</codeblock>
                 <p>или путем удаления связных версий:</p>
-                <codeblock>sudo dpkg -r --force-depends xfree86-base-threaded
-                    sudo dpkg -r --force-depends xfree86-shlibs-threaded sudo
-                    dpkg -r --force-depends xfree86-rootless-threaded sudo dpkg
-                    -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
+                <codeblock>sudo dpkg -r --force-depends xfree86-base-threaded 
+sudo dpkg -r --force-depends xfree86-shlibs-threaded 
+sudo dpkg -r --force-depends xfree86-rootless-threaded 
+sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
                 <p>В FinkCommander также есть способ удаления пакетов. В окне
                     исходного кода выберите пакет и затем в
-                        <code>Source Menu</code> примените "<code>Force Remove</code>."</p>
+                        <code>Source Menu</code> примените &quot;<code>Force Remove</code>.&quot;</p>
                 <p>Если вы используете system-xfree86, см. предыдущий вопрос
                     относительно ее удаления.</p>
                 <p>Инсталлируйте необходимую вам версию xfree86:</p>
@@ -1615,8 +1809,8 @@
                 <p>
                     <code>xfree86-base-threaded</code> и <code>xfree86-rootless-threaded</code>
                 </p>
-                <p>обычным образом: "<code>fink install</code>" для пользователей
-                    исходного кода, "<code>apt-get install</code>" или
+                <p>обычным образом: &quot;<code>fink install</code>&quot; для пользователей
+                    исходного кода, &quot;<code>apt-get install</code>&quot; или
                     <code>dselect</code> для бинарных файлов.</p>
             </answer>
         </faqentry>
@@ -1669,9 +1863,50 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
                 <p>Если вы получили сообщение об ошибке в таком виде:</p>
                 <codeblock>libtool: link: cannot find the library `/sw/lib/libiconv.la'</codeblock>
                 <p>можно решить проблему при помощи</p>
-                <codeblock>fink remove gettext-dev fink install libiconv</codeblock>
+                <codeblock>fink remove gettext-dev 
+fink install libiconv</codeblock>
             </answer>
         </faqentry>
+    <!-- start translation -->
+    <faqentry name="cplusplus-filt">
+      <question>
+        <p>i can't install <code>g77</code> because <filename>c++filt</filename> is missing.  Where do I get it?</p>
+      </question>
+      <answer>
+        <p>If you get errors of the form </p>
+        <codeblock>xgcc: installation problem, cannot exec `c++filt': No such file or directory</codeblock>
+        <p>since updating to Tiger, then you need to do the following:</p>
+        <ul>
+          <li>Flush out your old Developer Tools versions via running <codeblock>/Developer/Tools/uninstall-devtools.pl</codeblock>in a terminal.  Then install XCode (2.0 or later).<p></p></li>
+          <li>Reinstall  <code>BSD.pkg</code> (from the Tiger system installation).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
+        </ul>
+        <p>
+1) Flush out your old
+2) Reinstall BSD.pkg (from your main OS install)</p>
+      </answer>
+    </faqentry>
+    <faqentry name="gettext-tools">
+      <question>
+        <p>Fink refuses to update the <code>gettext</code> package,
+complaining that the dependencies are in an inconsistent state.</p>
+      </question>
+      <answer>
+        <p>After running <code>fink selfupdate</code> to be sure you
+have the latest versions, try <code>fink update gettext-tools</code>.
+An old version of the <code>gettext-tools</code> package may be 
+preventing you from updating <code>gettext</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="all-others">
+      <question>
+        <p>I'm having issues with a package that isn't listed here.</p>
+      </question>
+      <answer>
+        <p>Since package problems tend to be transient, we've decided to put them
+      up on the Fink wiki.  Check the <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</link>.</p>
+      </answer>
+    </faqentry>
+    <!-- end translation -->
     </chapter>
     <chapter filename="usage-general">
         <title>Проблемы использования пакетов - Общие вопросы</title>
@@ -1754,13 +1989,22 @@ version. This really shouldn't happen, so I'm bailing. :(</codeblock>
                     стандартный процесс конфигурирования/создания, вам надо установить некоторые
                     переменные величины среды:</p>
                 <p>-tcsh-</p>
-                <codeblock>setenv CFLAGS -I/sw/include setenv LDFLAGS -L/sw/lib
-                    setenv CXXFLAGS $CFLAGS setenv CPPFLAGS $CXXFLAGS setenv
-                    ACLOCAL_FLAGS "-I /sw/share/aclocal" setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</codeblock>
-                <p>-bash-</p>
-                <codeblock>export CFLAGS=-I/sw/include export LDFLAGS=-L/sw/lib
-                    export CXXFLAGS=$CFLAGS export CPPFLAGS=$CXXFLAGS export
-                    ACLOCAL_FLAGS="-I /sw/share/aclocal" export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</codeblock>
+        <codeblock>setenv CFLAGS -I/sw/include 
+setenv LDFLAGS -L/sw/lib 
+setenv CXXFLAGS $CFLAGS 
+setenv CPPFLAGS $CXXFLAGS 
+setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
+setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
+setenv MACOSX_DEPLOYMENT_TARGET 10.4</codeblock>
+        <p>-bash-</p>
+        <codeblock>export CFLAGS=-I/sw/include 
+export LDFLAGS=-L/sw/lib 
+export CXXFLAGS=$CFLAGS 
+export CPPFLAGS=$CXXFLAGS 
+export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
+export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
+export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
+	<p>(assuming that the build system is running OS 10.4 or later)</p>
                 <p>Зачастую легче всего просто добавить их к своим файлам инициализации
                     (н-р <filename>.cshrc</filename> |
                     <filename>.profile</filename>), чтобы они установились
@@ -2157,7 +2401,8 @@ sort this out.
                 <p>
                     <em>.xinitrc</em>
                 </p>
-                <codeblock>xrdb -load $HOME/.Xresources xmodmap $HOME/.Xmodmap</codeblock>
+                <codeblock>xrdb -load $HOME/.Xresources 
+xmodmap $HOME/.Xmodmap</codeblock>
                 <p/>
             </answer>
         </faqentry>
@@ -2172,7 +2417,8 @@ sort this out.
                     GNOME 2.x надо запускать менеджер окон в
                     <code>~/.xinitrc</code> до выполнения
                     <code>gnome-session</code>, н-р:</p>
-                <codeblock>... exec metacity &amp; exec gnome-session</codeblock>
+                <codeblock>... 
+exec metacity &amp; exec gnome-session</codeblock>
                 <p>Прим.: это больше не относится к <em>GNOME 2.4</em>. Выполнение
                     <filename>gnome-session</filename> активизирует менеджер окон.</p>
             </answer>
@@ -2216,7 +2462,8 @@ sort this out.
                             <code>fink</code>, то обновление
                             <code>fink</code> может решить проблему сразу,
                             н-р через</p>
-                        <codeblock>sudo apt-get update sudo apt-get install fink</codeblock>
+                        <codeblock>sudo apt-get update
+sudo apt-get install fink</codeblock>
                     </li>
                     <li>
                         <em>При инсталляции на основе исходного кода:</em>
@@ -2278,8 +2525,7 @@ sort this out.
                     и делает виртуальные пакеты. Поскольку другие пакеты
                     зависят от <filename>system-xfree86</filename>, следует применить
                     команду </p>
-                <codeblock>sudo dpkg -r --force-all system-xfree86
-                    system-xfree86-42 system-xfree86-43</codeblock>
+                <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
                 <p>для удаления устаревших версий. Можно проверить инсталляцию
                     при помощи </p>
                 <codeblock>fink list -i system-xfree86</codeblock>
@@ -2304,14 +2550,13 @@ sort this out.
                     возможно, вам надо убрать свою инсталляцию X11,
                     удалить все старые заполнители и частично/полностью
                     инсталлированные пакеты, связанные с X11:</p>
-                <codeblock>sudo dpkg -r --force-all system-xfree86
-                    system-xfree86-42 system-xfree86-43 \ xorg xorg-shlibs
-                    xfree86 xfree86-shlibs \ xfree86-base xfree86-base-shlibs
-                    xfree86-rootless xfree86-rootless-shlibs \
-                    xfree86-base-threaded xfree86-base-threaded-shlibs \
-                    xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
-                    rm -rf /Library/Receipts/X11SDK.pkg
-                    /Library/Receipts/X11User.pkg fink selfupdate; fink index</codeblock>
+                <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+xorg xorg-shlibs xfree86 xfree86-shlibs \
+xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
+xfree86-base-threaded xfree86-base-threaded-shlibs \
+xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
+rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
+fink selfupdate; fink index</codeblock>
                 <p>(первая строка может предупреждать о попытке удаления
                     несуществующих пакетов). Затем надо реинсталлировать Apple X11 (и в случае необходимости
                     X11SDK) либо альтернативную разработку X11
@@ -2332,5 +2577,36 @@ sort this out.
                 </ul>
             </answer>
         </faqentry>
+    <!-- start translation -->
+    <faqentry name="tiger-gtk">
+      <question>
+        <p>After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</p>
+      </question>
+      <answer>
+        <p>This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p>
+        <p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
+</p>
+        <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
+        <p>E.g., if you want to use <code>gnucash</code>, you'd use</p>
+        <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</codeblock>
+        <p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p>
+        <p>You may find it preferable to set this globally (e.g. in your startup script, and/or in your <code>.xinitrc</code>, which you may need to do to run GNOME).  Put</p>
+        <codeblock>export DYLD_FALLBACK_LIBRARY_PATH=:</codeblock>
+        <p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <em>bash</em> users and:</p>
+        <codeblock>setenv DYLD_FALLBACK_LIBRARY_PATH :</codeblock>
+        <p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <em>tcsh</em> users.</p>
+        <p>Note:  this will automatically be done if you install a recent enough <code>base-files</code>.
+	</p>
+      </answer>
+    </faqentry>
+    <faqentry name="yelp">
+      <question>
+        <p>I can't get the help to work for any GNOME application.</p>
+      </question>
+      <answer>
+        <p>You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p>
+      </answer>
+    </faqentry>
+    <!-- end translation -->
     </chapter>
 </document>

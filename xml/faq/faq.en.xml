@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.78 2006/11/17 17:56:11 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.79 2006/11/25 05:41:37 babayoshihiko Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -503,13 +503,13 @@ Updating using CVS failed. Check the error messages above.</codeblock>
         <p>If, you don't see either of the above messages, then this almost
         always means you've modified a file in your /sw/fink/dists tree and
         now the maintainer has changed it. Look further back in the
-        selfupdate-cvs output for lines that start with "C", like so:</p>
+        selfupdate-cvs output for lines that start with &quot;C&quot;, like so:</p>
         <codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info 
 ... (other info and patch files) ... 
 ### execution of su failed, exit code 1 
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>
-        <p>The "C" means CVS had a conflict in trying to update the latest
-        version.  The fix is to delete any files that show up as starting with "C" in
+        <p>The &quot;C&quot; means CVS had a conflict in trying to update the latest
+        version.  The fix is to delete any files that show up as starting with &quot;C&quot; in
         the output of selfupdate-cvs, and try again:</p>
         <codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</codeblock>
@@ -575,7 +575,7 @@ fink selfupdate-cvs</codeblock>
     </faqentry>
     <faqentry name="fink-not-found">
       <question>
-        <p>I get "command not found" errors when I run Fink or anything that I
+        <p>I get &quot;command not found&quot; errors when I run Fink or anything that I
         installed with Fink.</p>
       </question>
       <answer>
@@ -621,7 +621,7 @@ fink selfupdate-cvs</codeblock>
     <faqentry name="install-info-bad">
       <question>
         <p>I can't install anything, because I get the following error:
-        "install-info: unrecognized option `--infodir=/sw/share/info'"</p>
+        &quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;</p>
       </question>
       <answer>
         <p>This usually is due to a problem in your PATH. In a terminal window
@@ -899,7 +899,7 @@ Failed test (./Command/chowname.t at line 27)
       </question>
       <answer>
         <p>This error:</p>
-        <codeblock>Failed: Can't move "/sw/fink" out of the way.</codeblock>
+        <codeblock>Failed: Can't move &quot;/sw/fink&quot; out of the way.</codeblock>
         <p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p>
         <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
       </answer>
@@ -935,7 +935,7 @@ deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
     </faqentry>
     <faqentry name="fc-cache">
       <question>
-        <p>I get a message that says "No fonts found".</p>
+        <p>I get a message that says &quot;No fonts found&quot;.</p>
       </question>
       <answer>
         <p>If you see the following (so far only seen on OS 10.4):</p>
@@ -950,7 +950,7 @@ page and on http://fontconfig.org.</codeblock>
     </faqentry>
     <faqentry name="non-admin-installer">
       <question>
-        <p> I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</p>
+        <p> I can't install Fink via the Installer package, because I get &quot;volume doesn't support symlinks&quot; errors.</p>
       </question>
       <answer>
         <p>This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p>
@@ -1019,7 +1019,7 @@ sudo apt-get update ; sudo apt-get install fink-mirrors
         <p>if your message is of the form</p>
         <codeblock>make: command not found</codeblock>
         <p>or</p>
-        <codeblock>Can't exec "make": 
+        <codeblock>Can't exec &quot;make&quot;: 
 No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
         <p>It means you need to install the Developer Tools.</p>
         <p>On the other hand, if your error message looks like</p>
@@ -1517,7 +1517,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
         <p>FinkCommander also has a way to remove packages. In the source
         window, select a package, and then in the <code>Source Menu</code> use
-        "<code>Force Remove</code>."</p>
+        &quot;<code>Force Remove</code>.&quot;</p>
         <p>If you are using system-xfree86, see the previous question for
         removing it.</p>
         <p>Install the version of xfree86 you want:</p>
@@ -1529,7 +1529,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
         <code>xfree86-rootless-threaded</code>
         </p>
         <p>by the usual means: "<code>fink install</code>" for source users,
-        "<code>apt-get install</code>" or <code>dselect</code> for
+        &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for
         binaries.</p>
       </answer>
     </faqentry>
@@ -1704,16 +1704,16 @@ preventing you from updating <code>gettext</code>.</p>
 setenv LDFLAGS -L/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal" 
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
+setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
+setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
 setenv MACOSX_DEPLOYMENT_TARGET 10.4</codeblock>
         <p>-bash-</p>
         <codeblock>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
+export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
+export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
 export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 	<p>(assuming that the build system is running OS 10.4 or later)</p>
         <p>It is often easiest just to add these to your startup files (e.g.

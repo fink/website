@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.24 2006/08/04 21:44:56 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.25 2006/11/25 05:41:37 babayoshihiko Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -310,12 +310,12 @@ gcc 3.3 compiler is out of date.&quot; 我应该怎么办？</p>
           <li>
             <p>使用下面命令安装 <em>cvs-proxy</em> 软件包：</p>
             <p>
-              <code>fink install <em>cvs-proxy</em>
+              <code>fink --use-binary-dist install <em>cvs-proxy</em>
               </code>
             </p>
           </li>
           <li>
-            <p>然后用下面命令更新软件包：</p>
+            <p><!-- start translation -->Switch to the CVS update method with the command<!-- end translation -->:：</p>
             <p>
               <code>fink selfupdate-cvs</code>
             </p>
@@ -1116,7 +1116,7 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
     <!-- start translation -->
     <faqentry name="basic-headers">
       <question>
-        <p>I get messages saying that I'm missing <filename>stddef.h</filename>, <filename>wchar.h</filename>, or <filename>crt1.o</filename>, or that my "C compiler cannot create executables".</p>
+        <p>I get messages saying that I'm missing <filename>stddef.h</filename> | <filename>wchar.h</filename> | <filename>stdlib.h</filename> | <filename>crt1.o</filename>, or that my <quote>C compiler cannot create executables</quote>.</p>
       </question>
       <answer>
         <p>Both of these problems are typically due to the absence of essential headers that are provided by the DevSDK package of
@@ -1124,7 +1124,7 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
         <filename>/Library/Receipts/DevSDK.pkg</filename> exists on your
         system. If not, then run the Dev Tools Installer again, and install
         the DevSDK package using a Custom Install.</p>
-        <p>The "cannot create executables" error can also occur when your Developer Tools version is for an earlier OS version.</p>
+        <p>The <quote>cannot create executables</quote> error can also occur when your Developer Tools version is for an earlier OS version.</p>
       </answer>
     </faqentry>
     <!-- end translation -->
@@ -1153,7 +1153,15 @@ sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status
         <p>我碰到一个涉及 freetype 的错误。</p>
       </question>
       <answer>
-        <p>这个错误有几种形式。如果你的错误是这样的：</p>
+        <p>这个错误有几种形式。<!-- start translation -->If you get the following:</p>
+<codeblock>/usr/bin/ld: can't locate file for: -lfreetype</codeblock>
+<p>check whether you have an extraneous <filename>freetype-config</filename> excutable by running</p>
+<codeblock>where freetype-config</codeblock>
+<p>if you're using <filename>tcsh</filename>, or</p>
+<codeblock>type -a freetype-config</codeblock>
+<p>if you're using <filename>bash</filename>.  The Mono Framework has been known to install a <filename>/usr/bin/freetype-config</filename> that is a symbolic link to a file in that framework.</p>
+<!-- end translation -->
+<p>如果你的错误是这样的：</p>
         <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token
 /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token
 /sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token
@@ -1194,7 +1202,8 @@ Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
         <p>命令可以删除你安装的（导致问题的）变种。如果你的错误是这样的：</p>
         <codeblock>ld: Undefined symbols:
 _FT_Access_Frame </codeblock>
-        <p>这通常是用于以前安装的 X11 的残余文件。你需要重新安装 X11 SDK。最后，如果你获得一个这样的错误：</p>
+        <p>这通常是用于以前安装的 X11 的残余文件。你需要重新安装 X11 SDK。</p> 
+<p>最后，如果你获得一个这样的错误：</p>
         <codeblock>dyld: klines Undefined symbols:
 /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame
 </codeblock>
@@ -1319,6 +1328,13 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
         <p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p>
       </answer>
     </faqentry>
+<faqentry name="libtool-unrecognized-dynamic">
+  <question><p>I get <quote>unrecognized option `-dynamic'</quote> errors from <filename>libtool</filename>.</p></question>
+<answer><p>This error:</p>
+<codeblock> libtool: unrecognized option `-dynamic'</codeblock>
+<p>typically means that you've replaced Apple's <filename>/usr/bin/libtool</filename> with a GNU <filename>libtool</filename>.  Unfortunately, the two <code>libtools</code> <em>do not</em> do the same thing.</p>
+<p>The only way to solve this is to get a working Apple <filename>libtool</filename> from somewhere.  It is installed as part of the <filename>DeveloperTools.pkg</filename> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <filename>/Library/Receipts</filename> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></answer>
+</faqentry>
     <!-- end translation -->
   </chapter>
   <chapter filename="comp-packages" >
@@ -1458,6 +1474,18 @@ fink install libiconv</codeblock>
 2) Reinstall BSD.pkg (from your main OS install)</p>
       </answer>
     </faqentry>
+    <faqentry name="gettext-tools">
+      <question>
+        <p>Fink refuses to update the <code>gettext</code> package,
+complaining that the dependencies are in an inconsistent state.</p>
+      </question>
+      <answer>
+        <p>After running <code>fink selfupdate</code> to be sure you
+have the latest versions, try <code>fink update gettext-tools</code>.
+An old version of the <code>gettext-tools</code> package may be 
+preventing you from updating <code>gettext</code>.</p>
+      </answer>
+    </faqentry>
     <faqentry name="all-others">
       <question>
         <p>I'm having issues with a package that isn't listed here.</p>
@@ -1518,19 +1546,22 @@ X11 文档有更多的<link url="http://fink.sourceforge.net/doc/x11/trouble.php
 <!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->        <p>当你编译一些不属于 Fink 的东西的时候，编译器和连接器需要知道去哪里找 Fink 安装的库和头文件。对于那些使用标准 configure/make 过程的软件，你需要设置这些环境变量：
 </p>
         <p>对于 tcsh</p>
-        <codeblock>setenv CFLAGS -I/sw/include
-setenv LDFLAGS -L/sw/lib
-setenv CXXFLAGS $CFLAGS
-setenv CPPFLAGS $CXXFLAGS
+        <codeblock>setenv CFLAGS -I/sw/include 
+setenv LDFLAGS -L/sw/lib 
+setenv CXXFLAGS $CFLAGS 
+setenv CPPFLAGS $CXXFLAGS 
 setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
-setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;</codeblock>
-        <p>对于 bash</p>
-        <codeblock>export CFLAGS=-I/sw/include
-export LDFLAGS=-L/sw/lib
-export CXXFLAGS=$CFLAGS
-export CPPFLAGS=$CXXFLAGS
+setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
+setenv MACOSX_DEPLOYMENT_TARGET 10.4</codeblock>
+        <p>-bash-</p>
+        <codeblock>export CFLAGS=-I/sw/include 
+export LDFLAGS=-L/sw/lib 
+export CXXFLAGS=$CFLAGS 
+export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
-export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;</codeblock>
+export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
+export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
+	<p>(<!-- start translation -->assuming that the build system is running OS 10.4 or later<!-- end translation -->)</p>
         <p>
 通常最简单的办法是把这些东西加到你的启动脚本文件（比如 <filename>.cshrc</filename> 或 <filename>.profile</filename>），这样他们就可以自动被设置。
 如果一个软件包不使用这些环境变量，你需要自己添加
