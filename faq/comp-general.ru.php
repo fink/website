@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Компиляция (1)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 14:57:47';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-packages.php?phpLang=ru" title="Проблемы компиляции - специальные пакеты"><link rel="prev" href="usage-fink.php?phpLang=ru" title="Инсталляция, использование и поддержка Fink">';
 
 
@@ -25,8 +25,8 @@ include_once "header.ru.inc";
         <a name="missing-make">
             <div class="question"><p><b><? echo FINK_Q ; ?>6.3: Получил сообщение об ошибке, которое упоминает <code>make</code>
                 </b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если сообщение в такой форме:</p><pre>make: command not found</pre><p>или</p><pre>Can't exec "make": No such file or directory at
-                    /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>это значит, что вам надо инсталлировать Developer Tools.</p><p>С другой стороны, если сообщение об ошибке выглядит таким образом: </p><pre>make: illegal option -- C</pre><p>значит, вы заменили версию GNU утилита <code>make</code>, инсталлированного
+            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если сообщение в такой форме:</p><pre>make: command not found</pre><p>или</p><pre>Can't exec "make": 
+No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>это значит, что вам надо инсталлировать Developer Tools.</p><p>С другой стороны, если сообщение об ошибке выглядит таким образом: </p><pre>make: illegal option -- C</pre><p>значит, вы заменили версию GNU утилита <code>make</code>, инсталлированного
                     в качестве части Developer Tools, версией make BSD.
                     Многие пакеты основываются на специальных параметрах, поддерживаемых
                     только GNU make. Надо убедиться, что
@@ -70,9 +70,8 @@ include_once "header.ru.inc";
                     сообщения о "слабых библиотеках" ( "weak libraries").</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Это новая проблема в связи с инструментами за декабрь 2002 г. Вы можете иногда
                     получать сообщения такого типа (с выбором libgdk-pixbuf как пример):</p><pre>ld: warning dynamic shared library:
-                    /sw/lib/libgdk-pixbuf.dylib not made a weak library in
-                    output with MACOSX_DEPLOYMENT_TARGET environment variable
-                    set to: 10.1</pre><p>Можете считать их безобидными. Если разбирает любопытство, просмотрите
+/sw/lib/libgdk-pixbuf.dylib not made a weak library in output with
+MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</pre><p>Можете считать их безобидными. Если разбирает любопытство, просмотрите
                     заметки о выпусках версий в каталоге документации разработчика,
                     в частности что касается GCC и компоновщика, для получения более подробных сведений.
                     Обычно это вопрос того, считать ли пропущенные знаки во время выполнения
@@ -92,17 +91,17 @@ include_once "header.ru.inc";
                     процесс компоновки не остановился. Для обратного отслеживания файла(-ов)
                     с ошибкой надо произвести поиск в компоновке несуществующего
                     файла, н-р если у вас что-то вроде этого: </p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
-                    /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ mv: cannot stat
-                    `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': No such
-                    file or directory ### execution of mv failed, exit code 1
-                    Failed: installing foo-0.1.2-3 failed</pre><p>надо искать <code>libbar</code>
+/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ 
+mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+No such file or directory 
+### execution of mv failed, exit code 1 
+Failed: installing foo-0.1.2-3 failed</pre><p>надо искать <code>libbar</code>
                     где-то в выводе вашей попытки компоновки. </p></div>
         </a>
         <a name="node-exists">
             <div class="question"><p><b><? echo FINK_Q ; ?>6.8: Не могу инсталлировать пакет | обновление, т.к. получил сообщение, что
                     узел ("node") уже существует.</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Эти ошибки иногда выглядят так:</p><pre>Failed: Internal error: node for system-xfree86
-                    already exists</pre><p>Проблема заключается в том, что процессор взаимозависимости запутался из-за
+            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Эти ошибки иногда выглядят так:</p><pre>Failed: Internal error: node for system-xfree86 already exists</pre><p>Проблема заключается в том, что процессор взаимозависимости запутался из-за
                     изменений в некоторых информационных файлах пакета. Для решения проблемы надо:</p><ul>
                     <li>
                         <p>Насильно удалить пакет с ошибкой, т.е.</p>
@@ -134,8 +133,9 @@ include_once "header.ru.inc";
             <div class="question"><p><b><? echo FINK_Q ; ?>6.10: Когда я пытаюсь построить пакет, получаю сообщение, что содержание ("table
                     of contents") устарело. Что делать?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ввод дает намек на то, что делать. Обычно сообщение
-                    выглядит так:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a
-                    is out of date; rerun ranlib(1) (can't load from it)</pre><p>Надо применить ranlib (в качестве суперпользователя) в любой
+                    выглядит так:</p><pre>ld: table of contents for archive: 
+/sw/lib/libintl.a is out of date; 
+rerun ranlib(1) (can't load from it)</pre><p>Надо применить ranlib (в качестве суперпользователя) в любой
                     библиотеке, где возникла проблема. В качестве примера, для 
                     вышеприведенного случая надо выполнить:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
         </a>
@@ -146,19 +146,16 @@ include_once "header.ru.inc";
                     Commander ничего не отображал. Вместо этого надо использовать <code>fink
                         install atlas</code>.</p></div>
         </a>
-        <a name="basic-headers">
-            <div class="question"><p><b><? echo FINK_Q ; ?>6.12: Получил сообщения о том, что у меня не хватает 
-                    <code>stddef.h</code>, <code>wchar.h</code> и
-                     <code>crt1.o</code> или что мой С-компилятор не может создать выполняемые файлы ("C compiler
-                    cannot create executables").</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Обе проблемы обычно обусловлены отсутствием
-                    основных заголовков, предоставляемых пакетом DevSDK в
-                    Developer Tools. Проверьте наличие
-                    <code>/Library/Receipts/DevSDK.pkg</code> в вашей
-                    системе. В случае отсутствия снова запустите инсталлятор Developer Tools
-                    и инсталлируйте пакет DevSDK при помощи Custom Install.</p><p>Ошибка "cannot create executables" также может возникать,
-                    когда ваша версия Developer Tools предназначена для более ранней версии OS.</p></div>
-        </a>
+    
+    <a name="basic-headers">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing <code>stddef.h</code> | <code>wchar.h</code> | <code>stdlib.h</code> | <code>crt1.o</code>, or that my <q>C compiler cannot create executables</q>.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Both of these problems are typically due to the absence of essential headers that are provided by the DevSDK package of
+        the Developer Tools. Check whether
+        <code>/Library/Receipts/DevSDK.pkg</code> exists on your
+        system. If not, then run the Dev Tools Installer again, and install
+        the DevSDK package using a Custom Install.</p><p>The <q>cannot create executables</q> error can also occur when your Developer Tools version is for an earlier OS version.</p></div>
+    </a>
+    
         <a name="multiple-dependencies">
             <div class="question"><p><b><? echo FINK_Q ; ?>6.13: Не могу сделать обновление, т.к. Fink не может разрешить конфликт версий многих взаимозависимостей ("unable to resolve version
                     conflict on multiple dependencies").</b></p></div>
@@ -177,48 +174,64 @@ include_once "header.ru.inc";
         </a>
         <a name="freetype-problems">
             <div class="question"><p><b><? echo FINK_Q ; ?>6.15: Получаю сообщения об ошибках с упоминанием freetype.</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Есть несколько видов таких ошибок. Если сообщение
-                    выглядит так:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error:
-                    parse error before '*' token
-                    /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse
-                    error before '*' token
-                    /sw/include/pango-1.0/pango/pangoft2.h:61: error: parse
-                    error before '*' token
-                    /sw/include/pango-1.0/pango/pangoft2.h:86: error: parse
-                    error before "pango_ft2_font_get_face"
-                    /sw/include/pango-1.0/pango/pangoft2.h:86: warning: data
-                    definition has no type or storage class make[2]: ***
-                    [rsvg-gz.lo] Error 1 make[1]: *** [all-recursive] Error 1
-                    make: *** [all-recursive-am] Error 2 ### execution of make
-                    failed, exit code 2 Failed: compiling librsvg2-2.4.0-3 failed</pre><p>или</p><pre>In file included from vteft2.c:32: vteglyph.h:64:
-                    error: parse error before "FT_Library" vteglyph.h:64:
-                    warning: no semicolon at end of struct or union vteft2.c: In
-                    function `_vte_ft2_get_text_width': vteft2.c:236: error:
-                    dereferencing pointer to incomplete type vteft2.c: In
-                    function `_vte_ft2_get_text_height': vteft2.c:244: error:
-                    dereferencing pointer to incomplete type vteft2.c: In
-                    function `_vte_ft2_get_text_ascent': vteft2.c:252: error:
-                    dereferencing pointer to incomplete type vteft2.c: In
-                    function `_vte_ft2_draw_text': vteft2.c:294: error:
-                    dereferencing pointer to incomplete type vteft2.c:295:
-                    error: dereferencing pointer to incomplete type make[2]: ***
-                    [vteft2.lo] Error 1 make[1]: *** [all-recursive] Error 1
-                    make: *** [all] Error 2 ### execution of make failed, exit
-                    code 2 Failed: compiling vte-0.11.10-3 failed</pre><p>или</p><pre>checking for
-                    freetype-config.../usr/X11R6/bin/freetype-config checking
-                    For sufficiently new FreeType (at least 2.0.1)... no
-                    configure: error: pangoxft Pango backend found but did not
-                    find freetype libraries make: *** No targets specified and
-                    no makefile found. Stop. ### execution of
-                    LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2 Failed:
-                    compiling gtk+2-2.2.4-2 failed</pre><p>значит, проблема возникла из-за путаницы между заголовками в пакете
+            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Есть несколько видов таких ошибок. If you get the following:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>check whether you have an extraneous <code>freetype-config</code> excutable by running</p><pre>where freetype-config</pre><p>if you're using <code>tcsh</code>, or</p><pre>type -a freetype-config</pre><p>if you're using <code>bash</code>.  The Mono Framework has been known to install a <code>/usr/bin/freetype-config</code> that is a symbolic link to a file in that framework.</p><p>Если сообщение
+                    выглядит так:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: 
+error: parse error before '*' token 
+/sw/include/pango-1.0/pango/pangoft2.h:57:
+error: parse error before '*' token
+/sw/include/pango-1.0/pango/pangoft2.h:61: 
+error: parse error before '*' token 
+/sw/include/pango-1.0/pango/pangoft2.h:86: 
+error: parse error before "pango_ft2_font_get_face"
+/sw/include/pango-1.0/pango/pangoft2.h:86: 
+warning: data definition has no type or storage class 
+make[2]: *** [rsvg-gz.lo] Error 1
+make[1]: *** [all-recursive] Error 1 
+make: *** [all-recursive-am] Error 2 
+### execution of make failed, exit code 2 
+Failed: compiling librsvg2-2.4.0-3 failed</pre><p>или</p><pre>In file included from vteft2.c:32: 
+vteglyph.h:64: error:
+parse error before "FT_Library" 
+vteglyph.h:64: warning: 
+no semicolon at end of struct or union vteft2.c: 
+In function `_vte_ft2_get_text_width': 
+vteft2.c:236: error: 
+dereferencing pointer to incomplete type 
+vteft2.c: In function `_vte_ft2_get_text_height':
+vteft2.c:244: error: 
+dereferencing pointer to incomplete type
+vteft2.c: In function `_vte_ft2_get_text_ascent': 
+vteft2.c:252: error:
+dereferencing pointer to incomplete type 
+vteft2.c: In function `_vte_ft2_draw_text': 
+vteft2.c:294: error: 
+dereferencing pointer to incomplete type 
+vteft2.c:295: error: 
+dereferencing pointer to incomplete type
+make[2]: *** [vteft2.lo] Error 1 
+make[1]: *** [all-recursive] Error 1 
+make: *** [all] Error 2 
+### execution of make failed, exit code 2
+Failed: compiling vte-0.11.10-3 failed</pre><p>или</p><pre>checking for freetype-config.../usr/X11R6/bin/freetype-config 
+checking For sufficiently new FreeType (at least 2.0.1)... no 
+configure: error: pangoxft 
+Pango backend found but did not find freetype libraries 
+make: *** No targets specified and no makefile found. Stop. 
+### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2 
+Failed: compiling gtk+2-2.2.4-2 failed</pre><pre>checking for freetype-config.../usr/X11R6/bin/freetype-config 
+checking For sufficiently new FreeType (at least 2.0.1)... no 
+configure: error: pangoxft 
+Pango backend found but did not find freetype libraries 
+make: *** No targets specified and no makefile found. Stop. 
+### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2 
+Failed: compiling gtk+2-2.2.4-2 failed</pre><p>значит, проблема возникла из-за путаницы между заголовками в пакете
                     <code>freetype</code> | <code>freetype-hinting</code>
                     и заголовками <code>freetype2</code>, сопровождающими 
                     X11 | XFree86.</p><pre>fink remove freetype freetype-hinting</pre><p>удалит любой вариант, который вы инсталлировали. С
                     другой стороны, если ваша ошибка выглядит так:</p><pre>ld: Undefined symbols: _FT_Access_Frame</pre><p>это обычно по причине файла, оставшегося после предыдущей
-                    инсталляции X11. Инсталлируйте снова X11 SDK. Наконец, если у вас
-                    появляется сообщение об ошибке типа</p><pre>dyld: klines Undefined symbols:
-                    /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame</pre><p>это значит, что у вас наверное бинарная версия, построенная вместе с
+                    инсталляции X11. Инсталлируйте снова X11 SDK.</p><p>Наконец, если у вас
+                    появляется сообщение об ошибке типа</p><pre>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
+undefined reference to _FT_Access_Frame</pre><p>это значит, что у вас наверное бинарная версия, построенная вместе с
                     <code>gcc3.3</code> в Jaguar, но не работающая в Panther.
                     Теперь существует обновление и таким образом вам просто надо обновить
                     свои пакеты, н-р через <code>sudo apt-get update ; sudo
@@ -227,21 +240,20 @@ include_once "header.ru.inc";
         <a name="dlfcn-from-oo">
             <div class="question"><p><b><? echo FINK_Q ; ?>6.16: Получил сообщение об ошибке построения с упоминанием `Dl_info'.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если сообщение выглядит так: </p><pre>unix_dl.c: In function `rep_open_dl_library':
-                    unix_dl.c:328: warning: assignment discards qualifiers from
-                    pointer target type unix_dl.c: In function
-                    `rep_find_c_symbol': unix_dl.c:466: error: `Dl_info'
-                    undeclared (first use in this function) unix_dl.c:466:
-                    error: (Each undeclared identifier is reported only once
-                    unix_dl.c:466: error: for each function it appears in.)
-                    unix_dl.c:466: error: parse error before "info"
-                    unix_dl.c:467: error: `info' undeclared (first use in this
-                    function) make[1]: *** [unix_dl.lo] Error 1</pre><p>то скорее всего ваш файл заголовка
+unix_dl.c:328: warning: assignment discards qualifiers from pointer target type 
+unix_dl.c: In function `rep_find_c_symbol': 
+unix_dl.c:466: error: `Dl_info' undeclared (first use in this function)
+unix_dl.c:466: error: (Each undeclared identifier is reported only once 
+unix_dl.c:466: error: for each function it appears in.)
+unix_dl.c:466: error: parse error before "info" 
+unix_dl.c:467: error: `info' undeclared (first use in this function) 
+make[1]: *** [unix_dl.lo] Error 1</pre><p>то скорее всего ваш файл заголовка
                     <code>/usr/local/include/dlfcn.h</code> несовместим
                     с Panther. Надо его убрать.</p><p>Обычно его инсталлирует Open Office и вам надо
                     заменить этот файл заголовка, а также библиотеку
                     <code>/usr/local/lib/libdl.dylib</code> на символические указатели (алиасы)
-                  встроенных файлов Panther</p><pre>sudo ln -s /usr/include/dlfcn.h
-                    /usr/local/include/dlfcn.h sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
+                  встроенных файлов Panther</p><pre>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
+sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
         </a>
         <a name="gcc2">
             <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink утверждает, что мне не хватает <code>gcc2</code> или
@@ -313,6 +325,27 @@ include_once "header.ru.inc";
                     с официальным пакетом. Если вам это нужно, придется
                     сделать это самостоятельно.</p></div>
         </a>
+    
+    <a name="gettext">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.23: Whenever I try to build from source, Fink keeps waffling between <code>gettext-dev</code> and <code>libgettext3-dev</code>.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Some packages that need <code>gettext</code> headers to build have been updated to use <code>libgettext3-dev</code> and some still use <code>gettext-dev</code>.  Consequently, Fink may try to switch to whichever one isn't currently installed in order to satisfy a build dependency for some package that you're trying to update.  In addition, the <code>fink </code> tool treats <code>gettext-dev</code> as essential, and will install it any time you selfupdate.</p><p>Similar behavior can happen for other pairs of packages, too. </p><p>Unfortunately, due to limitations in the build-dependency engine, you may find that your build bombs because you've swapped in one of these but some later package in your build chain wants the other one.  You can usually proceed by repeating your update command again.</p><p>In extreme cases you may wind up having to install those packages which build-depend on <code>gettext-dev</code> separately from those which want <code>libgettext3-dev</code> (or whichever pair are causing problems).  You may even have to install packages one by one.</p><p>A permanent fix should hopefully be available in <code>fink-0.24.9</code>.</p></div>
+    </a>
+    <a name="python-mods">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.24: I get errors involving <code>MACOSX_DEPLOYMENT_TARGET </code>when I try to build a Python module.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> For errors that look like the following:</p><pre>running build
+running build_ext
+Traceback (most recent call last):
+  File "setup_socket_ssl.py", line 21, in ?
+    depends = ['socketmodule.h'] )
+  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
+### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <b>10.4-transitional</b> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p><p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p><p>For runtime errors that give the same type of error message as above, rebuild the module after rebuilding the appropriate <code>python2*</code> package.</p></div>
+    </a>
+<a name="libtool-unrecognized-dynamic">
+  <div class="question"><p><b><? echo FINK_Q ; ?>6.25: I get <q>unrecognized option `-dynamic'</q> errors from <code>libtool</code>.</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>typically means that you've replaced Apple's <code>/usr/bin/libtool</code> with a GNU <code>libtool</code>.  Unfortunately, the two <code>libtools</code> <b>do not</b> do the same thing.</p><p>The only way to solve this is to get a working Apple <code>libtool</code> from somewhere.  It is installed as part of the <code>DeveloperTools.pkg</code> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <code>/Library/Receipts</code> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></div>
+</a>
+
     <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=ru">7. Проблемы компиляции - специальные пакеты</a></p>
 <? include_once "../footer.inc"; ?>

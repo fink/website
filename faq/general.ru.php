@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Общие вопросы";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 14:57:47';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="relations.php?phpLang=ru" title="Связь с другими проектами"><link rel="prev" href="index.php?phpLang=ru" title="Ч.З.В. Contents">';
 
 

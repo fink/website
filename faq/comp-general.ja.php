@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/08/04 21:44:56';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
@@ -117,7 +117,7 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 代わりに <code>fink install atlas</code> とする必要があります。</p></div>
 </a>
 <a name="basic-headers">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.12: <code>stddef.h</code> | <code>wchar.h</code> | <code>crt1.o</code> が見つからない、
+<div class="question"><p><b><? echo FINK_Q ; ?>6.12: <code>stddef.h</code> | <code>wchar.h</code> | <code>stdlib.h</code> | <code>crt1.o</code> が見つからない、
 あるいは、"C compiler cannot create executables" というメッセージが出ます。
 これはどこにありますか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これらの問題は、いずれも Developer Tools の DevSDK によって提供されるヘッダファイルがないためです。
@@ -138,7 +138,7 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 </a>
 <a name="freetype-problems"> 
 <div class="question"><p><b><? echo FINK_Q ; ?>6.15: freetype に関係したエラーが出ます。</b></p></div> 
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> freetype に関係したエラーにはいくつかありますが、もしこのようなものであれば:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> freetype に関係したエラーにはいくつかありますが、以下のものであれば:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>外来の <code>freetype-config</code> があるかどうか、以下のコマンドを実行して確認します。</p><pre>where freetype-config</pre><p>(<code>tcsh</code> の場合)</p><pre>type -a freetype-config</pre><p>(<code>bash</code> の場合)。 Mono フレームワークは、 <code>/usr/bin/freetype-config</code> をインストールし、フレームワーク内へのシンボリックリンクを作ることが知られています。</p><p>もしこのようなものであれば:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
@@ -171,8 +171,7 @@ make: *** No targets specified and no makefile found.  Stop.
 Failed: compiling gtk+2-2.2.4-2 failed</pre><p>問題は X11 | XFree86 に含まれている、 <code>freetype</code> | <code>freetype-hinting</code> パッケージ間のヘッダを混同していることだと思われます。</p><pre>fink remove freetype freetype-hinting</pre><p>で、両方のインストールを削除します。
 もし問題が上記のようではなく、以下のようであれば:</p><pre>ld: Undefined symbols: 
 _FT_Access_Frame </pre><p>おそらく X11 インストールの残りファイルが原因です。
-X11 SDK を再インストールしてみて下さい。
-エラーが以下のようであれば:</p><pre>dyld: klines Undefined symbols: 
+X11 SDK を再インストールしてみて下さい。</p><p>最後に、エラーが以下のようであれば:</p><pre>dyld: klines Undefined symbols: 
 /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame </pre><p>おそらく Jaguar 上で<code>gcc3.3</code> でコンパイルしたバイナリが  Panther 上で動作しないためです。
 この問題は既に修正されていますので、<code>sudo apt-get update ; sudo apt-get dist-upgrade</code> と更新するだけで直ります。</p></div> 
 </a> 
@@ -307,6 +306,10 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
         	<code>python</code> パッケージを更新すれば修正されます。
         </p></div>
     </a>
+<a name="libtool-unrecognized-dynamic">
+  <div class="question"><p><b><? echo FINK_Q ; ?>6.25: I get <q>unrecognized option `-dynamic'</q> errors from <code>libtool</code>.</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>typically means that you've replaced Apple's <code>/usr/bin/libtool</code> with a GNU <code>libtool</code>.  Unfortunately, the two <code>libtools</code> <b>do not</b> do the same thing.</p><p>The only way to solve this is to get a working Apple <code>libtool</code> from somewhere.  It is installed as part of the <code>DeveloperTools.pkg</code> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <code>/Library/Receipts</code> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></div>
+</a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=ja">7. コンパイルの問題 - 特定のバージョン</a></p>
 <? include_once "../footer.inc"; ?>

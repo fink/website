@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/08/04 21:44:56';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
 
@@ -60,12 +60,14 @@ setenv LDFLAGS -L/sw/lib
 setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
+setenv MACOSX_DEPLOYMENT_TARGET 10.4</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal"
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>これを起動ファイル (.cshrc か .profile) に追加すると、自動的に設定されて便利です。
+export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
+export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(ビルドシステムは OS 10.4 以降と仮定)</p><p>これを起動ファイル (.cshrc か .profile) に追加すると、自動的に設定されて便利です。
 この環境変数を使わないパッケージの場合、
 "-I/sw/include" (ヘッダ用) and "-L/sw/lib" (ライブラリ用)
 をコンパイルの行に追加する必要があるでしょう。

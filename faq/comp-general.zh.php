@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 编译（１）";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/08/04 21:44:56';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包"><link rel="prev" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink">';
 
 
@@ -94,12 +94,12 @@ Failed: installing foo-0.1.2-3 failed</pre><p>那么你应该在你构建输出�
     </a>
     
     <a name="basic-headers">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing <code>stddef.h</code>, <code>wchar.h</code>, or <code>crt1.o</code>, or that my "C compiler cannot create executables".</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: I get messages saying that I'm missing <code>stddef.h</code> | <code>wchar.h</code> | <code>stdlib.h</code> | <code>crt1.o</code>, or that my <q>C compiler cannot create executables</q>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Both of these problems are typically due to the absence of essential headers that are provided by the DevSDK package of
         the Developer Tools. Check whether
         <code>/Library/Receipts/DevSDK.pkg</code> exists on your
         system. If not, then run the Dev Tools Installer again, and install
-        the DevSDK package using a Custom Install.</p><p>The "cannot create executables" error can also occur when your Developer Tools version is for an earlier OS version.</p></div>
+        the DevSDK package using a Custom Install.</p><p>The <q>cannot create executables</q> error can also occur when your Developer Tools version is for an earlier OS version.</p></div>
     </a>
     
     <a name="multiple-dependencies">
@@ -114,7 +114,7 @@ sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status
     </a>
     <a name="freetype-problems">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.15: 我碰到一个涉及 freetype 的错误。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这个错误有几种形式。如果你的错误是这样的：</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这个错误有几种形式。If you get the following:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>check whether you have an extraneous <code>freetype-config</code> excutable by running</p><pre>where freetype-config</pre><p>if you're using <code>tcsh</code>, or</p><pre>type -a freetype-config</pre><p>if you're using <code>bash</code>.  The Mono Framework has been known to install a <code>/usr/bin/freetype-config</code> that is a symbolic link to a file in that framework.</p><p>如果你的错误是这样的：</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token
 /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token
 /sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token
 /sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
@@ -145,7 +145,7 @@ configure: error: pangoxft Pango backend found but did not find freetype librari
 make: *** No targets specified and no makefile found.  Stop.
 ### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2
 Failed: compiling gtk+2-2.2.4-2 failed</pre><p>问题发生在 <code>freetype</code> 或 <code>freetype-hinting</code> 软件包的头文件和包含在 X11 或 XFree86 中的 <code>freetype2</code> 头文件之间发生混淆。</p><pre>fink remove freetype freetype-hinting</pre><p>命令可以删除你安装的（导致问题的）变种。如果你的错误是这样的：</p><pre>ld: Undefined symbols:
-_FT_Access_Frame </pre><p>这通常是用于以前安装的 X11 的残余文件。你需要重新安装 X11 SDK。最后，如果你获得一个这样的错误：</p><pre>dyld: klines Undefined symbols:
+_FT_Access_Frame </pre><p>这通常是用于以前安装的 X11 的残余文件。你需要重新安装 X11 SDK。</p><p>最后，如果你获得一个这样的错误：</p><pre>dyld: klines Undefined symbols:
 /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame
 </pre><p>那么你很可能安装了一个在 Jaguar 上使用 <code>gcc3.3</code> 编译的二进制包，但它却不能在 Panther 上使用。这现在已经被修正了，所以你只需要更新你的软件包就可以了，例如，通过 <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>。</p></div>
     </a>
@@ -214,6 +214,10 @@ Traceback (most recent call last):
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
 ### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <b>10.4-transitional</b> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p><p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p></div>
     </a>
+<a name="libtool-unrecognized-dynamic">
+  <div class="question"><p><b><? echo FINK_Q ; ?>6.25: I get <q>unrecognized option `-dynamic'</q> errors from <code>libtool</code>.</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>typically means that you've replaced Apple's <code>/usr/bin/libtool</code> with a GNU <code>libtool</code>.  Unfortunately, the two <code>libtools</code> <b>do not</b> do the same thing.</p><p>The only way to solve this is to get a working Apple <code>libtool</code> from somewhere.  It is installed as part of the <code>DeveloperTools.pkg</code> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <code>/Library/Receipts</code> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></div>
+</a>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=zh">7. 编译问题－特定软件包</a></p>

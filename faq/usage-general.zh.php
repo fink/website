@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（１）";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/08/04 21:44:56';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-packages.php?phpLang=zh" title="特定软件包使用问题"><link rel="prev" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包">';
 
 
@@ -39,17 +39,19 @@ X11 文档有更多的<a href="http://fink.sourceforge.net/doc/x11/trouble.php#l
     <a name="compile-myself">
       <div class="question"><p><b><? echo FINK_Q ; ?>8.3: 如何使用 Fink 安装的软件编译一些我自己的东西？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 当你编译一些不属于 Fink 的东西的时候，编译器和连接器需要知道去哪里找 Fink 安装的库和头文件。对于那些使用标准 configure/make 过程的软件，你需要设置这些环境变量：
-</p><p>对于 tcsh</p><pre>setenv CFLAGS -I/sw/include
-setenv LDFLAGS -L/sw/lib
-setenv CXXFLAGS $CFLAGS
-setenv CPPFLAGS $CXXFLAGS
+</p><p>对于 tcsh</p><pre>setenv CFLAGS -I/sw/include 
+setenv LDFLAGS -L/sw/lib 
+setenv CXXFLAGS $CFLAGS 
+setenv CPPFLAGS $CXXFLAGS 
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</pre><p>对于 bash</p><pre>export CFLAGS=-I/sw/include
-export LDFLAGS=-L/sw/lib
-export CXXFLAGS=$CFLAGS
-export CPPFLAGS=$CXXFLAGS
+setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
+setenv MACOSX_DEPLOYMENT_TARGET 10.4</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+export LDFLAGS=-L/sw/lib 
+export CXXFLAGS=$CFLAGS 
+export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal"
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>
+export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
+export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(assuming that the build system is running OS 10.4 or later)</p><p>
 通常最简单的办法是把这些东西加到你的启动脚本文件（比如 <code>.cshrc</code> 或 <code>.profile</code>），这样他们就可以自动被设置。
 如果一个软件包不使用这些环境变量，你需要自己添加
 "-I/sw/include" (对头文件) 和 "-L/sw/lib" (对库文件) 到编译指令的一行。有些软件包会使用类似 EXTRA_CFLAGS 或 --with-qt-dir= 这样的非标准配置选项。

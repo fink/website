@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Usage (1)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 14:57:47';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="usage-packages.php?phpLang=es" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=es" title="Compile Problems - Specific Packages">';
 
 
@@ -63,13 +63,15 @@ include_once "header.es.inc";
 setenv LDFLAGS -L/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal" 
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
+setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
+setenv MACOSX_DEPLOYMENT_TARGET 10.4</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"</pre><p>It is often easiest just to add these to your startup files (e.g.
+export ACLOCAL_FLAGS="-I /sw/share/aclocal"
+export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
+export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(assuming that the build system is running OS 10.4 or later)</p><p>It is often easiest just to add these to your startup files (e.g.
         <code>.cshrc</code> | <code>.profile</code>) so they
         are set automatically. If a package does not use these variables, you
         may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for

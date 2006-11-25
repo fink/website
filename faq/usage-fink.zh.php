@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/08/04 21:44:56';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -39,12 +39,12 @@ include_once "header.zh.inc";
           <li>
             <p>使用下面命令安装 <b>cvs-proxy</b> 软件包：</p>
             <p>
-              <code>fink install <b>cvs-proxy</b>
+              <code>fink --use-binary-dist install <b>cvs-proxy</b>
               </code>
             </p>
           </li>
           <li>
-            <p>然后用下面命令更新软件包：</p>
+            <p>Switch to the CVS update method with the command:：</p>
             <p>
               <code>fink selfupdate-cvs</code>
             </p>

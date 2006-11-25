@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Compiling (2)";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/06/09 14:57:47';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="usage-general.php?phpLang=es" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=es" title="Compile Problems - General">';
 
 
@@ -77,6 +77,34 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
         December 2002 Developer Tools.</p></div>
     </a>
     
+    <a name="libiconv-gettext">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I can't update <code>libiconv</code>.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>you can solve this problem by running</p><pre>fink remove gettext-dev
+fink install libiconv</pre></div>
+    </a>
+    <a name="cplusplus-filt">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form </p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>since updating to Tiger, then you need to do the following:</p><ul>
+          <li>Flush out your old Developer Tools versions via running <pre>/Developer/Tools/uninstall-devtools.pl</pre>in a terminal.  Then install XCode (2.0 or later).<p></p></li>
+          <li>Reinstall  <code>BSD.pkg</code> (from the Tiger system installation).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
+        </ul><p>
+1) Flush out your old
+2) Reinstall BSD.pkg (from your main OS install)</p></div>
+    </a>
+    <a name="gettext-tools">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink refuses to update the <code>gettext</code> package,
+complaining that the dependencies are in an inconsistent state.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> After running <code>fink selfupdate</code> to be sure you
+have the latest versions, try <code>fink update gettext-tools</code>.
+An old version of the <code>gettext-tools</code> package may be 
+preventing you from updating <code>gettext</code>.</p></div>
+    </a>
+
+    <a name="all-others">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
+      up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
+    </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=es">8. Package Usage Problems - General</a></p>
 <? include_once "../footer.inc"; ?>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/08/04 21:44:56';
+$cvs_date = 'Date: 2006/11/25 05:41:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般"><link rel="prev" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般">';
 
 
@@ -78,8 +78,16 @@ fink install libiconv</pre></div>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
     </a>
+    <a name="gettext-tools">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink が、 <code>gettext</code> の依存性に矛盾があるとだけ表示し、更新してくれません。</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+          <code>fink selfupdate</code> を実行して最新にした後、
+          <code>fink update gettext-tools</code> としてみてください。
+          古いバージョンの <code>gettext-tools</code> が <code>gettext</code> の更新を妨害していた可能性があります。
+        </p></div>
+    </a>
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: ここに載っていないパッケージで問題があります。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.8: ここに載っていないパッケージで問題があります。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> パッケージの問題は変わりやすいので、Fink wiki に情報を載せることにいたしました。
         <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</a> をご確認ください。</p></div>
     </a>
