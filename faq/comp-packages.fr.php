@@ -1,8 +1,8 @@
 <?
 $title = "Q.F.P. - Compilation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/11/23 21:16:22';
-$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problème généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation">';
+$cvs_date = 'Date: 2006/11/28 07:41:42';
+$metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problèmes généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation">';
 
 
 include_once "header.fr.inc";
@@ -60,7 +60,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Comme les problèmes sur les paquets ont tendance à être transitoires, nous avons décidé de les mettre sur le wiki de Fink. Voyez la page <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues</a>.</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="usage-general.php?phpLang=fr">8. Problème généraux d'utilisation de paquets</a></p>
+<a href="usage-general.php?phpLang=fr">8. Problèmes généraux d'utilisation de paquets</a></p>
 <? include_once "../footer.inc"; ?>
 
 

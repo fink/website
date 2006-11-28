@@ -1,13 +1,13 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/11/23 21:16:22';
+$cvs_date = 'Date: 2006/11/28 07:41:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets">';
 
 
 include_once "header.fr.inc";
 ?>
-<h1>Q.F.P. - 8. Problème généraux d'utilisation de paquets</h1>
+<h1>Q.F.P. - 8. Problèmes généraux d'utilisation de paquets</h1>
 
 
 <a name="xlocale">
