@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.89 2006/11/18 18:18:55 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.90 2006/11/29 19:45:40 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -1226,6 +1226,19 @@ compatibility, <code>powerpc-apple-darwin1.3</code> or just
 <code>powerpc-apple-darwin</code> are better choices.
 </p>
 </itemd></item>
+
+<item><itemt><filename>/sw/lib/ppc64</filename>
+<filename>/sw/lib/x86_64</filename></itemt>
+<itemd>
+<p>
+This directory is for 64-bit libraries, with <filename>/sw/lib/ppc64</filename>
+being used under powerpc architecture, and
+<filename>/sw/lib/x86_64</filename> being used under i386 architecture.
+Libraries which have been built 'fat' should be stored in
+<filename>/sw/lib</filename> instead.
+</p>
+</itemd></item>
+
 
 <item><itemt><filename>/sw/share</filename></itemt>
 <itemd>

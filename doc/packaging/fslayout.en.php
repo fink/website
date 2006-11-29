@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/11/18 18:18:55';
+$cvs_date = 'Date: 2006/11/29 19:45:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="compilers.php?phpLang=en" title="Compilers"><link rel="prev" href="policy.php?phpLang=en" title="Packaging Policy">';
 
 
@@ -78,6 +78,15 @@ directories.
 A <code>powerpc-apple-darwin1.3.3</code> directory is bad for
 compatibility, <code>powerpc-apple-darwin1.3</code> or just
 <code>powerpc-apple-darwin</code> are better choices.
+</p>
+</td></tr><tr valign="top"><td><code>/sw/lib/ppc64</code>
+<code>/sw/lib/x86_64</code></td><td>
+<p>
+This directory is for 64-bit libraries, with <code>/sw/lib/ppc64</code>
+being used under powerpc architecture, and
+<code>/sw/lib/x86_64</code> being used under i386 architecture.
+Libraries which have been built 'fat' should be stored in
+<code>/sw/lib</code> instead.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share</code></td><td>
 <p>
