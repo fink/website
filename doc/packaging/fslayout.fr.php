@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Organisation des fichiers";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/09/19 20:43:29';
+$cvs_date = 'Date: 2006/11/30 19:22:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="compilers.php?phpLang=fr" title="Compilateurs"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
 
 
@@ -25,8 +25,11 @@ include_once "header.fr.inc";
 </td></tr><tr valign="top"><td><code>/sw/include</code></td><td>
 <p>Ce répertoire stocke les headers C et C++. On peut créer autant de sous-répertoires que nécessaire. Si un paquet installe des headers qui peuvent être confondus avec des headers standard C, les headers du paquet <b>doivent</b> être installés dans un sous-répertoire.</p>
 </td></tr><tr valign="top"><td><code>/sw/lib</code></td><td>
-<p>Ce répertoire est destiné aux fichiers de données et librairies dépendants de l'architecture du système. Les librairies statiques et partagées doivent être placées dans <code>/sw/lib</code>, sauf s'il existe une bonne raison pour ne pas le faire. C'est également là que sont placés les exécutables qui ne doivent pas être directement lancés par l'utilisateur (dans le cas contraire, ils sont placés dans libexec).</p>
+<p>Ce répertoire est destiné aux fichiers de données et bibliothèques dépendants de l'architecture du système. Les bibliothèques statiques et partagées doivent être placées dans <code>/sw/lib</code>, sauf s'il existe une bonne raison pour ne pas le faire. C'est également là que sont placés les exécutables qui ne doivent pas être directement lancés par l'utilisateur (dans le cas contraire, ils sont placés dans libexec).</p>
 <p>On peut créer un sous-répertoire spécifique à un paquet, afin d'y mettre des données privées ou des modules chargeables. Pensez à utiliser des noms de répertoire qui garantissent la compatibilité entre versions. Il est bon d'utiliser le numéro de version majeur du paquet dans le nom du sous-répertoire ou à un niveau inférieur de la hiérarchie ; par exemple, <code>/sw/lib/perl5</code> ou <code>/sw/lib/apache/1.3</code>. Faites attention si vous utilisez le type d'hôte dans le nom des répertoires créés. Un sous-répertoire nommé <code>powerpc-apple-darwin1.3.3</code> ne garantit pas la compatibilité entre versions ; utilisez plutôt <code>powerpc-apple-darwin1.3</code> ou <code>powerpc-apple-darwin</code>.</p>
+</td></tr><tr valign="top"><td><code>/sw/lib/ppc64</code>
+<code>/sw/lib/x86_64</code></td><td>
+<p>Ce répertoire est dédié aux bibliothèques 64-bit. Le répertoire <code>/sw/lib/ppc64</code> est utilisé sous architecture powerpc et le répertoire <code>/sw/lib/x86_64</code> sous architecture i386. Les bibliothèques combinées (fat) doivent être enregistrées dans le répertoire <code>/sw/lib</code>.</p>
 </td></tr><tr valign="top"><td><code>/sw/share</code></td><td>
 <p>Ce répertoire sert aux fichiers de données indépendants de l'architecture. Les mêmes règles que celles en vigueur pour <code>/sw/lib</code> s'appliquent ici. Quelques sous-répertoires courants sont décrits ci-dessous.</p>
 </td></tr><tr valign="top"><td><code>/sw/share/man</code></td><td>

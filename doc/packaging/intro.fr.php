@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Intro";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/09/19 20:43:29';
+$cvs_date = 'Date: 2006/11/30 19:22:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="format.php?phpLang=fr" title="Descriptions de paquets"><link rel="prev" href="index.php?phpLang=fr" title="Paquets Contents">';
 
 
@@ -13,7 +13,7 @@ include_once "header.fr.inc";
 <h2><a name="def1">1.1 Qu'est-ce qu'un paquet ?</a></h2>
 <p>Un paquet est un logiciel qui forme une unité atomique. Un paquet contient en général un programme exécutable, les fichiers de données dont il a besoin et des catalogues de message pour l'internationalisation et la documentation. Dans Fink, les paquets peuvent exister sous deux formes : la description de paquet et le paquet binaire prêt à installer.</p>
 <p>La description de paquet est un fichier texte compréhensible par un être humain qui contient tout ce qui est nécessaire pour construire le paquet, c'est-à-dire pour créer le paquet binaire. Les informations contenues dans la description de paquet comprennent des métainformations (comme le nom du paquet et une description de son objet), l'URL du source code et les instructions nécessaires à la configuration, compilation et construction du paquet. La description peut être accompagnée d'une rustine.</p>
-<p>Un paquet binaire est une archive qui contient effectivement les fichiers qui constituent le paquet, c'est-à-dire les exécutables, les fichiers de données, les catalogues de messages, les librairies, les fichiers include, etc... Le paquet peut aussi contenir des métainformations pour le paquet lui-même. 
+<p>Un paquet binaire est une archive qui contient effectivement les fichiers qui constituent le paquet, c'est-à-dire les exécutables, les fichiers de données, les catalogues de messages, les bibliothèques, les fichiers include, etc... Le paquet peut aussi contenir des métainformations pour le paquet lui-même. 
 L'installation d'un paquet binaire consiste simplement à le dépaqueter, puisqu'il est déjà dans un format prêt à l'emploi. Comme Fink construit les paquets avec le gestionnaire de paquets dpkg, les paquets binaires ont le format dpkg et ont une extension .deb.</p>
 
 <h2><a name="ident">1.2 Identification d'un paquet</a></h2>

@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/09/19 20:43:29';
+$cvs_date = 'Date: 2006/11/30 19:22:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -83,7 +83,7 @@ SplitOff: &lt;&lt;
 <p>Note : ne l'utilisez que s'il n'y a pas d'autres possibilités. Le répertoire de compilation est
 le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser des chemins relatifs dans les commandes.</p>
 </td></tr><tr valign="top"><td>%c</td><td>
-<p>paramètres pour <b>c</b>onfigure : <code>--prefix=%p</code> plus tout autre élément spécifié avec ConfigureParams</p>
+<p>paramètres pour <b>c</b>onfigure : <code>--prefix=%p</code> plus tout autre élément spécifié avec ConfigureParams. Dans le cas d'un paquet qui comporte le <code>Type: perl</code>, les drapeaux par défaut de construction d'un paquet perl sont utilisés à la place de <code>--prefix=%p</code>.</p>
 </td></tr><tr valign="top"><td>%m</td><td>
 <p>chaîne spécifiant l'architecture de la <b>m</b>achine. Identique au résultat de la commande <code>uname -p</code>. Les valeurs habituelles sont 'powerpc' pour les machines ppc and 'i386' pour les machines x86. Introduit dans les versions CVS de fink postérieures à la version 0.12.1.</p>
 </td></tr><tr valign="top"><td>%%</td><td>
