@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/11/28 07:41:42';
+$cvs_date = 'Date: 2006/12/01 20:20:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets">';
 
 
@@ -25,7 +25,7 @@ include_once "header.fr.inc";
 </a>
 <a name="compile-myself">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Comment compiler soi-même en utilisant des logiciels installés par Fink ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Quand on compile soi-même sans passer par Fink, il faut indiquer au compilateur et à l'éditeur de liens où trouver les librairies et les headers installés par Fink. Pour un paquet qui utilise un processus standard configure/make, vous devez définir quelques variables d'environnement :</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Quand on compile soi-même sans passer par Fink, il faut indiquer au compilateur et à l'éditeur de liens où trouver les bibliothèques et les headers installés par Fink. Pour un paquet qui utilise un processus standard configure/make, vous devez définir quelques variables d'environnement :</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
@@ -37,7 +37,7 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les librairies) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement (par exemple <b>foo-1.0-1-dev</b>) des paquets librairies que vous utilisez, s'ils ne sont pas déjà installés.</p></div>
+export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les bibliothèques) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement (par exemple <b>foo-1.0-1-dev</b>) des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Il est impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple.</b></p></div>
@@ -86,7 +86,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajoute
 <p>Représentent les extensions Java pour les graphiques 3D et le traitement d'images, qui peuvent être téléchargées et installées à partir du site d'Apple. Voir cette <a href="http://docs.info.apple.com/article.html?artnum=120289">page web d'Apple</a> pour de plus amples informations.</p>
 </li>
 <li>system-xfree86 : [paquet fantôme pour un paquet x11 installé manuellement]</li>
-<li>system-xfree86-shlibs : [paquet fantôme pour les librairies partagées x11 installées manuellement]
+<li>system-xfree86-shlibs : [paquet fantôme pour les bibliothèques partagées x11 installées manuellement]
 <p>Représentent X11/XDarwin d'Apple, partie optionnelle de OS X (X11User.pkg). Ces paquets fournissent respectivement <code>x11</code> et <code>x11-shlibs</code>. Voir aussi <a href="comp-packages.php?phpLang=fr#cant-install-xfree">cette QFP</a>.</p>
 </li>
 <li>system-xfree86-dev : [paquet fantôme pour les outils de développement x11 installés manuellement]

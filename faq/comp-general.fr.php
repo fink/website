@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/11/28 07:41:42';
+$cvs_date = 'Date: 2006/12/01 20:20:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installation, Utilisation et Mise à jour de Fink">';
 
 
@@ -25,7 +25,7 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>ce
 </a>
 <a name="head">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.4: Un étrange message d'erreur concernant la commande head apparaît. Que se passe-t-il ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez apparaître ce message :</p><pre>Unknown option: 1 Usage: head [-options] &lt;url&gt;...</pre><p>suivi d'une liste d'options, cela signifie que la commande <code>head</code> est défectueuse. Cela se produit lorsqu'on installe la librairie Perl libwww sur un volume système HFS+. Elle tente de créer une nouvelle commande <code>/usr/bin/HEAD</code>, qui écrase la commande <code>head</code> existante, car le système de fichiers ne respecte pas la casse. <code>head</code> est une commande standard utilisée dans de nombreux scripts shell et dans les Makefiles. Vous devez récupérer la commande <code>head</code> originale si vous voulez utiliser Fink.</p><p>Le script bootstrap de la version source de fink fait, maintenant, cette vérification ; mais vous pouvez vous retrouver devant ce problème si vous utilisez la version binaire lors de la première installation de fink ou si vous installez libwww après avoir installé Fink.</p><p>Ce problème peut aussi venir de l'installation de <code>/sw/bin/HEAD</code> (mais pas par un paquet de Fink). La solution est plus simple : renommez <code>/sw/bin/HEAD</code>.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez apparaître ce message :</p><pre>Unknown option: 1 Usage: head [-options] &lt;url&gt;...</pre><p>suivi d'une liste d'options, cela signifie que la commande <code>head</code> est défectueuse. Cela se produit lorsqu'on installe la bibliothèque Perl libwww sur un volume système HFS+. Elle tente de créer une nouvelle commande <code>/usr/bin/HEAD</code>, qui écrase la commande <code>head</code> existante, car le système de fichiers ne respecte pas la casse. <code>head</code> est une commande standard utilisée dans de nombreux scripts shell et dans les Makefiles. Vous devez récupérer la commande <code>head</code> originale si vous voulez utiliser Fink.</p><p>Le script bootstrap de la version source de fink fait, maintenant, cette vérification ; mais vous pouvez vous retrouver devant ce problème si vous utilisez la version binaire lors de la première installation de fink ou si vous installez libwww après avoir installé Fink.</p><p>Ce problème peut aussi venir de l'installation de <code>/sw/bin/HEAD</code> (mais pas par un paquet de Fink). La solution est plus simple : renommez <code>/sw/bin/HEAD</code>.</p></div>
 </a>
 <a name="also_in">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.5: À l'installation d'un paquet, un message d'erreur signale qu'il y a tentative d'écrasement d'un fichier situé dans un autre paquet. Que faire ?</b></p></div>
@@ -61,14 +61,14 @@ Failed: installing foo-0.1.2-3 failed</pre><p>vous devez rechercher <code>libbar
 </ul></div>
 </a>
 <a name="usr-local-libs">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.9: Problèmes de compilation de paquet Fink quand des librairies ou des headers sont installés dans le répertoire /usr/local. Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les librairies et les headers installés dans <code>/usr/local</code> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des librairies installées dans <code>/usr/local/lib</code> ou des headers installés dans <code>/usr/local/include</code>. Si c'est le cas, déplacez temporairement <code>/usr/local</code> :</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>construisez le paquet, puis remettez en place <code>/usr/local</code> :</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>6.9: Problèmes de compilation de paquet Fink quand des bibliothèques ou des headers sont installés dans le répertoire /usr/local. Que faire ?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les bibliothèques et les headers installés dans <code>/usr/local</code> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des bibliothèques installées dans <code>/usr/local/lib</code> ou des headers installés dans <code>/usr/local/include</code>. Si c'est le cas, déplacez temporairement <code>/usr/local</code> :</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>construisez le paquet, puis remettez en place <code>/usr/local</code> :</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
 </a>
 <a name="toc-out-of-date">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.10: Lors de la construction d'un paquet, un message indique que la "table des matières" n'est pas à jour (message en anglais "table of contents out of date"). Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Le message de sortie vous indique ce qu'il faut faire. En général, il est de la forme suivante :</p><pre>ld: table of contents for archive: 
 /sw/lib/libintl.a is out of date; 
-rerun ranlib(1) (can't load from it)</pre><p>Vous devez exécuter ranlib (en tant que super-utilisateur) sur la librairie qui est la cause du problème. Par exemple, dans le cas ci-dessus, vous devez exécuter :</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
+rerun ranlib(1) (can't load from it)</pre><p>Vous devez exécuter ranlib (en tant que super-utilisateur) sur la bibliothèque qui est la cause du problème. Par exemple, dans le cas ci-dessus, vous devez exécuter :</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
 </a>
 <a name="fc-atlas">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.11: Fink Commander se bloque quand on tente d'installer atlas. Que faire ?</b></p></div>
@@ -147,7 +147,7 @@ only once
 unix_dl.c:466: error: for each function it appears in.)
 unix_dl.c:466: error: parse error before "info" 
 unix_dl.c:467: error: `info' undeclared (first use in this function) 
-make[1]: *** [unix_dl.lo] Error 1</pre><p>vous avez certainement un header <code>/usr/local/include/dlfcn.h</code>, incompatible avec Panther. Déplacez-le.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p><p>Ce header est, en général, installé par Open Office, et vous devez le remplacer, de même que la librairie <code>/usr/local/lib/libdl.dylib</code>, par des liens symboliques vers les fichiers inclus dans Panther :</p><pre>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
+make[1]: *** [unix_dl.lo] Error 1</pre><p>vous avez certainement un header <code>/usr/local/include/dlfcn.h</code>, incompatible avec Panther. Déplacez-le.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p><p>Ce header est, en général, installé par Open Office, et vous devez le remplacer, de même que la bibliothèque <code>/usr/local/lib/libdl.dylib</code>, par des liens symboliques vers les fichiers inclus dans Panther :</p><pre>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 </a>
 <a name="gcc2">

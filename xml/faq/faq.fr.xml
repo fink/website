@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.67 2006/11/28 07:41:42 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.68 2006/12/01 20:20:56 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -58,7 +58,7 @@
 <p>Il y a plusieurs raisons à cela, mais toutes reposent sur le fait que &quot;cela occasionnerait des failles dans le système&quot;.</p>
 <p>Première raison : les logiciels de tierce partie. Le répertoire /usr/local est réservé à l'installation des logiciels qui ne font pas partie du système fourni par le vendeur initial. C'est donc l'endroit idéal pour installer quelque chose. Mais, c'est aussi là que d'autres vendeurs installeront leurs logiciels. La plupart des routines d'installation viendront écraser ce qui y est déjà - cela est vrai aussi pour dpkg. On peut, bien sûr, choisir de ne pas installer de logiciels de tierce partie dans le répertoire /usr/local. Malheureusement, la plupart des routines d'installation ne signalent pas à l'avance ce qu'elles installent ni où elles l'installent.</p>
 <p>Deuxième raison : la variable d'environnement PATH contient par défaut le répertoire /usr/local/bin. Il s'ensuit que votre shell trouve les programmes qui y sont installés sans que vous ayez à intervenir. A contrario, vous devrez intervenir si vous ne souhaitez pas utiliser ces programmes. Au pire, cela affecte le système lui-même - de nombreuses parties du système reposent sur des scripts shell.</p>
-<p>Troisième raison : l'ensemble des outils de compilation effectuent par défaut leurs recherches dans le répertoire /usr/local. Le compilateur cherche les headers dans le répertoire /usr/local/include et l'éditeur de liens cherche les librairies dans le répertoire /usr/local/lib. C'est quelquefois très pratique, mais très difficile à désactiver si le besoin s'en fait sentir. On peut facilement désactiver le compilateur en mettant dans le répertoire /usr/local/include un fichier parasite auquel on donne le nom de <code>stdio.h</code>.</p>
+<p>Troisième raison : l'ensemble des outils de compilation effectuent par défaut leurs recherches dans le répertoire /usr/local. Le compilateur cherche les headers dans le répertoire /usr/local/include et l'éditeur de liens cherche les bibliothèques dans le répertoire /usr/local/lib. C'est quelquefois très pratique, mais très difficile à désactiver si le besoin s'en fait sentir. On peut facilement désactiver le compilateur en mettant dans le répertoire /usr/local/include un fichier parasite auquel on donne le nom de <code>stdio.h</code>.</p>
 <p>Ceci dit, il est possible d'installer Fink dans le répertoire /usr/local. Le script d'installation vous avertira que, si vous le faites, ce sera à vos risques et périls, mais continuera l'installation après votre accord.</p>
 </answer>
 </faqentry>
@@ -220,10 +220,10 @@
 <p>Comment savoir quels sont les paquets gérés par Fink ?</p>
 </question>
 <answer>
-<p>Depuis Fink 0.2.3, il y a la commande list. Elle produit une liste de tous les paquets connus de votre installation de Fink. Exemple :</p>
+<p>Depuis la version 0.2.3 de Fink, la commande list vous permet de le savoir. Cette commande produit une liste de tous les paquets connus de votre installation de Fink. Exemple :</p>
 <codeblock>fink list</codeblock>
 <p>Si vous utilisez la distribution binaire, <code>dselect</code> vous donne une liste des paquets disponibles dans laquelle vous pouvez naviguer. Remarque : vous devez utiliser la commande sudo si vous voulez sélectionner et installer des paquets avec dselect.</p>
-<p>Il y a aussi la <link url="http://fink.sourceforge.net/pdb/">base de données de paquets</link> sur le site web. </p>
+<p>Il y a aussi la <link url="http://fink.sourceforge.net/pdb/">base de données de paquets</link> sur le site web.</p>
 </answer>
 </faqentry>
 <faqentry name="proxy">
@@ -231,8 +231,8 @@
 <p>Comment configurer fink pour utiliser un proxy HTTP quand on est derrière un mur pare-feu ?</p>
 </question>
 <answer>
-<p>La commande <code>fink</code> permet de prendre en compte des réglages de proxy qui seront utilisés par <code>wget</code>/<code>curl</code>. Si on ne vous a pas posé de question sur vos réglages de proxies lors de la première installation, vous pouvez taper <code>fink configure</code> pour les régler. Vous pouvez aussi utiliser cette commande à n'importe quel moment pour reconfigurer la commande <code>fink</code>. Si vous avez suivi les instructions du guide d'installation et utilisé <filename>/sw/bin/init.csh</filename> (ou <filename>/sw/bin/init.sh </filename>), alors <code>apt-get</code> et <code>dselect</code> utiliseront aussi ces réglages de proxies. Assurez-vous d'avoir bien indiqué le protocole utilisé, par exemple :</p>
-<codeblock>ftp://proxy.yoursite.somewhere</codeblock>
+<p>La commande <code>fink</code> permet de prendre en compte des réglages de proxy qui seront utilisés par <code>wget</code> et <code>curl</code>. Si on ne vous a pas posé de question sur vos réglages de proxies lors de la première installation, vous pouvez taper <code>fink configure</code> pour les régler. Vous pouvez aussi utiliser cette commande à n'importe quel moment pour reconfigurer la commande <code>fink</code>. Si vous avez suivi les instructions du guide d'installation et utilisé <filename>/sw/bin/init.csh</filename> (ou <filename>/sw/bin/init.sh</filename>), alors <code>apt-get</code> et <code>dselect</code> utiliseront aussi ces réglages de proxies. Assurez-vous d'avoir bien indiqué le protocole utilisé, par exemple :</p>
+<codeblock>ftp://proxy.votresite.quelquepart</codeblock>
 <p>Si vous avez toujours des problèmes, allez dans Préférences système, cliquez sur Réseaux, sélectionnez l'onglet proxies et vérifiez que la case "Utiliser le mode FTP passif (PASV)" est cochée.</p>
 </answer>
 </faqentry>
@@ -257,7 +257,7 @@
 <p>Est-il possible de déplacer Fink vers un autre dossier après l'installation ?</p>
 </question>
 <answer>
-<p>Non. Vous pouvez bien sûr déplacer les fichiers en utilisant mv ou le Finder, mais 99% des programmes ne fonctionneront plus si vous faites cela. En effet, la majorité des programmes Unix utilisent des chemins d'accès directement inclus dans le fichier binaire pour accéder,entre autres, à des données et des librairies.</p>
+<p>Non. Vous pouvez bien sûr déplacer les fichiers en utilisant mv ou le Finder, mais 99% des programmes ne fonctionneront plus si vous faites cela. En effet, la majorité des programmes Unix utilisent des chemins d'accès directement inclus dans le fichier binaire pour accéder,entre autres, à des données et des bibliothèques.</p>
 </answer>
 </faqentry>
 <faqentry name="moving-symlink">
@@ -277,7 +277,7 @@
 <codeblock>sudo rm -rf /sw</codeblock>
 <p>Les seules exceptions à cette règle concernent XFRee86 et X.org. Si vous avez installé un serveur X via Fink (vous avez, par exemple, installé le paquet <code>xfree86</code> ou <code>xfree86-rootless</code>, ou encore <code>xorg</code> au lieu d'utiliser <code>system-xfree86</code>) et que vous voulez le supprimer, vous devrez aussi saisir ceci :</p>
 <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
-<p>Si vous ne pensez pas réinstaller Fink, vous pourrez aussi supprimer la ligne "<code>source /sw/bin/init.csh</code>" que vous aviez ajoutée dans le fichier <filename>.cshrc</filename> ou la ligne "<code>source /sw/bin/init.sh</code>" que vous aviez ajoutée dans le fichier <filename>.bashrc</filename>, suivant vos réglages, en utilisant un éditeur de texte.</p>
+<p>Si vous ne pensez pas réinstaller Fink, vous pouvez aussi supprimer, en utilisant un éditeur de texte, la ligne "<code>source /sw/bin/init.csh</code>" que vous aviez ajoutée dans le fichier <filename>.cshrc</filename> ou la ligne "<code>source /sw/bin/init.sh</code>" que vous aviez ajoutée dans le fichier <filename>.bashrc</filename>, selon vos réglages.</p>
 </answer>
 </faqentry>
 <faqentry name="bindist">
@@ -286,7 +286,7 @@
 </question>
 <answer>
 <p>Ils ont tous raison. La <link url="http://fink.sourceforge.net/pdb/">base de données des paquets</link> donne la liste de tous les paquets, même ceux qui sont encore dans la section instable. Les outils <code>dselect</code> et <code>apt-get</code>, de leur côté, donnent la liste des paquets disponibles en tant que binaires précompilés. De nombreux paquets ne sont pas disponibles sous forme précompilée via ces outils pour diverses raisons. Un paquet doit être dans la section "stable" de la dernière mise à jour de Fink pour être pris en compte, et il doit, de plus, passer avec succès un certain nombre de tests relatifs aux règles de fink et aux restrictions de licences et brevets.</p>
-<p>Si vous voulez installer un paquet qui n'est pas disponible via <code>dselect</code> / <code>apt-get</code>, vous devez le compiler à partir du code source en utilisant <code>fink install <em>nom_du_paquet</em></code>. Vérifiez que vous avez installé les Developer Tools avant d'essayer ceci. (S'il n'y a pas d'installeur pour les Developer Tools dans votre répertoire <code>/Applications</code> , vous pouvez les télécharger gratuitement sur <link url="http://connect.apple.com/">Apple Developer Connection</link> après enregistrement). Voir aussi la question à propos des instables ci-dessous.</p>
+<p>Si vous voulez installer un paquet qui n'est pas disponible via <code>dselect</code> ou <code>apt-get</code>, vous devez le compiler à partir du code source en utilisant <code>fink install <em>nom_du_paquet</em></code>. Vérifiez que vous avez installé les Developer Tools avant d'essayer ceci. (S'il n'y a pas d'installeur pour les Developer Tools dans votre répertoire <code>/Applications</code> , vous pouvez les télécharger gratuitement sur <link url="http://connect.apple.com/">Apple Developer Connection</link> après enregistrement). Voir aussi la question suivante à propos des paquets instables.</p>
 </answer>
 </faqentry>
 <faqentry name="unstable">
@@ -297,7 +297,7 @@
 <p>Assurez-vous d'abord de savoir ce que signifie 'instable'. Il existe de nombreuses raisons pour lesquelles un paquet de l'arborescence instable n'est pas mis dans l'arborescence stable. Il se peut qu'il souffre de problèmes connus, qu'il y ait des erreurs de validation, ou simplement qu'un nombre insuffisant de personnes ait signalé qu'il fonctionne correctement. C'est pourquoi Fink ne recherche pas dans cette arborescence par défaut.</p>
 <p>Si vous décidez d'activer l'arborescence instable, pensez à envoyer un courriel au responsable du paquet si quelque chose fonctionne (ou ne fonctionne pas). Ce sont vos réactions qui nous permettent de décider si un paquet peut entrer dans l'arborescence stable ! Pour connaître le mainteneur du paquet, lancez la commande <code>fink info &lt;nom_du_paquet&gt;</code>.</p>
 <p>Pour obliger Fink à utiliser l'arborescence instable, modifiez le fichier <filename>/sw/etc/fink.conf</filename> : ajoutez <code>unstable/main</code> et <code>unstable/crypto</code> à la ligne <code>Trees:</code>, puis exécutez <code>fink selfupdate; fink index; fink scanpackages</code>.</p>
-<p>Notez également que, si vous ne souhaitez installer que quelques paquets instables spécifiques et leurs dépendances, vous ne devez pas utiliser la commande <code>update-all</code> aussi longtemps que vous n'êtes pas revenu à l'utilisation de l'arborescence stable.</p>
+<p>Notez également que, si vous ne souhaitez installer que quelques paquets instables spécifiques et leurs dépendances, vous ne devez pas utiliser la commande <code>update-all</code> tant que vous n'êtes pas revenu à l'utilisation de l'arborescence stable.</p>
 </answer>
 </faqentry>
 <faqentry name="unstable-onepackage">
@@ -306,7 +306,7 @@
 </question>
 <answer>
 <p>Non, mais c'est fortement recommandé. Le mélange des genres peut créer des effets inattendus et rendre difficile un éventuel débogage.</p>
-<p>Ceci dit, si vous ne voulez installer qu'un ou deux paquets instables spécifiques, vous devez changer vos réglages pour utiliser la mise à jour CVS (c'est-à-dire utiliser <code>fink selfupdate-cvs</code>), car rsync ne met à jour que les arborescences activées dans le fichier <filename>fink.conf</filename>. Éditez <filename>/sw/etc/fink.conf</filename> et ajoutez <code>local/main</code> à la ligne <code>Trees:</code>, si elle n'y figure pas déjà. Vous devrez alors exécuter <code>fink selfupdate</code> pour télécharger les fichiers de description des paquets. Copiez ensuite les fichiers <code>.info</code> qui vous intéressent (et leurs fichiers <code>.patch</code> associés, s'ils existent) à partir de <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (ou <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) dans <filename>/sw/fink/dists/local/main/finkinfo</filename>. Notez cependant que votre paquet peut dépendre d'autres paquets (ou de versions particulières) qui sont uniquement présents dans l'arborescence instable. Vous devrez alors déplacer aussi leurs fichiers <code>.info</code> et <code>.patch</code> associés. Après avoir déplacé tous les fichiers, lancez la commande <code>fink index</code> pour que l'index des paquets disponibles de Fink soit mis à jour. Vous pourrez ensuite utiliser rsync à nouveau (<code>fink selfupdate-rsync</code>) si vous le désirez.</p>
+<p>Ceci dit, si vous ne voulez installer qu'un ou deux paquets instables spécifiques, vous devez changer vos réglages pour utiliser la mise à jour CVS (c'est-à-dire utiliser <code>fink selfupdate-cvs</code>), car rsync ne met à jour que les arborescences activées dans le fichier <filename>fink.conf</filename>. Éditez le fichier <filename>/sw/etc/fink.conf</filename> et ajoutez <code>local/main</code> à la ligne <code>Trees:</code>, si elle n'y figure pas déjà. Vous devrez alors exécuter <code>fink selfupdate</code> pour télécharger les fichiers de description des paquets. Copiez ensuite les fichiers <code>.info</code> qui vous intéressent (et leurs fichiers <code>.patch</code> associés, s'ils existent) à partir des sous-répertoires du répertoire <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (ou à partir du répertoire <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) dans le répertoire <filename>/sw/fink/dists/local/main/finkinfo</filename>. Notez cependant que votre paquet peut dépendre d'autres paquets (ou de versions particulières de paquets) qui sont uniquement présents dans l'arborescence instable. Vous devrez alors déplacer aussi leurs fichiers <code>.info</code> et <code>.patch</code> associés. Après avoir déplacé tous les fichiers, lancez la commande <code>fink index</code> pour que l'index des paquets disponibles de Fink soit mis à jour. Vous pourrez ensuite utiliser rsync à nouveau (<code>fink selfupdate-rsync</code>) si vous le désirez.</p>
 </answer>
 </faqentry>
 <faqentry name="sudo">
@@ -315,8 +315,8 @@
 </question>
 <answer>
 <p>Si vous n'êtes pas paranoïaque, vous pouvez configurer sudo pour qu'il ne vous demande pas votre mot de passe. Pour cela, mettez-vous en mode super-utilisateur et lancez <code>visudo</code>, puis ajoutez la ligne suivante :</p>
-<codeblock>username ALL = NOPASSWD: ALL</codeblock>
-<p>Remplacez bien sûr <code>username</code> par votre nom d'utilisateur. Cette ligne vous permet d'exécuter n'importe quelle commande avec sudo sans saisir votre mot de passe.</p>
+<codeblock>nomutilisateur ALL = NOPASSWD: ALL</codeblock>
+<p>Remplacez bien sûr <code>nomutilisateur</code> par votre nom d'utilisateur. Cette ligne vous permet d'exécuter n'importe quelle commande avec sudo sans saisir votre mot de passe.</p>
 </answer>
 </faqentry>
 <faqentry name="exec-init-csh">
@@ -324,7 +324,7 @@
 <p>À l'exécution de init.csh ou de init.sh, un message d'erreur signale que l'autorisation est refusée (message en anglais "Permission denied") . Que se passe-t-il ?</p>
 </question>
 <answer>
-<p>init.csh et init.sh ne doivent pas être exécutés comme les commandes habituelles. Ces fichiers définissent des variables d'environnement, tels PATH ou MANPATH, dans votre shell. Pour avoir un effet durable sur votre shell, il faut utiliser la commande <code>source</code> pour csh/tcsh ou la commande <code>.</code> pour bash/zsh, comme ceci :</p>
+<p>init.csh et init.sh ne doivent pas être exécutés comme les commandes habituelles. Ces fichiers définissent des variables d'environnement, tels PATH ou MANPATH, dans votre shell. Pour avoir un effet durable sur votre shell, il faut utiliser la commande <code>source</code> pour csh et tcsh ou la commande <code>.</code> pour bash et zsh, comme ceci :</p>
 <p>pour csh/tcsh :</p>
 <codeblock>source /sw/bin/init.csh</codeblock>
 <p>pour bash/zsh :</p>
@@ -380,7 +380,7 @@ Failed: Updating using CVS failed. Check the error messages above.</codeblock>
 <p>ou encore :</p>
 <codeblock>cvs [update aborted]: received broken pipe signal</codeblock>
 <p>alors il est possible que le serveur CVS soit surchargé. Il vous faudra réessayer plus tard.</p>
-<p>Il se peut que les permissions soient mal définies dans votre dossier CVS et que vous n'y ayez pas accès, ce qui génère des messages "Permission denied" :</p>
+<p>Il se peut que les permissions soient mal définies dans votre dossier CVS et que vous n'y ayez pas accès, ce qui génère des messages de "refus d'autorisation" (message en anglais :"Permission denied") :</p>
 <codeblock>cvs update: in directory 10.2/stable/main: 
 cvs update: cannot open CVS/Entries for reading: No such file or \
 directory
@@ -392,7 +392,7 @@ cvs [update aborted]: cannot make directory \
 No such file or directory 
 ### execution of su failed, exit code 1 Failed: 
 Updating using CVS failed. Check the error messages above.</codeblock>
-<p>Dans ce cas-là, vous devez remettre à zéro votre répertoire CVS. Utilisez la commande :</p>
+<p>Dans ce cas-là, vous devez réinitialiser votre répertoire CVS. Pour ce faire, utilisez la commande :</p>
 <codeblock>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {}\
 ; fink selfupdate-cvs</codeblock>
 <p>Si vous ne voyez aucun des messages ci-dessus, il est très probable que vous ayez modifié un fichier dans l'arborescence /sw/fink/dists et que le mainteneur ait modifié ce fichier. Regardez de nouveau dans le message apparu après selfupdate-cvs les lignes commençant par "C", comme :</p>
@@ -400,7 +400,7 @@ Updating using CVS failed. Check the error messages above.</codeblock>
 ... (other info and patch files) ... 
 ### execution of su failed, exit code 1 
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>
-<p>La lettre "C" signifie que CVS a rencontré un problème en essayant de mettre à jour la dernière version. La solution consiste à retirer toutes les lignes commençant par "C" dans le message de sortie de selfupdate-cvs, et à essayer de nouveau.</p>
+<p>La lettre "C" signifie que CVS a rencontré un problème en essayant de mettre à jour la dernière version. La solution consiste à retirer tous les fichiers info ou patch correspondant aux lignes commençant par "C" dans le message de sortie de selfupdate-cvs, et à essayer de nouveau. Par exemple :</p>
 <codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</codeblock>
 </answer>
@@ -410,7 +410,7 @@ fink selfupdate-cvs</codeblock>
 <p>Lors de l'utilisation de Fink, ma machine se fige, entre en panique noyau ou bien plante. À l'aide !</p>
 </question>
 <answer>
-<p>À l'automne 2002, de nombreuses personnes ont signalé sur la liste de diffusion <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users</link> des problèmes (y compris des kernel panics ou des suspensions infinies lors de l'application d'une rustine) quand on utilise Fink pour compiler des paquets, alors qu'un anti-virus est installé. Il faut alors désactiver l'anti-virus avant d'utiliser Fink.</p>
+<p>À l'automne 2002, de nombreuses personnes ont signalé sur la liste de diffusion <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users</link> des problèmes (y compris des paniques noyau ou des suspensions infinies lors de l'application d'une rustine) quand on utilise Fink pour compiler des paquets, alors qu'un anti-virus est installé. Il faut alors désactiver l'anti-virus avant d'utiliser Fink.</p>
 </answer>
 </faqentry>
 <faqentry name="not-found">
@@ -423,7 +423,7 @@ fink selfupdate-cvs</codeblock>
 <p>Si cela ne marche pas, la plupart des sources sont accessibles sur <link url="http://distfiles.master.finkmirrors.net/">http://distfiles.master.finkmirrors.net/</link> (grâce à Rob Braun), et vous pouvez exécuter <code>fink configure</code> pour choisir les miroirs source "Master", afin que Fink s'y réfère automatiquement.</p>
 <p>Si cela ne marche pas, veuillez informer le mainteneur du paquet (disponible via "<code>fink describe <em>nom_du_paquet</em></code>") que l'URL n'est pas valide. Tous les mainteneurs ne lisent pas la liste de diffusion régulièrement.</p>
 <p>Pour obtenir un source utilisable, recherchez d'abord dans les autres répertoires du site distant la version du source que Fink recherche. (par exemple dans un répertoire "old"). Rappelez-vous, cependant, que certains sites distants ne conservent pas les anciennes versions de leurs paquets. Si le site officiel ne l'a pas, recherchez sur la toile - il arrive parfois que des sites non officiels aient l'archive tar que vous cherchez. Recherchez aussi sur <link url="http://us.dl.sourceforge.net/fink/direct_download/source/">http://us.dl.sourceforge.net/fink/direct_download/source/</link>. C'est là que Fink sauvegarde les fichiers source des paquets qui ont été distribués sous forme binaire. Si rien de ce qui précède ne fonctionne, postez alors un message sur la liste de diffusion <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users</link> pour demander si quelqu'un peut mettre à votre disposition l'ancien source.</p>
-<p>Une fois l'archive tar adéquate repérée, téléchargez-la manuellement et placez-la dans le répertoire des sources de Fink (c'est-à-dire pour l'installation par défaut de Fink, "<code>sudo mv <em>package-source.tar.gz</em> /sw/src/</code>". Puis utilisez '<code>fink install <em>nom_du_paquet</em></code>' comme d'habitude.</p>
+<p>Une fois l'archive tar adéquate repérée, téléchargez-la manuellement et placez-la dans le répertoire des sources de Fink (c'est-à-dire pour l'installation par défaut de Fink, utilisez la commande "<code>sudo mv <em>package-source.tar.gz</em> /sw/src/</code>". Puis utilisez la commande '<code>fink install <em>nom_du_paquet</em></code>' comme d'habitude.</p>
 <p>Si vous n'arrivez pas à obtenir le fichier source, vous devrez alors attendre que le mainteneur se charge du problème. Il peut soit poster un lien vers une source ancienne, soit mettre à jour les fichiers .info et .patch pour utiliser la nouvelle version.</p>
 </answer>
 </faqentry>
@@ -432,13 +432,13 @@ fink selfupdate-cvs</codeblock>
 <p>Le message "commande non trouvée" apparaît au lancement de Fink ou de tout autre paquet installé via Fink (message en anglais "command not found"). Que faire ?</p>
 </question>
 <answer>
-<p>Si cela se produit systématiquement, vous avez probablement modifié involontairement (ou omis de modifier) vos scripts de démarrage. Lancez le script <filename>/sw/bin/pathsetup.sh</filename> (soit en double-cliquant dans le Finder, soit dans une fenêtre de terminal). Le script tentera de deviner votre shell par défaut et y ajoutera une commande de chargement du script d'initialisation du shell de Fink dans votre configuration shell. Vous devrez alors ouvrir une nouvelle session de terminal, de façon à ce que vos paramètres d'environnement soient pris en compte. <em>Note</em> : dans certaines versions anciennes de fink, ce script s'appelle <filename>pathsetup.command</filename> au lieu de <filename>pathsetup.sh</filename>. Vous pouvez également lancer l'application <filename>pathsetup.app</filename>, qui se trouve dans l'image disque de la distribution binaire de Fink, pour modifier le script de démarrage.</p>
+<p>Si cela se produit systématiquement, vous avez probablement modifié involontairement (ou omis de modifier) vos scripts de démarrage. Lancez le script <filename>/sw/bin/pathsetup.sh</filename> (soit en double-cliquant dans le Finder, soit dans une fenêtre de terminal). Le script tentera de deviner votre shell par défaut et y ajoutera une commande de chargement du script d'initialisation du shell de Fink dans votre configuration shell. Vous devrez alors ouvrir une nouvelle session de terminal, de façon à ce que vos paramètres d'environnement soient pris en compte. <em>Note</em> : dans certaines versions anciennes de fink, ce script s'appelle <filename>pathsetup.command</filename> au lieu de <filename>pathsetup.sh</filename>. Pour modifier le script de démarrage, vous pouvez également lancer l'application <filename>pathsetup.app</filename>, qui se trouve dans l'image disque de la distribution binaire de Fink.</p>
 <p>Par contre, si cela ne se produit que dans le terminal X11 d'Apple, la meilleure solution est de modifier la définition de "Terminal" dans le menu Applications via le sous-menu <em>Applications-&gt;Personnaliser le menu...</em>. Au lieu de :</p>
 <codeblock>xterm</codeblock>
 <p>mettez :</p>
 <codeblock>xterm -ls</codeblock>
 <p>dans le champ commande. Ici, <code>ls</code> signifie <quote>login shell (c'est-à-dire shell d'ouverture de session)</quote>. Il en résulte que tous les paramètres de votre ouverture de session sont utilisés (tout comme dans le Terminal de Mac OS X).</p>
-<p>Les scripts <filename>/sw/bin/init.*</filename> font beaucoup plus qu'ajouter <filename>/sw/bin</filename> à votre PATH. La plupart des paquets ne fonctionnent pas correctement si ces scripts n'ont pas été lancés au démarrage.</p>
+<p>Les scripts <filename>/sw/bin/init.*</filename> font beaucoup plus qu'ajouter le répertoire <filename>/sw/bin</filename> à votre variable d'environnement PATH. La plupart des paquets ne fonctionnent pas correctement si ces scripts n'ont pas été lancés au démarrage.</p>
 </answer>
 </faqentry>
 <faqentry name="invisible-sw">
@@ -448,7 +448,7 @@ fink selfupdate-cvs</codeblock>
 <answer>
 <p>Oui. Si vous avez installé les Developer Tools, utilisez la commande suivante :</p>
 <codeblock>sudo /Developer/Tools/SetFile -a V /sw</codeblock>
-<p>Cela a pour effet de rendre invisible le dossier /sw, tout comme le sont les autres dossiers standards utilisés par le système (/usr, etc...). Si vous n'avez pas installé les Developer Tools, il existe plusieurs applications de tierce-partie qui vous permettent de changer les attributs des fichiers - vous devez rendre /sw invisible.</p>
+<p>Cela a pour effet de rendre invisible le répertoire /sw, tout comme le sont les autres répertoires standards utilisés par le système (/usr, etc...). Si vous n'avez pas installé les Developer Tools, il existe plusieurs applications de tierce-partie qui vous permettent de changer les attributs des fichiers - vous devez rendre le répertoire /sw invisible.</p>
 </answer>
 </faqentry>
 <faqentry name="install-info-bad">
@@ -456,9 +456,9 @@ fink selfupdate-cvs</codeblock>
 <p>Il est impossible d'installer quoi que ce soit. Un message signale que l'option infodir n'est pas reconnue par la commande install-info (message en anglais "install-info: unrecognized option `--infodir=/sw/share/info'"). Que faire ?</p>
 </question>
 <answer>
-<p>Ceci est généralement lié à un problème de PATH. Lancez dans une fenêtre de terminal :</p>
+<p>Ceci est généralement lié à un problème sur la variable d'environnement PATH. Lancez dans une fenêtre de terminal :</p>
 <codeblock>printenv PATH</codeblock>
-<p>Si <filename>/sw/sbin</filename> n'apparaît pas, vous devrez alors modifier vos variables d'environnement comme expliqué dans les <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</link> du Guide de l'Utilisateur. Si <filename>/sw/sbin</filename> est bien là, mais qu'il y a d'autres répertoires avant (par exemple <filename>/usr/local/bin</filename>), vous devrez alors réordonner votre PATH pour que <filename>/sw/sbin</filename> soit proche du début. Si vous voulez cependant que les autres répertoires soit avant <filename>/sw/sbin</filename>, et qu'ils contiennent des répertoires appelés eux aussi install-info, il faudra alors renommer temporairement ces sous-répertoires <filename>install-info</filename> quand vous utiliserez Fink.</p>
+<p>Si <filename>/sw/sbin</filename> n'apparaît pas, vous devrez alors modifier vos variables d'environnement comme expliqué dans les <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</link> du Guide de l'Utilisateur. Si <filename>/sw/sbin</filename> est bien là, mais qu'il y a d'autres répertoires avant (par exemple <filename>/usr/local/bin</filename>), vous devrez alors réordonner votre variable d'environnement PATH pour que <filename>/sw/sbin</filename> soit proche du début. Si vous voulez cependant que les autres répertoires soit avant <filename>/sw/sbin</filename>, et qu'ils contiennent des répertoires appelés eux aussi install-info, il faudra alors renommer temporairement ces sous-répertoires <filename>install-info</filename> quand vous utiliserez Fink.</p>
 </answer>
 </faqentry>
 <faqentry name="bad-list-file">
@@ -477,8 +477,8 @@ fink selfupdate-cvs</codeblock>
 -powerpc.deb</codeblock>
 <p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>Si vous obtenez une liste de répertoires et de fichiers, votre fichier .deb est valide. Si, par contre, le résultat est différent ou si vous n'avez pas le fichier .deb, vous pouvez continuer car cette erreur n'interfère pas avec les éléments compilés.</p>
-<p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que ce que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <link url="http://fink.sourceforge.net/pdb/index.php"> base de donnée des paquets</link>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt=get install --reinstall --download-only <em>nom_du_paquet</em></code>. Vous pouvez aussi le compiler vous-même avec <code>fink rebuild <em>nom_du_paquet</em></code>, mais cela ne l'installera pas.</p>
-<p>Quand vous aurez un fichier .deb valide, vous pouvez reconstituer le fichier. Tout d'abord, mettez-vous en mode super-utilisateur en utilisant <code>sudo -s</code> (saisissez votre mot de passe administrateur si nécessaire), puis utilisez la commande suivante :</p>
+<p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <link url="http://fink.sourceforge.net/pdb/index.php"> base de données des paquets</link>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt=get install --reinstall --download-only <em>nom_du_paquet</em></code>. Vous pouvez aussi le compiler vous-même avec la commande <code>fink rebuild <em>nom_du_paquet</em></code>, mais cela ne l'installera pas.</p>
+<p>Quand vous aurez un fichier .deb valide, vous pouvez reconstituer le fichier. Tout d'abord, mettez-vous en mode super-utilisateur en utilisant la commande <code>sudo -s</code> (saisissez votre mot de passe administrateur si nécessaire), puis utilisez la commande suivante :</p>
 <codeblock>dpkg -c <em>chemin_complet_du_fichier_deb</em> | awk '{if ($6 == "./")\
 { print "/."; } \
 else if (substr($6, length($6), 1) == "/")\
@@ -643,7 +643,7 @@ gzip: stdout: Broken pipe
 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
 ### execution of dpkg-deb failed, exit code 10
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
-<p>ou des fautes de segmentation lors de l'utilisation d'utilitaires inclus dans <code>fileutils</code>, par exemple <code>ls</code> ou <code>mv</code>, sont généralement dues à une erreur de lien pré-encodé dans une librairie. Vous pouvez la corriger avec la commande suivante :</p>
+<p>ou des fautes de segmentation lors de l'utilisation d'utilitaires inclus dans <code>fileutils</code>, par exemple <code>ls</code> ou <code>mv</code>, sont généralement dues à une erreur de lien pré-encodé dans une bibliothèque. Vous pouvez la corriger avec la commande suivante :</p>
 <codeblock>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
 </answer>
 </faqentry>
@@ -695,7 +695,7 @@ Failed test (./Command/chowname.t at line 27)
 <answer>
 <p>L'erreur suivante :</p>
 <codeblock>Failed: Can't move "/sw/fink" out of the way.</codeblock>
-<p>est due, en général, à des permissions erronées dans un des répertoires temporaires créés durant l'exécution de <code>selfupdate</code>. Supprimez-les :</p>
+<p>est due, en général, à des permissions erronées dans un des répertoires temporaires créés durant l'exécution de <code>selfupdate</code>. Supprimez-les via la commande :</p>
 <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
 </answer>
 </faqentry>
@@ -706,13 +706,13 @@ Failed test (./Command/chowname.t at line 27)
 <answer>
 <p>Les serveurs de téléchargement de SourceForge ne sont pas toujours disponibles, c'est pourquoi nous sommes en train de changer de serveur pour la distribution binaire.</p>
 <ul>
-<li>Si vous avez installé les Outils de Développement (Developer Tools), installez la dernière version (>= 0.24.4.1) du paquet <code>fink-mirrors</code>, puis réinstallez <code>fink</code>, soit via :
+<li>Si vous avez installé les Outils de Développement (Developer Tools), installez la dernière version (>= 0.24.4.1) du paquet <code>fink-mirrors</code>, puis réinstallez <code>fink</code>, soit via la commande :
 <codeblock>fink reinstall fink</codeblock>
-<p>ou via :</p>
+<p>ou via la commande :</p>
 <codeblock>sudo apt-get install --reinstall fink</codeblock>
 <p>si vous ne souhaitez pas utiliser la distribution source.</p>
 </li>
-<li>Si vous n'avez pas installé les Outils de Développement (Developer Tools), vous devez changer votre configuration comme suit. Modifiez le fichier <filename>sources.list</filename> en tant que super-utilisateur, via :
+<li>Si vous n'avez pas installé les Outils de Développement (Developer Tools), vous devez changer votre configuration comme suit. Modifiez le fichier <filename>sources.list</filename> en tant que super-utilisateur, via la commande :
 <codeblock>sudo pico /sw/etc/apt/sources.list</codeblock>
 <p>Utilisez votre éditeur de texte préféré compatible avec des fins de ligne Unix. Changez les lignes qui commencent par &quot;Official binary distribution:&quot; ainsi :</p>
 <codeblock># Official binary distribution: download location for packages
@@ -819,7 +819,7 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock
 <answer>
 <p>Si vous voyez apparaître ce message :</p>
 <codeblock>Unknown option: 1 Usage: head [-options] &lt;url&gt;...</codeblock>
-<p>suivi d'une liste d'options, cela signifie que la commande <code>head</code> est défectueuse. Cela se produit lorsqu'on installe la librairie Perl libwww sur un volume système HFS+. Elle tente de créer une nouvelle commande <code>/usr/bin/HEAD</code>, qui écrase la commande <code>head</code> existante, car le système de fichiers ne respecte pas la casse. <code>head</code> est une commande standard utilisée dans de nombreux scripts shell et dans les Makefiles. Vous devez récupérer la commande <code>head</code> originale si vous voulez utiliser Fink.</p>
+<p>suivi d'une liste d'options, cela signifie que la commande <code>head</code> est défectueuse. Cela se produit lorsqu'on installe la bibliothèque Perl libwww sur un volume système HFS+. Elle tente de créer une nouvelle commande <code>/usr/bin/HEAD</code>, qui écrase la commande <code>head</code> existante, car le système de fichiers ne respecte pas la casse. <code>head</code> est une commande standard utilisée dans de nombreux scripts shell et dans les Makefiles. Vous devez récupérer la commande <code>head</code> originale si vous voulez utiliser Fink.</p>
 <p>Le script bootstrap de la version source de fink fait, maintenant, cette vérification ; mais vous pouvez vous retrouver devant ce problème si vous utilisez la version binaire lors de la première installation de fink ou si vous installez libwww après avoir installé Fink.</p>
 <p>Ce problème peut aussi venir de l'installation de <filename>/sw/bin/HEAD</filename> (mais pas par un paquet de Fink). La solution est plus simple : renommez <filename>/sw/bin/HEAD</filename>.</p>
 </answer>
@@ -885,10 +885,10 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 </faqentry>
 <faqentry name="usr-local-libs">
 <question>
-<p>Problèmes de compilation de paquet Fink quand des librairies ou des headers sont installés dans le répertoire /usr/local. Que faire ?</p>
+<p>Problèmes de compilation de paquet Fink quand des bibliothèques ou des headers sont installés dans le répertoire /usr/local. Que faire ?</p>
 </question>
 <answer>
-<p>C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les librairies et les headers installés dans <filename>/usr/local</filename> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des librairies installées dans <filename>/usr/local/lib</filename> ou des headers installés dans <filename>/usr/local/include</filename>. Si c'est le cas, déplacez temporairement <filename>/usr/local</filename> :</p>
+<p>C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les bibliothèques et les headers installés dans <filename>/usr/local</filename> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des bibliothèques installées dans <filename>/usr/local/lib</filename> ou des headers installés dans <filename>/usr/local/include</filename>. Si c'est le cas, déplacez temporairement <filename>/usr/local</filename> :</p>
 <codeblock>sudo mv /usr/local /usr/local.moved</codeblock>
 <p>construisez le paquet, puis remettez en place <filename>/usr/local</filename> :</p>
 <codeblock>sudo mv /usr/local.moved /usr/local</codeblock>
@@ -903,7 +903,7 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 <codeblock>ld: table of contents for archive: 
 /sw/lib/libintl.a is out of date; 
 rerun ranlib(1) (can't load from it)</codeblock>
-<p>Vous devez exécuter ranlib (en tant que super-utilisateur) sur la librairie qui est la cause du problème. Par exemple, dans le cas ci-dessus, vous devez exécuter :</p>
+<p>Vous devez exécuter ranlib (en tant que super-utilisateur) sur la bibliothèque qui est la cause du problème. Par exemple, dans le cas ci-dessus, vous devez exécuter :</p>
 <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
 </answer>
 </faqentry>
@@ -1034,7 +1034,7 @@ unix_dl.c:467: error: `info' undeclared (first use in this function)
 make[1]: *** [unix_dl.lo] Error 1</codeblock>
 <p>vous avez certainement un header <code>/usr/local/include/dlfcn.h</code>, incompatible avec Panther. Déplacez-le.</p>
 <p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
-<p>Ce header est, en général, installé par Open Office, et vous devez le remplacer, de même que la librairie <code>/usr/local/lib/libdl.dylib</code>, par des liens symboliques vers les fichiers inclus dans Panther :</p>
+<p>Ce header est, en général, installé par Open Office, et vous devez le remplacer, de même que la bibliothèque <code>/usr/local/lib/libdl.dylib</code>, par des liens symboliques vers les fichiers inclus dans Panther :</p>
 <codeblock>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
 </answer>
@@ -1284,7 +1284,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 </question>
 <answer>
 <!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->
-<p>Quand on compile soi-même sans passer par Fink, il faut indiquer au compilateur et à l'éditeur de liens où trouver les librairies et les headers installés par Fink. Pour un paquet qui utilise un processus standard configure/make, vous devez définir quelques variables d'environnement :</p>
+<p>Quand on compile soi-même sans passer par Fink, il faut indiquer au compilateur et à l'éditeur de liens où trouver les bibliothèques et les headers installés par Fink. Pour un paquet qui utilise un processus standard configure/make, vous devez définir quelques variables d'environnement :</p>
 <p>-tcsh-</p>
 <codeblock>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
@@ -1301,8 +1301,8 @@ export CPPFLAGS=$CXXFLAGS
 export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
 export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
-<p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <filename>.cshrc</filename> ou <filename>.profile</filename>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les librairies) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p>
-<p>De plus, vous devrez peut-être installer les headers de développement (par exemple <em>foo-1.0-1-dev</em>) des paquets librairies que vous utilisez, s'ils ne sont pas déjà installés.</p>
+<p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <filename>.cshrc</filename> ou <filename>.profile</filename>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les bibliothèques) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p>
+<p>De plus, vous devrez peut-être installer les headers de développement (par exemple <em>foo-1.0-1-dev</em>) des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés.</p>
 </answer>
 </faqentry>
 <faqentry name="apple-x11-applications-menu">
@@ -1395,7 +1395,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>Représentent les extensions Java pour les graphiques 3D et le traitement d'images, qui peuvent être téléchargées et installées à partir du site d'Apple. Voir cette <link url="http://docs.info.apple.com/article.html?artnum=120289">page web d'Apple</link> pour de plus amples informations.</p>
 </li>
 <li>system-xfree86 : [paquet fantôme pour un paquet x11 installé manuellement]</li>
-<li>system-xfree86-shlibs : [paquet fantôme pour les librairies partagées x11 installées manuellement]
+<li>system-xfree86-shlibs : [paquet fantôme pour les bibliothèques partagées x11 installées manuellement]
 <p>Représentent X11/XDarwin d'Apple, partie optionnelle de OS X (X11User.pkg). Ces paquets fournissent respectivement <code>x11</code> et <code>x11-shlibs</code>. Voir aussi <xref chapter="comp-packages" section="cant-install-xfree">cette QFP</xref>.</p>
 </li>
 <li>system-xfree86-dev : [paquet fantôme pour les outils de développement x11 installés manuellement]
