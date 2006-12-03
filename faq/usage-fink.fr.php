@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/01 20:20:56';
+$cvs_date = 'Date: 2006/12/03 06:28:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -174,7 +174,7 @@ fink selfupdate</pre></li>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Nous déconseillons de le faire. Le jeu n'en vaut vraiment pas la chandelle.</p></div>
 </a>
 <a name="packages-gz">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.24: Lors de la mise à jour binaire, de nombreux messages signalant qu'un fichier est introuvable ou qu'il est impossible d'obtenir le status de la liste d'un paquet source apparaissent (messages en anglais "File not found") ou "Couldn't stat package source list file"). Que faire ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.24: Lors de la mise à jour binaire, de nombreux messages signalant qu'un fichier est introuvable ou qu'il est impossible d'obtenir le status de la liste d'un paquet source apparaissent (messages en anglais "File not found" ou "Couldn't stat package source list file"). Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous voyez ceci :</p><pre>
 Err file: local/main Packages
 File not found
@@ -294,7 +294,7 @@ page and on http://fontconfig.org.
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If vous obtenez des messages d'erreurs contenant les lignes suivantes :</p><pre>
 cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 2401 failed: Operation timed out
-</pre><p>Cela provient d'une récente restructuration des serveurs CVS sur sourceforge.net. Les fichiers Fink sont maintenant accessible à partir de <code>fink.cvs.sourceforge.net</code>. Vous devez mettre à jour le <code>paquet fink-mirrors</code> via les outils binaires suivants :</p><pre>
+</pre><p>Cela provient d'une récente restructuration des serveurs CVS sur sourceforge.net. Les fichiers Fink sont maintenant accessibles à partir de <code>fink.cvs.sourceforge.net</code>. Vous devez mettre à jour le <code>paquet fink-mirrors</code> via les outils binaires suivants :</p><pre>
 sudo apt-get update ; sudo apt-get install fink-mirrors
 </pre></div></a>
 <p align="right"><? echo FINK_NEXT ; ?>:

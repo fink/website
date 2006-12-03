@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/01 20:20:56';
+$cvs_date = 'Date: 2006/12/03 06:28:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installation, Utilisation et Mise à jour de Fink">';
 
 
@@ -29,26 +29,26 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>ce
 </a>
 <a name="also_in">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.5: À l'installation d'un paquet, un message d'erreur signale qu'il y a tentative d'écrasement d'un fichier situé dans un autre paquet. Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Cela arrive parfois avec les paquets multiples (c'est-à-dire ceux qui sont scindés en -dev, -shlibs, etc...) quand un fichier est déplacé d'un paquet à l'autre (par exemple de <code>foo</code> à <code>foo-shlibs</code>. Vous pouvez tenter d'écraser le fichier par celui présent dans le paquet (puisqu'ils sont identiques) :</p><pre>sudo dpkg -i --force-overwrite <b>filename</b>
-</pre><p>où <b>filename</b> est le fichier .deb correspondant au paquet que vous êtes en train d'installer.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Cela arrive parfois avec les paquets multiples (c'est-à-dire ceux qui sont scindés en -dev, -shlibs, etc...) quand un fichier est déplacé d'un paquet à l'autre (par exemple de <code>toto</code> à <code>toto-shlibs</code>. Vous pouvez tenter d'écraser le fichier par celui présent dans le paquet (puisqu'ils sont identiques) :</p><pre>sudo dpkg -i --force-overwrite <b>nomdufichier</b>
+</pre><p>où <b>nomdufichier</b> est le nom du fichier .deb correspondant au paquet que vous êtes en train d'installer.</p></div>
 </a>
 <a name="weak_lib">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.6: Après installation des outils de développement de décembre 2002, des messages concernant des "weak libraries" apparaissent.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>6.6: Après installation des outils de développement de décembre 2002, des messages concernant des "bibliothèques à références faibles" (weak libraries en anglais) apparaissent. Que se passe-t-il ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> C'est un problème qui est apparu avec les outils de développement de décembre 2002. Parfois, des messages semblables au suivant apparaissent (on a choisi ici libgdk-pixbuf à titre d'exemple) :</p><pre>ld: warning dynamic shared library:
 /sw/lib/libgdk-pixbuf.dylib not made a weak library in output with
 MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</pre><p>Vous pouvez considérer ces messages comme inoffensifs. Si vous êtes du genre curieux, lisez les notes de mise à jour (release notes) qui se trouvent dans le répertoire de documentation du développeur, en particulier celles concernant GCC et l'éditeur de liens, pour de plus amples informations. Cela se rapporte essentiellement à la façon dont sont considérés les symboles manquants lors de l'exécution d'applications qui utilisent des références faibles : erreur fatale ou non au lancement.</p></div>
 </a>
 <a name="mv-failed">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.7: Lors de la construction d'un paquet, le message suivant apparaît : "execution of mv failed, exit code 1"</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous avez installé StuffIt Pro, il se peut que vous ayez activé le mode "Archive Via Real Name". Recherchez un panneau de préférences Stuffit dans les préférences système et désactivez "ArchiveViaRealName" si cette option est activée. Elle contient une implémentation boguée de certains appels système importants qui entraîne un grand nombre d'erreurs étranges et passagères comme celle-ci.</p><p>Dans le cas contraire, une erreur sur <code>mv</code> signifie, en général, qu'une autre erreur s'est produite précédemment dans le processus de construction sans l'arrêter. Pour trouver le ou les fichiers concernés, recherchez dans les messages de sortie le fichier manquant. Par exemple, si vous obtenez ce message :</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
-/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ 
-mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+<div class="question"><p><b><? echo FINK_Q ; ?>6.7: Lors de la construction d'un paquet, un message indique que l'exécution de la commande mv a échoué (message en anglais : "execution of mv failed, exit code 1"). Que faire ?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous avez installé StuffIt Pro, il se peut que vous ayez activé le mode "Archive Via Real Name". Recherchez un panneau de préférences Stuffit dans les préférences système et désactivez "ArchiveViaRealName" si cette option est activée. Elle contient une implémentation boguée de certains appels système importants qui entraîne un grand nombre d'erreurs étranges et passagères comme celle-ci.</p><p>Dans le cas contraire, une erreur sur la commande <code>mv</code> signifie, en général, qu'une autre erreur s'est produite précédemment dans le processus de construction sans l'arrêter. Pour trouver le ou les fichiers concernés, recherchez dans les messages de sortie le fichier manquant. Par exemple, si vous obtenez ce message :</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libtata*.dylib \
+/sw/src/root-toto-shlibs-0.1.2-3/sw/lib/ 
+mv: cannot stat `/sw/src/root-toto-0.1.2-3/sw/lib/libtata*.dylib': 
 No such file or directory 
 ### execution of mv failed, exit code 1 
-Failed: installing foo-0.1.2-3 failed</pre><p>vous devez rechercher <code>libbar</code> parmi les messages de sortie précédents du processus de construction.</p></div>
+Failed: installing toto-0.1.2-3 failed</pre><p>vous devez rechercher <code>libtata</code> parmi les messages de sortie précédents du processus de construction.</p></div>
 </a>
 <a name="node-exists">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.8: Il est impossible d'installer ou de mettre à jour un paquet, un message indique qu'un "node" existe déjà.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>6.8: Il est impossible d'installer ou de mettre à jour un paquet, un message indique qu'un "noeud" existe déjà (message en anglais : "node already exists". Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ces messages d'erreurs sont similaires au message suivant :</p><pre>Failed: Internal error: node for system-xfree86 already exists</pre><p>Le moteur de dépendances ne sait plus où il en est, car il y a eu des changements dans certains fichiers info des paquets. Pour résoudre ce problème :</p><ul>
 <li>
 <p>Supprimez de force le paquet en cause, par exemple :</p>
@@ -56,13 +56,13 @@ Failed: installing foo-0.1.2-3 failed</pre><p>vous devez rechercher <code>libbar
 <p>pour l'exemple donné ci-dessus.</p>
 </li>
 <li>
-<p>Essayez de réinstaller ou de remettre à jour. À un moment, vous verrez apparaître un message concernant une "virtual dependency" sur le paquet que vous venez de supprimer. Sélectionnez-le et le paquet sera réinstallé pendant le processus de construction.</p>
+<p>Essayez de le réinstaller ou de le remettre à jour. À un moment, vous verrez apparaître un message concernant une "dépendance virtuelle" (en anglais "virtual dependency") sur le paquet que vous venez de supprimer. Sélectionnez-le et le paquet sera réinstallé pendant le processus de construction.</p>
 </li>
 </ul></div>
 </a>
 <a name="usr-local-libs">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.9: Problèmes de compilation de paquet Fink quand des bibliothèques ou des headers sont installés dans le répertoire /usr/local. Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les bibliothèques et les headers installés dans <code>/usr/local</code> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des bibliothèques installées dans <code>/usr/local/lib</code> ou des headers installés dans <code>/usr/local/include</code>. Si c'est le cas, déplacez temporairement <code>/usr/local</code> :</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>construisez le paquet, puis remettez en place <code>/usr/local</code> :</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>6.9: Des problèmes de compilation de paquet Fink apparaissent quand des bibliothèques ou des headers sont installés dans le répertoire /usr/local. Que faire ?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les bibliothèques et les headers installés dans le répertoire <code>/usr/local</code> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des bibliothèques installées dans le répertoire <code>/usr/local/lib</code> ou des headers installés dans le répertoire <code>/usr/local/include</code>. Si c'est le cas, déplacez temporairement le répertoire <code>/usr/local</code> :</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>construisez le paquet, puis remettez en place le répertoire <code>/usr/local</code> :</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
 </a>
 <a name="toc-out-of-date">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.10: Lors de la construction d'un paquet, un message indique que la "table des matières" n'est pas à jour (message en anglais "table of contents out of date"). Que faire ?</b></p></div>
@@ -75,8 +75,8 @@ rerun ranlib(1) (can't load from it)</pre><p>Vous devez exécuter ranlib (en tan
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ceci provient du fait qu'une des étapes de la compilation du paquet <code>atlas</code> envoie une invite à l'utilisateur et que Fink Commander ne l'affiche pas. Vous devez utiliser <code>fink install atlas</code> au lieu de passer par Fink Commander.</p></div>
 </a>
 <a name="basic-headers">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.12: Un message indique qu'il est impossible de trouver les fichiers <code>stddef.h</code>, ou <code>wchar.h</code>, ou <code>stdlib.h</code>, ou <code>crt1.o</code>, ou bien encore que le <q>compilateur C ne peut créer des fichiers exécutables</q> ( message en anglais "C compiler cannot create executables"). Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ces problèmes sont dus, généralement, à l'absence de headers essentiels fournis par le paquet DevSDK des Outils de Développement (Developer Tools). Vérifiez que le répertoire <code>/Library/Receipts/DevSDK.pkg</code> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des Outils de Développement et installez le paquet DevSDK en choisissant Custom Install.</p><p>Le message d'erreur <q>impossible de créer des fichiers exécutables</q> peut aussi être généré lorsque la version des Outils de Développement installée provient d'une version antérieure du système d'exploitation.</p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>6.12: Un message indique qu'il est impossible de trouver les fichiers <code>stddef.h</code>, ou <code>wchar.h</code>, ou <code>stdlib.h</code>, ou <code>crt1.o</code>, ou bien encore que le <q>compilateur C ne peut créer de fichiers exécutables</q> ( message en anglais "C compiler cannot create executables"). Que faire ?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ces problèmes sont dus, généralement, à l'absence de headers essentiels fournis par le paquet DevSDK des Outils de Développement (Developer Tools). Vérifiez que le répertoire <code>/Library/Receipts/DevSDK.pkg</code> existe dans votre système. Si ce n'est pas le cas, relancez l'installeur des Outils de Développement et installez le paquet DevSDK en choisissant l'option Installation Personnalisée (Custom Install en anglais).</p><p>Le message d'erreur <q>impossible de créer des fichiers exécutables</q> peut aussi être généré lorsque la version des Outils de Développement installée provient d'une version antérieure du système d'exploitation.</p></div>
 </a>
 <a name="multiple-dependencies">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.13: Il est impossible de mettre à jour, un message indique que Fink est "incapable de résoudre des conflits de versions entre dépendances" (message en anglais "unable to resolve version conflict on multiple dependencies"). Que faire ?</b></p></div>
@@ -88,7 +88,7 @@ rerun ranlib(1) (can't load from it)</pre><p>Vous devez exécuter ranlib (en tan
 </a>
 <a name="freetype-problems">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.15: Des messages d'erreurs concernant freetype apparaissent. Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Il y a plusieurs types d'erreurs concernant freetype. Si le message d'erreur ressemble au suivant :</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>Vérifiez que vous n'avez pas un exécutable <code>freetype-config</code> dans un endroit insolite via la commande :</p><pre>where freetype-config</pre><p>si vous utilisez <code>tcsh</code>, ou :</p><pre>type -a freetype-config</pre><p>si vous utilisez <code>bash</code>. La framework Mono installe <code>/usr/bin/freetype-config</code> en tant que lien symbolique vers un fichier de cettre framework.</p><p>Si le message d'erreur ressemble au suivant :</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Il y a plusieurs types d'erreurs concernant freetype. Si le message d'erreur ressemble au suivant :</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>Vérifiez que vous n'avez pas un exécutable <code>freetype-config</code> dans un endroit insolite via la commande :</p><pre>where freetype-config</pre><p>si vous utilisez <code>tcsh</code>, ou :</p><pre>type -a freetype-config</pre><p>si vous utilisez <code>bash</code>. La framework Mono installe <code>/usr/bin/freetype-config</code> en tant que lien symbolique vers un fichier de cette framework.</p><p>Si le message d'erreur ressemble au suivant :</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: 
 error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:57:
 error: parse error before '*' token
@@ -131,8 +131,8 @@ configure: error: pangoxft
 Pango backend found but did not find freetype libraries 
 make: *** No targets specified and no makefile found. Stop. 
 ### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2 
-Failed: compiling gtk+2-2.2.4-2 failed</pre><p>le problème est dû à une confusion entre les headers des paquets <code>freetype</code> ou de <code>freetype-hinting</code> et les headers <code>freetype2</code> qui sont inclus dans X11 ou dans XFree86.</p><pre>fink remove freetype freetype-hinting</pre><p>supprime la variante que vous avez installée. À contrario, si le message d'erreur est similaire à celui-ci :</p><pre>ld: Undefined symbols: _FT_Access_Frame</pre><p>cela est dû à la présence d'un fichier résultant d'une installation précédente de X11. Réinstallez X11 SDK.</p><p>Enfin, si le message d'erreur, ressemble à celui-là :</p><pre>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
-undefined reference to _FT_Access_Frame</pre><p>vous êtes probablement en présence d'une version binaire qui compile correctement avec <code>gcc3.3</code> sous Jaguar, mais pas sous Panther. Ce problème a été résolu, il suffit que vous mettiez à jour vos paquets, par exemple via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p></div>
+Failed: compiling gtk+2-2.2.4-2 failed</pre><p>le problème est dû à une confusion entre les headers des paquets <code>freetype</code> ou de <code>freetype-hinting</code> et les headers <code>freetype2</code> qui sont inclus dans X11 ou dans XFree86. La commande :</p><pre>fink remove freetype freetype-hinting</pre><p>supprime la variante que vous avez installée. À contrario, si le message d'erreur est similaire à celui-ci :</p><pre>ld: Undefined symbols: _FT_Access_Frame</pre><p>cela est dû à la présence d'un fichier résultant d'une installation précédente de X11. Réinstallez X11 SDK.</p><p>Enfin, si le message d'erreur, ressemble à celui-là :</p><pre>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
+undefined reference to _FT_Access_Frame</pre><p>vous êtes probablement en présence d'une version binaire qui compile correctement avec <code>gcc3.3</code> sous Jaguar, mais pas sous Panther. Ce problème a été résolu, il suffit que vous mettiez à jour vos paquets, par exemple via les commandes <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p></div>
 </a>
 <a name="dlfcn-from-oo">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.16: Des messages d'erreur concernant `Dl_info' apparaissent. Que faire ?</b></p></div>
@@ -163,7 +163,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce problème se résout, en général, par la définition correcte de votre environnement, cf. <a href="usage-fink.php?phpLang=fr#fink-not-found">cette partie des QFP</a>.</p></div>
 </a>
 <a name="xml-parser">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.20: Le message d'erreur suivant apparaît : <q>configure: error: XML::Parser perl module is required for intltool</q>. Que faire ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>6.20: Un message d'erreur signalant que le module Perl XML est requis par intltool apparaît (message en anglais: <q>configure: error: XML::Parser perl module is required for intltool</q>). Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous utilisez l'arbre instable, you devez installer une version de intltool supérieure ou égale à la version 0.34.1.</p><p>Sinon, vous devez vérifier que vous avez la variante du paquet qui correspond à la version de Perl installée dans votre système. Par exemple, sous Panther, vous devez avoir <code>xml-parser-pm581</code> et non pas <code>xml-parser-pm560</code> (il se peut que vous ayez le paquet fantôme <code>xml-parser-pm</code>), car, dans votre système est installé <code>Perl-5.8.1</code> et non pas <code>Perl-5.6.0</code>. Sous Jaguar, vous devez avoir la variante <code>pm560</code> si vous utilisez la version système de Perl; si vous avez installé <code>Perl 5.8.0</code>, vous devez avoir la variante <code>pm580</code>.</p></div>
 </a>
 <a name="master-problems">
@@ -190,8 +190,8 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
 ### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>le problème apparaît parce que les paquets <code>python2*</code> notent la valeur en cours de <code>MACOSX_DEPLOYMENT_TARGET</code> dans un fichier de configuration lors de leur compilation. Les outils de compilation de python utilisent ensuite cette valeur lorsqu'ils compilent des modules. Par exemple, si avez sous Mac OS X 10.4 un paquet <code>python24</code> qui a été compilé sous Mac OS X 10.3, soit par mise à jour 10.3 =&gt; 10.4, ou via la distribution binaire <b>10.4-transitionelle</b>, et qui n'a pas été recompilé, il y aura divergence entre la valeur de <code>MACOSX_DEPLOYMENT_TARGET</code> stockée dans le fichier de configuration de python (10.3) et sa valeur réelle (10.4).</p><p>La solution de ce problème consiste à recompiler le paquet <code>python</code> en cause ; dans notre exemple, <code>fink rebuild python24</code>.</p><p>Si vous obtenez le même genre d'erreur au runtime, recompilez le module après avoir recompilé le paquet <code>python2*</code> concerné.</p></div>
 </a>
 <a name="libtool-unrecognized-dynamic">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.25: Un message d'erreur <q>unrecognized option `-dynamic'</q> provenant de <code>libtool</code> apparaît.</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Le message :</p><pre> libtool: unrecognized option `-dynamic'</pre><p>signifie que vous avez remplacé <code>/usr/bin/libtool</code> d'Apple par GNU <code>libtool</code>. Malheureusement les deux <code>libtools</code> <b>ne font pas</b> la même chose.</p><p>La seule manière de résoudre le problème est d'installer une version de <code>libtool</code> d'Apple en provenance d'ailleurs. Il fait partie du paquet <code>DeveloperTools.pkg</code> de XCode. Vous pouvez réinstaller le paquet si vous supprimez d'abord son reçu situé dans le répertoire <code>/Library/Receipts</code> (glissez-le dans la corbeille sur les systèmes Mac OS X 10.4 et ultérieurs ou exécutez <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> pour le système Mac OS X 10.3).</p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>6.25: Un message d'erreur signalant que <code>libtool</code>  ne reconnait pas l'option '-dynamic' apparaît (message en anglais <q>libtool: unrecognized option `-dynamic'</q>). Que faire ?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Le message :</p><pre> libtool: unrecognized option `-dynamic'</pre><p>signifie que vous avez remplacé la commande <code>/usr/bin/libtool</code> d'Apple par la commande GNU <code>libtool</code>. Malheureusement les deux <code>libtools</code> <b>ne font pas</b> la même chose.</p><p>La seule manière de résoudre le problème est d'installer une version de <code>libtool</code> d'Apple en provenance d'ailleurs. Il fait partie du paquet <code>DeveloperTools.pkg</code> de XCode. Vous pouvez réinstaller le paquet si vous supprimez d'abord son reçu situé dans le répertoire <code>/Library/Receipts</code> (glissez-le dans la corbeille sur les systèmes Mac OS X 10.4 et ultérieurs ou exécutez la commande <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> pour le système Mac OS X 10.3).</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=fr">7. Problèmes de compilation spécifiques à certains paquets</a></p>
