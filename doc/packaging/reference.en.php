@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/11/29 19:45:40';
+$cvs_date = 'Date: 2006/12/03 21:21:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -1149,11 +1149,14 @@ commands to the InstallScript.
 <b>Introduced in fink 0.11.0.</b>
 This field declares the shared libraries which are installed in the
 package.  There is one line for each
-shared library, which contains three items separated by whitespace:
+shared library, which contains three or four items separated by whitespace:
 the <code>-install_name</code> of the
-library, the <code>-compatibility_version</code>, and versioned 
+library, the <code>-compatibility_version</code>, versioned 
 dependency information specifying the Fink package which provides
-this library at this compatibility version.  The dependency should
+this library at this compatibility version, and the
+library architecture.  (The library architecture may either be "32", "64", or
+"32-64", and may be absent; the value defaults to "32" if it is absent.)  
+The dependency should
 be stated in the form <code> foo (&gt;= version-revision)</code> where 
 <code>version-revision</code> refers to
 the <b>first</b> version of a Fink package which made

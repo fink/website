@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/11/29 19:45:40';
+$cvs_date = 'Date: 2006/12/03 21:21:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -157,14 +157,16 @@ for existence before calling them and the like).
 <p>
 Fink has a new policy about shared libraries, effective in February 2002.
 This section of the documentation discusses version 4
-of the policy, which coincides with the release of Fink's 0.5.0 distribution.
+of the policy, which coincides with the release of Fink's 0.5.0 distribution
+(as well as some updates from December, 2006 to handle 64bit libraries).
 We begin with a quick summary, and then discuss things in more detail.
 </p><p>
 Any package which builds shared libraries and is either (1) being put into
   the stable tree, or (2) a new package in Fink, should treat its shared
   libraries according to Fink's policy.  This means:</p>
 <ul>
-<li>   verify, using <code>otool -L</code>, that 
+<li>   verify, using <code>otool -L</code> (or <code>otool64 -L</code> for
+64bit libraries), that 
        the install_name of each library and
        its compatibility and current version numbers are correct </li>
 <li>   put the shared libraries in a separate package (except for the
@@ -278,7 +280,8 @@ barN-bin as well as barN-shlibs.
 When building shared libraries under major version N, it is important that
 the "install_name" of the library be <code>%p/lib/bar.N.dylib</code>.  
 (You can
-find the install_name by running <code>otool -L</code> on your library.)  The
+find the install_name by running <code>otool -L</code> on your library,
+or <code>otool64 -L</code> for 64bit libraries.)  The
 actual library file should be installed at
 </p>
 <pre>
@@ -303,7 +306,7 @@ but in any event you should
 check that they have been done correctly in your case.  You should also
 check that current_version and compatibility_version were defined 
 appropriately for your shared libraries.  (These are also shown with the 
-<code>otool -L</code> query.)
+<code>otool -L</code> query, or <code>otool64 -L</code> for 64bit libraries.)
 </p><p>
 Files are then divided between the two packages as follows
 </p>
@@ -410,9 +413,12 @@ In addition to putting the shared libraries in the correct package, as of
 version 4 of this policy, you must also declare all of the shared libraries
 using the <code>Shlibs</code> field.  This field has one line for each
 shared library, which contains the <code>-install_name</code> of the
-library, the <code>-compatibility_version</code>, and versioned 
+library, the <code>-compatibility_version</code>, versioned 
 dependency information specifying the Fink package which provides
-this library at this compatibility version.  The dependency should
+this library at this compatibility version, and the library
+architecture.  (The library architecture may either be "32", "64", or
+"32-64", and may be absent; the value defaults to "32" if it is absent.)
+The dependency should
 be stated in the form <code> foo (&gt;= version-revision)</code> where 
 <code>version-revision</code> refers to
 the <b>first</b> version of a Fink package which made
@@ -420,14 +426,16 @@ this library (with this compatibility version) available.  For example,
 a declaration</p>
 <pre>
   Shlibs: &lt;&lt;
-    %p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2)
+    %p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
   &lt;&lt;
 </pre>
-<p>indicates that a library with <code>-install_name</code> %p/lib/bar.1.dylib
+<p>indicates that a (32bit)
+library with <code>-install_name</code> %p/lib/bar.1.dylib
 and <code>-compatibility_version</code> 2.1.0 has been installed since
 version 1.1-2 of the <b>bar1</b> package.  In addition, this declaration
 amounts to  a promise
-from the maintainer that a library with this name and a compatibility-version
+from the maintainer that a 32bit
+library with this name and a compatibility-version
 of at least 2.1.0 will always be found in later versions of the <b>bar1</b> 
 package.
 </p><p>
