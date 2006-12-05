@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Règles";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/11/30 19:22:01';
+$cvs_date = 'Date: 2006/12/05 09:46:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Organisation des fichiers"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
 
 
@@ -42,10 +42,10 @@ include_once "header.fr.inc";
 <p>Il peut y avoir des exceptions quand on ne peut faire autrement, par exemple avec XFree86. Dans ce cas, le paquet doit tester l'existence de fichiers avant l'installation et refuser de s'installer si cela amène à écraser des fichiers déjà existants. Le paquet doit s'assurer que tous les fichiers qu'il aura installés en dehors du répertoire de Fink seront supprimés lorsque le paquet lui-même sera éliminé, ou que ces fichiers ne causeront aucun problème s'ils sont laissés sur place (c'est-à-dire qu'ils devront tester l'existence des binaires avant de les appeler, etc...).</p>
 
 <h2><a name="sharedlibs">3.4 Bibliothèques partagées</a></h2>
-<p>Fink a de nouvelles règles en ce qui concerne les bibliothèques partagées, règles qui prennent effet à compter de février 2002. Cette partie de la documentation donne des explications sur la version 4 de ces règles, qui coïncide avec la publication de la distribution 0.5.0 de Fink. Nous commencerons par un bref résumé, puis nous passerons à une revue de détails.</p>
+<p>Fink a de nouvelles règles en ce qui concerne les bibliothèques partagées, règles qui prennent effet à compter de février 2002. Cette partie de la documentation donne des explications sur la version 4 de ces règles, qui coïncide avec la publication de la distribution 0.5.0 de Fink, ainsi que sur les mises à jour de décembre 2006 concernant la gestion des bibliothèques 64bit. Nous commencerons par un bref résumé, puis nous passerons à une revue de détails.</p>
 <p>Tout paquet qui construit des bibliothèques partagées et qui, soit (1) est placé dans la branche stable, soit (2) est un nouveau paquet de Fink, doit gérer ses bibliothèques partagées conformément aux règles de Fink. Ceci signifie :</p>
 <ul>
-<li>vérifier, à l'aide de <code>otool -L</code>, que le nom d'installation de chaque bibliothèque, ses numéros de versions de compatibilité et actuels sont corrects</li>
+<li>vérifier, à l'aide de <code>otool -L</code> (ou de <code>otool64 -L</code> pour les bibliothèques 64bit), que le nom d'installation de chaque bibliothèque, ses numéros de versions de compatibilité et actuels sont corrects</li>
 <li>mettre les bibliothèques partagées dans un paquet séparé (exception faite pour les liens de libfoo.dylib vers nom d'installation), et inclure le champ <code>Shlibs</code> dans ce paquet</li>
 <li>mettre les headers et les liens finaux venant de libfoo.dylib dans un paquet caractérisé par <code>BuildDependsOnly: True</code>, et prévoir qu'aucun autre paquet ne dépendra de lui.</li>
 </ul>
@@ -85,7 +85,7 @@ Pour l'option 1, utilisez le schéma suivant :</p>
 </pre>
 <p>dans la description du paquet barN.</p>
 <p>Si votre paquet inclut à la fois des bibliothèques partagées et des binaires, et si les binaires doivent être présents à l'exécution (et pas seulement à la compilation), alors les binaires doivent être regroupés dans un troisième paquet, qui peut être appelé barN-bin. Les autres paquets peuvent dépendre de barN-bin comme de barN-shlibs.</p>
-<p>Lors de la construction de bibliothèques partagées de version majeure N, il est important que le "nom d'installation" soit <code>%p/lib/bar.N.dylib</code>. (Vous pouvez trouver le nom d'installation en exécutant <code>otool -L</code> sur votre bibliothèque). Le fichier bibliothèque réel doit être installé sous le nom de :</p>
+<p>Lors de la construction de bibliothèques partagées de version majeure N, il est important que le "nom d'installation" soit <code>%p/lib/bar.N.dylib</code>. Vous trouverez le nom d'installation en exécutant <code>otool -L</code> (ou <code>otool64 -L</code>pour les bibliothèques 64bit) sur votre bibliothèque. Le fichier bibliothèque réel doit être installé sous le nom de :</p>
 <pre>
   %i/lib/bar.N.x.y.dylib
 </pre>
@@ -98,7 +98,7 @@ Pour l'option 1, utilisez le schéma suivant :</p>
 <pre>
   %i/lib/bar.a
 </pre>
-<p>Si le paquet utilise libtool, ceci est généralement géré automatiquement, mais, dans tous les cas, vous devez vérifier que tout s'est passé correctement. Vous devez aussi vérifier que la version courante et la version de compatibilité sont définies de façon appropriée à vos bibliothèques partagées. (On peut trouver les numéros de version avec la commande <code>otool -L</code>).</p>
+<p>Si le paquet utilise libtool, ceci est généralement géré automatiquement, mais, dans tous les cas, vous devez vérifier que tout s'est passé correctement. Vous devez aussi vérifier que la version courante et la version de compatibilité sont définies de façon appropriée à vos bibliothèques partagées. On peut trouver les numéros de version avec la commande <code>otool -L</code> (ou la commande <code>otool64 -L</code> pour les bibliothèques 64bit).</p>
 <p>Les fichiers sont scindés entre les deux paquets comme suit :</p>
 <ul>
 <li>  dans le paquet barN-shlibs :
@@ -158,13 +158,13 @@ SplitOff: &lt;&lt;
 <p>Le champ BuildDependsOnly ne doit être mentionné dans le fichier .info du paquet que si ce paquet contient des headers installés dans /sw/include.</p>
 <p>À partir de la version 0.20.5 de fink, "fink validate" affichage un message pour tout .deb qui contient des headers et au moins une dylib, et qui ne donne pas la valeur "true" ou "false" au champ BuildDependsOnly. (Il est possible que, dans les versions postérieures de fink, ce message soit étendu aux cas des .deb contenant des headers et une bibliothèque statique). </p>
 <p><b>Le champ Shlibs :</b></p>
-<p>En sus de placer les bibliothèques partagées dans le bon paquet, suivant en cela la version 4 de cette règle, vous devez également déclarer toutes les bibliothèques partagées en utilisant le champ <code>Shlibs</code>. Ce champ contient une ligne distincte pour chaque bibliothèque partagée ; la ligne comprend le <code>nom d'installation</code> de la bibliothèque, la <code>version de compatibilité</code>, et des informations de dépendance qui indiquent le paquet de Fink qui fournit cette bibliothèque à cette version de compatibilité. La dépendance doit être déclarée sous la forme <code> foo (&gt;= version-révision)</code> où <code>version-révision</code> correspond à la <b>première</b> version du paquet de Fink qui fournit cette bibliothèque (avec cette version de compatibilité). Par exemple, une déclaration :</p>
+<p>En sus de placer les bibliothèques partagées dans le bon paquet, suivant en cela la version 4 de cette règle, vous devez également déclarer toutes les bibliothèques partagées en utilisant le champ <code>Shlibs</code>. Ce champ contient une ligne distincte pour chaque bibliothèque partagée ; la ligne comprend le <code>nom d'installation</code> de la bibliothèque, la <code>version de compatibilité</code>, et des informations de dépendance qui indiquent le paquet de Fink qui fournit cette bibliothèque à cette version de compatibilité, ainsi que l'architecture de la bibliothèque. Cette architecture peut avoir pour valeur "32", "64", "32-64" ou même ne pas exister ; dans ce dernier cas, elle prend la valeur "32" par défaut. La dépendance doit être déclarée sous la forme <code> foo (&gt;= version-révision)</code> où <code>version-révision</code> correspond à la <b>première</b> version du paquet de Fink qui fournit cette bibliothèque (avec cette version de compatibilité). Par exemple, une déclaration :</p>
 <pre>
   Shlibs: &lt;&lt;
-    %p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2)
+    %p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
   &lt;&lt;
 </pre>
-<p>indique qu'une bibliothèque, dont le <code>nom d'installation</code> est %p/lib/bar.1.dylib et <code>la version de compatibilité </code> est 2.1.0, a été installée à partir de la version 1.1-2 du paquet <b>bar1</b>. De plus, cette déclaration équivaut à la promesse du mainteneur qu'une bibliothèque avec ce nom et une version de compatibilité au moins égale à 2.10 sera toujours présente dans les versions ultérieures du paquet <b>bar1</b>.</p>
+<p>indique qu'une bibliothèque 32bit, dont le <code>nom d'installation</code> est %p/lib/bar.1.dylib et <code>la version de compatibilité </code> est 2.1.0, a été installée à partir de la version 1.1-2 du paquet <b>bar1</b>. De plus, cette déclaration équivaut à la promesse du mainteneur qu'une bibliothèque 32 bit avec ce nom et une version de compatibilité au moins égale à 2.10 sera toujours présente dans les versions ultérieures du paquet <b>bar1</b>.</p>
 <p>Notez l'utilisation de %p dans le nom de la bibliothèque, ce qui permet à tous les utilisateurs de Fink de trouver le bon <code>nom d'installation</code>, quel que soit le préfixe qu'ils ont choisi.</p>
 <p>Quand un paquet est mis à jour, on copie tout simplement le champ <code>Shlibs</code> dans la nouvelle version/révision du paquet. L'exception à cette règle survient quand la <code>version de compatibilité</code> est incrémentée : dans ce cas, le numéro de version
 dans les informations de dépendance doit être changé pour la version/révision courante (celle qui est la première à fournir la bibliothèque avec le nouveau numéro de version de compatibilité).</p>
