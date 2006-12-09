@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/12/03 21:21:22';
+$cvs_date = 'Date: 2006/12/09 06:13:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -281,6 +281,31 @@ CompileScript:  &lt;&lt;
 &lt;&lt;
 &lt;&lt;
 </pre>
+<p>
+Starting in fink 0.26.0, there is a special <code>Type: -64bit</code>
+which controls a new percent expansion <code>%lib</code> and also
+changes the default value of <code>LDFLAGS</code>.  When combined
+with the new construction %type_num[], this allows a single .info file
+to build both a 32-bit version of a library and a 64-bit version.
+Here's some sample code:
+</p>
+<pre>
+Info2: &lt;&lt;
+Package: foo%type_pkg[-64bit]
+Type: -64bit (boolean)
+Depends: (%type_raw[-64bit] = -64bit) 64bit-cpu
+ConfigureParams: --libdir='${prefix}/%lib'
+SplitOff: &lt;&lt;
+ Package: %N-shlibs
+ Files: %lib/libfoo.*.dylib
+ Shlibs: &lt;&lt;
+    %p/%lib/libfoo.1.dylib 1.0.0 %n (&gt;= 1.0-1) %type_num[-64bit]
+  &lt;&lt;
+&lt;&lt;
+&lt;&lt;
+</pre>
+
+
 </td></tr><tr valign="top"><td>License</td><td>
 <p>
 This field gives the nature of the license under which the package is
@@ -849,6 +874,11 @@ The preset variables (and their default values) are:
 CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </pre>
+<p> Starting in fink 0.26.0, there is one exception to these defaults:
+if <code>Type: -64bit</code> is set to <code>-64bit</code>, then the
+default value of <code>LDFLAGS</code> is <code>-L%p/%lib -L%p/lib</code> 
+instead.
+</p>
 <p>
 In addition, starting in fink 0.17.0, the following values are set for
 the 10.4-transitional distribution and earlier (but are not set for

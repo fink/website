@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/12/03 21:21:22';
+$cvs_date = 'Date: 2006/12/09 06:13:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -19,8 +19,17 @@ The "Trees" setting in <code>/sw/etc/fink.conf</code> controls
 which directories are read.
 The name of package description files must be the full package name
 plus the extension ".info".
-Starting with fink 0.13.0, the use of the simple package name plus
-".info" is also supported in order to simplify package updates.
+As of fink 0.26.0, there are several different ways to specify the
+filename: it is recommended to use the shortest version which is
+consistent with other needed package files.  The filename takes
+the form: the invariant packagename, optionally 
+followed by the architecture, optionally followed by the
+distribution, 
+optionally followed by either version or version-revision, each delimited by 
+hyphens, concluding with ".info".  
+The "architecture" and "distribution" components are only allowed
+if the corresponding field is present in the package, and if it specifies
+exactly one value.
 </p>
 <p>
 The package description tree is organized with several levels of
@@ -230,14 +239,16 @@ the percent character (one that will not be expanded according to whatever follo
 left-to-right, so %%n is not anything related to the package name, but
 rather is the string %n.  (Introduced in fink-0.18.0)
 </p>
-</td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>]</td><td>
+</td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>],
+%type_num[<b>type</b>]</td><td>
 <p>
 pseudo-hashes returning the subtype for the given <b>type</b>. See
 documentation for the <code>Type</code> field later in this document.
 The _raw form is the exact subtype string, while the _pkg form has all
 period characters removed (as per Fink's language-version package naming
 convention and for other clever uses). (Introduced in a post-0.19.2
-CVS version of fink)
+CVS version of fink.)  The _num form was introduced in fink-0.26.0
+and removes all non-digits from the <code>Type</code> field.
 </p>
 </td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 <p>
@@ -260,6 +271,14 @@ package is blank. (Introduced in fink-0.20.6)
 <p>
 The full path to the file given in the <code>PatchFile</code> field.
 (Introduced in fink-0.24.12)
+</p>
+</td></tr><tr valign="top"><td>%lib</td><td>
+<p>
+If <code>Type: -64bit</code> is defined to be <code>-64bit</code>,
+this expands to <b>lib/ppc64</b> on powerpc machines, and to
+<b>lib/x86_64</b> on intel machines (the proper storage locations
+for 64-bit libraries); otherwise, this expands to <b>lib</b>.
+(Introduced in fink-0.26.0)
 </p>
 </td></tr></table>
 
