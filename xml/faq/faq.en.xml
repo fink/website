@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.79 2006/11/25 05:41:37 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.80 2006/12/09 20:09:42 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -353,13 +353,13 @@
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
         <em>packagename</em></code>.</p>
-        <p>To configure Fink to use unstable, edit
+	<p><em>New in </em><code>fink-0.26</code><em>:</em>  If you run <code>fink configure</code> one of the questions will ask whether you want to turn the unstable trees on.  You will need to run <code>fink selfupdate; fink index; fink scanpackages</code> afterward.  <em>Note: </em>you must have either rsync or cvs updating turned on to get new package descriptions.</p>
+        <p>To configure Fink to use unstable when you have an earlier version of the <code>fink</code> tool than <em>0.26</em>, edit
         <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code>
         and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index; fink scanpackages</code>.
-        </p>
+        then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p>
         <p>Also note, if you don't want to install any more from unstable than
-        your specific packages and their dependencies, don't use the
+        your specific package(s) and its (their) dependencies, don't use the
         <code>update-all</code> command until you turn the unstable tree
         back off.</p>
       </answer>
