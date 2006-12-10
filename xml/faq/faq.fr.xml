@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.71 2006/12/05 11:13:22 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.72 2006/12/10 19:14:17 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -296,7 +296,8 @@
 <answer>
 <p>Assurez-vous d'abord de savoir ce que signifie 'instable'. Il existe de nombreuses raisons pour lesquelles un paquet de l'arborescence instable n'est pas mis dans l'arborescence stable. Il se peut qu'il souffre de problèmes connus, qu'il y ait des erreurs de validation, ou simplement qu'un nombre insuffisant de personnes ait signalé qu'il fonctionne correctement. C'est pourquoi Fink ne recherche pas dans cette arborescence par défaut.</p>
 <p>Si vous décidez d'activer l'arborescence instable, pensez à envoyer un courriel au responsable du paquet si quelque chose fonctionne (ou ne fonctionne pas). Ce sont vos réactions qui nous permettent de décider si un paquet peut entrer dans l'arborescence stable ! Pour connaître le mainteneur du paquet, lancez la commande <code>fink info &lt;nom_du_paquet&gt;</code>.</p>
-<p>Pour obliger Fink à utiliser l'arborescence instable, modifiez le fichier <filename>/sw/etc/fink.conf</filename> : ajoutez <code>unstable/main</code> et <code>unstable/crypto</code> à la ligne <code>Trees:</code>, puis exécutez <code>fink selfupdate; fink index; fink scanpackages</code>.</p>
+	<p><em>À partir de la version </em><code>0.26.0 de fink</code> : vous pouvez activer l'arborescence instable via la commande <code>fink configure</code>. Il vous faudra ensuite exécuter les commandes : <code>fink selfupdate; fink index; fink scanpackages</code>. <em>Note</em> : il faut activer également la mise à jour via rsync ou cvs pour obtenir les nouvelles descriptions de paquets.</p>
+<p>Si vous avez une version de fink antérieure à la version 0.26.0, modifiez le fichier <filename>/sw/etc/fink.conf</filename> : ajoutez <code>unstable/main</code> et <code>unstable/crypto</code> à la ligne <code>Trees:</code>, puis exécutez les commandes <code>fink selfupdate; fink index; fink scanpackages</code>.</p>
 <p>Notez également que, si vous ne souhaitez installer que quelques paquets instables spécifiques et leurs dépendances, vous ne devez pas utiliser la commande <code>update-all</code> tant que vous n'êtes pas revenu à l'utilisation de l'arborescence stable.</p>
 </answer>
 </faqentry>
@@ -1140,7 +1141,7 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
 <shorttitle>Compilation (2)</shorttitle>
 <faqentry name="libgtop">
 <question>
-<p>La compilation d'un paquet échoue avec des messages d'erreur concernant <code>sed</code>. Que faire N</p>
+<p>La compilation d'un paquet échoue avec des messages d'erreur concernant <code>sed</code>. Que faire ?</p>
 </question>
 <answer>
 <p>Ceci peut se produire si votre script de connexion (par exemple <code>~/.cshrc</code>) lance une commande qui écrit dans le terminal. Par exemple : "<code>echo Hello</code>" ou <code>xttitle</code>. Pour résoudre le problème, la solution la plus simple est de mettre les lignes qui causent problème en commentaires.</p>
@@ -1159,7 +1160,7 @@ endif</codeblock>
 <p></p>
 <p>Voici comment procéder pour résoudre le problème :</p>
 <p></p>
-<p> <em>Note : les utilisateurs de Mac OS X 10.2.x ayant une version de Fink à jour (c'esst-à-dire &gt;=0.16.2) et les utilisateurs de Mac OS X 10.3.x doivent sauter l'étape 1 ci-dessous (de toute façon, elle ne fonctionne pas pour eux).</em>
+<p> <em>Note : les utilisateurs de Mac OS X 10.2.x ayant une version de Fink à jour (c'est-à-dire &gt;=0.16.2) et les utilisateurs de Mac OS X 10.3.x doivent sauter l'étape 1 ci-dessous (de toute façon, elle ne fonctionne pas pour eux).</em>
 </p>
 <p>Étape 1. Supprimez le paquet <code>system-xfree86</code>. Si vous n'avez aucun paquet qui dépend de X11, c'est tout simple. Toutefois, il est fréquent que de nombreux paquets dépendant de X11 soient installés. Dans ce cas, au lieu de tous les désinstaller, vous pouvez utiliser la commande :</p>
 <codeblock>sudo dpkg --remove --force-depends system-xfree86</codeblock>
@@ -1198,7 +1199,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
 </faqentry>
 <faqentry name="cctools">
 <question>
-<p>Lors de l'installation de KDE, un message signale que la dépendance au paquet "cctools ((&gt;= 446-1)" ne peut être résolue (message en anglais : 'Can't resolve dependency "cctools (&gt;= 446-1)"'"). Que faire ?</p>
+<p>Lors de l'installation de KDE, un message signale que la dépendance au paquet "cctools (&gt;= 446-1)" ne peut être résolue (message en anglais : 'Can't resolve dependency "cctools (&gt;= 446-1)"'"). Que faire ?</p>
 </question>
 <answer>
 <p>Ce message quelque peu abscons signifie que vous devez installer les Developer Tools de décembre 2002.</p>
