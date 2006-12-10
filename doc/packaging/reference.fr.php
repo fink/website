@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/05 09:46:01';
+$cvs_date = 'Date: 2006/12/10 19:15:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -87,6 +87,22 @@ CompileScript:  &lt;&lt;
     ./configure %c --without-x11
   fi
   make
+&lt;&lt;
+&lt;&lt;
+</pre>
+<p>À partir de la version 0.26.0 de fink, il existe un champ spécial <code>Type: -64bit</code> qui contrôle un nouveau raccourci <code>%lib</code> et modifie la valeur par défaut du drapeau <code>LDFLAGS</code>. Quand on combine ce champ avec la construction %type_num[], ceci permet de construire à partir d'un seul fichier .info les versions 32-bit et 64-bit d'une bibliothèque. Voici un exemple :</p>
+<pre>
+Info2: &lt;&lt;
+Package: foo%type_pkg[-64bit]
+Type: -64bit (boolean)
+Depends: (%type_raw[-64bit] = -64bit) 64bit-cpu
+ConfigureParams: --libdir='${prefix}/%lib'
+SplitOff: &lt;&lt;
+ Package: %N-shlibs
+ Files: %lib/libfoo.*.dylib
+ Shlibs: &lt;&lt;
+    %p/%lib/libfoo.1.dylib 1.0.0 %n (&gt;= 1.0-1) %type_num[-64bit]
+  &lt;&lt;
 &lt;&lt;
 &lt;&lt;
 </pre>
@@ -229,6 +245,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </pre>
+<p>À partir de la version 0.26.0 de fink, il existe une exception à ces valeurs par défaut. Si le champ <code>Type: -64bit</code> a pour valeur <code>-64bit</code>, alors la valeur par défaut de la variable <code>LDFLAGS</code> est <code>-L%p/%lib -L%p/lib</code>.</p>
 <p>Puis, à partir de la version 0.17.0 de fink :</p>
 <pre>
 LD_PREBIND: 1

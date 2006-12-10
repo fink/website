@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/05 11:13:22';
+$cvs_date = 'Date: 2006/12/10 19:14:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problèmes généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation">';
 
 
@@ -11,14 +11,14 @@ include_once "header.fr.inc";
 
 
 <a name="libgtop">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.1: La compilation d'un paquet échoue avec des messages d'erreur concernant <code>sed</code>. Que faire N</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>7.1: La compilation d'un paquet échoue avec des messages d'erreur concernant <code>sed</code>. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ceci peut se produire si votre script de connexion (par exemple <code>~/.cshrc</code>) lance une commande qui écrit dans le terminal. Par exemple : "<code>echo Hello</code>" ou <code>xttitle</code>. Pour résoudre le problème, la solution la plus simple est de mettre les lignes qui causent problème en commentaires.</p><p>Si vous voulez conserver l'écho, vous pouvez le faire ainsi :</p><pre>if ( $?prompt) then 
 echo Hello 
 endif</pre></div>
 </a>
 <a name="cant-install-xfree">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.2: Lors d'une tentative de passage aux paquets XFree86 de Fink, il est impossible d'installer le paquet <code>xfree86-base</code> ou le paquet <code>xfree86</code>, car ils entrent en conflit avec le paquet <code>system-xfree86</code>. Que se passe-t-il ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Toutes les variantes de X11, doivent, malheureusement, être installées au même endroit, à savoir dans le répertoire /usr/X11R6. C'est pourquoi, les paquets de Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> s'installent également à cet endroit. Néanmoins, comme Fink ne supprime pas les fichiers qui ne figurent pas dans sa base de données, il ne remplace pas automatiquement une installation de X11 faite hors de Fink.</p><p></p><p>Voici comment procéder pour résoudre le problème :</p><p></p><p> <b>Note : les utilisateurs de Mac OS X 10.2.x ayant une version de Fink à jour (c'esst-à-dire &gt;=0.16.2) et les utilisateurs de Mac OS X 10.3.x doivent sauter l'étape 1 ci-dessous (de toute façon, elle ne fonctionne pas pour eux).</b>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Toutes les variantes de X11, doivent, malheureusement, être installées au même endroit, à savoir dans le répertoire /usr/X11R6. C'est pourquoi, les paquets de Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> s'installent également à cet endroit. Néanmoins, comme Fink ne supprime pas les fichiers qui ne figurent pas dans sa base de données, il ne remplace pas automatiquement une installation de X11 faite hors de Fink.</p><p></p><p>Voici comment procéder pour résoudre le problème :</p><p></p><p> <b>Note : les utilisateurs de Mac OS X 10.2.x ayant une version de Fink à jour (c'est-à-dire &gt;=0.16.2) et les utilisateurs de Mac OS X 10.3.x doivent sauter l'étape 1 ci-dessous (de toute façon, elle ne fonctionne pas pour eux).</b>
 </p><p>Étape 1. Supprimez le paquet <code>system-xfree86</code>. Si vous n'avez aucun paquet qui dépend de X11, c'est tout simple. Toutefois, il est fréquent que de nombreux paquets dépendant de X11 soient installés. Dans ce cas, au lieu de tous les désinstaller, vous pouvez utiliser la commande :</p><pre>sudo dpkg --remove --force-depends system-xfree86</pre><p>pour supprimer le paquet system-xfree86, ce qui laisse tout le reste en place. Si le paquet <code>system-xfree86</code> n'est pas installé, passez à l'étape 3.</p><p>Étape 2. Supprimez l'application XFree86 via la commande  :</p><pre>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</pre><p>Si vous aviez installé l'application X11 d'Apple auparavant, supprimez-la également.</p><p>Étape 3. Pour installer l'application XFree86-4.2.1, installez les paquets Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> comme vous le faites d'habitude : via la commande "<code>fink install</code>" pour les utilisateurs de sources, ou bien les commandes "<code>apt-get install</code>" ou <code>dselect</code> pour les utilisateurs de binaires.</p><p>- ou -</p><p>Étape 3a. Pour installer l'application XFree86-4.3.x ou une version postérieure, installez le paquet Fink <code>xfree86</code> via la commande "fink install xfree86". La version la plus récente (XFree86-4.4.x à la date du 25 mai 2004) n'est pas encore dans la distribution binaire et n'est disponible que dans l'arborescence instable. Voir <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">comment installer un paquet instable</a>.</p></div>
 </a>
 <a name="change-thread-nothread">
@@ -32,7 +32,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded
 sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkCommander peut aussi supprimer des paquets. Dans la fenêtre "source", sélectionnez un paquet et utilisez "<code>Force Remove</code>" dans le menu <code>Source</code>.</p><p>Si vous avez installé le paquet system-xfree86, voir la précédente question pour savoir comment le supprimer.</p><p>Installez la version désirée de xfree86 :</p><p><code>xfree86-base</code> et <code>xfree86-rootless</code></p><p>ou</p><p><code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code></p><p>via les commandes habituelles : "<code>fink install</code>" pour les utilisateurs de sources, "<code>apt-get install</code>" ou <code>dselect</code> pour les utilisateurs de binaires.</p></div>
 </a>
 <a name="cctools">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.4: Lors de l'installation de KDE, un message signale que la dépendance au paquet "cctools ((&gt;= 446-1)" ne peut être résolue (message en anglais : 'Can't resolve dependency "cctools (&gt;= 446-1)"'"). Que faire ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>7.4: Lors de l'installation de KDE, un message signale que la dépendance au paquet "cctools (&gt;= 446-1)" ne peut être résolue (message en anglais : 'Can't resolve dependency "cctools (&gt;= 446-1)"'"). Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ce message quelque peu abscons signifie que vous devez installer les Developer Tools de décembre 2002.</p></div>
 </a>
 <a name="libiconv-gettext">

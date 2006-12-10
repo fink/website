@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/05 09:46:01';
+$cvs_date = 'Date: 2006/12/10 19:15:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -11,7 +11,7 @@ include_once "header.fr.inc";
 
 
 <h2><a name="trees">2.1 Arborescence</a></h2>
-<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <code>/sw/fink/dists</code>. La valeur de la variable "Trees" dans <code>/sw/etc/fink.conf</code> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.13.0, on peut aussi n'utiliser que le nom du paquet suivi de l'extension ".info", de manière à simplifier les mises à jour.</p>
+<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <code>/sw/fink/dists</code>. La valeur de la variable "Trees" dans <code>/sw/etc/fink.conf</code> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.26.0, il existe plusieurs façons de spécifier le nom du fichier ; il est recommandé d'utiliser le nom le plus court compatible avec les autres paquets nécessaires. Le nom du fichier est de la forme : nom invariant du paquet, suivi éventuellement d'un tiret et de l'architecture, suivi éventuellement d'un tiret et de la distribution, suivi éventuellement d'un tiret et de la version ou du couple version-révision, et terminé par ".info". Les éléments "architecture" et "distributtion" ne sont autorisés que si leurs champs sont présents dans le paquet et qu'ils fournissent une seule et unique valeur.</p>
 <p>L'arborescence des descriptions de paquets comprend plusieurs niveaux de répertoires. En voici la liste de la racine au bas de l'arborescence :</p>
 <ul>
 <li><code>dists</code> est à la racine. Le répertoire <code>dists</code> est nécessaire pour les outils Debian.</li>
@@ -88,14 +88,16 @@ le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser d
 <p>chaîne spécifiant l'architecture de la <b>m</b>achine. Identique au résultat de la commande <code>uname -p</code>. Les valeurs habituelles sont 'powerpc' pour les machines ppc and 'i386' pour les machines x86. Introduit dans les versions CVS de fink postérieures à la version 0.12.1.</p>
 </td></tr><tr valign="top"><td>%%</td><td>
 <p>signe pourcentage (%) (ce signe n'est pas interprété en fonction de ce qui le suit). L'interprétation se fait de gauche à droite, si bien que %%n n'a rien à voir avec le nom du paquet, mais représente la chaîne %n. (Introduit dans fink-0.18.0).</p>
-</td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>]</td><td>
-<p>fonction de pseudo-hachage retournant le sous-type du <b>type</b> donné. Voir la documentation sur le champ <code>Type</code> plus bas. La forme _raw correspond à la chaîne précise du sous-type, tandis que la forme _pkg correspond à la même chaîne dont tous les points auraient été enlevés (suivant les conventions de nommage des paquets - language-version - de Fink et pour d'autres usages réservés aux experts). (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2).</p>
+</td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>], %type_num[<b>type</b>]</td><td>
+<p>fonction de pseudo-hachage retournant le sous-type du <b>type</b> donné. Voir la documentation sur le champ <code>Type</code> plus bas. La forme _raw correspond à la chaîne précise du sous-type, tandis que la forme _pkg correspond à la même chaîne dont tous les points auraient été enlevés (suivant les conventions de nommage des paquets - language-version - de Fink et pour d'autres usages réservés aux experts). (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). La forme _num a été introduit dans la version 0.26.0 de fink et supprime tous les caractères non numériques du champ <code>Type</code>.</p>
 </td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 <p>la partie <b>i</b>nvariante du <b>n</b>om du paquet. Identiques à %n et %N, à l'exception près que tous les %type_pkg[] et %type_raw[] sont occultés. (Introduit dans une version CVS de Fink ultérieure à la version 0.19.2). Vous devez utiliser %{ni} et %{Ni} pour éviter de possibles confusions avec les raccourcis %n et %N.</p>
 </td></tr><tr valign="top"><td>%{default_script}</td><td>
 <p>Uniquement valide dans les champs <code>PatchScript</code>, <code>CompileScript</code> et <code>InstallScript</code>. Correspond au contenu par défaut de ce type de champ. Sa valeur dépend souvent du champ <code>Type</code> et est toujours définie (même si elle vide). Lorsque ce raccourci est utilisé dans le champ <code>InstallScript</code> d'un <code>SplitOff</code> ou d'un <code>SplitOffN</code>, son interprétation correspond à la valeur par défaut du champ <b>parent</b>, bien que la valeur par défaut de <code>InstallScript</code> dans un <code>SplitOff</code> soit vide. (Introduit dans fink-0.20.6)</p>
 </td></tr><tr valign="top"><td>%{PatchFile}</td><td>
 <p>Chemin complet du fichier indiqué dans le champ<code>PatchFile</code>. Introduit dans la version 0.24.12 de fink.</p>
+</td></tr><tr valign="top"><td>%lib</td><td>
+<p>Si le champ <code>Type: -64bit</code> a pour valeur <code>-64bit</code>, ce raccourci permet de définir le répertoire des bibliothèques comme étant le répertoire <b>lib/ppc64</b> sur machines powerpc, ou  <b>lib/x86_64</b> sur machines intel (répertoires standards pour les bibliothèques 64-bit). Dans le cas contraire, le raccourci définit le répertoire <b>lib</b> comme répertoire pour les bibliothèques. Introduit dans la version 0.20.6 de fink.</p>
 </td></tr></table>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
