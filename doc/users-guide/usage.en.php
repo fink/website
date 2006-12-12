@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/09/23 23:52:44';
+$cvs_date = 'Date: 2006/12/12 18:40:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -26,7 +26,7 @@ version and revision when they are not specified.  Others have different options
 There are some options, which apply to all fink commands. If you 
 type <code>fink --help</code> you get the list of options: 
       </p>
-      <p>(as of <code>fink-0.24.6</code>)</p>
+      <p>(as of <code>fink-0.26.0</code>)</p>
       <p><b>-h, --help</b> - displays help text.
 </p>
       <p><b>-q, --quiet</b>  - causes <code>fink</code> to be less verbose, opposite of <b>--verbose</b>.  Overrides the <a href="conf.php?phpLang=en#optional">Verbose</a> flag in <code>fink.conf</code>.
@@ -67,7 +67,15 @@ type <code>fink --help</code> you get the list of options:
       <p><b>-m, --maintainer</b>
             - (<code>fink-0.25</code> and later) Perform actions useful to package maintainers: run validation on
            the <code>.info</code> file before building and on the <code>.deb</code> after building a
-           package; turn certain build-time warnings into fatal errors.</p>
+           package; turn certain build-time warnings into fatal errors; (<code>fink-0.26</code> and later) run the test suites as specified in the  field.  This sets <b>--tests</b> and <b>--validate</b> to <code>on</code>.</p>
+      <p><b>--tests[=on|off|warn]</b>         - (<code>fink-0.26.0</code> and later) Causes <code>InfoTest</code> fields to be activated and test suites specified
+           via <code>TestScript</code> to be executed (see the <a href="../packaging/reference.php#fields">Fink Packaging Manual</a>).  If no argument is given to this
+           option or if the argument is <code>on</code> then failures in test suites will
+           be considered fatal errors during builds.  If the argument is <code>warn</code>
+           then failures will be treated as warnings.</p>
+      <p><b>--validate[=on|off|warn]</b> -
+           Causes packages to be validated during a build.  If no argument is
+           given to this option or if the argument is <code>on</code> then validation failures will be considered fatal errors during builds.  If the argument is <code>warn</code> then failures will be treated as warnings.</p>
       <p><b>-l, --log-output</b>
             - Save a copy of the terminal output during each package building
            process. By default, the file is stored in
@@ -366,6 +374,7 @@ Reruns the <code>fink</code> configuration process.
 This will let you change your mirror sites and proxy settings, among
 others.
 </p>
+      <p><b>New in</b> <code>fink-0.26.0</code>: This command will also let you turn on the unstable trees if desired.</p>
     
     <h2><a name="selfupdate">6.18 selfupdate</a></h2>
       
@@ -427,9 +436,9 @@ the list of available packages in the binary distribution is also updated.
     <h2><a name="cleanup">6.24 cleanup</a></h2>
       
       <p>
-   Removes obsolete package files (.info, .patch, .deb) if newer versions are available. 
-   This can reclaim large amounts of disk space.  One or more modes must be specified:</p>
-<pre>--debs               - Delete .deb files (compiled binary package archives)
+   Removes obsolete and temporary files. 
+   This can reclaim large amounts of disk space.  One or more modes may be specified:</p>
+      <pre>--debs               - Delete .deb files (compiled binary package archives)
                        corresponding to versions of packages that are neither
                        described by a package description (.info) file in the
                        currently-active trees nor presently installed.
@@ -438,9 +447,13 @@ the list of available packages in the binary distribution is also updated.
                        active trees.
 --buildlocks, --bl   - Delete stale buildlock packages.
 --dpkg-status        - Remove entries for packages that are not installed from
-                       the dpkg "status" database.</pre>
-<p>In addition, the following options may be used:</p>
-<pre>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
+                       the dpkg "status" database.
+--obsolete-packages  - Attempt to uninstall all installed packges that are
+                       obsolete. (new in fink-0.26.0)
+--all                - All of the above modes. (new in fink-0.26.0)</pre>
+      <p>If no mode is specified, <code>--debs --sources</code> is the default action. </p>
+      <p>In addition, the following options may be used:</p>
+      <pre>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
 -d,--dry-run         - Print the names of the files that would be deleted, but
                        do not actually delete them.
 -h,--help            - Show the modes and options which are available.</pre>
