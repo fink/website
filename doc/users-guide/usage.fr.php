@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/10/02 16:34:14';
+$cvs_date = 'Date: 2006/12/12 20:59:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -17,7 +17,7 @@ include_once "header.fr.inc";
 
 <h2><a name="options">6.2 Options globales</a></h2>
 
-<p>Ce sont des options qui s'appliquent à toutes les commandes <code>fink</code> à partir de la <code>version 0.24.6</code>. Pour obtenir la liste des options, exécutez <code>fink --help</code> :</p>
+<p>Ce sont des options qui s'appliquent à toutes les commandes <code>fink</code> à partir de la <code>version 0.26</code>. Pour obtenir la liste des options, exécutez <code>fink --help</code> :</p>
 <p><b>-h, --help</b> : affiche ce message d'aide.</p>
 <p><b>-q, --quiet</b> : diminue le niveau de verbosité de <code>fink</code>, effet contraire à celui de --verbose. Prend le pas sur l'option <a href="conf.php?phpLang=fr#optional">Verbose</a> du fichier <code>fink.conf</code>.</p>
 <p><b>-V, --version</b> : affiche les informations de version.</p>
@@ -28,7 +28,9 @@ include_once "header.fr.inc";
 <p><b>-b, --use-binary-dist</b> : télécharge les paquets pré-compilés de la distribution binaire s'ils sont disponibles (pour réduire le temps de compilation ou l'encombrement du disque par exemple). Notez que, dans ce mode, <code>fink</code> télécharge la version requise d'un paquet, si elle est disponible, mais ne force pas <code>fink</code> à choisir la version en fonction de sa disponibilité binaire. Correspond à l'option <a href="conf.php?phpLang=fr#downloading">UseBinaryDist</a> de <code>fink.conf</code>.</p>
 <p><b>--no-use-binary-dist</b> : n'utilise pas les paquets pré-compilés de la distribution binaire (inverse de l'option --use-binary-dist). C'est l'option par défaut, à moins qu'elle ait été changée dans le fichier de configuration <code>fink.conf</code> via une ligne <code>UseBinaryDist: true</code>.</p>
 <p><b>--build-as-nobody</b> : utilise un utilisateur n'ayant pas de super privilèges pendant les phases de décompression, rustine, compilation et installation. Notez que les paquets avec cette option peuvent ne pas fonctionner. Vous ne devez utiliser ce mode que pour le développement ou le débogage des paquets.</p>
-<p><b>-m, --maintainer</b> : permet aux mainteneurs de paquets d'effectuer certaines opérations, telle la validation des fichiers <code>.info</code> avant la compilation et des fichiers <code>.deb</code> après la construction d'un paquet. Certains messages d'attention deviennent alors des messages d'erreur. Disponible à partir de la version 0.25 de <code>fink&gt;</code>.</p>
+<p><b>-m, --maintainer</b> : permet aux mainteneurs de paquets d'effectuer certaines opérations, telle la validation des fichiers <code>.info</code> avant la compilation et des fichiers <code>.deb</code> après la construction d'un paquet. Certains messages d'attention deviennent alors des messages d'erreur. Disponible à partir de la version 0.25 de <code>fink</code>. À partir de la version 0.26.0 de <code>fink</code>, cette option active également les options <b>--tests</b> et <b>--validate</b>, ce qui entraîne l'exécution des séries de tests spécifiés dans le champ correspondant.</p>
+<p><b>--tests[=on|off|warn]</b> :  entraîne l'activation des champs <code>InfoTest</code> et l'exécution des séries de tests spécifiés dans le script <code>TestScript</code>. Voir <a href="../packaging/reference.php#fields">Guide de création de paquets de Fink</a>). Si l'option ne comporte aucun argument ou si son argument est <code>on</code>, alors les erreurs sur la série de tests seront considérées comme des erreurs fatales de construction du paquet. Si l'argument est <code>warn</code>, les erreurs sur la série de tests seront traités comme des messages d'attention. Disponible à partir de la version 0.26 de <code>fink</code>.</p>
+<p><b>--validate[=on|off|warn]</b> : permet de valider le paquet pendant sa construction. Si l'option ne comporte aucun argument ou si son argument est <code>on</code>, alors les erreurs de validation seront considérées comme des erreurs fatales de construction du paquet. Si l'argument est <code>warn</code>, les erreurs sur la validation seront traités comme des messages d'attention.</p>
 <p><b>-l, --log-output</b> : sauvegarde une copie de la sortie terminal lors de la compilation de paquets. Par défaut, le fichier est enregistré sous le nom de <code>/tmp/fink-build-log_[nom]-[version]-[révision]_[date]-[heure]</code>, avec la date sous la forme année.mois.jour et l'heure sous la forme heure.minutes.secondes. Vous pouvez utiliser l'option <b>--logfile</b> pour changer le nom de la sauvegarde.</p>
 <p><b>--no-log-output</b> : ne sauvegarde pas la copie de la sortie terminal lors de la compilation de paquets. Inverse de l'option <b>--log-output</b>. C'est l'option par défaut.</p>
 <p><b>--logfile=nomdefichier</b> : sauvegarde les logs de compilation dans le fichier <code>nomdefichier</code> au lieu de les sauvegarder dans le fichier par défaut (voir l'option <b>--log-output</b>, qui attribue implicitement une valeur par défaut à l'option <b>--logfile</b>). On peut utiliser les raccourcis pour inclure automatiquement des données spécifiques aux paquets. Voir la liste complète des raccourcis dans <a href="../packaging">Création de paquets Fink</a>. Voici quelques raccourcis couramment utilisés :</p>
@@ -241,6 +243,7 @@ fink apropos -s=kde irc
 <h2><a name="configure">6.17 configure - configurer</a></h2>
 
 <p>Réexécute le processus de configuration de <code>fink</code>. Cela vous permet de changer les sites miroirs et les configurations proxy, entre autres.</p>
+<p>À partir de la version 0.26 de <code>fink</code>, cette commande vous permet aussi d'activer les arborescences instables.</p>
 
 <h2><a name="selfupdate">6.18 selfupdate - mise à jour automatique</a></h2>
 
@@ -284,16 +287,16 @@ fink apropos -s=kde irc
 
 <h2><a name="cleanup">6.24 cleanup - épuration</a></h2>
 
-<p>Supprime les fichiers correspondants aux paquets obsolètes (.info, .patch, .deb) quand des versions plus récentes sont disponibles. Cela peut libérer une grande portion d'espace disque. On peut spécifier un ou plusieurs modes :</p>
+<p>Supprime les fichiers obsolètes et temporaires. Cela peut libérer une grande portion d'espace disque. On peut spécifier un ou plusieurs modes :</p>
 <pre>
 --debs
     Supprime les fichiers .deb
     (archives de paquets binaires compilés)
-    correspondant à la version des paquets
-    qui ne sont pas décrits dans un fichier
+    correspondant aux versions de paquets
+    qui ne sont ni décrits dans un fichier
     de description de paquets (fichier .info)
-    dans les arborescences actives ou
-    qui ne sont pas installés.
+    dans les arborescences actives ni
+    installés.
 --sources,--srcs
     Supprime les sources (archives tarballs, etc...)
     qui ne sont utilisés par aucun fichier de 
@@ -305,7 +308,16 @@ fink apropos -s=kde irc
 --dpkg-status
     Supprime dans la base de données
     "status" de dpkg les paquets qui
-    ne sont pas installés.</pre>
+    ne sont pas installés.
+--obsolete-packages 
+    Tenre de désinstaller tous les paquets
+    obsolètes installés.
+    À partir de la version 0.26.0 de fink.
+--all
+    Active tous les modes.
+    À partir de la version 0.26.0 de fink.
+</pre>
+<p>Si aucun mode n'est spécifié, les modes par défaut utilisés sont <code>--debs --sources</code>.</p>
 <p>De plus, on peut utiliser les options suivantes :</p>
 <pre>
 -k,--keep-src

@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/12 10:00:38';
+$cvs_date = 'Date: 2006/12/12 21:00:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets">';
 
 
@@ -90,7 +90,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajoute
 <p>Ils représentent X11/XDarwin d'Apple, partie optionnelle de Mac OS X (X11User.pkg). Ces paquets fournissent respectivement <code>x11</code> et <code>x11-shlibs</code>. Voir aussi <a href="comp-packages.php?phpLang=fr#cant-install-xfree">la QFP à propos du passage à la version XFree86 de Fink</a>.</p>
 </li>
 <li>system-xfree86-dev : [paquet fantôme pour les outils de développement x11 installés manuellement]
-<p>Il eprésente X11/XDarwin SDK d'Apple, partie optionnelle de Mac OS X (X11SDK.pkg). Ce paquet fournit <code>x11-dev</code>. Voir aussi <a href="comp-packages.php?phpLang=fr#cant-install-xfree">la QFP à propos du passage à la version XFree86 de Fink</a>.
+<p>Il représente X11/XDarwin SDK d'Apple, partie optionnelle de Mac OS X (X11SDK.pkg). Ce paquet fournit <code>x11-dev</code>. Voir aussi <a href="comp-packages.php?phpLang=fr#cant-install-xfree">la QFP à propos du passage à la version XFree86 de Fink</a>.
 </p>
 </li>
 </ul></div>

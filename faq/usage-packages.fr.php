@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/12 10:00:38';
+$cvs_date = 'Date: 2006/12/12 21:00:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problèmes généraux d\'utilisation de paquets">';
 
 
@@ -11,24 +11,24 @@ include_once "header.fr.inc";
 
 
 <a name="xmms-quiet">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.1: Aucun son n'est disponible avec XMMS</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>9.1: Aucun son n'est disponible avec XMMS. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Vérifiez que vous avez sélectionné "eSound Output Plugin" dans les préférences de XMMS. Pour d'obscures raisons, c'est le plugin d'écriture sur le disque qui est sélectionné par défaut.</p><p>Si cela ne résout pas le problème ou si XMMS se plaint qu'il ne peut trouver votre carte son, essayez ceci :</p><ul>
 <li>Vérifiez que la sortie son n'est pas réglée sur silence dans Mac OS X.</li>
-<li>Lancez <code>esdcat /usr/libexec/config.guess</code> (ou choisissez n'importe quel autre fichier de taille significative). Si vous entendez un petit bruit, cela signifie que eSound fonctionne et que XMMS devrait fonctionner, lui aussi, à condition d'être configuré correctement. Si vous n'entendez rien, esd ne fonctionne pas pour une raison indéterminée. Vous pouvez tenter de le lancer manuellement via <code>esd &amp;</code>, puis analysez les messages.</li>
-<li>S'il ne fonctionne toujours pas, vérifiez les permissions de <code>/tmp/.esd</code> et <code>/tmp/.esd/socket</code>. Le possesseur doit être votre compte utilisateur. Si ce n'est pas le cas, tuez esd s'il est en cours de fonctionnement, supprimez le répertoire en tant que super-utilisateur (<code>sudo rm -rf /tmp/.esd</code>), puis redémarrez esd (en tant qu'utilisateur lambda, pas en tant que super-utilisateur).</li>
-</ul><p>Notez que esd est conçu pour être lancé par un utilisateur lambda, pas par le super-utilisateur. Il communique, en général, via la socket système <code>/tmp/.esd/socket</code>. Vous n'avez besoin des options <code>-tcp</code> et <code>-port</code> que si vous voulez lancer des clients esd sur une autre machine du réseau.</p><p>Certains personnes ont signalé que XMMS se plantait ou se bloquait sur 10.1. Il n'y a pas eu d'analyse ou de solution à ce phénomène à ce jour.</p></div>
+<li>Lancez la commande <code>esdcat /usr/libexec/config.guess</code> (ou choisissez n'importe quel autre fichier de taille significative). Si vous entendez un petit bruit, cela signifie que eSound fonctionne et que XMMS devrait fonctionner, lui aussi, à condition d'être configuré correctement. Si vous n'entendez rien, esd ne fonctionne pas pour une raison indéterminée. Vous pouvez tenter de le lancer manuellement via la commande <code>esd &amp;</code>, puis analysez les messages.</li>
+<li>S'il ne fonctionne toujours pas, vérifiez les permissions des fichiers <code>/tmp/.esd</code> et <code>/tmp/.esd/socket</code>. Le propriétaire doit être votre compte utilisateur. Si ce n'est pas le cas, tuez esd s'il est en cours de fonctionnement, supprimez le répertoire en tant que super-utilisateur via la commande <code>sudo rm -rf /tmp/.esd</code>, puis redémarrez esd (en tant qu'utilisateur lambda, pas en tant que super-utilisateur).</li>
+</ul><p>Notez que esd est conçu pour être lancé par un utilisateur lambda, pas par le super-utilisateur. Il communique, en général, via la socket système <code>/tmp/.esd/socket</code>. Vous n'avez besoin des options <code>-tcp</code> et <code>-port</code> que si vous voulez lancer des clients esd sur une autre machine du réseau.</p><p>Certaines personnes ont signalé que XMMS se plantait ou se bloquait sur 10.1. Il n'y a pas eu d'analyse ou de solution à ce phénomène à ce jour.</p></div>
 </a>
 <a name="nedit-window-locks">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.2: Lors de la modification d'un fichier dans nedit, si l'on tente d'ouvrir un autre fichier, sa fenêtre apparaît mais elle ne répond pas.</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> C'est un problème connu qui se produit avec des versions récentes de <code>nedit</code> et <code>lesstif</code> sur toutes les plates-formes. La solution est d'ouvrir une nouvelle fenêtre avec File--&gt;New, puis d'ouvrir le nouveau fichier sur lequel vous voulez travailler.</p><p>Ce problème est résolu dans la version <code>nedit-5.3-6</code>, qui dépend d'<code>openmotif3</code> et non plus de <code>lesstif</code>.</p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>9.2: Lors de la modification d'un fichier dans nedit, si l'on tente d'ouvrir un autre fichier, sa fenêtre apparaît mais elle ne répond pas. Que faire ?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> C'est un problème connu qui se produit avec des versions récentes de <code>nedit</code> et <code>lesstif</code> sur toutes les plates-formes. La solution est d'ouvrir une nouvelle fenêtre via le menu File--&gt;New, puis d'ouvrir le nouveau fichier sur lequel vous voulez travailler.</p><p>Ce problème est résolu dans la version <code>nedit-5.3-6</code>, qui dépend d'<code>openmotif3</code> et non plus de <code>lesstif</code>.</p></div>
 </a>
 <a name="xdarwin-start">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.3: XDarwin quitte immédiatement après lancement.</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>9.3: XDarwin quitte immédiatement après lancement. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Pas de panique. Vous trouverez dans le document Utilisation de X11 une large section <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">résolution de problèmes</a> à ce sujet.</p></div>
 </a>
 <a name="no-server">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.4: Au démarrage de XDarwin, le message suivant apparaît : "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Tout d'abord, vérifiez que vous sourcez init.sh dans le fichier de démarrage de X <code>~/.xinitrc</code>.</p><p>Sous Jaguar, il arrive parfois que tous les paquets <code>xfree86</code> soient compilés, mais que seuls les paquets <code>xfree86-base</code> et <code>xfree86-base-shlibs</code> soient installés. Vérifiez que les paquets <code>xfree86-rootless</code> et <code>xfree86-rootless-shlibs</code> sont installés. Si ce n'est pas le cas, lancez <code>fink install xfree86-rootless</code>. Cela devrait résoudre le problème.</p><p>Si ces paquets sont installés, essayez <code>fink rebuild xfree86-rootless</code>. Si cela ne marche pas, vérifiez que <code>/usr/bin/X11R6</code> est dans votre PATH.</p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>9.4: Au démarrage de XDarwin, un message indique le fichier xinit est introuvable et qu'il n'existe pas de server X accessible (message en anglais : "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH"). Que faire ?</b></p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Tout d'abord, vérifiez que vous sourcez init.sh dans le fichier de démarrage de X <code>~/.xinitrc</code>.</p><p>Sous Jaguar, il arrive parfois que tous les paquets <code>xfree86</code> soient compilés, mais que seuls les paquets <code>xfree86-base</code> et <code>xfree86-base-shlibs</code> soient installés. Vérifiez que les paquets <code>xfree86-rootless</code> et <code>xfree86-rootless-shlibs</code> sont installés. Si ce n'est pas le cas, lancez <code>fink install xfree86-rootless</code>. Cela devrait résoudre le problème.</p><p>Si ces paquets sont installés, essayez la commande <code>fink rebuild xfree86-rootless</code>. Si cela ne marche pas, vérifiez que le répertoire <code>/usr/bin/X11R6</code> est dans votre PATH.</p></div>
 </a>
 <a name="xterm-error">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.5: Le lancement de xterm échoue avec le message suivant : "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</b></p></div>
@@ -96,7 +96,7 @@ sudo apt-get install fink</pre>
 </a>
 <a name="special-x11-debug">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.13: Problèmes persistents entre X11 et Fink. Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si les solutions données aux sections <a href="#apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</a> or <a href="#wants-xfree86-on-upgrade">Fink veut installer XFree86</a> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non :</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si les solutions données aux sections <a href="#apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</a> ou <a href="#wants-xfree86-on-upgrade">Fink veut installer XFree86</a> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non :</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
 system-xfree86-43 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless \
 xfree86-rootless-shlibs \
