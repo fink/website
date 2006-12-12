@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.72 2006/12/10 19:14:17 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.73 2006/12/12 10:00:38 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -1256,7 +1256,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 <shorttitle>Utilisation (1)</shorttitle>
 <faqentry name="xlocale">
 <question>
-<p>De nombreux messages similaires à "locale not supported by C library" apparaissent. Est-ce un problème ?</p>
+<p>De nombreux messages signallant que la locale n'est pas gérée par la bibliothèque C apparaissent (message en anglais : "locale not supported by C library"). Est-ce un problème ?</p>
 </question>
 <answer>
 <p>Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale">plus amples informations</link> à ce sujet.</p>
@@ -1264,18 +1264,18 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 </faqentry>
 <faqentry name="passwd">
 <question>
-<p>Un certain nombre d'étranges utilisateurs apparaissent tout d'un coup sur mon système. Ils portent, entre autres, les noms suivants : "mysql", "pgsql", and "games". D'où proviennent-ils ?</p>
+<p>Un certain nombre d'étranges utilisateurs apparaissent tout d'un coup sur mon système. Ils portent, entre autres, les noms suivants : "mysql", "pgsql" et "games". D'où proviennent-ils ?</p>
 </question>
 <answer>
-<p>Vous avez utilisé Fink pour installer un paquet dépendant du paquet passwd. passwd installe un certain nombre d'utilisateurs supplémentaires pour des raisons de sécurité - sur les systèmes Unix, les fichiers et les processus appartiennent aux "possesseurs", ce qui permet aux administrateurs système de moduler les permissions et la sécurité du système. Les programmes Apache et MySQL, par exemple, doivent avoir un "possesseur", et il n'est pas raisonnable que le super-utilisateur soit le possesseur de ces démons. Imaginez ce qu'il arriverait si Apache était compromis et avait tout d'un coup permission d'écrire dans tous les fichiers du système. Donc, le paquet passwd se charge de définir ces utilisateurs supplémentaires pour les paquets Fink qui en ont besoin.</p>
+<p>Vous avez utilisé Fink pour installer un paquet dépendant du paquet passwd. Ce paquet installe un certain nombre d'utilisateurs supplémentaires pour des raisons de sécurité - sur les systèmes Unix, les fichiers et les processus appartiennent aux "propriétaires", ce qui permet aux administrateurs système de moduler les autorisations et la sécurité du système. Les programmes Apache et MySQL, par exemple, doivent avoir un "propriétaire", et il n'est pas raisonnable que le super-utilisateur soit le propriétaire de ces démons. Imaginez ce qu'il arriverait si Apache était compromis et avait tout d'un coup l'autorisation d'écrire dans tous les fichiers du système. Le paquet passwd se charge donc de définir ces utilisateurs supplémentaires pour les paquets Fink qui en ont besoin.</p>
 <p>Il peut être inquiétant de découvrir soudain un certain nombre d'utilisateurs inconnus dans votre panneau de "Préférences système : Utilisateurs" (sur 10.2.x) ou "Préférences système : Comptes" (sur 10.3.x), mais réfléchissez bien avant de les supprimer :</p>
 <ul>
 <li>Tout d'abord, vous avez manifestement choisi d'installer un paquet qui nécessite leur utilisation ; donc leur suppression n'a pas grand sens dans ce contexte.</li>
 <li>En fait, il y a déjà un certain nombre d'utilisateurs supplémentaires installés par Mac OS X, dont vous ignorez peut-être l'existence : www, daemon, nobody entre autres. La présence de ces utilisateurs supplémentaires correspond à une convention standard d'Unix nécessaire à l'utilisation de certains services ; le paquet passwd ne fait qu'en ajouter quelques autres qu'Apple ne fournit pas. Vous pouvez voir les utilisateurs installés par Apple via le Gestionnaire NetInfo ou en lançant <code>niutil -list . /users</code>
 </li>
-<li>Si vous décidez de supprimer ces utilisateurs, faites très attention à la façon dont vous procéderez. Si vous utilisez le panneau "Préférences système : Utilisateurs" (sur 10.2.x) ou "Préférences système : Comptes" (sur 10.3.x), tous les fichiers possédés par ces utilisateurs seront assignés à un utilisateur administrateur pris au hasard. Certaines personnes ont rapporté que cela pouvait causer des dégâts dans les permissions du compte administrateur. C'est un bogue des Préférences système, il a été soumis à Apple. Un moyen plus sûr de supprimer ces utilisateurs est de passer par Gestionnaire NetInfo ou d'utiliser l'outil en ligne de commande <code>niutil</code> dans une fenêtre de Terminal. Lisez la man page de <code>niutil</code> pour de plus amples informations au sujet de NetInfo.</li>
+<li>Si vous décidez de supprimer ces utilisateurs, faites très attention à la façon dont vous procéderez. Si vous utilisez le panneau "Préférences système : Utilisateurs" (sur 10.2.x) ou "Préférences système : Comptes" (sur 10.3.x), tous les fichiers possédés par ces utilisateurs seront assignés à un utilisateur administrateur pris au hasard. Certaines personnes ont rapporté que cela pouvait causer des dégâts dans les autorisations du compte administrateur. C'est un bogue des Préférences système, il a été soumis à Apple. Un moyen plus sûr de supprimer ces utilisateurs est de passer par Gestionnaire NetInfo ou d'utiliser l'outil en ligne de commande <code>niutil</code> dans une fenêtre de Terminal. Lisez la man page de <code>niutil</code> pour de plus amples informations au sujet de NetInfo.</li>
 </ul>
-<p>Fink vous <em>demande</em> la permission d'installer ces utilisateurs supplémentaires sur votre système lors de l'installation du paquet passwd package, vous ne devriez donc pas être trop surpris de les découvrir après coup.</p>
+<p>Fink vous <em>demande</em> la permission d'installer ces utilisateurs supplémentaires sur votre système lors de l'installation du paquet passwd, vous ne devriez donc pas être trop surpris de les découvrir après coup.</p>
 </answer>
 </faqentry>
 <faqentry name="compile-myself">
@@ -1285,7 +1285,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 <answer>
 <!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->
 <p>Quand on compile soi-même sans passer par Fink, il faut indiquer au compilateur et à l'éditeur de liens où trouver les bibliothèques et les headers installés par Fink. Pour un paquet qui utilise un processus standard configure/make, vous devez définir quelques variables d'environnement :</p>
-<p>-tcsh-</p>
+<p>Pour les utilisateurs de tcsh, utilisez les commandes suivantes :</p>
 <codeblock>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
 setenv CXXFLAGS $CFLAGS 
@@ -1293,7 +1293,7 @@ setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal" 
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
 setenv MACOSX_DEPLOYMENT_TARGET 10.4</codeblock>
-<p>-bash-</p>
+<p>Pour les utilisateurs de bash, utilisez les commandes suivantes :</p>
 <codeblock>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
@@ -1301,21 +1301,21 @@ export CPPFLAGS=$CXXFLAGS
 export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
 export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
-<p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <filename>.cshrc</filename> ou <filename>.profile</filename>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter "-I/sw/include" (pour les headers) et "-L/sw/lib" (pour les bibliothèques) aux lignes de compilation. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=. "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p>
-<p>De plus, vous devrez peut-être installer les headers de développement (par exemple <em>foo-1.0-1-dev</em>) des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés.</p>
+<p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <filename>.cshrc</filename> ou <filename>.profile</filename>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter aux lignes de compilation "-I/sw/include" pour les headers et "-L/sw/lib" pour les bibliothèques. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=toto. La commande "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p>
+<p>De plus, vous devrez peut-être installer les headers de développement des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés.Par exemple <em>toto-1.0-1-dev</em>), si vous utilisez la bibliothèque toto-1.0-1.</p>
 </answer>
 </faqentry>
 <faqentry name="apple-x11-applications-menu">
 <question>
-<p>Il est impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple.</p>
+<p>Il est impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple. Que faire ?</p>
 </question>
 <answer>
-<p>X11 d'Apple ne garde pas trace des variables d'environnement de Fink, ce qui signifie que le menu Applications n'a pas le PATH correct pour trouver les applications Fink. Vous pouvez résoudre ce problème en ajoutant devant le nom d'une application installée via Fink la commande suivante :</p>
+<p>L'application X11 d'Apple ne garde pas trace des variables d'environnement de Fink, ce qui signifie que son menu Applications n'a pas dans la variable PATH le chemin permettant de trouver les applications Fink. Vous pouvez résoudre ce problème en ajoutant devant le nom d'une application installée via Fink la commande suivante :</p>
 <codeblock>source /sw/bin/init.sh ;</codeblock>
-<p>Par exemple, si vous voulez lancer GIMP installé via Fink, saisissez :</p>
+<p>Par exemple, si vous voulez lancer GIMP installé via Fink, choisissez "Personnalisez le menu" dans le menu Applications et saisissez :</p>
 <codeblock>source /sw/bin/init.sh ; gimp</codeblock>
-<p>dans le champ "Command" en regard de la ligne GIMP.</p>
-<p>Vous pouvez aussi modifier le fichier .xinitrc, situé dans votre répertoire utilisateur, et ajoutez la commande suivante :</p>
+<p>dans le champ "Commande" en regard du nom de menu GIMP.</p>
+<p>Vous pouvez aussi modifier le fichier .xinitrc, situé dans votre répertoire utilisateur, et y ajoutez la commande suivante :</p>
 <codeblock>source /sw/bin/init.sh</codeblock>
 <p>après la première ligne.</p>
 </answer>
@@ -1325,23 +1325,23 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>Il y a de nombreuses options pour X11 : X11 d'Apple, XFree86, etc... Laquelle installer ?</p>
 </question>
 <answer>
-<p>Toutes ces options sont des variantes de XFree86 (elles sont toutes basées sur le code de XFree86), mais il y a de légères différences entre elles. Il existe des options différentes sous Panther et sous Jaguar.</p>
+<p>Toutes ces options sont des variantes de XFree86 - toutes basées sur le code de XFree86, mais il y a de légères différences entre elles. Il existe des options différentes sous Panther et sous Jaguar.</p>
 <p>Sous Panther, vous avez le choix entre :</p>
 <ul>
-<li><p>X11 d'Apple (sur le disque numéro 3). N'oubliez pas d'installer X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11 à partir des sources </p></li>
-<li><p>4.4.x compilé via via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
+<li><p>X11 d'Apple (que vous trouverez sur le disque numéro 3). N'oubliez pas d'installer X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes  à partir des sources ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11.</p></li>
+<li><p>La version 4.4.x de XFree86 compilée via via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
 <li><p>X.org compilé via Fink : installez les paquets <code>xorg</code> et <code>xorg-shlibs</code></p></li>
 </ul>
-<p>Sous Jaguar, les choix les plus populaires et les paquets Fink qui leur correspondent sont les suivants :</p>
+<p>Sous Jaguar, les choix les plus courants et les paquets Fink qui leur correspondent sont les suivants :</p>
 <ul>
 <li>
-<p>4.2.x compilé via Fink : installez <code>xfree86-base</code> et <code>xfree86-rootless</code> ou <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> (et les paquets <code>-shlibs</code> correspondants)</p>
+<p>La version 4.2.x de XFree86 compilée via Fink : installez <code>xfree86-base</code> et <code>xfree86-rootless</code> ou <code>xfree86-base-threaded</code> et <code>xfree86-rootless-threaded</code> (et les paquets <code>-shlibs</code> correspondants)</p>
 </li>
 <li>
-<p>4.3.x compilé via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p>
+<p>La version 4.3.x de XFree86 compilée via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p>
 </li>
 <li>
-<p>4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK) : le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. (Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible).</p>
+<p>La version 4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK) : le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. (Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible).</p>
 </li>
 </ul>
 <p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <link url="http://fink.sourceforge.net/doc/x11/index.php">document Utilisation de X11</link>.</p>
@@ -1349,7 +1349,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 </faqentry>
 <faqentry name="no-display">
 <question>
-<p>Au lancement d'une application, le message suivant apparaît : "cannot open display:". Que faire ?</p>
+<p>Au lancement d'une application, un message signale que la fenêtre d'affichage ne peut être ouverte (message en anglais: "cannot open display:"). Que faire ?</p>
 </question>
 <answer>
 <p>Cette erreur signifie que le système n'est pas connecté à l'affichage X. Assurez-vous que vous avez suivi les étapes suivantes :</p>
@@ -1366,7 +1366,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>Certains programmes ne sont pas disponibles via Fink. Comment faire en sorte qu'ils soient inclus dans Fink ?</p>
 </question>
 <answer>
-<p>Déposez une requête dans le <link url="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</link> sur la page du projet Fink.</p>
+<p>Déposez une requête dans le <link url="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Traqueur de requêtes de paquet (Package Request Tracker en anglais)</link> accessible sur la page du projet Fink.</p>
 <p>Notez que vous devez avoir un identifiant SourceForge pour ce faire.</p>
 </answer>
 </faqentry>
@@ -1376,30 +1376,30 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 </question>
 <answer>
 <p>Les paquets tel <code>system-perl</code> sont des paquets fantômes. Ils ne contiennent aucun fichier, mais font partie d'un mécanisme qui permet à Fink de savoir quels programmes ont été installés en dehors de Fink.</p>
-<p>À partir de la distribution 10.3, la plupart de ces paquets fantômes ne sont même plus des paquets réels que vous pouvez installer et supprimer. Ce sont des "Paquets virtuels", structures de données de paquets générées par le programme fink au vu d'une liste préconfigurée de paquets installés manuellement. Pour chaque paquet virtuel, fink vérifie l'existence de certains fichiers à certains emplacements. S'ils les trouvent, il considère que le paquet virtuel correspondant est "installé".</p>
+<p>À partir de la distribution 10.3, la plupart de ces paquets fantômes ne sont même plus des paquets réels que vous pouvez installer ou supprimer. Ce sont des "Paquets virtuels", c'est-à-dire des structures de données de paquets générées par le programme fink au vu d'une liste préconfigurée de paquets installés manuellement. Pour chaque paquet virtuel, fink vérifie l'existence de certains fichiers à certains emplacements. S'ils les trouvent, il considère que le paquet virtuel correspondant est "installé".</p>
 <p>Vous pouvez exécuter le programme <code>fink-virtual-pkgs</code> (qui fait partie du paquet fink) pour obtenir la liste des choses que fink considère comme installées. En ajoutant l'option <code>--debug</code>, vous obtiendrez la liste des tests que fink effectue.</p>
 <p>Malheureusement, il n'existe pas de mécanisme qui permette à Fink de reconnaître un paquet arbitraire installé hors de fink, l'empêchant ainsi d'installer sa propre version dudit programme. C'est beaucoup trop difficile de tester les options de configuration et de compilation, les chemins, etc... dans le cas général.</p>
 <p>Voici les paquets virtuels les plus importants définis par fink (à partir de la version 0.19.2) :</p>
 <ul>
 <li>system-perl : [paquet virtuel correspondant à perl]
-<p>Représente <filename>/usr/bin/perl</filename>, qui fait partie de l'installation par défaut de OS X. Ce paquet fournit aussi <code>system-perlXXX</code> et <code>perlXXX-core</code> selon la version X.X.X de l'interpréteur perl.</p>
+<p>Il représente <filename>/usr/bin/perl</filename>, qui fait partie de l'installation par défaut de Mac OS X. Ce paquet fournit aussi <code>system-perlXXX</code> et <code>perlXXX-core</code> selon la version X.X.X de l'interpréteur perl.</p>
 </li>
 <li>system-javaXXX : [paquet virtuel correspondant à Java X.X.X]
-<p>Représente l'environnement d'exécution de Java (JRE), qui fait partie de OS X (et des mises à jour d'Apple). Voir la <link url="http://www.apple.com/java">page Java d'Apple</link> pour de plus amples informations.</p>
+<p>Il représente l'environnement d'exécution de Java (JRE), qui fait partie de Mac OS X (et des mises à jour d'Apple). Voir la <link url="http://www.apple.com/java">page Java d'Apple</link> pour de plus amples informations.</p>
 </li>
 <li>system-javaXXX-dev : [paquet virtuel correspondant aux headers de développement Java X.X.X]
-<p>Représente le SDK (kit de développement) de Java, qui doit être téléchargé et installé à partir de <link url="http://connect.apple.com">connect.apple.com</link> (enregistrement gratuit obligatoire). Si vous avez mis à jour le JRE, il est possible que le SDK ne soit pas automatiquement mis à jour (ou même qu'il ait été supprimé). Vérifiez systématiquement le SDK après installation ou mise à jour du JRE, et téléchargez-le et installez-le si nécessaire. Voir aussi <xref chapter="comp-general" section="system-java">cette QFP</xref>.</p>
+<p>Il représente le SDK (kit de développement) de Java, qui doit être téléchargé et installé à partir de <link url="http://connect.apple.com">connect.apple.com</link> (enregistrement gratuit obligatoire). Si vous avez mis à jour le JRE, il est possible que le SDK ne soit pas automatiquement mis à jour (ou même qu'il ait été supprimé). Vérifiez systématiquement le SDK après installation ou mise à jour du JRE, et téléchargez-le et installez-le si nécessaire. Voir aussi <xref chapter="comp-general" section="system-java">la QFP à propos de system-java14-dev</xref>.</p>
 </li>
 <li>system-java3d : [paquet virtuel représentant Java3D]</li>
 <li>system-javaai : [paquet virtuel représent Java Advanced Imaging]
-<p>Représentent les extensions Java pour les graphiques 3D et le traitement d'images, qui peuvent être téléchargées et installées à partir du site d'Apple. Voir cette <link url="http://docs.info.apple.com/article.html?artnum=120289">page web d'Apple</link> pour de plus amples informations.</p>
+<p>Ils représentent les extensions Java pour les graphiques 3D et le traitement d'images, qui peuvent être téléchargées et installées à partir du site d'Apple. Voir la <link url="http://docs.info.apple.com/article.html?artnum=120289">page web d'Apple à propos de la mise  à jour de Java 3D et de Java Advanced Imaging</link> pour de plus amples informations.</p>
 </li>
 <li>system-xfree86 : [paquet fantôme pour un paquet x11 installé manuellement]</li>
 <li>system-xfree86-shlibs : [paquet fantôme pour les bibliothèques partagées x11 installées manuellement]
-<p>Représentent X11/XDarwin d'Apple, partie optionnelle de OS X (X11User.pkg). Ces paquets fournissent respectivement <code>x11</code> et <code>x11-shlibs</code>. Voir aussi <xref chapter="comp-packages" section="cant-install-xfree">cette QFP</xref>.</p>
+<p>Ils représentent X11/XDarwin d'Apple, partie optionnelle de Mac OS X (X11User.pkg). Ces paquets fournissent respectivement <code>x11</code> et <code>x11-shlibs</code>. Voir aussi <xref chapter="comp-packages" section="cant-install-xfree">la QFP à propos du passage à la version XFree86 de Fink</xref>.</p>
 </li>
 <li>system-xfree86-dev : [paquet fantôme pour les outils de développement x11 installés manuellement]
-<p>Représente X11/XDarwin SDK d'Apple, partie optionnelle de OS X (X11SDK.pkg). Ce paquet fournit <code>x11-dev</code>. Voir aussi <xref chapter="comp-packages" section="cant-install-xfree">cette QFP</xref>.
+<p>Il eprésente X11/XDarwin SDK d'Apple, partie optionnelle de Mac OS X (X11SDK.pkg). Ce paquet fournit <code>x11-dev</code>. Voir aussi <xref chapter="comp-packages" section="cant-install-xfree">la QFP à propos du passage à la version XFree86 de Fink</xref>.
 </p>
 </li>
 </ul>

@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (2)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/10 19:14:17';
+$cvs_date = 'Date: 2006/12/12 10:00:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problèmes généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation">';
 
 
