@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/12/12 18:40:18';
+$cvs_date = 'Date: 2006/12/13 17:55:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -104,7 +104,7 @@ stable/main". This list should be kept in sync with the
 does this for you automatically.)
 </p><p>The order of the trees is meaningful, as packages from later trees in the list may
            override packages from earlier ones.</p>
-        </li>
+        -</li>
         <li>
           <p>
             <b>Distribution:</b> 10.1, 10.2-gcc3.3, 10.3, or 10.4</p>
@@ -331,6 +331,12 @@ MasterNever - Never use "Master" source mirrors.
 ClosestFirst - Search closest source mirrors first (combine all mirrors into one set).
 </pre>
         </li>
+        <li><p><b>Mirror-rsync:</b>
+           </p><p>(<code>fink-0.25.2</code> and later) When doing <code>fink selfupdate</code> with the <b>SelfupdateMethod</b> set to <code>rsync</code>,
+           this is the rsync url to sync from.  This should be an anonymous
+           rsync url, pointing to a directory which contains all the fink Dis-
+           trubutions and Trees.
+</p></li>
       </ul>
     
     <h2><a name="developer">5.7 Developer Settings</a></h2>
