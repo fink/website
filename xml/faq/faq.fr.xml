@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.74 2006/12/12 21:00:35 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.75 2006/12/14 07:47:10 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -1256,7 +1256,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 <shorttitle>Utilisation (1)</shorttitle>
 <faqentry name="xlocale">
 <question>
-<p>De nombreux messages signallant que la locale n'est pas gérée par la bibliothèque C apparaissent (message en anglais : "locale not supported by C library"). Est-ce un problème ?</p>
+<p>De nombreux messages signalant que la locale n'est pas gérée par la bibliothèque C apparaissent (message en anglais : "locale not supported by C library"). Est-ce un problème ?</p>
 </question>
 <answer>
 <p>Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale">plus amples informations</link> à ce sujet.</p>
@@ -1268,12 +1268,12 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 </question>
 <answer>
 <p>Vous avez utilisé Fink pour installer un paquet dépendant du paquet passwd. Ce paquet installe un certain nombre d'utilisateurs supplémentaires pour des raisons de sécurité - sur les systèmes Unix, les fichiers et les processus appartiennent aux "propriétaires", ce qui permet aux administrateurs système de moduler les autorisations et la sécurité du système. Les programmes Apache et MySQL, par exemple, doivent avoir un "propriétaire", et il n'est pas raisonnable que le super-utilisateur soit le propriétaire de ces démons. Imaginez ce qu'il arriverait si Apache était compromis et avait tout d'un coup l'autorisation d'écrire dans tous les fichiers du système. Le paquet passwd se charge donc de définir ces utilisateurs supplémentaires pour les paquets Fink qui en ont besoin.</p>
-<p>Il peut être inquiétant de découvrir soudain un certain nombre d'utilisateurs inconnus dans votre panneau de "Préférences système : Utilisateurs" (sur 10.2.x) ou "Préférences système : Comptes" (sur 10.3.x), mais réfléchissez bien avant de les supprimer :</p>
+<p>Il peut être inquiétant de découvrir soudain un certain nombre d'utilisateurs inconnus dans votre panneau de "Préférences système : Utilisateurs" (sur Mac OS X 10.2.x) ou "Préférences système : Comptes" (sur Mac OS X 10.3.x), mais réfléchissez bien avant de les supprimer :</p>
 <ul>
 <li>Tout d'abord, vous avez manifestement choisi d'installer un paquet qui nécessite leur utilisation ; donc leur suppression n'a pas grand sens dans ce contexte.</li>
-<li>En fait, il y a déjà un certain nombre d'utilisateurs supplémentaires installés par Mac OS X, dont vous ignorez peut-être l'existence : www, daemon, nobody entre autres. La présence de ces utilisateurs supplémentaires correspond à une convention standard d'Unix nécessaire à l'utilisation de certains services ; le paquet passwd ne fait qu'en ajouter quelques autres qu'Apple ne fournit pas. Vous pouvez voir les utilisateurs installés par Apple via le Gestionnaire NetInfo ou en lançant <code>niutil -list . /users</code>
+<li>En fait, il y a déjà un certain nombre d'utilisateurs supplémentaires installés par Mac OS X, dont vous ignorez peut-être l'existence : www, daemon, nobody entre autres. La présence de ces utilisateurs supplémentaires correspond à une convention standard d'Unix nécessaire à l'utilisation de certains services ; le paquet passwd ne fait qu'en ajouter quelques autres qu'Apple ne fournit pas. Vous pouvez voir les utilisateurs installés par Apple via le Gestionnaire NetInfo ou en lançant la commande <code>niutil -list . /users</code>
 </li>
-<li>Si vous décidez de supprimer ces utilisateurs, faites très attention à la façon dont vous procéderez. Si vous utilisez le panneau "Préférences système : Utilisateurs" (sur 10.2.x) ou "Préférences système : Comptes" (sur 10.3.x), tous les fichiers possédés par ces utilisateurs seront assignés à un utilisateur administrateur pris au hasard. Certaines personnes ont rapporté que cela pouvait causer des dégâts dans les autorisations du compte administrateur. C'est un bogue des Préférences système, il a été soumis à Apple. Un moyen plus sûr de supprimer ces utilisateurs est de passer par Gestionnaire NetInfo ou d'utiliser l'outil en ligne de commande <code>niutil</code> dans une fenêtre de Terminal. Lisez la man page de <code>niutil</code> pour de plus amples informations au sujet de NetInfo.</li>
+<li>Si vous décidez de supprimer ces utilisateurs, faites très attention à la façon dont vous procéderez. Si vous utilisez le panneau "Préférences système : Utilisateurs" (sur Mac OS X 10.2.x) ou "Préférences système : Comptes" (sur Mac OS X 10.3.x), tous les fichiers possédés par ces utilisateurs seront assignés à un utilisateur administrateur pris au hasard. Certaines personnes ont rapporté que cela pouvait causer des dégâts dans les autorisations du compte administrateur. C'est un bogue des Préférences système, il a été soumis à Apple. Un moyen plus sûr de supprimer ces utilisateurs est de passer par Gestionnaire NetInfo ou d'utiliser l'outil en ligne de commande <code>niutil</code> dans une fenêtre de Terminal. Lisez la page de manuel de <code>niutil</code> pour de plus amples informations au sujet de NetInfo.</li>
 </ul>
 <p>Fink vous <em>demande</em> la permission d'installer ces utilisateurs supplémentaires sur votre système lors de l'installation du paquet passwd, vous ne devriez donc pas être trop surpris de les découvrir après coup.</p>
 </answer>
@@ -1325,10 +1325,10 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>Il y a de nombreuses options pour X11 : X11 d'Apple, XFree86, etc... Laquelle installer ?</p>
 </question>
 <answer>
-<p>Toutes ces options sont des variantes de XFree86 - toutes basées sur le code de XFree86, mais il y a de légères différences entre elles. Il existe des options différentes sous Panther et sous Jaguar.</p>
+<p>Toutes ces options sont des variantes de XFree86 - toutes basées sur le code de XFree86, mais il y a de légères différences entre elles. Les options proposées sont différentes sous Panther et sous Jaguar.</p>
 <p>Sous Panther, vous avez le choix entre :</p>
 <ul>
-<li><p>X11 d'Apple (que vous trouverez sur le disque numéro 3). N'oubliez pas d'installer X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes  à partir des sources ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11.</p></li>
+<li><p>X11 d'Apple (que vous trouverez sur le disque numéro 3). N'oubliez pas d'installer le paquet  X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes  à partir des sources ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11.</p></li>
 <li><p>La version 4.4.x de XFree86 compilée via via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
 <li><p>X.org compilé via Fink : installez les paquets <code>xorg</code> et <code>xorg-shlibs</code></p></li>
 </ul>
@@ -1382,13 +1382,13 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>Voici les paquets virtuels les plus importants définis par fink (à partir de la version 0.19.2) :</p>
 <ul>
 <li>system-perl : [paquet virtuel correspondant à perl]
-<p>Il représente <filename>/usr/bin/perl</filename>, qui fait partie de l'installation par défaut de Mac OS X. Ce paquet fournit aussi <code>system-perlXXX</code> et <code>perlXXX-core</code> selon la version X.X.X de l'interpréteur perl.</p>
+<p>Il représente le programme <filename>/usr/bin/perl</filename>, qui fait partie de l'installation par défaut de Mac OS X. Ce paquet fournit aussi <code>system-perlXXX</code> et <code>perlXXX-core</code> selon la version X.X.X de l'interpréteur perl.</p>
 </li>
 <li>system-javaXXX : [paquet virtuel correspondant à Java X.X.X]
 <p>Il représente l'environnement d'exécution de Java (JRE), qui fait partie de Mac OS X (et des mises à jour d'Apple). Voir la <link url="http://www.apple.com/java">page Java d'Apple</link> pour de plus amples informations.</p>
 </li>
 <li>system-javaXXX-dev : [paquet virtuel correspondant aux headers de développement Java X.X.X]
-<p>Il représente le SDK (kit de développement) de Java, qui doit être téléchargé et installé à partir de <link url="http://connect.apple.com">connect.apple.com</link> (enregistrement gratuit obligatoire). Si vous avez mis à jour le JRE, il est possible que le SDK ne soit pas automatiquement mis à jour (ou même qu'il ait été supprimé). Vérifiez systématiquement le SDK après installation ou mise à jour du JRE, et téléchargez-le et installez-le si nécessaire. Voir aussi <xref chapter="comp-general" section="system-java">la QFP à propos de system-java14-dev</xref>.</p>
+<p>Il représente le SDK (kit de développement) de Java, qui doit être téléchargé et installé à partir de <link url="http://connect.apple.com">connect.apple.com</link> (enregistrement gratuit obligatoire). Si vous avez mis à jour le JRE, il est possible que le SDK ne soit pas automatiquement mis à jour ou même qu'il ait été supprimé. Vérifiez systématiquement le SDK après installation ou mise à jour du JRE, puis téléchargez-le et installez-le si nécessaire. Voir aussi <xref chapter="comp-general" section="system-java">la QFP à propos de system-java14-dev</xref>.</p>
 </li>
 <li>system-java3d : [paquet virtuel représentant Java3D]</li>
 <li>system-javaai : [paquet virtuel représent Java Advanced Imaging]
@@ -1396,10 +1396,10 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 </li>
 <li>system-xfree86 : [paquet fantôme pour un paquet x11 installé manuellement]</li>
 <li>system-xfree86-shlibs : [paquet fantôme pour les bibliothèques partagées x11 installées manuellement]
-<p>Ils représentent X11/XDarwin d'Apple, partie optionnelle de Mac OS X (X11User.pkg). Ces paquets fournissent respectivement <code>x11</code> et <code>x11-shlibs</code>. Voir aussi <xref chapter="comp-packages" section="cant-install-xfree">la QFP à propos du passage à la version XFree86 de Fink</xref>.</p>
+<p>Ils représentent X11/XDarwin d'Apple, partie optionnelle de Mac OS X correspondant au paquet X11User.pkg. Ces paquets fournissent respectivement <code>x11</code> et <code>x11-shlibs</code>. Voir aussi <xref chapter="comp-packages" section="cant-install-xfree">la QFP à propos du passage à la version XFree86 de Fink</xref>.</p>
 </li>
 <li>system-xfree86-dev : [paquet fantôme pour les outils de développement x11 installés manuellement]
-<p>Il représente X11/XDarwin SDK d'Apple, partie optionnelle de Mac OS X (X11SDK.pkg). Ce paquet fournit <code>x11-dev</code>. Voir aussi <xref chapter="comp-packages" section="cant-install-xfree">la QFP à propos du passage à la version XFree86 de Fink</xref>.
+<p>Il représente X11/XDarwin SDK d'Apple, partie optionnelle de Mac OS X correspondant au paquet X11SDK.pkg. Ce paquet fournit <code>x11-dev</code>. Voir aussi <xref chapter="comp-packages" section="cant-install-xfree">la QFP à propos du passage à la version XFree86 de Fink</xref>.
 </p>
 </li>
 </ul>
@@ -1412,18 +1412,18 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <shorttitle>Utilisation (2)</shorttitle>
 <faqentry name="xmms-quiet">
 <question>
-<p>Aucun son n'est disponible avec XMMS. Que faire ?</p>
+<p>Aucun son n'est disponible dans XMMS. Que faire ?</p>
 </question>
 <answer>
 <p>Vérifiez que vous avez sélectionné "eSound Output Plugin" dans les préférences de XMMS. Pour d'obscures raisons, c'est le plugin d'écriture sur le disque qui est sélectionné par défaut.</p>
 <p>Si cela ne résout pas le problème ou si XMMS se plaint qu'il ne peut trouver votre carte son, essayez ceci :</p>
 <ul>
 <li>Vérifiez que la sortie son n'est pas réglée sur silence dans Mac OS X.</li>
-<li>Lancez la commande <code>esdcat /usr/libexec/config.guess</code> (ou choisissez n'importe quel autre fichier de taille significative). Si vous entendez un petit bruit, cela signifie que eSound fonctionne et que XMMS devrait fonctionner, lui aussi, à condition d'être configuré correctement. Si vous n'entendez rien, esd ne fonctionne pas pour une raison indéterminée. Vous pouvez tenter de le lancer manuellement via la commande <code>esd &amp;</code>, puis analysez les messages.</li>
-<li>S'il ne fonctionne toujours pas, vérifiez les permissions des fichiers <code>/tmp/.esd</code> et <code>/tmp/.esd/socket</code>. Le propriétaire doit être votre compte utilisateur. Si ce n'est pas le cas, tuez esd s'il est en cours de fonctionnement, supprimez le répertoire en tant que super-utilisateur via la commande <code>sudo rm -rf /tmp/.esd</code>, puis redémarrez esd (en tant qu'utilisateur lambda, pas en tant que super-utilisateur).</li>
+<li>Lancez la commande <code>esdcat /usr/libexec/config.guess</code> ou fournissez à la commande esdcat n'importe quel autre fichier de taille significative. Si vous entendez un petit bruit, cela signifie que eSound fonctionne et que XMMS devrait fonctionner, lui aussi, à condition d'être configuré correctement. Si vous n'entendez rien, cela signale que la commande esd ne fonctionne pas pour une raison indéterminée. Vous pouvez tenter de la lancer manuellement via la commande <code>esd &amp;</code>, puis analysez les messages.</li>
+<li>Si eSound ne fonctionne toujours pas, vérifiez les permissions des fichiers <code>/tmp/.esd</code> et <code>/tmp/.esd/socket</code>. Le propriétaire doit être votre compte utilisateur. Si ce n'est pas le cas, tuez le démon esd s'il est en cours de fonctionnement, supprimez le répertoire en tant que super-utilisateur via la commande <code>sudo rm -rf /tmp/.esd</code>, puis redémarrez esd (en tant qu'utilisateur lambda, pas en tant que super-utilisateur).</li>
 </ul>
 <p>Notez que esd est conçu pour être lancé par un utilisateur lambda, pas par le super-utilisateur. Il communique, en général, via la socket système <code>/tmp/.esd/socket</code>. Vous n'avez besoin des options <code>-tcp</code> et <code>-port</code> que si vous voulez lancer des clients esd sur une autre machine du réseau.</p>
-<p>Certaines personnes ont signalé que XMMS se plantait ou se bloquait sur 10.1. Il n'y a pas eu d'analyse ou de solution à ce phénomène à ce jour.</p>
+<p>Certaines personnes ont signalé que XMMS se plantait ou se bloquait sur 10.1. Il n'y a pas eu à ce jour d'analyse ou de solution à ce phénomène.</p>
 </answer>
 </faqentry>
 <faqentry name="nedit-window-locks">
@@ -1445,7 +1445,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 </faqentry>
 <faqentry name="no-server">
 <question>
-<p>Au démarrage de XDarwin, un message indique le fichier xinit est introuvable et qu'il n'existe pas de server X accessible (message en anglais : "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH"). Que faire ?</p>
+<p>Au démarrage de XDarwin, un message indique que le fichier xinit est introuvable et qu'il n'existe pas de server X accessible dans le répertoire /usr/X11R6/bin (message en anglais : "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH"). Que faire ?</p>
 </question>
 <answer>
 <p>Tout d'abord, vérifiez que vous sourcez init.sh dans le fichier de démarrage de X <code>~/.xinitrc</code>.</p>
@@ -1455,17 +1455,17 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 </faqentry>
 <faqentry name="xterm-error">
 <question>
-<p>Le lancement de xterm échoue avec le message suivant : "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</p>
+<p>Le lancement de xterm échoue avec un message signalant que l'éditeur de liens dynamique ne trouve pas le symbole _tgetent défini dans xterm et censé être dans la bibliothèque /usr/lib/libSystem.B.dylib (message en anglais : "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib"). Que se passe-t-il ?</p>
 </question>
 <answer>
-<p>Cela se produit lorsque l'on utilise une version 10.1 de XFree86 sur 10.2. Vous devez passer à une version 10.2.</p>
+<p>Cela se produit lorsque l'on utilise une version de XFree86 destinée à Mac OS X 10.1 sur une machine où est installée Mac OS X 10.2. Vous devez passer à une version destinée à Mac OS X 10.2.</p>
 <p>Si vous utilisez les paquets Fink <code>xfree86</code>, vous pouvez passer à une version plus récente de la façon habituelle ("<code>fink selfupdate-cvs ; fink update-all</code>" pour une installation à partir du source, <code>fink selfupdate ; sudo apt-get update; sudo apt-get dist-upgrade</code>" pour une installation à partir des binaires.</p>
 <p>Si vous avez installé XFree86 par d'autres moyens, vous trouverez les rustines qui vous permettront de faire la mise à jour sur le <link url="http://mrcla.com/XonX">site web de XonX</link>.</p>
 </answer>
 </faqentry>
 <faqentry name="libXmuu">
 <question>
-<p>Au démarrage de XFree86, l'un des messages d'erreur suivants apparaît : "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" ou "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</p>
+<p>Au démarrage de XFree86, un message signale que l'éditeur de liens dynamique ne peut ouvrir la bibliothèque /usr/X11R6/lib/libXmuu.1.dylib ou la bibliothèque /usr/X11R6/lib/libXext.6.dylib appelées par xinit (message en anglais : "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" ou "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"). Que faire ?</p>
 </question>
 <answer>
 <p>Un fichier censé être installé par <code>xfree86-base-(threaded)-shlibs</code> manque. Vous devez l'installer via <code>fink reinstall xfree86-base-shlibs</code> (<code>fink reinstall xfree86-base-threaded-shlibs</code> si vous utilisez les paquets XFree86 avec gestion des processus légers) pour les utilisateurs des sources, ou <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> pour les utilisateurs de binaires.</p>
@@ -1487,16 +1487,13 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 </question>
 <answer>
 <p>Certains utilisateurs ont signalé que la touche <code>suppr</code> se comporte différemment sous XDarwin et sous X11 d'Apple. On peut rectifier cela en ajoutant les lignes suivantes au fichier de démarrage approprié de X :</p>
-<p> <em>.Xmodmap :</em>
-</p>
+<p>Dans le fichier <em>.Xmodmap</em>, rajoutez la ligne :</p>
 <codeblock>keycode 59 = Delete</codeblock>
-<p> <em>.Xresources :</em>
-</p>
+<p>Dans le fichier <em>.Xresources</em>, rajoutez la ligne :</p>
 <codeblock>xterm*.deleteIsDEL: true 
 xterm*.backarrowKey: false
 xterm*.ttyModes: erase ^?</codeblock>
-<p> <em>.xinitrc :</em>
-</p>
+<p>Dans le fichier <em>.xinitrc</em>, rajoutez la ligne :</p>
 <codeblock>xrdb -load $HOME/.Xresources 
 xmodmap $HOME/.Xmodmap</codeblock>
 <p></p>
@@ -1504,7 +1501,7 @@ xmodmap $HOME/.Xmodmap</codeblock>
 </faqentry>
 <faqentry name="gnome-two">
 <question>
-<p>Après passage de GNOME 1.x à GNOME 2.x, <code>gnome-session</code> n'ouvre plus de gestionnaire de fenêtres. Que faire ?</p>
+<p>Après passage de GNOME 1.x à GNOME 2.x, le programme <code>gnome-session</code> n'ouvre plus de gestionnaire de fenêtres. Que faire ?</p>
 </question>
 <answer>
 <p>Alors que, sous GNOME 1.x, <code>gnome-session</code> invoque automatiquement le gestionnaire de fenêtres <code>sawfish</code>, sous GNOME 2.x, vous devez vous-même appeler un gestionnaire de fenêtres dans le fichier <code>~/.xinitrc</code> avant de lancer <code>gnome-session</code>, par exemple :</p>
@@ -1518,7 +1515,7 @@ exec metacity &amp; exec gnome-session</codeblock>
 <p>Après passage à X11 d'Apple sous Panther, les barres de titre de fenêtre n'apparaissent plus. Que faire ?</p>
 </question>
 <answer>
-<p>Vous n'êtes pas passé à la version "X11 1.0 - XFree86 4.3.0" incluse dans Panther. Vous devez installer X11 à partir de X11.pkg qui est situé sur le disque 3.</p>
+<p>Vous n'êtes pas passé à la version "X11 1.0 - XFree86 4.3.0" incluse dans Panther. Vous devez installer X11 à partir du paquet X11.pkg qui est situé sur le disque 3.</p>
 </answer>
 </faqentry>
 <faqentry name="apple-x11-wants-xfree86">
@@ -1530,23 +1527,23 @@ exec metacity &amp; exec gnome-session</codeblock>
 <ul>
 <li>
 <em>Vous faites une installation à partir des binaires :</em>
-<p>Si vous utilisez une version récente de <code>fink</code> (c'est-à-dire &gt;= 0.18.3-1), la solution consiste, en général, à réinstaller le paquet X11User, car l'installeur omet parfois d'installer certains fichiers. Vous devrez peut-être effectuer la réinstallation plusieurs fois. L'exécution de :</p>
+<p>Si vous utilisez une version récente de <code>fink</code> (c'est-à-dire &gt;= 0.18.3-1), la solution consiste, en général, à réinstaller le paquet X11User, car l'installeur omet parfois d'installer certains fichiers. Vous devrez peut-être effectuer la réinstallation plusieurs fois. L'exécution de la commande :</p>
 <codeblock>fink list -i system-xfree86</codeblock>
 <p>doit faire apparaître l'installation effective des paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>.</p>
 <p>Si la réinstallation du paquet X11User ne suffit pas à résoudre le problème, consultez les instructions <xref section="special-x11-debug">débogage spécial</xref> ci-dessous.</p>
-<p>Si vous utilisez une version antérieure du paquet <code>fink</code>, il suffit, en général, de mettre à jour <code>fink</code>, par exemple via :</p>
+<p>Si vous utilisez une version antérieure du paquet <code>fink</code>, il suffit, en général, de mettre à jour <code>fink</code>, par exemple via la commande :</p>
 <codeblock>sudo apt-get update
 sudo apt-get install fink</codeblock>
 </li>
 <li>
 <em>Vous faites une installation à partir du source :</em>
-<p>Si vous utilisez une version récente de <code>fink</code>, cette erreur signifie, en général, que vous devez installer ou réinstaller le paquet X11SDK, qui est <em>obligatoire</em> pour compiler les paquets à partir des sources. Vous le trouverez sur le CD XCode de Panther ou dans le répertoire XCode Tools du DVD de Tiger. Il <em>n'</em>est <em>pas</em> installé par défaut quand on installe XCode sous Panther. Il doit être soit installé en personnalisant l'installation de XCode, soit en double-cliquant sur X11SDK.pkg, fichier situé dans le répertoire <filename>Packages</filename> du CD XCode. Par contre, il <em>est</em> installé par défaut quand on installe XCode sous Tiger (même si X11User n'est pas installé), mais il est possible que l'installeur oublie un fichier.</p>
+<p>Si vous utilisez une version récente de <code>fink</code>, cette erreur signifie, en général, que vous devez installer ou réinstaller le paquet X11SDK, qui est <em>obligatoire</em> pour compiler les paquets à partir des sources. Vous le trouverez sur le CD XCode de Panther ou dans le répertoire XCode Tools du DVD de Tiger. Il <em>n'</em>est <em>pas</em> installé par défaut quand on installe XCode sous Panther. Il doit être soit installé en personnalisant l'installation de XCode, soit en double-cliquant sur le fichier X11SDK.pkg, situé dans le répertoire <filename>Packages</filename> du CD XCode. Par contre, il <em>est</em> installé par défaut quand on installe XCode sous Tiger (même si le paquet X11User n'est pas installé), mais il est possible que l'installeur oublie un fichier.</p>
 <p>Si les CD ou DVD de XCode ne vous ont pas été livrés avec l'ordinateur, il est fort probable qu'un disque image contenant, entre autres, le fichier <filename>X11SDK.pkg</filename> existe quelque part sur votre ordinateur. Cherchez dans le répertoire <filename>/Applications/Installers</filename> un disque image XCode. Le fichier <filename>X11User.pkg</filename> est probablement lui aussi dans ce répertoire.</p>
-<p>Si le problème persiste, exécutez :</p>
+<p>Si le problème persiste, exécutez la commande :</p>
 <codeblock>fink list -i system-xfree86</codeblock>
-<p>Cela devrait faire apparaître l'installation effective des paquets <code>system-xfree86</code>, <code>system-xfree86-shlibs</code> et <code>system-xfree86-dev</code>. Si le paquet <code>-dev</code> n'apparaît pas, réinstallez X11SDK, car il arrive que l'installeur d'Apple omette des fichiers. Il se peut que vous deviez faire la réinstallation plusieurs fois. Si l'un des deux autres paquets n'apparaît pas, réinstallez le paquet X11User (pour les mêmes raisons).</p>
+<p>Cela devrait faire apparaître l'installation effective des paquets <code>system-xfree86</code>, <code>system-xfree86-shlibs</code> et <code>system-xfree86-dev</code>. Si le paquet <code>-dev</code> n'apparaît pas, réinstallez le paquet X11SDK, car il arrive que l'installeur d'Apple omette des fichiers. Il se peut que vous deviez faire la réinstallation plusieurs fois. Si l'un des deux autres paquets n'apparaît pas, réinstallez le paquet X11User (pour les mêmes raisons).</p>
 <p><em>Note pour les utilisateurs de Jaguar (X11 bêta 3)</em> : vous ne pouvez pas utiliser XCode, vous devez donc avoir déjà téléchargé le paquet X11SDK correspondant à votre système. Comme la date limite d'utilisation de X11 bêta 3 est dépassée, vous ne pouvez plus télécharger le paquet X11SDK ni le paquet X11User correspondant. Vous devez vous en tenir à l'installation de paquets binaires X11, ou bien installer XFree86 ou X.org, ou encore passer à Panther.</p>
-<p>Si vous utilisez une version de <filename>fink</filename> antérieure à la version 0.17, vous devez mettre à jour <code>fink</code>, par exemple :</p>
+<p>Si vous utilisez une version de <filename>fink</filename> antérieure à la version 0.17, vous devez mettre à jour <code>fink</code>, par exemple via la commande :</p>
 <codeblock>fink selfupdate</codeblock> 
 (en supposant que vous faites la mise à jour via CVS ou via rsync et que vous n'utilisez pas les mises à jour ponctuelles).
 <p>Si ceci ne résout pas le problème, consultez les instructions <xref section="special-x11-debug">débogage spécial</xref> ci-dessous.</p>
@@ -1562,9 +1559,9 @@ sudo apt-get install fink</codeblock>
 <p>Il se peut que vous deviez supprimer un des paquets fantômes antérieurs : <filename>system-xfree86</filename>, <filename>system-xfree86-42</filename> ou <filename>system-xfree86-43</filename>. Fink sait maintenant reconnaître si vous avez une version de X11 installée manuellement, par exemple celle d'Apple, et génère des paquets virtuels. Comme d'autres paquets dépendent de <filename>system-xfree86</filename>, vous devez utiliser la commande :</p>
 <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
  system-xfree86-43</codeblock>
-<p>pour supprimer les versions obsolètes. Vous pouvez vérifier votre installation en lançant :</p>
+<p>pour supprimer les versions obsolètes. Vous pouvez vérifier votre installation en lançant la commande :</p>
 <codeblock>fink list -i system-xfree86</codeblock>
-<p>et vous assurer que les paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>sont présents. Si vous avez installé le X11SDK, vous devez aussi avoir le paquet <code>system-xfree86-dev</code>.</p>
+<p>et vous assurer que les paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>sont présents. Si vous avez installé le paquet X11SDK, vous devez aussi avoir le paquet <code>system-xfree86-dev</code>.</p>
 <p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>Si le problème persiste, voir plus haut <xref section="apple-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</xref>.</p>
 </answer>
@@ -1574,7 +1571,7 @@ sudo apt-get install fink</codeblock>
 <p>Problèmes persistents entre X11 et Fink. Que faire ?</p>
 </question>
 <answer>   
-<p>Si les solutions données aux sections <xref section="apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</xref> ou <xref section="wants-xfree86-on-upgrade">Fink veut installer XFree86</xref> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non :</p>
+<p>Si les solutions données aux sections <xref section="apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</xref> ou <xref section="wants-xfree86-on-upgrade">Fink veut installer XFree86</xref> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non via les commandes:</p>
 <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
 system-xfree86-43 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless \
@@ -1584,16 +1581,16 @@ xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
 fink selfupdate; fink index</codeblock>
 <p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
-<p>(Vous verrez peut-être apparaître un message généré par la première ligne vous indiquant que vous tentez de supprimer des paquets qui ne sont pas installés). Réinstallez ensuite X11 d'Apple (et le X11SDK, si besoin est) ou XFree86 ou encore X.org.</p>
-<p>Si le problème persiste et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer :</p>
+<p>Vous verrez peut-être apparaître un message généré par la première ligne vous indiquant que vous tentez de supprimer des paquets qui ne sont pas installés. Réinstallez ensuite X11 d'Apple (et le paquet X11SDK, si besoin est) ou XFree86 ou encore X.org.</p>
+<p>Si le problème persiste et que vous utilisez <code>fink-0.19.0</code> ou une version postérieure, vous pouvez lancer la commande :</p>
 <codeblock>fink-virtual-pkgs --debug</codeblock>
 <p>pour savoir quels sont les paquets manquants.</p>
 <p>Si vous utilisez une version antérieure de <code>fink</code>, vous pouvez télécharger et lancer un script Perl, écrit par Martin Costabel, qui fournit les mêmes informations.</p>
 <ul>
-<li>Vous le trouverez ici : <link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>
+<li>Vous le trouverez sur <link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>
 </li>
 <li>Sauvegardez-le où vous voulez.</li>
-<li>Lancez-le dans une fenêtre de terminal ainsi :
+<li>Lancez-le dans une fenêtre de terminal via la commande :
 <codeblock>perl fink-x11-debug</codeblock>
 </li>
 </ul>
@@ -1605,12 +1602,12 @@ fink selfupdate; fink index</codeblock>
 </question>
 <answer>
 <p>Ceci était, apparemment, dû à un bogue dans l'éditeur de liens dynamique de Tiger (au moins jusque dans la version 10.4.1), mais il semble être corrigé dans la version 10.4.3. Fink proposait une solution dans le fichier <code>base-files-1.9.7-1</code> et les versions suivantes.</p>
-<p>Si vous n'êtes pas passé à Tiger et/ou n'avez pas mis à jour <code>base-files</code>, vous pouvez corriger ce problème en préfixant le nom du logiciel que vous souhaitez lancer avec :</p>
+<p>Si vous n'êtes pas passé à Tiger et/ou n'avez pas mis à jour le paquet <code>base-files</code>, vous pouvez corriger ce problème en préfixant le nom du logiciel que vous souhaitez lancer avec le fragment de code suvant :</p>
 <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
-<p>Par exemple si vous voulez utiliser <code>gnucash</code>, utilisez :</p>
+<p>Par exemple si vous voulez lancer <code>gnucash</code>, utilisez la commande :</p>
 <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</codeblock>
 <p>Cette méthode fonctionne pour les applications lancées à partir du menu Applications de X11 d'Apple ou à partir du terminal.</p>
-<p>Vous pouvez aussi déclarer la variable au niveau global (par exemple dans votre script de démarrage et/ou dans votre fichier<code>.xinitrc</code>, ce qui peut-être nécessaire pour faire tourner GNOME). Mettez : </p>
+<p>Vous pouvez aussi déclarer la variable au niveau global (par exemple dans votre script de démarrage et/ou dans votre fichier<code>.xinitrc</code>, ce qui peut-être nécessaire pour faire tourner GNOME). Mettez le fragment de code suivant :</p>
 <codeblock>export DYLD_FALLBACK_LIBRARY_PATH=:</codeblock>
 <p>dans votre fichier <code>.xinitrc</code> (quel que soit votre shell d'ouverture de session) ou dans le fichier <code>.profile</code> (ou tout autre script de démarrage) pour les utilisateurs de <em>bash</em>.</p>
 <codeblock>setenv DYLD_FALLBACK_LIBRARY_PATH :</codeblock>
