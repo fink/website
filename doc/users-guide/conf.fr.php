@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/12 20:59:32';
+$cvs_date = 'Date: 2006/12/14 07:45:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -169,6 +169,10 @@ MasterNever - N'utilise jamais les miroirs "Maîtres".
 ClosestFirst - Cherche d'abord dans les miroirs les plus proches 
   (combine tous les miroirs en un seul jeu de miroirs). 
 </pre>
+</li>
+<li>
+<p><b>Mirror-rsync:</b></p>
+<p>La valeur de ce champ représente l'url de type rsync à partir de laquelle la commande <code>fink selfupdate</code> synchronise les arbres quand le champ <b>SelfupdateMethod</b> a la valeur <code>rsync</code>. Ce doit être une url de type rsync anonyme qui pointe sur un répertoire contenant toutes les distributions et les arborescences de fink. Disponible à partir de la version 0.25.2 de <code>fink</code>.</p>
 </li>
 </ul>
 
