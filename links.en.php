@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/05/09 00:12:44 $';
+$cvs_date = '$Date: 2006/12/22 10:10:17 $';
 
 include "header.inc";
 ?>
@@ -50,8 +50,7 @@ very nice X11 WindowManager which attempts to integrate X11 into Mac OS X.
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin
 Distribution</a></li>
-<li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin
-Ports</a> - porting the FreeBSD ports collection</li>
+<li><a href="http://www.macports.org/" target="_blank">MacPorts</a> - porting the FreeBSD ports collection</li>
 </ul>
 
 <p>Mixed collections of ported packages</p>

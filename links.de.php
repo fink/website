@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/05/09 00:12:44 $';
+$cvs_date = '$Date: 2006/12/22 10:10:17 $';
 
 include "header.inc";
 ?>
@@ -49,8 +49,7 @@ ein empfehlenswerte Fenster Manager für X11. Er biete eine Symbiose zwischen Ma
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin
 Distribution</a></li>
-<li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin
-Ports</a> - port der FreeBSD ports Kollektion</li>
+<li><a href="http://www.macports.org/" target="_blank">MacPorts</a> - port der FreeBSD ports Kollektion</li>
 </ul>
 
 <p>Buntes allerlei an portierten Paketen</p>

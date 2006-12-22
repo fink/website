@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/05/09 00:12:44 $';
+$cvs_date = '$Date: 2006/12/22 10:10:17 $';
 
 include "header.inc";
 ?>
@@ -51,8 +51,7 @@ Mac OS X.
 <p>Proyectos Similares</p>
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">La Distribución GNU de Darwin</a></li>
-<li><a href="http://darwinports.opendarwin.org/" target="_blank">Puertos de Darwin
-</a> - colección de puertos de FreeBSD</li>
+<li><a href="http://www.macports.org/" target="_blank">MacPorts</a> - colección de puertos de FreeBSD</li>
 </ul>
 
 <p>Colecciones variadas de paquetes "porteados"</p>

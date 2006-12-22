@@ -1,7 +1,7 @@
 ﻿<?
 $title = "リンク集";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/11/26 05:25:15 $';
+$cvs_date = '$Date: 2006/12/22 10:10:17 $';
 
 include "header.inc";
 ?>
@@ -52,10 +52,9 @@ X11 と Mac OS X を統合しようとしている X11 ウィンドウマネー�
 <p>似ているプロジェクト</p>
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin Distribution</a></li>
-<li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin Ports</a> - 
+<li><a href="http://www.macports.org/" target="_blank">MacPorts</a> - 
 FreeBSD の ports collection をポートしている。</li>
-
-<li><a href="http://www.ie.u-ryukyu.ac.jp/darwin2/" target="_blank">EasyPackage</a> - 
+<li><a href="http://www.ie.u-ryukyu.ac.jp/darwin2/" target="_blank">EasyPackages</a> - 
 日本語での利用を前提としたパッケージングをしている。（日本語ページのみ）</li>
 </ul>
 
@@ -79,10 +78,16 @@ XFree86 を Darwin や Mac OS X で使う。</li>
 ニュース、記事、ソフトウェアアーカイブ。</li>
 <li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
 Mac 用の GIMP、GTK、X のサイト。</li>
+</ul>
+
+<ul>
+<p>日本語情報</p>
 <li><a href="http://fink.sodan.ecc.u-tokyo.ac.jp/index.ja.html" target="_blank">東大 Fink チーム</a> -
 東大 Fink チームのサイト。</li>
-<li><a href="http://pc7.2ch.net/test/read.cgi/mac/1089767349/l50" target="_blank">ＦＩＮＫ使ってるの洩れだけなのかっ！？</a> -
+<li><a href="http://pc7.2ch.net/test/read.cgi/mac/1166780804/l50" target="_blank">Fink 使ってるの洩れだけなのかっ！？【rev.2】</a> -
 「2ちゃんねる」の Fink スレッド。（日本語ページのみ）</li>
+<li><a href="http://pc7.2ch.net/test/read.cgi/mac/1089767349/l50" target="_blank">ＦＩＮＫ使ってるの洩れだけなのかっ！？</a> -
+「2ちゃんねる」の Fink スレッド。（先代）</li>
 <li><a href="http://mixi.jp/view_community.pl?id=323942" target="_blank">mixi Fink Macで楽にUnixソフトを…</a> - mixi のユーザーアカウントが必要です。（日本語ページのみ）</li>
 </ul>
 

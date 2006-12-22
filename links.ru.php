@@ -1,7 +1,7 @@
 ﻿<?
 $title = "Links";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/05/09 00:12:44 $';
+$cvs_date = '$Date: 2006/12/22 10:10:17 $';
 
 include "header.inc";
 ?>
@@ -50,8 +50,7 @@ Initiative</a>-
 <ul>
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">Дистрибуция
  GNU-Darwin</a></li>
-<li><a href="http://darwinports.opendarwin.org/" target="_blank">Darwin
-Ports</a>-
+<li><a href="http://www.macports.org/" target="_blank">MacPorts</a>-
  перенос коллекции портов FreeBSD</li>
 </ul>
 
