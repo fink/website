@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.92 2006/12/09 06:13:54 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.93 2006/12/26 21:07:43 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -1832,6 +1832,11 @@ in the main <code>Package</code> field of the .info file and the
 ability to use the <code>%type_*</code> percent-expansions in
 the <code>Package</code> field of <code>SplitOff</code>
 (and <code>SplitOff<em>N</em></code>) packages.
+</li>
+<li>
+<code>Info3</code> (fink>=0.25.0): Can indent nicely in .info files,
+no more support for RFC-822 multi-lines, and can put comments in
+pkglist fields.
 </li>
 </ul>
 </itemd></item>

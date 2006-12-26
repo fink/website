@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/12/09 06:13:54';
+$cvs_date = 'Date: 2006/12/26 21:07:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -344,6 +344,11 @@ in the main <code>Package</code> field of the .info file and the
 ability to use the <code>%type_*</code> percent-expansions in
 the <code>Package</code> field of <code>SplitOff</code>
 (and <code>SplitOff<b>N</b></code>) packages.
+</li>
+<li>
+<code>Info3</code> (fink&gt;=0.25.0): Can indent nicely in .info files,
+no more support for RFC-822 multi-lines, and can put comments in
+pkglist fields.
 </li>
 </ul>
 </td></tr></table>
