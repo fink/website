@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/10 19:15:26';
+$cvs_date = 'Date: 2006/12/30 08:41:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -116,6 +116,9 @@ SplitOff: &lt;&lt;
 <ul>
 <li>
 <code>Info2</code> (fink &gt;= 0.20.0) : capacité à interpréter les raccourcis dans le champ <code>Package</code> principal du fichier .info et à utiliser les raccourci <code>%type_*</code> dans le champ <code>Package</code> des paquets <code>SplitOff</code> (et <code>SplitOff<b>N</b></code>).
+</li>
+<li>
+<code>Info3</code> (fink&gt;=0.25.0) : possibilité d'utiliser des retraits significatifs dans les fichiers .info, arrêt de la gestion des lignes multiples de la norme RFC-822, possibilité de mettre des commentaires dans les champs de listes de paquets.
 </li>
 </ul>
 </td></tr></table>

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.75 2006/12/14 07:47:10 michga Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.76 2006/12/30 08:42:55 michga Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -514,7 +514,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
 </faqentry>
 <faqentry name="perl-undefined-symbol">
 <question>
-<p>Pourquoi des erreurs du chargeur de lien dynamique signalant des symboles perl non définis apparaissent à l'utilisation de commandes de Fink (message en anglais  "dyld: perl undefined symbols") ?</p>
+<p>Pourquoi des erreurs du chargeur de liens dynamiques signalant des symboles perl non définis apparaissent à l'utilisation de commandes de Fink (message en anglais  "dyld: perl undefined symbols") ?</p>
 </question>
 <answer>
 <p>Obsolète</p>
@@ -1302,7 +1302,7 @@ export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
 export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <filename>.cshrc</filename> ou <filename>.profile</filename>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter aux lignes de compilation "-I/sw/include" pour les headers et "-L/sw/lib" pour les bibliothèques. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=toto. La commande "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p>
-<p>De plus, vous devrez peut-être installer les headers de développement des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés.Par exemple <em>toto-1.0-1-dev</em>), si vous utilisez la bibliothèque toto-1.0-1.</p>
+<p>De plus, vous devrez peut-être installer les headers de développement des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés : par exemple <em>toto-1.0-1-dev</em>), si vous utilisez la bibliothèque toto-1.0-1.</p>
 </answer>
 </faqentry>
 <faqentry name="apple-x11-applications-menu">
@@ -1329,7 +1329,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>Sous Panther, vous avez le choix entre :</p>
 <ul>
 <li><p>X11 d'Apple (que vous trouverez sur le disque numéro 3). N'oubliez pas d'installer le paquet  X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes  à partir des sources ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11.</p></li>
-<li><p>La version 4.4.x de XFree86 compilée via via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
+<li><p>La version 4.4.x de XFree86 compilée via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
 <li><p>X.org compilé via Fink : installez les paquets <code>xorg</code> et <code>xorg-shlibs</code></p></li>
 </ul>
 <p>Sous Jaguar, les choix les plus courants et les paquets Fink qui leur correspondent sont les suivants :</p>
@@ -1341,7 +1341,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>La version 4.3.x de XFree86 compilée via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p>
 </li>
 <li>
-<p>La version 4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK) : le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. (Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible).</p>
+<p>La version 4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK). Le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible.</p>
 </li>
 </ul>
 <p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <link url="http://fink.sourceforge.net/doc/x11/index.php">document Utilisation de X11</link>.</p>
@@ -1419,7 +1419,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>Si cela ne résout pas le problème ou si XMMS se plaint qu'il ne peut trouver votre carte son, essayez ceci :</p>
 <ul>
 <li>Vérifiez que la sortie son n'est pas réglée sur silence dans Mac OS X.</li>
-<li>Lancez la commande <code>esdcat /usr/libexec/config.guess</code> ou fournissez à la commande esdcat n'importe quel autre fichier de taille significative. Si vous entendez un petit bruit, cela signifie que eSound fonctionne et que XMMS devrait fonctionner, lui aussi, à condition d'être configuré correctement. Si vous n'entendez rien, cela signale que la commande esd ne fonctionne pas pour une raison indéterminée. Vous pouvez tenter de la lancer manuellement via la commande <code>esd &amp;</code>, puis analysez les messages.</li>
+<li>Lancez la commande <code>esdcat /usr/libexec/config.guess</code> ou fournissez à la commande esdcat n'importe quel autre fichier de taille significative. Si vous entendez un petit bruit, cela signifie que eSound fonctionne et que XMMS devrait fonctionner, lui aussi, à condition d'être configuré correctement. Si vous n'entendez rien, cela signifie que la commande esd ne fonctionne pas pour une raison indéterminée. Vous pouvez tenter de la lancer manuellement via la commande <code>esd &amp;</code>, puis analysez les messages.</li>
 <li>Si eSound ne fonctionne toujours pas, vérifiez les permissions des fichiers <code>/tmp/.esd</code> et <code>/tmp/.esd/socket</code>. Le propriétaire doit être votre compte utilisateur. Si ce n'est pas le cas, tuez le démon esd s'il est en cours de fonctionnement, supprimez le répertoire en tant que super-utilisateur via la commande <code>sudo rm -rf /tmp/.esd</code>, puis redémarrez esd (en tant qu'utilisateur lambda, pas en tant que super-utilisateur).</li>
 </ul>
 <p>Notez que esd est conçu pour être lancé par un utilisateur lambda, pas par le super-utilisateur. Il communique, en général, via la socket système <code>/tmp/.esd/socket</code>. Vous n'avez besoin des options <code>-tcp</code> et <code>-port</code> que si vous voulez lancer des clients esd sur une autre machine du réseau.</p>
@@ -1455,7 +1455,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 </faqentry>
 <faqentry name="xterm-error">
 <question>
-<p>Le lancement de xterm échoue avec un message signalant que l'éditeur de liens dynamique ne trouve pas le symbole _tgetent défini dans xterm et censé être dans la bibliothèque /usr/lib/libSystem.B.dylib (message en anglais : "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib"). Que se passe-t-il ?</p>
+<p>Le lancement de xterm échoue avec un message signalant que le chargeur de liens dynamiques ne trouve pas le symbole _tgetent défini dans xterm et censé être dans la bibliothèque /usr/lib/libSystem.B.dylib (message en anglais : "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib"). Que se passe-t-il ?</p>
 </question>
 <answer>
 <p>Cela se produit lorsque l'on utilise une version de XFree86 destinée à Mac OS X 10.1 sur une machine où est installée Mac OS X 10.2. Vous devez passer à une version destinée à Mac OS X 10.2.</p>
@@ -1465,7 +1465,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 </faqentry>
 <faqentry name="libXmuu">
 <question>
-<p>Au démarrage de XFree86, un message signale que l'éditeur de liens dynamique ne peut ouvrir la bibliothèque /usr/X11R6/lib/libXmuu.1.dylib ou la bibliothèque /usr/X11R6/lib/libXext.6.dylib appelées par xinit (message en anglais : "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" ou "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"). Que faire ?</p>
+<p>Au démarrage de XFree86, un message signale que le chargeur de liens dynamiques ne peut ouvrir la bibliothèque /usr/X11R6/lib/libXmuu.1.dylib ou la bibliothèque /usr/X11R6/lib/libXext.6.dylib appelées par xinit (message en anglais : "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" ou "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"). Que faire ?</p>
 </question>
 <answer>
 <p>Un fichier censé être installé par <code>xfree86-base-(threaded)-shlibs</code> manque. Vous devez l'installer via <code>fink reinstall xfree86-base-shlibs</code> (<code>fink reinstall xfree86-base-threaded-shlibs</code> si vous utilisez les paquets XFree86 avec gestion des processus légers) pour les utilisateurs des sources, ou <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> pour les utilisateurs de binaires.</p>
@@ -1477,7 +1477,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 </question>
 <answer>
 <p>Premièrement, si vous aviez installé précédemment les versions "avec processus légers" (threaded) des paquets Fink XFree86, vous devez recompiler l'application qui se plante. Certains programmes vérifie la disponibilité des processus légers lors de la compilation et à partir de là supputent que les processus légers sont toujours disponibles.</p>
-<p>Deuxièmement, il se peut que vous soyez tombé sur un bogue d'Apple X11. Au moment où cette page a été écrite, un certain nombre de bogues étaient connus d'Apple et en en cours de résolution.</p>
+<p>Deuxièmement, il se peut que vous soyez tombé sur un bogue d'Apple X11. Au moment où cette page a été écrite, un certain nombre de bogues étaient connus d'Apple et en cours de résolution.</p>
 <p>Si vous vous posez des questions sur X11 d'Apple qui ne sont pas liées à Fink, voyez la <link url="http://www.lists.apple.com/x11-users">liste de discussion officielle d'Apple sur X11</link>. Il est aussi conseillé de soumettre les bogues découverts dans X11 via le <link url="http://developer.apple.com/bugreporter">moteur de rapport de bogues</link> d'Apple.</p>
 </answer>
 </faqentry>
@@ -1489,11 +1489,11 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 <p>Certains utilisateurs ont signalé que la touche <code>suppr</code> se comporte différemment sous XDarwin et sous X11 d'Apple. On peut rectifier cela en ajoutant les lignes suivantes au fichier de démarrage approprié de X :</p>
 <p>Dans le fichier <em>.Xmodmap</em>, rajoutez la ligne :</p>
 <codeblock>keycode 59 = Delete</codeblock>
-<p>Dans le fichier <em>.Xresources</em>, rajoutez la ligne :</p>
+<p>Dans le fichier <em>.Xresources</em>, rajoutez les lignes :</p>
 <codeblock>xterm*.deleteIsDEL: true 
 xterm*.backarrowKey: false
 xterm*.ttyModes: erase ^?</codeblock>
-<p>Dans le fichier <em>.xinitrc</em>, rajoutez la ligne :</p>
+<p>Dans le fichier <em>.xinitrc</em>, rajoutez les lignes :</p>
 <codeblock>xrdb -load $HOME/.Xresources 
 xmodmap $HOME/.Xmodmap</codeblock>
 <p></p>
@@ -1531,7 +1531,7 @@ exec metacity &amp; exec gnome-session</codeblock>
 <codeblock>fink list -i system-xfree86</codeblock>
 <p>doit faire apparaître l'installation effective des paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>.</p>
 <p>Si la réinstallation du paquet X11User ne suffit pas à résoudre le problème, consultez les instructions <xref section="special-x11-debug">débogage spécial</xref> ci-dessous.</p>
-<p>Si vous utilisez une version antérieure du paquet <code>fink</code>, il suffit, en général, de mettre à jour <code>fink</code>, par exemple via la commande :</p>
+<p>Si vous utilisez une version antérieure du paquet <code>fink</code>, il suffit, en général, de mettre à jour <code>fink</code>, par exemple via les commandes :</p>
 <codeblock>sudo apt-get update
 sudo apt-get install fink</codeblock>
 </li>
@@ -1568,10 +1568,10 @@ sudo apt-get install fink</codeblock>
 </faqentry>
 <faqentry name="special-x11-debug">
 <question>
-<p>Problèmes persistents entre X11 et Fink. Que faire ?</p>
+<p>Des problèmes persistent entre X11 et Fink. Que faire ?</p>
 </question>
 <answer>   
-<p>Si les solutions données aux sections <xref section="apples-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</xref> ou <xref section="wants-xfree86-on-upgrade">Fink veut installer XFree86</xref> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non via les commandes:</p>
+<p>Si les solutions données aux sections <xref section="apple-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</xref> ou <xref section="wants-xfree86-on-upgrade">Fink veut installer XFree86</xref> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non via les commandes:</p>
 <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
 system-xfree86-43 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless \
@@ -1601,8 +1601,8 @@ fink selfupdate; fink index</codeblock>
 <p>Après passage à Tiger (Mac OS X 10.4), des erreurs à propos de <code>_EVP_idea_cbc</code> apparaissent chaque fois qu'on utilise une application Gtk. Que faire ?</p>
 </question>
 <answer>
-<p>Ceci était, apparemment, dû à un bogue dans l'éditeur de liens dynamique de Tiger (au moins jusque dans la version 10.4.1), mais il semble être corrigé dans la version 10.4.3. Fink proposait une solution dans le fichier <code>base-files-1.9.7-1</code> et les versions suivantes.</p>
-<p>Si vous n'êtes pas passé à Tiger et/ou n'avez pas mis à jour le paquet <code>base-files</code>, vous pouvez corriger ce problème en préfixant le nom du logiciel que vous souhaitez lancer avec le fragment de code suvant :</p>
+<p>Ceci était, apparemment, dû à un bogue dans le chargeur de liens dynamiques de Tiger (au moins jusqu'à la version 10.4.1), mais il semble être corrigé dans la version 10.4.3. Fink proposait une solution dans le fichier <code>base-files-1.9.7-1</code> et les versions suivantes.</p>
+<p>Si vous n'êtes pas passé à Tiger et/ou n'avez pas mis à jour le paquet <code>base-files</code>, vous pouvez corriger ce problème en préfixant le nom du logiciel que vous souhaitez lancer avec le fragment de code suivant :</p>
 <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
 <p>Par exemple si vous voulez lancer <code>gnucash</code>, utilisez la commande :</p>
 <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</codeblock>
