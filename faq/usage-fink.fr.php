@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/14 07:47:10';
+$cvs_date = 'Date: 2006/12/30 08:42:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -137,7 +137,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>dselect</code> et <code>Terminal.app</code> communiquent assez mal. Pour résoudre ce problème, vous pouvez lancer cette commande :</p><p>Utilisateurs de tcsh :</p><pre>setenv TERM xterm-color</pre><p>Utilisateurs de bash :</p><pre>export TERM=xterm-color</pre><p>avant de lancer <code>dselect</code>. Vous pouvez mettre ceci dans votre fichier de démarrage (par exemple <code>.cshrc</code> ou <code>.profile</code>) pour que cela se fasse automatiquement.</p></div>
 </a>
 <a name="perl-undefined-symbol">
-<div class="question"><p><b><? echo FINK_Q ; ?>5.21: Pourquoi des erreurs du chargeur de lien dynamique signalant des symboles perl non définis apparaissent à l'utilisation de commandes de Fink (message en anglais  "dyld: perl undefined symbols") ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>5.21: Pourquoi des erreurs du chargeur de liens dynamiques signalant des symboles perl non définis apparaissent à l'utilisation de commandes de Fink (message en anglais  "dyld: perl undefined symbols") ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Obsolète</p><p>Si vous voyez une erreur analogue à la suivante :</p><pre>dyld: perl Undefined symbols:
 _Perl_safefree
 _Perl_safemalloc

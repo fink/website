@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/14 07:47:10';
+$cvs_date = 'Date: 2006/12/30 08:42:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets">';
 
 
@@ -37,7 +37,7 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal" 
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter aux lignes de compilation "-I/sw/include" pour les headers et "-L/sw/lib" pour les bibliothèques. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=toto. La commande "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés.Par exemple <b>toto-1.0-1-dev</b>), si vous utilisez la bibliothèque toto-1.0-1.</p></div>
+export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter aux lignes de compilation "-I/sw/include" pour les headers et "-L/sw/lib" pour les bibliothèques. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=toto. La commande "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés : par exemple <b>toto-1.0-1-dev</b>), si vous utilisez la bibliothèque toto-1.0-1.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Il est impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple. Que faire ?</b></p></div>
@@ -47,7 +47,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajoute
 <div class="question"><p><b><? echo FINK_Q ; ?>8.5: Il y a de nombreuses options pour X11 : X11 d'Apple, XFree86, etc... Laquelle installer ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Toutes ces options sont des variantes de XFree86 - toutes basées sur le code de XFree86, mais il y a de légères différences entre elles. Les options proposées sont différentes sous Panther et sous Jaguar.</p><p>Sous Panther, vous avez le choix entre :</p><ul>
 <li><p>X11 d'Apple (que vous trouverez sur le disque numéro 3). N'oubliez pas d'installer le paquet  X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes  à partir des sources ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11.</p></li>
-<li><p>La version 4.4.x de XFree86 compilée via via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
+<li><p>La version 4.4.x de XFree86 compilée via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p></li>
 <li><p>X.org compilé via Fink : installez les paquets <code>xorg</code> et <code>xorg-shlibs</code></p></li>
 </ul><p>Sous Jaguar, les choix les plus courants et les paquets Fink qui leur correspondent sont les suivants :</p><ul>
 <li>
@@ -57,7 +57,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajoute
 <p>La version 4.3.x de XFree86 compilée via Fink : installez les paquets <code>xfree86</code> et <code>xfree86-shlibs</code></p>
 </li>
 <li>
-<p>La version 4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK) : le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. (Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible).</p>
+<p>La version 4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK). Le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible.</p>
 </li>
 </ul><p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <a href="http://fink.sourceforge.net/doc/x11/index.php">document Utilisation de X11</a>.</p></div>
 </a>
