@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
 $cvs_author = 'Author: chris01';
-$cvs_date = 'Date: 2007/01/07 00:36:23';
+$cvs_date = 'Date: 2007/01/07 01:12:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -84,7 +84,14 @@ Make sure you are running an up-to-date <code>fink</code> tool by running
 finkdev% fink selfupdate
 </pre>
 <p>
-Check if <code>fink</code> found your package by typing:
+Now run
+</p>
+<pre>
+finkdev% fink configure
+</pre>
+<p>
+and set the verbosity level to the highest value and enable the unstable tree. 
+After that you should check if <code>fink</code> found your package by typing:
 </p>
 <pre>
 finkdev% fink list packagename
@@ -193,7 +200,7 @@ add it to the Fink unstable tree if the package seems ready. If not you
 will be asked to bring the package into compliance with the policy.
 </p>
 <p>
-<b>Please note:</b>
+<b>Important:</b>
 </p>
 <ul>
 <li>
@@ -215,6 +222,9 @@ Set the <code>Group</code> field of the tracker item to
 <code>Undergoing Validation</code> when you create the new tracker. Also change it 
 back to <code>Undergoing Validation</code> whenever you fixed problems package 
 reviewers found in your submission.
+</li>
+<li>
+Set the <code>Category</code> field of the tracker item to the correct value.
 </li>
 </ul>
 
