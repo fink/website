@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Préliminaires";
-$cvs_author = 'Author: chris01';
-$cvs_date = 'Date: 2007/01/07 00:36:23';
+$cvs_author = 'Author: michga';
+$cvs_date = 'Date: 2007/01/07 08:00:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="next" href="example.php?phpLang=fr" title="Exemple - le paquet Maxwell"><link rel="prev" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents">';
 
 
@@ -17,7 +17,7 @@ include_once "header.fr.inc";
 finkdev% unecommandequelconque
 </pre>
 <p>vous devrez alors saisir <code>unecommandequelconque</code> dans Terminal.app ou dans tout autre terminal sur votre Mac.</p>
-<p>Vous devez d'abord assimiler quelques concepts de base sur la création de paquets pour Fink. Nous nous suggérons :</p>
+<p>Vous devez d'abord assimiler quelques concepts de base sur la création de paquets pour Fink. Nous vous suggérons :</p>
 <ul>
 <li>de lire <a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</a> (fichier pdf 2MB) - diapositives d'une présentation lors de la <a href="http://conferences.oreillynet.com/macosx2002/">Conférence O'Reilly Mac OS X</a>.
 </li>
@@ -38,7 +38,12 @@ de lire et de tenter de comprendre l'<a href="example.php?phpLang=fr#basics">exe
 <pre>
 finkdev% fink selfupdate
 </pre>
-<p>Vérifiez que <code>fink</code> trouve votre paquet en exécutant :</p>
+<p>Exécutez ensuite :</p>
+<pre>
+finkdev% fink configure
+</pre>
+<p>pour passer le niveau de verbosité à sa plus grande valeur et activer l'arborescence instable.</p>
+<p>Vérifiez alors que <code>fink</code> trouve votre paquet en exécutant :</p>
 <pre>
 finkdev% fink list nomdupaquet
 </pre>
@@ -81,13 +86,14 @@ finkdev% fink install nomdupaquet
 <h2><a name="Submit">1.4 Soumission de votre paquet</a></h2>
 <p>Si toutes les étapes de vérification de votre paquet énoncées ci-dessus ont été franchies avec succès, vous pouvez soumettre le fichier info (et le fichier patch s'il existe) au <a href="http://sourceforge.net/tracker/?func=add&amp;group_id=17203&amp;atid=414256">Traqueur de soumissions de paquets</a>.</p>
 <p>Une personne se chargera d'examiner votre soumission et d'ajouter le paquet à la branche instable de Fink, si le paquet semble correct. Sinon, on vous demandera de mettre le paquet en accord avec les règles de Fink.</p>
-<p><b>Note :</b></p>
+<p><b>Note très importante :</b></p>
 <ul>
 <li>Si possible, ajoutez plusieurs éléments à la fois à la même soumission (c'est-à-dire les fichiers info et patch).</li>
-<li>Ajoutez un commentaire mentionnant que votre paquet est prévu pour l'arborescence <code>10.3</code>, <code>10.4</code> ou pour les deux</li>
-<li>Indiquez dans quelle <code>section</code> (graphics, sci, etc...) vous pensez qu'il doit être mis</li>
+<li>Ajoutez un commentaire mentionnant que votre paquet est prévu soit pour l'arborescence <code>10.3</code>, soit pour l'arborescence <code>10.4</code>, ou bien encore pour les deux.</li>
+<li>Indiquez dans quelle <code>section</code> (graphics, sci, etc...) vous pensez qu'il doit être mis.</li>
 <li>Notez que vous avez exécuté <code>fink validate</code> sur les fichiers info et .deb.</li>
-<li>Positionnez le champ <code>Group</code> de l'élément sur <code>Undergoing Validation</code> à la création de l'élément. Repositionnez-le sur <code>Undergoing Validation</code> quand vous modifiez les fichiers après qu'un examinateur de soumissions de paquets vous ait demandé de corriger des problèmes dans votre paquet.</li>
+<li>Lors de la création de l'élément dans le traqueur, positionnez le menu déroulant <code>Group</code> sur <code>Undergoing Validation</code>. Repositionnez-le sur <code>Undergoing Validation</code> quand vous modifiez les fichiers après qu'un examinateur de soumissions de paquets vous ait demandé de corriger des problèmes dans votre paquet.</li>
+<li>Indiquez également à quelle catégorie appartient l'élément en choisissant une valeur dans le menu déroulant <code>Category</code>.</li>
 </ul>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
