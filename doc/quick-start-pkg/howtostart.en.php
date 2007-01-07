@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
 $cvs_author = 'Author: chris01';
-$cvs_date = 'Date: 2006/09/25 23:48:53';
+$cvs_date = 'Date: 2007/01/07 00:36:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -47,7 +47,7 @@ Read and try to understand the
 <li>
 Look at other, similar packages in your 
 <code>/sw/fink/dists/unstable/main/finkinfo/</code> directory or 
-<a href="http://fink.cvs.sourceforge.net/fink/dists/10.3/unstable/">
+<a href="http://fink.cvs.sourceforge.net/fink/dists/">
 in the online CVS repository</a> and take one (or several) info file(s) as 
 a starting point.
 </li>
@@ -123,7 +123,7 @@ about how to change the verbose level.
 Check if your package passes validation by running:
 </p>
 <pre>
-finkdev% fink validate packagename.info
+finkdev% fink validate /sw/fink/dists/local/main/finkinfo/packagename.info
 </pre>
 <p>
 If the validation passes try to build your package with:
@@ -201,8 +201,8 @@ If feasible add multiple items one at a time to the same tracker item
 (e.g. info and patch files).
 </li>
 <li>
-Add a note whether your package is intended for the <code>10.2-gcc3.3</code> tree, 
-<code>10.3</code> tree, or both,
+Add a note whether your package is intended for the <code>10.3</code> tree, 
+<code>10.4</code> tree, or both,
 </li>
 <li>
 which <code>section</code> (graphics, sci, etc.) you feel it belongs in, and

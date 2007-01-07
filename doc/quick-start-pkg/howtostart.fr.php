@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Préliminaires";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/10/02 17:04:37';
+$cvs_author = 'Author: chris01';
+$cvs_date = 'Date: 2007/01/07 00:36:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="next" href="example.php?phpLang=fr" title="Exemple - le paquet Maxwell"><link rel="prev" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents">';
 
 
@@ -27,7 +27,7 @@ finkdev% unecommandequelconque
 
 
 de lire et de tenter de comprendre l'<a href="example.php?phpLang=fr#basics">exemple donné ici</a>.</li>
-<li>d'étudier d'autres paquets situés dans le répertoire <code>/sw/fink/dists/unstable/main/finkinfo/</code> ou dans le <a href="http://fink.cvs.sourceforge.net/fink/dists/10.3/unstable/">répertoire central CVS en ligne</a> et de prendre un (ou plusieurs) fichier(s) info comme point de départ.</li>
+<li>d'étudier d'autres paquets situés dans le répertoire <code>/sw/fink/dists/unstable/main/finkinfo/</code> ou dans le <a href="http://fink.cvs.sourceforge.net/fink/dists/">répertoire central CVS en ligne</a> et de prendre un (ou plusieurs) fichier(s) info comme point de départ.</li>
 <li>de rechercher dans le <a href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Traqueur de soumissions de paquets</a> si quelqu'un a déjà essayé de construire le même paquet ou dans le <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Traqueur de demandes de paquets</a> s'il existe déjà une requête pour ce paquet. Vous y trouverez une mine de renseignements.</li>
 <li>de feuilleter le <a href="http://fink.sourceforge.net/doc/packaging/index.php">Guide de création de paquets</a> si vous souhaitez de plus amples informations sur un sujet particulier.</li>
 </ul>
@@ -53,7 +53,7 @@ finkdev% fink index
 <p>Pendant le processus de validation de votre paquet, vous devez régler le niveau de verbosité de <code>fink</code> à la plus haute valeur possible. Voir la section <a href="http://fink.sourceforge.net/doc/users-guide/conf.php#optional">fichier de configuration de fink</a> pour savoir comment le changer.</p>
 <p>Vérifiez que votre paquet est valide en exécutant :</p>
 <pre>
-finkdev% fink validate nomdupaquet.info
+finkdev% fink validate /sw/fink/dists/local/main/finkinfo/nomdupaquet.info
 </pre>
 <p>Si c'est le cas, essayez de construire le paquet en exécutant :</p>
 <pre>
@@ -84,7 +84,7 @@ finkdev% fink install nomdupaquet
 <p><b>Note :</b></p>
 <ul>
 <li>Si possible, ajoutez plusieurs éléments à la fois à la même soumission (c'est-à-dire les fichiers info et patch).</li>
-<li>Ajoutez un commentaire mentionnant que votre paquet est prévu pour l'arborescence <code>10.2-gcc3.3</code>, <code>10.3</code>  ou pour les deux</li>
+<li>Ajoutez un commentaire mentionnant que votre paquet est prévu pour l'arborescence <code>10.3</code>, <code>10.4</code> ou pour les deux</li>
 <li>Indiquez dans quelle <code>section</code> (graphics, sci, etc...) vous pensez qu'il doit être mis</li>
 <li>Notez que vous avez exécuté <code>fink validate</code> sur les fichiers info et .deb.</li>
 <li>Positionnez le champ <code>Group</code> de l'élément sur <code>Undergoing Validation</code> à la création de l'élément. Repositionnez-le sur <code>Undergoing Validation</code> quand vous modifiez les fichiers après qu'un examinateur de soumissions de paquets vous ait demandé de corriger des problèmes dans votre paquet.</li>

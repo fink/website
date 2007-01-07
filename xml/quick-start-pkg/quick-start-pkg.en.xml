@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Create a Fink Package - Tutorial</title>
 <shorttitle>Packaging Tutorial</shorttitle>
-<cvsid>$Id: quick-start-pkg.en.xml,v 1.8 2006/09/25 23:48:53 chris01 Exp $</cvsid>
+<cvsid>$Id: quick-start-pkg.en.xml,v 1.9 2007/01/07 00:36:23 chris01 Exp $</cvsid>
 
 <preface>
 <p>
@@ -68,7 +68,7 @@ Read and try to understand the
 <li>
 Look at other, similar packages in your 
 <filename>/sw/fink/dists/unstable/main/finkinfo/</filename> directory or 
-<link url="http://fink.cvs.sourceforge.net/fink/dists/10.3/unstable/">
+<link url="http://fink.cvs.sourceforge.net/fink/dists/">
 in the online CVS repository</link> and take one (or several) info file(s) as 
 a starting point.
 </li>
@@ -144,7 +144,7 @@ about how to change the verbose level.
 Check if your package passes validation by running:
 </p>
 <codeblock>
-finkdev% fink validate packagename.info
+finkdev% fink validate /sw/fink/dists/local/main/finkinfo/packagename.info
 </codeblock>
 <p>
 If the validation passes try to build your package with:
@@ -222,8 +222,8 @@ If feasible add multiple items one at a time to the same tracker item
 (e.g. info and patch files).
 </li>
 <li>
-Add a note whether your package is intended for the <filename>10.2-gcc3.3</filename> tree, 
-<filename>10.3</filename> tree, or both,
+Add a note whether your package is intended for the <filename>10.3</filename> tree, 
+<filename>10.4</filename> tree, or both,
 </li>
 <li>
 which <code>section</code> (graphics, sci, etc.) you feel it belongs in, and
