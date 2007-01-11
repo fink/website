@@ -3,8 +3,8 @@
 
 <?
 $title = "Legal Stuff";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2006/07/18 13:45:33 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2007/01/11 05:17:25 $';
 
 include "header.inc";
 ?>
@@ -14,7 +14,7 @@ include "header.inc";
 
 <p class="legal">
 The material on this website is Copyright &copy; 2001 Christoph Pfisterer,
-Copyright &copy; 2001-2006 The Fink Project, unless noted otherwise.
+Copyright &copy; 2001-2007 The Fink Project, unless noted otherwise.
 If you want to reuse material from this website,
 <a href="mailto:fink-core@lists.sourceforge.net">talk to us</a> first.
 </p>
