@@ -14,7 +14,7 @@ include_once "header.inc";
 
 <p>
 If you already have Fink 0.3.x installed, you can update your
-installation to 0.8.0 with the built-in 'selfupdate' command.
+installation to 0.8.1 with the built-in 'selfupdate' command.
 </p>
 
 
