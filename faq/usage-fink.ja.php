@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/11/25 05:41:37';
+$cvs_date = 'Date: 2007/01/18 02:16:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -96,9 +96,8 @@ dselect からパッケージを選択してインストールする場合、 ro
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
           まず、 'unstable' の意味を確認してください。
           unstable ツリーにあるパッケージは、いくつかの理由により stable にはありません。
-          理ユニは、既知の課題がある、妥当性にエラーがある、動作したというフィードバックが十分ないなどがあります。
-          このため、Fink はデフォルトでは unstable ツリーを検索しません。
-        </p><p>
+          理由としては、既知の課題がある、妥当性にエラーがある、動作したというフィードバックが十分ないなどがあります。
+          このため、Fink はデフォルトでは unstable ツリーを検索しません。</p><p>
           もし unstable を使用するのであれば、動作する（あるいはしない）ことをメンテナにメールするようにしてください。
           あなたのようなユーザーからのフィードバックこそが、stable へ移行させる決定要因なのです!
           パッケージのメンテナを知るには、<code>fink info <b>packagename</b></code> としてください。
@@ -107,8 +106,18 @@ dselect からパッケージを選択してインストールする場合、 ro
           <code>Trees:</code> 行に <code>unstable/main</code> と <code>unstable/crypto</code> を追加し、
           <code>fink selfupdate; fink index; fink scanpackages</code> を実行します。
         </p><p>
-          また、特定のパッケージとその依存パッケージ以外に unstable からインストールしたくない場合、 
-          unstable ツリーをオフにする前に <code>update-all</code> コマンドを実行しないでください。
+          <code>fink-0.26</code><b> から:</b>
+	      <code>fink configure</code> を実行する際、unstable を on にするか聞いてくる場合があります。
+	      この後、<code>fink selfupdate; fink index; fink scanpackages</code> を実行する必要があります。
+	      <b>注記: </b>新しいパッケージ記述を取得するには、rsync か cvs が on になっている必要があります。
+	    </p><p>
+          <code>fink</code> が <b>0.26</b> 以前で unstable を使うように Fink を設定するには、
+          <code>/sw/etc/fink.conf</code> を編集し、 <code>unstable/main</code> と  <code>unstable/crypto</code> を、
+          <code>Trees:</code> と書かれている行に追加し、<code>fink selfupdate; fink index; fink scanpackages</code> を実行します。
+          上と同様、 rsync か cvs が使われている必要があります。
+        </p><p>
+          もう一つ注記、特定のパッケージとのそ依存パッケージ以外に unstable をインストールしたくないのであれば、
+          unstable ツリーを off にしない限り <code>update-all</code> を実行しないでください。
         </p></div>
 </a>
     <a name="unstable-onepackage">

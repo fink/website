@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.8 2006/11/25 05:41:37 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.9 2007/01/18 02:16:18 babayoshihiko Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -338,39 +338,25 @@ plataformas.
       </question>
       <answer>
         <p>First make sure you understand what 'unstable' means. Packages in
-        the unstable tree usually have not been tested by more than a few
-        people. For that reason, Fink doesn't search the unstable tree by
-        default. If you do enable unstable, please remember to e-mail the
+        the unstable tree are not in stable for any number of reasons.  It
+        could be because there are known issues, validation errors, or just
+        not enough people giving feedback that the package works for them.
+        For that reason, Fink doesn't search the unstable tree by
+        default.</p>
+        <p>If you do enable unstable, please remember to e-mail the
         maintainer if something works (or even if it doesn't). Feedback from
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
-        &lt;packagename&gt;</code>.</p>
-        <p>Packages often have dependencies, and packages in unstable often
-        depend on other packages in unstable. For that reason, it is best to
-        activate all of unstable.</p>
-        <p>If you want Fink to use all of unstable, edit
+        <em>packagename</em></code>.</p>
+	<p><em>New in </em><code>fink-0.26</code><em>:</em> If you run <code>fink configure</code> one of the questions will ask whether you want to turn the unstable trees on.  You will need to run <code>fink selfupdate; fink index; fink scanpackages</code> afterward.  <em>Note: </em>you must have either rsync or cvs updating turned on to get new package descriptions.</p>
+        <p>To configure Fink to use unstable when you have an earlier version of the <code>fink</code> tool than <em>0.26</em>, edit
         <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code>
         and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index</code>.</p>
-        <p>If you only want one or two specific packages, and nothing else
-        from unstable, then you need to switch over to CVS updating (i.e. use
-        <code>fink selfupdate-cvs</code>), because rsync only updates the
-        trees that are active in your <filename>fink.conf</filename>. Edit
-        <filename>/sw/etc/fink.conf</filename> and add <code>local/main</code>
-        to the <code>Trees:</code> line, if not present. Then you'll need to
-        run <code>fink selfupdate</code> to download the package description
-        files. Now copy the relevant <code>.info</code> files (and their
-        associated <code>.patch</code> files, if there are any) from
-        <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (or
-        <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) to
-        <filename>/sw/fink/dists/local/main/finkinfo</filename>. However, note
-        that your package may depend on other packages (or particular
-        versions) which are also only in unstable. You will have to move their
-        <code>.info</code> and <code>.patch</code> files as well. After you
-        move all of the files, make sure to run <code>fink index</code>, so
-        that Fink's record of available packages is updated. Once you're done
-        you can switch back to rsync (<code>fink selfupdate-rsync</code>) if
-        you want.</p>
+        then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p>
+        <p>Also note, if you don't want to install any more from unstable than
+        your specific package(s) and its (their) dependencies, don't use the
+        <code>update-all</code> command until you turn the unstable tree
+        back off.</p>
       </answer>
     </faqentry>
     <faqentry name="unstable-onepackage">
@@ -2162,7 +2148,7 @@ You can check your installation by running</p>
         <p>I'm still having problems with X11 and Fink.</p>
       </question>
       <answer>
-        <p>If the hints in the  <xref section="apples-x11-wants-xfree86">Fink tries to install XFree86 or X.org</xref> or <xref section="wants-xfree86-on-upgrade">X11 and upgrade from 10.2</xref> entries don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p>
+        <p>If the hints in the  <xref section="apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</xref> or <xref section="wants-xfree86-on-upgrade">X11 and upgrade from 10.2</xref> entries don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p>
         <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \

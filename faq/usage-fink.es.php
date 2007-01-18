@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Fink Usage";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/11/25 05:41:37';
+$cvs_date = 'Date: 2007/01/18 02:16:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="comp-general.php?phpLang=es" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=es" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -98,36 +98,21 @@ include_once "header.es.inc";
     <a name="unstable">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.8: Existe este paquete en unstable que quiero instalar, pero el comando fink dice "no encuentro el paquete" ('no package found'). ¿Cómo lo puedo instalar?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> First make sure you understand what 'unstable' means. Packages in
-        the unstable tree usually have not been tested by more than a few
-        people. For that reason, Fink doesn't search the unstable tree by
-        default. If you do enable unstable, please remember to e-mail the
+        the unstable tree are not in stable for any number of reasons.  It
+        could be because there are known issues, validation errors, or just
+        not enough people giving feedback that the package works for them.
+        For that reason, Fink doesn't search the unstable tree by
+        default.</p><p>If you do enable unstable, please remember to e-mail the
         maintainer if something works (or even if it doesn't). Feedback from
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
-        &lt;packagename&gt;</code>.</p><p>Packages often have dependencies, and packages in unstable often
-        depend on other packages in unstable. For that reason, it is best to
-        activate all of unstable.</p><p>If you want Fink to use all of unstable, edit
+        <b>packagename</b></code>.</p><p><b>New in </b><code>fink-0.26</code><b>:</b> If you run <code>fink configure</code> one of the questions will ask whether you want to turn the unstable trees on.  You will need to run <code>fink selfupdate; fink index; fink scanpackages</code> afterward.  <b>Note: </b>you must have either rsync or cvs updating turned on to get new package descriptions.</p><p>To configure Fink to use unstable when you have an earlier version of the <code>fink</code> tool than <b>0.26</b>, edit
         <code>/sw/etc/fink.conf</code>, add <code>unstable/main</code>
         and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index</code>.</p><p>If you only want one or two specific packages, and nothing else
-        from unstable, then you need to switch over to CVS updating (i.e. use
-        <code>fink selfupdate-cvs</code>), because rsync only updates the
-        trees that are active in your <code>fink.conf</code>. Edit
-        <code>/sw/etc/fink.conf</code> and add <code>local/main</code>
-        to the <code>Trees:</code> line, if not present. Then you'll need to
-        run <code>fink selfupdate</code> to download the package description
-        files. Now copy the relevant <code>.info</code> files (and their
-        associated <code>.patch</code> files, if there are any) from
-        <code>/sw/fink/dists/unstable/main/finkinfo</code> (or
-        <code>/sw/fink/dists/unstable/crypto/finkinfo</code>) to
-        <code>/sw/fink/dists/local/main/finkinfo</code>. However, note
-        that your package may depend on other packages (or particular
-        versions) which are also only in unstable. You will have to move their
-        <code>.info</code> and <code>.patch</code> files as well. After you
-        move all of the files, make sure to run <code>fink index</code>, so
-        that Fink's record of available packages is updated. Once you're done
-        you can switch back to rsync (<code>fink selfupdate-rsync</code>) if
-        you want.</p></div>
+        then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p><p>Also note, if you don't want to install any more from unstable than
+        your specific package(s) and its (their) dependencies, don't use the
+        <code>update-all</code> command until you turn the unstable tree
+        back off.</p></div>
     </a>
     <a name="unstable-onepackage">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.9: Do I <b>really</b> need to enable all of unstable just to install

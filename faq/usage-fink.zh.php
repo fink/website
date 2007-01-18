@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/11/25 05:41:37';
+$cvs_date = 'Date: 2007/01/18 02:16:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -108,12 +108,11 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
         maintainer if something works (or even if it doesn't). Feedback from
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
-        <b>packagename</b></code>.</p><p>To configure Fink to use unstable, edit
+        <b>packagename</b></code>.</p><p><b>New in </b><code>fink-0.26</code><b>:</b> If you run <code>fink configure</code> one of the questions will ask whether you want to turn the unstable trees on.  You will need to run <code>fink selfupdate; fink index; fink scanpackages</code> afterward.  <b>Note: </b>you must have either rsync or cvs updating turned on to get new package descriptions.</p><p>To configure Fink to use unstable when you have an earlier version of the <code>fink</code> tool than <b>0.26</b>, edit
         <code>/sw/etc/fink.conf</code>, add <code>unstable/main</code>
         and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index; fink scanpackages</code>.
-        </p><p>Also note, if you don't want to install any more from unstable than
-        your specific packages and its dependencies, don't use the
+        then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p><p>Also note, if you don't want to install any more from unstable than
+        your specific package(s) and its (their) dependencies, don't use the
         <code>update-all</code> command until you turn the unstable tree
         back off.</p></div>
     </a>

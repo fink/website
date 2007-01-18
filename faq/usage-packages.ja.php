@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/11/25 05:41:37';
+$cvs_date = 'Date: 2007/01/18 02:16:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
@@ -203,18 +203,17 @@ sudo apt-get install fink</pre>
 X11SDK もインストールされている場合、 <code>system-xfree86-dev</code> も確認します。
 </p><p>
 これでも問題が解決されない場合、上の
-<a href="#apple-x11-wants-xfree86">Fink wants XFree86 or X.org</a>
+<a href="#apple-x11-wants-xfree86">Fink が XFree86 または X.org を要求する</a>
 を参照してください。
 </p></div>
 </a>
 <a name="special-x11-debug">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.13: まだ X11 と Fink の問題が解決されません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-		<a href="#apples-x11-wants-xfree86">Fink tries to install XFree86 or X.org</a> や
-		<a href="#wants-xfree86-on-upgrade">X11 and upgrade from 10.2</a> 
+		<a href="#apple-x11-wants-xfree86">Fink が XFree86 または X.org を要求する</a> や
+		<a href="#wants-xfree86-on-upgrade">10.2 からの X11 とアップグレード</a> 
 		のヒントで問題が解決されないか、自分の問題と異なる場合、
 		X11 をきれいに削除し、代替パッケージと X11 関連パッケージを削除します:
-		<a href="#apples-x11-wants-xfree86">Fink tries to install XFree86</a>
 		</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shilbs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \

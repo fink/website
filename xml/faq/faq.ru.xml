@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Часто задаваемые вопросы Fink </title>
     <shorttitle>Ч.З.В.</shorttitle>
-    <cvsid>$Id: faq.ru.xml,v 1.8 2006/11/25 05:41:37 babayoshihiko Exp $</cvsid>
+    <cvsid>$Id: faq.ru.xml,v 1.9 2007/01/18 02:16:18 babayoshihiko Exp $</cvsid>
     <preface>
         <p>Ниже вы найдете список Ч.З.В. о Fink. Как и большинство
             Ч.З.В., некоторые из них реальные, а некоторые
@@ -500,47 +500,28 @@
                     инсталлировать?</p>
             </question>
             <answer>
-                <p>Во-первых, надо убедиться, что вы правильно понимаете термин 'нестабильный'.
-                    Пакеты на неустойчивом дереве обычно протестированы всего
-                    несколькими людьми. По этой причине Fink не
-                    находит нестабильное дерево по умолчанию. Если вы активируете
-                    нестабильное дерево, не забудьте сообщить по электронной почте координатору о том,
-                    что именно в пакете работает (или не работает). Обратная связь со стороны пользователей
-                    позволяет нам определить готовность пакета к стабильной работе.
-                    Для нахождения координатора пакета используйте
-                        <code>fink info <em>packagename</em>
-                    </code>.</p>
-                <p>Пакеты зачастую взаимозависимы; пакеты в нестабильном разделе
-                    часто зависят от других нестабильных пакетов. По данной причине
-                    лучше активировать все нестабильные пакеты.</p>
-                <p>Если вы хотите, чтобы Fink использовал все нестабильные пакеты, примените команду редактирования
-                    <filename>/sw/etc/fink.conf</filename>, добавьте
-                    <code>unstable/main</code> и <code>unstable/crypto</code>
-                    к строке <code>Trees:</code> и затем запустите <code>fink
-                        selfupdate; fink index</code>.</p>
-                <p>Если вам нужны только 1-2 особых пакета и больше ничего из
-                    нестабильного раздела, надо переключиться на обновление CVS
-                    (т.е. использовать <code>fink selfupdate-cvs</code>),
-                    потому что rsync обновляет только деревья, активные в вашем
-                    <filename>fink.conf</filename>. Примените
-                    <filename>/sw/etc/fink.conf</filename> и добавьте
-                    <code>local/main</code> к строке <code>Trees:</code>, если
-                    этого не хватает. Затем надо будет запустить  <code>fink
-                    selfupdate</code> для скачивания файлов описания пакетов.
-                    Теперь скопируйте соответствующие файлы  <code>.info</code> (и связанные с ними
-                    файлы <code>.patch</code>, если таковые существуют) из
-                    <filename>/sw/fink/dists/unstable/main/finkinfo</filename>
-                    (или
-                    <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>)
-                    в <filename>/sw/fink/dists/local/main/finkinfo</filename>.
-                    При этом надо иметь в виду, что ваш пакет может зависеть от других пакетов
-                    (или отдельных версий), которые также нестабильны.
-                    Надо будет также переместить их файлы <code>.info</code> и
-                    <code>.patch</code>. После перемещения всех файлов
-                    надо запустить <code>fink index</code> для обновления данных
-                    Fink об имеющихся пакетах. После этого
-                    можно переключиться обратно на rsync (<code>fink
-                    selfupdate-rsync</code>), если хотите.</p>
+        <!-- start translation -->
+        <p>First make sure you understand what 'unstable' means. Packages in
+        the unstable tree are not in stable for any number of reasons.  It
+        could be because there are known issues, validation errors, or just
+        not enough people giving feedback that the package works for them.
+        For that reason, Fink doesn't search the unstable tree by
+        default.</p>
+        <p>If you do enable unstable, please remember to e-mail the
+        maintainer if something works (or even if it doesn't). Feedback from
+        users like you is what we use to determine if something is ready for
+        stable! To find out the maintainer of a package, run <code>fink info
+        <em>packagename</em></code>.</p>
+	<p><em>New in </em><code>fink-0.26</code><em>:</em> If you run <code>fink configure</code> one of the questions will ask whether you want to turn the unstable trees on.  You will need to run <code>fink selfupdate; fink index; fink scanpackages</code> afterward.  <em>Note: </em>you must have either rsync or cvs updating turned on to get new package descriptions.</p>
+        <p>To configure Fink to use unstable when you have an earlier version of the <code>fink</code> tool than <em>0.26</em>, edit
+        <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code>
+        and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
+        then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p>
+        <p>Also note, if you don't want to install any more from unstable than
+        your specific package(s) and its (their) dependencies, don't use the
+        <code>update-all</code> command until you turn the unstable tree
+        back off.</p>
+        <!-- end translation -->
             </answer>
         </faqentry>
     <!-- start translation -->
@@ -2543,7 +2524,7 @@ sudo apt-get install fink</codeblock>
             </question>
             <answer>
                 <p>Если подсказки в ответах по поводу проблем: <xref
-                        section="apples-x11-wants-xfree86">Fink просит инсталлировать
+                        section="apple-x11-wants-xfree86">Fink просит инсталлировать
                         XFree86 или X.org</xref> и <xref
                         section="wants-xfree86-on-upgrade">X11 и обновление от
                     10.2</xref> не помогают или неприменимы к вашей ситуации,

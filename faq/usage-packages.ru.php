@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/11/25 05:41:37';
+$cvs_date = 'Date: 2007/01/18 02:16:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="prev" href="usage-general.php?phpLang=ru" title="Проблемы использования пакетов - Общие вопросы">';
 
 
@@ -229,7 +229,7 @@ sudo apt-get install fink</pre>
         </a>
         <a name="special-x11-debug">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.13: Я меня остались проблемы с X11и Fink.</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если подсказки в ответах по поводу проблем: <a href="#apples-x11-wants-xfree86">Fink просит инсталлировать
+            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если подсказки в ответах по поводу проблем: <a href="#apple-x11-wants-xfree86">Fink просит инсталлировать
                         XFree86 или X.org</a> и <a href="#wants-xfree86-on-upgrade">X11 и обновление от
                     10.2</a> не помогают или неприменимы к вашей ситуации,
                     возможно, вам надо убрать свою инсталляцию X11,

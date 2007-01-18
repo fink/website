@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование Fink";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/11/25 05:41:37';
+$cvs_date = 'Date: 2007/01/18 02:16:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы"><link rel="prev" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)">';
 
 
@@ -122,44 +122,22 @@ include_once "header.ru.inc";
             <div class="question"><p><b><? echo FINK_Q ; ?>5.8: Я хочу инсталлировать пакет из категории нестабильных, но
                     fink сообщает, что 'пакет на найден' ('no package found') . Как его можно
                     инсталлировать?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Во-первых, надо убедиться, что вы правильно понимаете термин 'нестабильный'.
-                    Пакеты на неустойчивом дереве обычно протестированы всего
-                    несколькими людьми. По этой причине Fink не
-                    находит нестабильное дерево по умолчанию. Если вы активируете
-                    нестабильное дерево, не забудьте сообщить по электронной почте координатору о том,
-                    что именно в пакете работает (или не работает). Обратная связь со стороны пользователей
-                    позволяет нам определить готовность пакета к стабильной работе.
-                    Для нахождения координатора пакета используйте
-                        <code>fink info <b>packagename</b>
-                    </code>.</p><p>Пакеты зачастую взаимозависимы; пакеты в нестабильном разделе
-                    часто зависят от других нестабильных пакетов. По данной причине
-                    лучше активировать все нестабильные пакеты.</p><p>Если вы хотите, чтобы Fink использовал все нестабильные пакеты, примените команду редактирования
-                    <code>/sw/etc/fink.conf</code>, добавьте
-                    <code>unstable/main</code> и <code>unstable/crypto</code>
-                    к строке <code>Trees:</code> и затем запустите <code>fink
-                        selfupdate; fink index</code>.</p><p>Если вам нужны только 1-2 особых пакета и больше ничего из
-                    нестабильного раздела, надо переключиться на обновление CVS
-                    (т.е. использовать <code>fink selfupdate-cvs</code>),
-                    потому что rsync обновляет только деревья, активные в вашем
-                    <code>fink.conf</code>. Примените
-                    <code>/sw/etc/fink.conf</code> и добавьте
-                    <code>local/main</code> к строке <code>Trees:</code>, если
-                    этого не хватает. Затем надо будет запустить  <code>fink
-                    selfupdate</code> для скачивания файлов описания пакетов.
-                    Теперь скопируйте соответствующие файлы  <code>.info</code> (и связанные с ними
-                    файлы <code>.patch</code>, если таковые существуют) из
-                    <code>/sw/fink/dists/unstable/main/finkinfo</code>
-                    (или
-                    <code>/sw/fink/dists/unstable/crypto/finkinfo</code>)
-                    в <code>/sw/fink/dists/local/main/finkinfo</code>.
-                    При этом надо иметь в виду, что ваш пакет может зависеть от других пакетов
-                    (или отдельных версий), которые также нестабильны.
-                    Надо будет также переместить их файлы <code>.info</code> и
-                    <code>.patch</code>. После перемещения всех файлов
-                    надо запустить <code>fink index</code> для обновления данных
-                    Fink об имеющихся пакетах. После этого
-                    можно переключиться обратно на rsync (<code>fink
-                    selfupdate-rsync</code>), если хотите.</p></div>
+            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> First make sure you understand what 'unstable' means. Packages in
+        the unstable tree are not in stable for any number of reasons.  It
+        could be because there are known issues, validation errors, or just
+        not enough people giving feedback that the package works for them.
+        For that reason, Fink doesn't search the unstable tree by
+        default.</p><p>If you do enable unstable, please remember to e-mail the
+        maintainer if something works (or even if it doesn't). Feedback from
+        users like you is what we use to determine if something is ready for
+        stable! To find out the maintainer of a package, run <code>fink info
+        <b>packagename</b></code>.</p><p><b>New in </b><code>fink-0.26</code><b>:</b> If you run <code>fink configure</code> one of the questions will ask whether you want to turn the unstable trees on.  You will need to run <code>fink selfupdate; fink index; fink scanpackages</code> afterward.  <b>Note: </b>you must have either rsync or cvs updating turned on to get new package descriptions.</p><p>To configure Fink to use unstable when you have an earlier version of the <code>fink</code> tool than <b>0.26</b>, edit
+        <code>/sw/etc/fink.conf</code>, add <code>unstable/main</code>
+        and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
+        then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p><p>Also note, if you don't want to install any more from unstable than
+        your specific package(s) and its (their) dependencies, don't use the
+        <code>update-all</code> command until you turn the unstable tree
+        back off.</p></div>
         </a>
     
     <a name="unstable-onepackage">

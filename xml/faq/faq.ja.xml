@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.39 2006/11/25 05:41:37 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.40 2007/01/18 02:16:18 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -415,9 +415,8 @@ dselect からパッケージを選択してインストールする場合、 ro
         <p>
           まず、 'unstable' の意味を確認してください。
           unstable ツリーにあるパッケージは、いくつかの理由により stable にはありません。
-          理ユニは、既知の課題がある、妥当性にエラーがある、動作したというフィードバックが十分ないなどがあります。
-          このため、Fink はデフォルトでは unstable ツリーを検索しません。
-        </p>
+          理由としては、既知の課題がある、妥当性にエラーがある、動作したというフィードバックが十分ないなどがあります。
+          このため、Fink はデフォルトでは unstable ツリーを検索しません。</p>
         <p>
           もし unstable を使用するのであれば、動作する（あるいはしない）ことをメンテナにメールするようにしてください。
           あなたのようなユーザーからのフィードバックこそが、stable へ移行させる決定要因なのです!
@@ -429,8 +428,20 @@ dselect からパッケージを選択してインストールする場合、 ro
           <code>fink selfupdate; fink index; fink scanpackages</code> を実行します。
         </p>
         <p>
-          また、特定のパッケージとその依存パッケージ以外に unstable からインストールしたくない場合、 
-          unstable ツリーをオフにする前に <code>update-all</code> コマンドを実行しないでください。
+          <code>fink-0.26</code><em> から:</em>
+	      <code>fink configure</code> を実行する際、unstable を on にするか聞いてくる場合があります。
+	      この後、<code>fink selfupdate; fink index; fink scanpackages</code> を実行する必要があります。
+	      <em>注記: </em>新しいパッケージ記述を取得するには、rsync か cvs が on になっている必要があります。
+	    </p>  
+        <p>
+          <code>fink</code> が <em>0.26</em> 以前で unstable を使うように Fink を設定するには、
+          <filename>/sw/etc/fink.conf</filename> を編集し、 <code>unstable/main</code> と  <code>unstable/crypto</code> を、
+          <code>Trees:</code> と書かれている行に追加し、<code>fink selfupdate; fink index; fink scanpackages</code> を実行します。
+          上と同様、 rsync か cvs が使われている必要があります。
+        </p>
+        <p>
+          もう一つ注記、特定のパッケージとのそ依存パッケージ以外に unstable をインストールしたくないのであれば、
+          unstable ツリーを off にしない限り <code>update-all</code> を実行しないでください。
         </p>
       </answer>
 </faqentry>
@@ -1659,7 +1670,8 @@ fink install libiconv</codeblock>
       </question>
       <answer>
         <p>パッケージの問題は変わりやすいので、Fink wiki に情報を載せることにいたしました。
-        <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</link> をご確認ください。</p>
+        <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</link> をご確認ください。
+        (訳注: wiki の性質上、wiki は英語版のみであり、翻訳の予定はありません。)</p>
       </answer>
     </faqentry>
 </chapter>
@@ -2220,7 +2232,7 @@ X11SDK もインストールされている場合、 <code>system-xfree86-dev</c
 </p>
 <p>
 これでも問題が解決されない場合、上の
-<xref section="apple-x11-wants-xfree86">Fink wants XFree86 or X.org</xref>
+<xref section="apple-x11-wants-xfree86">Fink が XFree86 または X.org を要求する</xref>
 を参照してください。
 </p>
 </answer>
@@ -2231,11 +2243,10 @@ X11SDK もインストールされている場合、 <code>system-xfree86-dev</c
 </question>
 <answer>
 <p>
-		<xref section="apples-x11-wants-xfree86">Fink tries to install XFree86 or X.org</xref> や
-		<xref section="wants-xfree86-on-upgrade">X11 and upgrade from 10.2</xref> 
+		<xref section="apple-x11-wants-xfree86">Fink が XFree86 または X.org を要求する</xref> や
+		<xref section="wants-xfree86-on-upgrade">10.2 からの X11 とアップグレード</xref> 
 		のヒントで問題が解決されないか、自分の問題と異なる場合、
 		X11 をきれいに削除し、代替パッケージと X11 関連パッケージを削除します:
-		<xref section="apples-x11-wants-xfree86">Fink tries to install XFree86</xref>
 		</p>
 <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shilbs \
