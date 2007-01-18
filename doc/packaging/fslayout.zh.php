@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 文件系统布局";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/09/19 05:54:30';
+$cvs_date = 'Date: 2007/01/18 02:16:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="compilers.php?phpLang=zh" title="Compilers"><link rel="prev" href="policy.php?phpLang=zh" title="打包相关规则">';
 
 
@@ -66,6 +66,17 @@ directories.
 <code>powerpc-apple-darwin1.3.3</code> 这样的目录对兼容性是不利的，<code>powerpc-apple-darwin1.3</code> 或仅仅是
 <code>powerpc-apple-darwin</code> 是个好些的选择。
 </p>
+</td></tr><tr valign="top"><td><code>/sw/lib/ppc64</code>
+<code>/sw/lib/x86_64</code></td><td>
+
+<p>
+This directory is for 64-bit libraries, with <code>/sw/lib/ppc64</code>
+being used under powerpc architecture, and
+<code>/sw/lib/x86_64</code> being used under i386 architecture.
+Libraries which have been built 'fat' should be stored in
+<code>/sw/lib</code> instead.
+</p>
+
 </td></tr><tr valign="top"><td><code>/sw/share</code></td><td>
 <p>
 这个目录是存放那些系统体系架构无关的数据文件。

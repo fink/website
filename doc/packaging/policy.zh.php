@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 规则";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/09/19 05:54:30';
+$cvs_date = 'Date: 2007/01/18 02:16:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="fslayout.php?phpLang=zh" title="文件系统布局"><link rel="prev" href="format.php?phpLang=zh" title="软件包描述文件">';
 
 
@@ -110,12 +110,13 @@ Fink 是一个安装在基本系统之外的独立目录里面的外加的软件
 <h2><a name="sharedlibs">3.4 共享函数库</a></h2>
 <p>
 Fink 对于共享库有了新的规则，它从 2002 年 2 月开始生效。
-本段内容讨论的是规则的第四版，它是与 Fink's 0.5.0 一同发布的。
+本段内容讨论的是规则的第四版，它是与 Fink's 0.5.0 一同发布的
+(as well as some updates from December, 2006 to handle 64bit libraries)。
 我们首先以一个简要的概括开始，然后讨论更多的细节问题。
 </p><p>
 任何会产生共享库的软件包，无论它是⑴被放在稳定树中，或是⑵一个新的软件包，都应该使得他们的库满足 Fink 的规则。即：</p>
 <ul>
-<li>   使用 <code>otool -L</code> 验证每个库的安装名（install_name），兼容性和当前版本号是正确的。</li>
+<li>   使用 <code>otool -L</code> (或 otool64 -L for 64bit libraries) 验证每个库的安装名（install_name），兼容性和当前版本号是正确的。</li>
 <li>   把共享库放到一个单独的软件包（除了从 libfoo.dylib 连接 install_name 的以外），并在软件包中包括 <code>Shlibs</code> 字段</li>
 <li>   把头文件以最终从 libfoo.dylib 的连接放到一个软件包中，并分类为： <code>BuildDependsOnly: True</code>，应该不会有其他软件包会依赖它。</li>
 </ul>
@@ -171,7 +172,7 @@ barN-shlibs（只有在新软件包或主版本号发生改变的软件包上，
 </p><p>
 如果你的软件包包括共享库和二进制文件，而且二进制文件需要在运行时使用（而不仅仅时编译时），那么这些二进制文件应该被分离到第三个软件包中，这个软件包命名为 barN-bin。其它软件包可以依赖于 barN-shlibs 及 barN-bin。
 </p><p>
-当编译主版本号为 N 的共享库时，很重要的是要使 <code>%p/lib/bar.N.dylib</code> 来作为 "install_name"。（你可以用 <code>otool -L</code> 来查看你的库的 install_name）。实际的库文件应该被安装在
+当编译主版本号为 N 的共享库时，很重要的是要使 <code>%p/lib/bar.N.dylib</code> 来作为 "install_name"。（你可以用 <code>otool -L</code> 或 otool64 -L for 64bit libraries 来查看你的库的 install_name）。实际的库文件应该被安装在
 </p>
 <pre>
   %i/lib/bar.N.x.y.dylib
@@ -192,7 +193,7 @@ barN-shlibs（只有在新软件包或主版本号发生改变的软件包上，
 <p>
 如果软件包使用 libtool，这些事情通常会被自动处理，
 但无论任何情况下，你都应该检查结果时候正确。你还应该检查你的共享库是否已经定义了正确的 current_version 和 compatibility_version 值（
-<code>otool -L</code> 应该也可以查询得到这些设置值）。
+<code>otool -L</code> 或 <code>otool64 -L</code> for 64bit libraries 应该也可以查询得到这些设置值）。
 </p><p>
 文件应该象下面一样分到两个文件包中
 </p>
@@ -289,14 +290,21 @@ a .deb with header files and a static library as well.)
 
 <p><b>Shlibs 字段：</b>
 </p><p>
-除了把共享库放到合适的软件包中外，作为规则版本 4，你还需要用 <code>Shlibs</code> 字段声明全部共享库。这个字段每个共享库占一行，这行中包含库的 <code>-install_name</code>，<code>-compatibility_version</code>，以及版本依赖信息，这个信息指明在本兼容版本中提供库的 Fink 软件包。依赖关系应该用 <code>foo (&gt;= version-revision)</code> 的形式指明。其中
+除了把共享库放到合适的软件包中外，作为规则版本 4，你还需要用 <code>Shlibs</code> 字段声明全部共享库。
+这个字段每个共享库占一行，这行中包含库的 <code>-install_name</code>，<code>-compatibility_version</code>
+
+，and the library architecture.  (The library architecture may either be "32", "64", or
+"32-64", and may be absent; the value defaults to "32" if it is absent.) 
+
+以及版本依赖信息，这个信息指明在本兼容版本中提供库的 Fink 软件包。
+依赖关系应该用 <code>foo (&gt;= version-revision)</code> 的形式指明。其中
 <code>version-revision</code> 指提供这个与（本版本兼容）的共享库的 Fink 软件包的<b>第一个</b>版本。例如，这样</p>
 <pre>
   Shlibs: &lt;&lt;
-    %p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2)
+    %p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
   &lt;&lt;
 </pre>
-<p>一个声明表示从 <b>bar1</b> 软件包的版本 1.1-2 开始，已经开始安装一个 <code>-install_name</code> 为 %p/lib/bar.1.dylib，<code>-compatibiliary_version</code> 为 2.1.0 的函数库。另外，这个声明还表示维护者承诺这个名字及 compatibility-version 至少为 2.1.0 以上的函数库可以在 <b>bar1</b> 软件包的以后版本中找到。
+<p>一个声明表示从 <b>bar1</b> 软件包的版本 1.1-2 开始，已经开始安装一个 <code>-install_name</code> 为 %p/lib/bar.1.dylib，<code>-compatibiliary_version</code> 为 2.1.0 的函数库。另外，这个声明还表示维护者承诺这个名字及 compatibility-version 至少为 2.1.0 以上的 (32bit) 函数库可以在 <b>bar1</b> 软件包的以后版本中找到。
 </p><p>
 注意在库的名字中使用 %p，这使得无论他们选择什么安装路径前缀，Fink 的所有用户都可以找到正确的 <code>-install_name</code> 代表的函数库。
 </p><p>

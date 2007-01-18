@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/09/19 05:54:30';
+$cvs_date = 'Date: 2007/01/18 02:16:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -254,6 +254,27 @@ CompileScript:  &lt;&lt;
 &lt;&lt;
 &lt;&lt;
 </pre>
+<p>
+fink 0.26.0 より， <code>Type: -64bit</code> によって新しいパーセント展開 <code>%lib</code> を制御することができます．
+また，<code>LDFLAGS</code> の既定値も変更になりました．
+こちらも新しい式 %type_num[] と用いることで，ライブラリの 32-bit バージョンと 64-bit バージョンを一つの .info ファイルから作ることが可能になりました．
+以下はサンプルコードです:
+</p>
+<pre>
+Info2: &lt;&lt;
+Package: foo%type_pkg[-64bit]
+Type: -64bit (boolean)
+Depends: (%type_raw[-64bit] = -64bit) 64bit-cpu
+ConfigureParams: --libdir='${prefix}/%lib'
+SplitOff: &lt;&lt;
+ Package: %N-shlibs
+ Files: %lib/libfoo.*.dylib
+ Shlibs: &lt;&lt;
+    %p/%lib/libfoo.1.dylib 1.0.0 %n (&gt;= 1.0-1) %type_num[-64bit]
+  &lt;&lt;
+&lt;&lt;
+&lt;&lt;
+</pre>
 					</td></tr><tr valign="top"><td>License</td><td>
 						<p>
 							パッケージ配布の際にパッケージの従うライセンスの性質を表す．
@@ -289,6 +310,12 @@ CompileScript:  &lt;&lt;
 <code>Info2</code> (fink&gt;=0.20.0): 
 .info ファイル中のメインの <code>Package</code> フィールドでのパーセント展開の使用．
 <code>SplitOff</code> (および <code>SplitOff<b>N</b></code>) での <code>%type_*</code> パーセント展開の使用．
+</li>
+<li>
+<code>Info3</code> (fink&gt;=0.25.0): 
+.info ファイル中でインデントを正しく扱うことができる．
+RFC-822 複数業のサポートは終了．
+pkglist フィールドにコメントが可能．
 </li>
 </ul>
 					</td></tr></table>
@@ -760,10 +787,12 @@ patch -p1 &lt; %{PatchFile}
 CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </pre>
-						<p>
-fink-0.17.0 より，10.4-transitional ディストリビューションまで，以下の値が設定されます
-(が，10.4 以降では設定されません)．
-						</p>
+<p>fink 0.26.0 より，これらの既定値に例外が一つあります．
+<code>Type: -64bit</code> が <code>-64bit</code> と定義されている場合，
+<code>LDFLAGS</code> は <code>-L%p/%lib -L%p/lib</code> となります．
+</p>
+<p>fink-0.17.0 より，10.4-transitional ディストリビューションまで，以下の値が設定されます
+(が，10.4 以降では設定されません)．</p>
 <pre>
 LD_PREBIND: 1
 LD_PREBIND_ALLOW_OVERLAP: 1
@@ -781,16 +810,18 @@ LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
 							例えば，LDFLAGS を unset のままにしたい場合， <code>NoSetLDFLAGS: true</code> とします．
 						</p>
 					</td></tr><tr valign="top"><td>ConfigureParams</td><td>
-						<p>
-							configure スクリプトに渡す付加的なパラメータ．
-							(詳細は CompileScript を参照)
-							ビルド時にテストスイートが有効な場合，<code>TestConfigureParams</code>
-							の値がここに追加されます．
-
-							バージョン 0.13.7 以降の Fink では，
-							このパラメータは <code>Type: Perl</code> となっている perl モジュールにも使えます．
-							その場合，指定した値はデフォルトの文字列 perl Makefile.PL の後ろに追加されます．
-						</p>
+<p>
+configure スクリプトに渡す付加的なパラメータ．
+(詳細は CompileScript を参照)
+<code>Type: Perl</code> となっていないパッケージに関しては，
+パラメータ <code>--prefix=%p</code> が，この値の前に追加されます．
+fink &gt; 0.13.7　からは，このフィールドは perl モジュール <code>Type: Perl</code> にも適用されます;
+既定の perl Makefile.PL 文字列が， <code>ConfigureParams</code> に与えられる値の前に追加されます．
+</p>
+<p>
+テストスイートが有効でビルドする場合，<code>TestConfigureParams</code>
+の値が 通常の <code>ConfigureParams</code> の後に追加されます．
+</p>
 						<p>
 							fink-0.22.0 より，このフィールドは条件をサポートする．
 							文法は <code>Depends</code> や他のパッケージ一覧フィールドと同様です．
@@ -1048,10 +1079,14 @@ INSTALLSCRIPT=%i/bin
 						<p>
 							<b>Fink 0.11.0 で導入:</b>
 							このフィールドでは，そのパッケージでインストールされる共有ライブラリを指定します．
-							各共有ライブラリ毎に1行ずつ，空白文字で区切った以下の3項目を記述します．
-							1) ライブラリの <code>-install_name</code> 2) ライブラリの <code>-compatibility_version</code>
+							各共有ライブラリ毎に1行ずつ，空白文字で区切った以下の 3 あるいは 4 項目を記述します．
+							1) ライブラリの <code>-install_name</code>
+							2) ライブラリの <code>-compatibility_version</code>
 							3) そのライブラリを提供する Fink パッケージを指定するバージョン付き依存性情報
 							(ただし -compatibility_version が同じでなければならない)．
+							4) ライブラリのアーキテクチャ
+							(値は "32", "64", または
+                             "32-64", あるいは空欄; 空欄時の既定値は "32" ．) 
 							依存情報は <code>foo (&gt;= バージョン-版)</code> という型式で指定しなければいけません．
 							ここで <code>バージョン-版</code> は， (互換性バージョンの同じ) そのライブラリを利用可能にしてくれる Fink パッケージの
 							<b>一番古い</b>バージョンを指します．
@@ -1136,7 +1171,7 @@ AnotherVar: foo bar
 						</ul>
 						<p>
 							補足説明: アップグレードは新バージョンの ...InstScript と，旧バージョンの ...RmScript を実行します．
-							詳細については the Debian Policy Manual,
+							詳細については Debian Policy Manual,
 							<a href="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">第6章</a> を参照．
 						</p>
 						<p>
@@ -1263,9 +1298,9 @@ AnotherVar: foo bar
 <pre>
 Package: mime-base64-pm%type_pkg[perl]
 Type: perl (5.8.1 5.8.6)
-SplitOff: %lt;%lt;
+SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
-%lt;%lt;
+&lt;&lt;
 </pre>
 			<p>
 				インストール段階では，まず親パッケージの <code>InstallScript</code> と <code>DocFiles</code> が実行されます．

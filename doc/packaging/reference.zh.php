@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/09/19 05:54:30';
+$cvs_date = 'Date: 2007/01/18 02:16:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -226,6 +226,31 @@ CompileScript:  &lt;&lt;
 &lt;&lt;
 &lt;&lt;
 </pre>
+
+<p>
+Starting in fink 0.26.0, there is a special <code>Type: -64bit</code>
+which controls a new percent expansion <code>%lib</code> and also
+changes the default value of <code>LDFLAGS</code>.  When combined
+with the new construction %type_num[], this allows a single .info file
+to build both a 32-bit version of a library and a 64-bit version.
+Here's some sample code:
+</p>
+<pre>
+Info2: &lt;&lt;
+Package: foo%type_pkg[-64bit]
+Type: -64bit (boolean)
+Depends: (%type_raw[-64bit] = -64bit) 64bit-cpu
+ConfigureParams: --libdir='${prefix}/%lib'
+SplitOff: &lt;&lt;
+ Package: %N-shlibs
+ Files: %lib/libfoo.*.dylib
+ Shlibs: &lt;&lt;
+    %p/%lib/libfoo.1.dylib 1.0.0 %n (&gt;= 1.0-1) %type_num[-64bit]
+  &lt;&lt;
+&lt;&lt;
+&lt;&lt;
+</pre>
+
 </td></tr><tr valign="top"><td>License</td><td>
 <p>
 本字段给出软件包发布所依据的授权协议的性质。它必须是本文档前面<a href="policy.php?phpLang=zh#licenses">软件包授权协议</a>中所描述的值之一。 另外，只有软件包确实满足打包规则在这方面的要求时，比如已经在软件包的 doc 目录安装了一份授权协议，才能够设置这个字段。
@@ -253,6 +278,11 @@ in the main <code>Package</code> field of the .info file and the
 ability to use the <code>%type_*</code> percent-expansions in
 the <code>Package</code> field of <code>SplitOff</code>
 (and <code>SplitOff<b>N</b></code>) packages.
+</li>
+<li>
+<code>Info3</code> (fink&gt;=0.25.0): Can indent nicely in .info files,
+no more support for RFC-822 multi-lines, and can put comments in
+pkglist fields.
 </li>
 </ul>
 
@@ -667,6 +697,10 @@ The preset variables (and their default values) are:
 CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </pre>
+<p> Starting in fink 0.26.0, there is one exception to these defaults:
+if <code>Type: -64bit</code> is set to <code>-64bit</code>, then the
+default value of <code>LDFLAGS</code> is <code>-L%p/%lib -L%p/lib</code> 
+instead.</p>
 <p>
 In addition, starting in fink 0.17.0, the following values are set for
 the 10.4-transitional distribution and earlier (but are not set for
@@ -694,14 +728,18 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 <p>
 传递给 configure 脚本的额外参数(查阅
 CompileScript 字段的说明获取详细信息)。
+
+For packages not of <code>Type: Perl</code>, the parameter
+<code>--prefix=%p</code> is prepended to this value.
+As of fink &gt; 0.13.7, this field will also work with perl modules
+<code>Type: Perl</code>; the default perl Makefile.PL
+string is prepended to the value supplied for <code>ConfigureParams</code>.
+</p>
+<p>
 If a build is being done
 with test suites enabled, the value of the <code>TestConfigureParams</code>
-field will be appended to this.
-
-对于 &lt; 0.13.7 的 fink 版本，这个参数也对 perl 模块<code>Type: Perl</code>有效，并会添加到默认的 perl Makefile.PL
-字符串中。
+field will be appended to the normal <code>ConfigureParams</code> value.
 </p>
-
 <p>
   Starting in fink-0.22.0, this field supports conditionals. The
   syntax is the same as that used in the <code>Depends</code> and
@@ -938,8 +976,14 @@ configure 或 ant 之类的工具能够正确地检测到已安装的 jar 文件
 <p>
 <b>从 fink 0.11.0 开始。</b>
 这个字段声明软件包中要安装的共享库。
-每个共享库占一行，每行包括以空格分开的三项：
-共享库的 <code>-install_name</code>(安装名)，<code>-compatibility_version</code>(兼容版本号)，和版本相关的指明提供这个兼容版本的 Fink 软件包的依赖信息
+每个共享库占一行，每行包括以空格分开的三或四项：
+共享库的 <code>-install_name</code>(安装名)，
+<code>-compatibility_version</code>(兼容版本号)，
+和版本相关的指明提供这个兼容版本的 Fink 软件包的依赖信息，
+
+the library architecture.  (The library architecture may either be "32", "64", or
+"32-64", and may be absent; the value defaults to "32" if it is absent.)  
+
 依赖信息应该以下面的形式描述：<code> foo (&gt;= version-revision)</code> 其中 
 <code>version-revision</code> 指提供(这个兼容版本)函数库的 Fink 软件包的 <b>第一个</b>版本。
 Shlibs 声明表明维护者承诺这个名字和至少

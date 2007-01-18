@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 软件包描述文件";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/09/19 05:54:30';
+$cvs_date = 'Date: 2007/01/18 02:16:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 
@@ -17,6 +17,19 @@ include_once "header.zh.inc";
 <code>/sw/etc/fink.conf</code> 中的 "Trees" 设置控制会控制应该读取那个目录。
 软件包描述文件的名字必须要软件包全名加上 ".info" 扩展名组成。
 从 fink 0.13.0 开始，为了简化软件包的升级，也可以允许简单地使用软件包加 ".info" 来组成。
+
+As of fink 0.26.0, there are several different ways to specify the
+filename: it is recommended to use the shortest version which is
+consistent with other needed package files.  The filename takes
+the form: the invariant packagename, optionally 
+followed by the architecture, optionally followed by the
+distribution, 
+optionally followed by either version or version-revision, each delimited by 
+hyphens, concluding with ".info".  
+The "architecture" and "distribution" components are only allowed
+if the corresponding field is present in the package, and if it specifies
+exactly one value.
+
 </p>
 <p>
 到软件包描述文件的目录树由几层目录组成。
@@ -170,6 +183,12 @@ the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not a
 </td></tr><tr valign="top"><td>%c</td><td>
 <p>
 <b>c</b>onfigure 命令将使用的参数：<code>--prefix=%p</code> 加上 ConfigureParams 指定的其它参数。
+
+(The behavior is different when the package
+has <code>Type: perl</code>; in that case, the default flags for
+building a perl package are used instead of <code>--prefix=%p</code>
+in the definition of <code>%c</code>.)
+
 </p>
 </td></tr><tr valign="top"><td>%m</td><td>
 <p>
@@ -180,12 +199,17 @@ the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not a
 <p>
 百分号字符（它部分展开后面跟着它的东西）。展开严格按照从左到右的顺序进行，所以 %%n 和软件包名没有关系，而只是字符串 %n。（从 fink-0.18.0 开始引入）
 </p>
-</td></tr><tr valign="top"><td>%type_raw[<b>类型</b>], %type_pkg[<b>类型</b>]</td><td>
+</td></tr><tr valign="top"><td>%type_raw[<b>类型</b>], %type_pkg[<b>类型</b>],
+%type_num[<b>类型</b>]</td><td>
 <p>
 对给定<b>类型</b>返回的代表子类型的伪哈希值。
 查阅本文档后面关于 <code>Type</code> 字段的内容。
 _raw 形式表明使用子类型字符串的精确形式，
 _pkg 形式表明使用去除句点之后的形式(就好象 Fink 的语言版本软件包的命名约定一样)。(在 fink 的 CVS 0.19.2 后版本中引入)。
+
+The _num form was introduced in fink-0.26.0
+and removes all non-digits from the <code>Type</code> field.
+
 </p>
 </td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 <p>
@@ -208,6 +232,14 @@ package is blank. (Introduced in fink-0.20.6)
 <p>
 The full path to the file given in the <code>PatchFile</code> field.
 (Introduced in fink-0.24.12)
+</p>
+</td></tr><tr valign="top"><td>%lib</td><td>
+<p>
+If <code>Type: -64bit</code> is defined to be <code>-64bit</code>,
+this expands to <b>lib/ppc64</b> on powerpc machines, and to
+<b>lib/x86_64</b> on intel machines (the proper storage locations
+for 64-bit libraries); otherwise, this expands to <b>lib</b>.
+(Introduced in fink-0.26.0)
 </p>
 </td></tr></table>
 

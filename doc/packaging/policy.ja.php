@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ポリシー";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/09/19 05:54:30';
+$cvs_date = 'Date: 2007/01/18 02:16:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト"><link rel="prev" href="format.php?phpLang=ja" title="パッケージ記述">';
 
 
@@ -139,7 +139,9 @@ include_once "header.ja.inc";
 			
 			<p>
 				Fink は共有ライブラリに関して新しいポリシーを定め， 2002 年 2 月から施行しています．
-				以下では Fink 0.5.0 と共に公布された，共有ライブラリについてのポリシー第 4 版について説明します．
+				以下では Fink 0.5.0 と共に公布された，共有ライブラリについてのポリシー第 4 版
+				(及び 64bit ライブラリを扱うために2006年12月の変更)
+				について説明します．
 				最初に要点をかいつまんで述べ，後から詳細に移ります．
 			</p>
 			<p>
@@ -150,7 +152,7 @@ include_once "header.ja.inc";
 			</p>
 			<ul>
 				<li>
-					コマンド <code>otool -L</code> を使い，各ライブラリの install_name ，互換性，バージョンが適切か確認する．
+					コマンド <code>otool -L</code> (64bit ライブラリの場合は otool64 -L) を使い，各ライブラリの install_name ，互換性，バージョンが適切か確認する．
 				</li>
 				<li>
 					共有ライブラリを別パッケージとし (例外は libfoo.dylib から install_name へのリンク) ，
@@ -279,7 +281,7 @@ BuildDependsOnly: True
 			<p>
 				「メジャーバージョン」が N の共有ライブラリをビルドするとき，その共有ライブラリの "install_name" が
 				<code>%p/lib/bar.N.dylib</code> になることが重要です．
-				(install_name は，ライブラリに対し <code>otool -L</code> を実行すれば分かります．)
+				(install_name は，ライブラリに対し <code>otool -L</code>，64bit ライブラリの場合は <code>otool64 -L</code> を実行すれば分かります．)
 				実際のライブラリファイルのインストール先は，
 			</p>
 <pre>
@@ -302,7 +304,7 @@ BuildDependsOnly: True
 				パッケージが libtool を利用する場合，上記のことはほぼ自動的に処理されますが，
 				どの段階でも処理が適切に行われたか確認する必要があります．
 				また，共有ライブラリの current_version と compatibility_version が適切に定義されているかどうかも確認して下さい．
-				(これらも <code>otool -L</code> で表示されます．)
+				(これらも <code>otool -L</code> または 64bit ライブラリの場合 <code>otool64 -L</code> で表示されます．)
 			</p>
 			<p>
 				次に，ファイルを以下のように 2 つのパッケージに分類します．
@@ -405,23 +407,30 @@ SplitOff: &lt;&lt;
 			</p>
 			<p><b>フィールド Shlibs:</b></p>
 			<p>
-				共有ライブラリを適切なパッケージに分類する他に， Fink ポリシー第 4版では，
-				共有ライブラリ全てをフィールド <code>Shlibs</code> を使って宣言しなければいけません．
-				このフィールドでは，各共有ライブラリに対して 1 行ずつ 1) ライブラリの -install_name， 2) ライブラリの -compatibility_version，
-				3) そのライブラリを提供する Fink パッケージを指定するバージョン付き依存性情報
-				(ただし -compatibility_version が同じでなければならない) を記します．
-				依存性情報は <code>foo (&gt;= バージョン-版)</code> という形式で示します．
-				ここで <code>バージョン-版</code> にはこの (-compatibility_version が同じ) ライブラリを利用可能にしてくれる
-				Fink パッケージの<b>最初</b>の「バージョン」を使います．
-				例えば次の宣言は，
+共有ライブラリを適切なパッケージに分類する他にも， Fink ポリシー第 4版では，
+共有ライブラリ全てをフィールド <code>Shlibs</code> を使って宣言することが求められています．
+
+このフィールドでは，各共有ライブラリに対して 1 行ずつ，
+1) ライブラリの <code>-install_name</code>， 
+2) ライブラリの <code>-compatibility_version</code>，
+3) そのライブラリを提供する Fink パッケージを指定するバージョン付き依存性情報
+(ただし -compatibility_version が同じでなければならない)，
+そしてライブラリのアーキテクチャ (値は "32", "64", または
+"32-64", あるいは空欄; 空欄時の既定値は "32" ．) 
+
+を記します．
+依存性情報は <code>foo (&gt;= バージョン-版)</code> という形式で示します．
+ここで <code>バージョン-版</code> にはこの (-compatibility_version が同じ) ライブラリを利用可能にしてくれる
+Fink パッケージの<b>最初</b>の「バージョン」を使います．
+例えば次の宣言は，
 			</p>
 <pre>
 Shlibs: &lt;&lt;
-%p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2)
+%p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
 &lt;&lt;
 </pre>
 			<p>
-				<code>-install_name</code> が %p/lib/bar.1.dylib で <code>-compatibility_version</code> が 2.1.0 のライブラリが，
+				<code>-install_name</code> が %p/lib/bar.1.dylib で <code>-compatibility_version</code> が 2.1.0 の (32bit) ライブラリが，
 				Fink パッケージ <b>bar1</b> の「バージョン」1.1-2 以降でインストールされることを示します．
 				それに加え，この宣言は「この名前がついていて compatibility_version が少なくとも 2.1.0 のライブラリは，
 				Fink パッケージ bar1 の今後のバージョンには必ず含まれている」というメンテナからの保証にも相当します．

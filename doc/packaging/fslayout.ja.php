@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ファイルシステム";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/09/19 05:54:30';
+$cvs_date = 'Date: 2007/01/18 02:16:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="compilers.php?phpLang=ja" title="コンパイラ"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
 
 
@@ -76,7 +76,15 @@ include_once "header.ja.inc";
 							<code>powerpc-apple-darwin1.3.3</code> は，互換性の観点から問題があります．
 							<code>powerpc-apple-darwin1.3</code> または単に <code>powerpc-apple-darwin</code> とします．
 						</p>
-					</td></tr><tr valign="top"><td>
+					</td></tr><tr valign="top"><td><code>/sw/lib/ppc64</code>
+<code>/sw/lib/x86_64</code></td><td>
+<p>
+このディレクトリは 64-bit ライブラリ用で，
+powerpc アーチテクチャーでは <code>/sw/lib/ppc64</code> が，
+i386 アーチテクチャーでは <code>/sw/lib/x86_64</code> が用いられます．
+'fat' としてビルドされたライブラリは， <code>/sw/lib</code> に保存されます．
+</p>
+</td></tr><tr valign="top"><td>
 						<code>/sw/share</code>
 					</td><td>
 						<p>
