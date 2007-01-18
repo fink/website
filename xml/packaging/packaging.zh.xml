@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.28 2006/09/19 05:54:30 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.29 2007/01/18 02:16:52 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -79,6 +79,19 @@ fink 和 dpkg 都知道如何正确地给它们排序。
 <filename>/sw/etc/fink.conf</filename> 中的 &quot;Trees&quot; 设置控制会控制应该读取那个目录。
 软件包描述文件的名字必须要软件包全名加上 &quot;.info&quot; 扩展名组成。
 从 fink 0.13.0 开始，为了简化软件包的升级，也可以允许简单地使用软件包加 &quot;.info&quot; 来组成。
+<!-- start translation -->
+As of fink 0.26.0, there are several different ways to specify the
+filename: it is recommended to use the shortest version which is
+consistent with other needed package files.  The filename takes
+the form: the invariant packagename, optionally 
+followed by the architecture, optionally followed by the
+distribution, 
+optionally followed by either version or version-revision, each delimited by 
+hyphens, concluding with ".info".  
+The "architecture" and "distribution" components are only allowed
+if the corresponding field is present in the package, and if it specifies
+exactly one value.
+<!-- end translation -->
 </p>
 <p>
 到软件包描述文件的目录树由几层目录组成。
@@ -273,6 +286,12 @@ the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You 
 <itemd>
 <p>
 <em>c</em>onfigure 命令将使用的参数：<code>--prefix=%p</code> 加上 ConfigureParams 指定的其它参数。
+<!-- start translation -->
+(The behavior is different when the package
+has <code>Type: perl</code>; in that case, the default flags for
+building a perl package are used instead of <code>--prefix=%p</code>
+in the definition of <code>%c</code>.)
+<!-- end translation -->
 </p>
 </itemd></item>
 
@@ -291,13 +310,18 @@ the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You 
 </p>
 </itemd></item>
 
-<item><itemt>%type_raw[<em>类型</em>], %type_pkg[<em>类型</em>]</itemt>
+<item><itemt>%type_raw[<em>类型</em>], %type_pkg[<em>类型</em>],
+%type_num[<em>类型</em>]</itemt>
 <itemd>
 <p>
 对给定<em>类型</em>返回的代表子类型的伪哈希值。
 查阅本文档后面关于 <code>Type</code> 字段的内容。
 _raw 形式表明使用子类型字符串的精确形式，
 _pkg 形式表明使用去除句点之后的形式(就好象 Fink 的语言版本软件包的命名约定一样)。(在 fink 的 CVS 0.19.2 后版本中引入)。
+<!-- start translation -->
+The _num form was introduced in fink-0.26.0
+and removes all non-digits from the <code>Type</code> field.
+<!-- end translation -->
 </p>
 </itemd></item>
 
@@ -329,6 +353,16 @@ package is blank. (Introduced in fink-0.20.6)
 <p>
 The full path to the file given in the <code>PatchFile</code> field.
 (Introduced in fink-0.24.12)
+</p>
+</itemd></item>
+<item><itemt>%lib</itemt>
+<itemd>
+<p>
+If <code>Type: -64bit</code> is defined to be <code>-64bit</code>,
+this expands to <em>lib/ppc64</em> on powerpc machines, and to
+<em>lib/x86_64</em> on intel machines (the proper storage locations
+for 64-bit libraries); otherwise, this expands to <em>lib</em>.
+(Introduced in fink-0.26.0)
 </p>
 </itemd></item>
 <!-- end translation -->
@@ -442,12 +476,13 @@ Fink 是一个安装在基本系统之外的独立目录里面的外加的软件
 <section name="sharedlibs"><title>共享函数库</title>
 <p>
 Fink 对于共享库有了新的规则，它从 2002 年 2 月开始生效。
-本段内容讨论的是规则的第四版，它是与 Fink's 0.5.0 一同发布的。
+本段内容讨论的是规则的第四版，它是与 Fink's 0.5.0 一同发布的
+(<!-- start translation -->as well as some updates from December, 2006 to handle 64bit libraries<!-- end translation -->)。
 我们首先以一个简要的概括开始，然后讨论更多的细节问题。
 </p><p>
 任何会产生共享库的软件包，无论它是⑴被放在稳定树中，或是⑵一个新的软件包，都应该使得他们的库满足 Fink 的规则。即：</p>
 <ul>
-<li>   使用 <code>otool -L</code> 验证每个库的安装名（install_name），兼容性和当前版本号是正确的。</li>
+<li>   使用 <code>otool -L</code> (或<!-- start translation --> otool64 -L for 64bit libraries<!-- end translation -->) 验证每个库的安装名（install_name），兼容性和当前版本号是正确的。</li>
 <li>   把共享库放到一个单独的软件包（除了从 libfoo.dylib 连接 install_name 的以外），并在软件包中包括 <code>Shlibs</code> 字段</li>
 <li>   把头文件以最终从 libfoo.dylib 的连接放到一个软件包中，并分类为： <code>BuildDependsOnly: True</code>，应该不会有其他软件包会依赖它。</li>
 </ul>
@@ -517,7 +552,7 @@ barN-shlibs（只有在新软件包或主版本号发生改变的软件包上，
 </p><p>
 如果你的软件包包括共享库和二进制文件，而且二进制文件需要在运行时使用（而不仅仅时编译时），那么这些二进制文件应该被分离到第三个软件包中，这个软件包命名为 barN-bin。其它软件包可以依赖于 barN-shlibs 及 barN-bin。
 </p><p>
-当编译主版本号为 N 的共享库时，很重要的是要使 <filename>%p/lib/bar.N.dylib</filename> 来作为 &quot;install_name&quot;。（你可以用 <code>otool -L</code> 来查看你的库的 install_name）。实际的库文件应该被安装在
+当编译主版本号为 N 的共享库时，很重要的是要使 <filename>%p/lib/bar.N.dylib</filename> 来作为 &quot;install_name&quot;。（你可以用 <code>otool -L</code> 或<!-- start translation --> otool64 -L for 64bit libraries<!-- end translation --> 来查看你的库的 install_name）。实际的库文件应该被安装在
 </p>
 <codeblock>
   %i/lib/bar.N.x.y.dylib
@@ -538,7 +573,7 @@ barN-shlibs（只有在新软件包或主版本号发生改变的软件包上，
 <p>
 如果软件包使用 libtool，这些事情通常会被自动处理，
 但无论任何情况下，你都应该检查结果时候正确。你还应该检查你的共享库是否已经定义了正确的 current_version 和 compatibility_version 值（
-<code>otool -L</code> 应该也可以查询得到这些设置值）。
+<code>otool -L</code> 或 <code>otool64 -L</code> <!-- start translation -->for 64bit libraries<!-- end translation --> 应该也可以查询得到这些设置值）。
 </p><p>
 文件应该象下面一样分到两个文件包中
 </p>
@@ -635,14 +670,21 @@ a .deb with header files and a static library as well.)
 <!-- end translation -->
 <p><em>Shlibs 字段：</em>
 </p><p>
-除了把共享库放到合适的软件包中外，作为规则版本 4，你还需要用 <code>Shlibs</code> 字段声明全部共享库。这个字段每个共享库占一行，这行中包含库的 <code>-install_name</code>，<code>-compatibility_version</code>，以及版本依赖信息，这个信息指明在本兼容版本中提供库的 Fink 软件包。依赖关系应该用 <code>foo (>= version-revision)</code> 的形式指明。其中
+除了把共享库放到合适的软件包中外，作为规则版本 4，你还需要用 <code>Shlibs</code> 字段声明全部共享库。
+这个字段每个共享库占一行，这行中包含库的 <code>-install_name</code>，<code>-compatibility_version</code>
+<!-- end translation -->
+，and the library architecture.  (The library architecture may either be &quot;32&quot;, &quot;64&quot;, or
+&quot;32-64&quot;, and may be absent; the value defaults to &quot;32&quot; if it is absent.) 
+<!-- end translation -->
+以及版本依赖信息，这个信息指明在本兼容版本中提供库的 Fink 软件包。
+依赖关系应该用 <code>foo (>= version-revision)</code> 的形式指明。其中
 <code>version-revision</code> 指提供这个与（本版本兼容）的共享库的 Fink 软件包的<em>第一个</em>版本。例如，这样</p>
 <codeblock>
   Shlibs: &lt;&lt;
-    %p/lib/bar.1.dylib 2.1.0 bar1 (>= 1.1-2)
+    %p/lib/bar.1.dylib 2.1.0 bar1 (>= 1.1-2) 32
   &lt;&lt;
 </codeblock>
-<p>一个声明表示从 <em>bar1</em> 软件包的版本 1.1-2 开始，已经开始安装一个 <code>-install_name</code> 为 %p/lib/bar.1.dylib，<code>-compatibiliary_version</code> 为 2.1.0 的函数库。另外，这个声明还表示维护者承诺这个名字及 compatibility-version 至少为 2.1.0 以上的函数库可以在 <em>bar1</em> 软件包的以后版本中找到。
+<p>一个声明表示从 <em>bar1</em> 软件包的版本 1.1-2 开始，已经开始安装一个 <code>-install_name</code> 为 %p/lib/bar.1.dylib，<code>-compatibiliary_version</code> 为 2.1.0 的函数库。另外，这个声明还表示维护者承诺这个名字及 compatibility-version 至少为 2.1.0 以上的 (32bit) 函数库可以在 <em>bar1</em> 软件包的以后版本中找到。
 </p><p>
 注意在库的名字中使用 %p，这使得无论他们选择什么安装路径前缀，Fink 的所有用户都可以找到正确的 <code>-install_name</code> 代表的函数库。
 </p><p>
@@ -929,6 +971,20 @@ directories.
 <code>powerpc-apple-darwin1.3.3</code> 这样的目录对兼容性是不利的，<code>powerpc-apple-darwin1.3</code> 或仅仅是
 <code>powerpc-apple-darwin</code> 是个好些的选择。
 </p>
+</itemd></item>
+
+<item><itemt><filename>/sw/lib/ppc64</filename>
+<filename>/sw/lib/x86_64</filename></itemt>
+<itemd>
+<!-- start translation -->
+<p>
+This directory is for 64-bit libraries, with <filename>/sw/lib/ppc64</filename>
+being used under powerpc architecture, and
+<filename>/sw/lib/x86_64</filename> being used under i386 architecture.
+Libraries which have been built 'fat' should be stored in
+<filename>/sw/lib</filename> instead.
+</p>
+<!-- end translation -->
 </itemd></item>
 
 <item><itemt><filename>/sw/share</filename></itemt>
@@ -1350,6 +1406,31 @@ CompileScript:  &lt;&lt;
 &lt;&lt;
 &lt;&lt;
 </codeblock>
+<!-- start translation -->
+<p>
+Starting in fink 0.26.0, there is a special <code>Type: -64bit</code>
+which controls a new percent expansion <code>%lib</code> and also
+changes the default value of <code>LDFLAGS</code>.  When combined
+with the new construction %type_num[], this allows a single .info file
+to build both a 32-bit version of a library and a 64-bit version.
+Here's some sample code:
+</p>
+<codeblock>
+Info2: &lt;&lt;
+Package: foo%type_pkg[-64bit]
+Type: -64bit (boolean)
+Depends: (%type_raw[-64bit] = -64bit) 64bit-cpu
+ConfigureParams: --libdir='${prefix}/%lib'
+SplitOff: &lt;&lt;
+ Package: %N-shlibs
+ Files: %lib/libfoo.*.dylib
+ Shlibs: &lt;&lt;
+    %p/%lib/libfoo.1.dylib 1.0.0 %n (>= 1.0-1) %type_num[-64bit]
+  &lt;&lt;
+&lt;&lt;
+&lt;&lt;
+</codeblock>
+<!-- end translation -->
 </itemd></item>
 
 <item><itemt>License</itemt>
@@ -1387,6 +1468,11 @@ in the main <code>Package</code> field of the .info file and the
 ability to use the <code>%type_*</code> percent-expansions in
 the <code>Package</code> field of <code>SplitOff</code>
 (and <code>SplitOff<em>N</em></code>) packages.
+</li>
+<li>
+<code>Info3</code> (fink>=0.25.0): Can indent nicely in .info files,
+no more support for RFC-822 multi-lines, and can put comments in
+pkglist fields.
 </li>
 </ul>
 <!-- end translation -->
@@ -1911,6 +1997,10 @@ The preset variables (and their default values) are:
 CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </codeblock>
+<p> Starting in fink 0.26.0, there is one exception to these defaults:
+if <code>Type: -64bit</code> is set to <code>-64bit</code>, then the
+default value of <code>LDFLAGS</code> is <code>-L%p/%lib -L%p/lib</code> 
+instead.</p>
 <p>
 In addition, starting in fink 0.17.0, the following values are set for
 the 10.4-transitional distribution and earlier (but are not set for
@@ -1947,14 +2037,18 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 <p>
 传递给 configure 脚本的额外参数(查阅
 CompileScript 字段的说明获取详细信息)。
+<!-- start translation -->
+For packages not of <code>Type: Perl</code>, the parameter
+<code>--prefix=%p</code> is prepended to this value.
+As of fink > 0.13.7, this field will also work with perl modules
+<code>Type: Perl</code>; the default perl Makefile.PL
+string is prepended to the value supplied for <code>ConfigureParams</code>.
+</p>
+<p>
 If a build is being done
 with test suites enabled, the value of the <code>TestConfigureParams</code>
-field will be appended to this.
-
-对于 &lt; 0.13.7 的 fink 版本，这个参数也对 perl 模块<code>Type: Perl</code>有效，并会添加到默认的 perl Makefile.PL
-字符串中。
+field will be appended to the normal <code>ConfigureParams</code> value.
 </p>
-<!-- start translation -->
 <p>
   Starting in fink-0.22.0, this field supports conditionals. The
   syntax is the same as that used in the <code>Depends</code> and
@@ -2224,8 +2318,14 @@ configure 或 ant 之类的工具能够正确地检测到已安装的 jar 文件
 <p>
 <em>从 fink 0.11.0 开始。</em>
 这个字段声明软件包中要安装的共享库。
-每个共享库占一行，每行包括以空格分开的三项：
-共享库的 <code>-install_name</code>(安装名)，<code>-compatibility_version</code>(兼容版本号)，和版本相关的指明提供这个兼容版本的 Fink 软件包的依赖信息
+每个共享库占一行，每行包括以空格分开的三或四项：
+共享库的 <code>-install_name</code>(安装名)，
+<code>-compatibility_version</code>(兼容版本号)，
+和版本相关的指明提供这个兼容版本的 Fink 软件包的依赖信息，
+<!-- start translation -->
+the library architecture.  (The library architecture may either be "32", "64", or
+"32-64", and may be absent; the value defaults to "32" if it is absent.)  
+<!-- end translation -->
 依赖信息应该以下面的形式描述：<code> foo (&gt;= version-revision)</code> 其中 
 <code>version-revision</code> 指提供(这个兼容版本)函数库的 Fink 软件包的 <em>第一个</em>版本。
 Shlibs 声明表明维护者承诺这个名字和至少
