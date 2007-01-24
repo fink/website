@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2005/10/25 00:59:07 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2007/01/24 23:47:54 $';
 
 include "header.inc";
 ?>
@@ -33,13 +33,14 @@ unstable</a> and then download the latest descriptions by running <i>fink selfup
 href="nomaintainer.php">packages without maintainers</a>.</p>
 
 <?
-$q = "SELECT name FROM package WHERE latest=1";
+$q = "SELECT COUNT(name) FROM package WHERE latest=1";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
   $pkgcount = '?';
 } else {
-  $pkgcount = mysql_num_rows($rs);
+  $pkgcount = mysql_fetch_array($rs);
+  $pkgcount = $pkgcount[0];
 }
 
 $q = "SELECT * FROM sections ORDER BY name ASC";
