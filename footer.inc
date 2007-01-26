@@ -1,12 +1,12 @@
 <?
-/* $Id: footer.inc,v 1.34 2007/01/11 05:17:25 dmacks Exp $ */
+/* $Id: footer.inc,v 1.35 2007/01/26 03:18:39 dmacks Exp $ */
 ?>
 
 <? /* end content table */ ?>
 </div>
 <div id="footer-left">
 		<a href="http://fink.sourceforge.net/legal.php" style="text-decoration:none ; color:black ;">
-			Copyright &copy 2001-2007<br>The&nbsp;Fink&nbsp;Project
+			Copyright &copy; 2001-2007<br>The&nbsp;Fink&nbsp;Project
 	 	</a>
 </div>
 <div id="footer">
