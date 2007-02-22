@@ -173,7 +173,7 @@ div#sidebar {
 }
 
 div#sections {
-	background: url(http://fink.sourceforge.net/img/stripes.gif); 
+	background: url(/img/stripes.gif); 
 	padding: 6px 3px ;
 	margin: 0 ;
 	font-weight: bold ;
@@ -194,7 +194,7 @@ div#main {
 }
 
 div#footer-left { 
-	background: url(http://fink.sourceforge.net/img/stripes.gif); 
+	background: url(/img/stripes.gif); 
 	font: smaller "Trebuchet MS", sans-serif; 
 	clear: both ;
 	float: left;

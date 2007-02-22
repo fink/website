@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ja.inc,v 1.10 2005/01/18 23:05:07 babayoshihiko Exp $ */
+/* $Id: constants.ja.inc,v 1.11 2007/02/22 23:45:10 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -9,7 +9,7 @@
 // +--------------------------------------------------------------------------+
 // | Defines the constants used throughout the Fink website                   |
 // | for different human languages                                            |
-// |                   (http://fink.sourceforge.net)                          |
+// |                   (http://www.finkproject.org)                           |
 // |                                                                          |
 // | usage:    1. read the comments                                           |
 // |           2. encoding must be UTF-8 or it will not show properly         |

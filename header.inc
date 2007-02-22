@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.100 2007/01/27 04:10:12 chris01 Exp $ */
+/* $Id: header.inc,v 1.101 2007/02/22 23:45:10 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -7,7 +7,7 @@
 // +--------------------------------------------------------------------------+
 // | License:  GNU/GPL - http://www.gnu.org/copyleft/gpl.html                 |
 // +--------------------------------------------------------------------------+
-// | Used by all the PHP files at http://fink.sourceforge.net                 |
+// | Used by all the PHP files at http://www.finkproject.org                  |
 // |    to produce the headers (incl HTML headers and top parts)              |
 // |                                                                          |
 // | usage:    1. read the comments                                           |
@@ -99,13 +99,13 @@ $section_names = array(
 );
 
 $section_files = array(
-	'home' => 'http://fink.sourceforge.net/index.php?phpLang='. $lang_code,
-	'download' => 'http://fink.sourceforge.net/download/index.php?phpLang='. $lang_code,
+	'home' => '/index.php?phpLang='. $lang_code,
+	'download' => '/download/index.php?phpLang='. $lang_code,
 	'packages' => 'http://pdb.finkproject.org/pdb/index.php?phpLang='. $lang_code,
-	'help' => 'http://fink.sourceforge.net/help/index.php?phpLang='. $lang_code,
-	'faq' => 'http://fink.sourceforge.net/faq/index.php?phpLang='. $lang_code,
-	'documentation' => 'http://fink.sourceforge.net/doc/index.php?phpLang='. $lang_code, 
-	'mailing-lists' => 'http://fink.sourceforge.net/lists/index.php?phpLang='. $lang_code
+	'help' => '/help/index.php?phpLang='. $lang_code,
+	'faq' => '/faq/index.php?phpLang='. $lang_code,
+	'documentation' => '/doc/index.php?phpLang='. $lang_code, 
+	'mailing-lists' => '/lists/index.php?phpLang='. $lang_code
 );
 
 if (!$section) $section = "home";
@@ -288,7 +288,7 @@ function insert_sub ($navbox, $active_page) {
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
 <!-- Tracking Code v3.01 - All rights reserved -->
 <!-- More tracking, arranged for the bindist -->
-<script language="javascript1.1" src="http://fink.sourceforge.net/tracking.js" type="text/javascript"></script><noscript>
+<script language="javascript1.1" src="/tracking.js" type="text/javascript"></script><noscript>
 <img src="http://statistics.dynamicsitestats.com/p.pl?a=10001728464933&amp;js=no" width="1" height="1" alt=""></noscript><!--//-->
 <!-- End of Tracking Code -->
 

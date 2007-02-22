@@ -1,3 +1,3 @@
 <?
-header("Location: http://fink.sourceforge.net/download/index.php");
+header("Location: http://www.finkproject.org/download/index.php");
 ?>
