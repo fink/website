@@ -1,12 +1,12 @@
 <?
 $hostlogo = 1;
-	$img = '<a href="http://sourceforge.net/">
+	$img = '<a href="http://www.xs4all.nl/">
 			<img 
-				src="http://sflogo.sourceforge.net/sflogo.php?group_id=17203" 
-				width="88"
-				height="31" 
+				src="'.$root.'img/xs4all.gif" 
+				width="73"
+				height="22" 
 				border="0" 
-				alt="SourceForge" 
+				alt="XS4ALL logo" 
 				style="vertical-align:text-bottom">
 		</a>';
 ?>
