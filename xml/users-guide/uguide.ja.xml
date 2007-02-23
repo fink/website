@@ -3,15 +3,15 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.24 2006/06/13 11:49:05 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.25 2007/02/23 22:04:56 rangerrick Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
 (以下のドキュメントはより広範囲なことについて書かれています:
-<link url="http://fink.sourceforge.net/doc/bundled/install.php" >インストール</link>,
-<link url="http://fink.sourceforge.net/doc/bundled/usage.php" >使用方法</link>
+<link url="http://www.finkproject.org/doc/bundled/install.php" >インストール</link>,
+<link url="http://www.finkproject.org/doc/bundled/usage.php" >使用方法</link>
 およびバイナリのディスクイメージにある ReadMe.rtf 。)
-ウェブサイト中の <link url="http://fink.sourceforge.net/doc/" >文書 セクション</link> も併せて参照ください。
+ウェブサイト中の <link url="http://www.finkproject.org/doc/" >文書 セクション</link> も併せて参照ください。
 ここに書かれていること以上の内容を含んでいます。
 </p>
 <p>
@@ -157,7 +157,7 @@ Fink のアップグレードは、再インストールなしで行なうこと
 <title>バイナリディストリビューションのインストール</title>
 <p>
 バイナリディストリビューションは、ディスクイメージ (.dmg) の中に、 Mac OS X インストーラパッケージ形式 (.pkg) で配布されています。
-ディスクイメージを<link url="http://fink.sourceforge.net/download/bindist.php" >ダウンロードページ</link>からダウンロードし、ダブルクリックしてマウントします。
+ディスクイメージを<link url="http://www.finkproject.org/download/bindist.php" >ダウンロードページ</link>からダウンロードし、ダブルクリックしてマウントします。
 &quot;Fink 0.x.x Installer&quot; を開きます。
 Disk Copy がファイルを点検した後にデスクトップに出てくるディスクアイコンのことです。
 この中には、ドキュメンテーションとインストーラパッケージが入っています。
@@ -176,7 +176,7 @@ Disk Copy がファイルを点検した後にデスクトップに出てくる�
 <p>
 ソースディストリビューションは標準的な Unix tarball (.tar.bz) で提供されます。
 これは <code>fink</code> パッケージマネージャとパッケージ記述だけが含まれていて、パッケージ用のソースをダウンロードするものです。
-<link url="http://fink.sourceforge.net/download/srcdist.php" >ダウンロードページ</link>から入手することができます。
+<link url="http://www.finkproject.org/download/srcdist.php" >ダウンロードページ</link>から入手することができます。
 tar アーカイブを解凍する際に、 StuffIt Expander を使わないように注意してください。
 StuffIt はまだ長いファイル名を扱うことができないようです。
 StuffIt Expander が解凍してしまっている場合、作成されたフォルダごと捨ててください。
@@ -470,7 +470,7 @@ E: Sorry, broken packages</codeblock>
 <code>fink</code> コマンドは最初に必要なもの (&quot;依存性&quot;) があるか確認し、無いものがあればインストールしていいか聞いてきます。
 次に、ソースコードをダウンロード、解凍、パッチ当て、コンパイル、インストールをします。
 この作業は時間がかかります。
-この作業中にエラーが発生した場合、まず <link url="http://fink.sourceforge.net/faq/" >FAQ</link> を確認して下さい。
+この作業中にエラーが発生した場合、まず <link url="http://www.finkproject.org/faq/" >FAQ</link> を確認して下さい。
 </p>
 <p>
 <code>fink</code> のバージョン 0.23.0 以降では、コンパイル済みバイナリパッケージを優先的にダウンロードするように指定することができます。
@@ -510,7 +510,7 @@ Fink をソースからインストールした場合など、別にダウンロ
 </section>
 <section name="available-versions">
 <title>用意されているバージョン</title>
-<p>パッケージをインストールする場合、まず<link url="http://fink.sourceforge.net/pdb/index.php" >Package Database</link>を確認して Fink にあるかどうか確認して下さい。
+<p>パッケージをインストールする場合、まず<link url="http://pdb.finkproject.org/pdb/index.php" >Package Database</link>を確認して Fink にあるかどうか確認して下さい。
 用意されているバージョンは次の行に書かれてあります:</p>
       <ul>
         <li>Binary Distribution
@@ -551,7 +551,7 @@ Fink をソースからインストールした場合など、別にダウンロ
             <em>10.2-gcc3.3 stable:</em>
             これは、OS 10.2 と Developer Tools の <code>gcc 3.3</code> アップデートの組み合わせにむけた、
             stable ソースツリーからインストールされる最新の安定バージョンです。
-            このバージョンをインストールするには、 <link url="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</link>
+            このバージョンをインストールするには、 <link url="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</link>
             または rsync　でのアクセスが必要です。
             <code>gcc 3.3</code> アップデートを当てていない場合、このバージョン (あるいはパッケージも) は見えないかもしれません。
           </p>
@@ -587,7 +587,7 @@ Fink をソースからインストールした場合など、別にダウンロ
             <em>10.2-gcc3.3 unstable:</em>
             <code>gcc 3.3</code>. これは、OS 10.2 と <code>gcc 3.3</code> 用の unstable ソースツリーからインストールされる最新の unstable バージョンです。 
             このバージョンをインストールするには、unstable パッケージの
-            <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">インストール手順</link> 
+            <link url="http://www.finkproject.org/faq/usage-fink.php#unstable">インストール手順</link> 
             をご覧ください。
           </p>
           <p>
@@ -671,7 +671,7 @@ system-xfree86 と同様、有効性を確認するだけでファイルはそ�
 </ul>
 <p>
 X11 のインストールと使用の詳細は、
-<link url="http://fink.sourceforge.net/doc/x11/" >X11 on Darwin and Mac OS X ドキュメント</link>
+<link url="http://www.finkproject.org/doc/x11/" >X11 on Darwin and Mac OS X ドキュメント</link>
 を参照して下さい。
 </p>
 </section>
@@ -706,7 +706,7 @@ Binary->Dist-Upgrade
 </p>
 <p>
 詳細、特に 0.3.0 より前のバージョンの Fink からアップグレードする場合は、
-<link url="http://fink.sourceforge.net/download/upgrade.php" >アップグレード表</link>
+<link url="http://www.finkproject.org/download/upgrade.php" >アップグレード表</link>
 を御覧下さい。
 </p>
 </section>
@@ -727,7 +727,7 @@ CVS には連続して更新できる利点がありますが、CVS サーバー
 このため、一般ユーザーは rsync を使うことをおすすめします。
 rsync にはミラーが複数あり、欠点は CVS からのパッケージ記述の更新に１時間かかることです。
 </p>
-<p>(ソースインストールで問題がある場合、<link url="http://fink.sourceforge.net/download/fix-upgrade.php" >特殊な方法</link>を参照して下さい)</p>
+<p>(ソースインストールで問題がある場合、<link url="http://www.finkproject.org/download/fix-upgrade.php" >特殊な方法</link>を参照して下さい)</p>
 <p>
 0.2.5 より古いバージョンの Fink の場合、手動でパッケージ記述をダウンロードして下さい。
 <link url="http://sourceforge.net/project/showfiles.php?group_id=17203" >ダウンロードエリア</link>で最新の packages-0.x.x.tar.gz tarball を &quot;distribution&quot; モジュール内で探します。

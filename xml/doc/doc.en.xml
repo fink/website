@@ -3,7 +3,7 @@
 <article filename="index" lang="en">
   <title>Fink - Documentation</title>
   <shorttitle>Documentation</shorttitle>
-  <cvsid>$Id: doc.en.xml,v 1.17 2006/07/25 14:41:55 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: doc.en.xml,v 1.18 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
   <preface>
     <p>
 This is a collection of various documents written for Fink.
@@ -49,7 +49,7 @@ releases</li>
     <ul>
       <li><varlink url="security/index.php" varurl="security/sec-policy.en.html">Security Policy Manual</varlink> - 
 	  Mandatory read for all of those who either maintain packages in Fink or would like to add their own.</li>
-      <li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</link> (2MB pdf
+      <li><link url="http://www.finkproject.org/doc/UsingFink.pdf">Using Fink: A Developer's How To</link> (2MB pdf
 file) - slides from a presentation at the <link url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X Conference</link> (also available as a
 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</link>) </li>
       <li><varlink url="porting/index.php" varurl="porting/porting.en.html">Porting Tips</varlink> - notes for porting

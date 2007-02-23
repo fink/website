@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.9 2007/01/18 02:16:18 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.10 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -214,7 +214,7 @@ plataformas.
         <p>Since Fink 0.2.3, there is the <code>list</code> command. It produces a list of all packages known to your Fink installation. Example:</p>
         <codeblock>fink list</codeblock>
         <p>If you're using the binary distribution, <code>dselect</code> gives you a nice browsable listing of available packages. Note that you must run it as root if you want to select and install packages from within dselect.</p>
-        <p>There's also the <link url="http://fink.sourceforge.net/pdb/">package database</link> at the
+        <p>There's also the <link url="http://pdb.finkproject.org/pdb/">package database</link> at the
         website.</p>
       </answer>
     </faqentry>
@@ -312,7 +312,7 @@ plataformas.
         <p>El paquete de base de datos en el website enlista paquete xxx, pero apt-get y dselect no saben nada acerca de ese paquete. ¿Quién está mintiendo?</p>
       </question>
       <answer>
-        <p>Both are correct. The <link url="http://fink.sourceforge.net/pdb/">package database</link> knows
+        <p>Both are correct. The <link url="http://pdb.finkproject.org/pdb/">package database</link> knows
         about every package, including those that are still in the unstable
         section. The <code>dselect</code> and <code>apt-get</code> tools on
         the other hand only know about the packages available as precompiled
@@ -613,7 +613,7 @@ fink selfupdate-cvs</codeblock>
         type:</p>
         <codeblock>printenv PATH</codeblock>
         <p>If <filename>/sw/sbin</filename> doesn't appear at all, then you
-        need to set your environment up as per the <link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</link>
+        need to set your environment up as per the <link url="http://www.finkproject.org/doc/users-guide/install.php#setup">instructions</link>
         in the Users Guide. If <filename>/sw/sbin</filename> is there, but
         there are other directories ahead of it (e.g.
         <filename>/usr/local/bin</filename>), then you will either want to
@@ -644,7 +644,7 @@ fink selfupdate-cvs</codeblock>
         error doesn't interfere with builds.</p>
         <p>If you have been installing from the binary distribution or you
         know for sure that the version in the binary distribution is the same
-        as what you have installed (e.g. by checking the <link url="http://fink.sourceforge.net/pdb/index.php">package
+        as what you have installed (e.g. by checking the <link url="http://pdb.finkproject.org/pdb/index.php">package
         database</link>), then you can get a .deb file by running <code>sudo
         apt=get install --reinstall --download-only <em>packagename</em>
           </code>. Otherwise you can build one yourself by running <code>fink
@@ -949,7 +949,7 @@ page and on http://fontconfig.org.</codeblock>
       <answer>
         <p>This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p>
         <codeblock>sudo rm -rf /sw</codeblock>
-        <p>and then download the disk image for Intel machines from <link url="http://fink.sourceforge.net/download/index.php">the downloads page</link>.</p>
+        <p>and then download the disk image for Intel machines from <link url="http://www.finkproject.org/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
     <faqentry name="sf-cvs-2006">
@@ -1360,7 +1360,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>I want Fink to use different options in building a package.</p>
       </question>
       <answer>
-        <p>The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <link url="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</link> and <link url="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</link>.</p>
+        <p>The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <link url="http://www.finkproject.org/doc/quick-start-pkg/index.php">Packaging Tutorial</link> and <link url="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</link>.</p>
         <p>
           <em>Note:  </em>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p>
       </answer>
@@ -1605,7 +1605,7 @@ preventing you from updating <code>gettext</code>.</p>
       <answer>
         <p>It's not bad, it just means that the program will use the default
         English messages, date formats, etc. The program will function
-        normally otherwise. The Running X11 document has <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</link>.</p>
+        normally otherwise. The Running X11 document has <link url="http://www.finkproject.org/doc/x11/trouble.php#locale">details</link>.</p>
       </answer>
     </faqentry>
     <faqentry name="passwd">
@@ -1745,7 +1745,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
           </li>
         </ul>
         <p>There are other options, as well. There is a more extensive
-        treatment in the <link url="http://fink.sourceforge.net/doc/x11/index.php">Running X11
+        treatment in the <link url="http://www.finkproject.org/doc/x11/index.php">Running X11
         document</link>.</p>
       </answer>
     </faqentry>
@@ -1930,7 +1930,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
         <p>Ayuda! Cuando abro XDarwin, inmediatamente se cuelga!</p>
       </question>
       <answer>
-        <p>Don't Panic. The Running X11 document now has an extensive <link url="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">troubleshooting
+        <p>Don't Panic. The Running X11 document now has an extensive <link url="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">troubleshooting
         section</link> for this common problem.</p>
       </answer>
     </faqentry>

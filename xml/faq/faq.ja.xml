@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.40 2007/01/18 02:16:18 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.41 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -297,7 +297,7 @@ XCode の入った CD が Panther に同梱されているはずです。</p>
 <codeblock>fink list</codeblock>
 <p>バイナリ・ディストリビューションを使っている場合、 <code>dselect</code> でパッケージリストを閲覧することができます。
 dselect からパッケージを選択してインストールする場合、 root 権限が必要ですので注意して下さい。</p>
-<p>または、本サイトに <link url="http://fink.sourceforge.net/pdb/" >パッケージ・データベース</link> もあります。
+<p>または、本サイトに <link url="http://pdb.finkproject.org/pdb/" >パッケージ・データベース</link> もあります。
 </p>
 </answer>
 </faqentry>
@@ -682,7 +682,7 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 <p>これは普通、 PATH の問題です。ターミナルで:</p>
 <codeblock>printenv PATH</codeblock>
 <p>と入力し、 <filename>/sw/sbin</filename> が出てこないなら、環境変数を
-<link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup" >instructions</link>
+<link url="http://www.finkproject.org/doc/users-guide/install.php#setup" >instructions</link>
 内の Users Guide を参照してください。
 <filename>/sw/sbin</filename> があるが、他のディレクトリ (例えば /usr/local/bin) 
 がそれより前にある場合、 PATH の順序を変えて先頭近くに移動してください。
@@ -711,7 +711,7 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 もし出力されたのがファイルやディレクトリ以外であるか、 .deb ファイルがなくても、このエラーはビルドに影響しないので、次に進んでください。
 </p>
 <p>バイナリインストールを試みている場合、あるいはインストールしたバージョンと現在のバイナリバージョンが一致する場合
-(例えば、 <link url="http://fink.sourceforge.net/pdb/index.php" >パッケージデータベース</link> で調べたなら)、
+(例えば、 <link url="http://pdb.finkproject.org/pdb/index.php" >パッケージデータベース</link> で調べたなら)、
 .deb ファイルを取得することができます:
 <code>sudo apt-get install --reinstall --download-only <em>packagename</em></code>
 。あるいは、自分でビルドすることもできます:
@@ -784,7 +784,7 @@ fink selfupdate-cvs</codeblock>
 <p>Fink のバージョンをアップデートできないようです。</p>
 </question>
 <answer>
-<p>この状況専用の <link url="http://fink.sourceforge.net/download/fix-upgrade.php" >special instructions</link> に従ってください。</p>
+<p>この状況専用の <link url="http://www.finkproject.org/download/fix-upgrade.php" >special instructions</link> に従ってください。</p>
 </answer>
 </faqentry>
 <faqentry name="spaces-in-directory" >
@@ -1034,7 +1034,7 @@ page and on http://fontconfig.org.</codeblock>
         <p>このエラーは、PPC インストーラで Intel マシンにインストールした際に発生します。  
         現在のインストールを、例えば次のように削除してください:</p>
         <codeblock>sudo rm -rf /sw</codeblock>
-        <p>Intel マシン用のインストーラを、<link url="http://fink.sourceforge.net/download/index.php">ダウンロードページ</link>から入手してください。</p>
+        <p>Intel マシン用のインストーラを、<link url="http://www.finkproject.org/download/index.php">ダウンロードページ</link>から入手してください。</p>
       </answer>
     </faqentry>
     <faqentry name="sf-cvs-2006">
@@ -1453,8 +1453,8 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 			まず最初に、バリエーションを作成するようにパッケージメンテナに伝えてみてください。
 			これが比較的簡単な方法です。
 			メンテナから反応がなかったり、新しいバージョンが出てしまったり、自分で違うオプションを試してみたい場合、
-			<link url="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</link> 
-			と <link url="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</link> をお読みください。
+			<link url="http://www.finkproject.org/doc/quick-start-pkg/index.php">Packaging Tutorial</link> 
+			と <link url="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</link> をお読みください。
 		</p>
 		<p><em>注記:</em>Fink は、ビルドされたマシンに依存しないよう、全ての公式パッケージにはG5 最適化などのことはされません。このようなことをしたい場合、各自でする必要があります。</p>
 	</answer>
@@ -1575,7 +1575,7 @@ X11 に依存するパッケージがない場合、これは単純です。
 <p>3a. XFree86-4.3.x 以降を入れるには、 Fink の <code>xfree86</code> パッケージを、
 &quot;fink install xfree86&quot; でインストールします。
 最新版 (2004年5月25日時点で XFree86-4.4.x) はまだバイナリ版がなく、 unstable ツリーのみなので、 
-[<link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable\">unstable パッケージのインストール</link> を参照]
+[<link url="http://www.finkproject.org/faq/usage-fink.php#unstable\">unstable パッケージのインストール</link> を参照]
 </p>
 </answer>
 </faqentry>
@@ -1690,7 +1690,7 @@ fink install libiconv</codeblock>
 <p>まずいことという訳ではありません。
 これはデフォルトの英語メッセージや日付フォーマットなどを使うという意味です。
 これ以外はプログラムは普通に動作します。
-X11 のドキュメントに、 <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale" >詳細</link> があります。</p>
+X11 のドキュメントに、 <link url="http://www.finkproject.org/doc/x11/trouble.php#locale" >詳細</link> があります。</p>
 </answer>
 </faqentry>
 <faqentry name="passwd" >
@@ -1839,7 +1839,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
 		</li>
 	</ul>
 	<p>
-	これ以外の選択は、 <link url="http://fink.sourceforge.net/doc/x11/index.php" >Running X11 document</link> を参照してください。
+	これ以外の選択は、 <link url="http://www.finkproject.org/doc/x11/index.php" >Running X11 document</link> を参照してください。
 	</p>
 </answer>
 </faqentry>
@@ -2012,7 +2012,7 @@ XDarwin を起動してもすぐ終了しちゃう!</p>
 <answer>
 <p>
 慌てない、慌てない。
-Running X11 ドキュメントには、この問題の <link url="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit" >問題対処法の節</link> (英語版) があります。</p>
+Running X11 ドキュメントには、この問題の <link url="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit" >問題対処法の節</link> (英語版) があります。</p>
 </answer>
 </faqentry>
 <faqentry name="no-server" >

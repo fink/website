@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Como mandar mensajes a las Listas de Correo de Fink</title>
   <shorttitle>Netiquette</shorttitle>
-  <cvsid>$Id: netiquette.es.xml,v 1.1 2004/09/22 22:36:21 michga Exp $</cvsid>
+  <cvsid>$Id: netiquette.es.xml,v 1.2 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
   <preface>
     <p><em>Este es un documento en construcción.</em></p>
     <p>Este documento pretende ser una guía para los nuevos miembros de las Listas de 
@@ -130,7 +130,7 @@ gcc &lt;flags, files etc.&gt;
       <title>¿Cómo me desuscribo?</title>
       <p>Para desuscribirse, <em>no</em> mande un mensaje a la lista.</p>
       <ol>
-        <li>Vaya a la página de las<link url="http://fink.sourceforge.net/lists/index.php">Listas de Correo</link>.  <p>Nota:  no use el Internet Explorer del MacOS X.</p></li>
+        <li>Vaya a la página de las<link url="http://www.finkproject.org/lists/index.php">Listas de Correo</link>.  <p>Nota:  no use el Internet Explorer del MacOS X.</p></li>
         <li>Seleccione el vínculo de la lista de la que desea desuscribirse.</li>
         <li>Vaya al pie de la página donde dice::  <quote>Para cambiar su suscripción (ajustar opciones como resumen y modos de entrega, obtener un recordatorio de tu password o desuscribirse), ingrese su dirección de correo suscrito:</quote>, e ingrese la dirección de correo electrónico donde esta recibiendo el correo de Fink, entonces dele click al botón de <quote>Edit Options</quote> .   </li>
         <li>En la página que se abre a continuación, hay un campo en la parte superior 

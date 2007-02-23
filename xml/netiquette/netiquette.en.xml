@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>How to Post to a Fink Mailing List</title>
   <shorttitle>netiquette</shorttitle>
-  <cvsid>$Id: netiquette.en.xml,v 1.3 2004/03/31 00:38:58 michga Exp $</cvsid>
+  <cvsid>$Id: netiquette.en.xml,v 1.4 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
   <preface>
     <p><em>This document is under construction.</em></p>
     <p>This document is intended to be a guideline for new posters to a Fink mailing list.  The idea is to educate users of the lists on how to post effectively, in order to promote efficient solutions to problems.  </p>
@@ -108,7 +108,7 @@ gcc &lt;flags, files etc.&gt;
       <title>How do I unsubscribe?</title>
       <p>To unsubscribe, <em>don't</em> send a message to the list.</p>
       <ol>
-        <li>Go to the <link url="http://fink.sourceforge.net/lists/index.php">Mailing Lists</link> page.  <p>Note:  don't use the MacOSX version  Internet Explorer.</p></li>
+        <li>Go to the <link url="http://www.finkproject.org/lists/index.php">Mailing Lists</link> page.  <p>Note:  don't use the MacOSX version  Internet Explorer.</p></li>
         <li>Select the link for the list from which you wish to unsubscribe.</li>
         <li>Go to the bottom of the page where it says:  <quote>To change your subscription (set options like digest and delivery modes, get a reminder of your password, or unsubscribe), enter your subscription email address:</quote>, and enter the email address where you are receiving the Fink mail, then click the <quote>Edit Options</quote> button.   </li>
         <li>On the page that opens up next, there's a field in the upper left where you can unsubscribe.</li>

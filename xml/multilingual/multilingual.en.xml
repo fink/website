@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink Internationalization (i18n) Howto Guide</title>
   <shorttitle>i18n</shorttitle>
-  <cvsid>$Id: multilingual.en.xml,v 1.19 2006/05/26 13:04:20 michga Exp $</cvsid>
+  <cvsid>$Id: multilingual.en.xml,v 1.20 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
   <preface>
     <p><em>This document is a work in progress.</em></p>
     <p>Welcome to the Fink Website Internationalization Howto. This document
@@ -45,7 +45,7 @@
       <p>If you wish to help out with the internationalization effort, there
       are several things that you can do:</p>
       <ul>
-        <li>Join discussions on the <link url="http://fink.sourceforge.net/lists/fink-i18n.php">fink-i18n
+        <li>Join discussions on the <link url="http://www.finkproject.org/lists/fink-i18n.php">fink-i18n
         mailing list</link>. This is where we will discuss the mechanics of
         internationalization, announcements of updates to documents will be
         made, etc.</li>
@@ -259,7 +259,9 @@ define (FINK_SECTIONS, 'Sections');
 /* Contents as Table of contents, Next as next page */ 
 /* Q as question, A as anwer */
 define (FINK_CONTENTS, 'Contents');
-define (FINK_NEXT, 'Next');define (FINK_Q, 'Q');define (FINK_A, 'A');
+define (FINK_NEXT, 'Next');
+define (FINK_Q, 'Q');
+define (FINK_A, 'A');
 
 /* Printer */
 define (FINK_PRINTER, 'Printer');
@@ -299,7 +301,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         possibly some other) files as well as other files matching the languages in the Makefile.</p></li>
       </ol>
       <p>Note: If you see some misspelling or errors in the English file,
-      don't change it, but instead report it instead to the <link url="http://fink.sourceforge.net/lists/fink-i18n.php">fink-i18n
+      don't change it, but instead report it instead to the <link url="http://www.finkproject.org/lists/fink-i18n.php">fink-i18n
       list</link>, so that the master English file is changed.</p>
     </section>
     <section name="check-work">
@@ -481,7 +483,7 @@ For other
         this you will activate <em>everything</em> that's been placed in
         <code>web/xml</code>.</li>
         <li>log out from web server: <codeblock>exit</codeblock></li>
-        <li>See your efforts: <codeblock>open http://fink.sourceforge.net/</codeblock></li>
+        <li>See your efforts: <codeblock>open http://www.finkproject.org/</codeblock></li>
       </ol>
     </section>
   </chapter>

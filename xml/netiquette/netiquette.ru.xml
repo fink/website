@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Размещение объявлений в списке рассылки Fink</title>
     <shorttitle>Сетевой этикет</shorttitle>
-    <cvsid>$Id: netiquette.ru.xml,v 1.1 2005/02/01 02:04:51 horsager Exp $</cvsid>
+    <cvsid>$Id: netiquette.ru.xml,v 1.2 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
     <preface>
         <p>
             <em>Документ находится в процессе разработки.</em>
@@ -186,7 +186,7 @@
             <p>Чтобы  отказаться от подписки, <em>не надо</em> отправлять сообщение списку.</p>
             <ol>
                 <li>Надо это сделать на странице <link
-                        url="http://fink.sourceforge.net/lists/index.php">Mailing
+                        url="http://www.finkproject.org/lists/index.php">Mailing
                     Lists</link>. <p>Прим.: нельзя использовать версию MacOSX
                         Internet Explorer.</p>
                 </li>

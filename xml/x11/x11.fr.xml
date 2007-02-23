@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Utilisation de X11 sous Darwin et Mac OS X</title>
 <shorttitle>Utilisation de X11</shorttitle>
-<cvsid>$Id: x11.fr.xml,v 1.23 2006/01/19 22:09:48 michga Exp $</cvsid>
+<cvsid>$Id: x11.fr.xml,v 1.24 2007/02/23 22:04:56 rangerrick Exp $</cvsid>
 <preface>
 <p>Ce document traite de l'utilisation de X11, XFree86, et Xtools sur les systèmes Mac OS X et Darwin d'Apple. Il commence par une introduction et l'historique du développement, puis décrit la situation actuelle et les nombreuses options d'utilisation de X11 avec ou sans Fink.</p>
 </preface>
@@ -48,7 +48,7 @@
 <title>Qu'est-ce qu'un gestionnaire de fenêtres ?</title>
 <p>Dans la plupart des environnements graphiques, l'aspect des cadres de fenêtres (barre de titre, bouton de fermeture, etc...) est défini par le système. Sous X11, il en va autrement. Dans cet environnement, les cadres de fenêtres (aussi nommés &quot;ornements&quot;) sont fournis par un programme distinct, appelé le gestionnaire de fenêtres. À bien des égards, le gestionnaire de fenêtres n'est autre qu'une application client ; il est lancé de la même façon et dialogue avec le serveur X au travers des mêmes canaux.</p>
 <p>Vous avez le choix entre une multitude de gestionnaires de fenêtres. Le site <link url="http://www.xwinman.org/">xwinman.org</link> en donne la liste complète. Les plus populaires sont ceux qui permettent à l'utilisateur de personnaliser leur apparence via ce qu'on appelle des <link url="http://www.themes.org/">thèmes</link>. La plupart des gestionnaires de fenêtres fournissent d'autres fonctionnalités, comme les menus déroulants dans la fenêtre racine, les docks et les boutons de lancement.</p>
-<p>De nombreux gestionnaires de fenêtres ont été compilés pour Fink ; en voici la <link url="http://fink.sourceforge.net/pdb/section.php/x11-wm">liste actuelle</link>.</p>
+<p>De nombreux gestionnaires de fenêtres ont été compilés pour Fink ; en voici la <link url="http://pdb.finkproject.org/pdb/section.php/x11-wm">liste actuelle</link>.</p>
 </section>
 <section name="desktop">
 <title>Que sont Quartz/Aqua, Gnome et KDE ?</title>
@@ -57,7 +57,7 @@
 <p>un gestionnaire de fenêtre : <link url="http://sawmill.sourceforge.net/">sawfish</link></p>
 <p>un bureau : <link url="http://www.gnome.org/">Gnome</link></p>
 <p>La frontière entre moteur d'affichage graphique, gestionnaire de fenêtres et bureau est floue, car une même fonctionnalité (ou une fonctionnalité similaire) peut être implémentée par l'un de ces environnements ou plusieurs d'entre eux. C'est une des raisons pour laquelle un gestionnaire de fenêtres particulier peut ne pas fonctionner avec un environnement de bureau donné.</p>
-<p>De nombreuses applications sont développées pour être intégrées dans un environnement de bureau spécifique. Très souvent, il suffit d'installer les librairies de l'environnement de bureau (et les librairies sous-jacentes) avec lesquelles l'application a été développée pour qu'elle fonctionne (quasi) sans perte de fonctionnalités. Par exemple, un nombre de plus en plus grand d'<link url="http://fink.sourceforge.net/pdb/section.php/gnome">applications GNOME</link> fonctionnent hors de l'environnement GNOME. Malheureusement, <link url="http://fink.sourceforge.net/faq/usage-fink.php#kde">ce n'est pas encore le cas</link> pour les <link url="http://www.kde.org/">applications KDE</link>.</p>
+<p>De nombreuses applications sont développées pour être intégrées dans un environnement de bureau spécifique. Très souvent, il suffit d'installer les librairies de l'environnement de bureau (et les librairies sous-jacentes) avec lesquelles l'application a été développée pour qu'elle fonctionne (quasi) sans perte de fonctionnalités. Par exemple, un nombre de plus en plus grand d'<link url="http://pdb.finkproject.org/pdb/section.php/gnome">applications GNOME</link> fonctionnent hors de l'environnement GNOME. Malheureusement, <link url="http://www.finkproject.org/faq/usage-fink.php#kde">ce n'est pas encore le cas</link> pour les <link url="http://www.kde.org/">applications KDE</link>.</p>
 </section>
 </chapter>
 <chapter filename="history">
@@ -122,7 +122,7 @@ Irrelevant now?
 <p>Le 7 janvier 2003, Apple a mis à disposition <link url="http://www.apple.com/macosx/x11/">une implémentation X11 personnalisée basée sur XFree86-4.2</link>, qui incluait un rendu Quartz et l'accélération OpenGL. Une nouvelle version est sortie le 10 Février 2003, qui comportait des fonctionnalités supplémentaires et des corrections de bogues. Une troisième version (la Bêta 3) est sortie le 17 mars 2003 avec de nouvelles fonctionnalités et des corrections de bogues. Cette version peut être utilisée sur Jaguar.</p>
 <p>Le 24 octobre 2003, Apple a sorti Panther (10.3), qui inclut sa propre version de X11. Cette version est basée sur XFree86-4.3.</p>
 <p>Le 29 avril 2005, Apple a sortiTiger (10.4), qui inclut sa propre version de X11. Cette version est basée sur XFree86-4.4.</p>
-<p>Pour utiliser les binaires d'Apple, vous devez d'une part vous assurer que le paquet <em>X11 User</em> est installé et, d'autre part <link url="http://fink.sourceforge.net/doc/users-guide/upgrade.php">mettre à jour</link> Fink.</p>
+<p>Pour utiliser les binaires d'Apple, vous devez d'une part vous assurer que le paquet <em>X11 User</em> est installé et, d'autre part <link url="http://www.finkproject.org/doc/users-guide/upgrade.php">mettre à jour</link> Fink.</p>
 <p>Avec <code>fink-0.16.2</code>, vous devez aussi installer le paquet <em>X11 SDK</em>. Ensuite, Fink créera un paquet virtuel <code>system-xfree86</code>.</p>
 <p>Avec <code>fink-0.17.0</code> et les versions ultérieures, n'installez le paquet X11 SDK que si vous souhaitez construire des paquets à partir du source. Dans ce cas, même si vous n'avez pas installé le SDK, il y aura création des paquets virtuels <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>, ce dernier correspondant aux librairies partagées. Si vous installez le SDK, il y aura création d'un paquet <code>system-xfree86-dev</code>, représentant les headers.</p>
 <p>Si vous avez déjà installé une distribution XFree86, que ce soit avec Fink ou non, vous pouvez suivez les  <xref section="switching-x11" chapter="inst-xfree86">instructions de remplacement d'un paquet X11 par un autre</xref>. Supprimez vos paquets existants, puis installez X11 d'Apple (et, éventuellement, X11 SDK).</p>
@@ -353,7 +353,7 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
  <section name="applex11tools">
 <title>applex11tools</title>
 <p>Le paquet <code>applex11tools</code> de Fink vous permet d'utiliser <filename>X11.app</filename> et <code>quartz-wm</code> sous Mac OS X 10.3 et suivant avec XFree86 4.4 et suivant ou X.org.</p>
-<p>Pour installer ce paquet, vous devez activer la <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">branche instable</link> et avoir installé le paquet <filename>X11User.pkg</filename> dans la hiérarchie <filename>/Users</filename> ou <filename>/Volumes</filename>. <filename>X11.app</filename> sera installé dans le dossier <filename>Applications</filename> de l'arborescence Fink. Vous pourrez alors utilisé soit <filename>X11.app</filename> ou <filename>XDarwin.app</filename>.</p>
+<p>Pour installer ce paquet, vous devez activer la <link url="http://www.finkproject.org/faq/usage-fink.php#unstable">branche instable</link> et avoir installé le paquet <filename>X11User.pkg</filename> dans la hiérarchie <filename>/Users</filename> ou <filename>/Volumes</filename>. <filename>X11.app</filename> sera installé dans le dossier <filename>Applications</filename> de l'arborescence Fink. Vous pourrez alors utilisé soit <filename>X11.app</filename> ou <filename>XDarwin.app</filename>.</p>
 </section><section name="xinitrc">
 <title>Fichier .xinitrc</title>
 <p>S'il existe dans votre répertoire utilisateur un fichier nommé <filename>.xinitrc</filename>, il sera utilisé pour lancer quelques clients X au démarrage, tels le gestionnaire de fenêtre, quelques xterm ou un environnement de bureau comme GNOME. Le fichier <filename>.xinitrc</filename> est un script shell qui contient les commandes pour ce faire. Il <em>n'est pas</em> nécessaire de mettre le traditionnel <code>#!/bin/sh</code> dans la première ligne du fichier et de rendre exécutable le fichier ; xinit sait le lancer via un shell.</p>

@@ -3,11 +3,11 @@
 <document filename="index" lang="en">
   <title>Advanced Fink Topics</title>
   <shorttitle>Advanced</shorttitle>
-  <cvsid>$Id: advanced.en.xml,v 1.3 2005/01/21 00:49:17 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: advanced.en.xml,v 1.4 2007/02/23 22:04:53 rangerrick Exp $</cvsid>
   <preface>
     <p>
 This document describes advanced topics not found in the
-<link url="http://fink.sourceforge.net/doc/users-guide/">User's Guide</link>.
+<link url="http://www.finkproject.org/doc/users-guide/">User's Guide</link>.
     </p>
   </preface>
   <chapter filename="bindist">

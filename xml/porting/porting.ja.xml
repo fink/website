@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
   <title>Unix ソフトウェアの Darwin と Mac OS X への移植</title>
   <shorttitle>移植</shorttitle>
-  <cvsid>$Id: porting.ja.xml,v 1.7 2006/01/25 03:57:27 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: porting.ja.xml,v 1.8 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
   <preface>
     <p>
 		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
@@ -284,7 +284,7 @@ Fink チームのメンバーはこれからも改良を続け， libtool メン
       <title>1.3.5 パッチ</title>
       <p>
 libtool 1.3.5 を自分でビルドする場合，
-<link url="http://fink.sourceforge.net/files/libtool-1.3.5-darwin.patch">このパッチ</link> <em>[updated 2002-06-09]</em> 
+<link url="http://www.finkproject.org/files/libtool-1.3.5-darwin.patch">このパッチ</link> <em>[updated 2002-06-09]</em> 
 をソースにあて，ltconfig と ltmain.sh というファイルを削除します．
 (これらのファイルは，configure と make をすることで .in ファイルにより再生成されます．)
 Fink パッケージの libtool 1.3.5 では自動的に行われます．
@@ -294,8 +294,8 @@ Fink パッケージの libtool 1.3.5 では自動的に行われます．
 共有ライブラリとしてビルドする全てのパッケージについて，これらのファイルを置き換える必要があります．
 これは configure スクリプトを実行する前に行う必要があります．
 両ファイルは以下から取得することができます:
-<link url="http://fink.sourceforge.net/files/ltconfig">ltconfig</link> (98K) と
-<link url="http://fink.sourceforge.net/files/ltmain.sh">ltmain.sh</link> (110K)
+<link url="http://www.finkproject.org/files/ltconfig">ltconfig</link> (98K) と
+<link url="http://www.finkproject.org/files/ltmain.sh">ltmain.sh</link> (110K)
 <em>[both updated 2002-06-09]</em>.</p>
     </section>
     <section name="fixing-14x">
@@ -493,7 +493,7 @@ gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされ
   	OS X 10.3 では， <filename>/usr/bin/perl</filename> は perl 5.8.1 にアップグレードされ， architecture 文字列が &quot;darwin-thread-multi-2level&quot; に変更されました．
   	この変更は， それぞれの perl 実行ファイルはモジュールを探す場所を知っているので，パッケージ作成時に perl 実行ファイルを使用する分には<em>おそらく</em>影響がないでしょう．
   	perl モジュール (&quot;-pm&quot;) パッケージのメンテナは，<link
-    url="http://fink.sourceforge.net/packaging/policy.php#perlmods">Perl
+    url="http://www.finkproject.org/packaging/policy.php#perlmods">Perl
     モジュールのパッケージ化ポリシー</link>に従い，<code>CompileScript</code> と <code>InstallScript</code>
     が適切に作成されるようにしてください。
   </p>

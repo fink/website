@@ -4,7 +4,7 @@
 <article filename="index" lang="zh" >
 <title>Fink－文档</title>
 <shorttitle>文档</shorttitle>
-<cvsid>$Id: doc.zh.xml,v 1.15 2006/07/25 14:41:55 dmrrsn Exp $</cvsid>
+<cvsid>$Id: doc.zh.xml,v 1.16 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
 
 <preface>
 <p>
@@ -42,7 +42,7 @@ covers more advanced concepts than those covered in the User's Guide.</li>
 
 <ul>
 <li><varlink url="security/index.php" varurl="security/sec-policy.en.html"> 网络安全策略手册</varlink> - 所有在 Fink 中有管理软件包或打算向里面添加软件包的人都必须阅读。</li>
-<li><link url="http://fink.sourceforge.net/doc/UsingFink.pdf">使用 Fink：开发者使用指南</link>  (2MB pdf 文件，英文版) － 一组用于 <link url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X 大会</link>上演示的幻灯片（同时也有 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint 文件</link>版本）</li>
+<li><link url="http://www.finkproject.org/doc/UsingFink.pdf">使用 Fink：开发者使用指南</link>  (2MB pdf 文件，英文版) － 一组用于 <link url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X 大会</link>上演示的幻灯片（同时也有 <link url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint 文件</link>版本）</li>
 <li><varlink url="porting/index.php" varurl="porting/porting.zh.html">移植技巧提示</varlink> － 关于如何移植 Unix 软件到 Darwin 上的资料</li>
 <li><varlink url="quick-start-pkg/index.php" varurl="quick-start-pkg/quick-start-pkg.en.html">Packaging Tutorial</varlink> - a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.</li>
 <li><varlink url="packaging/index.php" varurl="packaging/packaging.zh.html">软件打包手册</varlink> － 如何创建和维护 Fink 软件包</li>

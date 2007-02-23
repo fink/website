@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Comment poster sur une liste de diffusion de Fink</title>
   <shorttitle>Etiquette net</shorttitle>
-  <cvsid>$Id: netiquette.fr.xml,v 1.2 2006/05/26 13:14:22 michga Exp $</cvsid>
+  <cvsid>$Id: netiquette.fr.xml,v 1.3 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
   <preface>
     <p><em>Ce document est en cours de rédaction.</em></p>
     <p>Ce document est un guide pour les nouveaux abonnés aux listes de diffusion de Fink. L'idée est de leur apprendre comment écrire des messages adéquats, de façon à susciter des réponses appropriées. </p>
@@ -109,7 +109,7 @@ gcc &lt;drapeaux, fichiers, etc...&gt;
       <title>Résiliation d'abonnement</title>
       <p><em>N</em>'envoyez pas de message sur la liste pour résilier votre abonnement.</p>
       <ol>
-        <li>Allez sur la page des <link url="http://fink.sourceforge.net/lists/index.php">Listes de diffusion</link>.  <p>Note :  n'utilisez pas la version MacOSX d'Internet Explorer.</p></li>
+        <li>Allez sur la page des <link url="http://www.finkproject.org/lists/index.php">Listes de diffusion</link>.  <p>Note :  n'utilisez pas la version MacOSX d'Internet Explorer.</p></li>
         <li>Sélectionnez le lien de la liste dont vous voulez résilier l'abonnement.</li>
         <li>Allez au bas la page, où il est indiqué :  <quote>To change your subscription (set options like digest and delivery modes, get a reminder of your password, or unsubscribe), enter your subscription email address:</quote>, et saisissez l'adresse email sur laquelle vous recevez le courrier Fink, puis cliquez sur le bouton <quote>Edit Options</quote>.</li>
         <li>En haut à gauche de la page qui s'ouvrira, vous trouverez un champ dans lequel vous pourrez résilier votre abonnement.</li>

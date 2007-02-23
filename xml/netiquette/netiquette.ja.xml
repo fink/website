@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
   <title>Fink メーリングリスト投稿時の注意</title>
   <shorttitle>ネチケット</shorttitle>
-  <cvsid>$Id: netiquette.ja.xml,v 1.1 2004/05/30 14:27:03 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: netiquette.ja.xml,v 1.2 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
   <preface>
     <p><em>この文書は書きかけです．</em></p>
     <p>この文書は，Fink メーリングリストへ初めて投稿する方を対象としたガイドラインです．
@@ -143,7 +143,7 @@ gcc &lt;flags, files etc.&gt;
       <title>定期購読の解除はどうしたらいいですか?</title>
       <p>購読解除のメールはリストに送ら<em>ない</em>でください．</p>
       <ol>
-        <li><link url="http://fink.sourceforge.net/lists/index.php">メーリングリスト</link> ページに行く．
+        <li><link url="http://www.finkproject.org/lists/index.php">メーリングリスト</link> ページに行く．
 		<p>注記: MacOSX 版の Internet Explorer は使わないでください．</p></li>
         <li>購読解除したいリストのリンクを辿る．</li>
         <li>ページ下部の:  

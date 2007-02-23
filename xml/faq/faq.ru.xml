@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Часто задаваемые вопросы Fink </title>
     <shorttitle>Ч.З.В.</shorttitle>
-    <cvsid>$Id: faq.ru.xml,v 1.9 2007/01/18 02:16:18 babayoshihiko Exp $</cvsid>
+    <cvsid>$Id: faq.ru.xml,v 1.10 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
     <preface>
         <p>Ниже вы найдете список Ч.З.В. о Fink. Как и большинство
             Ч.З.В., некоторые из них реальные, а некоторые
@@ -354,7 +354,7 @@
                     Имейте в виду, что вы должны выполнить эту команду в качестве суперпользователя, если хотите выбрать
                     и инсталлировать пакеты в dselect.</p>
                 <p>Также на веб-сайте есть <link
-                        url="http://fink.sourceforge.net/pdb/">база данных
+                        url="http://pdb.finkproject.org/pdb/">база данных
                     по пакетам</link>.</p>
             </answer>
         </faqentry>
@@ -470,7 +470,7 @@
             </question>
             <answer>
                 <p>И то, и другое правильно. <link
-                        url="http://fink.sourceforge.net/pdb/">База данных по пакетам
+                        url="http://pdb.finkproject.org/pdb/">База данных по пакетам
                     </link> знает о каждом пакете, включая пакеты,
                     которые все еще находятся в нестабильном разделе. Инструменты
                     <code>dselect</code> и <code>apt-get</code>, с другой стороны,
@@ -802,7 +802,7 @@ fink selfupdate-cvs</codeblock>
                 <codeblock>printenv PATH</codeblock>
                 <p>Если<filename>/sw/sbin</filename> не появится совсем, надо
                     настроить свою среду согласно - <link
-                    url="http://fink.sourceforge.net/doc/users-guide/install.php#setup">инструкциям</link> в Руководстве пользователя.
+                    url="http://www.finkproject.org/doc/users-guide/install.php#setup">инструкциям</link> в Руководстве пользователя.
                     Если <filename>/sw/sbin</filename> есть,
                     но впереди находятся другие каталоги (н-р
                     <filename>/usr/local/bin</filename>), то вам надо либо реорганизовать 
@@ -841,7 +841,7 @@ fink selfupdate-cvs</codeblock>
                     точно знаете, что версия в бинарной дистрибуции
                     такая же, как инсталлированная версия (н-р
                     проверив <link
-                        url="http://fink.sourceforge.net/pdb/index.php">package
+                        url="http://pdb.finkproject.org/pdb/index.php">package
                     database</link>), можно получить файл .deb, применив
                         <code>sudo apt=get install --reinstall --download-only <em>packagename</em>
                     </code>. В противном случае вы можете построить ее с помощью
@@ -1162,7 +1162,7 @@ page and on http://fontconfig.org.</codeblock>
       <answer>
         <p>This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p>
         <codeblock>sudo rm -rf /sw</codeblock>
-        <p>and then download the disk image for Intel machines from <link url="http://fink.sourceforge.net/download/index.php">the downloads page</link>.</p>
+        <p>and then download the disk image for Intel machines from <link url="http://www.finkproject.org/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
     <faqentry name="sf-cvs-2006">
@@ -1640,9 +1640,9 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
                     вы не получите ответа от координатора, если увидите новые пакеты
                     или захотите попробовать сами другую опцию, см. 
                         <link
-                        url="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Пособие по
+                        url="http://www.finkproject.org/doc/quick-start-pkg/index.php">Пособие по
                     пакетированию</link> и <link
-                        url="http://fink.sourceforge.net/doc/packaging/index.php">Учебник по пакетированию</link>.</p>
+                        url="http://www.finkproject.org/doc/packaging/index.php">Учебник по пакетированию</link>.</p>
                 <p>
                     <em>Прим.: </em>Fink сознательно создан таким образом, чтобы все
                     официальные бинарные файлы были идентичными, независимо от того, на какой машине
@@ -1755,7 +1755,7 @@ endif</codeblock>
                     xfree86"--последняя версия (XFree86-4.4.x от 25 мая
                     2004 г.) пока еще не в бинарном distro и на данный момент находится только
                     на нестабильном дереве [см. <link
-                        url="http://fink.sourceforge.net/faq/usage-fink.php#unstable\">как
+                        url="http://www.finkproject.org/faq/usage-fink.php#unstable\">как
                         инсталлировать нестабильные пакеты</link>].</p>
             </answer>
         </faqentry>
@@ -1901,7 +1901,7 @@ preventing you from updating <code>gettext</code>.</p>
                 <p>Ничего страшного, просто это значит, что программа будет использовать
                     сообщения, форматы дат и т.д. по умолчанию на английском языке. Программа
                     будет работать нормально, но иным образом. См. документ "Выполнение X11" 
-                    в <link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale"></link>.</p>
+                    в <link url="http://www.finkproject.org/doc/x11/trouble.php#locale"></link>.</p>
             </answer>
         </faqentry>
         <faqentry name="passwd">
@@ -2077,7 +2077,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
                 </ul>
                 <p>Есть также другие варианты. Более подробно
                     см. в документе <link
-                        url="http://fink.sourceforge.net/doc/x11/index.php">Выполнение
+                        url="http://www.finkproject.org/doc/x11/index.php">Выполнение
                          X11</link>.</p>
             </answer>
         </faqentry>
@@ -2262,7 +2262,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
             <answer>
                 <p>Не паникуйте. Документ "Выполнение X11" сейчас имеет большой раздел
                         <link
-                        url="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">Выявление и устранение проблем
+                        url="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">Выявление и устранение проблем
                     </link> по данному общему вопросу.</p>
             </answer>
         </faqentry>

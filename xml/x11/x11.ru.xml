@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Использование X11 в Darwin и Mac OS X</title>
     <shorttitle>Использование X11</shorttitle>
-    <cvsid>$Id: x11.ru.xml,v 1.1 2005/02/17 05:00:35 horsager Exp $</cvsid>
+    <cvsid>$Id: x11.ru.xml,v 1.2 2007/02/23 22:04:57 rangerrick Exp $</cvsid>
     <preface>
         <p> Данный документ посвящен использованию X11 / XFree86 / Xtools в Mac
             OS X и Darwin Apple. В нем вы найдете введение, историю создания продукта, а также отражение
@@ -119,7 +119,7 @@
                 обеспечивают такие дополнительные функции, как всплывающие меню в
                 корневом окне, стыковки и кнопки запуска.</p>
             <p> Для Fink скомпилированы многие менеджеры окон  - см. <link
-                    url="http://fink.sourceforge.net/pdb/section.php/x11-wm">
+                    url="http://pdb.finkproject.org/pdb/section.php/x11-wm">
                     текущий список.</link>
             </p>
         </section>
@@ -143,11 +143,11 @@
                 (и других базовых библиотек) разработанное для данной среды приложение
                 работает с небольшими функциональными потерями или вовсе
                 без них. Примером служит растущий <link
-                    url="http://fink.sourceforge.net/pdb/section.php/gnome">
+                    url="http://pdb.finkproject.org/pdb/section.php/gnome">
                     выбор приложений GNOME</link>, которые можно
                 инсталлировать и использовать без применения GNOME. К сожалению,
                     это <link
-                    url="http://fink.sourceforge.net/faq/usage-fink.php#kde">
+                    url="http://www.finkproject.org/faq/usage-fink.php#kde">
                     достижение пока не распространяется </link>на <link
                     url="http://www.kde.org/">приложения KDE.</link>
             </p>
@@ -277,7 +277,7 @@
                 основана на XFree86-4.3.</p>
             <p> Перед использованием бинарных файлов Apple надо удостовериться, что инсталлирован пакет <em>X11
                 User</em>, а также <link
-                url="http://fink.sourceforge.net/doc/users-guide/upgrade.php">обновить</link> Fink.</p>
+                url="http://www.finkproject.org/doc/users-guide/upgrade.php">обновить</link> Fink.</p>
             <p>Для версии <code>fink-0.16.2</code> вам надо будет также инсталлировать пакет
                     <em>X11 SDK</em>. После этого Fink
                 создаст виртуальный пакет <code>system-xfree86</code>.</p>

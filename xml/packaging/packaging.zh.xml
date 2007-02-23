@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.29 2007/01/18 02:16:52 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.30 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
 
 <preface>
 <p>
@@ -18,7 +18,7 @@
 <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>
 邮件列表。
 如果你希望帮助 Fink 项目，而你在这方面又有专长，你可以考虑选择接受一个
-<link url="http://fink.sourceforge.net/pdb/nomaintainer.php">尚未有维护人员的软件包。</link>
+<link url="http://pdb.finkproject.org/pdb/nomaintainer.php">尚未有维护人员的软件包。</link>
 </p>
 </preface>
 
@@ -1875,7 +1875,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</codeblock>
 <em>仅仅</em>在你肯定需要软件包需要它的时候才这样做。
 有些软件包会因为替换不正确版本的 libtool 脚本而被破坏。
 查看<link
-url="http://fink.sourceforge.net/doc/porting/libtool.php">libtool
+url="http://www.finkproject.org/doc/porting/libtool.php">libtool
 网页</link>获取更进一步的信息。
 </p>
 </itemd></item>

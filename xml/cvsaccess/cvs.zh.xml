@@ -4,7 +4,7 @@
 <article filename="index" lang="zh" fsroot="../../">
 <title>设置 Fink CVS 访问</title>
 <shorttitle>Fink CVS 访问</shorttitle>
-<cvsid>$Id: cvs.zh.xml,v 1.3 2006/05/25 19:57:40 dmrrsn Exp $</cvsid>
+<cvsid>$Id: cvs.zh.xml,v 1.4 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
 
 <preface>
 <p>
@@ -30,7 +30,7 @@ url="http://fink.cvs.sourceforge.net/fink/">《查看 CVS》</link>）包含软�
 <p>Fink 会为你执行必需的步骤。
 这包括获取最新一套软件包描述文件，以及更新一些重要的核心软件包（中间包括 Fink 软件包管理器）。
 </p>
-<p>如果你在防火墙之后，参考<link url="http://fink.sourceforge.net/faq/usage-fink.php#proxy">《常见疑问 3.2》</link>。
+<p>如果你在防火墙之后，参考<link url="http://www.finkproject.org/faq/usage-fink.php#proxy">《常见疑问 3.2》</link>。
 </p>
 <p>在你这样更新了你的软件包描述之后，你可以接着更新你的软件包到最新的版本。这可以使用下面的命令：
 </p>

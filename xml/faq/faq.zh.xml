@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.26 2007/01/18 02:16:18 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.27 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -280,7 +280,7 @@ gcc 3.3 compiler is out of date.&quot; 我应该怎么办？</p>
 注意，如果你需要从 dselect 中选择和安装软件包，你需要以 root 权限运行它。
 </p>
         <p>
-另外，在网站上也有一个<link url="http://fink.sourceforge.net/pdb/" >软件包数据库</link>。
+另外，在网站上也有一个<link url="http://pdb.finkproject.org/pdb/" >软件包数据库</link>。
 </p>
       </answer>
     </faqentry>
@@ -377,7 +377,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
       <answer>
         <p>
 都正确。
-<link url="http://fink.sourceforge.net/pdb/" >软件包数据</link>
+<link url="http://pdb.finkproject.org/pdb/" >软件包数据</link>
 知道每一个软件包，包括那些仍处于不稳定阶段的。
 <code>dselect</code> 和 <code>apt-get</code> 工具则只知道那些可用的经过预编译的二进制软件包。
 许多软件包因为各种原因所以没有提供预编译的二进制版本。
@@ -643,7 +643,7 @@ fink selfupdate-cvs</codeblock>
       <answer>
         <p>这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p>
         <codeblock>printenv PATH</codeblock>
-        <p>如果输出里面没有 <filename>/sw/sbin</filename>，那么你需要按照用户指南中的<link url="http://fink.sourceforge.net/doc/users-guide/install.php#setup" >方法</link>来设置你的环境变量。如果有 <filename>/sw/sbin</filename>，但有其它目录在它前面（比如 <filename>/usr/local/bin</filename>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <filename>/sw/sbin</filename> 排在前面。或者如果你的确需要把其它目录放在 <filename>/sw/sbin</filename> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <filename>install-info</filename> 子目录。</p>
+        <p>如果输出里面没有 <filename>/sw/sbin</filename>，那么你需要按照用户指南中的<link url="http://www.finkproject.org/doc/users-guide/install.php#setup" >方法</link>来设置你的环境变量。如果有 <filename>/sw/sbin</filename>，但有其它目录在它前面（比如 <filename>/usr/local/bin</filename>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <filename>/sw/sbin</filename> 排在前面。或者如果你的确需要把其它目录放在 <filename>/sw/sbin</filename> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <filename>install-info</filename> 子目录。</p>
       </answer>
     </faqentry>
     <faqentry name="bad-list-file" >
@@ -661,7 +661,7 @@ fink selfupdate-cvs</codeblock>
         <p>例如</p>
         <codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
         <p>如果你获得了一列目录和文件，那么你的 .deb 是正确的。如果输出是目录和文件以外的其它东西，或者你没有 .deb 文件，你仍然可以继续操作，因为这个错误不会影响构建。</p>
-        <p>如果你是从二进制包进行安装或你肯定知道二进制包里面的版本和你已经安装的版本一致（比如，通过检查<link url="http://fink.sourceforge.net/pdb/index.php" >软件包数据库</link>），你可以用下面的办法获取一个 .deb 文件： <code>sudo apt=get install --reinstall --download-only <em>软件包名</em>
+        <p>如果你是从二进制包进行安装或你肯定知道二进制包里面的版本和你已经安装的版本一致（比如，通过检查<link url="http://pdb.finkproject.org/pdb/index.php" >软件包数据库</link>），你可以用下面的办法获取一个 .deb 文件： <code>sudo apt=get install --reinstall --download-only <em>软件包名</em>
           </code>。否则你也可以用下面的办法自己从源代码重新构建一个：<code>fink rebuild <em>软件包名</em>
           </code>，但它暂时还不能安装。</p>
         <p>一旦你有了一个正常的 .deb 文件，你可以重新安装文件。首先用下面的命令成为 root 用户：<code>sudo -s</code>（有需要的话，输入你的管理员密码），然后使用下面的命令（我们把它分行以方便阅读，但实际使用的时候，你应该在一行里面输入）：</p>
@@ -722,7 +722,7 @@ fink selfupdate-cvs</codeblock>
         <p>我看不到要升级的 Fink 版本。</p>
       </question>
       <answer>
-        <p>在这种情况下，参考<link url="http://fink.sourceforge.net/download/fix-upgrade.php" >特别指引</link>。</p>
+        <p>在这种情况下，参考<link url="http://www.finkproject.org/download/fix-upgrade.php" >特别指引</link>。</p>
         <!-- start translation -->
         <ul>
           <li><em>10.3.x:</em> (0.7.1 distribution)
@@ -933,7 +933,7 @@ page and on http://fontconfig.org.</codeblock>
       <answer>
         <p>This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p>
         <codeblock>sudo rm -rf /sw</codeblock>
-        <p>and then download the disk image for Intel machines from <link url="http://fink.sourceforge.net/download/index.php">the downloads page</link>.</p>
+        <p>and then download the disk image for Intel machines from <link url="http://www.finkproject.org/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
     <faqentry name="sf-cvs-2006">
@@ -1293,7 +1293,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>I want Fink to use different options in building a package.</p>
       </question>
       <answer>
-        <p>The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <link url="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</link> and <link url="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</link>.</p>
+        <p>The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <link url="http://www.finkproject.org/doc/quick-start-pkg/index.php">Packaging Tutorial</link> and <link url="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</link>.</p>
         <p>
           <em>Note:  </em>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p>
       </answer>
@@ -1372,7 +1372,7 @@ endif</codeblock>
         <p>如果你正在使用的是苹果的 X11，同时也删除 X11 程序。</p>
         <p>3. 要获取 XFree86-4.2.1，用通常的办法安装 Fink 的 <code>xfree86-base</code> 和 <code>xfree86-rootless</code> 软件包：对使用源代码安装的用户　&quot;<code>fink install</code>&quot;；对二进制安装的用户 &quot;<code>apt-get install</code>&quot; 或 <code>dselect</code>。</p>
         <p>或</p>
-        <p>3a. 要获取 XFree86-4.3.x 或更高版本，使用 &quot;fink install xfree86&quot; 安装 Fink 的 <code>xfree86</code> 软件包，最新版本(2004年5月25日的 XFree86-4.4.x 版本)目前还没有二进制安装版发布，而且仅有未稳定的版本[参阅 <link url="http://fink.sourceforge.net/faq/usage-fink.php#unstable">how to install unstable package</link>]。</p>
+        <p>3a. 要获取 XFree86-4.3.x 或更高版本，使用 &quot;fink install xfree86&quot; 安装 Fink 的 <code>xfree86</code> 软件包，最新版本(2004年5月25日的 XFree86-4.4.x 版本)目前还没有二进制安装版发布，而且仅有未稳定的版本[参阅 <link url="http://www.finkproject.org/faq/usage-fink.php#unstable">how to install unstable package</link>]。</p>
       </answer>
     </faqentry>
     <faqentry name="change-thread-nothread" >
@@ -1510,7 +1510,7 @@ preventing you from updating <code>gettext</code>.</p>
         <p>
 没有什么问题，它只是表示程序会使用默认的英语信息提示，日期格式等。
 程序其它的功能应该是正常的。
-X11 文档有更多的<link url="http://fink.sourceforge.net/doc/x11/trouble.php#locale" >细节</link>。
+X11 文档有更多的<link url="http://www.finkproject.org/doc/x11/trouble.php#locale" >细节</link>。
 </p>
       </answer>
     </faqentry>
@@ -1609,7 +1609,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
             <p>苹果的 4.2.x 版（假设你安装了用户和 SDK 软件包）： <code>system-xfree86</code> 软件包是自动产生的，不要去安装它。(注意苹果的 X11 Jaguar 公开测试版已经不再提供，所以除非你在以前可以获得的时候已经安装了它，这才可以是一个选择。</p>
           </li>
         </ul>
-        <p>还有另外一些选择。在 <link url="http://fink.sourceforge.net/doc/x11/index.php" >运行 X11 的文档</link>里面有专门的叙述。</p>
+        <p>还有另外一些选择。在 <link url="http://www.finkproject.org/doc/x11/index.php" >运行 X11 的文档</link>里面有专门的叙述。</p>
       </answer>
     </faqentry>
     <faqentry name="no-display" >
@@ -1760,7 +1760,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
       <answer>
         <p>
 不要惊慌。
-现在《运行 X11》文档有专门一部分<link url="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit" >《故障排除》</link>针对这个常见问题。
+现在《运行 X11》文档有专门一部分<link url="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit" >《故障排除》</link>针对这个常见问题。
 </p>
       </answer>
     </faqentry>
