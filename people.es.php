@@ -1,7 +1,7 @@
-﻿<?
+<?
 $title = "Contributors";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/02/21 03:17:16 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2007/02/23 06:32:06 $';
 
 include "header.inc";
 ?>
@@ -42,7 +42,13 @@ consideraremos incluirte en la siguiente revision de la lista.</p>
 <li>Daniel Macks (<i>dmacks</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
+<li>Christian Schaffner (<i>chris01</i>)</li>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
+</ul>
+
+<h2>User Liaison</h2>
+<ul>
+<li>Alexander Hansen  (<i>akh</i>) </li> <!-- support work on mailing lists! -->
 </ul>
 
 <h2>Administración y RP.</h2>
@@ -90,7 +96,6 @@ consideraremos incluirte en la siguiente revision de la lista.</p>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
 <li>Andrew Rohl</li> 
 <li>Lars Rosengreen</li>
-<li>Christian Schaffner (<i>chris01</i>)</li>
 <li>Michael G. Schwern</li>
 <li>W. G. Scott</li>
 <li>Masanori Sekino (<i>msek</i>)</li>
@@ -121,7 +126,6 @@ consideraremos incluirte en la siguiente revision de la lista.</p>
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
 <li>Claudio Garguilo</li>
 <li>Michèle Garoche</li>
-<li>Alexander Hansen  (<i>akh</i>) </li> <!-- support work on mailing lists! -->
 <li>Jeff Horsager</li>
 <li>Felix Kühne</li>
 <li>Apostolos Karakoussis</li>
