@@ -1,7 +1,7 @@
 <?
-/* $Id: header.inc,v 1.10 2006/06/28 16:40:00 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.11 2007/02/23 06:58:59 dmrrsn Exp $ */
 
-$linkroot = "http://fink.sourceforge.net/";
+$linkroot = "http://www.finkproject.org/";
 
 $server = $_SERVER['SERVER_NAME'];
 $uri = $_SERVER['REQUEST_URI'];
