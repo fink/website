@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Intro";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/01/19 22:09:48';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="history.php?phpLang=fr" title="Historique"><link rel="prev" href="index.php?phpLang=fr" title="Utilisation de X11 Contents">';
 
 
@@ -48,7 +48,7 @@ include_once "header.fr.inc";
 
 <p>Dans la plupart des environnements graphiques, l'aspect des cadres de fenêtres (barre de titre, bouton de fermeture, etc...) est défini par le système. Sous X11, il en va autrement. Dans cet environnement, les cadres de fenêtres (aussi nommés "ornements") sont fournis par un programme distinct, appelé le gestionnaire de fenêtres. À bien des égards, le gestionnaire de fenêtres n'est autre qu'une application client ; il est lancé de la même façon et dialogue avec le serveur X au travers des mêmes canaux.</p>
 <p>Vous avez le choix entre une multitude de gestionnaires de fenêtres. Le site <a href="http://www.xwinman.org/">xwinman.org</a> en donne la liste complète. Les plus populaires sont ceux qui permettent à l'utilisateur de personnaliser leur apparence via ce qu'on appelle des <a href="http://www.themes.org/">thèmes</a>. La plupart des gestionnaires de fenêtres fournissent d'autres fonctionnalités, comme les menus déroulants dans la fenêtre racine, les docks et les boutons de lancement.</p>
-<p>De nombreux gestionnaires de fenêtres ont été compilés pour Fink ; en voici la <a href="http://fink.sourceforge.net/pdb/section.php/x11-wm">liste actuelle</a>.</p>
+<p>De nombreux gestionnaires de fenêtres ont été compilés pour Fink ; en voici la <a href="http://pdb.finkproject.org/pdb/section.php/x11-wm">liste actuelle</a>.</p>
 
 <h2><a name="desktop">1.9 Que sont Quartz/Aqua, Gnome et KDE ?</a></h2>
 
@@ -57,7 +57,7 @@ include_once "header.fr.inc";
 <p>un gestionnaire de fenêtre : <a href="http://sawmill.sourceforge.net/">sawfish</a></p>
 <p>un bureau : <a href="http://www.gnome.org/">Gnome</a></p>
 <p>La frontière entre moteur d'affichage graphique, gestionnaire de fenêtres et bureau est floue, car une même fonctionnalité (ou une fonctionnalité similaire) peut être implémentée par l'un de ces environnements ou plusieurs d'entre eux. C'est une des raisons pour laquelle un gestionnaire de fenêtres particulier peut ne pas fonctionner avec un environnement de bureau donné.</p>
-<p>De nombreuses applications sont développées pour être intégrées dans un environnement de bureau spécifique. Très souvent, il suffit d'installer les librairies de l'environnement de bureau (et les librairies sous-jacentes) avec lesquelles l'application a été développée pour qu'elle fonctionne (quasi) sans perte de fonctionnalités. Par exemple, un nombre de plus en plus grand d'<a href="http://fink.sourceforge.net/pdb/section.php/gnome">applications GNOME</a> fonctionnent hors de l'environnement GNOME. Malheureusement, <a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">ce n'est pas encore le cas</a> pour les <a href="http://www.kde.org/">applications KDE</a>.</p>
+<p>De nombreuses applications sont développées pour être intégrées dans un environnement de bureau spécifique. Très souvent, il suffit d'installer les librairies de l'environnement de bureau (et les librairies sous-jacentes) avec lesquelles l'application a été développée pour qu'elle fonctionne (quasi) sans perte de fonctionnalités. Par exemple, un nombre de plus en plus grand d'<a href="http://pdb.finkproject.org/pdb/section.php/gnome">applications GNOME</a> fonctionnent hors de l'environnement GNOME. Malheureusement, <a href="http://www.finkproject.org/faq/usage-fink.php#kde">ce n'est pas encore le cas</a> pour les <a href="http://www.kde.org/">applications KDE</a>.</p>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="history.php?phpLang=fr">2. Historique</a></p>

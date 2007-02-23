@@ -1,14 +1,14 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/07/25 14:41:55';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentation</h1>
-<!--Generated from $Fink: doc.en.xml,v 1.17 2006/07/25 14:41:55 dmrrsn Exp $-->
+<!--Generated from $Fink: doc.en.xml,v 1.18 2007/02/23 22:04:54 rangerrick Exp $-->
     <p>
 This is a collection of various documents written for Fink.
 Some of the documents may also be useful to people who use Mac OS X
@@ -51,7 +51,7 @@ releases</li>
     <ul>
       <li><a href="security/index.php">Security Policy Manual</a> - 
 	  Mandatory read for all of those who either maintain packages in Fink or would like to add their own.</li>
-      <li><a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</a> (2MB pdf
+      <li><a href="http://www.finkproject.org/doc/UsingFink.pdf">Using Fink: A Developer's How To</a> (2MB pdf
 file) - slides from a presentation at the <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X Conference</a> (also available as a
 <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint file</a>) </li>
       <li><a href="porting/index.php">Porting Tips</a> - notes for porting

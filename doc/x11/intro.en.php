@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:22:16';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
 
@@ -147,7 +147,7 @@ up menus in the root window, docks or launch buttons.
 </p>
       <p>
 Many window managers have been packaged for Fink; here is a
-<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm">    
+<a href="http://pdb.finkproject.org/pdb/section.php/x11-wm">    
 current list.
 </a>
       </p>
@@ -180,12 +180,12 @@ Most often by installing the libraries for the desktop environment
 (and the other underlying libraries) that an application was developed 
 for, the application will work with limited or no function loss.  
 Examples are the increasing 
-<a href="http://fink.sourceforge.net/pdb/section.php/gnome">
+<a href="http://pdb.finkproject.org/pdb/section.php/gnome">
 selection of GNOME applications 
 </a>
 available to be installed and run without running GNOME.  
 Unfortunately, the same 
-<a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">
+<a href="http://www.finkproject.org/faq/usage-fink.php#kde">
 progress is not quite yet able to be made
 </a>
 with <a href="http://www.kde.org/">KDE applications.</a>

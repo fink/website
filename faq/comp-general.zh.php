@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 编译（１）";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包"><link rel="prev" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink">';
 
 
@@ -196,7 +196,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="compile-options">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.22: I want Fink to use different options in building a package.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Packaging Tutorial</a> and <a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>.</p><p>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">Packaging Tutorial</a> and <a href="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</a>.</p><p>
           <b>Note:  </b>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p></div>
     </a>
     <a name="gettext">

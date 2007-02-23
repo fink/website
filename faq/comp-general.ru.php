@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Компиляция (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-packages.php?phpLang=ru" title="Проблемы компиляции - специальные пакеты"><link rel="prev" href="usage-fink.php?phpLang=ru" title="Инсталляция, использование и поддержка Fink">';
 
 
@@ -317,8 +317,8 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
                     о варианте. Это может быть относительно легко. Если
                     вы не получите ответа от координатора, если увидите новые пакеты
                     или захотите попробовать сами другую опцию, см. 
-                        <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Пособие по
-                    пакетированию</a> и <a href="http://fink.sourceforge.net/doc/packaging/index.php">Учебник по пакетированию</a>.</p><p>
+                        <a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">Пособие по
+                    пакетированию</a> и <a href="http://www.finkproject.org/doc/packaging/index.php">Учебник по пакетированию</a>.</p><p>
                     <b>Прим.: </b>Fink сознательно создан таким образом, чтобы все
                     официальные бинарные файлы были идентичными, независимо от того, на какой машине
                     они созданы, и таким образом явления типа оптимизации G5 не произойдут

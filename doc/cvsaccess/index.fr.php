@@ -1,14 +1,14 @@
 <?
 $title = "Accès CVS à Fink";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/05/25 19:57:40';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Configuration de l'accès à Fink via CVS</h1>
-<!--Generated from $Fink: cvs.fr.xml,v 1.7 2006/05/25 19:57:40 dmrrsn Exp $-->
+<!--Generated from $Fink: cvs.fr.xml,v 1.8 2007/02/23 22:04:54 rangerrick Exp $-->
 <p>Fink est développé via CVS. Cela vous permet de rester à jour entre deux versions et d'avoir toujours les paquets les plus récents. Cette page vous explique comment configurer une installation Fink existante pour qu'elle puisse être mise à jour via CVS. Les informations ci-dessous sont applicables à la version 0.3.x de Fink et aux versions ultérieures.</p>
 <h2><a name="">Structure CVS de Fink</a></h2>
 <p>Fink comporte plusieurs modules CVS. Le module <code>dists</code> (<a href="http://fink.cvs.sourceforge.net/fink/">ViewCVS</a>) contient les descriptions de paquets et les rustines pour Mac OS X versions 10.2 et ultérieures. Il existe d'autres modules pour les développeurs de Fink. Vous pouvez les afficher, mais ils n'ont aucun intérêt pour la plupart des utilisateurs.</p>
@@ -16,7 +16,7 @@ include_once "header.inc";
 <p>Auparavant, la procédure était compliquée ; mais, avec la version actuelle de Fink, elle s'est grandement simplifiée. Il suffit de lancer cette commande :</p>
 <pre>fink selfupdate-cvs</pre>
 <p>Fink exécute alors automatiquement toutes les étapes nécessaires. Il récupère les descriptions de paquets les plus récentes et met à jour un certain nombre de paquets fondamentaux (dont le gestionnaire de paquets Fink).</p>
-<p>Si vous êtes derrière un mur pare-feu, consultez <a href="http://fink.sourceforge.net/faq/usage-fink.php#proxy">QFP 3.2</a>.</p>
+<p>Si vous êtes derrière un mur pare-feu, consultez <a href="http://www.finkproject.org/faq/usage-fink.php#proxy">QFP 3.2</a>.</p>
 <p>Après avoir ainsi mis à jour les descriptions de paquets, vous pouvez mettre à jour les paquets. Pour ce faire, lancez la commande suivante :</p>
 <pre>fink update-all</pre>
 <h2><a name="">Mise à jour du gestionnaire de paquets</a></h2>

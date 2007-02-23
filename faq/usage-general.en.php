@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 
@@ -16,7 +16,7 @@ include_once "header.en.inc";
         library". Is that bad?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> It's not bad, it just means that the program will use the default
         English messages, date formats, etc. The program will function
-        normally otherwise. The Running X11 document has <a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale">details</a>.</p></div>
+        normally otherwise. The Running X11 document has <a href="http://www.finkproject.org/doc/x11/trouble.php#locale">details</a>.</p></div>
     </a>
     <a name="passwd">
       <div class="question"><p><b><? echo FINK_Q ; ?>8.2: There are suddenly a number of strange users on my system, with
@@ -131,7 +131,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(assuming that the build system is 
             <p>4.2.x from Apple (assuming you have the User + SDK packages installed): the <code>system-xfree86</code> package is automatically generated for current versions of Fink; do NOT install it. (Note that the public beta of Apple's X11 for Jaguar is no longer available, so this is only an option for you if you already have this installed, from the time in which it was available.)</p>
           </li>
         </ul><p>There are other options, as well. There is a more extensive
-        treatment in the <a href="http://fink.sourceforge.net/doc/x11/index.php">Running X11
+        treatment in the <a href="http://www.finkproject.org/doc/x11/index.php">Running X11
         document</a>.</p></div>
     </a>
     <a name="no-display">

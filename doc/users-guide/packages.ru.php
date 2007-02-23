@@ -1,7 +1,7 @@
 <?
 $title = "Руководство пользователя - Пакеты";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/05 05:05:08';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="upgrade.php?phpLang=ru" title="Обновление Fink"><link rel="prev" href="install.php?phpLang=ru" title="Первоначальная инсталляция">';
 
 
@@ -161,7 +161,7 @@ include_once "header.ru.inc";
                 продолжит выполнение действий и скачает исходный код, распакует его, сделает патчи,
                 компиляцию и инсталлирует результаты в вашей системе. Это может
                 занять много времени. Если в течение этого процесса возникнут ошибки,
-                сначала обратитесь к <a href="http://fink.sourceforge.net/faq/">Ч.З.В.</a>. </p>
+                сначала обратитесь к <a href="http://www.finkproject.org/faq/">Ч.З.В.</a>. </p>
             <p> Для версий <code>fink</code> начиная с 0.23.0 можно попытаться
                 скачать имеющиеся предварительно скомпилированные бинарные пакеты,
                 вместо того чтобы создавать их. Просто перенесите опцию <a href="usage.php?phpLang=ru#options">--use-binary-dist (или -b)</a> в
@@ -192,7 +192,7 @@ include_once "header.ru.inc";
         <h2><a name="available-versions">3.6 Имеющиеся версии</a></h2>
             
             <p>Если вы хотите инсталлировать пакет, сначала надо проверить
-                    <a href="http://fink.sourceforge.net/pdb/index.php">базу данных
+                    <a href="http://pdb.finkproject.org/pdb/index.php">базу данных
                 по пакетам</a> и посмотреть, можно ли это сделать через Fink.
                 Имеющиеся версии пакета отражены в нескольких
                 строках таблицы. А именно:</p>
@@ -219,7 +219,7 @@ include_once "header.ru.inc";
                         стабильная версия, инсталлируемая от
                         исходного кода для OS 10.2 с обновлением <code>gcc 3.3</code> для
                         Developer Tools. Для инсталляции этой версии вам
-                        может понадобиться активация доступа через <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a>
+                        может понадобиться активация доступа через <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a>
                         или rsync. Если вы не сделали обновление <code>gcc
                         3.3</code>, то можете не увидеть эту версию (или
                         даже сам пакет).</p>
@@ -241,7 +241,7 @@ include_once "header.ru.inc";
                         <b>current-10.2-gcc3.3 unstable:</b> последняя
                         нестабильная версия, которую можно инсталлировать от
                         исходного кода в OS 10.2 с <code>gcc 3.3</code>. Для ее инсталляции
-                        следуйте <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">инструкциям</a>
+                        следуйте <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">инструкциям</a>
                         по инсталляции нестабильных пакетов.</p>
                     <p>Прим.: нестабильность не обязательно значит, что их нельзя использовать, просто
                         инсталляция таких пакетов будет на ваш риск.</p>
@@ -294,7 +294,7 @@ include_once "header.ru.inc";
                 </li>
             </ul>
             <p> Для получения более подробной информации об инсталляции и использовании X11 см.
-                    документ <a href="http://fink.sourceforge.net/doc/x11/">X11 в
+                    документ <a href="http://www.finkproject.org/doc/x11/">X11 в
                     Darwin и Mac OS X</a>.</p>
         
     <p align="right"><? echo FINK_NEXT ; ?>:

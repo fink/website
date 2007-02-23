@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/12/13 17:55:08';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 
@@ -188,7 +188,7 @@ Then it goes ahead and downloads source code, unpacks it, patches it,
 compiles it, and installs the results on your system.
 This can take a long time.
 If you run into errors during that process, please first check the
-<a href="http://fink.sourceforge.net/faq/">FAQ</a>.
+<a href="http://www.finkproject.org/faq/">FAQ</a>.
       </p>
       <p>
 For <code>fink</code> versions since 0.23.0 you can tell it to try to download
@@ -218,7 +218,7 @@ More details about the <code>fink</code> tool are available in the chapter
     
     <h2><a name="available-versions">3.6 Available versions</a></h2>
       
-      <p>When you want to install a package, you should first check the <a href="http://fink.sourceforge.net/pdb/index.php">package database</a> and see if it is available at all through Fink.  The available version(s) of the package will be shown in several rows of a table.  These are:</p>
+      <p>When you want to install a package, you should first check the <a href="http://pdb.finkproject.org/pdb/index.php">package database</a> and see if it is available at all through Fink.  The available version(s) of the package will be shown in several rows of a table.  These are:</p>
       <ul>
         <li>Binary Distribution
 <ol>
@@ -239,7 +239,7 @@ More details about the <code>fink</code> tool are available in the chapter
 <ol>
             <li>
           <p>
-            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from the stable source tree for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
+            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from the stable source tree for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
           <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS or rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
@@ -250,7 +250,7 @@ on PowerPC hardware.</p></li>
 on intel hardware.</p></li>
             <li>
           <p>
-            <b>10.2-gcc3.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
+            <b>10.2-gcc3.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
           <p>Note:  <b>unstable</b> doesn't necessarily mean <b>unusable</b>, but install such packages at your own risk.
 </p>
         </li>
@@ -299,7 +299,7 @@ dependency placeholders.
       </ul>
       <p>
 For more information on installing and running X11, refer to the
-<a href="http://fink.sourceforge.net/doc/x11/">X11 on Darwin
+<a href="http://www.finkproject.org/doc/x11/">X11 on Darwin
 and Mac OS X document</a>.
 </p>
     

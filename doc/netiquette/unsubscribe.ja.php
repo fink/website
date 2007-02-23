@@ -1,7 +1,7 @@
 <?
 $title = "ネチケット - 購読解除";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2004/05/30 14:27:03';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ネチケット Contents"><link rel="prev" href="reply.php?phpLang=ja" title="投稿への返信">';
 
 
@@ -14,7 +14,7 @@ include_once "header.ja.inc";
       
       <p>購読解除のメールはリストに送ら<b>ない</b>でください．</p>
       <ol>
-        <li><a href="http://fink.sourceforge.net/lists/index.php">メーリングリスト</a> ページに行く．
+        <li><a href="http://www.finkproject.org/lists/index.php">メーリングリスト</a> ページに行く．
 		<p>注記: MacOSX 版の Internet Explorer は使わないでください．</p></li>
         <li>購読解除したいリストのリンクを辿る．</li>
         <li>ページ下部の:  

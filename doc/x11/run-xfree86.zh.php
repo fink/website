@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 启动 X11";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:23:46';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="xtools.php?phpLang=zh" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=zh" title="获取和安装 X11">';
 
 
@@ -86,7 +86,7 @@ include_once "header.zh.inc";
     <h2><a name="applex11tools">4.5 The applex11tools package</a></h2>
       
       <p>Fink's <code>applex11tools</code> package allows the use of <code>X11.app</code> and <code>quartz-wm</code> under OS 10.3 and later with XFree86 4.4 or later or X.org.</p>
-      <p>To install this package you must enable the <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">unstable tree</a>, and have <code>X11User.pkg</code> somewhere within <code>/Users</code> or <code>/Volumes</code>.  <code>X11.app</code> will be installed in the <code>Applications</code> folder within your Fink tree.  You can now use either <code>X11.app</code>  or <code>XDarwin.app</code>.</p>
+      <p>To install this package you must enable the <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">unstable tree</a>, and have <code>X11User.pkg</code> somewhere within <code>/Users</code> or <code>/Volumes</code>.  <code>X11.app</code> will be installed in the <code>Applications</code> folder within your Fink tree.  You can now use either <code>X11.app</code>  or <code>XDarwin.app</code>.</p>
 
     
     <h2><a name="xinitrc">4.6 .xinitrc 文件</a></h2>

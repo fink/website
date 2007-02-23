@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - アップグレード";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/06/13 11:49:05';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="conf.php?phpLang=ja" title="Fink 設定ファイル"><link rel="prev" href="packages.php?phpLang=ja" title="パッケージのインストール">';
 
 
@@ -37,7 +37,7 @@ Binary-&gt;Dist-Upgrade
 </p>
 <p>
 詳細、特に 0.3.0 より前のバージョンの Fink からアップグレードする場合は、
-<a href="http://fink.sourceforge.net/download/upgrade.php">アップグレード表</a>
+<a href="http://www.finkproject.org/download/upgrade.php">アップグレード表</a>
 を御覧下さい。
 </p>
 
@@ -58,7 +58,7 @@ CVS には連続して更新できる利点がありますが、CVS サーバー
 このため、一般ユーザーは rsync を使うことをおすすめします。
 rsync にはミラーが複数あり、欠点は CVS からのパッケージ記述の更新に１時間かかることです。
 </p>
-<p>(ソースインストールで問題がある場合、<a href="http://fink.sourceforge.net/download/fix-upgrade.php">特殊な方法</a>を参照して下さい)</p>
+<p>(ソースインストールで問題がある場合、<a href="http://www.finkproject.org/download/fix-upgrade.php">特殊な方法</a>を参照して下さい)</p>
 <p>
 0.2.5 より古いバージョンの Fink の場合、手動でパッケージ記述をダウンロードして下さい。
 <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">ダウンロードエリア</a>で最新の packages-0.x.x.tar.gz tarball を "distribution" モジュール内で探します。

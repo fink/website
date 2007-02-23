@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2006/12/13 17:55:08';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -34,7 +34,7 @@ chapter</a>.
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
 After downloading the disk image from the
-<a href="http://fink.sourceforge.net/download/bindist.php">download page</a>
+<a href="http://www.finkproject.org/download/bindist.php">download page</a>
 (you may have to use your browser's "Save Target as..." or "Download
 to Disk" function), double-click it to mount it.
 Open the "Fink 0.x.x Installer" disk icon that appears on your desktop (or wherever you downloaded it) after Disk Utility (Disk Copy for OS versions prior to 10.3) has verified the file.
@@ -60,7 +60,7 @@ The source distribution comes as a standard Unix tarball (.tar.gz).
 It contains only the <code>fink</code> package manager and its package
 descriptions and will download the source for packages on the fly.
 You can get it from the
-<a href="http://fink.sourceforge.net/download/srcdist.php">download page</a>.
+<a href="http://www.finkproject.org/download/srcdist.php">download page</a>.
 It is important that you don't use StuffIt Expander to extract the tar
 archive.
 For some reason StuffIt still can't handle long file names.

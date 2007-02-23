@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Exemple";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2007/01/07 08:00:42';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="prev" href="howtostart.php?phpLang=fr" title="Préliminaires">';
 
 
@@ -43,7 +43,7 @@ Warning: Unknown license "MIT". (maxwell.info)
 Error: No MD5 checksum specified for "source". (maxwell.info)
 Error: No package description supplied. (maxwell.info)
 </pre>
-<p>Grrr ! On dirait que c'est de pire en pire, pas de panique, rabattons-nous sur le <a href="http://fink.sourceforge.net/doc/packaging/policy.php#licenses">Guide de construction de paquets</a> pour voir quelles sont les licences autorisées. On voit que l'on peut remplacer MIT par OSI-Approved, car la licence MIT a été approuvée par <a href="http://www.opensource.org/">OSI</a>. On peut aussi copier une courte description du paquet à partir de sa page d'accueil. Voici les changements que nous opérons :</p>
+<p>Grrr ! On dirait que c'est de pire en pire, pas de panique, rabattons-nous sur le <a href="http://www.finkproject.org/doc/packaging/policy.php#licenses">Guide de construction de paquets</a> pour voir quelles sont les licences autorisées. On voit que l'on peut remplacer MIT par OSI-Approved, car la licence MIT a été approuvée par <a href="http://www.opensource.org/">OSI</a>. On peut aussi copier une courte description du paquet à partir de sa page d'accueil. Voici les changements que nous opérons :</p>
 <pre>
 License: OSI-Approved
 Description: Mac OS X S.M.A.R.T. Tool
@@ -77,7 +77,7 @@ curl -f -L -O http://west.dl.sourceforge.net/sourceforge/maxwell/maxwell-0.5.1.t
                                  Dload  Upload Total    Current  Left    Speed
 100  7856  100  7856    0     0  19838      0  0:00:00  0:00:00  0:00:00 6511k
 </pre>
-<p>L'archive tar ne peut être téléchargée à partir des miroirs de Fink, car le paquet n'a pas encore été ajouté à la distribution. C'est pourquoi il faut changer de miroir et sélectionner l'option 5. Voir les <a href="http://fink.sourceforge.net/faq/comp-general.php#master-problems">Q.F.P.</a> pour de plus amples informations à ce sujet.</p>
+<p>L'archive tar ne peut être téléchargée à partir des miroirs de Fink, car le paquet n'a pas encore été ajouté à la distribution. C'est pourquoi il faut changer de miroir et sélectionner l'option 5. Voir les <a href="http://www.finkproject.org/faq/comp-general.php#master-problems">Q.F.P.</a> pour de plus amples informations à ce sujet.</p>
 <p>Maintenant nous pouvons calculer la somme de contrôle md5 en exécutant <code>md5sum /sw/src/maxwell-0.5.1.tar.gz</code>, et l'ajouter à notre fichier .info</p>
 <pre>
 Source-MD5: ce5c354b2fed4e237524ad0bc59997a3
@@ -121,7 +121,7 @@ InstallScript: &lt;&lt;
 make install prefix=%i
 &lt;&lt;
 </pre>
-<p>Nous devons utiliser <code>prefix=%i</code> car <code>fink</code> construit le fichier binaire à partir des fichiers se trouvant dans <code>%i</code>. Ces fichiers seront ensuite installés dans <code>%p</code> (qui correspond par défaut à <code>/sw</code>) quand on exécutera <code>fink install maxwell</code>. Pour de plus amples informations sur <code>%p</code> et <code>%i</code>, consultez le <a href="http://fink.sourceforge.net/doc/packaging/format.php#percent">Guide de construction des paquets</a>.</p>
+<p>Nous devons utiliser <code>prefix=%i</code> car <code>fink</code> construit le fichier binaire à partir des fichiers se trouvant dans <code>%i</code>. Ces fichiers seront ensuite installés dans <code>%p</code> (qui correspond par défaut à <code>/sw</code>) quand on exécutera <code>fink install maxwell</code>. Pour de plus amples informations sur <code>%p</code> et <code>%i</code>, consultez le <a href="http://www.finkproject.org/doc/packaging/format.php#percent">Guide de construction des paquets</a>.</p>
 <p>Normalement, les lignes des champs Script sont passées au shell ligne après ligne. Mais la ligne  <code>#! /bin/sh -ev</code> permet à <code>fink</code> d'exécuter l'ensemble comme un script séparé. Le paramètre <code>-e</code> correspond à  "die on error" et <code>-v</code> à "verbose".</p>
 <p>Validons de nouveau le paquet et tentons de le construire :</p>
 <pre>
@@ -216,7 +216,7 @@ Warning: File installed into deprecated directory /sw/man/
 Warning: File installed into deprecated directory /sw/man/
                                         Offender is /sw/man/man8/maxwell.8
 </pre>
-<p>Heu ! Quelque chose ne va pas. Consultons encore le <a href="http://fink.sourceforge.net/doc/packaging/fslayout.php#fhs">Guide de construction des paquets</a>. On y voit que les pages man doivent être installées dans <code>/sw/share/man</code> et les fichiers <code>README</code> dans <code>/sw/share/doc/%n</code>. Si nous ouvrons le <code>Makefile</code> de maxwell, nous voyons que nous pouvons définir les répertoires mandir et datadir :</p>
+<p>Heu ! Quelque chose ne va pas. Consultons encore le <a href="http://www.finkproject.org/doc/packaging/fslayout.php#fhs">Guide de construction des paquets</a>. On y voit que les pages man doivent être installées dans <code>/sw/share/man</code> et les fichiers <code>README</code> dans <code>/sw/share/doc/%n</code>. Si nous ouvrons le <code>Makefile</code> de maxwell, nous voyons que nous pouvons définir les répertoires mandir et datadir :</p>
 <pre>
 prefix = /usr/local
 mandir = ${prefix}/man
@@ -250,7 +250,7 @@ Setting up maxwell (0.5.1-1) ...
 <pre>
 finkdev% maxwell
 </pre>
-<p>Félicitations ! Vous venez de construire votre premier paquet Fink. Maintenant, essayez de construire un autre paquet tout seul en suivant le <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a> à partir du début.</p>
+<p>Félicitations ! Vous venez de construire votre premier paquet Fink. Maintenant, essayez de construire un autre paquet tout seul en suivant le <a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a> à partir du début.</p>
 <p>Nous attendons impatiemment vos premières contributions à Fink !</p>
 
 

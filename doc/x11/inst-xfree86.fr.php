@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Installation de X11";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/01/19 22:09:48';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Lancement de X11"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
 
 
@@ -40,7 +40,7 @@ include_once "header.fr.inc";
 <p>Le 7 janvier 2003, Apple a mis à disposition <a href="http://www.apple.com/macosx/x11/">une implémentation X11 personnalisée basée sur XFree86-4.2</a>, qui incluait un rendu Quartz et l'accélération OpenGL. Une nouvelle version est sortie le 10 Février 2003, qui comportait des fonctionnalités supplémentaires et des corrections de bogues. Une troisième version (la Bêta 3) est sortie le 17 mars 2003 avec de nouvelles fonctionnalités et des corrections de bogues. Cette version peut être utilisée sur Jaguar.</p>
 <p>Le 24 octobre 2003, Apple a sorti Panther (10.3), qui inclut sa propre version de X11. Cette version est basée sur XFree86-4.3.</p>
 <p>Le 29 avril 2005, Apple a sortiTiger (10.4), qui inclut sa propre version de X11. Cette version est basée sur XFree86-4.4.</p>
-<p>Pour utiliser les binaires d'Apple, vous devez d'une part vous assurer que le paquet <b>X11 User</b> est installé et, d'autre part <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">mettre à jour</a> Fink.</p>
+<p>Pour utiliser les binaires d'Apple, vous devez d'une part vous assurer que le paquet <b>X11 User</b> est installé et, d'autre part <a href="http://www.finkproject.org/doc/users-guide/upgrade.php">mettre à jour</a> Fink.</p>
 <p>Avec <code>fink-0.16.2</code>, vous devez aussi installer le paquet <b>X11 SDK</b>. Ensuite, Fink créera un paquet virtuel <code>system-xfree86</code>.</p>
 <p>Avec <code>fink-0.17.0</code> et les versions ultérieures, n'installez le paquet X11 SDK que si vous souhaitez construire des paquets à partir du source. Dans ce cas, même si vous n'avez pas installé le SDK, il y aura création des paquets virtuels <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>, ce dernier correspondant aux librairies partagées. Si vous installez le SDK, il y aura création d'un paquet <code>system-xfree86-dev</code>, représentant les headers.</p>
 <p>Si vous avez déjà installé une distribution XFree86, que ce soit avec Fink ou non, vous pouvez suivez les  <a href="inst-xfree86.php?phpLang=fr#switching-x11">instructions de remplacement d'un paquet X11 par un autre</a>. Supprimez vos paquets existants, puis installez X11 d'Apple (et, éventuellement, X11 SDK).</p>

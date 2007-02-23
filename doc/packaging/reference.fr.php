@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/30 08:41:29';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -227,7 +227,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 </td></tr><tr valign="top"><td>UpdateConfigGuessInDirs</td><td>
 <p><b>Introduit dans une version CVS postérieure à la version 0.9.0.</b> Liste de sous-répertoires. A le même effet que UpdateConfigGuess, mais dans toute l'arborescence du source ; utile lorsque plusieurs fichiers config.guess existent dans différents répertoires du source. Auparavant, il fallait copier ou déplacer les fichiers dans le script PatchScript. Avec ce nouveau champ, il suffit de donner la liste des répertoires. Utilisez <code>.</code> pour mettre à jour les fichiers dans le répertoire de compilation.</p>
 </td></tr><tr valign="top"><td>UpdateLibtool</td><td>
-<p>Valeur booléenne. Si elle est vraie ("true"), les fichiers ltconfig et ltmain.sh présents dans le répertoire de compilation sont remplacés par des versions reconnaissant Darwin. Ce remplacement se produit lors de la phase d'application des rustines avant que le script PatchScript soit exécuté. <b>N'utilisez</b> ce champ quand cas d'absolue nécessité. Certains paquets ne fonctionnent plus lorsqu'on modifie la version des scripts libtool. Voir la <a href="http://fink.sourceforge.net/doc/porting/libtool.php">page libtool</a> pour de plus amples informations.</p>
+<p>Valeur booléenne. Si elle est vraie ("true"), les fichiers ltconfig et ltmain.sh présents dans le répertoire de compilation sont remplacés par des versions reconnaissant Darwin. Ce remplacement se produit lors de la phase d'application des rustines avant que le script PatchScript soit exécuté. <b>N'utilisez</b> ce champ quand cas d'absolue nécessité. Certains paquets ne fonctionnent plus lorsqu'on modifie la version des scripts libtool. Voir la <a href="http://www.finkproject.org/doc/porting/libtool.php">page libtool</a> pour de plus amples informations.</p>
 </td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
 <p><b>Introduit dans une version CVS postérieure à la version 0.9.0.</b> Liste de sous-répertoires. A le même effet que UpdateLibtool ; utile lorsque plusieurs fichiers scripts libtool 1.3.x sont présents dans différents répertoires de l'arborescence du source. Auparavant, il fallait copier ou déplacer les fichiers dans le script PatchScript. Avec ce nouveau champ, il suffit de donner la liste des répertoires. Utilisez <code>.</code> pour mettre à jour les fichiers dans le répertoire de compilation.</p>
 </td></tr><tr valign="top"><td>UpdatePoMakefile</td><td>

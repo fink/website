@@ -1,14 +1,14 @@
 <?
 $title = "Fink CVS 访问";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/05/25 19:57:40';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>设置 Fink CVS 访问</h1>
-<!--Generated from $Fink: cvs.zh.xml,v 1.3 2006/05/25 19:57:40 dmrrsn Exp $-->
+<!--Generated from $Fink: cvs.zh.xml,v 1.4 2007/02/23 22:04:54 rangerrick Exp $-->
 <p>
 Fink 被开发为支持 CVS。
 这意味着你可以在两个发布版之间都可以一直保持使用当前最新的版本，总是可以获得最新的功能。
@@ -26,7 +26,7 @@ Fink 被开发为支持 CVS。
 <p>Fink 会为你执行必需的步骤。
 这包括获取最新一套软件包描述文件，以及更新一些重要的核心软件包（中间包括 Fink 软件包管理器）。
 </p>
-<p>如果你在防火墙之后，参考<a href="http://fink.sourceforge.net/faq/usage-fink.php#proxy">《常见疑问 3.2》</a>。
+<p>如果你在防火墙之后，参考<a href="http://www.finkproject.org/faq/usage-fink.php#proxy">《常见疑问 3.2》</a>。
 </p>
 <p>在你这样更新了你的软件包描述之后，你可以接着更新你的软件包到最新的版本。这可以使用下面的命令：
 </p>

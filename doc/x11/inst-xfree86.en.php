@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Installing X11";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:22:16';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=en" title="Starting X11"><link rel="prev" href="history.php?phpLang=en" title="History">';
 
 
@@ -57,7 +57,7 @@ OpenGL.  A new version was released on February 10, 2003 with additional feature
 <p>On April 29, 2005, Apple released Tiger (10.4), which includes a release version of Apple's X11 based on XFree86-4.4.</p>
       <p>
 To use the Apple binaries, you need to make sure the <b>X11 User</b> package is installed, and you should also 
-<a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">update</a> Fink.</p>
+<a href="http://www.finkproject.org/doc/users-guide/upgrade.php">update</a> Fink.</p>
       <p>Under <code>fink-0.16.2</code>, you will need to install the <b>X11 SDK</b> package, as well.  After you do this, Fink will
 create a <code>system-xfree86</code> virtual package.</p>
       <p>Under <code>fink-0.17.0</code> and later installing the X11 SDK is only necessary if 

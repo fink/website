@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 介绍";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:23:46';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="history.php?phpLang=zh" title="历史"><link rel="prev" href="index.php?phpLang=zh" title="运行 X11 Contents">';
 
 
@@ -114,7 +114,7 @@ X11 则不是这样。
 </p>
       <p>
 Fink 已经打包了很多窗口器，这里是一个
-<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm/">当前的清单
+<a href="http://pdb.finkproject.org/pdb/section.php/x11-wm/">当前的清单
 </a>。
       </p>
     
@@ -139,12 +139,12 @@ Fink 已经打包了很多窗口器，这里是一个
 许多的程序会针对特定的桌面环境开发。
 多数程序可以在安装对应的桌面环境的函数库（以及相应的更底层的函数库）后，能够不减损或有限减损功能地运行。 
 其中的例子是越来越多的 
-<a href="http://fink.sourceforge.net/pdb/section.php/gnome">
+<a href="http://pdb.finkproject.org/pdb/section.php/gnome">
 GNOME 程序精选
 </a>
 可以在不运行 GNOME 的情况下安装和运行。  
 不幸的是，对 <a href="http://www.kde.org/">KDE 应用程序</a>却
-<a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">
+<a href="http://www.finkproject.org/faq/usage-fink.php#kde">
 还没有取得类似的进展
 </a>。 
       </p>

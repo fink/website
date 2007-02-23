@@ -1,7 +1,7 @@
 <?
 $title = "Руководство пользователя - Обновление";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2005/06/05 05:05:08';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="conf.php?phpLang=ru" title="Конфигурационный файл Fink"><link rel="prev" href="packages.php?phpLang=ru" title="Инсталляция пакетов">';
 
 
@@ -31,7 +31,7 @@ include_once "header.ru.inc";
                 списка пакетов, а затем Binary-&gt;Dist-Upgrade packages
                 для обновления до новых версий.</p>
             <p> Для получения более подробной информации, особенно об обновлении версий Fink,
-                  предшествующих 0.3.0, см. <a href="http://fink.sourceforge.net/download/upgrade.php">Матрицу обновления</a>.</p>
+                  предшествующих 0.3.0, см. <a href="http://www.finkproject.org/download/upgrade.php">Матрицу обновления</a>.</p>
         
         <h2><a name="src">4.2 Обновление дистрибутива исходного кода</a></h2>
             
@@ -57,7 +57,7 @@ include_once "header.ru.inc";
                 требуется час или около того для миграции к зеркалам rsync после
                 его добавления в CVS.</p>
             <p>(Если у вас возникли проблемы при обновлении инсталляции
-                    исходного кода, см. <a href="http://fink.sourceforge.net/download/fix-upgrade.php">Особые инструкции
+                    исходного кода, см. <a href="http://www.finkproject.org/download/fix-upgrade.php">Особые инструкции
                     </a>.)</p>
             <p> Если у вас более ранняя версия Fink, чем 0.2.5, надо скачать
                 описание пакетов вручную. Посетите <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">зону скачивания

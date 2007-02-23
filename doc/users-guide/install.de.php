@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Installation";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/12/09 18:17:04';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="packages.php?phpLang=de" title="Pakete Installieren"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
 
@@ -24,7 +24,7 @@ Sobald sie die Werkzeuge für die Paketverwaltung installiert haben, können Sie
       
       <p>
 Die Binary-Distribution kommt in Form eines Mac OS X-Installationspaketes (.pkg), eingepackt in ein Diskimage (.dmg).
-Nachdem dieses von der <a href="http://fink.sourceforge.net/download/bindist.php">Download-Seite</a> heruntergeladen ist (Sie müssen eventuell die "Verknüpfte Datei laden unter..."- oder die "Link auf Datenträger downloaden"-Funktion Ihres Browsers nutzen), müssen Sie diese Datei doppel-klicken, um sie zu mounten. Öffnen Sie dann das "Fink 0.x.x Installer"-Medium, welches entweder auf dem Desktop oder in einem Fenster des Finders auf der Sidebar erscheint, nachdem es vom Festplatten-Dienstprogramm (Disk Copy auf OS Versionen älter als 10.3) verifiziert worden ist. Dort drinnen finden Sie dann einige Dokumentationsdateien und ein Installationspaket. Doppel-klicken Sie dieses Installationspaket und folgen Sie den Anweisungen auf dem Bildschirm.</p>
+Nachdem dieses von der <a href="http://www.finkproject.org/download/bindist.php">Download-Seite</a> heruntergeladen ist (Sie müssen eventuell die "Verknüpfte Datei laden unter..."- oder die "Link auf Datenträger downloaden"-Funktion Ihres Browsers nutzen), müssen Sie diese Datei doppel-klicken, um sie zu mounten. Öffnen Sie dann das "Fink 0.x.x Installer"-Medium, welches entweder auf dem Desktop oder in einem Fenster des Finders auf der Sidebar erscheint, nachdem es vom Festplatten-Dienstprogramm (Disk Copy auf OS Versionen älter als 10.3) verifiziert worden ist. Dort drinnen finden Sie dann einige Dokumentationsdateien und ein Installationspaket. Doppel-klicken Sie dieses Installationspaket und folgen Sie den Anweisungen auf dem Bildschirm.</p>
       <p>
 Sie werden nach dem Administratorpasswort gefragt und einige Text zu lesen bekommen. Bitte lesen Sie diese - sie können aktueller als dieses Nutzerhandbuch sein. Wenn der Installer nach einem Laufwerk, auf welchem die Installation erfolgen soll, fragt, gehen Sie sicher, dass Sie Ihr Systemvolume (das, auf welchem Sie Mac OS X installiert haben) auswählen. Wenn Sie das falsche Laufwerk wählen, wird die Installation fortgesetzt, aber Fink wird anschließend nicht funktionieren. Wenn die Installation beendet ist, fahren Sie mit dem Abschnitt <a href="#setup">Einrichten Ihrer Umgebung</a> fort.</p>
     
@@ -32,7 +32,7 @@ Sie werden nach dem Administratorpasswort gefragt und einige Text zu lesen bekom
       
       <p>
 Die Source-Distribution kommt als ein übliches Unix-tarball (.tar.gz) daher. Es beinhaltet nur den <code>fink</code> Paketmanager und seine Paketbeschreibungen; es lädt die Quelldateien der Pakete bei Bedarf herunter. Sie können es hier herunterladen:
-<a href="http://fink.sourceforge.net/download/srcdist.php">Download-Seite</a>.
+<a href="http://www.finkproject.org/download/srcdist.php">Download-Seite</a>.
 Es ist wichtig, daass Sie nicht den StuffIt Expander zum Entpacken des tar-Archivs verwenden. Aus irgendeinen Grund kann StuffIt noch mit keinen langen Dateinamen umgehen. Falls StuffIt Expander das Archiv schon entpackt hat, löschen sie den Ordner, welchen er erstellt hat.
 </p>
       <p>

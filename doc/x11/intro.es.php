@@ -1,7 +1,7 @@
 <?
 $title = "Ejecución de X11 - Intro";
-$cvs_author = 'Author: zifra';
-$cvs_date = 'Date: 2004/10/27 12:42:57';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="history.php?phpLang=es" title="Historia"><link rel="prev" href="index.php?phpLang=es" title="Ejecución de X11 Contents">';
 
 
@@ -132,7 +132,7 @@ como el de quartz) y botones lanzaderas (para abrir documentos,
 aplicaciones o menús)
 </p>
       <p>
-Muchos gestores de ventanas han sido empaquetado en Fink; aquí hay una<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm">    
+Muchos gestores de ventanas han sido empaquetado en Fink; aquí hay una<a href="http://pdb.finkproject.org/pdb/section.php/x11-wm">    
 lista actualizada.
 </a>
       </p>
@@ -164,12 +164,12 @@ Frecuentemente, instalando las bibliotecas del entorno de escritorio (y otras
 relacionadas) una aplicación desarrollada para un escritorio concreto puede 
 trabajar con pocas o ninguna pérdida de funcionalidad.  
 Ejemplo de esto es la cada vez más numerosa 
-<a href="http://fink.sourceforge.net/pdb/section.php/gnome">
+<a href="http://pdb.finkproject.org/pdb/section.php/gnome">
 selección de aplicaciones GNOME 
 </a>
 disponibles para ser instaladas y ejecutadas sin instalar GNOME.  
 Desafortunadamente, el mismo 
-<a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">
+<a href="http://www.finkproject.org/faq/usage-fink.php#kde">
 progreso no ha podido ser aún hecho
 </a>
 con <a href="http://www.kde.org/">aplicaciones KDE.</a>

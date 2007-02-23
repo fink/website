@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Instalar";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/12/09 18:17:04';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="packages.php?phpLang=es" title="Instalando Paquetes"><link rel="prev" href="intro.php?phpLang=es" title="Introducción">';
 
 
@@ -29,7 +29,7 @@ Esto se revisa en el  <a href="packages.php?phpLang=es">Capítulo de Instalació
 La distribución binaria existe como un paquete de Instalación de Mac OS X (.pkg),
 empacado como una imágen de disco (.dmg).
 Después de descargar la imágen de disco de la
-<a href="http://fink.sourceforge.net/download/bindist.php">página de descarga</a>
+<a href="http://www.finkproject.org/download/bindist.php">página de descarga</a>
 (puedes usar la función "Salvar destino como ..." o "Descargar al Disco" function), dale doble click para montar el disco.
 abra el ícono del disco "Fink 0.x.x Installer" que aparece en el escritorio después que el Disk Utility (ó Disk Copy, para OS previo al 10.3) a verificado el archivo.
 Desntro encontrara Documentación y un paquete de Instalación.
@@ -50,7 +50,7 @@ Cuando el instalador termine, proceda con la
 La distribución fuente esta contenida en un tarball estándar de Unix (.tar.gz).
 Solo contiene el manejador de paquetes <code>fink</code> así como la descripción del paquete y descargara la fuente de los paquetes de inmediato.
 Puede obtenerse de la
-<a href="http://fink.sourceforge.net/download/srcdist.php">Página de Descarga</a>.
+<a href="http://www.finkproject.org/download/srcdist.php">Página de Descarga</a>.
 Es importante no usar el StuffIt Expander para extraer el archivo
 Por alguna razón el StuffIt aún no puede usar nombres de archivos largos.
 Si el StuffIt Expander ya extrajo el archivo, destruya el folder que este crea.

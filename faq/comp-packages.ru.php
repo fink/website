@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Компиляция (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-general.php?phpLang=ru" title="Проблемы использования пакетов - Общие вопросы"><link rel="prev" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы">';
 
 
@@ -47,7 +47,7 @@ endif</pre></div>
                     <code>xfree86</code> с "fink install
                     xfree86"--последняя версия (XFree86-4.4.x от 25 мая
                     2004 г.) пока еще не в бинарном distro и на данный момент находится только
-                    на нестабильном дереве [см. <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable%5C">как
+                    на нестабильном дереве [см. <a href="http://www.finkproject.org/faq/usage-fink.php#unstable%5C">как
                         инсталлировать нестабильные пакеты</a>].</p></div>
         </a>
         <a name="change-thread-nothread">

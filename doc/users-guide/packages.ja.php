@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - パッケージ";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/06/13 11:49:05';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="upgrade.php?phpLang=ja" title="Fink のアップグレード"><link rel="prev" href="install.php?phpLang=ja" title="初めてのインストール">';
 
 
@@ -152,7 +152,7 @@ E: Sorry, broken packages</pre>
 <code>fink</code> コマンドは最初に必要なもの ("依存性") があるか確認し、無いものがあればインストールしていいか聞いてきます。
 次に、ソースコードをダウンロード、解凍、パッチ当て、コンパイル、インストールをします。
 この作業は時間がかかります。
-この作業中にエラーが発生した場合、まず <a href="http://fink.sourceforge.net/faq/">FAQ</a> を確認して下さい。
+この作業中にエラーが発生した場合、まず <a href="http://www.finkproject.org/faq/">FAQ</a> を確認して下さい。
 </p>
 <p>
 <code>fink</code> のバージョン 0.23.0 以降では、コンパイル済みバイナリパッケージを優先的にダウンロードするように指定することができます。
@@ -192,7 +192,7 @@ Fink をソースからインストールした場合など、別にダウンロ
 
 <h2><a name="available-versions">3.6 用意されているバージョン</a></h2>
 
-<p>パッケージをインストールする場合、まず<a href="http://fink.sourceforge.net/pdb/index.php">Package Database</a>を確認して Fink にあるかどうか確認して下さい。
+<p>パッケージをインストールする場合、まず<a href="http://pdb.finkproject.org/pdb/index.php">Package Database</a>を確認して Fink にあるかどうか確認して下さい。
 用意されているバージョンは次の行に書かれてあります:</p>
       <ul>
         <li>Binary Distribution
@@ -233,7 +233,7 @@ Fink をソースからインストールした場合など、別にダウンロ
             <b>10.2-gcc3.3 stable:</b>
             これは、OS 10.2 と Developer Tools の <code>gcc 3.3</code> アップデートの組み合わせにむけた、
             stable ソースツリーからインストールされる最新の安定バージョンです。
-            このバージョンをインストールするには、 <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a>
+            このバージョンをインストールするには、 <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a>
             または rsync　でのアクセスが必要です。
             <code>gcc 3.3</code> アップデートを当てていない場合、このバージョン (あるいはパッケージも) は見えないかもしれません。
           </p>
@@ -269,7 +269,7 @@ Fink をソースからインストールした場合など、別にダウンロ
             <b>10.2-gcc3.3 unstable:</b>
             <code>gcc 3.3</code>. これは、OS 10.2 と <code>gcc 3.3</code> 用の unstable ソースツリーからインストールされる最新の unstable バージョンです。 
             このバージョンをインストールするには、unstable パッケージの
-            <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">インストール手順</a> 
+            <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">インストール手順</a> 
             をご覧ください。
           </p>
           <p>
@@ -346,7 +346,7 @@ Mac OS X には、 X11 が数種類 (Apple X11, XFree86, X.org) あり、イン�
 </ul>
 <p>
 X11 のインストールと使用の詳細は、
-<a href="http://fink.sourceforge.net/doc/x11/">X11 on Darwin and Mac OS X ドキュメント</a>
+<a href="http://www.finkproject.org/doc/x11/">X11 on Darwin and Mac OS X ドキュメント</a>
 を参照して下さい。
 </p>
 

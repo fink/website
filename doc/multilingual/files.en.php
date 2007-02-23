@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Files";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/05/26 13:04:20';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=en" title="Procedure for Updating Documents"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -246,7 +246,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         possibly some other) files as well as other files matching the languages in the Makefile.</p></li>
       </ol>
       <p>Note: If you see some misspelling or errors in the English file,
-      don't change it, but instead report it instead to the <a href="http://fink.sourceforge.net/lists/fink-i18n.php">fink-i18n
+      don't change it, but instead report it instead to the <a href="http://www.finkproject.org/lists/fink-i18n.php">fink-i18n
       list</a>, so that the master English file is changed.</p>
     
     <h2><a name="check-work">2.7 Check Your Work</a></h2>
@@ -428,7 +428,7 @@ For other
         this you will activate <b>everything</b> that's been placed in
         <code>web/xml</code>.</li>
         <li>log out from web server: <pre>exit</pre></li>
-        <li>See your efforts: <pre>open http://fink.sourceforge.net/</pre></li>
+        <li>See your efforts: <pre>open http://www.finkproject.org/</pre></li>
       </ol>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

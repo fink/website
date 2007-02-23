@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -12,7 +12,7 @@ include_once "header.en.inc";
     
     <a name="what-packages">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.1: How can I find out what packages Fink supports?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since Fink 0.2.3, there is the <code>list</code> command. It produces a list of all packages known to your Fink installation. Example:</p><pre>fink list</pre><p>If you're using the binary distribution, <code>dselect</code> gives you a nice browsable listing of available packages. Note that you must run it as root if you want to select and install packages from within dselect.</p><p>There's also the <a href="http://fink.sourceforge.net/pdb/">package database</a> at the
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since Fink 0.2.3, there is the <code>list</code> command. It produces a list of all packages known to your Fink installation. Example:</p><pre>fink list</pre><p>If you're using the binary distribution, <code>dselect</code> gives you a nice browsable listing of available packages. Note that you must run it as root if you want to select and install packages from within dselect.</p><p>There's also the <a href="http://pdb.finkproject.org/pdb/">package database</a> at the
         website.</p></div>
     </a>
     <a name="proxy">
@@ -70,7 +70,7 @@ include_once "header.en.inc";
     <a name="bindist">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.7: The package database at the website lists package xxx, but apt-get
         and dselect know nothing about it. Who's lying?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Both are correct. The <a href="http://fink.sourceforge.net/pdb/">package database</a> knows
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Both are correct. The <a href="http://pdb.finkproject.org/pdb/">package database</a> knows
         about every package, including those that are still in the unstable
         section. The <code>dselect</code> and <code>apt-get</code> tools on
         the other hand only know about the packages available as precompiled
@@ -283,7 +283,7 @@ fink selfupdate-cvs</pre></div>
         "install-info: unrecognized option `--infodir=/sw/share/info'"</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This usually is due to a problem in your PATH. In a terminal window
         type:</p><pre>printenv PATH</pre><p>If <code>/sw/sbin</code> doesn't appear at all, then you
-        need to set your environment up as per the <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a>
+        need to set your environment up as per the <a href="http://www.finkproject.org/doc/users-guide/install.php#setup">instructions</a>
         in the Users Guide. If <code>/sw/sbin</code> is there, but
         there are other directories ahead of it (e.g.
         <code>/usr/local/bin</code>), then you will either want to
@@ -302,7 +302,7 @@ fink selfupdate-cvs</pre></div>
         if you don't have the .deb file, you can still proceed because the
         error doesn't interfere with builds.</p><p>If you have been installing from the binary distribution or you
         know for sure that the version in the binary distribution is the same
-        as what you have installed (e.g. by checking the <a href="http://fink.sourceforge.net/pdb/index.php">package
+        as what you have installed (e.g. by checking the <a href="http://pdb.finkproject.org/pdb/index.php">package
         database</a>), then you can get a .deb file by running <code>sudo
         apt=get install --reinstall --download-only <b>packagename</b>
           </code>. Otherwise you can build one yourself by running <code>fink
@@ -499,7 +499,7 @@ page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pr
     <a name="wrong-arch">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.34: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://fink.sourceforge.net/download/index.php">the downloads page</a>.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p></div>
     </a>
     <a name="sf-cvs-2006">
 	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: I haven't been able to do a cvs selfupdate.</b></p></div>

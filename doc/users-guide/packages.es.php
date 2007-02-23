@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Paquetes";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/12/09 18:17:04';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="upgrade.php?phpLang=es" title="Actualizando Fink"><link rel="prev" href="install.php?phpLang=es" title="Primera Instalación">';
 
 
@@ -142,7 +142,7 @@ Cuando encuentras un paquete que desees instalar, usa el comando "install":
 El comando <code>fink</code> primero revisará si todos los prerequisitos necesarios ("dependencias") estín presentes , y preguntará si estas de acuerdo en instlar las que estne ausentes.
 Entonces ira y descargara el código fuente, lo descomprime, lo parcha, lo compila e instala los resultantes en tu sistema. 
 Esto puede tradar un rato. Si algun mensaje de error, por favor revisa el archivo 
-<a href="http://fink.sourceforge.net/faq/">FAQ</a>.
+<a href="http://www.finkproject.org/faq/">FAQ</a>.
 </p>
     
     <h2><a name="fink-commander">3.5 Fink Commander</a></h2>
@@ -152,7 +152,7 @@ Esto puede tradar un rato. Si algun mensaje de error, por favor revisa el archiv
     
     <h2><a name="">3.6 Versiones disponibles</a></h2>
       
-      <p>Cuando desees instalar un paquete, debes revisar primero la<a href="http://fink.sourceforge.net/pdb/index.php">base de datos de paquetes</a> y revisar si esta disponible a través de Fink.  Las versiones disponibles del paquete se mostrarán en varias renglones de una tabla. Estas son:</p>
+      <p>Cuando desees instalar un paquete, debes revisar primero la<a href="http://pdb.finkproject.org/pdb/index.php">base de datos de paquetes</a> y revisar si esta disponible a través de Fink.  Las versiones disponibles del paquete se mostrarán en varias renglones de una tabla. Estas son:</p>
       <ul>
         <li>
           <p>
@@ -164,7 +164,7 @@ Esto puede tradar un rato. Si algun mensaje de error, por favor revisa el archiv
         </li>
         <li>
           <p>
-            <b>10.2-gcc3.3 stable:</b>  Esta es la versión estable más reciente que puede ser instalada desde la fuente para OS 10.2 con la actualización<code>gcc 3.3</code> De las Herramientas de Desarrollo.  Para poder instalar esta versión, necesitas habilitar <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> o accesso de rsync.  Si aún no has aplicado la actualización<code>gcc 3.3</code> podrías no ver esta versión (posiblemente, ni el paquete).</p>
+            <b>10.2-gcc3.3 stable:</b>  Esta es la versión estable más reciente que puede ser instalada desde la fuente para OS 10.2 con la actualización<code>gcc 3.3</code> De las Herramientas de Desarrollo.  Para poder instalar esta versión, necesitas habilitar <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a> o accesso de rsync.  Si aún no has aplicado la actualización<code>gcc 3.3</code> podrías no ver esta versión (posiblemente, ni el paquete).</p>
           <p>Nota:  A diferencia de muchos otros proyectos, las distribuciones más recientes de Fink se distribuyen mediante CVS, al igual que las versiones que necesitan más pruebasas (ver la Sección de inestables más abajo ).  Habilitar la actualización mediante CVS | rsync te da acceso a la versión estable más reciente aún antes que la versión binaria sea actualizada.
 </p>
         </li>
@@ -172,7 +172,7 @@ Esto puede tradar un rato. Si algun mensaje de error, por favor revisa el archiv
 </li>
         <li>
           <p>
-            <b>10.2-gcc3.3 unstable:</b>  Esta es la última versión inestable que puede ser instalada del código fuente para el  OS 10.2 con  <code>gcc 3.3</code>.  Para instalar esta versión, sige las <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">instructiones</a> que describen como instalar paquetes inestables.</p>
+            <b>10.2-gcc3.3 unstable:</b>  Esta es la última versión inestable que puede ser instalada del código fuente para el  OS 10.2 con  <code>gcc 3.3</code>.  Para instalar esta versión, sige las <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">instructiones</a> que describen como instalar paquetes inestables.</p>
           <p>Nota:  inestable no significa inusable o inoperante, solo que son instalables bajo tu propio riesgo.
 </p>
         </li>
@@ -220,7 +220,7 @@ Instala este paquete si tienes los Xtools de Tenon instalados. Al igual que el s
       </ul>
       <p>
 Para mayor información sobre como instalar o ejecutar el X11 visita las páginas
-<a href="http://fink.sourceforge.net/doc/x11/">X11 en Darwin
+<a href="http://www.finkproject.org/doc/x11/">X11 en Darwin
 y el documento de  Mac OS X document</a>.
 </p>
     

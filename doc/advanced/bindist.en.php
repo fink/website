@@ -1,7 +1,7 @@
 <?
 $title = "Advanced - Binary Distro Server";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2005/01/21 00:49:17';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Advanced Contents"><link rel="prev" href="index.php?phpLang=en" title="Advanced Contents">';
 
 

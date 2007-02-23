@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -16,7 +16,7 @@ include_once "header.ja.inc";
 このコマンドは、あなたの Fink 環境の管理している全てのパッケージのリストを作成します。
 例:
 </p><pre>fink list</pre><p>バイナリ・ディストリビューションを使っている場合、 <code>dselect</code> でパッケージリストを閲覧することができます。
-dselect からパッケージを選択してインストールする場合、 root 権限が必要ですので注意して下さい。</p><p>または、本サイトに <a href="http://fink.sourceforge.net/pdb/">パッケージ・データベース</a> もあります。
+dselect からパッケージを選択してインストールする場合、 root 権限が必要ですので注意して下さい。</p><p>または、本サイトに <a href="http://pdb.finkproject.org/pdb/">パッケージ・データベース</a> もあります。
 </p></div>
 </a>
 <a name="proxy">
@@ -264,7 +264,7 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 "install-info: unrecognized option `--infodir=/sw/share/info'"
 のエラーが出るだけです。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは普通、 PATH の問題です。ターミナルで:</p><pre>printenv PATH</pre><p>と入力し、 <code>/sw/sbin</code> が出てこないなら、環境変数を
-<a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">instructions</a>
+<a href="http://www.finkproject.org/doc/users-guide/install.php#setup">instructions</a>
 内の Users Guide を参照してください。
 <code>/sw/sbin</code> があるが、他のディレクトリ (例えば /usr/local/bin) 
 がそれより前にある場合、 PATH の順序を変えて先頭近くに移動してください。
@@ -280,7 +280,7 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>ディレクトリやファイルの一覧が表示されたら、 .deb ファイルは大丈夫です。
 もし出力されたのがファイルやディレクトリ以外であるか、 .deb ファイルがなくても、このエラーはビルドに影響しないので、次に進んでください。
 </p><p>バイナリインストールを試みている場合、あるいはインストールしたバージョンと現在のバイナリバージョンが一致する場合
-(例えば、 <a href="http://fink.sourceforge.net/pdb/index.php">パッケージデータベース</a> で調べたなら)、
+(例えば、 <a href="http://pdb.finkproject.org/pdb/index.php">パッケージデータベース</a> で調べたなら)、
 .deb ファイルを取得することができます:
 <code>sudo apt-get install --reinstall --download-only <b>packagename</b></code>
 。あるいは、自分でビルドすることもできます:
@@ -325,7 +325,7 @@ fink selfupdate-cvs</pre></div>
 </a>
 <a name="cant-upgrade">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.22: Fink のバージョンをアップデートできないようです。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> この状況専用の <a href="http://fink.sourceforge.net/download/fix-upgrade.php">special instructions</a> に従ってください。</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> この状況専用の <a href="http://www.finkproject.org/download/fix-upgrade.php">special instructions</a> に従ってください。</p></div>
 </a>
 <a name="spaces-in-directory">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.23: 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</b></p></div>
@@ -499,7 +499,7 @@ page and on http://fontconfig.org.</pre><p>次のように実行します:</p><p
       <div class="question"><p><b><? echo FINK_Q ; ?>5.34: Fink を更新できない。 <q>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</q>
 </b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このエラーは、PPC インストーラで Intel マシンにインストールした際に発生します。  
-        現在のインストールを、例えば次のように削除してください:</p><pre>sudo rm -rf /sw</pre><p>Intel マシン用のインストーラを、<a href="http://fink.sourceforge.net/download/index.php">ダウンロードページ</a>から入手してください。</p></div>
+        現在のインストールを、例えば次のように削除してください:</p><pre>sudo rm -rf /sw</pre><p>Intel マシン用のインストーラを、<a href="http://www.finkproject.org/download/index.php">ダウンロードページ</a>から入手してください。</p></div>
     </a>
     <a name="sf-cvs-2006">
 	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: cvs selfupdate がここのところできません。</b></p></div>

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - Example";
-$cvs_author = 'Author: chris01';
-$cvs_date = 'Date: 2007/01/07 01:12:27';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="prev" href="howtostart.php?phpLang=en" title="How to Start">';
 
 
@@ -72,7 +72,7 @@ Error: No package description supplied. (maxwell.info)
 </pre>
 <p>
 Aaargh! We seem to be getting worse, not better, never mind, head off over to
-the <a href="http://fink.sourceforge.net/doc/packaging/policy.php#licenses">
+the <a href="http://www.finkproject.org/doc/packaging/policy.php#licenses">
 Packaging Manual</a> to see what is allowed for License, and we see that we
 can just change MIT to OSI-Approved, as the MIT license is, indeed, approved
 by the <a href="http://www.opensource.org/">OSI</a>. We can also grab a
@@ -118,7 +118,7 @@ curl -f -L -O http://west.dl.sourceforge.net/sourceforge/maxwell/maxwell-0.5.1.t
 The tarball couldn't be downloaded from the Fink mirrors (distfiles) since
 your package is not added to the distribution yet. That's why you need to 
 change to the next mirror set. More information about this problem is in the
-<a href="http://fink.sourceforge.net/faq/comp-general.php#master-problems">FAQ</a>.
+<a href="http://www.finkproject.org/faq/comp-general.php#master-problems">FAQ</a>.
 </p>
 <p>
 So we can now get the md5 by running <code>md5sum /sw/src/maxwell-0.5.1.tar.gz</code>,
@@ -185,7 +185,7 @@ from the files in <code>%i</code>. These files are later installed into
 <code>%p</code> (which is <code>/sw</code> by default) when you use 
 <code>fink install maxwell</code>. For more details about <code>%p</code> and
 <code>%i</code> please consult the 
-<a href="http://fink.sourceforge.net/doc/packaging/format.php#percent">
+<a href="http://www.finkproject.org/doc/packaging/format.php#percent">
 Packaging Manual</a>.
 </p>
 <p>
@@ -303,7 +303,7 @@ Warning: File installed into deprecated directory /sw/man/
 </pre>
 <p>
 Oops... something is wrong. Let's consult the 
-<a href="http://fink.sourceforge.net/doc/packaging/fslayout.php#fhs">Packaging Manual</a>
+<a href="http://www.finkproject.org/doc/packaging/fslayout.php#fhs">Packaging Manual</a>
 again. It tells us to install man pages into <code>/sw/share/man</code> and files such
 as <code>README</code> into <code>/sw/share/doc/%n</code>. If we look into the 
 <code>Makefile</code> of maxwell we see that the mandir and datadir can be set:
@@ -357,7 +357,7 @@ finkdev% maxwell
 <p>
 Congratulations, you just finished your first Fink package! Now try to
 package something yourself by following the 
-<a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">
+<a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">
 Packaging tutorial</a> from the beginning.
 </p>
 <p>

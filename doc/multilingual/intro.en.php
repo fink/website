@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Intro";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/05/26 13:04:20';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="files.php?phpLang=en" title="The Documentation Files"><link rel="prev" href="index.php?phpLang=en" title="i18n Contents">';
 
 
@@ -42,7 +42,7 @@ include_once "header.en.inc";
       <p>If you wish to help out with the internationalization effort, there
       are several things that you can do:</p>
       <ul>
-        <li>Join discussions on the <a href="http://fink.sourceforge.net/lists/fink-i18n.php">fink-i18n
+        <li>Join discussions on the <a href="http://www.finkproject.org/lists/fink-i18n.php">fink-i18n
         mailing list</a>. This is where we will discuss the mechanics of
         internationalization, announcements of updates to documents will be
         made, etc.</li>

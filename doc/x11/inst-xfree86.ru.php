@@ -1,7 +1,7 @@
 <?
 $title = "Использование X11 - Инсталляция XFree86";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/02/17 05:00:35';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Использование X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=ru" title="Запуск XFree86"><link rel="prev" href="history.php?phpLang=ru" title="История создания продукта">';
 
 
@@ -69,7 +69,7 @@ include_once "header.ru.inc";
                 версию ее дистрибуции X11. Эта версия
                 основана на XFree86-4.3.</p>
             <p> Перед использованием бинарных файлов Apple надо удостовериться, что инсталлирован пакет <b>X11
-                User</b>, а также <a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">обновить</a> Fink.</p>
+                User</b>, а также <a href="http://www.finkproject.org/doc/users-guide/upgrade.php">обновить</a> Fink.</p>
             <p>Для версии <code>fink-0.16.2</code> вам надо будет также инсталлировать пакет
                     <b>X11 SDK</b>. После этого Fink
                 создаст виртуальный пакет <code>system-xfree86</code>.</p>

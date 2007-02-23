@@ -1,14 +1,14 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/07/25 14:41:55';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentation</h1>
-<!--Generated from $Fink: doc.ja.xml,v 1.19 2006/07/25 14:41:55 dmrrsn Exp $-->
+<!--Generated from $Fink: doc.ja.xml,v 1.20 2007/02/23 22:04:54 rangerrick Exp $-->
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。
@@ -50,7 +50,7 @@ releases</li>
 <ul>
 <li><a href="security/index.php">セキュリティーポリシー</a> - 
 Fink のパッケージをメンテナンスしている人、したいと思っている人、必見</li>
-<li><a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Using Fink: A Developer's How To</a> (2MB pdf
+<li><a href="http://www.finkproject.org/doc/UsingFink.pdf">Using Fink: A Developer's How To</a> (2MB pdf
 file) - <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X Conference</a> でのプレゼンテーション用スライド (
 <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint ファイル</a> もあります) </li>
 <li><a href="porting/index.php">Porting Tips</a> - 

@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - はじめに";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/06/13 11:49:05';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="install.php?phpLang=ja" title="初めてのインストール"><link rel="prev" href="index.php?phpLang=ja" title="ユーザーガイド Contents">';
 
 

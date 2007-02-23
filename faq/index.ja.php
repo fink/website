@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
@@ -89,7 +89,7 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
         	Tiger (OS 10.4) にアップデート後、GTK アプリを使うと必ず
         	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
         </a></li><li><a href="usage-packages.php?phpLang=ja#yelp">9.15 どの GNOME アプリケーションでも、ヘルプ機能が使えません。</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ja.xml,v 1.40 2007/01/18 02:16:18 babayoshihiko Exp $-->
+<!--Generated from $Fink: faq.ja.xml,v 1.41 2007/02/23 22:04:54 rangerrick Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

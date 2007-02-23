@@ -1,7 +1,7 @@
 <?
 $title = "Ejecución de X11 - Instalación de XFree86";
-$cvs_author = 'Author: zifra';
-$cvs_date = 'Date: 2004/10/27 12:42:57';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=es" title="El arranque de XFree86"><link rel="prev" href="history.php?phpLang=es" title="Historia">';
 
 
@@ -74,7 +74,7 @@ XFree86-4.3.</p>
       <p>
 Al usar los binarios de Apple, necesitas asegurarse que el paquete
 <b>X11 User</b> está instalado y debes 
-<a href="http://fink.sourceforge.net/doc/users-guide/upgrade.php">actualizar</a>
+<a href="http://www.finkproject.org/doc/users-guide/upgrade.php">actualizar</a>
 Fink.</p>
       <p>Bajo <code>fink-0.16.2</code> es necesario instalar el paquete 
 <b>X11 SDK</b> también.  Después de hacer esto, Fink puede crear

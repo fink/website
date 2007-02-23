@@ -1,7 +1,7 @@
 <?
 $title = "Сетевой этикет - Ответы";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/02/01 02:04:51';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Сетевой этикет Contents"><link rel="next" href="unsubscribe.php?phpLang=ru" title="Отказ от подписки на списки рассылки"><link rel="prev" href="first-post.php?phpLang=ru" title="Первоначальное размещение объявления">';
 
 

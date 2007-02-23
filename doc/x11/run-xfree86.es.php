@@ -1,7 +1,7 @@
 <?
 $title = "Ejecución de X11 - Arrancando XFree86";
-$cvs_author = 'Author: zifra';
-$cvs_date = 'Date: 2004/10/27 12:42:57';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="xtools.php?phpLang=es" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=es" title="Cómo obtener e instalar XFree86">';
 
 

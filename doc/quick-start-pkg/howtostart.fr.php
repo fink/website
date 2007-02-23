@@ -1,7 +1,7 @@
 <?
 $title = "Tutoriel d'empaquetage - Préliminaires";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2007/01/07 08:00:42';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="next" href="example.php?phpLang=fr" title="Exemple - le paquet Maxwell"><link rel="prev" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents">';
 
 
@@ -19,7 +19,7 @@ finkdev% unecommandequelconque
 <p>vous devrez alors saisir <code>unecommandequelconque</code> dans Terminal.app ou dans tout autre terminal sur votre Mac.</p>
 <p>Vous devez d'abord assimiler quelques concepts de base sur la création de paquets pour Fink. Nous vous suggérons :</p>
 <ul>
-<li>de lire <a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</a> (fichier pdf 2MB) - diapositives d'une présentation lors de la <a href="http://conferences.oreillynet.com/macosx2002/">Conférence O'Reilly Mac OS X</a>.
+<li>de lire <a href="http://www.finkproject.org/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</a> (fichier pdf 2MB) - diapositives d'une présentation lors de la <a href="http://conferences.oreillynet.com/macosx2002/">Conférence O'Reilly Mac OS X</a>.
 </li>
 <li>
 
@@ -29,7 +29,7 @@ finkdev% unecommandequelconque
 de lire et de tenter de comprendre l'<a href="example.php?phpLang=fr#basics">exemple donné ici</a>.</li>
 <li>d'étudier d'autres paquets situés dans le répertoire <code>/sw/fink/dists/unstable/main/finkinfo/</code> ou dans le <a href="http://fink.cvs.sourceforge.net/fink/dists/">répertoire central CVS en ligne</a> et de prendre un (ou plusieurs) fichier(s) info comme point de départ.</li>
 <li>de rechercher dans le <a href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Traqueur de soumissions de paquets</a> si quelqu'un a déjà essayé de construire le même paquet ou dans le <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Traqueur de demandes de paquets</a> s'il existe déjà une requête pour ce paquet. Vous y trouverez une mine de renseignements.</li>
-<li>de feuilleter le <a href="http://fink.sourceforge.net/doc/packaging/index.php">Guide de création de paquets</a> si vous souhaitez de plus amples informations sur un sujet particulier.</li>
+<li>de feuilleter le <a href="http://www.finkproject.org/doc/packaging/index.php">Guide de création de paquets</a> si vous souhaitez de plus amples informations sur un sujet particulier.</li>
 </ul>
 
 <h2><a name="Make">1.2 Création d'un paquet</a></h2>
@@ -47,15 +47,15 @@ finkdev% fink configure
 <pre>
 finkdev% fink list nomdupaquet
 </pre>
-<p>S'il n'apparaît pas, vous devez modifier le <a href="http://fink.sourceforge.net/doc/users-guide/conf.php#optional">fichier de configuration de fink</a>, de sorte que l'arborescence locale soit prise en compte.</p>
+<p>S'il n'apparaît pas, vous devez modifier le <a href="http://www.finkproject.org/doc/users-guide/conf.php#optional">fichier de configuration de fink</a>, de sorte que l'arborescence locale soit prise en compte.</p>
 <p>Vous devrez peut-être réindexer les paquets en exécutant :</p>
 <pre>
 finkdev% fink index
 </pre>
-<p>Si vous souhaitez de plus amples informations, lisez le <a href="http://fink.sourceforge.net/doc/packaging/index.php">Guide de création de paquets</a> ou utilisez l'une ou l'autre des différentes <a href="http://fink.sourceforge.net/help/index.php">sources d'aide</a>. Vous devez aussi vous abonner à la liste de diffusion <a href="http://fink.sourceforge.net/lists/index.php">fink-devel</a>.</p>
+<p>Si vous souhaitez de plus amples informations, lisez le <a href="http://www.finkproject.org/doc/packaging/index.php">Guide de création de paquets</a> ou utilisez l'une ou l'autre des différentes <a href="http://www.finkproject.org/help/index.php">sources d'aide</a>. Vous devez aussi vous abonner à la liste de diffusion <a href="http://www.finkproject.org/lists/index.php">fink-devel</a>.</p>
 
 <h2><a name="Validate">1.3 Validation d'un paquet</a></h2>
-<p>Pendant le processus de validation de votre paquet, vous devez régler le niveau de verbosité de <code>fink</code> à la plus haute valeur possible. Voir la section <a href="http://fink.sourceforge.net/doc/users-guide/conf.php#optional">fichier de configuration de fink</a> pour savoir comment le changer.</p>
+<p>Pendant le processus de validation de votre paquet, vous devez régler le niveau de verbosité de <code>fink</code> à la plus haute valeur possible. Voir la section <a href="http://www.finkproject.org/doc/users-guide/conf.php#optional">fichier de configuration de fink</a> pour savoir comment le changer.</p>
 <p>Vérifiez que votre paquet est valide en exécutant :</p>
 <pre>
 finkdev% fink validate /sw/fink/dists/local/main/finkinfo/nomdupaquet.info

@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Pakete";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/12/09 18:17:04';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="upgrade.php?phpLang=de" title="Fink Aktualisieren"><link rel="prev" href="install.php?phpLang=de" title="Erste Installation">';
 
 
@@ -116,7 +116,7 @@ Sobald Sie ein Paket gefunden haben, welches Sie installieren wollen, benutzen S
 </p>
       <pre>fink install wget-ssl</pre>
       <p>
-Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("dependencies") vorhanden sind, und wird Sie dann fragen, ob Sie damit einverstanden sind, dass diese installiert werden, falls sie noch nicht da sind. Dann beginnt der Installationsprozess: die Quellen werden heruntergeladen, ausgepackt, gepatcht, kompiliert und schlussendlich an die richtige Stelle auf der Festplatt Ihres Computers geschoben. Dieser Vorgang kann eine lange Zeit dauern. Falls währenddessen Fehler auftreten, schauen Sie sich bitte erst die <a href="http://fink.sourceforge.net/faq/">FAQ</a> an.
+Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("dependencies") vorhanden sind, und wird Sie dann fragen, ob Sie damit einverstanden sind, dass diese installiert werden, falls sie noch nicht da sind. Dann beginnt der Installationsprozess: die Quellen werden heruntergeladen, ausgepackt, gepatcht, kompiliert und schlussendlich an die richtige Stelle auf der Festplatt Ihres Computers geschoben. Dieser Vorgang kann eine lange Zeit dauern. Falls währenddessen Fehler auftreten, schauen Sie sich bitte erst die <a href="http://www.finkproject.org/faq/">FAQ</a> an.
 </p>
     
     <h2><a name="fink-commander">3.5 Fink Commander</a></h2>
@@ -126,7 +126,7 @@ Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("d
     
 <h2><a name="available-versions">3.6 Verfügbare Versionen</a></h2>
       
-<p>Wenn Sie ein Paket installieren möchten, sollten Sie zuerst die <a href="http://fink.sourceforge.net/pdb/index.php">Paketdatenbank</a> überprüfen und nachsehen, ob es überhaupt via Fink verfügbar ist. Die verfügbare(n) Version(en) des Pakets werden in mehreren Zeilen einer Tabelle angezeigt. Diese sind:</p>
+<p>Wenn Sie ein Paket installieren möchten, sollten Sie zuerst die <a href="http://pdb.finkproject.org/pdb/index.php">Paketdatenbank</a> überprüfen und nachsehen, ob es überhaupt via Fink verfügbar ist. Die verfügbare(n) Version(en) des Pakets werden in mehreren Zeilen einer Tabelle angezeigt. Diese sind:</p>
       <ul>
         <li>
           <p>
@@ -137,7 +137,7 @@ Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("d
 <b>0.8.1:</b> Das ist die Basisversion, die als Binary-Paket für OS 10.2 und 10.3 unter dem aktuellen Fink-Release installiert werden kann. Wenn Sie Fink <a href="upgrade.php?phpLang=de">aktualisieren</a> wollen, kann es eine OS-spezifische, neuere Version geben, die hier nicht gezeigt wird.</p></li>
         <li>
           <p>
-            <b>10.2-gcc3.3 stable:</b> Das ist die aktuellste, stabile stable-Version ("stabil"), die von Quellcode für 10.2 mit dem <code>gcc 3.3</code>-Update für die Developer Tools installiert werden kann. Um diese Version zu installieren, ist es nötig, <a href="http://fink.sourceforge.net/doc/cvsaccess/index.php">CVS</a> oder den rsync-Zugang zu aktivieren. Falls Sie das <code>gcc 3.3</code>-Update nicht angewendet haben, werden Sie womöglich diese Version (oder eventuell sogar das Paket) nicht sehen.</p>
+            <b>10.2-gcc3.3 stable:</b> Das ist die aktuellste, stabile stable-Version ("stabil"), die von Quellcode für 10.2 mit dem <code>gcc 3.3</code>-Update für die Developer Tools installiert werden kann. Um diese Version zu installieren, ist es nötig, <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a> oder den rsync-Zugang zu aktivieren. Falls Sie das <code>gcc 3.3</code>-Update nicht angewendet haben, werden Sie womöglich diese Version (oder eventuell sogar das Paket) nicht sehen.</p>
           <p> Anmerkung: In Kontrast zu anderen Projekten, veröffentlicht Fink sowohl die aktuellsten stable-Versionen als auch die unstable-Versionen, die noch testing ("Erprobung") benötigen, via CVS. Die Aktivierung von CVS oder rsync bietet Ihnen den Zugriff auf die neuen stable-Versionen der Pakete, noch bevor diese in der Binary-Distribution aktualisiert sind.
 </p>
         </li>
@@ -145,10 +145,10 @@ Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("d
 </li>
         <li>
           <p>
-            <b>10.2-gcc3.3 unstable:</b> Das ist die aktuellste unstable-Version, die von Quellcode unter 10.2 mit <code>gcc 3.3</code> installiert werden kann. Um diese Version zu installieren, folgen Sie den <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">Erklärungen</a> über die Installation der unstable-Pakete.</p>
+            <b>10.2-gcc3.3 unstable:</b> Das ist die aktuellste unstable-Version, die von Quellcode unter 10.2 mit <code>gcc 3.3</code> installiert werden kann. Um diese Version zu installieren, folgen Sie den <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">Erklärungen</a> über die Installation der unstable-Pakete.</p>
           <p>Anmerkung:  unstable heißt nicht unbedingt unbenutzbar, allerdings installieren Sie diese Pakete auf eigene Gefahr.</p>
         </li>
-        <li><b>10.3 unstable:</b>  Das ist die aktuellste unstable-Version, die von Quellcode unter 10.3 installiert werden kann. Aktivieren Sie den unstable-Baum wie <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">oben</a> erwähnt.</li>
+        <li><b>10.3 unstable:</b>  Das ist die aktuellste unstable-Version, die von Quellcode unter 10.3 installiert werden kann. Aktivieren Sie den unstable-Baum wie <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">oben</a> erwähnt.</li>
       </ul>
     
     <h2><a name="x11">3.7 Mit X11 Klarkommen</a></h2>
@@ -183,7 +183,7 @@ Installieren Sie dieses Paket, wenn Sie Tenons Xtools installiert haben. Wie sys
         </li>
       </ul>
       <p>
-      Für mehr Informationen über die Installation und die Nutzung von X11, schlagen Sie weiter im <a href="http://fink.sourceforge.net/doc/x11/">X11 unter Darwin und Mac OS X</a>-Dokument nach.
+      Für mehr Informationen über die Installation und die Nutzung von X11, schlagen Sie weiter im <a href="http://www.finkproject.org/doc/x11/">X11 unter Darwin und Mac OS X</a>-Dokument nach.
 </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

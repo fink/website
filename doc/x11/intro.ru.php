@@ -1,7 +1,7 @@
 <?
 $title = "Использование X11 - Введение";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/02/17 05:00:35';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Использование X11 Contents"><link rel="next" href="history.php?phpLang=ru" title="История создания продукта"><link rel="prev" href="index.php?phpLang=ru" title="Использование X11 Contents">';
 
 
@@ -113,7 +113,7 @@ include_once "header.ru.inc";
                 настроить вид через т. наз. <a href="http://www.themes.org/">темы</a>. Многие менеджеры окон также
                 обеспечивают такие дополнительные функции, как всплывающие меню в
                 корневом окне, стыковки и кнопки запуска.</p>
-            <p> Для Fink скомпилированы многие менеджеры окон  - см. <a href="http://fink.sourceforge.net/pdb/section.php/x11-wm">
+            <p> Для Fink скомпилированы многие менеджеры окон  - см. <a href="http://pdb.finkproject.org/pdb/section.php/x11-wm">
                     текущий список.</a>
             </p>
         
@@ -136,10 +136,10 @@ include_once "header.ru.inc";
                 Чаще всего после инсталляции библиотек среды рабочего стола
                 (и других базовых библиотек) разработанное для данной среды приложение
                 работает с небольшими функциональными потерями или вовсе
-                без них. Примером служит растущий <a href="http://fink.sourceforge.net/pdb/section.php/gnome">
+                без них. Примером служит растущий <a href="http://pdb.finkproject.org/pdb/section.php/gnome">
                     выбор приложений GNOME</a>, которые можно
                 инсталлировать и использовать без применения GNOME. К сожалению,
-                    это <a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">
+                    это <a href="http://www.finkproject.org/faq/usage-fink.php#kde">
                     достижение пока не распространяется </a>на <a href="http://www.kde.org/">приложения KDE.</a>
             </p>
         

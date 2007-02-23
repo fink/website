@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
@@ -41,7 +41,7 @@ File--&gt;New でウィンドウを開き、次のファイルを開くと問題
 XDarwin を起動してもすぐ終了しちゃう!</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 慌てない、慌てない。
-Running X11 ドキュメントには、この問題の <a href="http://fink.sourceforge.net/doc/x11/trouble.php#immediate-quit">問題対処法の節</a> (英語版) があります。</p></div>
+Running X11 ドキュメントには、この問題の <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">問題対処法の節</a> (英語版) があります。</p></div>
 </a>
 <a name="no-server">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.4: XDarwin を起動しようとすると、このメッセージがでます

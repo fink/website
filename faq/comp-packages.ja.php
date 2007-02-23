@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般"><link rel="prev" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般">';
 
 
@@ -34,7 +34,7 @@ X11 に依存するパッケージがない場合、これは単純です。
 バイナリからなら  "<code>apt-get install</code>" または <code>dselect</code> です。</p><p> -あるいは-</p><p>3a. XFree86-4.3.x 以降を入れるには、 Fink の <code>xfree86</code> パッケージを、
 "fink install xfree86" でインストールします。
 最新版 (2004年5月25日時点で XFree86-4.4.x) はまだバイナリ版がなく、 unstable ツリーのみなので、 
-[<a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable%5C">unstable パッケージのインストール</a> を参照]
+[<a href="http://www.finkproject.org/faq/usage-fink.php#unstable%5C">unstable パッケージのインストール</a> を参照]
 </p></div>
 </a>
 <a name="change-thread-nothread">

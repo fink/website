@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/12/30 08:42:55';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installation, Utilisation et Mise à jour de Fink">';
 
 
@@ -172,7 +172,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 </a>
 <a name="compile-options">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.22: Comment utiliser des options variables lors de la compilation d'un paquet ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> La première chose à faire est de contacter le mainteneur du paquet pour lui demander d'introduire une variante dans le paquet. Cela peut être relativement facile à faire. Si le mainteneur ne vous répond pas ou si vous ne voyez pas apparaître de nouveaux paquets correspondant à votre demande, ou que vous vouliez essayer de faire le changement vous-même, étudiez le <a href="http://fink.sourceforge.net/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a> et le <a href="http://fink.sourceforge.net/doc/packaging/index.php">Guide de construction de paquets</a>.</p><p><b>Note :</b> Fink est volontairement initialisé de telle façon que tous les paquets binaires officiels soient identiques quelle que soit la machine sur laquelle ils sont construits. C'est ainsi qu'il n'y aura jamais d'optimisation pour le G5 dans un paquet officiel. Si vous voulez ce type d'option, il vous faudra le faire vous-même.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> La première chose à faire est de contacter le mainteneur du paquet pour lui demander d'introduire une variante dans le paquet. Cela peut être relativement facile à faire. Si le mainteneur ne vous répond pas ou si vous ne voyez pas apparaître de nouveaux paquets correspondant à votre demande, ou que vous vouliez essayer de faire le changement vous-même, étudiez le <a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a> et le <a href="http://www.finkproject.org/doc/packaging/index.php">Guide de construction de paquets</a>.</p><p><b>Note :</b> Fink est volontairement initialisé de telle façon que tous les paquets binaires officiels soient identiques quelle que soit la machine sur laquelle ils sont construits. C'est ainsi qu'il n'y aura jamais d'optimisation pour le G5 dans un paquet officiel. Si vous voulez ce type d'option, il vous faudra le faire vous-même.</p></div>
 </a>
 <a name="gettext">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.23: Lors de compilation à partir du source, Fink n'arrête pas de passer de <code>gettext-dev</code> à <code>libgettext3-dev</code>. Que se passe-t-il ?</b></p></div>

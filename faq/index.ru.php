@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В.";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="general.php?phpLang=ru" title="Общие вопросы">';
 
 
@@ -96,7 +96,7 @@ complaining that the dependencies are in an inconsistent state.</a></li><li><a h
                     строк заголовков в окнах.</a></li><li><a href="usage-packages.php?phpLang=ru#apple-x11-wants-xfree86">9.11 Я инсталлировал Apple X11, но Fink продолжает спрашивать об
                     инсталяции XFree86 или X.org.</a></li><li><a href="usage-packages.php?phpLang=ru#wants-xfree86-on-upgrade">9.12 Я переключился с версии 10.2 Fink на 10.2-gcc3.3 или 10.3,
                     у меня Apple X11, а Fink просит инсталлировать XFree86 или X.org.</a></li><li><a href="usage-packages.php?phpLang=ru#special-x11-debug">9.13 Я меня остались проблемы с X11и Fink.</a></li><li><a href="usage-packages.php?phpLang=ru#tiger-gtk">9.14 After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=ru#yelp">9.15 I can't get the help to work for any GNOME application.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ru.xml,v 1.9 2007/01/18 02:16:18 babayoshihiko Exp $-->
+<!--Generated from $Fink: faq.ru.xml,v 1.10 2007/02/23 22:04:54 rangerrick Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "移植 - 10.3 に向けて";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/01/25 03:57:27';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="preparing-10.4.php?phpLang=ja" title="10.4 に向けて"><link rel="prev" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて">';
 
 
@@ -17,7 +17,7 @@ include_once "header.ja.inc";
     OS X 10.2 では， <code>/usr/bin/perl</code> は perl 5.6.0 であり， architecture 文字列は "darwin" でした．
   	OS X 10.3 では， <code>/usr/bin/perl</code> は perl 5.8.1 にアップグレードされ， architecture 文字列が "darwin-thread-multi-2level" に変更されました．
   	この変更は， それぞれの perl 実行ファイルはモジュールを探す場所を知っているので，パッケージ作成時に perl 実行ファイルを使用する分には<b>おそらく</b>影響がないでしょう．
-  	perl モジュール ("-pm") パッケージのメンテナは，<a href="http://fink.sourceforge.net/packaging/policy.php#perlmods">Perl
+  	perl モジュール ("-pm") パッケージのメンテナは，<a href="http://www.finkproject.org/packaging/policy.php#perlmods">Perl
     モジュールのパッケージ化ポリシー</a>に従い，<code>CompileScript</code> と <code>InstallScript</code>
     が適切に作成されるようにしてください。
   </p>

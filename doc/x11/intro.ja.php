@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - イントロ";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:23:46';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=ja" title="歴史"><link rel="prev" href="index.php?phpLang=ja" title="Running X11 Contents">';
 
 
@@ -116,7 +116,7 @@ X11 では、ウィンドウ枠 (または " 装飾 ") は別のプログラム�
 </p>
 <p>
 多くのウィンドウマネージャが Fink パッケージ化されています。
-<a href="http://fink.sourceforge.net/pdb/section.php/x11-wm">一覧</a>をご覧下さい。
+<a href="http://pdb.finkproject.org/pdb/section.php/x11-wm">一覧</a>をご覧下さい。
 </p>
 
 <h2><a name="desktop">1.9 Quartz/Aqua や Gnome, KDE とは何ですか?</a></h2>
@@ -141,8 +141,8 @@ X11 では、ウィンドウ枠 (または " 装飾 ") は別のプログラム�
 <p>
 多くのアプリケーションは特定のデスクトップに統合された形で開発されています。
 たいてい、これはデスクトップ環境用のライブラリ (と低レベルのライブラリ) をインストールすることで、そのアプリケーションの機能を損なうことなく使うことができます。
-たとえば、いまでも増加中の <a href="http://fink.sourceforge.net/pdb/section.php/gnome">GNOME アプリケーション </a> は、GNOMEがなくとも動作します。
-残念なことに、 <a href="http://www.kde.org/">KDE アプリケーション</a> ではまだ<a href="http://fink.sourceforge.net/faq/usage-fink.php#kde">そこまで達していません</a>。
+たとえば、いまでも増加中の <a href="http://pdb.finkproject.org/pdb/section.php/gnome">GNOME アプリケーション </a> は、GNOMEがなくとも動作します。
+残念なことに、 <a href="http://www.kde.org/">KDE アプリケーション</a> ではまだ<a href="http://www.finkproject.org/faq/usage-fink.php#kde">そこまで達していません</a>。
 </p>
 
 <p align="right"><? echo FINK_NEXT ; ?>:

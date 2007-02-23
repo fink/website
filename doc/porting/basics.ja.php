@@ -1,7 +1,7 @@
 <?
 $title = "移植 - 基本";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/01/25 03:57:27';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="shared.php?phpLang=ja" title="共有コード"><link rel="prev" href="index.php?phpLang=ja" title="移植 Contents">';
 
 

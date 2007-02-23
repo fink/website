@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование Fink";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы"><link rel="prev" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)">';
 
 
@@ -17,7 +17,7 @@ include_once "header.ru.inc";
                     Fink. Пример:</p><pre>fink list</pre><p>Если вы используете бинарную дистрибуцию, <code>dselect</code>
                     предоставит вам удобный просматриваемый список имеющихся пакетов.
                     Имейте в виду, что вы должны выполнить эту команду в качестве суперпользователя, если хотите выбрать
-                    и инсталлировать пакеты в dselect.</p><p>Также на веб-сайте есть <a href="http://fink.sourceforge.net/pdb/">база данных
+                    и инсталлировать пакеты в dselect.</p><p>Также на веб-сайте есть <a href="http://pdb.finkproject.org/pdb/">база данных
                     по пакетам</a>.</p></div>
         </a>
         <a name="proxy">
@@ -98,7 +98,7 @@ include_once "header.ru.inc";
         <a name="bindist">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.7: База данных по пакетам на веб-сайте указывает в списке пакет xxx, но
                     apt-get и dselect ничего об этом не знают. Что неправильно?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> И то, и другое правильно. <a href="http://fink.sourceforge.net/pdb/">База данных по пакетам
+            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> И то, и другое правильно. <a href="http://pdb.finkproject.org/pdb/">База данных по пакетам
                     </a> знает о каждом пакете, включая пакеты,
                     которые все еще находятся в нестабильном разделе. Инструменты
                     <code>dselect</code> и <code>apt-get</code>, с другой стороны,
@@ -321,7 +321,7 @@ fink selfupdate-cvs</pre></div>
                     "install-info: unrecognized option `--infodir=/sw/share/info'"</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Обычно это происходит из-за проблемы в вашем PATH. Напечатайте в окне
                     терминала:</p><pre>printenv PATH</pre><p>Если<code>/sw/sbin</code> не появится совсем, надо
-                    настроить свою среду согласно - <a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">инструкциям</a> в Руководстве пользователя.
+                    настроить свою среду согласно - <a href="http://www.finkproject.org/doc/users-guide/install.php#setup">инструкциям</a> в Руководстве пользователя.
                     Если <code>/sw/sbin</code> есть,
                     но впереди находятся другие каталоги (н-р
                     <code>/usr/local/bin</code>), то вам надо либо реорганизовать 
@@ -346,7 +346,7 @@ fink selfupdate-cvs</pre></div>
                     в компоновке.</p><p>Если вы делаете инсталляцию на основе бинарной дистрибуции или
                     точно знаете, что версия в бинарной дистрибуции
                     такая же, как инсталлированная версия (н-р
-                    проверив <a href="http://fink.sourceforge.net/pdb/index.php">package
+                    проверив <a href="http://pdb.finkproject.org/pdb/index.php">package
                     database</a>), можно получить файл .deb, применив
                         <code>sudo apt=get install --reinstall --download-only <b>packagename</b>
                     </code>. В противном случае вы можете построить ее с помощью
@@ -558,7 +558,7 @@ page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pr
     <a name="wrong-arch">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.34: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://fink.sourceforge.net/download/index.php">the downloads page</a>.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p></div>
     </a>
     <a name="sf-cvs-2006">
 	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: I haven't been able to do a cvs selfupdate.</b></p></div>

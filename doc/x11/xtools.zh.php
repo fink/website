@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - Xtools";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2005/09/28 14:23:46';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="other.php?phpLang=zh" title="其它 X11 可能"><link rel="prev" href="run-xfree86.php?phpLang=zh" title="启动 X11">';
 
 

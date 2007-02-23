@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Fichiers";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2006/06/08 22:19:53';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=fr" title="Procédure de mise à jour des documents"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -190,7 +190,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
 <pre>LANGUAGES = en ja fr include $(basedir)/Makefile.i18n.common</pre> 
 <p>Puis exécutez <code>make</code> dans le répertoire. Cela créera les fichiers PHP (et éventuellement d'autres fichiers), ainsi que tous les fichiers correspondant aux langues présentes dans le Makefile.</p></li>
 </ol>
-<p>Note : si vous constatez des fautes d'orthographe ou des erreurs dans le fichier anglais, ne le modifiez pas de vous-même, mais signalez-les à la <a href="http://fink.sourceforge.net/lists/fink-i18n.php">liste de diffusion fink-i18n
+<p>Note : si vous constatez des fautes d'orthographe ou des erreurs dans le fichier anglais, ne le modifiez pas de vous-même, mais signalez-les à la <a href="http://www.finkproject.org/lists/fink-i18n.php">liste de diffusion fink-i18n
 list</a>, de telle sorte que le fichier anglais - fichier maître - soit modifié.</p>
 
 <h2><a name="check-work">2.7 Vérification du travail</a></h2>
@@ -322,7 +322,7 @@ Saisissez votre phrase d'authentification SourceForge.</li>
 <li>Déconnectez-vous du serveur web : 
 <pre>exit</pre></li>
 <li>Admirez votre travail : 
-<pre>open http://fink.sourceforge.net/</pre></li>
+<pre>open http://www.finkproject.org/</pre></li>
 </ol>
 
 <p align="right"><? echo FINK_NEXT ; ?>:

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging Tutorial - How to Start";
-$cvs_author = 'Author: chris01';
-$cvs_date = 'Date: 2007/01/07 01:12:27';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=en" title="Example - the Maxwell Package"><link rel="prev" href="index.php?phpLang=en" title="Packaging Tutorial Contents">';
 
 
@@ -31,7 +31,7 @@ We suggest you:
 <ul>
 <li>
 Have a look at 
-<a href="http://fink.sourceforge.net/doc/UsingFink.pdf">
+<a href="http://www.finkproject.org/doc/UsingFink.pdf">
 Using Fink: A Developer's How To</a>
 (2MB pdf file) - slides from a presentation at the 
 <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X Conference</a>.
@@ -60,7 +60,7 @@ if there is a matching request. You might find valuable information there.
 </li>
 <li>
 Maybe browse the 
-<a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>
+<a href="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</a>
 if you think you need more detailed information.
 </li>
 </ul>
@@ -98,7 +98,7 @@ finkdev% fink list packagename
 </pre>
 <p>
 If it doesn't show up in the list you might need to change your
-<a href="http://fink.sourceforge.net/doc/users-guide/conf.php#optional">fink configuration file</a>
+<a href="http://www.finkproject.org/doc/users-guide/conf.php#optional">fink configuration file</a>
 to include your local tree.
 </p>
 <p>
@@ -109,11 +109,11 @@ finkdev% fink index
 </pre>
 <p>
 If you need more information read the 
-<a href="http://fink.sourceforge.net/doc/packaging/index.php">Packaging Manual</a>
+<a href="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</a>
 or use one or more of different 
-<a href="http://fink.sourceforge.net/help/index.php">help sources</a>.
+<a href="http://www.finkproject.org/help/index.php">help sources</a>.
 You should also subscribe to the 
-<a href="http://fink.sourceforge.net/lists/index.php">fink-devel</a>
+<a href="http://www.finkproject.org/lists/index.php">fink-devel</a>
 mailing list.
 </p>
 
@@ -123,7 +123,7 @@ mailing list.
 <p>
 During validation of your package you should set the verbose level of 
 <code>fink</code> to the highest possible value. Check the section on the
-<a href="http://fink.sourceforge.net/doc/users-guide/conf.php#optional">fink configuration file</a>
+<a href="http://www.finkproject.org/doc/users-guide/conf.php#optional">fink configuration file</a>
 about how to change the verbose level.
 </p>
 <p>

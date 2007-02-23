@@ -255,7 +255,7 @@ include $(basedir)/Makefile.i18n.common</pre>
         <p>然后在这个目录里面运行 <code>make</code> 命令。这应该会生成中文的 PHP 文件（可能还有一些其它文件），同时还有英语和其它已经在 Makefile 中添加了的语言版本。</p></li>
       </ol>
 
-      <p>注意：如果你发现英文文件的一些错误，不要修改它，而应该报告到 <a href="http://fink.sourceforge.net/lists/fink-i18n.php">fink-i18n
+      <p>注意：如果你发现英文文件的一些错误，不要修改它，而应该报告到 <a href="http://www.finkproject.org/lists/fink-i18n.php">fink-i18n
 邮件列表</a>，这样英语主版本会得到更新。</p>
     
 
@@ -449,7 +449,7 @@ scripts/installer/dmg/faq.ru.html</pre>
         <pre>exit</pre></li>
 
         <li>检查你的成果：
-        <pre>open http://fink.sourceforge.net/</pre></li>
+        <pre>open http://www.finkproject.org/</pre></li>
       </ol>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

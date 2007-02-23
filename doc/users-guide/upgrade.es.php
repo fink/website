@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Actualizaciones";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2004/12/09 18:17:04';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="conf.php?phpLang=es" title="El archivo de configuración de Fink"><link rel="prev" href="packages.php?phpLang=es" title="Instalando Paquetes">';
 
 
@@ -30,7 +30,7 @@ Para apt, ejecuta <code>apt-get update</code> para obtener la lista de paquetes 
       <p>Para el Fink Commander, selecciona las descripcionesBinary-&gt;Update descriptions para actualizar la lista de paquetes, y luego Binary-&gt;Dist-Upgrade packages para actualizar a las nuevas versiones.</p>
       <p>
 Para mayor información, especificamente acerca de la actualización de versiones de Fink previas a la 0.3.0, revisa la
-<a href="http://fink.sourceforge.net/download/upgrade.php">Matriz de Actualización</a>.
+<a href="http://www.finkproject.org/download/upgrade.php">Matriz de Actualización</a>.
 </p>
     
     <h2><a name="src">4.2 Actualizando la distribución Fuente</a></h2>
@@ -48,7 +48,7 @@ Usando el CVS uno obtiene varias ventajas, como actualizaciones  continuas, pero
 Por esta razón, se recomienda que en general se use rsync (el cual tiene multiples espejos), cuyo única desventaja es que las descripciones son una hora más viejas que las disponibles para el CVS.
 </p>
       <p>(Si enfrentas algun problema al actualizar la Instalación del código fuente, consultaIf you are having trouble upgrading a source installation, consult
-<a href="http://fink.sourceforge.net/download/fix-upgrade.php">las
+<a href="http://www.finkproject.org/download/fix-upgrade.php">las
 instrucciones especiales</a>.)</p>
       <p>
 Si posees una versión de Fink previa a la 0.2.5, es necesario que descarges manualmente las descripciones de los paquetes.

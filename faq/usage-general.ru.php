@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-packages.php?phpLang=ru" title="Проблемы использования пакетов  - Специальные пакеты"><link rel="prev" href="comp-packages.php?phpLang=ru" title="Проблемы компиляции - специальные пакеты">';
 
 
@@ -16,7 +16,7 @@ include_once "header.ru.inc";
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ничего страшного, просто это значит, что программа будет использовать
                     сообщения, форматы дат и т.д. по умолчанию на английском языке. Программа
                     будет работать нормально, но иным образом. См. документ "Выполнение X11" 
-                    в <a href="http://fink.sourceforge.net/doc/x11/trouble.php#locale"></a>.</p></div>
+                    в <a href="http://www.finkproject.org/doc/x11/trouble.php#locale"></a>.</p></div>
         </a>
         <a name="passwd">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.2: В моей системе вдруг появилось несколько странных пользователей
@@ -152,7 +152,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(assuming that the build system is 
                             поставлялась.)</p>
                     </li>
                 </ul><p>Есть также другие варианты. Более подробно
-                    см. в документе <a href="http://fink.sourceforge.net/doc/x11/index.php">Выполнение
+                    см. в документе <a href="http://www.finkproject.org/doc/x11/index.php">Выполнение
                          X11</a>.</p></div>
         </a>
         <a name="no-display">

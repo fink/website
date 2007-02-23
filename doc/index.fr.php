@@ -1,14 +1,14 @@
 <?
 $title = "Documentation";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/07/25 14:41:55';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentation</h1>
-<!--Generated from $Fink: doc.fr.xml,v 1.18 2006/07/25 14:41:55 dmrrsn Exp $-->
+<!--Generated from $Fink: doc.fr.xml,v 1.19 2007/02/23 22:04:54 rangerrick Exp $-->
 <p>Voici un ensemble de documents écrits pour Fink. Certains de ces documents peuvent également être utiles aux personnes qui ne se servent pas de Fink sous Mac OS X ou Darwin, mais souhaitent apprendre à porter des logiciels Unix sur ces systèmes.</p>
 <h2><a name="userdoc">Documentation utilisateur</a></h2>
 
@@ -29,7 +29,7 @@ couvre des sujets plus complexes que ceux abordés dans le Guide de l'utilisateu
 <h2><a name="developerdoc">Documentation développeur</a></h2>
 <ul>
 <li><a href="security/index.php">Charte de sécurité</a> - lecture obligatoire pour tous ceux qui sont mainteneurs de paquets dans Fink ou qui veulent le devenir.</li>
-<li><a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</a> (fichier pdf 2MB) - diapositives d'une présentation lors de la <a href="http://conferences.oreillynet.com/macosx2002/">Conférence O'Reilly Mac OS X</a> (disponible aussi sous <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">format PowerPoint</a>) </li>
+<li><a href="http://www.finkproject.org/doc/UsingFink.pdf">Utilisation de Fink : un guide pour le développeur</a> (fichier pdf 2MB) - diapositives d'une présentation lors de la <a href="http://conferences.oreillynet.com/macosx2002/">Conférence O'Reilly Mac OS X</a> (disponible aussi sous <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">format PowerPoint</a>) </li>
 <li><a href="porting/index.php">Trucs et astuces pour le portage</a> - notes sur le portage d'applications Unix sur Darwin</li>
 <li><a href="quick-start-pkg/index.php">Tutoriel d'empaquetage</a> - complément au Guide de construction des paquets. Basé sur des exemples réels, il introduit le débutant dans le monde de la création de paquets.</li>
 <li><a href="packaging/index.php">Guide de construction des paquets</a> - comment créer et maintenir des paquets Fink</li>

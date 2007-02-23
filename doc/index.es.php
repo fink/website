@@ -1,14 +1,14 @@
 <?
 $title = "Documentación";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/07/25 14:41:55';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentación</h1>
-<!--Generated from $Fink: doc.es.xml,v 1.12 2006/07/25 14:41:55 dmrrsn Exp $-->
+<!--Generated from $Fink: doc.es.xml,v 1.13 2007/02/23 22:04:54 rangerrick Exp $-->
     <p>
 Esta es una colección de varios documentos escritos para el Fink. 
 Algunos de ellos tambien pueden ser útiles para la gente que usa Mac OS X
@@ -42,7 +42,7 @@ Un grupo de documentos que son más completos, pero ligeramente desactualizados 
     <ul>
           <li><a href="security/index.php">Manual de Políticas de Seguridad</a> - 
 	  Lectura obligatoria para aquellos que mantienen paquetes en Fink o que les gustaría añadir alguno.</li>
-      <li><a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Usando Fink: Un "Cómo hacer" para los desarrolladores</a> (un pdf de 2 Mbs) - transparencias y la presentación de la Conferencias<a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X </a> (Disponible tambien como 
+      <li><a href="http://www.finkproject.org/doc/UsingFink.pdf">Usando Fink: Un "Cómo hacer" para los desarrolladores</a> (un pdf de 2 Mbs) - transparencias y la presentación de la Conferencias<a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X </a> (Disponible tambien como 
 <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">archivo de PowerPoint </a>) </li>
       <li><a href="porting/index.php">Tips para hacer "puerto"</a> - notas para hacer "puertos" de aplicaciones de Unix a Darwin</li>
             <li><a href="quick-start-pkg/index.php">Tutorial de Empaquetamiento</a> - un complemento al Manual de Paquetes el cual se enfoca en ejemplos reales e introduce el empaquetamiento a los principiantes.</li>

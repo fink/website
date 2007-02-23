@@ -1,7 +1,7 @@
 <?
 $title = "Etiquette net - Premier message";
-$cvs_author = 'Author: michga';
-$cvs_date = 'Date: 2006/05/26 13:14:22';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Etiquette net Contents"><link rel="next" href="reply.php?phpLang=fr" title="Réponses aux messages"><link rel="prev" href="before-post.php?phpLang=fr" title="Phase de préparation">';
 
 

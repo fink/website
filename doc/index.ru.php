@@ -1,14 +1,14 @@
 <?
 $title = "Документация";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/07/25 14:41:55';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Документация  </h1>
-<!--Generated from $Fink: doc.ru.xml,v 1.6 2006/07/25 14:41:55 dmrrsn Exp $-->
+<!--Generated from $Fink: doc.ru.xml,v 1.7 2007/02/23 22:04:54 rangerrick Exp $-->
         <p> Это комплект различных документов, составленных для Fink. Некоторые
             из них могут быть также полезны тем, кто использует Mac OS X или
             Darwin без Fink и хочет узнать о переносе ПО Unix.</p>
@@ -55,7 +55,7 @@ include_once "header.inc";
                 безопасности</a> - обязательное пособие для изучения теми, кто
                 поддерживает пакеты в Fink или хотел бы добавить собственные пакеты.</li>
             <li>
-                <a href="http://fink.sourceforge.net/doc/UsingFink.pdf">Использование
+                <a href="http://www.finkproject.org/doc/UsingFink.pdf">Использование
                     Fink: пособие разработчика</a> (файл 2MB pdf) - начиная от презентации
                 на <a href="http://conferences.oreillynet.com/macosx2002/">Конференции O'Reilly
                     Mac OS X </a> (также возможной как <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">файл PowerPoint

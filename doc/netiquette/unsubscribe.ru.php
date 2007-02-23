@@ -1,7 +1,7 @@
 <?
 $title = "Сетевой этикет - Отказ от подписки";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/02/01 02:04:51';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Сетевой этикет Contents"><link rel="prev" href="reply.php?phpLang=ru" title="Ответы на объявления">';
 
 
@@ -14,7 +14,7 @@ include_once "header.ru.inc";
             
             <p>Чтобы  отказаться от подписки, <b>не надо</b> отправлять сообщение списку.</p>
             <ol>
-                <li>Надо это сделать на странице <a href="http://fink.sourceforge.net/lists/index.php">Mailing
+                <li>Надо это сделать на странице <a href="http://www.finkproject.org/lists/index.php">Mailing
                     Lists</a>. <p>Прим.: нельзя использовать версию MacOSX
                         Internet Explorer.</p>
                 </li>

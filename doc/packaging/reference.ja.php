@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:52';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -684,7 +684,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							これが必要だと分かっているとき<b>のみ</b>使うこと．
 							libtool 関連のスクリプトをバージョンの合わないものに取り換えると壊れるパッケージもあrimasu
 							．
-							詳細については<a href="http://fink.sourceforge.net/doc/porting/libtool.php">libtool のページ</a>を参照．
+							詳細については<a href="http://www.finkproject.org/doc/porting/libtool.php">libtool のページ</a>を参照．
 						</p>
 					</td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
 						<p>

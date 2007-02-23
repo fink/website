@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 升级";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2006/06/13 11:49:05';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:56';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="conf.php?phpLang=zh" title="Fink 配置文件"><link rel="prev" href="packages.php?phpLang=zh" title="安装软件包">';
 
 
@@ -31,7 +31,7 @@ include_once "header.zh.inc";
 <p>对于 Fink Commander，选择 Binary-&gt;Update descriptions 来更新软件包清单，然后选择 Binary-&gt;Dist-Upgrade packages 来升级到新的版本。</p>
       <p>
 更多的信息，尤其是关于升级 Fink 0.3.0　之前版本，参见
-<a href="http://fink.sourceforge.net/download/upgrade.php">Upgrade Matrix</a>。
+<a href="http://www.finkproject.org/download/upgrade.php">Upgrade Matrix</a>。
 </p>
     
     <h2><a name="src">4.2 升级从源码安装版本</a></h2>
@@ -49,7 +49,7 @@ CVS 是一个具有版本控制功能的储存库，它保存和管理软件包�
 使用 CVS 的优点是它是不断更新的，缺点是对 Fink 只有一个 CVS 服务器，如果访问量太大，它会变得不稳定。因此，对通常用户，我们推荐使用 rsync。对于 rsync，我们有多个镜像站点。唯一得缺点是新得版本在 CVS 发布以后会大约需要一个小时后才会更新到 rsync 镜像站点上。
 </p>
       <p>（如果你在升级从源码安装得版本中碰到问题，请查阅　
-<a href="http://fink.sourceforge.net/download/fix-upgrade.php">一些特殊指引</a>。）</p>
+<a href="http://www.finkproject.org/download/fix-upgrade.php">一些特殊指引</a>。）</p>
       <p>
 如果你的 Fink 是 0.2.5　之前得版本，你需要手工下载软件包描述文件。
 访问 <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">下载区</a>，在 "distribution"　模块中寻找最新的 packages-0.x.x.tar.gz 压缩档。

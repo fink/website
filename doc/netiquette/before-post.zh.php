@@ -1,7 +1,7 @@
 <?
 $title = "网络礼仪 - 张贴之前";
-$cvs_author = 'Author: jeff_yecn';
-$cvs_date = 'Date: 2004/04/18 13:29:06';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="网络礼仪 Contents"><link rel="next" href="first-post.php?phpLang=zh" title="初始张贴"><link rel="prev" href="index.php?phpLang=zh" title="网络礼仪 Contents">';
 
 

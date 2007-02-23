@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:18';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -20,7 +20,7 @@ include_once "header.zh.inc";
 如果你使用二进制安装包方式，<code>dselect</code> 可以提供给你一个很好的可用软件包清单。
 注意，如果你需要从 dselect 中选择和安装软件包，你需要以 root 权限运行它。
 </p><p>
-另外，在网站上也有一个<a href="http://fink.sourceforge.net/pdb/">软件包数据库</a>。
+另外，在网站上也有一个<a href="http://pdb.finkproject.org/pdb/">软件包数据库</a>。
 </p></div>
     </a>
     <a name="proxy">
@@ -84,7 +84,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
       <div class="question"><p><b><? echo FINK_Q ; ?>5.7: 网站上的软件包数据库列有 xxx 软件包，但 apt-get 和 dselect 则没有任何显示。哪个有问题？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 都正确。
-<a href="http://fink.sourceforge.net/pdb/">软件包数据</a>
+<a href="http://pdb.finkproject.org/pdb/">软件包数据</a>
 知道每一个软件包，包括那些仍处于不稳定阶段的。
 <code>dselect</code> 和 <code>apt-get</code> 工具则只知道那些可用的经过预编译的二进制软件包。
 许多软件包因为各种原因所以没有提供预编译的二进制版本。
@@ -246,12 +246,12 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="install-info-bad">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.18: 我不能安装任何软件，因为我碰到下面的错误信息："install-info: unrecognized option `--infodir=/sw/share/info'"。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p><pre>printenv PATH</pre><p>如果输出里面没有 <code>/sw/sbin</code>，那么你需要按照用户指南中的<a href="http://fink.sourceforge.net/doc/users-guide/install.php#setup">方法</a>来设置你的环境变量。如果有 <code>/sw/sbin</code>，但有其它目录在它前面（比如 <code>/usr/local/bin</code>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <code>/sw/sbin</code> 排在前面。或者如果你的确需要把其它目录放在 <code>/sw/sbin</code> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <code>install-info</code> 子目录。</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p><pre>printenv PATH</pre><p>如果输出里面没有 <code>/sw/sbin</code>，那么你需要按照用户指南中的<a href="http://www.finkproject.org/doc/users-guide/install.php#setup">方法</a>来设置你的环境变量。如果有 <code>/sw/sbin</code>，但有其它目录在它前面（比如 <code>/usr/local/bin</code>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <code>/sw/sbin</code> 排在前面。或者如果你的确需要把其它目录放在 <code>/sw/sbin</code> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <code>install-info</code> 子目录。</p></div>
     </a>
     <a name="bad-list-file">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.19: 我不能安装或删除任何东西，因为一个 "files list file" 问题。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 通常这些错误的形式是：</p><pre>files list file for package <b>软件包名</b> contains empty filename</pre><p>或</p><pre>files list file for package <b>软件包名</b> is missing final newline</pre><p>这可以通过一点小小的工作而修复。如果你在系统里面有发生问题的这个软件包的 .deb 文件，用下面命令检查它的完整性：</p><pre>dpkg --contents <b>deb文件的完整路径</b>
-        </pre><p>例如</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>如果你获得了一列目录和文件，那么你的 .deb 是正确的。如果输出是目录和文件以外的其它东西，或者你没有 .deb 文件，你仍然可以继续操作，因为这个错误不会影响构建。</p><p>如果你是从二进制包进行安装或你肯定知道二进制包里面的版本和你已经安装的版本一致（比如，通过检查<a href="http://fink.sourceforge.net/pdb/index.php">软件包数据库</a>），你可以用下面的办法获取一个 .deb 文件： <code>sudo apt=get install --reinstall --download-only <b>软件包名</b>
+        </pre><p>例如</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>如果你获得了一列目录和文件，那么你的 .deb 是正确的。如果输出是目录和文件以外的其它东西，或者你没有 .deb 文件，你仍然可以继续操作，因为这个错误不会影响构建。</p><p>如果你是从二进制包进行安装或你肯定知道二进制包里面的版本和你已经安装的版本一致（比如，通过检查<a href="http://pdb.finkproject.org/pdb/index.php">软件包数据库</a>），你可以用下面的办法获取一个 .deb 文件： <code>sudo apt=get install --reinstall --download-only <b>软件包名</b>
           </code>。否则你也可以用下面的办法自己从源代码重新构建一个：<code>fink rebuild <b>软件包名</b>
           </code>，但它暂时还不能安装。</p><p>一旦你有了一个正常的 .deb 文件，你可以重新安装文件。首先用下面的命令成为 root 用户：<code>sudo -s</code>（有需要的话，输入你的管理员密码），然后使用下面的命令（我们把它分行以方便阅读，但实际使用的时候，你应该在一行里面输入）：</p><pre>dpkg -c <b>deb文件的完整路径</b>
   | awk '{if ($6 == "./"){ print "/."; } else if (substr($6, length($6), 1) == "/")
@@ -283,7 +283,7 @@ fink selfupdate-cvs</pre></div>
     </a>
     <a name="cant-upgrade">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.22: 我看不到要升级的 Fink 版本。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在这种情况下，参考<a href="http://fink.sourceforge.net/download/fix-upgrade.php">特别指引</a>。</p><ul>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在这种情况下，参考<a href="http://www.finkproject.org/download/fix-upgrade.php">特别指引</a>。</p><ul>
           <li><b>10.3.x:</b> (0.7.1 distribution)
 		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
 sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
@@ -416,7 +416,7 @@ page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pr
     <a name="wrong-arch">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.34: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://fink.sourceforge.net/download/index.php">the downloads page</a>.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p></div>
     </a>
     <a name="sf-cvs-2006">
 	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: I haven't been able to do a cvs selfupdate.</b></p></div>

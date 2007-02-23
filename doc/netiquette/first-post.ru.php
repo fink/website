@@ -1,7 +1,7 @@
 <?
 $title = "Сетевой этикет - Первоначальное объявление";
-$cvs_author = 'Author: horsager';
-$cvs_date = 'Date: 2005/02/01 02:04:51';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Сетевой этикет Contents"><link rel="next" href="reply.php?phpLang=ru" title="Ответы на объявления"><link rel="prev" href="before-post.php?phpLang=ru" title="Что надо сделать до размещения объявления">';
 
 

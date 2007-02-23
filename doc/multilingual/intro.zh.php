@@ -57,7 +57,7 @@ include_once "header.zh.inc";
       <p>如果你愿意给我们的国际化工作提供帮助，下面有几件事情是你可以做的：</p>
 
       <ul>
-        <li>参加<a href="http://fink.sourceforge.net/lists/fink-i18n.php">fink-i18n 邮件列表</a>的讨论。
+        <li>参加<a href="http://www.finkproject.org/lists/fink-i18n.php">fink-i18n 邮件列表</a>的讨论。
         这是我们讨论国际化的机制，发布文档更新的通知的地方。</li>
 
         <li>检查你的语言的翻译版本。你可能会发现一个比我们的更好的译法，发现一个翻译错误，或者其它可能。</li>

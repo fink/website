@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/01/18 02:16:52';
+$cvs_author = 'Author: rangerrick';
+$cvs_date = 'Date: 2007/02/23 22:04:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -599,7 +599,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 这发生在补丁阶段，在 PatchScript 脚本运行之前。
 <b>仅仅</b>在你肯定需要软件包需要它的时候才这样做。
 有些软件包会因为替换不正确版本的 libtool 脚本而被破坏。
-查看<a href="http://fink.sourceforge.net/doc/porting/libtool.php">libtool
+查看<a href="http://www.finkproject.org/doc/porting/libtool.php">libtool
 网页</a>获取更进一步的信息。
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
