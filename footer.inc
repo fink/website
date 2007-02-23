@@ -1,5 +1,5 @@
 <?
-/* $Id: footer.inc,v 1.36 2007/02/22 23:45:10 rangerrick Exp $ */
+/* $Id: footer.inc,v 1.37 2007/02/23 20:15:21 rangerrick Exp $ */
 ?>
 
 <? /* end content table */ ?>
@@ -40,11 +40,15 @@
 		}
 	?>
 </div>
-    <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+<!-- BMR 02/23/2007 - feedburner login went to fink-core-private -->
+<script src="http://feeds.feedburner.com/~s/FinkProjectNews" type="text/javascript" charset="utf-8"></script>
+<!-- BMR 02/23/2007 - anyone have the login for getting these stats?
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 </script>
 <script type="text/javascript">
 _uacct = "UA-305132-1";
 urchinTracker();
 </script>
+-->
 </body>
 </html>

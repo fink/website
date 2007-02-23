@@ -1,12 +1,12 @@
 <?
 $hostlogo = 1;
-	$img = '<a href="http://www.isc.org/">
+	$img = '<a href="http://www.xs4all.nl/">
 			<img 
-				src="'.$root.'img/isc.png" 
-				width="84"
-				height="41" 
+				src="'.$root.'img/xs4all.gif" 
+				width="73"
+				height="22" 
 				border="0" 
-				alt="ISC logo" 
+				alt="XS4ALL logo" 
 				style="vertical-align:text-bottom">
 		</a>';
 ?>

@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.101 2007/02/22 23:45:10 rangerrick Exp $ */
+/* $Id: header.inc,v 1.102 2007/02/23 20:15:21 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -286,11 +286,6 @@ function insert_sub ($navbox, $active_page) {
 
 </head>
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
-<!-- Tracking Code v3.01 - All rights reserved -->
-<!-- More tracking, arranged for the bindist -->
-<script language="javascript1.1" src="/tracking.js" type="text/javascript"></script><noscript>
-<img src="http://statistics.dynamicsitestats.com/p.pl?a=10001728464933&amp;js=no" width="1" height="1" alt=""></noscript><!--//-->
-<!-- End of Tracking Code -->
 
 <? /* header and sourceforge logo */ ?>
 <div id="header-left">
