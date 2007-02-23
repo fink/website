@@ -1,7 +1,7 @@
 <?
 $title = "Fink bugs - how to report a bug";
-$cvs_author = '$Author: beren12 $';
-$cvs_date = '$Date: 2005/01/22 23:37:59 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2007/02/23 21:27:54 $';
 
 include "header.inc";
 ?>
@@ -36,12 +36,12 @@ headers, but <a href="#xcc">a different method, described below</a>.</p>
 
 <p>There is a program that was developed in Debian to help reporting
 bug reports, it's called
-<code><a href="http://fink.sourceforge.net/pdb/package.php/reportbug">reportbug</a></code>.
+<code><a href="http://pdb.finkproject.org/pdb/package.php/reportbug">reportbug</a></code>.
 It will guide you through the bug reporting process step by step,
 and probably ease filing bugs that way.</p>
 
 <p>Emacs users can also use the debian-bug command provided by the
-<code><a href="http://fink.sourceforge.net/pdb/package.php/debbugs-el">
+<code><a href="http://pdb.finkproject.org/pdb/package.php/debbugs-el">
 debbugs-el</a></code> package. When called with <kbd>M-x
 debian-bug</kbd>, it will ask for all necessary information in a
 similar way to <code>reportbug</code>.</p>
