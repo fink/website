@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.102 2007/02/23 20:15:21 rangerrick Exp $ */
+/* $Id: header.inc,v 1.103 2007/02/25 04:57:28 dmrrsn Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -99,13 +99,13 @@ $section_names = array(
 );
 
 $section_files = array(
-	'home' => '/index.php?phpLang='. $lang_code,
-	'download' => '/download/index.php?phpLang='. $lang_code,
+	'home' => 'http://www.finkproject.org/index.php?phpLang='. $lang_code,
+	'download' => 'http://www.finkproject.org/download/index.php?phpLang='. $lang_code,
 	'packages' => 'http://pdb.finkproject.org/pdb/index.php?phpLang='. $lang_code,
-	'help' => '/help/index.php?phpLang='. $lang_code,
-	'faq' => '/faq/index.php?phpLang='. $lang_code,
-	'documentation' => '/doc/index.php?phpLang='. $lang_code, 
-	'mailing-lists' => '/lists/index.php?phpLang='. $lang_code
+	'help' => 'http://www.finkproject.org/help/index.php?phpLang='. $lang_code,
+	'faq' => 'http://www.finkproject.org/faq/index.php?phpLang='. $lang_code,
+	'documentation' => 'http://www.finkproject.org/doc/index.php?phpLang='. $lang_code, 
+	'mailing-lists' => 'http://www.finkproject.org/lists/index.php?phpLang='. $lang_code
 );
 
 if (!$section) $section = "home";
