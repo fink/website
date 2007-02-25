@@ -1,7 +1,8 @@
 <?
-/* $Id: header.inc,v 1.11 2007/02/23 06:58:59 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.12 2007/02/25 05:22:32 dmrrsn Exp $ */
 
 $linkroot = "http://www.finkproject.org/";
+$localroot = "http://pdb.finkproject.org/";
 
 $server = $_SERVER['SERVER_NAME'];
 $uri = $_SERVER['REQUEST_URI'];
@@ -37,11 +38,11 @@ if ($uses_pathinfo) {
 /* generate page header and navigation */
 $section = "packages";
 $navbox = array(
-  "pdb/index.php", "Introduction",
-  "pdb/sections.php", "By Section",
-  "pdb/list.php", "By Package",
-  "pdb/search.php", "Search",
-  "pdb/testing.php", "Help needed"
+  $localroot."pdb/index.php", "Introduction",
+  $localroot."pdb/sections.php", "By Section",
+  $localroot."pdb/list.php", "By Package",
+  $localroot."pdb/search.php", "Search",
+  $localroot."pdb/testing.php", "Help needed"
 );
 include "timestamp.inc";
 
