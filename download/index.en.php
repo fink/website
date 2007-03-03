@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/15 20:48:06 $';
+$cvs_author = '$Author: dmalloc $';
+$cvs_date = '$Date: 2007/03/03 23:03:25 $';
 
 include "header.inc";
 ?>
@@ -16,6 +16,12 @@ Otherwise, check out the <a href="overview.php">overview</a> and the
 </p>
 
 <h2>Quick Start</h2>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-305132-6";
+urchinTracker();
+</script> 
 <p>
 New to Fink?  These quick start instructions are here to get you up to speed
 with the binary release.
@@ -27,9 +33,9 @@ include "../fink_version.inc";
 <ol>
 <li><p>
 Download the installer disk image:<br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download" onClick="javascript:urchinTracker ('/downloads/FinkPPC'); " >Fink
 <? print $fink_version; ?> Binary Installer (PowerPC)</a> - <? print $dmg_size; ?><br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
+<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download" onClick="javascript:urchinTracker ('/downloads/FinkINTEL'); ">Fink
 <? print $fink_version; ?> Binary Installer (Intel)</a> - <? print $intel_dmg_size; ?><br>
 (10.3 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink
 0.7.2</a>)<br>
