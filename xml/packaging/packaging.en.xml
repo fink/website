@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.94 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.95 2007/03/04 22:11:38 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -262,6 +262,15 @@ of <code>%v</code>.
 </p>
 </itemd></item>
 
+<item><itemt>%V</itemt>
+<itemd>
+<p>
+the full package <em>V</em>ersion, which automatically includes the Epoch
+if present.  Note that this percent expansion is only available for
+packages whose <code>InfoN</code> level is at least 4.
+</p>
+</itemd></item>
+
 <item><itemt>%r</itemt>
 <itemd>
 <p>
@@ -428,6 +437,10 @@ this expands to <em>lib/ppc64</em> on powerpc machines, and to
 <em>lib/x86_64</em> on intel machines (the proper storage locations
 for 64-bit libraries); otherwise, this expands to <em>lib</em>.
 (Introduced in fink-0.26.0)
+</p>
+<p>Note that <code>%lib</code> is not permitted in the
+<code>ConfigureParams</code> field unless the <code>InfoN</code>
+ level is at least 4.
 </p>
 </itemd></item>
 </itemtable>
@@ -1837,6 +1850,10 @@ the <code>Package</code> field of <code>SplitOff</code>
 <code>Info3</code> (fink>=0.25.0): Can indent nicely in .info files,
 no more support for RFC-822 multi-lines, and can put comments in
 pkglist fields.
+</li>
+<li>
+<code>Info4</code> (fink>=0.26.2): adds %V expansion, and permits
+<code>%lib</code> in <code>ConfigureParams</code> field.
 </li>
 </ul>
 </itemd></item>
