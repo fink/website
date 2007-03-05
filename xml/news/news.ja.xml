@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.29 2006/11/07 22:30:20 dmrrsn Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.30 2007/03/05 02:25:43 babayoshihiko Exp $</cvsid>
+
+<newsitem>
+	<date>2007-03-04</date>
+	<headline>tar の問題</headline>
+	<body>
+<p>
+fink の unstable ツリーを使用していると、大きなパッケージをビルドする最後に、
+<em>tar: File changed as we read it</em> のようなエラーが出ることがあり、
+.deb ファイルがビルドされないことがあります。
+</p><p>
+fink team は、この問題を恒久的に直す方法を研究しています。
+当面のところ、この問題にであったら、 <code>fink install tar-1.15.1-14</code>
+で回避することができます。
+これは、<code>fink update-all</code> をする度に実行する必要があるかもしれません。
+</p><p>
+この問題を恒久的に直す方法を決定ししだい、こちらで再度告知をいたします。
+</p>
+		</body>
+	</newsitem>
 
 <newsitem>
 	<date>2006-08-19</date>
