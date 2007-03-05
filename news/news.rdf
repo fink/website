@@ -5,8 +5,43 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2007-02-23T17:06:33-05:00</dc:date>
+    <dc:date>2007-03-04T17:59:02-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar">
+      <title>Problems with tar</title>
+      <link>http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar</link>
+      <guid>http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar</guid>
+      <description>
+<p>Some users of fink's unstable tree are having sporadic difficulties
+at the end of building large packages, getting reports like
+tar: File changed as we read it which causes the .deb file
+not to be built.
+</p><p>
+The fink team is currently studying this problem to determine a permanent
+fix.  For the time being, users experiencing this problem can work around
+it by issuing the command fink install tar-1.15.1-14.  It
+may be necessary to issue that command after each fink update-all
+command, as well.
+</p><p>Once the fink team has determined how to solve this problem 
+permanently, another announcement will be made here.
+</p>
+		</description>
+      <content:encoded>
+<p>Some users of fink's unstable tree are having sporadic difficulties
+at the end of building large packages, getting reports like
+tar: File changed as we read it which causes the .deb file
+not to be built.
+</p><p>
+The fink team is currently studying this problem to determine a permanent
+fix.  For the time being, users experiencing this problem can work around
+it by issuing the command fink install tar-1.15.1-14.  It
+may be necessary to issue that command after each fink update-all
+command, as well.
+</p><p>Once the fink team has determined how to solve this problem 
+permanently, another announcement will be made here.
+</p>
+		</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available">
       <title>Server down; workarounds available</title>
       <link>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</link>
@@ -780,83 +815,6 @@ and <a href="http://article.gmane.org/gmane.os.apple.fink.beginners/14200"> here
 </p>
       <p> If you have not yet upgraded, you should consider remaining with
 XCode version 1.2 until the problem has been resolved.
-</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20released.">
-      <title>Fink 0.7.1 released.</title>
-      <link>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2004-09-20%20Fink%200.7.1%20released.</guid>
-      <description>
-      <p>
-The latest Fink release, version 0.7.1 (for 10.3),
-is now available for both source and binary users. This release is meant for Panther (10.3)  based
-Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based Mac OS X versions. 
-</p>
-      <p>
-This new release incorporates various fixes to the package manager, 
-and many previously
-unavailable binary packages have been added resulting in a total of 1650 binary packages. This includes
-binaries for KDE 3.1.4 and GNOME 2.4.
-</p>
-      <p>
-To complete a new Fink installation you should follow the instructions posted
-<a href="http://fink.sourceforge.net/download/index.php">here</a>.
-You may upgrade your existing Fink to the latest Fink using your current installation.
-
-A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
-
-<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</a>
-</p>
-      <p>
-If you have questions or problems, please try the Fink mailing lists.  You can learn more about them
-<a href="http://fink.sourceforge.net/lists/index.php">here</a>.
-</p>
-      <p>
-Please make sure you pick the appropriate installer for your platform.
-Fink 0.6.3 will only install on Mac OS X 10.2.*, while Fink 0.7.1 will only install on Mac OS X 10.3.*
-</p>
-      <p>
-The Fink Team would like to thank its many contributors, frequent helpers
-and developers for making this release happen.
-We also thank our community for downloading the prior release 0.7.0 more than 130,000 times. 
-Without their constant support and valuable pointers, Fink would not be where we are now.
-</p>
-    </description>
-      <content:encoded>
-      <p>
-The latest Fink release, version 0.7.1 (for 10.3),
-is now available for both source and binary users. This release is meant for Panther (10.3)  based
-Mac OS X versions.  The 0.6.3 release remains available for Jaguar (10.2) based Mac OS X versions. 
-</p>
-      <p>
-This new release incorporates various fixes to the package manager, 
-and many previously
-unavailable binary packages have been added resulting in a total of 1650 binary packages. This includes
-binaries for KDE 3.1.4 and GNOME 2.4.
-</p>
-      <p>
-To complete a new Fink installation you should follow the instructions posted
-<a href="http://fink.sourceforge.net/download/index.php">here</a>.
-You may upgrade your existing Fink to the latest Fink using your current installation.
-
-A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
-
-<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</a>
-</p>
-      <p>
-If you have questions or problems, please try the Fink mailing lists.  You can learn more about them
-<a href="http://fink.sourceforge.net/lists/index.php">here</a>.
-</p>
-      <p>
-Please make sure you pick the appropriate installer for your platform.
-Fink 0.6.3 will only install on Mac OS X 10.2.*, while Fink 0.7.1 will only install on Mac OS X 10.3.*
-</p>
-      <p>
-The Fink Team would like to thank its many contributors, frequent helpers
-and developers for making this release happen.
-We also thank our community for downloading the prior release 0.7.0 more than 130,000 times. 
-Without their constant support and valuable pointers, Fink would not be where we are now.
 </p>
     </content:encoded>
     </item>
