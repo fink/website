@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2007/03/04 22:11:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -162,6 +162,12 @@ the package <b>e</b>poch
 the package <b>v</b>ersion. Note that the Epoch is not part
 of <code>%v</code>.
 </p>
+</td></tr><tr valign="top"><td>%V</td><td>
+<p>
+the full package <b>V</b>ersion, which automatically includes the Epoch
+if present.  Note that this percent expansion is only available for
+packages whose <code>InfoN</code> level is at least 4.
+</p>
 </td></tr><tr valign="top"><td>%r</td><td>
 <p>
 the package <b>r</b>evision
@@ -279,6 +285,10 @@ this expands to <b>lib/ppc64</b> on powerpc machines, and to
 <b>lib/x86_64</b> on intel machines (the proper storage locations
 for 64-bit libraries); otherwise, this expands to <b>lib</b>.
 (Introduced in fink-0.26.0)
+</p>
+<p>Note that <code>%lib</code> is not permitted in the
+<code>ConfigureParams</code> field unless the <code>InfoN</code>
+ level is at least 4.
 </p>
 </td></tr></table>
 
