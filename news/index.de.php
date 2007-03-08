@@ -1,13 +1,27 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/11/07 22:30:20';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/03/08 02:27:14';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
+<a name="2007-03-04%20Problems%20with%20tar"><span class="news-date">2007-03-04: </span><span class="news-headline">Problems with tar</span></a><?php gray_line(); ?>
+<p>Some users of fink's unstable tree are having sporadic difficulties
+at the end of building large packages, getting reports like
+<b>tar: File changed as we read it</b> which causes the .deb file
+not to be built.
+</p><p>
+The fink team is currently studying this problem to determine a permanent
+fix.  For the time being, users experiencing this problem can work around
+it by issuing the command <code>fink install tar-1.15.1-14</code>.  It
+may be necessary to issue that command after each <code>fink update-all</code>
+command, as well.
+</p><p>Once the fink team has determined how to solve this problem 
+permanently, another announcement will be made here.
+</p>
+		<a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
 <p><b> Update: 21 August 2006: </b> The server has been restored.</p>
 	<p> 
 The server which hosts four important

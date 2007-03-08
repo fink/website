@@ -1,4 +1,17 @@
-<a name="2006-08-19%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%80%E3%82%A6%E3%83%B3;%20%E5%9B%9E%E9%81%BF%E7%AD%96%E6%9C%89%E3%82%8A%E3%80%82"><span class="news-date">2006-08-19: </span><span class="news-headline">サーバダウン; 回避策有り。</span></a><?php gray_line(); ?>
+<a name="2007-03-04%20tar%20%E3%81%AE%E5%95%8F%E9%A1%8C"><span class="news-date">2007-03-04: </span><span class="news-headline">tar の問題</span></a><?php gray_line(); ?>
+<p>
+fink の unstable ツリーを使用していると、大きなパッケージをビルドする最後に、
+<b>tar: File changed as we read it</b> のようなエラーが出ることがあり、
+.deb ファイルがビルドされないことがあります。
+</p><p>
+fink team は、この問題を恒久的に直す方法を研究しています。
+当面のところ、この問題にであったら、 <code>fink install tar-1.15.1-14</code>
+で回避することができます。
+これは、<code>fink update-all</code> をする度に実行する必要があるかもしれません。
+</p><p>
+この問題を恒久的に直す方法を決定ししだい、こちらで再度告知をいたします。
+</p>
+		<a name="2006-08-19%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%80%E3%82%A6%E3%83%B3;%20%E5%9B%9E%E9%81%BF%E7%AD%96%E6%9C%89%E3%82%8A%E3%80%82"><span class="news-date">2006-08-19: </span><span class="news-headline">サーバダウン; 回避策有り。</span></a><?php gray_line(); ?>
 <p><b> Update: 21 August 2006: </b> The server has been restored.</p>
 	<p> 
 現在、fink の４つの重要なサービス (rsync 更新、バイナリ配布, ソースファイルの "master mirror", パッケージデータベース)
@@ -60,14 +73,5 @@ rsync://master.us.finkmirrors.net/finkinfo/
 			<p>
 				アップグレードスクリプトの評判は上々です。多くのユーザがこれでスイッチしています。
 				それでも何か問題がありましたら、<a href="<?php print $root; ?>lists">リスト</a>にメールをしてください。
-			</p>
-		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				は OSCON に来ており、Fink に興味がある人も嫌いな人も大歓迎です。
-			</p>
-			<p>
-				7月26日午後8時半、 room F150 にて Fink や Mac OS X 、その他諸々のことを話します、
 			</p>
 		

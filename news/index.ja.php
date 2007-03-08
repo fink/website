@@ -1,13 +1,26 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/11/07 22:30:20';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/03/05 02:25:43';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2006-08-19%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%80%E3%82%A6%E3%83%B3;%20%E5%9B%9E%E9%81%BF%E7%AD%96%E6%9C%89%E3%82%8A%E3%80%82"><span class="news-date">2006-08-19: </span><span class="news-headline">サーバダウン; 回避策有り。</span></a><?php gray_line(); ?>
+<a name="2007-03-04%20tar%20%E3%81%AE%E5%95%8F%E9%A1%8C"><span class="news-date">2007-03-04: </span><span class="news-headline">tar の問題</span></a><?php gray_line(); ?>
+<p>
+fink の unstable ツリーを使用していると、大きなパッケージをビルドする最後に、
+<b>tar: File changed as we read it</b> のようなエラーが出ることがあり、
+.deb ファイルがビルドされないことがあります。
+</p><p>
+fink team は、この問題を恒久的に直す方法を研究しています。
+当面のところ、この問題にであったら、 <code>fink install tar-1.15.1-14</code>
+で回避することができます。
+これは、<code>fink update-all</code> をする度に実行する必要があるかもしれません。
+</p><p>
+この問題を恒久的に直す方法を決定ししだい、こちらで再度告知をいたします。
+</p>
+		<a name="2006-08-19%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%80%E3%82%A6%E3%83%B3;%20%E5%9B%9E%E9%81%BF%E7%AD%96%E6%9C%89%E3%82%8A%E3%80%82"><span class="news-date">2006-08-19: </span><span class="news-headline">サーバダウン; 回避策有り。</span></a><?php gray_line(); ?>
 <p><b> Update: 21 August 2006: </b> The server has been restored.</p>
 	<p> 
 現在、fink の４つの重要なサービス (rsync 更新、バイナリ配布, ソースファイルの "master mirror", パッケージデータベース)

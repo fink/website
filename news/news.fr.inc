@@ -1,4 +1,18 @@
-<a name="19/08/2006%20Serveur%20inacessible%20-%20Solutions"><span class="news-date">19/08/2006: </span><span class="news-headline">Serveur inacessible - Solutions</span></a><?php gray_line(); ?>
+<a name="2007-03-04%20Problems%20with%20tar"><span class="news-date">2007-03-04: </span><span class="news-headline">Problems with tar</span></a><?php gray_line(); ?>
+<p>Some users of fink's unstable tree are having sporadic difficulties
+at the end of building large packages, getting reports like
+<b>tar: File changed as we read it</b> which causes the .deb file
+not to be built.
+</p><p>
+The fink team is currently studying this problem to determine a permanent
+fix.  For the time being, users experiencing this problem can work around
+it by issuing the command <code>fink install tar-1.15.1-14</code>.  It
+may be necessary to issue that command after each <code>fink update-all</code>
+command, as well.
+</p><p>Once the fink team has determined how to solve this problem 
+permanently, another announcement will be made here.
+</p>
+		<a name="19/08/2006%20Serveur%20inacessible%20-%20Solutions"><span class="news-date">19/08/2006: </span><span class="news-headline">Serveur inacessible - Solutions</span></a><?php gray_line(); ?>
 <p><b>Mise à jour du 21/08/2006 </b> : le serveur est de nouveau accessible.</p>
 <p>Le serveur qui héberge quatre services fink important (mise à jour via rsync, distribution binaire, "serveur maître" des fichiers sources et base de données des paquets) est inaccessible en ce moment. Nous espérons qu'il sera de nouveau fonctionnel lundi 21 août. Voici les solutions provisoires à votre disposition pendant l'indisponibilité du serveur.</p>
 <p>Pour mettre à jours fink, vous devez soit choisir un miroir rsync différent du miroir primaire (voir le paragraphe suivant, soit utilisez la commmande <code>fink selfupdate-cvs</code>. Cette commande ne doit être utilisée qu'une seule fois ; les mises à jour suivantes se feront automatiquement via CVS. Quand le serveur sera de nouveau fonctionnel, vous pourrez revenir à la mise à jour via rsync en exécutant la commande <code>fink selfupdate-rsync</code>.</p>
@@ -12,8 +26,4 @@
 <p>Un autre moyen consiste à télécharger le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">script de mise à jour</a> et de lire les instructions dans le fichier README pour mettre à jour l'installation existante sans la supprimer. Cette méthode reconstruit l'installation Fink à partir du source et met à jour toute l'installation. Notez que le processus peut prendre un certain temps selon l'installation.</p>
 <p>Nous avons reçu des rapports très encourageants sur l'utilisation du script ; de nombreux utilisateurs sont déjà passés à la nouvelle arborescence. Si vous rencontrez des problèmes, veuillez en faire part sur les <a href="<?php print $root; ?>lists">listes de discussions</a>.
 </p>
-<a name="24/07/2006%20%22Les%20oiseaux%20de%20m%C3%AAme%20plumage%22%20de%20Fink%20%C3%A0%20OSCON%202006"><span class="news-date">24/07/2006: </span><span class="news-headline">"Les oiseaux de même plumage" de Fink à OSCON 2006</span></a><?php gray_line(); ?>
-<p>Allez-vous à OSCON 2006 ?  Voulez-vous que nous nous rencontrions ?</p>
-<p><a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick sur #fink) sera à OSCON et souhaite rencontrer tous ceux qui le souhaitent pour parler de Fink ou juste pour le plaisir.</p>
-<p>Nous pourrons nous voir dans le bureau F150 mercredi 26 juillet à 20 h 30 et nous parlerons de Fink, Mac OS X ou de n'importe quel autre sujet.</p>
 

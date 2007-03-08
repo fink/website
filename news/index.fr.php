@@ -1,13 +1,27 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/11/07 22:30:20';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/03/08 02:27:14';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="19/08/2006%20Serveur%20inacessible%20-%20Solutions"><span class="news-date">19/08/2006: </span><span class="news-headline">Serveur inacessible - Solutions</span></a><?php gray_line(); ?>
+<a name="2007-03-04%20Problems%20with%20tar"><span class="news-date">2007-03-04: </span><span class="news-headline">Problems with tar</span></a><?php gray_line(); ?>
+<p>Some users of fink's unstable tree are having sporadic difficulties
+at the end of building large packages, getting reports like
+<b>tar: File changed as we read it</b> which causes the .deb file
+not to be built.
+</p><p>
+The fink team is currently studying this problem to determine a permanent
+fix.  For the time being, users experiencing this problem can work around
+it by issuing the command <code>fink install tar-1.15.1-14</code>.  It
+may be necessary to issue that command after each <code>fink update-all</code>
+command, as well.
+</p><p>Once the fink team has determined how to solve this problem 
+permanently, another announcement will be made here.
+</p>
+		<a name="19/08/2006%20Serveur%20inacessible%20-%20Solutions"><span class="news-date">19/08/2006: </span><span class="news-headline">Serveur inacessible - Solutions</span></a><?php gray_line(); ?>
 <p><b>Mise à jour du 21/08/2006 </b> : le serveur est de nouveau accessible.</p>
 <p>Le serveur qui héberge quatre services fink important (mise à jour via rsync, distribution binaire, "serveur maître" des fichiers sources et base de données des paquets) est inaccessible en ce moment. Nous espérons qu'il sera de nouveau fonctionnel lundi 21 août. Voici les solutions provisoires à votre disposition pendant l'indisponibilité du serveur.</p>
 <p>Pour mettre à jours fink, vous devez soit choisir un miroir rsync différent du miroir primaire (voir le paragraphe suivant, soit utilisez la commmande <code>fink selfupdate-cvs</code>. Cette commande ne doit être utilisée qu'une seule fois ; les mises à jour suivantes se feront automatiquement via CVS. Quand le serveur sera de nouveau fonctionnel, vous pourrez revenir à la mise à jour via rsync en exécutant la commande <code>fink selfupdate-rsync</code>.</p>
