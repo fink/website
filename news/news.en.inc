@@ -12,6 +12,10 @@ command, as well.
 </p><p>Once the fink team has determined how to solve this problem 
 permanently, another announcement will be made here.
 </p>
+<p><b> Update: 16 March 2007: </b> The new version of fink's 
+<code>dpkg</code> package resolves this problem.  Unstable users can
+now run the update commands normally.
+</p>
 		<a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
 <p><b> Update: 21 August 2006: </b> The server has been restored.</p>
 	<p> 
