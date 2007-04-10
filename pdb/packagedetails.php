@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/04/10 04:55:24 $';
+$cvs_date = '$Date: 2007/04/10 19:36:36 $';
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 60 * 60) . " GMT");
 
 $uses_pathinfo = 0;
@@ -24,7 +24,7 @@ if($version) {
 }
 
 if($tree) {
- $q = "SELECT * FROM package WHERE fullname LIKE '$package$version' AND release='$tree' ORDER BY latest DESC";
+ $q = "SELECT * FROM package WHERE fullname LIKE '$package$version' AND \`release\`='$tree' ORDER BY latest DESC";
 } else {
  $q = "SELECT * FROM package WHERE fullname LIKE '$package$version' ORDER BY latest DESC";
 }
@@ -81,7 +81,7 @@ if (!$rs) {
 	
 	// Print contents 
 	$q = "SELECT DISTINCT pkghash,votes FROM contentspackages ".
-		 "WHERE package='$package' AND version='$version' AND release='$tree' ORDER BY votes DESC";
+		 "WHERE package='$package' AND version='$version' AND \`release\`='$tree' ORDER BY votes DESC";
 	$rs = mysql_query($q, $dbh);
 	if (!$rs) {
 	  print '<p><b>error during query:</b> '.mysql_error().'</p>';
