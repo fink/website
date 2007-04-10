@@ -1,7 +1,8 @@
 <?
 $title = "Package Database - Section ";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2003/11/23 16:55:16 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2007/04/10 04:55:24 $';
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + 60 * 60) . " GMT");
 
 $uses_pathinfo = 1;
 include "header.inc";

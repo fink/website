@@ -1,9 +1,10 @@
 <?
 $title = "Package Database - Upload Form";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/04/19 05:43:55 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2007/04/10 04:55:24 $';
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + 60 * 60) . " GMT");
 
-/* $Id: submit.php,v 1.4 2004/04/19 05:43:55 benh57 Exp $ */
+/* $Id: submit.php,v 1.5 2007/04/10 04:55:24 rangerrick Exp $ */
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
 if ($uses_pathinfo) {

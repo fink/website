@@ -1,7 +1,8 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2006/07/22 22:59:34 $';
+$cvs_date = '$Date: 2007/04/10 04:55:24 $';
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + 60 * 60) . " GMT");
 
 $uses_pathinfo = 1;
 include "header.inc";
