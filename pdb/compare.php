@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/04/10 19:36:36 $';
+$cvs_date = '$Date: 2007/04/10 19:45:52 $';
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 60 * 60) . " GMT");
 
 include "header.inc";
@@ -62,7 +62,7 @@ if($op) {
 	foreach ($HTTP_POST_VARS as $argb) {	
 		if (preg_match("/chg=([^!]+)/i", $argb, $matches)) {
 			$name = $matches[1];
-			$q = "UPDATE move SET moveflag = ".($op - 1)." WHERE (\`release\` = '".$tree1.
+			$q = "UPDATE move SET moveflag = ".($op - 1)." WHERE (`release` = '".$tree1.
 				"' AND name='".$name."')";	
 			$rsr = mysql_query($q, $dbh);
 			if (mysql_errno()) {
@@ -72,7 +72,7 @@ if($op) {
 		}
 	}
 }
-$q = "SELECT * FROM \`release\`";
+$q = "SELECT * FROM `release`";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print "<p><b>error during query ".$q.':</b> '.mysql_error().'</p>';
@@ -115,7 +115,7 @@ if (!$rs) {
 	}
 }
 $q = "SELECT name,maintainer,version,revision,moveflag,needtest FROM package ".
-  	 "WHERE \`release\` LIKE \"$tree1\" ".
+  	 "WHERE `release` LIKE \"$tree1\" ".
   	 ($splitoffs ? '' : 'AND parentname IS NULL ').
   	 "ORDER BY ".(strcmp($sort, "name") ? 'maintainer,name' : 'name')." ASC";
 $rs = mysql_query($q, $dbh);
@@ -137,7 +137,7 @@ if (!$rs) {
  $pkglist = $pkglist . "<ul>\n";
   while ($row = mysql_fetch_array($rs)) {
 	$q2 = "SELECT name FROM package ".
-      "WHERE \`release\` LIKE \"$tree2\" AND name=\"" . $row['name'] . '"';	
+      "WHERE `release` LIKE \"$tree2\" AND name=\"" . $row['name'] . '"';	
 	$rs2 = mysql_query($q2, $dbh);
 	if (!$rs2) {
 	  print "<p><b>error during query ".$q2.':</b> '.mysql_error().'</p>';
@@ -157,7 +157,7 @@ if (!$rs) {
 			if(! strcmp($tree1, "current-10.2-gcc3.3-unstable") && ! strcmp($tree2, "current-10.3-unstable") && $cmp == 0)
 			{
 				$qmove = "SELECT moveflag FROM move ".
-      				"WHERE \`release\` LIKE \"$tree1\" AND name=\"" . $row['name'] . '"';
+      				"WHERE `release` LIKE \"$tree1\" AND name=\"" . $row['name'] . '"';
 				$rsm = mysql_query($qmove, $dbh);				
 				$err = mysql_errno();
 				if (!$rsm) {
@@ -169,7 +169,7 @@ if (!$rs) {
   				
   				if($mcount == 0) {
 					### Must be new here. Insert the record into the move table		
-					$qmove2 = "INSERT INTO move (\`release\`, name, moveflag) VALUES (\"".$tree1.
+					$qmove2 = "INSERT INTO move (`release`, name, moveflag) VALUES (\"".$tree1.
 							  "\",\"".$row[name]."\", 0)"; 
 					$rs1 = mysql_query($qmove2, $dbh);				
 					$err = mysql_errno();

@@ -1,10 +1,10 @@
 <?
 $title = "Package Database - Upload Form";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/04/10 19:36:37 $';
+$cvs_date = '$Date: 2007/04/10 19:45:52 $';
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 60 * 60) . " GMT");
 
-/* $Id: submit.php,v 1.6 2007/04/10 19:36:37 rangerrick Exp $ */
+/* $Id: submit.php,v 1.7 2007/04/10 19:45:52 rangerrick Exp $ */
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
 if ($uses_pathinfo) {
@@ -118,7 +118,7 @@ elseif(param(pkghash1))
 	$pkghash = param(pkghash1);
 	## First check against the 'package' table - this is the Web PDB
 	$q = "SELECT fullname FROM package ".
-    	  "WHERE (fullname = '$package-$version' AND \`release\` = '$release')";
+    	  "WHERE (fullname = '$package-$version' AND `release` = '$release')";
 #	print $q . "\n";  
 	$rs = run_query($q, $dbh);
 	$count = mysql_num_rows($rs);
@@ -127,8 +127,8 @@ elseif(param(pkghash1))
 		print "NOSUCHPKG - Package MD5 $pkghash does not exist in $release.";
 	  } else {
 	  	## Found in web PDB, now look to see if it is in the contents DB
-	  	$q = "SELECT package,version,\`release\`,pkghash,votes FROM contentspackages ".
-			  "WHERE (\`release\` = '$release' AND package = '$package' AND version = '$version' AND pkghash = '$pkghash')";
+	  	$q = "SELECT package,version,`release`,pkghash,votes FROM contentspackages ".
+			  "WHERE (`release` = '$release' AND package = '$package' AND version = '$version' AND pkghash = '$pkghash')";
 #		print $q . "\n";  
 			
 		$rs1 = run_query($q, $dbh);
@@ -142,7 +142,7 @@ elseif(param(pkghash1))
 	      		$votes = $row[votes] + 1;
 #	      		$q = "UPDATE contentssubmitters SET votes = ".$votes.
 	      		$q = "UPDATE contentspackages SET votes = ".$votes.
-			  	" WHERE (\`release\` = '".$row[release]."' AND package = '".$row[package].
+			  	" WHERE (`release` = '".$row[release]."' AND package = '".$row[package].
 			  	 "' AND version = '".$row[version]."' AND pkghash = '".$row[pkghash]."')";
 #				print $q . "\n";  
 				$rs2 = mysql_query($q, $dbh);
@@ -235,7 +235,7 @@ elseif(param(pkghash1))
 	###### It is not possible that 2 entries should have the same release, package, version, pkghash.
 	###### Thus, the PRIMARY KEY is (release, package, version, pkghash, file_id) 
 	######
-		$q = "INSERT INTO contentspackages (submitter, \`release\`, package, version, pkghash, file_id, votes, timestamp) VALUES ('$username', '$release', '$package', '$version', '$pkghash', '$file_id', 0, '$timestamp')";
+		$q = "INSERT INTO contentspackages (submitter, `release`, package, version, pkghash, file_id, votes, timestamp) VALUES ('$username', '$release', '$package', '$version', '$pkghash', '$file_id', 0, '$timestamp')";
 	#	print $q . "\n";  
 		$rs = mysql_query($q, $dbh);
 		if ((!$rs) && (mysql_errno() != 1062)) {

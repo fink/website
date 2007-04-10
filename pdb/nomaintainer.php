@@ -1,13 +1,13 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/04/10 19:36:36 $';
+$cvs_date = '$Date: 2007/04/10 19:45:52 $';
 header("Expires: " . gmdate("D, d M Y H:i:s", time() + 60 * 60) . " GMT");
 
 include "header.inc";
 
 if (!param(distro)) {
-  $distro_sql = "AND (\`release\` LIKE 'current-10.3%' OR \`release\` LIKE 'current-10.4%')";
+  $distro_sql = "AND (`release` LIKE 'current-10.3%' OR `release` LIKE 'current-10.4%')";
   $distro_txt = ' in the 10.3 and 10.4 releases';
 } else if (!strcmp(param(distro),"all")) {
   $distro_sql = '';
@@ -17,7 +17,7 @@ if (!param(distro)) {
   $distro_sql = '';
   $distro_txt = '';
 } else {
-  $distro_sql = "AND \`release\` LIKE 'current-".param(distro)."%'";
+  $distro_sql = "AND `release` LIKE 'current-".param(distro)."%'";
   $distro_txt = ' in the '.param(distro). ' release';
 }
 
