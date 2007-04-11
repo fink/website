@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.103 2007/02/25 04:57:28 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.104 2007/04/11 17:08:56 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -18,6 +18,13 @@
 // |                                                                          |
 // +--------------------------------------------------------------------------+
 
+if (!defined($expires))
+{
+	# by default, expire in 1 hour
+	$expires = 60 * 60;
+}
+
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + $expires) . " GMT");
 
 // param() allows us to work without register_globals set on the server.
 function param($Name) {

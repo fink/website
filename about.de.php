@@ -1,8 +1,8 @@
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
 <?
 $title = "About";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2006/07/10 22:16:19 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2007/04/11 17:08:56 $';
+header("Content-type: text/html; charset=utf-8");
 
 include "header.inc";
 ?>

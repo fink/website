@@ -1,6 +1,5 @@
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
 <?
-/* $Id: constants.de.inc,v 1.5 2007/02/22 23:45:10 rangerrick Exp $ */
+/* $Id: constants.de.inc,v 1.6 2007/04/11 17:08:56 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -15,6 +14,8 @@
 // | usage:    1. read the comments                                           |
 // |           2. encoding must be UTF-8 or it will not show properly         |
 // +--------------------------------------------------------------------------+
+
+header("Content-type: text/html; charset=utf-8");
 
 /* The Sections.  Used in Menu Navigation Bar */
 define (FINK_LC_ALL, 'de_DE');
