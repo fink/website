@@ -19,7 +19,7 @@ $text =~ s|<\!DOCTYPE[^>]+>\n||g;
 $text =~ s|<html>.*<head>.*<title>|<?\n\$title = "|s;
 while ($text =~ s|(</title>.*[^\\])'(.*</head>)|$1\\'$2|s) {
 }
-$text =~ s|</title>|";\nheader\("Expires: " . gmdate\("D, d M Y H:i:s", time\(\) \+ 60 \* 60\) . " GMT"\);\n\$cvs_author = '$tag_author';\n\$cvs_date = '$tag_date';\n\$metatags = '|s;
+$text =~ s|</title>|";\n\$cvs_author = '$tag_author';\n\$cvs_date = '$tag_date';\n\$metatags = '|s;
 
 #for docs and faq
 $text =~ s|</head>.*<body>(\n)*<!--\?|\';\n\n|s;
