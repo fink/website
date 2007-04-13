@@ -1,7 +1,7 @@
-﻿<?
+<?
 $title = "Home";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/08/21 03:04:36 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2007/04/13 11:41:06 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
