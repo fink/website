@@ -1,7 +1,7 @@
-﻿<?
+<?
 $title = "リンク集";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2006/12/22 10:10:17 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2007/04/13 11:44:09 $';
 
 include "header.inc";
 ?>

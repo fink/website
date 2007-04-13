@@ -1,7 +1,7 @@
-﻿<?
+<?
 $title = "Instructions de mise à niveau pour Mac OS X 10.3";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/11/26 09:27:54 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2007/04/13 11:44:08 $';
 
 include "header.inc";
 ?>

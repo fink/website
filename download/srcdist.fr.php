@@ -1,7 +1,7 @@
-﻿<?
+<?
 $title = "Téléchargement de la version source";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/06/16 00:05:40 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2007/04/13 11:44:08 $';
 
 include "header.inc";
 ?>

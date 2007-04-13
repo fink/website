@@ -1,7 +1,7 @@
-﻿<?
+<?
 $title = "Instructions de mise à niveau binaire pour Mac OS X 10.2";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/03 22:58:37 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2007/04/13 11:44:08 $';
 
 include "header.inc";
 ?>
