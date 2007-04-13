@@ -1,4 +1,4 @@
-AuthUserFile /home/groups/f/fi/fink/.htpasswd
+AuthUserFile /etc/apache2/htpasswd
 AuthName fink
 AuthType basic
 <Limit GET>
