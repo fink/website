@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.104 2007/04/11 17:08:56 rangerrick Exp $ */
+/* $Id: header.inc,v 1.105 2007/04/18 16:27:45 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -24,8 +24,6 @@ if (!defined($expires))
 	$expires = 60 * 60;
 }
 
-header("Expires: " . gmdate("D, d M Y H:i:s", time() + $expires) . " GMT");
-
 // param() allows us to work without register_globals set on the server.
 function param($Name) {
 	 global $HTTP_GET_VARS;
@@ -47,6 +45,12 @@ function param($Name) {
 include_once dirname(__FILE__) . "/phpLang.inc.php";
 $lang_code = 'en';
 if ((phpLang_current)) $lang_code = phpLang_current;
+
+header("Content-Language: " . $lang_code);
+if ($_REQUEST['phpLang'])
+{
+	header("Expires: " . gmdate("D, d M Y H:i:s", time() + $expires) . " GMT");
+}
 
 if (is_readable (dirname(__FILE__) . "/constants." . $lang_code . ".inc"))
 	include_once dirname(__FILE__) . "/constants." . $lang_code . ".inc";
