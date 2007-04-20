@@ -1,5 +1,8 @@
 <?
-/* $Id: footer.inc,v 1.38 2007/02/24 14:12:56 rangerrick Exp $ */
+/* $Id: footer.inc,v 1.39 2007/04/20 02:04:35 rangerrick Exp $ */
+if (!$urchin_account) {
+	$urchin_account = "UA-305132-6";
+}
 ?>
 
 <? /* end content table */ ?>
@@ -46,7 +49,7 @@
 <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
 </script>
 <script type="text/javascript">
-_uacct = "UA-305132-6";
+_uacct = "<? echo $urchin_account ?>";
 urchinTracker();
 </script> 
 </body>
