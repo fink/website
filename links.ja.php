@@ -1,7 +1,7 @@
 <?
 $title = "リンク集";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2007/04/13 11:44:09 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2007/05/08 03:06:28 $';
 
 include "header.inc";
 ?>
@@ -84,7 +84,7 @@ Mac 用の GIMP、GTK、X のサイト。</li>
 <p>日本語情報</p>
 <li><a href="http://fink.sodan.ecc.u-tokyo.ac.jp/index.ja.html" target="_blank">東大 Fink チーム</a> -
 東大 Fink チームのサイト。</li>
-<li><a href="http://pc7.2ch.net/test/read.cgi/mac/1166780804/l50" target="_blank">Fink 使ってるの洩れだけなのかっ！？【rev.2】</a> -
+<li><a href="http://pc11.2ch.net/test/read.cgi/mac/1166780804/l50" target="_blank">Fink 使ってるの洩れだけなのかっ！？【rev.2】</a> -
 「2ちゃんねる」の Fink スレッド。（日本語ページのみ）</li>
 <li><a href="http://pc7.2ch.net/test/read.cgi/mac/1089767349/l50" target="_blank">ＦＩＮＫ使ってるの洩れだけなのかっ！？</a> -
 「2ちゃんねる」の Fink スレッド。（先代）</li>
