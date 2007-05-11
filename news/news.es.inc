@@ -1,4 +1,18 @@
-<a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
+<a name="2007-03-04%20Problems%20with%20tar"><span class="news-date">2007-03-04: </span><span class="news-headline">Problems with tar</span></a><?php gray_line(); ?>
+<p>Some users of fink's unstable tree are having sporadic difficulties
+at the end of building large packages, getting reports like
+<b>tar: File changed as we read it</b> which causes the .deb file
+not to be built.
+</p><p>
+The fink team is currently studying this problem to determine a permanent
+fix.  For the time being, users experiencing this problem can work around
+it by issuing the command <code>fink install tar-1.15.1-14</code>.  It
+may be necessary to issue that command after each <code>fink update-all</code>
+command, as well.
+</p><p>Once the fink team has determined how to solve this problem 
+permanently, another announcement will be made here.
+</p>
+		<a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
 <p><b> Update: 21 August 2006: </b> The server has been restored.</p>
 	<p> 
 The server which hosts four important
@@ -43,7 +57,7 @@ package database</a> which is a few weeks out of date.
 			</p>
 			<p><b>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</b></p>
 			<p>
-				As we mentioned <a href="<?php print $root; ?>news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				As we mentioned <a href="<?php print $root; ?>news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
 				there are 2 ways to make the switch to the supported "10.4" tree.
 			</p>
 			<p>
@@ -61,16 +75,5 @@ package database</a> which is a few weeks out of date.
 				Feedback on the upgrade script has been very positive; many users have already
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <a href="<?php print $root; ?>lists">discussion lists</a>.
-			</p>
-		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
-				Fink, or even just meet for the heck of it.
-			</p>
-			<p>
-				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
-				Mac OS X, and anything else that takes our fancy.
 			</p>
 		

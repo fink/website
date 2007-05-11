@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2007-03-08T11:28:14+09:00</dc:date>
+    <dc:date>2007-05-11T15:49:41+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar">
       <title>Problems with tar</title>
@@ -25,6 +25,10 @@ command, as well.
 </p><p>Once the fink team has determined how to solve this problem 
 permanently, another announcement will be made here.
 </p>
+<p> Update: 16 March 2007:  The new version of fink's 
+dpkg package resolves this problem.  Unstable users can
+now run the update commands normally.
+</p>
 		</description>
       <content:encoded>
 <p>Some users of fink's unstable tree are having sporadic difficulties
@@ -39,6 +43,10 @@ may be necessary to issue that command after each fink update-all
 command, as well.
 </p><p>Once the fink team has determined how to solve this problem 
 permanently, another announcement will be made here.
+</p>
+<p> Update: 16 March 2007:  The new version of fink's 
+dpkg package resolves this problem.  Unstable users can
+now run the update commands normally.
 </p>
 		</content:encoded>
     </item>

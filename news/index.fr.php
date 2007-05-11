@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/03/08 02:27:14';
+$cvs_date = 'Date: 2007/05/11 06:49:06';
 $metatags = '';
 
 include_once "header.inc";
@@ -20,6 +20,10 @@ may be necessary to issue that command after each <code>fink update-all</code>
 command, as well.
 </p><p>Once the fink team has determined how to solve this problem 
 permanently, another announcement will be made here.
+</p>
+<p><b> Update: 16 March 2007: </b> The new version of fink's 
+<code>dpkg</code> package resolves this problem.  Unstable users can
+now run the update commands normally.
 </p>
 		<a name="19/08/2006%20Serveur%20inacessible%20-%20Solutions"><span class="news-date">19/08/2006: </span><span class="news-headline">Serveur inacessible - Solutions</span></a><?php gray_line(); ?>
 <p><b>Mise à jour du 21/08/2006 </b> : le serveur est de nouveau accessible.</p>

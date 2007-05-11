@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.30 2007/03/05 02:25:43 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.31 2007/05/11 06:49:06 babayoshihiko Exp $</cvsid>
 
 <newsitem>
 	<date>2007-03-04</date>
@@ -18,6 +18,10 @@ fink team は、この問題を恒久的に直す方法を研究しています�
 これは、<code>fink update-all</code> をする度に実行する必要があるかもしれません。
 </p><p>
 この問題を恒久的に直す方法を決定ししだい、こちらで再度告知をいたします。
+</p>
+<p><em> Update: 16 March 2007: </em>
+<code>dpkg</code> の新バージョンにて問題が解決されます。
+Unstable を利用している方は、通常通り update を実行してください。
 </p>
 		</body>
 	</newsitem>
@@ -54,7 +58,7 @@ when downloading sources?" と聞かれるので、
 と聞かれた場合、
 rsync://master.us.finkmirrors.net/finkinfo/
 以外を選択してください。
-米国にいる場合、残念ながら他の選択肢がないかもしれません。
+米国にいる場合、残念ながら他には選択肢がないかもしれません。
 </p><p>
 最後に、パッケージデータベースを使うには、
 <link url="http://lists.finkproject.org/pdb">データベースのバックアップ</link>
@@ -69,19 +73,18 @@ rsync://master.us.finkmirrors.net/finkinfo/
 		<headline>注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</headline>
 		<body>
 			<p>
-
 				"10.4-transitional" ツリーは、 GCC 3.3 (Mac OS X 10.3 のデフォルトコンパイラ) と
-				GCC 4.0 (Mac OS X 10.4 のデフォルトコンパイラ) のバイナリ間の非互換性問題の暫定的解決策でした。
-				ようやく Fink は GCC 4.0 へ移行する作業が終了し、 "10.4" ツリーへ移行していただくよう、
-				"10.4-transitional" ツリーの2006年8月1日をもってサポートを終了いたします。
+				GCC 4.0 (Mac OS X 10.4 のデフォルトコンパイラ) のバイナリ間の非互換性問題にたいする暫定的な解決策でした。
+				ようやく Fink は GCC 4.0 へ移行する作業が終了し、 "10.4" ツリーへ移行してください。
+				"10.4-transitional" ツリーのサポートは、2006年8月1日をもって終了いたします。
 			</p>
 			<p><em>"fink --version" が "0.8.1.cvs" または "0.8.1.rsync" と表示する場合、特にすることはありません。</em></p>
 			<p>
 				<varlink url="news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</varlink>、
-				"10.4" ツリーへの以降方法は2種類あります。
+				"10.4" ツリーへの移行方法は2種類あります。
 			</p>
 			<p>
-				一番簡単なのは、既存の Fink インストールを削除し、<varlink
+				一番簡単な方法は、既存の Fink インストールを削除し、<varlink
 				url="download">ダウンロードページ</varlink>から 0.8.1 インストーラを入手してインストールし直すことです。
 			</p>
 			<p>
@@ -92,8 +95,8 @@ rsync://master.us.finkmirrors.net/finkinfo/
 				インストール状況によっては、相当な時間がかかります！
 			</p>
 			<p>
-				アップグレードスクリプトの評判は上々です。多くのユーザがこれでスイッチしています。
-				それでも何か問題がありましたら、<varlink url="lists">リスト</varlink>にメールをしてください。
+				アップグレードスクリプトの評判は上々です。多くのユーザがこれで "10.4" ツリーへスイッチしています。
+				それでも何か問題がありましたら、<varlink url="lists">メーリングリスト</varlink>にメールをしてください。
 			</p>
 		</body>
 	</newsitem>
@@ -102,7 +105,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 		<date>2006-07-24</date>
 		<headline>Fink Birds-of-a-Feather at OSCON 2006</headline>
 		<body>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
+			<p>OSCON 2006 にきてる人? 集まれ!</p>
 			<p>
 				<link url="mailto:oscon2006@racoonfink.com">Benjamin Reed</link> (RangerRick on #fink)
 				は OSCON に来ており、Fink に興味がある人も嫌いな人も大歓迎です。
@@ -124,8 +127,8 @@ PowerPC 上の Fink ユーザは、古い "10.4-transitional" から、より新
 背景: OS X 10.4 とともに来た、新しいバージョンの g++ コンパイラ
 (Fink の馬車馬の一頭) は、以前のバージョンとはバイナリ非互換なコードを生成します。
 10.4-transitional ツリーを使う際は、Fink は新しい gcc-4.0 コンパイラと古い g++-3.3 コンパイラを組み合わせて使います。
-この戦略は、g++-4.0 と互換のパッケージをつくるため、よけいな時間を必要とします。
-移行は完了の時期に達し、新しいツリーにのみ依存します。
+この戦略は、g++-4.0 と互換のパッケージをつくるため、更なる時間を必要とします。
+すでに移行完了に達しましたので、新しいツリーをお使いください。
 しかし、g++ ライブラリを用いている、あるいは提供している全てのパッケージを、正しい順序で再ビルドしなければいけないのが少し厄介です。
 </p><p>
 OS X 10.4 を使っている方は、

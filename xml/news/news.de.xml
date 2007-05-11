@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
-<cvsid>$Id: news.de.xml,v 1.28 2007/03/08 02:27:14 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.de.xml,v 1.29 2007/05/11 06:49:06 babayoshihiko Exp $</cvsid>
 
 <newsitem>
 	<date>2007-03-04</date>
@@ -19,6 +19,10 @@ may be necessary to issue that command after each <code>fink update-all</code>
 command, as well.
 </p><p>Once the fink team has determined how to solve this problem 
 permanently, another announcement will be made here.
+</p>
+<p><em> Update: 16 March 2007: </em> The new version of fink's 
+<code>dpkg</code> package resolves this problem.  Unstable users can
+now run the update commands normally.
 </p>
 		</body>
 	</newsitem>

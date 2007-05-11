@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/03/05 02:25:43';
+$cvs_date = 'Date: 2007/05/11 06:49:06';
 $metatags = '';
 
 include_once "header.inc";
@@ -19,6 +19,10 @@ fink team は、この問題を恒久的に直す方法を研究しています�
 これは、<code>fink update-all</code> をする度に実行する必要があるかもしれません。
 </p><p>
 この問題を恒久的に直す方法を決定ししだい、こちらで再度告知をいたします。
+</p>
+<p><b> Update: 16 March 2007: </b>
+<code>dpkg</code> の新バージョンにて問題が解決されます。
+Unstable を利用している方は、通常通り update を実行してください。
 </p>
 		<a name="2006-08-19%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%80%E3%82%A6%E3%83%B3;%20%E5%9B%9E%E9%81%BF%E7%AD%96%E6%9C%89%E3%82%8A%E3%80%82"><span class="news-date">2006-08-19: </span><span class="news-headline">サーバダウン; 回避策有り。</span></a><?php gray_line(); ?>
 <p><b> Update: 21 August 2006: </b> The server has been restored.</p>
@@ -49,7 +53,7 @@ when downloading sources?" と聞かれるので、
 と聞かれた場合、
 rsync://master.us.finkmirrors.net/finkinfo/
 以外を選択してください。
-米国にいる場合、残念ながら他の選択肢がないかもしれません。
+米国にいる場合、残念ながら他には選択肢がないかもしれません。
 </p><p>
 最後に、パッケージデータベースを使うには、
 <a href="http://lists.finkproject.org/pdb">データベースのバックアップ</a>
@@ -58,19 +62,18 @@ rsync://master.us.finkmirrors.net/finkinfo/
 </p>
 		<a name="2006-07-24%20%E6%B3%A8%E6%84%8F:%20%2210.4-transitional%22%20%E3%83%84%E3%83%AA%E3%83%BC%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AF2006%E5%B9%B48%E6%9C%881%E6%97%A5%E3%81%AB%E7%B5%82%E4%BA%86"><span class="news-date">2006-07-24: </span><span class="news-headline">注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</span></a><?php gray_line(); ?>
 			<p>
-
 				"10.4-transitional" ツリーは、 GCC 3.3 (Mac OS X 10.3 のデフォルトコンパイラ) と
-				GCC 4.0 (Mac OS X 10.4 のデフォルトコンパイラ) のバイナリ間の非互換性問題の暫定的解決策でした。
-				ようやく Fink は GCC 4.0 へ移行する作業が終了し、 "10.4" ツリーへ移行していただくよう、
-				"10.4-transitional" ツリーの2006年8月1日をもってサポートを終了いたします。
+				GCC 4.0 (Mac OS X 10.4 のデフォルトコンパイラ) のバイナリ間の非互換性問題にたいする暫定的な解決策でした。
+				ようやく Fink は GCC 4.0 へ移行する作業が終了し、 "10.4" ツリーへ移行してください。
+				"10.4-transitional" ツリーのサポートは、2006年8月1日をもって終了いたします。
 			</p>
 			<p><b>"fink --version" が "0.8.1.cvs" または "0.8.1.rsync" と表示する場合、特にすることはありません。</b></p>
 			<p>
 				<a href="<?php print $root; ?>news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</a>、
-				"10.4" ツリーへの以降方法は2種類あります。
+				"10.4" ツリーへの移行方法は2種類あります。
 			</p>
 			<p>
-				一番簡単なのは、既存の Fink インストールを削除し、<a href="<?php print $root; ?>download">ダウンロードページ</a>から 0.8.1 インストーラを入手してインストールし直すことです。
+				一番簡単な方法は、既存の Fink インストールを削除し、<a href="<?php print $root; ?>download">ダウンロードページ</a>から 0.8.1 インストーラを入手してインストールし直すことです。
 			</p>
 			<p>
 				既存の Fink を残す方法は、
@@ -80,11 +83,11 @@ rsync://master.us.finkmirrors.net/finkinfo/
 				インストール状況によっては、相当な時間がかかります！
 			</p>
 			<p>
-				アップグレードスクリプトの評判は上々です。多くのユーザがこれでスイッチしています。
-				それでも何か問題がありましたら、<a href="<?php print $root; ?>lists">リスト</a>にメールをしてください。
+				アップグレードスクリプトの評判は上々です。多くのユーザがこれで "10.4" ツリーへスイッチしています。
+				それでも何か問題がありましたら、<a href="<?php print $root; ?>lists">メーリングリスト</a>にメールをしてください。
 			</p>
 		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
+			<p>OSCON 2006 にきてる人? 集まれ!</p>
 			<p>
 				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
 				は OSCON に来ており、Fink に興味がある人も嫌いな人も大歓迎です。
@@ -100,8 +103,8 @@ PowerPC 上の Fink ユーザは、古い "10.4-transitional" から、より新
 背景: OS X 10.4 とともに来た、新しいバージョンの g++ コンパイラ
 (Fink の馬車馬の一頭) は、以前のバージョンとはバイナリ非互換なコードを生成します。
 10.4-transitional ツリーを使う際は、Fink は新しい gcc-4.0 コンパイラと古い g++-3.3 コンパイラを組み合わせて使います。
-この戦略は、g++-4.0 と互換のパッケージをつくるため、よけいな時間を必要とします。
-移行は完了の時期に達し、新しいツリーにのみ依存します。
+この戦略は、g++-4.0 と互換のパッケージをつくるため、更なる時間を必要とします。
+すでに移行完了に達しましたので、新しいツリーをお使いください。
 しかし、g++ ライブラリを用いている、あるいは提供している全てのパッケージを、正しい順序で再ビルドしなければいけないのが少し厄介です。
 </p><p>
 OS X 10.4 を使っている方は、
