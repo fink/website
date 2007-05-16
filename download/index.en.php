@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2007/03/03 23:03:25 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2007/05/16 02:55:00 $';
 
 include "header.inc";
 ?>
@@ -126,11 +126,11 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
     </tr>
     <tr>
       <td>10.4 on PowerPC</td>
-      <td>XCode 2.2.1, and the XCode Legacy Tools (for packages that need <code>gcc3.1</code> or <code>gcc2.95</code> to build)</td>
+      <td>XCode 2.4.1, and the XCode Legacy Tools (for packages that need <code>gcc3.1</code> or <code>gcc2.95</code> to build)</td>
     </tr>
     <tr>
       <td>10.4 on Intel</td>
-      <td>XCode 2.2.1</td>
+      <td>XCode 2.4.1</td>
     </tr>
   </tbody>
 </table>
@@ -144,6 +144,7 @@ the easiest option with which to get started.  They have elected to split it int
         <li>The
 <em>X11SDK</em>
 package contains the development headers.  You need this if you want to build anything from source that uses X11.  This package is available as part of the XCode Tools, and installed by default with XCode 2.x.</li>
+<li>The <em>2006 X11 Update</em> for 10.4 (available via Software Update or manual download) is supported.</li>
 </ul>
 <p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://fink.sourceforge.net/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
 <h2>Further information</h2>
