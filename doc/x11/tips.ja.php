@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Tips";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:57';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/23 05:16:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=ja" title="XFree86 トラブルシューティング">';
 
 
@@ -80,7 +80,7 @@ X11 システムは複数のクリップボード (X11 的な言葉では カッ
 を持っていて、 アプリケーションによっては変なことをしているものもあります。
 特に、 GNU Emacs や XEmacs にペーストするときにうまく行かないことがあります。
 <code>autocutsel</code> というプログラムは、これを解消するために自動的に両方のカットバッファを同期させます。
-これを実行するには、 Fink パッケージの autoculset をインストールして、以下の行を
+これを実行するには、 Fink パッケージの autocutsel をインストールして、以下の行を
 <code>.xinitrc</code> に追加します:
 </p>
 <pre>autocutsel &amp;</pre>
