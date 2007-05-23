@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.72 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.73 2007/05/23 05:14:06 babayoshihiko Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://pdb.finkproject.org/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -85,6 +85,16 @@ SplitOff: &lt;&lt;
 <itemd>
 <p><em>v</em>ersion du paquet. Notez que l'ère ne fait partie de <code>%v</code>.</p>
 </itemd></item>
+<!-- start translation -->
+<item><itemt>%V</itemt>
+<itemd>
+<p>
+the full package <em>V</em>ersion, which automatically includes the Epoch
+if present.  Note that this percent expansion is only available for
+packages whose <code>InfoN</code> level is at least 4.
+</p>
+</itemd></item>
+<!-- end translation -->
 <item><itemt>%r</itemt>
 <itemd>
 <p><em>r</em>évision du paquet</p>
@@ -154,6 +164,12 @@ le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser d
 <item><itemt>%lib</itemt>
 <itemd>
 <p>Si le champ <code>Type: -64bit</code> a pour valeur <code>-64bit</code>, ce raccourci permet de définir le répertoire des bibliothèques comme étant le répertoire <em>lib/ppc64</em> sur machines powerpc, ou  <em>lib/x86_64</em> sur machines intel (répertoires standards pour les bibliothèques 64-bit). Dans le cas contraire, le raccourci définit le répertoire <em>lib</em> comme répertoire pour les bibliothèques. Introduit dans la version 0.20.6 de fink.</p>
+<!-- start translation -->
+<p>Note that <code>%lib</code> is not permitted in the
+<code>ConfigureParams</code> field unless the <code>InfoN</code>
+ level is at least 4.
+</p>
+<!-- end translation -->
 </itemd></item>
 </itemtable>
 </section>
@@ -653,6 +669,12 @@ SplitOff: &lt;&lt;
 <li>
 <code>Info3</code> (fink>=0.25.0) : possibilité d'utiliser des retraits significatifs dans les fichiers .info, arrêt de la gestion des lignes multiples de la norme RFC-822, possibilité de mettre des commentaires dans les champs de listes de paquets.
 </li>
+<!-- start translation -->
+<li>
+<code>Info4</code> (fink>=0.26.2): adds %V expansion, and permits
+<code>%lib</code> in <code>ConfigureParams</code> field.
+</li>
+<!-- end translation -->
 </ul>
 </itemd></item>
 </itemtable>

@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/23 05:14:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -316,6 +316,10 @@ SplitOff: &lt;&lt;
 .info ファイル中でインデントを正しく扱うことができる．
 RFC-822 複数業のサポートは終了．
 pkglist フィールドにコメントが可能．
+</li>
+<li>
+<code>Info4</code> (fink&gt;=0.26.2): %V 展開を追加，
+<code>ConfigureParams</code> フィールド内で <code>%lib</code> の使用が可能．
 </li>
 </ul>
 					</td></tr></table>

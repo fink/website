@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/23 05:14:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -120,6 +120,12 @@ SplitOff: &lt;&lt;
 <li>
 <code>Info3</code> (fink&gt;=0.25.0) : possibilité d'utiliser des retraits significatifs dans les fichiers .info, arrêt de la gestion des lignes multiples de la norme RFC-822, possibilité de mettre des commentaires dans les champs de listes de paquets.
 </li>
+
+<li>
+<code>Info4</code> (fink&gt;=0.26.2): adds %V expansion, and permits
+<code>%lib</code> in <code>ConfigureParams</code> field.
+</li>
+
 </ul>
 </td></tr></table>
 <p><b>Dépendances :</b></p>

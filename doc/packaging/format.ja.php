@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - パッケージ記述";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/23 05:14:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 
@@ -141,7 +141,12 @@ SplitOff: &lt;&lt;
 						<p>
 							<b>v</b>ersion．「バージョン」．
 						</p>
-					</td></tr><tr valign="top"><td>%r</td><td>
+					</td></tr><tr valign="top"><td>%V</td><td>
+<p>
+パッケージの完全な <b>V</b>ersion で， Epoch がある場合にはこれも自動的に追加されます．
+<code>InfoN</code> レベルが 4 以上の場合のみパーセント展開されるので，注意してください．
+</p>
+</td></tr><tr valign="top"><td>%r</td><td>
 						<p>
 							<b>r</b>evision．パッケージの「版」．
 						</p>
@@ -261,6 +266,10 @@ powerpc マシン上では <b>lib/ppc64</b> と拡張され，
 intel マシン上では <b>lib/x86_64</b> と拡張されます (64-bit ライブラリの正しい保存場所)．
 それ以外は， <b>lib</b> と拡張されます．
 (fink-0.26.0 で導入)
+</p>
+<p>
+<code>InfoN</code> レベルが 4 以上でないと，
+<code>ConfigureParams</code> フィールド内での使用はできませんので，注意してください．
 </p>
 </td></tr></table>
 		

@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/23 05:14:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -283,6 +283,10 @@ the <code>Package</code> field of <code>SplitOff</code>
 <code>Info3</code> (fink&gt;=0.25.0): Can indent nicely in .info files,
 no more support for RFC-822 multi-lines, and can put comments in
 pkglist fields.
+</li>
+<li>
+<code>Info4</code> (fink&gt;=0.26.2): adds %V expansion, and permits
+<code>%lib</code> in <code>ConfigureParams</code> field.
 </li>
 </ul>
 

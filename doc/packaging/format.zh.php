@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 软件包描述文件";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/23 05:14:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 
@@ -131,6 +131,12 @@ SplitOff: &lt;&lt;
 <p>
 软件包的版本号（<b>v</b>ersion）
 </p>
+</td></tr><tr valign="top"><td>%V</td><td>
+<p>
+the full package <b>V</b>ersion, which automatically includes the Epoch
+if present.  Note that this percent expansion is only available for
+packages whose <code>InfoN</code> level is at least 4.
+</p>
 </td></tr><tr valign="top"><td>%r</td><td>
 <p>
 软件包的修订版号（<b>r</b>evision）
@@ -241,6 +247,12 @@ this expands to <b>lib/ppc64</b> on powerpc machines, and to
 for 64-bit libraries); otherwise, this expands to <b>lib</b>.
 (Introduced in fink-0.26.0)
 </p>
+
+<p>Note that <code>%lib</code> is not permitted in the
+<code>ConfigureParams</code> field unless the <code>InfoN</code>
+ level is at least 4.
+</p>
+
 </td></tr></table>
 
 

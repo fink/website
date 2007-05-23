@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/23 05:14:06';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -62,6 +62,12 @@ SplitOff: &lt;&lt;
 <p>ère du paqu<b>e</b>t</p>
 </td></tr><tr valign="top"><td>%v</td><td>
 <p><b>v</b>ersion du paquet. Notez que l'ère ne fait partie de <code>%v</code>.</p>
+</td></tr><tr valign="top"><td>%V</td><td>
+<p>
+the full package <b>V</b>ersion, which automatically includes the Epoch
+if present.  Note that this percent expansion is only available for
+packages whose <code>InfoN</code> level is at least 4.
+</p>
 </td></tr><tr valign="top"><td>%r</td><td>
 <p><b>r</b>évision du paquet</p>
 </td></tr><tr valign="top"><td>%f</td><td>
@@ -98,6 +104,12 @@ le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser d
 <p>Chemin complet du fichier indiqué dans le champ<code>PatchFile</code>. Introduit dans la version 0.24.12 de fink.</p>
 </td></tr><tr valign="top"><td>%lib</td><td>
 <p>Si le champ <code>Type: -64bit</code> a pour valeur <code>-64bit</code>, ce raccourci permet de définir le répertoire des bibliothèques comme étant le répertoire <b>lib/ppc64</b> sur machines powerpc, ou  <b>lib/x86_64</b> sur machines intel (répertoires standards pour les bibliothèques 64-bit). Dans le cas contraire, le raccourci définit le répertoire <b>lib</b> comme répertoire pour les bibliothèques. Introduit dans la version 0.20.6 de fink.</p>
+
+<p>Note that <code>%lib</code> is not permitted in the
+<code>ConfigureParams</code> field unless the <code>InfoN</code>
+ level is at least 4.
+</p>
+
 </td></tr></table>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
