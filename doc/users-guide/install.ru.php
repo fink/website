@@ -1,7 +1,7 @@
 <?
 $title = "Руководство пользователя - Инсталляция";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="packages.php?phpLang=ru" title="Инсталляция пакетов"><link rel="prev" href="intro.php?phpLang=ru" title="Введение">';
 
 
@@ -53,8 +53,13 @@ include_once "header.ru.inc";
                 надо удалить созданную им папку.</p>
             <p> Версия исходного кода должна инсталлироваться с командной строки,
                 т.е. надо открыть Terminal.app и перейти к каталогу, в котором вы поместили архив
-                fink-0.x.x-full.tar.gz. Следующая команда извлекает
-                архив:</p>
+                fink-0.x.x-full.tar.gz. 
+
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
+the appropriate changes below.)
+
+                Следующая команда извлекает архив:</p>
             <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
             <p> Создается каталог с таким же именем, как архив.
                 Здесь мы будем называть его
@@ -127,7 +132,7 @@ include_once "header.ru.inc";
                         Если вы не знаете, как добавить строку, примените
                     </p>
                     <pre>cd
-                        pico .profile</pre>
+pico .profile</pre>
                     <p>
                         Теперь вы в полноэкранном текстовом редакторе (с полным терминальным
                         окном) и можете просто напечатать строку
@@ -150,7 +155,7 @@ include_once "header.ru.inc";
                         следующие команды:
                     </p>
                     <pre>cd
-                        pico .cshrc</pre>
+pico .cshrc</pre>
                     <p>
                         Теперь вы в полноэкранном текстовом редакторе (с полным терминальным
                         окном) и можете просто напечатать строку
@@ -205,7 +210,7 @@ include_once "header.ru.inc";
                         кэширует список имеющихся команд внутренним образом. </p>
                 </li>
             </ul>
-            <p> Имейте в виду, что скрипты также добавляют
+            <p> Имейте в виду, что скрипты (<code>init.sh</code> а <code>init.csh</code> ) также добавляют
                 <code>/usr/X11R6/bin</code>
                 и <code>/usr/X11R6/man</code> к вашему PATH, чтобы
                 вы могли использовать X11 после инсталляции. Пакеты Fink обладают способностью

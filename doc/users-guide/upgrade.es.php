@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Actualizaciones";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="conf.php?phpLang=es" title="El archivo de configuración de Fink"><link rel="prev" href="packages.php?phpLang=es" title="Instalando Paquetes">';
 
 
@@ -70,6 +70,18 @@ Si usas tanto paquetes binarios precompilados como algunos compilados desde la f
 Esto es, usa primero el  <code>dselect</code> o <code>apt-get</code> para obtener las últimas versiones de los paquetes disponibles como binarios, entonces usa el<code>fink selfupdate</code> y <code>fink update-all</code>
 para obtener las descripciones actules y actualizar los paquetes restantes. Si usas el Fink Commander, sigue las instrucciones<a href="#bin">binarias</a> y después las del  <a href="#src">código fuente</a>.
 </p>
+
+<p>Starting with fink 0.23.0 using the UseBinaryDist option (settable via the
+<a href="usage.php?phpLang=es#options">--use-binary-dist (or -b) option</a>
+or in the <a href="conf.php?phpLang=es">Fink configuration file</a>) both source and
+binary descriptions will be updated if you call <code>fink selfupdate</code>.
+In this case you don't need a separate <code>apt-get</code> call anymore.</p>
+<p>If you are using Fink Commander select Binary-&gt;Update descriptions to update
+the package list, and then Binary-&gt;Dist-Upgrade packages to update to new
+versions. After that do Source-&gt;Selfupdate to download new package
+information files, and then Source-&gt;Update-all (see previous sections for
+details).</p>
+
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=es">5. El archivo de configuración de Fink</a></p>

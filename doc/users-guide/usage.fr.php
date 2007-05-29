@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Outil fink";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -75,8 +75,8 @@ Do you want to continue? [Y/n]</pre>
 
 <h2><a name="remove">6.4 remove - suppression</a></h2>
 
-<p>La commande <b>remove</b> supprime les paquets du système en appelant la commande '<code>dpkg --remove</code>'. L'implantation actuelle de cette commande a un défaut : elle ne vérifie pas elle-même les dépendances, mais délègue ce travail à l'outil dpkg (en général, cela ne pose pas de problèmes).</p>
-<p>La commande remove ne supprime que le paquet lui-même (à l'exclusion des fichiers de configuration). Le paquet compressé <code>.deb</code> reste sur le système. Ceci signifie que vous pouvez réinstaller le paquet plus tard, sans avoir à le recompiler. Si vous avez besoin de libérer de l'espace disque, vous pouvez supprimer les fichiers <code>.deb</code> de l'arborescence <code>/sw/fink/dists</code>.</p>
+<p>La commande remove supprime les paquets du système en appelant la commande '<code>dpkg --remove</code>'. L'implantation actuelle de cette commande a un défaut : elle ne vérifie pas elle-même les dépendances, mais délègue ce travail à l'outil dpkg (en général, cela ne pose pas de problèmes).</p>
+<p>La commande <b>remove</b> ne supprime que le paquet lui-même (à l'exclusion des fichiers de configuration). Le paquet compressé <code>.deb</code> reste sur le système. Ceci signifie que vous pouvez réinstaller le paquet plus tard, sans avoir à le recompiler. Si vous avez besoin de libérer de l'espace disque, vous pouvez supprimer les fichiers <code>.deb</code> de l'arborescence <code>/sw/fink/dists</code>.</p>
 <p>Les options suivantes peuvent être utilisées avec la command <code>fink remove</code> :</p>
 <pre>
 -h, --help
@@ -109,12 +109,10 @@ Do you want to continue? [Y/n]</pre>
 
 <p>Cette commande donne la liste des paquets disponibles, leur statut d'installation, la dernière version disponible et une courte description. Appelée sans paramètres, elle affiche tous les paquets disponibles. Vous pouvez aussi l'utiliser avec un nom ou une expression régulière acceptée par le shell, Fink donnera alors la liste de tous les paquets correspondants.</p>
 <p>La première colonne affiche le statut d'installation qui s'interprète de la façon suivante :</p>
-<pre>
-      non installé
+<pre>    non installé
  i    dernière version installée
 (i)   installé, mais une version plus récente est disponible
- p    paquet virtuel fourni par un paquet installé
-</pre>
+ p    paquet virtuel fourni par un paquet installé</pre>
 <p>La colonne version affiche toujours la dernière version connue du paquet, quelque soit la version installée éventuellement. Pour connaître toutes les versions d'un paquet disponible sur votre système, utilisez la commande <a href="#dumpinfo">dumpinfo</a>.</p>
 <p>Voici quelques-unes des options de la commande <code>fink list</code> :</p>
 <pre>
@@ -288,8 +286,7 @@ fink apropos -s=kde irc
 <h2><a name="cleanup">6.24 cleanup - épuration</a></h2>
 
 <p>Supprime les fichiers obsolètes et temporaires. Cela peut libérer une grande portion d'espace disque. On peut spécifier un ou plusieurs modes :</p>
-<pre>
---debs
+<pre>--debs
     Supprime les fichiers .deb
     (archives de paquets binaires compilés)
     correspondant aux versions de paquets
@@ -315,8 +312,7 @@ fink apropos -s=kde irc
     À partir de la version 0.26.0 de fink.
 --all
     Active tous les modes.
-    À partir de la version 0.26.0 de fink.
-</pre>
+    À partir de la version 0.26.0 de fink.</pre>
 <p>Si aucun mode n'est spécifié, les modes par défaut utilisés sont <code>--debs --sources</code>.</p>
 <p>De plus, on peut utiliser les options suivantes :</p>
 <pre>

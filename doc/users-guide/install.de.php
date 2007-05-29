@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Installation";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="packages.php?phpLang=de" title="Pakete Installieren"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
 
@@ -36,7 +36,13 @@ Die Source-Distribution kommt als ein übliches Unix-tarball (.tar.gz) daher. Es
 Es ist wichtig, daass Sie nicht den StuffIt Expander zum Entpacken des tar-Archivs verwenden. Aus irgendeinen Grund kann StuffIt noch mit keinen langen Dateinamen umgehen. Falls StuffIt Expander das Archiv schon entpackt hat, löschen sie den Ordner, welchen er erstellt hat.
 </p>
       <p>
-Die Source-Version muss über die Kommandozeile installiert werden. Also öffnen Sie Terminal.app und wechseln Sie zu dem Verzeichnis, wo Sie das fink-0.x.x-full.tar.gz-Archiv gespeichert haben. Der folgende Befehl entpackt das Archiv:
+Die Source-Version muss über die Kommandozeile installiert werden. Also öffnen Sie Terminal.app und wechseln Sie zu dem Verzeichnis, wo Sie das fink-0.x.x-full.tar.gz-Archiv gespeichert haben. 
+
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
+the appropriate changes below.)
+
+Der folgende Befehl entpackt das Archiv:
 </p>
       <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
       <p>
@@ -61,10 +67,10 @@ Wenn das Skript beendet ist, fahren sie mit dem Abschnitt<a href="#setup">Einric
       <p>
 Um die Software, die in Finks Vereichnishierarchie installiert ist, einschließlich der Paketverwaltung selber, zu nutzen, müssen Sie die Umgebungsvariable PATH (und einige andere) entsprechend setzen. In den meisten Fällen können Sie das mit diesem Befehl tun:
 </p>
-      <pre>open /sw/bin/pathsetup.command</pre>
-      <p>für <code>fink-0.18.3</code> oder <code>fink-0.19.2</code> mit dem Befehl (genau wie unten):
-</p>
       <pre>/sw/bin/pathsetup.sh</pre>
+
+<p>Note that for some older versions of fink the program was called  <code>pathsetup.command</code>, and one could run it via <code>open /sw/bin/pathsetup.command</code>.</p>
+
 <p>Falls es dennoch aus irgendeinen Grund nicht funktionieren sollte, können Sie es auch manuell konfigurieren. Allerdings hängt dies dann von der Shell ab, die Sie verwenden. Sie können herausfinden, welche Shell Sie verwenden, indem Sie im geöffneten Terminalfenster folgenden Befehl ausführen:
 </p>
       <pre>echo $SHELL</pre>
@@ -127,7 +133,7 @@ Sie befinden sich nun in einem Vollbildschirm- (naja, Vollterminalfenster-) Text
         </li>
       </ul>
       <p>
-Beachten Sie, dass das Script außerdem <code>/usr/X11R6/bin</code> und <code>/usr/X11R6/man</code> zu Ihrem PATH hinzufügt, so dass Sie den X11-Server nutzen können, wenn er installiert ist. Fink-Pakete haben die Möglichkeit selbst Einstellungen hinzuzufügen, z.B. setzt das qt-Paket die QTDIR-Umgebungsvariable.
+Beachten Sie, dass das <code>init.sh</code> und <code>init.csh</code> Script außerdem <code>/usr/X11R6/bin</code> und <code>/usr/X11R6/man</code> zu Ihrem PATH hinzufügt, so dass Sie den X11-Server nutzen können, wenn er installiert ist. Fink-Pakete haben die Möglichkeit selbst Einstellungen hinzuzufügen, z.B. setzt das qt-Paket die QTDIR-Umgebungsvariable.
 </p>
       <p>
 Ist die Umgebung dann eingerichtet, können Sie mit dem Kapitel <a href="packages.php?phpLang=de">Pakete Installieren</a> fortfahren, um zu sehen, wie Sie endlich nützliche Pakete mit Hilfe der in Fink enthaltenen Werkzeugen zur Paketverwaltung installieren können.

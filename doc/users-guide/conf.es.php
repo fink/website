@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - fink.conf";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="usage.php?phpLang=es" title="Usando el Fink desde la línea de comando"><link rel="prev" href="upgrade.php?phpLang=es" title="Actualizando Fink">';
 
 
@@ -52,7 +52,7 @@ Algunas de las configuraciones del  <b>fink.conf</b> son requeridas. Sin ellas, 
             <b>Basepath:</b> path</p>
           <p>
 Le dice a Fink donde esta instalado, por omisión<b>/sw</b> a menos que lo hayas cambiado durante la Instalación. Este valor  
-<b>no</b> debe cambiar después de la Instalación, ya que solo confundira al Fink
+<b>no</b> debe cambiar después de la Instalación, ya que solo confundira al <b>fink</b>
 </p>
         </li>
       </ul>
@@ -71,7 +71,7 @@ Existen varios ajustes opcionales que el usuario puede cambiar para alterar el c
         </li>
         <li>
           <p>
-            <b>Arboles:</b> lista de arboles</p>
+            <b>Trees:</b> (Arboles) lista de arboles</p>
           <p>Los arboles disponibles son:</p>
           <pre>
 local/main      - cualquier paquete local que quieras instalar
@@ -86,11 +86,18 @@ También puedes agregar tus propios arboles en el directorio <code>/sw/fink/dist
 aunque esto no es necesario en muchos casos. Los arboles por defecto son "local/main local/bootstrap
 stable/main". Esta lista debermantenerse sincronizada con el archivo
 <code>/sw/etc/apt/sources.list</code> .
+
+(As of fink 0.21.0, <code>fink</code>does this for you automatically.)
+
 </p>
+
+<p>The order of the trees is meaningful, as packages from later trees in the list may
+override packages from earlier ones.</p>
+
         </li>
         <li>
           <p>
-            <b>distribución:</b> 10.1 or 10.2</p>
+            <b>Distribution:</b> (distribución) 10.1, 10.2-gcc3.3, 10.3, or 10.4</p>
           <p>Fink necesita saber que versión de Mac OS X estas usando. La distribución 10.1des para usuarios de Mac OS X 10.1, mientras que la 10.2 funcionara solo para Mac OS X 10.2 "Jaguar" .
 Mac OS X 10.0 y previos no son soportados. No es necesario modificar este valor.
 </p>
@@ -98,7 +105,7 @@ Mac OS X 10.0 y previos no son soportados. No es necesario modificar este valor.
         <li>
           <p>
             <b>FetchAltDir:</b> path</p>
-          <p>usualmente Fink almacenará el código fuente que descarge en el directorio
+          <p>usualmente <code>fink</code> almacenará el código fuente que descarge en el directorio
 <code>/sw/src</code>. Con esta opción se puede seleccionar un directorio alterno para buscar el código fuente. Por ejemplo:
 </p>
           <pre>FetchAltDir: /usr/src</pre>
@@ -119,6 +126,13 @@ Esta opción determina cuanta información Fink te da respecto a lo que esta hac
 el valor por omisión es 1.
 </p>
         </li>
+        
+        <li><p><b>SkipPrompts:</b> a comma-delimited list</p><p>(<code>fink-0.25</code> and later) This option instructs <code>fink</code> to refrain from asking for input when
+           the user does not want to be prompted. Each prompt belongs to a
+           category. If a prompt's category is in the SkipPrompts list then
+           the default option will be chosen within a very short period of
+           time.</p><p>Currently, the following categories of prompts exist:</p><p><b>fetch</b> - Downloads and mirrors</p><p><b>virtualdep</b> - Choosing between alternative packages</p><p> By default, no prompts are skipped.</p></li>
+        
         <li>
           <p>
             <b>NoAutoIndex:</b> boolean</p>
@@ -133,6 +147,31 @@ revisa si el indice de paquetes necesita ser actualizado, a menos que esta opci�
 True. Este valor es ajustado automaticamente cuand el comando <code>fink
 selfupdate-cvs</code> es ejecutado, así que no es necesario cambiarlo manualmente.</p>
         </li>
+
+        <li>
+	  <p>
+	    <b>Buildpath:</b> path</p>
+	  <p>Fink needs to create several temporary directories for
+each package it compiles from source. By default, they are placed
+in <code>/sw/src</code> on Panther and earlier, and 
+<code>/sw/src/fink.build</code> on Tiger. If you want them to be
+somewhere else, specify the path here. See the descriptions of
+the <code>KeepRootDir</code> and <code>KeepBuildDir</code> fields
+ in the <a href="#developer">Developer Settings</a> section of this document for more information about these temporary
+directories.
+	    </p>
+	    <p>On Tiger, it is recommended that the Buildpath end with <code>.noindex</code>
+or <code>.build</code>. Otherwise, Spotlight will attempt to index the temporary files in
+the Buildpath, slowing down builds.
+    	</p>
+	</li>
+        <li><p><b>Bzip2Path:</b> the path to your <code>bzip2</code> (or compatible) binary
+          </p><p>(<code>fink-0.25</code> and later) The Bzip2Path option lets you override the default path for the
+           <code>bzip2</code> command-line tool.  This allows you to specify an alternate
+           location to your <code>bzip2</code> executable, pass optional command-line
+           options, or use a drop-in replacement like <code>pbzip2</code> for decompressing
+           <code>.bz2</code> archives.</p></li>
+
       </ul>
     
     <h2><a name="downloding">5.5 Ajustes de  Descargas</a></h2>
@@ -166,8 +205,54 @@ True. Es recomendable dejar esta opción encendida todo el tiempo, debido a que 
 <b>axelautomirror</b> usa un modo experimental de la aplicación<b>axel</b>
 la cual trata de determinar cual es el servidor más cercano para cierto archivo. El uso de <b>axelmirror</b> no es recomendado por el momento. El valor por omisión es <b>curl</b>.
 <b>Desde luego, la aplicación seleccionada para DownloadMethod DEBE estar instalada.</b>
+          
+          (i.e. <code>fink</code> won't fall back to <b>curl</b> if you try to use a download application that isn't present.
+          
           </p>
         </li>
+
+        <li>
+          <p>
+            <b>SelfUpdateMethod:</b> point, rsync or cvs</p>
+          <p>
+<code>fink</code> can use some different methods to update the package info files.
+<b>rsync</b> is the recommended setting; it uses rsync to download only
+modified files in the <a href="#optional">trees</a> that you have enabled. Note that if you have
+changed or added to files in the <code>stable</code> or <code>unstable</code> trees, using rsync will
+delete them. Make a backup first, e.g. in your <code>local</code> tree. <b>cvs</b> will download using anonymous or
+:ext: cvs access from the Fink repository. This has the disadvantage that cvs
+can not switch mirrors; if the server is unavailable you will not be able to
+update. <b>point</b> will download only the latest released version of the
+packages. It is not recommended as your packages may be quite out of date.
+          </p>
+        </li>
+        <li><p><b>SelfUpdateCVSTrees:</b> list of trees
+           </p><p>(<code>fink-0.25</code> and later) By default, the <b>cvs</b> selfupdate method will update only the current
+           distribution's tree.  This option overrides the list of distribu-
+           tion versions that will be updated during a selfupdate.
+
+           Please note that you will need a recent "cvs" binary installed if
+           you wish to include directories that do not have CVS/ directories
+           in their entire path (e.g., dists/local/main or similar).</p></li>
+        <li>
+          <p>
+            <b>UseBinaryDist:</b> boolean</p>
+          <p>
+Causes <code>fink</code> to try to download pre-compiled binary packages from the binary
+distribution if available and if the binary package is not already on the
+system. This can save a lot of installation time and it is therefore 
+recommended to set this option. Passing fink the 
+<a href="usage.php?phpLang=es">--use-binary-dist</a> option (or the <code>-b</code> flag) has the same effect,  
+but only operates on that single <code>fink</code> invocation.  Passing <code>fink</code> the
+           <code>--no-use-binary-dist</code> flag overrides this, and compiles from source
+           for that single <code>fink</code> invocation.
+<b>Only available as of  fink version 0.23.0</b>.
+          </p><p>Note that this mode instructs <code>fink</code> to download an available binary  
+           if that version is the latest available version of the package; it does <b>not</b> cause <code>fink</code>
+           to choose a version based on its binary availability.
+</p>
+        </li>
+
       </ul>
     
     <h2><a name="mirrors">5.6 Ajustes de Espejo</a></h2>
@@ -208,6 +293,14 @@ MasterNever - Nunca usa espejos"Master" .
 ClosestFirst - Buca la lista de espejos más cercanos (combina todos los espejos).
 </pre>
         </li>
+        
+        <li><p><b>Mirror-rsync:</b>
+           </p><p>(<code>fink-0.25.2</code> and later) When doing <code>fink selfupdate</code> with the <b>SelfupdateMethod</b> set to <code>rsync</code>,
+           this is the rsync url to sync from.  This should be an anonymous
+           rsync url, pointing to a directory which contains all the fink Dis-
+           trubutions and Trees.
+</p></li>
+		
       </ul>
     
     <h2><a name="developer">5.7 Ajustes de Desarrollador</a></h2>
@@ -217,16 +310,105 @@ ClosestFirst - Buca la lista de espejos más cercanos (combina todos los espejos
         <li>
           <p>
             <b>KeepRootDir:</b> boolean</p>
-          <p>Ocasiona que el Fink no borre el directorio /sw/src/root-[name]-[version]-[revision] despues de haber construido el paquete. Es por omisión false. <b>Hay que ser cuidadoso, con esta opción un disco duro puede llenarse rapidamente!</b>
+          <p>Ocasiona que el <code>fink</code> no borre el directorio <code>root-[name]-[version]-[revision]</code> despues de haber construido el paquete. Es por omisión false. <b>Hay que ser cuidadoso, con esta opción un disco duro puede llenarse rapidamente!</b>
           </p>
         </li>
         <li>
           <p>
             <b>KeepBuildDir:</b> boolean</p>
-          <p>Ocasiona que el Fink no borre el directorio /sw/src/[name]-[version]-[revision] despues de haber construido el paquete. Es por omisión false. <b>Hay que ser cuidadoso, con esta opción un disco duro puede llenarse rapidamente!</b>
+          <p>Ocasiona que el <code>fink</code> no borre el directorio <code>[name]-[version]-[revision]</code> despues de haber construido el paquete. Es por omisión false. <b>Hay que ser cuidadoso, con esta opción un disco duro puede llenarse rapidamente!</b>
           </p>
         </li>
       </ul>
+    
+    
+    <h2><a name="advanced">5.8 Advanced Settings</a></h2>
+      
+      <p>There are some other options which may be useful, but require some knowledge to get right.</p>
+      <ul>
+        <li>
+          <p>
+            <b>MatchPackageRegEx:</b> </p>
+          <p>Causes fink not to ask which package to install if one (and only one) of the choices matches the perl Regular Expression given here. Example:</p>
+          <pre>MatchPackageRegEx: (.*-ssl$|^xfree86$|^xfree86-shlibs$)</pre>
+          <p>will match packages ending in '-ssl', and will match 'xfree86' and 'xfree86-shlibs' exactly.</p>
+        </li>
+        <li>
+          <p>
+            <b>CCacheDir:</b> path</p>
+          <p>If the Fink package <code>ccache-default</code> is installed, the cache files it makes
+while building Fink packages will be placed here. Defaults to <code>/sw/var/ccache</code>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <code>$HOME/.ccache</code>, potentially putting root-owned files into your home directory.
+<b>Only available in fink newer than version 0.21.0</b>.
+          </p>
+        </li>
+        <li><p><b>NotifyPlugin:</b> plugin</p><p>
+           Specify a notification plugin to tell you when packages have been
+           installed/uninstalled.  Defaults to Growl (requires <code>Mac::Growl</code> to
+           operate).  Other plugins can be found in the
+           <code>/sw/lib/perl5/Fink/Notify</code> directory.  On <code>fink-0.25</code> and later they are listed in the output of <code>fink plugins</code>.  See the <a href="http://wiki.finkproject.org/index.php/Fink:Notificati%20on_Plugins">Fink Developer Wiki</a> for more information.
+</p></li>
+        <li><p><b>AutoScanpackages:</b> boolean
+           </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
+           them.  Historically, the command <code>fink scanpackages</code> had to be run
+           for <code>apt-get</code> to notice the new packages, but now this happens auto
+           matically. If this option is present and <b>false</b>, then <code>fink
+           scanpackages</code> will no longer be run automatically after packages are
+           built.  Defaults to <b>true</b>.
+</p></li>
+        <li><p><b>ScanRestrictivePackages:</b> boolean
+           </p><p>When scanning the packages for <code>apt-get</code>, <code>fink</code> normally scans all
+           packages in the current trees. However, if the resuting apt repository will be made publically available, the administrator may be
+           legally obligated not to include packages with <code>Restrictive</code> or
+           <code>Commercial</code> licenses. If this option is present and <b>false</b>, then Fink
+           will omit those packages when scanning.
+</p></li>
+      </ul>
+    
+    <h2><a name="sourceslist">5.9 Managing apt's sources.list file</a></h2>
+      
+      <p>Starting with fink 0.21.0, fink actively manages the file
+<code>/sw/etc/apt/sources.list</code> which is used by apt to locate
+binary files for installation.  The default sources.list file looks 
+something like this, adjusted to match your Distribution and Trees:
+</p>
+      <pre># Local modifications should either go above this line, or at the end.
+#
+# Default APT sources configuration for Fink, written by the fink program
+
+# Local package trees - packages built from source locally
+# NOTE: this is automatically kept in sync with the Trees: line in 
+# /sw/etc/fink.conf
+# NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
+deb file:/sw/fink local main
+deb file:/sw/fink stable main crypto
+
+# Official binary distribution: download location for packages
+# from the latest release
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
+
+# Official binary distribution: download location for updated
+# packages built between releases
+deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
+
+# Put local modifications to this file below this line, or at the top.
+</pre>
+      <p>With this default file, apt-get first looks in your local installation
+for already-compiled binaries, and then looks in the official binary
+distribution.  You can alter this by making entries at the beginning of
+the file (which will be searched first) or at the end of the file (which
+will be searched last).</p>
+      <p>If you change your Trees line or the Distribution you are using,
+fink will automatically modify the "default" portion of the file to
+correspond to the new values.  Fink will, however, preserve any local
+modifications you have made to the file, provided that you confine your
+modifications to the top of the file (above the first default line) and
+the bottom of the file (below the last default line).
+</p>
+      <p>
+Note: If you had modified <code>/sw/etc/apt/sources.list</code> prior to upgrading
+to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sources.list.finkbak</code> .
+</p>
+    
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=es">6. Usando el Fink desde la línea de comando</a></p>

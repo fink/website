@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - fink.conf";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="usage.php?phpLang=de" title="Das fink-Tool über die Kommandozeile benutzen"><link rel="prev" href="upgrade.php?phpLang=de" title="Fink Aktualisieren">';
 
 
@@ -47,7 +47,7 @@ ListOption: Option1 Option2 Option3
           <p>
             <b>Basepath:</b> path</p>
           <p>
-Gibt Fink an, wo es installiert wurde. Standardwert ist <b>/sw</b>, es sei denn, Sie haben den Pfad im Zuge der ersten Installation geändert. Sie sollten diesen Wert nach der Installation <b>nicht</b> mehr ändern - es würde Fink verwirren.</p>
+Gibt Fink an, wo es installiert wurde. Standardwert ist <b>/sw</b>, es sei denn, Sie haben den Pfad im Zuge der ersten Installation geändert. Sie sollten diesen Wert nach der Installation <b>nicht</b> mehr ändern - es würde <b>fink</b> verwirren.</p>
         </li>
       </ul>
     
@@ -76,18 +76,26 @@ unstable/main   - weitere instabile Pakete
 </pre>
           <p>
 Sie können auch Ihre eigenen Bäume in das Verzeichnis <code>/sw/fink/dists</code> für Ihre Bedürfnisse hinzufügen, dies ist aber nicht notwendig in den meisten Situationen. Die Standardbäume sind "local/main local/bootstrap
-stable/main". Diese Liste sollte mit der Datei <code>/sw/etc/apt/sources.list</code> synchronisiert sein. (Ab Fink 0.21.0 wird das für Sie automatisch gemacht.)</p>
+stable/main". Diese Liste sollte mit der Datei <code>/sw/etc/apt/sources.list</code> synchronisiert sein. (Ab <code>fink</code> 0.21.0 wird das für Sie automatisch gemacht.)</p>
+
+<p>The order of the trees is meaningful, as packages from later trees in the list may
+override packages from earlier ones.</p>
+
         </li>
         <li>
           <p>
-            <b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3 oder 10.3</p>
-          <p>Fink muss wissen, welche Version Sie von Mac OS X laufen haben. MaxcOS X 10.0 und frühere Versionen werden nicht und 10.1 wird nicht länger von der dieser Version von Fink unterstützt. Mac OS X 10.2 wird nur noch unterstützt, wenn das Developer Tools Update vom August 2003 installiert ist. Dieses Feld wird mit dem Skript <code>/sw/lib/fink/postinstall.pl</code> gesetzt. Sie sollten diesen Wert nicht manuell verändern.
+            <b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, 10.3 oder 10.4</p>
+          <p>Fink muss wissen, welche Version Sie von Mac OS X laufen haben. MaxcOS X 10.0 und frühere Versionen werden nicht und 10.1 und 10.2 wird nicht länger von der dieser Version von Fink unterstützt. 
+          
+          Mac OS X 10.2 users are restricted to fink-0.24.7, released in June 2005.
+          
+          Dieses Feld wird mit dem Skript <code>/sw/lib/fink/postinstall.pl</code> gesetzt. Sie sollten diesen Wert nicht manuell verändern.
 </p>
         </li>
         <li>
           <p>
             <b>FetchAltDir:</b> Pfad</p>
-          <p>Normalerweise wird Fink die Quellen, die es herunterlädt, in <code>/sw/src</code> speichern. Sie können ein alternatives Verzeichnis bestimmen, in welchem nach heruntergeladenen Quelldateien gesucht wird, wenn Sie diesen Wert setzen. Zum Beispiel:
+          <p>Normalerweise wird <code>fink</code> die Quellen, die es herunterlädt, in <code>/sw/src</code> speichern. Sie können ein alternatives Verzeichnis bestimmen, in welchem nach heruntergeladenen Quelldateien gesucht wird, wenn Sie diesen Wert setzen. Zum Beispiel:
 </p>
           <pre>FetchAltDir: /usr/src</pre>
         </li>
@@ -96,16 +104,23 @@ stable/main". Diese Liste sollte mit der Datei <code>/sw/etc/apt/sources.list</c
             <b>Verbose:</b> eine Zahl von 0 bis 3</p>
           <p>Diese Option bestimmt, wie viel Informationen Fink ausgibt, während es beschäftigt ist. Die Werte sind:
 <b>0</b>
-            Leise (zeigt keine Informationen über Downloads an)
+            Quiet (Leise) (zeigt keine Informationen über Downloads an)
 <b>1</b>
-            Niedrig (zeigt keine Informationen über das Auspacken von  Tarballs an)
+            Low (Niedrig) (zeigt keine Informationen über das Auspacken von  Tarballs an)
 <b>2</b>
-            Medium (zeigt fast alles an)
+            Medium (Medium) (zeigt fast alles an)
 <b>3</b>
-            Hoch (zeigt alles an).
+            High (Hoch) (zeigt alles an).
 Der Standardwert ist 1.
 </p>
         </li>
+        
+        <li><p><b>SkipPrompts:</b> a comma-delimited list</p><p>(<code>fink-0.25</code> and later) This option instructs <code>fink</code> to refrain from asking for input when
+           the user does not want to be prompted. Each prompt belongs to a
+           category. If a prompt's category is in the SkipPrompts list then
+           the default option will be chosen within a very short period of
+           time.</p><p>Currently, the following categories of prompts exist:</p><p><b>fetch</b> - Downloads and mirrors</p><p><b>virtualdep</b> - Choosing between alternative packages</p><p> By default, no prompts are skipped.</p></li>
+        
         <li>
           <p>
             <b>NoAutoIndex:</b> boolean</p>
@@ -121,9 +136,24 @@ selfupdate-cvs</code> gesetzt, so dass Sie ihn nicht per Hand ändern brauchen.<
         <li>
 	  <p>
 	    <b>Buildpath:</b> Pfad</p>
-	  <p>Fink muss mehrere temporäre Verzeichnisse für jedes Paket, welches von Quellcode kompiliert wird, erstellen. Der voreingestellte Ort wäre <code>/sw/src</code>. Wenn Sie es möchten, können Sie den Pfad hier einstellen. Für mehr Informationen über diese temporären Verzeichnisse lesen Sie die Beschreibungen über die Felder <code>KeepRootDir</code> und <code>KeepBuildDir</code> später in diesem Dokument.
+	  <p>Fink muss mehrere temporäre Verzeichnisse für jedes Paket, welches von Quellcode kompiliert wird, erstellen. Der voreingestellte Ort wäre <code>/sw/src</code> on Panther and earlier, and 
+<code>/sw/src/fink.build</code> on Tiger. Wenn Sie es möchten, können Sie den Pfad hier einstellen. Für mehr Informationen über diese temporären Verzeichnisse lesen Sie die Beschreibungen über die Felder <code>KeepRootDir</code> und <code>KeepBuildDir</code> später in diesem Dokument.
 	    </p>
+	    
+	    <p>On Tiger, it is recommended that the Buildpath end with <code>.noindex</code>
+or <code>.build</code>. Otherwise, Spotlight will attempt to index the temporary files in
+the Buildpath, slowing down builds.
+    	</p>
+    	
 	</li>
+
+        <li><p><b>Bzip2Path:</b> the path to your <code>bzip2</code> (or compatible) binary
+          </p><p>(<code>fink-0.25</code> and later) The Bzip2Path option lets you override the default path for the
+           <code>bzip2</code> command-line tool.  This allows you to specify an alternate
+           location to your <code>bzip2</code> executable, pass optional command-line
+           options, or use a drop-in replacement like <code>pbzip2</code> for decompressing
+           <code>.bz2</code> archives.</p></li>
+
       </ul>
     
     <h2><a name="downloading">5.5 Download Einstellungen</a></h2>
@@ -154,8 +184,54 @@ selfupdate-cvs</code> gesetzt, so dass Sie ihn nicht per Hand ändern brauchen.<
           <p>
             <b>DownloadMethod:</b> wget, curl, axel oder axelautomirror</p>
           <p>Fink kann drei verschiedene Programme nutzen, um Dateien vom Internet herunterzuladen: <b>wget</b>, <b>curl</b> oder <b>axel</b>. Der Wert <b>axelautomirror</b> führt zur Verwendung eines experimentellen Modus des Programms <b>axel</b>, so dass der Server, der sich am nähesten befindet und eine bestimmte Datei hat, bestimmt wird. Das Verwendung weder von <b>axel</b> noch von <b>axelautomirror</b> ist zu diesem Zeitpunkt empfohlen. Der Standardwert ist <b>curl</b>. <b>Das Programm, welches Sie als DownloadMethod angeben, MUSS installiert sein.</b>
+          
+          (i.e. <code>fink</code> won't fall back to <b>curl</b> if you try to use a download application that isn't present.
+          
           </p>
         </li>
+
+        <li>
+          <p>
+            <b>SelfUpdateMethod:</b> point, rsync or cvs</p>
+          <p>
+<code>fink</code> can use some different methods to update the package info files.
+<b>rsync</b> is the recommended setting; it uses rsync to download only
+modified files in the <a href="#optional">trees</a> that you have enabled. Note that if you have
+changed or added to files in the <code>stable</code> or <code>unstable</code> trees, using rsync will
+delete them. Make a backup first, e.g. in your <code>local</code> tree. <b>cvs</b> will download using anonymous or
+:ext: cvs access from the Fink repository. This has the disadvantage that cvs
+can not switch mirrors; if the server is unavailable you will not be able to
+update. <b>point</b> will download only the latest released version of the
+packages. It is not recommended as your packages may be quite out of date.
+          </p>
+        </li>
+        <li><p><b>SelfUpdateCVSTrees:</b> list of trees
+           </p><p>(<code>fink-0.25</code> and later) By default, the <b>cvs</b> selfupdate method will update only the current
+           distribution's tree.  This option overrides the list of distribu-
+           tion versions that will be updated during a selfupdate.
+
+           Please note that you will need a recent "cvs" binary installed if
+           you wish to include directories that do not have CVS/ directories
+           in their entire path (e.g., dists/local/main or similar).</p></li>
+        <li>
+          <p>
+            <b>UseBinaryDist:</b> boolean</p>
+          <p>
+Causes <code>fink</code> to try to download pre-compiled binary packages from the binary
+distribution if available and if the binary package is not already on the
+system. This can save a lot of installation time and it is therefore 
+recommended to set this option. Passing fink the 
+<a href="usage.php?phpLang=de">--use-binary-dist</a> option (or the <code>-b</code> flag) has the same effect,  
+but only operates on that single <code>fink</code> invocation.  Passing <code>fink</code> the
+           <code>--no-use-binary-dist</code> flag overrides this, and compiles from source
+           for that single <code>fink</code> invocation.
+<b>Only available as of  fink version 0.23.0</b>.
+          </p><p>Note that this mode instructs <code>fink</code> to download an available binary  
+           if that version is the latest available version of the package; it does <b>not</b> cause <code>fink</code>
+           to choose a version based on its binary availability.
+</p>
+        </li>
+
       </ul>
     
     <h2><a name="mirrors">5.6 Mirror Einstellungen</a></h2>
@@ -190,6 +266,14 @@ MasterNever - Nutzt nie "Master"-Mirrors.
 ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors in einen Satz).
 </pre>
         </li>
+        
+        <li><p><b>Mirror-rsync:</b>
+           </p><p>(<code>fink-0.25.2</code> and later) When doing <code>fink selfupdate</code> with the <b>SelfupdateMethod</b> set to <code>rsync</code>,
+           this is the rsync url to sync from.  This should be an anonymous
+           rsync url, pointing to a directory which contains all the fink Dis-
+           trubutions and Trees.
+</p></li>
+		
       </ul>
     
     <h2><a name="developer">5.7 Entwicklereinstellungen</a></h2>
@@ -199,13 +283,13 @@ ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors i
         <li>
           <p>
             <b>KeepRootDir:</b> boolean</p>
-          <p>Veranlasst Fink ein temporäres Verzeichnis <code>/sw/src/root-[name]-[version]-[revision]</code> nach dem Erstellen des Paketes nicht zu löschen. Standardwert ist "False". <b>Seien Sie Vorsichtig, diese Option kann Ihre Festplatte sehr schnell füllen!</b> Wenn Sie <b>fink</b> den Parameter <b>-K</b> übergeben, hat es die selben Auswirkungen - allerdings nur für diesen <b>Fink</b>-Aufruf.
+          <p>Veranlasst Fink ein temporäres Verzeichnis <code>root-[name]-[version]-[revision]</code> nach dem Erstellen des Paketes nicht zu löschen. Standardwert ist "False". <b>Seien Sie Vorsichtig, diese Option kann Ihre Festplatte sehr schnell füllen!</b> Wenn Sie <code>fink</code> den Parameter <b>-K</b> übergeben, hat es die selben Auswirkungen - allerdings nur für diesen <code>fink</code>-Aufruf.
           </p>
         </li>
         <li>
           <p>
             <b>KeepBuildDir:</b> boolean</p>
-         <p>Veranlasst Fink ein temporäres Verzeichnis <code>/sw/src/[name]-[version]-[revision]</code> nach dem Erstellen des Paketes nicht zu löschen. Standardwert ist "False". <b>Seien Sie Vorsichtig, diese Option kann Ihre Festplatte sehr schnell füllen!</b> Wenn Sie <b>fink</b> den Parameter <b>-k</b> übergeben, hat es die selben Auswirkungen - allerdings nur für diesen <b>Fink</b>-Aufruf.</p>
+         <p>Veranlasst Fink ein temporäres Verzeichnis <code>[name]-[version]-[revision]</code> nach dem Erstellen des Paketes nicht zu löschen. Standardwert ist "False". <b>Seien Sie Vorsichtig, diese Option kann Ihre Festplatte sehr schnell füllen!</b> Wenn Sie <code>fink</code> den Parameter <b>-k</b> übergeben, hat es die selben Auswirkungen - allerdings nur für diesen <code>fink</code>-Aufruf.</p>
         </li>
       </ul>
     
@@ -224,8 +308,32 @@ ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors i
         <li>
           <p>
             <b>CCacheDir:</b> path</p>
-          <p><b>Diese Option wurde in einer post-0.20.5 CVS-Version von Fink eingeführt.</b> Falls das Fink-Paket ccache-default installiert ist, werden die Cache-Dateien, die beim Erstellen von Fink-Paketen anfallen, hier zwischengespeichert. Standardwert ist <code>/sw/var/ccache</code>. Wenn es auf <code>none</code> gesetzt ist, wird Fink nicht die Umgebungsvariable CCACHE_DIR setzen und ccache wird <code>$HOME/.ccache</code> nutzen - wobei Dateien womöglich mit Root als Eigentümer in Ihr Home-Verzeichis abgelegt werden.</p>
+          <p>
+          Falls das Fink-Paket <code>ccache-default</code> installiert ist, werden die Cache-Dateien, die beim Erstellen von Fink-Paketen anfallen, hier zwischengespeichert. Standardwert ist <code>/sw/var/ccache</code>. Wenn es auf <code>none</code> gesetzt ist, wird Fink nicht die Umgebungsvariable CCACHE_DIR setzen und ccache wird <code>$HOME/.ccache</code> nutzen - wobei Dateien womöglich mit Root als Eigentümer in Ihr Home-Verzeichis abgelegt werden.
+          <b>Only available in fink newer than version 0.21.0</b>.</p>
         </li>
+        
+        <li><p><b>NotifyPlugin:</b> plugin</p><p>
+           Specify a notification plugin to tell you when packages have been
+           installed/uninstalled.  Defaults to Growl (requires <code>Mac::Growl</code> to
+           operate).  Other plugins can be found in the
+           <code>/sw/lib/perl5/Fink/Notify</code> directory.  On <code>fink-0.25</code> and later they are listed in the output of <code>fink plugins</code>.  See the <a href="http://wiki.finkproject.org/index.php/Fink:Notificati%20on_Plugins">Fink Developer Wiki</a> for more information.
+</p></li>
+        <li><p><b>AutoScanpackages:</b> boolean
+           </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
+           them.  Historically, the command <code>fink scanpackages</code> had to be run
+           for <code>apt-get</code> to notice the new packages, but now this happens auto
+           matically. If this option is present and <b>false</b>, then <code>fink
+           scanpackages</code> will no longer be run automatically after packages are
+           built.  Defaults to <b>true</b>.
+</p></li>
+        <li><p><b>ScanRestrictivePackages:</b> boolean
+           </p><p>When scanning the packages for <code>apt-get</code>, <code>fink</code> normally scans all
+           packages in the current trees. However, if the resuting apt repository will be made publically available, the administrator may be
+           legally obligated not to include packages with <code>Restrictive</code> or
+           <code>Commercial</code> licenses. If this option is present and <b>false</b>, then Fink
+           will omit those packages when scanning.</p></li>
+		
       </ul>
     
     <h2><a name="sourceslist">5.9 Verwaltung von apts sources.list</a></h2>

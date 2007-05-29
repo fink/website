@@ -1,9 +1,9 @@
-<?xml version = '1.0' encoding = 'utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.25 2007/02/23 22:04:56 rangerrick Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.26 2007/05/29 03:58:51 babayoshihiko Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -568,12 +568,6 @@ Fink をソースからインストールした場合など、別にダウンロ
             これは、OS 10.3 用に stable ソースツリーからインストールされる最新の安定バージョンです。
           </p>
             </li>
-            <li>
-          <p>
-            <em>10.4-transitional stable:</em>
-            これは、OS 10.3 から 10.4 用へアップグレードしたユーザ用の、stable ソースツリーからインストールされる最新の安定バージョンです。
-          </p>
-            </li>
             <li><p><em>10.4/powerpc stable:</em>  
             これは、新規にインストールされた OS 10.4 ユーザ用に stable ソースツリーからインストールされる最新の安定バージョンです。PowerPC のみ。
 		  </p>
@@ -597,12 +591,6 @@ Fink をソースからインストールした場合など、別にダウンロ
             <li>
           <p><em>10.3 unstable:</em>  
             これは、OS 10.3 用に unstable ソースツリーからインストールされる最新の unstable バージョンです。
-          </p>
-            </li>
-            <li>
-          <p>
-            <em>10.4-transitional stable:</em>
-            これは、OS 10.3 から 10.4 用へアップグレードしたユーザ用の、unstable ソースツリーからインストールされる最新の安定バージョンです。
           </p>
             </li>
             <li><p><em>10.4/powerpc stable:</em>  
@@ -821,7 +809,7 @@ ListOption: Option1 Option2 Option3
 Fink がインストールされている場所を知らせます。
 Fink の最初のインストール時に変更していない限り、デフォルトでは <em>/sw</em> です。
 この値を変更しては<em>いけません</em>。
-Fink が混乱します。
+<em>fink</em> が混乱します。
 </p>
 </li>
 </ul>
@@ -857,12 +845,15 @@ unstable/main   - 他の非安定版パッケージ
 デフォルトのツリーは &quot;local/main local/bootstrap
 stable/main&quot; です。
 この一覧は <code>/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
-(fink 0.21.0 より、 fink が自動的に行うようになりました)
+(fink 0.21.0 より、 <code>fink</code> が自動的に行うようになりました)
 </p>
+<!-- start translation -->
+<p>ツリーの順序には意味があります。後のツリーにあるパッケージが前のツリーのパッケージを書き換えます。</p>
+<!-- end translation -->
 </li>
 <li>
 <p>
-<em>Distribution:</em> 10.1, 10.2, 10.2-gcc3.3, 10.3</p>
+<em>Distribution:</em> 10.1, 10.2, 10.2-gcc3.3, 10.3, 10.4</p>
 <p>Fink はどのバージョンの Mac OS X を使っているか知る必要があります。
 10.0 以前はサポートされていません。
 10.1 は現バージョンからサポート対象外となりました。
@@ -874,7 +865,7 @@ stable/main&quot; です。
 <li>
 <p>
 <em>FetchAltDir:</em> path</p>
-<p>Fink は通常、ソースを <code>/sw/src</code> に保存します。
+<p><code>fink</code> は通常、ソースを <code>/sw/src</code> に保存します。
 この値を変えることで、他の場所にダウンロードしたソースコードを探させることもできます。
 例えば:
 </p>
@@ -897,6 +888,15 @@ stable/main&quot; です。
 デフォルト値は 1 です。
 </p>
 </li>
+        <li><p><em>SkipPrompts:</em> コンマで区切られた一覧</p>
+        <p>(<code>fink-0.25</code> 以降) 
+        このオプションに設定された項目に関し、<code>fink</code> は利用者に聞かなくなります。
+        各プロンプトはいずれかのカテゴリに属し、そのカテゴリが SkipPrompts 一覧に指定されている場合、
+        直ちに既定値が洗濯されます。</p>
+        <p>現在、以下のプロンプトカテゴリがあります。:</p>
+        <p><em>fetch</em> - Downloads と mirrors</p>
+        <p><em>virtualdep</em> - 代替パッケージの選択</p>
+        <p>既定値としてスキップされるプロンプトはありません。</p></li>
 <li>
 <p>
 <em>NoAutoIndex:</em> ブール値</p>
@@ -921,10 +921,11 @@ stable/main&quot; です。
 Fink はソースからコンパイルする場合、パッケージごとに仮ディレクトリを作成します。
 デフォルトでは Panther 以前では <filename>/sw/src</filename> 内に、Tiger からは <filename>/sw/src/fink.build</filename> 内に、
 置かれていますが、別の場所を使いたい場合はここでパスを指定します。
-仮ディレクトリについては、後述の <code>KeepRootDir</code> と <code>KeepBuildDir</code> のフィールドの解説をご覧下さい。
+仮ディレクトリについては、本文書中<xref section="developer">Developer Settings</xref> 節の
+の <code>KeepRootDir</code> と <code>KeepBuildDir</code> のフィールドの解説をご覧下さい。
 </p>
 	    <p>
-          Tiger では、BuildPath は .noindex または .build とつけることをお勧めします。
+          Tiger では、BuildPath は <filename>.noindex</filename> または <filename>.build</filename> とつけることをお勧めします。
           こうしなければ、Spotlight が BuildPath 内にある仮ファイルをすべてインデックスしようとし、ビルドを遅くします。
     	</p>
 </li>
@@ -967,15 +968,18 @@ FTP サーバーやネットワークによっては、このオプションが 
 <em>axelmirror</em> の使用は現時点では勧められません。
 デフォルト値は <em>curl</em> です。
 <em>DownloadMethod に選択したアプリケーションはインストールされている必要があります!</em>
+          <!-- start translation -->
+          (i.e. もし存在しないダウンロードアプリケーションを指定しても、<code>fink</code> は <em>curl</em> を使うことはありません。)
+          <!-- end translation -->
 </p>
 </li>
 <li>
 <p>
 <em>SelfUpdateMethod:</em> point, rsync または cvs</p>
 <p>
-Fink は、数種類の手段でパッケージ情報ファイルを更新することができます。
+<code>fink</code> は、数種類の手段でパッケージ情報ファイルを更新することができます。
 <em>rsync</em> が推奨される設定で、 rsync を用いて、ユーザーにより指定されたツリー中の、変更されたファイルだけをダウンロードします。
-stable や unstable 中のファイルを編集したり、新たに追加していた場合、削除されることに注意してください。
+<code>stable</code> や <code>unstable</code> <xref section="optional">trees</xref> 中のファイルを編集したり、新たに追加していた場合、削除されることに注意してください。
 これらのファイルを必ず事前にバックアップしてください。
 <em>cvs</em> では、 anonymous か :ext: cvs アクセスを使用して fink レポジトリから ダウンロードします。
 cvs はミラーを使えないという欠点があるため、 CVS サーバーに接続することができない時は更新できません。
@@ -983,15 +987,25 @@ cvs はミラーを使えないという欠点があるため、 CVS サーバ�
 ユーザのパッケージがかなり古い場合は更新されないので、おすすめはできません。
 </p>
 </li>
+        <li><p><em>SelfUpdateCVSTrees:</em> ツリーの一覧</p>
+        <p>(<code>fink-0.25</code> 以降) 
+		既定では、 <em>cvs</em> selfupdate は現在の distribution ツリーのみ更新します。
+		このオプションは、selfupdate 時に後進する distribution の一覧を書き換えます。
+		
+		もし CVS/ ディレクトリの存在しないディレクトリも更新したい場合は、最近の "cvs" バイナリが、
+		完全パス中 (例 dists/local/main など) に必要ですので、
+		ご注意ください。</p></li>
 <li>
 <p>
 <em>UseBinaryDist:</em> ブール値</p>
 <p>
-fink に、バイナリ版があり、まだシステム上にバイナリない場合はバイナリをダウンロードするように指示します。
+<code>fink</code> に、バイナリ版があり、まだシステム上にバイナリない場合はバイナリをダウンロードするように指示します。
 これによりインストール時間を短縮できるので、このオプションを設定することをおすすめします。
 <xref chapter="usage">--use-binary-dist オプション</xref>を使用しても同じですが、これは一度だけ有効です。 
-<em>fink バージョン 0.23.0 から有効</em>.
+<em>fink バージョン 0.23.0 から有効</em>。
 </p>
+<p>注記：このモードは、選択されたパッケージのバイナリバージョンが最新バージョンに一致する場合にのみ適用されます。
+入手可能な最新バージョンを <code>fink</code> が選択するようにはなっていません。</p>
 </li>
 </ul>
 </section>
@@ -1043,6 +1057,12 @@ MasterNever - &quot;Master&quot;  ソースミラーは使用しない。
 ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラーを一緒にする)。
 </codeblock>
 </li>
+        <li><p><em>Mirror-rsync:</em></p>
+        <p>(<code>fink-0.25.2</code> 以降)
+           <code>fink selfupdate</code> 時に <em>SelfupdateMethod</em> を 
+           <code>rsync</code> 賭した場合、
+           ここで指定された URL から rsync します。
+           ここで指定する URL は、fink の全ての Distribution と Tree を含んだ anonymous rsync 用でなければなりません。</p></li>
 </ul>
 </section>
 <section name="developer" >
@@ -1054,7 +1074,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <li>
 <p>
 <em>KeepRootDir:</em> ブール値</p>
-<p>パッケージのビルド後に <em>BuildPath</em> 内の root-[name]-[version]-[revision] ディレクトリを削除しません。
+<p>パッケージのビルド後に <em>BuildPath</em> 内の <filename>root-[name]-[version]-[revision]</filename> ディレクトリを削除しません。
 デフォルトは false です。
 <em>注意、このオプションはハードディスクをいっぱいにします!</em>
 一度だけ使いたい場合、 <em>fink</em> に <em>-K</em> フラグを渡して同じ効果が得られます。
@@ -1063,7 +1083,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <li>
 <p>
 <em>KeepBuildDir:</em> ブール値</p>
-<p>パッケージのビルド後に <em>BuildPath</em> 内の [name]-[version]-[revision] ディレクトリを削除しません。
+<p>パッケージのビルド後に <em>BuildPath</em> 内の <filename>[name]-[version]-[revision]</filename> ディレクトリを削除しません。
 デフォルトは false です。
 <em>注意、このオプションはハードディスクをいっぱいにします!</em>
 一度だけ使いたい場合、 <em>fink</em> に <em>-K</em> フラグを渡して同じ効果が得られます。
@@ -1088,7 +1108,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 			<li>
 				<p><em>CCacheDir:</em> パス</p>
 				<p>
-					Fink パッケージ ccache-default がインストールされている場合、
+					Fink パッケージ <code>ccache-default</code> がインストールされている場合、
 					Fink パッケージを作成中にこれがつくるキャッシュがここに保存される。
 					規定値は <filename>/sw/var/ccache</filename> 。
 					<code>none</code> と設定された場合、 fink は CCACHE_DIR 環境変数を設定せず、
@@ -1103,7 +1123,22 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
            			他のプラグインは、 <filename>/sw/lib/perl5/Fink/Notify</filename> にある。
 				</p>
 			</li>
-		</ul>
+        <!-- start translation -->
+        <li><p><em>AutoScanpackages:</em> boolean
+           </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
+           them.  Historically, the command <code>fink scanpackages</code> had to be run
+           for <code>apt-get</code> to notice the new packages, but now this happens auto
+           matically. If this option is present and <em>false</em>, then <code>fink
+           scanpackages</code> will no longer be run automatically after packages are
+           built.  Defaults to <em>true</em>.
+</p></li>
+        <li><p><em>ScanRestrictivePackages:</em> boolean
+           </p><p>When scanning the packages for <code>apt-get</code>, <code>fink</code> normally scans all
+           packages in the current trees. However, if the resuting apt repository will be made publically available, the administrator may be
+           legally obligated not to include packages with <code>Restrictive</code> or
+           <code>Commercial</code> licenses. If this option is present and <em>false</em>, then Fink
+           will omit those packages when scanning.</p></li>
+		<!-- end translation -->		</ul>
 	</section>
 	<section name="sourceslist" >
 		<title>apt の sources.list ファイルを管理</title>
@@ -1168,35 +1203,144 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 全ての fink コマンドに共通のオプションがあります。
 これは、 <code>fink --help</code> を実行することで一覧が出ます:
 </p>
-        <p>(<code>fink-0.24.1</code> 時点で)</p>
-<codeblock> -h, --help            - このヘルプテキストを表示
- -q, --quiet           - fink をやかましくなくさせます --verboseの反対
- -V, --version         - バージョン情報を表示
- -v, --verbose         - fink をやかましくなくさせます --quietの反対
- -y, --yes             - 全ての質問にデフォルト値を自動的に回答
- -b, --use-binary-dist - コンパイル済みバイナリがあれば、それを使用 (コンパイル時間やディスク節約のため)
-                         このモードは、パッケージが要求するバージョンがある場合に限りダウンロード
-                         するよう Fink に指示します。バイナリ版があるバージョンを無理にダウン
-                         ロードすることはありません。
- --no-use-binary-dist  - コンパイル済みバイナリパッケージを使用しない (--use-binary-dist の逆)
- -K, --keep-root-dir   - BuildPath 中の root-[name]-[version]-[revision] ディレクトリをパッケー
-                         ジビルド後に削除しないように Fink に指示をする
- -k, --keep-build-dir  - BuildPath 中の [name]-[version]-[revision] ディレクトリをパッケー
-                         ジビルド後に削除しないように Fink に指示をする
- --build-as-nobody     - 解凍、パッチ、コンパイル、インストール時に root 以外のユーザーになる。
-                         このオプションで作成されたパッケージは機能しない可能性があることに注意。
-                         このモードはパッケージの開発とデバッグ目的にのみ使用。</codeblock>
-<p>(訳注: 利便性のためここでは訳しましたが、実際は英語で出力されます)</p>
+        <p>(<code>fink-0.26.0</code> 時点で)</p>
+
+<!-- start translation -->
+      <p><em>-h, --help</em> - displays help text.
+</p>
+      <p><em>-q, --quiet</em>  - causes <code>fink</code> to be less verbose, opposite of <em>--verbose</em>.  Overrides the <xref chapter="conf" section="optional">Verbose</xref> flag in <filename>fink.conf</filename>.
+</p>
+      <p><em>-V, --version</em> - display version information.
+</p>
+      <p><em>-v, --verbose</em> - causes  <code>fink</code> to be more verbose, opposite of <em>--quiet</em>.  Overrides the <xref chapter="conf" section="optional">Verbose</xref> field in <filename>fink.conf.</filename>
+</p>
+      <p><em>-y, --yes</em> - assume default answer for all interactive 
+                        questions.
+</p>
+      <p><em>-K, --keep-root-dir</em>   - Causes <code>fink</code> not to delete the
+                        <filename>root-[name]-[version]-[revision]</filename>
+		        directory in the <xref chapter="conf" section="optional">Buildpath</xref> after building a package.  Corresponds to the <xref chapter="conf" section="developer">KeepRootDir</xref> field in <filename>fink.conf</filename>.
+</p>
+      <p><em>-k, --keep-build-dir</em>  - Causes <code>fink</code> not to delete the
+                        <filename>[name]-[version]-[revision]</filename>
+                        directory in the <xref chapter="conf" section="optional">Buildpath</xref> after building a package.  Corresponds to the <xref chapter="conf" section="developer">KeepBuildDir</xref> field in <filename>fink.conf</filename>.</p>
+      <p><em>-b, --use-binary-dist</em> - download pre-compiled packages from the binary 
+                        distribution if available (e.g. to reduce compile
+		        time or disk usage).
+		        Note that this mode instructs fink to download the
+                        version it wants if that version is available for
+		        download; it does not cause fink to choose a version
+    		        based on its binary availability.  Corresponds to the <xref chapter="conf" section="downloading">UseBinaryDist</xref> flag in <filename>fink.conf</filename>.
+</p>
+      <p><em>--no-use-binary-dist</em>  - Don't use pre-compiled binary packages from the binary 
+		        distribution, opposite of the --use-binary-dist flag. 
+                        This is the default unless overridden by setting <code>UseBinaryDist: true </code>in 
+                        the <filename>fink.conf</filename> configuration file. 
+</p>
+      <p><em>--build-as-nobody</em>     - Drop to a non-root user when performing the unpack,
+                        patch, compile, and install phases. Note that packages
+                        built with this option may be non-functional. You
+                        should use this mode for package development and 
+                        debugging only.
+</p>
+      <p><em>-m, --maintainer</em>
+            - (<code>fink-0.25</code> and later) Perform actions useful to package maintainers: run validation on
+           the <filename>.info</filename> file before building and on the <filename>.deb</filename> after building a
+           package; turn certain build-time warnings into fatal errors; (<code>fink-0.26</code> and later) run the test suites as specified in the  field.  This sets <em>--tests</em> and <em>--validate</em> to <code>on</code>.</p>
+      <p><em>--tests[=on|off|warn]</em>         - (<code>fink-0.26.0</code> and later) Causes <code>InfoTest</code> fields to be activated and test suites specified
+           via <code>TestScript</code> to be executed (see the <varlink url="../packaging/reference.php#fields" varurl="../packaging/packaging.en.html#reference.fields">Fink Packaging Manual</varlink>).  If no argument is given to this
+           option or if the argument is <code>on</code> then failures in test suites will
+           be considered fatal errors during builds.  If the argument is <code>warn</code>
+           then failures will be treated as warnings.</p>
+      <p><em>--validate[=on|off|warn]</em> -
+           Causes packages to be validated during a build.  If no argument is
+           given to this option or if the argument is <code>on</code> then validation failures will be considered fatal errors during builds.  If the argument is <code>warn</code> then failures will be treated as warnings.</p>
+      <p><em>-l, --log-output</em>
+            - Save a copy of the terminal output during each package building
+           process. By default, the file is stored in
+           <filename>/tmp/fink-build-log_[name]-[version]-[revision]_[date]-[time]</filename> but
+           one can use the <em>--logfile</em> flag to specify an alternate filename.</p>
+      <p><em>--no-log-output</em>
+            - Don't save a copy of the output during package-building, opposite
+           of the <em>--log-output</em> flag. This is the default.</p>
+      <p><em>--logfile=filename</em>
+            - Save package build logs to the file <filename>filename</filename> instead of the default
+           file (see the <em>--log-output</em> flag, which is implicitly set by the
+           <em>--logfile</em> flag). You can use percent-expansion codes to include
+           specific package information automatically. A complete list of percent-expanions is available in the <varlink url="../packaging" varurl="../packaging/packaging.en.html">Fink Packaging Manual</varlink>; some common percent-expansions are:</p>
+      <ul>
+        <li>                 <em>%n</em>    - package name
+                 </li>
+        <li><em>%v</em>    - package version
+                 </li>
+        <li><em>%r</em>    - package revision</li>
+      </ul>
+      <p><em>-t, --trees=expr</em>
+           - Consider only packages in trees matching <em>expr</em>.
+
+           The format of expr is a comma-delimited list of tree specifica-
+           tions. Trees listed in <filename>fink.conf</filename> are compared against <em>expr</em>.  Only
+           those which match at least one tree specification are considered by
+           <code>fink</code>, in the order of the first specifications which they match. If
+           no <em>--trees</em> option is used, all trees listed in <filename>fink.conf</filename> are
+           included in order.
+
+           A tree specification may contain a slash (/) character, in which
+           case it requires an exact match with a tree. Otherwise, it matches
+           against the first path-element of a tree. For example,
+           <em>--trees=unstable/main</em> would match only the <em>unstable/main</em> tree,
+           while <em>--trees=unstable</em> would match both unstable/main and
+           <em>unstable/crypto</em>.
+
+           There exist magic tree specifications which can be included in
+           <em>expr</em>:</p>
+      <ul>
+        <li><em>status</em>
+                       - Includes packages in the dpkg status database.
+
+                 </li>
+        <li><em>virtual</em>
+                       - Includes virtual packages which reflect the capabili-
+                       ties of the system.
+</li>
+      </ul>
+      <p>Exclusion of (or failure to include) these magic trees is currently
+           only supported for operations which do not install or remove packages.</p>
+      <p><em>-T, --exclude-trees=expr</em>
+           Consider only packages in trees not matching expr.
+
+           The syntax of expr is the same as for <em>--trees</em>, including the magic
+           tree specifications. However, matching trees are here excluded
+           rather than included. Note that trees matching both <em>--trees</em> and
+           <em>--exclude-trees</em> are excluded.
+</p>
+      <p> Examples of <em>--trees</em> and --exclude-trees:
+
+                 </p>
+      <ul>
+        <li><code>fink --trees=stable,virtual,status install <em>foo</em></code> 
+                       <p>Install <em>foo</em> as if <code>fink</code> was using the stable tree, even
+                       if unstable is enabled in <filename>fink.conf</filename>.
+</p></li>
+        <li><code>fink --exclude-trees=local install <em>foo</em></code> 
+                       <p>Install the version of <em>foo</em> in Fink, not the locally
+                       modified version.
+
+</p></li>
+        <li><code>fink --trees=local/main list -i</code>
+                       <p>List the locally modified packages which are installed.</p></li>
+      </ul>
+<!-- end translation -->
 <p>
 ほとんどのオプションは名前から内容が推測できると思います(<xref chapter="conf" section="optional">ここ</xref>に Buildpath の定義があります)。
 一回限りではなく、常に使用したいオプションは
-<xref chapter="conf">Fink 設定ファイル</xref> (fink.conf)
+<xref chapter="conf">Fink 設定ファイル</xref> (<filename>fink.conf</filename>)
 で設定することができます。
 </p>
 </section>
 <section name="install" >
 <title>install</title>
-<p>install コマンドは、パッケージをインストールするのに使用します。
+<p><em>install</em> コマンドは、パッケージをインストールするのに使用します。
 指定したパッケージをダウンロード、 configure 、ビルド、インストールを行ないます。
 また、依存しているパッケージを確認をとった後で自動的にインストールします。
 例:</p>
@@ -1210,7 +1354,7 @@ Do you want to continue? [Y/n]</codeblock>
 <p>
 <xref section="options">--use-binary-dist</xref> を使用することで時間を節約することができます。
 </p>
-<p>install コマンドのエイリアス: update, enable, activate, use (ほとんどは歴史的な理由による).
+<p>install コマンドのエイリアス: <em>update, enable, activate, use</em> (ほとんどは歴史的な理由による).
 </p>
 </section>
 <section name="remove" >
@@ -1220,21 +1364,21 @@ remove コマンドは、 'dpkg --remove' を呼び出してシステムから�
 現在はまだ問題が残っていて、依存性は dpkg ツールに完全に任せています (通常は問題になりませんが)。
 </p>
 <p>
-remove コマンドは実際のパッケージファイル (設定ファイルは除く) を削除するだけですが、 .deb 圧縮パッケージファイルはそのままにします。
+<em>remove</em> コマンドは実際のパッケージファイル (設定ファイルは除く) を削除するだけですが、 <filename>.deb</filename> 圧縮パッケージファイルはそのままにします。
 これは、後で再インストールする際にコンパイルしなくても良いことを意味します。
-ディスク容量が必要であれば、 <filename>/sw/fink/dists</filename> ツリーから .deb ファイルを取り除いてもかまいません。
+ディスク容量が必要であれば、 <filename>/sw/fink/dists</filename> ツリーから <filename>.deb</filename> ファイルを取り除いてもかまいません。
 </p>
-<p>fink remove 時に、以下のフラグを使用することができます。</p>
+<p><em>fink remove</em> 時に、以下のフラグを使用することができます。</p>
 <codeblock>-h,--help             使用できるオプションを表示
 -r,--recursive        当該パッケージに依存するパッケージを削除
                          (上述の問題を解決します)</codeblock>
-<p>エイリアス: disable, deactivate, unuse, delete.</p>
+<p>エイリアス: <em>disable, deactivate, unuse, delete</em>.</p>
 </section>
 <section name="purge">
 <title>purge</title>
 <p>
-purge コマンドは、システムからパッケージを削除します。
-remove コマンドとの違いは、こちらは設定ファイルも削除します。
+<em>purge</em> コマンドは、システムからパッケージを削除します。
+<em>remove</em> コマンドとの違いは、こちらは設定ファイルも削除します。
 </p>
 </section>
 <section name="update-all" >
@@ -1258,12 +1402,10 @@ remove コマンドとの違いは、こちらは設定ファイルも削除し�
 <p>
 最初の列はインストール状況を表し、その意味は以下の通り:
 </p>
-<codeblock>
-     未インストール
+<codeblock>    未インストール
  i   最新バージョンがインストール済
 (i)  インストール済だが最新バージョンではない
-p   インストールされたパッケージにより提供されたバーチャルパッケージ
-</codeblock>
+ p   インストールされたパッケージにより提供されたバーチャルパッケージ</codeblock>
       <p>
         バージョン列は、常にパッケージで知られている最新 (最高) のバージョンを表示します。
         これは、インストールされているバージョンとは関係ありません。
@@ -1315,7 +1457,7 @@ fink list &quot;gnome*&quot;         - 'gnome' から始まるパッケージの
 <section name="apropos" >
 <title>apropos</title>
 <p>
-このコマンドはほとんど <code>fink list</code> と同じです。
+このコマンドはほとんど <xref section="list">fink list</xref>> と同じです。
 一番顕著な違いは、 <code>fink apropos</code> がパッケージの検索にパッケージ記述を使うことです。
 次に顕著なのは、検索文字列が必須で、オプションではないことです。
 </p>
@@ -1331,9 +1473,16 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 現時点では詳細があるパッケージはまだ少ないので注意して下さい。
 </p>
 <p>
-エイリアス: desc, description, info
+エイリアス: <em>desc, description, info</em>
 </p>
 </section>
+	<!-- start translation -->
+    <section name="plugins">
+      <title>plugins</title>
+      <p> List the (optional) plugins available to the <code>fink</code> program.  Currently lists the notification mechanisms and the source-tarball
+           checksum algorithms.</p>
+    </section>
+	<!-- end translation -->
 <section name="fetch" >
 <title>fetch</title>
 <p>指定したパッケージをダウンロードしますが、インストールはしません。
@@ -1351,7 +1500,7 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <title>fetch-all</title>
 <p>
 <em>全ての</em>パッケージソースファイルをダウンロードします。
-<code>fetch</code> と同様、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。
+<xref section="fetch">fetch</xref> と同様、以前ダウンロードしたかどうかに関わらず tarball をダウンロードします。
 </p>
 <p><code>fink fetch-all</code> コマンドには以下のフラグが使用できます:</p>
 <codeblock>-h,--help
@@ -1397,9 +1546,12 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <section name="configure" >
 <title>configure</title>
 <p>
-Fink を再設定します。
+<code>fink</code> を再設定します。
 ミラーサイトの設定やプロキシの設定も行なうことができます。
 </p>
+	  <!-- start translation -->
+      <p><em>New in</em> <code>fink-0.26.0</code>: This command will also let you turn on the unstable trees if desired.</p>
+      <!-- end translation -->
 </section>
 <section name="selfupdate" >
 <title>selfupdate</title>
@@ -1419,7 +1571,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
         このコマンドを使うことで、<code>fink selfupdate</code> 時にパッケージ一覧の更新に rsync を使用します。
       </p>
       <p>
-        Fink でソースからビルドする際に、こちらの方法を推奨します。
+        Fink をソースからのビルドで更新する場合、こちらの方法を推奨します。
       </p>
       <p>
         <em>注記:</em> rsync 更新は、使用中の<xref chapter="conf" section="optional">ツリー</xref>を更新するだけです
@@ -1446,25 +1598,41 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
                      - 形式に関する警告の表示を制御します
                       --pedantic が規定値</codeblock>
 <p>
-エイリアス: check
+エイリアス: <em>check</em>
 </p>
 </section>
 <section name="scanpackages" >
 <title>scanpackages</title>
-<p>
-指定したツリーに対し、 dpkg-scanpackages(8) を呼び出します。
-</p>
+      <!-- start translation -->
+      <p>Updates the <code>apt-get</code> database of debs; defaults to updating all of the trees, but may be restricted to a set of one or more trees given as arguments.</p>
+      <!-- end translation -->
 </section>
 <section name="cleanup" >
 <title>cleanup</title>
-<p>
-新しいバージョンがある場合、古いパッケージファイル (.info, .patch, .deb) を削除します。
-かなりのディスク容量が利用できるようになります。
-</p>
-<p>
-<xref section="options">--use-binary-dist option</xref> を使用すると，古いバイナリパッケージも削除され、
-<code>fink scanpackages</code> が実行されます。
-</p>
+      <!-- start translation -->
+      <p>
+   Removes obsolete and temporary files. 
+   This can reclaim large amounts of disk space.  One or more modes may be specified:</p>
+      <codeblock>--debs               - Delete .deb files (compiled binary package archives)
+                       corresponding to versions of packages that are neither
+                       described by a package description (.info) file in the
+                       currently-active trees nor presently installed.
+--sources,--srcs     - Delete sources (tarballs, etc.) that are not used by
+                       any package description (.info) file in the currently-
+                       active trees.
+--buildlocks, --bl   - Delete stale buildlock packages.
+--dpkg-status        - Remove entries for packages that are not installed from
+                       the dpkg "status" database.
+--obsolete-packages  - Attempt to uninstall all installed packges that are
+                       obsolete. (new in fink-0.26.0)
+--all                - All of the above modes. (new in fink-0.26.0)</codeblock>
+      <p>If no mode is specified, <code>--debs --sources</code> is the default action. </p>
+      <p>In addition, the following options may be used:</p>
+      <codeblock>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
+-d,--dry-run         - Print the names of the files that would be deleted, but
+                       do not actually delete them.
+-h,--help            - Show the modes and options which are available.</codeblock>
+    <!-- end translation -->
 </section>
     <section name="dumpinfo">
       <title>dumpinfo</title>
@@ -1472,7 +1640,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 	  注記: 0.21.0 以降の <code>fink</code> で有効。
 	  </p>
 	  <p>
-	Fink がどのようにパッケージの .info ファイルを構文解析するかを表示します。
+	<code>fink</code> がどのようにパッケージの <filename>.info</filename> ファイルを構文解析するかを表示します。
 	以下の<em>オプション引数</em>に応じて、各種フィールドとパーセント展開も表示されます。
       </p>
       <codeblock>

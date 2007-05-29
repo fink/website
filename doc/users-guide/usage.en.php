@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -267,8 +267,7 @@ fink list --section=kde   - list the packages in the kde section
 fink list --maintainer=fink-devel
                           - list the packages with no maintainer
 fink --trees=unstable list --maintainer=fink-devel
-                          - list the packages with no maintainer, but only in the
-                            unstable tree.
+                          - list the packages with no maintainer, but only in the unstable tree.
 fink list "gnome*"        - list all packages that start with 'gnome'
 </pre>
       <p>
@@ -388,7 +387,7 @@ others.
 	will be able to access the very latest revisions of all packages.
 </p>
       <p>
-If the <a href="#options">--use-binary-dist option</a> is enabled
+If the <a href="#options">--use-binary-dist option</a> is enabled,
 the list of available packages in the binary distribution is also updated.
       </p>
     

@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Einführung";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="install.php?phpLang=de" title="Erste Installation"><link rel="prev" href="index.php?phpLang=de" title="Benutzerhandbuch Contents">';
 
 
@@ -39,14 +39,20 @@ include_once "header.de.inc";
     
     <h2><a name="supported-os">1.3 Unterstützte Systeme</a></h2>
       
+      
+      <p><b>Mac OS X 10.4</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.  Note, however, that
+fink on intel hardware is still considered to be of <b>beta</b> quality.</p>
       <p>
-        <b>Mac OS X 10.3</b> ist das Betriebssystem der Wahl für Fink. Alle Entwickler nutzen es und Pakete werden für dieses System getestet. Es wird als "voll unterstützt und getestet" betrachtet, obwohl es noch verstreute Kompilierprobleme mit einzelnen Paketen geben kann.</p>
-      <p><b>Mac OS X 10.2</b> wird noch unterstützt, allerdings gibt es für einige neuere Pakete keine 10.2 Versionen.</p>
+        <b>Mac OS X 10.3</b> is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
+</p>
+      <p><b>Mac OS X 10.2</b> is still supported to some extent.  Fink 0.6.4 is the last distribution to suppport this OS.</p>
+      
       <p>
         <b>Mac OS X 10.1</b> wird noch einigermaßen unterstützt. Sie müssen Fink 0.4.1 und keine neuere Version nutzen.
 </p>
       <p>
-<b>Darwin 7.0.1</b> ist die zu Mac OS X 10.3 korrespondierende Darwin-Version, und <b>Darwin 6.0.2</b> zu Mac OS X 10.2. Sie sollten im allgemeinen funktionieren, sind aber nicht so gut getestet, da die meisten Menschen stattdessen einfach Mac OS X laufen haben. Es kann sein, dass Sie auf Probleme mit Paketen stoßen, die spezielle Features von Mac OS X nutzen - betroffene Pakete schließen XFree86 und womöglich esound mit ein.
+<b>Darwin 8.x</b> ist die zu Mac OS X 10.4 korrespondierende Darwin-Version, 
+<b>Darwin 7.x</b> ist die zu Mac OS X 10.3 korrespondierende Darwin-Version, und <b>Darwin 6.x</b> zu Mac OS X 10.2. Sie sollten im allgemeinen funktionieren, sind aber nicht so gut getestet, da die meisten Menschen stattdessen einfach Mac OS X laufen haben. Es kann sein, dass Sie auf Probleme mit Paketen stoßen, die spezielle Features von Mac OS X nutzen - betroffene Pakete schließen XFree86 und womöglich esound mit ein.
 </p>
     
     <h2><a name="src-vs-bin">1.4 Quellcode vs. Binärpakete</a></h2>

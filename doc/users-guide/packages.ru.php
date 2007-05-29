@@ -1,7 +1,7 @@
 <?
 $title = "Руководство пользователя - Пакеты";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="upgrade.php?phpLang=ru" title="Обновление Fink"><link rel="prev" href="install.php?phpLang=ru" title="Первоначальная инсталляция">';
 
 
@@ -128,8 +128,10 @@ include_once "header.ru.inc";
             <p>Иногда во время бинарной инсталляции вы можете получить сообщение о том, что
                 зависимость не может быть инсталлирована. Пример:</p>
             <pre>Sorry, but the following packages have unmet
-                dependencies: foo: Depends: bar (&gt;= version) but it is
-                not installable E: Sorry, broken packages</pre>
+dependencies:
+foo: Depends: bar (&gt;= version) but it is
+not installable
+E: Sorry, broken packages</pre>
             <p>Дело в том, что пакет, который вы пытаетесь инсталлировать,
                 зависит от другого пакета, который не входит в бинарный дистрибутив из-за
                 лицензионных требований. Вам надо инсталлировать зависимость от исходного кода
@@ -197,25 +199,26 @@ include_once "header.ru.inc";
                 Имеющиеся версии пакета отражены в нескольких
                 строках таблицы. А именно:</p>
             <ul>
-                <li>
-                    <p>
-                        <b>0.4.1:</b> версия, которую можно инсталлировать
-                        на основе бинарных пакетов для OS 10.1.</p>
+              <li>Binary Distribution
+		  
+		  <ol>
+            <li><p>
+            <b>0.4.1:</b> версия, которую можно инсталлировать
+                        на основе бинарных пакетов для OS 10.1.</p></li>
+            <li><p><b>0.6.4:</b> версия, которую можно инсталлировать
+                    на основе бинарных пакетов для OS 10.2.</p></li>
+            <li><p><b>0.7.2</b>
+  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="install.php?phpLang=ru#bin">update</a> Fink, later versions of some packages may be available.</p> 
+        </li>
+            <li><p><b>0.8.1:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="install.php?phpLang=ru#bin">update</a> Fink, later versions of some packages may be available.</p></li>
+          </ol>
+          
                 </li>
-                <li>
-                    <b>0.6.3:</b> версия, которую можно инсталлировать
-                    на основе бинарных пакетов для OS 10.2.</li>
-                <li>
+                <li>CVS/rsync Distributions
+<ol>
+            <li>
                     <p>
-                        <b>0.8.1:</b> базовая версия,
-                        инсталлируемая на основе бинарных пакетов для OS 10.3
-                        в рамках текущего выпуска Fink. Если вы <a href="upgrade.php?phpLang=ru">обновите</a> Fink, то можете обнаружить
-                        более позднюю версию (здесь не отраженную), предназначенную
-                        для данной операционной системы.</p>
-                </li>
-                <li>
-                    <p>
-                        <b>current-10.2-gcc3.3 stable:</b> последняя
+                        <b>10.2-gcc3.3 stable:</b> последняя
                         стабильная версия, инсталлируемая от
                         исходного кода для OS 10.2 с обновлением <code>gcc 3.3</code> для
                         Developer Tools. Для инсталляции этой версии вам
@@ -232,24 +235,36 @@ include_once "header.ru.inc";
                 </li>
                 <li>
                     <p>
-                        <b>current-10.3 stable:</b> последняя версия,
-                        инсталлируемая от исходного кода в OS 10.3.
-                        Опять же, может потребоваться доступ к данной версии через CVS или rsync.</p>
+                        <b>10.3 stable:</b> последняя версия,
+                        инсталлируемая от исходного кода в OS 10.3.</p>
                 </li>
+
+            <li><p><b>10.4/powerpc stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
+on PowerPC hardware.</p></li>
+            <li><p><b>10.4/intel stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+on intel hardware.</p></li>
+
                 <li>
                     <p>
-                        <b>current-10.2-gcc3.3 unstable:</b> последняя
+                        <b>10.2-gcc3.3 unstable:</b> последняя
                         нестабильная версия, которую можно инсталлировать от
                         исходного кода в OS 10.2 с <code>gcc 3.3</code>. Для ее инсталляции
                         следуйте <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">инструкциям</a>
                         по инсталляции нестабильных пакетов.</p>
-                    <p>Прим.: нестабильность не обязательно значит, что их нельзя использовать, просто
+                    <p>Прим.: <b>unstable</b> не обязательно <b>значит</b>, что их нельзя использовать, просто
                         инсталляция таких пакетов будет на ваш риск.</p>
                 </li>
                 <li>
-                    <b>current-10.3 unstable:</b> последняя нестабильная версия,
+                    <b>10.3 unstable:</b> последняя нестабильная версия,
                     которую можно инсталлировать от исходного кода в OS 10.3.
                     Надо активировать нестабильное дерево вышеуказанным образом.</li>
+
+            <li><p><b>10.4/powerpc unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+on PowerPC hardware.</p></li>
+            <li><p><b>10.4/intel unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+on intel hardware.</p></li>
+
+          </ol></li>
             </ul>
         
         <h2><a name="x11">3.7 Выбор вида реализации X11</a></h2>
@@ -258,41 +273,37 @@ include_once "header.ru.inc";
                 определенного вида X11. По этой причине одно из первых действий,
                 которое обычно выполняется - это выбор вида реализации X11.</p>
             <p> Для нескольких видов реализации X11 в Mac OS
-                X (XFree86, Tenon Xtools, eXodus) и способов их инсталляции
+                X (Apple X11, XFree86, Tenon Xtools, eXodus) и способов их инсталляции
                 (вручную или через Fink) имеется несколько альтернативных пакетов -
-                по одному для каждого вида. Fink не может угадывать, что у вас есть,
-                значит, важно сделать правильный выбор пакета и инсталлировать его
-                до инсталляции приложений X11. Далее приведен список
+                по одному для каждого вида.
+                Далее приведен список
                 имеющихся пакетов и способов инсталляции X11:</p>
-            <ul>
-                <li>
-                    <p>
-                        <b>xfree86-base:</b> (только для 10.1 и 10.2) Это фактический пакет.
-                        Он инсталлирует всю XFree86
-                        4.2.1.1 как пакет Fink. Для максимальной гибкости в нем нет
-                        фактического сервера XDarwin. Для получения данного пакета
-                        надо инсталлировать пакет xfree86-rootless.</p>
-                </li>
-                <li>
-                    <p>
-                        <b>xfree86:</b> Это единый пакет (включая
-                        сервер отображения) для инсталляции XFree86 4.3.0 (только для 10.2)
-                        и 4.3.99 (только для 10.3). Данная версия более эффективна, чем
-                        4.2.1.1, но не проверена в такой же степени.</p>
-                </li>
-                <li>
-                    <p> system-xfree86: Данный пакет появляется автоматически
-                        (в Fink 0.6.2 и более поздних версиях), если вы инсталлируете XFree86
-                        вручную от исходного кода или через официальный (или неофициальный) бинарный
-                        дистрибутив, либо если вы инсталлируете
-                        X11 Apple. После этого он действует как заполнитель зависимостей.</p>
-                </li>
-                <li>
-                    <p> system-xtools: Инсталлируйте этот пакет, если у вас инсталлирован продукт
-                        Xtools Tenon. Как и system-xfree86, он просто проверяет
-                        правильность инсталляции и не трогает фактические файлы.</p>
-                </li>
-            </ul>
+      
+      <ul>
+        <li>
+          <p>
+            <b>xfree86, xfree86-shlibs:</b>
+Install both of these packages for XFree86 4.3.0 (OS 10.2 only), 4.4.0 (10.2 or 10.3), or 4.5.0 (10.3 or 10.4).  
+</p>
+        </li>
+        <li><p><b>xorg, xorg-shlibs</b>(10.3 or 10.4)  Install these packages to get the 6.8.2 release of the X.org X11 distribution.</p></li>
+        <li>
+          <p>
+<b>system-xfree86 + -shlibs, -dev:</b>
+These packages are automatically generated (for Fink 0.6.2 or later) if you install Apple's X11, or manually installed XFree86 or X.org.  
+They will then act as
+dependency placeholders.
+</p>
+        </li>
+        <li>
+          <p>
+            <b>xfree86-base, xfree86-rootless [-threaded] + -shlibs, -dev</b>
+(10.1 or 10.2 only) These packages install all of XFree86 4.2.1.1 (4.2.0 on 10.1).  The <code>-threaded</code> variant was provided for applications that required it, and this functionality is standard in later XFree86 versions.  The <code>-rootless</code> packages include the XDarwin display server--the name is historical.
+</p><p>You must install all six packages to build X11-based packages from source.
+</p>
+        </li>
+      </ul>
+      
             <p> Для получения более подробной информации об инсталляции и использовании X11 см.
                     документ <a href="http://www.finkproject.org/doc/x11/">X11 в
                     Darwin и Mac OS X</a>.</p>

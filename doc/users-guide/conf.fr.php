@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - fink.conf";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -35,7 +35,7 @@ OptionListe: Option1 Option2 Option3
 <ul>
 <li>
 <p><b>Basepath:</b> chemin</p>
-<p>Indique à <code>fink</code> où il est installé. Le chemin d'installation par défaut est <code>/sw</code>, mais vous pouvez l'avoir changé lors de la première installation de Fink. Vous <b>ne devez pas</b> changer cette valeur après installation, Fink ne s'y retrouverait plus.</p>
+<p>Indique à <code>fink</code> où il est installé. Le chemin d'installation par défaut est <code>/sw</code>, mais vous pouvez l'avoir changé lors de la première installation de Fink. Vous <b>ne devez pas</b> changer cette valeur après installation, <b>fink</b> ne s'y retrouverait plus.</p>
 </li>
 </ul>
 
@@ -74,8 +74,8 @@ stable/main". Cette liste doit toujours être identique à celle figurant dans l
 </li>
 <li>
 <p><b>Verbose:</b> un nombre entre 0 et 3</p>
-<p>Cette option permet de faire varier la quantité d'information que Fink donne sur ce qu'il est en train de faire. Les valeurs sont : <b>0</b> Silencieux (aucune indication sur les statistiques de téléchargement) <b>1</b> Faible (aucune indication pendant la décompression des archives tar)
-<b>2</b> Moyen (affiche presque tout) <b>3</b> Fort (affiche tout). La valeur par défaut est 1.</p>
+<p>Cette option permet de faire varier la quantité d'information que Fink donne sur ce qu'il est en train de faire. Les valeurs sont : <b>0</b> Quiet (Silencieux) (aucune indication sur les statistiques de téléchargement) <b>1</b> Low (Faible) (aucune indication pendant la décompression des archives tar)
+<b>2</b> Medium (Moyen) (affiche presque tout) <b>3</b> High (Fort) (affiche tout). La valeur par défaut est 1.</p>
 </li>
 <li>
 <p><b>SkipPrompts:</b> liste délimitée par des virgules</p>
@@ -182,12 +182,12 @@ ClosestFirst - Cherche d'abord dans les miroirs les plus proches
 <ul>
 <li>
 <p><b>KeepRootDir:</b> booléen</p>
-<p>Empêche Fink de supprimer le sous-répertoire root-[nom]-[version]-[révision] du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
+<p>Empêche Fink de supprimer le sous-répertoire <code>root-[nom]-[version]-[révision]</code> du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
 La commande <code>fink -K</code> a le même effet, restreint à cette invocation de <code>fink</code>.</p>
 </li>
 <li>
 <p><b>KeepBuildDir:</b> booléen</p>
-<p>Empêche <code>fink</code> de supprimer le sous-répertoire [nom]-[version]-[révision] du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
+<p>Empêche <code>fink</code> de supprimer le sous-répertoire <code>[nom]-[version]-[révision]</code> du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <b>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</b>
 La commande <code>fink -k</code> a le même effet, restreint à cette invocation de <code>fink</code>.</p>
 </li>
 </ul>

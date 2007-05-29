@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Instalar";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="packages.php?phpLang=es" title="Instalando Paquetes"><link rel="prev" href="intro.php?phpLang=es" title="Introducción">';
 
 
@@ -57,6 +57,11 @@ Si el StuffIt Expander ya extrajo el archivo, destruya el folder que este crea.
 </p>
       <p>
 La fuente debe ser instalada directamente de la línea de comandos, así que hay que abrir la aplicación Terminal.app y cambiar el directorio a aquel donde se encuentra el archivo fink-0.x.x-full.tar.gz .
+
+(Note: If you have OS X 10.4 and XCode 2.1, you should use
+<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
+the appropriate changes below.)
+
 El siguiente comando extrae el archivo:
 </p>
       <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
@@ -166,7 +171,7 @@ En cualquier caso, lo que sucedera es que el          <p><code>~/.tcshrc</code>s
   </p>
         </li>
       </ul>
-      <p>Note que los scripts también agregarn las líneas
+      <p>Note que los <code>init.sh</code> y <code>init.csh</code> scripts también agregarn las líneas
 <code>/usr/X11R6/bin</code> y
 <code>/usr/X11R6/man</code> al path para que se puede usar el X11 cuando este instalado.
 Los paquetes de Fink tienen la habilidad de agregar ajustes por su cuenta, e.g. el paquete

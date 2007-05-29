@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -230,7 +230,7 @@ Internet - <b>wget</b>, <b>curl</b>, or <b>axel</b>. The value
 application which tries to determine the closest server that has a
 certain file. The use of <b>axel</b> and <b>axelautomirror</b> are not recommended at this
 time. The default value is <b>curl</b>.
-<b>The application you chose as DownloadMethod MUST be installed!</b> (i.e. <code>fink</code>won't fall back to <b>curl</b> if you try to use a download application that isn't present.
+<b>The application you chose as DownloadMethod MUST be installed!</b> (i.e. <code>fink</code> won't fall back to <b>curl</b> if you try to use a download application that isn't present.
           </p>
         </li>
         <li>

@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink.conf";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 
@@ -59,7 +59,7 @@ ListOption: Option1 Option2 Option3
 Fink がインストールされている場所を知らせます。
 Fink の最初のインストール時に変更していない限り、デフォルトでは <b>/sw</b> です。
 この値を変更しては<b>いけません</b>。
-Fink が混乱します。
+<b>fink</b> が混乱します。
 </p>
 </li>
 </ul>
@@ -95,12 +95,15 @@ unstable/main   - 他の非安定版パッケージ
 デフォルトのツリーは "local/main local/bootstrap
 stable/main" です。
 この一覧は <code>/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
-(fink 0.21.0 より、 fink が自動的に行うようになりました)
+(fink 0.21.0 より、 <code>fink</code> が自動的に行うようになりました)
 </p>
+
+<p>ツリーの順序には意味があります。後のツリーにあるパッケージが前のツリーのパッケージを書き換えます。</p>
+
 </li>
 <li>
 <p>
-<b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, 10.3</p>
+<b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, 10.3, 10.4</p>
 <p>Fink はどのバージョンの Mac OS X を使っているか知る必要があります。
 10.0 以前はサポートされていません。
 10.1 は現バージョンからサポート対象外となりました。
@@ -112,7 +115,7 @@ stable/main" です。
 <li>
 <p>
 <b>FetchAltDir:</b> path</p>
-<p>Fink は通常、ソースを <code>/sw/src</code> に保存します。
+<p><code>fink</code> は通常、ソースを <code>/sw/src</code> に保存します。
 この値を変えることで、他の場所にダウンロードしたソースコードを探させることもできます。
 例えば:
 </p>
@@ -135,6 +138,15 @@ High (全て報告する)
 デフォルト値は 1 です。
 </p>
 </li>
+        <li><p><b>SkipPrompts:</b> コンマで区切られた一覧</p>
+        <p>(<code>fink-0.25</code> 以降) 
+        このオプションに設定された項目に関し、<code>fink</code> は利用者に聞かなくなります。
+        各プロンプトはいずれかのカテゴリに属し、そのカテゴリが SkipPrompts 一覧に指定されている場合、
+        直ちに既定値が洗濯されます。</p>
+        <p>現在、以下のプロンプトカテゴリがあります。:</p>
+        <p><b>fetch</b> - Downloads と mirrors</p>
+        <p><b>virtualdep</b> - 代替パッケージの選択</p>
+        <p>既定値としてスキップされるプロンプトはありません。</p></li>
 <li>
 <p>
 <b>NoAutoIndex:</b> ブール値</p>
@@ -159,10 +171,11 @@ High (全て報告する)
 Fink はソースからコンパイルする場合、パッケージごとに仮ディレクトリを作成します。
 デフォルトでは Panther 以前では <code>/sw/src</code> 内に、Tiger からは <code>/sw/src/fink.build</code> 内に、
 置かれていますが、別の場所を使いたい場合はここでパスを指定します。
-仮ディレクトリについては、後述の <code>KeepRootDir</code> と <code>KeepBuildDir</code> のフィールドの解説をご覧下さい。
+仮ディレクトリについては、本文書中<a href="#developer">Developer Settings</a> 節の
+の <code>KeepRootDir</code> と <code>KeepBuildDir</code> のフィールドの解説をご覧下さい。
 </p>
 	    <p>
-          Tiger では、BuildPath は .noindex または .build とつけることをお勧めします。
+          Tiger では、BuildPath は <code>.noindex</code> または <code>.build</code> とつけることをお勧めします。
           こうしなければ、Spotlight が BuildPath 内にある仮ファイルをすべてインデックスしようとし、ビルドを遅くします。
     	</p>
 </li>
@@ -205,15 +218,18 @@ FTP サーバーやネットワークによっては、このオプションが 
 <b>axelmirror</b> の使用は現時点では勧められません。
 デフォルト値は <b>curl</b> です。
 <b>DownloadMethod に選択したアプリケーションはインストールされている必要があります!</b>
+          
+          (i.e. もし存在しないダウンロードアプリケーションを指定しても、<code>fink</code> は <b>curl</b> を使うことはありません。)
+          
 </p>
 </li>
 <li>
 <p>
 <b>SelfUpdateMethod:</b> point, rsync または cvs</p>
 <p>
-Fink は、数種類の手段でパッケージ情報ファイルを更新することができます。
+<code>fink</code> は、数種類の手段でパッケージ情報ファイルを更新することができます。
 <b>rsync</b> が推奨される設定で、 rsync を用いて、ユーザーにより指定されたツリー中の、変更されたファイルだけをダウンロードします。
-stable や unstable 中のファイルを編集したり、新たに追加していた場合、削除されることに注意してください。
+<code>stable</code> や <code>unstable</code> <a href="#optional">trees</a> 中のファイルを編集したり、新たに追加していた場合、削除されることに注意してください。
 これらのファイルを必ず事前にバックアップしてください。
 <b>cvs</b> では、 anonymous か :ext: cvs アクセスを使用して fink レポジトリから ダウンロードします。
 cvs はミラーを使えないという欠点があるため、 CVS サーバーに接続することができない時は更新できません。
@@ -221,15 +237,25 @@ cvs はミラーを使えないという欠点があるため、 CVS サーバ�
 ユーザのパッケージがかなり古い場合は更新されないので、おすすめはできません。
 </p>
 </li>
+        <li><p><b>SelfUpdateCVSTrees:</b> ツリーの一覧</p>
+        <p>(<code>fink-0.25</code> 以降) 
+		既定では、 <b>cvs</b> selfupdate は現在の distribution ツリーのみ更新します。
+		このオプションは、selfupdate 時に後進する distribution の一覧を書き換えます。
+		
+		もし CVS/ ディレクトリの存在しないディレクトリも更新したい場合は、最近の "cvs" バイナリが、
+		完全パス中 (例 dists/local/main など) に必要ですので、
+		ご注意ください。</p></li>
 <li>
 <p>
 <b>UseBinaryDist:</b> ブール値</p>
 <p>
-fink に、バイナリ版があり、まだシステム上にバイナリない場合はバイナリをダウンロードするように指示します。
+<code>fink</code> に、バイナリ版があり、まだシステム上にバイナリない場合はバイナリをダウンロードするように指示します。
 これによりインストール時間を短縮できるので、このオプションを設定することをおすすめします。
 <a href="usage.php?phpLang=ja">--use-binary-dist オプション</a>を使用しても同じですが、これは一度だけ有効です。 
-<b>fink バージョン 0.23.0 から有効</b>.
+<b>fink バージョン 0.23.0 から有効</b>。
 </p>
+<p>注記：このモードは、選択されたパッケージのバイナリバージョンが最新バージョンに一致する場合にのみ適用されます。
+入手可能な最新バージョンを <code>fink</code> が選択するようにはなっていません。</p>
 </li>
 </ul>
 
@@ -281,6 +307,12 @@ MasterNever - "Master"  ソースミラーは使用しない。
 ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラーを一緒にする)。
 </pre>
 </li>
+        <li><p><b>Mirror-rsync:</b></p>
+        <p>(<code>fink-0.25.2</code> 以降)
+           <code>fink selfupdate</code> 時に <b>SelfupdateMethod</b> を 
+           <code>rsync</code> 賭した場合、
+           ここで指定された URL から rsync します。
+           ここで指定する URL は、fink の全ての Distribution と Tree を含んだ anonymous rsync 用でなければなりません。</p></li>
 </ul>
 
 <h2><a name="developer">5.7 開発者用設定</a></h2>
@@ -292,7 +324,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <li>
 <p>
 <b>KeepRootDir:</b> ブール値</p>
-<p>パッケージのビルド後に <b>BuildPath</b> 内の root-[name]-[version]-[revision] ディレクトリを削除しません。
+<p>パッケージのビルド後に <b>BuildPath</b> 内の <code>root-[name]-[version]-[revision]</code> ディレクトリを削除しません。
 デフォルトは false です。
 <b>注意、このオプションはハードディスクをいっぱいにします!</b>
 一度だけ使いたい場合、 <b>fink</b> に <b>-K</b> フラグを渡して同じ効果が得られます。
@@ -301,7 +333,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 <li>
 <p>
 <b>KeepBuildDir:</b> ブール値</p>
-<p>パッケージのビルド後に <b>BuildPath</b> 内の [name]-[version]-[revision] ディレクトリを削除しません。
+<p>パッケージのビルド後に <b>BuildPath</b> 内の <code>[name]-[version]-[revision]</code> ディレクトリを削除しません。
 デフォルトは false です。
 <b>注意、このオプションはハードディスクをいっぱいにします!</b>
 一度だけ使いたい場合、 <b>fink</b> に <b>-K</b> フラグを渡して同じ効果が得られます。
@@ -326,7 +358,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 			<li>
 				<p><b>CCacheDir:</b> パス</p>
 				<p>
-					Fink パッケージ ccache-default がインストールされている場合、
+					Fink パッケージ <code>ccache-default</code> がインストールされている場合、
 					Fink パッケージを作成中にこれがつくるキャッシュがここに保存される。
 					規定値は <code>/sw/var/ccache</code> 。
 					<code>none</code> と設定された場合、 fink は CCACHE_DIR 環境変数を設定せず、
@@ -341,7 +373,22 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
            			他のプラグインは、 <code>/sw/lib/perl5/Fink/Notify</code> にある。
 				</p>
 			</li>
-		</ul>
+        
+        <li><p><b>AutoScanpackages:</b> boolean
+           </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
+           them.  Historically, the command <code>fink scanpackages</code> had to be run
+           for <code>apt-get</code> to notice the new packages, but now this happens auto
+           matically. If this option is present and <b>false</b>, then <code>fink
+           scanpackages</code> will no longer be run automatically after packages are
+           built.  Defaults to <b>true</b>.
+</p></li>
+        <li><p><b>ScanRestrictivePackages:</b> boolean
+           </p><p>When scanning the packages for <code>apt-get</code>, <code>fink</code> normally scans all
+           packages in the current trees. However, if the resuting apt repository will be made publically available, the administrator may be
+           legally obligated not to include packages with <code>Restrictive</code> or
+           <code>Commercial</code> licenses. If this option is present and <b>false</b>, then Fink
+           will omit those packages when scanning.</p></li>
+				</ul>
 	
 	<h2><a name="sourceslist">5.9 apt の sources.list ファイルを管理</a></h2>
 		

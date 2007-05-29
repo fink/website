@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Aktualisieren";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="conf.php?phpLang=de" title="Die Fink-Konfigurationsdatei"><link rel="prev" href="packages.php?phpLang=de" title="Pakete Installieren">';
 
 
@@ -57,6 +57,18 @@ Um die Source-Distribution mit dem Fink Commander zu aktualisieren, wählen Sie 
       <p>
 Wenn Sie einige Pakete als vorkompilierte Binärdateien herunterladen und andere von Quellcode kompilieren, werden Sie beide oben erklärten Vorgehensweisen befolgen müssen, um Ihre Fink-Installation zu aktualisieren.  Das heißt, Sie verwenden erst <code>dselect</code> oder <code>apt-get</code>, um die aktuellsten Versionen der Pakete zu bekommen, die als Binärdateien verfügbar sind, und dann <code>fink selfupdate</code> und <code>fink update-all</code>, um die aktuellen Beschreibungen für die übrigen Pakete herunterzuladen. Wenn Sie den Fink Commander verwenden, folgen Sie den Erklärungen zur <a href="#bin">Binary-</a>- und dann zur <a href="#src">Source</a>-Distribution.
  </p>
+
+<p>Starting with fink 0.23.0 using the UseBinaryDist option (settable via the
+<a href="usage.php?phpLang=de#options">--use-binary-dist (or -b) option</a>
+or in the <a href="conf.php?phpLang=de">Fink configuration file</a>) both source and
+binary descriptions will be updated if you call <code>fink selfupdate</code>.
+In this case you don't need a separate <code>apt-get</code> call anymore.</p>
+<p>If you are using Fink Commander select Binary-&gt;Update descriptions to update
+the package list, and then Binary-&gt;Dist-Upgrade packages to update to new
+versions. After that do Source-&gt;Selfupdate to download new package
+information files, and then Source-&gt;Update-all (see previous sections for
+details).</p>
+
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=de">5. Die Fink-Konfigurationsdatei</a></p>

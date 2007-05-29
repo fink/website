@@ -1,7 +1,7 @@
 <?
 $title = "Руководство пользователя - fink.conf";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="usage.php?phpLang=ru" title="Использование инструмента fink в командной строке"><link rel="prev" href="upgrade.php?phpLang=ru" title="Обновление Fink">';
 
 
@@ -40,10 +40,10 @@ include_once "header.ru.inc";
                 ("Правда" или "Ложь"), строковая цепочка или список строковых цепочек, отделенных
                 пробелом. Н-р:</p>
             <pre>
-                BooleanOption: True
-                StringOption: Something
-                ListOption: Option1 Option2 Option3
-            </pre>            
+BooleanOption: True
+StringOption: Something
+ListOption: Option1 Option2 Option3
+</pre>            
         
         <h2><a name="required">5.3 Необходимые настройки</a></h2>
             
@@ -57,7 +57,7 @@ include_once "header.ru.inc";
                     <p> Сообщите Fink, где маршрут инсталлирован.  По умолчанию это
                         <b>/sw</b>, если вы не сделали изменений в процессе первоначальной
                         инсталляции Fink. Вы <b>не</b> должны менять эту настройку
-                        после инсталляции, иначе Fink запутается.</p>
+                        после инсталляции, иначе <b>fink</b> запутается.</p>
                 </li>
             </ul>
         
@@ -80,36 +80,42 @@ include_once "header.ru.inc";
                         <b>Trees:</b> список деревьев</p>
                     <p>Имеющиеся деревья:</p>
                     <pre>
-                        local/main      - любые локальные пакеты, которые вы хотите инсталлировать
-                        local/bootstrap - пакеты, использованные при инсталляции Fink
-                        stable/crypto   - стабильные криптографические пакеты
-                        stable/main     - другие стабильные пакеты
-                        unstable/crypto - нестабильные криптографические пакеты
-                        unstable/main   - другие нестабильные пакеты
-                    </pre>                    
+local/main      - любые локальные пакеты, которые вы хотите инсталлировать
+local/bootstrap - пакеты, использованные при инсталляции Fink
+stable/crypto   - стабильные криптографические пакеты
+stable/main     - другие стабильные пакеты
+unstable/crypto - нестабильные криптографические пакеты
+unstable/main   - другие нестабильные пакеты
+</pre>                    
                     <p> Также вы можете добавить собственные деревья в каталог
                         <code>/sw/fink/dists</code> для личных целей, но
                         в большинстве случаев это не
                         требуется. Деревьями по умолчанию являются "local/main
                         local/bootstrap stable/main". Данный список всегда должен быть идентичен
                         списку в файле <code>/sw/etc/apt/sources.list</code>.
-                        (Начиная со своей версии 0.21.0, fink делает это за вас автоматически.)</p>
+                        (Начиная со своей версии 0.21.0, <code>fink</code> делает это за вас автоматически.)</p>
+
+<p>The order of the trees is meaningful, as packages from later trees in the list may
+override packages from earlier ones.</p>
+
                 </li>
                 <li>
                     <p>
-                        <b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3 или 10.3</p>
+                        <b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, 10.3 или 10.4</p>
                     <p>Fink нужно знать, какую версию Mac OS X вы
                         используете. Не поддерживаются Mac OS X 10.0 и более ранние версии,
-                        а текущая версия fink больше не поддерживает 10.1.
-                        Все еще поддерживается только Mac OS X 10.2, если инсталлировано обновление
-                        Developer Tools за август 2003 г. Данная опция настраивается
+                        а текущая версия fink больше не поддерживает 10.1 и 10.2.
+          
+          Mac OS X 10.2 users are restricted to fink-0.24.7, released in June 2005.
+          
+                        Данная опция настраивается
                         при помощи скрипта <code>/sw/lib/fink/postinstall.pl</code>.
                         Вам не надо изменять эту настройку вручную.</p>
                 </li>
                 <li>
                     <p>
                         <b>FetchAltDir:</b> маршрут</p>
-                    <p>Обычно Fink хранит исходные коды, которые он распаковывает, в
+                    <p>Обычно <code>fink</code> хранит исходные коды, которые он распаковывает, в
                         <code>/sw/src</code>. При помощи этой опции вы можете указать альтернативный каталог
                         для скачанного исходного кода. 
                         Н-р:</p>
@@ -121,16 +127,23 @@ include_once "header.ru.inc";
                     <p> Данная опция устанавливает объем информации, которую Fink вам предоставляет
                         о своих действиях. Значения настройки:
                         <b>0</b>
-                        Нулевое (не отражает статистику скачивания)
+                        Quiet (Нулевое) (не отражает статистику скачивания)
                         <b>1</b>
-                        Низкое (не отражает информацию о тарболах в процессе распаковки)
+                        Low (Низкое) (не отражает информацию о тарболах в процессе распаковки)
                         <b>2</b>
-                        Среднее (отражает почти все)
+                        Medium (Среднее) (отражает почти все)
                         <b>3</b>
-                        Высокое (отражает все)
+                        High (Высокое) (отражает все)
                         Настройка по умолчанию: 1.
                         </p>
                 </li>
+        
+        <li><p><b>SkipPrompts:</b> a comma-delimited list</p><p>(<code>fink-0.25</code> and later) This option instructs <code>fink</code> to refrain from asking for input when
+           the user does not want to be prompted. Each prompt belongs to a
+           category. If a prompt's category is in the SkipPrompts list then
+           the default option will be chosen within a very short period of
+           time.</p><p>Currently, the following categories of prompts exist:</p><p><b>fetch</b> - Downloads and mirrors</p><p><b>virtualdep</b> - Choosing between alternative packages</p><p> By default, no prompts are skipped.</p></li>
+        
                 <li>
                     <p>
                         <b>NoAutoIndex:</b> булево выражение</p>
@@ -158,12 +171,28 @@ include_once "header.ru.inc";
                         <b>Buildpath:</b> маршрут</p>
                     <p>Fink необходимо создать несколько временных каталогов для
                         каждого пакета, который он компилирует от исходного кода. По умолчанию
-                        они размещаются в <code>/sw/src</code>, но если вы
+                        они размещаются в <code>/sw/src</code> on Panther and earlier, а 
+<code>/sw/src/fink.build</code> on Tiger, но если вы
                         хотите, чтобы они были в другом месте, укажите маршрут.
                         См. описание областей <code>KeepRootDir</code> и
                         <code>KeepBuildDir</code> далее в данном документе для
-                        получения более подробной информации об этих временных каталогах. </p>
+                        получения более подробной информации об этих временных каталогах 
+                        (<a href="#developer">Developer Settings</a>). </p>
+	    
+	    <p>On Tiger, it is recommended that the Buildpath end with <code>.noindex</code>
+or <code>.build</code>. Otherwise, Spotlight will attempt to index the temporary files in
+the Buildpath, slowing down builds.
+    	</p>
+    	
                 </li>
+
+        <li><p><b>Bzip2Path:</b> the path to your <code>bzip2</code> (or compatible) binary
+          </p><p>(<code>fink-0.25</code> and later) The Bzip2Path option lets you override the default path for the
+           <code>bzip2</code> command-line tool.  This allows you to specify an alternate
+           location to your <code>bzip2</code> executable, pass optional command-line
+           options, or use a drop-in replacement like <code>pbzip2</code> for decompressing
+           <code>.bz2</code> archives.</p></li>
+
             </ul>
         
         <h2><a name="downloading">5.5 Настройки скачивания</a></h2>
@@ -208,16 +237,19 @@ include_once "header.ru.inc";
                         <b>axelautomirror</b> не рекомендуется.
                         Настройка по умолчанию: <b>curl</b>. <b>Приложение,
                         выбранное вами в качестве DownloadMethod, ОБЯЗАТЕЛЬНО должно быть инсталлировано!</b>
+                        
+          				(i.e. <code>fink</code> won't fall back to <b>curl</b> if you try to use a download application that isn't present.
+          				
                     </p>
                 </li>
                 <li>
                     <p>
                         <b>SelfUpdateMethod:</b> point, rsync или cvs</p>
-                    <p> Fink может использовать разные способы  для обновления
+                    <p> <code>fink</code> может использовать разные способы  для обновления
                         информационных файлов пакетов.<b>rsync</b> - рекомендуемая настройка,
                         используемая для скачивания только модифицированных файлов
                         в активированных вами деревьях. Имейте в виду, что если вы
-                        изменили или добавили файлы в стабильных или нестабильных деревьях,
+                        изменили или добавили файлы в stable (стабильных) или unstable (нестабильных) <a href="#optional">trees</a> (деревьях),
                         использование rsync приведет к их удалению. Сначала сделайте резервную копию.
                          <b>cvs</b> произведет скачивание с использованием анонимного доступа или доступа
                         :ext: cvs из хранилища fink. Недостатком при этом является то,
@@ -227,6 +259,16 @@ include_once "header.ru.inc";
                         пакетов. Мы не рекомендуем это делать, т.к. ваши пакеты могут
                         быть устаревшими. </p>
                 </li>
+        
+        <li><p><b>SelfUpdateCVSTrees:</b> list of trees
+           </p><p>(<code>fink-0.25</code> and later) By default, the <b>cvs</b> selfupdate method will update only the current
+           distribution's tree.  This option overrides the list of distribu-
+           tion versions that will be updated during a selfupdate.
+
+           Please note that you will need a recent "cvs" binary installed if
+           you wish to include directories that do not have CVS/ directories
+           in their entire path (e.g., dists/local/main or similar).</p></li>
+           
                 <li>
                     <p>
                         <b>UseBinaryDist:</b> булево выражение</p>
@@ -241,7 +283,7 @@ include_once "header.ru.inc";
                             <b> Это возможно только для версий начиная с
                                 0.23.0</b>. </p>
                     <p>Надо иметь в виду, что в данном режиме <code>fink</code> получает указание скачать желаемую версию,
-                        если она доступна для скачивания; <code>fink</code> не получает указание
+                        если она доступна для скачивания; <code>fink</code> <b>не</b> получает указание
                         выбрать версию на основе ее наличия в бинарном виде.
                     </p>
                 </li>
@@ -301,12 +343,20 @@ include_once "header.ru.inc";
                         к комплекту Master (или другому комплекту), если скачивание не
                         получилось. Опции:</p>
                     <pre>
-                        MasterFirst - для поиска зеркал "Master" в первую очередь.
-                        MasterLast - для поиска зеркал "Master" в последнюю очередь.
-                        MasterNever - для запрета использования зеркал "Master".
-                        ClosestFirst - для поиска ближайших зеркал в первую очередь (совмещение всех зеркал в одном комплекте).
-                    </pre>                   
+MasterFirst - для поиска зеркал "Master" в первую очередь.
+MasterLast - для поиска зеркал "Master" в последнюю очередь.
+MasterNever - для запрета использования зеркал "Master".
+ClosestFirst - для поиска ближайших зеркал в первую очередь (совмещение всех зеркал в одном комплекте).
+</pre>                   
                 </li>
+        
+        <li><p><b>Mirror-rsync:</b>
+           </p><p>(<code>fink-0.25.2</code> and later) When doing <code>fink selfupdate</code> with the <b>SelfupdateMethod</b> set to <code>rsync</code>,
+           this is the rsync url to sync from.  This should be an anonymous
+           rsync url, pointing to a directory which contains all the fink Dis-
+           trubutions and Trees.
+</p></li>
+		
             </ul>
         
         <h2><a name="developer">5.7 Настройки разработчика</a></h2>
@@ -319,22 +369,22 @@ include_once "header.ru.inc";
                     <p>
                         <b>KeepRootDir:</b> булево выражение</p>
                     <p>Благодаря этой опции Fink не удаляет каталог
-                        /sw/src/root-[имя]-[версия]-[модификация] после
+                        <code>root-[имя]-[версия]-[модификация]</code> после
                         построения пакета. Настройка по умолчанию: False. <b>Будьте осторожны,
                             эта опция может  быстро заполнить ваш жесткий диск!</b>
-                        Применение в <b>fink</b> флага <b>-K</b> дает такой же результат,
-                        но действует только при одной активации <b>fink</b>.
+                        Применение в <code>fink</code> флага <b>-K</b> дает такой же результат,
+                        но действует только при одной активации <code>fink</code>.
                         </p>
                 </li>
                 <li>
                     <p>
                         <b>KeepBuildDir:</b> булево выражение</p>
                     <p>Благодаря этой опции Fink не удаляет каталог
-                        /sw/src/[имя]-[версия]-[модификация] после
+                        <code>[имя]-[версия]-[модификация]</code> после
                         построения пакета. Настройка по умолчанию: False. <b>Будьте осторожны,
                             эта опция может  быстро заполнить ваш жесткий диск!</b>
-                         Применение в <b>fink</b> флага <b>-k</b> дает такой же результат,
-                        но действует только при одной активации <b>fink</b>.
+                         Применение в <code>fink</code> флага <b>-k</b> дает такой же результат,
+                        но действует только при одной активации <code>fink</code>.
                          </p>
                 </li>
             </ul>
@@ -358,7 +408,7 @@ include_once "header.ru.inc";
                 <li>
                     <p>
                         <b>CCacheDir:</b> маршрут</p>
-                    <p>Если инсталлирован пакет Fink ccache-default, кэш-файлы,
+                    <p>Если инсталлирован пакет Fink <code>ccache-default</code>, кэш-файлы,
                         создаваемые им при построении пакетов Fink, будут размещены здесь.
                         Настройка по умолчанию:
                         <code>/sw/var/ccache</code>. При настройке
@@ -374,8 +424,22 @@ include_once "header.ru.inc";
                     Другие плагины можно найти в каталоге
                     <code>/sw/lib/perl5/Fink/Notify</code>.
                 </p></li>
-                
-            </ul>
+        
+        <li><p><b>AutoScanpackages:</b> boolean
+           </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
+           them.  Historically, the command <code>fink scanpackages</code> had to be run
+           for <code>apt-get</code> to notice the new packages, but now this happens auto
+           matically. If this option is present and <b>false</b>, then <code>fink
+           scanpackages</code> will no longer be run automatically after packages are
+           built.  Defaults to <b>true</b>.
+</p></li>
+        <li><p><b>ScanRestrictivePackages:</b> boolean
+           </p><p>When scanning the packages for <code>apt-get</code>, <code>fink</code> normally scans all
+           packages in the current trees. However, if the resuting apt repository will be made publically available, the administrator may be
+           legally obligated not to include packages with <code>Restrictive</code> or
+           <code>Commercial</code> licenses. If this option is present and <b>false</b>, then Fink
+           will omit those packages when scanning.</p></li>
+		            </ul>
         
         <h2><a name="sourceslist">5.9 Управление файлом sources.list в apt</a></h2>
             
@@ -403,7 +467,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 
 # Put local modifications to this file below this line, or at the top.
-             </pre>
+</pre>
             <p>С этим файлом по умолчанию apt-get сначала находит уже скомпилированные бинарные пакеты
                 в имеющейся у вас инсталляции, а затем ищет остальные пакеты в официальном бинарном дистрибутиве.
                 Можно изменить этот порядок путем ввода данных

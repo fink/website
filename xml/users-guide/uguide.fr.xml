@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Guide de l'utilisateur Fink</title>
 <shorttitle>Guide utilisateur</shorttitle>
-<cvsid>$Id: uguide.fr.xml,v 1.40 2007/02/23 22:04:56 rangerrick Exp $</cvsid>
+<cvsid>$Id: uguide.fr.xml,v 1.41 2007/05/29 03:58:51 babayoshihiko Exp $</cvsid>
 <preface>
 <p>Ce document donne un aperçu de toutes les fonctionnalités de Fink. Les documents suivants, bien que plus anciens, sont plus complets : <link url="http://www.finkproject.org/doc/bundled/install.php" >Installation</link>, <link url="http://www.finkproject.org/doc/bundled/usage.php" >Utilisation</link> et le fichier ReadMe.rtf inclus dans l'image disque de la distribution binaire. Voir aussi la <link url="http://www.finkproject.org/doc/" >section documentation</link> du site web, qui contient d'autres documents utiles.</p>
 <p>Bienvenue dans le Guide de l'Utilisateur Fink. Ce guide couvre les procédures de première installation et de mise à jour des distributions source et binaire, ainsi que l'installation de paquets et la maintenance.</p>
@@ -345,7 +345,7 @@ OptionListe: Option1 Option2 Option3
 <ul>
 <li>
 <p><em>Basepath:</em> chemin</p>
-<p>Indique à <code>fink</code> où il est installé. Le chemin d'installation par défaut est <filename>/sw</filename>, mais vous pouvez l'avoir changé lors de la première installation de Fink. Vous <em>ne devez pas</em> changer cette valeur après installation, Fink ne s'y retrouverait plus.</p>
+<p>Indique à <code>fink</code> où il est installé. Le chemin d'installation par défaut est <filename>/sw</filename>, mais vous pouvez l'avoir changé lors de la première installation de Fink. Vous <em>ne devez pas</em> changer cette valeur après installation, <em>fink</em> ne s'y retrouverait plus.</p>
 </li>
 </ul>
 </section>
@@ -384,8 +384,8 @@ stable/main&quot;. Cette liste doit toujours être identique à celle figurant d
 </li>
 <li>
 <p><em>Verbose:</em> un nombre entre 0 et 3</p>
-<p>Cette option permet de faire varier la quantité d'information que Fink donne sur ce qu'il est en train de faire. Les valeurs sont : <em>0</em> <tt>Silencieux</tt> (aucune indication sur les statistiques de téléchargement) <em>1</em> <tt>Faible</tt> (aucune indication pendant la décompression des archives tar)
-<em>2</em> <tt>Moyen</tt> (affiche presque tout) <em>3</em> <tt>Fort</tt> (affiche tout). La valeur par défaut est 1.</p>
+<p>Cette option permet de faire varier la quantité d'information que Fink donne sur ce qu'il est en train de faire. Les valeurs sont : <em>0</em> <tt>Quiet</tt> (Silencieux) (aucune indication sur les statistiques de téléchargement) <em>1</em> <tt>Low</tt> (Faible) (aucune indication pendant la décompression des archives tar)
+<em>2</em> <tt>Medium</tt> (Moyen) (affiche presque tout) <em>3</em> <tt>High</tt> (Fort) (affiche tout). La valeur par défaut est 1.</p>
 </li>
 <li>
 <p><em>SkipPrompts:</em> liste délimitée par des virgules</p>
@@ -492,12 +492,12 @@ ClosestFirst - Cherche d'abord dans les miroirs les plus proches
 <ul>
 <li>
 <p><em>KeepRootDir:</em> booléen</p>
-<p>Empêche Fink de supprimer le sous-répertoire root-[nom]-[version]-[révision] du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
+<p>Empêche Fink de supprimer le sous-répertoire <filename>root-[nom]-[version]-[révision]</filename> du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
 La commande <code>fink -K</code> a le même effet, restreint à cette invocation de <code>fink</code>.</p>
 </li>
 <li>
 <p><em>KeepBuildDir:</em> booléen</p>
-<p>Empêche <code>fink</code> de supprimer le sous-répertoire [nom]-[version]-[révision] du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
+<p>Empêche <code>fink</code> de supprimer le sous-répertoire <filename>[nom]-[version]-[révision]</filename> du répertoire ChemindeConstruction (Buildpath) après construction d'un paquet. La valeur par défaut est False (faux). <em>Attention, si la valeur de cette option est True (vrai), cela peut très vite saturer votre disque dur !</em>
 La commande <code>fink -k</code> a le même effet, restreint à cette invocation de <code>fink</code>.</p>
 </li>
 </ul>
@@ -658,8 +658,8 @@ Do you want to continue? [Y/n]</codeblock>
 </section>
 <section name="remove" >
 <title>remove - suppression</title>
-<p>La commande <em>remove</em> supprime les paquets du système en appelant la commande '<code>dpkg --remove</code>'. L'implantation actuelle de cette commande a un défaut : elle ne vérifie pas elle-même les dépendances, mais délègue ce travail à l'outil dpkg (en général, cela ne pose pas de problèmes).</p>
-<p>La commande remove ne supprime que le paquet lui-même (à l'exclusion des fichiers de configuration). Le paquet compressé <filename>.deb</filename> reste sur le système. Ceci signifie que vous pouvez réinstaller le paquet plus tard, sans avoir à le recompiler. Si vous avez besoin de libérer de l'espace disque, vous pouvez supprimer les fichiers <filename>.deb</filename> de l'arborescence <filename>/sw/fink/dists</filename>.</p>
+<p>La commande remove supprime les paquets du système en appelant la commande '<code>dpkg --remove</code>'. L'implantation actuelle de cette commande a un défaut : elle ne vérifie pas elle-même les dépendances, mais délègue ce travail à l'outil dpkg (en général, cela ne pose pas de problèmes).</p>
+<p>La commande <em>remove</em> ne supprime que le paquet lui-même (à l'exclusion des fichiers de configuration). Le paquet compressé <filename>.deb</filename> reste sur le système. Ceci signifie que vous pouvez réinstaller le paquet plus tard, sans avoir à le recompiler. Si vous avez besoin de libérer de l'espace disque, vous pouvez supprimer les fichiers <filename>.deb</filename> de l'arborescence <filename>/sw/fink/dists</filename>.</p>
 <p>Les options suivantes peuvent être utilisées avec la command <code>fink remove</code> :</p>
 <codeblock>
 -h, --help
@@ -692,12 +692,10 @@ Do you want to continue? [Y/n]</codeblock>
 <title>list - liste</title>
 <p>Cette commande donne la liste des paquets disponibles, leur statut d'installation, la dernière version disponible et une courte description. Appelée sans paramètres, elle affiche tous les paquets disponibles. Vous pouvez aussi l'utiliser avec un nom ou une expression régulière acceptée par le shell, Fink donnera alors la liste de tous les paquets correspondants.</p>
 <p>La première colonne affiche le statut d'installation qui s'interprète de la façon suivante :</p>
-<codeblock>
-      non installé
+<codeblock>    non installé
  i    dernière version installée
 (i)   installé, mais une version plus récente est disponible
- p    paquet virtuel fourni par un paquet installé
-</codeblock>
+ p    paquet virtuel fourni par un paquet installé</codeblock>
 <p>La colonne version affiche toujours la dernière version connue du paquet, quelque soit la version installée éventuellement. Pour connaître toutes les versions d'un paquet disponible sur votre système, utilisez la commande <xref section="dumpinfo">dumpinfo</xref>.</p>
 <p>Voici quelques-unes des options de la commande <code>fink list</code> :</p>
 <codeblock>
@@ -871,8 +869,7 @@ fink apropos -s=kde irc
 <section name="cleanup" >
 <title>cleanup - épuration</title>
 <p>Supprime les fichiers obsolètes et temporaires. Cela peut libérer une grande portion d'espace disque. On peut spécifier un ou plusieurs modes :</p>
-<codeblock>
---debs
+<codeblock>--debs
     Supprime les fichiers .deb
     (archives de paquets binaires compilés)
     correspondant aux versions de paquets
@@ -898,8 +895,7 @@ fink apropos -s=kde irc
     À partir de la version 0.26.0 de fink.
 --all
     Active tous les modes.
-    À partir de la version 0.26.0 de fink.
-</codeblock>
+    À partir de la version 0.26.0 de fink.</codeblock>
 <p>Si aucun mode n'est spécifié, les modes par défaut utilisés sont <code>--debs --sources</code>.</p>
 <p>De plus, on peut utiliser les options suivantes :</p>
 <codeblock>

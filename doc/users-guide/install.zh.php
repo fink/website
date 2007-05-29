@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 安装";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="packages.php?phpLang=zh" title="安装软件包"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 

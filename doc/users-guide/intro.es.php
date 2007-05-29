@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Introducción";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="install.php?phpLang=es" title="Primera Instalación"><link rel="prev" href="index.php?phpLang=es" title="Guía del Usuario Contents">';
 
 
@@ -67,19 +67,21 @@ Estoy hablando de horas e incluso días.
     
     <h2><a name="supported-os">1.3 Sistemas Soportados</a></h2>
       
+      
+      <p><b>Mac OS X 10.4</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.  Note, however, that
+fink on intel hardware is still considered to be of <b>beta</b> quality.</p>
       <p>
-        <b>Mac OS X 10.3</b> es el sistema de elección para ejecutar
-Fink.
-Todos los desarrolladores lo usan, y los paquetes se prueban en este sistema.
-Es considerado "totalmente compatible y probado", aunque puede haber algunos problemas al compilar algunos paquetes aislados.
+        <b>Mac OS X 10.3</b> is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
 </p>
-      <p><b>Mac OS X 10.2</b> aún compatible, aunque algunos paquetes nuevos tal vez no tengan versión para 10.2 disponble.</p>
+      <p><b>Mac OS X 10.2</b> is still supported to some extent.  Fink 0.6.4 is the last distribution to suppport this OS.</p>
+      
       <p>
         <b>Mac OS X 10.1</b> aún compatible hasta cierto punto.
 Solo puede ejecutar Fink 0.4.1 pero ninguna versión posterior.
 </p>
       <p>
-Darwin 7.0.1 es la versión de Darwin que corresponde al Mac OS X 10.3, y <b>Darwin 6.0.2</b> es la versión que corresponde al Mac OS X
+<b>Darwin 8.x</b> es la versión de Darwin que corresponde al Mac OS X 10.4,
+<b>Darwin 7.x</b> es la versión de Darwin que corresponde al Mac OS X 10.3, y <b>Darwin 6.x</b> es la versión que corresponde al Mac OS X
 10.2.
 En general cualquier Darwin debe funcionar, pero no han sido tan probados debido a que la mayoría solo corre Mac OS X.
 Pueden encontrarse errores con paquetes que usan características particulares del Mac OS X -los paquetes afectados incluyen XFree86 y posiblemente esound.

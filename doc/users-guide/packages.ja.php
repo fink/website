@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - パッケージ";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="upgrade.php?phpLang=ja" title="Fink のアップグレード"><link rel="prev" href="install.php?phpLang=ja" title="初めてのインストール">';
 
 
@@ -250,12 +250,6 @@ Fink をソースからインストールした場合など、別にダウンロ
             これは、OS 10.3 用に stable ソースツリーからインストールされる最新の安定バージョンです。
           </p>
             </li>
-            <li>
-          <p>
-            <b>10.4-transitional stable:</b>
-            これは、OS 10.3 から 10.4 用へアップグレードしたユーザ用の、stable ソースツリーからインストールされる最新の安定バージョンです。
-          </p>
-            </li>
             <li><p><b>10.4/powerpc stable:</b>  
             これは、新規にインストールされた OS 10.4 ユーザ用に stable ソースツリーからインストールされる最新の安定バージョンです。PowerPC のみ。
 		  </p>
@@ -279,12 +273,6 @@ Fink をソースからインストールした場合など、別にダウンロ
             <li>
           <p><b>10.3 unstable:</b>  
             これは、OS 10.3 用に unstable ソースツリーからインストールされる最新の unstable バージョンです。
-          </p>
-            </li>
-            <li>
-          <p>
-            <b>10.4-transitional stable:</b>
-            これは、OS 10.3 から 10.4 用へアップグレードしたユーザ用の、unstable ソースツリーからインストールされる最新の安定バージョンです。
           </p>
             </li>
             <li><p><b>10.4/powerpc stable:</b>  

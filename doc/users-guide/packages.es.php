@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Paquetes";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="upgrade.php?phpLang=es" title="Actualizando Fink"><link rel="prev" href="install.php?phpLang=es" title="Primera Instalación">';
 
 
@@ -122,8 +122,11 @@ not installable
 E: Sorry, broken packages</pre>
       <p>Lo que ha ocurrido es que el paquete que has tratado de instalar depende de otro que no puede ser instalado como un binario, debido a requerimientos de la licensia. Es necesario instalar dicha dependencia del código fuente (ver la siguiente Sección).</p>
     
-    <h2><a name="src">3.4 Instalando Paquetes desde el Código Fuente</a></h2>
+    <h2><a name="src">3.4 Installing Binary and Source Packages with fink</a></h2>
       
+
+<p>The <code>fink</code> tool will allow you to install packages that are not yet available in the <a href="intro.php?phpLang=es#src-vs-bin">binary distribution</a>.</p>
+
       <p>Antes que nada, necesitaras la versión adecuada de las Herramientas de Desarrollo (Development Tools) para tu sistema.  Estas estín disponibles como descarga gratuita en  <a href="http://connect.apple.com">http://connect.apple.com</a>.</p>
       <p>
 Para obtener una lista de los paquetes disponibles para instalar del código fuente, hay que preguntarle a la herramienta <code>fink</code> :
@@ -144,39 +147,81 @@ Entonces ira y descargara el código fuente, lo descomprime, lo parcha, lo compi
 Esto puede tradar un rato. Si algun mensaje de error, por favor revisa el archivo 
 <a href="http://www.finkproject.org/faq/">FAQ</a>.
 </p>
+
+      <p>
+For <code>fink</code> versions since 0.23.0 you can tell it to try to download
+pre-compiled binary packages, if available, instead of building them. Just pass
+the <a href="usage.php?phpLang=es#options">--use-binary-dist (or -b)
+option</a> to <code>fink</code>. This can save you a lot of time. E.g.
+calling
+      </p>
+      <pre>fink --use-binary-dist install wget-ssl</pre>
+      <p>or</p>
+      <pre>fink -b install wget-ssl</pre>
+      <p>
+will first download all dependencies for wget-ssl that are available from the
+binary distribution and only build the remainder from source. This option can
+also be enabled permanently in the <a href="conf.php?phpLang=es">Fink configuration
+file</a> (fink.conf) or by running the command <code>fink configure</code>.
+      </p>
+      <p>
+More details about the <code>fink</code> tool are available in the chapter 
+<a href="usage.php?phpLang=es">"Using the fink Tool from the Command Line"</a>.
+      </p>
+
     
     <h2><a name="fink-commander">3.5 Fink Commander</a></h2>
       
       <p>Fink Commander es una interfece Aqua tanto para las herramientas<code>apt-get</code> y el  <code>fink</code> .  El menú Binary te permite efectuar operaciones sobre la distribución binaria, y el menú Source lo mismo pero para la distribución fuente.</p>
       <p>Fink Commander esta incluido en el instalador binario de Fink. Para descargarlo por separado (e.g. si instalaste Fink de la fuente), ó para obtener información adicional, visita el <a href="http://finkcommander.sourceforge.net">Sitio Web del Fink Commander</a>.</p>
     
-    <h2><a name="">3.6 Versiones disponibles</a></h2>
+    <h2><a name="available-versions">3.6 Versiones disponibles</a></h2>
       
       <p>Cuando desees instalar un paquete, debes revisar primero la<a href="http://pdb.finkproject.org/pdb/index.php">base de datos de paquetes</a> y revisar si esta disponible a través de Fink.  Las versiones disponibles del paquete se mostrarán en varias renglones de una tabla. Estas son:</p>
       <ul>
-        <li>
-          <p>
-            <b>0.4.1:</b>  La versión que puede instalarse de los binarios del Mac OS 10.1.</p>
+        <li>Binary Distribution
+		  
+		  <ol>
+            <li><p>
+            <b>0.4.1:</b> La versión que puede instalarse de los binarios del Mac OS 10.1.</p></li>
+            <li><p><b>0.6.4:</b>  this is the version that can be installed from binaries for OS 10.2.</p></li>
+            <li><p><b>0.7.2</b>
+  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="install.php?phpLang=es#bin">update</a> Fink, later versions of some packages may be available.</p> 
         </li>
-        <li>
-          <p>
-<b>0.8.1:</b>  Esta es la versión base que puede ser instalada de los binarios para 10.2 o OS 10.3, bajo la mas reciente liberación de Fink.  Si tí <a href="upgrade.php?phpLang=es">actualizas</a> Fink, puede existir una versión específica a tu OS que no se muestre aquí.</p> 
+            <li><p><b>0.8.1:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="install.php?phpLang=es#bin">update</a> Fink, later versions of some packages may be available.</p></li>
+          </ol>
+          
         </li>
-        <li>
+        <li>CVS/rsync Distributions
+<ol>
+            <li>
           <p>
             <b>10.2-gcc3.3 stable:</b>  Esta es la versión estable más reciente que puede ser instalada desde la fuente para OS 10.2 con la actualización<code>gcc 3.3</code> De las Herramientas de Desarrollo.  Para poder instalar esta versión, necesitas habilitar <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a> o accesso de rsync.  Si aún no has aplicado la actualización<code>gcc 3.3</code> podrías no ver esta versión (posiblemente, ni el paquete).</p>
           <p>Nota:  A diferencia de muchos otros proyectos, las distribuciones más recientes de Fink se distribuyen mediante CVS, al igual que las versiones que necesitan más pruebasas (ver la Sección de inestables más abajo ).  Habilitar la actualización mediante CVS | rsync te da acceso a la versión estable más reciente aún antes que la versión binaria sea actualizada.
 </p>
         </li>
-        <li><p><b>10.3 stable:</b>  Esta es la versión estable más reciente que puede ser instalada del código fuente para OS 10.3.  De nuevo, el acceso mediante CVS | rsync puede ser requerido para obtener esta versión..</p>
+        <li><p><b>10.3 stable:</b>  Esta es la versión estable más reciente que puede ser instalada del código fuente para OS 10.3.</p>
 </li>
+
+            <li><p><b>10.4/powerpc stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
+on PowerPC hardware.</p></li>
+            <li><p><b>10.4/intel stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+on intel hardware.</p></li>
+
         <li>
           <p>
             <b>10.2-gcc3.3 unstable:</b>  Esta es la última versión inestable que puede ser instalada del código fuente para el  OS 10.2 con  <code>gcc 3.3</code>.  Para instalar esta versión, sige las <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">instructiones</a> que describen como instalar paquetes inestables.</p>
-          <p>Nota:  inestable no significa inusable o inoperante, solo que son instalables bajo tu propio riesgo.
+          <p>Nota: <b>unstable</b> no significa <b>inusable</b> o <b>inoperante</b>, solo que son instalables bajo tu propio riesgo.
 </p>
         </li>
         <li><b>10.3 unstable:</b>  Esta es la última versión inestable a partir de la fuente para OS 10.3.  Hay que habilitar el árbol inestable como se menciona más arriba.</li>
+
+            <li><p><b>10.4/powerpc unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+on PowerPC hardware.</p></li>
+            <li><p><b>10.4/intel unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+on intel hardware.</p></li>
+
+          </ol></li>
       </ul>
     
     <h2><a name="x11">3.7 Entendiendo el X11.</a></h2>
@@ -184,40 +229,36 @@ Esto puede tradar un rato. Si algun mensaje de error, por favor revisa el archiv
       <p>Muchos de los paquetes disponibles mediante Fink, requieren que alguna versión de X11 sea instalada. Debido a esto, una de las primeras cosas que se requiere es seleccionar una implementación del X11.</p>
       <p>
 Dado que existen varias implementaciones para el Mac OS X
-(XFree86, Tenon Xtools, eXodus) y varias maneras de instalarlos
-(manually or via Fink), incluso existen varios paquetes alternativos - uno para cada arreglo. 
-Fink es bastante malo adivinando cual tienes, así que es importante escoger un X11 adecuado e instalado antes que se use cualquier aplicación del X11.
+(Apple X11, XFree86, Tenon Xtools, eXodus) y varias maneras de instalarlos
+(manually or via Fink), incluso existen varios paquetes alternativos - uno para cada arreglo.
 Aquí esta una lista de los paquetes X11 disponibles así como los metodos de Instalación:
 </p>
+      
       <ul>
         <li>
           <p>
-            <b>xfree86-base:</b>
-(solo para 10.1 o 10.2) Este paqute es la neta. Instala todo el  XFree86 4.2.1.1 como un paquete de Fink.
-Para la mayor flexibilidad posible, este paquete no contiene el servidor XDarwin. Para obtenerlo, debes instalar el paquete xfree86-rootless.
+            <b>xfree86, xfree86-shlibs:</b>
+Install both of these packages for XFree86 4.3.0 (OS 10.2 only), 4.4.0 (10.2 or 10.3), or 4.5.0 (10.3 or 10.4).  
+</p>
+        </li>
+        <li><p><b>xorg, xorg-shlibs</b>(10.3 or 10.4)  Install these packages to get the 6.8.2 release of the X.org X11 distribution.</p></li>
+        <li>
+          <p>
+<b>system-xfree86 + -shlibs, -dev:</b>
+These packages are automatically generated (for Fink 0.6.2 or later) if you install Apple's X11, or manually installed XFree86 or X.org.  
+They will then act as
+dependency placeholders.
 </p>
         </li>
         <li>
           <p>
-            <b>xfree86:</b>
-Este es un solo paquete (con el servidor de pantalla incluido) que instala el XFree86 4.3.0 (solo OS 10.2 ), o el 4.3.99 (solo OS 10.3).  
-Esta versión es más r�pida que la 4.2.1.1, pero no ha sido tan extensamente probada.
-</p>
-        </li>
-        <li>
-          <p>
-system-xfree86:
-Este paquete es generado automaticamente (en Fink 0.6.2 o posterior) si instalas el  XFree86 manualmente, ya sea de la fuente o de la distribución binaria oficial (o no oficial); O si instalas el X11 de Apple.
-Entonces actuara como un pedestal de las dependencias.
-</p>
-        </li>
-        <li>
-          <p>
-system-xtools:
-Instala este paquete si tienes los Xtools de Tenon instalados. Al igual que el system-xfree86, este solo revisara la salud de los archivos.
+            <b>xfree86-base, xfree86-rootless [-threaded] + -shlibs, -dev</b>
+(10.1 or 10.2 only) These packages install all of XFree86 4.2.1.1 (4.2.0 on 10.1).  The <code>-threaded</code> variant was provided for applications that required it, and this functionality is standard in later XFree86 versions.  The <code>-rootless</code> packages include the XDarwin display server--the name is historical.
+</p><p>You must install all six packages to build X11-based packages from source.
 </p>
         </li>
       </ul>
+      
       <p>
 Para mayor información sobre como instalar o ejecutar el X11 visita las páginas
 <a href="http://www.finkproject.org/doc/x11/">X11 en Darwin

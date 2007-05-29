@@ -1,7 +1,7 @@
 <?
 $title = "Руководство пользователя - Введение";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="install.php?phpLang=ru" title="Первоначальная инсталляция"><link rel="prev" href="index.php?phpLang=ru" title="Руководство пользователя Contents">';
 
 
@@ -54,19 +54,21 @@ include_once "header.ru.inc";
         
         <h2><a name="supported-os">1.3 Поддерживаемые системы</a></h2>
             
-            <p>
-                <b>Mac OS X 10.3</b> - операционная система, выбранная
-                для работы Fink. Ее используют все разработчики и в ней проверяются все пакеты.
-                Она считается "полностью поддерживаемой и проверенной",
-                хотя все еще могут быть некоторые проблемы с компиляцией отдельных пакетов. </p>
-            <p>
-                <b>Mac OS X 10.2</b> все еще поддерживается, хотя некоторые
-                более новые пакеты могут не иметь версий 10.2.</p>
+      
+      <p><b>Mac OS X 10.4</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.  Note, however, that
+fink on intel hardware is still considered to be of <b>beta</b> quality.</p>
+      <p>
+        <b>Mac OS X 10.3</b> is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
+</p>
+      <p><b>Mac OS X 10.2</b> is still supported to some extent.  Fink 0.6.4 is the last distribution to suppport this OS.</p>
+      
             <p>
                 <b>Mac OS X 10.1</b> все еще поддерживается до некоторой степени. В этом случае надо
                 использовать Fink 0.4.1, но не более поздние версии.</p>
-            <p> Darwin 7.0.1 - версия Darwin, соответствующая Mac OS X
-                10.3, а <b>Darwin 6.0.2</b> - версия Darwin,
+            <p>
+            <b>Darwin 8.x</b> - версия Darwin, соответствующая Mac OS X 10.4,
+            <b>Darwin 7.x</b> - версия Darwin, соответствующая Mac OS X 10.3, а 
+            <b>Darwin 6.x</b> - версия Darwin,
                 соответствующая Mac OS X 10.2. Вообще они должны работать, но
                 не столь хорошо проверены, т.к. вместо них большинство пользователей просто применяет саму Mac OS X.
                 Могут возникнуть проблемы с пакетами, использующими

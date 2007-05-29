@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - fink.conf";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/05/29 03:58:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="usage.php?phpLang=zh" title="在命令行使用 Fink 工具"><link rel="prev" href="upgrade.php?phpLang=zh" title="升级 Fink">';
 
 
@@ -49,7 +49,7 @@ ListOption: Option1 Option2 Option3
           <p>
             <b>Basepath:</b> 路径</p>
           <p>
-它告诉 Fink 它被安装在什么位置。默认的情况是 <b>/sw</b>，除非你在第一次安装的时候更改了它的位置。安装以后，你<b>决不能</b>再更改这个设置，否则会使 Fink 陷入混乱中。
+它告诉 Fink 它被安装在什么位置。默认的情况是 <b>/sw</b>，除非你在第一次安装的时候更改了它的位置。安装以后，你<b>决不能</b>再更改这个设置，否则会使 <b>fink</b> 陷入混乱中。
 </p>
         </li>
       </ul>
@@ -81,20 +81,28 @@ unstable/main   - 其它未稳定软件包
           <p>
 你可以根据需要在　<code>/sw/fink/dists</code>　目录中加入你自己的代码树，但通常来说不需要这样做。默认的代码树是 "local/main local/bootstrap　stable/main"。这个设置清单应该与 <code>/sw/etc/apt/sources.list</code> 文件内容保持一致。
 
-(As of fink 0.21.0, fink does this for you automatically.)
+(As of fink 0.21.0, <code>fink</code> does this for you automatically.)
 
 </p>
+
+<p>The order of the trees is meaningful, as packages from later trees in the list may
+override packages from earlier ones.</p>
+
         </li>
         <li>
           <p>
-            <b>Distribution:</b> 10.1、10.2、10.2-gcc3.3 或 10.3</p>
-          <p>Fink 需要知道你使用的 Mac OS X 版本是什么。10.0 或更早的版本不能够被支持，从这个版本的 Fink 开始，10.1 也不被支持。对 10.2，只有安装了 2003 年八月开发工具升级的才可以被支持。这个字段是通过运行 <code>/sw/lib/fink/postinstall.pl</code> 来设置的。你不应该手工改变这个设置值。
+            <b>Distribution:</b> 10.1、10.2、10.2-gcc3.3, 10.3 或 10.4</p>
+          <p>Fink 需要知道你使用的 Mac OS X 版本是什么。10.0 或更早的版本不能够被支持，从这个版本的 Fink 开始，10.1 或 10.2 也不被支持。
+          
+          Mac OS X 10.2 users are restricted to fink-0.24.7, released in June 2005.
+          
+          这个字段是通过运行 <code>/sw/lib/fink/postinstall.pl</code> 来设置的。你不应该手工改变这个设置值。
 </p>
         </li>
         <li>
           <p>
             <b>FetchAltDir:</b> 路径</p>
-          <p>通常来说 Fink 会保存它下载的源代码到
+          <p>通常来说 <code>fink</code> 会保存它下载的源代码到
 <code>/sw/src</code>　目录中。你可以用这个选项来更换保存下载源程序的目录。例如：
 </p>
           <pre>FetchAltDir: /usr/src</pre>
@@ -105,16 +113,23 @@ unstable/main   - 其它未稳定软件包
           <p>
 这个选项设置 Fink 应该在运行过程中告诉你详细到什么程度的信息。取值的含义是：
 <b>0</b>
-            安静模式 （不显示下载状态）
+            Quiet (安静模式)（不显示下载状态）
 <b>1</b>
-            低模式 （不显示正在展开的压缩档的信息）
+            Low (低模式)（不显示正在展开的压缩档的信息）
 <b>2</b>
-            中模式 （几乎显示所有信息）
+            Medium (中模式)（几乎显示所有信息）
 <b>3</b>
-            高模式 （显示所有信息）
+            High (高模式)（显示所有信息）
 默认值是 1。
 </p>
         </li>
+        
+        <li><p><b>SkipPrompts:</b> a comma-delimited list</p><p>(<code>fink-0.25</code> and later) This option instructs <code>fink</code> to refrain from asking for input when
+           the user does not want to be prompted. Each prompt belongs to a
+           category. If a prompt's category is in the SkipPrompts list then
+           the default option will be chosen within a very short period of
+           time.</p><p>Currently, the following categories of prompts exist:</p><p><b>fetch</b> - Downloads and mirrors</p><p><b>virtualdep</b> - Choosing between alternative packages</p><p> By default, no prompts are skipped.</p></li>
+        
         <li>
           <p>
             <b>NoAutoIndex:</b> 布尔值</p>
@@ -128,13 +143,21 @@ unstable/main   - 其它未稳定软件包
         <li>
         		<p><b>Buildpath:</b> 路径</p>
         		
-        		<p>Fink 在从源代码编译的时候，需要创建几个临时的目录。默认情况下，它们被放置在 <code>/sw/src</code> (on Panther and earlier) 下， <code>/sw/src/fink.build</code> (on Tiger) 下，不过，如果你想把它们放在其它地方的话，可以在这里指明路径。查阅本文档后面关于 <code>KeepRootDir</code> 和 <code>KeepBuildDir</code> 字段的描述获取关于这个临时目录的更多信息。</p>
-	    <p>On Tiger, it is recommended that the Buildpath end with .noindex
-or .build. Otherwise, Spotlight will attempt to index the temporary files in
+        		<p>Fink 在从源代码编译的时候，需要创建几个临时的目录。默认情况下，它们被放置在 <code>/sw/src</code> (on Panther and earlier) 下， <code>/sw/src/fink.build</code> (on Tiger) 下，不过，如果你想把它们放在其它地方的话，可以在这里指明路径。查阅本文档后面关于 <code>KeepRootDir</code> 和 <code>KeepBuildDir</code> 字段的描述获取关于这个临时目录的更多信息 (<a href="#developer">Developer Settings</a>)。</p>
+	    <p>On Tiger, it is recommended that the Buildpath end with <code>.noindex</code>
+or <code>.build</code>. Otherwise, Spotlight will attempt to index the temporary files in
 the Buildpath, slowing down builds.
     	</p>
                 
         </li>
+
+        <li><p><b>Bzip2Path:</b> the path to your <code>bzip2</code> (or compatible) binary
+          </p><p>(<code>fink-0.25</code> and later) The Bzip2Path option lets you override the default path for the
+           <code>bzip2</code> command-line tool.  This allows you to specify an alternate
+           location to your <code>bzip2</code> executable, pass optional command-line
+           options, or use a drop-in replacement like <code>pbzip2</code> for decompressing
+           <code>.bz2</code> archives.</p></li>
+
       </ul>
     
     <h2><a name="downloading">5.5 下载设置</a></h2>
@@ -165,26 +188,35 @@ the Buildpath, slowing down builds.
             <b>DownloadMethod:</b> wget 或 curl 或 axel 或 axelautomirror</p>
           <p>Fink 可以使用三种不同的程序来从网上下载程序 —— <b>wget</b>，<b>curl</b> 或 <b>axel</b>。而 <b>axelautomirror</b> 会使用 <b>axel</b> 的一种实验中的模式，这种模式会自动检测包含你要下载的文件的离你最近的服务器。目前不推荐使用 <b>axelmirror</b>。默认值是 <b>curl</b>。
 <b>你这里选择的程序必须已经安装在你的计算机上！</b>
+          
+          (i.e. <code>fink</code>won't fall back to <b>curl</b> if you try to use a download application that isn't present.
+          
           </p>
         </li>
-        
+
         <li>
           <p>
             <b>SelfUpdateMethod:</b> point, rsync or cvs</p>
           <p>
-Fink can use some different methods to update the package info files.
-<b>rsync</b> is the recommended setting, it uses rsync to download only
-modified files in the trees that you have enabled. Note that if you have
-changed or added to files in the stable or unstable trees, using rsync will
-delete them. Make a backup first. <b>cvs</b> will download using anonymous or
-:ext: cvs access from the fink repository. This has the disadvantage that cvs
-can not switch mirrors, if the server is unavailable you will not be able to
+<code>fink</code> can use some different methods to update the package info files.
+<b>rsync</b> is the recommended setting; it uses rsync to download only
+modified files in the <a href="#optional">trees</a> that you have enabled. Note that if you have
+changed or added to files in the <code>stable</code> or <code>unstable</code> trees, using rsync will
+delete them. Make a backup first, e.g. in your <code>local</code> tree. <b>cvs</b> will download using anonymous or
+:ext: cvs access from the Fink repository. This has the disadvantage that cvs
+can not switch mirrors; if the server is unavailable you will not be able to
 update. <b>point</b> will download only the latest released version of the
 packages. It is not recommended as your packages may be quite out of date.
           </p>
         </li>
-        
-        
+        <li><p><b>SelfUpdateCVSTrees:</b> list of trees
+           </p><p>(<code>fink-0.25</code> and later) By default, the <b>cvs</b> selfupdate method will update only the current
+           distribution's tree.  This option overrides the list of distribu-
+           tion versions that will be updated during a selfupdate.
+
+           Please note that you will need a recent "cvs" binary installed if
+           you wish to include directories that do not have CVS/ directories
+           in their entire path (e.g., dists/local/main or similar).</p></li>
         <li>
           <p>
             <b>UseBinaryDist:</b> boolean</p>
@@ -194,16 +226,16 @@ distribution if available and if the binary package is not already on the
 system. This can save a lot of installation time and it is therefore 
 recommended to set this option. Passing fink the 
 <a href="usage.php?phpLang=zh">--use-binary-dist</a> option (or the <code>-b</code> flag) has the same effect,  
-but only operates on that single fink invocation.  Passing <code>fink</code> the
+but only operates on that single <code>fink</code> invocation.  Passing <code>fink</code> the
            <code>--no-use-binary-dist</code> flag overrides this, and compiles from source
            for that single <code>fink</code> invocation.
 <b>Only available as of  fink version 0.23.0</b>.
-          </p><p>Note that this mode instructs <code>fink</code> to download the version it wants
-           if that version is available for download; it does not cause <code>fink</code>
+          </p><p>Note that this mode instructs <code>fink</code> to download an available binary  
+           if that version is the latest available version of the package; it does <b>not</b> cause <code>fink</code>
            to choose a version based on its binary availability.
 </p>
         </li>
-        
+
       </ul>
     
     <h2><a name="mirrors">5.6 镜像站点设置</a></h2>
@@ -242,6 +274,14 @@ MasterNever - 不搜索 "主" 镜像服务器。
 ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器合在一组）。
 </pre>
         </li>
+        
+        <li><p><b>Mirror-rsync:</b>
+           </p><p>(<code>fink-0.25.2</code> and later) When doing <code>fink selfupdate</code> with the <b>SelfupdateMethod</b> set to <code>rsync</code>,
+           this is the rsync url to sync from.  This should be an anonymous
+           rsync url, pointing to a directory which contains all the fink Dis-
+           trubutions and Trees.
+</p></li>
+		
       </ul>
     
     <h2><a name="developer">5.7 开发人员设置</a></h2>
@@ -251,15 +291,15 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
         <li>
           <p>
             <b>KeepRootDir:</b> 布尔值</p>
-          <p>使得 Fink 不会在构建好一个软件包以后删除 root-[name]-[version]-[revision] 目录会在 <b>BuildPath</b>。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
-          传递 <b>-K</b> 标志给 <b>fink</b> 可以起到相同的效果，但只对单次的 <b>fink</b> 调用起作用。
+          <p>使得 <code>fink</code> 不会在构建好一个软件包以后删除 <code>root-[name]-[version]-[revision]</code> 目录会在 <b>BuildPath</b>。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
+          传递 <b>-K</b> 标志给 <b>fink</b> 可以起到相同的效果，但只对单次的 <code>fink</code> 调用起作用。
           </p>
         </li>
         <li>
           <p>
             <b>KeepBuildDir:</b> boolean</p>
-          <p>使得 Fink 不会在构建好一个软件包以后删除 [name]-[version]-[revision] 目录会在 <b>BuildPath</b>。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
-          传递 <b>-K</b> 标志给 <b>fink</b> 可以起到相同的效果，但只对单次的 <b>fink</b> 调用起作用。
+          <p>使得 Fink 不会在构建好一个软件包以后删除 <code>[name]-[version]-[revision]</code> 目录会在 <b>BuildPath</b>。默认值是 False。<b>注意，使用这个选项可以很快塞满你的硬盘！</b>
+          传递 <b>-K</b> 标志给 <code>fink</code> 可以起到相同的效果，但只对单次的 <code>fink</code> 调用起作用。
           </p>
         </li>
       </ul>
@@ -279,7 +319,7 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
         <li>
           <p>
             <b>CCacheDir:</b> path</p>
-          <p>If the Fink package ccache-default is installed, the cache files it makes
+          <p>If the Fink package <code>ccache-default</code> is installed, the cache files it makes
 while building Fink packages will be placed here. Defaults to <code>/sw/var/ccache</code>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <code>$HOME/.ccache</code>, potentially putting root-owned files into your home directory.
 <b>Only available in fink newer than version 0.21.0</b>.
           </p>
@@ -290,6 +330,22 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
            operate).  Other plugins can be found in the
            <code>/sw/lib/perl5/Fink/Notify</code> directory.
 </p></li>
+        
+        <li><p><b>AutoScanpackages:</b> boolean
+           </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
+           them.  Historically, the command <code>fink scanpackages</code> had to be run
+           for <code>apt-get</code> to notice the new packages, but now this happens auto
+           matically. If this option is present and <b>false</b>, then <code>fink
+           scanpackages</code> will no longer be run automatically after packages are
+           built.  Defaults to <b>true</b>.
+</p></li>
+        <li><p><b>ScanRestrictivePackages:</b> boolean
+           </p><p>When scanning the packages for <code>apt-get</code>, <code>fink</code> normally scans all
+           packages in the current trees. However, if the resuting apt repository will be made publically available, the administrator may be
+           legally obligated not to include packages with <code>Restrictive</code> or
+           <code>Commercial</code> licenses. If this option is present and <b>false</b>, then Fink
+           will omit those packages when scanning.</p></li>
+		
       </ul>
     
     

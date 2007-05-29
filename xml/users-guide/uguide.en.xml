@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.47 2007/02/23 22:04:56 rangerrick Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.48 2007/05/29 03:58:51 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -1011,7 +1011,7 @@ Internet - <em>wget</em>, <em>curl</em>, or <em>axel</em>. The value
 application which tries to determine the closest server that has a
 certain file. The use of <em>axel</em> and <em>axelautomirror</em> are not recommended at this
 time. The default value is <em>curl</em>.
-<em>The application you chose as DownloadMethod MUST be installed!</em> (i.e. <code>fink</code>won't fall back to <em>curl</em> if you try to use a download application that isn't present.
+<em>The application you chose as DownloadMethod MUST be installed!</em> (i.e. <code>fink</code> won't fall back to <em>curl</em> if you try to use a download application that isn't present.
           </p>
         </li>
         <li>
@@ -1496,8 +1496,7 @@ fink list --section=kde   - list the packages in the kde section
 fink list --maintainer=fink-devel
                           - list the packages with no maintainer
 fink --trees=unstable list --maintainer=fink-devel
-                          - list the packages with no maintainer, but only in the
-                            unstable tree.
+                          - list the packages with no maintainer, but only in the unstable tree.
 fink list "gnome*"        - list all packages that start with 'gnome'
 </codeblock>
       <p>
@@ -1617,7 +1616,7 @@ others.
 	will be able to access the very latest revisions of all packages.
 </p>
       <p>
-If the <xref section="options">--use-binary-dist option</xref> is enabled
+If the <xref section="options">--use-binary-dist option</xref> is enabled,
 the list of available packages in the binary distribution is also updated.
       </p>
     </section>
