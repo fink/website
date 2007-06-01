@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/29 03:58:51';
+$cvs_date = 'Date: 2007/06/01 03:20:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -402,7 +402,7 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
 </p></li>
         <li><p><b>ScanRestrictivePackages:</b> boolean
            </p><p>When scanning the packages for <code>apt-get</code>, <code>fink</code> normally scans all
-           packages in the current trees. However, if the resuting apt repository will be made publically available, the administrator may be
+           packages in the current trees. However, if the resulting apt repository will be made publically available, the administrator may be
            legally obligated not to include packages with <code>Restrictive</code> or
            <code>Commercial</code> licenses. If this option is present and <b>false</b>, then Fink
            will omit those packages when scanning.

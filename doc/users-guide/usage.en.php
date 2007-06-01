@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/29 03:58:51';
+$cvs_date = 'Date: 2007/06/01 03:20:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -121,8 +121,7 @@ type <code>fink --help</code> you get the list of options:
 
                  </li>
         <li><b>virtual</b>
-                       - Includes virtual packages which reflect the capabili-
-                       ties of the system.
+                       - Includes virtual packages which reflect the capabilities of the system.
 </li>
       </ul>
       <p>Exclusion of (or failure to include) these magic trees is currently
