@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink ツール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/29 03:58:51';
+$cvs_date = 'Date: 2007/06/01 03:21:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 
@@ -26,134 +26,107 @@ include_once "header.ja.inc";
 全ての fink コマンドに共通のオプションがあります。
 これは、 <code>fink --help</code> を実行することで一覧が出ます:
 </p>
-        <p>(<code>fink-0.26.0</code> 時点で)</p>
-
-
-      <p><b>-h, --help</b> - displays help text.
-</p>
-      <p><b>-q, --quiet</b>  - causes <code>fink</code> to be less verbose, opposite of <b>--verbose</b>.  Overrides the <a href="conf.php?phpLang=ja#optional">Verbose</a> flag in <code>fink.conf</code>.
-</p>
-      <p><b>-V, --version</b> - display version information.
-</p>
-      <p><b>-v, --verbose</b> - causes  <code>fink</code> to be more verbose, opposite of <b>--quiet</b>.  Overrides the <a href="conf.php?phpLang=ja#optional">Verbose</a> field in <code>fink.conf.</code>
-</p>
-      <p><b>-y, --yes</b> - assume default answer for all interactive 
-                        questions.
-</p>
-      <p><b>-K, --keep-root-dir</b>   - Causes <code>fink</code> not to delete the
-                        <code>root-[name]-[version]-[revision]</code>
-		        directory in the <a href="conf.php?phpLang=ja#optional">Buildpath</a> after building a package.  Corresponds to the <a href="conf.php?phpLang=ja#developer">KeepRootDir</a> field in <code>fink.conf</code>.
-</p>
-      <p><b>-k, --keep-build-dir</b>  - Causes <code>fink</code> not to delete the
-                        <code>[name]-[version]-[revision]</code>
-                        directory in the <a href="conf.php?phpLang=ja#optional">Buildpath</a> after building a package.  Corresponds to the <a href="conf.php?phpLang=ja#developer">KeepBuildDir</a> field in <code>fink.conf</code>.</p>
-      <p><b>-b, --use-binary-dist</b> - download pre-compiled packages from the binary 
-                        distribution if available (e.g. to reduce compile
-		        time or disk usage).
-		        Note that this mode instructs fink to download the
-                        version it wants if that version is available for
-		        download; it does not cause fink to choose a version
-    		        based on its binary availability.  Corresponds to the <a href="conf.php?phpLang=ja#downloading">UseBinaryDist</a> flag in <code>fink.conf</code>.
-</p>
-      <p><b>--no-use-binary-dist</b>  - Don't use pre-compiled binary packages from the binary 
-		        distribution, opposite of the --use-binary-dist flag. 
-                        This is the default unless overridden by setting <code>UseBinaryDist: true </code>in 
-                        the <code>fink.conf</code> configuration file. 
-</p>
-      <p><b>--build-as-nobody</b>     - Drop to a non-root user when performing the unpack,
-                        patch, compile, and install phases. Note that packages
-                        built with this option may be non-functional. You
-                        should use this mode for package development and 
-                        debugging only.
-</p>
-      <p><b>-m, --maintainer</b>
-            - (<code>fink-0.25</code> and later) Perform actions useful to package maintainers: run validation on
-           the <code>.info</code> file before building and on the <code>.deb</code> after building a
-           package; turn certain build-time warnings into fatal errors; (<code>fink-0.26</code> and later) run the test suites as specified in the  field.  This sets <b>--tests</b> and <b>--validate</b> to <code>on</code>.</p>
-      <p><b>--tests[=on|off|warn]</b>         - (<code>fink-0.26.0</code> and later) Causes <code>InfoTest</code> fields to be activated and test suites specified
-           via <code>TestScript</code> to be executed (see the <a href="../packaging/reference.php#fields">Fink Packaging Manual</a>).  If no argument is given to this
-           option or if the argument is <code>on</code> then failures in test suites will
-           be considered fatal errors during builds.  If the argument is <code>warn</code>
-           then failures will be treated as warnings.</p>
+      <p>(<code>fink-0.26.0</code> 時点で)</p>
+      <p><b>-h, --help</b> - ヘルプテキストを表示します。</p>
+      <p><b>-q, --quiet</b>  - <code>fink</code> を若干静かにさせます。
+      反対は <b>--verbose</b>。<code>fink.conf</code> 中の <a href="conf.php?phpLang=ja#optional">Verbose</a> フラグを無視します。 </p>
+      <p><b>-V, --version</b> - バージョン情報を表示します。</p>
+      <p><b>-v, --verbose</b> - <code>fink</code> をウルサくさせます。
+      反対は <b>--verbose</b>。<code>fink.conf</code> 中の <a href="conf.php?phpLang=ja#optional">Verbose</a> フラグを無視します。 </p>
+      <p><b>-y, --yes</b> - 全ての質問に自動的に既定のオプションを適用します。</p>
+      <p><b>-K, --keep-root-dir</b>   - 
+                <code>fink</code> は、パッケージをビルド後に <a href="conf.php?phpLang=ja#optional">Buildpath</a> 中の <code>root-[name]-[version]-[revision]</code>
+		        を削除せずに残します。 
+		        <code>fink.conf</code> 内の <a href="conf.php?phpLang=ja#developer">KeepRootDir</a> フィールドに対応します。</p>
+      <p><b>-k, --keep-build-dir</b>  - 
+                <code>fink</code> は、パッケージをビルド後に <a href="conf.php?phpLang=ja#optional">Buildpath</a> 中の <code>[name]-[version]-[revision]</code>
+		        を削除せずに残します。 
+		        <code>fink.conf</code> 内の <a href="conf.php?phpLang=ja#developer">KeepBuildDir</a> フィールドに対応します。</p>
+      <p><b>-b, --use-binary-dist</b> - 
+    		    存在する場合、（時間とスペースを削減するために）
+    		    バイナリディストリビュションからコンパイル済みパッケージをダウンロードします。
+                このモードは、fink に特定のバージョンをダウンロードするよう指示します。
+                バイナリが入手可能なバージョンを fink に選択させる訳ではありません。
+		        <code>fink.conf</code> 内の <a href="conf.php?phpLang=ja#downloading">UseBinaryDist</a> フラグに対応します。</p>
+      <p><b>--no-use-binary-dist</b>  - 
+		        バイナリディストリビュションからコンパイル済みパッケージを使用しません。
+		        --use-binary-dist フラグと逆です。
+		        <code>fink.conf</code> 内の <a href="conf.php?phpLang=ja#downloading">UseBinaryDist: true</a> がない限り既定のアクションです。</p>
+      <p><b>--build-as-nobody</b> - 
+		        root でないユーザーになり、unpack, patch, compile, and install
+		        を行います。このオプションでできたパッケージは機能しない可能性があります。
+		        パッケージ開発およびデバッグ用途にのみご使用ください。</p>
+      <p><b>-m, --maintainer</b> - 
+                (<code>fink-0.25</code> 以降)
+                以下に示すようにパッケージメンテナ用のアクションを行います:
+                ビルド前に <code>.info</code> を validate、
+                ビルド後に <code>.deb</code> を validate;
+                ある種のビルド時エラーを fatal error にする;
+                (<code>fink-0.26</code> 以降) フィールドで指定されたテストスイートの実行。
+                これは、<b>--tests</b> と <b>--validate</b> を <code>on</code> にします。</p>
+      <p><b>--tests[=on|off|warn]</b>
+                (<code>fink-0.26.0</code> 以降)
+                <code>InfoTest</code> を有効にし、 <code>TestScript</code> にて指定されたテストスイートを実行します
+                (<a href="../packaging/reference.php#fields">Fink パッケージかマニュアル</a> を参照)。
+                このオプションに引数が与えられないか<code>on</code> の場合、
+                ビルド時のテストスイートの失敗は fatal error 扱いになります。
+                引数が <code>warn</code> であれば、失敗は warning として扱われます。</p>
       <p><b>--validate[=on|off|warn]</b> -
-           Causes packages to be validated during a build.  If no argument is
-           given to this option or if the argument is <code>on</code> then validation failures will be considered fatal errors during builds.  If the argument is <code>warn</code> then failures will be treated as warnings.</p>
-      <p><b>-l, --log-output</b>
-            - Save a copy of the terminal output during each package building
-           process. By default, the file is stored in
-           <code>/tmp/fink-build-log_[name]-[version]-[revision]_[date]-[time]</code> but
-           one can use the <b>--logfile</b> flag to specify an alternate filename.</p>
-      <p><b>--no-log-output</b>
-            - Don't save a copy of the output during package-building, opposite
-           of the <b>--log-output</b> flag. This is the default.</p>
-      <p><b>--logfile=filename</b>
-            - Save package build logs to the file <code>filename</code> instead of the default
-           file (see the <b>--log-output</b> flag, which is implicitly set by the
-           <b>--logfile</b> flag). You can use percent-expansion codes to include
-           specific package information automatically. A complete list of percent-expanions is available in the <a href="../packaging">Fink Packaging Manual</a>; some common percent-expansions are:</p>
+                ビルド時にパッケージを validate します。
+                このオプションに引数が与えられないか <code>on</code> の場合、
+                ビルド時の validate の失敗は fatal error 扱いになります。
+                引数が <code>warn</code> であれば、失敗は warning として扱われます。</p>
+      <p><b>-l, --log-output</b> - 
+                それぞれのパッケージをビルド際のターミナル出力を保存します。
+                既定では、ファイルは <code>/tmp/fink-build-log_[name]-[version]-[revision]_[date]-[time]</code> に保存されますが、
+                <b>--logfile</b> でファイル名を指定することができます。</p>
+      <p><b>--no-log-output</b> - 
+                <b>--log-output</b> フラグとは反対に、パッケージビルド時に出力を保存しません。
+                こちらが既定値です。</p>
+      <p><b>--logfile=filename</b> - 
+                パッケージのビルドログを、既定ファイルの代わりに <code>filename</code> に保存します
+                (<b>--log-output</b> を参照、このフラグも自動的に設定されます)。
+                特定のパッケージ情報を含めるためパーセント展開を使うこともできます。
+                パーセント展開の一覧は<a href="../packaging">Fink パッケージ化マニュアル</a> を参照してください。
+                よく用いられるパーセント展開は:</p>
       <ul>
-        <li>                 <b>%n</b>    - package name
-                 </li>
-        <li><b>%v</b>    - package version
-                 </li>
+        <li><b>%n</b>    - package name</li>
+        <li><b>%v</b>    - package version</li>
         <li><b>%r</b>    - package revision</li>
       </ul>
-      <p><b>-t, --trees=expr</b>
-           - Consider only packages in trees matching <b>expr</b>.
-
-           The format of expr is a comma-delimited list of tree specifica-
-           tions. Trees listed in <code>fink.conf</code> are compared against <b>expr</b>.  Only
-           those which match at least one tree specification are considered by
-           <code>fink</code>, in the order of the first specifications which they match. If
-           no <b>--trees</b> option is used, all trees listed in <code>fink.conf</code> are
-           included in order.
-
-           A tree specification may contain a slash (/) character, in which
-           case it requires an exact match with a tree. Otherwise, it matches
-           against the first path-element of a tree. For example,
-           <b>--trees=unstable/main</b> would match only the <b>unstable/main</b> tree,
-           while <b>--trees=unstable</b> would match both unstable/main and
-           <b>unstable/crypto</b>.
-
-           There exist magic tree specifications which can be included in
-           <b>expr</b>:</p>
+      <p><b>-t, --trees=expr</b> - 
+                <b>expr</b> にマッチするツリーのパッケージのみ対象にします。
+                expr の形式は、コンマ区切りのツリーリストです。
+                <code>fink.conf</code> にあるツリー名称と <b>expr</b> を比較します。
+                <code>fink</code> は、ここでマッチしたツリーのみを対象にします。
+                <b>--trees</b> オプションが指定されない場合、<code>fink.conf</code> にあるツリーを、その順序で使用します。
+                
+                ツリー名称は、スラッシュ (/) を含むこともあります。
+                この場合、対象のツリーの名称と正確にマッチする必要があります。
+                あるいは、ツリーの最初に一致するパスのみになります。
+                例えば、<b>--trees=unstable/main</b> は <b>unstable/main</b> ツリーにマッチし、
+                <b>--trees=unstable</b> は unstable/main と
+                <b>unstable/crypto</b> にマッチします。
+                
+                <b>expr</b> で使うことのできる魔法のツリー名称は以下の通り:</p>
       <ul>
-        <li><b>status</b>
-                       - Includes packages in the dpkg status database.
-
-                 </li>
-        <li><b>virtual</b>
-                       - Includes virtual packages which reflect the capabili-
-                       ties of the system.
-</li>
+        <li><b>status</b> - dpkg status データベースにあるパッケージを含む。</li>
+        <li><b>virtual</b> - システムにある virtual パッケージを含む。</li>
       </ul>
-      <p>Exclusion of (or failure to include) these magic trees is currently
-           only supported for operations which do not install or remove packages.</p>
+      <p>現在のところ、この魔法のツリーの含まない（あるいは含めない）のは、install か remove のみ対応しています。</p>
       <p><b>-T, --exclude-trees=expr</b>
-           Consider only packages in trees not matching expr.
-
-           The syntax of expr is the same as for <b>--trees</b>, including the magic
-           tree specifications. However, matching trees are here excluded
-           rather than included. Note that trees matching both <b>--trees</b> and
-           <b>--exclude-trees</b> are excluded.
-</p>
-      <p> Examples of <b>--trees</b> and --exclude-trees:
-
-                 </p>
+                expr にマッチしないパッケージのみ対象にします。
+                expr の形式は <b>--trees</b> と同じで、魔法のツリーの名称も同じです。
+                <b>--trees</b> と <b>--exclude-trees</b> の双方にマッチする場合は、除かれますので、ご注意ください。</p>
+      <p><b>--trees</b> と --exclude-trees の例:</p>
       <ul>
         <li><code>fink --trees=stable,virtual,status install <b>foo</b></code> 
-                       <p>Install <b>foo</b> as if <code>fink</code> was using the stable tree, even
-                       if unstable is enabled in <code>fink.conf</code>.
-</p></li>
+                <p><code>fink.conf</code> に unstable があっても、stable ツリーの <b>foo</b> をインストールします。</p></li>
         <li><code>fink --exclude-trees=local install <b>foo</b></code> 
-                       <p>Install the version of <b>foo</b> in Fink, not the locally
-                       modified version.
-
-</p></li>
+                 <p>local にて作業しているバージョンではなく、 Fink の <b>foo</b> をインストールします。</p></li>
         <li><code>fink --trees=local/main list -i</code>
-                       <p>List the locally modified packages which are installed.</p></li>
+                 <p>local で編集し、インストールしたものを一覧表示します。</p></li>
       </ul>
-
 <p>
 ほとんどのオプションは名前から内容が推測できると思います(<a href="conf.php?phpLang=ja#optional">ここ</a>に Buildpath の定義があります)。
 一回限りではなく、常に使用したいオプションは
@@ -225,7 +198,7 @@ remove コマンドは、 'dpkg --remove' を呼び出してシステムから�
 <p>
 最初の列はインストール状況を表し、その意味は以下の通り:
 </p>
-<pre>    未インストール
+<pre>     未インストール
  i   最新バージョンがインストール済
 (i)  インストール済だが最新バージョンではない
  p   インストールされたパッケージにより提供されたバーチャルパッケージ</pre>
@@ -269,8 +242,11 @@ remove コマンドは、 'dpkg --remove' を呼び出してシステムから�
 <pre>
 fink list                 - 全てのパッケージを表示。
 fink list bash            - bash があるか、どのバージョンか表示。
-fink list --outdated      - 古いパッケージのみ表示。
+fink list --tab --outdated | cut -f 2     
+                          - 古いパッケージのみ表示。
 fink list --section=kde   - kde セクションのパッケージのみ表示。
+fink --trees=unstable list --maintainer=fink-devel
+                          - unstable ツリー中の、メンテナ不在のパッケージを表示。
 fink list "gnome*"         - 'gnome' から始まるパッケージのみ表示。
 </pre>
 <p>
@@ -299,13 +275,11 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 エイリアス: <b>desc, description, info</b>
 </p>
 
-	
     <h2><a name="plugins">6.10 plugins</a></h2>
       
-      <p> List the (optional) plugins available to the <code>fink</code> program.  Currently lists the notification mechanisms and the source-tarball
-           checksum algorithms.</p>
+      <p><code>fink</code> で使用することのできるプラグインを一覧表示する。
+      現在のところ、告知メカニズムとソース tarball チェックサムアルゴリズムのみ。</p>
     
-	
 <h2><a name="fetch">6.11 fetch</a></h2>
 
 <p>指定したパッケージをダウンロードしますが、インストールはしません。
@@ -316,7 +290,7 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
                       	制限には、ミラーを許可しないという制限もありますので、
                       	ミラー時に役に立ちます。
 -d,--dry-run		パッケージ用にダウンロードするファイルの情報を表示するだけで、
-			実際にはダウンロードしません。
+                    実際にはダウンロードしません。
 -r,--recursive		fetch するパッケージの依存するパッケージも fetch します。</pre>
 
 <h2><a name="fetch-all">6.12 fetch-all</a></h2>
@@ -372,9 +346,7 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <code>fink</code> を再設定します。
 ミラーサイトの設定やプロキシの設定も行なうことができます。
 </p>
-	  
-      <p><b>New in</b> <code>fink-0.26.0</code>: This command will also let you turn on the unstable trees if desired.</p>
-      
+      <p><code>fink-0.26.0</code> <b>にて登場</b>: 希望する場合、 unstable 釣り−を有効にします。</p>
 
 <h2><a name="selfupdate">6.18 selfupdate</a></h2>
 
@@ -426,36 +398,31 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 
 <h2><a name="scanpackages">6.22 scanpackages</a></h2>
 
-      
-      <p>Updates the <code>apt-get</code> database of debs; defaults to updating all of the trees, but may be restricted to a set of one or more trees given as arguments.</p>
-      
+      <p>debs の <code>apt-get</code> データベースを更新します。
+      既定では全てのツリーを更新しますが、引数を与えることでツリーを制限することもできます。</p>
 
 <h2><a name="cleanup">6.23 cleanup</a></h2>
 
-      
-      <p>
-   Removes obsolete and temporary files. 
-   This can reclaim large amounts of disk space.  One or more modes may be specified:</p>
-      <pre>--debs               - Delete .deb files (compiled binary package archives)
-                       corresponding to versions of packages that are neither
-                       described by a package description (.info) file in the
-                       currently-active trees nor presently installed.
---sources,--srcs     - Delete sources (tarballs, etc.) that are not used by
-                       any package description (.info) file in the currently-
-                       active trees.
---buildlocks, --bl   - Delete stale buildlock packages.
---dpkg-status        - Remove entries for packages that are not installed from
-                       the dpkg "status" database.
---obsolete-packages  - Attempt to uninstall all installed packges that are
-                       obsolete. (new in fink-0.26.0)
---all                - All of the above modes. (new in fink-0.26.0)</pre>
-      <p>If no mode is specified, <code>--debs --sources</code> is the default action. </p>
-      <p>In addition, the following options may be used:</p>
-      <pre>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
--d,--dry-run         - Print the names of the files that would be deleted, but
-                       do not actually delete them.
--h,--help            - Show the modes and options which are available.</pre>
-    
+      <p>古いファイルと一時ファイルを削除します。
+      これにより、ディスクスペースが大幅に使えるようになります。
+      以下のモードを指定することができます:</p>
+      <pre>
+--debs               - 現在有効なツリー、あるいは既にインストールされているどのパッケージの
+                       記述ファイル (.info) にもないバージョンのパッケージに対応する .deb
+                       ファイル（コンパイル済みバイナリパッケージアーカイブ）を削除します。
+--sources,--srcs     - 現在有効なツリー中にあるどのパッケージ記述ファイル (.info) にも使用され
+　　　　　　　　　　　　　　　ていないファイルを削除します。
+--buildlocks, --bl   - 腐った buildlock パッケージを削除します。
+--dpkg-status        - dpkg "status" データベース以外からインストールされたパッケージを削除。
+--obsolete-packages  - 全ての古いパッケージを削除するよう試みます。(fink-0.26.0 にて登場)
+--all                - 全てのモード。 (fink-0.26.0 にて登場)
+</pre>
+      <p>モードが指定されていない場合、<code>--debs --sources</code> が既定のオプションとなります。</p>
+      <p>これらに加え、以下のオプションも使うことができます:</p>
+      <pre>
+-k,--keep-src        - 古いソースファイルを、削除するのではなく /sw/src/old/ に移します。
+-d,--dry-run         - 削除対象のファイルを一覧表示し、実際には削除しません。
+-h,--help            - 使用可能なモードとオプションを表示します。</pre>
 
     <h2><a name="dumpinfo">6.24 dumpinfo</a></h2>
       
@@ -467,15 +434,15 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
 	以下の<b>オプション引数</b>に応じて、各種フィールドとパーセント展開も表示されます。
       </p>
       <pre>
--h, --help           - Show the options which are available.
--a, --all            - Display all fields from the package description.
-                       This is the default mode when no --field or
-                       --percent flags are given.
--f fieldname,        - Display the given fieldname(s),
-  --field=fieldname    in the order listed.
--p key,              - Display the given percent expansion key(s),
-   --percent=key       in the order listed.
-      </pre>
+-h, --help           - 利用可能なオプションを一覧表示します。
+-a, --all            - パッケージ記述にある全てのフィールドを表示します。これは、
+                       --field または --perfect フラグが与えらない場合の
+                       既定モードとなります。
+-f fieldname,        - 与えられたフィールドの値を、与えられた順序に従って表示します。
+  --field=fieldname
+-p key,              - 与えられたパーセント展開キーの値を、与えられた順序に従って表示します。
+   --percent=key
+</pre>
     
     <h2><a name="show-deps">6.25 show-deps</a></h2>
       

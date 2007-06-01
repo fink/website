@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink.conf";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/29 03:58:51';
+$cvs_date = 'Date: 2007/06/01 03:21:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 
@@ -97,9 +97,7 @@ stable/main" です。
 この一覧は <code>/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
 (fink 0.21.0 より、 <code>fink</code> が自動的に行うようになりました)
 </p>
-
 <p>ツリーの順序には意味があります。後のツリーにあるパッケージが前のツリーのパッケージを書き換えます。</p>
-
 </li>
 <li>
 <p>
@@ -218,9 +216,7 @@ FTP サーバーやネットワークによっては、このオプションが 
 <b>axelmirror</b> の使用は現時点では勧められません。
 デフォルト値は <b>curl</b> です。
 <b>DownloadMethod に選択したアプリケーションはインストールされている必要があります!</b>
-          
           (i.e. もし存在しないダウンロードアプリケーションを指定しても、<code>fink</code> は <b>curl</b> を使うことはありません。)
-          
 </p>
 </li>
 <li>
@@ -373,22 +369,26 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
            			他のプラグインは、 <code>/sw/lib/perl5/Fink/Notify</code> にある。
 				</p>
 			</li>
-        
-        <li><p><b>AutoScanpackages:</b> boolean
-           </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
-           them.  Historically, the command <code>fink scanpackages</code> had to be run
-           for <code>apt-get</code> to notice the new packages, but now this happens auto
-           matically. If this option is present and <b>false</b>, then <code>fink
-           scanpackages</code> will no longer be run automatically after packages are
-           built.  Defaults to <b>true</b>.
-</p></li>
-        <li><p><b>ScanRestrictivePackages:</b> boolean
-           </p><p>When scanning the packages for <code>apt-get</code>, <code>fink</code> normally scans all
-           packages in the current trees. However, if the resuting apt repository will be made publically available, the administrator may be
-           legally obligated not to include packages with <code>Restrictive</code> or
-           <code>Commercial</code> licenses. If this option is present and <b>false</b>, then Fink
-           will omit those packages when scanning.</p></li>
-				</ul>
+        <li><p><b>AutoScanpackages:</b> ブール値</p>
+           <p>
+           <code>fink</code> が新しいパッケージをビルドしても、
+           <code>apt-get</code> が直ちに検知する訳ではなりません。
+           これまでは、<code>fink scanpackages</code> を実行することで
+           <code>apt-get</code> に情報を提供していましたが、
+           これを自動化できるようにしました。
+           このオプションが <b>false</b> の場合は、パッケージビルド後に
+           <code>fink scanpackages</code>
+           は自動的に実行されません。
+           既定値は <b>true</b> です。
+           </p></li>
+        <li><p><b>ScanRestrictivePackages:</b> ブール値</p>
+           <p><code>apt-get</code> のためにパッケージをスキャンする際、
+           <code>fink</code> は通常、現在のツリーにある全てのパッケージをスキャンします。
+           しかしながら、apt レポジトリを公開するために、<code>Restrictive</code> や
+           <code>Commercial</code> のパッケージを法律上含むことができないこともあるでしょう。
+           このオプションが存在し、その値が <b>false</b> であれば、Fink はスキャン時にこれらのパッケージを外します。
+           </p></li>
+		</ul>
 	
 	<h2><a name="sourceslist">5.9 apt の sources.list ファイルを管理</a></h2>
 		
