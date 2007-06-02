@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.82 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.83 2007/06/02 11:40:15 rangerrick Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -2197,7 +2197,7 @@ xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
-rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
+rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg /Library/Receipts/X11Update*.pkg
 fink selfupdate; fink index</codeblock>
         <p>(the first line may give you warnings about trying to remove nonexistent packages).  Then, reinstall Apple's X11 (and the X11SDK, if needed), or an alternative X11 implementation, like XFree86 or X.org.</p>
         <p>If you are still having problems and you are running
