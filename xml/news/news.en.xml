@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.60 2007/03/16 18:31:49 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.61 2007/06/03 00:12:34 alexkhansen Exp $</cvsid>
 
 <newsitem>
 	<date>2007-03-04</date>
@@ -71,6 +71,7 @@ package database</link> which is a few weeks out of date.
 		<date>2006-07-24</date>
 		<headline>Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</headline>
 		<body>
+
 			<p>
 				The "10.4-transitional" tree was created as an interim solution to the issues of
 				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
@@ -101,6 +102,7 @@ package database</link> which is a few weeks out of date.
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <varlink url="lists">discussion lists</varlink>.
 			</p>
+<p><em> Update: 2 June 2007.</em>  Due to changes to the behavior of <filename>sudo</filename> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
 		</body>
 	</newsitem>
 
