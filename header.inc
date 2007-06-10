@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.105 2007/04/18 16:27:45 rangerrick Exp $ */
+/* $Id: header.inc,v 1.106 2007/06/10 09:18:10 babayoshihiko Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -152,6 +152,16 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 // converts xml style tag to html 4.01 transitional (ad hoc)
 $metatags = ereg_replace('<([^/]*)/>', '<\1>', $metatags);
 
+// [translation] Function used in doc and faq for translation
+
+function show_form() {
+	if (function_exists('i18n_show_form')) {
+		i18n_show_form();
+	} else {
+		echo "translate";
+	}
+}
+
 // Functions Used in PDB
         
 function it_start() {
@@ -293,7 +303,7 @@ function insert_sub ($navbox, $active_page) {
 	<? if ($metatags) echo $metatags; ?>
 	<link rel="start" href="<? print $root ?>index.php">
 	<link rel="copyright" href="<? print $root ?>legal.php">
-
+    <? if ($i18n_enable_form) echo '<script type="text/javascript" src="' . $root . 'fink.i18n.js"></script>('; ?>
 
 </head>
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
