@@ -28,11 +28,13 @@
 
 <!ELEMENT section (title?, ( %block; | itemtable )*) >
 <!ATTLIST section name NMTOKEN #IMPLIED >
+<!ATTLIST section translated (yes|no) "yes" >
 
 
 <!-- Block elements -->
 <!ELEMENT codeblock ( #PCDATA | em | strong )* >
 <!ELEMENT p ( %inline; )* >
+<!ATTLIST p translated (yes|no) "yes" >
 
 
 <!-- Inline -->

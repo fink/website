@@ -26,12 +26,15 @@
 <!ATTLIST faqentry name ID #REQUIRED >
 
 <!ELEMENT question ( p ) >
+<!ATTLIST question translated (yes|no) "yes" >
 <!ELEMENT answer ( %block; )* >
+<!ATTLIST answer translated (yes|no) "yes" >
 
 
 <!-- Block elements -->
 <!ELEMENT codeblock ( #PCDATA | em )* >
 <!ELEMENT p ( %inline; )* >
+<!ATTLIST p translated (yes|no) "yes" >
 
 
 <!-- Inline -->
