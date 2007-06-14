@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.en.xml,v 1.20 2007/02/23 22:04:56 rangerrick Exp $</cvsid>
+  <cvsid>$Id: x11.en.xml,v 1.21 2007/06/14 08:09:57 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -37,8 +37,7 @@ Desktop environments like CDE, KDE and GNOME run on top of it.
       <title>What is Mac OS X?</title>
       <p>
         <link url="http://www.apple.com/macosx/">Mac OS X</link> is an
-operating system produced by <link url="http://www.apple.com/">Apple
-Computer</link>.
+operating system produced by <link url="http://www.apple.com/">Apple</link>.
 Like its predecessors NeXTStep and OpenStep, it is based on BSD and is
 thus a member of the Unix OS family.
 However, it comes with a proprietary graphics display system.

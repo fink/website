@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Utilisation de X11 sous Darwin et Mac OS X</title>
 <shorttitle>Utilisation de X11</shorttitle>
-<cvsid>$Id: x11.fr.xml,v 1.24 2007/02/23 22:04:56 rangerrick Exp $</cvsid>
+<cvsid>$Id: x11.fr.xml,v 1.25 2007/06/14 08:09:57 babayoshihiko Exp $</cvsid>
 <preface>
 <p>Ce document traite de l'utilisation de X11, XFree86, et Xtools sur les systèmes Mac OS X et Darwin d'Apple. Il commence par une introduction et l'historique du développement, puis décrit la situation actuelle et les nombreuses options d'utilisation de X11 avec ou sans Fink.</p>
 </preface>
@@ -17,7 +17,7 @@
 </section>
 <section name="def-macosx">
 <title>Qu'est-ce que Mac OS X ?</title>
-<p><link url="http://www.apple.com/macosx/">Mac OS X</link> est un système opératoire conçu par <link url="http://www.apple.com/">Apple Computer</link>. Comme ses prédécesseurs NeXTStep et OpenStep, il est basé sur BSD et fait donc partie de la famille des systèmes opératoires Unix. Néanmoins, il possède un système d'affichage graphique propriétaire. Le moteur graphique est appelé Quartz et l'interface Aqua, bien que les deux noms soient souvent utilisés de manière interchangeable.</p>
+<p><link url="http://www.apple.com/macosx/">Mac OS X</link> est un système opératoire conçu par <link url="http://www.apple.com/">Apple</link>. Comme ses prédécesseurs NeXTStep et OpenStep, il est basé sur BSD et fait donc partie de la famille des systèmes opératoires Unix. Néanmoins, il possède un système d'affichage graphique propriétaire. Le moteur graphique est appelé Quartz et l'interface Aqua, bien que les deux noms soient souvent utilisés de manière interchangeable.</p>
 </section>
 <section name="def-darwin">
 <title>Qu'est-ce que Darwin ?</title>
