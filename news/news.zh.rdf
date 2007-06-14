@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2007-05-11T15:49:41+09:00</dc:date>
+    <dc:date>2007-06-14T16:35:20+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar">
       <title>Problems with tar</title>
@@ -159,6 +159,9 @@ package database</a> which is a few weeks out of date.
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
 			</p>
+
+<p> Update: 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
+
 		</description>
       <content:encoded>
 			<p>
@@ -190,6 +193,9 @@ package database</a> which is a few weeks out of date.
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
 			</p>
+
+<p> Update: 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
+
 		</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006">

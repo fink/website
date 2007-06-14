@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/11 06:49:06';
+$cvs_date = 'Date: 2007/06/14 07:33:05';
 $metatags = '';
 
 include_once "header.inc";
@@ -59,6 +59,8 @@ Finally, to use the package database during the outage, you can connect
 to <a href="http://lists.finkproject.org/pdb">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
+
+<p><b> Update: 2 June 2007.</b>  Due to changes to the behavior of <code>sudo</code> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
 		<a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
 			<p>
 				The "10.4-transitional" tree was created as an interim solution to the issues of

@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2007-05-11T15:49:41+09:00</dc:date>
+    <dc:date>2007-06-14T16:35:19+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar">
       <title>Problems with tar</title>
@@ -88,6 +88,8 @@ Finally, to use the package database during the outage, you can connect
 to <a href="http://lists.finkproject.org/pdb">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
+
+<p> Update: 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
 		</description>
       <content:encoded>
 <p> Update: 21 August 2006:  The server has been restored.</p>
@@ -123,6 +125,8 @@ Finally, to use the package database during the outage, you can connect
 to <a href="http://lists.finkproject.org/pdb">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
+
+<p> Update: 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
 		</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006">

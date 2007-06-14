@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.31 2007/05/11 06:49:06 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.33 2007/06/14 07:34:43 babayoshihiko Exp $</cvsid>
 
 <newsitem>
 	<date>2007-03-04</date>
@@ -19,7 +19,7 @@ fink team は、この問題を恒久的に直す方法を研究しています�
 </p><p>
 この問題を恒久的に直す方法を決定ししだい、こちらで再度告知をいたします。
 </p>
-<p><em> Update: 16 March 2007: </em>
+<p><em> Update: March 2007年3月16日: </em>
 <code>dpkg</code> の新バージョンにて問題が解決されます。
 Unstable を利用している方は、通常通り update を実行してください。
 </p>
@@ -30,7 +30,7 @@ Unstable を利用している方は、通常通り update を実行してくだ
 	<date>2006-08-19</date>
 	<headline>サーバダウン; 回避策有り。</headline>
 	<body>
-<p><em> Update: 21 August 2006: </em> The server has been restored.</p>
+<p><em> Update: 2006年8月21日: </em> サーバーが復旧されました。</p>
 	<p> 
 現在、fink の４つの重要なサービス (rsync 更新、バイナリ配布, ソースファイルの "master mirror", パッケージデータベース)
 をホストしているサーバがダウンしています。
@@ -65,6 +65,9 @@ rsync://master.us.finkmirrors.net/finkinfo/
 を使いください。
 ただし、これは数週間遅れたデータになります。
 </p>
+<p><em> Update: 2007年6月2日</em> 10.4.9 の <filename>sudo</filename> の挙動が変わりました。
+これによって、更新スクリプトはそのままでは作動しなくなりました。
+最初に <code>sudo -s</code> として、スーパーユーザーにすれば大丈夫です。</p>
 		</body>
 	</newsitem>
 
@@ -75,7 +78,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 			<p>
 				"10.4-transitional" ツリーは、 GCC 3.3 (Mac OS X 10.3 のデフォルトコンパイラ) と
 				GCC 4.0 (Mac OS X 10.4 のデフォルトコンパイラ) のバイナリ間の非互換性問題にたいする暫定的な解決策でした。
-				ようやく Fink は GCC 4.0 へ移行する作業が終了し、 "10.4" ツリーへ移行してください。
+				ようやく Fink は GCC 4.0 へ移行する作業が終了しましたので、 "10.4" ツリーへ移行してください。
 				"10.4-transitional" ツリーのサポートは、2006年8月1日をもって終了いたします。
 			</p>
 			<p><em>"fink --version" が "0.8.1.cvs" または "0.8.1.rsync" と表示する場合、特にすることはありません。</em></p>

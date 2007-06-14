@@ -80,4 +80,7 @@ package database</a> which is a few weeks out of date.
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <a href="<?php print $root; ?>lists">discussion lists</a>.
 			</p>
+
+<p><b> Update: 2 June 2007.</b>  Due to changes to the behavior of <code>sudo</code> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
+
 		

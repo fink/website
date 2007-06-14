@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/11 06:49:06';
+$cvs_date = 'Date: 2007/06/14 07:33:06';
 $metatags = '';
 
 include_once "header.inc";
@@ -89,6 +89,9 @@ package database</a> which is a few weeks out of date.
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <a href="<?php print $root; ?>lists">discussion lists</a>.
 			</p>
+
+<p><b> Update: 2 June 2007.</b>  Due to changes to the behavior of <code>sudo</code> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
+
 		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
 			<p>Are you at OSCON 2006?  Want to meet up?</p>
 			<p>

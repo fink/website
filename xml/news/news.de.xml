@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
-<cvsid>$Id: news.de.xml,v 1.29 2007/05/11 06:49:06 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.de.xml,v 1.30 2007/06/14 07:33:05 babayoshihiko Exp $</cvsid>
 
 <newsitem>
 	<date>2007-03-04</date>
@@ -64,7 +64,9 @@ Finally, to use the package database during the outage, you can connect
 to <link url="http://lists.finkproject.org/pdb">this backup copy of the
 package database</link> which is a few weeks out of date.
 </p>
-		</body>
+<!-- start translation -->
+<p><em> Update: 2 June 2007.</em>  Due to changes to the behavior of <filename>sudo</filename> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
+<!-- end translation -->		</body>
 	</newsitem>
 
 	<newsitem>

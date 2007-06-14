@@ -1,26 +1,31 @@
 <?
 $title = "Téléchargement de la version source";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2007/04/13 11:44:08 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2007/06/14 07:31:01 $';
 
 include "header.inc";
 ?>
 
 <h1>Téléchargement de la version source de Fink</h1>
-
+<!--AKH 2007-05-31.  Fix when we have a release tarball that works with OS > 10.4.9
 <p>
 La version source contient le gestionnaire de paquets fink, les descriptions des paquets et leurs rustines.
 Elle permet de télécharger les sources depuis les sites de distribution
 originaux et de les compiler sur votre ordinateur.
 </p>
+-->
+<!-- start translation -->
+<p>The source tarball contains the <em>fink</em> package manager.  After you have installed it, you will be able to get package descriptions and patches.  It will use these to download the source code from the original distribution sites or the Fink project's mirrors and build them on your local machine.</p>
+<!-- end translation -->
 <? 
 include "../fink_version.inc";
 ?>
-
+<!--
 <p>
 La version <? print $fink_version; ?> de Fink a été officiellement mise à disposition des utilisateurs le <? print $release_date; ?>.
-
 </p>
+-->
+<p>La version <EM>fink-0.27.1</EM> a été officiellement mise à disposition des utilisateurs le 2007-03-19.</p>
 <ul>
 <li><a
 href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
@@ -33,9 +38,7 @@ Ne pas extraire l'archive en utilisant Stuffit : cela corrompt certains
 noms de fichiers.
 Utilisez plutôt l'utilitaire <tt>tar</tt> en ligne de commande.
 Les instructions sont dans le document d'installation.
-</p>
 
-<p>
 Les instructions d'installation et d'utilisation sont contenues dans
 l'archive tar de la distribution.
 Lisez-les : Fink ne s'installe pas en un seul clic !
@@ -43,6 +46,13 @@ Les documents README, INSTALL et USAGE sont fournis sous format texte (pour lect
 Ils sont aussi disponibles en ligne dans la <a
 href="../doc/index.php">section documentation</a>.
 </p>
+<!-- start translation -->
+<p>After you have installed <em>fink</em> and the other base packages, the commands</p>
+<pre>fink selfupdate-rsync</pre>
+<p>or</p>
+<pre>fink selfupdate-cvs</pre>
+<p>will download the package description files and patches.</p>
+<!-- end translation -->
 <p>
 Pour être tenu informé des nouvelles versions, abonnez-vous à la <a
 href="../lists/fink-announce.php">liste de diffusion fink-announce</a>.
