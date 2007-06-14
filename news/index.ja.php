@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/06/14 07:34:43';
+$cvs_date = 'Date: 2007/06/14 07:49:50';
 $metatags = '';
 
 include_once "header.inc";
@@ -124,10 +124,10 @@ Distribution version が 0.8.0.cvs か 0.8.0.rsync であれば、以下に述�
 (tarball を解凍後、)詳細については 10.4-update ディレクトリ内の README ファイルを参考にしてください。
 </p>
 <p>
-注記: OS X 10.3 から OS X 10.4 へアップグレードする Fink ユーザは、同じく二つの方法があります。
+注記: OS X 10.3 から OS X 10.4 へアップグレードするには、同じく二つの方法があります。
 古い fink インストールを削除して新規にインストールするか、
 同じ 10.4-update tarball を使います。
-更新スクリプトは、OS X がアップグレードされた後には実行しないでください。
+OS X をアップグレードしてから、更新スクリプトを実行してください。
 </p>
 <a name="2006-06-15%20%E6%96%B0%E3%81%97%E3%81%84%20Fink%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2006-06-15: </span><span class="news-headline">新しい Fink リリース</span></a><?php gray_line(); ?>
       <p>

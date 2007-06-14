@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.32 2007/06/14 07:33:06 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.34 2007/06/14 07:49:50 babayoshihiko Exp $</cvsid>
 
 <newsitem>
 	<date>2007-03-04</date>
@@ -67,7 +67,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 </p>
 <p><em> Update: 2007年6月2日</em> 10.4.9 の <filename>sudo</filename> の挙動が変わりました。
 これによって、更新スクリプトはそのままでは作動しなくなりました。
-最初に <code>sudo -s</code> として、スーパーユーザーにすれば大丈夫です。
+最初に <code>sudo -s</code> として、スーパーユーザーにすれば大丈夫です。</p>
 		</body>
 	</newsitem>
 
@@ -148,10 +148,10 @@ Distribution version が 0.8.0.cvs か 0.8.0.rsync であれば、以下に述�
 (tarball を解凍後、)詳細については 10.4-update ディレクトリ内の README ファイルを参考にしてください。
 </p>
 <p>
-注記: OS X 10.3 から OS X 10.4 へアップグレードする Fink ユーザは、同じく二つの方法があります。
+注記: OS X 10.3 から OS X 10.4 へアップグレードするには、同じく二つの方法があります。
 古い fink インストールを削除して新規にインストールするか、
 同じ 10.4-update tarball を使います。
-更新スクリプトは、OS X がアップグレードされた後には実行しないでください。
+OS X をアップグレードしてから、更新スクリプトを実行してください。
 </p>
 </body>
   </newsitem>
