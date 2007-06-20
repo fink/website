@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.106 2007/06/10 09:18:10 babayoshihiko Exp $ */
+/* $Id: header.inc,v 1.107 2007/06/20 18:25:38 dmacks Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -17,6 +17,14 @@
 // |           1. too many! issues remained                                   |
 // |                                                                          |
 // +--------------------------------------------------------------------------+
+
+if ($_SERVER['SERVER_NAME'] == "pdb.finkproject.org") {
+	if ($_SERVER['REQUEST_URI'] == "http://pdb.finkproject.org/") {
+		header("HTTP/1.1: 301 Moved Permanently");
+		header("Location: http://pdb.finkproject.org/pdb");
+		exit();
+	}
+}
 
 if (!defined($expires))
 {
