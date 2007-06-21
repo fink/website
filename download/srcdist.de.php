@@ -1,7 +1,7 @@
 <?
 $title = "Quelltext Version Download";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2007/06/14 07:31:01 $';
+$cvs_date = '$Date: 2007/06/21 01:07:11 $';
 
 include "header.inc";
 ?>
@@ -26,14 +26,15 @@ Fink <? print $fink_version; ?> wurde am
 <? print $release_date; ?> offiziell veröffentlicht.
 </p>
 -->
-<p><em>fink-0.27.1</em> wurde am  2007-03-19 offiziell veröffentlicht.</p>
+<p><em>fink-0.27.3</em> wurde am  2007-06-15 offiziell veröffentlicht.</p>
 
 <ul>
 <!-- start translation -->
-<li><a
+<!--<li><a
 href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full-XCode-2.1.tar.gz">Fink
 <? print $release_version; ?></a> (for OS X 10.4 with XCode 2.1)
-- 6241K, .tar.gz format</li>
+- 6241K, .tar.gz format</li>-->
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.27.3.tar.gz">fink-0.27.3</a> - 1260K, .tar.gz format</li>
 <!-- end translation -->
 </ul>
 
