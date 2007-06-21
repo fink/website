@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.96 2007/06/17 22:44:10 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.97 2007/06/21 14:31:26 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -1705,7 +1705,12 @@ various perl versions in the 10.3, 10.4 and 10.5 distributions:
 <codeblock>
   Package: foo-pm%type_pkg[perl]
   Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8)
-  Distribution: (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5
+  &lt;&lt;
 </codeblock>
 <p>Note that there is no restriction placed on foo-pm586 since perl 5.8.6 is 
 available in all distributions.  Also note that we do not include old

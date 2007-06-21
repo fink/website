@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2007/06/17 22:44:10';
+$cvs_date = 'Date: 2007/06/21 14:31:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -221,7 +221,12 @@ various perl versions in the 10.3, 10.4 and 10.5 distributions:
 <pre>
   Package: foo-pm%type_pkg[perl]
   Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8)
-  Distribution: (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5
+  &lt;&lt;
 </pre>
 <p>Note that there is no restriction placed on foo-pm586 since perl 5.8.6 is 
 available in all distributions.  Also note that we do not include old
