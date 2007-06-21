@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.12 2007/02/25 05:22:32 dmrrsn Exp $ */
+/* $Id: header.inc,v 1.13 2007/06/21 16:20:04 rangerrick Exp $ */
 
 $linkroot = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -12,6 +12,9 @@ if ($server == "fink.sourceforge.net") {
   header("Location: http://pdb.finkproject.org$uri");
   exit();
 }
+
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
+header("Cache-Control: max-age=3600, s-maxage=900");
 
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];

@@ -1,10 +1,11 @@
 <?
 $title = "Package Database - Upload Form";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/04/10 19:45:52 $';
-header("Expires: " . gmdate("D, d M Y H:i:s", time() + 60 * 60) . " GMT");
+$cvs_date = '$Date: 2007/06/21 16:20:10 $';
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
+header("Cache-Control: max-age=3600, s-maxage=900");
 
-/* $Id: submit.php,v 1.7 2007/04/10 19:45:52 rangerrick Exp $ */
+/* $Id: submit.php,v 1.8 2007/06/21 16:20:10 rangerrick Exp $ */
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
 if ($uses_pathinfo) {
