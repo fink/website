@@ -3,10 +3,10 @@
 <document filename="index" lang="de">
   <title>Fink Benutzerhandbuch</title>
   <shorttitle>Benutzerhandbuch</shorttitle>
-  <cvsid>$Id: uguide.de.xml,v 1.5 2007/05/29 03:58:51 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: uguide.de.xml,v 1.6 2007/07/21 00:06:38 babayoshihiko Exp $</cvsid>
   <preface>
   <p>Achtung: die deutsche Version dieses Dokuments ist nicht mit der Englische Version synchron.</p>
-    <p>This document gives an overview over all features of Fink.
+    <p translated="no">This document gives an overview over all features of Fink.
 (The following older documents may offer a broader view
 <link url="http://www.finkproject.org/doc/bundled/install.php">Installation</link>,
 <link url="http://www.finkproject.org/doc/bundled/usage.php">Nutzung</link>
@@ -47,12 +47,12 @@ und die ReadMe.rtf, welche sich auf dem Medium der Binärdistribution befindet.)
     <section name="supported-os">
       <title>Unterstützte Systeme</title>
       <!-- start translation -->
-      <p><em>Mac OS X 10.4</em> is the leading-edge platform, and is considered to be <quote>fully supported and tested</quote>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.  Note, however, that
+      <p translated="no"><em>Mac OS X 10.4</em> is the leading-edge platform, and is considered to be <quote>fully supported and tested</quote>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.  Note, however, that
 fink on intel hardware is still considered to be of <em>beta</em> quality.</p>
-      <p>
+      <p translated="no">
         <em>Mac OS X 10.3</em> is considered to be <quote>fully supported and tested</quote>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
 </p>
-      <p><em>Mac OS X 10.2</em> is still supported to some extent.  Fink 0.6.4 is the last distribution to suppport this OS.</p>
+      <p translated="no"><em>Mac OS X 10.2</em> is still supported to some extent.  Fink 0.6.4 is the last distribution to suppport this OS.</p>
       <!-- end translation -->
       <p>
         <em>Mac OS X 10.1</em> wird noch einigermaßen unterstützt. Sie müssen Fink 0.4.1 und keine neuere Version nutzen.
@@ -109,7 +109,7 @@ Die Source-Distribution kommt als ein übliches Unix-tarball (.tar.gz) daher. Es
 <link url="http://www.finkproject.org/download/srcdist.php">Download-Seite</link>.
 Es ist wichtig, daass Sie nicht den StuffIt Expander zum Entpacken des tar-Archivs verwenden. Aus irgendeinen Grund kann StuffIt noch mit keinen langen Dateinamen umgehen. Falls StuffIt Expander das Archiv schon entpackt hat, löschen sie den Ordner, welchen er erstellt hat.
 </p>
-      <p>
+      <p translated="no">
 Die Source-Version muss über die Kommandozeile installiert werden. Also öffnen Sie Terminal.app und wechseln Sie zu dem Verzeichnis, wo Sie das fink-0.x.x-full.tar.gz-Archiv gespeichert haben. 
 <!-- start translation -->
 (Note: If you have OS X 10.4 and XCode 2.1, you should use
@@ -123,7 +123,7 @@ Der folgende Befehl entpackt das Archiv:
 Dies erstellt ein Verzeichnis mit dem selben Namen des Archivs. Wir werden dafür hier den Platzhalter  <code>fink-0.x.x-full</code> verwenden. Wechseln Sie jetzt in das Verzeichnis und führen Sie das bootstrap-Script aus:
 </p>
       <codeblock>cd fink-0.x.x-full
-      ./bootstrap.sh</codeblock>
+./bootstrap.sh</codeblock>
       <p>
 Das Skript wird eine paar Kontrollen auf Ihrem System und sudo ausführen, um root zu bekommen - dies wird Sie nach Ihrem Passwort fragen. Dann wird Sie das Script nach dem Installationspfad fragen. Sofern Sie keinen guten Grund haben, sollten den Standardpfad wählen- <filename>/sw</filename>.
 Nur so können Sie später auch Binärpakete installieren. Außerdem nutzen alle Beispiele diesen Pfad; achten Sie darauf diesen dann mit Ihren Installationspfad zu ersetzen, sollten Sie einen anderen gewählt haben.
@@ -143,7 +143,7 @@ Um die Software, die in Finks Vereichnishierarchie installiert ist, einschließl
 </p>
       <codeblock>/sw/bin/pathsetup.sh</codeblock>
 <!-- start translation -->
-<p>Note that for some older versions of fink the program was called  <filename>pathsetup.command</filename>, and one could run it via <code>open /sw/bin/pathsetup.command</code>.</p>
+<p translated="no">Note that for some older versions of fink the program was called  <filename>pathsetup.command</filename>, and one could run it via <code>open /sw/bin/pathsetup.command</code>.</p>
 <!-- end translation -->
 <p>Falls es dennoch aus irgendeinen Grund nicht funktionieren sollte, können Sie es auch manuell konfigurieren. Allerdings hängt dies dann von der Shell ab, die Sie verwenden. Sie können herausfinden, welche Shell Sie verwenden, indem Sie im geöffneten Terminalfenster folgenden Befehl ausführen:
 </p>
@@ -311,7 +311,7 @@ Was hier passiert ist folgendes: ein Paket, welches Sie versuchen zu installiere
     <section name="src">
       <title>Installing Binary and Source Packages with fink</title>
 <!-- start translation -->
-<p>The <code>fink</code> tool will allow you to install packages that are not yet available in the <xref chapter="intro" section="src-vs-bin">binary distribution</xref>.</p>
+<p translated="no">The <code>fink</code> tool will allow you to install packages that are not yet available in the <xref chapter="intro" section="src-vs-bin">binary distribution</xref>.</p>
 <!-- end translation -->
       <p>
 Zu erst benötigen Sie eine geeignete Version der Development Tools für Ihr System. Sie können diese kostenlos nach einer Registration von <link url="http://connect.apple.com">http://connect.apple.com</link> herunterladen.</p>
@@ -329,7 +329,7 @@ Sobald Sie ein Paket gefunden haben, welches Sie installieren wollen, benutzen S
 Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("dependencies") vorhanden sind, und wird Sie dann fragen, ob Sie damit einverstanden sind, dass diese installiert werden, falls sie noch nicht da sind. Dann beginnt der Installationsprozess: die Quellen werden heruntergeladen, ausgepackt, gepatcht, kompiliert und schlussendlich an die richtige Stelle auf der Festplatt Ihres Computers geschoben. Dieser Vorgang kann eine lange Zeit dauern. Falls währenddessen Fehler auftreten, schauen Sie sich bitte erst die <link url="http://www.finkproject.org/faq/">FAQ</link> an.
 </p>
 <!-- start translation -->
-      <p>
+      <p translated="no">
 For <code>fink</code> versions since 0.23.0 you can tell it to try to download
 pre-compiled binary packages, if available, instead of building them. Just pass
 the <xref chapter="usage" section="options">--use-binary-dist (or -b)
@@ -339,13 +339,13 @@ calling
       <codeblock>fink --use-binary-dist install wget-ssl</codeblock>
       <p>or</p>
       <codeblock>fink -b install wget-ssl</codeblock>
-      <p>
+      <p translated="no">
 will first download all dependencies for wget-ssl that are available from the
 binary distribution and only build the remainder from source. This option can
 also be enabled permanently in the <xref chapter="conf">Fink configuration
 file</xref> (fink.conf) or by running the command <code>fink configure</code>.
       </p>
-      <p>
+      <p translated="no">
 More details about the <code>fink</code> tool are available in the chapter 
 <xref chapter="usage">"Using the fink Tool from the Command Line"</xref>.
       </p>
@@ -365,11 +365,11 @@ More details about the <code>fink</code> tool are available in the chapter
 		  <ol>
             <li><p>
             <em>0.4.1:</em> das ist die Version, die als Binary-Paket für OS 10.1 installiert werden kann.</p></li>
-            <li><p><em>0.6.4:</em>  this is the version that can be installed from binaries for OS 10.2.</p></li>
-            <li><p><em>0.7.2</em>
+            <li><p translated="no"><em>0.6.4:</em>  this is the version that can be installed from binaries for OS 10.2.</p></li>
+            <li><p translated="no"><em>0.7.2:</em>
   This is the base version that can be installed from binaries for OS 10.3.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p> 
         </li>
-            <li><p><em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.4.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p></li>
+            <li><p translated="no"><em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.4.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p></li>
           </ol>
           <!-- end translation -->
         </li>
@@ -384,9 +384,9 @@ More details about the <code>fink</code> tool are available in the chapter
         <li><p><em>10.3 stable:</em>  Das ist die aktuellste Version, die von Quellcode installiert werden unter OS 10.3.</p>
 </li>
 <!-- start translation -->
-            <li><p><em>10.4/powerpc stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
+            <li><p translated="no"><em>10.4/powerpc stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
 on PowerPC hardware.</p></li>
-            <li><p><em>10.4/intel stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+            <li><p translated="no"><em>10.4/intel stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
 on intel hardware.</p></li>
 <!-- end translation -->
         <li>
@@ -396,9 +396,9 @@ on intel hardware.</p></li>
         </li>
         <li><em>10.3 unstable:</em>  Das ist die aktuellste unstable-Version, die von Quellcode unter 10.3 installiert werden kann. Aktivieren Sie den unstable-Baum wie <link url="http://www.finkproject.org/faq/usage-fink.php#unstable">oben</link> erwähnt.</li>
 <!-- start translation -->
-            <li><p><em>10.4/powerpc unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+            <li><p translated="no"><em>10.4/powerpc unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
 on PowerPC hardware.</p></li>
-            <li><p><em>10.4/intel unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+            <li><p translated="no"><em>10.4/intel unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
 on intel hardware.</p></li>
 <!-- end translation -->
           </ol></li>
@@ -492,12 +492,12 @@ Um die Source-Distribution mit dem Fink Commander zu aktualisieren, wählen Sie 
 Wenn Sie einige Pakete als vorkompilierte Binärdateien herunterladen und andere von Quellcode kompilieren, werden Sie beide oben erklärten Vorgehensweisen befolgen müssen, um Ihre Fink-Installation zu aktualisieren.  Das heißt, Sie verwenden erst <code>dselect</code> oder <code>apt-get</code>, um die aktuellsten Versionen der Pakete zu bekommen, die als Binärdateien verfügbar sind, und dann <code>fink selfupdate</code> und <code>fink update-all</code>, um die aktuellen Beschreibungen für die übrigen Pakete herunterzuladen. Wenn Sie den Fink Commander verwenden, folgen Sie den Erklärungen zur <xref section="bin">Binary-</xref>- und dann zur <xref section="src">Source</xref>-Distribution.
  </p>
 <!-- start translation -->
-<p>Starting with fink 0.23.0 using the UseBinaryDist option (settable via the
+<p translated="no">Starting with fink 0.23.0 using the UseBinaryDist option (settable via the
 <xref chapter="usage" section="options">--use-binary-dist (or -b) option</xref>
 or in the <xref chapter="conf">Fink configuration file</xref>) both source and
 binary descriptions will be updated if you call <code>fink selfupdate</code>.
 In this case you don't need a separate <code>apt-get</code> call anymore.</p>
-<p>If you are using Fink Commander select Binary-&gt;Update descriptions to update
+<p translated="no">If you are using Fink Commander select Binary-&gt;Update descriptions to update
 the package list, and then Binary-&gt;Dist-Upgrade packages to update to new
 versions. After that do Source-&gt;Selfupdate to download new package
 information files, and then Source-&gt;Update-all (see previous sections for
@@ -576,7 +576,7 @@ unstable/main   - weitere instabile Pakete
 Sie können auch Ihre eigenen Bäume in das Verzeichnis <code>/sw/fink/dists</code> für Ihre Bedürfnisse hinzufügen, dies ist aber nicht notwendig in den meisten Situationen. Die Standardbäume sind "local/main local/bootstrap
 stable/main". Diese Liste sollte mit der Datei <code>/sw/etc/apt/sources.list</code> synchronisiert sein. (Ab <code>fink</code> 0.21.0 wird das für Sie automatisch gemacht.)</p>
 <!-- start translation -->
-<p>The order of the trees is meaningful, as packages from later trees in the list may
+<p translated="no">The order of the trees is meaningful, as packages from later trees in the list may
 override packages from earlier ones.</p>
 <!-- end translation -->
         </li>
@@ -638,7 +638,7 @@ selfupdate-cvs</code> gesetzt, so dass Sie ihn nicht per Hand ändern brauchen.<
 <filename>/sw/src/fink.build</filename> on Tiger. Wenn Sie es möchten, können Sie den Pfad hier einstellen. Für mehr Informationen über diese temporären Verzeichnisse lesen Sie die Beschreibungen über die Felder <code>KeepRootDir</code> und <code>KeepBuildDir</code> später in diesem Dokument.
 	    </p>
 	    <!-- start translation -->
-	    <p>On Tiger, it is recommended that the Buildpath end with <filename>.noindex</filename>
+	    <p translated="no">On Tiger, it is recommended that the Buildpath end with <filename>.noindex</filename>
 or <filename>.build</filename>. Otherwise, Spotlight will attempt to index the temporary files in
 the Buildpath, slowing down builds.
     	</p>
@@ -874,7 +874,7 @@ Anmerkung:  Wenn Sie die Datei <code>/sw/etc/apt/sources.list</code> vor dem Upd
       <p>Es folgt eine Auflistung der Befehl für das <code>fink</code>-Tool:</p>
     </section>
     <!-- start translation -->
-    <section name="options">
+    <section name="options" translated="no">
       <title>Global options</title>
       <p>
 There are some options, which apply to all fink commands. If you 
@@ -1021,7 +1021,7 @@ The following additional package will be installed:
  lesstif
 Do you want to continue? [Y/n]</codeblock>
       <!-- start translation -->
-      <p>Use of the <xref section="options">--use-binary-dist</xref> option with <code>fink install</code> can speed the build process for complicated packages by quite a lot.</p>
+      <p translated="no">Use of the <xref section="options">--use-binary-dist</xref> option with <code>fink install</code> can speed the build process for complicated packages by quite a lot.</p>
       <!-- end translation -->
       <p>Aliases für den Befehl install: <em>update, enable, activate, use</em> (die meisten aus historischen Gründen).</p>
     </section>
@@ -1030,7 +1030,7 @@ Do you want to continue? [Y/n]</codeblock>
       <p>Der remove-Befehl entfernt Pakete von Ihrem System, wenn Sie '<code>dpkg --remove</code>' aufrufen. Die aktuelle Implementation hat einige Schwachstellen: es überprüft nicht die Abhängigkeiten selbst, sondern überlässt dies dem dpkg-Tool (allerdings sollte das kein Problem darstellen).</p>
       <p>Der <em>remove</em>-Befehl entfernt nur die eigentlichen Dateien, lässt aber die  <filename>.deb</filename>-Datei der komprimierten Pakete unberührt. Das bedeutet, dass Sie die Pakete später wieder installieren können, ohne diese neu kompilieren zu müssen. Wenn Sie den Plattenplatz benötigen, können Sie die <filename>.deb</filename>-Datei vom <filename>/sw/fink/dists</filename>-Baum löschen.</p>
       <!-- start translation -->
-      <p>These flags can be used with the <em>fink remove</em> command
+      <p translated="no">These flags can be used with the <em>fink remove</em> command
 </p>
       <codeblock>-h,--help             - Show the options which are available.
 -r,--recursive        - Also remove packages that depend on the package(s) to
@@ -1039,7 +1039,7 @@ Do you want to continue? [Y/n]</codeblock>
       <p>Aliases: <em>disable, deactivate, unuse, delete</em>.</p>
     </section>
 <!-- start translation -->
-    <section name="purge">
+    <section name="purge" translated="no">
       <title>purge</title>
       <p>The <em>purge</em> command purges packages from the system. This is
 the same as the <em>remove</em> command except that it removes configuration
@@ -1049,7 +1049,7 @@ files as well.</p>
 -r,--recursive</codeblock>
       <p>options.</p>
     </section>
-    <section name="update-all">
+    <section name="update-all" translated="no">
       <title>update-all</title>
       <p>This command updates all installed packages to the latest version. It
 does not need a package list, so you just type:</p>
@@ -1138,9 +1138,9 @@ Aliases: <em>desc, description, info</em>
 </p>
     </section>
 	<!-- start translation -->
-    <section name="plugins">
+    <section name="plugins" translated="no">
       <title>plugins</title>
-      <p> List the (optional) plugins available to the <code>fink</code> program.  Currently lists the notification mechanisms and the source-tarball
+      <p>List the (optional) plugins available to the <code>fink</code> program.  Currently lists the notification mechanisms and the source-tarball
            checksum algorithms.</p>
     </section>
 	<!-- end translation -->
@@ -1150,7 +1150,7 @@ Aliases: <em>desc, description, info</em>
 Lädt die angegebenen Pakete herunter, installiert sie aber nicht. Dieser Befehl lädt die Tarball-Dateien, sogar wenn Sie zuvor heruntergeladen wurden.
 </p>
 <!-- start translation -->
-      <p>The following flags can be used with the <code>fetch</code> command:</p>
+      <p translated="no">The following flags can be used with the <code>fetch</code> command:</p>
       <codeblock>-h,--help		Show the options which are available.
 -i,--ignore-restrictive	Do not fetch packages that are &amp;quot;License: Restrictive&amp;quot;.
                       	Useful for mirrors, because some restrictive packages
@@ -1168,7 +1168,7 @@ Lädt die angegebenen Pakete herunter, installiert sie aber nicht. Dieser Befehl
 Lädt <em>alle</em> Quelldateien herunter. Wie <xref section="fetch">fetch</xref> lädt es die Tarball-Dateien auch herunter, sollten sie zuvor schon heruntergeladen worden sein.
 </p>
       <!-- start translation -->
-      <p>These flags can be used with the <code>fink fetch-all</code> command:</p>
+      <p translated="no">These flags can be used with the <code>fink fetch-all</code> command:</p>
       <codeblock>-h,--help
 -i,--ignore-restrictive
 -d,--dry-run</codeblock>
@@ -1178,11 +1178,11 @@ Lädt <em>alle</em> Quelldateien herunter. Wie <xref section="fetch">fetch</xref
       <title>fetch-missing</title>
       <p>Lädt <em>all</em> fehlenden Quelldateien herunter. Dieser Befehl lädt nur die Dateien heruntern, die nicht auf dem Computer vorhanden sind.</p>
       <!-- start translation -->
-      <p>These flags can be used with the <code>fink fetch-missing</code> command:</p>
+      <p translated="no">These flags can be used with the <code>fink fetch-missing</code> command:</p>
       <codeblock>-h,--help
 -i,--ignore-restrictive
 -d,--dry-run</codeblock>
-      <!-- start translation -->
+      <!-- end translation -->
     </section>
     <section name="build">
       <title>build</title>
@@ -1192,7 +1192,7 @@ Lädt <em>alle</em> Quelldateien herunter. Wie <xref section="fetch">fetch</xref
       <title>rebuild</title>
       <p>Erstellt ein Paket (wie der build-Befehl), ignoriert und überschreibt aber die vorhandene .deb-Datei. Wenn Sie ein Paket installieren, wird die neu erstellte .deb-Datei auch via <code>dpkg</code> auf Ihr System installiert. Sehr nützlich während der Paketentwicklung.</p>
       <!-- start translation -->
-      <p>The <xref section="options">--use-binary-dist option</xref> is applicable here.</p>
+      <p translated="no">The <xref section="options">--use-binary-dist option</xref> is applicable here.</p>
       <!-- end translation -->
     </section>
     <section name="reinstall">
@@ -1204,7 +1204,7 @@ Lädt <em>alle</em> Quelldateien herunter. Wie <xref section="fetch">fetch</xref
       <p>
 Führt den Konfigurationsprozess nochmal aus. So können Sie Ihre Mirror-Server und Proxy-Einstellungen unter anderen ändern.</p>
 	  <!-- start translation -->
-      <p><em>New in</em> <code>fink-0.26.0</code>: This command will also let you turn on the unstable trees if desired.</p>
+      <p translated="no"><em>New in</em> <code>fink-0.26.0</code>: This command will also let you turn on the unstable trees if desired.</p>
       <!-- end translation -->
     </section>
     <section name="selfupdate">
@@ -1212,15 +1212,15 @@ Führt den Konfigurationsprozess nochmal aus. So können Sie Ihre Mirror-Server 
       <p>
       Dieser Befehl automatisiert die Aktualisierung von Fink auf eine neues Release. Es überprüft die Fink-Webseite, um zu sehen, ob eine neue Version verfügbar ist. Wenn dies so ist, lädt es die Paketbeschreibungen und Updates der core-Pakete einschließlich von <code>fink</code> selber. Dieser Befehl kann auf reguläre Releases aktualisieren, es kann aber auch Ihren <filename>/sw/fink/dists</filename>-Verzeichnisbaum für direktes CVS einrichten. Das bedeutet, dass Sie dann auf die aktuellsten Versionen aller Pakete zugreifen können.</p>
 <!-- start translation -->
-      <p>If the <xref section="options">--use-binary-dist option</xref> is enabled, the list of available packages in the binary distribution is also updated.</p>
+      <p translated="no">If the <xref section="options">--use-binary-dist option</xref> is enabled, the list of available packages in the binary distribution is also updated.</p>
     </section>
-    <section name="selfupdate-rsync">
+    <section name="selfupdate-rsync" translated="no">
       <title>selfupdate-rsync</title>
       <p>Use this command to make <code>fink selfupdate</code> use rsync to update its package list.</p>
       <p>This is the recommended way to update Fink when building from source.</p>
       <p><em>Note:</em>  rsync updates only update the active <xref chapter="conf" section="optional">trees</xref> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
     </section>
-    <section name="selfupdate-cvs">
+    <section name="selfupdate-cvs" translated="no">
       <title>selfupdate-cvs</title>
       <p>Use this command to make <code>fink selfupdate</code> use CVS access to update its package list.</p>
       <p>CVS updating is deprecated, except for developers and those people who are behind firewalls that disallow rsync.</p>
@@ -1238,7 +1238,7 @@ Führt den Konfigurationsprozess nochmal aus. So können Sie Ihre Mirror-Server 
       Dieser Befehl führt verschiedene Kontrollen über die <filename>.info</filename>- und <filename>.deb</filename>-Dateien durch. Paket-Maintainer sollten ihre Paketbeschreibungen und die korrespondierenden Pakete vor dem Hochladen damit überprüfen.
 </p>
 <!-- start translation -->
-	  <p>The following optional options may be used:</p>
+	  <p translated="no">The following optional options may be used:</p>
       <codeblock>-h,--help            - Show the options which are available.
 -p,--prefix          - Simulate an alternate Fink basepath prefix (%p) within
                       the files being validated.
@@ -1250,13 +1250,13 @@ Führt den Konfigurationsprozess nochmal aus. So können Sie Ihre Mirror-Server 
    Aliases: <em>check</em>
 </p>
     </section>
-    <section name="scanpackages">
+    <section name="scanpackages" translated="no">
       <title>scanpackages</title>
       <!-- start translation -->
       <p>Updates the <code>apt-get</code> database of debs; defaults to updating all of the trees, but may be restricted to a set of one or more trees given as arguments.</p>
       <!-- end translation -->
     </section>
-    <section name="cleanup">
+    <section name="cleanup" translated="no">
       <title>cleanup</title>
       <!-- start translation -->
       <p>
@@ -1285,7 +1285,7 @@ Führt den Konfigurationsprozess nochmal aus. So können Sie Ihre Mirror-Server 
     </section>
     <section name="dumpinfo">
       <title>dumpinfo</title>
-      <p><!-- start translation -->
+      <p translated="no"><!-- start translation -->
     Only available in <code>fink</code> newer than version 0.21.0
       <!-- end translation --></p>
       <p>
@@ -1302,7 +1302,7 @@ Führt den Konfigurationsprozess nochmal aus. So können Sie Ihre Mirror-Server 
       </codeblock>
     </section>
     <!-- start translation -->
-    <section name="show-deps">
+    <section name="show-deps" translated="no">
       <title>show-deps</title>
       <p>Only available in fink-0.23-6 and later.</p>
       <p>Displays a human-readable list of the compile-time (build) and run-

@@ -4,7 +4,7 @@
 
     <title>Руководство пользователя Fink</title>
     <shorttitle>Руководство пользователя</shorttitle>
-    <cvsid>$Id: uguide.ru.xml,v 1.4 2007/05/29 03:58:51 babayoshihiko Exp $</cvsid>
+    <cvsid>$Id: uguide.ru.xml,v 1.5 2007/07/21 00:06:38 babayoshihiko Exp $</cvsid>
     <preface>
         <p> Данный документ содержит обзор всех возможностей Fink. (Более широкий обзор могут дать ранее выпущенные документы <link
                 url="http://www.finkproject.org/doc/bundled/install.php">Инсталляция</link>, <link
@@ -64,7 +64,7 @@
                 </li>
             </ul>
         </section>
-        <section name="supported-os">
+        <section name="supported-os" translated="no">
             <title>Поддерживаемые системы</title>
       <!-- start translation -->
       <p><em>Mac OS X 10.4</em> is the leading-edge platform, and is considered to be <quote>fully supported and tested</quote>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.  Note, however, that
@@ -167,7 +167,7 @@ fink on intel hardware is still considered to be of <em>beta</em> quality.</p>
                 для распаковки архива. По какой-то причине StuffIt все еще
                 не может обрабатывать длинные имена файлов. Если StuffIt Expander уже распаковал архив,
                 надо удалить созданную им папку.</p>
-            <p> Версия исходного кода должна инсталлироваться с командной строки,
+            <p translated="no"> Версия исходного кода должна инсталлироваться с командной строки,
                 т.е. надо открыть Terminal.app и перейти к каталогу, в котором вы поместили архив
                 fink-0.x.x-full.tar.gz. 
 <!-- start translation -->
@@ -539,15 +539,15 @@ E: Sorry, broken packages</codeblock>
               <li>Binary Distribution
 		  <!-- start translation -->
 		  <ol>
-            <li><p>
+            <li><p translated="no">
             <em>0.4.1:</em> версия, которую можно инсталлировать
                         на основе бинарных пакетов для OS 10.1.</p></li>
             <li><p><em>0.6.4:</em> версия, которую можно инсталлировать
                     на основе бинарных пакетов для OS 10.2.</p></li>
-            <li><p><em>0.7.2</em>
+            <li><p translated="no"><em>0.7.2</em>
   This is the base version that can be installed from binaries for OS 10.3.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p> 
         </li>
-            <li><p><em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.4.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p></li>
+            <li><p translated="no"><em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.4.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p></li>
           </ol>
           <!-- end translation -->
                 </li>
@@ -577,9 +577,9 @@ E: Sorry, broken packages</codeblock>
                         инсталлируемая от исходного кода в OS 10.3.</p>
                 </li>
 <!-- start translation -->
-            <li><p><em>10.4/powerpc stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
+            <li><p translated="no"><em>10.4/powerpc stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
 on PowerPC hardware.</p></li>
-            <li><p><em>10.4/intel stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+            <li><p translated="no"><em>10.4/intel stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
 on intel hardware.</p></li>
 <!-- end translation -->
                 <li>
@@ -598,9 +598,9 @@ on intel hardware.</p></li>
                     которую можно инсталлировать от исходного кода в OS 10.3.
                     Надо активировать нестабильное дерево вышеуказанным образом.</li>
 <!-- start translation -->
-            <li><p><em>10.4/powerpc unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+            <li><p translated="no"><em>10.4/powerpc unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
 on PowerPC hardware.</p></li>
-            <li><p><em>10.4/intel unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+            <li><p translated="no"><em>10.4/intel unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
 on intel hardware.</p></li>
 <!-- end translation -->
           </ol></li>
@@ -830,7 +830,7 @@ unstable/main   - другие нестабильные пакеты
                         списку в файле <code>/sw/etc/apt/sources.list</code>.
                         (Начиная со своей версии 0.21.0, <code>fink</code> делает это за вас автоматически.)</p>
 <!-- start translation -->
-<p>The order of the trees is meaningful, as packages from later trees in the list may
+<p translated="no">The order of the trees is meaningful, as packages from later trees in the list may
 override packages from earlier ones.</p>
 <!-- end translation -->
                 </li>
@@ -873,11 +873,11 @@ override packages from earlier ones.</p>
                         </p>
                 </li>
         <!-- start translation -->
-        <li><p><em>SkipPrompts:</em> a comma-delimited list</p><p>(<code>fink-0.25</code> and later) This option instructs <code>fink</code> to refrain from asking for input when
+        <li><p><em>SkipPrompts:</em> a comma-delimited list</p><p translated="no">(<code>fink-0.25</code> and later) This option instructs <code>fink</code> to refrain from asking for input when
            the user does not want to be prompted. Each prompt belongs to a
            category. If a prompt's category is in the SkipPrompts list then
            the default option will be chosen within a very short period of
-           time.</p><p>Currently, the following categories of prompts exist:</p><p><em>fetch</em> - Downloads and mirrors</p><p><em>virtualdep</em> - Choosing between alternative packages</p><p> By default, no prompts are skipped.</p></li>
+           time.</p><p translated="no">Currently, the following categories of prompts exist:</p><p translated="no"><em>fetch</em> - Downloads and mirrors</p><p translated="no"><em>virtualdep</em> - Choosing between alternative packages</p><p translated="no"> By default, no prompts are skipped.</p></li>
         <!-- end translation -->
                 <li>
                     <p>
@@ -914,7 +914,7 @@ override packages from earlier ones.</p>
                         получения более подробной информации об этих временных каталогах 
                         (<xref section="developer">Developer Settings</xref>). </p>
 	    <!-- start translation -->
-	    <p>On Tiger, it is recommended that the Buildpath end with <filename>.noindex</filename>
+	    <p translated="no">On Tiger, it is recommended that the Buildpath end with <filename>.noindex</filename>
 or <filename>.build</filename>. Otherwise, Spotlight will attempt to index the temporary files in
 the Buildpath, slowing down builds.
     	</p>
@@ -922,7 +922,7 @@ the Buildpath, slowing down builds.
                 </li>
 <!-- start translation -->
         <li><p><em>Bzip2Path:</em> the path to your <filename>bzip2</filename> (or compatible) binary
-          </p><p>(<code>fink-0.25</code> and later) The Bzip2Path option lets you override the default path for the
+          </p><p translated="no">(<code>fink-0.25</code> and later) The Bzip2Path option lets you override the default path for the
            <filename>bzip2</filename> command-line tool.  This allows you to specify an alternate
            location to your <filename>bzip2</filename> executable, pass optional command-line
            options, or use a drop-in replacement like <filename>pbzip2</filename> for decompressing
@@ -963,7 +963,7 @@ the Buildpath, slowing down builds.
                 <li>
                     <p>
                         <em>DownloadMethod:</em> wget, curl, axel или axelautomirror</p>
-                    <p>Fink может использовать три разных приложения для скачивания
+                    <p translated="no">Fink может использовать три разных приложения для скачивания
                         файлов из Интернета - <em>wget</em>, <em>curl</em>
                         и <em>axel</em>. Настройка <em>axelautomirror</em> использует
                         экспериментальный режим приложения <em>axel</em>, который
@@ -996,7 +996,7 @@ the Buildpath, slowing down builds.
                 </li>
         <!-- start translation -->
         <li><p><em>SelfUpdateCVSTrees:</em> list of trees
-           </p><p>(<code>fink-0.25</code> and later) By default, the <em>cvs</em> selfupdate method will update only the current
+           </p><p translated="no">(<code>fink-0.25</code> and later) By default, the <em>cvs</em> selfupdate method will update only the current
            distribution's tree.  This option overrides the list of distribu-
            tion versions that will be updated during a selfupdate.
 
@@ -1087,7 +1087,7 @@ ClosestFirst - для поиска ближайших зеркал в перву
                 </li>
         <!-- start translation -->
         <li><p><em>Mirror-rsync:</em>
-           </p><p>(<code>fink-0.25.2</code> and later) When doing <code>fink selfupdate</code> with the <em>SelfupdateMethod</em> set to <code>rsync</code>,
+           </p><p translated="no">(<code>fink-0.25.2</code> and later) When doing <code>fink selfupdate</code> with the <em>SelfupdateMethod</em> set to <code>rsync</code>,
            this is the rsync url to sync from.  This should be an anonymous
            rsync url, pointing to a directory which contains all the fink Dis-
            trubutions and Trees.
@@ -1162,7 +1162,7 @@ ClosestFirst - для поиска ближайших зеркал в перву
                 </p></li>
         <!-- start translation -->
         <li><p><em>AutoScanpackages:</em> boolean
-           </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
+           </p><p translated="no">When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
            them.  Historically, the command <code>fink scanpackages</code> had to be run
            for <code>apt-get</code> to notice the new packages, but now this happens auto
            matically. If this option is present and <em>false</em>, then <code>fink
@@ -1548,7 +1548,7 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
             <p>Алиасы: <em>desc, description, info</em>.</p>
         </section>
 	<!-- start translation -->
-    <section name="plugins">
+    <section name="plugins" translated="no">
       <title>plugins</title>
       <p> List the (optional) plugins available to the <code>fink</code> program.  Currently lists the notification mechanisms and the source-tarball
            checksum algorithms.</p>
@@ -1559,7 +1559,7 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
             <p>Скачивает поименно указанные пакеты, но не инсталлирует их. Эта команда
                 скачивает тарболы, даже если они уже были скачаны прежде.</p>
 <!-- start translation -->
-      <p>The following flags can be used with the <code>fetch</code> command:</p>
+      <p translated="no">The following flags can be used with the <code>fetch</code> command:</p>
       <codeblock>-h,--help		Show the options which are available.
 -i,--ignore-restrictive	Do not fetch packages that are &amp;quot;License: Restrictive&amp;quot;.
                       	Useful for mirrors, because some restrictive packages
@@ -1607,7 +1607,7 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
                 вновь созданный файл .deb также будет инсталлирован в системе
                 через <code>dpkg</code>. Это весьма полезно в процессе разработки пакета.</p>            
       <!-- start translation -->
-      <p>The <xref section="options">--use-binary-dist option</xref> is applicable here.</p>
+      <p translated="no">The <xref section="options">--use-binary-dist option</xref> is applicable here.</p>
       <!-- end translation -->
         </section>
         <section name="reinstall">
@@ -1622,7 +1622,7 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
             <p> Запускает повторное выполнение конфигурации <code>fink</code>. Это позволяет, в числе прочего, изменять
                 ваши настройки сайтов зеркал и прокси.</p>
 	  <!-- start translation -->
-      <p><em>New in</em> <code>fink-0.26.0</code>: This command will also let you turn on the unstable trees if desired.</p>
+      <p translated="no"><em>New in</em> <code>fink-0.26.0</code>: This command will also let you turn on the unstable trees if desired.</p>
       <!-- end translation -->
         </section>
         <section name="selfupdate">
@@ -1640,13 +1640,13 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
                 обновляется. </p>
         </section>
 <!-- start translation -->
-    <section name="selfupdate-rsync">
+    <section name="selfupdate-rsync" translated="no">
       <title>selfupdate-rsync</title>
       <p>Use this command to make <code>fink selfupdate</code> use rsync to update its package list.</p>
       <p>This is the recommended way to update Fink when building from source.</p>
       <p><em>Note:</em>  rsync updates only update the active <xref chapter="conf" section="optional">trees</xref> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
     </section>
-    <section name="selfupdate-cvs">
+    <section name="selfupdate-cvs" translated="no">
       <title>selfupdate-cvs</title>
       <p>Use this command to make <code>fink selfupdate</code> use CVS access to update its package list.</p>
       <p>CVS updating is deprecated, except for developers and those people who are behind firewalls that disallow rsync.</p>
@@ -1672,12 +1672,12 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
 				--pedantic  - настройка по умолчанию.</codeblock>
             <p>Алиас: <em>check</em>.</p>
         </section>
-        <section name="scanpackages">
+        <section name="scanpackages" translated="no">
             <title>scanpackages</title>
       <!-- start translation -->
       <p>Updates the <code>apt-get</code> database of debs; defaults to updating all of the trees, but may be restricted to a set of one or more trees given as arguments.</p>
       <!-- end translation -->        </section>
-        <section name="cleanup">
+        <section name="cleanup" translated="no">
             <title>cleanup</title>
       <!-- start translation -->
       <p>
