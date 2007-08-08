@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2007/06/20 03:02:45 $';
+$cvs_date = '$Date: 2007/08/08 14:55:56 $';
 
 include "header.inc";
 ?>
@@ -27,13 +27,13 @@ Fink <? print $fink_version; ?> was officially released on
 <? print $release_date; ?>.
 -->
 
-<p><EM>fink-0.27.3</EM> was officially released on 2007-06-15.</p>
+<p><EM>fink-0.27.6</EM> was officially released on 2007-07-18.</p>
 </p>
 <ul>
 <!--<li><a
 href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
 <? print $release_version; ?></a> - 6786K, .tar.gz format</li>-->
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.27.3.tar.gz">fink-0.27.3</a> - 1260K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.27.6.tar.gz">fink-0.27.6</a> - 1260K, .tar.gz format</li>
 </ul>
 
 <p>
