@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/18 18:15:32 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2007/08/15 21:17:02 $';
 
 include "header.inc";
 ?>
@@ -61,7 +61,6 @@ particolarmente la sezione
 </li>
 <li><p>
 Aprite una nuova finestra Terminal.app ed eseguite il seguente comando: "<code>fink scanpackages; fink index</code>", o usate l'applicazione inclusa Fink Commander GUI (che deve essere posizionata in una directory reale del vostro computer, non su un disco immagine) ed eseguite i seguenti comandi dal suo menu:  <em>Source->scanpackages</em> seguito da <em>Source->Tools->index</em>.
-</p>
 </p></li>
 <li><p>Una volta che questi due comandi sono terminati dovrete aggiornare il <code>fink</code> package, nel caso in cui ci siano stati grossi cambiamenti rispetto all'ultima release.  Dopo aver fatto questo potrete procedere all'installazione di altri paccchetti.  Esistono vari metodi:
 <ul>
@@ -82,7 +81,7 @@ Aprite una nuova finestra Terminal.app ed eseguite il seguente comando: "<code>f
 </ol></li></ul>
 <p>Ora che avete aggiornato <code>fink</code>, potete installare gli altri pacchetti.</p>  
 <ul>
-<li>Per installarli da binari, selezionate il pacchetto, e usate Binary->Install.</p></li>
+<li>Per installarli da binari, selezionate il pacchetto, e usate Binary->Install.</li>
 <li>Per installare da codice, selezionate il pacchetto, e usate Source->Install</li>
 </ul>
 </li>
