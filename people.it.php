@@ -1,16 +1,10 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2007/02/23 06:32:06 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2007/08/15 21:12:10 $';
 
 include "header.inc";
 ?>
-<style type="text/css">
-<!--
-.style2 {color: #000000}
--->
-</style>
-
 
 <h1>Collaboratori</h1>
 
@@ -18,7 +12,7 @@ include "header.inc";
 package di Fink ha un gestore che lavora duro per garantire che il package stesso lavori come desiderato. Inoltre c'&egrave; il <a href="organization.php#core">fink core team</a> che lavora al programma fink.
 Il sito web deve essere tenuto aggiornato. Gli utenti hanno bisogno di supporto, fornito attraverso le nostre mailing lists
 e il nostro canale IRC. Questi e molti altri compiti richiedono parecchio lavoro, cos&igrave; vorremmo dire &quot;Grazie a voi&quot; a tutte queste persone che hanno sacrificato il loro tempo libero per aiutare la 
-comunit&agrave;. <span class="style2">Cos&igrave;</span>, questa pagina contiene una lista di persone che hanno contribuito
+comunit&agrave;. <em>Cos&igrave;</em>, questa pagina contiene una lista di persone che hanno contribuito
 a Fink in qualche modo.
 </p>
 
