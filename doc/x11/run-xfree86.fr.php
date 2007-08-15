@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Lancement de X11";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2007/08/15 21:57:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="xtools.php?phpLang=fr" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=fr" title="Récupération et installation de X11">';
 
 

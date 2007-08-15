@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 历史";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:57';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2007/08/15 21:57:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=zh" title="获取和安装 X11"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 

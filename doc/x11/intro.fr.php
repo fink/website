@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Intro";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2007/08/15 21:57:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="history.php?phpLang=fr" title="Historique"><link rel="prev" href="index.php?phpLang=fr" title="Utilisation de X11 Contents">';
 
 
@@ -17,11 +17,11 @@ include_once "header.fr.inc";
 
 <h2><a name="def-macosx">1.2 Qu'est-ce que Mac OS X ?</a></h2>
 
-<p><a href="http://www.apple.com/macosx/">Mac OS X</a> est un système opératoire conçu par <a href="http://www.apple.com/">Apple Computer</a>. Comme ses prédécesseurs NeXTStep et OpenStep, il est basé sur BSD et fait donc partie de la famille des systèmes opératoires Unix. Néanmoins, il possède un système d'affichage graphique propriétaire. Le moteur graphique est appelé Quartz et l'interface Aqua, bien que les deux noms soient souvent utilisés de manière interchangeable.</p>
+<p><a href="http://www.apple.com/macosx/">Mac OS X</a> est un système opératoire conçu par <a href="http://www.apple.com/">Apple</a>. Comme ses prédécesseurs NeXTStep et OpenStep, il est basé sur BSD et fait donc partie de la famille des systèmes opératoires Unix. Néanmoins, il possède un système d'affichage graphique propriétaire. Le moteur graphique est appelé Quartz et l'interface Aqua, bien que les deux noms soient souvent utilisés de manière interchangeable.</p>
 
 <h2><a name="def-darwin">1.3 Qu'est-ce que Darwin ?</a></h2>
 
-<p><a href="http://OpenDarwin.org/">Darwin</a> est, à la base, une version réduite de Mac OS X, disponible gratuitement avec son code source. Il ne contient ni Quartz, ni Aqua, ni aucune des technologies qui leur sont rattachées. Par défaut, il ne fournit qu'une console texte.</p>
+<p><a href="http://opendarwin.org/">Darwin</a> est, à la base, une version réduite de Mac OS X, disponible gratuitement avec son code source. Il ne contient ni Quartz, ni Aqua, ni aucune des technologies qui leur sont rattachées. Par défaut, il ne fournit qu'une console texte.</p>
 
 <h2><a name="def-xfree86">1.4 Qu'est-ce que XFree86 ?</a></h2>
 

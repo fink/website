@@ -1,7 +1,7 @@
 <?
 $title = "Ejecución de X11 - Intro";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2007/08/15 21:57:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="history.php?phpLang=es" title="Historia"><link rel="prev" href="index.php?phpLang=es" title="Ejecución de X11 Contents">';
 
 
@@ -30,8 +30,8 @@ Los entornos de escritorio CDE, KDE y GNOME se ejecutan sobre él.
     <h2><a name="def-macosx">1.2 ¿Qué es Mac OS X?</a></h2>
       
       <p>
-        <a href="http://www.apple.com/macosx/">Mac OS X</a> es un sistema operativo fabricado por <a href="http://www.apple.com/">Apple
-Computer</a>. Al igual que sus predecesores NeXTStep y OpenStep, está basado en BSD y por lo tanto es un miembro de la familia de sistemas operativos Unix.
+        <a href="http://www.apple.com/macosx/">Mac OS X</a> es un sistema operativo fabricado por <a href="http://www.apple.com/">Apple</a>.
+Al igual que sus predecesores NeXTStep y OpenStep, está basado en BSD y por lo tanto es un miembro de la familia de sistemas operativos Unix.
 Sin embargo, viene con un sistema de visualización de gráficos propietario
 llamado Quartz y cuya apariencia es denominada Aqua, aunque los dos nombres se 
 intercambian con frecuencia.
@@ -40,7 +40,7 @@ intercambian con frecuencia.
     <h2><a name="def-darwin">1.3 ¿Qué es Darwin?</a></h2>
       
       <p>
-        <a href="http://OpenDarwin.org/">Darwin</a> es básicamente  una  versión reducida de  Mac OS X disponible libre de cargos y con su código fuente 
+        <a href="http://opendarwin.org/">Darwin</a> es básicamente  una  versión reducida de  Mac OS X disponible libre de cargos y con su código fuente 
 completo. No contiene ni Quartz, ni Aqua ni ninguna otra tecnología relacionada 
 y, por defecto, sólamente ofrece una consola de texto.</p>
     

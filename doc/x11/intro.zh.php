@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 介绍";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:57';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2007/08/15 21:57:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="history.php?phpLang=zh" title="历史"><link rel="prev" href="index.php?phpLang=zh" title="运行 X11 Contents">';
 
 
@@ -34,7 +34,7 @@ Linux，各种 BSD 版本和多数的商用 Unix 都采用它。
     <h2><a name="def-darwin">1.3 什么是 Darwin？</a></h2>
       
       <p>
-        <a href="http://OpenDarwin.org/">Darwin</a> 基本上是 Mac OS X 的免费和公开源码的精简版本。
+        <a href="http://opendarwin.org/">Darwin</a> 基本上是 Mac OS X 的免费和公开源码的精简版本。
 它不包括 Quartz，Aqua，或其它相关技术。
 默认情况下，它只包括一个文字终端。
 </p>

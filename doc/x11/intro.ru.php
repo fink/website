@@ -1,7 +1,7 @@
 <?
 $title = "Использование X11 - Введение";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:57';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2007/08/15 21:57:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Использование X11 Contents"><link rel="next" href="history.php?phpLang=ru" title="История создания продукта"><link rel="prev" href="index.php?phpLang=ru" title="Использование X11 Contents">';
 
 
@@ -27,7 +27,7 @@ include_once "header.ru.inc";
             
             <p>
                 <a href="http://www.apple.com/macosx/">Mac OS X</a> - операционная система,
-                производителем которой является <a href="http://www.apple.com/">Apple Computer</a>. Как и
+                производителем которой является <a href="http://www.apple.com/">Apple</a>. Как и
                 предшествующие NeXTStep и OpenStep, она основана на BSD и таким образом
                 входит в семейство операционных систем Unix. Но при этом она выпускается с
                 системой графического отображения, являющейся частной собственностью. Графический процессор
@@ -37,7 +37,7 @@ include_once "header.ru.inc";
         <h2><a name="def-darwin">1.3 Что такое Darwin?</a></h2>
             
             <p>
-                <a href="http://OpenDarwin.org/">Darwin</a> по сути является
+                <a href="http://opendarwin.org/">Darwin</a> по сути является
                 упрощенной версией Mac OS X, которую можно получить бесплатно
                 с полным исходным кодом. Она не содержит Quartz,
                 Aqua и прочую сопутствующую технологию. По умолчанию она предлагает только

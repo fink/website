@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:56';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2007/08/15 21:57:04';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
 
@@ -31,8 +31,7 @@ Desktop environments like CDE, KDE and GNOME run on top of it.
       
       <p>
         <a href="http://www.apple.com/macosx/">Mac OS X</a> is an
-operating system produced by <a href="http://www.apple.com/">Apple
-Computer</a>.
+operating system produced by <a href="http://www.apple.com/">Apple</a>.
 Like its predecessors NeXTStep and OpenStep, it is based on BSD and is
 thus a member of the Unix OS family.
 However, it comes with a proprietary graphics display system.
@@ -43,7 +42,7 @@ Aqua, although the two names are often used intercheangably.
     <h2><a name="def-darwin">1.3 What is Darwin?</a></h2>
       
       <p>
-        <a href="http://OpenDarwin.org/">Darwin</a> is
+        <a href="http://opendarwin.org/">Darwin</a> is
 basically a stripped-down version of Mac OS X that is available free
 of charge and with full source code.
 It does not contain Quartz, Aqua, or any other related technology.

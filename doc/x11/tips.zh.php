@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 提示";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:57';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2007/08/15 21:57:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="prev" href="trouble.php?phpLang=zh" title="XFree86 故障排除">';
 
 

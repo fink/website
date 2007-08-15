@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - イントロ";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/23 05:16:58';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2007/08/15 21:57:05';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=ja" title="歴史"><link rel="prev" href="index.php?phpLang=ja" title="Running X11 Contents">';
 
 
@@ -28,9 +28,9 @@ Linux 、 BSD 、商用 Unix などで使われています。
 
 <p>
 <a href="http://www.apple.co.jp/macosx/">Mac OS X</a> は 
-<a href="http://www.apple.co.jp">Apple Computer</a> 
+<a href="http://www.apple.co.jp">Apple</a> 
 によって作られたオペレーティングシステムです。
-この前身である NeXTStep や OpenStel のように、これは BSD をベースにしている Unix OS ファミリーの一員です。
+この前身である NeXTStep や OpenStep のように、これは BSD をベースにしている Unix OS ファミリーの一員です。
 しかし、 Mac OS X は独自の画像表示システムを有しています。
 この画像エンジンは Quartz と呼ばれていて、そのルックアンドフィールは Aqua と呼ばれていますが、両者は同じ意味で使われることもあります。。
 </p>
@@ -38,7 +38,7 @@ Linux 、 BSD 、商用 Unix などで使われています。
 <h2><a name="def-darwin">1.3 Darwin とは何ですか?</a></h2>
 
 <p>
-<a href="http://OpenDarwin.org/">Darwin</a> は
+<a href="http://opendarwin.org/">Darwin</a> は
 Mac OS X から余計な部分を落とした無料版で、完全なソースコードが入手できます。
 これには Quartz 、 Aqua などや関連テクノロジーはついてきません。
 デフォルトではテキストコンソールのみです。
