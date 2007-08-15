@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/07/22 20:15:15 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2007/08/15 21:40:42 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -34,7 +34,7 @@ Fink использует такие инструменты<a href="http://www.d
 include dirname(__FILE__) . "/news/news.inc";
 ?>
  
-<div align="right"><a href="<? print $root; ?>news\index.php?phpLang=en">Предыдущие новости ...</a> </div>
+<div align="right"><a href="<? print $root; ?>news/index.php?phpLang=en">Предыдущие новости ...</a> </div>
  
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
  
@@ -76,9 +76,9 @@ href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Отчет
  href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Предоставление нового пакета Fink (неосновные разработчики)</a></li>
  <li><a
  href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Предоставление патча для fink (программа)</a></li>
-<li><a href="lists\index.php">Списки рассылки</a> </li>
+<li><a href="lists/index.php">Списки рассылки</a> </li>
 <li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">онлайновый просмотр</a>,
-<a href="doc\cvsaccess\index.php">инструкции доступа</a>) </li>
+<a href="doc/cvsaccess/index.php">инструкции доступа</a>) </li>
 </ul>
 <p>
 Просим иметь в виду, что для использования некоторых из этих ресурсов (н-р, отчет об ошибках или запрос о
