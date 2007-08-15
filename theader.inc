@@ -1,5 +1,5 @@
 <?
-/* $Id: theader.inc,v 1.8 2005/05/05 21:09:37 fingolfin Exp $ */
+/* $Id: theader.inc,v 1.9 2007/08/15 18:28:30 dmacks Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -74,7 +74,7 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
 <head>
 <title>Fink - <? print $title ?></title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link rel="stylesheet" href="<? print $root ?>fink.css">
+<link rel="stylesheet" type="text/css" href="<? print $root ?>fink.css">
 <?
 if ($metatags)
   print $metatags;

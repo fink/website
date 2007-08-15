@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.107 2007/06/20 18:25:38 dmacks Exp $ */
+/* $Id: header.inc,v 1.108 2007/08/15 18:28:30 dmacks Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -307,7 +307,7 @@ function insert_sub ($navbox, $active_page) {
 ?>
 	<link rel="alternate" title="Fink News RDF" href="<? print $rdf_file ?>" type="application/rss+xml">
 	<link rev="made" href="mailto:fink-devel@lists.sourceforge.net">
-	<link rel="stylesheet" href="<? print $root ?>fink.css">
+	<link rel="stylesheet" type="text/css" href="<? print $root ?>fink.css">
 	<? if ($metatags) echo $metatags; ?>
 	<link rel="start" href="<? print $root ?>index.php">
 	<link rel="copyright" href="<? print $root ?>legal.php">
