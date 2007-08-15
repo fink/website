@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2005/08/04 14:48:53 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2007/08/15 21:19:34 $';
 
 include "header.inc";
 ?>
@@ -46,8 +46,8 @@ Check the version of Fink you have by running
 <li>Now install an appropriate Developer Tools (XCode) version.</li>
 <li>Run "<tt>/sw/lib/fink/postinstall.pl</tt>" in a terminal--this will redirect Fink to the correct distribution for your OS version.</li>
 <li>Run "<tt>fink scanpackages</tt>" in the terminal (Source->scanpackages for Fink Commander users).</li>
-<li>Run "<tt>sudo apt-get update</tt>" in the terminal (Binary->update).</li>
-<p>(The above two commands get rid of binary-distribution related errors.)</p>
+<li>Run "<tt>sudo apt-get update</tt>" in the terminal (Binary->update).<br>
+(The above two commands get rid of binary-distribution related errors.)</li>
 <li>Run "<tt>fink selfupdate</tt>" in the terminal (Source->selfupdate).</li>
 <li>Run "<tt>fink update-all</tt>" in the terminal window (Source->update-all).  <p>This is necessary to ensure that all of your packages will actually run on your new OS version.  You may need to repeat this command to get all of the new packages built.</p></li></ol>
 
