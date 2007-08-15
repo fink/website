@@ -1,7 +1,7 @@
 <?
 $title = "リンク集";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2007/05/08 03:06:28 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2007/08/15 21:18:22 $';
 
 include "header.inc";
 ?>
@@ -80,8 +80,8 @@ XFree86 を Darwin や Mac OS X で使う。</li>
 Mac 用の GIMP、GTK、X のサイト。</li>
 </ul>
 
-<ul>
 <p>日本語情報</p>
+<ul>
 <li><a href="http://fink.sodan.ecc.u-tokyo.ac.jp/index.ja.html" target="_blank">東大 Fink チーム</a> -
 東大 Fink チームのサイト。</li>
 <li><a href="http://pc11.2ch.net/test/read.cgi/mac/1166780804/l50" target="_blank">Fink 使ってるの洩れだけなのかっ！？【rev.2】</a> -
