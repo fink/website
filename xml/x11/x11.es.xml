@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Ejecutando X11 en Darwin y Mac OS X</title>
   <shorttitle>Ejecución de X11</shorttitle>
-  <cvsid>$Id: x11.es.xml,v 1.4 2007/06/14 08:09:57 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: x11.es.xml,v 1.5 2007/08/15 21:57:04 dmacks Exp $</cvsid>
   <preface>
     <p>
 Este documento trata sobre la ejecución de  X11 / XFree86 / Xtools en los sistemas 
@@ -46,7 +46,7 @@ intercambian con frecuencia.
     <section name="def-darwin">
       <title>¿Qué es Darwin?</title>
       <p>
-        <link url="http://OpenDarwin.org/">Darwin</link> es básicamente  una  versión reducida de  Mac OS X disponible libre de cargos y con su código fuente 
+        <link url="http://opendarwin.org/">Darwin</link> es básicamente  una  versión reducida de  Mac OS X disponible libre de cargos y con su código fuente 
 completo. No contiene ni Quartz, ni Aqua ni ninguna otra tecnología relacionada 
 y, por defecto, sólamente ofrece una consola de texto.</p>
     </section>

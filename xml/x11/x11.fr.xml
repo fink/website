@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Utilisation de X11 sous Darwin et Mac OS X</title>
 <shorttitle>Utilisation de X11</shorttitle>
-<cvsid>$Id: x11.fr.xml,v 1.25 2007/06/14 08:09:57 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.fr.xml,v 1.26 2007/08/15 21:57:04 dmacks Exp $</cvsid>
 <preface>
 <p>Ce document traite de l'utilisation de X11, XFree86, et Xtools sur les systèmes Mac OS X et Darwin d'Apple. Il commence par une introduction et l'historique du développement, puis décrit la situation actuelle et les nombreuses options d'utilisation de X11 avec ou sans Fink.</p>
 </preface>
@@ -21,7 +21,7 @@
 </section>
 <section name="def-darwin">
 <title>Qu'est-ce que Darwin ?</title>
-<p><link url="http://OpenDarwin.org/">Darwin</link> est, à la base, une version réduite de Mac OS X, disponible gratuitement avec son code source. Il ne contient ni Quartz, ni Aqua, ni aucune des technologies qui leur sont rattachées. Par défaut, il ne fournit qu'une console texte.</p>
+<p><link url="http://opendarwin.org/">Darwin</link> est, à la base, une version réduite de Mac OS X, disponible gratuitement avec son code source. Il ne contient ni Quartz, ni Aqua, ni aucune des technologies qui leur sont rattachées. Par défaut, il ne fournit qu'une console texte.</p>
 </section>
 <section name="def-xfree86">
 <title>Qu'est-ce que XFree86 ?</title>

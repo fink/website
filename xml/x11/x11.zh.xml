@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>在 Darwin 和 Mac OS X 上运行 X11</title>
   <shorttitle>运行 X11</shorttitle>
-  <cvsid>$Id: x11.zh.xml,v 1.9 2007/02/23 22:04:57 rangerrick Exp $</cvsid>
+  <cvsid>$Id: x11.zh.xml,v 1.10 2007/08/15 21:57:05 dmacks Exp $</cvsid>
   <preface>
     <p>
 本文档是关于如何在苹果的 Mac OS X 和 Darwin 系统上运行 X11 / XFree86 / Xtools。它包括一些介绍和开发历史，然后描述当前的状况，在通过或不通过 Fink 的情况下使用 X11 的许多选项。
@@ -36,7 +36,7 @@ Linux，各种 BSD 版本和多数的商用 Unix 都采用它。
     <section name="def-darwin" >
       <title>什么是 Darwin？</title>
       <p>
-        <link url="http://OpenDarwin.org/" >Darwin</link> 基本上是 Mac OS X 的免费和公开源码的精简版本。
+        <link url="http://opendarwin.org/" >Darwin</link> 基本上是 Mac OS X 的免费和公开源码的精简版本。
 它不包括 Quartz，Aqua，或其它相关技术。
 默认情况下，它只包括一个文字终端。
 </p>

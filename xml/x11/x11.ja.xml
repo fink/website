@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.14 2007/06/14 08:09:57 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.15 2007/08/15 21:57:05 dmacks Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -42,7 +42,7 @@ Linux 、 BSD 、商用 Unix などで使われています。
 <section name="def-darwin" >
 <title>Darwin とは何ですか?</title>
 <p>
-<link url="http://OpenDarwin.org/" >Darwin</link> は
+<link url="http://opendarwin.org/" >Darwin</link> は
 Mac OS X から余計な部分を落とした無料版で、完全なソースコードが入手できます。
 これには Quartz 、 Aqua などや関連テクノロジーはついてきません。
 デフォルトではテキストコンソールのみです。

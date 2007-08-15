@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.en.xml,v 1.21 2007/06/14 08:09:57 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: x11.en.xml,v 1.22 2007/08/15 21:57:04 dmacks Exp $</cvsid>
   <preface>
     <p>
 This document is about running X11 / XFree86 / Xtools on Apple's Mac
@@ -48,7 +48,7 @@ Aqua, although the two names are often used intercheangably.
     <section name="def-darwin">
       <title>What is Darwin?</title>
       <p>
-        <link url="http://OpenDarwin.org/">Darwin</link> is
+        <link url="http://opendarwin.org/">Darwin</link> is
 basically a stripped-down version of Mac OS X that is available free
 of charge and with full source code.
 It does not contain Quartz, Aqua, or any other related technology.
