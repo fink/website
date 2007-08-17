@@ -218,3 +218,9 @@ div#footer {
 	border-color: #fff #fff #666 #eee ;
 	text-align: center ;
 }
+
+div#avancedsearch {
+	border: 1px #CCC solid;
+	padding: 10px;
+	background-color: #F2F2F2;
+}
