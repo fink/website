@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.108 2007/08/15 18:28:30 dmacks Exp $ */
+/* $Id: header.inc,v 1.109 2007/08/17 20:08:05 chris01 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -311,7 +311,7 @@ function insert_sub ($navbox, $active_page) {
 	<? if ($metatags) echo $metatags; ?>
 	<link rel="start" href="<? print $root ?>index.php">
 	<link rel="copyright" href="<? print $root ?>legal.php">
-    <? if ($i18n_enable_form) echo '<script type="text/javascript" src="' . $root . 'fink.i18n.js"></script>('; ?>
+    <? if ($i18n_enable_form) echo '<script type="text/javascript" src="' . $root . 'fink.i18n.js"></script>'; ?>
 
 </head>
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333">
