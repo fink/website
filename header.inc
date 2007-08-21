@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.110 2007/08/17 20:33:11 chris01 Exp $ */
+/* $Id: header.inc,v 1.111 2007/08/21 21:15:44 chris01 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -315,7 +315,7 @@ function insert_sub ($navbox, $active_page) {
 	<? if ($pdb_scripts) echo '<script type="text/javascript" src="' . $root . 'fink.pdb.js"></script>'; ?>
 
 </head>
-<body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333"<? if ($pdb_scripts && !$pdb_has_adv_searchoptions) echo ' onload="switchMenu(\'avancedsearch\', \'triangle\')"' ?>>
+<body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333"<? if ($pdb_scripts && !$pdb_has_adv_searchoptions) echo ' onload="switchMenu(\'advancedsearch\', \'triangle\')"' ?>>
 
 <? /* header and sourceforge logo */ ?>
 <div id="header-left">
