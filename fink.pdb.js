@@ -30,3 +30,13 @@ function switchMenu(obj, img) {
   }
 }
 
+function resetForm() {
+  for (var i=0; i<document.pdb_browser.elements.length; i++) {
+    var cobj = document.pdb_browser.elements[i];
+    if (cobj.type == 'text' || cobj.type == 'select-one')
+      cobj.value = '';
+    else if (cobj.type == 'checkbox')
+      cobj.checked = false;
+  }
+}
+
