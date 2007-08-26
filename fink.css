@@ -26,6 +26,41 @@ table.pkgversion {
 	padding: 0 ;
 }
 
+table.pdb
+{
+	width: 100%;
+	text-align: left;
+	background-color: #fafafa;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border-bottom: 1px #999 solid;
+}
+
+tr.pdbHeading
+{
+	background-color: #FFF;
+	border-top: 2px #999 solid;
+	border-bottom: 1px #999 solid;
+	padding: 4px 0px 4px 32px;
+}
+
+.package
+{
+	border-bottom: 1px #CCC dotted;
+	padding: 4px 0px 4px 32px;
+}
+.package:hover {background: #ffe6b3}
+.package a:link {text-decoration: none}
+.package a:visited {text-decoration: none}
+.package a:active {text-decoration: none}
+.package a:hover {text-decoration: underline}
+
+td.packageName
+{
+	clear: both;
+	width: auto;
+}
+
 p,ul,ol,li,dl,dt,dd,td,th { font: 11pt "Trebuchet MS",sans-serif; 
 	color: black ; 
 }
