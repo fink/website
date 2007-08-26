@@ -259,3 +259,8 @@ div#advancedsearch {
 	padding: 10px;
 	background-color: #F2F2F2;
 }
+
+.expand_adv_options a:link {text-decoration: none}
+.expand_adv_options a:visited {text-decoration: none}
+.expand_adv_options a:active {text-decoration: none}
+.expand_adv_options a:hover {text-decoration: underline}
