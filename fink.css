@@ -49,7 +49,7 @@ tr.pdbHeading
 	border-bottom: 1px #CCC dotted;
 	padding: 4px 0px 4px 32px;
 }
-.package:hover {background: #ffe6b3}
+.package:hover { background-color: #EEE; }
 .package a:link {text-decoration: none}
 .package a:visited {text-decoration: none}
 .package a:active {text-decoration: none}
