@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/06/21 16:20:04 $';
+$cvs_date = '$Date: 2007/09/10 18:56:34 $';
 
 include "header.inc";
 ?>
@@ -23,17 +23,17 @@ That is because those packages are in a section of the archive called
 "unstable" because they are not well-tested.
 You can help improve the situation by testing those packages and
 reporting both success and failure to the package maintainer.
-The <a href="testing.php">Packages in Testing</a> page lists all
+The <a href="browse.php?tree=testing&nochildren=on">Packages in Testing</a> page lists all
 packages that still have to pass testing.
 In order to test the packages, you need to configure Fink to <a href="http://fink.sourceforge.net/faq/usage-fink.php#unstable">use
 unstable</a> and then download the latest descriptions by running <i>fink selfupdate-rsync</i> 
 (or <i>fink selfupdate-cvs</i> if you can't use rsync for some reason).
 </p>
 <p>Help is also needed to find new maintainers for the <a
-href="nomaintainer.php">packages without maintainers</a>.</p>
+href="browse.php?maintainer=None&nochildren=on">packages without maintainers</a>.</p>
 
 <?
-$q = "SELECT COUNT(name) FROM package WHERE latest=1";
+$q = "SELECT COUNT(DISTINCT name) FROM package";
 $rs = mysql_query($q, $dbh);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
@@ -41,6 +41,16 @@ if (!$rs) {
 } else {
   $pkgcount = mysql_fetch_array($rs);
   $pkgcount = $pkgcount[0];
+}
+
+$q = "SELECT MAX(UNIX_TIMESTAMP(infofilechanged)) FROM package";
+$rs = mysql_query($q, $dbh);
+if (!$rs) {
+  print '<p><b>error during query:</b> '.mysql_error().'</p>';
+  $dyndate = '';
+} else {
+  $dyndate = mysql_fetch_array($rs);
+  $dyndate = $dyndate[0];
 }
 
 $q = "SELECT * FROM sections ORDER BY name ASC";
@@ -57,21 +67,21 @@ The database was last updated
 <? print $pkgcount ?> packages in <? print $seccount ?> sections.
 </p>
 
-<form action="search.php" method="GET">
+<form action="browse.php" method="GET">
 <p>Search for package: <input type="text" name="summary" size="15" value="">
 <input type="submit" value="Search">
 </p>
 </form>
 
 <p>
-You can browse a <a href="list.php">complete list of packages</a>,
+You can browse a <a href="browse.php">complete list of packages</a>,
 or you can browse by archive section:
 </p>
 
 <ul>
 <?
   while ($row = mysql_fetch_array($rs)) {
-    print '<li><a href="section.php/'.$row[name].'">'.$row[name].'</a>'.
+    print '<li><a href="browse.php?section='.$row[name].'">'.$row[name].'</a>'.
       ($row[description] ? (' - '.$row[description]) : '').
       '</li>'."\n";
   }
