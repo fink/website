@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.14 2007/09/10 18:56:34 rangerrick Exp $ */
+/* $Id: header.inc,v 1.15 2007/09/10 19:37:21 rangerrick Exp $ */
 
 $linkroot = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -47,6 +47,7 @@ $navbox = array(
   $localroot."pdb/search.php", "Search",
   $localroot."pdb/testing.php", "Help needed"
 );
+include "timestamp.inc";
 
 $fsroot = "../";
 if (substr($root,0,1) == "-") {
@@ -61,29 +62,4 @@ include $fsroot."header.inc";
 include $fsroot."db.inc.php";
 $dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
 mysql_select_db($db_name, $dbh);
-
-
-// Read url parameters. We use basic HTML encoding for now, and 
-// cut off very long values, to make unforseen SQL injection hacks more difficult.
-function get_safe_param($param_name, $valid_regexp='.*', $max_length=35) {
-  $param_name = $_GET[$param_name];
-  if ($param_name) $has_param_name = true;
-  if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name)) {
-    $param_name = '';
-  } else {
-    $param_name = mysql_real_escape_string(htmlspecialchars($param_name));
-    if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name))
-      $param_name = '';
-  }
-  if ($has_param_name && !$param_name)
-    $invalid_param = true;
-  else
-    $invalid_param = false;
-  return array (
-    $param_name,
-    $invalid_param,
-  );
-}
- 
-
 ?>

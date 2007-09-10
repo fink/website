@@ -1,17 +1,55 @@
-<?php
-$title = "Package Database - Obsolete page";
+<?
+$title = "Package Database - Maintainer ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/10 18:56:34 $';
+$cvs_date = '$Date: 2007/09/10 19:37:21 $';
 
-$server = $_SERVER['SERVER_NAME'];
-$location = "pdb/browse.php";
+include "header.inc";
+?>
 
-if (isset($_GET['maintainer'])) {
-	$maintainer = htmlspecialchars($_GET['maintainer']);
-	$location .= "?maintainer=" . $maintainer;
+<?
+if (!isset($_GET['maintainer'])) {
+?>
+<p><b>No maintainer specified.</b></p>
+<?
+} else { /* if (no maintainer) */
+$maintainer = htmlspecialchars($_GET['maintainer']);
+?>
+
+<h1>Packages maintained by <? print $maintainer ?></h1>
+
+<?
+$q = "SELECT name,descshort FROM package WHERE maintainer LIKE '%$maintainer%'".
+	 " AND !(name REGEXP '.*-(dev|shlibs|bin|common|doc)$') ".
+     "AND latest=1 ORDER BY name ASC";
+$rs = mysql_query($q, $dbh);
+if (!$rs) {
+  print '<p><b>error during query:</b> '.mysql_error().'</p>';
+} else {
+  $count = mysql_num_rows($rs);
+
+?>
+
+<p>Found <? print $count ?> packages maintained by <? print $maintainer ?>:</p>
+
+<ul>
+<?
+  while ($row = mysql_fetch_array($rs)) {
+    $desc = " - ".$row[descshort];
+    if (substr($desc,3,1) == "[" || substr($desc,3,1) == "<")
+      $desc = "";
+    print '<li><a href="'.$pdbroot.'package.php/'.$row[name].'">'.$row[name].'</a>'.$desc."</li>\n";
+  }
+?>
+</ul>
+<?
 }
 
-// This page is obsolete. We redirect to browse.php
-header("Location: http://" . $server . "/" . $location);
+} /* if (no maintainer) */
+?>
 
+<!-- <p><a href="<? print $pdbroot ?>sections.php">Back to section list</a></p> -->
+
+
+<?
+include "footer.inc";
 ?>
