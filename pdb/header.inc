@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.16 2007/09/27 19:51:08 rangerrick Exp $ */
+/* $Id: header.inc,v 1.17 2007/09/27 23:11:22 rangerrick Exp $ */
 
 $linkroot = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -13,8 +13,13 @@ if ($server == "fink.sourceforge.net") {
   exit();
 }
 
-header("Expires: " . gmdate("D, d M Y H:i:s", time() + 3600) . " GMT");
-header("Cache-Control: max-age=3600, s-maxage=900");
+if (!$cache_timeout) {
+	// 1 hour
+	$cache_timeout = 3600;
+}
+
+header("Expires: " . gmdate("D, d M Y H:i:s", time() + $cache_timeout) . " GMT");
+header("Cache-Control: max-age=" . $cache_timeout . ", s-maxage=" . ($cache_timeout / 2));
 
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];

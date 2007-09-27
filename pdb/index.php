@@ -1,7 +1,10 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 23:03:14 $';
+$cvs_date = '$Date: 2007/09/27 23:11:22 $';
+
+// 2 hours, this page does not change much
+$cache_timeout = 7200;
 
 include "header.inc";
 include "memcache.inc";
