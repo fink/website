@@ -1,7 +1,50 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/10 19:37:21 $';
+$cvs_date = '$Date: 2007/09/27 19:51:08 $';
+
+
+
+function addGETParam(&$params, $param_name) {
+  $value = stripslashes($_GET[$param_name]);
+  if ($value)
+    $params[$param_name] = urlencode($value);
+}
+
+
+if (isset($_GET['submit']) && $_GET['submit'] == 'Search') {
+  // Re-direct to clean out empty params
+  $getparams = array();
+  $value = $_GET['nomaintainer'];
+  if ($value == 'on')
+    $_GET['maintainer'] = 'None';
+  addGETParam($getparams, 'maintainer');
+  addGETParam($getparams, 'name');
+  addGETParam($getparams, 'summary');
+  addGETParam($getparams, 'nolist');
+  addGETParam($getparams, 'dist');
+  addGETParam($getparams, 'tree');
+  addGETParam($getparams, 'section');
+  addGETParam($getparams, 'nochildren');
+  addGETParam($getparams, 'noshlibsdev');
+  addGETParam($getparams, 'sort');
+  addGETParam($getparams, 'showall');
+  $redirect_url = '?';
+  foreach ($getparams as $key => $value) {
+    $redirect_url .= "$key=$value&";
+  }
+  $redirect_url = rtrim($redirect_url, '&?');
+  header("Location: browse.php$redirect_url");
+}
+
+// are there any advanced search options? If no, collapse advanced search div
+if ($_GET['maintainer'] || $_GET['name'] || $_GET['dist'] || $_GET['tree'] || $_GET['section'] || $_GET['nochildren'] || $_GET['noshlibsdev'] || $_GET['sort'])
+  $pdb_has_adv_searchoptions = true;
+else
+  $pdb_has_adv_searchoptions = false;
+
+// load javascript for pdb in header.inc
+$pdb_scripts = true;
 
 include "header.inc";
 ?>
@@ -9,7 +52,13 @@ include "header.inc";
 <h1>Browse packages</h1>
 
 <p>
-TODO: Write some text that fits here
+On this page you can browse through all packages in the Fink package database,
+optionally and at your direction narrowed down by various search parameters, set below.
+</p>
+<p>
+For each of several distributions (10.2, 10.3, 10.4), this database includes
+information about all packages found in the respective latest stable and unstable trees.
+Furthermore, all packages from the most recent binary distributions are covered.
 </p>
 
 <?
@@ -29,16 +78,22 @@ value, which is the first in the list (usually "any"):
 $maintainer  any, name
 $dist  any, dist name
 $section any, sectio name
-$tree  any, stable, testing (=stable version outdated), unstable
-$binary  any, true, false
+$tree  any, stable, testing (=stable version outdated), unstable, bindist
 $nochildren  any, true, false
 */
 
+/**
+ * Simple function to replicate PHP 5 behaviour
+ */
+function microtime_float()
+{
+  list($usec, $sec) = explode(" ", microtime());
+  return ((float)$usec + (float)$sec);
+}
 
-// This function generates a form popup, with the given label,
+// This function generates a form popup, with the given
 // variable name, current value, and list of possible values.
-function genFormSelect($label, $var_name, $cur_val, $values) {
-	echo $label;
+function genFormSelect($var_name, $cur_val, $values, $description = '') {
 	echo "<select NAME='$var_name'>\n";
 	foreach ($values as $key => $val) {
 		echo "  <option value='$key' ";
@@ -46,27 +101,46 @@ function genFormSelect($label, $var_name, $cur_val, $values) {
 		echo ">$val</option>\n";
 	}
 	echo "</select>\n";
+	echo $description ? " $description" : '';
 	echo "<br>";
+}
+
+list($showall, $inv_p) = get_safe_param('showall', '/^on$/');
+
+// Distribution values
+$dist_values = array();
+$q = "SELECT * FROM `distribution` WHERE active='1' ";
+if (!$showall)
+  $q .= "AND visible='1' ";
+$q .= "ORDER BY priority DESC";
+$qdist = mysql_query($q, $dbh);
+if (!$qdist) {
+  die('<p class="attention"><b>Error during db query (distribution):</b> '.mysql_error().'</p>');
+}
+$dist_values[''] = 'Any';
+while ($dist = mysql_fetch_array($qdist)) {
+  $dist_values[$dist['dist_id']] = $dist['description'];
 }
 
 // Allowed values for certain fields
 $tree_values = array(
-		"any" => "any",
-		"stable" => "stable",
-		"testing" => "testing",
-		"unstable" => "unstable"
+		"" => "Any",
+		"unstable" => "Unstable",
+		"stable" => "Stable",
+		"bindist" => "Binary Distribution",
+		"testing" => "Packages that need testing"
 	);
 $sort_values = array(
-	"ASC" => "Ascending",
+	"" => "Ascending",
 	"DESC" => "Descending"
 	);
 
 // Load legal sections
-$section_values = array("any" => "Any");
+$section_values = array('' => 'Any');
 $query = "SELECT * FROM sections ORDER BY name ASC";
 $rs = mysql_query($query, $dbh);
 if (!$rs) {
-	print '<p><b>error during query:</b> '.mysql_error().'</p>';
+	print '<p class="attention"><b>Error during db query (sections):</b> '.mysql_error().'</p>';
 } else {
 	$seccount = mysql_num_rows($rs);
 	while ($row = mysql_fetch_array($rs)) {
@@ -74,69 +148,103 @@ if (!$rs) {
 	}
 }
 
-// Read the maintainer field. We use basic HTML encoding for now, and cut off
-// very long values, to make unforseen SQL injection hacks more difficult.
-$maintainer = $_GET['maintainer'];
-if (strlen($maintainer) > 15 || !preg_match("/^[a-zA-Z0-9@% ]+$/", $maintainer)) {
-	$maintainer = "";
-} else {
-	$maintainer = htmlspecialchars($maintainer);
-	if (strlen($maintainer) > 15 || !preg_match("/^[a-zA-Z0-9@ ]+$/", $maintainer))
-		$maintainer = "";
-}
+// Read url parameters
+// NOTE: You have to change the parameter list at the top of this file as well
+$invalid_param = false;
+list($maintainer, $inv_p) = get_safe_param('maintainer', '/^[a-zA-Z0-9\.@%\&\'\\\ ]+$/');
+$invalid_param = $invalid_param || $inv_p;
+list($name, $inv_p) = get_safe_param('name', '/^[a-z0-9+\-.%]+$/');
+$invalid_param = $invalid_param || $inv_p;
+list($summary, $inv_p) = get_safe_param('summary', '/.*/');
+$invalid_param = $invalid_param || $inv_p;
+list($nolist, $inv_p) = get_safe_param('nolist', '/on/');
+$invalid_param = $invalid_param || $inv_p;
 
 // Extract the distribution
-// TODO
-//$dist = htmlspecialchars($_GET['dist']);
+$dist = $_GET['dist'];
+if (!isset($dist_values[$tree]))
+	$tree = '';
 
 // Extract the tree
 $tree = $_GET['tree'];
 if (!isset($tree_values[$tree]))
-	$tree = "any";
+	$tree = '';
 
 // Extract the section
 $section = $_GET['section'];
 if (!isset($section_values[$section]))
-	$section = "any";
-
-// List only binary packages, only non-binary packages, or all?
-$binary = $_GET['binary'];
-if ($binary != "1" and $binary != "0") $binary = "";
+	$section = '';
 
 // 
 $nochildren = $_GET['nochildren'];
-if ($nochildren != "on") $nochildren = "off";
+if ($nochildren != "on") $nochildren = '';
 
 // 
 $noshlibsdev = $_GET['noshlibsdev'];
-if ($noshlibsdev != "on") $noshlibsdev = "off";
+if ($noshlibsdev != "on") $noshlibsdev = '';
 
 // Sort direction
 $sort = $_GET['sort'];
-if ($sort != "DESC") $sort = "ASC";
+if ($sort != "DESC") $sort = '';
 
 ?>
 
-<form action="browse.php" method="get" name="pdb_browser" id="pdb_browser">
-
-<script language="javascript" type="text/javascript">
-<!--
-function list_unmaintained_packages() {
-  document.pdb_browser.elements.maintainer.value="None"
-}
-//-->
-</script>
-
-Maintainer:
-<input name="maintainer" type="text" value="<?=$maintainer?>">
-(<a href="javascript:list_unmaintained_packages()">list packages without maintainer</a>)
+<form action="browse.php" method="get" name="pdb_browser" id="pdb_browser" onreset="resetForm();return false;">
+<?if ($showall) print '<input name="showall" type="hidden" value="on">';?>
+<br>
+Summary:
+<input name="summary" type="text" value="<?=stripslashes(stripslashes($summary))?>"> (Leave empty to list all)
 <br>
 
+<input name="submit" type="submit" value="Search">
+<input type="reset" value="Clear Form">
+<br>
+<?if ($invalid_param) print '<p class="attention">Invalid Input Parameters!</p>';?>
+<br>
+
+<span class="expand_adv_options">
+<a href="javascript:switchMenu('advancedsearch','triangle');" title="Advanced search options"><img src="<? echo $root ?>img/collapse.png" alt="" id="triangle" width="9" height="8">&nbsp;Advanced search options</a>
+</span>
+<br>
+
+<div id="advancedsearch">
+
+<table><tr>
+<td>Package Name:</td>
+<td><input name="name" type="text" value="<?=$name?>"> (Exact match. Use '%' as wildcard.)</td>
+</tr><tr>
+<td>Maintainer:</td>
+<td>
+<input name="maintainer" type="text" value="<?=stripslashes(stripslashes($maintainer))?>" onChange="set_list_nomaintainer(this.value)">
+<input name="nomaintainer" type="checkbox" onchange="list_unmaintained_packages(this.checked)"  <? if ($maintainer == "None") echo "checked";?>>
+No maintainer
+</td>
+</tr>
+
 <?
-genFormSelect("Tree: ", "tree", $tree, $tree_values);
-genFormSelect("Section: ", "section", $section, $section_values);
-genFormSelect("Sort: ", "sort", $sort, $sort_values);
+
+// We need to set a specific distribution if showing packages in "testing"
+// Select the one with the highest priority
+if ($tree == 'testing' && !$dist) {
+  reset($dist_values);
+  next($dist_values);
+  $dist = key($dist_values);
+}
 ?>
+
+<tr>
+<td>Distribution:</td>
+<td><?genFormSelect("dist", $dist, $dist_values);?></td>
+</tr><tr>
+<td>Tree:</td>
+<td><?genFormSelect("tree", $tree, $tree_values);?></td>
+</tr><tr>
+<td>Section:</td>
+<td><?genFormSelect("section", $section, $section_values);?></td>
+</tr><tr>
+<td>Sort order:</td>
+<td><?genFormSelect("sort", $sort, $sort_values);?></td>
+</tr></table>
 
 <input name="nochildren" type="checkbox" <? if ($nochildren == "on") echo "checked";?>>
 Exclude packages with parent (includes most "-dev", "-shlibs", ... splitoffs)
@@ -146,71 +254,194 @@ Exclude packages with parent (includes most "-dev", "-shlibs", ... splitoffs)
 Exclude -shlibs, -dev, -bin, -common, -doc packages 
 <br>
 
-<input name="submit" type="submit" value="Browse">
+</div>
+
 </form>
 
 
 <?
 
+if (!$nolist && !$invalid_param) {
+
 //
 // Build the big query string
 //
-$query = "SELECT name,version,revision,descshort FROM package WHERE ".
-     "latest=1 "; // TODO: Should we really always specify latest=1 ??? probably not
-
-if ($tree == "testing")	// TODO: Handle stable / unstable, too!
-	$query .= "AND needtest=1 ";
+$query = 
+     "SELECT p.name, p.version, p.revision, p.descshort, r.rel_id ";
+if ($dist && $tree) {
+  // show pkg of specifc dist/tree
+  if ($tree == 'testing') {
+    $query .= ", CONCAT(p.version, '-', p.revision) AS version_unstable, ".
+            "    CONCAT(sp.version, '-', sp.revision) AS version_stable ".
+            "FROM `release` r, `package` p ".
+            "LEFT OUTER JOIN (`package` sp, `release` sr)  ".
+            "     ON (p.name = sp.name ".
+            "         AND sp.rel_id = sr.rel_id ".
+            "         AND sr.dist_id = $dist ".
+            "         AND sr.type = 'stable') ".
+            "   WHERE p.rel_id = r.rel_id ".
+            "     AND r.dist_id = $dist ".
+            "     AND r.type = 'unstable' ";
+  } else {
+    $query .= "FROM `package` p, `release` r ".
+            "WHERE p.rel_id = r.rel_id".
+            "  AND r.dist_id = $dist ".
+            "  AND r.type = '$tree' ";
+  }
+} else if ($dist && !$tree) {
+  // show latest pkg of specifc dist or tree
+  $query .= "FROM `package` p, `release` r ".
+            "WHERE p.rel_id = r.rel_id ".
+            "  AND r.dist_id = $dist ".
+            "  AND r.priority = (SELECT MAX(rX.priority) ".
+            "    FROM `package` pX, ".
+            "         `release` rX ".
+            "    WHERE p.name = pX.name ".
+            "      AND pX.rel_id = rX.rel_id ".
+            "      AND rX.dist_id = $dist ".
+            "    GROUP BY pX.name) ";
+} else if (!$dist && $tree) {
+  // show everything in a given tree, regardless of the dist
+  // Note: This query is almost identical to the (!$dist && !$tree) one.
+  // The only additions are the '$tree' specifiers.
+  $query .= "FROM `package` p, `release` r, `distribution` d ".
+            "WHERE p.rel_id = r.rel_id ".
+            "  AND r.dist_id = d.dist_id ";
+  if (!$showall)
+    $query .= "AND d.visible='1' ";
+  $query .= "  AND r.type = '$tree' ".
+            "  AND d.priority = (SELECT MAX(dX.priority) ".
+            "    FROM `package` pX, ".
+            "         `release` rX, ".
+            "         `distribution` dX ".
+            "    WHERE p.name = pX.name ".
+            "      AND pX.rel_id = rX.rel_id ".
+            "      AND rX.dist_id = dX.dist_id ".
+            "      AND rX.type = '$tree' ";
+  if (!$showall)
+    $query .= "    AND dX.visible='1' ";
+  $query .= "    GROUP BY pX.name) ".
+            "  AND r.priority = (SELECT MAX(rX.priority) ".
+            "    FROM `package` pX, ".
+            "         `release` rX ".
+            "    WHERE p.name = pX.name ".
+            "      AND pX.rel_id = rX.rel_id ".
+            "      AND rX.dist_id = d.dist_id ".
+            "      AND rX.type = '$tree' ".
+            "    GROUP BY pX.name) ";
+} else if (!$dist && !$tree) {
+  // show latest if no specifc dist/tree
+  $query .= "FROM `package` p, `release` r, `distribution` d ".
+            "WHERE p.rel_id = r.rel_id ".
+            "  AND r.dist_id = d.dist_id ";
+  if (!$showall)
+    $query .= "AND d.visible='1' ";
+  $query .= "  AND d.priority = (SELECT MAX(dX.priority) ".
+            "    FROM `package` pX, ".
+            "         `release` rX, ".
+            "         `distribution` dX ".
+            "    WHERE p.name = pX.name ".
+            "      AND pX.rel_id = rX.rel_id ".
+            "      AND rX.dist_id = dX.dist_id ";
+  if (!$showall)
+    $query .= "    AND dX.visible='1' ";
+  $query .= "    GROUP BY pX.name) ".
+            "  AND r.priority = (SELECT MAX(rX.priority) ".
+            "    FROM `package` pX, ".
+            "         `release` rX ".
+            "    WHERE p.name = pX.name ".
+            "      AND pX.rel_id = rX.rel_id ".
+            "      AND rX.dist_id = d.dist_id ".
+            "    GROUP BY pX.name) ";
+}
 
 if ($nochildren == "on")
-	$query .= "AND parentname IS NULL ";
+	$query .= "AND p.parentname IS NULL ";
 
 if ($noshlibsdev == "on")
-	$query .= "AND !(name REGEXP '.*-(dev|shlibs|bin|common|doc)$') ";
+	$query .= "AND !(p.name REGEXP '.*-(dev|shlibs|bin|common|doc)$') ";
 
 if ($maintainer != "")
-	$query .= "AND maintainer LIKE '%$maintainer%' ";
+	$query .= "AND p.maintainer LIKE '%$maintainer%' ";
 
-if ($section != "any") {
+if ($name != "")
+	$query .= "AND p.name LIKE '$name' ";
+
+if ($summary != "")
+	$query .= "AND (p.name LIKE '%$summary%' OR p.descshort LIKE '%$summary%' OR p.desclong LIKE '%$summary%' OR p.descusage LIKE '%$summary%') ";
+
+if ($section) {
 	if ($section == "games") {
-		$sectionquery = " (section='$section' OR parentname REGEXP 'kdegames3|kdetoys3') ";
+		$sectionquery = " (p.section='$section' OR p.parentname REGEXP 'kdegames3|kdetoys3') ";
 	} else if ($section == "graphics") {
-		$sectionquery = " (section='$section' OR parentname='kdegraphics3') ";
+		$sectionquery = " (p.section='$section' OR p.parentname='kdegraphics3') ";
 	} else if ($section == "sound") {
-		$sectionquery = " (section='$section' OR parentname='kdemultimedia3') ";
+		$sectionquery = " (p.section='$section' OR p.parentname='kdemultimedia3') ";
 	} else if ($section == "utils") {
-		$sectionquery = " (section='$section' OR parentname='kdeutils3') ".
-		                " AND (parentname IS NULL OR parentname != 'webmin') ";
+		$sectionquery = " (p.section='$section' OR p.parentname='kdeutils3') ".
+		                " AND (p.parentname IS NULL OR p.parentname != 'webmin') ";
 	} else {
-		$sectionquery = " section='$section' ";
+		$sectionquery = " p.section='$section' ";
 	}
 	$query .= "AND $sectionquery ";
 }
+if ($tree == 'testing')
+	$query .= "HAVING version_stable IS NULL OR version_unstable != version_stable ";
+$query .= "ORDER BY p.name $sort";
 
-
-$query .= "ORDER BY name $sort";
-
+$time_sql_start = microtime_float();
 $rs = mysql_query($query, $dbh);
+$time_sql_end = microtime_float();
 if (!$rs) {
-  print '<p><b>error during query:</b> '.mysql_error().'</p>';
+  print '<p class="attention"><b>Error during db query (list packages):</b> '.mysql_error().'</p>';
 } else {
   $count = mysql_num_rows($rs);
+
+
+// Maybe display an overview of the search settings used to obtain the results here?
+// Many seach servics (e.g. Google) do this: While the search settings are initially
+// still visible in the widgets on the page, the user may have altered them.
 ?>
-
-<p>Found <? print $count ?> packages:</p>
-
-<ul>
+<p>
+Found <?=$count?> 
+package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer' : '')?><?=($tree=='testing' ? ' that need testing' : '')?>:
+</p>
 <?
+  if ($count > 0) {
+?>
+<table class="pdb" cellspacing="2" border="0">
+<?
+  if ($tree == 'testing') {
+    print '<tr class="pdbHeading"><th>Name</th><th>Version in unstable</th><th>Version in stable</th><th>Description</th></tr>';
+  } 
+  elseif ($tree && $dist) {
+    print '<tr class="pdbHeading"><th>Name</th><th>Version</th><th>Description</th></tr>';
+  }
+  else {
+    print '<tr class="pdbHeading"><th>Name</th><th>Latest Version</th><th>Description</th></tr>';
+  }
   while ($row = mysql_fetch_array($rs)) {
-    $desc = " - ".$row["descshort"];
-    if (substr($desc,3,1) == "[" || substr($desc,3,1) == "<")
-      $desc = "";
-    print '<li><a href="package.php/'.$row["name"].'">'.$row["name"].'</a> '.
-      $row["version"].'-'.$row["revision"].$desc."</li>\n";
+    print '<tr class="package">';
+    if ($tree || $dist)
+      $rel_id_str = '?rel_id='.$row["rel_id"].($showall ? '&showall=on' : '');
+    else
+      $rel_id_str = ($showall ? '?showall=on' : '');
+    print '<td class="packageName"><a href="package.php/'.$row["name"].$rel_id_str.'">'.$row["name"].'</a></td>';
+    if ($tree == 'testing') {
+      print '<td>'.$row['version_unstable'].'</td>'.
+            '<td>'.$row['version_stable'].'</td>';
+    } else {
+      print '<td class="packageName">'.$row['version'].'-'.$row['revision'].'</td>';
+    }
+    print '<td>'.$row['descshort']."</td></tr>\n";
   }
 ?>
-</ul>
+</table>
+<? } // no packages to list ?>
+<p>Query took <? printf("%.2f", $time_sql_end - $time_sql_start); ?> sec</p>
 <?
-}
+} // no sql error
+} // if($nolist)
 ?>
 
 <?

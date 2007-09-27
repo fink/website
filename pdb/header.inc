@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.15 2007/09/10 19:37:21 rangerrick Exp $ */
+/* $Id: header.inc,v 1.16 2007/09/27 19:51:08 rangerrick Exp $ */
 
 $linkroot = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -32,7 +32,7 @@ if ($uses_pathinfo) {
     $title .= $pispec;
     $pdbroot = "../../";
   } else {
-    print '<p><b>PATH_INFO not in expected format!</b></p>';
+    print '<p class="attention"><b>PATH_INFO not in expected format!</b></p>';
     exit;
   }
   $root = "-".$pdbroot;
@@ -43,11 +43,10 @@ $section = "packages";
 $navbox = array(
   $localroot."pdb/index.php", "Introduction",
   $localroot."pdb/sections.php", "By Section",
-  $localroot."pdb/list.php", "By Package",
-  $localroot."pdb/search.php", "Search",
-  $localroot."pdb/testing.php", "Help needed"
+  $localroot."pdb/browse.php", "By Package",
+  $localroot."pdb/browse.php?nolist=on", "Search",
+  $localroot."pdb/help.php", "Help needed"
 );
-include "timestamp.inc";
 
 $fsroot = "../";
 if (substr($root,0,1) == "-") {
@@ -60,6 +59,39 @@ include $fsroot."header.inc";
 
 /* connect to database */
 include $fsroot."db.inc.php";
-$dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
-mysql_select_db($db_name, $dbh);
+$error_level = error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+try {
+  $dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
+  mysql_select_db($db_name, $dbh);
+}
+catch (Exception $e) {
+}
+error_reporting($error_level);
+if (!$dbh)
+  print '<p class="attention"><b>Couldn\'t connect to database!</b></p>';
+
+
+// Read url parameters. We use basic HTML encoding for now, and 
+// cut off very long values, to make unforseen SQL injection hacks more difficult.
+function get_safe_param($param_name, $valid_regexp='.*', $max_length=35) {
+  $param_name = $_GET[$param_name];
+  if ($param_name) $has_param_name = true;
+  if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name)) {
+    $param_name = '';
+  } else {
+    $param_name = mysql_real_escape_string(htmlspecialchars($param_name));
+    if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name))
+      $param_name = '';
+  }
+  if ($has_param_name && !$param_name)
+    $invalid_param = true;
+  else
+    $invalid_param = false;
+  return array (
+    $param_name,
+    $invalid_param,
+  );
+}
+ 
+
 ?>

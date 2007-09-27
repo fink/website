@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/10 19:37:21 $';
+$cvs_date = '$Date: 2007/09/27 19:51:10 $';
 
 include "header.inc";
 ?>
@@ -27,7 +27,7 @@ if (!$rs) {
 <ul>
 <?
   while ($row = mysql_fetch_array($rs)) {
-    print '<li><a href="section.php/'.$row[name].'">'.$row[name].'</a>'.
+    print '<li><a href="browse.php?section='.$row[name].'">'.$row[name].'</a>'.
       ($row[description] ? (' - '.$row[description]) : '').
       '</li>'."\n";
   }
