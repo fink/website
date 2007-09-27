@@ -1,9 +1,10 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 19:51:10 $';
+$cvs_date = '$Date: 2007/09/27 23:03:14 $';
 
 include "header.inc";
+include "memcache.inc";
 ?>
 
 
@@ -17,16 +18,16 @@ Here are the sections:
 
 <?
 $q = "SELECT * FROM sections ORDER BY name ASC";
-$rs = mysql_query($q, $dbh);
+$rs = cachedQuery($q);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
 } else {
-  $seccount = mysql_num_rows($rs);
+  $seccount = count($rs);
 ?>
 
 <ul>
 <?
-  while ($row = mysql_fetch_array($rs)) {
+  foreach ($rs as $row) {
     print '<li><a href="browse.php?section='.$row[name].'">'.$row[name].'</a>'.
       ($row[description] ? (' - '.$row[description]) : '').
       '</li>'."\n";

@@ -1,10 +1,11 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 19:51:09 $';
+$cvs_date = '$Date: 2007/09/27 23:03:14 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
+include "memcache.inc";
 $package = $pispec;
 ?>
 
@@ -70,24 +71,22 @@ if ($rel_id) {
 $qtodisplay_order .= "ORDER BY d.priority DESC,r.priority DESC";
 $qtodisplay = $qtodisplay_sel.$qtodisplay_where.$qtodisplay_order;
 $error_level = error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-$qs = mysql_query($qtodisplay, $dbh);
+$qs = cachedQuery($qtodisplay);
 error_reporting($error_level);
 if (!$qs) {
   print '<p class="attention"><b>Error during db query (Package):</b> '.mysql_error().'</p>';
 } else {
-  $pkg2disp = mysql_fetch_array($qs);
+  $pkg2disp = array_shift($qs);
 }
 
 $warning = '';
 if (!$pkg2disp) { # No specific version found, try latest
   $qtodisplay = $qtodisplay_sel."WHERE p.name='$package' ".$qtodisplay_order;
   $error_level = error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-  $qs = mysql_query($qtodisplay, $dbh);
+  $qs = cachedQuery($qtodisplay);
   error_reporting($error_level);
-  if (!$qs) {
-    print '<p class="attention"><b>Error during db query (Latest Package):</b> '.mysql_error().'</p>';
-  } else {
-    $pkg2disp = mysql_fetch_array($qs);
+  if ($qs) {
+    $pkg2disp = array_shift($qs);
   }
   $warning = "<b>Warning: Package $package $version not found";
   $warning .= $distribution ? " in distribution $distribution" : '';
@@ -190,14 +189,14 @@ if ($pkg2disp["epoch"] > 0) {
  if (!$showall)
    $q .= "AND visible='1' ";
  $q .= "ORDER BY priority DESC";
- $qdist = mysql_query($q, $dbh);
+ $qdist = cachedQuery($q);
  if (!$qdist) {
    die('<p class="attention"><b>Error during db query (Distributions):</b> '.mysql_error().'</p>');
  }
  $color_count = 0;
  $last_identifier = '';
  $has_unsupported_dists = false;
- while ($dist_row = mysql_fetch_array($qdist)) {
+ foreach ($qdist as $dist_row) {
    if ($last_identifier != $dist_row['identifier'])
      $color_count++;
    if ($color_count == 1) {
@@ -211,13 +210,13 @@ if ($pkg2disp["epoch"] > 0) {
 
    // Query all releases (typically: stable, unstable, bindist) for the given distribution.
    $q = "SELECT r.type FROM `release` r WHERE r.dist_id='" . $dist_row['dist_id'] . "' AND r.active='1' ORDER BY r.priority ASC";
-   $qrel = mysql_query($q, $dbh);
+   $qrel = cachedQuery($q);
    if (!$qrel) {
      die('<p class="attention"><b>Error during db query (Releases):</b> '.mysql_error().'</p>');
    }
    $has_bindist = false;
    $has_cvs_rsync = false;
-   while ($rel_row = mysql_fetch_array($qrel)) {
+   foreach ($qrel as $rel_row) {
      if ($rel_row['type'] == 'bindist')
        $has_bindist = true;
      elseif ($rel_row['type'] == 'unstable' || $rel_row['type'] == 'stable')
@@ -226,14 +225,11 @@ if ($pkg2disp["epoch"] > 0) {
 
    // Now query all pkginfo per release (typically: stable, unstable, bindist) for the given distribution.
    $q = "SELECT p.*, r.type, r.version AS rel_version FROM `package` p, `release` r WHERE p.name = '$package' AND p.rel_id = r.rel_id AND r.dist_id='" . $dist_row['dist_id'] . "' AND active='1' ORDER BY r.priority ASC";
-   $qrel = mysql_query($q, $dbh);
-   if (!$qrel) {
-     die('<p class="attention"><b>Error during db query (Package per releases):</b> '.mysql_error().'</p>');
-   }
+   $qrel = cachedQuery($q);
    
    $pkg_release = array();
    
-   while ($rel_row = mysql_fetch_array($qrel)) {
+   foreach ($qrel as $rel_row) {
      $type = $rel_row['type'];
      $rel_version = $rel_row["version"]."-".$rel_row["revision"];
      if($rel_row["epoch"] > 0)
@@ -358,15 +354,11 @@ if ($pkg2disp["epoch"] > 0) {
 	// List the splitoffs of this package
 
 	$q = "SELECT * FROM `package` WHERE rel_id='$pkg2disp[rel_id]' AND parentname='$pkg2disp[name]' ORDER BY name";
-	$rs = mysql_query($q, $dbh);
-	if (!$rs) {
-	  print '<p class="attention"><b>Error during db query (Splitoffs):</b> '.mysql_error().'</p>';
-	} else {
-	  if($row = mysql_fetch_array($rs))
-	    it_item("SplitOffs:", link_to_package($row["name"], $version, $rel_id, $showall, $row["descshort"]));
-	  while ($row = mysql_fetch_array($rs)) {
-		it_item(" ", link_to_package($row["name"], $version, $rel_id, $showall, $row["descshort"]));
-	  }
+   $rs = cachedQuery($q);
+	if($row = array_shift($rs))
+	  it_item("SplitOffs:", link_to_package($row["name"], $version, $rel_id, $showall, $row["descshort"]));
+	foreach ($rs as $row) {
+	  it_item(" ", link_to_package($row["name"], $version, $rel_id, $showall, $row["descshort"]));
 	}
   it_end();
 ?>

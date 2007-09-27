@@ -1,10 +1,11 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/06/21 16:20:04 $';
+$cvs_date = '$Date: 2007/09/27 23:03:14 $';
 
 include "header.inc";
 include "releases.inc";
+include "memcache.inc";
 ?>
   <STYLE TYPE="text/css">
 .bgreen { background: #66FF10; display: inline; }
@@ -63,7 +64,7 @@ if($op) {
 			$name = $matches[1];
 			$q = "UPDATE move SET moveflag = ".($op - 1)." WHERE (`release` = '".$tree1.
 				"' AND name='".$name."')";	
-			$rsr = mysql_query($q, $dbh);
+			$rsr = cached_query($q);
 			if (mysql_errno()) {
 				print '<p><b>errno $err error during UPDATE:</b> '.mysql_error().'</p>';
 				die;
@@ -72,11 +73,11 @@ if($op) {
 	}
 }
 $q = "SELECT * FROM `release`";
-$rs = mysql_query($q, $dbh);
+$rs = cached_query($q);
 if (!$rs) {
   print "<p><b>error during query ".$q.':</b> '.mysql_error().'</p>';
 } else {
-  while ($row = mysql_fetch_array($rs)) { 
+  foreach ($rs as $row) {
     $menu = $menu . '<option value="'. $row['name']. '" '.
     		(strcmp($row['name'], $tree1) ? '>' : 'selected>').
     		$row['name'];
@@ -117,11 +118,11 @@ $q = "SELECT name,maintainer,version,revision,moveflag,needtest FROM package ".
   	 "WHERE `release` LIKE \"$tree1\" ".
   	 ($splitoffs ? '' : 'AND parentname IS NULL ').
   	 "ORDER BY ".(strcmp($sort, "name") ? 'maintainer,name' : 'name')." ASC";
-$rs = mysql_query($q, $dbh);
-if (!$rs) {
+$rs = cachedQuery($q);
+if (mysql_errno()) {
   print "<p><b>error during query ".$q.':</b> '.mysql_error().'</p>';
 } else {
-  $count = mysql_num_rows($rs);
+  $count = count($rs);
 
   print '<p>'.$count." Packages Found in $tree1</p>";
   $hitcount = 0;
@@ -134,14 +135,14 @@ if (!$rs) {
    	print "\"Wow, you know that's a lot of checkboxes\" - Check packages then click the buttons below to change a line's status.<br>";
   }
  $pkglist = $pkglist . "<ul>\n";
-  while ($row = mysql_fetch_array($rs)) {
+  foreach ($rs as $row) {
 	$q2 = "SELECT name FROM package ".
       "WHERE `release` LIKE \"$tree2\" AND name=\"" . $row['name'] . '"';	
-	$rs2 = mysql_query($q2, $dbh);
-	if (!$rs2) {
+	$rs2 = cachedQuery($q2);
+	if (mysql_errno()) {
 	  print "<p><b>error during query ".$q2.':</b> '.mysql_error().'</p>';
 	} else {
-  		$count = mysql_num_rows($rs2);
+  		$count = count($rs2);
   		$hit = 0;
 		if($cmp == 0) {
   			# are NOT - count will be 0
@@ -157,22 +158,22 @@ if (!$rs) {
 			{
 				$qmove = "SELECT moveflag FROM move ".
       				"WHERE `release` LIKE \"$tree1\" AND name=\"" . $row['name'] . '"';
-				$rsm = mysql_query($qmove, $dbh);				
+				$rsm = cachedQuery($qmove);
 				$err = mysql_errno();
-				if (!$rsm) {
+				if ($err) {
 					print '<p><b>errno $err error during query :</b> '.mysql_error()."$qmove".'</p>';
 					die;	
 				}			
 				
-  				$mcount = mysql_num_rows($rsm);
+  				$mcount = count($rsm);
   				
   				if($mcount == 0) {
 					### Must be new here. Insert the record into the move table		
 					$qmove2 = "INSERT INTO move (`release`, name, moveflag) VALUES (\"".$tree1.
 							  "\",\"".$row[name]."\", 0)"; 
-					$rs1 = mysql_query($qmove2, $dbh);				
+					$rs1 = cachedQuery($qmove2);
 					$err = mysql_errno();
-					if (!$rs1) {
+					if ($err) {
 						print '<p><b>errno $err error during query :</b> '.mysql_error()."$qmove2".'</p>';
 						die;	
 					}		
@@ -182,7 +183,7 @@ if (!$rs) {
   					die("Error: mcount for ".$row[name]."in move table is $mcount !");
 				} else {
 					### Fetch the moveflag from the first SELECT		
-					while ($row3 = mysql_fetch_array($rsm)) {
+					foreach ($rsm as $row3) {
 						$moveflag = $row3[moveflag];
 					}
 				}

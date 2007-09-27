@@ -1,9 +1,9 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 19:51:08 $';
+$cvs_date = '$Date: 2007/09/27 23:03:14 $';
 
-
+ini_set("memory_limit", "12M");
 
 function addGETParam(&$params, $param_name) {
   $value = stripslashes($_GET[$param_name]);
@@ -47,6 +47,8 @@ else
 $pdb_scripts = true;
 
 include "header.inc";
+include "memcache.inc";
+
 ?>
 
 <h1>Browse packages</h1>
@@ -113,12 +115,13 @@ $q = "SELECT * FROM `distribution` WHERE active='1' ";
 if (!$showall)
   $q .= "AND visible='1' ";
 $q .= "ORDER BY priority DESC";
-$qdist = mysql_query($q, $dbh);
+//$qdist = mysql_query($q, $dbh);
+$qdist = cachedQuery($q);
 if (!$qdist) {
   die('<p class="attention"><b>Error during db query (distribution):</b> '.mysql_error().'</p>');
 }
 $dist_values[''] = 'Any';
-while ($dist = mysql_fetch_array($qdist)) {
+foreach ($qdist as $dist) {
   $dist_values[$dist['dist_id']] = $dist['description'];
 }
 
@@ -138,12 +141,13 @@ $sort_values = array(
 // Load legal sections
 $section_values = array('' => 'Any');
 $query = "SELECT * FROM sections ORDER BY name ASC";
-$rs = mysql_query($query, $dbh);
+//$rs = mysql_query($query, $dbh);
+$rs = cachedQuery($query);
 if (!$rs) {
 	print '<p class="attention"><b>Error during db query (sections):</b> '.mysql_error().'</p>';
 } else {
-	$seccount = mysql_num_rows($rs);
-	while ($row = mysql_fetch_array($rs)) {
+	$seccount = count($rs);
+	foreach ($rs as $row) {
 		$section_values[$row["name"]] = $row["name"] . " - " . $row["description"];
 	}
 }
@@ -390,12 +394,14 @@ if ($tree == 'testing')
 $query .= "ORDER BY p.name $sort";
 
 $time_sql_start = microtime_float();
-$rs = mysql_query($query, $dbh);
+//$rs = mysql_query($query, $dbh);
+#$rs = cachedQuery($query, MEMCACHE_COMPRESSED);
+$rs = cachedQuery($query);
 $time_sql_end = microtime_float();
 if (!$rs) {
   print '<p class="attention"><b>Error during db query (list packages):</b> '.mysql_error().'</p>';
 } else {
-  $count = mysql_num_rows($rs);
+  $count = count($rs);
 
 
 // Maybe display an overview of the search settings used to obtain the results here?
@@ -420,7 +426,7 @@ package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer
   else {
     print '<tr class="pdbHeading"><th>Name</th><th>Latest Version</th><th>Description</th></tr>';
   }
-  while ($row = mysql_fetch_array($rs)) {
+  foreach ($rs as $row) {
     print '<tr class="package">';
     if ($tree || $dist)
       $rel_id_str = '?rel_id='.$row["rel_id"].($showall ? '&showall=on' : '');

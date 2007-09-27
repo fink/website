@@ -1,9 +1,10 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 19:51:09 $';
+$cvs_date = '$Date: 2007/09/27 23:03:14 $';
 
 include "header.inc";
+include "memcache.inc";
 ?>
 
 <h1>Package Database Introduction</h1>
@@ -34,31 +35,31 @@ href="browse.php?maintainer=None&nochildren=on">packages without maintainers</a>
 
 <?
 $q = "SELECT COUNT(DISTINCT name) FROM package";
-$rs = mysql_query($q, $dbh);
+$rs = cachedQuery($q);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
   $pkgcount = '?';
 } else {
-  $pkgcount = mysql_fetch_array($rs);
+  $pkgcount = array_shift($rs);
   $pkgcount = $pkgcount[0];
 }
 
 $q = "SELECT MAX(UNIX_TIMESTAMP(infofilechanged)) FROM package";
-$rs = mysql_query($q, $dbh);
+$rs = cachedQuery($q);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
   $dyndate = '';
 } else {
-  $dyndate = mysql_fetch_array($rs);
+  $dyndate = array_shift($rs);
   $dyndate = $dyndate[0];
 }
 
 $q = "SELECT * FROM sections ORDER BY name ASC";
-$rs = mysql_query($q, $dbh);
+$rs = cachedQuery($q);
 if (!$rs) {
   print '<p><b>error during query:</b> '.mysql_error().'</p>';
 } else {
-  $seccount = mysql_num_rows($rs);
+  $seccount = count($rs);
 ?>
 
 <p>
@@ -80,10 +81,8 @@ or you can browse by archive section:
 
 <ul>
 <?
-  while ($row = mysql_fetch_array($rs)) {
-    print '<li><a href="browse.php?section='.$row[name].'">'.$row[name].'</a>'.
-      ($row[description] ? (' - '.$row[description]) : '').
-      '</li>'."\n";
+  foreach ($rs as $row) {
+    print '<li><a href="browse.php?section='.$row[name].'">'.$row[name].'</a>'.  ($row[description] ? (' - '.$row[description]) : '').  '</li>'."\n";
   }
 ?>
 </ul>
