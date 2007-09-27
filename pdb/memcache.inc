@@ -22,8 +22,8 @@ function cachedQuery($sql, $compress = 0) {
 			array_push($returnVals, $row);
 		}
 
-		// 5 minute cache
-		if ($memcache->set($key, $returnVals, $compress, 300)) {
+		// 15 minute cache
+		if ($memcache->set($key, $returnVals, $compress, 900)) {
 			return $returnVals;
 		} else {
 			echo " <!-- unable to set $key($compress) --> ";
