@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 23:03:14 $';
+$cvs_date = '$Date: 2007/09/28 01:20:54 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -73,9 +73,7 @@ $qtodisplay = $qtodisplay_sel.$qtodisplay_where.$qtodisplay_order;
 $error_level = error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
 $qs = cachedQuery($qtodisplay);
 error_reporting($error_level);
-if (!$qs) {
-  print '<p class="attention"><b>Error during db query (Package):</b> '.mysql_error().'</p>';
-} else {
+if ($qs) {
   $pkg2disp = array_shift($qs);
 }
 
