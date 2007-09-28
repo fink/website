@@ -1,9 +1,9 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/28 00:41:48 $';
+$cvs_date = '$Date: 2007/09/28 00:44:35 $';
 
-ini_set("memory_limit", "16M");
+ini_set("memory_limit", "24M");
 
 function addGETParam(&$params, $param_name) {
   $value = stripslashes($_GET[$param_name]);
