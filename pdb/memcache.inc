@@ -3,17 +3,20 @@
 $memcache = new Memcache();
 $memcache->connect('localhost', 11211);
 
+$memcache_debug = 0;
+
 function cachedQuery($sql, $compress = 0) {
 	global $dbh;
 	global $memcache;
+	global $memcache_debug;
 
 	$key = md5($sql);
 
 	if ($returnVals = $memcache->get($key)) {
-		echo " <!-- cached($compress) $key: $sql --> ";
+		if ($memcache_debug) echo " <!-- cached($compress) $key: $sql --> ";
 		return $returnVals;
 	} else {
-		echo " <!-- NOT cached($compress) $key: $sql --> ";
+		if ($memcache_debug) echo " <!-- NOT cached($compress) $key: $sql --> ";
 
 		$returnVals = array();
 		$resultSet = mysql_query($sql, $dbh);
@@ -26,7 +29,7 @@ function cachedQuery($sql, $compress = 0) {
 		if ($memcache->set($key, $returnVals, $compress, 900)) {
 			return $returnVals;
 		} else {
-			echo " <!-- unable to set $key($compress) --> ";
+			if ($memcache_debug) echo " <!-- unable to set $key($compress) --> ";
 			return;
 		}
 	}

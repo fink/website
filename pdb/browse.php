@@ -1,9 +1,9 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 23:03:14 $';
+$cvs_date = '$Date: 2007/09/28 00:41:48 $';
 
-ini_set("memory_limit", "12M");
+ini_set("memory_limit", "16M");
 
 function addGETParam(&$params, $param_name) {
   $value = stripslashes($_GET[$param_name]);
@@ -111,11 +111,10 @@ list($showall, $inv_p) = get_safe_param('showall', '/^on$/');
 
 // Distribution values
 $dist_values = array();
-$q = "SELECT * FROM `distribution` WHERE active='1' ";
+$q = "SELECT `dist_id`, `description` FROM `distribution` WHERE active='1' ";
 if (!$showall)
   $q .= "AND visible='1' ";
 $q .= "ORDER BY priority DESC";
-//$qdist = mysql_query($q, $dbh);
 $qdist = cachedQuery($q);
 if (!$qdist) {
   die('<p class="attention"><b>Error during db query (distribution):</b> '.mysql_error().'</p>');
@@ -140,8 +139,7 @@ $sort_values = array(
 
 // Load legal sections
 $section_values = array('' => 'Any');
-$query = "SELECT * FROM sections ORDER BY name ASC";
-//$rs = mysql_query($query, $dbh);
+$query = "SELECT `name`, `description` FROM sections ORDER BY name ASC";
 $rs = cachedQuery($query);
 if (!$rs) {
 	print '<p class="attention"><b>Error during db query (sections):</b> '.mysql_error().'</p>';
@@ -394,11 +392,10 @@ if ($tree == 'testing')
 $query .= "ORDER BY p.name $sort";
 
 $time_sql_start = microtime_float();
-//$rs = mysql_query($query, $dbh);
-#$rs = cachedQuery($query, MEMCACHE_COMPRESSED);
-$rs = cachedQuery($query);
+$rs = cachedQuery($query, MEMCACHE_COMPRESSED);
+#$rs = cachedQuery($query);
 $time_sql_end = microtime_float();
-if (!$rs) {
+if (0) {
   print '<p class="attention"><b>Error during db query (list packages):</b> '.mysql_error().'</p>';
 } else {
   $count = count($rs);
