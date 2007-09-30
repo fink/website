@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/28 00:44:35 $';
+$cvs_date = '$Date: 2007/09/30 15:22:02 $';
 
 ini_set("memory_limit", "24M");
 
@@ -370,7 +370,7 @@ if ($name != "")
 	$query .= "AND p.name LIKE '$name' ";
 
 if ($summary != "")
-	$query .= "AND (p.name LIKE '%$summary%' OR p.descshort LIKE '%$summary%' OR p.desclong LIKE '%$summary%' OR p.descusage LIKE '%$summary%') ";
+	$query .= "AND p.summary_index LIKE '%$summary%' ";
 
 if ($section) {
 	if ($section == "games") {
