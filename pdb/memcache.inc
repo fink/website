@@ -25,8 +25,8 @@ function cachedQuery($sql, $compress = 0) {
 			array_push($returnVals, $row);
 		}
 
-		// 60 minute cache
-		if ($memcache->set($key, $returnVals, $compress, 3600)) {
+		// 4 hour cache -- update-piecewise resets it anyways
+		if ($memcache->set($key, $returnVals, $compress, (60 * 60 * 4))) {
 			return $returnVals;
 		} else {
 			if ($memcache_debug) echo " <!-- unable to set $key($compress) --> ";
