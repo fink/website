@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/28 01:20:54 $';
+$cvs_date = '$Date: 2007/10/09 17:32:36 $';
 
 $uses_pathinfo = 1;
 include "header.inc";
@@ -122,6 +122,7 @@ if ($pkg2disp["epoch"] > 0) {
    if ($text) {
      # Try to detect urls
      $text = preg_replace('/http:\/\/[^ &:]+/', '<a href="${0}">${0}</a>', $text);
+     $text = str_replace("\\n", "\n", $text);
      $text = '<div class="desc">' . $text . '</div>';
      if ($label)
        it_item($label, '');
