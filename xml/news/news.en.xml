@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.61 2007/06/03 00:12:34 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.62 2007/10/27 01:27:30 alexkhansen Exp $</cvsid>
 
+<newsitem>
+  <date>2007-10-26</date>
+  <headline>Initial Leopard Support</headline>
+  <body>
+    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
+<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <link url="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</link>.</p>
+<p>The 10.4->10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.7</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.</p>
+<p>A direct 10.3->10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the <code>fink-0.27.7</code> tarball and bootstrap a new Fink tree as above.</p>
+</body>
+</newsitem>
 <newsitem>
 	<date>2007-03-04</date>
 	<headline>Problems with tar</headline>
