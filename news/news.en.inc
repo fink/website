@@ -1,3 +1,8 @@
+<a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
+    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
+<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
+<p>The 10.4-&gt;10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.7</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.</p>
+<p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the <code>fink-0.27.7</code> tarball and bootstrap a new Fink tree as above.</p>
 <a name="2007-03-04%20Problems%20with%20tar"><span class="news-date">2007-03-04: </span><span class="news-headline">Problems with tar</span></a><?php gray_line(); ?>
 <p>Some users of fink's unstable tree are having sporadic difficulties
 at the end of building large packages, getting reports like
@@ -50,36 +55,4 @@ Finally, to use the package database during the outage, you can connect
 to <a href="http://lists.finkproject.org/pdb">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
-		<a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
-
-			<p>
-				The "10.4-transitional" tree was created as an interim solution to the issues of
-				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
-				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
-				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
-				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
-				1st, 2006.
-			</p>
-			<p><b>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</b></p>
-			<p>
-				As we mentioned <a href="<?php print $root; ?>news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
-				there are 2 ways to make the switch to the supported "10.4" tree.
-			</p>
-			<p>
-				The simplest way is to remove your Fink installation by deleting it and
-				installing fresh using the 0.8.1 installer available from the <a href="<?php print $root; ?>download">download page</a>.
-			</p>
-			<p>
-				Alternately, to preserve your Fink installation, download the
-				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
-				and read the README for instructions on how to upgrade your existing installation in-place.
-				This will re-build your Fink installation from source, upgrading everything in the process.
-				Be warned, it can take a lot of time, depending on your fink installation!
-			</p>
-			<p>
-				Feedback on the upgrade script has been very positive; many users have already
-				made the switch.  If you have problems, please feel free to mail your issues to
-				the <a href="<?php print $root; ?>lists">discussion lists</a>.
-			</p>
-<p><b> Update: 2 June 2007.</b>  Due to changes to the behavior of <code>sudo</code> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
 		

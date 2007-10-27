@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2007/05/16 02:55:00 $';
+$cvs_date = '$Date: 2007/10/27 01:46:03 $';
 
 include "header.inc";
 ?>
@@ -15,10 +15,8 @@ Otherwise, check out the <a href="overview.php">overview</a> and the
 <a href="upgrade.php">upgrade matrix</a>.
 </p>
 
-<h2>Quick Start</h2>
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
+<h2>Quick Start</h2><script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script><script type="text/javascript">
 _uacct = "UA-305132-6";
 urchinTracker();
 </script> 
@@ -29,7 +27,7 @@ with the binary release.
 <? 
 include "../fink_version.inc";
 ?>
-
+<p><strong>Important Note for Leopard Users:</strong>  There is not currently a binary release for you.  Please go to the <a href="./srcdist.php">source release</a> page.</p>
 <ol>
 <li><p>
 Download the installer disk image:<br>
@@ -63,7 +61,7 @@ running (from the command line in a Terminal.app window)
 (This step should also be repeated by any other users on your system: 
 each user must run pathsetup in his or her own account.)
 </p><p>
-If pathsetup generates errors messages, consult the documentation, 
+If pathsetup generates error messages, consult the documentation, 
 particularly 
 <a href="../doc/users-guide/install.php#setup">section
 2.3 &quot;Setting Up Your Environment&quot;</a> of the User's Guide.</p>
@@ -164,9 +162,7 @@ The source code for the packages in the installer disk image can be
 downloaded from this site,
 <a
 href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">here</a>.
-</p>
-
-<script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
+</p><script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
