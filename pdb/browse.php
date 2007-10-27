@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/30 15:22:02 $';
+$cvs_author = '$Author: chris01 $';
+$cvs_date = '$Date: 2007/10/27 13:54:37 $';
 
 ini_set("memory_limit", "24M");
 
@@ -58,7 +58,7 @@ On this page you can browse through all packages in the Fink package database,
 optionally and at your direction narrowed down by various search parameters, set below.
 </p>
 <p>
-For each of several distributions (10.2, 10.3, 10.4), this database includes
+This database includes
 information about all packages found in the respective latest stable and unstable trees.
 Furthermore, all packages from the most recent binary distributions are covered.
 </p>
