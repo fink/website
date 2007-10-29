@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2007/10/27 01:27:30';
+$cvs_date = 'Date: 2007/10/29 11:02:34';
 $metatags = '';
 
 include_once "header.inc";
@@ -10,7 +10,7 @@ include_once "header.inc";
 <a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
     <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
 <p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
-<p>The 10.4-&gt;10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.7</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.</p>
+<p>The 10.4-&gt;10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.7</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run <code>fink reinstall fink</code>.</p>
 <p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the <code>fink-0.27.7</code> tarball and bootstrap a new Fink tree as above.</p>
 <a name="2007-03-04%20Problems%20with%20tar"><span class="news-date">2007-03-04: </span><span class="news-headline">Problems with tar</span></a><?php gray_line(); ?>
 <p>Some users of fink's unstable tree are having sporadic difficulties

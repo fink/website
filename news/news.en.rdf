@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2007-10-26T21:44:53-04:00</dc:date>
+    <dc:date>2007-10-29T07:13:25-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support">
       <title>Initial Leopard Support</title>
@@ -14,13 +14,13 @@
       <description>
     <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
 <p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
-<p>The 10.4-&gt;10.5 update can be accomplished by running fink selfupdate to get fink-0.27.7 .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.</p>
+<p>The 10.4-&gt;10.5 update can be accomplished by running fink selfupdate to get fink-0.27.7 .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run fink reinstall fink.</p>
 <p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the fink-0.27.7 tarball and bootstrap a new Fink tree as above.</p>
 </description>
       <content:encoded>
     <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
 <p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
-<p>The 10.4-&gt;10.5 update can be accomplished by running fink selfupdate to get fink-0.27.7 .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.</p>
+<p>The 10.4-&gt;10.5 update can be accomplished by running fink selfupdate to get fink-0.27.7 .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run fink reinstall fink.</p>
 <p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the fink-0.27.7 tarball and bootstrap a new Fink tree as above.</p>
 </content:encoded>
     </item>
