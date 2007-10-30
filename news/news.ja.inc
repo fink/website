@@ -1,3 +1,14 @@
+<a name="2007-10-26%20%E5%BD%93%E9%9D%A2%E3%81%AE%20Leopard%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><span class="news-date">2007-10-26: </span><span class="news-headline">当面の Leopard サポート</span></a><?php gray_line(); ?>
+    <p>The Fink Project は Mac OS X Leopard (10.5) のサポートを開始します。</p>
+<p>10.5 を利用されている方は、バイナリディストリビューションができるまでは、bootstrap で行う必要があります。
+fink-0.27.7 を<a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">ここから</a>ダウンロードしてください。</p>
+<p>10.4から10.5への更新は、 <code>fink selfupdate</code> を実行することで <code>fink-0.27.7</code> に更新されます。
+10.5 でこれを行う場合は、 XCode 3.0 がインストールされていることを確認してください。
+10.5 がインストールされましたら、<code>fink reinstall fink</code> を実行してください。</p>
+<p>10.3 から 10.5 へ直接移行する方法は今のところありません。
+どうしても使いたい方は、 <code>fink-0.27.7</code> tarball をダウンロードし、上述のように Fink ツリーを　bootstrap する必要があります。</p>
+<p><b>Update 2007年10月29日:</b> アップグレードした場合、 <code>fink cleanup</code> を実行すると<b>全ての</b> .deb ファイルが削除されます。
+この問題は次回のアップデート時に解決される予定です。</p>
 <a name="2007-03-04%20tar%20%E3%81%AE%E5%95%8F%E9%A1%8C"><span class="news-date">2007-03-04: </span><span class="news-headline">tar の問題</span></a><?php gray_line(); ?>
 <p>
 fink の unstable ツリーを使用していると、大きなパッケージをビルドする最後に、
@@ -16,7 +27,7 @@ fink team は、この問題を恒久的に直す方法を研究しています�
 Unstable を利用している方は、通常通り update を実行してください。
 </p>
 		<a name="2006-08-19%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%80%E3%82%A6%E3%83%B3;%20%E5%9B%9E%E9%81%BF%E7%AD%96%E6%9C%89%E3%82%8A%E3%80%82"><span class="news-date">2006-08-19: </span><span class="news-headline">サーバダウン; 回避策有り。</span></a><?php gray_line(); ?>
-<p><b> Update: 2006年8月21日: </b> サーバーが復旧されました。</p>
+<p><b>Update: 2006年8月21日:</b> サーバーが復旧されました。</p>
 	<p> 
 現在、fink の４つの重要なサービス (rsync 更新、バイナリ配布, ソースファイルの "master mirror", パッケージデータベース)
 をホストしているサーバがダウンしています。
@@ -54,30 +65,4 @@ rsync://master.us.finkmirrors.net/finkinfo/
 <p><b> Update: 2007年6月2日</b> 10.4.9 の <code>sudo</code> の挙動が変わりました。
 これによって、更新スクリプトはそのままでは作動しなくなりました。
 最初に <code>sudo -s</code> として、スーパーユーザーにすれば大丈夫です。</p>
-		<a name="2006-07-24%20%E6%B3%A8%E6%84%8F:%20%2210.4-transitional%22%20%E3%83%84%E3%83%AA%E3%83%BC%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AF2006%E5%B9%B48%E6%9C%881%E6%97%A5%E3%81%AB%E7%B5%82%E4%BA%86"><span class="news-date">2006-07-24: </span><span class="news-headline">注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</span></a><?php gray_line(); ?>
-			<p>
-				"10.4-transitional" ツリーは、 GCC 3.3 (Mac OS X 10.3 のデフォルトコンパイラ) と
-				GCC 4.0 (Mac OS X 10.4 のデフォルトコンパイラ) のバイナリ間の非互換性問題にたいする暫定的な解決策でした。
-				ようやく Fink は GCC 4.0 へ移行する作業が終了しましたので、 "10.4" ツリーへ移行してください。
-				"10.4-transitional" ツリーのサポートは、2006年8月1日をもって終了いたします。
-			</p>
-			<p><b>"fink --version" が "0.8.1.cvs" または "0.8.1.rsync" と表示する場合、特にすることはありません。</b></p>
-			<p>
-				<a href="<?php print $root; ?>news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</a>、
-				"10.4" ツリーへの移行方法は2種類あります。
-			</p>
-			<p>
-				一番簡単な方法は、既存の Fink インストールを削除し、<a href="<?php print $root; ?>download">ダウンロードページ</a>から 0.8.1 インストーラを入手してインストールし直すことです。
-			</p>
-			<p>
-				既存の Fink を残す方法は、
-				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">アップグレードスクリプト</a>
-				をダウンロードし、README を読みながら既存のインストールされているものをアップグレードすることです。
-				これは Fink インストールをソースから再ビルドし、全てをアップグレードします。
-				インストール状況によっては、相当な時間がかかります！
-			</p>
-			<p>
-				アップグレードスクリプトの評判は上々です。多くのユーザがこれで "10.4" ツリーへスイッチしています。
-				それでも何か問題がありましたら、<a href="<?php print $root; ?>lists">メーリングリスト</a>にメールをしてください。
-			</p>
 		

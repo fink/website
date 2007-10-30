@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.34 2007/06/14 07:49:50 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.35 2007/10/30 02:50:54 babayoshihiko Exp $</cvsid>
+
+<newsitem>
+  <date>2007-10-26</date>
+  <headline>当面の Leopard サポート</headline>
+  <body>
+    <p>The Fink Project は Mac OS X Leopard (10.5) のサポートを開始します。</p>
+<p>10.5 を利用されている方は、バイナリディストリビューションができるまでは、bootstrap で行う必要があります。
+fink-0.27.7 を<link url="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">ここから</link>ダウンロードしてください。</p>
+<p>10.4から10.5への更新は、 <code>fink selfupdate</code> を実行することで <code>fink-0.27.7</code> に更新されます。
+10.5 でこれを行う場合は、 XCode 3.0 がインストールされていることを確認してください。
+10.5 がインストールされましたら、<code>fink reinstall fink</code> を実行してください。</p>
+<p>10.3 から 10.5 へ直接移行する方法は今のところありません。
+どうしても使いたい方は、 <code>fink-0.27.7</code> tarball をダウンロードし、上述のように Fink ツリーを　bootstrap する必要があります。</p>
+<p><em>Update 2007年10月29日:</em> アップグレードした場合、 <code>fink cleanup</code> を実行すると<em>全ての</em> .deb ファイルが削除されます。
+この問題は次回のアップデート時に解決される予定です。</p>
+</body>
+</newsitem>
 
 <newsitem>
 	<date>2007-03-04</date>
@@ -30,7 +47,7 @@ Unstable を利用している方は、通常通り update を実行してくだ
 	<date>2006-08-19</date>
 	<headline>サーバダウン; 回避策有り。</headline>
 	<body>
-<p><em> Update: 2006年8月21日: </em> サーバーが復旧されました。</p>
+<p><em>Update: 2006年8月21日:</em> サーバーが復旧されました。</p>
 	<p> 
 現在、fink の４つの重要なサービス (rsync 更新、バイナリ配布, ソースファイルの "master mirror", パッケージデータベース)
 をホストしているサーバがダウンしています。
