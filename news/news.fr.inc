@@ -1,3 +1,9 @@
+<a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
+    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
+<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
+<p>The 10.4-&gt;10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.7</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run <code>fink reinstall fink</code>.</p>
+<p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the <code>fink-0.27.7</code> tarball and bootstrap a new Fink tree as above.</p>
+<p><b>Update, 2007-10-29:</b>Upgrading users should note that using <code>fink cleanup</code> to remove .deb files will remove <b>all</b> of them.  This issue should be resolved in the next update.</p>
 <a name="2007-03-04%20Problems%20with%20tar"><span class="news-date">2007-03-04: </span><span class="news-headline">Problems with tar</span></a><?php gray_line(); ?>
 <p>Some users of fink's unstable tree are having sporadic difficulties
 at the end of building large packages, getting reports like
@@ -25,12 +31,4 @@ now run the update commands normally.
 
 <p><b> Update: 2 June 2007.</b>  Due to changes to the behavior of <code>sudo</code> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
 
-<a name="24/07/2006%20Rappel%20:%20l'arborescence%20%2210.4-transitional%22%20ne%20sera%20plus%20g%C3%A9r%C3%A9e%20au%201er%20ao%C3%BBt%202006"><span class="news-date">24/07/2006: </span><span class="news-headline">Rappel : l'arborescence "10.4-transitional" ne sera plus gérée au 1er août 2006</span></a><?php gray_line(); ?>
-<p>L'arborescence "10.4-transitional" fut créée pour résoudre de façon provisoire les incompatibilités entre binaires construits à partir de GCC 3.3 (le compilateur par défaut du système Mac OS X 10.3) et GCC 4.0 (le compilateur par défaut du système Mac OS X 10.4). À présent que Fink utilise GCC 4.0, l'arborescence "10.4-transitional" sera gelée à partir du 1er août 2006. Seule l'arborescence "10.4" sera gérée à partir de cette date.</p>
-<p><b>Si la commande "fink --version" a pour résultat "0.8.1.cvs" ou "0.8.1.rsync", vous n'avez rien à faire.</b></p>
-<p>Comme nous l'avons déjà écrit <a href="<?php print $root; ?>news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">précédemment</a>, il y a deux façcons de passer à l'arborescence "10.4".</p>
-<p>Le moyen le plus simple est de supprimer l'installation de Fink et d'en récréer une nouvelle en utilisant l'installeur 0.8.1 disponible sur la <a href="<?php print $root; ?>download">page de téléchargement</a>.</p>
-<p>Un autre moyen consiste à télécharger le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">script de mise à jour</a> et de lire les instructions dans le fichier README pour mettre à jour l'installation existante sans la supprimer. Cette méthode reconstruit l'installation Fink à partir du source et met à jour toute l'installation. Notez que le processus peut prendre un certain temps selon l'installation.</p>
-<p>Nous avons reçu des rapports très encourageants sur l'utilisation du script ; de nombreux utilisateurs sont déjà passés à la nouvelle arborescence. Si vous rencontrez des problèmes, veuillez en faire part sur les <a href="<?php print $root; ?>lists">listes de discussions</a>.
-</p>
 

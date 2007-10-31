@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="zh">
-<cvsid>$Id: news.zh.xml,v 1.26 2007/06/14 07:33:06 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.zh.xml,v 1.27 2007/10/31 07:02:46 babayoshihiko Exp $</cvsid>
+
+<newsitem>
+  <date>2007-10-26</date>
+  <headline>Initial Leopard Support</headline>
+  <body>
+    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
+<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <link url="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</link>.</p>
+<p>The 10.4->10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.7</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run <code>fink reinstall fink</code>.</p>
+<p>A direct 10.3->10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the <code>fink-0.27.7</code> tarball and bootstrap a new Fink tree as above.</p>
+<p><em>Update, 2007-10-29:</em>Upgrading users should note that using <code>fink cleanup</code> to remove .deb files will remove <em>all</em> of them.  This issue should be resolved in the next update.</p>
+</body>
+</newsitem>
 
 <newsitem>
 	<date>2007-03-04</date>
