@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: chris01 $';
-$cvs_date = '$Date: 2007/10/27 13:54:37 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2007/11/06 19:32:26 $';
 
 ini_set("memory_limit", "24M");
 
@@ -155,10 +155,13 @@ if (!$rs) {
 $invalid_param = false;
 list($maintainer, $inv_p) = get_safe_param('maintainer', '/^[a-zA-Z0-9\.@%\&\'\\\ ]+$/');
 $invalid_param = $invalid_param || $inv_p;
+if ($inv_p) { $invalid_param_text = 'Maintainer contained invalid characters!'; }
 list($name, $inv_p) = get_safe_param('name', '/^[a-z0-9+\-.%]+$/');
 $invalid_param = $invalid_param || $inv_p;
-list($summary, $inv_p) = get_safe_param('summary', '/.*/');
+if ($inv_p) { $invalid_param_text = 'Name contained invalid characters!'; }
+list($summary, $inv_p) = get_safe_param('summary', '/...*/');
 $invalid_param = $invalid_param || $inv_p;
+if ($inv_p) { $invalid_param_text = 'Summary search must be at least 2 characters!'; }
 list($nolist, $inv_p) = get_safe_param('nolist', '/on/');
 $invalid_param = $invalid_param || $inv_p;
 
@@ -201,7 +204,7 @@ Summary:
 <input name="submit" type="submit" value="Search">
 <input type="reset" value="Clear Form">
 <br>
-<?if ($invalid_param) print '<p class="attention">Invalid Input Parameters!</p>';?>
+<?if ($invalid_param) print '<p class="attention">Invalid Input Parameters.  ' . $invalid_param_text . '</p>';?>
 <br>
 
 <span class="expand_adv_options">
