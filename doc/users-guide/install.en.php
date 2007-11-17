@@ -57,34 +57,30 @@ When the installer is finished, proceed with the
       
       <p>
 The source distribution comes as a standard Unix tarball (.tar.gz).
-It contains only the <code>fink</code> package manager and its package
-descriptions and will download the source for packages on the fly.
+It contains only the <code>fink</code> package manager and will download the source for packages on the fly.
 You can get it from the
 <a href="http://www.finkproject.org/download/srcdist.php">download page</a>.
-It is important that you don't use StuffIt Expander to extract the tar
-archive.
-For some reason StuffIt still can't handle long file names.
-If StuffIt Expander already extracted the archive, throw away the
-folder it created.
+Older versions of StuffIt Expander have difficuly with handling long file names, so if you have any problems you'll need to remove the folder it generates and follow the command-line instructions below.
 </p>
       <p>
 The source release must be installed from the command line, so open
 Terminal.app and change to the directory where you put the
-fink-0.x.x-full.tar.gz archive.
-(Note: If you have OS X 10.4 and XCode 2.1, you should use
-<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
-the appropriate changes below.)
-The following command extracts the archive:
+ <code>fink-0.27.x.tar.gz</code> archive.  Your web browser may have partially extracted the archive; in this case you will have <code>fink-0.27.x.tar</code> in your download directory, and you should skip the first command below.
+
+The following commands extract the archive:
 </p>
-      <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
+      
+      <pre>
+gunzip fink-0.27.x.tar.gz
+tar -xf fink-0.27.x.tar</pre>
       <p>
 That creates a directory with the same name as the archive.
-We'll just keep on using the placeholder <code>fink-0.x.x-full</code>
-here.
+We'll just keep on using the placeholder 
+<code>fink-0.27.x</code> here.
 Now, change into that directory and run the bootstrap script:
 </p>
-      <pre>cd fink-0.x.x-full
-./bootstrap.sh</pre>
+      <pre>cd fink-0.27.x
+./bootstrap</pre>
       <p>
 The script will run some checks on your system and use sudo to become
 root - that will prompt you for your password.
@@ -123,8 +119,8 @@ When the bootstrap is finished, proceed with the
       <p>
 To use the software installed in Fink's directory hierarchy, including
 the package management programs themselves, you must set your PATH
-environment variable (and some others) accordingly.
-In most cases, you can do this by entering the command
+environment variable (and some others) accordingly.  Current Fink versions do this automatically, and typically you will just need to open a new Terminal.app window to ensure that these settings are applied.  However, in some instances you will need to proceed manually.</p>
+<p>In most cases, you can do this by entering the command
       </p>
       <pre>/sw/bin/pathsetup.sh</pre>
       <p>
@@ -229,10 +225,11 @@ Fink packages have the ability to add settings of their own, e.g. the
 qt package sets the QTDIR environment variable.
 </p>
       <p>
-Once your environment is set up, proceed to the
+Once your environment is set up,  you will need to grab package descriptions as per the <a href="upgrade.php?phpLang=en">Upgrading Fink</a> chapter under <b>Upgrading the Source Distribution</b>, and then proceed to the
 <a href="packages.php?phpLang=en">Installing Packages</a> chapter to see how
 you can install some actually useful packages using the various
-package management tools included in Fink.
+package management tools included in Fink.  
+ 
 </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
