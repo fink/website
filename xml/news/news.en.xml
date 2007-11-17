@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.66 2007/11/09 02:41:45 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.67 2007/11/17 16:42:45 alexkhansen Exp $</cvsid>
 
 <newsitem>
   <date>2007-10-26</date>
@@ -12,7 +12,7 @@
     <p>The 10.4->10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.8</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run <code>fink reinstall fink</code>.</p>
     <p>A direct 10.3->10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the <code>fink-0.27.8</code> tarball and bootstrap a new Fink tree as above.</p>
     <p><em>Update, 2007-10-29:</em>  Users who have updated from 10.4 to 10.5 should note that using <code>fink cleanup</code> to remove .deb files will remove <em>all</em> of them.  This issue should be resolved in the next update.</p>
-    <p><em>Update, 2007-11-03:</em>  <code>fink-0.27.8</code> should solve the above issue as well as a couple of others that have come up.</p>
+    <p><em>Update, 2007-11-03:</em>  <code>fink-0.27.8</code> or later should solve the above issue as well as a couple of others that have come up.</p>
   </body>
 </newsitem>
 <newsitem>
