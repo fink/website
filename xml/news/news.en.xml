@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.67 2007/11/17 16:42:45 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.68 2007/11/18 21:46:04 dmacks Exp $</cvsid>
 
+<newsitem>
+  <date>2007-11-18</date>
+  <headline>PDB Website Down</headline>
+  <body>
+    <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+  </body>
+</newsitem>
 <newsitem>
   <date>2007-10-26</date>
   <headline>Initial Leopard Support</headline>
