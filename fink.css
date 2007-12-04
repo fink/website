@@ -147,8 +147,7 @@ code { font: 10pt Courier,"Courier New",monospace; color:black; white-space:nowr
 
 pre { background: #FFF2D9; font: 10pt Courier,"Courier New",monospace; color:black; padding:4px; padding-left:8px; margin-left:16px; margin-right:16px; }
 
-/* .desc { color:black; margin-left: 40px; white-space:pre; } */
-.desc { color:black; white-space:pre; }
+.desc { color:black; margin-left: 40px; white-space:pre; }
 
 img { border:0; }
 
