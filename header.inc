@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.111 2007/08/21 21:15:44 chris01 Exp $ */
+/* $Id: header.inc,v 1.112 2007/12/04 15:30:24 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -297,15 +297,18 @@ function insert_sub ($navbox, $active_page) {
 	<meta name="description" content="<? echo META_DESCRIPTION; ?>">
 	<meta name="robots" content="all">
 <?
-	$rdf_file = dirname(__FILE__) .'/news/news.' . $lang_code . '.rdf';
-	echo "<!-- $rdf_file  -->\n";
-	if (is_readable ($rdf_file )) {
-		$rdf_file = 'http://feeds.feedburner.com/FinkProjectNews-' . $lang_code;
-	} else {
-		$rdf_file = 'http://feeds.feedburner.com/FinkProjectNews';
+	if (!$link_alternate) {
+		$rdf_file = dirname(__FILE__) .'/news/news.' . $lang_code . '.rdf';
+		echo "<!-- $rdf_file  -->\n";
+		if (is_readable ($rdf_file )) {
+			$rdf_file = 'http://feeds.feedburner.com/FinkProjectNews-' . $lang_code;
+		} else {
+			$rdf_file = 'http://feeds.feedburner.com/FinkProjectNews';
+		}
+		$link_alternate = "<link rel=\"alternate\" title=\"Fink News RDF\" href=\"" . $rdf_file . "\" type=\"application/rss+xml\">";
 	}
+	print $link_alternate;
 ?>
-	<link rel="alternate" title="Fink News RDF" href="<? print $rdf_file ?>" type="application/rss+xml">
 	<link rev="made" href="mailto:fink-devel@lists.sourceforge.net">
 	<link rel="stylesheet" type="text/css" href="<? print $root ?>fink.css">
 	<? if ($metatags) echo $metatags; ?>
