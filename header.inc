@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.112 2007/12/04 15:30:24 rangerrick Exp $ */
+/* $Id: header.inc,v 1.113 2007/12/04 20:40:45 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -189,12 +189,12 @@ function it_item($title, $item) {
   }
   $it_flag = 1;
 
-  if ($title) {
+  // if ($title) {
     print '<tr valign="top"><td>'.$title.'</td><td>&nbsp;&nbsp;&nbsp;</td><td>'.
           $item.'</td></tr>'."\n";
-  } else {
-    print '<tr valign="top"><td colspan=3>'.$item.'</td></tr>'."\n";
-  }
+  // } else {
+    // print '<tr valign="top"><td></td><td>&nbsp;</td><td>'.$item.'</td></tr>'."\n";
+  // }
 }
 
 function it_start2() {
