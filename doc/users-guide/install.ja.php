@@ -121,7 +121,8 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
-  <pre>cd pico .profile</pre>
+  <pre>cd
+pico .profile</pre>
 <p>
 フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
 <code>. /sw/bin/init.sh</code> 行をタイプできるようになります。
