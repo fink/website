@@ -1,8 +1,11 @@
 <?
-/* $Id: header.inc,v 1.17 2007/09/27 23:11:22 rangerrick Exp $ */
+/* $Id: header.inc,v 1.18 2007/12/05 19:04:34 rangerrick Exp $ */
 
 $linkroot = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
+#$localroot = "http://ranger.users.finkproject.org/fink/";
+
+$disabled = true;
 
 $server = $_SERVER['SERVER_NAME'];
 $uri = $_SERVER['REQUEST_URI'];
@@ -44,7 +47,6 @@ if ($uses_pathinfo) {
 }
 
 /* generate page header and navigation */
-$section = "packages";
 $navbox = array(
   $localroot."pdb/index.php", "Introduction",
   $localroot."pdb/sections.php", "By Section",
@@ -59,44 +61,15 @@ if (substr($root,0,1) == "-") {
 } else {
   $root = $fsroot;
 }
-include "hostlogo.inc";
-include $fsroot."header.inc";
+include_once "hostlogo.inc";
+include_once $fsroot."header.inc";
 
-/* connect to database */
-include $fsroot."db.inc.php";
-$error_level = error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
-try {
-  $dbh = mysql_pconnect($db_host, $db_user, $db_passwd);
-  mysql_select_db($db_name, $dbh);
-}
-catch (Exception $e) {
-}
-error_reporting($error_level);
-if (!$dbh)
-  print '<p class="attention"><b>Couldn\'t connect to database!</b></p>';
+$solrurl = 'http://localhost:8983/solr';
 
-
-// Read url parameters. We use basic HTML encoding for now, and 
-// cut off very long values, to make unforseen SQL injection hacks more difficult.
-function get_safe_param($param_name, $valid_regexp='.*', $max_length=35) {
-  $param_name = $_GET[$param_name];
-  if ($param_name) $has_param_name = true;
-  if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name)) {
-    $param_name = '';
-  } else {
-    $param_name = mysql_real_escape_string(htmlspecialchars($param_name));
-    if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name))
-      $param_name = '';
-  }
-  if ($has_param_name && !$param_name)
-    $invalid_param = true;
-  else
-    $invalid_param = false;
-  return array (
-    $param_name,
-    $invalid_param,
-  );
+if ($disabled) {
+	print "<p>The package database is down temporarily. Sorry for the inconvenience.</p>\n";
+	include "footer.inc";
+	exit(0);
 }
- 
 
 ?>

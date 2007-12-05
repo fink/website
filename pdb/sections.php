@@ -1,10 +1,10 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 23:03:14 $';
+$cvs_date = '$Date: 2007/12/05 19:04:34 $';
 
-include "header.inc";
-include "memcache.inc";
+include_once "header.inc";
+include_once "sections.inc";
 ?>
 
 
@@ -16,29 +16,16 @@ That makes it easier to find the package you want.
 Here are the sections:
 </p>
 
-<?
-$q = "SELECT * FROM sections ORDER BY name ASC";
-$rs = cachedQuery($q);
-if (!$rs) {
-  print '<p><b>error during query:</b> '.mysql_error().'</p>';
-} else {
-  $seccount = count($rs);
-?>
 
 <ul>
 <?
-  foreach ($rs as $row) {
-    print '<li><a href="browse.php?section='.$row[name].'">'.$row[name].'</a>'.
-      ($row[description] ? (' - '.$row[description]) : '').
-      '</li>'."\n";
-  }
+foreach ($sections as $name => $description) {
+	$desctext = ($description ? (' - ' . $description) : '');
 ?>
+<li><a href="browse.php?section=<? print $name; ?>"><? print $name; ?></a><? print $desctext; ?></li>
+<? } ?>
 </ul>
-<?
-}
-?>
-
 
 <?
-include "footer.inc";
+include_once "footer.inc";
 ?>

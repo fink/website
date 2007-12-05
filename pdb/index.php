@@ -1,13 +1,19 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 23:11:22 $';
+$cvs_date = '$Date: 2007/12/05 19:04:34 $';
 
 // 2 hours, this page does not change much
 $cache_timeout = 7200;
 
-include "header.inc";
-include "memcache.inc";
+include_once "header.inc";
+include_once "memcache.inc";
+include_once "functions.inc";
+include_once "releases.inc";
+include_once "sections.inc";
+
+ini_set("memory_limit", "24M");
+
 ?>
 
 <h1>Package Database Introduction</h1>
@@ -37,37 +43,48 @@ unstable</a> and then download the latest descriptions by running <i>fink selfup
 href="browse.php?maintainer=None&nochildren=on">packages without maintainers</a>.</p>
 
 <?
-$q = "SELECT COUNT(DISTINCT name) FROM package";
-$rs = cachedQuery($q);
-if (!$rs) {
-  print '<p><b>error during query:</b> '.mysql_error().'</p>';
-  $pkgcount = '?';
-} else {
-  $pkgcount = array_shift($rs);
-  $pkgcount = $pkgcount[0];
+$pkgcount    = memcache_get_key('pdb-package-count');
+#$update_date = memcache_get_key('pdb-last-updated');
+
+if (!$pkgcount) {
+	$names = array();
+	$q = new SolrQuery();
+	$q->addQuery("dist_visible:true", true);
+	$q->addField("name_e");
+	$q->setUnique(true);
+	$r = $q->fetch();
+	if ($r != null) {
+		$pkgcount = count($r);
+		if ($pkgcount > 0) {
+			memcache_set_key('pdb-package-count', $pkgcount);
+		}
+	}
 }
 
-$q = "SELECT MAX(UNIX_TIMESTAMP(infofilechanged)) FROM package";
-$rs = cachedQuery($q);
-if (!$rs) {
-  print '<p><b>error during query:</b> '.mysql_error().'</p>';
-  $dyndate = '';
-} else {
-  $dyndate = array_shift($rs);
-  $dyndate = $dyndate[0];
+if (!$update_date) {
+	$q = new SolrQuery();
+	$q->addQuery("dist_visible:true", true);
+	$q->addField("infofilechanged");
+	$q->addSort("infofilechanged desc");
+	$q->setRows(1);
+	$q->setRaw(true);
+	$r = $q->fetch();
+	if ($r != null) {
+		$update_date = $r->response->docs[0]->infofilechanged;
+		if ($update_date) {
+			memcache_set_key('pdb-last-updated', $update_date);
+		}
+	}
 }
 
-$q = "SELECT * FROM sections ORDER BY name ASC";
-$rs = cachedQuery($q);
-if (!$rs) {
-  print '<p><b>error during query:</b> '.mysql_error().'</p>';
-} else {
-  $seccount = count($rs);
+$dyndate = date_create($update_date)->format('U');
+
+$seccount = count($sections);
+
 ?>
 
 <p>
-The database was last updated
-<? print gmstrftime("at %R GMT on %A, %B %d", $dyndate) ?> and currently lists
+The database was last updated <? print format_solr_date($update_date) ?> and currently lists
 <? print $pkgcount ?> packages in <? print $seccount ?> sections.
 </p>
 
@@ -84,18 +101,19 @@ or you can browse by archive section:
 
 <ul>
 <?
-  foreach ($rs as $row) {
-    print '<li><a href="browse.php?section='.$row[name].'">'.$row[name].'</a>'.  ($row[description] ? (' - '.$row[description]) : '').  '</li>'."\n";
-  }
+	foreach ($sections as $key => $value) {
+		print '<li><a href="browse.php?section='.$key.'">'.$key.'</a>';
+		if (!empty($value)) {
+			print " - $value";
+		}
+		print "</li>\n";
+	}
 ?>
 </ul>
-<?
-}
-?>
 
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
-include "footer.inc";
+include_once "footer.inc";
 ?>

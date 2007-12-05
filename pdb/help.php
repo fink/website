@@ -1,11 +1,11 @@
-<?
+<?php
 $title = "Package Database - Help Needed";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 19:51:08 $';
+$cvs_date = '$Date: 2007/12/05 19:04:34 $';
 
 $have_key = isset($maintainer);
 
-include "header.inc";
+include_once "header.inc";
 ?>
 
 <h1>Packages in Testing</h1>
@@ -37,7 +37,6 @@ Browse the full list
 </a> of packages without maintainer.
 </p>
 
-
-<?
-include "footer.inc";
+<?php
+include_once "footer.inc";
 ?>

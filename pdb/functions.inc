@@ -1,7 +1,38 @@
 <?php
 
 include_once('memcache.inc');
-$debug = true;
+
+static $debug           = false;
+static $cache_threshold = 250;  // number of packages in an object before storing
+
+// Read url parameters. We use basic HTML encoding for now, and 
+// cut off very long values, to make unforseen SQL injection hacks more difficult.
+function get_safe_param($param_name, $valid_regexp='.*', $max_length=120) {
+	$param_name = $_GET[$param_name];
+	if ($param_name) $has_param_name = true;
+	if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name)) {
+		$param_name = '';
+	} else {
+		#$param_name = mysql_real_escape_string(htmlspecialchars($param_name));
+		$param_name = htmlspecialchars($param_name);
+		if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name))
+			$param_name = '';
+	}
+	if ($has_param_name && !$param_name)
+		$invalid_param = true;
+	else
+		$invalid_param = false;
+	return array (
+		$param_name,
+		$invalid_param,
+	);
+}
+
+function format_solr_date($date) {
+	$returnval = date_create($date)->format("r");
+	$returnval = preg_replace('/ \+\d+$/', ' (UTC)', $returnval);
+	return $returnval;
+}
 
 function memcache_set_key($key, $value, $flag = false, $expire = 3600) {
 	global $debug;
@@ -14,7 +45,7 @@ function memcache_set_key($key, $value, $flag = false, $expire = 3600) {
 function memcache_get_key($key) {
 	global $debug;
 	global $memcache;
-	if ($memcache && !$debug) {
+	if (isset($memcache) && !$debug) {
 		return $memcache->get($key);
 	}
 	return false;
@@ -76,8 +107,8 @@ class SolrQuery {
 	protected $type;
 	protected $raw     = false;
 	protected $unique  = false;
-	protected $rows    = 5000;
-	protected $timeout = 3600; // 1 hour
+	protected $rows    = 3000;
+	protected $timeout = 3600;
 
 	protected $fields  = array();
 	protected $sort    = array();
@@ -138,13 +169,16 @@ class SolrQuery {
 	}
 
 	public function fetch() {
-		$key = $this->uniqueId();
+		global $cache_threshold;
 
+		$key    = $this->uniqueId();
 		$result = memcache_get_key($key);
 
 		if ($result == null || $result == false) {
 			$result = $this->fetch_uncached($unique);
-			memcache_set_key($key, $result, false, $this->getTimeout());
+			if ($result != null && count($result) > $cache_threshold) {
+				memcache_set_key($key, $result, false, $this->getTimeout());
+			}
 		}
 
 		return $result;
@@ -190,15 +224,20 @@ class SolrQuery {
 	}
 
 	public function uniqueId() {
-		$key = "solr-query-" . $this->getAction() . "-" . $unique;
+		$returnval = "solr-query-" . $this->getAction() . "-" . ($unique? 'u' : 'n');
 
 		$md5key = "";
 		foreach ($this as $key => $value) {
 			if ($key == "action" || $key == "unique") continue;
-			$md5key .= $key . $value;
+			$md5key .= $key;
+			if (is_array($value)) {
+				foreach ($value as $array_contents) {
+					$md5key .= $array_contents;
+				}
+			}
 		}
-		$key .= "-" . md5($md5key);
-		return $key;
+		$returnval .= "-" . md5($md5key);
+		return $returnval;
 	}
 
 	public function __toString() {
