@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/05 20:47:52 $';
+$cvs_date = '$Date: 2007/12/05 20:49:12 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -191,19 +191,19 @@ if ($result == null || count($result) == 0) { # No package found
 		$dist_names[$dist->getName()]++;
 	}
 	$color_last = count($dist_names) - 1;
-	$dark  = array(227, 202, 255);
+	#$dark  = array(227, 202, 255);
+	$dark  = array(174, 160, 198);
 	$light = array(246, 236, 255);
 	$colors = array();
 	foreach (range($color_count, $color_last) as $number) {
 		$color = array();
-		foreach (range(0, 1) as $index) {
+		foreach (range(0, 2) as $index) {
 			$dark_color = $dark[$index];
 			$light_color = $light[$index];
 
 			$difference = $light_color - $dark_color;
 			array_push($color, round($dark_color + ($difference / $color_last * $number)));
 		}
-		array_push($color, 255);
 		array_push($colors, $color);
 	}
 
@@ -212,7 +212,7 @@ if ($result == null || count($result) == 0) { # No package found
 
 		if ($last_dist_name != $dist_name) {
 			$color_count++;
-			$row_color='bgcolor="#' . dechex($colors[$color_count][0]) . dechex($colors[$color_count][1]) . 'ff"';
+			$row_color='bgcolor="#' . dechex($colors[$color_count][0]) . dechex($colors[$color_count][1]) . dechex($colors[$color_count][2]) . '"';
 		}
 
 		if (!$showall && !$dist->isVisible())
