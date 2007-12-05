@@ -75,7 +75,7 @@ $invalid_param = $invalid_param || $inv_p;
 list($tree, $inv_p) = get_safe_param('tree', '/^(bindist|stable|unstable)$/');
 $invalid_param = $invalid_param || $inv_p;
 
-list($section, $inv_p) = get_safe_param('section', '/^[a-z0-9\+\-\.]+$/');
+list($section, $inv_p) = get_safe_param('section', '/^[a-z0-9\+\-\.\/]+$/');
 $invalid_param = $invalid_param || $inv_p;
 
 $nochildren = $_GET['nochildren'];
