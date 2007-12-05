@@ -44,7 +44,7 @@ if (isset($_GET['submit']) && $_GET['submit'] == 'Search') {
 }
 
 // are there any advanced search options? If no, collapse advanced search div
-if ($_GET['maintainer'] || $_GET['name'] || $_GET['dist'] || $_GET['tree'] || $_GET['section'] || $_GET['nochildren'] || $_GET['noshlibsdev'] || $_GET['sort'] || $_GET['name_exact'])
+if ($_GET['maintainer'] || $_GET['name'] || $_GET['dist'] || $_GET['tree'] || $_GET['section'] || $_GET['nochildren'] || $_GET['noshlibsdev'] || (!empty($_GET['sort']) && $_GET['sort'] != "asc") || $_GET['name_exact'])
   $pdb_has_adv_searchoptions = true;
 else
   $pdb_has_adv_searchoptions = false;
