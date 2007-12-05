@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/05 20:49:12 $';
+$cvs_date = '$Date: 2007/12/05 21:18:31 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -9,27 +9,9 @@ include_once "functions.inc";
 include_once "releases.inc";
 
 $package = basename($HTTP_SERVER_VARS["PATH_INFO"]);
-
-$last_modified = memcache_get_key('pdb-last-modified-' . $package);
-if (!$last_modified) {
-	$q = new SolrQuery();
-	$q->addField("infofilechanged");
-	$q->addSort("infofilechanged desc");
-	$q->addSort("rel_id desc");
-	$q->addSort("pkg_id desc");
-	$q->addQuery("name_e:\"$package\"", true);
-	$q->setRows(1);
-	$q->setRaw(true);
-	$r = $q->fetch();
-	if ($r != null && $r->response->numFound >0) {
-		$date = $r->response->docs[0]->infofilechanged;
-		$last_modified = date_create($date)->format('D, d M Y H:i:s') . ' GMT';
-		memcache_set_key('pdb-last-modified-' . $package, $last_modified);
-	} else {
-		$last_modified = gmtime(', d M Y H:i:s') . ' GMT';
-	}
-}
-header("Last-Modified: $last_modified");
+$q = new SolrQuery();
+$q->addQuery("name_e:\"$package\"", true);
+handle_last_modified('pdb-last-modified-' . $package, $q);
 
 include_once "header.inc";
 

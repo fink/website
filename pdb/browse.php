@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/05 19:04:34 $';
+$cvs_date = '$Date: 2007/12/05 21:18:31 $';
 
 ini_set("memory_limit", "48M");
 
@@ -9,11 +9,14 @@ ini_set("memory_limit", "48M");
 $pdb_scripts = true;
 
 include_once "handle_options.inc";
-include_once "header.inc";
 include_once "memcache.inc";
 include_once "functions.inc";
 include_once "releases.inc";
 include_once "sections.inc";
+
+handle_last_modified('pdb-browse-last-modified', $query);
+
+include_once "header.inc";
 
 ?>
 

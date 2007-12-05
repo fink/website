@@ -28,6 +28,27 @@ function get_safe_param($param_name, $valid_regexp='.*', $max_length=120) {
 	);
 }
 
+function handle_last_modified($key, $query) {
+	$last_modified = memcache_get_key($key);
+	if (!$last_modified) {
+		$q = clone($query);
+		$q->setFields(array("infofilechanged"));
+		$q->setSort(array("infofilechanged desc", "rel_id desc", "pkg_id desc"));
+		$q->setRows(1);
+		$q->setRaw(true);
+	   $r = $q->fetch();
+	   if ($r != null && $r->response->numFound >0) {
+	      $date = $r->response->docs[0]->infofilechanged;
+	      $last_modified = date_create($date)->format('D, d M Y H:i:s') . ' GMT';
+	      memcache_set_key($key, $last_modified);
+	   } else {
+	      $last_modified = gmtime('D, d M Y H:i:s') . ' GMT';
+	   }
+	}
+	header("Last-Modified: $last_modified");
+	return $last_modified;
+}
+
 function format_solr_date($date) {
 	$returnval = date_create($date)->format("r");
 	$returnval = preg_replace('/ \+\d+$/', ' (UTC)', $returnval);
@@ -152,11 +173,11 @@ class SolrQuery {
 	}
 
 	public function getSort()            { return $this->sort; }
-	public function setSort($sort)       { $this->sort = $sort; }
-	public function addSort($sort)       { array_push($this->sort, $sort); }
+	public function setSort($sort)       { $this->sort = $sort; return $this; }
+	public function addSort($sort)       { array_push($this->sort, $sort); return $this; }
 
 	public function getQuery()           { return $this->query; }
-	public function setQuery($query)     { $this->query = $query; }
+	public function setQuery($query)     { $this->query = $query; return $this; }
 
 	public function addQuery($query, $required = false, $exclude = false) {
 		if ($required) {
@@ -166,6 +187,7 @@ class SolrQuery {
 		} else {
 			array_push($this->query, $query);
 		}
+		return $this;
 	}
 
 	public function fetch() {

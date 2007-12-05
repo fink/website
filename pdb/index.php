@@ -1,18 +1,22 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/05 19:04:34 $';
+$cvs_date = '$Date: 2007/12/05 21:18:31 $';
 
 // 2 hours, this page does not change much
 $cache_timeout = 7200;
 
-include_once "header.inc";
 include_once "memcache.inc";
 include_once "functions.inc";
 include_once "releases.inc";
 include_once "sections.inc";
 
 ini_set("memory_limit", "24M");
+$q = new SolrQuery();
+$q->addQuery("dist_visible:true", true);
+$update_date = handle_last_modified('pdb-last-modified', $q);
+
+include_once "header.inc";
 
 ?>
 
@@ -44,7 +48,6 @@ href="browse.php?maintainer=None&nochildren=on">packages without maintainers</a>
 
 <?
 $pkgcount    = memcache_get_key('pdb-package-count');
-#$update_date = memcache_get_key('pdb-last-updated');
 
 if (!$pkgcount) {
 	$names = array();
@@ -57,22 +60,6 @@ if (!$pkgcount) {
 		$pkgcount = count($r);
 		if ($pkgcount > 0) {
 			memcache_set_key('pdb-package-count', $pkgcount);
-		}
-	}
-}
-
-if (!$update_date) {
-	$q = new SolrQuery();
-	$q->addQuery("dist_visible:true", true);
-	$q->addField("infofilechanged");
-	$q->addSort("infofilechanged desc");
-	$q->setRows(1);
-	$q->setRaw(true);
-	$r = $q->fetch();
-	if ($r != null) {
-		$update_date = $r->response->docs[0]->infofilechanged;
-		if ($update_date) {
-			memcache_set_key('pdb-last-updated', $update_date);
 		}
 	}
 }
