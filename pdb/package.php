@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/05 19:04:34 $';
+$cvs_date = '$Date: 2007/12/05 19:59:24 $';
 
 $uses_pathinfo = 1;
 include_once "header.inc";
@@ -189,7 +189,7 @@ if ($result == null || count($result) == 0) { # No package found
 
 		if ($last_dist_name != $dist_name) {
 			$color_count++;
-			$row_color='bgcolor="' . dechex($colors[$color_count][0]) . dechex($colors[$color_count][1]) . 'ff"';
+			$row_color='bgcolor="#' . dechex($colors[$color_count][0]) . dechex($colors[$color_count][1]) . 'ff"';
 		}
 
 		if (!$showall && !$dist->isVisible())
