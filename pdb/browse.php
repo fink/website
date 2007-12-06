@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/05 21:18:31 $';
+$cvs_date = '$Date: 2007/12/06 20:19:20 $';
 
 ini_set("memory_limit", "48M");
 
@@ -202,7 +202,7 @@ package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer
 		} else {
 			print '<td class="packageName">'.get_full_version($package).'</td>';
 		}
-		print '<td>'.$package['descshort']."</td></tr>\n";
+		print '<td>'.htmlentities($package['descshort'])."</td></tr>\n";
 	}
 ?>
 </table>

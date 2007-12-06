@@ -33,7 +33,7 @@ function get_query_params() {
 	addGETParam($getparams, 'doc_id');
 	addGETParam($getparams, 'pkg_id');
 	foreach ($getparams as $key => $value) {
-		$query_params .= "$key=$value&";
+		$query_params .= "$key=$value&amp;";
 	}
 	$query_params = rtrim($query_params, '&?');
 	return $query_params;
@@ -189,5 +189,5 @@ if ($section != "testing") {
 	$query->setUnique(true);
 }
 
-$link_alternate =  "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"rss.php?format=RSS2.0&" . get_query_params() . "\" />\n";
-$link_alternate .= "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"Atom\" href=\"rss.php?format=ATOM&" . get_query_params() . "\" />\n";
+$link_alternate =  "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"rss.php?format=RSS2.0&amp;" . get_query_params() . "\">\n";
+$link_alternate .= "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"Atom\" href=\"rss.php?format=ATOM&amp;" . get_query_params() . "\">\n";

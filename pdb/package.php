@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 20:01:24 $';
+$cvs_date = '$Date: 2007/12/06 20:19:20 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -129,8 +129,8 @@ if ($result == null || count($result) == 0) { # No package found
 		} else {
 			$open_tag = '<a href="' . $p['name'] . '?rel_id=' . $p['rel_id'];
 			if ($showall)
-				$open_tag .= "&showall=on";
-			$open_tag .= '" alt="' . get_descriptive_name($p) . '">';
+				$open_tag .= "&amp;showall=on";
+			$open_tag .= '" title="' . get_descriptive_name($p) . '">';
 			$close_tag = '</a>';
 		}
 		return array ( $open_tag, $close_tag );
@@ -147,8 +147,8 @@ if ($result == null || count($result) == 0) { # No package found
 	function link_to_package($pobj, $showall = false, $description = '') {
 		$pkg_str = '<a href="'. $pobj['name'] . '?doc_id' . $pobj['doc_id'];
 		if ($showall)
-			$pkg_str .= '&showall=on';
-		$pkg_str .= '" alt="' . get_descriptive_name($pobj) . '">'.$package.'</a> ';
+			$pkg_str .= '&amp;showall=on';
+		$pkg_str .= '" title="' . get_descriptive_name($pobj) . '">'.$package.'</a> ';
 		if ($description)
 			$pkg_str .= htmlentities($description);
 		return $pkg_str;
@@ -164,8 +164,8 @@ if ($result == null || count($result) == 0) { # No package found
 	print "</tr>\n";
 
 	print '<tr bgcolor="#ffecbf">';
-	print '<th width="100" align="center"><a href="http://feeds.feedburner.com/FinkProjectNews-stable"><img src="' . $pdbroot . 'rdf.png" alt="stable RSS feed" border="0"  width="14" height="14" /></a> stable</th>';
-	print '<th width="100" align="center"><a href="http://feeds.feedburner.com/FinkProjectNews-unstable"><img src="' . $pdbroot . 'rdf.png" alt="unstable RSS feed" border="0"  width="14" height="14" /></a> unstable</th>';
+	print '<th width="100" align="center"><a href="http://feeds.feedburner.com/FinkProjectNews-stable"><img src="' . $pdbroot . 'rdf.png" alt="stable RSS feed" border="0"  width="14" height="14"></a> stable</th>';
+	print '<th width="100" align="center"><a href="http://feeds.feedburner.com/FinkProjectNews-unstable"><img src="' . $pdbroot . 'rdf.png" alt="unstable RSS feed" border="0"  width="14" height="14"></a> unstable</th>';
 	print "</tr>\n";
 
 	$color_count = 0;
@@ -261,7 +261,7 @@ if ($result == null || count($result) == 0) { # No package found
 
 	show_desc('Usage&nbsp;Hints:', $pobj['descusage']);
 
-	it_item("Section:", '<a href="'.$pdbroot.'browse.php?section='.$pobj['section'].'" alt="' . $sections[$pobj['section']] . '">'.$pobj['section'].'</a>');
+	it_item("Section:", '<a href="'.$pdbroot.'browse.php?section='.$pobj['section'].'" title="' . $sections[$pobj['section']] . '">'.$pobj['section'].'</a>');
 
 	// Get the maintainer field, and try to parse out the email address
 	if ($pobj['maintainer']) {
@@ -282,7 +282,7 @@ if ($result == null || count($result) == 0) { # No package found
 		it_item("Maintainer:", '<a href="'.$pdbroot.'browse.php?maintainer='.$maintainer.'">'.$maintainer.'</a>');
 	}
 	if ($pobj['homepage']) {
-		it_item("Website:", '<a href="'.$pobj['homepage'].'" alt="' . $pobj['name'] . ' home page">'.$pobj['homepage'].'</a>');
+		it_item("Website:", '<a href="'.$pobj['homepage'].'" title="' . $pobj['name'] . ' home page">'.$pobj['homepage'].'</a>');
 	}
 	if ($pobj['license']) {
 		it_item("License:", '<a href="http://fink.sourceforge.net/doc/packaging/policy.php#licenses">'.$pobj['license'].'</a>');
@@ -307,8 +307,8 @@ if ($result == null || count($result) == 0) { # No package found
 			$infofile_tag = '?pathrev=' . $pobj['tag'];
 		else
 			$infofile_tag = '';
-		$infofile_html  = '<a href="'.$infofile_cvs_url.$infofile_tag.($infofile_tag ? '&' : '?').'view=markup" alt="' . $pobj['name'] . ' info file">'.$infofile_path.'</a><br>';
-		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'" alt="' . $pobj['name'] . ' CVS log">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
+		$infofile_html  = '<a href="'.$infofile_cvs_url.$infofile_tag.($infofile_tag ? '&amp;' : '?').'view=markup" title="' . $pobj['name'] . ' info file">'.$infofile_path.'</a><br>';
+		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'" title="' . $pobj['name'] . ' CVS log">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
 		it_item("Info-File:", $infofile_html);
 	}
 
