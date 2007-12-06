@@ -1,12 +1,13 @@
 <?php
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 17:38:35 $';
+$cvs_date = '$Date: 2007/12/06 20:01:24 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
 include_once "functions.inc";
 include_once "releases.inc";
+include_once "sections.inc";
 
 $package = basename($HTTP_SERVER_VARS["PATH_INFO"]);
 $q = new SolrQuery();
@@ -117,7 +118,7 @@ if ($result == null || count($result) == 0) { # No package found
 			it_item('', $text);
 		}
 	}
-	
+
 	function version_tags($p) {
 		global $showall;
 		global $pobj;
@@ -126,20 +127,28 @@ if ($result == null || count($result) == 0) { # No package found
 			$open_tag = '<b>';
 			$close_tag = '</b>';
 		} else {
-			$open_tag = "<a href=\"$package" . '?rel_id=' . $p['rel_id'];
+			$open_tag = '<a href="' . $p['name'] . '?rel_id=' . $p['rel_id'];
 			if ($showall)
 				$open_tag .= "&showall=on";
-			$open_tag .= '">';
+			$open_tag .= '" alt="' . get_descriptive_name($p) . '">';
 			$close_tag = '</a>';
 		}
 		return array ( $open_tag, $close_tag );
 	}
 
-	function link_to_package($package, $doc_id, $showall = false, $description = '') {
-		$pkg_str = '<a href="'. $package . '?doc_id' . $doc_id;
+	function get_descriptive_name($pobj, $escape_entities = true) {
+		$pkg_str = $pobj['name'] . ' ' . get_full_version($pobj) . ' (' . $pobj['descshort'] . ')';
+		if ($escape_entities) {
+			$pkg_str = htmlentities($pkg_str);
+		}
+		return $pkg_str;
+	}
+
+	function link_to_package($pobj, $showall = false, $description = '') {
+		$pkg_str = '<a href="'. $pobj['name'] . '?doc_id' . $pobj['doc_id'];
 		if ($showall)
 			$pkg_str .= '&showall=on';
-		$pkg_str .= '">'.$package.'</a> ';
+		$pkg_str .= '" alt="' . get_descriptive_name($pobj) . '">'.$package.'</a> ';
 		if ($description)
 			$pkg_str .= htmlentities($description);
 		return $pkg_str;
@@ -252,7 +261,7 @@ if ($result == null || count($result) == 0) { # No package found
 
 	show_desc('Usage&nbsp;Hints:', $pobj['descusage']);
 
-	it_item("Section:", '<a href="'.$pdbroot.'browse.php?section='.$pobj['section'].'">'.$pobj['section'].'</a>');
+	it_item("Section:", '<a href="'.$pdbroot.'browse.php?section='.$pobj['section'].'" alt="' . $sections[$pobj['section']] . '">'.$pobj['section'].'</a>');
 
 	// Get the maintainer field, and try to parse out the email address
 	if ($pobj['maintainer']) {
@@ -273,7 +282,7 @@ if ($result == null || count($result) == 0) { # No package found
 		it_item("Maintainer:", '<a href="'.$pdbroot.'browse.php?maintainer='.$maintainer.'">'.$maintainer.'</a>');
 	}
 	if ($pobj['homepage']) {
-		it_item("Website:", '<a href="'.$pobj['homepage'].'">'.$pobj['homepage'].'</a>');
+		it_item("Website:", '<a href="'.$pobj['homepage'].'" alt="' . $pobj['name'] . ' home page">'.$pobj['homepage'].'</a>');
 	}
 	if ($pobj['license']) {
 		it_item("License:", '<a href="http://fink.sourceforge.net/doc/packaging/policy.php#licenses">'.$pobj['license'].'</a>');
@@ -285,7 +294,7 @@ if ($result == null || count($result) == 0) { # No package found
 		$parent = $parentq->fetch();
 		if ($parent != null && count($parent) != 0) {
 			$parentobj = array_shift($parent);
-			it_item("Parent:", link_to_package($parentobj['name'], $parentobj['doc_id'], $showall));
+			it_item("Parent:", link_to_package($parentobj, $showall));
 		} else {
 			it_item("Parent:", $pobj['parentname']);
 		}
@@ -298,8 +307,8 @@ if ($result == null || count($result) == 0) { # No package found
 			$infofile_tag = '?pathrev=' . $pobj['tag'];
 		else
 			$infofile_tag = '';
-		$infofile_html  = '<a href="'.$infofile_cvs_url.$infofile_tag.($infofile_tag ? '&' : '?').'view=markup">'.$infofile_path.'</a><br>';
-		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
+		$infofile_html  = '<a href="'.$infofile_cvs_url.$infofile_tag.($infofile_tag ? '&' : '?').'view=markup" alt="' . $pobj['name'] . ' info file">'.$infofile_path.'</a><br>';
+		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'" alt="' . $pobj['name'] . ' CVS log">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
 		it_item("Info-File:", $infofile_html);
 	}
 
@@ -311,7 +320,7 @@ if ($result == null || count($result) == 0) { # No package found
 	if ($splitoffs != null && count($splitoffs) != 0) {
 		$contents = "<table>";
 		foreach ($splitoffs as $doc) {
-			$contents .= "<tr><td>" . link_to_package($doc['name'], $doc['doc_id'], $showall) . "</td><td>" . $doc['descshort'] . "</td></tr>\n";
+			$contents .= "<tr><td>" . link_to_package($doc, $showall) . "</td><td>" . $doc['descshort'] . "</td></tr>\n";
 		}
 		$contents .= "</table>\n";
 		it_item("SplitOffs:", $contents);
