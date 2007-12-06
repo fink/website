@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 22:23:09 $';
+$cvs_date = '$Date: 2007/12/06 22:29:29 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -294,7 +294,7 @@ if ($result == null || count($result) == 0) { # No package found
 		$parent = $parentq->fetch();
 		if ($parent != null && count($parent) != 0) {
 			$parentobj = array_shift($parent);
-			it_item("Parent:", link_to_package($parentobj, $showall));
+			it_item("Parent:", link_to_package($parentobj, $showall, '(' . $parentobj['descshort'] . ')'));
 		} else {
 			it_item("Parent:", $pobj['parentname']);
 		}
