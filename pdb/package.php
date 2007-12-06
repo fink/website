@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 17:21:15 $';
+$cvs_date = '$Date: 2007/12/06 17:38:35 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -44,9 +44,9 @@ if ($version) {
 	if ($epoch != null)
 		$fullQuery->addQuery("epoch:$epoch", true);
 	if ($version != null)
-		$fullQuery->addQuery("version_e:$version", true);
+		$fullQuery->addQuery("version_e:\"$version\"", true);
 	if ($revision != null)
-		$fullQuery->addQuery("revision_e:$revision", true);
+		$fullQuery->addQuery("revision_e:\"$revision\"", true);
 }
 
 if ($doc_id) {
@@ -61,7 +61,7 @@ if ($doc_id) {
 		if ($release == 'unstable' || $release == 'stable') {
 			$fullQuery->addQuery("rel_type:$release", true);
 		} else {
-			$fullQuery->addQuery("rel_version:$release", true);
+			$fullQuery->addQuery("rel_version:\"$release\"", true);
 		}
 	}
 	if ($architecture) {
@@ -280,8 +280,8 @@ if ($result == null || count($result) == 0) { # No package found
 	}
 	if ($pobj['parentname']) {
 		$parentq = new SolrQuery();
-		$parentq->addQuery('rel_id:' . $pobj['rel_id'], true);
-		$parentq->addQuery('pkg_id:' . $pobj['parentname'], true);
+		$parentq->addQuery('rel_id:"' . $pobj['rel_id'] . '"', true);
+		$parentq->addQuery('pkg_id:"' . $pobj['parentname'] . '"', true);
 		$parent = $parentq->fetch();
 		if ($parent != null && count($parent) != 0) {
 			$parentobj = array_shift($parent);
@@ -304,8 +304,8 @@ if ($result == null || count($result) == 0) { # No package found
 	}
 
 	$sq = new SolrQuery();
-	$sq->addQuery('rel_id:' . $pobj['rel_id'], true);
-	$sq->addQuery('parentname_e:\"' . $pobj['pkg_id'] . '"', true);
+	$sq->addQuery('rel_id:"' . $pobj['rel_id'] . '"', true);
+	$sq->addQuery('parentname_e:"' . $pobj['pkg_id'] . '"', true);
 	$splitoffs = $sq->fetch();
 
 	if ($splitoffs != null && count($splitoffs) != 0) {
