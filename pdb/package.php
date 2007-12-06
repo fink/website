@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/05 21:18:31 $';
+$cvs_date = '$Date: 2007/12/06 17:21:15 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -305,7 +305,7 @@ if ($result == null || count($result) == 0) { # No package found
 
 	$sq = new SolrQuery();
 	$sq->addQuery('rel_id:' . $pobj['rel_id'], true);
-	$sq->addQuery('parentname_e:' . $pobj['pkg_id'], true);
+	$sq->addQuery('parentname_e:\"' . $pobj['pkg_id'] . '"', true);
 	$splitoffs = $sq->fetch();
 
 	if ($splitoffs != null && count($splitoffs) != 0) {
