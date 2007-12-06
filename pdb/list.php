@@ -1,9 +1,10 @@
 <?php
 $title = "Package Database - Obsolete page";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/05 19:04:34 $';
+$cvs_date = '$Date: 2007/12/06 22:03:22 $';
 
-$location = "browse.php";
+$server = $_SERVER['SERVER_NAME'];
+$location = "http://$server/pdb/browse.php";
 
 // This page is obsolete. We redirect to browse.php
 header("Location: $location");

@@ -1,9 +1,9 @@
 <?
-/* $Id: header.inc,v 1.19 2007/12/06 17:21:58 rangerrick Exp $ */
+/* $Id: header.inc,v 1.20 2007/12/06 22:03:21 rangerrick Exp $ */
 
-$linkroot = "http://www.finkproject.org/";
+$linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
-#$localroot = "http://ranger.users.finkproject.org/fink/";
+$pdbroot   = $localroot . "pdb/";
 
 $disabled = false;
 

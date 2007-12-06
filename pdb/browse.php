@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 20:19:20 $';
+$cvs_date = '$Date: 2007/12/06 22:03:21 $';
 
 ini_set("memory_limit", "48M");
 
@@ -195,7 +195,7 @@ package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer
 	}
 	foreach ($packages as $id => $package) {
 		print '<tr class="package">';
-		print '<td class="packageName"><a href="package.php/'.$package['name'] . ($showall? '?showall=on' : '') . '">'.$package['name'].'</a></td>';
+		print '<td class="packageName"><a href="' . $pdbroot . 'package.php/'.$package['name'] . ($showall? '?showall=on' : '') . '">'.$package['name'].'</a></td>';
 		if ($tree == 'testing') {
 			print '<td>'.$p['version_unstable'].'</td>'.
 						'<td>'.$p['version_stable'].'</td>';

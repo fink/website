@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/09/27 23:03:14 $';
+$cvs_date = '$Date: 2007/12/06 22:03:21 $';
 
 include "header.inc";
 include "releases.inc";
@@ -224,10 +224,10 @@ if (mysql_errno()) {
 				$maintainer = 'None ';
 				
 			if(! strcmp($sort, "maintainer"))
-				$pkglist = $pkglist . $maintainer.'<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+				$pkglist = $pkglist . $maintainer.'<a href="' . $pdbroot . 'package.php/'.$row[name].'">'.$row[name].'</a> '.
 				 $row[version].'-'.$row[revision].$desc . "\n";  
 			else
-				$pkglist = $pkglist . '<a href="package.php/'.$row[name].'">'.$row[name].'</a> '.
+				$pkglist = $pkglist . '<a href="' . $pdbroot . 'package.php/'.$row[name].'">'.$row[name].'</a> '.
 				 $row[version].'-'.$row[revision].$desc .' - '.$maintainer."\n"; 
 
 			if($row[moveflag] > 0)

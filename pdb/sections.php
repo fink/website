@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/05 19:04:34 $';
+$cvs_date = '$Date: 2007/12/06 22:03:22 $';
 
 include_once "header.inc";
 include_once "sections.inc";
@@ -22,7 +22,7 @@ Here are the sections:
 foreach ($sections as $name => $description) {
 	$desctext = ($description ? (' - ' . $description) : '');
 ?>
-<li><a href="browse.php?section=<? print $name; ?>"><? print $name; ?></a><? print $desctext; ?></li>
+<li><a href="<? print $pdbroot; ?>browse.php?section=<? print $name; ?>"><? print $name; ?></a><? print $desctext; ?></li>
 <? } ?>
 </ul>
 
