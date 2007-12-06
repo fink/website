@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 20:19:20 $';
+$cvs_date = '$Date: 2007/12/06 22:23:09 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -148,7 +148,7 @@ if ($result == null || count($result) == 0) { # No package found
 		$pkg_str = '<a href="'. $pobj['name'] . '?doc_id' . $pobj['doc_id'];
 		if ($showall)
 			$pkg_str .= '&amp;showall=on';
-		$pkg_str .= '" title="' . get_descriptive_name($pobj) . '">'.$package.'</a> ';
+		$pkg_str .= '" title="' . get_descriptive_name($pobj) . '">'.$pobj['name'].'</a> ';
 		if ($description)
 			$pkg_str .= htmlentities($description);
 		return $pkg_str;
