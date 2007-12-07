@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/07 18:06:17 $';
+$cvs_date = '$Date: 2007/12/07 18:12:12 $';
 
 ini_set("memory_limit", "48M");
 
@@ -22,6 +22,7 @@ if ($desc) $pdb_title .= htmlentities(" ($desc)");
 include_once "header.inc";
 ?>
 
+<!-- query = <?= str_replace('-->', '', $query) ?> -->
 <h1>Browse packages</h1>
 
 <p>
