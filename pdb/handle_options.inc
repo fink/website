@@ -19,7 +19,7 @@ function get_query_description() {
 		array_push($_desc, "Name = '" . $_GET['name'] . "'");
 	if ($_GET['maintainer'])
 		array_push($_desc, "Maintainer = '" . $_GET['maintainer'] . "'");
-	if ($_GET['dist_name'])
+	if (!empty($_GET['dist_name']) && $_GET['dist_name'] != "default")
 		array_push($_desc, "Distribution = '" . $_GET['dist_name'] . "'");
 	elseif ($_GET['dist'])
 		array_push($_desc, "Distribution = '" . $_GET['dist'] . "'");
@@ -71,7 +71,6 @@ $pdb_has_adv_searchoptions = false;
 // NOTE: You have to change the parameter list at the top of this file as well
 
 $invalid_param     = false;
-$default_dist_name = '10.4';
 $default_tree      = 'unstable';
 $default_sort      = 'asc';
 
@@ -94,8 +93,7 @@ $invalid_param = $invalid_param || $inv_p;
 
 list($dist_name, $inv_p) = get_safe_param('dist_name', '/^[a-z0-9\+\-\.\%]+$/');
 $invalid_param = $invalid_param || $inv_p;
-if (empty($dist_name)) $dist_name = $default_dist_name;
-if (!empty($dist_name) && $dist_name != $default_dist_name) $pdb_has_adv_searchoptions = true;
+if (!empty($dist_name) && $dist_name != "default") $pdb_has_adv_searchoptions = true;
 
 list($dist, $inv_p) = get_safe_param('dist', '/^[a-z0-9\+\-\.\%]+$/');
 $invalid_param = $invalid_param || $inv_p;
@@ -147,7 +145,7 @@ if ($name_exact == "on" || $name_exact == "checked" || $name_exact == "true" || 
 // Select the one with the highest priority
 if ($tree == 'testing') {
 	foreach ($distributions as $_d) {
-		if (empty($dist_name)) {
+		if (empty($dist_name) or $dist_name == "default") {
 			$dist = $_d->getId();
 		} else {
 			if ($_d->getName() == $dist_name) {
@@ -170,7 +168,9 @@ $query->addField("rel_type");
 
 if ($dist)
 	$query->addQuery("dist_id:\"$dist\"", true);
-if ($dist_name)
+if ($dist_name == "default")
+	$query->addQuery("+(dist_name:\"10.4\" OR dist_name:\"10.5\")");
+elseif ($dist_name)
 	$query->addQuery("dist_name:\"$dist_name\"", true);
 if ($architecture)
 	$query->addQuery("dist_architecture:\"$architecture\"", true);

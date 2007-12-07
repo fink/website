@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/07 14:50:31 $';
+$cvs_date = '$Date: 2007/12/07 15:10:33 $';
 
 ini_set("memory_limit", "48M");
 
@@ -57,7 +57,10 @@ function genFormSelect($var_name, $cur_val, $values, $description = '') {
 }
 
 // Distribution values
-$dist_values = array('' => 'Any');
+$dist_values = array(
+	''        => 'Any',
+	'default' => 'Supported Distributions (10.4 and 10.5)',
+);
 foreach ($distributions as $d) {
 	if (!$showall and !$d->isVisible()) {
 		continue;
@@ -123,11 +126,11 @@ No maintainer
 </td>
 </tr>
 
-<tr><td>Distribution:</td><td><?genFormSelect("dist_name", $dist_name, $dist_values);?></td></tr>
+<tr><td>Distribution:</td><td><?genFormSelect("dist_name",    $dist_name, $dist_values);?></td></tr>
 <tr><td>Architecture:</td><td><?genFormSelect("architecture", $architecture, $arch_values);?></td></tr>
-<tr><td>Tree:</td>        <td><?genFormSelect("tree", $tree, $tree_values);?></td></tr>
-<tr><td>Section:</td>     <td><?genFormSelect("section", $section, $section_values);?></td></tr>
-<!-- <tr><td>Sort order:</td>  <td><? // genFormSelect("sort", $sort, $sort_values); ?></td></tr> -->
+<tr><td>Tree:</td>        <td><?genFormSelect("tree",         $tree, $tree_values);?></td></tr>
+<tr><td>Section:</td>     <td><?genFormSelect("section",      $section, $section_values);?></td></tr>
+<!-- <tr><td>Sort order:</td>  <td><? // genFormSelect("sort",         $sort, $sort_values); ?></td></tr> -->
 </table>
 
 <input name="nochildren" type="checkbox" <? if ($nochildren == "on") echo "checked";?>>
