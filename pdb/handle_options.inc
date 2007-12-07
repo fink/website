@@ -146,7 +146,7 @@ if ($name_exact == "on" || $name_exact == "checked" || $name_exact == "true" || 
 // Select the one with the highest priority
 if ($tree == 'testing') {
 	foreach ($distributions as $_d) {
-		if (empty($dist_name) or $dist_name == "default") {
+		if (empty($dist_name) or $dist_name == "default" or $dist_name == "any") {
 			$dist = $_d->getId();
 		} else {
 			if ($_d->getName() == $dist_name) {
@@ -171,7 +171,7 @@ if ($dist)
 	$query->addQuery("dist_id:\"$dist\"", true);
 if ($dist_name == "default")
 	$query->addQuery("+(dist_name:\"10.4\" OR dist_name:\"10.5\")");
-elseif ($dist_name)
+elseif ($dist_name != "any")
 	$query->addQuery("dist_name:\"$dist_name\"", true);
 if ($architecture)
 	$query->addQuery("dist_architecture:\"$architecture\"", true);
