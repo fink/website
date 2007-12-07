@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/07 18:12:12 $';
+$cvs_date = '$Date: 2007/12/07 18:33:39 $';
 
 ini_set("memory_limit", "48M");
 
@@ -77,7 +77,7 @@ $arch_values = array(
 );
 
 $tree_values = array(
-	""         => "Any",
+	"any"      => "Any",
 	"unstable" => "Unstable",
 	"stable"   => "Stable",
 	"bindist"  => "Binary Distribution",

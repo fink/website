@@ -13,21 +13,21 @@ function addGETParam(&$_params, $_param_name) {
 
 function get_query_description() {
 	$_desc = array();
-	if ($_GET['summary'])
+	if (!empty($_GET['summary']))
 		array_push($_desc, "Search = '" . $_GET['summary'] . "'");
-	if ($_GET['name'])
+	if (!empty($_GET['name']))
 		array_push($_desc, "Name = '" . $_GET['name'] . "'");
-	if ($_GET['maintainer'])
+	if (!empty($_GET['maintainer']))
 		array_push($_desc, "Maintainer = '" . $_GET['maintainer'] . "'");
 	if (!empty($_GET['dist_name']) && $_GET['dist_name'] != "default")
 		array_push($_desc, "Distribution = '" . $_GET['dist_name'] . "'");
-	elseif ($_GET['dist'])
+	elseif (!empty($_GET['dist']))
 		array_push($_desc, "Distribution = '" . $_GET['dist'] . "'");
-	if ($_GET['architecture'])
+	if (!empty($_GET['architecture']))
 		array_push($_desc, "Architecture = '" . $_GET['architecture'] . "'");
-	if ($_GET['tree'])
+	if (!empty($_GET['tree']))
 		array_push($_desc, "Tree = '" . $_GET['tree'] . "'");
-	if ($_GET['section'])
+	if (!empty($_GET['section']))
 		array_push($_desc, "Section = '" . $_GET['section'] . "'");
 	return join(", ", $_desc);
 }
@@ -102,7 +102,7 @@ $invalid_param = $invalid_param || $inv_p;
 list($architecture, $inv_p) = get_safe_param('architecture', '/^(i386|powerpc)$/');
 $invalid_param = $invalid_param || $inv_p;
 
-list($tree, $inv_p) = get_safe_param('tree', '/^(bindist|stable|unstable)$/');
+list($tree, $inv_p) = get_safe_param('tree', '/^(any|bindist|stable|unstable)$/');
 $invalid_param = $invalid_param || $inv_p;
 if (empty($tree)) $tree = $default_tree;
 if (!empty($tree) && $tree != $default_tree) $pdb_has_adv_searchoptions = true;
@@ -169,16 +169,16 @@ $query->addField("rel_type");
 
 if ($dist)
 	$query->addQuery("dist_id:\"$dist\"", true);
-if ($dist_name == "default")
+if ($dist_name == 'default')
 	$query->addQuery("+(dist_name:\"10.4\" OR dist_name:\"10.5\")");
-elseif ($dist_name != "any")
+elseif ($dist_name != 'any')
 	$query->addQuery("dist_name:\"$dist_name\"", true);
 if ($architecture)
 	$query->addQuery("dist_architecture:\"$architecture\"", true);
 if ($tree) {
-	if ($tree == "testing")
+	if ($tree == 'testing')
 		$query->addQuery("(+rel_type:\"stable\" OR +rel_type:\"unstable\")");
-	else
+	elseif ($tree != 'any')
 		$query->addQuery("rel_type:\"$tree\"", true);
 }
 if (!$showall)
