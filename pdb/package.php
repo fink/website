@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/07 14:50:32 $';
+$cvs_date = '$Date: 2007/12/07 14:58:47 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -14,8 +14,6 @@ $q->addQuery("name_e:\"$package\"", true);
 handle_last_modified('pdb-last-modified-' . $package, $q);
 
 $pdb_title = "Package Database - Package " . $package;
-
-include_once "header.inc";
 
 // Get url parameters
 list($version, $inv_p) = get_safe_param('version', '/^[0-9\-.:]+$/');
@@ -73,9 +71,6 @@ if ($doc_id) {
 
 $result = $fullQuery->fetch();
 
-// print_r($result);
-// exit(0);
-
 $warning = '';
 if ($result == null || count($result) == 0) { # No specific version found, try latest
 	$result = $basicQuery->fetch();
@@ -87,6 +82,15 @@ if ($result == null || count($result) == 0) { # No specific version found, try l
 	$warning .= $rel_id ? " for selected release" : '';
 	$warning .= "!</b>";
 }
+
+if ($result != null && count($result) != 0) {
+	foreach ($result as $_r) {
+		$pdb_title .= ' (' . htmlentities($_r['descshort']) . ')';
+		break;
+	}
+}
+
+include_once "header.inc";
 
 if ($result == null || count($result) == 0) { # No package found
 ?>
