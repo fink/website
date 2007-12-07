@@ -1,5 +1,5 @@
 <?
-/* $Id: theader.inc,v 1.9 2007/08/15 18:28:30 dmacks Exp $ */
+/* $Id: theader.inc,v 1.10 2007/12/07 14:50:31 rangerrick Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -123,14 +123,14 @@ height="8" border="0" alt=""></td>
 width="120" height="26" border="0" alt="Sections:"></td></tr>
 <?
 for ($i = 0; $i < sizeof($sections); $i += 3) {
-  $name = $sections[$i+2];
+  $_name = $sections[$i+2];
   print '<tr align="left">';
   if ($section == $sections[$i+2]) {
     print '<td colspan="2" class="layout" bgcolor="#87b9e7"><a href="'.$root.$sections[$i].'">';
-    print '<img src="'.$root.'img/s-'.$name.'-down.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'">';
+    print '<img src="'.$root.'img/s-'.$_name.'-down.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'">';
   } else {
     print '<td colspan="2" class="layout"><a href="'.$root.$sections[$i].'">';
-    print '<img src="'.$root.'img/s-'.$name.'.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'">';
+    print '<img src="'.$root.'img/s-'.$_name.'.gif" width="120" height="18" border="0" alt="'.$sections[$i+1].'">';
   }
   print '</a></td></tr>'."\n";
 }

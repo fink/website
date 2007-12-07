@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.20 2007/12/06 22:03:21 rangerrick Exp $ */
+/* $Id: header.inc,v 1.21 2007/12/07 14:50:32 rangerrick Exp $ */
 
 $linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -44,6 +44,10 @@ if ($uses_pathinfo) {
     exit;
   }
   $root = "-".$pdbroot;
+}
+
+if (!empty($pdb_title)) {
+	$title = $pdb_title;
 }
 
 /* generate page header and navigation */

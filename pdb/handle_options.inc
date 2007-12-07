@@ -5,62 +5,85 @@ include_once "functions.inc";
 include_once "releases.inc";
 include_once "sections.inc";
 
-function addGETParam(&$params, $param_name) {
-  $value = stripslashes($_GET[$param_name]);
-  if ($value)
-    $params[$param_name] = urlencode($value);
+function addGETParam(&$_params, $_param_name) {
+  $_value = stripslashes($_GET[$_param_name]);
+  if ($_value)
+    $_params[$_param_name] = urlencode($_value);
+}
+
+function get_query_description() {
+	$_desc = array();
+	if ($_GET['summary'])
+		array_push($_desc, "Search = '" . $_GET['summary'] . "'");
+	if ($_GET['name'])
+		array_push($_desc, "Name = '" . $_GET['name'] . "'");
+	if ($_GET['maintainer'])
+		array_push($_desc, "Maintainer = '" . $_GET['maintainer'] . "'");
+	if ($_GET['dist_name'])
+		array_push($_desc, "Distribution = '" . $_GET['dist_name'] . "'");
+	elseif ($_GET['dist'])
+		array_push($_desc, "Distribution = '" . $_GET['dist'] . "'");
+	if ($_GET['architecture'])
+		array_push($_desc, "Architecture = '" . $_GET['architecture'] . "'");
+	if ($_GET['tree'])
+		array_push($_desc, "Tree = '" . $_GET['tree'] . "'");
+	if ($_GET['section'])
+		array_push($_desc, "Section = '" . $_GET['section'] . "'");
+	return join(", ", $_desc);
 }
 
 function get_query_params() {
-	$getparams    = array();
-	$query_params = "";
+	$_getparams    = array();
+	$_query_params = "";
 
-	$value = $_GET['nomaintainer'];
-	if ($value == 'on')
+	$_value = $_GET['nomaintainer'];
+	if ($_value == 'on')
 		$_GET['maintainer'] = 'None';
-	addGETParam($getparams, 'maintainer');
-	addGETParam($getparams, 'name');
-	addGETParam($getparams, 'summary');
-	addGETParam($getparams, 'nolist');
-	addGETParam($getparams, 'dist');
-	addGETParam($getparams, 'tree');
-	addGETParam($getparams, 'section');
-	addGETParam($getparams, 'nochildren');
-	addGETParam($getparams, 'noshlibsdev');
-	addGETParam($getparams, 'sort');
-	addGETParam($getparams, 'showall');
-	addGETParam($getparams, 'name_exact');
-	addGETParam($getparams, 'doc_id');
-	addGETParam($getparams, 'pkg_id');
-	foreach ($getparams as $key => $value) {
-		$query_params .= "$key=$value&amp;";
+	addGETParam($_getparams, 'maintainer');
+	addGETParam($_getparams, 'name');
+	addGETParam($_getparams, 'summary');
+	addGETParam($_getparams, 'nolist');
+	addGETParam($_getparams, 'dist');
+	addGETParam($_getparams, 'dist_name');
+	addGETParam($_getparams, 'architecture');
+	addGETParam($_getparams, 'tree');
+	addGETParam($_getparams, 'section');
+	addGETParam($_getparams, 'nochildren');
+	addGETParam($_getparams, 'noshlibsdev');
+	addGETParam($_getparams, 'showall');
+	addGETParam($_getparams, 'name_exact');
+	addGETParam($_getparams, 'doc_id');
+	addGETParam($_getparams, 'pkg_id');
+	foreach ($_getparams as $_key => $_value) {
+		$_query_params .= htmlentities($_key) . '=' . htmlentities($_value) . '&';
 	}
-	$query_params = rtrim($query_params, '&?');
-	return $query_params;
+	$_query_params = rtrim($_query_params, '&?');
+	return $_query_params;
 }
 
 if (isset($_GET['submit']) && $_GET['submit'] == 'Search') {
   header("Location: browse.php?" . get_query_params());
 }
 
-// are there any advanced search options? If no, collapse advanced search div
-if ($_GET['maintainer'] || $_GET['name'] || $_GET['dist'] || $_GET['tree'] || $_GET['section'] || $_GET['nochildren'] || $_GET['noshlibsdev'] || (!empty($_GET['sort']) && $_GET['sort'] != "asc") || $_GET['name_exact'])
-  $pdb_has_adv_searchoptions = true;
-else
-  $pdb_has_adv_searchoptions = false;
+$pdb_has_adv_searchoptions = false;
 
 // Read url parameters
 // NOTE: You have to change the parameter list at the top of this file as well
 
-$invalid_param = false;
+$invalid_param     = false;
+$default_dist_name = '10.4';
+$default_tree      = 'unstable';
+$default_sort      = 'asc';
 
-list($maintainer, $inv_p) = get_safe_param('maintainer', '/^[a-zA-Z0-9\.@%\&\'\\\ ]+$/');
+list($maintainer, $inv_p) = get_safe_param('maintainer', '/../');
 $invalid_param = $invalid_param || $inv_p;
-if ($inv_p) { $invalid_param_text = 'Maintainer contained invalid characters!'; }
+if ($inv_p) { $invalid_param_text = 'Maintainer must be at least 2 characters!'; }
+if (!empty($maintainer)) $pdb_has_adv_searchoptions = true;
 
 list($name, $inv_p) = get_safe_param('name', '/^[a-z0-9\+\-\.\%]+$/');
 $invalid_param = $invalid_param || $inv_p;
 if ($inv_p) { $invalid_param_text = 'Name contained invalid characters!'; }
+if (!empty($name)) $pdb_has_adv_searchoptions = true;
 
 list($summary, $inv_p) = get_safe_param('summary', '/../');
 $invalid_param = $invalid_param || $inv_p;
@@ -69,29 +92,43 @@ if ($inv_p) { $invalid_param_text = 'Summary search must be at least 2 character
 list($nolist, $inv_p) = get_safe_param('nolist', '/on/');
 $invalid_param = $invalid_param || $inv_p;
 
+list($dist_name, $inv_p) = get_safe_param('dist_name', '/^[a-z0-9\+\-\.\%]+$/');
+$invalid_param = $invalid_param || $inv_p;
+if (empty($dist_name)) $dist_name = $default_dist_name;
+if (!empty($dist_name) && $dist_name != $default_dist_name) $pdb_has_adv_searchoptions = true;
+
 list($dist, $inv_p) = get_safe_param('dist', '/^[a-z0-9\+\-\.\%]+$/');
+$invalid_param = $invalid_param || $inv_p;
+
+list($architecture, $inv_p) = get_safe_param('architecture', '/^(i386|powerpc)$/');
 $invalid_param = $invalid_param || $inv_p;
 
 list($tree, $inv_p) = get_safe_param('tree', '/^(bindist|stable|unstable)$/');
 $invalid_param = $invalid_param || $inv_p;
+if (empty($tree)) $tree = $default_tree;
+if (!empty($tree) && $tree != $default_tree) $pdb_has_adv_searchoptions = true;
 
 list($section, $inv_p) = get_safe_param('section', '/^[a-z0-9\+\-\.\/]+$/');
 $invalid_param = $invalid_param || $inv_p;
+if (!empty($section)) $pdb_has_adv_searchoptions = true;
 
 $nochildren = $_GET['nochildren'];
 if ($nochildren != "on") $nochildren = '';
+if (!empty($nochildren)) $pdb_has_adv_searchoptions = true;
 
 $noshlibsdev = $_GET['noshlibsdev'];
 if ($noshlibsdev != "on") $noshlibsdev = '';
+if (!empty($noshlibsdev)) $pdb_has_adv_searchoptions = true;
 
 $sort = $_GET['sort'];
-if ($sort != "desc") $sort = 'asc';
+if ($sort != "desc") $sort = $default_sort;
 
 list($showall, $inv_p) = get_safe_param('showall', '/^on$/');
 $invalid_param = $invalid_param || $inv_p;
 
 list($name_exact, $inv_p) = get_safe_param('name_exact', '/(on|checked)/');
 $invalid_param = $invalid_param || $inv_p;
+if (!empty($name_exact)) $pdb_has_adv_searchoptions = true;
 
 list($doc_id, $inv_p) = get_safe_param('doc_id', '/^[a-zA-Z0-9\:\+\-\.]+$/');
 $invalid_param = $invalid_param || $inv_p;
@@ -108,9 +145,15 @@ if ($name_exact == "on" || $name_exact == "checked" || $name_exact == "true" || 
 
 // We need to set a specific distribution if showing packages in "testing"
 // Select the one with the highest priority
-if ($tree == 'testing' && empty($dist)) {
-	foreach($distributions as $d) {
-		$dist = $d;
+if ($tree == 'testing') {
+	foreach ($distributions as $_d) {
+		if (empty($dist_name)) {
+			$dist = $_d->getId();
+		} else {
+			if ($_d->getName() == $dist_name) {
+				$dist = $_->getId();
+			}
+		}
 	}
 }
 
@@ -127,6 +170,10 @@ $query->addField("rel_type");
 
 if ($dist)
 	$query->addQuery("dist_id:\"$dist\"", true);
+if ($dist_name)
+	$query->addQuery("dist_name:\"$dist_name\"", true);
+if ($architecture)
+	$query->addQuery("dist_architecture:\"$architecture\"", true);
 if ($tree) {
 	if ($tree == "testing")
 		$query->addQuery("(+rel_type:\"stable\" OR +rel_type:\"unstable\")");

@@ -7,31 +7,31 @@ static $cache_threshold = 250;  // number of packages in an object before storin
 
 // Read url parameters. We use basic HTML encoding for now, and 
 // cut off very long values, to make unforseen SQL injection hacks more difficult.
-function get_safe_param($param_name, $valid_regexp='.*', $max_length=120) {
-	$param_name = $_GET[$param_name];
-	if ($param_name) $has_param_name = true;
-	if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name)) {
-		$param_name = '';
+function get_safe_param($_param, $_valid_regexp='.*', $_max_length=120) {
+	$_value = $_GET[$_param];
+	if (!empty($_value)) $has_param_name = true;
+	if (strlen($_value) > $_max_length || !preg_match($_valid_regexp, $_value)) {
+		$_value = '';
 	} else {
-		#$param_name = mysql_real_escape_string(htmlspecialchars($param_name));
-		$param_name = htmlspecialchars($param_name);
-		if (strlen($param_name) > $max_length || !preg_match($valid_regexp, $param_name))
-			$param_name = '';
+		#$_value = mysql_real_escape_string(htmlspecialchars($_value));
+		$_value = htmlspecialchars($_value);
+		if (strlen($_value) > $_max_length || !preg_match($_valid_regexp, $_value))
+			$_value = '';
 	}
-	if ($has_param_name && !$param_name)
+	if ($has_param_name && !$_value)
 		$invalid_param = true;
 	else
 		$invalid_param = false;
 	return array (
-		$param_name,
+		$_value,
 		$invalid_param,
 	);
 }
 
-function handle_last_modified($key, $query) {
-	$last_modified = memcache_get_key($key);
+function handle_last_modified($_key, $_query) {
+	$last_modified = memcache_get_key($_key);
 	if (!$last_modified) {
-		$q = clone($query);
+		$q = clone($_query);
 		$q->setFields(array("infofilechanged"));
 		$q->setSort(array("infofilechanged desc", "rel_id desc", "pkg_id desc"));
 		$q->setRows(1);
@@ -40,9 +40,9 @@ function handle_last_modified($key, $query) {
 	   if ($r != null && $r->response->numFound >0) {
 	      $date = $r->response->docs[0]->infofilechanged;
 	      $last_modified = date_create($date)->format('D, d M Y H:i:s') . ' GMT';
-	      memcache_set_key($key, $last_modified);
+	      memcache_set_key($_key, $last_modified);
 	   } else {
-	      $last_modified = gmtime('D, d M Y H:i:s') . ' GMT';
+	      $last_modified = gmdate('D, d M Y H:i:s') . ' GMT';
 	   }
 	}
 	header("Last-Modified: $last_modified");
@@ -95,30 +95,30 @@ function parse_version($version) {
 	return array($epoch, $version, $revision);
 }
 
-function fetch_package($name, $version = null, $distribution = null, $release = null, $architecture = null, $showall = false) {
-	$query = new SolrQuery();
+function fetch_package($_name, $_version = null, $_distribution = null, $_release = null, $_architecture = null, $_showall = false) {
+	$_query = new SolrQuery();
 
-	$query->addQuery("name_e:\"$name\"", true);
-	if ($version != null)
-		$query->addQuery("version_e:\"$version\"", true);
-	if ($distribution != null)
-		$query->addQuery("dist_name:\"$distribution\"", true);
-	if ($release != null)
-		$query->addQuery("rel_type:\"$release\"", true);
-	if ($architecture != null)
-		$query->addQuery("dist_architecture:\"$architecture\"", true);
-	if (!$showall)
-		$query->addQuery("dist_visible:true", true);
+	$_query->addQuery("name_e:\"$_name\"", true);
+	if ($_version != null)
+		$_query->addQuery("version_e:\"$_version\"", true);
+	if ($_distribution != null)
+		$_query->addQuery("dist_name:\"$_distribution\"", true);
+	if ($_release != null)
+		$_query->addQuery("rel_type:\"$_release\"", true);
+	if ($_architecture != null)
+		$_query->addQuery("dist_architecture:\"$_architecture\"", true);
+	if (!$_showall)
+		$_query->addQuery("dist_visible:true", true);
 
-	$response = $query->fetch();
-	if ($response == null || $response == false) {
+	$_response = $_query->fetch();
+	if ($_response == null || $_response == false) {
 		return null;
-	} elseif (count($response) == 0) {
+	} elseif (count($_response) == 0) {
 		return null;
-	} elseif (count($response) == 1) {
-		return array_shift($response);
+	} elseif (count($_response) == 1) {
+		return array_shift($_response);
 	} else {
-		return $response;
+		return $_response;
 	}
 }
 

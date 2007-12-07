@@ -14,8 +14,8 @@ foreach(array(
 	new Distribution("10.4",        "i386",    "10.4/i386",          "dists/10.4",        5, true, true, true),
 	new Distribution("10.5",        "powerpc", "10.5/powerpc",       "dists/10.4",        6, true, true, true),
 	new Distribution("10.5",        "i386",    "10.5/i386",          "dists/10.4",        7, true, true, true),
-) as $dist) {
-	$distributions[$dist->getId()] = $dist;
+) as $_dist) {
+	$distributions[$_dist->getId()] = $_dist;
 }
 
 foreach(array(
@@ -38,18 +38,13 @@ foreach(array(
 	new Release($distributions["10.5-i386"],            "bindist",  "0.9.0",   1, false),
 	new Release($distributions["10.5-i386"],            "stable",   "current", 2, true),
 	new Release($distributions["10.5-i386"],            "unstable", "current", 3, true),
-) as $rel) {
-	$releases[$rel->getId()] = $rel;
+) as $_rel) {
+	$releases[$_rel->getId()] = $_rel;
 }
 
-foreach($releases as $rel) {
-	$dist_id = $rel->getDistribution()->getId();
-	/*
-	if (!isset($dists_to_releases[$dist_id])) {
-		$dists_to_releases[$dist_id] = array();
-	}
-	*/
-	$dists_to_releases[$dist_id][$rel->getType()] = $rel;
+foreach($releases as $_rel) {
+	$_dist_id = $_rel->getDistribution()->getId();
+	$dists_to_releases[$_dist_id][$_rel->getType()] = $_rel;
 }
 
 ?>

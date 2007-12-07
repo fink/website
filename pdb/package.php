@@ -1,7 +1,6 @@
 <?php
-$title = "Package Database - Package ";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 22:29:29 $';
+$cvs_date = '$Date: 2007/12/07 14:50:32 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -13,6 +12,8 @@ $package = basename($HTTP_SERVER_VARS["PATH_INFO"]);
 $q = new SolrQuery();
 $q->addQuery("name_e:\"$package\"", true);
 handle_last_modified('pdb-last-modified-' . $package, $q);
+
+$pdb_title = "Package Database - Package " . $package;
 
 include_once "header.inc";
 
@@ -335,9 +336,9 @@ if ($result == null || count($result) == 0) { # No package found
 } /* if (no package found) */
 ?>
 
-<p><a href="<? print $pdbroot ?>sections.php">Section list</a> -
-<a href="<? print $pdbroot ?>browse.php">Flat package list</a> -
-<a href="<? print $pdbroot ?>browse.php?nolist=on">Search packages</a>
+<p><a href="<?= $pdbroot ?>sections.php">Section list</a> -
+<a href="<?= $pdbroot ?>browse.php">Flat package list</a> -
+<a href="<?= $pdbroot ?>browse.php?nolist=on">Search packages</a>
 </p>
 
 

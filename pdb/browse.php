@@ -1,23 +1,25 @@
 <?
-$title = "Package Database";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 22:03:21 $';
+$cvs_date = '$Date: 2007/12/07 14:50:31 $';
 
 ini_set("memory_limit", "48M");
 
 // load javascript for pdb in header.inc
 $pdb_scripts = true;
 
-include_once "handle_options.inc";
 include_once "memcache.inc";
 include_once "functions.inc";
 include_once "releases.inc";
 include_once "sections.inc";
+include_once "handle_options.inc";
 
 handle_last_modified('pdb-browse-last-modified', $query);
 
-include_once "header.inc";
+$pdb_title = "Package Database - Browse";
+$desc = get_query_description();
+if ($desc) $pdb_title .= htmlentities(" ($desc)");
 
+include_once "header.inc";
 ?>
 
 <h1>Browse packages</h1>
@@ -60,21 +62,28 @@ foreach ($distributions as $d) {
 	if (!$showall and !$d->isVisible()) {
 		continue;
 	}
-	$dist_values[$d->getId()] = $d->getDescription();
+	$dist_values[$d->getName()] = $d->getName();
 }
 
 // Allowed values for certain fields
+$arch_values = array(
+	""        => "Any",
+	"i386"    => "Intel",
+	"powerpc" => "PowerPC",
+);
+
 $tree_values = array(
-		"" => "Any",
-		"unstable" => "Unstable",
-		"stable" => "Stable",
-		"bindist" => "Binary Distribution",
-		"testing" => "Packages that need testing"
-	);
+	""         => "Any",
+	"unstable" => "Unstable",
+	"stable"   => "Stable",
+	"bindist"  => "Binary Distribution",
+	"testing"  => "Packages that need testing"
+);
+
 $sort_values = array(
 	"asc" => "Ascending",
 	"asc" => "Descending"
-	);
+);
 
 $section_values = array( "" => "Any" );
 foreach ($sections as $secname => $description) {
@@ -86,7 +95,7 @@ foreach ($sections as $secname => $description) {
 <?if ($showall) print '<input name="showall" type="hidden" value="on">';?>
 <br>
 Summary:
-<input name="summary" type="text" value="<?=stripslashes(stripslashes($summary))?>"> (Leave empty to list all)
+<input name="summary" type="text" value="<?= htmlentities($_GET['summary']) ?>"> (Leave empty to list all)
 <br>
 
 <input name="submit" type="submit" value="Search">
@@ -96,7 +105,7 @@ Summary:
 <br>
 
 <span class="expand_adv_options">
-<a href="javascript:switchMenu('advancedsearch','triangle');" title="Advanced search options"><img src="<? echo $root ?>img/collapse.png" alt="" id="triangle" width="9" height="8">&nbsp;Advanced search options</a>
+<a href="javascript:switchMenu('advancedsearch','triangle');" title="Advanced search options"><img src="<?= $root ?>img/collapse.png" alt="" id="triangle" width="9" height="8">&nbsp;Advanced search options</a>
 </span>
 <br>
 
@@ -104,29 +113,22 @@ Summary:
 
 <table><tr>
 <td>Package Name:</td>
-<td><input name="name" type="text" value="<?=$name?>"> <input name="name_exact" type="checkbox" <? if ($name_exact) echo "checked"; ?>> Exact match </td>
+<td><input name="name" type="text" value="<?= htmlentities($_GET['name']) ?>"> <input name="name_exact" type="checkbox" <? if ($name_exact) echo "checked" ?>> Exact match </td>
 </tr><tr>
 <td>Maintainer:</td>
 <td>
-<input name="maintainer" type="text" value="<?=stripslashes(stripslashes($maintainer))?>" onChange="set_list_nomaintainer(this.value)">
+<input name="maintainer" type="text" value="<?= htmlentities($_GET['maintainer'])?>" onChange="set_list_nomaintainer(this.value)">
 <input name="nomaintainer" type="checkbox" onchange="list_unmaintained_packages(this.checked)"  <? if ($maintainer == "None") echo "checked";?>>
 No maintainer
 </td>
 </tr>
 
-<tr>
-<td>Distribution:</td>
-<td><?genFormSelect("dist", $dist, $dist_values);?></td>
-</tr><tr>
-<td>Tree:</td>
-<td><?genFormSelect("tree", $tree, $tree_values);?></td>
-</tr><tr>
-<td>Section:</td>
-<td><?genFormSelect("section", $section, $section_values);?></td>
-</tr><tr>
-<td>Sort order:</td>
-<td><?genFormSelect("sort", $sort, $sort_values);?></td>
-</tr></table>
+<tr><td>Distribution:</td><td><?genFormSelect("dist_name", $dist_name, $dist_values);?></td></tr>
+<tr><td>Architecture:</td><td><?genFormSelect("architecture", $architecture, $arch_values);?></td></tr>
+<tr><td>Tree:</td>        <td><?genFormSelect("tree", $tree, $tree_values);?></td></tr>
+<tr><td>Section:</td>     <td><?genFormSelect("section", $section, $section_values);?></td></tr>
+<!-- <tr><td>Sort order:</td>  <td><? // genFormSelect("sort", $sort, $sort_values); ?></td></tr> -->
+</table>
 
 <input name="nochildren" type="checkbox" <? if ($nochildren == "on") echo "checked";?>>
 Exclude packages with parent (includes most "-dev", "-shlibs", ... splitoffs)
@@ -162,7 +164,7 @@ if ($packages != null) {
 }
 
 if ($section == "testing") {
-	foreach ($packages as $id => $ppackage) {
+	foreach ($packages as $id => $package) {
 		if ($package['version_stable'] == $package['version_unstable'])
 			unset($packages[$id]);
 	}
