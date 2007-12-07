@@ -1,13 +1,19 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/10/30 02:50:54';
+$cvs_date = 'Date: 2007/12/07 03:11:53';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2007-10-26%20%E5%BD%93%E9%9D%A2%E3%81%AE%20Leopard%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><span class="news-date">2007-10-26: </span><span class="news-headline">当面の Leopard サポート</span></a><?php gray_line(); ?>
+<a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
+    <p>
+    パッケージデータベースのウェブが現在停止しており、ご不便をかけております。
+    できる限り早く解決できるよう復旧に向けて作業中です。
+    ハードウェアとソフトウェアのアップグレードが完了するまでお待ち下さい。
+    </p>
+  <a name="2007-10-26%20%E5%BD%93%E9%9D%A2%E3%81%AE%20Leopard%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><span class="news-date">2007-10-26: </span><span class="news-headline">当面の Leopard サポート</span></a><?php gray_line(); ?>
     <p>The Fink Project は Mac OS X Leopard (10.5) のサポートを開始します。</p>
 <p>10.5 を利用されている方は、バイナリディストリビューションができるまでは、bootstrap で行う必要があります。
 fink-0.27.7 を<a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">ここから</a>ダウンロードしてください。</p>

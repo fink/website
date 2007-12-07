@@ -1,35 +1,28 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/10/31 07:02:46';
+$cvs_date = 'Date: 2007/12/07 03:11:52';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
-    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
-<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
-<p>The 10.4-&gt;10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.7</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run <code>fink reinstall fink</code>.</p>
-<p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the <code>fink-0.27.7</code> tarball and bootstrap a new Fink tree as above.</p>
-<p><b>Update, 2007-10-29:</b>Upgrading users should note that using <code>fink cleanup</code> to remove .deb files will remove <b>all</b> of them.  This issue should be resolved in the next update.</p>
-<a name="2007-03-04%20Problems%20with%20tar"><span class="news-date">2007-03-04: </span><span class="news-headline">Problems with tar</span></a><?php gray_line(); ?>
-<p>Some users of fink's unstable tree are having sporadic difficulties
-at the end of building large packages, getting reports like
-<b>tar: File changed as we read it</b> which causes the .deb file
-not to be built.
+<a name="18/11/2007%20Site%20PDB"><span class="news-date">18/11/2007: </span><span class="news-headline">Site PDB</span></a><?php gray_line(); ?>
+    <p>L'interface web de gestion des paquets ne marche plus. La base de données est arrêtée suite à des mises à jour matériels et logiciels du serveur. Nous travaillons pour rétablir ce serveur dès que possible. Désolé pour la gêne occasionée.</p>
+  <a name="26/10/2007%20Support%20de%20Leopard"><span class="news-date">26/10/2007: </span><span class="news-headline">Support de Leopard</span></a><?php gray_line(); ?>
+    <p>Le projet Fink annonce le commencement du support pour Leopard (Mac OS X 10.5).</p>
+<p>Les utilisateurs de 10.5 démarrant une nouvelle arborescence Fink devront le faire via bootstrap, tant qu'une distribution binaire ne sera pas disponible. <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">Téléchargez la version 0.27.7 de Fink</a>.</p>
+<p>La mise à jour de 10.4 vers 10.5 pour Fink peut s'effectuer en exécutant la commande <code>fink selfupdate</code> pour installer fink-0.27.7. Si vous êtes déjà sous 10.5, vérifiez d'abord que Xcode 3.0 est installé. Une fois 10.5 installé, exécutez ensuite <code>fink reinstall fink</code>.</p>
+<p>La mise à jour de 10.3 vers 10.5 n'est pas encore prête. Si vous êtes impatient(e), vous devrez alors démarrer une nouvelle arborescence via bootstrap avec <code>fink-0.27.7</code>.</p>
+<p><b>Actualisé le 29 octobre:</b> Attention, pour les utilisateurs qui installent la mise à jour Leopard, exécuter la commande <code>fink cleanup</code> supprimera <b>l'ensemble</b> de vos fichiers .deb. La prochaine version de Fink corrigera ce problème.</p>
+<a name="04/03/2007%20Probl%C3%A8mes%20avec%20tar"><span class="news-date">04/03/2007: </span><span class="news-headline">Problèmes avec tar</span></a><?php gray_line(); ?>
+<p>Certains utilisateurs de la branche instable rencontre des difficultés lors de la génération de paquets de grandes tailles, en ayant des avertissements comme <b>tar: File changed as we read it</b>, ce qui empêche la création du paquet .deb.
 </p><p>
-The fink team is currently studying this problem to determine a permanent
-fix.  For the time being, users experiencing this problem can work around
-it by issuing the command <code>fink install tar-1.15.1-14</code>.  It
-may be necessary to issue that command after each <code>fink update-all</code>
-command, as well.
-</p><p>Once the fink team has determined how to solve this problem 
-permanently, another announcement will be made here.
+L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande <code>fink install tar-1.15.1-14</code>. Il peut s'avérer nécessaire de renouveller cette étape après chaque commande <code>fink update-all</code>. 
+</p><p>
+Une annonce sera postée ici même dès la correction effectuée.
 </p>
-<p><b> Update: 16 March 2007: </b> The new version of fink's 
-<code>dpkg</code> package resolves this problem.  Unstable users can
-now run the update commands normally.
+<p><b>ctualisé le 16 mars:</b> la nouvelle version de <code>dpkg</code> résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
 </p>
 		<a name="19/08/2006%20Serveur%20inacessible%20-%20Solutions"><span class="news-date">19/08/2006: </span><span class="news-headline">Serveur inacessible - Solutions</span></a><?php gray_line(); ?>
 <p><b>Mise à jour du 21/08/2006 </b> : le serveur est de nouveau accessible.</p>

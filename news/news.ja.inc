@@ -1,4 +1,10 @@
-<a name="2007-10-26%20%E5%BD%93%E9%9D%A2%E3%81%AE%20Leopard%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><span class="news-date">2007-10-26: </span><span class="news-headline">当面の Leopard サポート</span></a><?php gray_line(); ?>
+<a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
+    <p>
+    パッケージデータベースのウェブが現在停止しており、ご不便をかけております。
+    できる限り早く解決できるよう復旧に向けて作業中です。
+    ハードウェアとソフトウェアのアップグレードが完了するまでお待ち下さい。
+    </p>
+  <a name="2007-10-26%20%E5%BD%93%E9%9D%A2%E3%81%AE%20Leopard%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><span class="news-date">2007-10-26: </span><span class="news-headline">当面の Leopard サポート</span></a><?php gray_line(); ?>
     <p>The Fink Project は Mac OS X Leopard (10.5) のサポートを開始します。</p>
 <p>10.5 を利用されている方は、バイナリディストリビューションができるまでは、bootstrap で行う必要があります。
 fink-0.27.7 を<a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">ここから</a>ダウンロードしてください。</p>
@@ -26,43 +32,4 @@ fink team は、この問題を恒久的に直す方法を研究しています�
 <code>dpkg</code> の新バージョンにて問題が解決されます。
 Unstable を利用している方は、通常通り update を実行してください。
 </p>
-		<a name="2006-08-19%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%80%E3%82%A6%E3%83%B3;%20%E5%9B%9E%E9%81%BF%E7%AD%96%E6%9C%89%E3%82%8A%E3%80%82"><span class="news-date">2006-08-19: </span><span class="news-headline">サーバダウン; 回避策有り。</span></a><?php gray_line(); ?>
-<p><b>Update: 2006年8月21日:</b> サーバーが復旧されました。</p>
-	<p> 
-現在、fink の４つの重要なサービス (rsync 更新、バイナリ配布, ソースファイルの "master mirror", パッケージデータベース)
-をホストしているサーバがダウンしています。
-8月21日月曜日頃には復旧すると思われますが、それまでの間は回避策を提供いたします。
-</p><p>
-fink を更新する際は、primary ミラー以外の rsync ミラーを選択する (次のパラグラフで解説) か、
-<code>fink selfupdate-cvs</code> コマンドを使います。
-このコマンドはいっぱい実行するだけで、次回からの更新も CVS を用いるようになります。
-サーバが復旧したら、<code>fink selfupdate-rsync</code> とすることで rsync 更新に戻すことができます。
-</p><p>
-バイナリ配布の不在と、ソースファイルの "master mirror" に関しては、
-<code>fink configure</code> コマンドを実行します。
-以下の質問以外に対しては、既定の答を受け入れてください。
-"Should Fink try to download pre-compiled packages from 
-the binary distribution if available?" には "no" を
-(バイナリ配布を無効化する)。
-ミラー設定を変えるか聞かれた場合 "yes" と答える。
-この後、"What mirror order should fink use 
-when downloading sources?" と聞かれるので、
-"2: Search Master Mirrors last"
-(master mirror サーバを自動的に選択する機能を無効化)
-と答えます。
-最後に、 更新に rsync を用いると決めていて、
-"Choose a mirror for 'RSync SelfUpdate'" 
-と聞かれた場合、
-rsync://master.us.finkmirrors.net/finkinfo/
-以外を選択してください。
-米国にいる場合、残念ながら他には選択肢がないかもしれません。
-</p><p>
-最後に、パッケージデータベースを使うには、
-<a href="http://lists.finkproject.org/pdb">データベースのバックアップ</a>
-を使いください。
-ただし、これは数週間遅れたデータになります。
-</p>
-<p><b> Update: 2007年6月2日</b> 10.4.9 の <code>sudo</code> の挙動が変わりました。
-これによって、更新スクリプトはそのままでは作動しなくなりました。
-最初に <code>sudo -s</code> として、スーパーユーザーにすれば大丈夫です。</p>
 		

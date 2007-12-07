@@ -1,13 +1,15 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/10/31 07:02:45';
+$cvs_date = 'Date: 2007/12/07 03:11:52';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
+<a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
+    <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+  <a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
     <p>El Proyecto Fink anuncia el soporte inicial para Mac OS X Leopard (10.5).</p>
 <p>Lo usuarios del sistema 10.5 que creen una nueva instalación de Fink
 deberán hacerlo usando el bootstrap, al menos hasta que se genere una

@@ -5,67 +5,60 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2007-10-31T16:05:10+09:00</dc:date>
+    <dc:date>2007-12-07T12:12:27+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support">
-      <title>Initial Leopard Support</title>
-      <link>http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support</link>
-      <guid>http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#18%2F11%2F2007%20Site%20PDB">
+      <title>Site PDB</title>
+      <link>http://fink.sourceforge.net/news/#18%2F11%2F2007%20Site%20PDB</link>
+      <guid>http://fink.sourceforge.net/news/#18%2F11%2F2007%20Site%20PDB</guid>
       <description>
-    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
-<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
-<p>The 10.4-&gt;10.5 update can be accomplished by running fink selfupdate to get fink-0.27.7 .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run fink reinstall fink.</p>
-<p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the fink-0.27.7 tarball and bootstrap a new Fink tree as above.</p>
-<p>Update, 2007-10-29:Upgrading users should note that using fink cleanup to remove .deb files will remove all of them.  This issue should be resolved in the next update.</p>
+    <p>L'interface web de gestion des paquets ne marche plus. La base de données est arrêtée suite à des mises à jour matériels et logiciels du serveur. Nous travaillons pour rétablir ce serveur dès que possible. Désolé pour la gêne occasionée.</p>
+  </description>
+      <content:encoded>
+    <p>L'interface web de gestion des paquets ne marche plus. La base de données est arrêtée suite à des mises à jour matériels et logiciels du serveur. Nous travaillons pour rétablir ce serveur dès que possible. Désolé pour la gêne occasionée.</p>
+  </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#26%2F10%2F2007%20Support%20de%20Leopard">
+      <title>Support de Leopard</title>
+      <link>http://fink.sourceforge.net/news/#26%2F10%2F2007%20Support%20de%20Leopard</link>
+      <guid>http://fink.sourceforge.net/news/#26%2F10%2F2007%20Support%20de%20Leopard</guid>
+      <description>
+    <p>Le projet Fink annonce le commencement du support pour Leopard (Mac OS X 10.5).</p>
+<p>Les utilisateurs de 10.5 démarrant une nouvelle arborescence Fink devront le faire via bootstrap, tant qu'une distribution binaire ne sera pas disponible. <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">Téléchargez la version 0.27.7 de Fink</a>.</p>
+<p>La mise à jour de 10.4 vers 10.5 pour Fink peut s'effectuer en exécutant la commande fink selfupdate pour installer fink-0.27.7. Si vous êtes déjà sous 10.5, vérifiez d'abord que Xcode 3.0 est installé. Une fois 10.5 installé, exécutez ensuite fink reinstall fink.</p>
+<p>La mise à jour de 10.3 vers 10.5 n'est pas encore prête. Si vous êtes impatient(e), vous devrez alors démarrer une nouvelle arborescence via bootstrap avec fink-0.27.7.</p>
+<p>Actualisé le 29 octobre: Attention, pour les utilisateurs qui installent la mise à jour Leopard, exécuter la commande fink cleanup supprimera l'ensemble de vos fichiers .deb. La prochaine version de Fink corrigera ce problème.</p>
 </description>
       <content:encoded>
-    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
-<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
-<p>The 10.4-&gt;10.5 update can be accomplished by running fink selfupdate to get fink-0.27.7 .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run fink reinstall fink.</p>
-<p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the fink-0.27.7 tarball and bootstrap a new Fink tree as above.</p>
-<p>Update, 2007-10-29:Upgrading users should note that using fink cleanup to remove .deb files will remove all of them.  This issue should be resolved in the next update.</p>
+    <p>Le projet Fink annonce le commencement du support pour Leopard (Mac OS X 10.5).</p>
+<p>Les utilisateurs de 10.5 démarrant une nouvelle arborescence Fink devront le faire via bootstrap, tant qu'une distribution binaire ne sera pas disponible. <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">Téléchargez la version 0.27.7 de Fink</a>.</p>
+<p>La mise à jour de 10.4 vers 10.5 pour Fink peut s'effectuer en exécutant la commande fink selfupdate pour installer fink-0.27.7. Si vous êtes déjà sous 10.5, vérifiez d'abord que Xcode 3.0 est installé. Une fois 10.5 installé, exécutez ensuite fink reinstall fink.</p>
+<p>La mise à jour de 10.3 vers 10.5 n'est pas encore prête. Si vous êtes impatient(e), vous devrez alors démarrer une nouvelle arborescence via bootstrap avec fink-0.27.7.</p>
+<p>Actualisé le 29 octobre: Attention, pour les utilisateurs qui installent la mise à jour Leopard, exécuter la commande fink cleanup supprimera l'ensemble de vos fichiers .deb. La prochaine version de Fink corrigera ce problème.</p>
 </content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar">
-      <title>Problems with tar</title>
-      <link>http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar</link>
-      <guid>http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#04%2F03%2F2007%20Probl%E8mes%20avec%20tar">
+      <title>Problèmes avec tar</title>
+      <link>http://fink.sourceforge.net/news/#04%2F03%2F2007%20Probl%E8mes%20avec%20tar</link>
+      <guid>http://fink.sourceforge.net/news/#04%2F03%2F2007%20Probl%E8mes%20avec%20tar</guid>
       <description>
-<p>Some users of fink's unstable tree are having sporadic difficulties
-at the end of building large packages, getting reports like
-tar: File changed as we read it which causes the .deb file
-not to be built.
+<p>Certains utilisateurs de la branche instable rencontre des difficultés lors de la génération de paquets de grandes tailles, en ayant des avertissements comme tar: File changed as we read it, ce qui empêche la création du paquet .deb.
 </p><p>
-The fink team is currently studying this problem to determine a permanent
-fix.  For the time being, users experiencing this problem can work around
-it by issuing the command fink install tar-1.15.1-14.  It
-may be necessary to issue that command after each fink update-all
-command, as well.
-</p><p>Once the fink team has determined how to solve this problem 
-permanently, another announcement will be made here.
+L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande fink install tar-1.15.1-14. Il peut s'avérer nécessaire de renouveller cette étape après chaque commande fink update-all. 
+</p><p>
+Une annonce sera postée ici même dès la correction effectuée.
 </p>
-<p> Update: 16 March 2007:  The new version of fink's 
-dpkg package resolves this problem.  Unstable users can
-now run the update commands normally.
+<p>ctualisé le 16 mars: la nouvelle version de dpkg résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
 </p>
 		</description>
       <content:encoded>
-<p>Some users of fink's unstable tree are having sporadic difficulties
-at the end of building large packages, getting reports like
-tar: File changed as we read it which causes the .deb file
-not to be built.
+<p>Certains utilisateurs de la branche instable rencontre des difficultés lors de la génération de paquets de grandes tailles, en ayant des avertissements comme tar: File changed as we read it, ce qui empêche la création du paquet .deb.
 </p><p>
-The fink team is currently studying this problem to determine a permanent
-fix.  For the time being, users experiencing this problem can work around
-it by issuing the command fink install tar-1.15.1-14.  It
-may be necessary to issue that command after each fink update-all
-command, as well.
-</p><p>Once the fink team has determined how to solve this problem 
-permanently, another announcement will be made here.
+L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande fink install tar-1.15.1-14. Il peut s'avérer nécessaire de renouveller cette étape après chaque commande fink update-all. 
+</p><p>
+Une annonce sera postée ici même dès la correction effectuée.
 </p>
-<p> Update: 16 March 2007:  The new version of fink's 
-dpkg package resolves this problem.  Unstable users can
-now run the update commands normally.
+<p>ctualisé le 16 mars: la nouvelle version de dpkg résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
 </p>
 		</content:encoded>
     </item>
@@ -287,19 +280,6 @@ Les utilisateurs de la branche instable peuvent faire la mise à jour via fink se
 
 <p>Tous les paquets ne fonctionnent pas encore sous Mac OS X 10.4, mais la situation va s'améliorer au fil des semaines. La branche stable contient, à l'heure actuelle, nettement moins de paquets que sous Mac OS X 10.3, mais tous ceux qui sont présents devraient compiler sans problèmes.</p>
 <p>Il reste bien sûr quelques petits défauts à corriger. Nous recommandons aux utilisateurs, dont le travail dépend du bon fonctionnement de certaines applications, de vérifier sur les listes de diffusion si les applications en question ont été testées avant de faire la mise à jour.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#20%2F11%2F2004%20Solution%20aux%20probl%E8mes%20gcc">
-      <title>Solution aux problèmes gcc</title>
-      <link>http://fink.sourceforge.net/news/#20%2F11%2F2004%20Solution%20aux%20probl%E8mes%20gcc</link>
-      <guid>http://fink.sourceforge.net/news/#20%2F11%2F2004%20Solution%20aux%20probl%E8mes%20gcc</guid>
-      <description>
-<p>Apple a publié une mise à jour de gcc3 en novembre 2004 (November 2004 gcc3 updater). Elle est disponible sur connect.apple.com après enregistrement gratuit. Cette mise à jour résout les problèmes du compilateur gcc3 dans XCode 1.5. Si vous utilisez ce dernier, vous devez installer la mise à jour. Elle s'effectuera correctement, que vous ayez ou non installé précédemment la solution recommandée par Fink.</p>
-<p>Remercions Apple d'avoir répondu à nos rapports sur ce sujet et d'avoir travaillé à la résolution de ce problème aussi rapidement que possible.</p>
-</description>
-      <content:encoded>
-<p>Apple a publié une mise à jour de gcc3 en novembre 2004 (November 2004 gcc3 updater). Elle est disponible sur connect.apple.com après enregistrement gratuit. Cette mise à jour résout les problèmes du compilateur gcc3 dans XCode 1.5. Si vous utilisez ce dernier, vous devez installer la mise à jour. Elle s'effectuera correctement, que vous ayez ou non installé précédemment la solution recommandée par Fink.</p>
-<p>Remercions Apple d'avoir répondu à nos rapports sur ce sujet et d'avoir travaillé à la résolution de ce problème aussi rapidement que possible.</p>
 </content:encoded>
     </item>
   </channel>

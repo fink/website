@@ -5,8 +5,19 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2007-10-31T16:05:10+09:00</dc:date>
+    <dc:date>2007-12-07T12:12:27+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down">
+      <title>PDB Website Down</title>
+      <link>http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down</link>
+      <guid>http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down</guid>
+      <description>
+    <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+  </description>
+      <content:encoded>
+    <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+  </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support">
       <title>Initial Leopard Support</title>
       <link>http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support</link>
@@ -735,41 +746,6 @@ instalando fink-0.24.5, mediante fink selfupdate desde cualquier versión anterio
 <p>No todos los paquetes funcionan correctamente todavía bajo 10.4, pero esta situación se irá corrigiendo las próximas semanas. La rama estable contiene especialemnte pocos paquetes en 10.3, pero todos ellos deberían compilarse .</p>
 
 <p>Por supuesto, algunas arrugas todavía necesitan ser planchadas (sic). Animamos a los usuarios con aplicaciones críticas que verifiquen en las listas de correo si alguien ha tenido problemas o no con el paquete en cuestión antes de actualizar.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2004-11-20%20Soluci%F3n%20a%20los%20problemas%20con%20gcc.">
-      <title>Solución a los problemas con gcc.</title>
-      <link>http://fink.sourceforge.net/news/#2004-11-20%20Soluci%F3n%20a%20los%20problemas%20con%20gcc.</link>
-      <guid>http://fink.sourceforge.net/news/#2004-11-20%20Soluci%F3n%20a%20los%20problemas%20con%20gcc.</guid>
-      <description>
-<p>
-Apple ha liberado el actualizador de gcc versión Noviembre 2004, disponible
-(tras registro gratutito) en connect.apple.com.  Este actualizador elimina
-el problema del compilador gcc3 en XCode 1.5.  Si estás usando  XCode 1.5, 
-debes instalarlo.  (El instalador funcionará correctamente tanto
-para aquellos usuarios que no han utilizado el parche recomendado por
-el proyecto Fink como para aquellos que lo usaron en su momento.)
-</p><p>
-Agradecemos a Apple su respuesta a nuestros informes sobre este asunto
-y el trabajo realizado para resolverlo rápidamente.
-</p>
-
-
-</description>
-      <content:encoded>
-<p>
-Apple ha liberado el actualizador de gcc versión Noviembre 2004, disponible
-(tras registro gratutito) en connect.apple.com.  Este actualizador elimina
-el problema del compilador gcc3 en XCode 1.5.  Si estás usando  XCode 1.5, 
-debes instalarlo.  (El instalador funcionará correctamente tanto
-para aquellos usuarios que no han utilizado el parche recomendado por
-el proyecto Fink como para aquellos que lo usaron en su momento.)
-</p><p>
-Agradecemos a Apple su respuesta a nuestros informes sobre este asunto
-y el trabajo realizado para resolverlo rápidamente.
-</p>
-
-
 </content:encoded>
     </item>
   </channel>
