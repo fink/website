@@ -93,6 +93,7 @@ $invalid_param = $invalid_param || $inv_p;
 
 list($dist_name, $inv_p) = get_safe_param('dist_name', '/^[a-z0-9\+\-\.\%]+$/');
 $invalid_param = $invalid_param || $inv_p;
+if (empty($dist_name)) $dist_name = "default";
 if (!empty($dist_name) && $dist_name != "default") $pdb_has_adv_searchoptions = true;
 
 list($dist, $inv_p) = get_safe_param('dist', '/^[a-z0-9\+\-\.\%]+$/');
@@ -185,7 +186,7 @@ if (!$showall)
 if ($nochildren == "on")
 	$query->addQuery("has_parent:false", true);
 if ($noshlibsdev == "on")
-	$query->addQuery("has_common_splitoffs:false", true);
+	$query->addQuery("is_common_splitoff:false", true);
 
 if (!empty($maintainer))
 	$query->addQuery("maintainer:\"$maintainer\"", true);
