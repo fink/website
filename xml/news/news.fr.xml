@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.58 2007/12/07 03:11:52 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.59 2007/12/08 02:48:37 babayoshihiko Exp $</cvsid>
 
 <newsitem>
   <date>18/11/2007</date>
@@ -29,11 +29,11 @@
 	<body>
 <p>Certains utilisateurs de la branche instable rencontre des difficultés lors de la génération de paquets de grandes tailles, en ayant des avertissements comme <em>tar: File changed as we read it</em>, ce qui empêche la création du paquet .deb.
 </p><p>
-L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande <code>fink install tar-1.15.1-14</code>. Il peut s'avérer nécessaire de renouveller cette étape après chaque commande <code>fink update-all</code>. 
+L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande <code>fink install tar-1.15.1-14</code>. Il peut s'avérer nécessaire de renouveler cette étape après chaque commande <code>fink update-all</code>. 
 </p><p>
 Une annonce sera postée ici même dès la correction effectuée.
 </p>
-<p><em>ctualisé le 16 mars:</em> la nouvelle version de <code>dpkg</code> résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
+<p><em>Actualisé le 16 mars:</em> la nouvelle version de <code>dpkg</code> résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
 </p>
 		</body>
 	</newsitem>

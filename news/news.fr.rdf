@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2007-12-07T12:12:27+09:00</dc:date>
+    <dc:date>2007-12-08T11:49:17+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#18%2F11%2F2007%20Site%20PDB">
       <title>Site PDB</title>
@@ -44,21 +44,21 @@
       <description>
 <p>Certains utilisateurs de la branche instable rencontre des difficultés lors de la génération de paquets de grandes tailles, en ayant des avertissements comme tar: File changed as we read it, ce qui empêche la création du paquet .deb.
 </p><p>
-L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande fink install tar-1.15.1-14. Il peut s'avérer nécessaire de renouveller cette étape après chaque commande fink update-all. 
+L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande fink install tar-1.15.1-14. Il peut s'avérer nécessaire de renouveler cette étape après chaque commande fink update-all. 
 </p><p>
 Une annonce sera postée ici même dès la correction effectuée.
 </p>
-<p>ctualisé le 16 mars: la nouvelle version de dpkg résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
+<p>Actualisé le 16 mars: la nouvelle version de dpkg résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
 </p>
 		</description>
       <content:encoded>
 <p>Certains utilisateurs de la branche instable rencontre des difficultés lors de la génération de paquets de grandes tailles, en ayant des avertissements comme tar: File changed as we read it, ce qui empêche la création du paquet .deb.
 </p><p>
-L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande fink install tar-1.15.1-14. Il peut s'avérer nécessaire de renouveller cette étape après chaque commande fink update-all. 
+L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande fink install tar-1.15.1-14. Il peut s'avérer nécessaire de renouveler cette étape après chaque commande fink update-all. 
 </p><p>
 Une annonce sera postée ici même dès la correction effectuée.
 </p>
-<p>ctualisé le 16 mars: la nouvelle version de dpkg résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
+<p>Actualisé le 16 mars: la nouvelle version de dpkg résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
 </p>
 		</content:encoded>
     </item>

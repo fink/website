@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/12/07 03:11:52';
+$cvs_date = 'Date: 2007/12/08 02:48:37';
 $metatags = '';
 
 include_once "header.inc";
@@ -18,11 +18,11 @@ include_once "header.inc";
 <a name="04/03/2007%20Probl%C3%A8mes%20avec%20tar"><span class="news-date">04/03/2007: </span><span class="news-headline">Problèmes avec tar</span></a><?php gray_line(); ?>
 <p>Certains utilisateurs de la branche instable rencontre des difficultés lors de la génération de paquets de grandes tailles, en ayant des avertissements comme <b>tar: File changed as we read it</b>, ce qui empêche la création du paquet .deb.
 </p><p>
-L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande <code>fink install tar-1.15.1-14</code>. Il peut s'avérer nécessaire de renouveller cette étape après chaque commande <code>fink update-all</code>. 
+L'équipe travaille actuellement sur la résolution définitive de ce problème. Pour l'instant, les utilisateurs confrontés à cette situtation peuvent la contourner en exécutant la commande <code>fink install tar-1.15.1-14</code>. Il peut s'avérer nécessaire de renouveler cette étape après chaque commande <code>fink update-all</code>. 
 </p><p>
 Une annonce sera postée ici même dès la correction effectuée.
 </p>
-<p><b>ctualisé le 16 mars:</b> la nouvelle version de <code>dpkg</code> résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
+<p><b>Actualisé le 16 mars:</b> la nouvelle version de <code>dpkg</code> résout ce problème. Les utilisateurs peuvent exécuter normalement leurs commandes de mises à jour.
 </p>
 		<a name="19/08/2006%20Serveur%20inacessible%20-%20Solutions"><span class="news-date">19/08/2006: </span><span class="news-headline">Serveur inacessible - Solutions</span></a><?php gray_line(); ?>
 <p><b>Mise à jour du 21/08/2006 </b> : le serveur est de nouveau accessible.</p>
