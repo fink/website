@@ -5,6 +5,11 @@ include_once "functions.inc";
 include_once "releases.inc";
 include_once "sections.inc";
 
+$invalid_param     = false;
+$default_tree      = 'unstable';
+$default_dist      = 'default';
+$default_sort      = 'asc';
+
 function addGETParam(&$_params, $_param_name) {
   $_value = stripslashes($_GET[$_param_name]);
   if ($_value)
@@ -13,19 +18,22 @@ function addGETParam(&$_params, $_param_name) {
 
 function get_query_description() {
 	$_desc = array();
+	global $default_dist;
+	global $default_tree;
+
 	if (!empty($_GET['summary']))
 		array_push($_desc, "Search = '" . $_GET['summary'] . "'");
 	if (!empty($_GET['name']))
 		array_push($_desc, "Name = '" . $_GET['name'] . "'");
 	if (!empty($_GET['maintainer']))
 		array_push($_desc, "Maintainer = '" . $_GET['maintainer'] . "'");
-	if (!empty($_GET['dist_name']) && $_GET['dist_name'] != "default")
+	if (!empty($_GET['dist_name']) && $_GET['dist_name'] != $default_dist)
 		array_push($_desc, "Distribution = '" . $_GET['dist_name'] . "'");
 	elseif (!empty($_GET['dist']))
 		array_push($_desc, "Distribution = '" . $_GET['dist'] . "'");
 	if (!empty($_GET['architecture']))
 		array_push($_desc, "Architecture = '" . $_GET['architecture'] . "'");
-	if (!empty($_GET['tree']))
+	if (!empty($_GET['tree']) && $_GET['tree'] != $default_tree)
 		array_push($_desc, "Tree = '" . $_GET['tree'] . "'");
 	if (!empty($_GET['section']))
 		array_push($_desc, "Section = '" . $_GET['section'] . "'");
@@ -35,6 +43,9 @@ function get_query_description() {
 function get_query_params() {
 	$_getparams    = array();
 	$_query_params = "";
+
+	global $default_tree;
+	global $default_dist;
 
 	$_value = $_GET['nomaintainer'];
 	if ($_value == 'on')
@@ -55,6 +66,10 @@ function get_query_params() {
 	addGETParam($_getparams, 'doc_id');
 	addGETParam($_getparams, 'pkg_id');
 	foreach ($_getparams as $_key => $_value) {
+		if ($_key == "dist_name" && $_value == $default_dist)
+			continue;
+		if ($_key == "tree" && $_value == $default_tree)
+			continue;
 		$_query_params .= htmlentities($_key) . '=' . htmlentities($_value) . '&';
 	}
 	$_query_params = rtrim($_query_params, '&?');
@@ -69,10 +84,6 @@ $pdb_has_adv_searchoptions = false;
 
 // Read url parameters
 // NOTE: You have to change the parameter list at the top of this file as well
-
-$invalid_param     = false;
-$default_tree      = 'unstable';
-$default_sort      = 'asc';
 
 list($maintainer, $inv_p) = get_safe_param('maintainer', '/../');
 $invalid_param = $invalid_param || $inv_p;
@@ -93,8 +104,8 @@ $invalid_param = $invalid_param || $inv_p;
 
 list($dist_name, $inv_p) = get_safe_param('dist_name', '/^[a-z0-9\+\-\.\%]+$/');
 $invalid_param = $invalid_param || $inv_p;
-if (empty($dist_name)) $dist_name = "default";
-if (!empty($dist_name) && $dist_name != "default") $pdb_has_adv_searchoptions = true;
+if (empty($dist_name)) $dist_name = $default_dist;
+if (!empty($dist_name) && $dist_name != $default_dist) $pdb_has_adv_searchoptions = true;
 
 list($dist, $inv_p) = get_safe_param('dist', '/^[a-z0-9\+\-\.\%]+$/');
 $invalid_param = $invalid_param || $inv_p;
@@ -146,7 +157,7 @@ if ($name_exact == "on" || $name_exact == "checked" || $name_exact == "true" || 
 // Select the one with the highest priority
 if ($tree == 'testing') {
 	foreach ($distributions as $_d) {
-		if (empty($dist_name) or $dist_name == "default" or $dist_name == "any") {
+		if (empty($dist_name) or $dist_name == $default_dist or $dist_name == "any") {
 			$dist = $_d->getId();
 		} else {
 			if ($_d->getName() == $dist_name) {
@@ -169,7 +180,7 @@ $query->addField("rel_type");
 
 if ($dist)
 	$query->addQuery("dist_id:\"$dist\"", true);
-if ($dist_name == 'default')
+if ($dist_name == $default_dist)
 	$query->addQuery("+(dist_name:\"10.4\" OR dist_name:\"10.5\")");
 elseif ($dist_name != 'any')
 	$query->addQuery("dist_name:\"$dist_name\"", true);

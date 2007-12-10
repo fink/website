@@ -40,7 +40,7 @@ function handle_last_modified($_key, $_query) {
 	   if ($r != null && $r->response->numFound >0) {
 	      $date = $r->response->docs[0]->infofilechanged;
 	      $last_modified = date_create($date)->format('D, d M Y H:i:s') . ' GMT';
-	      memcache_set_key($_key, $last_modified);
+	      memcache_set_key($_key, $last_modified, false, 7200);
 	   } else {
 	      $last_modified = gmdate('D, d M Y H:i:s') . ' GMT';
 	   }

@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Introduction";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/07 14:50:32 $';
+$cvs_date = '$Date: 2007/12/10 22:21:49 $';
 
 // 2 hours, this page does not change much
 $cache_timeout = 7200;
@@ -59,7 +59,7 @@ if (!$pkgcount) {
 	if ($r != null) {
 		$pkgcount = count($r);
 		if ($pkgcount > 0) {
-			memcache_set_key('pdb-package-count', $pkgcount);
+			memcache_set_key('pdb-package-count', $pkgcount, false, $cache_timeout);
 		}
 	}
 }
