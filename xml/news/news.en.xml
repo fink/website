@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.69 2007/12/11 00:37:43 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.70 2007/12/11 02:36:37 alexkhansen Exp $</cvsid>
 
 <newsitem>
   <date>2007-11-18</date>
   <headline>PDB Website Down</headline>
   <body>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
-<p><em>Update, 2007-12-20</em>The Package Database is up and running again, with enhanced features.</p>
+<p><em>Update, 2007-12-20:  </em>The Package Database is up and running again, with enhanced features.</p>
   </body>
 </newsitem>
 <newsitem>
