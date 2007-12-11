@@ -1,6 +1,6 @@
 <a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
-<p><b>Update, 2007-12-20</b>The Package Database is up and running again, with enhanced features.</p>
+<p><b>Update, 2007-12-20:  </b>The Package Database is up and running again, with enhanced features.</p>
   <a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
     <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
     <p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.8 <a href="http://downloads.sourceforge.net/fink/fink-0.27.8.tar.gz">here</a>.</p>
