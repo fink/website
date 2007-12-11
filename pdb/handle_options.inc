@@ -113,7 +113,7 @@ $invalid_param = $invalid_param || $inv_p;
 list($architecture, $inv_p) = get_safe_param('architecture', '/^(i386|powerpc)$/');
 $invalid_param = $invalid_param || $inv_p;
 
-list($tree, $inv_p) = get_safe_param('tree', '/^(any|bindist|stable|unstable)$/');
+list($tree, $inv_p) = get_safe_param('tree', '/^(any|testing|bindist|stable|unstable)$/');
 $invalid_param = $invalid_param || $inv_p;
 if (empty($tree)) $tree = $default_tree;
 if (!empty($tree) && $tree != $default_tree) $pdb_has_adv_searchoptions = true;
