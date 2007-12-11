@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2007-12-07T12:12:27+09:00</dc:date>
+    <dc:date>2007-12-10T19:38:36-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down">
       <title>PDB Website Down</title>
@@ -13,9 +13,11 @@
       <guid>http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down</guid>
       <description>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+<p>Update, 2007-12-20The Package Database is up and running again, with enhanced features.</p>
   </description>
       <content:encoded>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+<p>Update, 2007-12-20The Package Database is up and running again, with enhanced features.</p>
   </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support">
@@ -57,7 +59,7 @@ command, as well.
 </p><p>Once the fink team has determined how to solve this problem 
 permanently, another announcement will be made here.
 </p>
-<p> Update: 16 March 2007:  The new version of fink's 
+<p> Update, 16 March 2007:  The new version of fink's 
 dpkg package resolves this problem.  Unstable users can
 now run the update commands normally.
 </p>
@@ -76,7 +78,7 @@ command, as well.
 </p><p>Once the fink team has determined how to solve this problem 
 permanently, another announcement will be made here.
 </p>
-<p> Update: 16 March 2007:  The new version of fink's 
+<p> Update, 16 March 2007:  The new version of fink's 
 dpkg package resolves this problem.  Unstable users can
 now run the update commands normally.
 </p>
@@ -87,7 +89,7 @@ now run the update commands normally.
       <link>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</link>
       <guid>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</guid>
       <description>
-<p> Update: 21 August 2006:  The server has been restored.</p>
+<p> Update, 21 August 2006:  The server has been restored.</p>
 	<p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 
@@ -122,7 +124,7 @@ package database</a> which is a few weeks out of date.
 </p>
 		</description>
       <content:encoded>
-<p> Update: 21 August 2006:  The server has been restored.</p>
+<p> Update, 21 August 2006:  The server has been restored.</p>
 	<p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 
@@ -192,7 +194,7 @@ package database</a> which is a few weeks out of date.
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
 			</p>
-<p> Update: 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
+<p> Update, 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
 		</description>
       <content:encoded>
 
@@ -225,7 +227,7 @@ package database</a> which is a few weeks out of date.
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
 			</p>
-<p> Update: 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
+<p> Update, 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
 		</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006">

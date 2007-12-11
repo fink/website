@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/11/18 21:46:04';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2007/12/11 00:37:43';
 $metatags = '';
 
 include_once "header.inc";
@@ -9,6 +9,7 @@ include_once "header.inc";
 
 <a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+<p><b>Update, 2007-12-20</b>The Package Database is up and running again, with enhanced features.</p>
   <a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
     <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
     <p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.8 <a href="http://downloads.sourceforge.net/fink/fink-0.27.8.tar.gz">here</a>.</p>
@@ -30,12 +31,12 @@ command, as well.
 </p><p>Once the fink team has determined how to solve this problem 
 permanently, another announcement will be made here.
 </p>
-<p><b> Update: 16 March 2007: </b> The new version of fink's 
+<p><b> Update, 16 March 2007: </b> The new version of fink's 
 <code>dpkg</code> package resolves this problem.  Unstable users can
 now run the update commands normally.
 </p>
 		<a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
-<p><b> Update: 21 August 2006: </b> The server has been restored.</p>
+<p><b> Update, 21 August 2006: </b> The server has been restored.</p>
 	<p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 
@@ -99,7 +100,7 @@ package database</a> which is a few weeks out of date.
 				made the switch.  If you have problems, please feel free to mail your issues to
 				the <a href="<?php print $root; ?>lists">discussion lists</a>.
 			</p>
-<p><b> Update: 2 June 2007.</b>  Due to changes to the behavior of <code>sudo</code> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
+<p><b> Update, 2 June 2007.</b>  Due to changes to the behavior of <code>sudo</code> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
 		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
 			<p>Are you at OSCON 2006?  Want to meet up?</p>
 			<p>
