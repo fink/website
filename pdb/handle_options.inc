@@ -244,7 +244,7 @@ $query->addSort("revision_e asc");
 $query->addSort("dist_id asc");
 $query->addSort("dist_architecture asc");
 
-if ($section != "testing") {
+if ($tree != "testing") {
 	$query->setUnique(true);
 }
 

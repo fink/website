@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/07 18:33:39 $';
+$cvs_date = '$Date: 2007/12/11 14:21:15 $';
 
 ini_set("memory_limit", "48M");
 
@@ -157,21 +157,27 @@ if ($nolist || $invalid_param) {
 $time_query_start = microtime(true);
 $packages = $query->fetch();
 $time_query_end = microtime(true);
-if ($packages != null) {
-	foreach ($packages as $id => $package) {
-		if ($package['rel_type'] == "stable") {
-			$package['version_stable'] = get_full_version($package);
-		} elseif ($package->rel_type == "unstable") {
-			$package['version_unstable'] = get_full_version($package);
+
+if ($tree == "testing") {
+	$newpackages = array();
+	if ($packages != null) {
+		foreach ($packages as $id => $package) {
+			if (!isset($newpackages[$package['name']]))
+				$newpackages[$package['name']] = $package;
+			if ($package['rel_type'] == "stable") {
+				$newpackages[$package['name']]['version_stable'] = get_full_version($package);
+			} elseif ($package['rel_type']) {
+				$newpackages[$package['name']]['version_unstable'] = get_full_version($package);
+			}
+			unset($packages[$id]);
 		}
 	}
-}
-
-if ($section == "testing") {
-	foreach ($packages as $id => $package) {
+	foreach ($newpackages as $id => $package) {
 		if ($package['version_stable'] == $package['version_unstable'])
-			unset($packages[$id]);
+			unset($newpackages[$id]);
 	}
+	$packages = $newpackages;
+	unset($newpackages);
 }
 
 $count = count($packages);
@@ -203,8 +209,8 @@ package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer
 		print '<tr class="package">';
 		print '<td class="packageName"><a href="' . $pdbroot . 'package.php/'.$package['name'] . ($showall? '?showall=on' : '') . '">'.$package['name'].'</a></td>';
 		if ($tree == 'testing') {
-			print '<td>'.$p['version_unstable'].'</td>'.
-						'<td>'.$p['version_stable'].'</td>';
+			print '<td>'.$package['version_unstable'].'</td>'.
+						'<td>'.$package['version_stable'].'</td>';
 		} else {
 			print '<td class="packageName">'.get_full_version($package).'</td>';
 		}
