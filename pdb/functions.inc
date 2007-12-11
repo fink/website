@@ -10,15 +10,19 @@ static $cache_threshold = 250;  // number of packages in an object before storin
 function get_safe_param($_param, $_valid_regexp='.*', $_max_length=120) {
 	$_value = $_GET[$_param];
 	if (!empty($_value)) $has_param_name = true;
-	if (strlen($_value) > $_max_length || !preg_match($_valid_regexp, $_value)) {
+	if (strlen($_value) > $_max_length) {
 		$_value = '';
-	} else {
-		#$_value = mysql_real_escape_string(htmlspecialchars($_value));
-		$_value = htmlspecialchars($_value);
-		if (strlen($_value) > $_max_length || !preg_match($_valid_regexp, $_value))
+	}
+	if (!empty($_value) && !preg_match($_valid_regexp, $_value)) {
+		$_value = '';
+	}
+
+	$_value = htmlspecialchars($_value);
+	if (strlen($_value) > $_max_length) {
 			$_value = '';
 	}
-	if ($has_param_name && !$_value)
+
+	if ($has_param_name && empty($_value))
 		$invalid_param = true;
 	else
 		$invalid_param = false;

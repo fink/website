@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/11 14:21:15 $';
+$cvs_date = '$Date: 2007/12/11 20:46:14 $';
 
 ini_set("memory_limit", "48M");
 
@@ -142,6 +142,8 @@ Exclude packages with parent (includes most "-dev", "-shlibs", ... splitoffs)
 Exclude -shlibs, -dev, -bin, -common, -doc packages 
 <br>
 
+<input name="depends" type="hidden" value="<?= $depends ?>">
+<input name="builddepends" type="hidden" value="<?= $builddepends ?>">
 </div>
 
 </form>

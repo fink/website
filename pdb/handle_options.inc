@@ -37,6 +37,10 @@ function get_query_description() {
 		array_push($_desc, "Tree = '" . $_GET['tree'] . "'");
 	if (!empty($_GET['section']))
 		array_push($_desc, "Section = '" . $_GET['section'] . "'");
+	if (!empty($_GET['depends']))
+		array_push($_desc, "Depends = '" . $_GET['depends'] . "'");
+	if (!empty($_GET['builddepends']))
+		array_push($_desc, "BuildDepends = '" . $_GET['builddepends'] . "'");
 	return join(", ", $_desc);
 }
 
@@ -65,6 +69,8 @@ function get_query_params() {
 	addGETParam($_getparams, 'name_exact');
 	addGETParam($_getparams, 'doc_id');
 	addGETParam($_getparams, 'pkg_id');
+	addGETParam($_getparams, 'depends');
+	addGETParam($_getparams, 'builddepends');
 	foreach ($_getparams as $_key => $_value) {
 		if ($_key == "dist_name" && $_value == $default_dist)
 			continue;
@@ -145,6 +151,14 @@ $invalid_param = $invalid_param || $inv_p;
 
 list($pkg_id, $inv_p) = get_safe_param('pkg_id', '/^[a-zA-Z0-9\:\+\-\.]+$/');
 $invalid_param = $invalid_param || $inv_p;
+
+list($depends, $inv_p) = get_safe_param('depends', '/^[a-z0-9\+\-\.\%]+$/');
+$invalid_param = $invalid_param || $inv_p;
+if ($inv_p) { $invalid_param_text = 'Depends contained invalid characters!'; }
+
+list($builddepends, $inv_p) = get_safe_param('builddepends', '/^[a-z0-9\+\-\.\%]+$/');
+$invalid_param = $invalid_param || $inv_p;
+if ($inv_p) { $invalid_param_text = 'BuildDepends contained invalid characters!'; }
 
 $name_exact = strtolower($name_exact);
 if ($name_exact == "on" || $name_exact == "checked" || $name_exact == "true" || $name_exact == "yes") {
@@ -235,6 +249,11 @@ if (!empty($pkg_id))
 if (!empty($doc_id))
 	$query->addQuery("doc_id:\"$doc_id\"", true);
 
+if (!empty($depends))
+	$query->addQuery("depends:\"$depends\"", true);
+
+if (!empty($builddepends))
+	$query->addQuery("builddepends:\"$builddepends\"", true);
 
 
 $query->addSort("name_e $sort");
