@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/12/12 03:32:55';
+$cvs_date = 'Date: 2007/12/12 04:02:06';
 $metatags = '';
 
 include_once "header.inc";
@@ -12,12 +12,18 @@ include_once "header.inc";
   <a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
 <p><b>Update, 2007-12-10:  </b>The Package Database is up and running again, with enhanced features.</p>
-  <a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
-    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
-<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
-<p>The 10.4-&gt;10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.7</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run <code>fink reinstall fink</code>.</p>
-<p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the <code>fink-0.27.7</code> tarball and bootstrap a new Fink tree as above.</p>
-<p><b>Update, 2007-10-29:</b>Upgrading users should note that using <code>fink cleanup</code> to remove .deb files will remove <b>all</b> of them.  This issue should be resolved in the next update.</p>
+  <a name="2007-10-26%20%E5%88%9D%E6%AD%A5%E6%94%AF%E6%8C%81%20Leopard"><span class="news-date">2007-10-26: </span><span class="news-headline">初步支持 Leopard</span></a><?php gray_line(); ?>
+    <p>Fink 项目宣布初步支持 Mac OS X Leopard (10.5)。</p>
+<p>在二进制版本发布之前。
+10.5 的用户需要通过 bootstrap 的方式来安装 Fink。
+从这里<a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">下载 fink-0.27.7</a>。</p>
+<p>10.4-&gt;10.5 的升级可以通过执行 <code>fink selfupdate</code> 来获取 fink-0.27.7。如果您
+是在 10.5 上操作，请确保您已安装 Xcode 3.0。在 10.5 安装之后，执行 <code>fink
+reinstall fink</code>。</p>
+<p>直接从 10.3-&gt;10.5 的升级方法暂不支持。如果您等不及了，那
+么您需要下载 <code>fink-0.27.7</code> 包并按前面叙述的方法来 bootstrap。</p>
+<p><b>更新，2007-10-29:</b> 升级的用户请注意：使用 fink cleanup 来移除某些 .deb 文
+件时，同时会移除所有的 .deb 文件。这个问题将会在下次更新中修正。</p>
 <a name="2007-03-04%20Problems%20with%20tar"><span class="news-date">2007-03-04: </span><span class="news-headline">Problems with tar</span></a><?php gray_line(); ?>
 <p>Some users of fink's unstable tree are having sporadic difficulties
 at the end of building large packages, getting reports like

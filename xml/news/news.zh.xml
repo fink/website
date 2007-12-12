@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="zh">
-<cvsid>$Id: news.zh.xml,v 1.29 2007/12/12 03:32:55 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.zh.xml,v 1.30 2007/12/12 04:02:06 babayoshihiko Exp $</cvsid>
 
 <newsitem>
   <date>2007-12-10</date>
@@ -21,13 +21,19 @@
 
 <newsitem>
   <date>2007-10-26</date>
-  <headline>Initial Leopard Support</headline>
+  <headline>初步支持 Leopard</headline>
   <body>
-    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
-<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <link url="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</link>.</p>
-<p>The 10.4->10.5 update can be accomplished by running <code>fink selfupdate</code> to get <code>fink-0.27.7</code> .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run <code>fink reinstall fink</code>.</p>
-<p>A direct 10.3->10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the <code>fink-0.27.7</code> tarball and bootstrap a new Fink tree as above.</p>
-<p><em>Update, 2007-10-29:</em>Upgrading users should note that using <code>fink cleanup</code> to remove .deb files will remove <em>all</em> of them.  This issue should be resolved in the next update.</p>
+    <p>Fink 项目宣布初步支持 Mac OS X Leopard (10.5)。</p>
+<p>在二进制版本发布之前。
+10.5 的用户需要通过 bootstrap 的方式来安装 Fink。
+从这里<link url="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">下载 fink-0.27.7</link>。</p>
+<p>10.4-&gt;10.5 的升级可以通过执行 <code>fink selfupdate</code> 来获取 fink-0.27.7。如果您
+是在 10.5 上操作，请确保您已安装 Xcode 3.0。在 10.5 安装之后，执行 <code>fink
+reinstall fink</code>。</p>
+<p>直接从 10.3-&gt;10.5 的升级方法暂不支持。如果您等不及了，那
+么您需要下载 <code>fink-0.27.7</code> 包并按前面叙述的方法来 bootstrap。</p>
+<p><em>更新，2007-10-29:</em> 升级的用户请注意：使用 fink cleanup 来移除某些 .deb 文
+件时，同时会移除所有的 .deb 文件。这个问题将会在下次更新中修正。</p>
 </body>
 </newsitem>
 

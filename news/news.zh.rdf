@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2007-12-12T12:40:54+09:00</dc:date>
+    <dc:date>2007-12-12T13:02:30+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20and%20Fink">
       <title>Leopard, X11, and Fink</title>
@@ -31,23 +31,35 @@
 <p>Update, 2007-12-10:  The Package Database is up and running again, with enhanced features.</p>
   </content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support">
-      <title>Initial Leopard Support</title>
-      <link>http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support</link>
-      <guid>http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2007-10-26%20%3F%3F%3F%3F%20Leopard">
+      <title>&#21021;&#27493;&#25903;&#25345; Leopard</title>
+      <link>http://fink.sourceforge.net/news/#2007-10-26%20%3F%3F%3F%3F%20Leopard</link>
+      <guid>http://fink.sourceforge.net/news/#2007-10-26%20%3F%3F%3F%3F%20Leopard</guid>
       <description>
-    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
-<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
-<p>The 10.4-&gt;10.5 update can be accomplished by running fink selfupdate to get fink-0.27.7 .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run fink reinstall fink.</p>
-<p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the fink-0.27.7 tarball and bootstrap a new Fink tree as above.</p>
-<p>Update, 2007-10-29:Upgrading users should note that using fink cleanup to remove .deb files will remove all of them.  This issue should be resolved in the next update.</p>
+    <p>Fink &#39033;&#30446;&#23459;&#24067;&#21021;&#27493;&#25903;&#25345; Mac OS X Leopard (10.5)&#12290;</p>
+<p>&#22312;&#20108;&#36827;&#21046;&#29256;&#26412;&#21457;&#24067;&#20043;&#21069;&#12290;
+10.5 &#30340;&#29992;&#25143;&#38656;&#35201;&#36890;&#36807; bootstrap &#30340;&#26041;&#24335;&#26469;&#23433;&#35013; Fink&#12290;
+&#20174;&#36825;&#37324;<a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">&#19979;&#36733; fink-0.27.7</a>&#12290;</p>
+<p>10.4-&gt;10.5 &#30340;&#21319;&#32423;&#21487;&#20197;&#36890;&#36807;&#25191;&#34892; fink selfupdate &#26469;&#33719;&#21462; fink-0.27.7&#12290;&#22914;&#26524;&#24744;
+&#26159;&#22312; 10.5 &#19978;&#25805;&#20316;&#65292;&#35831;&#30830;&#20445;&#24744;&#24050;&#23433;&#35013; Xcode 3.0&#12290;&#22312; 10.5 &#23433;&#35013;&#20043;&#21518;&#65292;&#25191;&#34892; fink
+reinstall fink&#12290;</p>
+<p>&#30452;&#25509;&#20174; 10.3-&gt;10.5 &#30340;&#21319;&#32423;&#26041;&#27861;&#26242;&#19981;&#25903;&#25345;&#12290;&#22914;&#26524;&#24744;&#31561;&#19981;&#21450;&#20102;&#65292;&#37027;
+&#20040;&#24744;&#38656;&#35201;&#19979;&#36733; fink-0.27.7 &#21253;&#24182;&#25353;&#21069;&#38754;&#21465;&#36848;&#30340;&#26041;&#27861;&#26469; bootstrap&#12290;</p>
+<p>&#26356;&#26032;&#65292;2007-10-29: &#21319;&#32423;&#30340;&#29992;&#25143;&#35831;&#27880;&#24847;&#65306;&#20351;&#29992; fink cleanup &#26469;&#31227;&#38500;&#26576;&#20123; .deb &#25991;
+&#20214;&#26102;&#65292;&#21516;&#26102;&#20250;&#31227;&#38500;&#25152;&#26377;&#30340; .deb &#25991;&#20214;&#12290;&#36825;&#20010;&#38382;&#39064;&#23558;&#20250;&#22312;&#19979;&#27425;&#26356;&#26032;&#20013;&#20462;&#27491;&#12290;</p>
 </description>
       <content:encoded>
-    <p>The Fink Project announces initial support for Mac OS X Leopard (10.5).</p>
-<p>10.5 users who are starting a new Fink tree will need to do this via bootstrap, until a binary distribution gets generated.  Download fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">here</a>.</p>
-<p>The 10.4-&gt;10.5 update can be accomplished by running fink selfupdate to get fink-0.27.7 .  If you're doing this on 10.5, make sure that you have Xcode 3.0 installed.  After 10.5 is installed, run fink reinstall fink.</p>
-<p>A direct 10.3-&gt;10.5 upgrade path isn't ready yet.  If you're impatient to get going, you'll need to download the fink-0.27.7 tarball and bootstrap a new Fink tree as above.</p>
-<p>Update, 2007-10-29:Upgrading users should note that using fink cleanup to remove .deb files will remove all of them.  This issue should be resolved in the next update.</p>
+    <p>Fink &#39033;&#30446;&#23459;&#24067;&#21021;&#27493;&#25903;&#25345; Mac OS X Leopard (10.5)&#12290;</p>
+<p>&#22312;&#20108;&#36827;&#21046;&#29256;&#26412;&#21457;&#24067;&#20043;&#21069;&#12290;
+10.5 &#30340;&#29992;&#25143;&#38656;&#35201;&#36890;&#36807; bootstrap &#30340;&#26041;&#24335;&#26469;&#23433;&#35013; Fink&#12290;
+&#20174;&#36825;&#37324;<a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">&#19979;&#36733; fink-0.27.7</a>&#12290;</p>
+<p>10.4-&gt;10.5 &#30340;&#21319;&#32423;&#21487;&#20197;&#36890;&#36807;&#25191;&#34892; fink selfupdate &#26469;&#33719;&#21462; fink-0.27.7&#12290;&#22914;&#26524;&#24744;
+&#26159;&#22312; 10.5 &#19978;&#25805;&#20316;&#65292;&#35831;&#30830;&#20445;&#24744;&#24050;&#23433;&#35013; Xcode 3.0&#12290;&#22312; 10.5 &#23433;&#35013;&#20043;&#21518;&#65292;&#25191;&#34892; fink
+reinstall fink&#12290;</p>
+<p>&#30452;&#25509;&#20174; 10.3-&gt;10.5 &#30340;&#21319;&#32423;&#26041;&#27861;&#26242;&#19981;&#25903;&#25345;&#12290;&#22914;&#26524;&#24744;&#31561;&#19981;&#21450;&#20102;&#65292;&#37027;
+&#20040;&#24744;&#38656;&#35201;&#19979;&#36733; fink-0.27.7 &#21253;&#24182;&#25353;&#21069;&#38754;&#21465;&#36848;&#30340;&#26041;&#27861;&#26469; bootstrap&#12290;</p>
+<p>&#26356;&#26032;&#65292;2007-10-29: &#21319;&#32423;&#30340;&#29992;&#25143;&#35831;&#27880;&#24847;&#65306;&#20351;&#29992; fink cleanup &#26469;&#31227;&#38500;&#26576;&#20123; .deb &#25991;
+&#20214;&#26102;&#65292;&#21516;&#26102;&#20250;&#31227;&#38500;&#25152;&#26377;&#30340; .deb &#25991;&#20214;&#12290;&#36825;&#20010;&#38382;&#39064;&#23558;&#20250;&#22312;&#19979;&#27425;&#26356;&#26032;&#20013;&#20462;&#27491;&#12290;</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar">
