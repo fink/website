@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.34 2007/12/12 03:32:54 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.35 2007/12/12 03:40:14 babayoshihiko Exp $</cvsid>
 
 <newsitem>
   <date>2007-12-10</date>
@@ -11,8 +11,8 @@
 deben ir a <link url="http://xquartz.macosforge.org/
 downloads/Xquartz-1.3.0-apple-fink.bz2">que es una actualizacion
 Fink-friendly para el Xquartz</link>.  Los usuarios que ya hayan
-aplicado el paquete X11-2.1.0.1.pkg del macosxforge.org <em>must</em>
-deben descargar el Xquartz compatible con Fink para que Fink trabaje
+aplicado el paquete X11-2.1.0.1.pkg del macosxforge.org <em>deben</em>
+descargar el Xquartz compatible con Fink para que Fink trabaje
 adecuadamente.</p>
 </body>
 </newsitem>
