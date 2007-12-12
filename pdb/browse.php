@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/11 20:46:14 $';
+$cvs_date = '$Date: 2007/12/12 03:43:33 $';
 
 ini_set("memory_limit", "48M");
 
@@ -189,10 +189,10 @@ $count = count($packages);
 // still visible in the widgets on the page, the user may have altered them.
 
 ?>
-<p>
-Found <?=$count?> 
-package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer' : '')?><?=($tree=='testing' ? ' that need testing' : '')?>:
-</p>
+<h1>
+Matched <?=$count?> 
+package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer' : '')?><?=($tree=='testing' ? ' that need testing' : '')?> (<?= get_query_description() ?>)
+</h1>
 <?
 	if ($count > 0) {
 ?>
