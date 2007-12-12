@@ -5,17 +5,44 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2007-12-07T12:12:27+09:00</dc:date>
+    <dc:date>2007-12-12T12:40:54+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20y%20Fink">
+      <title>Leopard, X11, y Fink</title>
+      <link>http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20y%20Fink</link>
+      <guid>http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20y%20Fink</guid>
+      <description>
+<p>Los usuarios que deseen actualizar su instalación de X11 en Leopardo
+deben ir a <a href="http://xquartz.macosforge.org/ downloads/Xquartz-1.3.0-apple-fink.bz2">que es una actualizacion
+Fink-friendly para el Xquartz</a>.  Los usuarios que ya hayan
+aplicado el paquete X11-2.1.0.1.pkg del macosxforge.org deben
+descargar el Xquartz compatible con Fink para que Fink trabaje
+adecuadamente.</p>
+</description>
+      <content:encoded>
+<p>Los usuarios que deseen actualizar su instalación de X11 en Leopardo
+deben ir a <a href="http://xquartz.macosforge.org/ downloads/Xquartz-1.3.0-apple-fink.bz2">que es una actualizacion
+Fink-friendly para el Xquartz</a>.  Los usuarios que ya hayan
+aplicado el paquete X11-2.1.0.1.pkg del macosxforge.org deben
+descargar el Xquartz compatible con Fink para que Fink trabaje
+adecuadamente.</p>
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down">
       <title>PDB Website Down</title>
       <link>http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down</link>
       <guid>http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down</guid>
       <description>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+<p>Actualización, 2007-12-10: La Base de Datos de 
+Paquetes está funcionando nuevamente, con características 
+mejoradas.</p>
   </description>
       <content:encoded>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+<p>Actualización, 2007-12-10: La Base de Datos de 
+Paquetes está funcionando nuevamente, con características 
+mejoradas.</p>
   </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support">
@@ -699,53 +726,6 @@ We don't recommend bootstrapping at the moment, since bootstrapping does
 not work with the newly-released XCode 2.1 from Apple.
 </p>
 
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20y%20Tiger.">
-      <title>Fink y Tiger.</title>
-      <link>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20y%20Tiger.</link>
-      <guid>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20y%20Tiger.</guid>
-      <description>
-<p>
-¡Fink puede usarse para OS X 10.4!  Hay diferentes formas de actualizarse:
-</p>
-
-En pocas semanas estará disponible un instalador binario, para aquellos que sólo utilizan binarios.
-
-Para usuarios de la rama estable, recomendamos borrar la instalación actual de
-fink con sudo rm -Rf /sw y "bootstrap" una instalación de 
-fink-0.23.9 utilizando 
-<a href="http://fink.sourceforge.net/http://sourceforge.net/project/showfiles.php?group_id=17203">
-fink-0.23.9.tar.gz</a> -descargar el fichero y descomprimirlo mediante tar -xvzf fink-0.23.9.tar.gz. Tras ejecutar bootstrap.sh en el directorio fink-0.23.9 resultante, necesitarás ejecutar fink selfupdate.
-
-Los usuarios de la rama inestable pueden actualizarse simplemente
-instalando fink-0.24.5, mediante fink selfupdate desde cualquier versión anterior. Tras actualizarse a 10.4, comprobad en primer lugar que se tiene la versión correcta mediante fink --version. Si el resultado del comando es menor que 0.24.5, ejéctuse fink selfupdate para obtener la versión correcta de fink. Y entonces reinstalar el paquete fink mediante fink reinstall fink y después fink selfupdate.
-
-
-<p>No todos los paquetes funcionan correctamente todavía bajo 10.4, pero esta situación se irá corrigiendo las próximas semanas. La rama estable contiene especialemnte pocos paquetes en 10.3, pero todos ellos deberían compilarse .</p>
-
-<p>Por supuesto, algunas arrugas todavía necesitan ser planchadas (sic). Animamos a los usuarios con aplicaciones críticas que verifiquen en las listas de correo si alguien ha tenido problemas o no con el paquete en cuestión antes de actualizar.</p>
-</description>
-      <content:encoded>
-<p>
-¡Fink puede usarse para OS X 10.4!  Hay diferentes formas de actualizarse:
-</p>
-
-En pocas semanas estará disponible un instalador binario, para aquellos que sólo utilizan binarios.
-
-Para usuarios de la rama estable, recomendamos borrar la instalación actual de
-fink con sudo rm -Rf /sw y "bootstrap" una instalación de 
-fink-0.23.9 utilizando 
-<a href="http://fink.sourceforge.net/http://sourceforge.net/project/showfiles.php?group_id=17203">
-fink-0.23.9.tar.gz</a> -descargar el fichero y descomprimirlo mediante tar -xvzf fink-0.23.9.tar.gz. Tras ejecutar bootstrap.sh en el directorio fink-0.23.9 resultante, necesitarás ejecutar fink selfupdate.
-
-Los usuarios de la rama inestable pueden actualizarse simplemente
-instalando fink-0.24.5, mediante fink selfupdate desde cualquier versión anterior. Tras actualizarse a 10.4, comprobad en primer lugar que se tiene la versión correcta mediante fink --version. Si el resultado del comando es menor que 0.24.5, ejéctuse fink selfupdate para obtener la versión correcta de fink. Y entonces reinstalar el paquete fink mediante fink reinstall fink y después fink selfupdate.
-
-
-<p>No todos los paquetes funcionan correctamente todavía bajo 10.4, pero esta situación se irá corrigiendo las próximas semanas. La rama estable contiene especialemnte pocos paquetes en 10.3, pero todos ellos deberían compilarse .</p>
-
-<p>Por supuesto, algunas arrugas todavía necesitan ser planchadas (sic). Animamos a los usuarios con aplicaciones críticas que verifiquen en las listas de correo si alguien ha tenido problemas o no con el paquete en cuestión antes de actualizar.</p>
 </content:encoded>
     </item>
   </channel>

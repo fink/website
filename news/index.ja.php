@@ -1,18 +1,26 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/12/07 03:11:53';
+$cvs_date = 'Date: 2007/12/12 03:32:54';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
+<a name="2007-12-10%20Leopard,%20X11,%20and%20Fink"><span class="news-date">2007-12-10: </span><span class="news-headline">Leopard, X11, and Fink</span></a><?php gray_line(); ?>
+    <p>
+    Leopard X11 を更新したい方は、
+    <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>
+    をお使い下さい。
+    既に macosxforge.org の X11-2.1.0.1.pkg を適用された方は、<b>必ず</b> Fink-対応の Xquartz をお使い下さい。
+    </p>
+  <a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
     <p>
     パッケージデータベースのウェブが現在停止しており、ご不便をかけております。
     できる限り早く解決できるよう復旧に向けて作業中です。
     ハードウェアとソフトウェアのアップグレードが完了するまでお待ち下さい。
     </p>
+<p><b>2007年12月10日追記:</b> パッケージデータベースは、より強力になって帰ってきました。</p>
   <a name="2007-10-26%20%E5%BD%93%E9%9D%A2%E3%81%AE%20Leopard%20%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88"><span class="news-date">2007-10-26: </span><span class="news-headline">当面の Leopard サポート</span></a><?php gray_line(); ?>
     <p>The Fink Project は Mac OS X Leopard (10.5) のサポートを開始します。</p>
 <p>10.5 を利用されている方は、バイナリディストリビューションができるまでは、bootstrap で行う必要があります。
@@ -22,7 +30,7 @@ fink-0.27.7 を<a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz
 10.5 がインストールされましたら、<code>fink reinstall fink</code> を実行してください。</p>
 <p>10.3 から 10.5 へ直接移行する方法は今のところありません。
 どうしても使いたい方は、 <code>fink-0.27.7</code> tarball をダウンロードし、上述のように Fink ツリーを　bootstrap する必要があります。</p>
-<p><b>Update 2007年10月29日:</b> アップグレードした場合、 <code>fink cleanup</code> を実行すると<b>全ての</b> .deb ファイルが削除されます。
+<p><b>2007年10月29日追記:</b> アップグレードした場合、 <code>fink cleanup</code> を実行すると<b>全ての</b> .deb ファイルが削除されます。
 この問題は次回のアップデート時に解決される予定です。</p>
 <a name="2007-03-04%20tar%20%E3%81%AE%E5%95%8F%E9%A1%8C"><span class="news-date">2007-03-04: </span><span class="news-headline">tar の問題</span></a><?php gray_line(); ?>
 <p>
@@ -37,7 +45,7 @@ fink team は、この問題を恒久的に直す方法を研究しています�
 </p><p>
 この問題を恒久的に直す方法を決定ししだい、こちらで再度告知をいたします。
 </p>
-<p><b> Update: March 2007年3月16日: </b>
+<p><b>2007年3月16日追記: </b>
 <code>dpkg</code> の新バージョンにて問題が解決されます。
 Unstable を利用している方は、通常通り update を実行してください。
 </p>
@@ -77,7 +85,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 を使いください。
 ただし、これは数週間遅れたデータになります。
 </p>
-<p><b> Update: 2007年6月2日</b> 10.4.9 の <code>sudo</code> の挙動が変わりました。
+<p><b>Update: 2007年6月2日</b> 10.4.9 の <code>sudo</code> の挙動が変わりました。
 これによって、更新スクリプトはそのままでは作動しなくなりました。
 最初に <code>sudo -s</code> として、スーパーユーザーにすれば大丈夫です。</p>
 		<a name="2006-07-24%20%E6%B3%A8%E6%84%8F:%20%2210.4-transitional%22%20%E3%83%84%E3%83%AA%E3%83%BC%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AF2006%E5%B9%B48%E6%9C%881%E6%97%A5%E3%81%AB%E7%B5%82%E4%BA%86"><span class="news-date">2006-07-24: </span><span class="news-headline">注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</span></a><?php gray_line(); ?>

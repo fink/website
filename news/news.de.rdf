@@ -5,17 +5,30 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2007-12-07T12:12:27+09:00</dc:date>
+    <dc:date>2007-12-12T12:40:54+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20and%20Fink">
+      <title>Leopard, X11, and Fink</title>
+      <link>http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20and%20Fink</link>
+      <guid>http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20and%20Fink</guid>
+      <description>
+    <p>Users who want to update their Leopard X11 installation should make sure to download a <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>.  Users who have already applied the X11-2.1.0.1.pkg from macosxforge.org must download the Fink-compatible Xquartz for Fink to work properly.</p>
+  </description>
+      <content:encoded>
+    <p>Users who want to update their Leopard X11 installation should make sure to download a <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>.  Users who have already applied the X11-2.1.0.1.pkg from macosxforge.org must download the Fink-compatible Xquartz for Fink to work properly.</p>
+  </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down">
       <title>PDB Website Down</title>
       <link>http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down</link>
       <guid>http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down</guid>
       <description>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+<p>Update, 2007-12-10:  The Package Database is up and running again, with enhanced features.</p>
   </description>
       <content:encoded>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
+<p>Update, 2007-12-10:  The Package Database is up and running again, with enhanced features.</p>
   </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-10-26%20Initial%20Leopard%20Support">
@@ -698,95 +711,6 @@ problematic volume and clicking on "repair disk permissions."  Also, the install
 </p>
       <p>Note added 6/30/05:  To avoid contamination with obsolete headers and the like, we recommend that people who want to build packages from source should perform a clean install of XCode via running the /Developer/Tools/uninstall-devtools.pl script.  For best results, you may want to do this before updating your OS.</p>
     </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.">
-      <title>Fink and Tiger.</title>
-      <link>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.</link>
-      <guid>http://fink.sourceforge.net/news/#2005-04-29%20Fink%20and%20Tiger.</guid>
-      <description>
-<p>
-Fink can be used on OS X 10.4!  There are several ways you can update:
-</p>
-
-A binary installer will be available within a few weeks, for binary-only
-users.  In the meantime, new users should bootstrap fink 0.23.10, just
-as stable users, below.
-
-        
-For users of the stable tree, we recommend that you delete your current
-fink with sudo rm -Rf /sw and then "bootstrap" an
-installation of fink-0.23.10 using
-<a href="http://fink.sourceforge.net/http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
-fink-0.23.10.tar.gz</a>--download that file and expand it, 
-eg. via
-tar -xvzf fink-0.23.10.tar.gz.  After running the command
- ./bootstrap.sh  in the resulting
-fink-0.23.10 directory,
-you'll need to run fink selfupdate
-
-        
-For users of the unstable tree, you may be able to upgrade just by running 
-fink selfupdate if your version of fink is less than 0.24.6.  
-It will install fink-0.24.6 for you.  After upgrading to 10.4, first check 
-that you have the right version of fink by issuing fink --version
-.  If your version is less than 0.24.6, run fink selfupdate to 
-get the right version of fink.  Then, whether you selfupdated or not, 
-reinstall the fink package using fink rebuild fink, 
-and follow that with another fink selfupdate.
-
-
-<p>Not all packages are working yet under 10.4, but that situation will
-improve over the next several weeks.  The stable tree contains substantially
-fewer packages than in 10.3, but all of them should compile.
-</p>
-<p>Of course, some wrinkles still need to be ironed out.  We encourage 
-users with mission-critical applications to check in on the mailing 
-lists to verify whether anyone has had experience with the package in 
-question before upgrading.</p>
-
-</description>
-      <content:encoded>
-<p>
-Fink can be used on OS X 10.4!  There are several ways you can update:
-</p>
-
-A binary installer will be available within a few weeks, for binary-only
-users.  In the meantime, new users should bootstrap fink 0.23.10, just
-as stable users, below.
-
-        
-For users of the stable tree, we recommend that you delete your current
-fink with sudo rm -Rf /sw and then "bootstrap" an
-installation of fink-0.23.10 using
-<a href="http://fink.sourceforge.net/http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
-fink-0.23.10.tar.gz</a>--download that file and expand it, 
-eg. via
-tar -xvzf fink-0.23.10.tar.gz.  After running the command
- ./bootstrap.sh  in the resulting
-fink-0.23.10 directory,
-you'll need to run fink selfupdate
-
-        
-For users of the unstable tree, you may be able to upgrade just by running 
-fink selfupdate if your version of fink is less than 0.24.6.  
-It will install fink-0.24.6 for you.  After upgrading to 10.4, first check 
-that you have the right version of fink by issuing fink --version
-.  If your version is less than 0.24.6, run fink selfupdate to 
-get the right version of fink.  Then, whether you selfupdated or not, 
-reinstall the fink package using fink rebuild fink, 
-and follow that with another fink selfupdate.
-
-
-<p>Not all packages are working yet under 10.4, but that situation will
-improve over the next several weeks.  The stable tree contains substantially
-fewer packages than in 10.3, but all of them should compile.
-</p>
-<p>Of course, some wrinkles still need to be ironed out.  We encourage 
-users with mission-critical applications to check in on the mailing 
-lists to verify whether anyone has had experience with the package in 
-question before upgrading.</p>
-
-</content:encoded>
     </item>
   </channel>
 </rss>
