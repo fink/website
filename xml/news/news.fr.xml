@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.59 2007/12/08 02:48:37 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.60 2007/12/12 03:32:54 babayoshihiko Exp $</cvsid>
 
+<newsitem>
+  <date>10/12/2007</date>
+  <headline>Leopard, X11, et Fink</headline>
+  <body>
+	<p>Les utilisateurs voulant mettre à jour leur installation X11 sous Leopard 
+	doivent s'assurer de télécharger  <link url="http://xquartz.macosforge.org/ 
+	downloads/Xquartz-1.3.0-apple-fink.bz2">une mise à jour Xquartz compatible 
+	avec Fink</link>.  Les utilisateurs qui ont déjà appliqué la mise à jour 
+	X11-2.1.0.1.pkg disponible depuis macosxforge.org <em>doivent</em> installer 
+	cette version non obstrusive d'Xquartz pour que Fink fonctionne 
+	correctement.</p>
+  </body>
+</newsitem>
 <newsitem>
   <date>18/11/2007</date>
   <headline>Site PDB</headline>
   <body>
     <p>L'interface web de gestion des paquets ne marche plus. La base de données est arrêtée suite à des mises à jour matériels et logiciels du serveur. Nous travaillons pour rétablir ce serveur dès que possible. Désolé pour la gêne occasionée.</p>
+<p><em>Actualisé le 12 décembre:</em> La base de données des paquets est 
+rétablie, et l'interface web est à nouveau opérationnelle, avec de nouvelles 
+fonctionnalités.</p>
   </body>
 </newsitem>
 

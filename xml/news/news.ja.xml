@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.36 2007/12/07 03:11:53 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.37 2007/12/12 03:32:54 babayoshihiko Exp $</cvsid>
 
+<newsitem>
+  <date>2007-12-10</date>
+  <headline>Leopard, X11, and Fink</headline>
+  <body>
+    <p>
+    Leopard X11 を更新したい方は、
+    <link url="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</link>
+    をお使い下さい。
+    既に macosxforge.org の X11-2.1.0.1.pkg を適用された方は、<em>必ず</em> Fink-対応の Xquartz をお使い下さい。
+    </p>
+  </body>
+</newsitem>
 <newsitem>
   <date>2007-11-18</date>
   <headline>PDB Website Down</headline>
@@ -12,6 +24,7 @@
     できる限り早く解決できるよう復旧に向けて作業中です。
     ハードウェアとソフトウェアのアップグレードが完了するまでお待ち下さい。
     </p>
+<p><em>2007年12月10日追記:</em> パッケージデータベースは、より強力になって帰ってきました。</p>
   </body>
 </newsitem>
 
@@ -27,7 +40,7 @@ fink-0.27.7 を<link url="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.
 10.5 がインストールされましたら、<code>fink reinstall fink</code> を実行してください。</p>
 <p>10.3 から 10.5 へ直接移行する方法は今のところありません。
 どうしても使いたい方は、 <code>fink-0.27.7</code> tarball をダウンロードし、上述のように Fink ツリーを　bootstrap する必要があります。</p>
-<p><em>Update 2007年10月29日:</em> アップグレードした場合、 <code>fink cleanup</code> を実行すると<em>全ての</em> .deb ファイルが削除されます。
+<p><em>2007年10月29日追記:</em> アップグレードした場合、 <code>fink cleanup</code> を実行すると<em>全ての</em> .deb ファイルが削除されます。
 この問題は次回のアップデート時に解決される予定です。</p>
 </body>
 </newsitem>
@@ -48,7 +61,7 @@ fink team は、この問題を恒久的に直す方法を研究しています�
 </p><p>
 この問題を恒久的に直す方法を決定ししだい、こちらで再度告知をいたします。
 </p>
-<p><em> Update: March 2007年3月16日: </em>
+<p><em>2007年3月16日追記: </em>
 <code>dpkg</code> の新バージョンにて問題が解決されます。
 Unstable を利用している方は、通常通り update を実行してください。
 </p>
@@ -94,7 +107,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 を使いください。
 ただし、これは数週間遅れたデータになります。
 </p>
-<p><em> Update: 2007年6月2日</em> 10.4.9 の <filename>sudo</filename> の挙動が変わりました。
+<p><em>Update: 2007年6月2日</em> 10.4.9 の <filename>sudo</filename> の挙動が変わりました。
 これによって、更新スクリプトはそのままでは作動しなくなりました。
 最初に <code>sudo -s</code> として、スーパーユーザーにすれば大丈夫です。</p>
 		</body>
