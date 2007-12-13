@@ -1,11 +1,11 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2007/08/15 21:17:02 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2007/12/13 19:47:09 $';
 
-include "header.inc";
+include_once "header.inc";
+include_once "../fink_version.inc";
 ?>
-
 
 <h1>Fink Downloads</h1>
 <p>
@@ -20,17 +20,12 @@ Comunque, date uno sguardo alla <a href="overview.php">panoramica</a> ed all'
 Nuovo a Fink?  Queste istruzioni di avvio rapido sono presenti allo scopo di rendervi
 l'avvio rapido con le binary release.
 </p>
-<? 
-include "../fink_version.inc";
-?>
 
 <ol>
 <li><p>
 Download dell' installer disk image:<br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
-<? print $fink_version; ?> Binary Installer (PowerPC)</a> - <? print $dmg_size; ?><br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
-<? print $fink_version; ?> Binary Installer (Intel)</a> - <? print $intel_dmg_size; ?><br>
+<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
+<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " Binary Installer (Intel)",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
 (10.3 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink
 0.7.2</a>)<br>
 (10.2 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink

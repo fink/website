@@ -1,8 +1,14 @@
 <?
-/* $Id: header.inc,v 1.4 2004/03/08 00:30:12 fingolfin Exp $ */
+/* $Id: header.inc,v 1.5 2007/12/13 19:47:08 rangerrick Exp $ */
 
 $fsroot = $root = "../";
 
-include $fsroot."download/nav.inc";
-include $fsroot."header.inc";
+$skip_analytics = true;
+
+include_once $fsroot."download/nav.inc";
+include_once $fsroot."header.inc";
+include_once $fsroot."analytics.inc";
+
+analytics_print();
+
 ?>

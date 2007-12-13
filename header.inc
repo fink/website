@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.114 2007/12/04 21:34:25 rangerrick Exp $ */
+/* $Id: header.inc,v 1.115 2007/12/13 19:47:07 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -48,6 +48,8 @@ function param($Name) {
 	
 	 return("");
 }	
+
+include_once "analytics.inc";
  
 // Language Code (from phpLang.inc.php)
 include_once dirname(__FILE__) . "/phpLang.inc.php";

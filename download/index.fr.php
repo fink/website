@@ -1,9 +1,10 @@
 <?
 $title = "Téléchargement rapide";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/06/16 00:05:40 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2007/12/13 19:47:09 $';
 
-include "header.inc";
+include_once "header.inc";
+include "../fink_version.inc";
 ?>
 
 
@@ -11,13 +12,10 @@ include "header.inc";
 <p>Il y a de nombreuses façons d'installer ou de mettre à niveau Fink. Nous conseillons aux nouveaux utilisateurs de suivre les instructions de téléchargement rapide figurant ci-dessous. Pour les autres, voyez les <a href="overview.php">généralités</a> et la <a href="upgrade.php">matrice de mise à niveau</a>.</p>
 <h2>Téléchargement rapide</h2>
 <p>C'est votre premier essai sous Fink ?  Ces instructions vont vous aider à charger rapidement la version binaire.</p>
-<? 
-include "../fink_version.inc";
-?>
 <ol>
 <li><p>Téléchargez l'image disque de l'installeur :<br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Installeur binaire Fink <? print $fink_version; ?> pour PowerPC</a> - <? print $dmg_size; ?><br>
-<a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Installeur binaire Fink  <? print $fink_version; ?> pour Intel</a> - <? print $intel_dmg_size; ?><br>
+<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Installeur binaire Fink " . $fink_version . " pour PowerPC", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
+<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Installeur binaire Fink " . $fink_version . " pour Intel",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
 Utilisateurs de la version 10.3 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink0.7.2</a><br>
 Utilisateurs de la version 10.2  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink 0.6.4</a><br>
 Utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink0.4.1</a></p></li>

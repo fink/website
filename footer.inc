@@ -1,9 +1,4 @@
-<?
-/* $Id: footer.inc,v 1.39 2007/04/20 02:04:35 rangerrick Exp $ */
-if (!$urchin_account) {
-	$urchin_account = "UA-305132-6";
-}
-?>
+<? /* $Id: footer.inc,v 1.40 2007/12/13 19:47:06 rangerrick Exp $ */ ?>
 
 <? /* end content table */ ?>
 </div>
@@ -43,14 +38,10 @@ if (!$urchin_account) {
 		}
 	?>
 </div>
-<!-- BMR 02/23/2007 - feedburner login went to fink-core-private -->
-<script src="http://feeds.feedburner.com/~s/FinkProjectNews" type="text/javascript" charset="utf-8"></script>
-<!-- BMR 02/24/2007 - added back in, got a login  :) -->
-<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-_uacct = "<? echo $urchin_account ?>";
-urchinTracker();
-</script> 
+<?
+	if ($has_analytics && !$skip_analytics) {
+		analytics_print();
+	}
+?>
 </body>
 </html>
