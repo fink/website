@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/12 03:43:33 $';
+$cvs_date = '$Date: 2007/12/14 15:39:47 $';
 
 ini_set("memory_limit", "48M");
 
@@ -17,7 +17,7 @@ handle_last_modified('pdb-browse-last-modified', $query);
 
 $pdb_title = "Package Database - Browse";
 $desc = get_query_description();
-if ($desc) $pdb_title .= htmlentities(" ($desc)");
+if (!empty($desc)) $pdb_title .= htmlentities(" ($desc)");
 
 include_once "header.inc";
 ?>
@@ -191,7 +191,13 @@ $count = count($packages);
 ?>
 <h1>
 Matched <?=$count?> 
-package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer' : '')?><?=($tree=='testing' ? ' that need testing' : '')?> (<?= get_query_description() ?>)
+package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer' : '')?><?=($tree=='testing' ? ' that need testing' : '')?>
+<?
+	$qdesc = get_query_description();
+	if (!empty($qdesc)) {
+		print '(' . $qdesc . ')';
+	}
+?>
 </h1>
 <?
 	if ($count > 0) {
