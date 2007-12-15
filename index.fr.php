@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/08/21 17:17:19 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2007/12/15 03:43:26 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -45,7 +45,7 @@ include dirname(__FILE__) . "/fink_version.inc";
 <p>Veuillez noter que pour utiliser certaines de ces ressources (par exemple, envoyer un rapport de bogue ou demander l'intégration d'un nouveau paquet dans Fink), vous devez vous connecter à votre compte SourceForge. Si vous n'en avez pas, vous pouvez en obtenir un gratuitement sur le <a href="http://sourceforge.net/">site web de SourceForge</a>.</p>
 <p>Autres ressources non hébergées sur SourceForge :</p>
 <ul>
-<li><a href="http://wiki.finkproject.org/">Le wiki du développeur Fink</a> (location nouveau).<li>
+<li><a href="http://wiki.finkproject.org/">Le wiki du développeur Fink</a> (location nouveau).</li>
 </ul>
 
 </td></tr></table>
