@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/07 14:58:47 $';
+$cvs_date = '$Date: 2007/12/18 17:17:07 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -150,7 +150,7 @@ if ($result == null || count($result) == 0) { # No package found
 	}
 
 	function link_to_package($pobj, $showall = false, $description = '') {
-		$pkg_str = '<a href="'. $pobj['name'] . '?doc_id' . $pobj['doc_id'];
+		$pkg_str = '<a href="'. $pobj['name'] . '?doc_id=' . $pobj['doc_id'];
 		if ($showall)
 			$pkg_str .= '&amp;showall=on';
 		$pkg_str .= '" title="' . get_descriptive_name($pobj) . '">'.$pobj['name'].'</a> ';
