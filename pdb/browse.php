@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/14 15:39:47 $';
+$cvs_date = '$Date: 2007/12/18 17:19:46 $';
 
 ini_set("memory_limit", "48M");
 
@@ -195,7 +195,7 @@ package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer
 <?
 	$qdesc = get_query_description();
 	if (!empty($qdesc)) {
-		print '(' . $qdesc . ')';
+		print ' (' . $qdesc . ')';
 	}
 ?>
 </h1>
