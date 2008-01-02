@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Herramienta fink ";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/29 03:58:51';
+$cvs_date = 'Date: 2007/07/21 00:06:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="prev" href="conf.php?phpLang=es" title="El archivo de configuración de Fink">';
 
 
@@ -216,7 +216,7 @@ La primera columna muestra el estado de la Instalación de la siguiente manera:
 (i)  instalado, pero hay una nueva versión disponible
  p  a virtual package provided by a package that is installed</pre>
       <p>
-Estas son las opciones para el comando <a href="#list">fink list</a> 
+Estas son las opciones para el comando <code>fink list</code>
 </p>
       <pre>
 -h,--help

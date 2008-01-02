@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Installation";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/29 03:58:51';
+$cvs_date = 'Date: 2007/07/21 00:06:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="packages.php?phpLang=de" title="Pakete Installieren"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
 
@@ -49,7 +49,7 @@ Der folgende Befehl entpackt das Archiv:
 Dies erstellt ein Verzeichnis mit dem selben Namen des Archivs. Wir werden dafür hier den Platzhalter  <code>fink-0.x.x-full</code> verwenden. Wechseln Sie jetzt in das Verzeichnis und führen Sie das bootstrap-Script aus:
 </p>
       <pre>cd fink-0.x.x-full
-      ./bootstrap.sh</pre>
+./bootstrap.sh</pre>
       <p>
 Das Skript wird eine paar Kontrollen auf Ihrem System und sudo ausführen, um root zu bekommen - dies wird Sie nach Ihrem Passwort fragen. Dann wird Sie das Script nach dem Installationspfad fragen. Sofern Sie keinen guten Grund haben, sollten den Standardpfad wählen- <code>/sw</code>.
 Nur so können Sie später auch Binärpakete installieren. Außerdem nutzen alle Beispiele diesen Pfad; achten Sie darauf diesen dann mit Ihren Installationspfad zu ersetzen, sollten Sie einen anderen gewählt haben.

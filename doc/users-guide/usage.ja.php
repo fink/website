@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - fink ツール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/06/01 03:21:15';
+$cvs_date = 'Date: 2007/07/21 00:06:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 
@@ -228,8 +228,6 @@ remove コマンドは、 'dpkg --remove' を呼び出してシステムから�
 	  正規表現 expr にマッチするセクションのパッケージのみ表示。
 -m expr,--maintainer=expr
 	  正規表現 expr にマッチするメンテナによるパッケージのみ表示
--t expr,--tree=expr
-	  正規表現 expr にマッチするツリ−内にあるパッケージのみ表示
 -w=xyz,--width=xyz.
 	  出力形式の幅を設定する。
 	  xyz は数値か auto 。

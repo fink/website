@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - インストール";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/06/01 03:21:15';
+$cvs_date = 'Date: 2007/07/21 00:06:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="packages.php?phpLang=ja" title="パッケージのインストール"><link rel="prev" href="intro.php?phpLang=ja" title="はじめに">';
 
 
@@ -121,8 +121,7 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
-  <pre>cd
-pico .profile</pre>
+  <pre>cd pico .profile</pre>
 <p>
 フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
 <code>. /sw/bin/init.sh</code> 行をタイプできるようになります。

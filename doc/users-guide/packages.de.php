@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Pakete";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/29 03:58:51';
+$cvs_date = 'Date: 2007/07/21 00:06:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="upgrade.php?phpLang=de" title="Fink Aktualisieren"><link rel="prev" href="install.php?phpLang=de" title="Erste Installation">';
 
 
@@ -159,7 +159,7 @@ More details about the <code>fink</code> tool are available in the chapter
             <li><p>
             <b>0.4.1:</b> das ist die Version, die als Binary-Paket für OS 10.1 installiert werden kann.</p></li>
             <li><p><b>0.6.4:</b>  this is the version that can be installed from binaries for OS 10.2.</p></li>
-            <li><p><b>0.7.2</b>
+            <li><p><b>0.7.2:</b>
   This is the base version that can be installed from binaries for OS 10.3.  If you <a href="install.php?phpLang=de#bin">update</a> Fink, later versions of some packages may be available.</p> 
         </li>
             <li><p><b>0.8.1:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="install.php?phpLang=de#bin">update</a> Fink, later versions of some packages may be available.</p></li>

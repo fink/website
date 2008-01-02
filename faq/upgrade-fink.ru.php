@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Обновление Fink";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2007/07/21 00:06:37';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-fink.php?phpLang=ru" title="Инсталляция, использование и поддержка Fink"><link rel="prev" href="mirrors.php?phpLang=ru" title="Зеркала Fink">';
 
 

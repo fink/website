@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2007-12-12T12:40:54+09:00</dc:date>
+    <dc:date>2008-01-01T21:03:19-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#10%2F12%2F2007%20Leopard%2C%20X11%2C%20et%20Fink">
       <title>Leopard, X11, et Fink</title>
