@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/18 17:17:07 $';
+$cvs_date = '$Date: 2008/01/04 21:36:31 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -26,11 +26,9 @@ list($doc_id, $inv_p) = get_safe_param('doc_id', '/^[[:alnum:]\-\_\.\:]+$/');
 
 $basicQuery = new SolrQuery();
 
-$basicQuery->addSort("dist_priority desc");
-$basicQuery->addSort("rel_priority desc");
 $basicQuery->addSort("epoch desc");
-$basicQuery->addSort("version_e desc");
-$basicQuery->addSort("revision_e desc");
+$basicQuery->addSort("sort_version desc");
+$basicQuery->addSort("infofilechanged desc");
 
 $basicQuery->addQuery("name_e:\"$package\"", true);
 if (!$showall) {
