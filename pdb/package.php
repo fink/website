@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2008/01/04 21:36:31 $';
+$cvs_date = '$Date: 2008/01/04 21:56:35 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -29,6 +29,8 @@ $basicQuery = new SolrQuery();
 $basicQuery->addSort("epoch desc");
 $basicQuery->addSort("sort_version desc");
 $basicQuery->addSort("infofilechanged desc");
+
+$basicQuery->setRows(1);
 
 $basicQuery->addQuery("name_e:\"$package\"", true);
 if (!$showall) {
