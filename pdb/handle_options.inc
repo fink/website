@@ -175,7 +175,7 @@ if ($tree == 'testing') {
 			$dist = $_d->getId();
 		} else {
 			if ($_d->getName() == $dist_name) {
-				$dist = $_->getId();
+				$dist = $_d->getId();
 			}
 		}
 	}
