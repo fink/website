@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.37 2007/12/12 03:32:54 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.38 2008/01/10 01:19:18 babayoshihiko Exp $</cvsid>
 
 <newsitem>
   <date>2007-12-10</date>
@@ -12,7 +12,12 @@
     <link url="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</link>
     をお使い下さい。
     既に macosxforge.org の X11-2.1.0.1.pkg を適用された方は、<em>必ず</em> Fink-対応の Xquartz をお使い下さい。
-    </p>
+      (注記: X11-2.1.1.pkg リリースは現在保留中ですが、これは Xquatz のパッチが不要になりです。
+      X11 2.1.1 以降を使う場合は Xquartz パッチを適用する必要は<em>ありません</em>。)</p>
+    <p><em>2007-12-11追記:</em> The X11 2.1.1 リリースは、 <link url="http://trac.macosforge.org/projects/xquartz/wiki/Releases">Xquartz リリースページにあります</link>.  
+    X11-2.1.0.1.pkg にパッチを当てて利用されている方、 パッチ適用後の　macosxforge.org の Xquartz-1.3.0-apple-fink
+    ファイルを使われている方は、<em>2.1.1 以降にアップグレードして</em>から Fink をお使い下さい。
+    このリリースは、 fink 専用の Xquartz も含めたこれまでの全てのリリースの後任リリースです。</p>
   </body>
 </newsitem>
 <newsitem>

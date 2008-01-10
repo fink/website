@@ -4,7 +4,14 @@ deben ir a <a href="http://xquartz.macosforge.org/%20downloads/Xquartz-1.3.0-app
 Fink-friendly para el Xquartz</a>.  Los usuarios que ya hayan
 aplicado el paquete X11-2.1.0.1.pkg del macosxforge.org <b>deben</b>
 descargar el Xquartz compatible con Fink para que Fink trabaje
-adecuadamente.</p>
+adecuadamente.
+  (Note: there is an X11-2.1.1.pkg release pending which will remove the need to patch your Xquartz.  If you install X11 2.1.1 or later, <b>do not</b> apply the Xquartz patch.)</p>
+    <p><b>Actualización, 2007-12-11:</b> La versión 2.1.1 del X11 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">esta dispnible en
+la página de distribuciones de Xquartz</a>. Los usuarios que ya han
+instalado el X11-2.1.1.0.1.pkg y/o ya han usado el parche
+Xquartz-1.3.0-apple-fink de macosxforge.org deben actualizar al 2.1.1 o
+superior para que Fink funcione apropiadamente. Esta versión reemplaza
+todoas las versiones previas incluyendo las específicas para Fink.</p>
 <a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
     <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
 <p><b>Actualización, 2007-12-10:</b> La Base de Datos de 

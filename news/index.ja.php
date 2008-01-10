@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/12/12 03:32:54';
+$cvs_date = 'Date: 2008/01/10 01:19:18';
 $metatags = '';
 
 include_once "header.inc";
@@ -13,7 +13,12 @@ include_once "header.inc";
     <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>
     をお使い下さい。
     既に macosxforge.org の X11-2.1.0.1.pkg を適用された方は、<b>必ず</b> Fink-対応の Xquartz をお使い下さい。
-    </p>
+      (注記: X11-2.1.1.pkg リリースは現在保留中ですが、これは Xquatz のパッチが不要になりです。
+      X11 2.1.1 以降を使う場合は Xquartz パッチを適用する必要は<b>ありません</b>。)</p>
+    <p><b>2007-12-11追記:</b> The X11 2.1.1 リリースは、 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">Xquartz リリースページにあります</a>.  
+    X11-2.1.0.1.pkg にパッチを当てて利用されている方、 パッチ適用後の　macosxforge.org の Xquartz-1.3.0-apple-fink
+    ファイルを使われている方は、<b>2.1.1 以降にアップグレードして</b>から Fink をお使い下さい。
+    このリリースは、 fink 専用の Xquartz も含めたこれまでの全てのリリースの後任リリースです。</p>
   <a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
     <p>
     パッケージデータベースのウェブが現在停止しており、ご不便をかけております。
