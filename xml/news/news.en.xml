@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.74 2008/01/12 22:48:57 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.75 2008/01/12 23:08:42 dmrrsn Exp $</cvsid>
 <newsitem>
   <date>2008-01-12</date>
-  <headline>Fink website downk</headline>
+  <headline>Fink website down</headline>
   <body>
     <p>The fink website is not functioning correctly at present.  (You may
-have noticed that the links on this page do not function correctly.)  The
+have noticed that many of the links on this page do not function correctly.)  The
 fink team is working to resolve the problem as quickly as possible.</p>
   </body>
 </newsitem>
