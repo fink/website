@@ -1,37 +1,76 @@
-<a name="2007-12-10%20Leopard,%20X11,%20y%20Fink"><span class="news-date">2007-12-10: </span><span class="news-headline">Leopard, X11, y Fink</span></a><?php gray_line(); ?>
-<p>Los usuarios que deseen actualizar su instalación de X11 en Leopardo
-deben ir a <a href="http://xquartz.macosforge.org/%20downloads/Xquartz-1.3.0-apple-fink.bz2">que es una actualizacion
-Fink-friendly para el Xquartz</a>.  Los usuarios que ya hayan
-aplicado el paquete X11-2.1.0.1.pkg del macosxforge.org <b>deben</b>
-descargar el Xquartz compatible con Fink para que Fink trabaje
-adecuadamente.
-  (Note: there is an X11-2.1.1.pkg release pending which will remove the need to patch your Xquartz.  If you install X11 2.1.1 or later, <b>do not</b> apply the Xquartz patch.)</p>
-    <p><b>Actualización, 2007-12-11:</b> La versión 2.1.1 del X11 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">esta dispnible en
-la página de distribuciones de Xquartz</a>. Los usuarios que ya han
-instalado el X11-2.1.1.0.1.pkg y/o ya han usado el parche
-Xquartz-1.3.0-apple-fink de macosxforge.org deben actualizar al 2.1.1 o
-superior para que Fink funcione apropiadamente. Esta versión reemplaza
-todoas las versiones previas incluyendo las específicas para Fink.</p>
-<a name="2007-11-18%20PDB%20Website%20Down"><span class="news-date">2007-11-18: </span><span class="news-headline">PDB Website Down</span></a><?php gray_line(); ?>
-    <p>The Package Database web interface is presently down pending hardware and software upgrades. We are working on fixing the server as soon as possible. Sorry for any inconvenience.</p>
-<p><b>Actualización, 2007-12-10:</b> La Base de Datos de 
-Paquetes está funcionando nuevamente, con características 
-mejoradas.</p>
-  <a name="2007-10-26%20Initial%20Leopard%20Support"><span class="news-date">2007-10-26: </span><span class="news-headline">Initial Leopard Support</span></a><?php gray_line(); ?>
-    <p>El Proyecto Fink anuncia el soporte inicial para Mac OS X Leopard (10.5).</p>
-<p>Lo usuarios del sistema 10.5 que creen una nueva instalación de Fink
-deberán hacerlo usando el bootstrap, al menos hasta que se genere una
-distribución binaria. Descargen eñ fink-0.27.7 <a href="http://downloads.sourceforge.net/fink/fink-0.27.7.tar.gz">aquí</a>. La actualizacación
-de 10.4-&gt;10.5 puede realizarse ejecuando <code>fink selfupdate</code> para obtener
-el fink-0.27.7. Si haceis esto en el OS 10.5, asegurese de haber
-instalado el Xcode 3.0. Tras instalar el 10.5, ejecute <code>fink reinstall
-fink</code>.</p>
-<p>Aún no existe un camino para actualizar directamente 10.3-&gt;10.5. Si
-eres muy impaciente, sigue las instrucciones arriba mencionadas para
-una nueva instalación.</p>
-<p><b>Actualización, 2007-10-29:</b> Los usuarios que
-actualicen fink deben tomar en cuanta que el uso del comando <code>fink
-cleanup</code> para eliminar archivos .deb eliminara todos los archivos .deb.
-Este comportamiento será corregido en la siguiente actualización de
-fink.</p>
-
+<a name="2006-08-19%20Server%20down;%20workarounds%20available"><span class="news-date">2006-08-19: </span><span class="news-headline">Server down; workarounds available</span></a><?php gray_line(); ?>
+<p><b> Update: 21 August 2006: </b> The server has been restored.</p>
+	<p> 
+The server which hosts four important
+fink services (the rsync update, the binary distribution, the "master mirror" 
+of source files, and the package database) is down at the moment.  We are
+hoping that the server will be restored as early as Monday, August 21,
+but are providing these workarounds for use during the period of outage.
+</p><p>
+To update fink, you must either select an rsync mirror other than the
+primary one (see the next paragraph), or use the command
+<code>fink selfupdate-cvs</code>.  You only need to give this command
+once; subsequent updates will continue to be performed using CVS.
+When the server is restored, you can revert to rsync updating by means
+of the command <code>fink selfupdate-rsync</code>.
+</p><p>
+To work around the lack of the binary distribution, and the "master mirror"
+of source files, run the command <code>fink configure</code>.  You should
+accept the default answers to all of the questions, except the following:
+when asked "Should Fink try to download pre-compiled packages from 
+the binary distribution if available?" answer "no" (to disable the binary
+distribution); when asked if you want to change the mirror settings,
+answer "yes", and then you will be asked "What mirror order should fink use 
+when downloading sources?".  The answer is "2: Search Master Mirrors last"
+(to disable the automatic attempts to use the master mirror server).
+Finally, if you have decided to stick with rsync for updates, when asked to
+"Choose a mirror for 'RSync SelfUpdate'" you should choose one other than
+rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
+might not be available to you if you are in the U.S.
+</p><p>
+Finally, to use the package database during the outage, you can connect
+to <a href="http://lists.finkproject.org/pdb">this backup copy of the
+package database</a> which is a few weeks out of date.
+</p>
+		<a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
+			<p>
+				The "10.4-transitional" tree was created as an interim solution to the issues of
+				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+				1st, 2006.
+			</p>
+			<p><b>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</b></p>
+			<p>
+				As we mentioned <a href="<?php print $root; ?>news#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				there are 2 ways to make the switch to the supported "10.4" tree.
+			</p>
+			<p>
+				The simplest way is to remove your Fink installation by deleting it and
+				installing fresh using the 0.8.1 installer available from the <a href="<?php print $root; ?>download">download page</a>.
+			</p>
+			<p>
+				Alternately, to preserve your Fink installation, download the
+				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+				and read the README for instructions on how to upgrade your existing installation in-place.
+				This will re-build your Fink installation from source, upgrading everything in the process.
+				Be warned, it can take a lot of time, depending on your fink installation!
+			</p>
+			<p>
+				Feedback on the upgrade script has been very positive; many users have already
+				made the switch.  If you have problems, please feel free to mail your issues to
+				the <a href="<?php print $root; ?>lists">discussion lists</a>.
+			</p>
+		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
+			<p>Are you at OSCON 2006?  Want to meet up?</p>
+			<p>
+				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
+				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
+				Fink, or even just meet for the heck of it.
+			</p>
+			<p>
+				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
+				Mac OS X, and anything else that takes our fancy.
+			</p>
+		
