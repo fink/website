@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2008-01-12T15:09:06-08:00</dc:date>
+    <dc:date>2008-01-13T22:15:00-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-01-12%20Fink%20website%20down">
       <title>Fink website down</title>
@@ -15,11 +15,13 @@
     <p>The fink website is not functioning correctly at present.  (You may
 have noticed that many of the links on this page do not function correctly.)  The
 fink team is working to resolve the problem as quickly as possible.</p>
+<p>Update, 2008-01-13: The website is back to normal.</p>
   </description>
       <content:encoded>
     <p>The fink website is not functioning correctly at present.  (You may
 have noticed that many of the links on this page do not function correctly.)  The
 fink team is working to resolve the problem as quickly as possible.</p>
+<p>Update, 2008-01-13: The website is back to normal.</p>
   </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20and%20Fink">

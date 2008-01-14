@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.75 2008/01/12 23:08:42 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.76 2008/01/14 06:14:37 dmrrsn Exp $</cvsid>
 <newsitem>
   <date>2008-01-12</date>
   <headline>Fink website down</headline>
@@ -9,6 +9,7 @@
     <p>The fink website is not functioning correctly at present.  (You may
 have noticed that many of the links on this page do not function correctly.)  The
 fink team is working to resolve the problem as quickly as possible.</p>
+<p><em>Update, 2008-01-13:</em> The website is back to normal.</p>
   </body>
 </newsitem>
 <newsitem>
