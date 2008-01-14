@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.61 2008/01/10 01:19:18 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.fr.xml,v 1.62 2008/01/14 23:41:34 getphuture Exp $</cvsid>
 
+<newsitem>
+  <date>12/01/2008</date>
+  <headline>Le site web ne marche plus</headline>	
+	<p>De nombreux disfonctionnements (Vous avez sûrement remarqué que la plupart
+	des liens de cette page ne fonctionnent plus). L'équipe travaille actuellement
+	pour résoudre au plus vite ce problème.</p>
+	<p><em>Actualisé le 13 janvier:</em> Le site web fonctionne à nouveau. Vous pouvez
+	navigué en toute tranquilité.</p>
+</newsitem>
 <newsitem>
   <date>10/12/2007</date>
   <headline>Leopard, X11, et Fink</headline>
@@ -13,15 +22,18 @@
 	avec Fink</link>.  Les utilisateurs qui ont déjà appliqué la mise à jour 
 	X11-2.1.0.1.pkg disponible depuis macosxforge.org <em>doivent</em> installer 
 	cette version non obstrusive d'Xquartz pour que Fink fonctionne 
-	correctement.
-	  (Note: there is an X11-2.1.1.pkg release pending which will remove the need to patch your Xquartz.  If you install X11 2.1.1 or later, <em>do not</em> apply the Xquartz patch.)</p>
-    <p><em>Mise à jour, 2007-12-11:</em> La version 2.1.1 de X11 <link url="http://trac.macosforge.org/projects/xquartz/wiki/Releases">est maintenant
-disponible sur la page de téléchargement de XQuartz</link>. Les utilisateurs
-qui ont déjà installé le fichier X11-2.1.0.1.pkg et/ou la rustine
-Xquartz-1.3.0-apple-fink depuis macosxforge.org doivent faire une mise
-à jour vers la version 2.1.1 ou une version plus récente, pour que
-Fink fonctionne correctement. Cette version remplace toutes les
-versions précédentes, y compris la version spécifique à Fink.</p>
+	correctement. (Note: la version 2.1.1 est en cours de développement. Cette
+	version ne nécessitera plus le besoin d'appliquer la rustine à Xquartz. Si
+	vous installez la version 2.1.1 or supérieure de X11, <em>n'installez pas</em>
+	la rustine Xquartz.)</p>
+    <p><em>Mise à jour, 2007-12-11:</em> La version 2.1.1 de X11
+	<link url="http://trac.macosforge.org/projects/xquartz/wiki/Releases">est
+	maintenant disponible sur la page de téléchargement de XQuartz</link>. Les
+	utilisateurs qui ont déjà installé le fichier X11-2.1.0.1.pkg et/ou la rustine
+	Xquartz-1.3.0-apple-fink depuis macosxforge.org doivent faire une mise à jour
+	vers la version 2.1.1 ou une version plus récente, pour que Fink fonctionne
+	correctement. Cette version remplace toutes les versions précédentes, y compris
+	la version spécifique à Fink.</p>
   </body>
 </newsitem>
 <newsitem>
