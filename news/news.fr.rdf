@@ -5,8 +5,27 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2008-01-10T10:19:45+09:00</dc:date>
+    <dc:date>2008-01-15T01:36:17+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#12%2F01%2F2008%20Le%20site%20web%20ne%20marche%20plus">
+      <title>Le site web ne marche plus</title>
+      <link>http://fink.sourceforge.net/news/#12%2F01%2F2008%20Le%20site%20web%20ne%20marche%20plus</link>
+      <guid>http://fink.sourceforge.net/news/#12%2F01%2F2008%20Le%20site%20web%20ne%20marche%20plus</guid>
+      <description>	
+	<p>De nombreux disfonctionnements (Vous avez sûrement remarqué que la plupart
+	des liens de cette page ne fonctionnent plus). L'équipe travaille actuellement
+	pour résoudre au plus vite ce problème.</p>
+	<p>Actualisé le 13 janvier: Le site web fonctionne à nouveau. Vous pouvez
+	navigué en toute tranquilité.</p>
+  </description>
+      <content:encoded>	
+	<p>De nombreux disfonctionnements (Vous avez sûrement remarqué que la plupart
+	des liens de cette page ne fonctionnent plus). L'équipe travaille actuellement
+	pour résoudre au plus vite ce problème.</p>
+	<p>Actualisé le 13 janvier: Le site web fonctionne à nouveau. Vous pouvez
+	navigué en toute tranquilité.</p>
+  </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#10%2F12%2F2007%20Leopard%2C%20X11%2C%20et%20Fink">
       <title>Leopard, X11, et Fink</title>
       <link>http://fink.sourceforge.net/news/#10%2F12%2F2007%20Leopard%2C%20X11%2C%20et%20Fink</link>
@@ -17,15 +36,18 @@
 	avec Fink</a>.  Les utilisateurs qui ont déjà appliqué la mise à jour 
 	X11-2.1.0.1.pkg disponible depuis macosxforge.org doivent installer 
 	cette version non obstrusive d'Xquartz pour que Fink fonctionne 
-	correctement.
-	  (Note: there is an X11-2.1.1.pkg release pending which will remove the need to patch your Xquartz.  If you install X11 2.1.1 or later, do not apply the Xquartz patch.)</p>
-    <p>Mise à jour, 2007-12-11: La version 2.1.1 de X11 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">est maintenant
-disponible sur la page de téléchargement de XQuartz</a>. Les utilisateurs
-qui ont déjà installé le fichier X11-2.1.0.1.pkg et/ou la rustine
-Xquartz-1.3.0-apple-fink depuis macosxforge.org doivent faire une mise
-à jour vers la version 2.1.1 ou une version plus récente, pour que
-Fink fonctionne correctement. Cette version remplace toutes les
-versions précédentes, y compris la version spécifique à Fink.</p>
+	correctement. (Note: la version 2.1.1 est en cours de développement. Cette
+	version ne nécessitera plus le besoin d'appliquer la rustine à Xquartz. Si
+	vous installez la version 2.1.1 or supérieure de X11, n'installez pas
+	la rustine Xquartz.)</p>
+    <p>Mise à jour, 2007-12-11: La version 2.1.1 de X11
+	<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">est
+	maintenant disponible sur la page de téléchargement de XQuartz</a>. Les
+	utilisateurs qui ont déjà installé le fichier X11-2.1.0.1.pkg et/ou la rustine
+	Xquartz-1.3.0-apple-fink depuis macosxforge.org doivent faire une mise à jour
+	vers la version 2.1.1 ou une version plus récente, pour que Fink fonctionne
+	correctement. Cette version remplace toutes les versions précédentes, y compris
+	la version spécifique à Fink.</p>
   </description>
       <content:encoded>
 	<p>Les utilisateurs voulant mettre à jour leur installation X11 sous Leopard 
@@ -33,15 +55,18 @@ versions précédentes, y compris la version spécifique à Fink.</p>
 	avec Fink</a>.  Les utilisateurs qui ont déjà appliqué la mise à jour 
 	X11-2.1.0.1.pkg disponible depuis macosxforge.org doivent installer 
 	cette version non obstrusive d'Xquartz pour que Fink fonctionne 
-	correctement.
-	  (Note: there is an X11-2.1.1.pkg release pending which will remove the need to patch your Xquartz.  If you install X11 2.1.1 or later, do not apply the Xquartz patch.)</p>
-    <p>Mise à jour, 2007-12-11: La version 2.1.1 de X11 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">est maintenant
-disponible sur la page de téléchargement de XQuartz</a>. Les utilisateurs
-qui ont déjà installé le fichier X11-2.1.0.1.pkg et/ou la rustine
-Xquartz-1.3.0-apple-fink depuis macosxforge.org doivent faire une mise
-à jour vers la version 2.1.1 ou une version plus récente, pour que
-Fink fonctionne correctement. Cette version remplace toutes les
-versions précédentes, y compris la version spécifique à Fink.</p>
+	correctement. (Note: la version 2.1.1 est en cours de développement. Cette
+	version ne nécessitera plus le besoin d'appliquer la rustine à Xquartz. Si
+	vous installez la version 2.1.1 or supérieure de X11, n'installez pas
+	la rustine Xquartz.)</p>
+    <p>Mise à jour, 2007-12-11: La version 2.1.1 de X11
+	<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">est
+	maintenant disponible sur la page de téléchargement de XQuartz</a>. Les
+	utilisateurs qui ont déjà installé le fichier X11-2.1.0.1.pkg et/ou la rustine
+	Xquartz-1.3.0-apple-fink depuis macosxforge.org doivent faire une mise à jour
+	vers la version 2.1.1 ou une version plus récente, pour que Fink fonctionne
+	correctement. Cette version remplace toutes les versions précédentes, y compris
+	la version spécifique à Fink.</p>
   </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#18%2F11%2F2007%20Site%20PDB">
@@ -277,27 +302,6 @@ Une annonce sera postée ici même dès la correction effectuée.
       <content:encoded>
 <p>L'équipe Fink a eu vent de problèmes de compilation avec XCode 2.2. Nous vous recommandons de vous abstenir de mettre à jour XCode tant que ces problèmes ne seront pas résolus.</p>
 <p>Ceux qui ont déjà installé XCode 2.2 et ne souhaitent pas revenir à la version 2.1 sont cordialement invités à nous aider à trouver les paquets qui ne fonctionnent pas et à faire en sorte qu'ils marchent.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#09%2F06%2F2005%20Nouvelles%20versions%20Fink">
-      <title>Nouvelles versions Fink</title>
-      <link>http://fink.sourceforge.net/news/#09%2F06%2F2005%20Nouvelles%20versions%20Fink</link>
-      <guid>http://fink.sourceforge.net/news/#09%2F06%2F2005%20Nouvelles%20versions%20Fink</guid>
-      <description>
-<p>Trois nouvelles versions de Fink sont <a href="http://fink.sourceforge.net/download/index.php">disponibles</a> aujourd'hui : la version 0.8.0 (pour Mac OS X 10.4), la version 0.7.2 (pour Mac OS X 10.3) et la version 0.6.4 (pour Mac OS X 10.2). Les trois versions comprennent les fichiers sources, les paquets binaires et un installeur Fink pour les nouveaux utilisateurs.</p>
-<p>La nouvelle version pour Mac OS X 10.4 inclut tous les paquets "stable" actuellement disponibles sous forme source et sous forme binaire. C'est-à-dire 1 565 paquets, ce qui constitue plus de 80 % des 1 909 paquets disponibles dans la version pour Mac OS X 10.3. Les développeurs de Fink continuent à porter les paquets stables sur Tiger.</p>
-<p>La nouvelle version pour Mac OS X 10.2 est la dernière version officielle pour ce système. Bien qu'il n'y aura plus de mises à jour fournies par l'équipe Fink - y compris de mises à jour de sécurité -, nous estimons que la version 0.6.4 devrait fonctionner tout à fait correctement pour quelques années encore.</p>
-<p>Les utilisateurs qui passent de la version 10.3 à la version 10.4 par mise à jour n'ont qu'à exécuter fink selfupdate, suivi de sudo /sw/lib/fink/postinstall.pl (pour les personnes qui passent au système 10.4 pour la première fois), de fink scanpackages et de sudo apt-get update. Nous vous recommandons de ne pas utiliser l'amorçage pour le moment, car il ne fonctionne pas avec la nouvelle version 2.1 de Xcode d'Apple.</p>
-<p>Note ajoutée le 19/06/2005 : si l'installeur binaire Fink-0.8.0 signale que le volume ne gère pas les liens symboliques, lancez l'Utilitaire de disque (situé dans le répertoire Utilitaires du dossier Applications), sélectionnez le volume en cause et cliquez sur "Réparez les autorisations du disque". L'installeur ne peut fonctionner que si vous avez des droits d'administrateur, assurez-vous donc que vous le faites tourner sous un utilisateur qui possèdent ces droits.</p>
-<p>Note ajoutée le 30/06/2005 : pour éviter des problèmes avec d'anciens headers ou fichiers, nous recommandons aux personnes qui souhaitent construire les paquets à partir des sources de faire une installation propre de Xcode à l'aide du script /Developer/Tools/uninstall-devtools.pl. Il est préférable de le faire avant de mettre à jour le système.</p>
-</description>
-      <content:encoded>
-<p>Trois nouvelles versions de Fink sont <a href="http://fink.sourceforge.net/download/index.php">disponibles</a> aujourd'hui : la version 0.8.0 (pour Mac OS X 10.4), la version 0.7.2 (pour Mac OS X 10.3) et la version 0.6.4 (pour Mac OS X 10.2). Les trois versions comprennent les fichiers sources, les paquets binaires et un installeur Fink pour les nouveaux utilisateurs.</p>
-<p>La nouvelle version pour Mac OS X 10.4 inclut tous les paquets "stable" actuellement disponibles sous forme source et sous forme binaire. C'est-à-dire 1 565 paquets, ce qui constitue plus de 80 % des 1 909 paquets disponibles dans la version pour Mac OS X 10.3. Les développeurs de Fink continuent à porter les paquets stables sur Tiger.</p>
-<p>La nouvelle version pour Mac OS X 10.2 est la dernière version officielle pour ce système. Bien qu'il n'y aura plus de mises à jour fournies par l'équipe Fink - y compris de mises à jour de sécurité -, nous estimons que la version 0.6.4 devrait fonctionner tout à fait correctement pour quelques années encore.</p>
-<p>Les utilisateurs qui passent de la version 10.3 à la version 10.4 par mise à jour n'ont qu'à exécuter fink selfupdate, suivi de sudo /sw/lib/fink/postinstall.pl (pour les personnes qui passent au système 10.4 pour la première fois), de fink scanpackages et de sudo apt-get update. Nous vous recommandons de ne pas utiliser l'amorçage pour le moment, car il ne fonctionne pas avec la nouvelle version 2.1 de Xcode d'Apple.</p>
-<p>Note ajoutée le 19/06/2005 : si l'installeur binaire Fink-0.8.0 signale que le volume ne gère pas les liens symboliques, lancez l'Utilitaire de disque (situé dans le répertoire Utilitaires du dossier Applications), sélectionnez le volume en cause et cliquez sur "Réparez les autorisations du disque". L'installeur ne peut fonctionner que si vous avez des droits d'administrateur, assurez-vous donc que vous le faites tourner sous un utilisateur qui possèdent ces droits.</p>
-<p>Note ajoutée le 30/06/2005 : pour éviter des problèmes avec d'anciens headers ou fichiers, nous recommandons aux personnes qui souhaitent construire les paquets à partir des sources de faire une installation propre de Xcode à l'aide du script /Developer/Tools/uninstall-devtools.pl. Il est préférable de le faire avant de mettre à jour le système.</p>
 </content:encoded>
     </item>
   </channel>
