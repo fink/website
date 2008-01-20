@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.115 2007/12/13 19:47:07 rangerrick Exp $ */
+/* $Id: header.inc,v 1.116 2008/01/20 19:06:49 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -249,7 +249,7 @@ function gray_line ()
 if (!$linkroot) $linkroot = $root;
 
 // Used in Sections
-function insert_sub ($navbox, $active_page) {
+function insert_sub($navbox, $active_page) {
 	global $root, $linkroot;
 	
 	// Determine the active page
