@@ -1,5 +1,5 @@
 <?
-/* $Id: theader.inc,v 1.10 2007/12/07 14:50:31 rangerrick Exp $ */
+/* $Id: theader.inc,v 1.11 2008/01/20 19:29:27 rangerrick Exp $ */
 
 // section navigation (always visible)
 $sections = array(
@@ -273,7 +273,7 @@ function it_end() {
 }
 
 /* mis functions */
-function gray_line ()
+function gray_line()
 {
 	global $root;
 	print '<img src="'.$root.'img/grey_pixel.gif" height="1" width="100%" alt="-">';

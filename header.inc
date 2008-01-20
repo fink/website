@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.116 2008/01/20 19:06:49 rangerrick Exp $ */
+/* $Id: header.inc,v 1.117 2008/01/20 19:29:27 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -223,7 +223,7 @@ echo '</table>';
 }
 
 // Used in index
-function convert_date_to_locale ($initialstringdate) {
+function convert_date_to_locale($initialstringdate) {
 	$date_exploded = @explode(' ', $initialstringdate, 3);
 	$array_month = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
 	$search_month = array_search($date_exploded[1], $array_month)+1;
@@ -236,7 +236,7 @@ function convert_date_to_locale ($initialstringdate) {
 }
 
 // Used in News
-function gray_line ()
+function gray_line()
 {
 	global $root;
 	print '<img src="'.$root.'img/grey_pixel.gif" height="1" width="100%" alt="-">';
