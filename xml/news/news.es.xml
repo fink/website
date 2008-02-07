@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.36 2008/01/10 01:19:18 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.37 2008/02/07 10:00:51 babayoshihiko Exp $</cvsid>
 
+<newsitem>
+	<date>2008-02-03</date>
+	<headline>Mirror, mirror on the wall, will someone sponsor Fink at all?</headline>
+	<body>
+		<p>
+Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
+</p>
+		<p>
+We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
+Recently our list of mirrors had to be shortened considerably and we need your <em>help</em> to improve its level of quality again.
+</p>
+	<p>
+Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
+All the relevant information on how to run and sponsor a mirror can be found on the <link url="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</link>.
+For specific questions you can <link url="mailto:fink-core-private@lists.sourceforge.net">contact us</link> directly.
+We are looking for mirrors all over the world, but specifically in these countries:</p>
+<ul><li>United States</li><li>Japan</li><li>Germany</li><li>France</li><li>United Kingdom</li><li>Canada</li><li>Italy</li><li>Spain</li><li>Switzerland</li><li>Australia</li></ul>
+	<p>
+We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
+</p>
+</body>
+</newsitem>
+
+<newsitem>
+<date>2008-01-12</date>
+<headline>Fink website down</headline>
+<body>
+<p>The fink website is not functioning correctly at present.  (You may
+have noticed that many of the links on this page do not function correctly.)  The
+fink team is working to resolve the problem as quickly as possible.</p>
+<p><em>Update, 2008-01-13:</em> The website is back to normal.</p>
+</body>
+</newsitem>
 <newsitem>
   <date>2007-12-10</date>
   <headline>Leopard, X11, y Fink</headline>

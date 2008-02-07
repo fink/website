@@ -5,8 +5,49 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2008-01-15T01:36:17+01:00</dc:date>
+    <dc:date>2008-02-07T19:01:15+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F">
+      <title>Mirror, mirror on the wall, will someone sponsor Fink at all?</title>
+      <link>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</link>
+      <guid>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</guid>
+      <description>
+		<p>
+Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
+</p>
+		<p>
+We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
+Recently our list of mirrors had to be shortened considerably and we need your help to improve its level of quality again.
+</p>
+	<p>
+Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
+All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
+For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
+We are looking for mirrors all over the world, but specifically in these countries:</p>
+United StatesJapanGermanyFranceUnited KingdomCanadaItalySpainSwitzerlandAustralia
+	<p>
+We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
+</p>
+</description>
+      <content:encoded>
+		<p>
+Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
+</p>
+		<p>
+We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
+Recently our list of mirrors had to be shortened considerably and we need your help to improve its level of quality again.
+</p>
+	<p>
+Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
+All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
+For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
+We are looking for mirrors all over the world, but specifically in these countries:</p>
+United StatesJapanGermanyFranceUnited KingdomCanadaItalySpainSwitzerlandAustralia
+	<p>
+We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
+</p>
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#12%2F01%2F2008%20Le%20site%20web%20ne%20marche%20plus">
       <title>Le site web ne marche plus</title>
       <link>http://fink.sourceforge.net/news/#12%2F01%2F2008%20Le%20site%20web%20ne%20marche%20plus</link>
@@ -289,19 +330,6 @@ Une annonce sera postée ici même dès la correction effectuée.
 <p>Fink est maintenant prêt pour XCode 2.2, à l'exception des paquets openoffice.org (nous espérons qu'ils fonctionneront de nouveau quand nous passerons à l'arborescence 10.4). Nous encourageons les utilisateurs à passer à la version 2.2 de XCode s'ils le désirent ; XCode 2.2 devra être installé quand l'arborescence 10.4 sera mise à disposition.</p>
 <p>D'un autre côté et malgré l'annonce qu'Apple a faite aujourd'hui, Fink n'est pas prêt à tourner sur des processeurs Intel. L'équipe de Fink espère avoir une version prête pour Intel dans quelques semaines ; nous suggérons aux heureux bénéficiaires d'un nouvel iMac de ne pas y installer Fink tout de suite, mais d'attendre que la nouvelle version de Fink soit prête.</p>
 <p>Les mainteneurs de paquets Fink doivent tenir compte du nouveau champ Architecture, dont l'usage est expliqué dans le guide d constructions de paquets.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#16%2F11%2F2005%20XCode%202.2%20(utilisateurs%20Mac%20OS%20X%2010.4%20uniquement)">
-      <title>XCode 2.2 (utilisateurs Mac OS X 10.4 uniquement)</title>
-      <link>http://fink.sourceforge.net/news/#16%2F11%2F2005%20XCode%202.2%20(utilisateurs%20Mac%20OS%20X%2010.4%20uniquement)</link>
-      <guid>http://fink.sourceforge.net/news/#16%2F11%2F2005%20XCode%202.2%20(utilisateurs%20Mac%20OS%20X%2010.4%20uniquement)</guid>
-      <description>
-<p>L'équipe Fink a eu vent de problèmes de compilation avec XCode 2.2. Nous vous recommandons de vous abstenir de mettre à jour XCode tant que ces problèmes ne seront pas résolus.</p>
-<p>Ceux qui ont déjà installé XCode 2.2 et ne souhaitent pas revenir à la version 2.1 sont cordialement invités à nous aider à trouver les paquets qui ne fonctionnent pas et à faire en sorte qu'ils marchent.</p>
-</description>
-      <content:encoded>
-<p>L'équipe Fink a eu vent de problèmes de compilation avec XCode 2.2. Nous vous recommandons de vous abstenir de mettre à jour XCode tant que ces problèmes ne seront pas résolus.</p>
-<p>Ceux qui ont déjà installé XCode 2.2 et ne souhaitent pas revenir à la version 2.1 sont cordialement invités à nous aider à trouver les paquets qui ne fonctionnent pas et à faire en sorte qu'ils marchent.</p>
 </content:encoded>
     </item>
   </channel>

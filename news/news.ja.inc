@@ -1,73 +1,35 @@
-<a name="2006-08-19%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%80%E3%82%A6%E3%83%B3;%20%E5%9B%9E%E9%81%BF%E7%AD%96%E6%9C%89%E3%82%8A%E3%80%82"><span class="news-date">2006-08-19: </span><span class="news-headline">サーバダウン; 回避策有り。</span></a><?php gray_line(); ?>
-<p><b> Update: 21 August 2006: </b> The server has been restored.</p>
-	<p> 
-現在、fink の４つの重要なサービス (rsync 更新、バイナリ配布, ソースファイルの "master mirror", パッケージデータベース)
-をホストしているサーバがダウンしています。
-8月21日月曜日頃には復旧すると思われますが、それまでの間は回避策を提供いたします。
-</p><p>
-fink を更新する際は、primary ミラー以外の rsync ミラーを選択する (次のパラグラフで解説) か、
-<code>fink selfupdate-cvs</code> コマンドを使います。
-このコマンドはいっぱい実行するだけで、次回からの更新も CVS を用いるようになります。
-サーバが復旧したら、<code>fink selfupdate-rsync</code> とすることで rsync 更新に戻すことができます。
-</p><p>
-バイナリ配布の不在と、ソースファイルの "master mirror" に関しては、
-<code>fink configure</code> コマンドを実行します。
-以下の質問以外に対しては、既定の答を受け入れてください。
-"Should Fink try to download pre-compiled packages from 
-the binary distribution if available?" には "no" を
-(バイナリ配布を無効化する)。
-ミラー設定を変えるか聞かれた場合 "yes" と答える。
-この後、"What mirror order should fink use 
-when downloading sources?" と聞かれるので、
-"2: Search Master Mirrors last"
-(master mirror サーバを自動的に選択する機能を無効化)
-と答えます。
-最後に、 更新に rsync を用いると決めていて、
-"Choose a mirror for 'RSync SelfUpdate'" 
-と聞かれた場合、
-rsync://master.us.finkmirrors.net/finkinfo/
-以外を選択してください。
-米国にいる場合、残念ながら他の選択肢がないかもしれません。
-</p><p>
-最後に、パッケージデータベースを使うには、
-<a href="http://lists.finkproject.org/pdb">データベースのバックアップ</a>
-を使いください。
-ただし、これは数週間遅れたデータになります。
+<a name="2008-02-03%20Mirror,%20mirror%20on%20the%20wall,%20will%20someone%20sponsor%20Fink%20at%20all?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, will someone sponsor Fink at all?</span></a><?php gray_line(); ?>
+		<p>
+Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
 </p>
-		<a name="2006-07-24%20%E6%B3%A8%E6%84%8F:%20%2210.4-transitional%22%20%E3%83%84%E3%83%AA%E3%83%BC%E3%81%AE%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AF2006%E5%B9%B48%E6%9C%881%E6%97%A5%E3%81%AB%E7%B5%82%E4%BA%86"><span class="news-date">2006-07-24: </span><span class="news-headline">注意: "10.4-transitional" ツリーのサポートは2006年8月1日に終了</span></a><?php gray_line(); ?>
-			<p>
-
-				"10.4-transitional" ツリーは、 GCC 3.3 (Mac OS X 10.3 のデフォルトコンパイラ) と
-				GCC 4.0 (Mac OS X 10.4 のデフォルトコンパイラ) のバイナリ間の非互換性問題の暫定的解決策でした。
-				ようやく Fink は GCC 4.0 へ移行する作業が終了し、 "10.4" ツリーへ移行していただくよう、
-				"10.4-transitional" ツリーの2006年8月1日をもってサポートを終了いたします。
-			</p>
-			<p><b>"fink --version" が "0.8.1.cvs" または "0.8.1.rsync" と表示する場合、特にすることはありません。</b></p>
-			<p>
-				<a href="<?php print $root; ?>news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">以前述べたとおり</a>、
-				"10.4" ツリーへの以降方法は2種類あります。
-			</p>
-			<p>
-				一番簡単なのは、既存の Fink インストールを削除し、<a href="<?php print $root; ?>download">ダウンロードページ</a>から 0.8.1 インストーラを入手してインストールし直すことです。
-			</p>
-			<p>
-				既存の Fink を残す方法は、
-				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">アップグレードスクリプト</a>
-				をダウンロードし、README を読みながら既存のインストールされているものをアップグレードすることです。
-				これは Fink インストールをソースから再ビルドし、全てをアップグレードします。
-				インストール状況によっては、相当な時間がかかります！
-			</p>
-			<p>
-				アップグレードスクリプトの評判は上々です。多くのユーザがこれでスイッチしています。
-				それでも何か問題がありましたら、<a href="<?php print $root; ?>lists">リスト</a>にメールをしてください。
-			</p>
-		<a name="2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Fink Birds-of-a-Feather at OSCON 2006</span></a><?php gray_line(); ?>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				は OSCON に来ており、Fink に興味がある人も嫌いな人も大歓迎です。
-			</p>
-			<p>
-				7月26日午後8時半、 room F150 にて Fink や Mac OS X 、その他諸々のことを話します、
-			</p>
-		
+		<p>
+We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
+Recently our list of mirrors had to be shortened considerably and we need your <b>help</b> to improve its level of quality again.
+</p>
+	<p>
+Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
+All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
+For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
+We are looking for mirrors all over the world, but specifically in these countries:</p>
+<ul><li>United States</li><li>Japan</li><li>Germany</li><li>France</li><li>United Kingdom</li><li>Canada</li><li>Italy</li><li>Spain</li><li>Switzerland</li><li>Australia</li></ul>
+	<p>
+We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
+</p>
+<a name="2008-01-12%20Fink%20website%20down"><span class="news-date">2008-01-12: </span><span class="news-headline">Fink website down</span></a><?php gray_line(); ?>
+<p>The fink website is not functioning correctly at present.  (You may
+have noticed that many of the links on this page do not function correctly.)  The
+fink team is working to resolve the problem as quickly as possible.</p>
+<p><b>Update, 2008-01-13:</b> The website is back to normal.</p>
+<a name="2007-12-10%20Leopard,%20X11,%20and%20Fink"><span class="news-date">2007-12-10: </span><span class="news-headline">Leopard, X11, and Fink</span></a><?php gray_line(); ?>
+    <p>
+    Leopard X11 を更新したい方は、
+    <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>
+    をお使い下さい。
+    既に macosxforge.org の X11-2.1.0.1.pkg を適用された方は、<b>必ず</b> Fink-対応の Xquartz をお使い下さい。
+      (注記: X11-2.1.1.pkg リリースは現在保留中ですが、これは Xquatz のパッチが不要になりです。
+      X11 2.1.1 以降を使う場合は Xquartz パッチを適用する必要は<b>ありません</b>。)</p>
+    <p><b>2007-12-11追記:</b> The X11 2.1.1 リリースは、 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">Xquartz リリースページにあります</a>.  
+    X11-2.1.0.1.pkg にパッチを当てて利用されている方、 パッチ適用後の　macosxforge.org の Xquartz-1.3.0-apple-fink
+    ファイルを使われている方は、<b>2.1.1 以降にアップグレードして</b>から Fink をお使い下さい。
+    このリリースは、 fink 専用の Xquartz も含めたこれまでの全てのリリースの後任リリースです。</p>
+  
