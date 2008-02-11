@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2007/11/03 21:29:38 $';
+$cvs_date = '$Date: 2008/02/11 01:05:24 $';
 
 include "header.inc";
 ?>
@@ -27,23 +27,36 @@ Fink <? print $fink_version; ?> was officially released on
 <? print $release_date; ?>.
 -->
 
-<p><EM>fink-0.27.8</EM> was officially released on 2007-11-02.</p>
+<p><EM>fink-0.28.0</EM> was officially released on 2007-11-02.</p>
 </p>
 <ul>
 <!--<li><a
 href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
 <? print $release_version; ?></a> - 6786K, .tar.gz format</li>-->
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.27.8.tar.gz">fink-0.27.8</a> - 1292K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
 </ul>
 
 <p>
-<b>Important:</b>
+<!--<b>Important:</b>
 Don't extract the archive with StuffIt, it will corrupt some file
 names.
 Use the command line <tt>tar</tt> utility instead.
-Instructions are in the Installation document.  You also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>  
-<p>
-Installation and usage instructions are inside the distribution
+Instructions are in the Installation document.-->
+You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
+  <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
+<pre>tar -xvzf fink-0.28.0.tar.gz</pre>
+
+<p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.0</em> directory, and use</p>
+<pre>./bootstrap</pre>
+<p>to start the boostrapping operation, which will install the Fink base setup.</p>
+<p>After you have installed <em>fink</em> and the other base packages, the commands</p>
+<pre>fink selfupdate-rsync</pre>
+<p>or</p>
+<pre>fink selfupdate-cvs</pre>
+
+<p>will download the package description files and patches.</p>
+
+<p>Installation and usage instructions are inside the distribution
 tarball.
 Please read them - Fink is not a one-click-and-done thing.
 The documents README, INSTALL and USAGE are provided as pure text (for
@@ -52,11 +65,6 @@ and for printing).
 They are also available online in the <a
 href="../doc/index.php">documentation section</a>.
 </p>
-<p>After you have installed <em>fink</em> and the other base packages, the commands</p>
-<pre>fink selfupdate-rsync</pre>
-<p>or</p>
-<pre>fink selfupdate-cvs</pre>
-<p>will download the package description files and patches.</p>
 
 <p>
 To be informed of new releases, subscribe to the <a
