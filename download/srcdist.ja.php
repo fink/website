@@ -1,7 +1,7 @@
 <?
 $title = "ソースリリースのダウンロード";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2007/06/14 07:31:02 $';
+$cvs_date = '$Date: 2008/02/14 02:08:39 $';
 
 include "header.inc";
 ?>
@@ -25,19 +25,30 @@ Fink <? print $fink_version; ?> は公式に
 <? print $release_date; ?> にリリースされました。
 </p>
 -->
-<p><EM>fink-0.27.1</EM> は、2007年3月19日 にリリースされました。</p>
+<p><EM>fink-0.28.0</EM> は、2007年11月2日 にリリースされました。</p>
 <ul>
-<li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full-XCode-2.1.tar.gz">Fink
-<? print $release_version; ?></a> (OS X 10.4 と XCode 2.1 用)
-- 6241K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
 </ul>
 
 <p>
-<b>重要事項:</b>
+<!-- <b>重要事項:</b>
 ファイル名が壊れる問題があるので StuffIt で解凍するのは避けて下さい。
 代わりにコマンドラインの <tt>tar</tt> を使ってください。
-使用方法はソースインストールのドキュメントにあります。
+使用方法はソースインストールのドキュメントにあります。 -->
+
+Xcode Tools も必要となります (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
+<p>自動的に tar.gz が解凍されない場合、ターミナルを開き、以下のように入力してください:</p>
+<pre>tar -xvzf fink-0.28.0.tar.gz</pre>
+
+<p>ターミナルウィンドウを閉じ、<em>fink-0.28.0</em> を開いて</p>
+<pre>./bootstrap</pre>
+<p>を実行すれば、ブートストラップが開始され、 Fink のベースがインストールされます。</p>
+<p><em>fink</em> その他のパッケージがインストールされたら、</p>
+<pre>fink selfupdate-rsync</pre>
+<p>あるいは</p>
+<pre>fink selfupdate-cvs</pre>
+
+<p>というコマンドを実行してください。これによりパッケージ記述ファイルとパッチをダウンロードします。</p>
 
 インストールと使用方法は tarball 内にあります。
 Fink はワンクリックで動作するものではないので、必ず読んで下さい。

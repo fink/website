@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2007/06/14 07:31:02 $';
+$cvs_date = '$Date: 2008/02/14 02:08:39 $';
 
 include "header.inc";
 ?>
@@ -27,23 +27,34 @@ Fink <? print $fink_version; ?> è stato ufficialmente rilasciato il
 <? print $release_date; ?>.
 </p>
 -->
-<p><em>fink-0.27.1</em> è stato ufficialmente rilasciato il 2007-03-19.</p>
+<p><em>fink-0.28.0</em> è stato ufficialmente rilasciato il 2007-11-02.</p>
 <ul>
-<!-- start translation -->
-<li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full-XCode-2.1.tar.gz">Fink
-<? print $release_version; ?></a> (for OS X 10.4 with XCode 2.1)
-- 6241K, .tar.gz format</li>
-<!-- end translation -->
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
 </ul>
 
 <p>
-<b>Importante:</b>
+<!-- <b>Importante:</b>
 Non estraete gli archivi con StuffIt, facendo questo potreste corrompere dei nomi.
 Usate invece il comando da terminale <tt>tar</tt>.
-Le istruzioni le trovate nell'Installer Document.
+Le istruzioni le trovate nell'Installer Document. -->
 
-L'installazione e le istruzioni sono all'interno del
+<!-- start translation -->
+You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
+  <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
+<pre>tar -xvzf fink-0.28.0.tar.gz</pre>
+
+<p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.0</em> directory, and use</p>
+<pre>./bootstrap</pre>
+<p>to start the boostrapping operation, which will install the Fink base setup.</p>
+<p>After you have installed <em>fink</em> and the other base packages, the commands</p>
+<pre>fink selfupdate-rsync</pre>
+<p>or</p>
+<pre>fink selfupdate-cvs</pre>
+
+<p>will download the package description files and patches.</p>
+<!-- end translation -->
+
+<p>L'installazione e le istruzioni sono all'interno del
 tarball.
 Per favore leggete di seguito - Fink non è un programma un-click-e-fatto.
 I documenti README, INSTALL e USAGE sono scritti in plain text (per

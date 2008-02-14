@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2007/06/21 01:07:11 $';
+$cvs_date = '$Date: 2008/02/14 02:08:40 $';
 
 include "header.inc";
 ?>
@@ -25,24 +25,34 @@ Fink <? print $fink_version; ?> 已经于
 <? print $release_date; ?> 正式发布。
 </p>
 -->
-<p><em>fink-0.27.1</em> 已经于 2007-03-19 正式发布。</p>
+<p><em>fink-0.28.0</em> 已经于 2007-11-02 正式发布。</p>
 <ul>
-<!-- start translation -->
-<!--<li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full-XCode-2.1.tar.gz">Fink
-<? print $release_version; ?></a> (for OS X 10.4 with XCode 2.1)
-- 6241K, .tar.gz format</li>-->
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.27.3.tar.gz">fink-0.27.3</a> - 1260K, .tar.gz format</li>
-<!-- end translation -->
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
 </ul>
 
 <p>
-<b>重要提示：</b>
+<!-- <b>重要提示：</b>
 不要使用 StuffIt 来解压本压缩档，它会破坏一些文件名。
 请使用命令行 <tt>tar</tt> 工具。
-有关使用指南请参阅安装文档。
+有关使用指南请参阅安装文档。 -->
 
-在发布的压缩档里面包括了安装和使用指南。
+<!-- start translation -->
+You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
+  <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
+<pre>tar -xvzf fink-0.28.0.tar.gz</pre>
+
+<p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.0</em> directory, and use</p>
+<pre>./bootstrap</pre>
+<p>to start the boostrapping operation, which will install the Fink base setup.</p>
+<p>After you have installed <em>fink</em> and the other base packages, the commands</p>
+<pre>fink selfupdate-rsync</pre>
+<p>or</p>
+<pre>fink selfupdate-cvs</pre>
+
+<p>will download the package description files and patches.</p>
+<!-- end translation -->
+
+<p>在发布的压缩档里面包括了安装和使用指南。
 请阅读它们－Fink 不是那种“一点即用”的软件。
 README，INSTALL 和 USAGE 三个文件以纯文本（供命令行阅读）和 HTML （供使用浏览器阅读和打印）方式提供。
 它们也可以在网上：<a
