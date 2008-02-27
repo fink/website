@@ -1,20 +1,31 @@
-<a name="2008-02-03%20Mirror,%20mirror%20on%20the%20wall,%20will%20someone%20sponsor%20Fink%20at%20all?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, will someone sponsor Fink at all?</span></a><?php gray_line(); ?>
-		<p>
-Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
-</p>
-		<p>
-We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
-Recently our list of mirrors had to be shortened considerably and we need your <b>help</b> to improve its level of quality again.
-</p>
-	<p>
-Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
-All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
-For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
-We are looking for mirrors all over the world, but specifically in these countries:</p>
-<ul><li>United States</li><li>Japan</li><li>Germany</li><li>France</li><li>United Kingdom</li><li>Canada</li><li>Italy</li><li>Spain</li><li>Switzerland</li><li>Australia</li></ul>
-	<p>
-We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
-</p>
+<a name="2008-02-03%20Mirror,%20mirror%20on%20the%20wall,%20%E3%81%A0%E3%82%8C%E3%81%8B%20Fink%20%E3%82%92%E6%94%AF%E6%8F%B4%E3%81%97%E3%81%BE%E3%81%9B%E3%82%93%E3%81%8B?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, だれか Fink を支援しませんか?</span></a><?php gray_line(); ?>
+<p>Todo gran proyecto de codigo abierto se enfrenta a problemas de
+distribucion y el caso de Fink no es la excepcion. Nosotros deseamos
+que puedas obtener los archivos que necesitas para construir tus
+aplicaciones favoritas tan rapido como sea posible. Para ello, lo mas
+conveniente es tener un "espejo" cercano a tu ubicacion.</p>
+
+<p>Estamos trabajando activamente en la construccion de una
+infraestructura de distribucion confiable que consiste en "espejos"
+patrocinados por universidades y corporaciones. Recientemente, nuestra
+lista de "espejos" se ha visto reducida considerablemente y necesitamos
+tu ayuda para mejorar la calidad de los "espejos" de nuevo. </p>
+
+<p>Esres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
+Eres un desarrollador con algo de tiempo libre? Aun si no puedes
+contestar que si a ninguna de estas preguntas es posible que puedas
+ayudar. Toda la informacion relevante para levantar y patrocinar un
+"espejo" esta disponilbe en el <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>. Para preguntas mas especificas
+puedes <a href="mailto:fink-core-private@lists.sourceforge.net">contactarnos</a> directamente. Estamos solicitando espejos en todo
+el mundo y especificamente en los siguientes paises:</p>
+
+<ul><li>Estados UnidosJapon</li><li>Alemania</li><li>
+Francia</li><li>Reino Unido</li><li>Canda</li><li>
+Italia</li><li>España</li><li>Suiza</li><li>Australia</li></ul>
+
+<p>Tambien queremos aprovechar esta oportunidad para agradecer a todos los
+que han proveido "espejos" previamente. Sin su apoyo continuo Fink
+podria proveer el nivel de servicio que actualmente tiene. Gracias!</p>
 <a name="2008-01-12%20Fink%20website%20down"><span class="news-date">2008-01-12: </span><span class="news-headline">Fink website down</span></a><?php gray_line(); ?>
 <p>The fink website is not functioning correctly at present.  (You may
 have noticed that many of the links on this page do not function correctly.)  The
