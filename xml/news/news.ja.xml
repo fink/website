@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.39 2008/02/07 10:00:51 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.40 2008/02/27 04:04:28 babayoshihiko Exp $</cvsid>
 
 <newsitem>
 	<date>2008-02-03</date>
 	<headline>Mirror, mirror on the wall, will someone sponsor Fink at all?</headline>
 	<body>
-		<p>
-Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
-</p>
-		<p>
-We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
-Recently our list of mirrors had to be shortened considerably and we need your <em>help</em> to improve its level of quality again.
-</p>
-	<p>
-Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
-All the relevant information on how to run and sponsor a mirror can be found on the <link url="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</link>.
-For specific questions you can <link url="mailto:fink-core-private@lists.sourceforge.net">contact us</link> directly.
-We are looking for mirrors all over the world, but specifically in these countries:</p>
-<ul><li>United States</li><li>Japan</li><li>Germany</li><li>France</li><li>United Kingdom</li><li>Canada</li><li>Italy</li><li>Spain</li><li>Switzerland</li><li>Australia</li></ul>
-	<p>
-We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
-</p>
+<p>大規模なオープンソースプロジェクトは、おおむね配布の仕方に問題をかかえており、Fink も例外ではありません。
+我々は、お好きなアプリケーションをビルドするために必要なファイルを可能な限り速く提供したいと思っています。
+このためには、ミラーサイトが近くにあることが最初のステップだと考えます。</p>
+
+<p>我々は、大学や企業のスポンサーによるミラーを使い、信頼できる配布インフラを構築しようとしています。
+近年、ミラーの数が大幅に減少してしまい、品質を向上させるために<em>助け</em>を必要としています。</p>
+
+<p>学生ですか？教授ですか？データセンターを運営していますか？空き時間のある開発者ですか？このいずれでなくても、手伝って頂けます。
+ミラーを運営したり、スポンサーになるための情報は
+<link url="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</link>
+にあります。
+質問がある場合は <link url="mailto:fink-core-private@lists.sourceforge.net">contact us</link> までメールをください。
+現在、ミラーを世界中で探していますが、特に以下の国で募集しています:</p>
+<ul><li>アメリカ合衆国</li><li>日本</li><li>ドイツ</li><li>フランス</li><li>イギリス</li><li>カナダ</li><li>イタリア</li><li>スペイン</li><li>スイス</li><li>オーストラリア</li></ul>
+<p>また、これまでに Fink にミラーを提供して頂いている方々に感謝致します。
+彼らの継続サポートなしに、Fink は現在のレベルのサービスを提供できなかったでしょう。</p>
 </body>
 </newsitem>
 
