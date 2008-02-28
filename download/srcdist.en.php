@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2008/02/11 01:05:24 $';
+$cvs_date = '$Date: 2008/02/28 02:03:48 $';
 
 include "header.inc";
 ?>
@@ -49,7 +49,9 @@ You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >th
 <p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.0</em> directory, and use</p>
 <pre>./bootstrap</pre>
 <p>to start the boostrapping operation, which will install the Fink base setup.</p>
-<p>After you have installed <em>fink</em> and the other base packages, the commands</p>
+<p>After the installation is completed, running the command</p>
+<pre>pathsetup.sh</pre>
+<p>will set up your environment for Fink.  If you open a new terminal window after that, it will use these environment settings.  Once you have installed <em>fink</em> and the other base packages, the commands</p>
 <pre>fink selfupdate-rsync</pre>
 <p>or</p>
 <pre>fink selfupdate-cvs</pre>
