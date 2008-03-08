@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2008/02/28 02:03:48 $';
+$cvs_date = '$Date: 2008/03/08 00:17:58 $';
 
 include "header.inc";
 ?>
@@ -49,14 +49,19 @@ You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >th
 <p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.0</em> directory, and use</p>
 <pre>./bootstrap</pre>
 <p>to start the boostrapping operation, which will install the Fink base setup.</p>
+<!--akh.  I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
 <p>After the installation is completed, running the command</p>
 <pre>pathsetup.sh</pre>
-<p>will set up your environment for Fink.  If you open a new terminal window after that, it will use these environment settings.  Once you have installed <em>fink</em> and the other base packages, the commands</p>
+<p>will set up your environment for Fink.  
+-->
+<p>The operation will also update your environment, so if you open a new terminal window, the session will use these environment settings.  Once you have installed <em>fink</em> and the other base packages, the command</p>
+<!--akh
 <pre>fink selfupdate-rsync</pre>
 <p>or</p>
 <pre>fink selfupdate-cvs</pre>
-
-<p>will download the package description files and patches.</p>
+-->
+<pre>fink selfupdate</pre>
+<p>will download the package description files and patches, provided that you <strong>do not</strong> select the "point release" method.  rsync is generally preferable to cvs for most people.</p>
 
 <p>Installation and usage instructions are inside the distribution
 tarball.
