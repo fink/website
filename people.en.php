@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2007/02/23 06:32:06 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2008/03/16 14:45:42 $';
 
 include "header.inc";
 ?>
@@ -124,6 +124,7 @@ this list.</p>
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
 <li>Claudio Garguilo</li>
 <li>Michèle Garoche</li>
+<li>Andreas Gockel (<i>gecko2</i>)</li>
 <li>Jeff Horsager</li>
 <li>Felix Kühne</li>
 <li>Apostolos Karakoussis</li>
@@ -166,7 +167,6 @@ this list.</p>
 <li>Landon Fuller (<i>landonf</i>)</li>
 <li>Paul Gaborit</li> 
 <li>Stanton Gallegos (<i>stantron</i>)</li> 
-<li>Andreas Gockel (<i>gecko2</i>)</li>
 <li>Sebastian Gonzalez</li>
 <li>Joe Gorse (<i>inca34</i>)</li>
 <li>Jake Goulding</li> 
