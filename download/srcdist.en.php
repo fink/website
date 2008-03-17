@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2008/03/08 00:17:58 $';
+$cvs_date = '$Date: 2008/03/17 01:11:24 $';
 
 include "header.inc";
 ?>
@@ -27,13 +27,13 @@ Fink <? print $fink_version; ?> was officially released on
 <? print $release_date; ?>.
 -->
 
-<p><EM>fink-0.28.0</EM> was officially released on 2007-11-02.</p>
+<p><EM>fink-0.28.1</EM> was officially released on 2008-3-11.</p>
 </p>
 <ul>
 <!--<li><a
 href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
 <? print $release_version; ?></a> - 6786K, .tar.gz format</li>-->
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.1.tar.gz">fink-0.28.1</a> - 1304K, .tar.gz format</li>
 </ul>
 
 <p>
@@ -44,9 +44,9 @@ Use the command line <tt>tar</tt> utility instead.
 Instructions are in the Installation document.-->
 You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
   <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
-<pre>tar -xvzf fink-0.28.0.tar.gz</pre>
+<pre>tar -xvzf fink-0.28.1.tar.gz</pre>
 
-<p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.0</em> directory, and use</p>
+<p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.1</em> directory, and use</p>
 <pre>./bootstrap</pre>
 <p>to start the boostrapping operation, which will install the Fink base setup.</p>
 <!--akh.  I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
