@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2008/03/16 14:45:42 $';
+$cvs_date = '$Date: 2008/03/28 17:13:46 $';
 
 include "header.inc";
 ?>
@@ -76,6 +76,7 @@ this list.</p>
 <li>rayg</li>
 <li>Michèle Garoche (<i>miga</i>)</li>
 <li>James Gibbs</li>
+<li>Andreas Gockel (<i>gecko2</i>)</li>
 <li>Justin F. Hallett (<i>TheSin</i>)</li>
 <li>Corey Halpin</li>
 <li>Jeremy Higgs</li>
@@ -93,6 +94,7 @@ this list.</p>
 <li>Mathias Meyer</li>
 <li>Remi Mommsen</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
+<li>Hanspeter Niederstrasser (<i>Snaggle</i>)</li>
 <li>Andrew Rohl</li> 
 <li>Lars Rosengreen</li>
 <li>Michael G. Schwern</li>
@@ -124,7 +126,6 @@ this list.</p>
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li> <!-- doc writer -->
 <li>Claudio Garguilo</li>
 <li>Michèle Garoche</li>
-<li>Andreas Gockel (<i>gecko2</i>)</li>
 <li>Jeff Horsager</li>
 <li>Felix Kühne</li>
 <li>Apostolos Karakoussis</li>
@@ -192,7 +193,6 @@ this list.</p>
 <li>Joseph K. Myers</li> 
 <li>Kaben Nanlohy</li> 
 <li>Magenta Hari Nezumi</li> 
-<li>Hanspeter Niederstrasser</li>
 <li>Eric Norum</li> 
 <li>Nil Parikh</li>
 <li>Daniel Parks</li> 
