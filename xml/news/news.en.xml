@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.78 2008/04/01 11:34:30 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.79 2008/04/01 11:36:25 alexkhansen Exp $</cvsid>
 <newsitem>
 <date>2008-04-01</date>
 <headline>Discontinuation of support for OS 10.5</headline>
-<p>The Fink project announces that OS 10.5, aka Leopard will no longer be supported.  Users are encouraged to downgrade to OS 10.4</p>
-</newsitem>
+<body><p>The Fink project announces that OS 10.5, aka Leopard will no longer be supported.</p>  <p>Users are encouraged to downgrade to OS 10.4.</p>
+</body></newsitem>
 <newsitem>
 	<date>2008-02-03</date>
 	<headline>Mirror, mirror on the wall, will someone sponsor Fink at all?</headline>
