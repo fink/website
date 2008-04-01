@@ -5,12 +5,21 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2008-02-04T12:36:22+00:00</dc:date>
+    <dc:date>2008-04-01T07:40:42-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-02-04%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F">
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-04-01%20Discontinuation%20of%20support%20for%20OS%2010.5">
+      <title>Discontinuation of support for OS 10.5</title>
+      <link>http://fink.sourceforge.net/news/#2008-04-01%20Discontinuation%20of%20support%20for%20OS%2010.5</link>
+      <guid>http://fink.sourceforge.net/news/#2008-04-01%20Discontinuation%20of%20support%20for%20OS%2010.5</guid>
+      <description><p>The Fink project announces that OS 10.5, aka Leopard, will no longer be supported.</p>  <p>Users are encouraged to downgrade to OS 10.4.</p>
+</description>
+      <content:encoded><p>The Fink project announces that OS 10.5, aka Leopard, will no longer be supported.</p>  <p>Users are encouraged to downgrade to OS 10.4.</p>
+</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F">
       <title>Mirror, mirror on the wall, will someone sponsor Fink at all?</title>
-      <link>http://fink.sourceforge.net/news/#2008-02-04%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2008-02-04%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</guid>
+      <link>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</link>
+      <guid>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</guid>
       <description>
 		<p>
 Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
@@ -630,45 +639,6 @@ the currently available packages.
 At last check, there were about 1750 packages in the "stable" tree, but
 about 150 of those did not build.  When things are truly stable, another
 annoucement will be made here.
-</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).">
-      <title>Fink ready for XCode 2.2 (but not for Intel).</title>
-      <link>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</link>
-      <guid>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</guid>
-      <description>
-      <p>
-Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
-packages (which are expected to function again when we switch to the 10.4
-tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
-XCode 2.2 will be required for running the 10.4 tree when it is released.
-</p>
-      <p>
-On the other hand, in spite of today's announcements from Apple, Fink is
-not ready to run on Intel processors.  The Fink team hopes to have an
-Intel-ready version of fink released within a few weeks; the Fink team does 
-not advise early recipients of new iMacs to install Fink on them, but suggests
-waiting until the new version of fink is ready.
-</p>
-      <p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
-</p>
-    </description>
-      <content:encoded>
-      <p>
-Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
-packages (which are expected to function again when we switch to the 10.4
-tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
-XCode 2.2 will be required for running the 10.4 tree when it is released.
-</p>
-      <p>
-On the other hand, in spite of today's announcements from Apple, Fink is
-not ready to run on Intel processors.  The Fink team hopes to have an
-Intel-ready version of fink released within a few weeks; the Fink team does 
-not advise early recipients of new iMacs to install Fink on them, but suggests
-waiting until the new version of fink is ready.
-</p>
-      <p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
 </p>
     </content:encoded>
     </item>

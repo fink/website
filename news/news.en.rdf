@@ -5,37 +5,87 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2008-01-13T22:15:00-08:00</dc:date>
+    <dc:date>2008-04-01T07:40:42-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-04-01%20Discontinuation%20of%20support%20for%20OS%2010.5">
+      <title>Discontinuation of support for OS 10.5</title>
+      <link>http://fink.sourceforge.net/news/#2008-04-01%20Discontinuation%20of%20support%20for%20OS%2010.5</link>
+      <guid>http://fink.sourceforge.net/news/#2008-04-01%20Discontinuation%20of%20support%20for%20OS%2010.5</guid>
+      <description><p>The Fink project announces that OS 10.5, aka Leopard, will no longer be supported.</p>  <p>Users are encouraged to downgrade to OS 10.4.</p>
+</description>
+      <content:encoded><p>The Fink project announces that OS 10.5, aka Leopard, will no longer be supported.</p>  <p>Users are encouraged to downgrade to OS 10.4.</p>
+</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F">
+      <title>Mirror, mirror on the wall, will someone sponsor Fink at all?</title>
+      <link>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</link>
+      <guid>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</guid>
+      <description>
+		<p>
+Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
+</p>
+		<p>
+We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
+Recently our list of mirrors had to be shortened considerably and we need your help to improve its level of quality again.
+</p>
+	<p>
+Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
+All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
+For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
+We are looking for mirrors all over the world, but specifically in these countries:</p>
+United StatesJapanGermanyFranceUnited KingdomCanadaItalySpainSwitzerlandAustralia
+	<p>
+We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
+</p>
+</description>
+      <content:encoded>
+		<p>
+Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
+</p>
+		<p>
+We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
+Recently our list of mirrors had to be shortened considerably and we need your help to improve its level of quality again.
+</p>
+	<p>
+Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
+All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
+For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
+We are looking for mirrors all over the world, but specifically in these countries:</p>
+United StatesJapanGermanyFranceUnited KingdomCanadaItalySpainSwitzerlandAustralia
+	<p>
+We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
+</p>
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-01-12%20Fink%20website%20down">
       <title>Fink website down</title>
       <link>http://fink.sourceforge.net/news/#2008-01-12%20Fink%20website%20down</link>
       <guid>http://fink.sourceforge.net/news/#2008-01-12%20Fink%20website%20down</guid>
       <description>
-    <p>The fink website is not functioning correctly at present.  (You may
+<p>The fink website is not functioning correctly at present.  (You may
 have noticed that many of the links on this page do not function correctly.)  The
 fink team is working to resolve the problem as quickly as possible.</p>
 <p>Update, 2008-01-13: The website is back to normal.</p>
-  </description>
+</description>
       <content:encoded>
-    <p>The fink website is not functioning correctly at present.  (You may
+<p>The fink website is not functioning correctly at present.  (You may
 have noticed that many of the links on this page do not function correctly.)  The
 fink team is working to resolve the problem as quickly as possible.</p>
 <p>Update, 2008-01-13: The website is back to normal.</p>
-  </content:encoded>
+</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20and%20Fink">
       <title>Leopard, X11, and Fink</title>
       <link>http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20and%20Fink</link>
       <guid>http://fink.sourceforge.net/news/#2007-12-10%20Leopard%2C%20X11%2C%20and%20Fink</guid>
       <description>
-    <p>Users who want to update their Leopard X11 installation should make sure to download a <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>.  Users who have already applied the X11-2.1.0.1.pkg from macosxforge.org must download the Fink-compatible Xquartz for Fink to work properly.  (Note: there is an X11-2.1.1.pkg release pending which will remove the need to patch your Xquartz.  If you install X11 2.1.1 or later, do not apply the Xquartz patch.)</p>
-    <p>Update, 2007-12-11: The X11 2.1.1 release <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">is now available on the Xquartz release page</a>.  Users who have already applied the X11-2.1.0.1.pkg and/or the patched Xquartz-1.3.0-apple-fink file from macosxforge.org should upgrade to 2.1.1 or greater for Fink to work properly.  This release supercedes all previous releases, including the fink-specific Xquartz.</p>
-  </description>
+<p>Users who want to update their Leopard X11 installation should make sure to download a <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>.  Users who have already applied the X11-2.1.0.1.pkg from macosxforge.org must download the Fink-compatible Xquartz for Fink to work properly.  (Note: there is an X11-2.1.1.pkg release pending which will remove the need to patch your Xquartz.  If you install X11 2.1.1 or later, do not apply the Xquartz patch.)</p>
+<p>Update, 2007-12-11: The X11 2.1.1 release <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">is now available on the Xquartz release page</a>.  Users who have already applied the X11-2.1.0.1.pkg and/or the patched Xquartz-1.3.0-apple-fink file from macosxforge.org should upgrade to 2.1.1 or greater for Fink to work properly.  This release supercedes all previous releases, including the fink-specific Xquartz.</p>
+</description>
       <content:encoded>
-    <p>Users who want to update their Leopard X11 installation should make sure to download a <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>.  Users who have already applied the X11-2.1.0.1.pkg from macosxforge.org must download the Fink-compatible Xquartz for Fink to work properly.  (Note: there is an X11-2.1.1.pkg release pending which will remove the need to patch your Xquartz.  If you install X11 2.1.1 or later, do not apply the Xquartz patch.)</p>
-    <p>Update, 2007-12-11: The X11 2.1.1 release <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">is now available on the Xquartz release page</a>.  Users who have already applied the X11-2.1.0.1.pkg and/or the patched Xquartz-1.3.0-apple-fink file from macosxforge.org should upgrade to 2.1.1 or greater for Fink to work properly.  This release supercedes all previous releases, including the fink-specific Xquartz.</p>
-  </content:encoded>
+<p>Users who want to update their Leopard X11 installation should make sure to download a <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>.  Users who have already applied the X11-2.1.0.1.pkg from macosxforge.org must download the Fink-compatible Xquartz for Fink to work properly.  (Note: there is an X11-2.1.1.pkg release pending which will remove the need to patch your Xquartz.  If you install X11 2.1.1 or later, do not apply the Xquartz patch.)</p>
+<p>Update, 2007-12-11: The X11 2.1.1 release <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">is now available on the Xquartz release page</a>.  Users who have already applied the X11-2.1.0.1.pkg and/or the patched Xquartz-1.3.0-apple-fink file from macosxforge.org should upgrade to 2.1.1 or greater for Fink to work properly.  This release supercedes all previous releases, including the fink-specific Xquartz.</p>
+</content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2007-11-18%20PDB%20Website%20Down">
       <title>PDB Website Down</title>
@@ -589,66 +639,6 @@ the currently available packages.
 At last check, there were about 1750 packages in the "stable" tree, but
 about 150 of those did not build.  When things are truly stable, another
 annoucement will be made here.
-</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).">
-      <title>Fink ready for XCode 2.2 (but not for Intel).</title>
-      <link>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</link>
-      <guid>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</guid>
-      <description>
-      <p>
-Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
-packages (which are expected to function again when we switch to the 10.4
-tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
-XCode 2.2 will be required for running the 10.4 tree when it is released.
-</p>
-      <p>
-On the other hand, in spite of today's announcements from Apple, Fink is
-not ready to run on Intel processors.  The Fink team hopes to have an
-Intel-ready version of fink released within a few weeks; the Fink team does 
-not advise early recipients of new iMacs to install Fink on them, but suggests
-waiting until the new version of fink is ready.
-</p>
-      <p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
-</p>
-    </description>
-      <content:encoded>
-      <p>
-Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
-packages (which are expected to function again when we switch to the 10.4
-tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
-XCode 2.2 will be required for running the 10.4 tree when it is released.
-</p>
-      <p>
-On the other hand, in spite of today's announcements from Apple, Fink is
-not ready to run on Intel processors.  The Fink team hopes to have an
-Intel-ready version of fink released within a few weeks; the Fink team does 
-not advise early recipients of new iMacs to install Fink on them, but suggests
-waiting until the new version of fink is ready.
-</p>
-      <p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
-</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).">
-      <title>XCode 2.2 (10.4 only).</title>
-      <link>http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).</link>
-      <guid>http://fink.sourceforge.net/news/#2005-11-16%20XCode%202.2%20(10.4%20only).</guid>
-      <description>
-      <p>
-The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
-</p>
-      <p>
-For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
-</p>
-    </description>
-      <content:encoded>
-      <p>
-The Fink team has had reports of some build problems with the XCode 2.2 compilers.  Until these are sorted out, we recommend that users hold off on upgrading XCode.
-</p>
-      <p>
-For those who have already installed XCode 2.2 and don't want to revert to 2.1, your participation in the effort to find packages that don't work and to fix them so that they do is welcomed!
 </p>
     </content:encoded>
     </item>
