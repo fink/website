@@ -1,13 +1,12 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2008/04/01 11:38:59';
+$cvs_date = 'Date: 2008/04/02 03:59:52';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2008-04-01%20Discontinuation%20of%20support%20for%20OS%2010.5"><span class="news-date">2008-04-01: </span><span class="news-headline">Discontinuation of support for OS 10.5</span></a><?php gray_line(); ?><p>The Fink project announces that OS 10.5, aka Leopard, will no longer be supported.</p>  <p>Users are encouraged to downgrade to OS 10.4.</p>
 <a name="2008-02-03%20Mirror,%20mirror%20on%20the%20wall,%20will%20someone%20sponsor%20Fink%20at%20all?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, will someone sponsor Fink at all?</span></a><?php gray_line(); ?>
 		<p>
 Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
