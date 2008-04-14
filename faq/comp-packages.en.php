@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2007/06/30 19:25:46';
+$cvs_date = 'Date: 2008/04/14 00:51:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -97,9 +97,15 @@ have the latest versions, try <code>fink update gettext-tools</code>.
 An old version of the <code>gettext-tools</code> package may be 
 preventing you from updating <code>gettext</code>.</p></div>
     </a>
-
+  <a name="Leopard-libXrandr">
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</b></p></div>
+    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This problem affects machines with OS 10.5.2 pre-installed.
+      There is currently a bug in Apple's X11 in that a file in it that is used
+    for building references <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code>,
+    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p><p>The workaround is to run the following command to fix the file:</p><pre>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</pre></div>
+  </a>
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.9: I'm having issues with a package that isn't listed here.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
       up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
