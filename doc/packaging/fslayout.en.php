@@ -149,6 +149,16 @@ that it is identifiable.
 This directory is for storing and building source code.
 Nothing should be installed here by a package.
 </p>
+</td></tr><tr valign="top"><td><code>/sw/Applications</code></td><td>
+<p>
+This directory is for storing OS X-style applications which are
+launched by double-clicking rather than from the command line.
+</p>
+</td></tr><tr valign="top"><td><code>/sw/Library/Frameworks</code></td><td>
+<p>
+This directory is for storing OS X-style frameworks, sometimes
+used by OS X-style applications.
+</p>
 </td></tr></table>
 
 

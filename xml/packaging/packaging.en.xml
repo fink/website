@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.97 2007/06/21 14:31:26 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.98 2008/05/01 19:05:31 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -1365,6 +1365,22 @@ that it is identifiable.
 <p>
 This directory is for storing and building source code.
 Nothing should be installed here by a package.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/Applications</filename></itemt>
+<itemd>
+<p>
+This directory is for storing OS X-style applications which are
+launched by double-clicking rather than from the command line.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/Library/Frameworks</filename></itemt>
+<itemd>
+<p>
+This directory is for storing OS X-style frameworks, sometimes
+used by OS X-style applications.
 </p>
 </itemd></item>
 
