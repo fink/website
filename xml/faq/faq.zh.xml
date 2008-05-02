@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.28 2007/07/21 00:06:37 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.29 2008/05/02 04:41:49 babayoshihiko Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -1486,6 +1486,19 @@ An old version of the <code>gettext-tools</code> package may be
 preventing you from updating <code>gettext</code>.</p>
       </answer>
     </faqentry>
+   <faqentry name="Leopard-libXrandr">
+    <question translated="no">
+      <p>I can't install <em>gtk+2</em> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</p>
+    </question>
+    <answer translated="no">
+      <p>This problem affects machines with OS 10.5.2 pre-installed.
+      There is currently a bug in Apple's X11 in that a file in it that is used
+    for building references <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code>,
+    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p>
+      <p>The workaround is to run the following command to fix the file:</p>
+    <codeblock>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</codeblock>
+    </answer>
+  </faqentry>
     <faqentry name="all-others">
       <question translated="no">
         <p>I'm having issues with a package that isn't listed here.</p>

@@ -1,10 +1,13 @@
 <?
 $title = "Ч.З.В.";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/07/21 00:06:37';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="general.php?phpLang=ru" title="Общие вопросы">';
 
 
+$doc = 'index';
+$i18n_chapter = 'index';
+include_once "../i18n_showform.inc";
 include_once "header.ru.inc";
 ?>
 <h1>Часто задаваемые вопросы Fink </h1>
@@ -74,7 +77,7 @@ include_once "header.ru.inc";
                     т.к.он конфликтует с <code>system-xfree86</code>.</a></li><li><a href="comp-packages.php?phpLang=ru#change-thread-nothread">7.3 Как можно поменять несвязную версию пакетов Fink
                     XFree86 на связную версию (или наоборот)?</a></li><li><a href="comp-packages.php?phpLang=ru#cctools">7.4 При попытке инсталляции KDE получил сообщение:
                     'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="comp-packages.php?phpLang=ru#libiconv-gettext">7.5 Не могу обновить <code>libiconv</code>.</a></li><li><a href="comp-packages.php?phpLang=ru#cplusplus-filt">7.6 i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</a></li><li><a href="comp-packages.php?phpLang=ru#gettext-tools">7.7 Fink refuses to update the <code>gettext</code> package,
-complaining that the dependencies are in an inconsistent state.</a></li><li><a href="comp-packages.php?phpLang=ru#all-others">7.8 I'm having issues with a package that isn't listed here.</a></li></ul></li><li><a href="usage-general.php?phpLang=ru"><b>8 Проблемы использования пакетов - Общие вопросы</b></a><ul><li><a href="usage-general.php?phpLang=ru#xlocale">8.1 Я получаю много сообщений типа "locale not supported by C
+complaining that the dependencies are in an inconsistent state.</a></li><li><a href="comp-packages.php?phpLang=ru#Leopard-libXrandr">7.8 I can't install <b>gtk+2</b> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</a></li><li><a href="comp-packages.php?phpLang=ru#all-others">7.9 I'm having issues with a package that isn't listed here.</a></li></ul></li><li><a href="usage-general.php?phpLang=ru"><b>8 Проблемы использования пакетов - Общие вопросы</b></a><ul><li><a href="usage-general.php?phpLang=ru#xlocale">8.1 Я получаю много сообщений типа "locale not supported by C
                     library". Это плохо?</a></li><li><a href="usage-general.php?phpLang=ru#passwd">8.2 В моей системе вдруг появилось несколько странных пользователей
                     с такими именами, как "mysql", "pgsql" и "games". Откуда они
                     взялись?</a></li><li><a href="usage-general.php?phpLang=ru#compile-myself">8.3 Как можно компилировать что-нибудь самостоятельно с применением ПО, инсталлированного с помощью Fink?</a></li><li><a href="usage-general.php?phpLang=ru#apple-x11-applications-menu">8.4 Не могу запустить ни одно из приложений, инсталлированных при помощи Fink, через
@@ -96,7 +99,7 @@ complaining that the dependencies are in an inconsistent state.</a></li><li><a h
                     строк заголовков в окнах.</a></li><li><a href="usage-packages.php?phpLang=ru#apple-x11-wants-xfree86">9.11 Я инсталлировал Apple X11, но Fink продолжает спрашивать об
                     инсталяции XFree86 или X.org.</a></li><li><a href="usage-packages.php?phpLang=ru#wants-xfree86-on-upgrade">9.12 Я переключился с версии 10.2 Fink на 10.2-gcc3.3 или 10.3,
                     у меня Apple X11, а Fink просит инсталлировать XFree86 или X.org.</a></li><li><a href="usage-packages.php?phpLang=ru#special-x11-debug">9.13 Я меня остались проблемы с X11и Fink.</a></li><li><a href="usage-packages.php?phpLang=ru#tiger-gtk">9.14 After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=ru#yelp">9.15 I can't get the help to work for any GNOME application.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ru.xml,v 1.11 2007/07/21 00:06:37 babayoshihiko Exp $-->
+<!--Generated from $Fink: faq.ru.xml,v 1.12 2008/05/02 04:41:49 babayoshihiko Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

@@ -1,16 +1,18 @@
 <?
 $title = "P.M.F. - Relaciones";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/07/21 00:06:37';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="mirrors.php?phpLang=es" title="Espejos de distribución"><link rel="prev" href="general.php?phpLang=es" title="Preguntas generales">';
 
 
+$i18n_chapter = 'relations';
+include_once "../i18n_showform.inc";
 include_once "header.es.inc";
 ?>
 <h1>P.M.F. - 2. Relaciones con Otros Proyectos</h1>
     
     
-    <a name="upstream">
+    <? $i18n_section= "upstream"; ?><a name="upstream">
       <div class="question"><p><b><? echo FINK_Q ; ?>2.1: ¿Contribuyen los parches hechos por ustedes a los mantenedores de fuente (upstream)?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Estamos tratando. A veces el regresar los parches es fácil y todo el mundo está contento una vez que la versión actualizada del paquete ha salido. Desafortunadamente con la mayoría de los paquetes no es tan fácil. Algunos problemas comunes:</p><ul>
           <li>El mantenedor de paquetes de Fink está muy ocupado y no tiene tiempo de mandar el parche y las explicaciones que le acompañan a los mantenedores principales de fuente (upstream).
@@ -25,15 +27,15 @@ plataformas.
           <li>El paquete ha sido abandonado por los autores originales y no habrá ninguna nueva edición en la cual el parche pueda converger.</li>
         </ul></div>
     </a>
-    <a name="debian">
+    <? $i18n_section= "debian"; ?><a name="debian">
       <div class="question"><p><b><? echo FINK_Q ; ?>2.2: ¿Cuál es su relación con el proyecto Debian? ¿Están creando un puerto de Debian Linux a Mac OS X?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> No existe ninguna relación formal entre Fink y <a href="http://www.debian.org/index.es.html">Debian</a>. Fink <b>no</b> es un Puerto de la distribución Debian GNU/Linux. Hemos portado herramientas de administración del paquete Debian (dpkg, dselect, apt-get) y usamos estas herramientas y el formato .deb de los paquetes binarios. Los paquetes actuales son hechos a la medida para Mac OS X / Darwin y no utilizan el formato de paquete de la fuente Debian.</p></div>
     </a>
-    <a name="apple">
+    <? $i18n_section= "apple"; ?><a name="apple">
       <div class="question"><p><b><? echo FINK_Q ; ?>2.3: ¿Cuál es su relación con Apple?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <a href="http://www.apple.com/es/">Apple</a> sabe que Fink existe y nos ha dado apoyo como parte de su esfuerzo de relaciones de Fuente Abierta. En el verano y otoño del 2001, nos otorgaron semillas de pre-lanzamiento de las nuevas versiones Mac OS X esperando que los paquetes Fink pudieran ser adaptados a tiempo para su lanzamiento. Cita: <b>"Esperamos que acentúe el cometido de que muchos sospechan no estamos dispuestos a proveer. Mejoraremos con el tiempo en el juego de Fuente Abierta."</b> ¡Gracias Apple!</p></div>
     </a>
-    <a name="darwinports">
+    <? $i18n_section= "darwinports"; ?><a name="darwinports">
       <div class="question"><p><b><? echo FINK_Q ; ?>2.4: ¿Cuál es su relación con Darwinports?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Darwinports y Fink son proyectos complementarios. Hay un poco de traslape entre los dos proyectos, y varias personas contribuyen a ambos proyectos Fink y OpenDarwin. Por ejemplo, Benjamin Reed está haciendo los paquetes KDE para ambos. Darwinports/OpenDarwin usan parches de Fink, y hemos discutido la colaboración en una nueva estructura de dependencias.</p><p>OpenDarwin empezó desde cero intentando un acercamiento diferente en el sistema de empaquetamiento. Lee el estatuto sobre <a href="http://www.opendarwin.org/projects/darwinports/en/faq.php">OpenDarwin.org</a> para mas detalles.</p></div>
     </a>

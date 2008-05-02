@@ -1,16 +1,18 @@
 <?
 $title = "Ч.З.В. - Использование Fink";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/07/21 00:06:37';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы"><link rel="prev" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)">';
 
 
+$i18n_chapter = 'usage-fink';
+include_once "../i18n_showform.inc";
 include_once "header.ru.inc";
 ?>
 <h1>Ч.З.В. - 5. Инсталляция, использование и поддержка Fink</h1>
         
         
-        <a name="what-packages">
+        <? $i18n_section= "what-packages"; ?><a name="what-packages">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.1: Как можно узнать, какие пакеты поддерживает Fink?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Начиная с Fink 0.2.3 существует команда <code>list</code>. 
                     Благодаря ей вы получаете список всех пакетов,  известных вашей инсталляции
@@ -20,7 +22,7 @@ include_once "header.ru.inc";
                     и инсталлировать пакеты в dselect.</p><p>Также на веб-сайте есть <a href="http://pdb.finkproject.org/pdb/">база данных
                     по пакетам</a>.</p></div>
         </a>
-        <a name="proxy">
+        <? $i18n_section= "proxy"; ?><a name="proxy">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.2: Я нахожусь за брандмауэром. Как надо конфигурировать Fink для использования прокси HTTP?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Команда <code>fink</code> поддерживает явные настройки
                     прокси, которые переданы на
@@ -38,7 +40,7 @@ include_once "header.ru.inc";
                     выберите область Network, затем Proxies tab и убедитесь, что
                     отмечено поле "Use Passive FTP Mode (PASV)".</p></div>
         </a>
-        <a name="firewalled-cvs">
+        <? $i18n_section= "firewalled-cvs"; ?><a name="firewalled-cvs">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.3: Как можно обновить имеющиеся пакеты при помощи CVS, если я за
                     брандмауэромl?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Пакет <b>cvs-proxy</b> может проложить туннель через прокси HTTP.</p><ul>
@@ -67,20 +69,20 @@ include_once "header.ru.inc";
                     настройки при помощи команды:</p><p>
                     <code>fink configure</code>.</p></div>
         </a>
-        <a name="moving">
+        <? $i18n_section= "moving"; ?><a name="moving">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.4: Можно ли переместить Fink на другое место после инсталляции?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Нет. Т.е. конечно вы можете перемещать файлы при помощи mv или
                     Finder, но 99% программ перестанут после этого работать.
                     В основном потому, что все ПО Unix зависит от
                     неизменяемых путей доступа к поиску файлов данных, библиотек и другого.</p></div>
         </a>
-        <a name="moving-symlink">
+        <? $i18n_section= "moving-symlink"; ?><a name="moving-symlink">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.5: Если переместить Fink после инсталляции и предоставить символический указатель (алиас)
                     прежнего размещения, будет ли результат успешным?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Возможно. Вообще это должно сработать, но
                     где-то могут быть скрытые ловушки. </p></div>
         </a>
-        <a name="removing">
+        <? $i18n_section= "removing"; ?><a name="removing">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.6: Как полностью деинсталлировать Fink?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Почти все файлы, инсталлированные Fink, находятся в /sw (или там, где
                     вы решили их инсталлировать). Таким образом, чтобы избавиться от Fink,
@@ -95,7 +97,7 @@ include_once "header.ru.inc";
                         "<code>source /sw/bin/init.sh</code>", добавленную к вашему файлу
                      <code>.bashrc</code>.</p></div>
         </a>
-        <a name="bindist">
+        <? $i18n_section= "bindist"; ?><a name="bindist">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.7: База данных по пакетам на веб-сайте указывает в списке пакет xxx, но
                     apt-get и dselect ничего об этом не знают. Что неправильно?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> И то, и другое правильно. <a href="http://pdb.finkproject.org/pdb/">База данных по пакетам
@@ -118,7 +120,7 @@ include_once "header.ru.inc";
                     </a> после бесплатной регистрации). См. также далее
                     вопросы о разделе нестабильных пакетов.</p></div>
         </a>
-        <a name="unstable">
+        <? $i18n_section= "unstable"; ?><a name="unstable">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.8: Я хочу инсталлировать пакет из категории нестабильных, но
                     fink сообщает, что 'пакет на найден' ('no package found') . Как его можно
                     инсталлировать?</b></p></div>
@@ -137,12 +139,12 @@ include_once "header.ru.inc";
         then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p><p>Also note, if you don't want to install any more from unstable than
         your specific package(s) and its (their) dependencies, don't use the
         <code>update-all</code> command until you turn the unstable tree
-        back off.</p></div>
+        back off.</p><? show_form (); ?></div>
         </a>
     
-    <a name="unstable-onepackage">
+    <? $i18n_section= "unstable-onepackage"; ?><a name="unstable-onepackage">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.9: Do I <b>really</b> need to enable all of unstable just to install
-        one unstable package that I want?</b></p></div>
+        one unstable package that I want?</b></p><? show_form (); ?></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> No, but it is highly recommended you do.  Mixing and matching can
         cause unforeseen issues that make it difficult to debug problems when
         they do arise.</p><p>That said, if you only want one or two specific packages, and nothing
@@ -163,10 +165,10 @@ include_once "header.ru.inc";
         move all of the files, make sure to run <code>fink index</code>, so
         that Fink's record of available packages is updated. Once you're done
         you can switch back to rsync (<code>fink selfupdate-rsync</code>) if
-        you want.</p></div>
+        you want.</p><? show_form (); ?></div>
     </a>
     
-        <a name="sudo">
+        <? $i18n_section= "sudo"; ?><a name="sudo">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.10: Мне надоело каждый раз печатать свой пароль в sudo.
                     Можно ли с этим что-то сделать?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если вы не страдаете паранойей, вы можете конфигурировать sudo так,
@@ -175,7 +177,7 @@ include_once "header.ru.inc";
                     Данная строка позволяет запускать любую команду через sudo
                     без внесения пароля.</p></div>
         </a>
-        <a name="exec-init-csh">
+        <? $i18n_section= "exec-init-csh"; ?><a name="exec-init-csh">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.11: Когда я пытаюсь выполнить init.csh или init.sh, получаю сообщение "Нет разрешения" ("Permission
                     denied"). Что я делаю неправильно?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> init.csh и init.sh не предназначены для выполнения как нормальные
@@ -185,7 +187,7 @@ include_once "header.ru.inc";
                     для csh/tcsh или команды <code>.</code> для
                     bash/zsh, н-р таким образом:</p><p>для csh/tcsh:</p><pre>source /sw/bin/init.csh</pre><p>для bash/zsh:</p><pre>. /sw/bin/init.sh</pre></div>
         </a>
-        <a name="dselect-access">
+        <? $i18n_section= "dselect-access"; ?><a name="dselect-access">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.12: Помогите! Я использовал ввод меню "[A]ccess" в dselect и
                     больше не могу скачивать пакеты!</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Возможно, вы отметили apt в зеркале Debian, которое конечно не
@@ -202,7 +204,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><
                     конфигурации в виде плагина для dselect) теперь работает
                     через CVS.</p></div>
         </a>
-        <a name="cvs-busy">
+        <? $i18n_section= "cvs-busy"; ?><a name="cvs-busy">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.13: При попытке выполнения <q>fink selfupdate</q> или "fink
                     selfupdate-cvs" получаю сообщение об ошибке <code>Updating using CVS
                         failed. Check the error messages above.</code>"</b></p></div>
@@ -240,7 +242,7 @@ Failed: Updating using CVS failed. Check the error messages above.</pre><p>"C" �
                     с "C" при вводе selfupdate-cvs; затем надо попробовать снова:</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</pre></div>
         </a>
-        <a name="kernel-panics">
+        <? $i18n_section= "kernel-panics"; ?><a name="kernel-panics">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.14: При использовании Fink мой компьютер зависает/глючит/вырубается.
                     Помогите!</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Последние сообщения  в списке рассылки <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
@@ -250,7 +252,7 @@ fink selfupdate-cvs</pre></div>
                     ПО. Возможно, вам надо будет отключить любое антивирусное
                     ПО прежде, чем использовать Fink.</p></div>
         </a>
-        <a name="not-found">
+        <? $i18n_section= "not-found"; ?><a name="not-found">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.15: Пытаюсь инсталлировать пакет, но Fink не может его скачать.
                     Сайт скачивания отражает номер более поздней версии пакета, чем
                     показывает Fink. Что делать?</b></p></div>
@@ -287,7 +289,7 @@ fink selfupdate-cvs</pre></div>
                     сделать связку со старым исходным кодом, либо обновить файлы .info и
                     .patch для использования более свежей версии.</p></div>
         </a>
-        <a name="fink-not-found">
+        <? $i18n_section= "fink-not-found"; ?><a name="fink-not-found">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.16: Получаю сообщения об ошибке "command not found", когда запускаю Fink или
                     то, что инсталлировано при помощи Fink.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If this always happens, then you may have inadvertently
@@ -305,9 +307,9 @@ fink selfupdate-cvs</pre></div>
         terminal, the easy solution is to modify the "Terminal" entry in the X11 Application menu via the <b>Applications-&gt;Customize Menu... </b>option.  Instead of just</p><pre>xterm</pre><p>change the command field to read</p><pre>xterm -ls</pre><p><code>ls</code> here means <q>login shell</q>, and the result is that your full login setup gets used (just like the OS X Terminal).</p><p>These <code>/sw/bin/init.*</code> scripts do much
 	more than just add <code>/sw/bin</code> to your PATH.
 	Many packages will not work correctly without these additional
-	actions.</p></div>
+	actions.</p><? show_form (); ?></div>
         </a>
-        <a name="invisible-sw">
+        <? $i18n_section= "invisible-sw"; ?><a name="invisible-sw">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.17: Хочу спрятать /sw в Finder, чтобы пользователи не повредили
                     настройки Fink.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Это возможно. Если у вас инсталлированы Developer Tools,
@@ -316,7 +318,7 @@ fink selfupdate-cvs</pre></div>
                     есть разные приложения третьих лиц, которые позволяют
                     управлять атрибутами и делать  /sw невидимым.</p></div>
         </a>
-        <a name="install-info-bad">
+        <? $i18n_section= "install-info-bad"; ?><a name="install-info-bad">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.18: Не могу ничего инсталлировать из-за следующей ошибки:
                     "install-info: unrecognized option `--infodir=/sw/share/info'"</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Обычно это происходит из-за проблемы в вашем PATH. Напечатайте в окне
@@ -333,7 +335,7 @@ fink selfupdate-cvs</pre></div>
                     подкаталог <code>install-info</code>
                     при использовании Fink.</p></div>
         </a>
-        <a name="bad-list-file">
+        <? $i18n_section= "bad-list-file"; ?><a name="bad-list-file">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.19: Ничего не могу инсталлировать или удалить из-за проблемы с
                     файлом списка файлов ("files list file").</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Обычно такие ошибки имеют следующую форму:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>или</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>Это исправляется без труда. Если у вас в системе имеется файл .deb
@@ -367,7 +369,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
                     удалить все, кроме названий файлов, и внести их в файл
                     .list.</p></div>
         </a>
-        <a name="dselect-garbage">
+        <? $i18n_section= "dselect-garbage"; ?><a name="dselect-garbage">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.20: Я получил кучу мусора, когда выбирал пакеты в 
                     <code>dselect</code>. Как теперь можно его использовать?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Есть проблематичные вопросы между <code>dselect</code> и
@@ -376,7 +378,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
                     сделать это в вашем файле инициализации (н-р <code>.cshrc</code> |
                     <code>.profile</code>), чтобы всегда иметь возможность использовать.</p></div>
         </a>
-        <a name="perl-undefined-symbol">
+        <? $i18n_section= "perl-undefined-symbol"; ?><a name="perl-undefined-symbol">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.21: Почему я получаю кучу сообщений об ошибках "dyld: perl undefined symbols",
                     когда применяю команды Fink?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> ПО устарело.</p><p>Если вы получаете сообщение об ошибке, подобное такому:</p><pre>dyld: perl Undefined symbols: 
@@ -398,7 +400,7 @@ sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
 fink rebuild storable-pm 
 fink selfupdate-cvs</pre></div>
         </a>
-        <a name="cant-upgrade">
+        <? $i18n_section= "cant-upgrade"; ?><a name="cant-upgrade">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.22: Не получается обновить версию Fink.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если <code>fink selfupdate</code> и
                         <code>sudo apt-get update ; sudo apt-get
@@ -419,12 +421,12 @@ fink selfupdate</pre>
                     </li>
                 </ul></div>
         </a>
-        <a name="spaces-in-directory">
+        <? $i18n_section= "spaces-in-directory"; ?><a name="spaces-in-directory">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.23: Можно ли разместить Fink в томе или каталоге с пробелом в его имени?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Мы не рекомендуем размещать ваше дерево каталогов Fink в
                     каталог с пробелами в его имени. Не стоит этого делать.</p></div>
         </a>
-        <a name="packages-gz">
+        <? $i18n_section= "packages-gz"; ?><a name="packages-gz">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.24: При попытке бинарного обновления появляется много сообщений
                     со словами "File not found"</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если вы видите что-то вроде следующего: </p><pre>Err file: local/main Packages 
@@ -454,9 +456,9 @@ update available list script returned error exit status 1.</pre><p>то вам �
 powerpc_Packages) - stat (2 No such file or directory)</pre><p>then you should run</p><pre>
 sudo apt-get update
 fink scanpackages
-</pre><p>to fix it.</p></div>
+</pre><p>to fix it.</p><? show_form (); ?></div>
         </a>
-        <a name="wrong-tree">
+        <? $i18n_section= "wrong-tree"; ?><a name="wrong-tree">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.25: Я изменил OS | Developer Tools, но Fink не
                     признает изменение.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> При изменении дистрибуции Fink (подмножествами которой являются исходные и
@@ -464,7 +466,7 @@ fink scanpackages
                     что произошло. Для этого вы можете выполнить скрипт, который обычно
                     запускается при первоначальной инсталляции Fink:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Выполнив это, вы укажете Fink правильное место.</p></div>
         </a>
-        <a name="seg-fault">
+        <? $i18n_section= "seg-fault"; ?><a name="seg-fault">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.26: Получаю сообщения об ошибках с приложениями <code>gzip</code> | <code>dpkg-deb</code>I
                     из пакета <code> fileutils </code>! Помогите!</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ошибки типа:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
@@ -478,7 +480,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ил�
                     вероятно обусловлены предварительно связывающей ошибкой в библиотеке и
                     могут быть устранены следующим образом:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
         </a>
-        <a name="pathsetup-keeps-running">
+        <? $i18n_section= "pathsetup-keeps-running"; ?><a name="pathsetup-keeps-running">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.27: Когда я открываю окно Terminal, получаю сообщение "Your
                     environment seems to be correctly set up for Fink already.",
                     и сеанс завершается.</b></p></div>
@@ -488,7 +490,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ил�
                     Preferences: <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p><p>Если у вас есть другие преференции, которые вы хотите оставить, можно отредактировать
                     файл при помощи текстового редактора и убрать ссылку на <code>/sw/bin/pathsetup.command</code>.</p></div>
         </a>
-        <a name="ext-drive">
+        <? $i18n_section= "ext-drive"; ?><a name="ext-drive">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.28: Мой Fink инсталлирован отдельно от главного сегмента и я не могу
                     обновить пакет fink на основе исходного кода. Появляются сообщения об ошибках
                     с упоминанием <q>chowname</q>.</b></p></div>
@@ -506,21 +508,21 @@ Failed test (./Command/chowname.t at line 27)
 #     expected: 'nobody'</pre><p>то надо использовать <b>Get Info</b> на носителе/сегменте,
                     где Fink инсталлирован, и отменить выбор "Ignore ownership".</p></div>
         </a>
-        <a name="mirror-gnu">
+        <? $i18n_section= "mirror-gnu"; ?><a name="mirror-gnu">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.29: Fink не хочет обновлять мои пакеты, т.к. утверждает, что
                     не может найти зеркало 'gnu'.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если вы получили сообщение об ошибке, которое оканчивается на </p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>то наиболее вероятно вам надо обновить пакет
                     <code>fink-mirrors</code> , н-р через:</p><pre>fink install fink-mirrors</pre></div>
         </a>
-        <a name="cant-move-fink">
+        <? $i18n_section= "cant-move-fink"; ?><a name="cant-move-fink">
             <div class="question"><p><b><? echo FINK_Q ; ?>5.30: Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Эта ошибка:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>обычно обусловлена, хотя и утверждает иное, ошибками
                     разрешений в одном из временных каталогов, создаваемых
                     в процессе автообновления - <code>selfupdate</code>. Удалите</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
         </a>
     
-    <a name="four-oh-three">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</b></p></div>
+    <? $i18n_section= "four-oh-three"; ?><a name="four-oh-three">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</b></p><? show_form (); ?></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There have been problems with the Sourceforge download servers, and therefore we are moving the binary distribution repository for this very reason.</p><ul>
           <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
 <pre>fink reinstall fink</pre>
@@ -541,33 +543,33 @@ deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
 <p>The above of course assumes you're on 10.3.  If you're on a different OS replace <code>10.3</code> with what your current distribution is.</p>
 <p>Then save your work and quit the editor.  Now update your binary package list again.</p>
 </li>
-        </ul></div>
+        </ul><? show_form (); ?></div>
     </a>
-    <a name="fc-cache">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I get a message that says "No fonts found".</b></p></div>
+    <? $i18n_section= "fc-cache"; ?><a name="fc-cache">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I get a message that says "No fonts found".</b></p><? show_form (); ?></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you see the following (so far only seen on OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
 about fontconfig can be found in the fontconfig(3) manual
-page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div>
+page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre><? show_form (); ?></div>
     </a>
-    <a name="non-admin-installer">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.33:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility (from the Utilities sub-folder in your Applications folder), select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.</p></div>
+    <? $i18n_section= "non-admin-installer"; ?><a name="non-admin-installer">
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.33:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p><? show_form (); ?></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility (from the Utilities sub-folder in your Applications folder), select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.</p><? show_form (); ?></div>
     </a>
-    <a name="wrong-arch">
+    <? $i18n_section= "wrong-arch"; ?><a name="wrong-arch">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.34: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
-</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p></div>
+</b></p><? show_form (); ?></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p><? show_form (); ?></div>
     </a>
-    <a name="sf-cvs-2006">
-	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: I haven't been able to do a cvs selfupdate.</b></p></div>
+    <? $i18n_section= "sf-cvs-2006"; ?><a name="sf-cvs-2006">
+	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: I haven't been able to do a cvs selfupdate.</b></p><? show_form (); ?></div>
 	      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors that include lines like:</p><pre>
 cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 2401 failed: Operation timed out
 </pre><p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p><pre>
 sudo apt-get update ; sudo apt-get install fink-mirrors
-</pre></div>
+</pre><? show_form (); ?></div>
 	      </a>
 	      
     <p align="right"><? echo FINK_NEXT ; ?>:

@@ -1,16 +1,18 @@
 <?
 $title = "F.A.Q. - 一般";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=ja" title="他のプロジェクトとの関係"><link rel="prev" href="index.php?phpLang=ja" title="F.A.Q. Contents">';
 
 
+$i18n_chapter = 'general';
+include_once "../i18n_showform.inc";
 include_once "header.ja.inc";
 ?>
 <h1>F.A.Q. - 1. 一般的な質問</h1>
 
 
-<a name="what">
+<? $i18n_section= "what"; ?><a name="what">
 <div class="question"><p><b><? echo FINK_Q ; ?>1.1: Fink とは何ですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink は、多くの Unix ソフトウェアを Mac OS X で使えるようにするものです。
 このために、次の二つのゴールを設定しています。</p><p>一つ目のゴールは、ソフトウェアを Mac OS X に移植することです。
@@ -22,14 +24,14 @@ include_once "header.ja.inc";
 バイナリディストリビューションは <code>.deb</code> パッケージ形式を使います。
 ソースからパッケージをビルドするには、我々の独自のツールである <code>fink</code> を使い、 <code>.deb</code>  パッケージのファイルを作成します。</p></div>
 </a>
-<a name="naming">
+<? $i18n_section= "naming"; ?><a name="naming">
 <div class="question"><p><b><? echo FINK_Q ; ?>1.2: Fink とはどういう意味ですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 意味はありません。ただの名称です。なにかの頭文字でもありません。</p><p>実際は、ドイツ語でフィンチという鳥のことです。
 このプロジェクトに名称を考えていた時、 OS の名称である Darwin から、チャールズ＝ダーウィン、ガラパゴス諸島、進化を連想しました。
 それで、ダーウィン・フィンチのことを思い出しました。
 まぁ、それだけです...</p></div>
 </a>
-<a name="bsd-ports">
+<? $i18n_section= "bsd-ports"; ?><a name="bsd-ports">
 <div class="question"><p><b><? echo FINK_Q ; ?>1.3: 
 Fink と BSD の port メカニズムはどう違うのですか (OpenPackages や GNU-Darwin も含めて)?
 </b></p></div>
@@ -50,7 +52,7 @@ dpkg のバイナリパッケージ管理は洗練されています。
 </li>
 </ul></div>
 </a>
-<a name="usr-local">
+<? $i18n_section= "usr-local"; ?><a name="usr-local">
 <div class="question"><p><b><? echo FINK_Q ; ?>1.4: なぜ Fink は /usr/local にインストールしないのですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> いくつか理由はありますが、共通しているのは、「いつか壊れるから」です。</p><p>理由1: サードパーティー・ソフトウェア。
 /usr/local は、システムの一部ではないソフトウェアを入れる場所として確立されています。
@@ -68,7 +70,7 @@ dpkg のバイナリパッケージ管理は洗練されています。
 インストール・スクリプトは警告メッセージを出しますが、これを無視することもできます。
 この場合は自己責任で行なって下さい。</p></div>
 </a>
-<a name="why-sw">
+<? $i18n_section= "why-sw"; ?><a name="why-sw">
 <div class="question"><p><b><? echo FINK_Q ; ?>1.5: ではなぜ /sw を選んだのですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 この選択にあまり意味はありませんが、実用上の（アップグレードの）問題と、他のパッケージング・システムとのコンフリクト問題を避けるため、近い将来に変更することはないと思われます。</p></div>

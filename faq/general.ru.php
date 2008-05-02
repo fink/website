@@ -1,16 +1,18 @@
 <?
 $title = "Ч.З.В. - Общие вопросы";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/07/21 00:06:37';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="relations.php?phpLang=ru" title="Связь с другими проектами"><link rel="prev" href="index.php?phpLang=ru" title="Ч.З.В. Contents">';
 
 
+$i18n_chapter = 'general';
+include_once "../i18n_showform.inc";
 include_once "header.ru.inc";
 ?>
 <h1>Ч.З.В. - 1. Общие вопросы</h1>
         
         
-        <a name="what">
+        <? $i18n_section= "what"; ?><a name="what">
             <div class="question"><p><b><? echo FINK_Q ; ?>1.1: Что такое Fink?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Целью Fink является максимальный перенос ПО Unix в Mac OS X, из чего вытекают
                     две основные задачи:</p><p>Задача номер один: перенос ПО в Mac OS X. Это значит, что
@@ -28,7 +30,7 @@ include_once "header.ru.inc";
                     у нас имеется собственный инструмент, названный <code>fink</code>, который
                     создает пакетные файлы <code>.deb</code>.</p></div>
         </a>
-        <a name="naming">
+        <? $i18n_section= "naming"; ?><a name="naming">
             <div class="question"><p><b><? echo FINK_Q ; ?>1.2: Что означает название Fink?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  Ничего, это просто имя. Это даже не аббревиатура.</p><p> Вообще-то Fink - это немецкий вариант слова Finch (зяблик), названия
                     породы птиц. Я искал название для проекта и название
@@ -37,7 +39,7 @@ include_once "header.ru.inc";
                     зябликах Дарвина и их клювах,
                     и вот ...</p></div>
         </a>
-        <a name="bsd-ports">
+        <? $i18n_section= "bsd-ports"; ?><a name="bsd-ports">
             <div class="question"><p><b><? echo FINK_Q ; ?>1.3:  Чем Fink отличается от механизма переноса BSD (включая
                     OpenPackages и GNU-Darwin)? </b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  Некоторые главные преимущества:</p><ul>
@@ -63,7 +65,7 @@ include_once "header.ru.inc";
                     </li>
                 </ul></div>
         </a>
-        <a name="usr-local">
+        <? $i18n_section= "usr-local"; ?><a name="usr-local">
             <div class="question"><p><b><? echo FINK_Q ; ?>1.4: Почему Fink ничего не инсталлирует в  /usr/local?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  Для этого есть несколько причин, но в основном "потому что
                     произойдет сбой в работе".</p><p> Первая причина: ПО третьих лиц.  /usr/local является
@@ -90,7 +92,7 @@ include_once "header.ru.inc";
                     но продолжит выполнение после подтверждения с вашей стороны, что вы
                     делаете это на свой страх и риск.</p></div>
         </a>
-        <a name="why-sw">
+        <? $i18n_section= "why-sw"; ?><a name="why-sw">
             <div class="question"><p><b><? echo FINK_Q ; ?>1.5: Тогда почему вы выбрали /sw?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  Данный выбор совершенно произвольный, но возможно, мы на нем остановимся
                     в обозримом будущем по практическим соображениям (обновление),

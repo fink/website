@@ -1,17 +1,19 @@
 <?
 $title = "F.A.Q. - 使用法 (1)";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
 
+$i18n_chapter = 'usage-general';
+include_once "../i18n_showform.inc";
 include_once "header.ja.inc";
 ?>
 <h1>F.A.Q. - 8. パッケージ使用上の問題 - 一般</h1>
     
 
 
-<a name="xlocale">
+<? $i18n_section= "xlocale"; ?><a name="xlocale">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.1: このようなメッセージが大量に出ます。
 "locale not supported by C library"
 これはまずいことですか?</b></p></div>
@@ -20,7 +22,7 @@ include_once "header.ja.inc";
 これ以外はプログラムは普通に動作します。
 X11 のドキュメントに、 <a href="http://www.finkproject.org/doc/x11/trouble.php#locale">詳細</a> があります。</p></div>
 </a>
-<a name="passwd">
+<? $i18n_section= "passwd"; ?><a name="passwd">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.2: いきなり変なユーザーがシステムに現れました。
 ユーザー名は、 "mysql", "pgsql", "games" などです。
 こいつらはどこから来たのですか?</b></p></div>
@@ -52,7 +54,7 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 </li>
 </ul><p>passwd パッケージのインストール中に、Fink がユーザーを追加するか<b>尋ねます</b>ので、実際はいきなりではないはずです。</p></div>
 </a>
-<a name="compile-myself">
+<? $i18n_section= "compile-myself"; ?><a name="compile-myself">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 外でコンパイルする時は、コンパイラとリンカに Fink がインストールしたライブラリとヘッダの場所を教える必要があります。
 普通の configure/make を使うパッケージの場合、環境変数を設定する必要があります:</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
@@ -74,14 +76,14 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(ビルドシステムは OS 10.4 �
 パッケージの中には、 EXTRA_CFLAGS や --with-qt-dir= のような、非標準的な configure オプションを使うものもあります。
 "./configure --help" で configure オプションの一覧がわかるでしょう。</p><p>さらに、あなたが使うライブラリの開発用ヘッダ (例 <b>foo-1.0-1-dev</b>) もインストールする必要があります。</p></div>
 </a>
-<a name="apple-x11-applications-menu">
+<? $i18n_section= "apple-x11-applications-menu"; ?><a name="apple-x11-applications-menu">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Apple X11 の Application メニューを使うと、 Fink からインストールしたアプリケーションの起動できません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Apple X11 は Fink の環境設定を認識しません。
 このため、Applications メニューも PATH を認識せず、 Fink アプリケーションを探すことができません。
 解決するには、 Fink からインストールしたアプリケーションに:
 </p><pre>source /sw/bin/init.sh ; </pre><p>と追加します。例えば、 Fink からインストールした GIMP の場合、 GIMP の Command 欄に:</p><pre>source /sw/bin/init.sh ; gimp</pre><p>と入力します。</p><p>あるいは、 .xinitrc ファイル (自分のディレクトリ内の) の一行目に:</p><pre>source /sw/bin/init.sh</pre><p>と追加します。</p></div>
 </a>
-<a name="x-options">
+<? $i18n_section= "x-options"; ?><a name="x-options">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.5: X11 の種類が多くて迷っています。
 	Apple X11, XFree86 などなど、どれをインストールしたら良いのですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
@@ -131,7 +133,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(ビルドシステムは OS 10.4 �
 	これ以外の選択は、 <a href="http://www.finkproject.org/doc/x11/index.php">Running X11 document</a> を参照してください。
 	</p></div>
 </a>
-<a name="no-display">
+<? $i18n_section= "no-display"; ?><a name="no-display">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.6: アプリケーションを実行しようとすると、
 "cannot open display:"
 というメッセージがでます。
@@ -140,13 +142,13 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(ビルドシステムは OS 10.4 �
 以下を確認してください:</p><p>1. X (Apple's X11, XFree86, ...) を起動。</p><p>2. DISPLAY 環境変数が設定されていることを確認する。デフォルトに設定された X では、 tcsh では:
 </p><pre>setenv DISPLAY :0</pre><p>bash の場合:</p><pre>export DISPLAY=:0</pre><p>と入力します。</p></div>
 </a>
-<a name="suggest-package">
+<? $i18n_section= "suggest-package"; ?><a name="suggest-package">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.7: 自分の好きなプログラムが Fink にありません。
 Fink に推薦したいのですが、どうしたら良いですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a>
 の Fink プロジェクトページから推薦してください。</p><p>注記: SourceFourge の ID が必要です。</p></div>
 </a>
-<a name="virtpackage">
+<? $i18n_section= "virtpackage"; ?><a name="virtpackage">
     
 <div class="question"><p><b><? echo FINK_Q ; ?>8.8: 
 	  <code>system-*</code> "virtual packages" というのを時々見かけますが、

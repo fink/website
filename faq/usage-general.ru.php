@@ -1,16 +1,18 @@
 <?
 $title = "Ч.З.В. - Использование (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/07/21 00:06:37';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-packages.php?phpLang=ru" title="Проблемы использования пакетов  - Специальные пакеты"><link rel="prev" href="comp-packages.php?phpLang=ru" title="Проблемы компиляции - специальные пакеты">';
 
 
+$i18n_chapter = 'usage-general';
+include_once "../i18n_showform.inc";
 include_once "header.ru.inc";
 ?>
 <h1>Ч.З.В. - 8. Проблемы использования пакетов - Общие вопросы</h1>
         
         
-        <a name="xlocale">
+        <? $i18n_section= "xlocale"; ?><a name="xlocale">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.1: Я получаю много сообщений типа "locale not supported by C
                     library". Это плохо?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ничего страшного, просто это значит, что программа будет использовать
@@ -18,7 +20,7 @@ include_once "header.ru.inc";
                     будет работать нормально, но иным образом. См. документ "Выполнение X11" 
                     в <a href="http://www.finkproject.org/doc/x11/trouble.php#locale"></a>.</p></div>
         </a>
-        <a name="passwd">
+        <? $i18n_section= "passwd"; ?><a name="passwd">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.2: В моей системе вдруг появилось несколько странных пользователей
                     с такими именами, как "mysql", "pgsql" и "games". Откуда они
                     взялись?</b></p></div>
@@ -65,7 +67,7 @@ include_once "header.ru.inc";
                     дополнительных пользователей в вашей системе в процессе инсталляции
                     пакета passwd, и таким образом это не должно быть сюрпризом.  </p></div>
         </a>
-        <a name="compile-myself">
+        <? $i18n_section= "compile-myself"; ?><a name="compile-myself">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Как можно компилировать что-нибудь самостоятельно с применением ПО, инсталлированного с помощью Fink?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Когда вы самостоятельно что-нибудь компилируете вне Fink,
                     надо сообщать компилятору и компоновщику, где найти библиотеки и заголовки,
@@ -96,7 +98,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(assuming that the build system is 
                     (н-р. <b>foo-1.0-1-dev</b>) для пакетов библиотек, которые
                     вы используете, если они еще не инсталлированы. </p></div>
         </a>
-        <a name="apple-x11-applications-menu">
+        <? $i18n_section= "apple-x11-applications-menu"; ?><a name="apple-x11-applications-menu">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Не могу запустить ни одно из приложений, инсталлированных при помощи Fink, через
                     меню Applications в Apple X11.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Apple X11 не отслеживает настройки среды Fink,
@@ -106,7 +108,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(assuming that the build system is 
                     следующее:</p><pre>source /sw/bin/init.sh ;</pre><p>Н-р, если вы хотите запустить GIMP, инсталлированный при помощи Fink, вставьте</p><pre>source /sw/bin/init.sh ; gimp</pre><p>в облать Command вашей записи GIMP.</p><p>Можно также отредактировать ваш файл .xinitrc (в вашем каталоге пользователя)
                     и добавить:</p><pre>source /sw/bin/init.sh</pre><p>после первой строки.</p></div>
         </a>
-        <a name="x-options">
+        <? $i18n_section= "x-options"; ?><a name="x-options">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.5: Я озадачен опциями X11: Apple X11, XFree86 и т.д.
                     Что надо инсталлировать?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Это варианты в XFree86 (основанные на коде XFree8),
@@ -155,7 +157,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(assuming that the build system is 
                     см. в документе <a href="http://www.finkproject.org/doc/x11/index.php">Выполнение
                          X11</a>.</p></div>
         </a>
-        <a name="no-display">
+        <? $i18n_section= "no-display"; ?><a name="no-display">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.6: При попытке запуска приложения получил сообщение
                     "cannot open display:". Что надо сделать?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Эта значит, что система не соединяет вас с вашим дисплеем X.
@@ -163,13 +165,13 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(assuming that the build system is 
                     правильная. Если вы используете настройку по умолчанию для  X, можно
                     сделать</p><pre>setenv DISPLAY :0</pre><p>если вы выполняете <code>tcsh</code>, либо</p><pre>export DISPLAY=:0</pre><p>если вы выполняете <code>bash</code>.</p></div>
         </a>
-        <a name="suggest-package">
+        <? $i18n_section= "suggest-package"; ?><a name="suggest-package">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.7: Я не нахожу свою любимую программу в Fink. Как можно предложить
                     новый пакет для внесения в Fink?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Поместите запрос в <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
                         Request Tracker</a> на странице проекта Fink.</p><p>Имейте в виду, что для этого вам надо иметь SourceForge id.</p></div>
         </a>
-        <a name="virtpackage">
+        <? $i18n_section= "virtpackage"; ?><a name="virtpackage">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.8: Что это за "виртуальные пакеты" <code>system-*</code>,
                     которые иногда представлены, но я вроде как не могу инсталлировать или
                     удалить их самостоятельно?</b></p></div>

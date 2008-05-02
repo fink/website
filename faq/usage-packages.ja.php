@@ -1,17 +1,19 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
+$i18n_chapter = 'usage-packages';
+include_once "../i18n_showform.inc";
 include_once "header.ja.inc";
 ?>
 <h1>F.A.Q. - 9. パッケージ使用上の問題 - 特定のパッケージ</h1>
     
 
 
-<a name="xmms-quiet">
+<? $i18n_section= "xmms-quiet"; ?><a name="xmms-quiet">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.1: XMMS から音がでません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> XMMS設定で "eSound Output Plugin" を選択しているか確認してください。
 おかしなことに、デフォルトでは disk writer プラグインが選択されています。
@@ -31,19 +33,19 @@ esd クライアントを別のマシンでネットワーク経由で実行す�
 </p><p>この他に、 10.1 で XMMS がクラッシュするという報告があります。
 この件に関しては、まだ分析も修正もしていません。</p></div>
 </a>
-<a name="nedit-window-locks">
+<? $i18n_section= "nedit-window-locks"; ?><a name="nedit-window-locks">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.2: nedit でファイルを編集していると、他のファイルを開く時にウィンドウが出ますが、反応がありません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは最近のバージョンの <code>nedit</code> と <code>lesstif</code> の既知の問題で、他のシステムでも同様です。
 File--&gt;New でウィンドウを開き、次のファイルを開くと問題を回避できます。</p><p>この問題は <code>nedit-5.3-6</code> で <code>lesstif</code> から <code>openmotif3</code> に依存するようになり、解決されました。</p></div>
 </a>
-<a name="xdarwin-start">
+<? $i18n_section= "xdarwin-start"; ?><a name="xdarwin-start">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.3: 助けて!
 XDarwin を起動してもすぐ終了しちゃう!</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 慌てない、慌てない。
 Running X11 ドキュメントには、この問題の <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">問題対処法の節</a> (英語版) があります。</p></div>
 </a>
-<a name="no-server">
+<? $i18n_section= "no-server"; ?><a name="no-server">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.4: XDarwin を起動しようとすると、このメッセージがでます
 "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH"。
 </b></p></div>
@@ -51,7 +53,7 @@ Running X11 ドキュメントには、この問題の <a href="http://www.finkp
 <code>xfree86-rootless</code> と <code>xfree86-rootless-shlibs</code> がインストールされているかを確認し、なければ <code>fink install xfree86-rootless</code> で解決です。</p><p>もしインストールされているなら、 <code>fink rebuild xfree86-rootless</code> を試してください。
 これがうまくいかない場合、 <code>/usr/bin/X11R6</code> が PATH に含まれているか確認してください。</p></div>
 </a>
-<a name="xterm-error">
+<? $i18n_section= "xterm-error"; ?><a name="xterm-error">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.5: xterm が "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib" といって終了します。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 10.1 版の XFree86 を 10.2 で使用するとこの問題が発生します。
 10.2 版にアップグレードしてください。</p><p>Fink <code>xfree86</code> パッケージを使っている場合、通常の方法でアップグレードできます
@@ -61,7 +63,7 @@ Running X11 ドキュメントには、この問題の <a href="http://www.finkp
 <a href="http://mrcla.com/XonX">XonX web site</a>
 から入手できます。</p></div>
 </a>
-<a name="libXmuu">
+<? $i18n_section= "libXmuu"; ?><a name="libXmuu">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.6: XFree86 を起動しようとすると、下記のエラーのひとつがでます。
 "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib"
 または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</b></p></div>
@@ -69,7 +71,7 @@ Running X11 ドキュメントには、この問題の <a href="http://www.finkp
 ソースの場合、<code>fink reinstall xfree86-base-shlibs</code> (threaded 版の XFree86 パッケージ場合、<code>fink reinstall xfree86-base-threaded-shlibs</code>)、
 バイナリの場合、 <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> を再インストールする必要があります。</p></div>
 </a>
-<a name="apple-x-bugs">
+<? $i18n_section= "apple-x-bugs"; ?><a name="apple-x-bugs">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.7: Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> まず、以前 threaded 版の Fink XFree86 があったのなら、クラッシュしたアプリケーションを再ビルドする必要があります。
 プログラムによっては、ビルド時に thread の対応を確認し、以降は thread があるものと仮定されます。</p><p>これが原因でなければ、次の可能性としては Apple X11 のバグに当たったのかも知れません。
@@ -79,7 +81,7 @@ Running X11 ドキュメントには、この問題の <a href="http://www.finkp
 を確認してみてはいかがでしょうか。
 このサイトで<a href="http://developer.apple.com/bugreporter">Apple へバグレポートを送る</a>よう薦めています。</p></div>
 </a>
-<a name="apple-x-delete">
+<? $i18n_section= "apple-x-delete"; ?><a name="apple-x-delete">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.8: Apple X11 の delete キーを、 XDarwin のように使いたいのです。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> XDarwin と Apple X11 で <code>delete</code> キーの挙動が違うという報告がありますが、これは X の起動ファイルに以下を追加することで調整できます:</p><p>
 <b>.Xmodmap:</b>
@@ -94,7 +96,7 @@ xterm*.ttyModes: erase ^?
 </p><pre>xrdb -load $HOME/.Xresources
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
 </a>
-<a name="gnome-two">
+<? $i18n_section= "gnome-two"; ?><a name="gnome-two">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.9: GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> GNOME 1.x <code>gnome-session</code> は自動的に <code>sawfish</code> ウィンドウマネージャーを呼出していましたが、 GNOEM 2.x では <code>~/.xinitrc</code>  で <code>gnome-session</code> の前に呼び出さなくてはなりません。</p><pre>...
 exec metacity &amp;
@@ -103,12 +105,12 @@ exec gnome-session</pre><p>
 <code>gnome-session</code> を実行することでウィンドウマネージャーを呼び出すようになりました。
 </p></div>
 </a>
-<a name="apple-x11-no-windowbar">
+<? $i18n_section= "apple-x11-no-windowbar"; ?><a name="apple-x11-no-windowbar">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.10: Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> あなたは X11 を Panther に付属する "X11 1.0 - XFree86 4.3.0" にアップグレードしなかったようです。
 Disk 3 の X11.pkg から X11 をインストールできます。</p></div>
 </a>
-<a name="apple-x11-wants-xfree86">
+<? $i18n_section= "apple-x11-wants-xfree86"; ?><a name="apple-x11-wants-xfree86">
     
 <div class="question"><p><b><? echo FINK_Q ; ?>9.11: Apple X11 をインストールしたけれども、 Fink が XFree86 か X.org をインストールしろといい続けます。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 二つの可能性があります。</p><ul>
@@ -184,7 +186,7 @@ sudo apt-get install fink</pre>
 		</li>
 	</ul></div>
 </a>
-<a name="wants-xfree86-on-upgrade">
+<? $i18n_section= "wants-xfree86-on-upgrade"; ?><a name="wants-xfree86-on-upgrade">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.12: 
 10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
 </b></p></div>
@@ -207,7 +209,7 @@ X11SDK もインストールされている場合、 <code>system-xfree86-dev</c
 を参照してください。
 </p></div>
 </a>
-<a name="special-x11-debug">
+<? $i18n_section= "special-x11-debug"; ?><a name="special-x11-debug">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.13: まだ X11 と Fink の問題が解決されません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 		<a href="#apple-x11-wants-xfree86">Fink が XFree86 または X.org を要求する</a> や
@@ -236,7 +238,7 @@ fink selfupdate; fink index</pre><p>
 </li>
 </ul></div>
 </a>
-    <a name="tiger-gtk">
+    <? $i18n_section= "tiger-gtk"; ?><a name="tiger-gtk">
       <div class="question"><p><b><? echo FINK_Q ; ?>9.14: 
         	Tiger (OS 10.4) にアップデート後、GTK アプリを使うと必ず
         	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
@@ -251,7 +253,7 @@ fink selfupdate; fink index</pre><p>
         	(ログインシェルに関わらず) <code>.xinitrc</code> と、 <b>bash</b> ユーザーは <code>.profile</code> (または他のスタートアップスクリプト) に、
         </p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>と記述し、<b>tcsh</b> ユーザーは、同様に <code>.cshrc</code> (または他のスタートアップスクリプト) に、</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>と記述します。</p><p>これは <code>base-files-1.9.7-1</code> 以降では自動的に追加されます。</p></div>
     </a>
-  <a name="yelp">
+  <? $i18n_section= "yelp"; ?><a name="yelp">
     <div class="question"><p><b><? echo FINK_Q ; ?>9.15: どの GNOME アプリケーションでも、ヘルプ機能が使えません。</b></p></div>
 	<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 		  <code>yelp</code> というパッケージをインストーする必要があります。

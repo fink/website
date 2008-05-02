@@ -1,17 +1,19 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
+$i18n_chapter = 'comp-general';
+include_once "../i18n_showform.inc";
 include_once "header.ja.inc";
 ?>
 <h1>F.A.Q. - 6. コンパイルの問題 - 一般</h1>
     
 
 
-<a name="compiler">
+<? $i18n_section= "compiler"; ?><a name="compiler">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.1: configure スクリプトが "acceptable cc" が見つからないといってきます。
 これは何ですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> ドキュメンテーションを読んでください。
@@ -19,12 +21,12 @@ include_once "header.ja.inc";
 これには、 C コンパイラ <code>cc</code> など必要なものが入っています。
 </p></div>
 </a>
-<a name="cvs">
+<? $i18n_section= "cvs"; ?><a name="cvs">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.2: "fink selfupdate-cvs" をしようとしたら、このメッセージが出てきました: "cvs: Command not found."
 </b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Developer Tools をインストールする必要があります。</p></div>
 </a>
-<a name="missing-make">
+<? $i18n_section= "missing-make"; ?><a name="missing-make">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.3: <code>make</code> に関連したエラーがでました。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> もしメッセージが以下のようであれば</p><pre>make: command not found</pre><p>あるいは</p><pre>Can't exec "make": No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Developer Tools をインストールする必要があります。</p><p>もしメッセージが以下のようであれば</p><pre>make: illegal option -- C</pre><p>
 Developer Tools に入っていた GNU 版の <code>make</code> ユーティリティーを、 BSD 版の make に換えてしまったようです。
@@ -34,7 +36,7 @@ Developer Tools に入っていた GNU 版の <code>make</code> ユーティリ�
 さらに、 <code>/usr/local/bin/</code> に他の <code>make</code> がないことも確認してください。
 </p></div>
 </a>
-<a name="head">
+<? $i18n_section= "head"; ?><a name="head">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.4: head コマンドから変な使用方法メッセージが出ています。何がおかしいのですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> もしこれでしたら:</p><pre>Unknown option: 1
 Usage: head [-options] &lt;url&gt;...</pre><p>(後にオプションの説明リストが続く)
@@ -45,7 +47,7 @@ Usage: head [-options] &lt;url&gt;...</pre><p>(後にオプションの説明リ
 Fink を使うには、オリジナルの方の <code>head</code> に戻す必要があります。</p><p>ソースリリースのブートストラップスクリプトは、現在はこれを確認しますが、最初のインストールにバイナリリリースを使う場合、あるいは Fink をインストールした後で libwww をインストールする場合、まだこの問題に当たります。</p><p>この問題は、 <code>/sw/bin/HEAD</code> をインストールした場合も起こることが報告されています (Fink のパッケージではありません)。
 これは簡単に解決できます: rename <code>/sw/bin/HEAD</code> </p></div>
 </a>
-<a name="also_in">
+<? $i18n_section= "also_in"; ?><a name="also_in">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.5: あるパッケージをインストールしようとすると、他のパッケージのファイルを上書きしようとしているというエラーメッセージが出ました。
 </b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これはスプリットオフパッケージ (-dev, -shlibs などがついてるもの) において、ファイルが移動する時 (<code>foo</code> から <code>foo-shlibs</code> など) に発生することがあります。
@@ -53,7 +55,7 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 </p><pre>sudo dpkg -i --force-overwrite <b>filename</b>
 </pre><p>ここで <b>filename</b> はインストールしようとしているパッケージ用の .deb ファイルです。</p></div>
 </a>
-<a name="weak_lib">
+<? $i18n_section= "weak_lib"; ?><a name="weak_lib">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.6: December 2002 Development Tools をインストールしてから、このメッセージが出るようになった: "weak libraries"</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは December 2002 Tools のものです。
 次のようなメッセージが出ることがあります (libgdk-pixbuf を例に選んでいます):</p><p>
@@ -62,7 +64,7 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 興味があれば、開発用ドキュメンテーションディレクトリの、特に GCC とリンカの、リリースノートをお読みください。
 本質的には、弱い参照を使用するアプリケーションが、起動時に実行時の存在しないシンボルを致命的エラーとみなすかどうかに関わってきます。</p></div>
 </a>
-<a name="mv-failed">
+<? $i18n_section= "mv-failed"; ?><a name="mv-failed">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.7: パッケージをインストールしようとした時の "execution of mv failed, exit code 1" とはどういう意味ですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> StuffIt Pro がインストールされている場合、 "Archive Via Real Name" モードが設定されていると思われます。
 システム環境設定の StuffIt 設定で "ArchiveViaRealName" を無効化してください。
@@ -76,7 +78,7 @@ No such file or directory
 ### execution of mv failed, exit code 1
 Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code> ファイルをビルド出力の前の方で探します。</p></div>
 </a>
-<a name="node-exists">
+<? $i18n_section= "node-exists"; ?><a name="node-exists">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.8: '"node" already exists' というエラーメッセージが出て、インストール | アップデートができません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このようなエラーが出ます:</p><pre>Failed: Internal error: node for system-xfree86 already exists</pre><p>パッケージ info ファイルが変更されて依存性エンジンが混乱しているために出た問題です。
 修正するには:</p><ul>
@@ -91,7 +93,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 </li>
 </ul></div>
 </a>
-<a name="usr-local-libs">
+<? $i18n_section= "usr-local-libs"; ?><a name="usr-local-libs">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.9: /usr/local にインストールされているライブラリやヘッダが 
 	Fink のビルドの問題を起こすことがあると聞いたけど、本当ですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> そういう場合もよくあります。
@@ -103,7 +105,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 これが原因そうであれば、 <code>/usr/local</code> の名前を一時的に変えてください。
 例えば:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>ビルド後、 <code>/usr/local</code> を元に戻しください:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
 </a>
-<a name="toc-out-of-date">
+<? $i18n_section= "toc-out-of-date"; ?><a name="toc-out-of-date">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.10: パッケージをビルドしようとしたら、 "table of contents" が古いというメッセージが出ました。何をしたらいいですか?
 </b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このメッセージは重要なヒントです。
@@ -111,32 +113,32 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしているライブラリに (root で) ranlib を実行する必要があります。
 例えば、この例では:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
 </a>
-<a name="fc-atlas">
+<? $i18n_section= "fc-atlas"; ?><a name="fc-atlas">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.11: atlas をインストールしようとすると、 Fink Commander がハングアップします。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>atlas</code> のビルド中にユーザーにプロンプトを送るステップがあり Fink Commander がこれを表示しないからです。
 代わりに <code>fink install atlas</code> とする必要があります。</p></div>
 </a>
-<a name="basic-headers">
+<? $i18n_section= "basic-headers"; ?><a name="basic-headers">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.12: <code>stddef.h</code> | <code>wchar.h</code> | <code>stdlib.h</code> | <code>crt1.o</code> が見つからない、
 あるいは、"C compiler cannot create executables" というメッセージが出ます。
 これはどこにありますか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これらの問題は、いずれも Developer Tools の DevSDK によって提供されるヘッダファイルがないためです。
 <code>/Library/Receipts/DevSDK.pkg</code> がシステムにあるか確認し、なければ  Dev Tools インストーラを起動してカスタムインストールを選択、 DevSDK パッケージをインストールして下さい。</p><p>"cannot create executables" エラーは、Developer Tools のバージョンが 以前のバージョンの OS 用である場合にも発生します。</p></div>
 </a>
-<a name="multiple-dependencies">
+<? $i18n_section= "multiple-dependencies"; ?><a name="multiple-dependencies">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.13: Fink が "unable to resolve version conflict on multiple dependencies" と言って、アップデートできません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> この問題を解決するには、パッケージを一つだけアップデートしてみてください。
 次に、再度 "fink update-all" を試してみてください。
 まだ問題が出るようなら、これを繰り返してください。
 </p></div>
 </a>
-<a name="dpkg-parse-error">
+<? $i18n_section= "dpkg-parse-error"; ?><a name="dpkg-parse-error">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.14: "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
 というメッセージが出て、何もインストールできません!</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは dpkg データベースが壊れてしまったか、クラッシュか他のリカバーできないエラーが原因です。
 以前のバージョンのデータベースをコピーして直すことができます:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>この問題が起きた最後の二つのパッケージを再インストールしたほうがよいでしょう。</p></div>
 </a>
-<a name="freetype-problems"> 
+<? $i18n_section= "freetype-problems"; ?><a name="freetype-problems"> 
 <div class="question"><p><b><? echo FINK_Q ; ?>6.15: freetype に関係したエラーが出ます。</b></p></div> 
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> freetype に関係したエラーにはいくつかありますが、以下のものであれば:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>外来の <code>freetype-config</code> があるかどうか、以下のコマンドを実行して確認します。</p><pre>where freetype-config</pre><p>(<code>tcsh</code> の場合)</p><pre>type -a freetype-config</pre><p>(<code>bash</code> の場合)。 Mono フレームワークは、 <code>/usr/bin/freetype-config</code> をインストールし、フレームワーク内へのシンボリックリンクを作ることが知られています。</p><p>もしこのようなものであれば:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token 
@@ -175,7 +177,7 @@ X11 SDK を再インストールしてみて下さい。</p><p>最後に、エ�
 /sw/lib/libqt-mt.3.dylib undefined reference to _FT_Access_Frame </pre><p>おそらく Jaguar 上で<code>gcc3.3</code> でコンパイルしたバイナリが  Panther 上で動作しないためです。
 この問題は既に修正されていますので、<code>sudo apt-get update ; sudo apt-get dist-upgrade</code> と更新するだけで直ります。</p></div> 
 </a> 
-<a name="dlfcn-from-oo"> 
+<? $i18n_section= "dlfcn-from-oo"; ?><a name="dlfcn-from-oo"> 
 <div class="question"><p><b><? echo FINK_Q ; ?>6.16: `Dl_info' のエラーが出ます。</b></p></div> 
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> エラーが下記のようであれば:</p><pre>unix_dl.c: In function `rep_open_dl_library': 
 unix_dl.c:328: warning: assignment discards qualifiers from pointer target type 
@@ -191,14 +193,14 @@ make[1]: *** [unix_dl.lo] Error 1</pre><p>おそらくヘッダファイル <cod
 <code>/usr/local/lib/libdl.dylib</code> を Panther に付随するファイルへのシンボリックリンクに変更します。</p><pre>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h 
 sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div> 
 </a>
-<a name="gcc2"> 
+<? $i18n_section= "gcc2"; ?><a name="gcc2"> 
     
 <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink が <code>gcc2</code> がないと言っていますが、インストールも出来ないようです。</b></p></div> 
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 <code>gcc2</code> は gcc-2.95 のバーチャルパッケージです。
 gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.95 が含まれていました) からインストールして下さい。</p><p><b>注記:</b> gcc2.95 and/or gcc3.1 は gcc3.3 とコンフリクトしません。両方インストールすることもできます。</p></div>
 </a>
-<a name="system-java">
+<? $i18n_section= "system-java"; ?><a name="system-java">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.18: Fink が <code>Failed: Can't resolve dependency "system-java14-dev"</code>
 と言っていますが、そのようなパッケージはありません。
 </b></p></div>
@@ -211,7 +213,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 この問題の場合は、 <code>Java 1.4.2 Developer Tools</code> です。
 </p></div>
 </a>
-<a name="dpkg-split">
+<? $i18n_section= "dpkg-split"; ?><a name="dpkg-split">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.19: 
 何をインストールしようとしても、
 <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>
@@ -223,7 +225,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 参照: <a href="usage-fink.php?phpLang=ja#fink-not-found">この FAQ 項目</a>
 </p></div>
 </a>
-<a name="xml-parser">
+<? $i18n_section= "xml-parser"; ?><a name="xml-parser">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.20: 
 	次のメッセージが出ます:<q>configure: error: XML::Parser perl module is required for intltool</q>。
 	どうしたら良いでしょうか?
@@ -238,7 +240,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 	<code>Perl 5.8.0</code> をインストールしている場合は <code>pm580</code> でも構いません。
 	</p></div>
 </a>
-<a name="master-problems">
+<? $i18n_section= "master-problems"; ?><a name="master-problems">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.21: 
 		パッケージをダウンロードしようとすると、 Fink が変なサイトに行こうとするけれど、 <q>distfiles</q>
 		と書いてあるだけで、しかもそのファイルはそこに存在しません。
@@ -250,7 +252,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 		まだ Master ミラーに反映されていない場合によくおこります。
 	</p><p>これを直すには、 <code>fink configure</code> を実行し、マスターミラーを最後に検索するように設定を変更します。</p></div>
 </a>
-<a name="compile-options">
+<? $i18n_section= "compile-options"; ?><a name="compile-options">
 	<div class="question"><p><b><? echo FINK_Q ; ?>6.22: パッケージをビルドするときに、 Fink に違うオプションを使わせたい。</b></p></div>
 	<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 			まず最初に、バリエーションを作成するようにパッケージメンテナに伝えてみてください。
@@ -260,7 +262,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 			と <a href="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</a> をお読みください。
 		</p><p><b>注記:</b>Fink は、ビルドされたマシンに依存しないよう、全ての公式パッケージにはG5 最適化などのことはされません。このようなことをしたい場合、各自でする必要があります。</p></div>
 </a>
-    <a name="gettext">
+    <? $i18n_section= "gettext"; ?><a name="gettext">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.23: 
         	ソースからビルドするとき、 <code>gettext-dev</code> と <code>libgettext3-dev</code> の間でたらい回しです。
         </b></p></div>
@@ -282,7 +284,7 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 			パッケージを一つずつインストールする必要があるかもしれません。
 		</p><p>この問題の解決は <code>fink-0.2.5</code> で予定されています。</p></div>
     </a>
-    <a name="python-mods">
+    <? $i18n_section= "python-mods"; ?><a name="python-mods">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.24: Python モジュールをビルドする際に、<code>MACOSX_DEPLOYMENT_TARGET </code> の問題が出ます。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 以下のようであれば:</p><pre>running build
 running build_ext
@@ -306,7 +308,7 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
         	<code>python</code> パッケージを更新すれば修正されます。
         </p></div>
     </a>
-<a name="libtool-unrecognized-dynamic">
+<? $i18n_section= "libtool-unrecognized-dynamic"; ?><a name="libtool-unrecognized-dynamic">
   <div class="question"><p><b><? echo FINK_Q ; ?>6.25: I get <q>unrecognized option `-dynamic'</q> errors from <code>libtool</code>.</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>typically means that you've replaced Apple's <code>/usr/bin/libtool</code> with a GNU <code>libtool</code>.  Unfortunately, the two <code>libtools</code> <b>do not</b> do the same thing.</p><p>The only way to solve this is to get a working Apple <code>libtool</code> from somewhere.  It is installed as part of the <code>DeveloperTools.pkg</code> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <code>/Library/Receipts</code> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></div>
 </a>

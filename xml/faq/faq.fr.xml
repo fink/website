@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.77 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.78 2008/05/02 04:41:49 babayoshihiko Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -1242,6 +1242,19 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 <p>Exécutez d'abord la commande <code>fink selfupdate</code> pour vous assurer que vous avez bien les dernières versions des paquets. Puis exécutez la commande <code>fink update gettext-tools</code>. Une ancienne version de <code>gettext-tools</code> peut empêcher la mise à jour de <code>gettext</code>.</p>
 </answer>
 </faqentry>
+  <faqentry name="Leopard-libXrandr">
+    <question translated="no">
+      <p>I can't install <em>gtk+2</em> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</p>
+    </question>
+    <answer translated="no">
+      <p>This problem affects machines with OS 10.5.2 pre-installed.
+      There is currently a bug in Apple's X11 in that a file in it that is used
+    for building references <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code>,
+    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p>
+      <p>The workaround is to run the following command to fix the file:</p>
+    <codeblock>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</codeblock>
+    </answer>
+  </faqentry>
 <faqentry name="all-others">
 <question>
 <p>Des problèmes apparaissent avec un paquet qui n'est pas mentionné ici. Que faire ?</p>

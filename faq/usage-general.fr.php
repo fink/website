@@ -1,20 +1,22 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets">';
 
 
+$i18n_chapter = 'usage-general';
+include_once "../i18n_showform.inc";
 include_once "header.fr.inc";
 ?>
 <h1>Q.F.P. - 8. Problèmes généraux d'utilisation de paquets</h1>
 
 
-<a name="xlocale">
+<? $i18n_section= "xlocale"; ?><a name="xlocale">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.1: De nombreux messages signalant que la locale n'est pas gérée par la bibliothèque C apparaissent (message en anglais : "locale not supported by C library"). Est-ce un problème ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <a href="http://www.finkproject.org/doc/x11/trouble.php#locale">plus amples informations</a> à ce sujet.</p></div>
 </a>
-<a name="passwd">
+<? $i18n_section= "passwd"; ?><a name="passwd">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.2: Un certain nombre d'étranges utilisateurs apparaissent tout d'un coup sur mon système. Ils portent, entre autres, les noms suivants : "mysql", "pgsql" et "games". D'où proviennent-ils ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Vous avez utilisé Fink pour installer un paquet dépendant du paquet passwd. Ce paquet installe un certain nombre d'utilisateurs supplémentaires pour des raisons de sécurité - sur les systèmes Unix, les fichiers et les processus appartiennent aux "propriétaires", ce qui permet aux administrateurs système de moduler les autorisations et la sécurité du système. Les programmes Apache et MySQL, par exemple, doivent avoir un "propriétaire", et il n'est pas raisonnable que le super-utilisateur soit le propriétaire de ces démons. Imaginez ce qu'il arriverait si Apache était compromis et avait tout d'un coup l'autorisation d'écrire dans tous les fichiers du système. Le paquet passwd se charge donc de définir ces utilisateurs supplémentaires pour les paquets Fink qui en ont besoin.</p><p>Il peut être inquiétant de découvrir soudain un certain nombre d'utilisateurs inconnus dans votre panneau de "Préférences système : Utilisateurs" (sur Mac OS X 10.2.x) ou "Préférences système : Comptes" (sur Mac OS X 10.3.x), mais réfléchissez bien avant de les supprimer :</p><ul>
 <li>Tout d'abord, vous avez manifestement choisi d'installer un paquet qui nécessite leur utilisation ; donc leur suppression n'a pas grand sens dans ce contexte.</li>
@@ -23,7 +25,7 @@ include_once "header.fr.inc";
 <li>Si vous décidez de supprimer ces utilisateurs, faites très attention à la façon dont vous procéderez. Si vous utilisez le panneau "Préférences système : Utilisateurs" (sur Mac OS X 10.2.x) ou "Préférences système : Comptes" (sur Mac OS X 10.3.x), tous les fichiers possédés par ces utilisateurs seront assignés à un utilisateur administrateur pris au hasard. Certaines personnes ont rapporté que cela pouvait causer des dégâts dans les autorisations du compte administrateur. C'est un bogue des Préférences système, il a été soumis à Apple. Un moyen plus sûr de supprimer ces utilisateurs est de passer par Gestionnaire NetInfo ou d'utiliser l'outil en ligne de commande <code>niutil</code> dans une fenêtre de Terminal. Lisez la page de manuel de <code>niutil</code> pour de plus amples informations au sujet de NetInfo.</li>
 </ul><p>Fink vous <b>demande</b> la permission d'installer ces utilisateurs supplémentaires sur votre système lors de l'installation du paquet passwd, vous ne devriez donc pas être trop surpris de les découvrir après coup.</p></div>
 </a>
-<a name="compile-myself">
+<? $i18n_section= "compile-myself"; ?><a name="compile-myself">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Comment compiler soi-même en utilisant des logiciels installés par Fink ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Quand on compile soi-même sans passer par Fink, il faut indiquer au compilateur et à l'éditeur de liens où trouver les bibliothèques et les headers installés par Fink. Pour un paquet qui utilise un processus standard configure/make, vous devez définir quelques variables d'environnement :</p><p>Pour les utilisateurs de tcsh, utilisez les commandes suivantes :</p><pre>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
@@ -39,11 +41,11 @@ export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
 export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter aux lignes de compilation "-I/sw/include" pour les headers et "-L/sw/lib" pour les bibliothèques. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=toto. La commande "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés : par exemple <b>toto-1.0-1-dev</b>), si vous utilisez la bibliothèque toto-1.0-1.</p></div>
 </a>
-<a name="apple-x11-applications-menu">
+<? $i18n_section= "apple-x11-applications-menu"; ?><a name="apple-x11-applications-menu">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Il est impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> L'application X11 d'Apple ne garde pas trace des variables d'environnement de Fink, ce qui signifie que son menu Applications n'a pas dans la variable PATH le chemin permettant de trouver les applications Fink. Vous pouvez résoudre ce problème en ajoutant devant le nom d'une application installée via Fink la commande suivante :</p><pre>source /sw/bin/init.sh ;</pre><p>Par exemple, si vous voulez lancer GIMP installé via Fink, choisissez "Personnalisez le menu" dans le menu Applications et saisissez :</p><pre>source /sw/bin/init.sh ; gimp</pre><p>dans le champ "Commande" en regard du nom de menu GIMP.</p><p>Vous pouvez aussi modifier le fichier .xinitrc, situé dans votre répertoire utilisateur, et y ajoutez la commande suivante :</p><pre>source /sw/bin/init.sh</pre><p>après la première ligne.</p></div>
 </a>
-<a name="x-options">
+<? $i18n_section= "x-options"; ?><a name="x-options">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.5: Il y a de nombreuses options pour X11 : X11 d'Apple, XFree86, etc... Laquelle installer ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Toutes ces options sont des variantes de XFree86 - toutes basées sur le code de XFree86, mais il y a de légères différences entre elles. Les options proposées sont différentes sous Panther et sous Jaguar.</p><p>Sous Panther, vous avez le choix entre :</p><ul>
 <li><p>X11 d'Apple (que vous trouverez sur le disque numéro 3). N'oubliez pas d'installer le paquet  X11 SDK (situé sur le disque XCode) si vous voulez compiler des programmes  à partir des sources ou si vous avez l'intention d'installer d'autres paquets Fink reliés à X11.</p></li>
@@ -61,15 +63,15 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>Il est souvent plus simple d'ajoute
 </li>
 </ul><p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <a href="http://www.finkproject.org/doc/x11/index.php">document Utilisation de X11</a>.</p></div>
 </a>
-<a name="no-display">
+<? $i18n_section= "no-display"; ?><a name="no-display">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.6: Au lancement d'une application, un message signale que la fenêtre d'affichage ne peut être ouverte (message en anglais: "cannot open display:"). Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Cette erreur signifie que le système n'est pas connecté à l'affichage X. Assurez-vous que vous avez suivi les étapes suivantes :</p><p>1. Démarrer X (X11 d'Apple, XFree86, ...).</p><p>2. Vérifier que la variable d'environnement DISPLAY est définie correctement. Si vous utilisez les paramètres par défaut pour X, vous pouvez la définir de la façon suivante :</p><pre>setenv DISPLAY :0</pre><p>si vous utilisez <code>tcsh</code>, ou</p><pre>export DISPLAY=:0</pre><p>si vous utilisez <code>bash</code>.</p></div>
 </a>
-<a name="suggest-package">
+<? $i18n_section= "suggest-package"; ?><a name="suggest-package">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.7: Certains programmes ne sont pas disponibles via Fink. Comment faire en sorte qu'ils soient inclus dans Fink ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Déposez une requête dans le <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Traqueur de requêtes de paquet (Package Request Tracker en anglais)</a> accessible sur la page du projet Fink.</p><p>Notez que vous devez avoir un identifiant SourceForge pour ce faire.</p></div>
 </a>
-<a name="virtpackage">
+<? $i18n_section= "virtpackage"; ?><a name="virtpackage">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.8: À quoi correspondent les "paquets virtuels" <code>system-*</code> qui apparaissent de-ci de-là, mais qu'il ne semble pas possible d'installer ou de supprimer soi-même ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Les paquets tel <code>system-perl</code> sont des paquets fantômes. Ils ne contiennent aucun fichier, mais font partie d'un mécanisme qui permet à Fink de savoir quels programmes ont été installés en dehors de Fink.</p><p>À partir de la distribution 10.3, la plupart de ces paquets fantômes ne sont même plus des paquets réels que vous pouvez installer ou supprimer. Ce sont des "Paquets virtuels", c'est-à-dire des structures de données de paquets générées par le programme fink au vu d'une liste préconfigurée de paquets installés manuellement. Pour chaque paquet virtuel, fink vérifie l'existence de certains fichiers à certains emplacements. S'ils les trouvent, il considère que le paquet virtuel correspondant est "installé".</p><p>Vous pouvez exécuter le programme <code>fink-virtual-pkgs</code> (qui fait partie du paquet fink) pour obtenir la liste des choses que fink considère comme installées. En ajoutant l'option <code>--debug</code>, vous obtiendrez la liste des tests que fink effectue.</p><p>Malheureusement, il n'existe pas de mécanisme qui permette à Fink de reconnaître un paquet arbitraire installé hors de fink, l'empêchant ainsi d'installer sa propre version dudit programme. C'est beaucoup trop difficile de tester les options de configuration et de compilation, les chemins, etc... dans le cas général.</p><p>Voici les paquets virtuels les plus importants définis par fink (à partir de la version 0.19.2) :</p><ul>
 <li>system-perl : [paquet virtuel correspondant à perl]

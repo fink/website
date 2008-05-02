@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Часто задаваемые вопросы Fink </title>
     <shorttitle>Ч.З.В.</shorttitle>
-    <cvsid>$Id: faq.ru.xml,v 1.11 2007/07/21 00:06:37 babayoshihiko Exp $</cvsid>
+    <cvsid>$Id: faq.ru.xml,v 1.12 2008/05/02 04:41:49 babayoshihiko Exp $</cvsid>
     <preface>
         <p>Ниже вы найдете список Ч.З.В. о Fink. Как и большинство
             Ч.З.В., некоторые из них реальные, а некоторые
@@ -1878,6 +1878,19 @@ An old version of the <code>gettext-tools</code> package may be
 preventing you from updating <code>gettext</code>.</p>
       </answer>
     </faqentry>
+  <faqentry name="Leopard-libXrandr">
+    <question translated="no">
+      <p>I can't install <em>gtk+2</em> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</p>
+    </question>
+    <answer translated="no">
+      <p>This problem affects machines with OS 10.5.2 pre-installed.
+      There is currently a bug in Apple's X11 in that a file in it that is used
+    for building references <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code>,
+    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p>
+      <p>The workaround is to run the following command to fix the file:</p>
+    <codeblock>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</codeblock>
+    </answer>
+  </faqentry>
     <faqentry name="all-others">
       <question translated="no">
         <p>I'm having issues with a package that isn't listed here.</p>

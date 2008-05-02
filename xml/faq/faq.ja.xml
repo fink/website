@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.41 2007/02/23 22:04:54 rangerrick Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.42 2008/05/02 04:41:49 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -1664,6 +1664,23 @@ fink install libiconv</codeblock>
         </p>
       </answer>
     </faqentry>
+  <faqentry name="Leopard-libXrandr">
+    <question>
+      <p>
+      <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> がないため <em>gtk+2</em> がインストールできません。</p>
+    </question>
+    <answer>
+      <p>
+    この問題は、10.5.2.がプリインストールされているマシンに影響します。
+    現在のところ、 Apple X11 に、
+    <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> を参照しているのに、
+    実体が <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code> であるという
+    バグがあります。
+    </p>
+      <p>解決するには、以下のコマンドを実行してファイルを修正してください:</p>
+    <codeblock>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</codeblock>
+    </answer>
+  </faqentry>
     <faqentry name="all-others">
       <question>
         <p>ここに載っていないパッケージで問題があります。</p>
@@ -1671,7 +1688,7 @@ fink install libiconv</codeblock>
       <answer>
         <p>パッケージの問題は変わりやすいので、Fink wiki に情報を載せることにいたしました。
         <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</link> をご確認ください。
-        (訳注: wiki の性質上、wiki は英語版のみであり、翻訳の予定はありません。)</p>
+        (訳注: wiki の性質上、wiki は英語版のみであり、翻訳の予定はありません。なお、一部日本語での情報もあります)</p>
       </answer>
     </faqentry>
 </chapter>

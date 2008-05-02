@@ -1,10 +1,13 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
+$doc = 'index';
+$i18n_chapter = 'index';
+include_once "../i18n_showform.inc";
 include_once "header.ja.inc";
 ?>
 <h1>The Fink F.A.Q.</h1>
@@ -65,7 +68,8 @@ gcc 3.3 compiler is out of date." と言われました。どうしたらいい�
 	</a></li><li><a href="comp-general.php?phpLang=ja#compile-options">6.22 パッケージをビルドするときに、 Fink に違うオプションを使わせたい。</a></li><li><a href="comp-general.php?phpLang=ja#gettext">6.23 
         	ソースからビルドするとき、 <code>gettext-dev</code> と <code>libgettext3-dev</code> の間でたらい回しです。
         </a></li><li><a href="comp-general.php?phpLang=ja#python-mods">6.24 Python モジュールをビルドする際に、<code>MACOSX_DEPLOYMENT_TARGET </code> の問題が出ます。</a></li><li><a href="comp-general.php?phpLang=ja#libtool-unrecognized-dynamic">6.25 I get <q>unrecognized option `-dynamic'</q> errors from <code>libtool</code>.</a></li></ul></li><li><a href="comp-packages.php?phpLang=ja"><b>7 コンパイルの問題 - 特定のバージョン</b></a><ul><li><a href="comp-packages.php?phpLang=ja#libgtop">7.1 <code>sed</code> を使うパッケージビルドが失敗します。</a></li><li><a href="comp-packages.php?phpLang=ja#cant-install-xfree">7.2 Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</a></li><li><a href="comp-packages.php?phpLang=ja#change-thread-nothread">7.3 non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</a></li><li><a href="comp-packages.php?phpLang=ja#cctools">7.4 KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="comp-packages.php?phpLang=ja#libiconv-gettext">7.5 <code>libiconv</code> が更新できません。</a></li><li><a href="comp-packages.php?phpLang=ja#cplusplus-filt">7.6 <code>g77</code> がインストールできません。<code>c++filt</code> がないからです。 
-        これはどこにありますか?</a></li><li><a href="comp-packages.php?phpLang=ja#gettext-tools">7.7 Fink が、 <code>gettext</code> の依存性に矛盾があるとだけ表示し、更新してくれません。</a></li><li><a href="comp-packages.php?phpLang=ja#all-others">7.8 ここに載っていないパッケージで問題があります。</a></li></ul></li><li><a href="usage-general.php?phpLang=ja"><b>8 パッケージ使用上の問題 - 一般</b></a><ul><li><a href="usage-general.php?phpLang=ja#xlocale">8.1 このようなメッセージが大量に出ます。
+        これはどこにありますか?</a></li><li><a href="comp-packages.php?phpLang=ja#gettext-tools">7.7 Fink が、 <code>gettext</code> の依存性に矛盾があるとだけ表示し、更新してくれません。</a></li><li><a href="comp-packages.php?phpLang=ja#Leopard-libXrandr">7.8 
+      <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> がないため <b>gtk+2</b> がインストールできません。</a></li><li><a href="comp-packages.php?phpLang=ja#all-others">7.9 ここに載っていないパッケージで問題があります。</a></li></ul></li><li><a href="usage-general.php?phpLang=ja"><b>8 パッケージ使用上の問題 - 一般</b></a><ul><li><a href="usage-general.php?phpLang=ja#xlocale">8.1 このようなメッセージが大量に出ます。
 "locale not supported by C library"
 これはまずいことですか?</a></li><li><a href="usage-general.php?phpLang=ja#passwd">8.2 いきなり変なユーザーがシステムに現れました。
 ユーザー名は、 "mysql", "pgsql", "games" などです。
@@ -89,7 +93,7 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
         	Tiger (OS 10.4) にアップデート後、GTK アプリを使うと必ず
         	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
         </a></li><li><a href="usage-packages.php?phpLang=ja#yelp">9.15 どの GNOME アプリケーションでも、ヘルプ機能が使えません。</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ja.xml,v 1.41 2007/02/23 22:04:54 rangerrick Exp $-->
+<!--Generated from $Fink: faq.ja.xml,v 1.42 2008/05/02 04:41:49 babayoshihiko Exp $-->
 <? include_once "../footer.inc"; ?>
 
 
