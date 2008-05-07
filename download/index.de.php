@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/13 19:47:08 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2008/05/07 00:45:36 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -19,7 +19,7 @@ Fortgeschrittene Nutzer schauen sich am besten den <a href="overview.php">Überb
 <p>
 Sie möchten Fink zum ersten mal installieren? Diese Quick-Start-Anleitung hilft Ihnen, einen schnellen Einstieg zu finden.
 </p>
-
+<p> <strong>Wichtige Information f"ur Leopardbenutzer:</strong> Zurzeit existiert noch keine Binaryversion f"ur Leopard. Bitte benutzt die Quelldateien!</p>
 <ol>
 <li><p>
 Laden Sie sich das Installations-Disc-Image herunter:<br>
