@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 文件系统布局";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/23 05:14:07';
+$cvs_date = 'Date: 2008/05/26 01:47:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="compilers.php?phpLang=zh" title="Compilers"><link rel="prev" href="policy.php?phpLang=zh" title="打包相关规则">';
 
 
@@ -125,6 +125,10 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 这个目录用于保存和构建源代码。
 软件包不应该在这个目录里面安装任何东西。
 </p>
+</td></tr><tr valign="top"><td><code>/sw/Applications</code></td><td>
+<p>This directory is for storing OS X-style applications which are launched by double-clicking rather than from the command line.</p>
+</td></tr><tr valign="top"><td><code>/sw/Library/Frameworks</code></td><td>
+<p>This directory is for storing OS X-style frameworks, sometimes used by OS X-style applications.</p>
 </td></tr></table>
 
 

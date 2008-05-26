@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Organisation des fichiers";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/23 05:14:06';
+$cvs_date = 'Date: 2008/05/26 01:47:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="compilers.php?phpLang=fr" title="Compilateurs"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
 
 
@@ -46,6 +46,10 @@ include_once "header.fr.inc";
 <p>Ce répertoire contient les fichiers de configuration. Quand un paquet possède plus d'un ou deux fichiers de configuration, un sous-répertoire doit être créé. Le nom du sous-répertoire doit être celui du paquet ou d'un de ses programmes, de façon à l'identifier facilement.</p>
 </td></tr><tr valign="top"><td><code>/sw/src</code></td><td>
 <p>Ce répertoire sert à stocker et compiler le code source. Un paquet ne doit rien installer dans ce répertoire.</p>
+</td></tr><tr valign="top"><td><code>/sw/Applications</code></td><td>
+<p>This directory is for storing OS X-style applications which are launched by double-clicking rather than from the command line.</p>
+</td></tr><tr valign="top"><td><code>/sw/Library/Frameworks</code></td><td>
+<p>This directory is for storing OS X-style frameworks, sometimes used by OS X-style applications.</p>
 </td></tr></table>
 
 <h2><a name="avoid">4.3 À éviter</a></h2>

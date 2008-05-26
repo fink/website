@@ -1,7 +1,7 @@
 <?
 $title = "打包";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/23 05:14:07';
+$cvs_date = 'Date: 2008/05/26 01:47:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="intro.php?phpLang=zh" title="介绍">';
 
 
@@ -23,7 +23,7 @@ include_once "header.zh.inc";
 </p>
 <h2><? echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="intro.php?phpLang=zh"><b>1 介绍</b></a><ul><li><a href="intro.php?phpLang=zh#def1">1.1 什么是软件包？</a></li><li><a href="intro.php?phpLang=zh#ident">1.2 识别一个软件包</a></li></ul></li><li><a href="format.php?phpLang=zh"><b>2 软件包描述文件</b></a><ul><li><a href="format.php?phpLang=zh#trees">2.1 文件树结构</a></li><li><a href="format.php?phpLang=zh#format">2.2 文件格式</a></li><li><a href="format.php?phpLang=zh#percent">2.3 百分号展开</a></li></ul></li><li><a href="policy.php?phpLang=zh"><b>3 打包相关规则</b></a><ul><li><a href="policy.php?phpLang=zh#licenses">3.1 软件包授权协议</a></li><li><a href="policy.php?phpLang=zh#openssl">3.2 The GPL and OpenSSL</a></li><li><a href="policy.php?phpLang=zh#prefix">3.3 避免干扰基本系统</a></li><li><a href="policy.php?phpLang=zh#sharedlibs">3.4 共享函数库</a></li><li><a href="policy.php?phpLang=zh#perlmods">3.5 Perl 模块</a></li><li><a href="policy.php?phpLang=zh#emacs">3.6 Emacs 规则</a></li></ul></li><li><a href="fslayout.php?phpLang=zh"><b>4 文件系统布局</b></a><ul><li><a href="fslayout.php?phpLang=zh#fhs">4.1 文件系统层次结构标准</a></li><li><a href="fslayout.php?phpLang=zh#dirs">4.2 目录</a></li><li><a href="fslayout.php?phpLang=zh#avoid">4.3 应该避免的事情</a></li></ul></li><li><a href="compilers.php?phpLang=zh"><b>5 Compilers</b></a><ul><li><a href="compilers.php?phpLang=zh#versions">5.1 Compiler Versions</a></li><li><a href="compilers.php?phpLang=zh#abi">5.2 The g++ ABI</a></li></ul></li><li><a href="reference.php?phpLang=zh"><b>6 操作手册</b></a><ul><li><a href="reference.php?phpLang=zh#build">6.1 构建过程</a></li><li><a href="reference.php?phpLang=zh#fields">6.2 字段</a></li><li><a href="reference.php?phpLang=zh#splitoffs">6.3 剥离分支(SplitOffs)</a></li><li><a href="reference.php?phpLang=zh#scripts">6.4 脚本</a></li><li><a href="reference.php?phpLang=zh#patches">6.5 补丁</a></li><li><a href="reference.php?phpLang=zh#profile.d">6.6 Profile.d 脚本</a></li></ul></li></ul>
-<!--Generated from $Fink: packaging.zh.xml,v 1.31 2007/05/23 05:14:07 babayoshihiko Exp $-->
+<!--Generated from $Fink: packaging.zh.xml,v 1.32 2008/05/26 01:47:14 babayoshihiko Exp $-->
 <? include_once "../../footer.inc"; ?>
 
 

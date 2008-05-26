@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ファイルシステム";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/23 05:14:07';
+$cvs_date = 'Date: 2008/05/26 01:47:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="compilers.php?phpLang=ja" title="コンパイラ"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
 
 
@@ -132,7 +132,7 @@ i386 アーチテクチャーでは <code>/sw/lib/x86_64</code> が用いられ�
 						<code>/sw/var</code>
 					</td><td>
 						<p>
-							ディレクトリ <code>var</code> には変化し得るデータを保存する．
+							ディレクトリ <code>var</code> には変化するデータを保存する．
 							(スプールディレクトリ，ロックファイル，状態のデータベース，ゲームのハイスコアやログファイルなど)
 						</p>
 					</td></tr><tr valign="top"><td>
@@ -150,7 +150,11 @@ i386 アーチテクチャーでは <code>/sw/lib/x86_64</code> が用いられ�
 							ソースコードを保存，ビルドするディレクトリ．
 							パッケージはここに何もインストールしてはいけない．
 						</p>
-					</td></tr></table>
+					</td></tr><tr valign="top"><td><code>/sw/Applications</code></td><td>
+<p>このディレクトリには，コマンドラインから実行するのではなく，ダブルクリックで実行する OS X 型のアプリケーションを保存する．</p>
+</td></tr><tr valign="top"><td><code>/sw/Library/Frameworks</code></td><td>
+<p>このディレクトリには，OS X 型のアプリケーションが使用する，OS X 型のフレームワークを保存する．</p>
+</td></tr></table>
 		
 		<h2><a name="avoid">4.3 避けるべきこと</a></h2>
 			
