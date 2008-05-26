@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.31 2007/05/23 05:14:07 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.32 2008/05/26 01:47:14 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -1075,7 +1075,16 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 软件包不应该在这个目录里面安装任何东西。
 </p>
 </itemd></item>
-
+<!-- start translation -->
+<item><itemt><filename>/sw/Applications</filename></itemt>
+<itemd>
+<p>This directory is for storing OS X-style applications which are launched by double-clicking rather than from the command line.</p>
+</itemd></item>
+<item><itemt><filename>/sw/Library/Frameworks</filename></itemt>
+<itemd>
+<p>This directory is for storing OS X-style frameworks, sometimes used by OS X-style applications.</p>
+</itemd></item>
+<!-- end translation -->
 </itemtable>
 </section>
 

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.73 2007/05/23 05:14:06 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.74 2008/05/26 01:47:14 babayoshihiko Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://pdb.finkproject.org/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -510,6 +510,16 @@ InstallScript: &lt;&lt;
 <itemd>
 <p>Ce répertoire sert à stocker et compiler le code source. Un paquet ne doit rien installer dans ce répertoire.</p>
 </itemd></item>
+<!-- start translation -->
+<item><itemt><filename>/sw/Applications</filename></itemt>
+<itemd>
+<p>This directory is for storing OS X-style applications which are launched by double-clicking rather than from the command line.</p>
+</itemd></item>
+<item><itemt><filename>/sw/Library/Frameworks</filename></itemt>
+<itemd>
+<p>This directory is for storing OS X-style frameworks, sometimes used by OS X-style applications.</p>
+</itemd></item>
+<!-- end translation -->
 </itemtable>
 </section>
 <section name="avoid"><title>À éviter</title>

@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.43 2007/05/23 05:14:07 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.44 2008/05/26 01:47:14 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1304,7 +1304,7 @@ i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用�
 					</itemt>
 					<itemd>
 						<p>
-							ディレクトリ <filename>var</filename> には変化し得るデータを保存する．
+							ディレクトリ <filename>var</filename> には変化するデータを保存する．
 							(スプールディレクトリ，ロックファイル，状態のデータベース，ゲームのハイスコアやログファイルなど)
 						</p>
 					</itemd>
@@ -1332,6 +1332,14 @@ i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用�
 						</p>
 					</itemd>
 				</item>
+<item><itemt><filename>/sw/Applications</filename></itemt>
+<itemd>
+<p>このディレクトリには，コマンドラインから実行するのではなく，ダブルクリックで実行する OS X 型のアプリケーションを保存する．</p>
+</itemd></item>
+<item><itemt><filename>/sw/Library/Frameworks</filename></itemt>
+<itemd>
+<p>このディレクトリには，OS X 型のアプリケーションが使用する，OS X 型のフレームワークを保存する．</p>
+</itemd></item>
 			</itemtable>
 		</section>
 		<section name="avoid">
