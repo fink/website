@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.98 2008/05/01 19:05:31 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.99 2008/06/02 18:45:03 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -601,7 +601,8 @@ for existence before calling them and the like).
 Fink has a new policy about shared libraries, effective in February 2002.
 This section of the documentation discusses version 4
 of the policy, which coincides with the release of Fink's 0.5.0 distribution
-(as well as some updates from December, 2006 to handle 64bit libraries).
+(as well as some updates from December, 2006 to handle 64bit libraries
+and from January, 2008 to handle private shared libraries).
 We begin with a quick summary, and then discuss things in more detail.
 </p><p>
 Any package which builds shared libraries and is either (1) being put into
@@ -612,7 +613,7 @@ Any package which builds shared libraries and is either (1) being put into
 64bit libraries), that 
        the install_name of each library and
        its compatibility and current version numbers are correct </li>
-<li>   put the shared libraries in a separate package (except for the
+<li>   put the public shared libraries in a separate package (except for the
        links from libfoo.dylib to the install_name), and include
        the <code>Shlibs</code> field in that package</li>
 <li>   put the headers and the final links from libfoo.dylib into a package
@@ -674,7 +675,7 @@ whenever possible.  (Package maintainers
 are also free to build static libraries as well, if appropriate
 for their packages; or they may submit packages containing only static
 libraries if they wish.)
-Whenever shared libraries are being built,
+Whenever shared libraries are being built that are expected to be used by other packages,
 <em>two</em> closely related fink packages should be made, named foo 
 and foo-shlibs.  The shared libraries go in foo-shlibs, and the header
 files go in foo.  These two packages
@@ -684,8 +685,10 @@ the <code>SplitOff</code> field, as described below.
 to make more than two packages from the source, and this can be done
 using <code>SplitOff2</code>, <code>SplitOff3</code>, etc.)
 </p><p>
-Each software package for which shared libraries can be built must have
-a <em>major version number</em> N.  The major version number is only supposed
+Each software package for which public shared libraries are built must have
+a <em>major version number</em> N, which is included in the shared
+library's filename (for example, <filename>libbar.N.dylib</filename>).
+The major version number is only supposed
 to change when a backwards-incompatible change in the library's API has been
 made.  Fink uses the following naming convention: if the upstream name
 of the package is bar, then the fink packages are called barN and 
@@ -864,13 +867,27 @@ BuildDependsOnly to be either true or false.  (It is possible that in
 future versions of fink, this warning will be expanded to cover the case of
 a .deb with header files and a static library as well.)
 </p>
+
+<p>
+  The goal of the Shared Library Policy is to allow assure
+  compatibility between libraries supplied by one package and
+  libraries or programs that use them in a different package. Some
+  packages may have shared libraries that are not designed to be used
+  by other packages. Common situations include a suite of programs
+  that come with a back-end library of utility functions or a program
+  that comes with plugins to handle various features. Because these
+  libraries are "private" to the package that has them, they do not
+  require being packages with separate -shlibs
+  or <code>BuildDependsOnly</code> SplitOffs.
+</p>
 <p><em>The Shlibs field</em>
 </p><p>
 In addition to putting the shared libraries in the correct package, as of
 version 4 of this policy, you must also declare all of the shared libraries
 using the <code>Shlibs</code> field.  This field has one line for each
 shared library, which contains the <code>-install_name</code> of the
-library, the <code>-compatibility_version</code>, versioned 
+library. If the library is public, its <code>Shlibs</code> entry also
+lists the <code>-compatibility_version</code>, versioned
 dependency information specifying the Fink package which provides
 this library at this compatibility version, and the library
 architecture.  (The library architecture may either be "32", "64", or
@@ -961,7 +978,7 @@ with the new policy, please discuss it on the fink-devel mailing list.
 </p><p>
 <em>Packages containing both binary files and libraries:</em>
 </p><p>
-When an upstream package contains both binary files and libraries, some
+When an upstream package contains both binary files and public libraries, some
 care must be exercised in constructing fink packages.  In some cases,
 the only binary files will be things like <code>foo-config</code> which
 are presumably only used at build time and never at run time.  In these
@@ -994,6 +1011,25 @@ This will force the installation of foo-bin on most users' systems, until
 such time as the other package maintainers have upgraded their packages
 which depend on <code>foo</code>.
 </p>
+<p>
+  As of fink-0.28.0 (released in January 2008), the format of
+  the <code>Shlibs</code> entry for a "private" shared library has
+  changed (see earlier discussion of the difference between a public
+  and a private shared library). Note that the Shared Library Policy
+  has always required all shared libraries to be listed; the change
+  here is only in the syntax of the <code>Shlibs</code> field. Because
+  this type of shared library is not designed to be used by external
+  packages, there is no need to document its compatilibity or other
+  versioning. Instead, an exclamation-mark is used.  For example,
+  if <filename>libquux.3.dylib</filename> is
+  the <code>install_name</code> of a private shared library, it would
+  be listed as follows:
+</p>
+<codeblock>
+  Shlibs: &lt;&lt;
+    !%p/lib/libquux.3.dylib
+  &lt;&lt;
+</codeblock>
 
 </section>
 
@@ -2930,9 +2966,11 @@ commands to the InstallScript.
 <em>Introduced in fink 0.11.0.</em>
 This field declares the shared libraries which are installed in the
 package.  There is one line for each
-shared library, which contains three or four items separated by whitespace:
-the <code>-install_name</code> of the
-library, the <code>-compatibility_version</code>, versioned 
+shared library, which contains the <code>-install_name</code> of the
+library and information about its binary compatibility. Shared
+libraries that are "public" (i.e., provided for use by other packages)
+have, separated by whitespace after the filename,
+the <code>-compatibility_version</code>, versioned package
 dependency information specifying the Fink package which provides
 this library at this compatibility version, and the
 library architecture.  (The library architecture may either be "32", "64", or
@@ -2947,6 +2985,11 @@ from the maintainer that a library with this name and a
 <code>-compatibility_version</code>
 of at least this number will always be found in later versions of this
 Fink package.
+Shared libraries that are "private" are denoted by an exclamation mark
+preceeding the filename, and no compatilibity or versioning
+information is given. See the <xref chapter="policy"
+section="sharedlibs">Shared Library Policy</xref> for more
+information.
 </p></itemd></item>
 
 <item><itemt>RuntimeVars</itemt>
