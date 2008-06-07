@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.100 2008/06/05 03:57:57 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.101 2008/06/07 15:59:52 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -624,12 +624,12 @@ Any package which builds shared libraries should treat its shared
 </ul>
 <p>Note that a package may also install private shared libraries, which
 are not intended to be linked from any other package.  In this case, the
-libraries need to go into a separate package, but a <code>Shlibs</code>
+libraries need not go into a separate package, but a <code>Shlibs</code>
 field must still be part of the package containing shared libraries.  Also,
-maintainers should be careful not to store a final link from libfoo.dylib
+maintainers should try to avoid storing a final link from libfoo.dylib
 in the main library directory <filename>%i/lib</filename> 
-(or its 64-bit equivalent), to avoid
-having other programs accidentally link to this library.
+(or its 64-bit equivalent), to prevent
+other programs from accidentally linking to this library.
 </p>
 <p>
   A maintainer who has reasons to deviate from this policy and not split the
@@ -736,21 +736,21 @@ could be called barN-bin.  Other packages are allowed to depend on
 barN-bin as well as barN-shlibs.
 </p><p>
 When building shared libraries under major version N, it is important that
-the "install_name" of the library be <filename>%p/lib/bar.N.dylib</filename>.  
+the "install_name" of the library be <filename>%p/lib/libbar.N.dylib</filename>.  
 (You can
 find the install_name by running <code>otool -L</code> on your library,
 or <code>otool64 -L</code> for 64bit libraries.)  The
 actual library file may be installed at another location, such as
 </p>
 <codeblock>
-  %i/lib/bar.N.x.y.dylib
+  %i/lib/libbar.N.x.y.dylib
 </codeblock>
 <p>
 and your packages should create symbolic links
 </p>
 <codeblock>
-  %i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
-  %i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
+  %i/lib/libbar.N.dylib -> %p/lib/libbar.N.x.y.dylib
+  %i/lib/libbar.dylib -> %p/lib/libbar.N.x.y.dylib
 </codeblock>
 <p>from the install_name path and from the linking path to the actual
 library.  (The first will not be needed if the library is in fact
@@ -760,7 +760,7 @@ installed at the install_name path, which is becoming more common.)
 If the static library is also built, then it will be installed at
 </p>
 <codeblock>
-  %i/lib/bar.a
+  %i/lib/libbar.a
 </codeblock>
 <p>
 If the package uses libtool, these things are usually handled automatically,
@@ -775,8 +775,8 @@ Files are then divided between the two packages as follows
 <ul>
 <li>  in package barN-shlibs:
 <codeblock>
-  %i/lib/bar.N.x.y.dylib
-  %i/lib/bar.N.dylib -> %p/lib/bar.N.x.y.dylib
+  %i/lib/libbar.N.x.y.dylib
+  %i/lib/libbar.N.dylib -> %p/lib/libbar.N.x.y.dylib
   %i/lib/bar/N/*
   %i/share/bar/N/*
   %i/share/doc/barN-shlibs/*
@@ -784,8 +784,8 @@ Files are then divided between the two packages as follows
 <li>  in package barN:
 <codeblock>
   %i/include/*
-  %i/lib/bar.dylib -> %p/lib/bar.N.x.y.dylib
-  %i/lib/bar.a
+  %i/lib/libbar.dylib -> %p/lib/libbar.N.x.y.dylib
+  %i/lib/libbar.a
   %i/share/doc/barN/*
   other files, if needed
 </codeblock></li></ul>
@@ -808,7 +808,7 @@ BuildDependsOnly: True
 DocFiles: COPYING
 SplitOff: &lt;&lt;
   Package: barN-shlibs
-  Files: lib/bar.N.x.y.dylib lib/bar.N.dylib lib/bar/N
+  Files: lib/libbar.N.x.y.dylib lib/libbar.N.dylib lib/bar/N
   DocFiles: COPYING
 &lt;&lt;
 </codeblock>
@@ -862,8 +862,7 @@ the package should declare
 </p><p>
 The BuildDependsOnly field should only be mentioned in the package's .info
 file if the package contains header files, installed into 
-<filename>%i/include</filename>, and need not be declared if the header
-files are installed into another, private, location.
+<filename>%i/include</filename> (or subdirectories thereof).
 </p><p>
 As of fink 0.20.5, "fink validate" will issue a warning for any .deb
 which contains header files and at least one dylib, and does not declare
@@ -904,11 +903,11 @@ this library (with this compatibility version) available.  For example,
 a declaration</p>
 <codeblock>
   Shlibs: &lt;&lt;
-    %p/lib/bar.1.dylib 2.1.0 bar1 (>= 1.1-2) 32
+    %p/lib/libbar.1.dylib 2.1.0 bar1 (>= 1.1-2) 32
   &lt;&lt;
 </codeblock>
 <p>indicates that a (32bit)
-library with <code>-install_name</code> %p/lib/bar.1.dylib
+library with <code>-install_name</code> %p/lib/libbar.1.dylib
 and <code>-compatibility_version</code> 2.1.0 has been installed since
 version 1.1-2 of the <em>bar1</em> package.  In addition, this declaration
 amounts to  a promise
@@ -934,7 +933,7 @@ entry for a private library uses a different syntax:
 </p>
 <codeblock>
   Shlibs: &lt;&lt;
-    !%p/lib/%N/bar.1.dylib
+    !%p/lib/%N/libbar.1.dylib
   &lt;&lt;
 </codeblock>
 <p>The leading exclamation point indicates that this is a private library,
