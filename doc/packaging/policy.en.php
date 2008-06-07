@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2007/06/21 14:31:26';
+$cvs_date = 'Date: 2008/06/07 15:59:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -155,21 +155,23 @@ for existence before calling them and the like).
 
 <h2><a name="sharedlibs">3.4 Shared Libraries</a></h2>
 <p>
-Fink has a new policy about shared libraries, effective in February 2002.
+Fink's policy about shared libraries became effective in February 2002.
 This section of the documentation discusses version 4
-of the policy, which coincides with the release of Fink's 0.5.0 distribution
-(as well as some updates from December, 2006 to handle 64bit libraries).
+of the policy (which coincides with the release of Fink's 0.5.0 distribution),
+as modified in December, 2006 to handle 64bit libraries
+and from January, 2008 to handle private shared libraries. (In addition,
+the discussion was updated in June, 2008 to eliminate obsolete references to a
+transitional period for implementing the shared libraries policy.)
 We begin with a quick summary, and then discuss things in more detail.
 </p><p>
-Any package which builds shared libraries and is either (1) being put into
-  the stable tree, or (2) a new package in Fink, should treat its shared
+Any package which builds shared libraries should treat its shared
   libraries according to Fink's policy.  This means:</p>
 <ul>
 <li>   verify, using <code>otool -L</code> (or <code>otool64 -L</code> for
 64bit libraries), that 
        the install_name of each library and
        its compatibility and current version numbers are correct </li>
-<li>   put the shared libraries in a separate package (except for the
+<li>   put the public shared libraries in a separate package (except for the
        links from libfoo.dylib to the install_name), and include
        the <code>Shlibs</code> field in that package</li>
 <li>   put the headers and the final links from libfoo.dylib into a package
@@ -177,6 +179,15 @@ Any package which builds shared libraries and is either (1) being put into
         to have
        no other package depend on this one.</li>
 </ul>
+<p>Note that a package may also install private shared libraries, which
+are not intended to be linked from any other package.  In this case, the
+libraries need not go into a separate package, but a <code>Shlibs</code>
+field must still be part of the package containing shared libraries.  Also,
+maintainers should try to avoid storing a final link from libfoo.dylib
+in the main library directory <code>%i/lib</code> 
+(or its 64-bit equivalent), to prevent
+other programs from accidentally linking to this library.
+</p>
 <p>
   A maintainer who has reasons to deviate from this policy and not split the
   package should explain the reasons in the DescPackaging field.
@@ -193,22 +204,9 @@ use the layout:
 <p>while for option 2, use the layout:</p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><code>foo-dev</code></td><td><p>Headers</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Binaries, etc.</p></td></tr></table>
 
-<p>
-With option 2 it is harder to upgrade an existing package:  at the same
-time as you upgrade, 
-you need to add <code>BuildDepends: foo-dev</code> to every
-package which says <code>Depends: foo</code>.
-One other upgrade issue to keep in mind: a package which indirectly depends
-on your package (through another package as an intermediary) may need
-to have <code>BuildDepends: foo</code> or <code>BuildDepends: foo-dev</code>
-added to it to ensure a successful upgrade.  It is your responsibility
-to make sure that these <code>BuildDepends</code> entries are added.
-</p>
 <p><b>The policy in detail</b></p>
 <p>
-We now discuss things in more detail, first discussing the policy as 
-applied to newly ported software, and 
-then turning to the question of upgrading existing fink packages.  For 
+We now discuss things in more detail; for
 examples of the policy in action, see the  libpng, libjpeg  and 
 libtiff packages.
 </p><p>
@@ -217,7 +215,7 @@ whenever possible.  (Package maintainers
 are also free to build static libraries as well, if appropriate
 for their packages; or they may submit packages containing only static
 libraries if they wish.)
-Whenever shared libraries are being built,
+Whenever shared libraries are being built that are expected to be used by other packages,
 <b>two</b> closely related fink packages should be made, named foo 
 and foo-shlibs.  The shared libraries go in foo-shlibs, and the header
 files go in foo.  These two packages
@@ -227,8 +225,10 @@ the <code>SplitOff</code> field, as described below.
 to make more than two packages from the source, and this can be done
 using <code>SplitOff2</code>, <code>SplitOff3</code>, etc.)
 </p><p>
-Each software package for which shared libraries can be built must have
-a <b>major version number</b> N.  The major version number is only supposed
+Each software package for which public shared libraries are built must have
+a <b>major version number</b> N, which is included in the shared
+library's filename (for example, <code>libbar.N.dylib</code>).
+The major version number is only supposed
 to change when a backwards-incompatible change in the library's API has been
 made.  Fink uses the following naming convention: if the upstream name
 of the package is bar, then the fink packages are called barN and 
@@ -260,9 +260,10 @@ use the dependencies
   BuildDepends: barN
 </pre>
 <p>
-Once this system is fully in place, it will not be permitted for 
-another package to depend on barN itself.  (For backward compatibility,
-such dependencies are allowed for pre-existing packages.)  This is
+It is not be permitted for 
+another package to depend on barN itself.  (Although there may still be
+a few such dependencies involving packages which were in place prior to 
+February, 2002.)  This is
 signaled to other developers by a boolean field
 </p>
 <pre>
@@ -278,27 +279,31 @@ could be called barN-bin.  Other packages are allowed to depend on
 barN-bin as well as barN-shlibs.
 </p><p>
 When building shared libraries under major version N, it is important that
-the "install_name" of the library be <code>%p/lib/bar.N.dylib</code>.  
+the "install_name" of the library be <code>%p/lib/libbar.N.dylib</code>.  
 (You can
 find the install_name by running <code>otool -L</code> on your library,
 or <code>otool64 -L</code> for 64bit libraries.)  The
-actual library file should be installed at
+actual library file may be installed at another location, such as
 </p>
 <pre>
-  %i/lib/bar.N.x.y.dylib
+  %i/lib/libbar.N.x.y.dylib
 </pre>
 <p>
 and your packages should create symbolic links
 </p>
 <pre>
-  %i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
-  %i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
+  %i/lib/libbar.N.dylib -&gt; %p/lib/libbar.N.x.y.dylib
+  %i/lib/libbar.dylib -&gt; %p/lib/libbar.N.x.y.dylib
 </pre>
+<p>from the install_name path and from the linking path to the actual
+library.  (The first will not be needed if the library is in fact
+installed at the install_name path, which is becoming more common.)
+</p>
 <p>
 If the static library is also built, then it will be installed at
 </p>
 <pre>
-  %i/lib/bar.a
+  %i/lib/libbar.a
 </pre>
 <p>
 If the package uses libtool, these things are usually handled automatically,
@@ -313,8 +318,8 @@ Files are then divided between the two packages as follows
 <ul>
 <li>  in package barN-shlibs:
 <pre>
-  %i/lib/bar.N.x.y.dylib
-  %i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
+  %i/lib/libbar.N.x.y.dylib
+  %i/lib/libbar.N.dylib -&gt; %p/lib/libbar.N.x.y.dylib
   %i/lib/bar/N/*
   %i/share/bar/N/*
   %i/share/doc/barN-shlibs/*
@@ -322,8 +327,8 @@ Files are then divided between the two packages as follows
 <li>  in package barN:
 <pre>
   %i/include/*
-  %i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
-  %i/lib/bar.a
+  %i/lib/libbar.dylib -&gt; %p/lib/libbar.N.x.y.dylib
+  %i/lib/libbar.a
   %i/share/doc/barN/*
   other files, if needed
 </pre></li></ul>
@@ -346,7 +351,7 @@ BuildDependsOnly: True
 DocFiles: COPYING
 SplitOff: &lt;&lt;
   Package: barN-shlibs
-  Files: lib/bar.N.x.y.dylib lib/bar.N.dylib lib/bar/N
+  Files: lib/libbar.N.x.y.dylib lib/libbar.N.dylib lib/bar/N
   DocFiles: COPYING
 &lt;&lt;
 </pre>
@@ -399,7 +404,8 @@ the package should declare
 <p>and the reason must be given in the DescPackaging field.
 </p><p>
 The BuildDependsOnly field should only be mentioned in the package's .info
-file if the package contains header files, installed into /sw/include.
+file if the package contains header files, installed into 
+<code>%i/include</code> (or subdirectories thereof).
 </p><p>
 As of fink 0.20.5, "fink validate" will issue a warning for any .deb
 which contains header files and at least one dylib, and does not declare
@@ -407,13 +413,27 @@ BuildDependsOnly to be either true or false.  (It is possible that in
 future versions of fink, this warning will be expanded to cover the case of
 a .deb with header files and a static library as well.)
 </p>
+
+<p>
+  The goal of the Shared Library Policy is to allow assure
+  compatibility between libraries supplied by one package and
+  libraries or programs that use them in a different package. Some
+  packages may have shared libraries that are not designed to be used
+  by other packages. Common situations include a suite of programs
+  that come with a back-end library of utility functions or a program
+  that comes with plugins to handle various features. Because these
+  libraries are "private" to the package that has them, they do not
+  require being packaged with separate -shlibs
+  or <code>BuildDependsOnly</code> SplitOffs.
+</p>
 <p><b>The Shlibs field</b>
 </p><p>
 In addition to putting the shared libraries in the correct package, as of
 version 4 of this policy, you must also declare all of the shared libraries
 using the <code>Shlibs</code> field.  This field has one line for each
 shared library, which contains the <code>-install_name</code> of the
-library, the <code>-compatibility_version</code>, versioned 
+library. If the library is public, its <code>Shlibs</code> entry also
+lists the <code>-compatibility_version</code>, versioned
 dependency information specifying the Fink package which provides
 this library at this compatibility version, and the library
 architecture.  (The library architecture may either be "32", "64", or
@@ -426,11 +446,11 @@ this library (with this compatibility version) available.  For example,
 a declaration</p>
 <pre>
   Shlibs: &lt;&lt;
-    %p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
+    %p/lib/libbar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
   &lt;&lt;
 </pre>
 <p>indicates that a (32bit)
-library with <code>-install_name</code> %p/lib/bar.1.dylib
+library with <code>-install_name</code> %p/lib/libbar.1.dylib
 and <code>-compatibility_version</code> 2.1.0 has been installed since
 version 1.1-2 of the <b>bar1</b> package.  In addition, this declaration
 amounts to  a promise
@@ -442,14 +462,34 @@ package.
 Note the use of %p in the name of the library, which allows the correct
 <code>-install_name</code> to be found by all users of Fink, no matter
 what prefix they have chosen.
-</p><p>
-When a package is updated, usually the <code>Shlibs</code> field can simply
+</p>
+<p>When a package is updated, usually the <code>Shlibs</code> field can simply
 be copied to the next version/revision of the package.  The exception to
 this is if the <code>-compatibility_version</code> increases: in that
 case, the version number in the dependency information should be changed
 to the current version/revision (which is the first version/revision to
 provide the library with the new compatibility version number).
-</p><p>
+</p>
+<p>
+The <code>Shlibs</code>
+entry for a private library uses a different syntax:
+</p>
+<pre>
+  Shlibs: &lt;&lt;
+    !%p/lib/%N/libbar.1.dylib
+  &lt;&lt;
+</pre>
+<p>The leading exclamation point indicates that this is a private library,
+and since the other information is not relevant in this case, it is 
+not included.</p>
+<p>Note that in this example, the private shared library has been placed
+in its own subdirectory <code>%N</code> of the 
+<code>%i/lib</code> directory (which was named after the
+package).  This is a recommended procedure for private libraries,
+as an additional safety measure, to prevent other packages from accidentally
+linking to this library.
+</p>
+<p>
 <b>What to do when the major version number changes:</b>
 </p><p>
 If the major version number changes from N to M, you will create two new
@@ -472,39 +512,11 @@ and similarly, you should revise barN to include dependencies
 Users will then see barN and barM shuffling in and out as various other
 packages are built which depend on one version or another of the shared
 library, while barN-shlibs and barM-shlibs remain permanently installed.
-</p><p>
-<b>How to upgrade an existing fink package:</b>
-</p><p>
-For an existing fink package which installs either static or shared 
-libraries, the best way to upgrade is to create a new version foo of
-your package, accompanied by a new package foo-shlibs, which satisfy
-the above policy.  If shared libraries (or any other files now present
-in foo-shlibs) were installed previously, then these new packages should 
-say
 </p>
-<pre>
-  Replaces: foo (&lt;&lt; earliest.compliant.version)
-</pre>
 <p>
-so that upgrading will be transparent to users.  (You should <b>not</b>
-say "Conflicts: foo" because this will prevent the upgrade.)
-</p><p>
-After your upgrade, packages which say "Depends: foo" will continue to
-function normally.  However, you should contact the fink maintainers
-of all such packages and urge them to modify their packages to say 
-"Depends: foo-shlibs, BuildDepends: foo" as soon as possible.  You will 
-not be able to create new packages fooM, fooM-shlibs which implement a 
-new major version of the shared library until they have done so.
-</p><p>
-Existing fink packages which have not used the correct install_name or
-which have not used the correct names or symbolic links for shared libraries
-must be upgraded carefully, on a case-by-case basis.  If you are
-having trouble finding an upgrade strategy to make your packages compliant
-with the new policy, please discuss it on the fink-devel mailing list.
-</p><p>
 <b>Packages containing both binary files and libraries:</b>
 </p><p>
-When an upstream package contains both binary files and libraries, some
+When an upstream package contains both binary files and public libraries, some
 care must be exercised in constructing fink packages.  In some cases,
 the only binary files will be things like <code>foo-config</code> which
 are presumably only used at build time and never at run time.  In these
@@ -537,6 +549,25 @@ This will force the installation of foo-bin on most users' systems, until
 such time as the other package maintainers have upgraded their packages
 which depend on <code>foo</code>.
 </p>
+<p>
+  As of fink-0.28.0 (released in January 2008), the format of
+  the <code>Shlibs</code> entry for a "private" shared library has
+  changed (see earlier discussion of the difference between a public
+  and a private shared library). Note that the Shared Library Policy
+  has always required all shared libraries to be listed; the change
+  here is only in the syntax of the <code>Shlibs</code> field. Because
+  this type of shared library is not designed to be used by external
+  packages, there is no need to document its compatilibity or other
+  versioning. Instead, an exclamation-mark is used.  For example,
+  if <code>libquux.3.dylib</code> is
+  the <code>install_name</code> of a private shared library, it would
+  be listed as follows:
+</p>
+<pre>
+  Shlibs: &lt;&lt;
+    !%p/lib/libquux.3.dylib
+  &lt;&lt;
+</pre>
 
 
 

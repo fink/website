@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2007/06/21 14:31:26';
+$cvs_date = 'Date: 2008/06/07 15:59:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -1260,9 +1260,11 @@ commands to the InstallScript.
 <b>Introduced in fink 0.11.0.</b>
 This field declares the shared libraries which are installed in the
 package.  There is one line for each
-shared library, which contains three or four items separated by whitespace:
-the <code>-install_name</code> of the
-library, the <code>-compatibility_version</code>, versioned 
+shared library, which contains the <code>-install_name</code> of the
+library and information about its binary compatibility. Shared
+libraries that are "public" (i.e., provided for use by other packages)
+have, separated by whitespace after the filename,
+the <code>-compatibility_version</code>, versioned package
 dependency information specifying the Fink package which provides
 this library at this compatibility version, and the
 library architecture.  (The library architecture may either be "32", "64", or
@@ -1277,6 +1279,10 @@ from the maintainer that a library with this name and a
 <code>-compatibility_version</code>
 of at least this number will always be found in later versions of this
 Fink package.
+Shared libraries that are "private" are denoted by an exclamation mark
+preceeding the filename, and no compatilibity or versioning
+information is given. See the <a href="policy.php?phpLang=en#sharedlibs">Shared Library Policy</a> for more
+information.
 </p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
