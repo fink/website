@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2008/03/25 21:49:40 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2008/06/24 19:10:12 $';
 
 include "header.inc";
 ?>
@@ -49,12 +49,11 @@ You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >th
 <p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.1</em> directory, and use</p>
 <pre>./bootstrap</pre>
 <p>to start the boostrapping operation, which will install the Fink base setup.</p>
-<!--akh.  I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
+<!-- akh: I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
+     rangerrick: but that is not true!  ;) -->
 <p>After the installation is completed, running the command</p>
 <pre>pathsetup.sh</pre>
-<p>will set up your environment for Fink.  
--->
-<p>The operation will also update your environment, so if you open a new terminal window, the session will use these environment settings.  Once you have installed <em>fink</em> and the other base packages, the command</p>
+<p>will set up your environment for Fink.  If you open a new terminal window, the session will use these environment settings.  Once you have installed <em>fink</em> and the other base packages, the command:</p>
 <!--akh
 <pre>fink selfupdate-rsync</pre>
 <p>or</p>
