@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Paquets";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/05/29 03:58:51';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2008/06/27 00:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
 
@@ -103,7 +103,7 @@ E: Sorry, broken packages</pre>
 <li><p><b>0.4.1 :</b> c'est la version qui peut être installée à partir des binaires pour Mac OS X 10.1.</p></li>
 <li><p><b>0.6.4 :</b> c'est la version qui peut être installée à partir des binaires pour Mac OS X 10.2.</p></li>
 <li><p><b>0.7.2 :</b> c'est la version de base qui peut être installée à partir des binaires pour Mac OS X 10.3. Si vous <a href="upgrade.php?phpLang=fr">mettez à niveau</a> Fink, il se peut qu'il existe une version plus récente pour certains paquets.</p></li>
-<li><p><b>0.8.1 :</b> c'est la version de base qui peut être installée à partir des binaires pour Mac OS X 10.4. Si vous <a href="upgrade.php?phpLang=fr">mettez à niveau</a> Fink, il se peut qu'il existe une version plus récente pour certains paquets.</p></li>
+<li><p><b>0.9.0 :</b> c'est la version de base qui peut être installée à partir des binaires pour Mac OS X 10.5. Si vous <a href="upgrade.php?phpLang=fr">mettez à niveau</a> Fink, il se peut qu'il existe une version plus récente pour certains paquets.</p></li>
 </ol>
 </li>
 </ul>

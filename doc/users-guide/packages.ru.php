@@ -1,7 +1,7 @@
 <?
 $title = "Руководство пользователя - Пакеты";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/07/21 00:06:38';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2008/06/27 00:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="upgrade.php?phpLang=ru" title="Обновление Fink"><link rel="prev" href="install.php?phpLang=ru" title="Первоначальная инсталляция">';
 
 
@@ -210,7 +210,7 @@ E: Sorry, broken packages</pre>
             <li><p><b>0.7.2</b>
   This is the base version that can be installed from binaries for OS 10.3.  If you <a href="install.php?phpLang=ru#bin">update</a> Fink, later versions of some packages may be available.</p> 
         </li>
-            <li><p><b>0.8.1:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="install.php?phpLang=ru#bin">update</a> Fink, later versions of some packages may be available.</p></li>
+            <li><p><b>0.9.0:</b>  This is the base version that can be installed from binaries for OS 10.5.  If you <a href="install.php?phpLang=ru#bin">update</a> Fink, later versions of some packages may be available.</p></li>
           </ol>
           
                 </li>

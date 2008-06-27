@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 升级";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/07/21 00:06:39';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2008/06/27 00:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="conf.php?phpLang=zh" title="Fink 配置文件"><link rel="prev" href="packages.php?phpLang=zh" title="安装软件包">';
 
 

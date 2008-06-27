@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - パッケージ";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2007/07/21 00:06:38';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2008/06/27 00:55:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="upgrade.php?phpLang=ja" title="Fink のアップグレード"><link rel="prev" href="install.php?phpLang=ja" title="初めてのインストール">';
 
 
@@ -216,7 +216,7 @@ Fink をソースからインストールした場合など、別にダウンロ
             </li>
             <li>
               <p>
-                <b>0.8.1:</b> OS 10.4 用で、バイナリからインストールできるバージョン。
+                <b>0.9.0:</b> OS 10.5 用で、バイナリからインストールできるバージョン。
                 もし、Fink を<a href="install.php?phpLang=ja#bin">更新</a>
                 したなら、パッケージによっては新しいバージョンがあるかもしれません。
               </p>
