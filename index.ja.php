@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/07/22 20:15:15 $';
+$cvs_date = '$Date: 2008/06/27 01:08:38 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -46,8 +46,8 @@ include dirname(__FILE__) . "/fink_version.inc";
 
 <p>
 Fink <? print $fink_version ?> は <? print convert_date_to_locale($release_date) ?> にリリースされました。
-これは Mac OS X10.4 用のソースとバイナリパッケージと、バイナリインストーラを含んでいます。
-Fink 0.7.2 (for OS X 10.3), Fink 0.6.4 (for OS X 10.2) と 0.4.1 (for OS X 10.1) はこれまで通りです。
+これは Mac OS X10.5 用のソースとバイナリパッケージと、バイナリインストーラを含んでいます。
+Fink 0.8.1 (for OS X 10.4), Fink 0.7.2 (for OS X 10.3), Fink 0.6.4 (for OS X 10.2) と 0.4.1 (for OS X 10.1) はこれまで通りです。
 </p>
 
 <h1>リソース</h1>

@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2007/12/15 03:43:26 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2008/06/27 01:08:38 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -27,7 +27,7 @@ include dirname(__FILE__) . "/news/news.fr.inc";
 <? 
 include dirname(__FILE__) . "/fink_version.inc";
 ?>
-<p>La version <? print $fink_version ?> de Fink est disponible depuis le <? print convert_date_to_locale($release_date) ?>. Cette version comprend le source et les paquets binaires, ainsi que des installeur binaires pour PowerPC et Intel, l'ensemble est conçu pour tourner sur Mac OS X 10.4. Les versions 0.7.2 (pour Mac OS X 10.3), 0.6.4 (pour Mac OS X 10.2) et 0.4.1 (pour Mac OS X 10.1) restent disponibles pour les utilisateurs de ces systèmes.</p>
+<p>La version <? print $fink_version ?> de Fink est disponible depuis le <? print convert_date_to_locale($release_date) ?>. Cette version comprend le source et les paquets binaires, ainsi que des installeur binaires pour PowerPC et Intel, l'ensemble est conçu pour tourner sur Mac OS X 10.5. Les versions 0.8.1 (pour Mac OS X 10.4), 0.7.2 (pour Mac OS X 10.3), 0.6.4 (pour Mac OS X 10.2) et 0.4.1 (pour Mac OS X 10.1) restent disponibles pour les utilisateurs de ces systèmes.</p>
 <h1>Ressources</h1>
 <p>Si vous avez besoin d'aide, allez sur la <a href="help/index.php">page d'aide</a>. Cette page vous présente aussi divers moyens d'apporter votre soutien au projet et d'envoyer un retour d'informations.</p>
 <p> L'accès aux fichiers sources correspondant aux paquets binaires distribués par le projet Fink est expliqué sur <a href="download/sources_for_binaries.php">cette page</a>.</p>
