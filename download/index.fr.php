@@ -1,7 +1,7 @@
 <?
 $title = "Téléchargement rapide";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/13 19:47:09 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2008/06/27 01:37:16 $';
 
 include_once "header.inc";
 include "../fink_version.inc";
@@ -16,6 +16,7 @@ include "../fink_version.inc";
 <li><p>Téléchargez l'image disque de l'installeur :<br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Installeur binaire Fink " . $fink_version . " pour PowerPC", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Installeur binaire Fink " . $fink_version . " pour Intel",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
+Utilisateurs de la version 10.4 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink0.8.1 (PowerPC)</a> ou <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink0.8.1 (Intel)</a><br>
 Utilisateurs de la version 10.3 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink0.7.2</a><br>
 Utilisateurs de la version 10.2  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink 0.6.4</a><br>
 Utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink0.4.1</a></p></li>
