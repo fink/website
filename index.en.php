@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2008/06/27 01:08:38 $';
+$cvs_date = '$Date: 2008/06/27 01:13:07 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -57,7 +57,8 @@ Fink 0.8.1 (for OS X 10.4), 0.7.2 (for OS X 10.3), 0.6.4 (for OS X 10.2),
 </p>
 <p>
 <!-- interim -->
-<strong>10.5 Support:</strong> A binary installer for 10.5 is not yet available. Users are encouraged to update to OS 10.5.2, via Software Update, in order to get bugfixes and enhancements for X11.  Further updates continue to be made available on the <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
+<strong>10.5 Support:</strong> 
+Users are encouraged to update to OS 10.5.2, via Software Update, in order to get bugfixes and enhancements for X11.  Further updates continue to be made available on the <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
       </p>
 
 <h1>Resources</h1>
