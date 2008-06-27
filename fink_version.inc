@@ -1,6 +1,6 @@
 <?php
-  $fink_version = "0.8.1";
-  $release_date = "15 June 2006";
-  $dmg_size = "17930 KB";
-  $intel_dmg_size = "17510 KB";
+  $fink_version = "0.9.0";
+  $release_date = "26 June 2008";
+  $dmg_size = "13635047 bytes";
+  $intel_dmg_size = "14431371 bytes";
 ?>

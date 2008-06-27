@@ -4,7 +4,7 @@
 
     <title>Руководство пользователя Fink</title>
     <shorttitle>Руководство пользователя</shorttitle>
-    <cvsid>$Id: uguide.ru.xml,v 1.5 2007/07/21 00:06:38 babayoshihiko Exp $</cvsid>
+    <cvsid>$Id: uguide.ru.xml,v 1.6 2008/06/27 00:55:00 dmrrsn Exp $</cvsid>
     <preface>
         <p> Данный документ содержит обзор всех возможностей Fink. (Более широкий обзор могут дать ранее выпущенные документы <link
                 url="http://www.finkproject.org/doc/bundled/install.php">Инсталляция</link>, <link
@@ -547,7 +547,7 @@ E: Sorry, broken packages</codeblock>
             <li><p translated="no"><em>0.7.2</em>
   This is the base version that can be installed from binaries for OS 10.3.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p> 
         </li>
-            <li><p translated="no"><em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.4.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p></li>
+            <li><p translated="no"><em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.5.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p></li>
           </ol>
           <!-- end translation -->
                 </li>

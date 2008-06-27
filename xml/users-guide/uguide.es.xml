@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Guía del Usuario de Fink </title>
   <shorttitle>Guía del Usuario</shorttitle>
-  <cvsid>$Id: uguide.es.xml,v 1.8 2007/07/21 00:06:38 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: uguide.es.xml,v 1.9 2008/06/27 00:55:00 dmrrsn Exp $</cvsid>
   <preface>
   <p>Atención: la versión española de este documento no se sincroniza con la versión inglesa.</p>
     <p translated="no">This document gives an overview over all features of Fink.
@@ -489,7 +489,7 @@ More details about the <code>fink</code> tool are available in the chapter
             <li><p><em>0.7.2</em>
   This is the base version that can be installed from binaries for OS 10.3.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p> 
         </li>
-            <li><p><em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.4.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p></li>
+            <li><p><em>&fink_version;:</em>  This is the base version that can be installed from binaries for OS 10.5.  If you <xref chapter="install" section="bin">update</xref> Fink, later versions of some packages may be available.</p></li>
           </ol>
           <!-- end translation -->
         </li>
