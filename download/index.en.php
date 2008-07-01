@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2008/06/27 01:37:16 $';
+$cvs_date = '$Date: 2008/07/01 10:39:24 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -20,7 +20,6 @@ Otherwise, check out the <a href="overview.php">overview</a> and the
 New to Fink?  These quick start instructions are here to get you up to speed
 with the binary release.
 </p>
-<p><strong>Important Note for Leopard Users:</strong>  There is not currently a binary release for you.  Please go to the <a href="./srcdist.php">source release</a> page.</p>
 <ol>
 <li><p>
 Download the installer disk image:<br>
