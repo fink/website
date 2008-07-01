@@ -32,10 +32,10 @@ foreach(array(
 	new Release($distributions["10.4-i386"],            "bindist",  "0.8.1",   1, true),
 	new Release($distributions["10.4-i386"],            "stable",   "current", 2, true),
 	new Release($distributions["10.4-i386"],            "unstable", "current", 3, true),
-	new Release($distributions["10.5-powerpc"],         "bindist",  "0.9.0",   1, false),
+	new Release($distributions["10.5-powerpc"],         "bindist",  "0.9.0",   1, true),
 	new Release($distributions["10.5-powerpc"],         "stable",   "current", 2, true),
 	new Release($distributions["10.5-powerpc"],         "unstable", "current", 3, true),
-	new Release($distributions["10.5-i386"],            "bindist",  "0.9.0",   1, false),
+	new Release($distributions["10.5-i386"],            "bindist",  "0.9.0",   1, true),
 	new Release($distributions["10.5-i386"],            "stable",   "current", 2, true),
 	new Release($distributions["10.5-i386"],            "unstable", "current", 3, true),
 ) as $_rel) {
