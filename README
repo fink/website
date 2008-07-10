@@ -4,15 +4,27 @@ distribution, which is consulted by users' copies of Fink when using the
 "point" update method.
 
 These days, each complete Fink distribution is tuned to a particular
-"tree", such as 10.2-gcc3.3.  As of this writing, there are three files
+"tree", such as 10.2-gcc3.3.  As of this writing, there are five files
 containing tree-specific version information:
 
   CURRENT-FINK-10.2 (most likely frozen forever with value "0.5.4")
   CURRENT-FINK-10.2-gcc3.3
   CURRENT-FINK-10.3
+  CURRENT-FINK-10.4
+  CURRENT-FINK-10.5
 
 The users' copy of Fink consults the "Distibution:" line in /sw/etc/fink.conf
 in order to decide which of these version numbers to fetch.
+
+(All but the first of these contain the distribution in the number, such
+as 10.5-0.9.0.)
+
+Note that access to source files corresponding to the "updates" portion
+of the binary distribution is now provided by a version number with a
+four decimal part after the distribution, such as 10.5-0.9.0.1.  It is assumed 
+that users will have installed the 10.5-0.9.0 distribution prior to installing 
+10.5-0.9.0.1, but 10.5-0.9.0.2 is supposed to be cumulative for the changes 
+(a complete diff from 10.5-0.9.0).
 
 To maintain compatibility with earlier versions of this system, the
 directory also contains two legacy files:
@@ -23,6 +35,7 @@ directory also contains two legacy files:
 
 NOTE:  For use on the web site, the current fink version number must also be 
 supplied in three places: fink_version.inc, xml/finkdoc.dtd, xml/finkfaq.dtd.
+This is the three-part number, not the four-part "updates" number.
 
 
 IMPORTANT NOTE: As of 29 June 2003, the CVS modules have been somewhat
