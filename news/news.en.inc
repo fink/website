@@ -13,9 +13,11 @@ to switch to the binary distribution, may do so as follows.  First,
 run <code>fink selfupdate</code> to update to the latest version of the
 fink package manager.  Next, run <code>fink configure</code>, and be sure
 to <b>change</b> your choice about using the binary distribution from No
-to yes.  Final, run <code>fink scanpackages</code> to activate the binary
+to yes.  Finally, run <code>fink scanpackages</code> to activate the binary
 distribution.
 </p>
+<p><b>Update, 2008-07-11:</b> If you use the binary installer, you
+should run <code>fink selfupdate</code> after installation.</p>
 <a name="2008-02-03%20Mirror,%20mirror%20on%20the%20wall,%20will%20someone%20sponsor%20Fink%20at%20all?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, will someone sponsor Fink at all?</span></a><?php gray_line(); ?>
 		<p>
 Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 

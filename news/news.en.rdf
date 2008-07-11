@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2008-06-26T21:41:59-04:00</dc:date>
+    <dc:date>2008-07-11T11:55:52+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.">
       <title>New Fink release.</title>
@@ -26,9 +26,11 @@ to switch to the binary distribution, may do so as follows.  First,
 run fink selfupdate to update to the latest version of the
 fink package manager.  Next, run fink configure, and be sure
 to change your choice about using the binary distribution from No
-to yes.  Final, run fink scanpackages to activate the binary
+to yes.  Finally, run fink scanpackages to activate the binary
 distribution.
 </p>
+<p>Update, 2008-07-11: If you use the binary installer, you
+should run fink selfupdate after installation.</p>
 </description>
       <content:encoded>
       <p>
@@ -45,9 +47,11 @@ to switch to the binary distribution, may do so as follows.  First,
 run fink selfupdate to update to the latest version of the
 fink package manager.  Next, run fink configure, and be sure
 to change your choice about using the binary distribution from No
-to yes.  Final, run fink scanpackages to activate the binary
+to yes.  Finally, run fink scanpackages to activate the binary
 distribution.
 </p>
+<p>Update, 2008-07-11: If you use the binary installer, you
+should run fink selfupdate after installation.</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F">

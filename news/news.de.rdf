@@ -5,8 +5,55 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2008-02-07T19:01:15+09:00</dc:date>
+    <dc:date>2008-07-11T11:55:52+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.">
+      <title>New Fink release.</title>
+      <link>http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.</link>
+      <guid>http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.</guid>
+      <description>
+      <p>
+A new (binary) Fink release for OS X 10.5 (Leopard) is 
+<a href="http://fink.sourceforge.net/download/index.php">available</a>
+ today: version 0.9.0, which can be installed on either Intel or PowerPC
+hardware.
+The release includes source files, binary packages, and  Fink
+installers for both kinds of hardware.
+</p>
+      <p>
+Users who have already installed Fink on Leopard from source, who now wish
+to switch to the binary distribution, may do so as follows.  First,
+run fink selfupdate to update to the latest version of the
+fink package manager.  Next, run fink configure, and be sure
+to change your choice about using the binary distribution from No
+to yes.  Finally, run fink scanpackages to activate the binary
+distribution.
+</p>
+<p>Update, 2008-07-11: If you use the binary installer, you
+should run fink selfupdate after installation.</p>
+</description>
+      <content:encoded>
+      <p>
+A new (binary) Fink release for OS X 10.5 (Leopard) is 
+<a href="http://fink.sourceforge.net/download/index.php">available</a>
+ today: version 0.9.0, which can be installed on either Intel or PowerPC
+hardware.
+The release includes source files, binary packages, and  Fink
+installers for both kinds of hardware.
+</p>
+      <p>
+Users who have already installed Fink on Leopard from source, who now wish
+to switch to the binary distribution, may do so as follows.  First,
+run fink selfupdate to update to the latest version of the
+fink package manager.  Next, run fink configure, and be sure
+to change your choice about using the binary distribution from No
+to yes.  Finally, run fink scanpackages to activate the binary
+distribution.
+</p>
+<p>Update, 2008-07-11: If you use the binary installer, you
+should run fink selfupdate after installation.</p>
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F">
       <title>Mirror, mirror on the wall, will someone sponsor Fink at all?</title>
       <link>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</link>
@@ -628,45 +675,6 @@ the currently available packages.
 At last check, there were about 1750 packages in the "stable" tree, but
 about 150 of those did not build.  When things are truly stable, another
 annoucement will be made here.
-</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).">
-      <title>Fink ready for XCode 2.2 (but not for Intel).</title>
-      <link>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</link>
-      <guid>http://fink.sourceforge.net/news/#2006-01-10%20Fink%20ready%20for%20XCode%202.2%20(but%20not%20for%20Intel).</guid>
-      <description>
-<p>
-Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
-packages (which are expected to function again when we switch to the 10.4
-tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
-XCode 2.2 will be required for running the 10.4 tree when it is released.
-</p>
-<p>
-On the other hand, in spite of today's announcements from Apple, Fink is
-not ready to run on Intel processors.  The Fink team hopes to have an
-Intel-ready version of fink released within a few weeks; the Fink team does 
-not advise early recipients of new iMacs to install Fink on them, but suggests
-waiting until the new version of fink is ready.
-</p>
-<p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
-</p>
-</description>
-      <content:encoded>
-<p>
-Fink is now ready for XCode 2.2, with the exception of the openoffice.org 
-packages (which are expected to function again when we switch to the 10.4
-tree).  Users are encouraged to upgrade to XCode 2.2 whenever they wish;
-XCode 2.2 will be required for running the 10.4 tree when it is released.
-</p>
-<p>
-On the other hand, in spite of today's announcements from Apple, Fink is
-not ready to run on Intel processors.  The Fink team hopes to have an
-Intel-ready version of fink released within a few weeks; the Fink team does 
-not advise early recipients of new iMacs to install Fink on them, but suggests
-waiting until the new version of fink is ready.
-</p>
-<p>Fink package maintainers please take note of the new Architecture field, now documented in the packaging manual.
 </p>
 </content:encoded>
     </item>
