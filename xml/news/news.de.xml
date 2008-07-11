@@ -2,7 +2,33 @@
 <!DOCTYPE news SYSTEM "finknews.dtd">
 
 <news lang="de">
-<cvsid>$Id: news.de.xml,v 1.35 2008/02/07 10:00:51 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.de.xml,v 1.36 2008/07/11 09:55:31 dmrrsn Exp $</cvsid>
+  <newsitem>
+    <date>2008-06-26</date>
+    <headline>New Fink release.</headline>
+    <body>
+      <p>
+A new (binary) Fink release for OS X 10.5 (Leopard) is 
+<varlink url="download/index.php">available</varlink>
+ today: version 0.9.0, which can be installed on either Intel or PowerPC
+hardware.
+The release includes source files, binary packages, and  Fink
+installers for both kinds of hardware.
+</p>
+      <p>
+Users who have already installed Fink on Leopard from source, who now wish
+to switch to the binary distribution, may do so as follows.  First,
+run <code>fink selfupdate</code> to update to the latest version of the
+fink package manager.  Next, run <code>fink configure</code>, and be sure
+to <em>change</em> your choice about using the binary distribution from No
+to yes.  Finally, run <code>fink scanpackages</code> to activate the binary
+distribution.
+</p>
+<p><em>Update, 2008-07-11:</em> If you use the binary installer, you
+should run <code>fink selfupdate</code> after installation.</p>
+</body>
+  </newsitem>
+
 <newsitem>
 	<date>2008-02-03</date>
 	<headline>Mirror, mirror on the wall, will someone sponsor Fink at all?</headline>

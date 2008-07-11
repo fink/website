@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.82 2008/06/27 01:41:37 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.83 2008/07/11 09:55:31 dmrrsn Exp $</cvsid>
 
   <newsitem>
     <date>2008-06-26</date>
@@ -21,9 +21,11 @@ to switch to the binary distribution, may do so as follows.  First,
 run <code>fink selfupdate</code> to update to the latest version of the
 fink package manager.  Next, run <code>fink configure</code>, and be sure
 to <em>change</em> your choice about using the binary distribution from No
-to yes.  Final, run <code>fink scanpackages</code> to activate the binary
+to yes.  Finally, run <code>fink scanpackages</code> to activate the binary
 distribution.
 </p>
+<p><em>Update, 2008-07-11:</em> If you use the binary installer, you
+should run <code>fink selfupdate</code> after installation.</p>
 </body>
   </newsitem>
 
