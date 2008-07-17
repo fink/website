@@ -5,8 +5,47 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2008-07-11T11:55:52+02:00</dc:date>
+    <dc:date>2008-07-17T17:54:38-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.">
+      <title>Mass package migration.</title>
+      <link>http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.</link>
+      <guid>http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.</guid>
+      <description>
+      <p>
+The massive GNOME update which has been in process for
+many months was merged into fink's unstable tree.  This is well
+tested, and updates by users appear to be going fairly smoothly.
+</p><p>
+We are now merging the gnome update into the stable tree.  Because
+we have been unable to test the dependencies of these new packages in
+the stable tree in advance, users can expect the "stable" tree to be
+"not so stable" during the next few weeks, while the bugs get worked
+out.
+</p><p>
+If you are eager to start using this massive gnome update immediately,
+we suggest that you switch to the unstable tree.  If not, we suggest
+that you hold off running "fink selfupdate" for a while (perhaps a
+week or two) until things have again stabilized.</p>
+</description>
+      <content:encoded>
+      <p>
+The massive GNOME update which has been in process for
+many months was merged into fink's unstable tree.  This is well
+tested, and updates by users appear to be going fairly smoothly.
+</p><p>
+We are now merging the gnome update into the stable tree.  Because
+we have been unable to test the dependencies of these new packages in
+the stable tree in advance, users can expect the "stable" tree to be
+"not so stable" during the next few weeks, while the bugs get worked
+out.
+</p><p>
+If you are eager to start using this massive gnome update immediately,
+we suggest that you switch to the unstable tree.  If not, we suggest
+that you hold off running "fink selfupdate" for a while (perhaps a
+week or two) until things have again stabilized.</p>
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.">
       <title>New Fink release.</title>
       <link>http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.</link>
@@ -630,53 +669,6 @@ to switch from rsync to cvs updating.
 <p>Update 3/13/06: This has been resolved by security update 2006-002,
 <a href="http://docs.info.apple.com/article.html?artnum=303453">according
 to Apple's documentation</a>.
-</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel">
-      <title>Preliminary version of Fink on Intel</title>
-      <link>http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel</link>
-      <guid>http://fink.sourceforge.net/news/#2006-02-21%20Preliminary%20version%20of%20Fink%20on%20Intel</guid>
-      <description>
-      <p>
-A preliminary version of Fink for the Intel architecture is now ready.
-No binary packages are available, and things are still rough around
-the edges, but it should be usable if you are patient!
-</p>
-      <p>
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
-fink-0.24.16.tar.gz (or a later version, if it's available)
-from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
-Sourceforge file release page for Fink</a>, expand the file, and
-run the command ./bootstrap.sh .  At the end of the
-bootstrap process, run fink selfupdate and you'll get
-the currently available packages.
-</p>
-      <p>
-At last check, there were about 1750 packages in the "stable" tree, but
-about 150 of those did not build.  When things are truly stable, another
-annoucement will be made here.
-</p>
-    </description>
-      <content:encoded>
-      <p>
-A preliminary version of Fink for the Intel architecture is now ready.
-No binary packages are available, and things are still rough around
-the edges, but it should be usable if you are patient!
-</p>
-      <p>
-To install it, you need to install the XCode compiler and SDK packages (at minimum).  Then you need to get the file
-fink-0.24.16.tar.gz (or a later version, if it's available)
-from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043">the
-Sourceforge file release page for Fink</a>, expand the file, and
-run the command ./bootstrap.sh .  At the end of the
-bootstrap process, run fink selfupdate and you'll get
-the currently available packages.
-</p>
-      <p>
-At last check, there were about 1750 packages in the "stable" tree, but
-about 150 of those did not build.  When things are truly stable, another
-annoucement will be made here.
 </p>
     </content:encoded>
     </item>

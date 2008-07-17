@@ -1,3 +1,19 @@
+<a name="2008-07-17%20Mass%20package%20migration."><span class="news-date">2008-07-17: </span><span class="news-headline">Mass package migration.</span></a><?php gray_line(); ?>
+      <p>
+The massive GNOME update which has been in process for
+many months was merged into fink's unstable tree.  This is well
+tested, and updates by users appear to be going fairly smoothly.
+</p><p>
+We are now merging the gnome update into the stable tree.  Because
+we have been unable to test the dependencies of these new packages in
+the stable tree in advance, users can expect the "stable" tree to be
+"not so stable" during the next few weeks, while the bugs get worked
+out.
+</p><p>
+If you are eager to start using this massive gnome update immediately,
+we suggest that you switch to the unstable tree.  If not, we suggest
+that you hold off running "fink selfupdate" for a while (perhaps a
+week or two) until things have again stabilized.</p>
 <a name="2008-06-26%20New%20Fink%20release."><span class="news-date">2008-06-26: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
       <p>
 A new (binary) Fink release for OS X 10.5 (Leopard) is 
@@ -35,9 +51,4 @@ We are looking for mirrors all over the world, but specifically in these countri
 	<p>
 We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
 </p>
-<a name="2008-01-12%20Fink%20website%20down"><span class="news-date">2008-01-12: </span><span class="news-headline">Fink website down</span></a><?php gray_line(); ?>
-<p>The fink website is not functioning correctly at present.  (You may
-have noticed that many of the links on this page do not function correctly.)  The
-fink team is working to resolve the problem as quickly as possible.</p>
-<p><b>Update, 2008-01-13:</b> The website is back to normal.</p>
 

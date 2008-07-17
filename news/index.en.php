@@ -1,12 +1,28 @@
 <?
 $title = "News";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/07/11 09:55:31';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2008/07/17 21:48:35';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
+<a name="2008-07-17%20Mass%20package%20migration."><span class="news-date">2008-07-17: </span><span class="news-headline">Mass package migration.</span></a><?php gray_line(); ?>
+      <p>
+The massive GNOME update which has been in process for
+many months was merged into fink's unstable tree.  This is well
+tested, and updates by users appear to be going fairly smoothly.
+</p><p>
+We are now merging the gnome update into the stable tree.  Because
+we have been unable to test the dependencies of these new packages in
+the stable tree in advance, users can expect the "stable" tree to be
+"not so stable" during the next few weeks, while the bugs get worked
+out.
+</p><p>
+If you are eager to start using this massive gnome update immediately,
+we suggest that you switch to the unstable tree.  If not, we suggest
+that you hold off running "fink selfupdate" for a while (perhaps a
+week or two) until things have again stabilized.</p>
 <a name="2008-06-26%20New%20Fink%20release."><span class="news-date">2008-06-26: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
       <p>
 A new (binary) Fink release for OS X 10.5 (Leopard) is 
