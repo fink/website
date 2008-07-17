@@ -1,7 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.83 2008/07/11 09:55:31 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.84 2008/07/17 21:48:35 alexkhansen Exp $</cvsid>
+
+  <newsitem>
+    <date>2008-07-17</date>
+    <headline>Mass package migration.</headline>
+    <body>
+      <p>
+The massive GNOME update which has been in process for
+many months was merged into fink's unstable tree.  This is well
+tested, and updates by users appear to be going fairly smoothly.
+</p><p>
+We are now merging the gnome update into the stable tree.  Because
+we have been unable to test the dependencies of these new packages in
+the stable tree in advance, users can expect the "stable" tree to be
+"not so stable" during the next few weeks, while the bugs get worked
+out.
+</p><p>
+If you are eager to start using this massive gnome update immediately,
+we suggest that you switch to the unstable tree.  If not, we suggest
+that you hold off running "fink selfupdate" for a while (perhaps a
+week or two) until things have again stabilized.</p>
+</body>
+  </newsitem>
+
 
   <newsitem>
     <date>2008-06-26</date>
