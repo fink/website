@@ -9,7 +9,7 @@ $dists_to_releases = array();
 foreach(array(
 	new Distribution("10.1",        "powerpc", "10.1",               "packages/dists",    1, false, false, false),
 	new Distribution("10.2-gcc3.3", "powerpc", "10.2 (gcc3.3 only)", "dists/10.2-gcc3.3", 2, true, true, false),
-	new Distribution("10.3",        "powerpc", "10.3",               "dists/10.3",        3, true, true, true),
+	new Distribution("10.3",        "powerpc", "10.3",               "dists/10.3",        3, true, true, false),
 	new Distribution("10.4",        "powerpc", "10.4/powerpc",       "dists/10.4",        4, true, true, true),
 	new Distribution("10.4",        "i386",    "10.4/i386",          "dists/10.4",        5, true, true, true),
 	new Distribution("10.5",        "powerpc", "10.5/powerpc",       "dists/10.4",        6, true, true, true),
