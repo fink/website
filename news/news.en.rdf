@@ -5,8 +5,43 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2008-07-17T17:54:38-04:00</dc:date>
+    <dc:date>2008-07-23T22:19:13-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.">
+      <title>End of 10.3 support.</title>
+      <link>http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.</link>
+      <guid>http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.</guid>
+      <description>
+      <p>
+The Fink project is no longer able to offer support for users of Fink
+on Mac OS X 10.3. In reality there has been very little support for
+some time, so this announcement simply formalizes that fact.
+</p><p>
+This means that there will not be any further updates, not even
+security updates, for Mac OS X 10.3 users. Their existing
+installations will continue to work, but the software that is
+installed will not be updated.
+</p><p>
+We believe that the majority of our users are using Mac OS X 10.4 or
+10.5 and hope that this does not inconvenience too many people. 
+</p>
+</description>
+      <content:encoded>
+      <p>
+The Fink project is no longer able to offer support for users of Fink
+on Mac OS X 10.3. In reality there has been very little support for
+some time, so this announcement simply formalizes that fact.
+</p><p>
+This means that there will not be any further updates, not even
+security updates, for Mac OS X 10.3 users. Their existing
+installations will continue to work, but the software that is
+installed will not be updated.
+</p><p>
+We believe that the majority of our users are using Mac OS X 10.4 or
+10.5 and hope that this does not inconvenience too many people. 
+</p>
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.">
       <title>Mass package migration.</title>
       <link>http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.</link>
@@ -624,51 +659,6 @@ download the file fink-mirrors-0.24.15.2.tar.gz from <a href="http://sourceforge
 Sourceforge file release page</a>, expand the file, and run the command
 ./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
 should again work normally.
-</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001">
-      <title>Problem with Apple's Security Update 2006-001</title>
-      <link>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001</link>
-      <guid>http://fink.sourceforge.net/news/#2006-03-03%20Problem%20with%20Apple's%20Security%20Update%202006-001</guid>
-      <description>
-      <p>
-The Fink team has received reports of problems with the rsync
-program which was modified by Apple's new Security Update 2006-001: for some
-users, fink selfupdate fails to function after the Security
-Update.  (The underlying cause appears to be a problem with the 
---delete option for rsync.)
-</p>
-      <p>
-As a workaround, users can run fink install rsync to use
-fink's rsync package rather than the Apple program.  Or, for those users
-who need specific features of the Apple program (such as support for
-Extended Attributes), another workaround is fink selfupdate-cvs
-to switch from rsync to cvs updating.  
-</p>
-<p>Update 3/13/06: This has been resolved by security update 2006-002,
-<a href="http://docs.info.apple.com/article.html?artnum=303453">according
-to Apple's documentation</a>.
-</p>
-    </description>
-      <content:encoded>
-      <p>
-The Fink team has received reports of problems with the rsync
-program which was modified by Apple's new Security Update 2006-001: for some
-users, fink selfupdate fails to function after the Security
-Update.  (The underlying cause appears to be a problem with the 
---delete option for rsync.)
-</p>
-      <p>
-As a workaround, users can run fink install rsync to use
-fink's rsync package rather than the Apple program.  Or, for those users
-who need specific features of the Apple program (such as support for
-Extended Attributes), another workaround is fink selfupdate-cvs
-to switch from rsync to cvs updating.  
-</p>
-<p>Update 3/13/06: This has been resolved by security update 2006-002,
-<a href="http://docs.info.apple.com/article.html?artnum=303453">according
-to Apple's documentation</a>.
 </p>
     </content:encoded>
     </item>

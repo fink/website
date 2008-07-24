@@ -1,12 +1,26 @@
 <?
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2008/07/17 21:48:35';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2008/07/24 05:17:29';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
+<a name="2008-07-23%20End%20of%2010.3%20support."><span class="news-date">2008-07-23: </span><span class="news-headline">End of 10.3 support.</span></a><?php gray_line(); ?>
+      <p>
+The Fink project is no longer able to offer support for users of Fink
+on Mac OS X 10.3. In reality there has been very little support for
+some time, so this announcement simply formalizes that fact.
+</p><p>
+This means that there will not be any further updates, not even
+security updates, for Mac OS X 10.3 users. Their existing
+installations will continue to work, but the software that is
+installed will not be updated.
+</p><p>
+We believe that the majority of our users are using Mac OS X 10.4 or
+10.5 and hope that this does not inconvenience too many people. 
+</p>
 <a name="2008-07-17%20Mass%20package%20migration."><span class="news-date">2008-07-17: </span><span class="news-headline">Mass package migration.</span></a><?php gray_line(); ?>
       <p>
 The massive GNOME update which has been in process for
