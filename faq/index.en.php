@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2008/04/14 00:51:15';
+$cvs_date = 'Date: 2008/07/30 14:38:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 
@@ -56,7 +56,7 @@ include_once "header.en.inc";
         with <code>system-xfree86</code>.</a></li><li><a href="comp-packages.php?phpLang=en#change-thread-nothread">7.3 How do I change from the non-threaded version of Fink's XFree86
         packages to the threaded version (or vice-versa)?</a></li><li><a href="comp-packages.php?phpLang=en#cctools">7.4 "When I try to install KDE, I get the following message: 'Can't
         resolve dependency "cctools (&gt;= 446-1)"'"</a></li><li><a href="comp-packages.php?phpLang=en#libiconv-gettext">7.5 I can't update <code>libiconv</code>.</a></li><li><a href="comp-packages.php?phpLang=en#cplusplus-filt">7.6 i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</a></li><li><a href="comp-packages.php?phpLang=en#gettext-tools">7.7 Fink refuses to update the <code>gettext</code> package,
-complaining that the dependencies are in an inconsistent state.</a></li><li><a href="comp-packages.php?phpLang=en#Leopard-libXrandr">7.8 I can't install <b>gtk+2</b> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</a></li><li><a href="comp-packages.php?phpLang=en#all-others">7.9 I'm having issues with a package that isn't listed here.</a></li></ul></li><li><a href="usage-general.php?phpLang=en"><b>8 Package Usage Problems - General</b></a><ul><li><a href="usage-general.php?phpLang=en#xlocale">8.1 I'm getting lots of messages like "locale not supported by C
+complaining that the dependencies are in an inconsistent state.</a></li><li><a href="comp-packages.php?phpLang=en#Leopard-libXrandr">7.8 I can't install <b>gtk+2</b> on OS 10.5</a></li><li><a href="comp-packages.php?phpLang=en#all-others">7.9 I'm having issues with a package that isn't listed here.</a></li></ul></li><li><a href="usage-general.php?phpLang=en"><b>8 Package Usage Problems - General</b></a><ul><li><a href="usage-general.php?phpLang=en#xlocale">8.1 I'm getting lots of messages like "locale not supported by C
         library". Is that bad?</a></li><li><a href="usage-general.php?phpLang=en#passwd">8.2 There are suddenly a number of strange users on my system, with
         names like "mysql", "pgsql", and "games". Where did they come
         from?</a></li><li><a href="usage-general.php?phpLang=en#compile-myself">8.3 How do I compile something myself using Fink-installed
@@ -78,7 +78,7 @@ complaining that the dependencies are in an inconsistent state.</a></li><li><a h
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 but Fink keeps asking to install
         XFree86 or X.org.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86 or X.org.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li><li><a href="usage-packages.php?phpLang=en#tiger-gtk">9.14 After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=en#yelp">9.15 I can't get the help to work for any GNOME application.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.en.xml,v 1.85 2008/04/14 00:51:15 alexkhansen Exp $-->
+<!--Generated from $Fink: faq.en.xml,v 1.86 2008/07/30 14:38:31 alexkhansen Exp $-->
 <? include_once "../footer.inc"; ?>
 
 
