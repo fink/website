@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2007/02/23 06:32:06 $';
+$cvs_author = '$Author: freckle $';
+$cvs_date = '$Date: 2008/08/18 14:59:24 $';
 
 include "header.inc";
 ?>
@@ -84,6 +84,7 @@ include "header.inc";
 <li>Mathias Meyer</li>
 <li>Remi Mommsen</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
+<li>Matthias Ringwald (<i>freckle<i>)</li>
 <li>Andrew Rohl</li> 
 <li>Lars Rosengreen</li>
 <li>Michael G. Schwern</li>
