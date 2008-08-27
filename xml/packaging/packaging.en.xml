@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.102 2008/08/27 05:20:51 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.103 2008/08/27 05:44:07 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -3251,10 +3251,14 @@ SplitOff: &lt;&lt;
 <p>
 During the install phase, the <code>InstallScript</code> and 
 <code>DocFiles</code> of the parent package are executed first.
-Next comes processing of the <code>SplitOff</code> and <code>SplitOff<em>N</em></code> fields. For each such field in turn, the <code>Files</code> command causes the listed files and directories
+Next comes processing of the <code>SplitOff</code> and
+<code>SplitOff<em>N</em></code> fields. For each such field in turn,
+the <code>InstallScript</code> of that field is run, and then the
+<code>Files</code> command causes the listed files and directories
 to be moved from the parent's installation directory %I to the
-current installation directory %i.  Then the <code>InstallScript</code>
-and <code>DocFiles</code> of the given <code>SplitOff</code> or <code>SplitOff<em>N</em></code> package are
+current installation directory %i.  Then the <code>DocFiles</code>
+and other Installation Phase fields of the given <code>SplitOff</code>
+or <code>SplitOff<em>N</em></code> package are
 executed.  
 </p><p>
 At this time, the <code>SplitOff</code> is processed first (if

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2008/08/27 05:20:51';
+$cvs_date = 'Date: 2008/08/27 05:44:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -1500,10 +1500,14 @@ SplitOff: &lt;&lt;
 <p>
 During the install phase, the <code>InstallScript</code> and 
 <code>DocFiles</code> of the parent package are executed first.
-Next comes processing of the <code>SplitOff</code> and <code>SplitOff<b>N</b></code> fields. For each such field in turn, the <code>Files</code> command causes the listed files and directories
+Next comes processing of the <code>SplitOff</code> and
+<code>SplitOff<b>N</b></code> fields. For each such field in turn,
+the <code>InstallScript</code> of that field is run, and then the
+<code>Files</code> command causes the listed files and directories
 to be moved from the parent's installation directory %I to the
-current installation directory %i.  Then the <code>InstallScript</code>
-and <code>DocFiles</code> of the given <code>SplitOff</code> or <code>SplitOff<b>N</b></code> package are
+current installation directory %i.  Then the <code>DocFiles</code>
+and other Installation Phase fields of the given <code>SplitOff</code>
+or <code>SplitOff<b>N</b></code> package are
 executed.  
 </p><p>
 At this time, the <code>SplitOff</code> is processed first (if
