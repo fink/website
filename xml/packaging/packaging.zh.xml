@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.33 2008/06/15 05:49:51 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.34 2008/08/27 05:20:53 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -2642,9 +2642,9 @@ forbidden:
 <codeblock>
 Package: mime-base64-pm%type_pkg[perl]
 Type: perl (5.8.1 5.8.6)
-SplitOff: %lt;%lt;
+SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
-%lt;%lt;
+&lt;&lt;
 </codeblock>
 <p>
 在安装阶段，父文件包的 <code>InstallScript</code> 和 

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/07 15:59:52';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2008/08/27 05:20:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -30,7 +30,7 @@ currently has no maintainer.</a>
 </p>
 <h2><? echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="intro.php?phpLang=en"><b>1 Introduction</b></a><ul><li><a href="intro.php?phpLang=en#def1">1.1 What is a Package?</a></li><li><a href="intro.php?phpLang=en#ident">1.2 Identifying a Package</a></li></ul></li><li><a href="format.php?phpLang=en"><b>2 Package Descriptions</b></a><ul><li><a href="format.php?phpLang=en#trees">2.1 Tree Layout</a></li><li><a href="format.php?phpLang=en#format">2.2 File Format</a></li><li><a href="format.php?phpLang=en#percent">2.3 Percent Expansion</a></li></ul></li><li><a href="policy.php?phpLang=en"><b>3 Packaging Policy</b></a><ul><li><a href="policy.php?phpLang=en#licenses">3.1 Package Licenses</a></li><li><a href="policy.php?phpLang=en#openssl">3.2 The GPL and OpenSSL</a></li><li><a href="policy.php?phpLang=en#prefix">3.3 Base System Interference</a></li><li><a href="policy.php?phpLang=en#sharedlibs">3.4 Shared Libraries</a></li><li><a href="policy.php?phpLang=en#perlmods">3.5 Perl Modules</a></li><li><a href="policy.php?phpLang=en#emacs">3.6 Emacs Policy</a></li></ul></li><li><a href="fslayout.php?phpLang=en"><b>4 Filesystem Layout</b></a><ul><li><a href="fslayout.php?phpLang=en#fhs">4.1 The Filesystem Hierarchy Standard</a></li><li><a href="fslayout.php?phpLang=en#dirs">4.2 The Directories</a></li><li><a href="fslayout.php?phpLang=en#avoid">4.3 Things to Avoid</a></li></ul></li><li><a href="compilers.php?phpLang=en"><b>5 Compilers</b></a><ul><li><a href="compilers.php?phpLang=en#versions">5.1 Compiler Versions</a></li><li><a href="compilers.php?phpLang=en#abi">5.2 The g++ ABI</a></li></ul></li><li><a href="reference.php?phpLang=en"><b>6 Reference</b></a><ul><li><a href="reference.php?phpLang=en#build">6.1 The Build Process</a></li><li><a href="reference.php?phpLang=en#fields">6.2 Fields</a></li><li><a href="reference.php?phpLang=en#splitoffs">6.3 SplitOffs</a></li><li><a href="reference.php?phpLang=en#scripts">6.4 Scripts</a></li><li><a href="reference.php?phpLang=en#patches">6.5 Patches</a></li><li><a href="reference.php?phpLang=en#profile.d">6.6 Profile.d scripts</a></li></ul></li></ul>
-<!--Generated from $Fink: packaging.en.xml,v 1.101 2008/06/07 15:59:52 dmrrsn Exp $-->
+<!--Generated from $Fink: packaging.en.xml,v 1.102 2008/08/27 05:20:51 dmacks Exp $-->
 <? include_once "../../footer.inc"; ?>
 
 

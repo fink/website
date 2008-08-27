@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.101 2008/06/07 15:59:52 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.102 2008/08/27 05:20:51 dmacks Exp $</cvsid>
 
 <preface>
 <p>
@@ -3244,9 +3244,9 @@ forbidden:
 <codeblock>
 Package: mime-base64-pm%type_pkg[perl]
 Type: perl (5.8.1 5.8.6)
-SplitOff: %lt;%lt;
+SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
-%lt;%lt;
+&lt;&lt;
 </codeblock>
 <p>
 During the install phase, the <code>InstallScript</code> and 

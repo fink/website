@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/26 01:47:14';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2008/08/27 05:20:53';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -980,18 +980,19 @@ configure 或 ant 之类的工具能够正确地检测到已安装的 jar 文件
 <p>
 <b>从 fink 0.11.0 开始。</b>
 这个字段声明软件包中要安装的共享库。
-每个共享库占一行，每行包括以空格分开的三或四项：
-共享库的 <code>-install_name</code>(安装名)，
-<code>-compatibility_version</code>(兼容版本号)，
-和版本相关的指明提供这个兼容版本的 Fink 软件包的依赖信息，
 
-the library architecture.  (The library architecture may either be "32", "64", or
+There is one line for each shared library, which contains the <code>-install_name</code> of the library and information about its binary compatibility. 
+Shared libraries that are "public" (i.e., provided for use by other packages) have, separated by whitespace after the filename, the <code>-compatibility_version</code>, versioned package dependency information specifying the Fink package which provides this library at this compatibility version, and the library architecture.
+(The library architecture may either be "32", "64", or
 "32-64", and may be absent; the value defaults to "32" if it is absent.)  
 
 依赖信息应该以下面的形式描述：<code> foo (&gt;= version-revision)</code> 其中 
 <code>version-revision</code> 指提供(这个兼容版本)函数库的 Fink 软件包的 <b>第一个</b>版本。
 Shlibs 声明表明维护者承诺这个名字和至少
 <code>-compatibility_version</code>的兼容版本号的函数库会在这个 Fink 软件包的新版本中找到。
+
+Shared libraries that are "private" are denoted by an exclamation mark preceeding the filename, and no compatilibity or versioning information is given. See the <a href="policy.php?phpLang=zh#sharedlibs">Shared Library Policy</a> for more information.
+
 </p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
 <b>从 fink 0.10.0 开始。</b>
@@ -1154,9 +1155,9 @@ forbidden:
 <pre>
 Package: mime-base64-pm%type_pkg[perl]
 Type: perl (5.8.1 5.8.6)
-SplitOff: %lt;%lt;
+SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
-%lt;%lt;
+&lt;&lt;
 </pre>
 <p>
 在安装阶段，父文件包的 <code>InstallScript</code> 和 

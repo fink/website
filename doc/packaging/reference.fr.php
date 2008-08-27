@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/26 01:47:14';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2008/08/27 05:20:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -380,7 +380,16 @@ make test</pre>
 </td></tr><tr valign="top"><td>DocFiles</td><td>
 <p>Ce champ fournit un moyen simple d'installer les fichiers README et COPYING dans le répertoire doc du paquet, soit <code>%p/share/doc/%n</code>. Sa valeur consiste en une liste de fichiers séparés par des espaces. Vous pouvez copier les fichiers à partir de sous-répertoires du répertoire de compilation, ils seront placés dans le répertoire lui-même et non pas dans un sous-répertoire. Les caractères joker reconnus par le shell sont autorisés. On peut aussi renommer des fichiers à la volée en faisant suivre le nom du fichier de deux-points (:), puis du nouveau nom. Exemple :<code>libgimp/COPYING:COPYING.libgimp</code>. Ce champ ajoute les commandes <code>install</code> appropriées au script InstallScript.</p>
 </td></tr><tr valign="top"><td>Shlibs</td><td>
-<p><b>Introduit dans la version 0.11.0 de fink.</b> Ce champ déclare les bibliothèques partagées installées dans le paquet. Il y a une ligne par bibliothèque partagée, cette ligne est constituée de trois ou quatre éléments séparés par des blancs : le nom d'installation de la bibliothèque <code>-install_name</code>, le numéro de version de compatibilité de la bibliothèque <code>-compatibility_version</code> et des informations de dépendance de version qui indiquent quel paquet de Fink fournit la bibliothèque à cette version de compatibilité ainsi que l'architecture de la bibliothèque. Cette architecture peut avoir pour valeur "32", "64", "32-64" ou même ne pas exister ; dans ce dernier cas, elle prend la valeur "32" par défaut. Les informations de dépendance doivent être spécifiées sous la forme <code> foo (&gt;= version-revision)</code>, où <code>version-revision</code> représente la <b>première</b> version d'un paquet Fink qui rend disponible cette bibliothèque (avec cette version de compatibilité). La déclaration Shlibs revient à dire que le mainteneur du paquet garantit qu'une bibliothèque portant ce nom et ayant une version de compatibilité au moins égale à <code>-compatibility_version</code> sera présente dans toutes les versions postérieures de ce paquet Fink.</p>
+<p><b>Introduit dans la version 0.11.0 de fink.</b> Ce champ déclare les bibliothèques partagées installées dans le paquet. 
+
+There is one line for each shared library, which contains the <code>-install_name</code> of the library and information about its binary compatibility. 
+Shared libraries that are "public" (i.e., provided for use by other packages) have, separated by whitespace after the filename, the <code>-compatibility_version</code>, versioned package dependency information specifying the Fink package which provides this library at this compatibility version, and the library architecture.
+
+Cette architecture peut avoir pour valeur "32", "64", "32-64" ou même ne pas exister ; dans ce dernier cas, elle prend la valeur "32" par défaut. Les informations de dépendance doivent être spécifiées sous la forme <code> foo (&gt;= version-revision)</code>, où <code>version-revision</code> représente la <b>première</b> version d'un paquet Fink qui rend disponible cette bibliothèque (avec cette version de compatibilité). La déclaration Shlibs revient à dire que le mainteneur du paquet garantit qu'une bibliothèque portant ce nom et ayant une version de compatibilité au moins égale à <code>-compatibility_version</code> sera présente dans toutes les versions postérieures de ce paquet Fink.
+
+Shared libraries that are "private" are denoted by an exclamation mark preceeding the filename, and no compatilibity or versioning information is given. See the <a href="policy.php?phpLang=fr#sharedlibs">Shared Library Policy</a> for more information.
+
+</p>
 </td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p><b>Introduit dans fink 0.10.0.</b> Ce champ fournit un moyen pratique de donner une valeur statique à des variables d'environnement pendant l'exécution (si vous voulez avoir plus de latitude dans ce domaine, voir la <a href="#profile.d">section scripts profile.d</a>). À partir du moment où le paquet est installé, ces variables sont définies par les scripts <code>/sw/bin/init.[c]sh</code>.</p>
 <p>La valeur de la variable peut contenir des espaces (seuls les espaces de fin de chaîne sont supprimés) ; l'interprétation des raccourcis a eu lieu sur ce champ. Exemple :</p>
@@ -444,9 +453,9 @@ make test</pre>
 <pre>
 Package: mime-base64-pm%type_pkg[perl]
 Type: perl (5.8.1 5.8.6)
-SplitOff: %lt;%lt;
+SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
-%lt;%lt;
+&lt;&lt;
 </pre>
 <p>Lors de la phase d'installation, les champs <code>InstallScript</code> et <code>DocFiles</code> du paquet parent sont exécutés en premier. Puis vient l'exécution des champs <code>SplitOff</code> et <code>SplitOff<b>N</b></code>. Pour chacun de ces champs à tour de rôle, la commande <code>Files</code> déplace les fichiers et répertoires spécifiés, du répertoire d'installation %I du paquet parent dans le répertoire de l'installation en cours %i. Puis les scripts <code>InstallScript</code> et <code>DocFiles</code> des paquets <code>SplitOff</code> et <code>SplitOff<b>N</b></code> sont exécutés.</p>
 <p>À l'heure actuelle, le champ <code>SplitOff</code>, s'il existe, est exécuté en premier, suivi des champs <code>SplitOff<b>N</b></code> par ordre numérique. Néanmoins, cela pourrait changer dans le futur. Il est donc conseillé de ne pas utiliser :</p>

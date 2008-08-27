@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/07 15:59:52';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2008/08/27 05:20:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -1493,9 +1493,9 @@ forbidden:
 <pre>
 Package: mime-base64-pm%type_pkg[perl]
 Type: perl (5.8.1 5.8.6)
-SplitOff: %lt;%lt;
+SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
-%lt;%lt;
+&lt;&lt;
 </pre>
 <p>
 During the install phase, the <code>InstallScript</code> and 

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.75 2008/06/15 05:49:48 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.76 2008/08/27 05:20:52 dmacks Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://pdb.finkproject.org/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -1222,9 +1222,9 @@ Shared libraries that are &quot;private&quot; are denoted by an exclamation mark
 <codeblock>
 Package: mime-base64-pm%type_pkg[perl]
 Type: perl (5.8.1 5.8.6)
-SplitOff: %lt;%lt;
+SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
-%lt;%lt;
+&lt;&lt;
 </codeblock>
 <p>Lors de la phase d'installation, les champs <code>InstallScript</code> et <code>DocFiles</code> du paquet parent sont exécutés en premier. Puis vient l'exécution des champs <code>SplitOff</code> et <code>SplitOff<em>N</em></code>. Pour chacun de ces champs à tour de rôle, la commande <code>Files</code> déplace les fichiers et répertoires spécifiés, du répertoire d'installation %I du paquet parent dans le répertoire de l'installation en cours %i. Puis les scripts <code>InstallScript</code> et <code>DocFiles</code> des paquets <code>SplitOff</code> et <code>SplitOff<em>N</em></code> sont exécutés.</p>
 <p>À l'heure actuelle, le champ <code>SplitOff</code>, s'il existe, est exécuté en premier, suivi des champs <code>SplitOff<em>N</em></code> par ordre numérique. Néanmoins, cela pourrait changer dans le futur. Il est donc conseillé de ne pas utiliser :</p>
