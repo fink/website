@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2008/07/01 10:39:24 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2008/09/08 22:55:06 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -117,11 +117,15 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
     </tr>
     <tr>
       <td>10.4 on PowerPC</td>
-      <td>XCode 2.4.1, and the XCode Legacy Tools (for packages that need <code>gcc3.1</code> or <code>gcc2.95</code> to build)</td>
+      <td>XCode 2.5, and the XCode Legacy Tools (for packages that need <code>gcc3.1</code> or <code>gcc2.95</code> to build)</td>
     </tr>
     <tr>
       <td>10.4 on Intel</td>
-      <td>XCode 2.4.1</td>
+      <td>XCode 2.5</td>
+    </tr>
+    <tr>
+      <td>10.5</td>
+      <td>XCode 3.0 or 3.1</td>
     </tr>
   </tbody>
 </table>
