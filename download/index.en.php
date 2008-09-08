@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2008/09/08 22:55:06 $';
+$cvs_date = '$Date: 2008/09/08 23:07:00 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -131,15 +131,16 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
 </table>
 <h3>X11</h3>
       <p>Almost all of the applications on Fink that have graphical user interfaces (GUIs) require some flavor of X11 (since most were originally developed on platforms that only had that as a GUI option).</p>
-      <p>Apple provides its own X11 distribution for OS 10.3 and 10.4.  This is
+      <p>Apple provides its own X11 distribution for OS 10.3, 10.4, and 10.5.  This is
 the easiest option with which to get started.  They have elected to split it into two parts:</p>
       <ul>
-        <li>The <em>X11User</em> package contains everything you need just to run Apple's X11.  It is available on your OS install media for 10.3 and 10.4 as an
+        <li>The <em>X11User</em> package contains everything you need just to run Apple's X11.  It is available on your OS install media for 10.3, 10.4, and 10.5 as an
  optional install.</li>
         <li>The
 <em>X11SDK</em>
-package contains the development headers.  You need this if you want to build anything from source that uses X11.  This package is available as part of the XCode Tools, and installed by default with XCode 2.x.</li>
+package contains the development headers.  You need this if you want to build anything from source that uses X11.  This package is available as part of the XCode Tools, and installed by default with XCode 2.x and 3.x</li>
 <li>The <em>2006 X11 Update</em> for 10.4 (available via Software Update or manual download) is supported.</li>
+<li>All official updates for X11 on 10.5 are supported, as well as the <em>community X11 update</em> from macosxforge.org .</li>
 </ul>
 <p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://fink.sourceforge.net/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
 <h2>Further information</h2>
