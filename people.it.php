@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: freckle $';
-$cvs_date = '$Date: 2008/08/18 14:59:24 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2008/09/29 17:19:28 $';
 
 include "header.inc";
 ?>
@@ -72,6 +72,7 @@ inviateci una mail mail terremo in considerazione la vostra inclusione nella pro
 <li>rayg</li>
 <li>Michèle Garoche (<i>miga</i>)</li>
 <li>James Gibbs</li>
+<li>Andreas Gockel (<i>gecko2</i>)</li>
 <li>Justin F. Hallett (<i>TheSin</i>)</li>
 <li>Corey Halpin</li>
 <li>Jeremy Higgs</li>
@@ -163,7 +164,6 @@ inviateci una mail mail terremo in considerazione la vostra inclusione nella pro
 <li>Landon Fuller (<i>landonf</i>)</li>
 <li>Paul Gaborit</li> 
 <li>Stanton Gallegos (<i>stantron</i>)</li> 
-<li>Andreas Gockel (<i>gecko2</i>)</li>
 <li>Sebastian Gonzalez</li>
 <li>Joe Gorse (<i>inca34</i>)</li>
 <li>Jake Goulding</li> 
