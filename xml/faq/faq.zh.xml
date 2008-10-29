@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.29 2008/05/02 04:41:49 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.30 2008/10/29 00:15:08 alexkhansen Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -661,7 +661,7 @@ fink selfupdate-cvs</codeblock>
         <p>例如</p>
         <codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
         <p>如果你获得了一列目录和文件，那么你的 .deb 是正确的。如果输出是目录和文件以外的其它东西，或者你没有 .deb 文件，你仍然可以继续操作，因为这个错误不会影响构建。</p>
-        <p>如果你是从二进制包进行安装或你肯定知道二进制包里面的版本和你已经安装的版本一致（比如，通过检查<link url="http://pdb.finkproject.org/pdb/index.php" >软件包数据库</link>），你可以用下面的办法获取一个 .deb 文件： <code>sudo apt=get install --reinstall --download-only <em>软件包名</em>
+        <p>如果你是从二进制包进行安装或你肯定知道二进制包里面的版本和你已经安装的版本一致（比如，通过检查<link url="http://pdb.finkproject.org/pdb/index.php" >软件包数据库</link>），你可以用下面的办法获取一个 .deb 文件： <code>sudo apt-get install --reinstall --download-only <em>软件包名</em>
           </code>。否则你也可以用下面的办法自己从源代码重新构建一个：<code>fink rebuild <em>软件包名</em>
           </code>，但它暂时还不能安装。</p>
         <p>一旦你有了一个正常的 .deb 文件，你可以重新安装文件。首先用下面的命令成为 root 用户：<code>sudo -s</code>（有需要的话，输入你的管理员密码），然后使用下面的命令（我们把它分行以方便阅读，但实际使用的时候，你应该在一行里面输入）：</p>

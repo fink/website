@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.87 2008/09/01 00:48:33 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.88 2008/10/29 00:15:08 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -662,7 +662,7 @@ fink selfupdate-cvs</codeblock>
         know for sure that the version in the binary distribution is the same
         as what you have installed (e.g. by checking the <link url="http://pdb.finkproject.org/pdb/index.php">package
         database</link>), then you can get a .deb file by running <code>sudo
-        apt=get install --reinstall --download-only <em>packagename</em>
+        apt-get install --reinstall --download-only <em>packagename</em>
           </code>. Otherwise you can build one yourself by running <code>fink
         rebuild <em>packagename</em>
           </code>, but it won't install yet.</p>

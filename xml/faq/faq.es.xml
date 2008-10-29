@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.12 2008/05/02 04:41:49 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.13 2008/10/29 00:15:08 alexkhansen Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -646,7 +646,7 @@ fink selfupdate-cvs</codeblock>
         know for sure that the version in the binary distribution is the same
         as what you have installed (e.g. by checking the <link url="http://pdb.finkproject.org/pdb/index.php">package
         database</link>), then you can get a .deb file by running <code>sudo
-        apt=get install --reinstall --download-only <em>packagename</em>
+        apt-get install --reinstall --download-only <em>packagename</em>
           </code>. Otherwise you can build one yourself by running <code>fink
         rebuild <em>packagename</em>
           </code>, but it won't install yet.</p>

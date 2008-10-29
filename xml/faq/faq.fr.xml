@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.78 2008/05/02 04:41:49 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.79 2008/10/29 00:15:08 alexkhansen Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -478,7 +478,7 @@ fink selfupdate-cvs</codeblock>
 -powerpc.deb</codeblock>
 <p><em>Note</em> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p>
 <p>Si vous obtenez une liste de répertoires et de fichiers, votre fichier .deb est valide. Si, par contre, le résultat est différent ou si vous n'avez pas le fichier .deb, vous pouvez continuer car cette erreur n'interfère pas avec les éléments compilés.</p>
-<p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <link url="http://pdb.finkproject.org/pdb/index.php"> base de données des paquets</link>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt=get install --reinstall --download-only <em>nom_du_paquet</em></code>. Vous pouvez aussi le compiler vous-même avec la commande <code>fink rebuild <em>nom_du_paquet</em></code>, mais cela ne l'installera pas.</p>
+<p>Si vous avez fait l'installation à partir de la distribution binaire, ou bien si vous êtes certain que la version que vous avez installée est identique à celle de la distribution (vous l'avez vérifié dans la <link url="http://pdb.finkproject.org/pdb/index.php"> base de données des paquets</link>), alors vous pouvez télécharger un fichier .deb en lançant <code>sudo apt-get install --reinstall --download-only <em>nom_du_paquet</em></code>. Vous pouvez aussi le compiler vous-même avec la commande <code>fink rebuild <em>nom_du_paquet</em></code>, mais cela ne l'installera pas.</p>
 <p>Quand vous aurez un fichier .deb valide, vous pouvez reconstituer le fichier. Tout d'abord, mettez-vous en mode super-utilisateur en utilisant la commande <code>sudo -s</code> (saisissez votre mot de passe administrateur si nécessaire), puis utilisez la commande suivante :</p>
 <codeblock>dpkg -c <em>chemin_complet_du_fichier_deb</em> | awk '{if ($6 == "./")\
 { print "/."; } \
