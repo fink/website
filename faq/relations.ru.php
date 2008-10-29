@@ -1,18 +1,16 @@
 <?
 $title = "Ч.З.В. - Связь с другими проектами";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/02 04:41:49';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2008/10/29 00:15:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="mirrors.php?phpLang=ru" title="Зеркала Fink"><link rel="prev" href="general.php?phpLang=ru" title="Общие вопросы">';
 
 
-$i18n_chapter = 'relations';
-include_once "../i18n_showform.inc";
 include_once "header.ru.inc";
 ?>
 <h1>Ч.З.В. - 2. Связь с другими проектами</h1>
         
         
-        <? $i18n_section= "upstream"; ?><a name="upstream">
+        <a name="upstream">
             <div class="question"><p><b><? echo FINK_Q ; ?>2.1: Предоставляете ли вы свои патчи координаторам исходного ПО?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Мы стараемся это делать. Иногда отправка патчей с нашей стороны несложна
                     и все довольны, когда очередной выпуск версии пакета завершен.
@@ -33,7 +31,7 @@ include_once "header.ru.inc";
                         внести патч.</li>
                 </ul></div>
         </a>
-        <? $i18n_section= "debian"; ?><a name="debian">
+        <a name="debian">
             <div class="question"><p><b><? echo FINK_Q ; ?>2.2: Какое отношение вы имеете к проекту Debian? 
                     Переносите ли вы Debian Linux в Mac OS X?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Официальных отношений между Fink и <a href="http://www.debian.org">Debian</a> нет. Fink
@@ -44,7 +42,7 @@ include_once "header.ru.inc";
                     Mac OS X / Darwin и не используют исходный пакетный формат Debian.
                     </p></div>
         </a>
-        <? $i18n_section= "apple"; ?><a name="apple">
+        <a name="apple">
             <div class="question"><p><b><? echo FINK_Q ; ?>2.3: Какое отношение вы имеете к Apple?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
                     <a href="http://www.apple.com/">Apple</a> знает о
@@ -57,7 +55,7 @@ include_once "header.ru.inc";
                         Со временем наше участие в игре
                     в открытый исходный код станет активнее."</b> Благодарим Apple!</p></div>
         </a>
-        <? $i18n_section= "darwinports"; ?><a name="darwinports">
+        <a name="darwinports">
             <div class="question"><p><b><? echo FINK_Q ; ?>2.4: Какое отношение вы имеете к Darwinports?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Darwinports и Fink являются взаимодополняющими проектами. Они имеют некоторые
                     точки соприкосновения и несколько человек

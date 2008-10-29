@@ -5,14 +5,12 @@ $cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス"><link rel="prev" href="mirrors.php?phpLang=ja" title="Fink ミラー">';
 
 
-$i18n_chapter = 'upgrade-fink';
-include_once "../i18n_showform.inc";
 include_once "header.ja.inc";
 ?>
 <h1>F.A.Q. - 4. Fink のアップグレード (バージョン固有の問題対処法)</h1>
 
 
-<? $i18n_section= "gcc-0.16.0"; ?><a name="gcc-0.16.0">
+<a name="gcc-0.16.0">
 <div class="question"><p><b><? echo FINK_Q ; ?>4.1: バージョン0.16.0にアップグレードして "Your version of the
 gcc 3.3 compiler is out of date." と言われました。どうしたらいいですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Panther のリリースにともない、 Fink は新しい gcc 3.3 コンパイラに対応するようアップデートされました。
@@ -22,7 +20,7 @@ Mac OS X 10.2 の December 2002 developer tools 用 XCode ベータ・アップ�
 2003年10月24日時点で build 1493 かそれ以上が必要です。</p><p>10.2 ユーザーは、 August 2003 Updater を <a href="http://developer.apple.com/">Apple Developer Connection</a> からダウンロードできます (無料登録が必要)。</p><p>10.3 ユーザーは、 Panther 互換のディベロッパーツール (Xcode など) にアップグレードする必要があります。
 XCode の入った CD が Panther に同梱されているはずです。</p></div>
 </a>
-<? $i18n_section= "fink-0220"; ?><a name="fink-0220">
+<a name="fink-0220">
 	<div class="question"><p><b><? echo FINK_Q ; ?>4.2: 長いこと Fink からのパッケージ更新がありませんでしたが</b></p></div>
 	<div class="answer"><p><b><? echo FINK_A ; ?>:</b> バージョンを確認してください:</p><pre>fink --version</pre><p>
 			rsync selfupdate が動作しないという既知の問題が <code>fink-0.22.0</code> にあります。

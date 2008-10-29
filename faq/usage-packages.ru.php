@@ -1,18 +1,16 @@
 <?
 $title = "Ч.З.В. - Использование (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/02 04:41:49';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2008/10/29 00:15:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="prev" href="usage-general.php?phpLang=ru" title="Проблемы использования пакетов - Общие вопросы">';
 
 
-$i18n_chapter = 'usage-packages';
-include_once "../i18n_showform.inc";
 include_once "header.ru.inc";
 ?>
 <h1>Ч.З.В. - 9. Проблемы использования пакетов  - Специальные пакеты</h1>
         
         
-        <? $i18n_section= "xmms-quiet"; ?><a name="xmms-quiet">
+        <a name="xmms-quiet">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.1: Нет ни звука от XMMS</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Убедитесь, что у вас есть "eSound Output Plugin", отмеченный в
                    преференциях XMMS. По какой-то странной причине он выбирает плагин
@@ -40,7 +38,7 @@ include_once "header.ru.inc";
                     управлять клиентами esd или другой машиной через сеть.</p><p>Также имеются сообщения об отказах и зависании XMMS в
                     10.1. Мы еще не проанализировали и не устранили эту проблему. </p></div>
         </a>
-        <? $i18n_section= "nedit-window-locks"; ?><a name="nedit-window-locks">
+        <a name="nedit-window-locks">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.2: Когда во время редактирования файла в nedit я открываю другой файл, его окно
                     появляется, но не работает.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Это известная проблема, которая наблюдается в последних версиях
@@ -50,13 +48,13 @@ include_once "header.ru.inc";
                     вы хотите работать.</p><p>Сейчас эта проблема решена в <code>nedit-5.3-6</code>, который зависит
                     от <code>openmotif3</code> в большей степени, чем от <code>lesstif</code>.</p></div>
         </a>
-        <? $i18n_section= "xdarwin-start"; ?><a name="xdarwin-start">
+        <a name="xdarwin-start">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.3: Помогите! Когда запускаю XDarwin, она сразу завершает работу!</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Не паникуйте. Документ "Выполнение X11" сейчас имеет большой раздел
                         <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">Выявление и устранение проблем
                     </a> по данному общему вопросу.</p></div>
         </a>
-        <? $i18n_section= "no-server"; ?><a name="no-server">
+        <a name="no-server">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.4: При попытке запуска XDarwin получил сообщение "xinit: No such
                     file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Во-первых, надо убедиться, что вы основываетесь на init.sh при запуске X <code>~/.xinitrc</code>.</p><p>В Jaguar иногда все пакеты <code>xfree86</code> поддаются построению,
@@ -69,7 +67,7 @@ include_once "header.ru.inc";
                      <code>/usr/bin/X11R6</code> в PATH.</p></div>
         </a>
         
-        <? $i18n_section= "xterm-error"; ?><a name="xterm-error">
+        <a name="xterm-error">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.5: xterm не может выполнить "dyld: xterm Undefined symbols: xterm
                     undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Это связано с использованием версии 10.1 XFree86 в 10.2.
@@ -81,7 +79,7 @@ include_once "header.ru.inc";
                     инсталляции на основе бинарных файлов.</p><p>Если вы инсталлировали XFree86 иначе, можно найти
                     патчи для обновления на <a href="http://mrcla.com/XonX">XonX web site</a>.</p></div>
         </a>
-        <? $i18n_section= "libXmuu"; ?><a name="libXmuu">
+        <a name="libXmuu">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.6: При попытке запуска XFree86 получаю одно из таких
                     сообщений об ошибке: "dyld: xinit can't open library:
                     /usr/X11R6/lib/libXmuu.1.dylib" or "dyld: xinit can't open
@@ -94,7 +92,7 @@ include_once "header.ru.inc";
                     связные пакеты XFree86) для исходного кода, либо <code>sudo apt-get
                         install --reinstall xfree86-base-shlibs</code> для бинарных файлов.</p></div>
         </a>
-        <? $i18n_section= "apple-x-bugs"; ?><a name="apple-x-bugs">
+        <a name="apple-x-bugs">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.7: У меня инсталлирован XFree86 от Fink; я его заменил на
                     X11 от Apple и теперь все разваливается!</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Во-первых, если до этого у вас были инсталлированы "связные" версии пакетов
@@ -109,7 +107,7 @@ include_once "header.ru.inc";
                      о дефектах в X1 рекомендуется <a href="http://developer.apple.com/bugreporter">сообщать
                         генератору отчетов о дефектах Apple</a>.</p></div>
         </a>
-        <? $i18n_section= "apple-x-delete"; ?><a name="apple-x-delete">
+        <a name="apple-x-delete">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.8: Хочу стереть клавишу в Apple X11.app для поведения, как в
                     XDarwin.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Некоторые пользователи сообщают, что поведение клавиши
@@ -125,7 +123,7 @@ include_once "header.ru.inc";
                 </p><pre>xrdb -load $HOME/.Xresources 
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
         </a>
-        <? $i18n_section= "gnome-two"; ?><a name="gnome-two">
+        <a name="gnome-two">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.9: Я сделал обновление от GNOME 1.x дo GNOME 2.x и теперь
                     <code>gnome-session</code> не открывает менеджер окон. </b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Тогда как в GNOME 1.x <code>gnome-session</code> активизирует
@@ -136,14 +134,14 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
 exec metacity &amp; exec gnome-session</pre><p>Прим.: это больше не относится к <b>GNOME 2.4</b>. Выполнение
                     <code>gnome-session</code> активизирует менеджер окон.</p></div>
         </a>
-        <? $i18n_section= "apple-x11-no-windowbar"; ?><a name="apple-x11-no-windowbar">
+        <a name="apple-x11-no-windowbar">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.10: Я сделал обновление до Apple X11 в Panther и теперь у меня не хватает
                     строк заголовков в окнах.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Вы не обновили X11 до версии  "X11 1.0 - XFree86 4.3.0",
                     включенной в Panther. Вы можете инсталлировать X11 из X11.pkg на
                     Disk 3.</p></div>
         </a>
-        <? $i18n_section= "apple-x11-wants-xfree86"; ?><a name="apple-x11-wants-xfree86">
+        <a name="apple-x11-wants-xfree86">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.11: Я инсталлировал Apple X11, но Fink продолжает спрашивать об
                     инсталяции XFree86 или X.org.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Есть две возможности на ваше усмотрение.</p><ul>
@@ -213,7 +211,7 @@ sudo apt-get install fink</pre>
                     </li>
                 </ul></div>
         </a>
-        <? $i18n_section= "wants-xfree86-on-upgrade"; ?><a name="wants-xfree86-on-upgrade">
+        <a name="wants-xfree86-on-upgrade">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.12: Я переключился с версии 10.2 Fink на 10.2-gcc3.3 или 10.3,
                     у меня Apple X11, а Fink просит инсталлировать XFree86 или X.org.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Возможно, вам надо будет удалить один старых пакетов заполнителя: 
@@ -229,7 +227,7 @@ sudo apt-get install fink</pre>
                     вы инсталлировали X11SDK, то надо также посмотреть <code>system-xfree86-dev</code>.</p><p>Если проблемы остаются, см. выше вопрос в связи с тем, что <a href="#apple-x11-wants-xfree86">Fink просит инсталлировать XFree86 или
                     X.org</a> </p></div>
         </a>
-        <? $i18n_section= "special-x11-debug"; ?><a name="special-x11-debug">
+        <a name="special-x11-debug">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.13: Я меня остались проблемы с X11и Fink.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если подсказки в ответах по поводу проблем: <a href="#apple-x11-wants-xfree86">Fink просит инсталлировать
                         XFree86 или X.org</a> и <a href="#wants-xfree86-on-upgrade">X11 и обновление от
@@ -257,15 +255,15 @@ fink selfupdate; fink index</pre><p>(первая строка может пре
                 </ul></div>
         </a>
     
-    <? $i18n_section= "tiger-gtk"; ?><a name="tiger-gtk">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.14: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</b></p><? show_form (); ?></div>
+    <a name="tiger-gtk">
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.14: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p><p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
 </p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p><p>You may find it preferable to set this globally (e.g. in your startup script, and/or in your <code>.xinitrc</code>, which you may need to do to run GNOME).  Put</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <b>bash</b> users and:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <b>tcsh</b> users.</p><p>Note:  this will automatically be done if you install a recent enough <code>base-files</code>.
-	</p><? show_form (); ?></div>
+	</p></div>
     </a>
-    <? $i18n_section= "yelp"; ?><a name="yelp">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.15: I can't get the help to work for any GNOME application.</b></p><? show_form (); ?></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p><? show_form (); ?></div>
+    <a name="yelp">
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.15: I can't get the help to work for any GNOME application.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p></div>
     </a>
     
     

@@ -1,18 +1,16 @@
 <?
 $title = "Ч.З.В. - Обновление Fink";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/02 04:41:49';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2008/10/29 00:15:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-fink.php?phpLang=ru" title="Инсталляция, использование и поддержка Fink"><link rel="prev" href="mirrors.php?phpLang=ru" title="Зеркала Fink">';
 
 
-$i18n_chapter = 'upgrade-fink';
-include_once "../i18n_showform.inc";
 include_once "header.ru.inc";
 ?>
 <h1>Ч.З.В. - 4. Обновление Fink (проблемы, связанные с версиями)</h1>
         
         
-        <? $i18n_section= "gcc-0.16.0"; ?><a name="gcc-0.16.0">
+        <a name="gcc-0.16.0">
             <div class="question"><p><b><? echo FINK_Q ; ?>4.1: Я только что сделал обновление до 0.16.0 и получил сообщение: "Ваша версия
                     компилятора gcc 3.3 устарела." Что делать?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Начиная с версии Panther, Fink обновлялся для понимания
@@ -28,7 +26,7 @@ include_once "header.ru.inc";
                     разработчика, совместимой с Panther (i.e. XCode). Компакт-диск с XCode должен
                     предоставляться вместе со средствами Panther.</p></div>
         </a>
-        <? $i18n_section= "fink-0220"; ?><a name="fink-0220">
+        <a name="fink-0220">
             <div class="question"><p><b><? echo FINK_Q ; ?>4.2: Я не получал обновлений пакетов от Fink в течение некоторого времени.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Проверьте вашу версию:</p><pre>fink --version</pre><p>Есть известная проблема с <code>fink-0.22.0</code>,
                     где автообновление rsync перестало работать. Для решения этой проблемы

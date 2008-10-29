@@ -1,18 +1,16 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/02 04:41:49';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2008/10/29 00:15:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problèmes généraux d\'utilisation de paquets">';
 
 
-$i18n_chapter = 'usage-packages';
-include_once "../i18n_showform.inc";
 include_once "header.fr.inc";
 ?>
 <h1>Q.F.P. - 9. Problèmes d'utilisation spécifiques à certains paquets</h1>
 
 
-<? $i18n_section= "xmms-quiet"; ?><a name="xmms-quiet">
+<a name="xmms-quiet">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.1: Aucun son n'est disponible dans XMMS. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Vérifiez que vous avez sélectionné "eSound Output Plugin" dans les préférences de XMMS. Pour d'obscures raisons, c'est le plugin d'écriture sur le disque qui est sélectionné par défaut.</p><p>Si cela ne résout pas le problème ou si XMMS se plaint qu'il ne peut trouver votre carte son, essayez ceci :</p><ul>
 <li>Vérifiez que la sortie son n'est pas réglée sur silence dans Mac OS X.</li>
@@ -20,47 +18,47 @@ include_once "header.fr.inc";
 <li>Si eSound ne fonctionne toujours pas, vérifiez les permissions des fichiers <code>/tmp/.esd</code> et <code>/tmp/.esd/socket</code>. Le propriétaire doit être votre compte utilisateur. Si ce n'est pas le cas, tuez le démon esd s'il est en cours de fonctionnement, supprimez le répertoire en tant que super-utilisateur via la commande <code>sudo rm -rf /tmp/.esd</code>, puis redémarrez esd (en tant qu'utilisateur lambda, pas en tant que super-utilisateur).</li>
 </ul><p>Notez que esd est conçu pour être lancé par un utilisateur lambda, pas par le super-utilisateur. Il communique, en général, via la socket système <code>/tmp/.esd/socket</code>. Vous n'avez besoin des options <code>-tcp</code> et <code>-port</code> que si vous voulez lancer des clients esd sur une autre machine du réseau.</p><p>Certaines personnes ont signalé que XMMS se plantait ou se bloquait sur 10.1. Il n'y a pas eu à ce jour d'analyse ou de solution à ce phénomène.</p></div>
 </a>
-<? $i18n_section= "nedit-window-locks"; ?><a name="nedit-window-locks">
+<a name="nedit-window-locks">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.2: Lors de la modification d'un fichier dans nedit, si l'on tente d'ouvrir un autre fichier, sa fenêtre apparaît mais elle ne répond pas. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> C'est un problème connu qui se produit avec des versions récentes de <code>nedit</code> et <code>lesstif</code> sur toutes les plates-formes. La solution est d'ouvrir une nouvelle fenêtre via le menu File--&gt;New, puis d'ouvrir le nouveau fichier sur lequel vous voulez travailler.</p><p>Ce problème est résolu dans la version <code>nedit-5.3-6</code>, qui dépend d'<code>openmotif3</code> et non plus de <code>lesstif</code>.</p></div>
 </a>
-<? $i18n_section= "xdarwin-start"; ?><a name="xdarwin-start">
+<a name="xdarwin-start">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.3: XDarwin quitte immédiatement après lancement. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Pas de panique. Vous trouverez dans le document Utilisation de X11 une large section <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">résolution de problèmes</a> à ce sujet.</p></div>
 </a>
-<? $i18n_section= "no-server"; ?><a name="no-server">
+<a name="no-server">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.4: Au démarrage de XDarwin, un message indique que le fichier xinit est introuvable et qu'il n'existe pas de server X accessible dans le répertoire /usr/X11R6/bin (message en anglais : "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH"). Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Tout d'abord, vérifiez que vous sourcez init.sh dans le fichier de démarrage de X <code>~/.xinitrc</code>.</p><p>Sous Jaguar, il arrive parfois que tous les paquets <code>xfree86</code> soient compilés, mais que seuls les paquets <code>xfree86-base</code> et <code>xfree86-base-shlibs</code> soient installés. Vérifiez que les paquets <code>xfree86-rootless</code> et <code>xfree86-rootless-shlibs</code> sont installés. Si ce n'est pas le cas, lancez <code>fink install xfree86-rootless</code>. Cela devrait résoudre le problème.</p><p>Si ces paquets sont installés, essayez la commande <code>fink rebuild xfree86-rootless</code>. Si cela ne marche pas, vérifiez que le répertoire <code>/usr/bin/X11R6</code> est dans votre PATH.</p></div>
 </a>
-<? $i18n_section= "xterm-error"; ?><a name="xterm-error">
+<a name="xterm-error">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.5: Le lancement de xterm échoue avec un message signalant que le chargeur de liens dynamiques ne trouve pas le symbole _tgetent défini dans xterm et censé être dans la bibliothèque /usr/lib/libSystem.B.dylib (message en anglais : "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib"). Que se passe-t-il ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Cela se produit lorsque l'on utilise une version de XFree86 destinée à Mac OS X 10.1 sur une machine où est installée Mac OS X 10.2. Vous devez passer à une version destinée à Mac OS X 10.2.</p><p>Si vous utilisez les paquets Fink <code>xfree86</code>, vous pouvez passer à une version plus récente de la façon habituelle ("<code>fink selfupdate-cvs ; fink update-all</code>" pour une installation à partir du source, <code>fink selfupdate ; sudo apt-get update; sudo apt-get dist-upgrade</code>" pour une installation à partir des binaires.</p><p>Si vous avez installé XFree86 par d'autres moyens, vous trouverez les rustines qui vous permettront de faire la mise à jour sur le <a href="http://mrcla.com/XonX">site web de XonX</a>.</p></div>
 </a>
-<? $i18n_section= "libXmuu"; ?><a name="libXmuu">
+<a name="libXmuu">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.6: Au démarrage de XFree86, un message signale que le chargeur de liens dynamiques ne peut ouvrir la bibliothèque /usr/X11R6/lib/libXmuu.1.dylib ou la bibliothèque /usr/X11R6/lib/libXext.6.dylib appelées par xinit (message en anglais : "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" ou "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"). Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Un fichier censé être installé par <code>xfree86-base-(threaded)-shlibs</code> manque. Vous devez l'installer via <code>fink reinstall xfree86-base-shlibs</code> (<code>fink reinstall xfree86-base-threaded-shlibs</code> si vous utilisez les paquets XFree86 avec gestion des processus légers) pour les utilisateurs des sources, ou <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> pour les utilisateurs de binaires.</p></div>
 </a>
-<? $i18n_section= "apple-x-bugs"; ?><a name="apple-x-bugs">
+<a name="apple-x-bugs">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.7: Après installation de XFree86 et son remplacement par X11 d'Apple, tous les programmes se plantent. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Premièrement, si vous aviez installé précédemment les versions "avec processus légers" (threaded) des paquets Fink XFree86, vous devez recompiler l'application qui se plante. Certains programmes vérifie la disponibilité des processus légers lors de la compilation et à partir de là supputent que les processus légers sont toujours disponibles.</p><p>Deuxièmement, il se peut que vous soyez tombé sur un bogue d'Apple X11. Au moment où cette page a été écrite, un certain nombre de bogues étaient connus d'Apple et en cours de résolution.</p><p>Si vous vous posez des questions sur X11 d'Apple qui ne sont pas liées à Fink, voyez la <a href="http://www.lists.apple.com/x11-users">liste de discussion officielle d'Apple sur X11</a>. Il est aussi conseillé de soumettre les bogues découverts dans X11 via le <a href="http://developer.apple.com/bugreporter">moteur de rapport de bogues</a> d'Apple.</p></div>
 </a>
-<? $i18n_section= "apple-x-delete"; ?><a name="apple-x-delete">
+<a name="apple-x-delete">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.8: Comment avoir sous X11 d'Apple le même comportement de la touche suppr que sous XDarwin ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Certains utilisateurs ont signalé que la touche <code>suppr</code> se comporte différemment sous XDarwin et sous X11 d'Apple. On peut rectifier cela en ajoutant les lignes suivantes au fichier de démarrage approprié de X :</p><p>Dans le fichier <b>.Xmodmap</b>, rajoutez la ligne :</p><pre>keycode 59 = Delete</pre><p>Dans le fichier <b>.Xresources</b>, rajoutez les lignes :</p><pre>xterm*.deleteIsDEL: true 
 xterm*.backarrowKey: false
 xterm*.ttyModes: erase ^?</pre><p>Dans le fichier <b>.xinitrc</b>, rajoutez les lignes :</p><pre>xrdb -load $HOME/.Xresources 
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
 </a>
-<? $i18n_section= "gnome-two"; ?><a name="gnome-two">
+<a name="gnome-two">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.9: Après passage de GNOME 1.x à GNOME 2.x, le programme <code>gnome-session</code> n'ouvre plus de gestionnaire de fenêtres. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Alors que, sous GNOME 1.x, <code>gnome-session</code> invoque automatiquement le gestionnaire de fenêtres <code>sawfish</code>, sous GNOME 2.x, vous devez vous-même appeler un gestionnaire de fenêtres dans le fichier <code>~/.xinitrc</code> avant de lancer <code>gnome-session</code>, par exemple :</p><pre>... 
 exec metacity &amp; exec gnome-session</pre><p>Note : ceci n'est plus vrai pour <b>GNOME 2.4</b>. Le lancement de <code>gnome-session</code> invoque un gestionnaire de fenêtres.</p></div>
 </a>
-<? $i18n_section= "apple-x11-no-windowbar"; ?><a name="apple-x11-no-windowbar">
+<a name="apple-x11-no-windowbar">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.10: Après passage à X11 d'Apple sous Panther, les barres de titre de fenêtre n'apparaissent plus. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Vous n'êtes pas passé à la version "X11 1.0 - XFree86 4.3.0" incluse dans Panther. Vous devez installer X11 à partir du paquet X11.pkg qui est situé sur le disque 3.</p></div>
 </a>
-<? $i18n_section= "apple-x11-wants-xfree86"; ?><a name="apple-x11-wants-xfree86">
+<a name="apple-x11-wants-xfree86">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.11: Après installation de X11 d'Apple, Fink continue à vouloir installer XFree86 ou X.org. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Il faut envisager deux hypothèses :</p><ul>
 <li>
@@ -88,12 +86,12 @@ sudo apt-get install fink</pre>
 </li>
 </ul></div>
 </a>
-<? $i18n_section= "wants-xfree86-on-upgrade"; ?><a name="wants-xfree86-on-upgrade">
+<a name="wants-xfree86-on-upgrade">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.12: Après passage de la version 10.2 de Fink à la version 10.2-gcc3.3 ou 10.3, Fink veut installer XFree86 ou X.org alors que X11 d'Apple est déjà installé. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Il se peut que vous deviez supprimer un des paquets fantômes antérieurs : <code>system-xfree86</code>, <code>system-xfree86-42</code> ou <code>system-xfree86-43</code>. Fink sait maintenant reconnaître si vous avez une version de X11 installée manuellement, par exemple celle d'Apple, et génère des paquets virtuels. Comme d'autres paquets dépendent de <code>system-xfree86</code>, vous devez utiliser la commande :</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
  system-xfree86-43</pre><p>pour supprimer les versions obsolètes. Vous pouvez vérifier votre installation en lançant la commande :</p><pre>fink list -i system-xfree86</pre><p>et vous assurer que les paquets <code>system-xfree86</code> et <code>system-xfree86-shlibs</code>sont présents. Si vous avez installé le paquet X11SDK, vous devez aussi avoir le paquet <code>system-xfree86-dev</code>.</p><p><b>Note</b> : les barres obliques inversées ont été rajoutées uniquement pour des raisons de formatage.</p><p>Si le problème persiste, voir plus haut <a href="#apple-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</a>.</p></div>
 </a>
-<? $i18n_section= "special-x11-debug"; ?><a name="special-x11-debug">
+<a name="special-x11-debug">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.13: Des problèmes persistent entre X11 et Fink. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si les solutions données aux sections <a href="#apple-x11-wants-xfree86">Fink continue à vouloir installer XFree86 ou X.org</a> ou <a href="#wants-xfree86-on-upgrade">Fink veut installer XFree86</a> ne résolvent pas votre problème, ou ne sont pas applicables à votre cas, vous devrez supprimer entièrement X11 et tous les paquets fantômes antérieurs ainsi que les paquets relatifs à X11, qu'ils soient installés partiellement ou non via les commandes:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 \
 system-xfree86-43 xorg xorg-shlibs xfree86 xfree86-shlibs \
@@ -111,11 +109,11 @@ fink selfupdate; fink index</pre><p><b>Note</b> : les barres obliques inversées
 </li>
 </ul></div>
 </a>
-<? $i18n_section= "tiger-gtk"; ?><a name="tiger-gtk">
+<a name="tiger-gtk">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.14: Après passage à Tiger (Mac OS X 10.4), des erreurs à propos de <code>_EVP_idea_cbc</code> apparaissent chaque fois qu'on utilise une application Gtk. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ceci était, apparemment, dû à un bogue dans le chargeur de liens dynamiques de Tiger (au moins jusqu'à la version 10.4.1), mais il semble être corrigé dans la version 10.4.3. Fink proposait une solution dans le fichier <code>base-files-1.9.7-1</code> et les versions suivantes.</p><p>Si vous n'êtes pas passé à Tiger et/ou n'avez pas mis à jour le paquet <code>base-files</code>, vous pouvez corriger ce problème en préfixant le nom du logiciel que vous souhaitez lancer avec le fragment de code suivant :</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>Par exemple si vous voulez lancer <code>gnucash</code>, utilisez la commande :</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>Cette méthode fonctionne pour les applications lancées à partir du menu Applications de X11 d'Apple ou à partir du terminal.</p><p>Vous pouvez aussi déclarer la variable au niveau global (par exemple dans votre script de démarrage et/ou dans votre fichier<code>.xinitrc</code>, ce qui peut-être nécessaire pour faire tourner GNOME). Mettez le fragment de code suivant :</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>dans votre fichier <code>.xinitrc</code> (quel que soit votre shell d'ouverture de session) ou dans le fichier <code>.profile</code> (ou tout autre script de démarrage) pour les utilisateurs de <b>bash</b>.</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>est la commande équivalente à utiliser, par exemple dans votre fichier <code>.cshrc</code> pour les utilisateurs de <b>tcsh</b>.</p><p>Note : ceci est fait automatiquement quand on installe une version suffisamment récente du fichier <code>base-files</code>.</p></div>
 </a>
-<? $i18n_section= "yelp"; ?><a name="yelp">
+<a name="yelp">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.15: Il est impossible d'accéder à l'aide dans aucune application GNOME. Que faire ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Vous devez installer le paquet <code>yelp</code>. Ce paquet n'est pas inséré dans le fagot GNOME, car il utilise des outils cryptographiques, et nous avons décidé de ne pas installer l'ensemble de GNOME dans la branche cryptographique, juste pour pouvoir utiliser le système d'aide.</p></div>
 </a>

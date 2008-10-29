@@ -5,14 +5,12 @@ $cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般"><link rel="prev" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般">';
 
 
-$i18n_chapter = 'comp-packages';
-include_once "../i18n_showform.inc";
 include_once "header.ja.inc";
 ?>
 <h1>F.A.Q. - 7. コンパイルの問題 - 特定のバージョン</h1>
 
 
-<? $i18n_section= "libgtop"; ?><a name="libgtop">
+<a name="libgtop">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.1: <code>sed</code> を使うパッケージビルドが失敗します。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これはログインスクリプト (例 <code>~/.cshrc</code>) が "<code>echo Hello</code>" であるとか <code>xttitle</code> といったことをターミナルに書くと発生します。
 いちばん簡単な解決方法は、問題の行をコメントアウトすることです。
@@ -20,7 +18,7 @@ include_once "header.ja.inc";
 echo Hello
 endif</pre></div>
 </a>
-<? $i18n_section= "cant-install-xfree"; ?><a name="cant-install-xfree">
+<a name="cant-install-xfree">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.2: Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> どのような X11 でも、残念なことに、 /usr/X11R6 にインストールしなければなりません。
 Fink の <code>xfree86-base</code> と <code>xfree86-rootless</code> もここにインストールします。
@@ -39,7 +37,7 @@ X11 に依存するパッケージがない場合、これは単純です。
 [<a href="http://www.finkproject.org/faq/usage-fink.php#unstable%5C">unstable パッケージのインストール</a> を参照]
 </p></div>
 </a>
-<? $i18n_section= "change-thread-nothread"; ?><a name="change-thread-nothread">
+<a name="change-thread-nothread">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.3: non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink 版の xfree86 を使っていて、 threaded と non-threaded を切替えたいのなら、 手動で古いバージョンを削除する必要があります。
 これは、コマンドラインで:</p><pre>sudo dpkg -r --force-depends xfree86-base
@@ -56,16 +54,16 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 <code>xfree86-base-threaded</code> と <code>xfree86-rootless-threaded</code>
 </p><p>普通は、ソースインストールは: "<code>fink install</code>" で、バイナリインストールは: "<code>apt-get install</code>" または <code>dselect</code> です。</p></div>
 </a>
-<? $i18n_section= "cctools"; ?><a name="cctools">
+<a name="cctools">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.4: KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このなんとも暗号のようなメッセージは、 December 2002 Developer Tools をインストールしろという意味です。</p></div>
 </a>
-<? $i18n_section= "libiconv-gettext"; ?><a name="libiconv-gettext">
+<a name="libiconv-gettext">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.5: <code>libiconv</code> が更新できません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 下記の形式のエラーでしたら:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>以下のように実行して直すことが出来ます</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
 </a>
-    <? $i18n_section= "cplusplus-filt"; ?><a name="cplusplus-filt">
+    <a name="cplusplus-filt">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.6: <code>g77</code> がインストールできません。<code>c++filt</code> がないからです。 
         これはどこにありますか?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> もし、Tiger にアップデート後にエラーが</p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>とでたら、以下のようにします:</p><ul>
@@ -80,7 +78,7 @@ fink install libiconv</pre></div>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
     </a>
-    <? $i18n_section= "gettext-tools"; ?><a name="gettext-tools">
+    <a name="gettext-tools">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink が、 <code>gettext</code> の依存性に矛盾があるとだけ表示し、更新してくれません。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
           <code>fink selfupdate</code> を実行して最新にした後、
@@ -88,7 +86,7 @@ fink install libiconv</pre></div>
           古いバージョンの <code>gettext-tools</code> が <code>gettext</code> の更新を妨害していた可能性があります。
         </p></div>
     </a>
-  <? $i18n_section= "Leopard-libXrandr"; ?><a name="Leopard-libXrandr">
+  <a name="Leopard-libXrandr">
     <div class="question"><p><b><? echo FINK_Q ; ?>7.8: 
       <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> がないため <b>gtk+2</b> がインストールできません。</b></p></div>
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
@@ -99,7 +97,7 @@ fink install libiconv</pre></div>
     バグがあります。
     </p><p>解決するには、以下のコマンドを実行してファイルを修正してください:</p><pre>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</pre></div>
   </a>
-    <? $i18n_section= "all-others"; ?><a name="all-others">
+    <a name="all-others">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.9: ここに載っていないパッケージで問題があります。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> パッケージの問題は変わりやすいので、Fink wiki に情報を載せることにいたしました。
         <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</a> をご確認ください。

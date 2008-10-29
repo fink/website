@@ -1,30 +1,28 @@
 <?
 $title = "常见疑问（F.A.Q.） - 编译（２）";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/02 04:41:49';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2008/10/29 00:15:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题"><link rel="prev" href="comp-general.php?phpLang=zh" title="一般性编译问题">';
 
 
-$i18n_chapter = 'comp-packages';
-include_once "../i18n_showform.inc";
 include_once "header.zh.inc";
 ?>
 <h1>常见疑问（F.A.Q.） - 7. 编译问题－特定软件包</h1>
     
     
-    <? $i18n_section= "libgtop"; ?><a name="libgtop">
+    <a name="libgtop">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.1: 一个软件包构建失败，错误和 <code>sed</code> 有关。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果你的登录脚本（例如 <code>~/.cshrc</code>）向终端输出了些信息，比如 "<code>echo Hello</code>" 或 <code>xttitle</code>，可能会导致这个错误。要消除这个问题，最简单的办法是注释掉这些行。</p><p>如果你想保留这些回显信息，你可以这样做：</p><pre>if ( $?prompt) then
 echo Hello
 endif</pre></div>
     </a>
-    <? $i18n_section= "cant-install-xfree"; ?><a name="cant-install-xfree">
+    <a name="cant-install-xfree">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.2: 我想改用 Fink　的 XFree86 软件包，但我不能安装 <code>xfree86-base</code> 或 <code>xfree86</code>，因为它和 <code>system-xfree86</code> 冲突。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 很不幸，各种 X11 都不可避免地要安装在 /usr/X11R6 中。因此 Fink 的 <code>xfree86-base</code> 和 <code>xfree86-rootless</code> 软件包也需要安装在那里。不过，由于 Fink 不会删除任何没有在它数据库里面的文件，它不会自动替换非 Fink 安装的 X11。</p><p></p><p>下面是应该怎么做：</p><p></p><p>
           <b>注意：安装了新版（0.16.2 或更新）Fink 的 10.2.x 用户和 10.3.x 的用户应该跳过下面的步骤 1（事实上，他们也做不了步骤 1）。</b>
         </p><p>1. 删除 <code>system-xfree86</code>。如果你暂时还没有依赖于 X11 的软件包，这很简单。但通常情况是，已经安装了需要依赖于 X11 的软件包。如果不想全部删除他们，你可以使用：</p><pre>sudo dpkg --remove --force-depends system-xfree86</pre><p>来进行删除，而保持其它软件包仍然存在。如果你没有安装 <code>system-xfree86</code>，那么跳到步骤 3。</p><p>2. 手工删除所有 XFree86。可以这么做：</p><pre>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</pre><p>如果你正在使用的是苹果的 X11，同时也删除 X11 程序。</p><p>3. 要获取 XFree86-4.2.1，用通常的办法安装 Fink 的 <code>xfree86-base</code> 和 <code>xfree86-rootless</code> 软件包：对使用源代码安装的用户　"<code>fink install</code>"；对二进制安装的用户 "<code>apt-get install</code>" 或 <code>dselect</code>。</p><p>或</p><p>3a. 要获取 XFree86-4.3.x 或更高版本，使用 "fink install xfree86" 安装 Fink 的 <code>xfree86</code> 软件包，最新版本(2004年5月25日的 XFree86-4.4.x 版本)目前还没有二进制安装版发布，而且仅有未稳定的版本[参阅 <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">how to install unstable package</a>]。</p></div>
     </a>
-    <? $i18n_section= "change-thread-nothread"; ?><a name="change-thread-nothread">
+    <a name="change-thread-nothread">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.3: 怎么把 Fink 的 XFree86 从非线程化的版本改为线程化的版本（或相反）？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果你正在使用 Fink 版本的 XFree86，并且你希望在线程化或非线程化的版本之间转换，你需要手工删除旧的版本，你可以用下面的命令行命令实现：</p><pre>
 sudo dpkg -r --force-depends xfree86-base
@@ -42,45 +40,45 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
           <code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code>
         </p><p>你可以使用通常的办法：对源代码安装用户 "<code>fink install</code>"；对二进制安装用户 "<code>apt-get install</code>" or <code>dselect</code> 。</p></div>
     </a>
-    <? $i18n_section= "cctools"; ?><a name="cctools">
+    <a name="cctools">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.4: "当我安装 KDE 的时候，我碰到下面的信息：'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这个晦涩的消息表明你需要安装 December 2002 开发工具。</p></div>
     </a>
   
     
-    <? $i18n_section= "libiconv-gettext"; ?><a name="libiconv-gettext">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I can't update <code>libiconv</code>.</b></p><? show_form (); ?></div>
+    <a name="libiconv-gettext">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I can't update <code>libiconv</code>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>you can solve this problem by running</p><pre>fink remove gettext-dev
-fink install libiconv</pre><? show_form (); ?></div>
+fink install libiconv</pre></div>
     </a>
-    <? $i18n_section= "cplusplus-filt"; ?><a name="cplusplus-filt">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</b></p><? show_form (); ?></div>
+    <a name="cplusplus-filt">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form </p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>since updating to Tiger, then you need to do the following:</p><ul>
           <li>Flush out your old Developer Tools versions via running <pre>/Developer/Tools/uninstall-devtools.pl</pre>in a terminal.  Then install XCode (2.0 or later).<p></p></li>
           <li>Reinstall  <code>BSD.pkg</code> (from the Tiger system installation).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
         </ul><p>
 1) Flush out your old
-2) Reinstall BSD.pkg (from your main OS install)</p><? show_form (); ?></div>
+2) Reinstall BSD.pkg (from your main OS install)</p></div>
     </a>
-    <? $i18n_section= "gettext-tools"; ?><a name="gettext-tools">
+    <a name="gettext-tools">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink refuses to update the <code>gettext</code> package,
-complaining that the dependencies are in an inconsistent state.</b></p><? show_form (); ?></div>
+complaining that the dependencies are in an inconsistent state.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> After running <code>fink selfupdate</code> to be sure you
 have the latest versions, try <code>fink update gettext-tools</code>.
 An old version of the <code>gettext-tools</code> package may be 
-preventing you from updating <code>gettext</code>.</p><? show_form (); ?></div>
+preventing you from updating <code>gettext</code>.</p></div>
     </a>
-   <? $i18n_section= "Leopard-libXrandr"; ?><a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</b></p><? show_form (); ?></div>
+   <a name="Leopard-libXrandr">
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</b></p></div>
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This problem affects machines with OS 10.5.2 pre-installed.
       There is currently a bug in Apple's X11 in that a file in it that is used
     for building references <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code>,
-    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p><p>The workaround is to run the following command to fix the file:</p><pre>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</pre><? show_form (); ?></div>
+    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p><p>The workaround is to run the following command to fix the file:</p><pre>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</pre></div>
   </a>
-    <? $i18n_section= "all-others"; ?><a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.9: I'm having issues with a package that isn't listed here.</b></p><? show_form (); ?></div>
+    <a name="all-others">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.9: I'm having issues with a package that isn't listed here.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
-      up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</a>.</p><? show_form (); ?></div>
+      up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</a>.</p></div>
     </a>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

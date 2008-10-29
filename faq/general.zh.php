@@ -1,18 +1,16 @@
 <?
 $title = "常见疑问（F.A.Q.） - 一般性问题";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/02 04:41:49';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2008/10/29 00:15:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="relations.php?phpLang=zh" title="与其它项目的关系"><link rel="prev" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents">';
 
 
-$i18n_chapter = 'general';
-include_once "../i18n_showform.inc";
 include_once "header.zh.inc";
 ?>
 <h1>常见疑问（F.A.Q.） - 1. 一般性问题</h1>
     
     
-    <? $i18n_section= "what"; ?><a name="what">
+    <a name="what">
       <div class="question"><p><b><? echo FINK_Q ; ?>1.1: 什么是 Fink？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 Fink 希望把越来越多的 Unix 软件带到 Mac OS X，因此它的两个主要目标是：
@@ -27,11 +25,11 @@ Fink 希望把越来越多的 Unix 软件带到 Mac OS X，因此它的两个主
 对于从源代码构建软件包，我们使用我们自己的工具，称为 <code>fink</code>，它可以生成 <code>.deb</code> 软件包文件。
 </p></div>
     </a>
-    <? $i18n_section= "naming"; ?><a name="naming">
+    <a name="naming">
       <div class="question"><p><b><? echo FINK_Q ; ?>1.2: Fink 是什么意思？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 没有什么特别含义，只是一个名字而已。它也不是什么缩写。</p><p>事实上，Fink 在德语中是雀类（属于鸟类）的意思。当我在给这个项目起名的时候，操作系统的名称 Darwin，使我联想到查尔斯·达尔文，Galapagos 群岛和进化论。然后我想起了学校时学过的关于达尔文雀的东西，以及它们尖尖的嘴...</p></div>
     </a>
-    <? $i18n_section= "bsd-ports"; ?><a name="bsd-ports">
+    <a name="bsd-ports">
       <div class="question"><p><b><? echo FINK_Q ; ?>1.3: Fink 和 BSD port 机制有什么区别（它被包括在 OpenPackages 和 GNU-Darwin 中）？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 一些主要优点：</p><ul>
           <li>
@@ -54,11 +52,11 @@ dpkg 提供完善的二进制包管理机制－平滑升级，对配置文件的
           </li>
         </ul></div>
     </a>
-    <? $i18n_section= "usr-local"; ?><a name="usr-local">
+    <a name="usr-local">
       <div class="question"><p><b><? echo FINK_Q ; ?>1.4: 为什么 Fink 不安装在 /usr/local？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 有几个原因，总括来说是 "可能会被损坏"。</p><p>原因一：第三方软件。/usr/local 是存放不是由系统提供的第三方软件的地方。这意味着这是一个放杂七杂八东西的好地方。同时，这也意味着其它人也会放杂七杂八的东西到那里。多数的安装流程只是简单地覆盖那里的东西——对 dpkg 也是这样。当然，用户可以选择不安装第三方软件到 /usr/local。不幸的是，多数的安装程序并不事先告诉你它会安装到哪里。</p><p>原因二：/usr/local/bin 在默认的 PATH 设置中。这意味着你的 shell 程序不需要什么其它设置就可以找到你安装的程序。但这意味着如果你不想使用这个程序，你需要进行额外的设置。极端情况下，它会影响系统本身——由需要部分依赖于 shell 脚本。</p><p>原因三：编译工具默认搜索 /usr/local 目录。编译器会在 /usr/local/include 寻找头文件，连接器会在 /usr/local/lib 寻找连接库。同样，有些时候这会显得方便些，但在有需要的时候会很难禁用这个特性。通过把一个错误的 <code>stdio.h</code> 文件放到 /usr/local/include 目录中，你就很容易使得编译器出错。</p><p>总的来说，把 Fink 安装到 /usr/local 是可能的。安装程序会明确警告你，但如果你确认你同意这样做的风险，它会按你的要求去做。</p></div>
     </a>
-    <? $i18n_section= "why-sw"; ?><a name="why-sw">
+    <a name="why-sw">
       <div class="question"><p><b><? echo FINK_Q ; ?>1.5: 为什么选择 /sw？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这个选择基本上是很随意的，但是基于实践（升级）的理由以及它在避免于其它软件包系统冲突方面是足够安全的，在可以遇见的将来仍然会保持这样。</p></div>
     </a>

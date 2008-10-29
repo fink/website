@@ -1,18 +1,16 @@
 <?
 $title = "Ч.З.В. - Компиляция (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/02 04:41:49';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2008/10/29 00:15:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-general.php?phpLang=ru" title="Проблемы использования пакетов - Общие вопросы"><link rel="prev" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы">';
 
 
-$i18n_chapter = 'comp-packages';
-include_once "../i18n_showform.inc";
 include_once "header.ru.inc";
 ?>
 <h1>Ч.З.В. - 7. Проблемы компиляции - специальные пакеты</h1>
         
         
-        <? $i18n_section= "libgtop"; ?><a name="libgtop">
+        <a name="libgtop">
             <div class="question"><p><b><? echo FINK_Q ; ?>7.1: Не получается создать пакет и появляются ошибки с упоминанием <code>sed</code>.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Это может происходить, когда ваш скрипт регистрации (н-р
                     <code>~/.cshrc</code>) сделал нечто, после чего терминал получил сообщение,
@@ -23,7 +21,7 @@ include_once "header.ru.inc";
 	echo Hello 
 endif</pre></div>
         </a>
-        <? $i18n_section= "cant-install-xfree"; ?><a name="cant-install-xfree">
+        <a name="cant-install-xfree">
             <div class="question"><p><b><? echo FINK_Q ; ?>7.2: Хочу перейти на пакеты Fink's XFree86, но не могу
                     инсталлировать <code>xfree86-base</code> | <code>xfree86</code>,
                     т.к.он конфликтует с <code>system-xfree86</code>.</b></p></div>
@@ -52,7 +50,7 @@ endif</pre></div>
                     на нестабильном дереве [см. <a href="http://www.finkproject.org/faq/usage-fink.php#unstable%5C">как
                         инсталлировать нестабильные пакеты</a>].</p></div>
         </a>
-        <? $i18n_section= "change-thread-nothread"; ?><a name="change-thread-nothread">
+        <a name="change-thread-nothread">
             <div class="question"><p><b><? echo FINK_Q ; ?>7.3: Как можно поменять несвязную версию пакетов Fink
                     XFree86 на связную версию (или наоборот)?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если вы выполняете версию Fink XFree86 и хотите
@@ -76,47 +74,47 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>В FinkCom
                     <code>dselect</code> для бинарных файлов.</p></div>
         </a>
         
-        <? $i18n_section= "cctools"; ?><a name="cctools">
+        <a name="cctools">
             <div class="question"><p><b><? echo FINK_Q ; ?>7.4: При попытке инсталляции KDE получил сообщение:
                     'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Это зашифрованное сообщение означает, что вам надо инсталлировать
                     Developer Tools за декабрь 2002 г.</p></div>
         </a>
         
-        <? $i18n_section= "libiconv-gettext"; ?><a name="libiconv-gettext">
+        <a name="libiconv-gettext">
             <div class="question"><p><b><? echo FINK_Q ; ?>7.5: Не могу обновить <code>libiconv</code>.</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если вы получили сообщение об ошибке в таком виде:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>можно решить проблему при помощи</p><pre>fink remove gettext-dev 
 fink install libiconv</pre></div>
         </a>
     
-    <? $i18n_section= "cplusplus-filt"; ?><a name="cplusplus-filt">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</b></p><? show_form (); ?></div>
+    <a name="cplusplus-filt">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form </p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>since updating to Tiger, then you need to do the following:</p><ul>
           <li>Flush out your old Developer Tools versions via running <pre>/Developer/Tools/uninstall-devtools.pl</pre>in a terminal.  Then install XCode (2.0 or later).<p></p></li>
           <li>Reinstall  <code>BSD.pkg</code> (from the Tiger system installation).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
         </ul><p>
 1) Flush out your old
-2) Reinstall BSD.pkg (from your main OS install)</p><? show_form (); ?></div>
+2) Reinstall BSD.pkg (from your main OS install)</p></div>
     </a>
-    <? $i18n_section= "gettext-tools"; ?><a name="gettext-tools">
+    <a name="gettext-tools">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink refuses to update the <code>gettext</code> package,
-complaining that the dependencies are in an inconsistent state.</b></p><? show_form (); ?></div>
+complaining that the dependencies are in an inconsistent state.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> After running <code>fink selfupdate</code> to be sure you
 have the latest versions, try <code>fink update gettext-tools</code>.
 An old version of the <code>gettext-tools</code> package may be 
-preventing you from updating <code>gettext</code>.</p><? show_form (); ?></div>
+preventing you from updating <code>gettext</code>.</p></div>
     </a>
-  <? $i18n_section= "Leopard-libXrandr"; ?><a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</b></p><? show_form (); ?></div>
+  <a name="Leopard-libXrandr">
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</b></p></div>
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This problem affects machines with OS 10.5.2 pre-installed.
       There is currently a bug in Apple's X11 in that a file in it that is used
     for building references <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code>,
-    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p><p>The workaround is to run the following command to fix the file:</p><pre>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</pre><? show_form (); ?></div>
+    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p><p>The workaround is to run the following command to fix the file:</p><pre>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</pre></div>
   </a>
-    <? $i18n_section= "all-others"; ?><a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.9: I'm having issues with a package that isn't listed here.</b></p><? show_form (); ?></div>
+    <a name="all-others">
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.9: I'm having issues with a package that isn't listed here.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
-      up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p><? show_form (); ?></div>
+      up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
     
     <p align="right"><? echo FINK_NEXT ; ?>:

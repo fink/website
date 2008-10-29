@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2008/09/01 00:48:33';
+$cvs_date = 'Date: 2008/10/29 00:15:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -304,7 +304,7 @@ fink selfupdate-cvs</pre></div>
         know for sure that the version in the binary distribution is the same
         as what you have installed (e.g. by checking the <a href="http://pdb.finkproject.org/pdb/index.php">package
         database</a>), then you can get a .deb file by running <code>sudo
-        apt=get install --reinstall --download-only <b>packagename</b>
+        apt-get install --reinstall --download-only <b>packagename</b>
           </code>. Otherwise you can build one yourself by running <code>fink
         rebuild <b>packagename</b>
           </code>, but it won't install yet.</p><p>Once you have a valid .deb file, then you can reconstitute the

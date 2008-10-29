@@ -5,9 +5,6 @@ $cvs_date = 'Date: 2008/05/02 04:41:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
-$doc = 'index';
-$i18n_chapter = 'index';
-include_once "../i18n_showform.inc";
 include_once "header.ja.inc";
 ?>
 <h1>The Fink F.A.Q.</h1>

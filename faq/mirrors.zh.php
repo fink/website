@@ -1,52 +1,50 @@
 <?
 $title = "常见疑问（F.A.Q.） - 镜像服务器";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/02 04:41:49';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2008/10/29 00:15:08';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）"><link rel="prev" href="relations.php?phpLang=zh" title="与其它项目的关系">';
 
 
-$i18n_chapter = 'mirrors';
-include_once "../i18n_showform.inc";
 include_once "header.zh.inc";
 ?>
 <h1>常见疑问（F.A.Q.） - 3. Fink 镜像</h1>
     
     
-    <? $i18n_section= "when-use"; ?><a name="when-use">
+    <a name="when-use">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.1: 什么是 Fink 镜像？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 	Fink 镜像是一些 rsync 服务器，它镜像保存 Fink 的当前和稳定版本的描述文件。Fink 需要使用这些描述文件来从源代码构建软件包。
        </p></div>
     </a>
-    <? $i18n_section= "why"; ?><a name="why">
+    <a name="why">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.2: 为什么我需要使用 rsync 镜像服务器？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Rsync 是一种很快速的协议。它可以用比过去的 CVS 更新方法更快的速度来更新描述文件。另外，CVS 总是通过 sourceforge.net 进行更新，而 rsync 则可以选择离你比较近的镜像服务器进行更新。</p></div>
     </a>
-    <? $i18n_section= "where"; ?><a name="where">
+    <a name="where">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.3: 在哪里我可以找到关于 Fink 镜像的更多信息？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 所有的 Fink 镜像都建立在 finkmirrors.net 域名之下。http://finkmirrors.net/ 这个网站会提供更多的信息。
 </p></div>
     </a>
-    <? $i18n_section= "when-not"; ?><a name="when-not">
+    <a name="when-not">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.4: 我不能连接 rsync 服务器，我应该怎么办？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 有些时候，一些很严格的防火墙规则会进制你访问 rsync 服务。如果是这样的话，简单的办法是使用 CVS 方式。
 </p></div>
     </a>
-    <? $i18n_section= "otherinfogone"; ?><a name="otherinfogone">
+    <a name="otherinfogone">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.5: 我现在已经改换到 rsync 方法，但所有没有用到的代码树都消失了？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这时正常现象。rsync 只会更新活跃的代码树，比方说，10.3。同时它也会删除 CVS
 子目录。
 </p></div>
     </a>
-    <? $i18n_section= "howswitch"; ?><a name="howswitch">
+    <a name="howswitch">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.6: 我怎么在这两种方法中切换？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 使用 fink selfupdate-rsync 或 fink selfupdate-cvs 来切换到 rsync 或 CVS。</p></div>
     </a>
-    <? $i18n_section= "status"; ?><a name="status">
+    <a name="status">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.7: 我可以看到 rsync 镜像的当前状态吗？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 可以，访问 http://finkmirrors.net/status.html。</p></div>
     </a>
-    <? $i18n_section= "Master"; ?><a name="Master">
+    <a name="Master">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.8: 什么是 Distfiles 镜像？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 有些时候从互联网上获取某个版本的源代码会比较困难。Distfile 镜像会保存这些 Fink 需要使用的源代码软件包。</p></div>
     </a>
