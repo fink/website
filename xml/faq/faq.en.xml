@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.88 2008/10/29 00:15:08 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.89 2008/12/11 18:45:19 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -202,15 +202,29 @@
     </faqentry>
     <faqentry name="fink-0220">
       <question>
-        <p>I haven't had any package updates from Fink in a while.</p>
+        <p>Fink doesn't see new packages even after I've run an rsync or cvs selfupdate.</p>
       </question>
       <answer>
-        <p>Check your version:</p>
+        <p>This is a current issue for people on OS 10.5 using the binary installer. Check your version:</p>
         <codeblock>fink --version</codeblock>
-        <p>There is a known problem with <code>fink-0.22.0</code> wherein rsync selfupdating stopped working.  To fix this, switch to CVS selfupdating via</p>
-        <codeblock>fink selfupdate-cvs	</codeblock>
-        <p>This will bring you a newer <code>fink</code> version.  After you do this we recommend switching back to rsync selfupdating:</p>
-        <codeblock>fink selfupdate-rsync</codeblock>
+        <p>If you currently have <code>fink-0.27.13-41</code>, which is the version that comes
+	with the installer, or <code>fink-0.27.16-41</code>, then there are a couple of options.</p>
+	<ul>
+	  <li>
+	    <em>rsync (preferred):</em>  Run the sequence below
+	    <codeblock>fink selfupdate
+fink selfupdate-rsync
+fink index -f
+fink selfupdate</codeblock>
+	  </li>
+	  <li>
+	    <em>cvs (alternate):</em>  Run
+	    <codeblock>fink selfupdate-cvs
+fink index -f
+fink selfupdate</codeblock>
+	  </li>
+	</ul>
+        <p>Either will bring you the newest <code>fink</code> version.</p>
       </answer>
     </faqentry>
   </chapter>
