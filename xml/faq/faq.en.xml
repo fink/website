@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.90 2009/01/19 21:21:25 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.91 2009/01/19 22:17:27 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -188,18 +188,6 @@
   <chapter filename="upgrade-fink">
     <title>Upgrading Fink (version-specific troubleshooting)</title>
     <shorttitle>Upgrading Fink</shorttitle>
-    <faqentry name="gcc-0.16.0">
-      <question>
-        <p>I just upgraded to 0.16.0 and it tells me "Your version of the gcc 3.3 compiler is out of date." What do I do?</p>
-      </question>
-      <answer>
-        <p>As of the release of Panther, Fink has been updated to understand the newer gcc 3.3 compiler. In order to be able to support users on both 10.2 (Jaguar) and 10.3 (Panther), we are requiring all users to install the latest gcc 3.3 update (August 2003 Updater, and the Panther XCode tools, respectively). You will get this warning if you installed the earlier XCode beta updater for Mac OS X 10.2's December 2002 developer tools. If you're on 10.2, the command:</p>
-        <codeblock>gcc --version</codeblock>
-        <p>should tell you what version you have. As of October 24th, 2003, we require build 1493 or higher.</p>
-        <p>10.2 users can download the August 2003 Updater from <link url="http://developer.apple.com/">Apple Developer Connection</link> (free registration required).</p>
-        <p>10.3 users should upgrade to a Panther-compatible developer tools release (i.e. XCode). A CD with XCode should have been provided with your Panther media.</p>
-      </answer>
-    </faqentry>
     <faqentry name="leopard-bindist1">
       <question>
         <p>Fink doesn't see new packages even after I've run an rsync or cvs selfupdate.</p>
