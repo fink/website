@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.89 2008/12/11 18:45:19 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.90 2009/01/19 21:21:25 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -200,7 +200,7 @@
         <p>10.3 users should upgrade to a Panther-compatible developer tools release (i.e. XCode). A CD with XCode should have been provided with your Panther media.</p>
       </answer>
     </faqentry>
-    <faqentry name="fink-0220">
+    <faqentry name="leopard-bindist1">
       <question>
         <p>Fink doesn't see new packages even after I've run an rsync or cvs selfupdate.</p>
       </question>
@@ -225,6 +225,14 @@ fink selfupdate</codeblock>
 	  </li>
 	</ul>
         <p>Either will bring you the newest <code>fink</code> version.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="leopard-bindist2">
+      <question>
+        <p>When I try to install stuff I get 'Can't resolve dependency "fink (>= 0.28.0)"'</p>
+      </question>
+      <answer>
+        <p>Apply the fix from <xref section="leopard-bindist1">the prior entry.</xref></p>
       </answer>
     </faqentry>
   </chapter>
