@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.91 2009/01/19 22:17:27 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.92 2009/01/19 22:29:15 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -712,36 +712,6 @@ else { print substr($6, 2, length($6) - 1);}}' \
         <p>before you run <filename>dselect</filename>. You may want to put
         this in your startup file (e.g. <code>.cshrc</code> |
         <code>.profile</code>) so that it gets run all of the time.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="perl-undefined-symbol">
-      <question>
-        <p>Why do I get a bunch of "dyld: perl undefined symbols" errors when
-        I run Fink commands?</p>
-      </question>
-      <answer>
-        <p>Obsolete</p>
-        <p>If you see an error sequence like the following:</p>
-        <codeblock>dyld: perl Undefined symbols: 
-_Perl_safefree
-_Perl_safemalloc 
-_Perl_saferealloc 
-_Perl_sv_2pv 
-_perl_call_sv
-_perl_eval_sv 
-_perl_get_sv</codeblock>
-        <p>then what has probably happened is that you updated Perl to a new
-        version and now <filename>storable-pm</filename> needs to be updated.
-        You should update Fink. During the process you will be prompted to
-        install either <filename>perl-core</filename> or
-        <filename>system-perl</filename>; choose the latter. In addition,
-        <filename>storable-pm</filename> should also get updated.</p>
-        <p>For OS 10.1.x, perform the following commands (you'll need the
-        Developer Tools):</p>
-        <codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp 
-sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp 
-fink rebuild storable-pm 
-fink selfupdate-cvs</codeblock>
       </answer>
     </faqentry>
     <faqentry name="cant-upgrade">
