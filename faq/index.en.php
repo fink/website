@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/01/19 22:17:27';
+$cvs_date = 'Date: 2009/01/19 22:29:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 
@@ -29,15 +29,14 @@ include_once "header.en.inc";
         Fink setup.</a></li><li><a href="usage-fink.php?phpLang=en#install-info-bad">5.18 I can't install anything, because I get the following error:
         "install-info: unrecognized option `--infodir=/sw/share/info'"</a></li><li><a href="usage-fink.php?phpLang=en#bad-list-file">5.19 I can't install or remove anything, because of a problem with a
         "files list file".</a></li><li><a href="usage-fink.php?phpLang=en#dselect-garbage">5.20 I get a bunch of garbage when I select packages in
-        <code>dselect</code>. How can I use it?</a></li><li><a href="usage-fink.php?phpLang=en#perl-undefined-symbol">5.21 Why do I get a bunch of "dyld: perl undefined symbols" errors when
-        I run Fink commands?</a></li><li><a href="usage-fink.php?phpLang=en#cant-upgrade">5.22 I can't seem to update Fink's version.</a></li><li><a href="usage-fink.php?phpLang=en#spaces-in-directory">5.23 Can I put Fink in a volume or directory with a space in its
-        name?</a></li><li><a href="usage-fink.php?phpLang=en#packages-gz">5.24 When I try to do a binary update, there are many messages with
-        "File not found" or "Couldn't stat package source list file".</a></li><li><a href="usage-fink.php?phpLang=en#wrong-tree">5.25 I've changed my OS | Developer Tools, but Fink doesn't recognize
-        the change.</a></li><li><a href="usage-fink.php?phpLang=en#seg-fault">5.26 I get errors with <code>gzip</code> | <code>dpkg-deb</code>I
-        applications from the<code> fileutils </code>package! Help!</a></li><li><a href="usage-fink.php?phpLang=en#pathsetup-keeps-running">5.27 When I open a Terminal window, I get a message that "Your
+        <code>dselect</code>. How can I use it?</a></li><li><a href="usage-fink.php?phpLang=en#cant-upgrade">5.21 I can't seem to update Fink's version.</a></li><li><a href="usage-fink.php?phpLang=en#spaces-in-directory">5.22 Can I put Fink in a volume or directory with a space in its
+        name?</a></li><li><a href="usage-fink.php?phpLang=en#packages-gz">5.23 When I try to do a binary update, there are many messages with
+        "File not found" or "Couldn't stat package source list file".</a></li><li><a href="usage-fink.php?phpLang=en#wrong-tree">5.24 I've changed my OS | Developer Tools, but Fink doesn't recognize
+        the change.</a></li><li><a href="usage-fink.php?phpLang=en#seg-fault">5.25 I get errors with <code>gzip</code> | <code>dpkg-deb</code>I
+        applications from the<code> fileutils </code>package! Help!</a></li><li><a href="usage-fink.php?phpLang=en#pathsetup-keeps-running">5.26 When I open a Terminal window, I get a message that "Your
         environment seems to be correctly set up for Fink already.", and it
-        logs out.</a></li><li><a href="usage-fink.php?phpLang=en#ext-drive">5.28 I have Fink installed away from the main partition and I can't update the fink package from source.  There are errors involving <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=en#mirror-gnu">5.29 Fink won't update my packages because it says it can't find the 'gnu' mirror.</a></li><li><a href="usage-fink.php?phpLang=en#cant-move-fink">5.30 I can't update Fink, because it can't move /sw/fink out of the way.</a></li><li><a href="usage-fink.php?phpLang=en#four-oh-three">5.31 I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</a></li><li><a href="usage-fink.php?phpLang=en#fc-cache">5.32 I get a message that says "No fonts found".</a></li><li><a href="usage-fink.php?phpLang=en#non-admin-installer">5.33  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</a></li><li><a href="usage-fink.php?phpLang=en#wrong-arch">5.34 I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
-</a></li><li><a href="usage-fink.php?phpLang=en#sf-cvs-2006">5.35 I haven't been able to do a cvs selfupdate.</a></li></ul></li><li><a href="comp-general.php?phpLang=en"><b>6 Compile Problems - General</b></a><ul><li><a href="comp-general.php?phpLang=en#compiler">6.1 A configure script complains that it can't find an "acceptable cc".
+        logs out.</a></li><li><a href="usage-fink.php?phpLang=en#ext-drive">5.27 I have Fink installed away from the main partition and I can't update the fink package from source.  There are errors involving <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=en#mirror-gnu">5.28 Fink won't update my packages because it says it can't find the 'gnu' mirror.</a></li><li><a href="usage-fink.php?phpLang=en#cant-move-fink">5.29 I can't update Fink, because it can't move /sw/fink out of the way.</a></li><li><a href="usage-fink.php?phpLang=en#four-oh-three">5.30 I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</a></li><li><a href="usage-fink.php?phpLang=en#fc-cache">5.31 I get a message that says "No fonts found".</a></li><li><a href="usage-fink.php?phpLang=en#non-admin-installer">5.32  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</a></li><li><a href="usage-fink.php?phpLang=en#wrong-arch">5.33 I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
+</a></li><li><a href="usage-fink.php?phpLang=en#sf-cvs-2006">5.34 I haven't been able to do a cvs selfupdate.</a></li></ul></li><li><a href="comp-general.php?phpLang=en"><b>6 Compile Problems - General</b></a><ul><li><a href="comp-general.php?phpLang=en#compiler">6.1 A configure script complains that it can't find an "acceptable cc".
         What's that?</a></li><li><a href="comp-general.php?phpLang=en#cvs">6.2 When I try a "fink selfupdate-cvs" I get this message: "cvs:
         Command not found."</a></li><li><a href="comp-general.php?phpLang=en#missing-make">6.3 I'm getting an error message involving <code>make</code>
         </a></li><li><a href="comp-general.php?phpLang=en#head">6.4 I'm getting a strange usage message from the head command. What's
@@ -78,7 +77,7 @@ complaining that the dependencies are in an inconsistent state.</a></li><li><a h
         <code>gnome-session</code> won't open a window manager.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-no-windowbar">9.10 I upgraded to Apple's X11 in Panther and now my window title bars
         are missing.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.11 I installed Apple's X11 but Fink keeps asking to install
         XFree86 or X.org.</a></li><li><a href="usage-packages.php?phpLang=en#wants-xfree86-on-upgrade">9.12 I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86 or X.org.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.13 I'm still having problems with X11 and Fink.</a></li><li><a href="usage-packages.php?phpLang=en#tiger-gtk">9.14 After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=en#yelp">9.15 I can't get the help to work for any GNOME application.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.en.xml,v 1.91 2009/01/19 22:17:27 alexkhansen Exp $-->
+<!--Generated from $Fink: faq.en.xml,v 1.92 2009/01/19 22:29:15 alexkhansen Exp $-->
 <? include_once "../footer.inc"; ?>
 
 
