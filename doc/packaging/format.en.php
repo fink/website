@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2008/08/27 05:44:07';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2009/02/24 20:58:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -255,6 +255,12 @@ period characters removed (as per Fink's language-version package naming
 convention and for other clever uses). (Introduced in a post-0.19.2
 CVS version of fink.)  The _num form was introduced in fink-0.26.0
 and removes all non-digits from the <code>Type</code> field.
+</p>
+<p>
+Note that when the <code>Type</code> field defines <b>type</b> to
+be "Boolean", then <code>(%type_pkg[type])</code> can be used directly
+in conditional expressions.  (Its boolean value is true or false,
+corresponding to the subtype is being evaluated.)
 </p>
 </td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 <p>

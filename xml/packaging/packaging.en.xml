@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.103 2008/08/27 05:44:07 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.104 2009/02/24 20:58:12 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -395,6 +395,12 @@ period characters removed (as per Fink's language-version package naming
 convention and for other clever uses). (Introduced in a post-0.19.2
 CVS version of fink.)  The _num form was introduced in fink-0.26.0
 and removes all non-digits from the <code>Type</code> field.
+</p>
+<p>
+Note that when the <code>Type</code> field defines <em>type</em> to
+be "Boolean", then <code>(%type_pkg[type])</code> can be used directly
+in conditional expressions.  (Its boolean value is true or false,
+corresponding to the subtype is being evaluated.)
 </p>
 </itemd></item>
 
