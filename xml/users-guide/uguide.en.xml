@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.52 2009/03/01 01:50:36 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.53 2009/03/01 03:12:34 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -593,13 +593,13 @@ on PowerPC hardware.</p></li>
 on intel hardware.</p>
                 <p>Note:  <em>unstable</em> doesn't necessarily mean <em>unusable</em>, but install such packages at your own risk.</p>
 </li>
-            <li><p><em>10.5/powerpc stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
+            <li><p><em>10.5/powerpc stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.5 users 
 on PowerPC hardware.</p></li>
-            <li><p><em>10.5/intel stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+            <li><p><em>10.5/intel stable:</em>  This is the most recent version that can be installed from the stable source tree for OS 10.5 users
 on intel hardware.</p></li>
-            <li><p><em>10.5/powerpc unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+            <li><p><em>10.5/powerpc unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.5 users
 on PowerPC hardware.</p></li>
-            <li><p><em>10.5/intel unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+            <li><p><em>10.5/intel unstable:</em>  This is the most recent version that can be installed from the unstable source tree for OS 10.5 users
 on intel hardware.</p></li>
           </ol></li>
       </ul>
