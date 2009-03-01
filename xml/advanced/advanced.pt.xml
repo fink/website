@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="pt">
+  <title>Advanced Fink Topics</title>
+  <shorttitle>Advanced</shorttitle>
+  <cvsid>$Id: advanced.pt.xml,v 1.1 2009/03/01 02:42:14 alexkhansen Exp $</cvsid>
+
+  <preface>
+    <p>Este documento descreve tópicos avançados que não estão presentes no
+    <link url="http://www.finkproject.org/doc/users-guide/">Guia do
+    usuário</link>.</p>
+  </preface>
+
+  <chapter filename="bindist">
+    <title>Rodando seu próprio servidor de distribuição de binários</title>
+    <shorttitle>Servidor de Distr. de Binários</shorttitle>
+
+    <section name="intro">
+      <title>Introdução</title>
+
+      <p>Esta seção descreve um método para grupos de trabalho com mais de uma
+      instalação do Fink para que usem um servidor central de compilação
+      ("mestre") que distribui pacotes binários para todos os clientes no
+      grupo.</p>
+
+      <p>O método é composto pelos seguintes passos no <xref
+      section="master">servidor "mestre"</xref> e nas <xref
+      section="client">máquinas clientes</xref>:</p>
+    </section>
+
+    <section name="master">
+      <title>Passos a serem executados no servidor "mestre"</title>
+
+      <ol>
+        <li>
+          Instale o Fink em <filename>/sw</filename> (diretório padrão, use um
+          link simbólico se for necessário).
+        </li>
+
+        <li>
+            Compile os pacotes da forma habitual. Eles não precisam estar
+            necessariamente instalados, mas apenas compilados.
+        </li>
+
+        <li>
+          <p>Execute o comando <code>fink scanpackages</code> sempre que o seu
+          conjunto de pacotes compilados for alterado. Isto faz com que o fink
+          gere os índices apt para todas as árvores habilitadas.</p>
+
+          <p>De forma alternativa, você pode executar o comando <code>fink
+          cleanup</code> que irá limpar todos os pacotes binários e de códigos
+          fontes. O comando <code>fink scanpackages</code> pode ser chamado
+          após o processo de limpeza.</p>
+        </li>
+
+        <li>
+          Inicie um servidor Web. Por exemplo, habilite o "Compartilhamento Web
+          Pessoal" na seção Compartilhamento das Preferências do Sistema.
+          Configure então o httpd para publicar seu diretório
+          <filename>/sw/fink</filename> através da adição das seguintes linhas
+          ao seu arquivo <filename>/etc/httpd/httpd.conf</filename>:
+
+          <codeblock>Alias /fink /sw/fink
+&lt;Directory /sw/fink&gt;
+  Options Indexes FollowSymLinks
+&lt;/Directory&gt;</codeblock>
+        </li>
+
+        <li>
+          Execute o comando <code>sudo /usr/sbin/apachectl graceful</code> para
+          (re)iniciar seu servidor Web.
+        </li>
+      </ol>
+
+      <p>Lembre-se de executar novamente o comando <code>fink
+      scanpackages</code> (ou <code>fink cleanup</code>) sempre que
+      compilar/atualizar pacotes no servidor "mestre" para que eles fiquem
+      disponíveis para suas máquinas remotas.</p>
+
+      <p><em>Observações:</em></p>
+
+      <p>Você também pode criar um usuário 'fink' e adicionar as linhas acima
+      ao arquivo <filename>/etc/httpd/users/fink.conf</filename>.</p>
+
+      <p>Se você usa o pacote apache2 do Fink, ajuste os diretórios acima de
+      forma correspondente.</p>
+    </section>
+
+    <section name="client">
+      <title>Passos a serem executados nas máquinas clientes</title>
+
+      <ol>
+        <li>
+          Instale o Fink no diretório <filename>/sw</filename> (diretório
+          padrão).
+        </li>
+
+        <li>
+          Execute o comando <code>fink configure</code> e habilite a opção para
+          baixar pacotes da distribuição de binários.  ("UseBinaryDist: true"
+          no arquivo <filename>/sw/etc/fink.conf</filename>).
+        </li>
+
+        <li>
+          Edite o arquivo <filename>/sw/etc/apt/sources.list</filename> e
+          adicione as linhas que representam suas árvores do Fink. Por exemplo,
+          se o endereço IP do servidor mestre for 192.168.42.7, você deve
+          adicionar:
+
+          <codeblock>deb http://192.168.42.7/fink stable main crypto
+deb http://192.168.42.7/fink unstable main crypto
+deb http://192.168.42.7/fink local main</codeblock>
+        </li>
+
+        <li>
+          Execute o comando <code>fink selfupdate</code>. Você deverá ver algo
+          parecido com:
+
+          <codeblock>...
+Hit http://192.168.42.7 stable/main Packages
+Hit http://192.168.42.7 stable/main Release
+Hit http://192.168.42.7 stable/crypto Packages
+...</codeblock>
+
+          ao fim do processo de atualização (caso o nível de quantidade de
+          informações seja &gt;= 1).
+        </li>
+      </ol>
+
+      <p>Quando os comandos <code>fink update-all</code> ou <code>fink install
+      &lt;package&gt;</code> forem executados, eles irão baixar os pacotes
+      necessários do servidor "mestre" caso estejam disponíveis.</p>
+    </section>
+
+    <section name="remarks">
+      <title>Observações</title>
+
+      <ul>
+        <li>
+          Seu servidor "mestre" precisa usar a versão mais antiga do X11 dentre
+          as que são usadas em todos os clientes, ou seja, se alguma das
+          máquinas clientes usa o X11 da Apple, o servidor "mestre" também
+          precisa usá-lo.
+        </li>
+
+        <li>
+          Para salvar espaço em disco na máquina "mestre", você pode remover
+          pacotes que sejam apenas dependências de compilação (ou seja, que não
+          sejam necessários para executar algo). O pacote
+          <code>debfoster</code> provê uma boa forma de fazer isto. Tenha
+          cuidado para não remover pacotes essenciais como o <code>apt</code>.
+        </li>
+      </ul>
+
+      <p>Esta documentação foi parcialmente adaptada do documento <link
+      url="http://ranger.befunk.com/blog/archives/000258.html">"Sharing the
+      Fink"</link> escrito por RangerRick. Obrigado!</p>
+    </section>
+  </chapter>
+</document>
