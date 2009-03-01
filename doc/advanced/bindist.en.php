@@ -1,7 +1,7 @@
 <?
 $title = "Advanced - Binary Distro Server";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:53';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2009/03/01 02:53:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Advanced Contents"><link rel="prev" href="index.php?phpLang=en" title="Advanced Contents">';
 
 
@@ -16,12 +16,6 @@ include_once "header.en.inc";
 This section describes a method for workgroups of more than one Fink
 installation to use a central build server ("master") that distributes binary
 packages to all clients in the group.
-      </p>
-      <p>
-(<b>Note:</b> These instructions assume that you have a fink version &gt;= 0.24.0
-on your client machines. Read the 
-<a href="#remarks">remarks below</a> if you are using older fink
-versions.)
       </p>
       <p>
 The method involves the following steps on the 
@@ -130,14 +124,9 @@ binaries from the "master" server if available.
         <li>
 Your "master" server needs to use the lowest version of X11 that you're using
 on all of the clients, i.e. if any of the client machines uses Apple's X11, the
-"master" server must use it too.      </li>
+"master" server must use it too.</li>
         <li>In order to save space on your build machine, you can remove packages that are only build-dependencies (i.e. not needed to run anything).  The <code>debfoster</code> package provides a nice way to do this. Be careful not to remove essential packages, such as <code>apt</code>. </li>
-        <li>
-If you are using a fink version &lt; 0.24.0 on a client machine you need to run
-<code>sudo apt-get update</code> instead of <code>fink selfupdate</code>. You then need to install binary packages with <code>sudo apt-get install
-&lt;package&gt;</code>.  
-      </li>
-      </ul>
+       </ul>
       <p>
 This documentation is adapted in part from
 <a href="http://ranger.befunk.com/blog/archives/000258.html">"Sharing the Fink"</a>
