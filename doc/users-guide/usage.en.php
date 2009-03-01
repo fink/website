@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2009/03/01 01:50:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -460,9 +460,6 @@ the list of available packages in the binary distribution is also updated.
     <h2><a name="dumpinfo">6.25 dumpinfo</a></h2>
       
       <p>
-Only available in <code>fink</code> newer than version 0.21.0
-      </p>
-      <p>
 	Shows how <code>fink</code> parses parts of a package's <code>.info</code> file. Various
 	fields and percent expansions will be displayed according
 	to <b>options</b> as follows:
@@ -480,10 +477,8 @@ Only available in <code>fink</code> newer than version 0.21.0
     
     <h2><a name="show-deps">6.26 show-deps</a></h2>
       
-      <p>Only available in fink-0.23-6 and later.</p>
       <p>Displays a human-readable list of the compile-time (build) and run-
            time (installation) dependencies of the listed package(s).</p>
-    
     
   
 <? include_once "../../footer.inc"; ?>

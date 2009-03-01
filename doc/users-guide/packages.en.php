@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2009/03/01 01:50:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 
@@ -34,10 +34,10 @@ root privileges, so you should use sudo (from an account with administrator priv
       <p>
         <b>Note:</b>
         <code>dselect</code> has known difficulties with the Mac OS X Terminal application.  You should run the following commands before using it, or put them in the appropriate startup file (e.g. <code>.cshrc</code> / <code>.profile</code>):</p>
-      <p>tcsh users:</p>
-      <pre>setenv TERM xterm-color</pre>
       <p>bash users:</p>
       <pre>export TERM=xterm-color</pre>
+      <p>tcsh users:</p>
+      <pre>setenv TERM xterm-color</pre>
       <p>
 The main menu has several choices:
 </p>
@@ -191,7 +191,7 @@ If you run into errors during that process, please first check the
 <a href="http://www.finkproject.org/faq/">FAQ</a>.
       </p>
       <p>
-For <code>fink</code> versions since 0.23.0 you can tell it to try to download
+You can tell <code>fink</code> to try to download
 pre-compiled binary packages, if available, instead of building them. Just pass
 the <a href="usage.php?phpLang=en#options">--use-binary-dist (or -b)
 option</a> to <code>fink</code>. This can save you a lot of time. E.g.
@@ -221,43 +221,29 @@ More details about the <code>fink</code> tool are available in the chapter
       <p>When you want to install a package, you should first check the <a href="http://pdb.finkproject.org/pdb/index.php">package database</a> and see if it is available at all through Fink.  The available version(s) of the package will be shown in several rows of a table.  These are:</p>
       <ul>
         <li>Binary Distribution
-<ol>
-            <li><p>
-            <b>0.4.1:</b>  this is the version that can be installed from binaries for OS 10.1.</p></li>
-            <li><p><b>0.6.4:</b>  this is the version that can be installed from binaries for OS 10.2.</p></li>
-            <li><p><b>0.7.2</b>
-  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="install.php?phpLang=en#bin">update</a> Fink, later versions of some packages may be available.</p> 
-        </li>
-            <li><p><b>0.9.0:</b>  This is the base version that can be installed from binaries for OS 10.5.  If you <a href="install.php?phpLang=en#bin">update</a> Fink, later versions of some packages may be available.
-</p></li>
-          </ol>
-          
-        </li>
-      </ul>
-      <ul>
+          <ol>
+            <li><p><b>0.8.1:</b>  This is the base version that can be installed from binaries for OS 10.4.  If you <a href="install.php?phpLang=en#bin">update</a> Fink, later versions of some packages may be available.</p></li>
+            <li><p><b>0.9.0:</b>  This is the base version that can be installed from binaries for OS 10.5.  If you <a href="install.php?phpLang=en#bin">update</a> Fink, later versions of some packages may be available.</p></li>
+          </ol></li>
         <li>CVS/rsync Distributions
-<ol>
-            <li>
-          <p>
-            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from the stable source tree for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
-          <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS or rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
-</p>
-        </li>
-            <li><p><b>10.3 stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.3.</p></li>
+          <ol>
             <li><p><b>10.4/powerpc stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
 on PowerPC hardware.</p></li>
             <li><p><b>10.4/intel stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
 on intel hardware.</p></li>
-            <li>
-          <p>
-            <b>10.2-gcc3.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
-          <p>Note:  <b>unstable</b> doesn't necessarily mean <b>unusable</b>, but install such packages at your own risk.
-</p>
-        </li>
-            <li><p><b>10.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.3.</p></li>
             <li><p><b>10.4/powerpc unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
 on PowerPC hardware.</p></li>
             <li><p><b>10.4/intel unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+on intel hardware.</p>
+                <p>Note:  <b>unstable</b> doesn't necessarily mean <b>unusable</b>, but install such packages at your own risk.</p>
+</li>
+            <li><p><b>10.5/powerpc stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
+on PowerPC hardware.</p></li>
+            <li><p><b>10.5/intel stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+on intel hardware.</p></li>
+            <li><p><b>10.5/powerpc unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+on PowerPC hardware.</p></li>
+            <li><p><b>10.5/intel unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
 on intel hardware.</p></li>
           </ol></li>
       </ul>
@@ -276,26 +262,18 @@ Here is a list of the available X11 packages and installation methods:
         <li>
           <p>
             <b>xfree86, xfree86-shlibs:</b>
-Install both of these packages for XFree86 4.3.0 (OS 10.2 only), 4.4.0 (10.2 or 10.3), or 4.5.0 (10.3 or 10.4).  
+Install both of these packages for XFree86-4.5.0 (OS 10.4 only).  
 </p>
         </li>
-        <li><p><b>xorg, xorg-shlibs</b>(10.3 or 10.4)  Install these packages to get the 6.8.2 release of the X.org X11 distribution.</p></li>
+        <li><p><b>xorg, xorg-shlibs</b> (OS 10.4 only )  Install these packages to get the 6.8.2 release of the X.org X11 distribution.</p></li>
         <li>
           <p>
 <b>system-xfree86 + -shlibs, -dev:</b>
-These packages are automatically generated (for Fink 0.6.2 or later) if you install Apple's X11, or manually installed XFree86 or X.org.  
+These packages are automatically generated if you install Apple's X11, or manually installed XFree86 or X.org.  
 They will then act as
 dependency placeholders.
 </p>
         </li>
-        <li>
-          <p>
-            <b>xfree86-base, xfree86-rootless [-threaded] + -shlibs, -dev</b>
-(10.1 or 10.2 only) These packages install all of XFree86 4.2.1.1 (4.2.0 on 10.1).  The <code>-threaded</code> variant was provided for applications that required it, and this functionality is standard in later XFree86 versions.  The <code>-rootless</code> packages include the XDarwin display server--the name is historical.
-</p><p>You must install all six packages to build X11-based packages from source.
-</p>
-        </li>
-        
       </ul>
       <p>
 For more information on installing and running X11, refer to the

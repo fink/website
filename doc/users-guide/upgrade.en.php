@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Upgrade";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2009/03/01 01:50:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="conf.php?phpLang=en" title="The Fink Configuration File"><link rel="prev" href="packages.php?phpLang=en" title="Installing Packages">';
 
 
@@ -36,8 +36,7 @@ have new versions available.
 </p>
       <p>For Fink Commander, select Binary-&gt;Update descriptions to update the package list, and then Binary-&gt;Dist-Upgrade packages to update to new versions.</p>
       <p>
-For more information, especially about upgrading from Fink versions
-older than 0.3.0, see the
+For more information, see the
 <a href="http://www.finkproject.org/download/upgrade.php">Upgrade Matrix</a>.
 </p>
     
@@ -51,12 +50,12 @@ In the second step, these package descriptions are used to compile new
 packages; the actual source code is downloaded as needed.
 </p>
       <p>
-If you have Fink 0.2.5 or later, the first step can be accomplished by
+The first step can be accomplished by
 running <code>fink selfupdate</code>.
 That command will check with the Fink website to see if a new point
 release is available, and will automatically download and install the
 package descriptions in that case.
-In recent versions of the <code>fink</code> command, you get the
+You also have the
 option to pull package descriptions directly from CVS or via rsync.
 CVS is a version-controlled repository where the package descriptions
 are stored and managed.
@@ -65,17 +64,6 @@ Using CVS has the advantage that it is updated continuously, but the disadvantag
       <p>(If you are having trouble upgrading a source installation, consult
 <a href="http://www.finkproject.org/download/fix-upgrade.php">these
 special instructions</a>.)</p>
-      <p>
-If you have a version of Fink older than 0.2.5, you must download the
-package descriptions manually.
-Visit the <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">download
-area</a> and look for the latest packages-0.x.x.tar.gz tarball in
-the "distribution" module.
-Download it, then install it as follows:
-</p>
-      <pre>tar -xzf packages-0.x.x.tar.gz
-cd packages-0.x.x
-./inject.pl</pre>
       <p>
 Once you have updated your package descriptions (no matter which way),
 you should update all packages at once with the command <code>fink
@@ -96,7 +84,7 @@ to get the current package descriptions and to update the remaining
 packages.
 		</p>
       <p>
-Starting with fink 0.23.0 using the UseBinaryDist option (settable via the
+You may use the UseBinaryDist option (settable via the
 <a href="usage.php?phpLang=en#options">--use-binary-dist (or -b) option</a>
 or in the <a href="conf.php?phpLang=en">Fink configuration file</a>) both source and
 binary descriptions will be updated if you call <code>fink selfupdate</code>.

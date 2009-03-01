@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - fink.conf";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2009/03/01 01:50:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -99,15 +99,13 @@ unstable/main   - other unstable packages
           <p>
 You may also add your own trees in <code>/sw/fink/dists</code> for your own purposes, but this is not necessary in most
 circumstances. The default trees are "local/main local/bootstrap
-stable/main". This list should be kept in sync with the
-<code>/sw/etc/apt/sources.list</code> file.  (As of fink 0.21.0, <code>fink</code>
-does this for you automatically.)
-</p><p>The order of the trees is meaningful, as packages from later trees in the list may
+stable/main". This list is automatically kept in sync with the
+<code>/sw/etc/apt/sources.list</code> file.</p><p>The order of the trees is meaningful, as packages from later trees in the list may
            override packages from earlier ones.</p>
         -</li>
         <li>
           <p>
-            <b>Distribution:</b> 10.1, 10.2-gcc3.3, 10.3, or 10.4</p>
+            <b>Distribution:</b> 10.4</p>
           <p>Fink needs to know which version of Mac OS X you are
 running. Mac OS X 10.0 and earlier are not supported, and 10.1 and 10.2 are no
 longer supported by current versions of <code>fink</code>. Mac OS X 10.2 users are 
@@ -268,7 +266,6 @@ recommended to set this option. Passing fink the
 but only operates on that single <code>fink</code> invocation.  Passing <code>fink</code> the
            <code>--no-use-binary-dist</code> flag overrides this, and compiles from source
            for that single <code>fink</code> invocation.
-<b>Only available as of  fink version 0.23.0</b>.
           </p><p>Note that this mode instructs <code>fink</code> to download an available binary  
            if that version is the latest available version of the package; it does <b>not</b> cause <code>fink</code>
            to choose a version based on its binary availability.
@@ -411,7 +408,7 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
     
     <h2><a name="sourceslist">5.9 Managing apt's sources.list file</a></h2>
       
-      <p>Starting with fink 0.21.0, fink actively manages the file
+      <p>Fink actively manages the file
 <code>/sw/etc/apt/sources.list</code> which is used by apt to locate
 binary files for installation.  The default sources.list file looks 
 something like this, adjusted to match your Distribution and Trees:
@@ -448,10 +445,6 @@ correspond to the new values.  Fink will, however, preserve any local
 modifications you have made to the file, provided that you confine your
 modifications to the top of the file (above the first default line) and
 the bottom of the file (below the last default line).
-</p>
-      <p>
-Note: If you had modified <code>/sw/etc/apt/sources.list</code> prior to upgrading
-to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sources.list.finkbak</code> .
 </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

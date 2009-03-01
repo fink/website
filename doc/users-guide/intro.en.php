@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2009/03/01 01:50:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="install.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="User\'s Guide Contents">';
 
 
@@ -27,7 +27,7 @@ In any case you will need:
       <ul>
         <li>
           <p>
-An installed Mac OS X system, version 10.2 or later, or equivalent
+An installed Mac OS X system, version 10.4 or later, or equivalent
 Darwin releases.
 Earlier versions of both will <b>not</b> work.
 See below for more information about supported systems.
@@ -49,13 +49,12 @@ also need:
         <li>
           <p>
 Developer tools.  
-On Mac OS X, install the Developer.pkg package from the Developer
-Tools (known as XCode for 10.3 and 10.4) CD (they're on the main DVD for OS 10.4), or <a href="http://connect.apple.com">download</a> the latest version--this is often desirable, as later versions frequently fix issues (though admittedly sometimes they break things).    
+On Mac OS X, install the XcodeTools.mpkg package from the installation DVD,
+or <a href="http://connect.apple.com">download</a> the latest version--this is often desirable, as later versions frequently fix issues (though admittedly sometimes they break things).    
 Note that the tools must match your Mac OS X version.
-On Darwin, the tools should be present in the default install.
 </p>
           <p>
-It's a good idea to have the Developer Tools installed even if you
+It's a good idea to have XCode installed even if you
 don't intend to build packages from source.
 Some of the programs installed by the package are actually general
 purpose command line tools.
@@ -73,23 +72,9 @@ I'm talking hours or even days here.
     
     <h2><a name="supported-os">1.3 Supported Systems</a></h2>
       
-      <p><b>Mac OS X 10.4</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.3 have 10.4 users test their work.  Note, however, that
-fink on intel hardware is still considered to be of <b>beta</b> quality.</p>
+      <p><b>Mac OS X 10.5</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.4 have 10.5 users test their work.</p>
       <p>
-        <b>Mac OS X 10.3</b> is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.3 users test their work.
-</p>
-      <p><b>Mac OS X 10.2</b> is still supported to some extent.  Fink 0.6.4 is the last distribution to suppport this OS.</p>
-      <p>
-        <b>Mac OS X 10.1</b> is still supported to some extent.
-You must run Fink 0.4.1 and no later versions.
-</p>
-      <p>
-<b>Darwin 8.x</b> is the Darwin version corresponding to Mac OS X 10.4, <b>Darwin 7.x</b> is the Darwin version corresponding to Mac OS X 10.3, and <b>Darwin 6.x</b> is the Darwin version corresponding to Mac OS X
-10.2.
-They should work in general, but are not as well tested as most people
-just run Mac OS X proper instead.
-You may run into problems with packages that use features specific to
-Mac OS X - affected packages include XFree86 and possibly esound.
+        <b>Mac OS X 10.4</b> is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.4 users test their work.
 </p>
     
     <h2><a name="src-vs-bin">1.4 Source vs. Binary</a></h2>

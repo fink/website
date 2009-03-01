@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2009/03/01 01:50:36';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -17,7 +17,7 @@ management tools is installed on your machine.
 After that you must set up your shell environment to use the software
 installed by Fink.
 You only need to do this once; you can upgrade any Fink installation
-(starting with release 0.2.0) in place, without reinstalling.
+in place, without reinstalling.
 This is covered in the <a href="upgrade.php?phpLang=en">Upgrading
 chapter</a>.
 </p>
@@ -37,7 +37,7 @@ After downloading the disk image from the
 <a href="http://www.finkproject.org/download/bindist.php">download page</a>
 (you may have to use your browser's "Save Target as..." or "Download
 to Disk" function), double-click it to mount it.
-Open the "Fink 0.x.x Installer" disk icon that appears on your desktop (or wherever you downloaded it) after Disk Utility (Disk Copy for OS versions prior to 10.3) has verified the file.
+Open the "Fink 0.x.x Installer" disk icon that appears on your desktop (or wherever you downloaded it) after Disk Utility has verified the file.
 Inside you'll find some documentation and an installer package.
 Double-click the installer package and follow the instructions on
 screen.
