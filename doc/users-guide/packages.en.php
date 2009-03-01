@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/01 01:50:36';
+$cvs_date = 'Date: 2009/03/01 03:12:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 
@@ -237,13 +237,13 @@ on PowerPC hardware.</p></li>
 on intel hardware.</p>
                 <p>Note:  <b>unstable</b> doesn't necessarily mean <b>unusable</b>, but install such packages at your own risk.</p>
 </li>
-            <li><p><b>10.5/powerpc stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
+            <li><p><b>10.5/powerpc stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.5 users 
 on PowerPC hardware.</p></li>
-            <li><p><b>10.5/intel stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
+            <li><p><b>10.5/intel stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.5 users
 on intel hardware.</p></li>
-            <li><p><b>10.5/powerpc unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+            <li><p><b>10.5/powerpc unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.5 users
 on PowerPC hardware.</p></li>
-            <li><p><b>10.5/intel unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
+            <li><p><b>10.5/intel unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.5 users
 on intel hardware.</p></li>
           </ol></li>
       </ul>
