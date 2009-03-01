@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../finkdoc.dtd">
+<article filename="index" lang="pt">
+  <title>Fink - Documentação</title>
+  <shorttitle>Documentação</shorttitle>
+  <cvsid>$Id: doc.pt.xml,v 1.1 2009/03/01 02:22:14 alexkhansen Exp $</cvsid>
+
+  <preface>
+    <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
+    destes documentos também podem ser úteis a pessoas que usam o Mac OS X sem
+    o Fink mas que desejam aprender a portar software Unix.</p>
+  </preface>
+
+  <section name="userdoc">
+    <title>Documentação do usuário</title>
+
+    <p>Documentação do usuário atualizada:</p>
+
+    <ul>
+      <li>
+        <varlink url="users-guide/index.php"
+        varurl="users-guide/uguide.pt.html">Guia do usuário do Fink</varlink> -
+        cobre a instalação do Fink, instalação de pacotes e atualização para
+        uma nova versão do Fink. Contém instruções para ambas as versões
+        binária e código fonte.
+      </li>
+
+      <li>
+        <varlink url="advanced/index.php"
+        varurl="advanced/advanced.en.html">Guia de tópicos avançados do
+        Fink</varlink> - cobre conceitos mais avançados do que os cobertos no
+        Guia do Usuário.
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <varlink url="x11/index.php" varurl="x11/x11.en.html">Executando o X11
+        no Mac OS X</varlink> - cobre conceitos, instalação e execução (também
+        direcionado a usuários do Mac OS X em geral).
+        <em>(em inglês)</em>
+      </li>
+    </ul>
+
+    <p>Alguns documentos que são mais completos mas estão um pouco
+    desatualizados e não são mais mantidos:</p>
+
+    <ul>
+      <li>
+        <varlink url="bundled/install.php"
+        varurl="bundled/install.html">Instalação e atualização</varlink> - como
+        instalar o Fink ou atualizá-lo para uma versão nova
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <varlink url="bundled/usage.php" varurl="bundled/usage.html">Formas de
+        uso</varlink> - como usar o Fink e os softwares instalados
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <varlink url="readme.php" varurl="readme.en.html">LeiaMe do
+        Fink</varlink> - o LeiaMe da distribuição de códigos fontes
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <varlink url="cvsaccess/index.php"
+        varurl="cvsaccess/cvs.en.html">Acesso via CVS</varlink> - como acessar
+        o repositório CVS do Fink para obter os fontes dos pacotes mais
+        recentes antes da liberação de uma nova versão
+        <em>(em inglês)</em>
+      </li>
+    </ul>
+  </section>
+
+  <section name="developerdoc">
+    <title>Documentação do desenvolvedor</title>
+
+    <ul>
+      <li>
+        <varlink url="security/index.php"
+        varurl="security/sec-policy.en.html">Manual de política de
+        segurança</varlink> - leitura obrigatória para todos os que mantêm
+        pacotes no Fink ou gostariam de adicionar seus próprios pacotes.
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <link url="http://www.finkproject.org/doc/UsingFink.pdf">Using Fink: A
+        Developer's How To</link> (arquivo PDF com 2MB) - slides de uma
+        apresentação na <link
+        url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X
+        Conference</link> (também disponível como um <link
+        url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">arquivo
+        PowerPoint</link>)
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <varlink url="porting/index.php" varurl="porting/porting.en.html">Dicas
+        para portar software</varlink> - notas para os interessados em portar
+        aplicações Unix para o Mac OS X
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <varlink url="quick-start-pkg/index.php"
+        varurl="quick-start-pkg/quick-start-pkg.en.html">Tutorial de
+        empacotamento</varlink> - um complemento ao Manual de empacotamento que
+        foca exemplos reais e faz uma introdução sobre empacotamento para
+        iniciantes.
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <varlink url="packaging/index.php"
+        varurl="packaging/packaging.en.html">Manual de empacotamento</varlink>
+        - como criar e manter pacotes no Fink
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <link url="http://wiki.finkproject.org/index.php/Fink">The Fink
+        Developer Wiki</link> - material relacionado a desenvolvimento que
+        ainda está em construção.
+        <em>(em inglês)</em>
+      </li>
+    </ul>
+  </section>
+
+  <section name="otherdoc">
+    <title>Outros documentos</title>
+
+    <ul>
+      <li>
+        <varlink url="multilingual/index.php"
+        varurl="multilingual/multilingual.en.html">Guia de
+        internacionalização</varlink> - material sobre o esforço em andamento
+        de internacionalização do site
+        <em>(em inglês)</em>
+      </li>
+
+      <li>
+        <varlink url="netiquette/index.php"
+        varurl="netiquette/netiquette.en.html">Netiqueta para as listas de
+        discussão</varlink> - como melhor usar as listas de discussão do
+        Fink.
+        <em>(em inglês)</em>
+      </li>
+    </ul>
+  </section>
+</article>
