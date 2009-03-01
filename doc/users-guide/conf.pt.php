@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - fink.conf";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/02/28 21:54:09';
+$cvs_date = 'Date: 2009/03/01 14:09:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="usage.php?phpLang=pt" title="Usando a ferramenta fink a partir da linha de comando"><link rel="prev" href="upgrade.php?phpLang=pt" title="Atualizando o Fink">';
 
 
@@ -120,8 +120,8 @@ unstable/main   - outros pacotes instáveis
           <code>/sw/fink/dists</code> caso queira mas isto em geral não é
           necessário. As árvores padrão são "local/main local/bootstrap
           stable/main". Esta lista deve ser mantida sincronizada com o arquivo
-          <code>/sw/etc/apt/sources.list</code> (a partir do fink 0.21.0, o
-          <code>fink</code> sincroniza automaticamente).</p>
+          <code>/sw/etc/apt/sources.list</code> - <code>fink</code> sincroniza
+          automaticamente.</p>
 
           <p>A ordem das árvores tem importância uma vez que pacotes de árvores
           mais ao fim da lista podem sobrescrever pacotes de árvores listadas
@@ -338,9 +338,8 @@ unstable/main   - outros pacotes instáveis
           <code>fink</code> em particular. Caso você passe ao <code>fink</code>
           a opção <code>--no-use-binary-dist</code> faz com que esta
           configuração seja ignorada, acarretando a compilação a partir de
-          código fonte para essa execução do <code>fink</code> em particular.
-          <b>Esta configuração só está disponível a partir do fink
-          0.23.0.</b></p>
+          código fonte para essa execução do <code>fink</code> em
+          particular.</p>
 
           <p>Note que este modo instrui o <code>fink</code> a baixar um binário
           disponível caso a versão seja a última versão disponível do pacote;
@@ -491,8 +490,7 @@ ClosestFirst - Procure primeiro por espelhos mais próximos
           seja definido como <code>none</code>, o fink não irá definir a
           variável de ambiente CCACHE_DIR e o ccache usará o diretório
           <code>$HOME/.ccache</code>, potencialmente colocando arquivos
-          com proprietário root no seu diretório home. <b>Somente disponível a
-          partir do fink 0.21.0</b>.</p>
+          com proprietário root no seu diretório home.</p>
         </li>
 
         <li>
@@ -538,11 +536,10 @@ ClosestFirst - Procure primeiro por espelhos mais próximos
     <h2><a name="sourceslist">5.9 Gerenciando o arquivo sources.list do apt</a></h2>
       
 
-      <p>A partir do fink 0.21.0, o arquivo
-      <code>/sw/etc/apt/sources.list</code>, que é usado pelo apt para
-      localizar arquivos binários para instalação, é automaticamente gerenciado
-      pelo fink. O arquivo sources.list padrão, conforme suas próprias
-      distribuições e árvores, se parece com:</p>
+      <p>O arquivo <code>/sw/etc/apt/sources.list</code>, que é usado pelo apt
+      para localizar arquivos binários para instalação, é automaticamente
+      gerenciado pelo fink. O arquivo sources.list padrão, conforme suas
+      próprias distribuições e árvores, se parece com:</p>
 
       <pre># Local modifications should either go above this line, or at the end.
 #
@@ -578,11 +575,6 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
       no arquivo desde que você as limite ao começo do arquivo (antes da
       primeira linha padrão) e ao fim do arquivo (abaixo da última linha
       padrão).</p>
-
-      <p>Observação: caso você tenha modificado o arquivo
-      <code>/sw/etc/apt/sources.list</code> antes de atualizar para o fink
-      0.21.0, você encontrará seu arquivo anterior armazenado em
-      <code>/sw/etc/apt/sources.list.finkbak</code>.</p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=pt">6. Usando a ferramenta fink a partir da linha de comando</a></p>

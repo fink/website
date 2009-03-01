@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - Pacotes";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/02/28 21:54:09';
+$cvs_date = 'Date: 2009/03/01 14:09:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="upgrade.php?phpLang=pt" title="Atualizando o Fink"><link rel="prev" href="install.php?phpLang=pt" title="Instalação inicial">';
 
 
@@ -38,13 +38,13 @@ include_once "header.pt.inc";
       colocá-los no arquivo de inicialização apropriado (e.g.
       <code>.cshrc</code> / <code>.profile</code>):</p>
 
-      <p>usuários do tcsh:</p>
-
       <pre>setenv TERM xterm-color</pre>
 
       <p>usuários do bash:</p>
 
       <pre>export TERM=xterm-color</pre>
+
+      <p>usuários do tcsh:</p>
 
       <p>O menu principal possui várias opções:</p>
 
@@ -197,11 +197,11 @@ E: Pacotes quebrados</pre>
       as <a href="http://www.finkproject.org/faq/">Perguntas
       frequentes</a>.</p>
 
-      <p>Para as versões do <code>fink</code> desde a 0.23.0, você pode
-      informar-lhe que tente baixar pacotes de binários pré-compilados, caso
-      disponíveis, no lugar de compilá-los. Para tal, use a <a href="usage.php?phpLang=pt#options">opção --use-binary-dist (ou -b)</a>
-      ao chamar o <code>fink</code>. Isto pode resultar uma grande economia de
-      tempo. Por exemplo, ao executar</p>
+      <p>Você pode solicitar ao <code>fink</code> que tente baixar pacotes de
+      binários pré-compilados, caso disponíveis, no lugar de compilá-los. Para
+      tal, use a <a href="usage.php?phpLang=pt#options">opção
+      --use-binary-dist (ou -b)</a> ao chamar o <code>fink</code>. Isto pode
+      resultar uma grande economia de tempo. Por exemplo, ao executar</p>
 
       <pre>fink --use-binary-dist install wget-ssl</pre>
 
@@ -246,20 +246,11 @@ E: Pacotes quebrados</pre>
       <ul>
         <li>
           Distribuição de binários
+
           <ol>
             <li>
-              <p><b>0.4.1:</b> esta é a versão que pode ser instalada a
-              partir de binários para o OS 10.1</p>
-            </li>
-
-            <li>
-              <p><b>0.6.4:</b>  esta é a versão que pode ser instalada a
-              partir de binários para o OS 10.2.</p>
-            </li>
-
-            <li>
-              <p><b>0.7.2</b> esta é a versão base que pode ser instalada a
-              partir de binários para o OS 10.3. Se você <a href="install.php?phpLang=pt#bin">atualizar</a> o Fink, versões
+              <p><b>0.8.1:</b> Esta é a versão base que pode ser instalada a
+              partir de binários para o OS 10.4. Se você <a href="install.php?phpLang=pt#bin">atualizar</a> o Fink, versões
               mais recentes de alguns pacotes poderão estar disponíveis.</p>
             </li>
 
@@ -275,32 +266,8 @@ E: Pacotes quebrados</pre>
       <ul>
         <li>
           Distribuições via CVS/rsync 
+
           <ol>
-            <li>
-              <p><b>10.2-gcc3.3 stable:</b> Esta é a versão estável mais
-              recente que pode ser instalada a partir da árvore de código fonte
-              stable para o OS 10.2 com a atualização do <code>gcc 3.3</code>
-              no Developer Tools. Para instalar esta versão, você precisa
-              habilitar o acesso <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a>
-              ou rsync. Se você não instalou a atualização do <code>gcc
-              3.3</code> é possível que você não veja esta versão (ou mesmo o
-              pacote).</p>
-
-              <p>Observação: ao contrário de alguns outros projetos, o Fink
-              distribui as versões estáveis mais recentes dos pacotes via CVS,
-              assim como as versões que precisam ser testadas (veja a seção
-              abaixo sobre a árvore unstable). Habilitar a atualização via CVS
-              ou rsync permite que você tenha acesso a novas versões estáveis
-              de pacotes antes de que a distribuição de binários seja
-              atualizada.</p>
-            </li>
-
-            <li>
-              <p><b>10.3 stable:</b> Esta é a versão mais recente que pode
-              ser instalada da árvore de códigos fontes stable para o OS
-              10.3.</p>
-            </li>
-
             <li>
               <p><b>10.4/powerpc stable:</b> Esta é a versão mais recente que
               pode ser instalada da árvore de códigos fontes stable para
@@ -313,22 +280,6 @@ E: Pacotes quebrados</pre>
               usuários do OS 10.4 em hardware Intel.</p>
             </li>
 
-            <li>
-              <p><b>10.2-gcc3.3 unstable:</b> Esta é a versão mais recente
-              que pode ser instalada da árvore de códigos fontes unstable para
-              o OS 10.2 com o <code>gcc 3.3</code>. Para instalar esta versão,
-              siga as <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">instruções</a>
-              de como instalar pacotes instáveis.</p>
-
-              <p>Observação: um pacote <b>instável</b> não significa
-              necessariamente que não possa ser usado, porém instale tais
-              pacotes sob sua própria conta e risco.</p>
-            </li>
-
-            <li>
-              <p><b>10.3 unstable:</b> Esta é a versão mais recente que pode
-              ser instalada da árvore de códigos fontes para o OS 10.3.</p>
-            </li>
 
             <li>
               <p><b>10.4/powerpc unstable:</b> Esta é a versão mais recente
@@ -340,6 +291,34 @@ E: Pacotes quebrados</pre>
               <p><b>10.4/intel unstable:</b> Esta é a versão mais recente que
               pode ser instalada da árvore de códigos fontes unstable para
               usuários do OS 10.4 em hardware Intel.</p>
+
+              <p>Observação: um pacote <b>instável</b> não significa
+              necessariamente que não possa ser usado, porém instale tais
+              pacotes sob sua própria conta e risco.</p>
+            </li>
+
+            <li>
+              <p><b>10.5/powerpc stable:</b> Esta é a versão mais recente que
+              pode ser instalada da árvore de códigos fontes stable para
+              usuários do OS 10.5 em hardware PowerPC.</p>
+            </li>
+
+            <li>
+              <p><b>10.5/intel stable:</b> Esta é a versão mais recente que
+              pode ser instalada da árvore de códigos fontes stable para
+              usuários do OS 10.5 em hardware Intel.</p>
+            </li>
+
+            <li>
+              <p><b>10.5/powerpc unstable:</b> Esta é a versão mais recente
+              que pode ser instalada da árvore de códigos fontes unstable para
+              usuários do OS 10.5 em hardware PowerPC.</p>
+            </li>
+
+            <li>
+              <p><b>10.5/intel unstable:</b> Esta é a versão mais recente que
+              pode ser instalada da árvore de códigos fontes unstable para
+              usuários do OS 10.5 em hardware Intel.</p>
             </li>
           </ol>
         </li>
@@ -363,36 +342,20 @@ E: Pacotes quebrados</pre>
       <ul>
         <li>
           <p><b>xfree86, xfree86-shlibs:</b> Instale ambos os pacotes para o
-          XFree86 4.3.0 (somente para o OS 10.2), 4.4.0 (10.2 or 10.3) ou 4.5.0
-          (10.3 or 10.4).</p>
+          XFree86 4.5.0 (somente para o OS 10.4).</p>
         </li>
 
         <li>
-          <p><b>xorg, xorg-shlibs</b>(10.3 ou 10.4) Instale estes pacotes
+          <p><b>xorg, xorg-shlibs</b>(somente para o OS 10.4) Instale estes pacotes
           para obter a versão 6.8.2 da distribuição do X11 da X.org.</p>
         </li>
 
         <li>
           <p><b>system-xfree86 + -shlibs, -dev:</b> Estes pacotes são gerados
-          automaticamente (para o Fink 0.6.2 ou mais recente) caso você instale
-          o X11 da Apple ou instale manualmente o XFree86 ou X.org. Eles servem
-          como sinalizadores de dependência.</p>
+          automaticamente caso você instale o X11 da Apple ou instale
+          manualmente o XFree86 ou X.org. Eles servem como sinalizadores de
+          dependência.</p>
         </li>
-
-        <li>
-          <p><b>xfree86-base, xfree86-rootless [-threaded] + -shlibs,
-          -dev</b> (somente para 10.1 ou 10.2) Estes pacotes instalam o
-          XFree86 4.2.1.1 (4.2.0 no 10.1) completo. A variante
-          <code>-threaded</code> foi fornecida para aplicações que a requeriam
-          e esta funcionalidade tornou-se padrão em versões mais recentes do
-          XFree86. Os pacotes <code>-rootless</code> contêm o servidor de
-          display XDarwin--o nome é devido a razões históricas.</p>
-
-          <p>Você deve instalar todos os seis pacotes para poder compilar
-          pacotes baseados no X11 a partir do código fonte.</p>
-        </li>
-
-        
       </ul>
 
       <p>Para mais informações sobre a instalação e execução do X11, consulte o

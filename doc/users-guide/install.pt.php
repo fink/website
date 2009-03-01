@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - Instalação";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/02/28 21:54:09';
+$cvs_date = 'Date: 2009/03/01 14:09:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="packages.php?phpLang=pt" title="Instalando pacotes"><link rel="prev" href="intro.php?phpLang=pt" title="Introdução">';
 
 
@@ -16,9 +16,8 @@ include_once "header.pt.inc";
       ferramentas de gerenciamento de pacotes é instalado em sua máquina.
       Depois disso você precisa configurar seu ambiente do shell para usar o
       software instalado pelo Fink. Você só precisa fazer isso uma única vez;
-      você pode atualizar qualquer instalação do Fink (a partir da versão
-      0.2.0) sem que seja necessário reinstalá-lo. Este procedimento é coberto
-      no <a href="upgrade.php?phpLang=pt">capítulo Atualizando o Fink</a>.</p>
+      você pode atualizar qualquer instalação do Fink in loco, sem que seja
+      necessário reinstalá-lo. Este procedimento é coberto no <a href="upgrade.php?phpLang=pt">capítulo Atualizando o Fink</a>.</p>
 
       <p>Uma vez que você possua as ferramentas de gerenciamento de pacotes
       instaladas, você pode usá-las para instalar mais softwares. Este
@@ -36,9 +35,9 @@ include_once "header.pt.inc";
       ou "Salvar no disco" no navegador), dê um duplo clique para montá-la.
       Abra o ícone do disco "Fink 0.x.x Installer" que aparece na sua área de
       trabalho (ou onde quer que você o haja baixado) depois que o Disk Utility
-      (Disk Copy nas versões anteriores à 10.3) tenha verificado o arquivo.
-      Dentro você encontrará alguma documentação e o pacote de instalação. Dê
-      um duplo clique no pacote de instalação e siga as instruções na tela.</p>
+      tenha verificado o arquivo.  Dentro você encontrará alguma documentação e
+      o pacote de instalação. Dê um duplo clique no pacote de instalação e siga
+      as instruções na tela.</p>
 
       <p>Uma senha de administrador será solicitada e alguns textos serão
       exibidos. Por favor, leia-os - eles podem estar mais atualizados do que
@@ -67,8 +66,8 @@ include_once "header.pt.inc";
       colocou o arquivo  <code>fink-0.27.x.tar.gz</code>. Talvez seu
       navegador Web tenha extraído parcialmente o arquivo; neste caso você terá
       o arquivo <code>fink-0.27.x.tar</code> no seu diretório de
-      download e deverá pular o primeiro comando abaixo.   Os comandos abaixo fazem a extração do
-      arquivo:</p>
+      download e deverá pular o primeiro comando abaixo. Os comandos abaixo
+      fazem a extração do arquivo:</p>
 
       
 

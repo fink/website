@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - Atualização";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/02/28 21:54:09';
+$cvs_date = 'Date: 2009/03/01 14:09:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="conf.php?phpLang=pt" title="O arquivo de configuração do Fink"><link rel="prev" href="packages.php?phpLang=pt" title="Instalando pacotes">';
 
 
@@ -38,8 +38,7 @@ include_once "header.pt.inc";
       atualizar a listagem de pacotes e em seguida Binary-&gt;Dist-Upgrade
       packages para proceder à atualização para versões novas.</p>
 
-      <p>Para mais informações, em particular sobre atualização de versões do
-      Fink mais antigas do que a 0.3.0, consulte a <a href="http://www.finkproject.org/download/upgrade.php">Matriz de
+      <p>Para mais informações, consulte a <a href="http://www.finkproject.org/download/upgrade.php">Matriz de
       atualização</a>.</p>
     
 
@@ -52,33 +51,23 @@ include_once "header.pt.inc";
       descrições de pacotes são usadas para compilar novos pacotes; o código
       fonte é baixado quando necessário.</p>
 
-      <p>Se você possui o Fink 0.2.5 ou mais recente, o primeiro passo pode ser
-      feito através da execução do comando <code>fink selfupdate</code>. Este
-      comando verificará no site do Fink se há uma nova versão pontual
-      disponível e irá automaticamente baixar e instalar as descrições de
-      pacotes associadas. Em versões recentes do comando <code>fink</code>, há
-      a opção de obter as descrições de pacotes diretamente do CVS ou através
-      do rsync. O CVS é um repositório com versionamento onde as descrições de
-      pacotes são armazenadas e gerenciadas. A vantagem do CVS é que ele é
-      atualizado continuamente. A desvantagem é que há um único servidor CVS
-      para o Fink e ele pode não ser muito confiável quando há tráfego intenso.
-      Por esta razão, recomenda-se que usuários em geral usem o rsync. Existem
-      vários espelhos disponíveis para o rsync e a única desvantagem é que as
+      <p>O primeiro passo pode ser feito através da execução do comando
+      <code>fink selfupdate</code>. Este comando verificará no site do Fink se
+      há uma nova versão pontual disponível e irá automaticamente baixar e
+      instalar as descrições de pacotes associadas. Você também tem a opção de
+      obter as descrições de pacotes diretamente do CVS ou através do rsync. O
+      CVS é um repositório com versionamento onde as descrições de pacotes são
+      armazenadas e gerenciadas. A vantagem do CVS é que ele é atualizado
+      continuamente. A desvantagem é que há um único servidor CVS para o Fink e
+      ele pode não ser muito confiável quando há tráfego intenso.  Por esta
+      razão, recomenda-se que usuários em geral usem o rsync. Existem vários
+      espelhos disponíveis para o rsync e a única desvantagem é que as
       descrições de pacotes levam por volta de uma hora para migrar aos
       espelhos rsync depois de terem sido adicionadas ao CVS.</p>
 
       <p>Caso você encontre problemas na atualização de uma instalação a partir
       de códigos fontes, consulte <a href="http://www.finkproject.org/download/fix-upgrade.php">estas
       instruções especiais</a>).</p>
-
-      <p>Se você possui uma versão do Fink anterior à 0.2.5, você precisa
-      baixar as descrições de pacotes manualmente. Consulte a <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">área de
-      download</a> e procure pelo tarball packages-0.x.x.tar.gz mais recente
-      no módulo "distribution". Baixe-o e instale-o como segue:</p>
-
-      <pre>tar -xzf packages-0.x.x.tar.gz
-cd packages-0.x.x
-./inject.pl</pre>
 
       <p>Uma vez que você tenha atualizado suas descrições de pacotes (não
       importa como), você pode atualizar todos os pacotes de uma vez só através
@@ -102,12 +91,11 @@ cd packages-0.x.x
       update-all</code> para obter as descrições de pacotes mais recentes e
       atualizá-los.</p>
 
-      <p>A partir do fink 0.23.0, se você usar a opção UseBinaryDist,
-      configurável através da <a href="usage.php?phpLang=pt#options">opção
-      --use-binary-dist (ou -b)</a> ou no <a href="conf.php?phpLang=pt">arquivo de
-      configuração do Fink</a>, as descrições de pacotes (tanto os binários
-      quanto os de códigos fontes) serão atualizadas se você executar o comando
-      <code>fink selfupdate</code>. Neste caso você não precisa mais executar
+      <p>Se você usar a opção UseBinaryDist, configurável através da <a href="usage.php?phpLang=pt#options">opção --use-binary-dist (ou -b)</a>
+      ou no <a href="conf.php?phpLang=pt">arquivo de configuração do Fink</a>, as
+      descrições de pacotes (tanto os binários quanto os de códigos fontes)
+      serão atualizadas se você executar o comando <code>fink
+      selfupdate</code>. Neste caso você não precisa mais executar
       separadamente o comando <code>apt-get</code>.</p>
 
       <p>Se você estiver usando o Fink Commander, escolha Binary-&gt;Update

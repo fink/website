@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - A ferramenta fink";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/02/28 21:54:09';
+$cvs_date = 'Date: 2009/03/01 14:09:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="prev" href="conf.php?phpLang=pt" title="O arquivo de configuração do Fink">';
 
 
@@ -586,9 +586,6 @@ fink apropos -s=kde irc   - o mesmo que acima, mas restrito a pacotes que
     <h2><a name="dumpinfo">6.25 dumpinfo</a></h2>
       
 
-      <p>Somente disponíveis em versões do <code>fink</code> mais recentes do
-      que a 0.21.0.</p>
-
       <p>Exibe como o <code>fink</code> analisa as partes de um arquivo de
       pacote <code>.info</code>. Vários campos e expansões de códigos
       serão exibidos conforme as <b>opções</b> abaixo:</p>
@@ -605,12 +602,8 @@ fink apropos -s=kde irc   - o mesmo que acima, mas restrito a pacotes que
     <h2><a name="show-deps">6.26 show-deps</a></h2>
       
 
-      <p>Somente disponível no fink-0.23-6 e posteriores.</p>
-
       <p>Exibe uma lista legível das dependências, tanto de compilação quanto
       de execução (instalação), dos pacotes listados.</p>
-    
-
     
   
 <? include_once "../../footer.inc"; ?>

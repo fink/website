@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - Introdução";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/02/28 21:54:09';
+$cvs_date = 'Date: 2009/03/01 14:09:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="install.php?phpLang=pt" title="Instalação inicial"><link rel="prev" href="index.php?phpLang=pt" title="Guia do usuário Contents">';
 
 
@@ -27,7 +27,7 @@ include_once "header.pt.inc";
 
       <ul>
         <li>
-          <p>Um sistema Mac OS X instalado, versão 10.2 ou mais recente, ou
+          <p>Um sistema Mac OS X instalado, versão 10.4 ou mais recente, ou
           versões do Darwin equivalentes. Versões anteriores <b>não</b> irão
           funcionar. Veja abaixo mais informações sobre os sistemas
           suportados.</p>
@@ -45,19 +45,17 @@ include_once "header.pt.inc";
       <ul>
         <li>
           <p>Ferramentas de desenvolvimento. No Mac OS X, instale o pacote
-          Developer.pkg do CD Developer Tools (conhecido como XCode nas versões
-          10.3 e 10.4) (eles estão no DVD principal do OS 10.4) ou faça o <a href="http://connect.apple.com">download</a> da versão mais
+          XcodeTools.mpkg do DVD de instalação ou faça o <a href="http://connect.apple.com">download</a> da versão mais
           recente--o que é mais recomendável, já que versões mais recentes
           geralmente corrigem erros (ainda que algumas vezes elas provoquem
           erros).  Note que as ferramentas precisam estar de acordo com a sua
-          versão do Mac OS X. No caso do Darwin, as ferramentas estão presentes
-          na instalação padrão.</p>
+          versão do Mac OS X.</p>
 
-          <p>É uma boa idéia ter as ferramentas de desenvolvimento instaladas
-          mesmo que você não pretenda montar pacotes a partir do código fonte.
-          Alguns dos programas instalados pelo pacote são, na verdade,
-          ferramentas de linha de comando com propósito geral. Alguns pacotes
-          podem precisar delas para que possam ser executados.</p>
+          <p>É uma boa idéia ter o XCode instalado mesmo que você não pretenda
+          montar pacotes a partir do código fonte.  Alguns dos programas
+          instalados pelo pacote são, na verdade, ferramentas de linha de
+          comando com propósito geral. Alguns pacotes podem precisar delas para
+          que possam ser executados.</p>
         </li>
 
         <li>
@@ -70,33 +68,19 @@ include_once "header.pt.inc";
     <h2><a name="supported-os">1.3 Sistemas suportados</a></h2>
       
 
-      <p><b>Mac OS X 10.4</b> é a plataforma de vanguarda e é considerada
+      <p><b>Mac OS X 10.5</b> é a plataforma de vanguarda e é considerada
       como sendo <q>completamente suportada e testada</q> ainda que,
       por ser um sistema operacional mais recente, ainda haja algumas questões
       a resolver. A maior parte dos desenvolvedores usa esta versão e aqueles
-      que estão usando a 10.3 possuem usuários na 10.4 para testar seu
-      trabalho. Entretanto, observe que o Fink em hardware Intel ainda é
-      considerado como estando em qualidade <b>beta</b>.</p>
-      
-      <p><b>Mac OS X 10.3</b> é considerando como sendo <q>completamente
+      que estão usando a 10.4 possuem usuários na 10.5 para testar seu
+      trabalho.</p>
+
+      <p><b>Mac OS X 10.4</b> é considerado como sendo <q>completamente
       suportado e testado</q> apesar de ainda haver alguns problemas de
-      compilação espúrios em alguns pacotes. A maior parte dos desenvolvedores
-      usa esta versão e aqueles que não a rodam possuem usuários na 10.3 para
-      testar seu trabalho.</p>
-
-      <p><b>Mac OS X 10.2</b> ainda é parcialmente suportado. O Fink 0.6.4 é
-      a última distribuição que suporta este SO.</p>
-
-      <p><b>Mac OS X 10.1</b> ainda é parcialmente suportado. Você precisa
-      rodar o Fink 0.4.1 e não versões mais recentes.</p>
-
-      <p><b>Darwin 8.x</b> é a versão correspondente ao Mac OS X 10.4,
-      <b>Darwin 7.x</b> é a versão correspondente ao Mac OS X 10.3 e
-      <b>Darwin 6.x</b> é a versão correspondente ao Mac OS X 10.2. Em geral
-      o Fink deve funcionar nessas versões mas elas não são tão bem testadas já
-      que a maior parte das pessoas usa o Mac OS X. Você pode encontrar
-      problemas nos pacotes que usam características específicas do Mac OS X -
-      pacotes afetados incluem o XFree86 e possivelmente esound.</p>
+      compilação espúrios em alguns pacotes. Muitos dos desenvolvedores usa
+      esta versão e aqueles que não a usam possuem usuários 10.4 para testar
+      seu trabalho.</p>
+      
     
 
     <h2><a name="src-vs-bin">1.4 Código fonte vs. binário</a></h2>
