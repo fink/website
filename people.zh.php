@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2008/09/29 17:19:28 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2009/03/07 19:12:28 $';
 
 include "header.inc";
 ?>
@@ -85,6 +85,7 @@ include "header.inc";
 <li>Mathias Meyer</li>
 <li>Remi Mommsen</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
+<li>Hanspeter Niederstrasser (<i>Snaggle</i>)</li>
 <li>Matthias Ringwald (<i>freckle<i>)</li>
 <li>Andrew Rohl</li> 
 <li>Lars Rosengreen</li>
@@ -99,6 +100,7 @@ include "header.inc";
 <li>Jeffrey S. Whitaker</li>
 <li>Blair Zajac</li>
 <li>Chris Zubrzycki (<i>cirdan</i>)</li>
+
 
 </ul>
 
@@ -182,7 +184,6 @@ include "header.inc";
 <li>Joseph K. Myers</li> 
 <li>Kaben Nanlohy</li> 
 <li>Magenta Hari Nezumi</li> 
-<li>Hanspeter Niederstrasser</li>
 <li>Eric Norum</li> 
 <li>Nil Parikh</li>
 <li>Daniel Parks</li> 
