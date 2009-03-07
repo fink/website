@@ -1,7 +1,7 @@
 <?
 $title = "貢献している人々";
 $cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2009/03/07 19:12:28 $';
+$cvs_date = '$Date: 2009/03/07 19:18:42 $';
 
 include "header.inc";
 ?>
@@ -152,7 +152,6 @@ Fink プロジェクトはボランティアによって成り立っています
 <h2>不定期な貢献者</h2>
 
 <ul>
-<li>Jorge Acereda</li> 
 <li>Mike Akers</li> 
 <li>David Bacher</li> 
 <li>Michael Baudis</li> 
