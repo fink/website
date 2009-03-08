@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.92 2009/01/19 22:29:15 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.93 2009/03/08 15:59:57 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -884,36 +884,7 @@ Failed test (./Command/chowname.t at line 27)
         <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
       </answer>
     </faqentry>
-    <faqentry name="four-oh-three">
-      <question>
-        <p>I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</p>
-      </question>
-      <answer>
-        <p>There have been problems with the Sourceforge download servers, and therefore we are moving the binary distribution repository for this very reason.</p>
-        <ul>
-          <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
-<codeblock>fink reinstall fink</codeblock>
-<p>or</p>
-<codeblock>sudo apt-get install --reinstall fink</codeblock>
-<p>(if for whatever reason you don't want to use the source distribution).</p>
-</li>
-          <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <filename>sources.list</filename> file as root, e.g..via
-<codeblock>sudo pico /sw/etc/apt/sources.list</codeblock>
-<p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with "Official binary distribution:" thusly:</p>
-<codeblock># Official binary distribution: download location for packages
-# from the latest release
-deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
-
-# Official binary distribution: download location for updated
-# packages built between releases
-deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
-<p>The above of course assumes you're on 10.3.  If you're on a different OS replace <code>10.3</code> with what your current distribution is.</p>
-<p>Then save your work and quit the editor.  Now update your binary package list again.</p>
-</li>
-        </ul>
-      </answer>
-    </faqentry>
-    <faqentry name="fc-cache">
+     <faqentry name="fc-cache">
       <question>
         <p>I get a message that says &quot;No fonts found&quot;.</p>
       </question>
