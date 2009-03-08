@@ -1,52 +1,69 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2008/06/24 19:10:12 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2009/03/08 02:25:33 $';
 
 include "header.inc";
 ?>
 
 <h1>Download Fink Source Release</h1>
 
-<!--AKH 2007-05-31.  Fix when we have a release tarball that works with OS > 10.4.9
+<p><strong>OS 10.5:</strong></p>
 <p>
-The source release contains the fink package manager plus package
+The source release contains the <em>fink</em> package manager plus package
 descriptions and patches.
 It will download the source code from the original distribution sites
 and build them on your local machine.
 </p>
--->
-<p>The source tarball contains the <em>fink</em> package manager.  After you have installed it, you will be able to get package descriptions and patches.  It will use these to download the source code from the original distribution sites or the Fink project's mirrors and build them on your local machine.</p>
 <? 
 include "../fink_version.inc";
 ?>
 
-<!--
-<p>
-Fink <? print $fink_version; ?> was officially released on 
-<? print $release_date; ?>.
--->
 
-<p><EM>fink-0.28.1</EM> was officially released on 2008-3-11.</p>
+<p>Fink <? print $fink_version; ?> was officially released on 
+<? print $release_date; ?>.
+<ul><LI><a
+href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
+<? print $release_version; ?></a> - 3521K, .tar.gz format</LI></ul>
+<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
+<p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
+<pre>tar -xvzf fink-<? print $fink_version; ?>-full.tar.gz</pre>
+<p>or</p>
+<pre>tar -xvf fink-<? print $fink_version; ?>-full.tar</pre>
+<p>if it has already been partially unpacked, in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-<? print $fink_version; ?></em> directory, and use</p>
+<pre>./bootstrap</pre>
+<p>to start the boostrapping operation, which will install the Fink base setup.</p>
+<!-- akh: I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
+     rangerrick: but that is not true!  ;) -->
+<p>After the installation is completed, running the command</p>
+<pre>pathsetup.sh</pre>
+<p>will set up your environment for Fink.  If you open a new terminal window, the session will use these environment settings.  Once you have installed <em>fink</em> and the other base packages, the command sequence:</p>
+<pre>fink selfupdate</pre>
+<p>using any of the <em>point</em>, <em>rsync</em>, or <em>cvs</em> options, followed by</p>
+<pre>fink index -f</pre>
+<p>followed by</p>
+<pre>fink selfupdate-rsync</pre>
+<p>or</p>
+<pre>fink selfupdate-cvs</pre>
+<p>will download the package description files and patches, provided that you <strong>do not</strong> select the "point release" method.  rsync is generally preferable to cvs for most people.</p>
+
+
+<p><strong>OS 10.4:</strong></p>
+<p>The source tarball contains the <em>fink</em> package manager.  After you have installed it, you will be able to get package descriptions and patches.  It will use these to download the source code from the original distribution sites or the Fink project's mirrors and build them on your local machine.</p>
+
+
+<p><EM>fink-0.28.6</em> was officially released on 2008-10-05.</p>
 </p>
 <ul>
-<!--<li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
-<? print $release_version; ?></a> - 6786K, .tar.gz format</li>-->
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.1.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.28.1</a> - 1304K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.6.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.28.6</a> - 1305K, .tar.gz format</li>
 </ul>
 
-<p>
-<!--<b>Important:</b>
-Don't extract the archive with StuffIt, it will corrupt some file
-names.
-Use the command line <tt>tar</tt> utility instead.
-Instructions are in the Installation document.-->
-You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
+<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
   <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
-<pre>tar -xvzf fink-0.28.1.tar.gz</pre>
-
-<p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.1</em> directory, and use</p>
+<pre>tar -xvzf fink-0.28.6.tar.gz</pre>
+<p>or</p>
+<pre>tar -xvf fink-0.28.6.tar</pre>
+<p>if it has already been partially unpacked, in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.6</em> directory, and use</p>
 <pre>./bootstrap</pre>
 <p>to start the boostrapping operation, which will install the Fink base setup.</p>
 <!-- akh: I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
