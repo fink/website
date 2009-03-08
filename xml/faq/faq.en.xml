@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.93 2009/03/08 15:59:57 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.94 2009/03/08 16:24:26 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -523,6 +523,15 @@ Failed: Updating using CVS failed. Check the error messages above.</codeblock>
         the output of selfupdate-cvs, and try again:</p>
         <codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</codeblock>
+		<p>If you get errors that mention <em>cvs.sourceforge.net</em>:</p>
+		<codeblock>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</codeblock>
+	      <p>this is because of a restructuring of the CVS servers at sourceforge.net in 2006.  Fink files are now at <em>fink.cvs.sourceforge.net</em>.</p>
+	      <p>Check your Distribution version, e.g. via</p>
+	      <codeblock>fink --version</codeblock>
+	      <p>If that shows <code>10.4-transitional</code>, then you need to update to the regular 10.4 distribution.  An <link url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">update script</link> has been created to assist with that.</p>
       </answer>
     </faqentry>
     <faqentry name="kernel-panics">
@@ -923,23 +932,7 @@ sudo chmod 1775 /
         <p>and then download the disk image for Intel machines from <link url="http://www.finkproject.org/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
-    <faqentry name="sf-cvs-2006">
-	      <question>
-		<p>I haven't been able to do a cvs selfupdate.</p>
-	      </question>
-	      <answer>
-		<p>If you get errors that include lines like:</p>
-		<codeblock>
-cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
-2401 failed: Operation timed out
-</codeblock>
-		<p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p>
-<codeblock>
-sudo apt-get update ; sudo apt-get install fink-mirrors
-</codeblock>  
-	      </answer>
-	      </faqentry>
-  </chapter>
+   </chapter>
   <chapter filename="comp-general">
     <!-- FAQs in comp-general are coded into VirtPackage.pm
        Do not rename, remove, or otherwise cause the URL to change. -->
