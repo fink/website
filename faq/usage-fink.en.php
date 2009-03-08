@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/08 15:59:57';
+$cvs_date = 'Date: 2009/03/08 16:24:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -203,7 +203,10 @@ Updating using CVS failed. Check the error messages above.</pre><p>In this case 
 Failed: Updating using CVS failed. Check the error messages above.</pre><p>The "C" means CVS had a conflict in trying to update the latest
         version.  The fix is to delete any files that show up as starting with "C" in
         the output of selfupdate-cvs, and try again:</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
-fink selfupdate-cvs</pre></div>
+fink selfupdate-cvs</pre><p>If you get errors that mention <b>cvs.sourceforge.net</b>:</p><pre>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</pre><p>this is because of a restructuring of the CVS servers at sourceforge.net in 2006.  Fink files are now at <b>fink.cvs.sourceforge.net</b>.</p><p>Check your Distribution version, e.g. via</p><pre>fink --version</pre><p>If that shows <code>10.4-transitional</code>, then you need to update to the regular 10.4 distribution.  An <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">update script</a> has been created to assist with that.</p></div>
     </a>
     <a name="kernel-panics">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.14: When I use Fink, my whole machine freezes up/kernel panics/dies.
@@ -458,16 +461,7 @@ sudo chmod 1775 /
 </b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p></div>
     </a>
-    <a name="sf-cvs-2006">
-	      <div class="question"><p><b><? echo FINK_Q ; ?>5.33: I haven't been able to do a cvs selfupdate.</b></p></div>
-	      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors that include lines like:</p><pre>
-cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
-2401 failed: Operation timed out
-</pre><p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p><pre>
-sudo apt-get update ; sudo apt-get install fink-mirrors
-</pre></div>
-	      </a>
-  <p align="right"><? echo FINK_NEXT ; ?>:
+   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=en">6. Compile Problems - General</a></p>
 <? include_once "../footer.inc"; ?>
 
