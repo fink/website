@@ -1,13 +1,13 @@
 <?
-$title = "Advanced - Servidor de Distr. de Binários";
+$title = "Avançado - Servidor de Distr. de Binários";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/01 02:42:14';
-$metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Advanced Contents"><link rel="prev" href="index.php?phpLang=pt" title="Advanced Contents">';
+$cvs_date = 'Date: 2009/03/12 18:13:37';
+$metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Avançado Contents"><link rel="prev" href="index.php?phpLang=pt" title="Avançado Contents">';
 
 
 include_once "header.pt.inc";
 ?>
-<h1>Advanced - 1. Rodando seu próprio servidor de distribuição de binários</h1>
+<h1>Avançado - 1. Rodando seu próprio servidor de distribuição de binários</h1>
     
     
 
