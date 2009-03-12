@@ -1,0 +1,2540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkfaq.dtd">
+<document filename="index" lang="pt">
+  <title>Perguntas frequentes sobre o Fink</title>
+  <shorttitle>Perguntas frequentes</shorttitle>
+  <cvsid>$Id: faq.pt.xml,v 1.1 2009/03/12 17:49:31 alexkhansen Exp $</cvsid>
+  <preface>
+    <p>Esta é a lista das perguntas frequentes sobre o Fink. Como na maior
+    parte das listas de perguntas frqeuentes, algumas perguntas foram tiradas
+    da vida e real e outras foram inventadas. Na verdade é mais uma
+    documentação escrita de forma ad-hoc em um estilo pergunta+resposta.</p>
+
+    <p>Este documento contém várias páginas, uma para cada seção. O sumário
+    abaixo enumera todas as perguntas, cada qual com um link para a página da
+    seção contendo a pergunta e a resposta correspondente.</p>
+  </preface>
+  <chapter filename="general">
+    <title>Perguntas gerais</title>
+    <shorttitle>Generalidades</shorttitle>
+    <faqentry name="what">
+      <question>
+        <p>O que é o Fink?</p>
+      </question>
+      <answer>
+        <p>O Fink deseja trazer mais software Unix para o Mac OS X, o que
+        resulta dois objetivos principais:</p>
+        <p>O objetivo número um é portar software para o Mac OS X. Isto
+        significa que nós pegamos software Unix de código aberto e fazemos os
+        ajustes necessários para que ele possa ser compilado e executado no Mac
+        OS X. Algumas vezes isto é fácil mas pode também ser bastante difícil
+        ou até mesmo impossível para alguns pacotes. Estamos tentando prover
+        ferramentas e documentação para tornar este processo mais fácil.</p>
+        <p>O objetivo número dois é tornar os resultados disponíveis para os
+        usuários convencionais. Para isto, nós montamos uma distribuição usando
+        ferramentas de gerenciamento de pacotes portadas do Linux, o
+        <code>dpkg</code> e o <code>apt-get</code>, escritas por e para o
+        projeto <link url="http://www.debian.org/">Debian GNU/Linux</link>. A
+        distribuição de binários usa o formato de pacote <code>.deb</code>.
+        Para compilar pacotes a partir do código fonte, temos nossa própria
+        ferramenta, chamada <code>fink</code>, que cria arquivos de pacote
+        <code>.deb</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="naming">
+      <question>
+        <p>O que significa o nome Fink?</p>
+      </question>
+      <answer>
+        <p>Nada, é apenas um nome. Não é nem mesmo uma sigla.</p>
+        <p>Na verdade, Fink é o nome do pintassilgo em alemão (na verdade, uma
+        família de pássaros à qual o pintassilgo pertence, os fringilídeos). Eu
+        estava procurando por um nome para o projeto e o nome do sistema
+        operacional, Darwin, levou-me a pensar sobre Charles Darwin, as Ilhas
+        Galápagos e evolução. Lembrei-me de uma passagem da época da escola
+        sobre os fringilídeos encontrados por Darwin nas Ilhas Galápagos e seus
+        bicos característicos e, bem, foi isso...</p>
+    </answer>
+    </faqentry>
+    <faqentry name="bsd-ports">
+      <question>
+        <p>Qual a diferença entre o Fink e o mecanismo de ports do BSD
+        (incluindo OpenPackages e GNU-Darwin)?</p>
+      </question>
+      <answer>
+        <p>Algumas vantagens principais:</p>
+        <ul>
+          <li>
+            <p>É escrito em Perl e não make/shell. Por conseguinte, dispensa as
+            características especiais que só são encontradas no make do BSD e
+            não é necessário sinalizar os pacotes que necessitam do GNU make
+            para compilá-los.</p>
+          </li>
+          <li>
+            <p>O dpkg fornece um gerenciado de pacotes de binários bem
+            sofisticado - atualização tranquila, gerenciamento especial de
+            arquivos de configuração, pacotes virtuais e outras dependências
+            avançadas.</p>
+          </li>
+          <li>
+            <p>O Fink não instala no diretório /usr/local a menos que isto haja
+            sido solicitado de forma explícita e não necessita de artimanhas
+            para lidar com o /usr/bin/make ou outros comandos providos pelo
+            sistema. Isto faz com que ele seja mais seguro para usar e reduz ao
+            mínimo possível interferências com o Mac OS X e pacotes de
+            terceiros.</p>
+          </li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="usr-local">
+      <question>
+        <p>Por que o Fink não instala no /usr/local?</p>
+      </question>
+      <answer>
+        <p>Há várias razões, mas de forma geral é "porque algo vai dar
+        errado".</p>
+        <p>Primeira razão: softwares de terceiros. O diretório /usr/local é um
+        lugar bem padronizado para se colocar software que não seja parte do
+        sistema que foi distribuído pelo fabricante. Isto significa que é um
+        bom lugar para se instalar programas. Entretanto, isto também significa
+        que outras pessoas irão colocar suas coisas nesse diretório. A maior
+        parte das rotinas de instalação simplesmente sobrescreve o que estiver
+        lá - isto também se aplica ao dpkg. Pode-se, claro, escolher não
+        instalar softwares de terceiros no /usr/local. Infelizmente, a maior
+        parte dos programas de instalação não avisa de antemão que irão
+        instalar nesse diretório.</p>
+        <p>Segunda razão: /usr/local/bin está no PATH padrão. Isto significa
+        que seu shell irá encontrar os programas instalados sem que sejam
+        necessárias medidas adicionais. Mas isto também significa que você
+        precisa tomar medidas adicionais caso não queira usar os programas. Em
+        casos extremos, isto também pode afetar o sistema em si - muitas partes
+        dependem de scripts de shell.</p>
+        <p>Terceira razão: os programas de compilação leem o diretório
+        /usr/local por padrão: o compilador procura arquivos de cabeçalho em
+        /usr/local/include e o linkeditor procura bibliotecas em
+        /usr/local/lib. Uma vez mais, às vezes isto é conveniente, porém é
+        dificíl desabilitar este comportamento caso necessário. É muito fácil
+        desabilitar um comportador caso um arquio <code>stdio.h</code> contendo
+        lixo seja colocado em /usr/local/include.</p>
+        <p>De qualquer forma, é possível instalar o Fink em /usr/local. O
+        script de instalação irá avisá-lo explicitamente mas você pode
+        prosseguir sabendo que você está fazendo isso por sua própria conta e
+        risco.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="why-sw">
+      <question>
+        <p>Por que vocês escolheram /sw?</p>
+      </question>
+      <answer>
+        <p>Essa escolha é arbitrária e deverá continuar desta forma por motivos
+        práticos (atualização) e também pelo fato de que é uma escolha segura
+        no tocante ao conflito com outros sistemas de empacotamento.</p>
+      </answer>
+    </faqentry>
+  </chapter>
+  <chapter filename="relations">
+    <title>Relacionamentos com outros projetos</title>
+    <shorttitle>Relacionamentos</shorttitle>
+    <faqentry name="upstream">
+      <question>
+        <p>Vocês repassam suas correções e ajustes para os mantenedores
+        oficiais?</p>
+      </question>
+      <answer>
+        <p>Estamos tentando. Às vezes repassar correções e ajustes é fácil e
+        todos ficam felizes assim que seja liberada a nova versão do pacote.
+        Infelizmente, isto não é fácil na maioria dos pacotes. Alguns problemas
+        comuns:</p>
+        <ul>
+          <li>O mantenedor do pacote no Fink está muito ocupado e está sem
+          tempo para enviar os ajustes, correções e explicações correspondentes
+          para os mantenedores oficiais.</li>
+          <li>Os mantenedores oficiais rejeitam as correções e ajustes. Há
+          várias razões válidas para isto. A maior parte dos mantenedores
+          oficiais estão bastante interessados em código limpo, verificações
+          limpas e compatibilidade com outras plataformas.</li>
+          <li>Os mantenedores oficiais aceitam os ajustes e correções porém o
+          tempo para liberar novas versões de seus pacotes levam semanas ou
+          meses.</li>
+          <li>O pacote foi abandonado pelos autores originais e não haverá
+          novas versões que possam incorporar os ajustes e correções.</li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="debian">
+      <question>
+        <p>Qual o seu relacionamento com o projeto Debian? Vocês estão portando
+        o Debian Linux para rodar no Mac OS X?</p>
+      </question>
+      <answer>
+        <p>Não há relacionamento formal entre o Fink e o <link
+        url="http://www.debian.org">Debian</link> O Fink <em>não</em> é um port
+        da distribuição Debian GNU/Linux. O que nós fizemos foi portar as
+        ferramentas de gerenciamento de pacotes do Debian (dpkg, dselect,
+        apt-get), usando-as juntamente com o formato de pacote binário .deb. Os
+        pacotes em si são feitos sob medida para Mac OS X/Darwin e nós não
+        usamos o formato de pacote de fontes do Debian.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="apple">
+      <question>
+        <p>Qual o seu relacionamento com a Apple</p>
+      </question>
+      <answer>
+        <p>A <link url="http://www.apple.com/">Apple</link> tem ciência do Fink
+        e nos deu algum suporte como parte dos seus esforços de relacionamento
+        com a comunidade de código aberto. No verão e no outono de 2001, eles
+        nos forneceram pré-versões novas do Mac OS X na esperança de que os
+        pacotes do Fink pudessem ser adaptados em tempo para a liberação da
+        versão. Citação: <em>"Esperamos que isto reforce nosso comprometimento
+        que várias pessoas suspeitam que não queiramos oferecer. Com o tempo,
+        nós melhoraremos nossa estratégia em relação a código aberto."</em>
+        Obrigado, Apple!</p>
+      </answer>
+    </faqentry>
+    <faqentry name="darwinports">
+      <question>
+        <p>Qual o seu relacionamento com o Darwinports?</p>
+      </question>
+      <answer>
+        <p>Darwinports e Fink são projetos complementares. Existe certa
+        interseção entre os dois projetos e várias pessoais contribuem com
+        ambos. Por exemplo, Benjamin Reed está trabalhando nos pacotes KDE dos
+        dois projetos. O Darwinports e o Fink estão livres para usar as
+        correções e ajustes uns dos outros, e nós já discutimos como colaborar
+        em um novo mecanismo de dependências.</p>
+        <p>O Darwinports começou do zero com o objetivo de tentar um enfoque
+        diferente para o sistema de empacotamento. Leia a declaração no <link
+        url="http://darwinports.opendarwin.org/">site do Darwinports</link>
+        para mais detalhes.</p>
+      </answer>
+    </faqentry>
+  </chapter>
+  <chapter filename="mirrors">
+    <title>Espelhos do Fink</title>
+    <shorttitle>Espelhos</shorttitle>
+    <faqentry name="when-use">
+      <question>
+        <p>O que são os espelhos do Fink?</p>
+      </question>
+      <answer>
+        <p>Os espelhos do Fink são servidores rsync que espelham os arquivos de
+        descrição (atuais e estáveis) que o Fink usa para montar os pacotes a
+        partir de código fonte.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="why">
+      <question>
+        <p>Por que eu deveria usar espelhos rsync?</p>
+      </question>
+      <answer>
+        <p>Rsync é um protocolo bastante rápido. Ele atualiza os arquivos de
+        descrição mais rapidamente do que o antigo método de atualização via
+        CVS. Além disso, as atualizações via CVS são sempre feitas a partir do
+        sourceforge.net enquanto que as atualizações pelo rsync podem ser
+        feitas a partir de um espelho mais próximo a você.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="where">
+      <question>
+        <p>Onde posso encontrar mais informações sobre espelhos do Fink?</p>
+      </question>
+      <answer>
+        <p>Todos os espelhos do Fink estão consolidados sob o domínio
+        finkmirrors.net. O site <link
+        url="http://finkmirrors.net">http://finkmirrors.net</link> possui mais
+        informações.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="when-not">
+      <question>
+        <p>Não consigo conectar-me a um servidor rsync, o que devo fazer?</p>
+      </question>
+      <answer>
+        <p>Às vezes alguns firewalls bastante restritivos impedem que você se
+        conecte a serviços rsync. Se este for o caso você pode usar o método
+        CVS.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="otherinfogone">
+      <question>
+        <p>Eu mudei para o método rsync e agora todos os arquivos das árvores
+        que não eram usadas foram eliminados</p>
+      </question>
+      <answer>
+        <p>Isto é normal. O método de atualização via rsync só atualiza sua
+        árvore ativa, por exemplo a 10.4, e também elimina todos os
+        subdiretórios CVS.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="howswitch">
+      <question>
+        <p>Como posso ficar alternando entre os métodos?</p>
+      </question>
+      <answer>
+        <p>Use os comandos fink selfupdate-rsync ou fink selfupdate-cvs.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="status">
+      <question>
+        <p>Posso verificar o estado atual dos espelhos rsync?</p>
+      </question>
+      <answer>
+        <p>Claro, veja <link
+        url="http://finkmirrors.net/status.html">http://finkmirrors.net/status.html</link>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="Master">
+      <question>
+        <p>O que é um espelho de distfiles (arquivos de distribuição)?</p>
+      </question>
+      <answer>
+        <p>Às vezes é difícil obter da Internet certas versões de códigos
+        fontes. Espelhos de distfiles mantêm e espelham pacotes de código
+        fonte que são necessários para que o fink construa seus pacotes de
+        código fonte.</p>
+      </answer>
+    </faqentry>
+  </chapter>
+  <chapter filename="upgrade-fink">
+    <title>Atualizando o Fink (resolução de problemas específicos a uma
+    versão)</title>
+    <shorttitle>Atualizando o Fink</shorttitle>
+    <faqentry name="leopard-bindist1">
+      <question>
+        <p>O Fink não enxerga pacotes novos mesmo depois de eu rodar uma
+        autoatualização via rsync ou CVS.</p>
+      </question>
+      <answer>
+        <p>Este é um problema que está acontecendo com pessoas na versão OS
+        10.5 usando o instalador binário. Verifique sua versão:</p>
+        <codeblock>fink --version</codeblock>
+        <p>Se você tiver o <code>fink-0.27.13-41</code>, que é a versão que vem
+        com o instalador, ou <code>fink-0.27.16-41</code>, então há algumas
+        opções.</p>
+	<ul>
+	  <li>
+	    <em>rsync (preferencial):</em> Execute os comandos abaixo
+	    <codeblock>fink selfupdate
+fink selfupdate-rsync
+fink index -f
+fink selfupdate</codeblock>
+	  </li>
+	  <li>
+	    <em>cvs (alternativo):</em> Execute
+	    <codeblock>fink selfupdate-cvs
+fink index -f
+fink selfupdate</codeblock>
+	  </li>
+	</ul>
+        <p>Ambos o atualizarão para a versão mais nova do
+        <code>fink</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="leopard-bindist2">
+      <question>
+        <p>Quando eu tento instalar um pacote eu recebo a mensagem de erro
+        'Can't resolve dependency "fink (>= 0.28.0)"' (Não é possível resolver
+        a dependência "fink (>= 0.28.0)"</p>
+      </question>
+      <answer>
+        <p>Aplique a correção sugerida na <xref
+        section="leopard-bindist1">pergunta anterior</xref>.</p>
+      </answer>
+    </faqentry>
+  </chapter>
+  <chapter filename="usage-fink">
+    <title>Instalação, uso e manutenção do Fink</title>
+    <shorttitle>Uso do Fink</shorttitle>
+    <faqentry name="what-packages">
+      <question>
+        <p>Como posso saber quais os pacotes que o Fink suporta?</p>
+      </question>
+      <answer>
+        <p>O comando <code>list</code> lista todos os pacotes conhecidos pela
+        sua instalação do Fink:</p>
+        <codeblock>fink list</codeblock>
+        <p>Se você está usando uma distribuição de binários, o
+        <code>dselect</code> apresenta uma listagem navegável de todos os
+        pacotes disponíveis.  Note que você precisa executar o dselect como root
+        para selecionar e instalar pacotes.</p>
+        <p>Você também pode consultar oe <link
+        url="http://pdb.finkproject.org/pdb/">banco de dados de pacotes</link>
+        disponível no site.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="proxy">
+      <question>
+        <p>Estou atrás de um firewall. Como configuro o Fink para usar um proxy
+        HTTP?</p>
+      </question>
+      <answer>
+        <p>O comando <code>fink</code> suporta configurações explícitas de
+        proxy que são repassadas para o <code>wget</code> ou o
+        <code>curl</code>. Caso você não tenha configurado os proxies na
+        instalação inicial, você pode executar o comando <code>fink
+        configure</code> para configurá-los. Você também pode executar esse
+        comando a qualquer momento para reconfigurar o comando
+        <code>fink</code>. Se você seguiu as instruções do guia de instalação e
+        usa os arquivos <filename>/sw/bin/init.sh</filename> ou
+        <filename>/sw/bin/init.csh</filename>, então tanto o
+        <code>apt-get</code> quanto o <code>dselect</code> usam essas
+        configurações de proxy. Tenha certeza de colocar o protocolo na frente
+        do proxy, como por exemplo</p>
+        <codeblock>ftp://proxy.seusite.com</codeblock>
+        <p>Caso você ainda esteja tendo problemas, vá às Preferências de
+        Sistema, escolha o painel Rede, selecione a aba Proxies e tenha certeza
+        de marcar a caixa "Use Modo Passivo do FTP (PASV)".</p>
+      </answer>
+    </faqentry>
+    <faqentry name="firewalled-cvs">
+      <question>
+        <p>Como faço para atualizar os pacotes disponíveis via CVS se eu
+        estiver atrás de um firewall?</p>
+      </question>
+      <answer>
+        <p>O pacote <em>cvs-proxy</em> pode ser usado para criar um túnel
+        através de proxies HTTP.</p>
+        <ul>
+          <li>
+            <p>Instale o pacote <em>cvs-proxy</em> através do comando:</p>
+            <p>
+              <code>fink --use-binary-dist install <em>cvs-proxy</em>
+              </code>
+            </p>
+          </li>
+          <li>
+	    <p>Mude para o método de atualização via CVS através do comando:</p>
+             <p>
+              <code>fink selfupdate-cvs</code>
+            </p>
+          </li>
+        </ul>
+        <p>Caso o fink não tenha sido configurado para usar seu proxy, mude as
+        configurações através do comando:</p>
+        <p><code>fink configure</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="moving">
+      <question>
+        <p>Posso mover o Fink para outro diretório após a instalação?</p>
+      </question>
+      <answer>
+        <p>Não. É claro que você pode mover os arquivos usando o mv ou o Finder
+        mas 99% dos programas não irão mais funcionar caso o faça. Isto é
+        devido ao fato de software Unix depende de diretórios fixos para
+        encontrar arquivos de dados, bibliotecas e outros.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="moving-symlink">
+      <question>
+        <p>Se eu mover o Fink após instalá-lo e criar um link simbólico do
+        diretório antigo, isso vai funcionar?</p>
+      </question>
+      <answer>
+        <p>Talvez. De forma geral deveria funcionar, mas pode ser que haja
+        alguns problemas.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="removing">
+      <question>
+        <p>Como faço para desinstalar o Fink completamente?</p>
+      </question>
+      <answer>
+        <p>Quase todos os arquivos instalados pelo Fink estão no diretório /sw
+        (ou onde quer que você tenha escolhido instalá-lo). Portanto, para
+        remover o Fink, digite o comando abaixo:</p>
+        <codeblock>sudo rm -rf /sw</codeblock>
+        <p>A única exceção é o XFree86 ou o X.org. Caso você tenha instalado um
+        servidor X através do Fink (isto é, se você instalou os pacotes
+        <code>xfree86</code> ou <code>xorg</code> no lugar do pacote
+        <code>system-xfree86</code>, você também precisará digitar o comando
+        abaixo:</p>
+        <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
+        <p>Se você não estiver planejando reinstalar o Fink você também
+        precisará remover a linha <code>source /sw/bin/init.sh</code> que foi
+        adicionada ao seu arquivo <filename>.bashrc</filename> (ou a linha
+        <code>source /sw/bin/init.csh</code> no arquivo
+        <filename>.cshrc</filename>) usando um editor de textos.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="bindist">
+      <question>
+        <p>O banco de dados de pacote no site lista o pacote xxx mas nem o
+        apt-get nem o dselect sabem desse pacote. Quem está mentindo?</p>
+      </question>
+      <answer>
+        <p>Ambos estão corretos. O <link
+        url="http://pdb.finkproject.org/pdb/">banco de dados de pacotes</link>
+        conhece todos os pacotes incluindo os que ainda estão na seção de
+        pacotes instáveis. Por outro lado, as ferramentas <code>dselect</code>
+        e <code>apt-get</code> conhecem apenas os pacotes que estão disponíveis
+        sob a forma de pacotes de binários. Muitos pacotes não estão
+        disponíveis através destas ferramentas sob a forma de pré-compilados
+        por várias razões. Um pacote precisa estar na seção de estáveis da
+        última versão pontual a ser considerada e precisa passar por
+        verificações adicionais de aderência às políticas e restrições de
+        licenciamento e patentes.</p>
+        <p>Caso você queira instalar um pacote que não esteja disponível via
+        <code>dselect</code> ou <code>apt-get</code>, você precisa compilá-lo a
+        partir do código fonte usando o comando <code>fink install
+        <em>nomedopacote</em></code>. Tenha certeza de que você haja instalado
+        o Xcode antes: ele está disponível no DVD de instalação do Mac OS X ou
+        no site <link url="http://connect.apple.com/">Apple Developer
+        Connection</link> (você precisará se registrar no site; o registro é
+        gratuito). Veja também a pergunta abaixo.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="unstable">
+      <question>
+        <p>Há um pacote na árvore unstable e eu gostaria de instalá-lo mas o
+        comando fink diz 'no package found' (nenhum pacote encontrado). Como
+        posso instalá-lo?</p>
+      </question>
+      <answer>
+        <p>Em primeiro lugar, tenha certeza de que você compreende o que
+        significa unstable. Pacotes na árvore unstable não estão na árvore
+        stable por várias razões. Pode ser porque ainda haja problemas, erros
+        de validação, ou então não houve respostas suficientes de pessoas
+        afirmando que o pacote funciona bem. Por esta razão, o Fink por padrão
+        não considera a árvore unstable.</p>
+        <p>Caso você habilite a árvore unstable, lembre-se de enviar um e-mail
+        ao mantenedor do pacote caso funcione ou não. Feedback de usuários como
+        você é algo que usamos para determinar se um pacote está pronto para a
+        árvore stable! Para descobrir o mantenedor de um pacote, execute o
+        comando <code>fink info <em>nomedopacote</em></code>.</p>
+        <p><em>Novidade no</em> <code>fink-0.26</code><em>:</em> Se você
+        executar o comando <code>fink configure</code>, uma das perguntas será
+        se você quer ativar a árvore unstable. Você precisará executar
+        <code>fink selfupdate; fink index; fink scanpackages</code> depois
+        disso. <em>Observação:</em> você precisa ter ativado a atualização via
+        rsync ou CVS para obter as novas descrições de pacotes.</p>
+        <p>Para configurar o Fink para que ele use a árvore unstable quando você
+        tiver uma versão da ferramenta <code>fink</code> mais antiga do que a
+        <em>0.26</em>, adicione <code>unstable/main</code> e
+        <code>unstable/crypto</code> à linha <code>Trees:</code> do arquivo
+        <filename>/sw/etc/fink.conf</filename> e depois execute os comandos
+        <code>fink selfupdate; fink index; fink scanpackages</code>. Da mesma
+        forma como acima, você precisa usar a atualização via rsync ou CVS.</p>
+        <p>Veja também que caso você não queira instalar outros pacotes da
+        árvore unstable além do pacote específico que você quer e as
+        dependências associadas, não use o comando <code>updaet-all</code> até
+        que você desabilite a árvore unstable.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="unstable-onepackage">
+      <question>
+        <p>Eu preciso <em>realmente</em> habilitar toda a árvore unstable só
+        para instalar um pacote instável que eu queira?</p>
+      </question>
+      <answer>
+        <p>Não, mas é altamente recomendável que você o faça. Misturar as
+        coisas pode acarretar situações não previstas que tornam difícil
+        depurar problemas quando eles surgirem.</p>
+        <p>De qualquer forma, se você quiser apenas um ou dois pacotes
+        específicos e nada mais da árvore unstable, você precisa mudar para
+        atualização via CVS (isto é, use <code>fink selfupdate-cvs</code>)
+        porque o rsync só atualiza as árvores que estiverem ativas no seu
+        arquivo <filename>/sw/etc/fink.conf</filename>. Edite esse arquivo e
+        adicione <code>local/main</code> à linha <code>Trees:</code> caso ainda
+        não esteja lá. Você deverá executar o comando <code>fink
+        selfupdate</code> para baixar os arquivos de descrição de pacotes.
+        Copie os arquivos <code>.info</code> relevantes (e os arquivos
+        <code>.patch</code> associados caso haja) do diretório
+        <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (ou
+        <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) para o
+        diretório <filename>/sw/fink/dists/local/main/finkinfo</filename>.
+        Entretanto, observe que seu pacote pode depender de outros pacotes (ou
+        versões particulares) dos que estejam apenas em unstable. Você também
+        precisará mover seus arquivos <code>.info</code> e <code>.patch</code>.
+        Depois de mover todos os arquivos, execute o comando <code>fink
+        index</code> para que o registro de pacotes disponíveis do Fink seja
+        atualizado. Depois de terminar, você pode voltar ao rsync (<code>fink
+        selfupdate-rsync</code>) se quiser.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="sudo">
+      <question>
+        <p>Estou cansado de ficar digitando a minha senha no sudo o tempo todo.
+        Há alguma forma de contornar isso?</p>
+      </question>
+      <answer>
+        <p>Se você não for paranóico, você pode configurar o sudo para não lhe
+        pedir uma senha. Para fazer isso, execute o comando <code>visudo</code>
+        como root e adicione uma linha como esta:</p>
+        <codeblock>usuario ALL = NOPASSWD: ALL</codeblock>
+        <p>Troque <code>usuario</code> pelo seu nome de usuário. Esta linha
+        permitirá que você qualquer comando via sudo sem precisar digitar sua
+        senha.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="exec-init-csh">
+      <question>
+        <p>Quando tento rodar o init.sh ou o init.csh, recebo a mensagem de
+        erro "Permission denied" ("Permissão negada"). O que estou fazendo de
+        errado?</p>
+      </question>
+      <answer>
+        <p>O init.sh e o init.csh não foram projetados para serem executados
+        como comandos quaisquer. Estes arquivos definem variáveis de ambiente
+        no shell, tais como PATH e MANPATH. Para que tenham efeito permanente
+        no shell, eles precisam ser processados com o comando <code>.</code>
+        para bash/zsh ou <code>source</code> para csh/tcsh, desta forma:</p>
+        <p>para bash/zsh:</p>
+        <codeblock>. /sw/bin/init.sh</codeblock>
+        <p>para csh/tcsh:</p>
+        <codeblock>source /sw/bin/init.csh</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="dselect-access">
+      <question>
+        <p>Preciso de ajuda! Eu usei a opção "[A]cesso" do menu do select e
+        agora não consigo mais baixar pacotes!</p>
+      </question>
+      <answer>
+        <p>Você provavelmente direcionou o apt para um espelho do Debian, o
+        qual obviamente não possui arquivos do Fink. Você pode corrigir isso
+        manualmente ou através do select. Para corrigir manualmente, edite como
+        root o arquivo <code>/sw/etc/apt/sources.list</code> em um editor de
+        textos. Remova as linhas que mencionem debian.org e troque-as por
+        estas:</p>
+        <codeblock>deb http://bindist.finkmirrors.net/bindist release main crypto
+deb http://bindist.finkmirrors.net/bindist current main crypto</codeblock>
+        <p>Para corrigir através do select, rode "[A]cesso" novamente, escolha
+        o método "apt" e digite o seguinte:</p>
+        <p>URL: http://bindist.finkmirrors.net/bindist - Distribution: release - Components: main crypto</p>
+        <p>Em seguida, adicione outro espelho repetindo o processo com
+        "current" no lugar de "release".</p>
+      </answer>
+    </faqentry>
+    <faqentry name="cvs-busy">
+      <question>
+        <p>Quando eu tento rodar <quote>fink selfupdate</quote> ou <quote>fink
+        selfupdate-cvs</quote>, eu recebo a mensagem de erro "<code>Updating
+        using CVS failed. Check the error messages above.</code>" ("<code>A
+        atualização via CVS falhou. Verifique as mensagens de erro
+        acima.</code>")</p>
+      </question>
+      <answer>
+        <p>Se a mensagem for</p>
+        <codeblock>Can't exec "cvs": No such file or directory at 
+/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
+### execution of cvs failed, exit code -1</codeblock>
+        <p>então você precisa instalar o Xcode.</p>
+        <p>Por outro lado, se a última linha for</p>
+        <codeblock>### execution of su failed, exit code 1</codeblock>
+        <p>você vai precisar olhar as linhas anteriores para ver o erro. Se
+        você vir uma mensagem dizendo que sua conexão foi recusada:</p>
+        <codeblock>(Logging in to anonymous@fink.cvs.sourceforge.net)
+CVS password:
+cvs [login aborted]: connect to fink.cvs.sourceforge.net:2401 failed: 
+Connection refused
+### execution of su failed, exit code 1
+Failed: Logging into the CVS server for anonymous read-only access failed.</codeblock>
+        <p>ou uma mensagem similar a:</p>
+        <codeblock>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net: 
+Connection reset by peer 
+### execution of su failed, exit code 1 
+Failed: Updating using CVS failed. Check the error messages above.</codeblock>
+        <p>ou</p>
+        <codeblock>cvs [update aborted]: End of file received from server</codeblock>
+        <p>ou</p>
+        <codeblock>cvs [update aborted]: received broken pipe signal</codeblock>
+        <p>então é provável que os servidores CVS estejam sobrecarregados e
+        você tenha que tentar a atualização mais tarde.</p>
+        <p>Outra possibilidade é que você tenha permissões erradas nos diretórios CVS, sendo que neste caso você receberá mensagens de erro de permissão negada "Permission denied":</p>
+        <codeblock>cvs update: in directory 10.2/stable/main: 
+cvs update: cannot open CVS/Entries for reading: No such file or directory
+cvs server: Updating 10.2/stable/main 
+cvs update: cannot write 10.2/stable/main/.cvsignore: Permission denied
+cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: 
+No such file or directory 
+### execution of su failed, exit code 1 Failed: 
+Updating using CVS failed. Check the error messages above.</codeblock>
+        <p>Neste caso você precisa reiniciar seus diretórios cvs. Use o
+        comando:</p>
+        <codeblock>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {}\ ; fink selfupdate-cvs</codeblock>
+        <p>Caso você não haja recebido nenhuma das mensagens acima, então isto quase sempre significa que você modificou um arquivo na sua árvore /sw/fink/dists e agora o mantenedor o mudou. Procure ainda antes na saída do selfupdate-cvs por linhas que comecem com &quot;C&quot;, como:</p>
+        <codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info 
+... (other info and patch files) ... 
+### execution of su failed, exit code 1 
+Failed: Updating using CVS failed. Check the error messages above.</codeblock>
+        <p>O &quot;C&quot; significa que o CVS encontrou um conflito enquanto
+        tentava atualizar para a versão mais recente. Para corrigir este
+        problema, remova quaisquer arquivos que apareçam começando com
+        &quot;C&quot; na saída do selfupdate-cvs, e tente novamente:</p>
+        <codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+fink selfupdate-cvs</codeblock>
+        <p>Se estiver recebendo erros que mencionem <em>cvs.sourceforge.net</em>:</p>
+        <codeblock>cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out</codeblock>
+        <p>é por causa de uma reestruturação dos servidores CVS em
+        sourceforge.net que ocorreu em 2006. Os arquivos do Fink estão agora em
+        <em>fink.cvs.sourceforge.net</em>.</p>
+        <p>Verifique a versão da distribuição, por exemplo através do
+        comando</p>
+        <codeblock>fink --version</codeblock>
+        <p>Se o resultado mostrar <code>10.4-transitional</code>, então você
+        precisa atualizar para a distribuição 10.4 normal. Um <link
+        url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">script
+        de atualização</link> foi criado para ajudar nesta mudança.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="kernel-panics">
+      <question>
+        <p>Quando uso o Fink, minha máquina trava/dá erro de kernel panic.</p>
+      </question>
+      <answer>
+        <p>Em 2002, houve relatos na <link
+        url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">lista
+        de discussão fink-users</link> indicando problemas (incluindo kernel
+        panics e travamentos durante a fase de patching) durante o uso do Fink
+        para compilar pacotes na presença de software antivírus. Talvez você
+        precise desligar o software antivírus antes de usar o Fink.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="not-found">
+      <question>
+        <p>Estou tentando instalar um pacote mas o Fink não consegue baixá-lo.
+        O site de download mostra uma versão do pacote que é mais recente do
+        que a versão que o Fink possui. O que devo fazer?</p>
+      </question>
+      <answer>
+        <p>Os códigos fontes do pacote podem mudar de local nos sites originais
+        quando novas versões são lançadas.</p>
+        <p>A primeira coisa que você deve fazer é executar o comando <code>fink
+        selfupdate</code>. Pode ser que o mantenedor do pacote já haja
+        corrigido isso e você conseguirá obter uma descrição atualizada do
+        pacote com ou uma versão mais recente ou uma nova URL de download.</p>
+        <p>Se isto não funcionar, a maior parte dos códigos fontes está
+        disponível em <link
+        url="http://distfiles.master.finkmirrors.net/">http://distfiles.master.finkmirrors.net/</link>
+        (graças a Rob Braun) e você pode executar o comando <code>fink
+        configure</code> e escolher procurar os espelhos mestres de códigos
+        fontes a fim de que o Fink automaticamente os use para procurar
+        pacotes.</p>
+        <p>Caso isto não funcione, por favor notifique o mantenedor (disponível
+        através do comando <code>fink describe <em>nomedopacote</em></code> de
+        que a URL está quebrada; nem todos os mantenedores leem frequentemente
+        todas as listas de discussão.</p>
+        <p>Para conseguir um código fonte que você possa usar, procure por
+        outros diretórios no site remoto que contenham a mesma versão de que o
+        Fink necessita (por exemplo, em um diretório "old"). Entretanto, tenha
+        em mente que alguns sites remotos costumam apagar versões antigas. Se o
+        site oficial não tiver a versão de que você precisa, tente fazer uma
+        busca na Web--em alguns casos há sites não-oficiais que tenham a
+        tarball que você quer. Se mesmo assim você não conseguir encontrar,
+        envie uma mensagem à <link
+        url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">lista
+        de discussão fink-users</link> e pergunte se alguém não teria o código
+        fonte disponível para enviar-lhe.</p>
+        <p>Uma vez que você tenha localizado a tarball com o código fonte
+        apropriado, baixe-a manualmente e então mova o arquivo para o local
+        onde o Fink armazena os códigos fontes (isto é, em uma instalação
+        default do Fink, "<code>sudo mv <em>package-source.tar.gz</em>
+        /sw/src/</code>". Use então o comando '<code>fink install
+        <em>packagename</em></code> normalmente.</p>
+        <p>Se você não conseguir o código fonte, então você terá que esperar
+        até que o mantenedor corrija o problema. Pode ser que ele coloque um
+        link para o código fonte antigo ou atualize os arquivos .info e .patch
+        para que usem a versão mais nova.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="fink-not-found">
+      <question>
+        <p>Quando eu executo o Fink ou qualquer coisa que tenha instalado
+        através do Fink, recebo o erro <quote>command not found</quote>
+        (<quote>comando não encontrado</quote>).</p>
+      </question>
+      <answer>
+        <p>Se isto acontece sempre, então talvez você tenha modificado (ou
+        modificado incorretamente) seus scripts de inicialização sem querer.
+        Execute o script <filename>/sw/bin/pathsetup.sh</filename> em uma
+        janela de terminal. Este programa tentará detectar seu shell padrão e
+        adicionar um comando para carregar o script de inicialização do Fink na
+        sua configuração do shell. Você precisará abrir uma nova sessão do
+        terminal para que suas configurações de ambiente sejam carregadas. Você
+        também pode rodar o aplicativo <filename>pathsetup.app</filename> que
+        vem no disco com a distribuição binária do Fink.</p>
+        <p>Por outro lado, se você tiver problemas somente no terminal do X11
+        da Apple, a solução mais fácil é modificar a opção "Terminal" no menu
+        Application do X11 através da opção <em>Applications-&gt;Customize
+        Menu... </em>. No lugar de apenas</p>
+        <codeblock>xterm</codeblock>
+        <p>mude o campo com o comando para</p>
+        <codeblock>xterm -ls</codeblock>
+        <p><code>ls</code> significa <quote>shell de login</quote> e o
+        resultado é que sua configuração completa de login é usada (da mesma
+        forma que o Terminal do OS X).</p>
+        <p>Esses scripts <filename>/sw/bin/init.*</filename> fazem muito mais
+        do que somente adicionar <filename>/sw/bin</filename> à variável PATH.
+        Muitos pacotes não funcionarão corretamente sem essas ações
+        adicionais.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="invisible-sw">
+      <question>
+        <p>Eu quero esconder o diretório /sw no Finder para que os usuários não
+        danifiquem a configuração do Fink.</p>
+      </question>
+      <answer>
+        <p>É possível fazê-lo. Caso você tenha o Xcode instalado, você pode
+        executar o seguinte comando:</p>
+        <codeblock>sudo /Developer/Tools/SetFile -a V /sw</codeblock>
+        <p>Isto faz com que o diretório /sw fique invisível, da mesma forma que
+        os diretórios de sistema (/usr etc). Se você não tiver o Xcode, existem
+        vários aplicativos de terceiros que permitem que você manipule
+        atributos de arquivos--você precisa definir que /sw fique
+        invisível.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="install-info-bad">
+      <question>
+        <p>Não consigo instalar nada porque recebo a seguinte mensagem de erro:
+        &quot;install-info: unrecognized option
+        `--infodir=/sw/share/info'&quot;</p>
+      </question>
+      <answer>
+        <p>Esse é um problema no seu PATH. Em uma janela de terminal, digite:</p>
+        <codeblock>printenv PATH</codeblock>
+        <p>Caso <filename>/sw/sbin</filename> não apareça, então você precisa
+        configurar seu ambiente conforme estas <link
+        url="http://www.finkproject.org/doc/users-guide/install.php#setup">instruções</link>
+        no Guia do usuário. Se <filename>/sw/sbin</filename> estiver lá mas
+        houver outros diretórios antes (por exemplo,
+        <filename>/usr/local/bin</filename>), então você tem duas opções:
+        reordenar seu PATH para que <filename>/sw/sbin</filename> esteja
+        próximo do começo ou, caso realmente queira que o outro diretório
+        esteja antes de <filename>/sw/sbin</filename> e o diretório anterior
+        inclua algum outro diretório install-info, então você precisará
+        renomear temporariamente esse subdiretório
+        <filename>install-info</filename> quando for usar o Fink.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="bad-list-file">
+      <question>
+        <p>Não consigo instalar ou remover nada por causa de um problema com um
+        "files list file" ("arquivo com lista de arquivos").</p>
+      </question>
+      <answer>
+        <p>Normalmente esses erros são do formato:</p>
+        <codeblock>files list file for package <em>packagename</em> contains empty filename
+arquivo com a lista de arquivos para o pacote <em>nomedopacote</em> contém um nome de arquivo em branco</codeblock>
+        <p>ou</p>
+        <codeblock>files list file for package <em>packagename</em> is missing final newline
+arquivo com a lista de arquivos para o pacote <em>nomedopacote</em> está com o indicador de fim de linha final faltando</codeblock>
+        <p>Isto pode ser corrigido com um pouco de trabalho. Se você tem
+        disponível no seu sistema o arquivo .deb do pacote com problemas, então
+        verifique a integridade dele através do comando</p>
+        <codeblock>dpkg --contents <em>caminho-completo-do-arquivo-deb</em>
+        </codeblock>
+        <p>Por exemplo,</p>
+        <codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
+        <p>Caso você veja uma listagem com diretórios e arquivos, então seu
+        .deb está ok. Se saída for algo diferente de diretórios e arquivos ou
+        se você não tiver o arquivo .deb, você ainda pode proceder porque o
+        erro não interefere com as compilações.</p>
+        <p>Se você andou instalando a partir da distribuição de binários ou se
+        você sabe com certeza que a versão na distribuição de binárias é a
+        mesma que você instalou (por exemplo, verificando o <link
+        url="http://pdb.finkproject.org/pdb/index.php">banco de dados de
+        pacotes</link>, então você pode obter um arquivo .deb através da
+        execução do comando <code>sudo apt-get install --reinstall
+        --download-only <em>nomedopacote</em></code>. Caso contrário você mesmo
+        pode construir um através do comando <code>fink rebuild
+        <em>nomedopacote</em></code>, mas isso ainda não o instalará.</p>
+        <p>A partir do momento em que você tiver um arquivo .deb válido, você
+        pode reconstituir o arquivo. Em primeiro lugar, torne-se root através
+        do comando <code>sudo -s</code> (digite sua senha de usuário
+        administrativo caso necessário) e então use o seguinte comando:</p>
+        <codeblock>dpkg -c <em>full-path-to-debfile</em> | awk '{if ($6 == "./"){ print "/."; } \
+else if (substr($6, length($6), 1) == "/")\
+{print substr($6, 2, length($6) - 2); } \
+else { print substr($6, 2, length($6) - 1);}}'\ 
+&gt; /sw/var/lib/dpkg/info/<em>nomedopacote</em>.list</codeblock>
+        <p>Por exemplo,.</p>
+        <codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
+'{if ($6 == "./") { print "/."; } \
+else if (substr($6, length($6), 1) == "/") \
+{print substr($6, 2, length($6) - 2); } \
+else { print substr($6, 2, length($6) - 1);}}' \ 
+&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+        <p>Isto extrai o conteúdo do arquivo .deb, remove tudo a menos de nomes
+        de arquivos e escreve o resultado no arquivo .list</p>
+      </answer>
+    </faqentry>
+    <faqentry name="dselect-garbage">
+      <question>
+        <p>Quando eu escolho pacotes no <filename>dselect</filename> aparece um
+        monte de lixo. Como faço para usá-lo?</p>
+      </question>
+      <answer>
+        <p>Há alguns problemas entre o <filename>dselect</filename> e o
+        <filename>Terminal.app</filename>. Uma solução é digitar o seguinte
+        comando:</p>
+        <p>usuários bash:</p>
+        <codeblock>export TERM=xterm-color</codeblock>
+        <p>usuários tcsh:</p>
+        <codeblock>setenv TERM xterm-color</codeblock>
+        <p>antes de executar o <filename>dselect</filename> Talvez você queira
+        colocar essa linha no seu arquivo de inicialização (por exemplo,
+        <code>.profile</code> ou <code>.cshrc</code>) para que seja executada
+        sempre.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="cant-upgrade">
+      <question>
+        <p>Não consigo atualizar a versão do Fink.</p>
+      </question>
+      <answer>
+        <p>Se você não consegue atualizar para uma nova versão do Fink através
+        do comando <code>fink selfupdate</code> ou <code>sudo apt-get update;
+        sudo apt-get dist-upgrade</code>, então talvez você precise baixar
+        manualmente uma nova versão do pacote <code>fink</code>. Os comandos
+        são:</p>
+        <ul>
+          <li><em>10.3.x:</em> (distribuição 0.7.1)
+		<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
+rm fink_0.22.4-1_darwin-powerpc.deb
+fink selfupdate</codeblock></li>
+          <li><em>10.2.x:</em> (distribuição 0.6.3)
+		<codeblock>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.6.3/release/main/binary-darwin-powerpc/base/fink_0.18.3-1_darwin-powerpc.deb
+sudo dpkg -i fink_0.18.3-1_darwin-powerpc.deb
+rm fink_0.18.3-1_darwin-powerpc.deb
+fink selfupdate</codeblock></li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="spaces-in-directory">
+      <question>
+        <p>Posso colocar o Fink em um volume ou um diretório cujo nome tenha um
+        espaço em branco?</p>
+      </question>
+      <answer>
+        <p>Recomendamos que não coloque sua árvore de diretórios do Fink dentro
+        de um diretório com espaço em branco nome. O trabalho não vale a
+        pena.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="packages-gz">
+      <question>
+        <p>Quando tento fazer uma atualização de binários, surgem várias
+        mensagens com "File not found" ("Arquivo não encontrado") ou "Couldn't
+        stat package source list file." ("Não foi possível acessar o arquivo
+        com a lista de códigos fontes do pacote.").</p>
+      </question>
+      <answer>
+        <p>Caso você veja algo parecido com o seguinte:</p>
+        <codeblock>Err file: local/main Packages 
+File not found 
+Ign file: local/main Release 
+Err file: stable/main Packages 
+File not found 
+Ign file: stable/main Release 
+Err file: stable/crypto Packages 
+File not found 
+Ign file: stable/crypto Release 
+...
+Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
+File not found 
+Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
+File not found
+Failed to fetch file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
+File not found 
+Reading Package Lists... Done 
+Building Dependency Tree...Done 
+E: Some index files failed to download, 
+they have been ignored, or old ones used instead. 
+update available list script returned error exit status 1.</codeblock>
+        <p>então tudo o que você precisa fazer é executar o comando <code>fink
+        scanpackages</code>, que gera os arquivos que não estão sendo
+        encontrados.</p>
+        <p>Se você obtiver um erro com o seguinte formato:</p>
+        <codeblock>W: Couldn't stat source package list file: unstable/main Packages
+(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+powerpc_Packages) - stat (2 No such file or directory)</codeblock>
+        <p>então você deve executar</p>
+        <codeblock>sudo apt-get update
+fink scanpackages</codeblock>
+        <p>para corrigi-lo.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="wrong-tree">
+      <question>
+        <p>Eu mudei meu OS | Xcode mas o Fink não reconhece a mudança.</p>
+      </question>
+      <answer>
+        <p>Ao trocar a distribuição do Fink (da qual as distribuições de
+        códigos fontes e binários são subconjuntos), o Fink precisa ser
+        notificado de que isso aconteceu. Para fazê-lo, você pode executar um
+        script que normalmente é executado na instalação inicial do Fink:</p>
+        <codeblock>/sw/lib/fink/postinstall.pl</codeblock>
+        <p>Isto corrigirá o Fink.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="seg-fault">
+      <question>
+        <p>Estou recebendo erros com os aplicativos <code>gzip</code> |
+        <code>dpkg-deb</code> do pacote <code>fileutils</code>.</p>
+      </question>
+      <answer>
+        <p>Erros no formato:</p>
+        <codeblock>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
+### execution of gzip failed, exit code 139</codeblock>
+        <p>ou</p>
+        <codeblock>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
+gzip: stdout: Broken pipe 
+### execution of gzip failed, exit code 138</codeblock>
+        <p>ou</p>
+        <codeblock>dpkg-deb -b root-base-files-1.9.0-1 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
+
+### execution of dpkg-deb failed, exit code 1
+Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
+        <p>ou falhas de segmentação na execução de utilitários do
+        <code>fileutils</code>, como por exemplo <code>ls</code> ou
+        <code>mv</code>, são provavelmente devidos a um erro de pré-ligação em
+        uma biblioteca e podem ser corrigidos através da execução do seguinte
+        comando:</p>
+        <codeblock>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="pathsetup-keeps-running">
+      <question>
+        <p>Quando abro uma janela do Terminal, recebo a mensagem "Your
+        environment seems to be correctly set up for Fink already." ("Seu
+        ambiente aparenta já estar corretamente configurado para o Fink") e em
+        seguida a sessão é encerrada.</p>
+      </question>
+      <answer>
+        <p>O que aconteceu é que de alguma forma o programa Terminal do OS X
+        foi instruído a executar <code>/sw/bin/pathsetup.command</code> a cada
+        vez que você se logar. Você pode corrigir isto removendo o arquivo de
+        preferências
+        <filename>~/Library/Preferences/com.apple.Terminal.plist</filename>.</p>
+        <p>If you have other preferences that you want to keep, you can edit
+        the file with a text editor and remove the reference to
+        <code>/sw/bin/pathsetup.command</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="ext-drive">
+      <question>
+        <p>Eu instalei o Fink em um volume que não o do sistema e agora não
+        consigo atualizar o pacote Fink a partir do código fonte. Aparecem
+        alguns erros envolvendo <quote>chowname</quote>.</p>
+      </question>
+      <answer>
+        <p>Caso o seu erro se pareça com:</p>
+        <codeblock>This first test is designed to die, so please ignore the error
+message on the next line.
+# Looks like your test died before it could output anything.
+./00compile............................ok
+./Base/initialize......................ok
+./Base/param...........................ok
+./Base/param_boolean...................ok
+./Command/cat..........................ok
+./Command/chowname.....................#     
+Failed test (./Command/chowname.t at line 27)
+#          got: 'root'
+#     expected: 'nobody'</codeblock>
+        <p>então você precisa executar o <em>Obter Informações</em> no volume
+        onde o Fink está instalado e desmarcar o botão "Ignorar posse".</p>
+      </answer>
+    </faqentry>
+    <faqentry name="mirror-gnu">
+      <question>
+        <p>O Fink não consegue atualizar meus pacotes porque não pode encontrar
+        o espelho 'gnu'.</p>
+      </question>
+      <answer>
+        <p>If you get an error that ends with</p>
+        <p>Se você receber uma mensagem de erro que termine com</p>
+        <codeblock>Failed: No mirror site list file found for mirror 'gnu'.</codeblock>
+        <p>então você provavelmente precisa atualizar o pacote
+        <code>fink-mirrors</code>, por exemplo através do comando:</p>
+        <p>then most likely you need to update the <code>fink-mirrors</code> package, e.g. via:</p>
+        <codeblock>fink install fink-mirrors</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="cant-move-fink">
+      <question>
+        <p>Não consigo atualizar o Fink porque ele não consegue mover o
+        diretório <filename>/sw/fink</filename>.</p>
+      </question>
+      <answer>
+        <p>O erro:</p>
+        <codeblock>Failed: Can't move &quot;/sw/fink&quot; out of the way.</codeblock>
+        <p>é, apesar do que a mensagem diz, geralmente devido a erros de
+        permissão em um dos diretórios temporários criados durante um
+        <code>selfupdate</code>. Remova os diretórios:</p>
+        <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="fc-cache">
+      <question>
+        <p>Recebo uma mensagem dizendo <quote>No fonts found</quote>.</p>
+      </question>
+      <answer>
+        <p>Caso veja a seguinte mensagem (até agora só detectada no OS
+        10.4):</p>
+        <codeblock>No fonts found; this probably means that the fontconfig
+library is not correctly configured. You may need to
+edit the fonts.conf configuration file. More information
+about fontconfig can be found in the fontconfig(3) manual
+page and on http://fontconfig.org.</codeblock>
+        <p>então você pode corrigir o problema executando o comando</p>
+        <codeblock>sudo fc-cache</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="non-admin-installer">
+      <question>
+        <p>Não consigo instalar o Fink através do pacote de instalação porque
+        recebo mensage de erro <quote>volume doesn't support
+        symlinks</quote>.</p>
+      </question>
+      <answer>
+        <p>Esta mensagem normalmente significa que você tentou exeuctar o
+        instalador do Fink como um usuário que não possui privilégios
+        administrativos. Assegure-se de fazer o login (na tela de login) como
+        um usuário com tais privilégios ou troque para um usuários com tais
+        privilégios no Finder (isto é, troca rápida de usuários) antes de
+        iniciar o instalador do Fink.</p>
+        <p>Caso você tenha problemas mesmo usando uma conta administrativa,
+        então é provavelmente um problema com as permissões no seu diretório
+        raiz. Use o Utilitário de Disco da Apple (diretório Aplicativos,
+        subdiretório Utilitários), escolha o disco em questão, escolha a aba
+        Reparador e clique o botão <em>Reparar Permissões do Disco</em>. Se
+        isto não funcionar, então você talvez tenha que definir manualmente
+        suas permissões através do comando</p>
+	<codeblock>sudo chmod 1775 /</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="wrong-arch">
+      <question>
+        <p>Não consigo atualizar o Fink por causa do erro <quote>package
+        architecture (darwin-i386) does not match system
+        (darwin-powerpc).</quote></p>
+      </question>
+      <answer>
+        <p>Este erro ocorre quando você usa um instalador PowerPC em uma máquina Intel. Você precisa apagar sua instalação do Fink, por exemplo:</p>
+        <codeblock>sudo rm -rf /sw</codeblock>
+        <p>e então baixar a imagem de disco para máquinas Intel a partir da
+        <link url="http://www.finkproject.org/download/index.php">página de
+        downloads</link>.</p>
+      </answer>
+    </faqentry>
+  </chapter>
+  <chapter filename="comp-general">
+    <!-- FAQs in comp-general are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
+    <title>Problemas de Compilação - Geral</title>
+    <shorttitle>Compilação (1)</shorttitle>
+    <faqentry name="compiler">
+      <question>
+        <p>Um script de configuração reclama que não consegue encontrar um
+        "acceptable cc". O que é isso?</p>
+      </question>
+      <answer>
+        <p>Leia a documentação! Para compilar pacotes a partir do código fonte,
+        você precisa instalar o Xcode que, dentre outros, contém o compilador
+        C, <code>cc</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="cvs">
+      <question>
+        <p>Quando tento executar o comando <code>fink selfupdate-cvs</code> eu
+        recebo esta mensagem: "cvs: Command not found." ("cvs: Comando não
+        encontrado").</p>
+      </question>
+      <answer>
+        <p>Você precisa instalar o Xcode.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="missing-make">
+      <question>
+        <p>Estou recebendo uma mensagem de erro envolvendo o
+        <code>make</code>.</p>
+      </question>
+      <answer>
+        <p>Caso sua mensagem seja do formato</p>
+        <codeblock>make: command not found</codeblock>
+        <codeblock>(make: comando não encontrado)</codeblock>
+        <p>ou</p>
+        <codeblock>Can't exec &quot;make&quot;: 
+No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
+        <p>Isso significa que você precisa instalar o Xcode.</p>
+        <p>Por outro lado, se sua mensagem de erro se parece com</p>
+        <codeblock>make: illegal option -- C</codeblock>
+        <codeblock>(make: opção ilegal -- C)</codeblock>
+        <p>então você substituiu a versão GNU do utilitário <code>make</code>
+        que veio com o Xcode por uma versão BSD do make. Vários pacotes
+        dependem de características especiais que são suportadas apenas pelo
+        GNU make. Assegure-se de que <code>/usr/bin/make</code> é um link
+        simbólico para <code>gnumake</code> e não <code>bsdmake</code>. Além
+        disso, assegure-se de que <code>/usr/local/bin</code> não contenha
+        outra cópia do <code>make</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="head">
+      <question>
+        <p>Estou recebendo do comando head uma mensagem estranha. O que está
+        errado?</p>
+      </question>
+      <answer>
+        <p>Caso esteja vendo isto:</p>
+        <codeblock>Unknown option: 1 Usage: head [-options] &lt;url&gt;...</codeblock>
+        <codeblock>(Opção desconhecida: 1 Uso: head [-opções] &lt;url&gt;...</codeblock>
+        <p>seguido por uma lista de descrições de opções, você tem um
+        executável do <code>head</code> quebrado. Isto acontece quando você
+        instala a biblioteca libwww do Perl em um volume de sistema formatado
+        com HFS+. Ele tenta criar um novo comando <code>/usr/bin/HEAD</code>
+        que sobrescreve o comando <code>head</code> já existente porque o
+        sistema de arquivos não diferencia maiúsculas de minúsculas.
+        <code>head</code> é um comando padrão usado em muitos scripts de shell
+        e Makefiles. Você precisa restaurar o executável original do
+        <code>head</code> caso queira usar o Fink.</p>
+        <p>O script de instalação inicial do Fink a partir do código fonte
+        verifica isso mas ainda assim é possível caso você use a instalação
+        binária na primeira instalação ou instale libwww depois de haver
+        instalado o Fink.</p>
+        <p>Este problema também já foi relatado devido à instalação de
+        <filename>/sw/bin/HEAD</filename> (mas não por um pacote do Fink). Isto
+        é fácil de resolver: renomeie <filename>/sw/bin/HEAD</filename>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="also_in">
+      <question>
+        <p>Quando tento instalar um pacote, recebo uma mensagem de erro sobre
+        tentativa de sobrescrita de um arquivo que está em outro pacote.</p>
+      </question>
+      <answer>
+        <p>Isto acontece ocasionalmente com pacotes múltiplos (isto é, pacotes
+        que são divididos em -dev, -shlibs etc) quando um arquivo é movido de
+        um pacote para outro (por exemplo, de <code>foo</code> para
+        <code>foo-shlibs</code>). O que você pode fazer é sobrescrever o
+        arquivo com aquele do pacote que você esteja tentando instalar (já que
+        eles são nominalmente o mesmo arquivo):</p>
+        <codeblock>sudo dpkg -i --force-overwrite <em>nomedoarquivo</em></codeblock>
+        <p>onde <em>nomedoarquivo</em> é o arquivo .deb correspondente ao
+        pacote que você esteja tentando instalar.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="weak_lib">
+      <question>
+        <p>After I installed the December 2002 Development Tools I get
+        messages about "weak libraries".</p>
+      </question>
+      <answer>
+        <p>This is new with the December 2002 Tools. You may occasionally see
+        messages like (choosing libgdk-pixbuf as an example):</p>
+        <codeblock>ld: warning dynamic shared library:
+/sw/lib/libgdk-pixbuf.dylib not made a weak library in output with
+MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</codeblock>
+        <p>You may regard these as harmless. If you are curious, read through
+        the release notes in the developer documentation directory, especially
+        GCC's and the linker's, for more info. It essentially has to do with
+        whether missing symbols at runtime is considered a fatal error on
+        startup or not, for applications that use weak references.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="mv-failed">
+      <question>
+        <p>O que significa "execution of mv failed, exit code 1" quando eu
+        tento compilar um pacote?</p>
+      </question>
+      <answer>
+        <p>Se você tiver o StuffIt Pro instalado, pode ser que voce tenha o
+        modo "Archive via Real Name" ("Arquivar pelo Nome Real") habilitado.
+        Verifique o painel StuffIt na ferramenta Preferências do Sistema e
+        desabilite "ArchiveViaRealName" se estiver habilitado. Ele contém uma
+        reimplementação falha de algumas chamadas de sistema importante que
+        causam erros estranhos e transientes, como esse.</p>
+        <p>Caso contrário, um erro no <filename>mv</filename> geralmente
+        significa que outro erro anterior ocorreu durante a compilação mas a
+        compilação não foi interrompiada. Para rastrear os arquivos que
+        causaram o erro, procure na saída pela compilação de um arquivo que não
+        exista. Por exemplo, se você tiver algo parecido com:</p>
+        <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
+/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ 
+mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+No such file or directory 
+### execution of mv failed, exit code 1 
+Failed: installing foo-0.1.2-3 failed</codeblock>
+        <p>então você deve procurar por <filename>libbar</filename> em algum
+        lugar mais acima da lista de mensagens que aparecem durante a
+        tentativa de compilação.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="node-exists">
+      <question>
+        <p>Não consito instalar ou atualizar um pacote porque aparece uma
+        mensagem dizendo que um nó já existe ("node already exists").</p>
+      </question>
+      <answer>
+        <p>Estes erros se parecem com o seguinte:</p>
+        <codeblock>Failed: Internal error: node for system-xfree86 already exists</codeblock>
+        <p>O problema é que o mecanismo de dependências está confuso devido a
+        mudanças em alguns dos arquivos de descrição de pacotes. Para
+        corrigi-lo:</p>
+        <ul>
+          <li>
+            <p>Force a remoção do pacote causador do problema, por exemplo:</p>
+            <codeblock>sudo dpkg -r --force-all system-xfree86</codeblock>
+            <p>para o exemplo listado acima.</p>
+          </li>
+          <li>
+            <p>Tente instalar ou atualizar novamente. Em algum momento uma
+            pergunta envolvendo uma dependência virtual ("virtual dependency")
+            aparecerá incluindo o pacote que você acabou de morever. Selecione
+            o pacote e ele será reinstalado durante sua compilação.</p>
+          </li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="usr-local-libs">
+      <question>
+        <p>Ouvi dizer que bibliotecas e arquivos de cabeçalho instalados sob
+        /usr/local causam problemas eventuais de compilação no Fink. É
+        verdade?</p>
+      </question>
+      <answer>
+        <p>Este é uma fonte de problemas frequente porque o script de
+        configuração dos pacotes encontra arquivos de cabeçalho e bibliotecas
+        em <filename>/usr/local</filename> e decide usá-los no lugar daqueles
+        que residem no diretório do Fink. Se você estiver tendo problemas de
+        compilação que não são cobertos por outra pergunta deste documento,
+        você deve verificar se você tem bibliotecas em
+        <filename>/usr/local/lib</filename> ou arquivos de cabeçalho em
+        <filename>/usr/local/include</filename>. Em caso afirmativo, tente
+        renomear <filename>/usr/local</filename> para algum outro nome, por
+        exemplo</p>
+        <codeblock>sudo mv /usr/local /usr/local.moved</codeblock>
+        <p>proceda sua compilação e então volte ao nome original de
+        <filename>/usr/local</filename>:</p>
+        <codeblock>sudo mv /usr/local.moved /usr/local</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="toc-out-of-date">
+      <question>
+        <p>Quando tento compilar um pacote, recebo uma mensagem dizendo que um
+        sumário ("table of contents") está desatualizado ("out of date"). O que
+        preciso fazer?</p>
+      </question>
+      <answer>
+        <p>A saída dá uma dica de o que fazer. A mensagem é geralmente parecida
+        com:</p>
+        <codeblock>ld: table of contents for archive: 
+/sw/lib/libintl.a is out of date; 
+rerun ranlib(1) (can't load from it)</codeblock>
+        <p>O que você precisa fazer é executar o comando ranlib como root em
+        qualquer biblioteca que esteja causando o problema. Por exemplo, para o
+        caso acima, você executaria:</p>
+        <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="fc-atlas">
+      <question>
+        <p>O Fink Commander trava quando tento instalar o pacote atlas.</p>
+      </question>
+      <answer>
+        <p>Isto acontece porque um dos passos durante a compilação do pacote
+        <code>atlas</code> faz uma pergunta ao usuário que o Fink Commander não
+        detecta. Você terá que executar o comando <code>fink install
+        atlas</code> no lugar de instalá-lo pelo Fink Commander.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="basic-headers">
+      <question>
+        <p>Eu recebo mensagens dizendo que os arquivos
+        <filename>stddef.h</filename> | <filename>wchar.h</filename> |
+        <filename>stdlib.h</filename> | <filename>crt1.o</filename> estão
+        faltando ou que meu compilador C não consegue criar executáveis
+        (<quote>C compiler cannot create executables</quote>).</p>
+      </question>
+      <answer>
+        <p>Ambos estes problemas são geralmente devidos à ausência de arquivos
+        de cabeçalho essenciais que são providos pelo pacote DevSDK do Xcode.
+        Verifique se <filename>/Library/Receipts/DevSDK.pkg</filename> existe
+        no seu sistema. Em caso negativo, execute novamente o instalador do
+        Xcode e instale o pacote DevSDK através do Custom Install (instalação
+        customizada).</p>
+        <p>O erro <quote>cannot create executables</quote> também pode ocorrer
+        quando sua versão do Xcode é para uma versão anterior do OS.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="multiple-dependencies">
+      <question>
+        <p>Não consigo fazer uma atualização porque o Fink não consegue
+        resolver conflito de versão ou dependências múltiplas ("unable to
+        resolve version conflict on multiple dependencies").</p>
+      </question>
+      <answer>
+        <p>Para contornar este problema, tente atualizar um único pacote e
+        então tente usar novamente o <code>fink update-all</code>. Se você
+        ainda receber a mensagem, repita o processo.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="dpkg-parse-error">
+      <question>
+        <p>Não consigo instalar nada porque recebo a mensagem "dpkg: parse
+        error, in file `/sw/var/lib/dpkg/status'"!</p>
+      </question>
+      <answer>
+        <p>Isto significa que de alguma forma o seu banco de dados dpkg foi
+        corrompido, geralmente por um travamento ou algum erro irrecuperável.
+        Você pode corrigir esta situação copiando uma versão anterior do banco
+        de dados, como:</p>
+        <codeblock>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</codeblock>
+        <p>É possível que você precise reinstalar alguns dos últimos pacotes
+        que você instalou antes de o problema começar a ocorrer.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="freetype-problems">
+      <question>
+        <p>Estou recebendo erros envolvendo o freetype.</p>
+      </question>
+      <answer>
+        <p>Existem muitas variedades desses erros. Se você receber o
+        seguinte:</p>
+<codeblock>/usr/bin/ld: can't locate file for: -lfreetype</codeblock>
+        <p>verifique se você tem um executável
+        <filename>freetype-config</filename> perdido através do comando</p>
+<codeblock>type -a freetype-config</codeblock>
+        <p>caso esteja usando <filename>bash</filename> ou</p>
+<codeblock>where freetype-config</codeblock>
+        <p>caso esteja usando <filename>tcsh</filename>. Sabe-se que o
+        framework Mono instala um <filename>/usr/bin/freetype-config</filename>
+        que é um link simbólico para o arquivo que está nesse framework.</p>
+        <p>Caso seu erro se pareça com o seguinte:</p>
+        <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: 
+error: parse error before '*' token 
+/sw/include/pango-1.0/pango/pangoft2.h:57:
+error: parse error before '*' token
+/sw/include/pango-1.0/pango/pangoft2.h:61: 
+error: parse error before '*' token 
+/sw/include/pango-1.0/pango/pangoft2.h:86: 
+error: parse error before "pango_ft2_font_get_face"
+/sw/include/pango-1.0/pango/pangoft2.h:86: 
+warning: data definition has no type or storage class 
+make[2]: *** [rsvg-gz.lo] Error 1
+make[1]: *** [all-recursive] Error 1 
+make: *** [all-recursive-am] Error 2 
+### execution of make failed, exit code 2 
+Failed: compiling librsvg2-2.4.0-3 failed</codeblock>
+        <p>ou</p>
+        <codeblock>In file included from vteft2.c:32: 
+vteglyph.h:64: error:
+parse error before "FT_Library" 
+vteglyph.h:64: warning: 
+no semicolon at end of struct or union vteft2.c: 
+In function `_vte_ft2_get_text_width': 
+vteft2.c:236: error: 
+dereferencing pointer to incomplete type 
+vteft2.c: In function `_vte_ft2_get_text_height':
+vteft2.c:244: error: 
+dereferencing pointer to incomplete type
+vteft2.c: In function `_vte_ft2_get_text_ascent': 
+vteft2.c:252: error:
+dereferencing pointer to incomplete type 
+vteft2.c: In function `_vte_ft2_draw_text': 
+vteft2.c:294: error: 
+dereferencing pointer to incomplete type 
+vteft2.c:295: error: 
+dereferencing pointer to incomplete type
+make[2]: *** [vteft2.lo] Error 1 
+make[1]: *** [all-recursive] Error 1 
+make: *** [all] Error 2 
+### execution of make failed, exit code 2
+Failed: compiling vte-0.11.10-3 failed</codeblock>
+        <p>ou</p>
+        <codeblock>checking for freetype-config.../usr/X11R6/bin/freetype-config 
+checking For sufficiently new FreeType (at least 2.0.1)... no 
+configure: error: pangoxft 
+Pango backend found but did not find freetype libraries 
+make: *** No targets specified and no makefile found. Stop. 
+### execution of LD_TWOLEVEL_NAMESPACE=1 failed, exit code 2 
+Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
+        <p>o problema é devido a uma confusão entre arquivos cabeçalhos de 
+        pacote <code>freetype</code> | <code>freetype-hinting</code> e os
+        arquivos de cabeçalho do <code>freetype2</code> que são parte do X11 |
+        XFree86. O comando</p>
+        <codeblock>fink remove freetype freetype-hinting</codeblock>
+        <p>removerá qualquer variante que você haja instalado. Por outro lado,
+        se seu erro é parecido com:</p>
+        <codeblock>ld: Undefined symbols: _FT_Access_Frame</codeblock>
+        <p>isto é normalmente devido a um arquivo residual de uma instalação
+        prévia do X11. Reinstale o X11 SDK.</p>
+        <p>Por último, se o seu erro for parecido com</p>
+        <codeblock>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
+undefined reference to _FT_Access_Frame</codeblock>
+        <p>então você provavelmente tem uma versão binária que foi compilada
+        sem problemas com o <code>gcc3.3</code> no Jaguar mas não funciona no
+        Panther. Isto já foi atualizado então você precisa apenas atualizar
+        seus pacotes, por exemplo via <code>sudo apt-get update ; sudo apt-get
+        dist-upgrade</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="dlfcn-from-oo">
+      <question>
+        <p>Estou recebendo erros de compilação envolvendo "Dl_info".</p>
+      </question>
+      <answer>
+        <p>Se você tem um erro parecido com</p>
+        <codeblock>unix_dl.c: In function `rep_open_dl_library':
+unix_dl.c:328: warning: assignment discards qualifiers from pointer target type 
+unix_dl.c: In function `rep_find_c_symbol': 
+unix_dl.c:466: error: `Dl_info' undeclared (first use in this function)
+unix_dl.c:466: error: (Each undeclared identifier is reported only once 
+unix_dl.c:466: error: for each function it appears in.)
+unix_dl.c:466: error: parse error before "info" 
+unix_dl.c:467: error: `info' undeclared (first use in this function) 
+make[1]: *** [unix_dl.lo] Error 1</codeblock>
+        <p>então o mais provável é que você tenha um arquivo de cabeçalho
+        <code>/usr/local/include/dlfcn.h</code> que é incompatível com o
+        Panther. Tire-o do caminho.</p>
+        <p>Normalmente, ele é instalado pelo OpenOffice e você deve substituir
+        esse arquivo de cabeçalho, bem como a biblioteca
+        <code>/usr/local/lib/libdl.dylib</code>, por links simbólicos aos
+        arquivos providos pelo Panther:</p>
+        <codeblock>sudo ln -s /usr/include/dlfcn.h /usr/local/include/dlfcn.h
+sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="gcc2">
+      <!-- FAQ comp-general.gcc2 is coded into VirtPackage.pm
+         Do not rename, remove, move to a different chapter, or
+         otherwise cause the URL to change. -->
+      <question>
+        <p>O Fink diz que está faltando <filename>gcc2</filename> ou
+        <filename>gcc3.1</filename> mas não consigo instalá-lo.</p>
+      </question>
+      <answer>
+        <p>Isto é porque <filename>gcc2</filename> e
+        <filename>gcc3.1</filename> são pacotes virtuais que indicam a presença
+        de gcc-2.95 e gcc-3.1, respectivamente, em seu sistema. Instale o
+        pacote gcc2.95 e/ou o gcc.31 do Xcode Tools (versões anteriores do OS
+        possuem gcc-2.95 e gcc-3.1 como parte da instalação principal do
+        Developer Tools).</p>
+        <p><em>Observação:</em> instalar o gcc2.95 ou gcc3.1 não interferirá
+        com seu compilador gcc3.3--eles podem coexistir.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="system-java">
+      <question>
+        <p>O Fink apresenta a mensagem <code>Failed: Can't resolve dependency
+        "system-java14-dev"</code> mas esse pacote não existe.</p>
+      </question>
+      <answer>
+        <p>É porque é um pacote virtual. Esse tipo de erro acontece quando o
+        Java é atualizado pelo Atualização de Software: os arquivos de
+        cabeçalho são removidos, o que faz com que o pacote -dev não seja
+        gerado.</p>
+        <p>Você precisa baixar o pacote <filename>Java Developer
+        Tools</filename> apropriado do site da <link
+        url="http://connect.apple.com">Apple</link>. Neste caso específico, o
+        pacote é <filename>Java 1.4.2 Developer Tools</filename>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="dpkg-split">
+      <question>
+        <p>Quando tento instalar qualquer pacote, recebo a mensagem <quote>dpkg
+        (subprocess): failed to exec dpkg-split to see if it's part of a
+        multiparter: No such file or directory</quote>. Como faço para corrigir
+        isto?</p>
+      </question>
+      <answer>
+        <p>Isto geralmente pode ser corrigido através da configuração correta
+        do ambiente conforme <xref chapter="usage-fink"
+        section="fink-not-found">esta pergunta</xref>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="xml-parser">
+      <question>
+        <p>Estou recebendo a seguinte mensagem: <quote>configure: error:
+        XML::Parser perl module is required for intltool</quote>. O que preciso
+        fazer?</p>
+      </question>
+      <answer>
+        <p>Caso esteja usando a árvore unstable, assegure-se de ter instalado o
+        intltool-0.34.1 ou mais recente.</p>
+        <p>Caso contrário, você precisa assegurar-se de ter a variante correta
+        do pacote xml-parser-pm que case com a versão do Perl em seu sistema.
+        Por exemplo, se você estiver no Panther você deveria ter
+        <code>xml-parser-pm581</code> no lugar de <code>xml-parser-pm560</code>
+        (você também pode ter o substituto <code>xml-parser-pm</code>), já que
+        você tem o <code>Perl-5.8.1</code> no lugar de <code>Perl-5.6.0</code>
+        Se estiver no Jaguar e estiver usando a versão padrão do Perl para o
+        sistema, você terá a variante <code>pm560</code> e se você instalou o
+        <code>Perl 5.8.0</code> você pode ter a variante
+        <code>pm580</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="master-problems">
+      <question>
+        <p>Estou tentando baixar um pacote mas o Fink vai para um site estranho
+        com <quote>distfiles</quote> no nome e o arquivo não está lá.</p>
+      </question>
+      <answer>
+        <p>O que aconteceu aqui é que o Fink está tentando usar um dos seus
+        espelhos <quote>mestres</quote>. Eles foram configurados para garantir
+        que códigos fontes dos pacotes do Fink estejam disponíveis mesmo que os
+        sites oficiais os tenham mudado de lugar. Normalmente esses erros
+        ocorrem quando uma nova versão oficial de um pacote é lançada mas ainda
+        não chegou aos espelhos mestres.</p>
+        <p>Para remediar esta situação, execute o comando <code>fink
+        configure</code> e defina a ordem de pesquisa para que use os espelhos
+        mestres por último.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="compile-options">
+      <question>
+        <p>Quero que o Fink use opções diferentes na compilação de um
+        pacote.</p>
+      </question>
+      <answer>
+        <p>A primeira coisa a fazer é entrar em contato com o mantenedor do
+        pacote para solicitar uma variante. Isto pode ser relativamente fácil
+        de ser feito. Caso você não obtenha resposta do mantenedor ou não veja
+        os pacotes novos, ou queira tentar uma opção diferente por você mesmo,
+        leia o <link
+        url="http://www.finkproject.org/doc/quick-start-pkg/index.php">Tutorial
+        de empacotamento</link> e o <link
+        url="http://www.finkproject.org/doc/packaging/index.php">Manual de
+        empacotamento</link>.</p>
+        <p><em>Observação: </em> o Fink é deliberadamente configurado para que
+        todos os binários oficiais sejam idênticos independentemente da máquina
+        em que foram compilados, portanto opções como otimização para o G5 não
+        acontecerão com um pacote oficial. Caso as queira, você terá que
+        fazê-las por sua própria conta.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="gettext">
+      <question>
+        <p>Sempre que tento compilar a partir do código fonte, o Fink fica
+        reclamando sobre <code>gettext-dev</code> e
+        <code>libgettext3-dev</code>.</p>
+      </question>
+      <answer>
+        <p>Alguns pacotes que precisão dos arquivos de cabeçalho do
+        <code>gettext</code> para compilar foram atualizados para usar o
+        <code>libgettext3-dev</code> e alguns ainda usam
+        <code>gettext-dev</code>. Consequentemente, o Fink pode tentar trocar
+        para um que não esteja atualmente instalado no sistema a fim de
+        satisfazer uma dependência de compilação de algum pacote que esteja
+        tentando atualizar. Além disso, a ferramenta <code>fink</code> trata o
+        <code>gettext-dev</code> como essencial e irá instalá-lo sempre que
+        você proceder uma auto-atualização.</p>
+        <p>Um comportamento similar pode acontecer também com outros pares de
+        pacotes.</p>
+        <p>Infelizmente, devido a limitações no mecanismo de dependências de
+        compilação, você pode encontrar problemas porque você trocou para um
+        dos pacotes mas algum pacote, compilado posteriormente, pode querer o
+        outro. Normalmente você pode proceder repetindo novamente sua
+        atualização.</p>
+        <p>Em casos extremos você pode chegar ao ponto de instalar os pacotes
+        que dependam de <code>gettext-dev</code> separadamente daqueles que
+        precisam de <code>libgettext3-dev</code> (ou qualquer que seja o par
+        que esteja causando problemas). Talvez você tenha que instalar pacotes
+        um de cada vez.</p>
+        <p>Esperamos que uma correção permanente esteja disponível no
+        <code>fink-0.24.9</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="python-mods">
+      <question>
+        <p>Estou recebendo erros com relação a
+        <code>MACOSX_DEPLOYMENT_TARGET</code> quando tento compilar um módulo
+        Python.</p>
+      </question>
+      <answer>
+        <p>Para erros parecidos com:</p>
+        <codeblock>running build
+running build_ext
+Traceback (most recent call last):
+  File "setup_socket_ssl.py", line 21, in ?
+    depends = ['socketmodule.h'] )
+  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
+### execution of /sw/bin/python2.4 failed, exit code 1</codeblock>
+        <p>o problema ocorre porque os pacotes <code>python2*</code> gravam o
+        <code>MACOSX_DEPLOYMENT_TARGET</code> atual em um arquivo de
+        configuração quando são compilados e os utilitários de compilação do
+        python usam esse valor quando compilam módulos. Isto significa que você
+        tem, por exemplo, um pacote <code>python24</code> no OS 10.4 que foi
+        compilado no OS 10.3, ocorrendo tanto na atualização 10.3 =&gt; 10.4,
+        ou através da distribuição binária <em>10.4-transitional</em>, na qual
+        o <code>python24</code> não foi recompilado, havendo portanto uma
+        diferença entre o que o python acha que
+        <code>MACOSX_DEPLOYMENT_TARGET</code> deveria ser (10.3) e o que
+        realmente é (10.4).</p>
+        <p>A solução é recompilar o pacote <code>python</code> que esteja
+        causando problema, por exemplo <code>fink rebuild python24</code> para
+        o caso acima.</p>
+        <p>Para erros em tempo de execução que exibem o mesmo tipo de mensagem
+        de erro acima, recompile o módulo após recompilar o pacote
+        <code>python2*</code> apropriado.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="libtool-unrecognized-dynamic">
+      <question>
+        <p>Eu recebo erros <quote>unrecognized option `-dynamic'</quote> da
+        <filename>libtool</filename>.</p>
+      </question>
+      <answer>
+        <p>O erro</p>
+        <codeblock> libtool: unrecognized option `-dynamic'</codeblock>
+        <p>normalmente significa que você substituiu a
+        <filename>/usr/bin/libtool</filename> da Apple por uma
+        <filename>libtool</filename> GNU. Infelizmente, as duas
+        <code>libtools</code> <em>não</em> funcionam da mesma forma.</p>
+        <p>A única maneira de resolver este problema é obter uma
+        <filename>libtool</filename> da Apple que funcione. Ela é instalada
+        como parte do pacote <filename>DeveloperTools.pkg</filename> das
+        ferramentas do Xcode e você pode reinstalar todo o pacote se primeiro
+        limpar seu arquivo de receita em <filename>/Library/Receipts</filename>
+        (arraste-o para a Lixeira).</p>
+      </answer>
+    </faqentry>
+  </chapter>
+  <chapter filename="comp-packages">
+    <title>Problemas de compilação - Pacotes específicos</title>
+    <shorttitle>Compilação (2)</shorttitle>
+    <faqentry name="libgtop">
+      <question>
+        <p>Um pacote não compila devido a erros em relação ao
+        <code>sed</code>.</p>
+      </question>
+      <answer>
+        <p>Isto pode acontecer caso seu script de login (por exemplo,
+        <code>~/.profile</code>) imprima algo no terminal, por exemplo
+        "<code>echo Hello</code>" ou <code>xttitle</code>. Para livrar-se do
+        problema, a solução fácil é comentar as linhas que imprimam na
+        tela.</p>
+        <p>Se você quiser manter a impressão na tela, então você pode fazer
+        algo parecido com</p>
+        <codeblock>if ( $?prompt) then 
+	echo Hello 
+endif</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="cant-install-xfree">
+      <question>
+        <p>Eu quero mudar para os pacotes XFree86 do Fink mas não consigo
+        instalar <code>xfree86-base</code> | <code>xfree86</code> devido a
+        conflito com <code>system-xfree86</code>.</p>
+      </question>
+      <answer>
+        <p>Infelizmente, todas as variantes do X11 realmente precisam ser
+        instaladas em /usr/X11R6. Por causa disto, o pacote
+        <code>xfree86-base</code> do Fink também é instalado lá. Entretanto,
+        como o Fink não remove arquivos que não estejam em seu banco de dados,
+        ele não irá substituir automaticamente uma instalação do X11 que não
+        foi feita pelo Fink.</p>
+        <p>Proceda da seguinte forma:</p>
+        <p>1. Remova manualmente tudo relacionado ao XFree86. Isto pode ser
+        feito com o comando</p>
+        <codeblock>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</codeblock>
+        <p>Se você está mudando do Apple X11, remova também o aplicativo
+        X11.</p>
+        <p>2. Para obter o XFree86-4.2.1, instale o pacote
+        <code>xfree86-base</code> da forma tradicional: "<code>fink
+        install</code>" caso use códigos fontes, "<code>apt-get install</code>"
+        or <code>dselect</code> para binários.</p>
+        <p>-ou-</p>
+        <p>2a. Para obter o XFree86-4.3.x ou mais recentes, instale o pacote
+        <code>xfree86</code> através do comando <code>fink install
+        xfree86</code> -- a versão mais recente (XFree86-4.4.x de 25/maio/2004)
+        ainda não está na distribuição de binários e só está disponível na
+        árvore unstable (veja <link
+        url="http://www.finkproject.org/faq/usage-fink.php#unstable\">como
+        instalar pacotes instáveis</link>).</p>
+      </answer>
+    </faqentry>
+    <faqentry name="change-thread-nothread">
+      <question>
+        <p>Como faço para mudar de uma versão sem threads do pacote XFree86 do
+        Fink para uma versão com threads (ou vice-versa)?</p>
+      </question>
+      <answer>
+        <p>Se você está rodando a versão do XFree86 do Fink e quer trocar entre
+        versões do Fink com ou sem threads, você precisa remover manualmente a
+        versão antiga. Isto é feito através dos seguintes comandos:</p>
+        <codeblock>sudo dpkg -r --force-depends xfree86-base 
+sudo dpkg -r --force-depends xfree86-shlibs 
+sudo dpkg -r --force-depends xfree86-rootless 
+sudo dpkg -r --force-depends xfree86-rootless-shlibs</codeblock>
+        <p>ou para remover as versões com threads:</p>
+        <codeblock>sudo dpkg -r --force-depends xfree86-base-threaded 
+sudo dpkg -r --force-depends xfree86-shlibs-threaded 
+sudo dpkg -r --force-depends xfree86-rootless-threaded 
+sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
+        <p>O Fink Commander também possui uma forma de remover pacotes. Na
+        janela de fontes, selecione um pacote e então use a opção "<code>Force
+        Remove</code>" do menu <code>Source Menu</code>.</p>
+        <p>Caso esteja usando o system-xfree86, veja como removê-lo na pergunta
+        anterior.</p>
+        <p>Instale a versão do xfree86 que você deseja:</p>
+        <p><code>xfree86-base</code></p>
+        <p><code>xfree86-base-threaded</code></p>
+        <p>da forma usual: "<code>fink install</code>" para usuários de códigos
+        fontes, "<code>apt-get install</code>" ou "<code>dselect</code>" para
+        binários.</p>
+      </answer>
+    </faqentry>
+    <!--obsolete><faqentry name="apple-x11" >
+<question>
+<p>I've installed the Apple X11 package, but system-xfree86 won't install.</p>
+</question>
+<answer>
+<p>If you get error messages like the following:</p>
+<codeblock>- missing /usr/X11R6/lib/libX11.dylib
+- missing /usr/X11R6/lib/libXpm.dylib
+- missing /usr/X11R6/lib/libXaw.dylib
+- missing /usr/X11R6/include/X11/Xlib.h
+
+Your XFree86 installation is missing or incomplete. Please make sure you have
+an XFree86 release installed and retry the installation of the system-xfree86
+package.
+</codeblock>
+<p>then you need to install the SDK package as well as the User package. If you are running Panther, the SDK is on the Xcode disk and is <em>NOT</em> automatically installed. The SDK as well as X11 beta for Jaguar is no longer available, and you'll either have to upgrade to Panther or use Fink's xfree86.</p>
+<p>If, on the other hand, you get the following message:</p>
+<codeblock>An error occurred trying to find your XFree86 installation's
+version. This really shouldn't happen, so I'm bailing. :(</codeblock>
+<p>then you need to update your package descriptions and install a newer version of system-xfree86. If you are installing Apple X11 Beta 3, then you will need <filename>system-xfree86-4.2-11</filename> or later.</p>
+</answer>
+</faqentry><-->
+    <faqentry name="cctools">
+      <question>
+        <p>"Quando tento instalar o KDE, recebo a seguinte mensagem 'Can't
+        resolve dependency "cctools (&gt;= 446-1)"'"</p>
+      </question>
+      <answer>
+        <p>Esta mensagem meio obscura significa que você precisa instalar o
+        December 2002 Developer Tools.</p>
+      </answer>
+    </faqentry>
+    <!--obsolete><faqentry name="system-xfree86-upgrade" >
+<question>
+<p>I can't update system-xfree86, because of a conflict with x11.</p>
+</question>
+<answer>
+	<p>This problem has come about because of changes needed to allow for externally installed XFree86-4.3. Originally, <code>system-xfree86</code> provided the <code>x11</code> virtual package when an externally installed XFree86 was present. Because it only worked for XFree86-4.2, it was decided to have two separate packages for XFree86 4.2.x and Apple X11 beta 3, and one for XFree86 4.3.x and Apple X11 1.0</p>
+<p>Either of these will provide <code>x11</code>. <code>system-xfree86</code> is now a bundle that installs the appropriate one of the above packages, depending on the version of XFree86 / Apple X11 that is installed. Unfortunately, switching the provider of a virtual package is sufficiently complicated that the automatic upgrade procedure can't deal with it (currently). Do an additional <code>selfupdate</code> to get the latest version of the package, then try to update again.</p>
+</answer>
+</faqentry><-->
+    <faqentry name="libiconv-gettext">
+      <question>
+        <p>Não consigo atualizar a <code>libiconv</code>.</p>
+      </question>
+      <answer>
+        <p>Caso esteja recebendo erros no formato:</p>
+        <codeblock>libtool: link: cannot find the library `/sw/lib/libiconv.la'</codeblock>
+        <p>você pode resolver o problema executando os comandos</p>
+        <codeblock>fink remove gettext-dev
+fink install libiconv</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="cplusplus-filt">
+      <question>
+        <p>Não consigo instalar o <code>g77</code> porque está faltando o
+        <filename>c++filt</filename>. De onde posso obtê-lo?</p>
+      </question>
+      <answer>
+        <p>Caso esteja recebendo erros no formato</p>
+        <codeblock>xgcc: installation problem, cannot exec `c++filt': No such file or directory</codeblock>
+        <p>desde que atualizou para o Tiger, então você precisa fazer o
+        seguinte:</p>
+        <ul>
+          <li>Elimine suas versões antigas do Developer Tools através do comando
+          <codeblock>/Developer/Tools/uninstall-devtools.pl</codeblock> em um
+          terminal. Instale então o Xcode (2.0 ou mais recente).</li>
+          <li>Reinstale o <code>BSD.pkg</code> (do disco de instalação do
+          Tiger). Se <code>/usr/bin/c++filt</code> não aparecer, continue
+          tentando.</li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="gettext-tools">
+      <question>
+        <p>O Fink se recusa a atualizar o pacote <code>gettext</code>,
+        reclamando que as dependências estão em um estado inconsistente.</p>
+      </question>
+      <answer>
+        <p>Após executar o comando <code>fink selfupdate</code> para garantir
+        que tenha as últimas versões, execute o comando <code>fink update
+        gettext-tools</code>. Uma versão mais antiga do pacote
+        <code>gettext-tools</code> pode estar impedindo a atualização do
+        <code>gettext</code>.</p>
+      </answer>
+    </faqentry>
+  <faqentry name="Leopard-libXrandr">
+    <question>
+      <p>Não consigo instalar o <em>gtk+2</em> no OS 10.5.</p>
+    </question>
+    <answer>
+      <p>Há algumas variantes deste erro. Uma delas envolve bibliotecas
+      ausentes: <filename>/usr/X11/lib/libXrandr.2.0.0.dylib</filename> ou
+      <filename>/usr/X11/lib/libXdamage.1.1.0.dylib</filename>. O melhor
+      entendimento para corrigir este erro é instalar o Xcode 3.1 e aplicar a
+      última atualização de versão do <link
+      url="http://xquartz.macosforge.org/trac/wiki">macosforge.org</link>.</p>
+      <p>Uma outra possibilidade é em relação a símbolos indefinidos:
+      "<code>_gdk_threads_add_idle referenced from libgtk-x11-2 expected to be
+      defined in libgdk-x11-2</code>" etc.</p>
+      <p>A remoção do pacote <code>gtk+2-dev</code> existente permitirá que a
+      compilação siga em frente.</p>
+    </answer>
+  </faqentry>
+    <faqentry name="all-others">
+      <question>
+        <p>Estou tendo problemas com um pacote que não está listado aqui.</p>
+      </question>
+      <answer>
+        <p>Dado que problemas com pacotes tendem a ser transientes, decidimos
+        colocá-los no wiki do Fink. Veja a <link
+        url="http://wiki.finkproject.org/index.php/Fink:Package_issues">página
+        de Problemas em pacotes (package issues)</link>.</p>
+      </answer>
+    </faqentry>
+  </chapter>
+  <chapter filename="usage-general">
+    <!-- FAQs in usage-general are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
+    <title>Problemas no uso de pacotes - Geral</title>
+    <shorttitle>Uso (1)</shorttitle>
+    <faqentry name="xlocale">
+      <question>
+        <p>Estou recebendo várias mensagens como "locale not supported by C
+        library" ("local não suportado por biblioteca C"). Isso é ruim?</p>
+      </question>
+      <answer>
+        <p>Não é ruim, apenas significa que o programa usará por padrão as
+        mensagens em inglês, formatos de data etc. O programa funcionará
+        normalmente. O documento Executando o X11 tem mais <link
+        url="http://www.finkproject.org/doc/x11/trouble.php#locale">detalhes</link>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="passwd">
+      <question>
+        <p>Surgiram de repente vários usuários estranhos no meu sistema com
+        nomes como "mysql", "pgsql" e "games". De onde eles vieram?</p>
+      </question>
+      <answer>
+        <p>Você usou o Fink para instalar um pacote que depende de outro
+        pacote, o passwd. O passwd instala vários usuários extras no seu
+        sistema por razões de segurança -- em sistemas Unix, arquivos e
+        processos pertencem a "proprietários", o que permite que
+        administradores de sistema façam ajustes finos nas permissões e
+        segurança do sistema. Programas como o Apache e o MySQL precisam de um
+        "proprietário" e não é seguro atribuir-lhes o usuário root (imagine o
+        que aconteceria se o Apache fosse comprometido e subitamente tivesse
+        acesso de escrita a todos os arquivos do sistema). Por conseguinte, o
+        pacote passwd faz o trabalho de configurar esses usuários extras para
+        os pacotes do Fink que os necessitam.</p>
+        <p>Pode ser alarmante descobrir repentinamente vários usuários não
+        esperados no painel "Preferências do Sistema: Contas", mas evite
+        removê-los:</p>
+        <ul>
+          <li>Em primeiro lugar, você obviamente escolheu instalar um pacote
+          que requer os usuários, então eliminá-los não faz muito sentido,
+          faz?</li>
+          <li>Na verdade há vários usuários extras já instalados no Mac OS X
+          que você talvez nem conheça: www, daemon, nobody são alguns deles. A
+          presença desses usuários extras é uma convenção padrão do Unix para a
+          execução de certos serviços; o pacote passwd simplesmente adiciona
+          alguns outros usuários extras que não foram fornecidos pela Apple.
+          Você pode ver os usuários instalados pela Apple no aplicativo NetInfo
+          Manager.app ou através do comando <code>niutil -list .
+          /users</code></li>
+          <li>Caso você decida remover esses usuários, tenha muito cuidado em
+          como proceder. Usar o painel "Preferências do Sistema: Contas" fará
+          com que todos os arquivos desses usuários sejam atribuídos a uma
+          conta de administrador aleatória e tem havido relatos de grandes
+          confusões devidas às permissões das contas de administradores. Há um
+          erro no Preferências do Sistema que já foi relatado à Apple. Uma
+          forma mais segura de remover esses usuários do sistema é fazê-lo
+          através do NetInfo Manager.app ou usar a ferramenta de linha de
+          comando <code>niutil</code> no Terminal. Leia o manual do
+          <code>niutil</code> para mais informações sobre o NetInfo.</li>
+        </ul>
+        <p>O Fink <em>de fato</em> solicita permissão para instalar esses
+        usuários adicionais em seu sistema durante a instalação do pacote
+        passwd, portanto eles não deveriam ser de todo uma surpresa.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="compile-myself">
+      <question>
+        <p>Como faço para compilar algo usando softwares instalados pelo
+        Fink?</p>
+      </question>
+      <answer>
+        <!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->
+        <p>Quando você for compilar algo fora do Fink, o compilador e o
+        linkeditor precisam saber onde estão as bibliotecas e arquivos de
+        cabeçalho instalados pelo Fink. Para um pacote que use o processo
+        configure/make padrão, você precisa definir algumas variáveis de
+        ambiente:</p>
+        <p>-bash-</p>
+        <codeblock>export CFLAGS=-I/sw/include 
+export LDFLAGS=-L/sw/lib 
+export CXXFLAGS=$CFLAGS 
+export CPPFLAGS=$CXXFLAGS 
+export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
+export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
+export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
+        <p>-tcsh-</p>
+        <codeblock>setenv CFLAGS -I/sw/include 
+setenv LDFLAGS -L/sw/lib 
+setenv CXXFLAGS $CFLAGS 
+setenv CPPFLAGS $CXXFLAGS 
+setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
+setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
+setenv MACOSX_DEPLOYMENT_TARGET 10.4</codeblock>
+        <p>Normalmente é mais fácil adicionar essas definições ao seu arquivo
+        de inicialização do shell (<filename>.profile</filename> |
+        <filename>.cshrc</filename>) para que as variáveis sejam definidas
+        automaticamente. Se um pacote não usa essas variáveis, você precisará
+        adicionar "-I/sw/include" (para arquivos de cabeçalho) e "-L/sw/lib"
+        (para bibliotecas) aos comandos de compilação. Alguns pacotes podem
+        usar algumas variáveis similares mas que não são padrão como
+        EXTRA_FLAGS ou opções extras para o configure como --with-qt-dir=.
+        "./configure --help" normalmente exibe uma lista das opções extras.</p>
+        <p>Além disso, você pode precisar instalar os arquivos de cabeçalho
+        para desenvolvimento (por exemplo, <em>foo-1.0-1-dev</em>) para os
+        pacotes de bibliotecas que você esteja usando caso ainda não tenham
+        sido instalados.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="apple-x11-applications-menu">
+      <question>
+        <p>Não consigo rodar nenhuma dos meus aplicativos instalados via Fink
+        quando uso o menu Applications (Aplicativos) do X11 da Apple.</p>
+      </question>
+      <answer>
+        <p>O X11 da Apple não considera as configurações de ambiente do Fink, o
+        que significa que o menu Applications (Aplicativos) não possui o PATH
+        configurado corretamente para achar os aplicativos do Fink. A solução é
+        colocar, no começo do nome de um aplicativo instalado pelo Fink, o
+        texto</p>
+        <codeblock>source /sw/bin/init.sh ;</codeblock>
+        <p>Por exemplo, caso queira rodar um GIMP instalado pelo Fink,
+        coloque</p>
+        <codeblock>source /sw/bin/init.sh ; gimp</codeblock>
+        <p>no campo Command (Comando) da sua opção GIMP.</p>
+        <p>Você também pode editar seu arquivo .xinitrc (no seu diretório de
+        usuário) e adicionar:</p>
+        <codeblock>source /sw/bin/init.sh</codeblock>
+        <p>após a primeira linha.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="x-options">
+      <question>
+        <p>Estou perplexo com as opções de X11: X11 da Apple, XFree86 etc. Qual
+        devo instalar?</p>
+      </question>
+      <answer>
+        <p>Todas são variantes do XFree86 (são baseadas no código do XFree86)
+        mas possuem algumas pequenas diferenças entre elas. Há opções
+        diferentes para o Panther e para o Jaguar.</p>
+        <p>No Panther você pode escolher dentre:</p>
+        <ul>
+          <li>
+            <p>X11 da Apple (no terceiro disco). Não se esqueça de instalar o
+            X11 SDK (no disco do Xcode) caso queira compilar programas ou
+            pretenda instalar, via código fonte, outros pacotes do Fink
+            relacionados ao X11.</p>
+          </li>
+          <li>
+            <p>4.4.x compilado via Fink: instale os pacotes
+            <code>xfree86</code> e <code>xfree86-shlibs</code></p>
+          </li>
+          <li>
+            <p>X.org compilado via Fink: instale os pacotes <code>xorg</code> e
+            <code>xorg-shlibs</code></p>
+          </li>
+        </ul>
+        <p>No Jaguar, as escolhas mais populares e pacotes do Fink associados
+        são:</p>
+        <ul>
+          <li>
+            <p>4.2.x compilado via Fink: install os pacotes
+            <code>xfree86-base</code> e <code>xfree86-rootless</code> ou
+            <code>xfree86-base-threaded</code> e
+            <code>xfree86-rootless-threaded</code> (e <code>-shlibs</code>
+            respectivos)</p>
+          </li>
+          <li>
+            <p>4.3.x compilado via Fink: instale os pacotes
+            <code>xfree86</code> e <code>xfree86-shlibs</code></p>
+          </li>
+          <li>
+            <p>4.2.x da Apple (suponto que você tenha os pacotes User + SDK
+            instalados):o pacote <code>system-xfree86</code> é automaticamente
+            gerado pelas versões atuais do Fink; NÃO o instale. (Note que que o
+            beta público do X11 da Apple para o Jaguar não está mais
+            disponível, então esta é a única opção para você que já o tem
+            instalado a partir do momento em que estava disponível.)</p>
+          </li>
+        </ul>
+        <p>Também há outras opções. Um tratamento mais extensivo deste tema
+        está disponível no documento <link
+        url="http://www.finkproject.org/doc/x11/index.php">Executando o
+        X11</link>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="no-display">
+      <question>
+        <p>Quando tento rodar um aplicativo, recebo uma mensagem que diz
+        "cannot open display:" ("não foi possível abrir o display:"). O que
+        preciso fazer?</p>
+      </question>
+      <answer>
+        <p>Este erro significa que o sistema não está se conectado ao display
+        do X. Faça o seguinte:</p>
+        <p>1. Inicie o X (X11 da Apple, XFree86, ...).</p>
+        <p>2. Assegure-se de que sua variável de ambiente DISPLAY esteja
+        definida corretamente. Se você está usando a configuração padrão do X,
+        você pode fazê-lo com</p>
+        <codeblock>export DISPLAY=:0</codeblock>
+        <p>caso esteja usando o <code>bash</code> ou</p>
+        <codeblock>setenv DISPLAY :0</codeblock>
+        <p>caso esteja usando o<code>tcsh</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="suggest-package">
+      <question>
+        <p>Não estou vendo meu programa favorito no Fink. Como faço para
+        sugerir que um novo pacote seja incluído no Fink?</p>
+      </question>
+      <answer>
+        <p>Faça a requisição no <link
+        url="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
+        Request Tracker</link> na página do projeto Fink.</p>
+        <p>Note que você precisa ter uma conta no SourceForge para fazê-lo.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="virtpackage">
+      <!-- FAQ usage-general.virtpackage is coded into VirtPackage.pm
+         Do not rename, remove, move to a different chapter, or
+         otherwise cause the URL to change. -->
+      <question>
+        <p>O que são esses "pacotes virtuais" <code>system-*</code> que às
+        vezes estão presentes mas que não consigo eu mesmo instalar ou
+        remover?</p>
+      </question>
+      <answer>
+        <p>Pacotes com nomes como <code>system-perl</code> são pacotes
+        sinalizadores. Eles não contêm arquivos em si mas servem meramente como
+        um mecanismo para que o fink saiba sobre os programas que foram
+        instalados manualmente fora do Fink.</p>
+        <p>A maior parte desses pacotes sinalizadores não são de fato pacotes
+        que você possa instalar ou remover, mas sim "pacotes virtuais", que são
+        estruturas de dados de pacotes gerados pelo programa fink em resposta a
+        uma lista pré-configurada com os programas instalados manualmente. Para
+        cada pacote virtual, o fink procura por certos arquivos e certos locais
+        e, caso estejam presentes, considera o pacote virtual como
+        "instalado".</p>
+        <p>Você pode rodar o programa <code>fink-virtual-pkgs</code> (faz parte
+        do pacote fink) para obter uma lista de exatamente quais pacotes o fink
+        crê que estejam instalados. Adicionar a opção <code>--debug</code>
+        mostra várias informações de diagnóstico sobre exatamente quais
+        arquivos o fink está verificando.</p>
+        <p>Infelizmente, não há um mecanismo pelo qual você mesmo possa
+        instalar um programa arbitrário (fora do fink) e fazer com que o fink
+        reconheça esse programa além de você mesmo instalá-lo. É muito difícil,
+        no caso geral, fazer o fink verificar as opções de configuração e
+        compilação, caminhos de arquivos etc.</p>
+        <p>Abaixo listamos os pacotes virtuais mais importantes definidos pelo
+        fink:</p>
+        <ul>
+          <li>system-perl: [pacote virtual representando o perl]
+            <p>Representa <filename>/usr/bin/perl</filename>, o qual é parte da
+            instalação padrão do OS X. Este pacote também provê
+            <code>system-perlXXX</code> e <code>perlXXX-core</code> conforme a
+            versão X.X.X do interpretador do perl.</p>
+          </li>
+          <li>system-javaXXX: [pacote virtual representando o Java X.X.X]
+            <p>Representa o Java Runtime Environment que é parte do OS X (e da
+            Atualização de Software da Apple). Veja a <link
+            url="http://www.apple.com/java">página da Apple sobre Java</link>
+            para mais informações.</p>
+          </li>
+          <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
+	    <p>
+              Representa o Java SDK, o qual deve ser baixado manualmente de
+              <link url="http://connect.apple.com">connect.apple.com</link> (é
+              necessário registrar-se gratuitamente) e instalado. Caso você
+              tenha atualizado seu Java Runtime Environment, pode ser que seu
+              SDK não seja atualizado automaticamente (e talvez até mesmo
+              removido!). Lembre-se de verificar (e baixar/instalar se
+              necessário) o SDK após instalar ou atualizar seu Runtime
+              Environment. Veja também <xref chapter="comp-general"
+              section="system-java">esta pergunta do FAQ</xref>.</p>
+          </li>
+          <li>system-java3d: [pacote virtual representando o Java3D]</li>
+          <li>system-javaai: [pacote virtual representando o Java Advanced Imaging]
+            <p>Representa as extensões do Java para gráficos 3D e processamento
+            de imagens, as quais precisam ser baixadas da Apple e instaladas
+            manualmente. Veja a <link
+            url="http://docs.info.apple.com/article.html?artnum=120289">página
+            da Apple</link> para mais informações.</p>
+          </li>
+          <li>system-xfree86: [sinalizador para o X11 instalado pelo usuário]</li>
+          <li>system-xfree86-shlibs: [sinalizador para as bibliotecas compartilhadas do X11 instaladas pelo usuário]
+            <p>Representa o X11/Darwin da Apple, uma parte opcional do OS X
+            (X11User.pkg). Estes pacotes proveem <code>x11</code> e
+            <code>x11-shlib</code> respectivamente. Veja também <xref
+            chapter="comp-packages" section="cant-install-xfree">esta
+            pergunta</xref>.</p>
+          </li>
+          <li>system-xfree86-dev [sinalizador para as ferramentas de desenvolvimento do X11 instaladas pelo usuário]
+            <p>Representa o SDK do X11 da Apple/XDarwin, uma parte opcional do
+            OS X (X11SDK.pkg). Este pacote provê <code>x11-dev</code> Veja
+            também <xref chapter="comp-packages"
+            section="cant-install-xfree">esta pergunta</xref>.
+	    </p>
+          </li>
+        </ul>
+      </answer>
+    </faqentry>
+  </chapter>
+  <chapter filename="usage-packages">
+    <!-- FAQs in usage-packages are coded into VirtPackage.pm
+       Do not rename, remove, or otherwise cause the URL to change. -->
+    <title>Problemas no uso de pacotes - Pacotes específicos</title>
+    <shorttitle>Uso (2)</shorttitle>
+    <faqentry name="xmms-quiet">
+      <question>
+        <p>Não consigo som no XMMS.</p>
+      </question>
+      <answer>
+        <p>Assegure-se de ter selecionado o "eSound Output Plugin" nas
+        preferências do XMMS. Por algum motivo estranho, ele seleciona o disk
+        writer plugin como padrão.</p>
+        <p>Se ainda assim você não conseguir som ou o XMMS reclamar que não
+        encontra sua placa de som, tente o seguinte:</p>
+        <ul>
+          <li>Assegure-se de não haver baixado completamente o volume no Mac OS
+          X.</li>
+          <li>Execute <code>esdcat /usr/libexec/config.guess</code> (ou
+          qualquer outro arquivo com um tamanho decente). Se você ouvir um
+          barulho curto, o eSound funciona e o XMMS também deveria funcionar se
+          estiver configurado corretamente. Se você não ouvir nada, o esd não
+          está funcionando por algum motivo. Você pode tentar iniciá-lo
+          manualmente com <code>esd &amp;</code> e verificar as mensagens.</li>
+          <li>Se ainda não funcionar, verifique as permissões em
+          <code>/tmp/.esd</code> e <code>/tmp/.esd/socket</code>, que deveriam
+          ter sua conta normal de usuário como sendo o proprietário. Se elas
+          não forem de sua posse, interrompa o esd se ele estiver rodando,
+          remova o diretório como root (<code>sudo rm -rf /tmp/.esd</code>) e
+          inicie novamente o esd (como um usuário normal, não como root).</li>
+        </ul>
+        <p>Note que o esd é projeto para ser executado por um usuário normal e
+        não pelo root. Ele normalmente se comunica através do socket via
+        arquivo de sistema <code>/tmp/.esd/socket</code>. Você só precisa das
+        opções <code>-tcp</code> e <code>-port</code> caso queira rodar
+        clientes esd em uma outra máquina através da rede.</p>
+        <p>Já houve relatos de o XMMS fechar ou travar no OS 10.1. Ainda não
+        temos uma análise ou correção.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="nedit-window-locks">
+      <question>
+        <p>Se estou editando um arquivo no nedit, quando abro outro arquivo a
+        janela abre mas não responde.</p>
+      </question>
+      <answer>
+        <p>Este é um problema conhecido que ocorre com versões recentes do
+        <filename>nedit</filename> e <filename>lesstif</filename> em todas as
+        plataformas. A solução é abrir uma nova janela com File--&gt;New e
+        então abrir o próximo arquivo em que você queira trabalhar.</p>
+        <p>Este problema foi corrigido no <filename>nedit-5.3-6</filename>, o
+        qual depende de <filename>openmotif3</filename> no lugar de
+        <filename>lesstif</filename>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="xdarwin-start">
+      <question>
+        <p>Preciso de ajuda! Quando inicio o XDarwin, ele termina
+        imediatamente!</p>
+      </question>
+      <answer>
+        <p>Não entre em pânico. O documento Executando o X11 tem uma vasta
+        <link
+        url="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">seção
+        de resolução de problemas</link> para este problema comum.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="no-server">
+      <question>
+        <p>Quando tento iniciar o XDarwin eu recebo a mensagem "xinit: No such
+        file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</p>
+      </question>
+      <answer>
+        <p>Em primeiro lugar, assegure-se de estar carregando o init.sh no seu
+        arquivo de inicialização do X <code>~/.xinitrc</code>.</p>
+        <p>No Jaguar, às vezes todos os pacotes <code>xfree86</code> são
+        compilados mas apenas <code>xfree86-base</code> e
+        <code>xfree86-base-shlibs</code> são instalados. Verifique se você tem
+        os pacotes <code>xfree86-rootless</code> e
+        <code>xfree86-rootless-shlibs</code> instalados. Em caso negativo,
+        execute o comando <code>fink install xfree86-rootless</code>.</p>
+        <p>Caso os pacotes estejam instalados, tente <code>fink rebuild
+        xfree86-rootless</code>. Se isto não funcionar, verifique se você tem
+        <code>/usr/bin/X11R6</code> no seu PATH.</p>
+      </answer>
+    </faqentry>
+    <!--
+<faqentry name="xfree-keymapping" >
+#<question>
+<p>I just upgraded to MacOS X 10.1 and now XFree86 always quits immediately. In the messages it says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's wrong?</p>
+</question>
+<answer>
+	<p>This is a known problem on 10.1. You must use the &quot;Load from file&quot; keymapping option since the default option (loading it from the kernel) doesn't work anymore. The setting is in the XDarwin Preferences dialog. Be sure that a file is selected (e.g. USA.keymapping) - simply activating the check box may not be sufficient with some versions. If you can't get to the Preferences dialog because you disabled all splash screens, you can delete <code>~/Library/Preferences/org.xfree86.XDarwin.plist</code> to get it back, then start XDarwin and go to the Preferences dialog while the splash screen is displayed. Alternatively, you can edit that file manually in a text editor to enable the keymapping option (the UseKeymappingFile and KeymappingFile bits). </p>
+<p>As a last resort, you can run <code>startx -x- -quartz -keymap
+USA.keymapping</code> from Terminal.app.
+If this still doesn't work, you have another problem in addition to
+the keymapping problem that prevents XDarwin from starting.
+You'll get a bunch of diagnostic messages in Terminal.app to help you
+sort this out.
+</p>
+</answer>
+</faqentry>
+-->
+    <faqentry name="libXmuu">
+      <question>
+        <p>Quanto tento iniciar o XFree86, eu recebo uma das seguintes
+        mensagens de erro: "dyld: xinit can't open library:
+        /usr/X11R6/lib/libXmuu.1.dylib" or "dyld: xinit can't open library:
+        /usr/X11R6/lib/libXext.6.dylib"</p>
+      </question>
+      <answer>
+        <p>Está faltando um arquivo que deveria ter sido instalado por
+        <code>xfree86-base-(threaded)-shlibs</code>. Você precisa reinstalá-lo
+        através do comando <code>fink reinstall xfree86-base-shlibs</code>
+        (<code>fink reinstall xfree86-base-threaded-shlibs</code> caso esteja
+        usando os pacotes do XFree86 com threads) para código fonte ou
+        <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> para
+        binários.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="apple-x-bugs">
+      <question>
+        <p>Eu tinha o XFree86 do Fink instalado, troquei-o pelo X11 da Apple e
+        agora nada está funcionando!</p>
+      </question>
+      <answer>
+        <p>Em primeiro lugar, se você tinha antes as versões dos pacotes
+        XFree86 do Fink com threads, você vai precisar recompilar o aplicativo
+        que não está funcionando. Alguns programas verificam a disponibilidade
+        de threads na hora de compilá-los e, a partir desse momento, creem que
+        as threads lhes estão disponíveis.</p>
+        <p>Em segundo lugar, talvez você tenha encontrado um erro no X11 da
+        Apple. No momento em que este documento foi escrito, vários erros são
+        de conhecimento do time da Apple e eles estão trabalhando nisso.</p>
+        <p>Caso tenha perguntas gerais em relação ao X11 da Apple que não
+        estejam diretamente relacionadas ao Fink, dê uma olhada na <link
+        url="http://www.lists.apple.com/x11-users">lista de discussão oficial
+        da Apple sobre o X11</link>. Eles também recomendaram que erros no X11
+        sejam <link url="http://developer.apple.com/bugreporter">submetidos à
+        Apple</link>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="apple-x-delete">
+      <question>
+        <p>Quero que a tecla Delete no X11.app da Apple comporte-se como no
+        XDarwin.</p>
+      </question>
+      <answer>
+        <p>Alguns usuários relataram que o comportamento da tecla
+        <code>delete</code> é diferente entre o XDarwin e o X11 da Apple. Isto
+        pode ser corrigido através da edição dos arquivos de inicialização do X
+        apropriados:</p>
+        <p><em>.Xmodmap:</em></p>
+        <codeblock>keycode 59 = Delete</codeblock>
+        <p><em>.Xresources:</em></p>
+        <codeblock>xterm*.deleteIsDEL: true 
+xterm*.backarrowKey: false
+xterm*.ttyModes: erase ^?</codeblock>
+        <p><em>.xinitrc</em></p>
+        <codeblock>xrdb -load $HOME/.Xresources 
+xmodmap $HOME/.Xmodmap</codeblock>
+      </answer>
+    </faqentry>
+    <faqentry name="gnome-two">
+      <question>
+        <p>Eu atualizei do GNOME 1.x para o GNOME 2.x e agora o
+        <code>gnome-session</code> não abre um gerenciador de janelas.</p>
+      </question>
+      <answer>
+        <p>Enquanto que no GNOME 1.x o <code>gnome-session</code> invoca o
+        gerenciador de janelas <code>sawfish</code> automaticamente, no GNOME
+        2.x você precisa chamar um gerenciador de janelas no
+        <code>~/.xinitrc</code> antes de executar o <code>gnome-session</code>.
+        Por exemplo,</p>
+        <codeblock>... 
+exec metacity &amp; exec gnome-session</codeblock>
+        <p>Observação: isto não é mais verdade no <em>GNOME 2.4</em>. Ao
+        executar o <filename>gnome-session</filename>, um gerenciador de
+        janelas é invocado.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="apple-x11-no-windowbar">
+      <question>
+        <p>Eu atualizei o X11 da Apple no Panther e agora as barras de títulos
+        das janelas não aparecem mais.</p>
+      </question>
+      <answer>
+        <p>Você não atualizou o X11 para a versão "X11 1.0 - XFree86 4.3.0"
+        incluída no Panther. Você pode instalar o X11 a partir do pacote
+        X11.pkg no Disco 3.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="apple-x11-wants-xfree86">
+      <!-- FAQ comp-general.apple-x11-wants-xfree86 is coded into VirtPackage.pm
+         Do not rename, remove, move to a different chapter, or
+         otherwise cause the URL to change. -->
+      <question>
+        <p>Eu instalei o X11 da Apple mas o Fink continua solicitando a
+        instalação de XFree86 ou X.org.</p>
+      </question>
+      <answer>
+        <p>Há duas possibilidades a considerar.</p>
+        <ul>
+          <li>
+            <em>Você está instalando a partir de binários:</em>
+            <p>Se você tem uma versão atual do <code>fink</code>
+            (&gt;=0.18.3-1), normalmente o que você precisa fazer é reinstalar
+            o pacote X11User, já que o instalador às vezes não instala algum
+            arquivo. Você pode ter que precisar fazer isto múltiplas vezes. O
+            comando</p>
+	    <codeblock>fink list -i system-xfree86</codeblock>
+            <p>deveria mostrar que os pacotes <code>system-xfree86</code> e
+            <code>system-xfree86-shlibs</code> estão instalados. Se reinstalar
+            o pacote X11User não funcionar, consulte as instruções para <xref
+            section="special-x11-debug">depuração</xref> abaixo.</p>
+            <p>Se você estiver rodando uma versão anterior do pacote
+            <code>fink</code>, então atualizar o <code>fink</code> pode
+            resolver seu problema de imediato, por exemplo via</p>
+            <codeblock>sudo apt-get update
+sudo apt-get install fink</codeblock>
+          </li>
+          <li>
+            <em>Você está instalando a partir de códigos fontes:</em>
+            <p>Se você tem uma versão atual do <code>fink</code>, então esse
+            erro normalmente significa que você precisa (re)instalar o X11SDK,
+            o que é <em>obrigatório</em> se você quiser compilar pacotes a
+            partir do código fonte. Ele está no diretório Xcode Tools no DVD de
+            instalação do Mac OS X. Mesmo que esse pacote seja instalado por
+            padrão quando você escolhe instalar o Xcode, é possível que ele não
+            chegue a instalar algum arquivo.</p>
+            <p>Se o seu computador não veio com o DVD de instalação, é provável
+            que o pacote <filename>X11SDK.pkg</filename> esteja em algum lugar
+            do disco rígido--procure por um diretório
+            <filename>/Applications/Installers</filename> que tenha uma imagem
+            de disco do Xcode. O arquivo <filename>X11User.pkg</filename>
+            contendo o pacote pode estar localizado nesse diretório também.</p>
+            <p>Caso ainda esteja tendo problemas, execute o comando</p>
+            <codeblock>fink list -i system-xfree86  </codeblock>
+            <p>Ele deve mostar que os pacotes <code>system-xfree86</code>,
+            <code>system-xfree86-shlibs</code> e
+            <code>system-xfree86-dev</code> estão instalados. Se o pacote
+            <code>-dev</code> estiver faltando, reinstale o X11SDK já que por
+            vezes o instalador da Apple não instala algum arquivo. Talvez você
+            tenha que fazer isto repetidas vezes. Se algum dos outros dois
+            pacotes estiver faltando, reinstale o pacote X11USER (mesma
+            razão).</p>
+          </li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="special-x11-debug">
+      <question>
+        <p>Ainda estou tendo problemas com o X11 e o Fink.</p>
+      </question>
+      <answer>
+        <p>Se as dicas em <xref section="apple-x11-wants-xfree86">O Fink tenta
+        instalar Xfree86 ou X.org</xref> ou <xref
+        section="wants-xfree86-on-upgrade">X11 e atualização do 10.2</xref> não
+        ajudarem ou não são aplicáveis à sua situação, você pode ter que limpar
+        sua instalação do X11 e remover quaisquer sinalizadores ou pacotes
+        relacionados a X11 que tenham sido parcial ou completamente
+        instalados:</p>
+        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42    system-xfree86-43 \
+xorg xorg-shlibs xfree86 xfree86-shlibs \
+xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
+xfree86-base-threaded xfree86-base-threaded-shlibs \
+xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
+rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg \
+/Library/Receipts/X11Update*.pkg
+fink selfupdate; fink index</codeblock>
+        <p>(a primeira linha pode lhe apresentar aviso sobre tentar remover
+        pacotes que não existem). Reinstale o X11 da Apple (e o X11SDK caso
+        necessário) ou uma implementação do X11 alternativa, como XFree86 ou
+        X.org.</p>
+        <p>Se ainda estiver tendo problemas e estiver rodando o
+        <code>fink-0.19.0</code> ou mais recente então você executar</p>
+        <codeblock>fink-virtual-pkgs --debug</codeblock>
+        <p>para obter informações sobre o que está faltando.</p>
+        <p>Se estiver executando uma versão anterior do <code>fink</code>,
+        então há um script em Perl (cortesia de Martin Costabel) que você pode
+        baixar e executar para obter as mesmas informações.</p>
+        <ul>
+          <li>Obtenha aqui: <link
+          url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link></li>
+          <li>Salve-o no lugar que melhor lhe aprouver.</li>
+          <li>Execute-o em uma janela de terminal através do comando
+          <codeblock>perl fink-x11-debug</codeblock></li>
+        </ul>
+      </answer>
+    </faqentry>
+    <faqentry name="tiger-gtk">
+      <question>
+        <p>Sempre que uso um aplicativo GTK, recebo mensagens de erro em
+        relação a <code>_EVP_idea_cbc</code>.</p>
+      </question>
+      <answer>
+        <p>Isto é causado por um possível bug no linkeditor dinâmico do Tiger
+        (na versão 10.4.1) mas parece ter sido corrigido na 10.4.3 e o Fink tem
+        uma solução no pacote <code>base-files-1.9.7-1</code> ou mais
+        recentes.</p>
+        <p>Caso você ainda não tenha atualizado o Tiger e/ou o
+        <code>base-files</code>, você pode contornar este problema usando um
+        prefixo no nome do software que você deseja rodar:</p>
+        <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: </codeblock>
+        <p>Por exemplo, se você quer usar o <code>gnucash</code>, você o
+        executaria através do seguinte comando:</p>
+        <codeblock>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</codeblock>
+        <p>Este método funciona para aplicações que são iniciadas a partir do
+        menu Application (Aplicativos) do X11 da Apple e também a partir do
+        terminal.</p>
+        <p>Talvez você queira fazer essa definição de forma global (por
+        exemplo, no seu script de inicialização e/ou em seu
+        <code>.xinitrc</code>, e é possível que você tenha que fazer isso para
+        rodar o GNOME). Coloque</p>
+        <codeblock>export DYLD_FALLBACK_LIBRARY_PATH=:</codeblock>
+        <p>em seu arquivo <code>.xinitrc</code> (independentemente de seu shell
+        de login) ou seu <code>.profile</code> (ou outro script de
+        inicialização) para usuários <em>bash</em>, e:</p>
+        <codeblock>setenv DYLD_FALLBACK_LIBRARY_PATH :</codeblock>
+        <p>é o comando correspondente para ser usado em, por exemplo, seu
+        arquivo <code>.cshrc</code> para usuários do <em>tcsh</em>.</p>
+        <p>Observação: isto é feito automaticamente caso você instale uma
+        versão suficientemente recente do pacote <code>base-files</code>.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="yelp">
+      <question>
+        <p>Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</p>
+      </question>
+      <answer>
+        <p>Você precisa instalar o pacote <code>yelp</code>. Este pacote não
+        foi colocado junto com o restante do GNOME porque usa criptografia e
+        foi decidido não colocar todo o GNOME na árvore crypto só por causa do
+        sistema de ajuda.</p>
+      </answer>
+    </faqentry>
+  </chapter>
+</document>
