@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE news SYSTEM "finknews.dtd">
+<news lang="pt">
+  <cvsid>$Id: news.pt.xml,v 1.1 2009/03/12 17:56:00 alexkhansen Exp $</cvsid>
+
+  <newsitem>
+    <date>2008-07-23</date>
+    <headline>Fim do suporte ao 10.3.</headline>
+    <body>
+      <p>O projeto Fink não pode mais oferecer suporte a usuários do Fink no
+      Mac OS X 10.3. Na verdade tem havido pouco suporte por algum tempo então
+      este anúncio simplesmente formaliza esse fato.</p>
+      <p>Isto significa que não haverá atualizações futuras, nem mesmo de
+      segurança, para usuários do Mac OS X 10.3. Suas instalações atuais
+      continuarão a funcionar mas o software que estiver instalado não será
+      atualizado.</p>
+      <p>Acreditamos que a maioria dos nossos usuários estejam usando Mac OS X
+      10.4 ou 10.5 e esperiamos que esta decisão não seja inconveniente a
+      muitas pessoas.</p>
+    </body>
+  </newsitem>
+
+  <newsitem>
+    <date>2008-07-17</date>
+    <headline>Migração em passa de pacotes.</headline>
+    <body>
+      <p>A atualização massiva do GNOME que esteve em andamento por várias
+      meses foi incorporada à árvore unstable. Os pacotes foram bem testados e
+      as atualizações feitas por usuários aparentam estar ocorrendo
+      tranquilamente.</p>
+      <p>Estamos agora incorporando a atualização do GNOME à árvore stable.
+      Devido ao fato de não termos podido testar antecipadamente as
+      dependências desses novos pacotes, os usuários podem esperar que a árvore
+      stable não esteja tão estável durante as próximas semanas, enquanto os
+      erros serão corrigidos.</p>
+      <p>Se você está ansioso para usar imediatamente essa atualização massiva
+      do GNOME, sugerimos que mude para a árvore unstable. Caso não queira,
+      sugerimos que suspenda a execução de "fink selfupdate" por algum tempo
+      (talvez uma semana ou duas) até que tudo esteja estabilizado
+      novamente.</p>
+    </body>
+  </newsitem>
+
+  <newsitem>
+    <date>2008-06-26</date>
+    <headline>Nova versão do Fink.</headline>
+    <body>
+      <p>Uma nova versão (binária) do Fink para o OS X 10.5 (Leopard) está
+      <varlink url="download/index.php">disponível</varlink> a partir de hoje:
+      versão 0.9.0, a qual pode ser instalada em hardware Intel ou PowerPC.
+      Esta versão inclui códigos fontes, pacotes de binários e instaladores do
+      Fink para ambos os tipos de hardware.</p>
+      <p>Usuários que já tenham instalado o Fink no Leopard a partir do código
+      fonte e que queiram mudar para a distribuição de binários podem fazer o
+      seguinte. Em primeiro lugar, execute <code>fink selfupdate</code> para
+      atualizar para a última versão do gerenciador de pacotes fink. Em
+      seguida, execute <code>fink configure</code> e assegure-se de
+      <em>mudar</em> sua escolha sobre usar a distribuição de binários de Não
+      para Sim. Finalmente, execute <code>fink scanpackages</code> para ativar
+      a distribuição de binários.</p>
+      <p><em>Atualização, 2008-07-11:</em> se você usa o instalador binário,
+      você precisa executar <code>fink selfupdate</code> após a instalação.</p>
+    </body>
+  </newsitem>
+</news>
