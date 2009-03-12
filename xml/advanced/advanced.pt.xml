@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
 <document filename="index" lang="pt">
-  <title>Advanced Fink Topics</title>
-  <shorttitle>Advanced</shorttitle>
-  <cvsid>$Id: advanced.pt.xml,v 1.1 2009/03/01 02:42:14 alexkhansen Exp $</cvsid>
+  <title>Tópicos avançados do Fink</title>
+  <shorttitle>Avançado</shorttitle>
+  <cvsid>$Id: advanced.pt.xml,v 1.2 2009/03/12 18:13:37 alexkhansen Exp $</cvsid>
 
   <preface>
     <p>Este documento descreve tópicos avançados que não estão presentes no
