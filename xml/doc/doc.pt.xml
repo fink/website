@@ -3,7 +3,7 @@
 <article filename="index" lang="pt">
   <title>Fink - Documentação</title>
   <shorttitle>Documentação</shorttitle>
-  <cvsid>$Id: doc.pt.xml,v 1.1 2009/03/01 02:22:14 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: doc.pt.xml,v 1.2 2009/03/12 18:04:00 alexkhansen Exp $</cvsid>
 
   <preface>
     <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
@@ -29,8 +29,7 @@
         <varlink url="advanced/index.php"
         varurl="advanced/advanced.en.html">Guia de tópicos avançados do
         Fink</varlink> - cobre conceitos mais avançados do que os cobertos no
-        Guia do Usuário.
-        <em>(em inglês)</em>
+        Guia do usuário.
       </li>
 
       <li>
