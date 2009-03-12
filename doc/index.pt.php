@@ -1,14 +1,14 @@
 <?
 $title = "Documentação";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/01 02:22:14';
+$cvs_date = 'Date: 2009/03/12 18:04:00';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentação</h1>
-<!--Generated from $Fink: doc.pt.xml,v 1.1 2009/03/01 02:22:14 alexkhansen Exp $-->
+<!--Generated from $Fink: doc.pt.xml,v 1.2 2009/03/12 18:04:00 alexkhansen Exp $-->
     <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
     destes documentos também podem ser úteis a pessoas que usam o Mac OS X sem
     o Fink mas que desejam aprender a portar software Unix.</p>
@@ -28,8 +28,7 @@ include_once "header.inc";
       <li>
         <a href="advanced/index.php">Guia de tópicos avançados do
         Fink</a> - cobre conceitos mais avançados do que os cobertos no
-        Guia do Usuário.
-        <b>(em inglês)</b>
+        Guia do usuário.
       </li>
 
       <li>
