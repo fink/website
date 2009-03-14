@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/14 15:08:33';
+$cvs_date = 'Date: 2009/03/14 22:03:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -67,30 +67,22 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
         "<code>apt-get install</code>" or <code>dselect</code> for
         binaries.</p></div>
     </a>
-    
-    <a name="cctools">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.4: "When I try to install KDE, I get the following message: 'Can't
-        resolve dependency "cctools (&gt;= 446-1)"'"</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This somewhat cryptic message means you need to install the
-        December 2002 Developer Tools.</p></div>
-    </a>
-    
     <a name="libiconv-gettext">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I can't update <code>libiconv</code>.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.4: I can't update <code>libiconv</code>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>you can solve this problem by running</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
     </a>
     <a name="cplusplus-filt">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I can't install a package because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form </p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>since updating to Tiger, then you need to do the following:</p><ul>
-          <li>Flush out your old Developer Tools versions via running <pre>/Developer/Tools/uninstall-devtools.pl</pre>in a terminal.  Then install XCode (2.0 or later).<p></p></li>
-          <li>Reinstall  <code>BSD.pkg</code> (from the Tiger system installation).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
-        </ul><p>
-1) Flush out your old
-2) Reinstall BSD.pkg (from your main OS install)</p></div>
+           <li>Reinstall <code>BSD.pkg</code> (from your installation media).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
+	</ul><p>You also might also need to make sure you don't have any ancient Developer/Xcode Tools stuff laying around:</p><ul>
+	  <li><b>10.4:  </b>Flush out your old Xcode Tools versions via running<code> /Developer/Tools/uninstall-devtools.pl </code>in a terminal.  Then (re)install XCode (2.4.1 or later).</li>
+	  <li><b>10.5:  </b>Flush out your old Xcode Tools versions via running<code> /Developer/Library/uninstall-devtools </code>in a terminal.  Then (re)install Xcode (3.0 or later).</li>
+        </ul></div>
     </a>
     <a name="gettext-tools">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink refuses to update the <code>gettext</code> package,
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: Fink refuses to update the <code>gettext</code> package,
 complaining that the dependencies are in an inconsistent state.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> After running <code>fink selfupdate</code> to be sure you
 have the latest versions, try <code>fink update gettext-tools</code>.
@@ -98,14 +90,14 @@ An old version of the <code>gettext-tools</code> package may be
 preventing you from updating <code>gettext</code>.</p></div>
     </a>
   <a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.7: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are a couple of flavors of error.  One involves missing libraries:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
     <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code>.  The current wisdom on the best
     fix for such an issue is to install Xcode 3.1 and then apply the latest release update from 
     <a href="http://xquartz.macosforge.org/trac/wiki">macosforge.org</a>.</p><p>A second issue involves undefined symbols:  "<code>_gdk_threads_add_idle referenced from libgtk-x11-2 expected to be defined in libgdk-x11-2</code>", etc.</p><p>Removing the existing <code>gtk+2-dev</code> package will allow the build to proceed.</p></div>
   </a>
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.9: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I'm having issues with a package that isn't listed here.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
       up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
