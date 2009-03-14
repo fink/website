@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.94 2009/03/08 16:24:26 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.95 2009/03/14 15:08:33 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -363,13 +363,45 @@ fink selfupdate</codeblock>
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
         <em>packagename</em></code>.</p>
-	<p><em>New in </em><code>fink-0.26</code><em>:</em>  If you run <code>fink configure</code> one of the questions will ask whether you want to turn the unstable trees on.  You will need to run <code>fink selfupdate; fink index; fink scanpackages</code> afterward.  <em>Note: </em>you must have either rsync or cvs updating turned on to get new package descriptions.</p>
-        <p>To configure Fink to use unstable when you have an earlier version of the <code>fink</code> tool than <em>0.26</em>, edit
-        <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code>
-        and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p>
-        <p>Also note, if you don't want to install any more from unstable than
-        your specific package(s) and its (their) dependencies, don't use the
+	<p>For <code>fink-0.26</code> and later:  If you run
+	<code>fink configure</code> one of the questions will ask whether you
+	want to turn the unstable trees on.  </p>
+	<p>To configure Fink to use unstable
+	when you have an earlier version of the <code>fink</code> tool than
+	<em>0.26</em>, edit
+        <filename>/sw/etc/fink.conf</filename>, and add <code>unstable/main</code>
+        and <code>unstable/crypto</code> to the <code>Trees:</code> line.</p>
+	<p>If you use Fink Commander, then there is a Preference to use unstable
+	packages.</p>
+	<p>None of these options actually download the unstable tree's package
+	descriptions.You'll need to turn on <code>rsync</code> or
+	<code>cvs</code> updating to do this, which is not set up by default on a new
+	Fink installation.  The following command sequence will set you up on
+	a new Fink installation:</p>
+	<codeblock>fink selfupdate</codeblock>
+	<p>followed by</p>
+	<codeblock>fink selfupdate-rsync</codeblock>
+	<p>or</p>
+	<codeblock>fink selfupdate-cvs</codeblock>
+	<p>and then</p>
+	<codeblock>fink index -f
+fink scanpackages</codeblock>
+	<p><em>Note:</em>  There are Fink Commander analogs for everything except
+	<code>fink index -f</code>.  You will have to use the command line for that.</p>
+	<p>If you're already set up with <code>rsync</code> or <code>cvs</code>
+	updating, then the following
+	command sequence (or the Fink Commander analogs) will suffice:</p>
+	<codeblock>
+fink selfupdate
+fink index
+fink scanpackages
+	</codeblock>
+	<p>If you're not sure what your update method is, check
+	<code>fink --version</code> in at a command line
+	and see if that mentions <code>cvs</code> or <code>rsync</code>.</p>
+	<p>If you don't want to install any more from unstable than
+        your specific package(s) and its (their) dependencies, (and any base packages
+	that got updated) don't use the
         <code>update-all</code> command until you turn the unstable tree
         back off.</p>
       </answer>
