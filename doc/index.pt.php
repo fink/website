@@ -35,7 +35,6 @@ include_once "header.inc";
         <a href="x11/index.php">Executando o X11
         no Mac OS X</a> - cobre conceitos, instalação e execução (também
         direcionado a usuários do Mac OS X em geral).
-        <b>(em inglês)</b>
       </li>
     </ul>
 
