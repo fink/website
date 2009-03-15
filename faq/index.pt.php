@@ -71,42 +71,39 @@ include_once "header.pt.inc";
         encontrado").</a></li><li><a href="comp-general.php?phpLang=pt#missing-make">6.3 Estou recebendo uma mensagem de erro envolvendo o
         <code>make</code>.</a></li><li><a href="comp-general.php?phpLang=pt#head">6.4 Estou recebendo do comando head uma mensagem estranha. O que está
         errado?</a></li><li><a href="comp-general.php?phpLang=pt#also_in">6.5 Quando tento instalar um pacote, recebo uma mensagem de erro sobre
-        tentativa de sobrescrita de um arquivo que está em outro pacote.</a></li><li><a href="comp-general.php?phpLang=pt#weak_lib">6.6 After I installed the December 2002 Development Tools I get
-        messages about "weak libraries".</a></li><li><a href="comp-general.php?phpLang=pt#mv-failed">6.7 O que significa "execution of mv failed, exit code 1" quando eu
-        tento compilar um pacote?</a></li><li><a href="comp-general.php?phpLang=pt#node-exists">6.8 Não consito instalar ou atualizar um pacote porque aparece uma
-        mensagem dizendo que um nó já existe ("node already exists").</a></li><li><a href="comp-general.php?phpLang=pt#usr-local-libs">6.9 Ouvi dizer que bibliotecas e arquivos de cabeçalho instalados sob
+        tentativa de sobrescrita de um arquivo que está em outro pacote.</a></li><li><a href="comp-general.php?phpLang=pt#mv-failed">6.6 O que significa "execution of mv failed, exit code 1" quando eu
+        tento compilar um pacote?</a></li><li><a href="comp-general.php?phpLang=pt#node-exists">6.7 Não consito instalar ou atualizar um pacote porque aparece uma
+        mensagem dizendo que um nó já existe ("node already exists").</a></li><li><a href="comp-general.php?phpLang=pt#usr-local-libs">6.8 Ouvi dizer que bibliotecas e arquivos de cabeçalho instalados sob
         /usr/local causam problemas eventuais de compilação no Fink. É
-        verdade?</a></li><li><a href="comp-general.php?phpLang=pt#toc-out-of-date">6.10 Quando tento compilar um pacote, recebo uma mensagem dizendo que um
+        verdade?</a></li><li><a href="comp-general.php?phpLang=pt#toc-out-of-date">6.9 Quando tento compilar um pacote, recebo uma mensagem dizendo que um
         sumário ("table of contents") está desatualizado ("out of date"). O que
-        preciso fazer?</a></li><li><a href="comp-general.php?phpLang=pt#fc-atlas">6.11 O Fink Commander trava quando tento instalar o pacote atlas.</a></li><li><a href="comp-general.php?phpLang=pt#basic-headers">6.12 Eu recebo mensagens dizendo que os arquivos
+        preciso fazer?</a></li><li><a href="comp-general.php?phpLang=pt#fc-atlas">6.10 O Fink Commander trava quando tento instalar o pacote atlas.</a></li><li><a href="comp-general.php?phpLang=pt#basic-headers">6.11 Eu recebo mensagens dizendo que os arquivos
         <code>stddef.h</code> | <code>wchar.h</code> |
         <code>stdlib.h</code> | <code>crt1.o</code> estão
         faltando ou que meu compilador C não consegue criar executáveis
-        (<q>C compiler cannot create executables</q>).</a></li><li><a href="comp-general.php?phpLang=pt#multiple-dependencies">6.13 Não consigo fazer uma atualização porque o Fink não consegue
+        (<q>C compiler cannot create executables</q>).</a></li><li><a href="comp-general.php?phpLang=pt#multiple-dependencies">6.12 Não consigo fazer uma atualização porque o Fink não consegue
         resolver conflito de versão ou dependências múltiplas ("unable to
-        resolve version conflict on multiple dependencies").</a></li><li><a href="comp-general.php?phpLang=pt#dpkg-parse-error">6.14 Não consigo instalar nada porque recebo a mensagem "dpkg: parse
-        error, in file `/sw/var/lib/dpkg/status'"!</a></li><li><a href="comp-general.php?phpLang=pt#freetype-problems">6.15 Estou recebendo erros envolvendo o freetype.</a></li><li><a href="comp-general.php?phpLang=pt#dlfcn-from-oo">6.16 Estou recebendo erros de compilação envolvendo "Dl_info".</a></li><li><a href="comp-general.php?phpLang=pt#gcc2">6.17 O Fink diz que está faltando <code>gcc2</code> ou
-        <code>gcc3.1</code> mas não consigo instalá-lo.</a></li><li><a href="comp-general.php?phpLang=pt#system-java">6.18 O Fink apresenta a mensagem <code>Failed: Can't resolve dependency
-        "system-java14-dev"</code> mas esse pacote não existe.</a></li><li><a href="comp-general.php?phpLang=pt#dpkg-split">6.19 Quando tento instalar qualquer pacote, recebo a mensagem <q>dpkg
+        resolve version conflict on multiple dependencies").</a></li><li><a href="comp-general.php?phpLang=pt#dpkg-parse-error">6.13 Não consigo instalar nada porque recebo a mensagem "dpkg: parse
+        error, in file `/sw/var/lib/dpkg/status'"!</a></li><li><a href="comp-general.php?phpLang=pt#freetype-problems">6.14 Estou recebendo erros envolvendo o freetype.</a></li><li><a href="comp-general.php?phpLang=pt#dlfcn-from-oo">6.15 Estou recebendo erros de compilação envolvendo "Dl_info".</a></li><li><a href="comp-general.php?phpLang=pt#gcc2">6.16 O Fink diz que está faltando <code>gcc2</code> ou
+        <code>gcc3.1</code> mas não consigo instalá-lo.</a></li><li><a href="comp-general.php?phpLang=pt#system-java">6.17 O Fink apresenta a mensagem <code>Failed: Can't resolve dependency
+        "system-java14-dev"</code> mas esse pacote não existe.</a></li><li><a href="comp-general.php?phpLang=pt#dpkg-split">6.18 Quando tento instalar qualquer pacote, recebo a mensagem <q>dpkg
         (subprocess): failed to exec dpkg-split to see if it's part of a
         multiparter: No such file or directory</q>. Como faço para corrigir
-        isto?</a></li><li><a href="comp-general.php?phpLang=pt#xml-parser">6.20 Estou recebendo a seguinte mensagem: <q>configure: error:
+        isto?</a></li><li><a href="comp-general.php?phpLang=pt#xml-parser">6.19 Estou recebendo a seguinte mensagem: <q>configure: error:
         XML::Parser perl module is required for intltool</q>. O que preciso
-        fazer?</a></li><li><a href="comp-general.php?phpLang=pt#master-problems">6.21 Estou tentando baixar um pacote mas o Fink vai para um site estranho
-        com <q>distfiles</q> no nome e o arquivo não está lá.</a></li><li><a href="comp-general.php?phpLang=pt#compile-options">6.22 Quero que o Fink use opções diferentes na compilação de um
-        pacote.</a></li><li><a href="comp-general.php?phpLang=pt#gettext">6.23 Sempre que tento compilar a partir do código fonte, o Fink fica
-        reclamando sobre <code>gettext-dev</code> e
-        <code>libgettext3-dev</code>.</a></li><li><a href="comp-general.php?phpLang=pt#python-mods">6.24 Estou recebendo erros com relação a
+        fazer?</a></li><li><a href="comp-general.php?phpLang=pt#master-problems">6.20 Estou tentando baixar um pacote mas o Fink vai para um site estranho
+        com <q>distfiles</q> no nome e o arquivo não está lá.</a></li><li><a href="comp-general.php?phpLang=pt#compile-options">6.21 Quero que o Fink use opções diferentes na compilação de um
+        pacote.</a></li><li><a href="comp-general.php?phpLang=pt#alternates">6.22 Sempre que tento compilar a partir do código fonte, o Fink fica
+        reclamando sobre versões alternadas da mesma biblioteca.</a></li><li><a href="comp-general.php?phpLang=pt#python-mods">6.23 Estou recebendo erros com relação a
         <code>MACOSX_DEPLOYMENT_TARGET</code> quando tento compilar um módulo
-        Python.</a></li><li><a href="comp-general.php?phpLang=pt#libtool-unrecognized-dynamic">6.25 Eu recebo erros <q>unrecognized option `-dynamic'</q> da
+        Python.</a></li><li><a href="comp-general.php?phpLang=pt#libtool-unrecognized-dynamic">6.24 Eu recebo erros <q>unrecognized option `-dynamic'</q> da
         <code>libtool</code>.</a></li></ul></li><li><a href="comp-packages.php?phpLang=pt"><b>7 Problemas de compilação - Pacotes específicos</b></a><ul><li><a href="comp-packages.php?phpLang=pt#libgtop">7.1 Um pacote não compila devido a erros em relação ao
         <code>sed</code>.</a></li><li><a href="comp-packages.php?phpLang=pt#cant-install-xfree">7.2 Eu quero mudar para os pacotes XFree86 do Fink mas não consigo
         instalar <code>xfree86-base</code> | <code>xfree86</code> devido a
         conflito com <code>system-xfree86</code>.</a></li><li><a href="comp-packages.php?phpLang=pt#change-thread-nothread">7.3 Como faço para mudar de uma versão sem threads do pacote XFree86 do
-        Fink para uma versão com threads (ou vice-versa)?</a></li><li><a href="comp-packages.php?phpLang=pt#cctools">7.4 "Quando tento instalar o KDE, recebo a seguinte mensagem 'Can't
-        resolve dependency "cctools (&gt;= 446-1)"'"</a></li><li><a href="comp-packages.php?phpLang=pt#libiconv-gettext">7.5 Não consigo atualizar a <code>libiconv</code>.</a></li><li><a href="comp-packages.php?phpLang=pt#cplusplus-filt">7.6 Não consigo instalar o <code>g77</code> porque está faltando o
-        <code>c++filt</code>. De onde posso obtê-lo?</a></li><li><a href="comp-packages.php?phpLang=pt#gettext-tools">7.7 O Fink se recusa a atualizar o pacote <code>gettext</code>,
-        reclamando que as dependências estão em um estado inconsistente.</a></li><li><a href="comp-packages.php?phpLang=pt#Leopard-libXrandr">7.8 Não consigo instalar o <b>gtk+2</b> no OS 10.5.</a></li><li><a href="comp-packages.php?phpLang=pt#all-others">7.9 Estou tendo problemas com um pacote que não está listado aqui.</a></li></ul></li><li><a href="usage-general.php?phpLang=pt"><b>8 Problemas no uso de pacotes - Geral</b></a><ul><li><a href="usage-general.php?phpLang=pt#xlocale">8.1 Estou recebendo várias mensagens como "locale not supported by C
+        Fink para uma versão com threads (ou vice-versa)?</a></li><li><a href="comp-packages.php?phpLang=pt#libiconv-gettext">7.4 Não consigo atualizar a <code>libiconv</code>.</a></li><li><a href="comp-packages.php?phpLang=pt#cplusplus-filt">7.5 Não consigo instalar um pacote porque está faltando o
+        <code>c++filt</code>. De onde posso obtê-lo?</a></li><li><a href="comp-packages.php?phpLang=pt#gettext-tools">7.6 O Fink se recusa a atualizar o pacote <code>gettext</code>,
+        reclamando que as dependências estão em um estado inconsistente.</a></li><li><a href="comp-packages.php?phpLang=pt#Leopard-libXrandr">7.7 Não consigo instalar o <b>gtk+2</b> no OS 10.5.</a></li><li><a href="comp-packages.php?phpLang=pt#all-others">7.8 Estou tendo problemas com um pacote que não está listado aqui.</a></li></ul></li><li><a href="usage-general.php?phpLang=pt"><b>8 Problemas no uso de pacotes - Geral</b></a><ul><li><a href="usage-general.php?phpLang=pt#xlocale">8.1 Estou recebendo várias mensagens como "locale not supported by C
         library" ("local não suportado por biblioteca C"). Isso é ruim?</a></li><li><a href="usage-general.php?phpLang=pt#passwd">8.2 Surgiram de repente vários usuários estranhos no meu sistema com
         nomes como "mysql", "pgsql" e "games". De onde eles vieram?</a></li><li><a href="usage-general.php?phpLang=pt#compile-myself">8.3 Como faço para compilar algo usando softwares instalados pelo
         Fink?</a></li><li><a href="usage-general.php?phpLang=pt#apple-x11-applications-menu">8.4 Não consigo rodar nenhuma dos meus aplicativos instalados via Fink

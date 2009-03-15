@@ -65,20 +65,8 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Is
         eles são nominalmente o mesmo arquivo):</p><pre>sudo dpkg -i --force-overwrite <b>nomedoarquivo</b></pre><p>onde <b>nomedoarquivo</b> é o arquivo .deb correspondente ao
         pacote que você esteja tentando instalar.</p></div>
     </a>
-    <a name="weak_lib">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.6: After I installed the December 2002 Development Tools I get
-        messages about "weak libraries".</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is new with the December 2002 Tools. You may occasionally see
-        messages like (choosing libgdk-pixbuf as an example):</p><pre>ld: warning dynamic shared library:
-/sw/lib/libgdk-pixbuf.dylib not made a weak library in output with
-MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</pre><p>You may regard these as harmless. If you are curious, read through
-        the release notes in the developer documentation directory, especially
-        GCC's and the linker's, for more info. It essentially has to do with
-        whether missing symbols at runtime is considered a fatal error on
-        startup or not, for applications that use weak references.</p></div>
-    </a>
     <a name="mv-failed">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.7: O que significa "execution of mv failed, exit code 1" quando eu
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.6: O que significa "execution of mv failed, exit code 1" quando eu
         tento compilar um pacote?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Se você tiver o StuffIt Pro instalado, pode ser que voce tenha o
         modo "Archive via Real Name" ("Arquivar pelo Nome Real") habilitado.
@@ -99,7 +87,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>então você deve procurar por <co
         tentativa de compilação.</p></div>
     </a>
     <a name="node-exists">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.8: Não consito instalar ou atualizar um pacote porque aparece uma
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.7: Não consito instalar ou atualizar um pacote porque aparece uma
         mensagem dizendo que um nó já existe ("node already exists").</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Estes erros se parecem com o seguinte:</p><pre>Failed: Internal error: node for system-xfree86 already exists</pre><p>O problema é que o mecanismo de dependências está confuso devido a
         mudanças em alguns dos arquivos de descrição de pacotes. Para
@@ -118,7 +106,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>então você deve procurar por <co
         </ul></div>
     </a>
     <a name="usr-local-libs">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.9: Ouvi dizer que bibliotecas e arquivos de cabeçalho instalados sob
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.8: Ouvi dizer que bibliotecas e arquivos de cabeçalho instalados sob
         /usr/local causam problemas eventuais de compilação no Fink. É
         verdade?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Este é uma fonte de problemas frequente porque o script de
@@ -134,7 +122,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>então você deve procurar por <co
         <code>/usr/local</code>:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
     </a>
     <a name="toc-out-of-date">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.10: Quando tento compilar um pacote, recebo uma mensagem dizendo que um
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.9: Quando tento compilar um pacote, recebo uma mensagem dizendo que um
         sumário ("table of contents") está desatualizado ("out of date"). O que
         preciso fazer?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> A saída dá uma dica de o que fazer. A mensagem é geralmente parecida
@@ -145,14 +133,14 @@ rerun ranlib(1) (can't load from it)</pre><p>O que você precisa fazer é execut
         caso acima, você executaria:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
     </a>
     <a name="fc-atlas">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.11: O Fink Commander trava quando tento instalar o pacote atlas.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.10: O Fink Commander trava quando tento instalar o pacote atlas.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Isto acontece porque um dos passos durante a compilação do pacote
         <code>atlas</code> faz uma pergunta ao usuário que o Fink Commander não
         detecta. Você terá que executar o comando <code>fink install
         atlas</code> no lugar de instalá-lo pelo Fink Commander.</p></div>
     </a>
     <a name="basic-headers">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: Eu recebo mensagens dizendo que os arquivos
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.11: Eu recebo mensagens dizendo que os arquivos
         <code>stddef.h</code> | <code>wchar.h</code> |
         <code>stdlib.h</code> | <code>crt1.o</code> estão
         faltando ou que meu compilador C não consegue criar executáveis
@@ -166,7 +154,7 @@ rerun ranlib(1) (can't load from it)</pre><p>O que você precisa fazer é execut
         quando sua versão do Xcode é para uma versão anterior do OS.</p></div>
     </a>
     <a name="multiple-dependencies">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.13: Não consigo fazer uma atualização porque o Fink não consegue
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.12: Não consigo fazer uma atualização porque o Fink não consegue
         resolver conflito de versão ou dependências múltiplas ("unable to
         resolve version conflict on multiple dependencies").</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Para contornar este problema, tente atualizar um único pacote e
@@ -174,7 +162,7 @@ rerun ranlib(1) (can't load from it)</pre><p>O que você precisa fazer é execut
         ainda receber a mensagem, repita o processo.</p></div>
     </a>
     <a name="dpkg-parse-error">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.14: Não consigo instalar nada porque recebo a mensagem "dpkg: parse
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.13: Não consigo instalar nada porque recebo a mensagem "dpkg: parse
         error, in file `/sw/var/lib/dpkg/status'"!</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Isto significa que de alguma forma o seu banco de dados dpkg foi
         corrompido, geralmente por um travamento ou algum erro irrecuperável.
@@ -183,7 +171,7 @@ rerun ranlib(1) (can't load from it)</pre><p>O que você precisa fazer é execut
         que você instalou antes de o problema começar a ocorrer.</p></div>
     </a>
     <a name="freetype-problems">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.15: Estou recebendo erros envolvendo o freetype.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.14: Estou recebendo erros envolvendo o freetype.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Existem muitas variedades desses erros. Se você receber o
         seguinte:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>verifique se você tem um executável
         <code>freetype-config</code> perdido através do comando</p><pre>type -a freetype-config</pre><p>caso esteja usando <code>bash</code> ou</p><pre>where freetype-config</pre><p>caso esteja usando <code>tcsh</code>. Sabe-se que o
@@ -236,15 +224,10 @@ Failed: compiling gtk+2-2.2.4-2 failed</pre><p>o problema é devido a uma confus
         arquivos de cabeçalho do <code>freetype2</code> que são parte do X11 |
         XFree86. O comando</p><pre>fink remove freetype freetype-hinting</pre><p>removerá qualquer variante que você haja instalado. Por outro lado,
         se seu erro é parecido com:</p><pre>ld: Undefined symbols: _FT_Access_Frame</pre><p>isto é normalmente devido a um arquivo residual de uma instalação
-        prévia do X11. Reinstale o X11 SDK.</p><p>Por último, se o seu erro for parecido com</p><pre>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
-undefined reference to _FT_Access_Frame</pre><p>então você provavelmente tem uma versão binária que foi compilada
-        sem problemas com o <code>gcc3.3</code> no Jaguar mas não funciona no
-        Panther. Isto já foi atualizado então você precisa apenas atualizar
-        seus pacotes, por exemplo via <code>sudo apt-get update ; sudo apt-get
-        dist-upgrade</code>.</p></div>
+        prévia do X11. Reinstale o X11 SDK.</p></div>
     </a>
     <a name="dlfcn-from-oo">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.16: Estou recebendo erros de compilação envolvendo "Dl_info".</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.15: Estou recebendo erros de compilação envolvendo "Dl_info".</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Se você tem um erro parecido com</p><pre>unix_dl.c: In function `rep_open_dl_library':
 unix_dl.c:328: warning: assignment discards qualifiers from pointer target type 
 unix_dl.c: In function `rep_find_c_symbol': 
@@ -263,7 +246,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="gcc2">
       
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.17: O Fink diz que está faltando <code>gcc2</code> ou
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.16: O Fink diz que está faltando <code>gcc2</code> ou
         <code>gcc3.1</code> mas não consigo instalá-lo.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Isto é porque <code>gcc2</code> e
         <code>gcc3.1</code> são pacotes virtuais que indicam a presença
@@ -274,7 +257,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
         com seu compilador gcc3.3--eles podem coexistir.</p></div>
     </a>
     <a name="system-java">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.18: O Fink apresenta a mensagem <code>Failed: Can't resolve dependency
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.17: O Fink apresenta a mensagem <code>Failed: Can't resolve dependency
         "system-java14-dev"</code> mas esse pacote não existe.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> É porque é um pacote virtual. Esse tipo de erro acontece quando o
         Java é atualizado pelo Atualização de Software: os arquivos de
@@ -284,7 +267,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
         pacote é <code>Java 1.4.2 Developer Tools</code>.</p></div>
     </a>
     <a name="dpkg-split">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.19: Quando tento instalar qualquer pacote, recebo a mensagem <q>dpkg
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.18: Quando tento instalar qualquer pacote, recebo a mensagem <q>dpkg
         (subprocess): failed to exec dpkg-split to see if it's part of a
         multiparter: No such file or directory</q>. Como faço para corrigir
         isto?</b></p></div>
@@ -292,7 +275,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
         do ambiente conforme <a href="usage-fink.php?phpLang=pt#fink-not-found">esta pergunta</a>.</p></div>
     </a>
     <a name="xml-parser">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.20: Estou recebendo a seguinte mensagem: <q>configure: error:
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.19: Estou recebendo a seguinte mensagem: <q>configure: error:
         XML::Parser perl module is required for intltool</q>. O que preciso
         fazer?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Caso esteja usando a árvore unstable, assegure-se de ter instalado o
@@ -308,7 +291,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
         <code>pm580</code>.</p></div>
     </a>
     <a name="master-problems">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.21: Estou tentando baixar um pacote mas o Fink vai para um site estranho
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.20: Estou tentando baixar um pacote mas o Fink vai para um site estranho
         com <q>distfiles</q> no nome e o arquivo não está lá.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O que aconteceu aqui é que o Fink está tentando usar um dos seus
         espelhos <q>mestres</q>. Eles foram configurados para garantir
@@ -320,7 +303,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
         mestres por último.</p></div>
     </a>
     <a name="compile-options">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.22: Quero que o Fink use opções diferentes na compilação de um
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.21: Quero que o Fink use opções diferentes na compilação de um
         pacote.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> A primeira coisa a fazer é entrar em contato com o mantenedor do
         pacote para solicitar uma variante. Isto pode ser relativamente fácil
@@ -334,32 +317,26 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
         acontecerão com um pacote oficial. Caso as queira, você terá que
         fazê-las por sua própria conta.</p></div>
     </a>
-    <a name="gettext">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.23: Sempre que tento compilar a partir do código fonte, o Fink fica
-        reclamando sobre <code>gettext-dev</code> e
-        <code>libgettext3-dev</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Alguns pacotes que precisão dos arquivos de cabeçalho do
-        <code>gettext</code> para compilar foram atualizados para usar o
-        <code>libgettext3-dev</code> e alguns ainda usam
-        <code>gettext-dev</code>. Consequentemente, o Fink pode tentar trocar
-        para um que não esteja atualmente instalado no sistema a fim de
-        satisfazer uma dependência de compilação de algum pacote que esteja
-        tentando atualizar. Além disso, a ferramenta <code>fink</code> trata o
-        <code>gettext-dev</code> como essencial e irá instalá-lo sempre que
-        você proceder uma auto-atualização.</p><p>Um comportamento similar pode acontecer também com outros pares de
-        pacotes.</p><p>Infelizmente, devido a limitações no mecanismo de dependências de
-        compilação, você pode encontrar problemas porque você trocou para um
-        dos pacotes mas algum pacote, compilado posteriormente, pode querer o
-        outro. Normalmente você pode proceder repetindo novamente sua
-        atualização.</p><p>Em casos extremos você pode chegar ao ponto de instalar os pacotes
-        que dependam de <code>gettext-dev</code> separadamente daqueles que
-        precisam de <code>libgettext3-dev</code> (ou qualquer que seja o par
-        que esteja causando problemas). Talvez você tenha que instalar pacotes
-        um de cada vez.</p><p>Esperamos que uma correção permanente esteja disponível no
-        <code>fink-0.24.9</code>.</p></div>
+    <a name="alternates">
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.22: Sempre que tento compilar a partir do código fonte, o Fink fica
+        reclamando sobre versões alternadas da mesma biblioteca.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> É comum que, em uma árvore de compilação complicada, você descubra
+        que alguns pacotes dependem de uma versão específica de uma biblioteca
+        e outros dependam em uma versão diferente (por exemplo,
+        <code>db47</code> vs. <code>db44</code>). Consequentemente, o Fink pode
+        tentar trocar para aquela que não estiver instalada atualmente de forma
+        a satisfazer a dependência de compilação do pacote que você deseja
+        atualizar.</p><p>Infelizmente, devido a limitações do mecanismo de dependências de
+        compilação, você pode encontrar a famigerada mensagem</p><pre>Fink::SysState: Could not resolve inconsistent dependencies</pre><p>ao tentar um <code>update-all</code> suficientemente complicado.
+        Esta situação geralmente lhe fornece um comando para tentar resolver o
+        problema:</p><pre>fink scanpackages
+sudo apt-get update
+sudo apt-get install foo=1.23-4</pre><p>mas isto pode não funcionar para atualizações suficientemente
+        complicadas. Você talvez precise atualizar pacotes um-a-um, ao menos
+        por algum tempo.</p></div>
     </a>
     <a name="python-mods">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.24: Estou recebendo erros com relação a
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.23: Estou recebendo erros com relação a
         <code>MACOSX_DEPLOYMENT_TARGET</code> quando tento compilar um módulo
         Python.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Para erros parecidos com:</p><pre>running build
@@ -386,7 +363,7 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
         <code>python2*</code> apropriado.</p></div>
     </a>
     <a name="libtool-unrecognized-dynamic">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.25: Eu recebo erros <q>unrecognized option `-dynamic'</q> da
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.24: Eu recebo erros <q>unrecognized option `-dynamic'</q> da
         <code>libtool</code>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O erro</p><pre> libtool: unrecognized option `-dynamic'</pre><p>normalmente significa que você substituiu a
         <code>/usr/bin/libtool</code> da Apple por uma

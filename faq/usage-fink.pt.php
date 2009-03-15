@@ -120,21 +120,32 @@ include_once "header.pt.inc";
         ao mantenedor do pacote caso funcione ou não. Feedback de usuários como
         você é algo que usamos para determinar se um pacote está pronto para a
         árvore stable! Para descobrir o mantenedor de um pacote, execute o
-        comando <code>fink info <b>nomedopacote</b></code>.</p><p><b>Novidade no</b> <code>fink-0.26</code><b>:</b> Se você
-        executar o comando <code>fink configure</code>, uma das perguntas será
-        se você quer ativar a árvore unstable. Você precisará executar
-        <code>fink selfupdate; fink index; fink scanpackages</code> depois
-        disso. <b>Observação:</b> você precisa ter ativado a atualização via
-        rsync ou CVS para obter as novas descrições de pacotes.</p><p>Para configurar o Fink para que ele use a árvore unstable quando você
-        tiver uma versão da ferramenta <code>fink</code> mais antiga do que a
-        <b>0.26</b>, adicione <code>unstable/main</code> e
-        <code>unstable/crypto</code> à linha <code>Trees:</code> do arquivo
-        <code>/sw/etc/fink.conf</code> e depois execute os comandos
-        <code>fink selfupdate; fink index; fink scanpackages</code>. Da mesma
-        forma como acima, você precisa usar a atualização via rsync ou CVS.</p><p>Veja também que caso você não queira instalar outros pacotes da
-        árvore unstable além do pacote específico que você quer e as
-        dependências associadas, não use o comando <code>updaet-all</code> até
-        que você desabilite a árvore unstable.</p></div>
+        comando <code>fink info <b>nomedopacote</b></code>.</p><p>Para o <code>fink-0.26</code> e posteriores: se você executar
+        <code>fink configure</code> uma das perguntas será sobre você querer
+        ativar as árvores unstable.</p><p>Para configurar o Fink para que unstable quando você tiver uma
+        versão da ferramenta <code>fink</code> anterior à <b>0.26</b>, edite
+        o arquivo <code>/sw/etc/fink.conf</code> e adicione
+        <code>unstable/main</code> e <code>unstable/crypto</code> à linha
+        <code>Trees:</code>.</p><p>Caso você use o Fink Commander, então há uma Preferência para usar
+        pacotes instáveis.</p><p>Nenhuma destas opções de fato baixa as descrições de pacotes da
+        árvore unstable. Você precisará ativar atualização via
+        <code>rsync</code> ou <code>cvs</code> para fazê-lo, sendo estas opções
+        de atualização não são ativadas por padrão em uma instalação nova do
+        Fink. A seguinte sequência de comandos fará a configuração em uma
+        instalação nova do Fink:</p><pre>fink selfupdate</pre><p>seguido por</p><pre>fink selfupdate-rsync</pre><p>ou</p><pre>fink selfupdate-cvs</pre><p>e então</p><pre>fink index -f
+fink scanpackages</pre><p><b>Observação:</b> Existem opções análogas no Fink Commander com
+        exceção de <code>fink index -f</code>. Você terá que usar a linha de
+        comando para tal.</p><p>Se você já estiver configurado com atualização via
+        <code>rsync</code> ou <code>cvs</code>, então a seguinte sequência de
+        comandos (ou as opções análogas no Fink Commander) são suficientes:</p><pre>fink selfupdate
+fink index
+fink scanpackages</pre><p>Se você não tiver certeza de qual método de atualização você está
+        usando, execute o comando <code>fink --version</code> em uma linha de
+        comando e veja se ele menciona <code>cvs</code> ou
+        <code>rsync</code>.</p><p>Se você não mais quiser instalar da árvore unstable nada além de
+        um(ns) pacote(s) específico(s) e sua(s) dependência(s), (e quaisquer
+        pacotes base que foram atualizados) então não use o comando
+        <code>update-all</code> até que você desative a árvore unstable.</p></div>
     </a>
     <a name="unstable-onepackage">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.9: Eu preciso <b>realmente</b> habilitar toda a árvore unstable só

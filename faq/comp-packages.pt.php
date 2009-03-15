@@ -61,34 +61,32 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>O Fink Com
         fontes, "<code>apt-get install</code>" ou "<code>dselect</code>" para
         binários.</p></div>
     </a>
-    
-    <a name="cctools">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.4: "Quando tento instalar o KDE, recebo a seguinte mensagem 'Can't
-        resolve dependency "cctools (&gt;= 446-1)"'"</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Esta mensagem meio obscura significa que você precisa instalar o
-        December 2002 Developer Tools.</p></div>
-    </a>
-    
     <a name="libiconv-gettext">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: Não consigo atualizar a <code>libiconv</code>.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.4: Não consigo atualizar a <code>libiconv</code>.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Caso esteja recebendo erros no formato:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>você pode resolver o problema executando os comandos</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
     </a>
     <a name="cplusplus-filt">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: Não consigo instalar o <code>g77</code> porque está faltando o
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: Não consigo instalar um pacote porque está faltando o
         <code>c++filt</code>. De onde posso obtê-lo?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Caso esteja recebendo erros no formato</p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>desde que atualizou para o Tiger, então você precisa fazer o
         seguinte:</p><ul>
-          <li>Elimine suas versões antigas do Developer Tools através do comando
-          <pre>/Developer/Tools/uninstall-devtools.pl</pre> em um
-          terminal. Instale então o Xcode (2.0 ou mais recente).</li>
-          <li>Reinstale o <code>BSD.pkg</code> (do disco de instalação do
-          Tiger). Se <code>/usr/bin/c++filt</code> não aparecer, continue
-          tentando.</li>
+          <li>Reinstale o <code>BSD.pkg</code> que está presente em sua mídia
+          de instalação. Se o <code>/usr/bin/c++filt</code> não aparecer,
+          continue tentando.</li>
+        </ul><p>Talvez você precise verificar se não há artefatos antigos do
+        Developer/Xcode Tools presentes em seu sistema:</p><ul>
+          <li><b>10.4:</b> Elimine suas versões antigas do Xcode Tools
+          através do comando
+          <code>/Developer/Tools/uninstall-devtools.pl</code> em um terminal.
+          Então (re)instale o Xcode (2.4.1 ou mais recente).</li>
+          <li><b>10.5:</b> Elimine suas versões antigas do Xcode Tools
+          através do comando <code>/Developer/Library/uninstall-devtools</code>
+          em um terminal. Então (re)instale o Xcode (3.0 ou mais recente).</li>
         </ul></div>
     </a>
     <a name="gettext-tools">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: O Fink se recusa a atualizar o pacote <code>gettext</code>,
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: O Fink se recusa a atualizar o pacote <code>gettext</code>,
         reclamando que as dependências estão em um estado inconsistente.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Após executar o comando <code>fink selfupdate</code> para garantir
         que tenha as últimas versões, execute o comando <code>fink update
@@ -97,7 +95,7 @@ fink install libiconv</pre></div>
         <code>gettext</code>.</p></div>
     </a>
   <a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: Não consigo instalar o <b>gtk+2</b> no OS 10.5.</b></p></div>
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Não consigo instalar o <b>gtk+2</b> no OS 10.5.</b></p></div>
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Há algumas variantes deste erro. Uma delas envolve bibliotecas
       ausentes: <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> ou
       <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code>. O melhor
@@ -108,7 +106,7 @@ fink install libiconv</pre></div>
       compilação siga em frente.</p></div>
   </a>
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.9: Estou tendo problemas com um pacote que não está listado aqui.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.8: Estou tendo problemas com um pacote que não está listado aqui.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Dado que problemas com pacotes tendem a ser transientes, decidimos
         colocá-los no wiki do Fink. Veja a <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">página
         de Problemas em pacotes (package issues)</a>.</p></div>
