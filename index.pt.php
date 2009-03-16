@@ -1,7 +1,7 @@
 <?
 $title = "Página inicial";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/16 12:12:31 $';
+$cvs_date = '$Date: 2009/03/16 12:23:38 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, uma distribuição de software Unix para Mac OS X e Darwin">
@@ -41,7 +41,7 @@ include dirname(__FILE__) . "/news/news.pt.inc";
 
 <h1>Status</h1>
 <? 
-include dirname(__FILE__) . "fink_version.inc";
+include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>A versão <? print $fink_version ?> do Fink foi liberada em <? print
