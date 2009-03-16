@@ -1,7 +1,7 @@
 <?
 $title = "Página inicial";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2009/03/12 19:41:42 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/03/16 12:12:31 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, uma distribuição de software Unix para Mac OS X e Darwin">
@@ -32,7 +32,7 @@ tudo a partir do código fonte.
 &nbsp;Notícias</h1>
 <?
 // Include news items
-include $fsroot."news/news.inc";
+include dirname(__FILE__) . "/news/news.pt.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=pt">Notícias Antigas...</a></div>
 
@@ -41,7 +41,7 @@ include $fsroot."news/news.inc";
 
 <h1>Status</h1>
 <? 
-include "fink_version.inc";
+include dirname(__FILE__) . "fink_version.inc";
 ?>
 
 <p>A versão <? print $fink_version ?> do Fink foi liberada em <? print
