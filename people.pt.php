@@ -1,7 +1,7 @@
 <?
 $title = "Colaboradores";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2009/03/12 18:01:48 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/03/22 02:59:18 $';
 
 include "header.inc";
 ?>
@@ -10,7 +10,7 @@ include "header.inc";
 
 <p>O projeto Fink é mantido por um grupo de voluntários. Cada pacote Fink
 possui um Mantenedor que trabalha duro para garantir que o pacote funcione como
-esperado. Além disso há o <a href="organization.php#core">Time Central do
+esperado. Além disso, há o <a href="organization.php#core">Time Central do
 Fink</a> que trabalha no programa fink em si. O site precisa ser atualizado.
 Usuários precisam de suporte, seja através das listas de discussão ou nosso
 canal no IRC. Essas e várias outras tarefas requerem bastante trabalho,

@@ -1,7 +1,7 @@
 <?
 $title = "Sobre";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2009/03/12 18:01:48 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/03/22 02:59:18 $';
 
 include "header.inc";
 ?>
@@ -21,7 +21,7 @@ Em primeiro lugar, modificar softwares de código aberto já existentes tais que
 eles sejam compilados e executados no Mac OS X.
 (Este processo é denominado <em>porting</em>.)
 Em segundo lugar, disponibilizar os softwares para usuários casuais sob a forma
-de uma distribuição coerente e confortável que seja similar ao que os usuários
+de uma distribuição coesa e confortável que seja similar ao que os usuários
 Linux estejam acostumados.
 (Este processo é denominado empacotamento.)
 O projeto oferece pacotes binários pré-compilados bem como um sistema
@@ -32,7 +32,7 @@ completamente automatizado de compilação a partir do código fonte.
 Para atingir estes objetivos, o Fink se baseia nas excelentes ferramentas de
 gerenciamento de pacotes produzidas pelo projeto <a
 href="http://www.debian.org/">Debian</a> - <code>dpkg</code>,
-<code>dselect</code> e <code>apt-get</code>, sobre os quais o Fink adiciona seu
+<code>dselect</code> e <code>apt-get</code>, sobre as quais o Fink adiciona seu
 próprio gerenciador de pacotes, denominado (surpresa!) <code>fink</code>
 Você pode entender o <code>fink</code> como um mecanismo de compilação - ele
 recebe descrições de pacotes e, com base nelas, produz pacotes binários .deb.
@@ -70,13 +70,13 @@ mais precisará se preocupar com Makefiles ou scripts de configuração e seus
 parâmetros.
 O sistema de dependências garante, de forma automática, que todas as
 bibliotecas necessárias estejam presentes.
-De forma geral, nossos pacotes são configurados para conter o conjunto máximo
-de características.
+De forma geral, nossos pacotes são configurados tal que toda a funcionalidade
+dos softwares esteja disponível.
 </p>
 
 <p>
 <b>Segurança.</b>
-A política estritira de não-interferência do Fink garante que as partes
+A política estrita de não-interferência do Fink garante que as partes
 vulneráveis do seu Mac OS X não sejam afetadas.
 Você pode atualizar o Mac OS X sem medo de afetar o Fink e vice-versa.
 Além disso, o sistema de pacotes permite que você remova com segurança os
@@ -84,9 +84,9 @@ softwares de que não mais necessita.
 </p>
 
 <p>
-<b>Coerência.</b>
+<b>Coesão.</b>
 O Fink não é apenas um conjunto aleatório de pacotes mas sim uma distribuição
-coerente.
+coesa.
 Os arquivos instalados são colocados em lugares previsíveis.
 A documentação está sempre atualizada.
 Existe uma interface unicada para controlar os processos servidores.
@@ -94,7 +94,7 @@ E há muito mais trabalhando por você por debaixo dos panos.
 </p>
 
 <p>
-<b>Flexibilidade..</b>
+<b>Flexibilidade.</b>
 Você só precisa baixar e instalar os programas de que necessita.
 O Fink lhe dá a liberdade de instalar o XFree86 ou outras soluções X11 da forma
 que melhor lhe convier.

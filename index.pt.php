@@ -1,7 +1,7 @@
 <?
 $title = "Página inicial";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/16 12:23:38 $';
+$cvs_date = '$Date: 2009/03/22 02:59:18 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, uma distribuição de software Unix para Mac OS X e Darwin">
@@ -18,7 +18,7 @@ include "header.inc";
 <a href="http://www.apple.com/macosx/">Mac OS&nbsp;X</a>.
 Nós modificamos software Unix tal que ele compile e rode no Mac OS&nbsp;X ("nós
 o portamos") e o tornamos disponível para download sob a forma de uma
-distribuição coerente.
+distribuição coesa.
 O Fink usa ferramentas do <a href="http://www.debian.org/">Debian</a> como dpkg
 e apt-get para prover um gerenciamento robusto de pacotes de binários.
 Você pode escolher dentre baixar pacotes de binários pré-compilados ou compilar
@@ -56,14 +56,14 @@ e 0.4.1 (para OS&nbsp;X 10.1) também continuam disponíveis.</p>
 <strong>Suporte a 10.5:</strong> 
 Encorajamos os usuários a atualizarem para o OS 10.5.2 ou mais recente, através
 da Atualização de Software, para que recebem as correções de erros e melhorias
-do X11. Atualizações posteriores continuam a serem disponibilizadas na 
+do X11. Atualizações posteriores continuam a ser disponibilizadas na
 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">Página de
 Atualização do XQuartz.</a></p>
 
 <h1>Recursos</h1>
 
 <p>Caso esteja procurando por suporte, verifique a <a
-href="help/index.php">página de ajuda</a>. Esta página também lista várias
+href="help/index.php">página de ajuda</a>. Essa página também lista várias
 opções para ajudar o projeto e enviar comentários.</p>
 <p>Caso esteja procurando pelos arquivos com código fonte correspondentes aos
 binários distribuídos pelo projeto Fink, por favor consulte <a
