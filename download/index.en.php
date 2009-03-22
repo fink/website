@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2008/09/08 23:07:00 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/03/22 02:56:18 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -91,7 +91,7 @@ Open a new Terminal.app window and run the following: &quot;<code>fink scanpacka
 <p>Once you've updated <code>fink</code>, you can install other packages, using the same syntax, e.g <code>sudo apt-get install gimp</code> to install the Gimp.  Note, however, that not all fink packages are in binary form.</p>
 </li>
 <li>
-<p>Install from source (requires the XCode Tools [Developer Tools on 10.2] to be installed).
+<p>Install from source (requires the Xcode Tools [Developer Tools on 10.2] to be installed).
 To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, select option (1), &quot;rsync&quot;.  This will automatically update the <code>fink</code> package.</p>
 <p>Once <code>fink</code> is updated, you can use &quot;<code>fink install</code>&quot; to fetch and compile from source code.  For example, to install the Gimp, run <code>fink install gimp</code>.</p> 
 </li> 
@@ -101,31 +101,31 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
 </ol>
 
 <h2>Additional Things to Install</h2>
-<h3>XCode Tools/Developer Tools</h3>
-<p>You may find that only using binary packages limits the utility of Fink.  There are fewer packages available in binary format than from source, and the binary versions are generally older.  To build packages from source, you will need to install the Developer Tools (known as the XCode Tools for Mac OS 10.3 and later).</p>
-<p>Although a Developer Tools/XCode Tools version usually comes with your OS install media, you'll probably want a newer one.  Go to <a href="http://connect.apple.com">the Apple Developer Connection</a> to download a newer version (and any updates) after free registration.</p>
+<h3>Xcode Tools/Developer Tools</h3>
+<p>You may find that only using binary packages limits the utility of Fink.  There are fewer packages available in binary format than from source, and the binary versions are generally older.  To build packages from source, you will need to install the Developer Tools (known as the Xcode Tools for Mac OS 10.3 and later).</p>
+<p>Although a Developer Tools/Xcode Tools version usually comes with your OS install media, you'll probably want a newer one.  Go to <a href="http://connect.apple.com">the Apple Developer Connection</a> to download a newer version (and any updates) after free registration.</p>
 <table>
   <caption>Recommended Developer Tools versions by OS</caption>
   <tbody>
     <tr>
-      <td>10.2</td>
-      <td>December 2002 Developer Tools and August 2003 <code>gcc3.3</code> updater</td>
-    </tr>
-    <tr>
-      <td>10.3</td>
-      <td>XCode 1.5 and the November 2004 <code>gcc3.3</code> updater</td>
-    </tr>
-    <tr>
-      <td>10.4 on PowerPC</td>
-      <td>XCode 2.5, and the XCode Legacy Tools (for packages that need <code>gcc3.1</code> or <code>gcc2.95</code> to build)</td>
+      <td>10.5</td>
+      <td>Xcode 3.0 or 3.1</td>
     </tr>
     <tr>
       <td>10.4 on Intel</td>
-      <td>XCode 2.5</td>
+      <td>Xcode 2.5</td>
     </tr>
     <tr>
-      <td>10.5</td>
-      <td>XCode 3.0 or 3.1</td>
+      <td>10.4 on PowerPC</td>
+      <td>Xcode 2.5, and the Xcode Legacy Tools (for packages that need <code>gcc3.1</code> or <code>gcc2.95</code> to build)</td>
+    </tr>
+    <tr>
+      <td>10.3</td>
+      <td>Xcode 1.5 and the November 2004 <code>gcc3.3</code> updater</td>
+    </tr>
+    <tr>
+      <td>10.2</td>
+      <td>December 2002 Developer Tools and August 2003 <code>gcc3.3</code> updater</td>
     </tr>
   </tbody>
 </table>
@@ -138,11 +138,11 @@ the easiest option with which to get started.  They have elected to split it int
  optional install.</li>
         <li>The
 <em>X11SDK</em>
-package contains the development headers.  You need this if you want to build anything from source that uses X11.  This package is available as part of the XCode Tools, and installed by default with XCode 2.x and 3.x</li>
+package contains the development headers.  You need this if you want to build anything from source that uses X11.  This package is available as part of the Xcode Tools, and installed by default with Xcode 2.x and 3.x</li>
 <li>The <em>2006 X11 Update</em> for 10.4 (available via Software Update or manual download) is supported.</li>
 <li>All official updates for X11 on 10.5 are supported, as well as the <em>community X11 update</em> from macosxforge.org .</li>
 </ul>
-<p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://fink.sourceforge.net/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
+<p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://www.finkproject.org/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
 <h2>Further information</h2>
 <p>For more information, please refer to the <a
 href="../faq/index.php">Frequently Asked Questions</a> and the <a
