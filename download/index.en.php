@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/22 02:56:18 $';
+$cvs_date = '$Date: 2009/03/22 17:32:14 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -160,8 +160,7 @@ The source code for the packages in the installer disk image can be
 downloaded from this site,
 <a
 href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">here</a>.
-</p><script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
-<noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
+</p>
 
 <?
 include "footer.inc";

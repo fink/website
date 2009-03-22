@@ -1,7 +1,7 @@
 <?
 $title = "Guia rápido para download";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/22 05:33:06 $';
+$cvs_date = '$Date: 2009/03/22 17:32:14 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -217,9 +217,6 @@ Caso suas perguntas não sejam respondidas por esses documentos, verifique a
 
 <p>O código fonte dos pacotes presentes na imagem de disco do instalador podem ser baixados deste site clicando
 <a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">aqui</a>.</p>
-
-<script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
-<noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
 include "footer.inc";
