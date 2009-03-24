@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2009/03/24 00:30:27 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/03/24 23:01:59 $';
 
 include "header.inc";
 ?>
@@ -34,10 +34,8 @@ A binary installer for Fink <? print $fink_version; ?> has been posted.
 you will find the binary packages and the corresponding source.</li>
 </ul>
 <p>
-Documentation is still sparse at this time.
 The installer disk image contains some notes (Fink ReadMe.rtf), plus
-a copy of the preliminary Fink User's Guide.
-More documentation is available on this website in the <a
+a copy of the documents available on this website in the <a
 href="../doc/index.php">documentation section</a>.
 </p>
 <p>

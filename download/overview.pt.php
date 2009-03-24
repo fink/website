@@ -1,7 +1,7 @@
 <?
 $title = "Download: Visão geral";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/22 18:47:43 $';
+$cvs_date = '$Date: 2009/03/24 23:01:59 $';
 
 include "header.inc";
 ?>
@@ -55,9 +55,9 @@ pacotes.</p>
 <p>O desenvolvimento da distribuição do Fink em si acontece em um repositório
 CVS. Você pode usá-lo para estar na vanguarda até que seja lançada uma próxima
 versão. O uso é equivalente à distribuição de códigos fontes com a diferença de
-que você terá que obter as descrições de pacotes através de outros canais.
-(Lê-se: 'fink selfupdate' não funciona neste caso.) Veja as <a
-href="../doc/cvsaccess/index.php">instruções para CVS</a> para mais
+que você terá que executar o comando 'fink selfupdate-cvs' uma única vez para
+informar o Fink de que as descrições de pacotes devem ser obtidas via CVS.
+Veja as <a href="../doc/cvsaccess/index.php">instruções para CVS</a> para mais
 detalhes.</p>
 
 <?

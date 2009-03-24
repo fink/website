@@ -1,7 +1,7 @@
 <?
 $title = "Guia rápido para download";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/22 17:32:14 $';
+$cvs_date = '$Date: 2009/03/24 23:01:59 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -110,7 +110,7 @@ versão de binários.</p>
       digite <code>sudo apt-get update ; sudo apt-get install fink</code></p>
       <p>Uma vez que você tenha atualizado o <code>fink</code>, você pode
       instalar outros pacotes usando a mesma sintaxe, por exemplo <code>sudo
-      apt-get install gimp2</code> para instalar o Gimp 2.0. Observe,
+      apt-get install gimp2</code> para instalar o Gimp 2. Observe,
       entretanto, que nem todos os pacotes do Fink estão disponíveis na forma
       de binários.</p></li>
 
@@ -121,7 +121,7 @@ versão de binários.</p>
       que o pacote <code>fink</code> seja automaticamente atualizado.</p>
       <p>Uma vez que o <code>fink</code> tenha sido atualizado, você pode usar
       o comando &quot;<code>fink install</code>&quot; para baixar e compilar a
-      partir do código fonte. Por exemplo, para instalar o Gimp 2.0, execute o
+      partir do código fonte. Por exemplo, para instalar o Gimp 2, execute o
       comando <code>fink install gimp2</code>.</p></li>
   </ul></li> 
 </ol>
