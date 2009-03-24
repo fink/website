@@ -1,7 +1,7 @@
 <?
 $title = "Download Overview";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:32:02 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2009/03/24 00:27:52 $';
 
 include "header.inc";
 ?>
@@ -75,9 +75,7 @@ takes time and you must type commands to install packages.
 Actual development of the Fink distribution happens in a CVS
 repository.
 You can track it to stay on the cutting edge between releases.
-Usage is equivalent to the source release, only that you'll get the
-package descriptions through other channels.
-(Read: 'fink selfupdate' doesn't work here.)
+Usage is equivalent to the source release, only that you'll need to run 'fink selfupdate-cvs' once to tell Fink you want to use the CVS repository to obtain package descriptions.
 See the <a href="../doc/cvsaccess/index.php">CVS instructions</a> for
 details.
 </p>
