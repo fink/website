@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/15 17:53:49 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2009/03/24 00:30:27 $';
 
 include "header.inc";
 ?>
@@ -24,7 +24,6 @@ include "../fink_version.inc";
 <p>
 <b>Status:</b>
 A binary installer for Fink <? print $fink_version; ?> has been posted.
-The binary distribution is complete.
 </p>
 <ul>
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
