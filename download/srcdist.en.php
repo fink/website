@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2009/03/08 02:25:33 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/03/25 00:08:15 $';
 
 include "header.inc";
 ?>
@@ -23,7 +23,7 @@ include "../fink_version.inc";
 <p>Fink <? print $fink_version; ?> was officially released on 
 <? print $release_date; ?>.
 <ul><LI><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
+href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkFullSOURCE');">Fink
 <? print $release_version; ?></a> - 3521K, .tar.gz format</LI></ul>
 <p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
