@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2008/01/04 21:56:35 $';
+$cvs_date = '$Date: 2009/03/26 19:26:49 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -169,8 +169,8 @@ if ($result == null || count($result) == 0) { # No package found
 	print "</tr>\n";
 
 	print '<tr bgcolor="#ffecbf">';
-	print '<th width="100" align="center"><a href="http://feeds.feedburner.com/FinkProjectNews-stable"><img src="' . $pdbroot . 'rdf.png" alt="stable RSS feed" border="0"  width="14" height="14"></a> stable</th>';
-	print '<th width="100" align="center"><a href="http://feeds.feedburner.com/FinkProjectNews-unstable"><img src="' . $pdbroot . 'rdf.png" alt="unstable RSS feed" border="0"  width="14" height="14"></a> unstable</th>';
+	print '<th width="100" align="center"><a href="http://feeds2.feedburner.com/FinkProjectNews-stable"><img src="' . $pdbroot . 'rdf.png" alt="stable RSS feed" border="0"  width="14" height="14"></a> stable</th>';
+	print '<th width="100" align="center"><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable"><img src="' . $pdbroot . 'rdf.png" alt="unstable RSS feed" border="0"  width="14" height="14"></a> unstable</th>';
 	print "</tr>\n";
 
 	$color_count = 0;

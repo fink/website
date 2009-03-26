@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2008/06/27 01:08:38 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2009/03/26 19:26:48 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -14,7 +14,7 @@ include dirname(__FILE__) . "/header.inc";
 <a href="http://www.apple.com/macosx/">Mac OS X</a>. Nous modifions les logiciels Unix pour qu'ils compilent et tournent sur Mac OS X (nous les "portons") et en faisons une distribution cohérente téléchargeable. Fink utilise des outils de gestion de paquets binaires <a href="http://www.debian.org/">Debian</a>, tels dpkg et apt-get. Vous avez le choix entre le téléchargement des paquets binaires précompilés ou la construction des paquets à partir des sources. <a href="about.php">Voir la suite...</a></p>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
-<h1><a href="http://feeds.feedburner.com/FinkProjectNews-fr" title="Abonnez-vous aux Nouvelles du Projet Fink" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-fr" title="Abonnez-vous aux Nouvelles du Projet Fink" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
 &nbsp;Dernières nouvelles</h1>
 
 <?

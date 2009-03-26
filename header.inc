@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.117 2008/01/20 19:29:27 rangerrick Exp $ */
+/* $Id: header.inc,v 1.118 2009/03/26 19:26:48 rangerrick Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -303,9 +303,9 @@ function insert_sub($navbox, $active_page) {
 		$rdf_file = dirname(__FILE__) .'/news/news.' . $lang_code . '.rdf';
 		echo "<!-- $rdf_file  -->\n";
 		if (is_readable ($rdf_file )) {
-			$rdf_file = 'http://feeds.feedburner.com/FinkProjectNews-' . $lang_code;
+			$rdf_file = 'http://feeds2.feedburner.com/FinkProjectNews-' . $lang_code;
 		} else {
-			$rdf_file = 'http://feeds.feedburner.com/FinkProjectNews';
+			$rdf_file = 'http://feeds2.feedburner.com/FinkProjectNews';
 		}
 		$link_alternate = "<link rel=\"alternate\" title=\"Fink News RDF\" href=\"" . $rdf_file . "\" type=\"application/rss+xml\">";
 	}

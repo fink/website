@@ -15,14 +15,14 @@ include_once "header.inc";
 
 <h2>Updated Packages By OS</h2>
 <ul>
- <li>10.3 (<a href="http://feeds.feedburner.com/FinkProjectNews-103-stable">Stable</a>) (<a href="http://feeds.feedburner.com/FinkProjectNews-103-unstable">Unstable</a>)</li>
- <li>10.4-transitional (<a href="http://feeds.feedburner.com/FinkProjectNews-104-transitional-stable">Stable</a>) (<a href="http://feeds.feedburner.com/FinkProjectNews-104-transitional-unstable">Unstable</a>)</li>
- <li>10.4 (<a href="http://feeds.feedburner.com/FinkProjectNews-104-stable">Stable</a>) (<a href="http://feeds.feedburner.com/FinkProjectNews-104-unstable">Unstable</a>)</li>
+ <li>10.3 (<a href="http://feeds2.feedburner.com/FinkProjectNews-103-stable">Stable</a>) (<a href="http://feeds2.feedburner.com/FinkProjectNews-103-unstable">Unstable</a>)</li>
+ <li>10.4-transitional (<a href="http://feeds2.feedburner.com/FinkProjectNews-104-transitional-stable">Stable</a>) (<a href="http://feeds2.feedburner.com/FinkProjectNews-104-transitional-unstable">Unstable</a>)</li>
+ <li>10.4+ (<a href="http://feeds2.feedburner.com/FinkProjectNews-104-stable">Stable</a>) (<a href="http://feeds2.feedburner.com/FinkProjectNews-104-unstable">Unstable</a>)</li>
 </ul>
 <h2>Updated Packages By Tree</h2>
 <ul>
- <li><a href="http://feeds.feedburner.com/FinkProjectNews-stable">Stable</a></li>
- <li><a href="http://feeds.feedburner.com/FinkProjectNews-unstable">Unstable</a></li>
+ <li><a href="http://feeds2.feedburner.com/FinkProjectNews-stable">Stable</a></li>
+ <li><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable">Unstable</a></li>
 </ul>
 
 </td></tr></table>

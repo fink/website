@@ -8,7 +8,7 @@ function analytics_print($virtual_page=null, $account=null) {
 	 * first, the feedburner stuff
 	 * login went to fink-core-private, 02/23/2007
 	 */
-	print "<script src=\"http://feeds.feedburner.com/~s/FinkProjectNews\" type=\"text/javascript\" charset=\"utf-8\"></script>\n";
+	print "<script src=\"http://feeds2.feedburner.com/~s/FinkProjectNews\" type=\"text/javascript\" charset=\"utf-8\"></script>\n";
 
 	if ($account == null) {
 		global $analytics_account;
