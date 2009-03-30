@@ -3,7 +3,7 @@
 <article filename="index" lang="pt">
   <title>Fink - Documentação</title>
   <shorttitle>Documentação</shorttitle>
-  <cvsid>$Id: doc.pt.xml,v 1.2 2009/03/12 18:04:00 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: doc.pt.xml,v 1.3 2009/03/30 11:39:50 monipol Exp $</cvsid>
 
   <preface>
     <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
@@ -36,7 +36,6 @@
         <varlink url="x11/index.php" varurl="x11/x11.en.html">Executando o X11
         no Mac OS X</varlink> - cobre conceitos, instalação e execução (também
         direcionado a usuários do Mac OS X em geral).
-        <em>(em inglês)</em>
       </li>
     </ul>
 
@@ -58,9 +57,8 @@
       </li>
 
       <li>
-        <varlink url="readme.php" varurl="readme.en.html">LeiaMe do
-        Fink</varlink> - o LeiaMe da distribuição de códigos fontes
-        <em>(em inglês)</em>
+        <varlink url="readme.php" varurl="readme.en.html">Leia-me do
+        Fink</varlink> - o Leia-me da distribuição de códigos fontes
       </li>
 
       <li>
@@ -68,7 +66,6 @@
         varurl="cvsaccess/cvs.en.html">Acesso via CVS</varlink> - como acessar
         o repositório CVS do Fink para obter os fontes dos pacotes mais
         recentes antes da liberação de uma nova versão
-        <em>(em inglês)</em>
       </li>
     </ul>
   </section>
