@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.pt.inc,v 1.3 2009/03/28 02:14:14 monipol Exp $ */
+/* $Id: nav.pt.inc,v 1.4 2009/03/30 00:18:08 monipol Exp $ */
 
 $section = "download";
 $navbox = array(
@@ -12,7 +12,7 @@ $navbox = array(
   "download/10.2-upgrade.php?phpLang=pt", "Atualização para 10.2",
   "download/10.3-upgrade.php?phpLang=pt", "Atualização para 10.3",
   "download/sources_for_binaries.php?phpLang=pt", "Fontes para os binários",
-  "http://bindist.finkmirrors.net/bindist/dists/", "Repositório"
+  "http://bindist.finkmirrors.net/bindist/dists/", "Archive browser"
 );
 
 ?>
