@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="pt">
+  <title>Política geral de segurança do Fink para pacotes aceitos</title>
+  <shorttitle>Política de segurança</shorttitle>
+  <cvsid>$Id: sec-policy.pt.xml,v 1.1 2009/03/31 01:42:16 monipol Exp $</cvsid>
+
+  <preface>
+    <p>Este documento explica como o Fink lida com os incidentes de segurança
+    referentes a pacotes que foram aceitos pelo Fink. ainda que a
+    responsabilidade principal seja do mantenedor do pacote, o Fink reconhece a
+    necessidade de oferecer uma política uniforme de como reagir a incidentes
+    de segurança encontrados em softwares que são oferecidos como pacotes do
+    Fink. Cada mantenedor de pacote é obrigado a cumprir essa política.</p>
+  </preface>
+
+  <chapter filename="respo">
+    <title>Responsabilidade</title>
+    <shorttitle>Responsabilidade</shorttitle>
+
+    <section name="who">
+      <title>Quem é responsável?</title>
+
+      <p>Todo pacote do Fink possui um mantenedor. O mantenedor de um pacote
+      específico pode ser determinado pelo comando <code>fink info
+      nomedopacote</code> executado na linha de comando. Ele irá retornar uma
+      listagem com um campo similar a este: <tt>Maintainer: Fink Core Group
+      &lt;fink-core@lists.sourceforge.net&gt;</tt>. O mantenedor é
+      integralmente responsável por seu(s) pacote(s).</p>
+    </section>
+
+    <section name="contact">
+      <title>Quem devo contactar?</title>
+
+      <p>Caso haja incidentes de segurança em uma determinada parte de um
+      software empacotado, você deve notificar o mantenedor do pacote bem como
+      o <em>Time Central do Fink</em>. O email do mantenedor pode ser
+      encontrado pelo comando da seção anterior e o email do <em>Time Central
+      do Fink</em> é fink-core@lists.sourceforge.net</p>
+    </section>
+
+    <section name="prenotifications">
+      <title>Pré-Notificações</title>
+
+      <p>Incidentes sérios de segurança em software empacotado pelo Fink pode
+      requerer que você pré-notifique o mantenedor daquele pacote. Como é
+      possível que o mantenedor não possa ser encontrado em tempo hábil,
+      pré-notificações devem ser sempre enviadas ao <em>Time de Segurança do
+      Fink</em>. O email de cada membro do time está listado individualmente
+      mais ao fim deste documento. Por favor, observe que, como o histórico da
+      lista fink-core@lists.sourceforge.net está disponível publicamente,
+      pré-notificações privadas <em>nunca</em> devem ser enviadas àquela
+      lista.</p>
+    </section>
+
+    <section name="response">
+      <title>Resposta</title>
+
+      <p>Relatórios sobre um incidente de segurança que tenham sido submetidos
+      serão respondidos pelo <em>Time Central do Fink</em>. O Fink obriga cada
+      mantenedor a confirmar individualmente o problema relatado. No caso
+      improvável de o mantenedor não estar disponível e não confirmar o
+      relatório dentro de 24 horas, uma observação deve ser enviada ao <em>Time
+      Central do Fink</em> informando o time de que o mantenedor pode não estar
+      respondendo.</p>
+
+      <p>Caso você haja tentado notificar o mantenedor do pacote em questão mas
+      o sistema de email retornou um erro de entrega para aquele email, você
+      deve notificar o <em>Time Central do Fink</em> imediatamente para
+      informar-lhes que o mantenedor não pode ser contactado e que o pacote
+      pode ser atualizado independentemente do mantenedor.</p>
+    </section>
+  </chapter>
+
+  <chapter filename="severity">
+    <title>Tempos de resposta e ações imediatas</title>
+    <shorttitle>Respostas</shorttitle>
+
+    <preface>
+      <p>Tempos de resposta e ações tomadas dependem muito da severidade da
+      perda introduzida por uma falha em particular no software que foi
+      empacotado pelo Fink. De qualquer forma, o <em>Time Central do Fink</em>
+      tomará ação imediata sempre que houver a percepção de que é necessário
+      proteger a comunidade de usuários do Fink.</p>
+    </preface>
+
+    <section name="resptimes">
+      <title>Tempos de resposta</title>
+
+      <p>Cada pacote deve primar por respeitar os tempos de resposta seguintes.
+      Para alguns tipos de vulnerabilidades, o <em>Time Central do Fink</em>
+      pode escolher agir imediatamente. Se este for o caso, um dos membros do
+      Time Central notificará o mantenedor do pacote em questão. Além disso,
+      lembre-se de que, ainda que tentemos respeitar estes tempos de resposta,
+      o Fink é um esforço de voluntários, e por conseguinte não podemos
+      garanti-los.</p>
+
+      <itemtable labeld="Repsonse time" labelt="Vulnerability">
+        <item>
+          <itemt>root exploit remoto</itemt>
+          <itemd>
+            <p>mínimo: <em>imediato</em>; máximo: <em>12</em> horas.</p>
+          </itemd>
+        </item>
+
+        <item>
+          <itemt>root exploit local</itemt>
+          <itemd>
+            <p>mínimo: <em>12</em> horas; máximo: <em>36</em> horas.</p>
+          </itemd>
+        </item>
+
+        <item>
+          <itemt>DOS remoto</itemt>
+          <itemd>
+            <p>mínimo: <em>6</em> horas; máximo: <em>12</em> horas.</p>
+          </itemd>
+        </item>
+
+        <item>
+          <itemt>DOS local</itemt>
+          <itemd>
+            <p>mínimo: <em>24</em> horas; máximo: <em>72</em> horas.</p>
+          </itemd>
+        </item>
+
+        <item>
+          <itemt>corrupção de dados remotos</itemt>
+          <itemd>
+            <p>mínimo: <em>12</em> horas; máximo: <em>24</em> horas.</p>
+          </itemd>
+        </item>
+
+        <item>
+          <itemt>corrupção de dados locais</itemt>
+          <itemd>
+            <p>mínimo: <em>24</em> horas; máximo: <em>72</em> horas.</p>
+          </itemd>
+        </item>
+      </itemtable>
+    </section>
+
+    <section name="forced">
+      <title>Atualizações forçadas</title>
+
+      <p>Um membro do <em>Time Central do Fink</em> pode optar por atualizar um
+      pacote sem esperar que o mantenedor aja primeiro. Isto é chamado de
+      <strong>atualização forçada</strong>. Caso o tempo de resposta máximo
+      exigido por uma vulnerabilidade específica em um pacote do Fink não seja
+      respeitado, isto também resulta em uma <strong>atualização
+      forçada</strong> daquele pacote.</p>
+    </section>
+  </chapter>
+
+  <chapter filename="sources">
+    <title>Fontes de incidentes</title>
+    <shorttitle>Fontes</shorttitle>
+
+    <section name="sources">
+      <title>Fontes de incidentes aceitas</title>
+
+      <p>Como relator de um incidente segurança em um software empacotado pelo
+      Fink, você deve garantir que a vulnerabilidade do software também existe
+      no Mac OS X. É responsabilidade da parte notificadora garantir que uma
+      das seguintes fontes reforce o problema relatado para o software em
+      questão.</p>
+
+      <ol>
+        <li><em>AIXAPAR</em>: AIX APAR (Authorised Problem Analysis Report)</li>
+        <li><em>APPLE</em>: Apple Security Update</li>
+        <li><em>ATSTAKE</em>: @stake security advisory</li>
+        <li><em>AUSCERT</em>: AUSCERT advisory</li>
+        <li><em>BID</em>: Security Focus Bugtraq ID database entry</li>
+        <li><em>BINDVIEW</em>: BindView security advisory</li>
+        <li><em>BUGTRAQ</em>: Posting to Bugtraq mailing list</li>
+        <li><em>CALDERA</em>: Caldera security advisory</li>
+        <li><em>CERT</em>: CERT/CC Advisories</li>
+        <li><em>CERT-VN</em>: CERT/CC vulnerability note</li>
+        <li><em>CIAC</em>: DOE CIAC (Computer Incident Advisory Center) bulletins</li>
+        <li><em>CONECTIVA</em>: Conectiva Linux advisory</li>
+        <li><em>CONFIRM:</em> URL do local onde o fornecedor confirma que o problema existe</li>
+        <li><em>DEBIAN</em>: Debian Linux Security Information</li>
+        <li><em>EEYE</em>: eEye security advisory</li>
+        <li><em>EL8</em>: EL8 advisory</li>
+        <li><em>ENGARDE</em>: En Garde Linux advisory</li>
+        <li><em>FEDORA</em>: Fedora Project security advisory</li>
+        <li><em>FULLDISC</em>: Full-Disclosure mailing list</li>
+        <li><em>FreeBSD</em>: FreeBSD security advisory</li>
+        <li><em>GENTOO</em>: Gentoo Linux security advisory</li>
+        <li><em>HERT</em>: HERT security advisory</li>
+        <li><em>HP</em>: HP security advisories</li>
+        <li><em>IBM</em>: IBM ERS/BRS advisories</li>
+        <li><em>IMMUNIX</em>: Immunix Linux advisory</li>
+        <li><em>INFOWAR</em>: INFOWAR security advisory</li>
+        <li><em>ISS</em>: ISS Security Advisory</li>
+        <li><em>KSRT</em>: KSR[T] Security Advisory</li>
+        <li><em>L0PHT</em>: L0pht Security Advisory</li>
+        <li><em>MANDRAKE</em>: Linux-Mandrake advisory</li>
+        <li><em>MISC</em>: referência a uma URL genérica</li>
+        <li><em>MLIST</em>: referência genérica a listas de discussão</li>
+        <li><em>NAI</em>: NAI Labs security advisory</li>
+        <li><em>NETECT</em>: Netect security advisory</li>
+        <li><em>NetBSD</em>: NetBSD Security Advisory</li>
+        <li><em>OPENBSD</em>: OpenBSD Security Advisory</li>
+        <li><em>REDHAT</em>: Security advisories</li>
+        <li><em>RSI</em>: Repent Security, Inc. security advisory</li>
+        <li><em>SEKURE</em>: Sekure security advisory</li>
+        <li><em>SF-INCIDENTS</em>: mensagem na lista de discussão Security Focus Incidents</li>
+        <li><em>SGI</em>: SGI Security Advisory</li>
+        <li><em>SLACKWARE</em>: Slackware security advisory</li>
+        <li><em>SNI</em>: Secure Networks, Inc. security advisory</li>
+        <li><em>SUN</em>: Sun security bulletin</li>
+        <li><em>SUNALERT</em>: Sun security alert</li>
+        <li><em>SUNBUG</em>: Sun bug ID</li>
+        <li><em>SUSE</em>: SuSE Linux: Security Announcements</li>
+        <li><em>TRUSTIX</em>: Trustix Security Advisory</li>
+        <li><em>TURBO</em>: TurboLinux advisory</li>
+        <li><em>VULN-DEV</em>: Posting to VULN-DEV mailing list</li>
+        <li><em>VULNWATCH</em>: VulnWatch mailing list</li>
+        <li><em>XF</em>: X-Force Vulnerability Database</li>
+        <li><em>CVE</em>: CVE Candidates </li>
+      </ol>
+
+      <p>As palavras-chaves acima estão de acordo com a <link
+      url="http://www.cve.mitre.org/cve/refs/refkey.html">lista de
+      palavras-chaves recomendadas pelo CVE</link>.</p>
+    </section>
+  </chapter>
+
+  <chapter filename="updating">
+    <title>Política de atualização de segurança</title>
+    <shorttitle>Atualizações</shorttitle>
+
+    <section name="procedure">
+      <title>Adicionando atualizações relacionadas a segurança</title>
+
+      <p>Atualizações de segurança só podem ser aplicadas uma vez que tenham
+      sido verificadas pelo autor original do software que foi empacotado para
+      o Fink e no qual foi encontrada uma vulnerabilidade de segurança. Antes
+      de uma atualização, uma ou mais das condições a seguir <em>deve</em>
+      valer:</p>
+
+      <ul>
+        <li>O autor do software foi contactado pelo mantenedor e/ou diretamente
+        pelo <em>Time Central do Fink</em> fornecendo uma correção da
+        vulnerabilidade ou ação alternativa.</li>
+
+        <li>Uma das fontes denotadas por palavra-chave publicou um boletim de
+        segurança com fontes atualizados do pacote em questão.</li>
+
+        <li>Uma correção foi publicada em uma das fontes denotadas por
+        palavra-chave a seguir: BUGTRAQ, FULLDISC, SF-INCIDENTS, VULN-DEV.</li>
+
+        <li>Um boletim oficial de segurança foi publicado e recebeu status CVE
+        Candidate, descrevendo a vulnerabilidade, fornecendo uma ação
+        alternativa, correção ou link para fontes atualizados.</li>
+
+        <li>Uma pré-notificação foi diretamente enviada ao mantenedor e/ou
+        <em>Time Central do Fink</em> fornecendo uma correção da
+        vulnerabilidade ou ação alternativa, requerendo que alguma ação seja
+        tomada.</li>
+      </ul>
+    </section>
+
+    <section name="moving">
+      <title>Movendo de stable para unstable</title>
+
+      <p>Atualizações de segurança de um pacote específico serão primeiramente
+      aplicadas na árvore unstable. Após um período de espera de pelo menos
+      <em>12</em> horas, os arquivos com descrições e ajustes do pacote também
+      serão movidos para a árvore stable. O período de retenção deve ser usado
+      para observar cuidadosamente se o pacote atualizado funciona e a
+      atualização de segurança não introduz novos problemas.</p>
+    </section>
+  </chapter>
+
+  <chapter filename="notification">
+    <title>Enviando notificações</title>
+    <shorttitle>Notificação</shorttitle>
+
+    <preface>
+      <p>Alguns usuários podem escolher não atualizar seus softwares
+      frequentemente. Para garantir que aqueles que instalam seus pacotes a
+      partir do código fonte atualizem pacotes com vulnerabilidades o mais cedo
+      possível, um mantenedor pode solicitar que uma notificação seja enviada à
+      lista de anúncios do Fink.</p>
+    </preface>
+
+    <section name="who">
+      <title>Quem pode enviá-las?</title>
+
+      <p>Estes anúncios somente podem ser enviados pelo <em>Time de Segurança
+      do Fink</em>. A maior parte dos anúncios será enviada por
+      dmalloc@users.sourceforge.net, assinados pela chave PGP com a seguinte
+      impressão digital:</p>
+
+      <ul>
+        <li><tt>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24 291E</tt>.</li>
+
+        <li>Disponível em
+          <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</tt>
+        </li>
+      </ul>
+
+      <p>O endereço acima foi intencionalmente não assinalado como um link.</p>
+
+      <p>Outros membros do time com autorização são:</p>
+
+      <p>peter@pogma.com assinado pela chave PGP com a seguinte impressão
+      digital:</p>
+
+      <ul>
+        <li><tt>4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004</tt>.</li>
+
+        <li>Disponível em
+          <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004</tt>
+        </li>
+      </ul>
+
+      <p>ranger@befunk.com assinado pela chave PGP com a seguinte impressão
+      digital:</p>
+
+      <ul>
+        <li><tt>6401 D02A A35F 55E9 D7DD  71C5 52EF A366 D3F6 65FE</tt>.</li>
+
+        <li>Disponível em
+          <tt>http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xD3F665FE</tt>
+        </li>
+      </ul>
+    </section>
+
+    <section name="how">
+      <title>Como submeter</title>
+
+      <p>Para garantir uma apresentação comum para as notificações de
+      segurança, todas <em>devem</em> seguir o seguinte modelo padrão.</p>
+
+            <codeblock> ID: FINK-YYYY-MMDD-NN 
+                        Reported: YYYY-MM-DD 
+                        Updated:  YYYY-MM-DD 
+                        Package:  package-name
+                        Affected: &lt;= versionid
+                        Maintainer: maintainer-name
+                        Tree(s): 10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable
+                        Mac OS X version: 10.3, 10.2 
+                        Fix: patch|upstream 
+                        Updated by: maintainer|forced update (Email)
+                        Description: A short description describing the issue.
+                        References: KEYWORD (see above) 
+			Ref-URL: URL 
+			</codeblock>
+            
+      <p>Um relatório de exemplo pode-se parecer com:</p>
+
+            <codeblock> ID: FINK-2004-06-01 
+                        Reported:             2004-06-09 
+                        Updated:              2004-06-09 
+                        Package:              cvs
+                        Affected:             &lt;= 1.11.16, &lt;= 1.12.8
+                        Maintainer:           Sylvain Cuaz 
+                        Tree(s):    10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable 
+                        Mac OS X version: 10.3, 10.2 
+                        Fix: upstream
+                        Updated by: forced update (dmalloc@users.sourceforge.net)
+                        Description: Multiple vulnerabilities in CVS found by Ematters
+                        Security. 
+			References: BID 
+                        Ref-URL:    http://www.securityfocus.com/bid/10499 
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0416
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0417
+                        References: CVE 
+                        Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0418
+                        References: FULLDISCURL 
+                        Ref-URL:    http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
+                        References: MISC 
+                        Ref-URL:    http://security.e-matters.de/advisories/092004.html </codeblock>
+
+      <p>Por favor, observe que a palavra-chave <em>Affected</em> se refere a
+      todas as versões do software vulneráveis e não apenas aquela que tenha
+      sido empacotada para o Fink. O relatório de exemplo mostra isto
+      claramente.</p>
+    </section>
+  </chapter>
+</document>
