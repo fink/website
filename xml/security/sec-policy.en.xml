@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
     <title>General Fink security policy for accepted packages.</title>
     <shorttitle>Security Policy</shorttitle>
-    <cvsid>$Id: sec-policy.en.xml,v 1.15 2004/09/20 20:14:23 rangerrick Exp $</cvsid>
+    <cvsid>$Id: sec-policy.en.xml,v 1.16 2009/03/31 01:41:35 monipol Exp $</cvsid>
     <preface>
         <p>This document explains security incident handling for packages that
             have been accepted by Fink. While the main responsibility for every
@@ -82,7 +82,7 @@
                 package in question. Also, keep in mind that, while we strive to
                 meet these response times, Fink is a volunteer effort, and they
                 cannot be guaranteed.</p>
-            <itemtable labeld="Repsonse time" labelt="Vulnerability">
+            <itemtable labeld="Response time" labelt="Vulnerability">
                 <item>
                     <itemt>remote root exploit</itemt>
                     <itemd>
