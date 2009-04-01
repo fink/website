@@ -3,7 +3,7 @@
 <article filename="index" lang="pt">
   <title>Fink - Documentação</title>
   <shorttitle>Documentação</shorttitle>
-  <cvsid>$Id: doc.pt.xml,v 1.3 2009/03/30 11:39:50 monipol Exp $</cvsid>
+  <cvsid>$Id: doc.pt.xml,v 1.4 2009/04/01 02:32:30 monipol Exp $</cvsid>
 
   <preface>
     <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
@@ -79,7 +79,6 @@
         varurl="security/sec-policy.en.html">Manual de política de
         segurança</varlink> - leitura obrigatória para todos os que mantêm
         pacotes no Fink ou gostariam de adicionar seus próprios pacotes.
-        <em>(em inglês)</em>
       </li>
 
       <li>
