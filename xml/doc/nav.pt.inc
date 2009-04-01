@@ -1,12 +1,12 @@
 <?
-/* $Id: nav.pt.inc,v 1.2 2009/04/01 02:32:30 monipol Exp $ */
+/* $Id: nav.pt.inc,v 1.3 2009/04/01 14:16:08 monipol Exp $ */
 
 $section = "documentation";
 $navbox = array(
   "doc/index.php?phpLang=pt", "Lista de documentos",
   "doc/users-guide/index.php?phpLang=pt", "Guia do usuário",
   "doc/advanced/index.php?phpLang=pt", "Avançado",
-  "doc/x11/index.php?phpLang=pt", "Rodando X11",
+  "doc/x11/index.php?phpLang=pt", "Executando o X11",
   "doc/bundled/install.php?phpLang=en", "Installation",
   "doc/bundled/usage.php?phpLang=en", "Usage",
   "doc/readme.php?phpLang=pt", "LeiaMe",

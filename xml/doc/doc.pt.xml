@@ -3,7 +3,7 @@
 <article filename="index" lang="pt">
   <title>Fink - Documentação</title>
   <shorttitle>Documentação</shorttitle>
-  <cvsid>$Id: doc.pt.xml,v 1.4 2009/04/01 02:32:30 monipol Exp $</cvsid>
+  <cvsid>$Id: doc.pt.xml,v 1.5 2009/04/01 14:16:07 monipol Exp $</cvsid>
 
   <preface>
     <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
@@ -45,19 +45,20 @@
     <ul>
       <li>
         <varlink url="bundled/install.php"
-        varurl="bundled/install.html">Instalação e atualização</varlink> - como
-        instalar o Fink ou atualizá-lo para uma versão nova
+        varurl="bundled/install.html">Installation and Upgrading</varlink> -
+        como instalar o Fink ou atualizá-lo para uma versão nova
         <em>(em inglês)</em>
       </li>
 
       <li>
-        <varlink url="bundled/usage.php" varurl="bundled/usage.html">Formas de
-        uso</varlink> - como usar o Fink e os softwares instalados
+        <varlink url="bundled/usage.php"
+        varurl="bundled/usage.html">Usage</varlink> - como usar o Fink e os
+        softwares instalados
         <em>(em inglês)</em>
       </li>
 
       <li>
-        <varlink url="readme.php" varurl="readme.en.html">Leia-me do
+        <varlink url="readme.php" varurl="readme.pt.html">Leia-me do
         Fink</varlink> - o Leia-me da distribuição de códigos fontes
       </li>
 
@@ -93,16 +94,16 @@
       </li>
 
       <li>
-        <varlink url="porting/index.php" varurl="porting/porting.en.html">Dicas
-        para portar software</varlink> - notas para os interessados em portar
-        aplicações Unix para o Mac OS X
+        <varlink url="porting/index.php"
+        varurl="porting/porting.en.html">Porting Tips</varlink> - notas para os
+        interessados em portar aplicações Unix para o Mac OS X
         <em>(em inglês)</em>
       </li>
 
       <li>
         <varlink url="quick-start-pkg/index.php"
-        varurl="quick-start-pkg/quick-start-pkg.en.html">Tutorial de
-        empacotamento</varlink> - um complemento ao Manual de empacotamento que
+        varurl="quick-start-pkg/quick-start-pkg.en.html">Packaging
+        Tutorial</varlink> - um complemento ao Manual de empacotamento que
         foca exemplos reais e faz uma introdução sobre empacotamento para
         iniciantes.
         <em>(em inglês)</em>
@@ -110,8 +111,8 @@
 
       <li>
         <varlink url="packaging/index.php"
-        varurl="packaging/packaging.en.html">Manual de empacotamento</varlink>
-        - como criar e manter pacotes no Fink
+        varurl="packaging/packaging.en.html">Packaging Manual</varlink> - como
+        criar e manter pacotes no Fink
         <em>(em inglês)</em>
       </li>
 
@@ -130,17 +131,16 @@
     <ul>
       <li>
         <varlink url="multilingual/index.php"
-        varurl="multilingual/multilingual.en.html">Guia de
-        internacionalização</varlink> - material sobre o esforço em andamento
-        de internacionalização do site
+        varurl="multilingual/multilingual.en.html">Internationalization
+        Guide</varlink> - material sobre o esforço em andamento de
+        internacionalização do site
         <em>(em inglês)</em>
       </li>
 
       <li>
         <varlink url="netiquette/index.php"
-        varurl="netiquette/netiquette.en.html">Netiqueta para as listas de
-        discussão</varlink> - como melhor usar as listas de discussão do
-        Fink.
+        varurl="netiquette/netiquette.en.html">Mailing List
+        Netiquette</varlink> - como melhor usar as listas de discussão do Fink.
         <em>(em inglês)</em>
       </li>
     </ul>
