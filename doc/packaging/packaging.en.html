@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.en.xml,v 1.105 2009/03/15 22:37:01 dmrrsn Exp $
+Generated from $Fink: packaging.en.xml,v 1.106 2009/04/06 02:21:28 dmacks Exp $
 -->
 <title>Fink Documentation - Creating Fink Packages</title></head><body>
 <table width="100%" cellspacing="0">
@@ -296,7 +296,7 @@ as %i unless within a <tt style="white-space: nowrap;">SplitOff</tt>)
 </p>
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>
-the path where the p<b>a</b>tches can be found
+the path where the p<b>a</b>tches can be found. As of fink-0.29.0, this variable should not be used. Use <tt style="white-space: nowrap;">%{PatchFile}</tt> to access the <tt style="white-space: nowrap;">.patch</tt> file. Support for <tt style="white-space: nowrap;">%a</tt> will be removed in the future.
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
@@ -3012,4 +3012,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.en.xml,v 1.105 2009/03/15 22:37:01 dmrrsn Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.en.xml,v 1.106 2009/04/06 02:21:28 dmacks Exp $</i></p></body></html>
