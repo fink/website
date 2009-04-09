@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.107 2009/04/09 05:41:50 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.108 2009/04/09 18:45:43 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -900,7 +900,11 @@ lists the <code>-compatibility_version</code>, versioned
 dependency information specifying the Fink package which provides
 this library at this compatibility version, and the library
 architecture.  (The library architecture may either be "32", "64", or
-"32-64", and may be absent; the value defaults to "32" if it is absent.)
+"32-64", and may be absent. If the library architecture is not
+explicitly listed, it defaults to the standard value for the current
+architecture of Fink; these standard values are "32" for the powerpc 
+architecture and "32" for the i386 architecture, and will be "64"
+for any future x86_64 architecture.)
 The dependency should
 be stated in the form <code> foo (>= version-revision)</code> where 
 <code>version-revision</code> refers to

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/04/09 05:41:50';
+$cvs_author = 'Author: dmrrsn';
+$cvs_date = 'Date: 2009/04/09 18:45:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -437,7 +437,11 @@ lists the <code>-compatibility_version</code>, versioned
 dependency information specifying the Fink package which provides
 this library at this compatibility version, and the library
 architecture.  (The library architecture may either be "32", "64", or
-"32-64", and may be absent; the value defaults to "32" if it is absent.)
+"32-64", and may be absent. If the library architecture is not
+explicitly listed, it defaults to the standard value for the current
+architecture of Fink; these standard values are "32" for the powerpc 
+architecture and "32" for the i386 architecture, and will be "64"
+for any future x86_64 architecture.)
 The dependency should
 be stated in the form <code> foo (&gt;= version-revision)</code> where 
 <code>version-revision</code> refers to
