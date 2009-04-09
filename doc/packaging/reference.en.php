@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/04/06 02:21:28';
+$cvs_date = 'Date: 2009/04/09 05:41:50';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -874,7 +874,6 @@ package's version and Fink's version (in
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>
-<b>(Deprecated.)</b>
 The filename of a patch to be applied with <code>patch -p1
 &lt;<b>patch-file</b></code>. This should be just a filename; the
 appropriate path (the same directory where the <code>.info</code> file
@@ -890,6 +889,13 @@ easier to maintain a single patchfile and then make variant-specific
 changes in <code>PatchScript</code> than to have a separate patchfile
 for each variant.
 </p>
+<p>
+As of fink-0.29.0, this field should not be used.
+Use <code>PatchFile</code> instead. Support for <code>Patch</code>
+will be removed in the future.
+</p>
+
+
 </td></tr><tr valign="top"><td>PatchFile</td><td>
 <p>
 The same syntax as the <code>Patch</code> field. The full path to this
