@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2008/07/11 10:00:23 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2009/04/13 18:24:35 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -9,6 +9,7 @@ $metatags = '<meta name="description" content="Fink, a distribution of Unix soft
 ';
 
 include "header.inc";
+include "XML/RSS.php";
 ?>
 
 
@@ -40,6 +41,26 @@ include $fsroot."news/news.inc";
 
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
+
+<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable" title="Subscribe to my feed, Fink Project News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+&nbsp;Recent Package Updates</h1>
+
+<?
+$rss =& new XML_RSS("news/rdf/fink-10.4-unstable.rdf");
+$rss->parse();
+
+$count = 0;
+foreach($rss->getItems() as $item) {
+	$date = $item['dc:date'];
+	$date = ereg_replace('T.*$', '', $date);
+	echo "<a name=\"" . urlencode($item['title']) . "\"><span class=\"news-date\">" . $date . ": </span><span class=\"news-headline\">" . $item['title'] . "</span></a><br />\n";
+	if (++$count > 10) {
+		break;
+	}
+}
+
+?>
+<a href="package-updates.php">more...</a>
 
 <h1>Status</h1>
 <? 
