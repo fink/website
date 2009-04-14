@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.108 2009/04/09 18:45:43 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.109 2009/04/14 14:44:55 monipol Exp $</cvsid>
 
 <preface>
 <p>
@@ -1744,7 +1744,7 @@ will result in the field for the foo-pm581 variant
 being <code>10.3, 10.4</code> and the field being blank for the 
 foo-pm586 variant.
 </p>
-<p>Since python 2.3 is not availble in the 10.5 distribution, and the
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
 available perl packages vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
 various perl versions in the 10.3, 10.4 and 10.5 distributions:
