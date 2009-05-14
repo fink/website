@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2009/04/09 18:45:43';
+$cvs_date = 'Date: 2009/05/14 03:57:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -128,17 +128,17 @@ Required field.
 </p>
 </td></tr><tr valign="top"><td>Architecture</td><td>
 <p>
-A comma-separated list of CPU architecture(s) for which the package
+A comma-separated list of fink architecture(s) for which the package
 (and any splitoff packages) are intended.
-At present, the only valid values for architecture are <code>powerpc</code>
-and <code>i386</code>. If this field is present and not blank after
+As of fink-0.29.5, the valid values for architecture are <code>powerpc</code>,
+<code>i386</code>, and <code>x86_64</code>. 
+If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
-the local machine architecture is not listed. If the field is omitted
+the local fink architecture is not listed. If the field is omitted
 or the value is blank, all architectures are assumed.
-(Introduced in a post-0.24.11 CVS version of fink.)
 </p>
 <p>
-At present, the most common use of this field will be for packages which
+One common use of this field will be for packages which
 require a compiler earlier than gcc-4.0 (or packages which depend on such
 packages), which should be declared to have architecture 
 <code>powerpc</code>.
@@ -203,7 +203,7 @@ will result in the field for the foo-pm581 variant
 being <code>10.3, 10.4</code> and the field being blank for the 
 foo-pm586 variant.
 </p>
-<p>Since python 2.3 is not availble in the 10.5 distribution, and the
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
 available perl packages vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
 various perl versions in the 10.3, 10.4 and 10.5 distributions:

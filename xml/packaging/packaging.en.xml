@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.110 2009/05/09 20:04:23 monipol Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.111 2009/05/14 03:57:09 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -369,9 +369,15 @@ in the definition of <code>%c</code>.)
 <item><itemt>%m</itemt>
 <itemd>
 <p>
-the <em>m</em>achine architecture string.  This is the same as 
-<code>uname -p</code> output.  Current values are 'powerpc' for ppc machines
-and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
+the <em>m</em>achine architecture string.  This is no longer strictly
+dictated by the type of machine, but is rather a choice made by the
+user upon fink installation among those architectures which will run
+on the user's hardware.  Current possible values are
+'powerpc' for ppc machines
+and either 'i386' or 'x86_64' for x86 machines. The choice 'x86_64'
+is only available if the machine is capable of running 64bit libraries
+and executables.  (This item was introduced in the fink-0.12 era; the
+current description is valid for fink-0.29.5 and later.)
 </p>
 </itemd></item>
 
@@ -1666,17 +1672,17 @@ Required field.
 <item><itemt>Architecture</itemt>
 <itemd>
 <p>
-A comma-separated list of CPU architecture(s) for which the package
+A comma-separated list of fink architecture(s) for which the package
 (and any splitoff packages) are intended.
-At present, the only valid values for architecture are <code>powerpc</code>
-and <code>i386</code>. If this field is present and not blank after
+As of fink-0.29.5, the valid values for architecture are <code>powerpc</code>,
+<code>i386</code>, and <code>x86_64</code>. 
+If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
-the local machine architecture is not listed. If the field is omitted
+the local fink architecture is not listed. If the field is omitted
 or the value is blank, all architectures are assumed.
-(Introduced in a post-0.24.11 CVS version of fink.)
 </p>
 <p>
-At present, the most common use of this field will be for packages which
+One common use of this field will be for packages which
 require a compiler earlier than gcc-4.0 (or packages which depend on such
 packages), which should be declared to have architecture 
 <code>powerpc</code>.

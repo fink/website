@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2009/04/09 18:45:43';
+$cvs_date = 'Date: 2009/05/14 03:57:09';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -179,7 +179,7 @@ part of <code>%f</code>.
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not assume all users have Fink installed in <code>/sw</code>; use <code>%p</code> to ge the correct path.
+the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not assume all users have Fink installed in <code>/sw</code>; use <code>%p</code> to get the correct path.
 </p>
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
@@ -235,9 +235,15 @@ in the definition of <code>%c</code>.)
 </p>
 </td></tr><tr valign="top"><td>%m</td><td>
 <p>
-the <b>m</b>achine architecture string.  This is the same as 
-<code>uname -p</code> output.  Current values are 'powerpc' for ppc machines
-and 'i386' for x86 machines. (Introduced in a post-0.12.1 CVS version of fink.)
+the <b>m</b>achine architecture string.  This is no longer strictly
+dictated by the type of machine, but is rather a choice made by the
+user upon fink installation among those architectures which will run
+on the user's hardware.  Current possible values are
+'powerpc' for ppc machines
+and either 'i386' or 'x86_64' for x86 machines. The choice 'x86_64'
+is only available if the machine is capable of running 64bit libraries
+and executables.  (This item was introduced in the fink-0.12 era; the
+current description is valid for fink-0.29.5 and later.)
 </p>
 </td></tr><tr valign="top"><td>%%</td><td>
 <p>
