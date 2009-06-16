@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.111 2009/05/14 03:57:09 dmrrsn Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.112 2009/06/16 16:44:54 dmrrsn Exp $</cvsid>
 
 <preface>
 <p>
@@ -1384,6 +1384,22 @@ Hint: Just use <code>%n</code>.
 <itemd>
 <p>
 This directory contains message catalogs for internationalization.
+</p>
+</itemd></item>
+
+<item><itemt><filename>/sw/opt</filename></itemt>
+<itemd>
+<p>
+The <filename>opt</filename> directory stores "add-on" software packages,
+which for some reason cannot use the standard <filename>/sw/bin</filename>,
+<filename>/sw/lib</filename>, <filename>/sw/include</filename>, etc. 
+directories.
+A package to be installed in <filename>/sw/opt</filename>
+ must locate its static files in a separate 
+<filename>/sw/opt/&lt;package&gt;</filename>
+ directory tree, where <filename>&lt;package&gt;</filename> 
+is a name that describes the software package.
+(Available in fink 0.29.7 or later.)
 </p>
 </itemd></item>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2009/05/14 03:57:09';
+$cvs_date = 'Date: 2009/06/16 16:44:54';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="compilers.php?phpLang=en" title="Compilers"><link rel="prev" href="policy.php?phpLang=en" title="Packaging Policy">';
 
 
@@ -129,6 +129,19 @@ Hint: Just use <code>%n</code>.
 </td></tr><tr valign="top"><td><code>/sw/share/locale</code></td><td>
 <p>
 This directory contains message catalogs for internationalization.
+</p>
+</td></tr><tr valign="top"><td><code>/sw/opt</code></td><td>
+<p>
+The <code>opt</code> directory stores "add-on" software packages,
+which for some reason cannot use the standard <code>/sw/bin</code>,
+<code>/sw/lib</code>, <code>/sw/include</code>, etc. 
+directories.
+A package to be installed in <code>/sw/opt</code>
+ must locate its static files in a separate 
+<code>/sw/opt/&lt;package&gt;</code>
+ directory tree, where <code>&lt;package&gt;</code> 
+is a name that describes the software package.
+(Available in fink 0.29.7 or later.)
 </p>
 </td></tr><tr valign="top"><td><code>/sw/var</code></td><td>
 <p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.en.xml,v 1.111 2009/05/14 03:57:09 dmrrsn Exp $
+Generated from $Fink: packaging.en.xml,v 1.112 2009/06/16 16:44:54 dmrrsn Exp $
 -->
 <title>Fink Documentation - Creating Fink Packages</title></head><body>
 <table width="100%" cellspacing="0">
@@ -1268,6 +1268,19 @@ Hint: Just use <tt style="white-space: nowrap;">%n</tt>.
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/locale</tt></td><td>
 <p>
 This directory contains message catalogs for internationalization.
+</p>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/opt</tt></td><td>
+<p>
+The <tt style="white-space: nowrap;">opt</tt> directory stores "add-on" software packages,
+which for some reason cannot use the standard <tt style="white-space: nowrap;">/sw/bin</tt>,
+<tt style="white-space: nowrap;">/sw/lib</tt>, <tt style="white-space: nowrap;">/sw/include</tt>, etc. 
+directories.
+A package to be installed in <tt style="white-space: nowrap;">/sw/opt</tt>
+ must locate its static files in a separate 
+<tt style="white-space: nowrap;">/sw/opt/&lt;package&gt;</tt>
+ directory tree, where <tt style="white-space: nowrap;">&lt;package&gt;</tt> 
+is a name that describes the software package.
+(Available in fink 0.29.7 or later.)
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/var</tt></td><td>
 <p>
@@ -3028,4 +3041,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.en.xml,v 1.111 2009/05/14 03:57:09 dmrrsn Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.en.xml,v 1.112 2009/06/16 16:44:54 dmrrsn Exp $</i></p></body></html>
