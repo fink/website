@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2009/06/16 16:44:54';
+$cvs_date = 'Date: 2009/06/19 18:43:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="compilers.php?phpLang=en" title="Compilers"><link rel="prev" href="policy.php?phpLang=en" title="Packaging Policy">';
 
 
@@ -82,11 +82,15 @@ compatibility, <code>powerpc-apple-darwin1.3</code> or just
 </td></tr><tr valign="top"><td><code>/sw/lib/ppc64</code>
 <code>/sw/lib/x86_64</code></td><td>
 <p>
-This directory is for 64-bit libraries, with <code>/sw/lib/ppc64</code>
+This directory is for 64-bit libraries on 32-bit systems, 
+with <code>/sw/lib/ppc64</code>
 being used under powerpc architecture, and
 <code>/sw/lib/x86_64</code> being used under i386 architecture.
 Libraries which have been built 'fat' should be stored in
-<code>/sw/lib</code> instead.
+<code>/sw/lib</code> instead, and should be so indicated by
+using '32-64' in the corresponding Shlibs entry.  Note that under
+the x86_64 architecture, 64-bit
+libraries are to be stored in <code>/sw/lib</code>.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share</code></td><td>
 <p>

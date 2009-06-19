@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2009/06/16 16:44:54';
+$cvs_date = 'Date: 2009/06/19 18:43:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -241,7 +241,7 @@ user upon fink installation among those architectures which will run
 on the user's hardware.  Current possible values are
 'powerpc' for ppc machines
 and either 'i386' or 'x86_64' for x86 machines. The choice 'x86_64'
-is only available if the machine is capable of running 64bit libraries
+is only available if the machine is capable of running 64-bit libraries
 and executables.  (This item was introduced in the fink-0.12 era; the
 current description is valid for fink-0.29.5 and later.)
 </p>
@@ -293,9 +293,10 @@ The full path to the file given in the <code>PatchFile</code> field.
 </td></tr><tr valign="top"><td>%lib</td><td>
 <p>
 If <code>Type: -64bit</code> is defined to be <code>-64bit</code>,
-this expands to <b>lib/ppc64</b> on powerpc machines, and to
-<b>lib/x86_64</b> on intel machines (the proper storage locations
-for 64-bit libraries); otherwise, this expands to <b>lib</b>.
+this expands to <b>lib/ppc64</b> under the powerpc architecture, and to
+<b>lib/x86_64</b> under the i386 architecture (the proper storage locations
+for 64-bit libraries on 32-bit systems); 
+otherwise, this expands to <b>lib</b>.
 (Introduced in fink-0.26.0)
 </p>
 <p>Note that <code>%lib</code> is not permitted in the

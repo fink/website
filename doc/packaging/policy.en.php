@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2009/06/16 16:44:54';
+$cvs_date = 'Date: 2009/06/19 18:43:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -158,7 +158,7 @@ for existence before calling them and the like).
 Fink's policy about shared libraries became effective in February 2002.
 This section of the documentation discusses version 4
 of the policy (which coincides with the release of Fink's 0.5.0 distribution),
-as modified in December, 2006 to handle 64bit libraries
+as modified in December, 2006 to handle 64-bit libraries
 and from January, 2008 to handle private shared libraries. (In addition,
 the discussion was updated in June, 2008 to eliminate obsolete references to a
 transitional period for implementing the shared libraries policy.)
@@ -168,7 +168,7 @@ Any package which builds shared libraries should treat its shared
   libraries according to Fink's policy.  This means:</p>
 <ul>
 <li>   verify, using <code>otool -L</code> (or <code>otool64 -L</code> for
-64bit libraries), that 
+64-bit libraries on 10.4), that 
        the install_name of each library and
        its compatibility and current version numbers are correct </li>
 <li>   put the public shared libraries in a separate package (except for the
@@ -282,7 +282,7 @@ When building shared libraries under major version N, it is important that
 the "install_name" of the library be <code>%p/lib/libbar.N.dylib</code>.  
 (You can
 find the install_name by running <code>otool -L</code> on your library,
-or <code>otool64 -L</code> for 64bit libraries.)  The
+or <code>otool64 -L</code> for 64-bit libraries on 10.4.)  The
 actual library file may be installed at another location, such as
 </p>
 <pre>
@@ -311,7 +311,7 @@ but in any event you should
 check that they have been done correctly in your case.  You should also
 check that current_version and compatibility_version were defined 
 appropriately for your shared libraries.  (These are also shown with the 
-<code>otool -L</code> query, or <code>otool64 -L</code> for 64bit libraries.)
+<code>otool -L</code> query, or <code>otool64 -L</code> for 64-bit libraries.)
 </p><p>
 Files are then divided between the two packages as follows
 </p>
@@ -440,8 +440,8 @@ architecture.  (The library architecture may either be "32", "64", or
 "32-64", and may be absent. If the library architecture is not
 explicitly listed, it defaults to the standard value for the current
 architecture of Fink; these standard values are "32" for the powerpc 
-architecture and "32" for the i386 architecture, and will be "64"
-for any future x86_64 architecture.)
+and i386 architectures, and "64"
+for the x86_64 architecture.)
 The dependency should
 be stated in the form <code> foo (&gt;= version-revision)</code> where 
 <code>version-revision</code> refers to
@@ -453,12 +453,12 @@ a declaration</p>
     %p/lib/libbar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
   &lt;&lt;
 </pre>
-<p>indicates that a (32bit)
+<p>indicates that a (32-bit)
 library with <code>-install_name</code> %p/lib/libbar.1.dylib
 and <code>-compatibility_version</code> 2.1.0 has been installed since
 version 1.1-2 of the <b>bar1</b> package.  In addition, this declaration
 amounts to  a promise
-from the maintainer that a 32bit
+from the maintainer that a 32-bit
 library with this name and a compatibility-version
 of at least 2.1.0 will always be found in later versions of the <b>bar1</b> 
 package.

@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2009/06/16 16:44:54';
+$cvs_date = 'Date: 2009/06/19 18:43:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -376,7 +376,11 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 &lt;&lt;
 </pre>
-
+<p>Note that <code>Type: -64bit</code> is generally not appropriate for
+the x86_64 architecture, since in that case
+libraries are being built 64-bit by default
+and stored in <code>%i/lib</code>.
+</p>
 
 </td></tr><tr valign="top"><td>License</td><td>
 <p>
@@ -1275,7 +1279,9 @@ the <code>-compatibility_version</code>, versioned package
 dependency information specifying the Fink package which provides
 this library at this compatibility version, and the
 library architecture.  (The library architecture may either be "32", "64", or
-"32-64", and may be absent; the value defaults to "32" if it is absent.)  
+"32-64", and may be absent; if absent, 
+the value defaults to "32" under the powerpc and i386 machine architectures,
+and to "64" under the x86_64 machine architecture.)  
 The dependency should
 be stated in the form <code> foo (&gt;= version-revision)</code> where 
 <code>version-revision</code> refers to
