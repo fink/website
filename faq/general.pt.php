@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Generalidades";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/12 17:49:31';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/03/15 02:15:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="relations.php?phpLang=pt" title="Relacionamentos com outros projetos"><link rel="prev" href="index.php?phpLang=pt" title="Perguntas frequentes Contents">';
 
 

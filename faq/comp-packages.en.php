@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/14 22:03:57';
+$cvs_date = 'Date: 2009/07/06 18:39:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -93,8 +93,7 @@ preventing you from updating <code>gettext</code>.</p></div>
     <div class="question"><p><b><? echo FINK_Q ; ?>7.7: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are a couple of flavors of error.  One involves missing libraries:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
     <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code>.  The current wisdom on the best
-    fix for such an issue is to install Xcode 3.1 and then apply the latest release update from 
-    <a href="http://xquartz.macosforge.org/trac/wiki">macosforge.org</a>.</p><p>A second issue involves undefined symbols:  "<code>_gdk_threads_add_idle referenced from libgtk-x11-2 expected to be defined in libgdk-x11-2</code>", etc.</p><p>Removing the existing <code>gtk+2-dev</code> package will allow the build to proceed.</p></div>
+    fix for such an issue is to install Xcode 3.1.3 .</p></div>
   </a>
     <a name="all-others">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I'm having issues with a package that isn't listed here.</b></p></div>

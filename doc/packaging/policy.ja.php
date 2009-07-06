@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ポリシー";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/26 01:47:14';
+$cvs_date = 'Date: 2008/06/15 05:49:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト"><link rel="prev" href="format.php?phpLang=ja" title="パッケージ記述">';
 
 
@@ -140,13 +140,17 @@ include_once "header.ja.inc";
 			<p>
 				Fink は共有ライブラリに関して新しいポリシーを定め， 2002 年 2 月から施行しています．
 				以下では Fink 0.5.0 と共に公布された，共有ライブラリについてのポリシー第 4 版
-				(及び 64bit ライブラリを扱うために2006年12月の変更)
-				について説明します．
+
+as modified in December, 2006 to handle 64bit libraries
+and from January, 2008 to handle private shared libraries. (In addition,
+the discussion was updated in June, 2008 to eliminate obsolete references to a
+transitional period for implementing the shared libraries policy.)
+We begin with a quick summary, and then discuss things in more detail.
+
 				最初に要点をかいつまんで述べ，後から詳細に移ります．
 			</p>
 			<p>
-				共有ライブラリをビルドするパッケージで，
-				(1) ツリー stable に入っているか，または (2) 新規のパッケージである場合，
+				共有ライブラリをビルドするパッケージは，
 				Fink ポリシーに従って共有ライブラリを扱う必要があります．
 				すなわち以下の約束に従わなければいけません．
 			</p>
@@ -163,6 +167,15 @@ include_once "header.ja.inc";
 					他のパッケージが一切そのパッケージに依存しないようにする．
 				</li>
 			</ul>
+<p>Note that a package may also install private shared libraries, which
+are not intended to be linked from any other package.  In this case, the
+libraries need not go into a separate package, but a <code>Shlibs</code>
+field must still be part of the package containing shared libraries.  Also,
+maintainers should try to avoid storing a final link from libfoo.dylib
+in the main library directory <code>%i/lib</code> 
+(or its 64-bit equivalent), to prevent
+other programs from accidentally linking to this library.
+</p>
 			<p>
 				このポリシーに反し，パッケージを分割しない場合には，フィールド <code>DescPackaging</code> に理由を記述しなければいけません．
 			</p>
@@ -206,28 +219,17 @@ include_once "header.ja.inc";
 						<p>実行可能プログラムなど</p>
 					</td></tr></table>
 			<p>
-				選択肢 2 を選ぶと，既存のパッケージのアップグレードに手間がかかります．
-				アップグレードと同時に， <code>Depends: foo</code> との記述のある全てのパッケージに
-				<code>BuildDepends: foo-dev</code> を加える必要があるのです．
-				注意すべき点は他にもあります．
-				(中間に別のパッケージを経由して) 間接的に当該パッケージに依存するパッケージのアップグレードを確かに成功させるためには，
-				そのようなパッケージに <code>BuildDepends: foo</code> あるいは
-				<code>BuildDepends: foo-dev</code> を加える必要があるかもしれません．
-				当該パッケージのメンテナには，他のパッケージに <code>BuildDepends</code> が追加されるのを確認する責任があります．
-			</p>
-			<p>
 				<b>詳細なポリシー</b>
 			</p>
 			<p>
 				以下ではさらに詳しく解説します．
-				まず新規にソフトウェアを Fink に移植する際のポリシーを解説し，次に既存 Fink パッケージのアップグレードに移ります．
 				ポリシーが実際に適用された例としては Fink パッケージ libpng, libjpeg や libtiff を参照して下さい．
 			</p>
 			<p>
 				Darwin にポートされたソフトウェアは可能な限り共有ライブラリをビルドしなければいけません．
 				(パッケージメンテナが，必要に応じて共有ライブラリの他に静的ライブラリもビルドすることは自由です．
 				または，静的ライブラリのみを含むパッケージを登録することも問題ありません．)
-				共有ライブラリをビルドする場合，<b>ふたつの</b>相互関連する Fink パッケージを作成しなければいけません．
+				他のパッケージで使われると想定される共有ライブラリをビルドする場合，<b>ふたつの</b>相互関連する Fink パッケージを作成しなければいけません．
 				それらの名称は例えば foo と foo-shlibs となります．
 				共有ライブラリは foo-shlibs に，ヘッダは foo に入ります．
 				これら 2 つのパッケージを単一の .info ファイルから作れます．
@@ -236,7 +238,12 @@ include_once "header.ja.inc";
 				この場合は <code>SplitOff2</code>, <code>SplitOff3</code> などを使えばだいじょうぶです．)
 			</p>
 			<p>
-				共有ライブラリを伴うソフトウェアパッケージには， <b>「メジャーバージョン」</b> N がなければいけません．
+				
+
+Each software package for which public shared libraries are built must have
+a <b>major version number</b> N, which is included in the shared
+library's filename (for example, <code>libbar.N.dylib</code>).
+
 				「メジャーバージョン」は，ライブラリの API にパッケージ間で非互換な変更が加えられたときのみ変わることになっています．
 				Fink では，名称は以下の要領で作成されます．
 				すなわち， upstream パッケージ名が bar なら，そのFinkパッケージの名前は barN と barN-shlibs になります．
@@ -265,11 +272,13 @@ include_once "header.ja.inc";
 Depends: barN-shlibs
 BuildDepends: barN
 </pre>
-			<p>
-				この方式が機能するようになって以降は，他のパッケージが barN 自体に依存するようにしてはいけません．
-				(後方互換性のため，既存のパッケージは barN に依存して構いません．)
-				以上を他の開発者がわかるように，barN のパッケージ記述の中に次の真偽値フィールドを設けます．
-			</p>
+<p>
+It is not be permitted for 
+another package to depend on barN itself.  (Although there may still be
+a few such dependencies involving packages which were in place prior to 
+February, 2002.)  This is
+signaled to other developers by a boolean field
+</p>
 <pre>
 BuildDependsOnly: True
 </pre>
@@ -280,25 +289,29 @@ BuildDependsOnly: True
 			</p>
 			<p>
 				「メジャーバージョン」が N の共有ライブラリをビルドするとき，その共有ライブラリの "install_name" が
-				<code>%p/lib/bar.N.dylib</code> になることが重要です．
+				<code>%p/lib/libbar.N.dylib</code> になることが重要です．
 				(install_name は，ライブラリに対し <code>otool -L</code>，64bit ライブラリの場合は <code>otool64 -L</code> を実行すれば分かります．)
 				実際のライブラリファイルのインストール先は，
 			</p>
 <pre>
-%i/lib/bar.N.x.y.dylib
+%i/lib/libbar.N.x.y.dylib
 </pre>
 			<p>
 				でなければならず，パッケージ側では次のようにシンボリックリンクを貼らなければいけません．
 			</p>
 <pre>
-%i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
-%i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
+%i/lib/libbar.N.dylib -&gt; %p/lib/libbar.N.x.y.dylib
+%i/lib/libbar.dylib -&gt; %p/lib/libbar.N.x.y.dylib
 </pre>
+<p>from the install_name path and from the linking path to the actual
+library.  (The first will not be needed if the library is in fact
+installed at the install_name path, which is becoming more common.)
+</p>
 			<p>
 				静的ライブラリもビルドする場合，次の場所にインストールされることになります．
 			</p>
 <pre>
-%i/lib/bar.a
+%i/lib/libbar.a
 </pre>
 			<p>
 				パッケージが libtool を利用する場合，上記のことはほぼ自動的に処理されますが，
@@ -312,8 +325,8 @@ BuildDependsOnly: True
 			<ul>
 				<li>パッケージ barN-shlibs:
 <pre>
-%i/lib/bar.N.x.y.dylib
-%i/lib/bar.N.dylib -&gt; %p/lib/bar.N.x.y.dylib
+%i/lib/libbar.N.x.y.dylib
+%i/lib/libbar.N.dylib -&gt; %p/lib/libbar.N.x.y.dylib
 %i/lib/bar/N/*
 %i/share/bar/N/*
 %i/share/doc/barN-shlibs/*
@@ -322,8 +335,8 @@ BuildDependsOnly: True
 				<li>パッケージ barN:
 <pre>
 %i/include/*
-%i/lib/bar.dylib -&gt; %p/lib/bar.N.x.y.dylib
-%i/lib/bar.a
+%i/lib/libbar.dylib -&gt; %p/lib/libbar.N.x.y.dylib
+%i/lib/libbar.a
 %i/share/doc/barN/*
 必要に応じて，他のファイルも含める
 </pre>
@@ -346,7 +359,7 @@ BuildDependsOnly: True
 DocFiles: COPYING
 SplitOff: &lt;&lt;
   Package: barN-shlibs
-  Files: lib/bar.N.x.y.dylib lib/bar.N.dylib lib/bar/N
+  Files: lib/libbar.N.x.y.dylib lib/libbar.N.dylib lib/bar/N
   DocFiles: COPYING
 &lt;&lt;
 </pre>
@@ -405,16 +418,29 @@ SplitOff: &lt;&lt;
 				ヘッダファイルと，最低一つの dylib を含み， BuildDependsOnly 値で真偽を宣言していない .deb ファイルに警告を出します．
 				(将来のバージョンでは，この機能をヘッダファイルと静的ライブラリに対応するように拡張する可能性もある．)
 			</p>
+<p>
+  The goal of the Shared Library Policy is to allow assure
+  compatibility between libraries supplied by one package and
+  libraries or programs that use them in a different package. Some
+  packages may have shared libraries that are not designed to be used
+  by other packages. Common situations include a suite of programs
+  that come with a back-end library of utility functions or a program
+  that comes with plugins to handle various features. Because these
+  libraries are "private" to the package that has them, they do not
+  require being packaged with separate -shlibs
+  or <code>BuildDependsOnly</code> SplitOffs.
+</p>
 			<p><b>フィールド Shlibs:</b></p>
 			<p>
 共有ライブラリを適切なパッケージに分類する他にも， Fink ポリシー第 4版では，
 共有ライブラリ全てをフィールド <code>Shlibs</code> を使って宣言することが求められています．
 
 このフィールドでは，各共有ライブラリに対して 1 行ずつ，
-1) ライブラリの <code>-install_name</code>， 
-2) ライブラリの <code>-compatibility_version</code>，
-3) そのライブラリを提供する Fink パッケージを指定するバージョン付き依存性情報
+ライブラリの <code>-install_name</code>， 
+ライブラリがパブリックである場合、その  <code>Shlibs</code> には <code>-compatibility_version</code> のリスト，
+そのライブラリを提供する Fink パッケージを指定するバージョン付き依存性情報
 (ただし -compatibility_version が同じでなければならない)，
+
 そしてライブラリのアーキテクチャ (値は "32", "64", または
 "32-64", あるいは空欄; 空欄時の既定値は "32" ．) 
 
@@ -426,11 +452,11 @@ Fink パッケージの<b>最初</b>の「バージョン」を使います．
 			</p>
 <pre>
 Shlibs: &lt;&lt;
-%p/lib/bar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
+%p/lib/libbar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
 &lt;&lt;
 </pre>
 			<p>
-				<code>-install_name</code> が %p/lib/bar.1.dylib で <code>-compatibility_version</code> が 2.1.0 の (32bit) ライブラリが，
+				<code>-install_name</code> が %p/lib/libbar.1.dylib で <code>-compatibility_version</code> が 2.1.0 の (32bit) ライブラリが，
 				Fink パッケージ <b>bar1</b> の「バージョン」1.1-2 以降でインストールされることを示します．
 				それに加え，この宣言は「この名前がついていて compatibility_version が少なくとも 2.1.0 のライブラリは，
 				Fink パッケージ bar1 の今後のバージョンには必ず含まれている」というメンテナからの保証にも相当します．
@@ -447,6 +473,27 @@ Shlibs: &lt;&lt;
 				(新しい「バージョン」または「版」とは，
 				新しい compatibility_version のライブラリを提供する最初の「バージョン」または「版」のことです．)
 			</p>
+
+<p>
+The <code>Shlibs</code>
+entry for a private library uses a different syntax:
+</p>
+<pre>
+  Shlibs: &lt;&lt;
+    !%p/lib/%N/libbar.1.dylib
+  &lt;&lt;
+</pre>
+<p>The leading exclamation point indicates that this is a private library,
+and since the other information is not relevant in this case, it is 
+not included.</p>
+<p>Note that in this example, the private shared library has been placed
+in its own subdirectory <code>%N</code> of the 
+<code>%i/lib</code> directory (which was named after the
+package).  This is a recommended procedure for private libraries,
+as an additional safety measure, to prevent other packages from accidentally
+linking to this library.
+</p>
+
 			<p>
 				<b>メジャーバージョン番号が変わるとき:</b>
 			</p>
@@ -473,39 +520,10 @@ Replaces: barM
 				barN-shlibs と barM-shlibs はいつまでもインストールしたままでいられます．
 			</p>
 			<p>
-				<b>既存の Fink パッケージをアップグレードする方法:</b>
-			</p>
-			<p>
-				共有または静的ライブラリをインストールする既存のFinkパッケージについては，
-				アップグレードの最良の方法は，問題のパッケージ foo の新しい「バージョン」を作り，
-				上のポリシーを満たす新しいパッケージ foo-shlibs を付属させることです．
-				共有ライブラリ (または foo-shlibs に含まれる任意のファイル) が以前からインストールされていたら，
-				それらの新パッケージで次のように指定します．
-			</p>
-<pre>
-Replaces: foo (&lt;&lt; 同等な.旧式パッケージの.バージョン)
-</pre>
-			<p>
-				これはアップグレードをユーザに意識させないためです．
-				("Conflicts: foo" ではアップグレードが阻害されるので，<b>使用しないで下さい</b>．)
-			</p>
-			<p>
-				アップグレード後，"Depends: foo" となっているパッケージは普通に機能し続けます．
-				しかし，そのようなFinkパッケージのメンテナ全てに連絡し，
-				できる限り早くそれらのパッケージで "Depends: foo-shlibs, BuildDepends: foo" とするよう要請しなければいけません．
-				メンテナ全員がその措置を終えるまで，
-				新しい「メジャーバージョン」の共有ライブラリを提供する新パッケージ fooM と fooM-shlibs を作ることはできません．
-			</p>
-			<p>
-				既存のパッケージで， install_name の名称や，共有ライブラリの名称やシンボリックリンクの名称を正しく使っていない場合，
-				注意してケースバイケースで対処することになります．
-				パッケージを新ポリシーに従ってアップグレードする方法を決定することが困難であれば，メーリングリスト fink-devel で議論して下さい．
-			</p>
-			<p>
 				<b>実行可能プログラムとライブラリの両方を含むパッケージ:</b>
 			</p>
 			<p>
-				upstream パッケージが実行可能プログラムとライブラリの両方を含む場合，
+				upstream パッケージが実行可能プログラムとパブリックライブラリの両方を含む場合，
 				Fink パッケージを作成する際にいくつかの注意が必要です．
 				唯一の実行可能プログラムが (恐らくビルド時のみに使われ，普段は使われない) foo-config のようなものという場合もあります．
 				その場合，実行可能プログラムはヘッダファイルと共にパッケージ <code>foo</code> に入れて構いません．
@@ -536,6 +554,27 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				こうすると， <code>foo</code> に依存する他のパッケージのメンテナが改訂を済ませるまで，
 				ユーザのシステムでは大抵 <code>foo-bin</code> のインストールが要求されます．
 			</p>
+
+<p>
+  As of fink-0.28.0 (released in January 2008), the format of
+  the <code>Shlibs</code> entry for a "private" shared library has
+  changed (see earlier discussion of the difference between a public
+  and a private shared library). Note that the Shared Library Policy
+  has always required all shared libraries to be listed; the change
+  here is only in the syntax of the <code>Shlibs</code> field. Because
+  this type of shared library is not designed to be used by external
+  packages, there is no need to document its compatilibity or other
+  versioning. Instead, an exclamation-mark is used.  For example,
+  if <code>libquux.3.dylib</code> is
+  the <code>install_name</code> of a private shared library, it would
+  be listed as follows:
+</p>
+<pre>
+  Shlibs: &lt;&lt;
+    !%p/lib/libquux.3.dylib
+  &lt;&lt;
+</pre>
+
 		
 		<h2><a name="perlmods">3.5 Perl モジュール</a></h2>
 			

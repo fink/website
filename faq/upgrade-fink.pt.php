@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Atualizando o Fink";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/12 17:49:31';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/03/15 02:15:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="usage-fink.php?phpLang=pt" title="Instalação, uso e manutenção do Fink"><link rel="prev" href="mirrors.php?phpLang=pt" title="Espelhos do Fink">';
 
 

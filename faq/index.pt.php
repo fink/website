@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/12 17:49:31';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/03/15 02:15:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="general.php?phpLang=pt" title="Perguntas gerais">';
 
 
@@ -126,7 +126,7 @@ include_once "header.pt.inc";
         das janelas não aparecem mais.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-wants-xfree86">9.10 Eu instalei o X11 da Apple mas o Fink continua solicitando a
         instalação de XFree86 ou X.org.</a></li><li><a href="usage-packages.php?phpLang=pt#special-x11-debug">9.11 Ainda estou tendo problemas com o X11 e o Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#tiger-gtk">9.12 Sempre que uso um aplicativo GTK, recebo mensagens de erro em
         relação a <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=pt#yelp">9.13 Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.pt.xml,v 1.1 2009/03/12 17:49:31 alexkhansen Exp $-->
+<!--Generated from $Fink: faq.pt.xml,v 1.2 2009/03/15 02:15:23 monipol Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

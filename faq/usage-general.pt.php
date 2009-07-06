@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Uso (1)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/12 17:49:31';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/03/15 02:15:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="usage-packages.php?phpLang=pt" title="Problemas no uso de pacotes - Pacotes específicos"><link rel="prev" href="comp-packages.php?phpLang=pt" title="Problemas de compilação - Pacotes específicos">';
 
 

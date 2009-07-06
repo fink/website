@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/26 01:47:14';
+$cvs_date = 'Date: 2008/06/15 05:49:48';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -1083,12 +1083,11 @@ INSTALLSCRIPT=%i/bin
 						<p>
 							<b>Fink 0.11.0 で導入:</b>
 							このフィールドでは，そのパッケージでインストールされる共有ライブラリを指定します．
-							各共有ライブラリ毎に1行ずつ，空白文字で区切った以下の 3 あるいは 4 項目を記述します．
-							1) ライブラリの <code>-install_name</code>
-							2) ライブラリの <code>-compatibility_version</code>
-							3) そのライブラリを提供する Fink パッケージを指定するバージョン付き依存性情報
-							(ただし -compatibility_version が同じでなければならない)．
-							4) ライブラリのアーキテクチャ
+
+There is one line for each shared library, which contains the <code>-install_name</code> of the library and information about its binary compatibility. 
+Shared libraries that are "public" (i.e., provided for use by other packages) have, separated by whitespace after the filename, the <code>-compatibility_version</code>, versioned package dependency information specifying the Fink package which provides this library at this compatibility version, and the library architecture.
+
+							ライブラリのアーキテクチャ
 							(値は "32", "64", または
                              "32-64", あるいは空欄; 空欄時の既定値は "32" ．) 
 							依存情報は <code>foo (&gt;= バージョン-版)</code> という型式で指定しなければいけません．
@@ -1096,6 +1095,9 @@ INSTALLSCRIPT=%i/bin
 							<b>一番古い</b>バージョンを指します．
 							フィールド Shlibs の設定は「この名前がついていて compatibility_version がこれ以上のライブラリは，
 							その Fink パッケージの今後のバージョンでも必ず含まれている」というメンテナからの保証に相当します．
+
+Shared libraries that are "private" are denoted by an exclamation mark preceeding the filename, and no compatilibity or versioning information is given. See the <a href="policy.php?phpLang=ja#sharedlibs">Shared Library Policy</a> for more information.
+
 						</p>
 					</td></tr><tr valign="top"><td>RuntimeVars</td><td>
 						<p>
@@ -1228,7 +1230,7 @@ AnotherVar: foo bar
 							フィールド <code>Description</code> よりも詳しい説明．
 							(それが何であるか，何のために使うものか？)
 							複数行に渡っても構いません．
-							このフィールドは児童開業されずに表示されるので， (可能ならば) 手動で改行を挿入して各行 79 文字以内に収めてください．
+							このフィールドは自動改行されずに表示されるので， (可能ならば) 手動で改行を挿入して各行 79 文字以内に収めてください．
 						</p>
 					</td></tr><tr valign="top"><td>DescUsage</td><td>
 						<p>
