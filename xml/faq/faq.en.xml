@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.96 2009/03/14 22:03:57 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.97 2009/07/06 18:39:40 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1550,10 +1550,9 @@ preventing you from updating <code>gettext</code>.</p>
     <answer>
     <p>There are a couple of flavors of error.  One involves missing libraries:   <filename>/usr/X11/lib/libXrandr.2.0.0.dylib</filename> or 
     <filename>/usr/X11/lib/libXdamage.1.1.0.dylib</filename>.  The current wisdom on the best
-    fix for such an issue is to install Xcode 3.1 and then apply the latest release update from 
-    <link url="http://xquartz.macosforge.org/trac/wiki">macosforge.org</link>.</p>  
-    <p>A second issue involves undefined symbols:  "<code>_gdk_threads_add_idle referenced from libgtk-x11-2 expected to be defined in libgdk-x11-2</code>", etc.</p>
-<p>Removing the existing <code>gtk+2-dev</code> package will allow the build to proceed.</p>
+    fix for such an issue is to install Xcode 3.1.3 .</p>  
+<!--    <p>A second issue involved undefined symbols:  "<code>_gdk_threads_add_idle referenced from libgtk-x11-2 expected to be defined in libgdk-x11-2</code>", etc.</p>
+<p>Removing the existing <code>gtk+2-dev</code> package allowed the build to proceed. This is fixed, for now.</p> <-->
     </answer>
   </faqentry>
     <faqentry name="all-others">
@@ -1951,78 +1950,6 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
         <code>/usr/bin/X11R6</code> in your PATH.</p>
       </answer>
     </faqentry>
-    <!--
-<faqentry name="xfree-keymapping" >
-#<question>
-<p>I just upgraded to MacOS X 10.1 and now XFree86 always quits immediately. In the messages it says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's wrong?</p>
-</question>
-<answer>
-	<p>This is a known problem on 10.1. You must use the &quot;Load from file&quot; keymapping option since the default option (loading it from the kernel) doesn't work anymore. The setting is in the XDarwin Preferences dialog. Be sure that a file is selected (e.g. USA.keymapping) - simply activating the check box may not be sufficient with some versions. If you can't get to the Preferences dialog because you disabled all splash screens, you can delete <code>~/Library/Preferences/org.xfree86.XDarwin.plist</code> to get it back, then start XDarwin and go to the Preferences dialog while the splash screen is displayed. Alternatively, you can edit that file manually in a text editor to enable the keymapping option (the UseKeymappingFile and KeymappingFile bits). </p>
-<p>As a last resort, you can run <code>startx -x- -quartz -keymap
-USA.keymapping</code> from Terminal.app.
-If this still doesn't work, you have another problem in addition to
-the keymapping problem that prevents XDarwin from starting.
-You'll get a bunch of diagnostic messages in Terminal.app to help you
-sort this out.
-</p>
-</answer>
-</faqentry>
--->
-    <faqentry name="xterm-error">
-      <question>
-        <p>xterm fails with "dyld: xterm Undefined symbols: xterm undefined
-        reference to _tgetent expected to be defined in
-        /usr/lib/libSystem.B.dylib".</p>
-      </question>
-      <answer>
-        <p>This is caused by using a 10.1 version of XFree86 on 10.2. You must
-        upgrade to a 10.2 version.</p>
-        <p>If you are using the Fink <code>xfree86</code> packages, then you
-        can get an upgrade by the usual means ("<code>fink selfupdate-cvs ;
-        fink update-all</code>" for installation from source, "<code>fink
-        selfupdate ; sudo apt-get update; sudo apt-get dist-upgrade</code>"
-        for installation from binaries.</p>
-        <p>If you have installed XFree86 by other means, you can find patches
-        to bring you up to date at the <link url="http://mrcla.com/XonX">XonX
-        web site</link>.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="libXmuu">
-      <question>
-        <p>When I try to start XFree86 I get one of the following errors:
-        "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" or
-        "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</p>
-      </question>
-      <answer>
-        <p>You are missing a file that is supposed to be installed by
-        <code>xfree86-base-(threaded)-shlibs</code>. You should reinstall it
-        using <code>fink reinstall xfree86-base-shlibs</code> (<code>fink
-        reinstall xfree86-base-threaded-shlibs</code> if you are using the
-        threaded XFree86 packages) for source, or <code>sudo apt-get install
-        --reinstall xfree86-base-shlibs</code> for binaries.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="apple-x-bugs">
-      <question>
-        <p>I had Fink's XFree86 installed, and I've replaced it with Apple's
-        X11, and now everything's crashing!</p>
-      </question>
-      <answer>
-        <p>First of all, if you previously had the "threaded" versions of
-        Fink's XFree86 packages installed, you may need to rebuild the
-        application that is crashing. Some programs check for the availability
-        of threading at build time, and then from then on believe that
-        threading is available to them.</p>
-        <p>Secondly, you may have just hit an Apple X11 bug. As of the time of
-        this writing, a number of bugs are known by the Apple team and are
-        being worked on.</p>
-        <p>If you have general questions regarding Apple's X11 that are not
-        really related to Fink, you may want to check <link url="http://www.lists.apple.com/x11-users">Apple's official discussion
-        list on X11</link>. They also have also recommended that bugs in X11
-        be <link url="http://developer.apple.com/bugreporter">submitted to the
-        Apple bug reporter</link>.</p>
-      </answer>
-    </faqentry>
     <faqentry name="apple-x-delete">
       <question>
         <p>I want the delete key in Apple's X11.app to behave like that in
@@ -2051,79 +1978,53 @@ xmodmap $HOME/.Xmodmap</codeblock>
         <p></p>
       </answer>
     </faqentry>
-    <faqentry name="gnome-two">
-      <question>
-        <p>I upgraded from GNOME 1.x to GNOME 2.x and now
-        <code>gnome-session</code> won't open a window manager.</p>
-      </question>
-      <answer>
-        <p>While under GNOME 1.x <code>gnome-session</code> invokes the
-        <code>sawfish</code> window manager automatically, under GNOME 2.x,
-        you'll have to call a window manager in <code>~/.xinitrc</code> before
-        running <code>gnome-session</code>, e.g.:</p>
-        <codeblock>... 
-exec metacity &amp; exec gnome-session</codeblock>
-        <p>Note:  this is no longer true for <em>GNOME 2.4</em>.  Running <filename>gnome-session</filename> invokes a window manager.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="apple-x11-no-windowbar">
-      <question>
-        <p>I upgraded to Apple's X11 in Panther and now my window title bars
-        are missing.</p>
-      </question>
-      <answer>
-        <p>You didn't upgrade X11 to version "X11 1.0 - XFree86 4.3.0"
-        included with Panther. You can install X11 from X11.pkg on Disk 3.</p>
-      </answer>
-    </faqentry>
     <faqentry name="apple-x11-wants-xfree86">
       <!-- FAQ comp-general.apple-x11-wants-xfree86 is coded into VirtPackage.pm
          Do not rename, remove, move to a different chapter, or
          otherwise cause the URL to change. -->
       <question>
-        <p>I installed Apple's X11 but Fink keeps asking to install
-        XFree86 or X.org.</p>
+        <p>I'm having problems with X11 and Fink</p>
       </question>
       <answer>
         <p>There are two possibilities to consider.</p>
         <ul>
           <li>
             <em>You are installing from binaries:</em>
-            <p>If you have a current version of <code>fink</code> (&gt;=0.18.3-1), typically what you need to do is reinstall the X11User package, since the installer application occasionally misses installing a file.  You may need to do this multiple times. Running</p>
+            <p>Typically what you need to do is reinstall the X11User package,
+	    since the installer application occasionally misses installing a file.
+	    You may need to repeat this multiple times. Running</p>
 	    <codeblock>fink list -i system-xfree86</codeblock>
-	    <p>should show that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> packages are installed. If reinstalling the X11User package doesn't work, then consult the <xref section="special-x11-debug">special debug</xref> instructions, below.</p>
-            <p>If you are running an earlier version of the <code>fink</code> package, then updating <code>fink</code> may solve your problem immediately, e.g. via</p>
-            <codeblock>sudo apt-get update
-sudo apt-get install fink</codeblock>
+	    <p>should show that the <code>system-xfree86</code> and
+	    <code>system-xfree86-shlibs</code> packages are installed, and</p>
+	    <codeblock>fink list x11</codeblock>
+	    <p>should indicate that the <code>x11-shlibs</code> and <code>x11</code> virtual
+	    packages are present.</p>
+	    <p>If reinstalling the X11User package doesn't work, then consult the
+	    <xref section="special-x11-debug">special debug</xref> instructions,
+	    below.</p>
           </li>
           <li>
             <em>You are installing from source:</em>
-	    <p>If you have a current version of <code>fink</code>, then typically this error means that you need to (re)install the X11SDK, which is <em>mandatory</em> if you want to build packages from source. It is on the Panther Xcode CD or in the XCode Tools folder of a TIger DVD, and is <em>not</em> installed by default when you install XCode on Panther--it has to be installed either with a custom Xcode install, or by clicking on the <filename>X11SDK pkg</filename> icon in the <filename>Packages</filename> folder of the XCode CD.  It <em> is</em>, on the other hand, installed by default when you install Xcode on Tiger (even if X11User isn't present), but it's still possible for the Installer program to miss a file.  </p><p>If your computer didn't come with XCode media, then a disk image for it, containing <filename>X11SDK.pkg</filename> among other things, is quite likely present on your computer somewhere--check for a directory like <filename> /Applications/Installers </filename> for an XCode disk image.  <filename>X11User.pkg</filename> may be present in that directory as well. </p>
-	    <p>If you are still having problems, run </p>
+	    <p>Typically this error means that you need to (re)install the X11SDK,
+	    which is <em>mandatory</em> if you want to build packages from source.
+	    It is in the Xcode Tools folder of a Tiger DVD, or Xcode Tools/Packages
+	    on the second install DVD of Leopard.  If you run</p>
             <codeblock>fink list -i system-xfree86  </codeblock>
-            <p>It should show the <code>system-xfree86</code>, <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code> packages as installed.  If the <code>-dev</code> package is missing, reinstall the X11SDK, since sometimes the Apple Installer misses a file.  You may need to keep doing this.  If either of the other two are missing, then reinstall the X11User package (same reason).</p>
-            <p>
-              <em>Note for Jaguar (X11 beta 3) users</em>:  As you aren't using XCode, you need to have already downloaded a copy of the proper X11SDK package on your system.  Since X11 beta 3 is expired, its X11SDK package (as well as the X11User package) is no longer available for download.  You'll either have to restrict yourself to installing X11 applications via the binary distribution, install XFree86 or X.org, or update to Panther.</p>
-            <p>If you are running a version of <filename>fink</filename> prior to 0.17 then you should update
-          <code>fink</code>, e.g. via a </p>
-            <codeblock>fink selfupdate</codeblock>(assuming that you have either CVS or rsync updating turned on and aren't just using point releases).<p>If you're still having problems, then consult the <xref section="special-x11-debug">special debug</xref> instructions, below.</p>
-          </li>
+            <p>it should show the <code>system-xfree86</code>,
+	    <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code>
+	    packages as installed.  If the <code>-dev</code> package is missing,
+	    reinstall the X11SDK, since sometimes the Apple Installer misses a
+	    file.  You may need to keep doing this.  If either of the other two
+	    are missing, then reinstall the X11User package (same reason).  At
+	    this point</p>
+	    <codeblock>fink list x11</codeblock>
+	    <p>should indicate that the <code>x11-dev</code>, <code>x11-shlibs</code>,
+	    and <code>x11</code> virtual packages are present.</p>
+	    <p>If reinstalling the X11SDK or X11User package doesn't work, then consult the
+	    <xref section="special-x11-debug">special debug</xref> instructions,
+	    below.</p>
+           </li>
         </ul>
-      </answer>
-    </faqentry>
-    <faqentry name="wants-xfree86-on-upgrade">
-      <question>
-        <p>I switched from the 10.2 Fink version to 10.2-gcc3.3 or 10.3, I have Apple's X11, and Fink asks me to install XFree86 or X.org.</p>
-      </question>
-      <answer>
-        <p>You may need to remove one of the old place-holder packages: <filename>system-xfree86</filename>, <filename>system-xfree86-42</filename>, or <filename>system-xfree86-43</filename>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <filename>system-xfree86</filename>, you must use the command</p>
-        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
-        <p>to remove the out-of-date versions.
-
-You can check your installation by running</p>
-        <codeblock>fink list -i system-xfree86</codeblock>
-        <p>and checking to see that the <code>system-xfree86</code> and <code>system-xfree86-shlibs</code> packages are present.  If you installed the X11SDK, then you should also see <code>system-xfree86-dev</code>.</p>
-        <p>If you are still having problems then refer to the <xref section="apple-x11-wants-xfree86">Fink wants XFree86 or X.org</xref> entry, above.</p>
       </answer>
     </faqentry>
     <faqentry name="special-x11-debug">
@@ -2132,7 +2033,13 @@ You can check your installation by running</p>
       </question>
       <answer>
         <p>If the hints in the  <xref section="apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</xref> or <xref section="wants-xfree86-on-upgrade">X11 and upgrade from 10.2</xref> entries don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p>
-        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+	<p>On Leopard, use</p>
+<codeblock>
+sudo pkgutil --forget com.apple.pkg.X11User
+sudo pkgutil --forget com.apple.pkg.X11SDKLeo
+</codeblock>
+<p>Then, on either 10.4 or 10.5, run</p>
+<codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
@@ -2140,9 +2047,11 @@ xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg \
  /Library/Receipts/X11Update*.pkg
 fink selfupdate; fink index</codeblock>
-        <p>(the first line may give you warnings about trying to remove nonexistent packages).  Then, reinstall Apple's X11 (and the X11SDK, if needed), or an alternative X11 implementation, like XFree86 or X.org.</p>
-        <p>If you are still having problems and you are running
-        <code>fink-0.19.0</code> or later then you can run</p>
+        <p>(the first line may give you warnings about trying to remove
+	nonexistent packages).  Then, reinstall Apple's X11 (and the X11SDK, if
+	needed), or,
+	if you're on 10.4, an alternative X11 implementation, like XFree86 or X.org.</p>
+        <p>If you are still having problems then you can run</p>
         <codeblock>fink-virtual-pkgs --debug</codeblock>
         <p>to get information about what's missing.</p>
         <p>If you are running an earlier version of <code>fink</code>, then
