@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.97 2009/07/06 18:39:40 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.98 2009/07/08 11:27:28 monipol Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1983,7 +1983,7 @@ xmodmap $HOME/.Xmodmap</codeblock>
          Do not rename, remove, move to a different chapter, or
          otherwise cause the URL to change. -->
       <question>
-        <p>I'm having problems with X11 and Fink</p>
+        <p>I'm having problems with X11 and Fink.</p>
       </question>
       <answer>
         <p>There are two possibilities to consider.</p>
@@ -2007,8 +2007,9 @@ xmodmap $HOME/.Xmodmap</codeblock>
             <em>You are installing from source:</em>
 	    <p>Typically this error means that you need to (re)install the X11SDK,
 	    which is <em>mandatory</em> if you want to build packages from source.
-	    It is in the Xcode Tools folder of a Tiger DVD, or Xcode Tools/Packages
-	    on the second install DVD of Leopard.  If you run</p>
+            It is in the Xcode Tools folder of a Tiger DVD, or (Optional
+            Installs/)Xcode Tools/Packages on your Leopard DVD(s). If you
+            run</p>
             <codeblock>fink list -i system-xfree86  </codeblock>
             <p>it should show the <code>system-xfree86</code>,
 	    <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code>
@@ -2032,7 +2033,7 @@ xmodmap $HOME/.Xmodmap</codeblock>
         <p>I'm still having problems with X11 and Fink.</p>
       </question>
       <answer>
-        <p>If the hints in the  <xref section="apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</xref> or <xref section="wants-xfree86-on-upgrade">X11 and upgrade from 10.2</xref> entries don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p>
+        <p>If the hints in the  <xref section="apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</xref> entry don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p>
 	<p>On Leopard, use</p>
 <codeblock>
 sudo pkgutil --forget com.apple.pkg.X11User
