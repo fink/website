@@ -1,3 +1,18 @@
+<a name="2009-07-25%20Fink%20Core%20Group%20changes."><span class="news-date">2009-07-25: </span><span class="news-headline">Fink Core Group changes.</span></a><?php gray_line(); ?>
+      <p>
+The Fink Core Group announces two new members: Alexander Hansen (<b>akh</b>)
+and Augusto Devegili (<b>monipol</b>), both of whom have been very active
+in fink.  Please join us in welcoming the new members!
+</p><p>
+The Group also announces that Christian Schaeffner has stepped down,
+returning to "ordinary member" status.  We thank Christian for his help
+on the team over the past several years.
+</p><p>
+Members of the Fink project are working hard to provide user support,
+to keep Fink up to date, and to prepare for the upcoming Snow Leopard
+release.  More volunteers are always needed, so please consider
+getting involved at some level!
+</p>
 <a name="2008-07-23%20End%20of%2010.3%20support."><span class="news-date">2008-07-23: </span><span class="news-headline">End of 10.3 support.</span></a><?php gray_line(); ?>
       <p>
 The Fink project is no longer able to offer support for users of Fink
@@ -28,24 +43,4 @@ If you are eager to start using this massive gnome update immediately,
 we suggest that you switch to the unstable tree.  If not, we suggest
 that you hold off running "fink selfupdate" for a while (perhaps a
 week or two) until things have again stabilized.</p>
-<a name="2008-06-26%20New%20Fink%20release."><span class="news-date">2008-06-26: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
-      <p>
-A new (binary) Fink release for OS X 10.5 (Leopard) is 
-<a href="<?php print $root; ?>download/index.php">available</a>
- today: version 0.9.0, which can be installed on either Intel or PowerPC
-hardware.
-The release includes source files, binary packages, and  Fink
-installers for both kinds of hardware.
-</p>
-      <p>
-Users who have already installed Fink on Leopard from source, who now wish
-to switch to the binary distribution, may do so as follows.  First,
-run <code>fink selfupdate</code> to update to the latest version of the
-fink package manager.  Next, run <code>fink configure</code>, and be sure
-to <b>change</b> your choice about using the binary distribution from No
-to yes.  Finally, run <code>fink scanpackages</code> to activate the binary
-distribution.
-</p>
-<p><b>Update, 2008-07-11:</b> If you use the binary installer, you
-should run <code>fink selfupdate</code> after installation.</p>
 

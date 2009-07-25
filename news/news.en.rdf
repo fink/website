@@ -5,8 +5,45 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2009-03-12T13:56:39-04:00</dc:date>
+    <dc:date>2009-07-25T08:34:25-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2009-07-25%20Fink%20Core%20Group%20changes.">
+      <title>Fink Core Group changes.</title>
+      <link>http://fink.sourceforge.net/news/#2009-07-25%20Fink%20Core%20Group%20changes.</link>
+      <guid>http://fink.sourceforge.net/news/#2009-07-25%20Fink%20Core%20Group%20changes.</guid>
+      <description>
+      <p>
+The Fink Core Group announces two new members: Alexander Hansen (akh)
+and Augusto Devegili (monipol), both of whom have been very active
+in fink.  Please join us in welcoming the new members!
+</p><p>
+The Group also announces that Christian Schaeffner has stepped down,
+returning to "ordinary member" status.  We thank Christian for his help
+on the team over the past several years.
+</p><p>
+Members of the Fink project are working hard to provide user support,
+to keep Fink up to date, and to prepare for the upcoming Snow Leopard
+release.  More volunteers are always needed, so please consider
+getting involved at some level!
+</p>
+</description>
+      <content:encoded>
+      <p>
+The Fink Core Group announces two new members: Alexander Hansen (akh)
+and Augusto Devegili (monipol), both of whom have been very active
+in fink.  Please join us in welcoming the new members!
+</p><p>
+The Group also announces that Christian Schaeffner has stepped down,
+returning to "ordinary member" status.  We thank Christian for his help
+on the team over the past several years.
+</p><p>
+Members of the Fink project are working hard to provide user support,
+to keep Fink up to date, and to prepare for the upcoming Snow Leopard
+release.  More volunteers are always needed, so please consider
+getting involved at some level!
+</p>
+</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.">
       <title>End of 10.3 support.</title>
       <link>http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.</link>
@@ -598,69 +635,6 @@ precompiled versions of the basic fink packages as well as a script which
 will attempt to update an existing fink installation.
 </p>
 </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles">
-      <title>CVS Troubles</title>
-      <link>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</link>
-      <guid>http://fink.sourceforge.net/news/#2006-05-10%20CVS%20Troubles</guid>
-      <description>
-      <p>
-As many Fink users are aware, the Fink CVS repository at sourceforge.net
-has not been fully functional since March 30.  The anonymous CVS access
-has not been updated since then, and as of several days ago, the developers
-are also unable to update CVS in any form.
-</p><p>
-As we understand the current plans of sourceforge's staff (outlined
-briefly on their <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">site
-status page</a>), the old CVS servers will never be brought back in
-their current form.  This is likely to mean disruption for fink users,
-but at present, we cannot say what form this disruption will take.
-</p><p>
-Our current advice to fink users is to switch to the 'rsync' method of
-updating (by running the command 'fink selfupdate-rsync').  This will at
-least give you a fink installation which is current up through May 7.
-If a full update to the new CVS situation turns out to be impossible
-via fink's normal selfupdate command, we will post instructions here
-on how to update when they become available.
-</p>
-<p>Update 5/24/06: CVS is now functioning again, and users using the rsync
-method of selfupdating are getting up-to-date content.  If you are using
-the cvs method, and can't (or don't wish to) switch to rsync, you should
-download the file fink-mirrors-0.24.15.2.tar.gz from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
-Sourceforge file release page</a>, expand the file, and run the command
-./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
-should again work normally.
-</p>
-    </description>
-      <content:encoded>
-      <p>
-As many Fink users are aware, the Fink CVS repository at sourceforge.net
-has not been fully functional since March 30.  The anonymous CVS access
-has not been updated since then, and as of several days ago, the developers
-are also unable to update CVS in any form.
-</p><p>
-As we understand the current plans of sourceforge's staff (outlined
-briefly on their <a href="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1">site
-status page</a>), the old CVS servers will never be brought back in
-their current form.  This is likely to mean disruption for fink users,
-but at present, we cannot say what form this disruption will take.
-</p><p>
-Our current advice to fink users is to switch to the 'rsync' method of
-updating (by running the command 'fink selfupdate-rsync').  This will at
-least give you a fink installation which is current up through May 7.
-If a full update to the new CVS situation turns out to be impossible
-via fink's normal selfupdate command, we will post instructions here
-on how to update when they become available.
-</p>
-<p>Update 5/24/06: CVS is now functioning again, and users using the rsync
-method of selfupdating are getting up-to-date content.  If you are using
-the cvs method, and can't (or don't wish to) switch to rsync, you should
-download the file fink-mirrors-0.24.15.2.tar.gz from <a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=69685">the
-Sourceforge file release page</a>, expand the file, and run the command
-./inject.pl from within the fink-mirrors-0.24.15.2 directory.  After this has been done, the fink selfupdate command
-should again work normally.
-</p>
-    </content:encoded>
     </item>
   </channel>
 </rss>
