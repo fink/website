@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: freckle $';
-$cvs_date = '$Date: 2008/08/18 14:59:24 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2009/07/25 15:12:22 $';
 
 include "header.inc";
 ?>
@@ -33,21 +33,18 @@ this list.</p>
 <h2>Former Core Team members</h2>
 <ul>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
+<li>Christian Schaffner (<i>chris01</i>)</li>
 </ul>
 
 <h2>Fink Core Team</h2>
 <ul>
+<li>Augusto Devegili (<i>monipol</i>) </li>
+<li>Alexander Hansen  (<i>akh</i>) </li>
 <li>Max Horn (<i>Fingolfin</i>)</li>
 <li>Daniel Macks (<i>dmacks</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
-<li>Christian Schaffner (<i>chris01</i>)</li>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
-</ul>
-
-<h2>User Liaison</h2>
-<ul>
-<li>Alexander Hansen  (<i>akh</i>) </li> <!-- support work on mailing lists! -->
 </ul>
 
 <h2>Administrativa and PR.</h2>
