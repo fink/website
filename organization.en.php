@@ -1,7 +1,7 @@
 <?
 $title = "Organization of Fink";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2004/05/05 12:45:56 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/07/26 10:57:37 $';
 
 include "header.inc";
 ?>
@@ -28,9 +28,9 @@ coordinate the other groups of volunteers who work on the Fink
 project. 
 </p>
 
-<p>The current fink core members are Max Horn, Daniel Macks, Dave
-Morrison, Peter O'Gorman, and Ben Reed.  They can be reached at
-&lt;fink-core@lists.sourceforge.net&gt;.
+<p>The current Fink Core members are Augusto Devegili, Alexander Hansen, Max
+Horn, Daniel Macks, David R. Morrison, Benjamin Reed e Dave Vasilevsky.  They
+can be reached at &lt;fink-core@lists.sourceforge.net&gt;.
 </p>
 
 <h2>The Fink Translators</h2>
