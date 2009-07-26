@@ -171,7 +171,7 @@ Fran&ccedil;ais |
 </a>
 <a name="usage-fink.sudo">
 <div class="question"><p><b>Q5.10: Comment ne plus avoir à saisir son mot de passe après la commande sudo ?</b></p></div>
-<div class="answer"><p><b>A:</b> Si vous n'êtes pas paranoïaque, vous pouvez configurer sudo pour qu'il ne vous demande pas votre mot de passe. Pour cela, mettez-vous en mode super-utilisateur et lancez <tt style="white-space: nowrap;">visudo</tt>, puis ajoutez la ligne suivante :</p><pre>nomutilisateur ALL = NOPASSWD: ALL</pre><p>Remplacez bien sûr <tt style="white-space: nowrap;">nomutilisateur</tt> par votre nom d'utilisateur. Cette ligne vous permet d'exécuter n'importe quelle commande avec sudo sans saisir votre mot de passe.</p></div>
+<div class="answer"><p><b>A:</b> Si vous n'êtes pas paranoïaque, vous pouvez configurer sudo pour qu'il ne vous demande pas votre mot de passe. Pour cela, mettez-vous en mode super-utilisateur et lancez <tt style="white-space: nowrap;">visudo</tt>, puis ajoutez la ligne suivante :</p><pre>nomutilisateur ALL =(ALL) NOPASSWD: ALL</pre><p>Remplacez bien sûr <tt style="white-space: nowrap;">nomutilisateur</tt> par votre nom d'utilisateur. Cette ligne vous permet d'exécuter n'importe quelle commande avec sudo sans saisir votre mot de passe.</p></div>
 </a>
 <a name="usage-fink.exec-init-csh">
 <div class="question"><p><b>Q5.11: À l'exécution de init.csh ou de init.sh, un message d'erreur signale que l'autorisation est refusée (message en anglais "Permission denied") . Que se passe-t-il ?</b></p></div>

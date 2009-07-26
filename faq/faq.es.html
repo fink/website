@@ -267,7 +267,7 @@ plataformas.
     <a name="usage-fink.sudo">
       <div class="question"><p><b>Q5.10: Estoy cansado de tener que teclear mi contraseña en sudo una y otra vez  ¿hay alguna forma de evitar esto?</b></p></div>
       <div class="answer"><p><b>A:</b> If you're not paranoid, you can configure sudo to not ask you for a
-        password. To do this, run <tt style="white-space: nowrap;">visudo</tt> as root and add a line like this:</p><pre>username ALL = NOPASSWD: ALL</pre><p>Replace <tt style="white-space: nowrap;">username</tt> with your actual username, of course.
+        password. To do this, run <tt style="white-space: nowrap;">visudo</tt> as root and add a line like this:</p><pre>username ALL =(ALL) NOPASSWD: ALL</pre><p>Replace <tt style="white-space: nowrap;">username</tt> with your actual username, of course.
         This line allows you to run any command via sudo without typing your
         password.</p></div>
     </a>

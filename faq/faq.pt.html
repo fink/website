@@ -537,7 +537,7 @@ fink scanpackages</pre><p>Se você não tiver certeza de qual método de atualiz
         Há alguma forma de contornar isso?</b></p></div>
       <div class="answer"><p><b>A:</b> Se você não for paranóico, você pode configurar o sudo para não lhe
         pedir uma senha. Para fazer isso, execute o comando <tt style="white-space: nowrap;">visudo</tt>
-        como root e adicione uma linha como esta:</p><pre>usuario ALL = NOPASSWD: ALL</pre><p>Troque <tt style="white-space: nowrap;">usuario</tt> pelo seu nome de usuário. Esta linha
+        como root e adicione uma linha como esta:</p><pre>usuario ALL =(ALL) NOPASSWD: ALL</pre><p>Troque <tt style="white-space: nowrap;">usuario</tt> pelo seu nome de usuário. Esta linha
         permitirá que você qualquer comando via sudo sem precisar digitar sua
         senha.</p></div>
     </a>

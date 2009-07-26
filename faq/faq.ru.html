@@ -492,7 +492,7 @@ complaining that the dependencies are in an inconsistent state.</a></li><li><a h
                     Можно ли с этим что-то сделать?</b></p></div>
             <div class="answer"><p><b>A:</b> Если вы не страдаете паранойей, вы можете конфигурировать sudo так,
                    чтобы не было запроса о пароле. Для этого надо запустить <tt style="white-space: nowrap;">visudo</tt> в качестве суперпользователя
-                    и добавить такую строку:</p><pre>username ALL = NOPASSWD: ALL</pre><p>Конечно, надо заменить <tt style="white-space: nowrap;">username</tt> вашим действительным именем пользователя.
+                    и добавить такую строку:</p><pre>username ALL =(ALL) NOPASSWD: ALL</pre><p>Конечно, надо заменить <tt style="white-space: nowrap;">username</tt> вашим действительным именем пользователя.
                     Данная строка позволяет запускать любую команду через sudo
                     без внесения пароля.</p></div>
         </a>

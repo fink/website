@@ -413,7 +413,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 <a name="usage-fink.sudo">
 <div class="question"><p><b>Q5.10: sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</b></p></div>
 <div class="answer"><p><b>A:</b> sudo がパスワードを聞いてこないように設定することができます。
-root 権限で <tt style="white-space: nowrap;">visudo</tt> を開き、次の行を追加します:</p><pre>username ALL = NOPASSWD: ALL</pre><p>もちろん、 <tt style="white-space: nowrap;">username</tt> は実際のユーザー名に変えて下さい。</p></div>
+root 権限で <tt style="white-space: nowrap;">visudo</tt> を開き、次の行を追加します:</p><pre>username ALL =(ALL) NOPASSWD: ALL</pre><p>もちろん、 <tt style="white-space: nowrap;">username</tt> は実際のユーザー名に変えて下さい。</p></div>
 </a>
 <a name="usage-fink.exec-init-csh">
 <div class="question"><p><b>Q5.11: init.csh or init.sh を実行しようとすると、 "Permission denied" エラーが出ます。

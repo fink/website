@@ -320,7 +320,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
     
     <a name="usage-fink.sudo">
       <div class="question"><p><b>Q5.10: 每次运行 sudo 都要输入密码，这很麻烦。有办法解决吗？</b></p></div>
-      <div class="answer"><p><b>A:</b> 你可以配制 sudo 不需要询问你密码。用 root 权限运行 <tt style="white-space: nowrap;">visudo</tt> 命令，并添加一行：</p><pre>username ALL = NOPASSWD: ALL</pre><p>把 <tt style="white-space: nowrap;">username</tt> 替换为实际的用户名。这一行使得你可以运行 sudo 命令而不需要输入密码。</p></div>
+      <div class="answer"><p><b>A:</b> 你可以配制 sudo 不需要询问你密码。用 root 权限运行 <tt style="white-space: nowrap;">visudo</tt> 命令，并添加一行：</p><pre>username ALL =(ALL) NOPASSWD: ALL</pre><p>把 <tt style="white-space: nowrap;">username</tt> 替换为实际的用户名。这一行使得你可以运行 sudo 命令而不需要输入密码。</p></div>
     </a>
     <a name="usage-fink.exec-init-csh">
       <div class="question"><p><b>Q5.11: 当我尝试运行 init.csh 或 init.sh 时，我碰到一个 "Permission denied" 错误。我做错了什么？</b></p></div>
