@@ -1,7 +1,7 @@
 <?
 $title = "Mailing Lists";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/03/03 17:09:39 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2009/07/26 20:02:47 $';
 
 include "header.inc";
 ?>
@@ -33,13 +33,13 @@ Diskussion rund um das Thema i18n und die Fink Web-Site.</p></li>
 Hilfe für Fink-Anfänger</p></li>
 <li><p><a href="fink-users.php">fink-users</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.general">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.general">NNTP</a>)<br>
-Hilfe f�r fortgeschrittene Fink Nutzer.</p></li>
+Hilfe für fortgeschrittene Fink Nutzer.</p></li>
 <li><p><a href="fink-devel.php">fink-devel</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.devel">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.devel">NNTP</a>)<br>
 Liste der Fink Entwickler und Paket-Maintainer</p></li>
 <li><p><a href="fink-core.php">fink-core</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.core">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.core">NNTP</a>)<br>
-Diskussion rund um die Kernfunktionalit�t von Fink</p></li>
+Diskussion rund um die Kernfunktionalität von Fink</p></li>
 <li><p><a href="fink-gnome-core.php">fink-gnome-core</a>
 (<a href="http://news.gmane.org/gmane.os.apple.fink.gnome">Archives</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.gnome">NNTP</a>)<br>
 Hilfe zu GNOME und Fink.</p></li>
