@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="pt">
-  <cvsid>$Id: news.pt.xml,v 1.1 2009/03/12 17:56:00 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.pt.xml,v 1.2 2009/07/26 11:13:27 monipol Exp $</cvsid>
+
+  <newsitem>
+    <date>2009-07-25</date>
+    <headline>Mudanças na Equipe Central</headline>
+    <body>
+      <p>A Equipe Central do Fink anuncia dois novos membros: Alexander Hansen
+      (<em>akh</em>) e Augusto Devegili (<em>monipol</em>), tendo ambos estado
+      bastante ativos no projeto. Una-se a nós e dê as boas-vindas aos novos
+      membros!</p>
+      <p>A equipe também anuncia que Christian Schaeffner retirou-se do grupo,
+      voltando ao status de colaborador regular. Agradecemos ao Christian por
+      sua ajuda na equipe nos últimos anos.</p>
+      <p>Membros do projeto Fink estão trabalhando duro para prover suporte ao
+      usuário, manter o Fink atualizado, e preparar para o futuro lançamento do
+      Snow Leopard. Sempre precisamos de mais voluntários, portanto cogite
+      contribuir de alguma forma!</p>
+    </body>
+  </newsitem>
 
   <newsitem>
     <date>2008-07-23</date>

@@ -3,7 +3,7 @@
 <document filename="index" lang="pt">
   <title>Política geral de segurança do Fink para pacotes aceitos</title>
   <shorttitle>Política de segurança</shorttitle>
-  <cvsid>$Id: sec-policy.pt.xml,v 1.1 2009/03/31 01:42:16 monipol Exp $</cvsid>
+  <cvsid>$Id: sec-policy.pt.xml,v 1.2 2009/07/26 11:13:27 monipol Exp $</cvsid>
 
   <preface>
     <p>Este documento explica como o Fink lida com os incidentes de segurança
@@ -34,8 +34,8 @@
 
       <p>Caso haja incidentes de segurança em uma determinada parte de um
       software empacotado, você deve notificar o mantenedor do pacote bem como
-      o <em>Time Central do Fink</em>. O email do mantenedor pode ser
-      encontrado pelo comando da seção anterior e o email do <em>Time Central
+      o <em>Grupo Central do Fink</em>. O email do mantenedor pode ser
+      encontrado pelo comando da seção anterior e o email do <em>Grupo Central
       do Fink</em> é fink-core@lists.sourceforge.net</p>
     </section>
 
@@ -57,16 +57,16 @@
       <title>Resposta</title>
 
       <p>Relatórios sobre um incidente de segurança que tenham sido submetidos
-      serão respondidos pelo <em>Time Central do Fink</em>. O Fink obriga cada
+      serão respondidos pelo <em>Grupo Central do Fink</em>. O Fink obriga cada
       mantenedor a confirmar individualmente o problema relatado. No caso
       improvável de o mantenedor não estar disponível e não confirmar o
-      relatório dentro de 24 horas, uma observação deve ser enviada ao <em>Time
+      relatório dentro de 24 horas, uma observação deve ser enviada ao <em>Grupo
       Central do Fink</em> informando o time de que o mantenedor pode não estar
       respondendo.</p>
 
       <p>Caso você haja tentado notificar o mantenedor do pacote em questão mas
       o sistema de email retornou um erro de entrega para aquele email, você
-      deve notificar o <em>Time Central do Fink</em> imediatamente para
+      deve notificar o <em>Grupo Central do Fink</em> imediatamente para
       informar-lhes que o mantenedor não pode ser contactado e que o pacote
       pode ser atualizado independentemente do mantenedor.</p>
     </section>
@@ -79,7 +79,7 @@
     <preface>
       <p>Tempos de resposta e ações tomadas dependem muito da severidade da
       perda introduzida por uma falha em particular no software que foi
-      empacotado pelo Fink. De qualquer forma, o <em>Time Central do Fink</em>
+      empacotado pelo Fink. De qualquer forma, o <em>Grupo Central do Fink</em>
       tomará ação imediata sempre que houver a percepção de que é necessário
       proteger a comunidade de usuários do Fink.</p>
     </preface>
@@ -88,9 +88,9 @@
       <title>Tempos de resposta</title>
 
       <p>Cada pacote deve primar por respeitar os tempos de resposta seguintes.
-      Para alguns tipos de vulnerabilidades, o <em>Time Central do Fink</em>
+      Para alguns tipos de vulnerabilidades, o <em>Grupo Central do Fink</em>
       pode escolher agir imediatamente. Se este for o caso, um dos membros do
-      Time Central notificará o mantenedor do pacote em questão. Além disso,
+      Grupo Central notificará o mantenedor do pacote em questão. Além disso,
       lembre-se de que, ainda que tentemos respeitar estes tempos de resposta,
       o Fink é um esforço de voluntários, e por conseguinte não podemos
       garanti-los.</p>
@@ -143,7 +143,7 @@
     <section name="forced">
       <title>Atualizações forçadas</title>
 
-      <p>Um membro do <em>Time Central do Fink</em> pode optar por atualizar um
+      <p>Um membro do <em>Grupo Central do Fink</em> pode optar por atualizar um
       pacote sem esperar que o mantenedor aja primeiro. Isto é chamado de
       <strong>atualização forçada</strong>. Caso o tempo de resposta máximo
       exigido por uma vulnerabilidade específica em um pacote do Fink não seja
@@ -242,7 +242,7 @@
 
       <ul>
         <li>O autor do software foi contactado pelo mantenedor e/ou diretamente
-        pelo <em>Time Central do Fink</em> fornecendo uma correção da
+        pelo <em>Grupo Central do Fink</em> fornecendo uma correção da
         vulnerabilidade ou ação alternativa.</li>
 
         <li>Uma das fontes denotadas por palavra-chave publicou um boletim de
@@ -256,7 +256,7 @@
         alternativa, correção ou link para fontes atualizados.</li>
 
         <li>Uma pré-notificação foi diretamente enviada ao mantenedor e/ou
-        <em>Time Central do Fink</em> fornecendo uma correção da
+        <em>Grupo Central do Fink</em> fornecendo uma correção da
         vulnerabilidade ou ação alternativa, requerendo que alguma ação seja
         tomada.</li>
       </ul>

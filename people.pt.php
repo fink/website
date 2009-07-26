@@ -1,7 +1,7 @@
 <?
 $title = "Colaboradores";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/22 02:59:18 $';
+$cvs_date = '$Date: 2009/07/26 11:13:28 $';
 
 include "header.inc";
 ?>
@@ -10,7 +10,7 @@ include "header.inc";
 
 <p>O projeto Fink é mantido por um grupo de voluntários. Cada pacote Fink
 possui um Mantenedor que trabalha duro para garantir que o pacote funcione como
-esperado. Além disso, há o <a href="organization.php#core">Time Central do
+esperado. Além disso, há o <a href="organization.php#core">Grupo Central do
 Fink</a> que trabalha no programa fink em si. O site precisa ser atualizado.
 Usuários precisam de suporte, seja através das listas de discussão ou nosso
 canal no IRC. Essas e várias outras tarefas requerem bastante trabalho,
@@ -31,19 +31,21 @@ lista.</p>
 <li>Christoph Pfisterer (<i>chrisp</i>)</li>
 </ul>
 
-<h2>Ex-Membros do Time Central</h2>
+<h2>Ex-Membros do Grupo Central</h2>
 <ul>
+<li>Christian Schaffner (<i>chris01</i>)</li>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
 </ul>
 
-<h2>Time Central do Fink</h2>
+<h2>Grupo Central do Fink</h2>
 <ul>
-<li>Max Horn (<i>Fingolfin</i>)</li>
-<li>Daniel Macks (<i>dmacks</i>)</li>
-<li>David R. Morrison (<i>drm</i>)</li>
+<li>Alexander Hansen (<i>akh</i>)</li>
+<li>Augusto Devegili (<i>monipol</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
-<li>Christian Schaffner (<i>chris01</i>)</li>
+<li>Daniel Macks (<i>dmacks</i>)</li>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
+<li>David R. Morrison (<i>drm</i>)</li>
+<li>Max Horn (<i>Fingolfin</i>)</li>
 </ul>
 
 <h2>Contato com usuários</h2>
@@ -96,7 +98,7 @@ lista.</p>
 <li>Remi Mommsen</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
 <li>Hanspeter Niederstrasser (<i>Snaggle</i>)</li>
-<li>Matthias Ringwald (<i>freckle<i>)</li>
+<li>Matthias Ringwald (<i>freckle</i>)</li>
 <li>Andrew Rohl</li> 
 <li>Lars Rosengreen</li>
 <li>Michael G. Schwern</li>
