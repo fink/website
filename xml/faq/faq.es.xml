@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.13 2008/10/29 00:15:08 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.14 2009/07/27 18:44:40 dmacks Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -396,7 +396,7 @@ plataformas.
       <answer translated="no">
         <p>If you're not paranoid, you can configure sudo to not ask you for a
         password. To do this, run <code>visudo</code> as root and add a line like this:</p>
-        <codeblock>username ALL = NOPASSWD: ALL</codeblock>
+        <codeblock>username ALL =(ALL) NOPASSWD: ALL</codeblock>
         <p>Replace <code>username</code> with your actual username, of course.
         This line allows you to run any command via sudo without typing your
         password.</p>

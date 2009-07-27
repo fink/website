@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Часто задаваемые вопросы Fink </title>
     <shorttitle>Ч.З.В.</shorttitle>
-    <cvsid>$Id: faq.ru.xml,v 1.13 2008/10/29 00:15:08 alexkhansen Exp $</cvsid>
+    <cvsid>$Id: faq.ru.xml,v 1.14 2009/07/27 18:44:40 dmacks Exp $</cvsid>
     <preface>
         <p>Ниже вы найдете список Ч.З.В. о Fink. Как и большинство
             Ч.З.В., некоторые из них реальные, а некоторые
@@ -565,7 +565,7 @@
                 <p>Если вы не страдаете паранойей, вы можете конфигурировать sudo так,
                    чтобы не было запроса о пароле. Для этого надо запустить <code>visudo</code> в качестве суперпользователя
                     и добавить такую строку:</p>
-                <codeblock>username ALL = NOPASSWD: ALL</codeblock>
+                <codeblock>username ALL =(ALL) NOPASSWD: ALL</codeblock>
                 <p>Конечно, надо заменить <code>username</code> вашим действительным именем пользователя.
                     Данная строка позволяет запускать любую команду через sudo
                     без внесения пароля.</p>

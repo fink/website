@@ -3,7 +3,7 @@
 <document filename="index" lang="pt">
   <title>Perguntas frequentes sobre o Fink</title>
   <shorttitle>Perguntas frequentes</shorttitle>
-  <cvsid>$Id: faq.pt.xml,v 1.3 2009/07/08 11:29:56 monipol Exp $</cvsid>
+  <cvsid>$Id: faq.pt.xml,v 1.4 2009/07/27 18:44:40 dmacks Exp $</cvsid>
   <preface>
     <p>Esta é a lista das perguntas frequentes sobre o Fink. Como na maior
     parte das listas de perguntas frqeuentes, algumas perguntas foram tiradas
@@ -603,7 +603,7 @@ fink scanpackages</codeblock>
         <p>Se você não for paranóico, você pode configurar o sudo para não lhe
         pedir uma senha. Para fazer isso, execute o comando <code>visudo</code>
         como root e adicione uma linha como esta:</p>
-        <codeblock>usuario ALL = NOPASSWD: ALL</codeblock>
+        <codeblock>usuario ALL =(ALL) NOPASSWD: ALL</codeblock>
         <p>Troque <code>usuario</code> pelo seu nome de usuário. Esta linha
         permitirá que você qualquer comando via sudo sem precisar digitar sua
         senha.</p>
