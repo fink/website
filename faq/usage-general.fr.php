@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2008/10/29 00:15:08';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets">';
 
 

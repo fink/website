@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/07/06 18:39:40';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -156,7 +156,7 @@ fink scanpackages
       <div class="question"><p><b><? echo FINK_Q ; ?>5.10: I'm tired of typing my password into sudo again and again. Is there
         a way around this?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you're not paranoid, you can configure sudo to not ask you for a
-        password. To do this, run <code>visudo</code> as root and add a line like this:</p><pre>username ALL = NOPASSWD: ALL</pre><p>Replace <code>username</code> with your actual username, of course.
+        password. To do this, run <code>visudo</code> as root and add a line like this:</p><pre>username ALL =(ALL) NOPASSWD: ALL</pre><p>Replace <code>username</code> with your actual username, of course.
         This line allows you to run any command via sudo without typing your
         password.</p></div>
     </a>

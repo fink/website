@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/03/15 02:15:23';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="general.php?phpLang=pt" title="Perguntas gerais">';
 
 
@@ -116,17 +116,10 @@ include_once "header.pt.inc";
         remover?</a></li></ul></li><li><a href="usage-packages.php?phpLang=pt"><b>9 Problemas no uso de pacotes - Pacotes específicos</b></a><ul><li><a href="usage-packages.php?phpLang=pt#xmms-quiet">9.1 Não consigo som no XMMS.</a></li><li><a href="usage-packages.php?phpLang=pt#nedit-window-locks">9.2 Se estou editando um arquivo no nedit, quando abro outro arquivo a
         janela abre mas não responde.</a></li><li><a href="usage-packages.php?phpLang=pt#xdarwin-start">9.3 Preciso de ajuda! Quando inicio o XDarwin, ele termina
         imediatamente!</a></li><li><a href="usage-packages.php?phpLang=pt#no-server">9.4 Quando tento iniciar o XDarwin eu recebo a mensagem "xinit: No such
-        file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=pt#libXmuu">9.5 Quanto tento iniciar o XFree86, eu recebo uma das seguintes
-        mensagens de erro: "dyld: xinit can't open library:
-        /usr/X11R6/lib/libXmuu.1.dylib" or "dyld: xinit can't open library:
-        /usr/X11R6/lib/libXext.6.dylib"</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x-bugs">9.6 Eu tinha o XFree86 do Fink instalado, troquei-o pelo X11 da Apple e
-        agora nada está funcionando!</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x-delete">9.7 Quero que a tecla Delete no X11.app da Apple comporte-se como no
-        XDarwin.</a></li><li><a href="usage-packages.php?phpLang=pt#gnome-two">9.8 Eu atualizei do GNOME 1.x para o GNOME 2.x e agora o
-        <code>gnome-session</code> não abre um gerenciador de janelas.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-no-windowbar">9.9 Eu atualizei o X11 da Apple no Panther e agora as barras de títulos
-        das janelas não aparecem mais.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-wants-xfree86">9.10 Eu instalei o X11 da Apple mas o Fink continua solicitando a
-        instalação de XFree86 ou X.org.</a></li><li><a href="usage-packages.php?phpLang=pt#special-x11-debug">9.11 Ainda estou tendo problemas com o X11 e o Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#tiger-gtk">9.12 Sempre que uso um aplicativo GTK, recebo mensagens de erro em
-        relação a <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=pt#yelp">9.13 Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.pt.xml,v 1.2 2009/03/15 02:15:23 monipol Exp $-->
+        file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x-delete">9.5 Quero que a tecla Delete no X11.app da Apple comporte-se como no
+        XDarwin.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-wants-xfree86">9.6 Estou tendo problemas com X11 e Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#special-x11-debug">9.7 Ainda estou tendo problemas com o X11 e o Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#tiger-gtk">9.8 Sempre que uso um aplicativo GTK, recebo mensagens de erro em
+        relação a <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=pt#yelp">9.9 Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</a></li></ul></li></ul>
+<!--Generated from $Fink: faq.pt.xml,v 1.4 2009/07/27 18:44:40 dmacks Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

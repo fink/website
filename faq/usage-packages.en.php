@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/07/06 18:39:40';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 
@@ -83,7 +83,7 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
     </a>
     <a name="apple-x11-wants-xfree86">
       
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.6: I'm having problems with X11 and Fink</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.6: I'm having problems with X11 and Fink.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>
           <li>
             <b>You are installing from binaries:</b>
@@ -104,8 +104,9 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
             <b>You are installing from source:</b>
 	    <p>Typically this error means that you need to (re)install the X11SDK,
 	    which is <b>mandatory</b> if you want to build packages from source.
-	    It is in the Xcode Tools folder of a Tiger DVD, or Xcode Tools/Packages
-	    on the second install DVD of Leopard.  If you run</p>
+            It is in the Xcode Tools folder of a Tiger DVD, or (Optional
+            Installs/)Xcode Tools/Packages on your Leopard DVD(s). If you
+            run</p>
             <pre>fink list -i system-xfree86  </pre>
             <p>it should show the <code>system-xfree86</code>,
 	    <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code>
@@ -125,7 +126,7 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
     </a>
     <a name="special-x11-debug">
       <div class="question"><p><b><? echo FINK_Q ; ?>9.7: I'm still having problems with X11 and Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If the hints in the  <a href="#apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</a> or <a href="#wants-xfree86-on-upgrade">X11 and upgrade from 10.2</a> entries don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p><p>On Leopard, use</p><pre>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If the hints in the  <a href="#apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</a> entry don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p><p>On Leopard, use</p><pre>
 sudo pkgutil --forget com.apple.pkg.X11User
 sudo pkgutil --forget com.apple.pkg.X11SDKLeo
 </pre><p>Then, on either 10.4 or 10.5, run</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \

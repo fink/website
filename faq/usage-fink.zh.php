@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2008/10/29 00:15:08';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -145,7 +145,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
     
     <a name="sudo">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.10: 每次运行 sudo 都要输入密码，这很麻烦。有办法解决吗？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 你可以配制 sudo 不需要询问你密码。用 root 权限运行 <code>visudo</code> 命令，并添加一行：</p><pre>username ALL = NOPASSWD: ALL</pre><p>把 <code>username</code> 替换为实际的用户名。这一行使得你可以运行 sudo 命令而不需要输入密码。</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 你可以配制 sudo 不需要询问你密码。用 root 权限运行 <code>visudo</code> 命令，并添加一行：</p><pre>username ALL =(ALL) NOPASSWD: ALL</pre><p>把 <code>username</code> 替换为实际的用户名。这一行使得你可以运行 sudo 命令而不需要输入密码。</p></div>
     </a>
     <a name="exec-init-csh">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.11: 当我尝试运行 init.csh 或 init.sh 时，我碰到一个 "Permission denied" 错误。我做错了什么？</b></p></div>

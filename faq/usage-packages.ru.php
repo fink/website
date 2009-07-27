@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2008/10/29 00:15:08';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="prev" href="usage-general.php?phpLang=ru" title="Проблемы использования пакетов - Общие вопросы">';
 
 

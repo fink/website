@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2008/10/29 00:15:08';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -53,7 +53,7 @@ include_once "header.fr.inc";
 </a>
 <a name="sudo">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.10: Comment ne plus avoir à saisir son mot de passe après la commande sudo ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous n'êtes pas paranoïaque, vous pouvez configurer sudo pour qu'il ne vous demande pas votre mot de passe. Pour cela, mettez-vous en mode super-utilisateur et lancez <code>visudo</code>, puis ajoutez la ligne suivante :</p><pre>nomutilisateur ALL = NOPASSWD: ALL</pre><p>Remplacez bien sûr <code>nomutilisateur</code> par votre nom d'utilisateur. Cette ligne vous permet d'exécuter n'importe quelle commande avec sudo sans saisir votre mot de passe.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous n'êtes pas paranoïaque, vous pouvez configurer sudo pour qu'il ne vous demande pas votre mot de passe. Pour cela, mettez-vous en mode super-utilisateur et lancez <code>visudo</code>, puis ajoutez la ligne suivante :</p><pre>nomutilisateur ALL =(ALL) NOPASSWD: ALL</pre><p>Remplacez bien sûr <code>nomutilisateur</code> par votre nom d'utilisateur. Cette ligne vous permet d'exécuter n'importe quelle commande avec sudo sans saisir votre mot de passe.</p></div>
 </a>
 <a name="exec-init-csh">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.11: À l'exécution de init.csh ou de init.sh, un message d'erreur signale que l'autorisation est refusée (message en anglais "Permission denied") . Que se passe-t-il ?</b></p></div>

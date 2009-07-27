@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Uso do Fink";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/03/15 02:15:23';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="comp-general.php?phpLang=pt" title="Problemas de Compilação - Geral"><link rel="prev" href="upgrade-fink.php?phpLang=pt" title="Atualizando o Fink (resolução de problemas específicos a uma
     versão)">';
 
@@ -178,7 +178,7 @@ fink scanpackages</pre><p>Se você não tiver certeza de qual método de atualiz
         Há alguma forma de contornar isso?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Se você não for paranóico, você pode configurar o sudo para não lhe
         pedir uma senha. Para fazer isso, execute o comando <code>visudo</code>
-        como root e adicione uma linha como esta:</p><pre>usuario ALL = NOPASSWD: ALL</pre><p>Troque <code>usuario</code> pelo seu nome de usuário. Esta linha
+        como root e adicione uma linha como esta:</p><pre>usuario ALL =(ALL) NOPASSWD: ALL</pre><p>Troque <code>usuario</code> pelo seu nome de usuário. Esta linha
         permitirá que você qualquer comando via sudo sem precisar digitar sua
         senha.</p></div>
     </a>

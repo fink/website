@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/05/02 04:41:49';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -148,7 +148,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 <a name="sudo">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.10: sudo でパスワードを何度も何度も入力するのは疲れます。何か良い方法はありませんか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> sudo がパスワードを聞いてこないように設定することができます。
-root 権限で <code>visudo</code> を開き、次の行を追加します:</p><pre>username ALL = NOPASSWD: ALL</pre><p>もちろん、 <code>username</code> は実際のユーザー名に変えて下さい。</p></div>
+root 権限で <code>visudo</code> を開き、次の行を追加します:</p><pre>username ALL =(ALL) NOPASSWD: ALL</pre><p>もちろん、 <code>username</code> は実際のユーザー名に変えて下さい。</p></div>
 </a>
 <a name="exec-init-csh">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.11: init.csh or init.sh を実行しようとすると、 "Permission denied" エラーが出ます。

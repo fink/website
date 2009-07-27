@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Compilação (2)";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/03/15 02:15:23';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="usage-general.php?phpLang=pt" title="Problemas no uso de pacotes - Geral"><link rel="prev" href="comp-general.php?phpLang=pt" title="Problemas de Compilação - Geral">';
 
 
@@ -99,11 +99,7 @@ fink install libiconv</pre></div>
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Há algumas variantes deste erro. Uma delas envolve bibliotecas
       ausentes: <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> ou
       <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code>. O melhor
-      entendimento para corrigir este erro é instalar o Xcode 3.1 e aplicar a
-      última atualização de versão do <a href="http://xquartz.macosforge.org/trac/wiki">macosforge.org</a>.</p><p>Uma outra possibilidade é em relação a símbolos indefinidos:
-      "<code>_gdk_threads_add_idle referenced from libgtk-x11-2 expected to be
-      defined in libgdk-x11-2</code>" etc.</p><p>A remoção do pacote <code>gtk+2-dev</code> existente permitirá que a
-      compilação siga em frente.</p></div>
+      entendimento para corrigir este erro é instalar o Xcode 3.1.3.</p></div>
   </a>
     <a name="all-others">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.8: Estou tendo problemas com um pacote que não está listado aqui.</b></p></div>

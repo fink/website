@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Relacionamentos";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/03/15 02:15:23';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="mirrors.php?phpLang=pt" title="Espelhos do Fink"><link rel="prev" href="general.php?phpLang=pt" title="Perguntas gerais">';
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование Fink";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2008/10/29 00:15:08';
+$cvs_author = 'Author: dmacks';
+$cvs_date = 'Date: 2009/07/27 18:44:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы"><link rel="prev" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)">';
 
 
@@ -171,7 +171,7 @@ include_once "header.ru.inc";
                     Можно ли с этим что-то сделать?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если вы не страдаете паранойей, вы можете конфигурировать sudo так,
                    чтобы не было запроса о пароле. Для этого надо запустить <code>visudo</code> в качестве суперпользователя
-                    и добавить такую строку:</p><pre>username ALL = NOPASSWD: ALL</pre><p>Конечно, надо заменить <code>username</code> вашим действительным именем пользователя.
+                    и добавить такую строку:</p><pre>username ALL =(ALL) NOPASSWD: ALL</pre><p>Конечно, надо заменить <code>username</code> вашим действительным именем пользователя.
                     Данная строка позволяет запускать любую команду через sudo
                     без внесения пароля.</p></div>
         </a>
