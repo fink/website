@@ -1,7 +1,7 @@
 <?
 $title = "Organization of Fink";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2009/07/26 15:32:37 $';
+$cvs_date = '$Date: 2009/07/27 18:38:34 $';
 
 include "header.inc";
 ?>
@@ -28,9 +28,9 @@ Freiwilligengruppen, die am Fink-Projekt arbeiten, zu koordinieren.</p>
 
 
 
-<p>Die aktuellen Mitglieder im Fink Core Team sind Augusto Devegili,
-Alexander Hansen, Max Horn, Daniel Macks, David R. Morrison und
-Benjamin Reed. Sie sind über &lt;fink-core@lists.sourceforge.net&gt; erreichbar.</p>
+<p>Die aktuellen Mitglieder im Fink Core Team sind Augusto Devegili, Alexander Hansen, 
+Max Horn, Daniel Macks, David R. Morrison, Benjamin Reed und Dave Vasilevsky.
+Sie sind über &lt;fink-core@lists.sourceforge.net&gt; erreichbar.</p>
 
 
 <h2>Die Fink Übersetzer</h2>
