@@ -1,7 +1,7 @@
 <?
 $title = "Organization of Fink";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/07/26 10:57:37 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2009/07/27 18:31:21 $';
 
 include "header.inc";
 ?>
@@ -29,7 +29,7 @@ project.
 </p>
 
 <p>The current Fink Core members are Augusto Devegili, Alexander Hansen, Max
-Horn, Daniel Macks, David R. Morrison, Benjamin Reed e Dave Vasilevsky.  They
+Horn, Daniel Macks, David R. Morrison, Benjamin Reed and Dave Vasilevsky.  They
 can be reached at &lt;fink-core@lists.sourceforge.net&gt;.
 </p>
 
