@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2009/07/25 15:33:32';
+$cvs_date = 'Date: 2009/08/18 05:48:50';
 $metatags = '';
 
 include_once "header.inc";
@@ -13,7 +13,7 @@ The Fink Core Group announces two new members: Alexander Hansen (<b>akh</b>)
 and Augusto Devegili (<b>monipol</b>), both of whom have been very active
 in fink.  Please join us in welcoming the new members!
 </p><p>
-The Group also announces that Christian Schaeffner has stepped down,
+The Group also announces that Christian Schaffner has stepped down,
 returning to "ordinary member" status.  We thank Christian for his help
 on the team over the past several years.
 </p><p>

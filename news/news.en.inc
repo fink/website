@@ -4,7 +4,7 @@ The Fink Core Group announces two new members: Alexander Hansen (<b>akh</b>)
 and Augusto Devegili (<b>monipol</b>), both of whom have been very active
 in fink.  Please join us in welcoming the new members!
 </p><p>
-The Group also announces that Christian Schaeffner has stepped down,
+The Group also announces that Christian Schaffner has stepped down,
 returning to "ordinary member" status.  We thank Christian for his help
 on the team over the past several years.
 </p><p>
