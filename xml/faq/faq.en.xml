@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.99 2009/07/27 18:44:40 dmacks Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.100 2009/08/21 15:33:01 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1548,8 +1548,10 @@ preventing you from updating <code>gettext</code>.</p>
       <p>I can't install <em>gtk+2</em> on OS 10.5</p>
     </question>
     <answer>
-    <p>There are a couple of flavors of error.  One involves missing libraries:   <filename>/usr/X11/lib/libXrandr.2.0.0.dylib</filename> or 
-    <filename>/usr/X11/lib/libXdamage.1.1.0.dylib</filename>.  The current wisdom on the best
+    <p>Typically this involves missing libraries, such as:   <filename>/usr/X11/lib/libXrandr.2.0.0.dylib</filename> or 
+    <filename>/usr/X11/lib/libXdamage.1.1.0.dylib</filename> (or other versions of libraries in
+    <filename>/usr/X11/lib/</filename>).</p>
+    <p>The current wisdom on the best
     fix for such an issue is to install Xcode 3.1.3 .</p>  
 <!--    <p>A second issue involved undefined symbols:  "<code>_gdk_threads_add_idle referenced from libgtk-x11-2 expected to be defined in libgdk-x11-2</code>", etc.</p>
 <p>Removing the existing <code>gtk+2-dev</code> package allowed the build to proceed. This is fixed, for now.</p> <-->
