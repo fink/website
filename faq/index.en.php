@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q.";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2009/08/21 15:33:01';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=en" title="General Questions">';
 
 
@@ -67,7 +67,7 @@ complaining that the dependencies are in an inconsistent state.</a></li><li><a h
         window pops up but is unresponsive.</a></li><li><a href="usage-packages.php?phpLang=en#xdarwin-start">9.3 Help! When I start XDarwin, it immediately quits!</a></li><li><a href="usage-packages.php?phpLang=en#no-server">9.4 When I try to start XDarwin I get the message "xinit: No such file
         or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=en#apple-x-delete">9.5 I want the delete key in Apple's X11.app to behave like that in
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=en#apple-x11-wants-xfree86">9.6 I'm having problems with X11 and Fink.</a></li><li><a href="usage-packages.php?phpLang=en#special-x11-debug">9.7 I'm still having problems with X11 and Fink.</a></li><li><a href="usage-packages.php?phpLang=en#tiger-gtk">9.8 After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=en#yelp">9.9 I can't get the help to work for any GNOME application.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.en.xml,v 1.99 2009/07/27 18:44:40 dmacks Exp $-->
+<!--Generated from $Fink: faq.en.xml,v 1.100 2009/08/21 15:33:01 alexkhansen Exp $-->
 <? include_once "../footer.inc"; ?>
 
 
