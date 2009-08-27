@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/25 00:08:15 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2009/08/27 21:10:37 $';
 
 include "header.inc";
 ?>
@@ -48,21 +48,21 @@ href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-fu
 <p>will download the package description files and patches, provided that you <strong>do not</strong> select the "point release" method.  rsync is generally preferable to cvs for most people.</p>
 
 
-<p><strong>OS 10.4:</strong></p>
+<p><strong>Other supported OS versions:</strong></p>
 <p>The source tarball contains the <em>fink</em> package manager.  After you have installed it, you will be able to get package descriptions and patches.  It will use these to download the source code from the original distribution sites or the Fink project's mirrors and build them on your local machine.</p>
 
 
-<p><EM>fink-0.28.6</em> was officially released on 2008-10-05.</p>
+<p><EM>fink-0.29.8</em> was officially released on 2009-08-13.</p>
 </p>
 <ul>
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.6.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.28.6</a> - 1305K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.8.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.8</a> - 1176K, .tar.gz format</li>
 </ul>
 
 <p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
   <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
-<pre>tar -xvzf fink-0.28.6.tar.gz</pre>
+<pre>tar -xvzf fink-0.29.8.tar.gz</pre>
 <p>or</p>
-<pre>tar -xvf fink-0.28.6.tar</pre>
+<pre>tar -xvf fink-0.29.8.tar</pre>
 <p>if it has already been partially unpacked, in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.6</em> directory, and use</p>
 <pre>./bootstrap</pre>
 <p>to start the boostrapping operation, which will install the Fink base setup.</p>
