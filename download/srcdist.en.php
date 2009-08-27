@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2009/08/27 21:10:37 $';
+$cvs_date = '$Date: 2009/08/27 21:19:09 $';
 
 include "header.inc";
 ?>
@@ -63,7 +63,7 @@ href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-fu
 <pre>tar -xvzf fink-0.29.8.tar.gz</pre>
 <p>or</p>
 <pre>tar -xvf fink-0.29.8.tar</pre>
-<p>if it has already been partially unpacked, in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.6</em> directory, and use</p>
+<p>if it has already been partially unpacked, in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.29.8</em> directory, and use</p>
 <pre>./bootstrap</pre>
 <p>to start the boostrapping operation, which will install the Fink base setup.</p>
 <!-- akh: I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
