@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.88 2009/08/28 09:21:39 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.89 2009/08/28 12:22:31 monipol Exp $</cvsid>
 
   <newsitem>
     <date>2009-08-28</date>
@@ -24,7 +24,7 @@ Leopard disk.</em>
 Users wanting the 64-bit version, or users upgrading directly from 10.4 or
 earlier, must bootstrap fink from the distribution tarball (version
 0.29.9 or later), available at <varlink
-url="http://sourceforge.net/projects/fink/files/fink/0.29.8/fink-0.29.8.tar.gz/download">sourceforge.net</varlink>; installation instructions are
+url="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</varlink>; installation instructions are
 <varlink url="download/srcdist.php">here</varlink>.
 On the other hand, users can upgrade directly from
 10.5 to the 32-bit version, following the instructions below.
