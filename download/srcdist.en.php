@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2009/08/27 21:19:09 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/08/28 12:11:21 $';
 
 include "header.inc";
 ?>
@@ -52,18 +52,18 @@ href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-fu
 <p>The source tarball contains the <em>fink</em> package manager.  After you have installed it, you will be able to get package descriptions and patches.  It will use these to download the source code from the original distribution sites or the Fink project's mirrors and build them on your local machine.</p>
 
 
-<p><EM>fink-0.29.8</em> was officially released on 2009-08-13.</p>
+<p><EM>fink-0.29.9</em> was officially released on 2009-08-28.</p>
 </p>
 <ul>
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.8.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.8</a> - 1176K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.9.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.9</a> - 1176K, .tar.gz format</li>
 </ul>
 
 <p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
   <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
-<pre>tar -xvzf fink-0.29.8.tar.gz</pre>
+<pre>tar -xvzf fink-0.29.9.tar.gz</pre>
 <p>or</p>
-<pre>tar -xvf fink-0.29.8.tar</pre>
-<p>if it has already been partially unpacked, in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.29.8</em> directory, and use</p>
+<pre>tar -xvf fink-0.29.9.tar</pre>
+<p>if it has already been partially unpacked, in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.29.9</em> directory, and use</p>
 <pre>./bootstrap</pre>
 <p>to start the boostrapping operation, which will install the Fink base setup.</p>
 <!-- akh: I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
