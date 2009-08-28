@@ -1,7 +1,7 @@
 <?
 $title = "Download: Distribuição de código fonte";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/25 00:28:12 $';
+$cvs_date = '$Date: 2009/08/28 12:12:17 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -53,7 +53,7 @@ seguido por</p>
 <strong>não</strong> tenha escolhido o método "point release". O rsync é
 geralmente preferível ao cvs para a maior parte das pessoas.</p>
 
-<p><strong>OS 10.4:</strong></p>
+<p><strong>Outras versões do OS X com suporte oficial</strong></p>
 
 <p>O tarball com o código fonte contém o gerenciador de pacotes <em>fink</em>.
 Depois de o haver instalado, você poderá obter as descrições e ajustes de
@@ -61,10 +61,10 @@ pacotes, os quais serão usados para baixar o código fonte dos sites de
 distribuição originais ou dos espelhos do projeto Fink e compilá-lo em sua
 máquina local.</p>
 
-<p>O <em>fink-0.28.6</em> foi lançado oficialmente em 5 de outubro de 2008.</p>
+<p>O <em>fink-0.29.9</em> foi lançado oficialmente em 28 de agosto de 2009.</p>
 
 <ul>
-  <li><a href="http://downloads.sourceforge.net/fink/fink-0.28.6.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.28.6</a> - 1305K, formato .tar.gz</li>
+  <li><a href="http://downloads.sourceforge.net/fink/fink-0.29.9.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.9</a> - 1305K, formato .tar.gz</li>
 </ul>
 
 <p>Você também precisará instalar o Xcode Tools (conforme
@@ -72,12 +72,12 @@ máquina local.</p>
 
 <p>Descompacte o arquivo tar.gz caso isto não tenha sido feito automaticamente,
 por exemplo via</p>
-<pre>tar -xvzf fink-0.28.6.tar.gz</pre>
+<pre>tar -xvzf fink-0.29.9.tar.gz</pre>
 <p>ou</p>
-<pre>tar -xvf fink-0.28.6.tar</pre>
+<pre>tar -xvf fink-0.29.9.tar</pre>
 <p>caso ele ainda não tenha sido descompactado parcialmente, em uma janela de
 terminal. Então, em uma janela de terminal, posicione-se no diretório
-fink-0.28.6 que foi criado e digite</p>
+fink-0.29.9 que foi criado e digite</p>
 <pre>./bootstrap</pre>
 <p>para iniciar a operação de instalação preliminar do Fink.</p>
 <p>Após a instalação terminar, execute o comando</p>
