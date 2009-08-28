@@ -91,7 +91,8 @@ ul.menu {
 
 ul.menu li { 
 	list-style: none; 
-	border: 0 0 1px 0 solid #fff; 
+	border: 0 solid #fff; 
+	border-bottom: 1px;
 	padding: 0 ;
 }
 
@@ -106,7 +107,8 @@ ul.menu li.menu_subitem {
 }
 
 ul.menu li div {
-	border: 0 0 0 8px solid #666; 
+	border: 0 solid #666; 
+	border-left: 8px;
 	font-size: 9pt ;
 	margin: 0 ;
 	padding: 3px ;
@@ -118,7 +120,8 @@ background: #fc6;
 }
 
 ul.menu li a { 
-	border: 0 0 0 8px solid #ccc; 
+	border: 0 solid #ccc; 
+	border-left: 8px;
 	background: #eee; 
 	font-size: 9pt ;
 	text-decoration: none ;

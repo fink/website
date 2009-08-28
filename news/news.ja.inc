@@ -1,4 +1,4 @@
-<a name="2008-02-03%20Mirror,%20mirror%20on%20the%20wall,%20will%20someone%20sponsor%20Fink%20at%20all?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, will someone sponsor Fink at all?</span></a><?php gray_line(); ?>
+<a name="2008-02-03 Mirror, mirror on the wall, will someone sponsor Fink at all?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, will someone sponsor Fink at all?</span></a><?php gray_line(); ?>
 <p>大規模なオープンソースプロジェクトは、おおむね配布の仕方に問題をかかえており、Fink も例外ではありません。
 我々は、お好きなアプリケーションをビルドするために必要なファイルを可能な限り速く提供したいと思っています。
 このためには、ミラーサイトが近くにあることが最初のステップだと考えます。</p>
@@ -15,12 +15,12 @@
 <ul><li>アメリカ合衆国</li><li>日本</li><li>ドイツ</li><li>フランス</li><li>イギリス</li><li>カナダ</li><li>イタリア</li><li>スペイン</li><li>スイス</li><li>オーストラリア</li></ul>
 <p>また、これまでに Fink にミラーを提供して頂いている方々に感謝致します。
 彼らの継続サポートなしに、Fink は現在のレベルのサービスを提供できなかったでしょう。</p>
-<a name="2008-01-12%20Fink%20website%20down"><span class="news-date">2008-01-12: </span><span class="news-headline">Fink website down</span></a><?php gray_line(); ?>
+<a name="2008-01-12 Fink website down"><span class="news-date">2008-01-12: </span><span class="news-headline">Fink website down</span></a><?php gray_line(); ?>
 <p>The fink website is not functioning correctly at present.  (You may
 have noticed that many of the links on this page do not function correctly.)  The
 fink team is working to resolve the problem as quickly as possible.</p>
 <p><b>Update, 2008-01-13:</b> The website is back to normal.</p>
-<a name="2007-12-10%20Leopard,%20X11,%20and%20Fink"><span class="news-date">2007-12-10: </span><span class="news-headline">Leopard, X11, and Fink</span></a><?php gray_line(); ?>
+<a name="2007-12-10 Leopard, X11, and Fink"><span class="news-date">2007-12-10: </span><span class="news-headline">Leopard, X11, and Fink</span></a><?php gray_line(); ?>
     <p>
     Leopard X11 を更新したい方は、
     <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>

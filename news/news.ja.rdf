@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2009-03-12T13:56:40-04:00</dc:date>
+    <dc:date>2009-08-28T10:14:31-03:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F">
       <title>Mirror, mirror on the wall, will someone sponsor Fink at all?</title>

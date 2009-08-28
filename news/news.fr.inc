@@ -1,4 +1,4 @@
-<a name="2008-06-26%20New%20Fink%20release."><span class="news-date">2008-06-26: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
+<a name="2008-06-26 New Fink release."><span class="news-date">2008-06-26: </span><span class="news-headline">New Fink release.</span></a><?php gray_line(); ?>
       <p>
 A new (binary) Fink release for OS X 10.5 (Leopard) is 
 <a href="<?php print $root; ?>download/index.php">available</a>
@@ -18,7 +18,7 @@ distribution.
 </p>
 <p><b>Update, 2008-07-11:</b> If you use the binary installer, you
 should run <code>fink selfupdate</code> after installation.</p>
-<a name="2008-02-03%20Mirror,%20mirror%20on%20the%20wall,%20will%20someone%20sponsor%20Fink%20at%20all?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, will someone sponsor Fink at all?</span></a><?php gray_line(); ?>
+<a name="2008-02-03 Mirror, mirror on the wall, will someone sponsor Fink at all?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, will someone sponsor Fink at all?</span></a><?php gray_line(); ?>
 		<p>
 Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
 </p>
@@ -35,7 +35,7 @@ We are looking for mirrors all over the world, but specifically in these countri
 	<p>
 We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
 </p>
-<a name="12/01/2008%20Le%20site%20web%20ne%20marche%20plus"><span class="news-date">12/01/2008: </span><span class="news-headline">Le site web ne marche plus</span></a><?php gray_line(); ?>	
+<a name="12/01/2008 Le site web ne marche plus"><span class="news-date">12/01/2008: </span><span class="news-headline">Le site web ne marche plus</span></a><?php gray_line(); ?>	
 	<p>De nombreux disfonctionnements (Vous avez sûrement remarqué que la plupart
 	des liens de cette page ne fonctionnent plus). L'équipe travaille actuellement
 	pour résoudre au plus vite ce problème.</p>

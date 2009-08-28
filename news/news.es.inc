@@ -1,4 +1,4 @@
-<a name="2008-02-03%20Mirror,%20mirror%20on%20the%20wall,%20%E3%81%A0%E3%82%8C%E3%81%8B%20Fink%20%E3%82%92%E6%94%AF%E6%8F%B4%E3%81%97%E3%81%BE%E3%81%9B%E3%82%93%E3%81%8B?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, だれか Fink を支援しませんか?</span></a><?php gray_line(); ?>
+<a name="2008-02-03 Mirror, mirror on the wall, だれか Fink を支援しませんか?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, だれか Fink を支援しませんか?</span></a><?php gray_line(); ?>
 <p>Todo gran proyecto de codigo abierto se enfrenta a problemas de
 distribucion y el caso de Fink no es la excepcion. Nosotros deseamos
 que puedas obtener los archivos que necesitas para construir tus
@@ -26,12 +26,12 @@ Italia</li><li>España</li><li>Suiza</li><li>Australia</li></ul>
 <p>Tambien queremos aprovechar esta oportunidad para agradecer a todos los
 que han proveido "espejos" previamente. Sin su apoyo continuo Fink
 podria proveer el nivel de servicio que actualmente tiene. Gracias!</p>
-<a name="2008-01-12%20Fink%20website%20down"><span class="news-date">2008-01-12: </span><span class="news-headline">Fink website down</span></a><?php gray_line(); ?>
+<a name="2008-01-12 Fink website down"><span class="news-date">2008-01-12: </span><span class="news-headline">Fink website down</span></a><?php gray_line(); ?>
 <p>The fink website is not functioning correctly at present.  (You may
 have noticed that many of the links on this page do not function correctly.)  The
 fink team is working to resolve the problem as quickly as possible.</p>
 <p><b>Update, 2008-01-13:</b> The website is back to normal.</p>
-<a name="2007-12-10%20Leopard,%20X11,%20y%20Fink"><span class="news-date">2007-12-10: </span><span class="news-headline">Leopard, X11, y Fink</span></a><?php gray_line(); ?>
+<a name="2007-12-10 Leopard, X11, y Fink"><span class="news-date">2007-12-10: </span><span class="news-headline">Leopard, X11, y Fink</span></a><?php gray_line(); ?>
 <p>Los usuarios que deseen actualizar su instalación de X11 en Leopardo
 deben ir a <a href="http://xquartz.macosforge.org/%20downloads/Xquartz-1.3.0-apple-fink.bz2">que es una actualizacion
 Fink-friendly para el Xquartz</a>.  Los usuarios que ya hayan

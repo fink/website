@@ -1,4 +1,4 @@
-<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
+<a name="2009-08-28 Fink on 10.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
       <p>
 Fink is ready to be used on Snow Leopard (OS X v. 10.6).  Users will
 need to choose between a 32-bit version of fink and a 64-bit version of fink
@@ -15,7 +15,7 @@ A binary installer is not available, so it is important to
 Leopard disk.</b>
 Users wanting the 64-bit version, or users upgrading directly from 10.4 or
 earlier, must bootstrap fink from the distribution tarball (version
-0.29.9 or later), available at <a href="<?php print $root; ?>http://sourceforge.net/projects/fink/files/fink/0.29.8/fink-0.29.8.tar.gz/download">sourceforge.net</a>; installation instructions are
+0.29.9 or later), available at <a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a>; installation instructions are
 <a href="<?php print $root; ?>download/srcdist.php">here</a>.
 On the other hand, users can upgrade directly from
 10.5 to the 32-bit version, following the instructions below.
@@ -46,7 +46,7 @@ available for 10.6.  In the near future, fink's package database will be
 updated to include information about packages for 10.6; you can check there
 to see if your favorite package is ready.
 </p>
-<a name="2009-07-25%20Fink%20Core%20Group%20changes."><span class="news-date">2009-07-25: </span><span class="news-headline">Fink Core Group changes.</span></a><?php gray_line(); ?>
+<a name="2009-07-25 Fink Core Group changes."><span class="news-date">2009-07-25: </span><span class="news-headline">Fink Core Group changes.</span></a><?php gray_line(); ?>
       <p>
 The Fink Core Group announces two new members: Alexander Hansen (<b>akh</b>)
 and Augusto Devegili (<b>monipol</b>), both of whom have been very active
@@ -61,7 +61,7 @@ to keep Fink up to date, and to prepare for the upcoming Snow Leopard
 release.  More volunteers are always needed, so please consider
 getting involved at some level!
 </p>
-<a name="2008-07-23%20End%20of%2010.3%20support."><span class="news-date">2008-07-23: </span><span class="news-headline">End of 10.3 support.</span></a><?php gray_line(); ?>
+<a name="2008-07-23 End of 10.3 support."><span class="news-date">2008-07-23: </span><span class="news-headline">End of 10.3 support.</span></a><?php gray_line(); ?>
       <p>
 The Fink project is no longer able to offer support for users of Fink
 on Mac OS X 10.3. In reality there has been very little support for
