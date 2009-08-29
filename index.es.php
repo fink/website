@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2008/06/27 01:08:38 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/08/29 11:24:03 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -28,7 +28,9 @@ desde código fuente.
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
-<h1>Noticias</h1>
+<h1><a href="<? print $rdf_file; ?>" title="Noticias del Proyecto Fink"
+rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png"
+alt="" style="border: 0"/></a>&nbsp;Noticias</h1>
 <?
 // Include news items
 include dirname(__FILE__) . "/news/news.es.inc";
@@ -36,6 +38,16 @@ include dirname(__FILE__) . "/news/news.es.inc";
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=es">Noticias Antiguas...</a></div>
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
+
+<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable"
+title="Actualizacions de paquetes en Fink (unstable)" rel="alternate"
+type="application/rss+xml"><img src="img/feed-icon16x16.png" alt=""
+style="border:0"/></a>&nbsp;Actualizaciones recientes de paquetes</h1>
+
+<? include "package-updates.inc" ?>
+
+<a href="package-updates.php">mais...</a>
+
 
 <h1>Estado de Fink</h1>
 <? 
