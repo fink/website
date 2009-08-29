@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/08/29 11:24:03 $';
+$cvs_date = '$Date: 2009/08/29 11:29:38 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -46,7 +46,7 @@ style="border:0"/></a>&nbsp;Actualizaciones recientes de paquetes</h1>
 
 <? include "package-updates.inc" ?>
 
-<a href="package-updates.php">mais...</a>
+<a href="package-updates.php">más...</a>
 
 
 <h1>Estado de Fink</h1>
