@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.38 2008/02/27 04:04:28 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.39 2009/08/29 11:16:45 monipol Exp $</cvsid>
 
 <newsitem>
 	<date>2008-02-03</date>
-	<headline>Mirror, mirror on the wall, だれか Fink を支援しませんか?</headline>
+	<headline>Mirror, mirror on the wall</headline>
 	<body>
 <p>Todo gran proyecto de codigo abierto se enfrenta a problemas de
-distribucion y el caso de Fink no es la excepcion. Nosotros deseamos
+distribución y el caso de Fink no es la excepción. Nosotros deseamos
 que puedas obtener los archivos que necesitas para construir tus
-aplicaciones favoritas tan rapido como sea posible. Para ello, lo mas
-conveniente es tener un "espejo" cercano a tu ubicacion.</p>
+aplicaciones favoritas tan rápido como sea posible. Para ello, lo más
+conveniente es tener un "espejo" cercano a tu ubicación.</p>
 
-<p>Estamos trabajando activamente en la construccion de una
-infraestructura de distribucion confiable que consiste en "espejos"
+<p>Estamos trabajando activamente en la construcción de una
+infraestructura de distribución confiable que consiste en "espejos"
 patrocinados por universidades y corporaciones. Recientemente, nuestra
 lista de "espejos" se ha visto reducida considerablemente y necesitamos
 tu ayuda para mejorar la calidad de los "espejos" de nuevo. </p>
 
-<p>Esres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
+<p>Eres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
 Eres un desarrollador con algo de tiempo libre? Aun si no puedes
 contestar que si a ninguna de estas preguntas es posible que puedas
-ayudar. Toda la informacion relevante para levantar y patrocinar un
-"espejo" esta disponilbe en el <link url="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</link>. Para preguntas mas especificas
+ayudar. Toda la información relevante para levantar y patrocinar un
+"espejo" está disponilbe en el <link url="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</link>. Para preguntas más específicas
 puedes <link url="mailto:fink-core-private@lists.sourceforge.net">contactarnos</link> directamente. Estamos solicitando espejos en todo
-el mundo y especificamente en los siguientes paises:</p>
+el mundo y especificamente en los siguientes países:</p>
 
-<ul><li>Estados UnidosJapon</li><li>Alemania</li><li>
-Francia</li><li>Reino Unido</li><li>Canda</li><li>
+<ul><li>Estados Unidos</li><li>Japón</li><li>Alemania</li><li>
+Francia</li><li>Reino Unido</li><li>Canadá</li><li>
 Italia</li><li>España</li><li>Suiza</li><li>Australia</li></ul>
 
-<p>Tambien queremos aprovechar esta oportunidad para agradecer a todos los
-que han proveido "espejos" previamente. Sin su apoyo continuo Fink
-podria proveer el nivel de servicio que actualmente tiene. Gracias!</p>
+<p>También queremos aprovechar esta oportunidad para agradecer a todos los
+que han proveído "espejos" previamente. Sin su apoyo continuo Fink
+no podría proveer el nivel de servicio que actualmente tiene. ¡Gracias!</p>
 </body>
 </newsitem>
 

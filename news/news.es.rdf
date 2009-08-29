@@ -5,69 +5,69 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2009-08-28T10:14:31-03:00</dc:date>
+    <dc:date>2009-08-29T08:13:52-03:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20%3F%3F%3F%20Fink%20%3F%3F%3F%3F%3F%3F%3F%3F%3F">
-      <title>Mirror, mirror on the wall, &#12384;&#12428;&#12363; Fink &#12434;&#25903;&#25588;&#12375;&#12414;&#12379;&#12435;&#12363;?</title>
-      <link>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20%3F%3F%3F%20Fink%20%3F%3F%3F%3F%3F%3F%3F%3F%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20%3F%3F%3F%20Fink%20%3F%3F%3F%3F%3F%3F%3F%3F%3F</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall">
+      <title>Mirror, mirror on the wall</title>
+      <link>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall</link>
+      <guid>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall</guid>
       <description>
 <p>Todo gran proyecto de codigo abierto se enfrenta a problemas de
-distribucion y el caso de Fink no es la excepcion. Nosotros deseamos
+distribución y el caso de Fink no es la excepción. Nosotros deseamos
 que puedas obtener los archivos que necesitas para construir tus
-aplicaciones favoritas tan rapido como sea posible. Para ello, lo mas
-conveniente es tener un "espejo" cercano a tu ubicacion.</p>
+aplicaciones favoritas tan rápido como sea posible. Para ello, lo más
+conveniente es tener un "espejo" cercano a tu ubicación.</p>
 
-<p>Estamos trabajando activamente en la construccion de una
-infraestructura de distribucion confiable que consiste en "espejos"
+<p>Estamos trabajando activamente en la construcción de una
+infraestructura de distribución confiable que consiste en "espejos"
 patrocinados por universidades y corporaciones. Recientemente, nuestra
 lista de "espejos" se ha visto reducida considerablemente y necesitamos
 tu ayuda para mejorar la calidad de los "espejos" de nuevo. </p>
 
-<p>Esres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
+<p>Eres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
 Eres un desarrollador con algo de tiempo libre? Aun si no puedes
 contestar que si a ninguna de estas preguntas es posible que puedas
-ayudar. Toda la informacion relevante para levantar y patrocinar un
-"espejo" esta disponilbe en el <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>. Para preguntas mas especificas
+ayudar. Toda la información relevante para levantar y patrocinar un
+"espejo" está disponilbe en el <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>. Para preguntas más específicas
 puedes <a href="mailto:fink-core-private@lists.sourceforge.net">contactarnos</a> directamente. Estamos solicitando espejos en todo
-el mundo y especificamente en los siguientes paises:</p>
+el mundo y especificamente en los siguientes países:</p>
 
-Estados UnidosJaponAlemania
-FranciaReino UnidoCanda
+Estados UnidosJapónAlemania
+FranciaReino UnidoCanadá
 ItaliaEspañaSuizaAustralia
 
-<p>Tambien queremos aprovechar esta oportunidad para agradecer a todos los
-que han proveido "espejos" previamente. Sin su apoyo continuo Fink
-podria proveer el nivel de servicio que actualmente tiene. Gracias!</p>
+<p>También queremos aprovechar esta oportunidad para agradecer a todos los
+que han proveído "espejos" previamente. Sin su apoyo continuo Fink
+no podría proveer el nivel de servicio que actualmente tiene. ¡Gracias!</p>
 </description>
       <content:encoded>
 <p>Todo gran proyecto de codigo abierto se enfrenta a problemas de
-distribucion y el caso de Fink no es la excepcion. Nosotros deseamos
+distribución y el caso de Fink no es la excepción. Nosotros deseamos
 que puedas obtener los archivos que necesitas para construir tus
-aplicaciones favoritas tan rapido como sea posible. Para ello, lo mas
-conveniente es tener un "espejo" cercano a tu ubicacion.</p>
+aplicaciones favoritas tan rápido como sea posible. Para ello, lo más
+conveniente es tener un "espejo" cercano a tu ubicación.</p>
 
-<p>Estamos trabajando activamente en la construccion de una
-infraestructura de distribucion confiable que consiste en "espejos"
+<p>Estamos trabajando activamente en la construcción de una
+infraestructura de distribución confiable que consiste en "espejos"
 patrocinados por universidades y corporaciones. Recientemente, nuestra
 lista de "espejos" se ha visto reducida considerablemente y necesitamos
 tu ayuda para mejorar la calidad de los "espejos" de nuevo. </p>
 
-<p>Esres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
+<p>Eres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
 Eres un desarrollador con algo de tiempo libre? Aun si no puedes
 contestar que si a ninguna de estas preguntas es posible que puedas
-ayudar. Toda la informacion relevante para levantar y patrocinar un
-"espejo" esta disponilbe en el <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>. Para preguntas mas especificas
+ayudar. Toda la información relevante para levantar y patrocinar un
+"espejo" está disponilbe en el <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>. Para preguntas más específicas
 puedes <a href="mailto:fink-core-private@lists.sourceforge.net">contactarnos</a> directamente. Estamos solicitando espejos en todo
-el mundo y especificamente en los siguientes paises:</p>
+el mundo y especificamente en los siguientes países:</p>
 
-Estados UnidosJaponAlemania
-FranciaReino UnidoCanda
+Estados UnidosJapónAlemania
+FranciaReino UnidoCanadá
 ItaliaEspañaSuizaAustralia
 
-<p>Tambien queremos aprovechar esta oportunidad para agradecer a todos los
-que han proveido "espejos" previamente. Sin su apoyo continuo Fink
-podria proveer el nivel de servicio que actualmente tiene. Gracias!</p>
+<p>También queremos aprovechar esta oportunidad para agradecer a todos los
+que han proveído "espejos" previamente. Sin su apoyo continuo Fink
+no podría proveer el nivel de servicio que actualmente tiene. ¡Gracias!</p>
 </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2008-01-12%20Fink%20website%20down">

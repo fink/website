@@ -7,34 +7,34 @@ $metatags = '';
 include_once "header.inc";
 ?>
 
-<a name="2008-02-03 Mirror, mirror on the wall, だれか Fink を支援しませんか?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, だれか Fink を支援しませんか?</span></a><?php gray_line(); ?>
+<a name="2008-02-03 Mirror, mirror on the wall"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall</span></a><?php gray_line(); ?>
 <p>Todo gran proyecto de codigo abierto se enfrenta a problemas de
-distribucion y el caso de Fink no es la excepcion. Nosotros deseamos
+distribución y el caso de Fink no es la excepción. Nosotros deseamos
 que puedas obtener los archivos que necesitas para construir tus
-aplicaciones favoritas tan rapido como sea posible. Para ello, lo mas
-conveniente es tener un "espejo" cercano a tu ubicacion.</p>
+aplicaciones favoritas tan rápido como sea posible. Para ello, lo más
+conveniente es tener un "espejo" cercano a tu ubicación.</p>
 
-<p>Estamos trabajando activamente en la construccion de una
-infraestructura de distribucion confiable que consiste en "espejos"
+<p>Estamos trabajando activamente en la construcción de una
+infraestructura de distribución confiable que consiste en "espejos"
 patrocinados por universidades y corporaciones. Recientemente, nuestra
 lista de "espejos" se ha visto reducida considerablemente y necesitamos
 tu ayuda para mejorar la calidad de los "espejos" de nuevo. </p>
 
-<p>Esres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
+<p>Eres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
 Eres un desarrollador con algo de tiempo libre? Aun si no puedes
 contestar que si a ninguna de estas preguntas es posible que puedas
-ayudar. Toda la informacion relevante para levantar y patrocinar un
-"espejo" esta disponilbe en el <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>. Para preguntas mas especificas
+ayudar. Toda la información relevante para levantar y patrocinar un
+"espejo" está disponilbe en el <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>. Para preguntas más específicas
 puedes <a href="mailto:fink-core-private@lists.sourceforge.net">contactarnos</a> directamente. Estamos solicitando espejos en todo
-el mundo y especificamente en los siguientes paises:</p>
+el mundo y especificamente en los siguientes países:</p>
 
-<ul><li>Estados UnidosJapon</li><li>Alemania</li><li>
-Francia</li><li>Reino Unido</li><li>Canda</li><li>
+<ul><li>Estados Unidos</li><li>Japón</li><li>Alemania</li><li>
+Francia</li><li>Reino Unido</li><li>Canadá</li><li>
 Italia</li><li>España</li><li>Suiza</li><li>Australia</li></ul>
 
-<p>Tambien queremos aprovechar esta oportunidad para agradecer a todos los
-que han proveido "espejos" previamente. Sin su apoyo continuo Fink
-podria proveer el nivel de servicio que actualmente tiene. Gracias!</p>
+<p>También queremos aprovechar esta oportunidad para agradecer a todos los
+que han proveído "espejos" previamente. Sin su apoyo continuo Fink
+no podría proveer el nivel de servicio que actualmente tiene. ¡Gracias!</p>
 <a name="2008-01-12 Fink website down"><span class="news-date">2008-01-12: </span><span class="news-headline">Fink website down</span></a><?php gray_line(); ?>
 <p>The fink website is not functioning correctly at present.  (You may
 have noticed that many of the links on this page do not function correctly.)  The
