@@ -4,6 +4,7 @@ include_once('memcache.inc');
 
 static $debug           = false;
 static $cache_threshold = 250;  // number of packages in an object before storing
+static $cache_expire_last_modified = 3600; // 1 hour
 
 // Read url parameters. We use basic HTML encoding for now, and 
 // cut off very long values, to make unforseen SQL injection hacks more difficult.
@@ -44,7 +45,7 @@ function handle_last_modified($_key, $_query) {
 	   if ($r != null && $r->response->numFound >0) {
 	      $date = $r->response->docs[0]->infofilechanged;
 	      $last_modified = date_create($date)->format('D, d M Y H:i:s') . ' GMT';
-	      memcache_set_key($_key, $last_modified, false, 7200);
+	      memcache_set_key($_key, $last_modified, false, $cache_expire_last_modified);
 	   } else {
 	      $last_modified = gmdate('D, d M Y H:i:s') . ' GMT';
 	   }
@@ -59,7 +60,7 @@ function format_solr_date($date) {
 	return $returnval;
 }
 
-function memcache_set_key($key, $value, $flag = false, $expire = 3600) {
+function memcache_set_key($key, $value, $flag = false, $expire = 1800) {
 	global $debug;
 	global $memcache;
 	if (isset($memcache) && !$debug) {
@@ -133,7 +134,7 @@ class SolrQuery {
 	protected $raw     = false;
 	protected $unique  = false;
 	protected $rows    = 3000;
-	protected $timeout = 3600;
+	protected $timeout = 1800;
 
 	protected $fields  = array();
 	protected $sort    = array();
