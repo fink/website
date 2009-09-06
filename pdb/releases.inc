@@ -7,13 +7,16 @@ $releases          = array();
 $dists_to_releases = array();
 
 foreach(array(
-	new Distribution("10.1",        "powerpc", "10.1",               "packages/dists",    1, false, false, false),
-	new Distribution("10.2-gcc3.3", "powerpc", "10.2 (gcc3.3 only)", "dists/10.2-gcc3.3", 2, true, true, false),
-	new Distribution("10.3",        "powerpc", "10.3",               "dists/10.3",        3, true, true, false),
-	new Distribution("10.4",        "powerpc", "10.4/powerpc",       "dists/10.4",        4, true, true, true),
-	new Distribution("10.4",        "i386",    "10.4/i386",          "dists/10.4",        5, true, true, true),
-	new Distribution("10.5",        "powerpc", "10.5/powerpc",       "dists/10.4",        6, true, true, true),
-	new Distribution("10.5",        "i386",    "10.5/i386",          "dists/10.4",        7, true, true, true),
+	new Distribution("10.1",        "powerpc", "10.1",               "packages/dists",     1, false, false, false),
+	new Distribution("10.2-gcc3.3", "powerpc", "10.2 (gcc3.3 only)", "dists/10.2-gcc3.3",  2, true, true, false),
+	new Distribution("10.3",        "powerpc", "10.3",               "dists/10.3",         3, true, true, false),
+	new Distribution("10.4",        "powerpc", "10.4/powerpc",       "dists/10.4",         4, true, true, false),
+	new Distribution("10.4",        "i386",    "10.4/i386",          "dists/10.4",         5, true, true, false),
+	new Distribution("10.5",        "powerpc", "10.5/powerpc",       "dists/10.4",         6, true, true, true),
+	new Distribution("10.5",        "i386",    "10.5/i386",          "dists/10.4",         7, true, true, true),
+	new Distribution("10.5",        "x86_64",  "10.5/x86_64",        "dists/10.4",         8, true, true, true),
+	new Distribution("10.6",        "i386",    "10.6/i386",          "dists/10.4",         9, true, true, true),
+	new Distribution("10.6",        "x86_64",  "10.6/x86_64",        "dists/10.4",        10, true, true, true),
 ) as $_dist) {
 	$distributions[$_dist->getId()] = $_dist;
 }
@@ -38,6 +41,15 @@ foreach(array(
 	new Release($distributions["10.5-i386"],            "bindist",  "0.9.0",   1, true),
 	new Release($distributions["10.5-i386"],            "stable",   "current", 2, true),
 	new Release($distributions["10.5-i386"],            "unstable", "current", 3, true),
+#	new Release($distributions["10.5-x86_64"],          "bindist",  "0.9.0",   1, true),
+	new Release($distributions["10.5-x86_64"],          "stable",   "current", 2, true),
+	new Release($distributions["10.5-x86_64"],          "unstable", "current", 3, true),
+#	new Release($distributions["10.6-i386"],            "bindist",  "0.10.0",  1, true),
+	new Release($distributions["10.6-i386"],            "stable",   "current", 2, true),
+	new Release($distributions["10.6-i386"],            "unstable", "current", 3, true),
+#	new Release($distributions["10.6-x86_64"],          "bindist",  "0.10.0",  1, true),
+	new Release($distributions["10.6-x86_64"],          "stable",   "current", 2, true),
+	new Release($distributions["10.6-x86_64"],          "unstable", "current", 3, true),
 ) as $_rel) {
 	$releases[$_rel->getId()] = $_rel;
 }
