@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/03/26 19:26:49 $';
+$cvs_date = '$Date: 2009/09/07 04:12:00 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -266,7 +266,7 @@ if ($result == null || count($result) == 0) { # No package found
 
 	show_desc('Usage&nbsp;Hints:', $pobj['descusage']);
 
-	it_item("Section:", '<a href="'.$pdbroot.'browse.php?section='.$pobj['section'].'" title="' . $sections[$pobj['section']] . '">'.$pobj['section'].'</a>');
+	it_item("Section:", '<a href="'.$pdbroot.'browse.php?sec='.$pobj['section'].'" title="' . $sections[$pobj['section']] . '">'.$pobj['section'].'</a>');
 
 	// Get the maintainer field, and try to parse out the email address
 	if ($pobj['maintainer']) {

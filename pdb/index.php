@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Introduction";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/10 22:21:49 $';
+$cvs_date = '$Date: 2009/09/07 04:12:00 $';
 
 // 2 hours, this page does not change much
 $cache_timeout = 7200;
@@ -89,7 +89,7 @@ or you can browse by archive section:
 <ul>
 <?
 	foreach ($sections as $_key => $_value) {
-		print '<li><a href="' . $pdbroot . 'browse.php?section='.$_key.'">'.$_key.'</a>';
+		print '<li><a href="' . $pdbroot . 'browse.php?sec='.$_key.'">'.$_key.'</a>';
 		if (!empty($_value)) {
 			print " - $_value";
 		}

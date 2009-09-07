@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Obsolete page";
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 22:03:22 $';
+$cvs_date = '$Date: 2009/09/07 04:12:00 $';
 
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
@@ -15,7 +15,7 @@ $server = $_SERVER['SERVER_NAME'];
 $location = "http://$server/pdb/browse.php";
 
 if (isset($section)) {
-	$location .= "?section=" . $section;
+	$location .= "?sec=" . $section;
 }
 
 // This page is obsolete. We redirect to browse.php
