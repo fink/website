@@ -1,10 +1,11 @@
 <?
-/* $Id: header.inc,v 1.21 2007/12/07 14:50:32 rangerrick Exp $ */
+/* $Id: header.inc,v 1.22 2009/09/07 04:10:15 rangerrick Exp $ */
 
 $linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
 $pdbroot   = $localroot . "pdb/";
 
+$section   = 'packages';
 $disabled = false;
 
 $server = $_SERVER['SERVER_NAME'];

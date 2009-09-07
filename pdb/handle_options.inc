@@ -35,8 +35,8 @@ function get_query_description() {
 		array_push($_desc, "Architecture = '" . $_GET['architecture'] . "'");
 	if (!empty($_GET['tree']) && $_GET['tree'] != $default_tree)
 		array_push($_desc, "Tree = '" . $_GET['tree'] . "'");
-	if (!empty($_GET['section']))
-		array_push($_desc, "Section = '" . $_GET['section'] . "'");
+	if (!empty($_GET['sec']))
+		array_push($_desc, "Section = '" . $_GET['sec'] . "'");
 	if (!empty($_GET['depends']))
 		array_push($_desc, "Depends = '" . $_GET['depends'] . "'");
 	if (!empty($_GET['builddepends']))
@@ -62,7 +62,7 @@ function get_query_params() {
 	addGETParam($_getparams, 'dist_name');
 	addGETParam($_getparams, 'architecture');
 	addGETParam($_getparams, 'tree');
-	addGETParam($_getparams, 'section');
+	addGETParam($_getparams, 'sec');
 	addGETParam($_getparams, 'nochildren');
 	addGETParam($_getparams, 'noshlibsdev');
 	addGETParam($_getparams, 'showall');
@@ -124,9 +124,9 @@ $invalid_param = $invalid_param || $inv_p;
 if (empty($tree)) $tree = $default_tree;
 if (!empty($tree) && $tree != $default_tree) $pdb_has_adv_searchoptions = true;
 
-list($section, $inv_p) = get_safe_param('section', '/^[a-z0-9\+\-\.\/]+$/');
+list($sec, $inv_p) = get_safe_param('sec', '/^[a-z0-9\+\-\.\/]+$/');
 $invalid_param = $invalid_param || $inv_p;
-if (!empty($section)) $pdb_has_adv_searchoptions = true;
+if (!empty($sec)) $pdb_has_adv_searchoptions = true;
 
 $nochildren = $_GET['nochildren'];
 if ($nochildren != "on") $nochildren = '';
@@ -195,7 +195,7 @@ $query->addField("rel_type");
 if ($dist)
 	$query->addQuery("dist_id:\"$dist\"", true);
 if ($dist_name == $default_dist)
-	$query->addQuery("+(dist_name:\"10.4\" OR dist_name:\"10.5\")");
+	$query->addQuery("+(dist_name:\"10.5\" OR dist_name:\"10.6\")");
 elseif ($dist_name != 'any')
 	$query->addQuery("dist_name:\"$dist_name\"", true);
 if ($architecture)
@@ -227,17 +227,17 @@ if (!empty($name)) {
 if (!empty($summary))
 	$query->addQuery("text:\"$summary\"", true);
 
-if (!empty($section)) {
-	$section_query = "section:\"$section\"";
+if (!empty($sec)) {
+	$section_query = "section:\"$sec\"";
 
-	if ($section == "games")
-		$section_query = "(section:\"$section\" OR parentname:games OR parentname:toys)";
-	elseif ($section == "graphics")
-		$section_query = "(section:\"$section\" OR parentname:graphics)";
-	elseif ($section == "sound")
-		$section_query = "(section:\"$section\" OR parentname:multimedia)";
-	elseif ($section == "utils") {
-		$section_query = "((section:\"$section\" OR parentname:utils) AND NOT parentname:webmin)";
+	if ($sec == "games")
+		$section_query = "(section:\"$sec\" OR parentname:games OR parentname:toys)";
+	elseif ($sec == "graphics")
+		$section_query = "(section:\"$sec\" OR parentname:graphics)";
+	elseif ($sec == "sound")
+		$section_query = "(section:\"$sec\" OR parentname:multimedia)";
+	elseif ($sec == "utils") {
+		$section_query = "((section:\"$sec\" OR parentname:utils) AND NOT parentname:webmin)";
 	}
 
 	$query->addQuery($section_query, true);
