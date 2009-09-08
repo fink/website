@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/09/07 04:12:00 $';
+$cvs_date = '$Date: 2009/09/08 03:48:33 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -208,7 +208,11 @@ if ($result == null || count($result) == 0) { # No package found
 
 		if ($last_dist_name != $dist_name) {
 			$color_count++;
-			$row_color='bgcolor="#' . dechex($colors[$color_count][0]) . dechex($colors[$color_count][1]) . dechex($colors[$color_count][2]) . '"';
+			if ($dist->isVisible()) {
+				$row_color='bgcolor="#' . dechex($colors[$color_count][0]) . dechex($colors[$color_count][1]) . dechex($colors[$color_count][2]) . '"';
+			} else {
+				$row_color='bgcolor="#ddbdbd"';
+			}
 		}
 
 		if (!$showall && !$dist->isVisible())
