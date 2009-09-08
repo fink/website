@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/09/08 03:48:33 $';
+$cvs_date = '$Date: 2009/09/08 16:37:55 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -33,9 +33,6 @@ $basicQuery->addSort("infofilechanged desc");
 $basicQuery->setRows(1);
 
 $basicQuery->addQuery("name_e:\"$package\"", true);
-if (!$showall) {
-	$basicQuery->addQuery("dist_visible:true", true);
-}
 
 $fullQuery = clone $basicQuery;
 
@@ -174,7 +171,7 @@ if ($result == null || count($result) == 0) { # No package found
 	print "</tr>\n";
 
 	$color_count = 0;
-	$last_dist_name = '';
+	$last_dist_id = '';
 	$has_unsupported_dists = false;
 
 	global $distributions;
@@ -182,11 +179,11 @@ if ($result == null || count($result) == 0) { # No package found
 	global $dists_to_releases;
 
 	// make a gradient out of the colors for the display
-	$dist_names = array();
+	$dist_ids = array();
 	foreach ($distributions as $dist) {
-		$dist_names[$dist->getName()]++;
+		$dist_ids[$dist->getId()]++;
 	}
-	$color_last = count($dist_names) - 1;
+	$color_last = count($dist_ids);
 	#$dark  = array(227, 202, 255);
 	$dark  = array(174, 160, 198);
 	$light = array(246, 236, 255);
@@ -204,18 +201,18 @@ if ($result == null || count($result) == 0) { # No package found
 	}
 
 	foreach (array_reverse($distributions) as $dist) {
-		$dist_name = $dist->getName();
+		$dist_id = $dist->getId();
 
-		if ($last_dist_name != $dist_name) {
+		if ($last_dist_id != $dist_id) {
 			$color_count++;
-			if ($dist->isVisible()) {
+			if ($dist->isVisible() == TRUE) {
 				$row_color='bgcolor="#' . dechex($colors[$color_count][0]) . dechex($colors[$color_count][1]) . dechex($colors[$color_count][2]) . '"';
 			} else {
 				$row_color='bgcolor="#ddbdbd"';
 			}
 		}
 
-		if (!$showall && !$dist->isVisible())
+		if (!$showall && $dist->isVisible() == FALSE)
 			continue;
 
 		print "<tr $row_color>";
@@ -253,7 +250,7 @@ if ($result == null || count($result) == 0) { # No package found
 			avail_td($pkginfo);
 		}
 
-		$last_dist_name = $dist_name;
+		$last_dist_id = $dist_id;
 	}
 	
 	print "</table>\n";
