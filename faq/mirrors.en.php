@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Mirrors";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/08/21 15:33:01';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/08/28 12:02:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="relations.php?phpLang=en" title="Relations with Other Projects">';
 
 
@@ -31,15 +31,11 @@ include_once "header.en.inc";
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is normal. The rsync update method will only update your active tree, e.g. 10.3, and it will also delete the CVS subdirectories.</p></div>
     </a>
     <a name="howswitch">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.6: How can I switch back and forth between methods.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>3.6: How can I switch back and forth between methods?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> By using fink selfupdate-rsync or fink selfupdate-cvs to switch to rsync or CVS, respectively.</p></div>
     </a>
-    <a name="status">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.7: Can I see what the current status of rsync mirrors is?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Yes, go to http://finkmirrors.net/status.html</p></div>
-    </a>
     <a name="Master">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.8: What is a Distfiles mirror?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>3.7: What is a Distfiles mirror?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Sometimes it is hard to fetch a certain version of sources from the Internet. Distfile mirrors hold and mirror the source packages needed by fink to build its source packages.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:

@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/08/28 12:02:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="general.php?phpLang=pt" title="Perguntas gerais">';
 
 
@@ -21,7 +21,7 @@ include_once "header.pt.inc";
         (incluindo OpenPackages e GNU-Darwin)?</a></li><li><a href="general.php?phpLang=pt#usr-local">1.4 Por que o Fink não instala no /usr/local?</a></li><li><a href="general.php?phpLang=pt#why-sw">1.5 Por que vocês escolheram /sw?</a></li></ul></li><li><a href="relations.php?phpLang=pt"><b>2 Relacionamentos com outros projetos</b></a><ul><li><a href="relations.php?phpLang=pt#upstream">2.1 Vocês repassam suas correções e ajustes para os mantenedores
         oficiais?</a></li><li><a href="relations.php?phpLang=pt#debian">2.2 Qual o seu relacionamento com o projeto Debian? Vocês estão portando
         o Debian Linux para rodar no Mac OS X?</a></li><li><a href="relations.php?phpLang=pt#apple">2.3 Qual o seu relacionamento com a Apple</a></li><li><a href="relations.php?phpLang=pt#darwinports">2.4 Qual o seu relacionamento com o Darwinports?</a></li></ul></li><li><a href="mirrors.php?phpLang=pt"><b>3 Espelhos do Fink</b></a><ul><li><a href="mirrors.php?phpLang=pt#when-use">3.1 O que são os espelhos do Fink?</a></li><li><a href="mirrors.php?phpLang=pt#why">3.2 Por que eu deveria usar espelhos rsync?</a></li><li><a href="mirrors.php?phpLang=pt#where">3.3 Onde posso encontrar mais informações sobre espelhos do Fink?</a></li><li><a href="mirrors.php?phpLang=pt#when-not">3.4 Não consigo conectar-me a um servidor rsync, o que devo fazer?</a></li><li><a href="mirrors.php?phpLang=pt#otherinfogone">3.5 Eu mudei para o método rsync e agora todos os arquivos das árvores
-        que não eram usadas foram eliminados</a></li><li><a href="mirrors.php?phpLang=pt#howswitch">3.6 Como posso ficar alternando entre os métodos?</a></li><li><a href="mirrors.php?phpLang=pt#status">3.7 Posso verificar o estado atual dos espelhos rsync?</a></li><li><a href="mirrors.php?phpLang=pt#Master">3.8 O que é um espelho de distfiles (arquivos de distribuição)?</a></li></ul></li><li><a href="upgrade-fink.php?phpLang=pt"><b>4 Atualizando o Fink (resolução de problemas específicos a uma
+        que não eram usadas foram eliminados</a></li><li><a href="mirrors.php?phpLang=pt#howswitch">3.6 Como posso alternar entre os métodos?</a></li><li><a href="mirrors.php?phpLang=pt#Master">3.7 O que é um espelho de distfiles (arquivos de distribuição)?</a></li></ul></li><li><a href="upgrade-fink.php?phpLang=pt"><b>4 Atualizando o Fink (resolução de problemas específicos a uma
     versão)</b></a><ul><li><a href="upgrade-fink.php?phpLang=pt#leopard-bindist1">4.1 O Fink não enxerga pacotes novos mesmo depois de eu rodar uma
         autoatualização via rsync ou CVS.</a></li><li><a href="upgrade-fink.php?phpLang=pt#leopard-bindist2">4.2 Quando eu tento instalar um pacote eu recebo a mensagem de erro
         'Can't resolve dependency "fink (&gt;= 0.28.0)"' (Não é possível resolver
@@ -119,7 +119,7 @@ include_once "header.pt.inc";
         file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x-delete">9.5 Quero que a tecla Delete no X11.app da Apple comporte-se como no
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-wants-xfree86">9.6 Estou tendo problemas com X11 e Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#special-x11-debug">9.7 Ainda estou tendo problemas com o X11 e o Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#tiger-gtk">9.8 Sempre que uso um aplicativo GTK, recebo mensagens de erro em
         relação a <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=pt#yelp">9.9 Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.pt.xml,v 1.4 2009/07/27 18:44:40 dmacks Exp $-->
+<!--Generated from $Fink: faq.pt.xml,v 1.5 2009/08/28 12:02:43 monipol Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

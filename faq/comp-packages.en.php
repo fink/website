@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/08/21 15:33:01';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/08/28 12:02:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -94,7 +94,7 @@ preventing you from updating <code>gettext</code>.</p></div>
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
     <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (or other versions of libraries in
     <code>/usr/X11/lib/</code>).</p><p>The current wisdom on the best
-    fix for such an issue is to install Xcode 3.1.3 .</p></div>
+    fix for such an issue is to install Xcode 3.1.3.</p></div>
   </a>
     <a name="all-others">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I'm having issues with a package that isn't listed here.</b></p></div>

@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Compilação (2)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/08/28 12:02:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="usage-general.php?phpLang=pt" title="Problemas no uso de pacotes - Geral"><link rel="prev" href="comp-general.php?phpLang=pt" title="Problemas de Compilação - Geral">';
 
 
@@ -96,10 +96,11 @@ fink install libiconv</pre></div>
     </a>
   <a name="Leopard-libXrandr">
     <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Não consigo instalar o <b>gtk+2</b> no OS 10.5.</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Há algumas variantes deste erro. Uma delas envolve bibliotecas
-      ausentes: <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> ou
-      <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code>. O melhor
-      entendimento para corrigir este erro é instalar o Xcode 3.1.3.</p></div>
+    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Esse erro está normalmente relacionado a bibliotecas ausentes, tais
+	  como <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> ou
+	  <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (ou outras
+	  versões de bibliotecas em <code>/usr/X11/lib/</code>).</p><p>Até onde podemos perceber, a melhor forma de corrigir esse problema é
+	  instalar o Xcode 3.1.3.</p></div>
   </a>
     <a name="all-others">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.8: Estou tendo problemas com um pacote que não está listado aqui.</b></p></div>

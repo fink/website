@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Espelhos";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/08/28 12:02:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="upgrade-fink.php?phpLang=pt" title="Atualizando o Fink (resolução de problemas específicos a uma
     versão)"><link rel="prev" href="relations.php?phpLang=pt" title="Relacionamentos com outros projetos">';
 
@@ -45,15 +45,11 @@ include_once "header.pt.inc";
         subdiretórios CVS.</p></div>
     </a>
     <a name="howswitch">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.6: Como posso ficar alternando entre os métodos?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>3.6: Como posso alternar entre os métodos?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Use os comandos fink selfupdate-rsync ou fink selfupdate-cvs.</p></div>
     </a>
-    <a name="status">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.7: Posso verificar o estado atual dos espelhos rsync?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Claro, veja <a href="http://finkmirrors.net/status.html">http://finkmirrors.net/status.html</a>.</p></div>
-    </a>
     <a name="Master">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.8: O que é um espelho de distfiles (arquivos de distribuição)?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>3.7: O que é um espelho de distfiles (arquivos de distribuição)?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Às vezes é difícil obter da Internet certas versões de códigos
         fontes. Espelhos de distfiles mantêm e espelham pacotes de código
         fonte que são necessários para que o fink construa seus pacotes de

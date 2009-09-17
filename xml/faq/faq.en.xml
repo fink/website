@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.101 2009/08/28 12:02:42 monipol Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.102 2009/09/17 02:17:15 monipol Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -162,18 +162,10 @@
     </faqentry>
     <faqentry name="howswitch">
       <question>
-        <p>How can I switch back and forth between methods.</p>
+        <p>How can I switch back and forth between methods?</p>
       </question>
       <answer>
         <p>By using fink selfupdate-rsync or fink selfupdate-cvs to switch to rsync or CVS, respectively.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="status">
-      <question>
-        <p>Can I see what the current status of rsync mirrors is?</p>
-      </question>
-      <answer>
-        <p>Yes, go to http://finkmirrors.net/status.html</p>
       </answer>
     </faqentry>
     <faqentry name="Master">

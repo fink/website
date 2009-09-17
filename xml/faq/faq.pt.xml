@@ -3,7 +3,7 @@
 <document filename="index" lang="pt">
   <title>Perguntas frequentes sobre o Fink</title>
   <shorttitle>Perguntas frequentes</shorttitle>
-  <cvsid>$Id: faq.pt.xml,v 1.5 2009/08/28 12:02:43 monipol Exp $</cvsid>
+  <cvsid>$Id: faq.pt.xml,v 1.6 2009/09/17 02:17:15 monipol Exp $</cvsid>
   <preface>
     <p>Esta é a lista das perguntas frequentes sobre o Fink. Como na maior
     parte das listas de perguntas frqeuentes, algumas perguntas foram tiradas
@@ -271,19 +271,10 @@
     </faqentry>
     <faqentry name="howswitch">
       <question>
-        <p>Como posso ficar alternando entre os métodos?</p>
+        <p>Como posso alternar entre os métodos?</p>
       </question>
       <answer>
         <p>Use os comandos fink selfupdate-rsync ou fink selfupdate-cvs.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="status">
-      <question>
-        <p>Posso verificar o estado atual dos espelhos rsync?</p>
-      </question>
-      <answer>
-        <p>Claro, veja <link
-        url="http://finkmirrors.net/status.html">http://finkmirrors.net/status.html</link>.</p>
       </answer>
     </faqentry>
     <faqentry name="Master">
