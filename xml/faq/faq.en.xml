@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.102 2009/09/17 02:17:15 monipol Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.103 2009/09/17 02:28:55 monipol Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -173,7 +173,9 @@
         <p>What is a Distfiles mirror?</p>
       </question>
       <answer>
-        <p>Sometimes it is hard to fetch a certain version of sources from the Internet. Distfile mirrors hold and mirror the source packages needed by fink to build its source packages.</p>
+		<p>Sometimes it is hard to fetch a certain version of sources from the
+		Internet. Distfile mirrors hold and mirror the source packages needed
+		by fink to build its source packages.</p>
       </answer>
     </faqentry>
   </chapter>
