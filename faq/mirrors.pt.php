@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Espelhos";
 $cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/08/28 12:02:43';
+$cvs_date = 'Date: 2009/09/17 02:28:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="upgrade-fink.php?phpLang=pt" title="Atualizando o Fink (resolução de problemas específicos a uma
     versão)"><link rel="prev" href="relations.php?phpLang=pt" title="Relacionamentos com outros projetos">';
 
@@ -50,10 +50,10 @@ include_once "header.pt.inc";
     </a>
     <a name="Master">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.7: O que é um espelho de distfiles (arquivos de distribuição)?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Às vezes é difícil obter da Internet certas versões de códigos
-        fontes. Espelhos de distfiles mantêm e espelham pacotes de código
-        fonte que são necessários para que o fink construa seus pacotes de
-        código fonte.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Às vezes é difícil obter da Internet certas versões de
+		códigos fontes. Espelhos de distfiles mantêm e espelham pacotes de
+		código fonte que são necessários para que o fink construa seus pacotes
+		de código fonte.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="upgrade-fink.php?phpLang=pt">4. Atualizando o Fink (resolução de problemas específicos a uma

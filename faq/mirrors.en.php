@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Mirrors";
 $cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/08/28 12:02:42';
+$cvs_date = 'Date: 2009/09/17 02:28:55';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="relations.php?phpLang=en" title="Relations with Other Projects">';
 
 
@@ -36,7 +36,9 @@ include_once "header.en.inc";
     </a>
     <a name="Master">
       <div class="question"><p><b><? echo FINK_Q ; ?>3.7: What is a Distfiles mirror?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Sometimes it is hard to fetch a certain version of sources from the Internet. Distfile mirrors hold and mirror the source packages needed by fink to build its source packages.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Sometimes it is hard to fetch a certain version of sources from the
+		Internet. Distfile mirrors hold and mirror the source packages needed
+		by fink to build its source packages.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="upgrade-fink.php?phpLang=en">4. Upgrading Fink (version-specific troubleshooting)</a></p>
