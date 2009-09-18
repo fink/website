@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/09/08 16:37:55 $';
+$cvs_date = '$Date: 2009/09/18 15:40:04 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -19,7 +19,7 @@ $pdb_title = "Package Database - Package " . $package;
 list($version, $inv_p) = get_safe_param('version', '/^[0-9\-.:]+$/');
 list($distribution, $inv_p) = get_safe_param('distribution', '/^[a-z0-9\-.]+$/');
 list($release, $inv_p) = get_safe_param('release', '/^[0-9.]{3,}$|^unstable$|^stable$/');
-list($architecture, $inv_p) = get_safe_param('architecture', '/^powerpc$|^i386$/');
+list($architecture, $inv_p) = get_safe_param('architecture', '/^powerpc$|^i386$|^x86_64$/');
 list($rel_id, $inv_p) = get_safe_param('rel_id', '/^[[:alnum:]\-\_\.\:]+$/');
 list($showall, $inv_p) = get_safe_param('showall', '/^on$/');
 list($doc_id, $inv_p) = get_safe_param('doc_id', '/^[[:alnum:]\-\_\.\:]+$/');

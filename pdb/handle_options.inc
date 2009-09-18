@@ -116,7 +116,7 @@ if (!empty($dist_name) && $dist_name != $default_dist) $pdb_has_adv_searchoption
 list($dist, $inv_p) = get_safe_param('dist', '/^[a-z0-9\+\-\.\%]+$/');
 $invalid_param = $invalid_param || $inv_p;
 
-list($architecture, $inv_p) = get_safe_param('architecture', '/^(i386|powerpc)$/');
+list($architecture, $inv_p) = get_safe_param('architecture', '/^(i386|powerpc|x86_64)$/');
 $invalid_param = $invalid_param || $inv_p;
 
 list($tree, $inv_p) = get_safe_param('tree', '/^(any|testing|bindist|stable|unstable)$/');

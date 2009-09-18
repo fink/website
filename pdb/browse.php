@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/09/07 04:10:15 $';
+$cvs_date = '$Date: 2009/09/18 15:40:04 $';
 
 ini_set("memory_limit", "48M");
 
@@ -72,7 +72,8 @@ foreach ($distributions as $d) {
 // Allowed values for certain fields
 $arch_values = array(
 	""        => "Any",
-	"i386"    => "Intel",
+	"i386"    => "Intel (32-bit)",
+	"x86_64"  => "Intel (64-bit)",
 	"powerpc" => "PowerPC",
 );
 
