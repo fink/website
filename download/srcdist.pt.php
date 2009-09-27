@@ -1,7 +1,7 @@
 <?
 $title = "Download: Distribuição de código fonte";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/09/17 11:03:17 $';
+$cvs_date = '$Date: 2009/09/27 22:52:01 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -17,10 +17,11 @@ pacotes, os quais serão usados para baixar o código fonte dos sites de
 distribuição originais ou dos espelhos do projeto Fink e compilá-lo em sua
 máquina local.</p>
 
-<p>O <em>fink-0.29.9</em> foi lançado oficialmente em 28 de agosto de 2009.</p>
+<p>O <em>fink-0.29.10</em> foi lançado oficialmente em 27 de setembro de
+2009.</p>
 
 <ul>
-  <li><a href="http://downloads.sourceforge.net/fink/fink-0.29.9.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.9</a> - 1176K, formato .tar.gz</li>
+  <li><a href="http://downloads.sourceforge.net/fink/fink-0.29.10.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.10</a> - 1172K, formato .tar.gz</li>
 </ul>
 
 <p>Você também precisará instalar o Xcode Tools (conforme
@@ -29,15 +30,15 @@ máquina local.</p>
 <p>Descompacte o arquivo tar.gz caso isto não tenha sido feito automaticamente,
 por exemplo via</p>
 
-<pre>tar -xvzf fink-0.29.9.tar.gz</pre>
+<pre>tar -xvzf fink-0.29.10.tar.gz</pre>
 
 <p>ou</p>
 
-<pre>tar -xvf fink-0.29.9.tar</pre>
+<pre>tar -xvf fink-0.29.10.tar</pre>
 
 <p>caso ele ainda não tenha sido descompactado parcialmente, em uma janela de
 terminal. Então, em uma janela de terminal, posicione-se no diretório
-fink-0.29.9 que foi criado e digite</p>
+fink-0.29.10 que foi criado e digite</p>
 
 <pre>./bootstrap</pre>
 
@@ -136,10 +137,11 @@ pacotes, os quais serão usados para baixar o código fonte dos sites de
 distribuição originais ou dos espelhos do projeto Fink e compilá-lo em sua
 máquina local.</p>
 
-<p>O <em>fink-0.29.9</em> foi lançado oficialmente em 28 de agosto de 2009.</p>
+<p>O <em>fink-0.29.10</em> foi lançado oficialmente em 28 de setembro de
+2009.</p>
 
 <ul>
-  <li><a href="http://downloads.sourceforge.net/fink/fink-0.29.9.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.9</a> - 1176K, formato .tar.gz</li>
+  <li><a href="http://downloads.sourceforge.net/fink/fink-0.29.10.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.10</a> - 1172K, formato .tar.gz</li>
 </ul>
 
 <p>Você também precisará instalar o Xcode Tools (conforme
@@ -148,15 +150,15 @@ máquina local.</p>
 <p>Descompacte o arquivo tar.gz caso isto não tenha sido feito automaticamente,
 por exemplo via</p>
 
-<pre>tar -xvzf fink-0.29.9.tar.gz</pre>
+<pre>tar -xvzf fink-0.29.10.tar.gz</pre>
 
 <p>ou</p>
 
-<pre>tar -xvf fink-0.29.9.tar</pre>
+<pre>tar -xvf fink-0.29.10.tar</pre>
 
 <p>caso ele ainda não tenha sido descompactado parcialmente, em uma janela de
 terminal. Então, em uma janela de terminal, posicione-se no diretório
-fink-0.29.9 que foi criado e digite</p>
+fink-0.29.10 que foi criado e digite</p>
 
 <pre>./bootstrap</pre>
 
