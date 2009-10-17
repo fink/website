@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Uso (2)";
 $cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/09/17 02:28:55';
+$cvs_date = 'Date: 2009/10/17 23:42:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="prev" href="usage-general.php?phpLang=pt" title="Problemas no uso de pacotes - Geral">';
 
 

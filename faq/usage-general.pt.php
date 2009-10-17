@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Uso (1)";
 $cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/09/17 02:28:55';
+$cvs_date = 'Date: 2009/10/17 23:42:51';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="usage-packages.php?phpLang=pt" title="Problemas no uso de pacotes - Pacotes específicos"><link rel="prev" href="comp-packages.php?phpLang=pt" title="Problemas de compilação - Pacotes específicos">';
 
 
@@ -64,21 +64,24 @@ include_once "header.pt.inc";
         Fink?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Quando você for compilar algo fora do Fink, o compilador e o
         linkeditor precisam saber onde estão as bibliotecas e arquivos de
-        cabeçalho instalados pelo Fink. Para um pacote que use o processo
-        configure/make padrão, você precisa definir algumas variáveis de
+		cabeçalho instalados pelo Fink. Também é necessário informar ao
+		compilador qual a arquitetura alvo. Para um pacote que use o processo
+		configure/make padrão, você precisa definir algumas variáveis de
         ambiente:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
+export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.5</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-setenv MACOSX_DEPLOYMENT_TARGET 10.4</pre><p>Normalmente é mais fácil adicionar essas definições ao seu arquivo
+setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
+setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>Normalmente é mais fácil adicionar essas definições ao seu arquivo
         de inicialização do shell (<code>.profile</code> |
         <code>.cshrc</code>) para que as variáveis sejam definidas
         automaticamente. Se um pacote não usa essas variáveis, você precisará
