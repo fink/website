@@ -1,7 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.40 2008/02/27 04:04:28 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.41 2009/10/17 04:04:37 babayoshihiko Exp $</cvsid>
+
+  <newsitem>
+    <date>2009-08-28</date>
+    <headline>Fink on 10.6.</headline>
+    <body>
+      <p>
+Fink は、雪豹 (OS X v. 10.6) への準備を整えました。
+32-bit版と64-bit版がありますので、どちらかを選択してご利用ください。
+現在のところ、32-bit版の方が多くのパッケージがあります。
+しかし、64-bit版は OS X および　Fink の将来の方向性を示しています。
+各ユーザーがどちらかを選択するか判断してください。
+32-bit版から64-bit版への「アップグレード」は<em>できません</em>。
+</p><p>
+現在、Snow Leopard に Fink をインストールするには、二つの方法があります。
+バイナリインストーラはないので、
+<em>まず Snow Leopard ディスクからオプションインストールで XCode をインストールしてください。</em>
+64-bit版を使われる方、または 10.4 以前から直接アップグレードされる方は、ディストリビューション 
+tarball (0.29.9 以降のバージョン) を<link
+url="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</link> からダウンロードし、fink をブートストラップしてください。
+この方法は<varlink url="download/srcdist.php">こちら</varlink>に説明されています。
+また、下記の方法で 10.5 から 32-bit版に直接アップグレードすることもできます。
+(注意: リリース版ではなく開発版の fink をインストールした場合、問題が発生することがあります。
+この場合、リリース版にダウングレードし、バージョン番号の高い .deb ファイルを削除してください。)
+</p><p>
+アップグレードするには、以下の4ステップをしてください。
+<em>Step 1:</em>
+<code>/sw/etc/fink.conf</code> を開き、 <code>NoAutoIndex: true</code>　という一行を追加します。
+(編集するには、パーミッションを得るため <code>sudo</code> する必要があるかもしれません。)
+<em>Step 2:</em> 
+10.6上にあることを伝えるため、コマンド
+<code>fink reinstall fink</code>
+を実行します。
+(もし package database corruption といったメッセージが出た場合、
+<code>fink index -f</code> としてから、再び上のコマンドを実行してください。)
+<em>Step 3:</em> 
+<code>fink update fink</code> を実行して、10.6用の最新 fink を入手します。 
+<em>Step 4:</em>
+<code>fink install perl588-core</code> と実行し、OS X のアップグレード時に 
+Apple が変更した perl を置き換えます。
+fink パッケージが依存している可能性があるためです。
+</p><p>
+アップグレードした後、<code>fink configure</code>
+としてきれいにすることができます。
+</p><p>
+fink の stable パッケージは、ほぼすべて 10.6 上でコンパイルすることが可能です。
+しかし、10.5 パッケージのほんのわずかしか 10.6 で使用することができません。
+近い将来、fink のパッケージデータベースが更新され、
+10.6用パッケージの情報が追加されます。
+あなたの使用したいパッケージがあるかどうか、パッケージデータベースをご覧ください。
+</p>
+</body>
+  </newsitem>
+
+
+  <newsitem>
+    <date>2009-07-25</date>
+    <headline>Fink Core Group changes.</headline>
+    <body>
+      <p>
+The Fink Core Group announces two new members: Alexander Hansen (<em>akh</em>)
+and Augusto Devegili (<em>monipol</em>), both of whom have been very active
+in fink.  Please join us in welcoming the new members!
+</p><p>
+The Group also announces that Christian Schaffner has stepped down,
+returning to "ordinary member" status.  We thank Christian for his help
+on the team over the past several years.
+</p><p>
+Members of the Fink project are working hard to provide user support,
+to keep Fink up to date, and to prepare for the upcoming Snow Leopard
+release.  More volunteers are always needed, so please consider
+getting involved at some level!
+</p>
+</body>
+  </newsitem>
+
+
+  <newsitem>
+    <date>2008-07-23</date>
+    <headline>End of 10.3 support.</headline>
+    <body>
+      <p>
+The Fink project is no longer able to offer support for users of Fink
+on Mac OS X 10.3. In reality there has been very little support for
+some time, so this announcement simply formalizes that fact.
+</p><p>
+This means that there will not be any further updates, not even
+security updates, for Mac OS X 10.3 users. Their existing
+installations will continue to work, but the software that is
+installed will not be updated.
+</p><p>
+We believe that the majority of our users are using Mac OS X 10.4 or
+10.5 and hope that this does not inconvenience too many people. 
+</p>
+</body>
+  </newsitem>
+
+
+  <newsitem>
+    <date>2008-07-17</date>
+    <headline>Mass package migration.</headline>
+    <body>
+      <p>
+The massive GNOME update which has been in process for
+many months was merged into fink's unstable tree.  This is well
+tested, and updates by users appear to be going fairly smoothly.
+</p><p>
+We are now merging the gnome update into the stable tree.  Because
+we have been unable to test the dependencies of these new packages in
+the stable tree in advance, users can expect the "stable" tree to be
+"not so stable" during the next few weeks, while the bugs get worked
+out.
+</p><p>
+If you are eager to start using this massive gnome update immediately,
+we suggest that you switch to the unstable tree.  If not, we suggest
+that you hold off running "fink selfupdate" for a while (perhaps a
+week or two) until things have again stabilized.</p>
+</body>
+  </newsitem>
+
+
+  <newsitem>
+    <date>2008-06-26</date>
+    <headline>New Fink release.</headline>
+    <body>
+      <p>
+A new (binary) Fink release for OS X 10.5 (Leopard) is 
+<varlink url="download/index.php">available</varlink>
+ today: version 0.9.0, which can be installed on either Intel or PowerPC
+hardware.
+The release includes source files, binary packages, and  Fink
+installers for both kinds of hardware.
+</p>
+      <p>
+Users who have already installed Fink on Leopard from source, who now wish
+to switch to the binary distribution, may do so as follows.  First,
+run <code>fink selfupdate</code> to update to the latest version of the
+fink package manager.  Next, run <code>fink configure</code>, and be sure
+to <em>change</em> your choice about using the binary distribution from No
+to yes.  Finally, run <code>fink scanpackages</code> to activate the binary
+distribution.
+</p>
+<p><em>Update, 2008-07-11:</em> If you use the binary installer, you
+should run <code>fink selfupdate</code> after installation.</p>
+</body>
+  </newsitem>
+
 
 <newsitem>
 	<date>2008-02-03</date>

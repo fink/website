@@ -1,35 +1,75 @@
-<a name="2008-02-03 Mirror, mirror on the wall, will someone sponsor Fink at all?"><span class="news-date">2008-02-03: </span><span class="news-headline">Mirror, mirror on the wall, will someone sponsor Fink at all?</span></a><?php gray_line(); ?>
-<p>大規模なオープンソースプロジェクトは、おおむね配布の仕方に問題をかかえており、Fink も例外ではありません。
-我々は、お好きなアプリケーションをビルドするために必要なファイルを可能な限り速く提供したいと思っています。
-このためには、ミラーサイトが近くにあることが最初のステップだと考えます。</p>
+<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
+      <p>
+Fink は、雪豹 (OS X v. 10.6) への準備を整えました。
+32-bit版と64-bit版がありますので、どちらかを選択してご利用ください。
+現在のところ、32-bit版の方が多くのパッケージがあります。
+しかし、64-bit版は OS X および　Fink の将来の方向性を示しています。
+各ユーザーがどちらかを選択するか判断してください。
+32-bit版から64-bit版への「アップグレード」は<b>できません</b>。
+</p><p>
+現在、Snow Leopard に Fink をインストールするには、二つの方法があります。
+バイナリインストーラはないので、
+<b>まず Snow Leopard ディスクからオプションインストールで XCode をインストールしてください。</b>
+64-bit版を使われる方、または 10.4 以前から直接アップグレードされる方は、ディストリビューション 
+tarball (0.29.9 以降のバージョン) を<a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a> からダウンロードし、fink をブートストラップしてください。
+この方法は<a href="<?php print $root; ?>download/srcdist.php">こちら</a>に説明されています。
+また、下記の方法で 10.5 から 32-bit版に直接アップグレードすることもできます。
+(注意: リリース版ではなく開発版の fink をインストールした場合、問題が発生することがあります。
+この場合、リリース版にダウングレードし、バージョン番号の高い .deb ファイルを削除してください。)
+</p><p>
+アップグレードするには、以下の4ステップをしてください。
+<b>Step 1:</b>
+<code>/sw/etc/fink.conf</code> を開き、 <code>NoAutoIndex: true</code>　という一行を追加します。
+(編集するには、パーミッションを得るため <code>sudo</code> する必要があるかもしれません。)
+<b>Step 2:</b> 
+10.6上にあることを伝えるため、コマンド
+<code>fink reinstall fink</code>
+を実行します。
+(もし package database corruption といったメッセージが出た場合、
+<code>fink index -f</code> としてから、再び上のコマンドを実行してください。)
+<b>Step 3:</b> 
+<code>fink update fink</code> を実行して、10.6用の最新 fink を入手します。 
+<b>Step 4:</b>
+<code>fink install perl588-core</code> と実行し、OS X のアップグレード時に 
+Apple が変更した perl を置き換えます。
+fink パッケージが依存している可能性があるためです。
+</p><p>
+アップグレードした後、<code>fink configure</code>
+としてきれいにすることができます。
+</p><p>
+fink の stable パッケージは、ほぼすべて 10.6 上でコンパイルすることが可能です。
+しかし、10.5 パッケージのほんのわずかしか 10.6 で使用することができません。
+近い将来、fink のパッケージデータベースが更新され、
+10.6用パッケージの情報が追加されます。
+あなたの使用したいパッケージがあるかどうか、パッケージデータベースをご覧ください。
+</p>
+<a name="2009-07-25%20Fink%20Core%20Group%20changes."><span class="news-date">2009-07-25: </span><span class="news-headline">Fink Core Group changes.</span></a><?php gray_line(); ?>
+      <p>
+The Fink Core Group announces two new members: Alexander Hansen (<b>akh</b>)
+and Augusto Devegili (<b>monipol</b>), both of whom have been very active
+in fink.  Please join us in welcoming the new members!
+</p><p>
+The Group also announces that Christian Schaffner has stepped down,
+returning to "ordinary member" status.  We thank Christian for his help
+on the team over the past several years.
+</p><p>
+Members of the Fink project are working hard to provide user support,
+to keep Fink up to date, and to prepare for the upcoming Snow Leopard
+release.  More volunteers are always needed, so please consider
+getting involved at some level!
+</p>
+<a name="2008-07-23%20End%20of%2010.3%20support."><span class="news-date">2008-07-23: </span><span class="news-headline">End of 10.3 support.</span></a><?php gray_line(); ?>
+      <p>
+The Fink project is no longer able to offer support for users of Fink
+on Mac OS X 10.3. In reality there has been very little support for
+some time, so this announcement simply formalizes that fact.
+</p><p>
+This means that there will not be any further updates, not even
+security updates, for Mac OS X 10.3 users. Their existing
+installations will continue to work, but the software that is
+installed will not be updated.
+</p><p>
+We believe that the majority of our users are using Mac OS X 10.4 or
+10.5 and hope that this does not inconvenience too many people. 
+</p>
 
-<p>我々は、大学や企業のスポンサーによるミラーを使い、信頼できる配布インフラを構築しようとしています。
-近年、ミラーの数が大幅に減少してしまい、品質を向上させるために<b>助け</b>を必要としています。</p>
-
-<p>学生ですか？教授ですか？データセンターを運営していますか？空き時間のある開発者ですか？このいずれでなくても、手伝って頂けます。
-ミラーを運営したり、スポンサーになるための情報は
-<a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>
-にあります。
-質問がある場合は <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> までメールをください。
-現在、ミラーを世界中で探していますが、特に以下の国で募集しています:</p>
-<ul><li>アメリカ合衆国</li><li>日本</li><li>ドイツ</li><li>フランス</li><li>イギリス</li><li>カナダ</li><li>イタリア</li><li>スペイン</li><li>スイス</li><li>オーストラリア</li></ul>
-<p>また、これまでに Fink にミラーを提供して頂いている方々に感謝致します。
-彼らの継続サポートなしに、Fink は現在のレベルのサービスを提供できなかったでしょう。</p>
-<a name="2008-01-12 Fink website down"><span class="news-date">2008-01-12: </span><span class="news-headline">Fink website down</span></a><?php gray_line(); ?>
-<p>The fink website is not functioning correctly at present.  (You may
-have noticed that many of the links on this page do not function correctly.)  The
-fink team is working to resolve the problem as quickly as possible.</p>
-<p><b>Update, 2008-01-13:</b> The website is back to normal.</p>
-<a name="2007-12-10 Leopard, X11, and Fink"><span class="news-date">2007-12-10: </span><span class="news-headline">Leopard, X11, and Fink</span></a><?php gray_line(); ?>
-    <p>
-    Leopard X11 を更新したい方は、
-    <a href="http://xquartz.macosforge.org/downloads/Xquartz-1.3.0-apple-fink.bz2">Fink-friendly update to Xquartz</a>
-    をお使い下さい。
-    既に macosxforge.org の X11-2.1.0.1.pkg を適用された方は、<b>必ず</b> Fink-対応の Xquartz をお使い下さい。
-      (注記: X11-2.1.1.pkg リリースは現在保留中ですが、これは Xquatz のパッチが不要になりです。
-      X11 2.1.1 以降を使う場合は Xquartz パッチを適用する必要は<b>ありません</b>。)</p>
-    <p><b>2007-12-11追記:</b> The X11 2.1.1 リリースは、 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">Xquartz リリースページにあります</a>.  
-    X11-2.1.0.1.pkg にパッチを当てて利用されている方、 パッチ適用後の　macosxforge.org の Xquartz-1.3.0-apple-fink
-    ファイルを使われている方は、<b>2.1.1 以降にアップグレードして</b>から Fink をお使い下さい。
-    このリリースは、 fink 専用の Xquartz も含めたこれまでの全てのリリースの後任リリースです。</p>
-  
