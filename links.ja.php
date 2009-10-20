@@ -1,7 +1,7 @@
 <?
 $title = "リンク集";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2007/08/15 21:18:22 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2009/10/20 03:41:11 $';
 
 include "header.inc";
 ?>
@@ -54,7 +54,7 @@ X11 と Mac OS X を統合しようとしている X11 ウィンドウマネー�
 <li><a href="http://gnu-darwin.sourceforge.net/" target="_blank">The GNU-Darwin Distribution</a></li>
 <li><a href="http://www.macports.org/" target="_blank">MacPorts</a> - 
 FreeBSD の ports collection をポートしている。</li>
-<li><a href="http://www.ie.u-ryukyu.ac.jp/darwin2/" target="_blank">EasyPackages</a> - 
+<li><a href="http://www.ie.u-ryukyu.ac.jp/epkg/darwin2/" target="_blank">EasyPackages</a> - 
 日本語での利用を前提としたパッケージングをしている。（日本語ページのみ）</li>
 </ul>
 
