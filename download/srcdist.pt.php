@@ -1,7 +1,7 @@
 <?
 $title = "Download: Distribuição de código fonte";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/09/27 22:52:01 $';
+$cvs_date = '$Date: 2009/10/20 01:18:42 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -46,11 +46,12 @@ fink-0.29.10 que foi criado e digite</p>
 
 <p>Após a instalação terminar, execute o comando</p>
 
-<pre>pathsetup.sh</pre>
+<pre>/sw/bin/pathsetup.sh</pre>
 
-<p>para configurar seu ambiente para o Fink. Se você abrir uma nova janela de
-terminal, a sessão usará essa configuração de ambiente. Uma vez que você haja
-instalado o fink e os outros pacotes bases, o comando:</p>
+<p>para configurar seu ambiente para o Fink (considerando que você tenha
+instalado o Fink em /sw). Se você abrir uma nova janela de terminal, a sessão
+usará essa configuração de ambiente. Uma vez que você haja instalado o fink e
+os outros pacotes bases, o comando:</p>
 
 <pre>fink selfupdate</pre>
 
@@ -103,12 +104,12 @@ terminal. Então, em uma janela de terminal, posicione-se no diretório
 
 <p>Após a instalação terminar, execute o comando</p>
 
-<pre>pathsetup.sh</pre>
+<pre>/sw/bin/pathsetup.sh</pre>
 
-<p>para configurar seu ambiente para o Fink. Se você abrir uma nova janela de
-terminal, a sessão usará essa configuração de ambiente. Uma vez que você haja
-instalado o <em>fink</em> e os outros pacotes bases, a sequência de
-comandos:</p>
+<p>para configurar seu ambiente para o Fink (considerando que você tenha
+instalado o Fink em /sw). Se você abrir uma nova janela de terminal, a sessão
+usará essa configuração de ambiente. Uma vez que você haja instalado o
+<em>fink</em> e os outros pacotes bases, a sequência de comandos:</p>
 
 <pre>fink selfupdate</pre>
 
@@ -166,11 +167,12 @@ fink-0.29.10 que foi criado e digite</p>
 
 <p>Após a instalação terminar, execute o comando</p>
 
-<pre>pathsetup.sh</pre>
+<pre>/sw/bin/pathsetup.sh</pre>
 
-<p>para configurar seu ambiente para o Fink. Se você abrir uma nova janela de
-terminal, a sessão usará essa configuração de ambiente. Uma vez que você haja
-instalado o fink e os outros pacotes bases, o comando:</p>
+<p>para configurar seu ambiente para o Fink (considerando que você tenha
+instalado o Fink em /sw). Se você abrir uma nova janela de terminal, a sessão
+usará essa configuração de ambiente. Uma vez que você haja instalado o fink e
+os outros pacotes bases, o comando:</p>
 
 <pre>fink selfupdate</pre>
 

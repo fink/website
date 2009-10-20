@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/09/27 22:49:39 $';
+$cvs_date = '$Date: 2009/10/20 01:18:42 $';
 
 include "header.inc";
 ?>
@@ -49,11 +49,12 @@ setup.</p>
 
 <p>After the installation is completed, running the command</p>
 
-<pre>pathsetup.sh</pre>
+<pre>/sw/bin/pathsetup.sh</pre>
 
-<p>will set up your environment for Fink.  If you open a new terminal window,
-the session will use these environment settings.  Once you have installed
-<em>fink</em> and the other base packages, the command:</p>
+<p>will set up your environment for Fink (assuming you have installed Fink
+under /sw).  If you open a new terminal window, the session will use these
+environment settings.  Once you have installed <em>fink</em> and the other base
+packages, the command:</p>
 <!--akh
 <pre>fink selfupdate-rsync</pre>
 <p>or</p>
@@ -124,11 +125,12 @@ setup.</p>
 
 <p>After the installation is completed, running the command</p>
 
-<pre>pathsetup.sh</pre>
+<pre>/sw/bin/pathsetup.sh</pre>
 
-<p>will set up your environment for Fink.  If you open a new terminal window,
-the session will use these environment settings.  Once you have installed
-<em>fink</em> and the other base packages, the command sequence:</p>
+<p>will set up your environment for Fink (assuming you have installed Fink
+under /sw).  If you open a new terminal window, the session will use these
+environment settings.  Once you have installed <em>fink</em> and the other base
+packages, the command sequence:</p>
 
 <pre>fink selfupdate</pre>
 
@@ -187,11 +189,12 @@ setup.</p>
 
 <p>After the installation is completed, running the command</p>
 
-<pre>pathsetup.sh</pre>
+<pre>/sw/bin/pathsetup.sh</pre>
 
-<p>will set up your environment for Fink.  If you open a new terminal window,
-the session will use these environment settings.  Once you have installed
-<em>fink</em> and the other base packages, the command:</p>
+<p>will set up your environment for Fink (assuming you have installed Fink
+under /sw).  If you open a new terminal window, the session will use these
+environment settings.  Once you have installed <em>fink</em> and the other base
+packages, the command:</p>
 <!--akh
 <pre>fink selfupdate-rsync</pre>
 <p>or</p>
