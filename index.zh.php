@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2008/06/27 01:08:38 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2009/10/20 06:26:35 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
@@ -36,6 +36,13 @@ include dirname(__FILE__) . "/news/news.zh.inc";
 
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
+
+<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable" title="Fink Package Updates (Unstable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+&nbsp;Recent Package Updates</h1>
+
+<?  include "package-updates.inc" ?>
+
+<a href="package-updates.php">more...</a>
 
 <h1>当前状况</h1>
 <? 

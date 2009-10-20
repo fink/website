@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/03/26 19:26:48 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2009/10/20 06:26:35 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -23,6 +23,14 @@ include dirname(__FILE__) . "/news/news.fr.inc";
 ?>
 <div align="right"><a href="news/index.php?phpLang=fr">Nouvelles archivées...</a></div>
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
+
+<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable" title="Fink Package Updates (Unstable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+&nbsp;Recent Package Updates</h1>
+
+<?  include "package-updates.inc" ?>
+
+<a href="package-updates.php">more...</a>
+
 <h1>Statut</h1>
 <? 
 include dirname(__FILE__) . "/fink_version.inc";
