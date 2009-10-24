@@ -1,4 +1,4 @@
-<a name="2009-08-28 Fink no OS X 10.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
+<a name="2009-08-28%20Fink%20no%20OS%20X%2010.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
       <p>O Fink está pronto para ser usado no Snow Leopard (OS X 10.6). Os
       usuários precisam escolher dentre a versão do Fink de 32 bits e a de 64
       bits para o 10.6. A versão de 32 bits possui mais pacotes disponíveis no
@@ -42,7 +42,7 @@
       pacotes do Fink será atualizado para que inclua informações sobre pacotes
       para o 10.6; você poderá consultá-lo para verificar se seus pacotes
       prediletos estão disponíveis.</p>
-    <a name="2009-07-25 Mudanças no Grupo Central"><span class="news-date">2009-07-25: </span><span class="news-headline">Mudanças no Grupo Central</span></a><?php gray_line(); ?>
+    <a name="2009-07-25%20Mudan%C3%A7as%20no%20Grupo%20Central"><span class="news-date">2009-07-25: </span><span class="news-headline">Mudanças no Grupo Central</span></a><?php gray_line(); ?>
       <p>O Grupo Central do Fink anuncia dois novos membros: Alexander Hansen
       (<b>akh</b>) e Augusto Devegili (<b>monipol</b>), tendo ambos estado
       bastante ativos no projeto. Una-se a nós e dê as boas-vindas aos novos
@@ -54,7 +54,7 @@
       suporte ao usuário, manter o Fink atualizado, e preparar para o futuro
       lançamento do Snow Leopard. Sempre precisamos de mais voluntários,
       portanto cogite contribuir de alguma forma!</p>
-    <a name="2008-07-23 Fim do suporte ao 10.3."><span class="news-date">2008-07-23: </span><span class="news-headline">Fim do suporte ao 10.3.</span></a><?php gray_line(); ?>
+    <a name="2008-07-23%20Fim%20do%20suporte%20ao%2010.3."><span class="news-date">2008-07-23: </span><span class="news-headline">Fim do suporte ao 10.3.</span></a><?php gray_line(); ?>
       <p>O projeto Fink não pode mais oferecer suporte a usuários do Fink no
       Mac OS X 10.3. Na verdade tem havido pouco suporte por algum tempo então
       este anúncio simplesmente formaliza esse fato.</p>

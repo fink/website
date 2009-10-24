@@ -5,8 +5,45 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2009-08-29T08:13:52-03:00</dc:date>
+    <dc:date>2009-10-24T14:21:41-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues">
+      <title>Server issues</title>
+      <link>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues</link>
+      <guid>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues</guid>
+      <description>
+	  <p>We have had server issues and as a result the Web site and the
+	  official binary distribution are down, and the rsync servers are stalled.
+	  Whilst we sort this out, you may:</p>
+	  
+		Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+		you need Web site information;
+		Use CVS as your selfupdate method in case you need updated
+		packages. It's slower than rsync but it's working right now because CVS
+		is hosted at SourceForge.net. You may switch back to rsync later. In
+		order to switch to CVS, run fink selfupdate-cvs once;
+		Run fink configure and choose a different bindist
+		mirror.
+	  
+      <p>We apologise for the inconvenience.</p>
+	</description>
+      <content:encoded>
+	  <p>We have had server issues and as a result the Web site and the
+	  official binary distribution are down, and the rsync servers are stalled.
+	  Whilst we sort this out, you may:</p>
+	  
+		Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+		you need Web site information;
+		Use CVS as your selfupdate method in case you need updated
+		packages. It's slower than rsync but it's working right now because CVS
+		is hosted at SourceForge.net. You may switch back to rsync later. In
+		order to switch to CVS, run fink selfupdate-cvs once;
+		Run fink configure and choose a different bindist
+		mirror.
+	  
+      <p>We apologise for the inconvenience.</p>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.">
       <title>Fink on 10.6.</title>
       <link>http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.</link>
@@ -590,97 +627,6 @@ package database</a> which is a few weeks out of date.
 				Mac OS X, and anything else that takes our fancy.
 			</p>
 		</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">
-      <title>July is "Fink Update Month"</title>
-      <link>http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22</link>
-      <guid>http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22</guid>
-      <description>
-      <p>
-Fink users on PowerPC machines are advised to update their copies of
-fink from the old "10.4-transitional" tree to the more recent "10.4"
-tree.  We plan to discontinue the 10.4-transitional tree
-by the end of July, 2006.
-</p><p>
-Some background: along with OS X 10.4 came a new version of the g++ compiler
-(one of the workhorses of Fink), which produced code that was binary
-incompatible with previous versions.  Fink, when using the 10.4-transitional 
-tree, mixes the new gcc-4.0 compiler with the older g++-3.3 compiler.
-This strategy gave us some extra time to make packages compatible with
-g++-4.0.  The time has now come to complete that transition, and rely
-exclusively on the newer tree.  The update, however, is slightly
-complicated since all packages using or providing g++ libraries must
-be rebuilt in the correct order.
-</p><p>
-If you are using OS X 10.4, you can
-find out if you need to update your Fink installation
-by running the command
-fink --version.  If the Distribution version is 0.8.1.cvs
-or 0.8.1.rsync, you do not need to update.  However, if the 
-Distribution version is 0.8.0.cvs or 0.8.0.rsync, you should update,
-as described below.
-</p>
-<p>
-Many users will prefer to remove their fink installations and
-start anew with the 0.8.1 installer.  Others will prefer to use the 
-<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">10.4-update 
-tarball (v. 0.4)</a> (around 12 MB), which includes 
-precompiled versions of the basic fink packages as well as a script which
-will attempt to update an existing fink installation.  Please consult
-the README file which you will find within the 10.4-update directory 
-(after unpacking the tarball) for further instructions.
-</p>
-<p>
-Note: Fink users who are upgrading their systems from OS X 10.3 to OS X 10.4
-can use the same two options to update their fink installations: they can
-either remove their old fink installations and start over, or they can
-use the same 10.4-update tarball.  The update script should not be run
-until after OS X has been upgraded.
-</p>
-</description>
-      <content:encoded>
-      <p>
-Fink users on PowerPC machines are advised to update their copies of
-fink from the old "10.4-transitional" tree to the more recent "10.4"
-tree.  We plan to discontinue the 10.4-transitional tree
-by the end of July, 2006.
-</p><p>
-Some background: along with OS X 10.4 came a new version of the g++ compiler
-(one of the workhorses of Fink), which produced code that was binary
-incompatible with previous versions.  Fink, when using the 10.4-transitional 
-tree, mixes the new gcc-4.0 compiler with the older g++-3.3 compiler.
-This strategy gave us some extra time to make packages compatible with
-g++-4.0.  The time has now come to complete that transition, and rely
-exclusively on the newer tree.  The update, however, is slightly
-complicated since all packages using or providing g++ libraries must
-be rebuilt in the correct order.
-</p><p>
-If you are using OS X 10.4, you can
-find out if you need to update your Fink installation
-by running the command
-fink --version.  If the Distribution version is 0.8.1.cvs
-or 0.8.1.rsync, you do not need to update.  However, if the 
-Distribution version is 0.8.0.cvs or 0.8.0.rsync, you should update,
-as described below.
-</p>
-<p>
-Many users will prefer to remove their fink installations and
-start anew with the 0.8.1 installer.  Others will prefer to use the 
-<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">10.4-update 
-tarball (v. 0.4)</a> (around 12 MB), which includes 
-precompiled versions of the basic fink packages as well as a script which
-will attempt to update an existing fink installation.  Please consult
-the README file which you will find within the 10.4-update directory 
-(after unpacking the tarball) for further instructions.
-</p>
-<p>
-Note: Fink users who are upgrading their systems from OS X 10.3 to OS X 10.4
-can use the same two options to update their fink installations: they can
-either remove their old fink installations and start over, or they can
-use the same 10.4-update tarball.  The update script should not be run
-until after OS X has been upgraded.
-</p>
-</content:encoded>
     </item>
   </channel>
 </rss>

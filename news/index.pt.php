@@ -7,7 +7,7 @@ $metatags = '';
 include_once "header.inc";
 ?>
 
-<a name="2009-08-28 Fink no OS X 10.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
+<a name="2009-08-28%20Fink%20no%20OS%20X%2010.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
       <p>O Fink está pronto para ser usado no Snow Leopard (OS X 10.6). Os
       usuários precisam escolher dentre a versão do Fink de 32 bits e a de 64
       bits para o 10.6. A versão de 32 bits possui mais pacotes disponíveis no
@@ -51,7 +51,7 @@ include_once "header.inc";
       pacotes do Fink será atualizado para que inclua informações sobre pacotes
       para o 10.6; você poderá consultá-lo para verificar se seus pacotes
       prediletos estão disponíveis.</p>
-    <a name="2009-07-25 Mudanças no Grupo Central"><span class="news-date">2009-07-25: </span><span class="news-headline">Mudanças no Grupo Central</span></a><?php gray_line(); ?>
+    <a name="2009-07-25%20Mudan%C3%A7as%20no%20Grupo%20Central"><span class="news-date">2009-07-25: </span><span class="news-headline">Mudanças no Grupo Central</span></a><?php gray_line(); ?>
       <p>O Grupo Central do Fink anuncia dois novos membros: Alexander Hansen
       (<b>akh</b>) e Augusto Devegili (<b>monipol</b>), tendo ambos estado
       bastante ativos no projeto. Una-se a nós e dê as boas-vindas aos novos
@@ -63,7 +63,7 @@ include_once "header.inc";
       suporte ao usuário, manter o Fink atualizado, e preparar para o futuro
       lançamento do Snow Leopard. Sempre precisamos de mais voluntários,
       portanto cogite contribuir de alguma forma!</p>
-    <a name="2008-07-23 Fim do suporte ao 10.3."><span class="news-date">2008-07-23: </span><span class="news-headline">Fim do suporte ao 10.3.</span></a><?php gray_line(); ?>
+    <a name="2008-07-23%20Fim%20do%20suporte%20ao%2010.3."><span class="news-date">2008-07-23: </span><span class="news-headline">Fim do suporte ao 10.3.</span></a><?php gray_line(); ?>
       <p>O projeto Fink não pode mais oferecer suporte a usuários do Fink no
       Mac OS X 10.3. Na verdade tem havido pouco suporte por algum tempo então
       este anúncio simplesmente formaliza esse fato.</p>
@@ -74,7 +74,7 @@ include_once "header.inc";
       <p>Acreditamos que a maioria dos nossos usuários estejam usando Mac OS X
       10.4 ou 10.5 e esperiamos que esta decisão não seja inconveniente a
       muitas pessoas.</p>
-    <a name="2008-07-17 Migração em passa de pacotes."><span class="news-date">2008-07-17: </span><span class="news-headline">Migração em passa de pacotes.</span></a><?php gray_line(); ?>
+    <a name="2008-07-17%20Migra%C3%A7%C3%A3o%20em%20passa%20de%20pacotes."><span class="news-date">2008-07-17: </span><span class="news-headline">Migração em passa de pacotes.</span></a><?php gray_line(); ?>
       <p>A atualização massiva do GNOME que esteve em andamento por várias
       meses foi incorporada à árvore unstable. Os pacotes foram bem testados e
       as atualizações feitas por usuários aparentam estar ocorrendo
@@ -89,7 +89,7 @@ include_once "header.inc";
       sugerimos que suspenda a execução de "fink selfupdate" por algum tempo
       (talvez uma semana ou duas) até que tudo esteja estabilizado
       novamente.</p>
-    <a name="2008-06-26 Nova versão do Fink."><span class="news-date">2008-06-26: </span><span class="news-headline">Nova versão do Fink.</span></a><?php gray_line(); ?>
+    <a name="2008-06-26%20Nova%20vers%C3%A3o%20do%20Fink."><span class="news-date">2008-06-26: </span><span class="news-headline">Nova versão do Fink.</span></a><?php gray_line(); ?>
       <p>Uma nova versão (binária) do Fink para o OS X 10.5 (Leopard) está
       <a href="<?php print $root; ?>download/index.php">disponível</a> a partir de hoje:
       versão 0.9.0, a qual pode ser instalada em hardware Intel ou PowerPC.

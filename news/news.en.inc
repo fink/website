@@ -1,4 +1,19 @@
-<a name="2009-08-28 Fink on 10.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
+<a name="2009-10-24%20Server%20issues"><span class="news-date">2009-10-24: </span><span class="news-headline">Server issues</span></a><?php gray_line(); ?>
+	  <p>We have had server issues and as a result the Web site and the
+	  official binary distribution are down, and the rsync servers are stalled.
+	  Whilst we sort this out, you may:</p>
+	  <ul>
+		<li>Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+		you need Web site information;</li>
+		<li>Use CVS as your selfupdate method in case you need updated
+		packages. It's slower than rsync but it's working right now because CVS
+		is hosted at SourceForge.net. You may switch back to rsync later. In
+		order to switch to CVS, run <code>fink selfupdate-cvs</code> once;</li>
+		<li>Run <code>fink configure</code> and choose a different bindist
+		mirror.</li>
+	  </ul>
+      <p>We apologise for the inconvenience.</p>
+	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
       <p>
 Fink is ready to be used on Snow Leopard (OS X v. 10.6).  Users will
 need to choose between a 32-bit version of fink and a 64-bit version of fink
@@ -46,7 +61,7 @@ available for 10.6.  In the near future, fink's package database will be
 updated to include information about packages for 10.6; you can check there
 to see if your favorite package is ready.
 </p>
-<a name="2009-07-25 Fink Core Group changes."><span class="news-date">2009-07-25: </span><span class="news-headline">Fink Core Group changes.</span></a><?php gray_line(); ?>
+<a name="2009-07-25%20Fink%20Core%20Group%20changes."><span class="news-date">2009-07-25: </span><span class="news-headline">Fink Core Group changes.</span></a><?php gray_line(); ?>
       <p>
 The Fink Core Group announces two new members: Alexander Hansen (<b>akh</b>)
 and Augusto Devegili (<b>monipol</b>), both of whom have been very active
@@ -60,19 +75,5 @@ Members of the Fink project are working hard to provide user support,
 to keep Fink up to date, and to prepare for the upcoming Snow Leopard
 release.  More volunteers are always needed, so please consider
 getting involved at some level!
-</p>
-<a name="2008-07-23 End of 10.3 support."><span class="news-date">2008-07-23: </span><span class="news-headline">End of 10.3 support.</span></a><?php gray_line(); ?>
-      <p>
-The Fink project is no longer able to offer support for users of Fink
-on Mac OS X 10.3. In reality there has been very little support for
-some time, so this announcement simply formalizes that fact.
-</p><p>
-This means that there will not be any further updates, not even
-security updates, for Mac OS X 10.3 users. Their existing
-installations will continue to work, but the software that is
-installed will not be updated.
-</p><p>
-We believe that the majority of our users are using Mac OS X 10.4 or
-10.5 and hope that this does not inconvenience too many people. 
 </p>
 
