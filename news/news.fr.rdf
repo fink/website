@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2009-10-24T14:21:41-02:00</dc:date>
+    <dc:date>2009-10-24T17:10:21-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.">
       <title>Fink on 10.6.</title>

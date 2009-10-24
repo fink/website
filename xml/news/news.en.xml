@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.91 2009/10/24 16:21:20 monipol Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.92 2009/10/24 19:10:03 monipol Exp $</cvsid>
 
   <newsitem>
     <date>2009-10-24</date>
@@ -18,8 +18,9 @@
 		packages. It's slower than rsync but it's working right now because CVS
 		is hosted at SourceForge.net. You may switch back to rsync later. In
 		order to switch to CVS, run <code>fink selfupdate-cvs</code> once;</li>
-		<li>Run <code>fink configure</code> and choose a different bindist
-		mirror.</li>
+		<li>Edit <code>/sw/etc/fink.conf</code> and replace <code>Mirror-apt:
+		http://bindist.finkmirrors.net/bindist</code> with <code>Mirror-apt:
+		http://fink-bindist.gecko.ig42.org</code></li>
 	  </ul>
       <p>We apologise for the inconvenience.</p>
 	</body>

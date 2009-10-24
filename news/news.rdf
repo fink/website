@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2009-10-24T14:21:41-02:00</dc:date>
+    <dc:date>2009-10-24T17:10:21-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues">
       <title>Server issues</title>
@@ -22,8 +22,9 @@
 		packages. It's slower than rsync but it's working right now because CVS
 		is hosted at SourceForge.net. You may switch back to rsync later. In
 		order to switch to CVS, run fink selfupdate-cvs once;
-		Run fink configure and choose a different bindist
-		mirror.
+		Edit /sw/etc/fink.conf and replace Mirror-apt:
+		http://bindist.finkmirrors.net/bindist with Mirror-apt:
+		http://fink-bindist.gecko.ig42.org
 	  
       <p>We apologise for the inconvenience.</p>
 	</description>
@@ -38,8 +39,9 @@
 		packages. It's slower than rsync but it's working right now because CVS
 		is hosted at SourceForge.net. You may switch back to rsync later. In
 		order to switch to CVS, run fink selfupdate-cvs once;
-		Run fink configure and choose a different bindist
-		mirror.
+		Edit /sw/etc/fink.conf and replace Mirror-apt:
+		http://bindist.finkmirrors.net/bindist with Mirror-apt:
+		http://fink-bindist.gecko.ig42.org
 	  
       <p>We apologise for the inconvenience.</p>
 	</content:encoded>
