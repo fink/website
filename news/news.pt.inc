@@ -13,6 +13,9 @@
 		<li>Editar o arquivo <code>/sw/etc/fink.conf</code> e substituir a
 		linha <code>Mirror-apt: http://bindist.finkmirrors.net/bindist</code>
 		por <code>Mirror-apt: http://fink-bindist.gecko.ig42.org</code></li>
+		<li>Editar o arquivo <code>/sw/etc/apt/sources.list</code> e substituir
+		<code>http://bindist.finkmirrors.net/bindist</code> por
+		<code>http://fink-bindist.gecko.ig42.org</code></li>
 	  </ul>
       <p>Pedimos desculpas pela inconveniência.</p>
 	<a name="2009-08-28%20Fink%20no%20OS%20X%2010.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>

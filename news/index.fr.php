@@ -1,7 +1,7 @@
 <?
 $title = "News";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 01:03:36';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/10/25 06:11:47';
 $metatags = '';
 
 include_once "header.inc";
@@ -21,6 +21,9 @@ include_once "header.inc";
 		<li>Edit <code>/sw/etc/fink.conf</code> and replace <code>Mirror-apt:
 		http://bindist.finkmirrors.net/bindist</code> with <code>Mirror-apt:
 		http://fink-bindist.gecko.ig42.org</code></li>
+		<li>Edit <code>/sw/etc/apt/sources.list</code> and replace
+		<code>http://bindist.finkmirrors.net/bindist</code> with
+		<code>http://fink-bindist.gecko.ig42.org</code></li>
 	  </ul>
       <p>We apologise for the inconvenience.</p>
 	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>

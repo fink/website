@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="pt">
-  <cvsid>$Id: news.pt.xml,v 1.5 2009/10/25 03:36:12 monipol Exp $</cvsid>
+  <cvsid>$Id: news.pt.xml,v 1.6 2009/10/25 06:11:47 monipol Exp $</cvsid>
 
   <newsitem>
     <date>2009-10-24</date>
@@ -22,6 +22,9 @@
 		<li>Editar o arquivo <code>/sw/etc/fink.conf</code> e substituir a
 		linha <code>Mirror-apt: http://bindist.finkmirrors.net/bindist</code>
 		por <code>Mirror-apt: http://fink-bindist.gecko.ig42.org</code></li>
+		<li>Editar o arquivo <code>/sw/etc/apt/sources.list</code> e substituir
+		<code>http://bindist.finkmirrors.net/bindist</code> por
+		<code>http://fink-bindist.gecko.ig42.org</code></li>
 	  </ul>
       <p>Pedimos desculpas pela inconveniência.</p>
 	</body>

@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2009-10-25T01:36:32-02:00</dc:date>
+    <dc:date>2009-10-25T04:12:12-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues">
       <title>Server issues</title>
@@ -25,6 +25,9 @@
 		Edit /sw/etc/fink.conf and replace Mirror-apt:
 		http://bindist.finkmirrors.net/bindist with Mirror-apt:
 		http://fink-bindist.gecko.ig42.org
+		Edit /sw/etc/apt/sources.list and replace
+		http://bindist.finkmirrors.net/bindist with
+		http://fink-bindist.gecko.ig42.org
 	  
       <p>We apologise for the inconvenience.</p>
 	</description>
@@ -41,6 +44,9 @@
 		order to switch to CVS, run fink selfupdate-cvs once;
 		Edit /sw/etc/fink.conf and replace Mirror-apt:
 		http://bindist.finkmirrors.net/bindist with Mirror-apt:
+		http://fink-bindist.gecko.ig42.org
+		Edit /sw/etc/apt/sources.list and replace
+		http://bindist.finkmirrors.net/bindist with
 		http://fink-bindist.gecko.ig42.org
 	  
       <p>We apologise for the inconvenience.</p>

@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>pt</dc:language>
-    <dc:date>2009-10-25T01:36:32-02:00</dc:date>
+    <dc:date>2009-10-25T04:12:12-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Problemas%20com%20o%20servidor">
       <title>Problemas com o servidor</title>
@@ -26,6 +26,9 @@
 		Editar o arquivo /sw/etc/fink.conf e substituir a
 		linha Mirror-apt: http://bindist.finkmirrors.net/bindist
 		por Mirror-apt: http://fink-bindist.gecko.ig42.org
+		Editar o arquivo /sw/etc/apt/sources.list e substituir
+		http://bindist.finkmirrors.net/bindist por
+		http://fink-bindist.gecko.ig42.org
 	  
       <p>Pedimos desculpas pela inconveniência.</p>
 	</description>
@@ -44,6 +47,9 @@
 		Editar o arquivo /sw/etc/fink.conf e substituir a
 		linha Mirror-apt: http://bindist.finkmirrors.net/bindist
 		por Mirror-apt: http://fink-bindist.gecko.ig42.org
+		Editar o arquivo /sw/etc/apt/sources.list e substituir
+		http://bindist.finkmirrors.net/bindist por
+		http://fink-bindist.gecko.ig42.org
 	  
       <p>Pedimos desculpas pela inconveniência.</p>
 	</content:encoded>
