@@ -1,7 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.41 2009/10/17 04:04:37 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.42 2009/10/25 01:03:36 babayoshihiko Exp $</cvsid>
+
+  <newsitem>
+    <date>2009-10-24</date>
+	<headline>Server 問題</headline>
+	<body>
+	  <p>
+	  以前よりサーバーに問題があり、結果として Fink のウェブサイトとバイナリディストリビューションがダウンしております。
+	  rsync サーバも停滞しています。
+	  現在復旧作業中ですが、現在のところ以下のように対処してください。
+	  </p>
+	  <ul>
+		<li>ウェブサイトは、<link
+		url="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</link>
+		の仮サーバーをご覧ください。</li>
+		<li>パッケージを更新する selfupdate は、CVS をお使いください。
+		rsync より時間がかかりますが、CVS は SourceForge.net にホストされているため、正常に作動しています。
+		後ほど、rsync に戻すことができます。
+		CVS に変更するには、<code>fink selfupdate-cvs</code>　とします。</li>
+		<li><code>/sw/etc/fink.conf</code> を開き、<code>Mirror-apt:
+		http://bindist.finkmirrors.net/bindist</code> を <code>Mirror-apt:
+		http://fink-bindist.gecko.ig42.org</code> としてください。
+		</li>
+	  </ul>
+      <p>ご迷惑をおかけしていることをお詫び申し上げます。</p>
+	</body>
+  </newsitem>
 
   <newsitem>
     <date>2009-08-28</date>

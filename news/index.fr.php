@@ -1,13 +1,29 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/17 04:04:36';
+$cvs_date = 'Date: 2009/10/25 01:03:36';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
+<a name="2009-10-24%20Server%20issues"><span class="news-date">2009-10-24: </span><span class="news-headline">Server issues</span></a><?php gray_line(); ?>
+	  <p>We have had server issues and as a result the Web site and the
+	  official binary distribution are down, and the rsync servers are stalled.
+	  Whilst we sort this out, you may:</p>
+	  <ul>
+		<li>Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+		you need Web site information;</li>
+		<li>Use CVS as your selfupdate method in case you need updated
+		packages. It's slower than rsync but it's working right now because CVS
+		is hosted at SourceForge.net. You may switch back to rsync later. In
+		order to switch to CVS, run <code>fink selfupdate-cvs</code> once;</li>
+		<li>Edit <code>/sw/etc/fink.conf</code> and replace <code>Mirror-apt:
+		http://bindist.finkmirrors.net/bindist</code> with <code>Mirror-apt:
+		http://fink-bindist.gecko.ig42.org</code></li>
+	  </ul>
+      <p>We apologise for the inconvenience.</p>
+	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
       <p>
 Fink is ready to be used on Snow Leopard (OS X v. 10.6).  Users will
 need to choose between a 32-bit version of fink and a 64-bit version of fink

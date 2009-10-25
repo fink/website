@@ -1,13 +1,32 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/17 04:04:37';
+$cvs_date = 'Date: 2009/10/25 01:03:36';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
+<a name="2009-10-24%20Server%20%E5%95%8F%E9%A1%8C"><span class="news-date">2009-10-24: </span><span class="news-headline">Server 問題</span></a><?php gray_line(); ?>
+	  <p>
+	  以前よりサーバーに問題があり、結果として Fink のウェブサイトとバイナリディストリビューションがダウンしております。
+	  rsync サーバも停滞しています。
+	  現在復旧作業中ですが、現在のところ以下のように対処してください。
+	  </p>
+	  <ul>
+		<li>ウェブサイトは、<a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a>
+		の仮サーバーをご覧ください。</li>
+		<li>パッケージを更新する selfupdate は、CVS をお使いください。
+		rsync より時間がかかりますが、CVS は SourceForge.net にホストされているため、正常に作動しています。
+		後ほど、rsync に戻すことができます。
+		CVS に変更するには、<code>fink selfupdate-cvs</code>　とします。</li>
+		<li><code>/sw/etc/fink.conf</code> を開き、<code>Mirror-apt:
+		http://bindist.finkmirrors.net/bindist</code> を <code>Mirror-apt:
+		http://fink-bindist.gecko.ig42.org</code> としてください。
+		</li>
+	  </ul>
+      <p>ご迷惑をおかけしていることをお詫び申し上げます。</p>
+	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
       <p>
 Fink は、雪豹 (OS X v. 10.6) への準備を整えました。
 32-bit版と64-bit版がありますので、どちらかを選択してご利用ください。

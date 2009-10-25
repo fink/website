@@ -5,8 +5,47 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2009-10-24T17:10:21-02:00</dc:date>
+    <dc:date>2009-10-25T10:03:58+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues">
+      <title>Server issues</title>
+      <link>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues</link>
+      <guid>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues</guid>
+      <description>
+	  <p>We have had server issues and as a result the Web site and the
+	  official binary distribution are down, and the rsync servers are stalled.
+	  Whilst we sort this out, you may:</p>
+	  
+		Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+		you need Web site information;
+		Use CVS as your selfupdate method in case you need updated
+		packages. It's slower than rsync but it's working right now because CVS
+		is hosted at SourceForge.net. You may switch back to rsync later. In
+		order to switch to CVS, run fink selfupdate-cvs once;
+		Edit /sw/etc/fink.conf and replace Mirror-apt:
+		http://bindist.finkmirrors.net/bindist with Mirror-apt:
+		http://fink-bindist.gecko.ig42.org
+	  
+      <p>We apologise for the inconvenience.</p>
+	</description>
+      <content:encoded>
+	  <p>We have had server issues and as a result the Web site and the
+	  official binary distribution are down, and the rsync servers are stalled.
+	  Whilst we sort this out, you may:</p>
+	  
+		Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+		you need Web site information;
+		Use CVS as your selfupdate method in case you need updated
+		packages. It's slower than rsync but it's working right now because CVS
+		is hosted at SourceForge.net. You may switch back to rsync later. In
+		order to switch to CVS, run fink selfupdate-cvs once;
+		Edit /sw/etc/fink.conf and replace Mirror-apt:
+		http://bindist.finkmirrors.net/bindist with Mirror-apt:
+		http://fink-bindist.gecko.ig42.org
+	  
+      <p>We apologise for the inconvenience.</p>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.">
       <title>Fink on 10.6.</title>
       <link>http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.</link>
@@ -493,25 +532,6 @@ Une annonce sera postée ici même dès la correction effectuée.
 <p>Allez-vous à OSCON 2006 ?  Voulez-vous que nous nous rencontrions ?</p>
 <p><a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick sur #fink) sera à OSCON et souhaite rencontrer tous ceux qui le souhaitent pour parler de Fink ou juste pour le plaisir.</p>
 <p>Nous pourrons nous voir dans le bureau F150 mercredi 26 juillet à 20 h 30 et nous parlerons de Fink, Mac OS X ou de n'importe quel autre sujet.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#01%2F07%2F2006%20Juillet%2C%20%22mois%20de%20mise%20%E0%20jour%20de%20Fink%22">
-      <title>Juillet, "mois de mise à jour de Fink"</title>
-      <link>http://fink.sourceforge.net/news/#01%2F07%2F2006%20Juillet%2C%20%22mois%20de%20mise%20%E0%20jour%20de%20Fink%22</link>
-      <guid>http://fink.sourceforge.net/news/#01%2F07%2F2006%20Juillet%2C%20%22mois%20de%20mise%20%E0%20jour%20de%20Fink%22</guid>
-      <description>
-<p>Les utilisateurs de Fink sur machines PowerPc qui utilisent l'arborescence "10.4-transitional" doivent passer à l'arborescence "10.4". Nous avons prévu de geler l'arborescence 10.4-transitional à la fin du mois de Juillet.</p>
-<p>Historique : le système Mac OS X 10.4 a introduit une nouvelle version du compilateur g++ (l'une des bêtes de somme de Fink). Cette version du compilateur produit du code incompatible avec les versions précédentes du compilateur. Dans l'arborescence 10.4-transitional, Fink mélange du code produit par le nouveau compilateur gcc-4.0 et du code produit par l'ancien compilateur g++-3.3. Cette stratégie a permis de dégager du temps pour rendre les paquets compatibles avec le compilateur g++-4.0. L'heure est maintenant venue de clore cette période transitoire et de ne plus utiliser que la nouvelle arborescence. Néanmoins, la mise à jour est compliquée du fait que tous les paquets qui utilisent ou fournissent des librairies g++ doivent être recompilés dans un certain ordre.</p>
-<p>Si vous utilisez Mac OS X 10.4, vous pouvez déterminer si vous devez faire cette mise à jour en exécutant la commande fink --version. Si la version de distribution est la version "0.8.1.cvs" ou "0.8.1.rsync", vous n'avez pas besoin de faire la mise à jour. Mais si la version de distribution est la version "0.8.0.cvs" ou "0.8.0.rsync", vous devez effectuer la mise à jour comme décrit ci-dessous.</p>
-<p>Certains utilisateurs préfèreront supprimer leur installation fink et réinstaller une nouvelle distribution avec l'installeur 0.8.1. D'autres préfèreront utiliser le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">paquet de mise à jour 10.4 (v. 0.4)</a> (environ 12 Mo), qui comprend des versions précompilées des paquets de base de fink ainsi qu'un script de mise à jour de l'installation existante. Voir les instructions détaillées dans le fichier README qui se trouve dans le répertoire 10.4-update après décompression du paquet.</p>
-<p>Note : les utilisateurs de Fink qui passent du système Mac OS X 10.3 au système Mac OS X 10.4 peuvent utiliser les mêmes procédures : soit supprimer complètement leur installation de fink et réinstaller une nouvelle distribution, soit utiliser le paquet le mise à jour 10.4. Le script de mise à jour ne doit pas être exécuté avant d'avoir mis à jour Mac OS X.</p>
-</description>
-      <content:encoded>
-<p>Les utilisateurs de Fink sur machines PowerPc qui utilisent l'arborescence "10.4-transitional" doivent passer à l'arborescence "10.4". Nous avons prévu de geler l'arborescence 10.4-transitional à la fin du mois de Juillet.</p>
-<p>Historique : le système Mac OS X 10.4 a introduit une nouvelle version du compilateur g++ (l'une des bêtes de somme de Fink). Cette version du compilateur produit du code incompatible avec les versions précédentes du compilateur. Dans l'arborescence 10.4-transitional, Fink mélange du code produit par le nouveau compilateur gcc-4.0 et du code produit par l'ancien compilateur g++-3.3. Cette stratégie a permis de dégager du temps pour rendre les paquets compatibles avec le compilateur g++-4.0. L'heure est maintenant venue de clore cette période transitoire et de ne plus utiliser que la nouvelle arborescence. Néanmoins, la mise à jour est compliquée du fait que tous les paquets qui utilisent ou fournissent des librairies g++ doivent être recompilés dans un certain ordre.</p>
-<p>Si vous utilisez Mac OS X 10.4, vous pouvez déterminer si vous devez faire cette mise à jour en exécutant la commande fink --version. Si la version de distribution est la version "0.8.1.cvs" ou "0.8.1.rsync", vous n'avez pas besoin de faire la mise à jour. Mais si la version de distribution est la version "0.8.0.cvs" ou "0.8.0.rsync", vous devez effectuer la mise à jour comme décrit ci-dessous.</p>
-<p>Certains utilisateurs préfèreront supprimer leur installation fink et réinstaller une nouvelle distribution avec l'installeur 0.8.1. D'autres préfèreront utiliser le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">paquet de mise à jour 10.4 (v. 0.4)</a> (environ 12 Mo), qui comprend des versions précompilées des paquets de base de fink ainsi qu'un script de mise à jour de l'installation existante. Voir les instructions détaillées dans le fichier README qui se trouve dans le répertoire 10.4-update après décompression du paquet.</p>
-<p>Note : les utilisateurs de Fink qui passent du système Mac OS X 10.3 au système Mac OS X 10.4 peuvent utiliser les mêmes procédures : soit supprimer complètement leur installation de fink et réinstaller une nouvelle distribution, soit utiliser le paquet le mise à jour 10.4. Le script de mise à jour ne doit pas être exécuté avant d'avoir mis à jour Mac OS X.</p>
 </content:encoded>
     </item>
   </channel>

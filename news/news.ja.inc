@@ -1,4 +1,23 @@
-<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
+<a name="2009-10-24%20Server%20%E5%95%8F%E9%A1%8C"><span class="news-date">2009-10-24: </span><span class="news-headline">Server 問題</span></a><?php gray_line(); ?>
+	  <p>
+	  以前よりサーバーに問題があり、結果として Fink のウェブサイトとバイナリディストリビューションがダウンしております。
+	  rsync サーバも停滞しています。
+	  現在復旧作業中ですが、現在のところ以下のように対処してください。
+	  </p>
+	  <ul>
+		<li>ウェブサイトは、<a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a>
+		の仮サーバーをご覧ください。</li>
+		<li>パッケージを更新する selfupdate は、CVS をお使いください。
+		rsync より時間がかかりますが、CVS は SourceForge.net にホストされているため、正常に作動しています。
+		後ほど、rsync に戻すことができます。
+		CVS に変更するには、<code>fink selfupdate-cvs</code>　とします。</li>
+		<li><code>/sw/etc/fink.conf</code> を開き、<code>Mirror-apt:
+		http://bindist.finkmirrors.net/bindist</code> を <code>Mirror-apt:
+		http://fink-bindist.gecko.ig42.org</code> としてください。
+		</li>
+	  </ul>
+      <p>ご迷惑をおかけしていることをお詫び申し上げます。</p>
+	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
       <p>
 Fink は、雪豹 (OS X v. 10.6) への準備を整えました。
 32-bit版と64-bit版がありますので、どちらかを選択してご利用ください。
@@ -57,19 +76,5 @@ Members of the Fink project are working hard to provide user support,
 to keep Fink up to date, and to prepare for the upcoming Snow Leopard
 release.  More volunteers are always needed, so please consider
 getting involved at some level!
-</p>
-<a name="2008-07-23%20End%20of%2010.3%20support."><span class="news-date">2008-07-23: </span><span class="news-headline">End of 10.3 support.</span></a><?php gray_line(); ?>
-      <p>
-The Fink project is no longer able to offer support for users of Fink
-on Mac OS X 10.3. In reality there has been very little support for
-some time, so this announcement simply formalizes that fact.
-</p><p>
-This means that there will not be any further updates, not even
-security updates, for Mac OS X 10.3 users. Their existing
-installations will continue to work, but the software that is
-installed will not be updated.
-</p><p>
-We believe that the majority of our users are using Mac OS X 10.4 or
-10.5 and hope that this does not inconvenience too many people. 
 </p>
 
