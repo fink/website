@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.93 2009/10/25 06:11:47 monipol Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.94 2009/10/25 06:15:55 monipol Exp $</cvsid>
 
   <newsitem>
     <date>2009-10-24</date>
@@ -24,6 +24,7 @@
 		<li>Edit <code>/sw/etc/apt/sources.list</code> and replace
 		<code>http://bindist.finkmirrors.net/bindist</code> with
 		<code>http://fink-bindist.gecko.ig42.org</code></li>
+		<li>Run <code>fink scanpackages</code>.</li>
 	  </ul>
       <p>We apologise for the inconvenience.</p>
 	</body>
