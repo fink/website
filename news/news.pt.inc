@@ -1,4 +1,21 @@
-<a name="2009-08-28%20Fink%20no%20OS%20X%2010.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
+<a name="2009-10-24%20Problemas%20com%20o%20servidor"><span class="news-date">2009-10-24: </span><span class="news-headline">Problemas com o servidor</span></a><?php gray_line(); ?>
+	  <p>Estamos com problemas no servidor e por conseguinte o site e a
+	  distribuição oficial de binários estão fora do ar, e os servidores rsync
+	  não estão atualizando. Enquanto resolvemos os problemas, você pode:</p>
+	  <ul>
+		<li>Usar o <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a>
+		caso necessite das informações do site;</li>
+		<li>Usar o CVS como seu método de selfupdate caso você necessite de
+		pacotes atualizados. Ele é mais devagar do que o rsync porém está
+		funcionando já que é hospedado no SourceForge.net. Caso queira, você
+		poderá voltar ao rsync mais tarde. Para mudar para o CVS, execute o
+		comando <code>fink selfupdate-cvs</code>;</li>
+		<li>Editar o arquivo <code>/sw/etc/fink.conf</code> e substituir a
+		linha <code>Mirror-apt: http://bindist.finkmirrors.net/bindist</code>
+		por <code>Mirror-apt: http://fink-bindist.gecko.ig42.org</code></li>
+	  </ul>
+      <p>Pedimos desculpas pela inconveniência.</p>
+	<a name="2009-08-28%20Fink%20no%20OS%20X%2010.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
       <p>O Fink está pronto para ser usado no Snow Leopard (OS X 10.6). Os
       usuários precisam escolher dentre a versão do Fink de 32 bits e a de 64
       bits para o 10.6. A versão de 32 bits possui mais pacotes disponíveis no
@@ -54,15 +71,4 @@
       suporte ao usuário, manter o Fink atualizado, e preparar para o futuro
       lançamento do Snow Leopard. Sempre precisamos de mais voluntários,
       portanto cogite contribuir de alguma forma!</p>
-    <a name="2008-07-23%20Fim%20do%20suporte%20ao%2010.3."><span class="news-date">2008-07-23: </span><span class="news-headline">Fim do suporte ao 10.3.</span></a><?php gray_line(); ?>
-      <p>O projeto Fink não pode mais oferecer suporte a usuários do Fink no
-      Mac OS X 10.3. Na verdade tem havido pouco suporte por algum tempo então
-      este anúncio simplesmente formaliza esse fato.</p>
-      <p>Isto significa que não haverá atualizações futuras, nem mesmo de
-      segurança, para usuários do Mac OS X 10.3. Suas instalações atuais
-      continuarão a funcionar mas o software que estiver instalado não será
-      atualizado.</p>
-      <p>Acreditamos que a maioria dos nossos usuários estejam usando Mac OS X
-      10.4 ou 10.5 e esperiamos que esta decisão não seja inconveniente a
-      muitas pessoas.</p>
     

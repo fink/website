@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="pt">
-  <cvsid>$Id: news.pt.xml,v 1.4 2009/08/28 12:46:00 monipol Exp $</cvsid>
+  <cvsid>$Id: news.pt.xml,v 1.5 2009/10/25 03:36:12 monipol Exp $</cvsid>
+
+  <newsitem>
+    <date>2009-10-24</date>
+	<headline>Problemas com o servidor</headline>
+	<body>
+	  <p>Estamos com problemas no servidor e por conseguinte o site e a
+	  distribuição oficial de binários estão fora do ar, e os servidores rsync
+	  não estão atualizando. Enquanto resolvemos os problemas, você pode:</p>
+	  <ul>
+		<li>Usar o <link
+		url="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</link>
+		caso necessite das informações do site;</li>
+		<li>Usar o CVS como seu método de selfupdate caso você necessite de
+		pacotes atualizados. Ele é mais devagar do que o rsync porém está
+		funcionando já que é hospedado no SourceForge.net. Caso queira, você
+		poderá voltar ao rsync mais tarde. Para mudar para o CVS, execute o
+		comando <code>fink selfupdate-cvs</code>;</li>
+		<li>Editar o arquivo <code>/sw/etc/fink.conf</code> e substituir a
+		linha <code>Mirror-apt: http://bindist.finkmirrors.net/bindist</code>
+		por <code>Mirror-apt: http://fink-bindist.gecko.ig42.org</code></li>
+	  </ul>
+      <p>Pedimos desculpas pela inconveniência.</p>
+	</body>
+  </newsitem>
 
   <newsitem>
     <date>2009-08-28</date>

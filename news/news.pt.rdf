@@ -5,8 +5,49 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>pt</dc:language>
-    <dc:date>2009-10-24T17:10:21-02:00</dc:date>
+    <dc:date>2009-10-25T01:36:32-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Problemas%20com%20o%20servidor">
+      <title>Problemas com o servidor</title>
+      <link>http://fink.sourceforge.net/news/#2009-10-24%20Problemas%20com%20o%20servidor</link>
+      <guid>http://fink.sourceforge.net/news/#2009-10-24%20Problemas%20com%20o%20servidor</guid>
+      <description>
+	  <p>Estamos com problemas no servidor e por conseguinte o site e a
+	  distribuição oficial de binários estão fora do ar, e os servidores rsync
+	  não estão atualizando. Enquanto resolvemos os problemas, você pode:</p>
+	  
+		Usar o <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a>
+		caso necessite das informações do site;
+		Usar o CVS como seu método de selfupdate caso você necessite de
+		pacotes atualizados. Ele é mais devagar do que o rsync porém está
+		funcionando já que é hospedado no SourceForge.net. Caso queira, você
+		poderá voltar ao rsync mais tarde. Para mudar para o CVS, execute o
+		comando fink selfupdate-cvs;
+		Editar o arquivo /sw/etc/fink.conf e substituir a
+		linha Mirror-apt: http://bindist.finkmirrors.net/bindist
+		por Mirror-apt: http://fink-bindist.gecko.ig42.org
+	  
+      <p>Pedimos desculpas pela inconveniência.</p>
+	</description>
+      <content:encoded>
+	  <p>Estamos com problemas no servidor e por conseguinte o site e a
+	  distribuição oficial de binários estão fora do ar, e os servidores rsync
+	  não estão atualizando. Enquanto resolvemos os problemas, você pode:</p>
+	  
+		Usar o <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a>
+		caso necessite das informações do site;
+		Usar o CVS como seu método de selfupdate caso você necessite de
+		pacotes atualizados. Ele é mais devagar do que o rsync porém está
+		funcionando já que é hospedado no SourceForge.net. Caso queira, você
+		poderá voltar ao rsync mais tarde. Para mudar para o CVS, execute o
+		comando fink selfupdate-cvs;
+		Editar o arquivo /sw/etc/fink.conf e substituir a
+		linha Mirror-apt: http://bindist.finkmirrors.net/bindist
+		por Mirror-apt: http://fink-bindist.gecko.ig42.org
+	  
+      <p>Pedimos desculpas pela inconveniência.</p>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-08-28%20Fink%20no%20OS%20X%2010.6">
       <title>Fink no OS X 10.6</title>
       <link>http://fink.sourceforge.net/news/#2009-08-28%20Fink%20no%20OS%20X%2010.6</link>
