@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink のアップグレード";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス"><link rel="prev" href="mirrors.php?phpLang=ja" title="Fink ミラー">';
 
 
@@ -10,18 +10,33 @@ include_once "header.ja.inc";
 <h1>F.A.Q. - 4. Fink のアップグレード (バージョン固有の問題対処法)</h1>
 
 
-<a name="gcc-0.16.0">
-<div class="question"><p><b><? echo FINK_Q ; ?>4.1: バージョン0.16.0にアップグレードして "Your version of the
-gcc 3.3 compiler is out of date." と言われました。どうしたらいいですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Panther のリリースにともない、 Fink は新しい gcc 3.3 コンパイラに対応するようアップデートされました。
-10.2 (Jaguar) と 10.3 (Panther) の両方をサポートするため、すべてのユーザーは最新の gcc 3.3 update (August 2003 Updater または
-Panther XCode tools) をインストールする必要があります。
-Mac OS X 10.2 の December 2002 developer tools 用 XCode ベータ・アップデータをインストールした場合、この警告が出ます。もし 10.2 であれば、コマンド:</p><pre>gcc --version</pre><p>で現在のバージョンがわかります。
-2003年10月24日時点で build 1493 かそれ以上が必要です。</p><p>10.2 ユーザーは、 August 2003 Updater を <a href="http://developer.apple.com/">Apple Developer Connection</a> からダウンロードできます (無料登録が必要)。</p><p>10.3 ユーザーは、 Panther 互換のディベロッパーツール (Xcode など) にアップグレードする必要があります。
-XCode の入った CD が Panther に同梱されているはずです。</p></div>
-</a>
+    <a name="leopard-bindist1">
+      <div class="question"><p><b><? echo FINK_Q ; ?>4.1: Fink doesn't see new packages even after I've run an rsync or cvs selfupdate.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is a current issue for people on OS 10.5 using the binary installer. Check your version:</p><pre>fink --version</pre><p>If you currently have <code>fink-0.27.13-41</code>, which is the version that comes
+	with the installer, or <code>fink-0.27.16-41</code>, then there are a couple of options.</p><ul>
+	  <li>
+	    <b>rsync (preferred):</b>  Run the sequence below
+	    <pre>fink selfupdate
+fink selfupdate-rsync
+fink index -f
+fink selfupdate</pre>
+	  </li>
+	  <li>
+	    <b>cvs (alternate):</b>  Run
+	    <pre>fink selfupdate-cvs
+fink index -f
+fink selfupdate</pre>
+	  </li>
+	</ul><p>Either will bring you the newest <code>fink</code> version.</p></div>
+    </a>
+    
+    <a name="leopard-bindist2">
+      <div class="question"><p><b><? echo FINK_Q ; ?>4.2: When I try to install stuff I get 'Can't resolve dependency "fink (&gt;= 0.28.0)"'</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Apply the fix from <a href="#leopard-bindist1">the prior entry.</a></p></div>
+    </a>
+
 <a name="fink-0220">
-	<div class="question"><p><b><? echo FINK_Q ; ?>4.2: 長いこと Fink からのパッケージ更新がありませんでしたが</b></p></div>
+	<div class="question"><p><b><? echo FINK_Q ; ?>4.3: 長いこと Fink からのパッケージ更新がありませんでしたが</b></p></div>
 	<div class="answer"><p><b><? echo FINK_A ; ?>:</b> バージョンを確認してください:</p><pre>fink --version</pre><p>
 			rsync selfupdate が動作しないという既知の問題が <code>fink-0.22.0</code> にあります。
 			これを直すために、 CVS selfupdate を行います

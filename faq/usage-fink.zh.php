@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -108,11 +108,30 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
         maintainer if something works (or even if it doesn't). Feedback from
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
-        <b>packagename</b></code>.</p><p><b>New in </b><code>fink-0.26</code><b>:</b> If you run <code>fink configure</code> one of the questions will ask whether you want to turn the unstable trees on.  You will need to run <code>fink selfupdate; fink index; fink scanpackages</code> afterward.  <b>Note: </b>you must have either rsync or cvs updating turned on to get new package descriptions.</p><p>To configure Fink to use unstable when you have an earlier version of the <code>fink</code> tool than <b>0.26</b>, edit
-        <code>/sw/etc/fink.conf</code>, add <code>unstable/main</code>
-        and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p><p>Also note, if you don't want to install any more from unstable than
-        your specific package(s) and its (their) dependencies, don't use the
+        <b>packagename</b></code>.</p><p>For <code>fink-0.26</code> and later:  If you run
+	<code>fink configure</code> one of the questions will ask whether you
+	want to turn the unstable trees on.  </p><p>To configure Fink to use unstable
+	when you have an earlier version of the <code>fink</code> tool than
+	<b>0.26</b>, edit
+        <code>/sw/etc/fink.conf</code>, and add <code>unstable/main</code>
+        and <code>unstable/crypto</code> to the <code>Trees:</code> line.</p><p>If you use Fink Commander, then there is a Preference to use unstable
+	packages.</p><p>None of these options actually download the unstable tree's package
+	descriptions.You'll need to turn on <code>rsync</code> or
+	<code>cvs</code> updating to do this, which is not set up by default on a new
+	Fink installation.  The following command sequence will set you up on
+	a new Fink installation:</p><pre>fink selfupdate</pre><p>followed by</p><pre>fink selfupdate-rsync</pre><p>or</p><pre>fink selfupdate-cvs</pre><p>and then</p><pre>fink index -f
+fink scanpackages</pre><p><b>Note:</b>  There are Fink Commander analogs for everything except
+	<code>fink index -f</code>.  You will have to use the command line for that.</p><p>If you're already set up with <code>rsync</code> or <code>cvs</code>
+	updating, then the following
+	command sequence (or the Fink Commander analogs) will suffice:</p><pre>
+fink selfupdate
+fink index
+fink scanpackages
+	</pre><p>If you're not sure what your update method is, check
+	<code>fink --version</code> in at a command line
+	and see if that mentions <code>cvs</code> or <code>rsync</code>.</p><p>If you don't want to install any more from unstable than
+        your specific package(s) and its (their) dependencies, (and any base packages
+	that got updated) don't use the
         <code>update-all</code> command until you turn the unstable tree
         back off.</p></div>
     </a>
@@ -204,7 +223,10 @@ fink selfupdate-cvs</pre><p>如果你看不到上面这些错误信息，那么�
 ...
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.</pre><p>"C" 指 CVS 在更新最新版本的时候出现冲突。</p><p>解决办法是删除在 selfupdate-cvs 命令的输出中 "C" 开头的错误信息所涉及的文件，然后重新试一次。</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
-fink selfupdate-cvs</pre></div>
+fink selfupdate-cvs</pre><p>If you get errors that mention <b>cvs.sourceforge.net</b>:</p><pre>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</pre><p>this is because of a restructuring of the CVS servers at sourceforge.net in 2006.  Fink files are now at <b>fink.cvs.sourceforge.net</b>.</p><p>Check your Distribution version, e.g. via</p><pre>fink --version</pre><p>If that shows <code>10.4-transitional</code>, then you need to update to the regular 10.4 distribution.  An <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">update script</a> has been created to assist with that.</p></div>
     </a>
     <a name="kernel-panics">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.14: 当我使用 Fink 的时候，碰到整个机器没有反应/核心恐慌/死机。救命！</b></p></div>
@@ -265,24 +287,9 @@ fink selfupdate-cvs</pre></div>
       <div class="question"><p><b><? echo FINK_Q ; ?>5.20: 当我在 <code>dselect</code> 中选择软件包时，屏幕显示一堆乱七八糟的东西。怎么办？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在 <code>dselect</code> 和 终端程序（<code>Terminal.app</code>）中间存在一些问题。暂时解决方法是在运行 <code>dselect</code> 前输入下面的命令。</p><p>对 tcsh 用户：</p><pre>setenv TERM xterm-color</pre><p>对 bash 用户：</p><pre>export TERM=xterm-color</pre><p>你可以把它放到你的启动文件（比如 <code>.cshrc</code> 或 <code>.profile</code>），这样它就总是会自动运行。</p></div>
     </a>
-    <a name="perl-undefined-symbol">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.21: 为什么我运行 Fink 命令时会有一堆的 "dyld: perl undefined symbols" 错误？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Obsolete</p><p>如果你看到象下面的错误信息：</p><pre>dyld: perl Undefined symbols:
-_Perl_safefree
-_Perl_safemalloc
-_Perl_saferealloc
-_Perl_sv_2pv
-_perl_call_sv
-_perl_eval_sv
-_perl_get_sv</pre><p>那么很可能你升级了 Perl，现在 <code>storable-pm</code> 也应该需要升级。
-你应该更新 Fink。在这个过程中，你会被提示要安装 <code>perl-core</code> 还是 <code>system-perl</code>；这时需要选择后者。 
-另外，<code>storable-pm</code> 应该也会更新。</p><p>对 OS 10.1.x，可以执行下面的命令（你需要安装了开发工具）：</p><pre>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp
-sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp
-fink rebuild storable-pm
-fink selfupdate-cvs</pre></div>
-    </a>
+
     <a name="cant-upgrade">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.22: 我看不到要升级的 Fink 版本。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.21: 我看不到要升级的 Fink 版本。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在这种情况下，参考<a href="http://www.finkproject.org/download/fix-upgrade.php">特别指引</a>。</p><ul>
           <li><b>10.3.x:</b> (0.7.1 distribution)
 		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
@@ -297,11 +304,11 @@ fink selfupdate</pre></li>
         </ul></div>
     </a>
     <a name="spaces-in-directory">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.23: 我可以把 Fink 放到一个名字里面有空格的目录或宗卷里面吗？</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.22: 我可以把 Fink 放到一个名字里面有空格的目录或宗卷里面吗？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 我们不推荐把你的 Fink 目录树放到名字中有空格的目录里面。完全不值得冒这个险。</p></div>
     </a>
     <a name="packages-gz">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.24: 当我进行二进制升级的时候，有很多 "File not found" 和 "Couldn't stat package source list file" 错误。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.23: 当我进行二进制升级的时候，有很多 "File not found" 和 "Couldn't stat package source list file" 错误。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果你看到这样的错误：</p><pre>
 Err file: local/main Packages
   File not found
@@ -333,11 +340,11 @@ update available list script returned error exit status 1.
 powerpc_Packages) - stat (2 No such file or directory)</pre><p>那么你需要做的是运行 <code>fink scanpackages</code>。这会生成那些找不到的文件。</p></div>
     </a>
     <a name="wrong-tree">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.25: 我更改了我的错误系统或开发工具，但 Fink 没有认出这些改动。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.24: 我更改了我的错误系统或开发工具，但 Fink 没有认出这些改动。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在改动 Fink 的安装环境（源代码或二进制安装都是它的子集），需要告诉 Fink 发生了这些变动。要这样做，我们要运行一个通常是在首次安装的时候才运行的脚本：</p><pre>/sw/lib/fink/postinstall.pl</pre><p>运行完这个脚本以后，Fink 应该能够适应改动的结果。</p></div>
     </a>
     <a name="seg-fault">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.26: 当我运行<code> fileutils </code>中的 <code>gzip</code> 或 <code>dpkg-deb</code> 程序时出现错误！救命！</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.25: 当我运行<code> fileutils </code>中的 <code>gzip</code> 或 <code>dpkg-deb</code> 程序时出现错误！救命！</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 出错的形式：</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
 ### execution of gzip failed, exit code 139</pre><p>或</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
 gzip: stdout: Broken pipe
@@ -347,12 +354,12 @@ gzip: stdout: Broken pipe
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>或在运行<code> fileutils</code> 中的工具时出现 segmentation faults 错误。比如：<code>ls</code> 或 <code>mv</code>，这很可能时因为某个库的预绑定错误，这可以通过运行下面命令来修正：</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
     </a>
     <a name="pathsetup-keeps-running">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.27: 当我打开终端程序窗口时，我看到下面的信息 "Your environment seems to be correctly
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.26: 当我打开终端程序窗口时，我看到下面的信息 "Your environment seems to be correctly
 set up for Fink already."，然后它就退出登录了。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 发生这个现象的原因是 OS X 的终端程序被告知每次登录的时候需要运行 <code>/sw/bin/pathsetup.command</code> 命令。你可以通过删除下面的文件 <code>~/Library/Preferences/com.apple.Terminal.plist</code> 来修正这一点。</p><p>如果这个配置文件里面有你需要保留的配置信息（所以你不能删除它），你可以用纯文本编辑器来编辑它，删除包含 <code>/sw/bin/pathsetup.command</code> 的一行。</p></div>
     </a>
     <a name="ext-drive">
-    <div class="question"><p><b><? echo FINK_Q ; ?>5.28: 我把 Fink 安装到主分区之外的地方，然后我不能从源代码更新 fink 软件包了。现在出现类似 <q>chowname</q> 的错误。</b></p></div>
+    <div class="question"><p><b><? echo FINK_Q ; ?>5.27: 我把 Fink 安装到主分区之外的地方，然后我不能从源代码更新 fink 软件包了。现在出现类似 <q>chowname</q> 的错误。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 如果你的错误信息是象这样的：</p><pre>This first test is designed to die, so please ignore the error
 message on the next line.
 # Looks like your test died before it could output anything.
@@ -368,41 +375,18 @@ Failed test (./Command/chowname.t at line 27)
     </a>
     
     <a name="mirror-gnu">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.29: Fink won't update my packages because it says it can't find the 'gnu' mirror.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.28: Fink won't update my packages because it says it can't find the 'gnu' mirror.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get an error that ends with</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>then most likely you need to update the <code>fink-mirrors</code> package, e.g. via:</p><pre>fink install fink-mirrors</pre></div>
     </a>
     
     
     <a name="cant-move-fink">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.30: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.29: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
     </a>
-    <a name="four-oh-three">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There have been problems with the Sourceforge download servers, and therefore we have moved the binary distribution repository for this very reason.</p><ul>
-          <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
-<pre>fink reinstall fink</pre>
-            <p>or</p>
-<pre>sudo apt-get install --reinstall fink</pre>
-            <p>(if for whatever reason you don't want to use the source distribution).</p>
-          </li>
-          <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <code>sources.list</code> file as root, e.g..via
-<pre>sudo pico /sw/etc/apt/sources.list</pre>
-            <p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with "Official binary distribution:" thusly:</p>
-<pre># Official binary distribution: download location for packages
-# from the latest release
-deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 
-# Official binary distribution: download location for updated
-# packages built between releases
-deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</pre>
-<p>(The above of course assumes you're on 10.3.  If you're on a different OS replace <code>10.3</code> with what your current distribution is.</p>
-            <p>Then save your work and quit the editor.  Now update your binary package list again.</p>
-          </li>
-        </ul></div>
-    </a>
     <a name="fc-cache">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I get a message that says "No fonts found".</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.30: I get a message that says "No fonts found".</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you see the following (so far only seen on OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
@@ -410,23 +394,17 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div>
     </a>
     <a name="non-admin-installer">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.33:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility, select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.</p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.31:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility (from the Utilities sub-folder in your Applications folder), select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.  If that doesn't work, then you may need to set your permissions manually via:</p><pre>
+sudo chmod 1775 /	  
+	</pre></div>
     </a>
     <a name="wrong-arch">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.34: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
+      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p></div>
     </a>
-    <a name="sf-cvs-2006">
-	      <div class="question"><p><b><? echo FINK_Q ; ?>5.35: I haven't been able to do a cvs selfupdate.</b></p></div>
-	      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors that include lines like:</p><pre>
-cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
-2401 failed: Operation timed out
-</pre><p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p><pre>
-sudo apt-get update ; sudo apt-get install fink-mirrors
-</pre></div>
-	      </a>
+
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=zh">6. 一般性编译问题</a></p>

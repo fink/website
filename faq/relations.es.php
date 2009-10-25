@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Relaciones";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="mirrors.php?phpLang=es" title="Espejos de distribución"><link rel="prev" href="general.php?phpLang=es" title="Preguntas generales">';
 
 

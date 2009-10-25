@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование (1)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-packages.php?phpLang=ru" title="Проблемы использования пакетов  - Специальные пакеты"><link rel="prev" href="comp-packages.php?phpLang=ru" title="Проблемы компиляции - специальные пакеты">';
 
 
@@ -67,23 +67,25 @@ include_once "header.ru.inc";
         </a>
         <a name="compile-myself">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Как можно компилировать что-нибудь самостоятельно с применением ПО, инсталлированного с помощью Fink?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Когда вы самостоятельно что-нибудь компилируете вне Fink,
-                    надо сообщать компилятору и компоновщику, где найти библиотеки и заголовки,
-                    инсталлированные при помощи Fink. Для пакета, использующего
-                    стандартный процесс конфигурирования/создания, вам надо установить некоторые
-                    переменные величины среды:</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
-setenv LDFLAGS -L/sw/lib 
-setenv CXXFLAGS $CFLAGS 
-setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-setenv MACOSX_DEPLOYMENT_TARGET 10.4</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
+        linker need to be told where to find the Fink-installed libraries and
+		headers.  It is also necessary to tell the compiler to use the
+		appropriate target architecture.  For a package that uses standard
+		configure/make process, you need to set some environment variables:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(assuming that the build system is running OS 10.4 or later)</p><p>Зачастую легче всего просто добавить их к своим файлам инициализации
+export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.5</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
+setenv LDFLAGS -L/sw/lib 
+setenv CXXFLAGS $CFLAGS 
+setenv CPPFLAGS $CXXFLAGS 
+setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
+setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
+setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
+setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>Зачастую легче всего просто добавить их к своим файлам инициализации
                     (н-р <code>.cshrc</code> |
                     <code>.profile</code>), чтобы они установились
                     автоматически. Если пакет не использует эти переменные,

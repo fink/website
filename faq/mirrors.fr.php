@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Miroirs";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)"><link rel="prev" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets">';
 
 
@@ -35,12 +35,9 @@ include_once "header.fr.inc";
 <div class="question"><p><b><? echo FINK_Q ; ?>3.6: Comment passer d'une méthode à une autre à volonté ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> En utilisant fink selfupdate-rsync pour passer à la méthode rsync ou fink selfupdate-cvs pour passer à la méthode CVS.</p></div>
 </a>
-<a name="status">
-<div class="question"><p><b><? echo FINK_Q ; ?>3.7: Comment connaître l'état actuel des miroirs rsync ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Allez sur http://finkmirrors.net/status.html</p></div>
-</a>
+
 <a name="Master">
-<div class="question"><p><b><? echo FINK_Q ; ?>3.8: Qu'est-ce qu'un miroir Distfiles ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>3.7: Qu'est-ce qu'un miroir Distfiles ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Il est parfois difficile de trouver une version précise d'un source sur Internet. Les miroirs Distfiles stockent les paquets source nécessaires à fink pour construire ses paquets source. Ils font aussi office de miroir.</p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:

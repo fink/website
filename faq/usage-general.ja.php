@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (1)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
 
@@ -54,20 +54,25 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 </a>
 <a name="compile-myself">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 外でコンパイルする時は、コンパイラとリンカに Fink がインストールしたライブラリとヘッダの場所を教える必要があります。
-普通の configure/make を使うパッケージの場合、環境変数を設定する必要があります:</p><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
-setenv LDFLAGS -L/sw/lib
-setenv CXXFLAGS $CFLAGS
-setenv CPPFLAGS $CXXFLAGS
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-setenv MACOSX_DEPLOYMENT_TARGET 10.4</pre><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
+        linker need to be told where to find the Fink-installed libraries and
+		headers.  It is also necessary to tell the compiler to use the
+		appropriate target architecture.  For a package that uses standard
+		configure/make process, you need to set some environment variables:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export MACOSX_DEPLOYMENT_TARGET=10.4</pre><p>(ビルドシステムは OS 10.4 以降と仮定)</p><p>これを起動ファイル (.cshrc か .profile) に追加すると、自動的に設定されて便利です。
+export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.5</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
+setenv LDFLAGS -L/sw/lib 
+setenv CXXFLAGS $CFLAGS 
+setenv CPPFLAGS $CXXFLAGS 
+setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
+setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
+setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
+setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>これを起動ファイル (.cshrc か .profile) に追加すると、自動的に設定されて便利です。
 この環境変数を使わないパッケージの場合、
 "-I/sw/include" (ヘッダ用) and "-L/sw/lib" (ライブラリ用)
 をコンパイルの行に追加する必要があるでしょう。

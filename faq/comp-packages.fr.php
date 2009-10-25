@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (2)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problèmes généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation">';
 
 
@@ -41,12 +41,16 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 fink install libiconv</pre></div>
 </a>
  <a name="cplusplus-filt">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.6: Il est impossible d'installer <code>g77</code> car le fichier <code>c++filt</code> n'existe pas. Où le récupérer ?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>7.6: Il est impossible d'installer un paquet car le fichier <code>c++filt</code> n'existe pas. Où le récupérer ?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Si vous avez des erreurs similaires à la suivante :</p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>après être passé sous Tiger, vous devez suivre les étapes suivantes :</p><ul>
-<li>Désinstallez l'ancienne version des Outils de développements (Developer Tools) en exécutant la commande :
-<pre>/Developer/Tools/uninstall-devtools.pl</pre> 
-dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure).</li>
 <li>Réinstallez <code>BSD.pkg</code> à partir du DVD d'installation du système Tiger.</li>
+</ul><ul>
+<li>10.4: Désinstallez l'ancienne version des Outils de développements (Developer Tools) en exécutant la commande :
+<pre>/Developer/Tools/uninstall-devtools.pl</pre> 
+dans une fenêtre de terminal. Puis installez XCode (version 2.4.1 ou supérieure).</li>
+<li>10.5: Désinstallez l'ancienne version des Outils de développements (Developer Tools) en exécutant la commande :
+<pre>/Developer/Tools/uninstall-devtools.pl</pre> 
+dans une fenêtre de terminal. Puis installez XCode (version 3.0 ou supérieure).</li>
 </ul><p>Si le fichier <code>/usr/bin/c++filt</code> n'apparaît pas, recommencez les deux étapes précédentes jusqu'à ce qu'il apparaisse.</p></div>
 </a>
 <a name="gettext-tools">
@@ -54,11 +58,11 @@ dans une fenêtre de terminal. Puis installez XCode (version 2.0 ou supérieure)
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Exécutez d'abord la commande <code>fink selfupdate</code> pour vous assurer que vous avez bien les dernières versions des paquets. Puis exécutez la commande <code>fink update gettext-tools</code>. Une ancienne version de <code>gettext-tools</code> peut empêcher la mise à jour de <code>gettext</code>.</p></div>
 </a>
   <a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This problem affects machines with OS 10.5.2 pre-installed.
-      There is currently a bug in Apple's X11 in that a file in it that is used
-    for building references <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code>,
-    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p><p>The workaround is to run the following command to fix the file:</p><pre>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</pre></div>
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
+    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
+    <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (or other versions of libraries in
+    <code>/usr/X11/lib/</code>).</p><p>The current wisdom on the best
+    fix for such an issue is to install Xcode 3.1.3.</p></div>
   </a>
 <a name="all-others">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.9: Des problèmes apparaissent avec un paquet qui n'est pas mentionné ici. Que faire ?</b></p></div>

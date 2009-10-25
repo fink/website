@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - ミラー";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)"><link rel="prev" href="relations.php?phpLang=ja" title="他のプロジェクトとの関係">';
 
 
@@ -41,12 +41,9 @@ rsync アップデート方式はアクティブなツリーだけ更新しま�
 <div class="question"><p><b><? echo FINK_Q ; ?>3.6: どのように方式を切り替えるのですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  fink selfupdate-rsync または fink selfupdate-cvs コマンドで、 rsync と CVS を切り替えます。</p></div>
 </a>
-<a name="status">
-<div class="question"><p><b><? echo FINK_Q ; ?>3.7: rsync ミラーの現在の状態は見ることが出来ますか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> http://finkmirrors.net/status.html から見ることが出来ます。</p></div>
-</a>
+
 <a name="Master">
-<div class="question"><p><b><? echo FINK_Q ; ?>3.8: Distfiles ミラーとは何ですか?</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>3.7: Distfiles ミラーとは何ですか?</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 時としてインターネットから特定バージョンのソースを取得することが困難な場合があります。
 Distfiles ミラーはソースパッケージをビルドする際に必要なソースパッケージを保存し、ミラーしています。</p></div>

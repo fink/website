@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
@@ -51,36 +51,9 @@ Running X11 ドキュメントには、この問題の <a href="http://www.finkp
 <code>xfree86-rootless</code> と <code>xfree86-rootless-shlibs</code> がインストールされているかを確認し、なければ <code>fink install xfree86-rootless</code> で解決です。</p><p>もしインストールされているなら、 <code>fink rebuild xfree86-rootless</code> を試してください。
 これがうまくいかない場合、 <code>/usr/bin/X11R6</code> が PATH に含まれているか確認してください。</p></div>
 </a>
-<a name="xterm-error">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.5: xterm が "dyld: xterm Undefined symbols: xterm undefined reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib" といって終了します。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 10.1 版の XFree86 を 10.2 で使用するとこの問題が発生します。
-10.2 版にアップグレードしてください。</p><p>Fink <code>xfree86</code> パッケージを使っている場合、通常の方法でアップグレードできます
-(ソースからの場合、
-"<code>fink selfupdate-cvs ; fink update-all</code>"、バイナリからの場合、
-"<code>fink selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>")。</p><p>XFree86 を他の手段でインストールした場合、最新版パッチが
-<a href="http://mrcla.com/XonX">XonX web site</a>
-から入手できます。</p></div>
-</a>
-<a name="libXmuu">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.6: XFree86 を起動しようとすると、下記のエラーのひとつがでます。
-"dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib"
-または "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは、 <code>xfree86-base-(threaded)-shlibs</code> からインストールされたはずのファイルが見つからないことが原因です。
-ソースの場合、<code>fink reinstall xfree86-base-shlibs</code> (threaded 版の XFree86 パッケージ場合、<code>fink reinstall xfree86-base-threaded-shlibs</code>)、
-バイナリの場合、 <code>sudo apt-get install --reinstall xfree86-base-shlibs</code> を再インストールする必要があります。</p></div>
-</a>
-<a name="apple-x-bugs">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.7: Fink の XFree86 を Apple X11 に置き換えたのですが、なんでもかんでもクラッシュするようになりました!</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> まず、以前 threaded 版の Fink XFree86 があったのなら、クラッシュしたアプリケーションを再ビルドする必要があります。
-プログラムによっては、ビルド時に thread の対応を確認し、以降は thread があるものと仮定されます。</p><p>これが原因でなければ、次の可能性としては Apple X11 のバグに当たったのかも知れません。
-これを書いている時点でも Apple チームはバグを認識していて作業中です。
-</p><p>Apple X11 に関する一般的な質問で Fink に直接関係が無いものは、
-<a href="http://www.lists.apple.com/x11-users">Apple 公式 X11 ディスカッションリスト</a>
-を確認してみてはいかがでしょうか。
-このサイトで<a href="http://developer.apple.com/bugreporter">Apple へバグレポートを送る</a>よう薦めています。</p></div>
-</a>
+
 <a name="apple-x-delete">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.8: Apple X11 の delete キーを、 XDarwin のように使いたいのです。</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>9.5: Apple X11 の delete キーを、 XDarwin のように使いたいのです。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> XDarwin と Apple X11 で <code>delete</code> キーの挙動が違うという報告がありますが、これは X の起動ファイルに以下を追加することで調整できます:</p><p>
 <b>.Xmodmap:</b>
 </p><pre>keycode 59 = Delete</pre><p>
@@ -95,7 +68,7 @@ xterm*.ttyModes: erase ^?
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
 </a>
 <a name="gnome-two">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.9: GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>9.6: GNOME 1.x から GNOME 2.x にアップグレードしたら、 <code>gnome-session</code> がウィンドウマネージャーを開かなくなりました。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> GNOME 1.x <code>gnome-session</code> は自動的に <code>sawfish</code> ウィンドウマネージャーを呼出していましたが、 GNOEM 2.x では <code>~/.xinitrc</code>  で <code>gnome-session</code> の前に呼び出さなくてはなりません。</p><pre>...
 exec metacity &amp;
 exec gnome-session</pre><p>
@@ -104,128 +77,73 @@ exec gnome-session</pre><p>
 </p></div>
 </a>
 <a name="apple-x11-no-windowbar">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.10: Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>9.7: Panther で Apple X11 にアップグレードしたら、ウィンドウのタイトルバーが消えました。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> あなたは X11 を Panther に付属する "X11 1.0 - XFree86 4.3.0" にアップグレードしなかったようです。
 Disk 3 の X11.pkg から X11 をインストールできます。</p></div>
 </a>
 <a name="apple-x11-wants-xfree86">
+<div class="question"><p><b><? echo FINK_Q ; ?>9.8: X11 と Fink に問題があります。</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>
+          <li>
+            <b>You are installing from binaries:</b>
+            <p>Typically what you need to do is reinstall the X11User package,
+	    since the installer application occasionally misses installing a file.
+	    You may need to repeat this multiple times. Running</p>
+	    <pre>fink list -i system-xfree86</pre>
+	    <p>should show that the <code>system-xfree86</code> and
+	    <code>system-xfree86-shlibs</code> packages are installed, and</p>
+	    <pre>fink list x11</pre>
+	    <p>should indicate that the <code>x11-shlibs</code> and <code>x11</code> virtual
+	    packages are present.</p>
+	    <p>If reinstalling the X11User package doesn't work, then consult the
+	    <a href="#special-x11-debug">special debug</a> instructions,
+	    below.</p>
+          </li>
+          <li>
+            <b>You are installing from source:</b>
+	    <p>Typically this error means that you need to (re)install the X11SDK,
+	    which is <b>mandatory</b> if you want to build packages from source.
+            It is in the Xcode Tools folder of a Tiger DVD, or (Optional
+            Installs/)Xcode Tools/Packages on your Leopard DVD(s). If you
+            run</p>
+            <pre>fink list -i system-xfree86  </pre>
+            <p>it should show the <code>system-xfree86</code>,
+	    <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code>
+	    packages as installed.  If the <code>-dev</code> package is missing,
+	    reinstall the X11SDK, since sometimes the Apple Installer misses a
+	    file.  You may need to keep doing this.  If either of the other two
+	    are missing, then reinstall the X11User package (same reason).  At
+	    this point</p>
+	    <pre>fink list x11</pre>
+	    <p>should indicate that the <code>x11-dev</code>, <code>x11-shlibs</code>,
+	    and <code>x11</code> virtual packages are present.</p>
+	    <p>If reinstalling the X11SDK or X11User package doesn't work, then consult the
+	    <a href="#special-x11-debug">special debug</a> instructions,
+	    below.</p>
+           </li>
+        </ul></div>
+    </a>
     
-<div class="question"><p><b><? echo FINK_Q ; ?>9.11: Apple X11 をインストールしたけれども、 Fink が XFree86 か X.org をインストールしろといい続けます。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 二つの可能性があります。</p><ul>
-		<li><b>バイナリからのインストール:</b> 
-		<p>
-		<code>fink</code> が最新 (&gt;=0.18.3-1) であれば、通常は X11User 
-		パッケージを再インストールする必要があります。
-		</p>
-		<p>
-		これは、インストーラがしばしばファイルをインストールをし忘れることがあるためです。
-		インストールは何回かする必要があるかもしれません。
-		</p>
-		<pre>fink list -i system-xfree86</pre> 
-		<p>を実行することで、
-		<code>system-xfree86</code> と <code>system-xfree86-shlibs</code> 
-		がインストールされたかが分かります。
-		</p>
-		<p>
-		X11User パッケージを再インストールしても問題がある場合、下記の
-		<a href="#special-x11-debug">特殊なデバグ</a> の手順を試してみてください。
-		</p>
-		<p>
-		古い<code>fink</code> を使っている場合、 <code>fink</code> を更新することで直ります。
-		</p>
-<pre>sudo apt-get update
-sudo apt-get install fink</pre>
-		</li>
-		<li><b>ソースからのインストール: </b>
-		<p>
-		<code>fink</code> が最新であれば、 X11SDK を(再)インストールする必要があります。
-		これは、パッケージをソースからビルドする際に必須です。
-		X11SDK は Xcode CD にありますが、XCode をインストールしても、デフォルトではインストール<b>されません</b>。
-		インストール時にカスタムを選択してパッケージを選択するか、
-		Panther の XCode CD または Tiger DVD の XCode Tools フォルダ内にあります。
-		Panther では、デフォルトではインストールされませんので、カスタムインストールを選択するか、
-		<code>Packages</code> フォルダ内の <code>X11SDK pkg</code> アイコンをダブルクリックします。
-		Tiger では、 (たとえ X11User がなくても) デフォルトでインストール<b>されます</b>が、一部のファイルがインストールされないことがあります。
-		</p>
-		<p>
-		XCode ディスクが付随されていないコンピュータの場合、<code>X11SDK.pkg</code> を含むディスクイメージがある場合があります。
-		<code> /Applications/Installers </code> などのディレクトリを探してください。
-		<code>X11User.pkg</code> も同じディレクトリにある場合があります。
-		</p>
-		<p>
-		これでも問題がある場合、
-		</p>
-		<pre>fink list -i system-xfree86</pre> 
-		<p>を実行をし、
-		<code>system-xfree86</code> と <code>system-xfree86-shlibs</code> と <code>system-xfree86-dev</code>
-		がインストールされているか確認します。
-		<code>-dev</code> が無い場合は X11SDK を再インストールします。
-		Apple のインストーラはファイルをインストールし忘れることがあるようです。
-		他の二つのうちどちらかが無い場合、 X11User パッケージをインストールします (理由は同じ)。
-		</p>
-		<p><b>Jaguar (X11 beta 3) の利用者への注記</b>:
-		Jaguar では XCode は使用していないため、ダウンロード済みの X11SDK が必要になります。
-		X11 beta 3 は既に期限が切れているため、X11SDK パッケージ (および X11User パッケージ)
-		はダウンロードできません。
-		X11 アプリケーションをインストールするには、バイナリ配布を利用するか、 XFree86  または X.org
-		をインストールするか、 Panther にアップグレードするしかありません。
-		</p>
-		<p>
-		<code>fink</code> 0.17 以前を使っている場合、更新します。
-		</p>
-		<pre>fink selfupdate</pre>
-		<p>
-		(ポイントリリースではなく、CVS または rsync 更新ができる場合)
-		</p>
-		<p>
-		これでも問題が発生する場合、下記の
-		<a href="#special-x11-debug">特殊なデバグ</a> の手順を試してみてください。
-		</p>
-		</li>
-	</ul></div>
-</a>
-<a name="wants-xfree86-on-upgrade">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.12: 
-10.2 Fink バージョンから 10.2-gcc3.3 あるいは 10.3 に切り替えたら、 Apple X11 があるのに XFree86 または X.org をインストールしろと言われます。
-</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-以下の古い代替パッケージのうちいずれかを削除する必要があります:
-<code>system-xfree86</code>, <code>system-xfree86-42</code>, 
-<code>system-xfree86-43</code> 。
-自分でインストールした X11 の設定を Fink が行ない、バーチャルパッケージを作成します。
-他のパッケージが <code>system-xfree86</code> に依存しているため、以下のコマンドを使い
-</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</pre><p>
-古いバージョンを削除します。
-インストールの確認は、
-</p><pre>fink list -i system-xfree86</pre><p>
-とし、 <code>system-xfree86</code> と <code>system-xfree86-shlibs</code>
-があるか確認します。
-X11SDK もインストールされている場合、 <code>system-xfree86-dev</code> も確認します。
-</p><p>
-これでも問題が解決されない場合、上の
-<a href="#apple-x11-wants-xfree86">Fink が XFree86 または X.org を要求する</a>
-を参照してください。
-</p></div>
-</a>
 <a name="special-x11-debug">
-<div class="question"><p><b><? echo FINK_Q ; ?>9.13: まだ X11 と Fink の問題が解決されません。</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>9.9: まだ X11 と Fink の問題が解決されません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 		<a href="#apple-x11-wants-xfree86">Fink が XFree86 または X.org を要求する</a> や
 		<a href="#wants-xfree86-on-upgrade">10.2 からの X11 とアップグレード</a> 
 		のヒントで問題が解決されないか、自分の問題と異なる場合、
 		X11 をきれいに削除し、代替パッケージと X11 関連パッケージを削除します:
-		</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+		</p><p>On Leopard, use</p><pre>
+sudo pkgutil --forget com.apple.pkg.X11User
+sudo pkgutil --forget com.apple.pkg.X11SDKLeo
+</pre><p>Then, on either 10.4 or 10.5, run</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shilbs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
-fink selfupdate; fink index</pre><p>
-		(最初の行で存在しないパッケージを削除しようとしているという警告が出ます)
-		次に、Apple X11 (および必要に応じて X11SDK) または XFree86 や X.org のようなX互換パッケージを再インストールします。
-		</p><p>
-		これでも問題があり、 <code>fink-0.19.0</code> 以降を使っている場合、
-		</p><pre>fink-virtual-pkgs --debug</pre><p>で何が不足しているかの情報が得られます。</p><p>
+fink selfupdate; fink index</pre><p>(the first line may give you warnings about trying to remove
+	nonexistent packages).  Then, reinstall Apple's X11 (and the X11SDK, if
+	needed), or,
+	if you're on 10.4, an alternative X11 implementation, like XFree86 or X.org.</p><p>If you are still having problems then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>で何が不足しているかの情報が得られます。</p><p>
 		古いバージョンの  <code>fink</code> を使っている場合、Perl スクリプト
 		(Martin Costabel 作成)　で同様の情報が得られます。
 		</p><ul>
@@ -237,7 +155,7 @@ fink selfupdate; fink index</pre><p>
 </ul></div>
 </a>
     <a name="tiger-gtk">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.14: 
+      <div class="question"><p><b><? echo FINK_Q ; ?>9.10: 
         	Tiger (OS 10.4) にアップデート後、GTK アプリを使うと必ず
         	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
         </b></p></div>
@@ -252,7 +170,7 @@ fink selfupdate; fink index</pre><p>
         </p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>と記述し、<b>tcsh</b> ユーザーは、同様に <code>.cshrc</code> (または他のスタートアップスクリプト) に、</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>と記述します。</p><p>これは <code>base-files-1.9.7-1</code> 以降では自動的に追加されます。</p></div>
     </a>
   <a name="yelp">
-    <div class="question"><p><b><? echo FINK_Q ; ?>9.15: どの GNOME アプリケーションでも、ヘルプ機能が使えません。</b></p></div>
+    <div class="question"><p><b><? echo FINK_Q ; ?>9.11: どの GNOME アプリケーションでも、ヘルプ機能が使えません。</b></p></div>
 	<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 		  <code>yelp</code> というパッケージをインストーする必要があります。
 		  このパッケージは、暗号化を使用するため GNOME バンドルに含まれていません。

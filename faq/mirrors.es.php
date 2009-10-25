@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Espejos";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="upgrade-fink.php?phpLang=es" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="relations.php?phpLang=es" title="Relaciones con Otros Proyectos">';
 
 
@@ -34,12 +34,8 @@ include_once "header.es.inc";
       <div class="question"><p><b><? echo FINK_Q ; ?>3.6: ¿Cómo puedo ir y venir entre los dos métodos?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> By using fink selfupdate-rsync or fink selfupdate-cvs to switch to rsync or CVS, respectively.</p></div>
     </a>
-    <a name="status">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.7: ¿Cómo puedo ver cual es el estatus actual de los espejos rsync?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Yes, go to http://finkmirrors.net/status.html</p></div>
-    </a>
     <a name="Master">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.8: ¿Qué es un servidor espejo de archivos de distribución?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>3.7: ¿Qué es un servidor espejo de archivos de distribución?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Sometimes it is hard to fetch a certain version of sources from the Internet. Distfile mirrors hold and mirror the source packages needed by fink to build its source packages.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:

@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 编译（２）";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题"><link rel="prev" href="comp-general.php?phpLang=zh" title="一般性编译问题">';
 
 
@@ -40,6 +40,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
           <code>xfree86-base-threaded</code> 和 <code>xfree86-rootless-threaded</code>
         </p><p>你可以使用通常的办法：对源代码安装用户 "<code>fink install</code>"；对二进制安装用户 "<code>apt-get install</code>" or <code>dselect</code> 。</p></div>
     </a>
+
     <a name="cctools">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.4: "当我安装 KDE 的时候，我碰到下面的信息：'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这个晦涩的消息表明你需要安装 December 2002 开发工具。</p></div>
@@ -52,10 +53,12 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
 fink install libiconv</pre></div>
     </a>
     <a name="cplusplus-filt">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install <code>g77</code> because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install a package because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form </p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>since updating to Tiger, then you need to do the following:</p><ul>
-          <li>Flush out your old Developer Tools versions via running <pre>/Developer/Tools/uninstall-devtools.pl</pre>in a terminal.  Then install XCode (2.0 or later).<p></p></li>
-          <li>Reinstall  <code>BSD.pkg</code> (from the Tiger system installation).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
+           <li>Reinstall <code>BSD.pkg</code> (from your installation media).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
+	</ul><p>You also might also need to make sure you don't have any ancient Developer/Xcode Tools stuff laying around:</p><ul>
+	  <li><b>10.4:  </b>Flush out your old Xcode Tools versions via running<code> /Developer/Tools/uninstall-devtools.pl </code>in a terminal.  Then (re)install XCode (2.4.1 or later).</li>
+	  <li><b>10.5:  </b>Flush out your old Xcode Tools versions via running<code> /Developer/Library/uninstall-devtools </code>in a terminal.  Then (re)install Xcode (3.0 or later).</li>
         </ul><p>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
@@ -69,11 +72,11 @@ An old version of the <code>gettext-tools</code> package may be
 preventing you from updating <code>gettext</code>.</p></div>
     </a>
    <a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This problem affects machines with OS 10.5.2 pre-installed.
-      There is currently a bug in Apple's X11 in that a file in it that is used
-    for building references <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code>,
-    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p><p>The workaround is to run the following command to fix the file:</p><pre>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</pre></div>
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
+    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
+    <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (or other versions of libraries in
+    <code>/usr/X11/lib/</code>).</p><p>The current wisdom on the best
+    fix for such an issue is to install Xcode 3.1.3.</p></div>
   </a>
     <a name="all-others">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.9: I'm having issues with a package that isn't listed here.</b></p></div>

@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.14 2009/07/27 18:44:40 dmacks Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.15 2009/10/25 05:21:38 babayoshihiko Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -170,14 +170,6 @@ plataformas.
         <p>By using fink selfupdate-rsync or fink selfupdate-cvs to switch to rsync or CVS, respectively.</p>
       </answer>
     </faqentry>
-    <faqentry name="status">
-      <question>
-        <p>¿Cómo puedo ver cual es el estatus actual de los espejos rsync?</p>
-      </question>
-      <answer translated="no">
-        <p>Yes, go to http://finkmirrors.net/status.html</p>
-      </answer>
-    </faqentry>
     <faqentry name="Master">
       <question>
         <p>¿Qué es un servidor espejo de archivos de distribución?</p>
@@ -190,16 +182,40 @@ plataformas.
   <chapter filename="upgrade-fink">
     <title>Upgrading Fink (version-specific troubleshooting)</title>
     <shorttitle>Upgrading Fink</shorttitle>
-    <faqentry name="gcc-0.16.0">
-      <question>
-        <p>Acabo de actualizar a 0.16.0 y me dice "Your version of the gcc 3.3 compiler is out of date". ¿Qué hago?</p>
+    <faqentry name="leopard-bindist1">
+      <question translated="no">
+        <p>Fink doesn't see new packages even after I've run an rsync or cvs selfupdate.</p>
       </question>
       <answer translated="no">
-        <p>As of the release of Panther, Fink has been updated to understand the newer gcc 3.3 compiler. In order to be able to support users on both 10.2 (Jaguar) and 10.3 (Panther), we are requiring all users to install the latest gcc 3.3 update (August 2003 Updater, and the Panther XCode tools, respectively). You will get this warning if you installed the earlier XCode beta updater for Mac OS X 10.2's December 2002 developer tools. If you're on 10.2, the command:</p>
-        <codeblock>gcc --version</codeblock>
-        <p>should tell you what version you have. As of October 24th, 2003, we require build 1493 or higher.</p>
-        <p>10.2 users can download the August 2003 Updater from <link url="http://developer.apple.com/">Apple Developer Connection</link> (free registration required).</p>
-        <p>10.3 users should upgrade to a Panther-compatible developer tools release (i.e. XCode). A CD with XCode should have been provided with your Panther media.</p>
+        <p>This is a current issue for people on OS 10.5 using the binary installer. Check your version:</p>
+        <codeblock>fink --version</codeblock>
+        <p>If you currently have <code>fink-0.27.13-41</code>, which is the version that comes
+	with the installer, or <code>fink-0.27.16-41</code>, then there are a couple of options.</p>
+	<ul>
+	  <li>
+	    <em>rsync (preferred):</em>  Run the sequence below
+	    <codeblock>fink selfupdate
+fink selfupdate-rsync
+fink index -f
+fink selfupdate</codeblock>
+	  </li>
+	  <li>
+	    <em>cvs (alternate):</em>  Run
+	    <codeblock>fink selfupdate-cvs
+fink index -f
+fink selfupdate</codeblock>
+	  </li>
+	</ul>
+        <p>Either will bring you the newest <code>fink</code> version.</p>
+      </answer>
+    </faqentry>
+    
+    <faqentry name="leopard-bindist2">
+      <question translated="no">
+        <p>When I try to install stuff I get 'Can't resolve dependency "fink (>= 0.28.0)"'</p>
+      </question>
+      <answer translated="no">
+        <p>Apply the fix from <xref section="leopard-bindist1">the prior entry.</xref></p>
       </answer>
     </faqentry>
   </chapter>
@@ -348,13 +364,45 @@ plataformas.
         users like you is what we use to determine if something is ready for
         stable! To find out the maintainer of a package, run <code>fink info
         <em>packagename</em></code>.</p>
-	<p><em>New in </em><code>fink-0.26</code><em>:</em> If you run <code>fink configure</code> one of the questions will ask whether you want to turn the unstable trees on.  You will need to run <code>fink selfupdate; fink index; fink scanpackages</code> afterward.  <em>Note: </em>you must have either rsync or cvs updating turned on to get new package descriptions.</p>
-        <p>To configure Fink to use unstable when you have an earlier version of the <code>fink</code> tool than <em>0.26</em>, edit
-        <filename>/sw/etc/fink.conf</filename>, add <code>unstable/main</code>
-        and <code>unstable/crypto</code> to the <code>Trees:</code> line, and
-        then run <code>fink selfupdate; fink index; fink scanpackages</code>.  Rsync or cvs updating is required as above.</p>
-        <p>Also note, if you don't want to install any more from unstable than
-        your specific package(s) and its (their) dependencies, don't use the
+	<p>For <code>fink-0.26</code> and later:  If you run
+	<code>fink configure</code> one of the questions will ask whether you
+	want to turn the unstable trees on.  </p>
+	<p>To configure Fink to use unstable
+	when you have an earlier version of the <code>fink</code> tool than
+	<em>0.26</em>, edit
+        <filename>/sw/etc/fink.conf</filename>, and add <code>unstable/main</code>
+        and <code>unstable/crypto</code> to the <code>Trees:</code> line.</p>
+	<p>If you use Fink Commander, then there is a Preference to use unstable
+	packages.</p>
+	<p>None of these options actually download the unstable tree's package
+	descriptions.You'll need to turn on <code>rsync</code> or
+	<code>cvs</code> updating to do this, which is not set up by default on a new
+	Fink installation.  The following command sequence will set you up on
+	a new Fink installation:</p>
+	<codeblock>fink selfupdate</codeblock>
+	<p>followed by</p>
+	<codeblock>fink selfupdate-rsync</codeblock>
+	<p>or</p>
+	<codeblock>fink selfupdate-cvs</codeblock>
+	<p>and then</p>
+	<codeblock>fink index -f
+fink scanpackages</codeblock>
+	<p><em>Note:</em>  There are Fink Commander analogs for everything except
+	<code>fink index -f</code>.  You will have to use the command line for that.</p>
+	<p>If you're already set up with <code>rsync</code> or <code>cvs</code>
+	updating, then the following
+	command sequence (or the Fink Commander analogs) will suffice:</p>
+	<codeblock>
+fink selfupdate
+fink index
+fink scanpackages
+	</codeblock>
+	<p>If you're not sure what your update method is, check
+	<code>fink --version</code> in at a command line
+	and see if that mentions <code>cvs</code> or <code>rsync</code>.</p>
+	<p>If you don't want to install any more from unstable than
+        your specific package(s) and its (their) dependencies, (and any base packages
+	that got updated) don't use the
         <code>update-all</code> command until you turn the unstable tree
         back off.</p>
       </answer>
@@ -504,6 +552,15 @@ Failed: Updating using CVS failed. Check the error messages above.</codeblock>
         the output of selfupdate-cvs, and try again:</p>
         <codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</codeblock>
+		<p>If you get errors that mention <em>cvs.sourceforge.net</em>:</p>
+		<codeblock>
+cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
+2401 failed: Operation timed out
+</codeblock>
+	      <p>this is because of a restructuring of the CVS servers at sourceforge.net in 2006.  Fink files are now at <em>fink.cvs.sourceforge.net</em>.</p>
+	      <p>Check your Distribution version, e.g. via</p>
+	      <codeblock>fink --version</codeblock>
+	      <p>If that shows <code>10.4-transitional</code>, then you need to update to the regular 10.4 distribution.  An <link url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">update script</link> has been created to assist with that.</p>
       </answer>
     </faqentry>
     <faqentry name="kernel-panics">
@@ -687,34 +744,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
         <code>.profile</code>) so that it gets run all of the time.</p>
       </answer>
     </faqentry>
-    <faqentry name="perl-undefined-symbol">
-      <question>
-        <p>W ¿Por qué me aparecen un montón de errores con "dyld: perl undefined symbols" cuando corro comandos Fink?</p>
-      </question>
-      <answer translated="no">
-        <p>If you see an error sequence like the following:</p>
-        <codeblock>dyld: perl Undefined symbols: 
-_Perl_safefree
-_Perl_safemalloc 
-_Perl_saferealloc 
-_Perl_sv_2pv 
-_perl_call_sv
-_perl_eval_sv 
-_perl_get_sv</codeblock>
-        <p>then what has probably happened is that you updated Perl to a new
-        version and now <filename>storable-pm</filename> needs to be updated.
-        You should update Fink. During the process you will be prompted to
-        install either <filename>perl-core</filename> or
-        <filename>system-perl</filename>; choose the latter. In addition,
-        <filename>storable-pm</filename> should also get updated.</p>
-        <p>For OS 10.1.x, perform the following commands (you'll need the
-        Developer Tools):</p>
-        <codeblock>sudo mv /sw/lib/perl5/darwin/Storable.pm /tmp 
-sudo mv /sw/lib/perl5/darwin/auto/Storable /tmp 
-fink rebuild storable-pm 
-fink selfupdate-cvs</codeblock>
-      </answer>
-    </faqentry>
+
     <faqentry name="cant-upgrade">
       <question>
         <p>No puedo actualizar la versión Fink.</p>
@@ -888,35 +918,7 @@ Failed test (./Command/chowname.t at line 27)
         <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
       </answer>
     </faqentry>
-    <faqentry name="four-oh-three">
-      <question translated="no">
-        <p>I keep getting 403 errors when I use <code>apt-get</code> or <code>dselect</code> or the Fink Commander Binary menu.</p>
-      </question>
-      <answer translated="no">
-        <p>There have been problems with the Sourceforge download servers, and therefore we are moving the binary distribution repository for this very reason.</p>
-        <ul>
-          <li>If you have the Developer Tools installed then install the latest version of the <code>fink-mirrors</code> package (&gt;= 0.24.4.1), and then reinstall <code>fink</code>, either via:
-<codeblock>fink reinstall fink</codeblock>
-<p>or</p>
-<codeblock>sudo apt-get install --reinstall fink</codeblock>
-<p>(if for whatever reason you don't want to use the source distribution).</p>
-</li>
-          <li>If you don't have the Developer Tools installed, then you'll have to set things up manually.  Edit your <filename>sources.list</filename> file as root, e.g..via
-<codeblock>sudo pico /sw/etc/apt/sources.list</codeblock>
-<p>(use your favorite Unix-line-ending-compatible text editor). Change the lines that start with "Official binary distribution:" thusly:</p>
-<codeblock># Official binary distribution: download location for packages
-# from the latest release
-deb http://bindist.finkmirrors.net/bindist 10.3/release main crypto
 
-# Official binary distribution: download location for updated
-# packages built between releases
-deb http://bindist.finkmirrors.net/bindist 10.3/current main crypto</codeblock>
-<p>The above of course assumes you're on 10.3.  If you're on a different OS replace <code>10.3</code> with what your current distribution is.</p>
-<p>Then save your work and quit the editor.  Now update your binary package list again.</p>
-</li>
-        </ul>
-      </answer>
-    </faqentry>
     <faqentry name="fc-cache">
       <question>
         <p>I get a message that says &quot;No fonts found&quot;.</p>
@@ -938,7 +940,10 @@ page and on http://fontconfig.org.</codeblock>
       </question>
       <answer translated="no">
         <p>This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p>
-        <p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility (from the Utilities sub-folder in your Applications folder), select the hard drive in question, choose the <em>First Aid</em> tab, and press <em>Repair Disk Permissions</em>.</p>
+        <p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility (from the Utilities sub-folder in your Applications folder), select the hard drive in question, choose the <em>First Aid</em> tab, and press <em>Repair Disk Permissions</em>.  If that doesn't work, then you may need to set your permissions manually via:</p>
+	<codeblock>
+sudo chmod 1775 /	  
+	</codeblock>
       </answer>
     </faqentry>
     <faqentry name="wrong-arch">
@@ -952,22 +957,7 @@ page and on http://fontconfig.org.</codeblock>
         <p>and then download the disk image for Intel machines from <link url="http://www.finkproject.org/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
-    <faqentry name="sf-cvs-2006">
-	      <question>
-		<p>I haven't been able to do a cvs selfupdate.</p>
-	      </question>
-	      <answer translated="no">
-		<p>If you get errors that include lines like:</p>
-		<codeblock>
-cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
-2401 failed: Operation timed out
-</codeblock>
-		<p>this is because of a recent restructuring of the CVS servers at sourceforge.net.  Fink files are now at <code>fink.cvs.sourceforge.net</code>.  You'll need to update the <code>fink-mirrors package</code> via the binary tools:</p>
-<codeblock>
-sudo apt-get update ; sudo apt-get install fink-mirrors
-</codeblock>  
-	      </answer>
-	      </faqentry>
+    
   </chapter>
   <chapter filename="comp-general">
     <title>Compile Problems - General</title>
@@ -1053,24 +1043,7 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock
         package that you are trying to install.</p>
       </answer>
     </faqentry>
-    <faqentry name="weak_lib">
-      <question>
-        <p>Después de que instalé  las Herramientas de Desarrollo de Diciembre del 2002 me aparece un mensaje sobre "librerías débiles" ("weak libraries").
-</p>
-      </question>
-      <answer translated="no">
-        <p>This is new with the December 2002 Tools. You may occasionally see
-        messages like (choosing libgdk-pixbuf as an example):</p>
-        <codeblock>ld: warning dynamic shared library:
-/sw/lib/libgdk-pixbuf.dylib not made a weak library in output with
-MACOSX_DEPLOYMENT_TARGET environment variable set to: 10.1</codeblock>
-        <p>You may regard these as harmless. If you are curious, read through
-        the release notes in the developer documentation directory, especially
-        GCC's and the linker's, for more info. It essentially has to do with
-        whether missing symbols at runtime is considered a fatal error on
-        startup or not, for applications that use weak references.</p>
-      </answer>
-    </faqentry>
+
     <faqentry name="mv-failed">
       <question>
         <p>¿Qué quiere decir "execution of mv failed, exit code 1" cuando trato de instalar un paquete?</p>
@@ -1273,14 +1246,7 @@ Failed: compiling gtk+2-2.2.4-2 failed</codeblock>
         hand, if your error looks like:</p>
         <codeblock>ld: Undefined symbols: _FT_Access_Frame</codeblock>
         <p>this is typically due to a residual file from a prior installation
-        of X11. Reinstall the X11 SDK.</p> 
-<p>Finally, if you get an error like</p>
-        <codeblock>dyld: klines Undefined symbols: /sw/lib/libqt-mt.3.dylib 
-undefined reference to _FT_Access_Frame</codeblock>
-        <p>then you probably have a binary version that built fine with
-        <code>gcc3.3</code> on Jaguar but doesn't work on Panther. This has
-        now been updated, so you you just need to update your packages, e.g.
-        via <code>sudo apt-get update ; sudo apt-get dist-upgrade</code>.</p>
+        of X11. Reinstall the X11 SDK.</p>
       </answer>
     </faqentry>
     <faqentry name="dlfcn-from-oo">
@@ -1365,18 +1331,33 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
           <em>Note:  </em>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p>
       </answer>
     </faqentry>
-    <faqentry name="gettext">
-      <question translated="no">
-        <p>Whenever I try to build from source, Fink keeps waffling between <code>gettext-dev</code> and <code>libgettext3-dev</code>.</p>
+
+    <faqentry name="alternates">
+      <question>
+        <p>Whenever I try to build from source, Fink keeps waffling between alternate versions of the same library.</p>
       </question>
-      <answer translated="no">
-        <p>Some packages that need <code>gettext</code> headers to build have been updated to use <code>libgettext3-dev</code> and some still use <code>gettext-dev</code>.  Consequently, Fink may try to switch to whichever one isn't currently installed in order to satisfy a build dependency for some package that you're trying to update.  In addition, the <code>fink </code> tool treats <code>gettext-dev</code> as essential, and will install it any time you selfupdate.</p>
-        <p>Similar behavior can happen for other pairs of packages, too. </p>
-        <p>Unfortunately, due to limitations in the build-dependency engine, you may find that your build bombs because you've swapped in one of these but some later package in your build chain wants the other one.  You can usually proceed by repeating your update command again.</p>
-        <p>In extreme cases you may wind up having to install those packages which build-depend on <code>gettext-dev</code> separately from those which want <code>libgettext3-dev</code> (or whichever pair are causing problems).  You may even have to install packages one by one.</p>
-        <p>A permanent fix should hopefully be available in <code>fink-0.24.9</code>.</p>
+      <answer>
+        <p>Often, in a complicated build tree, you may find that some of the packages
+	depend on a particular version of a library, and other depend on a different one
+	(e.g. <code>db47</code> vs. <code>db44</code>).  Consequently, Fink may try to
+	switch to whichever one isn't currently installed in order to satisfy the
+	build dependency for the current package that you're trying to update.</p>
+       <p>Unfortunately, due to limitations in the build-dependency engine, you
+      may wind up with the dreaded</p>
+      <codeblock>Fink::SysState: Could not resolve inconsistent dependencies</codeblock>
+      <p>message when trying a sufficiently complicated <code>update-all</code>. This generally gives you a
+      command to try to resolve the issue:</p>
+      <codeblock>
+fink scanpackages
+sudo apt-get update
+sudo apt-get install foo=1.23-4	
+      </codeblock>
+      <p>but this may not work for sufficiently complicated updates.  You might need
+      to update packages one-by-one, at least for a while.
+      </p>
       </answer>
     </faqentry>
+
     <faqentry name="python-mods">
       <question>
         <p>I get errors involving <code>MACOSX_DEPLOYMENT_TARGET </code>when I try to build a Python module.</p>
@@ -1503,28 +1484,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
         binaries.</p>
       </answer>
     </faqentry>
-    <!--obsolete><faqentry name="apple-x11" >
-<question>
-<p>I've installed the Apple X11 package, but system-xfree86 won't install.</p>
-</question>
-<answer translated="no">
-<p>If you get error messages like the following:</p>
-<codeblock>- missing /usr/X11R6/lib/libX11.dylib
-- missing /usr/X11R6/lib/libXpm.dylib
-- missing /usr/X11R6/lib/libXaw.dylib
-- missing /usr/X11R6/include/X11/Xlib.h
 
-Your XFree86 installation is missing or incomplete. Please make sure you have
-an XFree86 release installed and retry the installation of the system-xfree86
-package.
-</codeblock>
-<p>then you need to install the SDK package as well as the User package. If you are running Panther, the SDK is on the XCode disk and is <em>NOT</em> automatically installed. The SDK as well as X11 beta for Jaguar is no longer available, and you'll either have to upgrade to Panther or use Fink's xfree86.</p>
-<p>If, on the other hand, you get the following message:</p>
-<codeblock>An error occurred trying to find your XFree86 installation's
-version. This really shouldn't happen, so I'm bailing. :(</codeblock>
-<p>then you need to update your package descriptions and install a newer version of system-xfree86. If you are installing Apple X11 Beta 3, then you will need <filename>system-xfree86-4.2-11</filename> or later.</p>
-</answer>
-</faqentry><-->
     <faqentry name="cctools">
       <question>
         <p>¿Cuando intento instalar KDE, me sale el siguiente mensaje: 'Can't  resolve dependency "cctools (>= 446-1)"'</p>
@@ -1557,15 +1517,19 @@ fink install libiconv</codeblock>
     </faqentry>
     <faqentry name="cplusplus-filt">
       <question translated="no">
-        <p>i can't install <code>g77</code> because <filename>c++filt</filename> is missing.  Where do I get it?</p>
+        <p>i can't install a package because <filename>c++filt</filename> is missing.  Where do I get it?</p>
       </question>
       <answer translated="no">
         <p>If you get errors of the form </p>
         <codeblock>xgcc: installation problem, cannot exec `c++filt': No such file or directory</codeblock>
         <p>since updating to Tiger, then you need to do the following:</p>
         <ul>
-          <li>Flush out your old Developer Tools versions via running <codeblock>/Developer/Tools/uninstall-devtools.pl</codeblock>in a terminal.  Then install XCode (2.0 or later).<p></p></li>
-          <li>Reinstall  <code>BSD.pkg</code> (from the Tiger system installation).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
+           <li>Reinstall <code>BSD.pkg</code> (from your installation media).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
+	</ul>
+	<p>You also might also need to make sure you don't have any ancient Developer/Xcode Tools stuff laying around:</p>
+	<ul>
+	  <li><em>10.4:  </em>Flush out your old Xcode Tools versions via running<code> /Developer/Tools/uninstall-devtools.pl </code>in a terminal.  Then (re)install XCode (2.4.1 or later).</li>
+	  <li><em>10.5:  </em>Flush out your old Xcode Tools versions via running<code> /Developer/Library/uninstall-devtools </code>in a terminal.  Then (re)install Xcode (3.0 or later).</li>
         </ul>
         <p>
 1) Flush out your old
@@ -1586,15 +1550,14 @@ preventing you from updating <code>gettext</code>.</p>
     </faqentry>
   <faqentry name="Leopard-libXrandr">
     <question translated="no">
-      <p>I can't install <em>gtk+2</em> on OS 10.5.2 because <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> is missing.</p>
+      <p>I can't install <em>gtk+2</em> on OS 10.5</p>
     </question>
     <answer translated="no">
-      <p>This problem affects machines with OS 10.5.2 pre-installed.
-      There is currently a bug in Apple's X11 in that a file in it that is used
-    for building references <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code>,
-    while it actually has <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code>.</p>
-      <p>The workaround is to run the following command to fix the file:</p>
-    <codeblock>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</codeblock>
+    <p>Typically this involves missing libraries, such as:   <filename>/usr/X11/lib/libXrandr.2.0.0.dylib</filename> or 
+    <filename>/usr/X11/lib/libXdamage.1.1.0.dylib</filename> (or other versions of libraries in
+    <filename>/usr/X11/lib/</filename>).</p>
+    <p>The current wisdom on the best
+    fix for such an issue is to install Xcode 3.1.3.</p>  
     </answer>
   </faqentry>
     <faqentry name="all-others">
@@ -1673,16 +1636,9 @@ preventing you from updating <code>gettext</code>.</p>
         <!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->
         <p>When compiling something yourself outside of Fink, the compiler and
         linker need to be told where to find the Fink-installed libraries and
-        headers. For a package that uses standard configure/make process, you
-        need to set some environment variables:</p>
-        <p>-tcsh-</p>
-        <codeblock>setenv CFLAGS -I/sw/include 
-setenv LDFLAGS -L/sw/lib 
-setenv CXXFLAGS $CFLAGS 
-setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
-setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
-setenv MACOSX_DEPLOYMENT_TARGET 10.4</codeblock>
+		headers.  It is also necessary to tell the compiler to use the
+		appropriate target architecture.  For a package that uses standard
+		configure/make process, you need to set some environment variables:</p>
         <p>-bash-</p>
         <codeblock>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
@@ -1690,8 +1646,18 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
 export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
-export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
-	<p>(assuming that the build system is running OS 10.4 or later)</p>
+export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.5</codeblock>
+        <p>-tcsh-</p>
+        <codeblock>setenv CFLAGS -I/sw/include 
+setenv LDFLAGS -L/sw/lib 
+setenv CXXFLAGS $CFLAGS 
+setenv CPPFLAGS $CXXFLAGS 
+setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
+setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
+setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
+setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
+	<p>(assuming that the build system is running OS 10.5 or later)</p>
         <p>It is often easiest just to add these to your startup files (e.g.
         <filename>.cshrc</filename> | <filename>.profile</filename>) so they
         are set automatically. If a package does not use these variables, you
@@ -1964,73 +1930,7 @@ export MACOSX_DEPLOYMENT_TARGET=10.4</codeblock>
         <code>/usr/bin/X11R6</code> in your PATH.</p>
       </answer>
     </faqentry>
-    <!--
-<faqentry name="xfree-keymapping" >
-#<question>
-<p>I just upgraded to MacOS X 10.1 and now XFree86 always quits immediately. In the messages it says &quot;assert failed on line 454 of darwinKeyboard.c!&quot;. What's wrong?</p>
-</question>
-<answer translated="no">
-	<p>This is a known problem on 10.1. You must use the &quot;Load from file&quot; keymapping option since the default option (loading it from the kernel) doesn't work anymore. The setting is in the XDarwin Preferences dialog. Be sure that a file is selected (e.g. USA.keymapping) - simply activating the check box may not be sufficient with some versions. If you can't get to the Preferences dialog because you disabled all splash screens, you can delete <code>~/Library/Preferences/org.xfree86.XDarwin.plist</code> to get it back, then start XDarwin and go to the Preferences dialog while the splash screen is displayed. Alternatively, you can edit that file manually in a text editor to enable the keymapping option (the UseKeymappingFile and KeymappingFile bits). </p>
-<p>As a last resort, you can run <code>startx -x- -quartz -keymap
-USA.keymapping</code> from Terminal.app.
-If this still doesn't work, you have another problem in addition to
-the keymapping problem that prevents XDarwin from starting.
-You'll get a bunch of diagnostic messages in Terminal.app to help you
-sort this out.
-</p>
-</answer>
-</faqentry>
--->
-    <faqentry name="xterm-error">
-      <question>
-        <p>xterm falla con: "dyld: xterm Undefined symbols: xterm undefined  reference to _tgetent expected to be defined in /usr/lib/libSystem.B.dylib".</p>
-      </question>
-      <answer translated="no">
-        <p>This is caused by using a 10.1 version of XFree86 on 10.2. You must
-        upgrade to a 10.2 version.</p>
-        <p>If you are using the Fink <code>xfree86</code> packages, then you
-        can get an upgrade by the usual means ("<code>fink selfupdate-cvs ;
-        fink update-all</code>" for installation from source, <code>fink
-        selfupdate ; ; sudo apt-get update; sudo apt-get dist-upgrade</code>"
-        for installation from binaries.</p>
-        <p>If you have installed XFree86 by other means, you can find patches
-        to bring you up to date at the <link url="http://mrcla.com/XonX">XonX
-        web site</link>.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="libXmuu">
-      <question>
-        <p>Cuando quiero abrir XFree86 aparece uno de los siguientes errores: "dyld: xinit can't open library: /usr/X11R6/lib/libXmuu.1.dylib" or  "dyld: xinit can't open library: /usr/X11R6/lib/libXext.6.dylib"</p>
-      </question>
-      <answer translated="no">
-        <p>You are missing a file that is supposed to be installed by
-        <code>xfree86-base-(threaded)-shlibs</code>. You should reinstall it
-        using <code>fink reinstall xfree86-base-shlibs</code> (<code>fink
-        reinstall xfree86-base-threaded-shlibs</code> if you are using the
-        threaded XFree86 packages) for source, or <code>sudo apt-get install
-        --reinstall xfree86-base-shlibs</code> for binaries.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="apple-x-bugs">
-      <question>
-        <p>Tenía instalado XFree86 de Fink, lo reemplacé con el X11 de Apple, y ahora todo se cuelga!</p>
-      </question>
-      <answer translated="no">
-        <p>First of all, if you previously had the "threaded" versions of
-        Fink's XFree86 packages installed, you may need to rebuild the
-        application that is crashing. Some programs check for the availability
-        of threading at build time, and then from then on believe that
-        threading is available to them.</p>
-        <p>Secondly, you may have just hit an Apple X11 bug. As of the time of
-        this writing, a number of bugs are known by the Apple team and are
-        being worked on.</p>
-        <p>If you have general questions regarding Apple's X11 that are not
-        really related to Fink, you may want to check <link url="http://www.lists.apple.com/x11-users">Apple's official discussion
-        list on X11</link>. They also have also recommended that bugs in X11
-        be <link url="http://developer.apple.com/bugreporter">submitted to the
-        Apple bug reporter</link>.</p>
-      </answer>
-    </faqentry>
+
     <faqentry name="apple-x-delete">
       <question>
         <p>Quiero que la tecla para borrar en el X11 de Apple se comporte como la tecla en Xdarwin.</p>
@@ -2082,85 +1982,65 @@ exec metacity &amp; exec gnome-session</codeblock>
       </answer>
     </faqentry>
     <faqentry name="apple-x11-wants-xfree86">
-      <question>
-        <p>Instalé el X11 de Apple en Panther pero Fink aun insiste en querer instalar xfree86.</p>
+      <question translated="no">
+        <p>I'm having problems with X11 and Fink.</p>
       </question>
       <answer translated="no">
         <p>There are two possibilities to consider.</p>
         <ul>
           <li>
-            <em>You are installing from binaries:</em> If you are running a
-          version of the <code>fink</code> package that is earlier than 0.17.0
-          (such as the version that comes with the Fink-0.6.2 installer), then
-          updating fink may solve your problem immediately, e.g.
-          via<codeblock>sudo apt-get update
-sudo apt-get install fink</codeblock>
+            <em>You are installing from binaries:</em>
+            <p>Typically what you need to do is reinstall the X11User package,
+	    since the installer application occasionally misses installing a file.
+	    You may need to repeat this multiple times. Running</p>
+	    <codeblock>fink list -i system-xfree86</codeblock>
+	    <p>should show that the <code>system-xfree86</code> and
+	    <code>system-xfree86-shlibs</code> packages are installed, and</p>
+	    <codeblock>fink list x11</codeblock>
+	    <p>should indicate that the <code>x11-shlibs</code> and <code>x11</code> virtual
+	    packages are present.</p>
+	    <p>If reinstalling the X11User package doesn't work, then consult the
+	    <xref section="special-x11-debug">special debug</xref> instructions,
+	    below.</p>
           </li>
           <li>
-            <em>You are installing from source: </em>You should first update
-          <code>fink</code>, e.g. via a <codeblock>fink selfupdate</codeblock>Then you need to (re)install the X11SDK, which
-          is on the Xcode CD, and is <em>not</em> installed by default. Even
-          if you install XCode, the X11SDK is <em>not</em> installed by
-          default. It has to be installed either with a custom Xcode install,
-          or by clicking on the <code>X11SDK</code> pkg in the
-          <code>Packages</code> folder.</li>
-        </ul>
-        <p>For either case, you can check your installation by running</p>
-        <codeblock>fink-virtual-pkgs</codeblock>
-        <p>and checking to see that the
-        <code>Package: system-xfree86 </code>and <code>Package: system-xfree86-shlibs</code> (as well as the <code>Package: system-xfree86-dev</code>, if you've installed the SDK) sections are
-        present and that the <code>Provides:</code> lines contain
-        <code>x11 </code>and <code>x11-shlibs</code> (and
-        <code>x11-dev</code>), respectively</p>
-        <p>If you don't see everything properly installed, the safest way to
-        fix this error is to remove all older copies of xfree86 or
-        system-xfree86 and reinstall Apple's X11 (and the X11SDK, if you're
-        going to be installing packages from source). You may see warnings
-        from the first line, which you can ignore:</p>
-        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \ 
-xfree86-base xfree86-base-shlibs; rm -rf /Library/Receipts/X11SDK.pkg \
-/Library/Receipts/X11User.pkg; fink selfupdate; fink index</codeblock>
-        <p>Then, reinstall X11 from the third Panther CD (and the X11SDK from the
-        Xcode CD).</p>
-        <p>Note: <code>system-xfree86</code> no longer requires the X11SDK for
-        binary installs if you have <code>fink-0.17.0</code> or later.</p>
-        <p>If you are still having problems and you are running
-        <code>fink-0.19.0</code> or later then you can run</p>
-        <codeblock>fink-virtual-pkgs --debug</codeblock>
-        <p>to get information about what's missing. </p>
-        <p>If you are running an earlier version of <code>fink</code>, then
-        there is a Perl script (courtesy of Martin Costabel) that you can
-        download and run to get the same information.</p>
-        <ul>
-          <li>Get it here: <link url="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</link>
-          </li>
-          <li>Save it wherever you like.</li>
-          <li>Run it in a terminal window via <codeblock>perl fink-x11-debug</codeblock>
-          </li>
+            <em>You are installing from source:</em>
+	    <p>Typically this error means that you need to (re)install the X11SDK,
+	    which is <em>mandatory</em> if you want to build packages from source.
+            It is in the Xcode Tools folder of a Tiger DVD, or (Optional
+            Installs/)Xcode Tools/Packages on your Leopard DVD(s). If you
+            run</p>
+            <codeblock>fink list -i system-xfree86  </codeblock>
+            <p>it should show the <code>system-xfree86</code>,
+	    <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code>
+	    packages as installed.  If the <code>-dev</code> package is missing,
+	    reinstall the X11SDK, since sometimes the Apple Installer misses a
+	    file.  You may need to keep doing this.  If either of the other two
+	    are missing, then reinstall the X11User package (same reason).  At
+	    this point</p>
+	    <codeblock>fink list x11</codeblock>
+	    <p>should indicate that the <code>x11-dev</code>, <code>x11-shlibs</code>,
+	    and <code>x11</code> virtual packages are present.</p>
+	    <p>If reinstalling the X11SDK or X11User package doesn't work, then consult the
+	    <xref section="special-x11-debug">special debug</xref> instructions,
+	    below.</p>
+           </li>
         </ul>
       </answer>
     </faqentry>
-    <faqentry name="wants-xfree86-on-upgrade">
-      <question>
-        <p>Cambié la version de Fink 10.2 a 10.2-gcc3.3 ó 10.3, tengo instalado el X11 de Apple, y Fink me pide que instale XFree86.</p>
-      </question>
-      <answer translated="no">
-        <p>You may need to remove one of the old place-holder packages: <filename>system-xfree86</filename>, <filename>system-xfree86-42</filename>, or <filename>system-xfree86-43</filename>.  Fink now figures out if you have a manually installed X11 flavor, e.g. Apple's, and generates virtual packages. Because other packages depend on <filename>system-xfree86</filename>, you must use the command</p>
-        <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43</codeblock>
-        <p>to remove the out-of-date versions.
-
-You can check your installation by running</p>
-        <codeblock>fink-virtual-pkgs</codeblock>
-        <p>and checking to see that the <code>Package: system-xfree86</code> and <code>Package: system-xfree86-shlibs</code> sections are present and their provides: lines contains <code>x11</code> and <code>x11-shlibs</code>, respectively.  If you installed the X11SDK, then you should also see <code>Package: system-xfree86-dev</code>.</p>
-        <p>If you are still having problems then refer to the <xref section="apple-x11-wants-xfree86">Fink wants XFree86 on 10.3</xref> or <xref section="apple-x11-beta-wants-xfree86">Fink wants Xfree86 on 10.2-gcc3.3</xref> entries, above.</p>
-      </answer>
-    </faqentry>
+    
     <faqentry name="special-x11-debug">
       <question translated="no">
         <p>I'm still having problems with X11 and Fink.</p>
       </question>
       <answer translated="no">
         <p>If the hints in the  <xref section="apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</xref> or <xref section="wants-xfree86-on-upgrade">X11 and upgrade from 10.2</xref> entries don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p>
+	<p>On Leopard, use</p>
+<codeblock>
+sudo pkgutil --forget com.apple.pkg.X11User
+sudo pkgutil --forget com.apple.pkg.X11SDKLeo
+</codeblock>
+<p>Then, on either 10.4 or 10.5, run</p>
         <codeblock>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
@@ -2168,9 +2048,11 @@ xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
 fink selfupdate; fink index</codeblock>
-        <p>(the first line may give you warnings about trying to remove nonexistent packages).  Then, reinstall Apple's X11 (and the X11SDK, if needed), or an alternative X11 implementation, like XFree86 or X.org.</p>
-        <p>If you are still having problems and you are running
-        <code>fink-0.19.0</code> or later then you can run</p>
+        <p>(the first line may give you warnings about trying to remove
+	nonexistent packages).  Then, reinstall Apple's X11 (and the X11SDK, if
+	needed), or,
+	if you're on 10.4, an alternative X11 implementation, like XFree86 or X.org.</p>
+        <p>If you are still having problems then you can run</p>
         <codeblock>fink-virtual-pkgs --debug</codeblock>
         <p>to get information about what's missing.</p>
         <p>If you are running an earlier version of <code>fink</code>, then

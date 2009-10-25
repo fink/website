@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Зеркала";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)"><link rel="prev" href="relations.php?phpLang=ru" title="Связь с другими проектами">';
 
 
@@ -45,12 +45,8 @@ include_once "header.ru.inc";
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> При помощи fink selfupdate-rsync или fink selfupdate-cvs можно перейти
                     к rsync или CVS соответственно.</p></div>
         </a>
-        <a name="status">
-            <div class="question"><p><b><? echo FINK_Q ; ?>3.7: Можно ли видеть текущий статус зеркал rsync?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Да, через посредство http://finkmirrors.net/status.html</p></div>
-        </a>
         <a name="Master">
-            <div class="question"><p><b><? echo FINK_Q ; ?>3.8: Что такое зеркало Distfiles?</b></p></div>
+            <div class="question"><p><b><? echo FINK_Q ; ?>3.7: Что такое зеркало Distfiles?</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Иногда сложно извлечь определенную версию исходных кодов
                     из Интернета. Зеркала Distfile удерживают и отражают
                     пакеты исходных кодов, которые необходимы fink для построения своих пакетов исходных кодов.</p></div>

@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 镜像服务器";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）"><link rel="prev" href="relations.php?phpLang=zh" title="与其它项目的关系">';
 
 
@@ -40,12 +40,8 @@ include_once "header.zh.inc";
       <div class="question"><p><b><? echo FINK_Q ; ?>3.6: 我怎么在这两种方法中切换？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 使用 fink selfupdate-rsync 或 fink selfupdate-cvs 来切换到 rsync 或 CVS。</p></div>
     </a>
-    <a name="status">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.7: 我可以看到 rsync 镜像的当前状态吗？</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 可以，访问 http://finkmirrors.net/status.html。</p></div>
-    </a>
     <a name="Master">
-      <div class="question"><p><b><? echo FINK_Q ; ?>3.8: 什么是 Distfiles 镜像？</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>3.7: 什么是 Distfiles 镜像？</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 有些时候从互联网上获取某个版本的源代码会比较困难。Distfile 镜像会保存这些 Fink 需要使用的源代码软件包。</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:

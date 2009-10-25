@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (2)";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2009/07/27 18:44:40';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2009/10/25 05:21:38';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般"><link rel="prev" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般">';
 
 
@@ -64,16 +64,22 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 fink install libiconv</pre></div>
 </a>
     <a name="cplusplus-filt">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: <code>g77</code> がインストールできません。<code>c++filt</code> がないからです。 
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: パッケージがインストールできません。<code>c++filt</code> がないからです。 
         これはどこにありますか?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> もし、Tiger にアップデート後にエラーが</p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>とでたら、以下のようにします:</p><ul>
-          <li>ターミナルで、
-          <pre>/Developer/Tools/uninstall-devtools.pl</pre>
-          	と実行し、古い Developer Tools を削除します。
-          	次に、 XCode (2.0 以降) をインストールします。
-          </li>
           <li>(Tiger のインストーラから)  <code>BSD.pkg</code> をインストールします。
          	<code>/usr/bin/c++filt</code> が現れるまで何度もインストールしてみてください。</li>
+        </ul><ul>
+          <li>10.4: ターミナルで、
+          <pre>/Developer/Tools/uninstall-devtools.pl</pre>
+          	と実行し、古い Developer Tools を削除します。
+          	次に、 XCode (2.4.1 以降) をインストールします。
+          </li>
+          <li>10.5: ターミナルで、
+          <pre>/Developer/Tools/uninstall-devtools.pl</pre>
+          	と実行し、古い Developer Tools を削除します。
+          	次に、 XCode (2.3 以降) をインストールします。
+          </li>
         </ul><p>
 1) Flush out your old
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
@@ -87,15 +93,11 @@ fink install libiconv</pre></div>
         </p></div>
     </a>
   <a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: 
-      <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> がないため <b>gtk+2</b> がインストールできません。</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
-    この問題は、10.5.2.がプリインストールされているマシンに影響します。
-    現在のところ、 Apple X11 に、
-    <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> を参照しているのに、
-    実体が <code>/usr/X11/lib/libXrandr.2.1.0.dylib</code> であるという
-    バグがあります。
-    </p><p>解決するには、以下のコマンドを実行してファイルを修正してください:</p><pre>sudo perl -pi.bak -e 's|2.0.0|2.1.0|' /usr/X11/lib/libXrandr.la</pre></div>
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: OS 10.5 で <b>gtk+2</b> がインストールできません。</b></p></div>
+    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
+    <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (or other versions of libraries in
+    <code>/usr/X11/lib/</code>).</p><p>The current wisdom on the best
+    fix for such an issue is to install Xcode 3.1.3.</p></div>
   </a>
     <a name="all-others">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.9: ここに載っていないパッケージで問題があります。</b></p></div>
