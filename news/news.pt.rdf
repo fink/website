@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>pt</dc:language>
-    <dc:date>2009-10-25T04:16:15-02:00</dc:date>
+    <dc:date>2009-10-27T17:57:33-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Problemas%20com%20o%20servidor">
       <title>Problemas com o servidor</title>

@@ -1,13 +1,13 @@
 <?
 $title = "News";
 $cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/10/25 06:15:55';
+$cvs_date = 'Date: 2009/10/27 19:57:15';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2009-10-24%20Server%20issues"><span class="news-date">2009-10-24: </span><span class="news-headline">Server issues</span></a><?php gray_line(); ?>
+<a name="2009-10-24%20Server%20issues."><span class="news-date">2009-10-24: </span><span class="news-headline">Server issues.</span></a><?php gray_line(); ?>
 	  <p>We have had server issues and as a result the Web site and the
 	  official binary distribution are down, and the rsync servers are stalled.
 	  Whilst we sort this out, you may:</p>
@@ -25,6 +25,15 @@ include_once "header.inc";
 		<code>http://bindist.finkmirrors.net/bindist</code> with
 		<code>http://fink-bindist.gecko.ig42.org</code></li>
 		<li>Run <code>fink scanpackages</code>.</li>
+		<li>When installing packages, if you get a download failure, try
+		electing to download from the original source, typically option (5).
+		In packages with a single source this will say: <b>Retry using
+		original source URL</b> whereas for those which can be downloaded from
+		multiple mirrors you'll see: <b>Retry using next mirror set
+		"MIRRORSETNAME"</b>.  Unfortunately, some package versions aren't
+		available from the original sources anymore, and for those you will
+		have to wait for the mirrors to come back online, or ask on one of the
+		Fink lists if somebody has the tarball available on their system.</li>
 	  </ul>
       <p>We apologise for the inconvenience.</p>
 	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
