@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="pt">
-  <cvsid>$Id: news.pt.xml,v 1.7 2009/10/25 06:15:55 monipol Exp $</cvsid>
+  <cvsid>$Id: news.pt.xml,v 1.8 2009/10/27 20:11:39 monipol Exp $</cvsid>
 
   <newsitem>
     <date>2009-10-24</date>
@@ -26,6 +26,16 @@
 		<code>http://bindist.finkmirrors.net/bindist</code> por
 		<code>http://fink-bindist.gecko.ig42.org</code></li>
 		<li>Run <code>fink scanpackages</code>.</li>
+		<li>Ao instalar pacotes, caso haja uma falha no download, escolha a
+		opção de download do local original, normalmente a opção (5). Em
+		pacotes com um único local de download a opção diz <em>Retry using
+		original source URL</em> enquanto que para os pacotes que podem ser
+		baixados de múltiplos locais a opção diz <em>Retry using next mirror
+		set "MIRRORSETNAME"</em>. Infelizmente, algumas versões de pacotes não
+		estão mais disponíveis nos locais originais e para estes você terá que
+		esperar que os servidores voltem ao ar, ou solicitar em uma das listas
+		de discussão do Fink se alguém possui uma tarball disponível em seus
+		sistemas.</li>
 	  </ul>
       <p>Pedimos desculpas pela inconveniência.</p>
 	</body>

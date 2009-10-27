@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>pt</dc:language>
-    <dc:date>2009-10-27T17:57:33-02:00</dc:date>
+    <dc:date>2009-10-27T18:11:59-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Problemas%20com%20o%20servidor">
       <title>Problemas com o servidor</title>
@@ -30,6 +30,16 @@
 		http://bindist.finkmirrors.net/bindist por
 		http://fink-bindist.gecko.ig42.org
 		Run fink scanpackages.
+		Ao instalar pacotes, caso haja uma falha no download, escolha a
+		opção de download do local original, normalmente a opção (5). Em
+		pacotes com um único local de download a opção diz Retry using
+		original source URL enquanto que para os pacotes que podem ser
+		baixados de múltiplos locais a opção diz Retry using next mirror
+		set "MIRRORSETNAME". Infelizmente, algumas versões de pacotes não
+		estão mais disponíveis nos locais originais e para estes você terá que
+		esperar que os servidores voltem ao ar, ou solicitar em uma das listas
+		de discussão do Fink se alguém possui uma tarball disponível em seus
+		sistemas.
 	  
       <p>Pedimos desculpas pela inconveniência.</p>
 	</description>
@@ -52,6 +62,16 @@
 		http://bindist.finkmirrors.net/bindist por
 		http://fink-bindist.gecko.ig42.org
 		Run fink scanpackages.
+		Ao instalar pacotes, caso haja uma falha no download, escolha a
+		opção de download do local original, normalmente a opção (5). Em
+		pacotes com um único local de download a opção diz Retry using
+		original source URL enquanto que para os pacotes que podem ser
+		baixados de múltiplos locais a opção diz Retry using next mirror
+		set "MIRRORSETNAME". Infelizmente, algumas versões de pacotes não
+		estão mais disponíveis nos locais originais e para estes você terá que
+		esperar que os servidores voltem ao ar, ou solicitar em uma das listas
+		de discussão do Fink se alguém possui uma tarball disponível em seus
+		sistemas.
 	  
       <p>Pedimos desculpas pela inconveniência.</p>
 	</content:encoded>

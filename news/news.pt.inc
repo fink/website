@@ -17,6 +17,16 @@
 		<code>http://bindist.finkmirrors.net/bindist</code> por
 		<code>http://fink-bindist.gecko.ig42.org</code></li>
 		<li>Run <code>fink scanpackages</code>.</li>
+		<li>Ao instalar pacotes, caso haja uma falha no download, escolha a
+		opção de download do local original, normalmente a opção (5). Em
+		pacotes com um único local de download a opção diz <b>Retry using
+		original source URL</b> enquanto que para os pacotes que podem ser
+		baixados de múltiplos locais a opção diz <b>Retry using next mirror
+		set "MIRRORSETNAME"</b>. Infelizmente, algumas versões de pacotes não
+		estão mais disponíveis nos locais originais e para estes você terá que
+		esperar que os servidores voltem ao ar, ou solicitar em uma das listas
+		de discussão do Fink se alguém possui uma tarball disponível em seus
+		sistemas.</li>
 	  </ul>
       <p>Pedimos desculpas pela inconveniência.</p>
 	<a name="2009-08-28%20Fink%20no%20OS%20X%2010.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
