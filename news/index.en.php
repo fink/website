@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/10/27 21:03:23';
+$cvs_date = 'Date: 2009/10/27 21:12:59';
 $metatags = '';
 
 include_once "header.inc";
@@ -24,15 +24,15 @@ include_once "header.inc";
 		line that starts with <code>Mirror-master</code> with
 		<code>Mirror-master: http://fink-dist.gecko.ig42.org</code></li>
 		
-		<li>(bindist) Edit <code>/sw/etc/fink.conf</code> and replace that
-		starts with <code>Mirror-apt:</code> with <code>Mirror-apt:
+		<li>(bindist) Edit <code>/sw/etc/fink.conf</code> and replace the line
+		that starts with <code>Mirror-apt:</code> with <code>Mirror-apt:
 		http://fink-bindist.gecko.ig42.org</code></li>
 
 		<li>(bindist) Edit <code>/sw/etc/apt/sources.list</code> and replace
 		<code>http://bindist.finkmirrors.net/bindist</code> with
 		<code>http://fink-bindist.gecko.ig42.org</code></li>
 
-		<li>Run <code>fink scanpackages</code>.</li>
+		<li>(bindist) Run <code>fink scanpackages</code>.</li>
 	  </ul>
       <p>We apologise for the inconvenience.</p>
 	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>

@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2009-10-27T19:03:43-02:00</dc:date>
+    <dc:date>2009-10-27T19:13:21-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues.">
       <title>Server issues.</title>
@@ -28,15 +28,15 @@
 		line that starts with Mirror-master with
 		Mirror-master: http://fink-dist.gecko.ig42.org
 		
-		(bindist) Edit /sw/etc/fink.conf and replace that
-		starts with Mirror-apt: with Mirror-apt:
+		(bindist) Edit /sw/etc/fink.conf and replace the line
+		that starts with Mirror-apt: with Mirror-apt:
 		http://fink-bindist.gecko.ig42.org
 
 		(bindist) Edit /sw/etc/apt/sources.list and replace
 		http://bindist.finkmirrors.net/bindist with
 		http://fink-bindist.gecko.ig42.org
 
-		Run fink scanpackages.
+		(bindist) Run fink scanpackages.
 	  
       <p>We apologise for the inconvenience.</p>
 	</description>
@@ -57,15 +57,15 @@
 		line that starts with Mirror-master with
 		Mirror-master: http://fink-dist.gecko.ig42.org
 		
-		(bindist) Edit /sw/etc/fink.conf and replace that
-		starts with Mirror-apt: with Mirror-apt:
+		(bindist) Edit /sw/etc/fink.conf and replace the line
+		that starts with Mirror-apt: with Mirror-apt:
 		http://fink-bindist.gecko.ig42.org
 
 		(bindist) Edit /sw/etc/apt/sources.list and replace
 		http://bindist.finkmirrors.net/bindist with
 		http://fink-bindist.gecko.ig42.org
 
-		Run fink scanpackages.
+		(bindist) Run fink scanpackages.
 	  
       <p>We apologise for the inconvenience.</p>
 	</content:encoded>

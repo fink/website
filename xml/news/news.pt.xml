@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="pt">
-  <cvsid>$Id: news.pt.xml,v 1.8 2009/10/27 20:11:39 monipol Exp $</cvsid>
+  <cvsid>$Id: news.pt.xml,v 1.9 2009/10/27 21:12:59 monipol Exp $</cvsid>
 
   <newsitem>
     <date>2009-10-24</date>
@@ -11,31 +11,28 @@
 	  distribuição oficial de binários estão fora do ar, e os servidores rsync
 	  não estão atualizando. Enquanto resolvemos os problemas, você pode:</p>
 	  <ul>
-		<li>Usar o <link
+		<li>(Web site) Usar o <link
 		url="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</link>
 		caso necessite das informações do site;</li>
-		<li>Usar o CVS como seu método de selfupdate caso você necessite de
-		pacotes atualizados. Ele é mais devagar do que o rsync porém está
-		funcionando já que é hospedado no SourceForge.net. Caso queira, você
-		poderá voltar ao rsync mais tarde. Para mudar para o CVS, execute o
-		comando <code>fink selfupdate-cvs</code>;</li>
-		<li>Editar o arquivo <code>/sw/etc/fink.conf</code> e substituir a
-		linha <code>Mirror-apt: http://bindist.finkmirrors.net/bindist</code>
-		por <code>Mirror-apt: http://fink-bindist.gecko.ig42.org</code></li>
-		<li>Editar o arquivo <code>/sw/etc/apt/sources.list</code> e substituir
-		<code>http://bindist.finkmirrors.net/bindist</code> por
+
+		<li>(selfupdate) Se você usa rsync como seu método de selfupdate então
+		edite o arquivo <code>/sw/etc/fink.conf</code> e substitua a linha que
+		começa com <code>Mirror-rsync</code> por <code>Mirror-rsync:
+		rsync://fink.gecko.ig42.org/finkinfo/</code></li>
+
+		<li>(arquivos fontes) Edite o arquivo <code>/sw/etc/fink.conf</code> e
+		substitua a linha que começa com <code>Mirror-master</code> por
+		<code>Mirror-master: http://fink-dist.gecko.ig42.org</code></li>
+
+		<li>(bindist) Edite o arquivo <code>/sw/etc/fink.conf</code> e
+		substitua a linha que começa com <code>Mirror-apt:</code> por
+		<code>Mirror-apt: http://fink-bindist.gecko.ig42.org</code></li>
+
+		<li>(bindist) Edite o arquivo <code>/sw/etc/apt/sources.list</code> e
+		substitua <code>http://bindist.finkmirrors.net/bindist</code> por
 		<code>http://fink-bindist.gecko.ig42.org</code></li>
-		<li>Run <code>fink scanpackages</code>.</li>
-		<li>Ao instalar pacotes, caso haja uma falha no download, escolha a
-		opção de download do local original, normalmente a opção (5). Em
-		pacotes com um único local de download a opção diz <em>Retry using
-		original source URL</em> enquanto que para os pacotes que podem ser
-		baixados de múltiplos locais a opção diz <em>Retry using next mirror
-		set "MIRRORSETNAME"</em>. Infelizmente, algumas versões de pacotes não
-		estão mais disponíveis nos locais originais e para estes você terá que
-		esperar que os servidores voltem ao ar, ou solicitar em uma das listas
-		de discussão do Fink se alguém possui uma tarball disponível em seus
-		sistemas.</li>
+
+		<li>Execute o comando <code>fink scanpackages</code></li>
 	  </ul>
       <p>Pedimos desculpas pela inconveniência.</p>
 	</body>
