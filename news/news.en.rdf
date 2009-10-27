@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2009-10-27T18:11:58-02:00</dc:date>
+    <dc:date>2009-10-27T19:03:43-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues.">
       <title>Server issues.</title>
@@ -16,28 +16,27 @@
 	  official binary distribution are down, and the rsync servers are stalled.
 	  Whilst we sort this out, you may:</p>
 	  
-		Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-		you need Web site information;
-		Use CVS as your selfupdate method in case you need updated
-		packages. It's slower than rsync but it's working right now because CVS
-		is hosted at SourceForge.net. You may switch back to rsync later. In
-		order to switch to CVS, run fink selfupdate-cvs once;
-		Edit /sw/etc/fink.conf and replace Mirror-apt:
-		http://bindist.finkmirrors.net/bindist with Mirror-apt:
+		(Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+		you need Web site information
+
+		(selfupdate) If you use rsync as your selfupdate method then edit
+		/sw/etc/fink.conf and replace the line that starts with
+		Mirror-rsync with Mirror-rsync:
+		rsync://fink.gecko.ig42.org/finkinfo/
+
+		(source files) Edit /sw/etc/fink.conf and replace the
+		line that starts with Mirror-master with
+		Mirror-master: http://fink-dist.gecko.ig42.org
+		
+		(bindist) Edit /sw/etc/fink.conf and replace that
+		starts with Mirror-apt: with Mirror-apt:
 		http://fink-bindist.gecko.ig42.org
-		Edit /sw/etc/apt/sources.list and replace
+
+		(bindist) Edit /sw/etc/apt/sources.list and replace
 		http://bindist.finkmirrors.net/bindist with
 		http://fink-bindist.gecko.ig42.org
+
 		Run fink scanpackages.
-		When installing packages, if you get a download failure, try
-		electing to download from the original source, typically option (5).
-		In packages with a single source this will say: Retry using
-		original source URL whereas for those which can be downloaded from
-		multiple mirrors you'll see: Retry using next mirror set
-		"MIRRORSETNAME".  Unfortunately, some package versions aren't
-		available from the original sources anymore, and for those you will
-		have to wait for the mirrors to come back online, or ask on one of the
-		Fink lists if somebody has the tarball available on their system.
 	  
       <p>We apologise for the inconvenience.</p>
 	</description>
@@ -46,28 +45,27 @@
 	  official binary distribution are down, and the rsync servers are stalled.
 	  Whilst we sort this out, you may:</p>
 	  
-		Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-		you need Web site information;
-		Use CVS as your selfupdate method in case you need updated
-		packages. It's slower than rsync but it's working right now because CVS
-		is hosted at SourceForge.net. You may switch back to rsync later. In
-		order to switch to CVS, run fink selfupdate-cvs once;
-		Edit /sw/etc/fink.conf and replace Mirror-apt:
-		http://bindist.finkmirrors.net/bindist with Mirror-apt:
+		(Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+		you need Web site information
+
+		(selfupdate) If you use rsync as your selfupdate method then edit
+		/sw/etc/fink.conf and replace the line that starts with
+		Mirror-rsync with Mirror-rsync:
+		rsync://fink.gecko.ig42.org/finkinfo/
+
+		(source files) Edit /sw/etc/fink.conf and replace the
+		line that starts with Mirror-master with
+		Mirror-master: http://fink-dist.gecko.ig42.org
+		
+		(bindist) Edit /sw/etc/fink.conf and replace that
+		starts with Mirror-apt: with Mirror-apt:
 		http://fink-bindist.gecko.ig42.org
-		Edit /sw/etc/apt/sources.list and replace
+
+		(bindist) Edit /sw/etc/apt/sources.list and replace
 		http://bindist.finkmirrors.net/bindist with
 		http://fink-bindist.gecko.ig42.org
+
 		Run fink scanpackages.
-		When installing packages, if you get a download failure, try
-		electing to download from the original source, typically option (5).
-		In packages with a single source this will say: Retry using
-		original source URL whereas for those which can be downloaded from
-		multiple mirrors you'll see: Retry using next mirror set
-		"MIRRORSETNAME".  Unfortunately, some package versions aren't
-		available from the original sources anymore, and for those you will
-		have to wait for the mirrors to come back online, or ask on one of the
-		Fink lists if somebody has the tarball available on their system.
 	  
       <p>We apologise for the inconvenience.</p>
 	</content:encoded>
