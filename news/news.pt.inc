@@ -1,4 +1,4 @@
-<a name="2009-10-30 Servidor novamente em operação.."><span class="news-date">2009-10-30: </span><span class="news-headline">Servidor novamente em operação..</span></a><?php gray_line(); ?>
+<a name="2009-10-30 Servidor novamente em operação."><span class="news-date">2009-10-30: </span><span class="news-headline">Servidor novamente em operação.</span></a><?php gray_line(); ?>
 	  <p>Nossos serviços ao usuário foram restaurados. Em 28 de outubro o site
 	  e alguns dos espelhos (rsync, arquivos fontes, distribuição de binários)
 	  foram resturandos e em 30 de outubro todos os principais espelhos rsync
