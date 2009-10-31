@@ -5,8 +5,27 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2009-10-27T19:13:21-02:00</dc:date>
+    <dc:date>2009-10-31T01:35:24-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.">
+      <title>Servers back to normal.</title>
+      <link>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</link>
+      <guid>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</guid>
+      <description>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </description>
+      <content:encoded>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues">
       <title>Server issues</title>
       <link>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues</link>
@@ -635,35 +654,6 @@ package database</a> which is a few weeks out of date.
 
 <p> Update: 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
 
-		</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006">
-      <title>Fink Birds-of-a-Feather at OSCON 2006</title>
-      <link>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</link>
-      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</guid>
-      <description>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
-				Fink, or even just meet for the heck of it.
-			</p>
-			<p>
-				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
-				Mac OS X, and anything else that takes our fancy.
-			</p>
-		</description>
-      <content:encoded>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
-				Fink, or even just meet for the heck of it.
-			</p>
-			<p>
-				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
-				Mac OS X, and anything else that takes our fancy.
-			</p>
 		</content:encoded>
     </item>
   </channel>

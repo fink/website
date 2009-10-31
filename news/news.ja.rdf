@@ -5,8 +5,27 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2009-10-27T19:13:21-02:00</dc:date>
+    <dc:date>2009-10-31T01:35:24-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.">
+      <title>Servers back to normal.</title>
+      <link>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</link>
+      <guid>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</guid>
+      <description>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </description>
+      <content:encoded>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20%3F%3F">
       <title>Server &#21839;&#38988;</title>
       <link>http://fink.sourceforge.net/news/#2009-10-24%20Server%20%3F%3F</link>
@@ -654,31 +673,6 @@ rsync://master.us.finkmirrors.net/finkinfo/
 			<p>
 				&#12450;&#12483;&#12503;&#12464;&#12524;&#12540;&#12489;&#12473;&#12463;&#12522;&#12503;&#12488;&#12398;&#35413;&#21028;&#12399;&#19978;&#12293;&#12391;&#12377;&#12290;&#22810;&#12367;&#12398;&#12518;&#12540;&#12470;&#12364;&#12371;&#12428;&#12391; "10.4" &#12484;&#12522;&#12540;&#12408;&#12473;&#12452;&#12483;&#12481;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;
 				&#12381;&#12428;&#12391;&#12418;&#20309;&#12363;&#21839;&#38988;&#12364;&#12354;&#12426;&#12414;&#12375;&#12383;&#12425;&#12289;<a href="http://fink.sourceforge.net/lists">&#12513;&#12540;&#12522;&#12531;&#12464;&#12522;&#12473;&#12488;</a>&#12395;&#12513;&#12540;&#12523;&#12434;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-			</p>
-		</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006">
-      <title>Fink Birds-of-a-Feather at OSCON 2006</title>
-      <link>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</link>
-      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</guid>
-      <description>
-			<p>OSCON 2006 &#12395;&#12365;&#12390;&#12427;&#20154;? &#38598;&#12414;&#12428;!</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				&#12399; OSCON &#12395;&#26469;&#12390;&#12362;&#12426;&#12289;Fink &#12395;&#33288;&#21619;&#12364;&#12354;&#12427;&#20154;&#12418;&#23244;&#12356;&#12394;&#20154;&#12418;&#22823;&#27475;&#36814;&#12391;&#12377;&#12290;
-			</p>
-			<p>
-				7&#26376;26&#26085;&#21320;&#24460;8&#26178;&#21322;&#12289; room F150 &#12395;&#12390; Fink &#12420; Mac OS X &#12289;&#12381;&#12398;&#20182;&#35576;&#12293;&#12398;&#12371;&#12392;&#12434;&#35441;&#12375;&#12414;&#12377;&#12289;
-			</p>
-		</description>
-      <content:encoded>
-			<p>OSCON 2006 &#12395;&#12365;&#12390;&#12427;&#20154;? &#38598;&#12414;&#12428;!</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				&#12399; OSCON &#12395;&#26469;&#12390;&#12362;&#12426;&#12289;Fink &#12395;&#33288;&#21619;&#12364;&#12354;&#12427;&#20154;&#12418;&#23244;&#12356;&#12394;&#20154;&#12418;&#22823;&#27475;&#36814;&#12391;&#12377;&#12290;
-			</p>
-			<p>
-				7&#26376;26&#26085;&#21320;&#24460;8&#26178;&#21322;&#12289; room F150 &#12395;&#12390; Fink &#12420; Mac OS X &#12289;&#12381;&#12398;&#20182;&#35576;&#12293;&#12398;&#12371;&#12392;&#12434;&#35441;&#12375;&#12414;&#12377;&#12289;
 			</p>
 		</content:encoded>
     </item>

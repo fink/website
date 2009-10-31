@@ -1,41 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.97 2009/10/27 21:12:59 monipol Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.98 2009/10/31 03:35:05 monipol Exp $</cvsid>
+
+  <newsitem>
+    <date>2009-10-30</date>
+    <headline>Servers back to normal.</headline>
+    <body>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </body>
+  </newsitem>
 
   <newsitem>
     <date>2009-10-24</date>
-	<headline>Server issues.</headline>
-	<body>
-	  <p>We have had server issues and as a result the Web site and the
-	  official binary distribution are down, and the rsync servers are stalled.
-	  Whilst we sort this out, you may:</p>
-	  <ul>
-		<li>(Web site) Use <link
-		url="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</link> if
-		you need Web site information</li>
+    <headline>Server issues.</headline>
+    <body>
+      <p>We have had server issues and as a result the Web site and the
+      official binary distribution are down, and the rsync servers are stalled.
+      Whilst we sort this out, you may:</p>
+      <ul>
+        <li>(Web site) Use <link
+        url="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</link> if
+        you need Web site information</li>
 
-		<li>(selfupdate) If you use rsync as your selfupdate method then edit
-		<code>/sw/etc/fink.conf</code> and replace the line that starts with
-		<code>Mirror-rsync</code> with <code>Mirror-rsync:
-		rsync://fink.gecko.ig42.org/finkinfo/</code></li>
+        <li>(selfupdate) If you use rsync as your selfupdate method then edit
+        <code>/sw/etc/fink.conf</code> and replace the line that starts with
+        <code>Mirror-rsync</code> with <code>Mirror-rsync:
+        rsync://fink.gecko.ig42.org/finkinfo/</code></li>
 
-		<li>(source files) Edit <code>/sw/etc/fink.conf</code> and replace the
-		line that starts with <code>Mirror-master</code> with
-		<code>Mirror-master: http://fink-dist.gecko.ig42.org</code></li>
-		
-		<li>(bindist) Edit <code>/sw/etc/fink.conf</code> and replace the line
-		that starts with <code>Mirror-apt:</code> with <code>Mirror-apt:
-		http://fink-bindist.gecko.ig42.org</code></li>
+        <li>(source files) Edit <code>/sw/etc/fink.conf</code> and replace the
+        line that starts with <code>Mirror-master</code> with
+        <code>Mirror-master: http://fink-dist.gecko.ig42.org</code></li>
+        
+        <li>(bindist) Edit <code>/sw/etc/fink.conf</code> and replace the line
+        that starts with <code>Mirror-apt:</code> with <code>Mirror-apt:
+        http://fink-bindist.gecko.ig42.org</code></li>
 
-		<li>(bindist) Edit <code>/sw/etc/apt/sources.list</code> and replace
-		<code>http://bindist.finkmirrors.net/bindist</code> with
-		<code>http://fink-bindist.gecko.ig42.org</code></li>
+        <li>(bindist) Edit <code>/sw/etc/apt/sources.list</code> and replace
+        <code>http://bindist.finkmirrors.net/bindist</code> with
+        <code>http://fink-bindist.gecko.ig42.org</code></li>
 
-		<li>(bindist) Run <code>fink scanpackages</code>.</li>
-	  </ul>
+        <li>(bindist) Run <code>fink scanpackages</code>.</li>
+      </ul>
       <p>We apologise for the inconvenience.</p>
-	</body>
+    </body>
   </newsitem>
 
   <newsitem>
@@ -187,23 +199,23 @@ should run <code>fink selfupdate</code> after installation.</p>
   </newsitem>
 
 <newsitem>
-	<date>2008-02-03</date>
-	<headline>Mirror, mirror on the wall, will someone sponsor Fink at all?</headline>
-	<body>
-		<p>
+    <date>2008-02-03</date>
+    <headline>Mirror, mirror on the wall, will someone sponsor Fink at all?</headline>
+    <body>
+        <p>
 Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
 </p>
-		<p>
+        <p>
 We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
 Recently our list of mirrors had to be shortened considerably and we need your <em>help</em> to improve its level of quality again.
 </p>
-	<p>
+    <p>
 Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
 All the relevant information on how to run and sponsor a mirror can be found on the <link url="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</link>.
 For specific questions you can <link url="mailto:fink-core-private@lists.sourceforge.net">contact us</link> directly.
 We are looking for mirrors all over the world, but specifically in these countries:</p>
 <ul><li>United States</li><li>Japan</li><li>Germany</li><li>France</li><li>United Kingdom</li><li>Canada</li><li>Italy</li><li>Spain</li><li>Switzerland</li><li>Australia</li></ul>
-	<p>
+    <p>
 We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
 </p>
 </body>
@@ -248,9 +260,9 @@ fink team is working to resolve the problem as quickly as possible.</p>
   </body>
 </newsitem>
 <newsitem>
-	<date>2007-03-04</date>
-	<headline>Problems with tar</headline>
-	<body>
+    <date>2007-03-04</date>
+    <headline>Problems with tar</headline>
+    <body>
 <p>Some users of fink's unstable tree are having sporadic difficulties
 at the end of building large packages, getting reports like
 <em>tar: File changed as we read it</em> which causes the .deb file
@@ -268,15 +280,15 @@ permanently, another announcement will be made here.
 <code>dpkg</code> package resolves this problem.  Unstable users can
 now run the update commands normally.
 </p>
-		</body>
-	</newsitem>
+        </body>
+    </newsitem>
 
 <newsitem>
-	<date>2006-08-19</date>
-	<headline>Server down; workarounds available</headline>
-	<body>
+    <date>2006-08-19</date>
+    <headline>Server down; workarounds available</headline>
+    <body>
 <p><em> Update, 21 August 2006: </em> The server has been restored.</p>
-	<p> 
+    <p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 
 of source files, and the package database) is down at the moment.  We are
@@ -308,64 +320,64 @@ Finally, to use the package database during the outage, you can connect
 to <link url="http://lists.finkproject.org/pdb">this backup copy of the
 package database</link> which is a few weeks out of date.
 </p>
-		</body>
-	</newsitem>
+        </body>
+    </newsitem>
 
-	<newsitem>
-		<date>2006-07-24</date>
-		<headline>Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</headline>
-		<body>
+    <newsitem>
+        <date>2006-07-24</date>
+        <headline>Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</headline>
+        <body>
 
-			<p>
-				The "10.4-transitional" tree was created as an interim solution to the issues of
-				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
-				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
-				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
-				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
-				1st, 2006.
-			</p>
-			<p><em>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</em></p>
-			<p>
-				As we mentioned <varlink url="news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</varlink>,
-				there are 2 ways to make the switch to the supported "10.4" tree.
-			</p>
-			<p>
-				The simplest way is to remove your Fink installation by deleting it and
-				installing fresh using the 0.8.1 installer available from the <varlink
-				url="download">download page</varlink>.
-			</p>
-			<p>
-				Alternately, to preserve your Fink installation, download the
-				<link url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</link>
-				and read the README for instructions on how to upgrade your existing installation in-place.
-				This will re-build your Fink installation from source, upgrading everything in the process.
-				Be warned, it can take a lot of time, depending on your fink installation!
-			</p>
-			<p>
-				Feedback on the upgrade script has been very positive; many users have already
-				made the switch.  If you have problems, please feel free to mail your issues to
-				the <varlink url="lists">discussion lists</varlink>.
-			</p>
+            <p>
+                The "10.4-transitional" tree was created as an interim solution to the issues of
+                incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+                compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+                move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+                support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+                1st, 2006.
+            </p>
+            <p><em>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</em></p>
+            <p>
+                As we mentioned <varlink url="news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</varlink>,
+                there are 2 ways to make the switch to the supported "10.4" tree.
+            </p>
+            <p>
+                The simplest way is to remove your Fink installation by deleting it and
+                installing fresh using the 0.8.1 installer available from the <varlink
+                url="download">download page</varlink>.
+            </p>
+            <p>
+                Alternately, to preserve your Fink installation, download the
+                <link url="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</link>
+                and read the README for instructions on how to upgrade your existing installation in-place.
+                This will re-build your Fink installation from source, upgrading everything in the process.
+                Be warned, it can take a lot of time, depending on your fink installation!
+            </p>
+            <p>
+                Feedback on the upgrade script has been very positive; many users have already
+                made the switch.  If you have problems, please feel free to mail your issues to
+                the <varlink url="lists">discussion lists</varlink>.
+            </p>
 <p><em> Update, 2 June 2007.</em>  Due to changes to the behavior of <filename>sudo</filename> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
-		</body>
-	</newsitem>
+        </body>
+    </newsitem>
 
-	<newsitem>
-		<date>2006-07-24</date>
-		<headline>Fink Birds-of-a-Feather at OSCON 2006</headline>
-		<body>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<link url="mailto:oscon2006@racoonfink.com">Benjamin Reed</link> (RangerRick on #fink)
-				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
-				Fink, or even just meet for the heck of it.
-			</p>
-			<p>
-				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
-				Mac OS X, and anything else that takes our fancy.
-			</p>
-		</body>
-	</newsitem>
+    <newsitem>
+        <date>2006-07-24</date>
+        <headline>Fink Birds-of-a-Feather at OSCON 2006</headline>
+        <body>
+            <p>Are you at OSCON 2006?  Want to meet up?</p>
+            <p>
+                <link url="mailto:oscon2006@racoonfink.com">Benjamin Reed</link> (RangerRick on #fink)
+                is at OSCON and is interested in meeting anyone who wants to hang out and talk about
+                Fink, or even just meet for the heck of it.
+            </p>
+            <p>
+                Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
+                Mac OS X, and anything else that takes our fancy.
+            </p>
+        </body>
+    </newsitem>
 
   <newsitem>
     <date>2006-07-01</date>
@@ -736,20 +748,20 @@ Without their constant support and valuable pointers, Fink would not be where we
     <headline>Problems with XCode 1.5</headline>
     <body>
       <p>
-	In the past few days, there have been reports that some fink packages 
-	do not compile correctly using XCode 1.5.  If you have not already
-	upgraded to XCode 1.5, we suggest that you wait until this issue
-	is resolved before doing so.
-	</p>
+    In the past few days, there have been reports that some fink packages 
+    do not compile correctly using XCode 1.5.  If you have not already
+    upgraded to XCode 1.5, we suggest that you wait until this issue
+    is resolved before doing so.
+    </p>
       <p>
-	If you are having problems with a package which compiled under
-	XCode 1.2 but does not compile correctly under XCode 1.5, 
-	please report the package to
-	the fink-devel mailing list.  (The usual symptom is: some symbols
-	are  missing after compiling with g++.)  
-	Packages already known to have this problem include
-	octave, singular-factory, singular-libfac, and possibly sdl.
-	</p>
+    If you are having problems with a package which compiled under
+    XCode 1.2 but does not compile correctly under XCode 1.5, 
+    please report the package to
+    the fink-devel mailing list.  (The usual symptom is: some symbols
+    are  missing after compiling with g++.)  
+    Packages already known to have this problem include
+    octave, singular-factory, singular-libfac, and possibly sdl.
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -757,27 +769,27 @@ Without their constant support and valuable pointers, Fink would not be where we
     <headline>Error in fink-0.22.0</headline>
     <body>
       <p>
-	The fink-0.22.0 package manager, which was available briefly in the 
-	unstable tree this past week, had a bug which prevents further
-	updating via rsync.  If you installed this version of fink, you
-	can recover by running the command 
-	<code>fink install fink-0.21.2-1</code> which will downgrade fink
-	to the version in the stable tree, and subsequently running
-	<code>fink selfupdate</code>
-	</p>
+    The fink-0.22.0 package manager, which was available briefly in the 
+    unstable tree this past week, had a bug which prevents further
+    updating via rsync.  If you installed this version of fink, you
+    can recover by running the command 
+    <code>fink install fink-0.21.2-1</code> which will downgrade fink
+    to the version in the stable tree, and subsequently running
+    <code>fink selfupdate</code>
+    </p>
       <p>
-	If for any reason those commands don't work, go to 
-	<link url="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
-	fink file release page at sourceforge</link> and download the
-	file <code>fink-0.22.1.tar.gz</code> (or a more recent, i.e.,
-	higher numbered, version).  Unpack this file with
-	<code>tar xfz fink-0.22.1.tar.gz</code> , and then from within the
-	fink-0.22.1 directory, run the command <code>./inject.pl</code>
-	</p>
+    If for any reason those commands don't work, go to 
+    <link url="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
+    fink file release page at sourceforge</link> and download the
+    file <code>fink-0.22.1.tar.gz</code> (or a more recent, i.e.,
+    higher numbered, version).  Unpack this file with
+    <code>tar xfz fink-0.22.1.tar.gz</code> , and then from within the
+    fink-0.22.1 directory, run the command <code>./inject.pl</code>
+    </p>
       <p>
-	The fink team apologizes for the error, and thanks the user 
-	community for bringing it to our attention quickly.
-	</p>
+    The fink team apologizes for the error, and thanks the user 
+    community for bringing it to our attention quickly.
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -785,23 +797,23 @@ Without their constant support and valuable pointers, Fink would not be where we
     <headline>Improving our mirrors. Can you help?</headline>
     <body>
       <p>
-	Fink's decision to gradually build its own network of mirrors
-	has paid off. To make sure that we can continue to offer
-	a high quality service we need to improve our mirror network.
-	It has been some time since we last asked for more mirrors. 
-	It is time to do so again. Fink is very grateful for the resources 
-	granted to us by our community. To further improve our service to the 
-	community we require an even better mirror system. We especially lack 
-	mirrors in central Europe, Russia and the Far East. If you feel that 
-	you have at least two Mbit to spare for a rsync mirror, or more to offer 
-	a distfiles mirror, please <link url="mailto:mirrors@finkmirrors.net">contact us</link>.
-	</p>
+    Fink's decision to gradually build its own network of mirrors
+    has paid off. To make sure that we can continue to offer
+    a high quality service we need to improve our mirror network.
+    It has been some time since we last asked for more mirrors. 
+    It is time to do so again. Fink is very grateful for the resources 
+    granted to us by our community. To further improve our service to the 
+    community we require an even better mirror system. We especially lack 
+    mirrors in central Europe, Russia and the Far East. If you feel that 
+    you have at least two Mbit to spare for a rsync mirror, or more to offer 
+    a distfiles mirror, please <link url="mailto:mirrors@finkmirrors.net">contact us</link>.
+    </p>
       <p>
-	 To get a better understanding of the different types of mirrors 
-	 Fink offers, please review <link url="http://finkmirrors.net/">finkmirrors.net</link>. This is the official homepage for all mirror related issues.
-	 If you feel that you can offer other types of resources, 
-	 web-space for testing as an example, please do not hesitate in <link url="mailto:mirrors@finkmirrors.net">contacting us</link> as well.
-	</p>
+     To get a better understanding of the different types of mirrors 
+     Fink offers, please review <link url="http://finkmirrors.net/">finkmirrors.net</link>. This is the official homepage for all mirror related issues.
+     If you feel that you can offer other types of resources, 
+     web-space for testing as an example, please do not hesitate in <link url="mailto:mirrors@finkmirrors.net">contacting us</link> as well.
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -813,11 +825,11 @@ The latest Fink releases, version 0.6.3 (for 10.2) and 0.7.0 (for 10.3),
 are now available for both source and binary users.  The 0.6.3 release has 
 been built on <em>10.2</em>, while release 
 0.7.0 has been built on <em>10.3</em>. This should facilitate better support for the different platforms. 
-	</p>
+    </p>
       <p>
 These new releases incorporate various fixes to the package manager, many previously 
 unavailable binary packages have been added and problematic packages for 10.3 users have been rebuilt. 
-	</p>
+    </p>
       <p>
 To complete a new Fink installation you should follow the instructions posted 
 <varlink url="download/index.php?phpLang=en">here</varlink>.
@@ -825,11 +837,11 @@ You may upgrade your existing Fink installation to the latest Fink release by fo
 
 If you have questions or problems, please try the Fink mailing lists you can learn more about them 
 <varlink url="lists/index.php?phpLang=en">here</varlink>.
-		</p>
+        </p>
       <p>
 Please make sure you pick the <em>appropriate installer</em> for your Platform.
 Fink 0.6.3 will only install on Mac OS X 10.2.* while Fink 0.7.0 will only install on Mac OS X 10.3.* 
-		</p>
+        </p>
       <p>
 The Fink Team would like to thank its many contributors, frequent helpers 
 and developers for making this release happen. 
@@ -873,7 +885,7 @@ SDK <em>without</em> upgrading the JDK.  To build Java packages in Fink
 you will need to <link url="http://connect.apple.com/">go to
 connect.apple.com and download the Java 1.4.2 SDK</link> (free
 registration required).
-	</p>
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -886,7 +898,7 @@ with qt and kde, among others.  To access the updated files, bring your
 index of binary files up-to-date by running the
 command <code>sudo apt-get update</code> .  After this, you can use
 apt-get, dselect or FinkCommander to install binary files as usual.
-	</p>
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -894,25 +906,25 @@ apt-get, dselect or FinkCommander to install binary files as usual.
     <headline>Pssst want to install GNOME 2.4?</headline>
     <body>
       <p>
-	Thanks to the new Fink GNOME Core team, including a lot of hard work by packaging
-	newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 has
-	finally been released to the 10.3 unstable tree.
-	</p>
+    Thanks to the new Fink GNOME Core team, including a lot of hard work by packaging
+    newcomer Keith Conger and GNOME 1.x maintainer Masanori Sekino, GNOME 2.4 has
+    finally been released to the 10.3 unstable tree.
+    </p>
       <p>
-	It is there for the taking; please offer some of your time and test these packages
-	if you are on unstable already.  Because of the massive number of changes, it is
-	expected that there will be issues upgrading or installing the new GNOME.  If you
-	have problems, you can reach the GNOME-savvy people at
-	<link url="mailto:fink-gnome-core@lists.sourceforge.net">fink-gnome-core@lists.sourceforge.net</link>.
-	Please do report success stories there as well.  The more good reports we get, the
-	faster GNOME 2.4 can be moved to stable.
-	</p>
+    It is there for the taking; please offer some of your time and test these packages
+    if you are on unstable already.  Because of the massive number of changes, it is
+    expected that there will be issues upgrading or installing the new GNOME.  If you
+    have problems, you can reach the GNOME-savvy people at
+    <link url="mailto:fink-gnome-core@lists.sourceforge.net">fink-gnome-core@lists.sourceforge.net</link>.
+    Please do report success stories there as well.  The more good reports we get, the
+    faster GNOME 2.4 can be moved to stable.
+    </p>
       <p>
-	For those of you who do not read our mailing lists, <link url="http://fink.sourceforge.net/lists/index.php">why aren't you subscribed yet</link>?
-	Here is a link to detailed 
-	<link url="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</link> 
-	how to install or upgrade GNOME and what new stuff it brings.
-	</p>
+    For those of you who do not read our mailing lists, <link url="http://fink.sourceforge.net/lists/index.php">why aren't you subscribed yet</link>?
+    Here is a link to detailed 
+    <link url="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</link> 
+    how to install or upgrade GNOME and what new stuff it brings.
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -920,34 +932,34 @@ apt-get, dselect or FinkCommander to install binary files as usual.
     <headline>Whaaazaaap Dawgs, Two Zero Zero Four is on!</headline>
     <body>
       <p>
-	A happy new year to all of you from the whole team. Blame this outburst of an 
-	attempt at slang language on some of us having to watch the MTV Music Awards all
+    A happy new year to all of you from the whole team. Blame this outburst of an 
+    attempt at slang language on some of us having to watch the MTV Music Awards all
    day long.
-	</p>
+    </p>
       <p>
-	Last year has been a good year for Fink. We have had hard times keeping up with 
-	the changes introduces by Apple, but we also learned that we have a great community
-	which is willing to go through great lengths to support us. 
-	For this, we say "Thank You". Much of what happens in the Fink project
+    Last year has been a good year for Fink. We have had hard times keeping up with 
+    the changes introduces by Apple, but we also learned that we have a great community
+    which is willing to go through great lengths to support us. 
+    For this, we say "Thank You". Much of what happens in the Fink project
    happens because of the amazing support and encouragement we get from our users.
-	</p>
+    </p>
       <p>
-	Two Zero Zero Four should not make us slow down, but speed up. There are some 
-	interesting things in the pipeline, including GNOME 2.4, a new release of KDE, major 
-	changes to the package manager itself, and organisational restructuring. 
-	Hopefully we will advance into an even bigger project with developer conferences, 
-	real life meetings, and a CD in your favourite shop.
-	</p>
+    Two Zero Zero Four should not make us slow down, but speed up. There are some 
+    interesting things in the pipeline, including GNOME 2.4, a new release of KDE, major 
+    changes to the package manager itself, and organisational restructuring. 
+    Hopefully we will advance into an even bigger project with developer conferences, 
+    real life meetings, and a CD in your favourite shop.
+    </p>
       <p>
-	High ambitions can make one fall very deeply, thus we shall take it carefully, but 
-	still we are all counting on your support during this year. Tell us what you think 
-	about Fink; tell us what you like or dislike; show us ways to improve ourselves.
-	Lend us your resources and sponsor a mirror or hardware. Devote some of your time
-	to improve the package manager or add another piece of software by creating an
-	info file. Browse this website and hopefully indulge yourself. We enjoy serving
-	such a nice community; hopefully we shall make it a smooth ride for you and
-	your Macintosh in Two Zero Zero Four.
-	</p>
+    High ambitions can make one fall very deeply, thus we shall take it carefully, but 
+    still we are all counting on your support during this year. Tell us what you think 
+    about Fink; tell us what you like or dislike; show us ways to improve ourselves.
+    Lend us your resources and sponsor a mirror or hardware. Devote some of your time
+    to improve the package manager or add another piece of software by creating an
+    info file. Browse this website and hopefully indulge yourself. We enjoy serving
+    such a nice community; hopefully we shall make it a smooth ride for you and
+    your Macintosh in Two Zero Zero Four.
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -958,17 +970,17 @@ apt-get, dselect or FinkCommander to install binary files as usual.
  The Fink team and I wish all of you a merry Christmas and happy Holidays. We are looking
  forward to yet another year where we can help the Macintosh community grow into the 
  world of UNIX together with Mac OS X.
- 		</p>
+        </p>
       <p>
  We wish you all, that your hope is not too frail and that you will carry on following 
  through with your wishes. May the world we live in gradually become a better place and
  may peace and understanding settle just for a few days. 
-		</p>
+        </p>
       <p>
  Enjoy your quiet time and in case we do not get around to saying it soon enough. 
  A happy new year to all of you, stay with us we count on your support.
-		
-		</p>
+        
+        </p>
     </body>
   </newsitem>
   <newsitem>
@@ -976,24 +988,24 @@ apt-get, dselect or FinkCommander to install binary files as usual.
     <headline>There they are! New mirrors..</headline>
     <body>
       <p>
-	Thank you, thank you, thank you. What a great community we have.
-	Thank you for providing us with more mirrors. 
-		</p>
+    Thank you, thank you, thank you. What a great community we have.
+    Thank you for providing us with more mirrors. 
+        </p>
       <p>
-	Matthew Healey, member of the Western <link url="http://www.wamug.org.au">
-	Australian</link> Macintosh User Group, and their 
-	ISP <link url="http://www.extremedsl.com.au">extremedsl</link>
-	are providing Fink with a full mirror in Perth, Australia. This is our first
-	mirror in down under, thus I am pleased to welcome them to the family.
-	Furthermore the <link url="http://www.mirror.ac.uk">UKMIRROR</link> service 
-	has accepted us, making distfile services available for Fink 
-	on 21 load balanced server.
-		</p>
+    Matthew Healey, member of the Western <link url="http://www.wamug.org.au">
+    Australian</link> Macintosh User Group, and their 
+    ISP <link url="http://www.extremedsl.com.au">extremedsl</link>
+    are providing Fink with a full mirror in Perth, Australia. This is our first
+    mirror in down under, thus I am pleased to welcome them to the family.
+    Furthermore the <link url="http://www.mirror.ac.uk">UKMIRROR</link> service 
+    has accepted us, making distfile services available for Fink 
+    on 21 load balanced server.
+        </p>
       <p>
-	We are very happy about this development, but we still need more rsync mirrors.
-	Thus, once more, if you feel like helping, please visit 
-	<link url="http://finkmirrors.net">finkmirrors.net</link> and get in touch.
-		</p>
+    We are very happy about this development, but we still need more rsync mirrors.
+    Thus, once more, if you feel like helping, please visit 
+    <link url="http://finkmirrors.net">finkmirrors.net</link> and get in touch.
+        </p>
     </body>
   </newsitem>
   <newsitem>
@@ -1057,25 +1069,25 @@ Fink packages for 10.3.
       <p><em>Quick Summary: DO NOT USE DSELECT,</em> and if you've used it,
 check your /sw/etc/apt/sources.list file carefully.</p>
       <p>Users who have bootstrapped or installed Fink 0.5.3 or Fink 0.6.0
-		on Mac OS X 10.3 could exhibit a problem where all users get deleted
-		from the netinfo database, and you become unable to log in.
+        on Mac OS X 10.3 could exhibit a problem where all users get deleted
+        from the netinfo database, and you become unable to log in.
 We believe that this problem can only occur if you've used dselect.</p>
       <p>If you are using Mac OS X 10.3, please be sure you're using the
-		latest Fink version to avoid the issue.  To make sure you don't have
-		upgrade problems, check your <code>/sw/etc/apt/sources.list</code>
-		file.  You will need to modify it if it contains <code>deb</code>
-		lines that point to "release" or "current" without a version number.
-		In other words, if your <code>sources.list</code> file contains
-		these lines:</p>
+        latest Fink version to avoid the issue.  To make sure you don't have
+        upgrade problems, check your <code>/sw/etc/apt/sources.list</code>
+        file.  You will need to modify it if it contains <code>deb</code>
+        lines that point to "release" or "current" without a version number.
+        In other words, if your <code>sources.list</code> file contains
+        these lines:</p>
       <codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main
 deb http://us.dl.sourceforge.net/fink/direct_download current main</codeblock>
       <p>...you should change them to this:</p>
       <codeblock>deb http://us.dl.sourceforge.net/fink/direct_download 10.3/release main
 deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main</codeblock>
       <p>We are working on updating the repository to make sure that even
-		if you update you don't get the broken code, and to
+        if you update you don't get the broken code, and to
 repair dselect, but in the meantime,
-		make sure your <code>sources.list</code> file has the correct entries.</p>
+        make sure your <code>sources.list</code> file has the correct entries.</p>
       <p>Other users have experienced problems with dselect itself, particularly
 complaints about a missing "darwin" package.  If you are running dselect
 under 10.3 and you <em>don't</em> get this warning, then your 
@@ -1122,35 +1134,35 @@ after free registration from connect.apple.com.
     <headline>Happy Halloween and welcome new mirrors</headline>
     <body>
       <p>
-		We wish all of you a happy Halloween.
-		</p>
+        We wish all of you a happy Halloween.
+        </p>
       <p>
-		Furthermore I would like to welcome our new mirrors to the Fink family.
-		From Europe in Rijeka, Croatia a new full mirror joins us. This mirrors 
-		has been sponsored by the <link url="http://mac.dir.hr/">Jabucnjak</link> Apple user group. 
-		This is our first mirror in Europe, so I hope that more will be joining us 
-		soon.
-		</p>
+        Furthermore I would like to welcome our new mirrors to the Fink family.
+        From Europe in Rijeka, Croatia a new full mirror joins us. This mirrors 
+        has been sponsored by the <link url="http://mac.dir.hr/">Jabucnjak</link> Apple user group. 
+        This is our first mirror in Europe, so I hope that more will be joining us 
+        soon.
+        </p>
       <p>
-		Dave Schroeder from the <link url="http://mirror.services.wisc.edu/">University of 
-		Wisconsin</link> in Madison is sponsoring a 100Mbit dedicated Master server.
-		A. J. Wright and <link url="http://sunsite.utk.edu/">SunSITE@UTK</link> are helping out with 
-		another full mirror in the United states. 
-		</p>
+        Dave Schroeder from the <link url="http://mirror.services.wisc.edu/">University of 
+        Wisconsin</link> in Madison is sponsoring a 100Mbit dedicated Master server.
+        A. J. Wright and <link url="http://sunsite.utk.edu/">SunSITE@UTK</link> are helping out with 
+        another full mirror in the United states. 
+        </p>
       <p>
-		This raises our full mirror count to four and the rsync mirror count to 
-		five. We are happy to have such a great community back us up, but I know 
-		that more mirrors will join over time. I will not stop nagging you until
-		Fink has its own mirror in every state of the USA. Yet, with such a 
-		brilliant community backing us up, I am not too worried about not
-		reaching my goal very soon.
-		</p>
+        This raises our full mirror count to four and the rsync mirror count to 
+        five. We are happy to have such a great community back us up, but I know 
+        that more mirrors will join over time. I will not stop nagging you until
+        Fink has its own mirror in every state of the USA. Yet, with such a 
+        brilliant community backing us up, I am not too worried about not
+        reaching my goal very soon.
+        </p>
       <p>
-		Trick or treat! Our most wanted treat is more mirrors, so come forth 
-		Administrators and fill our bag. Information on how you can be a mirror
-		can be found on the official <link url="http://finkmirrors.net">
-		mirroring website</link>.
-		</p>
+        Trick or treat! Our most wanted treat is more mirrors, so come forth 
+        Administrators and fill our bag. Information on how you can be a mirror
+        can be found on the official <link url="http://finkmirrors.net">
+        mirroring website</link>.
+        </p>
     </body>
   </newsitem>
   <newsitem>
@@ -1158,20 +1170,20 @@ after free registration from connect.apple.com.
     <headline>Look Ma, a logo for Fink</headline>
     <body>
       <p>As you surely noticed, Fink has a logo. This is the result of our
-	Logo <varlink url="logo.php">contest</varlink> held earlier this year.
-	This new, official, logo has been displayed since the 24th of October and
-	those of you who wondered how it has been picked and what the name of the
-	winner is should read up in the PR <link url="pr/index.php">section</link>.
-	</p>
+    Logo <varlink url="logo.php">contest</varlink> held earlier this year.
+    This new, official, logo has been displayed since the 24th of October and
+    those of you who wondered how it has been picked and what the name of the
+    winner is should read up in the PR <link url="pr/index.php">section</link>.
+    </p>
       <p>
-	The longer explanation also features a larger version of the logo itself,
-	so that you may have a closer look at its details. We like our new logo,
-	we hope that you will like it too.
-	</p>
+    The longer explanation also features a larger version of the logo itself,
+    so that you may have a closer look at its details. We like our new logo,
+    we hope that you will like it too.
+    </p>
       <p>IMPORTANT: We do not yet have a formal licensing agreement for the new
    logo and so are unable to give permission to distribute it.  Currently, it
    can only be displayed on the Fink web page.  Thank you for your understanding.
-	</p>
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -1226,14 +1238,14 @@ but many many packages already work.
     <headline>Say Hello to Mirror Numero Uno</headline>
     <body>
       <p>You are too late. Rus Foster from <link url="http://www.jvds.com">JVDS</link>
-	beat you all to it. He is the first one to provide us with resources 
-	for a Fink rsync mirror.
-	The mirror is located in Atlanta, GA and is updated every two hours, at 35 minutes past.
-	</p>
+    beat you all to it. He is the first one to provide us with resources 
+    for a Fink rsync mirror.
+    The mirror is located in Atlanta, GA and is updated every two hours, at 35 minutes past.
+    </p>
       <p>For those of you who are still waiting, join in. The more mirrors we have
-	the faster you can rsync your info files. As per usual, updated and current
-	information on the mirror structure can be found on <link url="http://finkmirrors.net"> Finkmirrors.net </link>
-	</p>
+    the faster you can rsync your info files. As per usual, updated and current
+    information on the mirror structure can be found on <link url="http://finkmirrors.net"> Finkmirrors.net </link>
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -1241,8 +1253,8 @@ but many many packages already work.
     <headline>Mirror, mirror on the wall...</headline>
     <body>
       <p>..who will mirror Fink above all? There is a new player on the turf
-	and it belongs to the Fink team. <link url="http://finkmirrors.net"> Finkmirrors.net</link> tells you everything you wanted to know about mirroring Fink and its related resources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
-	</p>
+    and it belongs to the Fink team. <link url="http://finkmirrors.net"> Finkmirrors.net</link> tells you everything you wanted to know about mirroring Fink and its related resources on your Server. As our mirror structure will hopefully grow in the future, this web-site will also hold information about each individual mirror.
+    </p>
       <p>To ensure that our service remains as stable as possible and to distribute the load imposed onto our main rsync server, we are looking for rsync mirrors or full mirrors. Those of you who are willing to share resources will find all the necessary information on <link url="http://finkmirrors.net"> Finkmirrors.net</link>. 
 </p>
       <p>
@@ -1425,9 +1437,9 @@ to restore files which the Virex upgrade may have deleted.
     <headline>Fink 0.5.2 released</headline>
     <body>
       <p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <link url="http://fink.sourceforge.net/download.php">download</link> page.
-		With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
-		The full announcement can be read on the <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</link> mailing list.
-		</p>
+        With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
+        The full announcement can be read on the <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</link> mailing list.
+        </p>
       <p>(If you are having trouble upgrading a source installation, consult
 <link url="http://fink.sourceforge.net/download/fix-upgrade.php">these
 special instructions</link>.)</p>
@@ -1438,9 +1450,9 @@ special instructions</link>.)</p>
     <headline>Interview on OSNews.com</headline>
     <body>
       <p><link url="http://osnews.com/">OSNews.com</link> today is featuring a
-	<link url="http://osnews.com/story.php?news_id=3236">mini-interview</link> with
-	one of our project leaders, Max Horn. It contains some rather unusual questions,
-	so even if you know Fink fairly well, you might find it informative.
+    <link url="http://osnews.com/story.php?news_id=3236">mini-interview</link> with
+    one of our project leaders, Max Horn. It contains some rather unusual questions,
+    so even if you know Fink fairly well, you might find it informative.
 </p>
     </body>
   </newsitem>
@@ -1450,11 +1462,11 @@ special instructions</link>.)</p>
     <body>
       <p>KDE 3.1.1 is now in Fink unstable.  The full announcement can be
 <link url="http://sourceforge.net/mailarchive/forum.php?thread_id=1898907&amp;forum_id=2022">read here</link>.
-	Improvements over 3.1 final include many upstream bugfixes,
-	build improvements, koffice bugfixes, kmail crash fixes,
-	and other miscellaneous updates.  Binary packages will not
-	be available in time for the next binary distribution, but
-	will be released as an update shortly thereafter.
+    Improvements over 3.1 final include many upstream bugfixes,
+    build improvements, koffice bugfixes, kmail crash fixes,
+    and other miscellaneous updates.  Binary packages will not
+    be available in time for the next binary distribution, but
+    will be released as an update shortly thereafter.
 </p>
     </body>
   </newsitem>
@@ -1464,11 +1476,11 @@ special instructions</link>.)</p>
     <body>
       <p>KDE 3.1 is now in Fink stable.  The full announcement can be
 <link url="http://sourceforge.net/mailarchive/forum.php?thread_id=1833081&amp;forum_id=2022">read here</link>.
-	Improvements over 3.1 beta1 include an updated audio driver, 
-	faster startup times, cleaned up fink package info, support
-	for Apple X11's window manager, and many bugfixes.  Binary
-	packages will be available in the next binary distribution
-	release.
+    Improvements over 3.1 beta1 include an updated audio driver, 
+    faster startup times, cleaned up fink package info, support
+    for Apple X11's window manager, and many bugfixes.  Binary
+    packages will be available in the next binary distribution
+    release.
 </p>
     </body>
   </newsitem>
@@ -1523,13 +1535,13 @@ Fink community informed about the situation as it develops.
     <headline>Apple X11 Library Warning</headline>
     <body>
       <p>
-	While Apple's X11 works just fine with existing binaries, it
+    While Apple's X11 works just fine with existing binaries, it
 has a bug in the install name of the libraries that can cause some
 software to build incorrectly, and will break forward-compatibility
 with future X11 releases.
 </p>
       <p>
-	Ben Hines has created a script (available <link url="http://fink.cvs.sourceforge.net/*checkout*/fink/fix-fink/install_name_fix.pl">here</link>) that you can use
+    Ben Hines has created a script (available <link url="http://fink.cvs.sourceforge.net/*checkout*/fink/fix-fink/install_name_fix.pl">here</link>) that you can use
 that will fix the install_name entries in Apple's X11 libraries,
 but it will not repair software you have already built against the
 broken libraries.
@@ -1561,7 +1573,7 @@ disable their unstable tree.  To do this, edit the file
 <code>/sw/etc/fink.conf</code> and remove the items
  <code>unstable/main</code> and <code>unstable/crypto</code> from the
  <code>Trees</code> line.
-	</p>
+    </p>
       <p>The Fink team appreciates those users who are willing to stick with
 the unstable tree, even when there are problems like today's, and provide
 the team with prompt feedback.  This is a community effort and we
@@ -1574,8 +1586,8 @@ appreciate your participation.
     <headline>Anonymous CVS issues resolved</headline>
     <body>
       <p>
-	UPDATE: We are pleased to announce that SourceForge have resolved the issues with anonymous CVS access, and the selfupdate-cvs command should work again. Further details on the downtime can be found on the SourceForge.net <link url="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status</link> page.
-	</p>
+    UPDATE: We are pleased to announce that SourceForge have resolved the issues with anonymous CVS access, and the selfupdate-cvs command should work again. Further details on the downtime can be found on the SourceForge.net <link url="http://sourceforge.net/docman/display_doc.php?docid=2352&amp;group_id=1#cvs">site status</link> page.
+    </p>
     </body>
   </newsitem>
   <newsitem>
@@ -1583,8 +1595,8 @@ appreciate your participation.
     <headline>Fink Interaction with Apple's X11 Public Beta</headline>
     <body>
       <p>
-	Fink works just fine with the <link url="http://www.apple.com/macosx/x11/">public beta X11 release</link>
-	with some caveats.  Please read <varlink url="doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</varlink> section of the Fink X11 Documentation for details.</p>
+    Fink works just fine with the <link url="http://www.apple.com/macosx/x11/">public beta X11 release</link>
+    with some caveats.  Please read <varlink url="doc/x11/inst-xfree86.php#apple-binary">the newly added Apple X11</varlink> section of the Fink X11 Documentation for details.</p>
     </body>
   </newsitem>
   <newsitem>
@@ -1592,7 +1604,7 @@ appreciate your participation.
     <headline>RSS Feeds available</headline>
     <body>
       <p>
-	Thanks to Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that contain a lot of valuable information.
+    Thanks to Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that contain a lot of valuable information.
 
 <varlink url="news/fink-stable.rdf">fink-stable.rdf</varlink> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
 </p>
@@ -1719,11 +1731,11 @@ software before using Fink.
     <headline>Test version of Jaguar updater available</headline>
     <body>
       <p>
-			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <varlink url="news/jaguar.php">step-by-step instructions for updating</varlink>. We also have separate <varlink url="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</varlink>. 
-		</p>
+            A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <varlink url="news/jaguar.php">step-by-step instructions for updating</varlink>. We also have separate <varlink url="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</varlink>. 
+        </p>
       <p>
-			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the "stable" tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
-		</p>
+            At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the "stable" tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
+        </p>
     </body>
   </newsitem>
   <newsitem>
@@ -1741,13 +1753,13 @@ software before using Fink.
       as well as a new Fink release, to support 10.2.
     </p>
       <p>
-	 If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
-	 many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
-	 Some packages need special changes to build on 10.2. Adding "unstable/main" to your
-	 list of trees in /sw/etc/fink.conf (see also the <varlink url="faq/usage-fink.php#unstable">FAQ</varlink>)
-	 will give you access to the latest versions of packages, many of which include important
-	 fixes for 10.2.
-	</p>
+     If you upgrade your system to 10.2 before the official Fink update for 10.2 is ready,
+     many Fink packages built on 10.1 are going to work fine, but others need to be rebuilt.
+     Some packages need special changes to build on 10.2. Adding "unstable/main" to your
+     list of trees in /sw/etc/fink.conf (see also the <varlink url="faq/usage-fink.php#unstable">FAQ</varlink>)
+     will give you access to the latest versions of packages, many of which include important
+     fixes for 10.2.
+    </p>
       <p>
      As of now, please do not email us asking about 10.2 support. If you can't wait,
      consult the <varlink url="lists/index.php">mailing list archives</varlink> instead.

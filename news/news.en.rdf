@@ -5,70 +5,89 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2009-10-27T19:13:21-02:00</dc:date>
+    <dc:date>2009-10-31T01:35:23-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.">
+      <title>Servers back to normal.</title>
+      <link>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</link>
+      <guid>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</guid>
+      <description>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </description>
+      <content:encoded>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues.">
       <title>Server issues.</title>
       <link>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues.</link>
       <guid>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues.</guid>
       <description>
-	  <p>We have had server issues and as a result the Web site and the
-	  official binary distribution are down, and the rsync servers are stalled.
-	  Whilst we sort this out, you may:</p>
-	  
-		(Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-		you need Web site information
+      <p>We have had server issues and as a result the Web site and the
+      official binary distribution are down, and the rsync servers are stalled.
+      Whilst we sort this out, you may:</p>
+      
+        (Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+        you need Web site information
 
-		(selfupdate) If you use rsync as your selfupdate method then edit
-		/sw/etc/fink.conf and replace the line that starts with
-		Mirror-rsync with Mirror-rsync:
-		rsync://fink.gecko.ig42.org/finkinfo/
+        (selfupdate) If you use rsync as your selfupdate method then edit
+        /sw/etc/fink.conf and replace the line that starts with
+        Mirror-rsync with Mirror-rsync:
+        rsync://fink.gecko.ig42.org/finkinfo/
 
-		(source files) Edit /sw/etc/fink.conf and replace the
-		line that starts with Mirror-master with
-		Mirror-master: http://fink-dist.gecko.ig42.org
-		
-		(bindist) Edit /sw/etc/fink.conf and replace the line
-		that starts with Mirror-apt: with Mirror-apt:
-		http://fink-bindist.gecko.ig42.org
+        (source files) Edit /sw/etc/fink.conf and replace the
+        line that starts with Mirror-master with
+        Mirror-master: http://fink-dist.gecko.ig42.org
+        
+        (bindist) Edit /sw/etc/fink.conf and replace the line
+        that starts with Mirror-apt: with Mirror-apt:
+        http://fink-bindist.gecko.ig42.org
 
-		(bindist) Edit /sw/etc/apt/sources.list and replace
-		http://bindist.finkmirrors.net/bindist with
-		http://fink-bindist.gecko.ig42.org
+        (bindist) Edit /sw/etc/apt/sources.list and replace
+        http://bindist.finkmirrors.net/bindist with
+        http://fink-bindist.gecko.ig42.org
 
-		(bindist) Run fink scanpackages.
-	  
+        (bindist) Run fink scanpackages.
+      
       <p>We apologise for the inconvenience.</p>
-	</description>
+    </description>
       <content:encoded>
-	  <p>We have had server issues and as a result the Web site and the
-	  official binary distribution are down, and the rsync servers are stalled.
-	  Whilst we sort this out, you may:</p>
-	  
-		(Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-		you need Web site information
+      <p>We have had server issues and as a result the Web site and the
+      official binary distribution are down, and the rsync servers are stalled.
+      Whilst we sort this out, you may:</p>
+      
+        (Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
+        you need Web site information
 
-		(selfupdate) If you use rsync as your selfupdate method then edit
-		/sw/etc/fink.conf and replace the line that starts with
-		Mirror-rsync with Mirror-rsync:
-		rsync://fink.gecko.ig42.org/finkinfo/
+        (selfupdate) If you use rsync as your selfupdate method then edit
+        /sw/etc/fink.conf and replace the line that starts with
+        Mirror-rsync with Mirror-rsync:
+        rsync://fink.gecko.ig42.org/finkinfo/
 
-		(source files) Edit /sw/etc/fink.conf and replace the
-		line that starts with Mirror-master with
-		Mirror-master: http://fink-dist.gecko.ig42.org
-		
-		(bindist) Edit /sw/etc/fink.conf and replace the line
-		that starts with Mirror-apt: with Mirror-apt:
-		http://fink-bindist.gecko.ig42.org
+        (source files) Edit /sw/etc/fink.conf and replace the
+        line that starts with Mirror-master with
+        Mirror-master: http://fink-dist.gecko.ig42.org
+        
+        (bindist) Edit /sw/etc/fink.conf and replace the line
+        that starts with Mirror-apt: with Mirror-apt:
+        http://fink-bindist.gecko.ig42.org
 
-		(bindist) Edit /sw/etc/apt/sources.list and replace
-		http://bindist.finkmirrors.net/bindist with
-		http://fink-bindist.gecko.ig42.org
+        (bindist) Edit /sw/etc/apt/sources.list and replace
+        http://bindist.finkmirrors.net/bindist with
+        http://fink-bindist.gecko.ig42.org
 
-		(bindist) Run fink scanpackages.
-	  
+        (bindist) Run fink scanpackages.
+      
       <p>We apologise for the inconvenience.</p>
-	</content:encoded>
+    </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.">
       <title>Fink on 10.6.</title>
@@ -336,38 +355,38 @@ should run fink selfupdate after installation.</p>
       <link>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</link>
       <guid>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</guid>
       <description>
-		<p>
+        <p>
 Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
 </p>
-		<p>
+        <p>
 We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
 Recently our list of mirrors had to be shortened considerably and we need your help to improve its level of quality again.
 </p>
-	<p>
+    <p>
 Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
 All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
 For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
 We are looking for mirrors all over the world, but specifically in these countries:</p>
 United StatesJapanGermanyFranceUnited KingdomCanadaItalySpainSwitzerlandAustralia
-	<p>
+    <p>
 We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
 </p>
 </description>
       <content:encoded>
-		<p>
+        <p>
 Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
 </p>
-		<p>
+        <p>
 We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
 Recently our list of mirrors had to be shortened considerably and we need your help to improve its level of quality again.
 </p>
-	<p>
+    <p>
 Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
 All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
 For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
 We are looking for mirrors all over the world, but specifically in these countries:</p>
 United StatesJapanGermanyFranceUnited KingdomCanadaItalySpainSwitzerlandAustralia
-	<p>
+    <p>
 We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
 </p>
 </content:encoded>
@@ -458,7 +477,7 @@ permanently, another announcement will be made here.
 dpkg package resolves this problem.  Unstable users can
 now run the update commands normally.
 </p>
-		</description>
+        </description>
       <content:encoded>
 <p>Some users of fink's unstable tree are having sporadic difficulties
 at the end of building large packages, getting reports like
@@ -477,7 +496,7 @@ permanently, another announcement will be made here.
 dpkg package resolves this problem.  Unstable users can
 now run the update commands normally.
 </p>
-		</content:encoded>
+        </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available">
       <title>Server down; workarounds available</title>
@@ -485,7 +504,7 @@ now run the update commands normally.
       <guid>http://fink.sourceforge.net/news/#2006-08-19%20Server%20down%3B%20workarounds%20available</guid>
       <description>
 <p> Update, 21 August 2006:  The server has been restored.</p>
-	<p> 
+    <p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 
 of source files, and the package database) is down at the moment.  We are
@@ -517,10 +536,10 @@ Finally, to use the package database during the outage, you can connect
 to <a href="http://lists.finkproject.org/pdb">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
-		</description>
+        </description>
       <content:encoded>
 <p> Update, 21 August 2006:  The server has been restored.</p>
-	<p> 
+    <p> 
 The server which hosts four important
 fink services (the rsync update, the binary distribution, the "master mirror" 
 of source files, and the package database) is down at the moment.  We are
@@ -552,7 +571,7 @@ Finally, to use the package database during the outage, you can connect
 to <a href="http://lists.finkproject.org/pdb">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
-		</content:encoded>
+        </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006">
       <title>Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</title>
@@ -560,99 +579,70 @@ package database</a> which is a few weeks out of date.
       <guid>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</guid>
       <description>
 
-			<p>
-				The "10.4-transitional" tree was created as an interim solution to the issues of
-				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
-				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
-				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
-				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
-				1st, 2006.
-			</p>
-			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
-			<p>
-				As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
-				there are 2 ways to make the switch to the supported "10.4" tree.
-			</p>
-			<p>
-				The simplest way is to remove your Fink installation by deleting it and
-				installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
-			</p>
-			<p>
-				Alternately, to preserve your Fink installation, download the
-				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
-				and read the README for instructions on how to upgrade your existing installation in-place.
-				This will re-build your Fink installation from source, upgrading everything in the process.
-				Be warned, it can take a lot of time, depending on your fink installation!
-			</p>
-			<p>
-				Feedback on the upgrade script has been very positive; many users have already
-				made the switch.  If you have problems, please feel free to mail your issues to
-				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
-			</p>
+            <p>
+                The "10.4-transitional" tree was created as an interim solution to the issues of
+                incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+                compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+                move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+                support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+                1st, 2006.
+            </p>
+            <p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
+            <p>
+                As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+                there are 2 ways to make the switch to the supported "10.4" tree.
+            </p>
+            <p>
+                The simplest way is to remove your Fink installation by deleting it and
+                installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
+            </p>
+            <p>
+                Alternately, to preserve your Fink installation, download the
+                <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+                and read the README for instructions on how to upgrade your existing installation in-place.
+                This will re-build your Fink installation from source, upgrading everything in the process.
+                Be warned, it can take a lot of time, depending on your fink installation!
+            </p>
+            <p>
+                Feedback on the upgrade script has been very positive; many users have already
+                made the switch.  If you have problems, please feel free to mail your issues to
+                the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
+            </p>
 <p> Update, 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
-		</description>
+        </description>
       <content:encoded>
 
-			<p>
-				The "10.4-transitional" tree was created as an interim solution to the issues of
-				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
-				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
-				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
-				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
-				1st, 2006.
-			</p>
-			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
-			<p>
-				As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
-				there are 2 ways to make the switch to the supported "10.4" tree.
-			</p>
-			<p>
-				The simplest way is to remove your Fink installation by deleting it and
-				installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
-			</p>
-			<p>
-				Alternately, to preserve your Fink installation, download the
-				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
-				and read the README for instructions on how to upgrade your existing installation in-place.
-				This will re-build your Fink installation from source, upgrading everything in the process.
-				Be warned, it can take a lot of time, depending on your fink installation!
-			</p>
-			<p>
-				Feedback on the upgrade script has been very positive; many users have already
-				made the switch.  If you have problems, please feel free to mail your issues to
-				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
-			</p>
+            <p>
+                The "10.4-transitional" tree was created as an interim solution to the issues of
+                incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+                compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+                move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+                support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+                1st, 2006.
+            </p>
+            <p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
+            <p>
+                As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+                there are 2 ways to make the switch to the supported "10.4" tree.
+            </p>
+            <p>
+                The simplest way is to remove your Fink installation by deleting it and
+                installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
+            </p>
+            <p>
+                Alternately, to preserve your Fink installation, download the
+                <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+                and read the README for instructions on how to upgrade your existing installation in-place.
+                This will re-build your Fink installation from source, upgrading everything in the process.
+                Be warned, it can take a lot of time, depending on your fink installation!
+            </p>
+            <p>
+                Feedback on the upgrade script has been very positive; many users have already
+                made the switch.  If you have problems, please feel free to mail your issues to
+                the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
+            </p>
 <p> Update, 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
-		</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006">
-      <title>Fink Birds-of-a-Feather at OSCON 2006</title>
-      <link>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</link>
-      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Fink%20Birds-of-a-Feather%20at%20OSCON%202006</guid>
-      <description>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
-				Fink, or even just meet for the heck of it.
-			</p>
-			<p>
-				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
-				Mac OS X, and anything else that takes our fancy.
-			</p>
-		</description>
-      <content:encoded>
-			<p>Are you at OSCON 2006?  Want to meet up?</p>
-			<p>
-				<a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick on #fink)
-				is at OSCON and is interested in meeting anyone who wants to hang out and talk about
-				Fink, or even just meet for the heck of it.
-			</p>
-			<p>
-				Meet us in room F150 on Wednesday, July 26th at 8:30pm and we'll talk about Fink,
-				Mac OS X, and anything else that takes our fancy.
-			</p>
-		</content:encoded>
+        </content:encoded>
     </item>
   </channel>
 </rss>

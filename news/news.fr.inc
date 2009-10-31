@@ -1,4 +1,10 @@
-<a name="2009-10-24%20Server%20issues"><span class="news-date">2009-10-24: </span><span class="news-headline">Server issues</span></a><?php gray_line(); ?>
+<a name="2009-10-30 Servers back to normal."><span class="news-date">2009-10-30: </span><span class="news-headline">Servers back to normal.</span></a><?php gray_line(); ?>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    <a name="2009-10-24 Server issues"><span class="news-date">2009-10-24: </span><span class="news-headline">Server issues</span></a><?php gray_line(); ?>
 	  <p>We have had server issues and as a result the Web site and the
 	  official binary distribution are down, and the rsync servers are stalled.
 	  Whilst we sort this out, you may:</p>
@@ -26,7 +32,7 @@
 		<li>Run <code>fink scanpackages</code>.</li>
 	  </ul>
       <p>We apologise for the inconvenience.</p>
-	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
+	<a name="2009-08-28 Fink on 10.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
       <p>
 Fink is ready to be used on Snow Leopard (OS X v. 10.6).  Users will
 need to choose between a 32-bit version of fink and a 64-bit version of fink
@@ -73,20 +79,5 @@ to do some cleanup.
 available for 10.6.  In the near future, fink's package database will be
 updated to include information about packages for 10.6; you can check there
 to see if your favorite package is ready.
-</p>
-<a name="2009-07-25%20Fink%20Core%20Group%20changes."><span class="news-date">2009-07-25: </span><span class="news-headline">Fink Core Group changes.</span></a><?php gray_line(); ?>
-      <p>
-The Fink Core Group announces two new members: Alexander Hansen (<b>akh</b>)
-and Augusto Devegili (<b>monipol</b>), both of whom have been very active
-in fink.  Please join us in welcoming the new members!
-</p><p>
-The Group also announces that Christian Schaffner has stepped down,
-returning to "ordinary member" status.  We thank Christian for his help
-on the team over the past several years.
-</p><p>
-Members of the Fink project are working hard to provide user support,
-to keep Fink up to date, and to prepare for the upcoming Snow Leopard
-release.  More volunteers are always needed, so please consider
-getting involved at some level!
 </p>
 

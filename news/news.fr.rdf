@@ -5,8 +5,27 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2009-10-27T19:13:21-02:00</dc:date>
+    <dc:date>2009-10-31T01:35:23-02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.">
+      <title>Servers back to normal.</title>
+      <link>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</link>
+      <guid>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</guid>
+      <description>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </description>
+      <content:encoded>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues">
       <title>Server issues</title>
       <link>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues</link>
@@ -541,21 +560,6 @@ Une annonce sera postée ici même dès la correction effectuée.
 <p>Un autre moyen consiste à télécharger le <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">script de mise à jour</a> et de lire les instructions dans le fichier README pour mettre à jour l'installation existante sans la supprimer. Cette méthode reconstruit l'installation Fink à partir du source et met à jour toute l'installation. Notez que le processus peut prendre un certain temps selon l'installation.</p>
 <p>Nous avons reçu des rapports très encourageants sur l'utilisation du script ; de nombreux utilisateurs sont déjà passés à la nouvelle arborescence. Si vous rencontrez des problèmes, veuillez en faire part sur les <a href="http://fink.sourceforge.net/lists">listes de discussions</a>.
 </p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#24%2F07%2F2006%20%22Les%20oiseaux%20de%20m%EAme%20plumage%22%20de%20Fink%20%E0%20OSCON%202006">
-      <title>"Les oiseaux de même plumage" de Fink à OSCON 2006</title>
-      <link>http://fink.sourceforge.net/news/#24%2F07%2F2006%20%22Les%20oiseaux%20de%20m%EAme%20plumage%22%20de%20Fink%20%E0%20OSCON%202006</link>
-      <guid>http://fink.sourceforge.net/news/#24%2F07%2F2006%20%22Les%20oiseaux%20de%20m%EAme%20plumage%22%20de%20Fink%20%E0%20OSCON%202006</guid>
-      <description>
-<p>Allez-vous à OSCON 2006 ?  Voulez-vous que nous nous rencontrions ?</p>
-<p><a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick sur #fink) sera à OSCON et souhaite rencontrer tous ceux qui le souhaitent pour parler de Fink ou juste pour le plaisir.</p>
-<p>Nous pourrons nous voir dans le bureau F150 mercredi 26 juillet à 20 h 30 et nous parlerons de Fink, Mac OS X ou de n'importe quel autre sujet.</p>
-</description>
-      <content:encoded>
-<p>Allez-vous à OSCON 2006 ?  Voulez-vous que nous nous rencontrions ?</p>
-<p><a href="mailto:oscon2006@racoonfink.com">Benjamin Reed</a> (RangerRick sur #fink) sera à OSCON et souhaite rencontrer tous ceux qui le souhaitent pour parler de Fink ou juste pour le plaisir.</p>
-<p>Nous pourrons nous voir dans le bureau F150 mercredi 26 juillet à 20 h 30 et nous parlerons de Fink, Mac OS X ou de n'importe quel autre sujet.</p>
 </content:encoded>
     </item>
   </channel>

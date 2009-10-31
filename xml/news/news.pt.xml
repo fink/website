@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="pt">
-  <cvsid>$Id: news.pt.xml,v 1.9 2009/10/27 21:12:59 monipol Exp $</cvsid>
+  <cvsid>$Id: news.pt.xml,v 1.10 2009/10/31 03:35:06 monipol Exp $</cvsid>
+
+  <newsitem>
+    <date>2009-10-30</date>
+    <headline>Servidor novamente em operação..</headline>
+    <body>
+	  <p>Nossos serviços ao usuário foram restaurados. Em 28 de outubro o site
+	  e alguns dos espelhos (rsync, arquivos fontes, distribuição de binários)
+	  foram resturandos e em 30 de outubro todos os principais espelhos rsync
+	  estavam operacionais. Uma vez mais, pedimos desculpas pela
+	  inconveniência. Agradecemos sua paciência e colaboração.</p>
+
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </body>
+  </newsitem>
 
   <newsitem>
     <date>2009-10-24</date>
-	<headline>Problemas com o servidor</headline>
+	<headline>Problemas com o servidor.</headline>
 	<body>
 	  <p>Estamos com problemas no servidor e por conseguinte o site e a
 	  distribuição oficial de binários estão fora do ar, e os servidores rsync

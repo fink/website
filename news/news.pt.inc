@@ -1,4 +1,16 @@
-<a name="2009-10-24%20Problemas%20com%20o%20servidor"><span class="news-date">2009-10-24: </span><span class="news-headline">Problemas com o servidor</span></a><?php gray_line(); ?>
+<a name="2009-10-30 Servidor novamente em operação.."><span class="news-date">2009-10-30: </span><span class="news-headline">Servidor novamente em operação..</span></a><?php gray_line(); ?>
+	  <p>Nossos serviços ao usuário foram restaurados. Em 28 de outubro o site
+	  e alguns dos espelhos (rsync, arquivos fontes, distribuição de binários)
+	  foram resturandos e em 30 de outubro todos os principais espelhos rsync
+	  estavam operacionais. Uma vez mais, pedimos desculpas pela
+	  inconveniência. Agradecemos sua paciência e colaboração.</p>
+
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    <a name="2009-10-24 Problemas com o servidor."><span class="news-date">2009-10-24: </span><span class="news-headline">Problemas com o servidor.</span></a><?php gray_line(); ?>
 	  <p>Estamos com problemas no servidor e por conseguinte o site e a
 	  distribuição oficial de binários estão fora do ar, e os servidores rsync
 	  não estão atualizando. Enquanto resolvemos os problemas, você pode:</p>
@@ -26,7 +38,7 @@
 		<li>Execute o comando <code>fink scanpackages</code></li>
 	  </ul>
       <p>Pedimos desculpas pela inconveniência.</p>
-	<a name="2009-08-28%20Fink%20no%20OS%20X%2010.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
+	<a name="2009-08-28 Fink no OS X 10.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
       <p>O Fink está pronto para ser usado no Snow Leopard (OS X 10.6). Os
       usuários precisam escolher dentre a versão do Fink de 32 bits e a de 64
       bits para o 10.6. A versão de 32 bits possui mais pacotes disponíveis no
@@ -70,16 +82,4 @@
       pacotes do Fink será atualizado para que inclua informações sobre pacotes
       para o 10.6; você poderá consultá-lo para verificar se seus pacotes
       prediletos estão disponíveis.</p>
-    <a name="2009-07-25%20Mudan%C3%A7as%20no%20Grupo%20Central"><span class="news-date">2009-07-25: </span><span class="news-headline">Mudanças no Grupo Central</span></a><?php gray_line(); ?>
-      <p>O Grupo Central do Fink anuncia dois novos membros: Alexander Hansen
-      (<b>akh</b>) e Augusto Devegili (<b>monipol</b>), tendo ambos estado
-      bastante ativos no projeto. Una-se a nós e dê as boas-vindas aos novos
-      membros!</p>
-      <p>A equipe também anuncia que Christian Schaeffner retirou-se do grupo,
-      voltando ao status de colaborador regular. Agradecemos ao Christian por
-      sua ajuda na equipe nos últimos anos.</p>
-      <p>Membros do projeto Fink estão trabalhando arduamente para prover
-      suporte ao usuário, manter o Fink atualizado, e preparar para o futuro
-      lançamento do Snow Leopard. Sempre precisamos de mais voluntários,
-      portanto cogite contribuir de alguma forma!</p>
     

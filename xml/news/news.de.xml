@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
-  <cvsid>$Id: news.de.xml,v 1.44 2009/10/27 21:12:59 monipol Exp $</cvsid>
+  <cvsid>$Id: news.de.xml,v 1.45 2009/10/31 03:35:05 monipol Exp $</cvsid>
+
+  <newsitem>
+    <date>2009-10-30</date>
+    <headline>Servers back to normal.</headline>
+    <body>
+      <p>Our user services have been restored. On Oct 28th the Web site and
+      some of the mirrors (rsync, source files, binary distribution) were
+      restored, and on Oct 30th all of our main rsync mirrors were operational.
+      Once again, we apologise for the inconvenience. Thanks for your patience
+      and support.</p>
+    </body>
+  </newsitem>
 
   <newsitem>
     <date>2009-10-24</date>
