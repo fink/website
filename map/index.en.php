@@ -1,7 +1,7 @@
 <?
 $title = "Fink Developer Map";
-$cvs_author = '$Author: newmanbe $';
-$cvs_date = '$Date: 2005/05/28 23:35:34 $';
+$cvs_author = '$Author: mrvacbob $';
+$cvs_date = '$Date: 2009/11/01 06:28:58 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ include "header.inc";
 <tr><td>12</td><td>Asari 'asari' Takashi</td><td>Tokyo, Japan</td></tr>
 <tr><td>13</td><td>Motoi 'wm3' Washida</td><td>Tokyo, Japan</td></tr>
 <tr><td>14</td><td>Dave 'vasi' Vasilevsky</td><td>Montr&#233;al, Canada</td></tr>
-<tr><td>15</td><td>Alexander 'Feanor' Strange</td></tr>
+<tr><td>15</td><td>Alexander 'astrange' Strange</td></tr>
 <tr><td>16</td><td>Alexander 'akh' Hansen</td></tr>
 <tr><td>17</td><td>Ben 'Clef' Hines</td></tr>
 <tr><td>18</td><td>Chris 'zizban' Turkel</td><td>Cheshire, 

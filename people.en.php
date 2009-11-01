@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2009/07/25 15:12:22 $';
+$cvs_author = '$Author: mrvacbob $';
+$cvs_date = '$Date: 2009/11/01 06:28:57 $';
 
 include "header.inc";
 ?>
@@ -100,7 +100,7 @@ this list.</p>
 <li>Masanori Sekino (<i>msek</i>)</li>
 <li>Dustin Sias (<i>dsias</i>)</li>
 <li>Matt Stephenson</li>
-<li>Alexander Strange (<i>Feanor</i>)</li>
+<li>Alexander Strange (<i>astrange</i>)</li>
 <li>Christian Swinehart</li>
 <li>Mark Treiber</li>
 <li>Jeffrey S. Whitaker</li>

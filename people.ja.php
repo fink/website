@@ -1,7 +1,7 @@
 <?
 $title = "貢献している人々";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2009/03/07 19:18:42 $';
+$cvs_author = '$Author: mrvacbob $';
+$cvs_date = '$Date: 2009/11/01 06:28:58 $';
 
 include "header.inc";
 ?>
@@ -106,7 +106,7 @@ Fink プロジェクトはボランティアによって成り立っています
 <li>Masanori Sekino (<i>msek</i>)</li>
 <li>Dustin Sias (<i>dsias</i>)</li>
 <li>Matt Stephenson</li>
-<li>Alexander Strange (<i>Feanor</i>)</li>
+<li>Alexander Strange (<i>astrange</i>)</li>
 <li>Christian Swinehart</li>
 <li>Mark Treiber</li>
 <li>Jeffrey S. Whitaker</li>
