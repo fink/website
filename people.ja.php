@@ -1,7 +1,7 @@
 <?
 $title = "貢献している人々";
-$cvs_author = '$Author: mrvacbob $';
-$cvs_date = '$Date: 2009/11/01 06:28:58 $';
+$cvs_author = '$Author: monipol $';
+$cvs_date = '$Date: 2009/11/02 17:24:11 $';
 
 include "header.inc";
 ?>
@@ -98,7 +98,7 @@ Fink プロジェクトはボランティアによって成り立っています
 <li>Remi Mommsen</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
 <li>Hanspeter Niederstrasser (<i>Snaggle</i>)</li>
-<li>Matthias Ringwald (<i>freckle<i>)</li>
+<li>Matthias Ringwald (<i>freckle</i>)</li>
 <li>Andrew Rohl</li> 
 <li>Lars Rosengreen</li>
 <li>Michael G. Schwern</li>
