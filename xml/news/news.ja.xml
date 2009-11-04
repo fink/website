@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.45 2009/11/04 03:02:27 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.46 2009/11/04 03:11:31 babayoshihiko Exp $</cvsid>
 
   <newsitem>
     <date>2009-10-30</date>
     <headline>サーバー復帰。</headline>
     <body>
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.
-      
+      <p>
       ユーザーサービスが復帰しました。
       10月28日に、ウェブサイト及び一部のミラー (rsync, source files, binary distribution) 
       が復帰し、
@@ -44,15 +39,14 @@
 		http://bindist.finkmirrors.net/bindist</code> を <code>Mirror-apt:
 		http://fink-bindist.gecko.ig42.org</code> としてください。
 		</li>
-        <li>(bindist) Edit <code>/sw/etc/fink.conf</code> and replace the line
-        that starts with <code>Mirror-apt:</code> with <code>Mirror-apt:
-        http://fink-bindist.gecko.ig42.org</code></li>
+        <li>(bindist) <code>/sw/etc/fink.conf</code>を開き、<code>Mirror-apt:</code> で始まる行を <code>Mirror-apt:
+        http://fink-bindist.gecko.ig42.org</code> としてください。</li>
 
-        <li>(bindist) Edit <code>/sw/etc/apt/sources.list</code> and replace
-        <code>http://bindist.finkmirrors.net/bindist</code> with
-        <code>http://fink-bindist.gecko.ig42.org</code></li>
+        <li>(bindist) <code>/sw/etc/apt/sources.list</code> を開き、
+        <code>http://bindist.finkmirrors.net/bindist</code> という行を
+        <code>http://fink-bindist.gecko.ig42.org</code> としてください。</li>
 
-        <li>(bindist) Run <code>fink scanpackages</code>.</li>
+        <li>(bindist) <code>fink scanpackages</code> を実行してください。</li>
 	  </ul>
       <p>ご迷惑をおかけしていることをお詫び申し上げます。</p>
 	</body>
