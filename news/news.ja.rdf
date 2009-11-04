@@ -5,19 +5,14 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2009-11-04T12:03:03+09:00</dc:date>
+    <dc:date>2009-11-04T12:11:55+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20%3F%3F%3F%3F%3F%3F%3F">
       <title>&#12469;&#12540;&#12496;&#12540;&#24489;&#24112;&#12290;</title>
       <link>http://fink.sourceforge.net/news/#2009-10-30%20%3F%3F%3F%3F%3F%3F%3F</link>
       <guid>http://fink.sourceforge.net/news/#2009-10-30%20%3F%3F%3F%3F%3F%3F%3F</guid>
       <description>
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.
-      
+      <p>
       &#12518;&#12540;&#12470;&#12540;&#12469;&#12540;&#12499;&#12473;&#12364;&#24489;&#24112;&#12375;&#12414;&#12375;&#12383;&#12290;
       10&#26376;28&#26085;&#12395;&#12289;&#12454;&#12455;&#12502;&#12469;&#12452;&#12488;&#21450;&#12403;&#19968;&#37096;&#12398;&#12511;&#12521;&#12540; (rsync, source files, binary distribution) 
       &#12364;&#24489;&#24112;&#12375;&#12289;
@@ -27,12 +22,7 @@
       </p>
     </description>
       <content:encoded>
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.
-      
+      <p>
       &#12518;&#12540;&#12470;&#12540;&#12469;&#12540;&#12499;&#12473;&#12364;&#24489;&#24112;&#12375;&#12414;&#12375;&#12383;&#12290;
       10&#26376;28&#26085;&#12395;&#12289;&#12454;&#12455;&#12502;&#12469;&#12452;&#12488;&#21450;&#12403;&#19968;&#37096;&#12398;&#12511;&#12521;&#12540; (rsync, source files, binary distribution) 
       &#12364;&#24489;&#24112;&#12375;&#12289;
@@ -63,15 +53,14 @@
 		http://bindist.finkmirrors.net/bindist &#12434; Mirror-apt:
 		http://fink-bindist.gecko.ig42.org &#12392;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 		
-        (bindist) Edit /sw/etc/fink.conf and replace the line
-        that starts with Mirror-apt: with Mirror-apt:
-        http://fink-bindist.gecko.ig42.org
+        (bindist) /sw/etc/fink.conf&#12434;&#38283;&#12365;&#12289;Mirror-apt: &#12391;&#22987;&#12414;&#12427;&#34892;&#12434; Mirror-apt:
+        http://fink-bindist.gecko.ig42.org &#12392;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 
-        (bindist) Edit /sw/etc/apt/sources.list and replace
-        http://bindist.finkmirrors.net/bindist with
-        http://fink-bindist.gecko.ig42.org
+        (bindist) /sw/etc/apt/sources.list &#12434;&#38283;&#12365;&#12289;
+        http://bindist.finkmirrors.net/bindist &#12392;&#12356;&#12358;&#34892;&#12434;
+        http://fink-bindist.gecko.ig42.org &#12392;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 
-        (bindist) Run fink scanpackages.
+        (bindist) fink scanpackages &#12434;&#23455;&#34892;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 	  
       <p>&#12372;&#36855;&#24785;&#12434;&#12362;&#12363;&#12369;&#12375;&#12390;&#12356;&#12427;&#12371;&#12392;&#12434;&#12362;&#35435;&#12403;&#30003;&#12375;&#19978;&#12370;&#12414;&#12377;&#12290;</p>
 	</description>
@@ -92,15 +81,14 @@
 		http://bindist.finkmirrors.net/bindist &#12434; Mirror-apt:
 		http://fink-bindist.gecko.ig42.org &#12392;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 		
-        (bindist) Edit /sw/etc/fink.conf and replace the line
-        that starts with Mirror-apt: with Mirror-apt:
-        http://fink-bindist.gecko.ig42.org
+        (bindist) /sw/etc/fink.conf&#12434;&#38283;&#12365;&#12289;Mirror-apt: &#12391;&#22987;&#12414;&#12427;&#34892;&#12434; Mirror-apt:
+        http://fink-bindist.gecko.ig42.org &#12392;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 
-        (bindist) Edit /sw/etc/apt/sources.list and replace
-        http://bindist.finkmirrors.net/bindist with
-        http://fink-bindist.gecko.ig42.org
+        (bindist) /sw/etc/apt/sources.list &#12434;&#38283;&#12365;&#12289;
+        http://bindist.finkmirrors.net/bindist &#12392;&#12356;&#12358;&#34892;&#12434;
+        http://fink-bindist.gecko.ig42.org &#12392;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 
-        (bindist) Run fink scanpackages.
+        (bindist) fink scanpackages &#12434;&#23455;&#34892;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
 	  
       <p>&#12372;&#36855;&#24785;&#12434;&#12362;&#12363;&#12369;&#12375;&#12390;&#12356;&#12427;&#12371;&#12392;&#12434;&#12362;&#35435;&#12403;&#30003;&#12375;&#19978;&#12370;&#12414;&#12377;&#12290;</p>
 	</content:encoded>

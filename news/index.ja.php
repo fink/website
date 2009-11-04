@@ -1,19 +1,14 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/11/04 03:02:27';
+$cvs_date = 'Date: 2009/11/04 03:11:31';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
 <a name="2009-10-30%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%BE%A9%E5%B8%B0%E3%80%82"><span class="news-date">2009-10-30: </span><span class="news-headline">サーバー復帰。</span></a><?php gray_line(); ?>
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.
-      
+      <p>
       ユーザーサービスが復帰しました。
       10月28日に、ウェブサイト及び一部のミラー (rsync, source files, binary distribution) 
       が復帰し、
@@ -38,15 +33,14 @@ include_once "header.inc";
 		http://bindist.finkmirrors.net/bindist</code> を <code>Mirror-apt:
 		http://fink-bindist.gecko.ig42.org</code> としてください。
 		</li>
-        <li>(bindist) Edit <code>/sw/etc/fink.conf</code> and replace the line
-        that starts with <code>Mirror-apt:</code> with <code>Mirror-apt:
-        http://fink-bindist.gecko.ig42.org</code></li>
+        <li>(bindist) <code>/sw/etc/fink.conf</code>を開き、<code>Mirror-apt:</code> で始まる行を <code>Mirror-apt:
+        http://fink-bindist.gecko.ig42.org</code> としてください。</li>
 
-        <li>(bindist) Edit <code>/sw/etc/apt/sources.list</code> and replace
-        <code>http://bindist.finkmirrors.net/bindist</code> with
-        <code>http://fink-bindist.gecko.ig42.org</code></li>
+        <li>(bindist) <code>/sw/etc/apt/sources.list</code> を開き、
+        <code>http://bindist.finkmirrors.net/bindist</code> という行を
+        <code>http://fink-bindist.gecko.ig42.org</code> としてください。</li>
 
-        <li>(bindist) Run <code>fink scanpackages</code>.</li>
+        <li>(bindist) <code>fink scanpackages</code> を実行してください。</li>
 	  </ul>
       <p>ご迷惑をおかけしていることをお詫び申し上げます。</p>
 	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
