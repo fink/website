@@ -100,6 +100,16 @@ $phpLang_languages = array(
 	"zh([-_][[:alpha:]]{2})?|chinese"		=>	array('zh', 'chinese_simplified', '&#20013;&#25991; (&#31616;) (Simplified Chinese)')
 );
 
+// Disable languages. e.g. $GLOBALS['phpLang_disabledLanguages'] = 'de ja' before calling phpLang.
+if ($GLOBALS['phpLang_disabledLanguages'] != '') {
+	$disLangs = explode(' ', $GLOBALS['phpLang_disabledLanguages']);
+	foreach ($GLOBALS['phpLang_languages'] as $langKey => $langArray) { 
+		foreach ($disLangs as $disLang) {
+			if ($langArray[0] == $disLang) unset ($phpLang_languages[$langKey]);
+		}
+	}
+}
+
 // finds current file name, extension and uri
 if ($SCRIPT_NAME == '') $SCRIPT_NAME = getenv('SCRIPT_NAME');
 if(ereg("([^/?]+)(\?.*)?$", $SCRIPT_NAME, $regs)) {
@@ -124,9 +134,20 @@ if(ereg("([^/?]+)(\?.*)?$", $SCRIPT_NAME, $regs)) {
 $HTTP_ACCEPT_LANGUAGE = getenv('HTTP_ACCEPT_LANGUAGE');
 $HTTP_USER_AGENT = getenv('HTTP_USER_AGENT');
 
+// checks if the language is disabled
+function isDisabled($lang)
+{
+	if ($GLOBALS['phpLang_disabledLanguages'] != ''){
+		if (strpos($GLOBALS['phpLang_disabledLanguages'],$lang)>0) return TRUE;
+	}
+	return FALSE;
+}
+
 // function that gives the localized file name
 function phpLang_localizedFileName($lang)
 {
+	if ($GLOBALS['phpLang_disabledLanguages'] != '' && strpos) {
+	}
 	switch(phpLang_fileNameType) {
 		case 1	:	$ret = phpLang_localDir.phpLang_currentFileName.phpLang_currentFileExtension.'.'.$lang;
 					break;
@@ -155,12 +176,12 @@ function phpLang_detectLanguage($str, $from)
 }
 
 // finds the appropriate language file
-if (isset($HTTP_GET_VARS[phpLang_urlParam]) && file_exists(phpLang_localizedFileName($HTTP_GET_VARS[phpLang_urlParam]))) {
+if (isset($HTTP_GET_VARS[phpLang_urlParam]) && file_exists(phpLang_localizedFileName($HTTP_GET_VARS[phpLang_urlParam]) && !isDisabled($HTTP_GET_VARS[phpLang_urlParam]))) {
 	// a language as been chosen by the user
 	define('phpLang_current', $HTTP_GET_VARS[phpLang_urlParam]);
 }
 
-if (!defined('phpLang_current') && phpLang_useCookie && isset($HTTP_COOKIE_VARS['phpLangCookie']) && file_exists(phpLang_localizedFileName($HTTP_COOKIE_VARS['phpLangCookie']))) {
+if (!defined('phpLang_current') && phpLang_useCookie && isset($HTTP_COOKIE_VARS['phpLangCookie']) && file_exists(phpLang_localizedFileName($HTTP_COOKIE_VARS['phpLangCookie']) && !isDisabled($HTTP_COOKIE_VARS['phpLangCookie']))) {
 	// a language as been found in a cookie previously set
 	define('phpLang_current', $HTTP_COOKIE_VARS['phpLangCookie']);
 }
@@ -171,7 +192,7 @@ if (!defined('phpLang_current') && isset($HTTP_ACCEPT_LANGUAGE) && trim($HTTP_AC
 	while(!defined('phpLang_current') && list($key, $name) = each($accepted)) {
 		$code = explode(';', $name);
 		$ext = phpLang_detectLanguage($code[0], 1);
-		if(file_exists(phpLang_localizedFileName($ext))) {
+		if(file_exists(phpLang_localizedFileName($ext)) && !isDisabled($ext)) {
 			define('phpLang_current', $ext);
 		}
 	}
