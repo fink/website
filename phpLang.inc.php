@@ -138,7 +138,7 @@ $HTTP_USER_AGENT = getenv('HTTP_USER_AGENT');
 function isDisabled($lang)
 {
 	if ($GLOBALS['phpLang_disabledLanguages'] != ''){
-		if (strpos($GLOBALS['phpLang_disabledLanguages'],$lang)>0) return TRUE;
+		if (' '.strpos($GLOBALS['phpLang_disabledLanguages'],$lang)>0) return TRUE;
 	}
 	return FALSE;
 }

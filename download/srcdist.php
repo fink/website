@@ -1,4 +1,4 @@
 <? 
-$phpLang_disabledLanguages = "de ja";
+$phpLang_disabledLanguages = "de fr it ja zh";
 include_once "../phpLang.inc.php"; 
 ?>
