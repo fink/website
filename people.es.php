@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/11/02 17:24:11 $';
+$cvs_author = '$Author: fangism $';
+$cvs_date = '$Date: 2009/11/07 23:40:50 $';
 
 include "header.inc";
 ?>
@@ -74,6 +74,7 @@ consideraremos incluirte en la siguiente revision de la lista.</p>
 <li>Finlay Dobbie (<i>AngusD</i>)</li>
 <li>Chris Dolan</li>
 <li>Koen van der Drift</li>
+<li>David Fang (<i>fangism</i>)</li>
 <li>rayg</li>
 <li>Michèle Garoche (<i>miga</i>)</li>
 <li>James Gibbs</li>
