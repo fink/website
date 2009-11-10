@@ -1,7 +1,7 @@
 <?
 $title = "Guia rápido para download";
 $cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/24 23:01:59 $';
+$cvs_date = '$Date: 2009/11/10 01:08:21 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -20,7 +20,10 @@ href="upgrade.php?phpLang=pt">matriz de atualização</a>.</p>
 versão de binários.</p>
 
 <ol>
-  <li><p>Baixe a imagem de disco contendo o instalador:<br>
+  <li><p>Usuários 10.6: no momento não há um instalador binário. Siga as
+  instruções para <a href="srcdist.php">instalação a partir do código
+  fonte</a>.<br/>
+  Usuários 10.5: Baixe a imagem de disco contendo o instalador:<br>
   <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" .
   $fink_version . "-PowerPC-Installer.dmg?download",
   "Instalador binário do Fink " . $fink_version .  " (PowerPC)", "/downloads/FinkPPC") ?>
@@ -32,7 +35,7 @@ versão de binários.</p>
   (usuários 10.4 - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink 0.8.1 (PowerPC)</a> ou <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink 0.8.1 (Intel)</a>)<br>
   (usuários 10.3 - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink 0.7.2</a>)<br>
   (usuários 10.2 - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink 0.6.4</a>)<br>
-  (usuários 10.1 users - use <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink 0.4.1</a>)</p></li>
+  (usuários 10.1 - use <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink 0.4.1</a>)</p></li>
 
   <li><p>Dê um duplo clique em &quot;Fink-<? print $fink_version;
   ?>-XYZ-Installer.dmg&quot; (onde XYZ é ou PowerPC ou Intel) para montar a
