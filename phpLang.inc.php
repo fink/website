@@ -176,7 +176,7 @@ function phpLang_detectLanguage($str, $from)
 }
 
 // finds the appropriate language file
-if (isset($HTTP_GET_VARS[phpLang_urlParam]) && file_exists(phpLang_localizedFileName($HTTP_GET_VARS[phpLang_urlParam]) && !isDisabled($HTTP_GET_VARS[phpLang_urlParam]))) {
+if (isset($HTTP_GET_VARS[phpLang_urlParam]) && file_exists(phpLang_localizedFileName($HTTP_GET_VARS[phpLang_urlParam])) && !isDisabled($HTTP_GET_VARS[phpLang_urlParam])) {
 	// a language as been chosen by the user
 	define('phpLang_current', $HTTP_GET_VARS[phpLang_urlParam]);
 }
