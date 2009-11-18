@@ -181,7 +181,7 @@ if (isset($HTTP_GET_VARS[phpLang_urlParam]) && file_exists(phpLang_localizedFile
 	define('phpLang_current', $HTTP_GET_VARS[phpLang_urlParam]);
 }
 
-if (!defined('phpLang_current') && phpLang_useCookie && isset($HTTP_COOKIE_VARS['phpLangCookie']) && file_exists(phpLang_localizedFileName($HTTP_COOKIE_VARS['phpLangCookie']) && !isDisabled($HTTP_COOKIE_VARS['phpLangCookie']))) {
+if (!defined('phpLang_current') && phpLang_useCookie && isset($HTTP_COOKIE_VARS['phpLangCookie']) && file_exists(phpLang_localizedFileName($HTTP_COOKIE_VARS['phpLangCookie'])) && !isDisabled($HTTP_COOKIE_VARS['phpLangCookie'])) {
 	// a language as been found in a cookie previously set
 	define('phpLang_current', $HTTP_COOKIE_VARS['phpLangCookie']);
 }
