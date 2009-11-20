@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2008/06/27 01:37:16 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2009/11/20 13:20:41 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -20,8 +20,11 @@ include_once "../fink_version.inc";
 </p>
 
 <ol>
-<li><p>
-下载安装程序磁盘映象：<br>
+<li>
+<p>
+10.6 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
+
+10.5 users: 下载安装程序磁盘映象：<br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " 二进制安装包 (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " 二进制安装包 (Intel)",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
 （10.4 用户 － 使用 <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink

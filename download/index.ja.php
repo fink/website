@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2008/06/27 01:37:16 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2009/11/20 13:20:41 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -23,10 +23,14 @@ Fink をインストール、アップグレードする方法はたくさんあ
 </p>
 
 <ol>
-<li><p>
-インストーラディスクイメージをダウンロード:<br>
+<li>
+<p>
+10.6 ユーザ: まだバイナリインストーラはありません。<A href="srcdist.php">ソースインストール</A>をご覧ください。<br>
+
+10.5 ユーザ: インストーラディスクイメージをダウンロード:<br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " バイナリインストーラ (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " バイナリインストーラ (Intel)",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
+
 (10.4 の場合は <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink
 0.8.1 (PowerPC)</a> <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink
 0.8.1 (Intel)</a> をダウンロードして下さい)<br>
