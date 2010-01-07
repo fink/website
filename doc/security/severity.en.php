@@ -1,7 +1,7 @@
 <?
 $title = "Security Policy - Responses";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2004/09/20 20:14:23';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/03/31 01:41:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Security Policy Contents"><link rel="next" href="sources.php?phpLang=en" title="Incident Sources"><link rel="prev" href="respo.php?phpLang=en" title="Responsibility">';
 
 
@@ -26,7 +26,7 @@ include_once "header.en.inc";
                 package in question. Also, keep in mind that, while we strive to
                 meet these response times, Fink is a volunteer effort, and they
                 cannot be guaranteed.</p>
-            <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Vulnerability</th><th align="left">Repsonse time</th></tr><tr valign="top"><td>remote root exploit</td><td>
+            <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Vulnerability</th><th align="left">Response time</th></tr><tr valign="top"><td>remote root exploit</td><td>
                         <p>minimum: <b>immediate</b>; maximum: <b>12</b> hours.</p>
                     </td></tr><tr valign="top"><td>local root exploit</td><td>
                         <p>minimum: <b>12</b> hours; maximum: <b>36</b> hours.</p>

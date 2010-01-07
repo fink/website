@@ -1,7 +1,7 @@
 <?
 $title = "Security Policy - Responsibility";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2004/09/20 20:14:23';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/03/31 01:41:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Security Policy Contents"><link rel="next" href="severity.php?phpLang=en" title="Response times and immediate actions."><link rel="prev" href="index.php?phpLang=en" title="Security Policy Contents">';
 
 

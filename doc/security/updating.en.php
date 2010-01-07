@@ -1,7 +1,7 @@
 <?
 $title = "Security Policy - Updates";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2004/09/20 20:14:23';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/03/31 01:41:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Security Policy Contents"><link rel="next" href="notification.php?phpLang=en" title="Sending notifications"><link rel="prev" href="sources.php?phpLang=en" title="Incident Sources">';
 
 

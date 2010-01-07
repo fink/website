@@ -1,14 +1,14 @@
 <?
 $title = "Documentação";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/12 18:04:00';
+$cvs_author = 'Author: monipol';
+$cvs_date = 'Date: 2009/04/01 14:16:07';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentação</h1>
-<!--Generated from $Fink: doc.pt.xml,v 1.2 2009/03/12 18:04:00 alexkhansen Exp $-->
+<!--Generated from $Fink: doc.pt.xml,v 1.5 2009/04/01 14:16:07 monipol Exp $-->
     <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
     destes documentos também podem ser úteis a pessoas que usam o Mac OS X sem
     o Fink mas que desejam aprender a portar software Unix.</p>
@@ -43,28 +43,26 @@ include_once "header.inc";
 
     <ul>
       <li>
-        <a href="bundled/install.php">Instalação e atualização</a> - como
-        instalar o Fink ou atualizá-lo para uma versão nova
+        <a href="bundled/install.php">Installation and Upgrading</a> -
+        como instalar o Fink ou atualizá-lo para uma versão nova
         <b>(em inglês)</b>
       </li>
 
       <li>
-        <a href="bundled/usage.php">Formas de
-        uso</a> - como usar o Fink e os softwares instalados
+        <a href="bundled/usage.php">Usage</a> - como usar o Fink e os
+        softwares instalados
         <b>(em inglês)</b>
       </li>
 
       <li>
-        <a href="readme.php">LeiaMe do
-        Fink</a> - o LeiaMe da distribuição de códigos fontes
-        <b>(em inglês)</b>
+        <a href="readme.php">Leia-me do
+        Fink</a> - o Leia-me da distribuição de códigos fontes
       </li>
 
       <li>
         <a href="cvsaccess/index.php">Acesso via CVS</a> - como acessar
         o repositório CVS do Fink para obter os fontes dos pacotes mais
         recentes antes da liberação de uma nova versão
-        <b>(em inglês)</b>
       </li>
     </ul>
   <h2><a name="developerdoc">Documentação do desenvolvedor</a></h2>
@@ -75,7 +73,6 @@ include_once "header.inc";
         <a href="security/index.php">Manual de política de
         segurança</a> - leitura obrigatória para todos os que mantêm
         pacotes no Fink ou gostariam de adicionar seus próprios pacotes.
-        <b>(em inglês)</b>
       </li>
 
       <li>
@@ -88,23 +85,22 @@ include_once "header.inc";
       </li>
 
       <li>
-        <a href="porting/index.php">Dicas
-        para portar software</a> - notas para os interessados em portar
-        aplicações Unix para o Mac OS X
+        <a href="porting/index.php">Porting Tips</a> - notas para os
+        interessados em portar aplicações Unix para o Mac OS X
         <b>(em inglês)</b>
       </li>
 
       <li>
-        <a href="quick-start-pkg/index.php">Tutorial de
-        empacotamento</a> - um complemento ao Manual de empacotamento que
+        <a href="quick-start-pkg/index.php">Packaging
+        Tutorial</a> - um complemento ao Manual de empacotamento que
         foca exemplos reais e faz uma introdução sobre empacotamento para
         iniciantes.
         <b>(em inglês)</b>
       </li>
 
       <li>
-        <a href="packaging/index.php">Manual de empacotamento</a>
-        - como criar e manter pacotes no Fink
+        <a href="packaging/index.php">Packaging Manual</a> - como
+        criar e manter pacotes no Fink
         <b>(em inglês)</b>
       </li>
 
@@ -120,16 +116,15 @@ include_once "header.inc";
 
     <ul>
       <li>
-        <a href="multilingual/index.php">Guia de
-        internacionalização</a> - material sobre o esforço em andamento
-        de internacionalização do site
+        <a href="multilingual/index.php">Internationalization
+        Guide</a> - material sobre o esforço em andamento de
+        internacionalização do site
         <b>(em inglês)</b>
       </li>
 
       <li>
-        <a href="netiquette/index.php">Netiqueta para as listas de
-        discussão</a> - como melhor usar as listas de discussão do
-        Fink.
+        <a href="netiquette/index.php">Mailing List
+        Netiquette</a> - como melhor usar as listas de discussão do Fink.
         <b>(em inglês)</b>
       </li>
     </ul>
