@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.6";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2010/01/10 22:12:56 $';
+$cvs_date = '$Date: 2010/01/12 14:56:48 $';
 
 include "header.inc";
 ?>
@@ -13,7 +13,7 @@ include "header.inc";
 <p>To upgrade your Fink installation from 10.5/32 bit to 10.6/32 bit (there is no direct upgrade path from earlier OS versions), follow the sequence below:</p>
 <ol>
     <li>Before installing OS X 10.6, run <pre>fink selfupdate</pre> with rsync or cvs updating turned on to bring <em>fink</em> to a current version.<br>
-    Use <pre>fink -V</pre> to check your package manager version, which needs to be at least 0.29.10 before updating.</li>
+    Use <pre>fink -V</pre> to check your package manager version, which needs to be at least 0.29.9 before updating.</li>
     <li>Edit the file <em>/sw/etc/fink.conf</em>, adding a line to it which reads <strong>NoAutoIndex: true</strong>.
     (You may need to use <em>sudo</em> to obtain the correct permissions to edit this file.)</li>   
     <li>Install OS X 10.6, as well as Xcode 3.2.</li>
