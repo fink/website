@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.6";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2010/01/12 14:56:48 $';
+$cvs_date = '$Date: 2010/02/11 02:44:40 $';
 
 include "header.inc";
 ?>
@@ -22,7 +22,8 @@ include "header.inc";
     <li>Run the command <pre>fink update fink</pre> to get the latest <em>fink</em> for 10.6.</li>
     <li>Run the command <pre>fink install perl588-core</pre> in case you have Fink packages which depend on it, as the system's Perl version was changed during the upgrade.</li>
     <li>Remove the <strong>NoAutoIndex: true</strong> line from <em>fink.conf</em>.</li>
-    <li>Run the command <pre>find /sw/lib -name *.la -delete</pre> to remove references to files that don't exist any more on 10.6.</li>
+    <li>If you are not going to be using the stable tree, run the command <pre>find /sw/lib -name *.la -delete</pre> to remove references to files that don't exist any more on 10.6.<br>
+    The unstable tree now includes a workaround for the issue in question.</li>
 </ol>
 <p>After the upgrade, you may wish to run <pre>fink configure</pre> to do some cleanup.</p>
 
