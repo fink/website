@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
-  <cvsid>$Id: news.de.xml,v 1.45 2009/10/31 03:35:05 monipol Exp $</cvsid>
+  <cvsid>$Id: news.de.xml,v 1.46 2010/03/31 01:10:53 alexkhansen Exp $</cvsid>
 
+	<newsitem>
+		<date>2010-04-01</date>
+		<headline>Neue Richtung</headline>
+		<body>
+			<p>Das Fink-Projekt hat die Zukunft gesehen, und es ist flach und Portable.</p>
+			<p>Effektives 1. Mai 2010, werden wir Arbeit über unsere Macbemühungen aufhören und schalten zur Entwicklung für das iPad sowie zum iPhone und zur iPod-Note.</p>
+			<p>Die Fink-Verteilungen für Macbenutzer auf 10,4, 10,5, und 10,6 sind noch verfügbar, aber das Projekt liefern nicht mehr Updates.</p>
+			<p>Danke für Ihren Support in den Jahren, und wir hoffen, dass Sie ein iPad aufheben, wenn er in Ihrem Bereich verfügbar ist, damit Sie fortfahren können, Fink auf einem Großbild zu genießen.</p>
+		</body>
+	</newsitem>
   <newsitem>
     <date>2009-10-30</date>
     <headline>Servers back to normal.</headline>

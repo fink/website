@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.46 2009/11/04 03:11:31 babayoshihiko Exp $</cvsid>
-
+	<cvsid>$Id: news.ja.xml,v 1.47 2010/03/31 01:10:53 alexkhansen Exp $</cvsid>
+	<newsitem>
+		<date>2010-04-01</date>
+		<headline>新しい方向</headline>
+		<body>
+			<p>フィンクのプロジェクトは未来を見、それは平ら、ポータブルである。</p>
+			<p>有効な2010年5月1日、私達は私達のMacの努力の作業を終えようと思って、iPadのための開発、またiPodのiPhoneおよび接触に切替える。</p>
+			<p>10.4 10.5のMacのユーザーのためのフィンクの分布は、10.6はまだ使用できが、プロジェクトもはやアップデートを提供しない。</p>
+			<p>サポートを長年かけてありがとう、大画面のフィンクを楽しみ続けることができるように領域で使用できるときiPadを取ることを私達は望む。</p>
+		</body>
+	</newsitem>
   <newsitem>
     <date>2009-10-30</date>
     <headline>サーバー復帰。</headline>
