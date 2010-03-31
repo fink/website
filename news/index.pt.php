@@ -1,13 +1,18 @@
 <?
 $title = "News";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/10/31 03:40:19';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2010/03/31 01:10:53';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2009-10-30%20Servidor%20novamente%20em%20opera%C3%A7%C3%A3o."><span class="news-date">2009-10-30: </span><span class="news-headline">Servidor novamente em operação.</span></a><?php gray_line(); ?>
+<a name="2010-04-01%20Sentido%20novo"><span class="news-date">2010-04-01: </span><span class="news-headline">Sentido novo</span></a><?php gray_line(); ?>
+			<p>O projeto de Fink considerou o futuro, e é liso e portable.</p>
+			<p>1 de maio de 2010 eficaz, nós estamos indo cessar o trabalho em nossos esforços do Mac, e comutamos ao desenvolvimento para o iPad, assim como ao iPhone e ao toque de iPod.</p>
+			<p>As distribuições de Fink para usuários do Mac em 10,4, 10,5, e 10,6 ainda estarão disponíveis, mas o projeto já não fornecerão actualizações.</p>
+			<p>Obrigado para seu apoio sobre os anos, e nós esperamos que você pegarará um iPad quando está disponível em sua área de modo que você possa continuar a apreciar Fink em uma grande tela.</p>
+		<a name="2009-10-30%20Servidor%20novamente%20em%20opera%C3%A7%C3%A3o."><span class="news-date">2009-10-30: </span><span class="news-headline">Servidor novamente em operação.</span></a><?php gray_line(); ?>
 	  <p>Nossos serviços ao usuário foram restaurados. Em 28 de outubro o site
 	  e alguns dos espelhos (rsync, arquivos fontes, distribuição de binários)
 	  foram resturandos e em 30 de outubro todos os principais espelhos rsync

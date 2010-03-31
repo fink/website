@@ -1,13 +1,18 @@
 <?
 $title = "News";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/10/31 03:35:05';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2010/03/31 01:10:53';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2009-10-30%20Servers%20back%20to%20normal."><span class="news-date">2009-10-30: </span><span class="news-headline">Servers back to normal.</span></a><?php gray_line(); ?>
+<a name="2010-04-01%20Neue%20Richtung"><span class="news-date">2010-04-01: </span><span class="news-headline">Neue Richtung</span></a><?php gray_line(); ?>
+			<p>Das Fink-Projekt hat die Zukunft gesehen, und es ist flach und Portable.</p>
+			<p>Effektives 1. Mai 2010, werden wir Arbeit über unsere Macbemühungen aufhören und schalten zur Entwicklung für das iPad sowie zum iPhone und zur iPod-Note.</p>
+			<p>Die Fink-Verteilungen für Macbenutzer auf 10,4, 10,5, und 10,6 sind noch verfügbar, aber das Projekt liefern nicht mehr Updates.</p>
+			<p>Danke für Ihren Support in den Jahren, und wir hoffen, dass Sie ein iPad aufheben, wenn er in Ihrem Bereich verfügbar ist, damit Sie fortfahren können, Fink auf einem Großbild zu genießen.</p>
+		<a name="2009-10-30%20Servers%20back%20to%20normal."><span class="news-date">2009-10-30: </span><span class="news-headline">Servers back to normal.</span></a><?php gray_line(); ?>
       <p>Our user services have been restored. On Oct 28th the Web site and
       some of the mirrors (rsync, source files, binary distribution) were
       restored, and on Oct 30th all of our main rsync mirrors were operational.

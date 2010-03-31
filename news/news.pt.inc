@@ -1,4 +1,9 @@
-<a name="2009-10-30%20Servidor%20novamente%20em%20opera%C3%A7%C3%A3o."><span class="news-date">2009-10-30: </span><span class="news-headline">Servidor novamente em operação.</span></a><?php gray_line(); ?>
+<a name="2010-04-01%20Sentido%20novo"><span class="news-date">2010-04-01: </span><span class="news-headline">Sentido novo</span></a><?php gray_line(); ?>
+			<p>O projeto de Fink considerou o futuro, e é liso e portable.</p>
+			<p>1 de maio de 2010 eficaz, nós estamos indo cessar o trabalho em nossos esforços do Mac, e comutamos ao desenvolvimento para o iPad, assim como ao iPhone e ao toque de iPod.</p>
+			<p>As distribuições de Fink para usuários do Mac em 10,4, 10,5, e 10,6 ainda estarão disponíveis, mas o projeto já não fornecerão actualizações.</p>
+			<p>Obrigado para seu apoio sobre os anos, e nós esperamos que você pegarará um iPad quando está disponível em sua área de modo que você possa continuar a apreciar Fink em uma grande tela.</p>
+		<a name="2009-10-30%20Servidor%20novamente%20em%20opera%C3%A7%C3%A3o."><span class="news-date">2009-10-30: </span><span class="news-headline">Servidor novamente em operação.</span></a><?php gray_line(); ?>
 	  <p>Nossos serviços ao usuário foram restaurados. Em 28 de outubro o site
 	  e alguns dos espelhos (rsync, arquivos fontes, distribuição de binários)
 	  foram resturandos e em 30 de outubro todos os principais espelhos rsync
@@ -38,48 +43,4 @@
 		<li>Execute o comando <code>fink scanpackages</code></li>
 	  </ul>
       <p>Pedimos desculpas pela inconveniência.</p>
-	<a name="2009-08-28%20Fink%20no%20OS%20X%2010.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
-      <p>O Fink está pronto para ser usado no Snow Leopard (OS X 10.6). Os
-      usuários precisam escolher dentre a versão do Fink de 32 bits e a de 64
-      bits para o 10.6. A versão de 32 bits possui mais pacotes disponíveis no
-      momento mas a versão de 64 bits representa a direção futura tanto do OS X
-      quanto do Fink; os usuários precisam fazer a escolha por conta própria.
-      <b>Não</b> será possível fazer uma atualização de 32 bits para 64 bits
-      (ou vice-versa) sem que o Fink seja completamente reinstalado.</p>
-      <p>No presente momento, dois métodos estão disponíveis para instalar o
-      Fink no Snow Leopard. Um instalador binário não está disponível,
-      portanto é importante <b>instalar primeiro o Xcode da pasta Optional
-      Installs no disco do Snow Leopard.</b> Usuários que queiram a versão de
-      64 bits ou que estejam atualizando diretamente do OS X 10.4 ou anteriores
-      devem instalar o Fink do zero a partir da tarball de distribuição (versão
-      0.29.9 ou posteriores) disponível no <a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a>;
-      as instruções de instalação estão <a href="<?php print $root; ?>download/srcdist.php">aqui</a>. Por outro lado, os usuários
-      podem atualizar diretamente do OS X 10.5 para a versão de 32 bits
-      seguindo as instruções abaixo. (Aviso: usuários que tenham instalado uma
-      versão de desenvolvimento do Fink a partir do CVS no lugar de uma versão
-      efetivamente lançada podem encontrar problemas; por favor, antes de
-      começar, mude para uma versão oficialmente lançada e remova os arquivos
-      .deb que possuam versões maiores.)</p>
-      <p>Para fazer a atualização, siga os quatro passos a seguir. <b>Passo
-      1:</b> edite o arquivo <code>/sw/etc/fink.conf</code> e adicione uma
-      linha contendo <code>NoAutoIndex: true</code> (talvez você tenha que usar
-      o <code>sudo</code> para obter as permissões corretas para editar o
-      arquivo.) <b>Passo 2:</b> execute o comando <code>fink reinstall
-      fink</code> para dizer ao Fink que agora você está no OS X 10.6.
-      (Caso encontre uma mensagem sobre corrupção do banco de dados de pacotes,
-      execute o comando <code>fink index -f</code> e tente este passo
-      novamente.) <b>Passo 3:</b> execute o comando <code>fink update
-      fink</code> para obter a última versão do Fink para o OS X 10.6.
-      <b>Passo 4:</b> execute o comando <code>fink install
-      perl588-core</code> para substituir a versão do Perl que foi alterada
-      pela Apple durante a atualização do OS X caso você possua pacotes que
-      dependam dele.</p>
-      <p>Depois da atualização, talvez você queira executar o comando
-      <code>fink configure</code> para fazer uma limpeza.</p>
-      <p>Quase todos os pacotes do Fink na árvore stable vão compilar no OS X
-      10.6 mas esteja ciente de que apenas uma fração dos pacotes do 10.5 estão
-      disponíveis para o 10.6. Em um futuro próximo, o banco de dados de
-      pacotes do Fink será atualizado para que inclua informações sobre pacotes
-      para o 10.6; você poderá consultá-lo para verificar se seus pacotes
-      prediletos estão disponíveis.</p>
-    
+	
