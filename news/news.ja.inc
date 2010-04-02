@@ -1,9 +1,4 @@
-<a name="2010-04-01%20%E6%96%B0%E3%81%97%E3%81%84%E6%96%B9%E5%90%91"><span class="news-date">2010-04-01: </span><span class="news-headline">新しい方向</span></a><?php gray_line(); ?>
-			<p>フィンクのプロジェクトは未来を見、それは平ら、ポータブルである。</p>
-			<p>有効な2010年5月1日、私達は私達のMacの努力の作業を終えようと思って、iPadのための開発、またiPodのiPhoneおよび接触に切替える。</p>
-			<p>10.4 10.5のMacのユーザーのためのフィンクの分布は、10.6はまだ使用できが、プロジェクトもはやアップデートを提供しない。</p>
-			<p>サポートを長年かけてありがとう、大画面のフィンクを楽しみ続けることができるように領域で使用できるときiPadを取ることを私達は望む。</p>
-		<a name="2009-10-30%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%BE%A9%E5%B8%B0%E3%80%82"><span class="news-date">2009-10-30: </span><span class="news-headline">サーバー復帰。</span></a><?php gray_line(); ?>
+<a name="2009-10-30%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%BE%A9%E5%B8%B0%E3%80%82"><span class="news-date">2009-10-30: </span><span class="news-headline">サーバー復帰。</span></a><?php gray_line(); ?>
       <p>
       ユーザーサービスが復帰しました。
       10月28日に、ウェブサイト及び一部のミラー (rsync, source files, binary distribution) 
@@ -39,4 +34,49 @@
         <li>(bindist) <code>fink scanpackages</code> を実行してください。</li>
 	  </ul>
       <p>ご迷惑をおかけしていることをお詫び申し上げます。</p>
-	
+	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
+      <p>
+Fink は、雪豹 (OS X v. 10.6) への準備を整えました。
+32-bit版と64-bit版がありますので、どちらかを選択してご利用ください。
+現在のところ、32-bit版の方が多くのパッケージがあります。
+しかし、64-bit版は OS X および　Fink の将来の方向性を示しています。
+各ユーザーがどちらかを選択するか判断してください。
+32-bit版から64-bit版への「アップグレード」は<b>できません</b>。
+</p><p>
+現在、Snow Leopard に Fink をインストールするには、二つの方法があります。
+バイナリインストーラはないので、
+<b>まず Snow Leopard ディスクからオプションインストールで XCode をインストールしてください。</b>
+64-bit版を使われる方、または 10.4 以前から直接アップグレードされる方は、ディストリビューション 
+tarball (0.29.9 以降のバージョン) を<a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a> からダウンロードし、fink をブートストラップしてください。
+この方法は<a href="<?php print $root; ?>download/srcdist.php">こちら</a>に説明されています。
+また、下記の方法で 10.5 から 32-bit版に直接アップグレードすることもできます。
+(注意: リリース版ではなく開発版の fink をインストールした場合、問題が発生することがあります。
+この場合、リリース版にダウングレードし、バージョン番号の高い .deb ファイルを削除してください。)
+</p><p>
+アップグレードするには、以下の4ステップをしてください。
+<b>Step 1:</b>
+<code>/sw/etc/fink.conf</code> を開き、 <code>NoAutoIndex: true</code>　という一行を追加します。
+(編集するには、パーミッションを得るため <code>sudo</code> する必要があるかもしれません。)
+<b>Step 2:</b> 
+10.6上にあることを伝えるため、コマンド
+<code>fink reinstall fink</code>
+を実行します。
+(もし package database corruption といったメッセージが出た場合、
+<code>fink index -f</code> としてから、再び上のコマンドを実行してください。)
+<b>Step 3:</b> 
+<code>fink update fink</code> を実行して、10.6用の最新 fink を入手します。 
+<b>Step 4:</b>
+<code>fink install perl588-core</code> と実行し、OS X のアップグレード時に 
+Apple が変更した perl を置き換えます。
+fink パッケージが依存している可能性があるためです。
+</p><p>
+アップグレードした後、<code>fink configure</code>
+としてきれいにすることができます。
+</p><p>
+fink の stable パッケージは、ほぼすべて 10.6 上でコンパイルすることが可能です。
+しかし、10.5 パッケージのほんのわずかしか 10.6 で使用することができません。
+近い将来、fink のパッケージデータベースが更新され、
+10.6用パッケージの情報が追加されます。
+あなたの使用したいパッケージがあるかどうか、パッケージデータベースをご覧ください。
+</p>
+

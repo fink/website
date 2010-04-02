@@ -5,25 +5,8 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>pt</dc:language>
-    <dc:date>2010-03-30T21:11:32-04:00</dc:date>
+    <dc:date>2010-04-02T09:50:11-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-04-01%20Sentido%20novo">
-      <title>Sentido novo</title>
-      <link>http://fink.sourceforge.net/news/#2010-04-01%20Sentido%20novo</link>
-      <guid>http://fink.sourceforge.net/news/#2010-04-01%20Sentido%20novo</guid>
-      <description>
-			<p>O projeto de Fink considerou o futuro, e é liso e portable.</p>
-			<p>1 de maio de 2010 eficaz, nós estamos indo cessar o trabalho em nossos esforços do Mac, e comutamos ao desenvolvimento para o iPad, assim como ao iPhone e ao toque de iPod.</p>
-			<p>As distribuições de Fink para usuários do Mac em 10,4, 10,5, e 10,6 ainda estarão disponíveis, mas o projeto já não fornecerão actualizações.</p>
-			<p>Obrigado para seu apoio sobre os anos, e nós esperamos que você pegarará um iPad quando está disponível em sua área de modo que você possa continuar a apreciar Fink em uma grande tela.</p>
-		</description>
-      <content:encoded>
-			<p>O projeto de Fink considerou o futuro, e é liso e portable.</p>
-			<p>1 de maio de 2010 eficaz, nós estamos indo cessar o trabalho em nossos esforços do Mac, e comutamos ao desenvolvimento para o iPad, assim como ao iPhone e ao toque de iPod.</p>
-			<p>As distribuições de Fink para usuários do Mac em 10,4, 10,5, e 10,6 ainda estarão disponíveis, mas o projeto já não fornecerão actualizações.</p>
-			<p>Obrigado para seu apoio sobre os anos, e nós esperamos que você pegarará um iPad quando está disponível em sua área de modo que você possa continuar a apreciar Fink em uma grande tela.</p>
-		</content:encoded>
-    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servidor%20novamente%20em%20opera%E7%E3o.">
       <title>Servidor novamente em operação.</title>
       <link>http://fink.sourceforge.net/news/#2009-10-30%20Servidor%20novamente%20em%20opera%E7%E3o.</link>

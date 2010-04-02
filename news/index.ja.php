@@ -1,18 +1,13 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/03/31 01:10:53';
+$cvs_date = 'Date: 2010/04/02 13:45:29';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2010-04-01%20%E6%96%B0%E3%81%97%E3%81%84%E6%96%B9%E5%90%91"><span class="news-date">2010-04-01: </span><span class="news-headline">新しい方向</span></a><?php gray_line(); ?>
-			<p>フィンクのプロジェクトは未来を見、それは平ら、ポータブルである。</p>
-			<p>有効な2010年5月1日、私達は私達のMacの努力の作業を終えようと思って、iPadのための開発、またiPodのiPhoneおよび接触に切替える。</p>
-			<p>10.4 10.5のMacのユーザーのためのフィンクの分布は、10.6はまだ使用できが、プロジェクトもはやアップデートを提供しない。</p>
-			<p>サポートを長年かけてありがとう、大画面のフィンクを楽しみ続けることができるように領域で使用できるときiPadを取ることを私達は望む。</p>
-		<a name="2009-10-30%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%BE%A9%E5%B8%B0%E3%80%82"><span class="news-date">2009-10-30: </span><span class="news-headline">サーバー復帰。</span></a><?php gray_line(); ?>
+<a name="2009-10-30%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%BE%A9%E5%B8%B0%E3%80%82"><span class="news-date">2009-10-30: </span><span class="news-headline">サーバー復帰。</span></a><?php gray_line(); ?>
       <p>
       ユーザーサービスが復帰しました。
       10月28日に、ウェブサイト及び一部のミラー (rsync, source files, binary distribution) 

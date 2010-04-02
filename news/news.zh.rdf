@@ -5,25 +5,8 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2010-03-30T21:11:31-04:00</dc:date>
+    <dc:date>2010-04-02T09:50:11-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-04-01%20%3F%3F%3F%3F">
-      <title>&#26032;&#30340;&#26041;&#21521;</title>
-      <link>http://fink.sourceforge.net/news/#2010-04-01%20%3F%3F%3F%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2010-04-01%20%3F%3F%3F%3F</guid>
-      <description>
-			<p>Fink&#39033;&#30446;&#30475;&#21040;&#20102;&#36828;&#26399;&#65292;&#24182;&#19988;&#23427;&#26159;&#24179;&#38754;&#21644;&#20415;&#25658;&#24335;&#12290;</p>
-			<p>&#26377;&#25928;2010&#24180;5&#26376;1&#26085;&#65292;&#25105;&#20204;&#20572;&#27490;&#22312;&#25105;&#20204;&#30340;Mac&#24037;&#20316;&#25104;&#32489;&#30340;&#24037;&#20316;&#65292;&#24182;&#19988;&#25442;&#25104;iPad&#30340;&#21457;&#23637;&#65292;&#20197;&#21450;iPhone&#21644;iPod&#25509;&#35302;&#12290;</p>
-			<p>Mac&#29992;&#25143;&#30340;Fink&#37197;&#30005;&#22120;&#22312;10.4 10.5&#65292;&#24182;&#19988;10.6&#23558;&#26159;&#21487;&#29992;&#30340;&#65292;&#20294;&#26159;&#39033;&#30446;&#19981;&#20877;&#23558;&#25552;&#20379;&#26356;&#26032;&#12290;</p>
-			<p>&#22810;&#24180;&#26469;&#35874;&#35874;&#24744;&#30340;&#25216;&#26415;&#25903;&#25345;&#65292;&#24182;&#19988;&#25105;&#20204;&#24076;&#26395;&#24744;&#23558;&#25342;&#36215;iPad&#65292;&#24403;&#23427;&#26159;&#21487;&#29992;&#30340;&#22312;&#24744;&#30340;&#21306;&#26102;&#65292;&#20197;&#20415;&#24744;&#33021;&#32487;&#32493;&#20139;&#29992;&#22823;&#23631;&#24149;&#30340;Fink&#12290;</p>
-		</description>
-      <content:encoded>
-			<p>Fink&#39033;&#30446;&#30475;&#21040;&#20102;&#36828;&#26399;&#65292;&#24182;&#19988;&#23427;&#26159;&#24179;&#38754;&#21644;&#20415;&#25658;&#24335;&#12290;</p>
-			<p>&#26377;&#25928;2010&#24180;5&#26376;1&#26085;&#65292;&#25105;&#20204;&#20572;&#27490;&#22312;&#25105;&#20204;&#30340;Mac&#24037;&#20316;&#25104;&#32489;&#30340;&#24037;&#20316;&#65292;&#24182;&#19988;&#25442;&#25104;iPad&#30340;&#21457;&#23637;&#65292;&#20197;&#21450;iPhone&#21644;iPod&#25509;&#35302;&#12290;</p>
-			<p>Mac&#29992;&#25143;&#30340;Fink&#37197;&#30005;&#22120;&#22312;10.4 10.5&#65292;&#24182;&#19988;10.6&#23558;&#26159;&#21487;&#29992;&#30340;&#65292;&#20294;&#26159;&#39033;&#30446;&#19981;&#20877;&#23558;&#25552;&#20379;&#26356;&#26032;&#12290;</p>
-			<p>&#22810;&#24180;&#26469;&#35874;&#35874;&#24744;&#30340;&#25216;&#26415;&#25903;&#25345;&#65292;&#24182;&#19988;&#25105;&#20204;&#24076;&#26395;&#24744;&#23558;&#25342;&#36215;iPad&#65292;&#24403;&#23427;&#26159;&#21487;&#29992;&#30340;&#22312;&#24744;&#30340;&#21306;&#26102;&#65292;&#20197;&#20415;&#24744;&#33021;&#32487;&#32493;&#20139;&#29992;&#22823;&#23631;&#24149;&#30340;Fink&#12290;</p>
-		</content:encoded>
-    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.">
       <title>Servers back to normal.</title>
       <link>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</link>
@@ -598,6 +581,79 @@ Finally, to use the package database during the outage, you can connect
 to <a href="http://lists.finkproject.org/pdb">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
+		</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006">
+      <title>Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</title>
+      <link>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</link>
+      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</guid>
+      <description>
+			<p>
+				The "10.4-transitional" tree was created as an interim solution to the issues of
+				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+				1st, 2006.
+			</p>
+			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
+			<p>
+				As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				there are 2 ways to make the switch to the supported "10.4" tree.
+			</p>
+			<p>
+				The simplest way is to remove your Fink installation by deleting it and
+				installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
+			</p>
+			<p>
+				Alternately, to preserve your Fink installation, download the
+				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+				and read the README for instructions on how to upgrade your existing installation in-place.
+				This will re-build your Fink installation from source, upgrading everything in the process.
+				Be warned, it can take a lot of time, depending on your fink installation!
+			</p>
+			<p>
+				Feedback on the upgrade script has been very positive; many users have already
+				made the switch.  If you have problems, please feel free to mail your issues to
+				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
+			</p>
+
+<p> Update: 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
+
+		</description>
+      <content:encoded>
+			<p>
+				The "10.4-transitional" tree was created as an interim solution to the issues of
+				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+				compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+				move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+				support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+				1st, 2006.
+			</p>
+			<p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
+			<p>
+				As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+				there are 2 ways to make the switch to the supported "10.4" tree.
+			</p>
+			<p>
+				The simplest way is to remove your Fink installation by deleting it and
+				installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
+			</p>
+			<p>
+				Alternately, to preserve your Fink installation, download the
+				<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+				and read the README for instructions on how to upgrade your existing installation in-place.
+				This will re-build your Fink installation from source, upgrading everything in the process.
+				Be warned, it can take a lot of time, depending on your fink installation!
+			</p>
+			<p>
+				Feedback on the upgrade script has been very positive; many users have already
+				made the switch.  If you have problems, please feel free to mail your issues to
+				the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
+			</p>
+
+<p> Update: 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
+
 		</content:encoded>
     </item>
   </channel>

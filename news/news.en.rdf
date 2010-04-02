@@ -5,31 +5,8 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2010-03-30T21:11:31-04:00</dc:date>
+    <dc:date>2010-04-02T09:50:10-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-04-01%20New%20Direction">
-      <title>New Direction</title>
-      <link>http://fink.sourceforge.net/news/#2010-04-01%20New%20Direction</link>
-      <guid>http://fink.sourceforge.net/news/#2010-04-01%20New%20Direction</guid>
-      <description>
-			<p>The Fink Project has seen the future, and it is flat and portable.</p>
-			<p>Effective 1 May 2010, we are going to cease work on our Mac efforts, and 
-switch to development for the iPad, as well as the iPhone and iPod Touch.</p>
-			<p>The Fink distributions for Mac users on 10.4, 10.5, and 10.6 will still be 
-available, but the project will no longer provide updates.</p>
-			<p>Thank you for your support over the years, and we hope you will pick up an
-iPad when it is available in your area so that you can continue to enjoy Fink on a large screen.</p>
-		</description>
-      <content:encoded>
-			<p>The Fink Project has seen the future, and it is flat and portable.</p>
-			<p>Effective 1 May 2010, we are going to cease work on our Mac efforts, and 
-switch to development for the iPad, as well as the iPhone and iPod Touch.</p>
-			<p>The Fink distributions for Mac users on 10.4, 10.5, and 10.6 will still be 
-available, but the project will no longer provide updates.</p>
-			<p>Thank you for your support over the years, and we hope you will pick up an
-iPad when it is available in your area so that you can continue to enjoy Fink on a large screen.</p>
-		</content:encoded>
-    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.">
       <title>Servers back to normal.</title>
       <link>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</link>
@@ -594,6 +571,77 @@ Finally, to use the package database during the outage, you can connect
 to <a href="http://lists.finkproject.org/pdb">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
+        </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006">
+      <title>Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</title>
+      <link>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</link>
+      <guid>http://fink.sourceforge.net/news/#2006-07-24%20Reminder%3A%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st%2C%202006</guid>
+      <description>
+
+            <p>
+                The "10.4-transitional" tree was created as an interim solution to the issues of
+                incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+                compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+                move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+                support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+                1st, 2006.
+            </p>
+            <p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
+            <p>
+                As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+                there are 2 ways to make the switch to the supported "10.4" tree.
+            </p>
+            <p>
+                The simplest way is to remove your Fink installation by deleting it and
+                installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
+            </p>
+            <p>
+                Alternately, to preserve your Fink installation, download the
+                <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+                and read the README for instructions on how to upgrade your existing installation in-place.
+                This will re-build your Fink installation from source, upgrading everything in the process.
+                Be warned, it can take a lot of time, depending on your fink installation!
+            </p>
+            <p>
+                Feedback on the upgrade script has been very positive; many users have already
+                made the switch.  If you have problems, please feel free to mail your issues to
+                the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
+            </p>
+<p> Update, 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
+        </description>
+      <content:encoded>
+
+            <p>
+                The "10.4-transitional" tree was created as an interim solution to the issues of
+                incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
+                compiler) and GCC 4.0 (the default Mac OS X 10.4 compiler).  Now that the work to
+                move Fink to using GCC 4.0 is essentially finished, we will be stopping official
+                support of the "10.4-transitional" tree in favor of the "10.4" tree as of August
+                1st, 2006.
+            </p>
+            <p>You should not need to do anything if "fink --version" prints "0.8.1.cvs" or "0.8.1.rsync".</p>
+            <p>
+                As we mentioned <a href="http://fink.sourceforge.net/news/#2006-07-01%20July%20is%20%22Fink%20Update%20Month%22">previously</a>,
+                there are 2 ways to make the switch to the supported "10.4" tree.
+            </p>
+            <p>
+                The simplest way is to remove your Fink installation by deleting it and
+                installing fresh using the 0.8.1 installer available from the <a href="http://fink.sourceforge.net/download">download page</a>.
+            </p>
+            <p>
+                Alternately, to preserve your Fink installation, download the
+                <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">upgrade script</a>
+                and read the README for instructions on how to upgrade your existing installation in-place.
+                This will re-build your Fink installation from source, upgrading everything in the process.
+                Be warned, it can take a lot of time, depending on your fink installation!
+            </p>
+            <p>
+                Feedback on the upgrade script has been very positive; many users have already
+                made the switch.  If you have problems, please feel free to mail your issues to
+                the <a href="http://fink.sourceforge.net/lists">discussion lists</a>.
+            </p>
+<p> Update, 2 June 2007.  Due to changes to the behavior of sudo on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via sudo -s will suffice.</p>
         </content:encoded>
     </item>
   </channel>
