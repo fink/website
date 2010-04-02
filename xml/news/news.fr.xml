@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
-<cvsid>$Id: news.fr.xml,v 1.73 2010/03/31 01:10:53 alexkhansen Exp $</cvsid>
-	<newsitem>
-		<date>2010-04-01</date>
-		<headline>Nouvelle direction</headline>
-		<body>
-			<p>Le projet de Fink a vu le futur, et c'est plat et portable.</p>
-			<p>1er mai 2010 pertinent, nous allons arrêter le travail sur nos efforts de Mac, et commutons au développement pour l'iPad, aussi bien qu'à l'iPhone et au contact d'iPod.</p>
-			<p>Les distributions de Fink pour des utilisateurs de Mac 10,4, 10,5, et 10,6 seront toujours disponibles, mais le projet ne fourniront plus des mises à jour.</p>
-			<p>Merci de votre support au cours des années, et nous espérons que vous prendrez un iPad quand il est disponible dans votre zone de sorte que vous puissiez continuer à apprécier Fink sur un grand écran.</p>
-		</body>
-	</newsitem>
+<cvsid>$Id: news.fr.xml,v 1.74 2010/04/02 13:45:29 alexkhansen Exp $</cvsid>
 
   <newsitem>
     <date>2009-10-30</date>
