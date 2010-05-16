@@ -1,7 +1,7 @@
 <?
 $title = "Links";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2006/12/22 10:10:17 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2010/05/16 22:55:21 $';
 
 include "header.inc";
 ?>
@@ -14,18 +14,14 @@ browser window.</p>
 
 <p>Fink related links</p>
 <ul>
-<li><a href="http://finkmirrors.net/" target="_blank">Fink Mirrors</a> - Instructions how to become a Fink mirror as well as status messages about current mirrors.</li>
+<li><a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors" target="_blank">Fink Mirrors</a> - Instructions how to become a Fink mirror as well as status messages about current mirrors.</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 a GUI for Fink</li>
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - another GUI for Fink (still alpha).</li>
-<li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Search plugin for the Package database. Mozilla based browesers only (search for Fink)!</li>
+<li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Search plugin for the Package database. Mozilla based browsers only (search for Fink)!</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Rate us and help promote Fink.</li>
-<li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
+<li><a href="http://www.opennms.org/~ranger/irc_logs/public/" target="_blank">IRC logs</a> -
 the #fink IRC channel logs & stats</li>
-<li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
-Un-official Fink CD distribution and book of Fink tips</li>
-<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
-Set of scripts to aid distributing fink packages to network clients via NFS</li -->
 </ul>
 
 <p>Open Source Software</p>
@@ -37,13 +33,6 @@ Initiative</a> - general information about Open Source
 (esp. licenses)</li>
 <li><a href="http://freshmeat.net/" target="_blank">Freshmeat</a> -
 the biggest directory of Open Source software on the web</li>
-<li><a href="http://developer.apple.com/darwin/" target="_blank">Darwin</a>
-and Apple's other Open Source projects</li>
-<li><a href="http://opendarwin.org/" target="_blank">OpenDarwin.org</a> -
-Darwin development
-</li>
-<li><a href="http://oroborosx.sourceforge.net/" target="_blank">OroborOSX</a> -
-very nice X11 WindowManager which attempts to integrate X11 into Mac OS X.
 </ul>
 
 <p>Similar Projects</p>
@@ -52,33 +41,6 @@ very nice X11 WindowManager which attempts to integrate X11 into Mac OS X.
 Distribution</a></li>
 <li><a href="http://www.macports.org/" target="_blank">MacPorts</a> - porting the FreeBSD ports collection</li>
 </ul>
-
-<p>Mixed collections of ported packages</p>
-<ul>
-<li><a href="http://www.caos.aamu.edu/pub/MacOS_X/"
-target="_blank">http://www.caos.aamu.edu/pub/MacOS_X/</a> - run by Marius Schamschula</li>
-<li><a href="http://www.osxgnu.org/" target="_blank">The GNU Mac OS X
-Public Archive</a></li>
-<li><a href="http://www.geeklair.net/downloads/"
-target="_blank">http://www.geeklair.net/downloads/</a> - run by
-<a href="http://www.geeklair.net/~dluke/"
-target="_blank">Daniel Luke</a></li>
-<li><a href="http://macosx.forked.net/"
-target="_blank">http://macosx.forked.net/</a></li>
-<li><a href="http://www-jlc.kek.jp/~fujiik/macosx/10.1.X/"
-target="_blank">HEP on X</a> - A collection of RPM packages</li>
-</ul>
-
-<p>Sites with related information</p>
-<ul>
-<li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
-running XFree86 on Darwin and Mac OS X</li>
-<li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
-news, articles and a software archive</li>
-<li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
-help running The GIMP, GTK and X on a Mac</li>
-</ul>
-
 
 <?
 include "footer.inc";

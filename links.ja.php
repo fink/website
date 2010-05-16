@@ -1,7 +1,7 @@
 <?
 $title = "リンク集";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2009/10/20 03:41:11 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2010/05/16 22:55:21 $';
 
 include "header.inc";
 ?>
@@ -17,19 +17,15 @@ include "header.inc";
 
 <p>Fink 関連</p>
 <ul>
-<li><a href="http://finkmirrors.net/" target="_blank">Fink Mirrors</a> - 
+<li><a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors" target="_blank">Fink Mirrors</a> - 
 Fink ミラーの登録方法と現在のミラーのステータスの情報がある。</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 Fink の GUI 。</li>
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - 別の GUI for Fink (まだ alpha)。</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - パッケージデータベースの検索プラグイン Mozilla based ブラウザのみ (Fink のための検索)!</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Fink の宣伝のために評価してください。</li>
-<li><a href="http://fink.aquaflux.org/" target="_blank">FinkBot</a> -
+<li><a href="http://www.opennms.org/~ranger/irc_logs/public/" target="_blank">IRC logs</a> -
 #fink IRC チャンネルの過去ログと統計。</li>
-<li><a href="http://www.funwithfink.com/" target="_blank">FunWithFink</a> -
-非公式の Fink CD とFink tips の本を出版している。</li>
-<!-- dead link li><a href="http://www.antcrc.utas.edu.au/models/macosx/Fink_on_NFS/" target="_blank">Fink on NFS</a> -
-Fink パッケージをネットワーククライアントに NFS で配布するスクリプト。</li -->
 </ul>
 
 <p>オープンソースソフトウェア</p>
@@ -40,13 +36,6 @@ FSF と GNU ライセンスの情報もあります。日本語ページへの�
 オープンソースに関する一般的な情報 (特にライセンス)。</li>
 <li><a href="http://freshmeat.net/" target="_blank">Freshmeat</a> -
 最大のオープンソースソフトウェアディレクトリ。</li>
-<li><a href="http://developer.apple.com/darwin/" target="_blank">Darwin</a>
-Apple のオープンソースプロジェクト。</li>
-<li><a href="http://opendarwin.org/" target="_blank">OpenDarwin.org</a> -
-ダーウィンの開発。
-</li>
-<li><a href="http://oroborosx.sourceforge.net/" target="_blank">OroborOSX</a> -
-X11 と Mac OS X を統合しようとしている X11 ウィンドウマネージャ。
 </ul>
 
 <p>似ているプロジェクト</p>
@@ -56,28 +45,6 @@ X11 と Mac OS X を統合しようとしている X11 ウィンドウマネー�
 FreeBSD の ports collection をポートしている。</li>
 <li><a href="http://www.ie.u-ryukyu.ac.jp/epkg/darwin2/" target="_blank">EasyPackages</a> - 
 日本語での利用を前提としたパッケージングをしている。（日本語ページのみ）</li>
-</ul>
-
-<p>ポートされたパッケージ集</p>
-<ul>
-<li><a href="http://www.caos.aamu.edu/pub/MacOS_X/" target="_blank">http://www.caos.aamu.edu/pub/MacOS_X/</a> - 
-Marius Schamschula のサイト。</li>
-<li><a href="http://www.osxgnu.org/" target="_blank">The GNU Mac OS X Public Archive</a></li>
-<li><a href="http://www.geeklair.net/downloads/" target="_blank">http://www.geeklair.net/downloads/</a> - 
-<a href="http://www.geeklair.net/~dluke/" target="_blank">Daniel Luke</a> のサイト。</li>
-<li><a href="http://macosx.forked.net/" target="_blank">http://macosx.forked.net/</a></li>
-<li><a href="http://www-jlc.kek.jp/~fujiik/macosx/10.1.X/" target="_blank">HEP on X</a> - 
-RPM パッケージのコレクション。</li>
-</ul>
-
-<p>関連情報</p>
-<ul>
-<li><a href="http://xonx.sourceforge.net/" target="_blank">X on X</a> -
-XFree86 を Darwin や Mac OS X で使う。</li>
-<li><a href="http://www.stepwise.com/" target="_blank">StepWise</a> -
-ニュース、記事、ソフトウェアアーカイブ。</li>
-<li><a href="http://www.macgimp.org/" target="_blank">MacGimp</a> -
-Mac 用の GIMP、GTK、X のサイト。</li>
 </ul>
 
 <p>日本語情報</p>
@@ -90,7 +57,6 @@ Mac 用の GIMP、GTK、X のサイト。</li>
 「2ちゃんねる」の Fink スレッド。（先代）</li>
 <li><a href="http://mixi.jp/view_community.pl?id=323942" target="_blank">mixi Fink Macで楽にUnixソフトを…</a> - mixi のユーザーアカウントが必要です。（日本語ページのみ）</li>
 </ul>
-
 
 <?
 include "footer.inc";
