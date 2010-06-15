@@ -1,6 +1,6 @@
 <?php
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/09/18 15:40:04 $';
+$cvs_author = '$Author: dmacks $';
+$cvs_date = '$Date: 2010/06/15 21:56:36 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -314,7 +314,7 @@ if ($result == null || count($result) == 0) { # No package found
 		else
 			$infofile_tag = '';
 		$infofile_html  = '<a href="'.$infofile_cvs_url.$infofile_tag.($infofile_tag ? '&amp;' : '?').'view=markup" title="' . $pobj['name'] . ' info file">'.$infofile_path.'</a><br>';
-		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'" title="' . $pobj['name'] . ' CVS log">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
+		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'?view=log" title="' . $pobj['name'] . ' CVS log">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
 		it_item("Info-File:", $infofile_html);
 	}
 
