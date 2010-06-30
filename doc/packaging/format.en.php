@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2009/06/19 18:43:28';
+$cvs_date = 'Date: 2010/06/30 16:01:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -38,24 +38,26 @@ The directories in top-down order:
 </p>
 <ul>
 <li><code>dists</code> is where it starts. The <code>dists</code>
-directory is necessary for the Debian tools.</li>
+directory is necessary for the Debian tools.  In recent versions
+of fink, this is a symlink to a directory with a distribution-inspired
+name.</li>
 <li>The distribution. There is <code>stable</code>,
 <code>unstable</code> and <code>local</code>. The <code>local</code>
 directory is under the control of the local administrator/user. The
 <code>stable</code> and <code>unstable</code> directories are part of
 Fink.</li>
 <li>The tree. The <code>main</code> tree contains the bulk of the
-packages. Cryptographic software is kept in a separate tree,
-<code>crypto</code>, to make removal easy should it become
-necessary.</li>
+packages. Prior to July 1, 2010, the
+Cryptographic software was kept in a separate tree,
+<code>crypto</code>, but this is now a section of the <code>main</code>
+tree.</li>
 <li><code>finkinfo</code>
 vs. <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contains
 the Fink package descriptions and patches, while
 <code>binary-darwin-powerpc</code> contains the <code>.deb</code>
 binary packages.</li>
 <li>Sections. The <code>main</code> tree is subdivided into thematic
-sections to make it manageable. The <code>crypto</code> tree is not
-divided into sections at the moment.</li>
+sections to make it manageable. </li>
 </ul>
 
 
