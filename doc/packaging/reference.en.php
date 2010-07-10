@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2010/06/30 16:01:15';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2010/07/10 23:32:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -206,30 +206,32 @@ foo-pm586 variant.
 <p>Since python 2.3 is not available in the 10.5 distribution, and the
 available perl packages vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3, 10.4 and 10.5 distributions:
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
 </p>
 <pre>
     perl 5.6.0:  10.3
     perl 5.8.0:  10.3
-    perl 5.8.1:  10.3, 10.4
+    perl 5.8.1:  <b>10.3</b>, 10.4
     perl 5.8.4:  10.3, 10.4
-    perl 5.8.6:  10.3, 10.4, 10.5
-    perl 5.8.8:        10.4, 10.5
+    perl 5.8.6:  10.3, <b>10.4</b>, 10.5
+    perl 5.8.8:        10.4, <b>10.5</b>
+    perl 5.10.0:             10.5, <b>10.6</b>
 </pre>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8)
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
   Distribution: &lt;&lt;
    (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
    (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
    (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
-   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.5,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
   &lt;&lt;
 </pre>
-<p>Note that there is no restriction placed on foo-pm586 since perl 5.8.6 is 
-available in all distributions.  Also note that we do not include old
+<p>Note that we do not include old
 distributions, such as 10.2 or 10.4-transitional, since the versions of
 fink which are relevant for them do not recognize this field.
 </p>
