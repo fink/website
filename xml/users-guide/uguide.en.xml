@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.54 2010/07/10 23:19:39 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.55 2010/07/10 23:21:42 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -92,7 +92,7 @@ I'm talking hours or even days here.
       <p>
         <em>Mac OS X 10.5</em> is considered to be <quote>fully supported and tested</quote>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.4 users test their work.
 </p>
-      <em>Mac OS X 10.4</em> will be deprecated soon.  It is considered to be <quote>fully supported and tested</quote>.
+      <p><em>Mac OS X 10.4</em> will be deprecated soon.  It is considered to be <quote>fully supported and tested</quote>.</p>
     </section>
     <section name="src-vs-bin">
       <title>Source vs. Binary</title>
