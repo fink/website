@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Introduction";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/01 03:12:34';
+$cvs_date = 'Date: 2010/07/10 23:21:42';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="install.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="User\'s Guide Contents">';
 
 
@@ -72,10 +72,11 @@ I'm talking hours or even days here.
     
     <h2><a name="supported-os">1.3 Supported Systems</a></h2>
       
-      <p><b>Mac OS X 10.5</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.4 have 10.5 users test their work.</p>
+      <p><b>Mac OS X 10.6</b> is the leading-edge platform, and is considered to be <q>fully supported and tested</q>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.4 have 10.5 users test their work.</p>
       <p>
-        <b>Mac OS X 10.4</b> is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.4 users test their work.
+        <b>Mac OS X 10.5</b> is considered to be <q>fully supported and tested</q>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.4 users test their work.
 </p>
+      <p><b>Mac OS X 10.4</b> will be deprecated soon.  It is considered to be <q>fully supported and tested</q>.</p>
     
     <h2><a name="src-vs-bin">1.4 Source vs. Binary</a></h2>
       
