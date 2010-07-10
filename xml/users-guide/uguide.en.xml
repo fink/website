@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.53 2009/03/01 03:12:34 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.54 2010/07/10 23:19:39 alexkhansen Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -88,10 +88,11 @@ I'm talking hours or even days here.
     </section>
     <section name="supported-os">
       <title>Supported Systems</title>
-      <p><em>Mac OS X 10.5</em> is the leading-edge platform, and is considered to be <quote>fully supported and tested</quote>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.4 have 10.5 users test their work.</p>
+      <p><em>Mac OS X 10.6</em> is the leading-edge platform, and is considered to be <quote>fully supported and tested</quote>, though as a newer operating system there are still some issues.  Most of the developers run it, and those who are running 10.4 have 10.5 users test their work.</p>
       <p>
-        <em>Mac OS X 10.4</em> is considered to be <quote>fully supported and tested</quote>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.4 users test their work.
+        <em>Mac OS X 10.5</em> is considered to be <quote>fully supported and tested</quote>, although there may still be stray compile problems with single packages. Many of the developers run it, and those who don't have 10.4 users test their work.
 </p>
+      <em>Mac OS X 10.4</em> will be deprecated soon.  It is considered to be <quote>fully supported and tested</quote>.
     </section>
     <section name="src-vs-bin">
       <title>Source vs. Binary</title>
