@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.115 2010/07/10 23:32:16 alexkhansen Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.116 2010/07/16 18:41:16 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -1784,7 +1784,7 @@ various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
     perl 5.8.1:  <em>10.3</em>, 10.4
     perl 5.8.4:  10.3, 10.4
     perl 5.8.6:  10.3, <em>10.4</em>, 10.5
-    perl 5.8.8:        10.4, <em>10.5</em>
+    perl 5.8.8:        10.4, <em>10.5</em>, 10.6
     perl 5.10.0:             10.5, <em>10.6</em>
 </codeblock>
 <p>A way to include all variants in a single finkinfo file is as follows.
@@ -1797,7 +1797,7 @@ various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
    (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
    (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
    (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
-   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
    (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
   &lt;&lt;
 </codeblock>
