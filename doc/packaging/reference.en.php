@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/07/10 23:32:16';
+$cvs_date = 'Date: 2010/07/16 18:41:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -214,7 +214,7 @@ various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
     perl 5.8.1:  <b>10.3</b>, 10.4
     perl 5.8.4:  10.3, 10.4
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
-    perl 5.8.8:        10.4, <b>10.5</b>
+    perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
 </pre>
 <p>A way to include all variants in a single finkinfo file is as follows.
@@ -227,7 +227,7 @@ various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
    (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
    (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
    (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
-   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
    (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
   &lt;&lt;
 </pre>
