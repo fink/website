@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Upgrading Fink";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/12/30 18:17:04';
+$cvs_date = 'Date: 2010/07/20 22:24:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink"><link rel="prev" href="mirrors.php?phpLang=en" title="Fink mirrors">';
 
 
@@ -32,6 +32,10 @@ fink selfupdate</pre>
     <a name="leopard-bindist2">
       <div class="question"><p><b><? echo FINK_Q ; ?>4.2: When I try to install stuff I get 'Can't resolve dependency "fink (&gt;= 0.28.0)"'</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Apply the fix from <a href="#leopard-bindist1">the prior entry.</a></p></div>
+    </a>
+    <a name="stuck-gettext">
+      <div class="question"><p><b><? echo FINK_Q ; ?>4.3: Fink tells me to run 'sudo apt-get install libgettext3-dev=0.14.5-2' to clear up inconsistent dependencies but I'm still stuck.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There is a timestamp issue with the <b>libgettext3</b> package description:  0.14.5-2 is an outdated version.  Run</p><pre>fink index -f</pre><p>to update the package description cache.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-fink.php?phpLang=en">5. Installing, Using and Maintaining Fink</a></p>
