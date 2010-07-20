@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.106 2010/07/20 22:24:20 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.107 2010/07/20 22:30:59 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -221,8 +221,10 @@ fink selfupdate</codeblock>
       <question><p>Fink tells me to run 'sudo apt-get install libgettext3-dev=0.14.5-2' to clear up inconsistent dependencies but I'm still stuck.</p></question>
       <answer>
 	<p>There is a timestamp issue with the <em>libgettext3</em> package description:  0.14.5-2 is an outdated version.  Run</p>
-	<codeblock>fink index -f</codeblock>
-	<p>to update the package description cache.</p>
+	<codeblock>fink index -f
+fink update libgettext3-dev	
+	</codeblock>
+	<p>to update the package description cache and then the package.</p>
       </answer>
     </faqentry>
   </chapter>
