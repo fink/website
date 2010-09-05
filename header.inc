@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.120 2010/09/05 11:14:57 gecko2 Exp $ */
+/* $Id: header.inc,v 1.121 2010/09/05 16:11:54 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -57,7 +57,7 @@ $lang_code = 'en';
 if ((phpLang_current)) $lang_code = phpLang_current;
 
 header("Content-Language: " . $lang_code);
-if ($_REQUEST['phpLang'])
+if (isset($_REQUEST['phpLang']))
 {
 	header("Expires: " . gmdate("D, d M Y H:i:s", time() + $expires) . " GMT");
 }
@@ -129,10 +129,10 @@ $section_files = array(
 	'mailing-lists' => 'http://www.finkproject.org/lists/index.php?phpLang='. $lang_code
 );
 
-if (!$section) $section = "home";
+if (!isset($section)) $section = "home";
 
 // main navigation box
-if (!is_array($navbox) && $nonav != 1) {
+if ((!isset($navbox) || !is_array($navbox)) && (!isset($nonav) || ($nonav != 1))) {
 	$navbox = array(
 		'index.php?phpLang='. $lang_code, FINK_SECTION_HOME_INDEX,
 		'news/index.php?phpLang='. $lang_code, FINK_SECTION_HOME_NEWS,
@@ -161,6 +161,7 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
   $date = filemtime($PATH_TRANSLATED);
 }
 // converts xml style tag to html 4.01 transitional (ad hoc)
+if (!isset($metatags)) global $metatags;
 $metatags = ereg_replace('<([^/]*)/>', '<\1>', $metatags);
 
 // [translation] Function used in doc and faq for translation
@@ -247,7 +248,10 @@ function gray_line()
 // used for files that are loaded locally.  (This enables us to move
 // portions of the website to other servers without losing the navigation.)
 
-if (!$linkroot) $linkroot = $root;
+if (!isset($linkroot)) {
+	global $root;
+	$linkroot = $root;
+}
 
 // Used in Sections
 function insert_sub($navbox, $active_page) {
@@ -255,6 +259,7 @@ function insert_sub($navbox, $active_page) {
 	
 	// Determine the active page
 	$active_page = -1;
+	if (!isset($relativepath)) $relativepath = "";
 	$dirnames = explode ('/', dirname($_SERVER['PHP_SELF']));
 	for ($i = 1; $i < sizeof($dirnames) - substr_count($root, '../'); $i++) {
 		$relativepath .= '/' . $dirnames[$i];
@@ -300,7 +305,7 @@ function insert_sub($navbox, $active_page) {
 	<meta name="description" content="<? echo META_DESCRIPTION; ?>">
 	<meta name="robots" content="all">
 <?
-	if (!$link_alternate) {
+	if (!isset($link_alternate)) {
 		$rdf_file = dirname(__FILE__) .'/news/news.' . $lang_code . '.rdf';
 		echo "<!-- $rdf_file  -->\n";
 		if (is_readable ($rdf_file )) {
@@ -317,25 +322,25 @@ function insert_sub($navbox, $active_page) {
 	<? if ($metatags) echo $metatags; ?>
 	<link rel="start" href="<? print $root ?>index.php">
 	<link rel="copyright" href="<? print $root ?>legal.php">
-	<? if ($i18n_enable_form) echo '<script type="text/javascript" src="' . $root . 'fink.i18n.js"></script>'; ?>
-	<? if ($pdb_scripts) echo '<script type="text/javascript" src="' . $root . 'fink.pdb.js"></script>'; ?>
+	<? if (isset($i18n_enable_form)) echo '<script type="text/javascript" src="' . $root . 'fink.i18n.js"></script>'; ?>
+	<? if (isset($pdb_scripts)) echo '<script type="text/javascript" src="' . $root . 'fink.pdb.js"></script>'; ?>
 
 </head>
-<body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333"<? if ($pdb_scripts && !$pdb_has_adv_searchoptions) echo ' onload="switchMenu(\'advancedsearch\', \'triangle\')"' ?>>
+<body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333"<? if (isset($pdb_scripts) && !isset($pdb_has_adv_searchoptions)) echo ' onload="switchMenu(\'advancedsearch\', \'triangle\')"' ?>>
 
 <? /* header and sourceforge logo */ ?>
 <div id="header-left">
 
-	<? if (!$is_home) echo '<a href="' . $linkroot . 'index.php">'; ?>
+	<? if (!isset($is_home)) echo '<a href="' . $linkroot . 'index.php">'; ?>
 	<img src="<? echo $root ?>img/mlogo.png"  width="171" height="85" border="0" alt="Fink">
-	<? if (!$is_home) echo '</a>'; ?>
+	<? if (!isset($is_home)) echo '</a>'; ?>
 </div>
 
 <div id="header">
 	<? /* Call phpLang function */ ?>
-	<? if (function_exists(AddFlags)) AddFlags('', false, $root); ?>
+	<? if (function_exists('AddFlags')) AddFlags('', false, $root); ?>
 	<br>
-<? if (!$hostlogo) include dirname(__FILE__) . "/hostlogo.inc" ;
+<? if (!isset($hostlogo)) include dirname(__FILE__) . "/hostlogo.inc" ;
 		echo str_replace("{img}", $img, HEADER_HOSTED_BY);
 ?>
 </div>
@@ -353,6 +358,8 @@ function insert_sub($navbox, $active_page) {
 <? 
 	foreach ($section_files as $key => $filename) {
 		echo "\t\t<li class=\"menu_item\">";
+		if (!isset($nonav)) $nonav = "";
+		if (!isset($active_page)) $active_page = "";
 		if ($section == $key && 1 == $nonav) {
 			echo '<div class="selected" >'. $section_names[$key] . "</div></li>\n";
 		} elseif ($section == $key) {
@@ -365,7 +372,7 @@ function insert_sub($navbox, $active_page) {
 	} 
 ?>
 <? /* link to print version */ ?>
-<? if ($printlink) { ?>
+<? if (isset($printlink)) { ?>
 		<li class="menu_item">
 			<a href="<? echo $linkroot . $printlink ?>" style="border-width: 0px ; ">
 				<img src="<? echo $root; ?>img/printer.png" 

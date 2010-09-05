@@ -1,6 +1,6 @@
 <?php
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2010/06/15 21:56:36 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/09/05 16:11:54 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -8,7 +8,11 @@ include_once "functions.inc";
 include_once "releases.inc";
 include_once "sections.inc";
 
-$package = basename($HTTP_SERVER_VARS["PATH_INFO"]);
+if (isset($HTTP_SERVER_VARS["PATH_INFO"])) {
+	$package = basename($HTTP_SERVER_VARS["PATH_INFO"]);
+} else {
+	$package = "";
+}
 $q = new SolrQuery();
 $q->addQuery("name_e:\"$package\"", true);
 handle_last_modified('pdb-last-modified-' . $package, $q);

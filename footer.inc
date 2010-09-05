@@ -1,4 +1,4 @@
-<? /* $Id: footer.inc,v 1.44 2010/09/05 11:14:57 gecko2 Exp $ */ ?>
+<? /* $Id: footer.inc,v 1.45 2010/09/05 16:11:54 gecko2 Exp $ */ ?>
 
 <? /* end content table */ ?>
 </div>
@@ -9,7 +9,7 @@
 </div>
 <div id="footer">
 	<?
-		if (function_exists(AddLanguageNames)) {
+		if (function_exists('AddLanguageNames')) {
 			echo FOOTER_AVAILABLE_LANGUAGES . ': ';
 			AddLanguageNames(' | ', false); 
 		} else {
@@ -20,9 +20,9 @@
 	<? /* The Real Footer */ ?>
 	
 	<?
-		if ($dyndate == 1) {
+		if (isset($dyndate) && $dyndate == 1) {
 		 	print FOOTER_GENERATED_DYNAMICALLY;
-		} elseif ($dyndate) {
+		} elseif (isset($dyndate)) {
 			print gmstrftime(FINK_DATE_FORMAT, $dyndate);
 		} else {
 		 	// print gmstrftime(str_replace("{author}", $author, FOOTER_LAST_CHANGED), $date);
@@ -39,7 +39,7 @@
 	?>
 </div>
 <?
-	if ($has_analytics && !$skip_analytics) {
+	if ($has_analytics && !isset($skip_analytics)) {
 		analytics_print();
 	}
 ?>

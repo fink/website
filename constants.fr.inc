@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.fr.inc,v 1.10 2010/09/05 10:56:04 gecko2 Exp $ */
+/* $Id: constants.fr.inc,v 1.11 2010/09/05 16:11:54 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -35,7 +35,7 @@ define ("FINK_SECTION_HOME_CONTRIBUTORS", 'Contributeurs');
 define ("FINK_SECTION_HOME_LINKS", 'Liens');
 
 /* The word 'Sections'.  Used in Menu Navigation Bar */
-define (FINK_SECTIONS", 'Sections');
+define ("FINK_SECTIONS", 'Sections');
 
 /* Used in FAQ/Documentation Sections */
 define ("FINK_CONTENTS", 'Sommaire');

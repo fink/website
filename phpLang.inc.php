@@ -101,7 +101,7 @@ $phpLang_languages = array(
 );
 
 // Disable languages. e.g. $GLOBALS['phpLang_disabledLanguages'] = 'de ja' before calling phpLang.
-if ($GLOBALS['phpLang_disabledLanguages'] != '') {
+if (isset($GLOBALS['phpLang_disabledLanguages'])) {
 	$disLangs = explode(' ', $GLOBALS['phpLang_disabledLanguages']);
 	foreach ($GLOBALS['phpLang_languages'] as $langKey => $langArray) { 
 		foreach ($disLangs as $disLang) {
@@ -111,7 +111,7 @@ if ($GLOBALS['phpLang_disabledLanguages'] != '') {
 }
 
 // finds current file name, extension and uri
-if ($SCRIPT_NAME == '') $SCRIPT_NAME = getenv('SCRIPT_NAME');
+if (!isset($SCRIPT_NAME)) $SCRIPT_NAME = getenv('SCRIPT_NAME');
 if(ereg("([^/?]+)(\?.*)?$", $SCRIPT_NAME, $regs)) {
 	define('phpLang_currentFile', $regs[1]);
 	if(ereg("(.*)(\.[^.]+)$", phpLang_currentFile, $regs2)) {
@@ -146,8 +146,6 @@ function isDisabled($lang)
 // function that gives the localized file name
 function phpLang_localizedFileName($lang)
 {
-	if (isset($GLOBALS['phpLang_disabledLanguages']) && strpos($GLOBALS['phpLang_disabledLanguages'])) {
-	}
 	switch(phpLang_fileNameType) {
 		case 1	:	$ret = phpLang_localDir.phpLang_currentFileName.phpLang_currentFileExtension.'.'.$lang;
 					break;

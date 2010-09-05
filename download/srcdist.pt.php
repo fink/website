@@ -1,7 +1,7 @@
 <?
 $title = "Download: Distribuição de código fonte";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/10/20 01:18:42 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/09/05 16:11:54 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -79,7 +79,7 @@ de distribuição originais e os compilará localmente em sua máquina.</p>
 <? print $release_date; ?>.
 
 <ul>
-  <li><a href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink <? print $release_version; ?></a> - 3521K, formato .tar.gz</li>
+  <li><a href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink <? print $fink_version; ?></a> - 3521K, formato .tar.gz</li>
 </ul>
 
 <p>Você também precisará instalar o Xcode Tools (conforme <a

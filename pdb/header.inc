@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.22 2009/09/07 04:10:15 rangerrick Exp $ */
+/* $Id: header.inc,v 1.23 2010/09/05 16:11:54 gecko2 Exp $ */
 
 $linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -26,8 +26,12 @@ header("Expires: " . gmdate("D, d M Y H:i:s", time() + $cache_timeout) . " GMT")
 header("Cache-Control: max-age=" . $cache_timeout . ", s-maxage=" . ($cache_timeout / 2));
 
 /* check path info */
-$PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
-if ($uses_pathinfo) {
+if (isset($HTTP_SERVER_VARS["PATH_INFO"])) {
+	$PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
+} else {
+	$PATH_INFO = "";
+}
+if (isset($uses_pathinfo)) {
   if ($PATH_INFO == "") {
     $pispec = "-";
     $title .= "(none)";
@@ -61,6 +65,7 @@ $navbox = array(
 );
 
 $fsroot = "../";
+global $root;
 if (substr($root,0,1) == "-") {
   $root = substr($root.$fsroot,1);
 } else {

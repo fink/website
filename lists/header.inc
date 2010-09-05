@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.8 2004/03/03 17:07:55 dmalloc Exp $ */
+/* $Id: header.inc,v 1.9 2010/09/05 16:11:54 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -27,7 +27,7 @@ if (is_readable (dirname(__FILE__) . "/constants." . $lang_code . ".inc"))
         include_once dirname(__FILE__) . "/constants." . $lang_code . ".inc"; 
 
 	/* The Sections.  Used in Menu Navigation Bar */
-define (FINK_HEAD, 'Overview');
+if (!defined('FINK_HEAD')) { define ("FINK_HEAD", 'Overview'); }
 
 
 
