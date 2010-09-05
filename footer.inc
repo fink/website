@@ -1,4 +1,4 @@
-<? /* $Id: footer.inc,v 1.43 2010/01/07 01:52:34 dmacks Exp $ */ ?>
+<? /* $Id: footer.inc,v 1.44 2010/09/05 11:14:57 gecko2 Exp $ */ ?>
 
 <? /* end content table */ ?>
 </div>
@@ -27,13 +27,13 @@
 		} else {
 		 	// print gmstrftime(str_replace("{author}", $author, FOOTER_LAST_CHANGED), $date);
 			$print_lastchanged = FOOTER_LAST_CHANGED;
-			$date_converted = gmstrftime(FINK_DATE_FORMAT, $date);
+			$date_converted = gmstrftime(FINK_DATE_FORMAT, FILEMDATE);
 			$date_encoding = mb_detect_encoding($date_converted);
 			$date_converted = mb_convert_encoding($date_converted, "UTF-8", FINK_SF_ENCODING);
 			
 			$print_lastchanged = str_replace("{author}", $author, $print_lastchanged);
 			$print_lastchanged = str_replace("{date}", $date_converted, $print_lastchanged);
-			$print_lastchanged = str_replace("{time}", gmstrftime(" %R GMT", $date), $print_lastchanged);
+			$print_lastchanged = str_replace("{time}", gmstrftime(" %R GMT", FILEMDATE), $print_lastchanged);
 			print $print_lastchanged;
 		}
 	?>
