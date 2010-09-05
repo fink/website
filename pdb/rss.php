@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 18:39:42 $';
+$cvs_date = '$Date: 2010/09/05 18:44:03 $';
 
 header("Content-type: text/xml");
 if (!isset($cache_timeout)) $cache_timeout = 60 * 60;
@@ -19,8 +19,7 @@ include_once "feedcreator.inc";
 
 $rss = new UniversalFeedCreator();
 
-#$url_root = "http://pdb.finkproject.org/pdb";
-$url_root = "http://ranger.users.finkproject.org/fink/pdb";
+$url_root = "http://pdb.finkproject.org/pdb";
 $rss->title = "Fink PDB";
 $rss->description = "Fink Package Database RSS";
 $rss->link = $url_root . "/browse.php?" . get_query_params();
