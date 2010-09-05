@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
-<cvsid>$Id: news.es.xml,v 1.48 2010/04/02 13:45:29 alexkhansen Exp $</cvsid>
+<cvsid>$Id: news.es.xml,v 1.49 2010/09/05 19:31:29 gecko2 Exp $</cvsid>
   <newsitem>
     <date>2009-10-30</date>
     <headline>Servers back to normal.</headline>
@@ -350,7 +350,7 @@ algunas opciones pueden no estar disponibles si usted esta fuera de los
 Estados Unidos.</p>
 <p>Finalmente, para usar la base de datos de los paquetes durante este
 periodo es posible conectarse a <link 
-url="http://lists.finkproject.org/pdb">esta copia de respaldo de la base de
+url="http://pdb.finkproject.org/pdb/">esta copia de respaldo de la base de
 datos</link> de los paquete que esta solo fuera de sincronia por unas 
 semanas.</p>
 		</body>

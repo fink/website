@@ -268,7 +268,7 @@ rsync://master.us.finkmirrors.net/finkinfo/. Desafortunadamente,
 algunas opciones pueden no estar disponibles si usted esta fuera de los
 Estados Unidos.</p>
 <p>Finalmente, para usar la base de datos de los paquetes durante este
-periodo es posible conectarse a <a href="http://lists.finkproject.org/pdb">esta copia de respaldo de la base de
+periodo es posible conectarse a <a href="http://pdb.finkproject.org/pdb/">esta copia de respaldo de la base de
 datos</a> de los paquete que esta solo fuera de sincronia por unas 
 semanas.</p>
 		<a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>

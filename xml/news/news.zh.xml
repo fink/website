@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="zh">
-<cvsid>$Id: news.zh.xml,v 1.41 2010/04/02 13:45:29 alexkhansen Exp $</cvsid>
+<cvsid>$Id: news.zh.xml,v 1.42 2010/09/05 19:31:29 gecko2 Exp $</cvsid>
 
   <newsitem>
     <date>2009-10-30</date>
@@ -324,7 +324,7 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <link url="http://lists.finkproject.org/pdb">this backup copy of the
+to <link url="http://pdb.finkproject.org/pdb/">this backup copy of the
 package database</link> which is a few weeks out of date.
 </p>
 		</body>

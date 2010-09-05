@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.48 2010/04/02 13:45:29 alexkhansen Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.49 2010/09/05 19:31:29 gecko2 Exp $</cvsid>
 
   <newsitem>
     <date>2009-10-30</date>
@@ -336,7 +336,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 米国にいる場合、残念ながら他には選択肢がないかもしれません。
 </p><p>
 最後に、パッケージデータベースを使うには、
-<link url="http://lists.finkproject.org/pdb">データベースのバックアップ</link>
+<link url="http://pdb.finkproject.org/pdb/">データベースのバックアップ</link>
 を使いください。
 ただし、これは数週間遅れたデータになります。
 </p>

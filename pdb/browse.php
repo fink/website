@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 18:39:42 $';
+$cvs_date = '$Date: 2010/09/05 19:31:29 $';
 
 ini_set("memory_limit", "48M");
 
@@ -103,6 +103,9 @@ if (!isset($_GET['maintainer'])) {
 }
 if (!isset($_GET['name'])) {
 	$_GET['name'] = "";
+}
+if (!isset($invalid_param_text)) {
+	$invalid_param_text = "";
 }
 ?>
 <form action="browse.php" method="get" name="pdb_browser" id="pdb_browser" onreset="resetForm();return false;">

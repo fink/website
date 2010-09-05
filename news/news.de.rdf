@@ -531,7 +531,7 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <a href="http://lists.finkproject.org/pdb">this backup copy of the
+to <a href="http://pdb.finkproject.org/pdb/">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
 
@@ -568,7 +568,7 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <a href="http://lists.finkproject.org/pdb">this backup copy of the
+to <a href="http://pdb.finkproject.org/pdb/">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
 

@@ -254,7 +254,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 米国にいる場合、残念ながら他には選択肢がないかもしれません。
 </p><p>
 最後に、パッケージデータベースを使うには、
-<a href="http://lists.finkproject.org/pdb">データベースのバックアップ</a>
+<a href="http://pdb.finkproject.org/pdb/">データベースのバックアップ</a>
 を使いください。
 ただし、これは数週間遅れたデータになります。
 </p>

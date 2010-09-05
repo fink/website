@@ -594,7 +594,7 @@ rsync://master.us.finkmirrors.net/finkinfo/. Desafortunadamente,
 algunas opciones pueden no estar disponibles si usted esta fuera de los
 Estados Unidos.</p>
 <p>Finalmente, para usar la base de datos de los paquetes durante este
-periodo es posible conectarse a <a href="http://lists.finkproject.org/pdb">esta copia de respaldo de la base de
+periodo es posible conectarse a <a href="http://pdb.finkproject.org/pdb/">esta copia de respaldo de la base de
 datos</a> de los paquete que esta solo fuera de sincronia por unas 
 semanas.</p>
 		</description>
@@ -628,7 +628,7 @@ rsync://master.us.finkmirrors.net/finkinfo/. Desafortunadamente,
 algunas opciones pueden no estar disponibles si usted esta fuera de los
 Estados Unidos.</p>
 <p>Finalmente, para usar la base de datos de los paquetes durante este
-periodo es posible conectarse a <a href="http://lists.finkproject.org/pdb">esta copia de respaldo de la base de
+periodo es posible conectarse a <a href="http://pdb.finkproject.org/pdb/">esta copia de respaldo de la base de
 datos</a> de los paquete que esta solo fuera de sincronia por unas 
 semanas.</p>
 		</content:encoded>
