@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.118 2009/03/26 19:26:48 rangerrick Exp $ */
+/* $Id: header.inc,v 1.119 2010/09/05 10:56:04 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -18,7 +18,7 @@
 // |                                                                          |
 // +--------------------------------------------------------------------------+
 
-if ($_SERVER['SERVER_NAME'] == "pdb.finkproject.org") {
+if (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] == "pdb.finkproject.org") {
 	if ($_SERVER['REQUEST_URI'] == "http://pdb.finkproject.org/") {
 		header("HTTP/1.1: 301 Moved Permanently");
 		header("Location: http://pdb.finkproject.org/pdb");
@@ -26,7 +26,7 @@ if ($_SERVER['SERVER_NAME'] == "pdb.finkproject.org") {
 	}
 }
 
-if (!defined($expires))
+if (!isset($expires))
 {
 	# by default, expire in 1 hour
 	$expires = 60 * 60;
@@ -66,47 +66,47 @@ if (is_readable (dirname(__FILE__) . "/constants." . $lang_code . ".inc"))
 	include_once dirname(__FILE__) . "/constants." . $lang_code . ".inc";
 
 /* The Sections.  Used in Menu Navigation Bar */
-define (FINK_LC_ALL, 'en_US');
-define (FINK_SF_ENCODING, 'ISO-8859-1');
-define (FINK_DATE_FORMAT, '%d %B %Y');
+if (!defined('FINK_LC_ALL')) { define ("FINK_LC_ALL", 'en_US'); }
+if (!defined('FINK_SF_ENCODING')) { define ("FINK_SF_ENCODING", 'ISO-8859-1'); }
+if (!defined('FINK_DATE_FORMAT')) { define ("FINK_DATE_FORMAT", '%d %B %Y'); }
 
 /* The Sections.  Used in Menu Navigation Bar */
-define (FINK_SECTION_HOME, 'Home');
-define (FINK_SECTION_DOWNLOAD, 'Download');
-define (FINK_SECTION_PACKAGE, 'Packages');
-define (FINK_SECTION_HELP, 'Help');
-define (FINK_SECTION_FAQ, 'F.A.Q.');
-define (FINK_SECTION_DOCUMENTATION, 'Documentation');
-define (FINK_SECTION_MAILING_LISTS, 'Mailing Lists');
+if (!defined('FINK_SECTION_HOME')) { define ("FINK_SECTION_HOME", 'Home'); }
+if (!defined('FINK_SECTION_DOWNLOAD')) { define ("FINK_SECTION_DOWNLOAD", 'Download'); }
+if (!defined('FINK_SECTION_PACKAGE')) { define ("FINK_SECTION_PACKAGE", 'Packages'); }
+if (!defined('FINK_SECTION_HELP')) { define ("FINK_SECTION_HELP", 'Help'); }
+if (!defined('FINK_SECTION_FAQ')) { define ("FINK_SECTION_FAQ", 'F.A.Q.'); }
+if (!defined('FINK_SECTION_DOCUMENTATION')) { define ("FINK_SECTION_DOCUMENTATION", 'Documentation'); }
+if (!defined('FINK_SECTION_MAILING_LISTS')) { define ("FINK_SECTION_MAILING_LISTS", 'Mailing Lists'); }
 
 /* The Home Subsections.  Used in Menu Navigation Bar */
-define (FINK_SECTION_HOME_INDEX, 'Index');
-define (FINK_SECTION_HOME_NEWS, 'News');
-define (FINK_SECTION_HOME_ABOUT, 'About');
-define (FINK_SECTION_HOME_CONTRIBUTORS, 'Contributors');
-define (FINK_SECTION_HOME_LINKS, 'Links');
+if (!defined('FINK_SECTION_HOME_INDEX')) { define ("FINK_SECTION_HOME_INDEX", 'Index'); }
+if (!defined('FINK_SECTION_HOME_NEWS')) { define ("FINK_SECTION_HOME_NEWS", 'News'); }
+if (!defined('FINK_SECTION_HOME_ABOUT')) { define ("FINK_SECTION_HOME_ABOUT", 'About'); }
+if (!defined('FINK_SECTION_HOME_CONTRIBUTORS')) { define ("FINK_SECTION_HOME_CONTRIBUTORS", 'Contributors'); }
+if (!defined('FINK_SECTION_HOME_LINKS')) { define ("FINK_SECTION_HOME_LINKS", 'Links'); }
 
 /* The word 'Sections'.  Used in Menu Navigation Bar */
-define (FINK_SECTIONS, 'Sections');
+if (!defined('FINK_SECTIONS')) { define ("FINK_SECTIONS", 'Sections'); }
 
 /* Contents as Table of Contents.  Used in FAQ/Documentation Sections */
-define (FINK_CONTENTS, 'Contents');
-define (FINK_NEXT, 'Next');
-define (FINK_Q, 'Q');
-define (FINK_A, 'A');
+if (!defined('FINK_CONTENTS')) { define ("FINK_CONTENTS", 'Contents'); }
+if (!defined('FINK_NEXT')) { define ("FINK_NEXT", 'Next'); }
+if (!defined('FINK_Q')) { define ("FINK_Q", 'Q'); }
+if (!defined('FINK_A')) { define ("FINK_A", 'A'); }
 
 /* Printer */
-define (FINK_PRINTER, 'Printer');
-define (FINK_PRINT_VERSION, 'Print Version');
+if (!defined('FINK_PRINTER')) { define ("FINK_PRINTER", 'Printer'); }
+if (!defined('FINK_PRINT_VERSION')) { define ("FINK_PRINT_VERSION", 'Print Version'); }
 
 /* Header and Footer */
-define (META_KEYWORDS, 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, free software, porting, development, package management');
-define (META_DESCRIPTION, 'The Fink Team wants to bring the full world of Unix Open Source software to Darwin and Mac OS X. We modify Unix software so that it compiles and runs on Mac OS X and make it available for download as a coherent distribution');
-define (HEADER_HOSTED_BY, 'Hosted By {img}');
-define (FOOTER_AVAILABLE_LANGUAGES, 'Available Languages');
-define (FOOTER_GENERATED_DYNAMICALLY, 'Generated dynamically');
-define (FOOTER_DATABASE_LAST_UPDATED, 'Database last updated on  %a, %b %d %Y, %R GMT');
-define (FOOTER_LAST_CHANGED, 'Last changed by {author} on {date}, {time}');
+if (!defined('META_KEYWORDS')) { define ("META_KEYWORDS", 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, free software, porting, development, package management'); }
+if (!defined('META_DESCRIPTION')) { define ("META_DESCRIPTION", 'The Fink Team wants to bring the full world of Unix Open Source software to Darwin and Mac OS X. We modify Unix software so that it compiles and runs on Mac OS X and make it available for download as a coherent distribution'); }
+if (!defined('HEADER_HOSTED_BY')) { define ("HEADER_HOSTED_BY", 'Hosted By {img}'); }
+if (!defined('FOOTER_AVAILABLE_LANGUAGES')) { define ("FOOTER_AVAILABLE_LANGUAGES", 'Available Languages'); }
+if (!defined('FOOTER_GENERATED_DYNAMICALLY')) { define ("FOOTER_GENERATED_DYNAMICALLY", 'Generated dynamically'); }
+if (!defined('FOOTER_DATABASE_LAST_UPDATED')) { define ("FOOTER_DATABASE_LAST_UPDATED", 'Database last updated on  %a, %b %d %Y, %R GMT'); }
+if (!defined('FOOTER_LAST_CHANGED')) { define ("FOOTER_LAST_CHANGED", 'Last changed by {author} on {date}, {time}'); }
 
 setlocale(LC_TIME, FINK_LC_ALL);
 $section_names = array(

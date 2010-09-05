@@ -137,7 +137,7 @@ $HTTP_USER_AGENT = getenv('HTTP_USER_AGENT');
 // checks if the language is disabled
 function isDisabled($lang)
 {
-	if ($GLOBALS['phpLang_disabledLanguages'] != ''){
+	if (isset($GLOBALS['phpLang_disabledLanguages'])) {
 		if (' '.strpos($GLOBALS['phpLang_disabledLanguages'],$lang)>0) return TRUE;
 	}
 	return FALSE;
@@ -146,7 +146,7 @@ function isDisabled($lang)
 // function that gives the localized file name
 function phpLang_localizedFileName($lang)
 {
-	if ($GLOBALS['phpLang_disabledLanguages'] != '' && strpos) {
+	if (isset($GLOBALS['phpLang_disabledLanguages']) && strpos($GLOBALS['phpLang_disabledLanguages'])) {
 	}
 	switch(phpLang_fileNameType) {
 		case 1	:	$ret = phpLang_localDir.phpLang_currentFileName.phpLang_currentFileExtension.'.'.$lang;

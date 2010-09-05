@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ru.inc,v 1.6 2007/02/22 23:45:10 rangerrick Exp $ */
+/* $Id: constants.ru.inc,v 1.7 2010/09/05 10:56:04 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -16,45 +16,45 @@
 // +--------------------------------------------------------------------------+
 
 /* The Sections.  Used in Menu Navigation Bar */
-define (FINK_LC_ALL, 'ru_RU');
-define (FINK_SF_ENCODING, 'ISO-8859-5');
+define ("FINK_LC_ALL", 'ru_RU');
+define ("FINK_SF_ENCODING", 'ISO-8859-5');
 
 /* The Sections.  Used in Menu Navigation Bar */
-define (FINK_SECTION_HOME, 'Главная');
-define (FINK_SECTION_DOWNLOAD, 'Скачивание');
-define (FINK_SECTION_PACKAGE, 'Пакеты');
-define (FINK_SECTION_HELP, 'Помощь');
-define (FINK_SECTION_FAQ, 'Ч.З.В.');
-define (FINK_SECTION_DOCUMENTATION, 'Документация');
-define (FINK_SECTION_MAILING_LISTS, 'Списки рассылки');
+define ("FINK_SECTION_HOME", 'Главная');
+define ("FINK_SECTION_DOWNLOAD", 'Скачивание');
+define ("FINK_SECTION_PACKAGE", 'Пакеты');
+define ("FINK_SECTION_HELP", 'Помощь');
+define ("FINK_SECTION_FAQ", 'Ч.З.В.');
+define ("FINK_SECTION_DOCUMENTATION", 'Документация');
+define ("FINK_SECTION_MAILING_LISTS", 'Списки рассылки');
 
 /* The Home Subsections.  Used in Menu Navigation Bar */
-define (FINK_SECTION_HOME_INDEX, 'Указатель');
-define (FINK_SECTION_HOME_NEWS, 'Последние новости');
-define (FINK_SECTION_HOME_ABOUT, 'О нас');
-define (FINK_SECTION_HOME_CONTRIBUTORS, 'Участники');
-define (FINK_SECTION_HOME_LINKS, 'Ссылки');
+define ("FINK_SECTION_HOME_INDEX", 'Указатель');
+define ("FINK_SECTION_HOME_NEWS", 'Последние новости');
+define ("FINK_SECTION_HOME_ABOUT", 'О нас');
+define ("FINK_SECTION_HOME_CONTRIBUTORS", 'Участники');
+define ("FINK_SECTION_HOME_LINKS", 'Ссылки');
 
 /* The word 'Sections'.  Used in Menu Navigation Bar */
-define (FINK_SECTIONS, 'Разделы');
+define ("FINK_SECTIONS", 'Разделы');
 
 /* Used in FAQ/Documentation Sections */
-define (FINK_CONTENTS, 'Содержание');
-define (FINK_NEXT, 'Следующий');
-define (FINK_Q, 'В');
-define (FINK_A, 'О');
+define ("FINK_CONTENTS", 'Содержание');
+define ("FINK_NEXT", 'Следующий');
+define ("FINK_Q", 'В');
+define ("FINK_A", 'О');
 
 /* Printer */
-define (FINK_PRINTER, 'Принтер');
-define (FINK_PRINT_VERSION, 'Печатная версия');
+define ("FINK_PRINTER", 'Принтер');
+define ("FINK_PRINT_VERSION", 'Печатная версия');
 
 /* Footer */
-define (META_KEYWORDS, 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, скачивание, свободное программное обеспечение, порт, разработка, управлением пакетами');
-define (META_DESCRIPTION, 'Проект Fink нацелен на перенос всего мира ПО Unix с открытым исходным кодом в Darwin и Mac OS X. Мы модифицируем ПО Unix таким образом, чтобы оно могло компилироваться и использоваться в Mac OS X (переносим его), и обеспечиваем возможность его скачивания в виде связной дистрибуции. ');
-define (HEADER_HOSTED_BY, 'Хостинг обеспечен');
-define (FOOTER_AVAILABLE_LANGUAGES, 'Языки');
-define (FOOTER_GENERATED_DYNAMICALLY, 'Воспроизведено динамически ');
-define (FOOTER_DATABASE_LAST_UPDATED, 'Последнее обновление: %a, %d %B %Y ‚ %R %Z');
-define (FOOTER_LAST_CHANGED, 'Последнее изменение: {author} ‚ {date} , {time}');
+define ("META_KEYWORDS", 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, скачивание, свободное программное обеспечение, порт, разработка, управлением пакетами');
+define ("META_DESCRIPTION", 'Проект Fink нацелен на перенос всего мира ПО Unix с открытым исходным кодом в Darwin и Mac OS X. Мы модифицируем ПО Unix таким образом, чтобы оно могло компилироваться и использоваться в Mac OS X (переносим его), и обеспечиваем возможность его скачивания в виде связной дистрибуции. ');
+define ("HEADER_HOSTED_BY", 'Хостинг обеспечен');
+define ("FOOTER_AVAILABLE_LANGUAGES", 'Языки');
+define ("FOOTER_GENERATED_DYNAMICALLY", 'Воспроизведено динамически ');
+define ("FOOTER_DATABASE_LAST_UPDATED", 'Последнее обновление: %a, %d %B %Y ‚ %R %Z');
+define ("FOOTER_LAST_CHANGED", 'Последнее изменение: {author} ‚ {date} , {time}');
 ?>
 
