@@ -588,8 +588,8 @@ class FeedCreator extends HtmlDescribable {
 	
 	function _createStylesheetReferences() {
 		$xml = "";
-		if ($this->cssStyleSheet) $xml .= "<?xml-stylesheet href=\"".$this->cssStyleSheet."\" type=\"text/css\"?>\n";
-		if ($this->xslStyleSheet) $xml .= "<?xml-stylesheet href=\"".$this->xslStyleSheet."\" type=\"text/xsl\"?>\n";
+		if (isset($this->cssStyleSheet) && $this->cssStyleSheet) $xml .= "<?xml-stylesheet href=\"".$this->cssStyleSheet."\" type=\"text/css\"?>\n";
+		if (isset($this->xslStyleSheet) && $this->xslStyleSheet) $xml .= "<?xml-stylesheet href=\"".$this->xslStyleSheet."\" type=\"text/xsl\"?>\n";
 		return $xml;
 	}
 	
@@ -749,6 +749,7 @@ class FeedDate {
 					$tzOffset = 0;
 				}
 			}
+			if (!isset($tzOffset)) $tzOffset = 0;
 			$this->unix += $tzOffset;
 			return;
 		}

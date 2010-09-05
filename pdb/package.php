@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 16:11:54 $';
+$cvs_date = '$Date: 2010/09/05 18:39:42 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -75,7 +75,6 @@ $result = $fullQuery->fetch();
 $warning = '';
 if ($result == null || count($result) == 0) { # No specific version found, try latest
 	$result = $basicQuery->fetch();
-	error_reporting($error_level);
 	$warning = "<b>Warning: Package $package $version not found";
 	$warning .= $distribution ? " in distribution $distribution" : '';
 	$warning .= $architecture ? "-$architecture" : '';
@@ -185,7 +184,7 @@ if ($result == null || count($result) == 0) { # No package found
 	// make a gradient out of the colors for the display
 	$dist_ids = array();
 	foreach ($distributions as $dist) {
-		$dist_ids[$dist->getId()]++;
+		$dist_ids[$dist->getId()]=1;
 	}
 	$color_last = count($dist_ids);
 	#$dark  = array(227, 202, 255);
@@ -228,6 +227,7 @@ if ($result == null || count($result) == 0) { # No package found
 			avail_td(nl2br($dist->getDescription() . ' *'), '', 'color:gray; ');
 		}
 
+		if (!isset($rel_type)) $rel_type = "";
 		$pkey = 'pdb-package-bundle-' . $pobj['name'] . '-' . $dist->getName() . '-' . $rel_type . '-' . $dist->getArchitecture() . $showall;
 		$packagelist = memcache_get_key($pkey);
 		if (!is_array($packagelist) || count($packagelist) == 0) {
@@ -297,6 +297,7 @@ if ($result == null || count($result) == 0) { # No package found
 	if ($pobj['license']) {
 		it_item("License:", '<a href="http://fink.sourceforge.net/doc/packaging/policy.php#licenses">'.$pobj['license'].'</a>');
 	}
+	if (!isset($pobj['parentname'])) $pobj['parentname'] = "";
 	if ($pobj['parentname']) {
 		$parentq = new SolrQuery();
 		$parentq->addQuery('rel_id:"' . $pobj['rel_id'] . '"', true);
@@ -352,7 +353,7 @@ if ($result == null || count($result) == 0) { # No package found
 
 
 <?
-if ($has_unsupported_dists) {
+if (isset($has_unsupported_dists)) {
 ?>
 <p>(*) = Unsupported distribution.</p>
 <?

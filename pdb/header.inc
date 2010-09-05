@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.23 2010/09/05 16:11:54 gecko2 Exp $ */
+/* $Id: header.inc,v 1.24 2010/09/05 18:39:42 gecko2 Exp $ */
 
 $linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -17,7 +17,7 @@ if ($server == "fink.sourceforge.net") {
   exit();
 }
 
-if (!$cache_timeout) {
+if (!isset($cache_timeout)) {
 	// 1 hour
 	$cache_timeout = 3600;
 }
@@ -31,6 +31,7 @@ if (isset($HTTP_SERVER_VARS["PATH_INFO"])) {
 } else {
 	$PATH_INFO = "";
 }
+if (!isset($title)) $title = "";
 if (isset($uses_pathinfo)) {
   if ($PATH_INFO == "") {
     $pispec = "-";

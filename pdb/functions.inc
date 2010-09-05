@@ -8,7 +8,11 @@ static $cache_threshold = 250;  // number of packages in an object before storin
 // Read url parameters. We use basic HTML encoding for now, and 
 // cut off very long values, to make unforseen SQL injection hacks more difficult.
 function get_safe_param($_param, $_valid_regexp='.*', $_max_length=120) {
-	$_value = $_GET[$_param];
+	if (isset($_GET[$_param])) {
+		$_value = $_GET[$_param];
+	} else {
+		$_value = "";
+	}
 	if (!empty($_value)) $has_param_name = true;
 	if (strlen($_value) > $_max_length) {
 		$_value = '';
@@ -22,7 +26,7 @@ function get_safe_param($_param, $_valid_regexp='.*', $_max_length=120) {
 			$_value = '';
 	}
 
-	if ($has_param_name && empty($_value))
+	if (isset($has_param_name) && empty($_value))
 		$invalid_param = true;
 	else
 		$invalid_param = false;
@@ -80,7 +84,7 @@ function get_full_version($parray) {
 	if ($parray == null)
 		return "unknown";
 	$returnval = $parray['version'] . '-' . $parray['revision'];
-	if ($parray['epoch'])
+	if (isset($parray['epoch']))
 		$returnval = $parray['epoch'] . ':' . $returnval;
 	return $returnval;
 }
@@ -201,7 +205,7 @@ class SolrQuery {
 		$result = memcache_get_key($key);
 
 		if ($result == null || $result == false) {
-			$result = $this->fetch_uncached($unique);
+			$result = $this->fetch_uncached($this->unique);
 			if ($result != null && count($result) > $cache_threshold) {
 				memcache_set_key($key, $result, false, $this->getTimeout());
 			}
@@ -250,7 +254,7 @@ class SolrQuery {
 	}
 
 	public function uniqueId() {
-		$returnval = "solr-query-" . $this->getAction() . "-" . ($unique? 'u' : 'n');
+		$returnval = "solr-query-" . $this->getAction() . "-" . ($this->unique? 'u' : 'n');
 
 		$md5key = "";
 		foreach ($this as $key => $value) {

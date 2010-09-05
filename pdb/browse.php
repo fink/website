@@ -1,6 +1,6 @@
 <?
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/09/18 15:40:04 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/09/05 18:39:42 $';
 
 ini_set("memory_limit", "48M");
 
@@ -95,6 +95,15 @@ foreach ($sections as $secname => $description) {
 	$section_values[$secname] = $secname . ' - ' . $description;
 }
 
+if (!isset($_GET['summary'])) {
+	$_GET['summary'] = "";
+}
+if (!isset($_GET['maintainer'])) {
+	$_GET['maintainer'] = "";
+}
+if (!isset($_GET['name'])) {
+	$_GET['name'] = "";
+}
 ?>
 <form action="browse.php" method="get" name="pdb_browser" id="pdb_browser" onreset="resetForm();return false;">
 <?if ($showall) print '<input name="showall" type="hidden" value="on">';?>

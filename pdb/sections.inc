@@ -10,6 +10,7 @@ $sections = array(
 	'gnome'           => 'The GNOME desktop environment (version 2.26)',
 	'graphics'        => 'Graphics applications and libraries',
 	'kde'             => 'K Desktop Environment (version 3.5.10 and 4.2.4)',
+	'kde/po'          => 'Translations for the K Desktop Environment (version 3.5.10 and 4.2.4)',
 	'languages'       => 'Programming languages (compilers, interpreters)',
 	'libs'            => 'General purpose libraries',
 	'libs/perlmods'   => 'Perl libraries',

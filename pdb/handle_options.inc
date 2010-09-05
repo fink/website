@@ -11,7 +11,11 @@ $default_dist      = 'default';
 $default_sort      = 'asc';
 
 function addGETParam(&$_params, $_param_name) {
-  $_value = stripslashes($_GET[$_param_name]);
+  if (isset($_GET[$_param_name])) {
+    $_value = stripslashes($_GET[$_param_name]);
+  } else {
+    $_value = "";
+  }
   if ($_value)
     $_params[$_param_name] = urlencode($_value);
 }
@@ -51,7 +55,11 @@ function get_query_params() {
 	global $default_tree;
 	global $default_dist;
 
-	$_value = $_GET['nomaintainer'];
+	if (isset($_GET['nomaintainer'])) {
+		$_value = $_GET['nomaintainer'];
+	} else {
+		$_value = 'off';
+	}
 	if ($_value == 'on')
 		$_GET['maintainer'] = 'None';
 	addGETParam($_getparams, 'maintainer');
@@ -128,15 +136,27 @@ list($sec, $inv_p) = get_safe_param('sec', '/^[a-z0-9\+\-\.\/]+$/');
 $invalid_param = $invalid_param || $inv_p;
 if (!empty($sec)) $pdb_has_adv_searchoptions = true;
 
-$nochildren = $_GET['nochildren'];
+if (isset($_GET['nochildren'])) {
+	$nochildren = $_GET['nochildren'];
+} else {
+	$nochildren = "";
+}
 if ($nochildren != "on") $nochildren = '';
 if (!empty($nochildren)) $pdb_has_adv_searchoptions = true;
 
-$noshlibsdev = $_GET['noshlibsdev'];
+if (isset($_GET['noshlibsdev'])) {
+	$noshlibsdev = $_GET['noshlibsdev'];
+} else {
+	$noshlibsdev = "";
+}
 if ($noshlibsdev != "on") $noshlibsdev = '';
 if (!empty($noshlibsdev)) $pdb_has_adv_searchoptions = true;
 
-$sort = $_GET['sort'];
+if (isset($_GET['sort'])) {
+	$sort = $_GET['sort'];
+} else {
+	$sort = "";
+}
 if ($sort != "desc") $sort = $default_sort;
 
 list($showall, $inv_p) = get_safe_param('showall', '/^on$/');
