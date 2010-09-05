@@ -1,7 +1,7 @@
 <?
 $title = "Téléchargement de la version source";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2008/02/14 02:08:39 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/09/05 19:01:50 $';
 
 include "header.inc";
 ?>
@@ -29,7 +29,7 @@ La version <? print $fink_version; ?> de Fink a été officiellement mise à dis
 <ul>
 <!--<li><a
 href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
-<? print $release_version; ?></a>- 6786K, format .tar.gz</li>-->
+<? print $fink_version; ?></a>- 6786K, format .tar.gz</li>-->
 <li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
 </ul>
 
