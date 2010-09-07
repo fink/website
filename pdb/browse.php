@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 19:31:29 $';
+$cvs_date = '$Date: 2010/09/07 19:00:14 $';
 
 ini_set("memory_limit", "48M");
 
@@ -188,6 +188,9 @@ if ($tree == "testing") {
 		}
 	}
 	foreach ($newpackages as $id => $package) {
+		if (!isset($package['version_stable'])) $package['version_stable'] = "";
+		if (!isset($package['version_unstable'])) $package['version_unstable'] = "";
+
 		if ($package['version_stable'] == $package['version_unstable'])
 			unset($newpackages[$id]);
 	}
@@ -227,6 +230,8 @@ package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer
 		print '<tr class="pdbHeading"><th>Name</th><th>Latest Version</th><th>Description</th></tr>';
 	}
 	foreach ($packages as $id => $package) {
+		if (!isset($package['version_stable'])) $package['version_stable'] = "";
+		if (!isset($package['version_unstable'])) $package['version_unstable'] = "";
 		print '<tr class="package">';
 		print '<td class="packageName"><a href="' . $pdbroot . 'package.php/'.$package['name'] . ($showall? '?showall=on' : '') . '">'.$package['name'].'</a></td>';
 		if ($tree == 'testing') {

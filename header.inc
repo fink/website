@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.121 2010/09/05 16:11:54 gecko2 Exp $ */
+/* $Id: header.inc,v 1.122 2010/09/07 19:00:14 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -144,6 +144,8 @@ if ((!isset($navbox) || !is_array($navbox)) && (!isset($nonav) || ($nonav != 1))
 
 // get author and change date from CVS vars
 //  kill dollar-envelope
+if (!isset($cvs_author)) $cvs_author = "";
+if (!isset($cvs_date)) $cvs_date = 0;
 if (substr($cvs_author,0,1) == "$")
   $cvs_author = rtrim(substr($cvs_author, 1, -1));
 if (substr($cvs_date,0,1) == "$")
@@ -158,7 +160,8 @@ if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}
   $date = gmmktime($r[4], $r[5], $r[6], $r[2], $r[3], $r[1]);
   define ("FILEMDATE", gmmktime($r[4], $r[5], $r[6], $r[2], $r[3], $r[1]));
 } else {
-  $date = filemtime($PATH_TRANSLATED);
+  if (!isset($_SERVER['PATH_TRANSLATED'])) $_SERVER['PATH_TRANSLATED'] = "";
+  $date = filemtime($_SERVER['PATH_TRANSLATED']);
 }
 // converts xml style tag to html 4.01 transitional (ad hoc)
 if (!isset($metatags)) global $metatags;

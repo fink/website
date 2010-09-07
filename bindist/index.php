@@ -2,8 +2,8 @@
 /* index.php */
 
 // get directory level and calculate path to top
-if (!$level)
-  $level = 0;
+if (!isset($level)) $level = 0;
+if (!isset($symlinked)) $symlinked = 0;
 $binbase = "";
 $relbase = "";
 for ($i = 0; $i < $level - $symlinked; $i++) $binbase .= "../";
@@ -12,7 +12,7 @@ for ($i = 0; $i < $level; $i++) $relbase .= "../";
 // if we're at level 0, define the $excluded array for this directory
 if (!$level) 
   $excluded = array("icons", "source");
-if (!$excluded)
+if (!isset($excluded))
   $excluded = array();
 
 // get relative directory name

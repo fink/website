@@ -84,7 +84,7 @@ function get_full_version($parray) {
 	if ($parray == null)
 		return "unknown";
 	$returnval = $parray['version'] . '-' . $parray['revision'];
-	if (isset($parray['epoch']))
+	if (isset($parray['epoch']) && $parray['epoch'] != 0)
 		$returnval = $parray['epoch'] . ':' . $returnval;
 	return $returnval;
 }
