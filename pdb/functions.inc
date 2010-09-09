@@ -226,10 +226,13 @@ class SolrQuery {
 
 		while (true) {
 			$query           = $this . '&start=' . $start . '&rows=' . $this->rows;
-			$get_response    = file_get_contents($query);
+			$get_response    = @file_get_contents($query);
 			$parsed_response = json_decode($get_response);
 
-			if ($parsed_response == null) break;
+			if ($parsed_response == null) {
+				$result = "DBerror";
+				break;
+			}
 			if ($this->raw) return $parsed_response;
 			$numfound = $parsed_response->response->numFound;
 

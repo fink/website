@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 18:39:42 $';
+$cvs_date = '$Date: 2010/09/09 18:54:34 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -83,7 +83,7 @@ if ($result == null || count($result) == 0) { # No specific version found, try l
 	$warning .= "!</b>";
 }
 
-if ($result != null && count($result) != 0) {
+if ($result != null && count($result) != 0 && $result != "DBerror") {
 	foreach ($result as $_r) {
 		$pdb_title .= ' (' . htmlentities($_r['descshort']) . ')';
 		break;
@@ -92,7 +92,12 @@ if ($result != null && count($result) != 0) {
 
 include_once "header.inc";
 
-if ($result == null || count($result) == 0) { # No package found
+if ($result == "DBerror") {
+?>
+<p><b>Warning: DBError, try again later!</b></p>
+<?
+unset($result);
+} elseif ($result == null || count($result) == 0) { # No package found
 ?>
 <p><b>Package '<?=$package?>' not found in Fink!</b></p>
 <?

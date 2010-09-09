@@ -87,6 +87,7 @@ function get_query_params() {
 		$_query_params .= htmlentities($_key) . '=' . htmlentities($_value) . '&';
 	}
 	$_query_params = rtrim($_query_params, '&?');
+	$_query_params = str_replace("&amp;",'&',$_query_params);
 	return $_query_params;
 }
 

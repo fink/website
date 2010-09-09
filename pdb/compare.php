@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 22:03:21 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/09/09 18:54:34 $';
 
 include "header.inc";
 include "releases.inc";
@@ -58,7 +58,7 @@ if(param("green"))
 if(param("white"))
 	$op = 1;
 
-if($op) {
+if(isset($op)) {
 	foreach ($HTTP_POST_VARS as $argb) {	
 		if (preg_match("/chg=([^!]+)/i", $argb, $matches)) {
 			$name = $matches[1];
