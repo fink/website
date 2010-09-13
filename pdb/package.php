@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/09 18:54:34 $';
+$cvs_date = '$Date: 2010/09/13 21:54:03 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -282,8 +282,8 @@ unset($result);
 	if ($pobj['maintainer']) {
 	$maintainers = $pobj['maintainer'];
 	preg_match("/^(.+?)\s*<(\S+)>/", $maintainers, $matches);
-		$maintainer = $matches[1];
-		$email = $matches[2];
+		if (isset($matches[1])) $maintainer = $matches[1];
+		if (isset($matches[2])) $email = $matches[2];
 	} else {
 		$maintainer = "unknown";
 	}

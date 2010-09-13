@@ -45,7 +45,7 @@ function handle_last_modified($_key, $_query) {
 		$q->setRows(1);
 		$q->setRaw(true);
 	   $r = $q->fetch();
-	   if ($r != null && $r->response->numFound >0) {
+	   if (isset($r) && (isset($r->response)) && (is_object($r->response)) && $r->response->numFound >0) {
 	      $date = $r->response->docs[0]->infofilechanged;
 	      $last_modified = date_create($date)->format('D, d M Y H:i:s') . ' GMT';
 	      memcache_set_key($_key, $last_modified, false, 1800);
