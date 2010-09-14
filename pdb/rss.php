@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 18:44:03 $';
+$cvs_date = '$Date: 2010/09/14 19:29:17 $';
 
 header("Content-type: text/xml");
 if (!isset($cache_timeout)) $cache_timeout = 60 * 60;
@@ -47,7 +47,7 @@ if (!isset($_GET['format']))
 	$_GET['format'] = 'ATOM';
 $format = strtoupper($_GET['format']);
 
-if ($results != null && $results->response->numFound > 0) {
+if (isset($results) && $results->response->numFound > 0) {
 	foreach ($results->response->docs as $package) {
 		$description = $package->desclong;
 		if (empty($package->desclong))
