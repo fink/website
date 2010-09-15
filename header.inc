@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.123 2010/09/15 23:43:38 gecko2 Exp $ */
+/* $Id: header.inc,v 1.124 2010/09/15 23:47:20 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -162,7 +162,7 @@ if (ereg("^Date: ([0-9]{2,4})[/-]([0-9]{1,2})[/-]([0-9]{1,2}) ([0-9]{1,2}):([0-9
 } else {
   if (!isset($_SERVER['PATH_TRANSLATED'])) $_SERVER['PATH_TRANSLATED'] = "";
   $date = filemtime($_SERVER['PATH_TRANSLATED']);
-  define ("FILEMDATE", (filemtime($_SERVER['PATH_TRANSLATED']));
+  define ("FILEMDATE", (filemtime($_SERVER['PATH_TRANSLATED'])));
 }
 // converts xml style tag to html 4.01 transitional (ad hoc)
 if (!isset($metatags)) global $metatags;
