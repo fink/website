@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.122 2010/09/07 19:00:14 gecko2 Exp $ */
+/* $Id: header.inc,v 1.123 2010/09/15 23:43:38 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -156,12 +156,13 @@ if (ereg("^Author: (.*)$", $cvs_author, $r)) {
 } else {
   $author = "-unknown-";
 }
-if (ereg("^Date: ([0-9]{2,4})/([0-9]{1,2})/([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $cvs_date, $r)) {
+if (ereg("^Date: ([0-9]{2,4})[/-]([0-9]{1,2})[/-]([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $cvs_date, $r)) {
   $date = gmmktime($r[4], $r[5], $r[6], $r[2], $r[3], $r[1]);
-  define ("FILEMDATE", gmmktime($r[4], $r[5], $r[6], $r[2], $r[3], $r[1]));
+  define ("FILEMDATE", (gmmktime($r[4], $r[5], $r[6], $r[2], $r[3], $r[1])));
 } else {
   if (!isset($_SERVER['PATH_TRANSLATED'])) $_SERVER['PATH_TRANSLATED'] = "";
   $date = filemtime($_SERVER['PATH_TRANSLATED']);
+  define ("FILEMDATE", (filemtime($_SERVER['PATH_TRANSLATED']));
 }
 // converts xml style tag to html 4.01 transitional (ad hoc)
 if (!isset($metatags)) global $metatags;
@@ -232,7 +233,7 @@ function convert_date_to_locale($initialstringdate) {
 	$date_exploded = @explode(' ', $initialstringdate, 3);
 	$array_month = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
 	$search_month = array_search($date_exploded[1], $array_month)+1;
-	$date_converted=gmstrftime(FINK_DATE_FORMAT, mktime(1,0,0,$search_month, $date_exploded[0], $date_exploded[2],0));
+	$date_converted=gmstrftime(FINK_DATE_FORMAT, mktime(1,0,0,$search_month, $date_exploded[0], $date_exploded[2]));
 	// $date_encoding = mb_detect_encoding($date_converted);
 	// if ($date_encoding == '') $date_encoding = FINK_SF_ENCODING;
 	$date_encoding = FINK_SF_ENCODING;

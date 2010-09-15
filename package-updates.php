@@ -1,7 +1,7 @@
 <?
 $title = "Recent Package Updates";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/04/13 20:22:50 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/09/15 23:43:38 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -15,7 +15,7 @@ include "XML/RSS.php";
 <h1>Recent Package Updates</h1>
 
 <?
-$rss =& new XML_RSS("news/rdf/fink-unstable-no-splitoffs.rdf");
+$rss = new XML_RSS("news/rdf/fink-unstable-no-splitoffs.rdf");
 $rss->parse();
 
 $count = 0;

@@ -2,7 +2,7 @@
 
 include "XML/RSS.php";
 
-$rss =& new XML_RSS("news/rdf/fink-unstable-no-splitoffs.rdf");
+$rss = new XML_RSS("news/rdf/fink-unstable-no-splitoffs.rdf");
 $rss->parse();
 
 $count = 0;
