@@ -1,7 +1,7 @@
 <?
 $title = "Legal Stuff";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2008/01/02 05:26:52 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/09/16 21:10:25 $';
 header("Content-type: text/html; charset=utf-8");
 
 include "header.inc";
@@ -12,7 +12,7 @@ include "header.inc";
 
 <p class="legal">
 The material on this website is Copyright &copy; 2001 Christoph Pfisterer,
-Copyright &copy; 2001-2008 The Fink Project, unless noted otherwise.
+Copyright &copy; 2001-2010 The Fink Project, unless noted otherwise.
 If you want to reuse material from this website,
 <a href="mailto:fink-core@lists.sourceforge.net">talk to us</a> first.
 </p>
