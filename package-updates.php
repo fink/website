@@ -1,7 +1,7 @@
 <?
 $title = "Recent Package Updates";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/15 23:43:38 $';
+$cvs_date = '$Date: 2010/09/16 19:42:35 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -21,7 +21,7 @@ $rss->parse();
 $count = 0;
 foreach($rss->getItems() as $item) {
 	$date = $item['dc:date'];
-	$date = ereg_replace('T.*$', '', $date);
+	$date = preg_replace('|T.*$|', '', $date);
 	echo "<a style=\"text-decoration: none\" href=\"" . htmlentities($item['link']) . "\" name=\"" . urlencode($item['title']) . "\"><span class=\"news-date\">" . $date . ": </span><span class=\"news-headline\" style=\"text-decoration: underline\">" . $item['title'] . "</span></a><br />\n";
 	echo $item['description'];
 }

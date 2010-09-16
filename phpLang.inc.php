@@ -112,16 +112,16 @@ if (isset($GLOBALS['phpLang_disabledLanguages'])) {
 
 // finds current file name, extension and uri
 if (!isset($SCRIPT_NAME)) $SCRIPT_NAME = getenv('SCRIPT_NAME');
-if(ereg("([^/?]+)(\?.*)?$", $SCRIPT_NAME, $regs)) {
+if(preg_match("|([^/?]+)(\?.*)?$|", $SCRIPT_NAME, $regs)) {
 	define('phpLang_currentFile', $regs[1]);
-	if(ereg("(.*)(\.[^.]+)$", phpLang_currentFile, $regs2)) {
+	if(preg_match("|(.*)(\.[^.]+)$|", phpLang_currentFile, $regs2)) {
 		define('phpLang_currentFileName', $regs2[1]);
 		define('phpLang_currentFileExtension', $regs2[2]);
 	} else {
 		define('phpLang_currentFileName', phpLang_currentFile);
 	}
-	$uri = ereg_replace("[?&]".phpLang_urlParam."=[^&]*", "", $regs[0]);
-	$uri .= ereg("\?", $uri) ? '&' : '?';
+	$uri = preg_replace("|[?&]".phpLang_urlParam."=[^&]*|", "", $regs[0]);
+	$uri .= preg_match("|\?|", $uri) ? '&' : '?';
 	define('phpLang_currentURI', $uri);
 } else {
 	// it should not be possible
@@ -165,7 +165,7 @@ function phpLang_detectLanguage($str, $from)
 	$ext = '';
 	reset($GLOBALS['phpLang_languages']);
 	while($ext == '' && list($key, $name) = each($GLOBALS['phpLang_languages'])) {
-		if (($from == 1 && eregi("^".$key."$",$str)) || ($from == 2 && eregi("(\(|\[|;[[:space:]])".$key."(;|\]|\))",$str))) {
+		if (($from == 1 && preg_match("|^".$key."$|i", $str)) || ($from == 2 && preg_match("?(\(|\[|;[[:space:]])".$key."(;|\]|\))?i",$str))) {
 			$ext = $name[0];
 		}
 	}

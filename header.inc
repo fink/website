@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.124 2010/09/15 23:47:20 gecko2 Exp $ */
+/* $Id: header.inc,v 1.125 2010/09/16 19:42:35 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -151,12 +151,14 @@ if (substr($cvs_author,0,1) == "$")
 if (substr($cvs_date,0,1) == "$")
   $cvs_date = rtrim(substr($cvs_date, 1, -1));
 //  get data
-if (ereg("^Author: (.*)$", $cvs_author, $r)) {
+$myreg = "/^Author: (.*)$/";
+if (preg_match($myreg, $cvs_author, $r)) {
   $author = $r[1];
 } else {
   $author = "-unknown-";
 }
-if (ereg("^Date: ([0-9]{2,4})[/-]([0-9]{1,2})[/-]([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})", $cvs_date, $r)) {
+$myreg = "|^Date: ([0-9]{2,4})[/\-]([0-9]{1,2})[/\-]([0-9]{1,2}) ([0-9]{1,2}):([0-9]{1,2}):([0-9]{1,2})|";
+if (preg_match($myreg, $cvs_date, $r)) {
   $date = gmmktime($r[4], $r[5], $r[6], $r[2], $r[3], $r[1]);
   define ("FILEMDATE", (gmmktime($r[4], $r[5], $r[6], $r[2], $r[3], $r[1])));
 } else {
@@ -166,7 +168,7 @@ if (ereg("^Date: ([0-9]{2,4})[/-]([0-9]{1,2})[/-]([0-9]{1,2}) ([0-9]{1,2}):([0-9
 }
 // converts xml style tag to html 4.01 transitional (ad hoc)
 if (!isset($metatags)) global $metatags;
-$metatags = ereg_replace('<([^/]*)/>', '<\1>', $metatags);
+$metatags = preg_replace('|<([^/]*)/>|', '|<\1>|', $metatags);
 
 // [translation] Function used in doc and faq for translation
 
