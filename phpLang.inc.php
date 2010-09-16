@@ -165,7 +165,7 @@ function phpLang_detectLanguage($str, $from)
 	$ext = '';
 	reset($GLOBALS['phpLang_languages']);
 	while($ext == '' && list($key, $name) = each($GLOBALS['phpLang_languages'])) {
-		if (($from == 1 && preg_match("|^".$key."$|i", $str)) || ($from == 2 && preg_match("?(\(|\[|;[[:space:]])".$key."(;|\]|\))?i",$str))) {
+		if (($from == 1 && preg_match("!^".$key."$!i", $str)) || ($from == 2 && preg_match("!(\(|\[|;[[:space:]])".$key."(;|\]|\))!i", $str))) {
 			$ext = $name[0];
 		}
 	}
