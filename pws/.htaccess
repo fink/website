@@ -1,6 +1,0 @@
-AuthUserFile /etc/apache2/htpasswd
-AuthName fink
-AuthType basic
-<Limit GET>
-require valid-user
-</Limit>
