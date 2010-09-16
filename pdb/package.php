@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/13 21:54:03 $';
+$cvs_date = '$Date: 2010/09/16 17:16:50 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -289,7 +289,8 @@ unset($result);
 	}
 
 	// If there was an email specified, make the maintainer field a mailto: link
-	if ($email) {
+	if (!isset($maintainer)) $maintainer = "unknown";
+	if (isset($email)) {
 		$email = str_replace(array("@","."), array("AT","DOT"), $email);
 		it_item("Maintainer:", '<a href="'.$pdbroot.'browse.php?maintainer='.$maintainer.'">'.$maintainer.' &lt;'.$email.'&gt;'.'</a>');
 #    it_item("Maintainer:", '<a href="mailto:'.$email.'">'.$maintainer.'</a>');
