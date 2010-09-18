@@ -309,7 +309,8 @@ class FeedHtmlField {
 			$result = "<![CDATA[".$this->rawFieldContent."]]>";
 		} else {
 			if ($this->truncSize and is_int($this->truncSize)) {
-				$result = FeedCreator::iTrunc(htmlspecialchars($this->rawFieldContent),$this->truncSize);
+				$FeedCreator = new FeedCreator();
+				$result = FeedCreator.iTrunc(htmlspecialchars($this->rawFieldContent),$this->truncSize);
 			} else {
 				$result = htmlspecialchars($this->rawFieldContent);
 			}
