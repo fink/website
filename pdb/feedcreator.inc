@@ -309,8 +309,7 @@ class FeedHtmlField {
 			$result = "<![CDATA[".$this->rawFieldContent."]]>";
 		} else {
 			if ($this->truncSize and is_int($this->truncSize)) {
-				$FeedCreator = new FeedCreator();
-				$result = FeedCreator.iTrunc(htmlspecialchars($this->rawFieldContent),$this->truncSize);
+				$result = FeedCreator::iTrunc(htmlspecialchars($this->rawFieldContent),$this->truncSize);
 			} else {
 				$result = htmlspecialchars($this->rawFieldContent);
 			}
@@ -532,7 +531,7 @@ class FeedCreator extends HtmlDescribable {
 	 * @param int        length the maximum length the string should be truncated to
 	 * @return string    the truncated string
 	 */
-	function iTrunc($string, $length) {
+	static function iTrunc($string, $length) {
 		if (strlen($string)<=$length) {
 			return $string;
 		}
