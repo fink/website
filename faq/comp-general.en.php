@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/07/20 22:30:59';
+$cvs_date = 'Date: 2010/10/08 00:42:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -148,8 +148,11 @@ rerun ranlib(1) (can't load from it)</pre><p>What you need to do is run ranlib (
     <a name="dpkg-parse-error">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.13: I can't install anything because I get "dpkg: parse error, in file
         `/sw/var/lib/dpkg/status'"!</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This means that somehow your dpkg database got corrupted, usually
-        from a crash or some other unrecoverable error. You can fix it by
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This means that somehow your dpkg database got damaged, usually
+        from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>(of course, replace <code>foo-1.2.3-4</code> with the package name you are seeing).</p><p>When this happens, you should edit <code>/sw/var/lib/dpkg/status</code> as a superuser.
+	Then go near the line number which shows up in the error message.
+	You should see a <code>fink-buildlock-foo-1.2.3-4</code>
+        package whose <code>Status</code> field is marked</p><pre>install ok installed</pre><p>Change that to</p><pre>purge ok not-installed</pre><p>Under other circumstances, there may be garbage in the file.  You can fix this situation by
         copying the previous version of the database, like so:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>You may need to re-install the last couple of packages you
         installed before the problem started occurring.</p></div>
     </a>
