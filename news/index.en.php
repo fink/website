@@ -1,13 +1,20 @@
 <?
 $title = "News";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2010/09/05 19:31:29';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2010/10/20 00:58:50';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2009-10-30%20Servers%20back%20to%20normal."><span class="news-date">2009-10-30: </span><span class="news-headline">Servers back to normal.</span></a><?php gray_line(); ?>
+<a name="2010-10-19%20fink-0.29.14%20released"><span class="news-date">2010-10-19: </span><span class="news-headline">fink-0.29.14 released</span></a><?php gray_line(); ?>
+      <p>fink-0.29.14 has been released to the unstable tree.  This version of fink contains, among
+      other new features, an <code>aria2</code> option for <code>DownloadMethod</code>,
+      to allow the use of the <code>aria2</code> download accelerator
+      (available via Fink), and a fix for the infamous "node exists" error.  
+      </p>
+      <p>It is planned to add this version to the stable tree shortly.</p>
+    <a name="2009-10-30%20Servers%20back%20to%20normal."><span class="news-date">2009-10-30: </span><span class="news-headline">Servers back to normal.</span></a><?php gray_line(); ?>
       <p>Our user services have been restored. On Oct 28th the Web site and
       some of the mirrors (rsync, source files, binary distribution) were
       restored, and on Oct 30th all of our main rsync mirrors were operational.
