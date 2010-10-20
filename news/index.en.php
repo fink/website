@@ -1,14 +1,15 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/10/20 01:04:15';
+$cvs_date = 'Date: 2010/10/20 01:08:10';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
 <a name="2010-10-19%20fink-0.29.14%20released"><span class="news-date">2010-10-19: </span><span class="news-headline">fink-0.29.14 released</span></a><?php gray_line(); ?>
-      <p><code>fink-0.29.14</code> has been released to the unstable tree.  This version of fink contains, among
+      <p><code>fink-0.29.14</code> has been released to the unstable tree.
+      This version of <code>fink contains</code>, among
       other new features, an <code>aria2</code> option for <code>DownloadMethod</code>,
       to allow the use of the <code>aria2</code> download accelerator
       (available via Fink), and a fix for the infamous "node exists" error.  

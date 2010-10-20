@@ -5,14 +5,15 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2010-10-19T21:04:44-04:00</dc:date>
+    <dc:date>2010-10-19T21:08:44-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released">
       <title>fink-0.29.14 released</title>
       <link>http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released</link>
       <guid>http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released</guid>
       <description>
-      <p>fink-0.29.14 has been released to the unstable tree.  This version of fink contains, among
+      <p>fink-0.29.14 has been released to the unstable tree.
+      This version of fink contains, among
       other new features, an aria2 option for DownloadMethod,
       to allow the use of the aria2 download accelerator
       (available via Fink), and a fix for the infamous "node exists" error.  
@@ -20,7 +21,8 @@
       <p>It is planned to add this version to the stable tree shortly.</p>
     </description>
       <content:encoded>
-      <p>fink-0.29.14 has been released to the unstable tree.  This version of fink contains, among
+      <p>fink-0.29.14 has been released to the unstable tree.
+      This version of fink contains, among
       other new features, an aria2 option for DownloadMethod,
       to allow the use of the aria2 download accelerator
       (available via Fink), and a fix for the infamous "node exists" error.  
