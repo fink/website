@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2010/10/20 01:23:15 $';
+$cvs_date = '$Date: 2010/10/20 01:24:11 $';
 
 include "header.inc";
 ?>
@@ -60,6 +60,7 @@ packages, the command sequences:</p>
 <pre>fink index -f</pre>
 <p>or</p>
 <pre>fink selfupdate-cvs</pre>
+<pre>fink index -f</pre>
 
 <p>will download the package description files and patches. <code>rsync</code> is
 generally preferable to <code>cvs</code> for most people.</p>
