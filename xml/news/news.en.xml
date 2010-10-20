@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.102 2010/10/20 00:58:50 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.103 2010/10/20 01:04:15 alexkhansen Exp $</cvsid>
   <newsitem>
     <date>2010-10-19</date>
     <headline>fink-0.29.14 released</headline>
     <body>
-      <p>fink-0.29.14 has been released to the unstable tree.  This version of fink contains, among
+      <p><filename>fink-0.29.14</filename> has been released to the unstable tree.  This version of fink contains, among
       other new features, an <code>aria2</code> option for <code>DownloadMethod</code>,
       to allow the use of the <filename>aria2</filename> download accelerator
       (available via Fink), and a fix for the infamous "node exists" error.  
