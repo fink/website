@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 16:11:54 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2010/10/20 01:23:15 $';
 
 include "header.inc";
 ?>
@@ -12,17 +12,17 @@ include "header.inc";
 <!--monipol: As instructions for 10.6 were 'hidden' below 10.5, I've copied and
 pasted them here with the title 10.6. -->
 
-<p><strong>OS 10.6:</strong></p>
+<p><strong>OS 10.6 and earlier:</strong></p>
 
 <p>The source tarball contains the <em>fink</em> package manager.  After you
 have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p><em>fink-0.29.10</em> was officially released on 2009-09-27.</p>
+<p><em>fink-0.29.14</em> was officially released on 2010-10-19.</p>
 
 <ul>
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.10.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.10</a> - 1172K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.14.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.14</a> - 1175K, .tar.gz format</li>
 </ul>
 
 <p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
@@ -30,14 +30,14 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via</p>
 
-<pre>tar -xvzf fink-0.29.10.tar.gz</pre>
+<pre>tar -xvzf fink-0.29.14.tar.gz</pre>
 
 <p>or</p>
 
-<pre>tar -xvf fink-0.29.10.tar</pre>
+<pre>tar -xvf fink-0.29.14.tar</pre>
 
 <p>if it has already been partially unpacked, in a terminal window.  Then, in a
-terminal window, change to the resulting <em>fink-0.29.10</em> directory, and
+terminal window, change to the resulting <em>fink-0.29.14</em> directory, and
 use</p>
 
 <pre>./bootstrap</pre>
@@ -54,18 +54,15 @@ setup.</p>
 <p>will set up your environment for Fink (assuming you have installed Fink
 under /sw).  If you open a new terminal window, the session will use these
 environment settings.  Once you have installed <em>fink</em> and the other base
-packages, the command:</p>
-<!--akh
+packages, the command sequences:</p>
+
 <pre>fink selfupdate-rsync</pre>
+<pre>fink index -f</pre>
 <p>or</p>
 <pre>fink selfupdate-cvs</pre>
--->
 
-<pre>fink selfupdate</pre>
-
-<p>will download the package description files and patches, provided that you
-<strong>do not</strong> select the "point release" method.  rsync is generally
-preferable to cvs for most people.</p>
+<p>will download the package description files and patches. <code>rsync</code> is
+generally preferable to <code>cvs</code> for most people.</p>
 
 <p>Installation and usage instructions are inside the distribution tarball.
 Please read them - Fink is not a one-click-and-done thing.  The documents
