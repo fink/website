@@ -1,4 +1,10 @@
-<a name="2010-10-19%20fink-0.29.14%20released"><span class="news-date">2010-10-19: </span><span class="news-headline">fink-0.29.14 released</span></a><?php gray_line(); ?>
+<a name="2010-10-20%2010.6%20Java%20update%20breaks%20system-java%20virtual%20package%20generation."><span class="news-date">2010-10-20: </span><span class="news-headline">10.6 Java update breaks system-java virtual package generation.</span></a><?php gray_line(); ?>
+      <p>The recent 10.6 Java update (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3 )
+      changes the Java file configuration in such a manner that <code>fink</code>
+      no longer generates <code>system-java</code> packages.</p>
+      <p>Users may wish to hold off on applying this update until
+      a version of<code>fink</code> which addresses this is released.</p>
+    <a name="2010-10-19%20fink-0.29.14%20released."><span class="news-date">2010-10-19: </span><span class="news-headline">fink-0.29.14 released.</span></a><?php gray_line(); ?>
       <p><code>fink-0.29.14</code> has been released to the unstable tree.
       This version of <code>fink contains</code>, among
       other new features, an <code>aria2</code> option for <code>DownloadMethod</code>,
@@ -12,32 +18,4 @@
       restored, and on Oct 30th all of our main rsync mirrors were operational.
       Once again, we apologise for the inconvenience. Thanks for your patience
       and support.</p>
-    <a name="2009-10-24%20Server%20issues."><span class="news-date">2009-10-24: </span><span class="news-headline">Server issues.</span></a><?php gray_line(); ?>
-      <p>We have had server issues and as a result the Web site and the
-      official binary distribution are down, and the rsync servers are stalled.
-      Whilst we sort this out, you may:</p>
-      <ul>
-        <li>(Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-        you need Web site information</li>
-
-        <li>(selfupdate) If you use rsync as your selfupdate method then edit
-        <code>/sw/etc/fink.conf</code> and replace the line that starts with
-        <code>Mirror-rsync</code> with <code>Mirror-rsync:
-        rsync://fink.gecko.ig42.org/finkinfo/</code></li>
-
-        <li>(source files) Edit <code>/sw/etc/fink.conf</code> and replace the
-        line that starts with <code>Mirror-master</code> with
-        <code>Mirror-master: http://fink-dist.gecko.ig42.org</code></li>
-        
-        <li>(bindist) Edit <code>/sw/etc/fink.conf</code> and replace the line
-        that starts with <code>Mirror-apt:</code> with <code>Mirror-apt:
-        http://fink-bindist.gecko.ig42.org</code></li>
-
-        <li>(bindist) Edit <code>/sw/etc/apt/sources.list</code> and replace
-        <code>http://bindist.finkmirrors.net/bindist</code> with
-        <code>http://fink-bindist.gecko.ig42.org</code></li>
-
-        <li>(bindist) Run <code>fink scanpackages</code>.</li>
-      </ul>
-      <p>We apologise for the inconvenience.</p>
     
