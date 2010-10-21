@@ -5,25 +5,29 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2010-10-20T21:20:50-04:00</dc:date>
+    <dc:date>2010-10-20T21:40:19-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2010-10-20%2010.6%20Java%20update%20breaks%20system-java%20virtual%20package%20generation.">
       <title>10.6 Java update breaks system-java virtual package generation.</title>
       <link>http://fink.sourceforge.net/news/#2010-10-20%2010.6%20Java%20update%20breaks%20system-java%20virtual%20package%20generation.</link>
       <guid>http://fink.sourceforge.net/news/#2010-10-20%2010.6%20Java%20update%20breaks%20system-java%20virtual%20package%20generation.</guid>
       <description>
-      <p>The recent 10.6 Java update (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3 )
-      changes the Java file configuration in such a manner that fink
-      no longer generates system-java packages.</p>
+      <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
+      and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
+      change the Java file configuration in such a manner that fink
+      no longer generates the system-java16-dev package.</p>
       <p>Users may wish to hold off on applying this update until
-      a version offink which addresses this is released.</p>
+      a version of fink which addresses this is released,
+      or another solution is developed.</p>
     </description>
       <content:encoded>
-      <p>The recent 10.6 Java update (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3 )
-      changes the Java file configuration in such a manner that fink
-      no longer generates system-java packages.</p>
+      <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
+      and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
+      change the Java file configuration in such a manner that fink
+      no longer generates the system-java16-dev package.</p>
       <p>Users may wish to hold off on applying this update until
-      a version offink which addresses this is released.</p>
+      a version of fink which addresses this is released,
+      or another solution is developed.</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released.">
