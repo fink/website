@@ -1,13 +1,13 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/10/21 02:17:24';
+$cvs_date = 'Date: 2010/10/21 02:35:17';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2010-10-20%2010.6%20Java%20update%20breaks%20system-java%20virtual%20package%20generation."><span class="news-date">2010-10-20: </span><span class="news-headline">10.6 Java update breaks system-java virtual package generation.</span></a><?php gray_line(); ?>
+<a name="2010-10-20%20Java%20update%20breaks%20system-java%20virtual%20package%20generation."><span class="news-date">2010-10-20: </span><span class="news-headline">Java update breaks system-java virtual package generation.</span></a><?php gray_line(); ?>
       <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
       and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
       change the Java file configuration in such a manner that <code>fink</code>

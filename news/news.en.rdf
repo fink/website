@@ -5,12 +5,12 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2010-10-20T22:17:44-04:00</dc:date>
+    <dc:date>2010-10-20T22:35:47-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-20%2010.6%20Java%20update%20breaks%20system-java%20virtual%20package%20generation.">
-      <title>10.6 Java update breaks system-java virtual package generation.</title>
-      <link>http://fink.sourceforge.net/news/#2010-10-20%2010.6%20Java%20update%20breaks%20system-java%20virtual%20package%20generation.</link>
-      <guid>http://fink.sourceforge.net/news/#2010-10-20%2010.6%20Java%20update%20breaks%20system-java%20virtual%20package%20generation.</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java%20virtual%20package%20generation.">
+      <title>Java update breaks system-java virtual package generation.</title>
+      <link>http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java%20virtual%20package%20generation.</link>
+      <guid>http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java%20virtual%20package%20generation.</guid>
       <description>
       <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
       and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
