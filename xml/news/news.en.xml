@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.106 2010/10/21 01:39:35 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.107 2010/10/21 02:14:33 alexkhansen Exp $</cvsid>
   <newsitem>
     <date>2010-10-20</date>
     <headline>10.6 Java update breaks system-java virtual package generation.</headline>
@@ -9,10 +9,12 @@
       <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
       and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
       change the Java file configuration in such a manner that <filename>fink</filename>
-      no longer generates the <code>system-java16-dev</code> package.</p>
+      no longer generates the <code>system-java16-dev</code> package on 10.5 and
+      all of the <code>system-java-dev<code> packages on 10.6.</p>
       <p>Users may wish to hold off on applying this update until
-      a version of <filename>fink</filename> which addresses this is released,
-      or another solution is developed.</p>
+      a version of <filename>fink</filename> which addresses this issue is released.</p>
+      <p>You will want to download an appropriate version of the Java Developer Package
+      from <link url="http://www.connect.apple.com/" The Apple Developer Connection site</link>.</p>
     </body>
   </newsitem>
 
