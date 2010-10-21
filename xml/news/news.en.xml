@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.108 2010/10/21 02:17:24 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.109 2010/10/21 02:35:17 alexkhansen Exp $</cvsid>
   <newsitem>
     <date>2010-10-20</date>
-    <headline>10.6 Java update breaks system-java virtual package generation.</headline>
+    <headline>Java update breaks system-java virtual package generation.</headline>
     <body>
       <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
       and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
