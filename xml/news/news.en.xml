@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.110 2010/10/21 23:41:28 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.111 2010/10/22 00:27:05 alexkhansen Exp $</cvsid>
   <newsitem>
     <date>2010-10-20</date>
     <headline>Java update breaks system-java-dev virtual package generation.</headline>
@@ -16,7 +16,7 @@
       The issue does <em>not</em> affect packages which are currently installed, but will
       prevent java-dependent packages from building.</p>
       <p>You will want to download an appropriate version of the Java Developer Package
-      from <link url="http://www.connect.apple.com/">The Apple Developer Connection site</link>.</p>
+      from <link url="http://connect.apple.com/">The Apple Developer Connection site</link>.</p>
     </body>
   </newsitem>
 
