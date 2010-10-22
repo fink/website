@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/10/21 23:41:28';
+$cvs_date = 'Date: 2010/10/22 00:27:05';
 $metatags = '';
 
 include_once "header.inc";
@@ -18,7 +18,7 @@ include_once "header.inc";
       The issue does <b>not</b> affect packages which are currently installed, but will
       prevent java-dependent packages from building.</p>
       <p>You will want to download an appropriate version of the Java Developer Package
-      from <a href="http://www.connect.apple.com/">The Apple Developer Connection site</a>.</p>
+      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>.</p>
     <a name="2010-10-19%20fink-0.29.14%20released."><span class="news-date">2010-10-19: </span><span class="news-headline">fink-0.29.14 released.</span></a><?php gray_line(); ?>
       <p><code>fink-0.29.14</code> has been released to the unstable tree.
       This version of <code>fink contains</code>, among
