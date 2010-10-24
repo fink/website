@@ -5,8 +5,31 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2010-10-21T20:27:56-04:00</dc:date>
+    <dc:date>2010-10-23T22:21:31-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.">
+      <title>fink-0.29.15 released.</title>
+      <link>http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.</guid>
+      <description>
+      <p>fink-0.29.15 has been released to the unstable tree.
+      This version of fink contains fixes to the system-java-dev
+      virtual package generation.</p>
+      <p>Users will also need to download an appropriate version of the Java Developer Package
+      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>
+      for all of the the system-java-dev packages to show up on 10.5 and 10.6.</p>
+      <p>It is planned to add this version of fink to the stable tree shortly.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.29.15 has been released to the unstable tree.
+      This version of fink contains fixes to the system-java-dev
+      virtual package generation.</p>
+      <p>Users will also need to download an appropriate version of the Java Developer Package
+      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>
+      for all of the the system-java-dev packages to show up on 10.5 and 10.6.</p>
+      <p>It is planned to add this version of fink to the stable tree shortly.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.">
       <title>Java update breaks system-java-dev virtual package generation.</title>
       <link>http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.</link>
@@ -21,8 +44,9 @@
       a version of fink which addresses this issue is released.
       The issue does not affect packages which are currently installed, but will
       prevent java-dependent packages from building.</p>
-      <p>You will want to download an appropriate version of the Java Developer Package
+      <p>Users will want to download an appropriate version of the Java Developer Package
       from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>.</p>
+      <p>Update, 2010-10-23:  The issue has been addressed in fink-0.29.15.</p>
     </description>
       <content:encoded>
       <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
@@ -34,8 +58,9 @@
       a version of fink which addresses this issue is released.
       The issue does not affect packages which are currently installed, but will
       prevent java-dependent packages from building.</p>
-      <p>You will want to download an appropriate version of the Java Developer Package
+      <p>Users will want to download an appropriate version of the Java Developer Package
       from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>.</p>
+      <p>Update, 2010-10-23:  The issue has been addressed in fink-0.29.15.</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released.">
@@ -44,21 +69,25 @@
       <guid>http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released.</guid>
       <description>
       <p>fink-0.29.14 has been released to the unstable tree.
-      This version of fink contains, among
+      This version of finkcontains, among
       other new features, an aria2 option for DownloadMethod,
       to allow the use of the aria2 download accelerator
       (available via Fink), and a fix for the infamous "node exists" error.  
       </p>
       <p>It is planned to add this version to the stable tree shortly.</p>
+      <p>Addendum, 2010-10-19:  because of the Java update (2010-10-20),
+      fink-0.29.15 is now slated to be the version next to go to stable.</p>
     </description>
       <content:encoded>
       <p>fink-0.29.14 has been released to the unstable tree.
-      This version of fink contains, among
+      This version of finkcontains, among
       other new features, an aria2 option for DownloadMethod,
       to allow the use of the aria2 download accelerator
       (available via Fink), and a fix for the infamous "node exists" error.  
       </p>
       <p>It is planned to add this version to the stable tree shortly.</p>
+      <p>Addendum, 2010-10-19:  because of the Java update (2010-10-20),
+      fink-0.29.15 is now slated to be the version next to go to stable.</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.">
@@ -508,49 +537,6 @@ fink team is working to resolve the problem as quickly as possible.</p>
     <p>Update, 2007-10-29:  Users who have updated from 10.4 to 10.5 should note that using fink cleanup to remove .deb files will remove all of them.  This issue should be resolved in the next update.</p>
     <p>Update, 2007-11-03:  fink-0.27.8 or later should solve the above issue as well as a couple of others that have come up.</p>
   </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar">
-      <title>Problems with tar</title>
-      <link>http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar</link>
-      <guid>http://fink.sourceforge.net/news/#2007-03-04%20Problems%20with%20tar</guid>
-      <description>
-<p>Some users of fink's unstable tree are having sporadic difficulties
-at the end of building large packages, getting reports like
-tar: File changed as we read it which causes the .deb file
-not to be built.
-</p><p>
-The fink team is currently studying this problem to determine a permanent
-fix.  For the time being, users experiencing this problem can work around
-it by issuing the command fink install tar-1.15.1-14.  It
-may be necessary to issue that command after each fink update-all
-command, as well.
-</p><p>Once the fink team has determined how to solve this problem 
-permanently, another announcement will be made here.
-</p>
-<p> Update, 16 March 2007:  The new version of fink's 
-dpkg package resolves this problem.  Unstable users can
-now run the update commands normally.
-</p>
-        </description>
-      <content:encoded>
-<p>Some users of fink's unstable tree are having sporadic difficulties
-at the end of building large packages, getting reports like
-tar: File changed as we read it which causes the .deb file
-not to be built.
-</p><p>
-The fink team is currently studying this problem to determine a permanent
-fix.  For the time being, users experiencing this problem can work around
-it by issuing the command fink install tar-1.15.1-14.  It
-may be necessary to issue that command after each fink update-all
-command, as well.
-</p><p>Once the fink team has determined how to solve this problem 
-permanently, another announcement will be made here.
-</p>
-<p> Update, 16 March 2007:  The new version of fink's 
-dpkg package resolves this problem.  Unstable users can
-now run the update commands normally.
-</p>
-        </content:encoded>
     </item>
   </channel>
 </rss>
