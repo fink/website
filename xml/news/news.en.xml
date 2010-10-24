@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.112 2010/10/24 02:17:56 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.113 2010/10/24 02:20:48 alexkhansen Exp $</cvsid>
   <newsitem>
     <date>2010-10-23</date>
     <headline>fink-0.29.15 released.</headline>
-    <body>
     <body>
       <p><filename>fink-0.29.15</filename> has been released to the unstable tree.
       This version of <filename>fink</filename> contains fixes to the <code>system-java-dev</code>
@@ -32,7 +31,7 @@
       prevent java-dependent packages from building.</p>
       <p>Users will want to download an appropriate version of the Java Developer Package
       from <link url="http://connect.apple.com/">The Apple Developer Connection site</link>.</p>
-      <p><em>Update, 2010-10-23:</em>  The issue has been addressed in <filename>fink-0.29.15<filename>.
+      <p><em>Update, 2010-10-23:</em>  The issue has been addressed in <filename>fink-0.29.15</filename>.</p>
     </body>
   </newsitem>
 
