@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.111 2010/10/22 00:27:05 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.112 2010/10/24 02:17:56 alexkhansen Exp $</cvsid>
+  <newsitem>
+    <date>2010-10-23</date>
+    <headline>fink-0.29.15 released.</headline>
+    <body>
+    <body>
+      <p><filename>fink-0.29.15</filename> has been released to the unstable tree.
+      This version of <filename>fink</filename> contains fixes to the <code>system-java-dev</code>
+      virtual package generation.</p>
+      <p>Users will also need to download an appropriate version of the Java Developer Package
+      from <link url="http://connect.apple.com/">The Apple Developer Connection site</link>
+      for all of the the <code>system-java-dev</code> packages to show up on 10.5 and 10.6.</p>
+      <p>It is planned to add this version of <filename>fink</filename> to the stable tree shortly.</p>
+    </body>
+  </newsitem>
+
   <newsitem>
     <date>2010-10-20</date>
     <headline>Java update breaks system-java-dev virtual package generation.</headline>
@@ -15,8 +30,9 @@
       a version of <filename>fink</filename> which addresses this issue is released.
       The issue does <em>not</em> affect packages which are currently installed, but will
       prevent java-dependent packages from building.</p>
-      <p>You will want to download an appropriate version of the Java Developer Package
+      <p>Users will want to download an appropriate version of the Java Developer Package
       from <link url="http://connect.apple.com/">The Apple Developer Connection site</link>.</p>
+      <p><em>Update, 2010-10-23:</em>  The issue has been addressed in <filename>fink-0.29.15<filename>.
     </body>
   </newsitem>
 
@@ -25,12 +41,14 @@
     <headline>fink-0.29.14 released.</headline>
     <body>
       <p><filename>fink-0.29.14</filename> has been released to the unstable tree.
-      This version of <filename>fink contains</filename>, among
+      This version of <filename>fink</filename>contains, among
       other new features, an <code>aria2</code> option for <code>DownloadMethod</code>,
       to allow the use of the <filename>aria2</filename> download accelerator
       (available via Fink), and a fix for the infamous "node exists" error.  
       </p>
       <p>It is planned to add this version to the stable tree shortly.</p>
+      <p><em>Addendum, 2010-10-19:</em>  because of the Java update (2010-10-20),
+      <filename>fink-0.29.15</filename> is now slated to be the version next to go to stable.</p>
     </body>
   </newsitem>
   
