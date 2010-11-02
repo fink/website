@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2010/10/20 01:24:11 $';
+$cvs_date = '$Date: 2010/11/02 16:57:28 $';
 
 include "header.inc";
 ?>
@@ -19,10 +19,10 @@ have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p><em>fink-0.29.14</em> was officially released on 2010-10-19.</p>
+<p><em>fink-0.29.15</em> was officially released on 2010-10-24.</p>
 
 <ul>
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.14.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.14</a> - 1175K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.15.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.15</a> - 1175K, .tar.gz format</li>
 </ul>
 
 <p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
@@ -30,14 +30,14 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via</p>
 
-<pre>tar -xvzf fink-0.29.14.tar.gz</pre>
+<pre>tar -xvzf fink-0.29.15.tar.gz</pre>
 
 <p>or</p>
 
-<pre>tar -xvf fink-0.29.14.tar</pre>
+<pre>tar -xvf fink-0.29.15.tar</pre>
 
 <p>if it has already been partially unpacked, in a terminal window.  Then, in a
-terminal window, change to the resulting <em>fink-0.29.14</em> directory, and
+terminal window, change to the resulting <em>fink-0.29.15</em> directory, and
 use</p>
 
 <pre>./bootstrap</pre>
