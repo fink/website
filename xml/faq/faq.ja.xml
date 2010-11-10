@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>The Fink F.A.Q.</title>
 <shorttitle>F.A.Q.</shorttitle>
-<cvsid>$Id: faq.ja.xml,v 1.44 2009/10/25 05:21:38 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.ja.xml,v 1.45 2010/11/10 02:23:58 babayoshihiko Exp $</cvsid>
 <preface>
 <p>このページは Fink の FAQ です。
 質問は、他の FAQ と同様に実際に質問されたものと、あらかじめ予想して作られたものがあります。
@@ -275,26 +275,26 @@ fink selfupdate</codeblock>
         <p>Apply the fix from <xref section="leopard-bindist1">the prior entry.</xref></p>
       </answer>
     </faqentry>
-
-<faqentry name="fink-0220">
-	<question>
-		<p>長いこと Fink からのパッケージ更新がありませんでしたが</p>
-	</question>
-	<answer>
-		<p>バージョンを確認してください:</p>
-		<codeblock>fink --version</codeblock>
-		<p>
-			rsync selfupdate が動作しないという既知の問題が <code>fink-0.22.0</code> にあります。
-			これを直すために、 CVS selfupdate を行います
-		</p>
-		<codeblock>fink selfupdate-cvs  </codeblock>
-		<p>
-			これにより <code>fink</code> が新しくなります。
-			この語、 rsync selfupdate に戻すようおすすめします。
-		</p>
-		<codeblock>fink selfupdate-rsync</codeblock>
-	</answer>
-</faqentry>
+    <faqentry name="stuck-gettext">
+      <question translated="no"><p>Fink tells me to run 'sudo apt-get install libgettext3-dev=0.14.5-2' to clear up inconsistent dependencies but I'm still stuck.</p></question>
+      <answer translated="no">
+	<p>There is a timestamp issue with the <em>libgettext3</em> package description:  0.14.5-2 is an outdated version.  Run</p>
+	<codeblock>fink index -f
+fink update libgettext3-dev	
+	</codeblock>
+	<p>to update the package description cache and then the package.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="stuck-dpkg">
+      <question translated="no"><p>Fink tells me 'Can't resolve dependency "dpkg (>= 1.10.21-1229)" for package "dpkg-base-files-0.3-1"'.  How do I solve this?</p></question>
+      <answer translated="no">
+	<p>There is a timestamp issue with the updated <em>dpkg</em> package description.  Run</p>
+	<codeblock>fink index -f
+fink selfupdate
+	</codeblock>
+	<p>to update the package description cache and then to install <code>dpkg</code> and <code>dpkg-base-files</code>.</p>
+      </answer>
+    </faqentry>
 </chapter>
 <chapter filename="usage-fink" >
 <title>Fink のインストール、使用、メンテナンス</title>
@@ -1215,12 +1215,24 @@ rerun ranlib(1) (can't load from it)</codeblock>
 <p>&quot;dpkg: parse error, in file `/sw/var/lib/dpkg/status'&quot;
 というメッセージが出て、何もインストールできません!</p>
 </question>
-<answer>
-<p>これは dpkg データベースが壊れてしまったか、クラッシュか他のリカバーできないエラーが原因です。
-以前のバージョンのデータベースをコピーして直すことができます:</p>
-<codeblock>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</codeblock>
-<p>この問題が起きた最後の二つのパッケージを再インストールしたほうがよいでしょう。</p>
-</answer>
+      <answer translated="no">
+        <p>This means that somehow your dpkg database got damaged, usually
+        from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p>
+	<codeblock>package `fink-buildlock-foo-1.2.3-4':  missing version</codeblock>
+	<p>(of course, replace <filename>foo-1.2.3-4</filename> with the package name you are seeing).</p>
+	<p>When this happens, you should edit <filename>/sw/var/lib/dpkg/status</filename> as a superuser.
+	Then go near the line number which shows up in the error message.
+	You should see a <code>fink-buildlock-foo-1.2.3-4</code>
+        package whose <code>Status</code> field is marked</p>
+	<codeblock>install ok installed</codeblock>
+	<p>Change that to</p>
+	<codeblock>purge ok not-installed</codeblock>
+	<p>Under other circumstances, there may be garbage in the file.  You can fix this situation by
+        copying the previous version of the database, like so:</p>
+        <codeblock>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</codeblock>
+        <p>You may need to re-install the last couple of packages you
+        installed before the problem started occurring.</p>
+      </answer>
 </faqentry>
 <faqentry name="freetype-problems"> 
 <question> 
@@ -1620,7 +1632,7 @@ fink install libiconv</codeblock>
     <filename>/usr/X11/lib/libXdamage.1.1.0.dylib</filename> (or other versions of libraries in
     <filename>/usr/X11/lib/</filename>).</p>
     <p>The current wisdom on the best
-    fix for such an issue is to install Xcode 3.1.3.</p>  
+    fix for such an issue is to install Xcode 3.1.3 or later.</p>  
     </answer>
   </faqentry>
     <faqentry name="all-others">
@@ -1695,8 +1707,8 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 <question>
 <p>Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</p>
 </question>
-<answer>
-<!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->
+      <answer translated="no">
+        <!-- TODO: maybe change this to use LIBRARY_PATH / DYLD_LIBRARY_PATH ? -->
         <p>When compiling something yourself outside of Fink, the compiler and
         linker need to be told where to find the Fink-installed libraries and
 		headers.  It is also necessary to tell the compiler to use the
@@ -1721,14 +1733,18 @@ setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
 setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
 setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
 	<p>(assuming that the build system is running OS 10.5 or later)</p>
-<p>これを起動ファイル (.cshrc か .profile) に追加すると、自動的に設定されて便利です。
-この環境変数を使わないパッケージの場合、
-&quot;-I/sw/include&quot; (ヘッダ用) and &quot;-L/sw/lib&quot; (ライブラリ用)
-をコンパイルの行に追加する必要があるでしょう。
-パッケージの中には、 EXTRA_CFLAGS や --with-qt-dir= のような、非標準的な configure オプションを使うものもあります。
-&quot;./configure --help&quot; で configure オプションの一覧がわかるでしょう。</p>
-<p>さらに、あなたが使うライブラリの開発用ヘッダ (例 <em>foo-1.0-1-dev</em>) もインストールする必要があります。</p>
-</answer>
+        <p>It is often easiest just to add these to your startup files (e.g.
+        <filename>.cshrc</filename> | <filename>.profile</filename>) so they
+        are set automatically. If a package does not use these variables, you
+        may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
+        libraries) to the compile lines yourself. Some packages may use
+        similar non-standard variables such as EXTRA_CFLAGS or --with-qt-dir=
+        configure options. "./configure --help" will usually give you a list
+        of the extra configure options.</p>
+        <p>In addition, you may need to install the development headers (e.g.
+        <em>foo-1.0-1-dev</em>) for the library packages that you are using,
+        if they aren't already installed.</p>
+      </answer>
 </faqentry>
 <faqentry name="apple-x11-applications-menu" >
 <question>

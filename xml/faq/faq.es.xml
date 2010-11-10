@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.15 2009/10/25 05:21:38 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.16 2010/11/10 02:23:58 babayoshihiko Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -216,6 +216,26 @@ fink selfupdate</codeblock>
       </question>
       <answer translated="no">
         <p>Apply the fix from <xref section="leopard-bindist1">the prior entry.</xref></p>
+      </answer>
+    </faqentry>
+    <faqentry name="stuck-gettext">
+      <question translated="no"><p>Fink tells me to run 'sudo apt-get install libgettext3-dev=0.14.5-2' to clear up inconsistent dependencies but I'm still stuck.</p></question>
+      <answer translated="no">
+	<p>There is a timestamp issue with the <em>libgettext3</em> package description:  0.14.5-2 is an outdated version.  Run</p>
+	<codeblock>fink index -f
+fink update libgettext3-dev	
+	</codeblock>
+	<p>to update the package description cache and then the package.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="stuck-dpkg">
+      <question translated="no"><p>Fink tells me 'Can't resolve dependency "dpkg (>= 1.10.21-1229)" for package "dpkg-base-files-0.3-1"'.  How do I solve this?</p></question>
+      <answer translated="no">
+	<p>There is a timestamp issue with the updated <em>dpkg</em> package description.  Run</p>
+	<codeblock>fink index -f
+fink selfupdate
+	</codeblock>
+	<p>to update the package description cache and then to install <code>dpkg</code> and <code>dpkg-base-files</code>.</p>
       </answer>
     </faqentry>
   </chapter>
@@ -1167,8 +1187,18 @@ rerun ranlib(1) (can't load from it)</codeblock>
         <p>No puedo instalar nada porque me aparece:  "dpkg: parse error, in file  `/sw/var/lib/dpkg/status'"!</p>
       </question>
       <answer translated="no">
-        <p>This means that somehow your dpkg database got corrupted, usually
-        from a crash or some other unrecoverable error. You can fix it by
+        <p>This means that somehow your dpkg database got damaged, usually
+        from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p>
+	<codeblock>package `fink-buildlock-foo-1.2.3-4':  missing version</codeblock>
+	<p>(of course, replace <filename>foo-1.2.3-4</filename> with the package name you are seeing).</p>
+	<p>When this happens, you should edit <filename>/sw/var/lib/dpkg/status</filename> as a superuser.
+	Then go near the line number which shows up in the error message.
+	You should see a <code>fink-buildlock-foo-1.2.3-4</code>
+        package whose <code>Status</code> field is marked</p>
+	<codeblock>install ok installed</codeblock>
+	<p>Change that to</p>
+	<codeblock>purge ok not-installed</codeblock>
+	<p>Under other circumstances, there may be garbage in the file.  You can fix this situation by
         copying the previous version of the database, like so:</p>
         <codeblock>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</codeblock>
         <p>You may need to re-install the last couple of packages you
@@ -1557,7 +1587,7 @@ preventing you from updating <code>gettext</code>.</p>
     <filename>/usr/X11/lib/libXdamage.1.1.0.dylib</filename> (or other versions of libraries in
     <filename>/usr/X11/lib/</filename>).</p>
     <p>The current wisdom on the best
-    fix for such an issue is to install Xcode 3.1.3.</p>  
+    fix for such an issue is to install Xcode 3.1.3 or later.</p>  
     </answer>
   </faqentry>
     <faqentry name="all-others">
