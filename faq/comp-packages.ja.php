@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/11 02:54:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般"><link rel="prev" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般">';
 
 
@@ -54,17 +54,13 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 <code>xfree86-base-threaded</code> と <code>xfree86-rootless-threaded</code>
 </p><p>普通は、ソースインストールは: "<code>fink install</code>" で、バイナリインストールは: "<code>apt-get install</code>" または <code>dselect</code> です。</p></div>
 </a>
-<a name="cctools">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.4: KDE をインストール使用とすると、次のメッセージが出ます: 'Can't resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このなんとも暗号のようなメッセージは、 December 2002 Developer Tools をインストールしろという意味です。</p></div>
-</a>
 <a name="libiconv-gettext">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.5: <code>libiconv</code> が更新できません。</b></p></div>
+<div class="question"><p><b><? echo FINK_Q ; ?>7.4: <code>libiconv</code> が更新できません。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 下記の形式のエラーでしたら:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>以下のように実行して直すことが出来ます</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
 </a>
     <a name="cplusplus-filt">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: パッケージがインストールできません。<code>c++filt</code> がないからです。 
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: パッケージがインストールできません。<code>c++filt</code> がないからです。 
         これはどこにありますか?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> もし、Tiger にアップデート後にエラーが</p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>とでたら、以下のようにします:</p><ul>
           <li>(Tiger のインストーラから)  <code>BSD.pkg</code> をインストールします。
@@ -80,12 +76,10 @@ fink install libiconv</pre></div>
           	と実行し、古い Developer Tools を削除します。
           	次に、 XCode (2.3 以降) をインストールします。
           </li>
-        </ul><p>
-1) Flush out your old
-2) Reinstall BSD.pkg (from your main OS install)</p></div>
+        </ul></div>
     </a>
     <a name="gettext-tools">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink が、 <code>gettext</code> の依存性に矛盾があるとだけ表示し、更新してくれません。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: Fink が、 <code>gettext</code> の依存性に矛盾があるとだけ表示し、更新してくれません。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
           <code>fink selfupdate</code> を実行して最新にした後、
           <code>fink update gettext-tools</code> としてみてください。
@@ -93,14 +87,18 @@ fink install libiconv</pre></div>
         </p></div>
     </a>
   <a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: OS 10.5 で <b>gtk+2</b> がインストールできません。</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
-    <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (or other versions of libraries in
-    <code>/usr/X11/lib/</code>).</p><p>The current wisdom on the best
-    fix for such an issue is to install Xcode 3.1.3.</p></div>
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.7: OS 10.5 で <b>gtk+2</b> がインストールできません。</b></p></div>
+    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+        これは、典型的には、ライブラリがないということです。例えば:
+	<code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> や 
+	<code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> 
+	(あるいは <code>/usr/X11/lib/</code> にある他のバージョンのライブラリ)
+      </p><p>
+        現状では、ベストな解決策は XCode 3.1.3 以降をインストールすることです。
+      </p></div>
   </a>
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.9: ここに載っていないパッケージで問題があります。</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.8: ここに載っていないパッケージで問題があります。</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> パッケージの問題は変わりやすいので、Fink wiki に情報を載せることにいたしました。
         <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</a> をご確認ください。
         (訳注: wiki の性質上、wiki は英語版のみであり、翻訳の予定はありません。なお、一部日本語での情報もあります)</p></div>

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/11 02:54:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -93,41 +93,41 @@ dselect からパッケージを選択してインストールする場合、 ro
 </a>
 <a name="unstable">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.8: unstable にあるパッケージをインストールしようとすると、 fink が 'no package found' といいます。どうしたらインストールできるのですか?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> First make sure you understand what 'unstable' means. Packages in
-        the unstable tree are not in stable for any number of reasons.  It
-        could be because there are known issues, validation errors, or just
-        not enough people giving feedback that the package works for them.
-        For that reason, Fink doesn't search the unstable tree by
-        default.</p><p>If you do enable unstable, please remember to e-mail the
-        maintainer if something works (or even if it doesn't). Feedback from
-        users like you is what we use to determine if something is ready for
-        stable! To find out the maintainer of a package, run <code>fink info
-        <b>packagename</b></code>.</p><p>For <code>fink-0.26</code> and later:  If you run
-	<code>fink configure</code> one of the questions will ask whether you
-	want to turn the unstable trees on.  </p><p>To configure Fink to use unstable
-	when you have an earlier version of the <code>fink</code> tool than
-	<b>0.26</b>, edit
-        <code>/sw/etc/fink.conf</code>, and add <code>unstable/main</code>
-        and <code>unstable/crypto</code> to the <code>Trees:</code> line.</p><p>If you use Fink Commander, then there is a Preference to use unstable
-	packages.</p><p>None of these options actually download the unstable tree's package
-	descriptions.You'll need to turn on <code>rsync</code> or
-	<code>cvs</code> updating to do this, which is not set up by default on a new
-	Fink installation.  The following command sequence will set you up on
-	a new Fink installation:</p><pre>fink selfupdate</pre><p>followed by</p><pre>fink selfupdate-rsync</pre><p>or</p><pre>fink selfupdate-cvs</pre><p>and then</p><pre>fink index -f
-fink scanpackages</pre><p><b>Note:</b>  There are Fink Commander analogs for everything except
-	<code>fink index -f</code>.  You will have to use the command line for that.</p><p>If you're already set up with <code>rsync</code> or <code>cvs</code>
-	updating, then the following
-	command sequence (or the Fink Commander analogs) will suffice:</p><pre>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+	  まず、'unstable の意味を確認してください。
+	  unstable tree にあるパッケージは、さまざまな理由により安定ではありません。
+	  既知の問題が残っていたり、valid error があったり、あるいは十分なフィードバックがないかもしれません。
+	  この理由により、Fink はデフォルトでは unstable tree を探さないのです。
+	</p><p>
+	  unstable を使う場合、もしうまく行った場合 (あるいは行かなかった場合)、メンテナにメールすることを心がけてください。
+	  あなたからのフィードバックは、stable に移行するための貴重な根拠となるのです!
+	  パッケージのメンテナを知るには、<code>fink info <b>packagename</b></code> と実行してください。
+	</p><p> 
+	  <code>fink-0.26</code> 以降:
+	  <code>fink configure</code> を実行すれば、たくさんある質問の中で unstable tree を on にするかという質問があります。
+	</p><p>
+	  <b>0.26</b> よりも古いバージョンの Fink が unstable を使うよう設定するには、
+	  <code>/sw/etc/fink.conf</code> を編集し、<code>Trees:</code> 行に <code>unstable/main</code>
+	  と <code>unstable/crypto</code> to the <code>Trees:</code> を追加してください。
+	</p><p>
+	  Fink Commander を使っている場合、Preference から unstable パッケージを使うことができます。
+	</p><p>
+	  これらのことをするだけでは、unstable tree のパッケージ記述を自動的にはダウンロードしません。
+	  各自で <code>rsync</code> または <code>cvs</code> の更新をする必要があります。
+	  これは、Fink のデフォルトではないので、以下のコマンドの入力してください。
+	</p><pre>fink selfupdate</pre><p>とした後、</p><pre>fink selfupdate-rsync</pre><p>または</p><pre>fink selfupdate-cvs</pre><p>その後</p><pre>fink index -f
+fink scanpackages</pre><p><b>注記:</b> Fink Commander では、同様のことが、 
+	<code>fink index -f</code> 以外、できます。これだけはコマンドラインから行ってください。</p><p>すでに <code>rsync</code> または <code>cvs</code> で更新できるようになっている場合、以下のものだけで十分です:</p><pre>
 fink selfupdate
 fink index
 fink scanpackages
-	</pre><p>If you're not sure what your update method is, check
-	<code>fink --version</code> in at a command line
-	and see if that mentions <code>cvs</code> or <code>rsync</code>.</p><p>If you don't want to install any more from unstable than
-        your specific package(s) and its (their) dependencies, (and any base packages
-	that got updated) don't use the
-        <code>update-all</code> command until you turn the unstable tree
-        back off.</p></div>
+	</pre><p>
+	  もし、update 方法を知らない場合、<code>fink --version</code> とすることで 
+	  <code>cvs</code> または <code>rsync</code> であることがわかります。
+	</p><p>
+	  特定のパッケージ (および base パッケージ) 以外、unstable からインストールしたくない場合、
+	  unstable を off に戻す前に <code>update-all</code> コマンドを実行しないよう注意してください。
+	</p></div>
 </a>
 
     <a name="unstable-onepackage">
@@ -196,7 +196,7 @@ Connection refused
 Failed: Logging into the CVS server for anonymous read-only access failed.</pre><p>あるいは</p><pre>cvs [update aborted]: recv() from server fink.cvs.sourceforge.net:
 Connection reset by peer
 ### execution of su failed, exit code 1
-Failed: Updating using CVS failed. Check the error messages above.</pre><p>あるいは</p><pre>cvs [update aborted]: End of file received from server</pre><p>あるいは</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>であれば、 cvs サーバが過負荷になっていると思われますので、時間をおいてアップデートを試してみて下さい。</p><p>この他、パーミッションをもっていない可能性もあります。
+Failed: Updating using CVS failed. Check the error messages above.</pre><p>あるいは</p><pre>cvs [update aborted]: End of file received from server</pre><p>あるいは</p><pre>cvs [update aborted]: received broken pipe signal</pre><p>であれば、 cvs サーバが過負荷になっていると思われますので、時間をおいて update を試してみて下さい。</p><p>この他、パーミッションをもっていない可能性もあります。
 この場合は "Permission denied" メッセージ:</p><pre>cvs update: in directory 10.2/stable/main:
 cvs update: cannot open CVS/Entries for reading: No such file or directory
 cvs server: Updating 10.2/stable/main
@@ -214,10 +214,18 @@ selfupdate-cvs の出力で、 "C" から始まる行で:</p><pre>C 10.2/unstabl
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.</pre><p>のようになっている箇所を探して下さい。
 "C" というのは CVS で最新版へ更新時にコンフリクトがあったことを意味しています。</p><p>これを修正するには、 selfupdate-cvs の出力にでてきたファイルを一つずつ削除して、コマンドを再実行します。</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
-fink selfupdate-cvs</pre><p>If you get errors that mention <b>cvs.sourceforge.net</b>:</p><pre>
+fink selfupdate-cvs</pre><p>もし、<b>cvs.sourceforge.net</b> と述べているエラーが発生した場合:</p><pre>
 cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 2401 failed: Operation timed out
-</pre><p>this is because of a restructuring of the CVS servers at sourceforge.net in 2006.  Fink files are now at <b>fink.cvs.sourceforge.net</b>.</p><p>Check your Distribution version, e.g. via</p><pre>fink --version</pre><p>If that shows <code>10.4-transitional</code>, then you need to update to the regular 10.4 distribution.  An <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">update script</a> has been created to assist with that.</p></div>
+</pre><p>
+	        これは、2006年に sourceforge.net において CVS サーバを再構築したためです。
+		Fink のファイルは、現在は <b>fink.cvs.sourceforge.net</b> にあります。
+	      </p><p>現在のディストリビューションのバージョンを、</p><pre>fink --version</pre><p>
+	        などで確認してください。
+		もし、<code>10.4-transitional</code> であれば、ただの 10.4 ディストリビューションに更新する必要があります。
+		<a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">update script</a>
+		を使って更新することができます。
+	      </p></div>
 </a>
 <a name="kernel-panics">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.14: Fink を使うと、マシンがフリーズする/カーネルパニックする/固まる。助けて!</b></p></div>
@@ -246,10 +254,11 @@ Fink が自動的にここを探しにいきます。
 いずれも駄目な場合、
 <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users mailing list</a>
 で古いソースをもっている人を探してみて下さい。
-</p><p>Once you locate the proper source tarball, download it manually, and then move the file into your Fink source location (i.e. for a default Fink install,
-もしソースの tarball が見つかったら、手動でダウンロードし、 Fink ソース保存先に移して下さい:
-"<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>"
-この後、通常通り '<code>fink install <b>packagename</b></code>' して下さい。</p><p>ソースファイルが見つからない場合、メンテナが問題に対処するまで待つしかありません。
+</p><p>
+  もしソースの tarball が見つかったら、手動でダウンロードし、 Fink ソース保存先に移して下さい:
+  "<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>"
+  この後、通常通り '<code>fink install <b>packagename</b></code>' して下さい。
+</p><p>ソースファイルが見つからない場合、メンテナが問題に対処するまで待つしかありません。
 古いソースか、新しいバージョン用の .info と .patch ファイルへのリンクが投稿されることでしょう。</p></div>
 </a>
 <a name="fink-not-found">
@@ -285,9 +294,9 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 </a>
 <a name="bad-list-file">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.19: 何もインストールできないし、削除もできません。 "files list file" と出るだけです。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 通常、このエラーはこういう形で出ます:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>または</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>This can be fixed, with a little work. If you have the .deb file for the offending package currently available on your system, then check its integrity by running
-これは直すことができます。
-エラーメッセージ中のパッケージの .deb ファイルがシステム上にあれば、その状態を確認します:
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 通常、このエラーはこういう形で出ます:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>または</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>
+  これは直すことができます。
+  エラーメッセージ中のパッケージの .deb ファイルがシステム上にあれば、その状態を確認します:
 </p><pre>dpkg --contents <b>full-path-to-debfile</b>
 </pre><p>例えば</p><pre>dpkg --contents
 /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>ディレクトリやファイルの一覧が表示されたら、 .deb ファイルは大丈夫です。

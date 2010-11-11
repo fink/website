@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/11 02:54:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
@@ -125,8 +125,23 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 <a name="dpkg-parse-error">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.13: "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
 というメッセージが出て、何もインストールできません!</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは dpkg データベースが壊れてしまったか、クラッシュか他のリカバーできないエラーが原因です。
-以前のバージョンのデータベースをコピーして直すことができます:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>この問題が起きた最後の二つのパッケージを再インストールしたほうがよいでしょう。</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+	  これは、クラッシュや回復不可能なエラーなど、何らかの理由で dpkg データベースが壊れたことを意味します。
+	  多くの場合、buildlock 中に発生するので、例えば:
+	</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>
+	  (もちろん、<code>foo-1.2.3-4</code> はあなたが見ようとしているパッケージ名)
+	</p><p>
+	  この問題が発生した場合、superuser で <code>/sw/var/lib/dpkg/status</code> を編集します。
+	  エラーメッセージにある行の近くにいきます。
+	  <code>fink-buildlock-foo-1.2.3-4</code> で、 <code>Status</code> フィールドが、
+	</p><pre>install ok installed</pre><p>となっていますが、これを</p><pre>purge ok not-installed</pre><p>
+	  と書き換えます。
+	</p><p>
+	  また、これとは異なり、ファイル中にゴミがある場合があります。
+	  この場合は、旧バージョンのデータベースをコピーします:
+	</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>
+	  問題が起きる前にインストールしていたパッケージをいくつか再インストールする必要があるかもしれません。
+	</p></div>
 </a>
 <a name="freetype-problems"> 
 <div class="question"><p><b><? echo FINK_Q ; ?>6.14: freetype に関係したエラーが出ます。</b></p></div> 
@@ -252,19 +267,26 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </a>
 
     <a name="alternates">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.22: Whenever I try to build from source, Fink keeps waffling between alternate versions of the same library.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Often, in a complicated build tree, you may find that some of the packages
-	depend on a particular version of a library, and other depend on a different one
-	(e.g. <code>db47</code> vs. <code>db44</code>).  Consequently, Fink may try to
-	switch to whichever one isn't currently installed in order to satisfy the
-	build dependency for the current package that you're trying to update.</p><p>Unfortunately, due to limitations in the build-dependency engine, you
-      may wind up with the dreaded</p><pre>Fink::SysState: Could not resolve inconsistent dependencies</pre><p>message when trying a sufficiently complicated <code>update-all</code>. This generally gives you a
-      command to try to resolve the issue:</p><pre>
+      <div class="question"><p><b><? echo FINK_Q ; ?>6.22: 
+	  ソースからビルドしようとすると必ず、同じライブラリの二つのバージョンをいったりきたりします。
+	</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+	 非常に複雑なビルドツリーでは、いくつかのパッケージがライブラリの特定バージョンに依存しており、
+	 他のパッケージが他のバージョンに依存していることがあります (例 <code>db47</code> vs. <code>db44</code>)。
+	 結果、Fink は更新しようとしているパッケージの依存性を満たすためにインストールされていない方をインストールしようとします。
+	</p><p>Unfortunately, due to limitations in the build-dependency engine, you
+      may wind up with the dreaded
+         残念ながら、ビルド依存エンジンの限界により、恐怖の
+       </p><pre>Fink::SysState: Could not resolve inconsistent dependencies</pre><p>
+        というメッセージを、十分複雑な <code>update-all</code> をした場合に見ることができます。
+	これは通常、以下のコマンドで直ります:
+      </p><pre>
 fink scanpackages
 sudo apt-get update
 sudo apt-get install foo=1.23-4	
-      </pre><p>but this may not work for sufficiently complicated updates.  You might need
-      to update packages one-by-one, at least for a while.
+      </pre><p>
+        しかし、十分複雑な更新の場合には聞きません。
+	いくつかのパッケージを一つ一つ更新してみてください。
       </p></div>
     </a>
 
@@ -287,14 +309,23 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
         	Python は、実際は 10.4 のところ <code>MACOSX_DEPLOYMENT_TARGET</code> の
         	値が 10.3 だと思い込むミスマッチが発生します。
         </p><p>
-        <code>fink rebuild python24</code> for the case above.
-        	上記の問題の場合であれば、<code>fink rebuild python24</code> を実行し、
-        	<code>python</code> パッケージを更新すれば修正されます。
+          上記の問題の場合であれば、<code>fink rebuild python24</code> を実行し、
+          <code>python</code> パッケージを更新すれば修正されます。
         </p></div>
     </a>
 <a name="libtool-unrecognized-dynamic">
-  <div class="question"><p><b><? echo FINK_Q ; ?>6.24: I get <q>unrecognized option `-dynamic'</q> errors from <code>libtool</code>.</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>typically means that you've replaced Apple's <code>/usr/bin/libtool</code> with a GNU <code>libtool</code>.  Unfortunately, the two <code>libtools</code> <b>do not</b> do the same thing.</p><p>The only way to solve this is to get a working Apple <code>libtool</code> from somewhere.  It is installed as part of the <code>DeveloperTools.pkg</code> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <code>/Library/Receipts</code> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></div>
+  <div class="question"><p><b><? echo FINK_Q ; ?>6.24: 
+      <q>unrecognized option `-dynamic'</q> というエラーが <code>libtool</code> から出たとです。
+    </b></p></div>
+  <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このエラー:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>
+      は、Apple の <code>/usr/bin/libtool</code> を GNU の <code>libtool</code> に変えてしまったことを意味します。
+      残念ながら、この二つの <code>libtools</code> は、同じことを<b>してくれません</b>。
+    </p><p>
+      これを直す唯一の方法は、ちゃんとした Apple <code>libtool</code> をどこから手に入れることです。
+      これは、 XCode Tools の <code>DeveloperTools.pkg</code> パッケージの一部で、
+      <code>/Library/Receipts</code> のレシートを削除した後、再インストールすることができます。
+      (10.4以降ならゴミ箱へ、10.3なら<code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code>してください)
+    </p></div>
 </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=ja">7. コンパイルの問題 - 特定のバージョン</a></p>

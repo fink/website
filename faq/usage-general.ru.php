@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/10 02:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-packages.php?phpLang=ru" title="Проблемы использования пакетов  - Специальные пакеты"><link rel="prev" href="comp-packages.php?phpLang=ru" title="Проблемы компиляции - специальные пакеты">';
 
 
@@ -67,7 +67,7 @@ include_once "header.ru.inc";
         </a>
         <a name="compile-myself">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Как можно компилировать что-нибудь самостоятельно с применением ПО, инсталлированного с помощью Fink?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
         linker need to be told where to find the Fink-installed libraries and
 		headers.  It is also necessary to tell the compiler to use the
 		appropriate target architecture.  For a package that uses standard
@@ -85,18 +85,16 @@ setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
 setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
-setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>Зачастую легче всего просто добавить их к своим файлам инициализации
-                    (н-р <code>.cshrc</code> |
-                    <code>.profile</code>), чтобы они установились
-                    автоматически. Если пакет не использует эти переменные,
-                    возможно, надо будет самому добавить "-I/sw/include" (для заголовков) и
-                    "-L/sw/lib" (для библиотек) к строкам компиляции.
-                    Некоторые пакеты могут использовать такие аналогичные нестандартные переменные, как
-                    EXTRA_CFLAGS or --with-qt-dir= configure options.
-                    "./configure --help" обычно предоставляет список дополнительных
-                    опций конфигурации.</p><p>Кроме того, вам возможно понадобится инсталлировать заголовки разработок
-                    (н-р. <b>foo-1.0-1-dev</b>) для пакетов библиотек, которые
-                    вы используете, если они еще не инсталлированы. </p></div>
+setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>It is often easiest just to add these to your startup files (e.g.
+        <code>.cshrc</code> | <code>.profile</code>) so they
+        are set automatically. If a package does not use these variables, you
+        may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
+        libraries) to the compile lines yourself. Some packages may use
+        similar non-standard variables such as EXTRA_CFLAGS or --with-qt-dir=
+        configure options. "./configure --help" will usually give you a list
+        of the extra configure options.</p><p>In addition, you may need to install the development headers (e.g.
+        <b>foo-1.0-1-dev</b>) for the library packages that you are using,
+        if they aren't already installed.</p></div>
         </a>
         <a name="apple-x11-applications-menu">
             <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Не могу запустить ни одно из приложений, инсталлированных при помощи Fink, через

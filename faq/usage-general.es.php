@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Usage (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/10 02:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="usage-packages.php?phpLang=es" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=es" title="Compile Problems - Specific Packages">';
 
 

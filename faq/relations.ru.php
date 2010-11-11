@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Связь с другими проектами";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/10 02:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="mirrors.php?phpLang=ru" title="Зеркала Fink"><link rel="prev" href="general.php?phpLang=ru" title="Общие вопросы">';
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/10 02:23:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets"><link rel="prev" href="usage-fink.php?phpLang=fr" title="Installation, Utilisation et Mise à jour de Fink">';
 
 
@@ -79,7 +79,13 @@ rerun ranlib(1) (can't load from it)</pre><p>Vous devez exécuter ranlib (en tan
 </a>
 <a name="dpkg-parse-error">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.13: Il est impossible d'installer quoi que ce soit, un message indique que "dpkg est incapable d'analyser la structure du fichier /sw/var/lib/dpkg/status" (message en anglais : "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"). De quoi s'agit-il ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Cela signifie que votre base de données dpkg a été corrompue, en général à la suite d'un plantage ou d'une autre erreur irrécupérable. Vous pouvez résoudre le problème en copiant la version précédente de la base de données via la commande :</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>Il se peut que vous deviez réinstaller les derniers paquets installés juste avant que le problème n'apparaisse.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This means that somehow your dpkg database got damaged, usually
+        from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>(of course, replace <code>foo-1.2.3-4</code> with the package name you are seeing).</p><p>When this happens, you should edit <code>/sw/var/lib/dpkg/status</code> as a superuser.
+	Then go near the line number which shows up in the error message.
+	You should see a <code>fink-buildlock-foo-1.2.3-4</code>
+        package whose <code>Status</code> field is marked</p><pre>install ok installed</pre><p>Change that to</p><pre>purge ok not-installed</pre><p>Under other circumstances, there may be garbage in the file.  You can fix this situation by
+        copying the previous version of the database, like so:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>You may need to re-install the last couple of packages you
+        installed before the problem started occurring.</p></div>
 </a>
 <a name="freetype-problems">
 <div class="question"><p><b><? echo FINK_Q ; ?>6.14: Des messages d'erreurs concernant freetype apparaissent. Que faire ?</b></p></div>

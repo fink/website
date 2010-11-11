@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/10 02:23:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets">';
 
 
@@ -25,7 +25,7 @@ include_once "header.fr.inc";
 </a>
 <a name="compile-myself">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Comment compiler soi-même en utilisant des logiciels installés par Fink ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
         linker need to be told where to find the Fink-installed libraries and
 		headers.  It is also necessary to tell the compiler to use the
 		appropriate target architecture.  For a package that uses standard
@@ -43,7 +43,16 @@ setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
 setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
-setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>Il est souvent plus simple d'ajouter ces variables à vos fichiers de démarrage (par exemple, <code>.cshrc</code> ou <code>.profile</code>), de façon à ce qu'elles soient automatiquement définies. Si un paquet n'utilise pas ces variables, vous devrez peut-être ajouter aux lignes de compilation "-I/sw/include" pour les headers et "-L/sw/lib" pour les bibliothèques. Certains paquets peuvent utiliser des variables non standards, telle EXTRA_CFLAGS, des options de configuration, telle --with-qt-dir=toto. La commande "./configure --help" vous donne, en général, la liste de ces options de configuration supplémentaires.</p><p>De plus, vous devrez peut-être installer les headers de développement des paquets bibliothèques que vous utilisez, s'ils ne sont pas déjà installés : par exemple <b>toto-1.0-1-dev</b>), si vous utilisez la bibliothèque toto-1.0-1.</p></div>
+setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>It is often easiest just to add these to your startup files (e.g.
+        <code>.cshrc</code> | <code>.profile</code>) so they
+        are set automatically. If a package does not use these variables, you
+        may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
+        libraries) to the compile lines yourself. Some packages may use
+        similar non-standard variables such as EXTRA_CFLAGS or --with-qt-dir=
+        configure options. "./configure --help" will usually give you a list
+        of the extra configure options.</p><p>In addition, you may need to install the development headers (e.g.
+        <b>foo-1.0-1-dev</b>) for the library packages that you are using,
+        if they aren't already installed.</p></div>
 </a>
 <a name="apple-x11-applications-menu">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Il est impossible d'exécuter une application installée par Fink en utilisant le menu Applications dans X11 d'Apple. Que faire ?</b></p></div>

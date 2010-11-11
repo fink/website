@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/10/17 23:42:51';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2010/11/10 02:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="general.php?phpLang=pt" title="Perguntas gerais">';
 
 
@@ -25,7 +25,7 @@ include_once "header.pt.inc";
     versão)</b></a><ul><li><a href="upgrade-fink.php?phpLang=pt#leopard-bindist1">4.1 O Fink não enxerga pacotes novos mesmo depois de eu rodar uma
         autoatualização via rsync ou CVS.</a></li><li><a href="upgrade-fink.php?phpLang=pt#leopard-bindist2">4.2 Quando eu tento instalar um pacote eu recebo a mensagem de erro
         'Can't resolve dependency "fink (&gt;= 0.28.0)"' (Não é possível resolver
-        a dependência "fink (&gt;= 0.28.0)"</a></li></ul></li><li><a href="usage-fink.php?phpLang=pt"><b>5 Instalação, uso e manutenção do Fink</b></a><ul><li><a href="usage-fink.php?phpLang=pt#what-packages">5.1 Como posso saber quais os pacotes que o Fink suporta?</a></li><li><a href="usage-fink.php?phpLang=pt#proxy">5.2 Estou atrás de um firewall. Como configuro o Fink para usar um proxy
+        a dependência "fink (&gt;= 0.28.0)"</a></li><li><a href="upgrade-fink.php?phpLang=pt#stuck-gettext">4.3 Fink tells me to run 'sudo apt-get install libgettext3-dev=0.14.5-2' to clear up inconsistent dependencies but I'm still stuck.</a></li><li><a href="upgrade-fink.php?phpLang=pt#stuck-dpkg">4.4 Fink tells me 'Can't resolve dependency "dpkg (&gt;= 1.10.21-1229)" for package "dpkg-base-files-0.3-1"'.  How do I solve this?</a></li></ul></li><li><a href="usage-fink.php?phpLang=pt"><b>5 Instalação, uso e manutenção do Fink</b></a><ul><li><a href="usage-fink.php?phpLang=pt#what-packages">5.1 Como posso saber quais os pacotes que o Fink suporta?</a></li><li><a href="usage-fink.php?phpLang=pt#proxy">5.2 Estou atrás de um firewall. Como configuro o Fink para usar um proxy
         HTTP?</a></li><li><a href="usage-fink.php?phpLang=pt#firewalled-cvs">5.3 Como faço para atualizar os pacotes disponíveis via CVS se eu
         estiver atrás de um firewall?</a></li><li><a href="usage-fink.php?phpLang=pt#moving">5.4 Posso mover o Fink para outro diretório após a instalação?</a></li><li><a href="usage-fink.php?phpLang=pt#moving-symlink">5.5 Se eu mover o Fink após instalá-lo e criar um link simbólico do
         diretório antigo, isso vai funcionar?</a></li><li><a href="usage-fink.php?phpLang=pt#removing">5.6 Como faço para desinstalar o Fink completamente?</a></li><li><a href="usage-fink.php?phpLang=pt#bindist">5.7 O banco de dados de pacote no site lista o pacote xxx mas nem o
@@ -119,7 +119,7 @@ include_once "header.pt.inc";
         file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x-delete">9.5 Quero que a tecla Delete no X11.app da Apple comporte-se como no
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-wants-xfree86">9.6 Estou tendo problemas com X11 e Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#special-x11-debug">9.7 Ainda estou tendo problemas com o X11 e o Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#tiger-gtk">9.8 Sempre que uso um aplicativo GTK, recebo mensagens de erro em
         relação a <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=pt#yelp">9.9 Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.pt.xml,v 1.8 2009/10/17 23:42:51 monipol Exp $-->
+<!--Generated from $Fink: faq.pt.xml,v 1.9 2010/11/10 02:23:58 babayoshihiko Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

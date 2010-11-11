@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Compilation (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/10 02:23:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problèmes généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation">';
 
 
@@ -62,7 +62,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 3.0 ou supérieure)
     <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
     <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (or other versions of libraries in
     <code>/usr/X11/lib/</code>).</p><p>The current wisdom on the best
-    fix for such an issue is to install Xcode 3.1.3.</p></div>
+    fix for such an issue is to install Xcode 3.1.3 or later.</p></div>
   </a>
 <a name="all-others">
 <div class="question"><p><b><? echo FINK_Q ; ?>7.9: Des problèmes apparaissent avec un paquet qui n'est pas mentionné ici. Que faire ?</b></p></div>

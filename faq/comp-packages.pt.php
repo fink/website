@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Compilação (2)";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/10/17 23:42:51';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2010/11/10 02:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="usage-general.php?phpLang=pt" title="Problemas no uso de pacotes - Geral"><link rel="prev" href="comp-general.php?phpLang=pt" title="Problemas de Compilação - Geral">';
 
 
@@ -100,7 +100,7 @@ fink install libiconv</pre></div>
 	  como <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> ou
 	  <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (ou outras
 	  versões de bibliotecas em <code>/usr/X11/lib/</code>).</p><p>Até onde podemos perceber, a melhor forma de corrigir esse problema é
-	  instalar o Xcode 3.1.3.</p></div>
+	  instalar o Xcode 3.1.3 ou mais recentes.</p></div>
   </a>
     <a name="all-others">
       <div class="question"><p><b><? echo FINK_Q ; ?>7.8: Estou tendo problemas com um pacote que não está listado aqui.</b></p></div>

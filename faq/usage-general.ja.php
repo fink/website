@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (1)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/11 02:54:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
 
@@ -54,11 +54,13 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 </a>
 <a name="compile-myself">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
-        linker need to be told where to find the Fink-installed libraries and
-		headers.  It is also necessary to tell the compiler to use the
-		appropriate target architecture.  For a package that uses standard
-		configure/make process, you need to set some environment variables:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+	  Fink 以外でなにかをコンパイルしようとする場合、
+	  コンパイラとリンカに、Fink がインストールしたライブラリやヘッダがどこにあるのかを伝える必要があります。
+	  また、コンパイラにターゲットのアーキテクチャーを使うよう伝える必要もあります。
+	  標準的な configure/make を使用するパッケージの場合、
+	  以下の環境変数を設定する必要があります:
+	</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
@@ -72,12 +74,16 @@ setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
 setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
-setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>これを起動ファイル (.cshrc か .profile) に追加すると、自動的に設定されて便利です。
-この環境変数を使わないパッケージの場合、
-"-I/sw/include" (ヘッダ用) and "-L/sw/lib" (ライブラリ用)
-をコンパイルの行に追加する必要があるでしょう。
-パッケージの中には、 EXTRA_CFLAGS や --with-qt-dir= のような、非標準的な configure オプションを使うものもあります。
-"./configure --help" で configure オプションの一覧がわかるでしょう。</p><p>さらに、あなたが使うライブラリの開発用ヘッダ (例 <b>foo-1.0-1-dev</b>) もインストールする必要があります。</p></div>
+setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(実行 OS が 10.5 以降の場合)</p><p>
+	  これを起動ファイル (e.g. <code>.cshrc</code> | <code>.profile</code>) に入れておくと、自動的に設定され、最も簡単です。
+	  これらの環境設定を使用しないパッケージの場合、コンパイル行に
+	  "-I/sw/include" (ヘッダファイル) と "-L/sw/lib" (ライブラリ) を追加する必要があるでしょう。
+	  パッケージによっては、同様だが非標準な EXTRA_CFLAGS or --with-qt-dir= などのオプションを使っているかもしれません。
+	  "./configure --help" をすることで、こうした configure オプションを知ることができます。
+	</p><p>
+	  また、ライブラリパッケージなどは、
+	  対応する開発ヘッダ (e.g. <b>foo-1.0-1-dev</b>) をインストールする必要があるかもしれません。
+	</p></div>
 </a>
 <a name="apple-x11-applications-menu">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Apple X11 の Application メニューを使うと、 Fink からインストールしたアプリケーションの起動できません。</b></p></div>

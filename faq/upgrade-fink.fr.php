@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Mise à jour de Fink";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/10 02:23:57';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-fink.php?phpLang=fr" title="Installation, Utilisation et Mise à jour de Fink"><link rel="prev" href="mirrors.php?phpLang=fr" title="Miroirs de Fink">';
 
 
@@ -34,11 +34,18 @@ fink selfupdate</pre>
       <div class="question"><p><b><? echo FINK_Q ; ?>4.2: When I try to install stuff I get 'Can't resolve dependency "fink (&gt;= 0.28.0)"'</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Apply the fix from <a href="#leopard-bindist1">the prior entry.</a></p></div>
     </a>
-
-<a name="fink-0220">
-<div class="question"><p><b><? echo FINK_Q ; ?>4.3: Aucune mise à jour de paquets de Fink n'a eu lieu depuis un moment. Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Vérifiez la version de fink avec la commande suivante :</p><pre>fink --version</pre><p>Il existe un problème dans <code>fink-0.22.0</code>, qui fait que la mise à jour par rsync ne fonctionne plus. Pour mettre à jour fink, passez à la mise à jour via CVS avec la commande suivante :</p><pre>fink selfupdate-cvs	</pre><p>Cela vous permettra de passer à une nouvelle version de <code>fink</code>. Une fois cela fait, nous vous recommandons de revenir au mode de mise à jour par rsync avec la commande suivante :</p><pre>fink selfupdate-rsync</pre></div>
-</a>
+    <a name="stuck-gettext">
+      <div class="question"><p><b><? echo FINK_Q ; ?>4.3: Fink tells me to run 'sudo apt-get install libgettext3-dev=0.14.5-2' to clear up inconsistent dependencies but I'm still stuck.</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There is a timestamp issue with the <b>libgettext3</b> package description:  0.14.5-2 is an outdated version.  Run</p><pre>fink index -f
+fink update libgettext3-dev	
+	</pre><p>to update the package description cache and then the package.</p></div>
+    </a>
+    <a name="stuck-dpkg">
+      <div class="question"><p><b><? echo FINK_Q ; ?>4.4: Fink tells me 'Can't resolve dependency "dpkg (&gt;= 1.10.21-1229)" for package "dpkg-base-files-0.3-1"'.  How do I solve this?</b></p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There is a timestamp issue with the updated <b>dpkg</b> package description.  Run</p><pre>fink index -f
+fink selfupdate
+	</pre><p>to update the package description cache and then to install <code>dpkg</code> and <code>dpkg-base-files</code>.</p></div>
+    </a>
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="usage-fink.php?phpLang=fr">5. Installation, Utilisation et Mise à jour de Fink</a></p>
 <? include_once "../footer.inc"; ?>

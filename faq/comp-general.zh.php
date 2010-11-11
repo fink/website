@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 编译（１）";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/10 02:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包"><link rel="prev" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink">';
 
 
@@ -103,9 +103,13 @@ Failed: installing foo-0.1.2-3 failed</pre><p>那么你应该在你构建输出�
     </a>
     <a name="dpkg-parse-error">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.13: 我不能安装任何东西，因为我碰到 "dpkg: parse error, in file `/sw/var/lib/dpkg/status'" 错误！</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这意味着你的 dpkg 数据库被损坏了，通常是由于一次程序崩溃或其它不可恢复错误造成。你可以用拷贝以前的版本的数据库办法来解决，象这样：</p><pre>
-sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status
-</pre><p>你也许需要重新安装问题发生前安装的最后几个软件包。</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This means that somehow your dpkg database got damaged, usually
+        from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>(of course, replace <code>foo-1.2.3-4</code> with the package name you are seeing).</p><p>When this happens, you should edit <code>/sw/var/lib/dpkg/status</code> as a superuser.
+	Then go near the line number which shows up in the error message.
+	You should see a <code>fink-buildlock-foo-1.2.3-4</code>
+        package whose <code>Status</code> field is marked</p><pre>install ok installed</pre><p>Change that to</p><pre>purge ok not-installed</pre><p>Under other circumstances, there may be garbage in the file.  You can fix this situation by
+        copying the previous version of the database, like so:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>You may need to re-install the last couple of packages you
+        installed before the problem started occurring.</p></div>
     </a>
     <a name="freetype-problems">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.14: 我碰到一个涉及 freetype 的错误。</b></p></div>

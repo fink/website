@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Uso (1)";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/10/17 23:42:51';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2010/11/10 02:23:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="usage-packages.php?phpLang=pt" title="Problemas no uso de pacotes - Pacotes específicos"><link rel="prev" href="comp-packages.php?phpLang=pt" title="Problemas de compilação - Pacotes específicos">';
 
 
@@ -62,12 +62,11 @@ include_once "header.pt.inc";
     <a name="compile-myself">
       <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Como faço para compilar algo usando softwares instalados pelo
         Fink?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Quando você for compilar algo fora do Fink, o compilador e o
-        linkeditor precisam saber onde estão as bibliotecas e arquivos de
-		cabeçalho instalados pelo Fink. Também é necessário informar ao
-		compilador qual a arquitetura alvo. Para um pacote que use o processo
-		configure/make padrão, você precisa definir algumas variáveis de
-        ambiente:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
+        linker need to be told where to find the Fink-installed libraries and
+		headers.  It is also necessary to tell the compiler to use the
+		appropriate target architecture.  For a package that uses standard
+		configure/make process, you need to set some environment variables:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
@@ -81,18 +80,16 @@ setenv CPPFLAGS $CXXFLAGS
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
 setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
-setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>Normalmente é mais fácil adicionar essas definições ao seu arquivo
-        de inicialização do shell (<code>.profile</code> |
-        <code>.cshrc</code>) para que as variáveis sejam definidas
-        automaticamente. Se um pacote não usa essas variáveis, você precisará
-        adicionar "-I/sw/include" (para arquivos de cabeçalho) e "-L/sw/lib"
-        (para bibliotecas) aos comandos de compilação. Alguns pacotes podem
-        usar algumas variáveis similares mas que não são padrão como
-        EXTRA_FLAGS ou opções extras para o configure como --with-qt-dir=.
-        "./configure --help" normalmente exibe uma lista das opções extras.</p><p>Além disso, você pode precisar instalar os arquivos de cabeçalho
-        para desenvolvimento (por exemplo, <b>foo-1.0-1-dev</b>) para os
-        pacotes de bibliotecas que você esteja usando caso ainda não tenham
-        sido instalados.</p></div>
+setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>It is often easiest just to add these to your startup files (e.g.
+        <code>.cshrc</code> | <code>.profile</code>) so they
+        are set automatically. If a package does not use these variables, you
+        may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
+        libraries) to the compile lines yourself. Some packages may use
+        similar non-standard variables such as EXTRA_CFLAGS or --with-qt-dir=
+        configure options. "./configure --help" will usually give you a list
+        of the extra configure options.</p><p>In addition, you may need to install the development headers (e.g.
+        <b>foo-1.0-1-dev</b>) for the library packages that you are using,
+        if they aren't already installed.</p></div>
     </a>
     <a name="apple-x11-applications-menu">
       <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Não consigo rodar nenhuma dos meus aplicativos instalados via Fink

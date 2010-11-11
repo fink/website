@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (2)";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/25 05:21:38';
+$cvs_date = 'Date: 2010/11/11 02:54:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=ja" title="パッケージ使用上の問題 - 一般">';
 
 
@@ -83,43 +83,54 @@ Disk 3 の X11.pkg から X11 をインストールできます。</p></div>
 </a>
 <a name="apple-x11-wants-xfree86">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.8: X11 と Fink に問題があります。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 二つの可能性が考えられます。</p><ul>
           <li>
-            <b>You are installing from binaries:</b>
-            <p>Typically what you need to do is reinstall the X11User package,
-	    since the installer application occasionally misses installing a file.
-	    You may need to repeat this multiple times. Running</p>
+            <b>バイナリからインストールしている場合:</b>
+            <p>
+	      通常、X11User を再インストールする必要があります。
+	      インストーラは、稀にファイルをインストールし忘れるためです。
+	      何度か再インストールする必要があるかもしれません。
+	    </p>
 	    <pre>fink list -i system-xfree86</pre>
-	    <p>should show that the <code>system-xfree86</code> and
-	    <code>system-xfree86-shlibs</code> packages are installed, and</p>
+	    <p>
+	      とすると、<code>system-xfree86</code> と <code>system-xfree86-shlibs</code>
+	      がインストールされているかを示します。
+	    </p>
 	    <pre>fink list x11</pre>
-	    <p>should indicate that the <code>x11-shlibs</code> and <code>x11</code> virtual
-	    packages are present.</p>
-	    <p>If reinstalling the X11User package doesn't work, then consult the
-	    <a href="#special-x11-debug">special debug</a> instructions,
-	    below.</p>
+	    <p>
+	      とすると、<code>x11-shlibs</code> と <code>x11</code>
+	      の virtual package があるかを示します。
+	    </p>
+	    <p>
+	      もし、X11User の再インストールでもダメな場合、
+	      下記の<a href="#special-x11-debug">特別なデバッグ</a> をお読みください。
+	    </p>
           </li>
           <li>
-            <b>You are installing from source:</b>
-	    <p>Typically this error means that you need to (re)install the X11SDK,
-	    which is <b>mandatory</b> if you want to build packages from source.
-            It is in the Xcode Tools folder of a Tiger DVD, or (Optional
-            Installs/)Xcode Tools/Packages on your Leopard DVD(s). If you
-            run</p>
+            <b>ソースからインストールしている場合:</b>
+	    <p>
+	      通常、X11SDK を(再)インストールする必要があります。
+	      これはソースからパッケージをビルドする際に<b>必ず必要</b>です。
+	      Tiger DVD か、Leopard DVD の(Optional Installs/)Xcode Tools/Packages にあります。
+	    </p>
             <pre>fink list -i system-xfree86  </pre>
-            <p>it should show the <code>system-xfree86</code>,
-	    <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code>
-	    packages as installed.  If the <code>-dev</code> package is missing,
-	    reinstall the X11SDK, since sometimes the Apple Installer misses a
-	    file.  You may need to keep doing this.  If either of the other two
-	    are missing, then reinstall the X11User package (same reason).  At
-	    this point</p>
+            <p>
+	      とすれば、 <code>system-xfree86</code>, <code>system-xfree86-shlibs</code>, および <code>system-xfree86-dev</code>
+	      がインストールされているとわかるでしょう。
+	      <code>-dev</code> パッケージがない場合、X11SDK を再インストールします。
+	      Apple のインストーラは、稀にファイルを忘れるためです。
+	      もし他の二つのどれかがない場合、同じ理由で X11User を再インストールします。
+	      この後、
+	    </p>
 	    <pre>fink list x11</pre>
-	    <p>should indicate that the <code>x11-dev</code>, <code>x11-shlibs</code>,
-	    and <code>x11</code> virtual packages are present.</p>
-	    <p>If reinstalling the X11SDK or X11User package doesn't work, then consult the
-	    <a href="#special-x11-debug">special debug</a> instructions,
-	    below.</p>
+	    <p>
+	      とすれば、<code>x11-dev</code>, <code>x11-shlibs</code>, および <code>x11</code>
+	      の virtual package があることを確認できるでしょう。
+	    </p>
+	    <p>
+	      もし、X11User と X11SDK の再インストールでもダメな場合、
+	      下記の<a href="#special-x11-debug">特別なデバッグ</a> をお読みください。
+	    </p>
            </li>
         </ul></div>
     </a>
@@ -131,22 +142,24 @@ Disk 3 の X11.pkg から X11 をインストールできます。</p></div>
 		<a href="#wants-xfree86-on-upgrade">10.2 からの X11 とアップグレード</a> 
 		のヒントで問題が解決されないか、自分の問題と異なる場合、
 		X11 をきれいに削除し、代替パッケージと X11 関連パッケージを削除します:
-		</p><p>On Leopard, use</p><pre>
+		</p><p>Leopard では、</p><pre>
 sudo pkgutil --forget com.apple.pkg.X11User
 sudo pkgutil --forget com.apple.pkg.X11SDKLeo
-</pre><p>Then, on either 10.4 or 10.5, run</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+</pre><p>を実行します。次に、10.4 と 10.5 では、</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shilbs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg
-fink selfupdate; fink index</pre><p>(the first line may give you warnings about trying to remove
-	nonexistent packages).  Then, reinstall Apple's X11 (and the X11SDK, if
-	needed), or,
-	if you're on 10.4, an alternative X11 implementation, like XFree86 or X.org.</p><p>If you are still having problems then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>で何が不足しているかの情報が得られます。</p><p>
-		古いバージョンの  <code>fink</code> を使っている場合、Perl スクリプト
+fink selfupdate; fink index</pre><p>
+	  と実行します。
+	  (最初の行は、存在しないパッケージを削除しようとしているという警告の場合もあります)
+	  次に、Apple X11 (および、必要であれば X11SDK) を再インストールするか、
+	  10.4 の場合、XFree86 や X.org などの他の X11 を再インストールします。
+	</p><p>まだ問題がある場合、</p><pre>fink-virtual-pkgs --debug</pre><p>と実行することで何が不足しているかの情報が得られます。</p><p>
+	  古いバージョンの  <code>fink</code> を使っている場合、Perl スクリプト
 		(Martin Costabel 作成)　で同様の情報が得られます。
-		</p><ul>
+	</p><ul>
 <li>入手先: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
 </li>
 <li>好きな場所に保存</li>
