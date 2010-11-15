@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.6";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2010/11/15 21:31:05 $';
+$cvs_date = '$Date: 2010/11/15 21:37:50 $';
 
 include "header.inc";
 ?>
@@ -15,11 +15,11 @@ include "header.inc";
     <li>Before installing OS X 10.6, run <pre>fink selfupdate</pre> with rsync or cvs updating turned on, i.e. use <pre>fink selfupdate-rsync</pre> or 
     <pre>fink selfupdate-cvs</pre>, to bring <em>fink</em> to a current version.<br>
     Use <pre>fink -V</pre> to check your package manager version, which needs to be at least 0.29.9 before updating.</br>
-    <strong>Do not proceed if <pre>fink</pre> is not at at least 0.29.9!</strong>  You may need to follow these 
-    <link "url=../faq/upgrade-fink.php#leopard-bindist1">instructions</url>.
+    <strong>Do not proceed if <code>fink</code> version is not at least 0.29.9!</strong>  You may need to follow these 
+    <a href=../faq/upgrade-fink.php#leopard-bindist1">instructions</a> to update it.
     </li>
-    <li>Edit the file <em>/sw/etc/fink.conf</em>, as a superuser, adding a line to it which reads <strong>NoAutoIndex: true</strong>.
-    (You may need to use <em>sudo</em> to obtain the correct permissions to edit this file.)</li>   
+    <li>Edit the file <em>/sw/etc/fink.conf</em>, adding a line to it which reads <strong>NoAutoIndex: true</strong>.
+    (You may need to use <em>sudo</em> or an equivalent method to obtain the correct permissions to edit this file.)</li>   
     <li>Install OS X 10.6, as well as Xcode 3.2 (or a later released version).</li>
     <li>Run the command <pre>fink reinstall fink</pre> in order to tell <em>fink</em> that you are now on 10.6.
     (If you encounter a message about package database corruption, run <pre>fink index -f</pre> and try this step again.)</li>
