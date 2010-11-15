@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.6";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2010/11/15 21:37:50 $';
+$cvs_date = '$Date: 2010/11/15 21:40:45 $';
 
 include "header.inc";
 ?>
@@ -16,7 +16,7 @@ include "header.inc";
     <pre>fink selfupdate-cvs</pre>, to bring <em>fink</em> to a current version.<br>
     Use <pre>fink -V</pre> to check your package manager version, which needs to be at least 0.29.9 before updating.</br>
     <strong>Do not proceed if <code>fink</code> version is not at least 0.29.9!</strong>  You may need to follow these 
-    <a href=../faq/upgrade-fink.php#leopard-bindist1">instructions</a> to update it.
+    <a href="../faq/upgrade-fink.php#leopard-bindist1">instructions</a> to update it.
     </li>
     <li>Edit the file <em>/sw/etc/fink.conf</em>, adding a line to it which reads <strong>NoAutoIndex: true</strong>.
     (You may need to use <em>sudo</em> or an equivalent method to obtain the correct permissions to edit this file.)</li>   
