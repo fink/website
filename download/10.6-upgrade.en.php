@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.6";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2010/11/15 21:40:45 $';
+$cvs_date = '$Date: 2010/11/15 21:45:37 $';
 
 include "header.inc";
 ?>
@@ -15,7 +15,7 @@ include "header.inc";
     <li>Before installing OS X 10.6, run <pre>fink selfupdate</pre> with rsync or cvs updating turned on, i.e. use <pre>fink selfupdate-rsync</pre> or 
     <pre>fink selfupdate-cvs</pre>, to bring <em>fink</em> to a current version.<br>
     Use <pre>fink -V</pre> to check your package manager version, which needs to be at least 0.29.9 before updating.</br>
-    <strong>Do not proceed if <code>fink</code> version is not at least 0.29.9!</strong>  You may need to follow these 
+    <strong>Do not proceed if your package manager version is not at least 0.29.9!</strong>  You may need to follow these 
     <a href="../faq/upgrade-fink.php#leopard-bindist1">instructions</a> to update it.
     </li>
     <li>Edit the file <em>/sw/etc/fink.conf</em>, adding a line to it which reads <strong>NoAutoIndex: true</strong>.
