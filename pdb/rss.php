@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/11/27 21:39:27 $';
+$cvs_date = '$Date: 2010/11/27 22:21:24 $';
 
 header("Content-type: text/xml");
 if (!isset($cache_timeout)) $cache_timeout = 60 * 60;
@@ -41,13 +41,13 @@ $query->setRaw(true);
 $query->setRows($limit);
 $query->setSort(array("infofilechanged desc"));
 
-$results = new $query->fetch();
+$results = $query->fetch();
 
 if (!isset($_GET['format']))
 	$_GET['format'] = 'ATOM';
 $format = strtoupper($_GET['format']);
 
-if (isset($results) && $results->response->numFound > 0) {
+if (isset($results) && is_object($results) && $results->response->numFound > 0) {
 	foreach ($results->response->docs as $package) {
 		$description = $package->desclong;
 		if (empty($package->desclong))
