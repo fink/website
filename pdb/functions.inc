@@ -123,7 +123,7 @@ function fetch_package($_name, $_version = null, $_distribution = null, $_releas
 		return null;
 	} elseif (count($_response) == 0) {
 		return null;
-	} elseif (count($_response) == 1) {
+	} elseif (count($_response) == 1 && is_array($_response)) {
 		return array_shift($_response);
 	} else {
 		return $_response;
