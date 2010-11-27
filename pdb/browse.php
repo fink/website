@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/07 19:00:14 $';
+$cvs_date = '$Date: 2010/11/27 20:52:44 $';
 
 ini_set("memory_limit", "48M");
 
@@ -229,18 +229,24 @@ package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer
 	else {
 		print '<tr class="pdbHeading"><th>Name</th><th>Latest Version</th><th>Description</th></tr>';
 	}
-	foreach ($packages as $id => $package) {
-		if (!isset($package['version_stable'])) $package['version_stable'] = "";
-		if (!isset($package['version_unstable'])) $package['version_unstable'] = "";
+	if (!is_array($packages)) {
 		print '<tr class="package">';
-		print '<td class="packageName"><a href="' . $pdbroot . 'package.php/'.$package['name'] . ($showall? '?showall=on' : '') . '">'.$package['name'].'</a></td>';
-		if ($tree == 'testing') {
-			print '<td>'.$package['version_unstable'].'</td>'.
-						'<td>'.$package['version_stable'].'</td>';
-		} else {
-			print '<td class="packageName">'.get_full_version($package).'</td>';
+		print 'Invalid query\n';
+		print 'Please try again: <a href="http://pdb.finkproject.org/pdb/browse.php?nolist=on">Search</a></tr>\n';
+	} else {
+		foreach ($packages as $id => $package) {
+			if (!isset($package['version_stable'])) $package['version_stable'] = "";
+			if (!isset($package['version_unstable'])) $package['version_unstable'] = "";
+			print '<tr class="package">';
+			print '<td class="packageName"><a href="' . $pdbroot . 'package.php/'.$package['name'] . ($showall? '?showall=on' : '') . '">'.$package['name'].'</a></td>';
+			if ($tree == 'testing') {
+				print '<td>'.$package['version_unstable'].'</td>'.
+							'<td>'.$package['version_stable'].'</td>';
+			} else {
+				print '<td class="packageName">'.get_full_version($package).'</td>';
+			}
+			print '<td>'.htmlentities($package['descshort'])."</td></tr>\n";
 		}
-		print '<td>'.htmlentities($package['descshort'])."</td></tr>\n";
 	}
 ?>
 </table>
