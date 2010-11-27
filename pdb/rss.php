@@ -1,7 +1,7 @@
 <?
 $title = "Package Database";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/14 19:29:17 $';
+$cvs_date = '$Date: 2010/11/27 21:39:27 $';
 
 header("Content-type: text/xml");
 if (!isset($cache_timeout)) $cache_timeout = 60 * 60;
@@ -41,7 +41,7 @@ $query->setRaw(true);
 $query->setRows($limit);
 $query->setSort(array("infofilechanged desc"));
 
-$results = $query->fetch();
+$results = new $query->fetch();
 
 if (!isset($_GET['format']))
 	$_GET['format'] = 'ATOM';
