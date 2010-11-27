@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/16 17:16:50 $';
+$cvs_date = '$Date: 2010/11/27 21:58:08 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -334,7 +334,7 @@ unset($result);
 	$sq->addQuery('parentname_e:"' . $pobj['pkg_id'] . '"', true);
 	$splitoffs = $sq->fetch();
 
-	if ($splitoffs != null && count($splitoffs) != 0) {
+	if ($splitoffs != null && count($splitoffs) != 0 && is_array($splitoffs)) {
 		$contents = "<table>";
 		foreach ($splitoffs as $doc) {
 			$contents .= "<tr><td>" . link_to_package($doc, $showall) . "</td><td>" . $doc['descshort'] . "</td></tr>\n";
