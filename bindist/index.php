@@ -11,7 +11,7 @@ for ($i = 0; $i < $level; $i++) $relbase .= "../";
 
 // if we're at level 0, define the $excluded array for this directory
 if (!$level) 
-  $excluded = array("icons", "source");
+  $excluded = array("icons", "source", "img");
 if (!isset($excluded))
   $excluded = array();
 
