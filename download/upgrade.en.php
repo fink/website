@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Matrix";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2007/08/15 21:19:34 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/12/15 21:12:42 $';
 
 include "header.inc";
 ?>
@@ -51,7 +51,7 @@ Check the version of Fink you have by running
 <li>Run "<tt>fink selfupdate</tt>" in the terminal (Source->selfupdate).</li>
 <li>Run "<tt>fink update-all</tt>" in the terminal window (Source->update-all).  <p>This is necessary to ensure that all of your packages will actually run on your new OS version.  You may need to repeat this command to get all of the new packages built.</p></li></ol>
 
-<p>Note:  A prior version of this document (appropriate for older Fink versions) can be found <a href=./upgrade-old.en.php>here</a>.</p>
+<p>Note:  A prior version of this document (appropriate for older Fink versions) can be found <a href=upgrade-old.en.php>here</a>.</p>
 
 <?
 include "footer.inc";

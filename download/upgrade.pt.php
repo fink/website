@@ -1,7 +1,7 @@
 <?
 $title = "Matriz de atualização";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/25 03:04:23 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/12/15 21:12:42 $';
 
 include "header.inc";
 ?>
@@ -101,7 +101,7 @@ em que este texto foi escrito) é:</p>
 </ol>
 
 <p>Observação: uma versão antiga deste documento, adequada a versões do Fink
-mais antigas, pode ser encontrada <a href=./upgrade-old.en.php>aqui</a>.</p>
+mais antigas, pode ser encontrada <a href=upgrade-old.en.php>aqui</a>.</p>
 
 <?
 include "footer.inc";

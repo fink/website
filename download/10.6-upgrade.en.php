@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.6";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2010/11/15 21:45:37 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/12/15 21:12:42 $';
 
 include "header.inc";
 ?>
@@ -14,7 +14,7 @@ include "header.inc";
 <ol>
     <li>Before installing OS X 10.6, run <pre>fink selfupdate</pre> with rsync or cvs updating turned on, i.e. use <pre>fink selfupdate-rsync</pre> or 
     <pre>fink selfupdate-cvs</pre>, to bring <em>fink</em> to a current version.<br>
-    Use <pre>fink -V</pre> to check your package manager version, which needs to be at least 0.29.9 before updating.</br>
+    Use <pre>fink -V</pre> to check your package manager version, which needs to be at least 0.29.9 before updating.<br>
     <strong>Do not proceed if your package manager version is not at least 0.29.9!</strong>  You may need to follow these 
     <a href="../faq/upgrade-fink.php#leopard-bindist1">instructions</a> to update it.
     </li>
@@ -27,7 +27,7 @@ include "header.inc";
     <li>Run the command <pre>fink install perl588-core</pre> in case you have Fink packages which depend on it, as the system's Perl version was changed during the upgrade.</li>
     <li>Remove the <strong>NoAutoIndex: true</strong> line from <em>fink.conf</em>.</li>
 </ol>
-<p>After the upgrade, you may wish to run <pre>fink configure</pre> to do some cleanup.</p>
+<p>After the upgrade, you may wish to run <pre>fink configure</pre> to do some cleanup.
 
 <?
 include "footer.inc";
