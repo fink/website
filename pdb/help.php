@@ -1,7 +1,7 @@
 <?php
 $title = "Package Database - Help Needed";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/07 14:50:32 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/12/15 23:10:58 $';
 
 $have_key = isset($maintainer);
 
@@ -19,7 +19,7 @@ href="<?= $linkroot ?>doc/cvsaccess/index.php">packages from CVS</a>.
 
 <p>
 <a
-href="<?= $pdbroot ?>browse.php?tree=testing&nochildren=on">
+href="<?= $pdbroot ?>browse.php?tree=testing&amp;nochildren=on">
 Browse the full list
 </a> of packages that need testing.
 </p>
@@ -32,7 +32,7 @@ Help is also needed for packages without an active maintainer.
 
 <p>
 <a
-href="<?= $pdbroot ?>browse.php?maintainer=None&nochildren=on">
+href="<?= $pdbroot ?>browse.php?maintainer=None&amp;nochildren=on">
 Browse the full list
 </a> of packages without maintainer.
 </p>
