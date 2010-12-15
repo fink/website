@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 16:11:54 $';
+$cvs_date = '$Date: 2010/12/15 20:42:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -30,7 +30,7 @@ packages or build everything from source.
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
-<h1><a href="<? print $rdf_file; ?>" title="Subscribe to my feed, Fink Project News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+<h1><a href="<? print $rdf_file; ?>" title="Subscribe to my feed, Fink Project News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;News</h1>
 <?
 // Include news items
@@ -41,7 +41,7 @@ include "news/news.inc";
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
-<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable" title="Fink Package Updates (Unstable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable" title="Fink Package Updates (Unstable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;Recent Package Updates</h1>
 
 <?  include "package-updates.inc" ?>
@@ -69,7 +69,6 @@ Users are encouraged to update to OS 10.5.2 or later, via Software Update, in or
       </p>
 <strong>10.6 Support:</strong> 
 We are not currently supporting Xquartz on 10.6.
-      </p>
 
 <h1>Resources</h1>
 

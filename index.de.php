@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2009/07/26 15:32:37 $';
+$cvs_date = '$Date: 2010/12/15 20:42:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -30,7 +30,7 @@ Dabei überlassen wir es dem Nutzer, ob er die Software selber kompiliert oder s
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
-<h1><a href="<? print $rdf_file; ?>" title="Abonnieren Sie unseren feed, Fink-Projekt News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+<h1><a href="<? print $rdf_file; ?>" title="Abonnieren Sie unseren feed, Fink-Projekt News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;News</h1>
 <?
 // Include news items
@@ -41,7 +41,7 @@ include dirname(__FILE__) . "/news/news.de.inc";
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
-<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable" title="Fink Paket Aktualisierungen (Unstable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png"alt="" style="border:0"/></a>
+<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable" title="Fink Paket Aktualisierungen (Unstable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png"alt="" style="border:0"></a>
 &nbsp;Aktuelle Paket-Updates</h1>
 
 <?  include "package-updates.inc" ?>

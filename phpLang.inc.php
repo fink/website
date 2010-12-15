@@ -246,13 +246,13 @@ function AddFlags($between = "", $showCurrent = false, $root = '')
 	while(list($key, $name) = each($GLOBALS["phpLang_languages"])) {
 		if(file_exists(phpLang_localizedFileName($name[0])) && ($showCurrent || $name[0] != phpLang_current)) {
 			echo("\t" . $temp . '<a href="' . phpLang_currentURI . phpLang_urlParam . '=' . $name[0] . "\">\n");
-			echo("\t\t<img src=\"" . $root . phpLang_images . $name[0] . '.png" border="0" align="middle" width="24" height="16" alt="' . $name[1] . "\" />\n");
+			echo("\t\t<img src=\"" . $root . phpLang_images . $name[0] . '.png" border="0" align="middle" width="24" height="16" alt="' . $name[1] . "\">\n");
 			echo("\t</a>\n");
 			$temp = $between;
 		} elseif (file_exists(phpLang_localizedFileName($name[0]))) {
 			// Shows selected language
 			echo("\t\t<img src=\"" . $root . phpLang_images . $name[0] . '.png" border="0" align="middle" width="24" height="16" alt="' . $name[1] . "\"  \n");
-			echo("\t\t\tstyle=\"padding: 0px 0px 16px 0px;\" />\n");
+			echo("\t\t\tstyle=\"padding: 0px 0px 16px 0px;\">\n");
 			$temp = $between;
 		}
 	}

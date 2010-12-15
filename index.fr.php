@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2009/10/20 06:26:35 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/12/15 20:42:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -14,7 +14,7 @@ include dirname(__FILE__) . "/header.inc";
 <a href="http://www.apple.com/macosx/">Mac OS X</a>. Nous modifions les logiciels Unix pour qu'ils compilent et tournent sur Mac OS X (nous les "portons") et en faisons une distribution cohérente téléchargeable. Fink utilise des outils de gestion de paquets binaires <a href="http://www.debian.org/">Debian</a>, tels dpkg et apt-get. Vous avez le choix entre le téléchargement des paquets binaires précompilés ou la construction des paquets à partir des sources. <a href="about.php">Voir la suite...</a></p>
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
-<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-fr" title="Abonnez-vous aux Nouvelles du Projet Fink" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-fr" title="Abonnez-vous aux Nouvelles du Projet Fink" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;Dernières nouvelles</h1>
 
 <?
@@ -24,7 +24,7 @@ include dirname(__FILE__) . "/news/news.fr.inc";
 <div align="right"><a href="news/index.php?phpLang=fr">Nouvelles archivées...</a></div>
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
-<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable" title="Fink Package Updates (Unstable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"/></a>
+<h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable" title="Fink Package Updates (Unstable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;Recent Package Updates</h1>
 
 <?  include "package-updates.inc" ?>

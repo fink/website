@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/08/29 11:29:38 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2010/12/15 20:42:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -30,7 +30,7 @@ desde código fuente.
 
 <h1><a href="<? print $rdf_file; ?>" title="Noticias del Proyecto Fink"
 rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png"
-alt="" style="border: 0"/></a>&nbsp;Noticias</h1>
+alt="" style="border: 0"></a>&nbsp;Noticias</h1>
 <?
 // Include news items
 include dirname(__FILE__) . "/news/news.es.inc";
@@ -42,7 +42,7 @@ include dirname(__FILE__) . "/news/news.es.inc";
 <h1><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable"
 title="Actualizacions de paquetes en Fink (unstable)" rel="alternate"
 type="application/rss+xml"><img src="img/feed-icon16x16.png" alt=""
-style="border:0"/></a>&nbsp;Actualizaciones recientes de paquetes</h1>
+style="border:0"></a>&nbsp;Actualizaciones recientes de paquetes</h1>
 
 <? include "package-updates.inc" ?>
 
