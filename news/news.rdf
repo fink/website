@@ -5,15 +5,15 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2010-12-31T15:27:46-08:00</dc:date>
+    <dc:date>2010-12-31T15:38:37-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!">
       <title>Happy 10th Birthday to Fink!</title>
       <link>http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!</link>
       <guid>http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!</guid>
       <description>
-      <p>The Fink project started in the waning days of December 2000 by
-Christoph Pfisterer, using the ``public beta'' release of Mac OS X.
+      <p>The Fink project was started in the waning days of December 2000 by
+Christoph Pfisterer, using the "public beta" release of Mac OS X.
 Within a year, versions 10.0 and 10.1 of OS X had been released, and
 Fink usage took off.  Our founder chrisp stepped away from the project
 in November 2001, and the community took over.</p>
@@ -26,8 +26,8 @@ all join together to keep Fink going for a long time to come.</p>
 and Beyond!</p>
      </description>
       <content:encoded>
-      <p>The Fink project started in the waning days of December 2000 by
-Christoph Pfisterer, using the ``public beta'' release of Mac OS X.
+      <p>The Fink project was started in the waning days of December 2000 by
+Christoph Pfisterer, using the "public beta" release of Mac OS X.
 Within a year, versions 10.0 and 10.1 of OS X had been released, and
 Fink usage took off.  Our founder chrisp stepped away from the project
 in November 2001, and the community took over.</p>

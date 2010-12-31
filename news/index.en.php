@@ -1,15 +1,15 @@
 <?
 $title = "News";
 $cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2010/12/31 23:27:24';
+$cvs_date = 'Date: 2010/12/31 23:38:14';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
 <a name="2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">Happy 10th Birthday to Fink!</span></a><?php gray_line(); ?>
-      <p>The Fink project started in the waning days of December 2000 by
-Christoph Pfisterer, using the ``public beta'' release of Mac OS X.
+      <p>The Fink project was started in the waning days of December 2000 by
+Christoph Pfisterer, using the "public beta" release of Mac OS X.
 Within a year, versions 10.0 and 10.1 of OS X had been released, and
 Fink usage took off.  Our founder chrisp stepped away from the project
 in November 2001, and the community took over.</p>

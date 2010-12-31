@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.116 2010/12/31 23:27:24 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.117 2010/12/31 23:38:14 dmrrsn Exp $</cvsid>
   <newsitem>
     <date>2010-12-31</date>
     <headline>Happy 10th Birthday to Fink!</headline>
     <body>
-      <p>The Fink project started in the waning days of December 2000 by
-Christoph Pfisterer, using the ``public beta'' release of Mac OS X.
+      <p>The Fink project was started in the waning days of December 2000 by
+Christoph Pfisterer, using the "public beta" release of Mac OS X.
 Within a year, versions 10.0 and 10.1 of OS X had been released, and
 Fink usage took off.  Our founder chrisp stepped away from the project
 in November 2001, and the community took over.</p>
