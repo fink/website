@@ -1,4 +1,23 @@
-<a name="2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">Happy 10th Birthday to Fink!</span></a><?php gray_line(); ?>
+<a name="2011-01-05%20Temporary%20rysnc%20mirror%20outage."><span class="news-date">2011-01-05: </span><span class="news-headline">Temporary rysnc mirror outage.</span></a><?php gray_line(); ?>
+      <p>We are experiencing a temporary failure in some of the rsync mirrors.
+      If you have not seen updates in a while, then you may wish to change your
+      rsync mirror for the time being by editing <code>/sw/etc/fink.conf</code> as a superuser
+      and replacing the line that starts with <code>Mirror-rsync</code> with
+        <code>Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</code></p>
+        <p>or</p><p>
+        <code>Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</code></p>
+        <p>or</p><p>
+        <code>Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</code></p>
+         <p>or</p><p>
+        <code>Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</code></p>       
+      <p>If you prefer, you can select the latter three of the above mirrors via <code>fink configure</code>
+      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
+      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
+      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
+      (3) as the rsync mirror, or Netherlands (27) and
+      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
+
+    <a name="2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">Happy 10th Birthday to Fink!</span></a><?php gray_line(); ?>
       <p>The Fink project was started in the waning days of December 2000 by
 Christoph Pfisterer, using the "public beta" release of Mac OS X.
 Within a year, versions 10.0 and 10.1 of OS X had been released, and
@@ -15,9 +34,4 @@ and Beyond!</code></p>
       <p><code>fink-0.29.16</code> has been released to the unstable tree.
       This version of <code>fink</code> updates the versions of packages used for bootstrapping.</p>
       <p>It is planned to add this version of <code>fink</code> to the stable tree shortly.</p>
-     <a name="2010-11-02%20Libtool%20archive%20file%20cleaning%20now%20in%20stable."><span class="news-date">2010-11-02: </span><span class="news-headline">Libtool archive file cleaning now in stable.</span></a><?php gray_line(); ?>
-      <p><code>dpkg-1.10.21-1229</code> has been added to stable.  This
-      revision automatically cleans up libtool archive (<code>.la</code>)
-      files, which have historically caused problems for folks upgrading from 10.5
-      to 10.6.</p>  
-    
+     

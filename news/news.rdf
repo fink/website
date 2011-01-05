@@ -5,8 +5,53 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2010-12-31T15:38:37-08:00</dc:date>
+    <dc:date>2011-01-05T10:01:37-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.">
+      <title>Temporary rysnc mirror outage.</title>
+      <link>http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.</guid>
+      <description>
+      <p>We are experiencing a temporary failure in some of the rsync mirrors.
+      If you have not seen updates in a while, then you may wish to change your
+      rsync mirror for the time being by editing /sw/etc/fink.conf as a superuser
+      and replacing the line that starts with Mirror-rsync with
+        Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</p>
+        <p>or</p><p>
+        Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</p>
+        <p>or</p><p>
+        Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</p>
+         <p>or</p><p>
+        Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</p>       
+      <p>If you prefer, you can select the latter three of the above mirrors via fink configure
+      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
+      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
+      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
+      (3) as the rsync mirror, or Netherlands (27) and
+      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
+
+    </description>
+      <content:encoded>
+      <p>We are experiencing a temporary failure in some of the rsync mirrors.
+      If you have not seen updates in a while, then you may wish to change your
+      rsync mirror for the time being by editing /sw/etc/fink.conf as a superuser
+      and replacing the line that starts with Mirror-rsync with
+        Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</p>
+        <p>or</p><p>
+        Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</p>
+        <p>or</p><p>
+        Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</p>
+         <p>or</p><p>
+        Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</p>       
+      <p>If you prefer, you can select the latter three of the above mirrors via fink configure
+      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
+      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
+      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
+      (3) as the rsync mirror, or Netherlands (27) and
+      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
+
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!">
       <title>Happy 10th Birthday to Fink!</title>
       <link>http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!</link>
@@ -515,47 +560,6 @@ distribution.
 </p>
 <p>Update, 2008-07-11: If you use the binary installer, you
 should run fink selfupdate after installation.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F">
-      <title>Mirror, mirror on the wall, will someone sponsor Fink at all?</title>
-      <link>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall%2C%20will%20someone%20sponsor%20Fink%20at%20all%3F</guid>
-      <description>
-        <p>
-Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
-</p>
-        <p>
-We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
-Recently our list of mirrors had to be shortened considerably and we need your help to improve its level of quality again.
-</p>
-    <p>
-Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
-All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
-For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
-We are looking for mirrors all over the world, but specifically in these countries:</p>
-United StatesJapanGermanyFranceUnited KingdomCanadaItalySpainSwitzerlandAustralia
-    <p>
-We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
-</p>
-</description>
-      <content:encoded>
-        <p>
-Every large open source project has to face the problem of distribution and Fink is no different. We want you to get all the files you need to build your favourite application as quickly as possible. A mirror close to your location is a first step to achieving that. 
-</p>
-        <p>
-We are actively working on building a reliable distribution infrastructure consisting of mirrors sponsored by universities and corporations. 
-Recently our list of mirrors had to be shortened considerably and we need your help to improve its level of quality again.
-</p>
-    <p>
-Are you a student? Are you a professor? Do you run a Data Center? Are you a developer with free time to spare? Even if you cannot say yes to any of those questions you still might be able to help.
-All the relevant information on how to run and sponsor a mirror can be found on the <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>.
-For specific questions you can <a href="mailto:fink-core-private@lists.sourceforge.net">contact us</a> directly.
-We are looking for mirrors all over the world, but specifically in these countries:</p>
-United StatesJapanGermanyFranceUnited KingdomCanadaItalySpainSwitzerlandAustralia
-    <p>
-We would like to take this opportunity to thank those who are already providing Fink with mirrors. Without your continued support Fink would not be able to provide the level of service it currently does. Thank you!
-</p>
 </content:encoded>
     </item>
   </channel>
