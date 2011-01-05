@@ -1,7 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.117 2010/12/31 23:38:14 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.118 2011/01/05 14:59:11 alexkhansen Exp $</cvsid>
+  <newsitem>
+    <date>2011-01-05</date>
+    <headline>Temporary rysnc mirror outage.</headline>
+    <body>
+      <p>We are experiencing a temporary failure in some of the rsync mirrors.
+      If you have not seen updates in a while, then you may wish to change your
+      rsync mirror for the time being by editing <code>/sw/etc/fink.conf</code> as a superuser
+      and replacing the line that starts with <code>Mirror-rsync</code> with
+        <code>Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</code></p>
+        <p>or</p><p>
+        <code>Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</code></p>
+        <p>or</p><p>
+        <code>Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</code></p>
+         <p>or</p><p>
+        <code>Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</code></p>       
+      <p>If you prefer, you can select the latter three of the above mirrors via <code>fink configure</code>
+      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
+      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
+      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
+      (3) as the rsync mirror, or Netherlands (27) and
+      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
+
+    </body>
+  </newsitem>
   <newsitem>
     <date>2010-12-31</date>
     <headline>Happy 10th Birthday to Fink!</headline>
