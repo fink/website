@@ -1,8 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
-	<cvsid>$Id: news.ja.xml,v 1.49 2010/09/05 19:31:29 gecko2 Exp $</cvsid>
+	<cvsid>$Id: news.ja.xml,v 1.50 2011/01/06 00:23:39 babayoshihiko Exp $</cvsid>
+  <newsitem>
+    <date>2010-12-31</date>
+    <headline>10周年記念、おめでとう Fink!</headline>
+    <body>
+      <p>Fink プロジェクトは、2000年12月の暮れに、Christoph Pfisterer によって、
+      Mac OS X のパブリックベータ版を使って始まった。
+      1年も経たないうちに、OS X の 10.0 と 10.1 がリリースされ、Fink が使われるようになった。
+      創設者の chrisp は 2001年11月にプロジェクトから離れ、コミュニティが跡を継いだ。</p>
+      <p>Fink コミュニティは、パッケージメンテナとユーザ、それに全体システムを良い形に保とうとする小さなコアチームから構成され、Fink のハートです。
+      Fink を10年間にわたり活発にしてきたこのコミュニティの取組みは、まさに驚愕です!
+      皆さんも一緒に、Fink が長く続きますように。</p>
+      <p>どれくらい長く続くのだろうか? Buzz Lightyear の言葉を借りるならば、
+      <code>無限の彼方まで!</code></p>
+     </body>
+  </newsitem>
+  <newsitem>
+    <date>2010-11-09</date>
+    <headline>fink-0.29.16 リリース。</headline>
+    <body>
+      <p><filename>fink-0.29.16</filename> が unstable ツリーにリリースされました。
+      このバージョンの <filename>fink</filename> は、bootstrap に使われるパッケージを更新します。</p>
+      <p>間もなく、この <filename>fink</filename> は stable ツリーにも反映されます。</p>
+     </body>
+  </newsitem>
 
+  <newsitem>
+    <date>2010-11-02</date>
+    <headline>Libtool アーカイブファイルのクリアが stable に。</headline>
+    <body>
+      <p><filename>dpkg-1.10.21-1229</filename> が stable に追加されました。
+      このリビジョンは、これまで10.5 から 10.6 にアップグレードする際に問題を起こしてきた、
+      libtool アーカイブ (<filename>.la</filename>) を自動的に削除しいます。</p>  
+    </body>
+  </newsitem>
+
+  <newsitem>
+    <date>2010-11-02</date>
+    <headline>KDE3 と GNOME が stable。</headline>
+    <body>
+      <p><filename>KDE-3.5.10</filename> andと <filename>GNOME-2.28</filename>
+      が、他の依存パッケージとともに stable ツリーに追加されました。
+      </p>
+    </body>
+  </newsitem>
+
+  <newsitem>
+    <date>2010-10-23</date>
+    <headline>fink-0.29.15 リリース。</headline>
+    <body>
+      <p><filename>fink-0.29.15</filename>
+      が unstable ツリーにリリースされました。
+      このバージョンの <filename>fink</filename> は、 <code>system-java-dev</code> 
+      というバーチャルパッケージの作成時のエラー修正を含んでいます。
+      </p>
+      <p>全ての <code>system-java-dev</code> パッケージが 10.5 と 10.6 で表示されるには、
+      この修正とあわせて、<link url="http://connect.apple.com/">The Apple Developer Connection site</link>
+      適切なバージョンの Java Developer Package をダウンロードする必要もあります。
+      </p>
+      <p>このバージョンの <filename>fink</filename> は、すぐに stable ツリーにも追加される予定です。</p>
+      <p><em>Update, 2010-11-01:</em>  <filename>fink-0.29.15</filename> が stable ツリーに追加されました。</p>
+    </body>
+  </newsitem>
+
+  <newsitem>
+    <date>2010-10-20</date>
+    <headline>Java 更新が system-java-dev virtual package 生成を壊す。</headline>
+    <body>
+      <p>
+      最近の 10.5 と 10.6 の Java アップデート
+       (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
+      および APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
+      は、Java ファイル設定を変えてしまい、
+      <filename>fink</filename> が 10.5 上の <code>system-java16-dev</code> あるいは
+      10.6 上の <code>system-java-dev</code> が生成されなくなりました。</p>
+      <p>Fink ユーザは、この問題を解決する新しいバージョンの <filename>fink</filename>
+      がリリースされるまで待って頂くようお願い申し上げます。
+      この問題は、現在インストールされているパッケージには影響は<em>ありません</em>が、
+      java に依存するパッケージのビルドができなくなります。</p>
+      <p>適切な時バージョンの Java Developer Package を 
+      <link url="http://connect.apple.com/">The Apple Developer Connection site</link>
+      からダウンロードすることもできます。</p>
+      <p><em>Update, 2010-10-23:</em> この問題は <filename>fink-0.29.15</filename> で対処されました。</p>
+    </body>
+  </newsitem>
+
+  <newsitem>
+    <date>2010-10-19</date>
+    <headline>fink-0.29.14 リリース。</headline>
+    <body>
+      <p><filename>fink-0.29.14</filename> 
+      が unstable ツリーにリリースされました。
+      このバージョンの <filename>fink</filename> は、 
+      高速ダウンロード <filename>aria2</filename> (Fink からインストール可能) を使えるよう、
+       <code>DownloadMethod</code> に <code>aria2</code> が加わり、
+       また、よくある "node exists" というエラーの修正など、
+       多くの変更点があります。
+      </p>
+      <p>It is planned to add this version to the stable tree shortly.</p>
+      <p><em>Addendum, 2010-10-19:</em>  because of the Java update (2010-10-20),
+      <filename>fink-0.29.15</filename> is now slated to be the version next to go to stable.</p>
+    </body>
+  </newsitem>
   <newsitem>
     <date>2009-10-30</date>
     <headline>サーバー復帰。</headline>
