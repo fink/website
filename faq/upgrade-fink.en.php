@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Upgrading Fink";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/11/05 02:14:36';
+$cvs_date = 'Date: 2011/01/06 16:28:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink"><link rel="prev" href="mirrors.php?phpLang=en" title="Fink mirrors">';
 
 

@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/11/05 02:14:36';
+$cvs_date = 'Date: 2011/01/06 16:28:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -173,18 +173,10 @@ fink scanpackages
       <div class="question"><p><b><? echo FINK_Q ; ?>5.12: Help! I used the "[A]ccess" menu entry in dselect and now I can't
         download packages any more!</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You probably pointed apt at a Debian mirror, which of course
-        doesn't have the Fink files. You can fix this manually or through
-        dselect. To fix it manually, edit the file
-        <code>/sw/etc/apt/sources.list</code> in a text editor as root. Remove
-        lines that mention debian.org and replace them with these:</p><pre>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
-deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><p>(Or if you live in Europe, you can use
-        <code>eu.dl.sourceforge.net</code> instead of
-        <code>us.dl.sourceforge.net</code>)</p><p>To fix it through dselect, run "[A]ccess" again, choose the "apt"
-        method and enter the following info:</p><p>URL: http://us.dl.sourceforge.net/fink/direct_download -
-        Distribution: release - Components: main crypto</p><p>Then, say you want to add another source and repeat the process
-        with "current" instead of "release".</p><p>A fixed version of the apt package (which provides the
-        configuration script as a plug-in for dselect) is making it's way
-        through CVS now.</p></div>
+        doesn't have the Fink files. Use</p><pre>fink configure</pre><p>from a terminal window, go through all of the options to the mirror
+	selection step, and then pick an <b>apt-get repository</b> mirror
+	other than the default (which is your current setting).  Then go through
+	the rest of the options so that your change will be saved.</p></div>
     </a>
     <a name="cvs-busy">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.13: When I try to run <q>fink selfupdate</q> or "fink
