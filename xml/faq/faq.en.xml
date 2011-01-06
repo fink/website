@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.110 2010/11/05 02:14:36 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.111 2011/01/06 16:28:28 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -488,24 +488,12 @@ fink scanpackages
       </question>
       <answer>
         <p>You probably pointed apt at a Debian mirror, which of course
-        doesn't have the Fink files. You can fix this manually or through
-        dselect. To fix it manually, edit the file
-        <code>/sw/etc/apt/sources.list</code> in a text editor as root. Remove
-        lines that mention debian.org and replace them with these:</p>
-        <codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
-deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeblock>
-        <p>(Or if you live in Europe, you can use
-        <code>eu.dl.sourceforge.net</code> instead of
-        <code>us.dl.sourceforge.net</code>)</p>
-        <p>To fix it through dselect, run "[A]ccess" again, choose the "apt"
-        method and enter the following info:</p>
-        <p>URL: http://us.dl.sourceforge.net/fink/direct_download -
-        Distribution: release - Components: main crypto</p>
-        <p>Then, say you want to add another source and repeat the process
-        with "current" instead of "release".</p>
-        <p>A fixed version of the apt package (which provides the
-        configuration script as a plug-in for dselect) is making it's way
-        through CVS now.</p>
+        doesn't have the Fink files. Use</p>
+	<codeblock>fink configure</codeblock>
+	<p>from a terminal window, go through all of the options to the mirror
+	selection step, and then pick an <em>apt-get repository</em> mirror
+	other than the default (which is your current setting).  Then go through
+	the rest of the options so that your change will be saved.</p>
       </answer>
     </faqentry>
     <faqentry name="cvs-busy">
