@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/01/05 14:59:11';
+$cvs_date = 'Date: 2011/01/07 20:16:42';
 $metatags = '';
 
 include_once "header.inc";
@@ -25,7 +25,7 @@ include_once "header.inc";
       or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
       (3) as the rsync mirror, or Netherlands (27) and
       rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
-
+      <p><b>Update, 2011-01-07</b>  The mirrors are updating again.</p>
     <a name="2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">Happy 10th Birthday to Fink!</span></a><?php gray_line(); ?>
       <p>The Fink project was started in the waning days of December 2000 by
 Christoph Pfisterer, using the "public beta" release of Mac OS X.
