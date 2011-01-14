@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.111 2011/01/06 16:28:28 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.112 2011/01/14 01:28:07 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1322,11 +1322,20 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
     </faqentry>
     <faqentry name="system-java">
       <question>
-        <p>Fink says <code>Failed: Can't resolve dependency "system-java14-dev"</code>, but there's no such package.</p>
+        <p>Fink says <code>Failed: Can't resolve dependency "system-java-dev"</code>, but there's no such package.</p>
       </question>
       <answer>
-        <p>That's because it's a virtual package.  This type of error occurs when Java gets updated by Software Update:  the header files get removed, which causes the -dev package not to be generated.</p>
-        <p>You need to download the appropriate <filename>Java Developer Tools</filename> package from <link url="http://connect.apple.com">Apple</link>.  In this specific case that's the <filename>Java 1.4.2 Developer Tools</filename>.</p>
+        <p>That's because it's a virtual package.  At the time of this writing (Jan. 2011), this issue 
+        commonly shows up on Leopard and Snow Leopard due to changes in Apple's Java packaging.</p>
+        <p>Make sure that your package manager version is <em>0.29.15</em> or later, e.g. via</p>
+        <codeblock>fink -V</codeblock>
+        <p>If your <filename>fink</filename> version is older, use</p>
+        <codeblock>fink selfupdate</codeblock>
+        <p>If your Distribution version shows <em>point</em>, switch to rsync or cvs updating via</p>
+        <codeblock>fink selfupdate-rsync</codeblock>
+        <p>or</p>
+        <codeblock>fink selfupdate-cvs</codeblock>
+        <p>You will also need to download the <filename>Java Developer Package</filename> from <link url="http://connect.apple.com">Apple</link>.</p>
       </answer>
     </faqentry>
     <faqentry name="dpkg-split">
