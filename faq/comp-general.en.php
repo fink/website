@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/01/14 01:28:07';
+$cvs_date = 'Date: 2011/01/14 01:35:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -239,7 +239,8 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     <a name="system-java">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink says <code>Failed: Can't resolve dependency "system-java-dev"</code>, but there's no such package.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> That's because it's a virtual package.  At the time of this writing (Jan. 2011), this issue 
-        commonly shows up on Leopard and Snow Leopard due to changes in Apple's Java packaging.</p><p>Make sure that your package manager version is <b>0.29.15</b> or later, e.g. via</p><pre>fink -V</pre><p>If your <code>fink</code> version is older, use</p><pre>fink selfupdate</pre><p>If your Distribution version shows <b>point</b>, switch to rsync or cvs updating via</p><pre>fink selfupdate-rsync</pre><p>or</p><pre>fink selfupdate-cvs</pre><p>You will also need to download the <code>Java Developer Package</code> from <a href="http://connect.apple.com">Apple</a>.</p></div>
+        commonly shows up on Leopard and Snow Leopard due to changes in Apple's Java packaging.</p><p>Make sure that your package manager version is <b>0.29.15</b> or later, e.g. via</p><pre>fink -V</pre><p>If your <code>fink</code> version is older, use</p><pre>fink selfupdate</pre><p>If your <code>Distribution version</code> shows <b>point</b>, switch to <b>rsync</b> 
+        or <b>cvs</b> updating via</p><pre>fink selfupdate-rsync</pre><p>or</p><pre>fink selfupdate-cvs</pre><p>You will also need to download the <code>Java Developer Package</code> from <a href="http://connect.apple.com">Apple</a>.</p></div>
     </a>
     <a name="dpkg-split">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.18: When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</b></p></div>
