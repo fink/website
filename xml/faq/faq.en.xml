@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.112 2011/01/14 01:28:07 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.113 2011/01/14 01:35:40 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1331,7 +1331,8 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <codeblock>fink -V</codeblock>
         <p>If your <filename>fink</filename> version is older, use</p>
         <codeblock>fink selfupdate</codeblock>
-        <p>If your Distribution version shows <em>point</em>, switch to rsync or cvs updating via</p>
+        <p>If your <code>Distribution version</code> shows <em>point</em>, switch to <em>rsync</em> 
+        or <em>cvs</em> updating via</p>
         <codeblock>fink selfupdate-rsync</codeblock>
         <p>or</p>
         <codeblock>fink selfupdate-cvs</codeblock>
