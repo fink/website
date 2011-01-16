@@ -5,8 +5,33 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-01-07T15:22:20-05:00</dc:date>
+    <dc:date>2011-01-16T14:51:32-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.">
+      <title>fink-0.29.19 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.</guid>
+      <description>
+      <p>Version 0.29.19 of the fink package manager has just been
+      released to the unstable tree.  This version of fink
+      features more verbose output from 'fink --version' for debugging purposes,
+      as well as recognizing OS 10.6.6.  (Versions 0.29.17 and 0.29.18 work fine
+      on 10.6.6, however).</p>
+      <p>It is expected that this version will migrate to the stable tree soon,
+      provided that there are no reports of bad behavior from unstable tree
+      users.</p>
+    </description>
+      <content:encoded>
+      <p>Version 0.29.19 of the fink package manager has just been
+      released to the unstable tree.  This version of fink
+      features more verbose output from 'fink --version' for debugging purposes,
+      as well as recognizing OS 10.6.6.  (Versions 0.29.17 and 0.29.18 work fine
+      on 10.6.6, however).</p>
+      <p>It is expected that this version will migrate to the stable tree soon,
+      provided that there are no reports of bad behavior from unstable tree
+      users.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.">
       <title>Temporary rysnc mirror outage.</title>
       <link>http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.</link>
@@ -513,53 +538,6 @@ If you are eager to start using this massive gnome update immediately,
 we suggest that you switch to the unstable tree.  If not, we suggest
 that you hold off running "fink selfupdate" for a while (perhaps a
 week or two) until things have again stabilized.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.">
-      <title>New Fink release.</title>
-      <link>http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.</link>
-      <guid>http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.</guid>
-      <description>
-      <p>
-A new (binary) Fink release for OS X 10.5 (Leopard) is 
-<a href="http://fink.sourceforge.net/download/index.php">available</a>
- today: version 0.9.0, which can be installed on either Intel or PowerPC
-hardware.
-The release includes source files, binary packages, and  Fink
-installers for both kinds of hardware.
-</p>
-      <p>
-Users who have already installed Fink on Leopard from source, who now wish
-to switch to the binary distribution, may do so as follows.  First,
-run fink selfupdate to update to the latest version of the
-fink package manager.  Next, run fink configure, and be sure
-to change your choice about using the binary distribution from No
-to yes.  Finally, run fink scanpackages to activate the binary
-distribution.
-</p>
-<p>Update, 2008-07-11: If you use the binary installer, you
-should run fink selfupdate after installation.</p>
-</description>
-      <content:encoded>
-      <p>
-A new (binary) Fink release for OS X 10.5 (Leopard) is 
-<a href="http://fink.sourceforge.net/download/index.php">available</a>
- today: version 0.9.0, which can be installed on either Intel or PowerPC
-hardware.
-The release includes source files, binary packages, and  Fink
-installers for both kinds of hardware.
-</p>
-      <p>
-Users who have already installed Fink on Leopard from source, who now wish
-to switch to the binary distribution, may do so as follows.  First,
-run fink selfupdate to update to the latest version of the
-fink package manager.  Next, run fink configure, and be sure
-to change your choice about using the binary distribution from No
-to yes.  Finally, run fink scanpackages to activate the binary
-distribution.
-</p>
-<p>Update, 2008-07-11: If you use the binary installer, you
-should run fink selfupdate after installation.</p>
 </content:encoded>
     </item>
   </channel>
