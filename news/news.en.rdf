@@ -5,31 +5,65 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-01-16T14:51:32-05:00</dc:date>
+    <dc:date>2011-02-10T16:41:06-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.">
+      <title>CVS access restored.</title>
+      <link>http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.</guid>
+      <description>
+      <p>Checkouts and commits now work again.  Thanks for your patience.</p>
+    </description>
+      <content:encoded>
+      <p>Checkouts and commits now work again.  Thanks for your patience.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-01-26%20CVS%20access%20is%20down.">
+      <title>CVS access is down.</title>
+      <link>http://fink.sourceforge.net/news/#2011-01-26%20CVS%20access%20is%20down.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-01-26%20CVS%20access%20is%20down.</guid>
+      <description>
+      <p>Due to an attack, our files are not accessible via CVS from Sourceforge.
+      For status updates check out
+      <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
+      sourceforge page</a>.</p>
+    </description>
+      <content:encoded>
+      <p>Due to an attack, our files are not accessible via CVS from Sourceforge.
+      For status updates check out
+      <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
+      sourceforge page</a>.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.">
       <title>fink-0.29.19 released.</title>
       <link>http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.</link>
       <guid>http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.</guid>
       <description>
       <p>Version 0.29.19 of the fink package manager has just been
-      released to the unstable tree.  This version of fink
-      features more verbose output from 'fink --version' for debugging purposes,
-      as well as recognizing OS 10.6.6.  (Versions 0.29.17 and 0.29.18 work fine
-      on 10.6.6, however).</p>
+      released to the unstable tree.  This version of fink         
+      features more verbose output from 'fink --version' for debugging purposes\
+,                                                                               
+      as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
+      on 10.6.6, however.)</p>
       <p>It is expected that this version will migrate to the stable tree soon,
-      provided that there are no reports of bad behavior from unstable tree
+      provided that there are no reports of bad behavior from unstable tree     
       users.</p>
+      <p>Update, 2011-01-22    fink-0.29.19 has been adde\
+d to stable.</p>
     </description>
       <content:encoded>
       <p>Version 0.29.19 of the fink package manager has just been
-      released to the unstable tree.  This version of fink
-      features more verbose output from 'fink --version' for debugging purposes,
-      as well as recognizing OS 10.6.6.  (Versions 0.29.17 and 0.29.18 work fine
-      on 10.6.6, however).</p>
+      released to the unstable tree.  This version of fink         
+      features more verbose output from 'fink --version' for debugging purposes\
+,                                                                               
+      as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
+      on 10.6.6, however.)</p>
       <p>It is expected that this version will migrate to the stable tree soon,
-      provided that there are no reports of bad behavior from unstable tree
+      provided that there are no reports of bad behavior from unstable tree     
       users.</p>
+      <p>Update, 2011-01-22    fink-0.29.19 has been adde\
+d to stable.</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.">
@@ -464,80 +498,6 @@ to keep Fink up to date, and to prepare for the upcoming Snow Leopard
 release.  More volunteers are always needed, so please consider
 getting involved at some level!
 </p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.">
-      <title>End of 10.3 support.</title>
-      <link>http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.</link>
-      <guid>http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.</guid>
-      <description>
-      <p>
-The Fink project is no longer able to offer support for users of Fink
-on Mac OS X 10.3. In reality there has been very little support for
-some time, so this announcement simply formalizes that fact.
-</p><p>
-This means that there will not be any further updates, not even
-security updates, for Mac OS X 10.3 users. Their existing
-installations will continue to work, but the software that is
-installed will not be updated.
-</p><p>
-We believe that the majority of our users are using Mac OS X 10.4 or
-10.5 and hope that this does not inconvenience too many people. 
-</p>
-</description>
-      <content:encoded>
-      <p>
-The Fink project is no longer able to offer support for users of Fink
-on Mac OS X 10.3. In reality there has been very little support for
-some time, so this announcement simply formalizes that fact.
-</p><p>
-This means that there will not be any further updates, not even
-security updates, for Mac OS X 10.3 users. Their existing
-installations will continue to work, but the software that is
-installed will not be updated.
-</p><p>
-We believe that the majority of our users are using Mac OS X 10.4 or
-10.5 and hope that this does not inconvenience too many people. 
-</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.">
-      <title>Mass package migration.</title>
-      <link>http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.</link>
-      <guid>http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.</guid>
-      <description>
-      <p>
-The massive GNOME update which has been in process for
-many months was merged into fink's unstable tree.  This is well
-tested, and updates by users appear to be going fairly smoothly.
-</p><p>
-We are now merging the gnome update into the stable tree.  Because
-we have been unable to test the dependencies of these new packages in
-the stable tree in advance, users can expect the "stable" tree to be
-"not so stable" during the next few weeks, while the bugs get worked
-out.
-</p><p>
-If you are eager to start using this massive gnome update immediately,
-we suggest that you switch to the unstable tree.  If not, we suggest
-that you hold off running "fink selfupdate" for a while (perhaps a
-week or two) until things have again stabilized.</p>
-</description>
-      <content:encoded>
-      <p>
-The massive GNOME update which has been in process for
-many months was merged into fink's unstable tree.  This is well
-tested, and updates by users appear to be going fairly smoothly.
-</p><p>
-We are now merging the gnome update into the stable tree.  Because
-we have been unable to test the dependencies of these new packages in
-the stable tree in advance, users can expect the "stable" tree to be
-"not so stable" during the next few weeks, while the bugs get worked
-out.
-</p><p>
-If you are eager to start using this massive gnome update immediately,
-we suggest that you switch to the unstable tree.  If not, we suggest
-that you hold off running "fink selfupdate" for a while (perhaps a
-week or two) until things have again stabilized.</p>
 </content:encoded>
     </item>
   </channel>

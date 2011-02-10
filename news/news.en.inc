@@ -1,42 +1,20 @@
-<a name="2011-01-16%20fink-0.29.19%20released."><span class="news-date">2011-01-16: </span><span class="news-headline">fink-0.29.19 released.</span></a><?php gray_line(); ?>
+<a name="2011-02-10%20CVS%20access%20restored."><span class="news-date">2011-02-10: </span><span class="news-headline">CVS access restored.</span></a><?php gray_line(); ?>
+      <p>Checkouts and commits now work again.  Thanks for your patience.</p>
+    <a name="2011-01-26%20CVS%20access%20is%20down."><span class="news-date">2011-01-26: </span><span class="news-headline">CVS access is down.</span></a><?php gray_line(); ?>
+      <p>Due to an attack, our files are not accessible via CVS from Sourceforge.
+      For status updates check out
+      <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
+      sourceforge page</a>.</p>
+    <a name="2011-01-16%20fink-0.29.19%20released."><span class="news-date">2011-01-16: </span><span class="news-headline">fink-0.29.19 released.</span></a><?php gray_line(); ?>
       <p>Version 0.29.19 of the <code>fink</code> package manager has just been
-      released to the unstable tree.  This version of <code>fink</code>
-      features more verbose output from 'fink --version' for debugging purposes,
-      as well as recognizing OS 10.6.6.  (Versions 0.29.17 and 0.29.18 work fine
-      on 10.6.6, however).</p>
+      released to the unstable tree.  This version of <code>fink</code>         
+      features more verbose output from 'fink --version' for debugging purposes\
+,                                                                               
+      as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
+      on 10.6.6, however.)</p>
       <p>It is expected that this version will migrate to the stable tree soon,
-      provided that there are no reports of bad behavior from unstable tree
+      provided that there are no reports of bad behavior from unstable tree     
       users.</p>
-    <a name="2011-01-05%20Temporary%20rysnc%20mirror%20outage."><span class="news-date">2011-01-05: </span><span class="news-headline">Temporary rysnc mirror outage.</span></a><?php gray_line(); ?>
-      <p>We are experiencing a temporary failure in some of the rsync mirrors.
-      If you have not seen updates in a while, then you may wish to change your
-      rsync mirror for the time being by editing <code>/sw/etc/fink.conf</code> as a superuser
-      and replacing the line that starts with <code>Mirror-rsync</code> with
-        <code>Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</code></p>
-        <p>or</p><p>
-        <code>Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</code></p>
-        <p>or</p><p>
-        <code>Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</code></p>
-         <p>or</p><p>
-        <code>Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</code></p>       
-      <p>If you prefer, you can select the latter three of the above mirrors via <code>fink configure</code>
-      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
-      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
-      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
-      (3) as the rsync mirror, or Netherlands (27) and
-      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
-      <p><b>Update, 2011-01-07</b>  The mirrors are updating again.</p>
-    <a name="2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">Happy 10th Birthday to Fink!</span></a><?php gray_line(); ?>
-      <p>The Fink project was started in the waning days of December 2000 by
-Christoph Pfisterer, using the "public beta" release of Mac OS X.
-Within a year, versions 10.0 and 10.1 of OS X had been released, and
-Fink usage took off.  Our founder chrisp stepped away from the project
-in November 2001, and the community took over.</p>
-<p>The Fink community is the heart of Fink, involving both package maintainers
-and Fink users, as well as the small core team which tries to keep the
-overall system in good shape.  The success of this community in keeping
-Fink viable and active over ten years is really quite remarkable!  Let's
-all join together to keep Fink going for a long time to come.</p>
-<p>How long?  In the memorable words of Buzz Lightyear: <code>To Infinity
-and Beyond!</code></p>
-     
+      <p><b>Update, 2011-01-22</b>    <code>fink-0.29.19</code> has been adde\
+d to stable.</p>
+    
