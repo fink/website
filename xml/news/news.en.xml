@@ -1,19 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.120 2011/01/16 19:46:46 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.121 2011/02/10 21:38:21 alexkhansen Exp $</cvsid>
+  <newsitem>
+    <date>2011-02-10</date>
+    <headline>CVS access restored.</headline>
+    <body>
+      <p>Checkouts and commits now work again.  Thanks for your patience.</p>
+    </body>
+  </newsitem>
+  <newsitem>
+    <date>2011-01-26</date>
+    <headline>CVS access is down.</headline>
+    <body>
+      <p>Due to an attack, our files are not accessible via CVS from Sourceforge.
+      For status updates check out
+      <link url="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
+      sourceforge page</link>.</p>
+    </body>
+  </newsitem>
   <newsitem>
     <date>2011-01-16</date>
     <headline>fink-0.29.19 released.</headline>
     <body>
       <p>Version 0.29.19 of the <code>fink</code> package manager has just been
-      released to the unstable tree.  This version of <code>fink</code>
-      features more verbose output from 'fink --version' for debugging purposes,
-      as well as recognizing OS 10.6.6.  (Versions 0.29.17 and 0.29.18 work fine
-      on 10.6.6, however).</p>
+      released to the unstable tree.  This version of <code>fink</code>         
+      features more verbose output from 'fink --version' for debugging purposes\
+,                                                                               
+      as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
+      on 10.6.6, however.)</p>
       <p>It is expected that this version will migrate to the stable tree soon,
-      provided that there are no reports of bad behavior from unstable tree
+      provided that there are no reports of bad behavior from unstable tree     
       users.</p>
+      <p><em>Update, 2011-01-22</em>    <code>fink-0.29.19</code> has been adde\
+d to stable.</p>
     </body>
   </newsitem>
   <newsitem>
