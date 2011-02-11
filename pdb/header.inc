@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.24 2010/09/05 18:39:42 gecko2 Exp $ */
+/* $Id: header.inc,v 1.25 2011/02/11 21:42:39 gecko2 Exp $ */
 
 $linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -37,11 +37,11 @@ if (isset($uses_pathinfo)) {
     $pispec = "-";
     $title .= "(none)";
     $pdbroot = "";
-  } elseif (ereg("^/([a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
+  } elseif (preg_match("/^(\/[a-zA-Z0-9_.+-]+)$/", $PATH_INFO, $r)) {
     $pispec = $r[1];
     $title .= $pispec;
     $pdbroot = "../";
-  } elseif (ereg("^/([a-zA-Z0-9_.+-]+/[a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
+  } elseif (preg_match("/^(\/[a-zA-Z0-9_.+-]+/[a-zA-Z0-9_.+-]+)$/", $PATH_INFO, $r)) {
     $pispec = $r[1];
     $title .= $pispec;
     $pdbroot = "../../";
