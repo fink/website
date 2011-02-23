@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-02-10T16:41:06-05:00</dc:date>
+    <dc:date>2011-02-23T11:19:58-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.">
       <title>CVS access restored.</title>
@@ -42,28 +42,24 @@
       <description>
       <p>Version 0.29.19 of the fink package manager has just been
       released to the unstable tree.  This version of fink         
-      features more verbose output from 'fink --version' for debugging purposes\
-,                                                                               
+      features more verbose output from 'fink --version' for debugging purposes,                                                                               
       as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
       on 10.6.6, however.)</p>
       <p>It is expected that this version will migrate to the stable tree soon,
       provided that there are no reports of bad behavior from unstable tree     
       users.</p>
-      <p>Update, 2011-01-22    fink-0.29.19 has been adde\
-d to stable.</p>
+      <p>Update, 2011-01-22    fink-0.29.19 has been added to stable.</p>
     </description>
       <content:encoded>
       <p>Version 0.29.19 of the fink package manager has just been
       released to the unstable tree.  This version of fink         
-      features more verbose output from 'fink --version' for debugging purposes\
-,                                                                               
+      features more verbose output from 'fink --version' for debugging purposes,                                                                               
       as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
       on 10.6.6, however.)</p>
       <p>It is expected that this version will migrate to the stable tree soon,
       provided that there are no reports of bad behavior from unstable tree     
       users.</p>
-      <p>Update, 2011-01-22    fink-0.29.19 has been adde\
-d to stable.</p>
+      <p>Update, 2011-01-22    fink-0.29.19 has been added to stable.</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.">
