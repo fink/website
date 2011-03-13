@@ -5,8 +5,39 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-02-23T11:19:58-05:00</dc:date>
+    <dc:date>2011-03-13T10:35:31-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.">
+      <title>fink-0.29.20 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.</guid>
+      <description>
+      <p>
+        Version 0.29.20 of the fink package manager has just been
+        released to the unstable tree.  This version of fink         
+        fixes an issue with X11 detection against recent versions of
+        <a href="http://http://xquartz.macosforge.org/trac/wiki">Xquartz</a>
+        on Leopard.
+      </p>
+      <p>
+        Unless other updates are made in the near term, it is expected that this
+        version of fink will be added to the stable tree shortly.
+      </p>
+    </description>
+      <content:encoded>
+      <p>
+        Version 0.29.20 of the fink package manager has just been
+        released to the unstable tree.  This version of fink         
+        fixes an issue with X11 detection against recent versions of
+        <a href="http://http://xquartz.macosforge.org/trac/wiki">Xquartz</a>
+        on Leopard.
+      </p>
+      <p>
+        Unless other updates are made in the near term, it is expected that this
+        version of fink will be added to the stable tree shortly.
+      </p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.">
       <title>CVS access restored.</title>
       <link>http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.</link>
@@ -456,43 +487,6 @@ to do some cleanup.
 available for 10.6.  In the near future, fink's package database will be
 updated to include information about packages for 10.6; you can check there
 to see if your favorite package is ready.
-</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2009-07-25%20Fink%20Core%20Group%20changes.">
-      <title>Fink Core Group changes.</title>
-      <link>http://fink.sourceforge.net/news/#2009-07-25%20Fink%20Core%20Group%20changes.</link>
-      <guid>http://fink.sourceforge.net/news/#2009-07-25%20Fink%20Core%20Group%20changes.</guid>
-      <description>
-      <p>
-The Fink Core Group announces two new members: Alexander Hansen (akh)
-and Augusto Devegili (monipol), both of whom have been very active
-in fink.  Please join us in welcoming the new members!
-</p><p>
-The Group also announces that Christian Schaffner has stepped down,
-returning to "ordinary member" status.  We thank Christian for his help
-on the team over the past several years.
-</p><p>
-Members of the Fink project are working hard to provide user support,
-to keep Fink up to date, and to prepare for the upcoming Snow Leopard
-release.  More volunteers are always needed, so please consider
-getting involved at some level!
-</p>
-</description>
-      <content:encoded>
-      <p>
-The Fink Core Group announces two new members: Alexander Hansen (akh)
-and Augusto Devegili (monipol), both of whom have been very active
-in fink.  Please join us in welcoming the new members!
-</p><p>
-The Group also announces that Christian Schaffner has stepped down,
-returning to "ordinary member" status.  We thank Christian for his help
-on the team over the past several years.
-</p><p>
-Members of the Fink project are working hard to provide user support,
-to keep Fink up to date, and to prepare for the upcoming Snow Leopard
-release.  More volunteers are always needed, so please consider
-getting involved at some level!
 </p>
 </content:encoded>
     </item>
