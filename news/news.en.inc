@@ -1,4 +1,4 @@
-<a name="2011-03-24%20fink-0.29.20%20released."><span class="news-date">2011-03-24: </span><span class="news-headline">fink-0.29.20 released.</span></a><?php gray_line(); ?>
+<a name="2011-03-24%20fink-0.29.21%20released."><span class="news-date">2011-03-24: </span><span class="news-headline">fink-0.29.21 released.</span></a><?php gray_line(); ?>
       <p>Version 0.29.21 of the <code>fink</code> package manager has just been
         released to the unstable tree.  Theis version of <code>fink</code> 
         properly recognizes OS 10.6.7, and contains a bugfix for a situation 
