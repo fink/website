@@ -1,13 +1,20 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/03/13 14:34:14';
+$cvs_date = 'Date: 2011/03/24 15:16:05';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2011-03-09%20fink-0.29.20%20released."><span class="news-date">2011-03-09: </span><span class="news-headline">fink-0.29.20 released.</span></a><?php gray_line(); ?>
+<a name="2011-03-24%20fink-0.29.20%20released."><span class="news-date">2011-03-24: </span><span class="news-headline">fink-0.29.20 released.</span></a><?php gray_line(); ?>
+      <p>Version 0.29.21 of the <code>fink</code> package manager has just been
+        released to the unstable tree.  Theis version of <code>fink</code> 
+        properly recognizes OS 10.6.7, and contains a bugfix for a situation 
+        where <code>fink</code> can't index.</p>
+      <p>It is expected that this version of fink will be added to the stable
+        tree shortly.</p>
+    <a name="2011-03-09%20fink-0.29.20%20released."><span class="news-date">2011-03-09: </span><span class="news-headline">fink-0.29.20 released.</span></a><?php gray_line(); ?>
       <p>
         Version 0.29.20 of the <code>fink</code> package manager has just been
         released to the unstable tree.  This version of <code>fink</code>         
@@ -19,6 +26,7 @@ include_once "header.inc";
         Unless other updates are made in the near term, it is expected that this
         version of <code>fink</code> will be added to the stable tree shortly.
       </p>
+      <p><b>Update, 2011-03-24:</b>   It has been added to stable.</p>
     <a name="2011-02-10%20CVS%20access%20restored."><span class="news-date">2011-02-10: </span><span class="news-headline">CVS access restored.</span></a><?php gray_line(); ?>
       <p>Checkouts and commits now work again.  Thanks for your patience.</p>
     <a name="2011-01-26%20CVS%20access%20is%20down."><span class="news-date">2011-01-26: </span><span class="news-headline">CVS access is down.</span></a><?php gray_line(); ?>
@@ -35,7 +43,7 @@ include_once "header.inc";
       <p>It is expected that this version will migrate to the stable tree soon,
       provided that there are no reports of bad behavior from unstable tree     
       users.</p>
-      <p><b>Update, 2011-01-22</b>    <code>fink-0.29.19</code> has been added to stable.</p>
+      <p><b>Update, 2011-01-22:</b>    <code>fink-0.29.19</code> has been added to stable.</p>
     <a name="2011-01-05%20Temporary%20rysnc%20mirror%20outage."><span class="news-date">2011-01-05: </span><span class="news-headline">Temporary rysnc mirror outage.</span></a><?php gray_line(); ?>
       <p>We are experiencing a temporary failure in some of the rsync mirrors.
       If you have not seen updates in a while, then you may wish to change your

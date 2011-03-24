@@ -5,8 +5,29 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-03-13T10:35:31-04:00</dc:date>
+    <dc:date>2011-03-24T11:16:36-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.20%20released.">
+      <title>fink-0.29.20 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.20%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.20%20released.</guid>
+      <description>
+      <p>Version 0.29.21 of the fink package manager has just been
+        released to the unstable tree.  Theis version of fink 
+        properly recognizes OS 10.6.7, and contains a bugfix for a situation 
+        where fink can't index.</p>
+      <p>It is expected that this version of fink will be added to the stable
+        tree shortly.</p>
+    </description>
+      <content:encoded>
+      <p>Version 0.29.21 of the fink package manager has just been
+        released to the unstable tree.  Theis version of fink 
+        properly recognizes OS 10.6.7, and contains a bugfix for a situation 
+        where fink can't index.</p>
+      <p>It is expected that this version of fink will be added to the stable
+        tree shortly.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.">
       <title>fink-0.29.20 released.</title>
       <link>http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.</link>
@@ -23,6 +44,7 @@
         Unless other updates are made in the near term, it is expected that this
         version of fink will be added to the stable tree shortly.
       </p>
+      <p>Update, 2011-03-24:   It has been added to stable.</p>
     </description>
       <content:encoded>
       <p>
@@ -36,6 +58,7 @@
         Unless other updates are made in the near term, it is expected that this
         version of fink will be added to the stable tree shortly.
       </p>
+      <p>Update, 2011-03-24:   It has been added to stable.</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.">
@@ -79,7 +102,7 @@
       <p>It is expected that this version will migrate to the stable tree soon,
       provided that there are no reports of bad behavior from unstable tree     
       users.</p>
-      <p>Update, 2011-01-22    fink-0.29.19 has been added to stable.</p>
+      <p>Update, 2011-01-22:    fink-0.29.19 has been added to stable.</p>
     </description>
       <content:encoded>
       <p>Version 0.29.19 of the fink package manager has just been
@@ -90,7 +113,7 @@
       <p>It is expected that this version will migrate to the stable tree soon,
       provided that there are no reports of bad behavior from unstable tree     
       users.</p>
-      <p>Update, 2011-01-22    fink-0.29.19 has been added to stable.</p>
+      <p>Update, 2011-01-22:    fink-0.29.19 has been added to stable.</p>
     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.">
@@ -386,109 +409,6 @@ and Beyond!</p>
       
       <p>We apologise for the inconvenience.</p>
     </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.">
-      <title>Fink on 10.6.</title>
-      <link>http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.</link>
-      <guid>http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.</guid>
-      <description>
-      <p>
-Fink is ready to be used on Snow Leopard (OS X v. 10.6).  Users will
-need to choose between a 32-bit version of fink and a 64-bit version of fink
-for 10.6.
-The 32-bit version has more packages available at the present time, but
-the 64-bit version represents the future direction for OS X and for fink;
-individual users must make this decision on their own.  It will not
-be possible to "upgrade" from 32-bit to 64-bit (or vice versa), without
-completely reinstalling fink.
-</p><p>
-At the moment, two methods are available for installing Fink on Snow Leopard.
-A binary installer is not available, so it is important to
-first install XCode from the Optional Installs folder on the Snow
-Leopard disk.
-Users wanting the 64-bit version, or users upgrading directly from 10.4 or
-earlier, must bootstrap fink from the distribution tarball (version
-0.29.9 or later), available at <a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a>; installation instructions are
-<a href="http://fink.sourceforge.net/download/srcdist.php">here</a>.
-On the other hand, users can upgrade directly from
-10.5 to the 32-bit version, following the instructions below.
-(One warning: users who have installed a development version of fink
-from CVS rather than a released version may encounter trouble; please
-downgrade your fink to a released version, and remove stray .deb files
-of higher versions, before beginning.)
-</p><p>
-To upgrade, follow a four step process.
-Step 1: edit the file /sw/etc/fink.conf,
-adding a line to it which reads NoAutoIndex: true  (You may
-need to use sudo to obtain the correct permissions to edit
-this file.)  Step 2: 
-run the command fink reinstall fink in
-order to tell fink that you are now on 10.6.  (If you encounter a message
-about package database corruption, run fink index -f and
-try this step again.)  Step 3: 
-run the command fink update
-fink to get the latest fink for 10.6.  Step 4: run the command
-fink install perl588-core to replace the version of perl
-which Apple changed during the OS X upgrade, in case you have 
-fink packages which depend on it.
-</p><p>After the upgrade, you may wish to run fink configure
-to do some cleanup.
-</p><p>Almost all of the packages in fink's stable tree will compile on
-10.6, but be warned that only a fraction of the 10.5 packages are currently
-available for 10.6.  In the near future, fink's package database will be
-updated to include information about packages for 10.6; you can check there
-to see if your favorite package is ready.
-</p>
-</description>
-      <content:encoded>
-      <p>
-Fink is ready to be used on Snow Leopard (OS X v. 10.6).  Users will
-need to choose between a 32-bit version of fink and a 64-bit version of fink
-for 10.6.
-The 32-bit version has more packages available at the present time, but
-the 64-bit version represents the future direction for OS X and for fink;
-individual users must make this decision on their own.  It will not
-be possible to "upgrade" from 32-bit to 64-bit (or vice versa), without
-completely reinstalling fink.
-</p><p>
-At the moment, two methods are available for installing Fink on Snow Leopard.
-A binary installer is not available, so it is important to
-first install XCode from the Optional Installs folder on the Snow
-Leopard disk.
-Users wanting the 64-bit version, or users upgrading directly from 10.4 or
-earlier, must bootstrap fink from the distribution tarball (version
-0.29.9 or later), available at <a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a>; installation instructions are
-<a href="http://fink.sourceforge.net/download/srcdist.php">here</a>.
-On the other hand, users can upgrade directly from
-10.5 to the 32-bit version, following the instructions below.
-(One warning: users who have installed a development version of fink
-from CVS rather than a released version may encounter trouble; please
-downgrade your fink to a released version, and remove stray .deb files
-of higher versions, before beginning.)
-</p><p>
-To upgrade, follow a four step process.
-Step 1: edit the file /sw/etc/fink.conf,
-adding a line to it which reads NoAutoIndex: true  (You may
-need to use sudo to obtain the correct permissions to edit
-this file.)  Step 2: 
-run the command fink reinstall fink in
-order to tell fink that you are now on 10.6.  (If you encounter a message
-about package database corruption, run fink index -f and
-try this step again.)  Step 3: 
-run the command fink update
-fink to get the latest fink for 10.6.  Step 4: run the command
-fink install perl588-core to replace the version of perl
-which Apple changed during the OS X upgrade, in case you have 
-fink packages which depend on it.
-</p><p>After the upgrade, you may wish to run fink configure
-to do some cleanup.
-</p><p>Almost all of the packages in fink's stable tree will compile on
-10.6, but be warned that only a fraction of the 10.5 packages are currently
-available for 10.6.  In the near future, fink's package database will be
-updated to include information about packages for 10.6; you can check there
-to see if your favorite package is ready.
-</p>
-</content:encoded>
     </item>
   </channel>
 </rss>
