@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.123 2011/03/13 14:34:14 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.124 2011/03/24 15:16:05 alexkhansen Exp $</cvsid>
+  <newsitem>
+    <date>2011-03-24</date>
+    <headline>fink-0.29.20 released.</headline>
+    <body>
+      <p>Version 0.29.21 of the <code>fink</code> package manager has just been
+        released to the unstable tree.  Theis version of <code>fink</code> 
+        properly recognizes OS 10.6.7, and contains a bugfix for a situation 
+        where <code>fink</code> can't index.</p>
+      <p>It is expected that this version of fink will be added to the stable
+        tree shortly.</p>
+    </body>
+  </newsitem>
   <newsitem>
     <date>2011-03-09</date>
     <headline>fink-0.29.20 released.</headline>
@@ -17,6 +29,7 @@
         Unless other updates are made in the near term, it is expected that this
         version of <code>fink</code> will be added to the stable tree shortly.
       </p>
+      <p><em>Update, 2011-03-24:</em>   It has been added to stable.</p>
     </body>
   </newsitem>
   <newsitem>
@@ -48,7 +61,7 @@
       <p>It is expected that this version will migrate to the stable tree soon,
       provided that there are no reports of bad behavior from unstable tree     
       users.</p>
-      <p><em>Update, 2011-01-22</em>    <code>fink-0.29.19</code> has been added to stable.</p>
+      <p><em>Update, 2011-01-22:</em>    <code>fink-0.29.19</code> has been added to stable.</p>
     </body>
   </newsitem>
   <newsitem>
