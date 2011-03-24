@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.124 2011/03/24 15:16:05 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.125 2011/03/24 15:29:36 alexkhansen Exp $</cvsid>
   <newsitem>
     <date>2011-03-24</date>
-    <headline>fink-0.29.20 released.</headline>
+    <headline>fink-0.29.21 released.</headline>
     <body>
       <p>Version 0.29.21 of the <code>fink</code> package manager has just been
         released to the unstable tree.  Theis version of <code>fink</code> 
