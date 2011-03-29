@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.125 2011/03/24 15:29:36 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.126 2011/03/29 20:42:33 alexkhansen Exp $</cvsid>
   <newsitem>
     <date>2011-03-24</date>
     <headline>fink-0.29.21 released.</headline>
@@ -12,7 +12,8 @@
         where <code>fink</code> can't index.</p>
       <p>It is expected that this version of fink will be added to the stable
         tree shortly.</p>
-    </body>
+     <p><em>Update, 2011-03-29:</em>   It has been added to stable.</p>
+     </body>
   </newsitem>
   <newsitem>
     <date>2011-03-09</date>
