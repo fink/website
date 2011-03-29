@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-03-24T11:30:09-04:00</dc:date>
+    <dc:date>2011-03-29T16:43:10-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.">
       <title>fink-0.29.21 released.</title>
@@ -18,7 +18,8 @@
         where fink can't index.</p>
       <p>It is expected that this version of fink will be added to the stable
         tree shortly.</p>
-    </description>
+     <p>Update, 2011-03-29:   It has been added to stable.</p>
+     </description>
       <content:encoded>
       <p>Version 0.29.21 of the fink package manager has just been
         released to the unstable tree.  Theis version of fink 
@@ -26,7 +27,8 @@
         where fink can't index.</p>
       <p>It is expected that this version of fink will be added to the stable
         tree shortly.</p>
-    </content:encoded>
+     <p>Update, 2011-03-29:   It has been added to stable.</p>
+     </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.">
       <title>fink-0.29.20 released.</title>
