@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2011/03/24 15:25:20 $';
+$cvs_date = '$Date: 2011/04/08 17:49:05 $';
 
 include "header.inc";
 ?>
@@ -19,10 +19,10 @@ have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p><em>fink-0.29.20</em> was officially released on 2011-03-09.</p>
+<p><em>fink-0.29.21</em> was officially released on 2011-03-24.</p>
 
 <ul>
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.20.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.20</a> - 1179K, .tar.gz format</li>
+<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.21.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.21</a> - 1179K, .tar.gz format</li>
 </ul>
 
 <p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
