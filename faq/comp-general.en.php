@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/04/08 19:17:44';
+$cvs_date = 'Date: 2011/04/08 20:37:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -247,13 +247,12 @@ Scanning package description files..........
 Information about 10146 packages read in 2 seconds.
 allversions:
    	0.29.21-51
- bi	0.29.99.cvs-20110408.1821</pre><p>Then choose the latest release version-revision (one without a <b>.cvs</b>, e.g. <b>0.29.21-51</b> above), and use</p><pre>fink install fink-version-revision</pre><p>e.g. use</p><pre>fink install fink-0.29.21-51</pre><p>for the example above, to install <code>fink-0.29.51</code>.</p><p>To get rid of any memory of the CVS checkout use:</p><pre>sudo rm /sw/fink/10.4/local/injected/&lt;architecture&gt;/fink-0.29.99.cvs-&lt;revision&gt;_darwin-&lt;architecture&gt;.deb;
+ bi	0.29.99.cvs-20110408.1821</pre><p>Then choose the latest release version-revision (one without a <b>.cvs</b>, e.g. <b>0.29.21-51</b> above), and use</p><pre>fink install fink-version-revision</pre><p>e.g. use</p><pre>fink install fink-0.29.21-51</pre><p>for the example above, to install <code>fink-0.29.51</code>.</p><p>To get rid of any memory of CVS checkouts of <code>fink</code> use:</p><pre>sudo rm /sw/fink/10.4/local/injected/binary-darwin-&lt;architecture&gt;/*;
+sudo rm /sw/fink/10.4/local/injected/finkinfo/*;
 fink scanpackages
 sudo apt-get update
-fink cleanup
-	</pre><p>replacing &lt;architecture&gt; with your architecture, and replacing &lt;revision&gt;
-	with the revision number for your CVS <code>fink</code> (e.g.
-	<b>20110408.1821</b> for the example above).</p></div>
+fink cleanup</pre><p>replacing &lt;architecture&gt; with your architecture, i.e. <b>powerpc</b>,
+	<b>i386</b>, or <b>x86_64</b>.</p></div>
     </a>
     <a name="dpkg-split">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.18: When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</b></p></div>
