@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/04/08 20:37:49';
+$cvs_date = 'Date: 2011/04/08 20:42:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -249,6 +249,7 @@ allversions:
    	0.29.21-51
  bi	0.29.99.cvs-20110408.1821</pre><p>Then choose the latest release version-revision (one without a <b>.cvs</b>, e.g. <b>0.29.21-51</b> above), and use</p><pre>fink install fink-version-revision</pre><p>e.g. use</p><pre>fink install fink-0.29.21-51</pre><p>for the example above, to install <code>fink-0.29.51</code>.</p><p>To get rid of any memory of CVS checkouts of <code>fink</code> use:</p><pre>sudo rm /sw/fink/10.4/local/injected/binary-darwin-&lt;architecture&gt;/*;
 sudo rm /sw/fink/10.4/local/injected/finkinfo/*;
+fink index -f
 fink scanpackages
 sudo apt-get update
 fink cleanup</pre><p>replacing &lt;architecture&gt; with your architecture, i.e. <b>powerpc</b>,
