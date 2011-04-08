@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/04/08 19:02:52';
+$cvs_date = 'Date: 2011/04/08 19:17:44';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -252,8 +252,8 @@ fink scanpackages
 sudo apt-get update
 fink cleanup
 	</pre><p>replacing &lt;architecture&gt; with your architecture, and replacing &lt;revision&gt;
-	with the revision number for your CVS <b>fink</b> (e.g. 20110408.1821
-	for the example above).</p></div>
+	with the revision number for your CVS <code>fink</code> (e.g.
+	<b>20110408.1821</b> for the example above).</p></div>
     </a>
     <a name="dpkg-split">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.18: When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</b></p></div>
