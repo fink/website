@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/01/14 01:35:40';
+$cvs_date = 'Date: 2011/04/08 19:02:52';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -239,8 +239,21 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     <a name="system-java">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink says <code>Failed: Can't resolve dependency "system-java-dev"</code>, but there's no such package.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> That's because it's a virtual package.  At the time of this writing (Jan. 2011), this issue 
-        commonly shows up on Leopard and Snow Leopard due to changes in Apple's Java packaging.</p><p>Make sure that your package manager version is <b>0.29.15</b> or later, e.g. via</p><pre>fink -V</pre><p>If your <code>fink</code> version is older, use</p><pre>fink selfupdate</pre><p>If your <code>Distribution version</code> shows <b>point</b>, switch to <b>rsync</b> 
-        or <b>cvs</b> updating via</p><pre>fink selfupdate-rsync</pre><p>or</p><pre>fink selfupdate-cvs</pre><p>You will also need to download the <code>Java Developer Package</code> from <a href="http://connect.apple.com">Apple</a>.</p></div>
+        commonly shows up on Leopard and Snow Leopard due to changes in Apple's Java packaging.</p><p>You need to download the <code>Java Developer Package</code> from <a href="http://connect.apple.com">Apple</a>.</p><p>Then make sure that your package manager version is <b>0.29.15</b> or later, e.g. via</p><pre>fink -V</pre><p>If your <code>fink</code> version is older, use</p><pre>fink selfupdate</pre><p>If your <code>Distribution version</code> shows <b>point</b>, switch to <b>rsync</b> 
+        or <b>cvs</b> updating via</p><pre>fink selfupdate-rsync</pre><p>or</p><pre>fink selfupdate-cvs</pre><p>If your <code>fink</code> version is <b>0.29.99.cvs</b>, then you're using a CVS
+	checkout of <code>fink</code>, which doesn't update itself like release versions do,
+	and which therefore may be well behind the current releases.  We recommend that you use</p><pre>fink selfupdate ; fink dumpinfo -fallversions fink</pre><p>which will return something like:</p><pre>$ fink dumpinfo -fallversions fink
+Scanning package description files..........
+Information about 10146 packages read in 2 seconds.
+allversions:
+   	0.29.21-51
+ bi	0.29.99.cvs-20110408.1821</pre><p>Then choose the latest release version-revision (one without a <b>.cvs</b>, e.g. <b>0.29.21-51</b> above), and use</p><pre>fink install fink-version-revision</pre><p>e.g. use</p><pre>fink install fink-0.29.21-51</pre><p>for the example above, to install <code>fink-0.29.51</code>.</p><p>To get rid of any memory of the CVS checkout use:</p><pre>sudo rm /sw/fink/10.4/local/injected/&lt;architecture&gt;/fink-0.29.99.cvs-&lt;revision&gt;_darwin-&lt;architecture&gt;.deb;
+fink scanpackages
+sudo apt-get update
+fink cleanup
+	</pre><p>replacing &lt;architecture&gt; with your architecture, and replacing &lt;revision&gt;
+	with the revision number for your CVS <b>fink</b> (e.g. 20110408.1821
+	for the example above).</p></div>
     </a>
     <a name="dpkg-split">
       <div class="question"><p><b><? echo FINK_Q ; ?>6.18: When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</b></p></div>
