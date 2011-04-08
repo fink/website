@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.117 2011/04/08 20:37:49 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.118 2011/04/08 20:42:10 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1356,6 +1356,7 @@ allversions:
 	<p>To get rid of any memory of CVS checkouts of <filename>fink</filename> use:</p>
 	<codeblock>sudo rm /sw/fink/10.4/local/injected/binary-darwin-&lt;architecture&gt;/*;
 sudo rm /sw/fink/10.4/local/injected/finkinfo/*;
+fink index -f
 fink scanpackages
 sudo apt-get update
 fink cleanup</codeblock>
