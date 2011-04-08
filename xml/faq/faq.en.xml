@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.115 2011/04/08 19:17:44 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.116 2011/04/08 20:35:37 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1353,15 +1353,15 @@ allversions:
 	<p>e.g. use</p>
 	<codeblock>fink install fink-0.29.21-51</codeblock>
 	<p>for the example above, to install <filename>fink-0.29.51</filename>.</p>
-	<p>To get rid of any memory of the CVS checkout use:</p>
-	<codeblock>sudo rm /sw/fink/10.4/local/injected/&lt;architecture&gt;/fink-0.29.99.cvs-&lt;revision&gt;_darwin-&lt;architecture&gt;.deb;
+	<p>To get rid of any memory of CVS checkouts of <filename>fink</filename> use:</p>
+	<codeblock>sudo rm /sw/fink/10.4/local/injected/&lt;architecture&gt;/*;
+sudo rm /sw/fink/10.4/local/injected/finkinfo/*;
 fink scanpackages
 sudo apt-get update
 fink cleanup
 	</codeblock>
-	<p>replacing &lt;architecture&gt; with your architecture, and replacing &lt;revision&gt;
-	with the revision number for your CVS <filename>fink</filename> (e.g.
-	<em>20110408.1821</em> for the example above).</p>
+	<p>replacing &lt;architecture&gt; with your architecture, i.e. <em>powerpc</em>,
+	<em>i386</em>, or <em>x86_64</em>.</p>
        </answer>
     </faqentry>
     <faqentry name="dpkg-split">
