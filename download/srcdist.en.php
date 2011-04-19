@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2011/04/08 17:49:05 $';
+$cvs_date = '$Date: 2011/04/19 13:46:56 $';
 
 include "header.inc";
 ?>
@@ -25,25 +25,28 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 <li><a href="http://downloads.sourceforge.net/fink/fink-0.29.21.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.21</a> - 1179K, .tar.gz format</li>
 </ul>
 
-<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
+<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>),
+but earlier than Xcode 4.</p>
 
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via</p>
 
-<pre>tar -xvzf fink-0.29.20.tar.gz</pre>
+<pre>tar -xvzf fink-0.29.21.tar.gz</pre>
 
 <p>or</p>
 
-<pre>tar -xvf fink-0.29.20.tar</pre>
+<pre>tar -xvf fink-0.29.21.tar</pre>
 
 <p>if it has already been partially unpacked, in a terminal window.  Then, in a
-terminal window, change to the resulting <em>fink-0.29.20</em> directory, and
+terminal window, change to the resulting <em>fink-0.29.21</em> directory, and
 use</p>
 
 <pre>./bootstrap</pre>
 
 <p>to start the boostrapping operation, which will install the Fink base
-setup.</p>
+setup.  If you would like to use a different location than the default <em>/sw</em>, you can do this via</p>
+<pre>./bootstrap /path</pre>
+<p>(replace <em>/path</em> with the directory you want to use).</p>
 <!-- akh: I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
      rangerrick: but that is not true!  ;) -->
 
