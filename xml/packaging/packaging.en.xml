@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.116 2010/07/16 18:41:16 alexkhansen Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.117 2011/04/21 16:28:49 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -1221,8 +1221,8 @@ regarding emacs, with a few small differences.
 url="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</link>.)
 There are two differences in the Fink policy.  First, 
-this policy only applies to the emacs20 and
-emacs21 packages in fink at the moment, not to the xemacs package.  (This
+this policy only applies to the <filename>emacs21</filename>, <filename>emacs22</filename>, and
+<filename>emacs23</filename> packages in fink at the moment, not to the xemacs package.  (This
 may change some day in the future.)    And second, unlike the Debian policy,
  Fink packages are allowed to install things directly into 
 /sw/share/emacs/site-lisp.
@@ -1740,21 +1740,21 @@ this field is necessary for any multiple-type perl package under the
 <p>
 A comma-separated list of distribution(s) for which the package
 (and any splitoff packages) are intended.
-At present, the only valid values for distribution are <code>10.3</code>,
+At present, the only valid values for distribution are
 <code>10.4</code>,
-and <code>10.5</code>. If this field is present and not blank after
+<code>10.5</code>,
+and <code>10.6</code>
+. If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
 the local machine distribution is not listed. If the field is omitted
 or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code> and <code>10.5</code> distributions share
+Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
-other.  Since package maintainers may wish to use identical files for
-the 10.3 and 10.4/10.5 trees, the value <code>10.3</code> is often
-included in the distribution field.
+other.
 </p>
 <p>
 This field supports the standard conditional syntax for any value in
