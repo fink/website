@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.117 2011/04/21 16:28:49 alexkhansen Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.118 2011/04/21 19:31:58 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -1228,6 +1228,52 @@ may change some day in the future.)    And second, unlike the Debian policy,
 /sw/share/emacs/site-lisp.
 </p>
 
+</section>
+
+<section name="sources"><title>Source Policy</title>
+    <p>Sources should normally be downloaded from the location(s) that the upstream
+    developer(s) use, and any modifications for Fink should be done through the use
+    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+    source archive as a <code>Source</code> in your Fink packaging.</p>
+    <p>If a VCS checkout (e.g. from <em>git</em> or <em>svn</em>) is to be used, e.g.
+    because a project doesn't do formal releases, or a fix for a particular issue has
+    been added between releases of a package, an acceptable source can be generated
+    via the following method:</p>
+    <ol>
+        <li>Check out the package, preferably at a definite revision of the VCS.</li>
+        <li>Make an archive from the VCS checkout (e.g. <em>zip</em>, <em>tar</em>, <em>tar.gz</em>,
+        or <em>tar.bz2</em>).
+            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
+            <filename>foo-0svn1234.tar.gz</filename> for a package that doesn't make releases, or
+            <filename>bar-1.2.3+svn4567.tar.bz2</filename> for a Fink package which is between
+            upstream releases.</p></li>
+        <li>Use the same <code>Version</code> in your <filename>.info</filename> file.</li>
+        <li>It is also useful to put the commands that you ran to generate the source tarball in the
+        <code>DescPackaging</code> field.</li>
+        <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
+        If you don't have ready access to one, ask on the
+        <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</link> or
+        <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
+        and someone should be able to help.</li>
+    </ol>
+</section>
+
+<section name="downloading"><title>File Download Policy</title>
+    <p>Packages are not to download any files during the unpack, patch, compile, install,
+    or build phases of the <xref chapter="reference" section="build">build process</xref>.  Any large patches (i.e.
+    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
+    set up as additional Sources in accordance with the <xref chapter="policy" section="sources">
+    Source Policy.</xref></p>
+    <p>Packages may download data in a PostInstScript after they have been installed on the system,
+    under some limited circumstances:</p>
+    <ul>
+        <li>No updates to the package itself are allowed.</li>
+        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
+        virus definitions for <filename>clamav</filename> can be downloaded during this phase,
+        because they change continually.</li>
+    </ul>
+    <p>If you are unsure, contact <link url="mailto:fink-core@lists.sourceforge.net">the Fink Core
+    Team</link>.</p> 
 </section>
 
 </chapter>
