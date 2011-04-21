@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/07/16 18:41:16';
+$cvs_date = 'Date: 2011/04/21 16:28:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -748,8 +748,8 @@ regarding emacs, with a few small differences.
 <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>.)
 There are two differences in the Fink policy.  First, 
-this policy only applies to the emacs20 and
-emacs21 packages in fink at the moment, not to the xemacs package.  (This
+this policy only applies to the <code>emacs21</code>, <code>emacs22</code>, and
+<code>emacs23</code> packages in fink at the moment, not to the xemacs package.  (This
 may change some day in the future.)    And second, unlike the Debian policy,
  Fink packages are allowed to install things directly into 
 /sw/share/emacs/site-lisp.

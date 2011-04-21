@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/07/16 18:41:16';
+$cvs_date = 'Date: 2011/04/21 16:28:49';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -170,21 +170,21 @@ this field is necessary for any multiple-type perl package under the
 <p>
 A comma-separated list of distribution(s) for which the package
 (and any splitoff packages) are intended.
-At present, the only valid values for distribution are <code>10.3</code>,
+At present, the only valid values for distribution are
 <code>10.4</code>,
-and <code>10.5</code>. If this field is present and not blank after
+<code>10.5</code>,
+and <code>10.6</code>
+. If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
 the local machine distribution is not listed. If the field is omitted
 or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code> and <code>10.5</code> distributions share
+Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
-other.  Since package maintainers may wish to use identical files for
-the 10.3 and 10.4/10.5 trees, the value <code>10.3</code> is often
-included in the distribution field.
+other.
 </p>
 <p>
 This field supports the standard conditional syntax for any value in
