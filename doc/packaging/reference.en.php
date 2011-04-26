@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/04/21 19:31:58';
+$cvs_date = 'Date: 2011/04/26 19:00:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -1405,8 +1405,19 @@ Only a "purge" also removes the configuration files.
 Lists the names of Info documents that the package installs in
 %p/share/info.
 This will add appropriate code to the postinst and prerm scripts to
-maintain the Info directory file, <code>dir</code>.
-This feature is still in flux, more fields for finer control may be
+maintain the Info directory file, <code>dir</code>.</p>
+<p><b>Note:</b>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<pre>
+foo.info
+foo.info-1
+foo.info-2
+</pre>
+<p>you should only use:</p>
+<pre>
+InfoDocs:  foo.info
+</pre>
+<p>This feature is still in flux, more fields for finer control may be
 added in the future.
 </p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>
