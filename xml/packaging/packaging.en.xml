@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.118 2011/04/21 19:31:58 alexkhansen Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.119 2011/04/26 19:00:13 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -3215,8 +3215,19 @@ Only a "purge" also removes the configuration files.
 Lists the names of Info documents that the package installs in
 %p/share/info.
 This will add appropriate code to the postinst and prerm scripts to
-maintain the Info directory file, <code>dir</code>.
-This feature is still in flux, more fields for finer control may be
+maintain the Info directory file, <code>dir</code>.</p>
+<p><em>Note:</em>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<codeblock>
+foo.info
+foo.info-1
+foo.info-2
+</codeblock>
+<p>you should only use:</p>
+<codeblock>
+InfoDocs:  foo.info
+</codeblock>
+<p>This feature is still in flux, more fields for finer control may be
 added in the future.
 </p>
 </itemd></item>
