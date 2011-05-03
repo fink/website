@@ -1,13 +1,17 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/03/29 20:42:33';
+$cvs_date = 'Date: 2011/05/03 16:06:31';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2011-03-24%20fink-0.29.21%20released."><span class="news-date">2011-03-24: </span><span class="news-headline">fink-0.29.21 released.</span></a><?php gray_line(); ?>
+<a name="2011-04-30%20fink-0.30.0%20released."><span class="news-date">2011-04-30: </span><span class="news-headline">fink-0.30.0 released.</span></a><?php gray_line(); ?>
+      <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.  It is
+planned to release it to stable soon.</p>
+      <p>The 0.30.x series is intended to be the last to support OS 10.4 (Tiger).</p>
+    <a name="2011-03-24%20fink-0.29.21%20released."><span class="news-date">2011-03-24: </span><span class="news-headline">fink-0.29.21 released.</span></a><?php gray_line(); ?>
       <p>Version 0.29.21 of the <code>fink</code> package manager has just been
         released to the unstable tree.  Theis version of <code>fink</code> 
         properly recognizes OS 10.6.7, and contains a bugfix for a situation 

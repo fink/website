@@ -5,8 +5,23 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-03-29T16:43:10-04:00</dc:date>
+    <dc:date>2011-05-03T12:07:18-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.">
+      <title>fink-0.30.0 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.</guid>
+      <description>
+      <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.  It is
+planned to release it to stable soon.</p>
+      <p>The 0.30.x series is intended to be the last to support OS 10.4 (Tiger).</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.  It is
+planned to release it to stable soon.</p>
+      <p>The 0.30.x series is intended to be the last to support OS 10.4 (Tiger).</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.">
       <title>fink-0.29.21 released.</title>
       <link>http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.</link>
@@ -347,69 +362,6 @@ and Beyond!</p>
       restored, and on Oct 30th all of our main rsync mirrors were operational.
       Once again, we apologise for the inconvenience. Thanks for your patience
       and support.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues.">
-      <title>Server issues.</title>
-      <link>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues.</link>
-      <guid>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues.</guid>
-      <description>
-      <p>We have had server issues and as a result the Web site and the
-      official binary distribution are down, and the rsync servers are stalled.
-      Whilst we sort this out, you may:</p>
-      
-        (Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-        you need Web site information
-
-        (selfupdate) If you use rsync as your selfupdate method then edit
-        /sw/etc/fink.conf and replace the line that starts with
-        Mirror-rsync with Mirror-rsync:
-        rsync://fink.gecko.ig42.org/finkinfo/
-
-        (source files) Edit /sw/etc/fink.conf and replace the
-        line that starts with Mirror-master with
-        Mirror-master: http://fink-dist.gecko.ig42.org
-        
-        (bindist) Edit /sw/etc/fink.conf and replace the line
-        that starts with Mirror-apt: with Mirror-apt:
-        http://fink-bindist.gecko.ig42.org
-
-        (bindist) Edit /sw/etc/apt/sources.list and replace
-        http://bindist.finkmirrors.net/bindist with
-        http://fink-bindist.gecko.ig42.org
-
-        (bindist) Run fink scanpackages.
-      
-      <p>We apologise for the inconvenience.</p>
-    </description>
-      <content:encoded>
-      <p>We have had server issues and as a result the Web site and the
-      official binary distribution are down, and the rsync servers are stalled.
-      Whilst we sort this out, you may:</p>
-      
-        (Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-        you need Web site information
-
-        (selfupdate) If you use rsync as your selfupdate method then edit
-        /sw/etc/fink.conf and replace the line that starts with
-        Mirror-rsync with Mirror-rsync:
-        rsync://fink.gecko.ig42.org/finkinfo/
-
-        (source files) Edit /sw/etc/fink.conf and replace the
-        line that starts with Mirror-master with
-        Mirror-master: http://fink-dist.gecko.ig42.org
-        
-        (bindist) Edit /sw/etc/fink.conf and replace the line
-        that starts with Mirror-apt: with Mirror-apt:
-        http://fink-bindist.gecko.ig42.org
-
-        (bindist) Edit /sw/etc/apt/sources.list and replace
-        http://bindist.finkmirrors.net/bindist with
-        http://fink-bindist.gecko.ig42.org
-
-        (bindist) Run fink scanpackages.
-      
-      <p>We apologise for the inconvenience.</p>
     </content:encoded>
     </item>
   </channel>
