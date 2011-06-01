@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-05-03T12:07:18-04:00</dc:date>
+    <dc:date>2011-06-01T11:32:39-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.">
       <title>fink-0.30.0 released.</title>
@@ -28,7 +28,7 @@ planned to release it to stable soon.</p>
       <guid>http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.</guid>
       <description>
       <p>Version 0.29.21 of the fink package manager has just been
-        released to the unstable tree.  Theis version of fink 
+        released to the unstable tree.  This version of fink 
         properly recognizes OS 10.6.7, and contains a bugfix for a situation 
         where fink can't index.</p>
       <p>It is expected that this version of fink will be added to the stable
@@ -37,7 +37,7 @@ planned to release it to stable soon.</p>
      </description>
       <content:encoded>
       <p>Version 0.29.21 of the fink package manager has just been
-        released to the unstable tree.  Theis version of fink 
+        released to the unstable tree.  This version of fink 
         properly recognizes OS 10.6.7, and contains a bugfix for a situation 
         where fink can't index.</p>
       <p>It is expected that this version of fink will be added to the stable
