@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.127 2011/05/03 16:06:31 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.128 2011/06/01 15:31:56 alexkhansen Exp $</cvsid>
   <newsitem>
     <date>2011-04-30</date>
     <headline>fink-0.30.0 released.</headline>
@@ -16,7 +16,7 @@ planned to release it to stable soon.</p>
     <headline>fink-0.29.21 released.</headline>
     <body>
       <p>Version 0.29.21 of the <code>fink</code> package manager has just been
-        released to the unstable tree.  Theis version of <code>fink</code> 
+        released to the unstable tree.  This version of <code>fink</code> 
         properly recognizes OS 10.6.7, and contains a bugfix for a situation 
         where <code>fink</code> can't index.</p>
       <p>It is expected that this version of fink will be added to the stable
