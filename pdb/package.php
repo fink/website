@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/11/27 21:58:08 $';
+$cvs_date = '$Date: 2011/06/15 08:05:38 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -94,7 +94,7 @@ include_once "header.inc";
 
 if ($result == "DBerror") {
 ?>
-<p><b>Warning: DBError, try again later!</b></p>
+<p><b>Warning: DBerror, try again later!</b></p>
 <?
 unset($result);
 } elseif ($result == null || count($result) == 0) { # No package found
