@@ -30,7 +30,7 @@ include $binbase."header.inc";
 // print path to current directory
 if ($level > 1) {
   print "<p>Directory: <a href=\"".$relbase."dists\">dists</a>";
-  $parts = split("/", $dir);
+  $parts = explode("/", $dir);
   for ($i = 0; $i < $level-2; $i++) {
     print " / <a href=\"";
     for ($j = $i; $j < $level-2; $j++) {
