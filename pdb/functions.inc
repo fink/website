@@ -94,10 +94,10 @@ function parse_version($version) {
 	$revision = null;
 
 	if (strrpos($version, ':')) {
-		list($epoch, $version) = split(":", $version);
+		list($epoch, $version) = explode(":", $version);
 	}
 	if (strrpos($version, "-")) {
-		list($version, $revision) = split("-", $version, 2);
+		list($version, $revision) = explode("-", $version, 2);
 	}
 
 	return array($epoch, $version, $revision);

@@ -1,13 +1,13 @@
 <?php
 $title = "Package Database - Obsolete page";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/09/07 04:12:00 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2011/06/26 22:36:50 $';
 
 /* check path info */
 $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
-if (ereg("^/([a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
+if (preg_match("^/([a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
 	$section = $r[1];
-} elseif (ereg("^/([a-zA-Z0-9_.+-]+/[a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
+} elseif (preg_match("^/([a-zA-Z0-9_.+-]+/[a-zA-Z0-9_.+-]+)$", $PATH_INFO, $r)) {
 	$section = $r[1];
 }
 
