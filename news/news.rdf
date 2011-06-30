@@ -5,20 +5,33 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-06-01T11:32:39-04:00</dc:date>
+    <dc:date>2011-06-30T10:42:03-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-06-28%20fink-0.30.1%20released.">
+      <title>fink-0.30.1 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-06-28%20fink-0.30.1%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-06-28%20fink-0.30.1%20released.</guid>
+      <description>
+      <p>fink-0.30.1 was released to the unstable tree on 28 Jun, 2011.
+      This is a minor update which properly recognizes OS 10.6.8.</p>
+      <p>It is planned to release it to stable soon.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.30.1 was released to the unstable tree on 28 Jun, 2011.
+      This is a minor update which properly recognizes OS 10.6.8.</p>
+      <p>It is planned to release it to stable soon.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.">
       <title>fink-0.30.0 released.</title>
       <link>http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.</link>
       <guid>http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.</guid>
       <description>
-      <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.  It is
-planned to release it to stable soon.</p>
+      <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.</p>
       <p>The 0.30.x series is intended to be the last to support OS 10.4 (Tiger).</p>
     </description>
       <content:encoded>
-      <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.  It is
-planned to release it to stable soon.</p>
+      <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.</p>
       <p>The 0.30.x series is intended to be the last to support OS 10.4 (Tiger).</p>
     </content:encoded>
     </item>
@@ -343,25 +356,6 @@ and Beyond!</p>
       <p>It is planned to add this version to the stable tree shortly.</p>
       <p>Addendum, 2010-10-19:  because of the Java update (2010-10-20),
       fink-0.29.15 is now slated to be the version next to go to stable.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.">
-      <title>Servers back to normal.</title>
-      <link>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</link>
-      <guid>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</guid>
-      <description>
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.</p>
-    </description>
-      <content:encoded>
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.</p>
     </content:encoded>
     </item>
   </channel>
