@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.131 2011/07/03 00:13:33 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.132 2011/07/11 17:23:25 alexkhansen Exp $</cvsid>
+  <newsitem>
+    <date>2011-07-11</date>
+    <headline>fink-0.30.2 released.</headline>
+    <body>
+      <p><code>fink-0.30.2</code> was released to the unstable tree on 11 July, 2011.
+      It is likely that this will be the last version that supports OS 10.4.</p>
+      <p>It is planned to release it to stable soon.</p>
+    </body>
+  </newsitem>
   <newsitem>
     <date>2011-06-28</date>
     <headline>fink-0.30.1 released.</headline>
