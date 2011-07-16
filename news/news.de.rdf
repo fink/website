@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2011-07-16T15:07:47-07:00</dc:date>
+    <dc:date>2011-07-16T15:17:34-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!">
       <title>Happy 10th Birthday to Fink!</title>
