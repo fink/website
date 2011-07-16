@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.132 2011/07/11 17:23:25 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.133 2011/07/16 22:06:33 dmrrsn Exp $</cvsid>
+  <newsitem>
+    <date>2011-07-16</date>
+    <headline>fink and Lion.</headline>
+    <body>
+      <p>Apple has announced that OS X 10.7 "Lion" will be released 
+in July.  We want to let fink users know what to expect when Lion is 
+released.</p>
+<p>First, the <code>fink</code> 
+program itself will not run after on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+<code>dpkg</code> program to extract a list of the fink packages
+which had been installed under 10.6, so that they could be reinstalled
+under 10.7.  Detailed instructions on how to do this will be posted 
+later.</p>
+<p>(To upgrade fink after upgrading to Lion, one will have to bootstrap
+fink again, using a new version of fink which will be released shortly
+after Lion has been released.  Watch this space for an announcement.)</p>
+<p>Second, due to lots of changes under the hood, there will initially
+be many fewer fink packages which work under 10.7 as apposed to 10.6.
+Thus, even if you've extracted a list of fink packages which had
+been installed under 10.6, some of them may not be installable under
+10.7.  We do not currently have a database showing which packages
+can be successfully installed under 10.7.</p>
+    </body>
+  </newsitem>
   <newsitem>
     <date>2011-07-11</date>
     <headline>fink-0.30.2 released.</headline>
