@@ -1,13 +1,75 @@
 <?
 $title = "News";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2010/09/05 19:31:29';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2011/01/06 00:23:39';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2009-10-30%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%BE%A9%E5%B8%B0%E3%80%82"><span class="news-date">2009-10-30: </span><span class="news-headline">サーバー復帰。</span></a><?php gray_line(); ?>
+<a name="2010-12-31%2010%E5%91%A8%E5%B9%B4%E8%A8%98%E5%BF%B5%E3%80%81%E3%81%8A%E3%82%81%E3%81%A7%E3%81%A8%E3%81%86%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">10周年記念、おめでとう Fink!</span></a><?php gray_line(); ?>
+      <p>Fink プロジェクトは、2000年12月の暮れに、Christoph Pfisterer によって、
+      Mac OS X のパブリックベータ版を使って始まった。
+      1年も経たないうちに、OS X の 10.0 と 10.1 がリリースされ、Fink が使われるようになった。
+      創設者の chrisp は 2001年11月にプロジェクトから離れ、コミュニティが跡を継いだ。</p>
+      <p>Fink コミュニティは、パッケージメンテナとユーザ、それに全体システムを良い形に保とうとする小さなコアチームから構成され、Fink のハートです。
+      Fink を10年間にわたり活発にしてきたこのコミュニティの取組みは、まさに驚愕です!
+      皆さんも一緒に、Fink が長く続きますように。</p>
+      <p>どれくらい長く続くのだろうか? Buzz Lightyear の言葉を借りるならば、
+      <code>無限の彼方まで!</code></p>
+     <a name="2010-11-09%20fink-0.29.16%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%80%82"><span class="news-date">2010-11-09: </span><span class="news-headline">fink-0.29.16 リリース。</span></a><?php gray_line(); ?>
+      <p><code>fink-0.29.16</code> が unstable ツリーにリリースされました。
+      このバージョンの <code>fink</code> は、bootstrap に使われるパッケージを更新します。</p>
+      <p>間もなく、この <code>fink</code> は stable ツリーにも反映されます。</p>
+     <a name="2010-11-02%20Libtool%20%E3%82%A2%E3%83%BC%E3%82%AB%E3%82%A4%E3%83%96%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E3%82%AF%E3%83%AA%E3%82%A2%E3%81%8C%20stable%20%E3%81%AB%E3%80%82"><span class="news-date">2010-11-02: </span><span class="news-headline">Libtool アーカイブファイルのクリアが stable に。</span></a><?php gray_line(); ?>
+      <p><code>dpkg-1.10.21-1229</code> が stable に追加されました。
+      このリビジョンは、これまで10.5 から 10.6 にアップグレードする際に問題を起こしてきた、
+      libtool アーカイブ (<code>.la</code>) を自動的に削除しいます。</p>  
+    <a name="2010-11-02%20KDE3%20%E3%81%A8%20GNOME%20%E3%81%8C%20stable%E3%80%82"><span class="news-date">2010-11-02: </span><span class="news-headline">KDE3 と GNOME が stable。</span></a><?php gray_line(); ?>
+      <p><code>KDE-3.5.10</code> andと <code>GNOME-2.28</code>
+      が、他の依存パッケージとともに stable ツリーに追加されました。
+      </p>
+    <a name="2010-10-23%20fink-0.29.15%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%80%82"><span class="news-date">2010-10-23: </span><span class="news-headline">fink-0.29.15 リリース。</span></a><?php gray_line(); ?>
+      <p><code>fink-0.29.15</code>
+      が unstable ツリーにリリースされました。
+      このバージョンの <code>fink</code> は、 <code>system-java-dev</code> 
+      というバーチャルパッケージの作成時のエラー修正を含んでいます。
+      </p>
+      <p>全ての <code>system-java-dev</code> パッケージが 10.5 と 10.6 で表示されるには、
+      この修正とあわせて、<a href="http://connect.apple.com/">The Apple Developer Connection site</a>
+      適切なバージョンの Java Developer Package をダウンロードする必要もあります。
+      </p>
+      <p>このバージョンの <code>fink</code> は、すぐに stable ツリーにも追加される予定です。</p>
+      <p><b>Update, 2010-11-01:</b>  <code>fink-0.29.15</code> が stable ツリーに追加されました。</p>
+    <a name="2010-10-20%20Java%20%E6%9B%B4%E6%96%B0%E3%81%8C%20system-java-dev%20virtual%20package%20%E7%94%9F%E6%88%90%E3%82%92%E5%A3%8A%E3%81%99%E3%80%82"><span class="news-date">2010-10-20: </span><span class="news-headline">Java 更新が system-java-dev virtual package 生成を壊す。</span></a><?php gray_line(); ?>
+      <p>
+      最近の 10.5 と 10.6 の Java アップデート
+       (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
+      および APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
+      は、Java ファイル設定を変えてしまい、
+      <code>fink</code> が 10.5 上の <code>system-java16-dev</code> あるいは
+      10.6 上の <code>system-java-dev</code> が生成されなくなりました。</p>
+      <p>Fink ユーザは、この問題を解決する新しいバージョンの <code>fink</code>
+      がリリースされるまで待って頂くようお願い申し上げます。
+      この問題は、現在インストールされているパッケージには影響は<b>ありません</b>が、
+      java に依存するパッケージのビルドができなくなります。</p>
+      <p>適切な時バージョンの Java Developer Package を 
+      <a href="http://connect.apple.com/">The Apple Developer Connection site</a>
+      からダウンロードすることもできます。</p>
+      <p><b>Update, 2010-10-23:</b> この問題は <code>fink-0.29.15</code> で対処されました。</p>
+    <a name="2010-10-19%20fink-0.29.14%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%80%82"><span class="news-date">2010-10-19: </span><span class="news-headline">fink-0.29.14 リリース。</span></a><?php gray_line(); ?>
+      <p><code>fink-0.29.14</code> 
+      が unstable ツリーにリリースされました。
+      このバージョンの <code>fink</code> は、 
+      高速ダウンロード <code>aria2</code> (Fink からインストール可能) を使えるよう、
+       <code>DownloadMethod</code> に <code>aria2</code> が加わり、
+       また、よくある "node exists" というエラーの修正など、
+       多くの変更点があります。
+      </p>
+      <p>It is planned to add this version to the stable tree shortly.</p>
+      <p><b>Addendum, 2010-10-19:</b>  because of the Java update (2010-10-20),
+      <code>fink-0.29.15</code> is now slated to be the version next to go to stable.</p>
+    <a name="2009-10-30%20%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E5%BE%A9%E5%B8%B0%E3%80%82"><span class="news-date">2009-10-30: </span><span class="news-headline">サーバー復帰。</span></a><?php gray_line(); ?>
       <p>
       ユーザーサービスが復帰しました。
       10月28日に、ウェブサイト及び一部のミラー (rsync, source files, binary distribution) 

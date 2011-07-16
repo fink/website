@@ -5,8 +5,55 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-07-11T13:24:02-04:00</dc:date>
+    <dc:date>2011-07-16T15:07:47-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-07-16%20fink%20and%20Lion.">
+      <title>fink and Lion.</title>
+      <link>http://fink.sourceforge.net/news/#2011-07-16%20fink%20and%20Lion.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-07-16%20fink%20and%20Lion.</guid>
+      <description>
+      <p>Apple has announced that OS X 10.7 "Lion" will be released 
+in July.  We want to let fink users know what to expect when Lion is 
+released.</p>
+<p>First, the fink 
+program itself will not run after on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+dpkg program to extract a list of the fink packages
+which had been installed under 10.6, so that they could be reinstalled
+under 10.7.  Detailed instructions on how to do this will be posted 
+later.</p>
+<p>(To upgrade fink after upgrading to Lion, one will have to bootstrap
+fink again, using a new version of fink which will be released shortly
+after Lion has been released.  Watch this space for an announcement.)</p>
+<p>Second, due to lots of changes under the hood, there will initially
+be many fewer fink packages which work under 10.7 as apposed to 10.6.
+Thus, even if you've extracted a list of fink packages which had
+been installed under 10.6, some of them may not be installable under
+10.7.  We do not currently have a database showing which packages
+can be successfully installed under 10.7.</p>
+    </description>
+      <content:encoded>
+      <p>Apple has announced that OS X 10.7 "Lion" will be released 
+in July.  We want to let fink users know what to expect when Lion is 
+released.</p>
+<p>First, the fink 
+program itself will not run after on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+dpkg program to extract a list of the fink packages
+which had been installed under 10.6, so that they could be reinstalled
+under 10.7.  Detailed instructions on how to do this will be posted 
+later.</p>
+<p>(To upgrade fink after upgrading to Lion, one will have to bootstrap
+fink again, using a new version of fink which will be released shortly
+after Lion has been released.  Watch this space for an announcement.)</p>
+<p>Second, due to lots of changes under the hood, there will initially
+be many fewer fink packages which work under 10.7 as apposed to 10.6.
+Thus, even if you've extracted a list of fink packages which had
+been installed under 10.6, some of them may not be installable under
+10.7.  We do not currently have a database showing which packages
+can be successfully installed under 10.7.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-07-11%20fink-0.30.2%20released.">
       <title>fink-0.30.2 released.</title>
       <link>http://fink.sourceforge.net/news/#2011-07-11%20fink-0.30.2%20released.</link>
@@ -313,39 +360,6 @@ and Beyond!</p>
       <p>It is planned to add this version of fink to the stable tree shortly.</p>
       <p>Update, 2010-11-01:  fink-0.29.15 has
       been added to the stable tree.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.">
-      <title>Java update breaks system-java-dev virtual package generation.</title>
-      <link>http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.</link>
-      <guid>http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.</guid>
-      <description>
-      <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
-      and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
-      change the Java file configuration in such a manner that fink
-      no longer generates the system-java16-dev package on 10.5 and
-      all of the system-java-dev packages on 10.6.</p>
-      <p>Users may wish to hold off on applying this update until
-      a version of fink which addresses this issue is released.
-      The issue does not affect packages which are currently installed, but will
-      prevent java-dependent packages from building.</p>
-      <p>Users will want to download an appropriate version of the Java Developer Package
-      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>.</p>
-      <p>Update, 2010-10-23:  The issue has been addressed in fink-0.29.15.</p>
-    </description>
-      <content:encoded>
-      <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
-      and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
-      change the Java file configuration in such a manner that fink
-      no longer generates the system-java16-dev package on 10.5 and
-      all of the system-java-dev packages on 10.6.</p>
-      <p>Users may wish to hold off on applying this update until
-      a version of fink which addresses this issue is released.
-      The issue does not affect packages which are currently installed, but will
-      prevent java-dependent packages from building.</p>
-      <p>Users will want to download an appropriate version of the Java Developer Package
-      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>.</p>
-      <p>Update, 2010-10-23:  The issue has been addressed in fink-0.29.15.</p>
     </content:encoded>
     </item>
   </channel>

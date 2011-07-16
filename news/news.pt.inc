@@ -1,85 +1,23 @@
-<a name="2009-10-30%20Servidor%20novamente%20em%20opera%C3%A7%C3%A3o."><span class="news-date">2009-10-30: </span><span class="news-headline">Servidor novamente em operação.</span></a><?php gray_line(); ?>
-	  <p>Nossos serviços ao usuário foram restaurados. Em 28 de outubro o site
-	  e alguns dos espelhos (rsync, arquivos fontes, distribuição de binários)
-	  foram resturandos e em 30 de outubro todos os principais espelhos rsync
-	  estavam operacionais. Uma vez mais, pedimos desculpas pela
-	  inconveniência. Agradecemos sua paciência e colaboração.</p>
-
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.</p>
-    <a name="2009-10-24%20Problemas%20com%20o%20servidor."><span class="news-date">2009-10-24: </span><span class="news-headline">Problemas com o servidor.</span></a><?php gray_line(); ?>
-	  <p>Estamos com problemas no servidor e por conseguinte o site e a
-	  distribuição oficial de binários estão fora do ar, e os servidores rsync
-	  não estão atualizando. Enquanto resolvemos os problemas, você pode:</p>
-	  <ul>
-		<li>(Web site) Usar o <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a>
-		caso necessite das informações do site;</li>
-
-		<li>(selfupdate) Se você usa rsync como seu método de selfupdate então
-		edite o arquivo <code>/sw/etc/fink.conf</code> e substitua a linha que
-		começa com <code>Mirror-rsync</code> por <code>Mirror-rsync:
-		rsync://fink.gecko.ig42.org/finkinfo/</code></li>
-
-		<li>(arquivos fontes) Edite o arquivo <code>/sw/etc/fink.conf</code> e
-		substitua a linha que começa com <code>Mirror-master</code> por
-		<code>Mirror-master: http://fink-dist.gecko.ig42.org</code></li>
-
-		<li>(bindist) Edite o arquivo <code>/sw/etc/fink.conf</code> e
-		substitua a linha que começa com <code>Mirror-apt:</code> por
-		<code>Mirror-apt: http://fink-bindist.gecko.ig42.org</code></li>
-
-		<li>(bindist) Edite o arquivo <code>/sw/etc/apt/sources.list</code> e
-		substitua <code>http://bindist.finkmirrors.net/bindist</code> por
-		<code>http://fink-bindist.gecko.ig42.org</code></li>
-
-		<li>Execute o comando <code>fink scanpackages</code></li>
-	  </ul>
-      <p>Pedimos desculpas pela inconveniência.</p>
-	<a name="2009-08-28%20Fink%20no%20OS%20X%2010.6"><span class="news-date">2009-08-28: </span><span class="news-headline">Fink no OS X 10.6</span></a><?php gray_line(); ?>
-      <p>O Fink está pronto para ser usado no Snow Leopard (OS X 10.6). Os
-      usuários precisam escolher dentre a versão do Fink de 32 bits e a de 64
-      bits para o 10.6. A versão de 32 bits possui mais pacotes disponíveis no
-      momento mas a versão de 64 bits representa a direção futura tanto do OS X
-      quanto do Fink; os usuários precisam fazer a escolha por conta própria.
-      <b>Não</b> será possível fazer uma atualização de 32 bits para 64 bits
-      (ou vice-versa) sem que o Fink seja completamente reinstalado.</p>
-      <p>No presente momento, dois métodos estão disponíveis para instalar o
-      Fink no Snow Leopard. Um instalador binário não está disponível,
-      portanto é importante <b>instalar primeiro o Xcode da pasta Optional
-      Installs no disco do Snow Leopard.</b> Usuários que queiram a versão de
-      64 bits ou que estejam atualizando diretamente do OS X 10.4 ou anteriores
-      devem instalar o Fink do zero a partir da tarball de distribuição (versão
-      0.29.9 ou posteriores) disponível no <a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a>;
-      as instruções de instalação estão <a href="<?php print $root; ?>download/srcdist.php">aqui</a>. Por outro lado, os usuários
-      podem atualizar diretamente do OS X 10.5 para a versão de 32 bits
-      seguindo as instruções abaixo. (Aviso: usuários que tenham instalado uma
-      versão de desenvolvimento do Fink a partir do CVS no lugar de uma versão
-      efetivamente lançada podem encontrar problemas; por favor, antes de
-      começar, mude para uma versão oficialmente lançada e remova os arquivos
-      .deb que possuam versões maiores.)</p>
-      <p>Para fazer a atualização, siga os quatro passos a seguir. <b>Passo
-      1:</b> edite o arquivo <code>/sw/etc/fink.conf</code> e adicione uma
-      linha contendo <code>NoAutoIndex: true</code> (talvez você tenha que usar
-      o <code>sudo</code> para obter as permissões corretas para editar o
-      arquivo.) <b>Passo 2:</b> execute o comando <code>fink reinstall
-      fink</code> para dizer ao Fink que agora você está no OS X 10.6.
-      (Caso encontre uma mensagem sobre corrupção do banco de dados de pacotes,
-      execute o comando <code>fink index -f</code> e tente este passo
-      novamente.) <b>Passo 3:</b> execute o comando <code>fink update
-      fink</code> para obter a última versão do Fink para o OS X 10.6.
-      <b>Passo 4:</b> execute o comando <code>fink install
-      perl588-core</code> para substituir a versão do Perl que foi alterada
-      pela Apple durante a atualização do OS X caso você possua pacotes que
-      dependam dele.</p>
-      <p>Depois da atualização, talvez você queira executar o comando
-      <code>fink configure</code> para fazer uma limpeza.</p>
-      <p>Quase todos os pacotes do Fink na árvore stable vão compilar no OS X
-      10.6 mas esteja ciente de que apenas uma fração dos pacotes do 10.5 estão
-      disponíveis para o 10.6. Em um futuro próximo, o banco de dados de
-      pacotes do Fink será atualizado para que inclua informações sobre pacotes
-      para o 10.6; você poderá consultá-lo para verificar se seus pacotes
-      prediletos estão disponíveis.</p>
+<a name="2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">Happy 10th Birthday to Fink!</span></a><?php gray_line(); ?>
+      <p>The Fink project was started in the waning days of December 2000 by
+Christoph Pfisterer, using the "public beta" release of Mac OS X.
+Within a year, versions 10.0 and 10.1 of OS X had been released, and
+Fink usage took off.  Our founder chrisp stepped away from the project
+in November 2001, and the community took over.</p>
+<p>The Fink community is the heart of Fink, involving both package maintainers
+and Fink users, as well as the small core team which tries to keep the
+overall system in good shape.  The success of this community in keeping
+Fink viable and active over ten years is really quite remarkable!  Let's
+all join together to keep Fink going for a long time to come.</p>
+<p>How long?  In the memorable words of Buzz Lightyear: <code>To Infinity
+and Beyond!</code></p>
+     <a name="2010-11-09%20fink-0.29.16%20released."><span class="news-date">2010-11-09: </span><span class="news-headline">fink-0.29.16 released.</span></a><?php gray_line(); ?>
+      <p><code>fink-0.29.16</code> has been released to the unstable tree.
+      This version of <code>fink</code> updates the versions of packages used for bootstrapping.</p>
+      <p>It is planned to add this version of <code>fink</code> to the stable tree shortly.</p>
+     <a name="2010-11-02%20Libtool%20archive%20file%20cleaning%20now%20in%20stable."><span class="news-date">2010-11-02: </span><span class="news-headline">Libtool archive file cleaning now in stable.</span></a><?php gray_line(); ?>
+      <p><code>dpkg-1.10.21-1229</code> has been added to stable.  This
+      revision automatically cleans up libtool archive (<code>.la</code>)
+      files, which have historically caused problems for folks upgrading from 10.5
+      to 10.6.</p>  
     

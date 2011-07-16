@@ -5,8 +5,175 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>pt</dc:language>
-    <dc:date>2010-09-16T17:39:59+00:00</dc:date>
+    <dc:date>2011-07-16T15:07:47-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!">
+      <title>Happy 10th Birthday to Fink!</title>
+      <link>http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!</link>
+      <guid>http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!</guid>
+      <description>
+      <p>The Fink project was started in the waning days of December 2000 by
+Christoph Pfisterer, using the "public beta" release of Mac OS X.
+Within a year, versions 10.0 and 10.1 of OS X had been released, and
+Fink usage took off.  Our founder chrisp stepped away from the project
+in November 2001, and the community took over.</p>
+<p>The Fink community is the heart of Fink, involving both package maintainers
+and Fink users, as well as the small core team which tries to keep the
+overall system in good shape.  The success of this community in keeping
+Fink viable and active over ten years is really quite remarkable!  Let's
+all join together to keep Fink going for a long time to come.</p>
+<p>How long?  In the memorable words of Buzz Lightyear: To Infinity
+and Beyond!</p>
+     </description>
+      <content:encoded>
+      <p>The Fink project was started in the waning days of December 2000 by
+Christoph Pfisterer, using the "public beta" release of Mac OS X.
+Within a year, versions 10.0 and 10.1 of OS X had been released, and
+Fink usage took off.  Our founder chrisp stepped away from the project
+in November 2001, and the community took over.</p>
+<p>The Fink community is the heart of Fink, involving both package maintainers
+and Fink users, as well as the small core team which tries to keep the
+overall system in good shape.  The success of this community in keeping
+Fink viable and active over ten years is really quite remarkable!  Let's
+all join together to keep Fink going for a long time to come.</p>
+<p>How long?  In the memorable words of Buzz Lightyear: To Infinity
+and Beyond!</p>
+     </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2010-11-09%20fink-0.29.16%20released.">
+      <title>fink-0.29.16 released.</title>
+      <link>http://fink.sourceforge.net/news/#2010-11-09%20fink-0.29.16%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2010-11-09%20fink-0.29.16%20released.</guid>
+      <description>
+      <p>fink-0.29.16 has been released to the unstable tree.
+      This version of fink updates the versions of packages used for bootstrapping.</p>
+      <p>It is planned to add this version of fink to the stable tree shortly.</p>
+     </description>
+      <content:encoded>
+      <p>fink-0.29.16 has been released to the unstable tree.
+      This version of fink updates the versions of packages used for bootstrapping.</p>
+      <p>It is planned to add this version of fink to the stable tree shortly.</p>
+     </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2010-11-02%20Libtool%20archive%20file%20cleaning%20now%20in%20stable.">
+      <title>Libtool archive file cleaning now in stable.</title>
+      <link>http://fink.sourceforge.net/news/#2010-11-02%20Libtool%20archive%20file%20cleaning%20now%20in%20stable.</link>
+      <guid>http://fink.sourceforge.net/news/#2010-11-02%20Libtool%20archive%20file%20cleaning%20now%20in%20stable.</guid>
+      <description>
+      <p>dpkg-1.10.21-1229 has been added to stable.  This
+      revision automatically cleans up libtool archive (.la)
+      files, which have historically caused problems for folks upgrading from 10.5
+      to 10.6.</p>  
+    </description>
+      <content:encoded>
+      <p>dpkg-1.10.21-1229 has been added to stable.  This
+      revision automatically cleans up libtool archive (.la)
+      files, which have historically caused problems for folks upgrading from 10.5
+      to 10.6.</p>  
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2010-11-02%20KDE3%20and%20GNOME%20updated%20in%20stable.">
+      <title>KDE3 and GNOME updated in stable.</title>
+      <link>http://fink.sourceforge.net/news/#2010-11-02%20KDE3%20and%20GNOME%20updated%20in%20stable.</link>
+      <guid>http://fink.sourceforge.net/news/#2010-11-02%20KDE3%20and%20GNOME%20updated%20in%20stable.</guid>
+      <description>
+      <p>KDE-3.5.10 and GNOME-2.28
+      have been added to the stable tree, along with updates to some important
+      dependencies.</p>
+    </description>
+      <content:encoded>
+      <p>KDE-3.5.10 and GNOME-2.28
+      have been added to the stable tree, along with updates to some important
+      dependencies.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.">
+      <title>fink-0.29.15 released.</title>
+      <link>http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.</guid>
+      <description>
+      <p>fink-0.29.15 has been released to the unstable tree.
+      This version of fink contains fixes to the system-java-dev
+      virtual package generation.</p>
+      <p>Users will also need to download an appropriate version of the Java Developer Package
+      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>
+      for all of the the system-java-dev packages to show up on 10.5 and 10.6.</p>
+      <p>It is planned to add this version of fink to the stable tree shortly.</p>
+      <p>Update, 2010-11-01:  fink-0.29.15 has
+      been added to the stable tree.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.29.15 has been released to the unstable tree.
+      This version of fink contains fixes to the system-java-dev
+      virtual package generation.</p>
+      <p>Users will also need to download an appropriate version of the Java Developer Package
+      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>
+      for all of the the system-java-dev packages to show up on 10.5 and 10.6.</p>
+      <p>It is planned to add this version of fink to the stable tree shortly.</p>
+      <p>Update, 2010-11-01:  fink-0.29.15 has
+      been added to the stable tree.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.">
+      <title>Java update breaks system-java-dev virtual package generation.</title>
+      <link>http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.</link>
+      <guid>http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.</guid>
+      <description>
+      <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
+      and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
+      change the Java file configuration in such a manner that fink
+      no longer generates the system-java16-dev package on 10.5 and
+      all of the system-java-dev packages on 10.6.</p>
+      <p>Users may wish to hold off on applying this update until
+      a version of fink which addresses this issue is released.
+      The issue does not affect packages which are currently installed, but will
+      prevent java-dependent packages from building.</p>
+      <p>Users will want to download an appropriate version of the Java Developer Package
+      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>.</p>
+      <p>Update, 2010-10-23:  The issue has been addressed in fink-0.29.15.</p>
+    </description>
+      <content:encoded>
+      <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
+      and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
+      change the Java file configuration in such a manner that fink
+      no longer generates the system-java16-dev package on 10.5 and
+      all of the system-java-dev packages on 10.6.</p>
+      <p>Users may wish to hold off on applying this update until
+      a version of fink which addresses this issue is released.
+      The issue does not affect packages which are currently installed, but will
+      prevent java-dependent packages from building.</p>
+      <p>Users will want to download an appropriate version of the Java Developer Package
+      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>.</p>
+      <p>Update, 2010-10-23:  The issue has been addressed in fink-0.29.15.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released.">
+      <title>fink-0.29.14 released.</title>
+      <link>http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released.</guid>
+      <description>
+      <p>fink-0.29.14 has been released to the unstable tree.
+      This version of finkcontains, among
+      other new features, an aria2 option for DownloadMethod,
+      to allow the use of the aria2 download accelerator
+      (available via Fink), and a fix for the infamous "node exists" error.  
+      </p>
+      <p>It is planned to add this version to the stable tree shortly.</p>
+      <p>Addendum, 2010-10-19:  because of the Java update (2010-10-20),
+      fink-0.29.15 is now slated to be the version next to go to stable.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.29.14 has been released to the unstable tree.
+      This version of finkcontains, among
+      other new features, an aria2 option for DownloadMethod,
+      to allow the use of the aria2 download accelerator
+      (available via Fink), and a fix for the infamous "node exists" error.  
+      </p>
+      <p>It is planned to add this version to the stable tree shortly.</p>
+      <p>Addendum, 2010-10-19:  because of the Java update (2010-10-20),
+      fink-0.29.15 is now slated to be the version next to go to stable.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servidor%20novamente%20em%20opera%E7%E3o.">
       <title>Servidor novamente em operação.</title>
       <link>http://fink.sourceforge.net/news/#2009-10-30%20Servidor%20novamente%20em%20opera%E7%E3o.</link>

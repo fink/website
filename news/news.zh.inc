@@ -1,83 +1,23 @@
-<a name="2009-10-30%20Servers%20back%20to%20normal."><span class="news-date">2009-10-30: </span><span class="news-headline">Servers back to normal.</span></a><?php gray_line(); ?>
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.</p>
-    <a name="2009-10-24%20Server%20issues"><span class="news-date">2009-10-24: </span><span class="news-headline">Server issues</span></a><?php gray_line(); ?>
-	  <p>We have had server issues and as a result the Web site and the
-	  official binary distribution are down, and the rsync servers are stalled.
-	  Whilst we sort this out, you may:</p>
-	  <ul>
-		<li>(Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-		you need Web site information</li>
-
-		<li>(selfupdate) If you use rsync as your selfupdate method then edit
-		<code>/sw/etc/fink.conf</code> and replace the line that starts with
-		<code>Mirror-rsync</code> with <code>Mirror-rsync:
-		rsync://fink.gecko.ig42.org/finkinfo/</code></li>
-
-		<li>(source files) Edit <code>/sw/etc/fink.conf</code> and replace the
-		line that starts with <code>Mirror-master</code> with
-		<code>Mirror-master: http://fink-dist.gecko.ig42.org</code></li>
-		
-		<li>(bindist) Edit <code>/sw/etc/fink.conf</code> and replace the line
-		that starts with <code>Mirror-apt:</code> with <code>Mirror-apt:
-		http://fink-bindist.gecko.ig42.org</code></li>
-
-		<li>(bindist) Edit <code>/sw/etc/apt/sources.list</code> and replace
-		<code>http://bindist.finkmirrors.net/bindist</code> with
-		<code>http://fink-bindist.gecko.ig42.org</code></li>
-
-		<li>Run <code>fink scanpackages</code>.</li>
-	  </ul>
-      <p>We apologise for the inconvenience.</p>
-	<a name="2009-08-28%20Fink%20on%2010.6."><span class="news-date">2009-08-28: </span><span class="news-headline">Fink on 10.6.</span></a><?php gray_line(); ?>
-      <p>
-Fink is ready to be used on Snow Leopard (OS X v. 10.6).  Users will
-need to choose between a 32-bit version of fink and a 64-bit version of fink
-for 10.6.
-The 32-bit version has more packages available at the present time, but
-the 64-bit version represents the future direction for OS X and for fink;
-individual users must make this decision on their own.  It will <b>not</b>
-be possible to "upgrade" from 32-bit to 64-bit (or vice versa), without
-completely reinstalling fink.
-</p><p>
-At the moment, two methods are available for installing Fink on Snow Leopard.
-A binary installer is not available, so it is important to
-<b>first install XCode from the Optional Installs folder on the Snow
-Leopard disk.</b>
-Users wanting the 64-bit version, or users upgrading directly from 10.4 or
-earlier, must bootstrap fink from the distribution tarball (version
-0.29.9 or later), available at <a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a>; installation instructions are
-<a href="<?php print $root; ?>download/srcdist.php">here</a>.
-On the other hand, users can upgrade directly from
-10.5 to the 32-bit version, following the instructions below.
-(One warning: users who have installed a development version of fink
-from CVS rather than a released version may encounter trouble; please
-downgrade your fink to a released version, and remove stray .deb files
-of higher versions, before beginning.)
-</p><p>
-To upgrade, follow a four step process.
-<b>Step 1:</b> edit the file <code>/sw/etc/fink.conf</code>,
-adding a line to it which reads <code>NoAutoIndex: true</code>  (You may
-need to use <code>sudo</code> to obtain the correct permissions to edit
-this file.)  <b>Step 2:</b> 
-run the command <code>fink reinstall fink</code> in
-order to tell fink that you are now on 10.6.  (If you encounter a message
-about package database corruption, run <code>fink index -f</code> and
-try this step again.)  <b>Step 3:</b> 
-run the command <code>fink update
-fink</code> to get the latest fink for 10.6.  <b>Step 4:</b> run the command
-<code>fink install perl588-core</code> to replace the version of perl
-which Apple changed during the OS X upgrade, in case you have 
-fink packages which depend on it.
-</p><p>After the upgrade, you may wish to run <code>fink configure</code>
-to do some cleanup.
-</p><p>Almost all of the packages in fink's stable tree will compile on
-10.6, but be warned that only a fraction of the 10.5 packages are currently
-available for 10.6.  In the near future, fink's package database will be
-updated to include information about packages for 10.6; you can check there
-to see if your favorite package is ready.
-</p>
-
+<a name="2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">Happy 10th Birthday to Fink!</span></a><?php gray_line(); ?>
+      <p>The Fink project was started in the waning days of December 2000 by
+Christoph Pfisterer, using the "public beta" release of Mac OS X.
+Within a year, versions 10.0 and 10.1 of OS X had been released, and
+Fink usage took off.  Our founder chrisp stepped away from the project
+in November 2001, and the community took over.</p>
+<p>The Fink community is the heart of Fink, involving both package maintainers
+and Fink users, as well as the small core team which tries to keep the
+overall system in good shape.  The success of this community in keeping
+Fink viable and active over ten years is really quite remarkable!  Let's
+all join together to keep Fink going for a long time to come.</p>
+<p>How long?  In the memorable words of Buzz Lightyear: <code>To Infinity
+and Beyond!</code></p>
+     <a name="2010-11-09%20fink-0.29.16%20released."><span class="news-date">2010-11-09: </span><span class="news-headline">fink-0.29.16 released.</span></a><?php gray_line(); ?>
+      <p><code>fink-0.29.16</code> has been released to the unstable tree.
+      This version of <code>fink</code> updates the versions of packages used for bootstrapping.</p>
+      <p>It is planned to add this version of <code>fink</code> to the stable tree shortly.</p>
+     <a name="2010-11-02%20Libtool%20archive%20file%20cleaning%20now%20in%20stable."><span class="news-date">2010-11-02: </span><span class="news-headline">Libtool archive file cleaning now in stable.</span></a><?php gray_line(); ?>
+      <p><code>dpkg-1.10.21-1229</code> has been added to stable.  This
+      revision automatically cleans up libtool archive (<code>.la</code>)
+      files, which have historically caused problems for folks upgrading from 10.5
+      to 10.6.</p>  
+    
