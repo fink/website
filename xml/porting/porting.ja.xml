@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
   <title>Unix ソフトウェアの Darwin と Mac OS X への移植</title>
   <shorttitle>移植</shorttitle>
-  <cvsid>$Id: porting.ja.xml,v 1.8 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
+  <cvsid>$Id: porting.ja.xml,v 1.9 2011/07/17 00:52:32 babayoshihiko Exp $</cvsid>
   <preface>
     <p>
 		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
@@ -34,9 +34,9 @@
     <section name="compiler">
       <title>コンパイラとツール</title>
       <p>
-			短い説明: コンパイラは gcc の葉生物ですが， <code>cc</code> としてインストールされます．
+			短い説明: コンパイラは gcc の派生物ですが， <code>cc</code> としてインストールされます．
 			Makefile にパッチを当てる必要があるでしょう．
-			ほとんどのパッケージは 共有ライブラリ をビルドしません．
+			ほとんどのパッケージは共有ライブラリ をビルドしません．
 			マクロに関係するエラーが出た時は，<code>-no-cpp-precomp</code> オプションを使用してください．
 			</p>
       <p>
@@ -60,7 +60,7 @@
     <section name="host-type">
       <title>ホスト種別</title>
       <p>
-			短い説明: configure が 'Can't determine host type' と言って異常終了した場合，config.guess と config.sub を /usr/share/libtool (OS バージョン 10.2 以前では /usr/libexec) を現在のディレクトリにコピーしてください．
+			短い説明: configure が 'Can't determine host type' と言って異常終了した場合，config.guess と config.sub を /usr/share/libtool (OS バージョン 10.2 以前では /usr/libexec) から現在のディレクトリにコピーしてください．
 			</p>
       <p>長い説明: GNU の世界では，システムの種類を特定するために基準形式を採用しています．
 これには３つのパートがあります: CPU 種別，メーカー，オペレーティングシステム．
@@ -102,7 +102,7 @@ Mac OS X 10.0 のホスト種別は <code>powerpc-apple-darwin1.3</code> です�
     <section name="other-sources">
       <title>他の情報源</title>
       <p>ポーティングに関する他の情報源としては，<link url="http://www.metapkg.org/wiki">MetaPkg Wiki</link> があります．</p>
-      <p>Apple Technical Note <link url="http://developer.apple.com/technotes/tn2002/tn2071.html">TN2071</link>: "Porting Command Line Unix Tools to Mac OS X" も読むとよいでしょう．</p>
+      <p>Apple Technical Note <link url="http://developer.apple.com/technotes/tn2002/tn2071.html">TN2071</link>: &quot;Porting Command Line Unix Tools to Mac OS X&quot; も読むとよいでしょう．</p>
     </section>
   </chapter>
   <chapter filename="shared">
@@ -111,7 +111,7 @@ Mac OS X 10.0 のホスト種別は <code>powerpc-apple-darwin1.3</code> です�
     <section name="lib-and-mod">
       <title>共有ライブラリ vs ローダブル・モジュール</title>
       <p>
-			Mach-0 の仕様の一つであ，多くの人を驚かせるものとして， 共有ライブラリ と 動的ローダブル・モジュールを厳密に区別します．
+			Mach-0 の仕様の一つで，多くの人を驚かせるものとして， 共有ライブラリ と 動的ローダブル・モジュールを厳密に区別する点があります．
 			ELF システムでは両者は同質で，共有コードのどの部分でも，ライブラリとしても動的ローディングにも使うことができます．
 			</p>
       <p>
@@ -143,7 +143,7 @@ Mac OS X 10.0 のホスト種別は <code>powerpc-apple-darwin1.3</code> です�
 			これはよく行われることで，これによって，ライブラリのいくつかのメジャーバージョンをインストールすることが可能になります．
 			ELF システムでは，これは <code>soname</code> と言われています．
 			Darwin の場合，ファイル名の他にフルパスを指定することができ（またする必要があり）ます．
-			これにより，"rpath" オプションと ldconfig/ld.so.cache システムが不要になります．
+			これにより，&quot;rpath&quot; オプションと ldconfig/ld.so.cache システムが不要になります．
 			まだインストールされていないライブラリを使うには， DYLD_LIBRARY_PATH 環境変数を設定することもできます．
 			詳細は dyld の man ページをご覧ください．
 			</p>
@@ -169,7 +169,7 @@ Mac OS X 10.0 のホスト種別は <code>powerpc-apple-darwin1.3</code> です�
 			位置独立コード (PIC: Position Independent Code) の生成は Darwin ではデフォルトです．
 			実際， PowerPC コードは設計上 position-independent となり，パフォーマンスや空間上の損失はありません．
 			このため，共有ライブラリやモジュールへコードをコンパイルする際も，PIC を指定する必要はありません．
-			しかし，リンカは"共通"のシンボルを共有ライブラリ内に持つことは認めないので， <code>-fno-common</code> コンパイラオプションが必要になります．
+			しかし，リンカは「共通」のシンボルを共有ライブラリ内に持つことは認めないので， <code>-fno-common</code> コンパイラオプションが必要になります．
 			</p>
     </section>
     <section name="build-lib">
@@ -190,7 +190,7 @@ rm -f libfoo.2.dylib libfoo.dylib
 ln -s libfoo.2.4.5.dylib libfoo.2.dylib
 ln -s libfoo.2.4.5.dylib libfoo.dylib</codeblock>
       <p>
-バージョンのどの部分がどこで使われたかわかりましたか．
+この例で，バージョンのどの部分がどこで使われたかわかりましたでしょうか．
 また，静的リンカが libfoo.dylib シンボリックリンクを使い，動的リンカは libfoo.2.dylib シンボリックリンクを使うことに注意してください．
 それぞれのシンボリックリンクをライブラリの異なるリビジョンへつなげることも可能です．
 
@@ -200,7 +200,8 @@ ln -s libfoo.2.4.5.dylib libfoo.dylib</codeblock>
       <title>モジュールをビルド</title>
       <p>
 ローダブル・モジュールをビルドするためには，<code>-bundle</code> オプション付きでコンパイラドライバを呼び出します．
-モジュールがホストプログラムのシンボルを使う場合， <code>-undefined suppress</code> を指定して未定義のシンボルを使い， <code>-flat_namespace</code> を指定して新しいリンカが Mac OS X 10.1 でも使えるようにします．
+モジュールがホストプログラムのシンボルを使う場合， <code>-undefined suppress</code> を指定して未定義のシンボルを使い， 
+<code>-flat_namespace</code> を指定して新しいリンカが Mac OS X 10.1 でも使えるようにします．
 一連の例:
 </p>
       <codeblock>cc -fno-common -c source.c
@@ -211,7 +212,8 @@ cc -bundle -flat_namespace -undefined suppress \
 バージョン番号は使用していません．
 理論的には使うことも可能ですが，実際あまり意味がありません．
 また，バンドルには名称上の制限が無いことに注意してください．
-パッケージによっては，他のシステムが要求するため "lib" を前置しますが，これも無害です．
+パッケージによっては，他のシステムが要求するため &quot;lib&quot; を前置しますが，
+プログラムがモジュールをロードする際には完全なファイル名を使用するので，無害です．
 </p>
     </section>
   </chapter>
@@ -271,7 +273,7 @@ Apple は libtool 1.3.5 のパッチが当たったバージョンを Mac OS X �
 Christoph Pfisterer がこのパッチを改良し，正しいパスのハードコーディングと完全なバージョニングを行うようになりました．
 この変更は上流の libtool リリースと 1.4 で始まる開発バージョンに統合されました．
 Fink チームのメンバーはこれからも改良を続け， libtool メンテナに送っていきます．
-バージョン番号の貴族は全ての libtool バージョンで一致しています．
+バージョン番号のスキームは全ての libtool バージョンで一致しています．
 </p>
       <p>
 注記:
@@ -403,7 +405,7 @@ OS X 10.2 は <code>/bin/sh</code> 機能を提供するため zsh ではなく 
       <ul>
         <li>
 過去において，セミコロンを追加するだけでは何もしない CompileScript (や PatchScript や
-InstallScript) を作成した fink パッケージがあります．
+InstallScript) を作成した fink パッケージがありました．
 これは bash では動作せず，以下のように置き換える必要があります
 <codeblock>
   CompileScript: echo "nothing to do"
