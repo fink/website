@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.45 2008/06/15 05:49:48 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.46 2011/07/17 02:23:56 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -83,7 +83,7 @@
 				「パッケージ名」に拡張子 &quot;.info&quot; を付けただけの簡略形式が便利です．
 fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの方法があります:
 推奨されるのは，他の必要なパッケージファイルと整合性のとれる最も短いものです．
-ファイル名の形式は: 亜種のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision，を
+ファイル名の形式は: Variant のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision，を
 ハイフンでつなぎ，&quot;.info&quot; で終えます．
 &quot;architecture&quot; と &quot;distribution&quot; は，対応するフィールドが定義され，値を一つだけ持つ場合に限ります．
 			</p>
@@ -95,6 +95,7 @@ fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの�
 				<li>
 					ツリーは <code>dists</code> から始まる．
 					<code>dists</code> ディレクトリは Debian ツールで必須．
+					最近の fink では，ディストリビューションのわかるディレクトリへの symlink になっている．
 				</li>
 				<li>
 					ディストリビューション．
@@ -105,7 +106,8 @@ fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの�
 				<li>
 					ツリー．
 					ツリー <code>main</code> にはパッケージの大部分が含まれる．
-					暗号を使うソフトウェアは別ツリー <code>crypto</code> に収められ，必要であれば簡単に取り除ける．
+					２０１０年７月１日以前は，暗号を使うソフトウェアは別ツリー <code>crypto</code> に収められていたが，
+					現在は <code>main</code> 以下の１セクションになっている．
 				</li>
 				<li>
 					<code>finkinfo</code> または <code>binary-darwin-powerpc</code>．
@@ -115,7 +117,6 @@ fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの�
 				<li>
 					セクション．
 					ツリー <code>main</code> は，管理しやすくするために種類別に分類されている．
-					ツリー <code>crypto</code> は現在のところ分類されていない．
 				</li>
 			</ul>
 		</section>
@@ -867,21 +868,17 @@ SplitOff: &lt;&lt;
 				ヘッダファイルと，最低一つの dylib を含み， BuildDependsOnly 値で真偽を宣言していない .deb ファイルに警告を出します．
 				(将来のバージョンでは，この機能をヘッダファイルと静的ライブラリに対応するように拡張する可能性もある．)
 			</p>
-<!-- start translation --><p>
-  The goal of the Shared Library Policy is to allow assure
-  compatibility between libraries supplied by one package and
-  libraries or programs that use them in a different package. Some
-  packages may have shared libraries that are not designed to be used
-  by other packages. Common situations include a suite of programs
-  that come with a back-end library of utility functions or a program
-  that comes with plugins to handle various features. Because these
-  libraries are "private" to the package that has them, they do not
-  require being packaged with separate -shlibs
-  or <code>BuildDependsOnly</code> SplitOffs.
-</p><!-- end translation -->
+<p>
+  共有ライブラリのポリシーのゴールは，共有ライブラリを提供したパッケージと，それを使う別のパッケージとの互換性を保証することです．
+  パッケージによっては，共有ライブラリが他のパッケージに使われることを想定せずに設計されていることもあります．
+  一般的な例としては，プログラムスイートの裏方のライブラリや，
+  機能を追加するためのプラグインのあるようなプログラムです．
+  これらのライブラリは，そのパッケージにとって「プライベート」なので，
+  -shlibs や <code>BuildDependsOnly</code> といった　SplitOff は必要ありません．
+</p>
 			<p><em>フィールド Shlibs:</em></p>
 			<p>
-共有ライブラリを適切なパッケージに分類する他にも， Fink ポリシー第 4版では，
+共有ライブラリを適切なパッケージに分類する他にも， Fink ポリシー第4版では，
 共有ライブラリ全てをフィールド <code>Shlibs</code> を使って宣言することが求められています．
 
 このフィールドでは，各共有ライブラリに対して 1 行ずつ，
@@ -924,25 +921,18 @@ Shlibs: &lt;&lt;
 			</p>
 <!-- start translation -->
 <p>
-The <code>Shlibs</code>
-entry for a private library uses a different syntax:
+プライベートなライブラリの <code>Shlibs</code> は，文法が異なります:
 </p>
 <codeblock>
   Shlibs: &lt;&lt;
     !%p/lib/%N/libbar.1.dylib
   &lt;&lt;
 </codeblock>
-<p>The leading exclamation point indicates that this is a private library,
-and since the other information is not relevant in this case, it is 
-not included.</p>
-<p>Note that in this example, the private shared library has been placed
-in its own subdirectory <filename>%N</filename> of the 
-<filename>%i/lib</filename> directory (which was named after the
-package).  This is a recommended procedure for private libraries,
-as an additional safety measure, to prevent other packages from accidentally
-linking to this library.
+<p>最初のビックリマークが，これはプライベートなライブラリであることを示しています．
+この場合，他の情報は関係がないので，省略されています．</p>
+<p>この例では，プライベートなライブラリが <filename>%i/lib</filename> 内の <filename>%N</filename> というサブディレクトリに保存されています．
+これはパッケージ名で，他のパッケージが誤ってこのライブラリにリンクしないようにするものです．
 </p>
-<!-- end translation -->
 			<p>
 				<em>メジャーバージョン番号が変わるとき:</em>
 			</p>
@@ -1003,27 +993,22 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				こうすると， <code>foo</code> に依存する他のパッケージのメンテナが改訂を済ませるまで，
 				ユーザのシステムでは大抵 <code>foo-bin</code> のインストールが要求されます．
 			</p>
-<!-- start translation -->
 <p>
-  As of fink-0.28.0 (released in January 2008), the format of
-  the <code>Shlibs</code> entry for a "private" shared library has
-  changed (see earlier discussion of the difference between a public
-  and a private shared library). Note that the Shared Library Policy
-  has always required all shared libraries to be listed; the change
-  here is only in the syntax of the <code>Shlibs</code> field. Because
-  this type of shared library is not designed to be used by external
-  packages, there is no need to document its compatilibity or other
-  versioning. Instead, an exclamation-mark is used.  For example,
-  if <filename>libquux.3.dylib</filename> is
-  the <code>install_name</code> of a private shared library, it would
-  be listed as follows:
+  fink-0.28.0 (released in January 2008) より，<code>Shlibs</code> の「プライベート」なライブラリの記述方法が変わりました．
+  (上述のパブリックライブラリとプライベートライブラリの議論を参照)
+  共有ライブラリのポリシーでは，常にすべての共有ライブラリを一覧化するよう定められています．
+  ここで変わったのは，<code>Shlibs</code> フィールドの書き方だけです．
+  プライベートなライブラリは，他のパッケージによって使われることを想定していないので，
+  compatibility や他のバージョン情報は不要です．
+  その代わりに先頭にビックリマークをつけます．
+  例えば，あるプライベートな共有ライブラリの <code>install_name</code> が <filename>libquux.3.dylib</filename> である場合，
+  以下のようになります．
 </p>
 <codeblock>
   Shlibs: &lt;&lt;
     !%p/lib/libquux.3.dylib
   &lt;&lt;
 </codeblock>
-<!-- end translation -->
 		</section>
 		<section name="perlmods">
 			<title>Perl モジュール</title>
@@ -1170,12 +1155,65 @@ InstallScript: &lt;&lt;
 				</link>
 				を参照)
 				Fink ポリシーとの違いは 2 点です．
-				まず，このポリシーは Fink では現在のところパッケージ emacs20 と emacs21 にのみ適用され，パッケージ xemacs には適用されません．
+				まず，このポリシーは Fink では現在のところパッケージ <filename>emacs21</filename>, <filename>emacs22</filename>, <filename>emacs23</filename> にのみ適用され，パッケージ xemacs には適用されません．
 				(この点は将来変わるかも知れません．)
 				次に Debian のポリシーと異なり， Fink パッケージはどれもファイルを直接
 				<filename>/sw/share/emacs/site-lisp</filename> にインストールして構いません．
 			</p>
 		</section>
+
+
+
+<!-- start translation -->
+<section name="sources"><title>Source Policy</title>
+    <p>Sources should normally be downloaded from the location(s) that the upstream
+    developer(s) use, and any modifications for Fink should be done through the use
+    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+    source archive as a <code>Source</code> in your Fink packaging.</p>
+    <p>If a VCS checkout (e.g. from <em>git</em> or <em>svn</em>) is to be used, e.g.
+    because a project doesn't do formal releases, or a fix for a particular issue has
+    been added between releases of a package, an acceptable source can be generated
+    via the following method:</p>
+    <ol>
+        <li>Check out the package, preferably at a definite revision of the VCS.</li>
+        <li>Make an archive from the VCS checkout (e.g. <em>zip</em>, <em>tar</em>, <em>tar.gz</em>,
+        or <em>tar.bz2</em>).
+            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
+            <filename>foo-0svn1234.tar.gz</filename> for a package that doesn't make releases, or
+            <filename>bar-1.2.3+svn4567.tar.bz2</filename> for a Fink package which is between
+            upstream releases.</p></li>
+        <li>Use the same <code>Version</code> in your <filename>.info</filename> file.</li>
+        <li>It is also useful to put the commands that you ran to generate the source tarball in the
+        <code>DescPackaging</code> field.</li>
+        <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
+        If you don't have ready access to one, ask on the
+        <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</link> or
+        <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
+        and someone should be able to help.</li>
+    </ol>
+</section>
+
+<section name="downloading"><title>File Download Policy</title>
+    <p>Packages are not to download any files during the unpack, patch, compile, install,
+    or build phases of the <xref chapter="reference" section="build">build process</xref>.  Any large patches (i.e.
+    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
+    set up as additional Sources in accordance with the <xref chapter="policy" section="sources">
+    Source Policy.</xref></p>
+    <p>Packages may download data in a PostInstScript after they have been installed on the system,
+    under some limited circumstances:</p>
+    <ul>
+        <li>No updates to the package itself are allowed.</li>
+        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
+        virus definitions for <filename>clamav</filename> can be downloaded during this phase,
+        because they change continually.</li>
+    </ul>
+    <p>If you are unsure, contact <link url="mailto:fink-core@lists.sourceforge.net">the Fink Core
+    Team</link>.</p> 
+</section>
+<!-- end translation -->
+
+
+
 	</chapter>
 	<chapter filename="fslayout">
 		<title>ファイルシステムのレイアウト</title>
@@ -1543,10 +1581,10 @@ OS X 10.2 以前には <code>gcc_select</code> はありません．)
 						<p>
 							Fink のパッケージングポリシーでは，
 							どのパッケージも常に同じオプションを有効にしてコンパイルされるようにします．
-							あるパッケージに複数の変種を設ける場合は (フィールド <code>Type</code> の説明を参照)，
-							変種を区別する情報をフィールド <code>Package</code> に含めなければいけません
+							あるパッケージに複数の Variant を設ける場合は (フィールド <code>Type</code> の説明を参照)，
+							 Variant を区別する情報をフィールド <code>Package</code> に含めなければいけません
 							(パーセント展開 %type_pkg[] の説明を参照)．
-							これにより，各変種に固有の (どのオプションが有効かが分かる) 「パッケージ名」が与えられます．
+							これにより，各 Variant に固有の (どのオプションが有効かが分かる) 「パッケージ名」が与えられます．
 							フィールド <code>Package</code> 内でパーセント展開 %type_pkg[] および %type_raw[] を使うことは最近導入されたばかりで，
 							古い Fink とは非互換であるため，注意が必要です．
 							そのため，そのようなパッケージ記述はフィールド <code>InfoN</code> (ただし N&gt;=2) 内に埋め込むようにします．
@@ -1609,7 +1647,7 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 <p>
 このフィールドでは，値一覧にある値とパーセント展開を，通常の条件文法で使うことができます
 (詳細については，<code>Depends</code> フィールドを参照)．
-これによって，特定の変種を特定のアーキテクチャーに制限することができます．
+これによって，特定の Variant を特定のアーキテクチャーに制限することができます．
 例えば:
 </p>
 <codeblock>
@@ -1618,10 +1656,89 @@ gcc-4.0 以前のコンパイラを使うパッケージ
   Architecture: (%type_pkg[perl] = 581) powerpc
 </codeblock>
 <p>
-によって，foo-pm581 という変種は <code>powerpc</code> となり，他の変種には値無しになります．
+によって，foo-pm581 という Variant は <code>powerpc</code> となり，他の Variant には値無しになります．
 ただし，アーキテクチャーの値が無いことは，そのアーキテクチャー用のパッケージではない，ということではありません．
 </p>
 </itemd></item>
+
+
+
+<!-- start translation -->
+<item><itemt>Distribution</itemt>
+<itemd>
+<p>
+A comma-separated list of distribution(s) for which the package
+(and any splitoff packages) are intended.
+At present, the only valid values for distribution are
+<code>10.4</code>,
+<code>10.5</code>,
+and <code>10.6</code>
+. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine distribution is not listed. If the field is omitted
+or the value is blank, all distributions are assumed.
+(Introduced in fink 0.26.0.)
+</p>
+<p>
+Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
+a common set of finkinfo files, the most common use of this field will be for 
+packages which are suitable for one of those distributions but not the
+other.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <code>Depends</code> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<codeblock>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.6)
+  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+</codeblock>
+<p>
+will result in the field for the foo-pm581 variant
+being <code>10.3, 10.4</code> and the field being blank for the 
+foo-pm586 variant.
+</p>
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
+available perl packages vary by distribution, these package types provide
+a common use of this field.  For reference, we note the availabilty of
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+</p>
+<codeblock>
+    perl 5.6.0:  10.3
+    perl 5.8.0:  10.3
+    perl 5.8.1:  <em>10.3</em>, 10.4
+    perl 5.8.4:  10.3, 10.4
+    perl 5.8.6:  10.3, <em>10.4</em>, 10.5
+    perl 5.8.8:        10.4, <em>10.5</em>, 10.6
+    perl 5.10.0:             10.5, <em>10.6</em>
+</codeblock>
+<p>A way to include all variants in a single finkinfo file is as follows.
+</p>
+<codeblock>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+  &lt;&lt;
+</codeblock>
+<p>Note that we do not include old
+distributions, such as 10.2 or 10.4-transitional, since the versions of
+fink which are relevant for them do not recognize this field.
+</p>
+</itemd></item>
+<!-- end translation -->
+
+
+
 				<item>
 					<itemt>Epoch</itemt>
 					<itemd>
@@ -1673,7 +1790,7 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 						<p>
 							値が <code>perl</code> の場合 (Fink 0.9.5 以降):
 							コンパイル及びインストール段階のスクリプトのデフォルト値が変わります．
-							Fink 0.13.0 からは，この値の変種として <code>perl $version</code> が使えます．
+							Fink 0.13.0 からは，この値の Variant として <code>perl $version</code> が使えます．
 							ここで &quot;$version&quot; は perl の特定のバージョンで，3つの数をピリオドで区切ったもの
 							(<code>perl 5.6.0</code> など)．
 						</p>
@@ -1691,9 +1808,9 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 							
 						</p>
 						<p>
-							これに加えて「変種」という概念があります．
+							これに加えて「 Variant 」という概念があります．
 							単一のパッケージ記述が，有効なコンパイルオプションだけが違う複数のパッケージを生成するとき，
-							これらのパッケージは「変種」になります．
+							これらのパッケージは「 Variant 」になります．
 							このプロセスの鍵はサブタイプリストの利用です．
 							単一の文字列ではなく，文字列の空白区切りリストを括弧で括ったものを使います．
 							Fink はリスト内のサブタイプ毎にパッケージ記述をコピーし，各コピー内ではリストを単一のサブタイプに置き換えます．
@@ -1711,12 +1828,12 @@ Type: -x11 (boolean)
 Type: -x11 (-x11 .)
 </codeblock>
 						<p>
-							サブタイプリストの展開とそれに伴うパッケージ変種の作成は，再帰的に行われます．
+							サブタイプリストの展開とそれに伴うパッケージ Variant の作成は，再帰的に行われます．
 							またサブタイプリストを持つタイプが複数ある場合は，あり得る組み合わせが全て生成されます．
 						</p>
 <codeblock>Type: -ssl (boolean), perl (5.6.0 5.8.1)</codeblock>
 						<p>
-							Type 以外のフィールドから特定の変種のサブタイプを得るには，疑似ハッシュ %type_raw[] および %type_pkg[] を使います．
+							Type 以外のフィールドから特定の Variant のサブタイプを得るには，疑似ハッシュ %type_raw[] および %type_pkg[] を使います．
 							以下にパッケージ記述の例の一部を示します．
 						</p>
 <codeblock>
@@ -1940,7 +2057,7 @@ Depends: (%type_pkg[-x11]) x11
 							Provides 項目には，バージョン番号に関連した情報はない．
 							親パッケージから取得することも，Provides フィールド自体にはバージョン番号を特定するような仕組みなどもない．
 							バージョンを指定する依存性があっても，Provides を持つパッケージによって満たすことはできない．
-							結果として，同一の代理パッケージを提供する変種が多数あるのは危険である．
+							結果として，同一の代理パッケージを提供する Variant が多数あるのは危険である．
 							これによってバージョンを指定した依存性ができなくなるためである．
 							例えば， foo-gnome と foo-nogome が &quot;Provides: foo&quot; を提供する場合，&quot;Depends: foo (> 1.1)&quot; は動作しない．
 						</p>
@@ -2083,7 +2200,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							または <em>ミラー名称</em> に <code>custom</code> と書くことで，
 							Fink にフィールド <code>CustomMirror</code> を使わせることもできる．
 							URL が wget に渡される前に，パーセント記法の展開が行われる．
-							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
+							%n は %type_ 系で示される Variant データ全てを含む文字列に展開されることに注意．
 							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 						</p>
 						<p>
@@ -2341,11 +2458,11 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
 							PatchScript が指定されている場合，パッチはその後に別のステップとして実行されます．
 						</p>
 						<p>
-							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
+							%n は %type_ 系で示される Variant データ全てを含む文字列に展開されることに注意．
 							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよいでしょう．
 							単一のパッチファイルを管理し，
-							各変種固有の変更点を <code>PatchScript</code> に記述する方が，
-							各変種毎にパッチファイルを作るより手間が少ないでしょう．
+							各 Variant 固有の変更点を <code>PatchScript</code> に記述する方が，
+							各 Variant 毎にパッチファイルを作るより手間が少ないでしょう．
 						</p>
 					</itemd>
 				</item>
@@ -2476,7 +2593,7 @@ Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
 </codeblock>
 						<p>
-							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り， -x11 変種の場合のみ <code>--with-x11</code> を送ってください．
+							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り， -x11  Variant の場合のみ <code>--with-x11</code> を送ってください．
 						</p>
 					</itemd>
 				</item>
@@ -2763,10 +2880,11 @@ INSTALLSCRIPT=%i/bin
 						<p>
 							<em>Fink 0.11.0 で導入:</em>
 							このフィールドでは，そのパッケージでインストールされる共有ライブラリを指定します．
-<!-- start translation -->
-There is one line for each shared library, which contains the <code>-install_name</code> of the library and information about its binary compatibility. 
-Shared libraries that are &quot;public&quot; (i.e., provided for use by other packages) have, separated by whitespace after the filename, the <code>-compatibility_version</code>, versioned package dependency information specifying the Fink package which provides this library at this compatibility version, and the library architecture.
-<!-- end translation -->
+							それぞれの共有ライブラリに一つの行があります．
+							これには，ライブラリの<code>-install_name</code>と compatibility に関する情報は含まれます．
+							「パブリック」な共有ライブラリ (つまり，他のパッケージに使われる) の場合，
+							ファイル名の後に，空白区切りで，<code>-compatibility_version</code>，
+							この compatibility version の Fink パッケージ，
 							ライブラリのアーキテクチャ
 							(値は &quot;32&quot;, &quot;64&quot;, または
                              &quot;32-64&quot;, あるいは空欄; 空欄時の既定値は &quot;32&quot; ．) 
@@ -2775,9 +2893,8 @@ Shared libraries that are &quot;public&quot; (i.e., provided for use by other pa
 							<em>一番古い</em>バージョンを指します．
 							フィールド Shlibs の設定は「この名前がついていて compatibility_version がこれ以上のライブラリは，
 							その Fink パッケージの今後のバージョンでも必ず含まれている」というメンテナからの保証に相当します．
-<!-- start translation -->
-Shared libraries that are &quot;private&quot; are denoted by an exclamation mark preceeding the filename, and no compatilibity or versioning information is given. See the <xref chapter="policy" section="sharedlibs">Shared Library Policy</xref> for more information.
-<!-- end translation -->
+							「プライベート」な共有ライブラリは，ファイル名の前にビックリマークをつけ，代わりに compatibility やバージョン情報は書きません．
+							詳細は <xref chapter="policy" section="sharedlibs">共有ライブラリのポリシー</xref> を参照してください．
 						</p>
 					</itemd>
 				</item>
@@ -2910,8 +3027,24 @@ AnotherVar: foo bar
 							パッケージが <filename>%p/share/info</filename> にインストールする Info 文書のリスト．
 							この設定により，Info ディレクトリ・ファイル <code>dir</code> を管理するための適切なコードが
 							postinst および prerm スクリプトに追加されます．
-							この機能はまだ流動的で，将来，精密な管理のためにさらにフィールドが追加されるかも知れません．
-						</p>
+</p>
+<!-- start translation -->
+<p><em>Note:</em>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<codeblock>
+foo.info
+foo.info-1
+foo.info-2
+</codeblock>
+<p>you should only use:</p>
+<codeblock>
+InfoDocs:  foo.info
+</codeblock>
+<p>This feature is still in flux, more fields for finer control may be
+added in the future.
+</p>
+<!-- end translation -->
+
 					</itemd>
 				</item>
 				<item>
@@ -3039,7 +3172,7 @@ AnotherVar: foo bar
 %n-%v-%r は，パッケージのユニークな識別子として扱われるため，
 <code>SplitOff</code> (あるいは <code>SplitOff<em>N</em></code>)
 を用いて (同じ <code>Version</code> と <code>Revision</code> で) <code>Package</code> を作成しては行けません．
-変種を使う際は，各変種が独立したパッケージとなるようにしてください．
+ Variant を使う際は，各 Variant が独立したパッケージとなるようにしてください．
 つまり，以下のようなパッケージレイアウトは禁止されます:
 </p>
 <codeblock>

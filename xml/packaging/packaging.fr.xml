@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.76 2008/08/27 05:20:52 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.77 2011/07/17 02:23:56 babayoshihiko Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://pdb.finkproject.org/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -25,14 +25,26 @@ L'installation d'un paquet binaire consiste simplement à le dépaqueter, puisqu
 <title>Descriptions de paquets</title>
 <shorttitle>Descriptions de paquets</shorttitle>
 <section name="trees"><title>Arborescence</title>
-<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <filename>/sw/fink/dists</filename>. La valeur de la variable "Trees" dans <filename>/sw/etc/fink.conf</filename> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.26.0, il existe plusieurs façons de spécifier le nom du fichier ; il est recommandé d'utiliser le nom le plus court compatible avec les autres paquets nécessaires. Le nom du fichier est de la forme : nom invariant du paquet, suivi éventuellement d'un tiret et de l'architecture, suivi éventuellement d'un tiret et de la distribution, suivi éventuellement d'un tiret et de la version ou du couple version-révision, et terminé par ".info". Les éléments "architecture" et "distributtion" ne sont autorisés que si leurs champs sont présents dans le paquet et qu'ils fournissent une seule et unique valeur.</p>
+<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <filename>/sw/fink/dists</filename>. La valeur de la variable "Trees" dans <filename>/sw/etc/fink.conf</filename> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". 
+À partir de fink 0.26.0, il existe plusieurs façons de spécifier le nom du fichier ; il est recommandé d'utiliser le nom le plus court compatible avec les autres paquets nécessaires. 
+Le nom du fichier est de la forme : nom invariant du paquet, suivi éventuellement d'un tiret et de l'architecture, suivi éventuellement d'un tiret et de la distribution, suivi éventuellement d'un tiret et de la version ou du couple version-révision, et terminé par ".info". 
+Les éléments "architecture" et "distributtion" ne sont autorisés que si leurs champs sont présents dans le paquet et qu'ils fournissent une seule et unique valeur.
+</p>
 <p>L'arborescence des descriptions de paquets comprend plusieurs niveaux de répertoires. En voici la liste de la racine au bas de l'arborescence :</p>
 <ul>
-<li><code>dists</code> est à la racine. Le répertoire <code>dists</code> est nécessaire pour les outils Debian.</li>
+<li><code>dists</code> est à la racine. Le répertoire <code>dists</code> est nécessaire pour les outils Debian.
+<!-- start translation -->
+In recent versions of fink, this is a symlink to a directory with a distribution-inspired name.
+<!-- end translation -->
+</li>
 <li>La distribution. Il y en a trois : <code>stable</code>, <code>unstable</code> et <code>local</code>. Le répertoire <code>local</code> est sous le contrôle de l'utilisateur/administrateur local. Les répertoires <code>stable</code> et <code>unstable</code> font partie de Fink.</li>
-<li>L'arbre. L'arbre <code>main</code> - principal contient la plupart des paquets. Les logiciels cryptographiques sont situés dans un arbre spécial <code>crypto</code>, pour faciliter leur suppression, si cela s'avérait nécessaire.</li>
+<li>L'arbre.
+<!-- start translation -->
+The <code>main</code> tree contains the bulk of the packages. Prior to July 1, 2010, the Cryptographic software was kept in a separate tree, <code>crypto</code>, but this is now a section of the <code>main</code> tree.
+<!-- end translation -->
+</li>
 <li><code>finkinfo</code> et <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contient les descriptions de paquets Fink et leurs rustines, tandis que <code>binary-darwin-powerpc</code> contient les paquets binaires <code>.deb</code>.</li>
-<li>Sections. L'arbre <code>main</code> est subdivisé en sections thématiques pour en faciliter la gestion. L'arbre <code>crypto</code> n'est, lui, pas subdivisé en sections à l'heure actuelle.</li>
+<li>Sections. L'arbre <code>main</code> est subdivisé en sections thématiques pour en faciliter la gestion.</li>
 </ul>
 </section>
 <section name="format"><title>Format de fichier</title>
@@ -532,8 +544,62 @@ InstallScript: &lt;&lt;
 <p>De même, à partir de mars 2005, l'emplacement des pages de manuel et des modules installés par les paquets fink pour perl lui-même (paquets perlXYZ et perlXYZ-core pour des versions de perl différentes de celle fournie par Apple) a changé. Par conséquent, aucun autre paquet de fink fournissant des versions de mises à jour des modules core perl ne doit énumérer des paquets perlXYZ ou perlXYZ-core dans un champ <code>Replaces</code>.</p>
 </section>
 <section name="emacs"><title>Règles Emacs</title>
-<p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <link url="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</link>). Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets emacs20 et emacs21 de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.</p>
+<p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <link url="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</link>). Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets 
+<filename>emacs21</filename>, <filename>emacs22</filename> et <filename>emacs21</filename> de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.</p>
 </section>
+
+
+
+<!-- start translation -->
+<section name="sources"><title>Source Policy</title>
+    <p>Sources should normally be downloaded from the location(s) that the upstream
+    developer(s) use, and any modifications for Fink should be done through the use
+    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+    source archive as a <code>Source</code> in your Fink packaging.</p>
+    <p>If a VCS checkout (e.g. from <em>git</em> or <em>svn</em>) is to be used, e.g.
+    because a project doesn't do formal releases, or a fix for a particular issue has
+    been added between releases of a package, an acceptable source can be generated
+    via the following method:</p>
+    <ol>
+        <li>Check out the package, preferably at a definite revision of the VCS.</li>
+        <li>Make an archive from the VCS checkout (e.g. <em>zip</em>, <em>tar</em>, <em>tar.gz</em>,
+        or <em>tar.bz2</em>).
+            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
+            <filename>foo-0svn1234.tar.gz</filename> for a package that doesn't make releases, or
+            <filename>bar-1.2.3+svn4567.tar.bz2</filename> for a Fink package which is between
+            upstream releases.</p></li>
+        <li>Use the same <code>Version</code> in your <filename>.info</filename> file.</li>
+        <li>It is also useful to put the commands that you ran to generate the source tarball in the
+        <code>DescPackaging</code> field.</li>
+        <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
+        If you don't have ready access to one, ask on the
+        <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</link> or
+        <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
+        and someone should be able to help.</li>
+    </ol>
+</section>
+
+<section name="downloading"><title>File Download Policy</title>
+    <p>Packages are not to download any files during the unpack, patch, compile, install,
+    or build phases of the <xref chapter="reference" section="build">build process</xref>.  Any large patches (i.e.
+    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
+    set up as additional Sources in accordance with the <xref chapter="policy" section="sources">
+    Source Policy.</xref></p>
+    <p>Packages may download data in a PostInstScript after they have been installed on the system,
+    under some limited circumstances:</p>
+    <ul>
+        <li>No updates to the package itself are allowed.</li>
+        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
+        virus definitions for <filename>clamav</filename> can be downloaded during this phase,
+        because they change continually.</li>
+    </ul>
+    <p>If you are unsure, contact <link url="mailto:fink-core@lists.sourceforge.net">the Fink Core
+    Team</link>.</p> 
+</section>
+<!-- end translation -->
+
+
+
 </chapter>
 <chapter filename="fslayout">
 <title>Organisation des fichiers</title>
@@ -685,6 +751,85 @@ dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
 </codeblock>
 <p>est interprété comme une variante foo-pm581 pour l'architecture système <code>powerpc</code>, le champ restant vide pour toute autre variante. N'oubliez pas que le fait d'omettre une certaine valeur d'architecture ne signifie pas que le paquet n'est pas censé tourner sur l'architecture système en question.</p>
 </itemd></item>
+
+
+
+<!-- start translation -->
+<item><itemt>Distribution</itemt>
+<itemd>
+<p>
+A comma-separated list of distribution(s) for which the package
+(and any splitoff packages) are intended.
+At present, the only valid values for distribution are
+<code>10.4</code>,
+<code>10.5</code>,
+and <code>10.6</code>
+. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine distribution is not listed. If the field is omitted
+or the value is blank, all distributions are assumed.
+(Introduced in fink 0.26.0.)
+</p>
+<p>
+Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
+a common set of finkinfo files, the most common use of this field will be for 
+packages which are suitable for one of those distributions but not the
+other.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <code>Depends</code> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<codeblock>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.6)
+  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+</codeblock>
+<p>
+will result in the field for the foo-pm581 variant
+being <code>10.3, 10.4</code> and the field being blank for the 
+foo-pm586 variant.
+</p>
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
+available perl packages vary by distribution, these package types provide
+a common use of this field.  For reference, we note the availabilty of
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+</p>
+<codeblock>
+    perl 5.6.0:  10.3
+    perl 5.8.0:  10.3
+    perl 5.8.1:  <em>10.3</em>, 10.4
+    perl 5.8.4:  10.3, 10.4
+    perl 5.8.6:  10.3, <em>10.4</em>, 10.5
+    perl 5.8.8:        10.4, <em>10.5</em>, 10.6
+    perl 5.10.0:             10.5, <em>10.6</em>
+</codeblock>
+<p>A way to include all variants in a single finkinfo file is as follows.
+</p>
+<codeblock>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+  &lt;&lt;
+</codeblock>
+<p>Note that we do not include old
+distributions, such as 10.2 or 10.4-transitional, since the versions of
+fink which are relevant for them do not recognize this field.
+</p>
+</itemd></item>
+<!-- end translation -->
+
+
+
 <item><itemt>Epoch</itemt>
 <itemd>
 <p><em>Introduit à partir de fink 0.12.0.</em> Ce champ facultatif peut être utilisé pour spécifier l'ère du paquet (défaut 0 si ce champ n'est pas renseigné). Pour de plus amples informations, voir <link url="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</link>. Comme Fink et quelques-uns des outils Debian sous-jacents utilisent nom-version-revision comme identifiant unique d'un paquet, vous ne devez pas créer deux paquets qui ne diffèrent que par le numéro d'ère.</p>
@@ -1174,7 +1319,26 @@ Shared libraries that are &quot;private&quot; are denoted by an exclamation mark
 </itemd></item>
 <item><itemt>InfoDocs</itemt>
 <itemd>
-<p>Liste des documents Info que le paquet installe dans %p/share/info. Des commandes appropriées sont ajoutées aux scripts postinst et prerm pour mettre à jour le fichier de la hiérarchie Info <code>dir</code>. Cette fonctionnalité est en cours de développement, d'autres champs pourront être ajoutés à l'avenir pour une gestion plus précise.</p>
+<p>Liste des documents Info que le paquet installe dans %p/share/info. 
+Des commandes appropriées sont ajoutées aux scripts postinst et prerm pour mettre à jour le fichier de la hiérarchie Info <code>dir</code>. 
+</p>
+
+<!-- start translation -->
+<p><em>Note:</em>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<codeblock>
+foo.info
+foo.info-1
+foo.info-2
+</codeblock>
+<p>you should only use:</p>
+<codeblock>
+InfoDocs:  foo.info
+</codeblock>
+<!-- end translation -->
+
+<p>
+Cette fonctionnalité est en cours de développement, d'autres champs pourront être ajoutés à l'avenir pour une gestion plus précise.</p>
 </itemd></item>
 <item><itemt>DaemonicFile</itemt>
 <itemd>

@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.34 2008/08/27 05:20:53 dmacks Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.35 2011/07/17 02:23:56 babayoshihiko Exp $</cvsid>
 
 <preface>
 <p>
@@ -99,16 +99,24 @@ exactly one value.
 </p>
 <ul>
 <li><code>dists</code> 是目录的起点。<code>dists</code>
-对 Debian 工具来说是必须的。</li>
+对 Debian 工具来说是必须的。
+<!-- start translation -->
+In recent versions of fink, this is a symlink to a directory with a distribution-inspired name.
+<!-- end translation -->
+</li>
 <li>发布类型。可以是 <code>stable</code>，
 <code>unstable</code> 和 <code>local</code>。<code>local</code>
 目录由本机的管理员／用户控制。<code>stable</code> 和 <code>unstable</code> 目录则是 Fink 的一部分。</li>
-<li>目录树。<code>main</code> 目录树包含软件包的实际部分。加密功能的软件被放到一个称为 <code>crypto</code> 的单独的目录树中，使得需要删除的时候会容易一些。</li>
+<li>目录树。
+<!-- start translation -->
+The <code>main</code> tree contains the bulk of the packages. Prior to July 1, 2010, the Cryptographic software was kept in a separate tree, <code>crypto</code>, but this is now a section of the <code>main</code> tree.
+<!-- end translation -->
+</li>
 <li><code>finkinfo</code>
 及 <code>binary-darwin-powerpc</code>。<code>finkinfo</code> 目录中包含了  Fink 软件包描述文件和补丁，而
 <code>binary-darwin-powerpc</code> 则包含了 <code>.deb</code>
 二进制软件包。</li>
-<li>分组。<code>main</code>目录树按类别被分成几组以方便管理。<code>crypto</code> 目录树目前没有被分组。</li>
+<li>分组。<code>main</code>目录树按类别被分成几组以方便管理。</li>
 </ul>
 </section>
 
@@ -977,11 +985,63 @@ perlXYZ-core packages in the <code>Replaces</code> field.
 url="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</link> 找到）。
 在 Fink 的规则中有两点区别。
-首先，在 fink 中这个规则目前仅应用于 emacs20 和 emacs21 软件包，而不应用于 xemacs。（这在将来可能会有改变）。
+首先，在 fink 中这个规则目前仅应用于 <filename>emacs21</filename>, <filename>emacs22</filename> 和 <filename>emacs23</filename> 软件包，而不应用于 xemacs。（这在将来可能会有改变）。
 第二，不象 Debian 的规则，Fink 软件包允许安装东西到 /sw/share/emacs/site-lisp 目录中。
 </p>
 
 </section>
+
+
+
+<!-- start translation -->
+<section name="sources"><title>Source Policy</title>
+    <p>Sources should normally be downloaded from the location(s) that the upstream
+    developer(s) use, and any modifications for Fink should be done through the use
+    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+    source archive as a <code>Source</code> in your Fink packaging.</p>
+    <p>If a VCS checkout (e.g. from <em>git</em> or <em>svn</em>) is to be used, e.g.
+    because a project doesn't do formal releases, or a fix for a particular issue has
+    been added between releases of a package, an acceptable source can be generated
+    via the following method:</p>
+    <ol>
+        <li>Check out the package, preferably at a definite revision of the VCS.</li>
+        <li>Make an archive from the VCS checkout (e.g. <em>zip</em>, <em>tar</em>, <em>tar.gz</em>,
+        or <em>tar.bz2</em>).
+            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
+            <filename>foo-0svn1234.tar.gz</filename> for a package that doesn't make releases, or
+            <filename>bar-1.2.3+svn4567.tar.bz2</filename> for a Fink package which is between
+            upstream releases.</p></li>
+        <li>Use the same <code>Version</code> in your <filename>.info</filename> file.</li>
+        <li>It is also useful to put the commands that you ran to generate the source tarball in the
+        <code>DescPackaging</code> field.</li>
+        <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
+        If you don't have ready access to one, ask on the
+        <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</link> or
+        <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
+        and someone should be able to help.</li>
+    </ol>
+</section>
+
+<section name="downloading"><title>File Download Policy</title>
+    <p>Packages are not to download any files during the unpack, patch, compile, install,
+    or build phases of the <xref chapter="reference" section="build">build process</xref>.  Any large patches (i.e.
+    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
+    set up as additional Sources in accordance with the <xref chapter="policy" section="sources">
+    Source Policy.</xref></p>
+    <p>Packages may download data in a PostInstScript after they have been installed on the system,
+    under some limited circumstances:</p>
+    <ul>
+        <li>No updates to the package itself are allowed.</li>
+        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
+        virus definitions for <filename>clamav</filename> can be downloaded during this phase,
+        because they change continually.</li>
+    </ul>
+    <p>If you are unsure, contact <link url="mailto:fink-core@lists.sourceforge.net">the Fink Core
+    Team</link>.</p> 
+</section>
+<!-- end translation -->
+
+
 
 </chapter>
 
@@ -1406,6 +1466,84 @@ mean that the package is not for that architecture.
 </p>
 <!-- end translation -->
 </itemd></item>
+
+
+
+<!-- start translation -->
+<item><itemt>Distribution</itemt>
+<itemd>
+<p>
+A comma-separated list of distribution(s) for which the package
+(and any splitoff packages) are intended.
+At present, the only valid values for distribution are
+<code>10.4</code>,
+<code>10.5</code>,
+and <code>10.6</code>
+. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine distribution is not listed. If the field is omitted
+or the value is blank, all distributions are assumed.
+(Introduced in fink 0.26.0.)
+</p>
+<p>
+Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
+a common set of finkinfo files, the most common use of this field will be for 
+packages which are suitable for one of those distributions but not the
+other.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <code>Depends</code> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<codeblock>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.6)
+  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+</codeblock>
+<p>
+will result in the field for the foo-pm581 variant
+being <code>10.3, 10.4</code> and the field being blank for the 
+foo-pm586 variant.
+</p>
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
+available perl packages vary by distribution, these package types provide
+a common use of this field.  For reference, we note the availabilty of
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+</p>
+<codeblock>
+    perl 5.6.0:  10.3
+    perl 5.8.0:  10.3
+    perl 5.8.1:  <em>10.3</em>, 10.4
+    perl 5.8.4:  10.3, 10.4
+    perl 5.8.6:  10.3, <em>10.4</em>, 10.5
+    perl 5.8.8:        10.4, <em>10.5</em>, 10.6
+    perl 5.10.0:             10.5, <em>10.6</em>
+</codeblock>
+<p>A way to include all variants in a single finkinfo file is as follows.
+</p>
+<codeblock>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+  &lt;&lt;
+</codeblock>
+<p>Note that we do not include old
+distributions, such as 10.2 or 10.4-transitional, since the versions of
+fink which are relevant for them do not recognize this field.
+</p>
+</itemd></item>
+<!-- end translation -->
+
+
 
 <item><itemt>Epoch</itemt>
 <itemd>
@@ -2538,6 +2676,21 @@ Percent expansion  is performed on this field.
 <p>
 软件包安装在 %p/share/info 目录的信息文件的清单。
 这会在 postinst 和 prerm 脚本中添加合适的代码来维护 Info 目录的文件 <code>dir</code>文件。
+</p>
+<!-- start translation -->
+<p><em>Note:</em>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<codeblock>
+foo.info
+foo.info-1
+foo.info-2
+</codeblock>
+<p>you should only use:</p>
+<codeblock>
+InfoDocs:  foo.info
+</codeblock>
+<!-- end translation -->
+<p>
 这个特性仍然在增加过程，将来可能会加入更多的字段以获得更精细的控制。
 </p>
 </itemd></item>
