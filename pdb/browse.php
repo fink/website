@@ -1,6 +1,6 @@
 <?
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/11/27 20:52:44 $';
+$cvs_author = '$Author: rangerrick $';
+$cvs_date = '$Date: 2011/07/20 13:49:03 $';
 
 ini_set("memory_limit", "48M");
 
@@ -60,7 +60,7 @@ function genFormSelect($var_name, $cur_val, $values, $description = '') {
 // Distribution values
 $dist_values = array(
 	'any'     => 'Any',
-	'default' => 'Supported (10.5 and 10.6)',
+	'default' => 'Supported (10.5 through 10.7)',
 );
 foreach ($distributions as $d) {
 	if (!$showall and !$d->isVisible()) {
