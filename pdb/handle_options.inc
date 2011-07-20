@@ -6,7 +6,7 @@ include_once "releases.inc";
 include_once "sections.inc";
 
 $invalid_param     = false;
-$default_tree      = 'unstable';
+$default_tree      = 'any';
 $default_dist      = 'default';
 $default_sort      = 'asc';
 
