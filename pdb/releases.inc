@@ -29,7 +29,8 @@ foreach(array(
 	new Release($distributions["10.6-i386"],            "stable",   "current", 2, TRUE),
 	new Release($distributions["10.6-i386"],            "unstable", "current", 3, TRUE),
 	new Release($distributions["10.6-x86_64"],          "stable",   "current", 2, TRUE),
-	new Release($distributions["10.7-x86_64"],          "unstable", "current", 3, TRUE),
+	new Release($distributions["10.6-x86_64"],          "unstable", "current", 3, TRUE),
+	new Release($distributions["10.7-x86_64"],          "stable",   "current", 3, TRUE),
 ) as $_rel) {
 	$releases[$_rel->getId()] = $_rel;
 }
