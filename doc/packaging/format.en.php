@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/04/26 19:00:13';
+$cvs_date = 'Date: 2011/07/25 13:14:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -291,6 +291,11 @@ package is blank. (Introduced in fink-0.20.6)
 <p>
 The full path to the file given in the <code>PatchFile</code> field.
 (Introduced in fink-0.24.12)
+</p>
+</td></tr><tr valign="top"><td>%{PatchFile<b>N</b>}</td><td>
+<p>
+The full path to the file given in the <code>PatchFile<b>N</b></code> field.
+(Introduced in fink-0.30.0)
 </p>
 </td></tr><tr valign="top"><td>%lib</td><td>
 <p>

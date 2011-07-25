@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/04/26 19:00:13';
+$cvs_date = 'Date: 2011/07/25 13:14:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -919,11 +919,27 @@ uses <code>PatchFile</code> must declare at least
 <code>BuildDepends: fink (&gt;= 0.24.12)</code>. Giving a higher version
 requirement is allowed if it is necessary for other reasons.
 </p>
+</td></tr><tr valign="top"><td>PatchFile<b>N</b></td><td>
+<p>
+If a package has several patch files, name them with these additional 
+fields, starting with N = 2. So, the first patch file goes into 
+<code>PatchFile</code>, the second patch file in <code>PatchFile2</code> 
+and so on.  Any package that uses <code>PatchFile<b>N</b></code> must 
+declare at least <code>BuildDepends: fink (&gt;= 0.30.0)</code>. Giving 
+a higher version requirement is allowed if it is necessary for other 
+reasons.
+</p>
 </td></tr><tr valign="top"><td>PatchFile-MD5</td><td>
 <p>
 The MD5 checksum of the file given in the <code>PatchFile</code>
 field. This field is required if <code>PatchFile</code> is used.
 (Introduced in fink-0.24.12)
+</p>
+</td></tr><tr valign="top"><td>PatchFile<b>N</b>-MD5</td><td>
+<p>
+The MD5 checksum of the file given in the <code>PatchFile<b>N</b></code>
+field. This field is required if <code>PatchFile<b>N</b></code> is used.
+(Introduced in fink-0.30.0)
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>
@@ -938,9 +954,16 @@ default <code>PatchScript</code> is:
 patch -p1 &lt; %{PatchFile}
 </pre>
 <p>
+If one or more <code>PatchFile<b>N</b></code> fields are used, the 
+following is appended as needed to the default script:
+</p>
+<pre>
+patch -p1 &lt; %{PatchFile<b>N</b>}
+</pre>
+<p>
 If there is no <code>PatchFile</code>, the default is blank. If you
 have an explicit <code>PatchScript</code>, you must apply
-the <code>PatchFile</code> explicitly.
+the <code>PatchFile(s)</code> explicitly.
 </p>
 </td></tr></table>
 <p><b>Compile Phase:</b></p>
@@ -996,6 +1019,14 @@ variables (such as
 CPPFLAGS, LDFLAGS, CXXFLAGS  mentioned above). For 
 example, if you want LDFLAGS to
 remain unset, specify <code>NoSetLDFLAGS: true</code> .
+</p>
+</td></tr><tr valign="top"><td>UseMaxBuildJobs</td><td>
+<p>
+When set to a true value, appends <code>-j<b>N</b></code>, where <b>N</b> 
+is the value from the <code>fink.conf</code> field MaxBuildJobs, 
+to the environment variable MAKEFLAGS. This value is added to MAKEFLAGS even 
+if the field <code>NoSetMAKEFLAGS: true</code> is used. If the field is not 
+present or blank, the default is <code>False</code>.
 </p>
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
@@ -1611,9 +1642,20 @@ You must also give the MD5 sum of the patchfile in the
 <code>PatchFile-MD5</code> field, and specify 
 <code>BuildDepends: fink (&gt;= 0.24.12)</code> (or a later version of fink).
 </p>
+
+<p>When a <code>PatchFile<b>N</b></code> field is used, general custom 
+is to name the file <code>%n-purpose-of-patch.patch</code> to make it easy to keep 
+track of. You must also use the field <code>PatchFile<b>N</b>-MD5</code> 
+and specify <code>BuildDepends: fink (&gt;= 0.30.0)</code> (or a later 
+version of fink).
+</p>
+
 <p>When a <code>PatchFile</code> declaration is present, there is a
 default <code>PatchScript</code> equivalent to:</p>
 <pre>PatchScript: patch -p1 &lt; %{PatchFile}</pre>
+<p>Using <code>PatchFile<b>N</b></code> appends the following to the 
+default <code>PatchScript</code> above:</p>
+<pre>patch -p1 &lt; %{PatchFile<b>N</b>}</pre>
 <p>This will be overridden if you supply a <code>PatchScript</code>
 of your own (for example, to perform a substitution on the patch file
 before applying it).</p>
