@@ -5,8 +5,63 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-07-16T18:59:24-04:00</dc:date>
+    <dc:date>2011-07-26T11:04:30-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.">
+      <title>Fink and Lion--updated.</title>
+      <link>http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.</guid>
+      <description>
+      <p>OS X 10.7 "Lion" was released on July 20, 2011.  We want to let Fink
+      users know what to expect if updating.</p>
+<p>First, the fink 
+program itself will not run  on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+dpkg program to extract a list of the Fink packages
+which had been installed under 10.6, so that they can be reinstalled
+under 10.7.  Use</p>
+<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
+<p>to extract the packages, and</p>
+<p>cat fink_packages.txt | xargs fink install</p>
+<p>once you have installed Fink for 10.7.</p>
+<p>To upgrade fink after upgrading to Lion, one will have to bootstrap
+Fink again, using a tarball for fink-0.31.0 or later.</p>
+<p>Second, due to lots of changes under the hood, there currently are many fewer
+Fink packages which build under 10.7 as opposed to 10.6.
+Thus, even if you've extracted a list of Fink packages which had
+been installed under 10.6, some of them may not yet be installable under
+10.7.  We are currently creating a database showing which packages
+can be successfully installed under 10.7, and work is ongoing to add packages.</p>
+<p>10.7 introduces several drastic changes to how the system works. While this may
+cause a slight delay in full Fink functionality in the short term, it will
+make Fink work better in the future.</p>
+    </description>
+      <content:encoded>
+      <p>OS X 10.7 "Lion" was released on July 20, 2011.  We want to let Fink
+      users know what to expect if updating.</p>
+<p>First, the fink 
+program itself will not run  on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+dpkg program to extract a list of the Fink packages
+which had been installed under 10.6, so that they can be reinstalled
+under 10.7.  Use</p>
+<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
+<p>to extract the packages, and</p>
+<p>cat fink_packages.txt | xargs fink install</p>
+<p>once you have installed Fink for 10.7.</p>
+<p>To upgrade fink after upgrading to Lion, one will have to bootstrap
+Fink again, using a tarball for fink-0.31.0 or later.</p>
+<p>Second, due to lots of changes under the hood, there currently are many fewer
+Fink packages which build under 10.7 as opposed to 10.6.
+Thus, even if you've extracted a list of Fink packages which had
+been installed under 10.6, some of them may not yet be installable under
+10.7.  We are currently creating a database showing which packages
+can be successfully installed under 10.7, and work is ongoing to add packages.</p>
+<p>10.7 introduces several drastic changes to how the system works. While this may
+cause a slight delay in full Fink functionality in the short term, it will
+make Fink work better in the future.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-07-16%20Fink%20and%20Lion.">
       <title>Fink and Lion.</title>
       <link>http://fink.sourceforge.net/news/#2011-07-16%20Fink%20and%20Lion.</link>
@@ -349,33 +404,6 @@ and Beyond!</p>
       <p>KDE-3.5.10 and GNOME-2.28
       have been added to the stable tree, along with updates to some important
       dependencies.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.">
-      <title>fink-0.29.15 released.</title>
-      <link>http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.</guid>
-      <description>
-      <p>fink-0.29.15 has been released to the unstable tree.
-      This version of fink contains fixes to the system-java-dev
-      virtual package generation.</p>
-      <p>Users will also need to download an appropriate version of the Java Developer Package
-      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>
-      for all of the the system-java-dev packages to show up on 10.5 and 10.6.</p>
-      <p>It is planned to add this version of fink to the stable tree shortly.</p>
-      <p>Update, 2010-11-01:  fink-0.29.15 has
-      been added to the stable tree.</p>
-    </description>
-      <content:encoded>
-      <p>fink-0.29.15 has been released to the unstable tree.
-      This version of fink contains fixes to the system-java-dev
-      virtual package generation.</p>
-      <p>Users will also need to download an appropriate version of the Java Developer Package
-      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>
-      for all of the the system-java-dev packages to show up on 10.5 and 10.6.</p>
-      <p>It is planned to add this version of fink to the stable tree shortly.</p>
-      <p>Update, 2010-11-01:  fink-0.29.15 has
-      been added to the stable tree.</p>
     </content:encoded>
     </item>
   </channel>
