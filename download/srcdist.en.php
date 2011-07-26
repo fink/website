@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2011/04/19 14:03:49 $';
+$cvs_date = '$Date: 2011/07/26 14:12:49 $';
 
 include "header.inc";
 ?>
@@ -12,33 +12,44 @@ include "header.inc";
 <!--monipol: As instructions for 10.6 were 'hidden' below 10.5, I've copied and
 pasted them here with the title 10.6. -->
 
-<p><strong>OS 10.6 and earlier:</strong></p>
+<p><strong>OS 10.4 and later:</strong></p>
 
 <p>The source tarball contains the <em>fink</em> package manager.  After you
 have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p><em>fink-0.29.21</em> was officially released on 2011-03-24.</p>
+<p>The current version, <em>fink-0.31.0</em>, was officially released on
+2011-07-20.</p>
 
 <ul>
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.29.21.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.29.21</a> - 1179K, .tar.gz format</li>
+     <li>
+10.5-10.7: <a href="http://downloads.sourceforge.net/fink/fink-0.31.0.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.31.0</a>
+- 2484K, .tar.gz format
+     </li>
+     <li>
+10.4:  <a href="http://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
+- 1188K, .tar.gz format
+     </li>
 </ul>
 
-<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>),
-but earlier than Xcode 4.</p>
+<p>You will also need to install an appropriate version of the Xcode Tools
+(c.f. <a href="./index.en.php" >the Quick Start page</a>) for your operating
+system.</p>
 
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via</p>
 
-<pre>tar -xvzf fink-0.29.21.tar.gz</pre>
+<pre>tar -xvzf fink-0.31.0.tar.gz</pre>
 
 <p>or</p>
 
-<pre>tar -xvf fink-0.29.21.tar</pre>
+<pre>tar -xvf fink-0.31.0.tar</pre>
 
 <p>if it has already been partially unpacked, in a terminal window.  Then, in a
-terminal window, change to the resulting <em>fink-0.29.21</em> directory, and
+terminal window, change to the resulting <em>fink-0.31.0</em> directory, and
 use</p>
 
 <pre>./bootstrap</pre>
