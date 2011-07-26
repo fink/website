@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2009/11/10 00:52:29 $';
+$cvs_date = '$Date: 2011/07/26 14:26:55 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -22,20 +22,15 @@ with the binary release.
 </p>
 <ol>
 <li>
-<p>10.6 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
+<p>10.6 and 10.7 users:  There is not currently a binary installer, and you will
+need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 10.5 users:  
 Download the installer disk image:<br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " Binary Installer (Intel)",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
-(10.4 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink
+10.4 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink
 0.8.1 (PowerPC)</A> or <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink
 0.8.1 (Intel)</a>)<br>
-(10.3 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink
-0.7.2</a>)<br>
-(10.2 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink
-0.6.4</a>)<br>
-(10.1 users - use <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink
-0.4.1</a>)
 </p>
 </li>
 <li><p>
@@ -110,8 +105,15 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
   <caption>Recommended Developer Tools versions by OS</caption>
   <tbody>
     <tr>
+        <td>10.7</td>
+    </tr>
+    <tr>
+        <td>10.6</td>
+        <td>Xcode 3.2.6 or Xcode 4.1</td>
+    </tr>
+    <tr>
       <td>10.5</td>
-      <td>Xcode 3.0 or 3.1</td>
+      <td>Xcode 3.1.4</td>
     </tr>
     <tr>
       <td>10.4 on Intel</td>
@@ -119,30 +121,23 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
     </tr>
     <tr>
       <td>10.4 on PowerPC</td>
-      <td>Xcode 2.5, and the Xcode Legacy Tools (for packages that need <code>gcc3.1</code> or <code>gcc2.95</code> to build)</td>
-    </tr>
-    <tr>
-      <td>10.3</td>
-      <td>Xcode 1.5 and the November 2004 <code>gcc3.3</code> updater</td>
-    </tr>
-    <tr>
-      <td>10.2</td>
-      <td>December 2002 Developer Tools and August 2003 <code>gcc3.3</code> updater</td>
+      <td>Xcode 2.5</td>
     </tr>
   </tbody>
 </table>
 <h3>X11</h3>
       <p>Almost all of the applications on Fink that have graphical user interfaces (GUIs) require some flavor of X11 (since most were originally developed on platforms that only had that as a GUI option).</p>
-      <p>Apple provides its own X11 distribution for OS 10.3, 10.4, and 10.5.  This is
+      <p>Apple provides its own X11 distribution.  This is
 the easiest option with which to get started.  They have elected to split it into two parts:</p>
       <ul>
         <li>The <em>X11User</em> package contains everything you need just to run Apple's X11.  It is available on your OS install media for 10.3, 10.4, and 10.5 as an
  optional install.</li>
         <li>The
 <em>X11SDK</em>
-package contains the development headers.  You need this if you want to build anything from source that uses X11.  This package is available as part of the Xcode Tools, and installed by default with Xcode 2.x and 3.x</li>
+package contains the development headers.  You need this if you want to build anything from source that uses X11.  This package is available as part of the Xcode Tools, and installed by default with Xcode 2.x and later.</li>
 <li>The <em>2006 X11 Update</em> for 10.4 (available via Software Update or manual download) is supported.</li>
-<li>All official updates for X11 on 10.5 are supported, as well as the <em>community X11 update</em> from macosxforge.org .</li>
+<li>All official updates for X11 on 10.5 - 10.7 are supported.</li>
+<li>The <em>community X11 distribution</em> from macosxforge.org is only supported on 10.5.</li>
 </ul>
 <p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://www.finkproject.org/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
 <h2>Further information</h2>
