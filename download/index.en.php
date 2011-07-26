@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2011/07/26 14:26:55 $';
+$cvs_date = '$Date: 2011/07/26 14:29:16 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -106,6 +106,7 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
   <tbody>
     <tr>
         <td>10.7</td>
+        <td>Xcode 4.1</td>
     </tr>
     <tr>
         <td>10.6</td>
