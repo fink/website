@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2011/07/26 14:34:11 $';
+$cvs_date = '$Date: 2011/07/26 14:37:17 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -131,8 +131,8 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
       <p>Apple provides its own X11 distribution.  This is
 the easiest option with which to get started.  They have elected to split it into two parts:</p>
       <ul>
-        <li>The <em>X11User</em> package contains everything you need just to run Apple's X11.  It is available on your OS install media for 10.3, 10.4, and 10.5 as an
- optional install.</li>
+        <li>The <em>X11User</em> package contains everything you need just to run Apple's X11.  It is available on your OS install media for 10.4 as an
+ optional install, and is installed by default on 10.5 and later.</li>
         <li>The
 <em>X11SDK</em>
 package contains the development headers.  You need this if you want to build anything from source that uses X11.  This package is available as part of the Xcode Tools, and installed by default with Xcode 2.x and later.</li>
