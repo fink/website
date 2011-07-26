@@ -84,36 +84,6 @@ so that by the time XFree86 4.2.0 shipped in January 2002, the Darwin/Mac OS X
 version had been completely integrated into the main XFree86 distribution.
 </p>
     
-    <h2><a name="apple-x11-distros">2.4 Apple's X11 distributions</a></h2>
-         
-      <p>
-On January 7, 2003, Apple released a beta version of its own custom X11
-implementation for OS 10.2.
-It was based on XFree86-4.2 and included Quartz rendering and accelerated
-OpenGL.
-A new version was released on February 10, 2003 with additional features
-and bugfixes.
-A third release (i.e. Beta 3) was made on March 17, 2003 with
-further additional features and bugfixes.
-      </p>
-      <p>
-On October 24, 2003, Apple released Panther (10.3), which included the first
-release version of their X11 distribution, based on XFree86-4.3.
-      </p>
-      <p>
-On April 29, 2005, Apple released Tiger (10.4), which included a release version
-of Apple's X11 distribution based on XFree86-4.4.
-      </p>
-      <p>
-On October 26, 2007, Apple released Leopard (10.5), which included a release version
-of Apple's X11 distribution based on X.org-7.2.  
-      </p>  
-      <p>
-On August 28, 2009, Apple released Snow Leopard (10.6), which included a release version
-of Apple's X11 distribution based on X.org-7.2.  
-      </p>
-      
-    
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="inst-xfree86.php?phpLang=en">3. Getting and Installing X11</a></p>
 <? include_once "../../footer.inc"; ?>

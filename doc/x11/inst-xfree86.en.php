@@ -10,10 +10,54 @@ include_once "header.en.inc";
 <h1>Running X11 - 3. Getting and Installing X11</h1>
     
     
-    <h2><a name="apple-binary">3.1 Apple's Distribution</a></h2>
+    <h2><a name="fink">3.1 Installing X11 via Fink</a></h2>
       
-<p>All of the OS X versions currently supported by Fink include Apple's X11 distribution.
-To use it, you need to make sure the <b>X11 User</b> package is installed.</p>
+      <p>
+Fink will let you install X11 in a variety of ways,
+among these it provides XFree86 packages of its own. If you
+use <code>fink install ...</code>, it will download
+the source code and compile it on your computer. If
+you use <code>apt-get install ...</code> or the
+<code>dselect</code> frontend, it will download
+precompiled binary packages, similar to the official
+XFree86 distribution.
+</p>
+<p><b>General notes:</b></p>
+<ul><li>All of the X11 packages currently available via Fink support both full-screen and rootless
+operation, and have OpenGL support.</li>
+<li><b>Important note:</b>  Files get moved around between X11 releases.  This frequently means that if you try to downgrade your X11 installation, you will find that binaries (executable programs, etc.) won't work anymore.  You'd have to rebuild any such packages.
+<p>You can go the other way though:  packages built vs an older X11 generally work on a later one.</p>
+<p>For 10.3 or 10.4, the X11 hierarchy (newer -&gt; older codebases) is as follows:</p>
+<pre>xorg &gt; xfree86 &gt; Apple's X11 </pre>
+</li></ul>
+<p><b>10.4 users:</b></p>
+<p>You can install XFree86 version 4.5.0-23 from source.   You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
+<p>You can also install the X.org X11 release (currently version 6.8.2-35) via the <code>xorg</code> and <code>xorg-shlibs</code> packages in the unstable tree.  This X11 flavor is similar to XFree86-4.5, but includes some bugfixes and new features, and removes some code with a disputed license.</p>
+<p><b>10.3 users:</b></p>
+<p>You can install XFree86 version 4.4.0-13 (that which is in the current binary distribution) or 4.5.0-13 (which is available from source).  You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
+<p>You can also install X.org-6.8.2 via the <code>xorg</code> and <code>xorg-shlibs</code> packages as above.</p>
+
+<p><b>10.2 users:</b></p>
+<p>10.2 users may install version 4.3 via source or binary, and 4.4 from the unstable tree.  As above, you'll install <code>xfree86</code> and <code>xfree86-shlibs</code>.
+</p>
+
+      <p>XFree86 4.2.1.1 is also available for 10.2, in <code>normal</code> and <code>-threaded</code> flavors (later X11s all have threading support), though it is considered to be obsolete. The <code>xfree86-base</code>, <code>xfree86-base-shlibs</code>, <code>xfree86-shlibs</code>, and <code>xfree86-rootless-shlibs</code> packages (or their <code>-threaded</code> counterparts must all be installed for you to have a working XFree86 setup.  In addition, you may need to install the <code>xfree86-base-dev</code> and <code>xfree86-rootless-dev</code> packages (or their <code>-threaded</code> equivalents) to keep Fink from trying to install a newer version.</p>
+      
+<p><b>10.1 users:</b></p>
+<p>You can install version 4.2.0 from the binary distribution (only).  You will install <code>xfree86-base</code> and <code>xfree86-rootless</code>.</p>
+    
+    <h2><a name="apple-binary">3.2 Apple's Binaries</a></h2>
+      
+      <p>
+On January 7, 2003, Apple released <a href="http://www.apple.com/macosx/x11/">a custom
+X11 implementation based on XFree86-4.2</a> which includes Quartz rendering and accelerated
+OpenGL.  A new version was released on February 10, 2003 with additional features and bugfixes.  A third release (i.e. Beta 3) was made on March 17, 2003 with further additional features and bugfixes.  This version is usable on Jaguar.
+</p>
+      <p>On October 24, 2003, Apple released Panther (10.3), which includes a release version of their X11 distribution.  This version is based on XFree86-4.3.</p>
+<p>On April 29, 2005, Apple released Tiger (10.4), which includes a release version of Apple's X11 based on XFree86-4.4.</p>
+      <p>
+To use the Apple binaries, you need to make sure the <b>X11 User</b> package is installed, and you should also 
+<a href="http://www.finkproject.org/doc/users-guide/upgrade.php">update</a> Fink.</p>
       <p>Under <code>fink-0.16.2</code>, you will need to install the <b>X11 SDK</b> package, as well.  After you do this, Fink will
 create a <code>system-xfree86</code> virtual package.</p>
       <p>Under <code>fink-0.17.0</code> and later installing the X11 SDK is only necessary if 
@@ -83,40 +127,6 @@ packages you have built against <code>xfree86</code> will need to be rebuilt, as
 <li><p><b>10.3 and 10.4 users only:</b>  It is possible to use Apple's display server and window manager on top of XFree86 or X.org.  If you install the <code>applex11tools</code> package, Fink will install what you need, as long as you have a copy of X11User.pkg.</p></li>
       </ul>
       <p>For more information on using Apple's X11, check out this <a href="http://developer.apple.com/darwin/runningx11.html">article</a> at the Apple Developer Connection.</p>
-    
-    <h2><a name="fink">3.2 Using X11 via Fink</a></h2>
-      
-      <p>
-How one uses X11 with Fink depends on the version of OS X.
-</p>
-<p><b>General notes:</b></p>
-<ul><li>All of the X11 packages currently available via Fink support both full-screen and rootless
-operation, and have OpenGL support.</li>
-<li><b>Important note:</b>  Files get moved around between X11 releases.  This frequently means that if you try to downgrade your X11 installation, you will find that binaries (executable programs, etc.) won't work anymore.  You'd have to rebuild any such packages.
-<p>You can go the other way though:  packages built vs an older X11 generally work on a later one.</p>
-<p>For 10.3 or 10.4, the X11 hierarchy (newer -&gt; older codebases) is as follows:</p>
-<pre>xorg &gt; xfree86 &gt; Apple's X11 </pre>
-</li></ul>
-<p><b>10.6 users:</b></p>
-<p>Use Apple's X11.</p>
-<p>We <b>do not</b> support XQuartz for 10.6.  Our packages only build against
-the stock X11, so if you really want to use XQuartz and Fink, make sure to keep
-the stock X11 installed, too.</p>
-<p><b>10.4 users:</b></p>
-<p>You can install XFree86 version 4.5.0-23 from source.   You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
-<p>You can also install the X.org X11 release (currently version 6.8.2-35) via the <code>xorg</code> and <code>xorg-shlibs</code> packages in the unstable tree.  This X11 flavor is similar to XFree86-4.5, but includes some bugfixes and new features, and removes some code with a disputed license.</p>
-<p><b>10.3 users:</b></p>
-<p>You can install XFree86 version 4.4.0-13 (that which is in the current binary distribution) or 4.5.0-13 (which is available from source).  You will need both the <code>xfree86</code> and <code>xfree86-shlibs</code> packages to have a fully functional installation.</p>
-<p>You can also install X.org-6.8.2 via the <code>xorg</code> and <code>xorg-shlibs</code> packages as above.</p>
-
-<p><b>10.2 users:</b></p>
-<p>10.2 users may install version 4.3 via source or binary, and 4.4 from the unstable tree.  As above, you'll install <code>xfree86</code> and <code>xfree86-shlibs</code>.
-</p>
-
-      <p>XFree86 4.2.1.1 is also available for 10.2, in <code>normal</code> and <code>-threaded</code> flavors (later X11s all have threading support), though it is considered to be obsolete. The <code>xfree86-base</code>, <code>xfree86-base-shlibs</code>, <code>xfree86-shlibs</code>, and <code>xfree86-rootless-shlibs</code> packages (or their <code>-threaded</code> counterparts must all be installed for you to have a working XFree86 setup.  In addition, you may need to install the <code>xfree86-base-dev</code> and <code>xfree86-rootless-dev</code> packages (or their <code>-threaded</code> equivalents) to keep Fink from trying to install a newer version.</p>
-      
-<p><b>10.1 users:</b></p>
-<p>You can install version 4.2.0 from the binary distribution (only).  You will install <code>xfree86-base</code> and <code>xfree86-rootless</code>.</p>
     
     <h2><a name="official-binary">3.3 The Official Binaries</a></h2>
       

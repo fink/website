@@ -11,8 +11,8 @@ under 10.7.  Use</p>
 <p>to extract the packages, and</p>
 <p><code>cat fink_packages.txt | xargs fink install</code></p>
 <p>once you have installed Fink for 10.7.</p>
-<p>To upgrade fink after upgrading to Lion, one will have to bootstrap
-Fink again, using a tarball for fink-0.31.0 or later.</p>
+<p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
+Fink again, using a tarball for <code>fink-0.31.0</code> or later.</p>
 <p>Second, due to lots of changes under the hood, there currently are many fewer
 Fink packages which build under 10.7 as opposed to 10.6.
 Thus, even if you've extracted a list of Fink packages which had

@@ -57,32 +57,18 @@ implementation of X11.
 It was initially developed to run on Intel x86 PCs, hence the name.
 Nowadays, it runs on many architectures and operating systems,
 including OS/2, Darwin, Mac OS X and Windows.
-      </p>
-       <p>
-Apple's X11 distributions on 10.2, 10.3 and 10.4 are derived from XFree86.
-      </p>
-
-<h2><a name="def-xorg">1.5 What is X.org?</a></h2>
-  
-  <p>
-<a href="http://www.x.org/wiki/">X.org</a> is an open source implementation
-of X11, and a successor to XFree86.  It has supplanted XFree86 in most places.
-  </p>
-  <p>
-Apple's X11 distributions on 10.5 and 10.6 are derived from X.org, as is <a href="http://xquartz.macosforge.org/trac/wiki">
-XQuartz</a>.
-  </p>
-
-<h2><a name="def-xquartx">1.6 What is XQuartz?</a></h2>
-  
-  <p>
-<a href="http://xquartz.macosforge.org/trac/wiki">
-XQuartz</a> is an X11 distribution for 10.5 and 10.6 which contains newer features
-than does the stock X11.  On 10.5, XQuartz replaces the system's X11 distribution,
-whereas on 10.6 Xquartz and the system's X11 distribution coexist.
-  </p>
-
-     <h2><a name="client-server">1.7 Client and Server</a></h2>
+</p>
+    
+    <h2><a name="def-xtools">1.5 What is Xtools?</a></h2>
+      
+      <p>
+Xtools is a product of <a href="http://www.tenon.com/">Tenon
+Intersystems</a>.
+It is a version of X11 for Mac OS X, based on XFree86.  
+</p>
+<p>Note:  Development apparently stopped sometime before OS 10.3 was released.</p>
+    
+    <h2><a name="client-server">1.6 Client and Server</a></h2>
       
       <p>
 X11 has a client-server architecture.
@@ -102,7 +88,7 @@ So when talking about the "server", that means the X11 display server
 program, not the machine hidden in your wardrobe.
 </p>
     
-    <h2><a name="rootless">1.8 What does rootless mean?</a></h2>
+    <h2><a name="rootless">1.7 What does rootless mean?</a></h2>
       
       <p>
 A little background:
@@ -137,7 +123,7 @@ Because there is no (visible) root window, this mode is called
 "rootless".  It is the most comfortable way to use X11 on Mac OS X.
 </p>
     
-    <h2><a name="wm">1.9 What is a window manager?</a></h2>
+    <h2><a name="wm">1.8 What is a window manager?</a></h2>
       
       <p>
 In most graphical environments the look of window frames (title bar,
@@ -165,7 +151,7 @@ current list.
 </a>
       </p>
     
-    <h2><a name="desktop">1.10 What are Quartz/Aqua, Gnome, and KDE?</a></h2>
+    <h2><a name="desktop">1.9 What are Quartz/Aqua, Gnome, and KDE?</a></h2>
       
       <p>
 They are desktop environments, and there are many others.  Their purpose 

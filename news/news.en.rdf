@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-07-26T11:04:30-04:00</dc:date>
+    <dc:date>2011-07-26T11:11:08-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.">
       <title>Fink and Lion--updated.</title>
@@ -24,7 +24,7 @@ under 10.7.  Use</p>
 <p>to extract the packages, and</p>
 <p>cat fink_packages.txt | xargs fink install</p>
 <p>once you have installed Fink for 10.7.</p>
-<p>To upgrade fink after upgrading to Lion, one will have to bootstrap
+<p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
 Fink again, using a tarball for fink-0.31.0 or later.</p>
 <p>Second, due to lots of changes under the hood, there currently are many fewer
 Fink packages which build under 10.7 as opposed to 10.6.
@@ -49,7 +49,7 @@ under 10.7.  Use</p>
 <p>to extract the packages, and</p>
 <p>cat fink_packages.txt | xargs fink install</p>
 <p>once you have installed Fink for 10.7.</p>
-<p>To upgrade fink after upgrading to Lion, one will have to bootstrap
+<p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
 Fink again, using a tarball for fink-0.31.0 or later.</p>
 <p>Second, due to lots of changes under the hood, there currently are many fewer
 Fink packages which build under 10.7 as opposed to 10.6.
