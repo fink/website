@@ -5,8 +5,327 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2011-07-16T15:17:34-07:00</dc:date>
+    <dc:date>2011-07-28T08:07:50+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.">
+      <title>Fink and Lion--updated.</title>
+      <link>http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.</guid>
+      <description>
+      <p>OS X 10.7 "Lion" was released on July 20, 2011.  We want to let Fink
+      users know what to expect if updating.</p>
+<p>First, the fink 
+program itself will not run  on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+dpkg program to extract a list of the Fink packages
+which had been installed under 10.6, so that they can be reinstalled
+under 10.7.  Use</p>
+<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
+<p>to extract the packages, and</p>
+<p>cat fink_packages.txt | xargs fink install</p>
+<p>once you have installed Fink for 10.7.</p>
+<p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
+Fink again, using a tarball for fink-0.31.0 or later.</p>
+<p>Second, due to lots of changes under the hood, there currently are many fewer
+Fink packages which build under 10.7 as opposed to 10.6.
+Thus, even if you've extracted a list of Fink packages which had
+been installed under 10.6, some of them may not yet be installable under
+10.7.  We are currently creating a database showing which packages
+can be successfully installed under 10.7, and work is ongoing to add packages.</p>
+<p>10.7 introduces several drastic changes to how the system works. While this may
+cause a slight delay in full Fink functionality in the short term, it will
+make Fink work better in the future.</p>
+    </description>
+      <content:encoded>
+      <p>OS X 10.7 "Lion" was released on July 20, 2011.  We want to let Fink
+      users know what to expect if updating.</p>
+<p>First, the fink 
+program itself will not run  on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+dpkg program to extract a list of the Fink packages
+which had been installed under 10.6, so that they can be reinstalled
+under 10.7.  Use</p>
+<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
+<p>to extract the packages, and</p>
+<p>cat fink_packages.txt | xargs fink install</p>
+<p>once you have installed Fink for 10.7.</p>
+<p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
+Fink again, using a tarball for fink-0.31.0 or later.</p>
+<p>Second, due to lots of changes under the hood, there currently are many fewer
+Fink packages which build under 10.7 as opposed to 10.6.
+Thus, even if you've extracted a list of Fink packages which had
+been installed under 10.6, some of them may not yet be installable under
+10.7.  We are currently creating a database showing which packages
+can be successfully installed under 10.7, and work is ongoing to add packages.</p>
+<p>10.7 introduces several drastic changes to how the system works. While this may
+cause a slight delay in full Fink functionality in the short term, it will
+make Fink work better in the future.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-07-16%20Fink%20and%20Lion.">
+      <title>Fink and Lion.</title>
+      <link>http://fink.sourceforge.net/news/#2011-07-16%20Fink%20and%20Lion.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-07-16%20Fink%20and%20Lion.</guid>
+      <description>
+      <p>Apple has announced that OS X 10.7 "Lion" will be released 
+in July.  We want to let Fink users know what to expect when Lion is 
+released.</p>
+<p>First, the fink 
+program itself will not run  on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+dpkg program to extract a list of the Fink packages
+which had been installed under 10.6, so that they can be reinstalled
+under 10.7.  Use</p>
+<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
+<p>to extract the packages, and</p>
+<p>cat fink_packages.txt | xargs fink install</p>
+<p>once you have installed Fink for 10.7.</p>
+<p>(To upgrade fink after upgrading to Lion, one will have to bootstrap
+fink again, using a new version of fink which will be released shortly
+after Lion has been released.  Watch this space for an announcement.)</p>
+<p>Second, due to lots of changes under the hood, there will initially
+be many fewer Fink packages which work under 10.7 as opposed to 10.6.
+Thus, even if you've extracted a list of Fink packages which had
+been installed under 10.6, some of them may not yet be installable under
+10.7.  We are currently creating a database showing which packages
+can be successfully installed under 10.7, but that database
+may not be complete prior to the release of Lion.</p>
+<p>10.7 introduces several drastic changes to how the system works. While this may
+cause a slight delay in full Fink functionality in the short term, it will
+make Fink work better in the future.</p>
+    </description>
+      <content:encoded>
+      <p>Apple has announced that OS X 10.7 "Lion" will be released 
+in July.  We want to let Fink users know what to expect when Lion is 
+released.</p>
+<p>First, the fink 
+program itself will not run  on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+dpkg program to extract a list of the Fink packages
+which had been installed under 10.6, so that they can be reinstalled
+under 10.7.  Use</p>
+<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
+<p>to extract the packages, and</p>
+<p>cat fink_packages.txt | xargs fink install</p>
+<p>once you have installed Fink for 10.7.</p>
+<p>(To upgrade fink after upgrading to Lion, one will have to bootstrap
+fink again, using a new version of fink which will be released shortly
+after Lion has been released.  Watch this space for an announcement.)</p>
+<p>Second, due to lots of changes under the hood, there will initially
+be many fewer Fink packages which work under 10.7 as opposed to 10.6.
+Thus, even if you've extracted a list of Fink packages which had
+been installed under 10.6, some of them may not yet be installable under
+10.7.  We are currently creating a database showing which packages
+can be successfully installed under 10.7, but that database
+may not be complete prior to the release of Lion.</p>
+<p>10.7 introduces several drastic changes to how the system works. While this may
+cause a slight delay in full Fink functionality in the short term, it will
+make Fink work better in the future.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-07-11%20fink-0.30.2%20released.">
+      <title>fink-0.30.2 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-07-11%20fink-0.30.2%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-07-11%20fink-0.30.2%20released.</guid>
+      <description>
+      <p>fink-0.30.2 was released to the unstable tree on 11 July, 2011.
+      It is likely that this will be the last version that supports OS 10.4.</p>
+      <p>It is planned to release it to stable soon.</p>
+      <p>Update, 2011-07-15:   It has been added to stable.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.30.2 was released to the unstable tree on 11 July, 2011.
+      It is likely that this will be the last version that supports OS 10.4.</p>
+      <p>It is planned to release it to stable soon.</p>
+      <p>Update, 2011-07-15:   It has been added to stable.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-06-28%20fink-0.30.1%20released.">
+      <title>fink-0.30.1 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-06-28%20fink-0.30.1%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-06-28%20fink-0.30.1%20released.</guid>
+      <description>
+      <p>fink-0.30.1 was released to the unstable tree on 28 June, 2011.
+      This is a minor update which properly recognizes OS 10.6.8.</p>
+      <p>It is planned to release it to stable soon.</p>
+      <p>Update, 2011-07-02:   It has been added to stable.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.30.1 was released to the unstable tree on 28 June, 2011.
+      This is a minor update which properly recognizes OS 10.6.8.</p>
+      <p>It is planned to release it to stable soon.</p>
+      <p>Update, 2011-07-02:   It has been added to stable.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.">
+      <title>fink-0.30.0 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-04-30%20fink-0.30.0%20released.</guid>
+      <description>
+      <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.</p>
+      <p>The 0.30.x series is intended to be the last to support OS 10.4 (Tiger).</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.</p>
+      <p>The 0.30.x series is intended to be the last to support OS 10.4 (Tiger).</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.">
+      <title>fink-0.29.21 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.</guid>
+      <description>
+      <p>Version 0.29.21 of the fink package manager has just been
+        released to the unstable tree.  This version of fink 
+        properly recognizes OS 10.6.7, and contains a bugfix for a situation 
+        where fink can't index.</p>
+      <p>It is expected that this version of fink will be added to the stable
+        tree shortly.</p>
+     <p>Update, 2011-03-29:   It has been added to stable.</p>
+     </description>
+      <content:encoded>
+      <p>Version 0.29.21 of the fink package manager has just been
+        released to the unstable tree.  This version of fink 
+        properly recognizes OS 10.6.7, and contains a bugfix for a situation 
+        where fink can't index.</p>
+      <p>It is expected that this version of fink will be added to the stable
+        tree shortly.</p>
+     <p>Update, 2011-03-29:   It has been added to stable.</p>
+     </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.">
+      <title>fink-0.29.20 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.</guid>
+      <description>
+      <p>
+        Version 0.29.20 of the fink package manager has just been
+        released to the unstable tree.  This version of fink         
+        fixes an issue with X11 detection against recent versions of
+        <a href="http://http://xquartz.macosforge.org/trac/wiki">Xquartz</a>
+        on Leopard.
+      </p>
+      <p>
+        Unless other updates are made in the near term, it is expected that this
+        version of fink will be added to the stable tree shortly.
+      </p>
+      <p>Update, 2011-03-24:   It has been added to stable.</p>
+    </description>
+      <content:encoded>
+      <p>
+        Version 0.29.20 of the fink package manager has just been
+        released to the unstable tree.  This version of fink         
+        fixes an issue with X11 detection against recent versions of
+        <a href="http://http://xquartz.macosforge.org/trac/wiki">Xquartz</a>
+        on Leopard.
+      </p>
+      <p>
+        Unless other updates are made in the near term, it is expected that this
+        version of fink will be added to the stable tree shortly.
+      </p>
+      <p>Update, 2011-03-24:   It has been added to stable.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.">
+      <title>CVS access restored.</title>
+      <link>http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.</guid>
+      <description>
+      <p>Checkouts and commits now work again.  Thanks for your patience.</p>
+    </description>
+      <content:encoded>
+      <p>Checkouts and commits now work again.  Thanks for your patience.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-01-26%20CVS%20access%20is%20down.">
+      <title>CVS access is down.</title>
+      <link>http://fink.sourceforge.net/news/#2011-01-26%20CVS%20access%20is%20down.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-01-26%20CVS%20access%20is%20down.</guid>
+      <description>
+      <p>Due to an attack, our files are not accessible via CVS from Sourceforge.
+      For status updates check out
+      <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
+      sourceforge page</a>.</p>
+    </description>
+      <content:encoded>
+      <p>Due to an attack, our files are not accessible via CVS from Sourceforge.
+      For status updates check out
+      <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
+      sourceforge page</a>.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.">
+      <title>fink-0.29.19 released.</title>
+      <link>http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.</guid>
+      <description>
+      <p>Version 0.29.19 of the fink package manager has just been
+      released to the unstable tree.  This version of fink         
+      features more verbose output from 'fink --version' for debugging purposes,                                                                               
+      as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
+      on 10.6.6, however.)</p>
+      <p>It is expected that this version will migrate to the stable tree soon,
+      provided that there are no reports of bad behavior from unstable tree     
+      users.</p>
+      <p>Update, 2011-01-22:    fink-0.29.19 has been added to stable.</p>
+    </description>
+      <content:encoded>
+      <p>Version 0.29.19 of the fink package manager has just been
+      released to the unstable tree.  This version of fink         
+      features more verbose output from 'fink --version' for debugging purposes,                                                                               
+      as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
+      on 10.6.6, however.)</p>
+      <p>It is expected that this version will migrate to the stable tree soon,
+      provided that there are no reports of bad behavior from unstable tree     
+      users.</p>
+      <p>Update, 2011-01-22:    fink-0.29.19 has been added to stable.</p>
+    </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.">
+      <title>Temporary rysnc mirror outage.</title>
+      <link>http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.</link>
+      <guid>http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.</guid>
+      <description>
+      <p>We are experiencing a temporary failure in some of the rsync mirrors.
+      If you have not seen updates in a while, then you may wish to change your
+      rsync mirror for the time being by editing /sw/etc/fink.conf as a superuser
+      and replacing the line that starts with Mirror-rsync with
+        Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</p>
+        <p>or</p><p>
+        Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</p>
+        <p>or</p><p>
+        Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</p>
+         <p>or</p><p>
+        Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</p>       
+      <p>If you prefer, you can select the latter three of the above mirrors via fink configure
+      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
+      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
+      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
+      (3) as the rsync mirror, or Netherlands (27) and
+      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
+      <p>Update, 2011-01-07  The mirrors are updating again.</p>
+    </description>
+      <content:encoded>
+      <p>We are experiencing a temporary failure in some of the rsync mirrors.
+      If you have not seen updates in a while, then you may wish to change your
+      rsync mirror for the time being by editing /sw/etc/fink.conf as a superuser
+      and replacing the line that starts with Mirror-rsync with
+        Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</p>
+        <p>or</p><p>
+        Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</p>
+        <p>or</p><p>
+        Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</p>
+         <p>or</p><p>
+        Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</p>       
+      <p>If you prefer, you can select the latter three of the above mirrors via fink configure
+      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
+      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
+      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
+      (3) as the rsync mirror, or Netherlands (27) and
+      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
+      <p>Update, 2011-01-07  The mirrors are updating again.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!">
       <title>Happy 10th Birthday to Fink!</title>
       <link>http://fink.sourceforge.net/news/#2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!</link>
@@ -86,499 +405,6 @@ and Beyond!</p>
       have been added to the stable tree, along with updates to some important
       dependencies.</p>
     </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.">
-      <title>fink-0.29.15 released.</title>
-      <link>http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2010-10-23%20fink-0.29.15%20released.</guid>
-      <description>
-      <p>fink-0.29.15 has been released to the unstable tree.
-      This version of fink contains fixes to the system-java-dev
-      virtual package generation.</p>
-      <p>Users will also need to download an appropriate version of the Java Developer Package
-      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>
-      for all of the the system-java-dev packages to show up on 10.5 and 10.6.</p>
-      <p>It is planned to add this version of fink to the stable tree shortly.</p>
-      <p>Update, 2010-11-01:  fink-0.29.15 has
-      been added to the stable tree.</p>
-    </description>
-      <content:encoded>
-      <p>fink-0.29.15 has been released to the unstable tree.
-      This version of fink contains fixes to the system-java-dev
-      virtual package generation.</p>
-      <p>Users will also need to download an appropriate version of the Java Developer Package
-      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>
-      for all of the the system-java-dev packages to show up on 10.5 and 10.6.</p>
-      <p>It is planned to add this version of fink to the stable tree shortly.</p>
-      <p>Update, 2010-11-01:  fink-0.29.15 has
-      been added to the stable tree.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.">
-      <title>Java update breaks system-java-dev virtual package generation.</title>
-      <link>http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.</link>
-      <guid>http://fink.sourceforge.net/news/#2010-10-20%20Java%20update%20breaks%20system-java-dev%20virtual%20package%20generation.</guid>
-      <description>
-      <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
-      and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
-      change the Java file configuration in such a manner that fink
-      no longer generates the system-java16-dev package on 10.5 and
-      all of the system-java-dev packages on 10.6.</p>
-      <p>Users may wish to hold off on applying this update until
-      a version of fink which addresses this issue is released.
-      The issue does not affect packages which are currently installed, but will
-      prevent java-dependent packages from building.</p>
-      <p>Users will want to download an appropriate version of the Java Developer Package
-      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>.</p>
-      <p>Update, 2010-10-23:  The issue has been addressed in fink-0.29.15.</p>
-    </description>
-      <content:encoded>
-      <p>The recent 10.5 and 10.6 Java updates (APPLE-SA-2010-10-20-1 Java for Mac OS X 10.6 Update 3
-      and APPLE-SA-2010-10-20-2 Java for Mac OS X 10.5 Update 8 )
-      change the Java file configuration in such a manner that fink
-      no longer generates the system-java16-dev package on 10.5 and
-      all of the system-java-dev packages on 10.6.</p>
-      <p>Users may wish to hold off on applying this update until
-      a version of fink which addresses this issue is released.
-      The issue does not affect packages which are currently installed, but will
-      prevent java-dependent packages from building.</p>
-      <p>Users will want to download an appropriate version of the Java Developer Package
-      from <a href="http://connect.apple.com/">The Apple Developer Connection site</a>.</p>
-      <p>Update, 2010-10-23:  The issue has been addressed in fink-0.29.15.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released.">
-      <title>fink-0.29.14 released.</title>
-      <link>http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2010-10-19%20fink-0.29.14%20released.</guid>
-      <description>
-      <p>fink-0.29.14 has been released to the unstable tree.
-      This version of finkcontains, among
-      other new features, an aria2 option for DownloadMethod,
-      to allow the use of the aria2 download accelerator
-      (available via Fink), and a fix for the infamous "node exists" error.  
-      </p>
-      <p>It is planned to add this version to the stable tree shortly.</p>
-      <p>Addendum, 2010-10-19:  because of the Java update (2010-10-20),
-      fink-0.29.15 is now slated to be the version next to go to stable.</p>
-    </description>
-      <content:encoded>
-      <p>fink-0.29.14 has been released to the unstable tree.
-      This version of finkcontains, among
-      other new features, an aria2 option for DownloadMethod,
-      to allow the use of the aria2 download accelerator
-      (available via Fink), and a fix for the infamous "node exists" error.  
-      </p>
-      <p>It is planned to add this version to the stable tree shortly.</p>
-      <p>Addendum, 2010-10-19:  because of the Java update (2010-10-20),
-      fink-0.29.15 is now slated to be the version next to go to stable.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.">
-      <title>Servers back to normal.</title>
-      <link>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</link>
-      <guid>http://fink.sourceforge.net/news/#2009-10-30%20Servers%20back%20to%20normal.</guid>
-      <description>
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.</p>
-    </description>
-      <content:encoded>
-      <p>Our user services have been restored. On Oct 28th the Web site and
-      some of the mirrors (rsync, source files, binary distribution) were
-      restored, and on Oct 30th all of our main rsync mirrors were operational.
-      Once again, we apologise for the inconvenience. Thanks for your patience
-      and support.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues">
-      <title>Server issues</title>
-      <link>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues</link>
-      <guid>http://fink.sourceforge.net/news/#2009-10-24%20Server%20issues</guid>
-      <description>
-	  <p>We have had server issues and as a result the Web site and the
-	  official binary distribution are down, and the rsync servers are stalled.
-	  Whilst we sort this out, you may:</p>
-	  
-		(Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-		you need Web site information
-
-		(selfupdate) If you use rsync as your selfupdate method then edit
-		/sw/etc/fink.conf and replace the line that starts with
-		Mirror-rsync with Mirror-rsync:
-		rsync://fink.gecko.ig42.org/finkinfo/
-
-		(source files) Edit /sw/etc/fink.conf and replace the
-		line that starts with Mirror-master with
-		Mirror-master: http://fink-dist.gecko.ig42.org
-		
-		(bindist) Edit /sw/etc/fink.conf and replace the line
-		that starts with Mirror-apt: with Mirror-apt:
-		http://fink-bindist.gecko.ig42.org
-
-		(bindist) Edit /sw/etc/apt/sources.list and replace
-		http://bindist.finkmirrors.net/bindist with
-		http://fink-bindist.gecko.ig42.org
-
-		Run fink scanpackages.
-	  
-      <p>We apologise for the inconvenience.</p>
-	</description>
-      <content:encoded>
-	  <p>We have had server issues and as a result the Web site and the
-	  official binary distribution are down, and the rsync servers are stalled.
-	  Whilst we sort this out, you may:</p>
-	  
-		(Web site) Use <a href="http://fink.thetis.ig42.org">http://fink.thetis.ig42.org</a> if
-		you need Web site information
-
-		(selfupdate) If you use rsync as your selfupdate method then edit
-		/sw/etc/fink.conf and replace the line that starts with
-		Mirror-rsync with Mirror-rsync:
-		rsync://fink.gecko.ig42.org/finkinfo/
-
-		(source files) Edit /sw/etc/fink.conf and replace the
-		line that starts with Mirror-master with
-		Mirror-master: http://fink-dist.gecko.ig42.org
-		
-		(bindist) Edit /sw/etc/fink.conf and replace the line
-		that starts with Mirror-apt: with Mirror-apt:
-		http://fink-bindist.gecko.ig42.org
-
-		(bindist) Edit /sw/etc/apt/sources.list and replace
-		http://bindist.finkmirrors.net/bindist with
-		http://fink-bindist.gecko.ig42.org
-
-		Run fink scanpackages.
-	  
-      <p>We apologise for the inconvenience.</p>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.">
-      <title>Fink on 10.6.</title>
-      <link>http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.</link>
-      <guid>http://fink.sourceforge.net/news/#2009-08-28%20Fink%20on%2010.6.</guid>
-      <description>
-      <p>
-Fink is ready to be used on Snow Leopard (OS X v. 10.6).  Users will
-need to choose between a 32-bit version of fink and a 64-bit version of fink
-for 10.6.
-The 32-bit version has more packages available at the present time, but
-the 64-bit version represents the future direction for OS X and for fink;
-individual users must make this decision on their own.  It will not
-be possible to "upgrade" from 32-bit to 64-bit (or vice versa), without
-completely reinstalling fink.
-</p><p>
-At the moment, two methods are available for installing Fink on Snow Leopard.
-A binary installer is not available, so it is important to
-first install XCode from the Optional Installs folder on the Snow
-Leopard disk.
-Users wanting the 64-bit version, or users upgrading directly from 10.4 or
-earlier, must bootstrap fink from the distribution tarball (version
-0.29.9 or later), available at <a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a>; installation instructions are
-<a href="http://fink.sourceforge.net/download/srcdist.php">here</a>.
-On the other hand, users can upgrade directly from
-10.5 to the 32-bit version, following the instructions below.
-(One warning: users who have installed a development version of fink
-from CVS rather than a released version may encounter trouble; please
-downgrade your fink to a released version, and remove stray .deb files
-of higher versions, before beginning.)
-</p><p>
-To upgrade, follow a four step process.
-Step 1: edit the file /sw/etc/fink.conf,
-adding a line to it which reads NoAutoIndex: true  (You may
-need to use sudo to obtain the correct permissions to edit
-this file.)  Step 2: 
-run the command fink reinstall fink in
-order to tell fink that you are now on 10.6.  (If you encounter a message
-about package database corruption, run fink index -f and
-try this step again.)  Step 3: 
-run the command fink update
-fink to get the latest fink for 10.6.  Step 4: run the command
-fink install perl588-core to replace the version of perl
-which Apple changed during the OS X upgrade, in case you have 
-fink packages which depend on it.
-</p><p>After the upgrade, you may wish to run fink configure
-to do some cleanup.
-</p><p>Almost all of the packages in fink's stable tree will compile on
-10.6, but be warned that only a fraction of the 10.5 packages are currently
-available for 10.6.  In the near future, fink's package database will be
-updated to include information about packages for 10.6; you can check there
-to see if your favorite package is ready.
-</p>
-</description>
-      <content:encoded>
-      <p>
-Fink is ready to be used on Snow Leopard (OS X v. 10.6).  Users will
-need to choose between a 32-bit version of fink and a 64-bit version of fink
-for 10.6.
-The 32-bit version has more packages available at the present time, but
-the 64-bit version represents the future direction for OS X and for fink;
-individual users must make this decision on their own.  It will not
-be possible to "upgrade" from 32-bit to 64-bit (or vice versa), without
-completely reinstalling fink.
-</p><p>
-At the moment, two methods are available for installing Fink on Snow Leopard.
-A binary installer is not available, so it is important to
-first install XCode from the Optional Installs folder on the Snow
-Leopard disk.
-Users wanting the 64-bit version, or users upgrading directly from 10.4 or
-earlier, must bootstrap fink from the distribution tarball (version
-0.29.9 or later), available at <a href="http://sourceforge.net/projects/fink/files/fink/0.29.9/fink-0.29.9.tar.gz/download">sourceforge.net</a>; installation instructions are
-<a href="http://fink.sourceforge.net/download/srcdist.php">here</a>.
-On the other hand, users can upgrade directly from
-10.5 to the 32-bit version, following the instructions below.
-(One warning: users who have installed a development version of fink
-from CVS rather than a released version may encounter trouble; please
-downgrade your fink to a released version, and remove stray .deb files
-of higher versions, before beginning.)
-</p><p>
-To upgrade, follow a four step process.
-Step 1: edit the file /sw/etc/fink.conf,
-adding a line to it which reads NoAutoIndex: true  (You may
-need to use sudo to obtain the correct permissions to edit
-this file.)  Step 2: 
-run the command fink reinstall fink in
-order to tell fink that you are now on 10.6.  (If you encounter a message
-about package database corruption, run fink index -f and
-try this step again.)  Step 3: 
-run the command fink update
-fink to get the latest fink for 10.6.  Step 4: run the command
-fink install perl588-core to replace the version of perl
-which Apple changed during the OS X upgrade, in case you have 
-fink packages which depend on it.
-</p><p>After the upgrade, you may wish to run fink configure
-to do some cleanup.
-</p><p>Almost all of the packages in fink's stable tree will compile on
-10.6, but be warned that only a fraction of the 10.5 packages are currently
-available for 10.6.  In the near future, fink's package database will be
-updated to include information about packages for 10.6; you can check there
-to see if your favorite package is ready.
-</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2009-07-25%20Fink%20Core%20Group%20changes.">
-      <title>Fink Core Group changes.</title>
-      <link>http://fink.sourceforge.net/news/#2009-07-25%20Fink%20Core%20Group%20changes.</link>
-      <guid>http://fink.sourceforge.net/news/#2009-07-25%20Fink%20Core%20Group%20changes.</guid>
-      <description>
-      <p>
-The Fink Core Group announces two new members: Alexander Hansen (akh)
-and Augusto Devegili (monipol), both of whom have been very active
-in fink.  Please join us in welcoming the new members!
-</p><p>
-The Group also announces that Christian Schaffner has stepped down,
-returning to "ordinary member" status.  We thank Christian for his help
-on the team over the past several years.
-</p><p>
-Members of the Fink project are working hard to provide user support,
-to keep Fink up to date, and to prepare for the upcoming Snow Leopard
-release.  More volunteers are always needed, so please consider
-getting involved at some level!
-</p>
-</description>
-      <content:encoded>
-      <p>
-The Fink Core Group announces two new members: Alexander Hansen (akh)
-and Augusto Devegili (monipol), both of whom have been very active
-in fink.  Please join us in welcoming the new members!
-</p><p>
-The Group also announces that Christian Schaffner has stepped down,
-returning to "ordinary member" status.  We thank Christian for his help
-on the team over the past several years.
-</p><p>
-Members of the Fink project are working hard to provide user support,
-to keep Fink up to date, and to prepare for the upcoming Snow Leopard
-release.  More volunteers are always needed, so please consider
-getting involved at some level!
-</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.">
-      <title>End of 10.3 support.</title>
-      <link>http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.</link>
-      <guid>http://fink.sourceforge.net/news/#2008-07-23%20End%20of%2010.3%20support.</guid>
-      <description>
-      <p>
-The Fink project is no longer able to offer support for users of Fink
-on Mac OS X 10.3. In reality there has been very little support for
-some time, so this announcement simply formalizes that fact.
-</p><p>
-This means that there will not be any further updates, not even
-security updates, for Mac OS X 10.3 users. Their existing
-installations will continue to work, but the software that is
-installed will not be updated.
-</p><p>
-We believe that the majority of our users are using Mac OS X 10.4 or
-10.5 and hope that this does not inconvenience too many people. 
-</p>
-</description>
-      <content:encoded>
-      <p>
-The Fink project is no longer able to offer support for users of Fink
-on Mac OS X 10.3. In reality there has been very little support for
-some time, so this announcement simply formalizes that fact.
-</p><p>
-This means that there will not be any further updates, not even
-security updates, for Mac OS X 10.3 users. Their existing
-installations will continue to work, but the software that is
-installed will not be updated.
-</p><p>
-We believe that the majority of our users are using Mac OS X 10.4 or
-10.5 and hope that this does not inconvenience too many people. 
-</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.">
-      <title>Mass package migration.</title>
-      <link>http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.</link>
-      <guid>http://fink.sourceforge.net/news/#2008-07-17%20Mass%20package%20migration.</guid>
-      <description>
-      <p>
-The massive GNOME update which has been in process for
-many months was merged into fink's unstable tree.  This is well
-tested, and updates by users appear to be going fairly smoothly.
-</p><p>
-We are now merging the gnome update into the stable tree.  Because
-we have been unable to test the dependencies of these new packages in
-the stable tree in advance, users can expect the "stable" tree to be
-"not so stable" during the next few weeks, while the bugs get worked
-out.
-</p><p>
-If you are eager to start using this massive gnome update immediately,
-we suggest that you switch to the unstable tree.  If not, we suggest
-that you hold off running "fink selfupdate" for a while (perhaps a
-week or two) until things have again stabilized.</p>
-</description>
-      <content:encoded>
-      <p>
-The massive GNOME update which has been in process for
-many months was merged into fink's unstable tree.  This is well
-tested, and updates by users appear to be going fairly smoothly.
-</p><p>
-We are now merging the gnome update into the stable tree.  Because
-we have been unable to test the dependencies of these new packages in
-the stable tree in advance, users can expect the "stable" tree to be
-"not so stable" during the next few weeks, while the bugs get worked
-out.
-</p><p>
-If you are eager to start using this massive gnome update immediately,
-we suggest that you switch to the unstable tree.  If not, we suggest
-that you hold off running "fink selfupdate" for a while (perhaps a
-week or two) until things have again stabilized.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.">
-      <title>New Fink release.</title>
-      <link>http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.</link>
-      <guid>http://fink.sourceforge.net/news/#2008-06-26%20New%20Fink%20release.</guid>
-      <description>
-      <p>
-A new (binary) Fink release for OS X 10.5 (Leopard) is 
-<a href="http://fink.sourceforge.net/download/index.php">available</a>
- today: version 0.9.0, which can be installed on either Intel or PowerPC
-hardware.
-The release includes source files, binary packages, and  Fink
-installers for both kinds of hardware.
-</p>
-      <p>
-Users who have already installed Fink on Leopard from source, who now wish
-to switch to the binary distribution, may do so as follows.  First,
-run fink selfupdate to update to the latest version of the
-fink package manager.  Next, run fink configure, and be sure
-to change your choice about using the binary distribution from No
-to yes.  Finally, run fink scanpackages to activate the binary
-distribution.
-</p>
-<p>Update, 2008-07-11: If you use the binary installer, you
-should run fink selfupdate after installation.</p>
-</description>
-      <content:encoded>
-      <p>
-A new (binary) Fink release for OS X 10.5 (Leopard) is 
-<a href="http://fink.sourceforge.net/download/index.php">available</a>
- today: version 0.9.0, which can be installed on either Intel or PowerPC
-hardware.
-The release includes source files, binary packages, and  Fink
-installers for both kinds of hardware.
-</p>
-      <p>
-Users who have already installed Fink on Leopard from source, who now wish
-to switch to the binary distribution, may do so as follows.  First,
-run fink selfupdate to update to the latest version of the
-fink package manager.  Next, run fink configure, and be sure
-to change your choice about using the binary distribution from No
-to yes.  Finally, run fink scanpackages to activate the binary
-distribution.
-</p>
-<p>Update, 2008-07-11: If you use the binary installer, you
-should run fink selfupdate after installation.</p>
-</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall">
-      <title>Mirror, mirror on the wall</title>
-      <link>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall</link>
-      <guid>http://fink.sourceforge.net/news/#2008-02-03%20Mirror%2C%20mirror%20on%20the%20wall</guid>
-      <description>
-<p>Todo gran proyecto de codigo abierto se enfrenta a problemas de
-distribución y el caso de Fink no es la excepción. Nosotros deseamos
-que puedas obtener los archivos que necesitas para construir tus
-aplicaciones favoritas tan rápido como sea posible. Para ello, lo más
-conveniente es tener un "espejo" cercano a tu ubicación.</p>
-
-<p>Estamos trabajando activamente en la construcción de una
-infraestructura de distribución confiable que consiste en "espejos"
-patrocinados por universidades y corporaciones. Recientemente, nuestra
-lista de "espejos" se ha visto reducida considerablemente y necesitamos
-tu ayuda para mejorar la calidad de los "espejos" de nuevo. </p>
-
-<p>Eres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
-Eres un desarrollador con algo de tiempo libre? Aun si no puedes
-contestar que si a ninguna de estas preguntas es posible que puedas
-ayudar. Toda la información relevante para levantar y patrocinar un
-"espejo" está disponilbe en el <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>. Para preguntas más específicas
-puedes <a href="mailto:fink-core-private@lists.sourceforge.net">contactarnos</a> directamente. Estamos solicitando espejos en todo
-el mundo y especificamente en los siguientes países:</p>
-
-Estados UnidosJapónAlemania
-FranciaReino UnidoCanadá
-ItaliaEspañaSuizaAustralia
-
-<p>También queremos aprovechar esta oportunidad para agradecer a todos los
-que han proveído "espejos" previamente. Sin su apoyo continuo Fink
-no podría proveer el nivel de servicio que actualmente tiene. ¡Gracias!</p>
-</description>
-      <content:encoded>
-<p>Todo gran proyecto de codigo abierto se enfrenta a problemas de
-distribución y el caso de Fink no es la excepción. Nosotros deseamos
-que puedas obtener los archivos que necesitas para construir tus
-aplicaciones favoritas tan rápido como sea posible. Para ello, lo más
-conveniente es tener un "espejo" cercano a tu ubicación.</p>
-
-<p>Estamos trabajando activamente en la construcción de una
-infraestructura de distribución confiable que consiste en "espejos"
-patrocinados por universidades y corporaciones. Recientemente, nuestra
-lista de "espejos" se ha visto reducida considerablemente y necesitamos
-tu ayuda para mejorar la calidad de los "espejos" de nuevo. </p>
-
-<p>Eres un estudiante? Eres un maestro o profesor? Mantienes un Centro de Datos?
-Eres un desarrollador con algo de tiempo libre? Aun si no puedes
-contestar que si a ninguna de estas preguntas es posible que puedas
-ayudar. Toda la información relevante para levantar y patrocinar un
-"espejo" está disponilbe en el <a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors">FinkWiki</a>. Para preguntas más específicas
-puedes <a href="mailto:fink-core-private@lists.sourceforge.net">contactarnos</a> directamente. Estamos solicitando espejos en todo
-el mundo y especificamente en los siguientes países:</p>
-
-Estados UnidosJapónAlemania
-FranciaReino UnidoCanadá
-ItaliaEspañaSuizaAustralia
-
-<p>También queremos aprovechar esta oportunidad para agradecer a todos los
-que han proveído "espejos" previamente. Sin su apoyo continuo Fink
-no podría proveer el nivel de servicio que actualmente tiene. ¡Gracias!</p>
-</content:encoded>
     </item>
   </channel>
 </rss>

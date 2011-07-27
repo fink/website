@@ -1,13 +1,134 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2011/01/06 00:23:39';
+$cvs_date = 'Date: 2011/07/27 23:06:25';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">Happy 10th Birthday to Fink!</span></a><?php gray_line(); ?>
+<a name="2011-07-20%20Fink%20and%20Lion--updated."><span class="news-date">2011-07-20: </span><span class="news-headline">Fink and Lion--updated.</span></a><?php gray_line(); ?>
+      <p>OS X 10.7 "Lion" was released on July 20, 2011.  We want to let Fink
+      users know what to expect if updating.</p>
+<p>First, the <code>fink</code> 
+program itself will not run  on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+<code>dpkg</code> program to extract a list of the Fink packages
+which had been installed under 10.6, so that they can be reinstalled
+under 10.7.  Use</p>
+<p><code>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</code></p>
+<p>to extract the packages, and</p>
+<p><code>cat fink_packages.txt | xargs fink install</code></p>
+<p>once you have installed Fink for 10.7.</p>
+<p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
+Fink again, using a tarball for <code>fink-0.31.0</code> or later.</p>
+<p>Second, due to lots of changes under the hood, there currently are many fewer
+Fink packages which build under 10.7 as opposed to 10.6.
+Thus, even if you've extracted a list of Fink packages which had
+been installed under 10.6, some of them may not yet be installable under
+10.7.  We are currently creating a database showing which packages
+can be successfully installed under 10.7, and work is ongoing to add packages.</p>
+<p>10.7 introduces several drastic changes to how the system works. While this may
+cause a slight delay in full Fink functionality in the short term, it will
+make Fink work better in the future.</p>
+    <a name="2011-07-16%20Fink%20and%20Lion."><span class="news-date">2011-07-16: </span><span class="news-headline">Fink and Lion.</span></a><?php gray_line(); ?>
+      <p>Apple has announced that OS X 10.7 "Lion" will be released 
+in July.  We want to let Fink users know what to expect when Lion is 
+released.</p>
+<p>First, the <code>fink</code> 
+program itself will not run  on a system which has
+been upgraded to Lion.  However, it will be possible to use the
+<code>dpkg</code> program to extract a list of the Fink packages
+which had been installed under 10.6, so that they can be reinstalled
+under 10.7.  Use</p>
+<p><code>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</code></p>
+<p>to extract the packages, and</p>
+<p><code>cat fink_packages.txt | xargs fink install</code></p>
+<p>once you have installed Fink for 10.7.</p>
+<p>(To upgrade fink after upgrading to Lion, one will have to bootstrap
+fink again, using a new version of fink which will be released shortly
+after Lion has been released.  Watch this space for an announcement.)</p>
+<p>Second, due to lots of changes under the hood, there will initially
+be many fewer Fink packages which work under 10.7 as opposed to 10.6.
+Thus, even if you've extracted a list of Fink packages which had
+been installed under 10.6, some of them may not yet be installable under
+10.7.  We are currently creating a database showing which packages
+can be successfully installed under 10.7, but that database
+may not be complete prior to the release of Lion.</p>
+<p>10.7 introduces several drastic changes to how the system works. While this may
+cause a slight delay in full Fink functionality in the short term, it will
+make Fink work better in the future.</p>
+    <a name="2011-07-11%20fink-0.30.2%20released."><span class="news-date">2011-07-11: </span><span class="news-headline">fink-0.30.2 released.</span></a><?php gray_line(); ?>
+      <p><code>fink-0.30.2</code> was released to the unstable tree on 11 July, 2011.
+      It is likely that this will be the last version that supports OS 10.4.</p>
+      <p>It is planned to release it to stable soon.</p>
+      <p><b>Update, 2011-07-15:</b>   It has been added to stable.</p>
+    <a name="2011-06-28%20fink-0.30.1%20released."><span class="news-date">2011-06-28: </span><span class="news-headline">fink-0.30.1 released.</span></a><?php gray_line(); ?>
+      <p><code>fink-0.30.1</code> was released to the unstable tree on 28 June, 2011.
+      This is a minor update which properly recognizes OS 10.6.8.</p>
+      <p>It is planned to release it to stable soon.</p>
+      <p><b>Update, 2011-07-02:</b>   It has been added to stable.</p>
+    <a name="2011-04-30%20fink-0.30.0%20released."><span class="news-date">2011-04-30: </span><span class="news-headline">fink-0.30.0 released.</span></a><?php gray_line(); ?>
+      <p><code>fink-0.30.0</code> was released to the unstable tree on 30 April, 2011.</p>
+      <p>The 0.30.x series is intended to be the last to support OS 10.4 (Tiger).</p>
+    <a name="2011-03-24%20fink-0.29.21%20released."><span class="news-date">2011-03-24: </span><span class="news-headline">fink-0.29.21 released.</span></a><?php gray_line(); ?>
+      <p>Version 0.29.21 of the <code>fink</code> package manager has just been
+        released to the unstable tree.  This version of <code>fink</code> 
+        properly recognizes OS 10.6.7, and contains a bugfix for a situation 
+        where <code>fink</code> can't index.</p>
+      <p>It is expected that this version of fink will be added to the stable
+        tree shortly.</p>
+     <p><b>Update, 2011-03-29:</b>   It has been added to stable.</p>
+     <a name="2011-03-09%20fink-0.29.20%20released."><span class="news-date">2011-03-09: </span><span class="news-headline">fink-0.29.20 released.</span></a><?php gray_line(); ?>
+      <p>
+        Version 0.29.20 of the <code>fink</code> package manager has just been
+        released to the unstable tree.  This version of <code>fink</code>         
+        fixes an issue with X11 detection against recent versions of
+        <a href="http://http://xquartz.macosforge.org/trac/wiki">Xquartz</a>
+        on Leopard.
+      </p>
+      <p>
+        Unless other updates are made in the near term, it is expected that this
+        version of <code>fink</code> will be added to the stable tree shortly.
+      </p>
+      <p><b>Update, 2011-03-24:</b>   It has been added to stable.</p>
+    <a name="2011-02-10%20CVS%20access%20restored."><span class="news-date">2011-02-10: </span><span class="news-headline">CVS access restored.</span></a><?php gray_line(); ?>
+      <p>Checkouts and commits now work again.  Thanks for your patience.</p>
+    <a name="2011-01-26%20CVS%20access%20is%20down."><span class="news-date">2011-01-26: </span><span class="news-headline">CVS access is down.</span></a><?php gray_line(); ?>
+      <p>Due to an attack, our files are not accessible via CVS from Sourceforge.
+      For status updates check out
+      <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
+      sourceforge page</a>.</p>
+    <a name="2011-01-16%20fink-0.29.19%20released."><span class="news-date">2011-01-16: </span><span class="news-headline">fink-0.29.19 released.</span></a><?php gray_line(); ?>
+      <p>Version 0.29.19 of the <code>fink</code> package manager has just been
+      released to the unstable tree.  This version of <code>fink</code>         
+      features more verbose output from 'fink --version' for debugging purposes,                                                                               
+      as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
+      on 10.6.6, however.)</p>
+      <p>It is expected that this version will migrate to the stable tree soon,
+      provided that there are no reports of bad behavior from unstable tree     
+      users.</p>
+      <p><b>Update, 2011-01-22:</b>    <code>fink-0.29.19</code> has been added to stable.</p>
+    <a name="2011-01-05%20Temporary%20rysnc%20mirror%20outage."><span class="news-date">2011-01-05: </span><span class="news-headline">Temporary rysnc mirror outage.</span></a><?php gray_line(); ?>
+      <p>We are experiencing a temporary failure in some of the rsync mirrors.
+      If you have not seen updates in a while, then you may wish to change your
+      rsync mirror for the time being by editing <code>/sw/etc/fink.conf</code> as a superuser
+      and replacing the line that starts with <code>Mirror-rsync</code> with
+        <code>Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</code></p>
+        <p>or</p><p>
+        <code>Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</code></p>
+        <p>or</p><p>
+        <code>Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</code></p>
+         <p>or</p><p>
+        <code>Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</code></p>       
+      <p>If you prefer, you can select the latter three of the above mirrors via <code>fink configure</code>
+      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
+      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
+      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
+      (3) as the rsync mirror, or Netherlands (27) and
+      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
+      <p><b>Update, 2011-01-07</b>  The mirrors are updating again.</p>
+    <a name="2010-12-31%20Happy%2010th%20Birthday%20to%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">Happy 10th Birthday to Fink!</span></a><?php gray_line(); ?>
       <p>The Fink project was started in the waning days of December 2000 by
 Christoph Pfisterer, using the "public beta" release of Mac OS X.
 Within a year, versions 10.0 and 10.1 of OS X had been released, and

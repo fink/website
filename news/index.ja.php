@@ -1,13 +1,125 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2011/01/06 00:23:39';
+$cvs_date = 'Date: 2011/07/27 23:06:25';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2010-12-31%2010%E5%91%A8%E5%B9%B4%E8%A8%98%E5%BF%B5%E3%80%81%E3%81%8A%E3%82%81%E3%81%A7%E3%81%A8%E3%81%86%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">10周年記念、おめでとう Fink!</span></a><?php gray_line(); ?>
+<a name="2011-07-20%20Fink%20and%20Lion--updated."><span class="news-date">2011-07-20: </span><span class="news-headline">Fink and Lion--updated.</span></a><?php gray_line(); ?>
+      <p>Apple は、OS X 10.7 Lion が７月にリリースされました。
+Lion がリリースされた後のことについてお知らせします。</p>
+<p>まず、  <code>fink</code> コマンド自体は、Lion にアップグレードされたシステムでは動作しません。
+しかし、<code>dpkg</code> コマンドで、10.6 でインストールされた Fink パッケージを解凍し、10.7 で再インストールすることは可能です。
+Fink for 10.7 をインストール後、
+</p>
+<p><code>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</code></p>
+<p>でパッケージを解凍し、</p>
+<p><code>cat fink_packages.txt | xargs fink install</code></p>
+<p>とします。</p>
+<p>Lion にアップグレード後に Fink をアップグレードするには、
+<code>fink-0.31.0</code>　以降を使って
+fink を bootstrap し直してください。</p>
+<p>次に、目に見えない多くの変更により、10.6 に比べて 10.7 で動作するのは当面非常に少なくなります。
+よって、10.6 でインストールされた Fink パッケージも、
+10.7 ではインストールできないこともあります。
+現在、10.7 でインストール可能なパッケージのデータベースを作成中です。
+このデータベースには随時パッケージが追加されます。</p>
+<p>10.7 は、システム動作に関して大きな変更が導入されています。
+これにとって短期的には Fink の機能が制限されますが、
+長期的には Fink がよりよく動作することになります。</p>
+    <a name="2011-07-16%20Fink%20%E3%81%A8%20Lion"><span class="news-date">2011-07-16: </span><span class="news-headline">Fink と Lion</span></a><?php gray_line(); ?>
+      <p>Apple は、OS X 10.7 Lion を７月にリリースすると発表しました。
+Lion がリリースされた後のことについてお知らせします。</p>
+<p>まず、  <code>fink</code> コマンド自体は、Lion にアップグレードされたシステムでは動作しません。
+しかし、<code>dpkg</code> コマンドで、10.6 でインストールされた Fink パッケージを解凍し、10.7 で再インストールすることは可能です。
+Fink for 10.7 をインストール後、
+</p>
+<p><code>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</code></p>
+<p>でパッケージを解凍し、</p>
+<p><code>cat fink_packages.txt | xargs fink install</code></p>
+<p>とします。</p>
+<p>(Lion にアップグレード後に fink をアップグレードすると、
+Lion リリース直後にリリースされた新しい fink を用いて、
+fink を bootstrap し直さなければ行けません。
+今後の発表をお待ちください。)</p>
+<p>次に、目に見えない多くの変更により、10.6 に比べて 10.7 で動作するのは当面非常に少なくなります。
+よって、10.6 でインストールされた Fink パッケージも、
+10.7 ではインストールできないこともあります。
+現在、10.7 でインストール可能なパッケージのデータベースを作成中です。
+しかし、このデータベースは Lion リリースの前にはできません。</p>
+<p>10.7 は、システム動作に関して大きな変更が導入されています。
+これにとって短期的には Fink の機能が制限されますが、
+長期的には Fink がよりよく動作することになります。</p>
+    <a name="2011-07-11%20fink-0.30.2%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2011-07-11: </span><span class="news-headline">fink-0.30.2 リリース</span></a><?php gray_line(); ?>
+      <p>2011年7月11日、<code>fink-0.30.2</code> が unstable ツリーにリリースされました。
+      これは、おそらく OS 10.4 をサポートする最後のバージョンとなります。</p>
+      <p>すぐに stable にもリリースされる予定です。</p>
+      <p><b>Update, 2011-07-15:</b> stable にもリリースされました。</p>
+    <a name="2011-06-28%20fink-0.30.1%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2011-06-28: </span><span class="news-headline">fink-0.30.1 リリース</span></a><?php gray_line(); ?>
+      <p>2011年6月28日、<code>fink-0.30.1</code> が unstable ツリーにリリースされました。
+      これは、OS 10.6.8 を認識するためのマイナーアップデートです。</p>
+      <p>すぐに stable にもリリースされる予定です。</p>
+      <p><b>Update, 2011-07-02:</b> stable にもリリースされました。</p>
+    <a name="2011-04-30%20fink-0.30.0%20released."><span class="news-date">2011-04-30: </span><span class="news-headline">fink-0.30.0 released.</span></a><?php gray_line(); ?>
+      <p><code>fink-0.30.0</code> が unstable ツリーにリリースされました。</p>
+      <p>The 0.30.x シリーズが、OS X 10.4 をサポートする最後のバージョンとなる予定です。</p>
+    <a name="2011-03-24%20fink-0.29.21%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2011-03-24: </span><span class="news-headline">fink-0.29.21 リリース</span></a><?php gray_line(); ?>
+      <p><code>fink</code> の 0.29.21 が unstable ツリーにリリースされました。
+      この <code>fink</code>  は、OS 10.6.8 を認識し、
+      <code>fink</code> が index できない問題を修正しています。</p>
+      <p>すぐに stable にもリリースされる予定です。</p>
+     <p><b>Update, 2011-03-29:</b> stable にもリリースされました。</p>
+     <a name="2011-03-09%20fink-0.29.20%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2011-03-09: </span><span class="news-headline">fink-0.29.20 リリース</span></a><?php gray_line(); ?>
+      <p><code>fink</code> の 0.29.20 が unstable ツリーにリリースされました。
+        このバージョンの <code>fink</code> は、Leopard の最新バージョンの Xquartz に対し、 X11 認識の問題を修正します。  
+      </p>
+      <p>他のアップデートがない限り、すぐに stable にもリリースされる予定です。</p>
+      <p><b>Update, 2011-03-24:</b> stable にもリリースされました。</p>
+    <a name="2011-02-10%20CVS%20%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%81%AE%E5%9B%9E%E5%BE%A9"><span class="news-date">2011-02-10: </span><span class="news-headline">CVS アクセスの回復</span></a><?php gray_line(); ?>
+      <p>checkout と commit ができるようになりました。ご迷惑をおかけいたしました。</p>
+    <a name="2011-01-26%20CVS%20%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E4%B8%8D%E8%83%BD"><span class="news-date">2011-01-26: </span><span class="news-headline">CVS アクセス不能</span></a><?php gray_line(); ?>
+      <p>
+      攻撃を受けたため、Sourceforge から CVS でファイルをダウンロードできません。
+      ステータスを見るには、
+      <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
+      sourceforge page</a> をご覧ください。</p>
+    <a name="2011-01-16%20fink-0.29.19%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2011-01-16: </span><span class="news-headline">fink-0.29.19 リリース</span></a><?php gray_line(); ?>
+      <p><code>fink</code>  0.29.19 が unstable ツリーにリリースされました。
+      このバージョンの <code>fink</code> は、デバッグ用に 'fink --version' がより多くの情報を表示します。
+      また、OS 10.6.6 を認識します (0.29.17 も 10.6.6 で動作しますが)。
+      </p>
+      <p>このバージョンは、unstable ユーザからの動作不良の報告がない限り、
+      stable ツリーに統合される予定です。
+      </p>
+      <p><b>Update, 2011-01-22:</b> <code>fink-0.29.19</code> は stable にリリースされました。</p>
+    <a name="2011-01-05%20rysnc%20%E3%83%9F%E3%83%A9%E3%83%BC%E3%81%AE%E4%B8%80%E6%99%82%E7%9A%84%E5%81%9C%E6%AD%A2"><span class="news-date">2011-01-05: </span><span class="news-headline">rysnc ミラーの一時的停止</span></a><?php gray_line(); ?>
+      <p>We are experiencing a temporary failure in some of the rsync mirrors.
+      If you have not seen updates in a while, then you may wish to change your
+      rsync mirror for the time being by editing 
+      
+      rsync ミラーの一部に一時的な問題が発生しています。
+      最近更新をしていないようであれば、
+      以下のようにして rsync ミラーをかえることができます。
+      <code>/sw/etc/fink.conf</code> 
+      を管理者権限で開き、
+      <code>Mirror-rsync</code> で始まる行を、
+        <code>Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</code></p>
+        <p>または</p><p>
+        <code>Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</code></p>
+        <p>または</p><p>
+        <code>Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</code></p>
+         <p>または</p><p>
+        <code>Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</code></p>       
+      <p>として保存します。
+      これは、<code>fink configure</code>からも設定することができます。
+      そうするには、大陸を Asia (option 2)、国を　Japan (10) 、として
+      rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) を Rsync Selfupdate mirror　にします。
+      あるいは、 Europe (4)、 Germany (13)、 rsync://ber.de.eu.finkmirrors.net/finkinfo/ (3) とします。
+      あるいは、 Netherlands (27) rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) とします。</p>
+      <p><b>Update, 2011-01-07</b>  ミラーは更新できるようになりました。</p>
+    <a name="2010-12-31%2010%E5%91%A8%E5%B9%B4%E8%A8%98%E5%BF%B5%E3%80%81%E3%81%8A%E3%82%81%E3%81%A7%E3%81%A8%E3%81%86%20Fink!"><span class="news-date">2010-12-31: </span><span class="news-headline">10周年記念、おめでとう Fink!</span></a><?php gray_line(); ?>
       <p>Fink プロジェクトは、2000年12月の暮れに、Christoph Pfisterer によって、
       Mac OS X のパブリックベータ版を使って始まった。
       1年も経たないうちに、OS X の 10.0 と 10.1 がリリースされ、Fink が使われるようになった。
