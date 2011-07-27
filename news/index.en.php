@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/07/27 19:58:58';
+$cvs_date = 'Date: 2011/07/27 20:41:39';
 $metatags = '';
 
 include_once "header.inc";
