@@ -3,16 +3,20 @@
       users know what to expect if updating.</p>
 <p>First, the <code>fink</code> 
 program itself will not run  on a system which has
-been upgraded to Lion.  However, it will be possible to use the
+been upgraded to Lion, so it is not possible currently to update a Fink
+installation in place.However, is possible to use the
 <code>dpkg</code> program to extract a list of the Fink packages
-which had been installed under 10.6, so that they can be reinstalled
+which are current installed so that they can be reinstalled
 under 10.7.  Use</p>
 <p><code>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</code></p>
-<p>to extract the packages, and</p>
+<p>before updating to 10.7 to dump the package names to a text file, and</p>
 <p><code>cat fink_packages.txt | xargs fink install</code></p>
-<p>once you have installed Fink for 10.7.</p>
+<p>once you have installed Fink on 10.7.</p>
 <p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
-Fink again, using a tarball for <code>fink-0.31.0</code> or later.</p>
+Fink again, using a tarball for <code>fink-0.31.0</code> or later.  If you want
+to use the same directory (e.g. /sw) for Fink that you were using on 10.6, you'll
+need to remove that before bootstrapping, since the bootstrap doesn't allow you
+to overwrite an existing Fink tree.</p>
 <p>Second, due to lots of changes under the hood, there currently are many fewer
 Fink packages which build under 10.7 as opposed to 10.6.
 Thus, even if you've extracted a list of Fink packages which had
