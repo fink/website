@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.140 2011/07/27 19:58:58 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.141 2011/07/27 20:41:39 alexkhansen Exp $</cvsid>
  
   <newsitem>
     <date>2011-07-20</date>
