@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/12/15 20:42:04 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2011/07/29 00:06:02 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -59,6 +59,16 @@ Fink <? print $fink_version ?> ha sido liberado el <? print convert_date_to_loca
 Dicha liberación incluye paquetes en códigos fuente y binarios así
 como instaladores binarios. Fink 0.8.1 (para OS X 10.4), Fink 0.7.2 (para OS X 10.3), Fink 0.6.4 (para OS X 10.2) y 0.4.1 (para OS X 10.1) siguen siendo disponibles.
 </p>
+<p><strong>10.5 Support:</strong> 
+Users are encouraged to update to OS 10.5.2 or later, via Software Update, 
+in order to get bugfixes and enhancements for X11.  
+Further updates continue to be made available on the 
+<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page</a>.</p>
+<p><strong>10.6 Support:</strong> 
+We are not currently supporting Xquartz on 10.6.</p>
+<p><strong>10.7 Support:</strong>
+10.7 is supported, albeit with many missing packages.
+We are not currently supporting Xquartz on 10.7.</p>
 
 <h1>Recursos</h1>
 <p>

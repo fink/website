@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/12/15 20:42:04 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2011/07/29 00:06:02 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -68,6 +68,11 @@ weiterhin verfügbar.
 Benutzern wird empfohlen auf OS 10.5.2 oder später, via Software Update, zu aktualisieren, um Fehlerbereinigungen und Verbesserungen für X11 zu erhalten.
 Weitere Updates werden auf der <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update</a> Seite bereitgestellt.
 </p>
+<p><strong>10.6 Support:</strong> 
+We are not currently supporting Xquartz on 10.6.</p>
+<p><strong>10.7 Support:</strong>
+10.7 is supported, albeit with many missing packages.
+We are not currently supporting Xquartz on 10.7.</p>
 
 <h1>Ressourcen</h1>
 

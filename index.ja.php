@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/12/15 20:42:04 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2011/07/29 00:06:02 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -56,6 +56,17 @@ Fink <? print $fink_version ?> は <? print convert_date_to_locale($release_date
 これは Mac OS X10.5 用のソースとバイナリパッケージと、バイナリインストーラを含んでいます。
 Fink 0.8.1 (for OS X 10.4), Fink 0.7.2 (for OS X 10.3), Fink 0.6.4 (for OS X 10.2) と 0.4.1 (for OS X 10.1) はこれまで通りです。
 </p>
+<p><strong>10.5 Support:</strong> 
+ソフトウェアアップデートで OS 10.5.2 以降に更新してください。
+これは X11 のバグ修正と機能追加を含みます。
+さらに、
+<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page</a> 
+に追加のアップデートがあります。</p>
+<p><strong>10.6 Support:</strong> 
+現在のところ、10.6 での Xquartz には対応していません。</p>
+<p><strong>10.7 Support:</strong>
+未対応パッケージも多いですが、サポートされています。
+現在のところ、10.7 での Xquartz には対応していません。</p>
 
 <h1>リソース</h1>
 

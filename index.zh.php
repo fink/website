@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/12/15 20:42:04 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2011/07/29 00:06:02 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
@@ -54,6 +54,16 @@ Fink <? print $fink_version ?> 已经于 <? print convert_date_to_locale($releas
 它包括源代码和二进制文件两种发行方式，同时也包括二进制形式可执行的安装程序，它们都是针对 OS X 10.5 设计。
 Fink 0.8.1 (针对 OS X 10.4), Fink 0.7.2 (针对 OS X 10.3), Fink 0.6.4 (针对 OS X 10.2) 和 0.4.1 (针对 OS X 10.1) 仍然可以获得。
 </p>
+<p><strong>10.5 Support:</strong> 
+Users are encouraged to update to OS 10.5.2 or later, via Software Update, 
+in order to get bugfixes and enhancements for X11.  
+Further updates continue to be made available on the 
+<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page</a>.</p>
+<p><strong>10.6 Support:</strong> 
+We are not currently supporting Xquartz on 10.6.</p>
+<p><strong>10.7 Support:</strong>
+10.7 is supported, albeit with many missing packages.
+We are not currently supporting Xquartz on 10.7.</p>
 
 <h1>资源</h1>
 
