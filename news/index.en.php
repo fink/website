@@ -1,13 +1,22 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/07/27 20:41:39';
+$cvs_date = 'Date: 2011/09/15 12:18:50';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2011-07-20%20Fink%20and%20Lion--updated."><span class="news-date">2011-07-20: </span><span class="news-headline">Fink and Lion--updated.</span></a><?php gray_line(); ?>
+<a name="2011-09-11%20fink-0.31.1%20released"><span class="news-date">2011-09-11: </span><span class="news-headline">fink-0.31.1 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.31.1</code> was released to the 10.4/unstable and
+      10.7/stable trees on
+      11 September, 2011.  It fixes an issue in which 32-bit machines running OS
+      10.6 wouldn't be allowed to bootstrap, even though this is a fully
+      configuration.  It also provides a more robust scheme to report on the
+      Xcode version in error messages than in prior <code>fink</code> versions.
+      Finally OS 10.7.1 is recognized as a supported OS version.</p>
+      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
+    <a name="2011-07-20%20Fink%20and%20Lion--updated."><span class="news-date">2011-07-20: </span><span class="news-headline">Fink and Lion--updated.</span></a><?php gray_line(); ?>
       <p>OS X 10.7 "Lion" was released on July 20, 2011.  We want to let Fink
       users know what to expect if updating.</p>
 <p>First, the <code>fink</code> 

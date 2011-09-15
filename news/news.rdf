@@ -5,8 +5,33 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-07-27T16:41:58-04:00</dc:date>
+    <dc:date>2011-09-15T08:46:31-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-09-11%20fink-0.31.1%20released">
+      <title>fink-0.31.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2011-09-11%20fink-0.31.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2011-09-11%20fink-0.31.1%20released</guid>
+      <description>
+      <p>fink-0.31.1 was released to the 10.4/unstable and
+      10.7/stable trees on
+      11 September, 2011.  It fixes an issue in which 32-bit machines running OS
+      10.6 wouldn't be allowed to bootstrap, even though this is a fully
+      configuration.  It also provides a more robust scheme to report on the
+      Xcode version in error messages than in prior fink versions.
+      Finally OS 10.7.1 is recognized as a supported OS version.</p>
+      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.31.1 was released to the 10.4/unstable and
+      10.7/stable trees on
+      11 September, 2011.  It fixes an issue in which 32-bit machines running OS
+      10.6 wouldn't be allowed to bootstrap, even though this is a fully
+      configuration.  It also provides a more robust scheme to report on the
+      Xcode version in error messages than in prior fink versions.
+      Finally OS 10.7.1 is recognized as a supported OS version.</p>
+      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.">
       <title>Fink and Lion--updated.</title>
       <link>http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.</link>
@@ -397,21 +422,6 @@ and Beyond!</p>
       revision automatically cleans up libtool archive (.la)
       files, which have historically caused problems for folks upgrading from 10.5
       to 10.6.</p>  
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2010-11-02%20KDE3%20and%20GNOME%20updated%20in%20stable.">
-      <title>KDE3 and GNOME updated in stable.</title>
-      <link>http://fink.sourceforge.net/news/#2010-11-02%20KDE3%20and%20GNOME%20updated%20in%20stable.</link>
-      <guid>http://fink.sourceforge.net/news/#2010-11-02%20KDE3%20and%20GNOME%20updated%20in%20stable.</guid>
-      <description>
-      <p>KDE-3.5.10 and GNOME-2.28
-      have been added to the stable tree, along with updates to some important
-      dependencies.</p>
-    </description>
-      <content:encoded>
-      <p>KDE-3.5.10 and GNOME-2.28
-      have been added to the stable tree, along with updates to some important
-      dependencies.</p>
     </content:encoded>
     </item>
   </channel>
