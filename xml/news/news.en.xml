@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
-  <cvsid>$Id: news.en.xml,v 1.143 2011/09/26 19:07:35 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: news.en.xml,v 1.144 2011/09/26 19:09:09 alexkhansen Exp $</cvsid>
  
   <newsitem>
     <date>2011-09-26</date>
@@ -16,7 +16,6 @@
       <p>It is expected that the package will be added to 10.4/stable shortly.</p>
     </body>
   </newsitem>
-  <newsitem>
   <newsitem>
     <date>2011-09-11</date>
     <headline>fink-0.31.1 released</headline>
