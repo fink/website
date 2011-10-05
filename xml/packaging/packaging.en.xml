@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.120 2011/07/25 13:14:16 alexkhansen Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.121 2011/10/05 17:17:22 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -2787,9 +2787,10 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 <p>
 When set to a true value, appends <code>-j<em>N</em></code>, where <em>N</em> 
 is the value from the <filename>fink.conf</filename> field MaxBuildJobs, 
-to the environment variable MAKEFLAGS. This value is added to MAKEFLAGS even 
-if the field <code>NoSetMAKEFLAGS: true</code> is used. If the field is not 
-present or blank, the default is <code>False</code>.
+to the environment variable MAKEFLAGS during CompileScript and TestScript. 
+This value is added to MAKEFLAGS even if the field <code>NoSetMAKEFLAGS: 
+true</code> is used. As of fink > 0.31.2, if the field is not present or 
+blank, the default is <code>True</code>.
 </p>
 </itemd></item>
 
