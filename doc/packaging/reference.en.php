@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/07/25 13:14:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2011/10/05 17:17:22';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -1024,9 +1024,10 @@ remain unset, specify <code>NoSetLDFLAGS: true</code> .
 <p>
 When set to a true value, appends <code>-j<b>N</b></code>, where <b>N</b> 
 is the value from the <code>fink.conf</code> field MaxBuildJobs, 
-to the environment variable MAKEFLAGS. This value is added to MAKEFLAGS even 
-if the field <code>NoSetMAKEFLAGS: true</code> is used. If the field is not 
-present or blank, the default is <code>False</code>.
+to the environment variable MAKEFLAGS during CompileScript and TestScript. 
+This value is added to MAKEFLAGS even if the field <code>NoSetMAKEFLAGS: 
+true</code> is used. As of fink &gt; 0.31.2, if the field is not present or 
+blank, the default is <code>True</code>.
 </p>
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
