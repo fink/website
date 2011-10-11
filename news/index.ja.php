@@ -1,13 +1,30 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2011/07/27 23:06:25';
+$cvs_date = 'Date: 2011/10/11 06:58:58';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2011-07-20%20Fink%20and%20Lion--updated."><span class="news-date">2011-07-20: </span><span class="news-headline">Fink and Lion--updated.</span></a><?php gray_line(); ?>
+<a name="2011-09-26%20fink-0.31.2%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2011-09-26: </span><span class="news-headline">fink-0.31.2 リリース</span></a><?php gray_line(); ?>
+      <p><code>fink-0.31.2</code> が、10.4/unstable と 10.7/stable に、
+      2011年11月26日にリリースされました。
+      このバージョンより、<code>MaxBuildJobs</code> を <code>fink configure</code>
+      で設定することで、ビルド時の最大スレッド数の既定値を設定します。
+      また、メンテナは、<code>PatchFile</code> を使用する際に　<code>fink</code> 
+      バージョンを指定する必要がなくなり、Pel の問題も解決しています。</p>
+      <p>10.4/stable にもすぐに追加される予定です。</p>
+    <a name="2011-09-11%20fink-0.31.1%20released"><span class="news-date">2011-09-11: </span><span class="news-headline">fink-0.31.1 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.31.1</code> が、10.4/unstable と 10.7/stable に、
+      2011年11月11日にリリースされました。
+      このバージョンでは、OS 10.6 を実行している 32 bit 機で、bootstrap ができない問題を修正しました。
+      さらに、エラーメッセージ中の Xcode バージョンの報告に関して、
+      以前の <code>fink</code> よりもしっかりした仕組みを提供しています。
+      また、OS 10.7.1 をサポートする OS と認識します。</p>
+      <p>10.4/stable にもすぐに追加される予定です。</p>
+      <p><b>更新 2011-09-26:</b>   10.4/stable に追加されました。</p>
+   <a name="2011-07-20%20Fink%20%E3%81%A8%20Lion--%E6%9B%B4%E6%96%B0"><span class="news-date">2011-07-20: </span><span class="news-headline">Fink と Lion--更新</span></a><?php gray_line(); ?>
       <p>Apple は、OS X 10.7 Lion が７月にリリースされました。
 Lion がリリースされた後のことについてお知らせします。</p>
 <p>まず、  <code>fink</code> コマンド自体は、Lion にアップグレードされたシステムでは動作しません。
