@@ -1,7 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
-  <cvsid>$Id: news.de.xml,v 1.50 2011/07/26 02:49:02 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: news.de.xml,v 1.51 2011/10/11 06:58:58 babayoshihiko Exp $</cvsid>
+  <newsitem>
+    <date>2011-09-26</date>
+    <headline>fink-0.31.2 released</headline>
+    <body>
+      <p><code>fink-0.31.2</code> was released to the 10.4/unstable and
+      10.7/stable trees on 26 September, 2011.  Packages are now built by default
+      using the number of parallel threads specified by the <code>MaxBuildJobs</code>
+      field set via <code>fink configure</code>.  In addition, maintainers no longer
+      have to specify a particular version of <code>fink</code> to use a
+      <code>PatchFile</code>, and fixes a Perl issue.</p>
+      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
+    </body>
+  </newsitem>
+  <newsitem>
+    <date>2011-09-11</date>
+    <headline>fink-0.31.1 released</headline>
+    <body>
+      <p><code>fink-0.31.1</code> was released to the 10.4/unstable and
+      10.7/stable trees on
+      11 September, 2011.  It fixes an issue in which 32-bit machines running OS
+      10.6 wouldn't be allowed to bootstrap, even though this is a fully supported
+      configuration.  It also provides a more robust scheme to report on the
+      Xcode version in error messages than in prior <code>fink</code> versions.
+      Finally OS 10.7.1 is recognized as a supported OS version.</p>
+      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
+      <p><em>Update, 2011-09-26:</em>   It has been added to 10.4/stable.</p>
+   </body>
+  </newsitem>
+  <newsitem>
+    <date>2011-07-20</date>
+    <headline>Fink and Lion--updated.</headline>
+    <body>
+      <p>OS X 10.7 "Lion" was released on July 20, 2011.  We want to let Fink
+      users know what to expect if updating.</p>
+<p>First, the <code>fink</code> 
+program itself will not run  on a system which has
+been upgraded to Lion, so it is not possible currently to update a Fink
+installation in place.However, is possible to use the
+<code>dpkg</code> program to extract a list of the Fink packages
+which are current installed so that they can be reinstalled
+under 10.7.  Use</p>
+<p><code>dpkg --get-selections | cut -f1 > fink_packages.txt</code></p>
+<p>before updating to 10.7 to dump the package names to a text file, and</p>
+<p><code>cat fink_packages.txt | xargs fink install</code></p>
+<p>once you have installed Fink on 10.7.</p>
+<p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
+Fink again, using a tarball for <code>fink-0.31.0</code> or later.  If you want
+to use the same directory (e.g. /sw) for Fink that you were using on 10.6, you'll
+need to remove that before bootstrapping, since the bootstrap doesn't allow you
+to overwrite an existing Fink tree.</p>
+<p>Second, due to lots of changes under the hood, there currently are many fewer
+Fink packages which build under 10.7 as opposed to 10.6.
+Thus, even if you've extracted a list of Fink packages which had
+been installed under 10.6, some of them may not yet be installable under
+10.7.  We are currently creating a database showing which packages
+can be successfully installed under 10.7, and work is ongoing to add packages.</p>
+<p>10.7 introduces several drastic changes to how the system works. While this may
+cause a slight delay in full Fink functionality in the short term, it will
+make Fink work better in the future.</p>
+    </body>
+  </newsitem>
   <newsitem>
     <date>2011-07-16</date>
     <headline>Fink and Lion.</headline>
