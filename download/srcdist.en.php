@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2011/09/15 14:00:08 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2011/10/13 20:44:22 $';
 
 include "header.inc";
 ?>
@@ -12,44 +12,44 @@ include "header.inc";
 <!--monipol: As instructions for 10.6 were 'hidden' below 10.5, I've copied and
 pasted them here with the title 10.6. -->
 
-<p><strong>OS 10.4 and later:</strong></p>
+<p><strong>OS X 10.4 and later:</strong></p>
 
 <p>The source tarball contains the <em>fink</em> package manager.  After you
 have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p>The current version, <em>fink-0.31.1</em>, was officially released on
-2011-9-11.</p>
+<p>The current version, <em>fink-0.31.3</em>, was officially released on
+2011-10-12.</p>
 
 <ul>
      <li>
-For OS 10.5-10.7, use <a href="http://downloads.sourceforge.net/fink/fink-0.31.1.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.31.1</a>
+For OS X 10.5-10.7, use <a href="http://downloads.sourceforge.net/fink/fink-0.31.3.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.31.3</a>
 - 1308K, .tar.gz format
      </li>
      <li>
-For OS 10.4, use <a href="http://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz"
+For OS X 10.4, use <a href="http://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz"
 onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
 - 1188K, .tar.gz format
      </li>
 </ul>
 
 <p>You will also need to install an appropriate version of the Xcode Tools
-(c.f. <a href="./index.en.php" >the Quick Start page</a>) for your operating
+(c.f. <a href="./index.en.php">the Quick Start page</a>) for your operating
 system.</p>
 
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via</p>
 
-<pre>tar -xvzf fink-0.31.1.tar.gz</pre>
+<pre>tar -xvzf fink-0.31.3.tar.gz</pre>
 
 <p>or</p>
 
-<pre>tar -xvf fink-0.31.1.tar</pre>
+<pre>tar -xvf fink-0.31.3.tar</pre>
 
 <p>if it has already been partially unpacked, in a terminal window.  Then, in a
-terminal window, change to the resulting <em>fink-0.31.1</em> directory, and
+terminal window, change to the resulting <em>fink-0.31.3</em> directory, and
 use</p>
 
 <pre>./bootstrap</pre>
@@ -93,9 +93,9 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 
 
 
-<p><strong>OS 10.5:</strong></p>
+<p><strong>OS X 10.5 point release:</strong></p>
 
-<p>The source release contains the <em>fink</em> package manager plus package
+<p>The source point release contains the <em>fink</em> package manager plus package
 descriptions and patches.  It will download the source code from the original
 distribution sites and build them on your local machine.
 </p>
@@ -112,8 +112,7 @@ href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-fu
 <? print $fink_version; ?></a> - 3521K, .tar.gz format</li>
 </ul>
 
-<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php"
->the Quick Start page</a>).</p>
+<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php">the Quick Start page</a>).</p>
 
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via</p>
