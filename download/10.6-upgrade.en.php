@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.6";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/12/15 21:12:42 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2011/10/13 19:58:52 $';
 
 include "header.inc";
 ?>
@@ -27,7 +27,7 @@ include "header.inc";
     <li>Run the command <pre>fink install perl588-core</pre> in case you have Fink packages which depend on it, as the system's Perl version was changed during the upgrade.</li>
     <li>Remove the <strong>NoAutoIndex: true</strong> line from <em>fink.conf</em>.</li>
 </ol>
-<p>After the upgrade, you may wish to run <pre>fink configure</pre> to do some cleanup.
+<p>After the upgrade, you may wish to run <pre>fink configure</pre> to do some cleanup.</p>
 
 <?
 include "footer.inc";
