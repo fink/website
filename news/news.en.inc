@@ -1,4 +1,4 @@
-<a name="2011-09-26%20fink-0.31.3%20released"><span class="news-date">2011-09-26: </span><span class="news-headline">fink-0.31.3 released</span></a><?php gray_line(); ?>
+<a name="2011-10-12%20fink-0.31.3%20released"><span class="news-date">2011-10-12: </span><span class="news-headline">fink-0.31.3 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.31.3</code> was released to the 10.4/stable and
       10.7/stable trees on 12 October, 2011.  It recognizes OS 10.7.2 as a
       supported OS X version, and recognizes Growl 1.3 from the App Store.

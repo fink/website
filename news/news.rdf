@@ -5,12 +5,12 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-10-13T14:56:15-04:00</dc:date>
+    <dc:date>2011-10-14T16:24:54-04:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-09-26%20fink-0.31.3%20released">
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released">
       <title>fink-0.31.3 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-09-26%20fink-0.31.3%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-09-26%20fink-0.31.3%20released</guid>
+      <link>http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released</guid>
       <description>
       <p>fink-0.31.3 was released to the 10.4/stable and
       10.7/stable trees on 12 October, 2011.  It recognizes OS 10.7.2 as a
