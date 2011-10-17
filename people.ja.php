@@ -1,7 +1,7 @@
 <?
 $title = "貢献している人々";
-$cvs_author = '$Author: fangism $';
-$cvs_date = '$Date: 2009/11/07 23:40:50 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2011/10/17 13:39:54 $';
 
 include "header.inc";
 ?>
@@ -184,7 +184,6 @@ Fink プロジェクトはボランティアによって成り立っています
 <li>Xavier Humbert</li>
 <li>Sam Johnston</li> 
 <li>Richard Kiss</li> 
-<li>Eric Knauel</li> 
 <li>Eric Knauel</li>
 <li>Bernd Kuemmerlen</li> 
 <li>Christopher League</li> 
