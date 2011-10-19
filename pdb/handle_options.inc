@@ -189,13 +189,21 @@ if ($name_exact == "on" || $name_exact == "checked" || $name_exact == "true" || 
 }
 
 // We need to set a specific distribution if showing packages in "testing"
-// Select the one with the highest priority
+// Select the one with the highest priority. If an architecture was specified,
+// take that into account, too.
 if ($tree == 'testing') {
 	foreach ($distributions as $_d) {
 		if (empty($dist_name) or $dist_name == $default_dist or $dist_name == "any") {
 			$dist = $_d->getId();
 		} else {
-			if ($_d->getName() == $dist_name) {
+			if ($architecture and ($_d->getArchitecture() != $architecture)) {
+				# Architecture mismatch -> skip
+				continue;
+			}
+			# Only consider dists which have matching name and are visible.
+			# The visibility check ensures that we don't end up taking the 10.5-x86_64
+			# distribution which is empty and unsupported.
+			if ($_d->getName() == $dist_name and $_d->isVisible()) {
 				$dist = $_d->getId();
 			}
 		}
