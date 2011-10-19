@@ -192,15 +192,25 @@ if ($name_exact == "on" || $name_exact == "checked" || $name_exact == "true" || 
 // Select the one with the highest priority
 if ($tree == 'testing') {
 	foreach ($distributions as $_d) {
+		print "Distribution name " . $_d->getName() . " and id " . $_d->getId() . "\n";
+// Distribution name 10.5 and id 10.5-powerpc
+// Distribution name 10.5 and id 10.5-i386
+// Distribution name 10.5 and id 10.5-x86_64
+// Distribution name 10.6 and id 10.6-i386
+// Distribution name 10.6 and id 10.6-x86_64
+// Distribution name 10.7 and id 10.7-x86_64
 		if (empty($dist_name) or $dist_name == $default_dist or $dist_name == "any") {
 			$dist = $_d->getId();
 		} else {
 			if ($_d->getName() == $dist_name) {
 				$dist = $_d->getId();
+				break;
 			}
 		}
 	}
 }
+
+
 
 $query = new SolrQuery();
 
@@ -212,6 +222,8 @@ $query->addField("descshort");
 $query->addField("rel_type");
 
 // TODO: "testing" is where stable version != unstable version
+
+#Dist = 10.5-x86_64
 
 if ($dist)
 	$query->addQuery("dist_id:\"$dist\"", true);

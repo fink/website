@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2011/10/19 09:39:45 $';
+$cvs_date = '$Date: 2011/10/19 10:02:56 $';
 
 ini_set("memory_limit", "48M");
 
@@ -184,7 +184,7 @@ if ($tree == "testing") {
 				$newpackages[$package['name']] = $package;
 			if ($package['rel_type'] == "stable") {
 				$newpackages[$package['name']]['version_stable'] = get_full_version($package);
-			} elseif ($package['rel_type']) {
+			} elseif ($package['rel_type'] == "unstable") {
 				$newpackages[$package['name']]['version_unstable'] = get_full_version($package);
 			}
 			unset($packages[$id]);
