@@ -1,6 +1,6 @@
 <?
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2011/07/20 13:49:03 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2011/10/19 09:39:45 $';
 
 ini_set("memory_limit", "48M");
 
@@ -174,6 +174,9 @@ $packages = $query->fetch();
 $time_query_end = microtime(true);
 
 if ($tree == "testing") {
+	# Report all packages that have a *different* version in unstable than in stable.
+	# (We really want package that have a *newer* version in unstable, but for simplicity
+	# we just check whether the versions differ.)
 	$newpackages = array();
 	if ($packages != null) {
 		foreach ($packages as $id => $package) {
@@ -188,10 +191,14 @@ if ($tree == "testing") {
 		}
 	}
 	foreach ($newpackages as $id => $package) {
-		if (!isset($package['version_stable'])) $package['version_stable'] = "";
 		if (!isset($package['version_unstable'])) $package['version_unstable'] = "";
+		if (!isset($package['version_stable'])) $package['version_stable'] = "";
 
-		if ($package['version_stable'] == $package['version_unstable'])
+		# If the package has the same versions in stable and unstable,
+		# or if the package is not at in unstable, then the package is
+		# not in testing -> remove it from the list.
+		if (($package['version_stable'] == $package['version_unstable'])
+			or ($package['version_unstable'] == ""))
 			unset($newpackages[$id]);
 	}
 	$packages = $newpackages;
