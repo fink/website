@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.20 2004/11/24 07:16:24 babayoshihiko Exp $
+# $Id: Makefile.i18n.common,v 1.21 2011/10/24 23:38:39 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -68,7 +68,7 @@ endif
 all: $(ALL_TARGETS)
 
 clean:
-	rm -f *.php *.inc *.html *.tmp *.rdf
+	rm -f *.php *.inc *.html *.txt *.tmp *.rdf
 
 force: clean all
 

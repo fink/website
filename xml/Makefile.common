@@ -1,8 +1,11 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.20 2004/03/07 20:54:08 fingolfin Exp $
+# $Id: Makefile.common,v 1.21 2011/10/24 23:38:39 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
+
+BASE_SOURCE := $(SOURCE)
+BASE_TARGET := $(TARGET)
 
 ifndef STYLESHEET_WEBSITE
 STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.xsl
@@ -14,37 +17,34 @@ PROCESS_WEBSITE = /usr/bin/perl $(basedir)/postprocess.pl
 PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
 PROCESS_TEXT = /usr/bin/perl $(basedir)/textify.pl
 
-# selectors
-
-all_targets = $(TARGET)
-install_files = $(TARGET)
-#install_files = $(filter %.php,$(TARGET))
+ALL_TARGETS = $(TARGET)
+INSTALL_FILES = $(TARGET)
+#INSTALL_FILES = $(filter %.php,$(TARGET))
 
 
 ifdef WANT_HTML
-all_targets += $(patsubst %.xml,%.html,$(SOURCE))
-install_files += $(patsubst %.xml,%.html,$(SOURCE))
-install_html = $(patsubst %.xml,%.html,$(SOURCE))
+ALL_TARGETS += $(patsubst %.xml,%.html,$(BASE_SOURCE))
+INSTALL_FILES += $(patsubst %.xml,%.html,$(BASE_SOURCE))
+INSTALL_HTML = $(patsubst %.xml,%.html,$(BASE_SOURCE))
 endif
 
 ifdef WANT_TEXT
-all_targets += $(patsubst %.xml,%.txt,$(SOURCE))
-install_txt = $(patsubst %.xml,%.txt,$(SOURCE))
-install_txt += $(patsubst %.xml,%.html,$(SOURCE))
+ALL_TARGETS += $(patsubst %.xml,%.txt,$(SOURCE))
 endif
+
+
+
+.SUFFIXES: .xml .php.tmp .php .html.tmp .html .txt.tmp .txt .rdf .inc .inc.tmp
+.PHONY: all clean force install
 
 # basics
 
-all: $(all_targets)
+all: $(ALL_TARGETS)
 
 clean:
-	rm -rf *.rdf *.php *.html *.txt *.tmp *.inc
+	rm -f *.php *.inc *.html *.txt *.tmp *.rdf
 
 force: clean all
-
-.SUFFIXES: .xml .php.tmp .php .html.tmp .html .txt.tmp .txt .rdf
-
-.PHONY: all clean force install
 
 # rendering to php-framed HTML for the website (multi-page)
 
@@ -67,26 +67,25 @@ force: clean all
 # rendering to pure text (monolithic)
 
 %.txt.tmp: %.xml $(STYLESHEET_TEXT) $(basedir)/finkdoc.dtd
-	xmllint --noout --valid $(SOURCE) && \
-	xsltproc -o $(patsubst %.xml,%.txt.tmp,$(SOURCE)) $(STYLESHEET_TEXT) $(SOURCE)
+	xmllint --noout --valid $<
+	xsltproc -o $@ $(STYLESHEET_TEXT) $<
 
 %.txt: %.txt.tmp $(PROCESS_TEXT)
 	$(PROCESS_TEXT) <$< >$@
 
 # install files inside website
 
-install: $(install_files) install-hook
+install: $(INSTALL_FILES) install-hook
+
 ifdef DESTDIR
-	cp $(install_files) $(basedir)/web/$(DESTDIR)/
+	cp $(INSTALL_FILES) $(basedir)/web/$(DESTDIR)/
 else
 	@echo "DESTDIR not defined, can't install"
 endif
+
 ifdef WANT_HTML
-	cp $(install_html) $(basedir)/scripts/installer/dmg/$(DESTDIR)/
+	cp $(INSTALL_HTML) $(basedir)/scripts/installer/dmg/$(DESTDIR)/
 endif
-#ifdef WANT_TEXT
-#	cp $(install_txt) $(basedir)/fink/
-#endif
 
 install-hook:
 
