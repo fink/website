@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.14 2005/06/23 20:16:35 dmrrsn Exp $
+# $Id: Makefile,v 1.15 2011/10/25 01:31:57 fingolfin Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -11,6 +11,6 @@ DESTDIR = doc/packaging
 
 LANGUAGES_AVAILABLE = en fr zh ja
 LANGUAGES = $(LANGUAGES_AVAILABLE)
-include $(basedir)/Makefile.i18n.common
+include $(basedir)/Makefile.common
 
 # eof

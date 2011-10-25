@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.8 2009/03/12 17:56:00 alexkhansen Exp $
+# $Id: Makefile,v 1.9 2011/10/25 01:31:57 fingolfin Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -11,6 +11,7 @@ SOURCE = news.xml
 TARGET = news.inc news.rdf index.php
 #WANT_HTML = 1
 DESTDIR = news
+INC_BASENAME = news
 
 # Custom stylesheet
 STYLESHEET_WEBSITE = finknews.i18n.xsl
@@ -18,7 +19,7 @@ STYLESHEET_RDF = finknews-rdf.i18n.xsl
 
 LANGUAGES_AVAILABLE = en de es fr zh ja pt
 LANGUAGES = $(LANGUAGES_AVAILABLE)
-include $(basedir)/Makefile.i18n.common
+include $(basedir)/Makefile.common
 
 # Custom rendering
 %.inc.tmp: $(SOURCE) $(STYLESHEET_WEBSITE)

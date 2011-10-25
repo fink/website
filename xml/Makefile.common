@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.21 2011/10/24 23:38:39 fingolfin Exp $
+# $Id: Makefile.common,v 1.22 2011/10/25 01:31:57 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -7,25 +7,58 @@
 BASE_SOURCE := $(SOURCE)
 BASE_TARGET := $(TARGET)
 
+ifdef LANGUAGES_AVAILABLE
+ifndef LANGUAGES
+LANGUAGES = $(LANGUAGES_AVAILABLE)
+endif
+endif
+
+ifdef LANGUAGES
+SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
+#TARGET := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
+TARGET :=
+ifdef STYLESHEET_RDF
+#TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.inc,%.$(LANGUAGE).inc, $(BASE_TARGET)))
+#TARGET += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.rdf,%.$(LANGUAGE).rdf, $(BASE_TARGET)))
+TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .inc,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.inc,%.$(LANGUAGE).inc, $(FILE)))))
+TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .rdf,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.rdf,%.$(LANGUAGE).rdf, $(FILE)))))
+endif
+TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .php,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(FILE)))))
+endif
+
 ifndef STYLESHEET_WEBSITE
+ifdef LANGUAGES
+STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.i18n.xsl
+else
 STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.xsl
+endif
 endif
 STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
 STYLESHEET_TEXT = $(basedir)/finkdoc-text.xsl
 
 PROCESS_WEBSITE = /usr/bin/perl $(basedir)/postprocess.pl
-PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
+PROCESS_HTML = /usr/bin/perl $(basedir)/htmlify.pl
 PROCESS_TEXT = /usr/bin/perl $(basedir)/textify.pl
 
 ALL_TARGETS = $(TARGET)
 INSTALL_FILES = $(TARGET)
-#INSTALL_FILES = $(filter %.php,$(TARGET))
-
+ifdef LANGUAGES
+INSTALL_FILES += $(BASE_TARGET)
+ifndef STYLESHEET_RDF
+INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
+endif
+endif
 
 ifdef WANT_HTML
+ifdef LANGUAGES
+ALL_TARGETS += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
+INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
+INSTALL_HTML = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
+else
 ALL_TARGETS += $(patsubst %.xml,%.html,$(BASE_SOURCE))
 INSTALL_FILES += $(patsubst %.xml,%.html,$(BASE_SOURCE))
 INSTALL_HTML = $(patsubst %.xml,%.html,$(BASE_SOURCE))
+endif
 endif
 
 ifdef WANT_TEXT
@@ -50,7 +83,7 @@ force: clean all
 
 %.php.tmp: $(SOURCE) $(STYLESHEET_WEBSITE) $(basedir)/finkdoc.dtd
 	xmllint --noout --valid $(SOURCE)
-	xsltproc --stringparam PRINTFILE $(patsubst %.xml,%.html,$(SOURCE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(SOURCE)
+	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam PRINTFILE $(subst .xml,,$(BASE_SOURCE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE); )
 
 %.php: %.php.tmp $(PROCESS_WEBSITE)
 	$(PROCESS_WEBSITE) <$< >$@
@@ -61,8 +94,9 @@ force: clean all
 	xmllint --noout --valid $<
 	xsltproc -o $@ $(STYLESHEET_HTML) $<
 
-%.html: %.html.tmp
-	$(PROCESS_HTML) <$< >$@
+%.html: %.html.tmp $(PROCESS_HTML)
+	$(PROCESS_HTML) $< $(LANGUAGES_AVAILABLE) >$@
+
 
 # rendering to pure text (monolithic)
 
@@ -78,12 +112,14 @@ force: clean all
 install: $(INSTALL_FILES) install-hook
 
 ifdef DESTDIR
+	@echo "Installing PHP files"
 	cp $(INSTALL_FILES) $(basedir)/web/$(DESTDIR)/
 else
 	@echo "DESTDIR not defined, can't install"
 endif
 
 ifdef WANT_HTML
+	@echo "Installing HTML files"
 	cp $(INSTALL_HTML) $(basedir)/scripts/installer/dmg/$(DESTDIR)/
 endif
 
