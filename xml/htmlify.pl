@@ -1,12 +1,7 @@
 #!/usr/bin/perl -w
 use strict;
 
-my ($filename, $currentlanguage);
-
-if ($ARGV[0] =~ /(.+)\.([^.]+)\.html\.tmp/) {
-    $filename = $1;
-    $currentlanguage = $2;
-}
+my ($filename, $currentlanguage, $newheader);
 
 my %phpLang_languages = (
 	"en"		=>	['en', 'english', 'English'],
@@ -32,34 +27,41 @@ my %phpLang_languages = (
 	"zh"		=>	['zh', 'chinese_simplified', '&#20013;&#25991; (&#31616;) (Simplified Chinese)']
 );
 
-my $newheader = '<table width="100%" cellspacing="0">' .
-"\n" . '<tr valign="bottom">' . "\n" . '<td align="center">' . "\n" .
-    'Available Languages:  | ' . "\n";
 
-for my $language (sort @ARGV) {
-    if (exists $phpLang_languages{$language}) {
-	if ($language eq $currentlanguage) {
-	    $newheader .= "${$phpLang_languages{$language}}[2] | \n";
-	} else {
-	    $newheader .= "<a href=\"$filename.$language.html\">${$phpLang_languages{$language}}[2]</a> | \n";
+if ($ARGV[0] =~ /(.+)\.([^.]+)\.html\.tmp/) {
+    $filename = $1;
+    $currentlanguage = $2;
+
+	$newheader = '<table width="100%" cellspacing="0">' . "\n" .
+	             '<tr valign="bottom">' . "\n" .
+	             '<td align="center">' . "\n" .
+	             'Available Languages:  | ' . "\n";
+
+	# Add all supported languages to the header.
+	for my $language (sort @ARGV) {
+		if (exists $phpLang_languages{$language}) {
+			if ($language eq $currentlanguage) {
+				$newheader .= "${$phpLang_languages{$language}}[2] | \n";
+			} else {
+				$newheader .= "<a href=\"$filename.$language.html\">${$phpLang_languages{$language}}[2]</a> | \n";
+			}
+		}
 	}
-    }
+	
+	$newheader .= "</td>\n</tr>\n</table>\n" ;
 }
 
-$newheader .= "</td>\n</tr>\n</table>\n" ;
 
 open(INFILE,"$ARGV[0]") or die "Can't open $ARGV[0]: $!";
 
-my $text;
-
 while (<INFILE>) {
-    $_ =~ s/\$Id/\$Fink/g;
-    $_ =~ s/<body>/<body>\n$newheader/;
-  $text .= $_;
+	$_ =~ s/\$Id/\$Fink/g;
+	if (defined $newheader) {
+		$_ =~ s/<body>/<body>\n$newheader/;
+	}
+	print $_;
 }
 
 close INFILE;
-
-print $text;
 
 exit 0;
