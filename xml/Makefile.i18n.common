@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.22 2011/10/25 00:54:17 fingolfin Exp $
+# $Id: Makefile.i18n.common,v 1.23 2011/10/25 01:21:27 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -24,7 +24,6 @@ TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .inc,$(FILE)), $(for
 TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .rdf,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.rdf,%.$(LANGUAGE).rdf, $(FILE)))))
 endif
 TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .php,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(FILE)))))
-#TARGET += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
 endif
 
 ifndef STYLESHEET_WEBSITE
@@ -43,7 +42,12 @@ PROCESS_TEXT = /usr/bin/perl $(basedir)/textify.pl
 
 ALL_TARGETS = $(TARGET)
 INSTALL_FILES = $(TARGET)
+ifdef LANGUAGES
 INSTALL_FILES += $(BASE_TARGET)
+ifndef STYLESHEET_RDF
+INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
+endif
+endif
 
 ifdef WANT_HTML
 ifdef LANGUAGES
@@ -110,7 +114,6 @@ install: $(INSTALL_FILES) install-hook
 ifdef DESTDIR
 	@echo "Installing PHP files"
 	cp $(INSTALL_FILES) $(basedir)/web/$(DESTDIR)/
-	-cp *.inc $(basedir)/web/$(DESTDIR)/
 else
 	@echo "DESTDIR not defined, can't install"
 endif
