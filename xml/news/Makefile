@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 2011/10/25 01:56:52 fingolfin Exp $
+# $Id: Makefile,v 1.11 2011/10/25 02:12:33 fingolfin Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -25,15 +25,24 @@ include $(basedir)/Makefile.common
 %.inc.tmp: $(SOURCE) $(STYLESHEET_WEBSITE)
 	xmllint --noout --valid $(SOURCE)
 	$(foreach LANGUAGE, $(LANGUAGES), xsltproc -o index.$(LANGUAGE).php.tmp $(STYLESHEET_WEBSITE) news.$(LANGUAGE).xml; )
-	echo '<? include_once "../phpLang.inc.php"; ?>' > index.php.tmp
-	echo '<? include_once dirname(__FILE__) . "/news.en.inc"; ?>' > news.inc.tmp
 
-news.rdf %.rdf: $(SOURCE) $(STYLESHEET_RDF)
+%.rdf: $(SOURCE) $(STYLESHEET_RDF)
 	xmllint --noout --valid $(SOURCE)
 	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam currdate "$(W3CDTFDATE)" -o $(subst .xml,.rdf,$(XMLFILE)) $(STYLESHEET_RDF) $(XMLFILE); )
-	-cp news.en.rdf news.rdf
 
 %.inc: %.inc.tmp $(PROCESS_WEBSITE)
 	$(PROCESS_WEBSITE) <$< >$@
+
+index.php:
+	echo '<? include_once "../phpLang.inc.php"; ?>' > $@
+
+news.inc:
+	echo '<? include_once dirname(__FILE__) . "/news.en.inc"; ?>' > $@
+
+news.rdf: news.en.rdf
+	-cp news.en.rdf news.rdf
+
+all: news.inc index.php news.rdf
+
 
 # eof 
