@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.22 2011/10/25 01:31:57 fingolfin Exp $
+# $Id: Makefile.common,v 1.23 2011/10/25 01:55:44 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -14,7 +14,7 @@ endif
 endif
 
 ifdef LANGUAGES
-SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).xml, $(BASE_SOURCE)))
+SOURCE = $(foreach  LANGUAGE, $(LANGUAGES), $(BASE_SOURCE).$(LANGUAGE).xml)
 #TARGET := $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(BASE_TARGET)))
 TARGET :=
 ifdef STYLESHEET_RDF
@@ -24,6 +24,8 @@ TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .inc,$(FILE)), $(for
 TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .rdf,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.rdf,%.$(LANGUAGE).rdf, $(FILE)))))
 endif
 TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .php,$(FILE)), $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.php,%.$(LANGUAGE).php, $(FILE)))))
+else
+SOURCE = $(BASE_SOURCE).xml
 endif
 
 ifndef STYLESHEET_WEBSITE
@@ -51,13 +53,13 @@ endif
 
 ifdef WANT_HTML
 ifdef LANGUAGES
-ALL_TARGETS += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
-INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
-INSTALL_HTML = $(foreach  LANGUAGE, $(LANGUAGES), $(patsubst %.xml,%.$(LANGUAGE).html, $(BASE_SOURCE)))
+ALL_TARGETS += $(foreach  LANGUAGE, $(LANGUAGES), $(BASE_SOURCE).$(LANGUAGE).html)
+INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES), $(BASE_SOURCE).$(LANGUAGE).html)
+INSTALL_HTML = $(foreach  LANGUAGE, $(LANGUAGES), $(BASE_SOURCE).$(LANGUAGE).html)
 else
-ALL_TARGETS += $(patsubst %.xml,%.html,$(BASE_SOURCE))
-INSTALL_FILES += $(patsubst %.xml,%.html,$(BASE_SOURCE))
-INSTALL_HTML = $(patsubst %.xml,%.html,$(BASE_SOURCE))
+ALL_TARGETS += $(BASE_SOURCE).html
+INSTALL_FILES += $(BASE_SOURCE).html
+INSTALL_HTML = $(BASE_SOURCE).html
 endif
 endif
 
@@ -83,7 +85,7 @@ force: clean all
 
 %.php.tmp: $(SOURCE) $(STYLESHEET_WEBSITE) $(basedir)/finkdoc.dtd
 	xmllint --noout --valid $(SOURCE)
-	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam PRINTFILE $(subst .xml,,$(BASE_SOURCE)) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE); )
+	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam PRINTFILE $(BASE_SOURCE) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE); )
 
 %.php: %.php.tmp $(PROCESS_WEBSITE)
 	$(PROCESS_WEBSITE) <$< >$@

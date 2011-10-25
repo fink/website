@@ -1,10 +1,10 @@
-# $Id: Makefile,v 1.7 2003/11/04 10:05:27 fingolfin Exp $
+# $Id: Makefile,v 1.8 2011/10/25 01:55:44 fingolfin Exp $
 
 # process XML files with stylesheet to produce HTML
 
 basedir = ..
 
-SOURCE = usage.xml
+SOURCE = usage
 TARGET = usage.php
 WANT_TEXT = 1
 WANT_HTML = 1

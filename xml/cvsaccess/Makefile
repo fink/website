@@ -1,10 +1,10 @@
-# $Id: Makefile,v 1.12 2011/10/25 01:31:57 fingolfin Exp $
+# $Id: Makefile,v 1.13 2011/10/25 01:55:44 fingolfin Exp $
 
 # process XML files with stylesheet to produce HTML
 
 basedir = ..
 
-SOURCE = cvs.xml
+SOURCE = cvs
 TARGET = index.php
 WANT_HTML = 1
 DESTDIR = doc/cvsaccess

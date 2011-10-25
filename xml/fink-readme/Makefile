@@ -1,10 +1,10 @@
-# $Id: Makefile,v 1.15 2011/10/25 01:31:57 fingolfin Exp $
+# $Id: Makefile,v 1.16 2011/10/25 01:55:44 fingolfin Exp $
 
 # process XML files with stylesheet to produce HTML
 
 basedir = ..
 
-SOURCE = readme.xml
+SOURCE = readme
 TARGET = readme.php
 WANT_TEXT = 1
 WANT_HTML = 1

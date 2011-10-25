@@ -1,10 +1,10 @@
-# $Id: Makefile,v 1.4 2011/10/25 01:31:58 fingolfin Exp $
+# $Id: Makefile,v 1.5 2011/10/25 01:55:44 fingolfin Exp $
 
 # process XML files with stylesheet to produce HTML
 
 basedir = ..
 
-SOURCE = saos-pages.xml
+SOURCE = saos-pages
 #TARGET = index.php essential.php window-manager.php fink-and-panther.php
 TARGET = index.php essential.php finkandpanther.php finkandpanther2.php finkcommander.php commands.php faqs.php faqs2.php faqs3.php faqs10.php help.php how.php install.php tips.php utils.php wmanagers.php
 WANT_HTML = 1
