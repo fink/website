@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.i18n.common,v 1.21 2011/10/24 23:38:39 fingolfin Exp $
+# $Id: Makefile.i18n.common,v 1.22 2011/10/25 00:54:17 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -28,13 +28,16 @@ TARGET += $(foreach  FILE, $(BASE_TARGET),$(if $(findstring .php,$(FILE)), $(for
 endif
 
 ifndef STYLESHEET_WEBSITE
+ifdef LANGUAGES
 STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.i18n.xsl
+else
+STYLESHEET_WEBSITE = $(basedir)/finkdoc-website.xsl
+endif
 endif
 STYLESHEET_HTML = $(basedir)/finkdoc-html.xsl
 STYLESHEET_TEXT = $(basedir)/finkdoc-text.xsl
 
 PROCESS_WEBSITE = /usr/bin/perl $(basedir)/postprocess.pl
-#PROCESS_HTML = sed -e 's,$$Id,$$Fink,g'
 PROCESS_HTML = /usr/bin/perl $(basedir)/htmlify.pl
 PROCESS_TEXT = /usr/bin/perl $(basedir)/textify.pl
 
@@ -88,7 +91,6 @@ force: clean all
 	xsltproc -o $@ $(STYLESHEET_HTML) $<
 
 %.html: %.html.tmp $(PROCESS_HTML)
-#	$(PROCESS_HTML) <$< >$@
 	$(PROCESS_HTML) $< $(LANGUAGES_AVAILABLE) >$@
 
 
@@ -106,16 +108,16 @@ force: clean all
 install: $(INSTALL_FILES) install-hook
 
 ifdef DESTDIR
-	echo "Installing PHP files" \
-	$(foreach  PHPFILE, $(INSTALL_FILES), && cp $(PHPFILE) $(basedir)/web/$(DESTDIR)/)
+	@echo "Installing PHP files"
+	cp $(INSTALL_FILES) $(basedir)/web/$(DESTDIR)/
 	-cp *.inc $(basedir)/web/$(DESTDIR)/
 else
 	@echo "DESTDIR not defined, can't install"
 endif
 
 ifdef WANT_HTML
-	echo "Installing HTML files" \
-	$(foreach  HTMLFILE, $(INSTALL_HTML), && cp $(HTMLFILE) $(basedir)/scripts/installer/dmg/$(DESTDIR)/)
+	@echo "Installing HTML files"
+	cp $(INSTALL_HTML) $(basedir)/scripts/installer/dmg/$(DESTDIR)/
 endif
 
 install-hook:
