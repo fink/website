@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Guide d'internationalisation de Fink (i18n)</title>
 <shorttitle>i18n</shorttitle>
-<cvsid>$Id: multilingual.fr.xml,v 1.17 2007/02/23 22:04:55 rangerrick Exp $</cvsid>
+<cvsid>$Id: multilingual.fr.xml,v 1.18 2011/10/25 01:29:52 fingolfin Exp $</cvsid>
 <preface>
 <p><em>Ce document est en cours de rédaction.</em></p>
 <p>Voici le guide d'internationalisation du site web de Fink. Ce document a été conçu pour servir de vade mecum aux personnes qui désirent contribuer à l'internationalisation du site.</p>
@@ -227,7 +227,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
 <li>Sauvegardez le fichier avec encodage UTF-8. Assurez-vous que l'encodage du texte est bien utf-8 et  ne modifiez que la partie texte dans le fichier.</li>
 <li>Quand vous aurez fini la traduction, ou quand vous voulez la tester, modifiez le fichier 
 <code>Makefile</code> pour ajouter votre langue :
-<codeblock>LANGUAGES = en ja fr include $(basedir)/Makefile.i18n.common</codeblock> 
+<codeblock>LANGUAGES_AVAILABLE = en ja fr</codeblock> 
 <p>Puis exécutez <code>make</code> dans le répertoire. Cela créera les fichiers PHP (et éventuellement d'autres fichiers), ainsi que tous les fichiers correspondant aux langues présentes dans le Makefile.</p></li>
 </ol>
 <p>Note : si vous constatez des fautes d'orthographe ou des erreurs dans le fichier anglais, ne le modifiez pas de vous-même, mais signalez-les à la <link

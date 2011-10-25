@@ -323,8 +323,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z')
 
         <li>翻译完成以后，或者你希望测试一下的话，编辑
         <code>Makefile</code> 来包括你的语言：
-        <codeblock>LANGUAGES = en ja zh
-include $(basedir)/Makefile.i18n.common</codeblock> 
+        <codeblock>LANGUAGES_AVAILABLE = en ja zh</codeblock> 
         <p>然后在这个目录里面运行 <code>make</code> 命令。这应该会生成中文的 PHP 文件（可能还有一些其它文件），同时还有英语和其它已经在 Makefile 中添加了的语言版本。</p></li>
       </ol>
 
