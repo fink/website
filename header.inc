@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.125 2010/09/16 19:42:35 gecko2 Exp $ */
+/* $Id: header.inc,v 1.126 2011/10/26 12:40:26 fingolfin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -31,23 +31,6 @@ if (!isset($expires))
 	# by default, expire in 1 hour
 	$expires = 60 * 60;
 }
-
-// param() allows us to work without register_globals set on the server.
-function param($Name) {
-	 global $HTTP_GET_VARS;
-	 global $HTTP_POST_VARS;
-	 global $HTTP_COOKIE_VARS;
-	 if(isset($HTTP_GET_VARS[$Name]))
-		return($HTTP_GET_VARS[$Name]);
-	
-	 if(isset($HTTP_POST_VARS[$Name]))
-		return($HTTP_POST_VARS[$Name]);
-	
-	 if(isset($HTTP_COOKIE_VARS[$Name]))
-		return($HTTP_COOKIE_VARS[$Name]);
-	
-	 return("");
-}	
 
 include_once "analytics.inc";
  
