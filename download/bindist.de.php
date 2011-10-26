@@ -1,7 +1,7 @@
 <?
 $title = "Download der Binär-Version von Fink";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/18 18:10:01 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2011/10/26 18:29:04 $';
 
 include "header.inc";
 ?>
@@ -19,8 +19,7 @@ include "../fink_version.inc";
 ?>
 <p>
 <b>Status:</b>
-Die Binär-Installation von Fink <? print $fink_version; ?> wurde veröffentlicht.
-Die Binär-Version ist vollständig.
+Die Binär-Installation von Fink <? print $fink_version; ?> (OS X 10.5) wurde veröffentlicht.
 </p>
 <ul>
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink

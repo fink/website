@@ -1,7 +1,7 @@
 <?
 $title = "バイナリリリースのダウンロード";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/18 18:10:01 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2011/10/26 18:29:04 $';
 
 include "header.inc";
 ?>
@@ -20,10 +20,8 @@ include "../fink_version.inc";
 ?>
 <p>
 <b>状態:</b>
-Fink バイナリインストーラは <? print $fink_version; ?> です。
-バイナリ配布は完全です。
+Fink バイナリインストーラは <? print $fink_version; ?> (OS X 10.5) です。
 </p>
-
 <ul>
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
 <? print $fink_version; ?> バイナリインストーラ (PowerPC)</a> - <? print $dmg_size; ?>, 圧縮 .dmg ディスクイメージ</li>

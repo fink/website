@@ -1,7 +1,7 @@
 <?
 $title = "Binary Release Download";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/18 18:10:01 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2011/10/26 18:29:04 $';
 
 include "header.inc";
 ?>
@@ -20,8 +20,7 @@ include "../fink_version.inc";
 ?>
 <p>
 <b>当前状态：</b>
-Fink <? print $fink_version; ?> 的二进制安装版本已经发布。
-本安装版本是完整的。
+Fink <? print $fink_version; ?> (OS X 10.5) 的二进制安装版本已经发布。
 </p>
 <ul>
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink

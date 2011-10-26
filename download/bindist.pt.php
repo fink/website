@@ -1,7 +1,7 @@
 <?
 $title = "Download: Distribuição de binários";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/24 23:01:59 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2011/10/26 18:29:04 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -18,8 +18,10 @@ a partir do código fonte da mesma forma que na distribuição de códigos fonte
 Isto se deve principalmente a motivos legais que afetam os pacotes
 (faltantes).</p>
 
-<p><b>Status:</b> Foi lançado um instalador binário para o Fink
-<? print $fink_version; ?>.</p>
+<p>
+<b>Status:</b>
+Foi lançado um instalador binário para o Fink <? print $fink_version; ?> (OS X 10.5).
+</p>
 
 <ul>
   <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Instalador binário do Fink <? print $fink_version; ?> (PowerPC)</a> - <? print $dmg_size; ?>, imagem de disco .dmg compactada</li>

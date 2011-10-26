@@ -1,7 +1,7 @@
 <?
 $title = "Téléchargement de la version binaire";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/06/16 00:05:40 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2011/10/26 18:29:04 $';
 
 include "header.inc";
 ?>
@@ -12,7 +12,10 @@ include "header.inc";
 <? 
 include "../fink_version.inc";
 ?>
-<p><b>Statut :</b> nous avons posté un installeur pour Fink <? print $fink_version; ?>. La distribution binaire se suffit à elle-même.</p>
+<p>
+<b>Statut :</b> 
+nous avons posté un installeur pour Fink <? print $fink_version; ?> (OS X 10.5).
+</p>
 <ul>
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Installeur binaire Fink <? print $fink_version; ?> pour PowerPC</a> - <? print $dmg_size; ?>, image disque compressée .dmg</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Installeur binaire Fink <? print $fink_version; ?> pour Intel</a> - <? print $intel_dmg_size; ?>, image disque compressée .dmg</li>
