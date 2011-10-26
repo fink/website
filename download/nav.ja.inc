@@ -1,5 +1,5 @@
 <?
-/* $Id: nav.ja.inc,v 1.8 2006/07/01 12:12:38 babayoshihiko Exp $ */
+/* $Id: nav.ja.inc,v 1.9 2011/10/26 11:23:15 fingolfin Exp $ */
 
 $section = "download";
 $navbox = array(
@@ -8,9 +8,8 @@ $navbox = array(
   "download/bindist.php?phpLang=ja", "バイナリリリース",
   "download/srcdist.php?phpLang=ja", "ソースリリース",
   "download/upgrade.php?phpLang=ja", "アップグレード表",
-  "download/10.1-upgrade.php?phpLang=ja", "10.1 アップグレード",
-  "download/10.2-upgrade.php?phpLang=ja", "10.2 アップグレード",
-  "download/10.3-upgrade.php?phpLang=ja", "10.3 アップグレード",
+  "download/10.6-upgrade.php?phpLang=ja", "10.6 アップグレード",
+  "download/10.7-upgrade.php?phpLang=ja", "10.7 アップグレード",
   "download/sources_for_binaries.php?phpLang=ja", "バイナリ用ソース",
   "http://bindist.finkmirrors.net/bindist/dists/", "Archive Browser"
 );
