@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.23 2011/10/25 01:55:44 fingolfin Exp $
+# $Id: Makefile.common,v 1.24 2011/10/26 12:50:14 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -46,9 +46,6 @@ ALL_TARGETS = $(TARGET)
 INSTALL_FILES = $(TARGET)
 ifdef LANGUAGES
 INSTALL_FILES += $(BASE_TARGET)
-ifndef STYLESHEET_RDF
-INSTALL_FILES += $(foreach  LANGUAGE, $(LANGUAGES),  header.$(LANGUAGE).inc)
-endif
 endif
 
 ifdef WANT_HTML
@@ -116,6 +113,7 @@ install: $(INSTALL_FILES) install-hook
 ifdef DESTDIR
 	@echo "Installing PHP files"
 	cp $(INSTALL_FILES) $(basedir)/web/$(DESTDIR)/
+	if ls header*.inc &> /dev/null; then cp header*.inc $(basedir)/web/$(DESTDIR)/ ; fi
 else
 	@echo "DESTDIR not defined, can't install"
 endif
