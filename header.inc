@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.126 2011/10/26 12:40:26 fingolfin Exp $ */
+/* $Id: header.inc,v 1.127 2011/10/27 14:29:06 fingolfin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -153,15 +153,6 @@ if (preg_match($myreg, $cvs_date, $r)) {
 if (!isset($metatags)) global $metatags;
 $metatags = preg_replace('|<([^/]*)/>|', '|<\1>|', $metatags);
 
-// [translation] Function used in doc and faq for translation
-
-function show_form() {
-	if (function_exists('i18n_show_form')) {
-		i18n_show_form();
-	} else {
-		echo "translate";
-	}
-}
 
 // Functions Used in PDB
         
