@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2011/10/27 16:52:24 $';
+$cvs_date = '$Date: 2011/10/27 17:00:19 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -113,20 +113,10 @@ unset($result);
 // Functions Used in PDB
         
 	function it_start() {
-		global $it_flag;
-
-		$it_flag = 0;
-		echo '<table cellspacing="0">';
+		echo '<table cellspacing="0" style="border-spacing:8px">';
 	}
 	
 	function it_item($title, $item) {
-		global $it_flag, $root;
-		
-		if ($it_flag) {
-			print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt=""></td></tr>'."\n";
-		}
-		$it_flag = 1;
-		
 		if ($title) {
 			print '<tr valign="top"><td>'.$title.'</td><td>&nbsp;&nbsp;&nbsp;</td><td>'.
 			$item.'</td></tr>'."\n";
@@ -292,8 +282,6 @@ unset($result);
 	}
 	
 	print "</table>\n";
-
-	print "<br>";
 
 	it_start();
 	
