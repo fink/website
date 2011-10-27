@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.127 2011/10/27 14:29:06 fingolfin Exp $ */
+/* $Id: header.inc,v 1.128 2011/10/27 16:52:24 fingolfin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -153,56 +153,6 @@ if (preg_match($myreg, $cvs_date, $r)) {
 if (!isset($metatags)) global $metatags;
 $metatags = preg_replace('|<([^/]*)/>|', '|<\1>|', $metatags);
 
-
-// Functions Used in PDB
-        
-function it_start() {
-  global $it_flag;
-
-  $it_flag = 0;
-?>
-<table cellspacing="0">
-<?
-}
-
-function it_item($title, $item) {
-  global $it_flag, $root;
-
-  if ($it_flag) {
-    print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt=""></td></tr>'."\n";
-  }
-  $it_flag = 1;
-
-  if ($title) {
-    print '<tr valign="top"><td>'.$title.'</td><td>&nbsp;&nbsp;&nbsp;</td><td>'.
-          $item.'</td></tr>'."\n";
-  } else {
-    print '<tr valign="top"><td colspan="3">'.$item.'</td></tr>'."\n";
-  }
-}
-
-function it_start2() {
-  global $it_flag;
-
-  $it_flag = 0;
-?>
-<table cellspacing="0">
-<?
-}
-
-function it_item2($title, $item1, $item2) {
-  global $it_flag, $root;
-
-  if ($it_flag) {
-    print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt=""></td><td></td></tr>'."\n";
-  }
-  $it_flag = 1;
-  print '<tr valign="top"><td width="150">'.$title.'</td><td width="120">'.$item1.'</td><td  width="120">'.$item2.'</td></tr>'."\n";
-}
-
-function it_end() {
-echo '</table>';
-}
 
 // Used in index
 function convert_date_to_locale($initialstringdate) {

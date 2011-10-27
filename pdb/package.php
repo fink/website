@@ -1,6 +1,6 @@
 <?php
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2011/06/15 08:05:38 $';
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2011/10/27 16:52:24 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -109,6 +109,35 @@ unset($result);
 ?>
 <h1>Package <? print $pobj['name'] . '-' . $fullversion ?></h1>
 <?
+
+// Functions Used in PDB
+        
+	function it_start() {
+		global $it_flag;
+
+		$it_flag = 0;
+		echo '<table cellspacing="0">';
+	}
+	
+	function it_item($title, $item) {
+		global $it_flag, $root;
+		
+		if ($it_flag) {
+			print '<tr><td><img src="'.$root.'img/shim.gif" width="1" height="8" border="0" alt=""></td></tr>'."\n";
+		}
+		$it_flag = 1;
+		
+		if ($title) {
+			print '<tr valign="top"><td>'.$title.'</td><td>&nbsp;&nbsp;&nbsp;</td><td>'.
+			$item.'</td></tr>'."\n";
+		} else {
+			print '<tr valign="top"><td colspan="3">'.$item.'</td></tr>'."\n";
+		}
+	}
+	
+	function it_end() {
+		echo '</table>';
+	}
 
 	function avail_td($text='', $extras='', $extra_div_style='') {
 		print '<td align="center" valign="top" ' . $extras . '>';
