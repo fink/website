@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.24 2011/10/26 12:50:14 fingolfin Exp $
+# $Id: Makefile.common,v 1.25 2011/10/27 12:08:28 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -80,9 +80,17 @@ force: clean all
 
 # rendering to php-framed HTML for the website (multi-page)
 
-%.php.tmp: $(SOURCE) $(STYLESHEET_WEBSITE) $(basedir)/finkdoc.dtd
-	xmllint --noout --valid $(SOURCE)
-	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam PRINTFILE $(BASE_SOURCE) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $(XMLFILE); )
+define PHP_TEMPLATE
+%$(1).php.tmp: $(BASE_SOURCE)$(1).xml $(STYLESHEET_WEBSITE) $(basedir)/finkdoc.dtd
+	xmllint --noout --valid $$<
+	xsltproc --stringparam PRINTFILE $(BASE_SOURCE) --stringparam DESTDIR $(DESTDIR)/ $(STYLESHEET_WEBSITE) $$<
+endef
+
+ifdef LANGUAGES_AVAILABLE
+$(foreach LANG,$(LANGUAGES_AVAILABLE),$(eval $(call PHP_TEMPLATE,.$(LANG))))
+else
+$(eval $(call PHP_TEMPLATE,.$(LANG)))
+endif
 
 %.php: %.php.tmp $(PROCESS_WEBSITE)
 	$(PROCESS_WEBSITE) <$< >$@

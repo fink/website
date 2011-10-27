@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.11 2011/10/25 02:12:33 fingolfin Exp $
+# $Id: Makefile,v 1.12 2011/10/27 12:08:29 fingolfin Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -22,13 +22,20 @@ LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.common
 
 # Custom rendering
-%.inc.tmp: $(SOURCE) $(STYLESHEET_WEBSITE)
-	xmllint --noout --valid $(SOURCE)
-	$(foreach LANGUAGE, $(LANGUAGES), xsltproc -o index.$(LANGUAGE).php.tmp $(STYLESHEET_WEBSITE) news.$(LANGUAGE).xml; )
+define NEWS_TEMPLATE
+#%.inc.tmp: $(SOURCE) $(STYLESHEET_WEBSITE)
+%.$(1).inc.tmp: news.$(1).xml $(STYLESHEET_WEBSITE)
+	xmllint --noout --valid $$<
+	xsltproc -o index.$(1).php.tmp $(STYLESHEET_WEBSITE) $$<
 
-%.rdf: $(SOURCE) $(STYLESHEET_RDF)
-	xmllint --noout --valid $(SOURCE)
-	$(foreach XMLFILE, $(SOURCE), xsltproc --stringparam currdate "$(W3CDTFDATE)" -o $(subst .xml,.rdf,$(XMLFILE)) $(STYLESHEET_RDF) $(XMLFILE); )
+#%.rdf: $(SOURCE) $(STYLESHEET_RDF)
+%.$(1).rdf: $(BASE_SOURCE).$(1).xml $(STYLESHEET_RDF)
+	xmllint --noout --valid $$<
+	xsltproc --stringparam currdate "$(W3CDTFDATE)" -o $$@ $(STYLESHEET_RDF) $$<
+endef
+
+$(foreach LANG,$(LANGUAGES_AVAILABLE),$(eval $(call NEWS_TEMPLATE,$(LANG))))
+
 
 %.inc: %.inc.tmp $(PROCESS_WEBSITE)
 	$(PROCESS_WEBSITE) <$< >$@
