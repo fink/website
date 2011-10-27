@@ -1,8 +1,7 @@
 <?
 $title = "Legal Stuff";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/16 21:10:25 $';
-header("Content-type: text/html; charset=utf-8");
+$cvs_author = '$Author: fingolfin $';
+$cvs_date = '$Date: 2011/10/27 14:29:56 $';
 
 include "header.inc";
 ?>

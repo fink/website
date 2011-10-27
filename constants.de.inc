@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.de.inc,v 1.7 2010/09/05 10:56:04 gecko2 Exp $ */
+/* $Id: constants.de.inc,v 1.8 2011/10/27 14:29:56 fingolfin Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -14,8 +14,6 @@
 // | usage:    1. read the comments                                           |
 // |           2. encoding must be UTF-8 or it will not show properly         |
 // +--------------------------------------------------------------------------+
-
-header("Content-type: text/html; charset=utf-8");
 
 /* The Sections.  Used in Menu Navigation Bar */
 define ("FINK_LC_ALL", 'de_DE');
