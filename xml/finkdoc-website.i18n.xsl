@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                version="1.1">
+                version="1.1"
+                xmlns:str="http://exslt.org/strings"
+                extension-element-prefixes="str"
+                >
 
 <!-- set the variables used throughout the document -->
 <xsl:variable name="lang-ext" ><xsl:value-of select="document/@lang" /></xsl:variable>
@@ -86,7 +89,8 @@ $navbox = array(
 </xsl:text>
 <xsl:for-each select="chapter">
 <xsl:text>  "</xsl:text><xsl:value-of select="$DESTDIR"/><xsl:value-of select="@filename"/><xsl:text>.php?phpLang=</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text>", "</xsl:text>
-<xsl:value-of select="shorttitle"/>
+<!-- <xsl:value-of select="shorttitle"/> -->
+<xsl:value-of select="str:replace(shorttitle, '&quot;', '&amp;quot;')"/>
 <xsl:text>",
 </xsl:text>
 </xsl:for-each>
