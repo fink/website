@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink Internationalization (i18n) Howto Guide</title>
   <shorttitle>i18n</shorttitle>
-  <cvsid>$Id: multilingual.en.xml,v 1.21 2011/10/25 01:29:52 fingolfin Exp $</cvsid>
+  <cvsid>$Id: multilingual.en.xml,v 1.22 2011/10/28 15:50:45 fingolfin Exp $</cvsid>
   <preface>
     <p><em>This document is a work in progress.</em></p>
     <p>Welcome to the Fink Website Internationalization Howto. This document
@@ -295,7 +295,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         care not to change anything but true text.</li>
         <li>Once you are done, or just to test it, edit the
         <code>Makefile</code> to include your language as:
-        <codeblock>LANGUAGES_AVAILABLE = en ja fr</codeblock> 
+        <codeblock>LANGUAGES_AVAILABLE = en ja fr</codeblock>
         <p>then type
         <code>make</code> in the directory. This should generate your PHP (and
         possibly some other) files as well as other files matching the languages in the Makefile.</p></li>
