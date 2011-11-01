@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2011/10/13 20:44:22 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2011/11/01 00:35:37 $';
 
 include "header.inc";
 ?>
@@ -19,13 +19,13 @@ have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p>The current version, <em>fink-0.31.3</em>, was officially released on
-2011-10-12.</p>
+<p>The current version, <em>fink-0.31.4</em>, was officially released on
+2011-10-28.</p>
 
 <ul>
      <li>
-For OS X 10.5-10.7, use <a href="http://downloads.sourceforge.net/fink/fink-0.31.3.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.31.3</a>
+For OS X 10.5-10.7, use <a href="http://downloads.sourceforge.net/fink/fink-0.31.4.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.31.4</a>
 - 1308K, .tar.gz format
      </li>
      <li>
@@ -42,14 +42,14 @@ system.</p>
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via</p>
 
-<pre>tar -xvzf fink-0.31.3.tar.gz</pre>
+<pre>tar -xvzf fink-0.31.4.tar.gz</pre>
 
 <p>or</p>
 
-<pre>tar -xvf fink-0.31.3.tar</pre>
+<pre>tar -xvf fink-0.31.4.tar</pre>
 
 <p>if it has already been partially unpacked, in a terminal window.  Then, in a
-terminal window, change to the resulting <em>fink-0.31.3</em> directory, and
+terminal window, change to the resulting <em>fink-0.31.4</em> directory, and
 use</p>
 
 <pre>./bootstrap</pre>
