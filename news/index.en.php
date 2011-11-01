@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/11/01 00:30:27';
+$cvs_date = 'Date: 2011/11/01 11:17:21';
 $metatags = '';
 
 include_once "header.inc";
@@ -9,7 +9,7 @@ include_once "header.inc";
 
 <a name="2011-10-28%20fink-0.31.4%20released"><span class="news-date">2011-10-28: </span><span class="news-headline">fink-0.31.4 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.31.4</code> was released to the 10.4/stable and
-      10.7/stable trees on 12 October, 2011.  The primary new feature
+      10.7/stable trees on 28 October, 2011.  The primary new feature
       in this release is to ensure that the default compiler on OS X 10.6
       is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
       of the other essential packages which get installed at bootstrap have 
