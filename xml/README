@@ -1,4 +1,4 @@
-$Id: README,v 1.5 2003/06/29 18:14:47 dmrrsn Exp $   -*- text -*-
+$Id: README,v 1.6 2011/11/01 12:28:05 fingolfin Exp $   -*- text -*-
 
 
 IMPORTANT NOTE: As of 29 June 2003, the CVS modules have been somewhat
@@ -27,10 +27,58 @@ for rendering:
    is also for inclusion with the distribution.
 
 To render the documents, you need xsltproc, available in the "libxslt"
-package in Fink (we used to use Saxon, but xsltproc is much much faster).
-You also need xmllint from the "libxml2" package in Fink.
+package in Fink. You also need xmllint from the "libxml2" package in Fink.
 You can then use the provided Makefiles to render the documents. There
 are .cvsignore files to keep CVS from complaining about generated files.
+
+
+From the XML files in this repository, we generate various documentation,
+in various formats: HTML, PHP or plain text files, some monolingual and
+some multilingual. To "compile" all XML files at once, simple type
+
+   make
+
+in the same directory this README is located in. You can also cd into
+individual subdirectories and use "make" in them to build only that
+particular part of the documentation.
+
+Once you compile the documentation, it needs to be put into its final
+destinations, i.e. "install" them. Now some parts of the generated
+documentation is intended for hosting on the finkproject.org website;
+some is to be shipped with the fink package manager; and some with the
+fink installer.
+
+In order for this "installation" to work, you need to make some
+preparation. In particular, the "fink" and "scripts" git repositories
+must be cloned and placed into the directory this README is in. If you
+have not yet done that, you can clone these git repositories by
+entering the following commands (you need to have "git" installed
+for this, e.g. by installing the fink package of this name).
+
+  git clone git@github.com:fink/fink.git
+  git clone git@github.com:fink/scripts.git
+
+If you already do have clones of the fink and scripts repository inside
+the current directory, you may want to run "git pull" in each before
+continuing, to ensure that you got the latest version of each. Once this
+is done, you can type
+
+  make install
+  
+which will copy the documentation you compiled earlier using "make" into
+the appropriate subdirectories (currently these are inside web/, fink/
+and scripts/).
+
+Finally, you need to commit any updates you made.
+
+TODO: Insert guide on how to do that using CVS (for the xml files, and web),
+respectively using git (for fink and scripts). For CVS, it boils down to
+  cvs commit -m "some useful description of your changes"
+while for git it boils down to
+  cd fink && git commit -a -m "some useful description of your changes" && git push
+  cd scripts && git commit -a -m "some useful description of your changes" && git push
+But in any case, committers should be cautioned to first use "cvs diff" resp. "git diff"
+to inspect what they are about to commit.
 
 
 EOF.
