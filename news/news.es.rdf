@@ -5,8 +5,29 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2011-10-26T14:59:26+02:00</dc:date>
+    <dc:date/>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released">
+      <title>fink-0.31.4 released</title>
+      <link>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</guid>
+      <description>
+      <p>fink-0.31.4 was released to the 10.4/stable and
+      10.7/stable trees on 28 October, 2011.  The primary new feature
+      in this release is to ensure that the default compiler on OS X 10.6
+      is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
+      of the other essential packages which get installed at bootstrap have 
+      been updated.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.31.4 was released to the 10.4/stable and
+      10.7/stable trees on 28 October, 2011.  The primary new feature
+      in this release is to ensure that the default compiler on OS X 10.6
+      is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
+      of the other essential packages which get installed at bootstrap have 
+      been updated.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released">
       <title>fink-0.31.3 released</title>
       <link>http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released</link>
@@ -365,51 +386,6 @@ make Fink work better in the future.</p>
       provided that there are no reports of bad behavior from unstable tree     
       users.</p>
       <p>Update, 2011-01-22:    fink-0.29.19 has been added to stable.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.">
-      <title>Temporary rysnc mirror outage.</title>
-      <link>http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-01-05%20Temporary%20rysnc%20mirror%20outage.</guid>
-      <description>
-      <p>We are experiencing a temporary failure in some of the rsync mirrors.
-      If you have not seen updates in a while, then you may wish to change your
-      rsync mirror for the time being by editing /sw/etc/fink.conf as a superuser
-      and replacing the line that starts with Mirror-rsync with
-        Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</p>
-        <p>or</p><p>
-        Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</p>
-        <p>or</p><p>
-        Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</p>
-         <p>or</p><p>
-        Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</p>       
-      <p>If you prefer, you can select the latter three of the above mirrors via fink configure
-      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
-      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
-      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
-      (3) as the rsync mirror, or Netherlands (27) and
-      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
-      <p>Update, 2011-01-07  The mirrors are updating again.</p>
-    </description>
-      <content:encoded>
-      <p>We are experiencing a temporary failure in some of the rsync mirrors.
-      If you have not seen updates in a while, then you may wish to change your
-      rsync mirror for the time being by editing /sw/etc/fink.conf as a superuser
-      and replacing the line that starts with Mirror-rsync with
-        Mirror-rsync: rsync://fink.gecko.ig42.org/finkinfo/</p>
-        <p>or</p><p>
-        Mirror-rsync: rsync://hnd.jp.asi.finkmirrors.net/finkinfo/</p>
-        <p>or</p><p>
-        Mirror-rsync: rsync://ber.de.eu.finkmirrors.net/finkinfo</p>
-         <p>or</p><p>
-        Mirror-rsync: rsync://ams.nl.eu.finkmirrors.net/finkinfo/</p>       
-      <p>If you prefer, you can select the latter three of the above mirrors via fink configure
-      as well:  choose Asia (option 2) as your continent, Japan (10) as your country,
-      and rsync://distfiles.hnd.jp.asi.finkmirrors.net/finkinfo/ (2) as the Rsync Selfupdate mirror;
-      or choose Europe (4), then Germany (13) and rsync://ber.de.eu.finkmirrors.net/finkinfo/ 
-      (3) as the rsync mirror, or Netherlands (27) and
-      rsync://distfiles.ams.nl.eu.finkmirrors.net/finkinfo/ (2) as your rsync mirror. </p>
-      <p>Update, 2011-01-07  The mirrors are updating again.</p>
     </content:encoded>
     </item>
   </channel>
