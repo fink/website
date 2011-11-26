@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2011/11/26 17:32:38 $';
+$cvs_date = '$Date: 2011/11/26 17:53:53 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -71,7 +71,7 @@ your current version of XCode by running <i>xcodebuild -version</i> .
 <p>
 <strong>10.5 Support:</strong> 
 Users are encouraged to update to OS 10.5.2 or later, via Software Update, in order to get bugfixes and enhancements for X11.  Further updates continue to be made available on the <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
-(We are not currently supporting Xquartz on 10.6 or 10.7).
+(We are not currently supporting Xquartz on 10.6 or 10.7.)
       </p>
 
 <h1>Resources</h1>

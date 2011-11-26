@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2011/07/29 00:06:02 $';
+$cvs_author = '$Author: dmrrsn $';
+$cvs_date = '$Date: 2011/11/26 17:53:53 $';
 $is_home = 1;
 
 $metatags = '<meta name="descrizione" content="Fink, una distribuzione di software Unix per Mac OS X e Darwin">
@@ -52,22 +52,25 @@ include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
-Fink <? print $fink_version ?> (per OS X 10.5)  sono stati rilasciati il
-<? print $release_date ?>.  
-Questi rilasci comprendono codice e pacchetti binari così come installatori precompilati.
-Fink 0.8.1 (for OS X 10.4), 0.7.2 (for OS X 10.3), 0.6.4 (for OS X 10.2),
- and 0.4.1 (for OS X 10.1) also remain available.
+Fink currently supports OS X 10.7 (Lion), 10.6 (SnowLeopard), and 10.5 
+(Leopard), and continues to run on older versions of OS X, although
+official updates are no longer available for the older versions.
+Installation instructions can be found  on our <a href="srcdist.php">source
+release page</a>.
+</p><p>
+XCode must be installed before Fink.  For best results, 10.6 users are
+encouraged to avoid upgrading XCode beyond version 3.2.6.   On the other
+hand, 10.7 users must update XCode to version 4.1 or later (via the free download
+from the AppStore).  Note that if you installed an earlier version of XCode
+prior to updating, you need to <b>uninstall</b> the old version first, by
+running <i>/Develper/Library/uninstall-devtools</i> .  You can determine
+your current version of XCode by running <i>xcodebuild -version</i> .
 </p>
-<p><strong>10.5 Support:</strong> 
-Users are encouraged to update to OS 10.5.2 or later, via Software Update, 
-in order to get bugfixes and enhancements for X11.  
-Further updates continue to be made available on the 
-<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page</a>.</p>
-<p><strong>10.6 Support:</strong> 
-We are not currently supporting Xquartz on 10.6.</p>
-<p><strong>10.7 Support:</strong>
-10.7 is supported, albeit with many missing packages.
-We are not currently supporting Xquartz on 10.7.</p>
+<p>
+<strong>10.5 Support:</strong> 
+Users are encouraged to update to OS 10.5.2 or later, via Software Update, in order to get bugfixes and enhancements for X11.  Further updates continue to be made available on the <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
+(We are not currently supporting Xquartz on 10.6 or 10.7.)
+      </p>
 
 <h1>Risorse</h1>
 
