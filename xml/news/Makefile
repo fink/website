@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.12 2011/10/27 12:08:29 fingolfin Exp $
+# $Id: Makefile,v 1.13 2011/11/27 18:19:46 fingolfin Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -31,7 +31,7 @@ define NEWS_TEMPLATE
 #%.rdf: $(SOURCE) $(STYLESHEET_RDF)
 %.$(1).rdf: $(BASE_SOURCE).$(1).xml $(STYLESHEET_RDF)
 	xmllint --noout --valid $$<
-	xsltproc --stringparam currdate "$(W3CDTFDATE)" -o $$@ $(STYLESHEET_RDF) $$<
+	xsltproc --stringparam currdate "$$(W3CDTFDATE)" -o $$@ $(STYLESHEET_RDF) $$<
 endef
 
 $(foreach LANG,$(LANGUAGES_AVAILABLE),$(eval $(call NEWS_TEMPLATE,$(LANG))))
