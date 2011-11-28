@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2011/11/26 17:53:53 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2011/11/28 20:10:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -99,13 +99,13 @@ provides the following resources for the project:
 <li><a
 href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Report or view bugs</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Request a package that's not in Fink</a></li>
-<li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Request a feature that's not in fink (the program)</a></li>
-<li><a
 href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Submit a new Fink package (non-core developers)</a></li>
 <li><a
+href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Request a package that's not in Fink</a></li>
+<li><a
 href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Submit a patch for fink (the program)</a></li>
+<li><a
+href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Request a feature that's not in fink (the program)</a></li>
 <li><a href="lists/index.php">Mailing lists</a></li>
 <li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">browse
 online</a>, <a href="doc/cvsaccess/index.php">access instructions</a>)</li>
@@ -117,7 +117,17 @@ for free on the <a href="http://sourceforge.net/">SourceForge web site</a>.
 </p>
 <p>Additional resources hosted outside SourceForge include:</p>
 <ul>
-<li><a href="http://wiki.finkproject.org/">The Fink developer wiki</a> (now at a new location).</li>
+    <li><a href="http://wiki.finkproject.org/">The Fink developer wiki</a> (now at a new location).</li>
+    <li>
+        <a href="https://github.com/fink/fink">
+            New github repository for the source code of the <code>fink</code> package manager.
+        </a>
+    </li>
+    <li>
+        <a href="">
+            New github repository for the <code>fink-mirrors</code> package.
+        </a>
+    </li>
 </ul>
 
 </td></tr></table>
