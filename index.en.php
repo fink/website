@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2011/11/28 20:10:29 $';
+$cvs_date = '$Date: 2011/11/28 20:28:35 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -124,7 +124,7 @@ for free on the <a href="http://sourceforge.net/">SourceForge web site</a>.
         </a>
     </li>
     <li>
-        <a href="">
+        <a href="https://github.com/fink/fink-mirrors">
             New github repository for the <code>fink-mirrors</code> package.
         </a>
     </li>
