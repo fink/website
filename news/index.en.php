@@ -1,13 +1,17 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2011/11/01 11:17:21';
+$cvs_date = 'Date: 2011/11/26 18:09:22';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2011-10-28%20fink-0.31.4%20released"><span class="news-date">2011-10-28: </span><span class="news-headline">fink-0.31.4 released</span></a><?php gray_line(); ?>
+<a name="2011-11-22%20fink-0.31.5%20released"><span class="news-date">2011-11-22: </span><span class="news-headline">fink-0.31.5 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.31.5</code> was released to the 10.4/stable and
+      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
+      address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
+    <a name="2011-10-28%20fink-0.31.4%20released"><span class="news-date">2011-10-28: </span><span class="news-headline">fink-0.31.4 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.31.4</code> was released to the 10.4/stable and
       10.7/stable trees on 28 October, 2011.  The primary new feature
       in this release is to ensure that the default compiler on OS X 10.6
