@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2011/07/29 00:06:02 $';
+$cvs_date = '$Date: 2011/11/28 04:49:57 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -51,22 +51,30 @@ include dirname(__FILE__) . "/news/news.ja.inc";
 include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
-<p>
-Fink <? print $fink_version ?> は <? print convert_date_to_locale($release_date) ?> にリリースされました。
-これは Mac OS X10.5 用のソースとバイナリパッケージと、バイナリインストーラを含んでいます。
-Fink 0.8.1 (for OS X 10.4), Fink 0.7.2 (for OS X 10.3), Fink 0.6.4 (for OS X 10.2) と 0.4.1 (for OS X 10.1) はこれまで通りです。
-</p>
-<p><strong>10.5 Support:</strong> 
-ソフトウェアアップデートで OS 10.5.2 以降に更新してください。
-これは X11 のバグ修正と機能追加を含みます。
-さらに、
-<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page</a> 
-に追加のアップデートがあります。</p>
-<p><strong>10.6 Support:</strong> 
-現在のところ、10.6 での Xquartz には対応していません。</p>
-<p><strong>10.7 Support:</strong>
-未対応パッケージも多いですが、サポートされています。
-現在のところ、10.7 での Xquartz には対応していません。</p>
+<p>Fink は、現在 OS X 10.7 (Lion), 10.6 (SnowLeopard),
+10.5 (Leopard) をサポートし、
+またこれより前のバージョンの OS X は、公式アップデートは行わないものの、動作します。
+インストール方法は、
+<a href="srcdist.php">ソースリリースのページ</a>
+に書かれています。</p>
+
+<p>Fink の前に XCode をインストールしてください。
+10.6 ユーザは、XCode を 3.2.6 以上にしない方がよいでしょう。
+逆に、10.7 ユーザは XCode を 4.1 またはそれ以降に更新しなければなりません
+(AppStore からフリーダウンロード)。
+更新の前に古い XCode をインストール済みの場合、
+<i>/Develper/Library/uninstall-devtools</i> を実行して
+<b>アンインストール</b>する必要があります。
+XCode のバージョンは、 <i>xcodebuild -version</i> とすることでわかります。</p>
+
+<p><strong>10.5 サポート:</strong> 
+X11 のバグ修正と機能向上を得るため、
+ソフトウェア・アップデート を使用して、
+10.5.2 またはそれ以降に更新してください。
+これ以降の更新は、
+<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page</a>
+から入手することができます。
+(我々は、現在 10.6 と 10.7 での Xquartz をサポートしていません。)</p>
 
 <h1>リソース</h1>
 
