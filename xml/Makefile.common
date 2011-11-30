@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.25 2011/10/27 12:08:28 fingolfin Exp $
+# $Id: Makefile.common,v 1.26 2011/11/30 12:33:04 fingolfin Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -89,7 +89,7 @@ endef
 ifdef LANGUAGES_AVAILABLE
 $(foreach LANG,$(LANGUAGES_AVAILABLE),$(eval $(call PHP_TEMPLATE,.$(LANG))))
 else
-$(eval $(call PHP_TEMPLATE,.$(LANG)))
+$(eval $(call PHP_TEMPLATE,))
 endif
 
 %.php: %.php.tmp $(PROCESS_WEBSITE)
