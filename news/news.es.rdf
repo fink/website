@@ -5,8 +5,23 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date/>
+    <dc:date>2011-12-09T13:48:01+09:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released">
+      <title>fink-0.31.5 released</title>
+      <link>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</guid>
+      <description>
+      <p>fink-0.31.5 was released to the 10.4/stable and
+      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
+      address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.31.5 was released to the 10.4/stable and
+      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
+      address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released">
       <title>fink-0.31.4 released</title>
       <link>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</link>
@@ -359,33 +374,6 @@ make Fink work better in the future.</p>
       For status updates check out
       <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
       sourceforge page</a>.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.">
-      <title>fink-0.29.19 released.</title>
-      <link>http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-01-16%20fink-0.29.19%20released.</guid>
-      <description>
-      <p>Version 0.29.19 of the fink package manager has just been
-      released to the unstable tree.  This version of fink         
-      features more verbose output from 'fink --version' for debugging purposes,                                                                               
-      as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
-      on 10.6.6, however.)</p>
-      <p>It is expected that this version will migrate to the stable tree soon,
-      provided that there are no reports of bad behavior from unstable tree     
-      users.</p>
-      <p>Update, 2011-01-22:    fink-0.29.19 has been added to stable.</p>
-    </description>
-      <content:encoded>
-      <p>Version 0.29.19 of the fink package manager has just been
-      released to the unstable tree.  This version of fink         
-      features more verbose output from 'fink --version' for debugging purposes,                                                                               
-      as well as recognizing OS 10.6.6.  (Version 0.29.17 works fine            
-      on 10.6.6, however.)</p>
-      <p>It is expected that this version will migrate to the stable tree soon,
-      provided that there are no reports of bad behavior from unstable tree     
-      users.</p>
-      <p>Update, 2011-01-22:    fink-0.29.19 has been added to stable.</p>
     </content:encoded>
     </item>
   </channel>
