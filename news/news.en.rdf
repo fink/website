@@ -5,8 +5,23 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2011-11-28T08:30:26-05:00</dc:date>
+    <dc:date>2012-01-04T19:39:03-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-01-03%20fink-0.31.6%20released">
+      <title>fink-0.31.6 released</title>
+      <link>http://fink.sourceforge.net/news/#2012-01-03%20fink-0.31.6%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2012-01-03%20fink-0.31.6%20released</guid>
+      <description>
+      <p>fink-0.31.6 was released on 3 January, 2012.  This
+      is a bugfix release to address issues with the use of HTTP proxies
+      under cvs selfupdates.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.31.6 was released on 3 January, 2012.  This
+      is a bugfix release to address issues with the use of HTTP proxies
+      under cvs selfupdates.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released">
       <title>fink-0.31.5 released</title>
       <link>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</link>
@@ -365,23 +380,6 @@ make Fink work better in the future.</p>
     </description>
       <content:encoded>
       <p>Checkouts and commits now work again.  Thanks for your patience.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-01-26%20CVS%20access%20is%20down.">
-      <title>CVS access is down.</title>
-      <link>http://fink.sourceforge.net/news/#2011-01-26%20CVS%20access%20is%20down.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-01-26%20CVS%20access%20is%20down.</guid>
-      <description>
-      <p>Due to an attack, our files are not accessible via CVS from Sourceforge.
-      For status updates check out
-      <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
-      sourceforge page</a>.</p>
-    </description>
-      <content:encoded>
-      <p>Due to an attack, our files are not accessible via CVS from Sourceforge.
-      For status updates check out
-      <a href="http://sourceforge.net/apps/wordpress/sourceforge/"> the Project
-      sourceforge page</a>.</p>
     </content:encoded>
     </item>
   </channel>
