@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/01/05 00:56:21 $';
+$cvs_date = '$Date: 2012/01/18 01:42:37 $';
 
 include "header.inc";
 ?>
@@ -19,7 +19,7 @@ have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p>The current version, <em>fink-0.31.0</em>, was officially released on
+<p>The current version, <em>fink-0.31.6</em>, was officially released on
 2012-01-03.</p>
 
 <ul>

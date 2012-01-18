@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2011/11/28 20:28:35 $';
+$cvs_date = '$Date: 2012/01/18 01:42:37 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -57,7 +57,7 @@ include "fink_version.inc";
 Fink currently supports OS X 10.7 (Lion), 10.6 (SnowLeopard), and 10.5 
 (Leopard), and continues to run on older versions of OS X, although
 official updates are no longer available for the older versions.
-Installation instructions can be found  on our <a href="srcdist.php">source
+Installation instructions can be found  on our <a href="download/srcdist.php">source
 release page</a>.
 </p><p>
 XCode must be installed before Fink.  For best results, 10.6 users are
