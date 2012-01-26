@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.zh.xml,v 1.34 2008/08/27 05:20:53 dmacks Exp $
+Generated from $Fink: packaging.zh.xml,v 1.36 2012/01/26 09:57:59 fingolfin Exp $
 -->
 <title>Fink Documentation - 创建 Fink 软件包</title></head><body>
 <table width="100%" cellspacing="0">
@@ -29,7 +29,7 @@ Available Languages:  |
 如果你希望帮助 Fink 项目，而你在这方面又有专长，你可以考虑选择接受一个
 <a href="http://pdb.finkproject.org/pdb/nomaintainer.php">尚未有维护人员的软件包。</a>
 </p>
-<h2>Contents</h2><ul><li><a href="#intro"><b>1 介绍</b></a><ul><li><a href="#intro.def1">1.1 什么是软件包？</a></li><li><a href="#intro.ident">1.2 识别一个软件包</a></li></ul></li><li><a href="#format"><b>2 软件包描述文件</b></a><ul><li><a href="#format.trees">2.1 文件树结构</a></li><li><a href="#format.format">2.2 文件格式</a></li><li><a href="#format.percent">2.3 百分号展开</a></li></ul></li><li><a href="#policy"><b>3 打包相关规则</b></a><ul><li><a href="#policy.licenses">3.1 软件包授权协议</a></li><li><a href="#policy.openssl">3.2 The GPL and OpenSSL</a></li><li><a href="#policy.prefix">3.3 避免干扰基本系统</a></li><li><a href="#policy.sharedlibs">3.4 共享函数库</a></li><li><a href="#policy.perlmods">3.5 Perl 模块</a></li><li><a href="#policy.emacs">3.6 Emacs 规则</a></li></ul></li><li><a href="#fslayout"><b>4 文件系统布局</b></a><ul><li><a href="#fslayout.fhs">4.1 文件系统层次结构标准</a></li><li><a href="#fslayout.dirs">4.2 目录</a></li><li><a href="#fslayout.avoid">4.3 应该避免的事情</a></li></ul></li><li><a href="#compilers"><b>5 Compilers</b></a><ul><li><a href="#compilers.versions">5.1 Compiler Versions</a></li><li><a href="#compilers.abi">5.2 The g++ ABI</a></li></ul></li><li><a href="#reference"><b>6 操作手册</b></a><ul><li><a href="#reference.build">6.1 构建过程</a></li><li><a href="#reference.fields">6.2 字段</a></li><li><a href="#reference.splitoffs">6.3 剥离分支(SplitOffs)</a></li><li><a href="#reference.scripts">6.4 脚本</a></li><li><a href="#reference.patches">6.5 补丁</a></li><li><a href="#reference.profile.d">6.6 Profile.d 脚本</a></li></ul></li></ul><h2><a name="intro">1 介绍</a></h2>
+<h2>Contents</h2><ul><li><a href="#intro"><b>1 介绍</b></a><ul><li><a href="#intro.def1">1.1 什么是软件包？</a></li><li><a href="#intro.ident">1.2 识别一个软件包</a></li></ul></li><li><a href="#format"><b>2 软件包描述文件</b></a><ul><li><a href="#format.trees">2.1 文件树结构</a></li><li><a href="#format.format">2.2 文件格式</a></li><li><a href="#format.percent">2.3 百分号展开</a></li></ul></li><li><a href="#policy"><b>3 打包相关规则</b></a><ul><li><a href="#policy.licenses">3.1 软件包授权协议</a></li><li><a href="#policy.openssl">3.2 The GPL and OpenSSL</a></li><li><a href="#policy.prefix">3.3 避免干扰基本系统</a></li><li><a href="#policy.sharedlibs">3.4 共享函数库</a></li><li><a href="#policy.perlmods">3.5 Perl 模块</a></li><li><a href="#policy.emacs">3.6 Emacs 规则</a></li><li><a href="#policy.sources">3.7 Source Policy</a></li><li><a href="#policy.downloading">3.8 File Download Policy</a></li></ul></li><li><a href="#fslayout"><b>4 文件系统布局</b></a><ul><li><a href="#fslayout.fhs">4.1 文件系统层次结构标准</a></li><li><a href="#fslayout.dirs">4.2 目录</a></li><li><a href="#fslayout.avoid">4.3 应该避免的事情</a></li></ul></li><li><a href="#compilers"><b>5 Compilers</b></a><ul><li><a href="#compilers.versions">5.1 Compiler Versions</a></li><li><a href="#compilers.abi">5.2 The g++ ABI</a></li></ul></li><li><a href="#reference"><b>6 操作手册</b></a><ul><li><a href="#reference.build">6.1 构建过程</a></li><li><a href="#reference.fields">6.2 字段</a></li><li><a href="#reference.splitoffs">6.3 剥离分支(SplitOffs)</a></li><li><a href="#reference.scripts">6.4 脚本</a></li><li><a href="#reference.patches">6.5 补丁</a></li><li><a href="#reference.profile.d">6.6 Profile.d 脚本</a></li></ul></li></ul><h2><a name="intro">1 介绍</a></h2>
 
 
 
@@ -102,16 +102,24 @@ exactly one value.
 </p>
 <ul>
 <li><tt style="white-space: nowrap;">dists</tt> 是目录的起点。<tt style="white-space: nowrap;">dists</tt>
-对 Debian 工具来说是必须的。</li>
+对 Debian 工具来说是必须的。
+
+In recent versions of fink, this is a symlink to a directory with a distribution-inspired name.
+
+</li>
 <li>发布类型。可以是 <tt style="white-space: nowrap;">stable</tt>，
 <tt style="white-space: nowrap;">unstable</tt> 和 <tt style="white-space: nowrap;">local</tt>。<tt style="white-space: nowrap;">local</tt>
 目录由本机的管理员／用户控制。<tt style="white-space: nowrap;">stable</tt> 和 <tt style="white-space: nowrap;">unstable</tt> 目录则是 Fink 的一部分。</li>
-<li>目录树。<tt style="white-space: nowrap;">main</tt> 目录树包含软件包的实际部分。加密功能的软件被放到一个称为 <tt style="white-space: nowrap;">crypto</tt> 的单独的目录树中，使得需要删除的时候会容易一些。</li>
+<li>目录树。
+
+The <tt style="white-space: nowrap;">main</tt> tree contains the bulk of the packages. Prior to July 1, 2010, the Cryptographic software was kept in a separate tree, <tt style="white-space: nowrap;">crypto</tt>, but this is now a section of the <tt style="white-space: nowrap;">main</tt> tree.
+
+</li>
 <li><tt style="white-space: nowrap;">finkinfo</tt>
 及 <tt style="white-space: nowrap;">binary-darwin-powerpc</tt>。<tt style="white-space: nowrap;">finkinfo</tt> 目录中包含了  Fink 软件包描述文件和补丁，而
 <tt style="white-space: nowrap;">binary-darwin-powerpc</tt> 则包含了 <tt style="white-space: nowrap;">.deb</tt>
 二进制软件包。</li>
-<li>分组。<tt style="white-space: nowrap;">main</tt>目录树按类别被分成几组以方便管理。<tt style="white-space: nowrap;">crypto</tt> 目录树目前没有被分组。</li>
+<li>分组。<tt style="white-space: nowrap;">main</tt>目录树按类别被分成几组以方便管理。</li>
 </ul>
 
 
@@ -894,9 +902,61 @@ perlXYZ-core packages in the <tt style="white-space: nowrap;">Replaces</tt> fiel
 <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a> 找到）。
 在 Fink 的规则中有两点区别。
-首先，在 fink 中这个规则目前仅应用于 emacs20 和 emacs21 软件包，而不应用于 xemacs。（这在将来可能会有改变）。
+首先，在 fink 中这个规则目前仅应用于 <tt style="white-space: nowrap;">emacs21</tt>, <tt style="white-space: nowrap;">emacs22</tt> 和 <tt style="white-space: nowrap;">emacs23</tt> 软件包，而不应用于 xemacs。（这在将来可能会有改变）。
 第二，不象 Debian 的规则，Fink 软件包允许安装东西到 /sw/share/emacs/site-lisp 目录中。
 </p>
+
+
+
+
+
+
+<h3><a name="policy.sources">3.7 Source Policy</a></h3>
+    <p>Sources should normally be downloaded from the location(s) that the upstream
+    developer(s) use, and any modifications for Fink should be done through the use
+    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+    source archive as a <tt style="white-space: nowrap;">Source</tt> in your Fink packaging.</p>
+    <p>If a VCS checkout (e.g. from <b>git</b> or <b>svn</b>) is to be used, e.g.
+    because a project doesn't do formal releases, or a fix for a particular issue has
+    been added between releases of a package, an acceptable source can be generated
+    via the following method:</p>
+    <ol>
+        <li>Check out the package, preferably at a definite revision of the VCS.</li>
+        <li>Make an archive from the VCS checkout (e.g. <b>zip</b>, <b>tar</b>, <b>tar.gz</b>,
+        or <b>tar.bz2</b>).
+            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
+            <tt style="white-space: nowrap;">foo-0svn1234.tar.gz</tt> for a package that doesn't make releases, or
+            <tt style="white-space: nowrap;">bar-1.2.3+svn4567.tar.bz2</tt> for a Fink package which is between
+            upstream releases.</p></li>
+        <li>Use the same <tt style="white-space: nowrap;">Version</tt> in your <tt style="white-space: nowrap;">.info</tt> file.</li>
+        <li>It is also useful to put the commands that you ran to generate the source tarball in the
+        <tt style="white-space: nowrap;">DescPackaging</tt> field.</li>
+        <li>Upload the tarball to a public download site where users can use <tt style="white-space: nowrap;">fink</tt> to download it.
+        If you don't have ready access to one, ask on the
+        <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a> or
+        <a href="http://webchat.freenode.net">the #fink IRC channel</a>,
+        and someone should be able to help.</li>
+    </ol>
+
+
+<h3><a name="policy.downloading">3.8 File Download Policy</a></h3>
+    <p>Packages are not to download any files during the unpack, patch, compile, install,
+    or build phases of the <a href="#reference.build">build process</a>.  Any large patches (i.e.
+    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
+    set up as additional Sources in accordance with the <a href="#policy.sources">
+    Source Policy.</a></p>
+    <p>Packages may download data in a PostInstScript after they have been installed on the system,
+    under some limited circumstances:</p>
+    <ul>
+        <li>No updates to the package itself are allowed.</li>
+        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
+        virus definitions for <tt style="white-space: nowrap;">clamav</tt> can be downloaded during this phase,
+        because they change continually.</li>
+    </ul>
+    <p>If you are unsure, contact <a href="mailto:fink-core@lists.sourceforge.net">the Fink Core
+    Team</a>.</p> 
+
+
 
 
 
@@ -1256,6 +1316,75 @@ variants. Remember that omitting a certain architecture value does not
 mean that the package is not for that architecture.
 </p>
 
+</td></tr><tr valign="top"><td>Distribution</td><td>
+<p>
+A comma-separated list of distribution(s) for which the package
+(and any splitoff packages) are intended.
+At present, the only valid values for distribution are
+<tt style="white-space: nowrap;">10.4</tt>,
+<tt style="white-space: nowrap;">10.5</tt>,
+and <tt style="white-space: nowrap;">10.6</tt>
+. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine distribution is not listed. If the field is omitted
+or the value is blank, all distributions are assumed.
+(Introduced in fink 0.26.0.)
+</p>
+<p>
+Since Fink's <tt style="white-space: nowrap;">10.4</tt>, <tt style="white-space: nowrap;">10.5</tt>, and 10.6 distributions share
+a common set of finkinfo files, the most common use of this field will be for 
+packages which are suitable for one of those distributions but not the
+other.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <tt style="white-space: nowrap;">Depends</tt> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.6)
+  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+</pre>
+<p>
+will result in the field for the foo-pm581 variant
+being <tt style="white-space: nowrap;">10.3, 10.4</tt> and the field being blank for the 
+foo-pm586 variant.
+</p>
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
+available perl packages vary by distribution, these package types provide
+a common use of this field.  For reference, we note the availabilty of
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+</p>
+<pre>
+    perl 5.6.0:  10.3
+    perl 5.8.0:  10.3
+    perl 5.8.1:  <b>10.3</b>, 10.4
+    perl 5.8.4:  10.3, 10.4
+    perl 5.8.6:  10.3, <b>10.4</b>, 10.5
+    perl 5.8.8:        10.4, <b>10.5</b>, 10.6
+    perl 5.10.0:             10.5, <b>10.6</b>
+</pre>
+<p>A way to include all variants in a single finkinfo file is as follows.
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+  &lt;&lt;
+</pre>
+<p>Note that we do not include old
+distributions, such as 10.2 or 10.4-transitional, since the versions of
+fink which are relevant for them do not recognize this field.
+</p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
 <b>从 fink 0.12.0 开始。</b>
@@ -1413,7 +1542,7 @@ pkglist fields.
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Depends</td><td>
 <p>
 在本软件包构建前必需安装的软件包的列表。
-在这个字段中会进行百分号展开(也包括这部分中的其它软件包列表字段：BuildDepends、Provides、Conflicts、Replaces、Recommends、Suggests 和 Enhances)。
+在这个字段中会进行百分号展开(也包括这部分中的其它软件包列表字段：BuildDepends、RuntimeDepends、Provides、Conflicts、Replaces、Recommends、Suggests 和 Enhances)。
 通常，它只是以逗号分割软件包名清单，但 Fink 现在也和 dpkg 一样支持替代软件包和版本子句。
 一个体现全部特性的例子是：
 </p>
@@ -1488,6 +1617,17 @@ essential ones; this is no longer true.
 If a build is being done
 with test suites enabled, the dependencies in the <tt style="white-space: nowrap;">TestDepends</tt>
 field will be added to this list.
+
+</p>
+</td></tr><tr valign="top"><td>RuntimeDepends</td><td>
+<p>
+<b>从 fink 0.32.0 开始。</b>
+
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
 
 </p>
 </td></tr><tr valign="top"><td>Provides</td><td>
@@ -1802,7 +1942,6 @@ the <tt style="white-space: nowrap;">PatchFile</tt> explicitly.
 <p>
 在编译和安装阶段设置一些环境变量。这可以用于传递一些编译器标志等信息到  configure 脚本和 Makefile 文件。目前支持的变量包括：
 CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
-LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
 LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
 MFLAGS, MAKEFLAGS。
 你指定的值也会应用前面说过百分号展开。一个常见的例子是：
@@ -1822,16 +1961,6 @@ LDFLAGS: -L%p/lib
 if <tt style="white-space: nowrap;">Type: -64bit</tt> is set to <tt style="white-space: nowrap;">-64bit</tt>, then the
 default value of <tt style="white-space: nowrap;">LDFLAGS</tt> is <tt style="white-space: nowrap;">-L%p/%lib -L%p/lib</tt> 
 instead.</p>
-<p>
-In addition, starting in fink 0.17.0, the following values are set for
-the 10.4-transitional distribution and earlier (but are not set for
-the 10.4 distribution and later):
-</p>
-<pre>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
 on which version of OSX is being run, but setting a value for it for 
@@ -2194,6 +2323,21 @@ Percent expansion  is performed on this field.
 <p>
 软件包安装在 %p/share/info 目录的信息文件的清单。
 这会在 postinst 和 prerm 脚本中添加合适的代码来维护 Info 目录的文件 <tt style="white-space: nowrap;">dir</tt>文件。
+</p>
+
+<p><b>Note:</b>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<pre>
+foo.info
+foo.info-1
+foo.info-2
+</pre>
+<p>you should only use:</p>
+<pre>
+InfoDocs:  foo.info
+</pre>
+
+<p>
 这个特性仍然在增加过程，将来可能会加入更多的字段以获得更精细的控制。
 </p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>
@@ -2373,9 +2517,9 @@ and <tt style="white-space: nowrap;">PatchScript</tt> fields for more informatio
 
 
 <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2010 The Fink Project.
+Copyright (c) 2001-2012 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.zh.xml,v 1.34 2008/08/27 05:20:53 dmacks Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.zh.xml,v 1.36 2012/01/26 09:57:59 fingolfin Exp $</i></p></body></html>

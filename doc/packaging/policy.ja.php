@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ポリシー";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/06/15 05:49:48';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2012/01/26 09:57:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト"><link rel="prev" href="format.php?phpLang=ja" title="パッケージ記述">';
 
 
@@ -419,20 +419,16 @@ SplitOff: &lt;&lt;
 				(将来のバージョンでは，この機能をヘッダファイルと静的ライブラリに対応するように拡張する可能性もある．)
 			</p>
 <p>
-  The goal of the Shared Library Policy is to allow assure
-  compatibility between libraries supplied by one package and
-  libraries or programs that use them in a different package. Some
-  packages may have shared libraries that are not designed to be used
-  by other packages. Common situations include a suite of programs
-  that come with a back-end library of utility functions or a program
-  that comes with plugins to handle various features. Because these
-  libraries are "private" to the package that has them, they do not
-  require being packaged with separate -shlibs
-  or <code>BuildDependsOnly</code> SplitOffs.
+  共有ライブラリのポリシーのゴールは，共有ライブラリを提供したパッケージと，それを使う別のパッケージとの互換性を保証することです．
+  パッケージによっては，共有ライブラリが他のパッケージに使われることを想定せずに設計されていることもあります．
+  一般的な例としては，プログラムスイートの裏方のライブラリや，
+  機能を追加するためのプラグインのあるようなプログラムです．
+  これらのライブラリは，そのパッケージにとって「プライベート」なので，
+  -shlibs や <code>BuildDependsOnly</code> といった　SplitOff は必要ありません．
 </p>
 			<p><b>フィールド Shlibs:</b></p>
 			<p>
-共有ライブラリを適切なパッケージに分類する他にも， Fink ポリシー第 4版では，
+共有ライブラリを適切なパッケージに分類する他にも， Fink ポリシー第4版では，
 共有ライブラリ全てをフィールド <code>Shlibs</code> を使って宣言することが求められています．
 
 このフィールドでは，各共有ライブラリに対して 1 行ずつ，
@@ -475,25 +471,18 @@ Shlibs: &lt;&lt;
 			</p>
 
 <p>
-The <code>Shlibs</code>
-entry for a private library uses a different syntax:
+プライベートなライブラリの <code>Shlibs</code> は，文法が異なります:
 </p>
 <pre>
   Shlibs: &lt;&lt;
     !%p/lib/%N/libbar.1.dylib
   &lt;&lt;
 </pre>
-<p>The leading exclamation point indicates that this is a private library,
-and since the other information is not relevant in this case, it is 
-not included.</p>
-<p>Note that in this example, the private shared library has been placed
-in its own subdirectory <code>%N</code> of the 
-<code>%i/lib</code> directory (which was named after the
-package).  This is a recommended procedure for private libraries,
-as an additional safety measure, to prevent other packages from accidentally
-linking to this library.
+<p>最初のビックリマークが，これはプライベートなライブラリであることを示しています．
+この場合，他の情報は関係がないので，省略されています．</p>
+<p>この例では，プライベートなライブラリが <code>%i/lib</code> 内の <code>%N</code> というサブディレクトリに保存されています．
+これはパッケージ名で，他のパッケージが誤ってこのライブラリにリンクしないようにするものです．
 </p>
-
 			<p>
 				<b>メジャーバージョン番号が変わるとき:</b>
 			</p>
@@ -554,27 +543,22 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				こうすると， <code>foo</code> に依存する他のパッケージのメンテナが改訂を済ませるまで，
 				ユーザのシステムでは大抵 <code>foo-bin</code> のインストールが要求されます．
 			</p>
-
 <p>
-  As of fink-0.28.0 (released in January 2008), the format of
-  the <code>Shlibs</code> entry for a "private" shared library has
-  changed (see earlier discussion of the difference between a public
-  and a private shared library). Note that the Shared Library Policy
-  has always required all shared libraries to be listed; the change
-  here is only in the syntax of the <code>Shlibs</code> field. Because
-  this type of shared library is not designed to be used by external
-  packages, there is no need to document its compatilibity or other
-  versioning. Instead, an exclamation-mark is used.  For example,
-  if <code>libquux.3.dylib</code> is
-  the <code>install_name</code> of a private shared library, it would
-  be listed as follows:
+  fink-0.28.0 (released in January 2008) より，<code>Shlibs</code> の「プライベート」なライブラリの記述方法が変わりました．
+  (上述のパブリックライブラリとプライベートライブラリの議論を参照)
+  共有ライブラリのポリシーでは，常にすべての共有ライブラリを一覧化するよう定められています．
+  ここで変わったのは，<code>Shlibs</code> フィールドの書き方だけです．
+  プライベートなライブラリは，他のパッケージによって使われることを想定していないので，
+  compatibility や他のバージョン情報は不要です．
+  その代わりに先頭にビックリマークをつけます．
+  例えば，あるプライベートな共有ライブラリの <code>install_name</code> が <code>libquux.3.dylib</code> である場合，
+  以下のようになります．
 </p>
 <pre>
   Shlibs: &lt;&lt;
     !%p/lib/libquux.3.dylib
   &lt;&lt;
 </pre>
-
 		
 		<h2><a name="perlmods">3.5 Perl モジュール</a></h2>
 			
@@ -721,12 +705,65 @@ InstallScript: &lt;&lt;
 				</a>
 				を参照)
 				Fink ポリシーとの違いは 2 点です．
-				まず，このポリシーは Fink では現在のところパッケージ emacs20 と emacs21 にのみ適用され，パッケージ xemacs には適用されません．
+				まず，このポリシーは Fink では現在のところパッケージ <code>emacs21</code>, <code>emacs22</code>, <code>emacs23</code> にのみ適用され，パッケージ xemacs には適用されません．
 				(この点は将来変わるかも知れません．)
 				次に Debian のポリシーと異なり， Fink パッケージはどれもファイルを直接
 				<code>/sw/share/emacs/site-lisp</code> にインストールして構いません．
 			</p>
 		
+
+
+
+
+<h2><a name="sources">3.7 Source Policy</a></h2>
+    <p>Sources should normally be downloaded from the location(s) that the upstream
+    developer(s) use, and any modifications for Fink should be done through the use
+    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+    source archive as a <code>Source</code> in your Fink packaging.</p>
+    <p>If a VCS checkout (e.g. from <b>git</b> or <b>svn</b>) is to be used, e.g.
+    because a project doesn't do formal releases, or a fix for a particular issue has
+    been added between releases of a package, an acceptable source can be generated
+    via the following method:</p>
+    <ol>
+        <li>Check out the package, preferably at a definite revision of the VCS.</li>
+        <li>Make an archive from the VCS checkout (e.g. <b>zip</b>, <b>tar</b>, <b>tar.gz</b>,
+        or <b>tar.bz2</b>).
+            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
+            <code>foo-0svn1234.tar.gz</code> for a package that doesn't make releases, or
+            <code>bar-1.2.3+svn4567.tar.bz2</code> for a Fink package which is between
+            upstream releases.</p></li>
+        <li>Use the same <code>Version</code> in your <code>.info</code> file.</li>
+        <li>It is also useful to put the commands that you ran to generate the source tarball in the
+        <code>DescPackaging</code> field.</li>
+        <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
+        If you don't have ready access to one, ask on the
+        <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a> or
+        <a href="http://webchat.freenode.net">the #fink IRC channel</a>,
+        and someone should be able to help.</li>
+    </ol>
+
+
+<h2><a name="downloading">3.8 File Download Policy</a></h2>
+    <p>Packages are not to download any files during the unpack, patch, compile, install,
+    or build phases of the <a href="reference.php?phpLang=ja#build">build process</a>.  Any large patches (i.e.
+    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
+    set up as additional Sources in accordance with the <a href="policy.php?phpLang=ja#sources">
+    Source Policy.</a></p>
+    <p>Packages may download data in a PostInstScript after they have been installed on the system,
+    under some limited circumstances:</p>
+    <ul>
+        <li>No updates to the package itself are allowed.</li>
+        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
+        virus definitions for <code>clamav</code> can be downloaded during this phase,
+        because they change continually.</li>
+    </ul>
+    <p>If you are unsure, contact <a href="mailto:fink-core@lists.sourceforge.net">the Fink Core
+    Team</a>.</p> 
+
+
+
+
+
 	<p align="right"><? echo FINK_NEXT ; ?>:
 <a href="fslayout.php?phpLang=ja">4. ファイルシステムのレイアウト</a></p>
 <? include_once "../../footer.inc"; ?>

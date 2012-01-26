@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2008/08/27 05:20:53';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2012/01/26 09:57:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -139,6 +139,75 @@ variants. Remember that omitting a certain architecture value does not
 mean that the package is not for that architecture.
 </p>
 
+</td></tr><tr valign="top"><td>Distribution</td><td>
+<p>
+A comma-separated list of distribution(s) for which the package
+(and any splitoff packages) are intended.
+At present, the only valid values for distribution are
+<code>10.4</code>,
+<code>10.5</code>,
+and <code>10.6</code>
+. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine distribution is not listed. If the field is omitted
+or the value is blank, all distributions are assumed.
+(Introduced in fink 0.26.0.)
+</p>
+<p>
+Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
+a common set of finkinfo files, the most common use of this field will be for 
+packages which are suitable for one of those distributions but not the
+other.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <code>Depends</code> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.6)
+  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+</pre>
+<p>
+will result in the field for the foo-pm581 variant
+being <code>10.3, 10.4</code> and the field being blank for the 
+foo-pm586 variant.
+</p>
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
+available perl packages vary by distribution, these package types provide
+a common use of this field.  For reference, we note the availabilty of
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+</p>
+<pre>
+    perl 5.6.0:  10.3
+    perl 5.8.0:  10.3
+    perl 5.8.1:  <b>10.3</b>, 10.4
+    perl 5.8.4:  10.3, 10.4
+    perl 5.8.6:  10.3, <b>10.4</b>, 10.5
+    perl 5.8.8:        10.4, <b>10.5</b>, 10.6
+    perl 5.10.0:             10.5, <b>10.6</b>
+</pre>
+<p>A way to include all variants in a single finkinfo file is as follows.
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+  &lt;&lt;
+</pre>
+<p>Note that we do not include old
+distributions, such as 10.2 or 10.4-transitional, since the versions of
+fink which are relevant for them do not recognize this field.
+</p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
 <b>从 fink 0.12.0 开始。</b>
@@ -296,7 +365,7 @@ pkglist fields.
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Depends</td><td>
 <p>
 在本软件包构建前必需安装的软件包的列表。
-在这个字段中会进行百分号展开(也包括这部分中的其它软件包列表字段：BuildDepends、Provides、Conflicts、Replaces、Recommends、Suggests 和 Enhances)。
+在这个字段中会进行百分号展开(也包括这部分中的其它软件包列表字段：BuildDepends、RuntimeDepends、Provides、Conflicts、Replaces、Recommends、Suggests 和 Enhances)。
 通常，它只是以逗号分割软件包名清单，但 Fink 现在也和 dpkg 一样支持替代软件包和版本子句。
 一个体现全部特性的例子是：
 </p>
@@ -371,6 +440,17 @@ essential ones; this is no longer true.
 If a build is being done
 with test suites enabled, the dependencies in the <code>TestDepends</code>
 field will be added to this list.
+
+</p>
+</td></tr><tr valign="top"><td>RuntimeDepends</td><td>
+<p>
+<b>从 fink 0.32.0 开始。</b>
+
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
 
 </p>
 </td></tr><tr valign="top"><td>Provides</td><td>
@@ -685,7 +765,6 @@ the <code>PatchFile</code> explicitly.
 <p>
 在编译和安装阶段设置一些环境变量。这可以用于传递一些编译器标志等信息到  configure 脚本和 Makefile 文件。目前支持的变量包括：
 CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
-LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
 LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
 MFLAGS, MAKEFLAGS。
 你指定的值也会应用前面说过百分号展开。一个常见的例子是：
@@ -705,16 +784,6 @@ LDFLAGS: -L%p/lib
 if <code>Type: -64bit</code> is set to <code>-64bit</code>, then the
 default value of <code>LDFLAGS</code> is <code>-L%p/%lib -L%p/lib</code> 
 instead.</p>
-<p>
-In addition, starting in fink 0.17.0, the following values are set for
-the 10.4-transitional distribution and earlier (but are not set for
-the 10.4 distribution and later):
-</p>
-<pre>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
 on which version of OSX is being run, but setting a value for it for 
@@ -1077,6 +1146,21 @@ Percent expansion  is performed on this field.
 <p>
 软件包安装在 %p/share/info 目录的信息文件的清单。
 这会在 postinst 和 prerm 脚本中添加合适的代码来维护 Info 目录的文件 <code>dir</code>文件。
+</p>
+
+<p><b>Note:</b>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<pre>
+foo.info
+foo.info-1
+foo.info-2
+</pre>
+<p>you should only use:</p>
+<pre>
+InfoDocs:  foo.info
+</pre>
+
+<p>
 这个特性仍然在增加过程，将来可能会加入更多的字段以获得更精细的控制。
 </p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>

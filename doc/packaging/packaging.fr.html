@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.fr.xml,v 1.76 2008/08/27 05:20:52 dmacks Exp $
+Generated from $Fink: packaging.fr.xml,v 1.78 2012/01/26 09:57:59 fingolfin Exp $
 -->
 <title>Fink Documentation - Création de paquets Fink</title></head><body>
 <table width="100%" cellspacing="0">
@@ -18,7 +18,7 @@ Fran&ccedil;ais |
 <h1 style="text-align: center;">Création de paquets Fink</h1>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets fink.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <a href="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</a>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <a href="http://pdb.finkproject.org/pdb/nomaintainer.php">paquet sans mainteneur</a>.</p>
-<h2>Contents</h2><ul><li><a href="#intro"><b>1 Introduction</b></a><ul><li><a href="#intro.def1">1.1 Qu'est-ce qu'un paquet ?</a></li><li><a href="#intro.ident">1.2 Identification d'un paquet</a></li></ul></li><li><a href="#format"><b>2 Descriptions de paquets</b></a><ul><li><a href="#format.trees">2.1 Arborescence</a></li><li><a href="#format.format">2.2 Format de fichier</a></li><li><a href="#format.percent">2.3 Raccourcis %</a></li></ul></li><li><a href="#policy"><b>3 Règles de distribution des paquets</b></a><ul><li><a href="#policy.licenses">3.1 Licences de paquets</a></li><li><a href="#policy.openssl">3.2 La licence GPL et OpenSSL</a></li><li><a href="#policy.prefix">3.3 Interférence avec le système de base</a></li><li><a href="#policy.sharedlibs">3.4 Bibliothèques partagées</a></li><li><a href="#policy.perlmods">3.5 Modules Perl</a></li><li><a href="#policy.emacs">3.6 Règles Emacs</a></li></ul></li><li><a href="#fslayout"><b>4 Organisation des fichiers</b></a><ul><li><a href="#fslayout.fhs">4.1 Hiérarchie standard des fichiers</a></li><li><a href="#fslayout.dirs">4.2 Répertoires</a></li><li><a href="#fslayout.avoid">4.3 À éviter</a></li></ul></li><li><a href="#compilers"><b>5 Compilateurs</b></a><ul><li><a href="#compilers.versions">5.1 Versions du compilateur</a></li><li><a href="#compilers.abi">5.2 L'ABI g++</a></li></ul></li><li><a href="#reference"><b>6 Référence</b></a><ul><li><a href="#reference.build">6.1 Construction d'un paquet</a></li><li><a href="#reference.fields">6.2 Champs</a></li><li><a href="#reference.splitoffs">6.3 Paquets multiples</a></li><li><a href="#reference.scripts">6.4 Scripts</a></li><li><a href="#reference.patches">6.5 Rustines</a></li><li><a href="#reference.profile.d">6.6 Scripts profile.d</a></li></ul></li></ul><h2><a name="intro">1 Introduction</a></h2>
+<h2>Contents</h2><ul><li><a href="#intro"><b>1 Introduction</b></a><ul><li><a href="#intro.def1">1.1 Qu'est-ce qu'un paquet ?</a></li><li><a href="#intro.ident">1.2 Identification d'un paquet</a></li></ul></li><li><a href="#format"><b>2 Descriptions de paquets</b></a><ul><li><a href="#format.trees">2.1 Arborescence</a></li><li><a href="#format.format">2.2 Format de fichier</a></li><li><a href="#format.percent">2.3 Raccourcis %</a></li></ul></li><li><a href="#policy"><b>3 Règles de distribution des paquets</b></a><ul><li><a href="#policy.licenses">3.1 Licences de paquets</a></li><li><a href="#policy.openssl">3.2 La licence GPL et OpenSSL</a></li><li><a href="#policy.prefix">3.3 Interférence avec le système de base</a></li><li><a href="#policy.sharedlibs">3.4 Bibliothèques partagées</a></li><li><a href="#policy.perlmods">3.5 Modules Perl</a></li><li><a href="#policy.emacs">3.6 Règles Emacs</a></li><li><a href="#policy.sources">3.7 Source Policy</a></li><li><a href="#policy.downloading">3.8 File Download Policy</a></li></ul></li><li><a href="#fslayout"><b>4 Organisation des fichiers</b></a><ul><li><a href="#fslayout.fhs">4.1 Hiérarchie standard des fichiers</a></li><li><a href="#fslayout.dirs">4.2 Répertoires</a></li><li><a href="#fslayout.avoid">4.3 À éviter</a></li></ul></li><li><a href="#compilers"><b>5 Compilateurs</b></a><ul><li><a href="#compilers.versions">5.1 Versions du compilateur</a></li><li><a href="#compilers.abi">5.2 L'ABI g++</a></li></ul></li><li><a href="#reference"><b>6 Référence</b></a><ul><li><a href="#reference.build">6.1 Construction d'un paquet</a></li><li><a href="#reference.fields">6.2 Champs</a></li><li><a href="#reference.splitoffs">6.3 Paquets multiples</a></li><li><a href="#reference.scripts">6.4 Scripts</a></li><li><a href="#reference.patches">6.5 Rustines</a></li><li><a href="#reference.profile.d">6.6 Scripts profile.d</a></li></ul></li></ul><h2><a name="intro">1 Introduction</a></h2>
 
 
 <h3><a name="intro.def1">1.1 Qu'est-ce qu'un paquet ?</a></h3>
@@ -34,14 +34,26 @@ L'installation d'un paquet binaire consiste simplement à le dépaqueter, puisqu
 
 
 <h3><a name="format.trees">2.1 Arborescence</a></h3>
-<p>Les descriptions de paquets sont lues à partir des répertoires <tt style="white-space: nowrap;">finkinfo</tt> situés dans le répertoire <tt style="white-space: nowrap;">/sw/fink/dists</tt>. La valeur de la variable "Trees" dans <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.26.0, il existe plusieurs façons de spécifier le nom du fichier ; il est recommandé d'utiliser le nom le plus court compatible avec les autres paquets nécessaires. Le nom du fichier est de la forme : nom invariant du paquet, suivi éventuellement d'un tiret et de l'architecture, suivi éventuellement d'un tiret et de la distribution, suivi éventuellement d'un tiret et de la version ou du couple version-révision, et terminé par ".info". Les éléments "architecture" et "distributtion" ne sont autorisés que si leurs champs sont présents dans le paquet et qu'ils fournissent une seule et unique valeur.</p>
+<p>Les descriptions de paquets sont lues à partir des répertoires <tt style="white-space: nowrap;">finkinfo</tt> situés dans le répertoire <tt style="white-space: nowrap;">/sw/fink/dists</tt>. La valeur de la variable "Trees" dans <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". 
+À partir de fink 0.26.0, il existe plusieurs façons de spécifier le nom du fichier ; il est recommandé d'utiliser le nom le plus court compatible avec les autres paquets nécessaires. 
+Le nom du fichier est de la forme : nom invariant du paquet, suivi éventuellement d'un tiret et de l'architecture, suivi éventuellement d'un tiret et de la distribution, suivi éventuellement d'un tiret et de la version ou du couple version-révision, et terminé par ".info". 
+Les éléments "architecture" et "distributtion" ne sont autorisés que si leurs champs sont présents dans le paquet et qu'ils fournissent une seule et unique valeur.
+</p>
 <p>L'arborescence des descriptions de paquets comprend plusieurs niveaux de répertoires. En voici la liste de la racine au bas de l'arborescence :</p>
 <ul>
-<li><tt style="white-space: nowrap;">dists</tt> est à la racine. Le répertoire <tt style="white-space: nowrap;">dists</tt> est nécessaire pour les outils Debian.</li>
+<li><tt style="white-space: nowrap;">dists</tt> est à la racine. Le répertoire <tt style="white-space: nowrap;">dists</tt> est nécessaire pour les outils Debian.
+
+In recent versions of fink, this is a symlink to a directory with a distribution-inspired name.
+
+</li>
 <li>La distribution. Il y en a trois : <tt style="white-space: nowrap;">stable</tt>, <tt style="white-space: nowrap;">unstable</tt> et <tt style="white-space: nowrap;">local</tt>. Le répertoire <tt style="white-space: nowrap;">local</tt> est sous le contrôle de l'utilisateur/administrateur local. Les répertoires <tt style="white-space: nowrap;">stable</tt> et <tt style="white-space: nowrap;">unstable</tt> font partie de Fink.</li>
-<li>L'arbre. L'arbre <tt style="white-space: nowrap;">main</tt> - principal contient la plupart des paquets. Les logiciels cryptographiques sont situés dans un arbre spécial <tt style="white-space: nowrap;">crypto</tt>, pour faciliter leur suppression, si cela s'avérait nécessaire.</li>
+<li>L'arbre.
+
+The <tt style="white-space: nowrap;">main</tt> tree contains the bulk of the packages. Prior to July 1, 2010, the Cryptographic software was kept in a separate tree, <tt style="white-space: nowrap;">crypto</tt>, but this is now a section of the <tt style="white-space: nowrap;">main</tt> tree.
+
+</li>
 <li><tt style="white-space: nowrap;">finkinfo</tt> et <tt style="white-space: nowrap;">binary-darwin-powerpc</tt>. <tt style="white-space: nowrap;">finkinfo</tt> contient les descriptions de paquets Fink et leurs rustines, tandis que <tt style="white-space: nowrap;">binary-darwin-powerpc</tt> contient les paquets binaires <tt style="white-space: nowrap;">.deb</tt>.</li>
-<li>Sections. L'arbre <tt style="white-space: nowrap;">main</tt> est subdivisé en sections thématiques pour en faciliter la gestion. L'arbre <tt style="white-space: nowrap;">crypto</tt> n'est, lui, pas subdivisé en sections à l'heure actuelle.</li>
+<li>Sections. L'arbre <tt style="white-space: nowrap;">main</tt> est subdivisé en sections thématiques pour en faciliter la gestion.</li>
 </ul>
 
 <h3><a name="format.format">2.2 Format de fichier</a></h3>
@@ -479,7 +491,61 @@ InstallScript: &lt;&lt;
 <p>De même, à partir de mars 2005, l'emplacement des pages de manuel et des modules installés par les paquets fink pour perl lui-même (paquets perlXYZ et perlXYZ-core pour des versions de perl différentes de celle fournie par Apple) a changé. Par conséquent, aucun autre paquet de fink fournissant des versions de mises à jour des modules core perl ne doit énumérer des paquets perlXYZ ou perlXYZ-core dans un champ <tt style="white-space: nowrap;">Replaces</tt>.</p>
 
 <h3><a name="policy.emacs">3.6 Règles Emacs</a></h3>
-<p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>). Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets emacs20 et emacs21 de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.</p>
+<p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>). Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets 
+<tt style="white-space: nowrap;">emacs21</tt>, <tt style="white-space: nowrap;">emacs22</tt> et <tt style="white-space: nowrap;">emacs21</tt> de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.</p>
+
+
+
+
+
+<h3><a name="policy.sources">3.7 Source Policy</a></h3>
+    <p>Sources should normally be downloaded from the location(s) that the upstream
+    developer(s) use, and any modifications for Fink should be done through the use
+    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+    source archive as a <tt style="white-space: nowrap;">Source</tt> in your Fink packaging.</p>
+    <p>If a VCS checkout (e.g. from <b>git</b> or <b>svn</b>) is to be used, e.g.
+    because a project doesn't do formal releases, or a fix for a particular issue has
+    been added between releases of a package, an acceptable source can be generated
+    via the following method:</p>
+    <ol>
+        <li>Check out the package, preferably at a definite revision of the VCS.</li>
+        <li>Make an archive from the VCS checkout (e.g. <b>zip</b>, <b>tar</b>, <b>tar.gz</b>,
+        or <b>tar.bz2</b>).
+            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
+            <tt style="white-space: nowrap;">foo-0svn1234.tar.gz</tt> for a package that doesn't make releases, or
+            <tt style="white-space: nowrap;">bar-1.2.3+svn4567.tar.bz2</tt> for a Fink package which is between
+            upstream releases.</p></li>
+        <li>Use the same <tt style="white-space: nowrap;">Version</tt> in your <tt style="white-space: nowrap;">.info</tt> file.</li>
+        <li>It is also useful to put the commands that you ran to generate the source tarball in the
+        <tt style="white-space: nowrap;">DescPackaging</tt> field.</li>
+        <li>Upload the tarball to a public download site where users can use <tt style="white-space: nowrap;">fink</tt> to download it.
+        If you don't have ready access to one, ask on the
+        <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a> or
+        <a href="http://webchat.freenode.net">the #fink IRC channel</a>,
+        and someone should be able to help.</li>
+    </ol>
+
+
+<h3><a name="policy.downloading">3.8 File Download Policy</a></h3>
+    <p>Packages are not to download any files during the unpack, patch, compile, install,
+    or build phases of the <a href="#reference.build">build process</a>.  Any large patches (i.e.
+    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
+    set up as additional Sources in accordance with the <a href="#policy.sources">
+    Source Policy.</a></p>
+    <p>Packages may download data in a PostInstScript after they have been installed on the system,
+    under some limited circumstances:</p>
+    <ul>
+        <li>No updates to the package itself are allowed.</li>
+        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
+        virus definitions for <tt style="white-space: nowrap;">clamav</tt> can be downloaded during this phase,
+        because they change continually.</li>
+    </ul>
+    <p>If you are unsure, contact <a href="mailto:fink-core@lists.sourceforge.net">the Fink Core
+    Team</a>.</p> 
+
+
+
+
 
 <h2><a name="fslayout">4 Organisation des fichiers</a></h2>
 
@@ -586,6 +652,75 @@ dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
   Architecture: (%type_pkg[perl] = 581) powerpc
 </pre>
 <p>est interprété comme une variante foo-pm581 pour l'architecture système <tt style="white-space: nowrap;">powerpc</tt>, le champ restant vide pour toute autre variante. N'oubliez pas que le fait d'omettre une certaine valeur d'architecture ne signifie pas que le paquet n'est pas censé tourner sur l'architecture système en question.</p>
+</td></tr><tr valign="top"><td>Distribution</td><td>
+<p>
+A comma-separated list of distribution(s) for which the package
+(and any splitoff packages) are intended.
+At present, the only valid values for distribution are
+<tt style="white-space: nowrap;">10.4</tt>,
+<tt style="white-space: nowrap;">10.5</tt>,
+and <tt style="white-space: nowrap;">10.6</tt>
+. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine distribution is not listed. If the field is omitted
+or the value is blank, all distributions are assumed.
+(Introduced in fink 0.26.0.)
+</p>
+<p>
+Since Fink's <tt style="white-space: nowrap;">10.4</tt>, <tt style="white-space: nowrap;">10.5</tt>, and 10.6 distributions share
+a common set of finkinfo files, the most common use of this field will be for 
+packages which are suitable for one of those distributions but not the
+other.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <tt style="white-space: nowrap;">Depends</tt> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.6)
+  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+</pre>
+<p>
+will result in the field for the foo-pm581 variant
+being <tt style="white-space: nowrap;">10.3, 10.4</tt> and the field being blank for the 
+foo-pm586 variant.
+</p>
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
+available perl packages vary by distribution, these package types provide
+a common use of this field.  For reference, we note the availabilty of
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+</p>
+<pre>
+    perl 5.6.0:  10.3
+    perl 5.8.0:  10.3
+    perl 5.8.1:  <b>10.3</b>, 10.4
+    perl 5.8.4:  10.3, 10.4
+    perl 5.8.6:  10.3, <b>10.4</b>, 10.5
+    perl 5.8.8:        10.4, <b>10.5</b>, 10.6
+    perl 5.10.0:             10.5, <b>10.6</b>
+</pre>
+<p>A way to include all variants in a single finkinfo file is as follows.
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+  &lt;&lt;
+</pre>
+<p>Note that we do not include old
+distributions, such as 10.2 or 10.4-transitional, since the versions of
+fink which are relevant for them do not recognize this field.
+</p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p><b>Introduit à partir de fink 0.12.0.</b> Ce champ facultatif peut être utilisé pour spécifier l'ère du paquet (défaut 0 si ce champ n'est pas renseigné). Pour de plus amples informations, voir <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a>. Comme Fink et quelques-uns des outils Debian sous-jacents utilisent nom-version-revision comme identifiant unique d'un paquet, vous ne devez pas créer deux paquets qui ne diffèrent que par le numéro d'ère.</p>
 <p>Quant elle est utilisée dans la version, l'ère apparaît avant la valeur de la version, séparée d'elle par deux-points (1:3.14-2). Notez que l'ère ne fait partie ni de <tt style="white-space: nowrap;">%v</tt>, ni de <tt style="white-space: nowrap;">%f</tt>. Si vous ajoutez un champ ère au fichier de description d'un paquet, vous pouvez être amené à l'introduire également dans ses dépendances. Par exemple, si vous ajoutez <tt style="white-space: nowrap;">Epoch: 1</tt> à foo et que foo-dev déclare <tt style="white-space: nowrap;">Depends: foo-shlibs (= %v-%r)</tt>, vous devez le changer en <tt style="white-space: nowrap;">Depends: foo-shlibs (= %e:%v-%r)</tt>.
@@ -670,7 +805,7 @@ SplitOff: &lt;&lt;
 </td></tr></table>
 <p><b>Dépendances :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>Depends</td><td>
-<p>Liste de paquets à installer pour que le paquet puisse compiler. L'interprétation des raccourcis a lieu dans ce champ (tout comme dans les autres champs de cette catégorie : BuildDepends, Provides, Conflicts, Replaces, Recommends, Suggests et Enhances). C'est, en général, une liste de noms de paquets séparés par des virgules, mais Fink gère maintenant les clauses de choix et de version avec la même syntaxe que dpkg. En voici un exemple :</p>
+<p>Liste de paquets à installer pour que le paquet puisse compiler. L'interprétation des raccourcis a lieu dans ce champ (tout comme dans les autres champs de cette catégorie : BuildDepends, RuntimeDepends, Provides, Conflicts, Replaces, Recommends, Suggests et Enhances). C'est, en général, une liste de noms de paquets séparés par des virgules, mais Fink gère maintenant les clauses de choix et de version avec la même syntaxe que dpkg. En voici un exemple :</p>
 <pre>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</pre>
 <p>Notez qu'on ne peut indiquer de réelles options de dépendances. Si un paquet fonctionne avec ou sans un autre paquet, vous devez soit vous assurer que l'autre paquet n'est pas utilisé, même s'il est présent, soit l'ajouter à la liste des dépendances. Si vous voulez donner à l'utilisateur le choix entre les deux options, faîtes deux paquets distincts, par exemple : wget et wget-ssl.</p>
 <p>Ordre des opérations : le "OU" logique (liste de choix exclusifs) a priorité sur le "ET" logique entre chaque paquet (ou jeu de choix) dans la liste séparée par des virgules. À moins de mettre des parenthèses comme celles utilisées en arithmétique, il n'y a aucun moyen de spécifier des groupes de choix ou de changer l'ordre des opérations dans le champ <tt style="white-space: nowrap;">Depends</tt> et les champs similaires.</p>
@@ -699,6 +834,16 @@ BuildDepends: id3lib3.7-dev | id3lib4-dev
 <p>Auparavant, les paquets non essentiels dépendaient implicitement des paquets essentiels ; ce n'est plus vrai.</p>
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p><b>Introduit dans fink 0.9.0.</b> Liste de dépendances utilisées uniquement lors de la compilation. Il sert à spécifier des outils (par exemple flex) qui doivent être présents pour compiler les paquets, mais qui ne sont pas nécessaires à l'exécution. Utilise la même syntaxe que Depends. Si les séries de tests sont activées, les dépendances du champs <tt style="white-space: nowrap;">TestDepends</tt> sont ajoutés à cette liste.</p>
+</td></tr><tr valign="top"><td>RuntimeDepends</td><td>
+<p><b>Introduit dans fink 0.32.0.</b>
+
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
+
+</p>
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>Liste de noms de paquets séparés par des virgules que ce paquet est censé "fournir". Si un paquet nommé "pine" indique <tt style="white-space: nowrap;">Provides: mailer</tt>, alors toute dépendance à "mailer" est considérée comme satisfaite si "pine" est installé. En général, on énumère aussi ces paquets dans les champs "Conflicts" et "Replaces".</p>
 <p>Notez qu'aucun numéro de version n'est associé aux éléments Provides. Ils n'héritent pas du paquet parent qui contient la liste Provides, et il n'existe aucune syntaxe permettant d'indiquer un numéro de version dans le champ Provides lui-même. En outre, une dépendance contenant un numéro de version n'est pas satisfaite par un paquet qui a un champ Provides contenant le paquet dépendant. En conséquence, le fait d'avoir plusieurs variantes avec un champ Provides qui inclut un même paquet peut être dangereux, car cela revient à interdire l'utilisation des numéros de versions dans les dépendances. Par exemple, si foo-gnome et foo-nognome ont tous les deux un champ "Provides: foo", tout autre paquet contenant un champ "Depends: foo (&gt; 1.1)" ne fonctionnera pas correctement.</p>
@@ -787,7 +932,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 </td></tr></table>
 <p><b>Phase de compilation :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>Set<b>ENVVAR</b></td><td>
-<p>Définit certaines variables d'environnement pendant les phases de compilation et d'installation. On peut utiliser ce champ pour passer des drapeaux de compilation, etc... aux scripts configure et aux Makefile. Les variables reconnues à l'heure actuelle sont : CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME, LD, LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, MFLAGS, MAKEFLAGS. L'interprétation des raccourcis a lieu sur la valeur spécifiée, comme expliquée dans la section précédente. Exemple courant :</p>
+<p>Définit certaines variables d'environnement pendant les phases de compilation et d'installation. On peut utiliser ce champ pour passer des drapeaux de compilation, etc... aux scripts configure et aux Makefile. Les variables reconnues à l'heure actuelle sont : CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME, LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, MFLAGS, MAKEFLAGS. L'interprétation des raccourcis a lieu sur la valeur spécifiée, comme expliquée dans la section précédente. Exemple courant :</p>
 <pre>SetCPPFLAGS: -no-cpp-precomp</pre>
 <p>Certaines de ces variables ont des valeurs pré-établies par défaut. Si vous leur donnez une valeur, celle-ci sera ajoutée dans la liste devant la valeur par défaut. Les variables à valeur pré-établies sont les suivantes :</p>
 <pre>
@@ -795,12 +940,6 @@ CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </pre>
 <p>À partir de la version 0.26.0 de fink, il existe une exception à ces valeurs par défaut. Si le champ <tt style="white-space: nowrap;">Type: -64bit</tt> a pour valeur <tt style="white-space: nowrap;">-64bit</tt>, alors la valeur par défaut de la variable <tt style="white-space: nowrap;">LDFLAGS</tt> est <tt style="white-space: nowrap;">-L%p/%lib -L%p/lib</tt>.</p>
-<p>Puis, à partir de la version 0.17.0 de fink :</p>
-<pre>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
 <p>Enfin, la variable MACOSX_DEPLOYMENT_TARGET a une valeur par défaut qui dépend de la version de Mac OS X en cours d'exécution, mais le fait d'affecter une valeur à cette variable pour un paquet donné remplace la valeur par défaut, elle ne vient pas s'ajouter devant la valeur par défaut.</p>
 </td></tr><tr valign="top"><td>NoSet<b>ENVVAR</b></td><td>
 <p>Quand la valeur de ce champ est true (vraie), les valeurs par défaut des variables à valeurs pré-établies, telles CPPFLAGS, LDFLAGS et CXXFLAGS mentionnées ci-dessus, sont désactivées. Autrement dit, si vous ne voulez pas que LDFLAGS ait une valeur par défaut, utilisez <tt style="white-space: nowrap;">NoSetLDFLAGS: true</tt>.</p>
@@ -961,7 +1100,26 @@ Shared libraries that are "private" are denoted by an exclamation mark preceedin
 </td></tr><tr valign="top"><td>ConfFiles</td><td>
 <p>Liste de fichiers séparés par des espaces. Ces fichiers sont des fichiers de configuration modifiables par l'utilisateur. L'interprétation des raccourcis a lieu sur ce champ. Le chemin complet des fichiers doit être indiqué, comme dans <tt style="white-space: nowrap;">%p/etc/%n.conf</tt>. Ces fichiers sont traités de façon spéciale par dpkg. Quand un paquet est mis à jour et que le fichier de configuration a changé à la fois sur le disque et dans le paquet, dpkg demande à l'utilisateur quelle version il veut utiliser et sauvegarde l'ancien fichier. Quand un paquet est supprimé avec "remove", les fichiers de configuration ne sont pas supprimés. Pour les supprimer, il faut utiliser "purge".</p>
 </td></tr><tr valign="top"><td>InfoDocs</td><td>
-<p>Liste des documents Info que le paquet installe dans %p/share/info. Des commandes appropriées sont ajoutées aux scripts postinst et prerm pour mettre à jour le fichier de la hiérarchie Info <tt style="white-space: nowrap;">dir</tt>. Cette fonctionnalité est en cours de développement, d'autres champs pourront être ajoutés à l'avenir pour une gestion plus précise.</p>
+<p>Liste des documents Info que le paquet installe dans %p/share/info. 
+Des commandes appropriées sont ajoutées aux scripts postinst et prerm pour mettre à jour le fichier de la hiérarchie Info <tt style="white-space: nowrap;">dir</tt>. 
+</p>
+
+
+<p><b>Note:</b>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<pre>
+foo.info
+foo.info-1
+foo.info-2
+</pre>
+<p>you should only use:</p>
+<pre>
+InfoDocs:  foo.info
+</pre>
+
+
+<p>
+Cette fonctionnalité est en cours de développement, d'autres champs pourront être ajoutés à l'avenir pour une gestion plus précise.</p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>
 <p>Décrit un service pour <tt style="white-space: nowrap;">daemonic</tt>. <tt style="white-space: nowrap;">daemonic</tt> est utilisé par Fink pour créer et supprimer des éléments à lancer au démarrage pour les processus démon (par exemple les serveurs web). La description est ajoutée au paquet sous la forme d'un fichier nommé <tt style="white-space: nowrap;">%p/etc/daemons/<b>nom</b>.xml</tt>, où <b>nom</b> est indiqué par le champ DaemonicName et est réduit, par défaut, au nom du paquet. L'interprétation des raccourcis a lieu sur le contenu de ce champ. Notez que vous devez ajouter <tt style="white-space: nowrap;">daemonic</tt> à la liste des dépendances, si votre paquet utilise ce champ.</p>
 </td></tr><tr valign="top"><td>DaemonicName</td><td>
@@ -1035,9 +1193,9 @@ SplitOff2: &lt;&lt;
 <p>Si vous n'avez besoin que d'initialiser certaines variables d'environnement (par exemple, définir QTDIR comme '/sw'), vous pouvez utiliser le champ RuntimeVars, qui a été conçu exactement pour ce faire.</p>
 
 <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2010 The Fink Project.
+Copyright (c) 2001-2012 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.fr.xml,v 1.76 2008/08/27 05:20:52 dmacks Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.fr.xml,v 1.78 2012/01/26 09:57:59 fingolfin Exp $</i></p></body></html>

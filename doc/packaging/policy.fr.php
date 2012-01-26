@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Règles";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2008/08/27 05:20:52';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2012/01/26 09:57:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Organisation des fichiers"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
 
 
@@ -351,7 +351,61 @@ InstallScript: &lt;&lt;
 <p>De même, à partir de mars 2005, l'emplacement des pages de manuel et des modules installés par les paquets fink pour perl lui-même (paquets perlXYZ et perlXYZ-core pour des versions de perl différentes de celle fournie par Apple) a changé. Par conséquent, aucun autre paquet de fink fournissant des versions de mises à jour des modules core perl ne doit énumérer des paquets perlXYZ ou perlXYZ-core dans un champ <code>Replaces</code>.</p>
 
 <h2><a name="emacs">3.6 Règles Emacs</a></h2>
-<p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>). Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets emacs20 et emacs21 de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.</p>
+<p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>). Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets 
+<code>emacs21</code>, <code>emacs22</code> et <code>emacs21</code> de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.</p>
+
+
+
+
+
+<h2><a name="sources">3.7 Source Policy</a></h2>
+    <p>Sources should normally be downloaded from the location(s) that the upstream
+    developer(s) use, and any modifications for Fink should be done through the use
+    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+    source archive as a <code>Source</code> in your Fink packaging.</p>
+    <p>If a VCS checkout (e.g. from <b>git</b> or <b>svn</b>) is to be used, e.g.
+    because a project doesn't do formal releases, or a fix for a particular issue has
+    been added between releases of a package, an acceptable source can be generated
+    via the following method:</p>
+    <ol>
+        <li>Check out the package, preferably at a definite revision of the VCS.</li>
+        <li>Make an archive from the VCS checkout (e.g. <b>zip</b>, <b>tar</b>, <b>tar.gz</b>,
+        or <b>tar.bz2</b>).
+            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
+            <code>foo-0svn1234.tar.gz</code> for a package that doesn't make releases, or
+            <code>bar-1.2.3+svn4567.tar.bz2</code> for a Fink package which is between
+            upstream releases.</p></li>
+        <li>Use the same <code>Version</code> in your <code>.info</code> file.</li>
+        <li>It is also useful to put the commands that you ran to generate the source tarball in the
+        <code>DescPackaging</code> field.</li>
+        <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
+        If you don't have ready access to one, ask on the
+        <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a> or
+        <a href="http://webchat.freenode.net">the #fink IRC channel</a>,
+        and someone should be able to help.</li>
+    </ol>
+
+
+<h2><a name="downloading">3.8 File Download Policy</a></h2>
+    <p>Packages are not to download any files during the unpack, patch, compile, install,
+    or build phases of the <a href="reference.php?phpLang=fr#build">build process</a>.  Any large patches (i.e.
+    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
+    set up as additional Sources in accordance with the <a href="policy.php?phpLang=fr#sources">
+    Source Policy.</a></p>
+    <p>Packages may download data in a PostInstScript after they have been installed on the system,
+    under some limited circumstances:</p>
+    <ul>
+        <li>No updates to the package itself are allowed.</li>
+        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
+        virus definitions for <code>clamav</code> can be downloaded during this phase,
+        because they change continually.</li>
+    </ul>
+    <p>If you are unsure, contact <a href="mailto:fink-core@lists.sourceforge.net">the Fink Core
+    Team</a>.</p> 
+
+
+
+
 
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="fslayout.php?phpLang=fr">4. Organisation des fichiers</a></p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.ja.xml,v 1.45 2008/06/15 05:49:48 babayoshihiko Exp $
+Generated from $Fink: packaging.ja.xml,v 1.47 2012/01/26 09:57:59 fingolfin Exp $
 -->
 <title>Fink Documentation - Fink パッケージの作成方法</title></head><body>
 <table width="100%" cellspacing="0">
@@ -30,7 +30,7 @@ Available Languages:  |
 			<a href="http://pdb.finkproject.org/pdb/nomaintainer.php">現在メンテナのいないパッケージ</a>
 			のメンテナンスをお願いいたします．
 		</p>
-	<h2>Contents</h2><ul><li><a href="#intro"><b>1 始めに</b></a><ul><li><a href="#intro.def1">1.1 パッケージとは何か?</a></li><li><a href="#intro.ident">1.2 パッケージの区別</a></li></ul></li><li><a href="#format"><b>2 パッケージ記述</b></a><ul><li><a href="#format.trees">2.1 ツリーレイアウト</a></li><li><a href="#format.format">2.2 ファイル形式</a></li><li><a href="#format.percent">2.3 パーセント展開</a></li></ul></li><li><a href="#policy"><b>3 パッケージ化ポリシー</b></a><ul><li><a href="#policy.licenses">3.1 パッケージのライセンス</a></li><li><a href="#policy.openssl">3.2 GPL と OpenSSL</a></li><li><a href="#policy.prefix">3.3 基盤システムへの干渉問題</a></li><li><a href="#policy.sharedlibs">3.4 共有ライブラリ</a></li><li><a href="#policy.perlmods">3.5 Perl モジュール</a></li><li><a href="#policy.emacs">3.6 Emacs ポリシー</a></li></ul></li><li><a href="#fslayout"><b>4 ファイルシステムのレイアウト</b></a><ul><li><a href="#fslayout.fhs">4.1 ファイルシステム構造標準 (Filesystem Hierarchy Standard)</a></li><li><a href="#fslayout.dirs">4.2 ディレクトリ</a></li><li><a href="#fslayout.avoid">4.3 避けるべきこと</a></li></ul></li><li><a href="#compilers"><b>5 コンパイラ</b></a><ul><li><a href="#compilers.versions">5.1 コンパイラバージョン</a></li><li><a href="#compilers.abi">5.2 g++ ABI</a></li></ul></li><li><a href="#reference"><b>6 リファレンスマニュアル</b></a><ul><li><a href="#reference.build">6.1 ビルドプロセス</a></li><li><a href="#reference.fields">6.2 フィールド</a></li><li><a href="#reference.splitoffs">6.3 スプリットオフ (SplitOff)</a></li><li><a href="#reference.scripts">6.4 スクリプト</a></li><li><a href="#reference.patches">6.5 パッチ</a></li><li><a href="#reference.profile.d">6.6 Profile.d スクリプト</a></li></ul></li></ul><h2><a name="intro">1 始めに</a></h2>
+	<h2>Contents</h2><ul><li><a href="#intro"><b>1 始めに</b></a><ul><li><a href="#intro.def1">1.1 パッケージとは何か?</a></li><li><a href="#intro.ident">1.2 パッケージの区別</a></li></ul></li><li><a href="#format"><b>2 パッケージ記述</b></a><ul><li><a href="#format.trees">2.1 ツリーレイアウト</a></li><li><a href="#format.format">2.2 ファイル形式</a></li><li><a href="#format.percent">2.3 パーセント展開</a></li></ul></li><li><a href="#policy"><b>3 パッケージ化ポリシー</b></a><ul><li><a href="#policy.licenses">3.1 パッケージのライセンス</a></li><li><a href="#policy.openssl">3.2 GPL と OpenSSL</a></li><li><a href="#policy.prefix">3.3 基盤システムへの干渉問題</a></li><li><a href="#policy.sharedlibs">3.4 共有ライブラリ</a></li><li><a href="#policy.perlmods">3.5 Perl モジュール</a></li><li><a href="#policy.emacs">3.6 Emacs ポリシー</a></li><li><a href="#policy.sources">3.7 Source Policy</a></li><li><a href="#policy.downloading">3.8 File Download Policy</a></li></ul></li><li><a href="#fslayout"><b>4 ファイルシステムのレイアウト</b></a><ul><li><a href="#fslayout.fhs">4.1 ファイルシステム構造標準 (Filesystem Hierarchy Standard)</a></li><li><a href="#fslayout.dirs">4.2 ディレクトリ</a></li><li><a href="#fslayout.avoid">4.3 避けるべきこと</a></li></ul></li><li><a href="#compilers"><b>5 コンパイラ</b></a><ul><li><a href="#compilers.versions">5.1 コンパイラバージョン</a></li><li><a href="#compilers.abi">5.2 g++ ABI</a></li></ul></li><li><a href="#reference"><b>6 リファレンスマニュアル</b></a><ul><li><a href="#reference.build">6.1 ビルドプロセス</a></li><li><a href="#reference.fields">6.2 フィールド</a></li><li><a href="#reference.splitoffs">6.3 スプリットオフ (SplitOff)</a></li><li><a href="#reference.scripts">6.4 スクリプト</a></li><li><a href="#reference.patches">6.5 パッチ</a></li><li><a href="#reference.profile.d">6.6 Profile.d スクリプト</a></li></ul></li></ul><h2><a name="intro">1 始めに</a></h2>
 		
 		
 		<h3><a name="intro.def1">1.1 パッケージとは何か?</a></h3>
@@ -91,7 +91,7 @@ Available Languages:  |
 				「パッケージ名」に拡張子 ".info" を付けただけの簡略形式が便利です．
 fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの方法があります:
 推奨されるのは，他の必要なパッケージファイルと整合性のとれる最も短いものです．
-ファイル名の形式は: 亜種のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision，を
+ファイル名の形式は: Variant のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision，を
 ハイフンでつなぎ，".info" で終えます．
 "architecture" と "distribution" は，対応するフィールドが定義され，値を一つだけ持つ場合に限ります．
 			</p>
@@ -103,6 +103,7 @@ fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの�
 				<li>
 					ツリーは <tt style="white-space: nowrap;">dists</tt> から始まる．
 					<tt style="white-space: nowrap;">dists</tt> ディレクトリは Debian ツールで必須．
+					最近の fink では，ディストリビューションのわかるディレクトリへの symlink になっている．
 				</li>
 				<li>
 					ディストリビューション．
@@ -113,7 +114,8 @@ fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの�
 				<li>
 					ツリー．
 					ツリー <tt style="white-space: nowrap;">main</tt> にはパッケージの大部分が含まれる．
-					暗号を使うソフトウェアは別ツリー <tt style="white-space: nowrap;">crypto</tt> に収められ，必要であれば簡単に取り除ける．
+					２０１０年７月１日以前は，暗号を使うソフトウェアは別ツリー <tt style="white-space: nowrap;">crypto</tt> に収められていたが，
+					現在は <tt style="white-space: nowrap;">main</tt> 以下の１セクションになっている．
 				</li>
 				<li>
 					<tt style="white-space: nowrap;">finkinfo</tt> または <tt style="white-space: nowrap;">binary-darwin-powerpc</tt>．
@@ -123,7 +125,6 @@ fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの�
 				<li>
 					セクション．
 					ツリー <tt style="white-space: nowrap;">main</tt> は，管理しやすくするために種類別に分類されている．
-					ツリー <tt style="white-space: nowrap;">crypto</tt> は現在のところ分類されていない．
 				</li>
 			</ul>
 		
@@ -756,20 +757,16 @@ SplitOff: &lt;&lt;
 				(将来のバージョンでは，この機能をヘッダファイルと静的ライブラリに対応するように拡張する可能性もある．)
 			</p>
 <p>
-  The goal of the Shared Library Policy is to allow assure
-  compatibility between libraries supplied by one package and
-  libraries or programs that use them in a different package. Some
-  packages may have shared libraries that are not designed to be used
-  by other packages. Common situations include a suite of programs
-  that come with a back-end library of utility functions or a program
-  that comes with plugins to handle various features. Because these
-  libraries are "private" to the package that has them, they do not
-  require being packaged with separate -shlibs
-  or <tt style="white-space: nowrap;">BuildDependsOnly</tt> SplitOffs.
+  共有ライブラリのポリシーのゴールは，共有ライブラリを提供したパッケージと，それを使う別のパッケージとの互換性を保証することです．
+  パッケージによっては，共有ライブラリが他のパッケージに使われることを想定せずに設計されていることもあります．
+  一般的な例としては，プログラムスイートの裏方のライブラリや，
+  機能を追加するためのプラグインのあるようなプログラムです．
+  これらのライブラリは，そのパッケージにとって「プライベート」なので，
+  -shlibs や <tt style="white-space: nowrap;">BuildDependsOnly</tt> といった　SplitOff は必要ありません．
 </p>
 			<p><b>フィールド Shlibs:</b></p>
 			<p>
-共有ライブラリを適切なパッケージに分類する他にも， Fink ポリシー第 4版では，
+共有ライブラリを適切なパッケージに分類する他にも， Fink ポリシー第4版では，
 共有ライブラリ全てをフィールド <tt style="white-space: nowrap;">Shlibs</tt> を使って宣言することが求められています．
 
 このフィールドでは，各共有ライブラリに対して 1 行ずつ，
@@ -812,25 +809,18 @@ Shlibs: &lt;&lt;
 			</p>
 
 <p>
-The <tt style="white-space: nowrap;">Shlibs</tt>
-entry for a private library uses a different syntax:
+プライベートなライブラリの <tt style="white-space: nowrap;">Shlibs</tt> は，文法が異なります:
 </p>
 <pre>
   Shlibs: &lt;&lt;
     !%p/lib/%N/libbar.1.dylib
   &lt;&lt;
 </pre>
-<p>The leading exclamation point indicates that this is a private library,
-and since the other information is not relevant in this case, it is 
-not included.</p>
-<p>Note that in this example, the private shared library has been placed
-in its own subdirectory <tt style="white-space: nowrap;">%N</tt> of the 
-<tt style="white-space: nowrap;">%i/lib</tt> directory (which was named after the
-package).  This is a recommended procedure for private libraries,
-as an additional safety measure, to prevent other packages from accidentally
-linking to this library.
+<p>最初のビックリマークが，これはプライベートなライブラリであることを示しています．
+この場合，他の情報は関係がないので，省略されています．</p>
+<p>この例では，プライベートなライブラリが <tt style="white-space: nowrap;">%i/lib</tt> 内の <tt style="white-space: nowrap;">%N</tt> というサブディレクトリに保存されています．
+これはパッケージ名で，他のパッケージが誤ってこのライブラリにリンクしないようにするものです．
 </p>
-
 			<p>
 				<b>メジャーバージョン番号が変わるとき:</b>
 			</p>
@@ -891,27 +881,22 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				こうすると， <tt style="white-space: nowrap;">foo</tt> に依存する他のパッケージのメンテナが改訂を済ませるまで，
 				ユーザのシステムでは大抵 <tt style="white-space: nowrap;">foo-bin</tt> のインストールが要求されます．
 			</p>
-
 <p>
-  As of fink-0.28.0 (released in January 2008), the format of
-  the <tt style="white-space: nowrap;">Shlibs</tt> entry for a "private" shared library has
-  changed (see earlier discussion of the difference between a public
-  and a private shared library). Note that the Shared Library Policy
-  has always required all shared libraries to be listed; the change
-  here is only in the syntax of the <tt style="white-space: nowrap;">Shlibs</tt> field. Because
-  this type of shared library is not designed to be used by external
-  packages, there is no need to document its compatilibity or other
-  versioning. Instead, an exclamation-mark is used.  For example,
-  if <tt style="white-space: nowrap;">libquux.3.dylib</tt> is
-  the <tt style="white-space: nowrap;">install_name</tt> of a private shared library, it would
-  be listed as follows:
+  fink-0.28.0 (released in January 2008) より，<tt style="white-space: nowrap;">Shlibs</tt> の「プライベート」なライブラリの記述方法が変わりました．
+  (上述のパブリックライブラリとプライベートライブラリの議論を参照)
+  共有ライブラリのポリシーでは，常にすべての共有ライブラリを一覧化するよう定められています．
+  ここで変わったのは，<tt style="white-space: nowrap;">Shlibs</tt> フィールドの書き方だけです．
+  プライベートなライブラリは，他のパッケージによって使われることを想定していないので，
+  compatibility や他のバージョン情報は不要です．
+  その代わりに先頭にビックリマークをつけます．
+  例えば，あるプライベートな共有ライブラリの <tt style="white-space: nowrap;">install_name</tt> が <tt style="white-space: nowrap;">libquux.3.dylib</tt> である場合，
+  以下のようになります．
 </p>
 <pre>
   Shlibs: &lt;&lt;
     !%p/lib/libquux.3.dylib
   &lt;&lt;
 </pre>
-
 		
 		<h3><a name="policy.perlmods">3.5 Perl モジュール</a></h3>
 			
@@ -1058,12 +1043,65 @@ InstallScript: &lt;&lt;
 				</a>
 				を参照)
 				Fink ポリシーとの違いは 2 点です．
-				まず，このポリシーは Fink では現在のところパッケージ emacs20 と emacs21 にのみ適用され，パッケージ xemacs には適用されません．
+				まず，このポリシーは Fink では現在のところパッケージ <tt style="white-space: nowrap;">emacs21</tt>, <tt style="white-space: nowrap;">emacs22</tt>, <tt style="white-space: nowrap;">emacs23</tt> にのみ適用され，パッケージ xemacs には適用されません．
 				(この点は将来変わるかも知れません．)
 				次に Debian のポリシーと異なり， Fink パッケージはどれもファイルを直接
 				<tt style="white-space: nowrap;">/sw/share/emacs/site-lisp</tt> にインストールして構いません．
 			</p>
 		
+
+
+
+
+<h3><a name="policy.sources">3.7 Source Policy</a></h3>
+    <p>Sources should normally be downloaded from the location(s) that the upstream
+    developer(s) use, and any modifications for Fink should be done through the use
+    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+    source archive as a <tt style="white-space: nowrap;">Source</tt> in your Fink packaging.</p>
+    <p>If a VCS checkout (e.g. from <b>git</b> or <b>svn</b>) is to be used, e.g.
+    because a project doesn't do formal releases, or a fix for a particular issue has
+    been added between releases of a package, an acceptable source can be generated
+    via the following method:</p>
+    <ol>
+        <li>Check out the package, preferably at a definite revision of the VCS.</li>
+        <li>Make an archive from the VCS checkout (e.g. <b>zip</b>, <b>tar</b>, <b>tar.gz</b>,
+        or <b>tar.bz2</b>).
+            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
+            <tt style="white-space: nowrap;">foo-0svn1234.tar.gz</tt> for a package that doesn't make releases, or
+            <tt style="white-space: nowrap;">bar-1.2.3+svn4567.tar.bz2</tt> for a Fink package which is between
+            upstream releases.</p></li>
+        <li>Use the same <tt style="white-space: nowrap;">Version</tt> in your <tt style="white-space: nowrap;">.info</tt> file.</li>
+        <li>It is also useful to put the commands that you ran to generate the source tarball in the
+        <tt style="white-space: nowrap;">DescPackaging</tt> field.</li>
+        <li>Upload the tarball to a public download site where users can use <tt style="white-space: nowrap;">fink</tt> to download it.
+        If you don't have ready access to one, ask on the
+        <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a> or
+        <a href="http://webchat.freenode.net">the #fink IRC channel</a>,
+        and someone should be able to help.</li>
+    </ol>
+
+
+<h3><a name="policy.downloading">3.8 File Download Policy</a></h3>
+    <p>Packages are not to download any files during the unpack, patch, compile, install,
+    or build phases of the <a href="#reference.build">build process</a>.  Any large patches (i.e.
+    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
+    set up as additional Sources in accordance with the <a href="#policy.sources">
+    Source Policy.</a></p>
+    <p>Packages may download data in a PostInstScript after they have been installed on the system,
+    under some limited circumstances:</p>
+    <ul>
+        <li>No updates to the package itself are allowed.</li>
+        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
+        virus definitions for <tt style="white-space: nowrap;">clamav</tt> can be downloaded during this phase,
+        because they change continually.</li>
+    </ul>
+    <p>If you are unsure, contact <a href="mailto:fink-core@lists.sourceforge.net">the Fink Core
+    Team</a>.</p> 
+
+
+
+
+
 	<h2><a name="fslayout">4 ファイルシステムのレイアウト</a></h2>
 		
 		
@@ -1367,10 +1405,10 @@ OS X 10.2 以前には <tt style="white-space: nowrap;">gcc_select</tt> はあ�
 						<p>
 							Fink のパッケージングポリシーでは，
 							どのパッケージも常に同じオプションを有効にしてコンパイルされるようにします．
-							あるパッケージに複数の変種を設ける場合は (フィールド <tt style="white-space: nowrap;">Type</tt> の説明を参照)，
-							変種を区別する情報をフィールド <tt style="white-space: nowrap;">Package</tt> に含めなければいけません
+							あるパッケージに複数の Variant を設ける場合は (フィールド <tt style="white-space: nowrap;">Type</tt> の説明を参照)，
+							 Variant を区別する情報をフィールド <tt style="white-space: nowrap;">Package</tt> に含めなければいけません
 							(パーセント展開 %type_pkg[] の説明を参照)．
-							これにより，各変種に固有の (どのオプションが有効かが分かる) 「パッケージ名」が与えられます．
+							これにより，各 Variant に固有の (どのオプションが有効かが分かる) 「パッケージ名」が与えられます．
 							フィールド <tt style="white-space: nowrap;">Package</tt> 内でパーセント展開 %type_pkg[] および %type_raw[] を使うことは最近導入されたばかりで，
 							古い Fink とは非互換であるため，注意が必要です．
 							そのため，そのようなパッケージ記述はフィールド <tt style="white-space: nowrap;">InfoN</tt> (ただし N&gt;=2) 内に埋め込むようにします．
@@ -1422,7 +1460,7 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 <p>
 このフィールドでは，値一覧にある値とパーセント展開を，通常の条件文法で使うことができます
 (詳細については，<tt style="white-space: nowrap;">Depends</tt> フィールドを参照)．
-これによって，特定の変種を特定のアーキテクチャーに制限することができます．
+これによって，特定の Variant を特定のアーキテクチャーに制限することができます．
 例えば:
 </p>
 <pre>
@@ -1431,8 +1469,77 @@ gcc-4.0 以前のコンパイラを使うパッケージ
   Architecture: (%type_pkg[perl] = 581) powerpc
 </pre>
 <p>
-によって，foo-pm581 という変種は <tt style="white-space: nowrap;">powerpc</tt> となり，他の変種には値無しになります．
+によって，foo-pm581 という Variant は <tt style="white-space: nowrap;">powerpc</tt> となり，他の Variant には値無しになります．
 ただし，アーキテクチャーの値が無いことは，そのアーキテクチャー用のパッケージではない，ということではありません．
+</p>
+</td></tr><tr valign="top"><td>Distribution</td><td>
+<p>
+A comma-separated list of distribution(s) for which the package
+(and any splitoff packages) are intended.
+At present, the only valid values for distribution are
+<tt style="white-space: nowrap;">10.4</tt>,
+<tt style="white-space: nowrap;">10.5</tt>,
+and <tt style="white-space: nowrap;">10.6</tt>
+. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine distribution is not listed. If the field is omitted
+or the value is blank, all distributions are assumed.
+(Introduced in fink 0.26.0.)
+</p>
+<p>
+Since Fink's <tt style="white-space: nowrap;">10.4</tt>, <tt style="white-space: nowrap;">10.5</tt>, and 10.6 distributions share
+a common set of finkinfo files, the most common use of this field will be for 
+packages which are suitable for one of those distributions but not the
+other.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <tt style="white-space: nowrap;">Depends</tt> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.6)
+  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+</pre>
+<p>
+will result in the field for the foo-pm581 variant
+being <tt style="white-space: nowrap;">10.3, 10.4</tt> and the field being blank for the 
+foo-pm586 variant.
+</p>
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
+available perl packages vary by distribution, these package types provide
+a common use of this field.  For reference, we note the availabilty of
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+</p>
+<pre>
+    perl 5.6.0:  10.3
+    perl 5.8.0:  10.3
+    perl 5.8.1:  <b>10.3</b>, 10.4
+    perl 5.8.4:  10.3, 10.4
+    perl 5.8.6:  10.3, <b>10.4</b>, 10.5
+    perl 5.8.8:        10.4, <b>10.5</b>, 10.6
+    perl 5.10.0:             10.5, <b>10.6</b>
+</pre>
+<p>A way to include all variants in a single finkinfo file is as follows.
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+  &lt;&lt;
+</pre>
+<p>Note that we do not include old
+distributions, such as 10.2 or 10.4-transitional, since the versions of
+fink which are relevant for them do not recognize this field.
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 						<p>
@@ -1475,7 +1582,7 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 						<p>
 							値が <tt style="white-space: nowrap;">perl</tt> の場合 (Fink 0.9.5 以降):
 							コンパイル及びインストール段階のスクリプトのデフォルト値が変わります．
-							Fink 0.13.0 からは，この値の変種として <tt style="white-space: nowrap;">perl $version</tt> が使えます．
+							Fink 0.13.0 からは，この値の Variant として <tt style="white-space: nowrap;">perl $version</tt> が使えます．
 							ここで "$version" は perl の特定のバージョンで，3つの数をピリオドで区切ったもの
 							(<tt style="white-space: nowrap;">perl 5.6.0</tt> など)．
 						</p>
@@ -1493,9 +1600,9 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 							
 						</p>
 						<p>
-							これに加えて「変種」という概念があります．
+							これに加えて「 Variant 」という概念があります．
 							単一のパッケージ記述が，有効なコンパイルオプションだけが違う複数のパッケージを生成するとき，
-							これらのパッケージは「変種」になります．
+							これらのパッケージは「 Variant 」になります．
 							このプロセスの鍵はサブタイプリストの利用です．
 							単一の文字列ではなく，文字列の空白区切りリストを括弧で括ったものを使います．
 							Fink はリスト内のサブタイプ毎にパッケージ記述をコピーし，各コピー内ではリストを単一のサブタイプに置き換えます．
@@ -1513,12 +1620,12 @@ Type: -x11 (boolean)
 Type: -x11 (-x11 .)
 </pre>
 						<p>
-							サブタイプリストの展開とそれに伴うパッケージ変種の作成は，再帰的に行われます．
+							サブタイプリストの展開とそれに伴うパッケージ Variant の作成は，再帰的に行われます．
 							またサブタイプリストを持つタイプが複数ある場合は，あり得る組み合わせが全て生成されます．
 						</p>
 <pre>Type: -ssl (boolean), perl (5.6.0 5.8.1)</pre>
 						<p>
-							Type 以外のフィールドから特定の変種のサブタイプを得るには，疑似ハッシュ %type_raw[] および %type_pkg[] を使います．
+							Type 以外のフィールドから特定の Variant のサブタイプを得るには，疑似ハッシュ %type_raw[] および %type_pkg[] を使います．
 							以下にパッケージ記述の例の一部を示します．
 						</p>
 <pre>
@@ -1621,7 +1728,7 @@ pkglist フィールドにコメントが可能．
 							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージのリスト．
 							このフィールドではパーセント展開が行われる
 							(「依存性関連」の他のフィールドでも同様:
-							BuildDepends, Provides, Conflicts, Replaces, Recommends, Suggests および Enhances)
+							BuildDepends, RuntimeDepends, Provides, Conflicts, Replaces, Recommends, Suggests および Enhances)
 							普通，値は「パッケージ名」の単なるカンマ区切りリストだが，
 							現在の Fink は (dpkgと同じ形式の) 「代替パッケージ節」と「バージョン節」に対応している．
 							それらを全て盛りこんだ例:
@@ -1701,6 +1808,17 @@ Depends: (%type_pkg[-x11]) x11
 							<tt style="white-space: nowrap;">TestDepends</tt>
 							がこのリストに追加される．
 						</p>
+					</td></tr><tr valign="top"><td>RuntimeDepends</td><td>
+						<p>
+							<b>Fink 0.32.0 で導入:</b>
+
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
+
+						</p>
 					</td></tr><tr valign="top"><td>Provides</td><td>
 						<p>
 							そのパッケージが「提供」すると考えられる「パッケージ名」のカンマ区切りのリスト．
@@ -1713,7 +1831,7 @@ Depends: (%type_pkg[-x11]) x11
 							Provides 項目には，バージョン番号に関連した情報はない．
 							親パッケージから取得することも，Provides フィールド自体にはバージョン番号を特定するような仕組みなどもない．
 							バージョンを指定する依存性があっても，Provides を持つパッケージによって満たすことはできない．
-							結果として，同一の代理パッケージを提供する変種が多数あるのは危険である．
+							結果として，同一の代理パッケージを提供する Variant が多数あるのは危険である．
 							これによってバージョンを指定した依存性ができなくなるためである．
 							例えば， foo-gnome と foo-nogome が "Provides: foo" を提供する場合，"Depends: foo (&gt; 1.1)" は動作しない．
 						</p>
@@ -1821,7 +1939,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							または <b>ミラー名称</b> に <tt style="white-space: nowrap;">custom</tt> と書くことで，
 							Fink にフィールド <tt style="white-space: nowrap;">CustomMirror</tt> を使わせることもできる．
 							URL が wget に渡される前に，パーセント記法の展開が行われる．
-							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
+							%n は %type_ 系で示される Variant データ全てを含む文字列に展開されることに注意．
 							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 						</p>
 						<p>
@@ -2013,11 +2131,11 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							PatchScript が指定されている場合，パッチはその後に別のステップとして実行されます．
 						</p>
 						<p>
-							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
+							%n は %type_ 系で示される Variant データ全てを含む文字列に展開されることに注意．
 							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよいでしょう．
 							単一のパッチファイルを管理し，
-							各変種固有の変更点を <tt style="white-space: nowrap;">PatchScript</tt> に記述する方が，
-							各変種毎にパッチファイルを作るより手間が少ないでしょう．
+							各 Variant 固有の変更点を <tt style="white-space: nowrap;">PatchScript</tt> に記述する方が，
+							各 Variant 毎にパッチファイルを作るより手間が少ないでしょう．
 						</p>
 					</td></tr><tr valign="top"><td>PatchFile</td><td>
 <p>
@@ -2065,7 +2183,6 @@ patch -p1 &lt; %{PatchFile}
 							コンパイラフラグなどを configure スクリプトや Makefile に渡すために使われます．
 							現在，対応している変数は次の通り: 
 							CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
-							LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
 							LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
 							MFLAGS, MAKEFLAGS.
 							指定した値の中では前節で説明したパーセント展開が行われます．
@@ -2085,13 +2202,6 @@ LDFLAGS: -L%p/lib
 <tt style="white-space: nowrap;">Type: -64bit</tt> が <tt style="white-space: nowrap;">-64bit</tt> と定義されている場合，
 <tt style="white-space: nowrap;">LDFLAGS</tt> は <tt style="white-space: nowrap;">-L%p/%lib -L%p/lib</tt> となります．
 </p>
-<p>fink-0.17.0 より，10.4-transitional ディストリビューションまで，以下の値が設定されます
-(が，10.4 以降では設定されません)．</p>
-<pre>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
 						<p>
 							MACOSX_DEPLOYMENT_TARGET は OSX のバージョンを既定値として持ちます．
 							これに値を指定することで (値の追加ではなく) 既定値を書き換えることができます．
@@ -2127,7 +2237,7 @@ Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
 </pre>
 						<p>
-							これは<tt style="white-space: nowrap;">--mandir</tt> と <tt style="white-space: nowrap;">--disable-shared</tt> フラグを送り， -x11 変種の場合のみ <tt style="white-space: nowrap;">--with-x11</tt> を送ってください．
+							これは<tt style="white-space: nowrap;">--mandir</tt> と <tt style="white-space: nowrap;">--disable-shared</tt> フラグを送り， -x11  Variant の場合のみ <tt style="white-space: nowrap;">--with-x11</tt> を送ってください．
 						</p>
 					</td></tr><tr valign="top"><td>GCC</td><td>
 						<p>
@@ -2373,10 +2483,11 @@ INSTALLSCRIPT=%i/bin
 						<p>
 							<b>Fink 0.11.0 で導入:</b>
 							このフィールドでは，そのパッケージでインストールされる共有ライブラリを指定します．
-
-There is one line for each shared library, which contains the <tt style="white-space: nowrap;">-install_name</tt> of the library and information about its binary compatibility. 
-Shared libraries that are "public" (i.e., provided for use by other packages) have, separated by whitespace after the filename, the <tt style="white-space: nowrap;">-compatibility_version</tt>, versioned package dependency information specifying the Fink package which provides this library at this compatibility version, and the library architecture.
-
+							それぞれの共有ライブラリに一つの行があります．
+							これには，ライブラリの<tt style="white-space: nowrap;">-install_name</tt>と compatibility に関する情報は含まれます．
+							「パブリック」な共有ライブラリ (つまり，他のパッケージに使われる) の場合，
+							ファイル名の後に，空白区切りで，<tt style="white-space: nowrap;">-compatibility_version</tt>，
+							この compatibility version の Fink パッケージ，
 							ライブラリのアーキテクチャ
 							(値は "32", "64", または
                              "32-64", あるいは空欄; 空欄時の既定値は "32" ．) 
@@ -2385,9 +2496,8 @@ Shared libraries that are "public" (i.e., provided for use by other packages) ha
 							<b>一番古い</b>バージョンを指します．
 							フィールド Shlibs の設定は「この名前がついていて compatibility_version がこれ以上のライブラリは，
 							その Fink パッケージの今後のバージョンでも必ず含まれている」というメンテナからの保証に相当します．
-
-Shared libraries that are "private" are denoted by an exclamation mark preceeding the filename, and no compatilibity or versioning information is given. See the <a href="#policy.sharedlibs">Shared Library Policy</a> for more information.
-
+							「プライベート」な共有ライブラリは，ファイル名の前にビックリマークをつけ，代わりに compatibility やバージョン情報は書きません．
+							詳細は <a href="#policy.sharedlibs">共有ライブラリのポリシー</a> を参照してください．
 						</p>
 					</td></tr><tr valign="top"><td>RuntimeVars</td><td>
 						<p>
@@ -2491,8 +2601,24 @@ AnotherVar: foo bar
 							パッケージが <tt style="white-space: nowrap;">%p/share/info</tt> にインストールする Info 文書のリスト．
 							この設定により，Info ディレクトリ・ファイル <tt style="white-space: nowrap;">dir</tt> を管理するための適切なコードが
 							postinst および prerm スクリプトに追加されます．
-							この機能はまだ流動的で，将来，精密な管理のためにさらにフィールドが追加されるかも知れません．
-						</p>
+</p>
+
+<p><b>Note:</b>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<pre>
+foo.info
+foo.info-1
+foo.info-2
+</pre>
+<p>you should only use:</p>
+<pre>
+InfoDocs:  foo.info
+</pre>
+<p>This feature is still in flux, more fields for finer control may be
+added in the future.
+</p>
+
+
 					</td></tr><tr valign="top"><td>DaemonicFile</td><td>
 						<p>
 							<tt style="white-space: nowrap;">daemonic</tt> のサービスの説明を記述します．
@@ -2588,7 +2714,7 @@ AnotherVar: foo bar
 %n-%v-%r は，パッケージのユニークな識別子として扱われるため，
 <tt style="white-space: nowrap;">SplitOff</tt> (あるいは <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>)
 を用いて (同じ <tt style="white-space: nowrap;">Version</tt> と <tt style="white-space: nowrap;">Revision</tt> で) <tt style="white-space: nowrap;">Package</tt> を作成しては行けません．
-変種を使う際は，各変種が独立したパッケージとなるようにしてください．
+ Variant を使う際は，各 Variant が独立したパッケージとなるようにしてください．
 つまり，以下のようなパッケージレイアウトは禁止されます:
 </p>
 <pre>
@@ -2716,9 +2842,9 @@ SplitOff2: &lt;&lt;
 			</p>
 		
 	<hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2010 The Fink Project.
+Copyright (c) 2001-2012 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.ja.xml,v 1.45 2008/06/15 05:49:48 babayoshihiko Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.ja.xml,v 1.47 2012/01/26 09:57:59 fingolfin Exp $</i></p></body></html>

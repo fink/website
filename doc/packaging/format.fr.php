@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Descriptions de paquets";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2008/08/27 05:20:52';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2012/01/26 09:57:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -11,14 +11,26 @@ include_once "header.fr.inc";
 
 
 <h2><a name="trees">2.1 Arborescence</a></h2>
-<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <code>/sw/fink/dists</code>. La valeur de la variable "Trees" dans <code>/sw/etc/fink.conf</code> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". À partir de fink 0.26.0, il existe plusieurs façons de spécifier le nom du fichier ; il est recommandé d'utiliser le nom le plus court compatible avec les autres paquets nécessaires. Le nom du fichier est de la forme : nom invariant du paquet, suivi éventuellement d'un tiret et de l'architecture, suivi éventuellement d'un tiret et de la distribution, suivi éventuellement d'un tiret et de la version ou du couple version-révision, et terminé par ".info". Les éléments "architecture" et "distributtion" ne sont autorisés que si leurs champs sont présents dans le paquet et qu'ils fournissent une seule et unique valeur.</p>
+<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <code>/sw/fink/dists</code>. La valeur de la variable "Trees" dans <code>/sw/etc/fink.conf</code> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". 
+À partir de fink 0.26.0, il existe plusieurs façons de spécifier le nom du fichier ; il est recommandé d'utiliser le nom le plus court compatible avec les autres paquets nécessaires. 
+Le nom du fichier est de la forme : nom invariant du paquet, suivi éventuellement d'un tiret et de l'architecture, suivi éventuellement d'un tiret et de la distribution, suivi éventuellement d'un tiret et de la version ou du couple version-révision, et terminé par ".info". 
+Les éléments "architecture" et "distributtion" ne sont autorisés que si leurs champs sont présents dans le paquet et qu'ils fournissent une seule et unique valeur.
+</p>
 <p>L'arborescence des descriptions de paquets comprend plusieurs niveaux de répertoires. En voici la liste de la racine au bas de l'arborescence :</p>
 <ul>
-<li><code>dists</code> est à la racine. Le répertoire <code>dists</code> est nécessaire pour les outils Debian.</li>
+<li><code>dists</code> est à la racine. Le répertoire <code>dists</code> est nécessaire pour les outils Debian.
+
+In recent versions of fink, this is a symlink to a directory with a distribution-inspired name.
+
+</li>
 <li>La distribution. Il y en a trois : <code>stable</code>, <code>unstable</code> et <code>local</code>. Le répertoire <code>local</code> est sous le contrôle de l'utilisateur/administrateur local. Les répertoires <code>stable</code> et <code>unstable</code> font partie de Fink.</li>
-<li>L'arbre. L'arbre <code>main</code> - principal contient la plupart des paquets. Les logiciels cryptographiques sont situés dans un arbre spécial <code>crypto</code>, pour faciliter leur suppression, si cela s'avérait nécessaire.</li>
+<li>L'arbre.
+
+The <code>main</code> tree contains the bulk of the packages. Prior to July 1, 2010, the Cryptographic software was kept in a separate tree, <code>crypto</code>, but this is now a section of the <code>main</code> tree.
+
+</li>
 <li><code>finkinfo</code> et <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contient les descriptions de paquets Fink et leurs rustines, tandis que <code>binary-darwin-powerpc</code> contient les paquets binaires <code>.deb</code>.</li>
-<li>Sections. L'arbre <code>main</code> est subdivisé en sections thématiques pour en faciliter la gestion. L'arbre <code>crypto</code> n'est, lui, pas subdivisé en sections à l'heure actuelle.</li>
+<li>Sections. L'arbre <code>main</code> est subdivisé en sections thématiques pour en faciliter la gestion.</li>
 </ul>
 
 <h2><a name="format">2.2 Format de fichier</a></h2>

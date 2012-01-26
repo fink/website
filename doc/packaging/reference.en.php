@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2011/10/05 17:17:22';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2012/01/26 09:57:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -439,7 +439,7 @@ pkglist fields.
 <p>
 A list of packages which must be installed before this package can be
 built. Percent expansion is performed on this field (as well as the
-other package list fields in this section: BuildDepends, Provides,
+other package list fields in this section: BuildDepends, RuntimeDepends, Provides,
 Conflicts, Replaces, Recommends, Suggests, and Enhances.
 Usually, this is just a comma-separated list for plain package names,
 but Fink now supports alternatives and version clauses with the same
@@ -532,10 +532,19 @@ essential ones; this is no longer true.
 <b>Introduced in fink 0.9.0.</b>
 A list of dependencies that is applied at build time only.
 This can be used to list tools (e.g. flex) that must be present to
-build the packages, but which are not used at run time.
+build the package, but which are not used at run time.
 Supports the same syntax as Depends.  If a build is being done
 with test suites enabled, the dependencies in the <code>TestDepends</code>
 field will be added to this list.
+</p>
+</td></tr><tr valign="top"><td>RuntimeDepends</td><td>
+<p>
+<b>Introduced in fink 0.32.0.</b>
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
 </p>
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>
@@ -967,6 +976,8 @@ the <code>PatchFile(s)</code> explicitly.
 </p>
 </td></tr></table>
 <p><b>Compile Phase:</b></p>
+
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Set<b>ENVVAR</b></td><td>
 <p>
 Causes certain environment variables to be set in the
@@ -974,7 +985,6 @@ compile and install phases. This can be used to pass compiler flags
 etc. to configure scripts and Makefiles. Currently supported variables
 are:
 CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
-LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
 LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
 MFLAGS, MAKEFLAGS.
 The value you specify is subject to the
@@ -996,16 +1006,6 @@ if <code>Type: -64bit</code> is set to <code>-64bit</code>, then the
 default value of <code>LDFLAGS</code> is <code>-L%p/%lib -L%p/lib</code> 
 instead.
 </p>
-<p>
-In addition, starting in fink 0.17.0, the following values are set for
-the 10.4-transitional distribution and earlier (but are not set for
-the 10.4 distribution and later):
-</p>
-<pre>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
 on which version of OSX is being run, but setting a value for it for 

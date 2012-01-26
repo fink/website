@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Files";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2011/10/28 15:50:45';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=en" title="Procedure for Updating Documents"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -240,7 +240,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         care not to change anything but true text.</li>
         <li>Once you are done, or just to test it, edit the
         <code>Makefile</code> to include your language as:
-        <pre>LANGUAGES = en ja fr include $(basedir)/Makefile.i18n.common</pre> 
+        <pre>LANGUAGES_AVAILABLE = en ja fr</pre>
         <p>then type
         <code>make</code> in the directory. This should generate your PHP (and
         possibly some other) files as well as other files matching the languages in the Makefile.</p></li>

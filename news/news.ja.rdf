@@ -5,24 +5,20 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2011-12-09T13:48:01+09:00</dc:date>
+    <dc:date>2012-01-25T17:38:58+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released">
       <title>fink-0.31.5 released</title>
       <link>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</link>
       <guid>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</guid>
       <description>
-      <p>fink-0.31.5 was released to the 10.4/stable and
-      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
-      address bootstrapping and building on OS X 10.6 with Xcode 4.2.
+      <p>fink-0.31.5 
       &#12399;&#12289;2011&#24180;11&#26376;22&#26085;&#12289;10.4/stable &#12392; 10.7/stable &#12484;&#12522;&#12540;&#12395;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12414;&#12375;&#12383;&#12290;
       &#12371;&#12428;&#12399;&#12289;OS X 10.6 &#12392; Xcode 4.2 &#19978;&#12391;&#12398; bootstrap &#12392;&#12499;&#12523;&#12489;&#12395;&#23550;&#20966;&#12377;&#12427;&#12496;&#12464;&#20462;&#27491;&#12522;&#12522;&#12540;&#12473;&#12391;&#12377;&#12290;
       </p>
     </description>
       <content:encoded>
-      <p>fink-0.31.5 was released to the 10.4/stable and
-      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
-      address bootstrapping and building on OS X 10.6 with Xcode 4.2.
+      <p>fink-0.31.5 
       &#12399;&#12289;2011&#24180;11&#26376;22&#26085;&#12289;10.4/stable &#12392; 10.7/stable &#12484;&#12522;&#12540;&#12395;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12414;&#12375;&#12383;&#12290;
       &#12371;&#12428;&#12399;&#12289;OS X 10.6 &#12392; Xcode 4.2 &#19978;&#12391;&#12398; bootstrap &#12392;&#12499;&#12523;&#12489;&#12395;&#23550;&#20966;&#12377;&#12427;&#12496;&#12464;&#20462;&#27491;&#12522;&#12522;&#12540;&#12473;&#12391;&#12377;&#12290;
       </p>

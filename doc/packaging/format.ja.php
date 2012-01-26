@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - パッケージ記述";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/06/15 05:49:48';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2012/01/26 09:57:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 
@@ -20,7 +20,7 @@ include_once "header.ja.inc";
 				「パッケージ名」に拡張子 ".info" を付けただけの簡略形式が便利です．
 fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの方法があります:
 推奨されるのは，他の必要なパッケージファイルと整合性のとれる最も短いものです．
-ファイル名の形式は: 亜種のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision，を
+ファイル名の形式は: Variant のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision，を
 ハイフンでつなぎ，".info" で終えます．
 "architecture" と "distribution" は，対応するフィールドが定義され，値を一つだけ持つ場合に限ります．
 			</p>
@@ -32,6 +32,7 @@ fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの�
 				<li>
 					ツリーは <code>dists</code> から始まる．
 					<code>dists</code> ディレクトリは Debian ツールで必須．
+					最近の fink では，ディストリビューションのわかるディレクトリへの symlink になっている．
 				</li>
 				<li>
 					ディストリビューション．
@@ -42,7 +43,8 @@ fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの�
 				<li>
 					ツリー．
 					ツリー <code>main</code> にはパッケージの大部分が含まれる．
-					暗号を使うソフトウェアは別ツリー <code>crypto</code> に収められ，必要であれば簡単に取り除ける．
+					２０１０年７月１日以前は，暗号を使うソフトウェアは別ツリー <code>crypto</code> に収められていたが，
+					現在は <code>main</code> 以下の１セクションになっている．
 				</li>
 				<li>
 					<code>finkinfo</code> または <code>binary-darwin-powerpc</code>．
@@ -52,7 +54,6 @@ fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの�
 				<li>
 					セクション．
 					ツリー <code>main</code> は，管理しやすくするために種類別に分類されている．
-					ツリー <code>crypto</code> は現在のところ分類されていない．
 				</li>
 			</ul>
 		

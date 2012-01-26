@@ -1,7 +1,7 @@
 <?
 $title = "移植 - libtool";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2011/07/17 00:52:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて"><link rel="prev" href="shared.php?phpLang=ja" title="共有コード">';
 
 
@@ -63,7 +63,7 @@ Apple は libtool 1.3.5 のパッチが当たったバージョンを Mac OS X �
 Christoph Pfisterer がこのパッチを改良し，正しいパスのハードコーディングと完全なバージョニングを行うようになりました．
 この変更は上流の libtool リリースと 1.4 で始まる開発バージョンに統合されました．
 Fink チームのメンバーはこれからも改良を続け， libtool メンテナに送っていきます．
-バージョン番号の貴族は全ての libtool バージョンで一致しています．
+バージョン番号のスキームは全ての libtool バージョンで一致しています．
 </p>
       <p>
 注記:

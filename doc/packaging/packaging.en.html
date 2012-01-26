@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.en.xml,v 1.121 2011/10/05 17:17:22 nieder Exp $
+Generated from $Fink: packaging.en.xml,v 1.122 2012/01/26 09:57:59 fingolfin Exp $
 -->
 <title>Fink Documentation - Creating Fink Packages</title></head><body>
 <table width="100%" cellspacing="0">
@@ -1904,7 +1904,7 @@ pkglist fields.
 <p>
 A list of packages which must be installed before this package can be
 built. Percent expansion is performed on this field (as well as the
-other package list fields in this section: BuildDepends, Provides,
+other package list fields in this section: BuildDepends, RuntimeDepends, Provides,
 Conflicts, Replaces, Recommends, Suggests, and Enhances.
 Usually, this is just a comma-separated list for plain package names,
 but Fink now supports alternatives and version clauses with the same
@@ -1997,10 +1997,19 @@ essential ones; this is no longer true.
 <b>Introduced in fink 0.9.0.</b>
 A list of dependencies that is applied at build time only.
 This can be used to list tools (e.g. flex) that must be present to
-build the packages, but which are not used at run time.
+build the package, but which are not used at run time.
 Supports the same syntax as Depends.  If a build is being done
 with test suites enabled, the dependencies in the <tt style="white-space: nowrap;">TestDepends</tt>
 field will be added to this list.
+</p>
+</td></tr><tr valign="top"><td>RuntimeDepends</td><td>
+<p>
+<b>Introduced in fink 0.32.0.</b>
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
 </p>
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>
@@ -2432,6 +2441,8 @@ the <tt style="white-space: nowrap;">PatchFile(s)</tt> explicitly.
 </p>
 </td></tr></table>
 <p><b>Compile Phase:</b></p>
+
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Set<b>ENVVAR</b></td><td>
 <p>
 Causes certain environment variables to be set in the
@@ -2439,7 +2450,6 @@ compile and install phases. This can be used to pass compiler flags
 etc. to configure scripts and Makefiles. Currently supported variables
 are:
 CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
-LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
 LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
 MFLAGS, MAKEFLAGS.
 The value you specify is subject to the
@@ -2461,16 +2471,6 @@ if <tt style="white-space: nowrap;">Type: -64bit</tt> is set to <tt style="white
 default value of <tt style="white-space: nowrap;">LDFLAGS</tt> is <tt style="white-space: nowrap;">-L%p/%lib -L%p/lib</tt> 
 instead.
 </p>
-<p>
-In addition, starting in fink 0.17.0, the following values are set for
-the 10.4-transitional distribution and earlier (but are not set for
-the 10.4 distribution and later):
-</p>
-<pre>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
 on which version of OSX is being run, but setting a value for it for 
@@ -3156,9 +3156,9 @@ If you just need to set some environment variables (for example, QTDIR to '/sw')
 
 
 <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2011 The Fink Project.
+Copyright (c) 2001-2012 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.en.xml,v 1.121 2011/10/05 17:17:22 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.en.xml,v 1.122 2012/01/26 09:57:59 fingolfin Exp $</i></p></body></html>

@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 软件包描述文件";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2008/08/27 05:20:53';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2012/01/26 09:57:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 
@@ -37,16 +37,24 @@ exactly one value.
 </p>
 <ul>
 <li><code>dists</code> 是目录的起点。<code>dists</code>
-对 Debian 工具来说是必须的。</li>
+对 Debian 工具来说是必须的。
+
+In recent versions of fink, this is a symlink to a directory with a distribution-inspired name.
+
+</li>
 <li>发布类型。可以是 <code>stable</code>，
 <code>unstable</code> 和 <code>local</code>。<code>local</code>
 目录由本机的管理员／用户控制。<code>stable</code> 和 <code>unstable</code> 目录则是 Fink 的一部分。</li>
-<li>目录树。<code>main</code> 目录树包含软件包的实际部分。加密功能的软件被放到一个称为 <code>crypto</code> 的单独的目录树中，使得需要删除的时候会容易一些。</li>
+<li>目录树。
+
+The <code>main</code> tree contains the bulk of the packages. Prior to July 1, 2010, the Cryptographic software was kept in a separate tree, <code>crypto</code>, but this is now a section of the <code>main</code> tree.
+
+</li>
 <li><code>finkinfo</code>
 及 <code>binary-darwin-powerpc</code>。<code>finkinfo</code> 目录中包含了  Fink 软件包描述文件和补丁，而
 <code>binary-darwin-powerpc</code> 则包含了 <code>.deb</code>
 二进制软件包。</li>
-<li>分组。<code>main</code>目录树按类别被分成几组以方便管理。<code>crypto</code> 目录树目前没有被分组。</li>
+<li>分组。<code>main</code>目录树按类别被分成几组以方便管理。</li>
 </ul>
 
 

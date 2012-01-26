@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2008/08/27 05:20:52';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2012/01/26 09:57:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -46,6 +46,75 @@ dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "vrai"
   Architecture: (%type_pkg[perl] = 581) powerpc
 </pre>
 <p>est interprété comme une variante foo-pm581 pour l'architecture système <code>powerpc</code>, le champ restant vide pour toute autre variante. N'oubliez pas que le fait d'omettre une certaine valeur d'architecture ne signifie pas que le paquet n'est pas censé tourner sur l'architecture système en question.</p>
+</td></tr><tr valign="top"><td>Distribution</td><td>
+<p>
+A comma-separated list of distribution(s) for which the package
+(and any splitoff packages) are intended.
+At present, the only valid values for distribution are
+<code>10.4</code>,
+<code>10.5</code>,
+and <code>10.6</code>
+. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine distribution is not listed. If the field is omitted
+or the value is blank, all distributions are assumed.
+(Introduced in fink 0.26.0.)
+</p>
+<p>
+Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
+a common set of finkinfo files, the most common use of this field will be for 
+packages which are suitable for one of those distributions but not the
+other.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <code>Depends</code> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.6)
+  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+</pre>
+<p>
+will result in the field for the foo-pm581 variant
+being <code>10.3, 10.4</code> and the field being blank for the 
+foo-pm586 variant.
+</p>
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
+available perl packages vary by distribution, these package types provide
+a common use of this field.  For reference, we note the availabilty of
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+</p>
+<pre>
+    perl 5.6.0:  10.3
+    perl 5.8.0:  10.3
+    perl 5.8.1:  <b>10.3</b>, 10.4
+    perl 5.8.4:  10.3, 10.4
+    perl 5.8.6:  10.3, <b>10.4</b>, 10.5
+    perl 5.8.8:        10.4, <b>10.5</b>, 10.6
+    perl 5.10.0:             10.5, <b>10.6</b>
+</pre>
+<p>A way to include all variants in a single finkinfo file is as follows.
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+  &lt;&lt;
+</pre>
+<p>Note that we do not include old
+distributions, such as 10.2 or 10.4-transitional, since the versions of
+fink which are relevant for them do not recognize this field.
+</p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p><b>Introduit à partir de fink 0.12.0.</b> Ce champ facultatif peut être utilisé pour spécifier l'ère du paquet (défaut 0 si ce champ n'est pas renseigné). Pour de plus amples informations, voir <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian Policy Manual</a>. Comme Fink et quelques-uns des outils Debian sous-jacents utilisent nom-version-revision comme identifiant unique d'un paquet, vous ne devez pas créer deux paquets qui ne diffèrent que par le numéro d'ère.</p>
 <p>Quant elle est utilisée dans la version, l'ère apparaît avant la valeur de la version, séparée d'elle par deux-points (1:3.14-2). Notez que l'ère ne fait partie ni de <code>%v</code>, ni de <code>%f</code>. Si vous ajoutez un champ ère au fichier de description d'un paquet, vous pouvez être amené à l'introduire également dans ses dépendances. Par exemple, si vous ajoutez <code>Epoch: 1</code> à foo et que foo-dev déclare <code>Depends: foo-shlibs (= %v-%r)</code>, vous devez le changer en <code>Depends: foo-shlibs (= %e:%v-%r)</code>.
@@ -130,7 +199,7 @@ SplitOff: &lt;&lt;
 </td></tr></table>
 <p><b>Dépendances :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>Depends</td><td>
-<p>Liste de paquets à installer pour que le paquet puisse compiler. L'interprétation des raccourcis a lieu dans ce champ (tout comme dans les autres champs de cette catégorie : BuildDepends, Provides, Conflicts, Replaces, Recommends, Suggests et Enhances). C'est, en général, une liste de noms de paquets séparés par des virgules, mais Fink gère maintenant les clauses de choix et de version avec la même syntaxe que dpkg. En voici un exemple :</p>
+<p>Liste de paquets à installer pour que le paquet puisse compiler. L'interprétation des raccourcis a lieu dans ce champ (tout comme dans les autres champs de cette catégorie : BuildDepends, RuntimeDepends, Provides, Conflicts, Replaces, Recommends, Suggests et Enhances). C'est, en général, une liste de noms de paquets séparés par des virgules, mais Fink gère maintenant les clauses de choix et de version avec la même syntaxe que dpkg. En voici un exemple :</p>
 <pre>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</pre>
 <p>Notez qu'on ne peut indiquer de réelles options de dépendances. Si un paquet fonctionne avec ou sans un autre paquet, vous devez soit vous assurer que l'autre paquet n'est pas utilisé, même s'il est présent, soit l'ajouter à la liste des dépendances. Si vous voulez donner à l'utilisateur le choix entre les deux options, faîtes deux paquets distincts, par exemple : wget et wget-ssl.</p>
 <p>Ordre des opérations : le "OU" logique (liste de choix exclusifs) a priorité sur le "ET" logique entre chaque paquet (ou jeu de choix) dans la liste séparée par des virgules. À moins de mettre des parenthèses comme celles utilisées en arithmétique, il n'y a aucun moyen de spécifier des groupes de choix ou de changer l'ordre des opérations dans le champ <code>Depends</code> et les champs similaires.</p>
@@ -159,6 +228,16 @@ BuildDepends: id3lib3.7-dev | id3lib4-dev
 <p>Auparavant, les paquets non essentiels dépendaient implicitement des paquets essentiels ; ce n'est plus vrai.</p>
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p><b>Introduit dans fink 0.9.0.</b> Liste de dépendances utilisées uniquement lors de la compilation. Il sert à spécifier des outils (par exemple flex) qui doivent être présents pour compiler les paquets, mais qui ne sont pas nécessaires à l'exécution. Utilise la même syntaxe que Depends. Si les séries de tests sont activées, les dépendances du champs <code>TestDepends</code> sont ajoutés à cette liste.</p>
+</td></tr><tr valign="top"><td>RuntimeDepends</td><td>
+<p><b>Introduit dans fink 0.32.0.</b>
+
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
+
+</p>
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>Liste de noms de paquets séparés par des virgules que ce paquet est censé "fournir". Si un paquet nommé "pine" indique <code>Provides: mailer</code>, alors toute dépendance à "mailer" est considérée comme satisfaite si "pine" est installé. En général, on énumère aussi ces paquets dans les champs "Conflicts" et "Replaces".</p>
 <p>Notez qu'aucun numéro de version n'est associé aux éléments Provides. Ils n'héritent pas du paquet parent qui contient la liste Provides, et il n'existe aucune syntaxe permettant d'indiquer un numéro de version dans le champ Provides lui-même. En outre, une dépendance contenant un numéro de version n'est pas satisfaite par un paquet qui a un champ Provides contenant le paquet dépendant. En conséquence, le fait d'avoir plusieurs variantes avec un champ Provides qui inclut un même paquet peut être dangereux, car cela revient à interdire l'utilisation des numéros de versions dans les dépendances. Par exemple, si foo-gnome et foo-nognome ont tous les deux un champ "Provides: foo", tout autre paquet contenant un champ "Depends: foo (&gt; 1.1)" ne fonctionnera pas correctement.</p>
@@ -247,7 +326,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 </td></tr></table>
 <p><b>Phase de compilation :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>Set<b>ENVVAR</b></td><td>
-<p>Définit certaines variables d'environnement pendant les phases de compilation et d'installation. On peut utiliser ce champ pour passer des drapeaux de compilation, etc... aux scripts configure et aux Makefile. Les variables reconnues à l'heure actuelle sont : CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME, LD, LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, MFLAGS, MAKEFLAGS. L'interprétation des raccourcis a lieu sur la valeur spécifiée, comme expliquée dans la section précédente. Exemple courant :</p>
+<p>Définit certaines variables d'environnement pendant les phases de compilation et d'installation. On peut utiliser ce champ pour passer des drapeaux de compilation, etc... aux scripts configure et aux Makefile. Les variables reconnues à l'heure actuelle sont : CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME, LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, MFLAGS, MAKEFLAGS. L'interprétation des raccourcis a lieu sur la valeur spécifiée, comme expliquée dans la section précédente. Exemple courant :</p>
 <pre>SetCPPFLAGS: -no-cpp-precomp</pre>
 <p>Certaines de ces variables ont des valeurs pré-établies par défaut. Si vous leur donnez une valeur, celle-ci sera ajoutée dans la liste devant la valeur par défaut. Les variables à valeur pré-établies sont les suivantes :</p>
 <pre>
@@ -255,12 +334,6 @@ CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </pre>
 <p>À partir de la version 0.26.0 de fink, il existe une exception à ces valeurs par défaut. Si le champ <code>Type: -64bit</code> a pour valeur <code>-64bit</code>, alors la valeur par défaut de la variable <code>LDFLAGS</code> est <code>-L%p/%lib -L%p/lib</code>.</p>
-<p>Puis, à partir de la version 0.17.0 de fink :</p>
-<pre>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
 <p>Enfin, la variable MACOSX_DEPLOYMENT_TARGET a une valeur par défaut qui dépend de la version de Mac OS X en cours d'exécution, mais le fait d'affecter une valeur à cette variable pour un paquet donné remplace la valeur par défaut, elle ne vient pas s'ajouter devant la valeur par défaut.</p>
 </td></tr><tr valign="top"><td>NoSet<b>ENVVAR</b></td><td>
 <p>Quand la valeur de ce champ est true (vraie), les valeurs par défaut des variables à valeurs pré-établies, telles CPPFLAGS, LDFLAGS et CXXFLAGS mentionnées ci-dessus, sont désactivées. Autrement dit, si vous ne voulez pas que LDFLAGS ait une valeur par défaut, utilisez <code>NoSetLDFLAGS: true</code>.</p>
@@ -421,7 +494,26 @@ Shared libraries that are "private" are denoted by an exclamation mark preceedin
 </td></tr><tr valign="top"><td>ConfFiles</td><td>
 <p>Liste de fichiers séparés par des espaces. Ces fichiers sont des fichiers de configuration modifiables par l'utilisateur. L'interprétation des raccourcis a lieu sur ce champ. Le chemin complet des fichiers doit être indiqué, comme dans <code>%p/etc/%n.conf</code>. Ces fichiers sont traités de façon spéciale par dpkg. Quand un paquet est mis à jour et que le fichier de configuration a changé à la fois sur le disque et dans le paquet, dpkg demande à l'utilisateur quelle version il veut utiliser et sauvegarde l'ancien fichier. Quand un paquet est supprimé avec "remove", les fichiers de configuration ne sont pas supprimés. Pour les supprimer, il faut utiliser "purge".</p>
 </td></tr><tr valign="top"><td>InfoDocs</td><td>
-<p>Liste des documents Info que le paquet installe dans %p/share/info. Des commandes appropriées sont ajoutées aux scripts postinst et prerm pour mettre à jour le fichier de la hiérarchie Info <code>dir</code>. Cette fonctionnalité est en cours de développement, d'autres champs pourront être ajoutés à l'avenir pour une gestion plus précise.</p>
+<p>Liste des documents Info que le paquet installe dans %p/share/info. 
+Des commandes appropriées sont ajoutées aux scripts postinst et prerm pour mettre à jour le fichier de la hiérarchie Info <code>dir</code>. 
+</p>
+
+
+<p><b>Note:</b>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<pre>
+foo.info
+foo.info-1
+foo.info-2
+</pre>
+<p>you should only use:</p>
+<pre>
+InfoDocs:  foo.info
+</pre>
+
+
+<p>
+Cette fonctionnalité est en cours de développement, d'autres champs pourront être ajoutés à l'avenir pour une gestion plus précise.</p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>
 <p>Décrit un service pour <code>daemonic</code>. <code>daemonic</code> est utilisé par Fink pour créer et supprimer des éléments à lancer au démarrage pour les processus démon (par exemple les serveurs web). La description est ajoutée au paquet sous la forme d'un fichier nommé <code>%p/etc/daemons/<b>nom</b>.xml</code>, où <b>nom</b> est indiqué par le champ DaemonicName et est réduit, par défaut, au nom du paquet. L'interprétation des raccourcis a lieu sur le contenu de ce champ. Notez que vous devez ajouter <code>daemonic</code> à la liste des dépendances, si votre paquet utilise ce champ.</p>
 </td></tr><tr valign="top"><td>DaemonicName</td><td>

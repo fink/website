@@ -1,16 +1,14 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2011/12/09 04:44:49';
+$cvs_date = 'Date: 2011/12/11 02:28:55';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
 <a name="2011-11-22%20fink-0.31.5%20released"><span class="news-date">2011-11-22: </span><span class="news-headline">fink-0.31.5 released</span></a><?php gray_line(); ?>
-      <p><code>fink-0.31.5</code> was released to the 10.4/stable and
-      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
-      address bootstrapping and building on OS X 10.6 with Xcode 4.2.
+      <p><code>fink-0.31.5</code> 
       は、2011年11月22日、10.4/stable と 10.7/stable ツリーにリリースされました。
       これは、OS X 10.6 と Xcode 4.2 上での bootstrap とビルドに対処するバグ修正リリースです。
       </p>

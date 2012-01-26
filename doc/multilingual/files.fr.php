@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Fichiers";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2011/10/28 15:50:45';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=fr" title="Procédure de mise à jour des documents"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -187,7 +187,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
 <li>Sauvegardez le fichier avec encodage UTF-8. Assurez-vous que l'encodage du texte est bien utf-8 et  ne modifiez que la partie texte dans le fichier.</li>
 <li>Quand vous aurez fini la traduction, ou quand vous voulez la tester, modifiez le fichier 
 <code>Makefile</code> pour ajouter votre langue :
-<pre>LANGUAGES = en ja fr include $(basedir)/Makefile.i18n.common</pre> 
+<pre>LANGUAGES_AVAILABLE = en ja fr</pre>
 <p>Puis exécutez <code>make</code> dans le répertoire. Cela créera les fichiers PHP (et éventuellement d'autres fichiers), ainsi que tous les fichiers correspondant aux langues présentes dans le Makefile.</p></li>
 </ol>
 <p>Note : si vous constatez des fautes d'orthographe ou des erreurs dans le fichier anglais, ne le modifiez pas de vous-même, mais signalez-les à la <a href="http://www.finkproject.org/lists/fink-i18n.php">liste de diffusion fink-i18n

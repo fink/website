@@ -1,7 +1,7 @@
 <?
 $title = "移植 - 基本";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2011/07/17 00:52:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="shared.php?phpLang=ja" title="共有コード"><link rel="prev" href="index.php?phpLang=ja" title="移植 Contents">';
 
 
@@ -30,9 +30,9 @@ include_once "header.ja.inc";
     <h2><a name="compiler">1.2 コンパイラとツール</a></h2>
       
       <p>
-			短い説明: コンパイラは gcc の葉生物ですが， <code>cc</code> としてインストールされます．
+			短い説明: コンパイラは gcc の派生物ですが， <code>cc</code> としてインストールされます．
 			Makefile にパッチを当てる必要があるでしょう．
-			ほとんどのパッケージは 共有ライブラリ をビルドしません．
+			ほとんどのパッケージは共有ライブラリ をビルドしません．
 			マクロに関係するエラーが出た時は，<code>-no-cpp-precomp</code> オプションを使用してください．
 			</p>
       <p>
@@ -56,7 +56,7 @@ include_once "header.ja.inc";
     <h2><a name="host-type">1.3 ホスト種別</a></h2>
       
       <p>
-			短い説明: configure が 'Can't determine host type' と言って異常終了した場合，config.guess と config.sub を /usr/share/libtool (OS バージョン 10.2 以前では /usr/libexec) を現在のディレクトリにコピーしてください．
+			短い説明: configure が 'Can't determine host type' と言って異常終了した場合，config.guess と config.sub を /usr/share/libtool (OS バージョン 10.2 以前では /usr/libexec) から現在のディレクトリにコピーしてください．
 			</p>
       <p>長い説明: GNU の世界では，システムの種類を特定するために基準形式を採用しています．
 これには３つのパートがあります: CPU 種別，メーカー，オペレーティングシステム．

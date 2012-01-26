@@ -1,7 +1,7 @@
 <?
 $title = "移植 - 共有コード";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2011/07/17 00:52:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="libtool.php?phpLang=ja" title="GNU libtool"><link rel="prev" href="basics.php?phpLang=ja" title="基本">';
 
 
@@ -13,7 +13,7 @@ include_once "header.ja.inc";
     <h2><a name="lib-and-mod">2.1 共有ライブラリ vs ローダブル・モジュール</a></h2>
       
       <p>
-			Mach-0 の仕様の一つであ，多くの人を驚かせるものとして， 共有ライブラリ と 動的ローダブル・モジュールを厳密に区別します．
+			Mach-0 の仕様の一つで，多くの人を驚かせるものとして， 共有ライブラリ と 動的ローダブル・モジュールを厳密に区別する点があります．
 			ELF システムでは両者は同質で，共有コードのどの部分でも，ライブラリとしても動的ローディングにも使うことができます．
 			</p>
       <p>
@@ -71,7 +71,7 @@ include_once "header.ja.inc";
 			位置独立コード (PIC: Position Independent Code) の生成は Darwin ではデフォルトです．
 			実際， PowerPC コードは設計上 position-independent となり，パフォーマンスや空間上の損失はありません．
 			このため，共有ライブラリやモジュールへコードをコンパイルする際も，PIC を指定する必要はありません．
-			しかし，リンカは"共通"のシンボルを共有ライブラリ内に持つことは認めないので， <code>-fno-common</code> コンパイラオプションが必要になります．
+			しかし，リンカは「共通」のシンボルを共有ライブラリ内に持つことは認めないので， <code>-fno-common</code> コンパイラオプションが必要になります．
 			</p>
     
     <h2><a name="build-lib">2.4 共有ライブラリ をビルド</a></h2>
@@ -92,7 +92,7 @@ rm -f libfoo.2.dylib libfoo.dylib
 ln -s libfoo.2.4.5.dylib libfoo.2.dylib
 ln -s libfoo.2.4.5.dylib libfoo.dylib</pre>
       <p>
-バージョンのどの部分がどこで使われたかわかりましたか．
+この例で，バージョンのどの部分がどこで使われたかわかりましたでしょうか．
 また，静的リンカが libfoo.dylib シンボリックリンクを使い，動的リンカは libfoo.2.dylib シンボリックリンクを使うことに注意してください．
 それぞれのシンボリックリンクをライブラリの異なるリビジョンへつなげることも可能です．
 
@@ -102,7 +102,8 @@ ln -s libfoo.2.4.5.dylib libfoo.dylib</pre>
       
       <p>
 ローダブル・モジュールをビルドするためには，<code>-bundle</code> オプション付きでコンパイラドライバを呼び出します．
-モジュールがホストプログラムのシンボルを使う場合， <code>-undefined suppress</code> を指定して未定義のシンボルを使い， <code>-flat_namespace</code> を指定して新しいリンカが Mac OS X 10.1 でも使えるようにします．
+モジュールがホストプログラムのシンボルを使う場合， <code>-undefined suppress</code> を指定して未定義のシンボルを使い， 
+<code>-flat_namespace</code> を指定して新しいリンカが Mac OS X 10.1 でも使えるようにします．
 一連の例:
 </p>
       <pre>cc -fno-common -c source.c
@@ -113,7 +114,8 @@ cc -bundle -flat_namespace -undefined suppress \
 バージョン番号は使用していません．
 理論的には使うことも可能ですが，実際あまり意味がありません．
 また，バンドルには名称上の制限が無いことに注意してください．
-パッケージによっては，他のシステムが要求するため "lib" を前置しますが，これも無害です．
+パッケージによっては，他のシステムが要求するため "lib" を前置しますが，
+プログラムがモジュールをロードする際には完全なファイル名を使用するので，無害です．
 </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

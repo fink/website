@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2008/06/15 05:49:48';
+$cvs_author = 'Author: fingolfin';
+$cvs_date = 'Date: 2012/01/26 09:57:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -77,10 +77,10 @@ include_once "header.ja.inc";
 						<p>
 							Fink のパッケージングポリシーでは，
 							どのパッケージも常に同じオプションを有効にしてコンパイルされるようにします．
-							あるパッケージに複数の変種を設ける場合は (フィールド <code>Type</code> の説明を参照)，
-							変種を区別する情報をフィールド <code>Package</code> に含めなければいけません
+							あるパッケージに複数の Variant を設ける場合は (フィールド <code>Type</code> の説明を参照)，
+							 Variant を区別する情報をフィールド <code>Package</code> に含めなければいけません
 							(パーセント展開 %type_pkg[] の説明を参照)．
-							これにより，各変種に固有の (どのオプションが有効かが分かる) 「パッケージ名」が与えられます．
+							これにより，各 Variant に固有の (どのオプションが有効かが分かる) 「パッケージ名」が与えられます．
 							フィールド <code>Package</code> 内でパーセント展開 %type_pkg[] および %type_raw[] を使うことは最近導入されたばかりで，
 							古い Fink とは非互換であるため，注意が必要です．
 							そのため，そのようなパッケージ記述はフィールド <code>InfoN</code> (ただし N&gt;=2) 内に埋め込むようにします．
@@ -132,7 +132,7 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 <p>
 このフィールドでは，値一覧にある値とパーセント展開を，通常の条件文法で使うことができます
 (詳細については，<code>Depends</code> フィールドを参照)．
-これによって，特定の変種を特定のアーキテクチャーに制限することができます．
+これによって，特定の Variant を特定のアーキテクチャーに制限することができます．
 例えば:
 </p>
 <pre>
@@ -141,8 +141,77 @@ gcc-4.0 以前のコンパイラを使うパッケージ
   Architecture: (%type_pkg[perl] = 581) powerpc
 </pre>
 <p>
-によって，foo-pm581 という変種は <code>powerpc</code> となり，他の変種には値無しになります．
+によって，foo-pm581 という Variant は <code>powerpc</code> となり，他の Variant には値無しになります．
 ただし，アーキテクチャーの値が無いことは，そのアーキテクチャー用のパッケージではない，ということではありません．
+</p>
+</td></tr><tr valign="top"><td>Distribution</td><td>
+<p>
+A comma-separated list of distribution(s) for which the package
+(and any splitoff packages) are intended.
+At present, the only valid values for distribution are
+<code>10.4</code>,
+<code>10.5</code>,
+and <code>10.6</code>
+. If this field is present and not blank after
+conditional handling, fink will ignore the package description(s) if
+the local machine distribution is not listed. If the field is omitted
+or the value is blank, all distributions are assumed.
+(Introduced in fink 0.26.0.)
+</p>
+<p>
+Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
+a common set of finkinfo files, the most common use of this field will be for 
+packages which are suitable for one of those distributions but not the
+other.
+</p>
+<p>
+This field supports the standard conditional syntax for any value in
+the value list and percent-expansions can be used (see
+the <code>Depends</code> field for more information). In this manner,
+certain variants can be restricted to certain architectures. For
+example:
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.8.1 5.8.6)
+  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+</pre>
+<p>
+will result in the field for the foo-pm581 variant
+being <code>10.3, 10.4</code> and the field being blank for the 
+foo-pm586 variant.
+</p>
+<p>Since python 2.3 is not available in the 10.5 distribution, and the
+available perl packages vary by distribution, these package types provide
+a common use of this field.  For reference, we note the availabilty of
+various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+</p>
+<pre>
+    perl 5.6.0:  10.3
+    perl 5.8.0:  10.3
+    perl 5.8.1:  <b>10.3</b>, 10.4
+    perl 5.8.4:  10.3, 10.4
+    perl 5.8.6:  10.3, <b>10.4</b>, 10.5
+    perl 5.8.8:        10.4, <b>10.5</b>, 10.6
+    perl 5.10.0:             10.5, <b>10.6</b>
+</pre>
+<p>A way to include all variants in a single finkinfo file is as follows.
+</p>
+<pre>
+  Package: foo-pm%type_pkg[perl]
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Distribution: &lt;&lt;
+   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
+   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
+   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
+   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
+   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+  &lt;&lt;
+</pre>
+<p>Note that we do not include old
+distributions, such as 10.2 or 10.4-transitional, since the versions of
+fink which are relevant for them do not recognize this field.
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 						<p>
@@ -185,7 +254,7 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 						<p>
 							値が <code>perl</code> の場合 (Fink 0.9.5 以降):
 							コンパイル及びインストール段階のスクリプトのデフォルト値が変わります．
-							Fink 0.13.0 からは，この値の変種として <code>perl $version</code> が使えます．
+							Fink 0.13.0 からは，この値の Variant として <code>perl $version</code> が使えます．
 							ここで "$version" は perl の特定のバージョンで，3つの数をピリオドで区切ったもの
 							(<code>perl 5.6.0</code> など)．
 						</p>
@@ -203,9 +272,9 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 							
 						</p>
 						<p>
-							これに加えて「変種」という概念があります．
+							これに加えて「 Variant 」という概念があります．
 							単一のパッケージ記述が，有効なコンパイルオプションだけが違う複数のパッケージを生成するとき，
-							これらのパッケージは「変種」になります．
+							これらのパッケージは「 Variant 」になります．
 							このプロセスの鍵はサブタイプリストの利用です．
 							単一の文字列ではなく，文字列の空白区切りリストを括弧で括ったものを使います．
 							Fink はリスト内のサブタイプ毎にパッケージ記述をコピーし，各コピー内ではリストを単一のサブタイプに置き換えます．
@@ -223,12 +292,12 @@ Type: -x11 (boolean)
 Type: -x11 (-x11 .)
 </pre>
 						<p>
-							サブタイプリストの展開とそれに伴うパッケージ変種の作成は，再帰的に行われます．
+							サブタイプリストの展開とそれに伴うパッケージ Variant の作成は，再帰的に行われます．
 							またサブタイプリストを持つタイプが複数ある場合は，あり得る組み合わせが全て生成されます．
 						</p>
 <pre>Type: -ssl (boolean), perl (5.6.0 5.8.1)</pre>
 						<p>
-							Type 以外のフィールドから特定の変種のサブタイプを得るには，疑似ハッシュ %type_raw[] および %type_pkg[] を使います．
+							Type 以外のフィールドから特定の Variant のサブタイプを得るには，疑似ハッシュ %type_raw[] および %type_pkg[] を使います．
 							以下にパッケージ記述の例の一部を示します．
 						</p>
 <pre>
@@ -331,7 +400,7 @@ pkglist フィールドにコメントが可能．
 							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージのリスト．
 							このフィールドではパーセント展開が行われる
 							(「依存性関連」の他のフィールドでも同様:
-							BuildDepends, Provides, Conflicts, Replaces, Recommends, Suggests および Enhances)
+							BuildDepends, RuntimeDepends, Provides, Conflicts, Replaces, Recommends, Suggests および Enhances)
 							普通，値は「パッケージ名」の単なるカンマ区切りリストだが，
 							現在の Fink は (dpkgと同じ形式の) 「代替パッケージ節」と「バージョン節」に対応している．
 							それらを全て盛りこんだ例:
@@ -411,6 +480,17 @@ Depends: (%type_pkg[-x11]) x11
 							<code>TestDepends</code>
 							がこのリストに追加される．
 						</p>
+					</td></tr><tr valign="top"><td>RuntimeDepends</td><td>
+						<p>
+							<b>Fink 0.32.0 で導入:</b>
+
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
+
+						</p>
 					</td></tr><tr valign="top"><td>Provides</td><td>
 						<p>
 							そのパッケージが「提供」すると考えられる「パッケージ名」のカンマ区切りのリスト．
@@ -423,7 +503,7 @@ Depends: (%type_pkg[-x11]) x11
 							Provides 項目には，バージョン番号に関連した情報はない．
 							親パッケージから取得することも，Provides フィールド自体にはバージョン番号を特定するような仕組みなどもない．
 							バージョンを指定する依存性があっても，Provides を持つパッケージによって満たすことはできない．
-							結果として，同一の代理パッケージを提供する変種が多数あるのは危険である．
+							結果として，同一の代理パッケージを提供する Variant が多数あるのは危険である．
 							これによってバージョンを指定した依存性ができなくなるためである．
 							例えば， foo-gnome と foo-nogome が "Provides: foo" を提供する場合，"Depends: foo (&gt; 1.1)" は動作しない．
 						</p>
@@ -531,7 +611,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							または <b>ミラー名称</b> に <code>custom</code> と書くことで，
 							Fink にフィールド <code>CustomMirror</code> を使わせることもできる．
 							URL が wget に渡される前に，パーセント記法の展開が行われる．
-							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
+							%n は %type_ 系で示される Variant データ全てを含む文字列に展開されることに注意．
 							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 						</p>
 						<p>
@@ -723,11 +803,11 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							PatchScript が指定されている場合，パッチはその後に別のステップとして実行されます．
 						</p>
 						<p>
-							%n は %type_ 系で示される変種データ全てを含む文字列に展開されることに注意．
+							%n は %type_ 系で示される Variant データ全てを含む文字列に展開されることに注意．
 							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよいでしょう．
 							単一のパッチファイルを管理し，
-							各変種固有の変更点を <code>PatchScript</code> に記述する方が，
-							各変種毎にパッチファイルを作るより手間が少ないでしょう．
+							各 Variant 固有の変更点を <code>PatchScript</code> に記述する方が，
+							各 Variant 毎にパッチファイルを作るより手間が少ないでしょう．
 						</p>
 					</td></tr><tr valign="top"><td>PatchFile</td><td>
 <p>
@@ -775,7 +855,6 @@ patch -p1 &lt; %{PatchFile}
 							コンパイラフラグなどを configure スクリプトや Makefile に渡すために使われます．
 							現在，対応している変数は次の通り: 
 							CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
-							LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
 							LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
 							MFLAGS, MAKEFLAGS.
 							指定した値の中では前節で説明したパーセント展開が行われます．
@@ -795,13 +874,6 @@ LDFLAGS: -L%p/lib
 <code>Type: -64bit</code> が <code>-64bit</code> と定義されている場合，
 <code>LDFLAGS</code> は <code>-L%p/%lib -L%p/lib</code> となります．
 </p>
-<p>fink-0.17.0 より，10.4-transitional ディストリビューションまで，以下の値が設定されます
-(が，10.4 以降では設定されません)．</p>
-<pre>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</pre>
 						<p>
 							MACOSX_DEPLOYMENT_TARGET は OSX のバージョンを既定値として持ちます．
 							これに値を指定することで (値の追加ではなく) 既定値を書き換えることができます．
@@ -837,7 +909,7 @@ Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
 </pre>
 						<p>
-							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り， -x11 変種の場合のみ <code>--with-x11</code> を送ってください．
+							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り， -x11  Variant の場合のみ <code>--with-x11</code> を送ってください．
 						</p>
 					</td></tr><tr valign="top"><td>GCC</td><td>
 						<p>
@@ -1083,10 +1155,11 @@ INSTALLSCRIPT=%i/bin
 						<p>
 							<b>Fink 0.11.0 で導入:</b>
 							このフィールドでは，そのパッケージでインストールされる共有ライブラリを指定します．
-
-There is one line for each shared library, which contains the <code>-install_name</code> of the library and information about its binary compatibility. 
-Shared libraries that are "public" (i.e., provided for use by other packages) have, separated by whitespace after the filename, the <code>-compatibility_version</code>, versioned package dependency information specifying the Fink package which provides this library at this compatibility version, and the library architecture.
-
+							それぞれの共有ライブラリに一つの行があります．
+							これには，ライブラリの<code>-install_name</code>と compatibility に関する情報は含まれます．
+							「パブリック」な共有ライブラリ (つまり，他のパッケージに使われる) の場合，
+							ファイル名の後に，空白区切りで，<code>-compatibility_version</code>，
+							この compatibility version の Fink パッケージ，
 							ライブラリのアーキテクチャ
 							(値は "32", "64", または
                              "32-64", あるいは空欄; 空欄時の既定値は "32" ．) 
@@ -1095,9 +1168,8 @@ Shared libraries that are "public" (i.e., provided for use by other packages) ha
 							<b>一番古い</b>バージョンを指します．
 							フィールド Shlibs の設定は「この名前がついていて compatibility_version がこれ以上のライブラリは，
 							その Fink パッケージの今後のバージョンでも必ず含まれている」というメンテナからの保証に相当します．
-
-Shared libraries that are "private" are denoted by an exclamation mark preceeding the filename, and no compatilibity or versioning information is given. See the <a href="policy.php?phpLang=ja#sharedlibs">Shared Library Policy</a> for more information.
-
+							「プライベート」な共有ライブラリは，ファイル名の前にビックリマークをつけ，代わりに compatibility やバージョン情報は書きません．
+							詳細は <a href="policy.php?phpLang=ja#sharedlibs">共有ライブラリのポリシー</a> を参照してください．
 						</p>
 					</td></tr><tr valign="top"><td>RuntimeVars</td><td>
 						<p>
@@ -1201,8 +1273,24 @@ AnotherVar: foo bar
 							パッケージが <code>%p/share/info</code> にインストールする Info 文書のリスト．
 							この設定により，Info ディレクトリ・ファイル <code>dir</code> を管理するための適切なコードが
 							postinst および prerm スクリプトに追加されます．
-							この機能はまだ流動的で，将来，精密な管理のためにさらにフィールドが追加されるかも知れません．
-						</p>
+</p>
+
+<p><b>Note:</b>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:</p>
+<pre>
+foo.info
+foo.info-1
+foo.info-2
+</pre>
+<p>you should only use:</p>
+<pre>
+InfoDocs:  foo.info
+</pre>
+<p>This feature is still in flux, more fields for finer control may be
+added in the future.
+</p>
+
+
 					</td></tr><tr valign="top"><td>DaemonicFile</td><td>
 						<p>
 							<code>daemonic</code> のサービスの説明を記述します．
@@ -1298,7 +1386,7 @@ AnotherVar: foo bar
 %n-%v-%r は，パッケージのユニークな識別子として扱われるため，
 <code>SplitOff</code> (あるいは <code>SplitOff<b>N</b></code>)
 を用いて (同じ <code>Version</code> と <code>Revision</code> で) <code>Package</code> を作成しては行けません．
-変種を使う際は，各変種が独立したパッケージとなるようにしてください．
+ Variant を使う際は，各 Variant が独立したパッケージとなるようにしてください．
 つまり，以下のようなパッケージレイアウトは禁止されます:
 </p>
 <pre>
