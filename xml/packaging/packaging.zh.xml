@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.35 2011/07/17 02:23:56 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.36 2012/01/26 09:57:59 fingolfin Exp $</cvsid>
 
 <preface>
 <p>
@@ -1725,7 +1725,7 @@ pkglist fields.
 <itemd>
 <p>
 在本软件包构建前必需安装的软件包的列表。
-在这个字段中会进行百分号展开(也包括这部分中的其它软件包列表字段：BuildDepends、Provides、Conflicts、Replaces、Recommends、Suggests 和 Enhances)。
+在这个字段中会进行百分号展开(也包括这部分中的其它软件包列表字段：BuildDepends、RuntimeDepends、Provides、Conflicts、Replaces、Recommends、Suggests 和 Enhances)。
 通常，它只是以逗号分割软件包名清单，但 Fink 现在也和 dpkg 一样支持替代软件包和版本子句。
 一个体现全部特性的例子是：
 </p>
@@ -1804,6 +1804,20 @@ essential ones; this is no longer true.
 If a build is being done
 with test suites enabled, the dependencies in the <code>TestDepends</code>
 field will be added to this list.
+<!-- end translation -->
+</p>
+</itemd></item>
+
+<item><itemt>RuntimeDepends</itemt>
+<itemd>
+<p>
+<em>从 fink 0.32.0 开始。</em>
+<!-- start translation -->
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
 <!-- end translation -->
 </p>
 </itemd></item>
@@ -2219,7 +2233,6 @@ the <code>PatchFile</code> explicitly.
 <p>
 在编译和安装阶段设置一些环境变量。这可以用于传递一些编译器标志等信息到  configure 脚本和 Makefile 文件。目前支持的变量包括：
 CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
-LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
 LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
 MFLAGS, MAKEFLAGS。
 你指定的值也会应用前面说过百分号展开。一个常见的例子是：
@@ -2239,16 +2252,6 @@ LDFLAGS: -L%p/lib
 if <code>Type: -64bit</code> is set to <code>-64bit</code>, then the
 default value of <code>LDFLAGS</code> is <code>-L%p/%lib -L%p/lib</code> 
 instead.</p>
-<p>
-In addition, starting in fink 0.17.0, the following values are set for
-the 10.4-transitional distribution and earlier (but are not set for
-the 10.4 distribution and later):
-</p>
-<codeblock>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</codeblock>
 <p>
 Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
 on which version of OSX is being run, but setting a value for it for 

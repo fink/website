@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.46 2011/07/17 02:23:56 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.47 2012/01/26 09:57:59 fingolfin Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1955,7 +1955,7 @@ pkglist フィールドにコメントが可能．
 							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージのリスト．
 							このフィールドではパーセント展開が行われる
 							(「依存性関連」の他のフィールドでも同様:
-							BuildDepends, Provides, Conflicts, Replaces, Recommends, Suggests および Enhances)
+							BuildDepends, RuntimeDepends, Provides, Conflicts, Replaces, Recommends, Suggests および Enhances)
 							普通，値は「パッケージ名」の単なるカンマ区切りリストだが，
 							現在の Fink は (dpkgと同じ形式の) 「代替パッケージ節」と「バージョン節」に対応している．
 							それらを全て盛りこんだ例:
@@ -2039,6 +2039,22 @@ Depends: (%type_pkg[-x11]) x11
 							ビルドされる際にテストスイートが有効であれば，
 							<code>TestDepends</code>
 							がこのリストに追加される．
+						</p>
+					</itemd>
+				</item>
+
+				<item>
+					<itemt>RuntimeDepends</itemt>
+					<itemd>
+						<p>
+							<em>Fink 0.32.0 で導入:</em>
+<!-- start translation -->
+A list of dependencies that is applied at run time only,
+that is, when the package is being installed.
+This can be used to list packages that must be present to
+run the package, but which are not used at build time.
+Supports the same syntax as Depends.
+<!-- end translation -->
 						</p>
 					</itemd>
 				</item>
@@ -2523,7 +2539,6 @@ patch -p1 &lt; %{PatchFile}
 							コンパイラフラグなどを configure スクリプトや Makefile に渡すために使われます．
 							現在，対応している変数は次の通り: 
 							CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
-							LD_PREBIND, LD_PREBIND_ALLOW_OVERLAP, LD_FORCE_NO_PREBIND, LD_SEG_ADDR_TABLE,
 							LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
 							MFLAGS, MAKEFLAGS.
 							指定した値の中では前節で説明したパーセント展開が行われます．
@@ -2543,13 +2558,6 @@ LDFLAGS: -L%p/lib
 <code>Type: -64bit</code> が <code>-64bit</code> と定義されている場合，
 <code>LDFLAGS</code> は <code>-L%p/%lib -L%p/lib</code> となります．
 </p>
-<p>fink-0.17.0 より，10.4-transitional ディストリビューションまで，以下の値が設定されます
-(が，10.4 以降では設定されません)．</p>
-<codeblock>
-LD_PREBIND: 1
-LD_PREBIND_ALLOW_OVERLAP: 1
-LD_SEG_ADDR_TABLE: $basepath/var/lib/fink/prebound/seg_addr_table
-</codeblock>
 						<p>
 							MACOSX_DEPLOYMENT_TARGET は OSX のバージョンを既定値として持ちます．
 							これに値を指定することで (値の追加ではなく) 既定値を書き換えることができます．
