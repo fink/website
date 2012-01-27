@@ -5,8 +5,35 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-01-25T17:38:58+01:00</dc:date>
+    <dc:date>2012-01-26T21:25:39-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released">
+      <title>fink-0.32.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released</guid>
+      <description>
+      <p>fink-0.32.1 was released on 26 January, 2012.  This
+      release introduces a number of new features.</p>
+      <p>Those that impact package maintainers include: RuntimeDepends,
+      which are dependencies that are only required when a package is installed,
+      improvements to the package validator, updated manpages, and direct support
+      for .xz archives.</p>
+      <p>Those that impact users include improvements in the bootstrap script and
+      additional helpful suggestions in the post-error output.
+      </p>
+    </description>
+      <content:encoded>
+      <p>fink-0.32.1 was released on 26 January, 2012.  This
+      release introduces a number of new features.</p>
+      <p>Those that impact package maintainers include: RuntimeDepends,
+      which are dependencies that are only required when a package is installed,
+      improvements to the package validator, updated manpages, and direct support
+      for .xz archives.</p>
+      <p>Those that impact users include improvements in the bootstrap script and
+      additional helpful suggestions in the post-error output.
+      </p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-01-03%20fink-0.31.6%20released">
       <title>fink-0.31.6 released</title>
       <link>http://fink.sourceforge.net/news/#2012-01-03%20fink-0.31.6%20released</link>
@@ -369,17 +396,6 @@ make Fink work better in the future.</p>
         version of fink will be added to the stable tree shortly.
       </p>
       <p>Update, 2011-03-24:   It has been added to stable.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.">
-      <title>CVS access restored.</title>
-      <link>http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-02-10%20CVS%20access%20restored.</guid>
-      <description>
-      <p>Checkouts and commits now work again.  Thanks for your patience.</p>
-    </description>
-      <content:encoded>
-      <p>Checkouts and commits now work again.  Thanks for your patience.</p>
     </content:encoded>
     </item>
   </channel>
