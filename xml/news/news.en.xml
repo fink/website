@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.151 2012/01/05 00:37:27 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.152 2012/01/27 02:09:44 alexkhansen Exp $</cvsid>
  
+ <newsitem>
+    <date>2012-01-26</date>
+    <headline>fink-0.32.1 released</headline>
+    <body>
+      <p><code>fink-0.32.1</code> was released on 26 January, 2012.  This
+      release introduces a number of new features.</p>
+      <p>Those that impact package maintainers include: <code>RuntimeDepends</code>,
+      which are dependencies that are only required when a package is installed,
+      improvements to the package validator, updated manpages, and direct support
+      for <code>.xz</code> archives.</p>
+      <p>Those that impact users include improvements in the bootstrap script and
+      additional helpful suggestions in the post-error output.
+      </p>
+    </body>
+  </newsitem>
   <newsitem>
     <date>2012-01-03</date>
     <headline>fink-0.31.6 released</headline>
