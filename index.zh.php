@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2011/11/26 17:53:53 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2012/02/03 20:49:10 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
@@ -61,7 +61,7 @@ encouraged to avoid upgrading XCode beyond version 3.2.6.   On the other
 hand, 10.7 users must update XCode to version 4.1 or later (via the free download
 from the AppStore).  Note that if you installed an earlier version of XCode
 prior to updating, you need to <b>uninstall</b> the old version first, by
-running <i>/Develper/Library/uninstall-devtools</i> .  You can determine
+running <i>/Developer/Library/uninstall-devtools</i> .  You can determine
 your current version of XCode by running <i>xcodebuild -version</i> .
 </p>
 <p>

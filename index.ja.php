@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2011/11/28 04:49:57 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2012/02/03 20:49:10 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -63,7 +63,7 @@ include dirname(__FILE__) . "/fink_version.inc";
 逆に、10.7 ユーザは XCode を 4.1 またはそれ以降に更新しなければなりません
 (AppStore からフリーダウンロード)。
 更新の前に古い XCode をインストール済みの場合、
-<i>/Develper/Library/uninstall-devtools</i> を実行して
+<i>/Developer/Library/uninstall-devtools</i> を実行して
 <b>アンインストール</b>する必要があります。
 XCode のバージョンは、 <i>xcodebuild -version</i> とすることでわかります。</p>
 
