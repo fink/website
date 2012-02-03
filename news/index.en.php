@@ -1,13 +1,17 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/01/27 02:09:44';
+$cvs_date = 'Date: 2012/02/03 20:32:31';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-01-26%20fink-0.32.1%20released"><span class="news-date">2012-01-26: </span><span class="news-headline">fink-0.32.1 released</span></a><?php gray_line(); ?>
+<a name="2012-02-03%20fink-0.32.2%20released"><span class="news-date">2012-02-03: </span><span class="news-headline">fink-0.32.2 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.32.2</code> was released on 3 February, 2012.  This
+      release contains a fix for a bug in the handling of multiple source
+      archives in a package, and recognizes OS 10.7.3.</p>
+    <a name="2012-01-26%20fink-0.32.1%20released"><span class="news-date">2012-01-26: </span><span class="news-headline">fink-0.32.1 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.32.1</code> was released on 26 January, 2012.  This
       release introduces a number of new features.</p>
       <p>Those that impact package maintainers include: <code>RuntimeDepends</code>,

@@ -5,8 +5,23 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-01-26T21:25:39-05:00</dc:date>
+    <dc:date>2012-02-03T15:32:57-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-02-03%20fink-0.32.2%20released">
+      <title>fink-0.32.2 released</title>
+      <link>http://fink.sourceforge.net/news/#2012-02-03%20fink-0.32.2%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2012-02-03%20fink-0.32.2%20released</guid>
+      <description>
+      <p>fink-0.32.2 was released on 3 February, 2012.  This
+      release contains a fix for a bug in the handling of multiple source
+      archives in a package, and recognizes OS 10.7.3.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.32.2 was released on 3 February, 2012.  This
+      release contains a fix for a bug in the handling of multiple source
+      archives in a package, and recognizes OS 10.7.3.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released">
       <title>fink-0.32.1 released</title>
       <link>http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released</link>
@@ -364,39 +379,6 @@ make Fink work better in the future.</p>
         tree shortly.</p>
      <p>Update, 2011-03-29:   It has been added to stable.</p>
      </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.">
-      <title>fink-0.29.20 released.</title>
-      <link>http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-03-09%20fink-0.29.20%20released.</guid>
-      <description>
-      <p>
-        Version 0.29.20 of the fink package manager has just been
-        released to the unstable tree.  This version of fink         
-        fixes an issue with X11 detection against recent versions of
-        <a href="http://http://xquartz.macosforge.org/trac/wiki">Xquartz</a>
-        on Leopard.
-      </p>
-      <p>
-        Unless other updates are made in the near term, it is expected that this
-        version of fink will be added to the stable tree shortly.
-      </p>
-      <p>Update, 2011-03-24:   It has been added to stable.</p>
-    </description>
-      <content:encoded>
-      <p>
-        Version 0.29.20 of the fink package manager has just been
-        released to the unstable tree.  This version of fink         
-        fixes an issue with X11 detection against recent versions of
-        <a href="http://http://xquartz.macosforge.org/trac/wiki">Xquartz</a>
-        on Leopard.
-      </p>
-      <p>
-        Unless other updates are made in the near term, it is expected that this
-        version of fink will be added to the stable tree shortly.
-      </p>
-      <p>Update, 2011-03-24:   It has been added to stable.</p>
-    </content:encoded>
     </item>
   </channel>
 </rss>
