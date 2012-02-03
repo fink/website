@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/02/03 20:23:36 $';
+$cvs_date = '$Date: 2012/02/03 20:42:23 $';
 
 include "header.inc";
 ?>
@@ -40,19 +40,21 @@ onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
 system.</p>
 
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
-via</p>
+via running the following commands in a terminal window
+(assuming the default download location--You  to match your own setup):</p>
 
+<pre>cd $HOME/Downloads</pre>
+<p>followed by</p>
 <pre>tar -xzf fink-0.32.2.tar.gz</pre>
-
 <p>or</p>
-
 <pre>tar -xvf fink-0.32.2.tar</pre>
+<p>where the choice depends on whether the source has already been partially unpacked, 
+e.g. by Safari.</p>
 
-<p>if it has already been partially unpacked, in a terminal window.  Then run the following
-commands:</p>
+<p>Then run the following commands in a terminal window:</p>
 
-<pre>cd fink-0.32.2
-./bootstrap</pre>
+<pre>cd Downloads/fink-0.32.2<pre>
+<pre>./bootstrap</pre>
 
 <p>to start the boostrapping operation, which will install the Fink base
 setup.  If you would like to use a different location than the default <em>/sw</em>, you can do this via</p>
