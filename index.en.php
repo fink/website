@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/02/03 20:49:10 $';
+$cvs_date = '$Date: 2012/02/04 21:04:34 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -59,20 +59,32 @@ Fink currently supports OS X 10.7 (Lion), 10.6 (SnowLeopard), and 10.5
 official updates are no longer available for the older versions.
 Installation instructions can be found  on our <a href="download/srcdist.php">source
 release page</a>.
-</p><p>
-XCode must be installed before Fink.  For best results, 10.6 users are
-encouraged to avoid upgrading XCode beyond version 3.2.6.   On the other
-hand, 10.7 users must update XCode to version 4.1 or later (via the free download
-from the AppStore).  Note that if you installed an earlier version of XCode
-prior to updating, you need to <b>uninstall</b> the old version first, by
-running <i>/Developer/Library/uninstall-devtools</i> .  You can determine
-your current version of XCode by running <i>xcodebuild -version</i> .
 </p>
+<p>XCode must be installed before Fink.</p>  
+<strong>10.7 Support:</strong> 
+10.7 users must install or update XCode to version 4.1 or later 
+(via a free download from the AppStore).  Note that if you installed an 
+earlier version of XCode prior to updating, you need to <b>uninstall</b> 
+the old version first, by running 
+<i>/Developer/Library/uninstall-devtools</i> .
+You can determine your current version of XCode by running 
+<i>xcodebuild -version</i> .</p>
+<strong>10.6 Support:</strong>  For best results, 10.6 users are
+encouraged to upgrade XCode to version 3.2.6, or to version 4.2.1 if you
+paid for a 4.x Developer preview.  Version 4.0.2 is known to have some
+bugs in its linker that prevent certain packages from building.  Follow
+the instructions in the 10.7 section above regarding how to check your
+version and uninstall it, if needed.</p>
 <p>
 <strong>10.5 Support:</strong> 
-Users are encouraged to update to OS 10.5.2 or later, via Software Update, in order to get bugfixes and enhancements for X11.  Further updates continue to be made available on the <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
-(We are not currently supporting Xquartz on 10.6 or 10.7.)
-      </p>
+Users are encouraged to update to OS 10.5.2 or later, via Software Update, 
+in order to get bugfixes and enhancements for X11.  Further unofficial updates
+continue to be made available on the 
+<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
+We are not currently supporting Xquartz on 10.6 or 10.7.<br>
+Users should also install Xcode 3.1 or later, preferably 3.1.4, to fix some
+known problems in building packages.
+</p>
 
 <h1>Resources</h1>
 
