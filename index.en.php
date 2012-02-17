@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/02/04 21:04:34 $';
+$cvs_date = '$Date: 2012/02/17 21:00:54 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -47,7 +47,7 @@ include "news/news.inc";
 <?  include "package-updates.inc" ?>
 
 <a href="package-updates.php">more...</a>
-
+</tr><tr valign="top"><td width="50%">
 <h1>Status</h1>
 <? 
 include "fink_version.inc";
@@ -85,7 +85,7 @@ We are not currently supporting Xquartz on 10.6 or 10.7.<br>
 Users should also install Xcode 3.1 or later, preferably 3.1.4, to fix some
 known problems in building packages.
 </p>
-
+</td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 <h1>Resources</h1>
 
 <p>
