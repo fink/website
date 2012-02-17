@@ -1,13 +1,21 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/02/03 20:32:31';
+$cvs_date = 'Date: 2012/02/17 20:40:30';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-02-03%20fink-0.32.2%20released"><span class="news-date">2012-02-03: </span><span class="news-headline">fink-0.32.2 released</span></a><?php gray_line(); ?>
+<a name="2012-02-16%20fink-0.32.3%20released"><span class="news-date">2012-02-16: </span><span class="news-headline">fink-0.32.3 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.32.3</code> was released on 16 February, 2012.  This
+      release recognizes changes that were made for Xcode 4.3.</p>
+      <p>After installing Xcode 4.3 in <code>/Applications</code> <b>(and only there)</b>
+      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
+      connect.apple.com, and (2) run <code>sudo xcode-select -switch /Applications/Xcode.app</code>
+      to make sure that everything is pointed in the right place.</p>
+    <a name="2012-02-03%20fink-0.32.2%20released"><span class="news-date">2012-02-03: </span><span class="news-headline">fink-0.32.2 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.32.2</code> was released on 3 February, 2012.  This
       release contains a fix for a bug in the handling of multiple source
       archives in a package, and recognizes OS 10.7.3.</p>

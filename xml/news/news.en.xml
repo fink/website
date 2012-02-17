@@ -1,8 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.154 2012/02/03 20:32:31 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.155 2012/02/17 20:40:30 alexkhansen Exp $</cvsid>
  
+<newsitem>
+    <date>2012-02-16</date>
+    <headline>fink-0.32.3 released</headline>
+    <body>
+      <p><code>fink-0.32.3</code> was released on 16 February, 2012.  This
+      release recognizes changes that were made for Xcode 4.3.</p>
+      <p>After installing Xcode 4.3 in <code>/Applications</code> <em>(and only there)</em>
+      , users should:  (1) Select the Components pane from Xcode->Preferences->Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
+      connect.apple.com, and (2) run <code>sudo xcode-select -switch /Applications/Xcode.app</code>
+      to make sure that everything is pointed in the right place.</p>
+    </body>
+  </newsitem>
  <newsitem>
     <date>2012-02-03</date>
     <headline>fink-0.32.2 released</headline>

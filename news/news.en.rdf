@@ -5,8 +5,31 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-02-03T15:32:57-05:00</dc:date>
+    <dc:date>2012-02-17T15:40:53-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released">
+      <title>fink-0.32.3 released</title>
+      <link>http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released</guid>
+      <description>
+      <p>fink-0.32.3 was released on 16 February, 2012.  This
+      release recognizes changes that were made for Xcode 4.3.</p>
+      <p>After installing Xcode 4.3 in /Applications (and only there)
+      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
+      connect.apple.com, and (2) run sudo xcode-select -switch /Applications/Xcode.app
+      to make sure that everything is pointed in the right place.</p>
+    </description>
+      <content:encoded>
+      <p>fink-0.32.3 was released on 16 February, 2012.  This
+      release recognizes changes that were made for Xcode 4.3.</p>
+      <p>After installing Xcode 4.3 in /Applications (and only there)
+      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
+      connect.apple.com, and (2) run sudo xcode-select -switch /Applications/Xcode.app
+      to make sure that everything is pointed in the right place.</p>
+    </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-02-03%20fink-0.32.2%20released">
       <title>fink-0.32.2 released</title>
       <link>http://fink.sourceforge.net/news/#2012-02-03%20fink-0.32.2%20released</link>
@@ -356,29 +379,6 @@ make Fink work better in the future.</p>
       <p>fink-0.30.0 was released to the unstable tree on 30 April, 2011.</p>
       <p>The 0.30.x series is intended to be the last to support OS 10.4 (Tiger).</p>
     </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.">
-      <title>fink-0.29.21 released.</title>
-      <link>http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-03-24%20fink-0.29.21%20released.</guid>
-      <description>
-      <p>Version 0.29.21 of the fink package manager has just been
-        released to the unstable tree.  This version of fink 
-        properly recognizes OS 10.6.7, and contains a bugfix for a situation 
-        where fink can't index.</p>
-      <p>It is expected that this version of fink will be added to the stable
-        tree shortly.</p>
-     <p>Update, 2011-03-29:   It has been added to stable.</p>
-     </description>
-      <content:encoded>
-      <p>Version 0.29.21 of the fink package manager has just been
-        released to the unstable tree.  This version of fink 
-        properly recognizes OS 10.6.7, and contains a bugfix for a situation 
-        where fink can't index.</p>
-      <p>It is expected that this version of fink will be added to the stable
-        tree shortly.</p>
-     <p>Update, 2011-03-29:   It has been added to stable.</p>
-     </content:encoded>
     </item>
   </channel>
 </rss>
