@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/02/17 20:40:30';
+$cvs_date = 'Date: 2012/03/08 13:13:20';
 $metatags = '';
 
 include_once "header.inc";
@@ -13,8 +13,8 @@ include_once "header.inc";
       <p>After installing Xcode 4.3 in <code>/Applications</code> <b>(and only there)</b>
       , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
       install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run <code>sudo xcode-select -switch /Applications/Xcode.app</code>
-      to make sure that everything is pointed in the right place.</p>
+      connect.apple.com, and (2) run</p><p><code>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</code></p>
+      <p>to make sure that everything is pointed in the right place.</p>
     <a name="2012-02-03%20fink-0.32.2%20released"><span class="news-date">2012-02-03: </span><span class="news-headline">fink-0.32.2 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.32.2</code> was released on 3 February, 2012.  This
       release contains a fix for a bug in the handling of multiple source
