@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.26 2011/06/26 22:57:21 gecko2 Exp $ */
+/* $Id: header.inc,v 1.27 2012/03/27 14:26:13 gecko2 Exp $ */
 
 $linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -26,8 +26,8 @@ header("Expires: " . gmdate("D, d M Y H:i:s", time() + $cache_timeout) . " GMT")
 header("Cache-Control: max-age=" . $cache_timeout . ", s-maxage=" . ($cache_timeout / 2));
 
 /* check path info */
-if (isset($HTTP_SERVER_VARS["PATH_INFO"])) {
-	$PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
+if (isset($_SERVER["PATH_INFO"])) {
+	$PATH_INFO = $_SERVER["PATH_INFO"];
 } else {
 	$PATH_INFO = "";
 }

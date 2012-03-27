@@ -1,11 +1,11 @@
 <?php
 $title = "Package Database - Obsolete page";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2011/06/26 23:19:10 $';
+$cvs_date = '$Date: 2012/03/27 14:26:13 $';
 
 /* check path info */
-if (isset($HTTP_SERVER_VARS["PATH_INFO"])) {
-        $PATH_INFO = $HTTP_SERVER_VARS["PATH_INFO"];
+if (isset($_SERVER["PATH_INFO"])) {
+        $PATH_INFO = $_SERVER["PATH_INFO"];
 } else {
         $PATH_INFO = "";
 }

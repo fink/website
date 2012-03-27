@@ -174,14 +174,14 @@ function phpLang_detectLanguage($str, $from)
 }
 
 // finds the appropriate language file
-if (isset($HTTP_GET_VARS[phpLang_urlParam]) && file_exists(phpLang_localizedFileName($HTTP_GET_VARS[phpLang_urlParam])) && !isDisabled($HTTP_GET_VARS[phpLang_urlParam])) {
+if (isset($_GET[phpLang_urlParam]) && file_exists(phpLang_localizedFileName($_GET[phpLang_urlParam])) && !isDisabled($_GET[phpLang_urlParam])) {
 	// a language as been chosen by the user
-	define('phpLang_current', $HTTP_GET_VARS[phpLang_urlParam]);
+	define('phpLang_current', $_GET[phpLang_urlParam]);
 }
 
-if (!defined('phpLang_current') && phpLang_useCookie && isset($HTTP_COOKIE_VARS['phpLangCookie']) && file_exists(phpLang_localizedFileName($HTTP_COOKIE_VARS['phpLangCookie'])) && !isDisabled($HTTP_COOKIE_VARS['phpLangCookie'])) {
+if (!defined('phpLang_current') && phpLang_useCookie && isset($_COOKIE['phpLangCookie']) && file_exists(phpLang_localizedFileName($_COOKIE['phpLangCookie'])) && !isDisabled($_COOKIE['phpLangCookie'])) {
 	// a language as been found in a cookie previously set
-	define('phpLang_current', $HTTP_COOKIE_VARS['phpLangCookie']);
+	define('phpLang_current', $_COOKIE['phpLangCookie']);
 }
 
 if (!defined('phpLang_current') && isset($HTTP_ACCEPT_LANGUAGE) && trim($HTTP_ACCEPT_LANGUAGE) != '') {

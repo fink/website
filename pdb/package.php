@@ -1,6 +1,6 @@
 <?php
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2011/10/27 17:00:19 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2012/03/27 14:26:13 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -8,8 +8,8 @@ include_once "functions.inc";
 include_once "releases.inc";
 include_once "sections.inc";
 
-if (isset($HTTP_SERVER_VARS["PATH_INFO"])) {
-	$package = basename($HTTP_SERVER_VARS["PATH_INFO"]);
+if (isset($_SERVER["PATH_INFO"])) {
+	$package = basename($_SERVER["PATH_INFO"]);
 } else {
 	$package = "";
 }
