@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/03/28 04:18:17 $';
+$cvs_date = '$Date: 2012/03/28 04:27:54 $';
 
 include "header.inc";
 ?>
@@ -55,7 +55,7 @@ e.g. by Safari.</p>
 <p>Then run the following commands in a terminal window:</p>
 
 <pre>cd fink-0.32.4.1<pre>
-<pre>./bootstrap</pre>
+./bootstrap</pre>
 
 <p>to start the boostrapping operation, which will install the Fink base
 setup.  If you would like to use a different location than the default <em>/sw</em>, you can do this via</p>
