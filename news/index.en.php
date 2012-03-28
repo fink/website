@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/03/28 04:06:13';
+$cvs_date = 'Date: 2012/03/28 04:19:20';
 $metatags = '';
 
 include_once "header.inc";
@@ -12,8 +12,8 @@ include_once "header.inc";
       release allows users to install Xcode 4.3.x in an arbitrary location.</p>
       <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
       install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p><code>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</code></p>
-      <p>to make sure that everything is pointed in the right place.</p>
+      connect.apple.com, and (2) run</p><p><code>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</code></p>
+      <p>(replacing <code>/path/to</code> with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
       <p><code>fink-0.32.4.1</code> also enhances the checksumming operation under
       <code>fink fetch</code>.</p>
     <a name="2012-02-16%20fink-0.32.3%20released"><span class="news-date">2012-02-16: </span><span class="news-headline">fink-0.32.3 released</span></a><?php gray_line(); ?>

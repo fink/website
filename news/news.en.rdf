@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-03-27T21:06:47-07:00</dc:date>
+    <dc:date>2012-03-27T21:19:37-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-03-27%20fink-0.32.4.1%20released">
       <title>fink-0.32.4.1 released</title>
@@ -16,8 +16,8 @@
       release allows users to install Xcode 4.3.x in an arbitrary location.</p>
       <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
       install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</p>
-      <p>to make sure that everything is pointed in the right place.</p>
+      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</p>
+      <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
       <p>fink-0.32.4.1 also enhances the checksumming operation under
       fink fetch.</p>
     </description>
@@ -26,8 +26,8 @@
       release allows users to install Xcode 4.3.x in an arbitrary location.</p>
       <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
       install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</p>
-      <p>to make sure that everything is pointed in the right place.</p>
+      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</p>
+      <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
       <p>fink-0.32.4.1 also enhances the checksumming operation under
       fink fetch.</p>
     </content:encoded>
