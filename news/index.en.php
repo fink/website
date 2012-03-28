@@ -1,13 +1,22 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/03/08 13:13:20';
+$cvs_date = 'Date: 2012/03/28 04:06:13';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-02-16%20fink-0.32.3%20released"><span class="news-date">2012-02-16: </span><span class="news-headline">fink-0.32.3 released</span></a><?php gray_line(); ?>
+<a name="2012-03-27%20fink-0.32.4.1%20released"><span class="news-date">2012-03-27: </span><span class="news-headline">fink-0.32.4.1 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.32.4.1</code> was released on 27 March, 2012.  This
+      release allows users to install Xcode 4.3.x in an arbitrary location.</p>
+      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
+      connect.apple.com, and (2) run</p><p><code>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</code></p>
+      <p>to make sure that everything is pointed in the right place.</p>
+      <p><code>fink-0.32.4.1</code> also enhances the checksumming operation under
+      <code>fink fetch</code>.</p>
+    <a name="2012-02-16%20fink-0.32.3%20released"><span class="news-date">2012-02-16: </span><span class="news-headline">fink-0.32.3 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.32.3</code> was released on 16 February, 2012.  This
       release recognizes changes that were made for Xcode 4.3.</p>
       <p>After installing Xcode 4.3 in <code>/Applications</code> <b>(and only there)</b>
