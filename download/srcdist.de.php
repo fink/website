@@ -1,7 +1,7 @@
 <?
 $title = "Quelltext Version Download";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 19:01:50 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2012/03/29 00:09:30 $';
 
 include "header.inc";
 ?>
@@ -14,8 +14,9 @@ Diese Version lädt den Quellcode von der Original Veröffentlichungsseite und k
 </p>
 -->
 <!-- start translation -->
-<p>The source tarball contains the <em>fink</em> package manager.  After you have installed it, you will be able to get package descriptions and patches.  It will use these to download the source code from the original distribution sites or the Fink project's mirrors and build them on your local machine.</p>
-<!-- end translation -->
+<p>Der Source-Tarball enthält den Fink-Paketmanager. Mit dessen Hilfe können Sie nach der Installation Paketbeschreibungen und Patches beziehen.
+Diese werden verwendet, um Software aus den Projekt-Repositories oder den Mirrors des Fink-Projekts herunterzuladen und auf Ihrem Computer zu installieren.
+</p>
 <? 
 include "../fink_version.inc";
 ?>
@@ -45,19 +46,16 @@ Entpacken Sie die Datei nicht mit dem Programm  StuffIt, da er manche Dateinamen
 Nutzen Sie stattdessen das Kommandozeilen-Tool<tt>tar</tt>. -->
 
 <!-- start translation -->
-You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >the Quick Start page</a>).</p>
-  <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g. via</p>
+Bitte installieren Sie außerdem  die Xcode Tools (siehe auch <a href="./index.en.php" >the Quick Start page</a>).</p>
+  <p>Entpacken Sie das tar.gz-Archiv (falls nicht automatisch geschehen) mit folgendem Befehl aus dem Terminal:</p>
 <pre>tar -xvzf fink-0.28.0.tar.gz</pre>
 
-<p>in a terminal window.  Then, in a terminal window, change to the resulting <em>fink-0.28.0</em> directory, and use</p>
+<p>Wechseln Sie in das entpackte Verzeichnis fink-0.28.0 und führen Sie</p>
 <pre>./bootstrap</pre>
-<p>to start the boostrapping operation, which will install the Fink base setup.</p>
-<p>After you have installed <em>fink</em> and the other base packages, the commands</p>
+<p>aus, um das das Fink-Grundsystem zu installieren.</p>
+<p>Nach der Installation von Fink und den weiteren Basispaketen führen Sie bitte einen der folgenden Befehle aus, um die Paketbeschreibungen und Pasches herunterzuladen:</p>
 <pre>fink selfupdate-rsync</pre>
-<p>or</p>
 <pre>fink selfupdate-cvs</pre>
-
-<p>will download the package description files and patches.</p>
 <!-- end translation -->
 
 <p>In obiger Datei finden Sie umfangreiche Anleitungen zur Installation und Nutzung.
@@ -66,13 +64,6 @@ Die Dokumente README, INSTALL und USAGE stehen sowohl als reine Textdokumente (z
 die Dokumente finden sie auch online im <a
 href="../doc/index.php">Bereich Dokumentation</a>.
 </p>
-<!-- start translation -->
-<p>After you have installed <em>fink</em> and the other base packages, the commands</p>
-<pre>fink selfupdate-rsync</pre>
-<p>or</p>
-<pre>fink selfupdate-cvs</pre>
-<p>will download the package description files and patches.</p>
-<!-- end translation -->
 <p>
 Um über neue Versionen informiert zu werden, abonnieren Sie die<a
 href="../lists/fink-announce.php">fink-announce Mailingliste</a>.
