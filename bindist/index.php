@@ -1,6 +1,9 @@
 <?
 /* index.php */
 
+// set default timezone
+date_default_timezone_set('UTC');
+
 // get directory level and calculate path to top
 if (!isset($level)) $level = 0;
 if (!isset($symlinked)) $symlinked = 0;
