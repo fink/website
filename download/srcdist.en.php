@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/04/08 19:00:26 $';
+$cvs_date = '$Date: 2012/04/08 19:07:07 $';
 
 include "header.inc";
 ?>
@@ -24,7 +24,7 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 
 <ul>
      <li>
-For OS X 10.5-10.7, use <a href="http://downloads.sourceforge.net/fink/fink-0.32.4.1.tar.gz"
+For OS X 10.5-10.7, use <a href="http://downloads.sourceforge.net/fink/fink-0.32.5.4.tar.gz"
 onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.32.5.4</a>
 - 1295K, .tar.gz format
      </li>
