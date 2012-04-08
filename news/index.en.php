@@ -1,13 +1,19 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/03/28 04:19:20';
+$cvs_date = 'Date: 2012/04/08 18:51:15';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-03-27%20fink-0.32.4.1%20released"><span class="news-date">2012-03-27: </span><span class="news-headline">fink-0.32.4.1 released</span></a><?php gray_line(); ?>
+<a name="2012-04-07%20fink-0.32.5.4%20released"><span class="news-date">2012-04-07: </span><span class="news-headline">fink-0.32.5.4 released</span></a><?php gray_line(); ?>
+   <p>
+    <code>fink-0.32.5.4</code> was released on 8 April, 2012.  This release allows users
+    on 10.7 to bootstrap against the Xcode Command Line Tools.  Note that some packages
+    actually require the full Xcode to build.
+   </p>
+  <a name="2012-03-27%20fink-0.32.4.1%20released"><span class="news-date">2012-03-27: </span><span class="news-headline">fink-0.32.4.1 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.32.4.1</code> was released on 27 March, 2012.  This
       release allows users to install Xcode 4.3.x in an arbitrary location.</p>
       <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 

@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/03/28 04:32:15 $';
+$cvs_date = '$Date: 2012/04/08 19:00:26 $';
 
 include "header.inc";
 ?>
@@ -20,12 +20,12 @@ It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
 <p>The current version, <em>fink-0.32.4.1</em>, was officially released on
-2012-03-27.</p>
+2012-04-08.</p>
 
 <ul>
      <li>
 For OS X 10.5-10.7, use <a href="http://downloads.sourceforge.net/fink/fink-0.32.4.1.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.32.4.1</a>
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.32.5.4</a>
 - 1295K, .tar.gz format
      </li>
      <li>
@@ -39,22 +39,25 @@ onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
 (c.f. <a href="./index.en.php">the Quick Start page</a>) for your operating
 system.  For Xcode 4.3 and later, you will want to run:</p>
 <pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
-<p>where you should replace <code>/path/to</code> with the actual path to the Xcode app.</p>
+<p>where you should replace <code>/path/to</code> with the actual path to the Xcode app.
+You will also need to install the Command Line Tools for Xcode, which can be done either
+via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>, or via a separate
+download.</p>
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via running the following commands in a terminal window
 (assuming the default download location--you'll need to match these commands to your own setup):</p>
 
 <pre>cd $HOME/Downloads</pre>
 <p>followed by</p>
-<pre>tar -xvf fink-0.32.4.1.tar.gz</pre>
+<pre>tar -xvf fink-0.32.5.4.tar.gz</pre>
 <p>or</p>
-<pre>tar -xvf fink-0.32.4.1.tar</pre>
+<pre>tar -xvf fink-0.32.5.4.tar</pre>
 <p>where the choice depends on whether the source has already been partially unpacked, 
 e.g. by Safari.</p>
 
 <p>Then run the following commands in a terminal window:</p>
 
-<pre>cd fink-0.32.4.1
+<pre>cd fink-0.32.5.4
 ./bootstrap</pre>
 
 <p>to start the boostrapping operation, which will install the Fink base
