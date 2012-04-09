@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.162 2012/04/08 18:51:15 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.163 2012/04/09 23:48:50 alexkhansen Exp $</cvsid>
  
 <newsitem>
-  <date>2012-04-07</date>
+  <date>2012-04-09</date>
+  <headline>fink-0.32.5.5 released</headline>
+  <body>
+   <p>
+    <code>fink-0.32.5.5</code> was released on 9 April, 2012.  This bugfix release
+    fixes an issue with bootstrapping on <em>10.5/PowerPC</em>.
+   </p>
+  </body>
+</newsitem>
+<newsitem>
+  <date>2012-04-08</date>
   <headline>fink-0.32.5.4 released</headline>
   <body>
    <p>
