@@ -5,12 +5,29 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-04-08T11:51:48-07:00</dc:date>
+    <dc:date>2012-04-09T16:49:21-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-04-07%20fink-0.32.5.4%20released">
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released">
+      <title>fink-0.32.5.5 released</title>
+      <link>http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released</guid>
+      <description>
+   <p>
+    fink-0.32.5.5 was released on 9 April, 2012.  This bugfix release
+    fixes an issue with bootstrapping on 10.5/PowerPC.
+   </p>
+  </description>
+      <content:encoded>
+   <p>
+    fink-0.32.5.5 was released on 9 April, 2012.  This bugfix release
+    fixes an issue with bootstrapping on 10.5/PowerPC.
+   </p>
+  </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released">
       <title>fink-0.32.5.4 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-04-07%20fink-0.32.5.4%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-04-07%20fink-0.32.5.4%20released</guid>
+      <link>http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released</guid>
       <description>
    <p>
     fink-0.32.5.4 was released on 8 April, 2012.  This release allows users
@@ -375,23 +392,6 @@ may not be complete prior to the release of Lion.</p>
 <p>10.7 introduces several drastic changes to how the system works. While this may
 cause a slight delay in full Fink functionality in the short term, it will
 make Fink work better in the future.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-07-11%20fink-0.30.2%20released.">
-      <title>fink-0.30.2 released.</title>
-      <link>http://fink.sourceforge.net/news/#2011-07-11%20fink-0.30.2%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-07-11%20fink-0.30.2%20released.</guid>
-      <description>
-      <p>fink-0.30.2 was released to the unstable tree on 11 July, 2011.
-      It is likely that this will be the last version that supports OS 10.4.</p>
-      <p>It is planned to release it to stable soon.</p>
-      <p>Update, 2011-07-15:   It has been added to stable.</p>
-    </description>
-      <content:encoded>
-      <p>fink-0.30.2 was released to the unstable tree on 11 July, 2011.
-      It is likely that this will be the last version that supports OS 10.4.</p>
-      <p>It is planned to release it to stable soon.</p>
-      <p>Update, 2011-07-15:   It has been added to stable.</p>
     </content:encoded>
     </item>
   </channel>

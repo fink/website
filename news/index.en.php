@@ -1,13 +1,18 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/04/08 18:51:15';
+$cvs_date = 'Date: 2012/04/09 23:48:50';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-04-07%20fink-0.32.5.4%20released"><span class="news-date">2012-04-07: </span><span class="news-headline">fink-0.32.5.4 released</span></a><?php gray_line(); ?>
+<a name="2012-04-09%20fink-0.32.5.5%20released"><span class="news-date">2012-04-09: </span><span class="news-headline">fink-0.32.5.5 released</span></a><?php gray_line(); ?>
+   <p>
+    <code>fink-0.32.5.5</code> was released on 9 April, 2012.  This bugfix release
+    fixes an issue with bootstrapping on <b>10.5/PowerPC</b>.
+   </p>
+  <a name="2012-04-08%20fink-0.32.5.4%20released"><span class="news-date">2012-04-08: </span><span class="news-headline">fink-0.32.5.4 released</span></a><?php gray_line(); ?>
    <p>
     <code>fink-0.32.5.4</code> was released on 8 April, 2012.  This release allows users
     on 10.7 to bootstrap against the Xcode Command Line Tools.  Note that some packages
