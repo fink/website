@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.en.xml,v 1.122 2012/01/26 09:57:59 fingolfin Exp $
+Generated from $Fink: packaging.en.xml,v 1.124 2012/04/14 19:23:12 alexkhansen Exp $
 -->
 <title>Fink Documentation - Creating Fink Packages</title></head><body>
 <table width="100%" cellspacing="0">
@@ -1646,7 +1646,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <tt style="white-space: nowrap;">10.4</tt>, <tt style="white-space: nowrap;">10.5</tt>, and 10.6 distributions share
+Since Fink's <tt style="white-space: nowrap;">10.4</tt>, <tt style="white-space: nowrap;">10.5</tt>, and <tt style="white-space: nowrap;">10.6</tt> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -1671,7 +1671,7 @@ foo-pm586 variant.
 <p>Since python 2.3 is not available in the 10.5 distribution, and the
 available perl packages vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
 </p>
 <pre>
     perl 5.6.0:  10.3
@@ -1681,19 +1681,21 @@ various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
+    perl 5.12.3:                         <b>10.7</b>
 </pre>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3)
   Distribution: &lt;&lt;
    (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
    (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
    (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
    (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
    (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
-   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6,
+   (%type_pkg[perl] = 5123) 10.7
   &lt;&lt;
 </pre>
 <p>Note that we do not include old
@@ -2455,7 +2457,7 @@ MFLAGS, MAKEFLAGS.
 The value you specify is subject to the
 percent expansion described in the last section. A common example:
 </p>
-<pre>SetCPPFLAGS: -no-cpp-precomp</pre>
+<pre>SetLDFLAGS: -Wl,-strip_dead_dylibs</pre>
 <p>
 Some environment variables have default preset values.
 If you specify a value for one of these, it will be
@@ -2494,6 +2496,14 @@ This value is added to MAKEFLAGS even if the field <tt style="white-space: nowra
 true</tt> is used. As of fink &gt; 0.31.2, if the field is not present or 
 blank, the default is <tt style="white-space: nowrap;">True</tt>.
 </p>
+</td></tr><tr valign="top"><td>BuildAsNobody</td><td>
+<p>
+In fink &gt;= 0.33.0, when set to a <tt style="white-space: nowrap;">false</tt> value, causes fink
+to build as <tt style="white-space: nowrap;">root</tt> rather than as the underprivileged <tt style="white-space: nowrap;">fink-bld</tt> user.
+If this field is not present, its value defaults to <tt style="white-space: nowrap;">true</tt>, indicating
+that the package should be built as <tt style="white-space: nowrap;">fink-bld</tt>.
+</p>
+<p>In earlier fink versions, this field does nothing.</p>
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
 Additional parameters to pass to the configure script. (See
@@ -3161,4 +3171,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.en.xml,v 1.122 2012/01/26 09:57:59 fingolfin Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.en.xml,v 1.124 2012/04/14 19:23:12 alexkhansen Exp $</i></p></body></html>

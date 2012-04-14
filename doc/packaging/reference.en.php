@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2012/01/26 09:57:59';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2012/04/14 19:23:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -181,7 +181,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
+Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -206,7 +206,7 @@ foo-pm586 variant.
 <p>Since python 2.3 is not available in the 10.5 distribution, and the
 available perl packages vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
 </p>
 <pre>
     perl 5.6.0:  10.3
@@ -216,19 +216,21 @@ various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
+    perl 5.12.3:                         <b>10.7</b>
 </pre>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3)
   Distribution: &lt;&lt;
    (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
    (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
    (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
    (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
    (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
-   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6,
+   (%type_pkg[perl] = 5123) 10.7
   &lt;&lt;
 </pre>
 <p>Note that we do not include old
@@ -990,7 +992,7 @@ MFLAGS, MAKEFLAGS.
 The value you specify is subject to the
 percent expansion described in the last section. A common example:
 </p>
-<pre>SetCPPFLAGS: -no-cpp-precomp</pre>
+<pre>SetLDFLAGS: -Wl,-strip_dead_dylibs</pre>
 <p>
 Some environment variables have default preset values.
 If you specify a value for one of these, it will be
@@ -1029,6 +1031,14 @@ This value is added to MAKEFLAGS even if the field <code>NoSetMAKEFLAGS:
 true</code> is used. As of fink &gt; 0.31.2, if the field is not present or 
 blank, the default is <code>True</code>.
 </p>
+</td></tr><tr valign="top"><td>BuildAsNobody</td><td>
+<p>
+In fink &gt;= 0.33.0, when set to a <code>false</code> value, causes fink
+to build as <code>root</code> rather than as the underprivileged <code>fink-bld</code> user.
+If this field is not present, its value defaults to <code>true</code>, indicating
+that the package should be built as <code>fink-bld</code>.
+</p>
+<p>In earlier fink versions, this field does nothing.</p>
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
 Additional parameters to pass to the configure script. (See
