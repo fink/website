@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.123 2012/01/27 20:01:22 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.124 2012/04/14 19:23:12 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -2755,7 +2755,7 @@ MFLAGS, MAKEFLAGS.
 The value you specify is subject to the
 percent expansion described in the last section. A common example:
 </p>
-<codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
+<codeblock>SetLDFLAGS: -Wl,-strip_dead_dylibs</codeblock>
 <p>
 Some environment variables have default preset values.
 If you specify a value for one of these, it will be
@@ -2799,6 +2799,17 @@ This value is added to MAKEFLAGS even if the field <code>NoSetMAKEFLAGS:
 true</code> is used. As of fink > 0.31.2, if the field is not present or 
 blank, the default is <code>True</code>.
 </p>
+</itemd></item>
+
+<item><itemt>BuildAsNobody</itemt>
+<itemd>
+<p>
+In fink &gt;= 0.33.0, when set to a <code>false</code> value, causes fink
+to build as <code>root</code> rather than as the underprivileged <code>fink-bld</code> user.
+If this field is not present, its value defaults to <code>true</code>, indicating
+that the package should be built as <code>fink-bld</code>.
+</p>
+<p>In earlier fink versions, this field does nothing.</p>
 </itemd></item>
 
 <item><itemt>ConfigureParams</itemt>
