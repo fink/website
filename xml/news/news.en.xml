@@ -1,8 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.163 2012/04/09 23:48:50 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.164 2012/04/14 18:55:48 alexkhansen Exp $</cvsid>
  
+<newsitem>
+  <date>2012-04-14</date>
+  <headline>fink-0.32.6 released</headline>
+  <body>
+   <p>
+    <code>fink-0.32.6</code> was released on 14 April, 2012.  This release introduces
+    a new package description field, <code>BuildAsNobody: false</code>, to mark packages which
+    cannot built using <code>fink --build-as-nobody</code>.  Currently, this does not
+    have any effect, but in <code>fink-0.33.0</code> and later we will begin building packages
+    as an unprivileged user by default, and this field will allow packages to be built
+    as root.
+   </p>
+  </body>
+</newsitem>
 <newsitem>
   <date>2012-04-09</date>
   <headline>fink-0.32.5.5 released</headline>
