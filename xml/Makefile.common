@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.26 2011/11/30 12:33:04 fingolfin Exp $
+# $Id: Makefile.common,v 1.27 2012/04/14 19:29:12 alexkhansen Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -128,7 +128,8 @@ endif
 
 ifdef WANT_HTML
 	@echo "Installing HTML files"
-	cp $(INSTALL_HTML) $(basedir)/scripts/installer/dmg/$(DESTDIR)/
+#   since scripts module is now elsewhere this is a no-op
+#	cp $(INSTALL_HTML) $(basedir)/scripts/installer/dmg/$(DESTDIR)/
 endif
 
 install-hook:
