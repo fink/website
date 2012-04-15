@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.118 2011/04/08 20:42:10 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.119 2012/04/15 17:30:16 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1472,124 +1472,6 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
 endif</codeblock>
       </answer>
     </faqentry>
-    <faqentry name="cant-install-xfree">
-      <question>
-        <p>I want to switch to Fink's XFree86 packages, but I can't install
-        <code>xfree86-base</code> | <code>xfree86</code>, because it conflicts
-        with <code>system-xfree86</code>.</p>
-      </question>
-      <answer>
-        <p>All flavors of X11, unfortunately, really needs to be installed in
-        /usr/X11R6. Because of this the Fink <code>xfree86-base</code> and
-        <code>xfree86-rootless</code> packages install there, too. However,
-        since Fink won't remove any files that aren't in its database, it
-        won't automatically replace a non-Fink installation of X11.</p>
-        <p></p>
-        <p>Here's how to proceed:</p>
-        <p></p>
-        <p>
-          <em>Note: 10.2.x users with up-to-date versions of Fink (&gt;=
-        0.16.2) and 10.3.x users should skip step 1 below (it won't work
-        anyway).</em>
-        </p>
-        <p>1. Remove <code>system-xfree86</code>. If you don't have any
-        packages that depend on X11, this is straightforward. Frequently,
-        however, many packages that depend on X11 are installed. Rather than
-        uninstalling all of them, you can use</p>
-        <codeblock>sudo dpkg --remove --force-depends system-xfree86</codeblock>
-        <p>to remove it, leaving everything in place. If you don't have
-        <code>system-xfree86</code> installed then proceed to step 3.</p>
-        <p>2. Manually remove all of XFree86. This can be done with</p>
-        <codeblock>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</codeblock>
-        <p>If you are switching from Apple X11, remove the X11 application,
-        too.</p>
-        <p>3. To get XFree86-4.2.1, Install Fink's <code>xfree86-base</code>
-        and <code>xfree86-rootless</code> packages by the usual means:
-        "<code>fink install</code>" for source users, "<code>apt-get
-        install</code>" or <code>dselect</code> for binaries.</p>
-        <p>-or-</p>
-        <p>3a. To get XFree86-4.3.x and above, install Fink's <code>xfree86</code> package, with "fink install xfree86"--the latest version (XFree86-4.4.x as of May 25th, 2004) isn't in the binary distro yet, and is currently only in the unstable tree [see <link url="http://www.finkproject.org/faq/usage-fink.php#unstable\">how to install unstable packages</link>].</p>
-      </answer>
-    </faqentry>
-    <faqentry name="change-thread-nothread">
-      <question>
-        <p>How do I change from the non-threaded version of Fink's XFree86
-        packages to the threaded version (or vice-versa)?</p>
-      </question>
-      <answer>
-        <p>If you are running the Fink version of XFree86 and you want to
-        switch between the threaded and non-threaded versions of Fink, you
-        need to manually remove the old version. This is done at the
-        command-line with the commands:</p>
-        <codeblock>sudo dpkg -r --force-depends xfree86-base 
-sudo dpkg -r --force-depends xfree86-shlibs 
-sudo dpkg -r --force-depends xfree86-rootless 
-sudo dpkg -r --force-depends xfree86-rootless-shlibs</codeblock>
-        <p>or to delete the threaded versions:</p>
-        <codeblock>sudo dpkg -r --force-depends xfree86-base-threaded 
-sudo dpkg -r --force-depends xfree86-shlibs-threaded 
-sudo dpkg -r --force-depends xfree86-rootless-threaded 
-sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
-        <p>FinkCommander also has a way to remove packages. In the source
-        window, select a package, and then in the <code>Source Menu</code> use
-        &quot;<code>Force Remove</code>.&quot;</p>
-        <p>If you are using system-xfree86, see the previous question for
-        removing it.</p>
-        <p>Install the version of xfree86 you want:</p>
-        <p>
-          <code>xfree86-base</code> and <code>xfree86-rootless</code>
-        </p>
-        <p>
-          <code>xfree86-base-threaded</code> and
-        <code>xfree86-rootless-threaded</code>
-        </p>
-        <p>by the usual means: "<code>fink install</code>" for source users,
-        &quot;<code>apt-get install</code>&quot; or <code>dselect</code> for
-        binaries.</p>
-      </answer>
-    </faqentry>
-    <faqentry name="libiconv-gettext">
-      <question>
-        <p>I can't update <code>libiconv</code>.</p>
-      </question>
-      <answer>
-        <p>If you get errors of the form:</p>
-        <codeblock>libtool: link: cannot find the library `/sw/lib/libiconv.la'</codeblock>
-        <p>you can solve this problem by running</p>
-        <codeblock>fink remove gettext-dev
-fink install libiconv</codeblock>
-      </answer>
-    </faqentry>
-    <faqentry name="cplusplus-filt">
-      <question>
-        <p>I can't install a package because <filename>c++filt</filename> is missing.  Where do I get it?</p>
-      </question>
-      <answer>
-        <p>If you get errors of the form </p>
-        <codeblock>xgcc: installation problem, cannot exec `c++filt': No such file or directory</codeblock>
-        <p>since updating to Tiger, then you need to do the following:</p>
-        <ul>
-           <li>Reinstall <code>BSD.pkg</code> (from your installation media).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
-	</ul>
-	<p>You also might also need to make sure you don't have any ancient Developer/Xcode Tools stuff laying around:</p>
-	<ul>
-	  <li><em>10.4:  </em>Flush out your old Xcode Tools versions via running<code> /Developer/Tools/uninstall-devtools.pl </code>in a terminal.  Then (re)install XCode (2.4.1 or later).</li>
-	  <li><em>10.5:  </em>Flush out your old Xcode Tools versions via running<code> /Developer/Library/uninstall-devtools </code>in a terminal.  Then (re)install Xcode (3.0 or later).</li>
-        </ul>
-       </answer>
-    </faqentry>
-    <faqentry name="gettext-tools">
-      <question>
-        <p>Fink refuses to update the <code>gettext</code> package,
-complaining that the dependencies are in an inconsistent state.</p>
-      </question>
-      <answer>
-        <p>After running <code>fink selfupdate</code> to be sure you
-have the latest versions, try <code>fink update gettext-tools</code>.
-An old version of the <code>gettext-tools</code> package may be 
-preventing you from updating <code>gettext</code>.</p>
-      </answer>
-    </faqentry>
   <faqentry name="Leopard-libXrandr">
     <question>
       <p>I can't install <em>gtk+2</em> on OS 10.5</p>
@@ -1602,6 +1484,37 @@ preventing you from updating <code>gettext</code>.</p>
     fix for such an issue is to install Xcode 3.1.3 or later.</p>  
 <!--    <p>A second issue involved undefined symbols:  "<code>_gdk_threads_add_idle referenced from libgtk-x11-2 expected to be defined in libgdk-x11-2</code>", etc.</p>
 <p>Removing the existing <code>gtk+2-dev</code> package allowed the build to proceed. This is fixed, for now.</p> <-->
+    </answer>
+  </faqentry>
+  <faqentry name="xml-sax-expat">
+    <question>
+      <p>I get errors involving <code>_Perl_Gthr_key_ptr</code> when installing an xml-sax-pm package</p>
+    </question>
+    <answer>
+      <p>If you get an error that looks similar to:</p>
+	<codeblock>
+update-perl5123-sax-parsers: adding Perl SAX parser
+module info file of XML::SAX::Expat...
+dyld: lazy symbol binding failed: Symbol not found:
+_Perl_Gthr_key_ptr
+  Referenced from: /sw/lib/perl5/5.12.3/darwin-
+  thread-multi-2level/auto/XML/Parser/Expat/Expat.bundle
+  Expected in: flat namespace
+	</codeblock>
+	<p>this is usually due to a build picking up a different <filename>perl5.12</filename> executable
+	than the system's (or <filename>perl5.10.0</filename>, or <filename>perl5.8.8</filename>, depending on your OS version).</p>
+	<p>You can verify this by running:</p>
+	<codeblock>
+type -a perl5.12
+	</codeblock>
+	<p>if you're using the <filename>bash</filename> shell, or</p>
+	<codeblock>
+where perl5.12
+	</codeblock>
+	<p>if you're using <filename>tcsh</filename> (and replace <filename>perl5.12</filename> appropriately
+	for your situation).</p>
+	<p>To work around this issue, temporarily rename the non-system <filename>perl5.12</filename> while
+	you are building with Fink.</p>
     </answer>
   </faqentry>
     <faqentry name="all-others">
