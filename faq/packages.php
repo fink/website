@@ -5,7 +5,7 @@ $cvs_date = 'Date: 2001/10/23 17:51:49';
 
 $metatags = '<link rel="contents" href="index.php" title="F.A.Q. Contents">';
 
-include "header.inc";
+include "../header.inc";
 ?>
 
 
@@ -18,5 +18,5 @@ Check the <a href="index.php">table of contents</a>.
 
 
 <?
-include "footer.inc";
+include "../footer.inc";
 ?>

@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.128 2011/10/27 16:52:24 fingolfin Exp $ */
+/* $Id: header.inc,v 1.129 2012/04/18 21:44:38 gecko2 Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -248,7 +248,7 @@ function insert_sub($navbox, $active_page) {
 	print $link_alternate;
 ?>
 	<link rev="made" href="mailto:fink-devel@lists.sourceforge.net">
-	<link rel="stylesheet" type="text/css" href="<? print $root ?>fink.css">
+	<link rel="stylesheet" type="text/css" href="<? print $root ?>/fink.css">
 	<? if ($metatags) echo $metatags; ?>
 	<link rel="start" href="<? print $root ?>index.php">
 	<link rel="copyright" href="<? print $root ?>legal.php">
@@ -262,7 +262,7 @@ function insert_sub($navbox, $active_page) {
 <div id="header-left">
 
 	<? if (!isset($is_home)) echo '<a href="' . $linkroot . 'index.php">'; ?>
-	<img src="<? echo $root ?>img/mlogo.png"  width="171" height="85" border="0" alt="Fink">
+	<img src="<? echo $root ?>/img/mlogo.png"  width="171" height="85" border="0" alt="Fink">
 	<? if (!isset($is_home)) echo '</a>'; ?>
 </div>
 
