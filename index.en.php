@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/04/19 20:07:38 $';
+$cvs_date = '$Date: 2012/04/19 21:28:24 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -143,6 +143,9 @@ for free on the <a href="http://sourceforge.net/">SourceForge web site</a>.
 </ul>
 
 </td></tr></table>
+
+<script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
+<noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
 include "footer.inc";

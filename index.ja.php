@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/04/19 20:07:38 $';
+$cvs_date = '$Date: 2012/04/19 21:28:24 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -28,7 +28,8 @@ Fink では dpkg や apt-get などの <a href="http://www.debian.org/">Debian</
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
-<h1>ニュース</h1>
+<h1><a href="<? print $rdf_file; ?>" title="Subscribe to my feed, Fink Project News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
+&nbspニュース</h1>
 
 <?
 // Include news items
@@ -45,7 +46,7 @@ include dirname(__FILE__) . "/news/news.ja.inc";
 <?  include "package-updates.inc" ?>
 
 <a href="package-updates.php">これ以前の情報...</a>
-
+</tr><tr valign="top"><td width="50%">
 <h1>ステータス</h1>
 <? 
 include dirname(__FILE__) . "/fink_version.inc";
@@ -55,7 +56,7 @@ include dirname(__FILE__) . "/fink_version.inc";
 10.5 (Leopard) をサポートし、
 またこれより前のバージョンの OS X は、公式アップデートは行わないものの、動作します。
 インストール方法は、
-<a href="srcdist.php">ソースリリースのページ</a>
+<a href="download/srcdist.php">ソースリリースのページ</a>
 に書かれています。</p>
 
 <p>Fink の前に XCode をインストールしてください。
@@ -75,7 +76,7 @@ X11 のバグ修正と機能向上を得るため、
 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page</a>
 から入手することができます。
 (我々は、現在 10.6 と 10.7 での Xquartz をサポートしていません。)</p>
-
+</td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 <h1>リソース</h1>
 
 <p>
@@ -112,7 +113,17 @@ href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">fink へ�
 
 <p>SourceForge 以外でホストされている追加リソース:</p>
 <ul>
-<li><a href="http://wiki.finkproject.org/">The Fink developer wiki</a>　 (now at a new location).</li>
+    <li><a href="http://wiki.finkproject.org/">The Fink developer wiki</a>　 (now at a new location).</li>
+    <li>
+        <a href="https://github.com/fink/fink">
+            New github repository for the source code of the <code>fink</code> package manager.
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com/fink/fink-mirrors">
+            New github repository for the <code>fink-mirrors</code> package.
+        </a>
+    </li>
 </ul>
 
 </td></tr></table>

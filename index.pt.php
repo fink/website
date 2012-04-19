@@ -1,7 +1,7 @@
 <?
 $title = "Página inicial";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/04/19 20:07:38 $';
+$cvs_date = '$Date: 2012/04/19 21:28:24 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, uma distribuição de software Unix para Mac OS X e Darwin">
@@ -47,7 +47,7 @@ style="border:0"></a> &nbsp;Atualizações recentes de pacotes</h1>
 <? include "package-updates.inc" ?>
 
 <a href="package-updates.php">mais...</a>
-
+</tr><tr valign="top"><td width="50%">
 <h1>Status</h1>
 <? 
 include dirname(__FILE__) . "/fink_version.inc";
@@ -57,23 +57,35 @@ include dirname(__FILE__) . "/fink_version.inc";
 Fink currently supports OS X 10.7 (Lion), 10.6 (SnowLeopard), and 10.5 
 (Leopard), and continues to run on older versions of OS X, although
 official updates are no longer available for the older versions.
-Installation instructions can be found  on our <a href="srcdist.php">source
+Installation instructions can be found  on our <a href="download/srcdist.php">source
 release page</a>.
-</p><p>
-XCode must be installed before Fink.  For best results, 10.6 users are
-encouraged to avoid upgrading XCode beyond version 3.2.6.   On the other
-hand, 10.7 users must update XCode to version 4.1 or later (via the free download
-from the AppStore).  Note that if you installed an earlier version of XCode
-prior to updating, you need to <b>uninstall</b> the old version first, by
-running <i>/Developer/Library/uninstall-devtools</i> .  You can determine
-your current version of XCode by running <i>xcodebuild -version</i> .
 </p>
+<p>XCode must be installed before Fink.</p>
+<strong>10.7 Support:</strong>
+10.7 users must install or update XCode to version 4.1 or later
+(via a free download from the AppStore).  Note that if you installed an
+earlier version of XCode prior to updating, you need to <b>uninstall</b>
+the old version first, by running
+<i>/Developer/Library/uninstall-devtools</i> .
+You can determine your current version of XCode by running
+<i>xcodebuild -version</i> .</p>
+<strong>10.6 Support:</strong>  For best results, 10.6 users are
+encouraged to upgrade XCode to version 3.2.6, or to version 4.2.1 if you
+paid for a 4.x Developer preview.  Version 4.0.2 is known to have some
+bugs in its linker that prevent certain packages from building.  Follow
+the instructions in the 10.7 section above regarding how to check your
+version and uninstall it, if needed.</p>
 <p>
-<strong>10.5 Support:</strong> 
-Users are encouraged to update to OS 10.5.2 or later, via Software Update, in order to get bugfixes and enhancements for X11.  Further updates continue to be made available on the <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
-(We are not currently supporting Xquartz on 10.6 or 10.7.)
-      </p>
-
+<strong>10.5 Support:</strong>
+Users are encouraged to update to OS 10.5.2 or later, via Software Update,
+in order to get bugfixes and enhancements for X11.  Further unofficial updates
+continue to be made available on the
+<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
+We are not currently supporting Xquartz on 10.6 or 10.7.<br>
+Users should also install Xcode 3.1 or later, preferably 3.1.4, to fix some
+known problems in building packages.
+</p>
+</td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 <h1>Recursos</h1>
 
 <p>Caso esteja procurando por suporte, verifique a <a
@@ -108,10 +120,23 @@ SourceForge. Caso não tenha uma, você pode inscrever-se gratuitamente no <a
 href="http://sourceforge.net/">site do SourceForge</a>.</p>
 <p>Recursos adicionais hospedados fora do SourceForge:</p>
 <ul>
-<li><a href="http://wiki.finkproject.org/">O wiki de desenvolvedores do Fink</a> (em novo local).</li>
+    <li><a href="http://wiki.finkproject.org/">O wiki de desenvolvedores do Fink</a> (em novo local).</li>
+    <li>
+        <a href="https://github.com/fink/fink">
+            New github repository for the source code of the <code>fink</code> package manager.
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com/fink/fink-mirrors">
+            New github repository for the <code>fink-mirrors</code> package.
+        </a>
+    </li>
 </ul>
 
 </td></tr></table>
+
+<script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
+<noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
 <?
 include "footer.inc";
