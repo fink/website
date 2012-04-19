@@ -7,6 +7,61 @@ $metatags = '';
 include_once "header.inc";
 ?>
 
+<a name="2012-04-14%20fink-0.32.6%20released"><span class="news-date">2012-04-14: </span><span class="news-headline">fink-0.32.6 released</span></a><?php gray_line(); ?>
+   <p>
+    <code>fink-0.32.6</code> was released on 14 April, 2012.  This release introduces
+    a new package description field, <code>BuildAsNobody: false</code>, to mark packages which
+    cannot built using <code>fink --build-as-nobody</code>.  Currently, this does not
+    have any effect, but in <code>fink-0.33.0</code> and later we will begin building packages
+    as an unprivileged user by default, and this field will allow packages to be built
+    as root.
+   </p>
+  <a name="2012-04-09%20fink-0.32.5.5%20released"><span class="news-date">2012-04-09: </span><span class="news-headline">fink-0.32.5.5 released</span></a><?php gray_line(); ?>
+   <p>
+    <code>fink-0.32.5.5</code> was released on 9 April, 2012.  This bugfix release
+    fixes an issue with bootstrapping on <b>10.5/PowerPC</b>.
+   </p>
+  <a name="2012-04-08%20fink-0.32.5.4%20released"><span class="news-date">2012-04-08: </span><span class="news-headline">fink-0.32.5.4 released</span></a><?php gray_line(); ?>
+   <p>
+    <code>fink-0.32.5.4</code> was released on 8 April, 2012.  This release allows users
+    on 10.7 to bootstrap against the Xcode Command Line Tools.  Note that some packages
+    actually require the full Xcode to build.
+   </p>
+  <a name="2012-03-27%20fink-0.32.4.1%20released"><span class="news-date">2012-03-27: </span><span class="news-headline">fink-0.32.4.1 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.32.4.1</code> was released on 27 March, 2012.  This
+      release allows users to install Xcode 4.3.x in an arbitrary location.</p>
+      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
+      connect.apple.com, and (2) run</p><p><code>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</code></p>
+      <p>(replacing <code>/path/to</code> with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
+      <p><code>fink-0.32.4.1</code> also enhances the checksumming operation under
+      <code>fink fetch</code>.</p>
+    <a name="2012-02-16%20fink-0.32.3%20released"><span class="news-date">2012-02-16: </span><span class="news-headline">fink-0.32.3 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.32.3</code> was released on 16 February, 2012.  This
+      release recognizes changes that were made for Xcode 4.3.</p>
+      <p>After installing Xcode 4.3 in <code>/Applications</code> <b>(and only there)</b>
+      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
+      connect.apple.com, and (2) run</p><p><code>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</code></p>
+      <p>to make sure that everything is pointed in the right place.</p>
+    <a name="2012-02-03%20fink-0.32.2%20released"><span class="news-date">2012-02-03: </span><span class="news-headline">fink-0.32.2 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.32.2</code> was released on 3 February, 2012.  This
+      release contains a fix for a bug in the handling of multiple source
+      archives in a package, and recognizes OS 10.7.3.</p>
+    <a name="2012-01-26%20fink-0.32.1%20released"><span class="news-date">2012-01-26: </span><span class="news-headline">fink-0.32.1 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.32.1</code> was released on 26 January, 2012.  This
+      release introduces a number of new features.</p>
+      <p>Those that impact package maintainers include: <code>RuntimeDepends</code>,
+      which are dependencies that are only required when a package is installed,
+      improvements to the package validator, updated manpages, and direct support
+      for <code>.xz</code> archives.</p>
+      <p>Those that impact users include improvements in the bootstrap script and
+      additional helpful suggestions in the post-error output.
+      </p>
+    <a name="2012-01-03%20fink-0.31.6%20released"><span class="news-date">2012-01-03: </span><span class="news-headline">fink-0.31.6 released</span></a><?php gray_line(); ?>
+      <p><code>fink-0.31.6</code> was released on 3 January, 2012.  This
+      is a bugfix release to address issues with the use of HTTP proxies
+      under cvs selfupdates.</p>
 <a name="2011-11-22%20fink-0.31.5%20released"><span class="news-date">2011-11-22: </span><span class="news-headline">fink-0.31.5 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.31.5</code> 
       は、2011年11月22日、10.4/stable と 10.7/stable ツリーにリリースされました。
