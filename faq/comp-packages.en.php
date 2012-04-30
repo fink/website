@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/04/15 17:30:16';
+$cvs_date = 'Date: 2012/04/30 16:34:07';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -47,8 +47,23 @@ where perl5.12
 	for your situation).</p><p>To work around this issue, temporarily rename the non-system <code>perl5.12</code> while
 	you are building with Fink.</p></div>
   </a>
+  <a name="malloc-symlink">
+    <div class="question"><p><b><? echo FINK_Q ; ?>7.4: I can't build a Fink <code>gcc</code> package due to "conflicting types for 'pointer_t'"</b></p></div>
+    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Such errors typically look like:</p><pre>
+../../gcc-4.6.3/gcc/fortran/module.c:110:1:
+error: conflicting types for 'pointer_t'
+/usr/include/mach/vm_types.h:40:26:
+note: previous declaration of 'pointer_t' was here
+make[3]: *** [fortran/module.o] Error 1
+      </pre><p>This is associated with someone having unnecessarily added a
+      <code>/usr/include/malloc.h</code><code>-&gt;</code><code>/usr/include/malloc/malloc.h</code>
+      symlink.  Get rid of that.</p><p>
+	On OS X, <code>#include &lt;stdlib.h&gt;</code> should normally be used
+	in place of <code>#include &lt;malloc.h&gt;.</code>
+      </p></div>
+  </a>
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.4: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I'm having issues with a package that isn't listed here.</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
       up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>

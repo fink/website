@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: faq.en.xml,v 1.119 2012/04/15 17:30:16 alexkhansen Exp $
+Generated from $Fink: faq.en.xml,v 1.120 2012/04/30 16:34:07 alexkhansen Exp $
 -->
 <title>Fink Documentation - The Fink F.A.Q.</title></head><body>
 <table width="100%" cellspacing="0">
@@ -59,7 +59,7 @@ English |
         on multiple dependencies".</a></li><li><a href="#comp-general.dpkg-parse-error">6.13 I can't install anything because I get "dpkg: parse error, in file
         `/sw/var/lib/dpkg/status'"!</a></li><li><a href="#comp-general.freetype-problems">6.14 I get errors involving freetype.</a></li><li><a href="#comp-general.dlfcn-from-oo">6.15 I get build errors involving `Dl_info'.</a></li><li><a href="#comp-general.gcc2">6.16 Fink says I'm missing <tt style="white-space: nowrap;">gcc2</tt> or <tt style="white-space: nowrap;">gcc3.1</tt> but I can't seem to
         install it.</a></li><li><a href="#comp-general.system-java">6.17 Fink says <tt style="white-space: nowrap;">Failed: Can't resolve dependency "system-java-dev"</tt>, but there's no such package.</a></li><li><a href="#comp-general.dpkg-split">6.18 When I try to install anything, I get <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>.  How do I fix this?</a></li><li><a href="#comp-general.xml-parser">6.19 I get the following message: <q>configure: error: XML::Parser perl module is required for intltool</q>.  What do I do about it?</a></li><li><a href="#comp-general.master-problems">6.20 I'm trying to download a package, but Fink goes to some weird site with <q>distfiles</q> in its name, and the file isn't there.</a></li><li><a href="#comp-general.compile-options">6.21 I want Fink to use different options in building a package.</a></li><li><a href="#comp-general.alternates">6.22 Whenever I try to build from source, Fink keeps waffling between alternate versions of the same library.</a></li><li><a href="#comp-general.python-mods">6.23 I get errors involving <tt style="white-space: nowrap;">MACOSX_DEPLOYMENT_TARGET </tt>when I try to build a Python module.</a></li><li><a href="#comp-general.libtool-unrecognized-dynamic">6.24 I get <q>unrecognized option `-dynamic'</q> errors from <tt style="white-space: nowrap;">libtool</tt>.</a></li></ul></li><li><a href="#comp-packages"><b>7 Compile Problems - Specific Packages</b></a><ul><li><a href="#comp-packages.libgtop">7.1 A package fails to build with errors involving
-        <tt style="white-space: nowrap;">sed</tt>.</a></li><li><a href="#comp-packages.Leopard-libXrandr">7.2 I can't install <b>gtk+2</b> on OS 10.5</a></li><li><a href="#comp-packages.xml-sax-expat">7.3 I get errors involving <tt style="white-space: nowrap;">_Perl_Gthr_key_ptr</tt> when installing an xml-sax-pm package</a></li><li><a href="#comp-packages.all-others">7.4 I'm having issues with a package that isn't listed here.</a></li></ul></li><li><a href="#usage-general"><b>8 Package Usage Problems - General</b></a><ul><li><a href="#usage-general.xlocale">8.1 I'm getting lots of messages like "locale not supported by C
+        <tt style="white-space: nowrap;">sed</tt>.</a></li><li><a href="#comp-packages.Leopard-libXrandr">7.2 I can't install <b>gtk+2</b> on OS 10.5</a></li><li><a href="#comp-packages.xml-sax-expat">7.3 I get errors involving <tt style="white-space: nowrap;">_Perl_Gthr_key_ptr</tt> when installing an xml-sax-pm package</a></li><li><a href="#comp-packages.malloc-symlink">7.4 I can't build a Fink <tt style="white-space: nowrap;">gcc</tt> package due to "conflicting types for 'pointer_t'"</a></li><li><a href="#comp-packages.all-others">7.5 I'm having issues with a package that isn't listed here.</a></li></ul></li><li><a href="#usage-general"><b>8 Package Usage Problems - General</b></a><ul><li><a href="#usage-general.xlocale">8.1 I'm getting lots of messages like "locale not supported by C
         library". Is that bad?</a></li><li><a href="#usage-general.passwd">8.2 There are suddenly a number of strange users on my system, with
         names like "mysql", "pgsql", and "games". Where did they come
         from?</a></li><li><a href="#usage-general.compile-myself">8.3 How do I compile something myself using Fink-installed
@@ -1005,8 +1005,23 @@ where perl5.12
 	for your situation).</p><p>To work around this issue, temporarily rename the non-system <tt style="white-space: nowrap;">perl5.12</tt> while
 	you are building with Fink.</p></div>
   </a>
+  <a name="comp-packages.malloc-symlink">
+    <div class="question"><p><b>Q7.4: I can't build a Fink <tt style="white-space: nowrap;">gcc</tt> package due to "conflicting types for 'pointer_t'"</b></p></div>
+    <div class="answer"><p><b>A:</b> Such errors typically look like:</p><pre>
+../../gcc-4.6.3/gcc/fortran/module.c:110:1:
+error: conflicting types for 'pointer_t'
+/usr/include/mach/vm_types.h:40:26:
+note: previous declaration of 'pointer_t' was here
+make[3]: *** [fortran/module.o] Error 1
+      </pre><p>This is associated with someone having unnecessarily added a
+      <tt style="white-space: nowrap;">/usr/include/malloc.h</tt><tt style="white-space: nowrap;">-&gt;</tt><tt style="white-space: nowrap;">/usr/include/malloc/malloc.h</tt>
+      symlink.  Get rid of that.</p><p>
+	On OS X, <tt style="white-space: nowrap;">#include &lt;stdlib.h&gt;</tt> should normally be used
+	in place of <tt style="white-space: nowrap;">#include &lt;malloc.h&gt;.</tt>
+      </p></div>
+  </a>
     <a name="comp-packages.all-others">
-      <div class="question"><p><b>Q7.4: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="question"><p><b>Q7.5: I'm having issues with a package that isn't listed here.</b></p></div>
       <div class="answer"><p><b>A:</b> Since package problems tend to be transient, we've decided to put them
       up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
@@ -1404,4 +1419,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: faq.en.xml,v 1.119 2012/04/15 17:30:16 alexkhansen Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: faq.en.xml,v 1.120 2012/04/30 16:34:07 alexkhansen Exp $</i></p></body></html>
