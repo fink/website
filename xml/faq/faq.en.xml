@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.119 2012/04/15 17:30:16 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.120 2012/04/30 16:34:07 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1515,6 +1515,28 @@ where perl5.12
 	for your situation).</p>
 	<p>To work around this issue, temporarily rename the non-system <filename>perl5.12</filename> while
 	you are building with Fink.</p>
+    </answer>
+  </faqentry>
+  <faqentry name="malloc-symlink">
+    <question>
+      <p>I can't build a Fink <code>gcc</code> package due to "conflicting types for 'pointer_t'"</p>
+    </question>
+    <answer>
+      <p>Such errors typically look like:</p>
+      <codeblock>
+../../gcc-4.6.3/gcc/fortran/module.c:110:1:
+error: conflicting types for 'pointer_t'
+/usr/include/mach/vm_types.h:40:26:
+note: previous declaration of 'pointer_t' was here
+make[3]: *** [fortran/module.o] Error 1
+      </codeblock>
+      <p>This is associated with someone having unnecessarily added a
+      <filename>/usr/include/malloc.h</filename><code>-&gt;</code><filename>/usr/include/malloc/malloc.h</filename>
+      symlink.  Get rid of that.</p>
+      <p>
+	On OS X, <code>#include &lt;stdlib.h&gt;</code> should normally be used
+	in place of <code>#include &lt;malloc.h&gt;.</code>
+      </p>
     </answer>
   </faqentry>
     <faqentry name="all-others">
