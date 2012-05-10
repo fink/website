@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/04/30 16:34:07';
+$cvs_date = 'Date: 2012/05/10 16:33:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -106,11 +106,16 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <code>lib
         cause build problems for Fink. Is this true?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is a frequent source of problems, because the package
         configuration script finds headers and libraries in 
-        <code>/usr/local</code> and decides to use them rather than using those in the Fink path.
-        If you are having problems with a build that aren't covered by another
-        FAQ entry, you should check whether you have libraries in
-        <code>/usr/local/lib</code> or headers in /usr/local/include. If so, then try renaming
-        <code>/usr/local</code> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>do your build, and then put <code>/usr/local</code>
+        <code>/usr/local</code> and decides to use them rather than using those in the Fink tree.
+        Often, such errors will show up as part of a package's build diagnostics, for example:</p><pre>
+Looking for incorrect headers in 44 dependency files...
+	 ./objs/.libs/ftgzip.d uses /usr/local/include/zconf.h
+	 ./objs/.libs/ftgzip.d uses /usr/local/include/zlib.h
+Please fix build process to get consistent use of fink's headers.
+        </pre><p>And if you are having problems with a build that aren't covered by another
+        FAQ entry, you should also check whether you have libraries in
+        <code>/usr/local/lib</code> or headers in <code>/usr/local/include</code>.</p><p>If you do have headers and/or libraries in <code>/usr/local</code>, then rename
+        <code>/usr/local</code> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>do your build, and then you can put <code>/usr/local</code>
         back:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
     </a>
     <a name="toc-out-of-date">

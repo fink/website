@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: faq.en.xml,v 1.120 2012/04/30 16:34:07 alexkhansen Exp $
+Generated from $Fink: faq.en.xml,v 1.121 2012/05/10 16:33:16 alexkhansen Exp $
 -->
 <title>Fink Documentation - The Fink F.A.Q.</title></head><body>
 <table width="100%" cellspacing="0">
@@ -768,11 +768,16 @@ Failed: installing foo-0.1.2-3 failed</pre><p>then you should look for <tt style
         cause build problems for Fink. Is this true?</b></p></div>
       <div class="answer"><p><b>A:</b> This is a frequent source of problems, because the package
         configuration script finds headers and libraries in 
-        <tt style="white-space: nowrap;">/usr/local</tt> and decides to use them rather than using those in the Fink path.
-        If you are having problems with a build that aren't covered by another
-        FAQ entry, you should check whether you have libraries in
-        <tt style="white-space: nowrap;">/usr/local/lib</tt> or headers in /usr/local/include. If so, then try renaming
-        <tt style="white-space: nowrap;">/usr/local</tt> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>do your build, and then put <tt style="white-space: nowrap;">/usr/local</tt>
+        <tt style="white-space: nowrap;">/usr/local</tt> and decides to use them rather than using those in the Fink tree.
+        Often, such errors will show up as part of a package's build diagnostics, for example:</p><pre>
+Looking for incorrect headers in 44 dependency files...
+	 ./objs/.libs/ftgzip.d uses /usr/local/include/zconf.h
+	 ./objs/.libs/ftgzip.d uses /usr/local/include/zlib.h
+Please fix build process to get consistent use of fink's headers.
+        </pre><p>And if you are having problems with a build that aren't covered by another
+        FAQ entry, you should also check whether you have libraries in
+        <tt style="white-space: nowrap;">/usr/local/lib</tt> or headers in <tt style="white-space: nowrap;">/usr/local/include</tt>.</p><p>If you do have headers and/or libraries in <tt style="white-space: nowrap;">/usr/local</tt>, then rename
+        <tt style="white-space: nowrap;">/usr/local</tt> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>do your build, and then you can put <tt style="white-space: nowrap;">/usr/local</tt>
         back:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
     </a>
     <a name="comp-general.toc-out-of-date">
@@ -1419,4 +1424,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: faq.en.xml,v 1.120 2012/04/30 16:34:07 alexkhansen Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: faq.en.xml,v 1.121 2012/05/10 16:33:16 alexkhansen Exp $</i></p></body></html>
