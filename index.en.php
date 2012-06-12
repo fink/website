@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/06/12 03:13:15 $';
+$cvs_date = '$Date: 2012/06/12 03:19:53 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -64,7 +64,7 @@ release page</a>.
 <strong>10.7 Support:</strong> 
 10.7 users must install or update XCode to version 4.1 or later 
 (via a free download from the AppStore), and must install the Command Line Tools for 
-Xcode 4.3 or later (downloadable from <a href="connect.apple.com">Apple</a>
+Xcode 4.3 or later (downloadable from <a href="http://connect.apple.com">Apple</a>
 or installable via the Xcode Preferences.  Note that if you installed an 
 earlier version of XCode prior to updating, you need to <b>uninstall</b> 
 the old version first, by running 
