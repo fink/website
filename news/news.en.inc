@@ -9,7 +9,7 @@
    <p>In addition, we have added some additional options for maintainers in this Fink version.
    <b>/sw/Library/Python</b> has been added to the list of valid directories in a package, to
    provide a unified location to install modules built against a built-in Python.  There is
-   now an <code>xcode.app</code> virtual package for packages that use<code>xcodebuild</code>
+   now an <code>xcode.app</code> virtual package for packages that use <code>xcodebuild</code>
    to BuildDepend upon.  Its version is the version of Xcode.app.  The <code>xcode</code>
    virtual package has always been based on the presence of the command-line tools, and now its
    version is the version of those.  Note that <code>xcode</code> and <code>xcode.app</code>

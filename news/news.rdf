@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-06-11T19:30:29-07:00</dc:date>
+    <dc:date>2012-06-11T20:03:59-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-06-11%20fink-0.33.0%20released">
       <title>fink-0.33.0 released</title>
@@ -22,7 +22,7 @@
    <p>In addition, we have added some additional options for maintainers in this Fink version.
    /sw/Library/Python has been added to the list of valid directories in a package, to
    provide a unified location to install modules built against a built-in Python.  There is
-   now an xcode.app virtual package for packages that usexcodebuild
+   now an xcode.app virtual package for packages that use xcodebuild
    to BuildDepend upon.  Its version is the version of Xcode.app.  The xcode
    virtual package has always been based on the presence of the command-line tools, and now its
    version is the version of those.  Note that xcode and xcode.app
@@ -39,7 +39,7 @@
    <p>In addition, we have added some additional options for maintainers in this Fink version.
    /sw/Library/Python has been added to the list of valid directories in a package, to
    provide a unified location to install modules built against a built-in Python.  There is
-   now an xcode.app virtual package for packages that usexcodebuild
+   now an xcode.app virtual package for packages that use xcodebuild
    to BuildDepend upon.  Its version is the version of Xcode.app.  The xcode
    virtual package has always been based on the presence of the command-line tools, and now its
    version is the version of those.  Note that xcode and xcode.app
