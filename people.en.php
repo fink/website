@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2011/10/17 13:39:54 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2012/06/12 03:33:33 $';
 
 include "header.inc";
 ?>
@@ -107,6 +107,9 @@ this list.</p>
 <li>Jeffrey S. Whitaker</li>
 <li>Blair Zajac</li>
 <li>Chris Zubrzycki (<i>cirdan</i>)</li>
+<li>Dustin Cartwright (<i>dustinac</i>)</li>
+<li>Matthew Bogosian</li>
+<li>Marc-Michael Blum</li>
 
 
 </ul>
