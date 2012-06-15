@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/06/12 17:42:12 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2012/06/15 18:27:18 $';
 
 include "header.inc";
 ?>
@@ -12,7 +12,7 @@ include "header.inc";
 <!--monipol: As instructions for 10.6 were 'hidden' below 10.5, I've copied and
 pasted them here with the title 10.6. -->
 
-<p><strong>OS X 10.4 and later:</strong></p>
+<h2>OS X 10.4 and later:</h2>
 
 <p>The source tarball contains the <em>fink</em> package manager.  After you
 have installed it, you will be able to get package descriptions and patches.
@@ -36,7 +36,7 @@ onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
 </ul>
 
 <p>You will also need to install an appropriate version of the Xcode Tools
-(c.f. <a href="./index.en.php">the Quick Start page</a>) for your operating
+(c.f. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) for your operating
 system.  For Xcode 4.3 and later, you will want to run:</p>
 <pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
 <p>where you should replace <em>/path/to</em> with the actual path to the Xcode app.
@@ -99,7 +99,7 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 
 
 
-<p><strong>OS X 10.5 point release:</strong></p>
+<h2>OS X 10.5 point release:</h2>
 
 <p>The source point release contains the <em>fink</em> package manager plus package
 descriptions and patches.  It will download the source code from the original
@@ -118,7 +118,7 @@ href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-fu
 <? print $fink_version; ?></a> - 3521K, .tar.gz format</li>
 </ul>
 
-<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php">the Quick Start page</a>).</p>
+<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>).</p>
 
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via</p>
