@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/04/08 19:00:26 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2012/06/15 18:25:41 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -15,7 +15,7 @@ Otherwise, check out the <a href="overview.php">overview</a> and the
 <a href="upgrade.php">upgrade matrix</a>.
 </p>
 
-<h2>Quick Start</h2>
+<h2 id="quickstart">Quick Start</h2>
 <p>
 New to Fink?  These quick start instructions are here to get you up to speed
 with the binary release.
@@ -97,7 +97,7 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
 </li> 
 </ol>
 
-<h2>Additional Things to Install</h2>
+<h2 id="additionaldownloads">Additional Things to Install</h2>
 <h3>Xcode Tools/Developer Tools</h3>
 <p>You may find that only using binary packages limits the utility of Fink.  There are fewer packages available in binary format than from source, and the binary versions are generally older.  To build packages from source, you will need to install the Developer Tools (known as the Xcode Tools for Mac OS 10.3 and later).</p>
 <p>Although a Developer Tools/Xcode Tools version usually comes with your OS install media, you'll probably want a newer one.  Go to <a href="http://connect.apple.com">the Apple Developer Connection</a> to download a newer version (and any updates) after free registration.</p>
@@ -106,12 +106,12 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
   <tbody>
     <tr>
         <td>10.7</td>
-        <td>Xcode 4.1 or Xcode 4.2.1 or Xcode 4.3.2 or <br>
-        Command Line Tools for Xcode - Late March 2012</td>
+        <td>Xcode 4.3.3 (Xcode 4.1 and Xcode 4.2.1 are also available but are older)<br>
+        Beginning with Xcode 4.3, the Command Line Tools for Xcode - June 2012 or newer - are a separate mandatory download.</td>
     </tr>
     <tr>
         <td>10.6</td>
-        <td>Xcode 3.2.6 or Xcode 4.1</td>
+        <td>Xcode 3.2.6 (Xcode 4.2 is also available for some paid Apple Connect accounts) </td>
     </tr>
     <tr>
       <td>10.5</td>
@@ -143,7 +143,7 @@ package contains the development headers.  You need this if you want to build an
 <a href="http://xquartz.macosforge.org">macosforge.org</a> is only supported on 10.5.</li>
 </ul>
 <p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://www.finkproject.org/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
-<h2>Further information</h2>
+<h2 id="furtherinfo">Further information</h2>
 <p>For more information, please refer to the <a
 href="../faq/index.php">Frequently Asked Questions</a> and the <a
 href="../doc/index.php">documentation section</a>.
