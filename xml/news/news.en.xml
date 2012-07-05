@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.166 2012/06/12 03:03:15 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.167 2012/07/05 22:52:52 alexkhansen Exp $</cvsid>
  
+<newsitem>
+  <date>2012-07-05</date>
+  <headline>fink-0.33.3 released</headline>
+  <body>
+   <p><code>fink-0.33.3</code> was released on 5 July, 2012.  This release fixes a bug
+   whereby <code>fink</code> wouldn't build packages as the <code>fink-bld</code> user
+   (i.e. most packages) if certain <code>su</code> or <code>sudo</code> options were 
+   chosen.  In addition, packages now log the md5 sums of all of their files for diagnostic
+   purposes.  And users who are only using the Xcode Command-Line Tools will enjoy not
+   seeing frequent messages that Xcode.app can't be found.</p>
+  </body>
+</newsitem>
 <newsitem>
   <date>2012-06-11</date>
   <headline>fink-0.33.0 released</headline>
