@@ -1,13 +1,27 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/06/12 03:03:15';
+$cvs_date = 'Date: 2012/07/16 18:28:49';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-06-11%20fink-0.33.0%20released"><span class="news-date">2012-06-11: </span><span class="news-headline">fink-0.33.0 released</span></a><?php gray_line(); ?>
+<a name="2012-07-16%20fink-0.34.0%20released"><span class="news-date">2012-07-16: </span><span class="news-headline">fink-0.34.0 released</span></a><?php gray_line(); ?>
+   <p><code>fink-0.34.0</code> was released on 16 July, 2012.  This is the first 
+   release to support Mountain Lion (OS 10.8).</p>
+   <p>Until Mountain Lion is available to the general public, we ask that users
+   submit bug reports to the <a href="mailto:fink-seed@lists.sourceforge.net">
+   Fink Seed List</a>, which has been set up in such a manner as to to avoid 
+   violating the NDA.</p>
+  <a name="2012-07-05%20fink-0.33.3%20released"><span class="news-date">2012-07-05: </span><span class="news-headline">fink-0.33.3 released</span></a><?php gray_line(); ?>
+   <p><code>fink-0.33.3</code> was released on 5 July, 2012.  This release fixes a bug
+   whereby <code>fink</code> wouldn't build packages as the <code>fink-bld</code> user
+   (i.e. most packages) if certain <code>su</code> or <code>sudo</code> options were 
+   chosen.  In addition, packages now log the md5 sums of all of their files for diagnostic
+   purposes.  And users who are only using the Xcode Command-Line Tools will enjoy not
+   seeing frequent messages that Xcode.app can't be found.</p>
+  <a name="2012-06-11%20fink-0.33.0%20released"><span class="news-date">2012-06-11: </span><span class="news-headline">fink-0.33.0 released</span></a><?php gray_line(); ?>
    <p><code>fink-0.33.0</code> was released on 6 June, 2012.  This release introduces some new
     features:</p>
    <p>Starting with this version of <code>fink</code>, packages will be built as an unprivileged

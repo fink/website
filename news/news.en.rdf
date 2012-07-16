@@ -5,8 +5,50 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-06-11T20:03:59-07:00</dc:date>
+    <dc:date>2012-07-16T11:29:49-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-07-16%20fink-0.34.0%20released">
+      <title>fink-0.34.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2012-07-16%20fink-0.34.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2012-07-16%20fink-0.34.0%20released</guid>
+      <description>
+   <p>fink-0.34.0 was released on 16 July, 2012.  This is the first 
+   release to support Mountain Lion (OS 10.8).</p>
+   <p>Until Mountain Lion is available to the general public, we ask that users
+   submit bug reports to the <a href="mailto:fink-seed@lists.sourceforge.net">
+   Fink Seed List</a>, which has been set up in such a manner as to to avoid 
+   violating the NDA.</p>
+  </description>
+      <content:encoded>
+   <p>fink-0.34.0 was released on 16 July, 2012.  This is the first 
+   release to support Mountain Lion (OS 10.8).</p>
+   <p>Until Mountain Lion is available to the general public, we ask that users
+   submit bug reports to the <a href="mailto:fink-seed@lists.sourceforge.net">
+   Fink Seed List</a>, which has been set up in such a manner as to to avoid 
+   violating the NDA.</p>
+  </content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-07-05%20fink-0.33.3%20released">
+      <title>fink-0.33.3 released</title>
+      <link>http://fink.sourceforge.net/news/#2012-07-05%20fink-0.33.3%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2012-07-05%20fink-0.33.3%20released</guid>
+      <description>
+   <p>fink-0.33.3 was released on 5 July, 2012.  This release fixes a bug
+   whereby fink wouldn't build packages as the fink-bld user
+   (i.e. most packages) if certain su or sudo options were 
+   chosen.  In addition, packages now log the md5 sums of all of their files for diagnostic
+   purposes.  And users who are only using the Xcode Command-Line Tools will enjoy not
+   seeing frequent messages that Xcode.app can't be found.</p>
+  </description>
+      <content:encoded>
+   <p>fink-0.33.3 was released on 5 July, 2012.  This release fixes a bug
+   whereby fink wouldn't build packages as the fink-bld user
+   (i.e. most packages) if certain su or sudo options were 
+   chosen.  In addition, packages now log the md5 sums of all of their files for diagnostic
+   purposes.  And users who are only using the Xcode Command-Line Tools will enjoy not
+   seeing frequent messages that Xcode.app can't be found.</p>
+  </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-06-11%20fink-0.33.0%20released">
       <title>fink-0.33.0 released</title>
       <link>http://fink.sourceforge.net/news/#2012-06-11%20fink-0.33.0%20released</link>
@@ -283,56 +325,6 @@
       Trees: line of fink.conf, which was never a
       recommended course of action.</p>
     </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-09-26%20fink-0.31.2%20released">
-      <title>fink-0.31.2 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-09-26%20fink-0.31.2%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-09-26%20fink-0.31.2%20released</guid>
-      <description>
-      <p>fink-0.31.2 was released to the 10.4/unstable and
-      10.7/stable trees on 26 September, 2011.  Packages are now built by default
-      using the number of parallel threads specified by the MaxBuildJobs
-      field set via fink configure.  In addition, maintainers no longer
-      have to specify a particular version of fink to use a
-      PatchFile, and fixes a Perl issue.</p>
-      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
-    </description>
-      <content:encoded>
-      <p>fink-0.31.2 was released to the 10.4/unstable and
-      10.7/stable trees on 26 September, 2011.  Packages are now built by default
-      using the number of parallel threads specified by the MaxBuildJobs
-      field set via fink configure.  In addition, maintainers no longer
-      have to specify a particular version of fink to use a
-      PatchFile, and fixes a Perl issue.</p>
-      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-09-11%20fink-0.31.1%20released">
-      <title>fink-0.31.1 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-09-11%20fink-0.31.1%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-09-11%20fink-0.31.1%20released</guid>
-      <description>
-      <p>fink-0.31.1 was released to the 10.4/unstable and
-      10.7/stable trees on
-      11 September, 2011.  It fixes an issue in which 32-bit machines running OS
-      10.6 wouldn't be allowed to bootstrap, even though this is a fully supported
-      configuration.  It also provides a more robust scheme to report on the
-      Xcode version in error messages than in prior fink versions.
-      Finally OS 10.7.1 is recognized as a supported OS version.</p>
-      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
-      <p>Update, 2011-09-26:   It has been added to 10.4/stable.</p>
-   </description>
-      <content:encoded>
-      <p>fink-0.31.1 was released to the 10.4/unstable and
-      10.7/stable trees on
-      11 September, 2011.  It fixes an issue in which 32-bit machines running OS
-      10.6 wouldn't be allowed to bootstrap, even though this is a fully supported
-      configuration.  It also provides a more robust scheme to report on the
-      Xcode version in error messages than in prior fink versions.
-      Finally OS 10.7.1 is recognized as a supported OS version.</p>
-      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
-      <p>Update, 2011-09-26:   It has been added to 10.4/stable.</p>
-   </content:encoded>
     </item>
   </channel>
 </rss>
