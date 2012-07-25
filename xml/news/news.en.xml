@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.170 2012/07/25 18:30:10 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.171 2012/07/25 18:51:30 alexkhansen Exp $</cvsid>
  
 <newsitem>
   <date>2012-07-25</date>
   <headline>Mountain Lion released</headline>
   <body>
-   <p>Mountain Lion is now available to the general public.  Users should update
- to <code>fink-0.34.0</code> or later before updating their OS.  Once that's done,
+   <p>Mountain Lion is now available to the general public.  Ideally, users should update
+ to <code>fink-0.34.0</code> or later before updating their OS.  In addition, Xcode 4.4 
+ is required--it can be installed under Lion, but there appears to be a separate version
+ of the Command Line Tools for Mountain Lion.</p>
+ <p>Once you have updated the OS, 
  use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
  <p><code>fink install perl5123-core</code></p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
