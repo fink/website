@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/07/25 18:20:48';
+$cvs_date = 'Date: 2012/07/25 18:30:10';
 $metatags = '';
 
 include_once "header.inc";
@@ -22,7 +22,7 @@ include_once "header.inc";
   via</p><p><code>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</code></p><p>; 
   (change <code>/sw</code> and <code>/path/to</code> to match 
   your particular setup); (3) run</p><p><code>fink selfupdate</code></p><p>, which should
-  download and install<code>fink-0.34.0</code>; (4) use</p><p><code>fink reinstall fink</code></p>
+  download and install<code>fink-0.34.0</code>; (4) use </p><p><code>fink reinstall fink</code></p>
   <p>to ensure that <code>fink</code> is pointing at the 10.8 distribution, 
   and (5) install <code>perl5123-core</code>
   as above.</p>
