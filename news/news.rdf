@@ -5,8 +5,53 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-07-16T11:29:49-07:00</dc:date>
+    <dc:date>2012-07-25T11:21:46-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released">
+      <title>Mountain Lion released</title>
+      <link>http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released</guid>
+      <description>
+   <p>Mountain Lion is now available to the general public.  Users should update
+ to fink-0.34.0 or later before updating their OS.  Once that's done,
+ use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
+ <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
+ from Lion will still work.</p>
+ <p>If you updated the OS first,
+ and have and earlier version of Fink which doesn't know about Mountain Lion, you
+  have probably found that it doesn't work.  To work around this issue, do the 
+  following: (1) download an updated copy of 
+  <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
+  Services.pm</a>, (2) move the downloaded file into /sw/lib/perl5/Fink, such as
+  via</p><p>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</p><p>; 
+  (change /sw and /path/to to match 
+  your particular setup); (3) run</p><p>fink selfupdate</p><p>, which should
+  download and installfink-0.34.0; (4) use</p><p>fink reinstall fink</p>
+  <p>to ensure that fink is pointing at the 10.8 distribution, 
+  and (5) install perl5123-core
+  as above.</p>
+  </description>
+      <content:encoded>
+   <p>Mountain Lion is now available to the general public.  Users should update
+ to fink-0.34.0 or later before updating their OS.  Once that's done,
+ use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
+ <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
+ from Lion will still work.</p>
+ <p>If you updated the OS first,
+ and have and earlier version of Fink which doesn't know about Mountain Lion, you
+  have probably found that it doesn't work.  To work around this issue, do the 
+  following: (1) download an updated copy of 
+  <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
+  Services.pm</a>, (2) move the downloaded file into /sw/lib/perl5/Fink, such as
+  via</p><p>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</p><p>; 
+  (change /sw and /path/to to match 
+  your particular setup); (3) run</p><p>fink selfupdate</p><p>, which should
+  download and installfink-0.34.0; (4) use</p><p>fink reinstall fink</p>
+  <p>to ensure that fink is pointing at the 10.8 distribution, 
+  and (5) install perl5123-core
+  as above.</p>
+  </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-07-16%20fink-0.34.0%20released">
       <title>fink-0.34.0 released</title>
       <link>http://fink.sourceforge.net/news/#2012-07-16%20fink-0.34.0%20released</link>
@@ -305,25 +350,6 @@
       10.7/stable trees on 12 October, 2011.  It recognizes OS 10.7.2 as a
       supported OS X version, and recognizes Growl 1.3 from the App Store.
       </p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-09-30%20Phasing%20out%20the%20unstable%20tree.">
-      <title>Phasing out the unstable tree.</title>
-      <link>http://fink.sourceforge.net/news/#2011-09-30%20Phasing%20out%20the%20unstable%20tree.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-09-30%20Phasing%20out%20the%20unstable%20tree.</guid>
-      <description>
-      <p>To make our logistics easier, as well as to make the user experience
-      better, we have begun to phase out the unstable tree.  Users won't notice
-      any difference unless they have deactivated stable in the
-      Trees: line of fink.conf, which was never a
-      recommended course of action.</p>
-    </description>
-      <content:encoded>
-      <p>To make our logistics easier, as well as to make the user experience
-      better, we have begun to phase out the unstable tree.  Users won't notice
-      any difference unless they have deactivated stable in the
-      Trees: line of fink.conf, which was never a
-      recommended course of action.</p>
     </content:encoded>
     </item>
   </channel>

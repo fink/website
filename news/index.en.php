@@ -1,13 +1,32 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/07/16 18:28:49';
+$cvs_date = 'Date: 2012/07/25 18:20:48';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-07-16%20fink-0.34.0%20released"><span class="news-date">2012-07-16: </span><span class="news-headline">fink-0.34.0 released</span></a><?php gray_line(); ?>
+<a name="2012-07-25%20Mountain%20Lion%20released"><span class="news-date">2012-07-25: </span><span class="news-headline">Mountain Lion released</span></a><?php gray_line(); ?>
+   <p>Mountain Lion is now available to the general public.  Users should update
+ to <code>fink-0.34.0</code> or later before updating their OS.  Once that's done,
+ use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
+ <p><code>fink install perl5123-core</code></p><p>to make sure any Perl modules you have
+ from Lion will still work.</p>
+ <p>If you updated the OS first,
+ and have and earlier version of Fink which doesn't know about Mountain Lion, you
+  have probably found that it doesn't work.  To work around this issue, do the 
+  following: (1) download an updated copy of 
+  <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
+  Services.pm</a>, (2) move the downloaded file into /sw/lib/perl5/Fink, such as
+  via</p><p><code>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</code></p><p>; 
+  (change <code>/sw</code> and <code>/path/to</code> to match 
+  your particular setup); (3) run</p><p><code>fink selfupdate</code></p><p>, which should
+  download and install<code>fink-0.34.0</code>; (4) use</p><p><code>fink reinstall fink</code></p>
+  <p>to ensure that <code>fink</code> is pointing at the 10.8 distribution, 
+  and (5) install <code>perl5123-core</code>
+  as above.</p>
+  <a name="2012-07-16%20fink-0.34.0%20released"><span class="news-date">2012-07-16: </span><span class="news-headline">fink-0.34.0 released</span></a><?php gray_line(); ?>
    <p><code>fink-0.34.0</code> was released on 16 July, 2012.  This is the first 
    release to support Mountain Lion (OS 10.8).</p>
    <p>Until Mountain Lion is available to the general public, we ask that users

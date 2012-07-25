@@ -1,22 +1,13 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2011/12/09 04:44:49';
+$cvs_date = 'Date: 2012/04/12 04:18:20';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-04-14%20fink-0.32.6%20released"><span class="news-date">2012-04-14: </span><span class="news-headline">fink-0.32.6 released</span></a><?php gray_line(); ?>
-   <p>
-    <code>fink-0.32.6</code> was released on 14 April, 2012.  This release introduces
-    a new package description field, <code>BuildAsNobody: false</code>, to mark packages which
-    cannot built using <code>fink --build-as-nobody</code>.  Currently, this does not
-    have any effect, but in <code>fink-0.33.0</code> and later we will begin building packages
-    as an unprivileged user by default, and this field will allow packages to be built
-    as root.
-   </p>
-  <a name="2012-04-09%20fink-0.32.5.5%20released"><span class="news-date">2012-04-09: </span><span class="news-headline">fink-0.32.5.5 released</span></a><?php gray_line(); ?>
+<a name="2012-04-09%20fink-0.32.5.5%20released"><span class="news-date">2012-04-09: </span><span class="news-headline">fink-0.32.5.5 released</span></a><?php gray_line(); ?>
    <p>
     <code>fink-0.32.5.5</code> was released on 9 April, 2012.  This bugfix release
     fixes an issue with bootstrapping on <b>10.5/PowerPC</b>.
@@ -62,7 +53,7 @@ include_once "header.inc";
       <p><code>fink-0.31.6</code> was released on 3 January, 2012.  This
       is a bugfix release to address issues with the use of HTTP proxies
       under cvs selfupdates.</p>
-<a name="2011-11-22%20fink-0.31.5%20released"><span class="news-date">2011-11-22: </span><span class="news-headline">fink-0.31.5 released</span></a><?php gray_line(); ?>
+    <a name="2011-11-22%20fink-0.31.5%20released"><span class="news-date">2011-11-22: </span><span class="news-headline">fink-0.31.5 released</span></a><?php gray_line(); ?>
       <p><code>fink-0.31.5</code> was released to the 10.4/stable and
       10.7/stable trees on 22 November, 2011.  This is a bugfix release to
       address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
