@@ -5,15 +5,18 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-07-25T11:30:40-07:00</dc:date>
+    <dc:date>2012-07-25T12:01:16-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released">
       <title>Mountain Lion released</title>
       <link>http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released</link>
       <guid>http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released</guid>
       <description>
-   <p>Mountain Lion is now available to the general public.  Users should update
- to fink-0.34.0 or later before updating their OS.  Once that's done,
+   <p>Mountain Lion is now available to the general public.  Ideally, users should update
+ to fink-0.34.0 or later before updating their OS.  In addition, Xcode 4.4 
+ is required--it can be installed under Lion, but there appears to be a separate version
+ of the Command Line Tools for Mountain Lion.</p>
+ <p>Once you have updated the OS, 
  use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
  <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
@@ -32,8 +35,11 @@
   as above.</p>
   </description>
       <content:encoded>
-   <p>Mountain Lion is now available to the general public.  Users should update
- to fink-0.34.0 or later before updating their OS.  Once that's done,
+   <p>Mountain Lion is now available to the general public.  Ideally, users should update
+ to fink-0.34.0 or later before updating their OS.  In addition, Xcode 4.4 
+ is required--it can be installed under Lion, but there appears to be a separate version
+ of the Command Line Tools for Mountain Lion.</p>
+ <p>Once you have updated the OS, 
  use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
  <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
  from Lion will still work.</p>

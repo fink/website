@@ -1,15 +1,18 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/07/25 18:30:10';
+$cvs_date = 'Date: 2012/07/25 18:51:30';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
 <a name="2012-07-25%20Mountain%20Lion%20released"><span class="news-date">2012-07-25: </span><span class="news-headline">Mountain Lion released</span></a><?php gray_line(); ?>
-   <p>Mountain Lion is now available to the general public.  Users should update
- to <code>fink-0.34.0</code> or later before updating their OS.  Once that's done,
+   <p>Mountain Lion is now available to the general public.  Ideally, users should update
+ to <code>fink-0.34.0</code> or later before updating their OS.  In addition, Xcode 4.4 
+ is required--it can be installed under Lion, but there appears to be a separate version
+ of the Command Line Tools for Mountain Lion.</p>
+ <p>Once you have updated the OS, 
  use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
  <p><code>fink install perl5123-core</code></p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
