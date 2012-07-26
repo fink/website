@@ -10,11 +10,11 @@
  <p><code>sudo xcode-select -switch /path/to/Xcode.app</code></p>
  <p>to make sure that your system's tools are pointing to the right place.</p>
  <p>Once you have updated the OS, 
- use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
+ use</p><p><code>fink reinstall fink</code></p><p>to point it to the 10.8 distribution, and run</p>
  <p><code>fink install perl5123-core</code></p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
  <p>If you updated the OS first,
-  and have and earlier version of Fink which doesn't know about Mountain Lion, you
+  and have an earlier version of Fink which doesn't know about Mountain Lion, you
   have probably found that it doesn't work.  To work around this issue, do the 
   following: (1) download an updated copy of 
   <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">

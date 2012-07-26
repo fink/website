@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-07-26T16:42:15-07:00</dc:date>
+    <dc:date>2012-07-26T16:48:00-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released">
       <title>Mountain Lion released</title>
@@ -27,7 +27,7 @@
  <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
  <p>If you updated the OS first,
-  and have and earlier version of Fink which doesn't know about Mountain Lion, you
+  and have an earlier version of Fink which doesn't know about Mountain Lion, you
   have probably found that it doesn't work.  To work around this issue, do the 
   following: (1) download an updated copy of 
   <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
@@ -61,7 +61,7 @@
  <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
  <p>If you updated the OS first,
-  and have and earlier version of Fink which doesn't know about Mountain Lion, you
+  and have an earlier version of Fink which doesn't know about Mountain Lion, you
   have probably found that it doesn't work.  To work around this issue, do the 
   following: (1) download an updated copy of 
   <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
