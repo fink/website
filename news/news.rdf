@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-07-26T16:48:00-07:00</dc:date>
+    <dc:date>2012-07-26T16:59:05-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released">
       <title>Mountain Lion released</title>
@@ -16,7 +16,7 @@
  to fink-0.34.0 or later before updating their OS.  In addition, Xcode 4.4 
  (or at least its command line tools) is required--it can be installed under Lion, but 
  there is a separate version of the Command Line Tools for Mountain Lion, so make sure
- to install those.  Use </p><p>fink list xcode to verify that you have the
+ to install those.  Use </p><p>fink list xcode</p><p>to verify that you have the
  Xcode 4.4 command-line tools installed, and that Fink knows where your Xcode.app is.
  If the CLI tools are missing or not for Xcode 4.4, reinstall them, e.g. via the Xcode 
  Preferences.  If fink isn't finding your Xcode.app, use</p>
@@ -27,7 +27,7 @@
  <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
  <p>If you updated the OS first,
-  and have an earlier version of Fink which doesn't know about Mountain Lion, you
+  and have an earlier version of fink which doesn't know about Mountain Lion, you
   have probably found that it doesn't work.  To work around this issue, do the 
   following: (1) download an updated copy of 
   <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
@@ -35,7 +35,7 @@
   via</p><p>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</p><p>; 
   (change /sw and /path/to to match 
   your particular setup); (3) run</p><p>fink selfupdate</p><p>, which should
-  download and installfink-0.34.0; (4) use </p><p>fink reinstall fink</p>
+  download and install fink-0.34.0; (4) use </p><p>fink reinstall fink</p>
   <p>to ensure that fink is pointing at the 10.8 distribution, 
   and (5) install perl5123-core
   as above.</p>
@@ -50,7 +50,7 @@
  to fink-0.34.0 or later before updating their OS.  In addition, Xcode 4.4 
  (or at least its command line tools) is required--it can be installed under Lion, but 
  there is a separate version of the Command Line Tools for Mountain Lion, so make sure
- to install those.  Use </p><p>fink list xcode to verify that you have the
+ to install those.  Use </p><p>fink list xcode</p><p>to verify that you have the
  Xcode 4.4 command-line tools installed, and that Fink knows where your Xcode.app is.
  If the CLI tools are missing or not for Xcode 4.4, reinstall them, e.g. via the Xcode 
  Preferences.  If fink isn't finding your Xcode.app, use</p>
@@ -61,7 +61,7 @@
  <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
  <p>If you updated the OS first,
-  and have an earlier version of Fink which doesn't know about Mountain Lion, you
+  and have an earlier version of fink which doesn't know about Mountain Lion, you
   have probably found that it doesn't work.  To work around this issue, do the 
   following: (1) download an updated copy of 
   <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
@@ -69,7 +69,7 @@
   via</p><p>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</p><p>; 
   (change /sw and /path/to to match 
   your particular setup); (3) run</p><p>fink selfupdate</p><p>, which should
-  download and installfink-0.34.0; (4) use </p><p>fink reinstall fink</p>
+  download and install fink-0.34.0; (4) use </p><p>fink reinstall fink</p>
   <p>to ensure that fink is pointing at the 10.8 distribution, 
   and (5) install perl5123-core
   as above.</p>

@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/07/26 23:47:28';
+$cvs_date = 'Date: 2012/07/26 23:58:41';
 $metatags = '';
 
 include_once "header.inc";
@@ -12,10 +12,10 @@ include_once "header.inc";
  to <code>fink-0.34.0</code> or later before updating their OS.  In addition, Xcode 4.4 
  (or at least its command line tools) is required--it can be installed under Lion, but 
  there is a separate version of the Command Line Tools for Mountain Lion, so make sure
- to install those.  Use </p><p><code>fink list xcode</code> to verify that you have the
+ to install those.  Use </p><p><code>fink list xcode</code></p><p>to verify that you have the
  Xcode 4.4 command-line tools installed, and that Fink knows where your Xcode.app is.
  If the CLI tools are missing or not for Xcode 4.4, reinstall them, e.g. via the Xcode 
- Preferences.  If fink isn't finding your Xcode.app, use</p>
+ Preferences.  If <code>fink</code> isn't finding your Xcode.app, use</p>
  <p><code>sudo xcode-select -switch /path/to/Xcode.app</code></p>
  <p>to make sure that your system's tools are pointing to the right place.</p>
  <p>Once you have updated the OS, 
@@ -23,7 +23,7 @@ include_once "header.inc";
  <p><code>fink install perl5123-core</code></p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
  <p>If you updated the OS first,
-  and have an earlier version of Fink which doesn't know about Mountain Lion, you
+  and have an earlier version of <code>fink</code> which doesn't know about Mountain Lion, you
   have probably found that it doesn't work.  To work around this issue, do the 
   following: (1) download an updated copy of 
   <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
@@ -31,7 +31,7 @@ include_once "header.inc";
   via</p><p><code>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</code></p><p>; 
   (change <code>/sw</code> and <code>/path/to</code> to match 
   your particular setup); (3) run</p><p><code>fink selfupdate</code></p><p>, which should
-  download and install<code>fink-0.34.0</code>; (4) use </p><p><code>fink reinstall fink</code></p>
+  download and install <code>fink-0.34.0</code>; (4) use </p><p><code>fink reinstall fink</code></p>
   <p>to ensure that <code>fink</code> is pointing at the 10.8 distribution, 
   and (5) install <code>perl5123-core</code>
   as above.</p>
