@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/06/12 03:19:53 $';
+$cvs_date = '$Date: 2012/07/27 00:00:02 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -54,7 +54,7 @@ include "fink_version.inc";
 ?>
 
 <p>
-Fink currently supports OS X 10.7 (Lion), 10.6 (SnowLeopard), and 10.5 
+Fink currently supports OS X 10.8 (Mountain Lion), OS X 10.7 (Lion), 10.6 (Snow Leopard), and 10.5 
 (Leopard), and continues to run on older versions of OS X, although
 official updates are no longer available for the older versions.
 Installation instructions can be found  on our <a href="download/srcdist.php">source
@@ -62,20 +62,29 @@ release page</a>.
 </p>
 <p>XCode must be installed before Fink.</p>  
 <strong>10.7 Support:</strong> 
-10.7 users must install or update XCode to version 4.1 or later 
-(via a free download from the AppStore), and must install the Command Line Tools for 
-Xcode 4.3 or later (downloadable from <a href="http://connect.apple.com">Apple</a>
+10.8 users must install Xcode version 4.4 or later 
+(via a free download from the AppStore), or must at least
+install the Command Line Tools for 
+Xcode 4.4 (downloadable from <a href="http://connect.apple.com">Apple</a>
 or installable via the Xcode Preferences.  Note that if you installed an 
 earlier version of XCode prior to updating, you need to <b>uninstall</b> 
 the old version first, by running 
 <i>/Developer/Library/uninstall-devtools</i> .
 You can determine your current version of XCode by running 
 <i>xcodebuild -version</i> .</p>
+strong>10.7 Support:</strong> 
+10.7 users must install or update XCode to version 4.1 or later 
+(via a free download from the AppStore), (4.4 is recommended) or must at least
+install the Command Line Tools for 
+Xcode 4.3 or later (downloadable from <a href="http://connect.apple.com">Apple</a>
+or installable via the Xcode Preferences.  Follow
+the instructions in the <strong>10.8</strong> section above regarding how to check your
+version and uninstall it, if needed.</p>
 <strong>10.6 Support:</strong>  For best results, 10.6 users are
 encouraged to upgrade XCode to version 3.2.6, or to version 4.2.1 if you
 paid for a 4.x Developer preview.  Version 4.0.2 is known to have some
 bugs in its linker that prevent certain packages from building.  Follow
-the instructions in the 10.7 section above regarding how to check your
+the instructions in the <strong>10.8</strong> section above regarding how to check your
 version and uninstall it, if needed.</p>
 <p>
 <strong>10.5 Support:</strong> 
