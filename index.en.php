@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/07/27 00:02:13 $';
+$cvs_date = '$Date: 2012/07/27 00:53:57 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -61,7 +61,7 @@ Installation instructions can be found  on our <a href="download/srcdist.php">so
 release page</a>.
 </p>
 <p>XCode must be installed before Fink.</p>  
-<strong>10.7 Support:</strong> 
+<strong>10.8 Support:</strong> 
 10.8 users must install Xcode version 4.4 or later 
 (via a free download from the AppStore), or must at least
 install the Command Line Tools for 
