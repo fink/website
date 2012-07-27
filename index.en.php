@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/07/27 00:00:02 $';
+$cvs_date = '$Date: 2012/07/27 00:02:13 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -72,7 +72,7 @@ the old version first, by running
 <i>/Developer/Library/uninstall-devtools</i> .
 You can determine your current version of XCode by running 
 <i>xcodebuild -version</i> .</p>
-strong>10.7 Support:</strong> 
+<strong>10.7 Support:</strong> 
 10.7 users must install or update XCode to version 4.1 or later 
 (via a free download from the AppStore), (4.4 is recommended) or must at least
 install the Command Line Tools for 
