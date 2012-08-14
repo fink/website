@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-07-26T16:59:05-07:00</dc:date>
+    <dc:date>2012-08-04T18:18:18-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released">
       <title>Mountain Lion released</title>
@@ -21,9 +21,11 @@
  If the CLI tools are missing or not for Xcode 4.4, reinstall them, e.g. via the Xcode 
  Preferences.  If fink isn't finding your Xcode.app, use</p>
  <p>sudo xcode-select -switch /path/to/Xcode.app</p>
- <p>to make sure that your system's tools are pointing to the right place.</p>
- <p>Once you have updated the OS, 
- use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
+ <p>to make sure that your system's tools are pointing to the right place.  Also run</p>
+ <p>sudo xcodebuild -license</p><p>to make sure that the Xcode license is accepted
+ globally on your system, especially for fink's build user.</p>
+ <p>Once you have updated the OS, use</p>
+ <p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
  <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
  <p>If you updated the OS first,
@@ -55,9 +57,11 @@
  If the CLI tools are missing or not for Xcode 4.4, reinstall them, e.g. via the Xcode 
  Preferences.  If fink isn't finding your Xcode.app, use</p>
  <p>sudo xcode-select -switch /path/to/Xcode.app</p>
- <p>to make sure that your system's tools are pointing to the right place.</p>
- <p>Once you have updated the OS, 
- use</p><p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
+ <p>to make sure that your system's tools are pointing to the right place.  Also run</p>
+ <p>sudo xcodebuild -license</p><p>to make sure that the Xcode license is accepted
+ globally on your system, especially for fink's build user.</p>
+ <p>Once you have updated the OS, use</p>
+ <p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
  <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
  <p>If you updated the OS first,

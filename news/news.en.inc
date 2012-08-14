@@ -8,9 +8,11 @@
  If the CLI tools are missing or not for Xcode 4.4, reinstall them, e.g. via the Xcode 
  Preferences.  If <code>fink</code> isn't finding your Xcode.app, use</p>
  <p><code>sudo xcode-select -switch /path/to/Xcode.app</code></p>
- <p>to make sure that your system's tools are pointing to the right place.</p>
- <p>Once you have updated the OS, 
- use</p><p><code>fink reinstall fink</code></p><p>to point it to the 10.8 distribution, and run</p>
+ <p>to make sure that your system's tools are pointing to the right place.  Also run</p>
+ <p>sudo xcodebuild -license</p><p>to make sure that the Xcode license is accepted
+ globally on your system, especially for fink's build user.</p>
+ <p>Once you have updated the OS, use</p>
+ <p><code>fink reinstall fink</code></p><p>to point it to the 10.8 distribution, and run</p>
  <p><code>fink install perl5123-core</code></p><p>to make sure any Perl modules you have
  from Lion will still work.</p>
  <p>If you updated the OS first,
