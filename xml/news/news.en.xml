@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.176 2012/08/05 01:17:57 alexkhansen Exp $</cvsid>
- 
+ <cvsid>$Id: news.en.xml,v 1.177 2012/09/26 01:34:32 alexkhansen Exp $</cvsid>
+<newsitem>
+ <date>2012-09-25</date>
+ <headline>fink-0.34.4 relased</headline>
+ <body>
+  <p><code>fink-0.34.4</code> was released on 25 September, 2012.  This release adds diagnostics to make
+  sure that the permissions of directories that <code>fink</code> uses when building packages are appropriate.
+  Additionally, OS X versions 10.7.5 and 10.8.2 are recognized.</p>
+ </body>
+</newsitem> 
 <newsitem>
   <date>2012-07-25</date>
   <headline>Mountain Lion released</headline>
@@ -17,7 +25,7 @@
  Preferences.  If <code>fink</code> isn't finding your Xcode.app, use</p>
  <p><code>sudo xcode-select -switch /path/to/Xcode.app</code></p>
  <p>to make sure that your system's tools are pointing to the right place.  Also run</p>
- <p>sudo xcodebuild -license</p><p>to make sure that the Xcode license is accepted
+ <p><code>sudo xcodebuild -license</code></p><p>to make sure that the Xcode license is accepted
  globally on your system, especially for fink's build user.</p>
  <p>Once you have updated the OS, use</p>
  <p><code>fink reinstall fink</code></p><p>to point it to the 10.8 distribution, and run</p>
