@@ -1,13 +1,17 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/08/05 01:17:57';
+$cvs_date = 'Date: 2012/09/26 01:34:32';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-07-25%20Mountain%20Lion%20released"><span class="news-date">2012-07-25: </span><span class="news-headline">Mountain Lion released</span></a><?php gray_line(); ?>
+<a name="2012-09-25%20fink-0.34.4%20relased"><span class="news-date">2012-09-25: </span><span class="news-headline">fink-0.34.4 relased</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.4</code> was released on 25 September, 2012.  This release adds diagnostics to make
+  sure that the permissions of directories that <code>fink</code> uses when building packages are appropriate.
+  Additionally, OS X versions 10.7.5 and 10.8.2 are recognized.</p>
+ <a name="2012-07-25%20Mountain%20Lion%20released"><span class="news-date">2012-07-25: </span><span class="news-headline">Mountain Lion released</span></a><?php gray_line(); ?>
    <p>Mountain Lion is now available to the general public.  Ideally, users should update
  to <code>fink-0.34.0</code> or later before updating their OS.  In addition, Xcode 4.4 
  (or at least its command line tools) is required--it can be installed under Lion, but 
@@ -18,7 +22,7 @@ include_once "header.inc";
  Preferences.  If <code>fink</code> isn't finding your Xcode.app, use</p>
  <p><code>sudo xcode-select -switch /path/to/Xcode.app</code></p>
  <p>to make sure that your system's tools are pointing to the right place.  Also run</p>
- <p>sudo xcodebuild -license</p><p>to make sure that the Xcode license is accepted
+ <p><code>sudo xcodebuild -license</code></p><p>to make sure that the Xcode license is accepted
  globally on your system, especially for fink's build user.</p>
  <p>Once you have updated the OS, use</p>
  <p><code>fink reinstall fink</code></p><p>to point it to the 10.8 distribution, and run</p>
