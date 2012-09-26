@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2012/06/15 18:25:41 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2012/09/26 01:56:13 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -105,9 +105,14 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
   <caption>Recommended Developer Tools versions by OS</caption>
   <tbody>
     <tr>
+        <td>10.8</td>
+        <td>The Command Line Tools for Xcode 4.5 for Mountain Lion; optionally Xcode 4.5<br>
+        The Command Line Tools can be downloaded via Xcode's Preferences or in a separate package.</td>
+    </tr>
+    <tr>
         <td>10.7</td>
-        <td>Xcode 4.3.3 (Xcode 4.1 and Xcode 4.2.1 are also available but are older)<br>
-        Beginning with Xcode 4.3, the Command Line Tools for Xcode - June 2012 or newer - are a separate mandatory download.</td>
+        <td>The Command Line Tools for Xcode 4.5 for Lion; optionally Xcode 4.5<br>
+        The Command Line Tools can be downloaded via Xcode's Preferences or in a separate package.</td>
     </tr>
     <tr>
         <td>10.6</td>
@@ -118,11 +123,7 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
       <td>Xcode 3.1.4</td>
     </tr>
     <tr>
-      <td>10.4 on Intel</td>
-      <td>Xcode 2.5</td>
-    </tr>
-    <tr>
-      <td>10.4 on PowerPC</td>
+      <td>10.4</td>
       <td>Xcode 2.5</td>
     </tr>
   </tbody>
@@ -140,7 +141,8 @@ package contains the development headers.  You need this if you want to build an
 <li>The <em>2006 X11 Update</em> for 10.4 (available via Software Update or manual download) is supported.</li>
 <li>All official updates for X11 on 10.5 - 10.7 are supported.</li>
 <li>The <em>Xquartz X11 distribution</em> from
-<a href="http://xquartz.macosforge.org">macosforge.org</a> is only supported on 10.5.</li>
+<a href="http://xquartz.macosforge.org">macosforge.org</a> is only supported on 10.5 (Xquartz version 2.6.3 and earlier), where it 
+replaces the official X11, and 10.8, where it <em>is</em> the official X11.
 </ul>
 <p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://www.finkproject.org/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
 <h2 id="furtherinfo">Further information</h2>
