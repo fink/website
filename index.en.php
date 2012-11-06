@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/08/17 22:38:06 $';
+$cvs_date = '$Date: 2012/11/06 23:49:36 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -66,7 +66,7 @@ release page</a>.
 (via a free download from the AppStore), or must at least
 install the Command Line Tools for 
 Xcode 4.4 (downloadable from <a href="http://connect.apple.com">Apple</a>
-or installable via the Xcode Preferences.  Note that if you had an 
+or installable via the Xcode Preferences (version 4.5.2 is recommended). Note that if you had an 
 earlier version of XCode than 4.3 installed prior to updating, you need to <b>uninstall</b> 
 the old version first by running 
 <i>/Developer/Library/uninstall-devtools</i>. 
@@ -74,7 +74,7 @@ You can determine your current version of XCode by running
 <i>xcodebuild -version</i> .</p>
 <strong>10.7 Support:</strong> 
 10.7 users must install or update XCode to version 4.1 or later 
-(via a free download from the AppStore), (4.4 is recommended) or must at least
+(via a free download from the AppStore), (version 4.5.2 is recommended) or must at least
 install the Command Line Tools for 
 Xcode 4.3 or later (downloadable from <a href="http://connect.apple.com">Apple</a>
 or installable via the Xcode Preferences (4.3 or later).  Follow
