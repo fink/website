@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.31 2012/11/07 02:10:06 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.32 2012/11/07 03:28:48 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -566,7 +566,7 @@ individual packages with the 'update' command.
     </li>
     <li>
         <p>Your Fink installation has linked to libraries, e.g. from Macports
-        or <filename>/usr/local</filename> which have been removed from
+        or <filename>/usr/local</filename>, which have been removed from
         your machine, resulting in breakage in your Fink libraries and
         executables.</p>
     </li>
