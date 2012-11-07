@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.30 2012/11/06 23:44:24 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.31 2012/11/07 02:10:06 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -545,30 +545,30 @@ individual packages with the 'update' command.
 <section name="cleaninst"><title>Situations Calling for a Clean Reinstall</title>
 <ul>
     <li>
-        You want to switch architectures, e.g. you have a 32-bit (i386)
+        <p>You want to switch architectures, e.g. you have a 32-bit (i386)
         Fink distribution on OS 10.6, and you would like to have a 64-bit
         (x86_64) one instead.  This also applies if you try to migrate a
-        PowerPC OS X setup to an Intel machine.
+        PowerPC OS X setup to an Intel machine.</p>
     </li>
     <li>
-        You want to move Fink to a different path.
+        <p>You want to move Fink to a different path.</p>
     </li>
     <li>
-        You want to update, or have already updated, OS X between versions
-        where Fink doesn't support an upgrade path:
-        <p>* 10.4 -> 10.6+</p>
-        <p>* 10.5 -> 10.7+</p>
-        <p>* 10.6 -> 10.7+</p>
+        <p>You want to update, or have already updated, OS X between versions
+        where Fink doesn't support an upgrade path:</p>
+        <p>- 10.4 -> 10.6+</p>
+        <p>- 10.5 -> 10.7+</p>
+        <p>- 10.6 -> 10.7+</p>
     </li>
     <li>
-        You have updated from 10.5 to 10.6 with XQuartz-2.4 or later installed,
-        and X11-based libraries and executables stop working.
+        <p>You have updated from 10.5 to 10.6 with XQuartz-2.4 or later installed,
+        and X11-based libraries and executables stop working.</p>
     </li>
     <li>
-        Your Fink installation has linked to libraries, e.g. from Macports
+        <p>Your Fink installation has linked to libraries, e.g. from Macports
         or <filename>/usr/local</filename> which have been removed from
         your machine, resulting in breakage in your Fink libraries and
-        executables.
+        executables.</p>
     </li>
 </ul>
 </section>
