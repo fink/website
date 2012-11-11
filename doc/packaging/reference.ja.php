@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2012/01/26 09:57:59';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -159,7 +159,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
+Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -184,7 +184,7 @@ foo-pm586 variant.
 <p>Since python 2.3 is not available in the 10.5 distribution, and the
 available perl packages vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
 </p>
 <pre>
     perl 5.6.0:  10.3
@@ -194,19 +194,21 @@ various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
+    perl 5.12.3:                         <b>10.7</b>
 </pre>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3)
   Distribution: &lt;&lt;
    (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
    (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
    (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
    (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
    (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
-   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6,
+   (%type_pkg[perl] = 5123) 10.7
   &lt;&lt;
 </pre>
 <p>Note that we do not include old
@@ -768,7 +770,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							これが必要だと分かっているとき<b>のみ</b>使うこと．
 							libtool 関連のスクリプトをバージョンの合わないものに取り換えると壊れるパッケージもあrimasu
 							．
-							詳細については<a href="http://www.finkproject.org/doc/porting/libtool.php">libtool のページ</a>を参照．
+							詳細については<a href="/doc/porting/libtool.php">libtool のページ</a>を参照．
 						</p>
 					</td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
 						<p>

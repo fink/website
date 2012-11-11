@@ -1,7 +1,7 @@
 <?
 $title = "Руководство пользователя - Пакеты";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="upgrade.php?phpLang=ru" title="Обновление Fink"><link rel="prev" href="install.php?phpLang=ru" title="Первоначальная инсталляция">';
 
 
@@ -163,7 +163,7 @@ E: Sorry, broken packages</pre>
                 продолжит выполнение действий и скачает исходный код, распакует его, сделает патчи,
                 компиляцию и инсталлирует результаты в вашей системе. Это может
                 занять много времени. Если в течение этого процесса возникнут ошибки,
-                сначала обратитесь к <a href="http://www.finkproject.org/faq/">Ч.З.В.</a>. </p>
+                сначала обратитесь к <a href="/faq/">Ч.З.В.</a>. </p>
             <p> Для версий <code>fink</code> начиная с 0.23.0 можно попытаться
                 скачать имеющиеся предварительно скомпилированные бинарные пакеты,
                 вместо того чтобы создавать их. Просто перенесите опцию <a href="usage.php?phpLang=ru#options">--use-binary-dist (или -b)</a> в
@@ -222,7 +222,7 @@ E: Sorry, broken packages</pre>
                         стабильная версия, инсталлируемая от
                         исходного кода для OS 10.2 с обновлением <code>gcc 3.3</code> для
                         Developer Tools. Для инсталляции этой версии вам
-                        может понадобиться активация доступа через <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a>
+                        может понадобиться активация доступа через <a href="/doc/cvsaccess/index.php">CVS</a>
                         или rsync. Если вы не сделали обновление <code>gcc
                         3.3</code>, то можете не увидеть эту версию (или
                         даже сам пакет).</p>
@@ -249,7 +249,7 @@ on intel hardware.</p></li>
                         <b>10.2-gcc3.3 unstable:</b> последняя
                         нестабильная версия, которую можно инсталлировать от
                         исходного кода в OS 10.2 с <code>gcc 3.3</code>. Для ее инсталляции
-                        следуйте <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">инструкциям</a>
+                        следуйте <a href="/faq/usage-fink.php#unstable">инструкциям</a>
                         по инсталляции нестабильных пакетов.</p>
                     <p>Прим.: <b>unstable</b> не обязательно <b>значит</b>, что их нельзя использовать, просто
                         инсталляция таких пакетов будет на ваш риск.</p>
@@ -305,7 +305,7 @@ dependency placeholders.
       </ul>
       
             <p> Для получения более подробной информации об инсталляции и использовании X11 см.
-                    документ <a href="http://www.finkproject.org/doc/x11/">X11 в
+                    документ <a href="/doc/x11/">X11 в
                     Darwin и Mac OS X</a>.</p>
         
     <p align="right"><? echo FINK_NEXT ; ?>:

@@ -1,7 +1,7 @@
 <?
 $title = "移植 - 为 10.3 做准备";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="preparing-10.4.php?phpLang=zh" title="为 10.4 做准备"><link rel="prev" href="preparing-10.2.php?phpLang=zh" title="为 10.2 做准备">';
 
 
@@ -21,7 +21,7 @@ include_once "header.zh.inc";
     not affect ordinary uses of the perl executable for package
     creation since each perl executable knows where to find its own modules.
     Maintainers of perl-module ("-pm") packages who follow the current
-    <a href="http://www.finkproject.org/packaging/policy.php#perlmods">Perl
+    <a href="/packaging/policy.php#perlmods">Perl
     Modules packaging policy</a> and are careful to follow the
     <code>CompileScript</code> and <code>InstallScript</code>
     documentation will already have things set up correctly.

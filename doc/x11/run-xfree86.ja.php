@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - X11 の起動";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/08/15 21:57:05';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=ja" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=ja" title="X11 の入手とインストール">';
 
 
@@ -110,7 +110,7 @@ Mac OS X で XFree86 を起動するには、基本的に二つの方法があ�
         XFree86 4.4 以降や X.org で <code>X11.app</code> と <code>quartz-wm</code> を組み合わせることができます。
       </p>
       <p>
-      	このパッケージを使用するには<a href="http://www.finkproject.org/faq/usage-fink.php#unstable">unstable ツリー</a> を設定し、<code>X11User.pkg</code> を <code>/Users</code> または <code>/Volumes</code> のどこかに置きます。
+      	このパッケージを使用するには<a href="/faq/usage-fink.php#unstable">unstable ツリー</a> を設定し、<code>X11User.pkg</code> を <code>/Users</code> または <code>/Volumes</code> のどこかに置きます。
       	<code>X11.app</code> は、 Fink ツリー内の <code>Applications</code> フォルダーにインストールされます。
       	これで <code>X11.app</code> や <code>XDarwin.app</code> を使うことができます。</p>
 

@@ -1,7 +1,7 @@
 <?
 $title = "Ejecución de X11 - Intro";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/08/15 21:57:04';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="history.php?phpLang=es" title="Historia"><link rel="prev" href="index.php?phpLang=es" title="Ejecución de X11 Contents">';
 
 
@@ -169,7 +169,7 @@ selección de aplicaciones GNOME
 </a>
 disponibles para ser instaladas y ejecutadas sin instalar GNOME.  
 Desafortunadamente, el mismo 
-<a href="http://www.finkproject.org/faq/usage-fink.php#kde">
+<a href="/faq/usage-fink.php#kde">
 progreso no ha podido ser aún hecho
 </a>
 con <a href="http://www.kde.org/">aplicaciones KDE.</a>

@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - Instalação";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/01 14:09:07';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="packages.php?phpLang=pt" title="Instalando pacotes"><link rel="prev" href="intro.php?phpLang=pt" title="Introdução">';
 
 
@@ -30,7 +30,7 @@ include_once "header.pt.inc";
 
       <p>A distribuição de binários vem através de um pacote de instalação para
       o Mac OS X (.pkg) que por sua vez está dentro de uma imagem de disco
-      (.dmg). Depois de baixar a imagem de disco da <a href="http://www.finkproject.org/download/bindist.php">página de
+      (.dmg). Depois de baixar a imagem de disco da <a href="/download/bindist.php">página de
       downloads</a> (talvez você precise usar os comandos "Salvar como..."
       ou "Salvar no disco" no navegador), dê um duplo clique para montá-la.
       Abra o ícone do disco "Fink 0.x.x Installer" que aparece na sua área de
@@ -55,7 +55,7 @@ include_once "header.pt.inc";
       padrão Unix (.tar.gz). Ela contém somente o gerenciador de pacotes
       <code>fink</code>  e irá baixar os
       códigos fontes dos pacotes quando necessário. Você pode obter esta
-      distribuição na <a href="http://www.finkproject.org/download/srcdist.php">página de
+      distribuição na <a href="/download/srcdist.php">página de
       downloads</a>. Versões mais antigas do StuffIt Expander são
       problemáticas para lidar com nomes longos de arquivos então, se você
       tiver algum problema, você precisará remover a pasta que ele gera e

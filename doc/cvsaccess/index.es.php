@@ -1,14 +1,14 @@
 <?
 $title = "Acceso al CVS de Fink";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:13';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Ajustando el Acceso al CVS de Fink</h1>
-<!--Generated from $Fink: cvs.es.xml,v 1.7 2007/02/23 22:04:54 rangerrick Exp $-->
+<!--Generated from $Fink: cvs.es.xml,v 1.8 2012/11/11 15:20:13 gecko2 Exp $-->
     <p>
 Fink es desarrollado mediante CVS.
 Esto significa que puedes mantenerte al día entre las liberaciones del Fink y siempre tener lo ultimo.
@@ -26,7 +26,7 @@ contiene las descripciones de los paquetes y parches para OS 10.2 y posterior. E
     <pre>fink selfupdate-cvs</pre>
     <p>Fink ejecutara todos los pasos necesarios automaticamente. Esto incluye conseguir las descripciones más recientes delos paquetes, actualizando los paquetes esenciales (entre ellos, el manejador de paquetes del Fink).
 </p>
-    <p>Si estas tras un firewall, consulta el <a href="http://www.finkproject.org/faq/usage-fink.php#proxy">FAQ 3.2</a>.
+    <p>Si estas tras un firewall, consulta el <a href="/faq/usage-fink.php#proxy">FAQ 3.2</a>.
 </p>
     <p>Despues de que se hayan actualizado las descripciones de los paquetes de esta manera, puedes actualizar los paquetes a sus últimas versiones. Esto se realiza ejecutando el comando:
 </p>

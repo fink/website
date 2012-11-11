@@ -1,14 +1,14 @@
 <?
 $title = "ReadMe";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/09/16 23:17:53';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink ReadMe</h1>
-<!--Generated from $Fink: readme.es.xml,v 1.2 2006/09/16 23:17:53 dmrrsn Exp $-->
+<!--Generated from $Fink: readme.es.xml,v 1.3 2012/11/11 15:20:14 gecko2 Exp $-->
 <p>
 Fink es un sistema de gestión de paquetes que facilita el acceso completo al mundo Open Source a los usuarios de Darwin y Mac OS X.
 </p>
@@ -69,9 +69,9 @@ Incluye también una lista completa de comandos disponibles.
 <h2><a name="questions">Otras preguntas</a></h2>
 <p>
 Si la documentación no responde todas tus preguntas, visita la web de Fink 
-<a href="http://www.finkproject.org/">http://www.finkproject.org/</a>
+<a href="/">/</a>
 y repasa la página de ayuda -Help page- :
-<a href="http://www.finkproject.org/help/">http://www.finkproject.org/help/</a>.
+<a href="/help/">/help/</a>.
 Puede indicarte dónde encontrar documentación adicional y lugares de ayuda si fuera necesario,
 </p>
 <p>
@@ -80,11 +80,11 @@ Si deseas contribuir a Fink, la página de ayuda mencionada anteriormente tambi�
 <h2><a name="uptodate">Mantenerse informado</a></h2>
 <p>
 La web del proyecto se encuentra en
-<a href="http://www.finkproject.org/">http://www.finkproject.org/</a>.
+<a href="/">/</a>.
 </p>
 <p>
 Para mantenerte informado de nuevas versiones, visita 
-<a href="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.org/lists/fink-announce.php</a>
+<a href="/lists/fink-announce.php">/lists/fink-announce.php</a>
 y apúntate a la lista de correo fink-announce mailing list.
 La lista es moderada y de tráfico bajo.
 </p>

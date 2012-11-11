@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（２）";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="prev" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题">';
 
 
@@ -47,7 +47,7 @@ include_once "header.zh.inc";
       <div class="question"><p><b><? echo FINK_Q ; ?>9.3: 求救！当我启动 XDarwin，它立刻就退出了！</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 不要惊慌。
-现在《运行 X11》文档有专门一部分<a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">《故障排除》</a>针对这个常见问题。
+现在《运行 X11》文档有专门一部分<a href="/doc/x11/trouble.php#immediate-quit">《故障排除》</a>针对这个常见问题。
 </p></div>
     </a>
     <a name="no-server">

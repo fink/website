@@ -1,7 +1,7 @@
 <?
 $title = "移植 - libtool";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="preparing-10.2.php?phpLang=zh" title="为 10.2 做准备"><link rel="prev" href="shared.php?phpLang=zh" title="共享代码">';
 
 
@@ -77,14 +77,14 @@ one can install the fink "dlcompat" family of packages.
 
 <h2><a name="patch-135">3.2 1.3.5 补丁</a></h2>
 <p>
-如果你自己构建 libtool 1.3.5，你需要应用<a href="http://www.finkproject.org/files/libtool-1.3.5-darwin.patch">这个补丁</a> <b>[updated 2002-06-09]</b> 到 libtool 1.3.5 的源程序，然后删除 <code>ltconfig</code> 和 <code>ltmain.sh</code> 两个文件(它们会在你运行 configure 和 make 的时候从合适的 .in 文件中重建)。
+如果你自己构建 libtool 1.3.5，你需要应用<a href="/files/libtool-1.3.5-darwin.patch">这个补丁</a> <b>[updated 2002-06-09]</b> 到 libtool 1.3.5 的源程序，然后删除 <code>ltconfig</code> 和 <code>ltmain.sh</code> 两个文件(它们会在你运行 configure 和 make 的时候从合适的 .in 文件中重建)。
 在 Fink 的 libtool 1.3.5 软件包中，这个过程是自动的。</p><p>
 但那仅是全部工作的一半 ─ 每个软件包是通过它自己附带的 ltconfig 和 ltmain.sh 来使用 libtool。
 所以如果你需要构建共享库的时候，你要把每个软件包里面的这两个文件替换掉。
 注意，你要在运行配置脚本之前做这个事情。
 方便起见，你可以在这里获取这两个文件：
-<a href="http://www.finkproject.org/files/ltconfig">ltconfig</a> (98K) 和
-<a href="http://www.finkproject.org/files/ltmain.sh">ltmain.sh</a> (110K)
+<a href="/files/ltconfig">ltconfig</a> (98K) 和
+<a href="/files/ltmain.sh">ltmain.sh</a> (110K)
 <b>[both updated 2002-06-09]</b>。</p>
 
 

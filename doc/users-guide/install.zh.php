@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 安装";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="packages.php?phpLang=zh" title="安装软件包"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 
@@ -26,7 +26,7 @@ include_once "header.zh.inc";
       
       <p>
 二进制发行版以 Mac OS X 安装包 (.pkg) 的形式提供，它被打包在一个磁盘映象文件(.dmg)中。
-从<a href="http://www.finkproject.org/download/bindist.php">下载页面</a>下载了磁盘映象文件以后（你可能需要使用你的浏览器的 "保存目标为..." 或 "下载到磁盘" 功能），双击这个磁盘文件来装载上它。
+从<a href="/download/bindist.php">下载页面</a>下载了磁盘映象文件以后（你可能需要使用你的浏览器的 "保存目标为..." 或 "下载到磁盘" 功能），双击这个磁盘文件来装载上它。
 在 "磁盘工具" 程序（10.3以前是 "磁盘拷贝"）校验完你下载的文件后，在你的桌面上（或你下载到的文件夹里面）会出现一个 "Fink 0.x.x Installer" 的磁盘图标，打开它。
 在里面你会看到一些文档和一个安装包。
 双击安装包并按照屏幕上的说明完成剩下的安装。
@@ -46,7 +46,7 @@ include_once "header.zh.inc";
 源代码发行版以标准的 Unix tarball (.tar.gz)　方式提供。
 它仅包含 <code>fink</code> 软件包管理器以及它自己的软件包描述，整个软件包的其它部分会在安装的过程中才下载。
 你可以从这个
-<a href="http://www.finkproject.org/download/srcdist.php">下载页面</a>获得它。
+<a href="/download/srcdist.php">下载页面</a>获得它。
 很重要的是，你不能用 StuffIt Expander 来解压缩下载后的 tar 压缩档。
 由于某些原因，StuffIt 仍然不能处理长文件名。
 如果 StuffIt Expander 已经自动解压了你下载的压缩档，把它解压产生的文件夹删除掉。

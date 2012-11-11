@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - イントロ";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/08/15 21:57:05';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=ja" title="歴史"><link rel="prev" href="index.php?phpLang=ja" title="Running X11 Contents">';
 
 
@@ -142,7 +142,7 @@ X11 では、ウィンドウ枠 (または " 装飾 ") は別のプログラム�
 多くのアプリケーションは特定のデスクトップに統合された形で開発されています。
 たいてい、これはデスクトップ環境用のライブラリ (と低レベルのライブラリ) をインストールすることで、そのアプリケーションの機能を損なうことなく使うことができます。
 たとえば、いまでも増加中の <a href="http://pdb.finkproject.org/pdb/section.php/gnome">GNOME アプリケーション </a> は、GNOMEがなくとも動作します。
-残念なことに、 <a href="http://www.kde.org/">KDE アプリケーション</a> ではまだ<a href="http://www.finkproject.org/faq/usage-fink.php#kde">そこまで達していません</a>。
+残念なことに、 <a href="http://www.kde.org/">KDE アプリケーション</a> ではまだ<a href="/faq/usage-fink.php#kde">そこまで達していません</a>。
 </p>
 
 <p align="right"><? echo FINK_NEXT ; ?>:

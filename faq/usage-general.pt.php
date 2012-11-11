@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Uso (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="usage-packages.php?phpLang=pt" title="Problemas no uso de pacotes - Pacotes específicos"><link rel="prev" href="comp-packages.php?phpLang=pt" title="Problemas de compilação - Pacotes específicos">';
 
 
@@ -16,7 +16,7 @@ include_once "header.pt.inc";
         library" ("local não suportado por biblioteca C"). Isso é ruim?</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Não é ruim, apenas significa que o programa usará por padrão as
         mensagens em inglês, formatos de data etc. O programa funcionará
-        normalmente. O documento Executando o X11 tem mais <a href="http://www.finkproject.org/doc/x11/trouble.php#locale">detalhes</a>.</p></div>
+        normalmente. O documento Executando o X11 tem mais <a href="/doc/x11/trouble.php#locale">detalhes</a>.</p></div>
     </a>
     <a name="passwd">
       <div class="question"><p><b><? echo FINK_Q ; ?>8.2: Surgiram de repente vários usuários estranhos no meu sistema com
@@ -144,7 +144,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
             instalado a partir do momento em que estava disponível.)</p>
           </li>
         </ul><p>Também há outras opções. Um tratamento mais extensivo deste tema
-        está disponível no documento <a href="http://www.finkproject.org/doc/x11/index.php">Executando o
+        está disponível no documento <a href="/doc/x11/index.php">Executando o
         X11</a>.</p></div>
     </a>
     <a name="no-display">

@@ -1,7 +1,7 @@
 <?
 $title = "Executando o X11 - Instalando o  X11";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/03/15 00:37:07';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Executando o X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=pt" title="Iniciando o X11"><link rel="prev" href="history.php?phpLang=pt" title="História">';
 
 
@@ -81,7 +81,7 @@ include_once "header.pt.inc";
       versão oficial do X11 da Apple baseado no XFree86-4.4.</p>
 
       <p>Para usar os binários da Apple, você precisa assegurar-se de que o
-      pacote <b>X11 User</b> esteja instalado, e você deve <a href="http://www.finkproject.org/doc/users-guide/upgrade.php">atualizar</a>
+      pacote <b>X11 User</b> esteja instalado, e você deve <a href="/doc/users-guide/upgrade.php">atualizar</a>
       o Fink.</p>
 
 

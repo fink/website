@@ -1,14 +1,14 @@
 <?
 $title = "Leia-me";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/03/30 11:14:21';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:15';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Leia-me do Fink</h1>
-<!--Generated from $Fink: readme.pt.xml,v 1.1 2009/03/30 11:14:21 monipol Exp $-->
+<!--Generated from $Fink: readme.pt.xml,v 1.2 2012/11/11 15:20:15 gecko2 Exp $-->
   <p>Este é o Fink, um sistema de gerenciamento de pacotes cujo objetivo é
   trazer todo o mundo do software de código aberto ao Darwin e ao Mac OS X.</p>
 
@@ -57,8 +57,8 @@ include_once "header.inc";
   disponíveis.</p>
 <h2><a name="questions">Outras perguntas?</a></h2>
   <p>Se a documentação aqui incluída não responder sua pergunta, visite o site
-  do Fink em <a href="http://www.finkproject.org/">http://www.finkproject.org/</a> e
-  consulte a página de Ajuda: <a href="http://www.finkproject.org/help/">http://www.finkproject.org/help/</a>.
+  do Fink em <a href="/">/</a> e
+  consulte a página de Ajuda: <a href="/help/">/help/</a>.
   Ela indicará outros documentos que estão disponíveis e onde procurar por
   ajuda caso precise.</p>
 
@@ -66,9 +66,9 @@ include_once "header.inc";
   acima também contém uma lista de coisas que você pode fazer como testar ou
   criar pacotes.</p>
 <h2><a name="uptodate">Mantendo-se informado</a></h2>
-  <p>O site do projeto está localizado em <a href="http://www.finkproject.org/">http://www.finkproject.org/</a>.</p>
+  <p>O site do projeto está localizado em <a href="/">/</a>.</p>
 
-  <p>Para ser informado de novos lançamentos, vá à página <a href="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.orgt/lists/fink-announce.php</a>
+  <p>Para ser informado de novos lançamentos, vá à página <a href="/lists/fink-announce.php">http://www.finkproject.orgt/lists/fink-announce.php</a>
   e assine a lista de discussão fink-announce. Esta lista é moderada e possui
   baixo tráfego.</p>
 

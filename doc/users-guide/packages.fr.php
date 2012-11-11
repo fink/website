@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Paquets";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink"><link rel="prev" href="install.php?phpLang=fr" title="Première installation">';
 
 
@@ -81,7 +81,7 @@ E: Sorry, broken packages</pre>
 "install" :</p>
 <pre>fink install wget-ssl</pre>
 <p>La commande <code>fink</code> vérifie tout d'abord que toutes les "dépendances" requises sont présentes sur votre système. Si ce n'est pas le cas, elle vous demandera de confirmer l'installation de celles qui sont manquantes. Ensuite, elle télécharge le code source, le décompresse, lui applique des rustines, le compile et installe le paquet résultant sur votre système. Tout ceci peut prendre un certain temps. Si des erreurs se produisent durant le processus, consultez tout d'abord les 
-<a href="http://www.finkproject.org/faq/">QFP</a>.</p>
+<a href="/faq/">QFP</a>.</p>
 <p>À partir de la version 0.23.0 de <code>fink</code>, vous pouvez télécharger des paquets binaires pré-compilés, s'ils sont disponibles, au lieu de les compiler vous-même. Il suffit pour cela d'utiliser l'option <a href="usage.php?phpLang=fr#options">--use-binary-dist (ou -b)</a> de <code>fink</code>. Cela vous permettra de gagner beaucoup de temps. Par exemple :</p>
 <pre>fink --use-binary-dist install wget-ssl</pre>
 <p>ou</p>
@@ -110,12 +110,12 @@ E: Sorry, broken packages</pre>
 <ul>
 <li>Distributions CVS/rsync
 <ol>
-<li><p><b>10.2-gcc3.3 stable :</b> c'est la version stable la plus récente qui puisse être installée à partir du source pour Mac OS X 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
+<li><p><b>10.2-gcc3.3 stable :</b> c'est la version stable la plus récente qui puisse être installée à partir du source pour Mac OS X 10.2 avec la mise à jour de <code>gcc 3.3</code> contenue dans les Developer Tools. Pour installer cette version, il vous faut activer (si ce n'est déjà fait) l'accès par <a href="/doc/cvsaccess/index.php">CVS</a> ou rsync. Si vous n'avez pas mis à jour <code>gcc 3.3</code>, il se peut que cette version (ou peut-être même le paquet) n'apparaisse pas dans la liste.</p>
 <p>Note : au contraire d'autres projets, Fink distribue les versions les plus récentes des paquets via CVS, tout comme les versions qui requièrent encore certains tests (voir la section instable plus loin). L'activation de CVS ou de rsync vous donne accès aux nouvelles versions binaires des paquets avant que la distribution binaire ne soit mise à jour.</p></li>
 <li><p><b>10.3 stable :</b> c'est la version la plus récente qui puisse être installée à partir du source sur Mac OS X 10.3.</p></li> 
 <li><p><b>10.4/powerpc stable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence stable sur Mac OS X 10.4 pour les utilisateurs qui installent Fink pour la première fois. Pour machine avec processeur PowerPC uniquement.</p></li>
 <li><p><b>10.4/intel stable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence stable sur Mac OS X 10.4 pour les utilisateurs dont la machine a un processeur Intel.</p></li>
-<li><p><b>10.2-gcc3.3 unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.2 avec <code>gcc 3.3</code>. Pour installer cette version, suivez les <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
+<li><p><b>10.2-gcc3.3 unstable :</b> c'est la version instable la plus récente qui puisse être installée à partir du source sur Mac OS X 10.2 avec <code>gcc 3.3</code>. Pour installer cette version, suivez les <a href="/faq/usage-fink.php#unstable">instructions</a> sur l'installation des paquets instables.</p>
 <p>Note : instable ne veut pas nécessairement dire non utilisable, cependant sachez que vous installez ces paquets à vos risques et périls.</p>
 </li>
 <li><b>10.3 unstable :</b> c'est la version la plus récente qui puisse être installée à partir du source de l'arborescence instable sur Mac OS X 10.3.</li>
@@ -145,7 +145,7 @@ E: Sorry, broken packages</pre>
 </li>
 
 </ul>
-<p>Pour de plus amples informations sur l'installation et l'utilisation de X11, voir le document <a href="http://www.finkproject.org/doc/x11/">X11 sur Darwin et Mac OS X</a>.</p>
+<p>Pour de plus amples informations sur l'installation et l'utilisation de X11, voir le document <a href="/doc/x11/">X11 sur Darwin et Mac OS X</a>.</p>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="upgrade.php?phpLang=fr">4. Mise à niveau de Fink</a></p>

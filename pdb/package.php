@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/03/27 14:26:13 $';
+$cvs_date = '$Date: 2012/11/11 16:04:56 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -318,7 +318,7 @@ unset($result);
 		it_item("Website:", '<a href="'.$pobj['homepage'].'" title="' . $pobj['name'] . ' home page">'.$pobj['homepage'].'</a>');
 	}
 	if ($pobj['license']) {
-		it_item("License:", '<a href="http://fink.sourceforge.net/doc/packaging/policy.php#licenses">'.$pobj['license'].'</a>');
+		it_item("License:", '<a href="/doc/packaging/policy.php#licenses">'.$pobj['license'].'</a>');
 	}
 	if (!isset($pobj['parentname'])) $pobj['parentname'] = "";
 	if ($pobj['parentname']) {

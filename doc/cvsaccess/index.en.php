@@ -1,14 +1,14 @@
 <?
 $title = "Fink CVS Access";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:13';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Setting up Fink CVS Access</h1>
-<!--Generated from $Fink: cvs.en.xml,v 1.6 2007/02/23 22:04:54 rangerrick Exp $-->
+<!--Generated from $Fink: cvs.en.xml,v 1.7 2012/11/11 15:20:13 gecko2 Exp $-->
 <p>
 Fink is developed via CVS.
 This means that you can stay up to date between releases and always
@@ -31,7 +31,7 @@ versions, this is a very simple procedure. Just issue this command:
 includes retrieving the latest set of Package Descriptions, and updating
 a few essential core packages (among them the Fink package manager).
 </p>
-<p>If you are behind a firewall consult <a href="http://www.finkproject.org/faq/usage-fink.php#proxy">FAQ 3.2</a>.
+<p>If you are behind a firewall consult <a href="/faq/usage-fink.php#proxy">FAQ 3.2</a>.
 </p>
 <p>After you have updated your package descriptions this way, you may
 want to update your packages to the latest available versions. You can

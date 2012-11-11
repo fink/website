@@ -1,7 +1,7 @@
 <?
 $title = "Utilisation de X11 - Lancement de X11";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/08/15 21:57:04';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="xtools.php?phpLang=fr" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=fr" title="Récupération et installation de X11">';
 
 
@@ -48,7 +48,7 @@ include_once "header.fr.inc";
  <h2><a name="applex11tools">4.5 applex11tools</a></h2>
 
 <p>Le paquet <code>applex11tools</code> de Fink vous permet d'utiliser <code>X11.app</code> et <code>quartz-wm</code> sous Mac OS X 10.3 et suivant avec XFree86 4.4 et suivant ou X.org.</p>
-<p>Pour installer ce paquet, vous devez activer la <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">branche instable</a> et avoir installé le paquet <code>X11User.pkg</code> dans la hiérarchie <code>/Users</code> ou <code>/Volumes</code>. <code>X11.app</code> sera installé dans le dossier <code>Applications</code> de l'arborescence Fink. Vous pourrez alors utilisé soit <code>X11.app</code> ou <code>XDarwin.app</code>.</p>
+<p>Pour installer ce paquet, vous devez activer la <a href="/faq/usage-fink.php#unstable">branche instable</a> et avoir installé le paquet <code>X11User.pkg</code> dans la hiérarchie <code>/Users</code> ou <code>/Volumes</code>. <code>X11.app</code> sera installé dans le dossier <code>Applications</code> de l'arborescence Fink. Vous pourrez alors utilisé soit <code>X11.app</code> ou <code>XDarwin.app</code>.</p>
 <h2><a name="xinitrc">4.6 Fichier .xinitrc</a></h2>
 
 <p>S'il existe dans votre répertoire utilisateur un fichier nommé <code>.xinitrc</code>, il sera utilisé pour lancer quelques clients X au démarrage, tels le gestionnaire de fenêtre, quelques xterm ou un environnement de bureau comme GNOME. Le fichier <code>.xinitrc</code> est un script shell qui contient les commandes pour ce faire. Il <b>n'est pas</b> nécessaire de mettre le traditionnel <code>#!/bin/sh</code> dans la première ligne du fichier et de rendre exécutable le fichier ; xinit sait le lancer via un shell.</p>

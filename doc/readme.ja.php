@@ -1,14 +1,14 @@
 <?
 $title = "ReadMe";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/09/16 23:17:53';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:15';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink ReadMe</h1>
-<!--Generated from $Fink: readme.ja.xml,v 1.3 2006/09/16 23:17:53 dmrrsn Exp $-->
+<!--Generated from $Fink: readme.ja.xml,v 1.4 2012/11/11 15:20:15 gecko2 Exp $-->
 <p>
 Fink は Open Source ソフトウェアを Darwin と Mac OS X　で使えるようにすることを目的としたパッケージ管理システムです。
 </p>
@@ -70,9 +70,9 @@ USAGE ファイルにパスの通し方やパッケージのインストール�
 If the documentation included here doesn't answer your question,
 stroll over to the Fink website at
 もしここにあるドキュメントで質問に答えていない場合、 Fink ウェブサイト
-<a href="http://www.finkproject.org/">http://www.finkproject.org/</a>
+<a href="/">/</a>
 に来て、ヘルプページを参照してください:
-<a href="http://www.finkproject.org/help/">http://www.finkproject.org/help/</a> 。
+<a href="/help/">/help/</a> 。
 ここにほかのドキュメントやサポートの得られる場所についての情報が書かれています。
 </p>
 <p>
@@ -81,12 +81,12 @@ Fink に貢献をしたい場合、上記のヘルプページに、テストや
 <h2><a name="uptodate">告知</a></h2>
 <p>
 当プロジェクトのウェブサイトは
-<a href="http://www.finkproject.org/">http://www.finkproject.org/</a>
+<a href="/">/</a>
 です。
 </p>
 <p>
 新しいリリースの情報は、
-<a href="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.org/lists/fink-announce.php</a>
+<a href="/lists/fink-announce.php">/lists/fink-announce.php</a>
 から fink-announce メーリングリストを購読してください。
 このリストは受信専用で、トラフィック量は小さいです。
 </p>

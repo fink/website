@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - Fink 的使用";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-general.php?phpLang=zh" title="一般性编译问题"><link rel="prev" href="upgrade-fink.php?phpLang=zh" title="升级 Fink （解决特定版本的问题）">';
 
 
@@ -268,7 +268,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
     </a>
     <a name="install-info-bad">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.18: 我不能安装任何软件，因为我碰到下面的错误信息："install-info: unrecognized option `--infodir=/sw/share/info'"。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p><pre>printenv PATH</pre><p>如果输出里面没有 <code>/sw/sbin</code>，那么你需要按照用户指南中的<a href="http://www.finkproject.org/doc/users-guide/install.php#setup">方法</a>来设置你的环境变量。如果有 <code>/sw/sbin</code>，但有其它目录在它前面（比如 <code>/usr/local/bin</code>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <code>/sw/sbin</code> 排在前面。或者如果你的确需要把其它目录放在 <code>/sw/sbin</code> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <code>install-info</code> 子目录。</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p><pre>printenv PATH</pre><p>如果输出里面没有 <code>/sw/sbin</code>，那么你需要按照用户指南中的<a href="/doc/users-guide/install.php#setup">方法</a>来设置你的环境变量。如果有 <code>/sw/sbin</code>，但有其它目录在它前面（比如 <code>/usr/local/bin</code>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <code>/sw/sbin</code> 排在前面。或者如果你的确需要把其它目录放在 <code>/sw/sbin</code> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <code>install-info</code> 子目录。</p></div>
     </a>
     <a name="bad-list-file">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.19: 我不能安装或删除任何东西，因为一个 "files list file" 问题。</b></p></div>
@@ -290,7 +290,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 
     <a name="cant-upgrade">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.21: 我看不到要升级的 Fink 版本。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在这种情况下，参考<a href="http://www.finkproject.org/download/fix-upgrade.php">特别指引</a>。</p><ul>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 在这种情况下，参考<a href="/download/fix-upgrade.php">特别指引</a>。</p><ul>
           <li><b>10.3.x:</b> (0.7.1 distribution)
 		<pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/fink-0.7.1-updates/main/binary-darwin-powerpc/base/fink_0.22.4-1_darwin-powerpc.deb
 sudo dpkg -i fink_0.22.4-1_darwin-powerpc.deb
@@ -402,7 +402,7 @@ sudo chmod 1775 /
     <a name="wrong-arch">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="/download/index.php">the downloads page</a>.</p></div>
     </a>
 
     

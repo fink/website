@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Aktualisieren";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="conf.php?phpLang=de" title="Die Fink-Konfigurationsdatei"><link rel="prev" href="packages.php?phpLang=de" title="Pakete Installieren">';
 
 
@@ -28,7 +28,7 @@ Bei apt führen Sie <code>apt-get update</code> aus, um die aktuelle Auflistung 
 Im Fink Commander wählen Sie im Menü Binär Update descriptions, um die Auflistung der Pakete zu aktualisieren, und dann Dist-Upgrade packages auch im Binär-Menü, um die tatsächlichen Pakete mit neuen Versionen zu aktualisieren.
 </p>
       <p>
-Für mehr Informationen, speziell über das Aktualisieren unter Fink Versionen älter als 0.3.0, schauen Sie sich die <a href="http://www.finkproject.org/download/upgrade.php">Upgrade Matrix</a> an.
+Für mehr Informationen, speziell über das Aktualisieren unter Fink Versionen älter als 0.3.0, schauen Sie sich die <a href="/download/upgrade.php">Upgrade Matrix</a> an.
 </p>
     
     <h2><a name="src">4.2 Aktualisieren der Source-Distribution</a></h2>
@@ -39,7 +39,7 @@ Aktualisieren ist ein wenig komplizierter, wenn Sie die Source-Distribution verw
       <p>
 Falls Sie Fink 0.2.5 oder neuer haben, kann der erste Schritt mit dem Ausführen von <code>fink selfupdate</code> vollbracht werden. Dieser Befehl wird die Fink-Webseite überprüfen, ob ein neues Punkt-Release verfügbar ist, und gegebenenfalls die Paketbeschreibungen herunterladen. In kürzlichen Versionen des Befehls <code>fink</code> haben Sie die Möglichkeit die Paketbeschreibungen direkt via CVS oder rsync herunterzuladen. CVS ist ein versionsgesteuertes Behältnis, wo die Paketbeschreibungen gespeichert und verwaltet werden. Der Einsatz von CVS hat den Vorteil, dass es kontinuierlich aktualisiert wird, aber der Nachteil ist, dass es nur einen einzigen CVS-Server für Fink gibt, so kann es sein, dass dieser manchmal nicht erreichbar ist, wenn es viel Traffic gibt. Deshalb empfehlen wir, dass die Benutzer im allgemeinen rsync nutzen. Für rsync gibt es zahlreiche Spiegelserver, und der einzige Nachteil ist, dass die Paketbeschreibungen mit einer Verzögerung von etwa einer Stunde auf die rsync-Server gespiegelt werden, nachdem sie zum CVS hinzugefügt worden.
 </p>
-      <p>(Falls Sie Probleme haben, die Source-Installation zu aktualisieren, werfen Sie einen Blick in <a href="http://www.finkproject.org/download/fix-upgrade.php">diese speziellen Anweisungen</a>.)</p>
+      <p>(Falls Sie Probleme haben, die Source-Installation zu aktualisieren, werfen Sie einen Blick in <a href="/download/fix-upgrade.php">diese speziellen Anweisungen</a>.)</p>
       <p>
 Wenn Sie eine Fink-Installation älter als Version 0.2.5 haben, müssen Sie die Paketbeschreibungen per Hand herunterladen. Besuchen Sie den <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">Download-Bereich</a> und suchen Sie die aktuellste Version der packages-0.x.x.tar.gz im Modul "distribution". Laden Sie es herunter, und installieren Sie es wie folgt:
 </p>

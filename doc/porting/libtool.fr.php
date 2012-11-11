@@ -1,7 +1,7 @@
 <?
 $title = "Portage - libtool";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing-10.2.php?phpLang=fr" title="Préparation pour la version 10.2"><link rel="prev" href="shared.php?phpLang=fr" title="Code partagé">';
 
 
@@ -25,8 +25,8 @@ include_once "header.fr.inc";
 <p>Note subsidiaire : la librairie libltdl, incluse dans toutes les versions de libtool, ne fonctionne sur Darwin que si dlcompat est installé. Elle est incluse dans Mac OS X à partir de la version 10.3. Pour les versions antérieures, on peut installer la famille de paquets "dlcompat"</p>
 
 <h2><a name="patch-135">3.2 Rustine 1.3.5</a></h2>
-<p>Si vous construisez vous-même la version 1.3.5, vous devrez appliquer cette <a href="http://www.finkproject.org/files/libtool-1.3.5-darwin.patch">rustine</a> <b>[mise à jour du 09/06/2002]</b> au source de libtool 1.3.5, puis supprimer les fichiers <code>ltconfig</code> et <code>ltmain.sh</code>. (Ils seront recréés à partir des fichiers .in adéquats lorsque vous lancerez configure et make). Ceci est fait automatiquement, d'ailleurs, dans le paquet actuel libtool 1.3.5 de Fink.</p>
-<p>Mais ce n'est que la moitié du travail - chaque paquet utilisant libtool contient ses propres copies de <code>ltconfig</code> et <code>ltmain.sh</code>. Si bien que vous devez les remplacer dans chaque paquet que vous voulez construire en tant que librairie partagée. Notez que vous devez le faire avant de lancer le script configure. Vous pouvez récupérer les deux fichiers ici : <a href="http://www.finkproject.org/files/ltconfig">ltconfig</a> (98 ko) et <a href="http://www.finkproject.org/files/ltmain.sh">ltmain.sh</a> (110 ko) <b>[tous deux mis à jour au 09/06/2002]</b>.</p>
+<p>Si vous construisez vous-même la version 1.3.5, vous devrez appliquer cette <a href="/files/libtool-1.3.5-darwin.patch">rustine</a> <b>[mise à jour du 09/06/2002]</b> au source de libtool 1.3.5, puis supprimer les fichiers <code>ltconfig</code> et <code>ltmain.sh</code>. (Ils seront recréés à partir des fichiers .in adéquats lorsque vous lancerez configure et make). Ceci est fait automatiquement, d'ailleurs, dans le paquet actuel libtool 1.3.5 de Fink.</p>
+<p>Mais ce n'est que la moitié du travail - chaque paquet utilisant libtool contient ses propres copies de <code>ltconfig</code> et <code>ltmain.sh</code>. Si bien que vous devez les remplacer dans chaque paquet que vous voulez construire en tant que librairie partagée. Notez que vous devez le faire avant de lancer le script configure. Vous pouvez récupérer les deux fichiers ici : <a href="/files/ltconfig">ltconfig</a> (98 ko) et <a href="/files/ltmain.sh">ltmain.sh</a> (110 ko) <b>[tous deux mis à jour au 09/06/2002]</b>.</p>
 
 <h2><a name="fixing-14x">3.3 Adaptation de la version 1.4.x</a></h2>
 <p>Il y a au moins trois versions différentes de libtool 1.4.x en usage à l'heure actuelle (1.4.1, 1.4.2, ainsi que des versions de développement plus récentes). Elles posent toutes problème avec Darwin, cependant les modifications à effectuer diffèrent selon la version. Le paquet "libtool 1.4" fourni via Fink possèdent déjà toutes les rustines nécessaires. Cependant, il vous faudra encore modifier vous-même les fichiers <code>ltmain.sh</code> et <code>configure</code> des paquets concernés pour qu'ils fonctionnent correctement.</p>

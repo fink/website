@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Packages";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/07/10 23:21:42';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="upgrade.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install.php?phpLang=en" title="First Time Installation">';
 
 
@@ -188,7 +188,7 @@ Then it goes ahead and downloads source code, unpacks it, patches it,
 compiles it, and installs the results on your system.
 This can take a long time.
 If you run into errors during that process, please first check the
-<a href="http://www.finkproject.org/faq/">FAQ</a>.
+<a href="/faq/">FAQ</a>.
       </p>
       <p>
 You can tell <code>fink</code> to try to download
@@ -277,7 +277,7 @@ dependency placeholders.
       </ul>
       <p>
 For more information on installing and running X11, refer to the
-<a href="http://www.finkproject.org/doc/x11/">X11 on Darwin
+<a href="/doc/x11/">X11 on Darwin
 and Mac OS X document</a>.
 </p>
     

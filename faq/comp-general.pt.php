@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Compilação (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="comp-packages.php?phpLang=pt" title="Problemas de compilação - Pacotes específicos"><link rel="prev" href="usage-fink.php?phpLang=pt" title="Instalação, uso e manutenção do Fink">';
 
 
@@ -311,8 +311,8 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
         pacote para solicitar uma variante. Isto pode ser relativamente fácil
         de ser feito. Caso você não obtenha resposta do mantenedor ou não veja
         os pacotes novos, ou queira tentar uma opção diferente por você mesmo,
-        leia o <a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">Tutorial
-        de empacotamento</a> e o <a href="http://www.finkproject.org/doc/packaging/index.php">Manual de
+        leia o <a href="/doc/quick-start-pkg/index.php">Tutorial
+        de empacotamento</a> e o <a href="/doc/packaging/index.php">Manual de
         empacotamento</a>.</p><p><b>Observação: </b> o Fink é deliberadamente configurado para que
         todos os binários oficiais sejam idênticos independentemente da máquina
         em que foram compilados, portanto opções como otimização para o G5 não

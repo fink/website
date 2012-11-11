@@ -7,9 +7,8 @@ $navbox = array(
   "doc/bundled/index.php", "Contents",
   "doc/bundled/install-fast.php", "Fast Track",
   "doc/bundled/install-first.php", "First Time",
-  "doc/bundled/install-up03.php", "Upgrade from 0.3",
-  "doc/bundled/install-up02.php", "Upgrade from 0.2",
-  "doc/bundled/install-up01.php", "Upgrade from 0.1",
+  "doc/bundled/install-up03.php", "Upgrading",
+  "doc/bundled/install-up02.php", "Clean",
 );
 $printlink = "doc/bundled/install";
 

@@ -1,7 +1,7 @@
 <?
 $title = "ユーザーガイド - インストール";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="packages.php?phpLang=ja" title="パッケージのインストール"><link rel="prev" href="intro.php?phpLang=ja" title="はじめに">';
 
 
@@ -27,7 +27,7 @@ Fink のアップグレードは、再インストールなしで行なうこと
 
 <p>
 バイナリディストリビューションは、ディスクイメージ (.dmg) の中に、 Mac OS X インストーラパッケージ形式 (.pkg) で配布されています。
-ディスクイメージを<a href="http://www.finkproject.org/download/bindist.php">ダウンロードページ</a>からダウンロードし、ダブルクリックしてマウントします。
+ディスクイメージを<a href="/download/bindist.php">ダウンロードページ</a>からダウンロードし、ダブルクリックしてマウントします。
 "Fink 0.x.x Installer" を開きます。
 Disk Copy がファイルを点検した後にデスクトップに出てくるディスクアイコンのことです。
 この中には、ドキュメンテーションとインストーラパッケージが入っています。
@@ -46,7 +46,7 @@ Disk Copy がファイルを点検した後にデスクトップに出てくる�
 <p>
 ソースディストリビューションは標準的な Unix tarball (.tar.bz) で提供されます。
 これは <code>fink</code> パッケージマネージャとパッケージ記述だけが含まれていて、パッケージ用のソースをダウンロードするものです。
-<a href="http://www.finkproject.org/download/srcdist.php">ダウンロードページ</a>から入手することができます。
+<a href="/download/srcdist.php">ダウンロードページ</a>から入手することができます。
 tar アーカイブを解凍する際に、 StuffIt Expander を使わないように注意してください。
 StuffIt はまだ長いファイル名を扱うことができないようです。
 StuffIt Expander が解凍してしまっている場合、作成されたフォルダごと捨ててください。

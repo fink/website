@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 介绍";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/08/15 21:57:05';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="history.php?phpLang=zh" title="历史"><link rel="prev" href="index.php?phpLang=zh" title="运行 X11 Contents">';
 
 
@@ -144,7 +144,7 @@ GNOME 程序精选
 </a>
 可以在不运行 GNOME 的情况下安装和运行。  
 不幸的是，对 <a href="http://www.kde.org/">KDE 应用程序</a>却
-<a href="http://www.finkproject.org/faq/usage-fink.php#kde">
+<a href="/faq/usage-fink.php#kde">
 还没有取得类似的进展
 </a>。 
       </p>

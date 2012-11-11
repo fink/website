@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:57';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="prev" href="usage-general.php?phpLang=fr" title="Problèmes généraux d\'utilisation de paquets">';
 
 
@@ -24,7 +24,7 @@ include_once "header.fr.inc";
 </a>
 <a name="xdarwin-start">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.3: XDarwin quitte immédiatement après lancement. Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Pas de panique. Vous trouverez dans le document Utilisation de X11 une large section <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">résolution de problèmes</a> à ce sujet.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Pas de panique. Vous trouverez dans le document Utilisation de X11 une large section <a href="/doc/x11/trouble.php#immediate-quit">résolution de problèmes</a> à ce sujet.</p></div>
 </a>
 <a name="no-server">
 <div class="question"><p><b><? echo FINK_Q ; ?>9.4: Au démarrage de XDarwin, un message indique que le fichier xinit est introuvable et qu'il n'existe pas de server X accessible dans le répertoire /usr/X11R6/bin (message en anglais : "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH"). Que faire ?</b></p></div>

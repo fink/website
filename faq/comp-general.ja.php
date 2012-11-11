@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - コンパイル (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/11 02:54:41';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
@@ -261,8 +261,8 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 			まず最初に、バリエーションを作成するようにパッケージメンテナに伝えてみてください。
 			これが比較的簡単な方法です。
 			メンテナから反応がなかったり、新しいバージョンが出てしまったり、自分で違うオプションを試してみたい場合、
-			<a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">Packaging Tutorial</a> 
-			と <a href="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</a> をお読みください。
+			<a href="/doc/quick-start-pkg/index.php">Packaging Tutorial</a> 
+			と <a href="/doc/packaging/index.php">Packaging Manual</a> をお読みください。
 		</p><p><b>注記:</b>Fink は、ビルドされたマシンに依存しないよう、全ての公式パッケージにはG5 最適化などのことはされません。このようなことをしたい場合、各自でする必要があります。</p></div>
 </a>
 

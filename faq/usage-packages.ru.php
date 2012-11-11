@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="prev" href="usage-general.php?phpLang=ru" title="Проблемы использования пакетов - Общие вопросы">';
 
 
@@ -51,7 +51,7 @@ include_once "header.ru.inc";
         <a name="xdarwin-start">
             <div class="question"><p><b><? echo FINK_Q ; ?>9.3: Помогите! Когда запускаю XDarwin, она сразу завершает работу!</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Не паникуйте. Документ "Выполнение X11" сейчас имеет большой раздел
-                        <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">Выявление и устранение проблем
+                        <a href="/doc/x11/trouble.php#immediate-quit">Выявление и устранение проблем
                     </a> по данному общему вопросу.</p></div>
         </a>
         <a name="no-server">

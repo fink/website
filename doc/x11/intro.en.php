@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/08/15 21:57:04';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
 
@@ -184,7 +184,7 @@ selection of GNOME applications
 </a>
 available to be installed and run without running GNOME.  
 Unfortunately, the same 
-<a href="http://www.finkproject.org/faq/usage-fink.php#kde">
+<a href="/faq/usage-fink.php#kde">
 progress is not quite yet able to be made
 </a>
 with <a href="http://www.kde.org/">KDE applications.</a>

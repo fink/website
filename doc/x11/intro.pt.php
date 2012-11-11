@@ -1,7 +1,7 @@
 <?
 $title = "Executando o X11 - Introdução";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/03/15 00:37:07';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Executando o X11 Contents"><link rel="next" href="history.php?phpLang=pt" title="História"><link rel="prev" href="index.php?phpLang=pt" title="Executando o X11 Contents">';
 
 
@@ -168,7 +168,7 @@ include_once "header.pt.inc";
       para o qual um aplicativo foi desenvolvido, o aplicativo funcionará sem
       perda de funcionalidade. Como exemplo, a grande quantidade de <a href="http://pdb.finkproject.org/pdb/section.php/gnome">aplicativos
       GNOME</a> que podem ser instalados e executados sem rodar o GNOME em
-      si. Infelizmente, ainda não se chegou ao mesmo ponto em relação aos <a href="http://www.finkproject.org/faq/usage-fink.php#kde">aplicativos
+      si. Infelizmente, ainda não se chegou ao mesmo ponto em relação aos <a href="/faq/usage-fink.php#kde">aplicativos
       KDE</a>.</p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

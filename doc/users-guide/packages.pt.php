@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - Pacotes";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/01 14:09:07';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="upgrade.php?phpLang=pt" title="Atualizando o Fink"><link rel="prev" href="install.php?phpLang=pt" title="Instalação inicial">';
 
 
@@ -194,7 +194,7 @@ E: Pacotes quebrados</pre>
       o código fonte, descomprime-o, aplica-lhe modificações, compila-o e
       instala o resultado no seu sistema. Isto pode levar bastante tempo. Caso
       você encontre erros durante este processo, por favor verifique primeiro
-      as <a href="http://www.finkproject.org/faq/">Perguntas
+      as <a href="/faq/">Perguntas
       frequentes</a>.</p>
 
       <p>Você pode solicitar ao <code>fink</code> que tente baixar pacotes de
@@ -359,7 +359,7 @@ E: Pacotes quebrados</pre>
       </ul>
 
       <p>Para mais informações sobre a instalação e execução do X11, consulte o
-      documento <a href="http://www.finkproject.org/doc/x11/">X11 no Darwin e
+      documento <a href="/doc/x11/">X11 no Darwin e
       no Mac OS X</a>.</p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:

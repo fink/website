@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Upgrade";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/07/10 23:21:42';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="conf.php?phpLang=en" title="The Fink Configuration File"><link rel="prev" href="packages.php?phpLang=en" title="Installing Packages">';
 
 
@@ -37,7 +37,7 @@ have new versions available.
       <p>For Fink Commander, select Binary-&gt;Update descriptions to update the package list, and then Binary-&gt;Dist-Upgrade packages to update to new versions.</p>
       <p>
 For more information, see the
-<a href="http://www.finkproject.org/download/upgrade.php">Upgrade Matrix</a>.
+<a href="/download/upgrade.php">Upgrade Matrix</a>.
 </p>
     
     <h2><a name="src">4.2 Upgrading the Source Distribution</a></h2>
@@ -62,7 +62,7 @@ are stored and managed.
 Using CVS has the advantage that it is updated continuously, but the disadvantage that there is a single CVS server for Fink, and it can be unreliable if there is a lot of traffic.  For this reason, it is recommended that general users go with rsync.  There are multiple mirrors available for rsync, and the only disadvantage is that package descriptions take an hour or so to migrate to the rsync mirrors after they've been added to CVS.
 </p>
       <p>(If you are having trouble upgrading a source installation, consult
-<a href="http://www.finkproject.org/download/fix-upgrade.php">these
+<a href="/download/fix-upgrade.php">these
 special instructions</a>.)</p>
       <p>
 Once you have updated your package descriptions (no matter which way),

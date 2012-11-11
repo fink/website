@@ -1,7 +1,7 @@
 <?
 $title = "Guide utilisateur - Installation";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="packages.php?phpLang=fr" title="Installation de paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -17,14 +17,14 @@ include_once "header.fr.inc";
 <h2><a name="bin">2.1 Installation de la distribution binaire</a></h2>
 
 <p>La distribution binaire se fait sous forme d'une image disque (.dmg) contenant un paquet d'installation Mac OS X (.pkg). Après téléchargement de l'image disque à partir de la 
-<a href="http://www.finkproject.org/download/bindist.php">page de téléchargement</a>
+<a href="/download/bindist.php">page de téléchargement</a>
 (vous devrez peut-être utiliser les fonctions "Téléchargez le fichier lié sous..." ou "Téléchargez sur le disque"), double-cliquez dessus pour la monter. 
 Ouvrez l'icône disque "Fink 0.x.x Installer" qui apparaît sur votre bureau (ou dans le répertoire de téléchargement que vous avez choisi) après vérification du fichier par Utilitaire de disque (ou Images disques pour les versions antérieures à 10.3). Vous trouverez, à l'intérieur, des documents et un paquet d'installation. Double-cliquez sur le paquet d'installation et suivez les instructions qui apparaîtront à l'écran.</p>
 <p>Un mot de passe administrateur vous sera demandé et un texte s'affichera. Lisez-le - il se peut qu'il soit plus récent que ce guide utilisateur. Quand l'installeur vous demandera de choisir un disque d'installation, assurez-vous que vous cliquez sur le volume système (celui sur lequel vous avez installé Mac OS X). Si vous choisissez un autre volume, l'installation s'effectuera, mais Fink ne fonctionnera pas. Quand le processus d'installation sera terminé, suivez les instructions de la section <a href="#setup">Définition de votre environnement</a>.</p>
 
 <h2><a name="src">2.2 Installation de la distribution source</a></h2>
 
-<p>La distribution source se fait sous forme d'une archive standard tar Unix (.tar.gz). Elle ne contient que le gestionnaire de paquets <code>fink</code> et les descriptions de paquets. Les sources des paquets seront téléchargés à la demande. L'archive est disponible sur la <a href="http://www.finkproject.org/download/srcdist.php">page de téléchargements</a>. N'utilisez surtout pas StuffIt Expander pour extraire l'archive tar. StuffIt ne gère toujours pas correctement les noms de fichiers longs. Si StuffIt Expander a déjà extrait les fichiers de l'archive, mettez à la poubelle le répertoire qu'il a créé.</p>
+<p>La distribution source se fait sous forme d'une archive standard tar Unix (.tar.gz). Elle ne contient que le gestionnaire de paquets <code>fink</code> et les descriptions de paquets. Les sources des paquets seront téléchargés à la demande. L'archive est disponible sur la <a href="/download/srcdist.php">page de téléchargements</a>. N'utilisez surtout pas StuffIt Expander pour extraire l'archive tar. StuffIt ne gère toujours pas correctement les noms de fichiers longs. Si StuffIt Expander a déjà extrait les fichiers de l'archive, mettez à la poubelle le répertoire qu'il a créé.</p>
 <p>La version source doit être installée à partir de la ligne de commande. Ouvrez donc Terminal.app et déplacez-vous dans le répertoire où se trouve l'archive fink-0.x.x-full.tar.gz (Note : si vous avez installé Mac OS X 10.4 et XCode 2.1, vous devez utiliser <code>fink-0.8.0-full-XCode-2.1.tar.gz</code> à la place et faire les changements indiqués ci-dessous). La commande suivante extrait l'archive :</p>
 <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
 <p>Elle crée un répertoire qui porte le même nom que l'archive. Ici, nous l'appellerons <code>fink-0.x.x-full</code>. Déplacez-vous dans ce répertoire et lancez le script bootstrap :</p>

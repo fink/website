@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Uso (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="prev" href="usage-general.php?phpLang=pt" title="Problemas no uso de pacotes - Geral">';
 
 
@@ -52,7 +52,7 @@ include_once "header.pt.inc";
       <div class="question"><p><b><? echo FINK_Q ; ?>9.3: Preciso de ajuda! Quando inicio o XDarwin, ele termina
         imediatamente!</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Não entre em pânico. O documento Executando o X11 tem uma vasta
-        <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">seção
+        <a href="/doc/x11/trouble.php#immediate-quit">seção
         de resolução de problemas</a> para este problema comum.</p></div>
     </a>
     <a name="no-server">

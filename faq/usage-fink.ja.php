@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink の使用方法";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/11 02:54:41';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -286,7 +286,7 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 "install-info: unrecognized option `--infodir=/sw/share/info'"
 のエラーが出るだけです。</b></p></div>
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> これは普通、 PATH の問題です。ターミナルで:</p><pre>printenv PATH</pre><p>と入力し、 <code>/sw/sbin</code> が出てこないなら、環境変数を
-<a href="http://www.finkproject.org/doc/users-guide/install.php#setup">instructions</a>
+<a href="/doc/users-guide/install.php#setup">instructions</a>
 内の Users Guide を参照してください。
 <code>/sw/sbin</code> があるが、他のディレクトリ (例えば /usr/local/bin) 
 がそれより前にある場合、 PATH の順序を変えて先頭近くに移動してください。
@@ -331,7 +331,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
 
 <a name="cant-upgrade">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.21: Fink のバージョンをアップデートできないようです。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> この状況専用の <a href="http://www.finkproject.org/download/fix-upgrade.php">special instructions</a> に従ってください。</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> この状況専用の <a href="/download/fix-upgrade.php">special instructions</a> に従ってください。</p></div>
 </a>
 <a name="spaces-in-directory">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.22: 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</b></p></div>
@@ -469,7 +469,7 @@ sudo chmod 1775 /
       <div class="question"><p><b><? echo FINK_Q ; ?>5.32: Fink を更新できない。 <q>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</q>
 </b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このエラーは、PPC インストーラで Intel マシンにインストールした際に発生します。  
-        現在のインストールを、例えば次のように削除してください:</p><pre>sudo rm -rf /sw</pre><p>Intel マシン用のインストーラを、<a href="http://www.finkproject.org/download/index.php">ダウンロードページ</a>から入手してください。</p></div>
+        現在のインストールを、例えば次のように削除してください:</p><pre>sudo rm -rf /sw</pre><p>Intel マシン用のインストーラを、<a href="/download/index.php">ダウンロードページ</a>から入手してください。</p></div>
     </a>
 
 <p align="right"><? echo FINK_NEXT ; ?>:

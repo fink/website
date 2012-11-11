@@ -1,7 +1,7 @@
 <?
 $title = "Руководство пользователя - Инсталляция";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="packages.php?phpLang=ru" title="Инсталляция пакетов"><link rel="prev" href="intro.php?phpLang=ru" title="Введение">';
 
 
@@ -24,7 +24,7 @@ include_once "header.ru.inc";
             
             <p> Бинарный дистрибутив представлен в виде пакета инсталлятора Mac OS X
                 (.pkg) в загрузочном модуле (.dmg). После скачивания
-                загрузочного модуля со страницы <a href="http://www.finkproject.org/download/bindist.php">Скачивание
+                загрузочного модуля со страницы <a href="/download/bindist.php">Скачивание
                 </a> (возможно, вам придется использовать функцию браузера "Save Target
                 as..." или "Download to Disk") сделайте на нем двойной щелчок для начала установки.
                 Откройтке иконку диска "Fink 0.x.x Installer" на рабочем столе
@@ -46,7 +46,7 @@ include_once "header.ru.inc";
             <p> Дистрибутив исходного кода является стандартным тарболом Unix
                 (.tar.gz). Он содержит только менеджер пакетов <code>fink</code>
                 с их описанием и скачивает исходный код
-                для пакетов по требованию. Его можно получить на странице <a href="http://www.finkproject.org/download/srcdist.php">Скачивание
+                для пакетов по требованию. Его можно получить на странице <a href="/download/srcdist.php">Скачивание
                 </a>. Важно не использовать StuffIt Expander
                 для распаковки архива. По какой-то причине StuffIt все еще
                 не может обрабатывать длинные имена файлов. Если StuffIt Expander уже распаковал архив,

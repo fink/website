@@ -1,7 +1,7 @@
 <?
 $title = "用户指南 - 软件包";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="upgrade.php?phpLang=zh" title="升级 Fink"><link rel="prev" href="install.php?phpLang=zh" title="首次安装">';
 
 
@@ -154,7 +154,7 @@ distribution</a>.
 然后它会开始下载源代码，解包，给它打上必要的补丁，编译，然后把最终的结果安装到你的系统上。
 这可能会花费比较长的时间。
 如果你发现此过程中发生了错误，请首先查看
-<a href="http://www.finkproject.org/faq/">FAQ</a>。
+<a href="/faq/">FAQ</a>。
 </p>
       
       <p>
@@ -208,7 +208,7 @@ More details about the <code>fink</code> tool are available in the chapter
 <ol>
             <li>
           <p>
-            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from the stable source tree for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
+            <b>10.2-gcc3.3 stable:</b>  This is the most recent stable version that can be installed from the stable source tree for OS 10.2 with the <code>gcc 3.3</code> update to the Developer Tools.  To be able to install this version, you may need to enable <a href="/doc/cvsaccess/index.php">CVS</a> or rsync access.  If you have not applied the <code>gcc 3.3</code> update you may not see this version (or possibly even the package).</p>
           <p>Note:  Unlike the case for some other projects, Fink distributes the most recent stable versions of packages via CVS, as well as versions in need of testing (see the section on unstable below).  Enabling CVS or rsync updating  gives you access to new stable versions of packages before the binary distribution is updated. 
 </p>
         </li>
@@ -221,7 +221,7 @@ with new fink installations.  PowerPC only.</p></li>
 on intel hardware.</p></li>
 			<li>
           <p>
-            <b>10.2-gcc3.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
+            <b>10.2-gcc3.3 unstable:</b>  This is the latest version that can be installed from the unstable source tree for OS 10.2 with <code>gcc 3.3</code>.  To install this version, follow the <a href="/faq/usage-fink.php#unstable">instructions</a> on how to install unstable packages.</p>
           <p>Note:  unstable doesn't necessarily mean unusable, but install such packages at your own risk.
 </p>
         </li>
@@ -272,7 +272,7 @@ dependency placeholders.
       </ul>
       <p>
 关于安装和运行 X11 的更多信息，请参考
-<a href="http://www.finkproject.org/doc/x11/">Darwin
+<a href="/doc/x11/">Darwin
 及 Mac OS X 上 X11 的文档</a>.
 </p>
     

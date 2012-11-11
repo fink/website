@@ -1,111 +1,121 @@
 <?
-$title = "Installation - Upgrade from 0.2";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:33';
-$metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up01.php" title="Upgrading From Fink 0.1.x"><link rel="prev" href="install-up03.php" title="Upgrading From Fink 0.3.x">';
+$title = "Installation - Clean";
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:15';
+$metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="prev" href="install-up03.php" title="Upgrading Fink">';
 
 include_once "header.inc";
 ?>
 
-<h1>Installation - 4 Upgrading From Fink 0.2.x</h1>
+<h1>Installation - 4 Clean Upgrade</h1>
 
 
 
 
 <p>
-If you already have Fink 0.2.x installed, you can update your
-installation to 0.9.0 with this package.
-</p>
-<p>
-Actually, there are two pieces that are updated independently: the
-package manager and the package descriptions. It is recommended to
-update the package manager first.
+    There are situations, which normally don't come up every day, in which you
+    may find that you need to install Fink over again.
 </p>
 
 
-<h2><a name="packman">4.1 Updating The Package Manager</a></h2>
+<h2><a name="cleaninst">4.1 Situations Calling for a Clean Reinstall</a></h2>
+<ul>
+    <li>
+        <p>You want to switch architectures, e.g. you have a 32-bit (i386)
+        Fink distribution on OS 10.6, and you would like to have a 64-bit
+        (x86_64) one instead.  This also applies if you try to migrate a
+        PowerPC OS X setup to an Intel machine.</p>
+    </li>
+    <li>
+        <p>You want to move Fink to a different path.</p>
+    </li>
+    <li>
+        <p>You want to update, or have already updated, OS X between versions
+        where Fink doesn't support an upgrade path:</p>
+        <p>- 10.4 -&gt; 10.6+</p>
+        <p>- 10.5 -&gt; 10.7+</p>
+        <p>- 10.6 -&gt; 10.7+</p>
+    </li>
+    <li>
+        <p>You have updated from 10.5 to 10.6 with XQuartz-2.4 or later installed,
+        and X11-based libraries and executables stop working.</p>
+    </li>
+    <li>
+        <p>Your Fink installation has linked to libraries, e.g. from Macports
+        or <code>/usr/local</code>, which have been removed from
+        your machine, resulting in breakage in your Fink libraries and
+        executables.</p>
+    </li>
+</ul>
+
+
+<h2><a name="backup">4.2 Backing up to save time</a></h2>
 <p>
-To update the package manager, run the inject.pl script in the
-fink-0.9.0-full directory, like this:
+To save time after you have reinstalled Fink, you can get a transcript
+of your installed packages.  The following command in a terminal window
+will work, even if for some reason the Fink tools aren't functioning:
 </p>
-<pre>./inject.pl</pre>
+<pre>grep -B1 "install ok installed" /sw/var/lib/dpkg/status \
+| grep "^Package:" | cut -d: -f2 | cut -d\  f2 &gt; finkinst.txt</pre>
 <p>
-It will try to locate your Fink installation automatically. If it
-can't find it, you can pass the path as a parameter, like this:
+This will save the list of your packages in the file <code>finkinst.txt</code>
+in the current working directory.
 </p>
-<pre>./inject.pl /sw</pre>
 <p>
-The script copies the package descriptions into the appropriate
-directory, creates tarballs in /sw/src and then runs fink to install
-the new versions of the fink and base-files packages.
-(Yes, that means that fink updates itself. <code>:-)</code> )
+You may also want to copy or move the sources in <code>/sw/src</code>
+to another location so that you don't have to spend time downloading them when
+you begin restoring your Fink distribution.
+</p>
+<p>
+In addition, if you have made global configuration changes to any of your packages by
+editing configuration files in <code>/sw/etc</code>, then you may wish to back
+those up.
 </p>
 
 
-<h2><a name="descriptions">4.2 Updating The Package Descriptions</a></h2>
+<h2><a name="removing">4.3 Removing Your Old Fink</a></h2>
 <p>
-If you downloaded the fink-0.9.0-full tarball, the package
-descriptions are in the subdirectory pkginfo. To install them, run the
-inject.pl script in that directory:
+Once you've <a href="#backup">backed everything up</a>, you are ready
+to remove your Fink distribution.  You can remove <code>/sw</code> as well as
+anything in <code>/Applications/Fink</code>
+using the Finder or the command line:
 </p>
-<pre>cd pkginfo
-./inject.pl</pre>
+<pre>sudo rm -rf /sw /Applications/Fink/*</pre>
 <p>
-This inject.pl script works just like the one for the package
-manager.
-</p>
-<p>
-You can also grab the package descriptions as a separate tarball,
-packages-0.9.0. If you did that, just unpack it and run the inject.pl
-script inside.
-</p>
-<p>
-As a third alternative, you can have Fink automatically update itself to
-the latest set of package descriptions by issuing the following command:
-</p>
-<pre>fink selfupdate</pre>
-
-
-<h2><a name="x11">4.3 Getting X11 Sorted Out</a></h2>
-<p>
-The first thing you should do after updating the package descriptions
-is getting the X11 dependencies settled (unless you already did that
-after upgrading to 0.2.3).
-Refer to the "Getting X11 Sorted Out" section under "First Time
-Installation" above.
+(Replace <code>/sw</code> by your actual Fink tree).
 </p>
 
 
-<h2><a name="update-all">4.4 Updating Packages</a></h2>
+<h2><a name="reinstalling">4.4 Installing Fink Again</a></h2>
 <p>
-The above updating steps will not update the actual packages, they
-only provide you with the means to do so. The easiest way to get the
-new packages is to use the 'update-all' command:
+First, follow the <a href="install-first.php">first-time install instructions</a>.
 </p>
-<pre>fink update-all</pre>
 <p>
-This will bring all installed packages to the latest version.
-If you don't want to do this (it may take some time), you can update
-individual packages with the 'update' command.
+    Once you have downloaded package descriptions, you can put the sources that you
+    <a href="#backup">backed up</a> into <code>/sw/src</code> either
+    using the Finder or the command line:
+</p>
+<pre>sudo cp /path/to/backup/* /sw/src</pre>
+<p>
+    (As usual, replace <code>/sw</code> with your Fink tree).  If you prefer,  you can
+    use <code>fink configure</code> to specify your backup location:
+</p>
+<pre>In what additional directory should Fink look for downloaded tarballs? [] 
+<b>(enter your backup directory at the prompt)</b>. 
+</pre>
+<p>
+    Note: this requires that the entire path to and including your backup directory is world-
+    readable.
+</p>
+<p>
+    You can also restore your global configuration files at this time.  
+    Note:  we recommend that you <b>not</b> restore <code>/sw/etc/fink.conf</code>
+    from your prior installation of Fink, to avoid incompatibilities.  You can open it up 
+    in a text editor and enter the correponding values into <code>fink configure</code>.
 </p>
 
 
-<h2><a name="other">4.5 Other Notes</a></h2>
-<p>
-IMPORTANT! When you update from Fink 0.2.0 or a CVS version before
-0.2.1, the first thing you should do after running the inject.pl
-scripts is this:
-</p>
-<pre>fink update dpkg</pre>
-<p>
-There was a bug in dpkg that could lead to partially extracted
-packages. If you had unusual trouble with installed packages,
-especially missing symlinks, use 'fink reinstall' on them to
-re-install the .deb package files.
-</p>
 
 
-<p align="right">
-Next: <a href="install-up01.php">5 Upgrading From Fink 0.1.x</a></p>
 
 <? include_once "footer.inc"; ?>

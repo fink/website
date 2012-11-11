@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/04/14 19:23:12';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -857,7 +857,7 @@ build directory will be replaced with versions that know about
 Darwin. This happens in the patch phase and before the PatchScript
 is run. <b>Only</b> use this when you know that the package needs
 it. Some packages can be broken by overwriting the libtool scripts
-with mismatching versions. See the <a href="http://www.finkproject.org/doc/porting/libtool.php">libtool
+with mismatching versions. See the <a href="/doc/porting/libtool.php">libtool
 page</a> for further information.
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>

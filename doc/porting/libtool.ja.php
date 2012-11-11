@@ -1,7 +1,7 @@
 <?
 $title = "移植 - libtool";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2011/07/17 00:52:32';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて"><link rel="prev" href="shared.php?phpLang=ja" title="共有コード">';
 
 
@@ -76,7 +76,7 @@ Fink チームのメンバーはこれからも改良を続け， libtool メン
       
       <p>
 libtool 1.3.5 を自分でビルドする場合，
-<a href="http://www.finkproject.org/files/libtool-1.3.5-darwin.patch">このパッチ</a> <b>[updated 2002-06-09]</b> 
+<a href="/files/libtool-1.3.5-darwin.patch">このパッチ</a> <b>[updated 2002-06-09]</b> 
 をソースにあて，ltconfig と ltmain.sh というファイルを削除します．
 (これらのファイルは，configure と make をすることで .in ファイルにより再生成されます．)
 Fink パッケージの libtool 1.3.5 では自動的に行われます．
@@ -86,8 +86,8 @@ Fink パッケージの libtool 1.3.5 では自動的に行われます．
 共有ライブラリとしてビルドする全てのパッケージについて，これらのファイルを置き換える必要があります．
 これは configure スクリプトを実行する前に行う必要があります．
 両ファイルは以下から取得することができます:
-<a href="http://www.finkproject.org/files/ltconfig">ltconfig</a> (98K) と
-<a href="http://www.finkproject.org/files/ltmain.sh">ltmain.sh</a> (110K)
+<a href="/files/ltconfig">ltconfig</a> (98K) と
+<a href="/files/ltmain.sh">ltmain.sh</a> (110K)
 <b>[both updated 2002-06-09]</b>.</p>
     
     <h2><a name="fixing-14x">3.3 1.4.x を修正</a></h2>

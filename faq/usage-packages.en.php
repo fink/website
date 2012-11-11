@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Usage (2)";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/05/10 16:33:16';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=en" title="Package Usage Problems - General">';
 
 
@@ -48,7 +48,7 @@ include_once "header.en.inc";
     </a>
     <a name="xdarwin-start">
       <div class="question"><p><b><? echo FINK_Q ; ?>9.3: Help! When I start XDarwin, it immediately quits!</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Don't Panic. The Running X11 document now has an extensive <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">troubleshooting
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Don't Panic. The Running X11 document now has an extensive <a href="/doc/x11/trouble.php#immediate-quit">troubleshooting
         section</a> for this common problem.</p></div>
     </a>
     <a name="no-server">

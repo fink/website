@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - X11 のインストール";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/08/15 21:57:05';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=ja" title="X11 の起動"><link rel="prev" href="history.php?phpLang=ja" title="歴史">';
 
 
@@ -94,7 +94,7 @@ X.org-6.8.2 は、上記の方法で <code>xorg</code> と <code>xorg-shlibs</co
 </p>
 <p>
 アップルのバイナリを使うには、 <b>X11 User</b> パッケージがインストールされている必要があります。
-また、Fink の <a href="http://www.finkproject.org/doc/users-guide/upgrade.php">update</a> も行ってください。
+また、Fink の <a href="/doc/users-guide/upgrade.php">update</a> も行ってください。
 </p>
 <p>
 <code>fink-0.16.2</code> では <b>X11 SDK</b> パッケージも必要です。

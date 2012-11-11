@@ -1,7 +1,7 @@
 <?
 $title = "P.M.F. - Espejos";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="upgrade-fink.php?phpLang=es" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="relations.php?phpLang=es" title="Relaciones con Otros Proyectos">';
 
 

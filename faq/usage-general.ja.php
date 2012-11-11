@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - 使用法 (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/11 02:54:41';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
 
@@ -18,7 +18,7 @@ include_once "header.ja.inc";
 <div class="answer"><p><b><? echo FINK_A ; ?>:</b> まずいことという訳ではありません。
 これはデフォルトの英語メッセージや日付フォーマットなどを使うという意味です。
 これ以外はプログラムは普通に動作します。
-X11 のドキュメントに、 <a href="http://www.finkproject.org/doc/x11/trouble.php#locale">詳細</a> があります。</p></div>
+X11 のドキュメントに、 <a href="/doc/x11/trouble.php#locale">詳細</a> があります。</p></div>
 </a>
 <a name="passwd">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.2: いきなり変なユーザーがシステムに現れました。
@@ -139,7 +139,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(実行 OS が 10.5 以降の場合
 		</p>
 		</li>
 	</ul><p>
-	これ以外の選択は、 <a href="http://www.finkproject.org/doc/x11/index.php">Running X11 document</a> を参照してください。
+	これ以外の選択は、 <a href="/doc/x11/index.php">Running X11 document</a> を参照してください。
 	</p></div>
 </a>
 <a name="no-display">

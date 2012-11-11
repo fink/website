@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation de Fink";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:57';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation"><link rel="prev" href="upgrade-fink.php?phpLang=fr" title="Mise à jour de Fink (Résolution de problèmes spécifiques à une version donnée)">';
 
 
@@ -152,7 +152,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 </a>
 <a name="install-info-bad">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.18: Il est impossible d'installer quoi que ce soit. Un message signale que l'option infodir n'est pas reconnue par la commande install-info (message en anglais "install-info: unrecognized option `--infodir=/sw/share/info'"). Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ceci est généralement lié à un problème sur la variable d'environnement PATH. Lancez dans une fenêtre de terminal :</p><pre>printenv PATH</pre><p>Si <code>/sw/sbin</code> n'apparaît pas, vous devrez alors modifier vos variables d'environnement comme expliqué dans les <a href="http://www.finkproject.org/doc/users-guide/install.php#setup">instructions</a> du Guide de l'Utilisateur. Si <code>/sw/sbin</code> est bien là, mais qu'il y a d'autres répertoires avant (par exemple <code>/usr/local/bin</code>), vous devrez alors réordonner votre variable d'environnement PATH pour que <code>/sw/sbin</code> soit proche du début. Si vous voulez cependant que les autres répertoires soit avant <code>/sw/sbin</code>, et qu'ils contiennent des répertoires appelés eux aussi install-info, il faudra alors renommer temporairement ces sous-répertoires <code>install-info</code> quand vous utiliserez Fink.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ceci est généralement lié à un problème sur la variable d'environnement PATH. Lancez dans une fenêtre de terminal :</p><pre>printenv PATH</pre><p>Si <code>/sw/sbin</code> n'apparaît pas, vous devrez alors modifier vos variables d'environnement comme expliqué dans les <a href="/doc/users-guide/install.php#setup">instructions</a> du Guide de l'Utilisateur. Si <code>/sw/sbin</code> est bien là, mais qu'il y a d'autres répertoires avant (par exemple <code>/usr/local/bin</code>), vous devrez alors réordonner votre variable d'environnement PATH pour que <code>/sw/sbin</code> soit proche du début. Si vous voulez cependant que les autres répertoires soit avant <code>/sw/sbin</code>, et qu'ils contiennent des répertoires appelés eux aussi install-info, il faudra alors renommer temporairement ces sous-répertoires <code>install-info</code> quand vous utiliserez Fink.</p></div>
 </a>
 <a name="bad-list-file">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.19: Il est impossible d'installer ou de supprimer quoi que ce soit à cause d'un problème de listes de fichiers de paquets (messages en anglais contenant "files list file"). Que faire ?</b></p></div>
@@ -177,7 +177,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
 
 <a name="cant-upgrade">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.21: Il est impossible de mettre à jour Fink. Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Suivez les <a href="http://www.finkproject.org/download/fix-upgrade.php">instructions spéciales</a> dans ce cas.</p><p>Quand ni l'exécution de la commande <code>fink selfupdate</code>, ni celle des commandes <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <code>fink</code> de la manière suivante :</p><ul>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Suivez les <a href="/download/fix-upgrade.php">instructions spéciales</a> dans ce cas.</p><p>Quand ni l'exécution de la commande <code>fink selfupdate</code>, ni celle des commandes <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <code>fink</code> de la manière suivante :</p><ul>
 <li><b>10.3.x :</b> (distribution 0.7.1)
 <pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/\
 fink-0.7.1-updates/main/binary-darwin-powerpc\
@@ -294,7 +294,7 @@ sudo chmod 1775 /
 	</pre></div></a>
 <a name="wrong-arch">
 <div class="question"><p><b><? echo FINK_Q ; ?>5.32: Un message signalant une contradiction entre l'architecture du paquet et celle du système empêche de mettre à jour fink (message en anglais <q>package architecture (darwin-i386) does not match system (darwin-powerpc)</q>). Que faire ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p><pre>sudo rm -rf /sw</pre><p>Puis téléchargez l'image disque pour machines Intel à partir des <a href="http://www.finkproject.org/download/index.php">pages de téléchargement</a>.</p></div></a>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p><pre>sudo rm -rf /sw</pre><p>Puis téléchargez l'image disque pour machines Intel à partir des <a href="/download/index.php">pages de téléchargement</a>.</p></div></a>
 
 <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=fr">6. Problèmes généraux de compilation</a></p>

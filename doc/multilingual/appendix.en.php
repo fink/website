@@ -1,7 +1,7 @@
 <?
 $title = "i18n - Appendix";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2011/10/28 15:50:45';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="i18n Contents"><link rel="prev" href="resources.php?phpLang=en" title="Additional Resources           ">';
 
 

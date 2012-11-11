@@ -1,7 +1,7 @@
 <?
 $title = "打包 - 文件系统布局";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2012/01/26 09:57:59';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="compilers.php?phpLang=zh" title="Compilers"><link rel="prev" href="policy.php?phpLang=zh" title="打包相关规则">';
 
 

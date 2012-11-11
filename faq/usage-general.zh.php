@@ -1,7 +1,7 @@
 <?
 $title = "常见疑问（F.A.Q.） - 使用（１）";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-packages.php?phpLang=zh" title="特定软件包使用问题"><link rel="prev" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包">';
 
 
@@ -16,7 +16,7 @@ include_once "header.zh.inc";
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
 没有什么问题，它只是表示程序会使用默认的英语信息提示，日期格式等。
 程序其它的功能应该是正常的。
-X11 文档有更多的<a href="http://www.finkproject.org/doc/x11/trouble.php#locale">细节</a>。
+X11 文档有更多的<a href="/doc/x11/trouble.php#locale">细节</a>。
 </p></div>
     </a>
     <a name="passwd">
@@ -83,7 +83,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
           <li>
             <p>苹果的 4.2.x 版（假设你安装了用户和 SDK 软件包）： <code>system-xfree86</code> 软件包是自动产生的，不要去安装它。(注意苹果的 X11 Jaguar 公开测试版已经不再提供，所以除非你在以前可以获得的时候已经安装了它，这才可以是一个选择。</p>
           </li>
-        </ul><p>还有另外一些选择。在 <a href="http://www.finkproject.org/doc/x11/index.php">运行 X11 的文档</a>里面有专门的叙述。</p></div>
+        </ul><p>还有另外一些选择。在 <a href="/doc/x11/index.php">运行 X11 的文档</a>里面有专门的叙述。</p></div>
     </a>
     <a name="no-display">
       <div class="question"><p><b><? echo FINK_Q ; ?>8.6: 当我试图运行一个程序，我碰到一个错误信息说： "cannot open display:"。我应该怎么办？</b></p></div>

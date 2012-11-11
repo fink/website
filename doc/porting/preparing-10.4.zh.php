@@ -1,7 +1,7 @@
 <?
 $title = "移植 - 为 10.4 做准备";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="prev" href="preparing-10.3.php?phpLang=zh" title="为 10.3 做准备">';
 
 

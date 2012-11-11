@@ -1,7 +1,7 @@
 <?
 $title = "User's Guide - Install";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2010/07/10 23:21:42';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -34,7 +34,7 @@ chapter</a>.
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
 After downloading the disk image from the
-<a href="http://www.finkproject.org/download/bindist.php">download page</a>
+<a href="/download/bindist.php">download page</a>
 (you may have to use your browser's "Save Target as..." or "Download
 to Disk" function), double-click it to mount it.
 Open the "Fink 0.x.x Installer" disk icon that appears on your desktop (or wherever you downloaded it) after Disk Utility has verified the file.
@@ -59,7 +59,7 @@ When the installer is finished, proceed with the
 The source distribution comes as a standard Unix tarball (.tar.gz).
 It contains only the <code>fink</code> package manager and will download the source for packages on the fly.
 You can get it from the
-<a href="http://www.finkproject.org/download/srcdist.php">download page</a>.
+<a href="/download/srcdist.php">download page</a>.
 Older versions of StuffIt Expander have difficuly with handling long file names, so if you have any problems you'll need to remove the folder it generates and follow the command-line instructions below.
 </p>
       <p>

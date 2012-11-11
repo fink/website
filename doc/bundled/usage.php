@@ -1,14 +1,14 @@
 <?
 $title = "Usage";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/09/16 23:30:44';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
 <h1>Fink Usage</h1>
-<p>Generated from <i>$Fink: usage.xml,v 1.15 2006/09/16 23:30:44 dmrrsn Exp $</i></p><h2><a name="">Setting The Paths</a></h2>
+<p>Generated from <i>$Fink: usage.xml,v 1.16 2012/11/11 15:20:17 gecko2 Exp $</i></p><h2><a name="">Setting The Paths</a></h2>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable
@@ -156,9 +156,9 @@ descriptions directly from CVS.
 <p>
 If your questions are not answered by this document, read the FAQ at
 the Fink website:
-<a href="http://www.finkproject.org/faq/">http://www.finkproject.org/faq/</a>.
+<a href="/faq/">/faq/</a>.
 If that still doesn't answer your questions, subscribe to the
-fink-users mailing list via <a href="http://www.finkproject.org/lists/fink-users.php">http://www.finkproject.org/lists/fink-users.php</a>
+fink-users mailing list via <a href="/lists/fink-users.php">/lists/fink-users.php</a>
 and ask there.
 </p>
 

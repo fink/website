@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Uso do Fink";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="comp-general.php?phpLang=pt" title="Problemas de Compilação - Geral"><link rel="prev" href="upgrade-fink.php?phpLang=pt" title="Atualizando o Fink (resolução de problemas específicos a uma
     versão)">';
 
@@ -326,7 +326,7 @@ fink selfupdate-cvs</pre><p>Se estiver recebendo erros que mencionem <b>cvs.sour
         "install-info: unrecognized option
         `--infodir=/sw/share/info'"</b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Esse é um problema no seu PATH. Em uma janela de terminal, digite:</p><pre>printenv PATH</pre><p>Caso <code>/sw/sbin</code> não apareça, então você precisa
-        configurar seu ambiente conforme estas <a href="http://www.finkproject.org/doc/users-guide/install.php#setup">instruções</a>
+        configurar seu ambiente conforme estas <a href="/doc/users-guide/install.php#setup">instruções</a>
         no Guia do usuário. Se <code>/sw/sbin</code> estiver lá mas
         houver outros diretórios antes (por exemplo,
         <code>/usr/local/bin</code>), então você tem duas opções:
@@ -535,7 +535,7 @@ page and on http://fontconfig.org.</pre><p>então você pode corrigir o problema
         architecture (darwin-i386) does not match system
         (darwin-powerpc).</q></b></p></div>
       <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Este erro ocorre quando você usa um instalador PowerPC em uma máquina Intel. Você precisa apagar sua instalação do Fink, por exemplo:</p><pre>sudo rm -rf /sw</pre><p>e então baixar a imagem de disco para máquinas Intel a partir da
-        <a href="http://www.finkproject.org/download/index.php">página de
+        <a href="/download/index.php">página de
         downloads</a>.</p></div>
     </a>
   <p align="right"><? echo FINK_NEXT ; ?>:

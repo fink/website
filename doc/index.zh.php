@@ -1,14 +1,14 @@
 <?
 $title = "文档";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:54';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink－文档</h1>
-<!--Generated from $Fink: doc.zh.xml,v 1.16 2007/02/23 22:04:54 rangerrick Exp $-->
+<!--Generated from $Fink: doc.zh.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $-->
 <p>
 这里收集了为 Fink 编写的各种文档。
 有些文档可能会对使用 Mac OS X 的用户有用，或那些没有使用 Fink 但又向学习如何移植 Unix 软件的 Darwin 用户有用。
@@ -40,7 +40,7 @@ covers more advanced concepts than those covered in the User's Guide.</li>
 
 <ul>
 <li><a href="security/index.php"> 网络安全策略手册</a> - 所有在 Fink 中有管理软件包或打算向里面添加软件包的人都必须阅读。</li>
-<li><a href="http://www.finkproject.org/doc/UsingFink.pdf">使用 Fink：开发者使用指南</a>  (2MB pdf 文件，英文版) － 一组用于 <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X 大会</a>上演示的幻灯片（同时也有 <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint 文件</a>版本）</li>
+<li><a href="/doc/UsingFink.pdf">使用 Fink：开发者使用指南</a>  (2MB pdf 文件，英文版) － 一组用于 <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X 大会</a>上演示的幻灯片（同时也有 <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint 文件</a>版本）</li>
 <li><a href="porting/index.php">移植技巧提示</a> － 关于如何移植 Unix 软件到 Darwin 上的资料</li>
 <li><a href="quick-start-pkg/index.php">Packaging Tutorial</a> - a complement to the Packaging Manual which focuses on real examples and introduces packaging to beginners.</li>
 <li><a href="packaging/index.php">软件打包手册</a> － 如何创建和维护 Fink 软件包</li>

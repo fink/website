@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: x11.zh.xml,v 1.10 2007/08/15 21:57:05 dmacks Exp $
+Generated from $Fink: x11.zh.xml,v 1.11 2012/11/11 15:20:18 gecko2 Exp $
 -->
 <title>Fink Documentation - 在 Darwin 和 Mac OS X 上运行 X11</title></head><body>
 <table width="100%" cellspacing="0">
@@ -159,7 +159,7 @@ GNOME 程序精选
 </a>
 可以在不运行 GNOME 的情况下安装和运行。  
 不幸的是，对 <a href="http://www.kde.org/">KDE 应用程序</a>却
-<a href="http://www.finkproject.org/faq/usage-fink.php#kde">
+<a href="/faq/usage-fink.php#kde">
 还没有取得类似的进展
 </a>。 
       </p>
@@ -260,7 +260,7 @@ operation, and have OpenGL support.</li>
       <p>2005 年 4 月 29 日，苹果发布了 Tiger (10.4)，包括了它们 X11 的发布版本。这个版本基于 XFree86-4.4。</p>
       <p>
 要使用苹果的二进制版本，你需要安装 <b>X11 User</b> 软件包，你还需要
-<a href="http://www.finkproject.org/doc/users-guide/upgrade.php">更新</a> Fink。</p>
+<a href="/doc/users-guide/upgrade.php">更新</a> Fink。</p>
       <p>在 <tt style="white-space: nowrap;">fink-0.16.2</tt>下，你需要安装 <b>X11 SDK</b> 软件包。这样以后，Fink 才可以创建 <tt style="white-space: nowrap;">system-xfree86</tt> 虚拟软件包。</p>
       <p>在 <tt style="white-space: nowrap;">fink-0.17.0</tt> 或更新版本下，只有你需要从源程序编译软件包才必须安装 X11 SDK 。这种情况下，即使你没有安装 SDK，仍然会有 <tt style="white-space: nowrap;">system-xfree86</tt> 和 <tt style="white-space: nowrap;">system-xfree86-shlibs</tt> 虚拟软件包，后者表示共享函数库。如果你安装了 SDK，那么还会有一个
 <tt style="white-space: nowrap;">system-xfree86-dev</tt> 软件包，代表头文件。
@@ -513,7 +513,7 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
     <h3><a name="run-xfree86.applex11tools">4.5 The applex11tools package</a></h3>
       
       <p>Fink's <tt style="white-space: nowrap;">applex11tools</tt> package allows the use of <tt style="white-space: nowrap;">X11.app</tt> and <tt style="white-space: nowrap;">quartz-wm</tt> under OS 10.3 and later with XFree86 4.4 or later or X.org.</p>
-      <p>To install this package you must enable the <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">unstable tree</a>, and have <tt style="white-space: nowrap;">X11User.pkg</tt> somewhere within <tt style="white-space: nowrap;">/Users</tt> or <tt style="white-space: nowrap;">/Volumes</tt>.  <tt style="white-space: nowrap;">X11.app</tt> will be installed in the <tt style="white-space: nowrap;">Applications</tt> folder within your Fink tree.  You can now use either <tt style="white-space: nowrap;">X11.app</tt>  or <tt style="white-space: nowrap;">XDarwin.app</tt>.</p>
+      <p>To install this package you must enable the <a href="/faq/usage-fink.php#unstable">unstable tree</a>, and have <tt style="white-space: nowrap;">X11User.pkg</tt> somewhere within <tt style="white-space: nowrap;">/Users</tt> or <tt style="white-space: nowrap;">/Volumes</tt>.  <tt style="white-space: nowrap;">X11.app</tt> will be installed in the <tt style="white-space: nowrap;">Applications</tt> folder within your Fink tree.  You can now use either <tt style="white-space: nowrap;">X11.app</tt>  or <tt style="white-space: nowrap;">XDarwin.app</tt>.</p>
 
     
     <h3><a name="run-xfree86.xinitrc">4.6 .xinitrc 文件</a></h3>
@@ -998,4 +998,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: x11.zh.xml,v 1.10 2007/08/15 21:57:05 dmacks Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: x11.zh.xml,v 1.11 2012/11/11 15:20:18 gecko2 Exp $</i></p></body></html>

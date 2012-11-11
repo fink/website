@@ -1,8 +1,8 @@
 <?
 $title = "Installation - First Time";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:33';
-$metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading From Fink 0.3.x"><link rel="prev" href="install-fast.php" title="The Fast Track">';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:15';
+$metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading Fink"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
 include_once "header.inc";
 ?>
@@ -17,20 +17,23 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.1 or later.
-Darwin 5.0 and later should also work, but this has not been tested.
-Earlier versions of both are not supported and probably will
-<b>not</b> work.
-</p></li>
-<li><p>
 Development tools.
-On Mac OS X, install the Developer.pkg package from the Developer
-Tools CD.
-On Darwin, the tools should be present in the default install.
+For OS X versions up to 10.6, you should install the newest version
+of Xcode available for your system, which can be downloaded from
+connect.apple.com after registering.
+For 10.7 and 10.8, installing the
+Xcode Command Line Tools is mandatory to use the most current build applications.
+This can be installed either by downloading it directly via connect.apple.com
+or through the Xcode application via the Components page of the Downloads tab of
+the Preferences.  On 10.7 one can install an earlier monolithic Xcode (4.2.1 and earlier),
+but this isn't recommended.
 </p></li>
+<li><p>On 10.7 and 10.8 you will need to install Java.  Entering</p>
+<pre>javac</pre>
+<p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
 <li><p>
 Many other things that come with Mac OS X and the Developer Tools.
-This includes perl 5.6 and either wget or curl.
+This includes perl and curl.
 </p></li>
 <li><p>
 Internet access.
@@ -53,49 +56,28 @@ long as you don't use existing directories like /usr/local or
 /usr. The bootstrap script tries to catch these.
 </p>
 <p>
-If you intend to use the binary distribution (through apt-get /
-dselect), you must install to /sw.
-Unfortunately, binary packages are not relocatable.
-</p>
-<p>
-The directory that you choose must not contain any spaces or similar.
+The directory that you choose must not contain any spaces or similar characters.
 Both Unix itself and the bulk of Unix software were written under this
 assumption.
 Using symlinks to trick the bootstrap script simply won't work.
-</p>
-<p>
-A special note about /usr/local: While it is possible to install Fink
-in /usr/local (and the bootstrap script will let you do that after a
-confirmation), it is a bad idea. Many third party software packages
-install into /usr/local. This can cause severe problems for Fink,
-including overwriting files, dpkg refusing to install packages and
-strange build errors. Also, the /usr/local hierarchy is in the default
-search path for the shell and the compiler. That means that it is much
-more difficult to get back to a working system when things break. You
-have been warned.
 </p>
 
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-First, you need to unpack the fink-0.9.0-full.tar.gz tarball.
-(Note: If you have OS X 10.4 and XCode 2.1, you should use
-<code>fink-0.8.0-full-XCode-2.1.tar.gz</code> instead, and make
-the appropriate changes below.)
-It is recommended that you do this from the command line -
-StuffIt Expander has a tendency to screw up text files.
-So, go to the directory where you put the tarball, and run this
+First, you need to unpack the fink-0.34.4.tar.gz tarball (it might also show up as <code>fink-0.34.4.tar</code> if you
+used Safari to download it).  So, in a terminal window, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xzf fink-0.9.0-full.tar.gz</pre>
+<pre>tar xf fink-0.34.4.tar.gz</pre>
 <p>
-You now have a directory named fink-0.9.0-full.
-Change to it with <code>cd fink-0.9.0-full</code>.
+You now have a directory named fink-0.34.4.
+Change to it with <code>cd fink-0.34.4</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
 bootstrap.
-So, to start installation, go to the fink-0.9.0-full directory and run
+So, to start installation, go to the fink-0.34.4 directory and run
 this command:
 </p>
 <pre>./bootstrap</pre>
@@ -116,9 +98,14 @@ that will be done later.
 </p>
 <p>
 Next up is Fink configuration.
-This consists mainly of setting proxies and selecting mirror sites for
-downloading.
 The process should be self-explaining.
+You will be asked how you want to set up
+fink's build user account.  If you are on a networked system where
+the users and groups are on a central server, you can select the
+parameters manually--check with your network administrator as to
+what to use.
+You will also be asked about proxies--again, check with your network
+administrator, and to select mirror sites for downloads.
 If you don't know what to say, you can just press Return and Fink will
 use a reasonable default value.
 </p>
@@ -127,62 +114,82 @@ Finally, the script has enough information to conduct the bootstrap
 process.
 That means it will now download, build and install some essential
 packages.
-Don't worry if you see some packages being compiled twice.
+Don't worry if you see some packages apparently being compiled twice.
 This is required because to build a binary package of the package
 manager, you first must have the package manager available.
+</p>
+<p>Note:  on 10.8, after you start the install process you may see
+dialog windows asking whether you want to install Xquartz.
+If you want to do so, go ahead.  You won't have to stop the Fink install
+to do that.</p>
+<p>
+After the bootstrap procedure finishes, run<code>/sw/bin/pathsetup.sh</code>
+to help set up your shell environment for use with Fink.  In most cases, it will run
+automatically, and prompt you for permission to make changes.  If
+the script fails, you'll have to do things by hand (see below).</p>
+<p>
+(If you need to do things by hand, and you are using csh or tcsh,
+you need to make sure that the command 
+<code>source /sw/bin/init.csh</code> is executed during startup of
+your shell, either by .login, .cshrc, .tcshrc, or something else
+appropriate.  If you are using bash or similar shells, the command
+you need is <code>. /sw/bin/init.sh</code>, and places where it
+might get executed include .bashrc and .profile.)
+</p>
+<p>
+Once your environment is set up, start a new terminal window to ensure that
+the changes get implemented.  You will now need to have Fink download package
+descriptions for you.</p>
+<p>
+You can use 
+</p>
+<pre>fink selfupdate-rsync</pre>
+<p>
+to download package descriptions using rsync.  This is the preferred option for
+most users, since it is quick and there are multiple mirror sites available.
+</p>
+<p>
+However, rsync is often blocked by network administrators.  If your firewall
+doesn't allow you to use rsync, then you can try
+</p>
+
+<pre>fink selfupdate-cvs</pre>
+<p>
+to download package descriptions using cvs.  If you have an HTTP proxy set up, fink
+will pass its information along to cvs.  Note: you can only use anonymous cvs (pserver)
+through a proxy.
+</p>
+<p>
+You can now use <code>fink</code> commands to install packages.  A
+</p>
+<pre>fink --help</pre>
+<p>
+is a useful place to get more information about how to use <code>fink</code>.
 </p>
 
 
 <h2><a name="x11">2.4 Getting X11 Sorted Out</a></h2>
 <p>
-Fink uses virtual packages to declare dependencies on X11.
-As there are several X11 implementations available for Mac OS X
-(XFree86, Tenon Xtools, eXodus) and several ways to install them
-(manually or via Fink), there are several actual packages - one for
-each setup.
-Fink is quite bad at guessing what you have, so it's best to get this
-sorted out right at the beginning.
-Here is a list of the available packages and installation methods:
+Fink uses virtual packages to declare dependencies on X11.  As of
+OS 10.5, we don't provide any packages of our own.  The supported options are:
 </p>
 <ul>
-<li><p>
-xfree86-base:
-This package is the real thing.
-It will fetch the XFree86 source, compile it and install it into
-/usr/X11R6.
-For maximum flexibility, this package does not contain the actual
-XDarwin server.
-To get it, you can install the xfree86-server package.
-Or you can install it manually, for example using an "XDarwin" test
-release from the XonX project or one of the "rootless" servers
-circulating the net.
-</p></li>
-<li><p>
-system-xfree86:
-This package expects that you installed XFree86 manually, either from
-source or from the official binary distribution.
-It will just check that the installation is useful and then act as a
-dependency placeholder.
-Note that XFree86 4.0.2 or 4.0.3 will not pass the test.
-You need a version that builds shared libraries.
-Usually that will be 4.1.0, but CVS versions not older than a few
-months will also work.
-</p></li>
-<li><p>
-system-xtools:
-Install this package if you have Tenon's Xtools product installed.
-Like system-xfree86, this will just do a sanity check and leave the
-actual files alone.
-</p></li>
+<li>10.5:  Either Apple's standard X11 or XQuartz-2.6.3 or earlier.  Note:  if you install
+XQuartz-2.4 or later you will quite likely need to reinstall Fink if you update to 10.6.</li>
+<li>10.6:  Only Apple's standard X11, since XQuartz installs in a different directory tree
+(<code>/opt/X11</code>) than the standard X11 (<code>/usr/X11</code>) for
+10.6 and later so that they can coexist.</li>
+<li>10.7:  Only Apple's standard X11.</li>
+<li>10.8:  Only Xquartz 2.7 and later.</li>
 </ul>
 <p>
 For more information on installing and running X11, refer to the
-online <a href="http://www.finkproject.org/doc/x11/">X11 on Darwin
+online <a href="/doc/x11/">X11 on Darwin
 and Mac OS X document</a>.
 </p>
 
 
 <p align="right">
-Next: <a href="install-up03.php">3 Upgrading From Fink 0.3.x</a></p>
+Next: <a href="install-up03.php">3 Upgrading Fink</a></p>
 
 <? include_once "footer.inc"; ?>

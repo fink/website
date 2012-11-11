@@ -1,7 +1,7 @@
 <?
 $title = "Q.F.P. - Utilisation (1)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:57';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-packages.php?phpLang=fr" title="Problèmes d\'utilisation spécifiques à certains paquets"><link rel="prev" href="comp-packages.php?phpLang=fr" title="Problèmes de compilation spécifiques à certains paquets">';
 
 
@@ -12,7 +12,7 @@ include_once "header.fr.inc";
 
 <a name="xlocale">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.1: De nombreux messages signalant que la locale n'est pas gérée par la bibliothèque C apparaissent (message en anglais : "locale not supported by C library"). Est-ce un problème ?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <a href="http://www.finkproject.org/doc/x11/trouble.php#locale">plus amples informations</a> à ce sujet.</p></div>
+<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <a href="/doc/x11/trouble.php#locale">plus amples informations</a> à ce sujet.</p></div>
 </a>
 <a name="passwd">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.2: Un certain nombre d'étranges utilisateurs apparaissent tout d'un coup sur mon système. Ils portent, entre autres, les noms suivants : "mysql", "pgsql" et "games". D'où proviennent-ils ?</b></p></div>
@@ -74,7 +74,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
 <li>
 <p>La version 4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK). Le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible.</p>
 </li>
-</ul><p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <a href="http://www.finkproject.org/doc/x11/index.php">document Utilisation de X11</a>.</p></div>
+</ul><p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <a href="/doc/x11/index.php">document Utilisation de X11</a>.</p></div>
 </a>
 <a name="no-display">
 <div class="question"><p><b><? echo FINK_Q ; ?>8.6: Au lancement d'une application, un message signale que la fenêtre d'affichage ne peut être ouverte (message en anglais: "cannot open display:"). Que faire ?</b></p></div>

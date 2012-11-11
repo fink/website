@@ -1,14 +1,14 @@
 <?
 $title = "Documentação";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/04/01 14:16:07';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentação</h1>
-<!--Generated from $Fink: doc.pt.xml,v 1.5 2009/04/01 14:16:07 monipol Exp $-->
+<!--Generated from $Fink: doc.pt.xml,v 1.6 2012/11/11 15:20:14 gecko2 Exp $-->
     <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
     destes documentos também podem ser úteis a pessoas que usam o Mac OS X sem
     o Fink mas que desejam aprender a portar software Unix.</p>
@@ -76,7 +76,7 @@ include_once "header.inc";
       </li>
 
       <li>
-        <a href="http://www.finkproject.org/doc/UsingFink.pdf">Using Fink: A
+        <a href="/doc/UsingFink.pdf">Using Fink: A
         Developer's How To</a> (arquivo PDF com 2MB) - slides de uma
         apresentação na <a href="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X
         Conference</a> (também disponível como um <a href="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">arquivo

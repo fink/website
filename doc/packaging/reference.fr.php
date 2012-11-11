@@ -1,7 +1,7 @@
 <?
 $title = "Paquets - Référence";
-$cvs_author = 'Author: fingolfin';
-$cvs_date = 'Date: 2012/01/26 09:57:59';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -61,7 +61,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and 10.6 distributions share
+Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -86,7 +86,7 @@ foo-pm586 variant.
 <p>Since python 2.3 is not available in the 10.5 distribution, and the
 available perl packages vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
+various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
 </p>
 <pre>
     perl 5.6.0:  10.3
@@ -96,19 +96,21 @@ various perl versions in the 10.3 10.4, 10.5, and 10.6 distributions:
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
+    perl 5.12.3:                         <b>10.7</b>
 </pre>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0)
+  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3)
   Distribution: &lt;&lt;
    (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
    (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
    (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
    (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
    (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
-   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6
+   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6,
+   (%type_pkg[perl] = 5123) 10.7
   &lt;&lt;
 </pre>
 <p>Note that we do not include old
@@ -312,7 +314,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 </td></tr><tr valign="top"><td>UpdateConfigGuessInDirs</td><td>
 <p><b>Introduit dans une version CVS postérieure à la version 0.9.0.</b> Liste de sous-répertoires. A le même effet que UpdateConfigGuess, mais dans toute l'arborescence du source ; utile lorsque plusieurs fichiers config.guess existent dans différents répertoires du source. Auparavant, il fallait copier ou déplacer les fichiers dans le script PatchScript. Avec ce nouveau champ, il suffit de donner la liste des répertoires. Utilisez <code>.</code> pour mettre à jour les fichiers dans le répertoire de compilation.</p>
 </td></tr><tr valign="top"><td>UpdateLibtool</td><td>
-<p>Valeur booléenne. Si elle est vraie ("true"), les fichiers ltconfig et ltmain.sh présents dans le répertoire de compilation sont remplacés par des versions reconnaissant Darwin. Ce remplacement se produit lors de la phase d'application des rustines avant que le script PatchScript soit exécuté. <b>N'utilisez</b> ce champ quand cas d'absolue nécessité. Certains paquets ne fonctionnent plus lorsqu'on modifie la version des scripts libtool. Voir la <a href="http://www.finkproject.org/doc/porting/libtool.php">page libtool</a> pour de plus amples informations.</p>
+<p>Valeur booléenne. Si elle est vraie ("true"), les fichiers ltconfig et ltmain.sh présents dans le répertoire de compilation sont remplacés par des versions reconnaissant Darwin. Ce remplacement se produit lors de la phase d'application des rustines avant que le script PatchScript soit exécuté. <b>N'utilisez</b> ce champ quand cas d'absolue nécessité. Certains paquets ne fonctionnent plus lorsqu'on modifie la version des scripts libtool. Voir la <a href="/doc/porting/libtool.php">page libtool</a> pour de plus amples informations.</p>
 </td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
 <p><b>Introduit dans une version CVS postérieure à la version 0.9.0.</b> Liste de sous-répertoires. A le même effet que UpdateLibtool ; utile lorsque plusieurs fichiers scripts libtool 1.3.x sont présents dans différents répertoires de l'arborescence du source. Auparavant, il fallait copier ou déplacer les fichiers dans le script PatchScript. Avec ce nouveau champ, il suffit de donner la liste des répertoires. Utilisez <code>.</code> pour mettre à jour les fichiers dans le répertoire de compilation.</p>
 </td></tr><tr valign="top"><td>UpdatePoMakefile</td><td>

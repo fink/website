@@ -1,7 +1,7 @@
 <?
 $title = "Использование X11 - Введение";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/08/15 21:57:05';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Использование X11 Contents"><link rel="next" href="history.php?phpLang=ru" title="История создания продукта"><link rel="prev" href="index.php?phpLang=ru" title="Использование X11 Contents">';
 
 
@@ -139,7 +139,7 @@ include_once "header.ru.inc";
                 без них. Примером служит растущий <a href="http://pdb.finkproject.org/pdb/section.php/gnome">
                     выбор приложений GNOME</a>, которые можно
                 инсталлировать и использовать без применения GNOME. К сожалению,
-                    это <a href="http://www.finkproject.org/faq/usage-fink.php#kde">
+                    это <a href="/faq/usage-fink.php#kde">
                     достижение пока не распространяется </a>на <a href="http://www.kde.org/">приложения KDE.</a>
             </p>
         

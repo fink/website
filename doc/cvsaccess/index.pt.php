@@ -1,14 +1,14 @@
 <?
 $title = "Acesso via CVS";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/03/30 11:31:56';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:13';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Configurando acesso via CVS para o Fink</h1>
-<!--Generated from $Fink: cvs.pt.xml,v 1.1 2009/03/30 11:31:56 monipol Exp $-->
+<!--Generated from $Fink: cvs.pt.xml,v 1.2 2012/11/11 15:20:13 gecko2 Exp $-->
   <p>O Fink é desenvolvido via CVS. Isto significa que você pode manter-se
   atualizado entre os lançamentos e sempre obter os arquivos mais recentes.
   Esta página informa como configurar uma instalação do Fink para fazer
@@ -35,7 +35,7 @@ include_once "header.inc";
   alguns pacotes bases essenciais, dentre os quais o gerenciador de pacotes
   Fink.</p>
 
-  <p>Caso esteja atrás de um firewall, consulte a <a href="http://www.finkproject.org/faq/usage-fink.php#proxy">Pergunta frequente
+  <p>Caso esteja atrás de um firewall, consulte a <a href="/faq/usage-fink.php#proxy">Pergunta frequente
   3.2</a>.</p>
 
   <p>Após haver atualizado suas descrições de pacotes desta forma, você pode

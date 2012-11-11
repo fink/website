@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: faq.es.xml,v 1.16 2010/11/10 02:23:58 babayoshihiko Exp $
+Generated from $Fink: faq.es.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $
 -->
 <title>Fink Documentation - Preguntas Más Frecuentes de Fink</title></head><body>
 <table width="100%" cellspacing="0">
@@ -453,7 +453,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
       <div class="question"><p><b>Q5.18: No puedo instalar nada, porque me sale el siguiente error: "install-info: unrecognized option `--infodir=/sw/share/info"</b></p></div>
       <div class="answer"><p><b>A:</b> This usually is due to a problem in your PATH. In a terminal window
         type:</p><pre>printenv PATH</pre><p>If <tt style="white-space: nowrap;">/sw/sbin</tt> doesn't appear at all, then you
-        need to set your environment up as per the <a href="http://www.finkproject.org/doc/users-guide/install.php#setup">instructions</a>
+        need to set your environment up as per the <a href="/doc/users-guide/install.php#setup">instructions</a>
         in the Users Guide. If <tt style="white-space: nowrap;">/sw/sbin</tt> is there, but
         there are other directories ahead of it (e.g.
         <tt style="white-space: nowrap;">/usr/local/bin</tt>), then you will either want to
@@ -629,7 +629,7 @@ sudo chmod 1775 /
     <a name="usage-fink.wrong-arch">
       <div class="question"><p><b>Q5.32: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
-      <div class="answer"><p><b>A:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p></div>
+      <div class="answer"><p><b>A:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="/download/index.php">the downloads page</a>.</p></div>
     </a>
     
   <h2><a name="comp-general">6 Compile Problems - General</a></h2>
@@ -867,7 +867,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
     </a>
     <a name="comp-general.compile-options">
       <div class="question"><p><b>Q6.21: I want Fink to use different options in building a package.</b></p></div>
-      <div class="answer"><p><b>A:</b> The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">Packaging Tutorial</a> and <a href="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</a>.</p><p>
+      <div class="answer"><p><b>A:</b> The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <a href="/doc/quick-start-pkg/index.php">Packaging Tutorial</a> and <a href="/doc/packaging/index.php">Packaging Manual</a>.</p><p>
           <b>Note:  </b>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p></div>
     </a>
 
@@ -1016,7 +1016,7 @@ preventing you from updating <tt style="white-space: nowrap;">gettext</tt>.</p><
       <div class="question"><p><b>Q8.1: Me aparecen muchos mensajes con "locale not supported by C  library". ¿Es malo esto?</b></p></div>
       <div class="answer"><p><b>A:</b> It's not bad, it just means that the program will use the default
         English messages, date formats, etc. The program will function
-        normally otherwise. The Running X11 document has <a href="http://www.finkproject.org/doc/x11/trouble.php#locale">details</a>.</p></div>
+        normally otherwise. The Running X11 document has <a href="/doc/x11/trouble.php#locale">details</a>.</p></div>
     </a>
     <a name="usage-general.passwd">
       <div class="question"><p><b>Q8.2: De repente han aparecido una cantidad de usuarios desconocidos en mi sistema, con nombres como "mysql", "pgsql" y "games". ¿De dónde salieron?</b></p></div>
@@ -1121,7 +1121,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
           <tt style="white-space: nowrap;">system-xfree86</tt> package</p>
           </li>
         </ul><p>There are other options, as well. There is a more extensive
-        treatment in the <a href="http://www.finkproject.org/doc/x11/index.php">Running X11
+        treatment in the <a href="/doc/x11/index.php">Running X11
         document</a>.</p></div>
     </a>
     <a name="usage-general.no-display">
@@ -1264,7 +1264,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
     </a>
     <a name="usage-packages.xdarwin-start">
       <div class="question"><p><b>Q9.3: Ayuda! Cuando abro XDarwin, inmediatamente se cuelga!</b></p></div>
-      <div class="answer"><p><b>A:</b> Don't Panic. The Running X11 document now has an extensive <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">troubleshooting
+      <div class="answer"><p><b>A:</b> Don't Panic. The Running X11 document now has an extensive <a href="/doc/x11/trouble.php#immediate-quit">troubleshooting
         section</a> for this common problem.</p></div>
     </a>
     <a name="usage-packages.no-server">
@@ -1392,4 +1392,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: faq.es.xml,v 1.16 2010/11/10 02:23:58 babayoshihiko Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: faq.es.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $</i></p></body></html>

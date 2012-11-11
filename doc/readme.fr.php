@@ -1,14 +1,14 @@
 <?
 $title = "Lisez-moi";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/09/16 23:17:53';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:15';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink Lisez-moi</h1>
-<!--Generated from $Fink: readme.fr.xml,v 1.5 2006/09/16 23:17:53 dmrrsn Exp $-->
+<!--Generated from $Fink: readme.fr.xml,v 1.6 2012/11/11 15:20:15 gecko2 Exp $-->
     <p>
 Voici Fink, un système de gestion de paquets qui a pour but d'ouvrir toutes grandes les portes du monde des logiciels Open Source à  Darwin et Mac OS X.
 </p>
@@ -78,8 +78,8 @@ Il comprend aussi une liste complète des commandes disponibles.
   <h2><a name="questions">Autres questions</a></h2>
     
     <p>
-Si la documentation incluse ne répond pas à  vos questions, allez sur le site web de Fink <a href="http://www.finkproject.org/">http://www.finkproject.org/</a> et consultez la page Aide :
-<a href="http://www.finkproject.org/help/">http://www.finkproject.org/help/</a>.
+Si la documentation incluse ne répond pas à  vos questions, allez sur le site web de Fink <a href="/">/</a> et consultez la page Aide :
+<a href="/help/">/help/</a>.
 Elle vous conduira au reste de la documentation disponible et à d'autres sources de support, le cas échéant.
 </p>
     <p>
@@ -88,10 +88,10 @@ Si vous voulez apporter votre contribution à Fink, la page Aide mentionnée ci-
   <h2><a name="uptodate">Dernières nouvelles</a></h2>
     
     <p>
-La page du projet se trouve sur <a href="http://www.finkproject.org/">http://www.finkproject.org/</a>.
+La page du projet se trouve sur <a href="/">/</a>.
 </p>
     <p>
-Pour vous tenir informé des dernières versions, allez à <a href="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.org/lists/fink-announce.php</a>
+Pour vous tenir informé des dernières versions, allez à <a href="/lists/fink-announce.php">/lists/fink-announce.php</a>
 et abonnez-vous à la liste de diffusion fink-announce. 
 La liste est modérée et son trafic est très faible.
 </p>

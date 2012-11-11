@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: faq.pt.xml,v 1.9 2010/11/10 02:23:58 babayoshihiko Exp $
+Generated from $Fink: faq.pt.xml,v 1.10 2012/11/11 15:20:14 gecko2 Exp $
 -->
 <title>Fink Documentation - Perguntas frequentes sobre o Fink</title></head><body>
 <table width="100%" cellspacing="0">
@@ -686,7 +686,7 @@ fink selfupdate-cvs</pre><p>Se estiver recebendo erros que mencionem <b>cvs.sour
         "install-info: unrecognized option
         `--infodir=/sw/share/info'"</b></p></div>
       <div class="answer"><p><b>A:</b> Esse é um problema no seu PATH. Em uma janela de terminal, digite:</p><pre>printenv PATH</pre><p>Caso <tt style="white-space: nowrap;">/sw/sbin</tt> não apareça, então você precisa
-        configurar seu ambiente conforme estas <a href="http://www.finkproject.org/doc/users-guide/install.php#setup">instruções</a>
+        configurar seu ambiente conforme estas <a href="/doc/users-guide/install.php#setup">instruções</a>
         no Guia do usuário. Se <tt style="white-space: nowrap;">/sw/sbin</tt> estiver lá mas
         houver outros diretórios antes (por exemplo,
         <tt style="white-space: nowrap;">/usr/local/bin</tt>), então você tem duas opções:
@@ -895,7 +895,7 @@ page and on http://fontconfig.org.</pre><p>então você pode corrigir o problema
         architecture (darwin-i386) does not match system
         (darwin-powerpc).</q></b></p></div>
       <div class="answer"><p><b>A:</b> Este erro ocorre quando você usa um instalador PowerPC em uma máquina Intel. Você precisa apagar sua instalação do Fink, por exemplo:</p><pre>sudo rm -rf /sw</pre><p>e então baixar a imagem de disco para máquinas Intel a partir da
-        <a href="http://www.finkproject.org/download/index.php">página de
+        <a href="/download/index.php">página de
         downloads</a>.</p></div>
     </a>
   <h2><a name="comp-general">6 Problemas de Compilação - Geral</a></h2>
@@ -1202,8 +1202,8 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
         pacote para solicitar uma variante. Isto pode ser relativamente fácil
         de ser feito. Caso você não obtenha resposta do mantenedor ou não veja
         os pacotes novos, ou queira tentar uma opção diferente por você mesmo,
-        leia o <a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">Tutorial
-        de empacotamento</a> e o <a href="http://www.finkproject.org/doc/packaging/index.php">Manual de
+        leia o <a href="/doc/quick-start-pkg/index.php">Tutorial
+        de empacotamento</a> e o <a href="/doc/packaging/index.php">Manual de
         empacotamento</a>.</p><p><b>Observação: </b> o Fink é deliberadamente configurado para que
         todos os binários oficiais sejam idênticos independentemente da máquina
         em que foram compilados, portanto opções como otimização para o G5 não
@@ -1301,7 +1301,7 @@ endif</pre></div>
         <tt style="white-space: nowrap;">xfree86</tt> através do comando <tt style="white-space: nowrap;">fink install
         xfree86</tt> -- a versão mais recente (XFree86-4.4.x de 25/maio/2004)
         ainda não está na distribuição de binários e só está disponível na
-        árvore unstable (veja <a href="http://www.finkproject.org/faq/usage-fink.php#unstable%5C">como
+        árvore unstable (veja <a href="/faq/usage-fink.php#unstable%5C">como
         instalar pacotes instáveis</a>).</p></div>
     </a>
     <a name="comp-packages.change-thread-nothread">
@@ -1378,7 +1378,7 @@ fink install libiconv</pre></div>
         library" ("local não suportado por biblioteca C"). Isso é ruim?</b></p></div>
       <div class="answer"><p><b>A:</b> Não é ruim, apenas significa que o programa usará por padrão as
         mensagens em inglês, formatos de data etc. O programa funcionará
-        normalmente. O documento Executando o X11 tem mais <a href="http://www.finkproject.org/doc/x11/trouble.php#locale">detalhes</a>.</p></div>
+        normalmente. O documento Executando o X11 tem mais <a href="/doc/x11/trouble.php#locale">detalhes</a>.</p></div>
     </a>
     <a name="usage-general.passwd">
       <div class="question"><p><b>Q8.2: Surgiram de repente vários usuários estranhos no meu sistema com
@@ -1506,7 +1506,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
             instalado a partir do momento em que estava disponível.)</p>
           </li>
         </ul><p>Também há outras opções. Um tratamento mais extensivo deste tema
-        está disponível no documento <a href="http://www.finkproject.org/doc/x11/index.php">Executando o
+        está disponível no documento <a href="/doc/x11/index.php">Executando o
         X11</a>.</p></div>
     </a>
     <a name="usage-general.no-display">
@@ -1637,7 +1637,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
       <div class="question"><p><b>Q9.3: Preciso de ajuda! Quando inicio o XDarwin, ele termina
         imediatamente!</b></p></div>
       <div class="answer"><p><b>A:</b> Não entre em pânico. O documento Executando o X11 tem uma vasta
-        <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">seção
+        <a href="/doc/x11/trouble.php#immediate-quit">seção
         de resolução de problemas</a> para este problema comum.</p></div>
     </a>
     <a name="usage-packages.no-server">
@@ -1770,4 +1770,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: faq.pt.xml,v 1.9 2010/11/10 02:23:58 babayoshihiko Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: faq.pt.xml,v 1.10 2012/11/11 15:20:14 gecko2 Exp $</i></p></body></html>

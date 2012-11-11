@@ -1,7 +1,7 @@
 <?
 $title = "Porting - libtool";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Porting Contents"><link rel="next" href="preparing-10.2.php?phpLang=en" title="Preparing for 10.2"><link rel="prev" href="shared.php?phpLang=en" title="Shared Code">';
 
 
@@ -94,7 +94,7 @@ one can install the fink "dlcompat" family of packages.
 <h2><a name="patch-135">3.2 The 1.3.5 Patch</a></h2>
 <p>
 If you are building libtool 1.3.5 for yourself, you will need to apply
-<a href="http://www.finkproject.org/files/libtool-1.3.5-darwin.patch">this
+<a href="/files/libtool-1.3.5-darwin.patch">this
 patch</a> <b>[updated 2002-06-09]</b> to the libtool 1.3.5 source and
 then delete the files ltconfig and ltmain.sh.
 (They will be recreated from the appropriate .in files when you run
@@ -106,8 +106,8 @@ So you must replace these in every package that you want to build as a
 shared library.
 Note that you must do this before running the configure script.
 For your convenience, you can get the two files right here:
-<a href="http://www.finkproject.org/files/ltconfig">ltconfig</a> (98K) and
-<a href="http://www.finkproject.org/files/ltmain.sh">ltmain.sh</a> (110K)
+<a href="/files/ltconfig">ltconfig</a> (98K) and
+<a href="/files/ltmain.sh">ltmain.sh</a> (110K)
 <b>[both updated 2002-06-09]</b>.</p>
 
 

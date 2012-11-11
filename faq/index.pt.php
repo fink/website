@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="general.php?phpLang=pt" title="Perguntas gerais">';
 
 
@@ -119,7 +119,7 @@ include_once "header.pt.inc";
         file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x-delete">9.5 Quero que a tecla Delete no X11.app da Apple comporte-se como no
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-wants-xfree86">9.6 Estou tendo problemas com X11 e Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#special-x11-debug">9.7 Ainda estou tendo problemas com o X11 e o Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#tiger-gtk">9.8 Sempre que uso um aplicativo GTK, recebo mensagens de erro em
         relação a <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=pt#yelp">9.9 Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.pt.xml,v 1.9 2010/11/10 02:23:58 babayoshihiko Exp $-->
+<!--Generated from $Fink: faq.pt.xml,v 1.10 2012/11/11 15:20:14 gecko2 Exp $-->
 <? include_once "../footer.inc"; ?>
 
 

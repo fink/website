@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - Atualização";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/01 14:09:07';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="conf.php?phpLang=pt" title="O arquivo de configuração do Fink"><link rel="prev" href="packages.php?phpLang=pt" title="Instalando pacotes">';
 
 
@@ -38,7 +38,7 @@ include_once "header.pt.inc";
       atualizar a listagem de pacotes e em seguida Binary-&gt;Dist-Upgrade
       packages para proceder à atualização para versões novas.</p>
 
-      <p>Para mais informações, consulte a <a href="http://www.finkproject.org/download/upgrade.php">Matriz de
+      <p>Para mais informações, consulte a <a href="/download/upgrade.php">Matriz de
       atualização</a>.</p>
     
 
@@ -66,7 +66,7 @@ include_once "header.pt.inc";
       espelhos rsync depois de terem sido adicionadas ao CVS.</p>
 
       <p>Caso você encontre problemas na atualização de uma instalação a partir
-      de códigos fontes, consulte <a href="http://www.finkproject.org/download/fix-upgrade.php">estas
+      de códigos fontes, consulte <a href="/download/fix-upgrade.php">estas
       instruções especiais</a>).</p>
 
       <p>Uma vez que você tenha atualizado suas descrições de pacotes (não

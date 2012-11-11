@@ -1,5 +1,5 @@
 # Hey Emacs, this is a -*- makefile -*-
-# $Id: Makefile.common,v 1.27 2012/04/14 19:29:12 alexkhansen Exp $
+# $Id: Makefile.common,v 1.28 2012/11/11 16:04:57 gecko2 Exp $
 
 # common rules for processing XML documents
 # post-processing needed to add PHP processing instructions
@@ -120,8 +120,8 @@ install: $(INSTALL_FILES) install-hook
 
 ifdef DESTDIR
 	@echo "Installing PHP files"
-	cp $(INSTALL_FILES) $(basedir)/web/$(DESTDIR)/
-	if ls header*.inc &> /dev/null; then cp header*.inc $(basedir)/web/$(DESTDIR)/ ; fi
+	cp -a $(INSTALL_FILES) $(basedir)/web/$(DESTDIR)/
+	if ls header*.inc &> /dev/null; then cp -a header*.inc $(basedir)/web/$(DESTDIR)/ ; fi
 else
 	@echo "DESTDIR not defined, can't install"
 endif

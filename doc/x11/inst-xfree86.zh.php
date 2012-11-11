@@ -1,7 +1,7 @@
 <?
 $title = "运行 X11 - 安装 X11";
-$cvs_author = 'Author: dmacks';
-$cvs_date = 'Date: 2007/08/15 21:57:05';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=zh" title="启动 X11"><link rel="prev" href="history.php?phpLang=zh" title="历史">';
 
 
@@ -47,7 +47,7 @@ operation, and have OpenGL support.</li>
       <p>2005 年 4 月 29 日，苹果发布了 Tiger (10.4)，包括了它们 X11 的发布版本。这个版本基于 XFree86-4.4。</p>
       <p>
 要使用苹果的二进制版本，你需要安装 <b>X11 User</b> 软件包，你还需要
-<a href="http://www.finkproject.org/doc/users-guide/upgrade.php">更新</a> Fink。</p>
+<a href="/doc/users-guide/upgrade.php">更新</a> Fink。</p>
       <p>在 <code>fink-0.16.2</code>下，你需要安装 <b>X11 SDK</b> 软件包。这样以后，Fink 才可以创建 <code>system-xfree86</code> 虚拟软件包。</p>
       <p>在 <code>fink-0.17.0</code> 或更新版本下，只有你需要从源程序编译软件包才必须安装 X11 SDK 。这种情况下，即使你没有安装 SDK，仍然会有 <code>system-xfree86</code> 和 <code>system-xfree86-shlibs</code> 虚拟软件包，后者表示共享函数库。如果你安装了 SDK，那么还会有一个
 <code>system-xfree86-dev</code> 软件包，代表头文件。

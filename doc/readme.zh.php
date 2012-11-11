@@ -1,14 +1,14 @@
 <?
 $title = "自述";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2006/09/16 23:17:53';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:15';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink 自述文件</h1>
-<!--Generated from $Fink: readme.zh.xml,v 1.2 2006/09/16 23:17:53 dmrrsn Exp $-->
+<!--Generated from $Fink: readme.zh.xml,v 1.3 2012/11/11 15:20:15 gecko2 Exp $-->
 <p>
 这是 Fink，一个目标是把所有的开放源码软件带到 Darwin 和 Mac OS X 平台上的软件包管理系统。
 </p>
@@ -65,9 +65,9 @@ USAGE 文件描述如何设置你的路径以及如何安装和删除软件包�
 <p>
 如何这里包括的文档不足以回答你的问题，
 你用可以访问 Fink 的网站：
-<a href="http://www.finkproject.org/">http://www.finkproject.org/</a>
+<a href="/">/</a>
 并查阅那里的帮助页：
-<a href="http://www.finkproject.org/help/">http://www.finkproject.org/help/</a>。
+<a href="/help/">/help/</a>。
 它会告诉你有什么其它的文档以及可以在那里获得你需要的支持。
 </p>
 <p>
@@ -76,11 +76,11 @@ USAGE 文件描述如何设置你的路径以及如何安装和删除软件包�
 <h2><a name="uptodate">获取最新信息</a></h2>
 <p>
 项目的网站在 
-<a href="http://www.finkproject.org/">http://www.finkproject.org/</a>。
+<a href="/">/</a>。
 </p>
 <p>
 要获取最新发布版本的通知，可以到
-<a href="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.org/lists/fink-announce.php</a>
+<a href="/lists/fink-announce.php">/lists/fink-announce.php</a>
 去订阅 fink-announce 邮件列表。
 这个列表是受管的低流量列表。
 </p>

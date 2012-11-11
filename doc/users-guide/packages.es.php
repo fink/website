@@ -1,7 +1,7 @@
 <?
 $title = "Guía del Usuario - Paquetes";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="upgrade.php?phpLang=es" title="Actualizando Fink"><link rel="prev" href="install.php?phpLang=es" title="Primera Instalación">';
 
 
@@ -145,7 +145,7 @@ Cuando encuentras un paquete que desees instalar, usa el comando "install":
 El comando <code>fink</code> primero revisará si todos los prerequisitos necesarios ("dependencias") estín presentes , y preguntará si estas de acuerdo en instlar las que estne ausentes.
 Entonces ira y descargara el código fuente, lo descomprime, lo parcha, lo compila e instala los resultantes en tu sistema. 
 Esto puede tradar un rato. Si algun mensaje de error, por favor revisa el archivo 
-<a href="http://www.finkproject.org/faq/">FAQ</a>.
+<a href="/faq/">FAQ</a>.
 </p>
 
       <p>
@@ -196,7 +196,7 @@ More details about the <code>fink</code> tool are available in the chapter
 <ol>
             <li>
           <p>
-            <b>10.2-gcc3.3 stable:</b>  Esta es la versión estable más reciente que puede ser instalada desde la fuente para OS 10.2 con la actualización<code>gcc 3.3</code> De las Herramientas de Desarrollo.  Para poder instalar esta versión, necesitas habilitar <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a> o accesso de rsync.  Si aún no has aplicado la actualización<code>gcc 3.3</code> podrías no ver esta versión (posiblemente, ni el paquete).</p>
+            <b>10.2-gcc3.3 stable:</b>  Esta es la versión estable más reciente que puede ser instalada desde la fuente para OS 10.2 con la actualización<code>gcc 3.3</code> De las Herramientas de Desarrollo.  Para poder instalar esta versión, necesitas habilitar <a href="/doc/cvsaccess/index.php">CVS</a> o accesso de rsync.  Si aún no has aplicado la actualización<code>gcc 3.3</code> podrías no ver esta versión (posiblemente, ni el paquete).</p>
           <p>Nota:  A diferencia de muchos otros proyectos, las distribuciones más recientes de Fink se distribuyen mediante CVS, al igual que las versiones que necesitan más pruebasas (ver la Sección de inestables más abajo ).  Habilitar la actualización mediante CVS | rsync te da acceso a la versión estable más reciente aún antes que la versión binaria sea actualizada.
 </p>
         </li>
@@ -210,7 +210,7 @@ on intel hardware.</p></li>
 
         <li>
           <p>
-            <b>10.2-gcc3.3 unstable:</b>  Esta es la última versión inestable que puede ser instalada del código fuente para el  OS 10.2 con  <code>gcc 3.3</code>.  Para instalar esta versión, sige las <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">instructiones</a> que describen como instalar paquetes inestables.</p>
+            <b>10.2-gcc3.3 unstable:</b>  Esta es la última versión inestable que puede ser instalada del código fuente para el  OS 10.2 con  <code>gcc 3.3</code>.  Para instalar esta versión, sige las <a href="/faq/usage-fink.php#unstable">instructiones</a> que describen como instalar paquetes inestables.</p>
           <p>Nota: <b>unstable</b> no significa <b>inusable</b> o <b>inoperante</b>, solo que son instalables bajo tu propio riesgo.
 </p>
         </li>
@@ -261,7 +261,7 @@ dependency placeholders.
       
       <p>
 Para mayor información sobre como instalar o ejecutar el X11 visita las páginas
-<a href="http://www.finkproject.org/doc/x11/">X11 en Darwin
+<a href="/doc/x11/">X11 en Darwin
 y el documento de  Mac OS X document</a>.
 </p>
     

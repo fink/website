@@ -1,7 +1,7 @@
 <?
 $title = "Guia do usuário - A ferramenta fink";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2009/03/01 14:09:07';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="prev" href="conf.php?phpLang=pt" title="O arquivo de configuração do Fink">';
 
 

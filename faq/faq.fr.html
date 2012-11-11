@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: faq.fr.xml,v 1.82 2010/11/10 02:23:57 babayoshihiko Exp $
+Generated from $Fink: faq.fr.xml,v 1.83 2012/11/11 15:20:14 gecko2 Exp $
 -->
 <title>Fink Documentation - Fink - Q.F.P.</title></head><body>
 <table width="100%" cellspacing="0">
@@ -295,7 +295,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 </a>
 <a name="usage-fink.install-info-bad">
 <div class="question"><p><b>Q5.18: Il est impossible d'installer quoi que ce soit. Un message signale que l'option infodir n'est pas reconnue par la commande install-info (message en anglais "install-info: unrecognized option `--infodir=/sw/share/info'"). Que faire ?</b></p></div>
-<div class="answer"><p><b>A:</b> Ceci est généralement lié à un problème sur la variable d'environnement PATH. Lancez dans une fenêtre de terminal :</p><pre>printenv PATH</pre><p>Si <tt style="white-space: nowrap;">/sw/sbin</tt> n'apparaît pas, vous devrez alors modifier vos variables d'environnement comme expliqué dans les <a href="http://www.finkproject.org/doc/users-guide/install.php#setup">instructions</a> du Guide de l'Utilisateur. Si <tt style="white-space: nowrap;">/sw/sbin</tt> est bien là, mais qu'il y a d'autres répertoires avant (par exemple <tt style="white-space: nowrap;">/usr/local/bin</tt>), vous devrez alors réordonner votre variable d'environnement PATH pour que <tt style="white-space: nowrap;">/sw/sbin</tt> soit proche du début. Si vous voulez cependant que les autres répertoires soit avant <tt style="white-space: nowrap;">/sw/sbin</tt>, et qu'ils contiennent des répertoires appelés eux aussi install-info, il faudra alors renommer temporairement ces sous-répertoires <tt style="white-space: nowrap;">install-info</tt> quand vous utiliserez Fink.</p></div>
+<div class="answer"><p><b>A:</b> Ceci est généralement lié à un problème sur la variable d'environnement PATH. Lancez dans une fenêtre de terminal :</p><pre>printenv PATH</pre><p>Si <tt style="white-space: nowrap;">/sw/sbin</tt> n'apparaît pas, vous devrez alors modifier vos variables d'environnement comme expliqué dans les <a href="/doc/users-guide/install.php#setup">instructions</a> du Guide de l'Utilisateur. Si <tt style="white-space: nowrap;">/sw/sbin</tt> est bien là, mais qu'il y a d'autres répertoires avant (par exemple <tt style="white-space: nowrap;">/usr/local/bin</tt>), vous devrez alors réordonner votre variable d'environnement PATH pour que <tt style="white-space: nowrap;">/sw/sbin</tt> soit proche du début. Si vous voulez cependant que les autres répertoires soit avant <tt style="white-space: nowrap;">/sw/sbin</tt>, et qu'ils contiennent des répertoires appelés eux aussi install-info, il faudra alors renommer temporairement ces sous-répertoires <tt style="white-space: nowrap;">install-info</tt> quand vous utiliserez Fink.</p></div>
 </a>
 <a name="usage-fink.bad-list-file">
 <div class="question"><p><b>Q5.19: Il est impossible d'installer ou de supprimer quoi que ce soit à cause d'un problème de listes de fichiers de paquets (messages en anglais contenant "files list file"). Que faire ?</b></p></div>
@@ -320,7 +320,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
 
 <a name="usage-fink.cant-upgrade">
 <div class="question"><p><b>Q5.21: Il est impossible de mettre à jour Fink. Que faire ?</b></p></div>
-<div class="answer"><p><b>A:</b> Suivez les <a href="http://www.finkproject.org/download/fix-upgrade.php">instructions spéciales</a> dans ce cas.</p><p>Quand ni l'exécution de la commande <tt style="white-space: nowrap;">fink selfupdate</tt>, ni celle des commandes <tt style="white-space: nowrap;">sudo apt-get update ; sudo apt-get dist-upgrade</tt> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <tt style="white-space: nowrap;">fink</tt> de la manière suivante :</p><ul>
+<div class="answer"><p><b>A:</b> Suivez les <a href="/download/fix-upgrade.php">instructions spéciales</a> dans ce cas.</p><p>Quand ni l'exécution de la commande <tt style="white-space: nowrap;">fink selfupdate</tt>, ni celle des commandes <tt style="white-space: nowrap;">sudo apt-get update ; sudo apt-get dist-upgrade</tt> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <tt style="white-space: nowrap;">fink</tt> de la manière suivante :</p><ul>
 <li><b>10.3.x :</b> (distribution 0.7.1)
 <pre>curl -O http://us.dl.sf.net/fink/direct_download/dists/\
 fink-0.7.1-updates/main/binary-darwin-powerpc\
@@ -437,7 +437,7 @@ sudo chmod 1775 /
 	</pre></div></a>
 <a name="usage-fink.wrong-arch">
 <div class="question"><p><b>Q5.32: Un message signalant une contradiction entre l'architecture du paquet et celle du système empêche de mettre à jour fink (message en anglais <q>package architecture (darwin-i386) does not match system (darwin-powerpc)</q>). Que faire ?</b></p></div>
-<div class="answer"><p><b>A:</b> L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p><pre>sudo rm -rf /sw</pre><p>Puis téléchargez l'image disque pour machines Intel à partir des <a href="http://www.finkproject.org/download/index.php">pages de téléchargement</a>.</p></div></a>
+<div class="answer"><p><b>A:</b> L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p><pre>sudo rm -rf /sw</pre><p>Puis téléchargez l'image disque pour machines Intel à partir des <a href="/download/index.php">pages de téléchargement</a>.</p></div></a>
 
 <h2><a name="comp-general">6 Problèmes généraux de compilation</a></h2>
 
@@ -604,7 +604,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 </a>
 <a name="comp-general.compile-options">
 <div class="question"><p><b>Q6.21: Comment utiliser des options variables lors de la compilation d'un paquet ?</b></p></div>
-<div class="answer"><p><b>A:</b> La première chose à faire est de contacter le mainteneur du paquet pour lui demander d'introduire une variante dans le paquet. Cela peut être relativement facile à faire. Si le mainteneur ne vous répond pas ou si vous ne voyez pas apparaître de nouveaux paquets correspondant à votre demande, ou que vous vouliez essayer de faire le changement vous-même, étudiez le <a href="http://www.finkproject.org/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a> et le <a href="http://www.finkproject.org/doc/packaging/index.php">Guide de construction de paquets</a>.</p><p><b>Note :</b> Fink est volontairement initialisé de telle façon que tous les paquets binaires officiels soient identiques quelle que soit la machine sur laquelle ils sont construits. C'est ainsi qu'il n'y aura jamais d'optimisation pour le G5 dans un paquet officiel. Si vous voulez ce type d'option, il vous faudra le faire vous-même.</p></div>
+<div class="answer"><p><b>A:</b> La première chose à faire est de contacter le mainteneur du paquet pour lui demander d'introduire une variante dans le paquet. Cela peut être relativement facile à faire. Si le mainteneur ne vous répond pas ou si vous ne voyez pas apparaître de nouveaux paquets correspondant à votre demande, ou que vous vouliez essayer de faire le changement vous-même, étudiez le <a href="/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</a> et le <a href="/doc/packaging/index.php">Guide de construction de paquets</a>.</p><p><b>Note :</b> Fink est volontairement initialisé de telle façon que tous les paquets binaires officiels soient identiques quelle que soit la machine sur laquelle ils sont construits. C'est ainsi qu'il n'y aura jamais d'optimisation pour le G5 dans un paquet officiel. Si vous voulez ce type d'option, il vous faudra le faire vous-même.</p></div>
 </a>
 
     <a name="comp-general.alternates">
@@ -651,7 +651,7 @@ endif</pre></div>
 <a name="comp-packages.cant-install-xfree">
 <div class="question"><p><b>Q7.2: Lors d'une tentative de passage aux paquets XFree86 de Fink, il est impossible d'installer le paquet <tt style="white-space: nowrap;">xfree86-base</tt> ou le paquet <tt style="white-space: nowrap;">xfree86</tt>, car ils entrent en conflit avec le paquet <tt style="white-space: nowrap;">system-xfree86</tt>. Que se passe-t-il ?</b></p></div>
 <div class="answer"><p><b>A:</b> Toutes les variantes de X11, doivent, malheureusement, être installées au même endroit, à savoir dans le répertoire /usr/X11R6. C'est pourquoi, les paquets de Fink <tt style="white-space: nowrap;">xfree86-base</tt> et <tt style="white-space: nowrap;">xfree86-rootless</tt> s'installent également à cet endroit. Néanmoins, comme Fink ne supprime pas les fichiers qui ne figurent pas dans sa base de données, il ne remplace pas automatiquement une installation de X11 faite hors de Fink.</p><p></p><p>Voici comment procéder pour résoudre le problème :</p><p></p><p> <b>Note : les utilisateurs de Mac OS X 10.2.x ayant une version de Fink à jour (c'est-à-dire &gt;=0.16.2) et les utilisateurs de Mac OS X 10.3.x doivent sauter l'étape 1 ci-dessous (de toute façon, elle ne fonctionne pas pour eux).</b>
-</p><p>Étape 1. Supprimez le paquet <tt style="white-space: nowrap;">system-xfree86</tt>. Si vous n'avez aucun paquet qui dépend de X11, c'est tout simple. Toutefois, il est fréquent que de nombreux paquets dépendant de X11 soient installés. Dans ce cas, au lieu de tous les désinstaller, vous pouvez utiliser la commande :</p><pre>sudo dpkg --remove --force-depends system-xfree86</pre><p>pour supprimer le paquet system-xfree86, ce qui laisse tout le reste en place. Si le paquet <tt style="white-space: nowrap;">system-xfree86</tt> n'est pas installé, passez à l'étape 3.</p><p>Étape 2. Supprimez l'application XFree86 via la commande  :</p><pre>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</pre><p>Si vous aviez installé l'application X11 d'Apple auparavant, supprimez-la également.</p><p>Étape 3. Pour installer l'application XFree86-4.2.1, installez les paquets Fink <tt style="white-space: nowrap;">xfree86-base</tt> et <tt style="white-space: nowrap;">xfree86-rootless</tt> comme vous le faites d'habitude : via la commande "<tt style="white-space: nowrap;">fink install</tt>" pour les utilisateurs de sources, ou bien les commandes "<tt style="white-space: nowrap;">apt-get install</tt>" ou <tt style="white-space: nowrap;">dselect</tt> pour les utilisateurs de binaires.</p><p>- ou -</p><p>Étape 3a. Pour installer l'application XFree86-4.3.x ou une version postérieure, installez le paquet Fink <tt style="white-space: nowrap;">xfree86</tt> via la commande "fink install xfree86". La version la plus récente (XFree86-4.4.x à la date du 25 mai 2004) n'est pas encore dans la distribution binaire et n'est disponible que dans l'arborescence instable. Voir <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">comment installer un paquet instable</a>.</p></div>
+</p><p>Étape 1. Supprimez le paquet <tt style="white-space: nowrap;">system-xfree86</tt>. Si vous n'avez aucun paquet qui dépend de X11, c'est tout simple. Toutefois, il est fréquent que de nombreux paquets dépendant de X11 soient installés. Dans ce cas, au lieu de tous les désinstaller, vous pouvez utiliser la commande :</p><pre>sudo dpkg --remove --force-depends system-xfree86</pre><p>pour supprimer le paquet system-xfree86, ce qui laisse tout le reste en place. Si le paquet <tt style="white-space: nowrap;">system-xfree86</tt> n'est pas installé, passez à l'étape 3.</p><p>Étape 2. Supprimez l'application XFree86 via la commande  :</p><pre>sudo rm -rf /Applications/XDarwin.app /usr/X11R6 /etc/X11</pre><p>Si vous aviez installé l'application X11 d'Apple auparavant, supprimez-la également.</p><p>Étape 3. Pour installer l'application XFree86-4.2.1, installez les paquets Fink <tt style="white-space: nowrap;">xfree86-base</tt> et <tt style="white-space: nowrap;">xfree86-rootless</tt> comme vous le faites d'habitude : via la commande "<tt style="white-space: nowrap;">fink install</tt>" pour les utilisateurs de sources, ou bien les commandes "<tt style="white-space: nowrap;">apt-get install</tt>" ou <tt style="white-space: nowrap;">dselect</tt> pour les utilisateurs de binaires.</p><p>- ou -</p><p>Étape 3a. Pour installer l'application XFree86-4.3.x ou une version postérieure, installez le paquet Fink <tt style="white-space: nowrap;">xfree86</tt> via la commande "fink install xfree86". La version la plus récente (XFree86-4.4.x à la date du 25 mai 2004) n'est pas encore dans la distribution binaire et n'est disponible que dans l'arborescence instable. Voir <a href="/faq/usage-fink.php#unstable">comment installer un paquet instable</a>.</p></div>
 </a>
 <a name="comp-packages.change-thread-nothread">
 <div class="question"><p><b>Q7.3: Comment passer de la version sans processus légers à la version avec processus légers (ou vice-versa) ?</b></p></div>
@@ -705,7 +705,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 3.0 ou supérieure)
 
 <a name="usage-general.xlocale">
 <div class="question"><p><b>Q8.1: De nombreux messages signalant que la locale n'est pas gérée par la bibliothèque C apparaissent (message en anglais : "locale not supported by C library"). Est-ce un problème ?</b></p></div>
-<div class="answer"><p><b>A:</b> Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <a href="http://www.finkproject.org/doc/x11/trouble.php#locale">plus amples informations</a> à ce sujet.</p></div>
+<div class="answer"><p><b>A:</b> Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <a href="/doc/x11/trouble.php#locale">plus amples informations</a> à ce sujet.</p></div>
 </a>
 <a name="usage-general.passwd">
 <div class="question"><p><b>Q8.2: Un certain nombre d'étranges utilisateurs apparaissent tout d'un coup sur mon système. Ils portent, entre autres, les noms suivants : "mysql", "pgsql" et "games". D'où proviennent-ils ?</b></p></div>
@@ -767,7 +767,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
 <li>
 <p>La version 4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK). Le paquet <tt style="white-space: nowrap;">system-xfree86</tt> est généré automatiquement, NE l'installez PAS. Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible.</p>
 </li>
-</ul><p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <a href="http://www.finkproject.org/doc/x11/index.php">document Utilisation de X11</a>.</p></div>
+</ul><p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <a href="/doc/x11/index.php">document Utilisation de X11</a>.</p></div>
 </a>
 <a name="usage-general.no-display">
 <div class="question"><p><b>Q8.6: Au lancement d'une application, un message signale que la fenêtre d'affichage ne peut être ouverte (message en anglais: "cannot open display:"). Que faire ?</b></p></div>
@@ -820,7 +820,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
 </a>
 <a name="usage-packages.xdarwin-start">
 <div class="question"><p><b>Q9.3: XDarwin quitte immédiatement après lancement. Que faire ?</b></p></div>
-<div class="answer"><p><b>A:</b> Pas de panique. Vous trouverez dans le document Utilisation de X11 une large section <a href="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">résolution de problèmes</a> à ce sujet.</p></div>
+<div class="answer"><p><b>A:</b> Pas de panique. Vous trouverez dans le document Utilisation de X11 une large section <a href="/doc/x11/trouble.php#immediate-quit">résolution de problèmes</a> à ce sujet.</p></div>
 </a>
 <a name="usage-packages.no-server">
 <div class="question"><p><b>Q9.4: Au démarrage de XDarwin, un message indique que le fichier xinit est introuvable et qu'il n'existe pas de server X accessible dans le répertoire /usr/X11R6/bin (message en anglais : "xinit: No such file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH"). Que faire ?</b></p></div>
@@ -924,4 +924,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: faq.fr.xml,v 1.82 2010/11/10 02:23:57 babayoshihiko Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: faq.fr.xml,v 1.83 2012/11/11 15:20:14 gecko2 Exp $</i></p></body></html>

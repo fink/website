@@ -1,7 +1,7 @@
 <?
 $title = "Executando o X11 - Iniciando o X11";
-$cvs_author = 'Author: monipol';
-$cvs_date = 'Date: 2009/03/15 00:37:07';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:18';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Executando o X11 Contents"><link rel="next" href="xtools.php?phpLang=pt" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=pt" title="Obtendo e instalando o X11">';
 
 
@@ -125,7 +125,7 @@ include_once "header.pt.inc";
       <code>X11.app</code> e o <code>quartz-wm</code> no OS 10.3 e mais
       recentes com o XFree86 4.4 ou mais recentes ou o X.org.</p>
 
-      <p>Para instalar este pacote, você precisa habilitar a <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">árvore
+      <p>Para instalar este pacote, você precisa habilitar a <a href="/faq/usage-fink.php#unstable">árvore
       unstable</a> e ter o arquivo <code>X11User.pkg</code>
       em algum lugar dentro de <code>/Users</code> ou
       <code>/Volumes</code>. O <code>X11.app</code> será

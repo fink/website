@@ -1,7 +1,7 @@
 <?
 $title = "Ч.З.В. - Использование Fink";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы"><link rel="prev" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)">';
 
 
@@ -343,7 +343,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
                     "install-info: unrecognized option `--infodir=/sw/share/info'"</b></p></div>
             <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Обычно это происходит из-за проблемы в вашем PATH. Напечатайте в окне
                     терминала:</p><pre>printenv PATH</pre><p>Если<code>/sw/sbin</code> не появится совсем, надо
-                    настроить свою среду согласно - <a href="http://www.finkproject.org/doc/users-guide/install.php#setup">инструкциям</a> в Руководстве пользователя.
+                    настроить свою среду согласно - <a href="/doc/users-guide/install.php#setup">инструкциям</a> в Руководстве пользователя.
                     Если <code>/sw/sbin</code> есть,
                     но впереди находятся другие каталоги (н-р
                     <code>/usr/local/bin</code>), то вам надо либо реорганизовать 
@@ -538,7 +538,7 @@ sudo chmod 1775 /
     <a name="wrong-arch">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.32: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="http://www.finkproject.org/download/index.php">the downloads page</a>.</p></div>
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="/download/index.php">the downloads page</a>.</p></div>
     </a>
 
 	      

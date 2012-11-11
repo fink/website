@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: uguide.ru.xml,v 1.6 2008/06/27 00:55:00 dmrrsn Exp $
+Generated from $Fink: uguide.ru.xml,v 1.7 2012/11/11 15:20:17 gecko2 Exp $
 -->
 <title>Fink Documentation - Руководство пользователя Fink</title></head><body>
 <table width="100%" cellspacing="0">
@@ -20,9 +20,9 @@ Available Languages:  |
 </tr>
 </table>
 <h1 style="text-align: center;">Руководство пользователя Fink</h1>
-        <p> Данный документ содержит обзор всех возможностей Fink. (Более широкий обзор могут дать ранее выпущенные документы <a href="http://www.finkproject.org/doc/bundled/install.php">Инсталляция</a>, <a href="http://www.finkproject.org/doc/bundled/usage.php">Использование</a>
+        <p> Данный документ содержит обзор всех возможностей Fink. (Более широкий обзор могут дать ранее выпущенные документы <a href="/doc/bundled/install.php">Инсталляция</a>, <a href="/doc/bundled/usage.php">Использование</a>
             и файл ReadMe.rtf, включенный в загрузочный модуль бинарного дистрибутива.)
-            Также см. на веб-сайте раздел <a href="http://www.finkproject.org/doc/">Документация
+            Также см. на веб-сайте раздел <a href="/doc/">Документация
             </a>, который рекомендует другие полезные документы
             в дополнение к указанным.</p>
         <p> Добро пожаловать в Руководство пользователя Fink. Руководство описывает процедуры первоначальной
@@ -145,7 +145,7 @@ fink on intel hardware is still considered to be of <b>beta</b> quality.</p>
             
             <p> Бинарный дистрибутив представлен в виде пакета инсталлятора Mac OS X
                 (.pkg) в загрузочном модуле (.dmg). После скачивания
-                загрузочного модуля со страницы <a href="http://www.finkproject.org/download/bindist.php">Скачивание
+                загрузочного модуля со страницы <a href="/download/bindist.php">Скачивание
                 </a> (возможно, вам придется использовать функцию браузера "Save Target
                 as..." или "Download to Disk") сделайте на нем двойной щелчок для начала установки.
                 Откройтке иконку диска "Fink 0.x.x Installer" на рабочем столе
@@ -167,7 +167,7 @@ fink on intel hardware is still considered to be of <b>beta</b> quality.</p>
             <p> Дистрибутив исходного кода является стандартным тарболом Unix
                 (.tar.gz). Он содержит только менеджер пакетов <tt style="white-space: nowrap;">fink</tt>
                 с их описанием и скачивает исходный код
-                для пакетов по требованию. Его можно получить на странице <a href="http://www.finkproject.org/download/srcdist.php">Скачивание
+                для пакетов по требованию. Его можно получить на странице <a href="/download/srcdist.php">Скачивание
                 </a>. Важно не использовать StuffIt Expander
                 для распаковки архива. По какой-то причине StuffIt все еще
                 не может обрабатывать длинные имена файлов. Если StuffIt Expander уже распаковал архив,
@@ -497,7 +497,7 @@ E: Sorry, broken packages</pre>
                 продолжит выполнение действий и скачает исходный код, распакует его, сделает патчи,
                 компиляцию и инсталлирует результаты в вашей системе. Это может
                 занять много времени. Если в течение этого процесса возникнут ошибки,
-                сначала обратитесь к <a href="http://www.finkproject.org/faq/">Ч.З.В.</a>. </p>
+                сначала обратитесь к <a href="/faq/">Ч.З.В.</a>. </p>
             <p> Для версий <tt style="white-space: nowrap;">fink</tt> начиная с 0.23.0 можно попытаться
                 скачать имеющиеся предварительно скомпилированные бинарные пакеты,
                 вместо того чтобы создавать их. Просто перенесите опцию <a href="#usage.options">--use-binary-dist (или -b)</a> в
@@ -556,7 +556,7 @@ E: Sorry, broken packages</pre>
                         стабильная версия, инсталлируемая от
                         исходного кода для OS 10.2 с обновлением <tt style="white-space: nowrap;">gcc 3.3</tt> для
                         Developer Tools. Для инсталляции этой версии вам
-                        может понадобиться активация доступа через <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a>
+                        может понадобиться активация доступа через <a href="/doc/cvsaccess/index.php">CVS</a>
                         или rsync. Если вы не сделали обновление <tt style="white-space: nowrap;">gcc
                         3.3</tt>, то можете не увидеть эту версию (или
                         даже сам пакет).</p>
@@ -583,7 +583,7 @@ on intel hardware.</p></li>
                         <b>10.2-gcc3.3 unstable:</b> последняя
                         нестабильная версия, которую можно инсталлировать от
                         исходного кода в OS 10.2 с <tt style="white-space: nowrap;">gcc 3.3</tt>. Для ее инсталляции
-                        следуйте <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">инструкциям</a>
+                        следуйте <a href="/faq/usage-fink.php#unstable">инструкциям</a>
                         по инсталляции нестабильных пакетов.</p>
                     <p>Прим.: <b>unstable</b> не обязательно <b>значит</b>, что их нельзя использовать, просто
                         инсталляция таких пакетов будет на ваш риск.</p>
@@ -639,7 +639,7 @@ dependency placeholders.
       </ul>
       
             <p> Для получения более подробной информации об инсталляции и использовании X11 см.
-                    документ <a href="http://www.finkproject.org/doc/x11/">X11 в
+                    документ <a href="/doc/x11/">X11 в
                     Darwin и Mac OS X</a>.</p>
         
     <h2><a name="upgrade">4 Обновление Fink</a></h2>
@@ -666,7 +666,7 @@ dependency placeholders.
                 списка пакетов, а затем Binary-&gt;Dist-Upgrade packages
                 для обновления до новых версий.</p>
             <p> Для получения более подробной информации, особенно об обновлении версий Fink,
-                  предшествующих 0.3.0, см. <a href="http://www.finkproject.org/download/upgrade.php">Матрицу обновления</a>.</p>
+                  предшествующих 0.3.0, см. <a href="/download/upgrade.php">Матрицу обновления</a>.</p>
         
         <h3><a name="upgrade.src">4.2 Обновление дистрибутива исходного кода</a></h3>
             
@@ -692,7 +692,7 @@ dependency placeholders.
                 требуется час или около того для миграции к зеркалам rsync после
                 его добавления в CVS.</p>
             <p>(Если у вас возникли проблемы при обновлении инсталляции
-                    исходного кода, см. <a href="http://www.finkproject.org/download/fix-upgrade.php">Особые инструкции
+                    исходного кода, см. <a href="/download/fix-upgrade.php">Особые инструкции
                     </a>.)</p>
             <p> Если у вас более ранняя версия Fink, чем 0.2.5, надо скачать
                 описание пакетов вручную. Посетите <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">зону скачивания
@@ -1693,4 +1693,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: uguide.ru.xml,v 1.6 2008/06/27 00:55:00 dmrrsn Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: uguide.ru.xml,v 1.7 2012/11/11 15:20:17 gecko2 Exp $</i></p></body></html>

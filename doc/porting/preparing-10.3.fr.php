@@ -1,7 +1,7 @@
 <?
 $title = "Portage - Préparation pour 10.3";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing-10.4.php?phpLang=fr" title="Préparation pour la version 10.4"><link rel="prev" href="preparing-10.2.php?phpLang=fr" title="Préparation pour la version 10.2">';
 
 
@@ -11,7 +11,7 @@ include_once "header.fr.inc";
 
 
 <h2><a name="perl">5.1 Perl</a></h2>
-<p>Sous Mac OS X 10.2, <code>/usr/bin/perl</code> correspondait à la version 5.6.0 de perl et l'architecture était représentée par la chaîne de caractères "darwin". Sous Mac OS X 10.3, <code>/usr/bin/perl</code> correspond à la version 5.8.1 de perl, et l'architecture est représentée par la chaîne de caractères "darwin-thread-multi-2level". Ces changements n'affectent <b>probablement</b> pas l'utilisation courante de l'exécutable perl lors de la création de paquets, car chaque exécutable perl sait où trouver ses propres modules. Les mainteneurs de paquets de module perl ("-pm") qui suivent les <a href="http://www.finkproject.org/packaging/policy.php#perlmods">règles d'empaquetage des modules perl</a> en vigueur et celles des scripts <code>CompileScript</code> et <code>InstallScript</code> n'ont pas de souci à se faire.</p>
+<p>Sous Mac OS X 10.2, <code>/usr/bin/perl</code> correspondait à la version 5.6.0 de perl et l'architecture était représentée par la chaîne de caractères "darwin". Sous Mac OS X 10.3, <code>/usr/bin/perl</code> correspond à la version 5.8.1 de perl, et l'architecture est représentée par la chaîne de caractères "darwin-thread-multi-2level". Ces changements n'affectent <b>probablement</b> pas l'utilisation courante de l'exécutable perl lors de la création de paquets, car chaque exécutable perl sait où trouver ses propres modules. Les mainteneurs de paquets de module perl ("-pm") qui suivent les <a href="/packaging/policy.php#perlmods">règles d'empaquetage des modules perl</a> en vigueur et celles des scripts <code>CompileScript</code> et <code>InstallScript</code> n'ont pas de souci à se faire.</p>
 
 <h2><a name="typedef">5.2 Nouvelles définitions de symboles</a></h2>
 <p>À partir de Mac OS X 10.3, il existe une définition complète du type <code>socklen_t</code> type. Pour l'utiliser, il faut ajouter au programme :</p>

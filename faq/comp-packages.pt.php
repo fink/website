@@ -1,7 +1,7 @@
 <?
 $title = "Perguntas frequentes - Compilação (2)";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2010/11/10 02:23:58';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:14';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="usage-general.php?phpLang=pt" title="Problemas no uso de pacotes - Geral"><link rel="prev" href="comp-general.php?phpLang=pt" title="Problemas de Compilação - Geral">';
 
 
@@ -40,7 +40,7 @@ endif</pre></div>
         <code>xfree86</code> através do comando <code>fink install
         xfree86</code> -- a versão mais recente (XFree86-4.4.x de 25/maio/2004)
         ainda não está na distribuição de binários e só está disponível na
-        árvore unstable (veja <a href="http://www.finkproject.org/faq/usage-fink.php#unstable%5C">como
+        árvore unstable (veja <a href="/faq/usage-fink.php#unstable%5C">como
         instalar pacotes instáveis</a>).</p></div>
     </a>
     <a name="change-thread-nothread">

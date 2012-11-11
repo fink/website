@@ -1,7 +1,7 @@
 <?
 $title = "ネチケット - 最初";
-$cvs_author = 'Author: rangerrick';
-$cvs_date = 'Date: 2007/02/23 22:04:55';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:16';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ネチケット Contents"><link rel="next" href="reply.php?phpLang=ja" title="投稿への返信"><link rel="prev" href="before-post.php?phpLang=ja" title="投稿の前に">';
 
 

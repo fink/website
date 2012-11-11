@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Pakete";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2008/06/27 00:55:00';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="upgrade.php?phpLang=de" title="Fink Aktualisieren"><link rel="prev" href="install.php?phpLang=de" title="Erste Installation">';
 
 
@@ -119,7 +119,7 @@ Sobald Sie ein Paket gefunden haben, welches Sie installieren wollen, benutzen S
 </p>
       <pre>fink install wget-ssl</pre>
       <p>
-Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("dependencies") vorhanden sind, und wird Sie dann fragen, ob Sie damit einverstanden sind, dass diese installiert werden, falls sie noch nicht da sind. Dann beginnt der Installationsprozess: die Quellen werden heruntergeladen, ausgepackt, gepatcht, kompiliert und schlussendlich an die richtige Stelle auf der Festplatt Ihres Computers geschoben. Dieser Vorgang kann eine lange Zeit dauern. Falls währenddessen Fehler auftreten, schauen Sie sich bitte erst die <a href="http://www.finkproject.org/faq/">FAQ</a> an.
+Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("dependencies") vorhanden sind, und wird Sie dann fragen, ob Sie damit einverstanden sind, dass diese installiert werden, falls sie noch nicht da sind. Dann beginnt der Installationsprozess: die Quellen werden heruntergeladen, ausgepackt, gepatcht, kompiliert und schlussendlich an die richtige Stelle auf der Festplatt Ihres Computers geschoben. Dieser Vorgang kann eine lange Zeit dauern. Falls währenddessen Fehler auftreten, schauen Sie sich bitte erst die <a href="/faq/">FAQ</a> an.
 </p>
 
       <p>
@@ -170,7 +170,7 @@ More details about the <code>fink</code> tool are available in the chapter
 <ol>
             <li>
           <p>
-            <b>10.2-gcc3.3 stable:</b> Das ist die aktuellste, stabile stable-Version ("stabil"), die von Quellcode für 10.2 mit dem <code>gcc 3.3</code>-Update für die Developer Tools installiert werden kann. Um diese Version zu installieren, ist es nötig, <a href="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</a> oder den rsync-Zugang zu aktivieren. Falls Sie das <code>gcc 3.3</code>-Update nicht angewendet haben, werden Sie womöglich diese Version (oder eventuell sogar das Paket) nicht sehen.</p>
+            <b>10.2-gcc3.3 stable:</b> Das ist die aktuellste, stabile stable-Version ("stabil"), die von Quellcode für 10.2 mit dem <code>gcc 3.3</code>-Update für die Developer Tools installiert werden kann. Um diese Version zu installieren, ist es nötig, <a href="/doc/cvsaccess/index.php">CVS</a> oder den rsync-Zugang zu aktivieren. Falls Sie das <code>gcc 3.3</code>-Update nicht angewendet haben, werden Sie womöglich diese Version (oder eventuell sogar das Paket) nicht sehen.</p>
           <p> Anmerkung: In Kontrast zu anderen Projekten, veröffentlicht Fink sowohl die aktuellsten stable-Versionen als auch die unstable-Versionen, die noch testing ("Erprobung") benötigen, via CVS. Die Aktivierung von CVS oder rsync bietet Ihnen den Zugriff auf die neuen stable-Versionen der Pakete, noch bevor diese in der Binary-Distribution aktualisiert sind.
 </p>
         </li>
@@ -184,10 +184,10 @@ on intel hardware.</p></li>
 
         <li>
           <p>
-            <b>10.2-gcc3.3 unstable:</b> Das ist die aktuellste unstable-Version, die von Quellcode unter 10.2 mit <code>gcc 3.3</code> installiert werden kann. Um diese Version zu installieren, folgen Sie den <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">Erklärungen</a> über die Installation der unstable-Pakete.</p>
+            <b>10.2-gcc3.3 unstable:</b> Das ist die aktuellste unstable-Version, die von Quellcode unter 10.2 mit <code>gcc 3.3</code> installiert werden kann. Um diese Version zu installieren, folgen Sie den <a href="/faq/usage-fink.php#unstable">Erklärungen</a> über die Installation der unstable-Pakete.</p>
           <p>Anmerkung: <b>unstable</b> heißt nicht unbedingt <b>unbenutzbar</b>, allerdings installieren Sie diese Pakete auf eigene Gefahr.</p>
         </li>
-        <li><b>10.3 unstable:</b>  Das ist die aktuellste unstable-Version, die von Quellcode unter 10.3 installiert werden kann. Aktivieren Sie den unstable-Baum wie <a href="http://www.finkproject.org/faq/usage-fink.php#unstable">oben</a> erwähnt.</li>
+        <li><b>10.3 unstable:</b>  Das ist die aktuellste unstable-Version, die von Quellcode unter 10.3 installiert werden kann. Aktivieren Sie den unstable-Baum wie <a href="/faq/usage-fink.php#unstable">oben</a> erwähnt.</li>
 
             <li><p><b>10.4/powerpc unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
 on PowerPC hardware.</p></li>
@@ -230,7 +230,7 @@ dependency placeholders.
       </ul>
       
       <p>
-      Für mehr Informationen über die Installation und die Nutzung von X11, schlagen Sie weiter im <a href="http://www.finkproject.org/doc/x11/">X11 unter Darwin und Mac OS X</a>-Dokument nach.
+      Für mehr Informationen über die Installation und die Nutzung von X11, schlagen Sie weiter im <a href="/doc/x11/">X11 unter Darwin und Mac OS X</a>-Dokument nach.
 </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
