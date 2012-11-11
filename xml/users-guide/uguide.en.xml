@@ -3,16 +3,16 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.55 2010/07/10 23:21:42 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.56 2012/11/11 15:20:17 gecko2 Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
 (The following older documents may offer a broader view:
-<link url="http://www.finkproject.org/doc/bundled/install.php">Installation</link>,
-<link url="http://www.finkproject.org/doc/bundled/usage.php">Usage</link>
+<link url="/doc/bundled/install.php">Installation</link>,
+<link url="/doc/bundled/usage.php">Usage</link>
 and the ReadMe.rtf included in the binary distribution disk image.)
 Also check out the
-<link url="http://www.finkproject.org/doc/">documentation
+<link url="/doc/">documentation
 section</link> of the web site, it has some other useful documents
 beyond that.
 </p>
@@ -162,7 +162,7 @@ chapter</xref>.
 The binary distribution comes as a Mac OS X installer package (.pkg),
 wrapped in a disk image (.dmg).
 After downloading the disk image from the
-<link url="http://www.finkproject.org/download/bindist.php">download page</link>
+<link url="/download/bindist.php">download page</link>
 (you may have to use your browser's "Save Target as..." or "Download
 to Disk" function), double-click it to mount it.
 Open the "Fink 0.x.x Installer" disk icon that appears on your desktop (or wherever you downloaded it) after Disk Utility has verified the file.
@@ -188,7 +188,7 @@ The source distribution comes as a standard Unix tarball (.tar.gz).
 It contains only the <code>fink</code> package manager <!--and its package
 descriptions -->and will download the source for packages on the fly.
 You can get it from the
-<link url="http://www.finkproject.org/download/srcdist.php">download page</link>.
+<link url="/download/srcdist.php">download page</link>.
 Older versions of StuffIt Expander have difficuly with handling long file names, so if you have any problems you'll need to remove the folder it generates and follow the command-line instructions below.
 </p>
       <p>
@@ -545,7 +545,7 @@ Then it goes ahead and downloads source code, unpacks it, patches it,
 compiles it, and installs the results on your system.
 This can take a long time.
 If you run into errors during that process, please first check the
-<link url="http://www.finkproject.org/faq/">FAQ</link>.
+<link url="/faq/">FAQ</link>.
       </p>
       <p>
 You can tell <code>fink</code> to try to download
@@ -634,7 +634,7 @@ dependency placeholders.
       </ul>
       <p>
 For more information on installing and running X11, refer to the
-<link url="http://www.finkproject.org/doc/x11/">X11 on Darwin
+<link url="/doc/x11/">X11 on Darwin
 and Mac OS X document</link>.
 </p>
     </section>
@@ -669,7 +669,7 @@ have new versions available.
       <p>For Fink Commander, select Binary-&gt;Update descriptions to update the package list, and then Binary-&gt;Dist-Upgrade packages to update to new versions.</p>
       <p>
 For more information, see the
-<link url="http://www.finkproject.org/download/upgrade.php">Upgrade Matrix</link>.
+<link url="/download/upgrade.php">Upgrade Matrix</link>.
 </p>
     </section>
     <section name="src">
@@ -694,7 +694,7 @@ are stored and managed.
 Using CVS has the advantage that it is updated continuously, but the disadvantage that there is a single CVS server for Fink, and it can be unreliable if there is a lot of traffic.  For this reason, it is recommended that general users go with rsync.  There are multiple mirrors available for rsync, and the only disadvantage is that package descriptions take an hour or so to migrate to the rsync mirrors after they've been added to CVS.
 </p>
       <p>(If you are having trouble upgrading a source installation, consult
-<link url="http://www.finkproject.org/download/fix-upgrade.php">these
+<link url="/download/fix-upgrade.php">these
 special instructions</link>.)</p>
       <p>
 Once you have updated your package descriptions (no matter which way),

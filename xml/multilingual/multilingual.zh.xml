@@ -67,7 +67,7 @@
 
       <ul>
         <li>参加<link
-        url="http://www.finkproject.org/lists/fink-i18n.php">fink-i18n 邮件列表</link>的讨论。
+        url="/lists/fink-i18n.php">fink-i18n 邮件列表</link>的讨论。
         这是我们讨论国际化的机制，发布文档更新的通知的地方。</li>
 
         <li>检查你的语言的翻译版本。你可能会发现一个比我们的更好的译法，发现一个翻译错误，或者其它可能。</li>
@@ -328,7 +328,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %b %Y,  %R %Z')
       </ol>
 
       <p>注意：如果你发现英文文件的一些错误，不要修改它，而应该报告到 <link
-      url="http://www.finkproject.org/lists/fink-i18n.php">fink-i18n
+      url="/lists/fink-i18n.php">fink-i18n
 邮件列表</link>，这样英语主版本会得到更新。</p>
     </section>
 
@@ -523,7 +523,7 @@ scripts/installer/dmg/faq.ru.html</codeblock>
         <codeblock>exit</codeblock></li>
 
         <li>检查你的成果：
-        <codeblock>open http://www.finkproject.org/</codeblock></li>
+        <codeblock>open /</codeblock></li>
       </ol>
     </section>
   </chapter>

@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.37 2012/01/27 20:01:22 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.38 2012/11/11 15:20:16 gecko2 Exp $</cvsid>
 
 <preface>
 <p>
@@ -2129,7 +2129,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</codeblock>
 <em>仅仅</em>在你肯定需要软件包需要它的时候才这样做。
 有些软件包会因为替换不正确版本的 libtool 脚本而被破坏。
 查看<link
-url="http://www.finkproject.org/doc/porting/libtool.php">libtool
+url="/doc/porting/libtool.php">libtool
 网页</link>获取更进一步的信息。
 </p>
 </itemd></item>

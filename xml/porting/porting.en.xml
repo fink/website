@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 	<title>Porting Unix software to Darwin and Mac OS X</title>
 	<shorttitle>Porting</shorttitle>
-	<cvsid>$Id: porting.en.xml,v 1.8 2007/02/23 22:04:55 rangerrick Exp $</cvsid> 
+	<cvsid>$Id: porting.en.xml,v 1.9 2012/11/11 15:20:16 gecko2 Exp $</cvsid> 
 
 	<preface>
 		<p>This document contains hints for porting Unix applications to Darwin and Mac OS X. Much of the information here applies to both Mac OS X version 10.x.x and &quot;pure&quot; Darwin systems. Both systems will be referred to as Darwin, since Mac OS X is actually a superset of Darwin.</p>
@@ -241,7 +241,7 @@ one can install the fink &quot;dlcompat&quot; family of packages.
 <p>
 If you are building libtool 1.3.5 for yourself, you will need to apply
 <link
-url="http://www.finkproject.org/files/libtool-1.3.5-darwin.patch">this
+url="/files/libtool-1.3.5-darwin.patch">this
 patch</link> <em>[updated 2002-06-09]</em> to the libtool 1.3.5 source and
 then delete the files ltconfig and ltmain.sh.
 (They will be recreated from the appropriate .in files when you run
@@ -253,8 +253,8 @@ So you must replace these in every package that you want to build as a
 shared library.
 Note that you must do this before running the configure script.
 For your convenience, you can get the two files right here:
-<link url="http://www.finkproject.org/files/ltconfig">ltconfig</link> (98K) and
-<link url="http://www.finkproject.org/files/ltmain.sh">ltmain.sh</link> (110K)
+<link url="/files/ltconfig">ltconfig</link> (98K) and
+<link url="/files/ltmain.sh">ltmain.sh</link> (110K)
 <em>[both updated 2002-06-09]</em>.</p>
 </section>
 
@@ -511,7 +511,7 @@ with gcc3 cannot link to libraries compiled with gcc2.</p>
     creation since each perl executable knows where to find its own modules.
     Maintainers of perl-module (&quot;-pm&quot;) packages who follow the current
     <link
-    url="http://www.finkproject.org/packaging/policy.php#perlmods">Perl
+    url="/packaging/policy.php#perlmods">Perl
     Modules packaging policy</link> and are careful to follow the
     <code>CompileScript</code> and <code>InstallScript</code>
     documentation will already have things set up correctly.

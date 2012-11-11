@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Использование X11 в Darwin и Mac OS X</title>
     <shorttitle>Использование X11</shorttitle>
-    <cvsid>$Id: x11.ru.xml,v 1.4 2007/08/15 21:57:05 dmacks Exp $</cvsid>
+    <cvsid>$Id: x11.ru.xml,v 1.5 2012/11/11 15:20:18 gecko2 Exp $</cvsid>
     <preface>
         <p> Данный документ посвящен использованию X11 / XFree86 / Xtools в Mac
             OS X и Darwin Apple. В нем вы найдете введение, историю создания продукта, а также отражение
@@ -147,7 +147,7 @@
                     выбор приложений GNOME</link>, которые можно
                 инсталлировать и использовать без применения GNOME. К сожалению,
                     это <link
-                    url="http://www.finkproject.org/faq/usage-fink.php#kde">
+                    url="/faq/usage-fink.php#kde">
                     достижение пока не распространяется </link>на <link
                     url="http://www.kde.org/">приложения KDE.</link>
             </p>
@@ -277,7 +277,7 @@
                 основана на XFree86-4.3.</p>
             <p> Перед использованием бинарных файлов Apple надо удостовериться, что инсталлирован пакет <em>X11
                 User</em>, а также <link
-                url="http://www.finkproject.org/doc/users-guide/upgrade.php">обновить</link> Fink.</p>
+                url="/doc/users-guide/upgrade.php">обновить</link> Fink.</p>
             <p>Для версии <code>fink-0.16.2</code> вам надо будет также инсталлировать пакет
                     <em>X11 SDK</em>. После этого Fink
                 создаст виртуальный пакет <code>system-xfree86</code>.</p>

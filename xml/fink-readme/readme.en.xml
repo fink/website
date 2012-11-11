@@ -4,7 +4,7 @@
 <article filename="readme" lang="en">
 <title>Fink ReadMe</title>
 <shorttitle>ReadMe</shorttitle>
-<cvsid>$Id: readme.en.xml,v 1.4 2006/09/16 23:17:53 dmrrsn Exp $</cvsid>
+<cvsid>$Id: readme.en.xml,v 1.5 2012/11/11 15:20:14 gecko2 Exp $</cvsid>
 
 <preface>
 <p>
@@ -86,9 +86,9 @@ It also has a complete list of available commands.
 <p>
 If the documentation included here doesn't answer your question,
 stroll over to the Fink website at
-<link url="http://www.finkproject.org/">http://www.finkproject.org/</link>
+<link url="/">/</link>
 and check out the Help page there:
-<link url="http://www.finkproject.org/help/">http://www.finkproject.org/help/</link>.
+<link url="/help/">/help/</link>.
 It will point you at the other documentation that is available and
 sources for support if you need it.
 </p>
@@ -102,11 +102,11 @@ packages.
 <section name="uptodate"><title>Staying Informed</title>
 <p>
 The project's website is at 
-<link url="http://www.finkproject.org/">http://www.finkproject.org/</link>.
+<link url="/">/</link>.
 </p>
 <p>
 To be informed of new releases, go to
-<link url="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.orgt/lists/fink-announce.php</link>
+<link url="/lists/fink-announce.php">http://www.finkproject.orgt/lists/fink-announce.php</link>
 and subscribe to the fink-announce mailing list.
 The list is moderated and low-traffic.
 </p>

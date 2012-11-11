@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.33 2010/11/10 02:23:58 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.34 2012/11/11 15:20:14 gecko2 Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -703,7 +703,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
       <answer>
         <p>这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p>
         <codeblock>printenv PATH</codeblock>
-        <p>如果输出里面没有 <filename>/sw/sbin</filename>，那么你需要按照用户指南中的<link url="http://www.finkproject.org/doc/users-guide/install.php#setup" >方法</link>来设置你的环境变量。如果有 <filename>/sw/sbin</filename>，但有其它目录在它前面（比如 <filename>/usr/local/bin</filename>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <filename>/sw/sbin</filename> 排在前面。或者如果你的确需要把其它目录放在 <filename>/sw/sbin</filename> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <filename>install-info</filename> 子目录。</p>
+        <p>如果输出里面没有 <filename>/sw/sbin</filename>，那么你需要按照用户指南中的<link url="/doc/users-guide/install.php#setup" >方法</link>来设置你的环境变量。如果有 <filename>/sw/sbin</filename>，但有其它目录在它前面（比如 <filename>/usr/local/bin</filename>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <filename>/sw/sbin</filename> 排在前面。或者如果你的确需要把其它目录放在 <filename>/sw/sbin</filename> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <filename>install-info</filename> 子目录。</p>
       </answer>
     </faqentry>
     <faqentry name="bad-list-file" >
@@ -756,7 +756,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
         <p>我看不到要升级的 Fink 版本。</p>
       </question>
       <answer translated="no">
-        <p>在这种情况下，参考<link url="http://www.finkproject.org/download/fix-upgrade.php" >特别指引</link>。</p>
+        <p>在这种情况下，参考<link url="/download/fix-upgrade.php" >特别指引</link>。</p>
         <!-- start translation -->
         <ul>
           <li><em>10.3.x:</em> (0.7.1 distribution)
@@ -943,7 +943,7 @@ sudo chmod 1775 /
       <answer translated="no">
         <p>This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p>
         <codeblock>sudo rm -rf /sw</codeblock>
-        <p>and then download the disk image for Intel machines from <link url="http://www.finkproject.org/download/index.php">the downloads page</link>.</p>
+        <p>and then download the disk image for Intel machines from <link url="/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
 
@@ -1283,7 +1283,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         <p>I want Fink to use different options in building a package.</p>
       </question>
       <answer translated="no">
-        <p>The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <link url="http://www.finkproject.org/doc/quick-start-pkg/index.php">Packaging Tutorial</link> and <link url="http://www.finkproject.org/doc/packaging/index.php">Packaging Manual</link>.</p>
+        <p>The first thing to do is to contact the package maintainer to request a variant.  It may be relatively easy to do it.  If you don't hear from the maintainer or see the new packages, or want to try a different option yourself, check out the <link url="/doc/quick-start-pkg/index.php">Packaging Tutorial</link> and <link url="/doc/packaging/index.php">Packaging Manual</link>.</p>
         <p>
           <em>Note:  </em>Fink is deliberately set up such that all official binaries are identical regardless of what machine they are built on, so things like G5 optimization won't happen with an official package.  If you want them, you'll have to do it yourself.</p>
       </answer>
@@ -1377,7 +1377,7 @@ endif</codeblock>
         <p>如果你正在使用的是苹果的 X11，同时也删除 X11 程序。</p>
         <p>3. 要获取 XFree86-4.2.1，用通常的办法安装 Fink 的 <code>xfree86-base</code> 和 <code>xfree86-rootless</code> 软件包：对使用源代码安装的用户　&quot;<code>fink install</code>&quot;；对二进制安装的用户 &quot;<code>apt-get install</code>&quot; 或 <code>dselect</code>。</p>
         <p>或</p>
-        <p>3a. 要获取 XFree86-4.3.x 或更高版本，使用 &quot;fink install xfree86&quot; 安装 Fink 的 <code>xfree86</code> 软件包，最新版本(2004年5月25日的 XFree86-4.4.x 版本)目前还没有二进制安装版发布，而且仅有未稳定的版本[参阅 <link url="http://www.finkproject.org/faq/usage-fink.php#unstable">how to install unstable package</link>]。</p>
+        <p>3a. 要获取 XFree86-4.3.x 或更高版本，使用 &quot;fink install xfree86&quot; 安装 Fink 的 <code>xfree86</code> 软件包，最新版本(2004年5月25日的 XFree86-4.4.x 版本)目前还没有二进制安装版发布，而且仅有未稳定的版本[参阅 <link url="/faq/usage-fink.php#unstable">how to install unstable package</link>]。</p>
       </answer>
     </faqentry>
     <faqentry name="change-thread-nothread" >
@@ -1511,7 +1511,7 @@ preventing you from updating <code>gettext</code>.</p>
         <p>
 没有什么问题，它只是表示程序会使用默认的英语信息提示，日期格式等。
 程序其它的功能应该是正常的。
-X11 文档有更多的<link url="http://www.finkproject.org/doc/x11/trouble.php#locale" >细节</link>。
+X11 文档有更多的<link url="/doc/x11/trouble.php#locale" >细节</link>。
 </p>
       </answer>
     </faqentry>
@@ -1616,7 +1616,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
             <p>苹果的 4.2.x 版（假设你安装了用户和 SDK 软件包）： <code>system-xfree86</code> 软件包是自动产生的，不要去安装它。(注意苹果的 X11 Jaguar 公开测试版已经不再提供，所以除非你在以前可以获得的时候已经安装了它，这才可以是一个选择。</p>
           </li>
         </ul>
-        <p>还有另外一些选择。在 <link url="http://www.finkproject.org/doc/x11/index.php" >运行 X11 的文档</link>里面有专门的叙述。</p>
+        <p>还有另外一些选择。在 <link url="/doc/x11/index.php" >运行 X11 的文档</link>里面有专门的叙述。</p>
       </answer>
     </faqentry>
     <faqentry name="no-display" >
@@ -1767,7 +1767,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
       <answer>
         <p>
 不要惊慌。
-现在《运行 X11》文档有专门一部分<link url="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit" >《故障排除》</link>针对这个常见问题。
+现在《运行 X11》文档有专门一部分<link url="/doc/x11/trouble.php#immediate-quit" >《故障排除》</link>针对这个常见问题。
 </p>
       </answer>
     </faqentry>

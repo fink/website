@@ -4,14 +4,14 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.32 2012/11/07 03:28:48 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.33 2012/11/11 15:20:15 gecko2 Exp $</cvsid>
 
 <preface>
 <p>
 These are the installation instructions for the "source" distribution
 based on <code>fink-&fink_tool_version;</code>, intended for use with OS X v.10.5 and later.</p>
 <p>
-This document does not apply to the "<link url="http://www.finkproject.org/download/index.php">binary</link>" distribution.
+This document does not apply to the "<link url="/download/index.php">binary</link>" distribution.
 </p>
 <p>
 There are instructions for both first time installation and upgrading
@@ -296,9 +296,9 @@ Do you want to continue? [Y/n]
 <p>
 If these instructions don't work for you, well, you'll have to take
 the time to read through the rest of this document and the <link
-url="http://www.finkproject.org/faq/">online FAQ</link>.
+url="/faq/">online FAQ</link>.
 You can also ask on the <link
-url="http://www.finkproject.org/lists/fink-users.php">fink-users
+url="/lists/fink-users.php">fink-users
 mailing list</link>, but expect to be pointed back at the
 documentation when your problem actually is well-documented.
 </p>
@@ -483,7 +483,7 @@ XQuartz-2.4 or later you will quite likely need to reinstall Fink if you update 
 </ul>
 <p>
 For more information on installing and running X11, refer to the
-online <link url="http://www.finkproject.org/doc/x11/">X11 on Darwin
+online <link url="/doc/x11/">X11 on Darwin
 and Mac OS X document</link>.
 </p>
 </section>

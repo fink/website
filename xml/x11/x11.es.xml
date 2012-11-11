@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Ejecutando X11 en Darwin y Mac OS X</title>
   <shorttitle>Ejecución de X11</shorttitle>
-  <cvsid>$Id: x11.es.xml,v 1.5 2007/08/15 21:57:04 dmacks Exp $</cvsid>
+  <cvsid>$Id: x11.es.xml,v 1.6 2012/11/11 15:20:18 gecko2 Exp $</cvsid>
   <preface>
     <p>
 Este documento trata sobre la ejecución de  X11 / XFree86 / Xtools en los sistemas 
@@ -175,7 +175,7 @@ selección de aplicaciones GNOME
 </link>
 disponibles para ser instaladas y ejecutadas sin instalar GNOME.  
 Desafortunadamente, el mismo 
-<link url="http://www.finkproject.org/faq/usage-fink.php#kde">
+<link url="/faq/usage-fink.php#kde">
 progreso no ha podido ser aún hecho
 </link>
 con <link url="http://www.kde.org/">aplicaciones KDE.</link>
@@ -324,7 +324,7 @@ XFree86-4.3.</p>
       <p>
 Al usar los binarios de Apple, necesitas asegurarse que el paquete
 <em>X11 User</em> está instalado y debes 
-<link url="http://www.finkproject.org/doc/users-guide/upgrade.php">actualizar</link>
+<link url="/doc/users-guide/upgrade.php">actualizar</link>
 Fink.</p>
       <p>Bajo <code>fink-0.16.2</code> es necesario instalar el paquete 
 <em>X11 SDK</em> también.  Después de hacer esto, Fink puede crear

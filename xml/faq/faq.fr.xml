@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.82 2010/11/10 02:23:57 babayoshihiko Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.83 2012/11/11 15:20:14 gecko2 Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -544,7 +544,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 <answer>
 <p>Ceci est généralement lié à un problème sur la variable d'environnement PATH. Lancez dans une fenêtre de terminal :</p>
 <codeblock>printenv PATH</codeblock>
-<p>Si <filename>/sw/sbin</filename> n'apparaît pas, vous devrez alors modifier vos variables d'environnement comme expliqué dans les <link url="http://www.finkproject.org/doc/users-guide/install.php#setup">instructions</link> du Guide de l'Utilisateur. Si <filename>/sw/sbin</filename> est bien là, mais qu'il y a d'autres répertoires avant (par exemple <filename>/usr/local/bin</filename>), vous devrez alors réordonner votre variable d'environnement PATH pour que <filename>/sw/sbin</filename> soit proche du début. Si vous voulez cependant que les autres répertoires soit avant <filename>/sw/sbin</filename>, et qu'ils contiennent des répertoires appelés eux aussi install-info, il faudra alors renommer temporairement ces sous-répertoires <filename>install-info</filename> quand vous utiliserez Fink.</p>
+<p>Si <filename>/sw/sbin</filename> n'apparaît pas, vous devrez alors modifier vos variables d'environnement comme expliqué dans les <link url="/doc/users-guide/install.php#setup">instructions</link> du Guide de l'Utilisateur. Si <filename>/sw/sbin</filename> est bien là, mais qu'il y a d'autres répertoires avant (par exemple <filename>/usr/local/bin</filename>), vous devrez alors réordonner votre variable d'environnement PATH pour que <filename>/sw/sbin</filename> soit proche du début. Si vous voulez cependant que les autres répertoires soit avant <filename>/sw/sbin</filename>, et qu'ils contiennent des répertoires appelés eux aussi install-info, il faudra alors renommer temporairement ces sous-répertoires <filename>install-info</filename> quand vous utiliserez Fink.</p>
 </answer>
 </faqentry>
 <faqentry name="bad-list-file">
@@ -603,7 +603,7 @@ else { print substr($6, 2, length($6) - 1);}}' \
 <p>Il est impossible de mettre à jour Fink. Que faire ?</p>
 </question>
 <answer>
-<p>Suivez les <link url="http://www.finkproject.org/download/fix-upgrade.php">instructions spéciales</link> dans ce cas.</p>
+<p>Suivez les <link url="/download/fix-upgrade.php">instructions spéciales</link> dans ce cas.</p>
 <p>Quand ni l'exécution de la commande <code>fink selfupdate</code>, ni celle des commandes <code>sudo apt-get update ; sudo apt-get dist-upgrade</code> n'aboutissent à la mise à jour effective de Fink, vous devez télécharger une nouvelle version du paquet <code>fink</code> de la manière suivante :</p>
 <ul>
 <li><em>10.3.x :</em> (distribution 0.7.1)
@@ -801,7 +801,7 @@ sudo chmod 1775 /
 <answer>
  <p>L'architecture du paquet ne correspond pas à celle de votre système. Cette erreur se produit lorsque vous utilisez un paquet d'installation PowerPc sur une machine Intel. Vous devez alors supprimer votre installation de Fink :</p>
 <codeblock>sudo rm -rf /sw</codeblock>
- <p>Puis téléchargez l'image disque pour machines Intel à partir des <link url="http://www.finkproject.org/download/index.php">pages de téléchargement</link>.</p>
+ <p>Puis téléchargez l'image disque pour machines Intel à partir des <link url="/download/index.php">pages de téléchargement</link>.</p>
 </answer></faqentry>
 
 </chapter>
@@ -1114,7 +1114,7 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
 <p>Comment utiliser des options variables lors de la compilation d'un paquet ?</p>
 </question>
 <answer>
-<p>La première chose à faire est de contacter le mainteneur du paquet pour lui demander d'introduire une variante dans le paquet. Cela peut être relativement facile à faire. Si le mainteneur ne vous répond pas ou si vous ne voyez pas apparaître de nouveaux paquets correspondant à votre demande, ou que vous vouliez essayer de faire le changement vous-même, étudiez le <link url="http://www.finkproject.org/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</link> et le <link url="http://www.finkproject.org/doc/packaging/index.php">Guide de construction de paquets</link>.</p>
+<p>La première chose à faire est de contacter le mainteneur du paquet pour lui demander d'introduire une variante dans le paquet. Cela peut être relativement facile à faire. Si le mainteneur ne vous répond pas ou si vous ne voyez pas apparaître de nouveaux paquets correspondant à votre demande, ou que vous vouliez essayer de faire le changement vous-même, étudiez le <link url="/doc/quick-start-pkg/index.php">Tutoriel d'empaquetage</link> et le <link url="/doc/packaging/index.php">Guide de construction de paquets</link>.</p>
 <p><em>Note :</em> Fink est volontairement initialisé de telle façon que tous les paquets binaires officiels soient identiques quelle que soit la machine sur laquelle ils sont construits. C'est ainsi qu'il n'y aura jamais d'optimisation pour le G5 dans un paquet officiel. Si vous voulez ce type d'option, il vous faudra le faire vous-même.</p>
 </answer>
 </faqentry>
@@ -1210,7 +1210,7 @@ endif</codeblock>
 <p>Si vous aviez installé l'application X11 d'Apple auparavant, supprimez-la également.</p>
 <p>Étape 3. Pour installer l'application XFree86-4.2.1, installez les paquets Fink <code>xfree86-base</code> et <code>xfree86-rootless</code> comme vous le faites d'habitude : via la commande "<code>fink install</code>" pour les utilisateurs de sources, ou bien les commandes "<code>apt-get install</code>" ou <code>dselect</code> pour les utilisateurs de binaires.</p>
 <p>- ou -</p>
-<p>Étape 3a. Pour installer l'application XFree86-4.3.x ou une version postérieure, installez le paquet Fink <code>xfree86</code> via la commande "fink install xfree86". La version la plus récente (XFree86-4.4.x à la date du 25 mai 2004) n'est pas encore dans la distribution binaire et n'est disponible que dans l'arborescence instable. Voir <link url="http://www.finkproject.org/faq/usage-fink.php#unstable">comment installer un paquet instable</link>.</p>
+<p>Étape 3a. Pour installer l'application XFree86-4.3.x ou une version postérieure, installez le paquet Fink <code>xfree86</code> via la commande "fink install xfree86". La version la plus récente (XFree86-4.4.x à la date du 25 mai 2004) n'est pas encore dans la distribution binaire et n'est disponible que dans l'arborescence instable. Voir <link url="/faq/usage-fink.php#unstable">comment installer un paquet instable</link>.</p>
 </answer>
 </faqentry>
 <faqentry name="change-thread-nothread">
@@ -1316,7 +1316,7 @@ dans une fenêtre de terminal. Puis installez XCode (version 3.0 ou supérieure)
 <p>De nombreux messages signalant que la locale n'est pas gérée par la bibliothèque C apparaissent (message en anglais : "locale not supported by C library"). Est-ce un problème ?</p>
 </question>
 <answer>
-<p>Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <link url="http://www.finkproject.org/doc/x11/trouble.php#locale">plus amples informations</link> à ce sujet.</p>
+<p>Non, cela signifie juste que le programme va utiliser les messages, les formats de date, etc... anglais. Le programme fonctionnera normalement par ailleurs. Le document Utilisation de X11 donne de <link url="/doc/x11/trouble.php#locale">plus amples informations</link> à ce sujet.</p>
 </answer>
 </faqentry>
 <faqentry name="passwd">
@@ -1417,7 +1417,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
 <p>La version 4.2.x d'Apple (en supposant que vous avez installé les paquets User et SDK). Le paquet <code>system-xfree86</code> est généré automatiquement, NE l'installez PAS. Notez que la version bêta publique de X11 d'Apple pour Jaguar n'est plus disponible, aussi ce n'est une option que pour ceux d'entre vous qui l'avez déjà installé au temps où elle était encore disponible.</p>
 </li>
 </ul>
-<p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <link url="http://www.finkproject.org/doc/x11/index.php">document Utilisation de X11</link>.</p>
+<p>Il existe encore d'autres options. Vous trouverez tous les détails dans le <link url="/doc/x11/index.php">document Utilisation de X11</link>.</p>
 </answer>
 </faqentry>
 <faqentry name="no-display">
@@ -1513,7 +1513,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
 <p>XDarwin quitte immédiatement après lancement. Que faire ?</p>
 </question>
 <answer>
-<p>Pas de panique. Vous trouverez dans le document Utilisation de X11 une large section <link url="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">résolution de problèmes</link> à ce sujet.</p>
+<p>Pas de panique. Vous trouverez dans le document Utilisation de X11 une large section <link url="/doc/x11/trouble.php#immediate-quit">résolution de problèmes</link> à ce sujet.</p>
 </answer>
 </faqentry>
 <faqentry name="no-server">

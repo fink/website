@@ -3,7 +3,7 @@
 <document filename="index" lang="pt">
   <title>Perguntas frequentes sobre o Fink</title>
   <shorttitle>Perguntas frequentes</shorttitle>
-  <cvsid>$Id: faq.pt.xml,v 1.9 2010/11/10 02:23:58 babayoshihiko Exp $</cvsid>
+  <cvsid>$Id: faq.pt.xml,v 1.10 2012/11/11 15:20:14 gecko2 Exp $</cvsid>
   <preface>
     <p>Esta é a lista das perguntas frequentes sobre o Fink. Como na maior
     parte das listas de perguntas frqeuentes, algumas perguntas foram tiradas
@@ -851,7 +851,7 @@ fink selfupdate-cvs</codeblock>
         <codeblock>printenv PATH</codeblock>
         <p>Caso <filename>/sw/sbin</filename> não apareça, então você precisa
         configurar seu ambiente conforme estas <link
-        url="http://www.finkproject.org/doc/users-guide/install.php#setup">instruções</link>
+        url="/doc/users-guide/install.php#setup">instruções</link>
         no Guia do usuário. Se <filename>/sw/sbin</filename> estiver lá mas
         houver outros diretórios antes (por exemplo,
         <filename>/usr/local/bin</filename>), então você tem duas opções:
@@ -1171,7 +1171,7 @@ page and on http://fontconfig.org.</codeblock>
         <p>Este erro ocorre quando você usa um instalador PowerPC em uma máquina Intel. Você precisa apagar sua instalação do Fink, por exemplo:</p>
         <codeblock>sudo rm -rf /sw</codeblock>
         <p>e então baixar a imagem de disco para máquinas Intel a partir da
-        <link url="http://www.finkproject.org/download/index.php">página de
+        <link url="/download/index.php">página de
         downloads</link>.</p>
       </answer>
     </faqentry>
@@ -1632,9 +1632,9 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</codeblock>
         de ser feito. Caso você não obtenha resposta do mantenedor ou não veja
         os pacotes novos, ou queira tentar uma opção diferente por você mesmo,
         leia o <link
-        url="http://www.finkproject.org/doc/quick-start-pkg/index.php">Tutorial
+        url="/doc/quick-start-pkg/index.php">Tutorial
         de empacotamento</link> e o <link
-        url="http://www.finkproject.org/doc/packaging/index.php">Manual de
+        url="/doc/packaging/index.php">Manual de
         empacotamento</link>.</p>
         <p><em>Observação: </em> o Fink é deliberadamente configurado para que
         todos os binários oficiais sejam idênticos independentemente da máquina
@@ -1776,7 +1776,7 @@ endif</codeblock>
         xfree86</code> -- a versão mais recente (XFree86-4.4.x de 25/maio/2004)
         ainda não está na distribuição de binários e só está disponível na
         árvore unstable (veja <link
-        url="http://www.finkproject.org/faq/usage-fink.php#unstable\">como
+        url="/faq/usage-fink.php#unstable\">como
         instalar pacotes instáveis</link>).</p>
       </answer>
     </faqentry>
@@ -1909,7 +1909,7 @@ fink install libiconv</codeblock>
         <p>Não é ruim, apenas significa que o programa usará por padrão as
         mensagens em inglês, formatos de data etc. O programa funcionará
         normalmente. O documento Executando o X11 tem mais <link
-        url="http://www.finkproject.org/doc/x11/trouble.php#locale">detalhes</link>.</p>
+        url="/doc/x11/trouble.php#locale">detalhes</link>.</p>
       </answer>
     </faqentry>
     <faqentry name="passwd">
@@ -2077,7 +2077,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
         </ul>
         <p>Também há outras opções. Um tratamento mais extensivo deste tema
         está disponível no documento <link
-        url="http://www.finkproject.org/doc/x11/index.php">Executando o
+        url="/doc/x11/index.php">Executando o
         X11</link>.</p>
       </answer>
     </faqentry>
@@ -2260,7 +2260,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
       <answer>
         <p>Não entre em pânico. O documento Executando o X11 tem uma vasta
         <link
-        url="http://www.finkproject.org/doc/x11/trouble.php#immediate-quit">seção
+        url="/doc/x11/trouble.php#immediate-quit">seção
         de resolução de problemas</link> para este problema comum.</p>
       </answer>
     </faqentry>

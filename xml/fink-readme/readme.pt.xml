@@ -4,7 +4,7 @@
 <article filename="readme" lang="pt">
 <title>Leia-me do Fink</title>
 <shorttitle>Leia-me</shorttitle>
-<cvsid>$Id: readme.pt.xml,v 1.1 2009/03/30 11:14:21 monipol Exp $</cvsid>
+<cvsid>$Id: readme.pt.xml,v 1.2 2012/11/11 15:20:15 gecko2 Exp $</cvsid>
 
 <preface>
   <p>Este é o Fink, um sistema de gerenciamento de pacotes cujo objetivo é
@@ -64,9 +64,9 @@
 <section name="questions"><title>Outras perguntas?</title>
   <p>Se a documentação aqui incluída não responder sua pergunta, visite o site
   do Fink em <link
-  url="http://www.finkproject.org/">http://www.finkproject.org/</link> e
+  url="/">/</link> e
   consulte a página de Ajuda: <link
-  url="http://www.finkproject.org/help/">http://www.finkproject.org/help/</link>.
+  url="/help/">/help/</link>.
   Ela indicará outros documentos que estão disponíveis e onde procurar por
   ajuda caso precise.</p>
 
@@ -77,10 +77,10 @@
 
 <section name="uptodate"><title>Mantendo-se informado</title>
   <p>O site do projeto está localizado em <link
-  url="http://www.finkproject.org/">http://www.finkproject.org/</link>.</p>
+  url="/">/</link>.</p>
 
   <p>Para ser informado de novos lançamentos, vá à página <link
-  url="http://www.finkproject.org/lists/fink-announce.php">http://www.finkproject.orgt/lists/fink-announce.php</link>
+  url="/lists/fink-announce.php">http://www.finkproject.orgt/lists/fink-announce.php</link>
   e assine a lista de discussão fink-announce. Esta lista é moderada e possui
   baixo tráfego.</p>
 </section>

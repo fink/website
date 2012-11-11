@@ -3,15 +3,15 @@
 <document filename="index" lang="es">
   <title>Guía del Usuario de Fink </title>
   <shorttitle>Guía del Usuario</shorttitle>
-  <cvsid>$Id: uguide.es.xml,v 1.9 2008/06/27 00:55:00 dmrrsn Exp $</cvsid>
+  <cvsid>$Id: uguide.es.xml,v 1.10 2012/11/11 15:20:17 gecko2 Exp $</cvsid>
   <preface>
   <p>Atención: la versión española de este documento no se sincroniza con la versión inglesa.</p>
     <p translated="no">This document gives an overview over all features of Fink.
 (The following older documents may offer a broader view:
-<link url="http://www.finkproject.org/doc/bundled/install.php">Instalación</link>,
-<link url="http://www.finkproject.org/doc/bundled/usage.php">Uso</link>
+<link url="/doc/bundled/install.php">Instalación</link>,
+<link url="/doc/bundled/usage.php">Uso</link>
 y el ReadMe.rtf incluido en la imagen de disco de la distribución binaria.)
-También revise:<link url="http://www.finkproject.org/doc/">Sección de
+También revise:<link url="/doc/">Sección de
 Documentación</link> en el sitio web, tiene algunos otros documentos útiles.
 
 </p>
@@ -154,7 +154,7 @@ Esto se revisa en el  <xref chapter="packages">Capítulo de Instalación de Paqu
 La distribución binaria existe como un paquete de Instalación de Mac OS X (.pkg),
 empacado como una imágen de disco (.dmg).
 Después de descargar la imágen de disco de la
-<link url="http://www.finkproject.org/download/bindist.php">página de descarga</link>
+<link url="/download/bindist.php">página de descarga</link>
 (puedes usar la función "Salvar destino como ..." o "Descargar al Disco" function), dale doble click para montar el disco.
 abra el ícono del disco "Fink 0.x.x Installer" que aparece en el escritorio después que el Disk Utility (ó Disk Copy, para OS previo al 10.3) a verificado el archivo.
 Desntro encontrara Documentación y un paquete de Instalación.
@@ -175,7 +175,7 @@ Cuando el instalador termine, proceda con la
 La distribución fuente esta contenida en un tarball estándar de Unix (.tar.gz).
 Solo contiene el manejador de paquetes <code>fink</code> así como la descripción del paquete y descargara la fuente de los paquetes de inmediato.
 Puede obtenerse de la
-<link url="http://www.finkproject.org/download/srcdist.php">Página de Descarga</link>.
+<link url="/download/srcdist.php">Página de Descarga</link>.
 Es importante no usar el StuffIt Expander para extraer el archivo
 Por alguna razón el StuffIt aún no puede usar nombres de archivos largos.
 Si el StuffIt Expander ya extrajo el archivo, destruya el folder que este crea.
@@ -446,7 +446,7 @@ Cuando encuentras un paquete que desees instalar, usa el comando "install":
 El comando <code>fink</code> primero revisará si todos los prerequisitos necesarios ("dependencias") estín presentes , y preguntará si estas de acuerdo en instlar las que estne ausentes.
 Entonces ira y descargara el código fuente, lo descomprime, lo parcha, lo compila e instala los resultantes en tu sistema. 
 Esto puede tradar un rato. Si algun mensaje de error, por favor revisa el archivo 
-<link url="http://www.finkproject.org/faq/">FAQ</link>.
+<link url="/faq/">FAQ</link>.
 </p>
 <!-- start translation -->
       <p>
@@ -497,7 +497,7 @@ More details about the <code>fink</code> tool are available in the chapter
 <ol>
             <li>
           <p>
-            <em>10.2-gcc3.3 stable:</em>  Esta es la versión estable más reciente que puede ser instalada desde la fuente para OS 10.2 con la actualización<code>gcc 3.3</code> De las Herramientas de Desarrollo.  Para poder instalar esta versión, necesitas habilitar <link url="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</link> o accesso de rsync.  Si aún no has aplicado la actualización<code>gcc 3.3</code> podrías no ver esta versión (posiblemente, ni el paquete).</p>
+            <em>10.2-gcc3.3 stable:</em>  Esta es la versión estable más reciente que puede ser instalada desde la fuente para OS 10.2 con la actualización<code>gcc 3.3</code> De las Herramientas de Desarrollo.  Para poder instalar esta versión, necesitas habilitar <link url="/doc/cvsaccess/index.php">CVS</link> o accesso de rsync.  Si aún no has aplicado la actualización<code>gcc 3.3</code> podrías no ver esta versión (posiblemente, ni el paquete).</p>
           <p>Nota:  A diferencia de muchos otros proyectos, las distribuciones más recientes de Fink se distribuyen mediante CVS, al igual que las versiones que necesitan más pruebasas (ver la Sección de inestables más abajo ).  Habilitar la actualización mediante CVS | rsync te da acceso a la versión estable más reciente aún antes que la versión binaria sea actualizada.
 </p>
         </li>
@@ -511,7 +511,7 @@ on intel hardware.</p></li>
 <!-- end translation -->
         <li>
           <p>
-            <em>10.2-gcc3.3 unstable:</em>  Esta es la última versión inestable que puede ser instalada del código fuente para el  OS 10.2 con  <code>gcc 3.3</code>.  Para instalar esta versión, sige las <link url="http://www.finkproject.org/faq/usage-fink.php#unstable">instructiones</link> que describen como instalar paquetes inestables.</p>
+            <em>10.2-gcc3.3 unstable:</em>  Esta es la última versión inestable que puede ser instalada del código fuente para el  OS 10.2 con  <code>gcc 3.3</code>.  Para instalar esta versión, sige las <link url="/faq/usage-fink.php#unstable">instructiones</link> que describen como instalar paquetes inestables.</p>
           <p>Nota: <em>unstable</em> no significa <em>inusable</em> o <em>inoperante</em>, solo que son instalables bajo tu propio riesgo.
 </p>
         </li>
@@ -562,7 +562,7 @@ dependency placeholders.
       <!-- end translation -->
       <p>
 Para mayor información sobre como instalar o ejecutar el X11 visita las páginas
-<link url="http://www.finkproject.org/doc/x11/">X11 en Darwin
+<link url="/doc/x11/">X11 en Darwin
 y el documento de  Mac OS X document</link>.
 </p>
     </section>
@@ -590,7 +590,7 @@ Para apt, ejecuta <code>apt-get update</code> para obtener la lista de paquetes 
       <p>Para el Fink Commander, selecciona las descripcionesBinary-&gt;Update descriptions para actualizar la lista de paquetes, y luego Binary-&gt;Dist-Upgrade packages para actualizar a las nuevas versiones.</p>
       <p>
 Para mayor información, especificamente acerca de la actualización de versiones de Fink previas a la 0.3.0, revisa la
-<link url="http://www.finkproject.org/download/upgrade.php">Matriz de Actualización</link>.
+<link url="/download/upgrade.php">Matriz de Actualización</link>.
 </p>
     </section>
     <section name="src">
@@ -608,7 +608,7 @@ Usando el CVS uno obtiene varias ventajas, como actualizaciones  continuas, pero
 Por esta razón, se recomienda que en general se use rsync (el cual tiene multiples espejos), cuyo única desventaja es que las descripciones son una hora más viejas que las disponibles para el CVS.
 </p>
       <p>(Si enfrentas algun problema al actualizar la Instalación del código fuente, consultaIf you are having trouble upgrading a source installation, consult
-<link url="http://www.finkproject.org/download/fix-upgrade.php">las
+<link url="/download/fix-upgrade.php">las
 instrucciones especiales</link>.)</p>
       <p>
 Si posees una versión de Fink previa a la 0.2.5, es necesario que descarges manualmente las descripciones de los paquetes.

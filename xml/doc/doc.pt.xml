@@ -3,7 +3,7 @@
 <article filename="index" lang="pt">
   <title>Fink - Documentação</title>
   <shorttitle>Documentação</shorttitle>
-  <cvsid>$Id: doc.pt.xml,v 1.5 2009/04/01 14:16:07 monipol Exp $</cvsid>
+  <cvsid>$Id: doc.pt.xml,v 1.6 2012/11/11 15:20:14 gecko2 Exp $</cvsid>
 
   <preface>
     <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
@@ -83,7 +83,7 @@
       </li>
 
       <li>
-        <link url="http://www.finkproject.org/doc/UsingFink.pdf">Using Fink: A
+        <link url="/doc/UsingFink.pdf">Using Fink: A
         Developer's How To</link> (arquivo PDF com 2MB) - slides de uma
         apresentação na <link
         url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X

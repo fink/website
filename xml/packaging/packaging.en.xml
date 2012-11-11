@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.124 2012/04/14 19:23:12 alexkhansen Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.125 2012/11/11 15:20:16 gecko2 Exp $</cvsid>
 
 <preface>
 <p>
@@ -2588,7 +2588,7 @@ Darwin. This happens in the patch phase and before the PatchScript
 is run. <em>Only</em> use this when you know that the package needs
 it. Some packages can be broken by overwriting the libtool scripts
 with mismatching versions. See the <link
-url="http://www.finkproject.org/doc/porting/libtool.php">libtool
+url="/doc/porting/libtool.php">libtool
 page</link> for further information.
 </p>
 </itemd></item>

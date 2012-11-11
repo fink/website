@@ -4,14 +4,14 @@
 
     <title>Руководство пользователя Fink</title>
     <shorttitle>Руководство пользователя</shorttitle>
-    <cvsid>$Id: uguide.ru.xml,v 1.6 2008/06/27 00:55:00 dmrrsn Exp $</cvsid>
+    <cvsid>$Id: uguide.ru.xml,v 1.7 2012/11/11 15:20:17 gecko2 Exp $</cvsid>
     <preface>
         <p> Данный документ содержит обзор всех возможностей Fink. (Более широкий обзор могут дать ранее выпущенные документы <link
-                url="http://www.finkproject.org/doc/bundled/install.php">Инсталляция</link>, <link
-            url="http://www.finkproject.org/doc/bundled/usage.php">Использование</link>
+                url="/doc/bundled/install.php">Инсталляция</link>, <link
+            url="/doc/bundled/usage.php">Использование</link>
             и файл ReadMe.rtf, включенный в загрузочный модуль бинарного дистрибутива.)
             Также см. на веб-сайте раздел <link
-                url="http://www.finkproject.org/doc/">Документация
+                url="/doc/">Документация
             </link>, который рекомендует другие полезные документы
             в дополнение к указанным.</p>
         <p> Добро пожаловать в Руководство пользователя Fink. Руководство описывает процедуры первоначальной
@@ -138,7 +138,7 @@ fink on intel hardware is still considered to be of <em>beta</em> quality.</p>
             <p> Бинарный дистрибутив представлен в виде пакета инсталлятора Mac OS X
                 (.pkg) в загрузочном модуле (.dmg). После скачивания
                 загрузочного модуля со страницы <link
-                    url="http://www.finkproject.org/download/bindist.php">Скачивание
+                    url="/download/bindist.php">Скачивание
                 </link> (возможно, вам придется использовать функцию браузера "Save Target
                 as..." или "Download to Disk") сделайте на нем двойной щелчок для начала установки.
                 Откройтке иконку диска "Fink 0.x.x Installer" на рабочем столе
@@ -162,7 +162,7 @@ fink on intel hardware is still considered to be of <em>beta</em> quality.</p>
                 (.tar.gz). Он содержит только менеджер пакетов <code>fink</code>
                 с их описанием и скачивает исходный код
                 для пакетов по требованию. Его можно получить на странице <link
-                    url="http://www.finkproject.org/download/srcdist.php">Скачивание
+                    url="/download/srcdist.php">Скачивание
                 </link>. Важно не использовать StuffIt Expander
                 для распаковки архива. По какой-то причине StuffIt все еще
                 не может обрабатывать длинные имена файлов. Если StuffIt Expander уже распаковал архив,
@@ -497,7 +497,7 @@ E: Sorry, broken packages</codeblock>
                 компиляцию и инсталлирует результаты в вашей системе. Это может
                 занять много времени. Если в течение этого процесса возникнут ошибки,
                 сначала обратитесь к <link
-                url="http://www.finkproject.org/faq/">Ч.З.В.</link>. </p>
+                url="/faq/">Ч.З.В.</link>. </p>
             <p> Для версий <code>fink</code> начиная с 0.23.0 можно попытаться
                 скачать имеющиеся предварительно скомпилированные бинарные пакеты,
                 вместо того чтобы создавать их. Просто перенесите опцию <xref chapter="usage"
@@ -560,7 +560,7 @@ E: Sorry, broken packages</codeblock>
                         исходного кода для OS 10.2 с обновлением <code>gcc 3.3</code> для
                         Developer Tools. Для инсталляции этой версии вам
                         может понадобиться активация доступа через <link
-                        url="http://www.finkproject.org/doc/cvsaccess/index.php">CVS</link>
+                        url="/doc/cvsaccess/index.php">CVS</link>
                         или rsync. Если вы не сделали обновление <code>gcc
                         3.3</code>, то можете не увидеть эту версию (или
                         даже сам пакет).</p>
@@ -588,7 +588,7 @@ on intel hardware.</p></li>
                         нестабильная версия, которую можно инсталлировать от
                         исходного кода в OS 10.2 с <code>gcc 3.3</code>. Для ее инсталляции
                         следуйте <link
-                        url="http://www.finkproject.org/faq/usage-fink.php#unstable">инструкциям</link>
+                        url="/faq/usage-fink.php#unstable">инструкциям</link>
                         по инсталляции нестабильных пакетов.</p>
                     <p>Прим.: <em>unstable</em> не обязательно <em>значит</em>, что их нельзя использовать, просто
                         инсталляция таких пакетов будет на ваш риск.</p>
@@ -644,7 +644,7 @@ dependency placeholders.
       </ul>
       <!-- end translation -->
             <p> Для получения более подробной информации об инсталляции и использовании X11 см.
-                    документ <link url="http://www.finkproject.org/doc/x11/">X11 в
+                    документ <link url="/doc/x11/">X11 в
                     Darwin и Mac OS X</link>.</p>
         </section>
     </chapter>
@@ -673,7 +673,7 @@ dependency placeholders.
                 для обновления до новых версий.</p>
             <p> Для получения более подробной информации, особенно об обновлении версий Fink,
                   предшествующих 0.3.0, см. <link
-                      url="http://www.finkproject.org/download/upgrade.php">Матрицу обновления</link>.</p>
+                      url="/download/upgrade.php">Матрицу обновления</link>.</p>
         </section>
         <section name="src">
             <title>Обновление дистрибутива исходного кода</title>
@@ -700,7 +700,7 @@ dependency placeholders.
                 его добавления в CVS.</p>
             <p>(Если у вас возникли проблемы при обновлении инсталляции
                     исходного кода, см. <link
-                    url="http://www.finkproject.org/download/fix-upgrade.php">Особые инструкции
+                    url="/download/fix-upgrade.php">Особые инструкции
                     </link>.)</p>
             <p> Если у вас более ранняя версия Fink, чем 0.2.5, надо скачать
                 описание пакетов вручную. Посетите <link

@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>在 Darwin 和 Mac OS X 上运行 X11</title>
   <shorttitle>运行 X11</shorttitle>
-  <cvsid>$Id: x11.zh.xml,v 1.10 2007/08/15 21:57:05 dmacks Exp $</cvsid>
+  <cvsid>$Id: x11.zh.xml,v 1.11 2012/11/11 15:20:18 gecko2 Exp $</cvsid>
   <preface>
     <p>
 本文档是关于如何在苹果的 Mac OS X 和 Darwin 系统上运行 X11 / XFree86 / Xtools。它包括一些介绍和开发历史，然后描述当前的状况，在通过或不通过 Fink 的情况下使用 X11 的许多选项。
@@ -146,7 +146,7 @@ GNOME 程序精选
 </link>
 可以在不运行 GNOME 的情况下安装和运行。  
 不幸的是，对 <link url="http://www.kde.org/" >KDE 应用程序</link>却
-<link url="http://www.finkproject.org/faq/usage-fink.php#kde" >
+<link url="/faq/usage-fink.php#kde" >
 还没有取得类似的进展
 </link>。 
       </p>
@@ -249,7 +249,7 @@ operation, and have OpenGL support.</li>
       <p>2005 年 4 月 29 日，苹果发布了 Tiger (10.4)，包括了它们 X11 的发布版本。这个版本基于 XFree86-4.4。</p>
       <p>
 要使用苹果的二进制版本，你需要安装 <em>X11 User</em> 软件包，你还需要
-<link url="http://www.finkproject.org/doc/users-guide/upgrade.php" >更新</link> Fink。</p>
+<link url="/doc/users-guide/upgrade.php" >更新</link> Fink。</p>
       <p>在 <code>fink-0.16.2</code>下，你需要安装 <em>X11 SDK</em> 软件包。这样以后，Fink 才可以创建 <code>system-xfree86</code> 虚拟软件包。</p>
       <p>在 <code>fink-0.17.0</code> 或更新版本下，只有你需要从源程序编译软件包才必须安装 X11 SDK 。这种情况下，即使你没有安装 SDK，仍然会有 <code>system-xfree86</code> 和 <code>system-xfree86-shlibs</code> 虚拟软件包，后者表示共享函数库。如果你安装了 SDK，那么还会有一个
 <code>system-xfree86-dev</code> 软件包，代表头文件。
@@ -594,7 +594,7 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
     <section name="applex11tools">
       <title>The applex11tools package</title>
       <p>Fink's <code>applex11tools</code> package allows the use of <filename>X11.app</filename> and <code>quartz-wm</code> under OS 10.3 and later with XFree86 4.4 or later or X.org.</p>
-      <p>To install this package you must enable the <link url="http://www.finkproject.org/faq/usage-fink.php#unstable">unstable tree</link>, and have <filename>X11User.pkg</filename> somewhere within <filename>/Users</filename> or <filename>/Volumes</filename>.  <filename>X11.app</filename> will be installed in the <filename>Applications</filename> folder within your Fink tree.  You can now use either <filename>X11.app</filename>  or <filename>XDarwin.app</filename>.</p>
+      <p>To install this package you must enable the <link url="/faq/usage-fink.php#unstable">unstable tree</link>, and have <filename>X11User.pkg</filename> somewhere within <filename>/Users</filename> or <filename>/Volumes</filename>.  <filename>X11.app</filename> will be installed in the <filename>Applications</filename> folder within your Fink tree.  You can now use either <filename>X11.app</filename>  or <filename>XDarwin.app</filename>.</p>
 </section>
     <!-- end translation -->
     <section name="xinitrc" >
