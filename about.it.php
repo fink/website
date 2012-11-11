@@ -1,9 +1,9 @@
-<?
-$title = "Informazioni";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/14 01:59:29 $';
+<?php
+$title      = "Informazioni";
+$cvs_author = '$Author: gecko2 $';
+$cvs_date   = '$Date: 2012/11/11 14:54:25 $';
 
-include "header.inc";
+require "header.inc";
 ?>
 
 
@@ -100,6 +100,5 @@ in qualsiasi modo voi vogliate.
 </p>
 
 
-<?
-include "footer.inc";
-?>
+<?php
+require "footer.inc";

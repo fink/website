@@ -1,9 +1,9 @@
-<?
-$title = "About";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2011/10/27 14:29:56 $';
+<?php
+$title      = "About";
+$cvs_author = '$Author: gecko2 $';
+$cvs_date   = '$Date: 2012/11/11 14:54:25 $';
 
-include "header.inc";
+require "header.inc";
 ?>
 
 
@@ -86,5 +86,5 @@ Wenn Sie X11 gar nicht wollen, ist das auch in Ordnung.
 
 
 <?
-include "footer.inc";
+require "footer.inc";
 ?>

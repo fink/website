@@ -1,3 +1,2 @@
-<?
-header("Location: http://www.finkproject.org/download/index.php");
-?>
+<?php
+header("Location: /download/index.php");

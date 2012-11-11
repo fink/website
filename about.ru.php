@@ -1,9 +1,9 @@
-<?
+<?php
 $title = "About";
-$cvs_author = '$Author: horsager $';
-$cvs_date = '$Date: 2005/01/16 09:32:59 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2012/11/11 14:54:25 $';
 
-include "header.inc";
+require "header.inc";
 ?>
 
 <h1>Более подробная информация о Fink</h1>
@@ -87,7 +87,5 @@ Fink предоставляет вам свободу инсталлироват
 </p>
 
 
-<?
-include "footer.inc";
-?>
-
+<?php
+require "footer.inc";

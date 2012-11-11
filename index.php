@@ -1,1 +1,1 @@
-<? include_once "phpLang.inc.php"; ?>
+<?php require_once "phpLang.inc.php";

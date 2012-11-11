@@ -1,9 +1,9 @@
-<?
-$title = "About";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/08/21 03:04:36 $';
+<?php
+$title      = "About";
+$cvs_author = '$Author: gecko2 $';
+$cvs_date   = '$Date: 2012/11/11 14:54:25 $';
 
-include "header.inc";
+require "header.inc";
 ?>
 
 <h1>关于 Fink 的更多信息</h1>
@@ -83,6 +83,5 @@ Fink 可以让你按你喜欢的方式自由地选择安装 XFree86 或其它 X1
 </p>
 
 
-<?
-include "footer.inc";
-?>
+<?php
+require "footer.inc";

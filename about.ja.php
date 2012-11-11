@@ -1,9 +1,9 @@
-<?
-$title = "Fink とは";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/08/21 03:04:36 $';
+<?php
+$title      = "Fink とは";
+$cvs_author = '$Author: gecko2 $';
+$cvs_date   = '$Date: 2012/11/11 14:54:25 $';
 
-include "header.inc";
+require "header.inc";
 ?>
 
 <h1>Fink について</h1>
@@ -89,6 +89,5 @@ X11 を使いたくない場合、なくても動作するよう設計されて�
 </p>
 
 
-<?
-include "footer.inc";
-?>
+<?php
+require "footer.inc";

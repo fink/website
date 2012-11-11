@@ -1,9 +1,9 @@
-<?
-$title = "About";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/08/21 03:04:36 $';
+<?php
+$title      = "About";
+$cvs_author = '$Author: gecko2 $';
+$cvs_date   = '$Date: 2012/11/11 14:54:25 $';
 
-include "header.inc";
+require "header.inc";
 ?>
 
 <h1>Más acerca de Fink</h1>
@@ -102,6 +102,5 @@ Si usted no desea X11, también es aceptable.
 </p>
 
 
-<?
-include "footer.inc";
-?>
+<?php
+require "footer.inc";

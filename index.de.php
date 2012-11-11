@@ -1,14 +1,14 @@
-<?
-$title = "Home";
+<?php
+$title      = "Home";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/04/19 21:28:24 $';
-$is_home = 1;
+$cvs_date   = '$Date: 2012/11/11 14:54:25 $';
+$is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribution, Fink">
 ';
 
-include dirname(__FILE__) . "/header.inc";
+require dirname(__FILE__) . "/header.inc";
 ?>
 
 
@@ -30,13 +30,13 @@ Dabei überlassen wir es dem Nutzer, ob er die Software selber kompiliert oder s
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
-<h1><a href="<? print $rdf_file; ?>" title="Abonnieren Sie unseren feed, Fink-Projekt News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
+<h1><a href="<?php print $rdf_file; ?>" title="Abonnieren Sie unseren feed, Fink-Projekt News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;News</h1>
-<?
+<?php
 // Include news items
-include dirname(__FILE__) . "/news/news.de.inc";
+require dirname(__FILE__) . "/news/news.de.inc";
 ?>
-<div align="right"><a href="<? print $root; ?>news/index.php?phpLang=de">Ältere News...</a></div>
+<div align="right"><a href="<?php print $root; ?>news/index.php?phpLang=de">Ältere News...</a></div>
 
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
@@ -44,13 +44,13 @@ include dirname(__FILE__) . "/news/news.de.inc";
 <h1><a href="http://feeds2.feedburner.com/FinkProjectNews-stable" title="Fink Paket Aktualisierungen (Stable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png"alt="" style="border:0"></a>
 &nbsp;Aktuelle Paket-Updates</h1>
 
-<?  include "package-updates.inc" ?>
+<?php  require "package-updates.inc" ?>
 
 <a href="package-updates.php">mehr...</a>
 </tr><tr valign="top"><td width="50%">
 <h1>Status</h1>
-<? 
-include dirname(__FILE__) . "/fink_version.inc";
+<?php 
+require dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
@@ -147,6 +147,5 @@ können Sie sich dieses kostenlos auf der <a href="http://sourceforge.net/">Sour
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
-<?
-include dirname(__FILE__) . "/footer.inc";
-?>
+<?php
+require dirname(__FILE__) . "/footer.inc";
