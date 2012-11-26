@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/11/06 23:49:36 $';
+$cvs_date = '$Date: 2012/11/26 20:23:50 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -60,32 +60,36 @@ official updates are no longer available for the older versions.
 Installation instructions can be found  on our <a href="download/srcdist.php">source
 release page</a>.
 </p>
-<p>XCode must be installed before Fink.</p>  
+<p>Xcode must be installed before Fink.</p>  
 <strong>10.8 Support:</strong> 
 10.8 users must install Xcode version 4.4 or later 
 (via a free download from the AppStore), or must at least
 install the Command Line Tools for 
 Xcode 4.4 (downloadable from <a href="http://connect.apple.com">Apple</a>
 or installable via the Xcode Preferences (version 4.5.2 is recommended). Note that if you had an 
-earlier version of XCode than 4.3 installed prior to updating, you need to <b>uninstall</b> 
+earlier version of Xcode than 4.3 installed prior to updating, you need to <b>uninstall</b> 
 the old version first by running 
 <i>/Developer/Library/uninstall-devtools</i>. 
-You can determine your current version of XCode by running 
+You can determine your current version of Xcode by running 
 <i>xcodebuild -version</i> .</p>
+<p>If you need X11 you should install Xquartz-2.7.0 or later from 
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
 <strong>10.7 Support:</strong> 
-10.7 users must install or update XCode to version 4.1 or later 
+10.7 users must install or update Xcode to version 4.1 or later 
 (via a free download from the AppStore), (version 4.5.2 is recommended) or must at least
 install the Command Line Tools for 
 Xcode 4.3 or later (downloadable from <a href="http://connect.apple.com">Apple</a>
 or installable via the Xcode Preferences (4.3 or later).  Follow
 the instructions in the <strong>10.8</strong> section above regarding how to check your
 version and uninstall it, if needed.</p>
+<p>We don't support Xquartz on 10.7, so don't remove Apple's official X11.</p>
 <strong>10.6 Support:</strong>  For best results, 10.6 users are
-encouraged to upgrade XCode to version 3.2.6, or to version 4.2.1 if you
+encouraged to upgrade Xcode to version 3.2.6, or to version 4.2.1 if you
 paid for a 4.x Developer preview.  Version 4.0.2 is known to have some
 bugs in its linker that prevent certain packages from building.  Follow
 the instructions in the <strong>10.8</strong> section above regarding how to check your
 version and uninstall it, if needed.</p>
+<p>We don't support Xquartz on 10.6, so don't remove Apple's official X11.</p>
 <p>
 <strong>10.5 Support:</strong> 
 Users are encouraged to update to OS 10.5.2 or later, via Software Update, 
