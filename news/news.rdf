@@ -5,8 +5,35 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-11-11T16:15:24+01:00</dc:date>
+    <dc:date>2012-11-30T20:54:19-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-11-30%20Issues%20with%20sourceforge%20CVS">
+      <title>Issues with sourceforge CVS</title>
+      <link>http://fink.sourceforge.net/news/#2012-11-30%20Issues%20with%20sourceforge%20CVS</link>
+      <guid>http://fink.sourceforge.net/news/#2012-11-30%20Issues%20with%20sourceforge%20CVS</guid>
+      <description>
+  <p>Sourceforge's anonymous CVS is currently down.  It is not currently clear
+  when it is going to be restored.  In addition, the 
+  <a href="http://fink.cvs.sourceforge.net/viewvc/fink/">web interface</a> is
+  not being updated.</p>
+  <p>For folks who aren't behind firewalls, the best recommendation is to use
+  fink selfupdate-rsync since that is currently functional.  If you're
+  behind a firewall, the best short-term workaround is probably to ask for specific
+  updated package description files on the mailing lists or by contacting the maintainer
+  directly.</p>
+ </description>
+      <content:encoded>
+  <p>Sourceforge's anonymous CVS is currently down.  It is not currently clear
+  when it is going to be restored.  In addition, the 
+  <a href="http://fink.cvs.sourceforge.net/viewvc/fink/">web interface</a> is
+  not being updated.</p>
+  <p>For folks who aren't behind firewalls, the best recommendation is to use
+  fink selfupdate-rsync since that is currently functional.  If you're
+  behind a firewall, the best short-term workaround is probably to ask for specific
+  updated package description files on the mailing lists or by contacting the maintainer
+  directly.</p>
+ </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-09-25%20fink-0.34.4%20relased">
       <title>fink-0.34.4 relased</title>
       <link>http://fink.sourceforge.net/news/#2012-09-25%20fink-0.34.4%20relased</link>
@@ -359,27 +386,6 @@
       <p>fink-0.31.5 was released to the 10.4/stable and
       10.7/stable trees on 22 November, 2011.  This is a bugfix release to
       address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released">
-      <title>fink-0.31.4 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</guid>
-      <description>
-      <p>fink-0.31.4 was released to the 10.4/stable and
-      10.7/stable trees on 28 October, 2011.  The primary new feature
-      in this release is to ensure that the default compiler on OS X 10.6
-      is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
-      of the other essential packages which get installed at bootstrap have 
-      been updated.</p>
-    </description>
-      <content:encoded>
-      <p>fink-0.31.4 was released to the 10.4/stable and
-      10.7/stable trees on 28 October, 2011.  The primary new feature
-      in this release is to ensure that the default compiler on OS X 10.6
-      is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
-      of the other essential packages which get installed at bootstrap have 
-      been updated.</p>
     </content:encoded>
     </item>
   </channel>

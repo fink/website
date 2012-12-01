@@ -1,4 +1,14 @@
-<a name="2012-09-25%20fink-0.34.4%20relased"><span class="news-date">2012-09-25: </span><span class="news-headline">fink-0.34.4 relased</span></a><?php gray_line(); ?>
+<a name="2012-11-30%20Issues%20with%20sourceforge%20CVS"><span class="news-date">2012-11-30: </span><span class="news-headline">Issues with sourceforge CVS</span></a><?php gray_line(); ?>
+  <p>Sourceforge's anonymous CVS is currently down.  It is not currently clear
+  when it is going to be restored.  In addition, the 
+  <a href="http://fink.cvs.sourceforge.net/viewvc/fink/">web interface</a> is
+  not being updated.</p>
+  <p>For folks who aren't behind firewalls, the best recommendation is to use
+  <code>fink selfupdate-rsync</code> since that is currently functional.  If you're
+  behind a firewall, the best short-term workaround is probably to ask for specific
+  updated package description files on the mailing lists or by contacting the maintainer
+  directly.</p>
+ <a name="2012-09-25%20fink-0.34.4%20relased"><span class="news-date">2012-09-25: </span><span class="news-headline">fink-0.34.4 relased</span></a><?php gray_line(); ?>
   <p><code>fink-0.34.4</code> was released on 25 September, 2012.  This release adds diagnostics to make
   sure that the permissions of directories that <code>fink</code> uses when building packages are appropriate.
   Additionally, OS X versions 10.7.5 and 10.8.2 are recognized.</p>
@@ -37,11 +47,4 @@
   (1) Run</p><p><code>fink configure</code></p><p> to set the Fink build user back up, and 
   (2) use </p><p><code>fink list -it passwd | cut -f2 | xargs fink reinstall</code></p><p> to reinstall
   the various <code>passwd*</code> packages and their users.</p> 
-  <a name="2012-07-16%20fink-0.34.0%20released"><span class="news-date">2012-07-16: </span><span class="news-headline">fink-0.34.0 released</span></a><?php gray_line(); ?>
-   <p><code>fink-0.34.0</code> was released on 16 July, 2012.  This is the first 
-   release to support Mountain Lion (OS 10.8).</p>
-   <p>Until Mountain Lion is available to the general public, we ask that users
-   submit bug reports to the <a href="mailto:fink-seed@lists.sourceforge.net">
-   Fink Seed List</a>, which has been set up in such a manner as to to avoid 
-   violating the NDA.</p>
   
