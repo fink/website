@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/12/01 03:53:53';
+$cvs_date = 'Date: 2012/12/07 15:43:22';
 $metatags = '';
 
 include_once "header.inc";
@@ -17,6 +17,7 @@ include_once "header.inc";
   behind a firewall, the best short-term workaround is probably to ask for specific
   updated package description files on the mailing lists or by contacting the maintainer
   directly.</p>
+  <p><b>Addendum: 2012-12-07:</b> Anonymous CVS is working again.</p>
  <a name="2012-09-25%20fink-0.34.4%20relased"><span class="news-date">2012-09-25: </span><span class="news-headline">fink-0.34.4 relased</span></a><?php gray_line(); ?>
   <p><code>fink-0.34.4</code> was released on 25 September, 2012.  This release adds diagnostics to make
   sure that the permissions of directories that <code>fink</code> uses when building packages are appropriate.

@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-11-30T20:54:19-07:00</dc:date>
+    <dc:date>2012-12-07T08:43:43-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-11-30%20Issues%20with%20sourceforge%20CVS">
       <title>Issues with sourceforge CVS</title>
@@ -21,6 +21,7 @@
   behind a firewall, the best short-term workaround is probably to ask for specific
   updated package description files on the mailing lists or by contacting the maintainer
   directly.</p>
+  <p>Addendum: 2012-12-07: Anonymous CVS is working again.</p>
  </description>
       <content:encoded>
   <p>Sourceforge's anonymous CVS is currently down.  It is not currently clear
@@ -32,6 +33,7 @@
   behind a firewall, the best short-term workaround is probably to ask for specific
   updated package description files on the mailing lists or by contacting the maintainer
   directly.</p>
+  <p>Addendum: 2012-12-07: Anonymous CVS is working again.</p>
  </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-09-25%20fink-0.34.4%20relased">
