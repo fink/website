@@ -5,8 +5,43 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-12-07T08:43:43-07:00</dc:date>
+    <dc:date>2012-12-11T09:10:26-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2012-12-10%20Issues%20with%20all%20SourceForge%20Services">
+      <title>Issues with all SourceForge Services</title>
+      <link>http://fink.sourceforge.net/news/#2012-12-10%20Issues%20with%20all%20SourceForge%20Services</link>
+      <guid>http://fink.sourceforge.net/news/#2012-12-10%20Issues%20with%20all%20SourceForge%20Services</guid>
+      <description>
+  <p>Sourceforge is currently down.  Check <a href="https://twitter.com/sfnet_ops">
+  the SF.net Operations Twitter feed</a> and 
+<a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage/">
+  the Finkers blog</a> for status updates.</p>
+  <p>For folks who aren't behind firewalls, the best recommendation is to use
+  fink selfupdate-rsync since that is currently functional.  If yo$
+  behind a firewall, the best short-term workaround is probably to ask for spec$
+  updated package description files by contacting the maintainer
+  directly.</p>
+ <p>The mailing lists and bug tracker are also down, so as an interim solution
+    please file bug reports for unmaintained packages (only) as comments to 
+    <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage">
+    the Finkers entry</a>.  For maintained packages, send reports to the maintainer. &#8206;</p>
+ </description>
+      <content:encoded>
+  <p>Sourceforge is currently down.  Check <a href="https://twitter.com/sfnet_ops">
+  the SF.net Operations Twitter feed</a> and 
+<a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage/">
+  the Finkers blog</a> for status updates.</p>
+  <p>For folks who aren't behind firewalls, the best recommendation is to use
+  fink selfupdate-rsync since that is currently functional.  If yo$
+  behind a firewall, the best short-term workaround is probably to ask for spec$
+  updated package description files by contacting the maintainer
+  directly.</p>
+ <p>The mailing lists and bug tracker are also down, so as an interim solution
+    please file bug reports for unmaintained packages (only) as comments to 
+    <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage">
+    the Finkers entry</a>.  For maintained packages, send reports to the maintainer. &#8206;</p>
+ </content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-11-30%20Issues%20with%20sourceforge%20CVS">
       <title>Issues with sourceforge CVS</title>
       <link>http://fink.sourceforge.net/news/#2012-11-30%20Issues%20with%20sourceforge%20CVS</link>
@@ -373,21 +408,6 @@
       <p>fink-0.31.6 was released on 3 January, 2012.  This
       is a bugfix release to address issues with the use of HTTP proxies
       under cvs selfupdates.</p>
-    </content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released">
-      <title>fink-0.31.5 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</guid>
-      <description>
-      <p>fink-0.31.5 was released to the 10.4/stable and
-      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
-      address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
-    </description>
-      <content:encoded>
-      <p>fink-0.31.5 was released to the 10.4/stable and
-      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
-      address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
     </content:encoded>
     </item>
   </channel>
