@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/12/11 16:10:05';
+$cvs_date = 'Date: 2012/12/13 04:44:36';
 $metatags = '';
 
 include_once "header.inc";
@@ -21,6 +21,7 @@ include_once "header.inc";
     please file bug reports for unmaintained packages (only) as comments to 
     <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage">
     the Finkers entry</a>.  For maintained packages, send reports to the maintainer. ‎</p>
+  <p><b>Addendum: 2012-12-12:</b> Anonymous CVS is working again.</p>
  <a name="2012-11-30%20Issues%20with%20sourceforge%20CVS"><span class="news-date">2012-11-30: </span><span class="news-headline">Issues with sourceforge CVS</span></a><?php gray_line(); ?>
   <p>Sourceforge's anonymous CVS is currently down.  It is not currently clear
   when it is going to be restored.  In addition, the 

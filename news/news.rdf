@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-12-11T09:10:26-07:00</dc:date>
+    <dc:date>2012-12-12T21:46:30-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-12-10%20Issues%20with%20all%20SourceForge%20Services">
       <title>Issues with all SourceForge Services</title>
@@ -25,6 +25,7 @@
     please file bug reports for unmaintained packages (only) as comments to 
     <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage">
     the Finkers entry</a>.  For maintained packages, send reports to the maintainer. &#8206;</p>
+  <p>Addendum: 2012-12-12: Anonymous CVS is working again.</p>
  </description>
       <content:encoded>
   <p>Sourceforge is currently down.  Check <a href="https://twitter.com/sfnet_ops">
@@ -40,6 +41,7 @@
     please file bug reports for unmaintained packages (only) as comments to 
     <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage">
     the Finkers entry</a>.  For maintained packages, send reports to the maintainer. &#8206;</p>
+  <p>Addendum: 2012-12-12: Anonymous CVS is working again.</p>
  </content:encoded>
     </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-11-30%20Issues%20with%20sourceforge%20CVS">
