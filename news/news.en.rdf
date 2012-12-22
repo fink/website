@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2012-12-12T21:46:30-07:00</dc:date>
+    <dc:date>2012-12-21T18:46:50-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-12-10%20Issues%20with%20all%20SourceForge%20Services">
       <title>Issues with all SourceForge Services</title>
@@ -17,8 +17,8 @@
 <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage/">
   the Finkers blog</a> for status updates.</p>
   <p>For folks who aren't behind firewalls, the best recommendation is to use
-  fink selfupdate-rsync since that is currently functional.  If yo$
-  behind a firewall, the best short-term workaround is probably to ask for spec$
+  fink selfupdate-rsync since that is currently functional.  If you are
+  behind a firewall, the best short-term workaround is probably to ask for specific
   updated package description files by contacting the maintainer
   directly.</p>
  <p>The mailing lists and bug tracker are also down, so as an interim solution
@@ -33,8 +33,8 @@
 <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage/">
   the Finkers blog</a> for status updates.</p>
   <p>For folks who aren't behind firewalls, the best recommendation is to use
-  fink selfupdate-rsync since that is currently functional.  If yo$
-  behind a firewall, the best short-term workaround is probably to ask for spec$
+  fink selfupdate-rsync since that is currently functional.  If you are
+  behind a firewall, the best short-term workaround is probably to ask for specific
   updated package description files by contacting the maintainer
   directly.</p>
  <p>The mailing lists and bug tracker are also down, so as an interim solution

@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/12/13 04:44:36';
+$cvs_date = 'Date: 2012/12/22 01:46:29';
 $metatags = '';
 
 include_once "header.inc";
@@ -13,8 +13,8 @@ include_once "header.inc";
 <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage/">
   the Finkers blog</a> for status updates.</p>
   <p>For folks who aren't behind firewalls, the best recommendation is to use
-  <code>fink selfupdate-rsync</code> since that is currently functional.  If yo$
-  behind a firewall, the best short-term workaround is probably to ask for spec$
+  <code>fink selfupdate-rsync</code> since that is currently functional.  If you are
+  behind a firewall, the best short-term workaround is probably to ask for specific
   updated package description files by contacting the maintainer
   directly.</p>
  <p>The mailing lists and bug tracker are also down, so as an interim solution
