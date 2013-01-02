@@ -1,10 +1,10 @@
-<? /* $Id: footer.inc,v 1.47 2012/01/18 13:49:06 alexkhansen Exp $ */ ?>
+<? /* $Id: footer.inc,v 1.48 2013/01/02 03:44:05 alexkhansen Exp $ */ ?>
 
 <? /* end content table */ ?>
 </div>
 <div id="footer-left">
 		<a href="/legal.php" style="text-decoration:none ; color:black ;">
-			Copyright &copy; 2001-2012<br>The&nbsp;Fink&nbsp;Project
+			Copyright &copy; 2001-2013<br>The&nbsp;Fink&nbsp;Project
 	 	</a>
 </div>
 <div id="footer">
