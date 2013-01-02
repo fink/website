@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.7";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/12/22 02:17:28 $';
+$cvs_date = '$Date: 2013/01/02 03:02:07 $';
 
 include "header.inc";
 ?>
@@ -21,12 +21,7 @@ The entries there provide a more detailed upgrade explanation.</p>
 (32 or 64 bit) and saves them for later use during the Fink install on 10.7</p>
 <p>To collect the list of packages, follow the sequence below:</p>
 <ol>
-    <li>Before installing OS X 10.7, run <pre>fink selfupdate</pre> with rsync or cvs updating turned on, i.e. use <pre>fink selfupdate-rsync</pre> or <pre>fink selfupdate-cvs</pre>, to bring <em>fink</em> to a current version.<br>
-    Use <pre>fink -V</pre> to check your package manager version, which needs to be at least 0.31.0 before updating.<br>
-    <strong>Do not proceed if your package manager version is not at least 0.31.0!</strong>.
-    </li>
-    <li>Collect the list of installed packages with the following command: <pre>dpkg --get-selections | cut -f1 > fink_packages.txt</pre> before updating to 10.7 to dump the package names to a text file.</li>
-    <li>If you have updated already, then use:  <pre>grep -B1 "install ok installed" /sw/var/lib/dpkg/status | grep Package | cut -d: -f2 > fink_packages.txt</pre> to dump your package information.</li>
+    <li>Use <pre>grep -B1 "install ok installed" /sw/var/lib/dpkg/status | grep Package | cut -d: -f2 > fink_packages.txt</pre> to dump your package information to a file.</li>
     <li>Install OS X 10.7, as well as Xcode 4.5.2, or the Command Line Tools at minimum.</li>
     <li>Clear out your Fink tree by using <pre>sudo rm -rf /sw</pre>, for example.</li>
     <li><a href="./srcdist.php">Install Fink</a> on your new 10.7 system.</li>
