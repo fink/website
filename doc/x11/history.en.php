@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - History";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2013/01/02 02:49:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=en" title="Getting and Installing X11"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -83,6 +83,37 @@ and Tenon released Xtools 1.0 some weeks after that.
 so that by the time XFree86 4.2.0 shipped in January 2002, the Darwin/Mac OS X 
 version had been completely integrated into the main XFree86 distribution.
 </p>
+    
+    <h2><a name="apple-x11-distros">2.4 Apple's X11 distributions</a></h2>
+         
+      <p>
+        On January 7, 2003, Apple released a beta version of its own custom X11
+        implementation for OS 10.2.
+        It was based on XFree86-4.2 and included Quartz rendering and accelerated
+        OpenGL.
+        A new version was released on February 10, 2003 with additional features
+        and bugfixes.
+        A third release (i.e. Beta 3) was made on March 17, 2003 with
+        further additional features and bugfixes.
+      </p>
+      <p>
+        On October 24, 2003, Apple released Panther (10.3), which included the first
+        release version of their X11 distribution, based on XFree86-4.3.
+      </p>
+      <p>
+        On April 29, 2005, Apple released Tiger (10.4), which included an X11 distribution based on XFree86-4.4.
+      </p>
+      <p>
+        On October 26, 2007, Apple released Leopard (10.5), which included an X11 distribution based on X.org-7.2.  
+      </p>  
+      <p>
+        On August 28, 2009, Apple released Snow Leopard (10.6), which included an X11 distribution based on X.org-7.2.  
+      </p>
+      <p>On July 20, 2011, Apple released Lion (10.7), which included an X11 distribution based on XQuartz-2.6.4.</p>
+      <p>
+        On July 25, 2012, Apple relased Mountain Lion (10.8).  For this version of OS X, XQuartz-2.7 or later is the
+        appropriate X11 distribution to use.
+      </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
 <a href="inst-xfree86.php?phpLang=en">3. Getting and Installing X11</a></p>

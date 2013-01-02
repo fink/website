@@ -1,16 +1,16 @@
 <?
 $title = "Running X11 - Tips";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=en" title="Troubleshooting XFree86">';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2013/01/02 02:49:03';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=en" title="Troubleshooting XFree86 (*Currently being updated*)">';
 
 
 include_once "header.en.inc";
 ?>
-<h1>Running X11 - 8. Usage Tips</h1>
+<h1>Running X11 - 7. Usage Tips (*Update Pending*)</h1>
     
     
-    <h2><a name="terminal-app">8.1 Launching X11 apps from Terminal.app</a></h2>
+    <h2><a name="terminal-app">7.1 Launching X11 apps from Terminal.app</a></h2>
       
       <p>
 To launch X11 applications from a Terminal.app window, you must set
@@ -49,7 +49,7 @@ This way you can still run X11 applications remotely or through ssh
 with X11 tunneling.
 </p>
     
-    <h2><a name="open">8.2 Launching Aqua apps from an xterm</a></h2>
+    <h2><a name="open">7.2 Launching Aqua apps from an xterm</a></h2>
       
       <p>
 One way to launch Aqua applications from an xterm (or any other shell,
@@ -65,7 +65,7 @@ associated with it, the third example explicitly gives an application
 to use.
 </p>
     
-    <h2><a name="copy-n-paste">8.3 Copy and Paste</a></h2>
+    <h2><a name="copy-n-paste">7.3 Copy and Paste</a></h2>
       
       <p>
 Copy and Paste generally works between the Aqua and X11 environments.

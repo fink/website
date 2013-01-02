@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Intro";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2013/01/02 02:49:03';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
 
@@ -57,18 +57,33 @@ implementation of X11.
 It was initially developed to run on Intel x86 PCs, hence the name.
 Nowadays, it runs on many architectures and operating systems,
 including OS/2, Darwin, Mac OS X and Windows.
-</p>
-    
-    <h2><a name="def-xtools">1.5 What is Xtools?</a></h2>
-      
-      <p>
-Xtools is a product of <a href="http://www.tenon.com/">Tenon
-Intersystems</a>.
-It is a version of X11 for Mac OS X, based on XFree86.  
-</p>
-<p>Note:  Development apparently stopped sometime before OS 10.3 was released.</p>
-    
-    <h2><a name="client-server">1.6 Client and Server</a></h2>
+      </p>
+       <p>
+Apple's X11 distributions on OS 10.2, 10.3 and 10.4 are derived from XFree86.
+      </p>
+
+<h2><a name="def-xorg">1.5 What is X.org?</a></h2>
+  
+  <p>
+<a href="http://www.x.org/wiki/">X.org</a> is an open source implementation
+of X11, and a successor to XFree86.  It has supplanted XFree86 in most places.
+  </p>
+  <p>
+Apple's X11 distributions on OS 10.5 and 10.6 are derived from X.org, as is
+ <a href="http://xquartz.macosforge.org/trac/wiki">XQuartz</a>.
+Apple's X11 distribution on 10.7 is derived, in turn, from XQuartz.</p>
+
+<h2><a name="def-xquartx">1.6 What is XQuartz?</a></h2>
+  
+  <p>
+<a href="http://xquartz.macosforge.org/trac/wiki">
+XQuartz</a> is an X11 distribution for OS 10.5 and later which contains newer features
+than does the stock X11 on 10.5-10.7.  On 10.5, XQuartz replaces the system's X11 distribution,
+whereas on 10.6 and 10.7 Xquartz and the system's X11 distribution coexist by installing
+in different base paths.  On 10.8 Xquartz <b>is</b> the standard X11 distribution.
+  </p>
+
+     <h2><a name="client-server">1.7 Client and Server</a></h2>
       
       <p>
 X11 has a client-server architecture.
@@ -88,7 +103,7 @@ So when talking about the "server", that means the X11 display server
 program, not the machine hidden in your wardrobe.
 </p>
     
-    <h2><a name="rootless">1.7 What does rootless mean?</a></h2>
+    <h2><a name="rootless">1.8 What does rootless mean?</a></h2>
       
       <p>
 A little background:
@@ -123,7 +138,7 @@ Because there is no (visible) root window, this mode is called
 "rootless".  It is the most comfortable way to use X11 on Mac OS X.
 </p>
     
-    <h2><a name="wm">1.8 What is a window manager?</a></h2>
+    <h2><a name="wm">1.9 What is a window manager?</a></h2>
       
       <p>
 In most graphical environments the look of window frames (title bar,
@@ -146,12 +161,12 @@ up menus in the root window, docks or launch buttons.
 </p>
       <p>
 Many window managers have been packaged for Fink; here is a
-<a href="http://pdb.finkproject.org/pdb/section.php/x11-wm">    
+<a href="http://pdb.finkproject.org/pdb/browse.php?sec=x11-wm">    
 current list.
 </a>
       </p>
     
-    <h2><a name="desktop">1.9 What are Quartz/Aqua, Gnome, and KDE?</a></h2>
+    <h2><a name="desktop">1.10 What are Quartz/Aqua, Gnome, and KDE?</a></h2>
       
       <p>
 They are desktop environments, and there are many others.  Their purpose 

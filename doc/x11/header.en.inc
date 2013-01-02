@@ -9,7 +9,6 @@ $navbox = array(
   "doc/x11/history.php?phpLang=en", "History",
   "doc/x11/inst-xfree86.php?phpLang=en", "Installing X11",
   "doc/x11/run-xfree86.php?phpLang=en", "Starting X11",
-  "doc/x11/xtools.php?phpLang=en", "Xtools",
   "doc/x11/other.php?phpLang=en", "Other Stuff",
   "doc/x11/trouble.php?phpLang=en", "Troubleshooting",
   "doc/x11/tips.php?phpLang=en", "Tips",
