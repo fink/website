@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - History";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/01/02 02:49:03';
+$cvs_date = 'Date: 2013/01/03 18:17:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=en" title="Getting and Installing X11"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -111,7 +111,7 @@ version had been completely integrated into the main XFree86 distribution.
       </p>
       <p>On July 20, 2011, Apple released Lion (10.7), which included an X11 distribution based on XQuartz-2.6.4.</p>
       <p>
-        On July 25, 2012, Apple relased Mountain Lion (10.8).  For this version of OS X, XQuartz-2.7 or later is the
+        On July 25, 2012, Apple relased Mountain Lion (10.8).  For this version of OS X, XQuartz-2.7.2 or later is the
         appropriate X11 distribution to use.
       </p>
     

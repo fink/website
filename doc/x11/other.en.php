@@ -1,8 +1,8 @@
 <?
 $title = "Running X11 - Other Stuff";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/01/02 02:49:03';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="trouble.php?phpLang=en" title="Troubleshooting XFree86 (*Currently being updated*)"><link rel="prev" href="run-xfree86.php?phpLang=en" title="Starting X11">';
+$cvs_date = 'Date: 2013/01/03 18:17:34';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="trouble.php?phpLang=en" title="Troubleshooting XFree86"><link rel="prev" href="run-xfree86.php?phpLang=en" title="Starting X11">';
 
 
 include_once "header.en.inc";
@@ -33,7 +33,7 @@ include_once "header.en.inc";
       </p>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="trouble.php?phpLang=en">6. Troubleshooting XFree86 (*Currently being updated*)</a></p>
+<a href="trouble.php?phpLang=en">6. Troubleshooting XFree86</a></p>
 <? include_once "../../footer.inc"; ?>
 
 

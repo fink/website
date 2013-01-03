@@ -1,7 +1,7 @@
 <?
 $title = "Running X11 - Starting X11";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/01/02 02:49:03';
+$cvs_date = 'Date: 2013/01/03 18:17:34';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="other.php?phpLang=en" title="Other X11 Possibilities"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing X11">';
 
 
@@ -13,17 +13,21 @@ include_once "header.en.inc";
     <h2><a name="display-server">4.1 Starting the Display Server</a></h2>
       
       <p>
-        There are basically two ways to start X11 under Mac OS X.
+        There are basically three ways to start X11 under Mac OS X.
       </p>
       <p>
         One is by running the application bundle, e.g. via double-clicking the app in the Finder.
         This is typically <code>/Applications/Utilities/X11(.app)</code>, if you are on
         10.5-10.7, or <code>/Applications/Utilities/XQuartz(.app)</code> if you're using
-        Xquartz.
+        Xquartz (e.g. on 10.8).
       </p>
       <p>
-        The other way is via entering 
+        Another way is via entering 
         the <code>startx</code> command from a terminal window.
+      </p>
+      <p>
+        The third method is to attempt to run a program that needs X11 from a terminal window.
+        on 10.5 and later this will automatically start an X11 server.
       </p>
     
     <h2><a name="xinitrc-d">4.2 Customizing startup using the .xinitrc.d directory</a></h2>
@@ -185,7 +189,7 @@ exec /sw/opt/kde4/x11/bin/startkde</pre>
         <code>exec</code> before the last line like in the examples below.)
       </p>
       <p>
-        Example:  turnthe X11 bell off, starts some clients and finally execute the Enlightenment
+        Example:  turn the X11 bell off, starts some clients and finally execute the Enlightenment
         window manager:</p>
       <pre>. /sw/bin/init.sh
 
@@ -212,7 +216,7 @@ exec startkde
         Certain Fink packages need to be able to perform actions upon X11 startup.  To allow them to
         do this, there is a package called <code>xinitrc</code> (somewhat confusing, admittedly). 
         One side effect of installing this package, which is in the dependency chains of GNOME and KDE,
-        is to circumvent the default behavior of using scripts from
+        is to circumvent the <a href="#xinitrc-d">default</a> behavior of using scripts from
         <code>$HOME/.xinitrc.d</code>.  There are currently a couple of methods available to
         allow user customization of the X11 startup <b>and</b> allow Fink packages to do their
         startup tasks:
@@ -227,7 +231,8 @@ exec startkde
           <pre>#!/bin/sh
 . /usr/X11/lib/X11/xinit/xinitrc.d/98-user.sh</pre>
           <p>
-            This will restore the default behavior.
+            This will restore the <a href="#xinitrc-d">default</a> behavior of looking in
+            <code>$HOME/.xinitrc.d</code> for executable scripts.
           </p>
         </li>
         <li>

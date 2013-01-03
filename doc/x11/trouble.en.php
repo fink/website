@@ -1,13 +1,13 @@
 <?
 $title = "Running X11 - Troubleshooting";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/01/02 02:49:03';
-$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=en" title="Usage Tips (*Update Pending*)"><link rel="prev" href="other.php?phpLang=en" title="Other X11 Possibilities">';
+$cvs_date = 'Date: 2013/01/03 18:17:34';
+$metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=en" title="Usage Tips"><link rel="prev" href="other.php?phpLang=en" title="Other X11 Possibilities">';
 
 
 include_once "header.en.inc";
 ?>
-<h1>Running X11 - 6. Troubleshooting XFree86 (*Currently being updated*)</h1>
+<h1>Running X11 - 6. Troubleshooting XFree86</h1>
     
     
     <h2><a name="immediate-quit">6.1 When I launch X11, it quits
@@ -76,7 +76,7 @@ For more information, <a href="#locale">see below</a>.
 Thus no job control in this shell.</pre>
       <p>
 Class: Mostly harmless.
-XDarwin 1.0a2 and later launch an interactive shell behind the scenes
+X11 launches an interactive shell behind the scenes
 to run your client startup file (.xinitrc).
 This was done so that you don't have to add statements to set up PATH
 in that file.
@@ -97,15 +97,16 @@ Probably some client program tries to use it anyway...
 </p>
       <pre>startx: Command not found.</pre>
       <p>
-Class: Fatal.
-This can happen when your shell
-initialization files are not set up to add /usr/X11R6/bin to the PATH
-variable.
-If you use Fink and haven't changed your default shell, adding the
-line <code>source /sw/bin/init.csh</code> to <code>.cshrc</code>
-in your home directory (as recommended by the Fink instructions) should
-be sufficient.
-</p>
+        Class: Fatal.
+        This can happen when your shell
+        initialization files are not set up to add the X11 executable directory, e.g.
+        <code>/usr/X11/bin</code>, to the PATH variable.  Fink is normally set
+        up to do this automatically, so this may indicate that your Fink environment
+        isn't being loaded.  Running</p>
+      <pre>/sw/bin/pathsetup.sh</pre>
+      <p>
+        in a terminal window, and then starting a new window, will typically resolve this.
+      </p>
       <pre>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
 _XSERVTransMakeAllCOTSServerListeners: server already running</pre>
       <pre>Fatal server error:
@@ -113,9 +114,9 @@ Cannot establish any listening sockets - Make sure an X server isn't already
 running</pre>
       <p>
 Class: Fatal.
-This can happen when you accidentally run several instances of XDarwin
+This can happen when you accidentally run several instances of X11
 at once,
-or maybe after an unclean shutdown (i.e. crash) of XDarwin.
+or maybe after an unclean shutdown (i.e. crash) of X11.
 It might also be a file permission problem with the sockets for local
 connections.
 You can try to clean that up with <code>rm -rf /tmp/.X11-unix</code>.
@@ -127,100 +128,43 @@ reset).
 Xlib: Client is not authorized to connect to Server</pre>
       <p>
 Class: Fatal.
-The client programs can't connect to the display server (XDarwin)
+The client programs can't connect to the display server (X11 or XQuartz)
 because they use bogus authentication data.
 This can be caused by some VNC installations,
-by running X11-based apps through sudo,
+by running X11-based apps through <code>sudo</code>,
 and probably some other freak accidents.
-The usual fix is to delete the .Xauthority file (which stores the
+The usual fix is to delete the <code>.Xauthority</code> file (which stores the
 authentication data) in your home directory and re-create an empty
 file:
 </p>
       <pre>cd
 rm .Xauthority
 touch .Xauthority</pre>
-      
+      <p></p>
+        <p><b>Possibly no obvious error:</b></p>
       <p>
-        <b>No message.</b>
-      </p>
-      <p>
-Another common cause for X11 startup failures is an incorrect startup file.  If the window manager
-listed in <code>$HOME/.xinitrc</code> doesn't exist, then 
-What happens is that the <code>.xinitrc</code> is run and for some
-reason terminates almost immediately.
-<code>xinit</code> interprets this as "the user's session has ended"
-and kills XDarwin.
-See the <a href="run-xfree86.php?phpLang=en#xinitrc">.xinitrc
-section</a> for more details.
-Remember to set up the PATH and to have one long-lived program that is
-not started in the background.
-It is a good idea to add <code>exec xterm</code> as a fallback when
-your window manager or similar can't be found.
+Class: Fatal.
+Probably the common cause for X11 startup failures is an incorrect startup file.
+Typically, a window manager listed in <code>$HOME/.xinitrc</code> or
+<code>$HOME/.xinitrc.d</code> doesn't get run due to
+having been uninstalled, or not being in the PATH, or runs in
+the background rather than the foreground due to having an '&amp;' at the end of its
+line.  In any case, <code>$HOME/.xinitrc</code> reaches its end, <code>xinit</code>
+interprets this as "the user's session has ended", and kills X11.  If the executable cannot be found,
+there will be an error message to that effect in the terminal window or console log.  On the other hand,
+if the last file has an '&amp;', there will be no error, but X11 will quit.
+See the sections on <a href="run-xfree86.php?phpLang=en#xinitrc-d">.xinitrc.d</a> and
+<a href="run-xfree86.php?phpLang=en#xinitrc">the .xinitrc file </a> for more details.</p>      
+<p>To avoid this, remember to set up the PATH using</p>
+<pre>. /sw/bin/init.sh</pre>
+<p>in your startup files, 
+and also to end with a long-lived program that is
+not started in the background, e.g. a window manager or session manager with no '&amp;'.
+You might also add <code>exec xterm</code> as a fallback for when
+your window manager or other long-lived item can't be found, e.g. if you remove it.
 </p>
     
-    <h2><a name="black">6.2 Black icons in the GNOME panel or in the
-menu of a GNOME application</a></h2>
-      
-      <p>
-A common problem is that icons or other images are displayed as black
-rectangles or black outlines.
-Ultimately, this is caused by limitations in the operating system
-kernel.
-The problem has been reported to Apple, but so far they seem unwilling
-to fix it; see the filed <a href="http://www.opensource.apple.com/bugs/X/Kernel/2691632.html">Darwin
-bug report</a> for details.
-</p>
-      <p>
-The current situation is that the MIT-SHM extension of the X11
-protocol is practically unusable on Darwin and Mac OS X.
-There are two ways to turn the protocol extension off: in the server
-or in the clients.
-The XFree86 servers installed by Fink (i.e. the xfree86-server and
-xfree86-rootless packages) have it turned off.
-The GIMP and the GNOME panel have been inoculated as well.
-If you experience black icons in another application, start that
-application with the <code>--no-xshm</code> command line option.
-</p>
-    
-    <h2><a name="keyboard">6.3 The keyboard doesn't work in XFree86</a></h2>
-      
-      <p>
-This is a known problem that so far seems to affect only portables
-(PowerBook, iBook).
-To work around this, the "Load from file" keymapping option was
-implemented.
-Nowadays it has become the default because the old method (reading the
-mapping from the kernel) stopped working with Mac OS X 10.1.
-If you haven't enabled the option already, you can do so in the
-XDarwin preferences dialog.
-Check the "Load from file" checkbox and select the keymapping file to
-load.
-After restarting XDarwin, your keyboard should mostly work (see
-below).
-</p>
-      <p>
-If you're starting XFree86 from the command line, you can pass the
-name of the keymapping file to load as an option, as in:
-</p>
-      <pre>startx -- -quartz -keymap USA.keymapping</pre>
-    
-    <h2><a name="delete-key">6.4 The Backspace key doesn't work</a></h2>
-      
-      <p>
-This can happen when you use the "Load keymapping from file" option
-described above.
-The mapping files describe the backspace key as "Delete", not as
-"Backspace".
-You can correct that by putting the following line in your .xinitrc
-file:
-</p>
-      <pre>xmodmap -e "keycode 59 = BackSpace"</pre>
-      <p>
-If I remember correctly, XDarwin 1.0a2 and later have code that
-correctly maps the Backspace key automatically.
-</p>
-    
-    <h2><a name="locale">6.5 "Warning: locale not supported by C library"</a></h2>
+     <h2><a name="locale">6.2 "Warning: locale not supported by C library"</a></h2>
       
       <p>
 These messages are quite common, but harmless.
@@ -250,17 +194,6 @@ Example for .cshrc:
         </li>
         <li>
           <p>
-(10.1 only) Use the <code>libxpg4</code> Fink package.
-It builds a small library that contains working locale functions and
-arranges that it is loaded before the system libraries (using the
-DYLD_INSERT_LIBRARIES environment variable).
-You may have to set the LANG environment variable to a fully qualified
-value, e.g. <code>de_DE.ISO_8859-1</code> instead of <code>de</code>
-or <code>de_DE</code>.
-</p>
-        </li>
-        <li>
-          <p>
 Ask Apple to include proper locale support in a future version of Mac
 OS X.
 </p>
@@ -268,7 +201,7 @@ OS X.
       </ul>
     
   <p align="right"><? echo FINK_NEXT ; ?>:
-<a href="tips.php?phpLang=en">7. Usage Tips (*Update Pending*)</a></p>
+<a href="tips.php?phpLang=en">7. Usage Tips</a></p>
 <? include_once "../../footer.inc"; ?>
 
 
