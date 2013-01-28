@@ -66,8 +66,24 @@
 
 <guid><xsl:text>http://fink.sourceforge.net/news/#</xsl:text><xsl:call-template name="url-encode"><xsl:with-param name="str" select="$headline-uri" /></xsl:call-template></guid>
 <!-- <dc:date><xsl:value-of select="date" /></dc:date> -->
-<description><xsl:apply-templates select="body" /></description>
-<content:encoded><xsl:apply-templates select="body" /></content:encoded>
+<description>
+	<xsl:text disable-output-escaping="yes">
+		&lt;![CDATA[
+	</xsl:text>
+	<xsl:apply-templates select="body" />
+	<xsl:text disable-output-escaping="yes">
+		]]&gt;
+	</xsl:text>
+</description>
+<content:encoded>
+	<xsl:text disable-output-escaping="yes">
+		&lt;![CDATA[
+	</xsl:text>
+	<xsl:apply-templates select="body" />
+	<xsl:text disable-output-escaping="yes">
+		]]&gt;
+	</xsl:text>
+</content:encoded>
 
 </item>
 
