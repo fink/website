@@ -1,13 +1,17 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2012/12/22 01:46:29';
+$cvs_date = 'Date: 2013/01/29 04:45:05';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-12-10%20Issues%20with%20all%20SourceForge%20Services"><span class="news-date">2012-12-10: </span><span class="news-headline">Issues with all SourceForge Services</span></a><?php gray_line(); ?>
+<a name="2013-01-28%20fink-0.34.5%20released"><span class="news-date">2013-01-28: </span><span class="news-headline">fink-0.34.5 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.5</code> was released on 28 January, 2013.  In addition to some
+  other improvements, this release addresses an issue with detecting the version of
+  the <code>clang</code> compiler from Xcode 4.6 and later.</p>
+ <a name="2012-12-10%20Issues%20with%20all%20SourceForge%20Services"><span class="news-date">2012-12-10: </span><span class="news-headline">Issues with all SourceForge Services</span></a><?php gray_line(); ?>
   <p>Sourceforge is currently down.  Check <a href="https://twitter.com/sfnet_ops">
   the SF.net Operations Twitter feed</a> and 
 <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage/">
