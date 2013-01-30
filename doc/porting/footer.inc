@@ -1,4 +1,4 @@
 <?
-/* $Id: footer.inc,v 1.1 2001/07/30 11:28:03 chrisp Exp $ */
-include $fsroot."footer.inc";
+/* $Id: footer.inc,v 1.2 2013/01/30 21:36:21 gecko2 Exp $ */
+include "../../footer.inc";
 ?>

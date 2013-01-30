@@ -3,7 +3,7 @@ $title = "GCC3 Errors";
 $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2002/06/28 01:36:55';
 
-include "header.inc";
+include_once "header.en.inc";
 ?>
 
 <h1>Packages with errors when compiling under gcc3</h1>
@@ -135,5 +135,5 @@ sdl-net singular-factory singular-libfac smpeg sppc swig tmake worker
 xpdf
 </pre>
 <?
-include "footer.inc";
+include "../../footer.inc";
 ?>
