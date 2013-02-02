@@ -7,7 +7,7 @@ $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Netiquette 
 
 include_once "header.es.inc";
 ?>
-<h1>Netiquette - 1. ¿Qué hacer antes de "postear"?</h1>
+<h1>Netiquette - 1. ¿Qué hacer antes de 'postear'?</h1>
     
     
     <h2><a name="research">1.1 Investige su pregunta. </a></h2>

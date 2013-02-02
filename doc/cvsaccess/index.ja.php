@@ -1,14 +1,14 @@
 <?
 $title = "Fink CVS アクセス";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2009/10/17 05:48:37';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:13';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink CVS アクセスを設定</h1>
-<!--Generated from $Fink: cvs.ja.xml,v 1.3 2009/10/17 05:48:37 babayoshihiko Exp $-->
+<!--Generated from $Fink: cvs.ja.xml,v 1.4 2012/11/11 15:20:13 gecko2 Exp $-->
 <p>
 Fink は CVS を用いて開発されています。 すなわち、リリース前にも、つねに最新の状態でいることができます。 このページでは、すでに Fink をインストールしている方を対象に、CVS での更新方法をお伝えいたします。 ここの情報は、 Fink 0.3.x 以降で有効です。
 </p>
@@ -35,7 +35,7 @@ Fink には、いくつかの CVS モジュールがあります。
 </p>
 <p>
 ファイアーウォールの内側にいる場合、
-<a href="http://www.finkproject.org/faq/usage-fink.php#proxy">FAQ 3.2</a>
+<a href="/faq/usage-fink.php#proxy">FAQ 3.2</a>
 をご参考にしてください。
 </p>
 <p>
