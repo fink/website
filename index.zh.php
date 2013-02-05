@@ -1,14 +1,14 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/04/19 21:28:24 $';
+$cvs_date = '$Date: 2013/02/05 23:46:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, 软件, 发布, Fink">
 ';
 
-include dirname(__FILE__) . "/header.inc";
+require dirname(__FILE__) . "/header.inc";
 ?>
 
 <p>
@@ -31,7 +31,7 @@ Fink 使用 <a href="http://www.debian.org/">Debian</a> 中的象 dpkg
 
 <?
 // Include news items
-include dirname(__FILE__) . "/news/news.zh.inc";
+require dirname(__FILE__) . "/news/news.zh.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=zh">以前的消息…</a></div>
 

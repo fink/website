@@ -1,14 +1,14 @@
 <?
 $title = "Accueil";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/04/19 21:28:24 $';
+$cvs_date = '$Date: 2013/02/05 23:46:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, logiciel, distribution, Fink">
 ';
 
-include dirname(__FILE__) . "/header.inc";
+require dirname(__FILE__) . "/header.inc";
 ?>
 
 
@@ -34,7 +34,7 @@ précompilés ou la construction des paquets à partir des sources.
 &nbsp;Dernières nouvelles</h1>
 <?
 // Include news items
-include dirname(__FILE__) . "/news/news.fr.inc";
+require dirname(__FILE__) . "/news/news.fr.inc";
 ?>
 <div align="right"><a href="news/index.php?phpLang=fr">Nouvelles archivées...</a></div>
 

@@ -1,14 +1,14 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/11/26 20:23:50 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2013/02/05 23:46:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribution, Fink">
 ';
 
-include "header.inc";
+require dirname(__FILE__) . "/header.inc";
 ?>
 
 
@@ -34,7 +34,7 @@ packages or build everything from source.
 &nbsp;News</h1>
 <?
 // Include news items
-include "news/news.inc";
+require dirname(__FILE__) . "/news/news.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=en">Older News...</a></div>
 

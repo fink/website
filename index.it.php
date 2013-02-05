@@ -1,14 +1,14 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/04/19 21:28:24 $';
+$cvs_date = '$Date: 2013/02/05 23:46:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="descrizione" content="Fink, una distribuzione di software Unix per Mac OS X e Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribuzione, Fink">
 ';
 
-include dirname(__FILE__) . "/header.inc";
+require dirname(__FILE__) . "/header.inc";
 ?>
 
 
@@ -34,7 +34,7 @@ pacchetti precompilati o il codice sorgente da compilare.
 &nbsp;Notizie</h1>
 <?
 // Include news items
-include dirname(__FILE__) . "/news/news.inc";
+require dirname(__FILE__) . "/news/news.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=it">Vecchie notizie...</a></div>
 

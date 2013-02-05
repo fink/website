@@ -1,14 +1,14 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/04/19 21:28:24 $';
+$cvs_date = '$Date: 2013/02/05 23:46:04 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribution, Fink">
 ';
 
-include dirname(__FILE__) . "/header.inc";
+require dirname(__FILE__) . "/header.inc";
 ?>
 
 
@@ -33,7 +33,7 @@ Fink では dpkg や apt-get などの <a href="http://www.debian.org/">Debian</
 
 <?
 // Include news items
-include dirname(__FILE__) . "/news/news.ja.inc";
+require dirname(__FILE__) . "/news/news.ja.inc";
 ?>
 <div align="right"><a href="<? print $root; ?>news/index.php?phpLang=ja">Older News...</a></div>
 
