@@ -1,6 +1,6 @@
 <?
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/07/26 16:17:02 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2013/02/05 23:49:17 $';
 
 ini_set("memory_limit", "48M");
 
@@ -238,8 +238,8 @@ package<?=($count==1 ? '' : 's')?><?=($maintainer=='None' ? ' without maintainer
 	}
 	if (!is_array($packages)) {
 		print '<tr class="package">';
-		print 'Invalid query\n';
-		print 'Please try again: <a href="http://pdb.finkproject.org/pdb/browse.php?nolist=on">Search</a></tr>\n';
+		print 'Invalid query: ';
+		print 'Please try again: <a href="http://pdb.finkproject.org/pdb/browse.php?nolist=on">Search</a></tr><br/>';
 	} else {
 		foreach ($packages as $id => $package) {
 			if (!isset($package['version_stable'])) $package['version_stable'] = "";
