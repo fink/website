@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.27 2012/03/27 14:26:13 gecko2 Exp $ */
+/* $Id: header.inc,v 1.28 2013/02/05 23:50:07 gecko2 Exp $ */
 
 $linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
@@ -46,8 +46,9 @@ if (isset($uses_pathinfo)) {
     $title .= $pispec;
     $pdbroot = "../../";
   } else {
-    print '<p class="attention"><b>PATH_INFO not in expected format!</b></p>';
-    exit;
+    $pispec = "-";
+    $title .= "(none)";
+    $pdbroot = "../";
   }
   $root = "-".$pdbroot;
 }
