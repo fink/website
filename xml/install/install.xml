@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
 
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.37 2013/03/15 20:53:16 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.38 2013/03/15 21:08:13 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
