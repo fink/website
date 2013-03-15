@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.35 2013/01/02 03:44:05 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.36 2013/03/15 16:16:13 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -585,7 +585,7 @@ individual packages with the 'update' command.
     <li>
         <p>Your Fink installation has linked to libraries, e.g. from Macports
         or <filename>/usr/local</filename>, which have been removed from
-        your machine, resulting in breakage in your Fink libraries and
+        your machine thereby breaking some of your Fink libraries and
         executables.</p>
     </li>
 </ul>
@@ -598,7 +598,7 @@ of your installed packages.  The following command in a terminal window
 will work, even if for some reason the Fink tools aren't functioning:
 </p>
 <codeblock>grep -B1 "install ok installed" /sw/var/lib/dpkg/status \
-| grep "^Package:" | cut -d: -f2 | cut -d\  f2 > finkinst.txt</codeblock>
+| grep "^Package:" | cut -d: -f2 | cut -d\  -f2 > finkinst.txt</codeblock>
 <p>
 This will save the list of your packages in the file <filename>finkinst.txt</filename>
 in the current working directory.
@@ -646,8 +646,7 @@ First, follow the <xref chapter="install-first">first-time install instructions<
 <em>(enter your backup directory at the prompt)</em>. 
 </codeblock>
 <p>
-    Note: this requires that the entire path to and including your backup directory is world-
-    readable.
+    Note: this requires that the entire path to and including your backup directory is world-readable.
 </p>
 <p>
     You can also restore your global configuration files at this time.  
