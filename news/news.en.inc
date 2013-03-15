@@ -1,4 +1,7 @@
-<a name="2013-01-28%20fink-0.34.5%20released"><span class="news-date">2013-01-28: </span><span class="news-headline">fink-0.34.5 released</span></a><?php gray_line(); ?>
+<a name="2013-03-16%20fink-0.34.6%20released"><span class="news-date">2013-03-16: </span><span class="news-headline">fink-0.34.6 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.6</code> was released on 16 March, 2013.  This release supports
+  OS 10.8.3.</p>
+ <a name="2013-01-28%20fink-0.34.5%20released"><span class="news-date">2013-01-28: </span><span class="news-headline">fink-0.34.5 released</span></a><?php gray_line(); ?>
   <p><code>fink-0.34.5</code> was released on 28 January, 2013.  In addition to some
   other improvements, this release addresses an issue with detecting the version of
   the <code>clang</code> compiler from Xcode 4.6 and later.</p>
@@ -17,15 +20,4 @@
     <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage">
     the Finkers entry</a>.  For maintained packages, send reports to the maintainer. ‎</p>
   <p><b>Addendum: 2012-12-12:</b> Anonymous CVS is working again.</p>
- <a name="2012-11-30%20Issues%20with%20sourceforge%20CVS"><span class="news-date">2012-11-30: </span><span class="news-headline">Issues with sourceforge CVS</span></a><?php gray_line(); ?>
-  <p>Sourceforge's anonymous CVS is currently down.  It is not currently clear
-  when it is going to be restored.  In addition, the 
-  <a href="http://fink.cvs.sourceforge.net/viewvc/fink/">web interface</a> is
-  not being updated.</p>
-  <p>For folks who aren't behind firewalls, the best recommendation is to use
-  <code>fink selfupdate-rsync</code> since that is currently functional.  If you're
-  behind a firewall, the best short-term workaround is probably to ask for specific
-  updated package description files on the mailing lists or by contacting the maintainer
-  directly.</p>
-  <p><b>Addendum: 2012-12-07:</b> Anonymous CVS is working again.</p>
  

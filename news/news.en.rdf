@@ -5,8 +5,29 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2013-02-02T15:11:15+01:00</dc:date>
+    <dc:date>2013-03-15T14:10:25-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-03-16%20fink-0.34.6%20released">
+      <title>fink-0.34.6 released</title>
+      <link>http://fink.sourceforge.net/news/#2013-03-16%20fink-0.34.6%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2013-03-16%20fink-0.34.6%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>fink-0.34.6 was released on 16 March, 2013.  This release supports
+  OS 10.8.3.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>fink-0.34.6 was released on 16 March, 2013.  This release supports
+  OS 10.8.3.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2013-01-28%20fink-0.34.5%20released">
       <title>fink-0.34.5 released</title>
       <link>http://fink.sourceforge.net/news/#2013-01-28%20fink-0.34.5%20released</link>
@@ -493,41 +514,6 @@
       <p>fink-0.32.2 was released on 3 February, 2012.  This
       release contains a fix for a bug in the handling of multiple source
       archives in a package, and recognizes OS 10.7.3.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released">
-      <title>fink-0.32.1 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.32.1 was released on 26 January, 2012.  This
-      release introduces a number of new features.</p>
-      <p>Those that impact package maintainers include: RuntimeDepends,
-      which are dependencies that are only required when a package is installed,
-      improvements to the package validator, updated manpages, and direct support
-      for .xz archives.</p>
-      <p>Those that impact users include improvements in the bootstrap script and
-      additional helpful suggestions in the post-error output.
-      </p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.32.1 was released on 26 January, 2012.  This
-      release introduces a number of new features.</p>
-      <p>Those that impact package maintainers include: RuntimeDepends,
-      which are dependencies that are only required when a package is installed,
-      improvements to the package validator, updated manpages, and direct support
-      for .xz archives.</p>
-      <p>Those that impact users include improvements in the bootstrap script and
-      additional helpful suggestions in the post-error output.
-      </p>
     
 		]]>
 	</content:encoded>
