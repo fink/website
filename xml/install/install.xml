@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.36 2013/03/15 16:16:13 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.37 2013/03/15 20:53:16 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -583,7 +583,7 @@ individual packages with the 'update' command.
         and X11-based libraries and executables stop working.</p>
     </li>
     <li>
-        <p>Your Fink installation has linked to libraries, e.g. from Macports
+        <p>Your Fink installation has linked to libraries, e.g. from MacPorts
         or <filename>/usr/local</filename>, which have been removed from
         your machine thereby breaking some of your Fink libraries and
         executables.</p>
