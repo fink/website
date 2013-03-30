@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2013/02/05 23:46:04 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2013/03/30 17:22:39 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -66,7 +66,7 @@ release page</a>.
 (via a free download from the AppStore), or must at least
 install the Command Line Tools for 
 Xcode 4.4 (downloadable from <a href="http://connect.apple.com">Apple</a>
-or installable via the Xcode Preferences (version 4.5.2 is recommended). Note that if you had an 
+or installable via the Xcode Preferences (version 4.6.1 is recommended). Note that if you had an 
 earlier version of Xcode than 4.3 installed prior to updating, you need to <b>uninstall</b> 
 the old version first by running 
 <i>/Developer/Library/uninstall-devtools</i>. 

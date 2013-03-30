@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.10 2012/11/06 23:45:18 alexkhansen Exp $
+# $Id: Makefile,v 1.11 2013/03/30 17:22:39 alexkhansen Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -14,7 +14,7 @@ DESTDIR = doc/bundled
 include $(basedir)/Makefile.common
 
 install-hook:
-	cp install.html INSTALL.html
+	cp install.html INSTALL.htm
 	cp install.txt INSTALL
 
 # eof
