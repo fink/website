@@ -1,7 +1,7 @@
 <?
 $title = "Recent Package Updates";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2013/02/05 23:47:26 $';
+$cvs_date = '$Date: 2013/04/18 23:25:24 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -18,7 +18,7 @@ $incfile = "/usr/share/php/XML/RSS.php";
 if (file_exists($incfile)) {
         include "$incfile";
 
-	$rss = new XML_RSS("news/rdf/fink-unstable-no-splitoffs.rdf");
+	$rss = new XML_RSS("news/rdf/fink-stable-no-splitoffs.rdf");
 	$rss->parse();
 
 	$count = 0;
