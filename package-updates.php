@@ -1,7 +1,7 @@
 <?
 $title = "Recent Package Updates";
 $cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2013/04/18 23:25:24 $';
+$cvs_date = '$Date: 2013/04/18 23:31:29 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -25,7 +25,7 @@ if (file_exists($incfile)) {
 	foreach($rss->getItems() as $item) {
 		$date = $item['dc:date'];
 		$date = preg_replace('|T.*$|', '', $date);
-		echo "<a style=\"text-decoration: none\" href=\"" . htmlentities($item['link']) . "\" name=\"" . urlencode($item['title']) . "\"><span class=\"news-date\">" . $date . ": </span><span class=\"news-headline\" style=\"text-decoration: underline\">" . $item['title'] . "</span></a><br />\n";
+		echo "<a style=\"text-decoration: none\" href=\"" . htmlentities($item['link']) . "\" name=\"" . urlencode($item['title']) . "\"><span class=\"news-date\">" . $date . ": </span><span class=\"news-headline\" style=\"text-decoration: underline\">" . $item['title'] . "</span></a><br>\n";
 		echo $item['description'];
 	}
 } else {
