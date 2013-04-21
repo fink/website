@@ -1,7 +1,7 @@
 <?php
 $title = "Fink Package RDF/RSS Feeds";
-$cvs_author = 'Author: dmrrsn';
-$cvs_date = 'Date: 2004/09/20 15:56:45';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2013/04/21 09:13:45';
 $metatags = '';
 
 include_once "header.inc";
@@ -10,7 +10,7 @@ include_once "header.inc";
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr><td>
-<h1>Fink Package RDF Feeds</h1>
+<h1>Fink Package RDF/RSS Feeds</h1>
 
 <h2>Updated Packages By OS</h2>
 <ul>
