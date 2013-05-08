@@ -1,13 +1,17 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/03/30 17:18:58';
+$cvs_date = 'Date: 2013/05/08 16:20:42';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2013-03-29%20fink-0.34.7%20released"><span class="news-date">2013-03-29: </span><span class="news-headline">fink-0.34.7 released</span></a><?php gray_line(); ?>
+<a name="2013-05-08%20fink-0.34.8%20released"><span class="news-date">2013-05-08: </span><span class="news-headline">fink-0.34.8 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.8</code> was released on 8 May, 2013.  This release expands upon
+  the fix from 0.34.7, improves <code>fink list --format=dotty-build</code>, along with
+  other improvements.</p>
+ <a name="2013-03-29%20fink-0.34.7%20released"><span class="news-date">2013-03-29: </span><span class="news-headline">fink-0.34.7 released</span></a><?php gray_line(); ?>
   <p><code>fink-0.34.7</code> was released on 29 March, 2013.  This release addresses
   an issue in which <code>tar</code> hangs for certain root access methods.</p>
  <a name="2013-03-16%20fink-0.34.6%20released"><span class="news-date">2013-03-16: </span><span class="news-headline">fink-0.34.6 released</span></a><?php gray_line(); ?>

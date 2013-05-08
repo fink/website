@@ -5,8 +5,31 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2013-03-30T10:19:10-07:00</dc:date>
+    <dc:date>2013-05-08T09:20:59-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-05-08%20fink-0.34.8%20released">
+      <title>fink-0.34.8 released</title>
+      <link>http://fink.sourceforge.net/news/#2013-05-08%20fink-0.34.8%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2013-05-08%20fink-0.34.8%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>fink-0.34.8 was released on 8 May, 2013.  This release expands upon
+  the fix from 0.34.7, improves fink list --format=dotty-build, along with
+  other improvements.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>fink-0.34.8 was released on 8 May, 2013.  This release expands upon
+  the fix from 0.34.7, improves fink list --format=dotty-build, along with
+  other improvements.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2013-03-29%20fink-0.34.7%20released">
       <title>fink-0.34.7 released</title>
       <link>http://fink.sourceforge.net/news/#2013-03-29%20fink-0.34.7%20released</link>
@@ -481,37 +504,6 @@
       <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
       <p>fink-0.32.4.1 also enhances the checksumming operation under
       fink fetch.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released">
-      <title>fink-0.32.3 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.32.3 was released on 16 February, 2012.  This
-      release recognizes changes that were made for Xcode 4.3.</p>
-      <p>After installing Xcode 4.3 in /Applications (and only there)
-      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
-      install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</p>
-      <p>to make sure that everything is pointed in the right place.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.32.3 was released on 16 February, 2012.  This
-      release recognizes changes that were made for Xcode 4.3.</p>
-      <p>After installing Xcode 4.3 in /Applications (and only there)
-      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
-      install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</p>
-      <p>to make sure that everything is pointed in the right place.</p>
     
 		]]>
 	</content:encoded>
