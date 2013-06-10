@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.125 2012/11/11 15:20:16 gecko2 Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.126 2013/06/10 21:32:39 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -193,20 +193,7 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </codeblock>
 <p>
-An older, deprecated, notation is crafted after the RFC 822 header folding
-method.
-A line that starts with whitespace is treated as a continuation of the
-previous line.
-Example:
-</p>
-<codeblock>InstallScript: mkdir -p %i/share/man
- make install prefix=%i mandir=%i/share/man
- mkdir -p %i/share/doc/%n
- install -m 644 COPYING %i/share/doc/%n</codeblock>
-<p>
-Note the mandatory indentation of the lines.
-</p><p>
-In both formats, empty lines and lines starting with a hash (#) are ignored.
+In this format, empty lines and lines starting with a hash (#) are ignored.
 Keys (field names) are case-insensitive in Fink, so you can write
 <code>InstallScript</code>, <code>installscript</code> or
 <code>INSTALLSCRIPT</code> as you please.
@@ -2090,14 +2077,24 @@ pkglist fields.
 <p>
 A list of packages which must be installed before this package can be
 built. Percent expansion is performed on this field (as well as the
-other package list fields in this section: BuildDepends, RuntimeDepends, Provides,
-Conflicts, Replaces, Recommends, Suggests, and Enhances.
+other package list fields in this section: BuildDepends, RuntimeDepends, 
+Provides, Conflicts, Replaces, Recommends, Suggests, and Enhances.
 Usually, this is just a comma-separated list for plain package names,
 but Fink now supports alternatives and version clauses with the same
 syntax as dpkg.
 A fully featured example:
 </p>
-<codeblock>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</codeblock>
+<codeblock>Depends: &lt;&lt;
+	daemonic (&gt;= 20010902-1),
+	emacs | xemacs
+&lt;&lt;</codeblock>
+<p>
+The layout above is the preferred format for the <code>Depends</code>
+and similar fields. The field uses the multi-line field declarators
+<code>&lt;&lt;</code> and each package is placed in alphabetical order
+on its own indented line. If the field only has a single entry, the
+simplified <code>Field: value</code> format may be used.
+</p>
 <p>
 Note that there is no way to express real optional dependencies.
 If a package works both with and without another package, you must
@@ -2126,7 +2123,10 @@ as a dependency if the comparison is true.
 You can use this format to simplify maintaining several similar
 packages. For example, the packages elinks and elinks-ssl could both list:
 </p>
-<codeblock>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</codeblock>
+<codeblock>Depends: &lt;&lt;
+	expat-shlibs,
+	(%n = elinks-ssl) openssl097-shlibs
+&lt;&lt;</codeblock>
 <p>
 would have the same effect as having elinks list:
 </p>
@@ -2134,7 +2134,7 @@ would have the same effect as having elinks list:
 <p>
 and elinks-ssl list:
 </p>
-<codeblock>Depends: openssl097-shlibs, expat-shlibs</codeblock>
+<codeblock>Depends: expat-shlibs, openssl097-shlibs</codeblock>
 <p>
 As an alternative syntax, you can also specify <code>(string)</code>,
 which is &quot;true&quot; if <code>string</code> is non-null. For example:
@@ -2155,7 +2155,7 @@ but not for the nethack variant.
 </p>
 <codeblock>
   Package: foo
-  Depends: id3lib3.7-shlibs | id3lib3.7-shlibs
+  Depends: id3lib3.7-shlibs | id3lib4-shlibs
   BuildDepends: id3lib3.7-dev | id3lib4-dev
 </codeblock>
 <p>
@@ -2841,6 +2841,17 @@ ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-sh
 </codeblock>
 <p>
   will always pass the <code>--mandir</code> and <code>--disable-shared</code> flags, but only pass <code>--with-x11</code> in the -x11 variant.
+</p>
+<p>
+This field supports placing parameters into multiple lines using multi-line field declarators. The field is handled as a shell command line and uses <code>\</code> to separate lines:
+<codeblock>
+ConfigureParams: &lt;&lt;
+	--mandir=%p/share/man \
+	(%type_pkg[-x11]) --with-x11 \
+	--disable-shared
+&lt;&lt;
+</codeblock>
+Note: do not place conditional parameters as the last line when using the multi-line field format. In instances when the conditional evaluates as false, the parameter immediately following is not evaluated and this breaks the shell.
 </p>
 </itemd></item>
 
