@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Package Descriptions";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2013/06/10 21:39:21';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -106,20 +106,7 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </pre>
 <p>
-An older, deprecated, notation is crafted after the RFC 822 header folding
-method.
-A line that starts with whitespace is treated as a continuation of the
-previous line.
-Example:
-</p>
-<pre>InstallScript: mkdir -p %i/share/man
- make install prefix=%i mandir=%i/share/man
- mkdir -p %i/share/doc/%n
- install -m 644 COPYING %i/share/doc/%n</pre>
-<p>
-Note the mandatory indentation of the lines.
-</p><p>
-In both formats, empty lines and lines starting with a hash (#) are ignored.
+In this format, empty lines and lines starting with a hash (#) are ignored.
 Keys (field names) are case-insensitive in Fink, so you can write
 <code>InstallScript</code>, <code>installscript</code> or
 <code>INSTALLSCRIPT</code> as you please.

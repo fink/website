@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2013/06/10 21:39:21';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -441,14 +441,24 @@ pkglist fields.
 <p>
 A list of packages which must be installed before this package can be
 built. Percent expansion is performed on this field (as well as the
-other package list fields in this section: BuildDepends, RuntimeDepends, Provides,
-Conflicts, Replaces, Recommends, Suggests, and Enhances.
+other package list fields in this section: BuildDepends, RuntimeDepends, 
+Provides, Conflicts, Replaces, Recommends, Suggests, and Enhances.
 Usually, this is just a comma-separated list for plain package names,
 but Fink now supports alternatives and version clauses with the same
 syntax as dpkg.
 A fully featured example:
 </p>
-<pre>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</pre>
+<pre>Depends: &lt;&lt;
+	daemonic (&gt;= 20010902-1),
+	emacs | xemacs
+&lt;&lt;</pre>
+<p>
+The layout above is the preferred format for the <code>Depends</code>
+and similar fields. The field uses the multi-line field declarators
+<code>&lt;&lt;</code> and each package is placed in alphabetical order
+on its own indented line. If the field only has a single entry, the
+simplified <code>Field: value</code> format may be used.
+</p>
 <p>
 Note that there is no way to express real optional dependencies.
 If a package works both with and without another package, you must
@@ -477,7 +487,10 @@ as a dependency if the comparison is true.
 You can use this format to simplify maintaining several similar
 packages. For example, the packages elinks and elinks-ssl could both list:
 </p>
-<pre>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</pre>
+<pre>Depends: &lt;&lt;
+	expat-shlibs,
+	(%n = elinks-ssl) openssl097-shlibs
+&lt;&lt;</pre>
 <p>
 would have the same effect as having elinks list:
 </p>
@@ -485,7 +498,7 @@ would have the same effect as having elinks list:
 <p>
 and elinks-ssl list:
 </p>
-<pre>Depends: openssl097-shlibs, expat-shlibs</pre>
+<pre>Depends: expat-shlibs, openssl097-shlibs</pre>
 <p>
 As an alternative syntax, you can also specify <code>(string)</code>,
 which is "true" if <code>string</code> is non-null. For example:
@@ -506,7 +519,7 @@ but not for the nethack variant.
 </p>
 <pre>
   Package: foo
-  Depends: id3lib3.7-shlibs | id3lib3.7-shlibs
+  Depends: id3lib3.7-shlibs | id3lib4-shlibs
   BuildDepends: id3lib3.7-dev | id3lib4-dev
 </pre>
 <p>
@@ -1067,6 +1080,19 @@ ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-sh
 </pre>
 <p>
   will always pass the <code>--mandir</code> and <code>--disable-shared</code> flags, but only pass <code>--with-x11</code> in the -x11 variant.
+</p>
+<p>
+This field supports placing parameters into multiple lines using multi-line field declarators. The field is handled as a shell command line and uses <code>\</code> to separate lines:
+</p>
+<pre>
+ConfigureParams: &lt;&lt;
+	--mandir=%p/share/man \
+	(%type_pkg[-x11]) --with-x11 \
+	--disable-shared
+&lt;&lt;
+</pre>
+<p>
+Note: do not place conditional parameters as the last line when using the multi-line field format. In instances when the conditional evaluates as false, the parameter immediately following is not evaluated and this breaks the shell.
 </p>
 </td></tr><tr valign="top"><td>GCC</td><td>
 <p>
