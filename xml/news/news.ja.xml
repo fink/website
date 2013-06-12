@@ -1,8 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
- <cvsid>$Id: news.ja.xml,v 1.60 2012/05/10 01:41:45 babayoshihiko Exp $</cvsid>
-
+ <cvsid>$Id: news.ja.xml,v 1.61 2013/06/12 05:28:18 babayoshihiko Exp $</cvsid>
+<newsitem>
+ <date>2013-05-08</date>
+ <headline>fink-0.34.8 リリース</headline>
+ <body>
+  <p><code>fink-0.34.8</code> が、2013年5月8日にリリースされました。
+  このリリースは、0.34.7 での修正を拡張し、
+  <code>fink list --format=dotty-build</code>
+  を改良し、また多の改良が加えられています。</p>
+ </body>
+</newsitem>
+<newsitem>
+ <date>2013-03-29</date>
+ <headline>fink-0.34.7 released</headline>
+ <body>
+  <p><code>fink-0.34.7</code> が、2013年3月29日にリリースされました。
+  このリリースでは、root アクセスで稀に <code>tar</code> が固まってしまう問題に対処しました。</p>
+ </body>
+</newsitem>
+<newsitem>
+ <date>2013-03-16</date>
+ <headline>fink-0.34.6 リリース</headline>
+ <body>
+  <p><code>fink-0.34.6</code> が、2013年3月16日にリリースされました。
+  このリリースは、OS 10.8.3 に対応しています。</p>
+ </body>
+</newsitem>
+<newsitem>
+ <date>2013-01-28</date>
+ <headline>fink-0.34.5 リリース</headline>
+ <body>
+  <p><code>fink-0.34.5</code> が、2013年1月28日にリリースされました。
+  このリリースは、 Xcode 4.6 以降の <code>clang</code> バージョンを検出する問題に対処するなど、
+  いくつかの改良があります。</p>
+ </body>
+</newsitem>
+<newsitem>
+ <date>2012-12-10</date>
+ <headline>すべての SourceForge サービスの問題</headline>
+ <body>
+  <p>Sourceforge はダウン中です。 今後のお知らせは、<link url="https://twitter.com/sfnet_ops">
+  the SF.net Operations Twitter feed</link> と 
+<link url="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage/">
+  the Finkers blog</link> をご覧ください。</p>
+  <p>
+  ファイアーウォールの内側にいない人は、<code>fink selfupdate-rsync</code> は機能しているのでこれを使うといいでしょう。
+  ファイアーウォールの内側にいる人は、短期的な対処はメンテナに直接特定パッケージの更新を尋ねることでしょう。
+  </p>
+ <p>The mailing lists and bug tracker are also down, so as an interim solution
+    please file bug reports for unmaintained packages (only) as comments to 
+    メーリングリストとバグトラッカーもダウン中です。
+    メンテナンスされていないパッケージ（のみ）の暫定的なバグレポートは、
+    <link url="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage">
+    the Finkers entry</link>に報告してください。
+    メンテナンスされているパッケージは、メンテナに報告してください。 ‎</p>
+  <p><em>追記: 2012-12-12:</em> Anonymous CVS は復活しました。</p>
+ </body>
+</newsitem>
+<newsitem>
+ <date>2012-11-30</date>
+ <headline>sourceforge CVS の問題</headline>
+ <body>
+  <p>Sourceforge の anonymous CVS がダウン中です。
+  いつ復旧されるかわかっておらず、また
+  <link url="http://fink.cvs.sourceforge.net/viewvc/fink/">web interface</link>
+  は更新されていません。</p>
+  <p>
+  ファイアーウォールの内側にいない人は、<code>fink selfupdate-rsync</code> は機能しているのでこれを使うといいでしょう。  
+  ファイアーウォールの内側にいる人は、短期的な対処はメンテナに直接特定パッケージの更新を尋ねることでしょう。
+  </p>
+  <p><em>Addendum: 2012-12-07:</em> Anonymous CVS is working again.</p>
+ </body>
+</newsitem> 
+<newsitem>
+ <date>2012-09-25</date>
+ <headline>fink-0.34.4 リリース</headline>
+ <body>
+  <p><code>fink-0.34.4</code> が、2012年9月25日にリリースされました。
+  このリリースは、<code>fink</code>がパッケージビルド時に使うディレクトリのパーミッションが適切であるか診断します。
+  さらに、OSX 10.7.5 と 10.8.2 を認識します。</p>
+ </body>
+</newsitem> 
+<newsitem>
+  <date>2012-07-25</date>
+  <headline>Mountain Lion リリース</headline>
+  <body>
+   <p>Mountain Lion が公開されました。
+   OS のアップデートの前に、<code>fink-0.34.0</code> 以降に更新することが理想的です。
+   さらに、 Xcode 4.4 （すくなくともコマンドラインツール）が必要です。
+   Lion でもインストールできますが、Mountain Lion には別のバージョンのコマンドラインツールがあります。
+   こちらの方をインストールすることが大事です。
+   まず、
+   is now available to the general public.  Ideally, users should update
+ to <code>fink-0.34.0</code> or later before updating their OS.  In addition, Xcode 4.4 
+ (or at least its command line tools) is required--it can be installed under Lion, but 
+ there is a separate version of the Command Line Tools for Mountain Lion, so make sure
+ to install those.  Use </p>
+  <p><code>fink list xcode</code></p>
+  <p>
+  として、Xcode 4.4 のコマンドラインツールがインストールされ、Fink が Xcode.app の位置を認識しているか確認してください。
+  CLI がないか、あるいは Xcode4.4 のものでない場合、Xcode Preferences からインストールしてください。
+  もし、<code>fink</code>が Xcode.app の位置を認識しないのであれば、</p>
+  <p><code>sudo xcode-select -switch /path/to/Xcode.app</code></p>
+  <p>として、システムツールが正しい場所を示すようにしてください。その後、</p>
+  <p><code>sudo xcodebuild -license</code></p>
+  <p>
+  と実行して、Xcode ライセンスをシステム全体、とくに fink ユーザーに適用してください。</p>
+ <p>OS をアップデートしたら、</p>
+ <p><code>fink reinstall fink</code></p>
+ <p>として 10.8 ディストリビューションにし、Lion からの Perl モジュールが動作するよう</p>
+ <p><code>fink install perl5123-core</code></p>
+ <p>としてください。</p>
+ <p>もし、OS を先にアップデートし、Mountain Lion を認識しない古い<code>fink</code>
+ を使っている場合、おそらく動作しません。
+ この場合は、
+ (1) 
+  <link url="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
+  Services.pm</link>をダウンロード 
+  (2) このファイルを /sw/lib/perl5/Fink にコピー。
+  例えば、</p>
+  <p><code>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</code></p><p>; 
+  (必要に応じて <filename>/sw</filename> and <filename>/path/to</filename> を変更); 
+  (3) 以下のコマンドを実行 </p><p><code>fink selfupdate</code></p>
+  <p> これで <code>fink-0.34.0</code> をダンロードしてインストールします。; 
+  (4) </p><p><code>fink reinstall fink</code></p>
+  <p>これで、 <code>fink</code> が 10.8 ディストリビューションを使います。
+  (5) <code>perl5123-core</code> をインストール。上述の通り。</p>
+  <p><em>追記, 2012-07-26:</em> OSアップデートは、Fink が作成したユーザーを消去する（ただしグループはそのまま）ようです。
+  上のステップに加えて、
+  (1) </p><p><code>fink configure</code></p><p> としてビルドユーザーのバックアップをし、
+  (2) </p><p><code>fink list -it passwd | cut -f2 | xargs fink reinstall</code></p><p> 
+  として、さまざまな  <code>passwd*</code> パッケージとそのユーザーを再インストールします。</p>
+  </body>
+</newsitem>
+<newsitem>
+  <date>2012-07-16</date>
+  <headline>fink-0.34.0 リリース</headline>
+  <body>
+   <p><code>fink-0.34.0</code> が、2012年7月16日にリリースされました。
+   これは、Mountain Lion (10.8) 対応の初めてのリリースとなります。</p>
+   <p>
+   Moutain Lion が公開されるまで、
+   バグレポートは<link url="mailto:fink-seed@lists.sourceforge.net">
+   Fink Seed List</link>　にまで送ってください。
+   これは、NDA違反を避けるためです。
+   </p>
+  </body>
+</newsitem>
+<newsitem>
+  <date>2012-07-05</date>
+  <headline>fink-0.33.3 リリース</headline>
+  <body>
+   <p><code>fink-0.33.3</code> が、2012年7月5日にリリースされました。
+   このリリースは、何らかの <code>su</code> または <code>sudo</code> オプションが選択された際に、
+   <code>fink</code> が <code>fink-bld</code> ユーザーとしてパッケージをビルドできないバグを修正します。
+   さらに、診断のためパッケージはファイル全体の md5 を記録します。
+   Xcode Command-Line Tools のみを使っているユーザーは、Xcode.app が見つからないというメッセージが減ります。
+   </p>
+  </body>
+</newsitem>
+<newsitem>
+  <date>2012-06-11</date>
+  <headline>fink-0.33.0 リリース</headline>
+  <body>
+   <p><code>fink-0.33.0</code> が、2012年6月6日にリリースされました。
+   このリリースは、以下のような新機能があります。</p>
+   <p>このバージョンの <code>fink</code> から、パッケージは一般ユーザーとしてビルドされることがデフォルトになります。
+   ファイルシステム中の他の場所にファイルをインストールする危険がなくなります。
+   (<code>fink-0.33.0</code> 以前は、メンテナにこの方法でテストすることに頼っていた。）
+   このモードでビルドできないパッケージを見つけた場合は、いつものとおりフィードバックをください。
+   みなさんのフィードバックによって問題をみつけて直すことができるのです。</p>
+   <p>さらに、この Fink バージョンから、メンテナ向けにオプションを追加しました。
+   In addition, we have added some additional options for maintainers in this Fink version.
+   <em>/sw/Library/Python</em> が、内蔵 Python 用のモジュールをインストールする共通場所として追加されました。
+   <code>xcodebuild</code> にBuildDepend するパッケージのために <code>xcode.app</code> のバーチャルパッケージを追加しました。
+   これのバージョンが Xcode.app のバージョンです。
+   <code>xcode</code>バーチャルパッケージは、コマンドラインツールに基づき、バージョンもこれらのバージョンです。
+   Xcode 4.3 以前は、<code>xcode</code> と <code>xcode.app</code> は同じです。
+   </p>
+  </body>
+</newsitem>
 <newsitem>
   <date>2012-04-14</date>
   <headline>fink-0.32.6 リリース</headline>
