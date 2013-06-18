@@ -1,13 +1,138 @@
 <?
 $title = "News";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2012/05/10 01:41:45';
+$cvs_date = 'Date: 2013/06/12 05:28:18';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2012-04-14%20fink-0.32.6%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-04-14: </span><span class="news-headline">fink-0.32.6 リリース</span></a><?php gray_line(); ?>
+<a name="2013-05-08%20fink-0.34.8%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2013-05-08: </span><span class="news-headline">fink-0.34.8 リリース</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.8</code> が、2013年5月8日にリリースされました。
+  このリリースは、0.34.7 での修正を拡張し、
+  <code>fink list --format=dotty-build</code>
+  を改良し、また多の改良が加えられています。</p>
+ <a name="2013-03-29%20fink-0.34.7%20released"><span class="news-date">2013-03-29: </span><span class="news-headline">fink-0.34.7 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.7</code> が、2013年3月29日にリリースされました。
+  このリリースでは、root アクセスで稀に <code>tar</code> が固まってしまう問題に対処しました。</p>
+ <a name="2013-03-16%20fink-0.34.6%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2013-03-16: </span><span class="news-headline">fink-0.34.6 リリース</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.6</code> が、2013年3月16日にリリースされました。
+  このリリースは、OS 10.8.3 に対応しています。</p>
+ <a name="2013-01-28%20fink-0.34.5%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2013-01-28: </span><span class="news-headline">fink-0.34.5 リリース</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.5</code> が、2013年1月28日にリリースされました。
+  このリリースは、 Xcode 4.6 以降の <code>clang</code> バージョンを検出する問題に対処するなど、
+  いくつかの改良があります。</p>
+ <a name="2012-12-10%20%E3%81%99%E3%81%B9%E3%81%A6%E3%81%AE%20SourceForge%20%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E5%95%8F%E9%A1%8C"><span class="news-date">2012-12-10: </span><span class="news-headline">すべての SourceForge サービスの問題</span></a><?php gray_line(); ?>
+  <p>Sourceforge はダウン中です。 今後のお知らせは、<a href="https://twitter.com/sfnet_ops">
+  the SF.net Operations Twitter feed</a> と 
+<a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage/">
+  the Finkers blog</a> をご覧ください。</p>
+  <p>
+  ファイアーウォールの内側にいない人は、<code>fink selfupdate-rsync</code> は機能しているのでこれを使うといいでしょう。
+  ファイアーウォールの内側にいる人は、短期的な対処はメンテナに直接特定パッケージの更新を尋ねることでしょう。
+  </p>
+ <p>The mailing lists and bug tracker are also down, so as an interim solution
+    please file bug reports for unmaintained packages (only) as comments to 
+    メーリングリストとバグトラッカーもダウン中です。
+    メンテナンスされていないパッケージ（のみ）の暫定的なバグレポートは、
+    <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage">
+    the Finkers entry</a>に報告してください。
+    メンテナンスされているパッケージは、メンテナに報告してください。 ‎</p>
+  <p><b>追記: 2012-12-12:</b> Anonymous CVS は復活しました。</p>
+ <a name="2012-11-30%20sourceforge%20CVS%20%E3%81%AE%E5%95%8F%E9%A1%8C"><span class="news-date">2012-11-30: </span><span class="news-headline">sourceforge CVS の問題</span></a><?php gray_line(); ?>
+  <p>Sourceforge の anonymous CVS がダウン中です。
+  いつ復旧されるかわかっておらず、また
+  <a href="http://fink.cvs.sourceforge.net/viewvc/fink/">web interface</a>
+  は更新されていません。</p>
+  <p>
+  ファイアーウォールの内側にいない人は、<code>fink selfupdate-rsync</code> は機能しているのでこれを使うといいでしょう。  
+  ファイアーウォールの内側にいる人は、短期的な対処はメンテナに直接特定パッケージの更新を尋ねることでしょう。
+  </p>
+  <p><b>Addendum: 2012-12-07:</b> Anonymous CVS is working again.</p>
+ <a name="2012-09-25%20fink-0.34.4%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-09-25: </span><span class="news-headline">fink-0.34.4 リリース</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.4</code> が、2012年9月25日にリリースされました。
+  このリリースは、<code>fink</code>がパッケージビルド時に使うディレクトリのパーミッションが適切であるか診断します。
+  さらに、OSX 10.7.5 と 10.8.2 を認識します。</p>
+ <a name="2012-07-25%20Mountain%20Lion%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-07-25: </span><span class="news-headline">Mountain Lion リリース</span></a><?php gray_line(); ?>
+   <p>Mountain Lion が公開されました。
+   OS のアップデートの前に、<code>fink-0.34.0</code> 以降に更新することが理想的です。
+   さらに、 Xcode 4.4 （すくなくともコマンドラインツール）が必要です。
+   Lion でもインストールできますが、Mountain Lion には別のバージョンのコマンドラインツールがあります。
+   こちらの方をインストールすることが大事です。
+   まず、
+   is now available to the general public.  Ideally, users should update
+ to <code>fink-0.34.0</code> or later before updating their OS.  In addition, Xcode 4.4 
+ (or at least its command line tools) is required--it can be installed under Lion, but 
+ there is a separate version of the Command Line Tools for Mountain Lion, so make sure
+ to install those.  Use </p>
+  <p><code>fink list xcode</code></p>
+  <p>
+  として、Xcode 4.4 のコマンドラインツールがインストールされ、Fink が Xcode.app の位置を認識しているか確認してください。
+  CLI がないか、あるいは Xcode4.4 のものでない場合、Xcode Preferences からインストールしてください。
+  もし、<code>fink</code>が Xcode.app の位置を認識しないのであれば、</p>
+  <p><code>sudo xcode-select -switch /path/to/Xcode.app</code></p>
+  <p>として、システムツールが正しい場所を示すようにしてください。その後、</p>
+  <p><code>sudo xcodebuild -license</code></p>
+  <p>
+  と実行して、Xcode ライセンスをシステム全体、とくに fink ユーザーに適用してください。</p>
+ <p>OS をアップデートしたら、</p>
+ <p><code>fink reinstall fink</code></p>
+ <p>として 10.8 ディストリビューションにし、Lion からの Perl モジュールが動作するよう</p>
+ <p><code>fink install perl5123-core</code></p>
+ <p>としてください。</p>
+ <p>もし、OS を先にアップデートし、Mountain Lion を認識しない古い<code>fink</code>
+ を使っている場合、おそらく動作しません。
+ この場合は、
+ (1) 
+  <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
+  Services.pm</a>をダウンロード 
+  (2) このファイルを /sw/lib/perl5/Fink にコピー。
+  例えば、</p>
+  <p><code>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</code></p><p>; 
+  (必要に応じて <code>/sw</code> and <code>/path/to</code> を変更); 
+  (3) 以下のコマンドを実行 </p><p><code>fink selfupdate</code></p>
+  <p> これで <code>fink-0.34.0</code> をダンロードしてインストールします。; 
+  (4) </p><p><code>fink reinstall fink</code></p>
+  <p>これで、 <code>fink</code> が 10.8 ディストリビューションを使います。
+  (5) <code>perl5123-core</code> をインストール。上述の通り。</p>
+  <p><b>追記, 2012-07-26:</b> OSアップデートは、Fink が作成したユーザーを消去する（ただしグループはそのまま）ようです。
+  上のステップに加えて、
+  (1) </p><p><code>fink configure</code></p><p> としてビルドユーザーのバックアップをし、
+  (2) </p><p><code>fink list -it passwd | cut -f2 | xargs fink reinstall</code></p><p> 
+  として、さまざまな  <code>passwd*</code> パッケージとそのユーザーを再インストールします。</p>
+  <a name="2012-07-16%20fink-0.34.0%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-07-16: </span><span class="news-headline">fink-0.34.0 リリース</span></a><?php gray_line(); ?>
+   <p><code>fink-0.34.0</code> が、2012年7月16日にリリースされました。
+   これは、Mountain Lion (10.8) 対応の初めてのリリースとなります。</p>
+   <p>
+   Moutain Lion が公開されるまで、
+   バグレポートは<a href="mailto:fink-seed@lists.sourceforge.net">
+   Fink Seed List</a>　にまで送ってください。
+   これは、NDA違反を避けるためです。
+   </p>
+  <a name="2012-07-05%20fink-0.33.3%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-07-05: </span><span class="news-headline">fink-0.33.3 リリース</span></a><?php gray_line(); ?>
+   <p><code>fink-0.33.3</code> が、2012年7月5日にリリースされました。
+   このリリースは、何らかの <code>su</code> または <code>sudo</code> オプションが選択された際に、
+   <code>fink</code> が <code>fink-bld</code> ユーザーとしてパッケージをビルドできないバグを修正します。
+   さらに、診断のためパッケージはファイル全体の md5 を記録します。
+   Xcode Command-Line Tools のみを使っているユーザーは、Xcode.app が見つからないというメッセージが減ります。
+   </p>
+  <a name="2012-06-11%20fink-0.33.0%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-06-11: </span><span class="news-headline">fink-0.33.0 リリース</span></a><?php gray_line(); ?>
+   <p><code>fink-0.33.0</code> が、2012年6月6日にリリースされました。
+   このリリースは、以下のような新機能があります。</p>
+   <p>このバージョンの <code>fink</code> から、パッケージは一般ユーザーとしてビルドされることがデフォルトになります。
+   ファイルシステム中の他の場所にファイルをインストールする危険がなくなります。
+   (<code>fink-0.33.0</code> 以前は、メンテナにこの方法でテストすることに頼っていた。）
+   このモードでビルドできないパッケージを見つけた場合は、いつものとおりフィードバックをください。
+   みなさんのフィードバックによって問題をみつけて直すことができるのです。</p>
+   <p>さらに、この Fink バージョンから、メンテナ向けにオプションを追加しました。
+   In addition, we have added some additional options for maintainers in this Fink version.
+   <b>/sw/Library/Python</b> が、内蔵 Python 用のモジュールをインストールする共通場所として追加されました。
+   <code>xcodebuild</code> にBuildDepend するパッケージのために <code>xcode.app</code> のバーチャルパッケージを追加しました。
+   これのバージョンが Xcode.app のバージョンです。
+   <code>xcode</code>バーチャルパッケージは、コマンドラインツールに基づき、バージョンもこれらのバージョンです。
+   Xcode 4.3 以前は、<code>xcode</code> と <code>xcode.app</code> は同じです。
+   </p>
+  <a name="2012-04-14%20fink-0.32.6%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-04-14: </span><span class="news-headline">fink-0.32.6 リリース</span></a><?php gray_line(); ?>
    <p>
     <code>fink-0.32.6</code> が、2012年4月14日にリリースされました。
     このリリースでは、<code>BuildAsNobody: false</code> というパッケージ記述フィールドが追加されました。

@@ -1,20 +1,12 @@
-<a name="2012-04-14%20fink-0.32.6%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-04-14: </span><span class="news-headline">fink-0.32.6 リリース</span></a><?php gray_line(); ?>
-   <p>
-    <code>fink-0.32.6</code> が、2012年4月14日にリリースされました。
-    このリリースでは、<code>BuildAsNobody: false</code> というパッケージ記述フィールドが追加されました。
-    この場合、<code>fink --build-as-nobody</code> でパッケージがビルドできないことを示します。
-    現在のところ、これ自体は何も影響がありませんが、<code>fink-0.33.0</code> 以降では
-    デフォルトでは権限のないユーザーでビルドするようになり、このフィールドがある場合は root でビルドします。
-   </p>
-  <a name="2012-04-09%20fink-0.32.5.5%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-04-09: </span><span class="news-headline">fink-0.32.5.5 リリース</span></a><?php gray_line(); ?>
-   <p>
-    <code>fink-0.32.5.5</code> が、2012年4月9日にリリースされました。
-    <b>10.5/PowerPC</b> で bootstrap する際の問題に対処するバグ修正です。
-   </p>
-  <a name="2012-04-08%20fink-0.32.5.4%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2012-04-08: </span><span class="news-headline">fink-0.32.5.4 リリース</span></a><?php gray_line(); ?>
-   <p>
-    <code>fink-0.32.5.4</code> が、2012年4月8日にリリースされました。
-    これにより、Xcode Command Line Tools に対して bootstrap ができるようになります。
-    パッケージによっては、ビルドに完全な Xcode を必要とする場合もあることに注意してください。
-   </p>
-  
+<a name="2013-05-08%20fink-0.34.8%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2013-05-08: </span><span class="news-headline">fink-0.34.8 リリース</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.8</code> が、2013年5月8日にリリースされました。
+  このリリースは、0.34.7 での修正を拡張し、
+  <code>fink list --format=dotty-build</code>
+  を改良し、また多の改良が加えられています。</p>
+ <a name="2013-03-29%20fink-0.34.7%20released"><span class="news-date">2013-03-29: </span><span class="news-headline">fink-0.34.7 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.7</code> が、2013年3月29日にリリースされました。
+  このリリースでは、root アクセスで稀に <code>tar</code> が固まってしまう問題に対処しました。</p>
+ <a name="2013-03-16%20fink-0.34.6%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2013-03-16: </span><span class="news-headline">fink-0.34.6 リリース</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.6</code> が、2013年3月16日にリリースされました。
+  このリリースは、OS 10.8.3 に対応しています。</p>
+ 
