@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2013/06/21 05:36:31 $';
+$cvs_date = '$Date: 2013/06/21 05:39:28 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -97,7 +97,10 @@ X11 のバグ修正と機能向上を得るため、
 これ以降の更新は、
 <a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page</a>
 から入手することができます。
-(我々は、現在 10.6 と 10.7 での Xquartz をサポートしていません。)</p>
+我々は、現在 10.6 と 10.7 での Xquartz をサポートしていません。<br>
+Xcode は、パッケージのビルド問題を修正するため、
+3.1以降、できれば 3.1.4 をインストールしてください。
+</p>
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 <h1>リソース</h1>
 
