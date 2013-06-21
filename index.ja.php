@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2013/02/05 23:46:04 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2013/06/21 05:36:31 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -52,22 +52,44 @@ require dirname(__FILE__) . "/news/news.ja.inc";
 include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
-<p>Fink は、現在 OS X 10.7 (Lion), 10.6 (SnowLeopard),
+<p>Fink は、現在 OS X 10.8 (Mountain Lion), 10.7 (Lion), 10.6 (SnowLeopard),
 10.5 (Leopard) をサポートし、
 またこれより前のバージョンの OS X は、公式アップデートは行わないものの、動作します。
 インストール方法は、
 <a href="download/srcdist.php">ソースリリースのページ</a>
 に書かれています。</p>
 
-<p>Fink の前に XCode をインストールしてください。
-10.6 ユーザは、XCode を 3.2.6 以上にしない方がよいでしょう。
-逆に、10.7 ユーザは XCode を 4.1 またはそれ以降に更新しなければなりません
-(AppStore からフリーダウンロード)。
-更新の前に古い XCode をインストール済みの場合、
-<i>/Developer/Library/uninstall-devtools</i> を実行して
-<b>アンインストール</b>する必要があります。
-XCode のバージョンは、 <i>xcodebuild -version</i> とすることでわかります。</p>
-
+<p>Xcode を Fink より先にインストールする必要があります。</p>  
+<strong>10.8 サポート:</strong> 
+10.8 ユーザは、(AppStore からの無料ダウンロードで)
+Xcode 4.4 以上をインストールするか、
+あるいは少なくとも
+Command Line Tools for Xcode 4.4 (<a href="http://connect.apple.com">Apple</a> からダウンロード可能
+または Xcode (4.6.1を推奨) 環境設定からインストール可能) 
+をインストールする必要があります。
+ただし、4.3 より前の Xcode がある場合は、
+<i>/Developer/Library/uninstall-devtools</i> を実行して <b>アンインストール</b> する必要があります。
+現在の Xcode バージョンは、
+<i>xcodebuild -version</i>
+でわかります。</p>
+<p>X11 が必要なら、
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>
+から Xquartz-2.7.0 以降をインストールしてください。</p>
+<strong>10.7 サポート:</strong> 
+10.7 ユーザは、Xcode を 4.1 以降　(AppStore から無料ダウンロード) (4.5.2 以降を推奨) 、
+あるいは少なくとも
+Command Line Tools for Xcode 4.3 (<a href="http://connect.apple.com">Apple</a> からダウンロード可能
+または Xcode (4.3以降) 環境設定からインストール可能) 
+をインストールする必要があります。
+上の <strong>10.8</strong> の例を参考に、バージョンを確認して必要ならアンインストールしてください。</p>
+<p>10.7 では Xquart をサポートしていません。
+Apple の公式 X11 を削除しないよう注意してください。</p>
+<strong>10.6 サポート:</strong>
+10.6 ユーザは、Xcode を 3.2.6 または 4.x 開発者プレビューを払っている場合は 4.2.1 にアップグレードしてください。
+4.0.2 はリンカにバグがあり、いくつかのパッケージのビルドができないようです。
+上の <strong>10.8</strong> の例を参考に、バージョンを確認して必要ならアンインストールしてください。</p>
+<p>10.6 では Xquart をサポートしていません。
+Apple の公式 X11 を削除しないよう注意してください。</p>
 <p><strong>10.5 サポート:</strong> 
 X11 のバグ修正と機能向上を得るため、
 ソフトウェア・アップデート を使用して、
