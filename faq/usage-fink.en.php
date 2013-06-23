@@ -1,7 +1,7 @@
 <?
 $title = "F.A.Q. - Fink Usage";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2013/06/23 22:49:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=en" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=en" title="Upgrading Fink (version-specific troubleshooting)">';
 
 
@@ -54,18 +54,24 @@ include_once "header.en.inc";
     </a>
     <a name="removing">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.6: How can I uninstall all of Fink?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Almost all files installed by Fink are in /sw (or wherever you
-        chose to install it). Thus in order to get rid of Fink, enter this
-        command:</p><pre>sudo rm -rf /sw</pre><p>The only exception to this rule is XFree86 or X.org. If you installed
-        an X server through Fink (i.e., you installed the <code>xfree86</code>,
-        <code>xfree86-rootless</code>, or <code>xorg</code> packages, instead of using
-        <code>system-xfree86</code>) and want to remove it, you will need
-        additionally to enter this:</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>If you aren't planning to reinstall Fink you also will want to
+      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Almost all files installed by Fink are in <code>/sw</code>
+        (or wherever you chose to install it), except for a few exceptions. 
+        Thus, in order to get rid of Fink, enter this command:</p><pre>
+fink remove --recursive daemonic xinitrc
+sudo rm -rf /sw
+		</pre><p>If you aren't planning to reinstall Fink you also will want to
         remove the "<code>source /sw/bin/init.csh</code>" line you added to
         your <code>.cshrc</code> file or the "<code>source
         /sw/bin/init.sh</code>" line you added to your
         <code>.bashrc</code> file, whichever is appropriate to your
-        setup, using a text editor.</p></div>
+        setup, using a text editor.  If you had the <code>xinitrc</code> package
+        installed, then you will want to restore the original 
+        <code>/usr/X11/lib/X11/xinit/xinitrc</code>, which has been backed up
+        as <code>/usr/X11/lib/X11/xinit/xinitrc.YYYYMMDDhhmm</code>, 
+        i.e. the extension has a year, month, date, hour, and minute).  If you have more
+        than one of these, the original one normally does <b>not</b> mention 
+        <code>sys-xinitrc-fink</code>.  Once you've found the right one, you can use</p><pre>sudo mv /usr/X11/lib/X11/xinit/xinitrc.YYYYMMDDhhmm  \
+	/usr/X11/lib/X11/xinit/xinitrc</pre><p>replacing YYMMDDhhmm with the actual extension on your system.</p></div>
     </a>
     <a name="bindist">
       <div class="question"><p><b><? echo FINK_Q ; ?>5.7: The package database at the website lists package xxx, but apt-get
