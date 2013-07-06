@@ -5,8 +5,37 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2013-06-10T19:52:49-04:00</dc:date>
+    <dc:date>2013-07-05T17:04:29-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5">
+      <title>fink-0.34.9 and fink-0.35.0 released.  EOL for OS 10.5</title>
+      <link>http://fink.sourceforge.net/news/#2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5</link>
+      <guid>http://fink.sourceforge.net/news/#2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5</guid>
+      <description>
+		<![CDATA[
+	
+  <p>fink-0.34.9 and fink-0.35.0 were released on 5 July, 2013.
+  These releases contain improvements to tar file extraction and Java detection., along
+  with other fixes and enhancements.  fink-0.35.0 also formally recognizes
+  OS 10.8.4.</p>
+  <p>fink-0.34.9 is the last version that supports OS 10.5 (Leopard).  The
+  Fink Project has officially discontinued support for that OS version.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>fink-0.34.9 and fink-0.35.0 were released on 5 July, 2013.
+  These releases contain improvements to tar file extraction and Java detection., along
+  with other fixes and enhancements.  fink-0.35.0 also formally recognizes
+  OS 10.8.4.</p>
+  <p>fink-0.34.9 is the last version that supports OS 10.5 (Leopard).  The
+  Fink Project has officially discontinued support for that OS version.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2013-05-08%20fink-0.34.8%20released">
       <title>fink-0.34.8 released</title>
       <link>http://fink.sourceforge.net/news/#2013-05-08%20fink-0.34.8%20released</link>
@@ -472,39 +501,6 @@
     actually require the full Xcode to build.
    </p>
   
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-03-27%20fink-0.32.4.1%20released">
-      <title>fink-0.32.4.1 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-03-27%20fink-0.32.4.1%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-03-27%20fink-0.32.4.1%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.32.4.1 was released on 27 March, 2012.  This
-      release allows users to install Xcode 4.3.x in an arbitrary location.</p>
-      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
-      install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</p>
-      <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
-      <p>fink-0.32.4.1 also enhances the checksumming operation under
-      fink fetch.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.32.4.1 was released on 27 March, 2012.  This
-      release allows users to install Xcode 4.3.x in an arbitrary location.</p>
-      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
-      install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</p>
-      <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
-      <p>fink-0.32.4.1 also enhances the checksumming operation under
-      fink fetch.</p>
-    
 		]]>
 	</content:encoded>
     </item>

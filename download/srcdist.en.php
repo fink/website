@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/05/08 16:29:06 $';
+$cvs_date = '$Date: 2013/07/06 00:04:52 $';
 
 include "header.inc";
 ?>
@@ -19,15 +19,20 @@ have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p>The current version, <em>fink-0.34.8</em>, was officially released on
-2013-05-08
+<p>The current version, <em>fink-0.35.0</em>, was officially released on
+2013-07-05
 .</p>
 
 <ul>
      <li>
-For OS X 10.5-10.8, use <a href="http://downloads.sourceforge.net/fink/fink-0.34.8.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.34.8</a>
-- 1264K, .tar.gz format
+For OS X 10.6-10.8, use <a href="http://downloads.sourceforge.net/fink/fink-0.35.0.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.35.0</a>
+- 1260K, .tar.gz format
+     </li>
+     <li>
+For OS X 10.5, use <a href="http://downloads.sourceforge.net/fink/fink-0.34.9.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.34.9</a>
+- 1268K, .tar.gz format
      </li>
      <li>
 For OS X 10.4, use <a href="http://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz"
@@ -53,15 +58,15 @@ via running the following commands in a terminal window
 
 <pre>cd $HOME/Downloads</pre>
 <p>followed by</p>
-<pre>tar -xvf fink-0.34.8.tar.gz</pre>
+<pre>tar -xvf fink-0.35.0.tar.gz</pre>
 <p>or</p>
-<pre>tar -xvf fink-0.34.8.tar</pre>
+<pre>tar -xvf fink-0.35.0.tar</pre>
 <p>where the choice depends on whether the source has already been partially unpacked, 
 e.g. by Safari.</p>
 
 <p>Then run the following commands in a terminal window:</p>
 
-<pre>cd fink-0.34.8
+<pre>cd fink-0.35.0
 ./bootstrap</pre>
 
 <p>to start the boostrapping operation, which will install the Fink base
