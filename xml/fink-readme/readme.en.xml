@@ -4,7 +4,7 @@
 <article filename="readme" lang="en">
 <title>Fink ReadMe</title>
 <shorttitle>ReadMe</shorttitle>
-<cvsid>$Id: readme.en.xml,v 1.7 2013/07/09 01:58:17 alexkhansen Exp $</cvsid>
+<cvsid>$Id: readme.en.xml,v 1.8 2013/07/09 02:28:18 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -45,10 +45,14 @@ An installed Mac OS X system, version 10.6 or later.
 Earlier versions will <em>not</em> work with fink-&fink_tool_version;.
 </p></li>
 <li><p>
-Development tools.
-On OS 10.6 and earlier, install the Developer.pkg package from the Developer Tools CD. 
-If on 10.7 or later, download Xcode from the Mac App Store, and then install the "Command Line Tools for Xcode" from Xcode's preferences.
-Make sure that the tools you install match your Mac OS X version. 
+Development tools.  For 10.6, you should install Xcode 3.2.6 or 4.2, 
+which can be downloaded from connect.apple.com after registering.
+For 10.7 and 10.8, installing the Xcode Command Line Tools is mandatory to use 
+the most current build applications. This can be installed either by downloading
+it directly via connect.apple.com or through the Xcode application via the Components 
+page of the Downloads tab of the Preferences.  On 10.7 one can install an earlier 
+monolithic Xcode (4.2.1 and earlier), but this isn't recommended.</p>
+<p>Make sure that the tools you install match your Mac OS X version. 
 </p></li>
 <li><p>
 Internet access.
