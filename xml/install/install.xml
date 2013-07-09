@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.43 2013/07/09 02:21:51 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.44 2013/07/09 02:28:43 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -53,7 +53,8 @@ For 10.7 and 10.8, installing the Xcode Command Line Tools is mandatory to use
 the most current build applications. This can be installed either by downloading
 it directly via connect.apple.com or through the Xcode application via the Components 
 page of the Downloads tab of the Preferences.  On 10.7 one can install an earlier 
-monolithic Xcode (4.2.1 and earlier), but this isn't recommended.
+monolithic Xcode (4.2.1 and earlier), but this isn't recommended.</p>
+<p>Make sure that the tools you install match your Mac OS X version. 
 </p></li>
 <li><p>On 10.7 and 10.8 you will need to install Java.  Entering</p>
 <codeblock>javac</codeblock>
