@@ -4,12 +4,12 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.39 2013/06/23 23:10:59 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.40 2013/07/09 02:00:40 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
 These are the installation instructions for the "source" distribution
-based on <code>fink-&fink_tool_version;</code>, intended for use with OS X v.10.5 and later.</p>
+based on <code>fink-&fink_tool_version;</code>, intended for use with OS X v.10.6 and later.</p>
 <p>
 This document does not apply to the "<link url="/download/index.php">binary</link>" distribution.
 </p>
@@ -44,7 +44,7 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.5 or later.
+An installed Mac OS X system, version 10.6 or later.
 </p></li>
 <li><p>
 Development tools.
@@ -489,11 +489,9 @@ is a useful place to get more information about how to use <code>fink</code>.
 <section name="x11"><title>Getting X11 Sorted Out</title>
 <p>
 Fink uses virtual packages to declare dependencies on X11.  As of
-OS 10.5, we don't provide any packages of our own.  The supported options are:
+OS 10.6, we don't provide any packages of our own.  The supported options are:
 </p>
 <ul>
-<li><p>10.5:  Either Apple's standard X11 or XQuartz-2.6.3 or earlier.  Note:  if you install
-XQuartz-2.4 or later you will quite likely need to reinstall Fink if you update to 10.6.</p></li>
 <li><p>10.6:  Only Apple's standard X11, since XQuartz installs in a different directory tree
 (<filename>/opt/X11</filename>) than the standard X11 (<filename>/usr/X11</filename>) for
 10.6 and later so that they can coexist.</p></li>
