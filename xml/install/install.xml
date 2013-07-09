@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.41 2013/07/09 02:08:09 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.42 2013/07/09 02:11:40 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -491,7 +491,7 @@ OS 10.6, we don't provide any packages of our own.  The supported options are:
 (<filename>/opt/X11</filename>) than the standard X11 (<filename>/usr/X11</filename>) for
 10.6 and later so that they can coexist.</p></li>
 <li><p>10.7:  Only Apple's standard X11.</p></li>
-<li><p>10.8:  Only Xquartz 2.7 and later.</p></li>
+<li><p>10.8:  Only Xquartz 2.7.2 and later.</p></li>
 </ul>
 <p>
 For more information on installing and running X11, refer to the
