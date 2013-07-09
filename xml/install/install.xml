@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.42 2013/07/09 02:11:40 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.43 2013/07/09 02:21:51 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -47,8 +47,7 @@ You need:
 An installed Mac OS X system, version 10.6 or later.
 </p></li>
 <li><p>
-Development tools.
-Development tools. For 10.6, you should install Xcode 3.2.6 or 4.2, 
+Development tools.  For 10.6, you should install Xcode 3.2.6 or 4.2, 
 which can be downloaded from connect.apple.com after registering.
 For 10.7 and 10.8, installing the Xcode Command Line Tools is mandatory to use 
 the most current build applications. This can be installed either by downloading
@@ -324,7 +323,7 @@ You need:
 </p>
 <ul>
 <li><p>
-Development tools. For 10.6, you should install Xcode 3.2.6 or 4.2, 
+Development tools.  For 10.6, you should install Xcode 3.2.6 or 4.2, 
 which can be downloaded from connect.apple.com after registering.
 For 10.7 and 10.8, installing the Xcode Command Line Tools is mandatory to use 
 the most current build applications. This can be installed either by downloading
