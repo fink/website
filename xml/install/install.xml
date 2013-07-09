@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.40 2013/07/09 02:00:40 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.41 2013/07/09 02:08:09 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -48,15 +48,13 @@ An installed Mac OS X system, version 10.6 or later.
 </p></li>
 <li><p>
 Development tools.
-For OS X versions up to 10.6, you should install the newest version
-of Xcode available for your system, which can be downloaded from
-connect.apple.com after registering.
-For 10.7 and 10.8, installing the
-Xcode Command Line Tools is mandatory to use the most current build applications.
-This can be installed either by downloading it directly via connect.apple.com
-or through the Xcode application via the Components page of the Downloads tab of
-the Preferences.  On 10.7 one can install an earlier monolithic Xcode (4.2.1 and earlier),
-but this isn't recommended.
+Development tools. For 10.6, you should install Xcode 3.2.6 or 4.2, 
+which can be downloaded from connect.apple.com after registering.
+For 10.7 and 10.8, installing the Xcode Command Line Tools is mandatory to use 
+the most current build applications. This can be installed either by downloading
+it directly via connect.apple.com or through the Xcode application via the Components 
+page of the Downloads tab of the Preferences.  On 10.7 one can install an earlier 
+monolithic Xcode (4.2.1 and earlier), but this isn't recommended.
 </p></li>
 <li><p>On 10.7 and 10.8 you will need to install Java.  Entering</p>
 <codeblock>javac</codeblock>
@@ -326,16 +324,13 @@ You need:
 </p>
 <ul>
 <li><p>
-Development tools.
-For OS X versions up to 10.6, you should install the newest version
-of Xcode available for your system, which can be downloaded from
-connect.apple.com after registering.
-For 10.7 and 10.8, installing the
-Xcode Command Line Tools is mandatory to use the most current build applications.
-This can be installed either by downloading it directly via connect.apple.com
-or through the Xcode application via the Components page of the Downloads tab of
-the Preferences.  On 10.7 one can install an earlier monolithic Xcode (4.2.1 and earlier),
-but this isn't recommended.
+Development tools. For 10.6, you should install Xcode 3.2.6 or 4.2, 
+which can be downloaded from connect.apple.com after registering.
+For 10.7 and 10.8, installing the Xcode Command Line Tools is mandatory to use 
+the most current build applications. This can be installed either by downloading
+it directly via connect.apple.com or through the Xcode application via the Components 
+page of the Downloads tab of the Preferences.  On 10.7 one can install an earlier 
+monolithic Xcode (4.2.1 and earlier), but this isn't recommended.
 </p></li>
 <li><p>On 10.7 and 10.8 you will need to install Java.  Entering</p>
 <codeblock>javac</codeblock>
