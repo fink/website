@@ -1,7 +1,7 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/06/12 03:33:33 $';
+$cvs_date = '$Date: 2013/09/27 16:44:16 $';
 
 include "header.inc";
 ?>
@@ -41,8 +41,10 @@ this list.</p>
 <li>Augusto Devegili (<i>monipol</i>) </li>
 <li>Alexander Hansen  (<i>akh</i>) </li>
 <li>Max Horn (<i>Fingolfin</i>)</li>
+<li>Daniel Johnson</li>
 <li>Daniel Macks (<i>dmacks</i>)</li>
 <li>David R. Morrison (<i>drm</i>)</li>
+<li>Hanspeter Niederstrasser (<i>Snaggle</i>)</li>
 <li>Benjamin Reed (<i>RangerRick</i>)</li>
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
 </ul>
@@ -81,7 +83,6 @@ this list.</p>
 <li>Ben Hines (<i>Clef</i>)</li>
 <li>Hisashi Todd Fujinaka (<i>htodd</i>)</li>
 <li>David H&#246;hn aka. Darian Lanx (<i>dmalloc</i>)</li>
-<li>Daniel Johnson</li>
 <li>Carsten Klapp</li>
 <li>Killian Koepsell</li> 
 <li>Mamoru Komachi (<i>usata</i>)</li>
@@ -92,7 +93,6 @@ this list.</p>
 <li>Mathias Meyer</li>
 <li>Remi Mommsen</li>
 <li>Matthias Neeracher (<i>Murr</i>)</li>
-<li>Hanspeter Niederstrasser (<i>Snaggle</i>)</li>
 <li>Matthias Ringwald (<i>freckle</i>)</li>
 <li>Andrew Rohl</li> 
 <li>Lars Rosengreen</li>
