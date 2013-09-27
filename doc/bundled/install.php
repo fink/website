@@ -7,10 +7,10 @@ $metatags = '<link rel="contents" href="install.php" title="Installation Content
 include_once "header.inc";
 ?>
 
-<h1>Fink 0.35.1 Installation</h1>
+<h1>Fink 0.35.2 Installation</h1>
 <p>
 These are the installation instructions for the "source" distribution
-based on <code>fink-0.35.1</code>, intended for use with OS X v.10.6 and later.</p>
+based on <code>fink-0.35.2</code>, intended for use with OS X v.10.6 and later.</p>
 <p>
 This document does not apply to the "<a href="/download/index.php">binary</a>" distribution.
 </p>
