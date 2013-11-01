@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/11/01 04:28:18 $';
+$cvs_date = '$Date: 2013/11/01 04:51:19 $';
 
 include "header.inc";
 ?>
@@ -40,14 +40,17 @@ onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
      </li>
 </ul>
 
-<p>You will need to install the Command Line Tools for Xcode, which can be done as follows.</p>
+<p>You will need to install the proper Command Line Tools for Xcode for your system, (cf. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) which can be done as follows:</p>
 <ul><p><em>10.9 only:  </em>Run <code>xcode-select --install</code> from the Terminal and select the Install button.</p><li>
 <li><p><em>10.9-10.7:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
 <li><p><em>10.9-10.7:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
 <li><p><em>10.6:  </em>Install the full Xcode.</p></li>
 </ul>
+<p>If you install the full Xcode on 10.7-10.9, you will also want to run:</p>
+<pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
+<p>where you should replace <em>/path/to</em> with the actual path to the Xcode app.</p>
 <p></p>
-<p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
+<p>Once you've got the Tools, unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via running the following commands in a terminal window
 (assuming the default download location--you'll need to match these commands to your own setup):</p>
 
