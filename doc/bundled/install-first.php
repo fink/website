@@ -1,7 +1,7 @@
 <?
 $title = "Installation - First Time";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/07/09 02:28:43';
+$cvs_date = 'Date: 2013/11/01 02:27:03';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading Fink"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
 include_once "header.inc";
@@ -17,17 +17,22 @@ You need:
 </p>
 <ul>
 <li><p>
-Development tools.  For 10.6, you should install Xcode 3.2.6 or 4.2, 
-which can be downloaded from connect.apple.com after registering.
-For 10.7 and 10.8, installing the Xcode Command Line Tools is mandatory to use 
+Development tools.  For 10.6, you should install Xcode 3.2.6, 
+which can be downloaded from connect.apple.com after registering.  
+For 10.7-10.9, installing the Xcode Command Line Tools is mandatory to use 
 the most current build applications. This can be installed either by downloading
-it directly via connect.apple.com or through the Xcode application via the Components 
-page of the Downloads tab of the Preferences.  On 10.7 one can install an earlier 
-monolithic Xcode (4.2.1 and earlier), but this isn't recommended.
-</p></li>
-<li><p>On 10.7 and 10.8 you will need to install Java.  Entering</p>
+it directly via connect.apple.com, through the Xcode application via the Components 
+page of the Downloads tab of the Preferences, or on 10.9 by running the</p>
+<pre>xcode-select --install</pre> 
+<p>command and choosing the   
+<b>Install</b> button in the window that pops up, or you can install the full
+Xcode if you prefer.  You may also need to use this command to update the tools,
+especially if you're having build problems.</p>
+<p>If you're doing a manual download, make sure that the tools you install match your Mac OS X version. </p></li>
+<li><p>On 10.7-10.9 you will need to install Java.  Entering</p>
 <pre>javac</pre>
-<p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
+<p>from a Terminal.app window should suffice to make the system download it for you (10.7, 10.9)
+or open up a browser window from which you can download the latest Java JDK (10.8).</p></li>
 <li><p>
 Many other things that come with Mac OS X and the Developer Tools.
 This includes perl and curl.
@@ -62,19 +67,19 @@ Using symlinks to trick the bootstrap script simply won't work.
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-First, you need to unpack the fink-0.35.2.tar.gz tarball (it might also show up as <code>fink-0.35.2.tar</code> if you
+First, you need to unpack the fink-0.36.0.tar.gz tarball (it might also show up as <code>fink-0.36.0.tar</code> if you
 used Safari to download it).  So, in a terminal window, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xf fink-0.35.2.tar.gz</pre>
+<pre>tar xf fink-0.36.0.tar.gz</pre>
 <p>
-You now have a directory named fink-0.35.2.
-Change to it with <code>cd fink-0.35.2</code>.
+You now have a directory named fink-0.36.0.
+Change to it with <code>cd fink-0.36.0</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
 bootstrap.
-So, to start installation, go to the fink-0.35.2 directory and run
+So, to start installation, go to the fink-0.36.0 directory and run
 this command:
 </p>
 <pre>./bootstrap</pre>
@@ -115,8 +120,8 @@ Don't worry if you see some packages apparently being compiled twice.
 This is required because to build a binary package of the package
 manager, you first must have the package manager available.
 </p>
-<p>Note:  on 10.8, after you start the install process you may see
-dialog windows asking whether you want to install Xquartz.
+<p>Note:  on 10.8 and 10.9, after you start the install process you may see
+dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
 <p>
@@ -184,7 +189,8 @@ OS 10.6, we don't provide any packages of our own.  The supported options are:
 (<code>/opt/X11</code>) than the standard X11 (<code>/usr/X11</code>) for
 10.6 and later so that they can coexist.</p></li>
 <li><p>10.7:  Only Apple's standard X11.</p></li>
-<li><p>10.8:  Only Xquartz 2.7.2 and later.</p></li>
+<li><p>10.8:  Only XQuartz 2.7.2 and later.</p></li>
+<li><p>10.9:  Only XQuartz 2.7.4 and later.</p></li>
 </ul>
 <p>
 For more information on installing and running X11, refer to the

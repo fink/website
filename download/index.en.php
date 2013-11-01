@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2012/09/26 02:04:23 $';
+$cvs_date = '$Date: 2013/11/01 04:28:18 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -22,7 +22,7 @@ with the binary release.
 </p>
 <ol>
 <li>
-<p>10.6, 10.7, and 10.8 users:  There is not currently a binary installer, and you will
+<p>10.6, 10.7, 10.8, and 10.9 users:  There is not currently a binary installer, and you will
 need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 10.5 users:  
 Download the installer disk image:<br>
@@ -99,24 +99,29 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
 
 <h2 id="additionaldownloads">Additional Things to Install</h2>
 <h3>Xcode Tools/Developer Tools</h3>
-<p>You may find that only using binary packages limits the utility of Fink.  There are fewer packages available in binary format than from source, and the binary versions are generally older.  To build packages from source, you will need to install the Developer Tools (known as the Xcode Tools for Mac OS 10.3 and later).</p>
-<p>Although a Developer Tools/Xcode Tools version usually comes with your OS install media, you'll probably want a newer one.  Go to <a href="http://connect.apple.com">the Apple Developer Connection</a> to download a newer version (and any updates) after free registration.</p>
+<p>To build packages from source, which Fink currently requires on supported OS versions, you will need to install the Developer Tools.</p>
+<p>Go to <a href="http://developer.apple.com">the Apple Developer site</a> to download a newer version (and any updates) after free registration.</p>
 <table>
   <caption>Recommended Developer Tools versions by OS</caption>
   <tbody>
     <tr>
+        <td>10.9</td>
+        <td>The Command Line Tools for Mavericks - Late October 2013; optionally Xcode 5.0.1<br>
+        The Command Line Tools can be downloaded via the <code>xcode-select --install</code> command, Xcode's Preferences or in a separate package.</td>
+    </tr>
+    <tr>
         <td>10.8</td>
-        <td>The Command Line Tools for Xcode 4.5 for Mountain Lion; optionally Xcode 4.5<br>
+        <td>The Command Line Tools for Mountain Lion - October 2013 ; optionally Xcode 5.0.1<br>
         The Command Line Tools can be downloaded via Xcode's Preferences or in a separate package.</td>
     </tr>
     <tr>
         <td>10.7</td>
-        <td>The Command Line Tools for Xcode 4.5 for Lion; optionally Xcode 4.5<br>
+        <td>The Command Line Tools for Lion - April 2013; optionally Xcode 4.6.3<br>
         The Command Line Tools can be downloaded via Xcode's Preferences or in a separate package.</td>
     </tr>
     <tr>
         <td>10.6</td>
-        <td>Xcode 3.2.6 (Xcode 4.2 is also available for some paid Apple Connect accounts) </td>
+        <td>Xcode 3.2.6 (Xcode 4.2 is also available for some paid Apple developer accounts) </td>
     </tr>
     <tr>
       <td>10.5</td>
@@ -129,7 +134,7 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
   </tbody>
 </table>
 <h3>X11</h3>
-      <p>Almost all of the applications on Fink that have graphical user interfaces (GUIs) require some flavor of X11 (since most were originally developed on platforms that only had that as a GUI option).</p>
+      <p>Most of the applications on Fink that have graphical user interfaces (GUIs) require some flavor of X11 (since most were originally developed on platforms that only had that as a GUI option).</p>
       <p>Apple provides its own X11 distribution.  This is
 the easiest option with which to get started.  They have elected to split it into two parts:</p>
       <ul>
@@ -142,7 +147,7 @@ package contains the development headers.  You need this if you want to build an
 <li>All official updates for X11 on 10.5 - 10.7 are supported.</li>
 <li>The <em>Xquartz X11 distribution</em> from
 <a href="http://xquartz.macosforge.org">macosforge.org</a> is only supported on 10.5 (Xquartz version 2.6.3 and earlier), where it 
-replaces the official X11, and 10.8, where it <em>is</em> the official X11.  This does not have separate runtime and header packages.</li>
+replaces the official X11, and 10.8 and 10.9, where it <em>is</em> the official X11.  This does not have separate runtime and header packages.</li>
 </ul>
 <p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://www.finkproject.org/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
 <h2 id="furtherinfo">Further information</h2>

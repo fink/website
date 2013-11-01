@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Upgrading";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/07/09 02:28:43';
+$cvs_date = 'Date: 2013/11/01 02:27:03';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up02.php" title="Clean Upgrade"><link rel="prev" href="install-first.php" title="First Time Installation">';
 
 include_once "header.inc";

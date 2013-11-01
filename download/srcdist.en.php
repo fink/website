@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/09/27 16:47:20 $';
+$cvs_date = '$Date: 2013/11/01 04:28:18 $';
 
 include "header.inc";
 ?>
@@ -19,15 +19,14 @@ have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p>The current version, <em>fink-0.35.2</em>, was officially released on
-2013-09-27
-.</p>
+<p>The current version, <em>fink-0.36.0</em>, was officially released on
+2013-10-31.</p>
 
 <ul>
      <li>
-For OS X 10.6-10.8, use <a href="http://downloads.sourceforge.net/fink/fink-0.35.2.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.35.2</a>
-- 1156K, .tar.gz format
+For OS X 10.6-10.9, use <a href="http://downloads.sourceforge.net/fink/fink-0.36.0.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.36.0</a>
+- 1162k, .tar.gz format
      </li>
      <li>
 For OS X 10.5, use <a href="http://downloads.sourceforge.net/fink/fink-0.34.9.tar.gz"
@@ -41,16 +40,12 @@ onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
      </li>
 </ul>
 
-<p>You will also need to install an appropriate version of the Xcode Tools
-(c.f. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) for your operating
-system.  For Xcode 4.3 and later, you will want to run:</p>
-<pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
-<p>where you should replace <em>/path/to</em> with the actual path to the Xcode app.
-You will also need to install the Command Line Tools for Xcode, which can be done either
-via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>, or via a separate
-download.  And you will also need to accept the Xcode license for all users on your machine by running:</p>
-<pre>sudo xcodebuild -license</pre>
-<p>Read (or scroll) through the text and accept the license.</p>
+<p>You will need to install the Command Line Tools for Xcode, which can be done as follows.</p>
+<ul><p><em>10.9 only:  </em>Run <code>xcode-select --install</code> from the Terminal and select the Install button.</p><li>
+<li><p><em>10.9-10.7:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
+<li><p><em>10.9-10.7:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
+<li><p><em>10.6:  </em>Install the full Xcode.</p></li>
+</ul>
 <p></p>
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via running the following commands in a terminal window
@@ -58,15 +53,15 @@ via running the following commands in a terminal window
 
 <pre>cd $HOME/Downloads</pre>
 <p>followed by</p>
-<pre>tar -xvf fink-0.35.2.tar.gz</pre>
+<pre>tar -xvf fink-0.36.0.tar.gz</pre>
 <p>or</p>
-<pre>tar -xvf fink-0.35.2.tar</pre>
+<pre>tar -xvf fink-0.36.0.tar</pre>
 <p>where the choice depends on whether the source has already been partially unpacked, 
 e.g. by Safari.</p>
 
 <p>Then run the following commands in a terminal window:</p>
 
-<pre>cd fink-0.35.2
+<pre>cd fink-0.36.0
 ./bootstrap</pre>
 
 <p>to start the boostrapping operation, which will install the Fink base

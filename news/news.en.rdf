@@ -5,12 +5,58 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2013-07-05T17:04:29-07:00</dc:date>
+    <dc:date>2013-10-31T21:24:06-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5">
-      <title>fink-0.34.9 and fink-0.35.0 released.  EOL for OS 10.5</title>
-      <link>http://fink.sourceforge.net/news/#2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5</link>
-      <guid>http://fink.sourceforge.net/news/#2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.0%20released.">
+      <title>fink-0.36.0 released.</title>
+      <link>http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.0%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.0%20released.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>fink-0.36.0 was released on 31 October, 2013.
+  This is the first release to work with OS X 10.9 (Mavericks).
+  We are currently in the process of making packages available.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>fink-0.36.0 was released on 31 October, 2013.
+  This is the first release to work with OS X 10.9 (Mavericks).
+  We are currently in the process of making packages available.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-09-27%20fink-0.35.2%20released.">
+      <title>fink-0.35.2 released.</title>
+      <link>http://fink.sourceforge.net/news/#2013-09-27%20fink-0.35.2%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2013-09-27%20fink-0.35.2%20released.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>fink-0.35.2 was released on 27 September, 2013.
+  This release provides support for Xcode 5 on 10.8, and other 
+  bugfixes </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>fink-0.35.2 was released on 27 September, 2013.
+  This release provides support for Xcode 5 on 10.8, and other 
+  bugfixes </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5.">
+      <title>fink-0.34.9 and fink-0.35.0 released.  EOL for OS 10.5.</title>
+      <link>http://fink.sourceforge.net/news/#2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5.</link>
+      <guid>http://fink.sourceforge.net/news/#2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5.</guid>
       <description>
 		<![CDATA[
 	
@@ -447,58 +493,6 @@
     have any effect, but in fink-0.33.0 and later we will begin building packages
     as an unprivileged user by default, and this field will allow packages to be built
     as root.
-   </p>
-  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released">
-      <title>fink-0.32.5.5 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released</guid>
-      <description>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.5.5 was released on 9 April, 2012.  This bugfix release
-    fixes an issue with bootstrapping on 10.5/PowerPC.
-   </p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.5.5 was released on 9 April, 2012.  This bugfix release
-    fixes an issue with bootstrapping on 10.5/PowerPC.
-   </p>
-  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released">
-      <title>fink-0.32.5.4 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released</guid>
-      <description>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.5.4 was released on 8 April, 2012.  This release allows users
-    on 10.7 to bootstrap against the Xcode Command Line Tools.  Note that some packages
-    actually require the full Xcode to build.
-   </p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.5.4 was released on 8 April, 2012.  This release allows users
-    on 10.7 to bootstrap against the Xcode Command Line Tools.  Note that some packages
-    actually require the full Xcode to build.
    </p>
   
 		]]>
