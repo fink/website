@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.8";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/01/02 03:42:27 $';
+$cvs_date = '$Date: 2013/11/01 04:35:03 $';
 
 include "header.inc";
 ?>
@@ -14,10 +14,10 @@ include "header.inc";
 		the latest version of <code>fink</code>.
 	</li>
 	<li>
-		Install Xcode 4.5.2 if you haven't already, or at least its Command Line Tools
+		Install Xcode 5.0.1 if you haven't already, or at least its Command Line Tools
 		for Mountain Lion.
-		If you have Xcode 4.5.2, you will need to install the Command Line Tools, even
-		if you had it installed under Lion already
+		If you have Xcode 5.0.1, you will need to install the Command Line Tools, even
+		if you had those installed under Lion already
 	</li>
 	<li>
 		Run <pre>sudo xcodebuild -license</pre> to accept the terms of the Xcode license.
