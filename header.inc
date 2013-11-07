@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.129 2012/04/18 21:44:38 gecko2 Exp $ */
+/* $Id: header.inc,v 1.130 2013/11/07 18:27:15 thesin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -85,7 +85,8 @@ if (!defined('FINK_PRINT_VERSION')) { define ("FINK_PRINT_VERSION", 'Print Versi
 /* Header and Footer */
 if (!defined('META_KEYWORDS')) { define ("META_KEYWORDS", 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, free software, porting, development, package management'); }
 if (!defined('META_DESCRIPTION')) { define ("META_DESCRIPTION", 'The Fink Team wants to bring the full world of Unix Open Source software to Darwin and Mac OS X. We modify Unix software so that it compiles and runs on Mac OS X and make it available for download as a coherent distribution'); }
-if (!defined('HEADER_HOSTED_BY')) { define ("HEADER_HOSTED_BY", 'Hosted By {img}'); }
+//if (!defined('HEADER_HOSTED_BY')) { define ("HEADER_HOSTED_BY", 'Hosted By {img}'); }
+if (!defined('HEADER_HOSTED_BY')) { define ("HEADER_HOSTED_BY", ''); }
 if (!defined('FOOTER_AVAILABLE_LANGUAGES')) { define ("FOOTER_AVAILABLE_LANGUAGES", 'Available Languages'); }
 if (!defined('FOOTER_GENERATED_DYNAMICALLY')) { define ("FOOTER_GENERATED_DYNAMICALLY", 'Generated dynamically'); }
 if (!defined('FOOTER_DATABASE_LAST_UPDATED')) { define ("FOOTER_DATABASE_LAST_UPDATED", 'Database last updated on  %a, %b %d %Y, %R GMT'); }
