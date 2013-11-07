@@ -143,7 +143,7 @@ class SolrQuery {
 	protected $sort    = array();
 	protected $query   = array();
 
-	public function __construct($action = 'select', $url = 'http://localhost:8983/solr', $type = 'json') {
+	public function __construct($action = 'select', $url = 'http://localhost:8082/solr', $type = 'json') {
 		$this->setAction($action);
 		$this->setUrl($url);
 		$this->setType($type);
