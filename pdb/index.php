@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Introduction";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/09/07 04:12:00 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2013/11/15 00:45:39 $';
 
 // 2 hours, this page does not change much
 $cache_timeout = 7200;
@@ -11,7 +11,7 @@ include_once "functions.inc";
 include_once "releases.inc";
 include_once "sections.inc";
 
-ini_set("memory_limit", "24M");
+ini_set("memory_limit", "48M");
 $q = new SolrQuery();
 $q->addQuery("dist_visible:true", true);
 $update_date = handle_last_modified('pdb-last-modified', $q);
