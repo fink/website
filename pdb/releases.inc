@@ -27,8 +27,8 @@ foreach(array(
 foreach(array(
 	new Release($distributions["10.2-EOL-powerpc"],         "stable",   "current", 2, TRUE),
 	new Release($distributions["10.2-EOL-powerpc"],         "unstable", "current", 3, TRUE),
-	new Release($distributions["10.2-EOL-gcc3.3-powerpc"],  "stable",   "current", 2, TRUE),
-	new Release($distributions["10.2-EOL-gcc3.3-powerpc"],  "unstable", "current", 3, TRUE),
+	new Release($distributions["10.2-gcc3.3-EOL-powerpc"],  "stable",   "current", 2, TRUE),
+	new Release($distributions["10.2-gcc3.3-EOL-powerpc"],  "unstable", "current", 3, TRUE),
 	new Release($distributions["10.3-EOL-powerpc"],         "stable",   "current", 2, TRUE),
 	new Release($distributions["10.3-EOL-powerpc"],         "unstable", "current", 3, TRUE),
 	new Release($distributions["10.4-EOL-powerpc"],         "stable",   "current", 2, TRUE),
