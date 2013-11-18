@@ -1,13 +1,27 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/11/01 04:23:33';
+$cvs_date = 'Date: 2013/11/18 01:25:23';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2013-10-30%20fink-0.36.0%20released."><span class="news-date">2013-10-30: </span><span class="news-headline">fink-0.36.0 released.</span></a><?php gray_line(); ?>
+<a name="2013-10-30%20fink-0.36.1%20released."><span class="news-date">2013-10-30: </span><span class="news-headline">fink-0.36.1 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.36.1</code> was released on 17 October, 2013.
+  This release fixes an intermittent bug in building Perl modules
+  which was introduced with fink-0.36.0.  We encourage our users to
+  install fink-0.36.1 to rectify this issue, and if you are having
+  problems with installing a Perl module, use <code>fink rebuild</code>
+  on it.
+  </p>
+  <p>
+  In addition, the bootstrap  script now validates whether the Mavericks 
+  command-line build tools are installed on that OS version, and prevents 
+  folks from bootstrapping with the wrong tools.
+  </p>
+ <a name="2013-10-30%20fink-0.36.0%20released."><span class="news-date">2013-10-30: </span><span class="news-headline">fink-0.36.0 released.</span></a><?php gray_line(); ?>
   <p><code>fink-0.36.0</code> was released on 31 October, 2013.
   This is the first release to work with OS X 10.9 (Mavericks).
   We are currently in the process of making packages available.</p>

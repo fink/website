@@ -5,8 +5,51 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2013-10-31T21:24:06-07:00</dc:date>
+    <dc:date>2013-11-17T17:25:36-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.1%20released.">
+      <title>fink-0.36.1 released.</title>
+      <link>http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.1%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.1%20released.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.1 was released on 17 October, 2013.
+  This release fixes an intermittent bug in building Perl modules
+  which was introduced with fink-0.36.0.  We encourage our users to
+  install fink-0.36.1 to rectify this issue, and if you are having
+  problems with installing a Perl module, use fink rebuild
+  on it.
+  </p>
+  <p>
+  In addition, the bootstrap  script now validates whether the Mavericks 
+  command-line build tools are installed on that OS version, and prevents 
+  folks from bootstrapping with the wrong tools.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.1 was released on 17 October, 2013.
+  This release fixes an intermittent bug in building Perl modules
+  which was introduced with fink-0.36.0.  We encourage our users to
+  install fink-0.36.1 to rectify this issue, and if you are having
+  problems with installing a Perl module, use fink rebuild
+  on it.
+  </p>
+  <p>
+  In addition, the bootstrap  script now validates whether the Mavericks 
+  command-line build tools are installed on that OS version, and prevents 
+  folks from bootstrapping with the wrong tools.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.0%20released.">
       <title>fink-0.36.0 released.</title>
       <link>http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.0%20released.</link>
@@ -461,39 +504,6 @@
    virtual package has always been based on the presence of the command-line tools, and now its
    version is the version of those.  Note that xcode and xcode.app
    are the same for Xcodes prior to 4.3.</p>
-  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-04-14%20fink-0.32.6%20released">
-      <title>fink-0.32.6 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-04-14%20fink-0.32.6%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-04-14%20fink-0.32.6%20released</guid>
-      <description>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.6 was released on 14 April, 2012.  This release introduces
-    a new package description field, BuildAsNobody: false, to mark packages which
-    cannot built using fink --build-as-nobody.  Currently, this does not
-    have any effect, but in fink-0.33.0 and later we will begin building packages
-    as an unprivileged user by default, and this field will allow packages to be built
-    as root.
-   </p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.6 was released on 14 April, 2012.  This release introduces
-    a new package description field, BuildAsNobody: false, to mark packages which
-    cannot built using fink --build-as-nobody.  Currently, this does not
-    have any effect, but in fink-0.33.0 and later we will begin building packages
-    as an unprivileged user by default, and this field will allow packages to be built
-    as root.
-   </p>
   
 		]]>
 	</content:encoded>

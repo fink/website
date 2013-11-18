@@ -1,7 +1,7 @@
 <?
 $title = "Upgrade Instructions for Mac OS X 10.7";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/11/01 04:28:18 $';
+$cvs_date = '$Date: 2013/11/18 01:26:06 $';
 
 include "header.inc";
 ?>
@@ -19,7 +19,7 @@ The entries there provide a more detailed upgrade explanation.</p>
 <p>To collect the list of packages, follow the sequence below:</p>
 <ol>
     <li>Use <pre>grep -B1 "install ok installed" /sw/var/lib/dpkg/status | grep Package | cut -d: -f2 > fink_packages.txt</pre> to dump your package information to a file.</li>
-    <li>Install OS X 10.9, as well as Xcode 5.0.1, or the Command Line Tools at minimum.</li>
+    <li>Install OS X 10.9, as well as Xcode 5.0.2, or the Command Line Tools at minimum.</li>
     <li>Clear out your Fink tree by using <pre>sudo rm -rf /sw</pre>, for example.</li>
     <li><a href="./srcdist.php">Install Fink</a> on your new 10.9 system.</li>
     <li>Run the command: <pre>cat fink_packages.txt | xargs fink install</pre> to have your
