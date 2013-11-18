@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.189 2013/11/01 04:23:33 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.190 2013/11/18 01:11:56 alexkhansen Exp $</cvsid>
+<newsitem>
+ <date>2013-10-30</date>
+ <headline>fink-0.36.1 released.</headline>
+ <body>
+  <p>
+  <code>fink-0.36.1</code> was released on 17 October, 2013.
+  This release fixes an intermittent bug in building Perl modules
+  which was introduced with fink-0.36.0.  We encourage our users to
+  install fink-0.36.1 to rectify this issue, and if you are having
+  problems with installing a Perl module, use <code>fink rebuild</code>
+  on it.
+  </p>
+  <p>
+  In addition, the bootstrap  script now validates whether the Mavericks 
+  command-line build tools are installed on that OS version, and prevents 
+  folks from bootstrapping with the wrong tools.
+  </p>
+ </body>
 <newsitem>
  <date>2013-10-30</date>
  <headline>fink-0.36.0 released.</headline>
