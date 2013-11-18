@@ -1,7 +1,7 @@
 <?
 $title = "Obtendo os códigos fontes dos pacotes de binários";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/30 00:18:08 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2013/11/18 15:47:17 $';
 
 include "header.inc";
 ?>
@@ -13,7 +13,7 @@ para instalação automática (quando a licença do pacote o permite). Muitos
 desses pacotes foram lançados sob a licença GPL (GNU Public License) e o
 projeto Fink leva a sério suas obrigações em relação à GPL.</p>
 
-<p>O <a href="http://bindist.finkmirrors.net/bindist/dists/">Archive
+<p>O <a href="http://bindist.finkmirrors.net/dists/">Archive
 Browser</a> permite ao usuário obter quaisquer desses pacotes de binários ou
 seus códigos fontes correspondentes, arquivos de ajustes e instruções de
 compilação. Normalmente isto é automático: quando o fink baixa um pacote de

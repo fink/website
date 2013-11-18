@@ -1,7 +1,7 @@
 <?
 $title = "Getting the Source Files for Binary Packages";
-$cvs_author = '$Author: dmrrsn $';
-$cvs_date = '$Date: 2006/06/28 21:31:45 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2013/11/18 15:47:17 $';
 
 include "header.inc";
 ?>
@@ -12,7 +12,7 @@ include "header.inc";
 Fink makes pre-compiled versions of its "stable" packages available for automatic installation (when the package license permits). Many of these packages were released under the 
 GNU Public License (GPL), and the Fink project takes its obligations under the GPL quite seriously.
 </p><p>
-The  <a href="http://bindist.finkmirrors.net/bindist/dists/">Archive Brower</a>
+The  <a href="http://bindist.finkmirrors.net/dists/">Archive Brower</a>
 allows the user to obtain any of these binary packages, 
 or the corresponding source files, patches, and build instructions. 
 This is usually automatic: when fink downloads a binary package

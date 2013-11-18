@@ -1,7 +1,7 @@
 <?
 $title = "Getting the Source Files for Binary Packages";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2006/07/01 03:01:07 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2013/11/18 15:47:17 $';
 
 include "header.inc";
 ?>
@@ -12,7 +12,7 @@ include "header.inc";
 Fink は、<quote>stable</quote> パッケージのコンパイル済みバージョンを、(ライセンスが許可している場合に) 自動インストール向けに提供しています。
 これらのパッケージの多くは GNU Public License (GPL) の下でリリースされ、Fink プロジェクトでは GPL 下での制限を遵守しています。
 </p><p>
-<a href="http://bindist.finkmirrors.net/bindist/dists/">Archive Brower</a> は、利用者がこれらバイナリパッケージや、対応するソースファイル、パッチ、ビルド手順を入手できるようにしています。
+<a href="http://bindist.finkmirrors.net/dists/">Archive Brower</a> は、利用者がこれらバイナリパッケージや、対応するソースファイル、パッチ、ビルド手順を入手できるようにしています。
 これは通常、自動的に行われます。
 fink が Fink プロジェクトの提供するバイナリパッケージをダウンロードする際、Archive から入手し、fink がソースファイルをダウンロードする際、Archive のソースレポジトリから
 (<quote>Master</quote> ソースミラーを通して) 入手することが多い。
