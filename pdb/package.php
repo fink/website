@@ -1,6 +1,6 @@
 <?php
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2012/11/11 16:04:56 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2013/11/18 21:12:53 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -344,6 +344,13 @@ unset($result);
 		$infofile_html  = '<a href="'.$infofile_cvs_url.$infofile_tag.($infofile_tag ? '&amp;' : '?').'view=markup" title="' . $pobj['name'] . ' info file">'.$infofile_path.'</a><br>';
 		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'?view=log" title="' . $pobj['name'] . ' CVS log">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
 		it_item("Info-File:", $infofile_html);
+	}
+	if (isset($pobj['debarchive']) && $pobj['debarchive']) {
+		# where the deb archive file sits on a local Fink installation
+		$debarchive_path = $pobj['debarchive'];
+		$debarchive_url = 'http://bindist.finkmirrors.net/'.$pobj['debarchive'];
+		$debarchive_html  = '<a href="'.$debarchive_url.'" title="' . $pobj['name'] . ' deb archive">'.$debarchive_path.'</a><br>';
+		it_item("Deb Archive:", $debarchive_html);
 	}
 
 	$sq = new SolrQuery();
