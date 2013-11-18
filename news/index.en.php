@@ -1,7 +1,7 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/11/18 01:25:23';
+$cvs_date = 'Date: 2013/11/18 01:30:16';
 $metatags = '';
 
 include_once "header.inc";
@@ -9,7 +9,7 @@ include_once "header.inc";
 
 <a name="2013-10-30%20fink-0.36.1%20released."><span class="news-date">2013-10-30: </span><span class="news-headline">fink-0.36.1 released.</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.36.1</code> was released on 17 October, 2013.
+  <code>fink-0.36.1</code> was released on 17 November, 2013.
   This release fixes an intermittent bug in building Perl modules
   which was introduced with fink-0.36.0.  We encourage our users to
   install fink-0.36.1 to rectify this issue, and if you are having
