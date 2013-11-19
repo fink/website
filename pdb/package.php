@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2013/11/18 21:12:53 $';
+$cvs_date = '$Date: 2013/11/19 18:07:25 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -188,13 +188,15 @@ unset($result);
 
 	print '<tr bgcolor="#ffecbf">';
 	print '<th width="100" align="center" valign="bottom" rowspan="2">System</th>';
-	print '<th width="150" align="center" valign="bottom" rowspan="2">Binary Distributions</th>';
 	print '<th width="202" align="center" colspan="2">CVS/rsync Source Distributions</th>';
+	print '<th width="150" align="center" colspan="2">Debian Binary Distributions</th>';
 	print "</tr>\n";
 
 	print '<tr bgcolor="#ffecbf">';
 	print '<th width="100" align="center"><a href="http://feeds2.feedburner.com/FinkProjectNews-stable"><img src="' . $pdbroot . 'rdf.png" alt="stable RSS feed" border="0"  width="14" height="14"></a> stable</th>';
 	print '<th width="100" align="center"><a href="http://feeds2.feedburner.com/FinkProjectNews-unstable"><img src="' . $pdbroot . 'rdf.png" alt="unstable RSS feed" border="0"  width="14" height="14"></a> unstable</th>';
+	print '<th width="100" align="center">stable</th>';
+	print '<th width="100" align="center">unstable</th>';
 	print "</tr>\n";
 
 	$color_count = 0;
@@ -256,7 +258,7 @@ unset($result);
 		$packagelist = memcache_get_key($pkey);
 		if (!is_array($packagelist) || count($packagelist) == 0) {
 			$packagelist = array();
-			foreach(array("bindist", "stable", "unstable") as $rel_type) {
+			foreach(array("stable", "unstable", "bindist", "bindist-unstable") as $rel_type) {
 				$pack = fetch_package($pobj['name'], null, $dist->getName(), $rel_type, $dist->getArchitecture(), $showall);
 				array_push($packagelist, $pack);
 			}
@@ -272,9 +274,9 @@ unset($result);
 			}
 			list($open_tag, $close_tag) = version_tags($pack);
 			$pkginfo = $open_tag . get_full_version($pack) . $close_tag;
-			if ($rel_type == "bindist") {
-				$pkginfo .= ' (bindist ' . $pack['rel_version'] . ')';
-			}
+//			if ($rel_type == "bindist") {
+//				$pkginfo .= ' (bindist ' . $pack['rel_version'] . ')';
+//			}
 			avail_td($pkginfo);
 		}
 
@@ -333,7 +335,7 @@ unset($result);
 			it_item("Parent:", $pobj['parentname']);
 		}
 	}
-	if ($pobj['infofile']) {
+	if ($pobj['infofile'] && $pobj['rel_type'] != 'bindist') {
 		# where the info file sits on a local Fink installation
 		$infofile_path = $pobj['rcspath'];
 		$infofile_cvs_url = 'http://fink.cvs.sourceforge.net/fink/'.$pobj['rcspath'];
@@ -345,7 +347,7 @@ unset($result);
 		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'?view=log" title="' . $pobj['name'] . ' CVS log">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
 		it_item("Info-File:", $infofile_html);
 	}
-	if (isset($pobj['debarchive']) && $pobj['debarchive']) {
+	if (isset($pobj['debarchive']) && $pobj['debarchive'] && $pobj['rel_type'] == 'bindist') {
 		# where the deb archive file sits on a local Fink installation
 		$debarchive_path = $pobj['debarchive'];
 		$debarchive_url = 'http://bindist.finkmirrors.net/'.$pobj['debarchive'];
