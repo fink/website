@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.130 2013/11/07 18:27:15 thesin Exp $ */
+/* $Id: header.inc,v 1.131 2013/11/22 17:30:57 thesin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -185,7 +185,7 @@ if (!isset($linkroot)) {
 }
 
 // Used in Sections
-function insert_sub($navbox, $active_page) {
+function insert_sub($navbox, $active_page, $navloc = false) {
 	global $root, $linkroot;
 	
 	// Determine the active page
@@ -199,6 +199,9 @@ function insert_sub($navbox, $active_page) {
 	for ($i = 0; $i <= sizeof($navbox) - 2 ; $i += 2) {
 		$filename = explode('?', $navbox[$i]);
 		if ($relativepath . '/' . $filename[0] == $_SERVER['SCRIPT_NAME'] || '/' . $filename[0] == $_SERVER['SCRIPT_NAME']) {
+			$active_page = $i;
+			break;
+		} else if ($navloc && $navloc == $navbox[$i]) {
 			$active_page = $i;
 			break;
 		}
@@ -295,7 +298,7 @@ function insert_sub($navbox, $active_page) {
 			echo '<div class="selected" >'. $section_names[$key] . "</div></li>\n";
 		} elseif ($section == $key) {
 			echo '<a href="' . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
-			insert_sub ($navbox, $active_page);
+			insert_sub ($navbox, $active_page, $navloc);
 			echo "\t\t";
 		} else {
 			echo '<a href="' . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
