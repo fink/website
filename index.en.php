@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/11/18 01:26:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2013/11/30 19:13:58 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -54,7 +54,7 @@ include "fink_version.inc";
 ?>
 
 <p>
-Fink currently supports OS X 10.9 (Mavericks), 10.8 (Mountain Lion), OS X 10.7 (Lion), and 10.6 (Snow Leopard),
+Fink currently supports OS X 10.9 (Mavericks), 10.8 (Mountain Lion), 10.7 (Lion), and 10.6 (Snow Leopard),
 and continues to run on older versions of OS X, although
 official updates are no longer available for the older versions.
 Installation instructions can be found  on our <a href="download/srcdist.php">source
