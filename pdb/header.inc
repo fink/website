@@ -1,11 +1,12 @@
 <?
-/* $Id: header.inc,v 1.28 2013/02/05 23:50:07 gecko2 Exp $ */
+/* $Id: header.inc,v 1.29 2013/11/30 01:34:44 thesin Exp $ */
 
 $linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";
 $pdbroot   = $localroot . "pdb/";
 
 $section   = 'packages';
+$navloc = "http://pdb.finkproject.org";
 $disabled = false;
 
 $server = $_SERVER['SERVER_NAME'];
@@ -62,7 +63,8 @@ $navbox = array(
   $localroot."pdb/index.php", "Introduction",
   $localroot."pdb/sections.php", "By Section",
   $localroot."pdb/browse.php", "By Package",
-  $localroot."pdb/browse.php?nolist=on", "Search",
+  $localroot."pdb/browse.php?nolist=on", "Package Search",
+  $localroot."pdb/filefind.php", "File Search",
   $localroot."pdb/help.php", "Help needed"
 );
 
