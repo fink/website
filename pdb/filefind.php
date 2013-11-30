@@ -1,11 +1,12 @@
 <?
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2013/11/30 01:33:19 $';
+$cvs_date = '$Date: 2013/11/30 02:34:01 $';
 
 ini_set("memory_limit", "48M");
 
 include_once "memcache.inc";
 include_once "functions.inc";
+include_once "finkinfo.inc";
 include_once "releases.inc";
 
 $invalid_param     = false;
@@ -152,12 +153,12 @@ Matched <?=$count?>
 <?
 	print '<tr class="pdbHeading"><th width="50">Dist</th><th width="50">Tree</th><th width="50">Arch</th><th width="200">Package Name</th><th>Path/File</th></tr>';
 	foreach ($matches as $id => $package) {
+		$release = $dists_to_releases[$package['dist'].'-'.$package['arch']]['bindist'.(($package['tree'] == 'unstable' || $package['tree'] == 'current')?'-unstable':($package['tree'] == 'stable'?'':$package['tree']))];
 		print '<tr class="package">';
-### FIXME line to correct binary dist
 		print '<td class="packageDist">'.$package['dist'].'</td>';
 		print '<td class="packageTree">'.$package['tree'].'</td>';
 		print '<td class="packageArch">'.$package['arch'].'</td>';
-		print '<td class="packageName"><a href="' . $pdbroot . 'package.php/'.$package['name'].'?rel_id='.$package['dist'].'-'.$package['arch'].'-current-'.$package['tree'].'">'.$package['name'].'</a></td>';
+		print '<td class="packageName"><a href="' . $pdbroot . 'package.php/'.trim($package['name']).'?rel_id='.$release.'">'.$package['name'].'</a></td>';
 		print '<td>'.htmlentities($package['match'])."</td></tr>\n";
 	}
 ?>
