@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.131 2013/11/22 17:30:57 thesin Exp $ */
+/* $Id: header.inc,v 1.132 2013/11/30 01:31:43 thesin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -201,7 +201,7 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 		if ($relativepath . '/' . $filename[0] == $_SERVER['SCRIPT_NAME'] || '/' . $filename[0] == $_SERVER['SCRIPT_NAME']) {
 			$active_page = $i;
 			break;
-		} else if ($navloc && $navloc == $navbox[$i]) {
+		} else if ($navloc && $navloc.$_SERVER['SCRIPT_NAME'] == $navbox[$i]) {
 			$active_page = $i;
 			break;
 		}
@@ -298,7 +298,10 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 			echo '<div class="selected" >'. $section_names[$key] . "</div></li>\n";
 		} elseif ($section == $key) {
 			echo '<a href="' . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
-			insert_sub ($navbox, $active_page, $navloc);
+			if (isset($navloc))
+				insert_sub ($navbox, $active_page, $navloc);
+			else
+				insert_sub ($navbox, $active_page);
 			echo "\t\t";
 		} else {
 			echo '<a href="' . $section_files[$key] . '">' . $section_names[$key] . "</a></li>\n";
