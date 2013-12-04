@@ -13,6 +13,7 @@ $sections = array(
 	'kde/po'          => 'Translations for the K Desktop Environment (version 3.5.10 and 4.2.4)',
 	'languages'       => 'Programming languages (compilers, interpreters)',
 	'libs'            => 'General purpose libraries',
+	'libs/ghc'        => 'Glasgow Haskell Compiler libraries',
 	'libs/perlmods'   => 'Perl libraries',
 	'libs/pythonmods' => 'Python libraries',
 	'libs/rubymods'   => 'Ruby libraries',
