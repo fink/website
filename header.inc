@@ -1,5 +1,5 @@
 <?
-/* $Id: header.inc,v 1.132 2013/11/30 01:31:43 thesin Exp $ */
+/* $Id: header.inc,v 1.133 2013/12/04 02:50:16 thesin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -171,8 +171,8 @@ function convert_date_to_locale($initialstringdate) {
 // Used in News
 function gray_line()
 {
-	global $root;
-	print '<img src="'.$root.'img/grey_pixel.gif" height="1" width="100%" alt="-">';
+	global $linkroot;
+	print '<img src="'.$linkroot.'img/grey_pixel.gif" height="1" width="100%" alt="-">';
 }
 
 // $linkroot is used for links to other parts of the website; $root is
@@ -252,12 +252,12 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 	print $link_alternate;
 ?>
 	<link rev="made" href="mailto:fink-devel@lists.sourceforge.net">
-	<link rel="stylesheet" type="text/css" href="<? print $root ?>/fink.css">
+	<link rel="stylesheet" type="text/css" href="<? print $linkroot ?>/fink.css">
 	<? if ($metatags) echo $metatags; ?>
-	<link rel="start" href="<? print $root ?>index.php">
-	<link rel="copyright" href="<? print $root ?>legal.php">
-	<? if (isset($i18n_enable_form)) echo '<script type="text/javascript" src="' . $root . 'fink.i18n.js"></script>'; ?>
-	<? if (isset($pdb_scripts)) echo '<script type="text/javascript" src="' . $root . 'fink.pdb.js"></script>'; ?>
+	<link rel="start" href="<? print $linkroot ?>index.php">
+	<link rel="copyright" href="<? print $linkroot ?>legal.php">
+	<? if (isset($i18n_enable_form)) echo '<script type="text/javascript" src="' . $linkroot . 'fink.i18n.js"></script>'; ?>
+	<? if (isset($pdb_scripts)) echo '<script type="text/javascript" src="' . $linkroot . 'fink.pdb.js"></script>'; ?>
 
 </head>
 <body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333"<? if (isset($pdb_scripts) && !isset($pdb_has_adv_searchoptions)) echo ' onload="switchMenu(\'advancedsearch\', \'triangle\')"' ?>>
@@ -266,7 +266,7 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 <div id="header-left">
 
 	<? if (!isset($is_home)) echo '<a href="' . $linkroot . 'index.php">'; ?>
-	<img src="<? echo $root ?>/img/mlogo.png"  width="171" height="85" border="0" alt="Fink">
+	<img src="<? echo $linkroot ?>/img/mlogo.png"  width="171" height="85" border="0" alt="Fink">
 	<? if (!isset($is_home)) echo '</a>'; ?>
 </div>
 
@@ -312,7 +312,7 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 <? if (isset($printlink)) { ?>
 		<li class="menu_item">
 			<a href="<? echo $linkroot . $printlink ?>" style="border-width: 0px ; ">
-				<img src="<? echo $root; ?>img/printer.png" 
+				<img src="<? echo $linkroot; ?>img/printer.png" 
 					alt="<? echo FINK_PRINTER; ?>" 
 					width="18" height="16" 
 					align="bottom" 
