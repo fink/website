@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2013/11/19 18:07:25 $';
+$cvs_date = '$Date: 2013/12/04 02:39:01 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -295,7 +295,7 @@ unset($result);
 
 	show_desc('Usage&nbsp;Hints:', $pobj['descusage']);
 
-	it_item("Section:", '<a href="'.$pdbroot.'browse.php?sec='.$pobj['section'].'" title="' . $sections[$pobj['section']] . '">'.$pobj['section'].'</a>');
+	it_item("Section:", '<a href="'.$pdbroot.'browse.php?sec='.(preg_match('/^10\.[0-9]+-EOL/', $pobj['section'])?preg_replace('/^10\.[0-9]+-EOL\//', '', $pobj['section']):$pobj['section']).'" title="' . $sections[$pobj['section']] . '">'.$pobj['section'].'</a>');
 
 	// Get the maintainer field, and try to parse out the email address
 	if ($pobj['maintainer']) {
