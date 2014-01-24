@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2013/06/21 05:39:28 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2014/01/24 20:23:07 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -60,6 +60,7 @@ include dirname(__FILE__) . "/fink_version.inc";
 に書かれています。</p>
 
 <p>Xcode を Fink より先にインストールする必要があります。</p>  
+<p>
 <strong>10.8 サポート:</strong> 
 10.8 ユーザは、(AppStore からの無料ダウンロードで)
 Xcode 4.4 以上をインストールするか、
@@ -75,6 +76,7 @@ Command Line Tools for Xcode 4.4 (<a href="http://connect.apple.com">Apple</a> �
 <p>X11 が必要なら、
 <a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>
 から Xquartz-2.7.0 以降をインストールしてください。</p>
+<p>
 <strong>10.7 サポート:</strong> 
 10.7 ユーザは、Xcode を 4.1 以降　(AppStore から無料ダウンロード) (4.5.2 以降を推奨) 、
 あるいは少なくとも
@@ -84,23 +86,13 @@ Command Line Tools for Xcode 4.3 (<a href="http://connect.apple.com">Apple</a> �
 上の <strong>10.8</strong> の例を参考に、バージョンを確認して必要ならアンインストールしてください。</p>
 <p>10.7 では Xquart をサポートしていません。
 Apple の公式 X11 を削除しないよう注意してください。</p>
+<p>
 <strong>10.6 サポート:</strong>
 10.6 ユーザは、Xcode を 3.2.6 または 4.x 開発者プレビューを払っている場合は 4.2.1 にアップグレードしてください。
 4.0.2 はリンカにバグがあり、いくつかのパッケージのビルドができないようです。
 上の <strong>10.8</strong> の例を参考に、バージョンを確認して必要ならアンインストールしてください。</p>
 <p>10.6 では Xquart をサポートしていません。
 Apple の公式 X11 を削除しないよう注意してください。</p>
-<p><strong>10.5 サポート:</strong> 
-X11 のバグ修正と機能向上を得るため、
-ソフトウェア・アップデート を使用して、
-10.5.2 またはそれ以降に更新してください。
-これ以降の更新は、
-<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page</a>
-から入手することができます。
-我々は、現在 10.6 と 10.7 での Xquartz をサポートしていません。<br>
-Xcode は、パッケージのビルド問題を修正するため、
-3.1以降、できれば 3.1.4 をインストールしてください。
-</p>
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 <h1>リソース</h1>
 
