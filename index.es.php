@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date   = '$Date: 2012/11/11 14:54:25 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date   = '$Date: 2014/01/24 21:38:49 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -54,37 +54,50 @@ require dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
-Fink currently supports OS X 10.7 (Lion), 10.6 (SnowLeopard), and 10.5 
-(Leopard), and continues to run on older versions of OS X, although
-official updates are no longer available for the older versions.
-Installation instructions can be found  on our <a href="download/srcdist.php">source
-release page</a>.
+Actualmente, Fink admite soporte para OS X 10.9 (Mavericks), 10.8 (Mountain Lion), 
+10.7 (Lion), and 10.6 (Snow Leopard), y continua funcionando en versiones mas 
+antiguas, aunque ya no recibe actualizaciones en esos sistemas.  Instructiones de 
+instalación están disponibles desde nuestra <a href="download/srcdist.php">página 
+de liberación del código fuente</a>.
 </p>
-<p>XCode must be installed before Fink.</p>
-<strong>10.7 Support:</strong>
-10.7 users must install or update XCode to version 4.1 or later
-(via a free download from the AppStore).  Note that if you installed an
-earlier version of XCode prior to updating, you need to <b>uninstall</b>
-the old version first, by running
-<i>/Developer/Library/uninstall-devtools</i> .
-You can determine your current version of XCode by running
-<i>xcodebuild -version</i> .</p>
-<strong>10.6 Support:</strong>  For best results, 10.6 users are
-encouraged to upgrade XCode to version 3.2.6, or to version 4.2.1 if you
-paid for a 4.x Developer preview.  Version 4.0.2 is known to have some
-bugs in its linker that prevent certain packages from building.  Follow
-the instructions in the 10.7 section above regarding how to check your
-version and uninstall it, if needed.</p>
+<p>XCode necesita ser instalado antes de instalar Fink.</p>
 <p>
-<strong>10.5 Support:</strong>
-Users are encouraged to update to OS 10.5.2 or later, via Software Update,
-in order to get bugfixes and enhancements for X11.  Further unofficial updates
-continue to be made available on the
-<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
-We are not currently supporting Xquartz on 10.6 or 10.7.<br>
-Users should also install Xcode 3.1 or later, preferably 3.1.4, to fix some
-known problems in building packages.
-</p>
+<strong>Soporte para 10.9:</strong> 
+Usuarios en 10.9 deberián instalar Xcode 5.0.1 (a través de descarga 
+gratuita del AppStore; la versión 5.0.2 es preferida).  Al minimo necesitan 
+instalar las herramientas de la linea de comandos para "Xcode 5.0 for Mavericks" 
+(instalable a través de <i>xcode-select --install</i> o 
+descargable desde <a href="http://developer.apple.com">Apple</a>).
+<p>Si necesita X11, debe de instalar Xquartz-2.7.4 o posterior desde 
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<p>
+<strong>Soporte para 10.8:</strong> 
+Usuarios en 10.8 deberián instalar Xcode 4.4 o posterior (a través de descarga 
+gratuita del AppStore; la version 5.0.2 es preferida).  Al minimo necesitan 
+instalar las herramientas de la linea de comandos para "Xcode 4.4 for Mountain Lion" 
+(a través de descarga gratuita desde href="http://developer.apple.com">Apple</a> o 
+instalable desde la página de Preferencias de Xcode).  Nota que si está presente 
+una versión de Xcode más antigua que 4.4, se necesita <b>desinstalar</b> primero 
+usando <i>/Developer/Library/uninstall-devtools</i>.  Puede determinar la versión 
+actual con el comando <i>xcodebuild -version</i> .</p>
+<p>Si necesita X11, debe de instalar Xquartz-2.7.4 o posterior desde 
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<p>
+<strong>Soporte para 10.7:</strong>
+Usuarios en 10.7 deberián instalar Xcode 4.1 o posterior (a través de descarga 
+gratuita del AppStore).  Nota que si está presente 
+una versión de Xcode más antigua que 4.4, se necesita <b>desinstalar</b> primero 
+usando <i>/Developer/Library/uninstall-devtools</i>.  Puede determinar la versión 
+actual con el comando <i>xcodebuild -version</i> .</p>
+<p>Fink no soporta Xquartz en OS X 10.7.  No borre el X11.app oficial de Apple.</p>
+<p>
+<strong>Soporte para 10.6:</strong>
+Para obtener los mejores resultados, se le recomienda a usuarios de 10.6 que 
+instalen Xcode 3.2.6 o 4.2.1 (si pagó por la prevista 4.x para desarolladores). 
+La versión 4.0.2 tiene ciertos problemas conocidos que afectan la compilación 
+de ciertos programas.  Si se encuentra con este problema, siga la instrucciones 
+en la sección de 10.7 para desinstalar Xcode.</p>
+<p>Fink no soporta Xquartz en OS X 10.6.  No borre el X11.app oficial de Apple.</p>
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 <h1>Recursos</h1>
 
