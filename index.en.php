@@ -1,7 +1,7 @@
 <?
 $title = "Home";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2013/11/30 19:13:58 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2014/01/24 19:10:21 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -61,14 +61,16 @@ Installation instructions can be found  on our <a href="download/srcdist.php">so
 release page</a>.
 </p>
 <p>Xcode must be installed before Fink.</p>  
+<p>
 <strong>10.9 Support:</strong> 
 10.9 users must install Xcode version 5.0.1 or later 
 (via a free download from the AppStore; version 5.0.2 is recommended), 
 or must at least install the Command Line Tools for 
 Xcode 5.0 for Mavericks (installable via <i>xcode-select --install</i>, 
-or downloadable from  <a href="http://developer.apple.com">Apple</a>). 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
 <p>If you need X11 you should install Xquartz-2.7.4 or later from 
 <a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<p>
 <strong>10.8 Support:</strong> 
 10.8 users must install Xcode version 4.4 or later 
 (via a free download from the AppStore; version 5.0.2 is recommended), 
@@ -82,6 +84,7 @@ You can determine your current version of Xcode by running
 <i>xcodebuild -version</i> .</p>
 <p>If you need X11 you should install Xquartz-2.7.2 or later from 
 <a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<p>
 <strong>10.7 Support:</strong> 
 10.7 users must install or update Xcode to version 4.1 or later 
 (via a free download from the AppStore), (version 4.6.3 is recommended) or must at least
@@ -91,7 +94,9 @@ or installable via the Xcode Preferences (4.3 or later).  Follow
 the instructions in the <strong>10.8</strong> section above regarding how to check your
 version and uninstall an outdated one, if needed.</p>
 <p>We don't support Xquartz on 10.7, so don't remove Apple's official X11.</p>
-<strong>10.6 Support:</strong>  For best results, 10.6 users are
+<p>
+<strong>10.6 Support:</strong>
+For best results, 10.6 users are
 encouraged to upgrade Xcode to version 3.2.6, or to version 4.2.1 if you
 paid for a 4.x Developer preview.  Version 4.0.2 is known to have some
 bugs in its linker that prevent certain packages from building.  Follow
