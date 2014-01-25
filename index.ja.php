@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/01/24 20:23:07 $';
+$cvs_date = '$Date: 2014/01/25 10:24:11 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -60,6 +60,15 @@ include dirname(__FILE__) . "/fink_version.inc";
 に書かれています。</p>
 
 <p>Xcode を Fink より先にインストールする必要があります。</p>  
+<p>
+<strong>10.9 サポート:</strong> 
+10.9 users must install Xcode version 5.0.1 or later 
+(via a free download from the AppStore; version 5.0.2 is recommended), 
+or must at least install the Command Line Tools for 
+Xcode 5.0 for Mavericks (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.4 or later from 
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
 <p>
 <strong>10.8 サポート:</strong> 
 10.8 ユーザは、(AppStore からの無料ダウンロードで)
