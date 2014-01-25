@@ -1,7 +1,7 @@
 <?
 $title = "Accueil";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2013/02/05 23:46:04 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2014/01/25 10:26:51 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -54,37 +54,55 @@ include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
-Fink currently supports OS X 10.7 (Lion), 10.6 (SnowLeopard), and 10.5 
-(Leopard), and continues to run on older versions of OS X, although
+Fink currently supports OS X 10.9 (Mavericks), 10.8 (Mountain Lion), 10.7 (Lion), and 10.6 (Snow Leopard),
+and continues to run on older versions of OS X, although
 official updates are no longer available for the older versions.
 Installation instructions can be found  on our <a href="download/srcdist.php">source
 release page</a>.
 </p>
-<p>XCode must be installed before Fink.</p>
-<strong>10.7 Support:</strong>
-10.7 users must install or update XCode to version 4.1 or later
-(via a free download from the AppStore).  Note that if you installed an
-earlier version of XCode prior to updating, you need to <b>uninstall</b>
-the old version first, by running
-<i>/Developer/Library/uninstall-devtools</i> .
-You can determine your current version of XCode by running
+<p>Xcode must be installed before Fink.</p>  
+<p>
+<strong>10.9 Support:</strong> 
+10.9 users must install Xcode version 5.0.1 or later 
+(via a free download from the AppStore; version 5.0.2 is recommended), 
+or must at least install the Command Line Tools for 
+Xcode 5.0 for Mavericks (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.4 or later from 
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<p>
+<strong>10.8 Support:</strong> 
+10.8 users must install Xcode version 4.4 or later 
+(via a free download from the AppStore; version 5.0.2 is recommended), 
+or must at least install the Command Line Tools for 
+Xcode 4.4 for Mountain Lion (downloadable from <a href="http://developer.apple.com">Apple</a>
+or installable via the Xcode Preferences). Note that if you had an 
+earlier version of Xcode than 4.3 installed prior to updating from 10.7, you need 
+to <b>uninstall</b> the old version first by running 
+<i>/Developer/Library/uninstall-devtools</i>. 
+You can determine your current version of Xcode by running 
 <i>xcodebuild -version</i> .</p>
-<strong>10.6 Support:</strong>  For best results, 10.6 users are
-encouraged to upgrade XCode to version 3.2.6, or to version 4.2.1 if you
+<p>If you need X11 you should install Xquartz-2.7.2 or later from 
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<p>
+<strong>10.7 Support:</strong> 
+10.7 users must install or update Xcode to version 4.1 or later 
+(via a free download from the AppStore), (version 4.6.3 is recommended) or must at least
+install the Command Line Tools for 
+Xcode 4.3 or later (downloadable from <a href="http://developer.apple.com">Apple</a>
+or installable via the Xcode Preferences (4.3 or later).  Follow
+the instructions in the <strong>10.8</strong> section above regarding how to check your
+version and uninstall an outdated one, if needed.</p>
+<p>We don't support Xquartz on 10.7, so don't remove Apple's official X11.</p>
+<p>
+<strong>10.6 Support:</strong>
+For best results, 10.6 users are
+encouraged to upgrade Xcode to version 3.2.6, or to version 4.2.1 if you
 paid for a 4.x Developer preview.  Version 4.0.2 is known to have some
 bugs in its linker that prevent certain packages from building.  Follow
-the instructions in the 10.7 section above regarding how to check your
+the instructions in the <strong>10.8</strong> section above regarding how to check your
 version and uninstall it, if needed.</p>
-<p>
-<strong>10.5 Support:</strong>
-Users are encouraged to update to OS 10.5.2 or later, via Software Update,
-in order to get bugfixes and enhancements for X11.  Further unofficial updates
-continue to be made available on the
-<a href="http://trac.macosforge.org/projects/xquartz/wiki/Releases">XQuartz Update Page.</a>
-We are not currently supporting Xquartz on 10.6 or 10.7.<br>
-Users should also install Xcode 3.1 or later, preferably 3.1.4, to fix some
-known problems in building packages.
-</p>
+<p>We don't support Xquartz on 10.6, so don't remove Apple's official X11.</p>
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 <h1>Ressources</h1>
 
