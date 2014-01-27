@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
- <cvsid>$Id: news.ja.xml,v 1.62 2014/01/25 12:57:45 nieder Exp $</cvsid>
+ <cvsid>$Id: news.ja.xml,v 1.63 2014/01/27 11:52:21 nieder Exp $</cvsid>
 <newsitem>
  <date>2013-12-30</date>
  <headline>fink-0.36.3.1 released</headline>
  <body>
   <p>
-  <code>fink-0.36.3.1</code> was released on 30 December, 2013.
-  This release includes official support for OS X 10.9.1, and fixes an 
-  issue in which the fink couldn't directly access official or unofficial 
-  binary distributions on 64-bit platforms.  It also fixes an issue with 
-  32-bit platforms which was introduced in fink-0.36.3.
-  </p>
+  <code>fink-0.36.3.1</code> は、2013年12月30日にリリースされました。
+  このリリースは、OS X 10.9.1 への公式サポートを含み、
+  また 64 bit プラットフォーム上で、
+  公式または非公式のバイナリディストリビューションへ直接アクセスできない問題を修正します。
+  さらに、fink-0.36.3 で導入された 32 bit プラットフォームの問題も修正します。  </p>
  </body>
 </newsitem> 
 <newsitem>
@@ -20,17 +19,17 @@
  <headline>fink-0.36.1 released</headline>
  <body>
   <p>
-  <code>fink-0.36.1</code> was released on 17 November, 2013.
-  This release fixes an intermittent bug in building Perl modules
-  which was introduced with fink-0.36.0.  We encourage our users to
-  install fink-0.36.1 to rectify this issue, and if you are having
-  problems with installing a Perl module, use <code>fink rebuild</code>
-  on it.
+  <code>fink-0.36.1</code> は、2013年11月17日にリリースされました。
+  このリリースは、fink-0.36.0 に導入された Perl モジュールを
+  ビルドする時に発生する断続的な問題を修正します。
+  この問題を修正するため、fink-0.36.1 をインストールすることを勧めます。
+  Perl モジュールに問題がある場合は、<code>fink rebuild</code> 
+  をしてみてください。
   </p>
   <p>
-  In addition, the bootstrap  script now validates whether the Mavericks 
-  command-line build tools are installed on that OS version, and prevents 
-  folks from bootstrapping with the wrong tools.
+  さらに、bootstrap スクリプトが Mavericks command line build tools が、
+  該当する OS バージョンにインストールされているか確認し、
+  間違ったツールで bootstrap することを防ぎます。
   </p>
  </body>
 </newsitem> 
@@ -39,9 +38,9 @@
  <headline>fink-0.36.0 released</headline>
  <body>
   <p>
-  <code>fink-0.36.0</code> was released on 31 October, 2013.
-  This is the first release to work with OS X 10.9 (Mavericks).
-  We are currently in the process of making packages available.
+  <code>fink-0.36.0</code> は、2013年11月17日にリリースされました。
+  これは、 OS X 10.9 (Mavericks) に対応した最初のリリースです。
+  現在、パッケージ化も進めています。
   </p>
  </body>
 </newsitem>
