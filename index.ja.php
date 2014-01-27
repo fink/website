@@ -1,7 +1,7 @@
 <?
 $title = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/01/25 10:24:11 $';
+$cvs_date = '$Date: 2014/01/27 11:52:09 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -52,8 +52,7 @@ require dirname(__FILE__) . "/news/news.ja.inc";
 include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
-<p>Fink は、現在 OS X 10.8 (Mountain Lion), 10.7 (Lion), 10.6 (SnowLeopard),
-10.5 (Leopard) をサポートし、
+<p>Fink は、現在 OS X 10.9 (Mavericks), OS X 10.8 (Mountain Lion), 10.7 (Lion), 10.6 (Snow Leopard) をサポートし、
 またこれより前のバージョンの OS X は、公式アップデートは行わないものの、動作します。
 インストール方法は、
 <a href="download/srcdist.php">ソースリリースのページ</a>
@@ -62,13 +61,13 @@ include dirname(__FILE__) . "/fink_version.inc";
 <p>Xcode を Fink より先にインストールする必要があります。</p>  
 <p>
 <strong>10.9 サポート:</strong> 
-10.9 users must install Xcode version 5.0.1 or later 
-(via a free download from the AppStore; version 5.0.2 is recommended), 
-or must at least install the Command Line Tools for 
-Xcode 5.0 for Mavericks (installable via <i>xcode-select --install</i>, 
-or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
-<p>If you need X11 you should install Xquartz-2.7.4 or later from 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+10.9 ユーザは、Xcode 5.0.1 以降 (AppStore から無料。バージョン 5.0.2 推奨) 
+または、少なくとも Command Line Tools for Xcode 5.0 for Mavericks 
+(<i>xcode-select --install</i> でインストール可能、または <a href="http://developer.apple.com">Apple</a> からダウンロード可能)
+をインストールする必要があります。</p>
+<p>X11 が必要なら、
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>
+から Xquartz-2.7.4 以降をインストールしてください。</p>
 <p>
 <strong>10.8 サポート:</strong> 
 10.8 ユーザは、(AppStore からの無料ダウンロードで)
