@@ -5,12 +5,43 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2013-11-17T17:30:28-08:00</dc:date>
+    <dc:date>2014-01-27T06:52:35-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.1%20released.">
-      <title>fink-0.36.1 released.</title>
-      <link>http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.1%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.1%20released.</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released">
+      <title>fink-0.36.3.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.3.1 was released on 30 December, 2013.
+  This release includes official support for OS X 10.9.1, and fixes an 
+  issue in which the fink couldn't directly access official or unofficial 
+  binary distributions on 64-bit platforms.  It also fixes an issue with 
+  32-bit platforms which was introduced in fink-0.36.3.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.3.1 was released on 30 December, 2013.
+  This release includes official support for OS X 10.9.1, and fixes an 
+  issue in which the fink couldn't directly access official or unofficial 
+  binary distributions on 64-bit platforms.  It also fixes an issue with 
+  32-bit platforms which was introduced in fink-0.36.3.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20released">
+      <title>fink-0.36.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20released</guid>
       <description>
 		<![CDATA[
 	
@@ -50,33 +81,37 @@
 		]]>
 	</content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.0%20released.">
-      <title>fink-0.36.0 released.</title>
-      <link>http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.0%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2013-10-30%20fink-0.36.0%20released.</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released">
+      <title>fink-0.36.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released</guid>
       <description>
 		<![CDATA[
 	
-  <p>fink-0.36.0 was released on 31 October, 2013.
+  <p>
+  fink-0.36.0 was released on 31 October, 2013.
   This is the first release to work with OS X 10.9 (Mavericks).
-  We are currently in the process of making packages available.</p>
+  We are currently in the process of making packages available.
+  </p>
  
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
 	
-  <p>fink-0.36.0 was released on 31 October, 2013.
+  <p>
+  fink-0.36.0 was released on 31 October, 2013.
   This is the first release to work with OS X 10.9 (Mavericks).
-  We are currently in the process of making packages available.</p>
+  We are currently in the process of making packages available.
+  </p>
  
 		]]>
 	</content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-09-27%20fink-0.35.2%20released.">
-      <title>fink-0.35.2 released.</title>
-      <link>http://fink.sourceforge.net/news/#2013-09-27%20fink-0.35.2%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2013-09-27%20fink-0.35.2%20released.</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-09-27%20fink-0.35.2%20released">
+      <title>fink-0.35.2 released</title>
+      <link>http://fink.sourceforge.net/news/#2013-09-27%20fink-0.35.2%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2013-09-27%20fink-0.35.2%20released</guid>
       <description>
 		<![CDATA[
 	
@@ -457,53 +492,6 @@
    chosen.  In addition, packages now log the md5 sums of all of their files for diagnostic
    purposes.  And users who are only using the Xcode Command-Line Tools will enjoy not
    seeing frequent messages that Xcode.app can't be found.</p>
-  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-06-11%20fink-0.33.0%20released">
-      <title>fink-0.33.0 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-06-11%20fink-0.33.0%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-06-11%20fink-0.33.0%20released</guid>
-      <description>
-		<![CDATA[
-	
-   <p>fink-0.33.0 was released on 6 June, 2012.  This release introduces some new
-    features:</p>
-   <p>Starting with this version of fink, packages will be built as an unprivileged
-   user by default, which prevents the build process from installing files in the rest of the
-   filesystem. (Prior to fink-0.33.0 we relied on maintainers to test their packages
-   using this method).  Users may find that some packages don't build in this mode, so we appreciate
-   feedback, as always, to help us find and correct problems.</p>
-   <p>In addition, we have added some additional options for maintainers in this Fink version.
-   /sw/Library/Python has been added to the list of valid directories in a package, to
-   provide a unified location to install modules built against a built-in Python.  There is
-   now an xcode.app virtual package for packages that use xcodebuild
-   to BuildDepend upon.  Its version is the version of Xcode.app.  The xcode
-   virtual package has always been based on the presence of the command-line tools, and now its
-   version is the version of those.  Note that xcode and xcode.app
-   are the same for Xcodes prior to 4.3.</p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-   <p>fink-0.33.0 was released on 6 June, 2012.  This release introduces some new
-    features:</p>
-   <p>Starting with this version of fink, packages will be built as an unprivileged
-   user by default, which prevents the build process from installing files in the rest of the
-   filesystem. (Prior to fink-0.33.0 we relied on maintainers to test their packages
-   using this method).  Users may find that some packages don't build in this mode, so we appreciate
-   feedback, as always, to help us find and correct problems.</p>
-   <p>In addition, we have added some additional options for maintainers in this Fink version.
-   /sw/Library/Python has been added to the list of valid directories in a package, to
-   provide a unified location to install modules built against a built-in Python.  There is
-   now an xcode.app virtual package for packages that use xcodebuild
-   to BuildDepend upon.  Its version is the version of Xcode.app.  The xcode
-   virtual package has always been based on the presence of the command-line tools, and now its
-   version is the version of those.  Note that xcode and xcode.app
-   are the same for Xcodes prior to 4.3.</p>
   
 		]]>
 	</content:encoded>

@@ -5,8 +5,109 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2013-05-08T09:21:00-07:00</dc:date>
+    <dc:date>2014-01-27T06:52:36-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released">
+      <title>fink-0.36.3.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.3.1 was released on 30 December, 2013.
+  This release includes official support for OS X 10.9.1, and fixes an 
+  issue in which the fink couldn't directly access official or unofficial 
+  binary distributions on 64-bit platforms.  It also fixes an issue with 
+  32-bit platforms which was introduced in fink-0.36.3.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.3.1 was released on 30 December, 2013.
+  This release includes official support for OS X 10.9.1, and fixes an 
+  issue in which the fink couldn't directly access official or unofficial 
+  binary distributions on 64-bit platforms.  It also fixes an issue with 
+  32-bit platforms which was introduced in fink-0.36.3.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20released">
+      <title>fink-0.36.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.1 was released on 17 November, 2013.
+  This release fixes an intermittent bug in building Perl modules
+  which was introduced with fink-0.36.0.  We encourage our users to
+  install fink-0.36.1 to rectify this issue, and if you are having
+  problems with installing a Perl module, use fink rebuild
+  on it.
+  </p>
+  <p>
+  In addition, the bootstrap  script now validates whether the Mavericks 
+  command-line build tools are installed on that OS version, and prevents 
+  folks from bootstrapping with the wrong tools.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.1 was released on 17 November, 2013.
+  This release fixes an intermittent bug in building Perl modules
+  which was introduced with fink-0.36.0.  We encourage our users to
+  install fink-0.36.1 to rectify this issue, and if you are having
+  problems with installing a Perl module, use fink rebuild
+  on it.
+  </p>
+  <p>
+  In addition, the bootstrap  script now validates whether the Mavericks 
+  command-line build tools are installed on that OS version, and prevents 
+  folks from bootstrapping with the wrong tools.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released">
+      <title>fink-0.36.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.0 was released on 31 October, 2013.
+  This is the first release to work with OS X 10.9 (Mavericks).
+  We are currently in the process of making packages available.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.36.0 was released on 31 October, 2013.
+  This is the first release to work with OS X 10.9 (Mavericks).
+  We are currently in the process of making packages available.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released">
       <title>fink-0.32.5.5 released</title>
       <link>http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released</link>
@@ -335,173 +436,6 @@
       have to specify a particular version of fink to use a
       PatchFile, and fixes a Perl issue.</p>
       <p>It is expected that the package will be added to 10.4/stable shortly.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-09-11%20fink-0.31.1%20released">
-      <title>fink-0.31.1 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-09-11%20fink-0.31.1%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-09-11%20fink-0.31.1%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.31.1 was released to the 10.4/unstable and
-      10.7/stable trees on
-      11 September, 2011.  It fixes an issue in which 32-bit machines running OS
-      10.6 wouldn't be allowed to bootstrap, even though this is a fully supported
-      configuration.  It also provides a more robust scheme to report on the
-      Xcode version in error messages than in prior fink versions.
-      Finally OS 10.7.1 is recognized as a supported OS version.</p>
-      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
-      <p>Update, 2011-09-26:   It has been added to 10.4/stable.</p>
-   
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.31.1 was released to the 10.4/unstable and
-      10.7/stable trees on
-      11 September, 2011.  It fixes an issue in which 32-bit machines running OS
-      10.6 wouldn't be allowed to bootstrap, even though this is a fully supported
-      configuration.  It also provides a more robust scheme to report on the
-      Xcode version in error messages than in prior fink versions.
-      Finally OS 10.7.1 is recognized as a supported OS version.</p>
-      <p>It is expected that the package will be added to 10.4/stable shortly.</p>
-      <p>Update, 2011-09-26:   It has been added to 10.4/stable.</p>
-   
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.">
-      <title>Fink and Lion--updated.</title>
-      <link>http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-07-20%20Fink%20and%20Lion--updated.</guid>
-      <description>
-		<![CDATA[
-	
-      <p>OS X 10.7 "Lion" was released on July 20, 2011.  We want to let Fink
-      users know what to expect if updating.</p>
-<p>First, the fink 
-program itself will not run  on a system which has
-been upgraded to Lion.  However, it will be possible to use the
-dpkg program to extract a list of the Fink packages
-which had been installed under 10.6, so that they can be reinstalled
-under 10.7.  Use</p>
-<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
-<p>to extract the packages, and</p>
-<p>cat fink_packages.txt | xargs fink install</p>
-<p>once you have installed Fink for 10.7.</p>
-<p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
-Fink again, using a tarball for fink-0.31.0 or later.</p>
-<p>Second, due to lots of changes under the hood, there currently are many fewer
-Fink packages which build under 10.7 as opposed to 10.6.
-Thus, even if you've extracted a list of Fink packages which had
-been installed under 10.6, some of them may not yet be installable under
-10.7.  We are currently creating a database showing which packages
-can be successfully installed under 10.7, and work is ongoing to add packages.</p>
-<p>10.7 introduces several drastic changes to how the system works. While this may
-cause a slight delay in full Fink functionality in the short term, it will
-make Fink work better in the future.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>OS X 10.7 "Lion" was released on July 20, 2011.  We want to let Fink
-      users know what to expect if updating.</p>
-<p>First, the fink 
-program itself will not run  on a system which has
-been upgraded to Lion.  However, it will be possible to use the
-dpkg program to extract a list of the Fink packages
-which had been installed under 10.6, so that they can be reinstalled
-under 10.7.  Use</p>
-<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
-<p>to extract the packages, and</p>
-<p>cat fink_packages.txt | xargs fink install</p>
-<p>once you have installed Fink for 10.7.</p>
-<p>To upgrade Fink after upgrading to Lion, one will have to bootstrap
-Fink again, using a tarball for fink-0.31.0 or later.</p>
-<p>Second, due to lots of changes under the hood, there currently are many fewer
-Fink packages which build under 10.7 as opposed to 10.6.
-Thus, even if you've extracted a list of Fink packages which had
-been installed under 10.6, some of them may not yet be installable under
-10.7.  We are currently creating a database showing which packages
-can be successfully installed under 10.7, and work is ongoing to add packages.</p>
-<p>10.7 introduces several drastic changes to how the system works. While this may
-cause a slight delay in full Fink functionality in the short term, it will
-make Fink work better in the future.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-07-16%20Fink%20and%20Lion.">
-      <title>Fink and Lion.</title>
-      <link>http://fink.sourceforge.net/news/#2011-07-16%20Fink%20and%20Lion.</link>
-      <guid>http://fink.sourceforge.net/news/#2011-07-16%20Fink%20and%20Lion.</guid>
-      <description>
-		<![CDATA[
-	
-      <p>Apple has announced that OS X 10.7 "Lion" will be released 
-in July.  We want to let Fink users know what to expect when Lion is 
-released.</p>
-<p>First, the fink 
-program itself will not run  on a system which has
-been upgraded to Lion.  However, it will be possible to use the
-dpkg program to extract a list of the Fink packages
-which had been installed under 10.6, so that they can be reinstalled
-under 10.7.  Use</p>
-<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
-<p>to extract the packages, and</p>
-<p>cat fink_packages.txt | xargs fink install</p>
-<p>once you have installed Fink for 10.7.</p>
-<p>(To upgrade fink after upgrading to Lion, one will have to bootstrap
-fink again, using a new version of fink which will be released shortly
-after Lion has been released.  Watch this space for an announcement.)</p>
-<p>Second, due to lots of changes under the hood, there will initially
-be many fewer Fink packages which work under 10.7 as opposed to 10.6.
-Thus, even if you've extracted a list of Fink packages which had
-been installed under 10.6, some of them may not yet be installable under
-10.7.  We are currently creating a database showing which packages
-can be successfully installed under 10.7, but that database
-may not be complete prior to the release of Lion.</p>
-<p>10.7 introduces several drastic changes to how the system works. While this may
-cause a slight delay in full Fink functionality in the short term, it will
-make Fink work better in the future.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>Apple has announced that OS X 10.7 "Lion" will be released 
-in July.  We want to let Fink users know what to expect when Lion is 
-released.</p>
-<p>First, the fink 
-program itself will not run  on a system which has
-been upgraded to Lion.  However, it will be possible to use the
-dpkg program to extract a list of the Fink packages
-which had been installed under 10.6, so that they can be reinstalled
-under 10.7.  Use</p>
-<p>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</p>
-<p>to extract the packages, and</p>
-<p>cat fink_packages.txt | xargs fink install</p>
-<p>once you have installed Fink for 10.7.</p>
-<p>(To upgrade fink after upgrading to Lion, one will have to bootstrap
-fink again, using a new version of fink which will be released shortly
-after Lion has been released.  Watch this space for an announcement.)</p>
-<p>Second, due to lots of changes under the hood, there will initially
-be many fewer Fink packages which work under 10.7 as opposed to 10.6.
-Thus, even if you've extracted a list of Fink packages which had
-been installed under 10.6, some of them may not yet be installable under
-10.7.  We are currently creating a database showing which packages
-can be successfully installed under 10.7, but that database
-may not be complete prior to the release of Lion.</p>
-<p>10.7 introduces several drastic changes to how the system works. While this may
-cause a slight delay in full Fink functionality in the short term, it will
-make Fink work better in the future.</p>
     
 		]]>
 	</content:encoded>

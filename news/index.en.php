@@ -1,13 +1,21 @@
 <?
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/11/18 01:30:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2014/01/25 12:55:53';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2013-10-30%20fink-0.36.1%20released."><span class="news-date">2013-10-30: </span><span class="news-headline">fink-0.36.1 released.</span></a><?php gray_line(); ?>
+<a name="2013-12-30%20fink-0.36.3.1%20released"><span class="news-date">2013-12-30: </span><span class="news-headline">fink-0.36.3.1 released</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.36.3.1</code> was released on 30 December, 2013.
+  This release includes official support for OS X 10.9.1, and fixes an 
+  issue in which the fink couldn't directly access official or unofficial 
+  binary distributions on 64-bit platforms.  It also fixes an issue with 
+  32-bit platforms which was introduced in fink-0.36.3.
+  </p>
+ <a name="2013-11-17%20fink-0.36.1%20released"><span class="news-date">2013-11-17: </span><span class="news-headline">fink-0.36.1 released</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.36.1</code> was released on 17 November, 2013.
   This release fixes an intermittent bug in building Perl modules
@@ -21,11 +29,13 @@ include_once "header.inc";
   command-line build tools are installed on that OS version, and prevents 
   folks from bootstrapping with the wrong tools.
   </p>
- <a name="2013-10-30%20fink-0.36.0%20released."><span class="news-date">2013-10-30: </span><span class="news-headline">fink-0.36.0 released.</span></a><?php gray_line(); ?>
-  <p><code>fink-0.36.0</code> was released on 31 October, 2013.
+ <a name="2013-10-31%20fink-0.36.0%20released"><span class="news-date">2013-10-31: </span><span class="news-headline">fink-0.36.0 released</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.36.0</code> was released on 31 October, 2013.
   This is the first release to work with OS X 10.9 (Mavericks).
-  We are currently in the process of making packages available.</p>
- <a name="2013-09-27%20fink-0.35.2%20released."><span class="news-date">2013-09-27: </span><span class="news-headline">fink-0.35.2 released.</span></a><?php gray_line(); ?>
+  We are currently in the process of making packages available.
+  </p>
+ <a name="2013-09-27%20fink-0.35.2%20released"><span class="news-date">2013-09-27: </span><span class="news-headline">fink-0.35.2 released</span></a><?php gray_line(); ?>
   <p><code>fink-0.35.2</code> was released on 27 September, 2013.
   This release provides support for Xcode 5 on 10.8, and other 
   bugfixes </p>
