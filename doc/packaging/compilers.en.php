@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Compilers";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2013/06/10 21:39:21';
+$cvs_date = 'Date: 2014/02/14 18:22:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="reference.php?phpLang=en" title="Reference"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -45,14 +45,17 @@ The 10.1 distribution assumes that the compiler version is 2.95; the
 10.2 distribution assumes that the compiler version is 3.1; the 10.2-gcc3.3
 and 10.3 distributions assume that the compiler version is 3.3.   The compiler
 for the 10.4-transitional distribution is complicated: g++-3.3 is being
-used along with gcc-4.0.  This will change again in the 10.4 distribution,
-which will use both gcc-4.0 and g++-4.0.
+used along with gcc-4.0.  The 10.4 and 10.5 distributions use both gcc-4.0 
+and g++-4.0.  The 10.6 distribution uses gcc-4.2, while the 10.7 through 10.9 
+distributions use clang and clang++ as the default compilers.  The 10.9 
+distribution has a further change in that it has migrated from libstdc++ to 
+libc++.
 </p>
-<p>A new method was introduced for ensuring the correct g++ compiler starting
-with the 10.4-transitional distribution.  During compilation, a directory
+<p>A new method for ensuring the correct g++ compiler was introduced with the 
+10.4-transitional distribution.  During compilation, a directory
 <code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
 number) is added to the PATH during compilation.  This directory contains
-shell scripts which ensure that the correct version of g++ is used.
+shell scripts which ensure that the correct compiler and version of g++ is used.
 </p>
 
 
@@ -78,7 +81,7 @@ of your package.
 <p>
 A small group of packages which depend only on each other can be left 
 at the previous version of the ABI when the distribution changes, if they
-are not ready to be upgrade.  When the upgrade is eventually done, they
+are not ready to be upgraded.  When the upgrade is eventually done, they
 must be all upgraded together with the correct versioning on all the
 packages.  For this reason, it is best to upgrade most packages at
 the time the distribution changes.
@@ -86,10 +89,9 @@ the time the distribution changes.
 <p>
 Fink uses the GCC field to ensure that users have the correct version of
 the g++ compiler installed.  If the GCC field is defined by the package,
-fink checks to see if the <code>gcc_select</code> command has been
-set to the correct current value.  (This correct value is 3.3 for the 10.2
-and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The 
-<code>gcc_select</code> command was not available prior to OS X 10.2.)
+fink checks to see if the value matches that expected for the OS X version.
+The correct value is 3.3 for the 10.2 and 10.3 versions of OS X, and 4.0 
+for OS X 10.4 through OS X 10.9.
 </p>
 
 

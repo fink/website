@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Policy";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2013/06/10 21:39:21';
+$cvs_date = 'Date: 2014/02/14 18:22:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -578,7 +578,8 @@ which depend on <code>foo</code>.
 <h2><a name="perlmods">3.5 Perl Modules</a></h2>
 <p>Fink's policy about perl modules, originally implemented in
 May 2003,  has been revised as of April 2004.
-</p><p>
+</p>
+<p>
 Traditionally, the Fink packages for perl modules had the suffix 
 <code>-pm</code>, and were built using the <code>Type: perl</code> 
 directive, which stores the perl module's files in <code>/sw/lib/perl5</code> and/or
@@ -587,45 +588,46 @@ now in place, this storage location is only
 permitted for perl modules which are independent of the version of perl 
 being used to compile them (and which do not depend on other perl modules
 that lack this independence-of-version).
-</p><p>
+</p>
+<p>
 The perl modules which are version-dependent are the so-called XS modules,
 which frequently contain compiled C code as well as pure perl routines.
 There are a number of ways of recognizing these, including the presence
 of a file with a suffix <code>.bundle</code>.
-</p><p>
+</p>
+<p>
 A version-dependent perl module must be built using a versioned binary
-of perl, such as <code>perl5.6.0</code>, and must store its files in
+of perl, such as <code>perl5.12.3</code>, and must store its files in
 versioned subdirectories of the standard perl directories, such as
-<code>/sw/lib/perl5/5.6.0</code> and <code>/sw/lib/perl5/5.6.0/darwin</code>.  By convention, package names
-use the suffix <code>-pm560</code> for
-a perl module of version 5.6.0.  Similar storage and naming conventions
+<code>/sw/lib/perl5/5.12.3</code> and <code>/sw/lib/perl5/5.12.3/darwin</code>.  By convention, package names
+use the suffix <code>-pm5123</code> for
+a perl module of version 5.12.3.  Similar storage and naming conventions
 are in force for other versions of perl, which include 
-perl 5.6.1 (in the 10.2 trees only), perl 5.8.0 (in the 10.3 trees only),
-perl 5.8.1, perl 5.8.4, and perl 5.8.6.
-</p><p>
-The directive <code>Type: perl 5.6.0</code> automatically uses the
+perl 5.10.0 (in the 10.6 tree only), perl 5.12.4 (in the 10.7 tree only), and 
+perl 5.16.2 (in the 10.7 tree only).
+</p>
+<p>
+The directive <code>Type: perl 5.12.3</code> automatically uses the
 versioned perl binary and stores the files in the correct subdirectories. 
 (This directive is available starting with version 0.13.0 of fink.)
-</p><p>
+</p>
+<p>
 Under the May 2003 policy, it was permitted to create a 
 <code>-pm</code> package which is essentially 
 a "bundle" package that loads the <code>-pm560</code> variant or any
 others which may be exist.  Under the April 2004 policy this is discouraged,
-and after a transitional period it will be outlawed entirely.  (The
-one exception will be the package <code>storable-pm</code> which needs
-to be in this form for bootstrapping purposes.)
+and after a transitional period was outlawed entirely.
 </p>
-<p>As of fink 0.20.2, the system-perl virtual package automatically
-"Provides" certain perl modules when the version of Perl present on
-the system is at
-least 5.8.0.  In the case of system-perl-5.8.1-1, these are:
-<b>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581, 
-file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581, 
-i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581, 
-mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581, 
-test-simple-pm581, time-hires-pm581.</b>
-(This list was slightly different in fink 0.20.1: package maintainers are
-encouraged to check to be sure that they are assuming the correct list.)
+<p>
+As of fink 0.20.2, the system-perl virtual package automatically
+"Provides" certain perl modules depending on the system-perl version. The
+code generating the list of provided perl modules is found in the 
+<code>VirtPackage.pm</code> file that is part of the <code>fink</code> package.
+</p>
+<p>
+As different system perls provide different modules, package maintainers are
+encouraged to check to be sure that they are assuming the correct list when
+using provided perl modules.
 </p>
 <p>
 Effective with version 0.13.0 of fink, the <code>fink validate</code>
@@ -650,10 +652,10 @@ March 2005, Fink has defined alternate locations in MANPATH:
 <code>%p/lib/perl5/X.Y.Z/man</code> for each perl-X.Y.Z. You
 no longer need to create mutually-exclusive -man or -doc SplitOff
 packages. For
-example, to avoid conflicts between uri-pm581 and uri-pm586, the
+example, to avoid conflicts between uri-pm5124 and uri-pm5162, the
 same-named <code>URI.3pm</code> manpage is installed
-as <code>%p/lib/perl5/5.8.1/man/man3/URI.3pm</code> and
-<code>%p/lib/perl5/5.8.6/man/man3/URI.3pm</code>,
+as <code>%p/lib/perl5/5.12.4/man/man3/URI.3pm</code> and
+<code>%p/lib/perl5/5.16.2/man/man3/URI.3pm</code>,
 respectively. Note that the default scripts provided by <code>Type:
 perl X.Y.Z</code> have not changed, so you will have to locate the
 manpages here manually in your <code>InstallScript</code>. If you
@@ -662,7 +664,7 @@ one, and then simply move the files manually:
 </p>
 <pre>
 %{default_script}
-mv %i/share/man %i/lib/perl5/5.8.1
+mv %i/share/man %i/lib/perl5/5.12.4
 </pre>
 <p>
 That will move all manpages. If you wish to move only one section of
@@ -671,8 +673,8 @@ manpages in section 1), a similar approach works:
 </p>
 <pre>
 %{default_script}
-mkdir -p %i/lib/perl5/5.8.1/man
-mv %i/share/man/man3 %i/lib/perl5/5.8.1/man
+mkdir -p %i/lib/perl5/5.12.4/man
+mv %i/share/man/man3 %i/lib/perl5/5.12.4/man
 </pre>
 <p>
 If you have executables, for example, demo or utility scripts
@@ -691,7 +693,7 @@ could be constructed as follows:
 <pre>
 Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.4 5.8.6)
+Type: perl (5.12.3 5.12.4 5.16.2)
 InstallScript: &lt;&lt;
   %{default_script}
   mkdir -p %i/lib/perl5/%type_raw[perl]/man
@@ -700,8 +702,8 @@ InstallScript: &lt;&lt;
 SplitOff: &lt;&lt;
   Package: %N-bin
   Depends: %N
-  Conflicts: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
-  Replaces: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
+  Conflicts: %{Ni}5.12.3, %{Ni}5.12.4, %{Ni}5.16.2
+  Replaces: %{Ni}5.12.3, %{Ni}5.12.4, %{Ni}5.16.2
   Files: bin share/man/man1
 &lt;&lt;
 &lt;&lt;
@@ -715,7 +717,7 @@ naming conflict at all, so one does not need the mutually-exclusive
 <pre>
 Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.4 5.8.6)
+Type: perl (5.12.3 5.12.4 5.16.2)
 InstallScript: &lt;&lt;
   %{default_script}
   mkdir -p %i/lib/perl5/%type_raw[perl]/man

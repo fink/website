@@ -1,7 +1,7 @@
 <?
 $title = "Packaging - Reference";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2013/06/10 21:39:21';
+$cvs_date = 'Date: 2014/02/14 18:22:26';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -152,19 +152,20 @@ example:
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.8.1 5.8.4 5.8.6)
-  Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
+  Type: perl (5.8.8 5.10.0)
+  Architecture: (%type_pkg[perl] = 5100) x86_64
 </pre>
 <p>
-will result in the field for the foo-pm581 and foo-pm584 variants
-being <code>powerpc</code> and the field being blank for the foo-pm586
+will result in the field for the foo-pm5100 variant
+being <code>x86_64</code> and the field being blank for the foo-pm588
 variant. Remember that when the field is blank, all architectures
 are permitted.
 </p>
-<p>The example above gives a very common use of this field: since
-perl 5.8.1 and perl 5.8.4 are only available on powerpc hardware,
-this field is necessary for any multiple-type perl package under the
-10.4 distribution and later.
+<p>
+The example above gives a very common use of this field: since
+some modules for system-perl 5.10.0 on 10.6 do not build as 32-bit (i386), 
+this field allows limiting multiple-type perl packages to specific
+systems.
 </p>
 </td></tr><tr valign="top"><td>Distribution</td><td>
 <p>
@@ -173,7 +174,10 @@ A comma-separated list of distribution(s) for which the package
 At present, the only valid values for distribution are
 <code>10.4</code>,
 <code>10.5</code>,
-and <code>10.6</code>
+<code>10.6</code>,
+<code>10.7</code>,
+<code>10.8</code>,
+and <code>10.9</code>
 . If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
 the local machine distribution is not listed. If the field is omitted
@@ -181,7 +185,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
+Since Fink's <code>10.7</code>, <code>10.8</code>, and <code>10.9</code> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -190,23 +194,24 @@ other.
 This field supports the standard conditional syntax for any value in
 the value list and percent-expansions can be used (see
 the <code>Depends</code> field for more information). In this manner,
-certain variants can be restricted to certain architectures. For
+certain variants can be restricted to certain distributions. For
 example:
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.8.1 5.8.6)
-  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+  Type: perl (5.12.3 5.12.4)
+  Distribution: (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8
 </pre>
 <p>
-will result in the field for the foo-pm581 variant
-being <code>10.3, 10.4</code> and the field being blank for the 
-foo-pm586 variant.
+will result in the <code>Distribution</code> field for the foo-pm5123 variant
+being <code>10.7, 10.8</code> and the field being blank for the 
+foo-pm5124 variant.
 </p>
-<p>Since python 2.3 is not available in the 10.5 distribution, and the
-available perl packages vary by distribution, these package types provide
+<p>Since python 2.5 is not available in the 10.7+ distributions, and the
+available perl versions vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
+various perl versions in the 10.3 through 10.9 distributions
+(<b>bolded</b> systems indicate system-perl at that version):
 </p>
 <pre>
     perl 5.6.0:  10.3
@@ -216,21 +221,21 @@ various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
-    perl 5.12.3:                         <b>10.7</b>
+    perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
+    perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>
 </pre>
-<p>A way to include all variants in a single finkinfo file is as follows.
+<p>A way to include all supported variants in a single finkinfo file is as follows.
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3)
+  Type: perl (5.8.8 5.10.0 5.12.3 5.12.4 5.16.2)
   Distribution: &lt;&lt;
-   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
-   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
-   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
-   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
-   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
-   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6,
-   (%type_pkg[perl] = 5123) 10.7
+   (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.6,
+   (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8, (%type_pkg[perl] = 5123) 10.9,
+   (%type_pkg[perl] = 5124) 10.7, (%type_pkg[perl] = 5124) 10.8, (%type_pkg[perl] = 5124) 10.9,
+   (%type_pkg[perl] = 5162) 10.7, (%type_pkg[perl] = 5162) 10.8, (%type_pkg[perl] = 5162) 10.9
   &lt;&lt;
 </pre>
 <p>Note that we do not include old
@@ -313,10 +318,10 @@ of strings in parentheses. Fink clones the package description file
 for each subtype in the list and replaces this list with that single
 subtype. For example:
 </p>
-<pre>Type: perl (5.6.0 5.8.1)</pre>
+<pre>Type: perl (5.12.3 5.12.4)</pre>
 <p>
 yields two package descriptions, one that behaves as if <code>Type:
-perl 5.6.0</code> and the other <code>Type: perl 5.8.1</code>. The special
+perl 5.12.3</code> and the other <code>Type: perl 5.12.4</code>. The special
 subtype list "(boolean)" stands for a list containing the
 type itself and a period, so the following two forms are identical:
 </p>
@@ -328,7 +333,7 @@ Type: -x11 (-x11 .)
 Subtype list expansion/package cloning is recursive; if there are
 multiple types with subtype lists, you will get all combinations:
 </p>
-<pre>Type: -ssl (boolean), perl (5.6.0 5.8.1)</pre>
+<pre>Type: -ssl (boolean), perl (5.12.3 5.12.4)</pre>
 <p>
 One can access the specific variant subtype in other fields using the
 %type_raw[] and %type_pkg[] pseudo-hashes. Here are two example .info
@@ -337,7 +342,7 @@ fragments:
 <pre>
 Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
-Type: perl (5.6.0 5.8.1)
+Type: perl (5.12.3 5.12.4)
 Depends: perl%type_pkg[perl]-core
  &lt;&lt;
 </pre>
@@ -1115,7 +1120,7 @@ for GCC corresponding to the default g++ compiler for that tree.
 The expected values for the various package trees are:
 <code>2.95</code> in the 10.1 tree, <code>3.1</code> in the 10.2 tree,
  <code>3.3</code> in the 10.2-gcc3.3, 10.3, and 10.4-transitional
-trees, and <code>4.0</code> in the (upcoming) 10.4 tree.
+trees, and <code>4.0</code> in the 10.4 and 10.7 trees.
 </p><p>
 Note that when the GCC value is different from the expected value, the compiler
 must be specified within the package (typically by setting the CC or CXX
@@ -1586,7 +1591,7 @@ forbidden:
 </p>
 <pre>
 Package: mime-base64-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.6)
+Type: perl (5.12.3 5.12.4)
 SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
 &lt;&lt;
