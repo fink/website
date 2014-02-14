@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.127 2013/06/10 21:39:21 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.128 2014/02/14 18:22:26 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -1045,7 +1045,8 @@ which depend on <code>foo</code>.
 <section name="perlmods"><title>Perl Modules</title>
 <p>Fink's policy about perl modules, originally implemented in
 May 2003,  has been revised as of April 2004.
-</p><p>
+</p>
+<p>
 Traditionally, the Fink packages for perl modules had the suffix 
 <code>-pm</code>, and were built using the <code>Type: perl</code> 
 directive, which stores the perl module's files in <filename>/sw/lib/perl5</filename> and/or
@@ -1054,45 +1055,46 @@ now in place, this storage location is only
 permitted for perl modules which are independent of the version of perl 
 being used to compile them (and which do not depend on other perl modules
 that lack this independence-of-version).
-</p><p>
+</p>
+<p>
 The perl modules which are version-dependent are the so-called XS modules,
 which frequently contain compiled C code as well as pure perl routines.
 There are a number of ways of recognizing these, including the presence
 of a file with a suffix <code>.bundle</code>.
-</p><p>
+</p>
+<p>
 A version-dependent perl module must be built using a versioned binary
-of perl, such as <code>perl5.6.0</code>, and must store its files in
+of perl, such as <code>perl5.12.3</code>, and must store its files in
 versioned subdirectories of the standard perl directories, such as
-<filename>/sw/lib/perl5/5.6.0</filename> and <filename>/sw/lib/perl5/5.6.0/darwin</filename>.  By convention, package names
-use the suffix <code>-pm560</code> for
-a perl module of version 5.6.0.  Similar storage and naming conventions
+<filename>/sw/lib/perl5/5.12.3</filename> and <filename>/sw/lib/perl5/5.12.3/darwin</filename>.  By convention, package names
+use the suffix <code>-pm5123</code> for
+a perl module of version 5.12.3.  Similar storage and naming conventions
 are in force for other versions of perl, which include 
-perl 5.6.1 (in the 10.2 trees only), perl 5.8.0 (in the 10.3 trees only),
-perl 5.8.1, perl 5.8.4, and perl 5.8.6.
-</p><p>
-The directive <code>Type: perl 5.6.0</code> automatically uses the
+perl 5.10.0 (in the 10.6 tree only), perl 5.12.4 (in the 10.7 tree only), and 
+perl 5.16.2 (in the 10.7 tree only).
+</p>
+<p>
+The directive <code>Type: perl 5.12.3</code> automatically uses the
 versioned perl binary and stores the files in the correct subdirectories. 
 (This directive is available starting with version 0.13.0 of fink.)
-</p><p>
+</p>
+<p>
 Under the May 2003 policy, it was permitted to create a 
 <code>-pm</code> package which is essentially 
 a "bundle" package that loads the <code>-pm560</code> variant or any
 others which may be exist.  Under the April 2004 policy this is discouraged,
-and after a transitional period it will be outlawed entirely.  (The
-one exception will be the package <code>storable-pm</code> which needs
-to be in this form for bootstrapping purposes.)
+and after a transitional period was outlawed entirely.
 </p>
-<p>As of fink 0.20.2, the system-perl virtual package automatically
-"Provides" certain perl modules when the version of Perl present on
-the system is at
-least 5.8.0.  In the case of system-perl-5.8.1-1, these are:
-<em>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581, 
-file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581, 
-i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581, 
-mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581, 
-test-simple-pm581, time-hires-pm581.</em>
-(This list was slightly different in fink 0.20.1: package maintainers are
-encouraged to check to be sure that they are assuming the correct list.)
+<p>
+As of fink 0.20.2, the system-perl virtual package automatically
+"Provides" certain perl modules depending on the system-perl version. The
+code generating the list of provided perl modules is found in the 
+<code>VirtPackage.pm</code> file that is part of the <code>fink</code> package.
+</p>
+<p>
+As different system perls provide different modules, package maintainers are
+encouraged to check to be sure that they are assuming the correct list when
+using provided perl modules.
 </p>
 <p>
 Effective with version 0.13.0 of fink, the <code>fink validate</code>
@@ -1117,10 +1119,10 @@ March 2005, Fink has defined alternate locations in MANPATH:
 <filename>%p/lib/perl5/X.Y.Z/man</filename> for each perl-X.Y.Z. You
 no longer need to create mutually-exclusive -man or -doc SplitOff
 packages. For
-example, to avoid conflicts between uri-pm581 and uri-pm586, the
+example, to avoid conflicts between uri-pm5124 and uri-pm5162, the
 same-named <filename>URI.3pm</filename> manpage is installed
-as <filename>%p/lib/perl5/5.8.1/man/man3/URI.3pm</filename> and
-<filename>%p/lib/perl5/5.8.6/man/man3/URI.3pm</filename>,
+as <filename>%p/lib/perl5/5.12.4/man/man3/URI.3pm</filename> and
+<filename>%p/lib/perl5/5.16.2/man/man3/URI.3pm</filename>,
 respectively. Note that the default scripts provided by <code>Type:
 perl X.Y.Z</code> have not changed, so you will have to locate the
 manpages here manually in your <code>InstallScript</code>. If you
@@ -1129,7 +1131,7 @@ one, and then simply move the files manually:
 </p>
 <codeblock>
 %{default_script}
-mv %i/share/man %i/lib/perl5/5.8.1
+mv %i/share/man %i/lib/perl5/5.12.4
 </codeblock>
 <p>
 That will move all manpages. If you wish to move only one section of
@@ -1138,8 +1140,8 @@ manpages in section 1), a similar approach works:
 </p>
 <codeblock>
 %{default_script}
-mkdir -p %i/lib/perl5/5.8.1/man
-mv %i/share/man/man3 %i/lib/perl5/5.8.1/man
+mkdir -p %i/lib/perl5/5.12.4/man
+mv %i/share/man/man3 %i/lib/perl5/5.12.4/man
 </codeblock>
 <p>
 If you have executables, for example, demo or utility scripts
@@ -1158,7 +1160,7 @@ could be constructed as follows:
 <codeblock>
 Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.4 5.8.6)
+Type: perl (5.12.3 5.12.4 5.16.2)
 InstallScript: &lt;&lt;
   %{default_script}
   mkdir -p %i/lib/perl5/%type_raw[perl]/man
@@ -1167,8 +1169,8 @@ InstallScript: &lt;&lt;
 SplitOff: &lt;&lt;
   Package: %N-bin
   Depends: %N
-  Conflicts: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
-  Replaces: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
+  Conflicts: %{Ni}5.12.3, %{Ni}5.12.4, %{Ni}5.16.2
+  Replaces: %{Ni}5.12.3, %{Ni}5.12.4, %{Ni}5.16.2
   Files: bin share/man/man1
 &lt;&lt;
 &lt;&lt;
@@ -1182,7 +1184,7 @@ naming conflict at all, so one does not need the mutually-exclusive
 <codeblock>
 Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.4 5.8.6)
+Type: perl (5.12.3 5.12.4 5.16.2)
 InstallScript: &lt;&lt;
   %{default_script}
   mkdir -p %i/lib/perl5/%type_raw[perl]/man
@@ -1553,14 +1555,17 @@ The 10.1 distribution assumes that the compiler version is 2.95; the
 10.2 distribution assumes that the compiler version is 3.1; the 10.2-gcc3.3
 and 10.3 distributions assume that the compiler version is 3.3.   The compiler
 for the 10.4-transitional distribution is complicated: g++-3.3 is being
-used along with gcc-4.0.  This will change again in the 10.4 distribution,
-which will use both gcc-4.0 and g++-4.0.
+used along with gcc-4.0.  The 10.4 and 10.5 distributions use both gcc-4.0 
+and g++-4.0.  The 10.6 distribution uses gcc-4.2, while the 10.7 through 10.9 
+distributions use clang and clang++ as the default compilers.  The 10.9 
+distribution has a further change in that it has migrated from libstdc++ to 
+libc++.
 </p>
-<p>A new method was introduced for ensuring the correct g++ compiler starting
-with the 10.4-transitional distribution.  During compilation, a directory
+<p>A new method for ensuring the correct g++ compiler was introduced with the 
+10.4-transitional distribution.  During compilation, a directory
 <code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
 number) is added to the PATH during compilation.  This directory contains
-shell scripts which ensure that the correct version of g++ is used.
+shell scripts which ensure that the correct compiler and version of g++ is used.
 </p>
 
 </section>
@@ -1586,7 +1591,7 @@ of your package.
 <p>
 A small group of packages which depend only on each other can be left 
 at the previous version of the ABI when the distribution changes, if they
-are not ready to be upgrade.  When the upgrade is eventually done, they
+are not ready to be upgraded.  When the upgrade is eventually done, they
 must be all upgraded together with the correct versioning on all the
 packages.  For this reason, it is best to upgrade most packages at
 the time the distribution changes.
@@ -1594,10 +1599,9 @@ the time the distribution changes.
 <p>
 Fink uses the GCC field to ensure that users have the correct version of
 the g++ compiler installed.  If the GCC field is defined by the package,
-fink checks to see if the <code>gcc_select</code> command has been
-set to the correct current value.  (This correct value is 3.3 for the 10.2
-and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The 
-<code>gcc_select</code> command was not available prior to OS X 10.2.)
+fink checks to see if the value matches that expected for the OS X version.
+The correct value is 3.3 for the 10.2 and 10.3 versions of OS X, and 4.0 
+for OS X 10.4 through OS X 10.9.
 </p>
 
 </section>
@@ -1760,19 +1764,20 @@ example:
 </p>
 <codeblock>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.8.1 5.8.4 5.8.6)
-  Architecture: (%type_pkg[perl] = 581) powerpc, (%type_pkg[perl] = 584) powerpc
+  Type: perl (5.8.8 5.10.0)
+  Architecture: (%type_pkg[perl] = 5100) x86_64
 </codeblock>
 <p>
-will result in the field for the foo-pm581 and foo-pm584 variants
-being <code>powerpc</code> and the field being blank for the foo-pm586
+will result in the field for the foo-pm5100 variant
+being <code>x86_64</code> and the field being blank for the foo-pm588
 variant. Remember that when the field is blank, all architectures
 are permitted.
 </p>
-<p>The example above gives a very common use of this field: since
-perl 5.8.1 and perl 5.8.4 are only available on powerpc hardware,
-this field is necessary for any multiple-type perl package under the
-10.4 distribution and later.
+<p>
+The example above gives a very common use of this field: since
+some modules for system-perl 5.10.0 on 10.6 do not build as 32-bit (i386), 
+this field allows limiting multiple-type perl packages to specific
+systems.
 </p>
 </itemd></item>
 
@@ -1784,7 +1789,10 @@ A comma-separated list of distribution(s) for which the package
 At present, the only valid values for distribution are
 <code>10.4</code>,
 <code>10.5</code>,
-and <code>10.6</code>
+<code>10.6</code>,
+<code>10.7</code>,
+<code>10.8</code>,
+and <code>10.9</code>
 . If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
 the local machine distribution is not listed. If the field is omitted
@@ -1792,7 +1800,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
+Since Fink's <code>10.7</code>, <code>10.8</code>, and <code>10.9</code> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -1801,23 +1809,24 @@ other.
 This field supports the standard conditional syntax for any value in
 the value list and percent-expansions can be used (see
 the <code>Depends</code> field for more information). In this manner,
-certain variants can be restricted to certain architectures. For
+certain variants can be restricted to certain distributions. For
 example:
 </p>
 <codeblock>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.8.1 5.8.6)
-  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+  Type: perl (5.12.3 5.12.4)
+  Distribution: (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8
 </codeblock>
 <p>
-will result in the field for the foo-pm581 variant
-being <code>10.3, 10.4</code> and the field being blank for the 
-foo-pm586 variant.
+will result in the <code>Distribution</code> field for the foo-pm5123 variant
+being <code>10.7, 10.8</code> and the field being blank for the 
+foo-pm5124 variant.
 </p>
-<p>Since python 2.3 is not available in the 10.5 distribution, and the
-available perl packages vary by distribution, these package types provide
+<p>Since python 2.5 is not available in the 10.7+ distributions, and the
+available perl versions vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
+various perl versions in the 10.3 through 10.9 distributions
+(<em>bolded</em> systems indicate system-perl at that version):
 </p>
 <codeblock>
     perl 5.6.0:  10.3
@@ -1827,21 +1836,21 @@ various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
     perl 5.8.6:  10.3, <em>10.4</em>, 10.5
     perl 5.8.8:        10.4, <em>10.5</em>, 10.6
     perl 5.10.0:             10.5, <em>10.6</em>
-    perl 5.12.3:                         <em>10.7</em>
+    perl 5.12.3:                         <em>10.7</em>, 10.8, 10.9
+    perl 5.12.4:                         10.7, <em>10.8</em>, 10.9
+    perl 5.16.2:                         10.7, 10.8, <em>10.9</em>
 </codeblock>
-<p>A way to include all variants in a single finkinfo file is as follows.
+<p>A way to include all supported variants in a single finkinfo file is as follows.
 </p>
 <codeblock>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3)
+  Type: perl (5.8.8 5.10.0 5.12.3 5.12.4 5.16.2)
   Distribution: &lt;&lt;
-   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
-   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
-   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
-   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
-   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
-   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6,
-   (%type_pkg[perl] = 5123) 10.7
+   (%type_pkg[perl] = 588) 10.6,
+   (%type_pkg[perl] = 5100) 10.6,
+   (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8, (%type_pkg[perl] = 5123) 10.9,
+   (%type_pkg[perl] = 5124) 10.7, (%type_pkg[perl] = 5124) 10.8, (%type_pkg[perl] = 5124) 10.9,
+   (%type_pkg[perl] = 5162) 10.7, (%type_pkg[perl] = 5162) 10.8, (%type_pkg[perl] = 5162) 10.9
   &lt;&lt;
 </codeblock>
 <p>Note that we do not include old
@@ -1934,10 +1943,10 @@ of strings in parentheses. Fink clones the package description file
 for each subtype in the list and replaces this list with that single
 subtype. For example:
 </p>
-<codeblock>Type: perl (5.6.0 5.8.1)</codeblock>
+<codeblock>Type: perl (5.12.3 5.12.4)</codeblock>
 <p>
 yields two package descriptions, one that behaves as if <code>Type:
-perl 5.6.0</code> and the other <code>Type: perl 5.8.1</code>. The special
+perl 5.12.3</code> and the other <code>Type: perl 5.12.4</code>. The special
 subtype list &quot;(boolean)&quot; stands for a list containing the
 type itself and a period, so the following two forms are identical:
 </p>
@@ -1949,7 +1958,7 @@ Type: -x11 (-x11 .)
 Subtype list expansion/package cloning is recursive; if there are
 multiple types with subtype lists, you will get all combinations:
 </p>
-<codeblock>Type: -ssl (boolean), perl (5.6.0 5.8.1)</codeblock>
+<codeblock>Type: -ssl (boolean), perl (5.12.3 5.12.4)</codeblock>
 <p>
 One can access the specific variant subtype in other fields using the
 %type_raw[] and %type_pkg[] pseudo-hashes. Here are two example .info
@@ -1958,7 +1967,7 @@ fragments:
 <codeblock>
 Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
-Type: perl (5.6.0 5.8.1)
+Type: perl (5.12.3 5.12.4)
 Depends: perl%type_pkg[perl]-core
  &lt;&lt;
 </codeblock>
@@ -2879,7 +2888,7 @@ for GCC corresponding to the default g++ compiler for that tree.
 The expected values for the various package trees are:
 <code>2.95</code> in the 10.1 tree, <code>3.1</code> in the 10.2 tree,
  <code>3.3</code> in the 10.2-gcc3.3, 10.3, and 10.4-transitional
-trees, and <code>4.0</code> in the (upcoming) 10.4 tree.
+trees, and <code>4.0</code> in the 10.4 and 10.7 trees.
 </p><p>
 Note that when the GCC value is different from the expected value, the compiler
 must be specified within the package (typically by setting the CC or CXX
@@ -3433,7 +3442,7 @@ forbidden:
 </p>
 <codeblock>
 Package: mime-base64-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.6)
+Type: perl (5.12.3 5.12.4)
 SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
 &lt;&lt;
