@@ -1,16 +1,16 @@
 <?
-/* $Id: nav.fr.inc,v 1.8 2013/11/18 20:22:21 thesin Exp $ */
+/* $Id: nav.fr.inc,v 1.9 2014/02/16 19:36:39 thesin Exp $ */
 
 $section = "download";
 $navbox = array(
-  "download/index.php?phpLang=fr", "Téléchargement rapide",
-  "download/overview.php?phpLang=fr", "Généralités",
-  "download/bindist.php?phpLang=fr", "Version binaire",
-  "download/srcdist.php?phpLang=fr", "Version source",
-  "download/upgrade.php?phpLang=fr", "Tableau mises à jour",
-  "download/10.6-upgrade.php?phpLang=fr", "Mise à niveau 10.6",
-  "download/10.7-upgrade.php?phpLang=fr", "Mise à niveau 10.7",
-  "download/sources_for_binaries.php?phpLang=fr", "Sources des binaires",
+  $hostlink . "download/index.php?phpLang=fr", "Téléchargement rapide",
+  $hostlink . "download/overview.php?phpLang=fr", "Généralités",
+  $hostlink . "download/bindist.php?phpLang=fr", "Version binaire",
+  $hostlink . "download/srcdist.php?phpLang=fr", "Version source",
+  $hostlink . "download/upgrade.php?phpLang=fr", "Tableau mises à jour",
+  $hostlink . "download/10.6-upgrade.php?phpLang=fr", "Mise à niveau 10.6",
+  $hostlink . "download/10.7-upgrade.php?phpLang=fr", "Mise à niveau 10.7",
+  $hostlink . "download/sources_for_binaries.php?phpLang=fr", "Sources des binaires",
   "http://bindist.finkmirrors.net/", "Répertoires archives"
 );
 
