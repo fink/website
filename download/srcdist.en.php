@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2014/04/07 02:16:14 $';
+$cvs_date = '$Date: 2014/04/07 02:57:44 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -43,7 +43,8 @@ onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
 </ul>
 
 <p>You will need to install the proper Command Line Tools for Xcode for your system, (cf. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) which can be done as follows:</p>
-<ul><p><em>10.9 only:  </em>Run <code>xcode-select --install</code> from the Terminal and select the Install button.</p><li>
+<ul>
+<li><p><em>10.9 only:  </em>Run <code>xcode-select --install</code> from the Terminal and select the Install button.</p><li>
 <li><p><em>10.9-10.7:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
 <li><p><em>10.9-10.7:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
 <li><p><em>10.6:  </em>Install the full Xcode.</p></li>
