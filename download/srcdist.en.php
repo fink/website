@@ -1,13 +1,13 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2014/02/15 23:04:27 $';
+$cvs_date = '$Date: 2014/04/07 02:16:14 $';
 
 include "header.inc";
+include "../fink_version.inc";
 ?>
 
 <h1>Download Fink Source Release</h1>
-
 
 <!--monipol: As instructions for 10.6 were 'hidden' below 10.5, I've copied and
 pasted them here with the title 10.6. -->
@@ -19,14 +19,16 @@ have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<p>The current version, <em>fink-0.36.3.1</em>, was officially released on
-2013-12-30.</p>
+<!--akh: edit web/fink_version.inc to update the information hencefort -->
+
+<p>The current version, <em>fink-<? print $fink_tool_version; ?></em>, was officially released on
+<? print $fink_tool_release_date; ?>.</p>
 
 <ul>
      <li>
-For OS X 10.6-10.9, use <a href="http://downloads.sourceforge.net/fink/fink-0.36.1.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.36.3.1</a>
-- 1176k, .tar.gz format
+For OS X 10.6-10.9, use <a href="http://downloads.sourceforge.net/fink/fink-<? print $fink_tool_version; ?>.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-<? print $fink_tool_version; ?></a>
+- <? print $fink_tool_tarball_k; ?>, .tar.gz format
      </li>
      <li>
 For OS X 10.5, use <a href="http://downloads.sourceforge.net/fink/fink-0.34.9.tar.gz"
@@ -56,24 +58,21 @@ via running the following commands in a terminal window
 
 <pre>cd $HOME/Downloads</pre>
 <p>followed by</p>
-<pre>tar -xvf fink-0.36.1.tar.gz</pre>
+<pre>tar -xvf <? print $fink_tool_version; ?>.tar.gz</pre>
 <p>or</p>
-<pre>tar -xvf fink-0.36.1.tar</pre>
+<pre>tar -xvf <? print $fink_tool_version; ?>.tar</pre>
 <p>where the choice depends on whether the source has already been partially unpacked, 
 e.g. by Safari.</p>
 
 <p>Then run the following commands in a terminal window:</p>
 
-<pre>cd fink-0.36.1
+<pre>cd fink-<? print $fink_tool_version; ?>
 ./bootstrap</pre>
 
 <p>to start the boostrapping operation, which will install the Fink base
 setup.  If you would like to use a different location than the default <em>/sw</em>, you can do this via</p>
 <pre>./bootstrap /path</pre>
 <p>(replace <em>/path</em> with the directory you want to use).</p>
-<!-- akh: I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
-     rangerrick: but that is not true!  ;) -->
-
 <p>After the installation is completed, running the command</p>
 
 <pre>/sw/bin/pathsetup.sh</pre>
@@ -112,10 +111,6 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 descriptions and patches.  It will download the source code from the original
 distribution sites and build them on your local machine.
 </p>
-
-<? 
-include "../fink_version.inc";
-?>
 
 <p>Fink <? print $fink_version; ?> was officially released on
 <? print $release_date; ?>.</p>
