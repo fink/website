@@ -1,13 +1,13 @@
 <?
 $title = "News";
-$cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2014/01/25 12:55:53';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2014/04/07 17:41:35';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2013-04-06%20fink-0.36.3.1%20released"><span class="news-date">2013-04-06: </span><span class="news-headline">fink-0.36.3.1 released</span></a><?php gray_line(); ?>
+<a name="2013-04-06%20fink-0.36.4%20released"><span class="news-date">2013-04-06: </span><span class="news-headline">fink-0.36.4 released</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.36.4</code> was released on 6 April, 2014.
   This <code>fink</code> release restores the use of an official binary distribution by
