@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
- <cvsid>$Id: news.es.xml,v 1.58 2014/01/25 12:57:45 nieder Exp $</cvsid>
+ <cvsid>$Id: news.es.xml,v 1.59 2014/04/08 01:32:11 nieder Exp $</cvsid>
+<newsitem>
+ <date>2014-04-06</date>
+ <headline>fink-0.36.4 publicado</headline>
+ <body>
+  <p>
+  <code>fink-0.36.4</code> fue publicado el 6 de abril, 2014.
+  Esta versión activa el uso de la distribución binaria oficial en 10.8 y 
+  10.9 (con soporte provisional en el futuro para 10.6 y 10.7).  Adicionalmente, 
+  esta versión funciona en torno a problemas introducidos por Xcode 5.1 en 10.8 
+  y 10.9, corrige problemas en bootstrap cuando Xcode.app no ha sido instalado, y 
+  activa la arquitectura x86_64 como el standard durante bootstrap en 10.6.
+  </p>
+  <p>
+  Se anima a los usuarios que usen <code>fink selfupdate</code> para instalar esta
+  versión, principalmente a causa de los problemas introducidos por Xcode 5.1.
+  </p>
+ </body>
+</newsitem> 
+<newsitem>
+ <date>2014-04-06</date>
+ <headline>Problemas con el sistema de rsync</headline>
+ <body>
+  <p>
+  El projecto ha estado teniendo problemas con el servidor maestro de rsync. Este
+  problema afecta a casi todos los servidores espejo.  Para resolver el problema,
+  se puede editar el fichero <filename>/sw/etc/fink.conf</filename> y ajustar la
+  opción de <code>Mirror-rsync</code> a uno de estos dos servidores:</p> 
+<codeblock>
+rsync://ber.de.eu.finkmirrors.net/finkinfo/
+rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
+</codeblock>
+  <p>
+  También se puede usar el comando <code>fink selfupdate-cvs</code> para cambiar el
+  sistema de actualización.
+  </p>
+ </body>
+</newsitem> 
 <newsitem>
  <date>2013-12-30</date>
  <headline>fink-0.36.3.1 publicado</headline>

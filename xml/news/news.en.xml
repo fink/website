@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.197 2014/04/07 17:41:35 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.198 2014/04/08 01:32:11 nieder Exp $</cvsid>
 <newsitem>
- <date>2013-04-06</date>
+ <date>2014-04-06</date>
  <headline>fink-0.36.4 released</headline>
  <body>
   <p>
