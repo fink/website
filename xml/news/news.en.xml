@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.199 2014/06/05 03:41:13 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.200 2014/06/05 12:34:23 alexkhansen Exp $</cvsid>
 <newsitem>
- <date>2013-06-04</date>
+ <date>2014-06-04</date>
  <headline>fink-0.36.5 and fink-0.37.0 released. End of official support for 10.6.</headline>
  <body>
   <p>
