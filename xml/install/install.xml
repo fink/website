@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.46 2014/06/04 01:14:59 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.47 2014/06/05 03:39:13 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -572,7 +572,7 @@ individual packages with the 'update' command.
         <p>- 10.4 -> 10.6+</p>
         <p>- 10.5 -> 10.7+</p>
         <p>- 10.6 -> 10.7+</p>
-        <p>- 10.x -> 10.9</p>
+        <p>- 10.8- -> 10.9</p>
     </li>
     <li>
         <p>Your Fink installation has linked to libraries, e.g. from MacPorts
