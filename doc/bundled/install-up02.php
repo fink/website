@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Clean";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/11/01 02:27:03';
+$cvs_date = 'Date: 2014/06/05 03:39:13';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="prev" href="install-up03.php" title="Upgrading Fink">';
 
 include_once "header.inc";
@@ -21,12 +21,6 @@ include_once "header.inc";
 <h2><a name="cleaninst">4.1 Situations Calling for a Clean Reinstall</a></h2>
 <ul>
     <li>
-        <p>You want to switch architectures, e.g. you have a 32-bit (i386)
-        Fink distribution on OS 10.6, and you would like to have a 64-bit
-        (x86_64) one instead.  This also applies if you try to migrate a
-        PowerPC OS X setup to an Intel machine.</p>
-    </li>
-    <li>
         <p>You want to move Fink to a different path.</p>
     </li>
     <li>
@@ -35,10 +29,7 @@ include_once "header.inc";
         <p>- 10.4 -&gt; 10.6+</p>
         <p>- 10.5 -&gt; 10.7+</p>
         <p>- 10.6 -&gt; 10.7+</p>
-    </li>
-    <li>
-        <p>You have updated from 10.5 to 10.6 with XQuartz-2.4 or later installed,
-        and X11-based libraries and executables stop working.</p>
+        <p>- 10.8- -&gt; 10.9</p>
     </li>
     <li>
         <p>Your Fink installation has linked to libraries, e.g. from MacPorts

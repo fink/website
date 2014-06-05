@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2014/04/07 03:45:47 $';
+$cvs_date = '$Date: 2014/06/05 03:43:54 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -26,13 +26,18 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 
 <ul>
      <li>
-For OS X 10.6-10.9, use <a href="http://downloads.sourceforge.net/fink/fink-<? print $fink_tool_version; ?>.tar.gz"
+For OS X 10.7-10.9, use <a href="http://downloads.sourceforge.net/fink/fink-<? print $fink_tool_version; ?>.tar.gz"
 onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-<? print $fink_tool_version; ?></a>
 - <? print $fink_tool_tarball_k; ?>, .tar.gz format
      </li>
      <li>
-For OS X 10.5, use <a href="http://downloads.sourceforge.net/fink/fink-0.34.9.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.34.9</a>
+For OS X 10.6, use <a href="http://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.36.5</a>
+- 1176K, .tar.gz format
+     </li>
+     <li>
+For OS X 10.5, use <a href="http://downloads.sourceforge.net/fink/fink-0.34.10.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.34.10</a>
 - 1268K, .tar.gz format
      </li>
      <li>
@@ -47,7 +52,7 @@ onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
 <li><p><em>10.9 only:  </em>Run <code>xcode-select --install</code> from the Terminal and select the Install button.</p></li>
 <li><p><em>10.9-10.7:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
 <li><p><em>10.9-10.7:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
-<li><p><em>10.6:  </em>Install the full Xcode.</p></li>
+<li><p><em>10.6-:  </em>Install the full Xcode.</p></li>
 </ul>
 <p>If you install the full Xcode on 10.7-10.9, you will also want to run:</p>
 <pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>

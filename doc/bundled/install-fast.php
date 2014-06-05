@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/11/01 02:27:03';
+$cvs_date = 'Date: 2014/06/05 03:39:13';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
 include_once "header.inc";
@@ -29,26 +29,24 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.6 or later.
+An installed Mac OS X system, version 10.7 or later.
 </p></li>
 <li><p>
-Development tools.  For 10.6, you should install Xcode 3.2.6, 
-which can be downloaded from connect.apple.com after registering.  
-For 10.7-10.9, installing the Xcode Command Line Tools is mandatory to use 
-the most current build applications. This can be installed either by downloading
-it directly via connect.apple.com, through the Xcode application via the Components 
-page of the Downloads tab of the Preferences, or on 10.9 by running the</p>
+The Xcode Command Line Tools are mandatory. This package can be installed either by 
+downloading it directly via developer.apple.com, through the Xcode application, on
+via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
+or on 10.9 by running the</p>
 <pre>xcode-select --install</pre>
 <p>command and choosing the   
 <b>Install</b> button in the window that pops up, or you can install the full
 Xcode if you prefer.  You may also need to use this command to update the tools,
 especially if you're having build problems.</p>
-<p>If you're doing a manual download, make sure that the tools you install match your Mac OS X version.
+<p>If you're doing a manual download, make sure that the tools you install match your
+ Mac OS X version as well as your Xcode app version (if that is present).
 </p></li>
-<li><p>On 10.7-10.9 you will need to install Java.  Entering</p>
+<li><p>Java.  Entering</p>
 <pre>javac</pre>
-<p>from a Terminal.app window should suffice to make the system download it for you (10.7, 10.9)
-or open up a browser window from which you can download the latest Java JDK (10.8).</p></li>
+<p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
 <li><p>
 Many other things that come with Mac OS X.
 This includes perl and curl.
@@ -68,8 +66,8 @@ I'm talking hours or even days here.
 <h2><a name="install">1.2 First Time Installation Fast
 Track</a></h2>
 <p>
-Start out by copying the <code>fink-0.36.4.tar.gz</code>
-file to your home folder (it might also show up as <code>fink-0.36.4.tar</code> if you
+Start out by copying the <code>fink-0.37.0.tar.gz</code>
+file to your home folder (it might also show up as <code>fink-0.37.0.tar</code> if you
 used Safari to download it).
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
@@ -81,15 +79,15 @@ the output have been omitted (<code>...</code>).
 dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
-<pre>[frodo:~] testuser% <b>tar xf fink-0.36.4.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.36.4</b>
-[frodo:~/fink-0.36.4] testuser% <b>./bootstrap</b>
+<pre>[frodo:~] testuser% <b>tar xf fink-0.37.0.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.37.0</b>
+[frodo:~/fink-0.37.0] testuser% <b>./bootstrap</b>
 
 Fink must be installed and run with superuser (root) privileges
 ...
 Choose a method: [1] <b>1</b>
 
-sudo /Users/testuser/fink-0.36.4/bootstrap .sudo '/sw'
+sudo /Users/testuser/fink-0.37.0/bootstrap .sudo '/sw'
 Password: <b>(your normal password here)</b>
 ...
 OK, I'll ask you some questions and update the configuration file in
@@ -135,8 +133,8 @@ Bootstrapping a base system via /sw/bootstrap.
 ...
 
 You should now have a working Fink installation in '/sw'.
-[frodo:~/fink-0.36.4] testuser% <b>cd</b>
-[frodo:~] testuser% <b>rm -r fink-0.36.4</b>
+[frodo:~/fink-0.37.0] testuser% <b>cd</b>
+[frodo:~] testuser% <b>rm -r fink-0.37.0</b>
 [frodo:~] testuser% <b>/sw/bin/pathsetup.sh</b></pre>
 <p>
 The last command runs a little script to help set up your Unix paths

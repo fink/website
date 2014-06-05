@@ -5,8 +5,49 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2014-04-07T20:36:06-05:00</dc:date>
+    <dc:date>2014-06-04T20:43:12-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2013-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6.">
+      <title>fink-0.36.5 and fink-0.37.0 released. End of official support for 10.6.</title>
+      <link>http://fink.sourceforge.net/news/#2013-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6.</link>
+      <guid>http://fink.sourceforge.net/news/#2013-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.37.0 and fink-0.37.0 were released on 4 June, 2014.
+  These fink releases contain fixes for Java detection on 10.6 if older
+  versions of Apple's Java SDK are installed.  fink-0.37.0 officially 
+  recognizes OS 10.9.3.  In addition, Fink's compiler wrappers are 
+  now installed directly by the fink package to make for easier modifications.
+  </p>
+  <p>
+  fink-0.36.5 marks the end of 10.6 support by the Fink Project.  Users
+  who want package updates should contact the maintainers of the respective packages.
+  Unmaintained packages can be updated by request as well.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.37.0 and fink-0.37.0 were released on 4 June, 2014.
+  These fink releases contain fixes for Java detection on 10.6 if older
+  versions of Apple's Java SDK are installed.  fink-0.37.0 officially 
+  recognizes OS 10.9.3.  In addition, Fink's compiler wrappers are 
+  now installed directly by the fink package to make for easier modifications.
+  </p>
+  <p>
+  fink-0.36.5 marks the end of 10.6 support by the Fink Project.  Users
+  who want package updates should contact the maintainers of the respective packages.
+  Unmaintained packages can be updated by request as well.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20released">
       <title>fink-0.36.4 released</title>
       <link>http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20released</link>
@@ -430,91 +471,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
   sure that the permissions of directories that fink uses when building packages are appropriate.
   Additionally, OS X versions 10.7.5 and 10.8.2 are recognized.</p>
  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released">
-      <title>Mountain Lion released</title>
-      <link>http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-07-25%20Mountain%20Lion%20released</guid>
-      <description>
-		<![CDATA[
-	
-   <p>Mountain Lion is now available to the general public.  Ideally, users should update
- to fink-0.34.0 or later before updating their OS.  In addition, Xcode 4.4 
- (or at least its command line tools) is required--it can be installed under Lion, but 
- there is a separate version of the Command Line Tools for Mountain Lion, so make sure
- to install those.  Use </p><p>fink list xcode</p><p>to verify that you have the
- Xcode 4.4 command-line tools installed, and that Fink knows where your Xcode.app is.
- If the CLI tools are missing or not for Xcode 4.4, reinstall them, e.g. via the Xcode 
- Preferences.  If fink isn't finding your Xcode.app, use</p>
- <p>sudo xcode-select -switch /path/to/Xcode.app</p>
- <p>to make sure that your system's tools are pointing to the right place.  Also run</p>
- <p>sudo xcodebuild -license</p><p>to make sure that the Xcode license is accepted
- globally on your system, especially for fink's build user.</p>
- <p>Once you have updated the OS, use</p>
- <p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
- <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
- from Lion will still work.</p>
- <p>If you updated the OS first,
-  and have an earlier version of fink which doesn't know about Mountain Lion, you
-  have probably found that it doesn't work.  To work around this issue, do the 
-  following: (1) download an updated copy of 
-  <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
-  Services.pm</a>, (2) move the downloaded file into /sw/lib/perl5/Fink, such as
-  via</p><p>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</p><p>; 
-  (change /sw and /path/to to match 
-  your particular setup); (3) run</p><p>fink selfupdate</p><p>, which should
-  download and install fink-0.34.0; (4) use </p><p>fink reinstall fink</p>
-  <p>to ensure that fink is pointing at the 10.8 distribution, 
-  and (5) install perl5123-core
-  as above.</p>
-  <p>Addendum, 2012-07-26:  It appears that the OS update wipes out the
-  users that Fink creates (but not the groups).  After following the steps above, you should
-  (1) Run</p><p>fink configure</p><p> to set the Fink build user back up, and 
-  (2) use </p><p>fink list -it passwd | cut -f2 | xargs fink reinstall</p><p> to reinstall
-  the various passwd* packages and their users.</p> 
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-   <p>Mountain Lion is now available to the general public.  Ideally, users should update
- to fink-0.34.0 or later before updating their OS.  In addition, Xcode 4.4 
- (or at least its command line tools) is required--it can be installed under Lion, but 
- there is a separate version of the Command Line Tools for Mountain Lion, so make sure
- to install those.  Use </p><p>fink list xcode</p><p>to verify that you have the
- Xcode 4.4 command-line tools installed, and that Fink knows where your Xcode.app is.
- If the CLI tools are missing or not for Xcode 4.4, reinstall them, e.g. via the Xcode 
- Preferences.  If fink isn't finding your Xcode.app, use</p>
- <p>sudo xcode-select -switch /path/to/Xcode.app</p>
- <p>to make sure that your system's tools are pointing to the right place.  Also run</p>
- <p>sudo xcodebuild -license</p><p>to make sure that the Xcode license is accepted
- globally on your system, especially for fink's build user.</p>
- <p>Once you have updated the OS, use</p>
- <p>fink reinstall fink</p><p>to point it to the 10.8 distribution, and run</p>
- <p>fink install perl5123-core</p><p>to make sure any Perl modules you have
- from Lion will still work.</p>
- <p>If you updated the OS first,
-  and have an earlier version of fink which doesn't know about Mountain Lion, you
-  have probably found that it doesn't work.  To work around this issue, do the 
-  following: (1) download an updated copy of 
-  <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
-  Services.pm</a>, (2) move the downloaded file into /sw/lib/perl5/Fink, such as
-  via</p><p>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</p><p>; 
-  (change /sw and /path/to to match 
-  your particular setup); (3) run</p><p>fink selfupdate</p><p>, which should
-  download and install fink-0.34.0; (4) use </p><p>fink reinstall fink</p>
-  <p>to ensure that fink is pointing at the 10.8 distribution, 
-  and (5) install perl5123-core
-  as above.</p>
-  <p>Addendum, 2012-07-26:  It appears that the OS update wipes out the
-  users that Fink creates (but not the groups).  After following the steps above, you should
-  (1) Run</p><p>fink configure</p><p> to set the Fink build user back up, and 
-  (2) use </p><p>fink list -it passwd | cut -f2 | xargs fink reinstall</p><p> to reinstall
-  the various passwd* packages and their users.</p> 
-  
 		]]>
 	</content:encoded>
     </item>

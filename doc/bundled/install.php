@@ -1,16 +1,16 @@
 <?
 $title = "Installation";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/11/01 02:27:03';
+$cvs_date = 'Date: 2014/06/05 03:39:13';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-fast.php" title="The Fast Track">';
 
 include_once "header.inc";
 ?>
 
-<h1>Fink 0.36.4 Installation</h1>
+<h1>Fink 0.37.0 Installation</h1>
 <p>
 These are the installation instructions for the "source" distribution
-based on <code>fink-0.36.4</code>, intended for use with OS X v.10.6 and later.</p>
+based on <code>fink-0.37.0</code>, intended for use with OS X v.10.7 and later.</p>
 <p>
 This document does not apply to the "<a href="/download/index.php">binary</a>" distribution.
 </p>
@@ -46,6 +46,6 @@ Track</a></li>
 <li><a href="install-up02.php#reinstalling">4.4 Installing Fink Again</a></li>
 </ul>
 </ul>
-<p>Generated from <i>$Fink: install.xml,v 1.45 2013/11/01 02:27:03 alexkhansen Exp $</i></p>
+<p>Generated from <i>$Fink: install.xml,v 1.47 2014/06/05 03:39:13 alexkhansen Exp $</i></p>
 
 <? include_once "footer.inc"; ?>
