@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
- <cvsid>$Id: news.ja.xml,v 1.65 2014/05/15 02:20:26 babayoshihiko Exp $</cvsid>
+ <cvsid>$Id: news.ja.xml,v 1.66 2014/07/03 02:03:10 babayoshihiko Exp $</cvsid>
+<newsitem>
+ <date>2014-06-04</date>
+ <headline>fink-0.36.5 と fink-0.37.0 がリリースされました。10.6 の公式サポートが終了しました。</headline>
+ <body>
+  <p>
+  <code>fink-0.36.5</code> と <code>fink-0.37.0</code> が、2014年6月4日にリリースされました。
+  これらの <code>fink</code> バージョンは、古い Apple Java SDK がインストールされている場合の
+  10.6 上の Java 検出の修正を含みます。
+  <code>fink-0.37.0</code> は、公式に OS 10.9.3 を認識します。
+  さらに、Fink のコンパイルラッパーが、修正を容易にするために直接インストールされます。
+  </p>
+  <p>
+  <code>fink-0.36.5</code> は、Fink Project による 10.6 のサポートを終了します。
+  パッケージの更新を希望するユーザは、それぞれのパッケージのメンテナに連絡してください。
+  メンテナのいないパッケージも、要求があれば更新されることもあります。
+  </p>
+ </body>
+</newsitem> 
 <newsitem>
  <date>2014-04-06</date>
  <headline>fink-0.36.4 released</headline>
