@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
- <cvsid>$Id: news.ja.xml,v 1.67 2014/07/03 02:40:51 babayoshihiko Exp $</cvsid>
+ <cvsid>$Id: news.ja.xml,v 1.68 2014/07/03 02:50:30 babayoshihiko Exp $</cvsid>
 <newsitem>
  <date>2014-06-04</date>
  <headline>fink-0.36.5 と fink-0.37.0 がリリースされました。10.6 の公式サポートが終了しました。</headline>
@@ -29,7 +29,7 @@
   この <code>fink</code> リリースにより、10.8 と 10.9 におけるバイナリ配布を再開します
   (10.6 と 10.7 も作成次第対応予定)。
   さらに、10.8 と 10.9 の Xcode 5.1 によって引き起こされた多くのビルド時の問題を解決します。
-  また、OS C 10.9.2 への公式サポートを含み、
+  また、OS X 10.9.2 への公式サポートを含み、
   Xcode.app がない場合の bootstrap を修正し、
   10.6 の bootstrap でのデフォルトアーキテクチャを x86_64 とします。
   </p>
@@ -41,7 +41,7 @@
 </newsitem> 
 <newsitem>
  <date>2014-04-06</date>
- <headline>rsync issue</headline>
+ <headline>rsync の問題</headline>
  <body>
   <p>
   マスター rsync サーバに問題が発生しており、まだ解決されていません。
@@ -265,7 +265,7 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
    このモードでビルドできないパッケージを見つけた場合は、いつものとおりフィードバックをください。
    みなさんのフィードバックによって問題をみつけて直すことができるのです。</p>
    <p>さらに、この Fink バージョンから、メンテナ向けにオプションを追加しました。
-   In addition, we have added some additional options for maintainers in this Fink version.
+   さらに、この Fink バージョンではメンテナ向けのオプションを追加しました。
    <em>/sw/Library/Python</em> が、内蔵 Python 用のモジュールをインストールする共通場所として追加されました。
    <code>xcodebuild</code> にBuildDepend するパッケージのために <code>xcode.app</code> のバーチャルパッケージを追加しました。
    これのバージョンが Xcode.app のバージョンです。
@@ -580,10 +580,7 @@ fink を bootstrap し直さなければ行けません。
     <date>2011-01-05</date>
     <headline>rysnc ミラーの一時的停止</headline>
     <body>
-      <p>We are experiencing a temporary failure in some of the rsync mirrors.
-      If you have not seen updates in a while, then you may wish to change your
-      rsync mirror for the time being by editing 
-      
+      <p>
       rsync ミラーの一部に一時的な問題が発生しています。
       最近更新をしていないようであれば、
       以下のようにして rsync ミラーをかえることができます。
