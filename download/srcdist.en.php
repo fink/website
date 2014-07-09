@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2014/06/05 03:43:54 $';
+$cvs_date = '$Date: 2014/07/09 12:58:57 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -57,8 +57,9 @@ onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
 <p>If you install the full Xcode on 10.7-10.9, you will also want to run:</p>
 <pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
 <p>where you should replace <em>/path/to</em> with the actual path to the Xcode app.</p>
+<p>You will need to run <pre>sudo xcodebuild -license</pre> to accept the terms of the Xcode license in order for fink's build user to work.</p> 
 <p></p>
-<p>Once you've got the Tools, unpack the tar.gz archive if this hasn't been done automatically, e.g.
+<p>Now unpack the <? print $fink_tool_version; ?>.tar.gz archive if this hasn't been done automatically, e.g.
 via running the following commands in a terminal window
 (assuming the default download location--you'll need to match these commands to your own setup):</p>
 
@@ -72,8 +73,8 @@ e.g. by Safari.</p>
 
 <p>Then run the following commands in a terminal window:</p>
 
-<pre>cd fink-<? print $fink_tool_version; ?>
-./bootstrap</pre>
+<pre>cd fink-<? print $fink_tool_version; ?></pre>
+<pre>./bootstrap</pre>
 
 <p>to start the boostrapping operation, which will install the Fink base
 setup.  If you would like to use a different location than the default <em>/sw</em>, you can do this via</p>
