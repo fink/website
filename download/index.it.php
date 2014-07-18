@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2009/11/20 13:20:41 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2014/07/18 11:55:59 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -24,7 +24,7 @@ l'avvio rapido con le binary release.
 <ol>
 <li>
 <p>
-10.6 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
+10.6, 10.7, 10.8, and 10.9 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 
 10.5 users: Download dell' installer disk image:<br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
