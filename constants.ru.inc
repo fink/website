@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.ru.inc,v 1.7 2010/09/05 10:56:04 gecko2 Exp $ */
+/* $Id: constants.ru.inc,v 1.8 2014/07/18 12:09:27 nieder Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -51,7 +51,7 @@ define ("FINK_PRINT_VERSION", 'Печатная версия');
 /* Footer */
 define ("META_KEYWORDS", 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, скачивание, свободное программное обеспечение, порт, разработка, управлением пакетами');
 define ("META_DESCRIPTION", 'Проект Fink нацелен на перенос всего мира ПО Unix с открытым исходным кодом в Darwin и Mac OS X. Мы модифицируем ПО Unix таким образом, чтобы оно могло компилироваться и использоваться в Mac OS X (переносим его), и обеспечиваем возможность его скачивания в виде связной дистрибуции. ');
-define ("HEADER_HOSTED_BY", 'Хостинг обеспечен');
+//define ("HEADER_HOSTED_BY", 'Хостинг обеспечен');
 define ("FOOTER_AVAILABLE_LANGUAGES", 'Языки');
 define ("FOOTER_GENERATED_DYNAMICALLY", 'Воспроизведено динамически ');
 define ("FOOTER_DATABASE_LAST_UPDATED", 'Последнее обновление: %a, %d %B %Y ‚ %R %Z');

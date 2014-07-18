@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.pt.inc,v 1.3 2010/09/05 10:56:04 gecko2 Exp $ */
+/* $Id: constants.pt.inc,v 1.4 2014/07/18 12:09:27 nieder Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -50,7 +50,7 @@ define ("FINK_PRINT_VERSION", 'Versão para impressão');
 /* Footer */
 define ("META_KEYWORDS", 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open Source, download, código aberto, ports, desenvolvimento, gerenciamento de pacotes');
 define ("META_DESCRIPTION", 'O projeto Fink deseja trazer ao Darwin e ao Mac OS X todo o mundo de software Unix de código aberto. Nós modificamos softwares originalmente desenvolvidos para Unix tal que eles sejam compilados e executados no Mac OS X, e os disponibilizamos para download como uma distribuição coesa');
-define ("HEADER_HOSTED_BY", 'Hospedado por {img}');
+//define ("HEADER_HOSTED_BY", 'Hospedado por {img}');
 define ("FOOTER_AVAILABLE_LANGUAGES", 'Idiomas disponíveis ');
 define ("FOOTER_GENERATED_DYNAMICALLY", 'Generado dinamicamente por ');
 define ("FOOTER_DATABASE_LAST_UPDATED", 'Última atualização em %d %B %Y às %R %Z');

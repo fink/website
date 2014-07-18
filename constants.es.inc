@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.es.inc,v 1.5 2010/09/05 10:56:04 gecko2 Exp $ */
+/* $Id: constants.es.inc,v 1.6 2014/07/18 12:09:27 nieder Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -55,7 +55,7 @@ casual de manera coherente y comoda en una distribución que se asemeje a lo que
 Linux esta acostumbrado.');
 
 
-define ("HEADER_HOSTED_BY", 'Albergado por {img}');
+//define ("HEADER_HOSTED_BY", 'Albergado por {img}');
 define ("FOOTER_AVAILABLE_LANGUAGES", 'Idiomas disponibles ');
 define ("FOOTER_GENERATED_DYNAMICALLY", 'Generado dinámicamente por ');
 define ("FOOTER_DATABASE_LAST_UPDATED", 'Actualizado por última vez el %d %B %Y a la(s) %R %Z');

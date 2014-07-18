@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.it.inc,v 1.6 2010/09/05 10:56:04 gecko2 Exp $ */
+/* $Id: constants.it.inc,v 1.7 2014/07/18 12:09:27 nieder Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -47,7 +47,7 @@ define ("META_KEYWORDS", 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open S
 define ("META_DESCRIPTION", 'Il progetto Fink vuole portare il mondo del software Unix Open
              Source in Darwin e Mac OS X. Noi modifichiamo software Unix in modo tale che 
              funzioni su Mac OS X e che sia progettato per essere aggiornato tramite download.');
-             define ("HEADER_HOSTED_BY", 'Ospitato da {img}');
+//define ("HEADER_HOSTED_BY", 'Ospitato da {img}');
 define ("FOOTER_AVAILABLE_LANGUAGES", 'Lingue disponibili ');
 define ("FOOTER_GENERATED_DYNAMICALLY", 'Generato dinamicamente da ');
 define ("FOOTER_DATABASE_LAST_UPDATED", 'Ultimo aggiornamento: %x %X');
