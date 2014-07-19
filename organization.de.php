@@ -1,7 +1,7 @@
 <?
 $title = "Organization of Fink";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2009/07/27 18:38:34 $';
+$cvs_author = '$Author: k-m_schindler $';
+$cvs_date = '$Date: 2014/07/19 12:12:58 $';
 
 include "header.inc";
 ?>
@@ -16,14 +16,14 @@ des Finkprojektes.</p>
 <a name="core"><h2>Das Fink Core Team</h2></a>
 
 <p>Das Fink Core Team ist für verschiedene Aspekte der zentralen Leitung
-des Fink-Projektes verantwortlich. Gruppenmitglieder arbeiten an dem
-Fink-Programm selbst und koordinieren Beiträge zum Programm von anderern;
+des Fink-Projektes verantwortlich. Gruppenmitglieder arbeiten am
+Fink-Programm selbst und koordinieren Beiträge zum Programm von anderen;
 sie fungieren als Maintainer für jedes der "essential"-Pakete in der
 Fink-Sammlung und sorgen dafür, dass das bootstrapping mit diesen
 wesentlichen Paketen funktioniert; sie regeln Releases des Fink-Programms
-und verwandtler Programme; sie erledigen das Erstellen und das
+und verwandter Programme; sie erledigen das Erstellen und das
 Veröffentlichen von Fink-Hauptdistributionen, einschließlich der
-Quellen- und Binärdistributionen. Außerdem helfen sie mit die anderen
+Quellen- und Binärdistributionen. Außerdem helfen sie mit, die anderen
 Freiwilligengruppen, die am Fink-Projekt arbeiten, zu koordinieren.</p>
 
 

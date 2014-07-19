@@ -1,5 +1,5 @@
 <?
-/* $Id: constants.de.inc,v 1.9 2014/07/18 12:09:27 nieder Exp $ */
+/* $Id: constants.de.inc,v 1.10 2014/07/19 12:12:58 k-m_schindler Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -52,7 +52,7 @@ define ("META_KEYWORDS", 'Mac OS X, Fink, Debian, Macintosh, Apple, UNIX, Open S
 define ("META_DESCRIPTION", "Fink hat es sich zur Aufgabe gemacht, die ganze Welt der Unix Open Source Software auf Darwin und Mac OS X zu bringen. Wir modifizieren Unix Software, so dass Sie unter Mac OS X compiliert bzw. ausgeführt werden kann, und machen die Ergebnisse dem Gelegenheitsnutzern zugänglich als eine zusammenhängende, komfortable Distribution.");
 //define ("HEADER_HOSTED_BY", 'Beherbergt von {img}');
 define ("FOOTER_AVAILABLE_LANGUAGES", 'Verfügbare Sprachen ');
-define ("FOOTER_GENERATED_DYNAMICALLY", 'Generated from ');
-define ("FOOTER_DATABASE_LAST_UPDATED", 'Last changed by %d %B %Y at %R %Z');
-define ("FOOTER_LAST_CHANGED", 'Last changed on {date}, {time} by {author}');
+define ("FOOTER_GENERATED_DYNAMICALLY", 'Erzeugt aus ');
+define ("FOOTER_DATABASE_LAST_UPDATED", 'Letzte Änderung durch %d %B %Y bei %R %Z');
+define ("FOOTER_LAST_CHANGED", 'Letzte Änderung am {date}, {time} durch {author}');
 ?>

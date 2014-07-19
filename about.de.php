@@ -1,7 +1,7 @@
 <?php
 $title      = "About";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date   = '$Date: 2012/11/11 14:54:25 $';
+$cvs_author = '$Author: k-m_schindler $';
+$cvs_date   = '$Date: 2014/07/19 12:12:58 $';
 
 require "header.inc";
 ?>
@@ -40,13 +40,13 @@ Daraus folgt, dass Fink in einer eigenständigen Ordnerstruktur residiert, und d
 <h2>Warum sollte ich Fink benutzen?</h2>
 
 <p>
-Fünf Gründe, warum Sie Fink benutzen sollten, um Unix Software auf Ihrem Mac zu installieren:
+Fünf Gründe, warum Sie Fink benutzen sollten, um Unix-Software auf Ihrem Mac zu installieren:
 </p>
 
 <p>
-<b>Power.</b>
-Mac OS X beinhaltet nur eine ein paar grundlegende Kommandozeilen-Tools.
-Fink bietet Ihnen Verbesserungen für diese Tools und zudem eine Auswahl an grafischen Anwendungen, entwickelt für Linux und andere Unix Varianten.</p>
+<b>Leistung.</b>
+Mac OS X beinhaltet nur ein paar grundlegende Kommandozeilen-Tools.
+Fink bietet Ihnen verbesserte Versionen für diese Tools und eine Auswahl an grafischen Anwendungen, die für Linux und andere Unix-Varianten entwickelt wurden.</p>
 
 <p>
 <b>Bedienerfreundlichkeit.</b>
@@ -57,18 +57,18 @@ Unsere Pakete sind normalerweise so eingerichtet, dass sie die maximalen Feature
 
 <p>
 <b>Sicherheit.</b>
-Durch die Politik des strikten Nicht-Veränderns irgenwelcher System Dateien, stellt Fink sicher, dass die gefährdeten Teile Ihres Mac OS X Systems nicht angefasst werden.
+Durch die Politik des strikten Nicht-Veränderns irgendwelcher System-Dateien, stellt Fink sicher, dass die gefährdeten Teile Ihres Mac OS X Systems nicht angefasst werden.
 Sie können Mac OS X aktualisieren, ohne Angst haben zu müssen, dass es Fink in die Quere kommt und umgekehrt.
-Zudem ermöglicht Ihnen das Paket-System, Software, die Sie nicht mehr benötigen, sicher zu entfernen.
+Zudem ermöglicht Ihnen das Paket-System, Software, die Sie nicht mehr benötigen, sicher und vollständig zu entfernen.
 </p>
 
 <p>
 <b>Geschlossenheit.</b>
-Fink ist nicht einfach eine zufällige Ansammlung von Paketen, es ist eine geschlossene Distribution. 
-Installierte Dateien werden an vorhersagebare Orte abgelegt.
+Fink ist nicht einfach eine zufällige Ansammlung von Paketen sondern eine geschlossene Distribution.
+Installierte Dateien werden an vorhersagbare Orte abgelegt.
 Dokumentationen werden aktuell gehalten.
-Es existiert eine einheitliche Oberfläche, um Server Prozesse zu kontrollieren.
-Und noch vieles mehr, das meiste davon arbeitet verborgen unter der Oberfläche.
+Es existiert eine einheitliche Oberfläche, um Server-Prozesse zu kontrollieren.
+Und noch vieles mehr. Das meiste davon arbeitet verborgen unter der Oberfläche.
 </p>
 
 <p>

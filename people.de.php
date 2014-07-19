@@ -1,34 +1,34 @@
 <?
 $title = "Contributors";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/09/27 16:44:16 $';
+$cvs_author = '$Author: k-m_schindler $';
+$cvs_date = '$Date: 2014/07/19 12:12:58 $';
 
 include "header.inc";
 ?>
 
 <h1>Mitwirkende</h1>
 
-<p>Fink wird von vielen freiwilligen Mitarbeitern betreut. Jedes Paket in Fink wir von einem sogenannten 'Maintainer' verwaltet. Diese Person kümmert sich darum daß dieses Paket so arbeitet wie man es erwarten würde, außerdem kümmert sich diese Person auch um Fehler die berichtigt werden müssen. Es gibt Menschen die sich um das Programm 'fink' kümmern, dieser Web-Auftritt muß betreut werden und viele Fink Nutzer brauchen Hilfe im täglichen Umgang mit Fink. Ein Großteil dieser Hilfe wird von unseren Mailing-Listen getragen sowie dem Chat im IRC. 
-Die oben genannten Aufgaben, aber auch viele andere benötigen eine Menge Zeit und Aufmerksamkeit. Diese Seite dient dazu sich genau bei diesen Personen zu bedanken, denn ohne unsere fleißigen freiwilligen Helfer wäre es nicht möglich dieses Projekt am Leben zu erhalten.
+<p>Fink wird von vielen freiwilligen Mitarbeitern betreut. Jedes Paket in Fink wir von einem sogenannten 'Maintainer' verwaltet. Diese Person kümmert sich darum, dass dieses Paket so arbeitet, wie man es erwarten würde. Außerdem kümmert sich diese Person auch um Fehler, die berichtigt werden müssen. Es gibt Menschen, die sich um das Programm 'fink' kümmern, dieser Web-Auftritt muss betreut werden und viele Fink Nutzer brauchen Hilfe im täglichen Umgang mit Fink. Ein Großteil dieser Hilfe wird von unseren Mailing-Listen getragen sowie dem Chat im IRC.
+Die oben genannten Aufgaben, aber auch viele andere benötigen eine Menge Zeit und Aufmerksamkeit. Diese Seite dient dazu, sich genau bei diesen Personen zu bedanken, denn ohne unsere fleißigen freiwilligen Helfer wäre es nicht möglich, dieses Projekt am Leben zu erhalten.
 </p>
 
 <p>
-Im laufe der Zeit hat Fink soviel Hilfe erfahren, daß es schwierig ist alle Personen hier aufzulisten. Wenn Sie der Meinung sind, daß Sie einem substantiellen Beitrag zu Fink geleistet haben, dann teilen Sie uns dies bitte per Mail mit und in der nächsten Revision dieses Dokumentes wird auch Ihr Name nicht fehlen.
+Im Laufe der Zeit hat Fink soviel Hilfe erfahren, dass es schwierig ist, alle Personen hier aufzulisten. Wenn Sie der Meinung sind, dass Sie einen substantiellen Beitrag zu Fink geleistet haben, dann teilen Sie uns dies bitte per Mail mit und in der nächsten Revision dieses Dokumentes wird auch Ihr Name nicht fehlen.
 </p>
-<p>Wörter die durch Kursivschrift hervorgehoben sind stehen für den Nicknamen im IRC.</p>
+<p>Wörter, die durch Kursivschrift hervorgehoben sind, stehen für den Nicknamen im IRC.</p>
 
 <h2>Ehemaliger Projektleiter</h2>
 <ul>
 <li>Christoph Pfisterer (<i>chrisp</i>)</li>
 </ul>
 
-<h2>Former Core Team members</h2>
+<h2>Ehemalige Mitgleider des Core Team</h2>
 <ul>
 <li>Peter O'Gorman (<i>pogma</i>)</li>
 <li>Christian Schaffner (<i>chris01</i>)</li>
 </ul>
 
-<h2>Augenblickliche Projektleiter</h2>
+<h2>Derzeitige Projektleiter</h2>
 <ul>
 <li>Augusto Devegili (<i>monipol</i>) </li>
 <li>Alexander Hansen  (<i>akh</i>) </li>
@@ -41,7 +41,7 @@ Im laufe der Zeit hat Fink soviel Hilfe erfahren, daß es schwierig ist alle Per
 <li>Dave Vasilevsky (<i>vasi</i>)</li>
 </ul>
 
-<h2>Administrativa und Öffentlichkeitsarbeit</h2>
+<h2>Verwaltung und Öffentlichkeitsarbeit</h2>
 <ul>
 <li>David Höhn aka. Darian Lanx (<i>dmalloc</i>)</li>
 </ul>
@@ -106,7 +106,7 @@ Im laufe der Zeit hat Fink soviel Hilfe erfahren, daß es schwierig ist alle Per
 
 </ul>
 
-<h2>Support, Übersetzung und Dokumentation Team</h2>
+<h2>Team für Support, Übersetzung und Dokumentation</h2>
 <ul>
 <li>Asari Takashi (<i>asari</i>)</li>
 <li>Baba Yoshihiko (<i>baba</i>)</li> <!-- i18n and l10n -->
@@ -136,7 +136,7 @@ Im laufe der Zeit hat Fink soviel Hilfe erfahren, daß es schwierig ist alle Per
 <li>Thøger Jull Thorsen</li>
 <li>Chris Turkel</li>
 <li>Jeff Ye</li>
-<!-- <li>The <a href="./doc/multilingual/intro.php?phpLang=en#organization"> translators</a></li> -->
+<!-- <li>The <a href="./doc/multilingual/intro.php?phpLang=de#organization"> translators</a></li> -->
 </ul>
 
 <h2>Gelegentlich Mitwirkende</h2>
