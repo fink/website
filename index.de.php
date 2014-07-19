@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date   = '$Date: 2014/07/19 12:12:58 $';
+$cvs_date   = '$Date: 2014/07/19 22:37:01 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -144,7 +144,7 @@ Bitte beachten Sie, dass die Verwendung einiger dieser Dienste (z.B. Fehler meld
 einreichen) eine Anmeldung mit Ihrem SourceForge-Konto erfordert. Sollten Sie noch kein Konto haben,
 können Sie sich dieses kostenlos auf der <a href="http://sourceforge.net/">SourceForge</a> Seite anlegen.
 </p>
-<p>Weitere Dienste ausserhalb von SourceForge bereitgestellt:</p>
+<p>Weitere Dienste, die ausserhalb von SourceForge bereitgestellt werden:</p>
 <ul>
     <li><a href="http://wiki.finkproject.org/">Das Fink Entwickler Wiki</a> (jetzt an einem neuen Platz).</li>
     <li>
@@ -154,7 +154,7 @@ können Sie sich dieses kostenlos auf der <a href="http://sourceforge.net/">Sour
     </li>
     <li>
         <a href="https://github.com/fink/fink-mirrors">
-            Neues github repository für das <code>fink-mirrors</code> Paket.
+            Neues github repository für das Paket <code>fink-mirrors</code>.
         </a>
     </li>
 </ul>
