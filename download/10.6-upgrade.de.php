@@ -1,7 +1,7 @@
 <?
 $title = "Anleitung zur Aktualisierung unter Mac OS X 10.6";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/20 00:04:08 $';
+$cvs_date = '$Date: 2014/07/20 10:42:33 $';
 
 include "header.inc";
 ?>
@@ -10,55 +10,55 @@ include "header.inc";
 <h2>Wichtige Anmerkungen:</h2>
 <p>Haben sie Xquartz 2.4 unter 10.5 installiert, wird es wahrscheinlich
 einfacher sein, einen <a href="./srcdist.php">clean install</a> aus
-den Quellen durchzuf웘ren.
+den Quellen durchzuf체hren.
 <p><br>
-<p>F웘ren sie folgende Sequenz auf um ihre Installation von Fink von
+<p>F체hren sie folgende Sequenz auf um ihre Installation von Fink von
 10.5/32 bit auf 10.6/32 bit zu aktualisieren (Es gibt keinen direkten Weg
-von fr웘eren Betriebsystemversionen):
+von fr체heren Betriebsystemversionen):
 </p>
 <ol>
-	<li>Vor der Installation von OS X 10.6, f웘ren sie 
+	<li>Vor der Installation von OS X 10.6, f체hren sie 
 	<pre>fink selfupdate</pre> aus, wobei rsync oder cvs eingeschaltet ist,
 	d. h. <pre>fink selfupdate-rsync</pre> oder 
 	<pre>fink selfupdate-cvs</pre>.  Dies aktualisiert <em>fink</em> auf eine
 	laufende Version.
   <br>
-	냕erpr웖en sie die Version ihres Paketmanagers mittels 
+	횥berpr체fen sie die Version ihres Paketmanagers mittels 
 	<pre>fink -V</pre>.  Die Version muss vor der Aktualisierung mindestens
 	0.29.9 sein.
   <br>
 	<strong>Machen sie auf keinen Fall weiter, wenn ihre Version niedriger
-	ist als 0.29.9!</strong> Sie m웧sen diesen
+	ist als 0.29.9!</strong> Sie m체ssen diesen
   <a href="../faq/upgrade-fink.php#leopard-bindist1">Anweisungen</a> 
   folgen, um fink zu aktualisieren.
   </li>
-	<li>Editieren sie die Datei <em>/sw/etc/fink.conf</em> und f웗en sie
+	<li>Editieren sie die Datei <em>/sw/etc/fink.conf</em> und f체gen sie
 	folgende Zeile ein: <strong>NoAutoIndex: true</strong>.  (Sie werden
-	<em>sudo</em> oder eine 둯nliche Methode brauchen, um die Rechte zu
-	erhalten, die f웦 das Editieren der Datei notwendig sind.)
+	<em>sudo</em> oder eine 채hnliche Methode brauchen, um die Rechte zu
+	erhalten, die f체r das Editieren der Datei notwendig sind.)
   </li>
-	<li>Installieren sie OS X 10.6 und Xcode 3.2 (oder eine sp둻ere 
+	<li>Installieren sie OS X 10.6 und Xcode 3.2 (oder eine sp채tere 
 	Version).
   </li>
-	<li>F웘ren sie das Kommando <pre>fink reinstall fink</pre> aus, damit
-	<em>fink</em> erf둯rt, dass es jetzt auf 10.6 l둼ft.  (Bekommen sie eine
-	Meldung 웑er eine korrupte Paket-Datenbank, f웘ren sie 
+	<li>F체hren sie das Kommando <pre>fink reinstall fink</pre> aus, damit
+	<em>fink</em> erf채hrt, dass es jetzt auf 10.6 l채uft.  (Bekommen sie eine
+	Meldung 체ber eine korrupte Paket-Datenbank, f체hren sie 
 	<pre>fink index -f</pre> aus und versuchen sie diesen Schritt noch
 	einmal.)
   </li>
-	<li>F웘ren sie das Kommando <pre>fink update fink</pre> aus, damit sie
-	das neueste <em>fink</em> f웦 10.6 erhalten.
+	<li>F체hren sie das Kommando <pre>fink update fink</pre> aus, damit sie
+	das neueste <em>fink</em> f체r 10.6 erhalten.
   </li>
-	<li>F웘ren sie das Kommando <pre>fink install perl588-core</pre> aus,
-	wenn sie Fink-Pakete haben, die von Perl abh둵gen.  Die Perl-Version des
-	Systems Perl wurde beim Upgrade ver둵dert.
+	<li>F체hren sie das Kommando <pre>fink install perl588-core</pre> aus,
+	wenn sie Fink-Pakete haben, die von Perl abh채ngen.  Die Perl-Version des
+	Systems Perl wurde beim Upgrade ver채ndert.
   </li>
 	<li>Entfernen sie die Zeile <strong>NoAutoIndex: true</strong> aus der
 	Datei <em>fink.conf</em>.
   </li>
 </ol>
 <p>Nach dem Upgrade wollen sie vermutlich das Kommando <pre>fink
-configure</pre> ausf웘ren, um ein wenig aufzur둼men.
+configure</pre> ausf체hren, um ein wenig aufzur채umen.
 </p>
 
 <?
