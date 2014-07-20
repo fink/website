@@ -1,7 +1,7 @@
 <?
-$title = "Upgrade Instructions for Mac OS X 10.7";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/11/18 01:26:06 $';
+$title = "Upgrade Instructions for Mac OS X 10.9";
+$cvs_author = '$Author: k-m_schindler $';
+$cvs_date = '$Date: 2014/07/20 12:08:04 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ The entries there provide a more detailed upgrade explanation.</p>
     <li>Run the command: <pre>cat fink_packages.txt | xargs fink install</pre> to have your
      new Fink setup install the packages that you previously had installed.</li>
 </ol>
-<p>Not all of the packages are available on 10.79due to several 
+<p>Not all of the packages are available on 10.9 due to several 
 underlying changes in the system. Work is ongoing to make as many packages available 
 as possible. If your favorite package is not available on 10.9, please contact the 
 package maintainer and ask if it can be migrated.</p>
