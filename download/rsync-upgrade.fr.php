@@ -1,7 +1,7 @@
 <?
 $title = "Passage à la mise à niveau par Rsync";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/03 20:32:58 $';
+$cvs_author = '$Author: k-m_schindler $';
+$cvs_date = '$Date: 2014/07/20 12:44:12 $';
 
 include "header.inc";
 ?>
@@ -15,7 +15,7 @@ Mais si vous avez des difficultés avec CVS, vous ne pourrez pas utiliser
 CVS pour réaliser la mise à jour du gestionnaire de paquets.
 </p><p>
 Si vous avez des difficultés pour mettre à niveau fink, vous devrez d'abord récupérer l'archive tar de fink  (version 0.14.0 ou plus récente). Vous la trouverez sur la <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">page de la liste des fichiers Fink sur SourceForge</a>.
-Utilisez <code> tar xfz </code> pour décompacter l'archive, puis <code>cd</code>
+Utilisez <code> tar -xfz </code> pour décompacter l'archive, puis <code>cd</code>
 pour vous placer dans le répertoire ainsi créé, et exécutez la commande
 <code>./inject.pl</code>
 </p>

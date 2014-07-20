@@ -1,7 +1,7 @@
 <?
 $title = "Switching to the Rsync Upgrade Method";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:32:02 $';
+$cvs_author = '$Author: k-m_schindler $';
+$cvs_date = '$Date: 2014/07/20 12:44:12 $';
 
 include "header.inc";
 ?>
@@ -19,7 +19,7 @@ If you are having difficulties upgrading, you should first obtain the source
 tarball for fink (version 0.14.0 or later) at
 <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">the 
 SourceForge File List page for Fink</a>.
-Use <code> tar xfz </code> to unpack the tarball, then <code>cd</code>
+Use <code> tar -xfz </code> to unpack the tarball, then <code>cd</code>
 into the directory it creates, and run the command
 <code>./inject.pl</code>
 </p>

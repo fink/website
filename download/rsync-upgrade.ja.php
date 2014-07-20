@@ -1,7 +1,7 @@
 <?
 $title = "Rsync アップグレード方法への変更";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/02 16:21:21 $';
+$cvs_author = '$Author: k-m_schindler $';
+$cvs_date = '$Date: 2014/07/20 12:44:12 $';
 
 include "header.inc";
 ?>
@@ -16,7 +16,7 @@ CVS で問題がある場合は CVS 方法ではパッケージマネージャ�
 <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">
 Fink 用の SourceForge File List ページ</a>
 から入手して下さい。
-<code> tar xfz </code>　をして tarball を解凍し、 <code>cd</code> 
+<code> tar -xfz </code>　をして tarball を解凍し、 <code>cd</code> 
 で今解凍したディレクトリ内に入り、以下のコマンドを実行します:
 <code>./inject.pl</code>
 </p>
