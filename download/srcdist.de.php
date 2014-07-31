@@ -1,7 +1,7 @@
 <?
 $title = "Quelltext Version Download";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/31 12:31:49 $';
+$cvs_date = '$Date: 2014/07/31 12:55:18 $';
 
 include "header.inc";
 ?>
@@ -21,8 +21,7 @@ und zu installieren.</p>
 
 <!--akh: edit web/fink_version.inc to update the information hencefort -->
 
-<p>
-<em>Fink <? print $fink_version; ?></em> wurde am  
+<p><em>Fink <? print $fink_version; ?></em> wurde am  
 <? print $release_date; ?> offiziell veröffentlicht.</p>
 
 <ul>
@@ -94,7 +93,7 @@ teilweise oder ganz ausgepackt wurde.</p>
 <pre>cd fink-<? print $fink_tool_version; ?></pre>
 <pre>./bootstrap</pre>
 <p>im Terminal aus, um das das Fink-Basissystem zu installieren. Wollen sie ein 
-anderes Verzeichnis als die Voreinstellung <em>/sw</em>verwenden, geht das mit</p>
+anderes Verzeichnis als die Voreinstellung <em>/sw</em> verwenden, geht das mit</p>
 <pre>./bootstrap /path</pre>
 <p>(Ersetzen sie <em>/path</em> mit dem Verzeichnis ihrer Wahl).</p>
 <p>Führen sie nach dem Abschluss der Installation folgendes Kommando aus:</p>
@@ -115,7 +114,6 @@ Patches herunter:</p>
 
 <p><code>rsync</code> ist für die meisten die bessere Wahl als <code>cvs</code>.</p>
 
-
 <p>In obiger Datei finden Sie umfangreiche Anleitungen zur Installation und Nutzung.
 Bitte lesen Sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.
 Die Dokumente README, INSTALL und USAGE stehen sowohl als reine Textdokumente 
@@ -129,84 +127,87 @@ Um über neue Versionen informiert zu werden, abonnieren Sie die<a
 href="../lists/fink-announce.php">fink-announce Mailingliste</a>.
 </p>
 
-<h2>OS X 10.5 point release:</h2>
+<h2>OS X 10.5 Point Release:</h2>
 
-<p>The source point release contains the <em>fink</em> package manager plus package
-descriptions and patches.  It will download the source code from the original
-distribution sites and build them on your local machine.
+<p>Dieses Quelltext-Point-Release enthält den <em>Fink</em>-Paketmanager sowie 
+Paketbeschreibungen und Patches. Es lädt den Quelltet von der originalen 
+Distributionsseite und erstellt sie auf ihrem lokalen Computer.
 </p>
 
-<p>Fink <? print $fink_version; ?> was officially released on
-<? print $release_date; ?>.</p>
+<p><em>Fink <? print $fink_version; ?></em> wurde am  
+<? print $release_date; ?> offiziell veröffentlicht.</p>
 
 <ul><li><a
 href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkFullSOURCE');">Fink
-<? print $fink_version; ?></a> - 3521K, .tar.gz format</li>
+<? print $fink_version; ?></a> - 3521K, .tar.gz Format</li>
 </ul>
 
-<p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>).</p>
+<p>Sie müssen auch für ihr System die entsprechenden Command-Line-Tools für 
+Xcode installieren, (siehe: 
+<a href="./index.de.php#additionaldownloads">Schnellanleitung</a>)</p>
 
-<p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
-via</p>
+<p>Packen sie nun das Archiv tar.gz mit folgendem Kommando aus, falls es nicht 
+bereits automatisch erfolgte:</p>
 
 <pre>tar -xvzf fink-<? print $fink_version; ?>-full.tar.gz</pre>
 
-<p>or</p>
+<p>oder mit</p>
 
 <pre>tar -xvf fink-<? print $fink_version; ?>-full.tar</pre>
 
-<p>if it has already been partially unpacked, in a terminal window.  Then, in a
-terminal window, change to the resulting <em>fink-<? print $fink_version;
-?></em> directory, and use</p>
+<p>falls es schon teilweise entpackt wurde. Wechseln sie dann in einem 
+Terminalfenster in das erstellte <em>fink-<? print $fink_version;
+?></em> Verzeichnis und führen sie</p>
 
 <pre>./bootstrap</pre>
 
-<p>to start the boostrapping operation, which will install the Fink base
-setup.  If you would like to use a different location than the default 
-<em>/sw</em>, you can do this via</p>
+<p>aus, um das Boostrapping zu starten, womit die Basisinstallation von Fink 
+erfolgt.  Wollen sie ein anderes Verzeichnis als die Voreinstellung <em>/sw</em> 
+verwenden, geht das mit</p>
 <pre>./bootstrap /path</pre>
-<p>(replace <em>/path</em> with the directory you want to use).</p>
+<p>(Ersetzen sie <em>/path</em> mit dem Verzeichnis ihrer Wahl).</p>
 <!-- akh: I got a note from Trevor Harmon that the 0.28.0 bootstrap automagically runs pathsetup.sh
      rangerrick: but that is not true!  ;) -->
 
-<p>After the installation is completed, running the command</p>
+<p>Führen sie nach dem Abschluss der Installation folgendes Kommando aus:</p>
 
 <pre>/sw/bin/pathsetup.sh</pre>
 
-<p>will set up your environment for Fink (assuming you have installed Fink
-under /sw).  If you open a new terminal window, the session will use these
-environment settings.  Once you have installed <em>fink</em> and the other base
-packages, the command sequence:</p>
+<p>Dies setzt die Umgebung (environment) für Fink (unter der Annahme, dass Fink 
+in /sw installiert ist).  Öffnet man ein neues Terminalfenster, benutzt die 
+Sitzung die neuen Einstellungen der Umgebung. Sind <em>fink</em> und die anderen 
+Basis-Pakete installiert, laden folgende Kommandos Paketbeschreibungen und 
+Patches herunter:</p>
 
 <pre>fink selfupdate</pre>
 
-<p>using any either the <em>rsync</em> or <em>cvs</em> options,
-followed by</p>
+<p>entweder mit der Option <em>rsync</em> oder <em>cvs</em> gefolgt von</p>
 
 <pre>fink index -f</pre>
 
-<p>followed by</p>
+<p>gefolgt von</p>
 
 <pre>fink selfupdate-rsync</pre>
 
-<p>or</p>
+<p>oder</p>
 
 <pre>fink selfupdate-cvs</pre>
 
-<p>will download the package description files and patches, provided that you
-<strong>do not</strong> select the "point release" method initially.  <em>rsync</em> is generally
-preferable to <em>cvs</em> for most people.</p>
+<p>Alles aber unter der Voraussetzung, dass sie ursprünglich 
+<strong>nicht</strong> die Methode "point release" ausgewählt haben. 
+<code>rsync</code> ist für die meisten die bessere Wahl als <code>cvs</code>.</p>
 
-<p>Installation and usage instructions are inside the distribution tarball.
-Please read them - Fink is not a one-click-and-done thing.  The documents
-README, INSTALL and USAGE are provided as pure text (for reading from the
-command line) and as HTML (for reading in a browser and for printing).  They
-are also available online in the <a href="../doc/index.php">documentation
-section</a>.
+<p>In obiger Datei finden Sie umfangreiche Anleitungen zur Installation und Nutzung.
+Bitte lesen Sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.
+Die Dokumente README, INSTALL und USAGE stehen sowohl als reine Textdokumente 
+(zum Lesen in der Kommandozeile) als auch in Form von HTML (zum Lesen im Browser 
+und zum Ausdrucken) zur Verfügung. Die Dokumente finden sie auch online im 
+<a href="../doc/index.php">Bereich Dokumentation</a>.
 </p>
 
-<p>To be informed of new releases, subscribe to the <a
-href="../lists/fink-announce.php">fink-announce mailinglist</a>.
+<p>
+Um über neue Versionen informiert zu werden, abonnieren Sie die<a
+href="../lists/fink-announce.php">fink-announce Mailingliste</a>.
 </p>
 
 <?
