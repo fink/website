@@ -1,7 +1,7 @@
 <?
 $title = "Links";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/19 12:12:58 $';
+$cvs_date = '$Date: 2014/07/31 08:59:06 $';
 
 include "header.inc";
 ?>
@@ -21,8 +21,7 @@ ein graphisches Frontend für Fink</li>
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - Ein weiteres graphisches Frontend für Fink (noch alpha).</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Ein Such-plugin für die Paket-Datenbank. Nur Mozilla basierte Browser (suche nach Fink)!</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Bewerte uns und werbe für Fink.</li>
-<li><a href="http://www.opennms.org/~ranger/irc_logs/public/" target="_blank">IRC logs</a> -
-geloggt und ausgewertete Daten des #fink IRC chats</li>
+<li><a href="http://www.opennms.org/~ranger/irc_logs/public/" target="_blank">IRC logs</a> - Log und ausgewertete Daten des #fink IRC chat</li>
 </ul>
 
 <p>Open Source Software</p>

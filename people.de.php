@@ -1,19 +1,19 @@
 <?
 $title = "Contributors";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/19 12:12:58 $';
+$cvs_date = '$Date: 2014/07/31 08:59:06 $';
 
 include "header.inc";
 ?>
 
 <h1>Mitwirkende</h1>
 
-<p>Fink wird von vielen freiwilligen Mitarbeitern betreut. Jedes Paket in Fink wir von einem sogenannten 'Maintainer' verwaltet. Diese Person kümmert sich darum, dass dieses Paket so arbeitet, wie man es erwarten würde. Außerdem kümmert sich diese Person auch um Fehler, die berichtigt werden müssen. Es gibt Menschen, die sich um das Programm 'fink' kümmern, dieser Web-Auftritt muss betreut werden und viele Fink Nutzer brauchen Hilfe im täglichen Umgang mit Fink. Ein Großteil dieser Hilfe wird von unseren Mailing-Listen getragen sowie dem Chat im IRC.
-Die oben genannten Aufgaben, aber auch viele andere benötigen eine Menge Zeit und Aufmerksamkeit. Diese Seite dient dazu, sich genau bei diesen Personen zu bedanken, denn ohne unsere fleißigen freiwilligen Helfer wäre es nicht möglich, dieses Projekt am Leben zu erhalten.
+<p>Fink wird von vielen freiwilligen Mitarbeitern betreut. Jedes Paket in Fink wir von einem sogenannten 'Maintainer' verwaltet. Diese Person kümmert sich darum, dass dieses Paket so arbeitet, wie man es erwarten würde. Außerdem kümmert sich diese Person auch um Fehler, die berichtigt werden müssen. Es gibt Menschen, die sich um das Programm 'fink' kümmern, dieser Web-Auftritt muss betreut werden und viele Fink Nutzer brauchen Hilfe im täglichen Umgang mit Fink. Ein Großteil dieser Hilfe wird über unsere Mailing-Listen und dem IRC-Chat im Kanal #fink auf irc.freenode.net geleistet.
+Die oben genannten Aufgaben, aber auch viele andere, benötigen eine Menge Zeit und Aufmerksamkeit. Diese Seite dient dazu, sich genau bei diesen Personen zu bedanken, denn ohne unsere fleißigen freiwilligen Helfer wäre es nicht möglich, dieses Projekt am Leben zu erhalten.
 </p>
 
 <p>
-Im Laufe der Zeit hat Fink soviel Hilfe erfahren, dass es schwierig ist, alle Personen hier aufzulisten. Wenn Sie der Meinung sind, dass Sie einen substantiellen Beitrag zu Fink geleistet haben, dann teilen Sie uns dies bitte per Mail mit und in der nächsten Revision dieses Dokumentes wird auch Ihr Name nicht fehlen.
+Im Laufe der Zeit hat Fink soviel Hilfe erfahren, dass es schwierig ist, alle Personen hier aufzulisten. Wenn Sie der Meinung sind, dass Sie einen substantiellen Beitrag zu Fink geleistet haben, dann teilen Sie uns dies bitte per Mail mit und in der nächsten Revision dieses Dokuments wird auch Ihr Name nicht fehlen.
 </p>
 <p>Wörter, die durch Kursivschrift hervorgehoben sind, stehen für den Nicknamen im IRC.</p>
 
