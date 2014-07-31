@@ -1,7 +1,7 @@
 <?
 $title = "Quelltext Version Download";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/31 13:10:25 $';
+$cvs_date = '$Date: 2014/07/31 14:43:17 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -22,8 +22,8 @@ und zu installieren.</p>
 
 <!--akh: edit web/fink_version.inc to update the information hencefort -->
 
-<p><em>Fink <? print $fink_version; ?></em> wurde am  
-<? print $release_date; ?> offiziell veröffentlicht.</p>
+<p><em>Fink <? print $fink_tool_version; ?></em> wurde am  
+<? print $fink_tool_release_date; ?> offiziell veröffentlicht.</p>
 
 <ul>
   <li>
