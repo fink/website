@@ -1,9 +1,10 @@
 <?
 $title = "Quelltext Version Download";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/31 12:55:18 $';
+$cvs_date = '$Date: 2014/07/31 13:10:25 $';
 
 include "header.inc";
+include "../fink_version.inc";
 ?>
 
 <h1>Download der Quelltext-Version von Fink</h1>
@@ -14,9 +15,9 @@ pasted them here with the title 10.6. -->
 <h2>OS X 10.4 und später:</h2>
 
 <p>Der Source-Tarball enthält den <em>Fink</em>-Paketmanager. Mit dessen Hilfe 
-können Sie nach der Installation Paketbeschreibungen und Patches beziehen.
+können sie nach der Installation Paketbeschreibungen und Patches beziehen.
 Diese werden verwendet, um Software aus den Projekt-Repositories oder den 
-Mirrors des Fink-Projekts herunterzuladen und auf Ihrem Computer zu erstellen 
+Mirrors des Fink-Projekts herunterzuladen und auf ihrem Computer zu erstellen 
 und zu installieren.</p>
 
 <!--akh: edit web/fink_version.inc to update the information hencefort -->
@@ -65,7 +66,7 @@ Command-Line-Tools über den <em>Downloads</em>-Reiter in den
 <strong>Voreinstellungen</strong> von Xcode installieren.</p></li>
 <li><p><em>10.6-:  </em>Installieren sie das komplette Xcode.</p></li>
 </ul>
-<p>Installieren sie das komplette Xcode auf 10.7-10.9, sollten sie folgende 
+<p>Installieren sie das komplette Xcode auf 10.7-10.9, indem sie folgende 
 Befehle ausführen:</p>
 <pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
 <p>wobei sie <em>/path/to</em> mit dem tatsächlichen Pfad zur Xcode-App 
@@ -83,7 +84,7 @@ entsprechend anpassen.):</p>
 <pre>cd $HOME/Downloads</pre>
 <p>gefolgt von</p>
 <pre>tar -xvf <? print $fink_tool_version; ?>.tar.gz</pre>
-<p>or</p>
+<p>oder</p>
 <pre>tar -xvf <? print $fink_tool_version; ?>.tar</pre>
 <p>wobei die Wahl davon abhängt, ob das Archiv zum Beispiel von Safari bereits 
 teilweise oder ganz ausgepackt wurde.</p>
@@ -114,8 +115,8 @@ Patches herunter:</p>
 
 <p><code>rsync</code> ist für die meisten die bessere Wahl als <code>cvs</code>.</p>
 
-<p>In obiger Datei finden Sie umfangreiche Anleitungen zur Installation und Nutzung.
-Bitte lesen Sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.
+<p>In obiger Datei finden sie umfangreiche Anleitungen zur Installation und Nutzung.
+Bitte lesen sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.
 Die Dokumente README, INSTALL und USAGE stehen sowohl als reine Textdokumente 
 (zum Lesen in der Kommandozeile) als auch in Form von HTML (zum Lesen im Browser 
 und zum Ausdrucken) zur Verfügung. Die Dokumente finden sie auch online im 
@@ -123,7 +124,7 @@ und zum Ausdrucken) zur Verfügung. Die Dokumente finden sie auch online im
 </p>
 
 <p>
-Um über neue Versionen informiert zu werden, abonnieren Sie die<a
+Um über neue Versionen informiert zu werden, abonnieren sie die <a
 href="../lists/fink-announce.php">fink-announce Mailingliste</a>.
 </p>
 
@@ -197,8 +198,8 @@ Patches herunter:</p>
 <strong>nicht</strong> die Methode "point release" ausgewählt haben. 
 <code>rsync</code> ist für die meisten die bessere Wahl als <code>cvs</code>.</p>
 
-<p>In obiger Datei finden Sie umfangreiche Anleitungen zur Installation und Nutzung.
-Bitte lesen Sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.
+<p>In obiger Datei finden sie umfangreiche Anleitungen zur Installation und Nutzung.
+Bitte lesen sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.
 Die Dokumente README, INSTALL und USAGE stehen sowohl als reine Textdokumente 
 (zum Lesen in der Kommandozeile) als auch in Form von HTML (zum Lesen im Browser 
 und zum Ausdrucken) zur Verfügung. Die Dokumente finden sie auch online im 
@@ -206,7 +207,7 @@ und zum Ausdrucken) zur Verfügung. Die Dokumente finden sie auch online im
 </p>
 
 <p>
-Um über neue Versionen informiert zu werden, abonnieren Sie die<a
+Um über neue Versionen informiert zu werden, abonnieren sie die <a
 href="../lists/fink-announce.php">fink-announce Mailingliste</a>.
 </p>
 
