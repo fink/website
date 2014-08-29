@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.49 2012/11/11 15:20:16 gecko2 Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.50 2014/08/29 01:01:29 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -162,19 +162,7 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </codeblock>
 			<p>
-				今は推奨されない旧式の記法は「RFC 822 ヘッダ折り畳み方法」を手本に作られました．
-				空白で始まる行を前の行からの続きと認識します．
-				例:
-			</p>
-<codeblock>InstallScript: mkdir -p %i/share/man
- make install prefix=%i mandir=%i/share/man
- mkdir -p %i/share/doc/%n
- install -m 644 COPYING %i/share/doc/%n</codeblock>
-			<p>
-				各行頭の空白は必須であることに注意して下さい．
-			</p>
-			<p>
-				どちらの形式でも，空行と，シャープ (#) で始まる行は無視されます．
+				こ形式では，空行と，シャープ (#) で始まる行は無視されます．
 				キー (フィールド名) では大文字と小文字の区別がないので，
 				<code>InstallScript</code> を <code>installscript</code> や <code>INSTALLSCRIPT</code> とも書けますが，
 				最初の <code>InstallScript</code> という方式が読み易いのでこれを使いましょう．
@@ -413,6 +401,14 @@ _num 式 は fink-0.26.0 より導入．
 </p>
 </itemd></item>
 
+<item><itemt>%{PatchFile<em>N</em>}</itemt>
+  <itemd>
+    <p>
+      <code>PatchFile<em>N</em></code> フィールドで示されたファイルのフルパス．
+      (fink-0.30.0 にて導入)
+    </p>
+  </itemd></item>
+
 <item><itemt>%lib</itemt>
 <itemd>
 <p>
@@ -563,14 +559,10 @@ intel マシン上では <em>lib/x86_64</em> と拡張されます (64-bit ラ�
 			<title>共有ライブラリ</title>
 			<p>
 				Fink は共有ライブラリに関して新しいポリシーを定め， 2002 年 2 月から施行しています．
-				以下では Fink 0.5.0 と共に公布された，共有ライブラリについてのポリシー第 4 版
-
-as modified in December, 2006 to handle 64bit libraries
-and from January, 2008 to handle private shared libraries. (In addition,
-the discussion was updated in June, 2008 to eliminate obsolete references to a
-transitional period for implementing the shared libraries policy.)
-We begin with a quick summary, and then discuss things in more detail.
-
+				以下では Fink 0.5.0 と共に公布された，共有ライブラリについてのポリシー第 4 版です。
+				これは、2006年12月の時点で、 64 bit ライブラリを扱うために、
+				2008年1月時点で、プライベートな共有ライブラリを扱うために修正されています。
+				(さらに、2008年6月に共有ライブラリを実行する暫定期間への参照を削除しました。)
 				最初に要点をかいつまんで述べ，後から詳細に移ります．
 			</p>
 			<p>
@@ -591,14 +583,14 @@ We begin with a quick summary, and then discuss things in more detail.
 					他のパッケージが一切そのパッケージに依存しないようにする．
 				</li>
 			</ul>
-<p>Note that a package may also install private shared libraries, which
-are not intended to be linked from any other package.  In this case, the
-libraries need not go into a separate package, but a <code>Shlibs</code>
-field must still be part of the package containing shared libraries.  Also,
-maintainers should try to avoid storing a final link from libfoo.dylib
-in the main library directory <filename>%i/lib</filename> 
-(or its 64-bit equivalent), to prevent
-other programs from accidentally linking to this library.
+<p>
+パッケージはプライベートな共有ライブラリをインストールすることがあることに注意してください。
+これは、他のパッケージからリンクされることを意図しています。
+この場合、ライブラリは別パッケージになる必要があります。
+共有ライブラリを含むパッケージは、<code>Shlibs</code> がなければなりません。
+また、他のプログラムが誤ってリンクしないように、
+メンテナは <filename>%i/lib</filename> (またはその 64 bit 版) 内にある主要ライブラリが 
+libfoo.dylib からの最終的なリンクを保存しないよう努めてください。
 </p>
 			<p>
 				このポリシーに反し，パッケージを分割しない場合には，フィールド <code>DescPackaging</code> に理由を記述しなければいけません．
@@ -688,12 +680,9 @@ other programs from accidentally linking to this library.
 				この場合は <code>SplitOff2</code>, <code>SplitOff3</code> などを使えばだいじょうぶです．)
 			</p>
 			<p>
-				<!-- 共有ライブラリを伴うソフトウェアパッケージには， <em>「メジャーバージョン」</em> N がなければいけません． -->
-<!-- start translation -->
-Each software package for which public shared libraries are built must have
-a <em>major version number</em> N, which is included in the shared
-library's filename (for example, <filename>libbar.N.dylib</filename>).
-<!-- end translation -->
+				共有ライブラリがビルドされるソフトウェアパッケージは、
+				<em>メジャーバージョン番号</em> N がなければなりません。
+				これは、共有ライブラリのファイル名にも含まれています (例 <filename>libbar.N.dylib</filename>)。
 				「メジャーバージョン」は，ライブラリの API にパッケージ間で非互換な変更が加えられたときのみ変わることになっています．
 				Fink では，名称は以下の要領で作成されます．
 				すなわち， upstream パッケージ名が bar なら，そのFinkパッケージの名前は barN と barN-shlibs になります．
@@ -722,13 +711,11 @@ library's filename (for example, <filename>libbar.N.dylib</filename>).
 Depends: barN-shlibs
 BuildDepends: barN
 </codeblock>
-<!-- start translation --><p>
-It is not be permitted for 
-another package to depend on barN itself.  (Although there may still be
-a few such dependencies involving packages which were in place prior to 
-February, 2002.)  This is
-signaled to other developers by a boolean field
-</p><!-- end translation -->
+<p>
+他のパッケージが、barN 自体に依存することは許されていません。
+(2002年2月以前からあるパッケージについては、まだそのような依存性になっているかもしれません。)
+これは、他の開発者には真偽値で連絡されます。
+</p>
 <codeblock>
 BuildDependsOnly: True
 </codeblock>
@@ -753,10 +740,10 @@ BuildDependsOnly: True
 %i/lib/libbar.N.dylib -> %p/lib/libbar.N.x.y.dylib
 %i/lib/libbar.dylib -> %p/lib/libbar.N.x.y.dylib
 </codeblock>
-<!-- start translation --><p>from the install_name path and from the linking path to the actual
-library.  (The first will not be needed if the library is in fact
-installed at the install_name path, which is becoming more common.)
-</p><!-- end translation -->
+			<p>
+				install_name パスからと、リンクパスからの実際のライブラリ。
+			(ライブラリが実際に install_name パスにインストールされる場合は、最初のものは不要です。こちらのほうが普通です。)
+			</p>
 			<p>
 				静的ライブラリもビルドする場合，次の場所にインストールされることになります．
 			</p>
@@ -919,7 +906,6 @@ Shlibs: &lt;&lt;
 				(新しい「バージョン」または「版」とは，
 				新しい compatibility_version のライブラリを提供する最初の「バージョン」または「版」のことです．)
 			</p>
-<!-- start translation -->
 <p>
 プライベートなライブラリの <code>Shlibs</code> は，文法が異なります:
 </p>
@@ -1034,10 +1020,13 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				Perl のバージョンに依存する Perl モジュールは該当バージョンの付いた Perl の実行可能プログラム (perl5.6.0 など)
 				を使ってビルドされなければいけません．
 				また，モジュールの含むファイルは，標準の Perl のディレクトリ内の，バージョンの付いたサブディレクトリ
-				(<filename>/sw/lib/perl5/5.6.0</filename> や <filename>/sw/lib/perl5/5.6.0/darwin</filename> など) に格納しなければいけません．
-				命名規約により，バージョン 5.6.0 に依存する Perl モジュールに <code>-pm560</code> を後置します．
+				(<filename>/sw/lib/perl5/5.12.3</filename> や <filename>/sw/lib/perl5/5.12.3/darwin</filename> など) に格納しなければいけません．
+				命名規約により，バージョン 5.12.3 に依存する Perl モジュールに <code>-pm5123</code> を後置します．
 				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，
-				perl 5.6.1 (10.2 ツリー), perl 5.8.0 (10.3 ツリー), perl 5.8.1， perl 5.8.4 または perl 5.8.6 でもそのように対応されます．
+				perl 5.10.0 (10.6 ツリーのみ), 
+				perl 5.12.4 (10.7 ツリーのみ),
+				perl 5.16.2 (10.7 ツリーのみ)
+				でもそのように対応されます．
 			</p>
 			<p>
 				ディレクティブ <code>Type: perl 5.6.0</code> は自動的にバージョンの付いた Perl の実行可能ファイルを使い，
@@ -1053,16 +1042,15 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 			</p>
 			<p>
 				fink 0.20.2 の時点で， system-perl バーチャルパッケージは，
-				システムに 5.8.0 以降の Perl がある場合，自動的に Perl モジュールを提供します．
-				system-perl-5.8.1-1 の場合，
-				<em>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581,
-			 file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581,
-			 i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581,
-			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581,
-			 test-simple-pm581, time-hires-pm581.</em>
-				です．
-				(この一覧は 0.20.1 から若干変更されています．
-				パッケージメンテナは正しい一覧を使用しているか必ず確認してください．)
+				システムに 5.8.0 以降の Perl がある場合，自動的に Perl モジュールを提供 (Provides) します．
+				提供中の perl モジュール一覧を生成しているコードは、
+				<code>fink</code> パッケージの中の
+				<code>VirtPackage.pm</code> というファイルにあります。
+			</p>
+			<p>
+				システム perl が異なると、提供するモジュールも変わります。
+				パッケージメンテナは、提供されている perl モジュールを利用する場合には、
+				正しい一覧を想定しているか確認することを勧めます。
 			</p>
 			<p>
 				Fink 0.13.0 から利用可能になったコマンド <code>fink validate</code> を .deb ファイルに適用すると，
@@ -1077,13 +1065,15 @@ manpage やバイナリ，その他のスクリプトなど，これらのパッ
 <code>Replaces</code> を用いることで，同名のファイルがあっても異なる perl バージョンの perl モジュールは，以前は許可されていましたが，今後は許可されません．
 manpage に関する解決として，2005年3月より，それぞれの perl-X.Y.Z に <filename>%p/lib/perl5/X.Y.Z/man</filename> という MANPATH を定義しました．
 このため，-man や -doc といった SplitOff を作って対処する必要はなくなりました．
-例えば， uri-pm581 と uri-586 のコンフリクトの場合，どちらにもある <filename>URI.3pm</filename> という manpage は，それぞれ <filename>%p/lib/perl5/5.8.1/man/man3/URI.3pm</filename> と <filename>%p/lib/perl5/5.8.6/man/man3/URI.3pm</filename> にインストールされます．
+例えば， uri-pm5124 と uri-5162 のコンフリクトの場合，どちらにもある <filename>URI.3pm</filename> という manpage は，
+それぞれ <filename>%p/lib/perl5/5.12.4/man/man3/URI.3pm</filename> と 
+<filename>%p/lib/perl5/5.16.2/man/man3/URI.3pm</filename> にインストールされます．
 ただし，<code>Type: perl X.Y.Z</code> によるスクリプトは変更されていないので， <code>InstallScript</code> にてどこに mapnage をインストールするのかを記述する必要があります．
 もし複雑なスクリプトを記述していないのであれば，既存のものを用い，ファイルを移動させるだけで済みます．
 </p>
 <codeblock>
 %{default_script}
-mv %i/share/man %i/lib/perl5/5.8.1
+mv %i/share/man %i/lib/perl5/5.12.4
 </codeblock>
 <p>
 これにより，全ての manpage が移動します．
@@ -1091,8 +1081,8 @@ mv %i/share/man %i/lib/perl5/5.8.1
 </p>
 <codeblock>
 %{default_script}
-mkdir -p %i/lib/perl5/5.8.1/man
-mv %i/share/man/man3 %i/lib/perl5/5.8.1/man
+mkdir -p %i/lib/perl5/5.12.4/man
+mv %i/share/man/man3 %i/lib/perl5/5.12.4/man
 </codeblock>
 <p>
 デモ用やユーティリティ的なスクリプトなどが <filename>%p/bin</filename> にある場合は，いくつかの解決方法があります．
@@ -1104,7 +1094,7 @@ mv %i/share/man/man3 %i/lib/perl5/5.8.1/man
 <codeblock>
 Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.4 5.8.6)
+Type: perl (5.12.3 5.12.4 5.16.2)
 InstallScript: &lt;&lt;
   %{default_script}
   mkdir -p %i/lib/perl5/%type_raw[perl]/man
@@ -1113,8 +1103,8 @@ InstallScript: &lt;&lt;
 SplitOff: &lt;&lt;
   Package: %N-bin
   Depends: %N
-  Conflicts: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
-  Replaces: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
+  Conflicts: %{Ni}5.12.3, %{Ni}5.12.4, %{Ni}5.16.2
+   Replaces: %{Ni}5.12.3, %{Ni}5.12.4, %{Ni}5.16.2
   Files: bin share/man/man1
 &lt;&lt;
 &lt;&lt;
@@ -1126,7 +1116,7 @@ SplitOff: &lt;&lt;
 <codeblock>
 Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.4 5.8.6)
+Type: perl (5.12.3 5.12.4 5.16.2)
 InstallScript: &lt;&lt;
   %{default_script}
   mkdir -p %i/lib/perl5/%type_raw[perl]/man
@@ -1164,53 +1154,55 @@ InstallScript: &lt;&lt;
 
 
 
-<!-- start translation -->
-<section name="sources"><title>Source Policy</title>
-    <p>Sources should normally be downloaded from the location(s) that the upstream
-    developer(s) use, and any modifications for Fink should be done through the use
-    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
-    source archive as a <code>Source</code> in your Fink packaging.</p>
-    <p>If a VCS checkout (e.g. from <em>git</em> or <em>svn</em>) is to be used, e.g.
-    because a project doesn't do formal releases, or a fix for a particular issue has
-    been added between releases of a package, an acceptable source can be generated
-    via the following method:</p>
+<section name="sources"><title>Source ポリシー</title>
+    <p>
+    ソースは、通常であれば本家の開発者がつかっている場所からダウンロードされるべきであり、
+    Fink 用の変更は、PatchFile または PatchScript の使用でするひつようがあります。
+    Fink のパッケージでは、 ソースを変更して、変更済みソースアーカイブを <code>Source</code> に設定してはいけません。
+    </p>
+    <p>
+    もし、プロジェクトは公式リリースを行っていない、
+    あるいはリリース間に特定の修正のための追加など、
+    CVS チェックアウト (<em>git</em> や <em>svn</em> など) が使われる場合、
+    以下の要領で作成したソースを使用することができます:
+    </p>
     <ol>
-        <li>Check out the package, preferably at a definite revision of the VCS.</li>
-        <li>Make an archive from the VCS checkout (e.g. <em>zip</em>, <em>tar</em>, <em>tar.gz</em>,
-        or <em>tar.bz2</em>).
-            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
-            <filename>foo-0svn1234.tar.gz</filename> for a package that doesn't make releases, or
-            <filename>bar-1.2.3+svn4567.tar.bz2</filename> for a Fink package which is between
-            upstream releases.</p></li>
-        <li>Use the same <code>Version</code> in your <filename>.info</filename> file.</li>
-        <li>It is also useful to put the commands that you ran to generate the source tarball in the
-        <code>DescPackaging</code> field.</li>
-        <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
-        If you don't have ready access to one, ask on the
-        <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</link> or
-        <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
-        and someone should be able to help.</li>
+        <li>パッケージをチェックアウトする。できる限り VCS の限定リビジョンを使用。</li>
+        <li>VCSチェックアウトからアーカイブ作成 (<em>zip</em>, <em>tar</em>, <em>tar.gz</em>, <em>tar.bz2</em> など)。
+            <p>アーカイブは、固有のバージョンをつける。たとえば、アーカイブ名に VCS リビジョンをいれて、
+            リリースしないパッケージであれば <filename>foo-0svn1234.tar.gz</filename> とし、
+            本家リリース間の Fink パッケージであれば <filename>bar-1.2.3+svn4567.tar.bz2</filename>
+            とする。</p></li>
+        <li>同じ <code>Version</code> を、 <filename>.info</filename> ファイルでも使う。</li>
+        <li><code>DescPackaging</code> フィールドに、ソースアーカイブを生成するために実行したコマンドを書いておくと便利です。</li>
+        <li>ユーザが <code>fink</code> を使ってダウンロードできる公開ダウンロードサイトにアーカイブをアップロードする。
+        もし、そのようなサイトがない場合は、
+        <link url="mailto:fink-devel@lists.sourceforge.net">Fink 開発者メーリングリスト</link> または
+        <link url="http://webchat.freenode.net">#fink IRC チャンネル</link>,
+        に連絡してください。だれかが助けてくれるでしょう。</li>
     </ol>
 </section>
 
-<section name="downloading"><title>File Download Policy</title>
-    <p>Packages are not to download any files during the unpack, patch, compile, install,
-    or build phases of the <xref chapter="reference" section="build">build process</xref>.  Any large patches (i.e.
-    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
-    set up as additional Sources in accordance with the <xref chapter="policy" section="sources">
-    Source Policy.</xref></p>
+<section name="downloading"><title>ファイルダウンロードのポリシー</title>
+    <p>パッケージは、
+    <xref chapter="reference" section="build">ビルドプロセス</xref>
+    の unpack, patch, compile, install, build どの段階でもファイルをダウンロードしません。
+    巨大なパッチ (例えば、PatchFile で扱うには大きすぎるもの)　は、
+    </p>
     <p>Packages may download data in a PostInstScript after they have been installed on the system,
-    under some limited circumstances:</p>
+    under some limited circumstances:
+    パッケージは、以下の条件下で、PostInstScript　でシステムにインストール後にデータをダウンロードしても構いません。
+    </p>
     <ul>
-        <li>No updates to the package itself are allowed.</li>
-        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
-        virus definitions for <filename>clamav</filename> can be downloaded during this phase,
-        because they change continually.</li>
+        <li>パッケージ自身の更新は不可。</li>
+        <li>
+        データの性質上、Fink で容易にパッケージ化できないもの。
+        例えば、 <filename>clamav</filename> のウイルス定義は、頻繁に更新されるので、この段階でダウンロードできます。
+        </li>
     </ul>
     <p>If you are unsure, contact <link url="mailto:fink-core@lists.sourceforge.net">the Fink Core
     Team</link>.</p> 
 </section>
-<!-- end translation -->
 
 
 
@@ -1466,13 +1458,16 @@ Apple 提供の特定バージョンのバイナリを指定しなければな�
 10.2 ディストリビューションは，コンパイラに 3.1 の使用を前提とします．
 10.2-gcc と 10.3 ディストリビューションは，コンパイラに 3.3 の使用を前提とします．
 10.4-transitional ディストリビューションは複雑で，これは g++-3.3 と gcc-4.0 を使用しています．
-10.4 ディストリビューションでは，gcc-4.0 と g++-4.0 を使用するようになる予定です．
+10.4 と 10.5 ディストリビューションでは，gcc-4.0 と g++-4.0 を使用しています．
+10.6 ディストリビューションでは，gcc-4.2 を使用しています．
+10.7 から 10.9 ディストリビューションでは，clang と clang++ をデフォルトコンパイラとして使用しています．
+10.9 では、さらに、libstdc++ から libc++ へ統合という変化があります。
 </p>
 <p>
 正しい g++ コンパイラが使用されるよう新手法が 10.4-transitional ディストリビューションから採用されました．
 コンパイル時に，<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (XXX はバージョン番号) 
 ディレクトリが PATH に追加されます．
-このディレクトリには正しい g++ が使われるようなシェルスクリプトが入っています．
+このディレクトリには正しいコンパイラと正しいバージョンの g++ が使われるようなシェルスクリプトが入っています．
 </p>
 
 </section>
@@ -1497,11 +1492,10 @@ ABI が更新された場合，パッケージ依存性に GCC フィールド�
 </p>
 <p>
 Fink は GCC フィールドを使って，ユーザーが正しいコンパイラを使うよう確認します．
-GCC フィールドがパッケージによって定義されている場合，fink は <code>gcc_select</code> 
-コマンドが正しい値に設定されているかを確認します．
+GCC フィールドがパッケージによって定義されている場合，
+その値が OS X バージョンにあっているか確認します。
 (10.2 と 10.3 での正しい値は　3.3 で，
-10.4 での正しい値は　4.0 です．
-OS X 10.2 以前には <code>gcc_select</code> はありません．)
+10.4 から 10.9 までの正しい値は　4.0 です．
 </p>
 
 </section>
@@ -1652,60 +1646,64 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 </p>
 <codeblock>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.8.1 5.8.4 5.8.6)
-  Architecture: (%type_pkg[perl] = 581) powerpc
+  Type: perl (5.8.8 5.10.0)
+  Architecture: (%type_pkg[perl] = 5100) x86_64
 </codeblock>
 <p>
-によって，foo-pm581 という Variant は <code>powerpc</code> となり，他の Variant には値無しになります．
+によって，foo-pm5100 という Variant は <code>x86_64</code> となり， foo-pm588 には値無しになります．
 ただし，アーキテクチャーの値が無いことは，そのアーキテクチャー用のパッケージではない，ということではありません．
+</p>
+<p>
+上の例は、このフィールドのよくある使い方です。
+10.6 の system-perl 5.10.0 は 32-bit (i386) でビルドできないものがあるので、
+複数タイプの perl パッケージを特定のシステムに限定することができます。
 </p>
 </itemd></item>
 
 
 
-<!-- start translation -->
 <item><itemt>Distribution</itemt>
 <itemd>
 <p>
-A comma-separated list of distribution(s) for which the package
-(and any splitoff packages) are intended.
-At present, the only valid values for distribution are
+パッケージ (およびその Splitoff パッケージ) が対応しているコンマ区切りのディストリビューション一覧。
+現在、有効な値は
 <code>10.4</code>,
 <code>10.5</code>,
-and <code>10.6</code>
-. If this field is present and not blank after
-conditional handling, fink will ignore the package description(s) if
-the local machine distribution is not listed. If the field is omitted
-or the value is blank, all distributions are assumed.
-(Introduced in fink 0.26.0.)
+<code>10.6</code>,
+<code>10.7</code>,
+<code>10.8</code>,
+<code>10.9</code>,
+です。
+このフィールドがあり、条件式判定で空欄でなければ、
+マシンのディストリビューションが書かれていなければ、
+fink はパッケージ記述を無視します。
+このフィールドが無いか、あっても空欄の場合、すべてのディストリビューションが想定されます。
+(fink 0.26.0　で導入。)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
-a common set of finkinfo files, the most common use of this field will be for 
-packages which are suitable for one of those distributions but not the
-other.
+<code>10.7</code>, <code>10.8</code>, <code>10.9</code> ディストリビューションは、
+finkinfo ファイルが同じであるため、
+これらのディストリビューションの一つに有効だが他ではそうでない場合が、このフィールドを使います。
 </p>
 <p>
-This field supports the standard conditional syntax for any value in
-the value list and percent-expansions can be used (see
-the <code>Depends</code> field for more information). In this manner,
-certain variants can be restricted to certain architectures. For
-example:
+このフィールドは、値リスト中の値とパーセント展開を条件式に使うことができます
+(<code>Depends</code> に詳しい情報があります)。
+これを使って、バリアントを特定のアーキテクチャに制限することができます。例えば:
 </p>
 <codeblock>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.8.1 5.8.6)
-  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+  Type: perl (5.12.3 5.12.4)
+  Distribution: (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8
 </codeblock>
 <p>
-will result in the field for the foo-pm581 variant
-being <code>10.3, 10.4</code> and the field being blank for the 
-foo-pm586 variant.
+は、<code>Distribution</code> フィールドで foo-pm5123 は <code>10.7, 10.8</code>　用で、
+foo-pm5124 は空欄であることになります。
 </p>
-<p>Since python 2.3 is not available in the 10.5 distribution, and the
-available perl packages vary by distribution, these package types provide
-a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
+<p>
+10.7 以降では python 2.5 がなく、 perl のバージョンがディストリビューションによって異なるため、
+これらのパッケージはこのフィールドをよく使います。
+参照のため、10.3 から 10.9 までの利用可能な perl バージョンを記します
+(<em>太字の</em> system はそのバージョンの system-perl です)。
 </p>
 <codeblock>
     perl 5.6.0:  10.3
@@ -1716,28 +1714,27 @@ various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
     perl 5.8.8:        10.4, <em>10.5</em>, 10.6
     perl 5.10.0:             10.5, <em>10.6</em>
     perl 5.12.3:                         <em>10.7</em>
+    perl 5.12.4:                         10.7, <em>10.8</em>, 10.9
+     perl 5.16.2:                         10.7, 10.8, <em>10.9</em>
 </codeblock>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>
 <codeblock>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3)
+  Type: perl (5.8.8 5.10.0 5.12.3 5.12.4 5.16.2)
   Distribution: &lt;&lt;
-   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
-   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
-   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
-   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
-   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
-   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6,
-   (%type_pkg[perl] = 5123) 10.7
+    (%type_pkg[perl] = 588) 10.6,
+    (%type_pkg[perl] = 5100) 10.6,
+    (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8, (%type_pkg[perl] = 5123) 10.9,
+    (%type_pkg[perl] = 5124) 10.7, (%type_pkg[perl] = 5124) 10.8, (%type_pkg[perl] = 5124) 10.9,
+    (%type_pkg[perl] = 5162) 10.7, (%type_pkg[perl] = 5162) 10.8, (%type_pkg[perl] = 5162) 10.9
   &lt;&lt;
 </codeblock>
-<p>Note that we do not include old
-distributions, such as 10.2 or 10.4-transitional, since the versions of
-fink which are relevant for them do not recognize this field.
+<p>
+10.2 or 10.4-transitional などの古いディストリビューションは、対応している fink バージョンがこのフィールドを認識しないので、
+省略しています。
 </p>
 </itemd></item>
-<!-- end translation -->
 
 
 
@@ -1818,10 +1815,10 @@ fink which are relevant for them do not recognize this field.
 							Fink はリスト内のサブタイプ毎にパッケージ記述をコピーし，各コピー内ではリストを単一のサブタイプに置き換えます．
 							例:
 						</p>
-						<codeblock>Type: perl (5.6.0 5.8.1)</codeblock>
+						<codeblock>Type: perl (5.12.3 5.12.4)</codeblock>
 						<p>
 							これは 2 つのパッケージ記述を生成します．
-							片方は <code>Type: perl 5.6.0</code> と，もう片方は <code>Type: perl 5.8.1</code> と同等になります．
+							片方は <code>Type: perl 5.12.3</code> と，もう片方は <code>Type: perl 5.12.4</code> と同等になります．
 							特殊なサブタイプリスト &quot;(boolean)&quot; が意味するのは，(サブでない) タイプ自身とドット '.' から成るリストです．
 							つまり以下の 2 つは同一です．
 						</p>
@@ -1833,7 +1830,7 @@ Type: -x11 (-x11 .)
 							サブタイプリストの展開とそれに伴うパッケージ Variant の作成は，再帰的に行われます．
 							またサブタイプリストを持つタイプが複数ある場合は，あり得る組み合わせが全て生成されます．
 						</p>
-<codeblock>Type: -ssl (boolean), perl (5.6.0 5.8.1)</codeblock>
+<codeblock>Type: -ssl (boolean), perl (5.12.3 5.12.4)</codeblock>
 						<p>
 							Type 以外のフィールドから特定の Variant のサブタイプを得るには，疑似ハッシュ %type_raw[] および %type_pkg[] を使います．
 							以下にパッケージ記述の例の一部を示します．
@@ -1841,7 +1838,7 @@ Type: -x11 (-x11 .)
 <codeblock>
 Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
-Type: perl (5.6.0 5.8.1)
+Type: perl (5.12.3 5.12.4)
 Depends: perl%type_pkg[perl]-core
  &lt;&lt;
 </codeblock>
@@ -1957,12 +1954,21 @@ pkglist フィールドにコメントが可能．
 							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージのリスト．
 							このフィールドではパーセント展開が行われる
 							(「依存性関連」の他のフィールドでも同様:
-							BuildDepends, RuntimeDepends, Provides, Conflicts, Replaces, Recommends, Suggests および Enhances)
+							BuildDepends, RuntimeDepends, Provides, RuntimeDepends, Conflicts, Replaces, Recommends, Suggests および Enhances)
 							普通，値は「パッケージ名」の単なるカンマ区切りリストだが，
 							現在の Fink は (dpkgと同じ形式の) 「代替パッケージ節」と「バージョン節」に対応している．
 							それらを全て盛りこんだ例:
 						</p>
-<codeblock>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</codeblock>
+<codeblock>Depends: &lt;&lt;
+    daemonic (&gt;= 20010902-1), 
+    emacs | xemacs
+&lt;&lt;</codeblock>
+						<p>
+							上のレイアウトは <code>Depends</code> や類似のフィールドでの好ましい書き方です。
+							 <code>&lt;&lt;</code> を使うことで複数行に対応し、
+							 各パッケージをアルファベット順に書きます。
+							 値が一つだけの場合は、一行の <code>Field: value</code> でも構いません。
+						</p>
 						<p>
 							本当の意味で「省略可能」な依存性を表現する方法がないことに注意．
 							あるパッケージが別のパッケージがあってもなくても動作するとき，
@@ -1981,7 +1987,10 @@ pkglist フィールドにコメントが可能．
 							この機能は，複数の似通ったパッケージを管理する際に手間を省くためにも使える．
 							例えば elinks と elinks-ssl は次のように列挙できるが，
 						</p>
-<codeblock>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</codeblock>
+<codeblock>Depends: &lt;&lt;
+    (%n = elinks-ssl) openssl097-shlibs, 
+    expat-shlibs
+&lt;&lt;</codeblock>
 						<p>
 							これは elinks の方で
 						</p>
@@ -1989,7 +1998,7 @@ pkglist フィールドにコメントが可能．
 						<p>
 							とし， elinks-ssl の方で
 						</p>
-<codeblock>Depends: openssl097-shlibs, expat-shlibs</codeblock>
+<codeblock>Depends: expat-shlibs, openssl097-shlibs</codeblock>
 						<p>
 							とすることと同じである．
 						</p>
@@ -2050,13 +2059,10 @@ Depends: (%type_pkg[-x11]) x11
 					<itemd>
 						<p>
 							<em>Fink 0.32.0 で導入:</em>
-<!-- start translation -->
-A list of dependencies that is applied at run time only,
-that is, when the package is being installed.
-This can be used to list packages that must be present to
-run the package, but which are not used at build time.
-Supports the same syntax as Depends.
-<!-- end translation -->
+							ランタイム時のみに適用されインストールされる依存パッケージ一覧。
+							パッケージを実行中になければならないが、
+							ビルド時には使われないパッケージを一覧化します。
+							Depends と同じ書式です。
 						</p>
 					</itemd>
 				</item>
@@ -2386,7 +2392,6 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
 					</itemd>
 				</item>
 			</itemtable>
-			<!-- Patch Phase -->
 			<p>
 				<em>パッチ段階関連:</em>
 			</p>
@@ -2498,6 +2503,21 @@ Fink は，そのアイルが存在し，読み取り可能であり，チェッ
 他の理由があればこれより大きいバージョン番号を使ってもかまいません．
 </p>
 </itemd></item>
+
+	<item><itemt>PatchFile<em>N</em></itemt>
+		<itemd>
+			<p>
+			パッケージにパッチファイルが複数ある場合、
+			N = 2 から始まる連番のフィールドを追加することができます。
+			最初のパッチファイルは <code>PatchFile</code>、
+			２番目のパッチファイルは <code>PatchFile2</code>
+			となります。
+			<code>PatchFile<em>N</em></code> を使うパッケージは、
+			<code>BuildDepends: fink (&gt;= 0.30.0)</code> を設定する必要があります。
+			他の理由で必要があれば、より高いバージョン番号を設定してもかまいません。
+			</p>
+		</itemd></item>
+
 <item><itemt>PatchFile-MD5</itemt>
 <itemd>
 <p>
@@ -2506,6 +2526,17 @@ Fink は，そのアイルが存在し，読み取り可能であり，チェッ
 (fink-0.24.12 で導入)
 </p>
 </itemd></item>
+
+	<item><itemt>PatchFile<em>N</em>-MD5</itemt>
+		<itemd>
+			<p>
+			<code>PatchFile<em>N</em></code> の MD5 チェックサムです。
+			<code>PatchFile<em>N</em></code> がある場合は必須です。
+			(fink-0.30.0 で導入。)
+			</p>
+		</itemd></item>
+
+
 				<item>
 					<itemt>PatchScript</itemt>
 					<itemd>
@@ -2520,6 +2551,12 @@ Fink は，そのアイルが存在し，読み取り可能であり，チェッ
 </p>
 <codeblock>
 patch -p1 &lt; %{PatchFile}
+</codeblock>
+<p>
+もし、<code>PatchFile<em>N</em></code> が設定された場合、
+</p>
+<codeblock>
+patch -p1 &lt; %{PatchFile<em>N</em>}
 </codeblock>
 <p>
 です．
@@ -2546,7 +2583,7 @@ patch -p1 &lt; %{PatchFile}
 							指定した値の中では前節で説明したパーセント展開が行われます．
 							よく使われる例:
 						</p>
-<codeblock>SetCPPFLAGS: -no-cpp-precomp</codeblock>
+<codeblock>SetCPPFLAGS: -Wl,-strip_dead_dylibs</codeblock>
 						<p>
 							環境変数には，既定値を持つものもあります．
 							この場合に値を指定すると，既定値に追加されます．
@@ -2577,6 +2614,32 @@ LDFLAGS: -L%p/lib
 						</p>
 					</itemd>
 				</item>
+
+			<item><itemt>UseMaxBuildJobs</itemt>
+				<itemd>
+				<p>
+				true が設定された場合、
+				CompileScript と TestScript の間、
+				MAKEFLAGS 環境変数に
+				<code>-j<em>N</em></code> を
+				追加します。
+				<em>N</em> は、<filename>fink.conf</filename> の MaxBuildJobs から得られます。
+				<code>NoSetMAKEFLAGS: true</code> が使われても MAKEFLAGS に渡されます。
+				fink &gt; 0.31.2 では、このフィールドが無いあるいは空欄の場合、デフォルト値は true です。
+				</p>
+			</itemd></item>
+	 
+			<item><itemt>BuildAsNobody</itemt>
+				<itemd>
+				<p>
+				fink &gt;= 0.33.0 で、<code>false</code> が設定された場合、
+				fink は 権限のない <code>fink-bld</code> の代わりに、 <code>root</code> でビルドします。
+				このフィールドが無い場合、デフォルト値は <code>true</code> で、
+				<code>fink-bld</code> としてビルドします。
+				</p>
+				<p>これ以前の fink バージョンでは、このフィールドは何もしません。</p>
+			</itemd></item>
+
 				<item>
 					<itemt>ConfigureParams</itemt>
 					<itemd>
@@ -2603,7 +2666,23 @@ Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
 </codeblock>
 						<p>
-							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り， -x11  Variant の場合のみ <code>--with-x11</code> を送ってください．
+							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り，
+							 -x11  Variant の場合のみ <code>--with-x11</code> を送ります．
+						</p>
+						<p>
+						このフィールドは、複数行宣言をすることで複数行に書くことができます。
+						このフィールドは、シェルコマンドとして扱われ、<code>\</code> で行を分けることができます:
+						</p>
+<codeblock>
+ConfigureParams: &lt;&lt;
+    --mandir=%p/share/man \
+    (%type_pkg[-x11]) --with-x11 \
+    --disable-shared
+&lt;&lt;
+</codeblock>
+						<p>
+						注記: 複数行で書く場合には、最後の行に条件付きパラメータを設定しないでください。
+						条件式が false の場合、直後のパラメータは評価されず、シェルを壊します。
 						</p>
 					</itemd>
 				</item>
@@ -2626,7 +2705,7 @@ GCC フィールドはそれ自体は既定値を持たず，設定されなけ�
 しかし，各ツリーには，既定の g++ コンパイラが存在し，これに対応する GCC の値が想定されています．
 想定値は，10.1 ツリーでは <code>2.95</code>， 10.2 ツリーでは <code>3.1</code>，
 10.2-gcc3.3, 10.3, および 10.4-transitional　ツリーでは <code>3.3</code>，
-(将来の) 10.4 ツリーでは <code>4.0</code> となります．
+10.4 と 10.7 ツリーでは <code>4.0</code> となります．
 </p>
 						<p>
 							注記: GCC 値が既定値と異なる場合， (CC や CXX フラグを設定するなど) パッケージ内でコンパイラを指定する必要があります．
@@ -3038,22 +3117,25 @@ AnotherVar: foo bar
 							この設定により，Info ディレクトリ・ファイル <code>dir</code> を管理するための適切なコードが
 							postinst および prerm スクリプトに追加されます．
 </p>
-<!-- start translation -->
-<p><em>Note:</em>  Only use the un-numbered file in the case of split Info
-documents. E.g. if a package has:</p>
+
+<p><em>注記:</em>
+Info ドキュメントがスプリットされている場合、
+数字のないファイルだけを使います。
+例えば、パッケージに:
+</p>
 <codeblock>
 foo.info
 foo.info-1
 foo.info-2
 </codeblock>
-<p>you should only use:</p>
+<p>があれば、</p>
 <codeblock>
 InfoDocs:  foo.info
 </codeblock>
-<p>This feature is still in flux, more fields for finer control may be
-added in the future.
+<p>と記述します。
+この機能はまだ途中で、将来はよりよい制御のためのフィールドが追加されるかもしれません。
 </p>
-<!-- end translation -->
+
 
 					</itemd>
 				</item>
@@ -3187,7 +3269,7 @@ added in the future.
 </p>
 <codeblock>
 Package: mime-base64-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.6)
+Type: perl (5.12.3 5.12.4)
 SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
 &lt;&lt;
@@ -3259,37 +3341,46 @@ SplitOff2: &lt;&lt;
 				.info ファイルと同じディレクトリに入れます．
 				パッケージファイル名に完全名を使っている場合は，次のどちらかを使います (どちらも同等)．
 			</p>
-<codeblock>Patch: %f.patch</codeblock>
-<codeblock>PatchScript: patch -p1 &lt;%a/%f.patch</codeblock>
-			<p>
-				新しく導入された方の簡潔なパッケージファイル命名規則を採用しているなら， %f でなく %n を使うこと．
-				これら2つのフィールドは互いに排他的ではなく，両方指定することもできます (PatchScript, Patch の順に両方実行されます)．
-				あるいは，<code>Patch</code> の代わりに，新しい <code>PatchFile</code> を用い，
-				明示的または暗示的に <code>PatchScript</code> を適用します．
-				詳細は <code>PatchFile</code> および <code>PatchScript</code> の説明を参照．
-			</p>
-			<p>
-				パッチファイルではユーザがインストールディレクトリを選択できるようにする方がよいので，
-				<code>/sw</code> という決め打ちではなく <code>@PREFIX@</code> 等の変数を使います．
-				以下のようにすると良いでしょう．
-			</p>
-<codeblock>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</codeblock>
-			<p>
-				パッチの書式は unidiff (unified diff) でなければいけません．
-				普通，次のようにして生成できます．
-			</p>
+
+<codeblock>PatchFile: %n.patch</codeblock>
+<p>(バリアントがある場合、
+<code>%{ni}.patch</code> の方がよいでしょう。)
+また、パッチファイルの MD5 サムを
+<code>PatchFile-MD5</code> に指定し、
+<code>BuildDepends: fink (&gt;= 0.24.12)</code> (またはより新しい fink バージョン)　を指定しなければなりません。
+</p>
+
+<p><code>PatchFile<em>N</em></code>　が使われている場合、
+<filename>%n-purpose-of-patch.patch</filename>　というようにわかりやすい名前をつけます。
+<code>PatchFile<em>N</em>-MD5</code> も使い、
+<code>BuildDepends: fink (&gt;= 0.24.12)</code> (またはより新しい fink バージョン)　を指定しなければなりません。
+</p>
+
+<p><code>PatchFile</code> がある場合、 <code>PatchScript</code> のデフォルトは:</p>
+<codeblock>PatchScript: patch -p1 &lt; %{PatchFile}</codeblock>
+<p><code>PatchFile<em>N</em></code> を使う場合、以下のものが上の <code>PatchScript</code> に追加されます:</p>
+<codeblock>patch -p1 &lt; %{PatchFile<em>N</em>}</codeblock>
+<p>(パッチファイルを適用する前に書き換えるなど)<code>PatchScript</code> を指定すると、
+これらのデフォルトは書き換えられます。
+</p>
+<p>パッチファイルに、ユーザの選択した prefix を含める必要がある場合、
+<code>/sw</code> をパッチで使うのではなく、
+<code>@PREFIX@</code> などを使い:</p>
+<codeblock>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</codeblock>
+<p>とします。
+パッチは unififf 形式で、以下のように作成します:</p>
 <codeblock>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</codeblock>
-			<p>
-				エディタに Emacs を使っているなら，上記のコマンド diff の引数に <code>-x'*~'</code> を加え，
-				自動生成されたバックアップファイルを比較対象から除きます．
-			</p>
-			<p>
-				巨大なサイズのパッチを cvs に入れるのは好ましくないことにも注意．
-				そういうパッチは web/ftp サーバに置き，フィールド <code>SourceN:</code> に指定します．
-				自分のウェブサイトを持っていなくても，
-				Fink プロジェクトの管理者がそのファイルを Fink のサイトからダウンロードできるようにすることも可能です．
-				パッチが 30KB より大きければ，独立にダウンロードする方法を考慮した方がよいでしょう．
-			</p>
+<p>emacs でファイルを編集した場合、
+diff コマンドに
+<code>-x'*~'</code> 
+と追加すると、自動的に生成されるバックアップファイルを除くことができます。</p>
+<p>もう一つの注意点は、巨大すぎるパッチを cvs に入れないことです。
+ウェブか FTP サーバにおき、<code>SourceN:</code>　フィールドで指定します。
+ウェブサイトを持っていない場合、
+fink プロジェクトの管理者が fink サイトから提供できるようにします。
+パッチが約 30Kb をこえるなら、別々にダウンロードすることを検討してください。
+</p>
+
 		</section>
 		<section name="profile.d">
 			<title>Profile.d スクリプト</title>
