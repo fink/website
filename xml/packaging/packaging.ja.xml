@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.50 2014/08/29 01:01:29 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.51 2014/08/29 05:53:31 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1156,7 +1156,7 @@ InstallScript: &lt;&lt;
 
 <section name="sources"><title>Source ポリシー</title>
     <p>
-    ソースは、通常であれば本家の開発者がつかっている場所からダウンロードされるべきであり、
+    ソースは、通常であれば upstream の開発者がつかっている場所からダウンロードされるべきであり、
     Fink 用の変更は、PatchFile または PatchScript の使用でするひつようがあります。
     Fink のパッケージでは、 ソースを変更して、変更済みソースアーカイブを <code>Source</code> に設定してはいけません。
     </p>
@@ -1171,7 +1171,7 @@ InstallScript: &lt;&lt;
         <li>VCSチェックアウトからアーカイブ作成 (<em>zip</em>, <em>tar</em>, <em>tar.gz</em>, <em>tar.bz2</em> など)。
             <p>アーカイブは、固有のバージョンをつける。たとえば、アーカイブ名に VCS リビジョンをいれて、
             リリースしないパッケージであれば <filename>foo-0svn1234.tar.gz</filename> とし、
-            本家リリース間の Fink パッケージであれば <filename>bar-1.2.3+svn4567.tar.bz2</filename>
+            upstream リリース間の Fink パッケージであれば <filename>bar-1.2.3+svn4567.tar.bz2</filename>
             とする。</p></li>
         <li>同じ <code>Version</code> を、 <filename>.info</filename> ファイルでも使う。</li>
         <li><code>DescPackaging</code> フィールドに、ソースアーカイブを生成するために実行したコマンドを書いておくと便利です。</li>
@@ -1189,8 +1189,7 @@ InstallScript: &lt;&lt;
     の unpack, patch, compile, install, build どの段階でもファイルをダウンロードしません。
     巨大なパッチ (例えば、PatchFile で扱うには大きすぎるもの)　は、
     </p>
-    <p>Packages may download data in a PostInstScript after they have been installed on the system,
-    under some limited circumstances:
+    <p>
     パッケージは、以下の条件下で、PostInstScript　でシステムにインストール後にデータをダウンロードしても構いません。
     </p>
     <ul>
@@ -1200,8 +1199,8 @@ InstallScript: &lt;&lt;
         例えば、 <filename>clamav</filename> のウイルス定義は、頻繁に更新されるので、この段階でダウンロードできます。
         </li>
     </ul>
-    <p>If you are unsure, contact <link url="mailto:fink-core@lists.sourceforge.net">the Fink Core
-    Team</link>.</p> 
+    <p>もし不安があるなら、<link url="mailto:fink-core@lists.sourceforge.net">Fink Core
+    Team</link>に相談してください。</p> 
 </section>
 
 
@@ -1212,7 +1211,7 @@ InstallScript: &lt;&lt;
 		<shorttitle>ファイルシステム</shorttitle>
 		<preface>
 			<p>
-				以下はファイルシステムのレイアウトのガイドラインで， Fink のパッケージングポリシーの一部です．
+				以下はファイルシステムのレイアウトのガイドラインで， Fink のパッケージ作成ポリシーの一部です．
 			</p>
 		</preface>
 		<section name="fhs">
@@ -1573,7 +1572,7 @@ GCC フィールドがパッケージによって定義されている場合，
 							このフィールドで行われるパーセント展開は %N, %{Ni}, %type_raw[] と %type_pkg[] のみです．
 						</p>
 						<p>
-							Fink のパッケージングポリシーでは，
+							Fink のパッケージ作成ポリシーでは，
 							どのパッケージも常に同じオプションを有効にしてコンパイルされるようにします．
 							あるパッケージに複数の Variant を設ける場合は (フィールド <code>Type</code> の説明を参照)，
 							 Variant を区別する情報をフィールド <code>Package</code> に含めなければいけません
@@ -1888,7 +1887,7 @@ SplitOff: &lt;&lt;
 						<p>
 							パッケージ配布の際にパッケージの従うライセンスの性質を表す．
 							値は <xref chapter="policy" section="licenses">パッケージのライセンス</xref> で示した選択肢から選ばなければいけない．
-							それに加え，パッケージが実際にパッケージング・ポリシーに従うとき，
+							それに加え，パッケージが実際にパッケージ作成・ポリシーに従うとき，
 							すなわちライセンスのコピーがパッケージの doc ディレクトリにインストールされるときでなければ
 							このフィールドを指定してはいけない．
 						</p>
@@ -3201,7 +3200,7 @@ InfoDocs:  foo.info
 					<itemt>DescPackaging</itemt>
 					<itemd>
 						<p>
-							パッケージングに関する注意書き．
+							パッケージ作成に関する注意書き．
 							「ファイルを適切な場所に置くために Makefile にパッチを当てる」等を (英語で) ここに記述します．
 							複数行に渡ってよい．
 						</p>
