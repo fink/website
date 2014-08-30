@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.51 2014/08/29 05:53:31 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.52 2014/08/30 01:59:38 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -83,7 +83,7 @@
 				「パッケージ名」に拡張子 &quot;.info&quot; を付けただけの簡略形式が便利です．
 fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの方法があります:
 推奨されるのは，他の必要なパッケージファイルと整合性のとれる最も短いものです．
-ファイル名の形式は: Variant のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision，を
+ファイル名の形式は: Variant のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision を
 ハイフンでつなぎ，&quot;.info&quot; で終えます．
 &quot;architecture&quot; と &quot;distribution&quot; は，対応するフィールドが定義され，値を一つだけ持つ場合に限ります．
 			</p>
@@ -162,7 +162,7 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </codeblock>
 			<p>
-				こ形式では，空行と，シャープ (#) で始まる行は無視されます．
+				この形式では，空行と，シャープ (#) で始まる行は無視されます．
 				キー (フィールド名) では大文字と小文字の区別がないので，
 				<code>InstallScript</code> を <code>installscript</code> や <code>INSTALLSCRIPT</code> とも書けますが，
 				最初の <code>InstallScript</code> という方式が読み易いのでこれを使いましょう．
@@ -224,7 +224,7 @@ SplitOff: &lt;&lt;
 					<itemt>%r</itemt>
 					<itemd>
 						<p>
-							<em>r</em>evision．パッケージの「版」．
+							<em>r</em>evision．パッケージの「リビジョン」．
 						</p>
 					</itemd>
 				</item>
@@ -414,8 +414,8 @@ _num 式 は fink-0.26.0 より導入．
 <p>
 <code>Type: -64bit</code>　が <code>-64bit</code>と定義されている場合，
 powerpc マシン上では <em>lib/ppc64</em> と拡張され，
-intel マシン上では <em>lib/x86_64</em> と拡張されます (64-bit ライブラリの正しい保存場所)．
-それ以外は， <em>lib</em> と拡張されます．
+intel マシン上では <em>lib/x86_64</em> と拡張される (64-bit ライブラリの正しい保存場所)．
+それ以外は， <em>lib</em> と拡張される．
 (fink-0.26.0 で導入)
 </p>
 <p>
@@ -535,7 +535,7 @@ intel マシン上では <em>lib/x86_64</em> と拡張されます (64-bit ラ�
 				OpenSSL ライセンスが GPL と LPGL ライセンスが明らかに整合性を欠いていることから，
 				openssl にリンクをしている fink パッケージのうち， GPL または LGPL ライセンスを使用しているものは
 				&quot;Restrictive&quot; となります．
-				Fink プロジェクトはこれらのパッケージをバイナリ配布しないことになるが，利用者は自己判断でコンパイルすることができます．				
+				Fink プロジェクトはこれらのパッケージをバイナリ配布しないことになりますが，利用者は自己判断でコンパイルすることができます．				
 			</p>
 			<p>
 				パッケージメンテナは，元のパッケージライセンスを <code>DescPackaging</code> に記述してください．
@@ -548,7 +548,7 @@ intel マシン上では <em>lib/x86_64</em> と拡張されます (64-bit ラ�
 				パッケージは Fink のディレクトリ外にファイルをインストールしてはしてはいけません．
 			</p>
 			<p>
-				この決まりを破る他に仕方がないときには例外が設けられます (XFree86 など)．
+				他に方法がないときには例外が設けられます (XFree86 など)．
 				この場合，パッケージはインストール前に既存のファイルを調べ，上書きの恐れがある場合はインストールを中止する必要があります．
 				そのようなパッケージは， Fink ディレクトリ外にインストールしたファイルはそのパッケージが取り除かれるときに全て削除されること，
 				あるいはそのようなファイルは残しても問題がないことを保証しなければいけません
@@ -808,8 +808,9 @@ SplitOff: &lt;&lt;
 				次に <code>DocFiles</code> によりドキュメントファイルが <filename>%i/share/doc/barN-shlibs</filename> にコピーされます．
 			</p>
 			<p>
-				barN-shlibs の正確な「バージョン」 (これは &quot;%N-shlibs (= %v-%r)&quot; と略記できます)
-				を親パッケージ barN の依存情報に含めたことに注意して下さい．
+				barN-shlibs の正確な「バージョン」
+				を親パッケージ barN の依存情報に含めたことに注意して下さい
+				 (これは &quot;%N-shlibs (= %v-%r)&quot; と略記できます)．
 				これにより「バージョン」が確かに適合するようになり，
 				さらにパッケージ barN がパッケージ barN-shlibs の依存情報を自動的に「継承する」ことを保証します．
 			</p>
@@ -1157,7 +1158,7 @@ InstallScript: &lt;&lt;
 <section name="sources"><title>Source ポリシー</title>
     <p>
     ソースは、通常であれば upstream の開発者がつかっている場所からダウンロードされるべきであり、
-    Fink 用の変更は、PatchFile または PatchScript の使用でするひつようがあります。
+    Fink 用の変更は、PatchFile または PatchScript の使用でする必要があります。
     Fink のパッケージでは、 ソースを変更して、変更済みソースアーカイブを <code>Source</code> に設定してはいけません。
     </p>
     <p>
@@ -1188,6 +1189,7 @@ InstallScript: &lt;&lt;
     <xref chapter="reference" section="build">ビルドプロセス</xref>
     の unpack, patch, compile, install, build どの段階でもファイルをダウンロードしません。
     巨大なパッチ (例えば、PatchFile で扱うには大きすぎるもの)　は、
+    <xref chapter="policy" section="sources">ソースポリシー</xref> に従ってソースとして設置してください。
     </p>
     <p>
     パッケージは、以下の条件下で、PostInstScript　でシステムにインストール後にデータをダウンロードしても構いません。
@@ -1223,7 +1225,7 @@ InstallScript: &lt;&lt;
 				</link>
 				の精神に従います．
 				しかし従えるのは飽くまでも精神のみです．
-				それは FHS が <filename>/</filename> 以下と <filename>/</filename> 以下の階層を管理できるシステムベンダ向けに作られたからです．
+				それは FHS が <filename>/</filename> 以下と <filename>/usr</filename> 以下の階層を管理できるシステムベンダ向けに作られたからです．
 				Fink はインストールディレクトリ (別名「プリフィクス」) 以下のみを管理するアドオン・ディストリビューションです．
 				以降の例ではデフォルトの「プリフィクス」 <filename>/sw</filename> を使います．
 			</p>
@@ -1438,8 +1440,7 @@ url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html"
 
 <section name="versions"><title>コンパイラバージョン</title>
 <p>
-GCC の発展に伴い，fink は &quot;ディストリビューション&quot; をつくって
-変化に対応してきました．
+GCC の発展に伴い，fink は &quot;ディストリビューション&quot; をつくって変化に対応してきました．
 </p>
 <p>
 各 Fink ディストリビューションには，ソースからコンパイルするユーザー全員がもっていると想定されている
@@ -1449,7 +1450,7 @@ GCC の発展に伴い，fink は &quot;ディストリビューション&quot; 
 Apple 提供の特定バージョンのバイナリを指定しなければなりません．
 どのように指定するかは，ソフトウェアのビルドシステムによりますが，多くの場合
 <code>SetCC</code> と <code>SetCXX</code> のフィールドを使用します．
-例えば，g＋＋コンパイラのバージョンを 3.3 にするには，<code>SetCXX: g++-3.3</code> とします．
+例えば，g++コンパイラのバージョンを 3.3 にするには，<code>SetCXX: g++-3.3</code> とします．
 正しいコンパイラが使われているか，ビルド時の出力を確認してください．
 </p>
 <p>
@@ -1494,7 +1495,7 @@ Fink は GCC フィールドを使って，ユーザーが正しいコンパイ�
 GCC フィールドがパッケージによって定義されている場合，
 その値が OS X バージョンにあっているか確認します。
 (10.2 と 10.3 での正しい値は　3.3 で，
-10.4 から 10.9 までの正しい値は　4.0 です．
+10.4 から 10.9 までの正しい値は　4.0 です．)
 </p>
 
 </section>
@@ -1512,7 +1513,7 @@ GCC フィールドがパッケージによって定義されている場合，
 				下記の例では <filename>/sw</filename> にパッケージ gimp-1.2.1-1 をインストールするものとします．
 			</p>
 			<p>
-				<em>解凍段階</em>では，ディレクトリ <filename>/sw/src/fink.build/gimp-1.2.1-1</filename> が作成されてソースの tar ボールがそこに解凍されます．
+				<em>解凍段階</em>では，ディレクトリ <filename>/sw/src/fink.build/gimp-1.2.1-1</filename> が作成されてソースの tarball がそこに解凍されます．
 				大抵，解凍によりソースを含むディレクトリ <filename>gimp-1.2.1</filename> が作られます．
 				これ以降のステップはすべてこの中 (すなわち <filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>) で行われます．
 				詳細はフィールド SourceDirectory, NoSourceDirectory や Source<em>N</em>ExtractDir (Nは数字) で変更できます．
@@ -1612,7 +1613,7 @@ GCC フィールドがパッケージによって定義されている場合，
 						<p>
 							Fink パッケージとしてのリビジョン．
 							upstream のバージョンが同じパッケージのパッケージ記述を書き換えたら，ここを 1 ずつ増やします．
-							最初は 1 で始まます．
+							最初は 1 で始めます．
 							必須フィールド．
 						</p>
 						<p>
@@ -1628,7 +1629,7 @@ GCC フィールドがパッケージによって定義されている場合，
 パッケージ (および Splitoff) が対応している CPU アーキテクチャー一覧を，コンマ区切りで記述します．
 現在のところ，<code>powerpc</code> と <code>i386</code> が値として使用できます．
 このフィールドがあり，値が条件処理後にブランクでなく，ローカルマシンのアーキテクチャーが一覧にない場合，パッケージ記述は無視されます．
-このフィールドがない場合，あるいは値がブランクであるような場合は，全てのアーキテクチャーに対応していると見なされます．
+このフィールドがない場合，あるいは値がブランクの場合は，全てのアーキテクチャーに対応していると見なされます．
 (0.24.11 CVS バージョン以降 の fink に導入)
 </p>
 <p>
@@ -1676,7 +1677,7 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 このフィールドがあり、条件式判定で空欄でなければ、
 マシンのディストリビューションが書かれていなければ、
 fink はパッケージ記述を無視します。
-このフィールドが無いか、あっても空欄の場合、すべてのディストリビューションが想定されます。
+このフィールドが無いか、あってもブランクの場合、すべてのディストリビューションが想定されます。
 (fink 0.26.0　で導入。)
 </p>
 <p>
@@ -1687,7 +1688,7 @@ finkinfo ファイルが同じであるため、
 <p>
 このフィールドは、値リスト中の値とパーセント展開を条件式に使うことができます
 (<code>Depends</code> に詳しい情報があります)。
-これを使って、バリアントを特定のアーキテクチャに制限することができます。例えば:
+これを使って、Variant を特定のアーキテクチャに制限することができます。例えば:
 </p>
 <codeblock>
   Package: foo-pm%type_pkg[perl]
@@ -1716,7 +1717,8 @@ foo-pm5124 は空欄であることになります。
     perl 5.12.4:                         10.7, <em>10.8</em>, 10.9
      perl 5.16.2:                         10.7, 10.8, <em>10.9</em>
 </codeblock>
-<p>A way to include all variants in a single finkinfo file is as follows.
+<p>
+すべての Variant をひとつの finkinfo ファイルに含める方法は、以下の通りです。
 </p>
 <codeblock>
   Package: foo-pm%type_pkg[perl]
@@ -1777,7 +1779,7 @@ foo-pm5124 は空欄であることになります。
 						<p>
 							値が <code>nosource</code> の場合:
 							これは <code>bundle</code> と非常に似ています．
-							これはソースの tar ボールが存在しないことを示します．
+							これはソースの tarball が存在しないことを示します．
 							よって何も取り寄せられず，解凍段階では空ディレクトリが作られます．
 							しかしパッチ，コンパイル，インストールの各段階は通常通り実行されます．
 							このようにして全てのソースコードをパッチと共に配布したり，
@@ -1797,7 +1799,7 @@ foo-pm5124 は空欄であることになります。
 							「プログラミング言語」または「プログラミング言語-バージョン」という記法は一般化され，
 							メンテナの定義した任意のタイプとそれに関連するサブタイプが指定できるようになり，
 							あるパッケージに複数のタイプを指定できるようになりました．
-							タイプとサブタイプにはそれぞれ空白以外からなる任意の文字列が使えます．
+							タイプとサブタイプにはそれぞれブランク以外からなる任意の文字列が使えます．
 							(しかし括弧，大括弧，カンマ，パーセント記号を使ってはいけません．)
 							ここではパーセント展開は行われません．
 							また，タイプの値は小文字に変換されます(が，サブタイプは変換されません)．
@@ -1839,7 +1841,7 @@ Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
 Type: perl (5.12.3 5.12.4)
 Depends: perl%type_pkg[perl]-core
- &lt;&lt;
+&lt;&lt;
 </codeblock>
 <codeblock>
 Info2: &lt;&lt;
@@ -1916,11 +1918,11 @@ SplitOff: &lt;&lt;
 							このフィールドにより Fink はパッケージ記述の構文の非互換な変更に対処できます．
 							任意のバージョンの Fink には扱える &quot;N&quot; (整数) の最大値が設定されています．
 							それより大きいNを持つフィールド InfoN はいずれも無視されます．
-							だからこの機構の利用は必要最低限に止めなければいけません．
+							よって、この機構の利用は必要最低限に止めなければいけません．
 							そうでないと，古いバージョンの Fink のユーザが必然性なしに仲間外れにされます．
 							この機構を使うには，パッケージ記述全体をフィールド InfoN の値に埋め込んでください．
 							複数行に渡る値の記述方法については，前述の「ファイル形式」を参照してください．
-							以下は，各 InfoN レベルに於いて追加された機能と，最初にサポートされた fink のバージョンです．
+							以下は，各 InfoN レベルにおいて追加された機能と，最初にサポートされた fink のバージョンです．
 						</p>
 <ul>
 <li>
@@ -1931,7 +1933,7 @@ SplitOff: &lt;&lt;
 <li>
 <code>Info3</code> (fink>=0.25.0): 
 .info ファイル中でインデントを正しく扱うことができる．
-RFC-822 複数業のサポートは終了．
+RFC-822 複数行のサポートは終了．
 pkglist フィールドにコメントが可能．
 </li>
 <li>
@@ -1950,12 +1952,12 @@ pkglist フィールドにコメントが可能．
 					<itemt>Depends</itemt>
 					<itemd>
 						<p>
-							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージのリスト．
+							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージの一覧。
 							このフィールドではパーセント展開が行われる
 							(「依存性関連」の他のフィールドでも同様:
-							BuildDepends, RuntimeDepends, Provides, RuntimeDepends, Conflicts, Replaces, Recommends, Suggests および Enhances)
-							普通，値は「パッケージ名」の単なるカンマ区切りリストだが，
-							現在の Fink は (dpkgと同じ形式の) 「代替パッケージ節」と「バージョン節」に対応している．
+							BuildDepends, RuntimeDepends, Provides, RuntimeDepends, Conflicts, Replaces, Recommends, Suggests および Enhances)。
+							普通、値は「パッケージ名」の単なるカンマ区切り一覧だが、
+							現在の Fink は、dpkgと同じ形式の「代替パッケージ」と「バージョン節」に対応している。
 							それらを全て盛りこんだ例:
 						</p>
 <codeblock>Depends: &lt;&lt;
@@ -2070,7 +2072,7 @@ Depends: (%type_pkg[-x11]) x11
 					<itemt>Provides</itemt>
 					<itemd>
 						<p>
-							そのパッケージが「提供」すると考えられる「パッケージ名」のカンマ区切りのリスト．
+							そのパッケージが「提供」すると考えられる「パッケージ名」のカンマ区切りの一覧。
 							パッケージ pine で <code>Provides: mailer</code> となっている場合，
 							pine がインストールされると mailer についての全ての依存性は解決したものとされる．
 							普通，そのようなパッケージは pine のフィールド Conflicts や Replaces にも入れるとよい．
@@ -2093,8 +2095,8 @@ Depends: (%type_pkg[-x11]) x11
 							そのパッケージと同時にインストールしてはいけない「パッケージ名」のカンマ区切りの一覧．
 							バーチャルパッケージでは，そのパッケージが提供する「パッケージ名」をここに指定することができ，適切に扱われます．
 							このフィールドはフィールド Depends のようにバージョン付きの依存性情報にも対応していますが，
-							代替パッケージには対応していません (意味をなさない)．
-							あるパッケージがそれ自身のパッケージ記述の Conflicts に入っていると， (暗黙のうちに) そこから取り除かれます．
+							代替パッケージには対応していない (意味をなさない)。
+							あるパッケージがそれ自身のパッケージ記述の Conflicts に入っていると、(暗黙のうちに) そこから取り除かれる。
 							(Fink のバージョン 0.18.2 CVS 以降で導入)
 						</p>
 						<p>
@@ -2110,7 +2112,7 @@ Depends: (%type_pkg[-x11]) x11
 当該パッケージがコンパイル中にインストールされてはいけないパッケージの一覧．
 これは， <code>./configure</code> やコンパイラが，望ましくないライブラリヘッダを見たり，
 壊れることが分かっているツール (例えば，特定のバージョンの sed にあるバグ) のバージョンを使用することを避けるために使います．
-ビルド時にテストスイートが有効な場合， <code>TestConflicts</code> フィールド内のパッケージはこのリストに追加されます．
+ビルド時にテストスイートが有効な場合， <code>TestConflicts</code> フィールド内のパッケージはこの一覧に追加されます。
 </p>
 </itemd></item>
 				<item>
@@ -2119,16 +2121,16 @@ Depends: (%type_pkg[-x11]) x11
 						<p>
 							Conflicts と共に使われる．
 							そのパッケ−ジが，衝突するパッケ−ジの機能の代わりになるだけでなく，共通するファイルを持つときに使われる．
-							このフィールドがないと，dpkg はパッケージのインストール時にエラーを出すかも知れない．
-							それはいくつかのファイルが依然として元あった方のパッケージに属しているからだ．
-							それら 2 つのパッケージが純粋な意味で互いに代替物であり，どちらか好きな方を選べるようなときはこれを使うとよい．
+							このフィールドがないと、dpkg はパッケージのインストール時にエラーを出すことがある。
+							これは、いくつかのファイルが別の方のパッケージに属しているためである。
+							こうした 2 つのパッケージが純粋な意味で互いに代替物であり，どちらか好きな方を選べるようなときはこれを使うとよい。
 							あるパッケージがそれ自身のパッケージ記述の Conflicts に入っていると， (暗黙のうちに) そこから取り除かれる．
 							(Fink のバージョン 0.18.2 CVS 以降で導入)
 						</p>
 						<p>
-							<em>注記:</em> Fink自身はこのフィールドを無視する．
-							しかしこれは dpkg に渡され，そこで適切に扱われる．
-							要するにこのフィールドが影響するのはビルド時でなく実行時だ．
+							<em>注記:</em> Fink自身はこのフィールドを無視します。
+							これは dpkg に渡され、そこで適切に扱われます。
+							つまり、このフィールドが影響するのはビルド時でなく実行時です。
 						</p>
 					</itemd>
 				</item>
@@ -2212,7 +2214,7 @@ Primary: ftp://ftp.barbarorg/pub/
 					<itemt>Source</itemt>
 					<itemd>
 						<p>
-							ソースの tar ボールの URL ．
+							ソースの tarball の URL ．
 							HTTP または FTP でなければいけないが，Fink はそれを単に wget に渡すだけなので，実際には問題にならない．
 							このフィールドは，ミラーサイトを示す特別な記法に対応している．
 							すなわち <code>mirror:&lt;ミラー名称&gt;:&lt;相対パス&gt;</code> だ．
@@ -2243,10 +2245,10 @@ Primary: ftp://ftp.barbarorg/pub/
 					<itemt>Source<em>N</em></itemt>
 					<itemd>
 						<p>
-							パッケージが複数の tar ボールから形成されている場合，それらはこの (省略可能) フィールドで指定する．
+							パッケージが複数の tarball から形成されている場合，それらはこの (省略可能) フィールドで指定する．
 							N は 2 から始まる数．
-							つまり最初の tar ボール (ある意味「メイン」になるもの) をフィールド <code>Source</code> に，
-							2 番目の tar ボールをフィールド <code>Source2</code> に，という風になる．
+							つまり最初の tarball  (ある意味「メイン」になるもの) をフィールド <code>Source</code> に，
+							2 番目の tarball をフィールド <code>Source2</code> に，という風になる．
 							値の書式は <code>Source</code> と共通だが，
 							<code>gnu</code> や <code>gnome</code> という省略形は展開されない (結局，意味をなさない)．
 							バージョン 0.19.2 以降の CVS 版 Fink では， 2 以上の任意の (つまり，必ずしも連続しない) 整数を N に使える．
@@ -2258,9 +2260,9 @@ Primary: ftp://ftp.barbarorg/pub/
 					<itemt>SourceDirectory</itemt>
 					<itemd>
 						<p>
-							tar ボールが単一のディレクトリに展開されはするが，
-							そのディレクトリ名が tar ボールのファイル名から拡張子を除いたものと異なる場合には，これを設定しなければいけない．
-							つまり，普通なら &quot;foo-1.0.tar.gz&quot; という tar ボールは &quot;foo-1.0&quot; というディレクトリを生成する．
+							tarball が単一のディレクトリに展開されはするが，
+							そのディレクトリ名が tarball のファイル名から拡張子を除いたものと異なる場合には，これを設定しなければいけない．
+							つまり，普通なら &quot;foo-1.0.tar.gz&quot; という tarball は &quot;foo-1.0&quot; というディレクトリを生成する．
 							しかし生成されるディレクトリ名がそれと異なる場合，そのディレクトリ名をこのフィールドで指定する．
 							パーセント展開が行われる．
 						</p>
@@ -2271,9 +2273,9 @@ Primary: ftp://ftp.barbarorg/pub/
 					<itemd>
 						<p>
 							真偽値フィールド．
-							tar ボールが単一のディレクトリに展開されないときにこのフィールドを設定する．
-							つまり，普通なら &quot;foo-1.0.tar.gz&quot; という tar ボールは &quot;foo-1.0&quot; というディレクトリを生成する．
-							しかし tar ボールを展開したときにファイルがカレントディレクトリに撒き散らされる場合は，
+							tarball が単一のディレクトリに展開されないときにこのフィールドを設定する。
+							つまり、普通なら &quot;foo-1.0.tar.gz&quot; という tarball は &quot;foo-1.0&quot; というディレクトリを生成する。
+							しかし tarball を展開したときにファイルがカレントディレクトリで展開される場合は、
 							このフィールドを &quot;true&quot; に設定する．
 						</p>
 					</itemd>
@@ -2282,9 +2284,9 @@ Primary: ftp://ftp.barbarorg/pub/
 					<itemt>Source<em>N</em>ExtractDir</itemt>
 					<itemd>
 						<p>
-							普通，補助的な tar ボールは「メイン」の tar ボールと同じディレクトリで展開される．
+							普通、補助的な tarball は「メイン」の tarball と同じディレクトリで展開される。
 							それを特定のサブディレクトリ内で展開して欲しいときは，このフィールドでサブディレクトリ名を指定する．
-							ご想像の通り， <code>Source2ExtractDir</code> は <code>Source2</code> で指定した tar ボールに対応する．
+							ご想像の通り， <code>Source2ExtractDir</code> は <code>Source2</code> で指定した tarball に対応する．
 							用例についてはパッケージ ghostscript, vim や tetex を参照．
 						</p>
 					</itemd>
@@ -2293,15 +2295,15 @@ Primary: ftp://ftp.barbarorg/pub/
 					<itemt>SourceRename</itemt>
 					<itemd>
 						<p>
-							このフィールドを使うと，ビルド時にソースの tarball をリネームできる．
+							このフィールドを使うと，ビルド時にソースの tarball をリネームできる。
 							これが便利なのは，例えば，ソースのバージョンがサーバのディレクトリ名には示されているが，
-							tar ボールそのものはどのバージョンでも同じ名前のときだ．
+							tarball そのものはどのバージョンでも同じ名前のときだ。
 							(例えば <filename>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</filename> というとき)
 							このことで起きる問題を回避するためには次のようにすればよい．
 						</p>
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
 						<p>
-							この例では，ご想像の通り， tar ボールは <filename>/sw/src/coolapp-1.2.3.tar.gz</filename> として格納されることになる．
+							この例では，ご想像の通り， tarball は <filename>/sw/src/coolapp-1.2.3.tar.gz</filename> として格納されることになる．
 						</p>
 					</itemd>
 				</item>
@@ -2310,7 +2312,7 @@ Primary: ftp://ftp.barbarorg/pub/
 					<itemd>
 						<p>
 							これはフィールド <code>SourceRename</code> と同じだが，
-							<code>Source<em>N</em></code> で指定された N 番目の tar ボールのリネームに使う．
+							<code>Source<em>N</em></code> で指定された N 番目の tarball のリネームに使う．
 							用例についてはパッケージ context や hyperref を参照．
 						</p>
 					</itemd>
@@ -2322,9 +2324,9 @@ Primary: ftp://ftp.barbarorg/pub/
 							<em>Fink 0.10.0 で導入:</em>
 							このフィールドではソースファイルの MD5 チェックサムを指定します．
 							Fink はこの情報によりおかしなソースファイル，
-							すなわち Fink パッケージの作成者が指定したものではない tar ボールを見分けられます．
+							すなわち Fink パッケージの作成者が指定したものではない tarball を見分けられます．
 							この問題の原因には，以下のようなものがあります:
-							tar ボールのダウンロードに失敗した，upstreamのメンテナが知らないうちに tar ボールを更新した，トロイの木馬などの攻撃，など．
+							tarball のダウンロードに失敗した，upstreamのメンテナが知らないうちに tarball を更新した，トロイの木馬などの攻撃，など．
 						</p>
 						<p>
 							このフィールドの典型的な用例は次の通り．
@@ -2332,7 +2334,7 @@ Primary: ftp://ftp.barbarorg/pub/
 <codeblock>Source-MD5: 4499443fa1d604243467afe64522abac</codeblock>
 						<p>
 							チェックサムの算出にはツール <code>md5sum</code> を使います．
-							tar ボール <filename>/sw/src/apache_1.3.23.tar.gz</filename> のチェックサムが知りたいときには，
+							tarball  <filename>/sw/src/apache_1.3.23.tar.gz</filename> のチェックサムが知りたいときには，
 							次のコマンドを実行します (出力も一緒に示した)．
 						</p>
 <codeblock>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz
@@ -2348,7 +2350,7 @@ Primary: ftp://ftp.barbarorg/pub/
 						<p>
 							<em>Fink 0.10.0 で導入:</em>
 							フィールド <code>Source-MD5</code> と同様ですが，
-							フィールド <code>Source<em>N</em></code> に対応する N 番目の tar ボールの MD5 チェックサムを指定します．
+							フィールド <code>Source<em>N</em></code> に対応する N 番目の tarball の MD5 チェックサムを指定します．
 						</p>
 					</itemd>
 				</item>
@@ -2360,10 +2362,10 @@ Primary: ftp://ftp.barbarorg/pub/
 							このフィールドは tar 形式を使うソースファイルにのみ適用されます．
 						</p>
 						<p>
-							このフィールドを使うと，任意のソース tar ボールの中のファイルを， tar ボールの展開中にリネームできます．
+							このフィールドを使うと，任意のソース tarball の中のファイルを， tarball の展開中にリネームできます．
 							ファイルシステム HFS+ がケースインセンシティブである (大文字と小文字を区別しない) ことを回避するために非常に便利でしょう．
 							普通の Mac OS X システムでは，ファイル <filename>install</filename> と <filename>INSTALL</filename> は衝突してしまいます．
-							このフィールドを使うと， tar ボールをわざわざ再パッケージしなくとも (以前はこのような場合に行われていた)，
+							このフィールドを使うと， tarball をわざわざ再パッケージしなくとも (以前はこのような場合に行われていた)，
 							こういった問題を回避することができます．
 						</p>
 						<p>
@@ -2386,7 +2388,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
 						<p>
 							<em>Fink 0.10.0 で導入:</em>
 							フィールド <code>TarFilesRename</code> と同様ですが，
-							フィールド <code>Source<em>N</em></code> に対応する N 番目の tar ボールに対して機能します．
+							フィールド <code>Source<em>N</em></code> に対応する N 番目の tarball に対して機能します．
 						</p>
 					</itemd>
 				</item>
@@ -2431,8 +2433,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
 							Darwin に対応したバージョンに置き換えられます．
 							その動作は，パッチ段階の， PatchScript が実行される前に行われます．
 							これが必要だと分かっているとき<em>のみ</em>使うこと．
-							libtool 関連のスクリプトをバージョンの合わないものに取り換えると壊れるパッケージもあrimasu
-							．
+							libtool 関連のスクリプトをバージョンの合わないものに取り換えると壊れるパッケージもあります。
 							詳細については<link url="/doc/porting/libtool.php">libtool のページ</link>を参照．
 						</p>
 					</itemd>
@@ -2559,7 +2560,7 @@ patch -p1 &lt; %{PatchFile<em>N</em>}
 </codeblock>
 <p>
 です．
-<code>PatchFile</code> がない場合の既定値は空白となります．
+<code>PatchFile</code> がない場合の既定値はブランクとなります．
 <code>PatchScript</code> を明示的に用いる場合， <code>PatchFile</code> を明示しなければなりません．
 </p>
 					</itemd>
@@ -2593,7 +2594,7 @@ CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib
 </codeblock>
 <p>fink 0.26.0 より，これらの既定値に例外が一つあります．
-<code>Type: -64bit</code> が <code>-64bit</code> と定義されている場合，
+<code>Type</code> が <code>-64bit</code> と定義されている場合，
 <code>LDFLAGS</code> は <code>-L%p/%lib -L%p/lib</code> となります．
 </p>
 						<p>
@@ -2715,7 +2716,7 @@ GCC フィールドはそれ自体は既定値を持たず，設定されなけ�
 							誤ったバージョンのものが存在すると Fink はエラー終了します．
 						</p>
 						<p>
-							このフィールドは gcc コンパイラ間の移行をメンテナが知ることができるように Fink に加えられた．
+							このフィールドは gcc コンパイラ間の移行をメンテナが知ることができるように Fink に加えられました。
 							gcc では， C++ コードの関わるライブラリ間で，実行可能・ファイル同士の (バージョン名に反映されない) 非互換が生じることがあります．
 						</p>
 					</itemd>
@@ -2799,7 +2800,7 @@ make test</codeblock>
 <itemd>
 <p>
 <em>fink 0.25 にて導入．</em>
-当フィールドは，テストスイートが有効な場合のビルド実行時にのみ使用される情報を包んだものです．
+当フィールドは、テストスイートが有効な場合のビルド実行時にのみ使用される情報を含んだものです。
 ここには他のフィールドが含まれます．
 現在のところ，この中に  <code>TestScript</code> がなければ<em>なりません</em>．
 他のフィールドはオプションです．
@@ -2976,9 +2977,9 @@ INSTALLSCRIPT=%i/bin
 							ライブラリのアーキテクチャ
 							(値は &quot;32&quot;, &quot;64&quot;, または
                              &quot;32-64&quot;, あるいは空欄; 空欄時の既定値は &quot;32&quot; ．) 
-							依存情報は <code>foo (>= バージョン-版)</code> という型式で指定しなければいけません．
-							ここで <code>バージョン-版</code> は， (互換性バージョンの同じ) そのライブラリを利用可能にしてくれる Fink パッケージの
-							<em>一番古い</em>バージョンを指します．
+							依存情報は <code>foo (>= バージョン-リビジョン)</code> という型式で指定しなければいけません。
+							ここで <code>バージョン-リビジョン</code> は、 (互換性バージョンの同じ) そのライブラリを利用可能にしてくれる 
+							Fink パッケージの<em>一番古い</em>バージョンを指します。
 							フィールド Shlibs の設定は「この名前がついていて compatibility_version がこれ以上のライブラリは，
 							その Fink パッケージの今後のバージョンでも必ず含まれている」というメンテナからの保証に相当します．
 							「プライベート」な共有ライブラリは，ファイル名の前にビックリマークをつけ，代わりに compatibility やバージョン情報は書きません．
@@ -2997,7 +2998,7 @@ INSTALLSCRIPT=%i/bin
 							ここに指定した環境変数はスクリプト <filename>/sw/bin/init.[c]sh</filename> によって設定されます．
 						</p>
 						<p>
-							環境変数の値には空白文字が使えます (値の末尾に来ると取り除かれます)．
+							環境変数の値にはブランクが使えます (値の末尾に来ると取り除かれます)．
 							また，パーセント展開が行われます．
 							例:
 						</p>
@@ -3049,7 +3050,7 @@ AnotherVar: foo bar
 							どのファイルやディレクトリを移動するかを指定します．
 							注記:
 							これが実行されるタイミングは，親パッケージの InstallScript や DocFiles のコマンドの実行後で，
-							splitoff したパッケージの InstallScript や Docfiles の実行前．
+							splitoff したパッケージの InstallScript や Docfiles の実行前です。
 						</p>
 					</itemd>
 				</item>
@@ -3073,7 +3074,7 @@ AnotherVar: foo bar
 							エラー回復や，別パッケージのインストールによりパッケージを取り除くことを表す値などがあります．
 						</p>
 						<p>
-							各スクリプトは以下のタイミングで実行される．
+							各スクリプトは以下のタイミングで実行されます．
 						</p>
 						<ul>
 							<li>PreInstScript: パッケージが初めてインストールされたときと，パッケージをそのバージョンにアップグレードする前．</li>
@@ -3096,15 +3097,14 @@ AnotherVar: foo bar
 					<itemt>ConfFiles</itemt>
 					<itemd>
 						<p>
-							ユーザが修正し得る設定ファイルの空白区切りのリスト．
-							パーセント展開は行われます．
-							ファイルは，次のように絶対パスで指定しなければいけません．
-							<filename>%p/etc/%n.conf</filename>.
+							ユーザが修正できる設定ファイルの空白区切りの一覧。
+							パーセント展開が行われます．
+							ファイルは、<filename>%p/etc/%n.conf</filename> のように絶対パスで指定しなければいけません。
 							dpkg はここで指定されたファイルを以下のように特別な扱いをします．
 							パッケージがアップグレードされたとき，新設定ファイルが提供され，しかもユーザが旧パッケージの設定ファイルが修正していた場合は，
 							ユーザはどちらのバージョンを使うか尋ねられ，設定ファイルのバックアップが作られます．
 							パッケージを &quot;remove&quot; しても，設定ファイルは削除されずにディスク上に残ります．
-							設定ファイルも削除されるのは &quot;purge&quot; を命じたときのみ．
+							設定ファイルも削除されるのは &quot;purge&quot; を命じたときのみです。
 						</p>
 					</itemd>
 				</item>
@@ -3202,7 +3202,7 @@ InfoDocs:  foo.info
 						<p>
 							パッケージ作成に関する注意書き．
 							「ファイルを適切な場所に置くために Makefile にパッチを当てる」等を (英語で) ここに記述します．
-							複数行に渡ってよい．
+							複数行も可。
 						</p>
 					</itemd>
 				</item>
@@ -3212,7 +3212,7 @@ InfoDocs:  foo.info
 						<p>
 							パッケージを Darwin に移植する場合に特有の注意書き．
 							「config.guess と libtool スクリプトはアップデートする． -no-cpp-precomp が必要」等を (英語で) ここに記述します．
-							複数行に渡ってよい．
+							複数行も可。
 						</p>
 					</itemd>
 				</item>
@@ -3262,7 +3262,7 @@ InfoDocs:  foo.info
 <p>
 %n-%v-%r は，パッケージのユニークな識別子として扱われるため，
 <code>SplitOff</code> (あるいは <code>SplitOff<em>N</em></code>)
-を用いて (同じ <code>Version</code> と <code>Revision</code> で) <code>Package</code> を作成しては行けません．
+を用いて (同じ <code>Version</code> と <code>Revision</code> で) <code>Package</code> を作成してはいけません．
  Variant を使う際は，各 Variant が独立したパッケージとなるようにしてください．
 つまり，以下のようなパッケージレイアウトは禁止されます:
 </p>
