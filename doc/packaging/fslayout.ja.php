@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ファイルシステム";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2014/09/09 03:41:02';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="compilers.php?phpLang=ja" title="コンパイラ"><link rel="prev" href="policy.php?phpLang=ja" title="パッケージ化ポリシー">';
 
 
@@ -12,7 +12,7 @@ include_once "header.ja.inc";
 		
 		
 			<p>
-				以下はファイルシステムのレイアウトのガイドラインで， Fink のパッケージングポリシーの一部です．
+				以下はファイルシステムのレイアウトのガイドラインで， Fink のパッケージ作成ポリシーの一部です．
 			</p>
 		
 		<h2><a name="fhs">4.1 ファイルシステム構造標準 (Filesystem Hierarchy Standard)</a></h2>
@@ -24,7 +24,7 @@ include_once "header.ja.inc";
 				</a>
 				の精神に従います．
 				しかし従えるのは飽くまでも精神のみです．
-				それは FHS が <code>/</code> 以下と <code>/</code> 以下の階層を管理できるシステムベンダ向けに作られたからです．
+				それは FHS が <code>/</code> 以下と <code>/usr</code> 以下の階層を管理できるシステムベンダ向けに作られたからです．
 				Fink はインストールディレクトリ (別名「プリフィクス」) 以下のみを管理するアドオン・ディストリビューションです．
 				以降の例ではデフォルトの「プリフィクス」 <code>/sw</code> を使います．
 			</p>

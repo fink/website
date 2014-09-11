@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - パッケージ記述";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2014/09/09 03:41:02';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 
@@ -20,7 +20,7 @@ include_once "header.ja.inc";
 				「パッケージ名」に拡張子 ".info" を付けただけの簡略形式が便利です．
 fink 0.26.0 の時点で，ファイル名を特定するにはいくつかの方法があります:
 推奨されるのは，他の必要なパッケージファイルと整合性のとれる最も短いものです．
-ファイル名の形式は: Variant のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision，を
+ファイル名の形式は: variant のないパッケージ名，オプションとして architecture，オプションとして distribution，オプションとして　version または version-revision を
 ハイフンでつなぎ，".info" で終えます．
 "architecture" と "distribution" は，対応するフィールドが定義され，値を一つだけ持つ場合に限ります．
 			</p>
@@ -99,19 +99,7 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 </pre>
 			<p>
-				今は推奨されない旧式の記法は「RFC 822 ヘッダ折り畳み方法」を手本に作られました．
-				空白で始まる行を前の行からの続きと認識します．
-				例:
-			</p>
-<pre>InstallScript: mkdir -p %i/share/man
- make install prefix=%i mandir=%i/share/man
- mkdir -p %i/share/doc/%n
- install -m 644 COPYING %i/share/doc/%n</pre>
-			<p>
-				各行頭の空白は必須であることに注意して下さい．
-			</p>
-			<p>
-				どちらの形式でも，空行と，シャープ (#) で始まる行は無視されます．
+				この形式では，空行と，シャープ (#) で始まる行は無視されます．
 				キー (フィールド名) では大文字と小文字の区別がないので，
 				<code>InstallScript</code> を <code>installscript</code> や <code>INSTALLSCRIPT</code> とも書けますが，
 				最初の <code>InstallScript</code> という方式が読み易いのでこれを使いましょう．
@@ -149,7 +137,7 @@ SplitOff: &lt;&lt;
 </p>
 </td></tr><tr valign="top"><td>%r</td><td>
 						<p>
-							<b>r</b>evision．パッケージの「版」．
+							<b>r</b>evision．パッケージの「リビジョン」．
 						</p>
 					</td></tr><tr valign="top"><td>%f</td><td>
 						<p>
@@ -260,12 +248,17 @@ _num 式 は fink-0.26.0 より導入．
 <code>PatchFile</code> フィールドで示されたファイルのフルパス．
 (fink-0.24.12 にて導入)
 </p>
-</td></tr><tr valign="top"><td>%lib</td><td>
+</td></tr><tr valign="top"><td>%{PatchFile<b>N</b>}</td><td>
+    <p>
+      <code>PatchFile<b>N</b></code> フィールドで示されたファイルのフルパス．
+      (fink-0.30.0 にて導入)
+    </p>
+  </td></tr><tr valign="top"><td>%lib</td><td>
 <p>
 <code>Type: -64bit</code>　が <code>-64bit</code>と定義されている場合，
-powerpc マシン上では <b>lib/ppc64</b> と拡張され，
-intel マシン上では <b>lib/x86_64</b> と拡張されます (64-bit ライブラリの正しい保存場所)．
-それ以外は， <b>lib</b> と拡張されます．
+powerpc マシン上では <b>lib/ppc64</b> と展開され，
+intel マシン上では <b>lib/x86_64</b> と展開される (64-bit ライブラリの正しい保存場所)．
+それ以外は， <b>lib</b> と展開される．
 (fink-0.26.0 で導入)
 </p>
 <p>

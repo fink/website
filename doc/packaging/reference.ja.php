@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2014/09/09 03:41:02';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -18,7 +18,7 @@ include_once "header.ja.inc";
 				下記の例では <code>/sw</code> にパッケージ gimp-1.2.1-1 をインストールするものとします．
 			</p>
 			<p>
-				<b>解凍段階</b>では，ディレクトリ <code>/sw/src/fink.build/gimp-1.2.1-1</code> が作成されてソースの tar ボールがそこに解凍されます．
+				<b>解凍段階</b>では，ディレクトリ <code>/sw/src/fink.build/gimp-1.2.1-1</code> が作成されてソースの tarball がそこに解凍されます．
 				大抵，解凍によりソースを含むディレクトリ <code>gimp-1.2.1</code> が作られます．
 				これ以降のステップはすべてこの中 (すなわち <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>) で行われます．
 				詳細はフィールド SourceDirectory, NoSourceDirectory や Source<b>N</b>ExtractDir (Nは数字) で変更できます．
@@ -75,12 +75,12 @@ include_once "header.ja.inc";
 							このフィールドで行われるパーセント展開は %N, %{Ni}, %type_raw[] と %type_pkg[] のみです．
 						</p>
 						<p>
-							Fink のパッケージングポリシーでは，
+							Fink のパッケージ作成ポリシーでは，
 							どのパッケージも常に同じオプションを有効にしてコンパイルされるようにします．
-							あるパッケージに複数の Variant を設ける場合は (フィールド <code>Type</code> の説明を参照)，
-							 Variant を区別する情報をフィールド <code>Package</code> に含めなければいけません
+							あるパッケージに複数の variant を設ける場合は (フィールド <code>Type</code> の説明を参照)，
+							variant を区別する情報をフィールド <code>Package</code> に含めなければいけません
 							(パーセント展開 %type_pkg[] の説明を参照)．
-							これにより，各 Variant に固有の (どのオプションが有効かが分かる) 「パッケージ名」が与えられます．
+							これにより，各 variant に固有の (どのオプションが有効かが分かる) 「パッケージ名」が与えられます．
 							フィールド <code>Package</code> 内でパーセント展開 %type_pkg[] および %type_raw[] を使うことは最近導入されたばかりで，
 							古い Fink とは非互換であるため，注意が必要です．
 							そのため，そのようなパッケージ記述はフィールド <code>InfoN</code> (ただし N&gt;=2) 内に埋め込むようにします．
@@ -107,7 +107,7 @@ include_once "header.ja.inc";
 						<p>
 							Fink パッケージとしてのリビジョン．
 							upstream のバージョンが同じパッケージのパッケージ記述を書き換えたら，ここを 1 ずつ増やします．
-							最初は 1 で始まます．
+							最初は 1 で始めます．
 							必須フィールド．
 						</p>
 						<p>
@@ -120,7 +120,7 @@ include_once "header.ja.inc";
 パッケージ (および Splitoff) が対応している CPU アーキテクチャー一覧を，コンマ区切りで記述します．
 現在のところ，<code>powerpc</code> と <code>i386</code> が値として使用できます．
 このフィールドがあり，値が条件処理後にブランクでなく，ローカルマシンのアーキテクチャーが一覧にない場合，パッケージ記述は無視されます．
-このフィールドがない場合，あるいは値がブランクであるような場合は，全てのアーキテクチャーに対応していると見なされます．
+このフィールドがない場合，あるいは値がブランクの場合は，全てのアーキテクチャーに対応していると見なされます．
 (0.24.11 CVS バージョン以降 の fink に導入)
 </p>
 <p>
@@ -132,59 +132,64 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 <p>
 このフィールドでは，値一覧にある値とパーセント展開を，通常の条件文法で使うことができます
 (詳細については，<code>Depends</code> フィールドを参照)．
-これによって，特定の Variant を特定のアーキテクチャーに制限することができます．
+これによって，特定の variant を特定のアーキテクチャーに制限することができます．
 例えば:
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.8.1 5.8.4 5.8.6)
-  Architecture: (%type_pkg[perl] = 581) powerpc
+  Type: perl (5.8.8 5.10.0)
+  Architecture: (%type_pkg[perl] = 5100) x86_64
 </pre>
 <p>
-によって，foo-pm581 という Variant は <code>powerpc</code> となり，他の Variant には値無しになります．
+によって，foo-pm5100 という variant は <code>x86_64</code> となり， foo-pm588 には値無しになります．
 ただし，アーキテクチャーの値が無いことは，そのアーキテクチャー用のパッケージではない，ということではありません．
+</p>
+<p>
+上の例は、このフィールドのよくある使い方です。
+10.6 の system-perl 5.10.0 は 32-bit (i386) でビルドできないものがあるので、
+複数タイプの perl パッケージを特定のシステムに限定することができます。
 </p>
 </td></tr><tr valign="top"><td>Distribution</td><td>
 <p>
-A comma-separated list of distribution(s) for which the package
-(and any splitoff packages) are intended.
-At present, the only valid values for distribution are
+パッケージ (およびその Splitoff パッケージ) が対応しているコンマ区切りのディストリビューション一覧。
+現在、有効な値は
 <code>10.4</code>,
 <code>10.5</code>,
-and <code>10.6</code>
-. If this field is present and not blank after
-conditional handling, fink will ignore the package description(s) if
-the local machine distribution is not listed. If the field is omitted
-or the value is blank, all distributions are assumed.
-(Introduced in fink 0.26.0.)
+<code>10.6</code>,
+<code>10.7</code>,
+<code>10.8</code>,
+<code>10.9</code>,
+です。
+このフィールドがあり、条件式判定で空欄でなければ、
+マシンのディストリビューションが書かれていなければ、
+fink はパッケージ記述を無視します。
+このフィールドが無いか、あってもブランクの場合、すべてのディストリビューションが想定されます。
+(fink 0.26.0　で導入。)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
-a common set of finkinfo files, the most common use of this field will be for 
-packages which are suitable for one of those distributions but not the
-other.
+<code>10.7</code>, <code>10.8</code>, <code>10.9</code> ディストリビューションは、
+finkinfo ファイルが同じであるため、
+これらのディストリビューションの一つに有効だが他ではそうでない場合が、このフィールドを使います。
 </p>
 <p>
-This field supports the standard conditional syntax for any value in
-the value list and percent-expansions can be used (see
-the <code>Depends</code> field for more information). In this manner,
-certain variants can be restricted to certain architectures. For
-example:
+このフィールドは、値リスト中の値とパーセント展開を条件式に使うことができます
+(<code>Depends</code> に詳しい情報があります)。
+これを使って、variant を特定のアーキテクチャに制限することができます。例えば:
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.8.1 5.8.6)
-  Distribution: (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4
+  Type: perl (5.12.3 5.12.4)
+  Distribution: (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8
 </pre>
 <p>
-will result in the field for the foo-pm581 variant
-being <code>10.3, 10.4</code> and the field being blank for the 
-foo-pm586 variant.
+は、<code>Distribution</code> フィールドで foo-pm5123 は <code>10.7, 10.8</code>　用で、
+foo-pm5124 は空欄であることになります。
 </p>
-<p>Since python 2.3 is not available in the 10.5 distribution, and the
-available perl packages vary by distribution, these package types provide
-a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
+<p>
+10.7 以降では python 2.5 がなく、 perl のバージョンがディストリビューションによって異なるため、
+これらのパッケージはこのフィールドをよく使います。
+参照のため、10.3 から 10.9 までの利用可能な perl バージョンを記します
+(<b>太字の</b> system はそのバージョンの system-perl です)。
 </p>
 <pre>
     perl 5.6.0:  10.3
@@ -195,25 +200,26 @@ various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
     perl 5.12.3:                         <b>10.7</b>
+    perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>
 </pre>
-<p>A way to include all variants in a single finkinfo file is as follows.
+<p>
+すべての variant をひとつの finkinfo ファイルに含める方法は、以下の通りです。
 </p>
 <pre>
   Package: foo-pm%type_pkg[perl]
-  Type: perl (5.6.0 5.8.0 5.8.1 5.8.4 5.8.6 5.8.8 5.10.0 5.12.3)
+  Type: perl (5.8.8 5.10.0 5.12.3 5.12.4 5.16.2)
   Distribution: &lt;&lt;
-   (%type_pkg[perl] = 560) 10.3, (%type_pkg[perl] = 580) 10.3, 
-   (%type_pkg[perl] = 581) 10.3, (%type_pkg[perl] = 581) 10.4, 
-   (%type_pkg[perl] = 584) 10.3, (%type_pkg[perl] = 584) 10.4, 
-   (%type_pkg[perl] = 586) 10.3, (%type_pkg[perl] = 586) 10.4, (%type_pkg[perl] = 586) 10.5,
-   (%type_pkg[perl] = 588) 10.4, (%type_pkg[perl] = 588) 10.5, (%type_pkg[perl] = 588) 10.6,
-   (%type_pkg[perl] = 5100) 10.5, (%type_pkg[perl] = 5100) 10.6,
-   (%type_pkg[perl] = 5123) 10.7
+    (%type_pkg[perl] = 588) 10.6,
+    (%type_pkg[perl] = 5100) 10.6,
+    (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8, (%type_pkg[perl] = 5123) 10.9,
+    (%type_pkg[perl] = 5124) 10.7, (%type_pkg[perl] = 5124) 10.8, (%type_pkg[perl] = 5124) 10.9,
+    (%type_pkg[perl] = 5162) 10.7, (%type_pkg[perl] = 5162) 10.8, (%type_pkg[perl] = 5162) 10.9
   &lt;&lt;
 </pre>
-<p>Note that we do not include old
-distributions, such as 10.2 or 10.4-transitional, since the versions of
-fink which are relevant for them do not recognize this field.
+<p>
+10.2 or 10.4-transitional などの古いディストリビューションは、対応している fink バージョンがこのフィールドを認識しないので、
+省略しています。
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 						<p>
@@ -245,7 +251,7 @@ fink which are relevant for them do not recognize this field.
 						<p>
 							値が <code>nosource</code> の場合:
 							これは <code>bundle</code> と非常に似ています．
-							これはソースの tar ボールが存在しないことを示します．
+							これはソースの tarball が存在しないことを示します．
 							よって何も取り寄せられず，解凍段階では空ディレクトリが作られます．
 							しかしパッチ，コンパイル，インストールの各段階は通常通り実行されます．
 							このようにして全てのソースコードをパッチと共に配布したり，
@@ -256,7 +262,7 @@ fink which are relevant for them do not recognize this field.
 						<p>
 							値が <code>perl</code> の場合 (Fink 0.9.5 以降):
 							コンパイル及びインストール段階のスクリプトのデフォルト値が変わります．
-							Fink 0.13.0 からは，この値の Variant として <code>perl $version</code> が使えます．
+							Fink 0.13.0 からは，この値の variant として <code>perl $version</code> が使えます．
 							ここで "$version" は perl の特定のバージョンで，3つの数をピリオドで区切ったもの
 							(<code>perl 5.6.0</code> など)．
 						</p>
@@ -265,7 +271,7 @@ fink which are relevant for them do not recognize this field.
 							「プログラミング言語」または「プログラミング言語-バージョン」という記法は一般化され，
 							メンテナの定義した任意のタイプとそれに関連するサブタイプが指定できるようになり，
 							あるパッケージに複数のタイプを指定できるようになりました．
-							タイプとサブタイプにはそれぞれ空白以外からなる任意の文字列が使えます．
+							タイプとサブタイプにはそれぞれブランク以外からなる任意の文字列が使えます．
 							(しかし括弧，大括弧，カンマ，パーセント記号を使ってはいけません．)
 							ここではパーセント展開は行われません．
 							また，タイプの値は小文字に変換されます(が，サブタイプは変換されません)．
@@ -274,18 +280,18 @@ fink which are relevant for them do not recognize this field.
 							
 						</p>
 						<p>
-							これに加えて「 Variant 」という概念があります．
+							これに加えて「 variant 」という概念があります．
 							単一のパッケージ記述が，有効なコンパイルオプションだけが違う複数のパッケージを生成するとき，
-							これらのパッケージは「 Variant 」になります．
+							これらのパッケージは「 variant 」になります．
 							このプロセスの鍵はサブタイプリストの利用です．
 							単一の文字列ではなく，文字列の空白区切りリストを括弧で括ったものを使います．
 							Fink はリスト内のサブタイプ毎にパッケージ記述をコピーし，各コピー内ではリストを単一のサブタイプに置き換えます．
 							例:
 						</p>
-						<pre>Type: perl (5.6.0 5.8.1)</pre>
+						<pre>Type: perl (5.12.3 5.12.4)</pre>
 						<p>
 							これは 2 つのパッケージ記述を生成します．
-							片方は <code>Type: perl 5.6.0</code> と，もう片方は <code>Type: perl 5.8.1</code> と同等になります．
+							片方は <code>Type: perl 5.12.3</code> と，もう片方は <code>Type: perl 5.12.4</code> と同等になります．
 							特殊なサブタイプリスト "(boolean)" が意味するのは，(サブでない) タイプ自身とドット '.' から成るリストです．
 							つまり以下の 2 つは同一です．
 						</p>
@@ -294,20 +300,20 @@ Type: -x11 (boolean)
 Type: -x11 (-x11 .)
 </pre>
 						<p>
-							サブタイプリストの展開とそれに伴うパッケージ Variant の作成は，再帰的に行われます．
+							サブタイプリストの展開とそれに伴うパッケージ variant の作成は，再帰的に行われます．
 							またサブタイプリストを持つタイプが複数ある場合は，あり得る組み合わせが全て生成されます．
 						</p>
-<pre>Type: -ssl (boolean), perl (5.6.0 5.8.1)</pre>
+<pre>Type: -ssl (boolean), perl (5.12.3 5.12.4)</pre>
 						<p>
-							Type 以外のフィールドから特定の Variant のサブタイプを得るには，疑似ハッシュ %type_raw[] および %type_pkg[] を使います．
+							Type 以外のフィールドから特定の variant のサブタイプを得るには，疑似ハッシュ %type_raw[] および %type_pkg[] を使います．
 							以下にパッケージ記述の例の一部を示します．
 						</p>
 <pre>
 Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
-Type: perl (5.6.0 5.8.1)
+Type: perl (5.12.3 5.12.4)
 Depends: perl%type_pkg[perl]-core
- &lt;&lt;
+&lt;&lt;
 </pre>
 <pre>
 Info2: &lt;&lt;
@@ -350,7 +356,7 @@ SplitOff: &lt;&lt;
 						<p>
 							パッケージ配布の際にパッケージの従うライセンスの性質を表す．
 							値は <a href="policy.php?phpLang=ja#licenses">パッケージのライセンス</a> で示した選択肢から選ばなければいけない．
-							それに加え，パッケージが実際にパッケージング・ポリシーに従うとき，
+							それに加え，パッケージが実際にパッケージ作成・ポリシーに従うとき，
 							すなわちライセンスのコピーがパッケージの doc ディレクトリにインストールされるときでなければ
 							このフィールドを指定してはいけない．
 						</p>
@@ -370,11 +376,11 @@ SplitOff: &lt;&lt;
 							このフィールドにより Fink はパッケージ記述の構文の非互換な変更に対処できます．
 							任意のバージョンの Fink には扱える "N" (整数) の最大値が設定されています．
 							それより大きいNを持つフィールド InfoN はいずれも無視されます．
-							だからこの機構の利用は必要最低限に止めなければいけません．
+							よって、この機構の利用は必要最低限に止めなければいけません．
 							そうでないと，古いバージョンの Fink のユーザが必然性なしに仲間外れにされます．
 							この機構を使うには，パッケージ記述全体をフィールド InfoN の値に埋め込んでください．
 							複数行に渡る値の記述方法については，前述の「ファイル形式」を参照してください．
-							以下は，各 InfoN レベルに於いて追加された機能と，最初にサポートされた fink のバージョンです．
+							以下は，各 InfoN レベルにおいて追加された機能と，最初にサポートされた fink のバージョンです．
 						</p>
 <ul>
 <li>
@@ -385,7 +391,7 @@ SplitOff: &lt;&lt;
 <li>
 <code>Info3</code> (fink&gt;=0.25.0): 
 .info ファイル中でインデントを正しく扱うことができる．
-RFC-822 複数業のサポートは終了．
+RFC-822 複数行のサポートは終了．
 pkglist フィールドにコメントが可能．
 </li>
 <li>
@@ -399,15 +405,24 @@ pkglist フィールドにコメントが可能．
 			</p>
 			<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Depends</td><td>
 						<p>
-							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージのリスト．
+							そのパッケージがビルドできるようになる前にインストールされていなければいけないパッケージの一覧。
 							このフィールドではパーセント展開が行われる
 							(「依存性関連」の他のフィールドでも同様:
-							BuildDepends, RuntimeDepends, Provides, Conflicts, Replaces, Recommends, Suggests および Enhances)
-							普通，値は「パッケージ名」の単なるカンマ区切りリストだが，
-							現在の Fink は (dpkgと同じ形式の) 「代替パッケージ節」と「バージョン節」に対応している．
+							BuildDepends, RuntimeDepends, Provides, RuntimeDepends, Conflicts, Replaces, Recommends, Suggests および Enhances)。
+							普通、値は「パッケージ名」の単なるカンマ区切り一覧だが、
+							現在の Fink は、dpkgと同じ形式の「代替パッケージ」と「バージョン節」に対応している。
 							それらを全て盛りこんだ例:
 						</p>
-<pre>Depends: daemonic (&gt;= 20010902-1), emacs | xemacs</pre>
+<pre>Depends: &lt;&lt;
+    daemonic (&gt;= 20010902-1), 
+    emacs | xemacs
+&lt;&lt;</pre>
+						<p>
+							上のレイアウトは <code>Depends</code> や類似のフィールドでの好ましい書き方です。
+							 <code>&lt;&lt;</code> を使うことで複数行に対応し、
+							 各パッケージをアルファベット順に書きます。
+							 値が一つだけの場合は、一行の <code>Field: value</code> でも構いません。
+						</p>
 						<p>
 							本当の意味で「省略可能」な依存性を表現する方法がないことに注意．
 							あるパッケージが別のパッケージがあってもなくても動作するとき，
@@ -426,7 +441,10 @@ pkglist フィールドにコメントが可能．
 							この機能は，複数の似通ったパッケージを管理する際に手間を省くためにも使える．
 							例えば elinks と elinks-ssl は次のように列挙できるが，
 						</p>
-<pre>Depends: (%n = elinks-ssl) openssl097-shlibs, expat-shlibs</pre>
+<pre>Depends: &lt;&lt;
+    (%n = elinks-ssl) openssl097-shlibs, 
+    expat-shlibs
+&lt;&lt;</pre>
 						<p>
 							これは elinks の方で
 						</p>
@@ -434,7 +452,7 @@ pkglist フィールドにコメントが可能．
 						<p>
 							とし， elinks-ssl の方で
 						</p>
-<pre>Depends: openssl097-shlibs, expat-shlibs</pre>
+<pre>Depends: expat-shlibs, openssl097-shlibs</pre>
 						<p>
 							とすることと同じである．
 						</p>
@@ -485,17 +503,14 @@ Depends: (%type_pkg[-x11]) x11
 					</td></tr><tr valign="top"><td>RuntimeDepends</td><td>
 						<p>
 							<b>Fink 0.32.0 で導入:</b>
-
-A list of dependencies that is applied at run time only,
-that is, when the package is being installed.
-This can be used to list packages that must be present to
-run the package, but which are not used at build time.
-Supports the same syntax as Depends.
-
+							ランタイム時のみに適用されインストールされる依存パッケージ一覧。
+							パッケージを実行中になければならないが、
+							ビルド時には使われないパッケージを一覧化します。
+							Depends と同じ書式です。
 						</p>
 					</td></tr><tr valign="top"><td>Provides</td><td>
 						<p>
-							そのパッケージが「提供」すると考えられる「パッケージ名」のカンマ区切りのリスト．
+							そのパッケージが「提供」すると考えられる「パッケージ名」のカンマ区切りの一覧。
 							パッケージ pine で <code>Provides: mailer</code> となっている場合，
 							pine がインストールされると mailer についての全ての依存性は解決したものとされる．
 							普通，そのようなパッケージは pine のフィールド Conflicts や Replaces にも入れるとよい．
@@ -505,7 +520,7 @@ Supports the same syntax as Depends.
 							Provides 項目には，バージョン番号に関連した情報はない．
 							親パッケージから取得することも，Provides フィールド自体にはバージョン番号を特定するような仕組みなどもない．
 							バージョンを指定する依存性があっても，Provides を持つパッケージによって満たすことはできない．
-							結果として，同一の代理パッケージを提供する Variant が多数あるのは危険である．
+							結果として，同一の代理パッケージを提供する variant が多数あるのは危険である．
 							これによってバージョンを指定した依存性ができなくなるためである．
 							例えば， foo-gnome と foo-nogome が "Provides: foo" を提供する場合，"Depends: foo (&gt; 1.1)" は動作しない．
 						</p>
@@ -514,8 +529,8 @@ Supports the same syntax as Depends.
 							そのパッケージと同時にインストールしてはいけない「パッケージ名」のカンマ区切りの一覧．
 							バーチャルパッケージでは，そのパッケージが提供する「パッケージ名」をここに指定することができ，適切に扱われます．
 							このフィールドはフィールド Depends のようにバージョン付きの依存性情報にも対応していますが，
-							代替パッケージには対応していません (意味をなさない)．
-							あるパッケージがそれ自身のパッケージ記述の Conflicts に入っていると， (暗黙のうちに) そこから取り除かれます．
+							代替パッケージには対応していない (意味をなさない)。
+							あるパッケージがそれ自身のパッケージ記述の Conflicts に入っていると、(暗黙のうちに) そこから取り除かれる。
 							(Fink のバージョン 0.18.2 CVS 以降で導入)
 						</p>
 						<p>
@@ -528,22 +543,22 @@ Supports the same syntax as Depends.
 当該パッケージがコンパイル中にインストールされてはいけないパッケージの一覧．
 これは， <code>./configure</code> やコンパイラが，望ましくないライブラリヘッダを見たり，
 壊れることが分かっているツール (例えば，特定のバージョンの sed にあるバグ) のバージョンを使用することを避けるために使います．
-ビルド時にテストスイートが有効な場合， <code>TestConflicts</code> フィールド内のパッケージはこのリストに追加されます．
+ビルド時にテストスイートが有効な場合， <code>TestConflicts</code> フィールド内のパッケージはこの一覧に追加されます。
 </p>
 </td></tr><tr valign="top"><td>Replaces</td><td>
 						<p>
 							Conflicts と共に使われる．
 							そのパッケ−ジが，衝突するパッケ−ジの機能の代わりになるだけでなく，共通するファイルを持つときに使われる．
-							このフィールドがないと，dpkg はパッケージのインストール時にエラーを出すかも知れない．
-							それはいくつかのファイルが依然として元あった方のパッケージに属しているからだ．
-							それら 2 つのパッケージが純粋な意味で互いに代替物であり，どちらか好きな方を選べるようなときはこれを使うとよい．
+							このフィールドがないと、dpkg はパッケージのインストール時にエラーを出すことがある。
+							これは、いくつかのファイルが別の方のパッケージに属しているためである。
+							こうした 2 つのパッケージが純粋な意味で互いに代替物であり，どちらか好きな方を選べるようなときはこれを使うとよい。
 							あるパッケージがそれ自身のパッケージ記述の Conflicts に入っていると， (暗黙のうちに) そこから取り除かれる．
 							(Fink のバージョン 0.18.2 CVS 以降で導入)
 						</p>
 						<p>
-							<b>注記:</b> Fink自身はこのフィールドを無視する．
-							しかしこれは dpkg に渡され，そこで適切に扱われる．
-							要するにこのフィールドが影響するのはビルド時でなく実行時だ．
+							<b>注記:</b> Fink自身はこのフィールドを無視します。
+							これは dpkg に渡され、そこで適切に扱われます。
+							つまり、このフィールドが影響するのはビルド時でなく実行時です。
 						</p>
 					</td></tr><tr valign="top"><td>Recommends, Suggests, Enhances</td><td>
 						<p>
@@ -602,7 +617,7 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 					</td></tr><tr valign="top"><td>Source</td><td>
 						<p>
-							ソースの tar ボールの URL ．
+							ソースの tarball の URL ．
 							HTTP または FTP でなければいけないが，Fink はそれを単に wget に渡すだけなので，実際には問題にならない．
 							このフィールドは，ミラーサイトを示す特別な記法に対応している．
 							すなわち <code>mirror:&lt;ミラー名称&gt;:&lt;相対パス&gt;</code> だ．
@@ -613,7 +628,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							または <b>ミラー名称</b> に <code>custom</code> と書くことで，
 							Fink にフィールド <code>CustomMirror</code> を使わせることもできる．
 							URL が wget に渡される前に，パーセント記法の展開が行われる．
-							%n は %type_ 系で示される Variant データ全てを含む文字列に展開されることに注意．
+							%n は %type_ 系で示される variant データ全てを含む文字列に展開されることに注意．
 							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよい．
 						</p>
 						<p>
@@ -629,10 +644,10 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 					</td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 						<p>
-							パッケージが複数の tar ボールから形成されている場合，それらはこの (省略可能) フィールドで指定する．
+							パッケージが複数の tarball から形成されている場合，それらはこの (省略可能) フィールドで指定する．
 							N は 2 から始まる数．
-							つまり最初の tar ボール (ある意味「メイン」になるもの) をフィールド <code>Source</code> に，
-							2 番目の tar ボールをフィールド <code>Source2</code> に，という風になる．
+							つまり最初の tarball  (ある意味「メイン」になるもの) をフィールド <code>Source</code> に，
+							2 番目の tarball をフィールド <code>Source2</code> に，という風になる．
 							値の書式は <code>Source</code> と共通だが，
 							<code>gnu</code> や <code>gnome</code> という省略形は展開されない (結局，意味をなさない)．
 							バージョン 0.19.2 以降の CVS 版 Fink では， 2 以上の任意の (つまり，必ずしも連続しない) 整数を N に使える．
@@ -640,43 +655,43 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 					</td></tr><tr valign="top"><td>SourceDirectory</td><td>
 						<p>
-							tar ボールが単一のディレクトリに展開されはするが，
-							そのディレクトリ名が tar ボールのファイル名から拡張子を除いたものと異なる場合には，これを設定しなければいけない．
-							つまり，普通なら "foo-1.0.tar.gz" という tar ボールは "foo-1.0" というディレクトリを生成する．
+							tarball が単一のディレクトリに展開されはするが，
+							そのディレクトリ名が tarball のファイル名から拡張子を除いたものと異なる場合には，これを設定しなければいけない．
+							つまり，普通なら "foo-1.0.tar.gz" という tarball は "foo-1.0" というディレクトリを生成する．
 							しかし生成されるディレクトリ名がそれと異なる場合，そのディレクトリ名をこのフィールドで指定する．
 							パーセント展開が行われる．
 						</p>
 					</td></tr><tr valign="top"><td>NoSourceDirectory</td><td>
 						<p>
 							真偽値フィールド．
-							tar ボールが単一のディレクトリに展開されないときにこのフィールドを設定する．
-							つまり，普通なら "foo-1.0.tar.gz" という tar ボールは "foo-1.0" というディレクトリを生成する．
-							しかし tar ボールを展開したときにファイルがカレントディレクトリに撒き散らされる場合は，
+							tarball が単一のディレクトリに展開されないときにこのフィールドを設定する。
+							つまり、普通なら "foo-1.0.tar.gz" という tarball は "foo-1.0" というディレクトリを生成する。
+							しかし tarball を展開したときにファイルがカレントディレクトリで展開される場合は、
 							このフィールドを "true" に設定する．
 						</p>
 					</td></tr><tr valign="top"><td>Source<b>N</b>ExtractDir</td><td>
 						<p>
-							普通，補助的な tar ボールは「メイン」の tar ボールと同じディレクトリで展開される．
+							普通、補助的な tarball は「メイン」の tarball と同じディレクトリで展開される。
 							それを特定のサブディレクトリ内で展開して欲しいときは，このフィールドでサブディレクトリ名を指定する．
-							ご想像の通り， <code>Source2ExtractDir</code> は <code>Source2</code> で指定した tar ボールに対応する．
+							ご想像の通り， <code>Source2ExtractDir</code> は <code>Source2</code> で指定した tarball に対応する．
 							用例についてはパッケージ ghostscript, vim や tetex を参照．
 						</p>
 					</td></tr><tr valign="top"><td>SourceRename</td><td>
 						<p>
-							このフィールドを使うと，ビルド時にソースの tarball をリネームできる．
+							このフィールドを使うと，ビルド時にソースの tarball をリネームできる。
 							これが便利なのは，例えば，ソースのバージョンがサーバのディレクトリ名には示されているが，
-							tar ボールそのものはどのバージョンでも同じ名前のときだ．
+							tarball そのものはどのバージョンでも同じ名前のときだ。
 							(例えば <code>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</code> というとき)
 							このことで起きる問題を回避するためには次のようにすればよい．
 						</p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
 						<p>
-							この例では，ご想像の通り， tar ボールは <code>/sw/src/coolapp-1.2.3.tar.gz</code> として格納されることになる．
+							この例では，ご想像の通り， tarball は <code>/sw/src/coolapp-1.2.3.tar.gz</code> として格納されることになる．
 						</p>
 					</td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 						<p>
 							これはフィールド <code>SourceRename</code> と同じだが，
-							<code>Source<b>N</b></code> で指定された N 番目の tar ボールのリネームに使う．
+							<code>Source<b>N</b></code> で指定された N 番目の tarball のリネームに使う．
 							用例についてはパッケージ context や hyperref を参照．
 						</p>
 					</td></tr><tr valign="top"><td>Source-MD5</td><td>
@@ -684,9 +699,9 @@ Primary: ftp://ftp.barbarorg/pub/
 							<b>Fink 0.10.0 で導入:</b>
 							このフィールドではソースファイルの MD5 チェックサムを指定します．
 							Fink はこの情報によりおかしなソースファイル，
-							すなわち Fink パッケージの作成者が指定したものではない tar ボールを見分けられます．
+							すなわち Fink パッケージの作成者が指定したものではない tarball を見分けられます．
 							この問題の原因には，以下のようなものがあります:
-							tar ボールのダウンロードに失敗した，upstreamのメンテナが知らないうちに tar ボールを更新した，トロイの木馬などの攻撃，など．
+							tarball のダウンロードに失敗した，upstreamのメンテナが知らないうちに tarball を更新した，トロイの木馬などの攻撃，など．
 						</p>
 						<p>
 							このフィールドの典型的な用例は次の通り．
@@ -694,7 +709,7 @@ Primary: ftp://ftp.barbarorg/pub/
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 						<p>
 							チェックサムの算出にはツール <code>md5sum</code> を使います．
-							tar ボール <code>/sw/src/apache_1.3.23.tar.gz</code> のチェックサムが知りたいときには，
+							tarball  <code>/sw/src/apache_1.3.23.tar.gz</code> のチェックサムが知りたいときには，
 							次のコマンドを実行します (出力も一緒に示した)．
 						</p>
 <pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz
@@ -706,7 +721,7 @@ Primary: ftp://ftp.barbarorg/pub/
 						<p>
 							<b>Fink 0.10.0 で導入:</b>
 							フィールド <code>Source-MD5</code> と同様ですが，
-							フィールド <code>Source<b>N</b></code> に対応する N 番目の tar ボールの MD5 チェックサムを指定します．
+							フィールド <code>Source<b>N</b></code> に対応する N 番目の tarball の MD5 チェックサムを指定します．
 						</p>
 					</td></tr><tr valign="top"><td>TarFilesRename</td><td>
 						<p>
@@ -714,10 +729,10 @@ Primary: ftp://ftp.barbarorg/pub/
 							このフィールドは tar 形式を使うソースファイルにのみ適用されます．
 						</p>
 						<p>
-							このフィールドを使うと，任意のソース tar ボールの中のファイルを， tar ボールの展開中にリネームできます．
+							このフィールドを使うと，任意のソース tarball の中のファイルを， tarball の展開中にリネームできます．
 							ファイルシステム HFS+ がケースインセンシティブである (大文字と小文字を区別しない) ことを回避するために非常に便利でしょう．
 							普通の Mac OS X システムでは，ファイル <code>install</code> と <code>INSTALL</code> は衝突してしまいます．
-							このフィールドを使うと， tar ボールをわざわざ再パッケージしなくとも (以前はこのような場合に行われていた)，
+							このフィールドを使うと， tarball をわざわざ再パッケージしなくとも (以前はこのような場合に行われていた)，
 							こういった問題を回避することができます．
 						</p>
 						<p>
@@ -735,10 +750,9 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 						<p>
 							<b>Fink 0.10.0 で導入:</b>
 							フィールド <code>TarFilesRename</code> と同様ですが，
-							フィールド <code>Source<b>N</b></code> に対応する N 番目の tar ボールに対して機能します．
+							フィールド <code>Source<b>N</b></code> に対応する N 番目の tarball に対して機能します．
 						</p>
 					</td></tr></table>
-			
 			<p>
 				<b>パッチ段階関連:</b>
 			</p>
@@ -768,8 +782,7 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							Darwin に対応したバージョンに置き換えられます．
 							その動作は，パッチ段階の， PatchScript が実行される前に行われます．
 							これが必要だと分かっているとき<b>のみ</b>使うこと．
-							libtool 関連のスクリプトをバージョンの合わないものに取り換えると壊れるパッケージもあrimasu
-							．
+							libtool 関連のスクリプトをバージョンの合わないものに取り換えると壊れるパッケージもあります。
 							詳細については<a href="/doc/porting/libtool.php">libtool のページ</a>を参照．
 						</p>
 					</td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
@@ -805,11 +818,11 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 							PatchScript が指定されている場合，パッチはその後に別のステップとして実行されます．
 						</p>
 						<p>
-							%n は %type_ 系で示される Variant データ全てを含む文字列に展開されることに注意．
+							%n は %type_ 系で示される variant データ全てを含む文字列に展開されることに注意．
 							ここでは %{ni} を (場合によっては特定の %type_ の展開値と共に) 使うとよいでしょう．
 							単一のパッチファイルを管理し，
-							各 Variant 固有の変更点を <code>PatchScript</code> に記述する方が，
-							各 Variant 毎にパッチファイルを作るより手間が少ないでしょう．
+							各 variant 固有の変更点を <code>PatchScript</code> に記述する方が，
+							各 variant 毎にパッチファイルを作るより手間が少ないでしょう．
 						</p>
 					</td></tr><tr valign="top"><td>PatchFile</td><td>
 <p>
@@ -823,13 +836,30 @@ Fink は，そのアイルが存在し，読み取り可能であり，チェッ
 <code>PatchFile</code> を使うパッケージは，<code>BuildDepends: fink (&gt;= 0.24.12)</code> を宣言しなければなりません．
 他の理由があればこれより大きいバージョン番号を使ってもかまいません．
 </p>
-</td></tr><tr valign="top"><td>PatchFile-MD5</td><td>
+</td></tr><tr valign="top"><td>PatchFile<b>N</b></td><td>
+			<p>
+			パッケージにパッチファイルが複数ある場合、
+			N = 2 から始まる連番のフィールドを追加することができます。
+			最初のパッチファイルは <code>PatchFile</code>、
+			２番目のパッチファイルは <code>PatchFile2</code>
+			となります。
+			<code>PatchFile<b>N</b></code> を使うパッケージは、
+			<code>BuildDepends: fink (&gt;= 0.30.0)</code> を設定する必要があります。
+			他の理由で必要があれば、より高いバージョン番号を設定してもかまいません。
+			</p>
+		</td></tr><tr valign="top"><td>PatchFile-MD5</td><td>
 <p>
 <code>PatchFile</code> フィールドで与えられたファイルの MD5 チェックサム．
 <code>PatchFile</code> を使用する際には必須．
 (fink-0.24.12 で導入)
 </p>
-</td></tr><tr valign="top"><td>PatchScript</td><td>
+</td></tr><tr valign="top"><td>PatchFile<b>N</b>-MD5</td><td>
+			<p>
+			<code>PatchFile<b>N</b></code> の MD5 チェックサムです。
+			<code>PatchFile<b>N</b></code> がある場合は必須です。
+			(fink-0.30.0 で導入。)
+			</p>
+		</td></tr><tr valign="top"><td>PatchScript</td><td>
 						<p>
 							パッチ段階で実行されるコマンドのリスト．
 							下記のスクリプトの注意書きを参照してください．
@@ -843,8 +873,14 @@ Fink は，そのアイルが存在し，読み取り可能であり，チェッ
 patch -p1 &lt; %{PatchFile}
 </pre>
 <p>
+もし、<code>PatchFile<b>N</b></code> が設定された場合、
+</p>
+<pre>
+patch -p1 &lt; %{PatchFile<b>N</b>}
+</pre>
+<p>
 です．
-<code>PatchFile</code> がない場合の既定値は空白となります．
+<code>PatchFile</code> がない場合の既定値はブランクとなります．
 <code>PatchScript</code> を明示的に用いる場合， <code>PatchFile</code> を明示しなければなりません．
 </p>
 					</td></tr></table>
@@ -862,7 +898,7 @@ patch -p1 &lt; %{PatchFile}
 							指定した値の中では前節で説明したパーセント展開が行われます．
 							よく使われる例:
 						</p>
-<pre>SetCPPFLAGS: -no-cpp-precomp</pre>
+<pre>SetCPPFLAGS: -Wl,-strip_dead_dylibs</pre>
 						<p>
 							環境変数には，既定値を持つものもあります．
 							この場合に値を指定すると，既定値に追加されます．
@@ -887,7 +923,26 @@ LDFLAGS: -L%p/lib
 							真の場合，既定値を持つ変数 (上述の CPPFLAGS, LDFLAGS, CXXFLAGS など) の既定値を使いません．
 							例えば，LDFLAGS を unset のままにしたい場合， <code>NoSetLDFLAGS: true</code> とします．
 						</p>
-					</td></tr><tr valign="top"><td>ConfigureParams</td><td>
+					</td></tr><tr valign="top"><td>UseMaxBuildJobs</td><td>
+				<p>
+				true が設定された場合、
+				CompileScript と TestScript の間、
+				MAKEFLAGS 環境変数に
+				<code>-j<b>N</b></code> を
+				追加します。
+				<b>N</b> は、<code>fink.conf</code> の MaxBuildJobs から得られます。
+				<code>NoSetMAKEFLAGS: true</code> が使われても MAKEFLAGS に渡されます。
+				fink &gt; 0.31.2 では、このフィールドが無いあるいは空欄の場合、デフォルト値は true です。
+				</p>
+			</td></tr><tr valign="top"><td>BuildAsNobody</td><td>
+				<p>
+				fink &gt;= 0.33.0 で、<code>false</code> が設定された場合、
+				fink は 権限のない <code>fink-bld</code> の代わりに、 <code>root</code> でビルドします。
+				このフィールドが無い場合、デフォルト値は <code>true</code> で、
+				<code>fink-bld</code> としてビルドします。
+				</p>
+				<p>これ以前の fink バージョンでは、このフィールドは何もしません。</p>
+			</td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
 configure スクリプトに渡す付加的なパラメータ．
 (詳細は CompileScript を参照)
@@ -911,7 +966,23 @@ Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
 </pre>
 						<p>
-							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り， -x11  Variant の場合のみ <code>--with-x11</code> を送ってください．
+							これは<code>--mandir</code> と <code>--disable-shared</code> フラグを送り，
+							 -x11 variant の場合のみ <code>--with-x11</code> を送ります．
+						</p>
+						<p>
+						このフィールドは、複数行宣言をすることで複数行に書くことができます。
+						このフィールドは、シェルコマンドとして扱われ、<code>\</code> で行を分けることができます:
+						</p>
+<pre>
+ConfigureParams: &lt;&lt;
+    --mandir=%p/share/man \
+    (%type_pkg[-x11]) --with-x11 \
+    --disable-shared
+&lt;&lt;
+</pre>
+						<p>
+						注記: 複数行で書く場合には、最後の行に条件付きパラメータを設定しないでください。
+						条件式が false の場合、直後のパラメータは評価されず、シェルを壊します。
 						</p>
 					</td></tr><tr valign="top"><td>GCC</td><td>
 						<p>
@@ -930,7 +1001,7 @@ GCC フィールドはそれ自体は既定値を持たず，設定されなけ�
 しかし，各ツリーには，既定の g++ コンパイラが存在し，これに対応する GCC の値が想定されています．
 想定値は，10.1 ツリーでは <code>2.95</code>， 10.2 ツリーでは <code>3.1</code>，
 10.2-gcc3.3, 10.3, および 10.4-transitional　ツリーでは <code>3.3</code>，
-(将来の) 10.4 ツリーでは <code>4.0</code> となります．
+10.4 と 10.7 ツリーでは <code>4.0</code> となります．
 </p>
 						<p>
 							注記: GCC 値が既定値と異なる場合， (CC や CXX フラグを設定するなど) パッケージ内でコンパイラを指定する必要があります．
@@ -941,7 +1012,7 @@ GCC フィールドはそれ自体は既定値を持たず，設定されなけ�
 							誤ったバージョンのものが存在すると Fink はエラー終了します．
 						</p>
 						<p>
-							このフィールドは gcc コンパイラ間の移行をメンテナが知ることができるように Fink に加えられた．
+							このフィールドは gcc コンパイラ間の移行をメンテナが知ることができるように Fink に加えられました。
 							gcc では， C++ コードの関わるライブラリ間で，実行可能・ファイル同士の (バージョン名に反映されない) 非互換が生じることがあります．
 						</p>
 					</td></tr><tr valign="top"><td>CompileScript</td><td>
@@ -1012,7 +1083,7 @@ make test</pre>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>InfoTest</td><td>
 <p>
 <b>fink 0.25 にて導入．</b>
-当フィールドは，テストスイートが有効な場合のビルド実行時にのみ使用される情報を包んだものです．
+当フィールドは、テストスイートが有効な場合のビルド実行時にのみ使用される情報を含んだものです。
 ここには他のフィールドが含まれます．
 現在のところ，この中に  <code>TestScript</code> がなければ<b>なりません</b>．
 他のフィールドはオプションです．
@@ -1165,9 +1236,9 @@ INSTALLSCRIPT=%i/bin
 							ライブラリのアーキテクチャ
 							(値は "32", "64", または
                              "32-64", あるいは空欄; 空欄時の既定値は "32" ．) 
-							依存情報は <code>foo (&gt;= バージョン-版)</code> という型式で指定しなければいけません．
-							ここで <code>バージョン-版</code> は， (互換性バージョンの同じ) そのライブラリを利用可能にしてくれる Fink パッケージの
-							<b>一番古い</b>バージョンを指します．
+							依存情報は <code>foo (&gt;= バージョン-リビジョン)</code> という型式で指定しなければいけません。
+							ここで <code>バージョン-リビジョン</code> は、 (互換性バージョンの同じ) そのライブラリを利用可能にしてくれる 
+							Fink パッケージの<b>一番古い</b>バージョンを指します。
 							フィールド Shlibs の設定は「この名前がついていて compatibility_version がこれ以上のライブラリは，
 							その Fink パッケージの今後のバージョンでも必ず含まれている」というメンテナからの保証に相当します．
 							「プライベート」な共有ライブラリは，ファイル名の前にビックリマークをつけ，代わりに compatibility やバージョン情報は書きません．
@@ -1182,7 +1253,7 @@ INSTALLSCRIPT=%i/bin
 							ここに指定した環境変数はスクリプト <code>/sw/bin/init.[c]sh</code> によって設定されます．
 						</p>
 						<p>
-							環境変数の値には空白文字が使えます (値の末尾に来ると取り除かれます)．
+							環境変数の値にはブランクが使えます (値の末尾に来ると取り除かれます)．
 							また，パーセント展開が行われます．
 							例:
 						</p>
@@ -1222,7 +1293,7 @@ AnotherVar: foo bar
 							どのファイルやディレクトリを移動するかを指定します．
 							注記:
 							これが実行されるタイミングは，親パッケージの InstallScript や DocFiles のコマンドの実行後で，
-							splitoff したパッケージの InstallScript や Docfiles の実行前．
+							splitoff したパッケージの InstallScript や Docfiles の実行前です。
 						</p>
 					</td></tr></table>
 			<p>
@@ -1241,7 +1312,7 @@ AnotherVar: foo bar
 							エラー回復や，別パッケージのインストールによりパッケージを取り除くことを表す値などがあります．
 						</p>
 						<p>
-							各スクリプトは以下のタイミングで実行される．
+							各スクリプトは以下のタイミングで実行されます．
 						</p>
 						<ul>
 							<li>PreInstScript: パッケージが初めてインストールされたときと，パッケージをそのバージョンにアップグレードする前．</li>
@@ -1260,15 +1331,14 @@ AnotherVar: foo bar
 						</p>
 					</td></tr><tr valign="top"><td>ConfFiles</td><td>
 						<p>
-							ユーザが修正し得る設定ファイルの空白区切りのリスト．
-							パーセント展開は行われます．
-							ファイルは，次のように絶対パスで指定しなければいけません．
-							<code>%p/etc/%n.conf</code>.
+							ユーザが修正できる設定ファイルの空白区切りの一覧。
+							パーセント展開が行われます．
+							ファイルは、<code>%p/etc/%n.conf</code> のように絶対パスで指定しなければいけません。
 							dpkg はここで指定されたファイルを以下のように特別な扱いをします．
 							パッケージがアップグレードされたとき，新設定ファイルが提供され，しかもユーザが旧パッケージの設定ファイルが修正していた場合は，
 							ユーザはどちらのバージョンを使うか尋ねられ，設定ファイルのバックアップが作られます．
 							パッケージを "remove" しても，設定ファイルは削除されずにディスク上に残ります．
-							設定ファイルも削除されるのは "purge" を命じたときのみ．
+							設定ファイルも削除されるのは "purge" を命じたときのみです。
 						</p>
 					</td></tr><tr valign="top"><td>InfoDocs</td><td>
 						<p>
@@ -1277,19 +1347,22 @@ AnotherVar: foo bar
 							postinst および prerm スクリプトに追加されます．
 </p>
 
-<p><b>Note:</b>  Only use the un-numbered file in the case of split Info
-documents. E.g. if a package has:</p>
+<p><b>注記:</b>
+Info ドキュメントがスプリットされている場合、
+数字のないファイルだけを使います。
+例えば、パッケージに:
+</p>
 <pre>
 foo.info
 foo.info-1
 foo.info-2
 </pre>
-<p>you should only use:</p>
+<p>があれば、</p>
 <pre>
 InfoDocs:  foo.info
 </pre>
-<p>This feature is still in flux, more fields for finer control may be
-added in the future.
+<p>と記述します。
+この機能はまだ途中で、将来はよりよい制御のためのフィールドが追加されるかもしれません。
 </p>
 
 
@@ -1332,15 +1405,15 @@ added in the future.
 						</p>
 					</td></tr><tr valign="top"><td>DescPackaging</td><td>
 						<p>
-							パッケージングに関する注意書き．
+							パッケージ作成に関する注意書き．
 							「ファイルを適切な場所に置くために Makefile にパッチを当てる」等を (英語で) ここに記述します．
-							複数行に渡ってよい．
+							複数行も可。
 						</p>
 					</td></tr><tr valign="top"><td>DescPort</td><td>
 						<p>
 							パッケージを Darwin に移植する場合に特有の注意書き．
 							「config.guess と libtool スクリプトはアップデートする． -no-cpp-precomp が必要」等を (英語で) ここに記述します．
-							複数行に渡ってよい．
+							複数行も可。
 						</p>
 					</td></tr></table>
 		
@@ -1387,13 +1460,13 @@ added in the future.
 <p>
 %n-%v-%r は，パッケージのユニークな識別子として扱われるため，
 <code>SplitOff</code> (あるいは <code>SplitOff<b>N</b></code>)
-を用いて (同じ <code>Version</code> と <code>Revision</code> で) <code>Package</code> を作成しては行けません．
- Variant を使う際は，各 Variant が独立したパッケージとなるようにしてください．
+を用いて (同じ <code>Version</code> と <code>Revision</code> で) <code>Package</code> を作成してはいけません．
+variant を使う際は，各 variant が独立したパッケージとなるようにしてください．
 つまり，以下のようなパッケージレイアウトは禁止されます:
 </p>
 <pre>
 Package: mime-base64-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.6)
+Type: perl (5.12.3 5.12.4)
 SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
 &lt;&lt;
@@ -1465,37 +1538,46 @@ SplitOff2: &lt;&lt;
 				.info ファイルと同じディレクトリに入れます．
 				パッケージファイル名に完全名を使っている場合は，次のどちらかを使います (どちらも同等)．
 			</p>
-<pre>Patch: %f.patch</pre>
-<pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>
-			<p>
-				新しく導入された方の簡潔なパッケージファイル命名規則を採用しているなら， %f でなく %n を使うこと．
-				これら2つのフィールドは互いに排他的ではなく，両方指定することもできます (PatchScript, Patch の順に両方実行されます)．
-				あるいは，<code>Patch</code> の代わりに，新しい <code>PatchFile</code> を用い，
-				明示的または暗示的に <code>PatchScript</code> を適用します．
-				詳細は <code>PatchFile</code> および <code>PatchScript</code> の説明を参照．
-			</p>
-			<p>
-				パッチファイルではユーザがインストールディレクトリを選択できるようにする方がよいので，
-				<code>/sw</code> という決め打ちではなく <code>@PREFIX@</code> 等の変数を使います．
-				以下のようにすると良いでしょう．
-			</p>
-<pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</pre>
-			<p>
-				パッチの書式は unidiff (unified diff) でなければいけません．
-				普通，次のようにして生成できます．
-			</p>
+
+<pre>PatchFile: %n.patch</pre>
+<p>( variant がある場合、
+<code>%{ni}.patch</code> の方がよいでしょう。)
+また、パッチファイルの MD5 サムを
+<code>PatchFile-MD5</code> に指定し、
+<code>BuildDepends: fink (&gt;= 0.24.12)</code> (またはより新しい fink バージョン)　を指定しなければなりません。
+</p>
+
+<p><code>PatchFile<b>N</b></code>　が使われている場合、
+<code>%n-purpose-of-patch.patch</code>　というようにわかりやすい名前をつけます。
+<code>PatchFile<b>N</b>-MD5</code> も使い、
+<code>BuildDepends: fink (&gt;= 0.24.12)</code> (またはより新しい fink バージョン)　を指定しなければなりません。
+</p>
+
+<p><code>PatchFile</code> がある場合、 <code>PatchScript</code> のデフォルトは:</p>
+<pre>PatchScript: patch -p1 &lt; %{PatchFile}</pre>
+<p><code>PatchFile<b>N</b></code> を使う場合、以下のものが上の <code>PatchScript</code> に追加されます:</p>
+<pre>patch -p1 &lt; %{PatchFile<b>N</b>}</pre>
+<p>(パッチファイルを適用する前に書き換えるなど)<code>PatchScript</code> を指定すると、
+これらのデフォルトは書き換えられます。
+</p>
+<p>パッチファイルに、ユーザの選択した prefix を含める必要がある場合、
+<code>/sw</code> をパッチで使うのではなく、
+<code>@PREFIX@</code> などを使い:</p>
+<pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</pre>
+<p>とします。
+パッチは unidiff 形式で、以下のように作成します:</p>
 <pre>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</pre>
-			<p>
-				エディタに Emacs を使っているなら，上記のコマンド diff の引数に <code>-x'*~'</code> を加え，
-				自動生成されたバックアップファイルを比較対象から除きます．
-			</p>
-			<p>
-				巨大なサイズのパッチを cvs に入れるのは好ましくないことにも注意．
-				そういうパッチは web/ftp サーバに置き，フィールド <code>SourceN:</code> に指定します．
-				自分のウェブサイトを持っていなくても，
-				Fink プロジェクトの管理者がそのファイルを Fink のサイトからダウンロードできるようにすることも可能です．
-				パッチが 30KB より大きければ，独立にダウンロードする方法を考慮した方がよいでしょう．
-			</p>
+<p>emacs でファイルを編集した場合、
+diff コマンドに
+<code>-x'*~'</code> 
+と追加すると、自動的に生成されるバックアップファイルを除くことができます。</p>
+<p>もう一つの注意点は、巨大すぎるパッチを cvs に入れないことです。
+ウェブか FTP サーバにおき、<code>SourceN:</code>　フィールドで指定します。
+ウェブサイトを持っていない場合、
+fink プロジェクトの管理者が fink サイトから提供できるようにします。
+パッチが約 30Kb をこえるなら、別々にダウンロードすることを検討してください。
+</p>
+
 		
 		<h2><a name="profile.d">6.6 Profile.d スクリプト</a></h2>
 			

@@ -1,7 +1,7 @@
 <?
 $title = "パッケージ作成 - ポリシー";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: babayoshihiko';
+$cvs_date = 'Date: 2014/09/09 03:41:02';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト"><link rel="prev" href="format.php?phpLang=ja" title="パッケージ記述">';
 
 
@@ -115,7 +115,7 @@ include_once "header.ja.inc";
 				OpenSSL ライセンスが GPL と LPGL ライセンスが明らかに整合性を欠いていることから，
 				openssl にリンクをしている fink パッケージのうち， GPL または LGPL ライセンスを使用しているものは
 				"Restrictive" となります．
-				Fink プロジェクトはこれらのパッケージをバイナリ配布しないことになるが，利用者は自己判断でコンパイルすることができます．				
+				Fink プロジェクトはこれらのパッケージをバイナリ配布しないことになりますが，利用者は自己判断でコンパイルすることができます．				
 			</p>
 			<p>
 				パッケージメンテナは，元のパッケージライセンスを <code>DescPackaging</code> に記述してください．
@@ -128,7 +128,7 @@ include_once "header.ja.inc";
 				パッケージは Fink のディレクトリ外にファイルをインストールしてはしてはいけません．
 			</p>
 			<p>
-				この決まりを破る他に仕方がないときには例外が設けられます (XFree86 など)．
+				他に方法がないときには例外が設けられます (XFree86 など)．
 				この場合，パッケージはインストール前に既存のファイルを調べ，上書きの恐れがある場合はインストールを中止する必要があります．
 				そのようなパッケージは， Fink ディレクトリ外にインストールしたファイルはそのパッケージが取り除かれるときに全て削除されること，
 				あるいはそのようなファイルは残しても問題がないことを保証しなければいけません
@@ -139,14 +139,10 @@ include_once "header.ja.inc";
 			
 			<p>
 				Fink は共有ライブラリに関して新しいポリシーを定め， 2002 年 2 月から施行しています．
-				以下では Fink 0.5.0 と共に公布された，共有ライブラリについてのポリシー第 4 版
-
-as modified in December, 2006 to handle 64bit libraries
-and from January, 2008 to handle private shared libraries. (In addition,
-the discussion was updated in June, 2008 to eliminate obsolete references to a
-transitional period for implementing the shared libraries policy.)
-We begin with a quick summary, and then discuss things in more detail.
-
+				以下では Fink 0.5.0 と共に公布された，共有ライブラリについてのポリシー第 4 版です。
+				これは、2006年12月の時点で、 64 bit ライブラリを扱うために、
+				2008年1月時点で、プライベートな共有ライブラリを扱うために修正されています。
+				(さらに、2008年6月に共有ライブラリを実行する暫定期間への参照を削除しました。)
 				最初に要点をかいつまんで述べ，後から詳細に移ります．
 			</p>
 			<p>
@@ -167,14 +163,14 @@ We begin with a quick summary, and then discuss things in more detail.
 					他のパッケージが一切そのパッケージに依存しないようにする．
 				</li>
 			</ul>
-<p>Note that a package may also install private shared libraries, which
-are not intended to be linked from any other package.  In this case, the
-libraries need not go into a separate package, but a <code>Shlibs</code>
-field must still be part of the package containing shared libraries.  Also,
-maintainers should try to avoid storing a final link from libfoo.dylib
-in the main library directory <code>%i/lib</code> 
-(or its 64-bit equivalent), to prevent
-other programs from accidentally linking to this library.
+<p>
+パッケージはプライベートな共有ライブラリをインストールすることがあることに注意してください。
+これは、他のパッケージからリンクされることを意図しています。
+この場合、ライブラリは別パッケージになる必要があります。
+共有ライブラリを含むパッケージは、<code>Shlibs</code> がなければなりません。
+また、他のプログラムが誤ってリンクしないように、
+メンテナは <code>%i/lib</code> (またはその 64 bit 版) 内にある主要ライブラリが 
+libfoo.dylib からの最終的なリンクを保存しないよう努めてください。
 </p>
 			<p>
 				このポリシーに反し，パッケージを分割しない場合には，フィールド <code>DescPackaging</code> に理由を記述しなければいけません．
@@ -238,12 +234,9 @@ other programs from accidentally linking to this library.
 				この場合は <code>SplitOff2</code>, <code>SplitOff3</code> などを使えばだいじょうぶです．)
 			</p>
 			<p>
-				
-
-Each software package for which public shared libraries are built must have
-a <b>major version number</b> N, which is included in the shared
-library's filename (for example, <code>libbar.N.dylib</code>).
-
+				共有ライブラリがビルドされるソフトウェアパッケージは、
+				<b>メジャーバージョン番号</b> N がなければなりません。
+				これは、共有ライブラリのファイル名にも含まれています (例 <code>libbar.N.dylib</code>)。
 				「メジャーバージョン」は，ライブラリの API にパッケージ間で非互換な変更が加えられたときのみ変わることになっています．
 				Fink では，名称は以下の要領で作成されます．
 				すなわち， upstream パッケージ名が bar なら，そのFinkパッケージの名前は barN と barN-shlibs になります．
@@ -273,11 +266,9 @@ Depends: barN-shlibs
 BuildDepends: barN
 </pre>
 <p>
-It is not be permitted for 
-another package to depend on barN itself.  (Although there may still be
-a few such dependencies involving packages which were in place prior to 
-February, 2002.)  This is
-signaled to other developers by a boolean field
+他のパッケージが、barN 自体に依存することは許されていません。
+(2002年2月以前からあるパッケージについては、まだそのような依存性になっているかもしれません。)
+これは、他の開発者には真偽値で連絡されます。
 </p>
 <pre>
 BuildDependsOnly: True
@@ -303,10 +294,10 @@ BuildDependsOnly: True
 %i/lib/libbar.N.dylib -&gt; %p/lib/libbar.N.x.y.dylib
 %i/lib/libbar.dylib -&gt; %p/lib/libbar.N.x.y.dylib
 </pre>
-<p>from the install_name path and from the linking path to the actual
-library.  (The first will not be needed if the library is in fact
-installed at the install_name path, which is becoming more common.)
-</p>
+			<p>
+				install_name パスからと、リンクパスからの実際のライブラリ。
+			(ライブラリが実際に install_name パスにインストールされる場合は、最初のものは不要です。こちらのほうが普通です。)
+			</p>
 			<p>
 				静的ライブラリもビルドする場合，次の場所にインストールされることになります．
 			</p>
@@ -371,8 +362,9 @@ SplitOff: &lt;&lt;
 				次に <code>DocFiles</code> によりドキュメントファイルが <code>%i/share/doc/barN-shlibs</code> にコピーされます．
 			</p>
 			<p>
-				barN-shlibs の正確な「バージョン」 (これは "%N-shlibs (= %v-%r)" と略記できます)
-				を親パッケージ barN の依存情報に含めたことに注意して下さい．
+				barN-shlibs の正確な「バージョン」
+				を親パッケージ barN の依存情報に含めたことに注意して下さい
+				 (これは "%N-shlibs (= %v-%r)" と略記できます)．
 				これにより「バージョン」が確かに適合するようになり，
 				さらにパッケージ barN がパッケージ barN-shlibs の依存情報を自動的に「継承する」ことを保証します．
 			</p>
@@ -469,7 +461,6 @@ Shlibs: &lt;&lt;
 				(新しい「バージョン」または「版」とは，
 				新しい compatibility_version のライブラリを提供する最初の「バージョン」または「版」のことです．)
 			</p>
-
 <p>
 プライベートなライブラリの <code>Shlibs</code> は，文法が異なります:
 </p>
@@ -584,10 +575,13 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				Perl のバージョンに依存する Perl モジュールは該当バージョンの付いた Perl の実行可能プログラム (perl5.6.0 など)
 				を使ってビルドされなければいけません．
 				また，モジュールの含むファイルは，標準の Perl のディレクトリ内の，バージョンの付いたサブディレクトリ
-				(<code>/sw/lib/perl5/5.6.0</code> や <code>/sw/lib/perl5/5.6.0/darwin</code> など) に格納しなければいけません．
-				命名規約により，バージョン 5.6.0 に依存する Perl モジュールに <code>-pm560</code> を後置します．
+				(<code>/sw/lib/perl5/5.12.3</code> や <code>/sw/lib/perl5/5.12.3/darwin</code> など) に格納しなければいけません．
+				命名規約により，バージョン 5.12.3 に依存する Perl モジュールに <code>-pm5123</code> を後置します．
 				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，
-				perl 5.6.1 (10.2 ツリー), perl 5.8.0 (10.3 ツリー), perl 5.8.1， perl 5.8.4 または perl 5.8.6 でもそのように対応されます．
+				perl 5.10.0 (10.6 ツリーのみ), 
+				perl 5.12.4 (10.7 ツリーのみ),
+				perl 5.16.2 (10.7 ツリーのみ)
+				でもそのように対応されます．
 			</p>
 			<p>
 				ディレクティブ <code>Type: perl 5.6.0</code> は自動的にバージョンの付いた Perl の実行可能ファイルを使い，
@@ -603,16 +597,15 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 			</p>
 			<p>
 				fink 0.20.2 の時点で， system-perl バーチャルパッケージは，
-				システムに 5.8.0 以降の Perl がある場合，自動的に Perl モジュールを提供します．
-				system-perl-5.8.1-1 の場合，
-				<b>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581,
-			 file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581,
-			 i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581,
-			 mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581,
-			 test-simple-pm581, time-hires-pm581.</b>
-				です．
-				(この一覧は 0.20.1 から若干変更されています．
-				パッケージメンテナは正しい一覧を使用しているか必ず確認してください．)
+				システムに 5.8.0 以降の Perl がある場合，自動的に Perl モジュールを提供 (Provides) します．
+				提供中の perl モジュール一覧を生成しているコードは、
+				<code>fink</code> パッケージの中の
+				<code>VirtPackage.pm</code> というファイルにあります。
+			</p>
+			<p>
+				システム perl が異なると、提供するモジュールも変わります。
+				パッケージメンテナは、提供されている perl モジュールを利用する場合には、
+				正しい一覧を想定しているか確認することを勧めます。
 			</p>
 			<p>
 				Fink 0.13.0 から利用可能になったコマンド <code>fink validate</code> を .deb ファイルに適用すると，
@@ -627,13 +620,15 @@ manpage やバイナリ，その他のスクリプトなど，これらのパッ
 <code>Replaces</code> を用いることで，同名のファイルがあっても異なる perl バージョンの perl モジュールは，以前は許可されていましたが，今後は許可されません．
 manpage に関する解決として，2005年3月より，それぞれの perl-X.Y.Z に <code>%p/lib/perl5/X.Y.Z/man</code> という MANPATH を定義しました．
 このため，-man や -doc といった SplitOff を作って対処する必要はなくなりました．
-例えば， uri-pm581 と uri-586 のコンフリクトの場合，どちらにもある <code>URI.3pm</code> という manpage は，それぞれ <code>%p/lib/perl5/5.8.1/man/man3/URI.3pm</code> と <code>%p/lib/perl5/5.8.6/man/man3/URI.3pm</code> にインストールされます．
+例えば， uri-pm5124 と uri-5162 のコンフリクトの場合，どちらにもある <code>URI.3pm</code> という manpage は，
+それぞれ <code>%p/lib/perl5/5.12.4/man/man3/URI.3pm</code> と 
+<code>%p/lib/perl5/5.16.2/man/man3/URI.3pm</code> にインストールされます．
 ただし，<code>Type: perl X.Y.Z</code> によるスクリプトは変更されていないので， <code>InstallScript</code> にてどこに mapnage をインストールするのかを記述する必要があります．
 もし複雑なスクリプトを記述していないのであれば，既存のものを用い，ファイルを移動させるだけで済みます．
 </p>
 <pre>
 %{default_script}
-mv %i/share/man %i/lib/perl5/5.8.1
+mv %i/share/man %i/lib/perl5/5.12.4
 </pre>
 <p>
 これにより，全ての manpage が移動します．
@@ -641,8 +636,8 @@ mv %i/share/man %i/lib/perl5/5.8.1
 </p>
 <pre>
 %{default_script}
-mkdir -p %i/lib/perl5/5.8.1/man
-mv %i/share/man/man3 %i/lib/perl5/5.8.1/man
+mkdir -p %i/lib/perl5/5.12.4/man
+mv %i/share/man/man3 %i/lib/perl5/5.12.4/man
 </pre>
 <p>
 デモ用やユーティリティ的なスクリプトなどが <code>%p/bin</code> にある場合は，いくつかの解決方法があります．
@@ -654,7 +649,7 @@ mv %i/share/man/man3 %i/lib/perl5/5.8.1/man
 <pre>
 Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.4 5.8.6)
+Type: perl (5.12.3 5.12.4 5.16.2)
 InstallScript: &lt;&lt;
   %{default_script}
   mkdir -p %i/lib/perl5/%type_raw[perl]/man
@@ -663,8 +658,8 @@ InstallScript: &lt;&lt;
 SplitOff: &lt;&lt;
   Package: %N-bin
   Depends: %N
-  Conflicts: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
-  Replaces: %{Ni}5.8.1, %{Ni}5.8.4, %{Ni}5.8.6
+  Conflicts: %{Ni}5.12.3, %{Ni}5.12.4, %{Ni}5.16.2
+   Replaces: %{Ni}5.12.3, %{Ni}5.12.4, %{Ni}5.16.2
   Files: bin share/man/man1
 &lt;&lt;
 &lt;&lt;
@@ -676,7 +671,7 @@ SplitOff: &lt;&lt;
 <pre>
 Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
-Type: perl (5.8.1 5.8.4 5.8.6)
+Type: perl (5.12.3 5.12.4 5.16.2)
 InstallScript: &lt;&lt;
   %{default_script}
   mkdir -p %i/lib/perl5/%type_raw[perl]/man
@@ -714,52 +709,54 @@ InstallScript: &lt;&lt;
 
 
 
-
-<h2><a name="sources">3.7 Source Policy</a></h2>
-    <p>Sources should normally be downloaded from the location(s) that the upstream
-    developer(s) use, and any modifications for Fink should be done through the use
-    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
-    source archive as a <code>Source</code> in your Fink packaging.</p>
-    <p>If a VCS checkout (e.g. from <b>git</b> or <b>svn</b>) is to be used, e.g.
-    because a project doesn't do formal releases, or a fix for a particular issue has
-    been added between releases of a package, an acceptable source can be generated
-    via the following method:</p>
+<h2><a name="sources">3.7 Source ポリシー</a></h2>
+    <p>
+    ソースは、通常であれば upstream の開発者がつかっている場所からダウンロードされるべきであり、
+    Fink 用の変更は、PatchFile または PatchScript の使用でする必要があります。
+    Fink のパッケージでは、 ソースを変更して、変更済みソースアーカイブを <code>Source</code> に設定してはいけません。
+    </p>
+    <p>
+    もし、プロジェクトは公式リリースを行っていない、
+    あるいはリリース間に特定の修正のための追加など、
+    CVS チェックアウト (<b>git</b> や <b>svn</b> など) が使われる場合、
+    以下の要領で作成したソースを使用することができます:
+    </p>
     <ol>
-        <li>Check out the package, preferably at a definite revision of the VCS.</li>
-        <li>Make an archive from the VCS checkout (e.g. <b>zip</b>, <b>tar</b>, <b>tar.gz</b>,
-        or <b>tar.bz2</b>).
-            <p>Give the tarball a unique version.  For example, you can include the VCS revision in the archive name, e.g.
-            <code>foo-0svn1234.tar.gz</code> for a package that doesn't make releases, or
-            <code>bar-1.2.3+svn4567.tar.bz2</code> for a Fink package which is between
-            upstream releases.</p></li>
-        <li>Use the same <code>Version</code> in your <code>.info</code> file.</li>
-        <li>It is also useful to put the commands that you ran to generate the source tarball in the
-        <code>DescPackaging</code> field.</li>
-        <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
-        If you don't have ready access to one, ask on the
-        <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a> or
-        <a href="http://webchat.freenode.net">the #fink IRC channel</a>,
-        and someone should be able to help.</li>
+        <li>パッケージをチェックアウトする。できる限り VCS の限定リビジョンを使用。</li>
+        <li>VCSチェックアウトからアーカイブ作成 (<b>zip</b>, <b>tar</b>, <b>tar.gz</b>, <b>tar.bz2</b> など)。
+            <p>アーカイブは、固有のバージョンをつける。たとえば、アーカイブ名に VCS リビジョンをいれて、
+            リリースしないパッケージであれば <code>foo-0svn1234.tar.gz</code> とし、
+            upstream リリース間の Fink パッケージであれば <code>bar-1.2.3+svn4567.tar.bz2</code>
+            とする。</p></li>
+        <li>同じ <code>Version</code> を、 <code>.info</code> ファイルでも使う。</li>
+        <li><code>DescPackaging</code> フィールドに、ソースアーカイブを生成するために実行したコマンドを書いておくと便利です。</li>
+        <li>ユーザが <code>fink</code> を使ってダウンロードできる公開ダウンロードサイトにアーカイブをアップロードする。
+        もし、そのようなサイトがない場合は、
+        <a href="mailto:fink-devel@lists.sourceforge.net">Fink 開発者メーリングリスト</a> または
+        <a href="http://webchat.freenode.net">#fink IRC チャンネル</a>,
+        に連絡してください。だれかが助けてくれるでしょう。</li>
     </ol>
 
 
-<h2><a name="downloading">3.8 File Download Policy</a></h2>
-    <p>Packages are not to download any files during the unpack, patch, compile, install,
-    or build phases of the <a href="reference.php?phpLang=ja#build">build process</a>.  Any large patches (i.e.
-    larger than can be accommodated conveniently in a PatchFile) that need to be applied should
-    set up as additional Sources in accordance with the <a href="policy.php?phpLang=ja#sources">
-    Source Policy.</a></p>
-    <p>Packages may download data in a PostInstScript after they have been installed on the system,
-    under some limited circumstances:</p>
+<h2><a name="downloading">3.8 ファイルダウンロードのポリシー</a></h2>
+    <p>パッケージは、
+    <a href="reference.php?phpLang=ja#build">ビルドプロセス</a>
+    の unpack, patch, compile, install, build どの段階でもファイルをダウンロードしません。
+    巨大なパッチ (例えば、PatchFile で扱うには大きすぎるもの)　は、
+    <a href="policy.php?phpLang=ja#sources">ソースポリシー</a> に従ってソースとして設置してください。
+    </p>
+    <p>
+    パッケージは、以下の条件下で、PostInstScript　でシステムにインストール後にデータをダウンロードしても構いません。
+    </p>
     <ul>
-        <li>No updates to the package itself are allowed.</li>
-        <li>The nature of the data is such that it couldn't easily be packaged for Fink.  E.g.
-        virus definitions for <code>clamav</code> can be downloaded during this phase,
-        because they change continually.</li>
+        <li>パッケージ自身の更新は不可。</li>
+        <li>
+        データの性質上、Fink で容易にパッケージ化できないもの。
+        例えば、 <code>clamav</code> のウイルス定義は、頻繁に更新されるので、この段階でダウンロードできます。
+        </li>
     </ul>
-    <p>If you are unsure, contact <a href="mailto:fink-core@lists.sourceforge.net">the Fink Core
-    Team</a>.</p> 
-
+    <p>もし不安があるなら、<a href="mailto:fink-core@lists.sourceforge.net">Fink Core
+    Team</a>に相談してください。</p> 
 
 
 
