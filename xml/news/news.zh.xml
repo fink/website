@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="zh">
- <cvsid>$Id: news.zh.xml,v 1.52 2014/04/08 01:32:11 nieder Exp $</cvsid>
+ <cvsid>$Id: news.zh.xml,v 1.53 2014/09/20 18:20:12 alexkhansen Exp $</cvsid>
+<newsitem>
+ <date>2014-9-20</date>
+ <headline>fink-0.37.1 released.</headline>
+ <body>
+  <p>
+  <code>fink-0.37.1</code> was released on 20 September, 2014.
+  This release fixes bootstrapping on 10.9 under Xcode 6.x, among other fixes and
+  enhancements.
+  In addition, this release adds official 10.9.4 and 10.9.5 support.
+  </p>
+ </body>
+</newsitem> 
+<newsitem>
+ <date>2014-06-04</date>
+ <headline>fink-0.36.5 and fink-0.37.0 released. End of official support for 10.6.</headline>
+ <body>
+  <p>
+  <code>fink-0.37.0</code> and <code>fink-0.37.0</code> were released on 4 June, 2014.
+  These <code>fink</code> releases contain fixes for Java detection on 10.6 if older
+  versions of Apple's Java SDK are installed.  <code>fink-0.37.0</code> officially 
+  recognizes OS 10.9.3.  In addition, Fink's compiler wrappers are 
+  now installed directly by the fink package to make for easier modifications.
+  </p>
+  <p>
+  <code>fink-0.36.5</code> marks the end of 10.6 support by the Fink Project.  Users
+  who want package updates should contact the maintainers of the respective packages.
+  Unmaintained packages can be updated by request as well.
+  </p>
+ </body>
+</newsitem> 
 <newsitem>
  <date>2014-04-06</date>
  <headline>fink-0.36.4 released</headline>

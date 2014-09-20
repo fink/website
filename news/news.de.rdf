@@ -5,61 +5,68 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2014-06-04T20:43:13-07:00</dc:date>
+    <dc:date>2014-09-20T11:19:19-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#22014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20veröffentlicht.%20Ende%20der%20offiziellen%20Unterstützung%20für%2010.6.">
-      <title>fink-0.36.5 und fink-0.37.0 veröffentlicht. Ende der offiziellen Unterstützung von 10.6.</title>
-      <link>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20veröffentlicht.%20Ende%20der%20offiziellen%20Unterstützung%20für%2010.6.</link>
-      <guid>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20veröffentlicht.%20Ende%20der%20offiziellen%20Unterstützung%20für%2010.6.</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%F6ffentlicht.%20Ende%20der%20offiziellen%20%3F%20%20%20Unterst%FCtzung%20von%2010.6.">
+      <title>fink-0.36.5 und fink-0.37.0 veröffentlicht. Ende der offiziellen 
+   Unterstützung von 10.6.</title>
+      <link>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%F6ffentlicht.%20Ende%20der%20offiziellen%20%3F%20%20%20Unterst%FCtzung%20von%2010.6.</link>
+      <guid>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%F6ffentlicht.%20Ende%20der%20offiziellen%20%3F%20%20%20Unterst%FCtzung%20von%2010.6.</guid>
       <description>
 		<![CDATA[
-
+	
   <p>
-  fink-0.37.0 und fink-0.37.0 wurden am 4. Juni 2014 veröffentlicht. Diese
-  Ausgabe von fink behebt Probleme bei der Bestimmung von Java auf 10.6, wenn
-  eine ältere Version des Apple	Java SDK installiert ist. fink-0.37.0 erkennt
-  offiziell OS 10.9.3. Außerdem werden Finks "compiler wrapper" jetzt direkt
-  vom Paket "fink" installiert.  Modifikationen werden dadurch einfacher.
+	fink-0.37.0 und fink-0.37.0 wurden am 4. Juni
+	2014 veröffentlicht. Diese Ausgabe von fink behebt Probleme
+	bei der Bestimmung von Java auf 10.6, wenn eine ältere Version des Apple
+	Java SDK installiert ist. fink-0.37.0 erkennt offiziell OS
+	10.9.3. Außerdem werden Finks "compiler wrapper" jetzt direkt vom Paket
+	"fink" installiert.  Modifikationen werden dadurch einfacher.
   </p>
-  <p>fink-0.36.5 markiert das Ende der Unterstützung von 10.6 durch das Fink
-  Projekt. Nutzer, die Paket-Updates benötigen, sollten den Maintainer des
-  jeweiligen Pakets kontaktieren. Pakete ohne Maintainer können auch auf
-  Anfrage aktualisiert werden.</p>
-
+  <p>
+	fink-0.36.5 markiert das Ende der Unterstützung von 10.6
+	durch das Fink Projekt. Nutzer, die Paket-Updates benötigen, sollten den
+	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
+	können auch auf Anfrage aktualisiert werden.
+  </p>
+ 
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
   <p>
-  fink-0.37.0 und fink-0.37.0 wurden am 4. Juni 2014 veröffentlicht. Diese
-  Ausgabe von fink behebt Probleme bei der Bestimmung von Java auf 10.6, wenn
-  eine ältere Version des Apple	Java SDK installiert ist. fink-0.37.0 erkennt
-  offiziell OS 10.9.3. Außerdem werden Finks "compiler wrapper" jetzt direkt
-  vom Paket "fink" installiert.  Modifikationen werden dadurch einfacher.
+	fink-0.37.0 und fink-0.37.0 wurden am 4. Juni
+	2014 veröffentlicht. Diese Ausgabe von fink behebt Probleme
+	bei der Bestimmung von Java auf 10.6, wenn eine ältere Version des Apple
+	Java SDK installiert ist. fink-0.37.0 erkennt offiziell OS
+	10.9.3. Außerdem werden Finks "compiler wrapper" jetzt direkt vom Paket
+	"fink" installiert.  Modifikationen werden dadurch einfacher.
   </p>
-  <p>fink-0.36.5 markiert das Ende der Unterstützung von 10.6 durch das Fink
-  Projekt. Nutzer, die Paket-Updates benötigen, sollten den Maintainer des
-  jeweiligen Pakets kontaktieren. Pakete ohne Maintainer können auch auf
-  Anfrage aktualisiert werden.</p>
-
+  <p>
+	fink-0.36.5 markiert das Ende der Unterstützung von 10.6
+	durch das Fink Projekt. Nutzer, die Paket-Updates benötigen, sollten den
+	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
+	können auch auf Anfrage aktualisiert werden.
+  </p>
+ 
 		]]>
 	</content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20veröffentlicht">
+    <item rdf:about="http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20ver%F6ffentlicht">
       <title>fink-0.36.4 veröffentlicht</title>
-      <link>http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20veröffentlicht</link>
-      <guid>http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20veröffentlicht</guid>
+      <link>http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20ver%F6ffentlicht</link>
+      <guid>http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20ver%F6ffentlicht</guid>
       <description>
 		<![CDATA[
-
+	
   <p>
-  fink-0.36.4 wurde am 6. April 2014 veröffentlicht.  Diese
+  fink-0.36.4 wurde am 6.  April 2014 veröffentlicht.  Diese
   Ausgabe von fink stellt die Benutzung einer offiziellen
   binären Distribution als Voreinstellung für 10.8 und 10.9 wieder her.
   (Sollten Distributionen für 10.6 und 10.7 erstellt werden, werden auch
-  diese unterstützt). Außerdem wurden mehrere Probleme behoben, die mit
-  Xcode 5.1 auf 10.8 und 10.9 eingeführt wurden. Diese Ausgabe enthält
+  diese unterstützt).  Außerdem wurden mehrere Probleme behoben, die mit
+  Xcode 5.1 auf 10.8 und 10.9 eingeführt wurden.  Diese Ausgabe enthält
   auch die offizielle Unterstützung für OS 10.9.2, behebt die
   bootstrap-Prozedur, wenn Xcode.app nicht vorhanden ist und macht x86_64
   zur voreingestellten Architektur für 10.6 bootstraps.
@@ -67,19 +74,19 @@
   <p>Nutzern wird empfohlen, fink selfupdate auszuführen, um diese
   Version von fink zu installieren, insbesondere vor dem Hintergrund der
   build-Probleme mit Xcode 5.1.</p>
-
+ 
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
   <p>
-  fink-0.36.4 wurde am 6. April 2014 veröffentlicht.  Diese
+  fink-0.36.4 wurde am 6.  April 2014 veröffentlicht.  Diese
   Ausgabe von fink stellt die Benutzung einer offiziellen
   binären Distribution als Voreinstellung für 10.8 und 10.9 wieder her.
   (Sollten Distributionen für 10.6 und 10.7 erstellt werden, werden auch
-  diese unterstützt). Außerdem wurden mehrere Probleme behoben, die mit
-  Xcode 5.1 auf 10.8 und 10.9 eingeführt wurden. Diese Ausgabe enthält
+  diese unterstützt).  Außerdem wurden mehrere Probleme behoben, die mit
+  Xcode 5.1 auf 10.8 und 10.9 eingeführt wurden.  Diese Ausgabe enthält
   auch die offizielle Unterstützung für OS 10.9.2, behebt die
   bootstrap-Prozedur, wenn Xcode.app nicht vorhanden ist und macht x86_64
   zur voreingestellten Architektur für 10.6 bootstraps.
@@ -87,7 +94,7 @@
   <p>Nutzern wird empfohlen, fink selfupdate auszuführen, um diese
   Version von fink zu installieren, insbesondere vor dem Hintergrund der
   build-Probleme mit Xcode 5.1.</p>
-
+ 
 		]]>
 	</content:encoded>
     </item>
@@ -97,7 +104,7 @@
       <guid>http://fink.sourceforge.net/news/#2014-04-06%20Probleme%20mit%20rsync</guid>
       <description>
 		<![CDATA[
-
+	
   <p>
   Es gab Probleme mit dem master rsync server, die bisher nicht behoben
   werden konnten.  Unglücklicherweise betrifft das bis auf zwei auch alle
@@ -110,14 +117,15 @@ rsync://ber.de.eu.finkmirrors.net/finkinfo/
 rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
 
   <p>
-  Alternativ kann man die Update-Methode auch mit fink selfupdate-cvs wechseln.
+  Alternativ kann man die Update-Methode auch mit 
+  fink selfupdate-cvs wechseln.
   </p>
-
+ 
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
   <p>
   Es gab Probleme mit dem master rsync server, die bisher nicht behoben
   werden konnten.  Unglücklicherweise betrifft das bis auf zwei auch alle
@@ -130,9 +138,10 @@ rsync://ber.de.eu.finkmirrors.net/finkinfo/
 rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
 
   <p>
-  Alternativ kann man die Update-Methode auch mit fink selfupdate-cvs wechseln.
+  Alternativ kann man die Update-Methode auch mit 
+  fink selfupdate-cvs wechseln.
   </p>
-
+ 
 		]]>
 	</content:encoded>
     </item>
@@ -142,28 +151,28 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released</guid>
       <description>
 		<![CDATA[
-
+	
   <p>
   fink-0.36.3.1 was released on 30 December, 2013.
-  This release includes official support for OS X 10.9.1, and fixes an
-  issue in which the fink couldn't directly access official or unofficial
-  binary distributions on 64-bit platforms.  It also fixes an issue with
+  This release includes official support for OS X 10.9.1, and fixes an 
+  issue in which the fink couldn't directly access official or unofficial 
+  binary distributions on 64-bit platforms.  It also fixes an issue with 
   32-bit platforms which was introduced in fink-0.36.3.
   </p>
-
+ 
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
   <p>
   fink-0.36.3.1 was released on 30 December, 2013.
-  This release includes official support for OS X 10.9.1, and fixes an
-  issue in which the fink couldn't directly access official or unofficial
-  binary distributions on 64-bit platforms.  It also fixes an issue with
+  This release includes official support for OS X 10.9.1, and fixes an 
+  issue in which the fink couldn't directly access official or unofficial 
+  binary distributions on 64-bit platforms.  It also fixes an issue with 
   32-bit platforms which was introduced in fink-0.36.3.
   </p>
-
+ 
 		]]>
 	</content:encoded>
     </item>
@@ -173,7 +182,7 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20released</guid>
       <description>
 		<![CDATA[
-
+	
   <p>
   fink-0.36.1 was released on 17 November, 2013.
   This release fixes an intermittent bug in building Perl modules
@@ -183,16 +192,16 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
   on it.
   </p>
   <p>
-  In addition, the bootstrap  script now validates whether the Mavericks
-  command-line build tools are installed on that OS version, and prevents
+  In addition, the bootstrap  script now validates whether the Mavericks 
+  command-line build tools are installed on that OS version, and prevents 
   folks from bootstrapping with the wrong tools.
   </p>
-
+ 
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
   <p>
   fink-0.36.1 was released on 17 November, 2013.
   This release fixes an intermittent bug in building Perl modules
@@ -202,11 +211,11 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
   on it.
   </p>
   <p>
-  In addition, the bootstrap  script now validates whether the Mavericks
-  command-line build tools are installed on that OS version, and prevents
+  In addition, the bootstrap  script now validates whether the Mavericks 
+  command-line build tools are installed on that OS version, and prevents 
   folks from bootstrapping with the wrong tools.
   </p>
-
+ 
 		]]>
 	</content:encoded>
     </item>
@@ -216,24 +225,24 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released</guid>
       <description>
 		<![CDATA[
-
+	
   <p>
   fink-0.36.0 was released on 31 October, 2013.
   This is the first release to work with OS X 10.9 (Mavericks).
   We are currently in the process of making packages available.
   </p>
-
+ 
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
   <p>
   fink-0.36.0 was released on 31 October, 2013.
   This is the first release to work with OS X 10.9 (Mavericks).
   We are currently in the process of making packages available.
   </p>
-
+ 
 		]]>
 	</content:encoded>
     </item>
@@ -243,22 +252,22 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released</guid>
       <description>
 		<![CDATA[
-
+	
    <p>
     fink-0.32.5.5 was released on 9 April, 2012.  This bugfix release
     fixes an issue with bootstrapping on 10.5/PowerPC.
    </p>
-
+  
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
    <p>
     fink-0.32.5.5 was released on 9 April, 2012.  This bugfix release
     fixes an issue with bootstrapping on 10.5/PowerPC.
    </p>
-
+  
 		]]>
 	</content:encoded>
     </item>
@@ -268,24 +277,24 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released</guid>
       <description>
 		<![CDATA[
-
+	
    <p>
     fink-0.32.5.4 was released on 8 April, 2012.  This release allows users
     on 10.7 to bootstrap against the Xcode Command Line Tools.  Note that some packages
     actually require the full Xcode to build.
    </p>
-
+  
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
    <p>
     fink-0.32.5.4 was released on 8 April, 2012.  This release allows users
     on 10.7 to bootstrap against the Xcode Command Line Tools.  Note that some packages
     actually require the full Xcode to build.
    </p>
-
+  
 		]]>
 	</content:encoded>
     </item>
@@ -295,30 +304,30 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2012-03-27%20fink-0.32.4.1%20released</guid>
       <description>
 		<![CDATA[
-
+	
       <p>fink-0.32.4.1 was released on 27 March, 2012.  This
       release allows users to install Xcode 4.3.x in an arbitrary location.</p>
-      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and
-      install the Command Line Tools, or install them via the separate installer from
+      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
       connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</p>
       <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
       <p>fink-0.32.4.1 also enhances the checksumming operation under
       fink fetch.</p>
-
+    
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
       <p>fink-0.32.4.1 was released on 27 March, 2012.  This
       release allows users to install Xcode 4.3.x in an arbitrary location.</p>
-      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and
-      install the Command Line Tools, or install them via the separate installer from
+      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
       connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</p>
       <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
       <p>fink-0.32.4.1 also enhances the checksumming operation under
       fink fetch.</p>
-
+    
 		]]>
 	</content:encoded>
     </item>
@@ -328,28 +337,28 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released</guid>
       <description>
 		<![CDATA[
-
+	
       <p>fink-0.32.3 was released on 16 February, 2012.  This
       release recognizes changes that were made for Xcode 4.3.</p>
       <p>After installing Xcode 4.3 in /Applications (and only there)
-      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and
-      install the Command Line Tools, or install them via the separate installer from
+      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
       connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</p>
       <p>to make sure that everything is pointed in the right place.</p>
-
+    
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
       <p>fink-0.32.3 was released on 16 February, 2012.  This
       release recognizes changes that were made for Xcode 4.3.</p>
       <p>After installing Xcode 4.3 in /Applications (and only there)
-      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and
-      install the Command Line Tools, or install them via the separate installer from
+      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
+      install the Command Line Tools, or install them via the separate installer from 
       connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</p>
       <p>to make sure that everything is pointed in the right place.</p>
-
+    
 		]]>
 	</content:encoded>
     </item>
@@ -359,20 +368,20 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2012-02-03%20fink-0.32.2%20released</guid>
       <description>
 		<![CDATA[
-
+	
       <p>fink-0.32.2 was released on 3 February, 2012.  This
       release contains a fix for a bug in the handling of multiple source
       archives in a package, and recognizes OS 10.7.3.</p>
-
+    
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
       <p>fink-0.32.2 was released on 3 February, 2012.  This
       release contains a fix for a bug in the handling of multiple source
       archives in a package, and recognizes OS 10.7.3.</p>
-
+    
 		]]>
 	</content:encoded>
     </item>
@@ -382,7 +391,7 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released</guid>
       <description>
 		<![CDATA[
-
+	
       <p>fink-0.32.1 was released on 26 January, 2012.  This
       release introduces a number of new features.</p>
       <p>Those that impact package maintainers include: RuntimeDepends,
@@ -392,12 +401,12 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <p>Those that impact users include improvements in the bootstrap script and
       additional helpful suggestions in the post-error output.
       </p>
-
+    
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
       <p>fink-0.32.1 was released on 26 January, 2012.  This
       release introduces a number of new features.</p>
       <p>Those that impact package maintainers include: RuntimeDepends,
@@ -407,7 +416,7 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <p>Those that impact users include improvements in the bootstrap script and
       additional helpful suggestions in the post-error output.
       </p>
-
+    
 		]]>
 	</content:encoded>
     </item>
@@ -417,20 +426,20 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2012-01-03%20fink-0.31.6%20released</guid>
       <description>
 		<![CDATA[
-
+	
       <p>fink-0.31.6 was released on 3 January, 2012.  This
       is a bugfix release to address issues with the use of HTTP proxies
       under cvs selfupdates.</p>
-
+    
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
       <p>fink-0.31.6 was released on 3 January, 2012.  This
       is a bugfix release to address issues with the use of HTTP proxies
       under cvs selfupdates.</p>
-
+    
 		]]>
 	</content:encoded>
     </item>
@@ -440,20 +449,20 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</guid>
       <description>
 		<![CDATA[
-
+	
       <p>fink-0.31.5 was released to the 10.4/stable and
       10.7/stable trees on 22 November, 2011.  This is a bugfix release to
       address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
-
+    
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
       <p>fink-0.31.5 was released to the 10.4/stable and
       10.7/stable trees on 22 November, 2011.  This is a bugfix release to
       address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
-
+    
 		]]>
 	</content:encoded>
     </item>
@@ -463,51 +472,26 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <guid>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</guid>
       <description>
 		<![CDATA[
-
+	
       <p>fink-0.31.4 was released to the 10.4/stable and
       10.7/stable trees on 28 October, 2011.  The primary new feature
       in this release is to ensure that the default compiler on OS X 10.6
       is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
-      of the other essential packages which get installed at bootstrap have
+      of the other essential packages which get installed at bootstrap have 
       been updated.</p>
-
+    
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
-
+	
       <p>fink-0.31.4 was released to the 10.4/stable and
       10.7/stable trees on 28 October, 2011.  The primary new feature
       in this release is to ensure that the default compiler on OS X 10.6
       is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
-      of the other essential packages which get installed at bootstrap have
+      of the other essential packages which get installed at bootstrap have 
       been updated.</p>
-
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released">
-      <title>fink-0.31.3 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released</guid>
-      <description>
-		<![CDATA[
-
-      <p>fink-0.31.3 was released to the 10.4/stable and
-      10.7/stable trees on 12 October, 2011.  It recognizes OS 10.7.2 as a
-      supported OS X version, and recognizes Growl 1.3 from the App Store.
-      </p>
-
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-
-      <p>fink-0.31.3 was released to the 10.4/stable and
-      10.7/stable trees on 12 October, 2011.  It recognizes OS 10.7.2 as a
-      supported OS X version, and recognizes Growl 1.3 from the App Store.
-      </p>
-
+    
 		]]>
 	</content:encoded>
     </item>

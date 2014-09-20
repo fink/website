@@ -66,8 +66,8 @@ I'm talking hours or even days here.
 <h2><a name="install">1.2 First Time Installation Fast
 Track</a></h2>
 <p>
-Start out by copying the <code>fink-0.37.0.tar.gz</code>
-file to your home folder (it might also show up as <code>fink-0.37.0.tar</code> if you
+Start out by copying the <code>fink-0.37.1.tar.gz</code>
+file to your home folder (it might also show up as <code>fink-0.37.1.tar</code> if you
 used Safari to download it).
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
@@ -79,15 +79,15 @@ the output have been omitted (<code>...</code>).
 dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
-<pre>[frodo:~] testuser% <b>tar xf fink-0.37.0.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.37.0</b>
-[frodo:~/fink-0.37.0] testuser% <b>./bootstrap</b>
+<pre>[frodo:~] testuser% <b>tar xf fink-0.37.1.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.37.1</b>
+[frodo:~/fink-0.37.1] testuser% <b>./bootstrap</b>
 
 Fink must be installed and run with superuser (root) privileges
 ...
 Choose a method: [1] <b>1</b>
 
-sudo /Users/testuser/fink-0.37.0/bootstrap .sudo '/sw'
+sudo /Users/testuser/fink-0.37.1/bootstrap .sudo '/sw'
 Password: <b>(your normal password here)</b>
 ...
 OK, I'll ask you some questions and update the configuration file in
@@ -133,8 +133,8 @@ Bootstrapping a base system via /sw/bootstrap.
 ...
 
 You should now have a working Fink installation in '/sw'.
-[frodo:~/fink-0.37.0] testuser% <b>cd</b>
-[frodo:~] testuser% <b>rm -r fink-0.37.0</b>
+[frodo:~/fink-0.37.1] testuser% <b>cd</b>
+[frodo:~] testuser% <b>rm -r fink-0.37.1</b>
 [frodo:~] testuser% <b>/sw/bin/pathsetup.sh</b></pre>
 <p>
 The last command runs a little script to help set up your Unix paths

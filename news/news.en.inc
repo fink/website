@@ -1,4 +1,11 @@
-<a name="2014-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6."><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 and fink-0.37.0 released. End of official support for 10.6.</span></a><?php gray_line(); ?>
+<a name="2014-9-20%20fink-0.37.1%20released."><span class="news-date">2014-9-20: </span><span class="news-headline">fink-0.37.1 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.37.1</code> was released on 20 September, 2014.
+  This release fixes bootstrapping on 10.9 under Xcode 6.x, among other fixes and
+  enhancements.
+  In addition, this release adds official 10.9.4 and 10.9.5 support.
+  </p>
+ <a name="2014-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6."><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 and fink-0.37.0 released. End of official support for 10.6.</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.37.0</code> and <code>fink-0.37.0</code> were released on 4 June, 2014.
   These <code>fink</code> releases contain fixes for Java detection on 10.6 if older
@@ -23,17 +30,4 @@
   </p>
   <p>Users are encouraged to run <code>fink selfupdate</code> to install this version of
   fink, particularly in view of the Xcode 5.1 build issues.</p>
- <a name="2014-04-06%20rsync%20issue"><span class="news-date">2014-04-06: </span><span class="news-headline">rsync issue</span></a><?php gray_line(); ?>
-  <p>
-  We've been having issues with the master rsync server, which haven't been
-  resolved as of yet.  Unfortunately, this affects all but two of the other
-  servers.  To work around this problem, edit <code>/sw/etc/fink.conf</code>
-  as an administrator and change your <code>Mirror-rsync</code> setting to one of</p>
-<pre>
-rsync://ber.de.eu.finkmirrors.net/finkinfo/
-rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
-</pre>
-  <p>
-  or use <code>fink selfupdate-cvs</code> to switch your update method.
-  </p>
  

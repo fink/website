@@ -5,8 +5,78 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2014-06-04T20:43:13-07:00</dc:date>
+    <dc:date>2014-09-20T11:20:20-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2014-9-20%20fink-0.37.1%20released.">
+      <title>fink-0.37.1 released.</title>
+      <link>http://fink.sourceforge.net/news/#2014-9-20%20fink-0.37.1%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2014-9-20%20fink-0.37.1%20released.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.37.1 was released on 20 September, 2014.
+  This release fixes bootstrapping on 10.9 under Xcode 6.x, among other fixes and
+  enhancements.
+  In addition, this release adds official 10.9.4 and 10.9.5 support.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.37.1 was released on 20 September, 2014.
+  This release fixes bootstrapping on 10.9 under Xcode 6.x, among other fixes and
+  enhancements.
+  In addition, this release adds official 10.9.4 and 10.9.5 support.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6.">
+      <title>fink-0.36.5 and fink-0.37.0 released. End of official support for 10.6.</title>
+      <link>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6.</link>
+      <guid>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.37.0 and fink-0.37.0 were released on 4 June, 2014.
+  These fink releases contain fixes for Java detection on 10.6 if older
+  versions of Apple's Java SDK are installed.  fink-0.37.0 officially 
+  recognizes OS 10.9.3.  In addition, Fink's compiler wrappers are 
+  now installed directly by the fink package to make for easier modifications.
+  </p>
+  <p>
+  fink-0.36.5 marks the end of 10.6 support by the Fink Project.  Users
+  who want package updates should contact the maintainers of the respective packages.
+  Unmaintained packages can be updated by request as well.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.37.0 and fink-0.37.0 were released on 4 June, 2014.
+  These fink releases contain fixes for Java detection on 10.6 if older
+  versions of Apple's Java SDK are installed.  fink-0.37.0 officially 
+  recognizes OS 10.9.3.  In addition, Fink's compiler wrappers are 
+  now installed directly by the fink package to make for easier modifications.
+  </p>
+  <p>
+  fink-0.36.5 marks the end of 10.6 support by the Fink Project.  Users
+  who want package updates should contact the maintainers of the respective packages.
+  Unmaintained packages can be updated by request as well.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20released">
       <title>fink-0.36.4 released</title>
       <link>http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20released</link>
@@ -404,60 +474,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <p>fink-0.31.5 was released to the 10.4/stable and
       10.7/stable trees on 22 November, 2011.  This is a bugfix release to
       address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released">
-      <title>fink-0.31.4 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.31.4 was released to the 10.4/stable and
-      10.7/stable trees on 28 October, 2011.  The primary new feature
-      in this release is to ensure that the default compiler on OS X 10.6
-      is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
-      of the other essential packages which get installed at bootstrap have 
-      been updated.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.31.4 was released to the 10.4/stable and
-      10.7/stable trees on 28 October, 2011.  The primary new feature
-      in this release is to ensure that the default compiler on OS X 10.6
-      is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
-      of the other essential packages which get installed at bootstrap have 
-      been updated.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released">
-      <title>fink-0.31.3 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-10-12%20fink-0.31.3%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.31.3 was released to the 10.4/stable and
-      10.7/stable trees on 12 October, 2011.  It recognizes OS 10.7.2 as a
-      supported OS X version, and recognizes Growl 1.3 from the App Store.
-      </p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.31.3 was released to the 10.4/stable and
-      10.7/stable trees on 12 October, 2011.  It recognizes OS 10.7.2 as a
-      supported OS X version, and recognizes Growl 1.3 from the App Store.
-      </p>
     
 		]]>
 	</content:encoded>
