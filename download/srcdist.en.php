@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2014/07/09 12:58:57 $';
+$cvs_date = '$Date: 2014/10/02 03:33:54 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -19,12 +19,16 @@ have installed it, you will be able to get package descriptions and patches.
 It will use these to download the source code from the original distribution
 sites or the Fink project's mirrors and build them on your local machine.</p>
 
-<!--akh: edit web/fink_version.inc to update the information hencefort -->
+<!--akh: edit web/fink_version.inc to update the information henceforth -->
 
 <p>The current version, <em>fink-<? print $fink_tool_version; ?></em>, was officially released on
 <? print $fink_tool_release_date; ?>.</p>
 
 <ul>
+	 <li>
+For OS X 10.9 (only), you can use a <a href="https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool">helper script</a>
+which automates the download and build steps below.
+	 </li>
      <li>
 For OS X 10.7-10.9, use <a href="http://downloads.sourceforge.net/fink/fink-<? print $fink_tool_version; ?>.tar.gz"
 onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-<? print $fink_tool_version; ?></a>
