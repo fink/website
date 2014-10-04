@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2014/10/02 03:33:54 $';
+$cvs_date = '$Date: 2014/10/04 16:28:38 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -25,6 +25,13 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 <? print $fink_tool_release_date; ?>.</p>
 
 <ul>
+	 <li>
+For OS X 10.10 betas and developer previews, you should download an archive from the 
+<a href="https://github.com/fink/fink/archive/HalfDome.zip">pre-release branch</a> and
+install from that.  The archive is named <pre>fink-HalfDome.zip</pre> and
+the unpacked directory will be named <pre>fink-HalfDome</pre> rather than having a
+version, but otherwise the instructions below apply.
+	 </li>
 	 <li>
 For OS X 10.9 (only), you can use a <a href="https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool">helper script</a>
 which automates the download and build steps below.
