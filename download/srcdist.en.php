@@ -1,7 +1,7 @@
 <?
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2014/10/04 16:28:38 $';
+$cvs_date = '$Date: 2014/10/17 17:53:47 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -26,10 +26,10 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 
 <ul>
 	 <li>
-For OS X 10.10 betas and developer previews, you should download an archive from the 
-<a href="https://github.com/fink/fink/archive/HalfDome.zip">pre-release branch</a> and
-install from that.  The archive is named <pre>fink-HalfDome.zip</pre> and
-the unpacked directory will be named <pre>fink-HalfDome</pre> rather than having a
+For OS X 10.10, you should download an archive from the 
+<a href="https://github.com/fink/fink/archive/master.zip">pre-release source</a> and
+install from that.  The archive is named <pre>fink-master.zip</pre> and
+the unpacked directory will be named <pre>fink-master</pre> rather than having a
 version, but otherwise the instructions below apply.
 	 </li>
 	 <li>
