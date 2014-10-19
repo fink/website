@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date   = '$Date: 2014/01/24 21:38:49 $';
+$cvs_date   = '$Date: 2014/10/19 11:36:12 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -36,7 +36,7 @@ alt="" style="border: 0"></a>&nbsp;Noticias</h1>
 // Include news items
 require dirname(__FILE__) . "/news/news.es.inc";
 ?>
-<div align="right"><a href="<?php print $root; ?>news/index.php?phpLang=es">Noticias Antiguas...</a></div>
+<div align="right"><a href="<?php print $root; ?>news/index.php?phpLang=es">Noticias Anteriores...</a></div>
 
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
