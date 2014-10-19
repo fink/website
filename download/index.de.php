@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/31 10:42:28 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2014/10/19 21:04:05 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -24,7 +24,7 @@ Ihnen, einen schnellen Einstieg zu finden.
 <ol>
 <li>
 <p>
-10.6, 10.7, 10.8 und 10.9 Nutzer: Derzeit gibt es keine binäre Installation und 
+10.6, 10.7, 10.8 10.9, und 10.10 Nutzer: Derzeit gibt es keine binäre Installation und 
 sie müssen statt dessen der Anleitung 
 <A href="srcdist.php">Quellcode-Installation</A> folgen.<br>
 

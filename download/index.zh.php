@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/07/18 11:55:59 $';
+$cvs_date = '$Date: 2014/10/19 21:04:05 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -22,7 +22,7 @@ include_once "../fink_version.inc";
 <ol>
 <li>
 <p>
-10.6, 10.7, 10.8, and 10.9 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
+10.6, 10.7, 10.8, 10.9, and 10.10 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 
 10.5 users: 下载安装程序磁盘映象：<br>
 <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " 二进制安装包 (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>

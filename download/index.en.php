@@ -1,7 +1,7 @@
 <?
 $title = "Download Quick Start";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/11/01 04:28:18 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2014/10/19 21:04:05 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -22,7 +22,7 @@ with the binary release.
 </p>
 <ol>
 <li>
-<p>10.6, 10.7, 10.8, and 10.9 users:  There is not currently a binary installer, and you will
+<p>10.6, 10.7, 10.8, 10.9, and 10.10 users:  There is not currently a binary installer, and you will
 need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 10.5 users:  
 Download the installer disk image:<br>
