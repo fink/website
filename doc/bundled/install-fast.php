@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/06/05 03:39:13';
+$cvs_date = 'Date: 2014/10/19 03:25:17';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
 include_once "header.inc";
@@ -35,7 +35,7 @@ An installed Mac OS X system, version 10.7 or later.
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
 downloading it directly via developer.apple.com, through the Xcode application, on
 via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
-or on 10.9 by running the</p>
+or on 10.9 and 10.10 by running the</p>
 <pre>xcode-select --install</pre>
 <p>command and choosing the   
 <b>Install</b> button in the window that pops up, or you can install the full
@@ -66,8 +66,8 @@ I'm talking hours or even days here.
 <h2><a name="install">1.2 First Time Installation Fast
 Track</a></h2>
 <p>
-Start out by copying the <code>fink-0.37.1.tar.gz</code>
-file to your home folder (it might also show up as <code>fink-0.37.1.tar</code> if you
+Start out by copying the <code>fink-0.38.0.tar.gz</code>
+file to your home folder (it might also show up as <code>fink-0.38.0.tar</code> if you
 used Safari to download it).
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
@@ -75,19 +75,19 @@ Computer output is in <code>normal face</code>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<code>...</code>).
 </p>
-<p>Note:  on 10.8 and 10.9, after you start the install process you may see
+<p>Note:  on 10.8, 10.9, and 10.10, after you start the install process you may see
 dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
-<pre>[frodo:~] testuser% <b>tar xf fink-0.37.1.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.37.1</b>
-[frodo:~/fink-0.37.1] testuser% <b>./bootstrap</b>
+<pre>[frodo:~] testuser% <b>tar xf fink-0.38.0.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.38.0</b>
+[frodo:~/fink-0.38.0] testuser% <b>./bootstrap</b>
 
 Fink must be installed and run with superuser (root) privileges
 ...
 Choose a method: [1] <b>1</b>
 
-sudo /Users/testuser/fink-0.37.1/bootstrap .sudo '/sw'
+sudo /Users/testuser/fink-0.38.0/bootstrap .sudo '/sw'
 Password: <b>(your normal password here)</b>
 ...
 OK, I'll ask you some questions and update the configuration file in
@@ -133,8 +133,8 @@ Bootstrapping a base system via /sw/bootstrap.
 ...
 
 You should now have a working Fink installation in '/sw'.
-[frodo:~/fink-0.37.1] testuser% <b>cd</b>
-[frodo:~] testuser% <b>rm -r fink-0.37.1</b>
+[frodo:~/fink-0.38.0] testuser% <b>cd</b>
+[frodo:~] testuser% <b>rm -r fink-0.38.0</b>
 [frodo:~] testuser% <b>/sw/bin/pathsetup.sh</b></pre>
 <p>
 The last command runs a little script to help set up your Unix paths

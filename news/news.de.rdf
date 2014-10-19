@@ -5,8 +5,45 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2014-09-20T11:19:19-07:00</dc:date>
+    <dc:date>2014-10-18T20:20:22-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%20support%3A%20%20fink-0.38.0%20released.">
+      <title>Yosemite support:  fink-0.38.0 released.</title>
+      <link>http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%20support%3A%20%20fink-0.38.0%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%20support%3A%20%20fink-0.38.0%20released.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.0 was released on 18 October, 2014.
+  The Fink Project announces official support for Yosemite (OS X 10.10) with
+  the release of fink-0.38.0.
+  </p>
+  <p>
+  10.9 users who want to upgrade their Fink installations in place from 10.9 to 10.10
+  may do so.  To do so, you must install fink-0.38.0 (or later) on 10.9 
+  before updating to 10.10.  We don't support upgrading Fink on 10.8 or earlier to 10.10.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.0 was released on 18 October, 2014.
+  The Fink Project announces official support for Yosemite (OS X 10.10) with
+  the release of fink-0.38.0.
+  </p>
+  <p>
+  10.9 users who want to upgrade their Fink installations in place from 10.9 to 10.10
+  may do so.  To do so, you must install fink-0.38.0 (or later) on 10.9 
+  before updating to 10.10.  We don't support upgrading Fink on 10.8 or earlier to 10.10.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%F6ffentlicht.%20Ende%20der%20offiziellen%20%3F%20%20%20Unterst%FCtzung%20von%2010.6.">
       <title>fink-0.36.5 und fink-0.37.0 veröffentlicht. Ende der offiziellen 
    Unterstützung von 10.6.</title>
@@ -462,35 +499,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <p>fink-0.31.5 was released to the 10.4/stable and
       10.7/stable trees on 22 November, 2011.  This is a bugfix release to
       address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released">
-      <title>fink-0.31.4 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-10-28%20fink-0.31.4%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.31.4 was released to the 10.4/stable and
-      10.7/stable trees on 28 October, 2011.  The primary new feature
-      in this release is to ensure that the default compiler on OS X 10.6
-      is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
-      of the other essential packages which get installed at bootstrap have 
-      been updated.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.31.4 was released to the 10.4/stable and
-      10.7/stable trees on 28 October, 2011.  The primary new feature
-      in this release is to ensure that the default compiler on OS X 10.6
-      is the same for Xcode 3.2.x and 4.2.  In addition, the versions of some
-      of the other essential packages which get installed at bootstrap have 
-      been updated.</p>
     
 		]]>
 	</content:encoded>

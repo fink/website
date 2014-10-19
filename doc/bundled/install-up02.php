@@ -1,7 +1,7 @@
 <?
 $title = "Installation - Clean";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/06/05 03:39:13';
+$cvs_date = 'Date: 2014/10/19 03:25:17';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="prev" href="install-up03.php" title="Upgrading Fink">';
 
 include_once "header.inc";
@@ -29,7 +29,7 @@ include_once "header.inc";
         <p>- 10.4 -&gt; 10.6+</p>
         <p>- 10.5 -&gt; 10.7+</p>
         <p>- 10.6 -&gt; 10.7+</p>
-        <p>- 10.8- -&gt; 10.9</p>
+        <p>- 10.8- -&gt; 10.9+</p>
     </li>
     <li>
         <p>Your Fink installation has linked to libraries, e.g. from MacPorts

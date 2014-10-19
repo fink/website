@@ -5,8 +5,45 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2014-09-20T11:20:20-07:00</dc:date>
+    <dc:date>2014-10-18T20:20:22-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%20support%3A%20%20fink-0.38.0%20released.">
+      <title>Yosemite support:  fink-0.38.0 released.</title>
+      <link>http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%20support%3A%20%20fink-0.38.0%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%20support%3A%20%20fink-0.38.0%20released.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.0 was released on 18 October, 2014.
+  The Fink Project announces official support for Yosemite (OS X 10.10) with
+  the release of fink-0.38.0.
+  </p>
+  <p>
+  10.9 users who want to upgrade their Fink installations in place from 10.9 to 10.10
+  may do so.  To do so, you must install fink-0.38.0 (or later) on 10.9 
+  before updating to 10.10.  We don't support upgrading Fink on 10.8 or earlier to 10.10.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.0 was released on 18 October, 2014.
+  The Fink Project announces official support for Yosemite (OS X 10.10) with
+  the release of fink-0.38.0.
+  </p>
+  <p>
+  10.9 users who want to upgrade their Fink installations in place from 10.9 to 10.10
+  may do so.  To do so, you must install fink-0.38.0 (or later) on 10.9 
+  before updating to 10.10.  We don't support upgrading Fink on 10.8 or earlier to 10.10.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2014-9-20%20fink-0.37.1%20released.">
       <title>fink-0.37.1 released.</title>
       <link>http://fink.sourceforge.net/news/#2014-9-20%20fink-0.37.1%20released.</link>
@@ -451,29 +488,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <p>fink-0.31.6 was released on 3 January, 2012.  This
       is a bugfix release to address issues with the use of HTTP proxies
       under cvs selfupdates.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released">
-      <title>fink-0.31.5 released</title>
-      <link>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2011-11-22%20fink-0.31.5%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.31.5 was released to the 10.4/stable and
-      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
-      address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.31.5 was released to the 10.4/stable and
-      10.7/stable trees on 22 November, 2011.  This is a bugfix release to
-      address bootstrapping and building on OS X 10.6 with Xcode 4.2.</p>
     
 		]]>
 	</content:encoded>

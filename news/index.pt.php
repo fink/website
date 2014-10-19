@@ -1,13 +1,24 @@
 <?
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/09/20 18:20:12';
+$cvs_date = 'Date: 2014/10/19 03:19:22';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2014-9-20%20fink-0.37.1%20released."><span class="news-date">2014-9-20: </span><span class="news-headline">fink-0.37.1 released.</span></a><?php gray_line(); ?>
+<a name="2014-10-18%20Yosemite%20support:%20%20fink-0.38.0%20released."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite support:  fink-0.38.0 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.38.0</code> was released on 18 October, 2014.
+  The Fink Project announces official support for Yosemite (OS X 10.10) with
+  the release of <code>fink-0.38.0</code>.
+  </p>
+  <p>
+  10.9 users who want to upgrade their Fink installations in place from 10.9 to 10.10
+  may do so.  To do so, you must install <code>fink-0.38.0</code> (or later) on 10.9 
+  before updating to 10.10.  We don't support upgrading Fink on 10.8 or earlier to 10.10.
+  </p>
+ <a name="2014-9-20%20fink-0.37.1%20released."><span class="news-date">2014-9-20: </span><span class="news-headline">fink-0.37.1 released.</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.37.1</code> was released on 20 September, 2014.
   This release fixes bootstrapping on 10.9 under Xcode 6.x, among other fixes and

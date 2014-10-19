@@ -1,4 +1,15 @@
-<a name="2014-9-20%20fink-0.37.1%20released."><span class="news-date">2014-9-20: </span><span class="news-headline">fink-0.37.1 released.</span></a><?php gray_line(); ?>
+<a name="2014-10-18%20Yosemite%20support:%20%20fink-0.38.0%20released."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite support:  fink-0.38.0 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.38.0</code> was released on 18 October, 2014.
+  The Fink Project announces official support for Yosemite (OS X 10.10) with
+  the release of <code>fink-0.38.0</code>.
+  </p>
+  <p>
+  10.9 users who want to upgrade their Fink installations in place from 10.9 to 10.10
+  may do so.  To do so, you must install <code>fink-0.38.0</code> (or later) on 10.9 
+  before updating to 10.10.  We don't support upgrading Fink on 10.8 or earlier to 10.10.
+  </p>
+ <a name="2014-9-20%20fink-0.37.1%20released."><span class="news-date">2014-9-20: </span><span class="news-headline">fink-0.37.1 released.</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.37.1</code> was released on 20 September, 2014.
   This release fixes bootstrapping on 10.9 under Xcode 6.x, among other fixes and
@@ -17,18 +28,5 @@
   <code>fink-0.36.5</code> marks the end of 10.6 support by the Fink Project.  Users
   who want package updates should contact the maintainers of the respective packages.
   Unmaintained packages can be updated by request as well.
-  </p>
- <a name="2014-04-06%20fink-0.36.4%20publicado"><span class="news-date">2014-04-06: </span><span class="news-headline">fink-0.36.4 publicado</span></a><?php gray_line(); ?>
-  <p>
-  <code>fink-0.36.4</code> fue publicado el 6 de abril, 2014.
-  Esta versión activa el uso de la distribución binaria oficial en 10.8 y 
-  10.9 (con soporte provisional en el futuro para 10.6 y 10.7).  Adicionalmente, 
-  esta versión funciona en torno a problemas introducidos por Xcode 5.1 en 10.8 
-  y 10.9, corrige problemas en bootstrap cuando Xcode.app no ha sido instalado, y 
-  activa la arquitectura x86_64 como el standard durante bootstrap en 10.6.
-  </p>
-  <p>
-  Se anima a los usuarios que usen <code>fink selfupdate</code> para instalar esta
-  versión, principalmente a causa de los problemas introducidos por Xcode 5.1.
   </p>
  

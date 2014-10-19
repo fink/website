@@ -1,4 +1,15 @@
-<a name="2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%C3%B6ffentlicht.%20Ende%20der%20offiziellen%20%0A%20%20%20Unterst%C3%BCtzung%20von%2010.6."><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 und fink-0.37.0 veröffentlicht. Ende der offiziellen 
+<a name="2014-10-18%20Yosemite%20support:%20%20fink-0.38.0%20released."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite support:  fink-0.38.0 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.38.0</code> was released on 18 October, 2014.
+  The Fink Project announces official support for Yosemite (OS X 10.10) with
+  the release of <code>fink-0.38.0</code>.
+  </p>
+  <p>
+  10.9 users who want to upgrade their Fink installations in place from 10.9 to 10.10
+  may do so.  To do so, you must install <code>fink-0.38.0</code> (or later) on 10.9 
+  before updating to 10.10.  We don't support upgrading Fink on 10.8 or earlier to 10.10.
+  </p>
+ <a name="2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%C3%B6ffentlicht.%20Ende%20der%20offiziellen%20%0A%20%20%20Unterst%C3%BCtzung%20von%2010.6."><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 und fink-0.37.0 veröffentlicht. Ende der offiziellen 
    Unterstützung von 10.6.</span></a><?php gray_line(); ?>
   <p>
 	<code>fink-0.37.0</code> und <code>fink-0.37.0</code> wurden am 4. Juni
@@ -29,20 +40,4 @@
   <p>Nutzern wird empfohlen, <code>fink selfupdate</code> auszuführen, um diese
   Version von fink zu installieren, insbesondere vor dem Hintergrund der
   build-Probleme mit Xcode 5.1.</p>
- <a name="2014-04-06%20Probleme%20mit%20rsync"><span class="news-date">2014-04-06: </span><span class="news-headline">Probleme mit rsync</span></a><?php gray_line(); ?>
-  <p>
-  Es gab Probleme mit dem master rsync server, die bisher nicht behoben
-  werden konnten.  Unglücklicherweise betrifft das bis auf zwei auch alle
-  anderen Server.  Als vorläufige Abhilfe müssen sie die Datei
-  <code>/sw/etc/fink.conf</code> als Administrator editieren und die
-  Einstellung für <code>Mirror-rsync</code> zu einer der folgenden
-  ändern:</p>
-<pre>
-rsync://ber.de.eu.finkmirrors.net/finkinfo/
-rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
-</pre>
-  <p>
-  Alternativ kann man die Update-Methode auch mit 
-  <code>fink selfupdate-cvs</code> wechseln.
-  </p>
  
