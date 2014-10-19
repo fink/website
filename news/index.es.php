@@ -1,42 +1,41 @@
 <?
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/10/19 03:19:21';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2014/10/19 20:30:16';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2014-10-18%20Yosemite%20support:%20%20fink-0.38.0%20released."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite support:  fink-0.38.0 released.</span></a><?php gray_line(); ?>
+<a name="2014-10-18%20Yosemite:%20fink-0.38.0%20publicado"><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite: fink-0.38.0 publicado</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.38.0</code> was released on 18 October, 2014.
-  The Fink Project announces official support for Yosemite (OS X 10.10) with
-  the release of <code>fink-0.38.0</code>.
+  <code>fink-0.38.0</code> fue publicado el 18 octubre de 2014.
+  El projecto Fink anuncia soporte oficial para Yosemite (OS X 10.10) con el 
+  lanzamiento de <code>fink-0.38.0</code>.
   </p>
   <p>
-  10.9 users who want to upgrade their Fink installations in place from 10.9 to 10.10
-  may do so.  To do so, you must install <code>fink-0.38.0</code> (or later) on 10.9 
-  before updating to 10.10.  We don't support upgrading Fink on 10.8 or earlier to 10.10.
+  Usuarios con 10.9 que quieren instalar 10.10 necesitan primero instalar 
+  <code>fink-0.38.0</code> (or mayor) en 10.9 antes de instalar 10.10.  Fink no 
+  se puede actualizar directamente a 10.10 desde 10.7 ó 10.8.
   </p>
- <a name="2014-9-20%20fink-0.37.1%20released."><span class="news-date">2014-9-20: </span><span class="news-headline">fink-0.37.1 released.</span></a><?php gray_line(); ?>
+ <a name="2014-9-20%20fink-0.37.1%20publicado"><span class="news-date">2014-9-20: </span><span class="news-headline">fink-0.37.1 publicado</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.37.1</code> was released on 20 September, 2014.
-  This release fixes bootstrapping on 10.9 under Xcode 6.x, among other fixes and
-  enhancements.
-  In addition, this release adds official 10.9.4 and 10.9.5 support.
+  <code>fink-0.37.1</code> fue publicado el 20 de septiembre de 2014.
+  Esta versión corrige bootstrapping bajo Xcode 6.x é incluye otras correcciones 
+  y mejoras.
+  Aparte, <code>fink-0.37.1</code> incluye soporte para 10.9.4 and 10.9.5.
   </p>
- <a name="2014-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6."><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 and fink-0.37.0 released. End of official support for 10.6.</span></a><?php gray_line(); ?>
+ <a name="2014-06-04%20fink-0.36.5%20y%20fink-0.37.0%20publicados.%20Ultima%20versi%C3%B3n%20para%2010.6"><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 y fink-0.37.0 publicados. Ultima versión para 10.6</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.37.0</code> and <code>fink-0.37.0</code> were released on 4 June, 2014.
-  These <code>fink</code> releases contain fixes for Java detection on 10.6 if older
-  versions of Apple's Java SDK are installed.  <code>fink-0.37.0</code> officially 
-  recognizes OS 10.9.3.  In addition, Fink's compiler wrappers are 
-  now installed directly by the fink package to make for easier modifications.
+  <code>fink-0.37.0</code> and <code>fink-0.37.0</code> fueron publicados el 4 
+  de junio de 2014.  Estas versiones corrigen errores en la detección de de Java 
+  en Snow Leopard si el usuario está usando una versión antigua del Java SDK.  
+  <code>fink-0.37.0</code> reconoce OS X 10.9.3.
   </p>
   <p>
-  <code>fink-0.36.5</code> marks the end of 10.6 support by the Fink Project.  Users
-  who want package updates should contact the maintainers of the respective packages.
-  Unmaintained packages can be updated by request as well.
+  <code>fink-0.36.5</code> marca la ultima versión con soporte para OS X 10.6. 
+  La lista de paquetes seguira activa, pero el sistema ya no recibira nuevas 
+  versiones.
   </p>
  <a name="2014-04-06%20fink-0.36.4%20publicado"><span class="news-date">2014-04-06: </span><span class="news-headline">fink-0.36.4 publicado</span></a><?php gray_line(); ?>
   <p>
@@ -82,7 +81,7 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
   </p>
   <p>
   Esta versión también revisa durante el proceso de bootstrap si 
-  el usuario tiene instalado la version correcta de las herramientas de la
+  el usuario tiene instalado la versión correcta de las herramientas de la
   linea de comandos.
   </p>
  <a name="2013-10-31%20fink-0.36.0%20publicado"><span class="news-date">2013-10-31: </span><span class="news-headline">fink-0.36.0 publicado</span></a><?php gray_line(); ?>
