@@ -1,7 +1,7 @@
 <?
 $title = "Netiquette - Inicial";
 $cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:15';
+$cvs_date = 'Date: 2013/02/02 14:16:41';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Netiquette Contents"><link rel="next" href="reply.php?phpLang=es" title=\'Respondiendo a los "posts"\'><link rel="prev" href="before-post.php?phpLang=es" title="¿Qué hacer antes de \'postear\'?">';
 
 
