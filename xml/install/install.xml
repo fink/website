@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.47 2014/06/05 03:39:13 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.48 2014/10/19 03:25:17 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -50,7 +50,7 @@ An installed Mac OS X system, version 10.7 or later.
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
 downloading it directly via developer.apple.com, through the Xcode application, on
 via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
-or on 10.9 by running the</p>
+or on 10.9 and 10.10 by running the</p>
 <codeblock>xcode-select --install</codeblock>
 <p>command and choosing the   
 <em>Install</em> button in the window that pops up, or you can install the full
@@ -90,7 +90,7 @@ Computer output is in <code>normal face</code>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<code>...</code>).
 </p>
-<p>Note:  on 10.8 and 10.9, after you start the install process you may see
+<p>Note:  on 10.8, 10.9, and 10.10, after you start the install process you may see
 dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
@@ -332,7 +332,7 @@ An installed Mac OS X system, version 10.7 or later.
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
 downloading it directly via developer.apple.com, through the Xcode application, on
 via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
-or on 10.9 by running the</p>
+or on 10.9 and 10.10 by running the</p>
 <codeblock>xcode-select --install</codeblock>
 <p>command and choosing the   
 <em>Install</em> button in the window that pops up, or you can install the full
@@ -431,7 +431,7 @@ Don't worry if you see some packages apparently being compiled twice.
 This is required because to build a binary package of the package
 manager, you first must have the package manager available.
 </p>
-<p>Note:  on 10.8 and 10.9, after you start the install process you may see
+<p>Note:  on 10.8, 10.9, and 10.10, after you start the install process you may see
 dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
@@ -499,6 +499,7 @@ OS 10.6, we don't provide any packages of our own.  The supported options are:
 <li><p>10.7:  Only Apple's standard X11.</p></li>
 <li><p>10.8:  Only XQuartz 2.7.2 and later.</p></li>
 <li><p>10.9:  Only XQuartz 2.7.4 and later.</p></li>
+<li><p>10.9:  Only XQuartz 2.7.7 and later.</p></li>
 </ul>
 <p>
 For more information on installing and running X11, refer to the
@@ -572,7 +573,7 @@ individual packages with the 'update' command.
         <p>- 10.4 -> 10.6+</p>
         <p>- 10.5 -> 10.7+</p>
         <p>- 10.6 -> 10.7+</p>
-        <p>- 10.8- -> 10.9</p>
+        <p>- 10.8- -> 10.9+</p>
     </li>
     <li>
         <p>Your Fink installation has linked to libraries, e.g. from MacPorts
