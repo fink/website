@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - fink.conf";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2014/10/20 11:41:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="usage.php?phpLang=de" title="Das fink-Tool über die Kommandozeile benutzen"><link rel="prev" href="upgrade.php?phpLang=de" title="Fink Aktualisieren">';
 
 
@@ -127,6 +127,7 @@ Der Standardwert ist 1.
             <p><b>virtualdep</b> - Wahl zwischen alternativen Paketen</p>
             <p>Die Voreinstellung ist, dass kein Prompts übersprungen wird.</p>
         </li>
+        
         <li>
           <p>
             <b>NoAutoIndex:</b> boolean</p>
@@ -155,8 +156,8 @@ Dateien im Buildpath zu indizieren. Dieses verzögert die Erstellung von Paketen
 
         <li><p><b>Bzip2Path:</b> Der Pfad zu ihrem <code>bzip2</code> (oder kompatiblen) Programm
           </p>
-          <p>(<code>fink-0.25</code> and later) Mit der Option Bzip2Path kann 
-           der voreingestellte Pfad zum Kommandozeilen-Tool <code>bzip2</code>
+          <p>(<code>fink-0.25</code> und später) Mit der Option Bzip2Path kann 
+           der voreingestellte Pfad zum Kommandozeilen-Tool <code>bzip2</code> 
            überschrieben werden.  Damit kann man einen alternativen Platz für das 
            <code>bzip2</code> Programm angeben, zusätzliche 
            Kommandozeilen-Optionen übergeben oder einen Ersatz für das Entpacken 
@@ -164,6 +165,7 @@ Dateien im Buildpath zu indizieren. Dieses verzögert die Erstellung von Paketen
            <code>pbzip2</code>.
            </p>
         </li>
+
       </ul>
     
     <h2><a name="downloading">5.5 Download Einstellungen</a></h2>
@@ -206,7 +208,7 @@ Dateien im Buildpath zu indizieren. Dieses verzögert die Erstellung von Paketen
           <p>
 <code>fink</code> nutzt verschiedene Methoden, um info-Dateien der Pakete zu 
 aktualisieren. <b>rsync</b> ist die empfohlene Einstellung; mit rsync werden nur 
-geänderte Dateien aus den <a href="#optional">Bäumen</a> herunter geladen, die
+geänderte Dateien aus den <a href="#optional">Bäumen</a> herunter geladen, die 
 sie eingeschaltet haben. Beachten sie, dass geänderte oder hinzugefügte Dateien 
 in den Bäumen <code>stable</code> und <code>unstable</code> bei der Benutzung 
 von rsync gelöscht werden. Machen sie zuerst einen Backup in ihren eigenen Baum, 
@@ -298,7 +300,7 @@ ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors i
            "anonymous rsync url" sein, die auf ein Verzeichnis zeigt, das alle 
            Distributionen und Bäume von fink enthält.
 </p></li>
-		
+        
       </ul>
     
     <h2><a name="developer">5.7 Entwicklereinstellungen</a></h2>
@@ -372,7 +374,7 @@ ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors i
            gesetzt, lässt Fink diese Pakete aus.
            </p>
         </li>
-		
+        
       </ul>
     
     <h2><a name="sourceslist">5.9 Verwaltung von apts sources.list</a></h2>

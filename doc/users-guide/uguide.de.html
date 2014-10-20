@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: uguide.de.xml,v 1.8 2012/11/11 15:20:17 gecko2 Exp $
+Generated from $Fink: uguide.de.xml,v 1.10 2014/10/20 11:41:47 nieder Exp $
 -->
 <title>Fink Documentation - Fink Benutzerhandbuch</title></head><body>
 <table width="100%" cellspacing="0">
@@ -99,78 +99,142 @@ Die "Source"-Distribution lädt die originalen Quellen herunter, passt es an Mac
     
     
       <p>
-Während der ersten Installation, wird ein Basissystem mit den Werkzeugen für die Paketverwaltung auf Ihrem Rechner installiert. Danach müssen Sie Ihre Shellumgebung einrichten, so dass die von Fink installierte Software genutzt werden kann.
-Sie brauchen dies nur einmal tun; Sie können auf jede neuere Fink-Installation (ab Version 0.2.0) aktualisieren, ohne Fink neu installieren zu müssen. Das wird im Kapitel <a href="#upgrade">Aktualisieren</a> behandelt.
+Während der ersten Installation, wird ein Basissystem mit den Werkzeugen 
+für die Paketverwaltung auf Ihrem Rechner installiert. Danach müssen Sie 
+Ihre Shellumgebung einrichten, so dass die von Fink installierte Software 
+genutzt werden kann. Sie brauchen dies nur einmal tun; Sie können auf 
+jede neuere Fink-Installation (ab Version 0.2.0) aktualisieren, ohne Fink 
+neu installieren zu müssen. Das wird im Kapitel <a href="#upgrade">Aktualisieren</a> behandelt.
 </p>
       <p>
-Sobald sie die Werkzeuge für die Paketverwaltung installiert haben, können Sie diese  für die Installation weiterer Software verwenden. Mehr dazu im Kapitel <a href="#packages">Pakete Installieren</a>.
+Sobald sie die Werkzeuge für die Paketverwaltung installiert haben, 
+können Sie diese  für die Installation weiterer Software verwenden. Mehr 
+dazu im Kapitel <a href="#packages">Pakete Installieren</a>.
 
 </p>
     
     <h3><a name="install.bin">2.1 Installation der Binary-Distribution</a></h3>
       
       <p>
-Die Binary-Distribution kommt in Form eines Mac OS X-Installationspaketes (.pkg), eingepackt in ein Diskimage (.dmg).
-Nachdem dieses von der <a href="/download/bindist.php">Download-Seite</a> heruntergeladen ist (Sie müssen eventuell die "Verknüpfte Datei laden unter..."- oder die "Link auf Datenträger downloaden"-Funktion Ihres Browsers nutzen), müssen Sie diese Datei doppel-klicken, um sie zu mounten. Öffnen Sie dann das "Fink 0.x.x Installer"-Medium, welches entweder auf dem Desktop oder in einem Fenster des Finders auf der Sidebar erscheint, nachdem es vom Festplatten-Dienstprogramm (Disk Copy auf OS Versionen älter als 10.3) verifiziert worden ist. Dort drinnen finden Sie dann einige Dokumentationsdateien und ein Installationspaket. Doppel-klicken Sie dieses Installationspaket und folgen Sie den Anweisungen auf dem Bildschirm.</p>
+Die Binary-Distribution kommt in Form eines Mac OS X-Installationspaketes 
+(.pkg), eingepackt in ein Diskimage (.dmg). Nachdem dieses von der 
+<a href="/download/bindist.php">Download-Seite</a> heruntergeladen ist (Sie 
+müssen eventuell die "Verknüpfte Datei laden unter..."- oder die "Link 
+auf Datenträger downloaden"-Funktion Ihres Browsers nutzen), müssen Sie 
+diese Datei doppel-klicken, um sie zu mounten. Öffnen Sie dann das "Fink 
+0.x.x Installer"-Medium, welches entweder auf dem Desktop oder in einem 
+Fenster des Finders auf der Sidebar erscheint, nachdem es vom 
+Festplatten-Dienstprogramm (Disk Copy auf OS Versionen älter als 10.3) 
+verifiziert worden ist. Dort drinnen finden Sie dann einige 
+Dokumentationsdateien und ein Installationspaket. Doppel-klicken Sie 
+dieses Installationspaket und folgen Sie den Anweisungen auf dem 
+Bildschirm.</p>
       <p>
-Sie werden nach dem Administratorpasswort gefragt und einige Text zu lesen bekommen. Bitte lesen Sie diese - sie können aktueller als dieses Nutzerhandbuch sein. Wenn der Installer nach einem Laufwerk, auf welchem die Installation erfolgen soll, fragt, gehen Sie sicher, dass Sie Ihr Systemvolume (das, auf welchem Sie Mac OS X installiert haben) auswählen. Wenn Sie das falsche Laufwerk wählen, wird die Installation fortgesetzt, aber Fink wird anschließend nicht funktionieren. Wenn die Installation beendet ist, fahren Sie mit dem Abschnitt <a href="#install.setup">Einrichten Ihrer Umgebung</a> fort.</p>
+Sie werden nach dem Administratorpasswort gefragt und einige Text zu lesen
+bekommen.  Bitte lesen Sie diese - sie können aktueller als dieses
+Nutzerhandbuch sein.  Wenn der Installer nach einem Laufwerk, auf welchem
+die Installation erfolgen soll, fragt, gehen Sie sicher, dass Sie Ihr
+Systemvolume (das, auf welchem Sie Mac OS X installiert haben) auswählen.
+Wenn Sie das falsche Laufwerk wählen, wird die Installation fortgesetzt,
+aber Fink wird anschließend nicht funktionieren.  Wenn die Installation
+beendet ist, fahren Sie mit dem Abschnitt <a href="#install.setup">Einrichten Ihrer Umgebung</a> fort.
+</p>
     
     <h3><a name="install.src">2.2 Installation der Source-Distribution</a></h3>
       
       <p>
 Die Source-Distribution kommt als ein übliches Unix-tarball (.tar.gz) daher. Es beinhaltet nur den <tt style="white-space: nowrap;">fink</tt> Paketmanager und seine Paketbeschreibungen; es lädt die Quelldateien der Pakete bei Bedarf herunter. Sie können es hier herunterladen:
 <a href="/download/srcdist.php">Download-Seite</a>.
-Es ist wichtig, daass Sie nicht den StuffIt Expander zum Entpacken des tar-Archivs verwenden. Aus irgendeinen Grund kann StuffIt noch mit keinen langen Dateinamen umgehen. Falls StuffIt Expander das Archiv schon entpackt hat, löschen sie den Ordner, welchen er erstellt hat.
+Es ist wichtig, dass Sie nicht den StuffIt Expander zum Entpacken des 
+tar-Archivs verwenden. Aus irgendeinen Grund kann StuffIt noch mit keinen 
+langen Dateinamen umgehen. Falls StuffIt Expander das Archiv schon 
+entpackt hat, löschen sie den Ordner, welchen er erstellt hat.
 </p>
       <p>
 Die Source-Version muss über die Kommandozeile installiert werden. Also öffnen Sie Terminal.app und wechseln Sie zu dem Verzeichnis, wo Sie das fink-0.x.x-full.tar.gz-Archiv gespeichert haben. 
 
-(Note: If you have OS X 10.4 and XCode 2.1, you should use
-<tt style="white-space: nowrap;">fink-0.8.0-full-XCode-2.1.tar.gz</tt> instead, and make
-the appropriate changes below.)
+(Notiz: Haben Sie OS X 10.4 und XCode 2.1, sollten sie statt dessen
+<tt style="white-space: nowrap;">fink-0.8.0-full-XCode-2.1.tar.gz</tt> verwenden und die Änderungen
+von weiter unten machen.)
 
 Der folgende Befehl entpackt das Archiv:
 </p>
       <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
       <p>
-Dies erstellt ein Verzeichnis mit dem selben Namen des Archivs. Wir werden dafür hier den Platzhalter  <tt style="white-space: nowrap;">fink-0.x.x-full</tt> verwenden. Wechseln Sie jetzt in das Verzeichnis und führen Sie das bootstrap-Script aus:
+Dies erstellt ein Verzeichnis mit dem selben Namen des Archivs. Wir werden dafür 
+hier den Platzhalter  <tt style="white-space: nowrap;">fink-0.x.x-full</tt> verwenden. Wechseln Sie jetzt 
+in das Verzeichnis und führen Sie das bootstrap-Script aus:
 </p>
       <pre>cd fink-0.x.x-full
 ./bootstrap.sh</pre>
       <p>
-Das Skript wird eine paar Kontrollen auf Ihrem System und sudo ausführen, um root zu bekommen - dies wird Sie nach Ihrem Passwort fragen. Dann wird Sie das Script nach dem Installationspfad fragen. Sofern Sie keinen guten Grund haben, sollten den Standardpfad wählen- <tt style="white-space: nowrap;">/sw</tt>.
-Nur so können Sie später auch Binärpakete installieren. Außerdem nutzen alle Beispiele diesen Pfad; achten Sie darauf diesen dann mit Ihren Installationspfad zu ersetzen, sollten Sie einen anderen gewählt haben.
-</p>
+Das Skript wird eine paar Kontrollen auf Ihrem System und sudo ausführen, 
+um root zu werden - dies wird Sie nach Ihrem Passwort fragen. Dann wird 
+Sie das Script nach dem Installationspfad fragen. Sofern Sie keinen guten 
+Grund haben, sollten sie den Standardpfad wählen- <tt style="white-space: nowrap;">/sw</tt>. Nur 
+so können Sie später auch Binärpakete installieren. Außerdem nutzen 
+alle Beispiele diesen Pfad; achten Sie darauf diesen dann mit Ihren 
+Installationspfad zu ersetzen, sollten Sie einen anderen gewählt haben.
+      </p>
       <p>
-Es folgt die Konfiguration von Fink. Sie werden nach Dingen gefragt wie Proxy- und Mirror-Einstellungen und ob sie wortreiche Mitteilungen ("verbose") wünschen. Fall Sie eine Frage nicht verstehen, drücken Sie einfach Return, um die Standardwahl zu akzeptieren. Sie können diesen Vorgang später mit dem Befehl <tt style="white-space: nowrap;">fink configure</tt> wiederholen.</p>
+Es folgt die Konfiguration von Fink.  Sie werden nach Dingen gefragt wie
+Proxy- und Mirror-Einstellungen und ob sie wortreiche Mitteilungen
+("verbose") wünschen.  Fall Sie eine Frage nicht verstehen, drücken Sie
+einfach Return, um die Standardwahl zu akzeptieren.  Sie können diesen
+Vorgang später mit dem Befehl <tt style="white-space: nowrap;">fink configure</tt> wiederholen.
+      </p>
       <p>
-Sobald das bootstrap-Script alle notwendigen Informationen bekommen hat, wird es den Quellcode für das Basissystem herunterladen und kompilieren. Von diesem Punkt an, wird keine weitere Interaktion nötig sein. Machen Sie sich keine Sorgen, falls manche Pakete mehrmals kompiliert werden. Dies ist notwendig, weil, um das Binärpaket der Paketverwaltung zu erstellen, erst die Paketverwaltung verfügbar sein muss.</p>
+Sobald das bootstrap-Script alle notwendigen Informationen bekommen hat,
+wird es den Quellcode für das Basissystem herunterladen und kompilieren.
+Von diesem Punkt an wird keine weitere Interaktion nötig sein.  Machen Sie
+sich keine Sorgen, falls manche Pakete mehrmals kompiliert werden.  Dies
+ist notwendig, um das Binärpaket der Paketverwaltung zu erstellen, weil
+erst die Paketverwaltung verfügbar sein muss.
+      </p>
       <p>
-Wenn das Skript beendet ist, fahren sie mit dem Abschnitt<a href="#install.setup">Einrichten Ihrer Umgebung</a> fort.
-</p>
+Wenn das Skript beendet ist, fahren sie mit dem Abschnitt 
+<a href="#install.setup">Einrichten Ihrer Umgebung</a> fort.
+      </p>
     
     <h3><a name="install.setup">2.3 Einrichten Ihrer Umgebung</a></h3>
       
       <p>
-Um die Software, die in Finks Vereichnishierarchie installiert ist, einschließlich der Paketverwaltung selber, zu nutzen, müssen Sie die Umgebungsvariable PATH (und einige andere) entsprechend setzen. In den meisten Fällen können Sie das mit diesem Befehl tun:
+Um die Software, die in Finks Vereichnishierarchie installiert ist,
+einschließlich der Paketverwaltung selber zu nutzen, müssen Sie die
+Umgebungsvariable PATH (und einige andere) entsprechend setzen.  In den
+meisten Fällen können Sie das mit diesem Befehl tun:
 </p>
       <pre>/sw/bin/pathsetup.sh</pre>
-
-<p>Note that for some older versions of fink the program was called  <tt style="white-space: nowrap;">pathsetup.command</tt>, and one could run it via <tt style="white-space: nowrap;">open /sw/bin/pathsetup.command</tt>.</p>
-
-<p>Falls es dennoch aus irgendeinen Grund nicht funktionieren sollte, können Sie es auch manuell konfigurieren. Allerdings hängt dies dann von der Shell ab, die Sie verwenden. Sie können herausfinden, welche Shell Sie verwenden, indem Sie im geöffneten Terminalfenster folgenden Befehl ausführen:
+<p>
+Bitte beachten sie, dass das Programm in einigen älteren Versionen von
+fink <tt style="white-space: nowrap;">pathsetup.command</tt> genannt wird und man es mittels
+<tt style="white-space: nowrap;">open /sw/bin/pathsetup.command</tt> laufen lassen muss.
+</p>
+<p>
+Falls es dennoch aus irgendeinen Grund nicht funktionieren sollte, können
+Sie es auch manuell konfigurieren.  Allerdings hängt dies dann von der
+Shell ab, die Sie verwenden.  Sie können herausfinden, welche Shell Sie
+verwenden, indem Sie im geöffneten Terminalfenster folgenden Befehl
+ausführen:
 </p>
       <pre>echo $SHELL</pre>
       <p>
-Sollte es "csh" oder "tcsh" ausgeben, nutzen Sie die C-Shell. Falls es "bash", "zsh", "sh" oder etwas ähnliches ausgibt, nutzen Sie wahrscheinlich eine Variante der Bourne-Shell.
+Sollte es "csh" oder "tcsh" ausgeben, nutzen Sie die C-Shell.  Falls es
+"bash", "zsh", "sh" oder etwas ähnliches ausgibt, nutzen Sie
+wahrscheinlich eine Variante der Bourne-Shell.
 </p>
       <ul>
         <li>
           <p>
-            Bourne-Shell (voreingestellt unter Mac OS X 10.3 und später) </p>
+            Bourne-Shell (voreingestellt unter Mac OS X 10.3 und später)
+          </p>
           <p>
-Wenn Sie eine Art Bourne-Shell nutzen (z.B. sh, bash, zsh), fügen Sie folgende Zeilen der Datei <tt style="white-space: nowrap;">.profile</tt> in Ihrem Home-Verzeichnis hinzu (oder wenn Sie eine <tt style="white-space: nowrap;">.bash_profile</tt>-Datei haben, sollte Sie diese stattdessen nutzen).
-  </p>
+       Wenn Sie eine Art Bourne-Shell nutzen (z.B. sh, bash, zsh),
+       fügen Sie folgende Zeilen der Datei <tt style="white-space: nowrap;">.profile</tt> in
+       Ihrem Home-Verzeichnis hinzu (oder wenn Sie eine
+       <tt style="white-space: nowrap;">.bash_profile</tt>-Datei haben, sollte Sie diese
+       stattdessen nutzen).
+          </p>
           <pre>. /sw/bin/init.sh</pre>
           <p>
 Wenn Sie nicht wissen, wie Sie die Zeile hinzufügen können, führen Sie diese Befehle aus:
@@ -178,12 +242,19 @@ Wenn Sie nicht wissen, wie Sie die Zeile hinzufügen können, führen Sie diese 
           <pre>cd
 pico .profile</pre>
           <p>
-Sie befinden sich nun in einem Vollbildschirm- (naja, Vollterminalfenster-) Texteditor und können einfach beginnen, die <tt style="white-space: nowrap;">. /sw/bin/init.sh</tt>-Zeile einzutippen. Es ist okay, wenn eine Meldung erscheint, die "New file" ausgibt. Gehen Sie sicher, dass Sie nach der Zeile mindestens einmal Return gedrückt haben; dann drücken Sie ctrl-O, Return und ctrl-X, um aus dem Editor zu kommen.
+Sie befinden sich nun in einem Vollbildschirm- (naja, 
+Vollterminalfenster-) Texteditor und können einfach beginnen, die 
+<tt style="white-space: nowrap;">. /sw/bin/init.sh</tt>-Zeile einzutippen. Es ist in 
+Ordnung, wenn eine Meldung erscheint, die "New file" ausgibt. Gehen 
+Sie sicher, dass Sie nach der Zeile mindestens einmal Return 
+gedrückt haben; dann drücken Sie ctrl-O, Return und ctrl-X, um aus 
+dem Editor zu kommen.
   </p>
         </li>
         <li>
           <p>
-            C-Shell (voreingestellt unter Mac OS X 10.2 und älter) </p>
+            C-Shell (voreingestellt unter Mac OS X 10.2 und älter)
+          </p>
           <p>
 Wenn Sie tcsh verwenden, fügen Sie die folgende Zeile in die Datei <tt style="white-space: nowrap;">.cshrc</tt> in Ihrem Home-Verzeichnis ein:
   </p>
@@ -195,8 +266,14 @@ Wenn Sie nicht wissen, wie Sie die Zeile hinzufügen können, führen Sie diese 
           <pre>cd
 pico .cshrc</pre>
           <p>
-Sie befinden sich nun in einem Vollbildschirm- (naja, Vollterminalfenster-) Texteditor und können einfach beginnen, die <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt>-Zeile einzutippen. Es ist okay, wenn eine Meldung erscheint, die "New file" ausgibt. Gehen Sie sicher, dass Sie nach der Zeile mindestens einmal Return gedrückt haben; dann drücken Sie ctrl-O, Return und ctrl-X, um aus dem Editor zu kommen.
-  </p>
+          Sie befinden sich nun in einem Vollbildschirm- (naja,
+          Vollterminalfenster-) Texteditor und können einfach beginnen, die
+          <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt>-Zeile einzutippen.  Es ist okay,
+          wenn eine Meldung erscheint, die "New file" ausgibt.  Gehen Sie
+          sicher, dass Sie nach der Zeile mindestens einmal Return gedrückt
+          haben; dann drücken Sie ctrl-O, Return und ctrl-X, um aus dem Editor
+          zu kommen.
+          </p>
 <p>Es gibt einige gewöhnliche Situationen, in welchen Sie weitere Dateien ändern sollten:</p>
           <ol>
             <li>
@@ -220,10 +297,17 @@ Sie befinden sich nun in einem Vollbildschirm- (naja, Vollterminalfenster-) Text
         </li>
       </ul>
       <p>
-Beachten Sie, dass das <tt style="white-space: nowrap;">init.sh</tt> und <tt style="white-space: nowrap;">init.csh</tt> Script außerdem <tt style="white-space: nowrap;">/usr/X11R6/bin</tt> und <tt style="white-space: nowrap;">/usr/X11R6/man</tt> zu Ihrem PATH hinzufügt, so dass Sie den X11-Server nutzen können, wenn er installiert ist. Fink-Pakete haben die Möglichkeit selbst Einstellungen hinzuzufügen, z.B. setzt das qt-Paket die QTDIR-Umgebungsvariable.
+Beachten Sie, dass das <tt style="white-space: nowrap;">init.sh</tt> und <tt style="white-space: nowrap;">init.csh</tt> 
+Script außerdem <tt style="white-space: nowrap;">/usr/X11R6/bin</tt> und 
+<tt style="white-space: nowrap;">/usr/X11R6/man</tt> zu Ihrem PATH hinzufügt, so dass Sie den 
+X11-Server nutzen können, wenn er installiert ist. Fink-Pakete haben die 
+Möglichkeit selbst Einstellungen hinzuzufügen, z.B. setzt das qt-Paket 
+die Umgebungsvariable QTDIR.
 </p>
       <p>
-Ist die Umgebung dann eingerichtet, können Sie mit dem Kapitel <a href="#packages">Pakete Installieren</a> fortfahren, um zu sehen, wie Sie endlich nützliche Pakete mit Hilfe der in Fink enthaltenen Werkzeugen zur Paketverwaltung installieren können.
+Ist die Umgebung dann eingerichtet, können Sie mit dem Kapitel <a href="#packages">Pakete Installieren</a> fortfahren, um zu 
+sehen, wie Sie endlich nützliche Pakete mit Hilfe der in Fink enthaltenen 
+Werkzeugen zur Paketverwaltung installieren können.
 </p>
     
   <h2><a name="packages">3 Pakete Installieren</a></h2>
@@ -586,8 +670,8 @@ unstable/main   - weitere instabile Pakete
 Sie können auch Ihre eigenen Bäume in das Verzeichnis <tt style="white-space: nowrap;">/sw/fink/dists</tt> für Ihre Bedürfnisse hinzufügen, dies ist aber nicht notwendig in den meisten Situationen. Die Standardbäume sind "local/main local/bootstrap
 stable/main". Diese Liste sollte mit der Datei <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> synchronisiert sein. (Ab <tt style="white-space: nowrap;">fink</tt> 0.21.0 wird das für Sie automatisch gemacht.)</p>
 
-<p>The order of the trees is meaningful, as packages from later trees in the list may
-override packages from earlier ones.</p>
+<p>Die Reihenfolge im Baum ist wichtig, weil Pakete an späteren Positionen in 
+der Liste solche an früheren Positionen überschreiben können.</p>
 
         </li>
         <li>
@@ -623,16 +707,23 @@ Der Standardwert ist 1.
 </p>
         </li>
         
-        <li><p><b>SkipPrompts:</b> a comma-delimited list</p><p>(<tt style="white-space: nowrap;">fink-0.25</tt> and later) This option instructs <tt style="white-space: nowrap;">fink</tt> to refrain from asking for input when
-           the user does not want to be prompted. Each prompt belongs to a
-           category. If a prompt's category is in the SkipPrompts list then
-           the default option will be chosen within a very short period of
-           time.</p><p>Currently, the following categories of prompts exist:</p><p><b>fetch</b> - Downloads and mirrors</p><p><b>virtualdep</b> - Choosing between alternative packages</p><p> By default, no prompts are skipped.</p></li>
+        <li><p><b>SkipPrompts:</b> Eine Komma-separierte Liste</p>
+            <p>(<tt style="white-space: nowrap;">fink-0.25</tt> und später) Diese Option instruiert 
+            <tt style="white-space: nowrap;">fink</tt> von der Nachfrage abzusehen, wenn der Nutzer keine 
+            Eingabe machen möchte. Jede Eingabe gehört zu einer Kategorie. Ist 
+            eine Kategorie in der Liste von SkipPrompts, dann wird die 
+            Voreinstellungsoption in einer sehr kurzen Zeit ausgewählt.
+            </p>
+            <p>Derzeit gibt es folgende Prompt-Kategorien:</p>
+            <p><b>fetch</b> - Downloads und Mirrors</p>
+            <p><b>virtualdep</b> - Wahl zwischen alternativen Paketen</p>
+            <p>Die Voreinstellung ist, dass kein Prompts übersprungen wird.</p>
+        </li>
         
         <li>
           <p>
             <b>NoAutoIndex:</b> boolean</p>
-          <p>Fink speichert die Paketbeschreibungen in /sw/var/db/fink.db zwischen, um es von dort aus zu lesen, jedes Mal wenn es aufgerufen wird. Fink überprüft, ob der Paketindex aktualisiert werden muss, es sei denn, dieser Wert ist auf "True" gesetzt. Der Standardwert ist "False", und es wird nicht empfohlen, dass Sie ihn verändern. Falls Sie es tun, sollten Sie den Befehl <tt style="white-space: nowrap;">fink index</tt> per Hand ausführen, um den Index zu aktualisieren.
+          <p>Fink speichert die Paketbeschreibungen in /sw/var/db/fink.db zwischen, um es von dort aus zu lesen, jedes Mal, wenn es aufgerufen wird. Fink überprüft, ob der Paketindex aktualisiert werden muss, es sei denn, dieser Wert ist auf "True" gesetzt. Der Standardwert ist "False", und es wird nicht empfohlen, dass Sie ihn verändern. Falls Sie es tun, sollten Sie den Befehl <tt style="white-space: nowrap;">fink index</tt> per Hand ausführen, um den Index zu aktualisieren.
 </p>
         </li>
         <li>
@@ -648,25 +739,30 @@ selfupdate-cvs</tt> gesetzt, so dass Sie ihn nicht per Hand ändern brauchen.</p
 <tt style="white-space: nowrap;">/sw/src/fink.build</tt> on Tiger. Wenn Sie es möchten, können Sie den Pfad hier einstellen. Für mehr Informationen über diese temporären Verzeichnisse lesen Sie die Beschreibungen über die Felder <tt style="white-space: nowrap;">KeepRootDir</tt> und <tt style="white-space: nowrap;">KeepBuildDir</tt> später in diesem Dokument.
 	    </p>
 	    
-	    <p>On Tiger, it is recommended that the Buildpath end with <tt style="white-space: nowrap;">.noindex</tt>
-or <tt style="white-space: nowrap;">.build</tt>. Otherwise, Spotlight will attempt to index the temporary files in
-the Buildpath, slowing down builds.
+	    <p>Unter Tiger wird empfohlen, dass Buildpath mit <tt style="white-space: nowrap;">.noindex</tt>
+or <tt style="white-space: nowrap;">.build</tt> endet. Andernfalls versucht Spotlight, die temporären 
+Dateien im Buildpath zu indizieren. Dieses verzögert die Erstellung von Paketen.
     	</p>
     	
 	</li>
 
-        <li><p><b>Bzip2Path:</b> the path to your <tt style="white-space: nowrap;">bzip2</tt> (or compatible) binary
-          </p><p>(<tt style="white-space: nowrap;">fink-0.25</tt> and later) The Bzip2Path option lets you override the default path for the
-           <tt style="white-space: nowrap;">bzip2</tt> command-line tool.  This allows you to specify an alternate
-           location to your <tt style="white-space: nowrap;">bzip2</tt> executable, pass optional command-line
-           options, or use a drop-in replacement like <tt style="white-space: nowrap;">pbzip2</tt> for decompressing
-           <tt style="white-space: nowrap;">.bz2</tt> archives.</p></li>
+        <li><p><b>Bzip2Path:</b> Der Pfad zu ihrem <tt style="white-space: nowrap;">bzip2</tt> (oder kompatiblen) Programm
+          </p>
+          <p>(<tt style="white-space: nowrap;">fink-0.25</tt> und später) Mit der Option Bzip2Path kann 
+           der voreingestellte Pfad zum Kommandozeilen-Tool <tt style="white-space: nowrap;">bzip2</tt> 
+           überschrieben werden.  Damit kann man einen alternativen Platz für das 
+           <tt style="white-space: nowrap;">bzip2</tt> Programm angeben, zusätzliche 
+           Kommandozeilen-Optionen übergeben oder einen Ersatz für das Entpacken 
+           von <tt style="white-space: nowrap;">.bz2</tt> Archiven benutzen, wie zum Beispiel 
+           <tt style="white-space: nowrap;">pbzip2</tt>.
+           </p>
+        </li>
 
       </ul>
     
     <h3><a name="conf.downloading">5.5 Download Einstellungen</a></h3>
       
-      <p>Es gibt verschiedene Einstellungen, die die Art und Weise, wie Fink Paketdaten herunterlädt, beeinflussen.</p>
+      <p>Es gibt verschiedene Einstellungen, die die Art und Weise beeinflussen, wie Fink Paketdaten herunterlädt.</p>
       <ul>
         <li>
           <p>
@@ -702,41 +798,53 @@ the Buildpath, slowing down builds.
           <p>
             <b>SelfUpdateMethod:</b> point, rsync or cvs</p>
           <p>
-<tt style="white-space: nowrap;">fink</tt> can use some different methods to update the package info files.
-<b>rsync</b> is the recommended setting; it uses rsync to download only
-modified files in the <a href="#conf.optional">trees</a> that you have enabled. Note that if you have
-changed or added to files in the <tt style="white-space: nowrap;">stable</tt> or <tt style="white-space: nowrap;">unstable</tt> trees, using rsync will
-delete them. Make a backup first, e.g. in your <tt style="white-space: nowrap;">local</tt> tree. <b>cvs</b> will download using anonymous or
-:ext: cvs access from the Fink repository. This has the disadvantage that cvs
-can not switch mirrors; if the server is unavailable you will not be able to
-update. <b>point</b> will download only the latest released version of the
-packages. It is not recommended as your packages may be quite out of date.
+<tt style="white-space: nowrap;">fink</tt> nutzt verschiedene Methoden, um info-Dateien der Pakete zu 
+aktualisieren. <b>rsync</b> ist die empfohlene Einstellung; mit rsync werden nur 
+geänderte Dateien aus den <a href="#conf.optional">Bäumen</a> herunter geladen, die 
+sie eingeschaltet haben. Beachten sie, dass geänderte oder hinzugefügte Dateien 
+in den Bäumen <tt style="white-space: nowrap;">stable</tt> und <tt style="white-space: nowrap;">unstable</tt> bei der Benutzung 
+von rsync gelöscht werden. Machen sie zuerst einen Backup in ihren eigenen Baum, 
+d. h. <tt style="white-space: nowrap;">local</tt>. <b>cvs</b> lädt aus dem Fink Repository mittels 
+anonymous oder :ext: cvs-Zugang herunter. Dies hat den Nachteil, dass cvs den 
+Mirror nicht wechseln kann. Wenn der Server nicht verfügbar ist, kann man nicht 
+aktualisieren. <b>point</b> lädt nur die neueste Version der Pakete herunter. 
+Dies wird nicht empfohlen, weil ihre Pakete ziemlich veraltet sein können.
           </p>
         </li>
-        <li><p><b>SelfUpdateCVSTrees:</b> list of trees
-           </p><p>(<tt style="white-space: nowrap;">fink-0.25</tt> and later) By default, the <b>cvs</b> selfupdate method will update only the current
-           distribution's tree.  This option overrides the list of distribu-
-           tion versions that will be updated during a selfupdate.
+        <li><p><b>SelfUpdateCVSTrees:</b> Liste der Bäume
+           </p>
+           <p>(<tt style="white-space: nowrap;">fink-0.25</tt> und später) Die Voreinstellung ist, dass 
+           die Methode <b>cvs</b> selfupdate nur den momentanen Baum der 
+           Distribution aktualisiert. Diese Option überschreibt die Liste 
+           mit den Distributionsversionen, die während selfupdate aktualisiert 
+           werden.
 
-           Please note that you will need a recent "cvs" binary installed if
-           you wish to include directories that do not have CVS/ directories
-           in their entire path (e.g., dists/local/main or similar).</p></li>
+           Beachten sie bitte, dass ein aktuelles "cvs"-Programm installiert 
+           sein muss, wenn Verzeichnisse eingeschlossen werden sollen, die in 
+           ihrem gesamten Pfad kein CVS/ Verzeichnis haben (d. h. 
+           dists/local/main oder ähnliche).
+           </p>
+        </li>
         <li>
           <p>
             <b>UseBinaryDist:</b> boolean</p>
           <p>
-Causes <tt style="white-space: nowrap;">fink</tt> to try to download pre-compiled binary packages from the binary
-distribution if available and if the binary package is not already on the
-system. This can save a lot of installation time and it is therefore 
-recommended to set this option. Passing fink the 
-<a href="#usage">--use-binary-dist</a> option (or the <tt style="white-space: nowrap;">-b</tt> flag) has the same effect,  
-but only operates on that single <tt style="white-space: nowrap;">fink</tt> invocation.  Passing <tt style="white-space: nowrap;">fink</tt> the
-           <tt style="white-space: nowrap;">--no-use-binary-dist</tt> flag overrides this, and compiles from source
-           for that single <tt style="white-space: nowrap;">fink</tt> invocation.
-<b>Only available as of  fink version 0.23.0</b>.
-          </p><p>Note that this mode instructs <tt style="white-space: nowrap;">fink</tt> to download an available binary  
-           if that version is the latest available version of the package; it does <b>not</b> cause <tt style="white-space: nowrap;">fink</tt>
-           to choose a version based on its binary availability.
+Bewirkt, dass <tt style="white-space: nowrap;">fink</tt> versucht, vorübersetzte binäre Pakete aus der 
+binären Distribution herunter zu laden, wenn diese zur Verfügung stehen und im 
+System noch nicht vorhanden sind. Dies kann eine lange Zeit für die Installation 
+einsparen. Deshalb wird es empfohlen, diese Option zu setzen. Der gleiche Effekt 
+kann erreicht werden, indem man fink die Option 
+<a href="#usage">--use-binary-dist</a> (oder die Option 
+<tt style="white-space: nowrap;">-b</tt>) übergibt. Dies gilt aber nur für den jeweiligen Aufruf von 
+<tt style="white-space: nowrap;">fink</tt>. Übergibt man die Option <tt style="white-space: nowrap;">--no-use-binary-dist</tt> an 
+<tt style="white-space: nowrap;">fink</tt>, wird dies überschrieben und das Paket wird für diesen Aufruf 
+von <tt style="white-space: nowrap;">fink</tt> aus seinen Quellen übersetzt.
+<b>Nur ab der fink-Version 0.23.0 verfügbar</b>.
+          </p>
+          <p>Bitte beachten sie, dass in diesem Modus die verfügbare 
+           Binärversion nur herunter geladen wird, wenn sie die neueste Version 
+           des Pakets ist; er bewirkt also <b>nicht</b>, dass <tt style="white-space: nowrap;">fink</tt> 
+           auf jeden Fall die Version nimmt, die binär zur Verfügung steht.
 </p>
         </li>
 
@@ -770,18 +878,21 @@ but only operates on that single <tt style="white-space: nowrap;">fink</tt> invo
           <pre>
 MasterFirst - Durchsucht "Master"-Mirrors zuerst.
 MasterLast - Durchsucht "Master"-Mirrors zuletzt.
-MasterNever - Nutzt nie "Master"-Mirrors.
+MasterNever - Nutzt "Master"-Mirrors nie.
 ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors in einen Satz).
 </pre>
         </li>
         
         <li><p><b>Mirror-rsync:</b>
-           </p><p>(<tt style="white-space: nowrap;">fink-0.25.2</tt> and later) When doing <tt style="white-space: nowrap;">fink selfupdate</tt> with the <b>SelfupdateMethod</b> set to <tt style="white-space: nowrap;">rsync</tt>,
-           this is the rsync url to sync from.  This should be an anonymous
-           rsync url, pointing to a directory which contains all the fink Dis-
-           trubutions and Trees.
+           </p>
+           <p>(<tt style="white-space: nowrap;">fink-0.25.2</tt> und später) Wird 
+           <tt style="white-space: nowrap;">fink selfupdate</tt> ausgeführt und ist 
+           <b>SelfupdateMethod</b> auf <tt style="white-space: nowrap;">rsync</tt>gesetzt,
+           ist dies die "rsync url" für die Synchronisation. Dies sollte eine 
+           "anonymous rsync url" sein, die auf ein Verzeichnis zeigt, das alle 
+           Distributionen und Bäume von fink enthält.
 </p></li>
-		
+        
       </ul>
     
     <h3><a name="conf.developer">5.7 Entwicklereinstellungen</a></h3>
@@ -791,19 +902,19 @@ ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors i
         <li>
           <p>
             <b>KeepRootDir:</b> boolean</p>
-          <p>Veranlasst Fink ein temporäres Verzeichnis <tt style="white-space: nowrap;">root-[name]-[version]-[revision]</tt> nach dem Erstellen des Paketes nicht zu löschen. Standardwert ist "False". <b>Seien Sie Vorsichtig, diese Option kann Ihre Festplatte sehr schnell füllen!</b> Wenn Sie <tt style="white-space: nowrap;">fink</tt> den Parameter <b>-K</b> übergeben, hat es die selben Auswirkungen - allerdings nur für diesen <tt style="white-space: nowrap;">fink</tt>-Aufruf.
+          <p>Veranlasst Fink, ein temporäres Verzeichnis <tt style="white-space: nowrap;">root-[name]-[version]-[revision]</tt> nach dem Erstellen des Paketes nicht zu löschen. Standardwert ist "False". <b>Seien Sie Vorsichtig, diese Option kann Ihre Festplatte sehr schnell füllen!</b> Wenn Sie <tt style="white-space: nowrap;">fink</tt> den Parameter <b>-K</b> übergeben, hat es die selben Auswirkungen - allerdings nur für diesen <tt style="white-space: nowrap;">fink</tt>-Aufruf.
           </p>
         </li>
         <li>
           <p>
             <b>KeepBuildDir:</b> boolean</p>
-         <p>Veranlasst Fink ein temporäres Verzeichnis <tt style="white-space: nowrap;">[name]-[version]-[revision]</tt> nach dem Erstellen des Paketes nicht zu löschen. Standardwert ist "False". <b>Seien Sie Vorsichtig, diese Option kann Ihre Festplatte sehr schnell füllen!</b> Wenn Sie <tt style="white-space: nowrap;">fink</tt> den Parameter <b>-k</b> übergeben, hat es die selben Auswirkungen - allerdings nur für diesen <tt style="white-space: nowrap;">fink</tt>-Aufruf.</p>
+         <p>Veranlasst Fink, ein temporäres Verzeichnis <tt style="white-space: nowrap;">[name]-[version]-[revision]</tt> nach dem Erstellen des Paketes nicht zu löschen. Standardwert ist "False". <b>Seien Sie Vorsichtig, diese Option kann Ihre Festplatte sehr schnell füllen!</b> Wenn Sie <tt style="white-space: nowrap;">fink</tt> den Parameter <b>-k</b> übergeben, hat es die selben Auswirkungen - allerdings nur für diesen <tt style="white-space: nowrap;">fink</tt>-Aufruf.</p>
         </li>
       </ul>
     
     <h3><a name="conf.advanced">5.8 Erweiterte Einstellungen</a></h3>
       
-      <p>Es gibt einige andere Optionen, welche nützlich sein können, allerdings auch einiges Wissen voraussetzen.</p>
+      <p>Es gibt einige andere Optionen, die nützlich sein können, allerdings auch einiges Wissen voraussetzen.</p>
       <ul>
         <li>
           <p>
@@ -818,30 +929,44 @@ ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors i
             <b>CCacheDir:</b> path</p>
           <p>
           Falls das Fink-Paket <tt style="white-space: nowrap;">ccache-default</tt> installiert ist, werden die Cache-Dateien, die beim Erstellen von Fink-Paketen anfallen, hier zwischengespeichert. Standardwert ist <tt style="white-space: nowrap;">/sw/var/ccache</tt>. Wenn es auf <tt style="white-space: nowrap;">none</tt> gesetzt ist, wird Fink nicht die Umgebungsvariable CCACHE_DIR setzen und ccache wird <tt style="white-space: nowrap;">$HOME/.ccache</tt> nutzen - wobei Dateien womöglich mit Root als Eigentümer in Ihr Home-Verzeichis abgelegt werden.
-          <b>Only available in fink newer than version 0.21.0</b>.</p>
+          <b>Nur in fink-Version ab 0.21.0 verfügbar</b>.</p>
         </li>
         
-        <li><p><b>NotifyPlugin:</b> plugin</p><p>
-           Specify a notification plugin to tell you when packages have been
-           installed/uninstalled.  Defaults to Growl (requires <tt style="white-space: nowrap;">Mac::Growl</tt> to
-           operate).  Other plugins can be found in the
-           <tt style="white-space: nowrap;">/sw/lib/perl5/Fink/Notify</tt> directory.  On <tt style="white-space: nowrap;">fink-0.25</tt> and later they are listed in the output of <tt style="white-space: nowrap;">fink plugins</tt>.  See the <a href="http://wiki.finkproject.org/index.php/Fink:Notificati%20on_Plugins">Fink Developer Wiki</a> for more information.
-</p></li>
-        <li><p><b>AutoScanpackages:</b> boolean
-           </p><p>When <tt style="white-space: nowrap;">fink</tt> builds new packages, <tt style="white-space: nowrap;">apt-get</tt> does not immediately know about
-           them.  Historically, the command <tt style="white-space: nowrap;">fink scanpackages</tt> had to be run
-           for <tt style="white-space: nowrap;">apt-get</tt> to notice the new packages, but now this happens auto
-           matically. If this option is present and <b>false</b>, then <tt style="white-space: nowrap;">fink
-           scanpackages</tt> will no longer be run automatically after packages are
-           built.  Defaults to <b>true</b>.
-</p></li>
-        <li><p><b>ScanRestrictivePackages:</b> boolean
-           </p><p>When scanning the packages for <tt style="white-space: nowrap;">apt-get</tt>, <tt style="white-space: nowrap;">fink</tt> normally scans all
-           packages in the current trees. However, if the resuting apt repository will be made publically available, the administrator may be
-           legally obligated not to include packages with <tt style="white-space: nowrap;">Restrictive</tt> or
-           <tt style="white-space: nowrap;">Commercial</tt> licenses. If this option is present and <b>false</b>, then Fink
-           will omit those packages when scanning.</p></li>
-		
+        <li><p><b>NotifyPlugin:</b> plugin</p>
+          <p>
+           Geben sie ein Benachrichtigungs-plugin an, mit dem sie informiert 
+           werden, wenn Pakete (de-)installiert werden. Die Voreinstellung ist
+           Growl (erfordert zur Ausführung <tt style="white-space: nowrap;">Mac::Growl</tt>). Andere
+           befinden sich im Verzeichnis <tt style="white-space: nowrap;">/sw/lib/perl5/Fink/Notify</tt>.
+           Ab <tt style="white-space: nowrap;">fink-0.25</tt> werden sie in der Ausgabe von 
+           <tt style="white-space: nowrap;">fink plugins</tt> aufgelistet. Die  
+           <a href="http://wiki.finkproject.org/index.php/Fink:Notification_Plugins">Fink Developer Wiki</a> 
+           hat weitere Informationen.
+          </p>
+        </li>
+        <li><p><b>AutoScanpackages:</b> boolean</p>
+           <p>
+           Erstellt <tt style="white-space: nowrap;">fink</tt> neue Pakete, kennt <tt style="white-space: nowrap;">apt-get</tt> 
+           sie nicht sofort. Früher musste das Kommando 
+           <tt style="white-space: nowrap;">fink scanpackages</tt> ausgeführt werden, damit 
+           <tt style="white-space: nowrap;">apt-get</tt> die neuen Pakete kennt. Jetzt erfolgt dies aber 
+           automatisch. Ist die Option vorhanden und auf <b>false</b> gesetzt, 
+           wird <tt style="white-space: nowrap;">fink scanpackages</tt> nicht mehr automatisch nach dem 
+           Erstellen von Paketen ausgeführt. Voreinstellung: <b>true</b>.
+           </p>
+        </li>
+        <li><p><b>ScanRestrictivePackages:</b> boolean</p>
+           <p>
+           Überprüft <tt style="white-space: nowrap;">fink</tt> die Pakete für <tt style="white-space: nowrap;">apt-get</tt>, 
+           werden normalerweise alle Pakete im aktuellen Baum überprüft. Soll 
+           aber das resultierende apt-Repository veröffentlicht werden, kann 
+           der Administrator rechtlich verpflichtet sein, Pakete mit den 
+           Lizensen <tt style="white-space: nowrap;">Restrictive</tt> oder <tt style="white-space: nowrap;">Commercial</tt> 
+           auszuschließen. Ist diese Option vorhanden und auf <b>false</b> 
+           gesetzt, lässt Fink diese Pakete aus.
+           </p>
+        </li>
+        
       </ul>
     
     <h3><a name="conf.sourceslist">5.9 Verwaltung von apts sources.list</a></h3>
@@ -871,7 +996,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 <p>Mit dieser Standarddatei schaut apt-get zuerst in Ihre lokale Installation nach bereits kompilierten Binärdateien und erst danach in die offizielle Binary-Distribution. Sie können dies ändern, in dem Sie Einträge an den Anfang der Datei (was dann zuerst durchsucht wird) oder an das Ende der Datei (was dann zuletzt durchsucht wird) setzen.</p>
 <p>Wenn Sie Ihre Trees-Zeile oder die Distribution, die Sie verwenden, verändern, wird Fink automatisch den "Standard"-Anteil der Datei auf die korrespondierenden, neuen Werte setzen. Fink wird allerdings jegliche lokale Änderungen beibehalten, die Sie an der Datei vorgenommen haben, vorausgesetzt, dass Sie Ihre Änderungen an den Anfang der Datei (über der ersten Standardzeile) oder an das Ende der Datei (unter der letzten Standardzeile) setzen.
 </p><p>
-Anmerkung:  Wenn Sie die Datei <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> vor dem Update auf Fink 0.21.0 geändert haben, werden Sie Ihre vorherige Datei hier gespeichert finden: <tt style="white-space: nowrap;">/sw/etc/apt/sources.list.finkbak</tt>.
+Anmerkung:  Wenn Sie die Datei <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> vor der Aktualisierung auf Fink 0.21.0 geändert haben, werden Sie Ihre vorherige Datei hier gespeichert finden: <tt style="white-space: nowrap;">/sw/etc/apt/sources.list.finkbak</tt>.
 </p>
     
   <h2><a name="usage">6 Das fink-Tool über die Kommandozeile benutzen</a></h2>
@@ -1324,4 +1449,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: uguide.de.xml,v 1.8 2012/11/11 15:20:17 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: uguide.de.xml,v 1.10 2014/10/20 11:41:47 nieder Exp $</i></p></body></html>

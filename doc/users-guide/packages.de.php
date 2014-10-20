@@ -1,7 +1,7 @@
 <?
 $title = "Benutzerhandbuch - Pakete";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2014/10/20 11:41:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="upgrade.php?phpLang=de" title="Fink Aktualisieren"><link rel="prev" href="install.php?phpLang=de" title="Erste Installation">';
 
 
