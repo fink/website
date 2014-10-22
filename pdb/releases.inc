@@ -22,6 +22,7 @@ foreach(array(
 	new Distribution("10.7",        "x86_64",  "10.7/x86_64",        "dists/10.7",         12, TRUE, TRUE, TRUE),
 	new Distribution("10.8",        "x86_64",  "10.8/x86_64",        "dists/10.7",         13, TRUE, TRUE, TRUE),
 	new Distribution("10.9",        "x86_64",  "10.9/x86_64",        "dists/10.7",         14, TRUE, TRUE, TRUE),
+	new Distribution("10.10",       "x86_64",  "10.10/x86_64",       "dists/10.7",         15, TRUE, TRUE, TRUE),
 ) as $_dist) {
 	$distributions[$_dist->getId()] = $_dist;
 }
@@ -84,6 +85,10 @@ foreach(array(
 	new Release($distributions["10.9-x86_64"],          "bindist-unstable", "current", 54, TRUE),
 	new Release($distributions["10.9-x86_64"],          "stable",           "current", 55, TRUE),
 	new Release($distributions["10.9-x86_64"],          "unstable",         "current", 56, TRUE),
+	new Release($distributions["10.10-x86_64"],         "bindist",          "current", 53, TRUE),
+	new Release($distributions["10.10-x86_64"],         "bindist-unstable", "current", 54, TRUE),
+	new Release($distributions["10.10-x86_64"],         "stable",           "current", 55, TRUE),
+	new Release($distributions["10.10-x86_64"],         "unstable",         "current", 56, TRUE),
 ) as $_rel) {
 	$releases[$_rel->getId()] = $_rel;
 }
