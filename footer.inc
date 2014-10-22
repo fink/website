@@ -1,9 +1,9 @@
-<? /* $Id: footer.inc,v 1.48 2013/01/02 03:44:05 alexkhansen Exp $ */ ?>
+<? /* $Id: footer.inc,v 1.49 2014/10/22 17:38:57 thesin Exp $ */ ?>
 
 <? /* end content table */ ?>
 </div>
 <div id="footer-left">
-		<a href="/legal.php" style="text-decoration:none ; color:black ;">
+		<a href=""<? print $linkroot ?>legal.php" style="text-decoration:none ; color:black ;">
 			Copyright &copy; 2001-2013<br>The&nbsp;Fink&nbsp;Project
 	 	</a>
 </div>
