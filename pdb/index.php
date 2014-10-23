@@ -1,7 +1,7 @@
 <?
 $title = "Package Database - Introduction";
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2013/11/15 00:45:39 $';
+$cvs_date = '$Date: 2014/10/23 19:44:43 $';
 
 // 2 hours, this page does not change much
 $cache_timeout = 7200;
@@ -12,7 +12,7 @@ include_once "releases.inc";
 include_once "sections.inc";
 
 ini_set("memory_limit", "48M");
-$q = new SolrQuery();
+$q = new pdbQuery();
 $q->addQuery("dist_visible:true", true);
 $update_date = handle_last_modified('pdb-last-modified', $q);
 
@@ -51,7 +51,7 @@ $pkgcount = memcache_get_key('pdb-package-count');
 
 if (!$pkgcount) {
 	$names = array();
-	$q = new SolrQuery();
+	$q = new pdbQuery();
 	$q->addQuery("dist_visible:true", true);
 	$q->addField("name_e");
 	$q->setUnique(true);

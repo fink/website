@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2013/12/04 02:44:36 $';
+$cvs_date = '$Date: 2014/10/23 19:44:43 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -13,7 +13,7 @@ if (isset($_SERVER["PATH_INFO"])) {
 } else {
 	$package = "";
 }
-$q = new SolrQuery();
+$q = new pdbQuery();
 $q->addQuery("name_e:\"$package\"", true);
 handle_last_modified('pdb-last-modified-' . $package, $q);
 
@@ -28,7 +28,7 @@ list($rel_id, $inv_p) = get_safe_param('rel_id', '/^[[:alnum:]\-\_\.\:]+$/');
 list($showall, $inv_p) = get_safe_param('showall', '/^on$/');
 list($doc_id, $inv_p) = get_safe_param('doc_id', '/^[[:alnum:]\-\_\.\:]+$/');
 
-$basicQuery = new SolrQuery();
+$basicQuery = new pdbQuery();
 
 $basicQuery->addSort("epoch desc");
 $basicQuery->addSort("sort_version desc");
@@ -327,7 +327,7 @@ unset($result);
 	}
 	if (!isset($pobj['parentname'])) $pobj['parentname'] = "";
 	if ($pobj['parentname']) {
-		$parentq = new SolrQuery();
+		$parentq = new pdbQuery();
 		$parentq->addQuery('rel_id:"' . $pobj['rel_id'] . '"', true);
 		$parentq->addQuery('pkg_id:"' . $pobj['parentname'] . '"', true);
 		$parent = $parentq->fetch();
@@ -358,7 +358,7 @@ unset($result);
 		it_item("Deb Archive:", $debarchive_html);
 	}
 
-	$sq = new SolrQuery();
+	$sq = new pdbQuery();
 	$sq->addQuery('rel_id:"' . $pobj['rel_id'] . '"', true);
 	$sq->addQuery('parentname_e:"' . $pobj['pkg_id'] . '"', true);
 	$splitoffs = $sq->fetch();

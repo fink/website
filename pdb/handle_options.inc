@@ -210,7 +210,7 @@ if ($tree == 'testing') {
 	}
 }
 
-$query = new SolrQuery();
+$query = new pdbQuery();
 
 $query->addField("name");
 $query->addField("name_e");

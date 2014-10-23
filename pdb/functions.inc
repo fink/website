@@ -104,7 +104,7 @@ function parse_version($version) {
 }
 
 function fetch_package($_name, $_version = null, $_distribution = null, $_release = null, $_architecture = null, $_showall = false) {
-	$_query = new SolrQuery();
+	$_query = new pdbQuery();
 
 	$_query->addQuery("name_e:\"$_name\"", true);
 	if ($_version != null)
@@ -130,7 +130,7 @@ function fetch_package($_name, $_version = null, $_distribution = null, $_releas
 	}
 }
 
-class SolrQuery {
+class pdbQuery {
 	protected $action;
 	protected $url;
 	protected $type;
