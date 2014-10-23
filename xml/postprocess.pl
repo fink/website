@@ -16,7 +16,7 @@ if ($text =~ m|Id: \S+ \S+ (\d{2,4}/\d{1,2}/\d{1,2} \d{1,2}:\d{1,2}:\d{1,2}) (\S
 }
 
 $text =~ s|<\!DOCTYPE[^>]+>\n||g;
-$text =~ s|<html>.*<head>.*<title>|<?\n\$title = "|s;
+$text =~ s|<html>.*<head>.*<title>|<?php\n\$title = "|s;
 while ($text =~ s|(</title>.*[^\\])'(.*</head>)|$1\\'$2|s) {
 }
 $text =~ s|</title>|";\n\$cvs_author = '$tag_author';\n\$cvs_date = '$tag_date';\n\$metatags = '|s;

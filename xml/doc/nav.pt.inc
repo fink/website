@@ -1,5 +1,5 @@
-<?
-/* $Id: nav.pt.inc,v 1.3 2009/04/01 14:16:08 monipol Exp $ */
+<?php
+/* $Id: nav.pt.inc,v 1.4 2014/10/23 20:48:52 thesin Exp $ */
 
 $section = "documentation";
 $navbox = array(

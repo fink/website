@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.13 2011/11/27 18:19:46 fingolfin Exp $
+# $Id: Makefile,v 1.14 2014/10/23 20:48:52 thesin Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -41,10 +41,10 @@ $(foreach LANG,$(LANGUAGES_AVAILABLE),$(eval $(call NEWS_TEMPLATE,$(LANG))))
 	$(PROCESS_WEBSITE) <$< >$@
 
 index.php:
-	echo '<? include_once "../phpLang.inc.php"; ?>' > $@
+	echo '<?php include_once "../phpLang.inc.php"; ?>' > $@
 
 news.inc:
-	echo '<? include_once dirname(__FILE__) . "/news.en.inc"; ?>' > $@
+	echo '<?php include_once dirname(__FILE__) . "/news.en.inc"; ?>' > $@
 
 news.rdf: news.en.rdf
 	-cp news.en.rdf news.rdf
