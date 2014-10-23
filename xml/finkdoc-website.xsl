@@ -66,7 +66,7 @@
 
 <!-- Generate header.inc -->
 <xsl:document href="{@xml:base}header.inc" method="text" indent="no" encoding="iso-8859-1">
-<xsl:text>&lt;?
+<xsl:text>&lt;?php
 /* This file is generated, do not edit manually! */
 
 $section = "documentation";

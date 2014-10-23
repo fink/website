@@ -16,7 +16,7 @@
 <xsl:template match="document">
 
 <xsl:document href="{@filename}.php" method="html" indent="no" encoding="utf-8">
-<xsl:text disable-output-escaping="yes">&lt;? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
+<xsl:text disable-output-escaping="yes">&lt;?php include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
 </xsl:document>
 
 <xsl:document href="{@filename}.{$lang-ext}.php.tmp" method="html" indent="no" encoding="utf-8">
@@ -77,7 +77,7 @@ include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disa
 
 <!-- Generate language specific header include file -->
 <xsl:document href="{@xml:base}header.{$lang-ext}.inc" method="text" indent="no" encoding="utf-8">
-<xsl:text disable-output-escaping="yes">&lt;?</xsl:text><xsl:text> 
+<xsl:text disable-output-escaping="yes">&lt;?php</xsl:text><xsl:text> 
 /* This file is generated, do not edit manually! */
 
 $section = "</xsl:text><xsl:value-of select="@section"/><xsl:text>";
@@ -110,7 +110,7 @@ include $fsroot."header.inc";
 
 <xsl:template match="chapter">
 <xsl:document href="{@filename}.php" method="html" indent="no" encoding="utf-8">
-<xsl:text disable-output-escaping="yes">&lt;? include_once "</xsl:text><xsl:value-of select="../@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
+<xsl:text disable-output-escaping="yes">&lt;?php include_once "</xsl:text><xsl:value-of select="../@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
 </xsl:document>
 
 <xsl:document href="{@filename}.{$lang-ext}.php.tmp" method="html" indent="no" encoding="utf-8">
@@ -165,7 +165,7 @@ include_once "header.</xsl:text><xsl:value-of select="$lang-ext"/><xsl:text disa
 
 <xsl:template match="article">
 <xsl:document href="{@filename}.php" method="html" indent="no" encoding="utf-8">
-<xsl:text disable-output-escaping="yes">&lt;? include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
+<xsl:text disable-output-escaping="yes">&lt;?php include_once "</xsl:text><xsl:value-of select="@fsroot"/><xsl:text disable-output-escaping="yes">phpLang.inc.php"; ?&gt;</xsl:text>
 </xsl:document>
 
 <xsl:document href="{@filename}.{@lang}.php.tmp" method="html" indent="no" encoding="utf-8">
