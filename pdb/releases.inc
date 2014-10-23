@@ -97,5 +97,4 @@ foreach($releases as $_rel) {
 	$_dist_id = $_rel->getDistribution()->getId();
 	$dists_to_releases[$_dist_id][$_rel->getType()] = $_rel;
 }
-
 ?>
