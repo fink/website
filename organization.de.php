@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Organization of Fink";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/19 12:12:58 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -37,6 +37,6 @@ Sie sind über &lt;fink-core@lists.sourceforge.net&gt; erreichbar.</p>
 
 <p>Beschreibung kommt bald ...</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

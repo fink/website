@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2014/10/19 03:19:22';
@@ -497,4 +497,4 @@ and Beyond!</code></p>
       você precisa executar <code>fink selfupdate</code> após a instalação.</p>
     
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

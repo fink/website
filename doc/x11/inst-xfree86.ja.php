@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - X11 のインストール";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -317,8 +317,8 @@ Apple X11 を削除する場合は <code>.xinitrc</code> を開いて <code>quar
             <p>または <code>xfree86-base-threaded</code> と <code>xfree86-rootless-threaded</code> (および <code>-shlibs</code>)</p>
           </td></tr></table>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="run-xfree86.php?phpLang=ja">4. X11 の起動</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

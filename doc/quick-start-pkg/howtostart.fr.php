@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Tutoriel d'empaquetage - Préliminaires";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -96,8 +96,8 @@ finkdev% fink install nomdupaquet
 <li>Indiquez également à quelle catégorie appartient l'élément en choisissant une valeur dans le menu déroulant <code>Category</code>.</li>
 </ul>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="example.php?phpLang=fr">2. Exemple - le paquet Maxwell</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

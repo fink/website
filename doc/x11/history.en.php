@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - History";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2013/01/03 18:17:34';
@@ -115,8 +115,8 @@ version had been completely integrated into the main XFree86 distribution.
         appropriate X11 distribution to use.
       </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="inst-xfree86.php?phpLang=en">3. Getting and Installing X11</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "F.A.Q. - Usage (2)";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2013/06/23 22:49:28';
@@ -12,8 +12,8 @@ include_once "header.en.inc";
     
     
     <a name="xmms-quiet">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.1: I get no sound from XMMS</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Make sure you have the "eSound Output Plugin" selected in the XMMS
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.1: I get no sound from XMMS</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Make sure you have the "eSound Output Plugin" selected in the XMMS
         preferences. For some strange reason, it selects the disk writer
         plugin as the default.</p><p>If you still get no sound output or XMMS complains that it can't
         find your sound card try this:</p><ul>
@@ -37,9 +37,9 @@ include_once "header.en.inc";
         We don't have an analysis or a fix yet.</p></div>
     </a>
     <a name="nedit-window-locks">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.2: If I am editing a file in nedit, when I open another file its
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.2: If I am editing a file in nedit, when I open another file its
         window pops up but is unresponsive.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is a known problem that occurs with recent versions of
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This is a known problem that occurs with recent versions of
         <code>nedit</code> and <code>lesstif</code> on all
         platforms. The workaround is to open a new window with File--&gt;New,
         then open the next file you want to work on.</p><p>This is now fixed in <code>nedit-5.3-6</code>, which
@@ -47,14 +47,14 @@ include_once "header.en.inc";
         <code>lesstif</code>.</p></div>
     </a>
     <a name="xdarwin-start">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.3: Help! When I start XDarwin, it immediately quits!</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Don't Panic. The Running X11 document now has an extensive <a href="/doc/x11/trouble.php#immediate-quit">troubleshooting
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.3: Help! When I start XDarwin, it immediately quits!</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Don't Panic. The Running X11 document now has an extensive <a href="/doc/x11/trouble.php#immediate-quit">troubleshooting
         section</a> for this common problem.</p></div>
     </a>
     <a name="no-server">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.4: When I try to start XDarwin I get the message "xinit: No such file
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.4: When I try to start XDarwin I get the message "xinit: No such file
         or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> First, make sure you are sourcing init.sh in your X startup
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> First, make sure you are sourcing init.sh in your X startup
         <code>~/.xinitrc</code>.</p><p>In Jaguar, sometimes all of the <code>xfree86</code> packages get
         built, but only <code>xfree86-base</code> and
         <code>xfree86-base-shlibs</code> are installed. Check whether you have
@@ -65,9 +65,9 @@ include_once "header.en.inc";
         <code>/usr/bin/X11R6</code> in your PATH.</p></div>
     </a>
     <a name="apple-x-delete">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.5: I want the delete key in Apple's X11.app to behave like that in
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.5: I want the delete key in Apple's X11.app to behave like that in
         XDarwin.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Some users have reported that the behavior of the
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Some users have reported that the behavior of the
         <code>delete</code> key is different between XDarwin and Apple X11.
         This can be rectified by adding lines to the appropriate X startup
         files:</p><p>
@@ -83,8 +83,8 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
     </a>
     <a name="apple-x11-wants-xfree86">
       
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.6: I'm having problems with X11 and Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.6: I'm having problems with X11 and Fink.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>
           <li>
             <b>You are installing from binaries:</b>
             <p>Typically what you need to do is reinstall the X11User package,
@@ -125,8 +125,8 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
         </ul></div>
     </a>
     <a name="special-x11-debug">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.7: I'm still having problems with X11 and Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If the hints in the  <a href="#apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</a> entry don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p><p>On Leopard, use</p><pre>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.7: I'm still having problems with X11 and Fink.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If the hints in the  <a href="#apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</a> entry don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p><p>On Leopard, use</p><pre>
 sudo pkgutil --forget com.apple.pkg.X11User
 sudo pkgutil --forget com.apple.pkg.X11SDKLeo
 </pre><p>Then, on either 10.4 or 10.5, run</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
@@ -150,16 +150,16 @@ fink selfupdate; fink index</pre><p>(the first line may give you warnings about 
         </ul></div>
     </a>
     <a name="tiger-gtk">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.8: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p><p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.8: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p><p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
 </p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p><p>You may find it preferable to set this globally (e.g. in your startup script, and/or in your <code>.xinitrc</code>, which you may need to do to run GNOME).  Put</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <b>bash</b> users and:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <b>tcsh</b> users.</p><p>Note:  this will automatically be done if you install a recent enough <code>base-files</code>.
 	</p></div>
     </a>
     <a name="yelp">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.9: I can't get the help to work for any GNOME application.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.9: I can't get the help to work for any GNOME application.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p></div>
     </a>
   
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

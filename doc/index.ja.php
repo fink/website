@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Documentation";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -70,6 +70,6 @@ Fink パッケージの作り方、メンテナンス方法</li>
 メーリングリストを快適に保つために</li>
 </ul>
 
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

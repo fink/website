@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "F.A.Q.";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -14,7 +14,7 @@ include_once "header.ja.inc";
 <p>FAQは節毎にページがわかれています。
 下記の目次にすべての質問があります。
 それぞれリンクされていますので、辿っていってください。</p>
-<h2><? echo FINK_CONTENTS ; ?></h2><ul>
+<h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="general.php?phpLang=ja"><b>1 一般的な質問</b></a><ul><li><a href="general.php?phpLang=ja#what">1.1 Fink とは何ですか?</a></li><li><a href="general.php?phpLang=ja#naming">1.2 Fink とはどういう意味ですか?</a></li><li><a href="general.php?phpLang=ja#bsd-ports">1.3 
 Fink と BSD の port メカニズムはどう違うのですか (OpenPackages や GNU-Darwin も含めて)?
 </a></li><li><a href="general.php?phpLang=ja#usr-local">1.4 なぜ Fink は /usr/local にインストールしないのですか?</a></li><li><a href="general.php?phpLang=ja#why-sw">1.5 ではなぜ /sw を選んだのですか?</a></li></ul></li><li><a href="relations.php?phpLang=ja"><b>2 他のプロジェクトとの関係</b></a><ul><li><a href="relations.php?phpLang=ja#upstream">2.1 パッチを送るなど、本家のメンテナに貢献していますか?</a></li><li><a href="relations.php?phpLang=ja#debian">2.2 Debian プロジェクトとは関係がありますか。 Debian Linux を Mac OS X に移植しようとしているのですか?</a></li><li><a href="relations.php?phpLang=ja#apple">2.3 Apple とは関係がありますか?</a></li><li><a href="relations.php?phpLang=ja#darwinports">2.4 Darwinports とは関係がありますか?</a></li></ul></li><li><a href="mirrors.php?phpLang=ja"><b>3 Fink ミラー</b></a><ul><li><a href="mirrors.php?phpLang=ja#when-use">3.1 Fink ミラーとは何ですか?</a></li><li><a href="mirrors.php?phpLang=ja#why">3.2 なぜ rsync ミラーを使わないといけないのですか?</a></li><li><a href="mirrors.php?phpLang=ja#where">3.3 Fink ミラーの情報はどこにありますか?</a></li><li><a href="mirrors.php?phpLang=ja#when-not">3.4 rsync サーバーに接続できません。どうしたら良いですか?</a></li><li><a href="mirrors.php?phpLang=ja#otherinfogone">3.5 rsync 方式に変えたら、unused ツリーの info ファイルが全て消えてしまいました。</a></li><li><a href="mirrors.php?phpLang=ja#howswitch">3.6 どのように方式を切り替えるのですか?</a></li><li><a href="mirrors.php?phpLang=ja#Master">3.7 Distfiles ミラーとは何ですか?</a></li></ul></li><li><a href="upgrade-fink.php?phpLang=ja"><b>4 Fink のアップグレード (バージョン固有の問題対処法)</b></a><ul><li><a href="upgrade-fink.php?phpLang=ja#leopard-bindist1">4.1 rsync や cvs の selfupdate を実行しても、Fink が新しいパッケージを読み込んでくれません。</a></li><li><a href="upgrade-fink.php?phpLang=ja#leopard-bindist2">4.2 何かをインストールしようとすると、'Can't resolve dependency "fink (&gt;= 0.28.0)"' というエラーが出ます。</a></li><li><a href="upgrade-fink.php?phpLang=ja#stuck-gettext">4.3 Fink が、'sudo apt-get install libgettext3-dev=0.14.5-2' を実行して問題のある依存性を解消するように言ってきますが、まだおかしいです。</a></li><li><a href="upgrade-fink.php?phpLang=ja#stuck-dpkg">4.4 Fink が 'Can't resolve dependency "dpkg (&gt;= 1.10.21-1229)" for package "dpkg-base-files-0.3-1"' って言うてはりますけど、  
@@ -89,6 +89,6 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
         	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
         </a></li><li><a href="usage-packages.php?phpLang=ja#yelp">9.11 どの GNOME アプリケーションでも、ヘルプ機能が使えません。</a></li></ul></li></ul>
 <!--Generated from $Fink: faq.ja.xml,v 1.47 2012/11/11 15:20:14 gecko2 Exp $-->
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

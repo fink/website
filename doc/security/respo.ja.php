@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "セキュリティポリシー - 責任";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2005/02/04 09:30:20';
@@ -51,8 +51,8 @@ include_once "header.ja.inc";
 					パッケージは、メンテナに関わり無く直ちに更新されます。
 				</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="severity.php?phpLang=ja">2. 返答時間と即時行動</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "リンク集";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2010/05/16 22:55:21 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -58,6 +58,6 @@ FreeBSD の ports collection をポートしている。</li>
 <li><a href="http://mixi.jp/view_community.pl?id=323942" target="_blank">mixi Fink Macで楽にUnixソフトを…</a> - mixi のユーザーアカウントが必要です。（日本語ページのみ）</li>
 </ul>
 
-<?
+<?php
 include "footer.inc";
 ?>

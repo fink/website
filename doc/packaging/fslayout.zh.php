@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "打包 - 文件系统布局";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -144,8 +144,8 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="compilers.php?phpLang=zh">5. Compilers</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

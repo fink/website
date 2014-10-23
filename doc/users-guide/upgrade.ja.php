@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "ユーザーガイド - アップグレード";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -99,8 +99,8 @@ Binary-&gt;Dist-Upgrade packages でパッケージを更新します。
 Source-&gt;Update-all を行います(詳細は前の節を参照)。
 </p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=ja">5. Fink 設定ファイル</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - Appendix";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:15';
@@ -33,6 +33,6 @@ include_once "header.en.inc";
       </ul>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

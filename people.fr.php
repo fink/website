@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Contributeurs";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/09/27 16:44:16 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -225,6 +225,6 @@ Le site web doit être mis constamment mis à jour. Les utilisateurs ont besoin 
 </ul>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

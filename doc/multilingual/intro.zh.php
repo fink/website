@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - 介绍";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
@@ -67,8 +67,8 @@ include_once "header.zh.inc";
         做完这些以后，后面的通常就是一些小的修改。</p></li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="files.php?phpLang=zh">2. 文档文件</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

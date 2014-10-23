@@ -1,1 +1,1 @@
-<? include_once "../../phpLang.inc.php"; ?>
+<?php include_once "../../phpLang.inc.php"; ?>

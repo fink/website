@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Utilisation de X11 - Xtools";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -23,8 +23,6 @@ include_once "header.fr.inc";
 
 <p>Xtools utilise l'accelération matériel OpenGL en mode sans racine et fournit les librairies pour gérer cette fonctionnalité. La librairie principale libGL est parfaite, mais les librairies libGLU et libglut n'existent que sous forme statique, ce qui n'est pas suffisant pour assurer une compatibilité binaire complète avec XFree86. Quelques headers manquent. Fink ne propose pas de solution à ce problème pour le moment. Nous espérons que le problème sera résolu dans Xtools 1.1.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="other.php?phpLang=fr">6. Autres possibilités pour X11</a></p>
-<? include_once "../../footer.inc"; ?>
-
-
+<?php include_once "../../footer.inc"; ?>

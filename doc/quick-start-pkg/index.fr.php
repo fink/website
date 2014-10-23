@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Tutoriel d'empaquetage";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -16,9 +16,9 @@ include_once "header.fr.inc";
 
 
 Nous commencerons par les généralités, puis nous verrons en détail la création d'un paquet <a href="http://maxwell.sourceforge.net">maxwell</a> pour Fink.</p>
-<h2><? echo FINK_CONTENTS ; ?></h2><ul>
+<h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="howtostart.php?phpLang=fr"><b>1 Préliminaires</b></a><ul><li><a href="howtostart.php?phpLang=fr#Learn">1.1 Apprentissage des bases</a></li><li><a href="howtostart.php?phpLang=fr#Make">1.2 Création d'un paquet</a></li><li><a href="howtostart.php?phpLang=fr#Validate">1.3 Validation d'un paquet</a></li><li><a href="howtostart.php?phpLang=fr#Submit">1.4 Soumission de votre paquet</a></li></ul></li><li><a href="example.php?phpLang=fr"><b>2 Exemple - le paquet Maxwell</b></a><ul><li><a href="example.php?phpLang=fr#Basics">2.1 Préparation</a></li><li><a href="example.php?phpLang=fr#build">2.2 Construction</a></li></ul></li></ul>
 <!--Generated from $Fink: quick-start-pkg.fr.xml,v 1.11 2012/11/11 15:20:17 gecko2 Exp $-->
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

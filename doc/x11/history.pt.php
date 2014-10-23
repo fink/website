@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Executando o X11 - História";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -77,8 +77,8 @@ include_once "header.pt.inc";
       de 2002, a versão do Darwin/Mac OS X havia sido completamente integrada à
       distribuição principal do XFree86.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="inst-xfree86.php?phpLang=pt">3. Obtendo e instalando o X11</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guia do usuário - fink.conf";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -576,8 +576,8 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
       primeira linha padrão) e ao fim do arquivo (abaixo da última linha
       padrão).</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=pt">6. Usando a ferramenta fink a partir da linha de comando</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

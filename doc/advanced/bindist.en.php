@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Advanced - Binary Distro Server";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:12';
@@ -134,6 +134,6 @@ by RangerRick. Thanks!
       </p>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

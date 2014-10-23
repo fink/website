@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Benutzerhandbuch - Pakete";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
@@ -233,8 +233,8 @@ dependency placeholders.
       Für mehr Informationen über die Installation und die Nutzung von X11, schlagen Sie weiter im <a href="/doc/x11/">X11 unter Darwin und Mac OS X</a>-Dokument nach.
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="upgrade.php?phpLang=de">4. Fink Aktualisieren</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Porting - Preparing for 10.3";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -115,8 +115,8 @@ include_once "header.en.inc";
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="preparing-10.4.php?phpLang=en">6. Preparing for 10.4</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

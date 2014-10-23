@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guide utilisateur - fink.conf";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -279,8 +279,8 @@ main crypto
 <p>Si vous changez la ligne Trees ou la distribution que vous utilisez, <code>fink</code> modifie automatiquement la partie "par défaut" (similaire à celle ci-dessus) du fichier pour qu'elle corresponde aux nouvelles valeurs. Néanmoins Fink préserve toutes les modifications locales apportées au fichier, à condition que les changements soient situés au début (au-dessus de la première ligne par "défaut" ou à la fin du fichier (en dessous de la dernière ligne par défaut).</p>
 <p>Note : si vous avez modifié <code>/sw/etc/apt/sources.list</code> avant de passer à la version 0.21.0 de <code>fink</code>, votre ancien fichier sources.list sera sauvegardé sous <code>/sw/etc/apt/sources.list.finkbak</code> .</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=fr">6. Utilisation de l'outil fink en ligne de commande</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

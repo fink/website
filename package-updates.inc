@@ -1,4 +1,4 @@
-<?
+<?php
 
 $incfile = "/usr/share/php/XML/RSS.php";
 

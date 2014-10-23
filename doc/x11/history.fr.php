@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Utilisation de X11 - Historique";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -30,8 +30,8 @@ include_once "header.fr.inc";
 <p>Pendant ce temps, Apple sortait Mac OS X 10.0 et Darwin 1.3 ; quelques semaines plus tard, Tenon sortait Xtools 1.0.</p>
 <p>Les travaux d'intégration du mode sans racine dans XFree86 continuèrent, si bien que, lorsque XFree86 4.2.0 sortit en janvier 2002, la version Darwin/Mac OS X avait été complètement intégrée dans la distribution principale de XFree86.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="inst-xfree86.php?phpLang=fr">3. Récupération et installation de X11</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

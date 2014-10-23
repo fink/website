@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Mailing Lists";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2004/03/03 17:04:03 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:15:12 $';
 
 include "header.inc";
 ?>
@@ -53,6 +53,6 @@ Distribution list for bug reports and package submissions.</p></li>
 </ul>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

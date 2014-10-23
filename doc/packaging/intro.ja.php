@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "パッケージ作成 - 始めに";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2014/09/09 03:41:02';
@@ -55,8 +55,8 @@ include_once "header.ja.inc";
 				"openssh-2.9p1-2" などという形式になります．
 			</p>
 		
-	<p align="right"><? echo FINK_NEXT ; ?>:
+	<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="format.php?phpLang=ja">2. パッケージ記述</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

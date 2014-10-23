@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - Other Stuff";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2013/01/03 18:17:34';
@@ -32,8 +32,8 @@ include_once "header.en.inc";
         Sources and a java jar file are available at the web site.
       </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="trouble.php?phpLang=en">6. Troubleshooting XFree86</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

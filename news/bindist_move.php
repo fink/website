@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Binary distribution moved to new location";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2002/07/17 00:27:49 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:29 $';
 
 include "header.inc";
 ?>
@@ -92,6 +92,6 @@ to re-add the deb line to your source.list file. Read <a href="kde.php">the KDE 
 </li>
 </ol>
 
-<?
+<?php
 include "footer.inc";
 ?>

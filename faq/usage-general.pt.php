@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Perguntas frequentes - Uso (1)";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -12,16 +12,16 @@ include_once "header.pt.inc";
     
     
     <a name="xlocale">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.1: Estou recebendo várias mensagens como "locale not supported by C
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.1: Estou recebendo várias mensagens como "locale not supported by C
         library" ("local não suportado por biblioteca C"). Isso é ruim?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Não é ruim, apenas significa que o programa usará por padrão as
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Não é ruim, apenas significa que o programa usará por padrão as
         mensagens em inglês, formatos de data etc. O programa funcionará
         normalmente. O documento Executando o X11 tem mais <a href="/doc/x11/trouble.php#locale">detalhes</a>.</p></div>
     </a>
     <a name="passwd">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.2: Surgiram de repente vários usuários estranhos no meu sistema com
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.2: Surgiram de repente vários usuários estranhos no meu sistema com
         nomes como "mysql", "pgsql" e "games". De onde eles vieram?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Você usou o Fink para instalar um pacote que depende de outro
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Você usou o Fink para instalar um pacote que depende de outro
         pacote, o passwd. O passwd instala vários usuários extras no seu
         sistema por razões de segurança -- em sistemas Unix, arquivos e
         processos pertencem a "proprietários", o que permite que
@@ -60,9 +60,9 @@ include_once "header.pt.inc";
         passwd, portanto eles não deveriam ser de todo uma surpresa.</p></div>
     </a>
     <a name="compile-myself">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Como faço para compilar algo usando softwares instalados pelo
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.3: Como faço para compilar algo usando softwares instalados pelo
         Fink?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
         linker need to be told where to find the Fink-installed libraries and
 		headers.  It is also necessary to tell the compiler to use the
 		appropriate target architecture.  For a package that uses standard
@@ -92,9 +92,9 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
         if they aren't already installed.</p></div>
     </a>
     <a name="apple-x11-applications-menu">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.4: Não consigo rodar nenhuma dos meus aplicativos instalados via Fink
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.4: Não consigo rodar nenhuma dos meus aplicativos instalados via Fink
         quando uso o menu Applications (Aplicativos) do X11 da Apple.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O X11 da Apple não considera as configurações de ambiente do Fink, o
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> O X11 da Apple não considera as configurações de ambiente do Fink, o
         que significa que o menu Applications (Aplicativos) não possui o PATH
         configurado corretamente para achar os aplicativos do Fink. A solução é
         colocar, no começo do nome de um aplicativo instalado pelo Fink, o
@@ -103,9 +103,9 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
         usuário) e adicionar:</p><pre>source /sw/bin/init.sh</pre><p>após a primeira linha.</p></div>
     </a>
     <a name="x-options">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.5: Estou perplexo com as opções de X11: X11 da Apple, XFree86 etc. Qual
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.5: Estou perplexo com as opções de X11: X11 da Apple, XFree86 etc. Qual
         devo instalar?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Todas são variantes do XFree86 (são baseadas no código do XFree86)
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Todas são variantes do XFree86 (são baseadas no código do XFree86)
         mas possuem algumas pequenas diferenças entre elas. Há opções
         diferentes para o Panther e para o Jaguar.</p><p>No Panther você pode escolher dentre:</p><ul>
           <li>
@@ -148,26 +148,26 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
         X11</a>.</p></div>
     </a>
     <a name="no-display">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.6: Quando tento rodar um aplicativo, recebo uma mensagem que diz
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.6: Quando tento rodar um aplicativo, recebo uma mensagem que diz
         "cannot open display:" ("não foi possível abrir o display:"). O que
         preciso fazer?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Este erro significa que o sistema não está se conectado ao display
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Este erro significa que o sistema não está se conectado ao display
         do X. Faça o seguinte:</p><p>1. Inicie o X (X11 da Apple, XFree86, ...).</p><p>2. Assegure-se de que sua variável de ambiente DISPLAY esteja
         definida corretamente. Se você está usando a configuração padrão do X,
         você pode fazê-lo com</p><pre>export DISPLAY=:0</pre><p>caso esteja usando o <code>bash</code> ou</p><pre>setenv DISPLAY :0</pre><p>caso esteja usando o<code>tcsh</code>.</p></div>
     </a>
     <a name="suggest-package">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.7: Não estou vendo meu programa favorito no Fink. Como faço para
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.7: Não estou vendo meu programa favorito no Fink. Como faço para
         sugerir que um novo pacote seja incluído no Fink?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Faça a requisição no <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Faça a requisição no <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
         Request Tracker</a> na página do projeto Fink.</p><p>Note que você precisa ter uma conta no SourceForge para fazê-lo.</p></div>
     </a>
     <a name="virtpackage">
       
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.8: O que são esses "pacotes virtuais" <code>system-*</code> que às
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.8: O que são esses "pacotes virtuais" <code>system-*</code> que às
         vezes estão presentes mas que não consigo eu mesmo instalar ou
         remover?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Pacotes com nomes como <code>system-perl</code> são pacotes
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Pacotes com nomes como <code>system-perl</code> são pacotes
         sinalizadores. Eles não contêm arquivos em si mas servem meramente como
         um mecanismo para que o fink saiba sobre os programas que foram
         instalados manualmente fora do Fink.</p><p>A maior parte desses pacotes sinalizadores não são de fato pacotes
@@ -230,8 +230,8 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
           </li>
         </ul></div>
     </a>
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage-packages.php?phpLang=pt">9. Problemas no uso de pacotes - Pacotes específicos</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

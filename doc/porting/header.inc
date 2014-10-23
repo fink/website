@@ -1,5 +1,5 @@
-<?
-/* $Id: header.inc,v 1.12 2013/01/30 21:36:21 gecko2 Exp $ */
+<?php
+/* $Id: header.inc,v 1.13 2014/10/23 22:05:39 thesin Exp $ */
 
 $fsroot = $root = "../";
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - Intro";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:15';
@@ -42,8 +42,8 @@ include_once "header.fr.inc";
 <li>Devenir traducteur vous-même. Si votre langue ne figure pas encore au fronton du site (ou même si elle y figure) et que vous pensez pouvoir faire une bonne traduction, vous pouvez vous porter volontaire pour traduire dans votre propre langue. <p>Prenez en compte, toutefois, que si vous êtes la première personne à traduire dans votre langue, il y a un bon nombre de documents à traduire au départ. Ensuite, il ne devrait y avoir que peu de changements.</p></li>
 </ul>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="files.php?phpLang=fr">2. Fichiers de documentation</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "À propos de Fink";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/11/14 01:59:29 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:49 $';
 
 include "header.inc";
 ?>
@@ -83,6 +83,6 @@ Si vous ne voulez pas installer X11, cela ne pose pas de problèmes.
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

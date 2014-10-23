@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Использование X11 - История";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -66,8 +66,8 @@ include_once "header.ru.inc";
                 2002 г. версия Darwin/Mac OS X была полностью интегрирована в
                 основную дистрибуцию XFree86.</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="inst-xfree86.php?phpLang=ru">3. Получение и инсталляция XFree86</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

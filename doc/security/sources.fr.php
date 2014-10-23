@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Charte de sécurité - Sources";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2005/02/01 08:32:49';
@@ -71,8 +71,8 @@ include_once "header.fr.inc";
 </ol>
 <p>Les mots clés ci-dessus sont conformes à la liste des mots clés recommandés par CVE. Vous la trouverez <a href="http://www.cve.mitre.org/cve/refs/refkey.html">ici</a>. </p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="updating.php?phpLang=fr">4. Procédure de correctif de sécurité</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Руководство пользователя - fink.conf";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -484,8 +484,8 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
                 перед обновлением до fink 0.21.0, то найдете свои предыдущие файлы сохраненными в
                  <code>/sw/etc/apt/sources.list.finkbak</code> .</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=ru">6. Использование инструмента fink в командной строке</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

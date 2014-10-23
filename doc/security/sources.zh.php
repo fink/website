@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Security Policy - Source";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2005/04/09 16:12:59';
@@ -126,8 +126,8 @@ include_once "header.zh.inc";
             </ol>
             <p>上面的关键字附和<a href="http://www.cve.mitre.org/cve/refs/refkey.html">这里</a>的关键字列表标准 CVE。</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="updating.php?phpLang=zh">4. 安全性更新流程</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

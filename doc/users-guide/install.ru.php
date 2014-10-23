@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Руководство пользователя - Инсталляция";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -220,8 +220,8 @@ pico .cshrc</pre>
                 увидеть, как вы можете инсталлировать некоторые действительно полезные пакеты,
                 используя различные инструменты управления, входящие в Fink.</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="packages.php?phpLang=ru">3. Инсталляция пакетов</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

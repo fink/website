@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - Mise à jour";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:15';
@@ -60,8 +60,8 @@ include_once "header.fr.inc";
 
 <p>La règle actuelle est que tous les documents doivent être mis à jour suivant le schéma <a href="#prompt-update">mise à jour rapide</a>, sauf si vous avez une bonne raison de faire autrement.</p>
 
- <p align="right"><? echo FINK_NEXT ; ?>:
+ <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="resources.php?phpLang=fr">4. Autres ressources</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

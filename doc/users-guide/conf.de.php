@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Benutzerhandbuch - fink.conf";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
@@ -407,8 +407,8 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 Anmerkung:  Wenn Sie die Datei <code>/sw/etc/apt/sources.list</code> vor der Aktualisierung auf Fink 0.21.0 geändert haben, werden Sie Ihre vorherige Datei hier gespeichert finden: <code>/sw/etc/apt/sources.list.finkbak</code>.
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=de">6. Das fink-Tool über die Kommandozeile benutzen</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "运行 X11 - 介绍";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -149,8 +149,8 @@ GNOME 程序精选
 </a>。 
       </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="history.php?phpLang=zh">2. 历史</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

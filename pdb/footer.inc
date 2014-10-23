@@ -1,5 +1,5 @@
-<?
-/* $Id: footer.inc,v 1.6 2007/12/13 19:47:10 rangerrick Exp $ */
+<?php
+/* $Id: footer.inc,v 1.7 2014/10/23 22:04:57 thesin Exp $ */
 $analytics_account = "UA-305132-1";
 
 include_once $fsroot."footer.inc";

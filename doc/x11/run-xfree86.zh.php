@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "运行 X11 - 启动 X11";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -169,8 +169,8 @@ It also provides a mechanism to start X11 applications from the Finder via start
 <p>For more information visit the <a href="http://oroborosx.sourceforge.net">OroborOSX homepage</a>.</p>
     
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=zh">5. Xtools</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

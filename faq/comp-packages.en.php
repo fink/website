@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2013/06/23 22:49:28';
@@ -11,9 +11,9 @@ include_once "header.en.inc";
     
     
     <a name="libgtop">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.1: A package fails to build with errors involving
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.1: A package fails to build with errors involving
         <code>sed</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>)
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>)
         does something that writes to the terminal, e.g "<code>echo
         Hello</code>" or <code>xttitle</code>. To get rid of the problem, the
         easy solution is to comment out the offending lines.</p><p>If you want to keep the echo, then you can do something like the
@@ -22,15 +22,15 @@ include_once "header.en.inc";
 endif</pre></div>
     </a>
   <a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.2: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
+    <div class="question"><p><b><?php echo FINK_Q ; ?>7.2: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
+    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
     <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (or other versions of libraries in
     <code>/usr/X11/lib/</code>).</p><p>The current wisdom on the best
     fix for such an issue is to install Xcode 3.1.3 or later.</p></div>
   </a>
   <a name="xml-sax-expat">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.3: I get errors involving <code>_Perl_Gthr_key_ptr</code> when installing an xml-sax-pm package</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get an error that looks similar to:</p><pre>
+    <div class="question"><p><b><?php echo FINK_Q ; ?>7.3: I get errors involving <code>_Perl_Gthr_key_ptr</code> when installing an xml-sax-pm package</b></p></div>
+    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If you get an error that looks similar to:</p><pre>
 update-perl5123-sax-parsers: adding Perl SAX parser
 module info file of XML::SAX::Expat...
 dyld: lazy symbol binding failed: Symbol not found:
@@ -48,8 +48,8 @@ where perl5.12
 	you are building with Fink.</p></div>
   </a>
   <a name="malloc-symlink">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.4: I can't build a Fink <code>gcc</code> package due to "conflicting types for 'pointer_t'"</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Such errors typically look like:</p><pre>
+    <div class="question"><p><b><?php echo FINK_Q ; ?>7.4: I can't build a Fink <code>gcc</code> package due to "conflicting types for 'pointer_t'"</b></p></div>
+    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Such errors typically look like:</p><pre>
 ../../gcc-4.6.3/gcc/fortran/module.c:110:1:
 error: conflicting types for 'pointer_t'
 /usr/include/mach/vm_types.h:40:26:
@@ -63,12 +63,12 @@ make[3]: *** [fortran/module.o] Error 1
       </p></div>
   </a>
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I'm having issues with a package that isn't listed here.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.5: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
       up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=en">8. Package Usage Problems - General</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

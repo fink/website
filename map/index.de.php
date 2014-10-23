@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Fink Entwickler Karte";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/19 18:28:43 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:07:22 $';
 
 include "header.inc";
 ?>
@@ -37,7 +37,6 @@ Massachusetts, United States of America</td></tr>
 </p>
 
 <p>Damit alle auf die Karte passen, müssen manchmal benachbarte Leute zusammen gelegt werden. Ihre tatsächlichen Koordinaten bleiben dennoch erhalten</p>
-<?
+<?php
 include "../footer.inc";
 ?>
-

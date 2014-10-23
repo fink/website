@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Benutzerhandbuch - Einführung";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
@@ -73,8 +73,8 @@ Tatsächlich wird die meiste Open Source-Software als Quellcode von seinen Autor
 Die "Source"-Distribution lädt die originalen Quellen herunter, passt es an Mac OS X und Fink an und kompiliert es auf Ihrem Computer. Dieser Prozess ist vollautomatisiert, aber er benötigt einige Zeit. Die "binary"-Distribtution auf der anderen Seite lädt bereits kompilierte Pakete von Fink-Servern herunter und installiert diese, was Ihnen die Zeit für das Kompilieren spart. Es sogar möglich diese beiden Modell nach Belieben zu vermischen. Der Rest des Handbuchs wird Ihnen zeigen, wie das geht.
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="install.php?phpLang=de">2. Erste Installation</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

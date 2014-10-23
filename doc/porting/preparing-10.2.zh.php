@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "移植 - 为 10.2 做准备";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -103,8 +103,8 @@ diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="preparing-10.3.php?phpLang=zh">5. 为 10.3 做准备</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

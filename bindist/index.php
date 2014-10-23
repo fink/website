@@ -1,4 +1,4 @@
-<?
+<?php
 /* index.php */
 
 // set default timezone
@@ -56,7 +56,7 @@ if (!$rowcolor2) $rowcolor2 = "#eeeeee";
 ?>
 
 <table border="0" cellpadding="2" cellspacing="0">
-<tr bgcolor="<? print $headrowcolor ?>">
+<tr bgcolor="<?php print $headrowcolor ?>">
 <th>&nbsp;</th>
 <th align="left">Name</th>
 <th>&nbsp;&nbsp;</th>
@@ -67,7 +67,7 @@ if (!$rowcolor2) $rowcolor2 = "#eeeeee";
 <th>&nbsp;</th>
 </tr>
 
-<?
+<?php
 // function to output a table row
 $modulo = 0;
 function index_row($icon, $iconalt, $name, $link, $size, $date, $special)
@@ -181,14 +181,14 @@ foreach ($files as $fn) {
 // finish the table
 ?>
 
-<tr bgcolor="<? print $headrowcolor ?>">
-<td><img src="<? print $relbase ?>icons/shim.gif" width="24" height="1" border="0" alt=""></td>
-<td><img src="<? print $relbase ?>icons/shim.gif" width="200" height="1" border="0" alt=""></td>
-<td colspan="6"><img src="<? print $relbase ?>icons/shim.gif" width="1" height="1" border="0" alt=""></td>
+<tr bgcolor="<?php print $headrowcolor ?>">
+<td><img src="<?php print $relbase ?>icons/shim.gif" width="24" height="1" border="0" alt=""></td>
+<td><img src="<?php print $relbase ?>icons/shim.gif" width="200" height="1" border="0" alt=""></td>
+<td colspan="6"><img src="<?php print $relbase ?>icons/shim.gif" width="1" height="1" border="0" alt=""></td>
 </tr>
 
 </table>
-<?
+<?php
 
 // include footer HTML (or PHP)
 include $binbase."footer.inc";

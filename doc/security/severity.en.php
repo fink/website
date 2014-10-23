@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Security Policy - Responses";
 $cvs_author = 'Author: monipol';
 $cvs_date = 'Date: 2009/03/31 01:41:35';
@@ -49,8 +49,8 @@ include_once "header.en.inc";
                 vulnerability in a Fink package also results in a forced
                 update of that package.</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="sources.php?phpLang=en">3. Incident Sources</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

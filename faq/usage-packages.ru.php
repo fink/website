@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ч.З.В. - Использование (2)";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -11,8 +11,8 @@ include_once "header.ru.inc";
         
         
         <a name="xmms-quiet">
-            <div class="question"><p><b><? echo FINK_Q ; ?>9.1: Нет ни звука от XMMS</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Убедитесь, что у вас есть "eSound Output Plugin", отмеченный в
+            <div class="question"><p><b><?php echo FINK_Q ; ?>9.1: Нет ни звука от XMMS</b></p></div>
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Убедитесь, что у вас есть "eSound Output Plugin", отмеченный в
                    преференциях XMMS. По какой-то странной причине он выбирает плагин
                     записывающего устройства диска по умолчанию.</p><p>Если все еще нет звукового вывода или XMMS жалуется, что не может
                     найти аудиокарту, попробуйте сделать следующее:</p><ul>
@@ -39,9 +39,9 @@ include_once "header.ru.inc";
                     10.1. Мы еще не проанализировали и не устранили эту проблему. </p></div>
         </a>
         <a name="nedit-window-locks">
-            <div class="question"><p><b><? echo FINK_Q ; ?>9.2: Когда во время редактирования файла в nedit я открываю другой файл, его окно
+            <div class="question"><p><b><?php echo FINK_Q ; ?>9.2: Когда во время редактирования файла в nedit я открываю другой файл, его окно
                     появляется, но не работает.</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Это известная проблема, которая наблюдается в последних версиях
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Это известная проблема, которая наблюдается в последних версиях
                     <code>nedit</code> и <code>lesstif</code>
                     на всех платформах. Обойти ее можно так: открыть новое окно
                     при помощи File--&gt;New, а затем открыть следующий файл, с которым
@@ -49,15 +49,15 @@ include_once "header.ru.inc";
                     от <code>openmotif3</code> в большей степени, чем от <code>lesstif</code>.</p></div>
         </a>
         <a name="xdarwin-start">
-            <div class="question"><p><b><? echo FINK_Q ; ?>9.3: Помогите! Когда запускаю XDarwin, она сразу завершает работу!</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Не паникуйте. Документ "Выполнение X11" сейчас имеет большой раздел
+            <div class="question"><p><b><?php echo FINK_Q ; ?>9.3: Помогите! Когда запускаю XDarwin, она сразу завершает работу!</b></p></div>
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Не паникуйте. Документ "Выполнение X11" сейчас имеет большой раздел
                         <a href="/doc/x11/trouble.php#immediate-quit">Выявление и устранение проблем
                     </a> по данному общему вопросу.</p></div>
         </a>
         <a name="no-server">
-            <div class="question"><p><b><? echo FINK_Q ; ?>9.4: При попытке запуска XDarwin получил сообщение "xinit: No such
+            <div class="question"><p><b><?php echo FINK_Q ; ?>9.4: При попытке запуска XDarwin получил сообщение "xinit: No such
                     file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Во-первых, надо убедиться, что вы основываетесь на init.sh при запуске X <code>~/.xinitrc</code>.</p><p>В Jaguar иногда все пакеты <code>xfree86</code> поддаются построению,
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Во-первых, надо убедиться, что вы основываетесь на init.sh при запуске X <code>~/.xinitrc</code>.</p><p>В Jaguar иногда все пакеты <code>xfree86</code> поддаются построению,
                     но только <code>xfree86-base</code> и
                     <code>xfree86-base-shlibs</code> инсталлируются. Проверьте, есть ли у вас
                     инсталлированные <code>xfree86-rootless</code> и
@@ -68,9 +68,9 @@ include_once "header.ru.inc";
         </a>
 
         <a name="apple-x-delete">
-            <div class="question"><p><b><? echo FINK_Q ; ?>9.5: Хочу стереть клавишу в Apple X11.app для поведения, как в
+            <div class="question"><p><b><?php echo FINK_Q ; ?>9.5: Хочу стереть клавишу в Apple X11.app для поведения, как в
                     XDarwin.</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Некоторые пользователи сообщают, что поведение клавиши
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Некоторые пользователи сообщают, что поведение клавиши
                     <code>delete</code> в XDarwin отличается от ее поведения в
                     Apple X11. Это можно исправить путем добавления строк к
                     соответствующим файлам инициализации X:</p><p>
@@ -84,9 +84,9 @@ include_once "header.ru.inc";
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
         </a>
         <a name="gnome-two">
-            <div class="question"><p><b><? echo FINK_Q ; ?>9.6: Я сделал обновление от GNOME 1.x дo GNOME 2.x и теперь
+            <div class="question"><p><b><?php echo FINK_Q ; ?>9.6: Я сделал обновление от GNOME 1.x дo GNOME 2.x и теперь
                     <code>gnome-session</code> не открывает менеджер окон. </b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Тогда как в GNOME 1.x <code>gnome-session</code> активизирует
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Тогда как в GNOME 1.x <code>gnome-session</code> активизирует
                      менеджер окон <code>sawfish</code> автоматически, в
                     GNOME 2.x надо запускать менеджер окон в
                     <code>~/.xinitrc</code> до выполнения
@@ -95,15 +95,15 @@ exec metacity &amp; exec gnome-session</pre><p>Прим.: это больше н
                     <code>gnome-session</code> активизирует менеджер окон.</p></div>
         </a>
         <a name="apple-x11-no-windowbar">
-            <div class="question"><p><b><? echo FINK_Q ; ?>9.7: Я сделал обновление до Apple X11 в Panther и теперь у меня не хватает
+            <div class="question"><p><b><?php echo FINK_Q ; ?>9.7: Я сделал обновление до Apple X11 в Panther и теперь у меня не хватает
                     строк заголовков в окнах.</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Вы не обновили X11 до версии  "X11 1.0 - XFree86 4.3.0",
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Вы не обновили X11 до версии  "X11 1.0 - XFree86 4.3.0",
                     включенной в Panther. Вы можете инсталлировать X11 из X11.pkg на
                     Disk 3.</p></div>
         </a>
         <a name="apple-x11-wants-xfree86">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.8: I'm having problems with X11 and Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.8: I'm having problems with X11 and Fink.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>
           <li>
             <b>You are installing from binaries:</b>
             <p>Typically what you need to do is reinstall the X11User package,
@@ -145,8 +145,8 @@ exec metacity &amp; exec gnome-session</pre><p>Прим.: это больше н
     </a>
     
         <a name="special-x11-debug">
-            <div class="question"><p><b><? echo FINK_Q ; ?>9.9: Я меня остались проблемы с X11и Fink.</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Если подсказки в ответах по поводу проблем: <a href="#apple-x11-wants-xfree86">Fink просит инсталлировать
+            <div class="question"><p><b><?php echo FINK_Q ; ?>9.9: Я меня остались проблемы с X11и Fink.</b></p></div>
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Если подсказки в ответах по поводу проблем: <a href="#apple-x11-wants-xfree86">Fink просит инсталлировать
                         XFree86 или X.org</a> и <a href="#wants-xfree86-on-upgrade">X11 и обновление от
                     10.2</a> не помогают или неприменимы к вашей ситуации,
                     возможно, вам надо убрать свою инсталляцию X11,
@@ -175,17 +175,17 @@ fink selfupdate; fink index</pre><p>(the first line may give you warnings about 
         </a>
     
     <a name="tiger-gtk">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.10: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p><p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.10: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p><p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
 </p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p><p>You may find it preferable to set this globally (e.g. in your startup script, and/or in your <code>.xinitrc</code>, which you may need to do to run GNOME).  Put</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <b>bash</b> users and:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <b>tcsh</b> users.</p><p>Note:  this will automatically be done if you install a recent enough <code>base-files</code>.
 	</p></div>
     </a>
     <a name="yelp">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.11: I can't get the help to work for any GNOME application.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.11: I can't get the help to work for any GNOME application.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p></div>
     </a>
     
     
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

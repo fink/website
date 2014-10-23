@@ -1,14 +1,14 @@
-<? /* $Id: footer.inc,v 1.49 2014/10/22 17:38:57 thesin Exp $ */ ?>
+<?php /* $Id: footer.inc,v 1.50 2014/10/23 22:09:49 thesin Exp $ */ ?>
 
-<? /* end content table */ ?>
+<?php /* end content table */ ?>
 </div>
 <div id="footer-left">
-		<a href=""<? print $linkroot ?>legal.php" style="text-decoration:none ; color:black ;">
+		<a href=""<?php print $linkroot ?>legal.php" style="text-decoration:none ; color:black ;">
 			Copyright &copy; 2001-2013<br>The&nbsp;Fink&nbsp;Project
 	 	</a>
 </div>
 <div id="footer">
-	<?
+	<?php
 		if (function_exists('AddLanguageNames')) {
 			echo FOOTER_AVAILABLE_LANGUAGES . ': ';
 			AddLanguageNames(' | ', false); 
@@ -17,9 +17,9 @@
 		}
 	?>
 	<br>
-	<? /* The Real Footer */ ?>
+	<?php /* The Real Footer */ ?>
 	
-	<?
+	<?php
 		if (isset($dyndate) && $dyndate == 1) {
 		 	print FOOTER_GENERATED_DYNAMICALLY;
 		} elseif (isset($dyndate)) {
@@ -38,7 +38,7 @@
 		}
 	?>
 </div>
-<?
+<?php
 	if ($has_analytics && !isset($skip_analytics)) {
 		analytics_print();
 	}

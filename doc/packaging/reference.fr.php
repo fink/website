@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Paquets - Référence";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -589,6 +589,6 @@ SplitOff2: &lt;&lt;
 <p>Si vous n'avez besoin que d'initialiser certaines variables d'environnement (par exemple, définir QTDIR comme '/sw'), vous pouvez utiliser le champ RuntimeVars, qui a été conçu exactement pour ce faire.</p>
 
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

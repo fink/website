@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Portage - Préparation pour 10.3";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -32,8 +32,8 @@ include_once "header.fr.inc";
 <p>Lors de la migration d'un paquet vers Mac OS X 10.3, essayez de supprimer ces dépendances obsolètes, car il se peut que ces paquets soient supprimés des arborescences futures. Cela signifie qu'il faut un fichier de description différent pour chaque arborescence. Comme toujours, le champ <code>Revision</code> doit être incrémenté lors de changements faits sur un paquet. De cette façon, les utilisateurs qui passent de Mac OS X 10.2 à Mac OS X 10.3 voient les paquets spécifiques à la branche 10.3 comme "plus récents" que les paquets de l'arborescence 10.2. Par convention, le champ <code>Revision</code> doit être incrémenté de 10 unités lors d'une migration vers un arbre plus récent de façon à laisser une marge pour pouvoir mettre à jour les paquets des branches moins récentes.</p>
 <p>Lors du test d'un paquet en migration, n'oubliez pas de désinstaller les paquets que vous avez supprimé du champ <code>BuildDepends</code>, pour éviter que le compilateur lie avec les librairies Fink installées.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="preparing-10.4.php?phpLang=fr">6. Préparation pour la version 10.4</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

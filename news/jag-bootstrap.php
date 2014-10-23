@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Bootstapping Fink under Mac OS X 10.2";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/09 21:34:24 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:29 $';
 
 include "header.inc";
 ?>
@@ -64,6 +64,6 @@ assistance.
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

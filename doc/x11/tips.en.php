@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - Tips";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2013/01/03 18:17:34';
@@ -120,6 +120,6 @@ exec &lt;your window manager here&gt;
       </p>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

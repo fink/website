@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Package Database - Introduction";
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 19:44:43 $';
+$cvs_date = '$Date: 2014/10/23 22:04:57 $';
 
 // 2 hours, this page does not change much
 $cache_timeout = 7200;
@@ -37,16 +37,16 @@ That is because those packages are in a section of the archive called
 "unstable" because they are not well-tested.
 You can help improve the situation by testing those packages and
 reporting both success and failure to the package maintainer.
-The <a href="<?= $pdbroot ?>browse.php?tree=testing&amp;nochildren=on">Packages in Testing</a> page lists all
+The <a href="<?php echo $pdbroot ?>browse.php?tree=testing&amp;nochildren=on">Packages in Testing</a> page lists all
 packages that still have to pass testing.
-In order to test the packages, you need to configure Fink to <a href="<?= $linkroot ?>faq/usage-fink.php#unstable">use
+In order to test the packages, you need to configure Fink to <a href="<?php echo $linkroot ?>faq/usage-fink.php#unstable">use
 unstable</a> and then download the latest descriptions by running <i>fink selfupdate-rsync</i> 
 (or <i>fink selfupdate-cvs</i> if you can't use rsync for some reason).
 </p>
 <p>Help is also needed to find new maintainers for the <a
-href="<?= $pdbroot ?>browse.php?maintainer=None&amp;nochildren=on">packages without maintainers</a>.</p>
+href="<?php echo $pdbroot ?>browse.php?maintainer=None&amp;nochildren=on">packages without maintainers</a>.</p>
 
-<?
+<?php
 $pkgcount = memcache_get_key('pdb-package-count');
 
 if (!$pkgcount) {
@@ -71,8 +71,8 @@ $seccount = count($sections);
 ?>
 
 <p>
-The database was last updated <? print format_solr_date($update_date) ?> and currently lists
-<?= $pkgcount ?> packages in <?= $seccount ?> sections.
+The database was last updated <?php print format_solr_date($update_date) ?> and currently lists
+<?php echo $pkgcount ?> packages in <?php echo $seccount ?> sections.
 </p>
 
 <form action="browse.php" method="GET">
@@ -82,12 +82,12 @@ The database was last updated <? print format_solr_date($update_date) ?> and cur
 </form>
 
 <p>
-You can browse a <a href="<?= $pdbroot ?>browse.php">complete list of packages</a>,
+You can browse a <a href="<?php echo $pdbroot ?>browse.php">complete list of packages</a>,
 or you can browse by archive section:
 </p>
 
 <ul>
-<?
+<?php
 	foreach ($sections as $_key => $_value) {
 		print '<li><a href="' . $pdbroot . 'browse.php?sec='.$_key.'">'.$_key.'</a>';
 		if (!empty($_value)) {
@@ -101,6 +101,6 @@ or you can browse by archive section:
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
-<?
+<?php
 include_once "footer.inc";
 ?>

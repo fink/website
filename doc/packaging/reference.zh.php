@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -1342,6 +1342,6 @@ and <code>PatchScript</code> fields for more information.
 
 
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

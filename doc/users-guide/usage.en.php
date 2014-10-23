@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -481,6 +481,6 @@ the list of available packages in the binary distribution is also updated.
            time (installation) dependencies of the listed package(s).</p>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

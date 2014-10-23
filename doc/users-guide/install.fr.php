@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guide utilisateur - Installation";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -90,8 +90,8 @@ pico ~/library/init/tcsh/path</pre>
 <p>Notez que les scripts ajoutent <code>/usr/X11R6/bin</code> et <code>/usr/X11R6/man</code> à votre PATH pour que vous puissiez utilisez X11 lorsqu'il sera installé. Les paquets Fink peuvent définir eux-mêmes des variables, tel le paquet qt qui définit la variable d'environnement QTDIR.</p>
 <p>Quand vous aurez fini de définir votre environnement, allez au chapitre <a href="packages.php?phpLang=fr">Installation de paquets</a> pour savoir comment installer des paquets réellement utiles avec les outils de gestion de paquets inclus dans Fink.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="packages.php?phpLang=fr">3. Installation de paquets</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

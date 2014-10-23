@@ -1,4 +1,4 @@
-<?
+<?php
 $hostlogo = 1;
 	$img = '<a href="http://www.xs4all.nl/">
 			<img src="'.$root.'/img/xs4all_logo_100px.gif"

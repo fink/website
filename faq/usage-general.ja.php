@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "F.A.Q. - 使用法 (1)";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -12,19 +12,19 @@ include_once "header.ja.inc";
 
 
 <a name="xlocale">
-<div class="question"><p><b><? echo FINK_Q ; ?>8.1: このようなメッセージが大量に出ます。
+<div class="question"><p><b><?php echo FINK_Q ; ?>8.1: このようなメッセージが大量に出ます。
 "locale not supported by C library"
 これはまずいことですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> まずいことという訳ではありません。
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> まずいことという訳ではありません。
 これはデフォルトの英語メッセージや日付フォーマットなどを使うという意味です。
 これ以外はプログラムは普通に動作します。
 X11 のドキュメントに、 <a href="/doc/x11/trouble.php#locale">詳細</a> があります。</p></div>
 </a>
 <a name="passwd">
-<div class="question"><p><b><? echo FINK_Q ; ?>8.2: いきなり変なユーザーがシステムに現れました。
+<div class="question"><p><b><?php echo FINK_Q ; ?>8.2: いきなり変なユーザーがシステムに現れました。
 ユーザー名は、 "mysql", "pgsql", "games" などです。
 こいつらはどこから来たのですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink を使って passwd というパッケージをインストールしたのでしょう。
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fink を使って passwd というパッケージをインストールしたのでしょう。
 passwd は、セキュリティー上の問題からいくつかのユーザーを追加します。
 Unix システムでは、ファイルやプロセスの "所有者" を使ってパーミッションやセキュリティーをチューニングするのです。
 Apache や MySQL のようなプログラムは、"所有者" が必要で、これらの daemon に root を割り当てると安全ではなくなります。
@@ -53,8 +53,8 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 </ul><p>passwd パッケージのインストール中に、Fink がユーザーを追加するか<b>尋ねます</b>ので、実際はいきなりではないはずです。</p></div>
 </a>
 <a name="compile-myself">
-<div class="question"><p><b><? echo FINK_Q ; ?>8.3: Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+<div class="question"><p><b><?php echo FINK_Q ; ?>8.3: Fink でインストールしたソフトウェアを使って、自分で何かをコンパイルするにはどうしたらいいのですか?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 	  Fink 以外でなにかをコンパイルしようとする場合、
 	  コンパイラとリンカに、Fink がインストールしたライブラリやヘッダがどこにあるのかを伝える必要があります。
 	  また、コンパイラにターゲットのアーキテクチャーを使うよう伝える必要もあります。
@@ -86,16 +86,16 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(実行 OS が 10.5 以降の場合
 	</p></div>
 </a>
 <a name="apple-x11-applications-menu">
-<div class="question"><p><b><? echo FINK_Q ; ?>8.4: Apple X11 の Application メニューを使うと、 Fink からインストールしたアプリケーションの起動できません。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Apple X11 は Fink の環境設定を認識しません。
+<div class="question"><p><b><?php echo FINK_Q ; ?>8.4: Apple X11 の Application メニューを使うと、 Fink からインストールしたアプリケーションの起動できません。</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Apple X11 は Fink の環境設定を認識しません。
 このため、Applications メニューも PATH を認識せず、 Fink アプリケーションを探すことができません。
 解決するには、 Fink からインストールしたアプリケーションに:
 </p><pre>source /sw/bin/init.sh ; </pre><p>と追加します。例えば、 Fink からインストールした GIMP の場合、 GIMP の Command 欄に:</p><pre>source /sw/bin/init.sh ; gimp</pre><p>と入力します。</p><p>あるいは、 .xinitrc ファイル (自分のディレクトリ内の) の一行目に:</p><pre>source /sw/bin/init.sh</pre><p>と追加します。</p></div>
 </a>
 <a name="x-options">
-<div class="question"><p><b><? echo FINK_Q ; ?>8.5: X11 の種類が多くて迷っています。
+<div class="question"><p><b><?php echo FINK_Q ; ?>8.5: X11 の種類が多くて迷っています。
 	Apple X11, XFree86 などなど、どれをインストールしたら良いのですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 	いずれも (XFree86 のコードをベースとした) XFree86 の派生ですが、細かな違いがあります。
 	Jaguar と Panther では選択肢も変わります。
 	</p><p>Panther では:</p><ul>
@@ -143,28 +143,28 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(実行 OS が 10.5 以降の場合
 	</p></div>
 </a>
 <a name="no-display">
-<div class="question"><p><b><? echo FINK_Q ; ?>8.6: アプリケーションを実行しようとすると、
+<div class="question"><p><b><?php echo FINK_Q ; ?>8.6: アプリケーションを実行しようとすると、
 "cannot open display:"
 というメッセージがでます。
 どうしたら良いですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このエラーは、システムが X ディスプレイと通信できていないことを意味します。
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> このエラーは、システムが X ディスプレイと通信できていないことを意味します。
 以下を確認してください:</p><p>1. X (Apple's X11, XFree86, ...) を起動。</p><p>2. DISPLAY 環境変数が設定されていることを確認する。デフォルトに設定された X では、 tcsh では:
 </p><pre>setenv DISPLAY :0</pre><p>bash の場合:</p><pre>export DISPLAY=:0</pre><p>と入力します。</p></div>
 </a>
 <a name="suggest-package">
-<div class="question"><p><b><? echo FINK_Q ; ?>8.7: 自分の好きなプログラムが Fink にありません。
+<div class="question"><p><b><?php echo FINK_Q ; ?>8.7: 自分の好きなプログラムが Fink にありません。
 Fink に推薦したいのですが、どうしたら良いですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</a>
 の Fink プロジェクトページから推薦してください。</p><p>注記: SourceFourge の ID が必要です。</p></div>
 </a>
 <a name="virtpackage">
     
-<div class="question"><p><b><? echo FINK_Q ; ?>8.8: 
+<div class="question"><p><b><?php echo FINK_Q ; ?>8.8: 
 	  <code>system-*</code> "virtual packages" というのを時々見かけますが、
 	  インストールも削除もできません。
 	  これはいったいなんですか?
 	</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 	  <code>system-perl</code> のような名前のパッケージは代替パッケージです。
 	  これは、実際にはファイル等を含んでいる訳ではなく、
 	  fink 外で手動でインストールされたプログラムを fink に伝えるための仕組みとして存在します。
@@ -234,8 +234,8 @@ Fink に推薦したいのですが、どうしたら良いですか?</b></p></d
 	  </li>
 	</ul></div>
 </a>
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage-packages.php?phpLang=ja">9. パッケージ使用上の問題 - 特定のパッケージ</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

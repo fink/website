@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ч.З.В.";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -14,7 +14,7 @@ include_once "header.ru.inc";
             в стиле оперативных вопросов и ответов.</p>
         <p>Ч.З.В. занимают несколько страниц - по одной на каждый раздел.
             Все вопросы приведены с соответствующими ссылками в содержании.</p>
-    <h2><? echo FINK_CONTENTS ; ?></h2><ul>
+    <h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="general.php?phpLang=ru"><b>1 Общие вопросы</b></a><ul><li><a href="general.php?phpLang=ru#what">1.1 Что такое Fink?</a></li><li><a href="general.php?phpLang=ru#naming">1.2 Что означает название Fink?</a></li><li><a href="general.php?phpLang=ru#bsd-ports">1.3  Чем Fink отличается от механизма переноса BSD (включая
                     OpenPackages и GNU-Darwin)? </a></li><li><a href="general.php?phpLang=ru#usr-local">1.4 Почему Fink ничего не инсталлирует в  /usr/local?</a></li><li><a href="general.php?phpLang=ru#why-sw">1.5 Тогда почему вы выбрали /sw?</a></li></ul></li><li><a href="relations.php?phpLang=ru"><b>2 Связь с другими проектами</b></a><ul><li><a href="relations.php?phpLang=ru#upstream">2.1 Предоставляете ли вы свои патчи координаторам исходного ПО?</a></li><li><a href="relations.php?phpLang=ru#debian">2.2 Какое отношение вы имеете к проекту Debian? 
                     Переносите ли вы Debian Linux в Mac OS X?</a></li><li><a href="relations.php?phpLang=ru#apple">2.3 Какое отношение вы имеете к Apple?</a></li><li><a href="relations.php?phpLang=ru#darwinports">2.4 Какое отношение вы имеете к Darwinports?</a></li></ul></li><li><a href="mirrors.php?phpLang=ru"><b>3 Зеркала Fink</b></a><ul><li><a href="mirrors.php?phpLang=ru#when-use">3.1 Что такое зеркала Fink?</a></li><li><a href="mirrors.php?phpLang=ru#why">3.2 Почему я должен использовать зеркала rsync?</a></li><li><a href="mirrors.php?phpLang=ru#where">3.3 Где можно найти более подробную информацию о зеркалах Fink?</a></li><li><a href="mirrors.php?phpLang=ru#when-not">3.4 Не устанавливается соединение с сервером rsync. Что делать?</a></li><li><a href="mirrors.php?phpLang=ru#otherinfogone">3.5 После перехода на метод rsync исчезли все информационные файлы на
@@ -87,6 +87,6 @@ complaining that the dependencies are in an inconsistent state.</a></li><li><a h
                     <code>gnome-session</code> не открывает менеджер окон. </a></li><li><a href="usage-packages.php?phpLang=ru#apple-x11-no-windowbar">9.7 Я сделал обновление до Apple X11 в Panther и теперь у меня не хватает
                     строк заголовков в окнах.</a></li><li><a href="usage-packages.php?phpLang=ru#apple-x11-wants-xfree86">9.8 I'm having problems with X11 and Fink.</a></li><li><a href="usage-packages.php?phpLang=ru#special-x11-debug">9.9 Я меня остались проблемы с X11и Fink.</a></li><li><a href="usage-packages.php?phpLang=ru#tiger-gtk">9.10 After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=ru#yelp">9.11 I can't get the help to work for any GNOME application.</a></li></ul></li></ul>
 <!--Generated from $Fink: faq.ru.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $-->
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

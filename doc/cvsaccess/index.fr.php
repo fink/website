@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Accès CVS à Fink";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:13';
@@ -33,6 +33,6 @@ cd fink
 cvs -z3 update -d
 ./inject.pl</pre>
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

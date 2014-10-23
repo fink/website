@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ejecución de X11 - Xtools";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -47,8 +47,6 @@ Fink no puede, en este momento, ofrecer una solución. Esperamos que
 el problema se resuelva en Xtools 1.1.
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="other.php?phpLang=es">6. Otras posibilidades X11</a></p>
-<? include_once "../../footer.inc"; ?>
-
-
+<?php include_once "../../footer.inc"; ?>

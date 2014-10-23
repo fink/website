@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Links";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/31 08:59:06 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -42,6 +42,6 @@ Distribution</a></li>
 <li><a href="http://www.macports.org/" target="_blank">MacPorts</a> - port der FreeBSD ports Kollektion</li>
 </ul>
 
-<?
+<?php
 include "footer.inc";
 ?>

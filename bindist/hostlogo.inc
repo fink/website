@@ -1,4 +1,4 @@
-<?
+<?php
 $hostlogo = 1;
 	$img = '<a href="http://www.isc.org/">
 			<img 

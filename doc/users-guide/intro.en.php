@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "User's Guide - Introduction";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -118,8 +118,8 @@ It is actually possible to mix the two models at will.
 The rest of this manual will show you how.
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="install.php?phpLang=en">2. First Time Installation</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "ユーザーガイド - fink ツール";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -450,6 +450,6 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
       </p>
     
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

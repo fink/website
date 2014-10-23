@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ejecución de X11 - Instalación de XFree86";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -366,8 +366,8 @@ CVS</td><td>
 </p>
           </td></tr></table>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="run-xfree86.php?phpLang=es">4. El arranque de XFree86</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "打包 - Compilers";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -94,8 +94,8 @@ and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="reference.php?phpLang=zh">6. 操作手册</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

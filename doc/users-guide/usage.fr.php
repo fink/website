@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -353,6 +353,6 @@ fink apropos -s=kde irc
 
 
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

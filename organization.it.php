@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Organization of Fink";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/02/21 03:31:24 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -33,6 +33,6 @@ Morrison, Peter O'Gorman, and Ben Reed.  Essi sono reperibili a &lt;fink-core@li
 
 <p>Le descrizioni arriveranno a presto ...</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

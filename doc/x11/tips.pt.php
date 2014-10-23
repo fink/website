@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Executando o X11 - Dicas";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -119,6 +119,6 @@ open -a /Applications/TextEdit.app index.html</pre>
       uma solução.</p>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

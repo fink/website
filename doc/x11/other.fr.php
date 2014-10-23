@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Utilisation de X11 - Autres X11";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -22,8 +22,8 @@ include_once "header.fr.inc";
 
 <p>D'après son site web, <a href="http://www.powerlan-usa.com/exodus/">eXodus 8</a> de Powerlan USA fonctionne en natif sur Mac OS X. On ne sait pas sur quel code il se base, ni s'il gère les clients locaux, ni comment il les gère. En conséquence, Fink ne peut fournir un support adapté à eXodus. Si vous avez de plus amples informations à ce sujet, n'hésitez pas à nous le faire savoir.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="trouble.php?phpLang=fr">7. Résolution de problèmes engendrés par XFree86</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

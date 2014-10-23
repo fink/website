@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Package Database - Section Listing";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2009/09/07 04:12:00 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:04:57 $';
 
 include_once "header.inc";
 include_once "sections.inc";
@@ -18,14 +18,14 @@ Here are the sections:
 
 
 <ul>
-<?
+<?php
 foreach ($sections as $_name => $_description) {
 	$_desctext = ($_description ? (' - ' . $_description) : '');
 ?>
-<li><a href="<?= $pdbroot ?>browse.php?sec=<?= $_name ?>"><?= $_name ?></a><?= $_desctext ?></li>
-<? } ?>
+<li><a href="<?php echo $pdbroot ?>browse.php?sec=<?php echo $_name ?>"><?php echo $_name ?></a><?php echo $_desctext ?></li>
+<?php } ?>
 </ul>
 
-<?
+<?php
 include_once "footer.inc";
 ?>

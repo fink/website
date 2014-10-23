@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "F.A.Q. - 一般";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -11,8 +11,8 @@ include_once "header.ja.inc";
 
 
 <a name="what">
-<div class="question"><p><b><? echo FINK_Q ; ?>1.1: Fink とは何ですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink は、多くの Unix ソフトウェアを Mac OS X で使えるようにするものです。
+<div class="question"><p><b><?php echo FINK_Q ; ?>1.1: Fink とは何ですか?</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fink は、多くの Unix ソフトウェアを Mac OS X で使えるようにするものです。
 このために、次の二つのゴールを設定しています。</p><p>一つ目のゴールは、ソフトウェアを Mac OS X に移植することです。
 これは、 役に立つ Open Source の Unix ソフトウェアを、 Mac OS X でコンパイルと実行できるよう、必要な修正を行ないます。
 この作業は簡単なこともありますが、非常に困難な場合や、パッケージによっては不可能な場合もあります。
@@ -23,17 +23,17 @@ include_once "header.ja.inc";
 ソースからパッケージをビルドするには、我々の独自のツールである <code>fink</code> を使い、 <code>.deb</code>  パッケージのファイルを作成します。</p></div>
 </a>
 <a name="naming">
-<div class="question"><p><b><? echo FINK_Q ; ?>1.2: Fink とはどういう意味ですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 意味はありません。ただの名称です。なにかの頭文字でもありません。</p><p>実際は、ドイツ語でフィンチという鳥のことです。
+<div class="question"><p><b><?php echo FINK_Q ; ?>1.2: Fink とはどういう意味ですか?</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 意味はありません。ただの名称です。なにかの頭文字でもありません。</p><p>実際は、ドイツ語でフィンチという鳥のことです。
 このプロジェクトに名称を考えていた時、 OS の名称である Darwin から、チャールズ＝ダーウィン、ガラパゴス諸島、進化を連想しました。
 それで、ダーウィン・フィンチのことを思い出しました。
 まぁ、それだけです...</p></div>
 </a>
 <a name="bsd-ports">
-<div class="question"><p><b><? echo FINK_Q ; ?>1.3: 
+<div class="question"><p><b><?php echo FINK_Q ; ?>1.3: 
 Fink と BSD の port メカニズムはどう違うのですか (OpenPackages や GNU-Darwin も含めて)?
 </b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 利点:</p><ul>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 利点:</p><ul>
 <li>
 <p>Perl で書かれています。 make/shell ではありません。
 このため、 BSD make だけにある特殊な機能に依存せず、ビルドするために GNU make が必要かどうかフラグを立てる必要がありません。</p>
@@ -51,8 +51,8 @@ dpkg のバイナリパッケージ管理は洗練されています。
 </ul></div>
 </a>
 <a name="usr-local">
-<div class="question"><p><b><? echo FINK_Q ; ?>1.4: なぜ Fink は /usr/local にインストールしないのですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> いくつか理由はありますが、共通しているのは、「いつか壊れるから」です。</p><p>理由1: サードパーティー・ソフトウェア。
+<div class="question"><p><b><?php echo FINK_Q ; ?>1.4: なぜ Fink は /usr/local にインストールしないのですか?</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> いくつか理由はありますが、共通しているのは、「いつか壊れるから」です。</p><p>理由1: サードパーティー・ソフトウェア。
 /usr/local は、システムの一部ではないソフトウェアを入れる場所として確立されています。
 このため、いろいろなものを入れるには格好の場所ですが、同様に他の人もこの場所にいろいろなものを入れる可能性があります。
 ほとんどのインストール・ルーチンはすでにあるものを上書きしてしまいますし、 dpkg もそうします。
@@ -69,12 +69,12 @@ dpkg のバイナリパッケージ管理は洗練されています。
 この場合は自己責任で行なって下さい。</p></div>
 </a>
 <a name="why-sw">
-<div class="question"><p><b><? echo FINK_Q ; ?>1.5: ではなぜ /sw を選んだのですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+<div class="question"><p><b><?php echo FINK_Q ; ?>1.5: ではなぜ /sw を選んだのですか?</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 この選択にあまり意味はありませんが、実用上の（アップグレードの）問題と、他のパッケージング・システムとのコンフリクト問題を避けるため、近い将来に変更することはないと思われます。</p></div>
 </a>
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="relations.php?phpLang=ja">2. 他のプロジェクトとの関係</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

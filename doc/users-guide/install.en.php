@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "User's Guide - Install";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -232,8 +232,8 @@ package management tools included in Fink.
  
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="packages.php?phpLang=en">3. Installing Packages</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

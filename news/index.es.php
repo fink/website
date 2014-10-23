@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "News";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/10/19 20:30:16';
@@ -1877,4 +1877,4 @@ software before using Fink.
     </p>
   
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

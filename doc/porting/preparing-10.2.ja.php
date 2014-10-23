@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "移植 - 10.2 に向けて";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -97,8 +97,8 @@ libtool-1.3.5 を使うパッケージ (<code>UpdateLibtool: True</code> を使�
 gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされた C++ プログラムからリンクできないことを意味します．
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="preparing-10.3.php?phpLang=ja">5. 10.3 に向けて</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

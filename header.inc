@@ -1,5 +1,5 @@
-<?
-/* $Id: header.inc,v 1.133 2013/12/04 02:50:16 thesin Exp $ */
+<?php
+/* $Id: header.inc,v 1.134 2014/10/23 22:09:49 thesin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -233,12 +233,12 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 
 <html>
 <head>
-	<title>Fink - <? echo $title ?></title>
+	<title>Fink - <?php echo $title ?></title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta name="keywords" content="<? echo META_KEYWORDS; ?>">
-	<meta name="description" content="<? echo META_DESCRIPTION; ?>">
+	<meta name="keywords" content="<?php echo META_KEYWORDS; ?>">
+	<meta name="description" content="<?php echo META_DESCRIPTION; ?>">
 	<meta name="robots" content="all">
-<?
+<?php
 	if (!isset($link_alternate)) {
 		$rdf_file = dirname(__FILE__) .'/news/news.' . $lang_code . '.rdf';
 		echo "<!-- $rdf_file  -->\n";
@@ -252,44 +252,44 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 	print $link_alternate;
 ?>
 	<link rev="made" href="mailto:fink-devel@lists.sourceforge.net">
-	<link rel="stylesheet" type="text/css" href="<? print $linkroot ?>/fink.css">
-	<? if ($metatags) echo $metatags; ?>
-	<link rel="start" href="<? print $linkroot ?>index.php">
-	<link rel="copyright" href="<? print $linkroot ?>legal.php">
-	<? if (isset($i18n_enable_form)) echo '<script type="text/javascript" src="' . $linkroot . 'fink.i18n.js"></script>'; ?>
-	<? if (isset($pdb_scripts)) echo '<script type="text/javascript" src="' . $linkroot . 'fink.pdb.js"></script>'; ?>
+	<link rel="stylesheet" type="text/css" href="<?php print $linkroot ?>/fink.css">
+	<?php if ($metatags) echo $metatags; ?>
+	<link rel="start" href="<?php print $linkroot ?>index.php">
+	<link rel="copyright" href="<?php print $linkroot ?>legal.php">
+	<?php if (isset($i18n_enable_form)) echo '<script type="text/javascript" src="' . $linkroot . 'fink.i18n.js"></script>'; ?>
+	<?php if (isset($pdb_scripts)) echo '<script type="text/javascript" src="' . $linkroot . 'fink.pdb.js"></script>'; ?>
 
 </head>
-<body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333"<? if (isset($pdb_scripts) && !isset($pdb_has_adv_searchoptions)) echo ' onload="switchMenu(\'advancedsearch\', \'triangle\')"' ?>>
+<body bgcolor="#ffffff" text="#000000" link="#0000f0" vlink="#800080" alink="#ff3333"<?php if (isset($pdb_scripts) && !isset($pdb_has_adv_searchoptions)) echo ' onload="switchMenu(\'advancedsearch\', \'triangle\')"' ?>>
 
-<? /* header and sourceforge logo */ ?>
+<?php /* header and sourceforge logo */ ?>
 <div id="header-left">
 
-	<? if (!isset($is_home)) echo '<a href="' . $linkroot . 'index.php">'; ?>
-	<img src="<? echo $linkroot ?>/img/mlogo.png"  width="171" height="85" border="0" alt="Fink">
-	<? if (!isset($is_home)) echo '</a>'; ?>
+	<?php if (!isset($is_home)) echo '<a href="' . $linkroot . 'index.php">'; ?>
+	<img src="<?php echo $linkroot ?>/img/mlogo.png"  width="171" height="85" border="0" alt="Fink">
+	<?php if (!isset($is_home)) echo '</a>'; ?>
 </div>
 
 <div id="header">
-	<? /* Call phpLang function */ ?>
-	<? if (function_exists('AddFlags')) AddFlags('', false, $root); ?>
+	<?php /* Call phpLang function */ ?>
+	<?php if (function_exists('AddFlags')) AddFlags('', false, $root); ?>
 	<br>
-<? if (!isset($hostlogo)) include dirname(__FILE__) . "/hostlogo.inc" ;
+<?php if (!isset($hostlogo)) include dirname(__FILE__) . "/hostlogo.inc" ;
 		echo str_replace("{img}", $img, HEADER_HOSTED_BY);
 ?>
 </div>
 
-<? /* main table with navigation column and content column */ ?>
+<?php /* main table with navigation column and content column */ ?>
 <div id="sidebar">
 
-<? /* navigation column table */ ?>
+<?php /* navigation column table */ ?>
 
-<? /* sections */ ?>
+<?php /* sections */ ?>
 	<div id="sections">
-		<? echo FINK_SECTIONS; ?>
+		<?php echo FINK_SECTIONS; ?>
 	</div>
 	<ul class="menu">
-<? 
+<?php 
 	foreach ($section_files as $key => $filename) {
 		echo "\t\t<li class=\"menu_item\">";
 		if (!isset($nonav)) $nonav = "";
@@ -308,21 +308,21 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 		}
 	} 
 ?>
-<? /* link to print version */ ?>
-<? if (isset($printlink)) { ?>
+<?php /* link to print version */ ?>
+<?php if (isset($printlink)) { ?>
 		<li class="menu_item">
-			<a href="<? echo $linkroot . $printlink ?>" style="border-width: 0px ; ">
-				<img src="<? echo $linkroot; ?>img/printer.png" 
-					alt="<? echo FINK_PRINTER; ?>" 
+			<a href="<?php echo $linkroot . $printlink ?>" style="border-width: 0px ; ">
+				<img src="<?php echo $linkroot; ?>img/printer.png" 
+					alt="<?php echo FINK_PRINTER; ?>" 
 					width="18" height="16" 
 					align="bottom" 
 					style="vertical-align:text-bottom">
-				<? echo FINK_PRINT_VERSION; ?>
+				<?php echo FINK_PRINT_VERSION; ?>
 			</a>
 		</li>
-<? } ?>
+<?php } ?>
 	</ul>
 	
-<? /* end navigation column */ ?>
+<?php /* end navigation column */ ?>
 </div>
 <div id="main">

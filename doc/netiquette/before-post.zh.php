@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "网络礼仪 - 张贴之前";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -20,8 +20,8 @@ include_once "header.zh.inc";
         <li>Google</li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="first-post.php?phpLang=zh">2. 初始张贴</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

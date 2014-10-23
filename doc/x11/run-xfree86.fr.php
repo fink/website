@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Utilisation de X11 - Lancement de X11";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -98,8 +98,8 @@ quartz-wm --only-proxy &amp;
 <p>Au lancement, <code>OroborOSX</code> lance son propre gestionnaire de fenêtres sans racine, mais ne lit ni le fichier <code>xinitrc</code> du système, ni le fichier <code>.xinitrc</code> de l'utilisateur. Après lancement, on peut activer l'option de menu correspondante pour exécuter le fichier <code>.xinitrc</code>. Néanmoins, <code>OroborOSX</code> a sa propre façon de définir les applicattions à lancer au démarrage. Il possède aussi un mécanisme de démarrage des applications X11 à partir du Finder via des scripts de démarrage.</p>  
 <p>Pour de plus amples informations, allez sur la <a href="http://oroborosx.sourceforge.net">page d'accueil d'OroborOSX</a>.</p>
    
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=fr">5. Xtools</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

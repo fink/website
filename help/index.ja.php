@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Help";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2005/01/03 04:16:50 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:12:46 $';
 
 include "header.inc";
 ?>
@@ -140,6 +140,6 @@ Unix 上でソースからソフトウェアをインストールした経験が
 </td></tr></table>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

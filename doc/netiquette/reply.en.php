@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "netiquette - Replying";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:15';
@@ -28,8 +28,8 @@ include_once "header.en.inc";
       </ul>
       <p>However, if you do this, you may want to trim out any extra recipients (from crossposts, or other people who have replied on this thread).</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="unsubscribe.php?phpLang=en">4. How to Unsubscribe from the Lists</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

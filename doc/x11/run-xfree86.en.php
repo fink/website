@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - Starting X11";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2013/01/03 18:17:34';
@@ -249,8 +249,8 @@ exec startkde
         </li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="other.php?phpLang=en">5. Other X11 Possibilities</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Netiquette - Inicial";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2013/02/02 14:16:41';
@@ -82,8 +82,8 @@ gcc &lt;flags, files etc.&gt;
         <li>Preguntar acerca de lo apropiado del curso de acción elegido.</li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="reply.php?phpLang=es">3. Respondiendo a los "posts"</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

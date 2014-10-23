@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ejecución de X11 - Intro";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -175,8 +175,8 @@ progreso no ha podido ser aún hecho
 con <a href="http://www.kde.org/">aplicaciones KDE.</a>
       </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="history.php?phpLang=es">2. Historia</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

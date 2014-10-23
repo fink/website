@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Portage - libtool";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -107,8 +107,8 @@ for cmd in $cmds; do
 <p>Note subsidiaire : les Developer Tools d'Apple contiennent un programme appelé, lui aussi, libtool, qui est utilisé par le compilateur pour construire des librairies partagées.
 Cependant, cet outil n'a rien à voir avec GNU libtool. L'outil GNU libtool qu'Apple fournit est installé sous le nom de <code>glibtool</code>. Ceci peut être réalisé en configurant GNU libtool avec <code>--program-transform-name=s/libtool/glibtool/</code>.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="preparing-10.2.php?phpLang=fr">4. Préparation pour la version 10.2</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

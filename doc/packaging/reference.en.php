@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Packaging - Reference";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/02/14 18:22:26';
@@ -1732,6 +1732,6 @@ If you just need to set some environment variables (for example, QTDIR to '/sw')
 
 
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

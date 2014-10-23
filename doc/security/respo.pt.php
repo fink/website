@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Política de segurança - Responsabilidade";
 $cvs_author = 'Author: monipol';
 $cvs_date = 'Date: 2009/07/26 11:13:27';
@@ -63,8 +63,8 @@ include_once "header.pt.inc";
       informar-lhes que o mantenedor não pode ser contactado e que o pacote
       pode ser atualizado independentemente do mantenedor.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="severity.php?phpLang=pt">2. Tempos de resposta e ações imediatas</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

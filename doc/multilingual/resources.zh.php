@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - 资源";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
@@ -63,8 +63,8 @@ include_once "header.zh.inc";
         <li><a href="http://www.wincvs.org/download.html">MacCvsX 3.3</a>── CVS 的图形化前端工具。（只建议团队领导使用！）</li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="appendix.php?phpLang=zh">5. 附录</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

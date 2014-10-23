@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "P.M.F. - Usage (1)";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -11,14 +11,14 @@ include_once "header.es.inc";
     
     
     <a name="xlocale">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.1: Me aparecen muchos mensajes con "locale not supported by C  library". ¿Es malo esto?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> It's not bad, it just means that the program will use the default
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.1: Me aparecen muchos mensajes con "locale not supported by C  library". ¿Es malo esto?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> It's not bad, it just means that the program will use the default
         English messages, date formats, etc. The program will function
         normally otherwise. The Running X11 document has <a href="/doc/x11/trouble.php#locale">details</a>.</p></div>
     </a>
     <a name="passwd">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.2: De repente han aparecido una cantidad de usuarios desconocidos en mi sistema, con nombres como "mysql", "pgsql" y "games". ¿De dónde salieron?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> You have used Fink to install a package which is dependent on
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.2: De repente han aparecido una cantidad de usuarios desconocidos en mi sistema, con nombres como "mysql", "pgsql" y "games". ¿De dónde salieron?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> You have used Fink to install a package which is dependent on
         another package, passwd. passwd installs a number of extra users on
         your system for security reasons -- on Unix systems, files and
         processes belong to "owners", which allows system administrators to
@@ -55,8 +55,8 @@ include_once "header.es.inc";
         this should not have come as a surprise.</p></div>
     </a>
     <a name="compile-myself">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.3: Cómo puedo compilar algo usando el software instalado por Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.3: Cómo puedo compilar algo usando el software instalado por Fink.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> When compiling something yourself outside of Fink, the compiler and
         linker need to be told where to find the Fink-installed libraries and
 		headers.  It is also necessary to tell the compiler to use the
 		appropriate target architecture.  For a package that uses standard
@@ -86,16 +86,16 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
         if they aren't already installed.</p></div>
     </a>
     <a name="apple-x11-applications-menu">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.4: No puedo correr ninguna de las aplicaciones instaladas con Fink desde el menú de Aplicaciones de las X11 de Apple.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Apple X11 doesn't keep track of the Fink environment settings,
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.4: No puedo correr ninguna de las aplicaciones instaladas con Fink desde el menú de Aplicaciones de las X11 de Apple.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Apple X11 doesn't keep track of the Fink environment settings,
         which means that the Applications menu doesn't have the PATH set
         correctly to find your Fink applications. The solution is to preface
         the name of a Fink-installed application with</p><pre>source /sw/bin/init.sh ;</pre><p>For example, if you want to run a Fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p><p>You can also edit your .xinitrc file (in your user directory) and
         add:</p><pre>source /sw/bin/init.sh</pre><p>after the first line.</p></div>
     </a>
     <a name="x-options">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.5: Estoy confundido con todas las opciones de las X11: X11 de Apple, XFree86, etc. ¿Cuál de ellas debería instalar?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> All are variants on XFree86 (they're all based on the XFree86
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.5: Estoy confundido con todas las opciones de las X11: X11 de Apple, XFree86, etc. ¿Cuál de ellas debería instalar?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> All are variants on XFree86 (they're all based on the XFree86
         code), but have some slight differences between them. Apple's X11,
         which is a modification of XFree86-4.2.1, and XFree86-4.3 are faster
         than standard XFree86-4.2.1.1, but the latter is more stable. There is
@@ -123,19 +123,19 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
         document</a>.</p></div>
     </a>
     <a name="no-display">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.6: Cuando intento correr una aplicación, me sale un mensaje diciendo: "cannot open display". ¿Qué debo hacer?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This error means that the system isn't connecting with your X
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.6: Cuando intento correr una aplicación, me sale un mensaje diciendo: "cannot open display". ¿Qué debo hacer?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This error means that the system isn't connecting with your X
         display. Make sure you do the following:</p><p>1. Start X (Apple's X11, XFree86, ...).</p><p>2. Make sure your DISPLAY environment variable is set correctly. If
         you are using the default setup for X, you can do this with</p><pre>setenv DISPLAY :0</pre><p>if you are running <code>tcsh</code>, or</p><pre>export DISPLAY=:0</pre><p>if you're running <code>bash</code>.</p></div>
     </a>
     <a name="suggest-package">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.7: No encuentro a mi programa favorito en Fink. ¿Cómo sugiero que se incluya un nuevo paquete en Fink?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Make the request on the <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.7: No encuentro a mi programa favorito en Fink. ¿Cómo sugiero que se incluya un nuevo paquete en Fink?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Make the request on the <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package
         Request Tracker</a> on the Fink project page.</p><p>Note that you must have a SourceForge id to do so.</p></div>
     </a>
     <a name="virtpackage">
-      <div class="question"><p><b><? echo FINK_Q ; ?>8.8:  ¿Qué son todos estos system-* "virtual packages" que a veces están presentes, pero que yo mismo no puedo instalarlos ni sacarlos?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+      <div class="question"><p><b><?php echo FINK_Q ; ?>8.8:  ¿Qué son todos estos system-* "virtual packages" que a veces están presentes, pero que yo mismo no puedo instalarlos ni sacarlos?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 	  Packages with names like <code>system-perl</code> are
 	  placeholder packages. These do not contain actual files, but
 	  merely serve as a mechanism for fink to know about programs
@@ -223,8 +223,8 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
 	  </li>
         </ul></div>
     </a>
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage-packages.php?phpLang=es">9. Package Usage Problems - Specific Packages</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

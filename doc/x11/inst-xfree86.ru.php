@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Использование X11 - Инсталляция XFree86";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -330,8 +330,8 @@ include_once "header.ru.inc";
                             только <code>system-xfree86</code> (+разделители)</p>
                     </td></tr></table>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="run-xfree86.php?phpLang=ru">4. Запуск XFree86</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guide utilisateur - Mise à niveau";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -40,8 +40,8 @@ cd packages-0.x.x
 <p>À partir de la version 0.23.0 de <code>fink</code>, le fait d'utiliser l'option UseBinaryDist (configurable soit avec l'option <a href="usage.php?phpLang=fr#options">--use-binary-dist (ou -b)</a> ou bien dans le <a href="conf.php?phpLang=fr">fichier de configuration de Fink</a>) met à jour automatiquement les descriptions source et binaires lors de l'exécution de la commande <code>fink selfupdate</code>. Dans ce cas, il n'est pas nécessaire d'exécuter la commande <code>apt-get</code>.</p>
 <p>Si vous utilisez Fink Commander, sélectionnez Binary-&gt;Update descriptions (Binaire-&gt;Mise à jour des descriptions) pour mettre à jour la liste des paquets, puis Binary-&gt;Dist-Upgrade packages (Binaire-&gt;Mise à jour des paquets de la distribution) pour obtenir les nouvelles versions. Exécutez ensuite Source-&gt;Selfupdate (Source-&gt;Mise à jour automatique) pour télécharger les nouveaux fichiers info des paquets, puis Source-&gt;Update-all (Source-&gt;Tout mettre à jour). Voir les sections précédentes pour de plus amples informations.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=fr">5. Fichier de Configuration de Fink</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

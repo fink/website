@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "セキュリティポリシー - 返答";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2005/02/04 09:30:20';
@@ -46,8 +46,8 @@ include_once "header.ja.inc";
 					返答の最大時間を満たしていない特にも forced update が行使される。
 				</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="sources.php?phpLang=ja">3. 事件ソース</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

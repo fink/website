@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "logo Contest";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/12 11:58:27 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 $is_home = 0;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -49,8 +49,7 @@ Accepted Formats for the sent in logo are TIFF as well as PDF. The pieces of art
 
 The Fink Project would like to thank Macwelt for their support, we are looking forward to <b>your</b> submission and hope that you will be amongst the winners.
 
-<?
+<?php
 
 include "footer.inc";
 ?>
-

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - Installing X11";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2013/01/03 18:17:34';
@@ -81,8 +81,8 @@ include_once "header.en.inc";
         installed.
       </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="run-xfree86.php?phpLang=en">4. Starting X11</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

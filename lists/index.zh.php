@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "邮件列表";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/04/21 23:33:32 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:15:12 $';
 
 include "header.inc";
 ?>
@@ -51,6 +51,6 @@ Bug 报告和提交软件包情况的发布列表。</p></li>
 </ul>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

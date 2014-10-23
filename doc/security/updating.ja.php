@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "セキュリティポリシー - 更新";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2005/02/04 09:30:20';
@@ -43,8 +43,8 @@ include_once "header.ja.inc";
 				この間は、更新されたパッケージが動作し、新たな問題を起こさないことを確認します。
 			</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="notification.php?phpLang=ja">5. 告知</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

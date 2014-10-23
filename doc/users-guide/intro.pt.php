@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guia do usuário - Introdução";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -115,8 +115,8 @@ include_once "header.pt.inc";
       possível misturar os dois modelos à vontade. O restante deste manual irá
       mostrar-lhe como.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="install.php?phpLang=pt">2. Instalação inicial</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

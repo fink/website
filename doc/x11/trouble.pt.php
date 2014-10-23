@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Executando o X11 - Resolução de problemas";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -323,8 +323,8 @@ touch .Xauthority</pre>
         </li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="tips.php?phpLang=pt">8. Dicas de uso</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

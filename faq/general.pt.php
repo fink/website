@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Perguntas frequentes - Generalidades";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -11,8 +11,8 @@ include_once "header.pt.inc";
     
     
     <a name="what">
-      <div class="question"><p><b><? echo FINK_Q ; ?>1.1: O que é o Fink?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O Fink deseja trazer mais software Unix para o Mac OS X, o que
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.1: O que é o Fink?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> O Fink deseja trazer mais software Unix para o Mac OS X, o que
         resulta dois objetivos principais:</p><p>O objetivo número um é portar software para o Mac OS X. Isto
         significa que nós pegamos software Unix de código aberto e fazemos os
         ajustes necessários para que ele possa ser compilado e executado no Mac
@@ -29,8 +29,8 @@ include_once "header.pt.inc";
         <code>.deb</code>.</p></div>
     </a>
     <a name="naming">
-      <div class="question"><p><b><? echo FINK_Q ; ?>1.2: O que significa o nome Fink?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Nada, é apenas um nome. Não é nem mesmo uma sigla.</p><p>Na verdade, Fink é o nome do pintassilgo em alemão (na verdade, uma
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.2: O que significa o nome Fink?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Nada, é apenas um nome. Não é nem mesmo uma sigla.</p><p>Na verdade, Fink é o nome do pintassilgo em alemão (na verdade, uma
         família de pássaros à qual o pintassilgo pertence, os fringilídeos). Eu
         estava procurando por um nome para o projeto e o nome do sistema
         operacional, Darwin, levou-me a pensar sobre Charles Darwin, as Ilhas
@@ -39,9 +39,9 @@ include_once "header.pt.inc";
         bicos característicos e, bem, foi isso...</p></div>
     </a>
     <a name="bsd-ports">
-      <div class="question"><p><b><? echo FINK_Q ; ?>1.3: Qual a diferença entre o Fink e o mecanismo de ports do BSD
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.3: Qual a diferença entre o Fink e o mecanismo de ports do BSD
         (incluindo OpenPackages e GNU-Darwin)?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Algumas vantagens principais:</p><ul>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Algumas vantagens principais:</p><ul>
           <li>
             <p>É escrito em Perl e não make/shell. Por conseguinte, dispensa as
             características especiais que só são encontradas no make do BSD e
@@ -65,8 +65,8 @@ include_once "header.pt.inc";
         </ul></div>
     </a>
     <a name="usr-local">
-      <div class="question"><p><b><? echo FINK_Q ; ?>1.4: Por que o Fink não instala no /usr/local?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Há várias razões, mas de forma geral é "porque algo vai dar
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.4: Por que o Fink não instala no /usr/local?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Há várias razões, mas de forma geral é "porque algo vai dar
         errado".</p><p>Primeira razão: softwares de terceiros. O diretório /usr/local é um
         lugar bem padronizado para se colocar software que não seja parte do
         sistema que foi distribuído pelo fabricante. Isto significa que é um
@@ -93,13 +93,13 @@ include_once "header.pt.inc";
         risco.</p></div>
     </a>
     <a name="why-sw">
-      <div class="question"><p><b><? echo FINK_Q ; ?>1.5: Por que vocês escolheram /sw?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Essa escolha é arbitrária e deverá continuar desta forma por motivos
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Por que vocês escolheram /sw?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Essa escolha é arbitrária e deverá continuar desta forma por motivos
         práticos (atualização) e também pelo fato de que é uma escolha segura
         no tocante ao conflito com outros sistemas de empacotamento.</p></div>
     </a>
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="relations.php?phpLang=pt">2. Relacionamentos com outros projetos</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

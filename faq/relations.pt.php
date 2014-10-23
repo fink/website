@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Perguntas frequentes - Relacionamentos";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -11,9 +11,9 @@ include_once "header.pt.inc";
     
     
     <a name="upstream">
-      <div class="question"><p><b><? echo FINK_Q ; ?>2.1: Vocês repassam suas correções e ajustes para os mantenedores
+      <div class="question"><p><b><?php echo FINK_Q ; ?>2.1: Vocês repassam suas correções e ajustes para os mantenedores
         oficiais?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Estamos tentando. Às vezes repassar correções e ajustes é fácil e
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Estamos tentando. Às vezes repassar correções e ajustes é fácil e
         todos ficam felizes assim que seja liberada a nova versão do pacote.
         Infelizmente, isto não é fácil na maioria dos pacotes. Alguns problemas
         comuns:</p><ul>
@@ -32,9 +32,9 @@ include_once "header.pt.inc";
         </ul></div>
     </a>
     <a name="debian">
-      <div class="question"><p><b><? echo FINK_Q ; ?>2.2: Qual o seu relacionamento com o projeto Debian? Vocês estão portando
+      <div class="question"><p><b><?php echo FINK_Q ; ?>2.2: Qual o seu relacionamento com o projeto Debian? Vocês estão portando
         o Debian Linux para rodar no Mac OS X?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Não há relacionamento formal entre o Fink e o <a href="http://www.debian.org">Debian</a> O Fink <b>não</b> é um port
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Não há relacionamento formal entre o Fink e o <a href="http://www.debian.org">Debian</a> O Fink <b>não</b> é um port
         da distribuição Debian GNU/Linux. O que nós fizemos foi portar as
         ferramentas de gerenciamento de pacotes do Debian (dpkg, dselect,
         apt-get), usando-as juntamente com o formato de pacote binário .deb. Os
@@ -42,8 +42,8 @@ include_once "header.pt.inc";
         usamos o formato de pacote de fontes do Debian.</p></div>
     </a>
     <a name="apple">
-      <div class="question"><p><b><? echo FINK_Q ; ?>2.3: Qual o seu relacionamento com a Apple</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> A <a href="http://www.apple.com/">Apple</a> tem ciência do Fink
+      <div class="question"><p><b><?php echo FINK_Q ; ?>2.3: Qual o seu relacionamento com a Apple</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> A <a href="http://www.apple.com/">Apple</a> tem ciência do Fink
         e nos deu algum suporte como parte dos seus esforços de relacionamento
         com a comunidade de código aberto. No verão e no outono de 2001, eles
         nos forneceram pré-versões novas do Mac OS X na esperança de que os
@@ -54,8 +54,8 @@ include_once "header.pt.inc";
         Obrigado, Apple!</p></div>
     </a>
     <a name="darwinports">
-      <div class="question"><p><b><? echo FINK_Q ; ?>2.4: Qual o seu relacionamento com o Darwinports?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Darwinports e Fink são projetos complementares. Existe certa
+      <div class="question"><p><b><?php echo FINK_Q ; ?>2.4: Qual o seu relacionamento com o Darwinports?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Darwinports e Fink são projetos complementares. Existe certa
         interseção entre os dois projetos e várias pessoais contribuem com
         ambos. Por exemplo, Benjamin Reed está trabalhando nos pacotes KDE dos
         dois projetos. O Darwinports e o Fink estão livres para usar as
@@ -64,8 +64,8 @@ include_once "header.pt.inc";
         diferente para o sistema de empacotamento. Leia a declaração no <a href="http://darwinports.opendarwin.org/">site do Darwinports</a>
         para mais detalhes.</p></div>
     </a>
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="mirrors.php?phpLang=pt">3. Espelhos do Fink</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

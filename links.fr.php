@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Liens";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2010/05/16 22:55:21 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 include "header.inc";
 ?>
 <h1>Liens</h1>
@@ -31,6 +31,6 @@ include "header.inc";
 <li><a href="http://www.macports.org/" target="_blank">MacPorts</a> - portage de la collection des ports FreeBSD</li>
 </ul>
 
-<?
+<?php
 include "footer.inc";
 ?>

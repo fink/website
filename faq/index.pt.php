@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Perguntas frequentes";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -16,7 +16,7 @@ include_once "header.pt.inc";
     <p>Este documento contém várias páginas, uma para cada seção. O sumário
     abaixo enumera todas as perguntas, cada qual com um link para a página da
     seção contendo a pergunta e a resposta correspondente.</p>
-  <h2><? echo FINK_CONTENTS ; ?></h2><ul>
+  <h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="general.php?phpLang=pt"><b>1 Perguntas gerais</b></a><ul><li><a href="general.php?phpLang=pt#what">1.1 O que é o Fink?</a></li><li><a href="general.php?phpLang=pt#naming">1.2 O que significa o nome Fink?</a></li><li><a href="general.php?phpLang=pt#bsd-ports">1.3 Qual a diferença entre o Fink e o mecanismo de ports do BSD
         (incluindo OpenPackages e GNU-Darwin)?</a></li><li><a href="general.php?phpLang=pt#usr-local">1.4 Por que o Fink não instala no /usr/local?</a></li><li><a href="general.php?phpLang=pt#why-sw">1.5 Por que vocês escolheram /sw?</a></li></ul></li><li><a href="relations.php?phpLang=pt"><b>2 Relacionamentos com outros projetos</b></a><ul><li><a href="relations.php?phpLang=pt#upstream">2.1 Vocês repassam suas correções e ajustes para os mantenedores
         oficiais?</a></li><li><a href="relations.php?phpLang=pt#debian">2.2 Qual o seu relacionamento com o projeto Debian? Vocês estão portando
@@ -120,6 +120,6 @@ include_once "header.pt.inc";
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-wants-xfree86">9.6 Estou tendo problemas com X11 e Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#special-x11-debug">9.7 Ainda estou tendo problemas com o X11 e o Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#tiger-gtk">9.8 Sempre que uso um aplicativo GTK, recebo mensagens de erro em
         relação a <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=pt#yelp">9.9 Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</a></li></ul></li></ul>
 <!--Generated from $Fink: faq.pt.xml,v 1.10 2012/11/11 15:20:14 gecko2 Exp $-->
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

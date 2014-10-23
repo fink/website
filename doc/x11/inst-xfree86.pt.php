@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Executando o X11 - Instalando o  X11";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -348,8 +348,8 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
             X11)</p>
           </td></tr></table>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="run-xfree86.php?phpLang=pt">4. Iniciando o X11</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

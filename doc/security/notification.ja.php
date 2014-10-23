@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "セキュリティポリシー - 告知";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2005/02/04 09:30:20';
@@ -102,6 +102,6 @@ include_once "header.ja.inc";
 			</p>
         
     
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

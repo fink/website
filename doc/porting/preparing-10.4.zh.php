@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "移植 - 为 10.4 做准备";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -45,6 +45,6 @@ include_once "header.zh.inc";
 
 
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Aide";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/11/26 08:37:53 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:12:46 $';
 
 include "header.inc";
 ?>
@@ -105,6 +105,6 @@ Notez que votre proposition a toutes les chances d'être rejetée ou traitée av
 </td></tr></table>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

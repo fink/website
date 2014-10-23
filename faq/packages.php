@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "F.A.Q. - Packages";
 $cvs_author = 'Author: chrisp';
 $cvs_date = 'Date: 2001/10/23 17:51:49';
@@ -17,6 +17,6 @@ Check the <a href="index.php">table of contents</a>.
 </p>
 
 
-<?
+<?php
 include "../footer.inc";
 ?>

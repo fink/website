@@ -1,7 +1,7 @@
 <?php
 $title      = "About";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date   = '$Date: 2014/07/31 08:59:06 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date   = '$Date: 2014/10/23 22:09:49 $';
 
 require "header.inc";
 ?>
@@ -76,6 +76,6 @@ Wenn Sie X11 gar nicht wollen, ist das auch in Ordnung.
 <a href="download/index.php?phpLang=de">Download</a>
 </p>
 
-<?
+<?php
 require "footer.inc";
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Perguntas frequentes - Uso do Fink";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -12,8 +12,8 @@ include_once "header.pt.inc";
     
     
     <a name="what-packages">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.1: Como posso saber quais os pacotes que o Fink suporta?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O comando <code>list</code> lista todos os pacotes conhecidos pela
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.1: Como posso saber quais os pacotes que o Fink suporta?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> O comando <code>list</code> lista todos os pacotes conhecidos pela
         sua instalação do Fink:</p><pre>fink list</pre><p>Se você está usando uma distribuição de binários, o
         <code>dselect</code> apresenta uma listagem navegável de todos os
         pacotes disponíveis.  Note que você precisa executar o dselect como root
@@ -21,9 +21,9 @@ include_once "header.pt.inc";
         disponível no site.</p></div>
     </a>
     <a name="proxy">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.2: Estou atrás de um firewall. Como configuro o Fink para usar um proxy
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.2: Estou atrás de um firewall. Como configuro o Fink para usar um proxy
         HTTP?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O comando <code>fink</code> suporta configurações explícitas de
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> O comando <code>fink</code> suporta configurações explícitas de
         proxy que são repassadas para o <code>wget</code> ou o
         <code>curl</code>. Caso você não tenha configurado os proxies na
         instalação inicial, você pode executar o comando <code>fink
@@ -39,9 +39,9 @@ include_once "header.pt.inc";
         de marcar a caixa "Use Modo Passivo do FTP (PASV)".</p></div>
     </a>
     <a name="firewalled-cvs">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.3: Como faço para atualizar os pacotes disponíveis via CVS se eu
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.3: Como faço para atualizar os pacotes disponíveis via CVS se eu
         estiver atrás de um firewall?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O pacote <b>cvs-proxy</b> pode ser usado para criar um túnel
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> O pacote <b>cvs-proxy</b> pode ser usado para criar um túnel
         através de proxies HTTP.</p><ul>
           <li>
             <p>Instale o pacote <b>cvs-proxy</b> através do comando:</p>
@@ -60,21 +60,21 @@ include_once "header.pt.inc";
         configurações através do comando:</p><p><code>fink configure</code>.</p></div>
     </a>
     <a name="moving">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.4: Posso mover o Fink para outro diretório após a instalação?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Não. É claro que você pode mover os arquivos usando o mv ou o Finder
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.4: Posso mover o Fink para outro diretório após a instalação?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Não. É claro que você pode mover os arquivos usando o mv ou o Finder
         mas 99% dos programas não irão mais funcionar caso o faça. Isto é
         devido ao fato de software Unix depende de diretórios fixos para
         encontrar arquivos de dados, bibliotecas e outros.</p></div>
     </a>
     <a name="moving-symlink">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.5: Se eu mover o Fink após instalá-lo e criar um link simbólico do
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.5: Se eu mover o Fink após instalá-lo e criar um link simbólico do
         diretório antigo, isso vai funcionar?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Talvez. De forma geral deveria funcionar, mas pode ser que haja
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Talvez. De forma geral deveria funcionar, mas pode ser que haja
         alguns problemas.</p></div>
     </a>
     <a name="removing">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.6: Como faço para desinstalar o Fink completamente?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Quase todos os arquivos instalados pelo Fink estão no diretório /sw
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.6: Como faço para desinstalar o Fink completamente?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Quase todos os arquivos instalados pelo Fink estão no diretório /sw
         (ou onde quer que você tenha escolhido instalá-lo). Portanto, para
         remover o Fink, digite o comando abaixo:</p><pre>sudo rm -rf /sw</pre><p>A única exceção é o XFree86 ou o X.org. Caso você tenha instalado um
         servidor X através do Fink (isto é, se você instalou os pacotes
@@ -87,9 +87,9 @@ include_once "header.pt.inc";
         <code>.cshrc</code>) usando um editor de textos.</p></div>
     </a>
     <a name="bindist">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.7: O banco de dados de pacote no site lista o pacote xxx mas nem o
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.7: O banco de dados de pacote no site lista o pacote xxx mas nem o
         apt-get nem o dselect sabem desse pacote. Quem está mentindo?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ambos estão corretos. O <a href="http://pdb.finkproject.org/pdb/">banco de dados de pacotes</a>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Ambos estão corretos. O <a href="http://pdb.finkproject.org/pdb/">banco de dados de pacotes</a>
         conhece todos os pacotes incluindo os que ainda estão na seção de
         pacotes instáveis. Por outro lado, as ferramentas <code>dselect</code>
         e <code>apt-get</code> conhecem apenas os pacotes que estão disponíveis
@@ -108,10 +108,10 @@ include_once "header.pt.inc";
         gratuito). Veja também a pergunta abaixo.</p></div>
     </a>
     <a name="unstable">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.8: Há um pacote na árvore unstable e eu gostaria de instalá-lo mas o
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.8: Há um pacote na árvore unstable e eu gostaria de instalá-lo mas o
         comando fink diz 'no package found' (nenhum pacote encontrado). Como
         posso instalá-lo?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Em primeiro lugar, tenha certeza de que você compreende o que
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Em primeiro lugar, tenha certeza de que você compreende o que
         significa unstable. Pacotes na árvore unstable não estão na árvore
         stable por várias razões. Pode ser porque ainda haja problemas, erros
         de validação, ou então não houve respostas suficientes de pessoas
@@ -148,9 +148,9 @@ fink scanpackages</pre><p>Se você não tiver certeza de qual método de atualiz
         <code>update-all</code> até que você desative a árvore unstable.</p></div>
     </a>
     <a name="unstable-onepackage">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.9: Eu preciso <b>realmente</b> habilitar toda a árvore unstable só
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.9: Eu preciso <b>realmente</b> habilitar toda a árvore unstable só
         para instalar um pacote instável que eu queira?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Não, mas é altamente recomendável que você o faça. Misturar as
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Não, mas é altamente recomendável que você o faça. Misturar as
         coisas pode acarretar situações não previstas que tornam difícil
         depurar problemas quando eles surgirem.</p><p>De qualquer forma, se você quiser apenas um ou dois pacotes
         específicos e nada mais da árvore unstable, você precisa mudar para
@@ -174,28 +174,28 @@ fink scanpackages</pre><p>Se você não tiver certeza de qual método de atualiz
         selfupdate-rsync</code>) se quiser.</p></div>
     </a>
     <a name="sudo">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.10: Estou cansado de ficar digitando a minha senha no sudo o tempo todo.
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.10: Estou cansado de ficar digitando a minha senha no sudo o tempo todo.
         Há alguma forma de contornar isso?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Se você não for paranóico, você pode configurar o sudo para não lhe
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Se você não for paranóico, você pode configurar o sudo para não lhe
         pedir uma senha. Para fazer isso, execute o comando <code>visudo</code>
         como root e adicione uma linha como esta:</p><pre>usuario ALL =(ALL) NOPASSWD: ALL</pre><p>Troque <code>usuario</code> pelo seu nome de usuário. Esta linha
         permitirá que você qualquer comando via sudo sem precisar digitar sua
         senha.</p></div>
     </a>
     <a name="exec-init-csh">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.11: Quando tento rodar o init.sh ou o init.csh, recebo a mensagem de
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.11: Quando tento rodar o init.sh ou o init.csh, recebo a mensagem de
         erro "Permission denied" ("Permissão negada"). O que estou fazendo de
         errado?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O init.sh e o init.csh não foram projetados para serem executados
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> O init.sh e o init.csh não foram projetados para serem executados
         como comandos quaisquer. Estes arquivos definem variáveis de ambiente
         no shell, tais como PATH e MANPATH. Para que tenham efeito permanente
         no shell, eles precisam ser processados com o comando <code>.</code>
         para bash/zsh ou <code>source</code> para csh/tcsh, desta forma:</p><p>para bash/zsh:</p><pre>. /sw/bin/init.sh</pre><p>para csh/tcsh:</p><pre>source /sw/bin/init.csh</pre></div>
     </a>
     <a name="dselect-access">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.12: Preciso de ajuda! Eu usei a opção "[A]cesso" do menu do select e
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.12: Preciso de ajuda! Eu usei a opção "[A]cesso" do menu do select e
         agora não consigo mais baixar pacotes!</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Você provavelmente direcionou o apt para um espelho do Debian, o
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Você provavelmente direcionou o apt para um espelho do Debian, o
         qual obviamente não possui arquivos do Fink. Você pode corrigir isso
         manualmente ou através do select. Para corrigir manualmente, edite como
         root o arquivo <code>/sw/etc/apt/sources.list</code> em um editor de
@@ -206,12 +206,12 @@ deb http://bindist.finkmirrors.net/bindist current main crypto</pre><p>Para corr
         "current" no lugar de "release".</p></div>
     </a>
     <a name="cvs-busy">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.13: Quando eu tento rodar <q>fink selfupdate</q> ou <q>fink
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.13: Quando eu tento rodar <q>fink selfupdate</q> ou <q>fink
         selfupdate-cvs</q>, eu recebo a mensagem de erro "<code>Updating
         using CVS failed. Check the error messages above.</code>" ("<code>A
         atualização via CVS falhou. Verifique as mensagens de erro
         acima.</code>")</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Se a mensagem for</p><pre>Can't exec "cvs": No such file or directory at 
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Se a mensagem for</p><pre>Can't exec "cvs": No such file or directory at 
 /sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</pre><p>então você precisa instalar o Xcode.</p><p>Por outro lado, se a última linha for</p><pre>### execution of su failed, exit code 1</pre><p>você vai precisar olhar as linhas anteriores para ver o erro. Se
         você vir uma mensagem dizendo que sua conexão foi recusada:</p><pre>(Logging in to anonymous@fink.cvs.sourceforge.net)
@@ -247,18 +247,18 @@ fink selfupdate-cvs</pre><p>Se estiver recebendo erros que mencionem <b>cvs.sour
         de atualização</a> foi criado para ajudar nesta mudança.</p></div>
     </a>
     <a name="kernel-panics">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.14: Quando uso o Fink, minha máquina trava/dá erro de kernel panic.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Em 2002, houve relatos na <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">lista
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.14: Quando uso o Fink, minha máquina trava/dá erro de kernel panic.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Em 2002, houve relatos na <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">lista
         de discussão fink-users</a> indicando problemas (incluindo kernel
         panics e travamentos durante a fase de patching) durante o uso do Fink
         para compilar pacotes na presença de software antivírus. Talvez você
         precise desligar o software antivírus antes de usar o Fink.</p></div>
     </a>
     <a name="not-found">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.15: Estou tentando instalar um pacote mas o Fink não consegue baixá-lo.
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.15: Estou tentando instalar um pacote mas o Fink não consegue baixá-lo.
         O site de download mostra uma versão do pacote que é mais recente do
         que a versão que o Fink possui. O que devo fazer?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Os códigos fontes do pacote podem mudar de local nos sites originais
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Os códigos fontes do pacote podem mudar de local nos sites originais
         quando novas versões são lançadas.</p><p>A primeira coisa que você deve fazer é executar o comando <code>fink
         selfupdate</code>. Pode ser que o mantenedor do pacote já haja
         corrigido isso e você conseguirá obter uma descrição atualizada do
@@ -290,10 +290,10 @@ fink selfupdate-cvs</pre><p>Se estiver recebendo erros que mencionem <b>cvs.sour
         para que usem a versão mais nova.</p></div>
     </a>
     <a name="fink-not-found">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.16: Quando eu executo o Fink ou qualquer coisa que tenha instalado
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.16: Quando eu executo o Fink ou qualquer coisa que tenha instalado
         através do Fink, recebo o erro <q>command not found</q>
         (<q>comando não encontrado</q>).</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Se isto acontece sempre, então talvez você tenha modificado (ou
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Se isto acontece sempre, então talvez você tenha modificado (ou
         modificado incorretamente) seus scripts de inicialização sem querer.
         Execute o script <code>/sw/bin/pathsetup.sh</code> em uma
         janela de terminal. Este programa tentará detectar seu shell padrão e
@@ -312,9 +312,9 @@ fink selfupdate-cvs</pre><p>Se estiver recebendo erros que mencionem <b>cvs.sour
         adicionais.</p></div>
     </a>
     <a name="invisible-sw">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.17: Eu quero esconder o diretório /sw no Finder para que os usuários não
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.17: Eu quero esconder o diretório /sw no Finder para que os usuários não
         danifiquem a configuração do Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> É possível fazê-lo. Caso você tenha o Xcode instalado, você pode
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> É possível fazê-lo. Caso você tenha o Xcode instalado, você pode
         executar o seguinte comando:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>Isto faz com que o diretório /sw fique invisível, da mesma forma que
         os diretórios de sistema (/usr etc). Se você não tiver o Xcode, existem
         vários aplicativos de terceiros que permitem que você manipule
@@ -322,10 +322,10 @@ fink selfupdate-cvs</pre><p>Se estiver recebendo erros que mencionem <b>cvs.sour
         invisível.</p></div>
     </a>
     <a name="install-info-bad">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.18: Não consigo instalar nada porque recebo a seguinte mensagem de erro:
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.18: Não consigo instalar nada porque recebo a seguinte mensagem de erro:
         "install-info: unrecognized option
         `--infodir=/sw/share/info'"</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Esse é um problema no seu PATH. Em uma janela de terminal, digite:</p><pre>printenv PATH</pre><p>Caso <code>/sw/sbin</code> não apareça, então você precisa
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Esse é um problema no seu PATH. Em uma janela de terminal, digite:</p><pre>printenv PATH</pre><p>Caso <code>/sw/sbin</code> não apareça, então você precisa
         configurar seu ambiente conforme estas <a href="/doc/users-guide/install.php#setup">instruções</a>
         no Guia do usuário. Se <code>/sw/sbin</code> estiver lá mas
         houver outros diretórios antes (por exemplo,
@@ -338,9 +338,9 @@ fink selfupdate-cvs</pre><p>Se estiver recebendo erros que mencionem <b>cvs.sour
         <code>install-info</code> quando for usar o Fink.</p></div>
     </a>
     <a name="bad-list-file">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.19: Não consigo instalar ou remover nada por causa de um problema com um
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.19: Não consigo instalar ou remover nada por causa de um problema com um
         "files list file" ("arquivo com lista de arquivos").</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Normalmente esses erros são do formato:</p><pre>files list file for package <b>packagename</b> contains empty filename
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Normalmente esses erros são do formato:</p><pre>files list file for package <b>packagename</b> contains empty filename
 arquivo com a lista de arquivos para o pacote <b>nomedopacote</b> contém um nome de arquivo em branco</pre><p>ou</p><pre>files list file for package <b>packagename</b> is missing final newline
 arquivo com a lista de arquivos para o pacote <b>nomedopacote</b> está com o indicador de fim de linha final faltando</pre><p>Isto pode ser corrigido com um pouco de trabalho. Se você tem
         disponível no seu sistema o arquivo .deb do pacote com problemas, então
@@ -371,9 +371,9 @@ else { print substr($6, 2, length($6) - 1);}}' \
         de arquivos e escreve o resultado no arquivo .list</p></div>
     </a>
     <a name="dselect-garbage">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.20: Quando eu escolho pacotes no <code>dselect</code> aparece um
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.20: Quando eu escolho pacotes no <code>dselect</code> aparece um
         monte de lixo. Como faço para usá-lo?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Há alguns problemas entre o <code>dselect</code> e o
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Há alguns problemas entre o <code>dselect</code> e o
         <code>Terminal.app</code>. Uma solução é digitar o seguinte
         comando:</p><p>usuários bash:</p><pre>export TERM=xterm-color</pre><p>usuários tcsh:</p><pre>setenv TERM xterm-color</pre><p>antes de executar o <code>dselect</code> Talvez você queira
         colocar essa linha no seu arquivo de inicialização (por exemplo,
@@ -381,8 +381,8 @@ else { print substr($6, 2, length($6) - 1);}}' \
         sempre.</p></div>
     </a>
     <a name="cant-upgrade">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.21: Não consigo atualizar a versão do Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Se você não consegue atualizar para uma nova versão do Fink através
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.21: Não consigo atualizar a versão do Fink.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Se você não consegue atualizar para uma nova versão do Fink através
         do comando <code>fink selfupdate</code> ou <code>sudo apt-get update;
         sudo apt-get dist-upgrade</code>, então talvez você precise baixar
         manualmente uma nova versão do pacote <code>fink</code>. Os comandos
@@ -400,18 +400,18 @@ fink selfupdate</pre></li>
         </ul></div>
     </a>
     <a name="spaces-in-directory">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.22: Posso colocar o Fink em um volume ou um diretório cujo nome tenha um
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.22: Posso colocar o Fink em um volume ou um diretório cujo nome tenha um
         espaço em branco?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Recomendamos que não coloque sua árvore de diretórios do Fink dentro
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Recomendamos que não coloque sua árvore de diretórios do Fink dentro
         de um diretório com espaço em branco nome. O trabalho não vale a
         pena.</p></div>
     </a>
     <a name="packages-gz">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.23: Quando tento fazer uma atualização de binários, surgem várias
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.23: Quando tento fazer uma atualização de binários, surgem várias
         mensagens com "File not found" ("Arquivo não encontrado") ou "Couldn't
         stat package source list file." ("Não foi possível acessar o arquivo
         com a lista de códigos fontes do pacote.").</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Caso você veja algo parecido com o seguinte:</p><pre>Err file: local/main Packages 
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Caso você veja algo parecido com o seguinte:</p><pre>Err file: local/main Packages 
 File not found 
 Ign file: local/main Release 
 Err file: stable/main Packages 
@@ -439,16 +439,16 @@ powerpc_Packages) - stat (2 No such file or directory)</pre><p>então você deve
 fink scanpackages</pre><p>para corrigi-lo.</p></div>
     </a>
     <a name="wrong-tree">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.24: Eu mudei meu OS | Xcode mas o Fink não reconhece a mudança.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Ao trocar a distribuição do Fink (da qual as distribuições de
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.24: Eu mudei meu OS | Xcode mas o Fink não reconhece a mudança.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Ao trocar a distribuição do Fink (da qual as distribuições de
         códigos fontes e binários são subconjuntos), o Fink precisa ser
         notificado de que isso aconteceu. Para fazê-lo, você pode executar um
         script que normalmente é executado na instalação inicial do Fink:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Isto corrigirá o Fink.</p></div>
     </a>
     <a name="seg-fault">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.25: Estou recebendo erros com os aplicativos <code>gzip</code> |
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.25: Estou recebendo erros com os aplicativos <code>gzip</code> |
         <code>dpkg-deb</code> do pacote <code>fileutils</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Erros no formato:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Erros no formato:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
 ### execution of gzip failed, exit code 139</pre><p>ou</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
 gzip: stdout: Broken pipe 
 ### execution of gzip failed, exit code 138</pre><p>ou</p><pre>dpkg-deb -b root-base-files-1.9.0-1 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
@@ -461,11 +461,11 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ou fa
         comando:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
     </a>
     <a name="pathsetup-keeps-running">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.26: Quando abro uma janela do Terminal, recebo a mensagem "Your
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.26: Quando abro uma janela do Terminal, recebo a mensagem "Your
         environment seems to be correctly set up for Fink already." ("Seu
         ambiente aparenta já estar corretamente configurado para o Fink") e em
         seguida a sessão é encerrada.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O que aconteceu é que de alguma forma o programa Terminal do OS X
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> O que aconteceu é que de alguma forma o programa Terminal do OS X
         foi instruído a executar <code>/sw/bin/pathsetup.command</code> a cada
         vez que você se logar. Você pode corrigir isto removendo o arquivo de
         preferências
@@ -474,10 +474,10 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ou fa
         <code>/sw/bin/pathsetup.command</code>.</p></div>
     </a>
     <a name="ext-drive">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.27: Eu instalei o Fink em um volume que não o do sistema e agora não
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.27: Eu instalei o Fink em um volume que não o do sistema e agora não
         consigo atualizar o pacote Fink a partir do código fonte. Aparecem
         alguns erros envolvendo <q>chowname</q>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Caso o seu erro se pareça com:</p><pre>This first test is designed to die, so please ignore the error
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Caso o seu erro se pareça com:</p><pre>This first test is designed to die, so please ignore the error
 message on the next line.
 # Looks like your test died before it could output anything.
 ./00compile............................ok
@@ -492,21 +492,21 @@ Failed test (./Command/chowname.t at line 27)
         onde o Fink está instalado e desmarcar o botão "Ignorar posse".</p></div>
     </a>
     <a name="mirror-gnu">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.28: O Fink não consegue atualizar meus pacotes porque não pode encontrar
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.28: O Fink não consegue atualizar meus pacotes porque não pode encontrar
         o espelho 'gnu'.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get an error that ends with</p><p>Se você receber uma mensagem de erro que termine com</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>então você provavelmente precisa atualizar o pacote
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If you get an error that ends with</p><p>Se você receber uma mensagem de erro que termine com</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>então você provavelmente precisa atualizar o pacote
         <code>fink-mirrors</code>, por exemplo através do comando:</p><p>then most likely you need to update the <code>fink-mirrors</code> package, e.g. via:</p><pre>fink install fink-mirrors</pre></div>
     </a>
     <a name="cant-move-fink">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.29: Não consigo atualizar o Fink porque ele não consegue mover o
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.29: Não consigo atualizar o Fink porque ele não consegue mover o
         diretório <code>/sw/fink</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> O erro:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>é, apesar do que a mensagem diz, geralmente devido a erros de
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> O erro:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>é, apesar do que a mensagem diz, geralmente devido a erros de
         permissão em um dos diretórios temporários criados durante um
         <code>selfupdate</code>. Remova os diretórios:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
     </a>
     <a name="fc-cache">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.30: Recebo uma mensagem dizendo <q>No fonts found</q>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Caso veja a seguinte mensagem (até agora só detectada no OS
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.30: Recebo uma mensagem dizendo <q>No fonts found</q>.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Caso veja a seguinte mensagem (até agora só detectada no OS
         10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
@@ -514,10 +514,10 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>então você pode corrigir o problema executando o comando</p><pre>sudo fc-cache</pre></div>
     </a>
     <a name="non-admin-installer">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.31: Não consigo instalar o Fink através do pacote de instalação porque
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.31: Não consigo instalar o Fink através do pacote de instalação porque
         recebo mensage de erro <q>volume doesn't support
         symlinks</q>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Esta mensagem normalmente significa que você tentou exeuctar o
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Esta mensagem normalmente significa que você tentou exeuctar o
         instalador do Fink como um usuário que não possui privilégios
         administrativos. Assegure-se de fazer o login (na tela de login) como
         um usuário com tais privilégios ou troque para um usuários com tais
@@ -531,15 +531,15 @@ page and on http://fontconfig.org.</pre><p>então você pode corrigir o problema
         suas permissões através do comando</p><pre>sudo chmod 1775 /</pre></div>
     </a>
     <a name="wrong-arch">
-      <div class="question"><p><b><? echo FINK_Q ; ?>5.32: Não consigo atualizar o Fink por causa do erro <q>package
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.32: Não consigo atualizar o Fink por causa do erro <q>package
         architecture (darwin-i386) does not match system
         (darwin-powerpc).</q></b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Este erro ocorre quando você usa um instalador PowerPC em uma máquina Intel. Você precisa apagar sua instalação do Fink, por exemplo:</p><pre>sudo rm -rf /sw</pre><p>e então baixar a imagem de disco para máquinas Intel a partir da
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Este erro ocorre quando você usa um instalador PowerPC em uma máquina Intel. Você precisa apagar sua instalação do Fink, por exemplo:</p><pre>sudo rm -rf /sw</pre><p>e então baixar a imagem de disco para máquinas Intel a partir da
         <a href="/download/index.php">página de
         downloads</a>.</p></div>
     </a>
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="comp-general.php?phpLang=pt">6. Problemas de Compilação - Geral</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Security Policy - Notification";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2005/04/09 16:12:59';
@@ -81,6 +81,6 @@ include_once "header.zh.inc";
         <p>请注意 <b>Affected</b> 关键字所指的软件包并不只包含 Fink 中的软件包。在样本报告中很清楚地展示了这点。</p>   
         
     
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Perguntas frequentes - Uso (2)";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -12,8 +12,8 @@ include_once "header.pt.inc";
     
     
     <a name="xmms-quiet">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.1: Não consigo som no XMMS.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Assegure-se de ter selecionado o "eSound Output Plugin" nas
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.1: Não consigo som no XMMS.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Assegure-se de ter selecionado o "eSound Output Plugin" nas
         preferências do XMMS. Por algum motivo estranho, ele seleciona o disk
         writer plugin como padrão.</p><p>Se ainda assim você não conseguir som ou o XMMS reclamar que não
         encontra sua placa de som, tente o seguinte:</p><ul>
@@ -39,9 +39,9 @@ include_once "header.pt.inc";
         temos uma análise ou correção.</p></div>
     </a>
     <a name="nedit-window-locks">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.2: Se estou editando um arquivo no nedit, quando abro outro arquivo a
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.2: Se estou editando um arquivo no nedit, quando abro outro arquivo a
         janela abre mas não responde.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Este é um problema conhecido que ocorre com versões recentes do
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Este é um problema conhecido que ocorre com versões recentes do
         <code>nedit</code> e <code>lesstif</code> em todas as
         plataformas. A solução é abrir uma nova janela com File--&gt;New e
         então abrir o próximo arquivo em que você queira trabalhar.</p><p>Este problema foi corrigido no <code>nedit-5.3-6</code>, o
@@ -49,16 +49,16 @@ include_once "header.pt.inc";
         <code>lesstif</code>.</p></div>
     </a>
     <a name="xdarwin-start">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.3: Preciso de ajuda! Quando inicio o XDarwin, ele termina
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.3: Preciso de ajuda! Quando inicio o XDarwin, ele termina
         imediatamente!</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Não entre em pânico. O documento Executando o X11 tem uma vasta
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Não entre em pânico. O documento Executando o X11 tem uma vasta
         <a href="/doc/x11/trouble.php#immediate-quit">seção
         de resolução de problemas</a> para este problema comum.</p></div>
     </a>
     <a name="no-server">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.4: Quando tento iniciar o XDarwin eu recebo a mensagem "xinit: No such
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.4: Quando tento iniciar o XDarwin eu recebo a mensagem "xinit: No such
         file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Em primeiro lugar, assegure-se de estar carregando o init.sh no seu
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Em primeiro lugar, assegure-se de estar carregando o init.sh no seu
         arquivo de inicialização do X <code>~/.xinitrc</code>.</p><p>No Jaguar, às vezes todos os pacotes <code>xfree86</code> são
         compilados mas apenas <code>xfree86-base</code> e
         <code>xfree86-base-shlibs</code> são instalados. Verifique se você tem
@@ -69,9 +69,9 @@ include_once "header.pt.inc";
         <code>/usr/bin/X11R6</code> no seu PATH.</p></div>
     </a>
     <a name="apple-x-delete">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.5: Quero que a tecla Delete no X11.app da Apple comporte-se como no
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.5: Quero que a tecla Delete no X11.app da Apple comporte-se como no
         XDarwin.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Alguns usuários relataram que o comportamento da tecla
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Alguns usuários relataram que o comportamento da tecla
         <code>delete</code> é diferente entre o XDarwin e o X11 da Apple. Isto
         pode ser corrigido através da edição dos arquivos de inicialização do X
         apropriados:</p><p><b>.Xmodmap:</b></p><pre>keycode 59 = Delete</pre><p><b>.Xresources:</b></p><pre>xterm*.deleteIsDEL: true 
@@ -81,8 +81,8 @@ xmodmap $HOME/.Xmodmap</pre></div>
     </a>
     <a name="apple-x11-wants-xfree86">
       
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.6: Estou tendo problemas com X11 e Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Há duas possibilidades a considerar.</p><ul>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.6: Estou tendo problemas com X11 e Fink.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Há duas possibilidades a considerar.</p><ul>
           <li>
             <b>Você está instalando a partir de binários:</b>
             <p>Geralmente, o que você precisa fazer é reinstalar o pacote
@@ -126,8 +126,8 @@ xmodmap $HOME/.Xmodmap</pre></div>
         </ul></div>
     </a>
     <a name="special-x11-debug">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.7: Ainda estou tendo problemas com o X11 e o Fink.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Se as dicas em <a href="#apple-x11-wants-xfree86">O Fink tenta
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.7: Ainda estou tendo problemas com o X11 e o Fink.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Se as dicas em <a href="#apple-x11-wants-xfree86">O Fink tenta
         instalar Xfree86 ou X.org</a> não
         ajudarem ou não são aplicáveis à sua situação, você pode ter que limpar
         sua instalação do X11 e remover quaisquer sinalizadores ou pacotes
@@ -153,9 +153,9 @@ fink selfupdate; fink index</pre><p>(a primeira linha pode lhe apresentar aviso 
         </ul></div>
     </a>
     <a name="tiger-gtk">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.8: Sempre que uso um aplicativo GTK, recebo mensagens de erro em
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.8: Sempre que uso um aplicativo GTK, recebo mensagens de erro em
         relação a <code>_EVP_idea_cbc</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Isto é causado por um possível bug no linkeditor dinâmico do Tiger
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Isto é causado por um possível bug no linkeditor dinâmico do Tiger
         (na versão 10.4.1) mas parece ter sido corrigido na 10.4.3 e o Fink tem
         uma solução no pacote <code>base-files-1.9.7-1</code> ou mais
         recentes.</p><p>Caso você ainda não tenha atualizado o Tiger e/ou o
@@ -173,13 +173,13 @@ fink selfupdate; fink index</pre><p>(a primeira linha pode lhe apresentar aviso 
         versão suficientemente recente do pacote <code>base-files</code>.</p></div>
     </a>
     <a name="yelp">
-      <div class="question"><p><b><? echo FINK_Q ; ?>9.9: Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Você precisa instalar o pacote <code>yelp</code>. Este pacote não
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.9: Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Você precisa instalar o pacote <code>yelp</code>. Este pacote não
         foi colocado junto com o restante do GNOME porque usa criptografia e
         foi decidido não colocar todo o GNOME na árvore crypto só por causa do
         sistema de ajuda.</p></div>
     </a>
   
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

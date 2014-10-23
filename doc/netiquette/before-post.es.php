@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Netiquette - Antes de 'Postear'";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2013/02/02 14:16:41';
@@ -19,8 +19,8 @@ include_once "header.es.inc";
         <li>Google</li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="first-post.php?phpLang=es">2. Primer "Post"</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

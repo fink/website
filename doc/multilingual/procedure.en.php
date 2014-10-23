@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - Updating";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:15';
@@ -83,8 +83,8 @@ include_once "header.en.inc";
       
       <p>The current policy is that all documents should be updated according to the <a href="#prompt-update">prompt update</a> schedule, unless you have a specific reason to do otherwise.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="resources.php?phpLang=en">4. Additional Resources           </a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

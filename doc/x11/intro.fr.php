@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Utilisation de X11 - Intro";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -59,8 +59,8 @@ include_once "header.fr.inc";
 <p>La frontière entre moteur d'affichage graphique, gestionnaire de fenêtres et bureau est floue, car une même fonctionnalité (ou une fonctionnalité similaire) peut être implémentée par l'un de ces environnements ou plusieurs d'entre eux. C'est une des raisons pour laquelle un gestionnaire de fenêtres particulier peut ne pas fonctionner avec un environnement de bureau donné.</p>
 <p>De nombreuses applications sont développées pour être intégrées dans un environnement de bureau spécifique. Très souvent, il suffit d'installer les librairies de l'environnement de bureau (et les librairies sous-jacentes) avec lesquelles l'application a été développée pour qu'elle fonctionne (quasi) sans perte de fonctionnalités. Par exemple, un nombre de plus en plus grand d'<a href="http://pdb.finkproject.org/pdb/section.php/gnome">applications GNOME</a> fonctionnent hors de l'environnement GNOME. Malheureusement, <a href="/faq/usage-fink.php#kde">ce n'est pas encore le cas</a> pour les <a href="http://www.kde.org/">applications KDE</a>.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="history.php?phpLang=fr">2. Historique</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

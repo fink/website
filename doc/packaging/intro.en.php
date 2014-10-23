@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Packaging - Intro";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/02/14 18:22:26';
@@ -68,8 +68,8 @@ dashes in between, e.g. openssh-2.9p1-2.
 </p>
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="format.php?phpLang=en">2. Package Descriptions</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

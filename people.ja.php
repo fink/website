@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "貢献している人々";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2013/09/27 16:44:16 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -237,6 +237,6 @@ Fink プロジェクトはボランティアによって成り立っています
 </ul>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

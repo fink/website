@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "网络礼仪 - 取消订阅";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -23,6 +23,6 @@ include_once "header.zh.inc";
       </ol>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

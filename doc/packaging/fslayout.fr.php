@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Paquets - Organisation des fichiers";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -55,8 +55,8 @@ include_once "header.fr.inc";
 <h2><a name="avoid">4.3 À éviter</a></h2>
 <p>Aucun autre répertoire que ceux mentionnés ci-dessus ne doit être créé dans <code>/sw</code>. En particulier, les répertoires suivant ne doivent pas être utilisés : <code>/sw/man</code>, <code>/sw/info</code>, <code>/sw/doc</code>, <code>/sw/libexec</code> et <code>/sw/lib/locale</code>.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="compilers.php?phpLang=fr">5. Compilateurs</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

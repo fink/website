@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Avançado - Servidor de Distr. de Binários";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:12';
@@ -150,6 +150,6 @@ Hit http://192.168.42.7 stable/crypto Packages
       Fink"</a> escrito por RangerRick. Obrigado!</p>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

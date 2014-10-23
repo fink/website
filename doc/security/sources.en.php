@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Security Policy - Source";
 $cvs_author = 'Author: monipol';
 $cvs_date = 'Date: 2009/03/31 01:41:35';
@@ -131,8 +131,8 @@ include_once "header.en.inc";
             <p>The above keywords are in full compliance with the CVE
                 recommended keyword list found <a href="http://www.cve.mitre.org/cve/refs/refkey.html">here</a>. </p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="updating.php?phpLang=en">4. Security update procedure.</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

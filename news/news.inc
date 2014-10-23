@@ -1,1 +1,1 @@
-<? include_once dirname(__FILE__) . "/news.en.inc"; ?>
+<?php include_once dirname(__FILE__) . "/news.en.inc"; ?>

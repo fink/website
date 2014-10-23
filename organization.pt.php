@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Organização do Fink";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/07/26 11:13:28 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -33,6 +33,6 @@ contactados através da lista &lt;fink-core@lists.sourceforge.net&gt;.</p>
 
 <p>Em construção...</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

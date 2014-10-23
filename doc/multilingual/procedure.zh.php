@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - 更新";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
@@ -74,8 +74,8 @@ include_once "header.zh.inc";
       
       <p>当前的政策是所有文档应该按照 <a href="#prompt-update">提示更新</a> 流程进行更新，除非你有很特别的理由不这样做。</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="resources.php?phpLang=zh">4. 附加的资源</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

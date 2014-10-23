@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Installation";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2014/10/19 03:25:17';
@@ -48,4 +48,4 @@ Track</a></li>
 </ul>
 <p>Generated from <i>$Fink: install.xml,v 1.48 2014/10/19 03:25:17 alexkhansen Exp $</i></p>
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

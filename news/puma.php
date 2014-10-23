@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Mac OS X 10.1 Compatibility Report";
-$cvs_author = '$Author: chrisp $';
-$cvs_date = '$Date: 2001/10/25 10:15:14 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:29 $';
 
 include "header.inc";
 ?>
@@ -99,6 +99,6 @@ with a pre-release copy of Mac OS X 10.1!
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

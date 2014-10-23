@@ -1,4 +1,4 @@
-<? 
+<?php 
 /* This file is generated, do not edit manually! */
 
 $section = "faq";

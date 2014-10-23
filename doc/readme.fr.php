@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Lisez-moi";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:15';
@@ -96,6 +96,4 @@ et abonnez-vous à la liste de diffusion fink-announce.
 La liste est modérée et son trafic est très faible.
 </p>
   
-<? include_once "../footer.inc"; ?>
-
-
+<?php include_once "../footer.inc"; ?>

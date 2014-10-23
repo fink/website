@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ejecución de X11 - Resolviendo problemas";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -348,8 +348,8 @@ Mac OS X.
         </li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="tips.php?phpLang=es">8. Consejos de uso</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

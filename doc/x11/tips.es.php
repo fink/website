@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ejecución de X11 - Consejos";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -110,6 +110,6 @@ ocurrir que la copia no se hubiera efectuado en el primer intento), y utilizar a
 nedit o un xterm en el lado X11. Según mi experiencia, siempre hay una solución.</p>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

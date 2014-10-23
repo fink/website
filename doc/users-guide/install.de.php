@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Benutzerhandbuch - Installation";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
@@ -223,8 +223,8 @@ sehen, wie Sie endlich nützliche Pakete mit Hilfe der in Fink enthaltenen
 Werkzeugen zur Paketverwaltung installieren können.
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="packages.php?phpLang=de">3. Pakete Installieren</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

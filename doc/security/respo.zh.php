@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Security Policy - Responsibility";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2005/04/09 16:12:59';
@@ -30,8 +30,8 @@ include_once "header.zh.inc";
             <p>关于安全性问题所提交的报告会由 <b>Fink 核心团队</b>进行回应。每个维护者都被要求自行回复处理被报告的问题。在不太常见的情况下，如果找不到维护者或维护者不能在 24 小时之内回复，应该向 <b>Fink 核心团队</b> 发送信息通知他们维护者似乎没有回应。</p>
             <p>如果你尝试通知维护者但是却被邮件系统退信，你应该立即通知 <b>Fink 核心团队</b>联系不到维护者这样软件包可以不经过维护者而得到更新。</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="severity.php?phpLang=zh">2. 响应时间和立即行动。</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "用户指南 - 介绍";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -114,8 +114,8 @@ Fink 可以让你自己在两种方式中间选择。
 本指南的其余部分将介绍如何做到这一点。
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="install.php?phpLang=zh">2. 首次安装</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

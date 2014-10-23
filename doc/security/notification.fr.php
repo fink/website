@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Charte de sécurité - Notification";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2005/02/01 08:32:49';
@@ -80,6 +80,6 @@ References: KEYWORD (see above) Ref-URL: URL </pre>
 <p>Notez que les mots clés <b>Affected</b> correspondent à toutes les versions vulnérables du logiciel et non pas aux seules versions empaquetées pour Fink. L'exemple ci-dessus le montre clairement.</p>
 
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

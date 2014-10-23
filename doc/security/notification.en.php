@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Security Policy - Notification";
 $cvs_author = 'Author: monipol';
 $cvs_date = 'Date: 2009/03/31 01:41:35';
@@ -103,6 +103,6 @@ include_once "header.en.inc";
             only those that might be packaged for Fink. The sample report shows this clearly.</p>
         
     
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

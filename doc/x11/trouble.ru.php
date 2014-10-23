@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Использование X11 - Устранение проблем";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -268,8 +268,8 @@ include_once "header.ru.inc";
                 </li>
             </ul>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="tips.php?phpLang=ru">8. Подсказки по использованию</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Upgrading Fink for Mac OS X 10.2";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2002/12/09 06:04:41 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:29 $';
 
 include "header.inc";
 ?>
@@ -93,6 +93,6 @@ fink-0.11.1 archive, directory, and its contents.
 <br>If you encounter problems with these 
 instructions please consult the fink <a href="../help">Help page</A> which lists sources of finding
 assistance.
-<?
+<?php
 include "footer.inc";
 ?>

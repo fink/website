@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2014/10/19 03:19:21';
@@ -1843,4 +1843,4 @@ Get it from the <a href="<?php print $root; ?>download.php">download page</a>.
 </p>
 
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

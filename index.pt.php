@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Página inicial";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/01/24 20:21:29 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, uma distribuição de software Unix para Mac OS X e Darwin">
@@ -28,13 +28,13 @@ tudo a partir do código fonte.
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
-<h1><a href="<? print $rdf_file; ?>" title="Assine as minhas notícias: Notícias do Projeto Fink" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
+<h1><a href="<?php print $rdf_file; ?>" title="Assine as minhas notícias: Notícias do Projeto Fink" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;Notícias</h1>
-<?
+<?php
 // Include news items
 require dirname(__FILE__) . "/news/news.pt.inc";
 ?>
-<div align="right"><a href="<? print $root; ?>news/index.php?phpLang=pt">Notícias Antigas...</a></div>
+<div align="right"><a href="<?php print $root; ?>news/index.php?phpLang=pt">Notícias Antigas...</a></div>
 
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
@@ -44,12 +44,12 @@ title="Atualizações de pacotes no Fink (Stable)" rel="alternate"
 type="application/rss+xml"><img src="img/feed-icon16x16.png" alt=""
 style="border:0"></a> &nbsp;Atualizações recentes de pacotes</h1>
 
-<? include "package-updates.inc" ?>
+<?php include "package-updates.inc" ?>
 
 <a href="package-updates.php">mais...</a>
 </tr><tr valign="top"><td width="50%">
 <h1>Status</h1>
-<? 
+<?php 
 include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
@@ -156,6 +156,6 @@ href="http://sourceforge.net/">site do SourceForge</a>.</p>
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
-<?
+<?php
 include "footer.inc";
 ?>

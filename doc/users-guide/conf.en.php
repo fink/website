@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -447,8 +447,8 @@ modifications to the top of the file (above the first default line) and
 the bottom of the file (below the last default line).
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=en">6. Using the fink Tool from the Command Line</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

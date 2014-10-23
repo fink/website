@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "文档";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -54,6 +54,6 @@ covers more advanced concepts than those covered in the User's Guide.</li>
       <li><a href="netiquette/index.php">邮件列表使用规则</a>-如何更好地使用 Fink 邮件列表。</li>
     </ul>
   
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

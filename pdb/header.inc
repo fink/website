@@ -1,5 +1,5 @@
-<?
-/* $Id: header.inc,v 1.29 2013/11/30 01:34:44 thesin Exp $ */
+<?php
+/* $Id: header.inc,v 1.30 2014/10/23 22:04:57 thesin Exp $ */
 
 $linkroot  = "http://www.finkproject.org/";
 $localroot = "http://pdb.finkproject.org/";

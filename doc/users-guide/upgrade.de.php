@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Benutzerhandbuch - Aktualisieren";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
@@ -70,8 +70,8 @@ information files, and then Source-&gt;Update-all (see previous sections for
 details).</p>
 
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=de">5. Die Fink-Konfigurationsdatei</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

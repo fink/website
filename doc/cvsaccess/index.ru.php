@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Доступ к Fink через CVS";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:13';
@@ -56,6 +56,6 @@ include_once "header.inc";
             его оставить, будет легче произвести обновление в следующий раз. Тогда порядок действий таков:</p>
         <pre>cd tempdir/fink cvs -z3 update -d ./inject.pl</pre>
     
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

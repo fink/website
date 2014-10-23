@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Installation - Clean";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2014/10/19 03:25:17';
@@ -108,4 +108,4 @@ First, follow the <a href="install-first.php">first-time install instructions</a
 
 
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Security Policy - Responsibility";
 $cvs_author = 'Author: monipol';
 $cvs_date = 'Date: 2009/03/31 01:41:35';
@@ -57,8 +57,8 @@ include_once "header.en.inc";
                 unreachable and that the package may be updated irrespective of
                 the maintainer. </p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="severity.php?phpLang=en">2. Response times and immediate actions.</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

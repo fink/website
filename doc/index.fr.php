@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Documentation";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:13';
@@ -42,6 +42,6 @@ couvre des sujets plus complexes que ceux abordés dans le Guide de l'utilisateu
 <li><a href="netiquette/index.php">Étiquette net des listes de diffusion</a> - ou comment se servir au mieux des listes de diffusion de Fink.</li>
 </ul>
 
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

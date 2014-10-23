@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - Xtools";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -40,8 +40,6 @@ Xtools はハードウェア加速の OpenGL をルートレスで行い、サ�
 Xtools 1.1 までには修正されることを期待します。
 </p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="other.php?phpLang=ja">6. その他の X11</a></p>
-<? include_once "../../footer.inc"; ?>
-
-
+<?php include_once "../../footer.inc"; ?>

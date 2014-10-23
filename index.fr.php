@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Accueil";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/01/25 10:26:51 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 $is_home = 1;
 
 $metatags = '<meta name="description" content="Fink, une distribution de logiciels Unix pour Mac OS X et Darwin">
@@ -32,7 +32,7 @@ précompilés ou la construction des paquets à partir des sources.
 
 <h1><a href="http://feeds2.feedburner.com/FinkProjectNews-fr" title="Abonnez-vous aux Nouvelles du Projet Fink" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;Dernières nouvelles</h1>
-<?
+<?php
 // Include news items
 require dirname(__FILE__) . "/news/news.fr.inc";
 ?>
@@ -44,12 +44,12 @@ require dirname(__FILE__) . "/news/news.fr.inc";
 <h1><a href="http://feeds2.feedburner.com/FinkProjectNews-stable" title="Fink Package Updates (Stable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;Recent Package Updates</h1>
 
-<?  include "package-updates.inc" ?>
+<?php include "package-updates.inc" ?>
 
 <a href="package-updates.php">more...</a>
 </tr><tr valign="top"><td width="50%">
 <h1>Statut</h1>
-<? 
+<?php 
 include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
@@ -165,6 +165,6 @@ sur le <a href="http://sourceforge.net/">site web de SourceForge</a>.
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
-<?
+<?php
 include dirname(__FILE__) . "/footer.inc";
 ?>

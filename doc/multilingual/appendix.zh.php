@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - 附录";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2004/03/10 02:23:16';
@@ -38,6 +38,6 @@ include_once "header.zh.inc";
       </ul>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

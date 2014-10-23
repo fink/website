@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Contributors";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/31 08:59:06 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -226,6 +226,6 @@ Im Laufe der Zeit hat Fink soviel Hilfe erfahren, dass es schwierig ist, alle Pe
 </ul>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

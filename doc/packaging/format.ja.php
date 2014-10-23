@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "パッケージ作成 - パッケージ記述";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2014/09/09 03:41:02';
@@ -267,8 +267,8 @@ intel マシン上では <b>lib/x86_64</b> と展開される (64-bit ライブ�
 </p>
 </td></tr></table>
 		
-	<p align="right"><? echo FINK_NEXT ; ?>:
+	<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="policy.php?phpLang=ja">3. パッケージ化ポリシー</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guide utilisateur - Introduction";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -53,8 +53,8 @@ include_once "header.fr.inc";
 <p>Fink vous laisse le choix entre les deux formes source ou binaire. La distribution "source" récupère le source original, l'adapte à Mac OS X et aux règles de Fink et le compile sur votre ordinateur. Ce processus est complètement automatisé, mais dure un certain temps. À l'inverse, la distribution "binaire" récupère sur le site de Fink des paquets déjà compilés, ce qui fait gagner le temps de la compilation. 
 En fait, il est possible de marier les deux formes à volonté. Ce guide vous indique comment le faire.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="install.php?phpLang=fr">2. Première installation</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

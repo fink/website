@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Portage - Préparation pour 10.2";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -75,8 +75,8 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 (accessible dans des préversions de fink).</p>
 <p>Un autre problème avec le compilateur gcc3 est l'incompatibilité pour les ABI C++ entre gcc2 et gcc3. En pratique, ceci signifie que les programmes C++ compilés avec gcc3 ne peuvent être liés à des librairies compilées avec gcc2.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="preparing-10.3.php?phpLang=fr">5. Préparation pour la version 10.3</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

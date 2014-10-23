@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "用户指南 - 安装";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -182,8 +182,8 @@ Fink 软件包可以添加它们自己的设置，例如，qt 软件会设置 QT
 <a href="packages.php?phpLang=zh">安装软件包</a> 章节来了解如何用 Fink 所包括的软件包管理工具来安装一些实际的软件包。
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="packages.php?phpLang=zh">3. 安装软件包</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

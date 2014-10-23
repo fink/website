@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Netiquette - Respondiendo";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2013/02/02 14:16:41';
@@ -30,8 +30,8 @@ include_once "header.es.inc";
       <p>Claro que si haces esto, tal vez quieras eliminar algunos destinatarios extra 
       (por ejemplo, de post cruzados, u otras personas que ya hayan respondido).</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="unsubscribe.php?phpLang=es">4. ¿Cómo desuscribirse de las Listas?</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

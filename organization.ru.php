@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Organization of Fink";
-$cvs_author = '$Author: horsager $';
-$cvs_date = '$Date: 2005/01/16 09:32:59 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -34,6 +34,6 @@ include "header.inc";
 <p>Информация
  появится в ближайшем будущем ...</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Hilfe";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/31 08:59:06 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:12:46 $';
 
 include "header.inc";
 ?>
@@ -72,6 +72,6 @@ href="../lists/fink-users.php">fink-users</a>-Mailingliste und helfen Sie Proble
 </table>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

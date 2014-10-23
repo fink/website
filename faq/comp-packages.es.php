@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "P.M.F. - Compiling (2)";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -11,8 +11,8 @@ include_once "header.es.inc";
     
     
     <a name="libgtop">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.1: A Falla la compilación de un paquete con errores involucrando a <code>sed</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>)
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.1: A Falla la compilación de un paquete con errores involucrando a <code>sed</code>.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>)
         does something that writes to the terminal, e.g "<code>echo
         Hello</code>" or <code>xttitle</code>. To get rid of the problem, the
         easy solution is to comment out the offending lines.</p><p>If you want to keep the echo, then you can do something like the
@@ -21,8 +21,8 @@ include_once "header.es.inc";
 endif</pre></div>
     </a>
     <a name="cant-install-xfree">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.2: Quiero cambiarme a los paquetes XFree86 de Fink, pero no puedo instalar <code>xfree86-base</code> - <code>xfree86</code>, porque existe un conflicto con <code>system-xfree86</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> All flavors of X11, unfortunately, really needs to be installed in
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.2: Quiero cambiarme a los paquetes XFree86 de Fink, pero no puedo instalar <code>xfree86-base</code> - <code>xfree86</code>, porque existe un conflicto con <code>system-xfree86</code>.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> All flavors of X11, unfortunately, really needs to be installed in
         /usr/X11R6. Because of this the Fink <code>xfree86-base</code> and
         <code>xfree86-rootless</code> packages install there, too. However,
         since Fink won't remove any files that aren't in its database, it
@@ -48,8 +48,8 @@ endif</pre></div>
         distro yet, and is currently only in the unstable tree [FAQ 3.9].</p></div>
     </a>
     <a name="change-thread-nothread">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.3: ¿Cómo puedo cambiar de la version non-threaded del paquete XFree86 de Fink a la version threaded  (o viceversa)?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you are running the Fink version of XFree86 and you want to
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.3: ¿Cómo puedo cambiar de la version non-threaded del paquete XFree86 de Fink a la version threaded  (o viceversa)?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If you are running the Fink version of XFree86 and you want to
         switch between the threaded and non-threaded versions of Fink, you
         need to manually remove the old version. This is done at the
         command-line with the commands:</p><pre>sudo dpkg -r --force-depends xfree86-base 
@@ -72,19 +72,19 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
     </a>
 
     <a name="cctools">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.4: ¿Cuando intento instalar KDE, me sale el siguiente mensaje: 'Can't  resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> This somewhat cryptic message means you need to install the
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.4: ¿Cuando intento instalar KDE, me sale el siguiente mensaje: 'Can't  resolve dependency "cctools (&gt;= 446-1)"'</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This somewhat cryptic message means you need to install the
         December 2002 Developer Tools.</p></div>
     </a>
     
     <a name="libiconv-gettext">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: I can't update <code>libiconv</code>.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>you can solve this problem by running</p><pre>fink remove gettext-dev
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.5: I can't update <code>libiconv</code>.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If you get errors of the form:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>you can solve this problem by running</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
     </a>
     <a name="cplusplus-filt">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: i can't install a package because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> If you get errors of the form </p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>since updating to Tiger, then you need to do the following:</p><ul>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.6: i can't install a package because <code>c++filt</code> is missing.  Where do I get it?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If you get errors of the form </p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>since updating to Tiger, then you need to do the following:</p><ul>
            <li>Reinstall <code>BSD.pkg</code> (from your installation media).  If <code>/usr/bin/c++filt</code> doesn't appear, keep trying.</li>
 	</ul><p>You also might also need to make sure you don't have any ancient Developer/Xcode Tools stuff laying around:</p><ul>
 	  <li><b>10.4:  </b>Flush out your old Xcode Tools versions via running<code> /Developer/Tools/uninstall-devtools.pl </code>in a terminal.  Then (re)install XCode (2.4.1 or later).</li>
@@ -94,27 +94,27 @@ fink install libiconv</pre></div>
 2) Reinstall BSD.pkg (from your main OS install)</p></div>
     </a>
     <a name="gettext-tools">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.7: Fink refuses to update the <code>gettext</code> package,
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.7: Fink refuses to update the <code>gettext</code> package,
 complaining that the dependencies are in an inconsistent state.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> After running <code>fink selfupdate</code> to be sure you
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> After running <code>fink selfupdate</code> to be sure you
 have the latest versions, try <code>fink update gettext-tools</code>.
 An old version of the <code>gettext-tools</code> package may be 
 preventing you from updating <code>gettext</code>.</p></div>
     </a>
   <a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
+    <div class="question"><p><b><?php echo FINK_Q ; ?>7.8: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
+    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:   <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or 
     <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (or other versions of libraries in
     <code>/usr/X11/lib/</code>).</p><p>The current wisdom on the best
     fix for such an issue is to install Xcode 3.1.3 or later.</p></div>
   </a>
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.9: I'm having issues with a package that isn't listed here.</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.9: I'm having issues with a package that isn't listed here.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put them
       up on the Fink wiki.  Check the <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
     </a>
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=es">8. Package Usage Problems - General</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

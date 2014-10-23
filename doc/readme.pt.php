@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Leia-me";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:15';
@@ -72,6 +72,4 @@ include_once "header.inc";
   e assine a lista de discussão fink-announce. Esta lista é moderada e possui
   baixo tráfego.</p>
 
-<? include_once "../footer.inc"; ?>
-
-
+<?php include_once "../footer.inc"; ?>

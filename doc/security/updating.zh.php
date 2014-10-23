@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Security Policy - Updates";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2005/04/09 16:12:59';
@@ -25,8 +25,8 @@ include_once "header.zh.inc";
             
             <p>对某个软件包的安全性更新会首先应用在 unstable 分支。经过不少于 <b>12</b> 小时的间隔以后软件包的信息文件(最终还将包括补丁文件)会同样放入 stable 分支。这个间隔时间应该用来密切注视更新软件包的工作情况以及安全更新不会导致新的安全问题。</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="notification.php?phpLang=zh">5. 发送通知</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

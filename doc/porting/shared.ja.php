@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "移植 - 共有コード";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -118,8 +118,8 @@ cc -bundle -flat_namespace -undefined suppress \
 プログラムがモジュールをロードする際には完全なファイル名を使用するので，無害です．
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="libtool.php?phpLang=ja">3. GNU libtool</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

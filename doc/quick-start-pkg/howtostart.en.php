@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Packaging Tutorial - How to Start";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -230,8 +230,8 @@ Set the <code>Category</code> field of the tracker item to the correct value.
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="example.php?phpLang=en">2. Example - the Maxwell Package</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

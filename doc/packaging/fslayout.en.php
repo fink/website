@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Packaging - FS Layout";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/02/14 18:22:26';
@@ -192,8 +192,8 @@ In particular, the following should not be used:
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="compilers.php?phpLang=en">5. Compilers</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

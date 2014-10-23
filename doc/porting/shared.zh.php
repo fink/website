@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "移植 - 共享代码";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -136,8 +136,8 @@ since a program would use the full filename when loading a module.
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="libtool.php?phpLang=zh">3. GNU libtool</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

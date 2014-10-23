@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Política de segurança - Notificação";
 $cvs_author = 'Author: monipol';
 $cvs_date = 'Date: 2009/07/26 11:13:27';
@@ -118,6 +118,6 @@ include_once "header.pt.inc";
       claramente.</p>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

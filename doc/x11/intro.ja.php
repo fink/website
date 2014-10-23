@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - イントロ";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -145,8 +145,8 @@ X11 では、ウィンドウ枠 (または " 装飾 ") は別のプログラム�
 残念なことに、 <a href="http://www.kde.org/">KDE アプリケーション</a> ではまだ<a href="/faq/usage-fink.php#kde">そこまで達していません</a>。
 </p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="history.php?phpLang=ja">2. 歴史</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

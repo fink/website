@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Packaging - Compilers";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/02/14 18:22:26';
@@ -96,8 +96,8 @@ for OS X 10.4 through OS X 10.9.
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="reference.php?phpLang=en">6. Reference</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

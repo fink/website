@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Paquets - Compilateurs";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -25,8 +25,8 @@ include_once "header.fr.inc";
 <p>Si un petit nombre de paquets dépendent uniquement les uns des autres, on peut laisser la version de l'ABI précédente en place, s'ils ne sont pas prêts pour la mise à jour. Quand la mise à jour aura lieu, ils seront tous mis à jour en même temps avec une version correcte sur tous les paquets. C'est pourquoi il est préférable de ne mettre à jour les paquets qu'au moment de la distribution.</p>
 <p>Fink utilise le champ GCC pour s'assurer que les utilisateurs ont bien la bonne version du compilateur g++ installée sur leur système. Si le champ GCC est défini par le paquet, fink vérifie que la commande <code>gcc_select</code> a reçu la valeur en cours. Cette valeur est 3.3 pour les versions 10.2 et 10.3 de Mac OS X, et 4.0 pour la version 10.4 de Mac OS X. La commande <code>gcc_select</code> n'était pas disponible antérieurement à la version 10.2 de Mac OS X.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="reference.php?phpLang=fr">6. Référence</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

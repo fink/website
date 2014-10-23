@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/02/14 18:22:26';
@@ -301,8 +301,8 @@ otherwise, this expands to <b>lib</b>.
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="policy.php?phpLang=en">3. Packaging Policy</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

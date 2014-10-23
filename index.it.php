@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Home";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/01/24 20:21:29 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 $is_home = 1;
 
 $metatags = '<meta name="descrizione" content="Fink, una distribuzione di software Unix per Mac OS X e Darwin">
@@ -30,13 +30,13 @@ pacchetti precompilati o il codice sorgente da compilare.
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
 
-<h1><a href="<? print $rdf_file; ?>" title="Subscribe to my feed, Fink Project News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
+<h1><a href="<?php print $rdf_file; ?>" title="Subscribe to my feed, Fink Project News" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;Notizie</h1>
-<?
+<?php
 // Include news items
 require dirname(__FILE__) . "/news/news.inc";
 ?>
-<div align="right"><a href="<? print $root; ?>news/index.php?phpLang=it">Vecchie notizie...</a></div>
+<div align="right"><a href="<?php print $root; ?>news/index.php?phpLang=it">Vecchie notizie...</a></div>
 
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
@@ -44,12 +44,12 @@ require dirname(__FILE__) . "/news/news.inc";
 <h1><a href="http://feeds2.feedburner.com/FinkProjectNews-stable" title="Fink Package Updates (Stable)" rel="alternate" type="application/rss+xml"><img src="img/feed-icon16x16.png" alt="" style="border:0"></a>
 &nbsp;Recent Package Updates</h1>
 
-<?  include "package-updates.inc" ?>
+<?php  include "package-updates.inc" ?>
 
 <a href="package-updates.php">more...</a>
 </tr><tr valign="top"><td width="50%">
 <h1>Stato</h1>
-<? 
+<?php
 include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
@@ -165,6 +165,6 @@ su <a href="http://sourceforge.net/">SourceForge web site</a>.
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
-<?
+<?php
 include dirname(__FILE__) . "/footer.inc";
 ?>

@@ -1,5 +1,5 @@
-<?
-/* $Id: header.inc,v 1.2 2001/09/30 14:57:24 chrisp Exp $ */
+<?php
+/* $Id: header.inc,v 1.3 2014/10/23 22:12:46 thesin Exp $ */
 
 $nonav = 1;
 $section = "help";

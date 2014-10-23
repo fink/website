@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Política de segurança - Fontes";
 $cvs_author = 'Author: monipol';
 $cvs_date = 'Date: 2009/07/26 11:13:27';
@@ -79,8 +79,8 @@ include_once "header.pt.inc";
       <p>As palavras-chaves acima estão de acordo com a <a href="http://www.cve.mitre.org/cve/refs/refkey.html">lista de
       palavras-chaves recomendadas pelo CVE</a>.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="updating.php?phpLang=pt">4. Política de atualização de segurança</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

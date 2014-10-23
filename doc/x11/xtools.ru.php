@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Использование X11 - Xtools";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -38,8 +38,6 @@ include_once "header.ru.inc";
                 На данный момент Fink не может предложить решения этой проблемы. Будем надеяться, что
                 она будет решена в Xtools 1.1.</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="other.php?phpLang=ru">6. Другие возможности X11</a></p>
-<? include_once "../../footer.inc"; ?>
-
-
+<?php include_once "../../footer.inc"; ?>

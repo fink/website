@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Fink Developer Map";
-$cvs_author = '$Author: mrvacbob $';
-$cvs_date = '$Date: 2009/11/01 06:28:58 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:07:22 $';
 
 include "header.inc";
 ?>
@@ -37,7 +37,6 @@ Massachusetts, United States of America</td></tr>
 </p>
 
 <p>To fit on the map, you may have to be combined with near-by people. Your actual coordinates will still be recorded.</p>
-<?
+<?php
 include "../footer.inc";
 ?>
-

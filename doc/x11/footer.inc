@@ -1,4 +1,4 @@
-<?
-/* $Id: footer.inc,v 1.1 2001/07/15 20:15:34 chrisp Exp $ */
+<?php
+/* $Id: footer.inc,v 1.2 2014/10/23 22:05:40 thesin Exp $ */
 include $fsroot."footer.inc";
 ?>

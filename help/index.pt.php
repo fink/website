@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Ajuda";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/30 00:45:55 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:12:46 $';
 
 include "header.inc";
 ?>
@@ -114,6 +114,6 @@ política de empacotamento.</p>
 
 </td></tr></table>
 
-<?
+<?php
 include "footer.inc";
 ?>

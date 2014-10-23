@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "打包 - 介绍";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -50,8 +50,8 @@ fink 和 dpkg 都知道如何正确地给它们排序。
 </p>
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="format.php?phpLang=zh">2. 软件包描述文件</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

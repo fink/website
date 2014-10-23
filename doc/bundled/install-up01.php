@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Installation - Upgrade from 0.1";
 $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2008/06/27 00:55:33';
@@ -49,4 +49,4 @@ Reinstall the packages you need.
 
 
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

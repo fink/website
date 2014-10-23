@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Installation - First Time";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2014/10/19 03:25:17';
@@ -202,4 +202,4 @@ and Mac OS X document</a>.
 <p align="right">
 Next: <a href="install-up03.php">3 Upgrading Fink</a></p>
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

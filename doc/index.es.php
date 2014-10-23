@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Documentación";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:13';
@@ -56,6 +56,6 @@ Un grupo de documentos que son más completos, pero ligeramente desactualizados 
       <li><a href="netiquette/index.php">Nettiquete para la Lista de Correo</a> - Cómo emplear mejor las listas de correo del Fink.</li>
     </ul>
   
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

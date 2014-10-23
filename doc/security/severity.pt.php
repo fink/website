@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Política de segurança - Respostas";
 $cvs_author = 'Author: monipol';
 $cvs_date = 'Date: 2009/07/26 11:13:27';
@@ -55,8 +55,8 @@ include_once "header.pt.inc";
       respeitado, isto também resulta em uma atualização
       forçada daquele pacote.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="sources.php?phpLang=pt">3. Fontes de incidentes</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

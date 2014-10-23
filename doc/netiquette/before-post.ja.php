@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "ネチケット - 投稿前";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -20,8 +20,8 @@ include_once "header.ja.inc";
         <li>Google</li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="first-post.php?phpLang=ja">2. 最初の投稿</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

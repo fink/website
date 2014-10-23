@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "运行 X11 - 提示";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -78,6 +78,6 @@ X11 系统实际上有几个单独的剪贴板（X11 中称为 "剪切缓冲区�
 <p>任何情况下，如果你碰到从 Aqua 拷贝粘贴到 X11 或相反的问题，首先你可以尝试粘贴两次(有些时候拷贝操作不是立刻进行)，其次你可以使用中间终须，也就是说，在 Aqua 的一边使用TextEdit 或 Terminal.app，在 X11 一边则使用 nedit 或 xterm。在我的经验中，总是可以找到解决的办法。</p>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

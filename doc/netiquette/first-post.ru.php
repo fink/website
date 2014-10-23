@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Сетевой этикет - Первоначальное объявление";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -118,8 +118,8 @@ include_once "header.ru.inc";
                 <li>Спросить о соответствии образа действия.</li>
             </ul>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="reply.php?phpLang=ru">3. Ответы на объявления</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

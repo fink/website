@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Legal Stuff";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2011/10/27 14:29:56 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -123,6 +123,6 @@ AND ANY OTHER COMMUNICATION BETWEEN YOU AND <b>THE FINK PROJECT</b> RELATING TO 
 <p class="legal">This site is neither approved nor endorsed by Apple Computer, Inc.
 </p> 
 
-<?
+<?php
 include "footer.inc";
 ?>

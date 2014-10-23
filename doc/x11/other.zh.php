@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "运行 X11 - 其它东西";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -36,8 +36,8 @@ Jeff Whitaker 的 <a href="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/">Xvnc 页�
 如果你有更多的信息，请告诉我们。
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="trouble.php?phpLang=zh">7. XFree86 故障排除</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

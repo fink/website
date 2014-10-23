@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Política de segurança - Atualizações";
 $cvs_author = 'Author: monipol';
 $cvs_date = 'Date: 2009/07/26 11:13:27';
@@ -52,8 +52,8 @@ include_once "header.pt.inc";
       para observar cuidadosamente se o pacote atualizado funciona e a
       atualização de segurança não introduz novos problemas.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="notification.php?phpLang=pt">5. Enviando notificações</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

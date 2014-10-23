@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Package Database";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/11/27 22:21:24 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:04:57 $';
 
 header("Content-type: text/xml");
 if (!isset($cache_timeout)) $cache_timeout = 60 * 60;

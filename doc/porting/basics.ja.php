@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "移植 - 基本";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -100,8 +100,8 @@ Mac OS X 10.0 のホスト種別は <code>powerpc-apple-darwin1.3</code> です�
       <p>ポーティングに関する他の情報源としては，<a href="http://www.metapkg.org/wiki">MetaPkg Wiki</a> があります．</p>
       <p>Apple Technical Note <a href="http://developer.apple.com/technotes/tn2002/tn2071.html">TN2071</a>: "Porting Command Line Unix Tools to Mac OS X" も読むとよいでしょう．</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="shared.php?phpLang=ja">2. 共有コード</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

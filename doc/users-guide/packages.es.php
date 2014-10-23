@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guía del Usuario - Paquetes";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -265,8 +265,8 @@ Para mayor información sobre como instalar o ejecutar el X11 visita las página
 y el documento de  Mac OS X document</a>.
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="upgrade.php?phpLang=es">4. Actualizando Fink</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

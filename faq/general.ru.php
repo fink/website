@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Ч.З.В. - Общие вопросы";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -11,8 +11,8 @@ include_once "header.ru.inc";
         
         
         <a name="what">
-            <div class="question"><p><b><? echo FINK_Q ; ?>1.1: Что такое Fink?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b> Целью Fink является максимальный перенос ПО Unix в Mac OS X, из чего вытекают
+            <div class="question"><p><b><?php echo FINK_Q ; ?>1.1: Что такое Fink?</b></p></div>
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Целью Fink является максимальный перенос ПО Unix в Mac OS X, из чего вытекают
                     две основные задачи:</p><p>Задача номер один: перенос ПО в Mac OS X. Это значит, что
                     мы берем ПО Unix с открытым исходным кодом и вносим корректировки,
                     необходимые для его компилирования и работы в Mac OS X.
@@ -29,8 +29,8 @@ include_once "header.ru.inc";
                     создает пакетные файлы <code>.deb</code>.</p></div>
         </a>
         <a name="naming">
-            <div class="question"><p><b><? echo FINK_Q ; ?>1.2: Что означает название Fink?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  Ничего, это просто имя. Это даже не аббревиатура.</p><p> Вообще-то Fink - это немецкий вариант слова Finch (зяблик), названия
+            <div class="question"><p><b><?php echo FINK_Q ; ?>1.2: Что означает название Fink?</b></p></div>
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b>  Ничего, это просто имя. Это даже не аббревиатура.</p><p> Вообще-то Fink - это немецкий вариант слова Finch (зяблик), названия
                     породы птиц. Я искал название для проекта и название
                     Darwin OS навело на мысль о Чарльзе Дарвине, Галапагосских островах
                     и эволюции. Я со школьных времен помнил о так называемых
@@ -38,9 +38,9 @@ include_once "header.ru.inc";
                     и вот ...</p></div>
         </a>
         <a name="bsd-ports">
-            <div class="question"><p><b><? echo FINK_Q ; ?>1.3:  Чем Fink отличается от механизма переноса BSD (включая
+            <div class="question"><p><b><?php echo FINK_Q ; ?>1.3:  Чем Fink отличается от механизма переноса BSD (включая
                     OpenPackages и GNU-Darwin)? </b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  Некоторые главные преимущества:</p><ul>
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b>  Некоторые главные преимущества:</p><ul>
                     <li>
                         <p> Он написан с использованием Perl, а не make/оболочки. То есть он
                             не опирается на особые параметры, которые можно найти только в BSD make.
@@ -64,8 +64,8 @@ include_once "header.ru.inc";
                 </ul></div>
         </a>
         <a name="usr-local">
-            <div class="question"><p><b><? echo FINK_Q ; ?>1.4: Почему Fink ничего не инсталлирует в  /usr/local?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  Для этого есть несколько причин, но в основном "потому что
+            <div class="question"><p><b><?php echo FINK_Q ; ?>1.4: Почему Fink ничего не инсталлирует в  /usr/local?</b></p></div>
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b>  Для этого есть несколько причин, но в основном "потому что
                     произойдет сбой в работе".</p><p> Первая причина: ПО третьих лиц.  /usr/local является
                     хорошим местом для размещения ПО, которое не является частью
                     системы, поставленной первоначальным продавцом. Это
@@ -91,14 +91,14 @@ include_once "header.ru.inc";
                     делаете это на свой страх и риск.</p></div>
         </a>
         <a name="why-sw">
-            <div class="question"><p><b><? echo FINK_Q ; ?>1.5: Тогда почему вы выбрали /sw?</b></p></div>
-            <div class="answer"><p><b><? echo FINK_A ; ?>:</b>  Данный выбор совершенно произвольный, но возможно, мы на нем остановимся
+            <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Тогда почему вы выбрали /sw?</b></p></div>
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b>  Данный выбор совершенно произвольный, но возможно, мы на нем остановимся
                     в обозримом будущем по практическим соображениям (обновление),
                    а также потому, что это безопасно, т.к. предотвращается конфликт  с другими
                     системами пакетирования.</p></div>
         </a>
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="relations.php?phpLang=ru">2. Связь с другими проектами</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

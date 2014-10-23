@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "ユーザーガイド - インストール";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -194,8 +194,8 @@ Fink のパッケージはそれぞれ設定を追加することができます
 環境を整えたら、次の<a href="packages.php?phpLang=ja">パッケージのインストール</a>の章に進み、 Fink のパッケージ管理ツールを使ったパッケージのインストール方法をお読み下さい。
 </p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="packages.php?phpLang=ja">3. パッケージのインストール</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Porting - Preparing for 10.2";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -117,8 +117,8 @@ with gcc3 cannot link to libraries compiled with gcc2.</p>
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="preparing-10.3.php?phpLang=en">5. Preparing for 10.3</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

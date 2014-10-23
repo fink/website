@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "パッケージ作成 - ファイルシステム";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2014/09/09 03:41:02';
@@ -165,8 +165,8 @@ i386 アーチテクチャーでは <code>/sw/lib/x86_64</code> が用いられ�
 				<code>/sw/libexec</code>, <code>/sw/lib/locale</code>
 			</p>
 		
-	<p align="right"><? echo FINK_NEXT ; ?>:
+	<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="compilers.php?phpLang=ja">5. コンパイラ</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

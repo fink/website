@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2014/09/09 03:41:02';
@@ -1598,6 +1598,6 @@ fink プロジェクトの管理者が fink サイトから提供できるよう
 			</p>
 		
 	
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

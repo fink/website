@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Benutzerhandbuch - fink-Tool";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
@@ -452,6 +452,6 @@ Führt den Konfigurationsprozess nochmal aus. So können Sie Ihre Mirror-Server 
     
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

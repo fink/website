@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "KDE Support In Fink";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2005/06/03 19:43:08 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:29 $';
 
 include "header.inc";
 ?>
@@ -104,6 +104,6 @@ remove all of the kdenetwork3 packages, run:
  KDE port usually hang out there.
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

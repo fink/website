@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "ユーザーガイド - はじめに";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -123,8 +123,8 @@ Fink では、二つの選択肢があります。
 このマニュアルでは、両方の使用方法について説明します。
 </p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="install.php?phpLang=ja">2. 初めてのインストール</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "GCC3 Errors";
 $cvs_author = 'Author: dmrrsn';
 $cvs_date = 'Date: 2002/06/28 01:36:55';
@@ -134,6 +134,6 @@ libdivxdecore mad mysql ncurses oleo openjade pango1 pspell python sdl
 sdl-net singular-factory singular-libfac smpeg sppc swig tmake worker
 xpdf
 </pre>
-<?
+<?php
 include "../../footer.inc";
 ?>

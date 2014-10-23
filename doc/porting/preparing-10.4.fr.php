@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Portage - Préparation pour 10.4";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -20,6 +20,6 @@ include_once "header.fr.inc";
 <p>La fonction <code>poll()</code> dans Mac OS X 10.3 n'était qu'une émulation reposant sur <code>select()</code>. Sous Mac OS X 10.4, <code>poll()</code> est une vraie fonction implantée dans le noyau, mais elle est boguée lorsqu'elle est utilisée avec des sockets. Il vaut mieux l'ignorer complètement. On a appliqué sur le paquet glib2 de Fink une rustine qui permet d'utiliser une émulation complètement fonctionnelle. Vous ne courez donc aucun risque à utiliser l'implantation de fonctions similaires à poll de cette librairie.</p>
 
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

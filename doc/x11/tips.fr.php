@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Utilisation de X11 - Conseils";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -51,6 +51,6 @@ open -a /Applications/TextEdit.app index.html</pre>
 <p>Dans tous les cas de figure, si vous avez des difficultés à copier-coller du texte d'Aqua dans X11 ou vice-versa, vous pouvez tout d'abord réitérer l'action coller (il arrive qu'elle ne soit pas exécutée la première fois), ensuite vous pouvez utiliser des applications intermédiaires, par exemple TextEdit ou Terminal.app sous Aqua, nedit ou un xterm sous X11. Il y a toujours une solution à ce problème.</p>
 
 
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

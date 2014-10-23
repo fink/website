@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Руководство пользователя - Введение";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -105,8 +105,8 @@ fink on intel hardware is still considered to be of <b>beta</b> quality.</p>
                 компиляцию. При желании можно совместить обе модели.
                 Далее в Руководстве рассказывается, как это сделать.</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="install.php?phpLang=ru">2. Первоначальная инсталляция</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

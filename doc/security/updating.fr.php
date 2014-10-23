@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Charte de sécurité - Procédure";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2005/02/01 08:32:49';
@@ -25,8 +25,8 @@ include_once "header.fr.inc";
 
 <p>Les correctifs de sécurité pour un paquet donné sont d'abord appliqués à la branche instable. Après une période d'attente maximale de <b>12</b> heures, les fichiers info (et éventuellement patch) du paquet sont aussi mis dans la branche stable. La période de rétention doit être utilisée pour vérifier soigneusement que le paquet mis à jour fonctionne et que le correctif de sécurité n'introduit pas de nouveaux problèmes.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="notification.php?phpLang=fr">5. Envoi des notifications</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

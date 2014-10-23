@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guia do usuário - Atualização";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -106,8 +106,8 @@ include_once "header.pt.inc";
       escolha Source-&gt;Update-all (veja as seções anteriores para mais
       detalhes).</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=pt">5. O arquivo de configuração do Fink</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

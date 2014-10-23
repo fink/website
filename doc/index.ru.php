@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Документация";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -84,6 +84,6 @@ include_once "header.inc";
                 списков рассылки</a> - как наилучшим образом применять списки рассылки Fink</li>
         </ul>
     
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

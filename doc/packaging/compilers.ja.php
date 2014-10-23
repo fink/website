@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "パッケージ作成 - コンパイラ";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2014/09/09 03:41:02';
@@ -83,8 +83,8 @@ GCC フィールドがパッケージによって定義されている場合，
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="reference.php?phpLang=ja">6. リファレンスマニュアル</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2014/10/19 03:19:21';
@@ -1123,4 +1123,4 @@ collection at <a href="http://macosx.forked.net/">forked.net
 <p>Vous la trouverez sur la <a href="<?php print $root; ?>download.php">page de téléchargement</a>.</p>
 
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

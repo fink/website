@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - Files";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:15';
@@ -431,8 +431,8 @@ For other
         <li>See your efforts: <pre>open /</pre></li>
       </ol>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="procedure.php?phpLang=en">3. Procedure for Updating Documents</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

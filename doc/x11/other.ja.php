@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - その他";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -35,8 +35,8 @@ Jeff Whitaker 氏の <a href="http://www.cdc.noaa.gov/~jsw/macosx_xvnc/">Xvnc pa
 もし何らかの情報があれば、我々に下さい。
 </p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="trouble.php?phpLang=ja">7. XFree86 トラブルシューティング</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

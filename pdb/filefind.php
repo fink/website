@@ -1,6 +1,6 @@
-<?
+<?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/22 20:55:09 $';
+$cvs_date = '$Date: 2014/10/23 22:04:57 $';
 
 ini_set("memory_limit", "48M");
 
@@ -31,7 +31,7 @@ optionally and at your direction narrowed down by various search parameters, set
 information about all packages found in the respective latest stable and unstable binary distributions.
 </p>
 
-<?
+<?php
 // This function generates a form popup, with the given
 // variable name, current value, and list of possible values.
 function genFormSelect($var_name, $cur_val, $values, $description = '') {
@@ -102,15 +102,15 @@ if (!isset($invalid_param_text))
 	$invalid_param_text = "";
 ?>
 <form action="filefind.php" method="get" name="pdb_filefind" id="pdb_filefind" onreset="location.href='/pdb/filefind.php';">
-<?if ($invalid_param) print '<p class="attention">Invalid Input Parameters.  ' . $invalid_param_text . '</p>';?>
+<?php if ($invalid_param) print '<p class="attention">Invalid Input Parameters.  ' . $invalid_param_text . '</p>';?>
 <table><tr>
 <td>Search string:</td>
-<td><input id="search" name="search" type="text" value="<?= htmlentities($_GET['search']) ?>"> <?genFormSelect("match_type", $_GET['match_type'], $type_values);?></td>
+<td><input id="search" name="search" type="text" value="<?php echo htmlentities($_GET['search']) ?>"> <?php genFormSelect("match_type", $_GET['match_type'], $type_values);?></td>
 </tr>
-<tr><td>Distribution:</td><td><?genFormSelect("dist_name", $_GET['dist_name'], $dist_values);?></td></tr>
-<tr><td>Architecture:</td><td><?genFormSelect("architecture", $_GET['architecture'], $arch_values);?></td></tr>
-<tr><td>Tree:</td><td><?genFormSelect("tree", $_GET['tree'], $tree_values);?></td></tr>
-<!-- <tr><td>Sort order:</td>  <td><? // genFormSelect("sort", $_GET['sort'], $sort_values); ?></td></tr> -->
+<tr><td>Distribution:</td><td><?php genFormSelect("dist_name", $_GET['dist_name'], $dist_values);?></td></tr>
+<tr><td>Architecture:</td><td><?php genFormSelect("architecture", $_GET['architecture'], $arch_values);?></td></tr>
+<tr><td>Tree:</td><td><?php genFormSelect("tree", $_GET['tree'], $tree_values);?></td></tr>
+<!-- <tr><td>Sort order:</td>  <td><?php // genFormSelect("sort", $_GET['sort'], $sort_values); ?></td></tr> -->
 </table>
 <input name="submit" type="submit" value="Search">
 <input type="reset" value="Clear Form">
@@ -119,7 +119,7 @@ if (!isset($invalid_param_text))
 </form>
 
 
-<?
+<?php
 
 $time_query_start = microtime(true);
 $matches = array();
@@ -138,7 +138,7 @@ if (empty($_GET['search']) || $invalid_param || $count < 1) {
 ?>
 <br>
 No Matches found, please try again <a href="http://pdb.finkproject.org/pdb/filefind.php">Search</a><br/>
-<?
+<?php
 	}
 
 	include_once("footer.inc");
@@ -147,10 +147,10 @@ No Matches found, please try again <a href="http://pdb.finkproject.org/pdb/filef
 
 ?>
 <h1>
-Matched <?=$count?>
+Matched <?php echo $count?>
 </h1>
 <table class="pdb" cellspacing="2" border="0">
-<?
+<?php
 	print '<tr class="pdbHeading"><th width="50">Dist</th><th width="50">Tree</th><th width="50">Arch</th><th width="200">Package Name</th><th>Path/File</th></tr>';
 	foreach ($matches as $id => $package) {
 		$release = $dists_to_releases[$package['dist'].'-'.$package['arch']]['bindist'.(($package['tree'] == 'unstable' || $package['tree'] == 'current')?'-unstable':($package['tree'] == 'stable'?'':$package['tree']))];
@@ -163,9 +163,9 @@ Matched <?=$count?>
 	}
 ?>
 </table>
-<p>Query took <? printf("%.2f", $time_query_end - $time_query_start); ?> sec</p>
+<p>Query took <?php printf("%.2f", $time_query_end - $time_query_start); ?> sec</p>
 
-<?
+<?php
 include_once "footer.inc";
 
 function fink_file_search($get, $dists, $trees, $archs) {

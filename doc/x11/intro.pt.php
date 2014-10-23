@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Executando o X11 - Introdução";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -171,8 +171,8 @@ include_once "header.pt.inc";
       si. Infelizmente, ainda não se chegou ao mesmo ponto em relação aos <a href="/faq/usage-fink.php#kde">aplicativos
       KDE</a>.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="history.php?phpLang=pt">2. História</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

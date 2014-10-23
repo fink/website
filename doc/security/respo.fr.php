@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Charte de sécurité - Responsabilité";
 $cvs_author = 'Author: michga';
 $cvs_date = 'Date: 2005/02/01 08:32:49';
@@ -27,8 +27,8 @@ include_once "header.fr.inc";
 <p><b>L'équipe Fink Core</b> répond aux rapports de failles de sécurité envoyés. Chaque mainteneur doit accuser réception lui-même du problème soumis. Dans l'hypothèse où le mainteneur ne serait pas disponible ou qu'il n'ait pas accusé réception du rapport dans les 24 heures suivant l'envoi, une note doit être envoyée à <b>l'équipe Fink Core</b> pour l'informer que le mainteneur ne semble pas réagir.</p>
 <p>Si vous avez tenté de contacter le mainteneur du paquet et que vous ayez reçu un message d'erreur de distribution du système de courrier, vous devez immédiatement informer <b>l'équipe Fink Core</b> de ce que le mainteneur n'est pas joignable et que le paquet doit être mis à jour sans tenir compte du mainteneur.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="severity.php?phpLang=fr">2. Délais de réponse et actions immédiates.</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

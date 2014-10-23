@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guide utilisateur - Paquets";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -147,8 +147,8 @@ E: Sorry, broken packages</pre>
 </ul>
 <p>Pour de plus amples informations sur l'installation et l'utilisation de X11, voir le document <a href="/doc/x11/">X11 sur Darwin et Mac OS X</a>.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="upgrade.php?phpLang=fr">4. Mise à niveau de Fink</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

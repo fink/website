@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Security Policy - Responses";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2005/04/09 16:12:59';
@@ -35,8 +35,8 @@ include_once "header.zh.inc";
             
             <p><b>Fink 核心团队</b>中的一个成员有可能会选择更新软件包而不等待软件包的维护者先采取行动。这称为强制更新。对导致某些脆弱性问题的软件包未能在最长时间要求内完成更新也会导致一次强制更新。</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="sources.php?phpLang=zh">3. 安全漏洞信息来源</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

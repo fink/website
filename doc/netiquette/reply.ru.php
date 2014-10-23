@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Сетевой этикет - Ответы";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -42,8 +42,8 @@ include_once "header.ru.inc";
                 лишних получателей (перекрестные объявления, а также тех, кто высказался на
                 эту тему).</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="unsubscribe.php?phpLang=ru">4. Отказ от подписки на списки рассылки</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

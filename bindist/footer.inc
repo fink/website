@@ -1,4 +1,4 @@
-<?
+<?php
 /* .footer.inc */
 
 

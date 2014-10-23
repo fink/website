@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "ユーザーガイド - パッケージ";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -338,8 +338,8 @@ X11 のインストールと使用の詳細は、
 を参照して下さい。
 </p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="upgrade.php?phpLang=ja">4. Fink のアップグレード</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

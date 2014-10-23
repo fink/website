@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Listes de diffusion";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/25 05:48:40 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:15:12 $';
 
 include "header.inc";
 ?>
@@ -50,6 +50,6 @@ Liste de distribution pour les rapports de bogues et la soumission de paquets.</
 </ul>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "パッケージ作成 - ポリシー";
 $cvs_author = 'Author: babayoshihiko';
 $cvs_date = 'Date: 2014/09/09 03:41:02';
@@ -761,8 +761,8 @@ InstallScript: &lt;&lt;
 
 
 
-	<p align="right"><? echo FINK_NEXT ; ?>:
+	<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="fslayout.php?phpLang=ja">4. ファイルシステムのレイアウト</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Netiquette - Desuscripción";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2013/02/02 14:16:41';
@@ -22,6 +22,6 @@ include_once "header.es.inc";
       </ol>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

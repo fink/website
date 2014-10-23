@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "User's Guide - Upgrade";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -98,8 +98,8 @@ information files, and then Source-&gt;Update-all (see previous sections for
 details).
       </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=en">5. The Fink Configuration File</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

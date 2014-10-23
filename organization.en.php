@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Organization of Fink";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2009/07/27 18:31:21 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:09:50 $';
 
 include "header.inc";
 ?>
@@ -37,6 +37,6 @@ can be reached at &lt;fink-core@lists.sourceforge.net&gt;.
 
 <p>Description coming soon...</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

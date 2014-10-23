@@ -1,4 +1,4 @@
-<?
+<?php
 
 include_once "memcache.inc";
 include_once "functions.inc";
@@ -298,3 +298,4 @@ if ($tree != "testing") {
 
 $link_alternate =  "<link rel=\"alternate\" type=\"application/rss+xml\" title=\"RSS\" href=\"rss.php?format=RSS2.0&amp;" . get_query_params() . "\">\n";
 $link_alternate .= "<link rel=\"alternate\" type=\"application/atom+xml\" title=\"Atom\" href=\"rss.php?format=ATOM&amp;" . get_query_params() . "\">\n";
+?>

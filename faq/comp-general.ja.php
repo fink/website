@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -12,21 +12,21 @@ include_once "header.ja.inc";
 
 
 <a name="compiler">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.1: configure スクリプトが "acceptable cc" が見つからないといってきます。
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.1: configure スクリプトが "acceptable cc" が見つからないといってきます。
 これは何ですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> ドキュメンテーションを読んでください。
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> ドキュメンテーションを読んでください。
 パッケージをソースからコンパイルするには、 Developer Tools が必要です。
 これには、 C コンパイラ <code>cc</code> など必要なものが入っています。
 </p></div>
 </a>
 <a name="cvs">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.2: "fink selfupdate-cvs" をしようとしたら、このメッセージが出てきました: "cvs: Command not found."
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.2: "fink selfupdate-cvs" をしようとしたら、このメッセージが出てきました: "cvs: Command not found."
 </b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Developer Tools をインストールする必要があります。</p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Developer Tools をインストールする必要があります。</p></div>
 </a>
 <a name="missing-make">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.3: <code>make</code> に関連したエラーがでました。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> もしメッセージが以下のようであれば</p><pre>make: command not found</pre><p>あるいは</p><pre>Can't exec "make": No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Developer Tools をインストールする必要があります。</p><p>もしメッセージが以下のようであれば</p><pre>make: illegal option -- C</pre><p>
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.3: <code>make</code> に関連したエラーがでました。</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> もしメッセージが以下のようであれば</p><pre>make: command not found</pre><p>あるいは</p><pre>Can't exec "make": No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Developer Tools をインストールする必要があります。</p><p>もしメッセージが以下のようであれば</p><pre>make: illegal option -- C</pre><p>
 Developer Tools に入っていた GNU 版の <code>make</code> ユーティリティーを、 BSD 版の make に換えてしまったようです。
 パッケージの中には GNU 版の make でのみサポートされている特殊機能に依存しているものも多いので、 
 <code>/usr/bin/make</code> が <code>gnumake</code> のシンボリックリンクであることを確認してください。
@@ -35,8 +35,8 @@ Developer Tools に入っていた GNU 版の <code>make</code> ユーティリ�
 </p></div>
 </a>
 <a name="head">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.4: head コマンドから変な使用方法メッセージが出ています。何がおかしいのですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> もしこれでしたら:</p><pre>Unknown option: 1
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.4: head コマンドから変な使用方法メッセージが出ています。何がおかしいのですか?</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> もしこれでしたら:</p><pre>Unknown option: 1
 Usage: head [-options] &lt;url&gt;...</pre><p>(後にオプションの説明リストが続く)
 <code>head</code> が壊れています。
 これは Perl libwww ライブラリを HFS+ システムボリュームにインストールすると起こります。
@@ -46,17 +46,17 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 これは簡単に解決できます: rename <code>/sw/bin/HEAD</code> </p></div>
 </a>
 <a name="also_in">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.5: あるパッケージをインストールしようとすると、他のパッケージのファイルを上書きしようとしているというエラーメッセージが出ました。
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.5: あるパッケージをインストールしようとすると、他のパッケージのファイルを上書きしようとしているというエラーメッセージが出ました。
 </b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> これはスプリットオフパッケージ (-dev, -shlibs などがついてるもの) において、ファイルが移動する時 (<code>foo</code> から <code>foo-shlibs</code> など) に発生することがあります。
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> これはスプリットオフパッケージ (-dev, -shlibs などがついてるもの) において、ファイルが移動する時 (<code>foo</code> から <code>foo-shlibs</code> など) に発生することがあります。
 両者は実質同じものなので、インストールしようとしているパッケージから上書きしてしまっても良いでしょう:
 </p><pre>sudo dpkg -i --force-overwrite <b>filename</b>
 </pre><p>ここで <b>filename</b> はインストールしようとしているパッケージ用の .deb ファイルです。</p></div>
 </a>
 
 <a name="mv-failed">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.6: パッケージをインストールしようとした時の "execution of mv failed, exit code 1" とはどういう意味ですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> StuffIt Pro がインストールされている場合、 "Archive Via Real Name" モードが設定されていると思われます。
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.6: パッケージをインストールしようとした時の "execution of mv failed, exit code 1" とはどういう意味ですか?</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> StuffIt Pro がインストールされている場合、 "Archive Via Real Name" モードが設定されていると思われます。
 システム環境設定の StuffIt 設定で "ArchiveViaRealName" を無効化してください。
 これはいくつかの重要なシステムコールのバ再実装のバグで、この件のような不思議なエラーをたくさん出します。</p><p>この問題でない場合、 <code>mv</code> のエラーは通常、ビルドの前の方で発生した別のエラーを意味しています。
 エラーは発生したもののビルドは続行したものです。
@@ -69,8 +69,8 @@ No such file or directory
 Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code> ファイルをビルド出力の前の方で探します。</p></div>
 </a>
 <a name="node-exists">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.7: '"node" already exists' というエラーメッセージが出て、インストール | アップデートができません。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このようなエラーが出ます:</p><pre>Failed: Internal error: node for system-xfree86 already exists</pre><p>パッケージ info ファイルが変更されて依存性エンジンが混乱しているために出た問題です。
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.7: '"node" already exists' というエラーメッセージが出て、インストール | アップデートができません。</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> このようなエラーが出ます:</p><pre>Failed: Internal error: node for system-xfree86 already exists</pre><p>パッケージ info ファイルが変更されて依存性エンジンが混乱しているために出た問題です。
 修正するには:</p><ul>
 <li>
 <p>問題のあるパッケージを強制削除する。上の例の場合は:</p>
@@ -84,9 +84,9 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 </ul></div>
 </a>
 <a name="usr-local-libs">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.8: /usr/local にインストールされているライブラリやヘッダが 
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.8: /usr/local にインストールされているライブラリやヘッダが 
 	Fink のビルドの問題を起こすことがあると聞いたけど、本当ですか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> そういう場合もよくあります。
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> そういう場合もよくあります。
 これは、パッケージの configure スクリプトは Fink のパスより先に <code>/usr/local</code> 
 の中のライブラリとヘッダを検索するからです。
 もし問題が発生して、他の FAQ で解決ができそうになければ、 
@@ -96,36 +96,36 @@ Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code
 例えば:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>ビルド後、 <code>/usr/local</code> を元に戻しください:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
 </a>
 <a name="toc-out-of-date">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.9: パッケージをビルドしようとしたら、 "table of contents" が古いというメッセージが出ました。何をしたらいいですか?
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.9: パッケージをビルドしようとしたら、 "table of contents" が古いというメッセージが出ました。何をしたらいいですか?
 </b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> このメッセージは重要なヒントです。
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> このメッセージは重要なヒントです。
 メッセージはこのようなものだと思われます:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; 
 rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしているライブラリに (root で) ranlib を実行する必要があります。
 例えば、この例では:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
 </a>
 <a name="fc-atlas">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.10: atlas をインストールしようとすると、 Fink Commander がハングアップします。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> <code>atlas</code> のビルド中にユーザーにプロンプトを送るステップがあり Fink Commander がこれを表示しないからです。
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.10: atlas をインストールしようとすると、 Fink Commander がハングアップします。</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> <code>atlas</code> のビルド中にユーザーにプロンプトを送るステップがあり Fink Commander がこれを表示しないからです。
 代わりに <code>fink install atlas</code> とする必要があります。</p></div>
 </a>
 <a name="basic-headers">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.11: <code>stddef.h</code> | <code>wchar.h</code> | <code>stdlib.h</code> | <code>crt1.o</code> が見つからない、
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.11: <code>stddef.h</code> | <code>wchar.h</code> | <code>stdlib.h</code> | <code>crt1.o</code> が見つからない、
 あるいは、"C compiler cannot create executables" というメッセージが出ます。
 これはどこにありますか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> これらの問題は、いずれも Developer Tools の DevSDK によって提供されるヘッダファイルがないためです。
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> これらの問題は、いずれも Developer Tools の DevSDK によって提供されるヘッダファイルがないためです。
 <code>/Library/Receipts/DevSDK.pkg</code> がシステムにあるか確認し、なければ  Dev Tools インストーラを起動してカスタムインストールを選択、 DevSDK パッケージをインストールして下さい。</p><p>"cannot create executables" エラーは、Developer Tools のバージョンが 以前のバージョンの OS 用である場合にも発生します。</p></div>
 </a>
 <a name="multiple-dependencies">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.12: Fink が "unable to resolve version conflict on multiple dependencies" と言って、アップデートできません。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> この問題を解決するには、パッケージを一つだけアップデートしてみてください。
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.12: Fink が "unable to resolve version conflict on multiple dependencies" と言って、アップデートできません。</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> この問題を解決するには、パッケージを一つだけアップデートしてみてください。
 次に、再度 "fink update-all" を試してみてください。
 まだ問題が出るようなら、これを繰り返してください。
 </p></div>
 </a>
 <a name="dpkg-parse-error">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.13: "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.13: "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
 というメッセージが出て、何もインストールできません!</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 	  これは、クラッシュや回復不可能なエラーなど、何らかの理由で dpkg データベースが壊れたことを意味します。
 	  多くの場合、buildlock 中に発生するので、例えば:
 	</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>
@@ -144,8 +144,8 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 	</p></div>
 </a>
 <a name="freetype-problems"> 
-<div class="question"><p><b><? echo FINK_Q ; ?>6.14: freetype に関係したエラーが出ます。</b></p></div> 
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> freetype に関係したエラーにはいくつかありますが、以下のものであれば:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>外来の <code>freetype-config</code> があるかどうか、以下のコマンドを実行して確認します。</p><pre>where freetype-config</pre><p>(<code>tcsh</code> の場合)</p><pre>type -a freetype-config</pre><p>(<code>bash</code> の場合)。 Mono フレームワークは、 <code>/usr/bin/freetype-config</code> をインストールし、フレームワーク内へのシンボリックリンクを作ることが知られています。</p><p>もしこのようなものであれば:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.14: freetype に関係したエラーが出ます。</b></p></div> 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> freetype に関係したエラーにはいくつかありますが、以下のものであれば:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>外来の <code>freetype-config</code> があるかどうか、以下のコマンドを実行して確認します。</p><pre>where freetype-config</pre><p>(<code>tcsh</code> の場合)</p><pre>type -a freetype-config</pre><p>(<code>bash</code> の場合)。 Mono フレームワークは、 <code>/usr/bin/freetype-config</code> をインストールし、フレームワーク内へのシンボリックリンクを作ることが知られています。</p><p>もしこのようなものであれば:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token 
 /sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
@@ -181,8 +181,8 @@ _FT_Access_Frame </pre><p>おそらく X11 インストールの残りファイ�
 X11 SDK を再インストールしてみて下さい。</p></div> 
 </a> 
 <a name="dlfcn-from-oo"> 
-<div class="question"><p><b><? echo FINK_Q ; ?>6.15: `Dl_info' のエラーが出ます。</b></p></div> 
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> エラーが下記のようであれば:</p><pre>unix_dl.c: In function `rep_open_dl_library': 
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.15: `Dl_info' のエラーが出ます。</b></p></div> 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> エラーが下記のようであれば:</p><pre>unix_dl.c: In function `rep_open_dl_library': 
 unix_dl.c:328: warning: assignment discards qualifiers from pointer target type 
 unix_dl.c: In function `rep_find_c_symbol': 
 unix_dl.c:466: error: `Dl_info' undeclared (first use in this function) 
@@ -198,16 +198,16 @@ sudo ln -s /usr/lib/libdl.dylib /usr/local/lib/libdl.dylib</pre></div>
 </a>
 <a name="gcc2"> 
     
-<div class="question"><p><b><? echo FINK_Q ; ?>6.16: Fink が <code>gcc2</code> がないと言っていますが、インストールも出来ないようです。</b></p></div> 
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.16: Fink が <code>gcc2</code> がないと言っていますが、インストールも出来ないようです。</b></p></div> 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 <code>gcc2</code> は gcc-2.95 のバーチャルパッケージです。
 gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.95 が含まれていました) からインストールして下さい。</p><p><b>注記:</b> gcc2.95 and/or gcc3.1 は gcc3.3 とコンフリクトしません。両方インストールすることもできます。</p></div>
 </a>
 <a name="system-java">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.17: Fink が <code>Failed: Can't resolve dependency "system-java14-dev"</code>
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.17: Fink が <code>Failed: Can't resolve dependency "system-java14-dev"</code>
 と言っていますが、そのようなパッケージはありません。
 </b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 バーチャルパッケージだからです。
 このエラーは、 Java が Software Update によって更新された場合に発生します。
 更新時にヘッダファイルが削除され、 -dev パッケージが作成されなくなるためです。
@@ -217,23 +217,23 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </p></div>
 </a>
 <a name="dpkg-split">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.18: 
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.18: 
 何をインストールしようとしても、
 <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q>
 というエラーが出ます。
 どうしたらいいですか?
 </b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 通常、環境変数を正しく設定することで直ります。
 参照: <a href="usage-fink.php?phpLang=ja#fink-not-found">この FAQ 項目</a>
 </p></div>
 </a>
 <a name="xml-parser">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.19: 
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.19: 
 	次のメッセージが出ます:<q>configure: error: XML::Parser perl module is required for intltool</q>。
 	どうしたら良いでしょうか?
 	</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 	自分のシステムにある Perl に合った、正しいバージョンの xml-parser-pm が必要です。
 	例えば、 Panther では <code>xml-parser-pm581</code> が正しく、 <code>xml-parser-pm560</code> 
 	ではありません
@@ -244,11 +244,11 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 	</p></div>
 </a>
 <a name="master-problems">
-<div class="question"><p><b><? echo FINK_Q ; ?>6.20: 
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.20: 
 		パッケージをダウンロードしようとすると、 Fink が変なサイトに行こうとするけれど、 <q>distfiles</q>
 		と書いてあるだけで、しかもそのファイルはそこに存在しません。
 	</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 		これは、 Fink が <q>マスター</q> と呼ばれるものを使おうとしたために発生しています。
 		上流サイトが移動しても Fink パッケージのソースが入手できるための仕組みです。
 		この問題は、新しい上流バージョンのパッケージがリリースされたが、
@@ -256,8 +256,8 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 	</p><p>これを直すには、 <code>fink configure</code> を実行し、マスターミラーを最後に検索するように設定を変更します。</p></div>
 </a>
 <a name="compile-options">
-	<div class="question"><p><b><? echo FINK_Q ; ?>6.21: パッケージをビルドするときに、 Fink に違うオプションを使わせたい。</b></p></div>
-	<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+	<div class="question"><p><b><?php echo FINK_Q ; ?>6.21: パッケージをビルドするときに、 Fink に違うオプションを使わせたい。</b></p></div>
+	<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 			まず最初に、バリエーションを作成するようにパッケージメンテナに伝えてみてください。
 			これが比較的簡単な方法です。
 			メンテナから反応がなかったり、新しいバージョンが出てしまったり、自分で違うオプションを試してみたい場合、
@@ -267,10 +267,10 @@ gcc2.95 を XCode Tools (古い OS バージョンは Developer Tools に gcc-2.
 </a>
 
     <a name="alternates">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.22: 
+      <div class="question"><p><b><?php echo FINK_Q ; ?>6.22: 
 	  ソースからビルドしようとすると必ず、同じライブラリの二つのバージョンをいったりきたりします。
 	</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 	 非常に複雑なビルドツリーでは、いくつかのパッケージがライブラリの特定バージョンに依存しており、
 	 他のパッケージが他のバージョンに依存していることがあります (例 <code>db47</code> vs. <code>db44</code>)。
 	 結果、Fink は更新しようとしているパッケージの依存性を満たすためにインストールされていない方をインストールしようとします。
@@ -291,8 +291,8 @@ sudo apt-get install foo=1.23-4
     </a>
 
     <a name="python-mods">
-      <div class="question"><p><b><? echo FINK_Q ; ?>6.23: Python モジュールをビルドする際に、<code>MACOSX_DEPLOYMENT_TARGET </code> の問題が出ます。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 以下のようであれば:</p><pre>running build
+      <div class="question"><p><b><?php echo FINK_Q ; ?>6.23: Python モジュールをビルドする際に、<code>MACOSX_DEPLOYMENT_TARGET </code> の問題が出ます。</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 以下のようであれば:</p><pre>running build
 running build_ext
 Traceback (most recent call last):
   File "setup_socket_ssl.py", line 21, in ?
@@ -314,10 +314,10 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
         </p></div>
     </a>
 <a name="libtool-unrecognized-dynamic">
-  <div class="question"><p><b><? echo FINK_Q ; ?>6.24: 
+  <div class="question"><p><b><?php echo FINK_Q ; ?>6.24: 
       <q>unrecognized option `-dynamic'</q> というエラーが <code>libtool</code> から出たとです。
     </b></p></div>
-  <div class="answer"><p><b><? echo FINK_A ; ?>:</b> このエラー:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>
+  <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> このエラー:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>
       は、Apple の <code>/usr/bin/libtool</code> を GNU の <code>libtool</code> に変えてしまったことを意味します。
       残念ながら、この二つの <code>libtools</code> は、同じことを<b>してくれません</b>。
     </p><p>
@@ -327,8 +327,8 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
       (10.4以降ならゴミ箱へ、10.3なら<code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code>してください)
     </p></div>
 </a>
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=ja">7. コンパイルの問題 - 特定のバージョン</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

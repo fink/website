@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Руководство пользователя - Пакеты";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -308,8 +308,8 @@ dependency placeholders.
                     документ <a href="/doc/x11/">X11 в
                     Darwin и Mac OS X</a>.</p>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="upgrade.php?phpLang=ru">4. Обновление Fink</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

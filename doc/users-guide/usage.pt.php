@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guia do usuário - A ferramenta fink";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -606,6 +606,6 @@ fink apropos -s=kde irc   - o mesmo que acima, mas restrito a pacotes que
       de execução (instalação), dos pacotes listados.</p>
     
   
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

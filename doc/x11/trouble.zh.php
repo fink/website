@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "运行 X11 - 故障排除";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -270,8 +270,8 @@ DYLD_INSERT_LIBRARIES 环境变量）。
         </li>
       </ul>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="tips.php?phpLang=zh">8. 使用提示</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

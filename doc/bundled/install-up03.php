@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Installation - Upgrading";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2014/10/19 03:25:17';
@@ -47,4 +47,4 @@ individual packages with the 'update' command.
 <p align="right">
 Next: <a href="install-up02.php">4 Clean Upgrade</a></p>
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Packaging - Policy";
 $cvs_author = 'Author: nieder';
 $cvs_date = 'Date: 2014/02/14 18:22:26';
@@ -805,8 +805,8 @@ may change some day in the future.)    And second, unlike the Debian policy,
     Team</a>.</p> 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="fslayout.php?phpLang=en">4. Filesystem Layout</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

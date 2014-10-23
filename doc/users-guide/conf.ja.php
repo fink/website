@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "ユーザーガイド - fink.conf";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -433,8 +433,8 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 			<code>/sw/etc/apt/sources.list.finkbak</code> として保存されます。
 		</p>
 	
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=ja">6. コマンドライン fink ツールの使用方法</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

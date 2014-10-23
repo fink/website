@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Documentation";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:13';
@@ -71,6 +71,6 @@ effort</li>
       <li><a href="netiquette/index.php">Mailing List Netiquette</a> - how best to employ the Fink mailing lists.</li>
     </ul>
   
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

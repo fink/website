@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "メーリングリスト";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/27 05:03:15 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:15:12 $';
 
 include "header.inc";
 ?>
@@ -55,6 +55,6 @@ Fink GNOME パッケージのための議論リスト</p></li>
 </ul>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

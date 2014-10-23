@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "打包 - 规则";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -637,8 +637,8 @@ http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a> 找到）。
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="fslayout.php?phpLang=zh">4. 文件系统布局</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

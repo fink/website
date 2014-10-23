@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Running X11 - 歴史";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -66,8 +66,8 @@ XFree86 4.1.0 がフルスクリーンモードで登場した後、ルートレ
 開発は引き続き ルートレスモードに XFree86 を統合するよう働きかけ、 2002 年 1 月 の XFree86 4.2.0 には Darwin/Mac OS X は完全に XFree86 ディスリビューションに統合された。
 </p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="inst-xfree86.php?phpLang=ja">3. X11 の入手とインストール</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

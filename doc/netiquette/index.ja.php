@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "ネチケット";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -14,9 +14,9 @@ include_once "header.ja.inc";
     <p>このページを読むようにいわれても冷静に．
 	たいていの場合，問題を特定するために必要な情報が不足しているためで，どのような情報が必要かはここに書かれているからです．
 	</p>
-  <h2><? echo FINK_CONTENTS ; ?></h2><ul>
+  <h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="before-post.php?phpLang=ja"><b>1 投稿の前に</b></a><ul><li><a href="before-post.php?phpLang=ja#research">1.1 自分の問題を調査します．</a></li></ul></li><li><a href="first-post.php?phpLang=ja"><b>2 最初の投稿</b></a><ul><li><a href="first-post.php?phpLang=ja#system">2.1 何がインストールされているか?</a></li><li><a href="first-post.php?phpLang=ja#problem-description">2.2 何がおかしいのか?</a></li><li><a href="first-post.php?phpLang=ja#remedies">2.3 何を試したか?</a></li><li><a href="first-post.php?phpLang=ja#future-plans">2.4 次に何をするか?</a></li></ul></li><li><a href="reply.php?phpLang=ja"><b>3 投稿への返信</b></a><ul><li><a href="reply.php?phpLang=ja#reply-to-list">3.1 リストに返信すること</a></li></ul></li><li><a href="unsubscribe.php?phpLang=ja"><b>4 定期購読の解除</b></a><ul><li><a href="unsubscribe.php?phpLang=ja#unsubscribing">4.1 定期購読の解除はどうしたらいいですか?</a></li></ul></li></ul>
 <!--Generated from $Fink: netiquette.ja.xml,v 1.3 2012/11/11 15:20:16 gecko2 Exp $-->
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

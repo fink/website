@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: alexkhansen';
 $cvs_date = 'Date: 2014/10/19 03:25:17';
@@ -300,4 +300,4 @@ documentation when your problem actually is well-documented.
 <p align="right">
 Next: <a href="install-first.php">2 First Time Installation</a></p>
 
-<? include_once "footer.inc"; ?>
+<?php include_once "footer.inc"; ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Porting - Shared Code";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -87,8 +87,8 @@ systems require it; this is harmless, since a program would use the full filenam
 
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="libtool.php?phpLang=en">3. GNU libtool</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

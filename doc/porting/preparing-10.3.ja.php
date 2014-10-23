@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "移植 - 10.3 に向けて";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -87,8 +87,8 @@ include_once "header.ja.inc";
   </p>
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="preparing-10.4.php?phpLang=ja">6. 10.4 に向けて</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

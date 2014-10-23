@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "移植 - libtool";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -194,8 +194,8 @@ diff -Naur gnome-core-1.4.0.6.old/configure gnome-core-1.4.0.6.new/configure
 </p>
 
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="preparing-10.2.php?phpLang=zh">4. 为 10.2 做准备</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

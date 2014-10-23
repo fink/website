@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "运行 X11 - 安装 X11";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -221,8 +221,8 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
             <p>or <code>xfree86-base-threaded</code> and <code>xfree86-rootless-threaded</code> (and <code>-shlibs</code>)</p>
           </td></tr></table>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="run-xfree86.php?phpLang=zh">4. 启动 X11</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

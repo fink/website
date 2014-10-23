@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "运行 X11 - Xtools";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -41,8 +41,6 @@ Fink 暂时还没有解决的办法。
 希望这会在 Xtools 1.1 发布的时候修正。
 </p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="other.php?phpLang=zh">6. 其它 X11 可能</a></p>
-<? include_once "../../footer.inc"; ?>
-
-
+<?php include_once "../../footer.inc"; ?>

@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Использование X11 - Запуск XFree86";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -129,8 +129,8 @@ include_once "header.ru.inc";
                 X11 Apple:</p>
             <pre>. /sw/bin/init.sh /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
         
-    <p align="right"><? echo FINK_NEXT ; ?>:
+    <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=ru">5. Xtools</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

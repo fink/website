@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "网络礼仪 - 回应";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -29,8 +29,8 @@ include_once "header.zh.inc";
       </ul>
       <p>不过，如果你这样做，你应该删除其它额外的收件人(比如说由于同时发布到多个列表，或者其它已经回复这个主题的其它人)。</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="unsubscribe.php?phpLang=zh">4. 如何取消订阅？</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

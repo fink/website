@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 19:44:43 $';
+$cvs_date = '$Date: 2014/10/23 22:04:57 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -95,20 +95,20 @@ include_once "header.inc";
 if ($result == "DBerror") {
 ?>
 <p><b>Warning: DBerror, try again later!</b></p>
-<?
+<?php
 unset($result);
 } elseif ($result == null || count($result) == 0) { # No package found
 ?>
-<p><b>Package '<?=$package?>' not found in Fink!</b></p>
-<?
+<p><b>Package '<?php echo $package?>' not found in Fink!</b></p>
+<?php
 } else {
 
 	$pobj = array_shift($result);
 	$fullversion = get_full_version($pobj);
 
 ?>
-<h1>Package <? print $pobj['name'] . '-' . $fullversion ?></h1>
-<?
+<h1>Package <?php print $pobj['name'] . '-' . $fullversion ?></h1>
+<?php
 
 // Functions Used in PDB
         
@@ -377,21 +377,21 @@ unset($result);
 
 
 
-<?
+<?php
 } /* if (no package found) */
 ?>
 
-<p><a href="<?= $pdbroot ?>sections.php">Section list</a> -
-<a href="<?= $pdbroot ?>browse.php">Flat package list</a> -
-<a href="<?= $pdbroot ?>browse.php?nolist=on">Search packages</a>
+<p><a href="<?php echo $pdbroot ?>sections.php">Section list</a> -
+<a href="<?php echo $pdbroot ?>browse.php">Flat package list</a> -
+<a href="<?php echo $pdbroot ?>browse.php?nolist=on">Search packages</a>
 </p>
 
 
-<?
+<?php
 if (isset($has_unsupported_dists)) {
 ?>
 <p>(*) = Unsupported distribution.</p>
-<?
+<?php
 }
 include_once "footer.inc";
 ?>

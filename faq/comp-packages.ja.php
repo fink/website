@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "F.A.Q. - コンパイル (2)";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:14';
@@ -11,16 +11,16 @@ include_once "header.ja.inc";
 
 
 <a name="libgtop">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.1: <code>sed</code> を使うパッケージビルドが失敗します。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> これはログインスクリプト (例 <code>~/.cshrc</code>) が "<code>echo Hello</code>" であるとか <code>xttitle</code> といったことをターミナルに書くと発生します。
+<div class="question"><p><b><?php echo FINK_Q ; ?>7.1: <code>sed</code> を使うパッケージビルドが失敗します。</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> これはログインスクリプト (例 <code>~/.cshrc</code>) が "<code>echo Hello</code>" であるとか <code>xttitle</code> といったことをターミナルに書くと発生します。
 いちばん簡単な解決方法は、問題の行をコメントアウトすることです。
 </p><p>もし echo を残しておきたいなら、次のようにすることもできます:</p><pre>if ( $?prompt) then
 echo Hello
 endif</pre></div>
 </a>
 <a name="cant-install-xfree">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.2: Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> どのような X11 でも、残念なことに、 /usr/X11R6 にインストールしなければなりません。
+<div class="question"><p><b><?php echo FINK_Q ; ?>7.2: Fink の XFree86 パッケージに切替えたいけれど、 <code>system-xfree86</code>  とコンフリクトしているため <code>xfree86-base</code> | <code>xfree86</code> がインストールできません。</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> どのような X11 でも、残念なことに、 /usr/X11R6 にインストールしなければなりません。
 Fink の <code>xfree86-base</code> と <code>xfree86-rootless</code> もここにインストールします。
 しかし、 Fink はデータベースに無いファイルは削除しないため、 Fink 以外の X11 を自動的に置き換えることはありません。
 </p><p>という訳で、:</p><p><b>注記: 10.2.x と 最新版の Fink (&gt;= 0.16.2) のユーザーと 10.3.x ユーザーはステップ 1 を飛ばしてください (実行しても何も起きませんが)。</b></p><p>1. <code>system-xfree86</code> を削除します。
@@ -38,8 +38,8 @@ X11 に依存するパッケージがない場合、これは単純です。
 </p></div>
 </a>
 <a name="change-thread-nothread">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.3: non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> Fink 版の xfree86 を使っていて、 threaded と non-threaded を切替えたいのなら、 手動で古いバージョンを削除する必要があります。
+<div class="question"><p><b><?php echo FINK_Q ; ?>7.3: non-threaded 版の Fink XFree86 パッケージから threaded 版 (またはその逆) にはどうしたら切替えることができますか?</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fink 版の xfree86 を使っていて、 threaded と non-threaded を切替えたいのなら、 手動で古いバージョンを削除する必要があります。
 これは、コマンドラインで:</p><pre>sudo dpkg -r --force-depends xfree86-base
 sudo dpkg -r --force-depends xfree86-shlibs
 sudo dpkg -r --force-depends xfree86-rootless
@@ -55,14 +55,14 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 </p><p>普通は、ソースインストールは: "<code>fink install</code>" で、バイナリインストールは: "<code>apt-get install</code>" または <code>dselect</code> です。</p></div>
 </a>
 <a name="libiconv-gettext">
-<div class="question"><p><b><? echo FINK_Q ; ?>7.4: <code>libiconv</code> が更新できません。</b></p></div>
-<div class="answer"><p><b><? echo FINK_A ; ?>:</b> 下記の形式のエラーでしたら:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>以下のように実行して直すことが出来ます</p><pre>fink remove gettext-dev
+<div class="question"><p><b><?php echo FINK_Q ; ?>7.4: <code>libiconv</code> が更新できません。</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 下記の形式のエラーでしたら:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>以下のように実行して直すことが出来ます</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
 </a>
     <a name="cplusplus-filt">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.5: パッケージがインストールできません。<code>c++filt</code> がないからです。 
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.5: パッケージがインストールできません。<code>c++filt</code> がないからです。 
         これはどこにありますか?</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> もし、Tiger にアップデート後にエラーが</p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>とでたら、以下のようにします:</p><ul>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> もし、Tiger にアップデート後にエラーが</p><pre>xgcc: installation problem, cannot exec `c++filt': No such file or directory</pre><p>とでたら、以下のようにします:</p><ul>
           <li>(Tiger のインストーラから)  <code>BSD.pkg</code> をインストールします。
          	<code>/usr/bin/c++filt</code> が現れるまで何度もインストールしてみてください。</li>
         </ul><ul>
@@ -79,16 +79,16 @@ fink install libiconv</pre></div>
         </ul></div>
     </a>
     <a name="gettext-tools">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.6: Fink が、 <code>gettext</code> の依存性に矛盾があるとだけ表示し、更新してくれません。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.6: Fink が、 <code>gettext</code> の依存性に矛盾があるとだけ表示し、更新してくれません。</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
           <code>fink selfupdate</code> を実行して最新にした後、
           <code>fink update gettext-tools</code> としてみてください。
           古いバージョンの <code>gettext-tools</code> が <code>gettext</code> の更新を妨害していた可能性があります。
         </p></div>
     </a>
   <a name="Leopard-libXrandr">
-    <div class="question"><p><b><? echo FINK_Q ; ?>7.7: OS 10.5 で <b>gtk+2</b> がインストールできません。</b></p></div>
-    <div class="answer"><p><b><? echo FINK_A ; ?>:</b> 
+    <div class="question"><p><b><?php echo FINK_Q ; ?>7.7: OS 10.5 で <b>gtk+2</b> がインストールできません。</b></p></div>
+    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
         これは、典型的には、ライブラリがないということです。例えば:
 	<code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> や 
 	<code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> 
@@ -98,13 +98,13 @@ fink install libiconv</pre></div>
       </p></div>
   </a>
     <a name="all-others">
-      <div class="question"><p><b><? echo FINK_Q ; ?>7.8: ここに載っていないパッケージで問題があります。</b></p></div>
-      <div class="answer"><p><b><? echo FINK_A ; ?>:</b> パッケージの問題は変わりやすいので、Fink wiki に情報を載せることにいたしました。
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.8: ここに載っていないパッケージで問題があります。</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> パッケージの問題は変わりやすいので、Fink wiki に情報を載せることにいたしました。
         <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues">Package issues page</a> をご確認ください。
         (訳注: wiki の性質上、wiki は英語版のみであり、翻訳の予定はありません。なお、一部日本語での情報もあります)</p></div>
     </a>
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage-general.php?phpLang=ja">8. パッケージ使用上の問題 - 一般</a></p>
-<? include_once "../footer.inc"; ?>
+<?php include_once "../footer.inc"; ?>
 
 

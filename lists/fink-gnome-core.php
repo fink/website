@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Mailing Lists - fink-gnome-core";
-$cvs_author = '$Author: dmacks $';
-$cvs_date = '$Date: 2006/06/08 20:43:08 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:15:12 $';
 
 include "header.inc";
 ?>
@@ -64,6 +64,6 @@ To change your subscription (set options like digest and delivery modes, get a r
 <p>Powered by <a href="http://www.list.org/">Mailman</a>.</p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

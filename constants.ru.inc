@@ -1,5 +1,5 @@
-<?
-/* $Id: constants.ru.inc,v 1.8 2014/07/18 12:09:27 nieder Exp $ */
+<?php
+/* $Id: constants.ru.inc,v 1.9 2014/10/23 22:09:49 thesin Exp $ */
 // +--------------------------------------------------------------------------+
 // | Constants                                                                |
 // +--------------------------------------------------------------------------+
@@ -57,4 +57,3 @@ define ("FOOTER_GENERATED_DYNAMICALLY", 'Воспроизведено динам
 define ("FOOTER_DATABASE_LAST_UPDATED", 'Последнее обновление: %a, %d %B %Y ‚ %R %Z');
 define ("FOOTER_LAST_CHANGED", 'Последнее изменение: {author} ‚ {date} , {time}');
 ?>
-

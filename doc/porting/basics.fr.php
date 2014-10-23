@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Portage - Notions de base";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:16';
@@ -39,8 +39,8 @@ include_once "header.fr.inc";
 <p>Une autre source d'information pour le portage est le Wiki <a href="http://www.metapkg.org/wiki"> MetaPkg Wiki</a>.</p>
 <p>Vous pouvez aussi lire la note technique d'Apple <a href="http://developer.apple.com/technotes/tn2002/tn2071.html">TN2071</a> : "Porting Command Line Unix Tools to Mac OS X" sur le portage d'outils Unix en ligne de commande sous Mac OS X.</p>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="shared.php?phpLang=fr">2. Code partagé</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

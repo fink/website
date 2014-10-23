@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "i18n - Ressources";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:15';
@@ -46,8 +46,8 @@ XML-Editor</a> - éditeur de texte XML gratuit, très bien adapté pour la modif
 - interface graphique pour CVS (recommandée uniquement aux chefs d'équipe)</li>
 </ul>
 
-<p align="right"><? echo FINK_NEXT ; ?>:
+<p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="appendix.php?phpLang=fr">5. Annexe</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

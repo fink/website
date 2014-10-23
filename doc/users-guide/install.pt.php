@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Guia do usuário - Instalação";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:17';
@@ -262,8 +262,8 @@ pico ~/Library/init/tcsh/path</pre>
       verificar como efetivamente instalar pacotes úteis usando as várias
       ferramentas de gerenciamento de pacotes que são parte do Fink.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="packages.php?phpLang=pt">3. Instalando pacotes</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

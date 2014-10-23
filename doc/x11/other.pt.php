@@ -1,4 +1,4 @@
-<?
+<?php
 $title = "Executando o X11 - Outros";
 $cvs_author = 'Author: gecko2';
 $cvs_date = 'Date: 2012/11/11 15:20:18';
@@ -37,8 +37,8 @@ include_once "header.pt.inc";
       locais. Por causa disto, não há suporte especial ao eXodus no Fink. Se
       você tiver mais informações, envie-nos.</p>
     
-  <p align="right"><? echo FINK_NEXT ; ?>:
+  <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="trouble.php?phpLang=pt">7. Resolução de problemas com o XFree86</a></p>
-<? include_once "../../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

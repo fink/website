@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Package Database - Obsolete page";
-$cvs_author = '$Author: rangerrick $';
-$cvs_date = '$Date: 2007/12/06 22:03:22 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:04:57 $';
 
 $server = $_SERVER['SERVER_NAME'];
 $location = "http://$server/pdb/browse.php";
