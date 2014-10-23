@@ -1,6 +1,6 @@
 <?
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/22 19:16:34 $';
+$cvs_date = '$Date: 2014/10/23 20:23:20 $';
 
 ini_set("memory_limit", "48M");
 
@@ -87,7 +87,7 @@ $tree_values = array(
 
 $sort_values = array(
 	"asc" => "Ascending",
-	"asc" => "Descending"
+	"desc" => "Descending"
 );
 
 $section_values = array( "" => "Any" );
