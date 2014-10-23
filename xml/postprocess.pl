@@ -25,14 +25,14 @@ $text =~ s|</title>|";\n\$cvs_author = '$tag_author';\n\$cvs_date = '$tag_date';
 $text =~ s|</head>.*<body>(\n)*<!--\?|\';\n\n|s;
 $text =~ s|\?-->(\n)*</body>.*</html>|\?>\n\n|s;
 
-$text =~ s|<!--\?|<?|g;
+$text =~ s|<!--\?|<?php|g;
 $text =~ s|\?-->|?>|g;
 
-$text =~ s|{FINK_([^}]*)}|<? echo FINK_$1 ; ?>|g;
+$text =~ s|{FINK_([^}]*)}|<?php echo FINK_$1 ; ?>|g;
 
 # for news
 $text =~ s|</head>.*<body>|';\n\ninclude_once "header.inc";\n?>\n\n|s;
-$text =~ s|</body>.*</html>|\n\n<?\ include_once "footer.inc"; ?>|s;
+$text =~ s|</body>.*</html>|\n\n<?php\ include_once "footer.inc"; ?>|s;
 
 $text =~ s|\$Id|\$Fink|g;
 
