@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "バイナリリリースのダウンロード";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2011/10/26 18:29:04 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -15,18 +15,18 @@ dselect と apt-get でダウンロードすることができます。
 バイナリでインストールできるパッケージは一部だけで、他はソースからビルドする必要があります。
 これは主に、そのパッケージの法律上の制限によるものです。
 </p>
-<? 
+<?php 
 include "../fink_version.inc";
 ?>
 <p>
 <b>状態:</b>
-Fink バイナリインストーラは <? print $fink_version; ?> (OS X 10.5) です。
+Fink バイナリインストーラは <?php print $fink_version; ?> (OS X 10.5) です。
 </p>
 <ul>
-<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
-<? print $fink_version; ?> バイナリインストーラ (PowerPC)</a> - <? print $dmg_size; ?>, 圧縮 .dmg ディスクイメージ</li>
-<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
-<? print $fink_version; ?> バイナリインストーラ (Intel)</a> - <? print $intel_dmg_size; ?>, 圧縮 .dmg ディスクイメージ</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<?php print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
+<?php print $fink_version; ?> バイナリインストーラ (PowerPC)</a> - <?php print $dmg_size; ?>, 圧縮 .dmg ディスクイメージ</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<?php print $fink_version; ?>-Intel-Installer.dmg?download">Fink
+<?php print $fink_version; ?> バイナリインストーラ (Intel)</a> - <?php print $intel_dmg_size; ?>, 圧縮 .dmg ディスクイメージ</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">配布アーカイブを閲覧</a> - 
 バイナリパッケージとソースの両方があります。</li>
 </ul>
@@ -43,6 +43,6 @@ Fink バイナリインストーラは <? print $fink_version; ?> (OS X 10.5) �
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

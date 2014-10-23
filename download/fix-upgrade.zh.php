@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Repairing the Upgrade Path";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -28,6 +28,6 @@ rm fink_0.11.1-10_darwin-powerpc.deb</pre></li>
 
 
 
-<?
+<?php
 include "footer.inc";
 ?>

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download: Visão geral";
-$cvs_author = '$Author: monipol $';
-$cvs_date = '$Date: 2009/03/24 23:01:59 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -60,6 +60,6 @@ informar o Fink de que as descrições de pacotes devem ser obtidas via CVS.
 Veja as <a href="../doc/cvsaccess/index.php">instruções para CVS</a> para mais
 detalhes.</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

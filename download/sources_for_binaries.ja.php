@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Getting the Source Files for Binary Packages";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/20 13:36:38 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -37,6 +37,6 @@ Archive Browser は、以下のように構成されています:
 このようにして、バイナリパッケージのソースファイルも Sourceforge.net にてホストされています。
 インストーラは <quote>distribution</quote> リリースに、ソースファイルは <quote>miscellaneous/bootstrap</quote> と <quote>fink</quote> リリースにあります。
 
-<?
+<?php
 include "footer.inc";
 ?>

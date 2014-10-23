@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Aggiornare il kit per OS X 10.1";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/11/07 14:35:26 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -136,6 +136,6 @@ Potete farlo attraverso <tt>dselect</tt> (raccomandato)
 </ol>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

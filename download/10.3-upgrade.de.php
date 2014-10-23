@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Anleitung zur Aktualisierung unter Mac OS X 10.3";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/20 00:04:08 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -50,6 +50,6 @@ Das fink-Team arbeitet weiterhin daran, dass die Pakete unter 10.3
 funktionieren.  Viele Pakete laufen bereits jetzt.
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Instructions de mise à niveau pour Mac OS X 10.3";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2007/04/13 11:44:08 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -42,6 +42,6 @@ L'équipe de Fink oeuvre toujours à faire tourner les paquets Fink sous
 10.3, mais un très grand nombre d'entre eux fonctionne déjà.
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

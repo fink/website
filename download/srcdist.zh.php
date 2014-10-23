@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Source Release Download";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2008/02/14 02:08:40 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -16,13 +16,13 @@ include "header.inc";
 <!-- start translation -->
 <p>The source tarball contains the <em>fink</em> package manager.  After you have installed it, you will be able to get package descriptions and patches.  It will use these to download the source code from the original distribution sites or the Fink project's mirrors and build them on your local machine.</p>
 <!-- end translation -->
-<? 
+<?php 
 include "../fink_version.inc";
 ?>
 <!--
 <p>
-Fink <? print $fink_version; ?> 已经于 
-<? print $release_date; ?> 正式发布。
+Fink <?php print $fink_version; ?> 已经于 
+<?php print $release_date; ?> 正式发布。
 </p>
 -->
 <p><em>fink-0.28.0</em> 已经于 2007-11-02 正式发布。</p>
@@ -71,6 +71,6 @@ href="../lists/fink-announce.php">fink-声明 邮件列表</a>.
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

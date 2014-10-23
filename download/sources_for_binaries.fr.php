@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Getting the Source Files for Binary Packages";
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2013/11/18 20:22:21 $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -14,6 +14,6 @@ include "header.inc";
 <p>De cette façon, l'utilisateur peut obtenir à partir du nom d'un paquet non seulement les sources, mais aussi tous les fichiers nécessaires - rustines, instructions de compilation - utilisés pour créer la version binaire. La syntaxe utilisée dans les fichiers de compilation est expliquée en détail dans <a href="../doc/packaging/index.php">Construction de paquets</a>. Notez que certains fichiers de compilation sont utilisés pour construire plusieurs paquets. On peut rechercher le fichier de compilation d'un paquet donné soit dans un répertoire particulier en balayant tous les fichiers de compilation, soit dans <a href="http://pdb.finkproject.org/pdb/index.php">Paquets</a> en recherchant son paquet "Parent".</p>
 <p>Enfin, l'installeur Fink, qui utilise l'application Installer d'Apple pour installer un squelette pour fink, est distribué via la page <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">Files</a> du projet Fink sur SourceForge.net. Comme tels, les fichiers sources des paquets binaires inclus dans l'installeur sont aussi hébergés sur Sourceforge.net : l'installeur est inclus dans le paquet "distribution" et les fichiers sources dans les paquets "miscellaneous/bootstrap" et "fink".</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Binary Release Download";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2011/10/26 18:29:04 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -18,18 +18,18 @@ Only a part of the packages are actually available as binary packages;
 the others can only be built from source as with the source release.
 This is mainly due to legal reasons with the affected (missing) packages.
 </p>
-<? 
+<?php 
 include "../fink_version.inc";
 ?>
 <p>
 <b>Status:</b>
-A binary installer for Fink <? print $fink_version; ?> (OS X 10.5) has been posted.
+A binary installer for Fink <?php print $fink_version; ?> (OS X 10.5) has been posted.
 </p>
 <ul>
-<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
-<? print $fink_version; ?> Binary Installer (PowerPC)</a> - <? print $dmg_size; ?>, compressed .dmg disk image</li>
-<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
-<? print $fink_version; ?> Binary Installer (Intel)</a> - <? print $intel_dmg_size; ?>, compressed .dmg disk image</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<?php print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
+<?php print $fink_version; ?> Binary Installer (PowerPC)</a> - <?php print $dmg_size; ?>, compressed .dmg disk image</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<?php print $fink_version; ?>-Intel-Installer.dmg?download">Fink
+<?php print $fink_version; ?> Binary Installer (Intel)</a> - <?php print $intel_dmg_size; ?>, compressed .dmg disk image</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">Browse the Distribution Archive</a> - here
 you will find the binary packages and the corresponding source.</li>
 </ul>
@@ -44,6 +44,6 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

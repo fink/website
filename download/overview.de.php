@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download Überblick";
-$cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/13 15:59:22 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -52,6 +52,6 @@ Die eigentliche Entwicklung von Fink spielt sich in einem CVS-Repository ab. Die
 Die Benutzung funktioniert entsprechend der der Quelltext-Version, nur dass Sie die Paket-Beschreibungen über andere Kanäle erhalten (Sprich: 'fink selfupdate' funktioniert hier nicht.)
 Für Details schauen Sie sich die <a href="../doc/cvsaccess/index.php">CVS Anleitung</a> an.
 </p>
-<?
+<?php
 include "footer.inc";
 ?>

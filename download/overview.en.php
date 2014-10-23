@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download Overview";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2009/03/24 00:27:52 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -81,6 +81,6 @@ details.
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

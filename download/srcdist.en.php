@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Source Release Download";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2014/10/19 03:31:32 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -21,8 +21,8 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 
 <!--akh: edit web/fink_version.inc to update the information henceforth -->
 
-<p>The current version, <em>fink-<? print $fink_tool_version; ?></em>, was officially released on
-<? print $fink_tool_release_date; ?>.</p>
+<p>The current version, <em>fink-<?php print $fink_tool_version; ?></em>, was officially released on
+<?php print $fink_tool_release_date; ?>.</p>
 
 <ul>
 	 <li>
@@ -30,9 +30,9 @@ For OS X 10.9 and 10.10, you can use a <a href="https://github.com/fink/scripts/
 which automates the download and build steps below.
 	 </li>
      <li>
-For OS X 10.7-10.10, use <a href="http://downloads.sourceforge.net/fink/fink-<? print $fink_tool_version; ?>.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-<? print $fink_tool_version; ?></a>
-- <? print $fink_tool_tarball_k; ?>, .tar.gz format
+For OS X 10.7-10.10, use <a href="http://downloads.sourceforge.net/fink/fink-<?php print $fink_tool_version; ?>.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-<?php print $fink_tool_version; ?></a>
+- <?php print $fink_tool_tarball_k; ?>, .tar.gz format
      </li>
      <li>
 For OS X 10.6, use <a href="http://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz"
@@ -63,21 +63,21 @@ onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
 <p>where you should replace <em>/path/to</em> with the actual path to the Xcode app.</p>
 <p>You will need to run <pre>sudo xcodebuild -license</pre> to accept the terms of the Xcode license in order for fink's build user to work.</p> 
 <p></p>
-<p>Now unpack the <? print $fink_tool_version; ?>.tar.gz archive if this hasn't been done automatically, e.g.
+<p>Now unpack the <?php print $fink_tool_version; ?>.tar.gz archive if this hasn't been done automatically, e.g.
 via running the following commands in a terminal window
 (assuming the default download location--you'll need to match these commands to your own setup):</p>
 
 <pre>cd $HOME/Downloads</pre>
 <p>followed by</p>
-<pre>tar -xvf <? print $fink_tool_version; ?>.tar.gz</pre>
+<pre>tar -xvf <?php print $fink_tool_version; ?>.tar.gz</pre>
 <p>or</p>
-<pre>tar -xvf <? print $fink_tool_version; ?>.tar</pre>
+<pre>tar -xvf <?php print $fink_tool_version; ?>.tar</pre>
 <p>where the choice depends on whether the source has already been partially unpacked, 
 e.g. by Safari.</p>
 
 <p>Then run the following commands in a terminal window:</p>
 
-<pre>cd fink-<? print $fink_tool_version; ?></pre>
+<pre>cd fink-<?php print $fink_tool_version; ?></pre>
 <pre>./bootstrap</pre>
 
 <p>to start the boostrapping operation, which will install the Fink base
@@ -123,12 +123,12 @@ descriptions and patches.  It will download the source code from the original
 distribution sites and build them on your local machine.
 </p>
 
-<p>Fink <? print $fink_version; ?> was officially released on
-<? print $release_date; ?>.</p>
+<p>Fink <?php print $fink_version; ?> was officially released on
+<?php print $release_date; ?>.</p>
 
 <ul><li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkFullSOURCE');">Fink
-<? print $fink_version; ?></a> - 3521K, .tar.gz format</li>
+href="http://prdownloads.sourceforge.net/fink/fink-<?php print $fink_version; ?>-full.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkFullSOURCE');">Fink
+<?php print $fink_version; ?></a> - 3521K, .tar.gz format</li>
 </ul>
 
 <p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>).</p>
@@ -136,14 +136,14 @@ href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-fu
 <p>Unpack the tar.gz archive if this hasn't been done automatically, e.g.
 via</p>
 
-<pre>tar -xvzf fink-<? print $fink_version; ?>-full.tar.gz</pre>
+<pre>tar -xvzf fink-<?php print $fink_version; ?>-full.tar.gz</pre>
 
 <p>or</p>
 
-<pre>tar -xvf fink-<? print $fink_version; ?>-full.tar</pre>
+<pre>tar -xvf fink-<?php print $fink_version; ?>-full.tar</pre>
 
 <p>if it has already been partially unpacked, in a terminal window.  Then, in a
-terminal window, change to the resulting <em>fink-<? print $fink_version;
+terminal window, change to the resulting <em>fink-<?php print $fink_version;
 ?></em> directory, and use</p>
 
 <pre>./bootstrap</pre>
@@ -195,6 +195,6 @@ section</a>.
 href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

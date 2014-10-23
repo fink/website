@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Guia rápido para download";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/10/19 21:04:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -24,22 +24,22 @@ versão de binários.</p>
   instruções para <a href="srcdist.php">instalação a partir do código
   fonte</a>.<br/>
   Usuários 10.5: Baixe a imagem de disco contendo o instalador:<br>
-  <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" .
+  <?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" .
   $fink_version . "-PowerPC-Installer.dmg?download",
   "Instalador binário do Fink " . $fink_version .  " (PowerPC)", "/downloads/FinkPPC") ?>
-  - <?= $dmg_size ?><br>
-  <? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" .
+  - <?php echo $dmg_size ?><br>
+  <?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" .
   $fink_version . "-Intel-Installer.dmg?download",
   "Instalador binário do Fink " . $fink_version . " (Intel)",  "/downloads/FinkINTEL") ?>
-  - <?= $intel_dmg_size ?><br>
+  - <?php echo $intel_dmg_size ?><br>
   (usuários 10.4 - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink 0.8.1 (PowerPC)</a> ou <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink 0.8.1 (Intel)</a>)<br>
   (usuários 10.3 - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink 0.7.2</a>)<br>
   (usuários 10.2 - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink 0.6.4</a>)<br>
   (usuários 10.1 - use <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink 0.4.1</a>)</p></li>
 
-  <li><p>Dê um duplo clique em &quot;Fink-<? print $fink_version;
+  <li><p>Dê um duplo clique em &quot;Fink-<?php print $fink_version;
   ?>-XYZ-Installer.dmg&quot; (onde XYZ é ou PowerPC ou Intel) para montar a
-  imagem de disco e em seguida dê um duplo clique no pacote &quot;Fink <? print
+  imagem de disco e em seguida dê um duplo clique no pacote &quot;Fink <?php print
   $fink_version; ?> XYZ Installer.pkg&quot;. Siga as instruções que aparecerão
   no monitor.</p></li>
 
@@ -219,8 +219,8 @@ Caso suas perguntas não sejam respondidas por esses documentos, verifique a
 <a href="../lists/fink-announce.php">lista de discussão fink-announce</a>.</p>
 
 <p>O código fonte dos pacotes presentes na imagem de disco do instalador podem ser baixados deste site clicando
-<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">aqui</a>.</p>
+<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<?php print $fink_version; ?>/main/source/base/">aqui</a>.</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

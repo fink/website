@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Rsync アップグレード方法への変更";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/20 12:44:12 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -27,6 +27,6 @@ Fink 用の SourceForge File List ページ</a>
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

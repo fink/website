@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Téléchargement rapide";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/10/19 21:04:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include_once "header.inc";
 include "../fink_version.inc";
@@ -18,13 +18,13 @@ include "../fink_version.inc";
 10.6, 10.7, 10.8, 10.9, and 10.10 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 
 10.5 users: Téléchargez l'image disque de l'installeur :<br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Installeur binaire Fink " . $fink_version . " pour PowerPC", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Installeur binaire Fink " . $fink_version . " pour Intel",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Installeur binaire Fink " . $fink_version . " pour PowerPC", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Installeur binaire Fink " . $fink_version . " pour Intel",   "/downloads/FinkINTEL") ?> - <?php echo $intel_dmg_size ?><br>
 Utilisateurs de la version 10.4 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink0.8.1 (PowerPC)</a> ou <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink0.8.1 (Intel)</a><br>
 Utilisateurs de la version 10.3 - utilisez  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.7.2-Installer.dmg?download">Fink0.7.2</a><br>
 Utilisateurs de la version 10.2  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.6.4-Installer.dmg?download">Fink 0.6.4</a><br>
 Utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourceforge.net/fink/Fink-0.4.1-installer.dmg?download">Fink0.4.1</a></p></li>
-<li><p>Double-cliquez sur &quot;Fink-<? print $fink_version; ?>-XYZ-Installer.dmg&quot; (où XYZ correspond à PowerPC ou Intel) pour monter l'image disque, puis double-cliquez sur le paquet "Fink <? print $fink_version; ?> XYZ Installer.pkg" à l'intérieur de l'image. Suivez les instructions qui s'affichent sur l'écran.</p></li>
+<li><p>Double-cliquez sur &quot;Fink-<?php print $fink_version; ?>-XYZ-Installer.dmg&quot; (où XYZ correspond à PowerPC ou Intel) pour monter l'image disque, puis double-cliquez sur le paquet "Fink <?php print $fink_version; ?> XYZ Installer.pkg" à l'intérieur de l'image. Suivez les instructions qui s'affichent sur l'écran.</p></li>
 <li><p>À la fin de l'installation, le script pathsetup s'exécutera. On vous demandera la permission d'éditer vos fichiers de configuration de shell. Quand le script aura terminé, la configuration sera terminée et vous pourrez continuer !</p></li>
 <li><p>Si quelque chose ne se passe pas bien durant le processus, vous pouvez relancer l'application pathsetup à partir de l'image disque de l'installeur, ou exécuter la commande suivante : </p>
 <pre>/sw/bin/pathsetup.sh </pre>
@@ -102,11 +102,11 @@ Utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourcefo
 <p>Après que vous avez installé X11, Fink l'enregistre automatiquement. Si vous rencontrez des problèmes à ce sujet, voyez la <a href="http://fink.sourceforge.net/faq/usage-packages.php?phpLang=fr#apple-x11-wants-xfree86">Q.F.P.</a> au sujet des problèmes lors de l'installation de X11.</p>
 <p>Pour de plus amples informations, voyez les <a href="../faq/index.php">Questions fréquemment posées</a> et la <a href="../doc/index.php">section documentation</a>. Si vous ne trouvez pas réponse à vos questions dans ces documents, voyez la <a href="../help/index.php">page d'aide</a>.</p>
 <p>Pour vous tenir informé des nouvelles versions, abonnez-vous à la <a href="../lists/fink-announce.php">liste de diffusion fink-announce</a>.</p>
-<p>Le code source des paquets dans l'image disque de l'installeur peut être téléchargé à partir d'<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">ici</a>.</p>
+<p>Le code source des paquets dans l'image disque de l'installeur peut être téléchargé à partir d'<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<?php print $fink_version; ?>/main/source/base/">ici</a>.</p>
 
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
-<?
+<?php
 include "footer.inc";
 ?>

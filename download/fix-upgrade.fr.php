@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Réparation du chemin de mise à jour";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2005/06/15 19:11:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -24,6 +24,6 @@ rm fink_0.11.1-10_darwin-powerpc.deb</pre>
 <li><p>Procédez ensuite à la mise à jour, comme d'habitude, en exécutant <code>fink selfupdate</code>.</p>
 </ol>
 
-<?
+<?php
 include "footer.inc";
 ?>

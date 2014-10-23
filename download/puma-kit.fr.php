@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Kit de mise à niveau pour Mac OS X 10.1";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/05 21:50:43 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -123,6 +123,6 @@ Vous pouvez le faire soit avec <tt>dselect</tt> (recommandé)
 </ol>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

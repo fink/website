@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/10/19 21:04:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -26,16 +26,16 @@ with the binary release.
 need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 10.5 users:  
 Download the installer disk image:<br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " Binary Installer (Intel)",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " Binary Installer (Intel)",   "/downloads/FinkINTEL") ?> - <?php echo $intel_dmg_size ?><br>
 10.4 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink
 0.8.1 (PowerPC)</A> or <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink
 0.8.1 (Intel)</a>)<br>
 </p>
 </li>
 <li><p>
-Double-click &quot;Fink-<? print $fink_version; ?>-XYZ-Installer.dmg&quot; (where XYZ is either PowerPC or Intel) to mount the disk image,
-then double-click the &quot;Fink <? print $fink_version; ?> XYZ Installer.pkg&quot; package
+Double-click &quot;Fink-<?php print $fink_version; ?>-XYZ-Installer.dmg&quot; (where XYZ is either PowerPC or Intel) to mount the disk image,
+then double-click the &quot;Fink <?php print $fink_version; ?> XYZ Installer.pkg&quot; package
 inside. Follow the instructions on screen.
 </p></li>
 <li><p>
@@ -166,9 +166,9 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 The source code for the packages in the installer disk image can be
 downloaded from this site,
 <a
-href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">here</a>.
+href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<?php print $fink_version; ?>/main/source/base/">here</a>.
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download: Distribuição de código fonte";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 16:11:54 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -75,11 +75,11 @@ href="../lists/fink-announce.php">lista de discussão fink-announce</a>.</p>
 mais descrições e ajustes de pacotes. Ela baixará os códigos fontes dos sites
 de distribuição originais e os compilará localmente em sua máquina.</p>
 
-<p>O Fink <? print $fink_version; ?> foi oficialmente lançado em
-<? print $release_date; ?>.
+<p>O Fink <?php print $fink_version; ?> foi oficialmente lançado em
+<?php print $release_date; ?>.
 
 <ul>
-  <li><a href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink <? print $fink_version; ?></a> - 3521K, formato .tar.gz</li>
+  <li><a href="http://prdownloads.sourceforge.net/fink/fink-<?php print $fink_version; ?>-full.tar.gz">Fink <?php print $fink_version; ?></a> - 3521K, formato .tar.gz</li>
 </ul>
 
 <p>Você também precisará instalar o Xcode Tools (conforme <a
@@ -88,15 +88,15 @@ href="./index.en.php" >o Guia rápido</a>).</p>
 <p>Descompacte o arquivo tar.gz caso isto não tenha sido feito automaticamente,
 por exemplo via</p>
 
-<pre>tar -xvzf fink-<? print $fink_version; ?>-full.tar.gz</pre>
+<pre>tar -xvzf fink-<?php print $fink_version; ?>-full.tar.gz</pre>
 
 <p>ou</p>
 
-<pre>tar -xvf fink-<? print $fink_version; ?>-full.tar</pre>
+<pre>tar -xvf fink-<?php print $fink_version; ?>-full.tar</pre>
 
 <p>caso ele ainda não tenha sido descompactado parcialmente, em uma janela de
 terminal. Então, em uma janela de terminal, posicione-se no diretório
-<em>fink-<? print $fink_version; ?></em> que foi criado e digite</p>
+<em>fink-<?php print $fink_version; ?></em> que foi criado e digite</p>
 
 <pre>./bootstrap</pre>
 
@@ -190,6 +190,6 @@ href="../doc/index.php">seção de documentação</a>.</p>
 <p>Para receber informações dos lançamentos de novas versões, assine a <a
 href="../lists/fink-announce.php">lista de discussão fink-announce</a>.</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

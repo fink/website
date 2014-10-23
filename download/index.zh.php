@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/10/19 21:04:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -25,8 +25,8 @@ include_once "../fink_version.inc";
 10.6, 10.7, 10.8, 10.9, and 10.10 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 
 10.5 users: 下载安装程序磁盘映象：<br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " 二进制安装包 (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " 二进制安装包 (Intel)",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " 二进制安装包 (PowerPC)", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " 二进制安装包 (Intel)",   "/downloads/FinkINTEL") ?> - <?php echo $intel_dmg_size ?><br>
 （10.4 用户 － 使用 <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink
 0.8.1 (PowerPC)</a> <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink
 0.8.1 (Intel)</a>）
@@ -39,8 +39,8 @@ include_once "../fink_version.inc";
 </p>
 </li>
 <li><p>
-双击 "Fink-<? print $fink_version; ?>-Installer.dmg" 文件装载磁盘映象，
-然后双击里面 "Fink <? print $fink_version; ?> Installer.pkg" 程序。接着按照屏幕的提示进行操作。
+双击 "Fink-<?php print $fink_version; ?>-Installer.dmg" 文件装载磁盘映象，
+然后双击里面 "Fink <?php print $fink_version; ?> Installer.pkg" 程序。接着按照屏幕的提示进行操作。
 </p></li>
 <li><p>
 在安装的最后阶段，会打开一个终端程序，pathsetup.command 脚本会被自动运行。在编辑你的 shell 配置文件前，会提示请求你的同意。当脚本运行完毕，关闭终端窗口以后，一切都安装就绪了！
@@ -157,12 +157,12 @@ href="../lists/fink-announce.php">fink-声明 邮件列表</a>.
 <p>
 安装磁盘映象文件里面的软件的源代码可以在本站
 <a
-href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">这里</a>下载。
+href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<?php print $fink_version; ?>/main/source/base/">这里</a>下载。
 </p>
 
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
-<?
+<?php
 include "footer.inc";
 ?>

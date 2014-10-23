@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Obtendo os códigos fontes dos pacotes de binários";
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2013/11/18 20:22:21 $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -52,6 +52,6 @@ arquivos fontes dos pacotes de binários incluídos no instalador também são
 hospedados no sourceForge.net: o instalador está no release "distribution" e os
 arquivos fontes estão nos releases "miscellaneous/bootstrap" e "fink".</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

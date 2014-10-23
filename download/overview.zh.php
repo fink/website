@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download Overview";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -61,6 +61,6 @@ Fink 软件的开发过程储存在一个 CVS 库里面。
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

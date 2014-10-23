@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Instructions de mise à niveau binaire pour Mac OS X 10.2";
-$cvs_author = '$Author: fingolfin $';
-$cvs_date = '$Date: 2007/04/13 11:44:08 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -50,6 +50,6 @@ fink selfupdate</pre>
 
 
 
-<?
+<?php
 include "footer.inc";
 ?>

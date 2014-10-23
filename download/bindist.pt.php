@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download: Distribuição de binários";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2011/10/26 18:29:04 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -20,13 +20,13 @@ Isto se deve principalmente a motivos legais que afetam os pacotes
 
 <p>
 <b>Status:</b>
-Foi lançado um instalador binário para o Fink <? print $fink_version; ?> (OS X 10.5).
+Foi lançado um instalador binário para o Fink <?php print $fink_version; ?> (OS X 10.5).
 </p>
 
 <ul>
-  <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Instalador binário do Fink <? print $fink_version; ?> (PowerPC)</a> - <? print $dmg_size; ?>, imagem de disco .dmg compactada</li>
+  <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<?php print $fink_version; ?>-PowerPC-Installer.dmg?download">Instalador binário do Fink <?php print $fink_version; ?> (PowerPC)</a> - <?php print $dmg_size; ?>, imagem de disco .dmg compactada</li>
 
-  <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Instalador binário do Fink <? print $fink_version; ?> (Intel)</a> - <? print $intel_dmg_size; ?>, imagem de disco .dmg compactada</li>
+  <li><a href="http://prdownloads.sourceforge.net/fink/Fink-<?php print $fink_version; ?>-Intel-Installer.dmg?download">Instalador binário do Fink <?php print $fink_version; ?> (Intel)</a> - <?php print $intel_dmg_size; ?>, imagem de disco .dmg compactada</li>
 
   <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">Consulte o Arquivo de Distribuições</a> - aqui você encontrará os pacotes binários e códigos fontes correspondentes.</li>
 </ul>
@@ -38,6 +38,6 @@ href="../doc/index.php">seção de documentação</a>.</p>
 <p>Para receber informações dos lançamentos de novas versões, assine a <a
 href="../lists/fink-announce.php">lista de discussão fink-announce</a>.</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

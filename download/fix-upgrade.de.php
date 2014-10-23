@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Reparieren der Aktualisierungsfunktion";
-$cvs_author = '$Author: g5cpu $';
-$cvs_date = '$Date: 2004/04/13 15:52:54 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -29,6 +29,6 @@ Anschließend aktualisieren Sie Fink wie gewöhnlich mit Hilfe des <code>fink se
 
 
 
-<?
+<?php
 include "footer.inc";
 ?>

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Herunterladen der Quelltext-Dateien für binäre Pakete";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/20 13:36:38 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -61,6 +61,6 @@ include "header.inc";
   "miscellaneous/bootstrap" und "fink".
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

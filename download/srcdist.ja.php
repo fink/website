@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "ソースリリースのダウンロード";
-$cvs_author = '$Author: dmalloc $';
-$cvs_date = '$Date: 2008/03/25 21:49:40 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -16,13 +16,13 @@ include "header.inc";
 <p>ソースの tarball に、<em>fink</em> パッケージマネージャーが含まれています。
 これをインストール後、パッケージ記述とパッチを入手することができます。
 これによって、オリジナルの配布サイトまたは Fink プロジェクトのミラーからソースコードをダウンロードし、ローカルでビルドができるようになります。</p>
-<? 
+<?php 
 include "../fink_version.inc";
 ?>
 <!--
 <p>
-Fink <? print $fink_version; ?> は公式に
-<? print $release_date; ?> にリリースされました。
+Fink <?php print $fink_version; ?> は公式に
+<?php print $release_date; ?> にリリースされました。
 </p>
 -->
 <p><EM>fink-0.28.0</EM> は、2007年11月2日 にリリースされました。</p>
@@ -67,6 +67,6 @@ README, INSTALL と USAGE はテキスト形式 (コマンドラインで読む�
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

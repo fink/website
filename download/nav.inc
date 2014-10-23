@@ -1,4 +1,4 @@
-<? 
+<?php
 $hostlink = '';
 if (isset($_SERVER['SERVER_NAME']))
 	if (preg_match('/^bindist/', $_SERVER['SERVER_NAME']))

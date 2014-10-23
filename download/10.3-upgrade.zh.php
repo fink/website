@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Upgrade Instructions for Mac OS X 10.3";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/11/26 09:27:54 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -27,6 +27,6 @@ system-xfree86-43; fink selfupdate; fink index</pre>
 <p>
 Fink 团队仍然在努力使（全部）Fink 软件包可以 10.3 下面运行，虽然许多许多已经可以运行了。</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

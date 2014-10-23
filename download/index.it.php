@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/10/19 21:04:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -27,8 +27,8 @@ l'avvio rapido con le binary release.
 10.6, 10.7, 10.8, 10.9, and 10.10 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 
 10.5 users: Download dell' installer disk image:<br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " Binary Installer (Intel)",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " Binary Installer (Intel)",   "/downloads/FinkINTEL") ?> - <?php echo $intel_dmg_size ?><br>
 (10.4 users - use  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink
 0.8.1 (PowerPC)</a> or <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink
 0.8.1 (Intel)</a>)<br>
@@ -41,8 +41,8 @@ l'avvio rapido con le binary release.
 </p>
 </li>
 <li><p>
-Doppio-click "Fink-<? print $fink_version; ?>-Installer.dmg" per montare il disco immagine,
-quindi doppio-click sul pacchetto "Fink <? print $fink_version; ?> Installer.pkg" situato all'interno. Seguire le istruzione date a monitor.
+Doppio-click "Fink-<?php print $fink_version; ?>-Installer.dmg" per montare il disco immagine,
+quindi doppio-click sul pacchetto "Fink <?php print $fink_version; ?> Installer.pkg" situato all'interno. Seguire le istruzione date a monitor.
 </p></li>
 <li><p>
 Alla fine dell'installazione, verrà lanciata l'utility pathsetup.
@@ -162,12 +162,12 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>.
 <p>
 Il codice sorgente per i pacchetti presenti nell'installer disk image può essere scaricato da
 <a
-href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">qui</a>.
+href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<?php print $fink_version; ?>/main/source/base/">qui</a>.
 </p>
 
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
-<?
+<?php
 include "footer.inc";
 ?>

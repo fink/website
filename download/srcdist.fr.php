@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Téléchargement de la version source";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2010/09/05 19:01:50 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -17,19 +17,19 @@ originaux et de les compiler sur votre ordinateur.
 <!-- start translation -->
 <p>The source tarball contains the <em>fink</em> package manager.  After you have installed it, you will be able to get package descriptions and patches.  It will use these to download the source code from the original distribution sites or the Fink project's mirrors and build them on your local machine.</p>
 <!-- end translation -->
-<? 
+<?php 
 include "../fink_version.inc";
 ?>
 <!--
 <p>
-La version <? print $fink_version; ?> de Fink a été officiellement mise à disposition des utilisateurs le <? print $release_date; ?>.
+La version <?php print $fink_version; ?> de Fink a été officiellement mise à disposition des utilisateurs le <?php print $release_date; ?>.
 </p>
 -->
 <p>La version <EM>fink-0.28.0</EM> a été officiellement mise à disposition des utilisateurs le 2007-11-02.</p>
 <ul>
 <!--<li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz">Fink
-<? print $fink_version; ?></a>- 6786K, format .tar.gz</li>-->
+href="http://prdownloads.sourceforge.net/fink/fink-<?php print $fink_version; ?>-full.tar.gz">Fink
+<?php print $fink_version; ?></a>- 6786K, format .tar.gz</li>-->
 <li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
 </ul>
 
@@ -77,6 +77,6 @@ href="../lists/fink-announce.php">liste de diffusion fink-announce</a>.
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Quelltext Version Download";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/31 14:43:17 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -22,15 +22,15 @@ und zu installieren.</p>
 
 <!--akh: edit web/fink_version.inc to update the information hencefort -->
 
-<p><em>Fink <? print $fink_tool_version; ?></em> wurde am  
-<? print $fink_tool_release_date; ?> offiziell veröffentlicht.</p>
+<p><em>Fink <?php print $fink_tool_version; ?></em> wurde am  
+<?php print $fink_tool_release_date; ?> offiziell veröffentlicht.</p>
 
 <ul>
   <li>
 Nehmen sie für OS X 10.7-10.9 
-<a href="http://downloads.sourceforge.net/fink/fink-<? print $fink_tool_version; ?>.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-<? print $fink_tool_version; ?></a>
-- <? print $fink_tool_tarball_k; ?>, .tar.gz Format
+<a href="http://downloads.sourceforge.net/fink/fink-<?php print $fink_tool_version; ?>.tar.gz"
+onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-<?php print $fink_tool_version; ?></a>
+- <?php print $fink_tool_tarball_k; ?>, .tar.gz Format
   </li>
   <li>
 Nehmen sie für OS X 10.6 
@@ -75,7 +75,7 @@ ersetzen müssen.</p>
 Lizenzbedingungen für Xcode zu akzeptieren. Nur so funktioniert der Nutzer 
 'build', der von Fink eingerichtet und verwendet wird.</p> 
 <p></p>
-<p>Packen sie nun das Archiv <? print $fink_tool_version; ?>.tar.gz aus, falls 
+<p>Packen sie nun das Archiv <?php print $fink_tool_version; ?>.tar.gz aus, falls 
 es nicht automatisch erfolgte, mit anderen Worten, führen sie folgende Befehle 
 in einem Terminalfenster aus (Ab hier wird angenommen, dass der Download in 
 das übliche Verzeichnis erfolgte. Wenn nicht, müssen sie die Befehle 
@@ -83,15 +83,15 @@ entsprechend anpassen.):</p>
 
 <pre>cd $HOME/Downloads</pre>
 <p>gefolgt von</p>
-<pre>tar -xvf <? print $fink_tool_version; ?>.tar.gz</pre>
+<pre>tar -xvf <?php print $fink_tool_version; ?>.tar.gz</pre>
 <p>oder</p>
-<pre>tar -xvf <? print $fink_tool_version; ?>.tar</pre>
+<pre>tar -xvf <?php print $fink_tool_version; ?>.tar</pre>
 <p>wobei die Wahl davon abhängt, ob das Archiv zum Beispiel von Safari bereits 
 teilweise oder ganz ausgepackt wurde.</p>
 
 <p>Führen sie dann folgende Befehle:</p>
 
-<pre>cd fink-<? print $fink_tool_version; ?></pre>
+<pre>cd fink-<?php print $fink_tool_version; ?></pre>
 <pre>./bootstrap</pre>
 <p>im Terminal aus, um das das Fink-Basissystem zu installieren. Wollen sie ein 
 anderes Verzeichnis als die Voreinstellung <em>/sw</em> verwenden, geht das mit</p>
@@ -135,12 +135,12 @@ Paketbeschreibungen und Patches. Es lädt den Quelltet von der originalen
 Distributionsseite und erstellt sie auf ihrem lokalen Computer.
 </p>
 
-<p><em>Fink <? print $fink_version; ?></em> wurde am  
-<? print $release_date; ?> offiziell veröffentlicht.</p>
+<p><em>Fink <?php print $fink_version; ?></em> wurde am  
+<?php print $release_date; ?> offiziell veröffentlicht.</p>
 
 <ul><li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<? print $fink_version; ?>-full.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkFullSOURCE');">Fink
-<? print $fink_version; ?></a> - 3521K, .tar.gz Format</li>
+href="http://prdownloads.sourceforge.net/fink/fink-<?php print $fink_version; ?>-full.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkFullSOURCE');">Fink
+<?php print $fink_version; ?></a> - 3521K, .tar.gz Format</li>
 </ul>
 
 <p>Sie müssen auch für ihr System die entsprechenden Command-Line-Tools für 
@@ -150,14 +150,14 @@ Xcode installieren, (siehe:
 <p>Packen sie nun das Archiv tar.gz mit folgendem Kommando aus, falls es nicht 
 bereits automatisch erfolgte:</p>
 
-<pre>tar -xvzf fink-<? print $fink_version; ?>-full.tar.gz</pre>
+<pre>tar -xvzf fink-<?php print $fink_version; ?>-full.tar.gz</pre>
 
 <p>oder mit</p>
 
-<pre>tar -xvf fink-<? print $fink_version; ?>-full.tar</pre>
+<pre>tar -xvf fink-<?php print $fink_version; ?>-full.tar</pre>
 
 <p>falls es schon teilweise entpackt wurde. Wechseln sie dann in einem 
-Terminalfenster in das erstellte <em>fink-<? print $fink_version;
+Terminalfenster in das erstellte <em>fink-<?php print $fink_version;
 ?></em> Verzeichnis und führen sie</p>
 
 <pre>./bootstrap</pre>
@@ -211,6 +211,6 @@ Um über neue Versionen informiert zu werden, abonnieren sie die <a
 href="../lists/fink-announce.php">fink-announce Mailingliste</a>.
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

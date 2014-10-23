@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Aktualisierungsmatrix";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/20 14:29:35 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -137,6 +137,6 @@ include "header.inc";
   von Fink gibt es <a href=upgrade-old.en.php>hier</a>.
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

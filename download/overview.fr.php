@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Généralités sur les téléchargements";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2004/03/05 01:42:46 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -61,6 +61,6 @@ Voir les <a href="../doc/cvsaccess/index.php">instructions CVS</a> pour de plus 
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

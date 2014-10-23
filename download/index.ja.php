@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/10/19 21:04:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -28,8 +28,8 @@ Fink をインストール、アップグレードする方法はたくさんあ
 10.6, 10.7, 10.8, 10.9, and 10.10 ユーザ: まだバイナリインストーラはありません。<A href="srcdist.php">ソースインストール</A>をご覧ください。<br>
 
 10.5 ユーザ: インストーラディスクイメージをダウンロード:<br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " バイナリインストーラ (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " バイナリインストーラ (Intel)",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " バイナリインストーラ (PowerPC)", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " バイナリインストーラ (Intel)",   "/downloads/FinkINTEL") ?> - <?php echo $intel_dmg_size ?><br>
 
 (10.4 の場合は <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink
 0.8.1 (PowerPC)</a> <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-Intel-Installer.dmg?download">Fink
@@ -43,8 +43,8 @@ Fink をインストール、アップグレードする方法はたくさんあ
 </p>
 </li>
 <li><p>
-&quot;Fink-<? print $fink_version; ?>-Installer.dmg&quot; をダブルクリックしてディスクイメージをマウントします。
-次に、 &quot;Fink <? print $fink_version; ?> Installer.pkg&quot; パッケージをダブルクリックします。
+&quot;Fink-<?php print $fink_version; ?>-Installer.dmg&quot; をダブルクリックしてディスクイメージをマウントします。
+次に、 &quot;Fink <?php print $fink_version; ?> Installer.pkg&quot; パッケージをダブルクリックします。
 後は画面に従って下さい。
 </p></li>
 <li><p>
@@ -217,13 +217,13 @@ href="../help/index.php?phpLang=ja">ヘルプページ</a>
 
 <p>
 インストーラディスクにあるパッケージのソースコードは、
-<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">このサイト</a>
+<a href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<?php print $fink_version; ?>/main/source/base/">このサイト</a>
 からダウンロードすることができます。
 </p>
 
 <script type="text/javascript" language="JavaScript" src="http://db3.net-filter.com/script/13500.js"></script>
 <noscript><img src="http://db3.net-filter.com/db.php?id=13500&amp;page=unknown" alt=""></noscript>
 
-<?
+<?php
 include "footer.inc";
 ?>

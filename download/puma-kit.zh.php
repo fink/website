@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Upgrade Kit for Mac OS X 10.1";
-$cvs_author = '$Author: jeff_yecn $';
-$cvs_date = '$Date: 2004/03/02 03:24:11 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -127,6 +127,6 @@ sudo apt-get update</pre>
 </ol>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

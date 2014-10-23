@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Tableau de mises à jour";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2006/02/07 15:02:16 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:38 $';
 
 include "header.inc";
 ?>
@@ -44,6 +44,6 @@ include "header.inc";
 <p>Ceci est nécessaire pour s'assurer que tous les paquets tourneront effectivement sur la version de votre système Mac OS X. Il se peut que vous deviez relancer cette commande pour arriver à ce que tous les nouveaux paquets soient construits.</p></li></ol>
 <p>Note : il existe <a href=./upgrade-old.fr.php>ici</a> une version antérieure de ce document. Elle n'est valable que pour les anciennes versions de Fink.</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

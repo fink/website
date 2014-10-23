@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Anleitung zur Aktualisierung unter Mac OS X 10.7";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/20 12:08:04 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -49,6 +49,6 @@ ihr Lieblingspaket auf 10.7 noch nicht verfügbar, kontaktieren sie den
 Maintainer des Pakets und fragen sie ihn, ob es nach 10.7 übernommen
 werden kann.</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

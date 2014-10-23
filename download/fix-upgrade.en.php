@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Repairing the Upgrade Path";
-$cvs_author = '$Author: michga $';
-$cvs_date = '$Date: 2005/06/15 19:11:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -35,6 +35,6 @@ Now update as usual, by running <code>fink selfupdate</code>.
 
 
 
-<?
+<?php
 include "footer.inc";
 ?>

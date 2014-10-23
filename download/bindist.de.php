@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download der Binär-Version von Fink";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2011/10/26 18:29:04 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -14,18 +14,18 @@ Nach der Installation des Basis-Systems mit Hilfe des Installationspaketes, kön
 Allerdings ist nur ein Teil der Pakete als Binärpakete verfügbar, die übrigen müssen Sie mit Hilfe der Quelldaten selbst erstellen.
 Dies hat vor allem rechtliche Gründe, die mit den entsprechenden Paketen verbunden sind.
 </p>
-<? 
+<?php
 include "../fink_version.inc";
 ?>
 <p>
 <b>Status:</b>
-Die Binär-Installation von Fink <? print $fink_version; ?> (OS X 10.5) wurde veröffentlicht.
+Die Binär-Installation von Fink <?php print $fink_version; ?> (OS X 10.5) wurde veröffentlicht.
 </p>
 <ul>
-<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
-<? print $fink_version; ?>Binary Installer (PowerPC)</a> - <? print $dmg_size; ?>, komprimmiertes .dmg Disk-Image</li>
-<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<? print $fink_version; ?>-Intel-Installer.dmg?download">Fink
-<? print $fink_version; ?>Binary Installer (Intel)</a> - <? print $intel_dmg_size; ?>, komprimmiertes .dmg Disk-Image</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<?php print $fink_version; ?>-PowerPC-Installer.dmg?download">Fink
+<?php print $fink_version; ?>Binary Installer (PowerPC)</a> - <?php print $dmg_size; ?>, komprimmiertes .dmg Disk-Image</li>
+<li><a href="http://prdownloads.sourceforge.net/fink/Fink-<?php print $fink_version; ?>-Intel-Installer.dmg?download">Fink
+<?php print $fink_version; ?>Binary Installer (Intel)</a> - <?php print $intel_dmg_size; ?>, komprimmiertes .dmg Disk-Image</li>
 <li><a href="http://prdownloads.sourceforge.net/fink/direct_download/">Schauen Sie in das Veröffentlichungsarchiv</a> - hier finden Sie die Binärpakete und den dazugehörigen Quellcode.</li>
 </ul>
 <p>
@@ -40,6 +40,6 @@ href="../lists/fink-announce.php">fink-announce Mailingliste</a>.
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

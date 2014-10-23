@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Mac OS X 10.3 でのアップグレード";
-$cvs_author = '$Author: benh57 $';
-$cvs_date = '$Date: 2004/11/26 09:27:54 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -36,6 +36,6 @@ system-xfree86-43; fink selfupdate; fink index</pre>
 Fink チームは現在、10.3 で動作するように作業している最中で、既に多くのパッケージが動作します。
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

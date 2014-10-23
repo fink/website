@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Upgrade Instructions for Mac OS X 10.9";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2014/07/20 12:08:04 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -30,6 +30,6 @@ underlying changes in the system. Work is ongoing to make as many packages avail
 as possible. If your favorite package is not available on 10.9, please contact the 
 package maintainer and ask if it can be migrated.</p>
 
-<?
+<?php
 include "footer.inc";
 ?>

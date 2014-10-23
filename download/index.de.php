@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2014/10/19 21:04:05 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -29,8 +29,8 @@ sie müssen statt dessen der Anleitung
 <A href="srcdist.php">Quellcode-Installation</A> folgen.<br>
 
 10.5 Nutzer: Laden sie sich das Installations-Disc-Image herunter:<br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?= $dmg_size ?><br>
-<? analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " Binary Installer (Intel)",   "/downloads/FinkINTEL") ?> - <?= $intel_dmg_size ?>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>
+<?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-Intel-Installer.dmg?download",   "Fink " . $fink_version . " Binary Installer (Intel)",   "/downloads/FinkINTEL") ?> - <?php echo $intel_dmg_size ?>
 
 <br>
 (10.4 Nutzer - nehmen statt dessen  <a href="http://prdownloads.sourceforge.net/fink/Fink-0.8.1-PowerPC-Installer.dmg?download">Fink
@@ -45,8 +45,8 @@ sie müssen statt dessen der Anleitung
 </p>
 </li>
 <li><p>
-Doppel-Klick auf "Fink-<? print $fink_version; ?>-Installer.dmg", um das Image 
-zu mounten, anschließend Doppel-Klick auf das "Fink <? print $fink_version; ?> 
+Doppel-Klick auf "Fink-<?php print $fink_version; ?>-Installer.dmg", um das Image 
+zu mounten, anschließend Doppel-Klick auf das "Fink <?php print $fink_version; ?> 
 Installer.pkg" Paket. Folgen sie den Anweisungen auf dem Bildschirm.
 </p></li>
 <li><p>
@@ -232,11 +232,11 @@ Um über neue Versionen informiert zu werden, abonnieren sie die
 
 <p>
 Der Quellcode der Pakete der Installations-Disc kann <a
-href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<? print $fink_version; ?>/main/source/base/">hier</a> 
+href="http://prdownloads.sourceforge.net/fink/direct_download/dists/fink-<?php print $fink_version; ?>/main/source/base/">hier</a> 
 herunter geladen werden.
 
 </p>
 
-<?
+<?php
 include "footer.inc";
 ?>

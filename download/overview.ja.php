@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Download Overview";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2004/03/25 01:26:22 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -61,6 +61,6 @@ Fink ディストリビューションの実際の開発現場は CVS レポジ�
 </p>
 
 
-<?
+<?php
 include "footer.inc";
 ?>

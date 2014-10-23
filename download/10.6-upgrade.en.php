@@ -1,7 +1,7 @@
-<?
+<?php
 $title = "Upgrade Instructions for Mac OS X 10.6";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2011/10/13 19:58:52 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2014/10/23 22:32:37 $';
 
 include "header.inc";
 ?>
@@ -29,6 +29,6 @@ include "header.inc";
 </ol>
 <p>After the upgrade, you may wish to run <pre>fink configure</pre> to do some cleanup.</p>
 
-<?
+<?php
 include "footer.inc";
 ?>
