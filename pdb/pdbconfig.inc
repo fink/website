@@ -1,6 +1,8 @@
 <?php
+	// This is either sql or solr
 	$pdbdb = 'sql';
 
+	// This is is the current setup for snitch
 	$sqldriver = "mysqli";
 	$sqlhost = "localhost";
 	$sqluser = "c1pdb";
