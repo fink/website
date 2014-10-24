@@ -231,7 +231,7 @@ class pdbQuery {
 
 		$query  = "SELECT ";
 		$query .= implode(',', $fields);
-		$query .= " FROM `ldb`";
+		$query .= " FROM `pdb`";
 
 		// Parse $this->query and convert to sql
 		$where = array();
