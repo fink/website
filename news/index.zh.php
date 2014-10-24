@@ -1601,7 +1601,7 @@ The above Feeds are automatically updated every 60 minutes to make sure that the
   <b>Upgrade Matrix</b> page, which is inadequate for upgrading
 to Fink 0.5.0a.  Please be patient as we construct
   a new version of that page, whose existence will be announced
-  here.  In the meantime, some of you may wish to use the <a href="news/jaguar.php">test version of the Jaguar updater</a> which was
+  here.  In the meantime, some of you may wish to use the <a href="<?php print $root; ?>news/jaguar.php">test version of the Jaguar updater</a> which was
 made available on 2002-09-08.
   </p>
   <a name="2002-12-09%20Fink%200.5.0a%20Released"><span class="news-date">2002-12-09: </span><span class="news-headline">Fink 0.5.0a Released</span></a><?php gray_line(); ?>

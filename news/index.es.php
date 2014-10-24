@@ -1581,7 +1581,7 @@ The above Feeds are automatically updated every 60 minutes to make sure that the
   <b>Upgrade Matrix</b> page, which is inadequate for upgrading
 to Fink 0.5.0a.  Please be patient as we construct
   a new version of that page, whose existence will be announced
-  here.  In the meantime, some of you may wish to use the <a href="news/jaguar.php">test version of the Jaguar updater</a> which was
+  here.  In the meantime, some of you may wish to use the <a href="<?php print $root; ?>news/jaguar.php">test version of the Jaguar updater</a> which was
 made available on 2002-09-08.
   </p>
   <a name="2002-12-09%20Fink%200.5.0a%20Released"><span class="news-date">2002-12-09: </span><span class="news-headline">Fink 0.5.0a Released</span></a><?php gray_line(); ?>
@@ -1644,7 +1644,7 @@ anti-virus software is installed.  You may need to switch off any anti-virus
 software before using Fink.
 </p><a name="2002-09-08%20Test%20version%20of%20Jaguar%20updater%20available"><span class="news-date">2002-09-08: </span><span class="news-headline">Test version of Jaguar updater available</span></a><?php gray_line(); ?>
 		<p>
-			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <a href="news/jaguar.php">step-by-step instructions for updating</a>. We also have separate <a href="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</a>. 
+			A test version of the 10.2 updater for Fink is now available. The update process is somewhat complicated at the moment, but is explained in <a href="<?php print $root; ?>news/jaguar.php">step-by-step instructions for updating</a>. We also have separate <a href="news/jag-bootstrap.php">instructions to install Fink from scratch on 10.2</a>. 
 		</p>
 		<p>
 			At the moment, approximately 800 out of 1150 Fink packages have been made ready for 10.2. However, virtually all of these packages are still being tested and have not yet been moved to the "stable" tree in the 10.2 section; moreover, binaries for 10.2 packages are not yet available. 
