@@ -1222,7 +1222,7 @@ mirroring website</a>.
 Logo <a href="<?php print $root; ?>logo.php">contest</a> held earlier this year.
 This new, official, logo has been displayed since the 24th of October and
 those of you who wondered how it has been picked and what the name of the
-winner is should read up in the PR <a href="pr/index.php">section</a>.
+winner is should read up in the PR <a href="<?php print $root; ?>pr/index.php">section</a>.
 </p>
 <p>
 The longer explanation also features a larger version of the logo itself,
@@ -1752,11 +1752,11 @@ binary release will follow soon.
 </p>
 <a name="2001-08-23%20OpenOSX.com"><span class="news-date">2001-08-23: </span><span class="news-headline">OpenOSX.com</span></a><?php gray_line(); ?>
 <p>OpenOSX.com refuses to give fair credit after using Fink to create GIMP
-CDs. Read Christoph's <a href="pr/openosx.php">public statement</a>
+CDs. Read Christoph's <a href="<?php print $root; ?>pr/openosx.php">public statement</a>
 on the issue.
 </p>
 <a name="2001-08-22%20New%20help%20page"><span class="news-date">2001-08-22: </span><span class="news-headline">New help page</span></a><?php gray_line(); ?>
-<p>The new <a href="help/index.php">help page</a> lists various ways
+<p>The new <a href="<?php print $root; ?>help/index.php">help page</a> lists various ways
 to get help using Fink. It also lists some ideas how you can give back to
 the project.
 </p>
@@ -1775,12 +1775,12 @@ are not affected.
 and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.
 </p>
 <a name="2001-07-19%20New%20document:%20X11%20on%20Darwin%20and%20Mac%20OS%20X"><span class="news-date">2001-07-19: </span><span class="news-headline">New document: X11 on Darwin and Mac OS X</span></a><?php gray_line(); ?>
-<p>A comprehensive document about <a href="doc/x11/index.php">X11 on
+<p>A comprehensive document about <a href="<?php print $root; ?>doc/x11/index.php">X11 on
 Darwin and Mac OS X</a> is now available. It was written to be useful
 for anyone, not just Fink users.
 </p>
 <a name="2001-07-13%20Package%20database%20now%20online"><span class="news-date">2001-07-13: </span><span class="news-headline">Package database now online</span></a><?php gray_line(); ?>
-<p>A prototype of the <a href="pdb/index.php">package database</a>
+<p>A prototype of the <a href="<?php print $root; ?>pdb/index.php">package database</a>
 is now online.
 </p>
 <a name="2001-07-09%20Version%200.2.3%20is%20released"><span class="news-date">2001-07-09: </span><span class="news-headline">Version 0.2.3 is released</span></a><?php gray_line(); ?>
@@ -1794,7 +1794,7 @@ updated to include all recently added fields.
 <a name="2001-06-30%20Web%20site%20restructuring"><span class="news-date">2001-06-30: </span><span class="news-headline">Web site restructuring</span></a><?php gray_line(); ?>
 <p>A major restructuring of the web site has started. The non-Fink-specific
 documents were removed because I don't have the time to maintain them. All
-documentation will be consolidated in the new <a href="doc/index.php">
+documentation will be consolidated in the new <a href="<?php print $root; ?>doc/index.php">
 Documentation section</a>.
 </p>
 <a name="2001-06-24%20Version%200.2.2%20is%20released"><span class="news-date">2001-06-24: </span><span class="news-headline">Version 0.2.2 is released</span></a><?php gray_line(); ?>
