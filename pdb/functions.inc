@@ -245,15 +245,15 @@ class pdbQuery {
 			$q = preg_replace("/=true/", "=1 ", $q);
 			$q = preg_replace("/=false/", "=0 ", $q);
 
-			if (preg_match('/text="(.*)"/', $q, $matches))
+			if (preg_match('/^text="(.*)"/', $q, $matches))
 				$q = 'name LIKE "%' . $matches[1] . '%"';
-			if (preg_match('/name="(.*)"/', $q, $matches)) {
+			if (preg_match('/^name="(.*)"/', $q, $matches)) {
 				if (!empty($_GET['name_exact']) && $_GET['name_exact'] == 'on')
 					$q = 'name="' . $matches[1] . '"';
 				else
 					$q = 'name LIKE "%' . $matches[1] . '%"';
 			}
-			if (preg_match('/maintainer="(.*)"/', $q, $matches))
+			if (preg_match('/^maintainer="(.*)"/', $q, $matches))
 				$q = 'maintainer LIKE "%' . $matches[1] . '%"';
 
 			$where[] = $q;
