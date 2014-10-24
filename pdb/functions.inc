@@ -200,12 +200,16 @@ class pdbQuery {
 
 	public function fetch() {
 		global $cache_threshold;
+		require_once('pdbconfig.inc');
 
 		$key    = $this->uniqueId();
 		$result = memcache_get_key($key);
 
 		if ($result == null || $result == false) {
-			$result = $this->fetch_uncached($this->unique);
+			if ($pdbdb == 'sql')
+				$result = $this->fetch_sql_uncached($this->unique);
+			else
+				$result = $this->fetch_solr_uncached($this->unique);
 			if ($result != null && count($result) > $cache_threshold) {
 				memcache_set_key($key, $result, false, $this->getTimeout());
 			}
@@ -214,7 +218,68 @@ class pdbQuery {
 		return $result;
 	}
 
-	public function fetch_uncached() {
+	public function fetch_sql_uncached() {
+		$results = array();
+
+		$fields = array();
+		foreach ($this->getFields() as $field) {
+			if ($field == 'doc_id')
+				continue;
+
+			$fields[] = $field;
+		}
+
+		$query  = "SELECT ";
+		$query .= implode(',', $fields);
+		$query .= " FROM `ldb`";
+
+		// Parse $this->query and convert to sql
+		$where = array();
+		foreach ($this->query as $q) {
+
+			if (preg_match("/^-/", $q))
+				$q = str_replace(":", "!=", $q);
+			else
+				$q = str_replace(":", "=", $q);
+
+			$q = preg_replace("/^[+-]/", "", $q);
+			$q = preg_replace("/=true/", "=1 ", $q);
+			$q = preg_replace("/=false/", "=0 ", $q);
+
+			$where[] = $q;
+		}
+
+		if (!empty($where))
+			$query .= " WHERE " . implode(' AND ', $where);
+		if (!empty($this->getSort()))
+			$query .= " ORDER BY " . implode(',', $this->getSort());
+		$query .= " LIMIT " . $this->rows;
+
+		/* Requires ADOdb for all SQL transactions */
+		require_once("adodb/adodb-exceptions.inc.php");
+		require_once("adodb/adodb.inc.php");
+
+		if (empty($db)) {
+			require('pdbconfig.inc');
+
+			$db = NewADOConnection($sqldriver);
+			$db->Connect($sqlhost, $sqluser, $sqlpass, $sqldb);
+			$db->Execute("set names 'utf8'");
+			$db->SetFetchMode(ADODB_FETCH_ASSOC);
+		}
+
+		// Get query
+		try {
+			$results = $db->getArray($query);
+		} catch (exception $e) {
+			$results = "DBerror";
+		}
+
+		// return results
+		return $results;
+	}
+
+	public function fetch_solr_uncached() {
 		if ($this->getType() != "json") {
 			throw new Exception("This class only knows how to handle JSON for now");
 		}

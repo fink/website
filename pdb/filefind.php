@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:04:57 $';
+$cvs_date = '$Date: 2014/10/24 16:00:53 $';
 
 ini_set("memory_limit", "48M");
 
@@ -35,7 +35,7 @@ information about all packages found in the respective latest stable and unstabl
 // This function generates a form popup, with the given
 // variable name, current value, and list of possible values.
 function genFormSelect($var_name, $cur_val, $values, $description = '') {
-	echo "<select NAME='$var_name'>\n";
+	echo "<select name='$var_name'>\n";
 	foreach ($values as $key => $val) {
 		echo "  <option value='$key' ";
 		if ($cur_val == $key) echo "selected";
