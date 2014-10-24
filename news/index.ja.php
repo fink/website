@@ -963,7 +963,7 @@ Fink が OS X 10.4 に対応! 更新は以下の通り:
 </li>
 				<li>
 stable ツリーの利用者は、現在の fink を <code>sudo rm -Rf /sw</code> で削除し、
-<a href="<?php print $root; ?>http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
+<a href="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
 fink-0.23.10.tar.gz</a> をダウンロード後、解凍し、"bootstrap"します。
 つまり、 <code>tar -xvzf fink-0.23.10.tar.gz</code> し、
 <code>fink-0.23.10</code> 内で <code>./bootstrap.sh </code> を実行します。
