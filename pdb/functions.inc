@@ -200,7 +200,7 @@ class pdbQuery {
 
 	public function fetch() {
 		global $cache_threshold;
-		require_once('pdbconfig.inc');
+		require('pdbconfig.inc');
 
 		$key    = $this->uniqueId();
 		$result = memcache_get_key($key);
