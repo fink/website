@@ -221,13 +221,13 @@ class pdbQuery {
 	public function fetch_sql_uncached() {
 		$results = array();
 
-		$fields = array();
-		foreach ($this->getFields() as $field) {
-			if ($field == 'doc_id')
-				continue;
+		$sorts = array();
+		foreach ($this->getSort() as $sort)
+			$sorts[] = $sort;
 
+		$fields = array();
+		foreach ($this->getFields() as $field)
 			$fields[] = $field;
-		}
 
 		$query  = "SELECT ";
 		$query .= implode(',', $fields);
@@ -236,7 +236,6 @@ class pdbQuery {
 		// Parse $this->query and convert to sql
 		$where = array();
 		foreach ($this->query as $q) {
-
 			if (preg_match("/^-/", $q))
 				$q = str_replace(":", "!=", $q);
 			else
@@ -246,12 +245,15 @@ class pdbQuery {
 			$q = preg_replace("/=true/", "=1 ", $q);
 			$q = preg_replace("/=false/", "=0 ", $q);
 
+			if (preg_match('text=(.*)', $q, $matches))
+				$q = 'text LIKE "%' . $matches[1] . '%"';
+
 			$where[] = $q;
 		}
 
 		if (!empty($where))
 			$query .= " WHERE " . implode(' AND ', $where);
-		if (!empty($this->getSort()))
+		if (!empty($sorts))
 			$query .= " ORDER BY " . implode(',', $this->getSort());
 		$query .= " LIMIT " . $this->rows;
 
