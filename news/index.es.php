@@ -1402,7 +1402,7 @@ the update.</p>
 
 		<a name="2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
 	       <p>
-The <a href="http://fink.sourceforge.net">Fink</a>, 
+The <a href="<?php print $root; ?>">Fink</a>, 
 <a href="http://www.gentoo.org">Gentoo</a>, 
 and 
 <a href="http://opendarwin.org/projects/darwinports/">DarwinPorts</a> 
@@ -1869,7 +1869,7 @@ software before using Fink.
     </p>
   <a name="2001-03-15%20Libtool%20page%20updated"><span class="news-date">2001-03-15: </span><span class="news-headline">Libtool page updated</span></a><?php gray_line(); ?>
     <p>
-      Updated the <a href="<?php print $root; ?>doc/porting/libtool.php">libtool page</a> with a revised patch that does full shared library versioning. 
+      Updated the <a href="<?php print $root; ?>darwin/libtool.php">libtool page</a> with a revised patch that does full shared library versioning. 
     </p>
   <a name="2001-03-08%20Version%200.1.6%20is%20out"><span class="news-date">2001-03-08: </span><span class="news-headline">Version 0.1.6 is out</span></a><?php gray_line(); ?>
     <p>

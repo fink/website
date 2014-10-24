@@ -721,7 +721,7 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <a href="http://pdb.finkproject.org/pdb/">this backup copy of the
+to <a href="<?php print $root; ?>pdb/">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
         <a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
@@ -1050,7 +1050,7 @@ You may upgrade your existing Fink to the latest Fink using your current install
 
 A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
 
-<a href="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</a>
+<a href="<?php print $root; ?>pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</a>
 </p>
       <p>
 If you have questions or problems, please try the Fink mailing lists.  You can learn more about them
@@ -1205,7 +1205,7 @@ apt-get, dselect or FinkCommander to install binary files as usual.
     faster GNOME 2.4 can be moved to stable.
     </p>
       <p>
-    For those of you who do not read our mailing lists, <a href="http://fink.sourceforge.net/lists/index.php">why aren't you subscribed yet</a>?
+    For those of you who do not read our mailing lists, <a href="<?php print $root; ?>lists/index.php">why aren't you subscribed yet</a>?
     Here is a link to detailed 
     <a href="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">instructions</a> 
     how to install or upgrade GNOME and what new stuff it brings.
@@ -1446,7 +1446,7 @@ adjust itself accordingly.
 </p>
       <p>
 If you wish to do a fresh install of Fink on a 10.3 system, we recommend
-<a href="http://fink.sourceforge.net/download/srcdist.php">bootstrapping from
+<a href="<?php print $root; ?>download/srcdist.php">bootstrapping from
 source,</a> starting from fink-full-0.6.0.tar.gz available
 on fink's <a href="http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
 download page.</a>  You'll need XCode for this as
@@ -1490,7 +1490,7 @@ UPDATE: Yes, I screwed up when I initially installed the DNS records. If you can
 method, <code>fink selfupdate-rsync</code>, as an alternative to the
 CVS updates which have been so problematic in the past few months.
 If you have difficulty updating to the new version, please follow
-<a href="http://fink.sourceforge.net/download/rsync-upgrade.php">these 
+<a href="<?php print $root; ?>download/rsync-upgrade.php">these 
 special update instructions</a>.
 </p>
       <p>In addition, this version of the fink package manager is compatible
@@ -1499,7 +1499,7 @@ package manager and the Developer Tools update,
 fink will ask you to reset your gcc version whenever
 that is necessary.</p>
     <a name="2003-09-02%20Logo%20contest%20ends"><span class="news-date">2003-09-02: </span><span class="news-headline">Logo contest ends</span></a><?php gray_line(); ?>
-      <p>The Logo contest held by Fink, announced <a href="http://fink.sourceforge.net/logo.php">here</a>,
+      <p>The Logo contest held by Fink, announced <a href="<?php print $root; ?>logo.php">here</a>,
 ended yesterday. With over 80 different proposals from countries all over the world we 
 consider the contest a big success.  
 In the next couple of days all the submitted entries will be put on-line in a publicly accessible gallery and more details on the participants shall be published. For those who are 
@@ -1565,7 +1565,7 @@ is ready, if you need Fortran-related programs you should not install
 the update.</p>
     <a name="2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
       <p>
-The <a href="http://fink.sourceforge.net">Fink</a>, 
+The <a href="<?php print $root; ?>">Fink</a>, 
 <a href="http://www.gentoo.org">Gentoo</a>, 
 and 
 <a href="http://opendarwin.org/projects/darwinports/">DarwinPorts</a> 
@@ -1585,7 +1585,7 @@ site,  which  will provide a home for this cooperative effort.
 For the next six weeks everyone is invited to submit their logo creations. 
 Fink needs a new face and with your help we might just get one.  We are curious to see what you imagine Fink to be as a graphical representation.
 The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
- <a href="http://fink.sourceforge.net/logo.php">here</a>. 
+ <a href="<?php print $root; ?>logo.php">here</a>. 
                 </p>
       <p>
 Fink and MacWelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
@@ -1616,12 +1616,12 @@ fink reinstall openssl-shlibs dlcompat-shlibs curl-ssl-shlibs
 to restore files which the Virex upgrade may have deleted.
 </p>
     <a name="2003-04-14%20Fink%200.5.2%20released"><span class="news-date">2003-04-14: </span><span class="news-headline">Fink 0.5.2 released</span></a><?php gray_line(); ?>
-      <p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <a href="http://fink.sourceforge.net/download.php">download</a> page.
+      <p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <a href="<?php print $root; ?>download.php">download</a> page.
         With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
         The full announcement can be read on the <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</a> mailing list.
         </p>
       <p>(If you are having trouble upgrading a source installation, consult
-<a href="http://fink.sourceforge.net/download/fix-upgrade.php">these
+<a href="<?php print $root; ?>download/fix-upgrade.php">these
 special instructions</a>.)</p>
     <a name="2003-04-09%20Interview%20on%20OSNews.com"><span class="news-date">2003-04-09: </span><span class="news-headline">Interview on OSNews.com</span></a><?php gray_line(); ?>
       <p><a href="http://osnews.com/">OSNews.com</a> today is featuring a

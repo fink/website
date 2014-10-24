@@ -802,7 +802,7 @@ The Fink team is working on a workaround for this problem, but until it
 is ready, if you need Fortran-related programs you should not install
 the update.</p>
 <a name="2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
-<p>The <a href="http://fink.sourceforge.net">Fink</a>, 
+<p>The <a href="<?php print $root; ?>">Fink</a>, 
 <a href="http://www.gentoo.org">Gentoo</a>, 
 and 
 <a href="http://opendarwin.org/projects/darwinports/">DarwinPorts</a> 

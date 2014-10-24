@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2014-10-23T15:17:48-06:00</dc:date>
+    <dc:date>2014-10-25T00:50:08+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%20support%3A%20%20fink-0.38.0%20released.">
       <title>Yosemite support:  fink-0.38.0 released.</title>

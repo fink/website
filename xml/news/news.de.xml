@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
- <cvsid>$Id: news.de.xml,v 1.59 2014/10/19 03:19:21 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.de.xml,v 1.60 2014/10/24 23:00:22 gecko2 Exp $</cvsid>
 <newsitem>
  <date>2014-10-18</date>
  <headline>Yosemite support:  fink-0.38.0 released.</headline>
@@ -865,8 +865,8 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <link url="http://pdb.finkproject.org/pdb/">this backup copy of the
-package database</link> which is a few weeks out of date.
+to <varlink url="pdb/">this backup copy of the
+package database</varlink> which is a few weeks out of date.
 </p>
 <!-- start translation -->
 <p><em> Update: 2 June 2007.</em>  Due to changes to the behavior of <filename>sudo</filename> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
@@ -1184,8 +1184,8 @@ as stable users, below.
 For users of the stable tree, we recommend that you delete your current
 fink with <code>sudo rm -Rf /sw</code> and then "bootstrap" an
 installation of fink-0.23.10 using
-<varlink url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
-fink-0.23.10.tar.gz</varlink>--download that file and expand it, 
+<link url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=326600">
+fink-0.23.10.tar.gz</link>--download that file and expand it, 
 eg. via
 <code>tar -xvzf fink-0.23.10.tar.gz</code>.  After running the command
 <code> ./bootstrap.sh </code> in the resulting
@@ -1267,7 +1267,7 @@ Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für So
 Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
 </p>
 <p>
-Um eine neue Fink-Installation zu vollenden, sollten Sie die <link url="http://sourceforge.net/download/index.php?phpLang=de">hier</link> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <link url="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</link> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <link url="http://fink.sourceforge.net/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">hier</link> nachgeschaut werden.
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <link url="http://sourceforge.net/download/index.php?phpLang=de">hier</link> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <link url="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</link> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <varlink url="pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">hier</varlink> nachgeschaut werden.
 </p>
 <p>
 Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <varlink url="lists/index.php?phpLang=de">Hier</varlink> können Sie mehr über sie erfahren.
@@ -1420,7 +1420,7 @@ Dank des neuen Fink GNOME Core Teams, einschließlich vieler harter Arbeit des P
 Es ist dort zum Mitnehmen. Bitte bieten Sie etwas von Ihrer Zeit an und testen Sie diese Pakete, wenn Sie unstable verwenden. Auf Grund der großen Zahl von Änderungen wird erwartet, dass Probleme beim Aktualisieren oder Installieren des neuen GNOMEs auftreten. Wenn Sie Probleme haben, können Sie die GNOME-sicheren Leute unter <link url="mailto:fink-gnome-core@lists.sourceforge.net">fink-gnome-core@lists.sourceforge.net</link> erreichen. Bitte berichten Sie dort auch über Erfolgsgeschichten. Je mehr gute Berichte wir erhalten, desto schneller kann GNOME 2.4 nach stable verschoben werden.
 </p>
 <p>
-Für diese von Ihnen, die nicht unsere Mailing-Listen lesen, <link url="http://fink.sourceforge.net/lists/index.php">warum haben Sie sie noch nicht abonniert</link>?
+Für diese von Ihnen, die nicht unsere Mailing-Listen lesen, <varlink url="lists/index.php">warum haben Sie sie noch nicht abonniert</varlink>?
 Hier ist ein Link zu detailierten
 <link url="http://article.gmane.org/gmane.os.apple.fink.gnome/57/match=gnome">Anleitungen</link>, wie Sie GNOME aktualisieren oder installieren und was es neues bringt.
 </p>
@@ -1672,7 +1672,7 @@ mirroring website</link>.
 Logo <varlink url="logo.php">contest</varlink> held earlier this year.
 This new, official, logo has been displayed since the 24th of October and
 those of you who wondered how it has been picked and what the name of the
-winner is should read up in the PR <link url="pr/index.php">section</link>.
+winner is should read up in the PR <varlink url="pr/index.php">section</varlink>.
 </p>
 <p>
 The longer explanation also features a larger version of the logo itself,
@@ -1707,8 +1707,8 @@ version of OS X and which version of gcc you have installed, and will
 adjust itself accordingly.
 </p><p>
 If you wish to do a fresh install of Fink on a 10.3 system, we recommend
-<link url="http://fink.sourceforge.net/download/srcdist.php">bootstrapping from
-source,</link> starting from fink-full-0.6.0.tar.gz available
+<varlink url="download/srcdist.php">bootstrapping from
+source,</varlink> starting from fink-full-0.6.0.tar.gz available
 on fink&apos;s <link url="http://sourceforge.net/project/showfiles.php?group_id=17203">sourceforge 
 download page.</link> You&apos;ll need XCode for this as
 well.
@@ -1766,8 +1766,8 @@ UPDATE: Yes, I screwed up when I initially installed the DNS records. If you can
 method, <code>fink selfupdate-rsync</code>, as an alternative to the
 CVS updates which have been so problematic in the past few months.
 If you have difficulty updating to the new version, please follow
-<link url="http://fink.sourceforge.net/download/rsync-upgrade.php">these 
-special update instructions</link>.
+<varlink url="download/rsync-upgrade.php">these 
+special update instructions</varlink>.
 </p>
 <p>In addition, this version of the fink package manager is compatible
 with last summer&apos;s Developer Tools updates. After installing both the new
@@ -1781,7 +1781,7 @@ that is necessary.</p>
 <date>2003-09-02</date>
 <headline>Logo contest ends</headline>
 <body>
-<p>The Logo contest held by Fink, announced <link url="http://fink.sourceforge.net/logo.php">here</link>,
+<p>The Logo contest held by Fink, announced <varlink url="logo.php">here</varlink>,
 ended yesterday. With over 80 different proposals from countries all over the world we 
 consider the contest a big success. 
 In the next couple of days all the submitted entries will be put on-line in a publicly accessible gallery and more details on the participants shall be published. For those who are 
@@ -1865,7 +1865,7 @@ the update.</p>
 <headline>Darwin packaging groups to coordinate efforts.</headline>
 <body>
 <p>
-The <link url="http://fink.sourceforge.net">Fink</link>, 
+The <varlink url="">Fink</varlink>, 
 <link url="http://www.gentoo.org">Gentoo</link>, 
 and 
 <link url="http://opendarwin.org/projects/darwinports/">DarwinPorts</link> 
@@ -1892,7 +1892,7 @@ site, which will provide a home for this cooperative effort.
 For the next six weeks everyone is invited to submit their logo creations. 
 Fink needs a new face and with your help we might just get one. We are curious to see what you imagine Fink to be as a graphical representation.
 The initial announcement by Macnews is in German, for those of you not capable of reading German a translated version can be found
-<link url="http://fink.sourceforge.net/logo.php">here</link>. 
+<varlink url="logo.php">here</varlink>. 
 </p>
 <p>
 Fink and MacWelt hope that many of you will participate as we might just find some prices for the winners. Good luck and.... start drawing.
@@ -1943,13 +1943,13 @@ to restore files which the Virex upgrade may have deleted.
 <date>2003-04-14</date>
 <headline>Fink 0.5.2 released</headline>
 <body>
-<p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <link url="http://fink.sourceforge.net/download.php">download</link> page.
+<p>Fink is proud to announce that the Fink binary distribution 0.5.2 is available from the <varlink url="download.php">download</varlink> page.
 With over 190 new binary packages, KDE, KOffice and KDevelop binaries amongst other various improvements this is a recommended download for any new and all existing Fink users.
 The full announcement can be read on the <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-announce">fink-announce</link> mailing list.
 </p>
 <p>(If you are having trouble upgrading a source installation, consult
-<link url="http://fink.sourceforge.net/download/fix-upgrade.php">these
-special instructions</link>.)</p>
+<varlink url="download/fix-upgrade.php">these
+special instructions</varlink>.)</p>
 
 </body>
 </newsitem>
@@ -2101,9 +2101,9 @@ with some caveats. Please read <varlink url="doc/x11/inst-xfree86.php#apple-bina
 <p>
 Thanks to Benjamin Reed, it is now possible to receive RSS 1.0 Feeds that contain a lot of valuable information.
 
-<varlink url="news/fink-stable.rdf">fink-stable.rdf</varlink> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
+<varlink url="news/rdf/fink-stable.rdf">fink-stable.rdf</varlink> will tell you about the changes and additions in the stable tree, reflecting packages which have been added or modified.
 </p>
-<p><varlink url="news/fink-unstable.rdf">fink-unstable.rdf</varlink> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
+<p><varlink url="news/rdf/fink-unstable.rdf">fink-unstable.rdf</varlink> will tell you about changes or additions to the unstable tree and is most likely the most active RSS feed.
 The above Feeds are automatically updated every 60 minutes to make sure that they keep you all on top of the latest development.
 </p>
 <p><varlink url="news/news.rdf">news.rdf</varlink> This feed reflects the contents of the Fink News Page. The Feed is updated as soon as a new item is added on the Website.
@@ -2500,7 +2500,7 @@ binary release will follow soon.
 <headline>OpenOSX.com</headline>
 <body>
 <p>OpenOSX.com refuses to give fair credit after using Fink to create GIMP
-CDs. Read Christoph&apos;s <link url="pr/openosx.php">public statement</link>
+CDs. Read Christoph&apos;s <varlink url="pr/openosx.php">public statement</varlink>
 on the issue.
 </p>
 </body>
@@ -2553,8 +2553,8 @@ and Masanori Sekino for the CoreAudio patch), xmms 1.2.5.
 <date>2001-07-19</date>
 <headline>New document: X11 on Darwin and Mac OS X</headline>
 <body>
-<p>A comprehensive document about <link url="doc/x11/index.php">X11 on
-Darwin and Mac OS X</link> is now available. It was written to be useful
+<p>A comprehensive document about <varlink url="doc/x11/index.php">X11 on
+Darwin and Mac OS X</varlink> is now available. It was written to be useful
 for anyone, not just Fink users.
 </p>
 </body>
@@ -2564,7 +2564,7 @@ for anyone, not just Fink users.
 <date>2001-07-13</date>
 <headline>Package database now online</headline>
 <body>
-<p>A prototype of the <link url="pdb/index.php">package database</link>
+<p>A prototype of the <varlink url="pdb/index.php">package database</varlink>
 is now online.
 </p>
 </body>
@@ -2596,8 +2596,8 @@ updated to include all recently added fields.
 <body>
 <p>A major restructuring of the web site has started. The non-Fink-specific
 documents were removed because I don&apos;t have the time to maintain them. All
-documentation will be consolidated in the new <link url="doc/index.php">
-Documentation section</link>.
+documentation will be consolidated in the new <varlink url="doc/index.php">
+Documentation section</varlink>.
 </p>
 </body>
 </newsitem>

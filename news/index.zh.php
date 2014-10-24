@@ -593,7 +593,7 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <a href="http://pdb.finkproject.org/pdb/">this backup copy of the
+to <a href="<?php print $root; ?>pdb/">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
 		<a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
@@ -1422,7 +1422,7 @@ the update.</p>
 
                 <a name="2003-06-20%20Darwin%20packaging%20groups%20to%20coordinate%20efforts."><span class="news-date">2003-06-20: </span><span class="news-headline">Darwin packaging groups to coordinate efforts.</span></a><?php gray_line(); ?>
                <p>
-The <a href="http://fink.sourceforge.net">Fink</a>, 
+The <a href="<?php print $root; ?>">Fink</a>, 
 <a href="http://www.gentoo.org">Gentoo</a>, 
 and 
 <a href="http://opendarwin.org/projects/darwinports/">DarwinPorts</a> 
