@@ -272,7 +272,7 @@ class pdbQuery {
 		try {
 			$results = $db->getArray($query);
 		} catch (exception $e) {
-			$results = "DBerror";
+			$results = "DBerror: $e";
 		}
 
 		// return results
