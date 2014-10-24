@@ -261,6 +261,8 @@ class pdbQuery {
 
 		if (!empty($where))
 			$query .= " WHERE " . implode(' AND ', $where);
+		if ($this->getUnique())
+			$query .= " GROUP BY name";
 		if (!empty($sorts))
 			$query .= " ORDER BY " . implode(',', $this->getSort());
 		$query .= " LIMIT " . $this->rows;
