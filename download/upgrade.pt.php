@@ -1,7 +1,7 @@
 <?php
 $title = "Matriz de atualização";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:32:38 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:50 $';
 
 include "header.inc";
 ?>
@@ -20,7 +20,7 @@ baixe o novo instalador!</p>
 --version</code>" em uma janela de terminal.</p>
 
 <p>Você pode compará-la às últimas versões disponíveis para o seu OS no <a
-href="../../pdb/package.php/fink">banco de dados de pacotes</a>.</p>
+href="http://pdb.finkproject.org/pdb/package.php/fink">banco de dados de pacotes</a>.</p>
 
 <h2>Atualização do binário</h2>
 
@@ -99,9 +99,6 @@ em que este texto foi escrito) é:</p>
   na sua nova versão do OS. Você talvez tenha que repetir este comando para que
   sejam compilados todos os novos pacotes.</p></li>
 </ol>
-
-<p>Observação: uma versão antiga deste documento, adequada a versões do Fink
-mais antigas, pode ser encontrada <a href=upgrade-old.en.php>aqui</a>.</p>
 
 <?php
 include "footer.inc";

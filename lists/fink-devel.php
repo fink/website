@@ -1,7 +1,7 @@
 <?php
 $title = "Mailing Lists - fink-devel";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:15:12 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:51 $';
 
 include "header.inc";
 ?>
@@ -25,7 +25,7 @@ If you just want to request that someone port a package to Fink, or if
 you have written a package description that you would like to be
 reviewed for possible inclusion in Fink, please use the Sourceforge
 trackers listed in the &quot;Resources&quot; section of the <a
-href="../../index.php">Fink homepage</a>.
+href="../index.php">Fink homepage</a>.
 </p>
 <p>
 Please don't use HTML or rich text mails.

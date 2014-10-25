@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="zh">
- <cvsid>$Id: news.zh.xml,v 1.55 2014/10/24 23:00:22 gecko2 Exp $</cvsid>
+ <cvsid>$Id: news.zh.xml,v 1.56 2014/10/25 08:18:51 gecko2 Exp $</cvsid>
 <newsitem>
  <date>2014-10-18</date>
  <headline>Yosemite support:  fink-0.38.0 released.</headline>
@@ -873,8 +873,8 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <varlink url="pdb/">this backup copy of the
-package database</varlink> which is a few weeks out of date.
+to <link url="http://pdb.finkproject.org/pdb/">this backup copy of the
+package database</link> which is a few weeks out of date.
 </p>
 		</body>
 	</newsitem>
@@ -1201,9 +1201,9 @@ Fink 可以在 OS X 10.4 中使用！ 你可以有几种升级的方法：
 在最近的几周内，将会有一个安装包发布，提供给那些只使用二进制安装包的用户。
 </li><li>
 对于那些使用稳定代码树的用户，我们推荐使用 <code>sudo rm -Rf /sw</code> 命令先删除当前的 fink,
-然后使用 <varlink 
+然后使用 <link 
 url="http://sourceforge.net/project/showfiles.php?group_id=17203&amp;package_id=13043&amp;release_id=323774">
-fink-0.23.9.tar.gz</varlink> fink-0.23.9 版本的源代码用 bootstrap 的方式安装。你首先需要从
+fink-0.23.9.tar.gz</link> fink-0.23.9 版本的源代码用 bootstrap 的方式安装。你首先需要从
 上面链接下载源代码文件，然后用
 <code>tar -xvzf fink-0.23.9.tar.gz</code> 命令解包。在解压后生成的 
 <filename>fink-0.23.9</filename> 文件夹中运行
@@ -1283,7 +1283,7 @@ Fink 现在会对存在这个问题的用户提出告警信息，Fink 也将会�
 你可以在你当前的版本的基础上直接升级到最新的版本。
 
 关于 0.7.0 和 0.7.1 的区别的完整清单可以在
-<varlink url="pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">这个页面</varlink>查看得到。
+<link url="http://pdb.finkproject.org/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">这个页面</link>查看得到。
 </p>
 
 <p>
@@ -2646,7 +2646,7 @@ software before using Fink.
   <date>2001-07-13</date>
   <headline>Package database now online</headline>
   <body>
-    <p>A prototype of the <varlink url="pdb/index.php">package database</varlink>
+    <p>A prototype of the <link url="http://pdb.finkproject.org/pdb/index.php">package database</link>
     is now online.
     </p>
   </body>
@@ -2699,7 +2699,7 @@ software before using Fink.
   <date>2001-05-19</date>
   <headline>CVS instructions updated</headline>
   <body>
-    <p>The <varlink url="fink/cvs.php">CVS instructions</varlink> have
+    <p>The <varlink url="doc/cvsaccess/index.php">CVS instructions</varlink> have
     been updated for Fink 0.2.x.
     </p>
   </body>
@@ -2750,7 +2750,7 @@ software before using Fink.
   <headline>Porting notes updated</headline>
   <body>
     <p>
-      The <varlink url="darwin/porting.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
+      The <varlink url="doc/porting/index.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
     </p>
   </body>
 </newsitem>
@@ -2780,7 +2780,7 @@ software before using Fink.
   <headline>Libtool page updated</headline>
   <body>
     <p>
-      Updated the <varlink url="darwin/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
+      Updated the <varlink url="doc/porting/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
     </p>
   </body>
 </newsitem>

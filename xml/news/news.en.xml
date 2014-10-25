@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.203 2014/10/24 23:00:22 gecko2 Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.204 2014/10/25 08:18:51 gecko2 Exp $</cvsid>
 <newsitem>
  <date>2014-10-18</date>
  <headline>Yosemite support:  fink-0.38.0 released.</headline>
@@ -1071,8 +1071,8 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <varlink url="pdb/">this backup copy of the
-package database</varlink> which is a few weeks out of date.
+to <link url="http://pdb.finkproject.org/pdb/">this backup copy of the
+package database</link> which is a few weeks out of date.
 </p>
         </body>
     </newsitem>
@@ -1479,7 +1479,7 @@ You may upgrade your existing Fink to the latest Fink using your current install
 
 A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
 
-<varlink url="pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</varlink>
+<link url="http://pdb.finkproject.org/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</link>
 </p>
       <p>
 If you have questions or problems, please try the Fink mailing lists.  You can learn more about them
@@ -2794,7 +2794,7 @@ software before using Fink.
     <date>2001-07-13</date>
     <headline>Package database now online</headline>
     <body>
-      <p>A prototype of the <varlink url="pdb/index.php">package database</varlink>
+      <p>A prototype of the <link url="http://pdb.finkproject.org/pdb/index.php">package database</link>
     is now online.
     </p>
     </body>
@@ -2841,7 +2841,7 @@ software before using Fink.
     <date>2001-05-19</date>
     <headline>CVS instructions updated</headline>
     <body>
-      <p>The <varlink url="fink/cvs.php">CVS instructions</varlink> have
+      <p>The <varlink url="doc/cvsaccess/index.php">CVS instructions</varlink> have
     been updated for Fink 0.2.x.
     </p>
     </body>
@@ -2887,7 +2887,7 @@ software before using Fink.
     <headline>Porting notes updated</headline>
     <body>
       <p>
-      The <varlink url="darwin/porting.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
+      The <varlink url="doc/porting/index.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
     </p>
     </body>
   </newsitem>
@@ -2914,7 +2914,7 @@ software before using Fink.
     <headline>Libtool page updated</headline>
     <body>
       <p>
-      Updated the <varlink url="darwin/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
+      Updated the <varlink url="doc/porting/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
     </p>
     </body>
   </newsitem>

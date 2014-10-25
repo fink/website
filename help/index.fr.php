@@ -1,7 +1,7 @@
 <?php
 $title = "Aide";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:12:46 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:51 $';
 
 include "header.inc";
 ?>
@@ -87,7 +87,7 @@ Si vous avez quelque expérience à partager, abonnez-vous à la liste de diffus
 <p>
 <b>Test des paquets.</b>
 Téléchargez les descriptions de paquets les plus récentes à partir de <a href="../doc/cvsaccess/index.php">CVS</a>, configurez Fink pour <a
-href="../faq/usage-fink.php#unstable">l'utilisation de la branche instable</a> et testez les paquets. La base de données des paquets donne la liste des <a href="../pdb/testing.php">paquets qui doivent être testés</a> sur une page à part. Vous pouvez envoyer des rapports de réussite ou d'échec au mainteneur du paquet ou à la liste de diffusion de votre choix.
+href="../faq/usage-fink.php#unstable">l'utilisation de la branche instable</a> et testez les paquets. La base de données des paquets donne la liste des <a href="http://pdb.finkproject.org/pdb/testing.php">paquets qui doivent être testés</a> sur une page à part. Vous pouvez envoyer des rapports de réussite ou d'échec au mainteneur du paquet ou à la liste de diffusion de votre choix.
 </p>
 
 <p>

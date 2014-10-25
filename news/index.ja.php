@@ -1,7 +1,7 @@
 <?php
 $title = "News";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2014/10/21 02:22:31';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2014/10/24 23:00:22';
 $metatags = '';
 
 include_once "header.inc";
@@ -725,7 +725,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 米国にいる場合、残念ながら他には選択肢がないかもしれません。
 </p><p>
 最後に、パッケージデータベースを使うには、
-<a href="<?php print $root; ?>pdb/">データベースのバックアップ</a>
+<a href="http://pdb.finkproject.org/pdb/">データベースのバックアップ</a>
 を使いください。
 ただし、これは数週間遅れたデータになります。
 </p>
@@ -996,7 +996,7 @@ XCode 1.5 の利用者はこのアップデータをインストールしてく�
 		<a name="2004-09-20%20Fink%200.7.1%20%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9"><span class="news-date">2004-09-20: </span><span class="news-headline">Fink 0.7.1 リリース</span></a><?php gray_line(); ?>
 			<p>最新版の Fink、バージョン0.7.1 (10.3用) がソースとバイナリユーザーを対象にリリースされました。このリリースは Panther (10.3) 系の Mac OS X 用です。 Jaguar (10.2) 系の Mac OS X バージョンには、今まで通り0.6.3 リリースをお使いください。</p>
 			<p>パッケージマネージャの修正と、多くのバイナリパッケージの追加によって1650のバイナリパッケージ化がこのリリースの内容です。KDE 3.1.4 と GNOME 2.4 のバイナリを含んでいます。</p>
-			<p>Fink を完全にインストールするには、<a href="<?php print $root; ?>download/index.php">ここ</a>に投稿された方法で行う必要があります。現在の Fink を最新の Fink にアップグレードすることもできます。0.7.0と0.7.1の変更一覧は<a href="<?php print $root; ?>pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">このページ</a>にあります。
+			<p>Fink を完全にインストールするには、<a href="<?php print $root; ?>download/index.php">ここ</a>に投稿された方法で行う必要があります。現在の Fink を最新の Fink にアップグレードすることもできます。0.7.0と0.7.1の変更一覧は<a href="http://pdb.finkproject.org/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">このページ</a>にあります。
 </p>
 			<p>疑問や問題がある場合、 Fink メーリングリストをご利用ください。リストについては<a href="<?php print $root; ?>lists/index.php">ここ</a>を参照してください。</p>
 			<p>自分のプラットフォーム用のインストーラを使用してください。
@@ -1924,7 +1924,7 @@ software before using Fink.
     for anyone, not just Fink users.
     </p>
 		<a name="2001-07-13%20Package%20database%20now%20online"><span class="news-date">2001-07-13: </span><span class="news-headline">Package database now online</span></a><?php gray_line(); ?>
-			<p>A prototype of the <a href="<?php print $root; ?>pdb/index.php">package database</a>
+			<p>A prototype of the <a href="http://pdb.finkproject.org/pdb/index.php">package database</a>
     is now online.
     </p>
 		<a name="2001-07-09%20Version%200.2.3%20is%20released"><span class="news-date">2001-07-09: </span><span class="news-headline">Version 0.2.3 is released</span></a><?php gray_line(); ?>
@@ -1946,7 +1946,7 @@ software before using Fink.
     about X11 in the INSTALL file.
     </p>
 		<a name="2001-05-19%20CVS%20instructions%20updated"><span class="news-date">2001-05-19: </span><span class="news-headline">CVS instructions updated</span></a><?php gray_line(); ?>
-			<p>The <a href="<?php print $root; ?>fink/cvs.php">CVS instructions</a> have
+			<p>The <a href="<?php print $root; ?>doc/cvsaccess/index.php">CVS instructions</a> have
     been updated for Fink 0.2.x.
     </p>
 		<a name="2001-04-26%20FAQ%20online"><span class="news-date">2001-04-26: </span><span class="news-headline">FAQ online</span></a><?php gray_line(); ?>
@@ -1967,7 +1967,7 @@ software before using Fink.
     </p>
 		<a name="2001-03-30%20Porting%20notes%20updated"><span class="news-date">2001-03-30: </span><span class="news-headline">Porting notes updated</span></a><?php gray_line(); ?>
 			<p>
-      The <a href="<?php print $root; ?>darwin/porting.php">porting notes</a> have been updated with information on Mac OS X Final. 
+      The <a href="<?php print $root; ?>doc/porting/index.php">porting notes</a> have been updated with information on Mac OS X Final. 
     </p>
 		<a name="2001-03-30%20Version%200.1.7%20is%20out!"><span class="news-date">2001-03-30: </span><span class="news-headline">Version 0.1.7 is out!</span></a><?php gray_line(); ?>
 			<p>
@@ -1979,7 +1979,7 @@ software before using Fink.
     </p>
 		<a name="2001-03-15%20Libtool%20page%20updated"><span class="news-date">2001-03-15: </span><span class="news-headline">Libtool page updated</span></a><?php gray_line(); ?>
 			<p>
-      Updated the <a href="<?php print $root; ?>darwin/libtool.php">libtool page</a> with a revised patch that does full shared library versioning. 
+      Updated the <a href="<?php print $root; ?>doc/porting/libtool.php">libtool page</a> with a revised patch that does full shared library versioning. 
     </p>
 		<a name="2001-03-08%20Version%200.1.6%20is%20out"><span class="news-date">2001-03-08: </span><span class="news-headline">Version 0.1.6 is out</span></a><?php gray_line(); ?>
 			<p>

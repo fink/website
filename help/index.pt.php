@@ -1,7 +1,7 @@
 <?php
 $title = "Ajuda";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:12:46 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:51 $';
 
 include "header.inc";
 ?>
@@ -94,7 +94,7 @@ ajude a resolver os problemas lá enviados por outros usuários.</p>
 href="../doc/cvsaccess/index.php">CVS</a>, configure o Fink para <a
 href="../faq/usage-fink.php#unstable">usar a árvore unstable</a> e teste os
 pacotes. O banco de dados de pacotes lista os <a
-href="../pdb/testing.php">pacotes que precisam de teste</a> em uma página
+href="http://pdb.finkproject.org/pdb/testing.php">pacotes que precisam de teste</a> em uma página
 separada. Você pode enviar relatos de sucesso ou falha ao mantenedor do pacote
 ou à lista de discussão de sua preferência.</p>
 

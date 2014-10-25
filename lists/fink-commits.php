@@ -1,7 +1,7 @@
 <?php
 $title = "Mailing Lists - fink-commits";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:15:12 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:51 $';
 
 include "header.inc";
 ?>
@@ -41,7 +41,7 @@ You can filter the Subject lines that begin with the following strings:
 <td>Packages in the given <i>dist</i> that have been moved from unstable to stable.</td></tr>
 
 <tr><td><tt>web</tt></td><td></td>
-<td>Changes to the <a href="../..">Fink website</a></td></tr>
+<td>Changes to the <a href="/">Fink website</a></td></tr>
 
 </table>
 

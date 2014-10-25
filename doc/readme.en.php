@@ -1,14 +1,14 @@
 <?php
 $title = "ReadMe";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2014/10/19 03:24:37';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink ReadMe</h1>
-<!--Generated from $Fink: readme.en.xml,v 1.5 2012/11/11 15:20:14 gecko2 Exp $-->
+<!--Generated from $Fink: readme.en.xml,v 1.12 2014/10/19 03:24:37 alexkhansen Exp $-->
 <p>
 This is Fink, a package management system that aims to bring the full
 world of Open Source software to Darwin and Mac OS X.
@@ -41,18 +41,24 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.0 or later.
-(There may still be some stray linker-related problems with 10.1.)
-Darwin 1.3.1 should also work, but this has not been tested.
-Earlier versions of both will <b>not</b> work.
+An installed Mac OS X system, version 10.7 or later.
 </p></li>
 <li><p>
-Development tools.
-On Mac OS X, install the Developer.pkg package from the Developer
-Tools CD.
-Make sure that the tools you install match your Mac OS X version.
-On Darwin, the tools should be present in the default install.
+The Xcode Command Line Tools are mandatory. This package can be installed either by 
+downloading it directly via developer.apple.com, through the Xcode application, on
+via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
+or on 10.9 and 10.10 by running the</p>
+<pre>xcode-select --install</pre>
+<p>command and choosing the   
+<b>Install</b> button in the window that pops up, or you can install the full
+Xcode if you prefer.  You may also need to use this command to update the tools,
+especially if you're having build problems.</p>
+<p>If you're doing a manual download, make sure that the tools you install match your
+ Mac OS X version as well as your Xcode app version (if that is present).
 </p></li>
+<li><p>Java.  Entering</p>
+<pre>javac</pre>
+<p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
 <li><p>
 Internet access.
 All source code is downloaded from mirror sites.
@@ -98,9 +104,11 @@ The project's website is at
 </p>
 <p>
 To be informed of new releases, go to
-<a href="/lists/fink-announce.php">http://www.finkproject.orgt/lists/fink-announce.php</a>
+<a href="/lists/fink-announce.php">http://finkproject.org/lists/fink-announce.php</a>
 and subscribe to the fink-announce mailing list.
 The list is moderated and low-traffic.
 </p>
 
 <?php include_once "../footer.inc"; ?>
+
+

@@ -1,7 +1,7 @@
 <?php
 $title = "Help";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:12:46 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:51 $';
 
 include "header.inc";
 ?>
@@ -128,7 +128,7 @@ Grab the latest package descriptions from <a
 href="../doc/cvsaccess/index.php">CVS</a>, configure Fink to <a
 href="../faq/usage-fink.php#unstable">use unstable</a> and test the
 packages.
-The package database lists <a href="../pdb/testing.php">packages that
+The package database lists <a href="http://pdb.finkproject.org/pdb/testing.php">packages that
 need testing</a> on a separate page.
 You can send success and failure reports to the package maintainer or
 a mailing list of your choice.

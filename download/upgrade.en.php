@@ -1,7 +1,7 @@
 <?php
 $title = "Upgrade Matrix";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:32:38 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:50 $';
 
 include "header.inc";
 ?>
@@ -17,7 +17,7 @@ corresponding Mac OSX version, i.e. <strong>do not</strong> download the new ins
 Check the version of Fink you have by running
 "<code>fink --version</code>" in a Terminal window.
 </p>
-<p>You can compare this to the latest available versions for your OS at <a href="../../pdb/package.php/fink">the package database</a>.</p>
+<p>You can compare this to the latest available versions for your OS at <a href="http://pdb.finkproject.org/pdb/package.php/fink">the package database</a>.</p>
 <h2>Binary Update</h2>
 <p>Update through <tt>dselect</tt>: Choose "[U]pdate",
   then "[I]nstall", or by running "<tt>sudo apt-get update ; sudo apt-get dist-upgrade</tt>".</p>
@@ -50,8 +50,6 @@ Check the version of Fink you have by running
 (The above two commands get rid of binary-distribution related errors.)</li>
 <li>Run "<tt>fink selfupdate</tt>" in the terminal (Source->selfupdate).</li>
 <li>Run "<tt>fink update-all</tt>" in the terminal window (Source->update-all).  <p>This is necessary to ensure that all of your packages will actually run on your new OS version.  You may need to repeat this command to get all of the new packages built.</p></li></ol>
-
-<p>Note:  A prior version of this document (appropriate for older Fink versions) can be found <a href=upgrade-old.en.php>here</a>.</p>
 
 <?php
 include "footer.inc";

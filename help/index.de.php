@@ -1,7 +1,7 @@
 <?php
 $title = "Hilfe";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:12:46 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:51 $';
 
 include "header.inc";
 ?>
@@ -59,7 +59,7 @@ Unix-Forum</a> -
 <p>Sie können auch <a href="http://www.apple.com/macosx/feedback/">Apple</a> davon berichten, dass Sie den Pfad, den Apple mit dem BSD-Unterbau von Mac OS X eingeschlagen hat, schätzen und die weitere Verbesserung der BSD-Schicht wünschen.</p>
 <p><b>Support.</b> Wenn Sie Erfahrung zu teilen haben, beteiligen Sie sich in der <a
 href="../lists/fink-users.php">fink-users</a>-Mailingliste und helfen Sie Probleme von anderen Nutzer zu lösen.</p>
-<p><b>Testen Sie Pakete.</b> Nehmen Sie aktuellsten Paketbeschreibungen vom <a href="../doc/cvsaccess/index.php">CVS</a>, setzen Sie Fink auf <a href="../faq/usage-fink.php#unstable">unstable</a> und testen Sie Pakete. Die Paketdatenbank führt die <a href="../pdb/testing.php">Pakete, die noch getestet werden müssen,</a> auf einer gesonderten Seite auf. Sie können Erfolgsgeschichten und Fehlerberichte zu den Paket-Maintainern oder zu einer Mailingliste Ihrer Wahl schicken.</p>
+<p><b>Testen Sie Pakete.</b> Nehmen Sie aktuellsten Paketbeschreibungen vom <a href="../doc/cvsaccess/index.php">CVS</a>, setzen Sie Fink auf <a href="../faq/usage-fink.php#unstable">unstable</a> und testen Sie Pakete. Die Paketdatenbank führt die <a href="http://pdb.finkproject.org/pdb/testing.php">Pakete, die noch getestet werden müssen,</a> auf einer gesonderten Seite auf. Sie können Erfolgsgeschichten und Fehlerberichte zu den Paket-Maintainern oder zu einer Mailingliste Ihrer Wahl schicken.</p>
 <p><b>Dokumentation.</b> Dem Projekt fehlen immer Helfer, die bereit sind, Dokumentationen zu schreiben oder zu übersetzen. 
 </p>
 <p><b>Erstellen Sie Pakete.</b> Wenn Sie ein wenig Erfahrung mit der Installation von im Quelltext vorliegende Unix-Software haben, könnten Sie bei der Erstellung neuer Pakete helfen. Um anzufangen, lesen Sie das <a href="../doc/quick-start-pkg/index.php">Packaging-Tutorial</a>. Dann nehmen Sie sich die <a href="../doc/packaging/index.php">Packaging-Anleitung</a>, lesen Sie sie sorgfältig und gründlich durch, tragen Sie sich in <a href="../lists/fink-devel.php">fink-devel</a> ein und melden Sie Ihre Pakete dem <a href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Paket-Einsendungs-Tracker</a>. Beachten Sie, dass Ihr Beitrag wahrscheinlich abgelehnt oder mit niedriger Priorität behandelt wird, wenn er nicht mit der Packaging-Policy konform ist.</p>

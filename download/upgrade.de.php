@@ -1,7 +1,7 @@
 <?php
 $title = "Aktualisierungsmatrix";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:32:38 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:50 $';
 
 include "header.inc";
 ?>
@@ -20,7 +20,7 @@ include "header.inc";
 </p>
 <p>
   Sie können diese Version mit der neuesten für ihr Betriebsystem in der
-  <a href="../../pdb/package.php/fink">Paket-Datenbank</a> vergleichen.
+  <a href="http://pdb.finkproject.org/pdb/package.php/fink">Paket-Datenbank</a> vergleichen.
 </p>
 <h2>Binäre Aktualisierungen</h2>
 <p>
@@ -131,11 +131,6 @@ include "header.inc";
     </p>
   </li>
 </ol>
-
-<p>
-  Anmerkung: Eine Vorgängerversion diese Dokuments für ältere Versionen
-  von Fink gibt es <a href=upgrade-old.en.php>hier</a>.
-</p>
 
 <?php
 include "footer.inc";

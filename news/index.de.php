@@ -1,7 +1,7 @@
 <?php
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/10/19 03:19:21';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2014/10/24 23:00:22';
 $metatags = '';
 
 include_once "header.inc";
@@ -593,7 +593,7 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <a href="<?php print $root; ?>pdb/">this backup copy of the
+to <a href="http://pdb.finkproject.org/pdb/">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
 
@@ -911,7 +911,7 @@ Die neueste Fink-Veröffentlichung, Version 0.7.1 (für 10.3), ist jetzt für So
 Diese neuen Veröffentlichungen umfassen diverse Verbesserungen beim Paketmanager, viele vorher nicht verfügbare binäre Pakete wurden hinzugefügt, wodurch nun im gesamten 1650 binäre Pakete bereit stehen. Dies beinhaltet auch binäre Pakete für KDE 3.1.4 und GNOME 2.4.
 </p>
 <p>
-Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="http://sourceforge.net/download/index.php?phpLang=de">hier</a> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</a> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <a href="<?php print $root; ?>pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">hier</a> nachgeschaut werden.
+Um eine neue Fink-Installation zu vollenden, sollten Sie die <a href="http://sourceforge.net/download/index.php?phpLang=de">hier</a> zur Verfügung gestellten Anweisungen befolgen. Sie können Ihre existierende Fink-Installation aktualisieren, indem Sie den <a href="http://sourceforge.net/download/upgrade.php?phpLang=de">hier</a> verfügbaren Anweisungen folgen. Eine komplette Liste der Änderungen von 0.7.0 auf 0.7.1 kann <a href="http://pdb.finkproject.org/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">hier</a> nachgeschaut werden.
 </p>
 <p>
 Wenn Sie Fragen oder Probleme haben, wenden Sie sich an die Fink-Mailing-Listen. <a href="<?php print $root; ?>lists/index.php?phpLang=de">Hier</a> können Sie mehr über sie erfahren.
@@ -1780,7 +1780,7 @@ Darwin and Mac OS X</a> is now available. It was written to be useful
 for anyone, not just Fink users.
 </p>
 <a name="2001-07-13%20Package%20database%20now%20online"><span class="news-date">2001-07-13: </span><span class="news-headline">Package database now online</span></a><?php gray_line(); ?>
-<p>A prototype of the <a href="<?php print $root; ?>pdb/index.php">package database</a>
+<p>A prototype of the <a href="http://pdb.finkproject.org/pdb/index.php">package database</a>
 is now online.
 </p>
 <a name="2001-07-09%20Version%200.2.3%20is%20released"><span class="news-date">2001-07-09: </span><span class="news-headline">Version 0.2.3 is released</span></a><?php gray_line(); ?>
@@ -1802,7 +1802,7 @@ Documentation section</a>.
 about X11 in the INSTALL file.
 </p>
 <a name="2001-05-19%20CVS%20instructions%20updated"><span class="news-date">2001-05-19: </span><span class="news-headline">CVS instructions updated</span></a><?php gray_line(); ?>
-<p>The <a href="<?php print $root; ?>fink/cvs.php">CVS instructions</a> have
+<p>The <a href="<?php print $root; ?>doc/cvsaccess/index.php">CVS instructions</a> have
 been updated for Fink 0.2.x.
 </p>
 <a name="2001-04-26%20FAQ%20online"><span class="news-date">2001-04-26: </span><span class="news-headline">FAQ online</span></a><?php gray_line(); ?>
@@ -1823,7 +1823,7 @@ Get it from the <a href="<?php print $root; ?>download.php">download page</a>.
 </p>
 <a name="2001-03-30%20Porting%20notes%20updated"><span class="news-date">2001-03-30: </span><span class="news-headline">Porting notes updated</span></a><?php gray_line(); ?>
 <p>
-The <a href="<?php print $root; ?>darwin/porting.php">porting notes</a> have been updated with information on Mac OS X Final. 
+The <a href="<?php print $root; ?>doc/porting/index.php">porting notes</a> have been updated with information on Mac OS X Final. 
 </p>
 <a name="2001-03-30%20Version%200.1.7%20is%20out!"><span class="news-date">2001-03-30: </span><span class="news-headline">Version 0.1.7 is out!</span></a><?php gray_line(); ?>
 <p>
@@ -1835,7 +1835,7 @@ Expect Fink packages to be adapted to the final release within the next one or t
 </p>
 <a name="2001-03-15%20Libtool%20page%20updated"><span class="news-date">2001-03-15: </span><span class="news-headline">Libtool page updated</span></a><?php gray_line(); ?>
 <p>
-Updated the <a href="<?php print $root; ?>darwin/libtool.php">libtool page</a> with a revised patch that does full shared library versioning. 
+Updated the <a href="<?php print $root; ?>doc/porting/libtool.php">libtool page</a> with a revised patch that does full shared library versioning. 
 </p>
 <a name="2001-03-08%20Version%200.1.6%20is%20out"><span class="news-date">2001-03-08: </span><span class="news-headline">Version 0.1.6 is out</span></a><?php gray_line(); ?>
 <p>

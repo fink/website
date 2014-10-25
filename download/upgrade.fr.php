@@ -1,7 +1,7 @@
 <?php
 $title = "Tableau de mises à jour";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:32:38 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:50 $';
 
 include "header.inc";
 ?>
@@ -11,7 +11,7 @@ include "header.inc";
 <h3>Invariance de la version du système Mac OS X</h3>
 <p>Toutes les versions en cours de Fink peuvent être mises à jour vers la plus récente correspondant à la version de Mac OS X, c'est-à-dire qu'il <strong>ne faut pas</strong> utiliser le nouvel installeur.</p>
 <p>Si vous ignorez la version de Fink en votre possession, exécutez "<code>fink --version</code>" dans une fenêtre du Terminal.</p>
-<p>Vous pouvez la comparer à la version la plus récente disponible pour votre OS dans la <a href="../../pdb/package.php/fink">base de données des paquets</a>.</p>
+<p>Vous pouvez la comparer à la version la plus récente disponible pour votre OS dans la <a href="http://pdb.finkproject.org/pdb/package.php/fink">base de données des paquets</a>.</p>
 <h2>Mise à jour binaire</h2>
 <p>Mettez à jour via<tt>dselect</tt> : choisissez "[U]pdate (mise à jour)" puis "[I]nstall (installation)", ou bien exécutez "<tt>sudo apt-get update ; sudo apt-get dist-upgrade</tt>".</p>
 <p>Ou bien dans <em>FinkCommander</em>, choisissez "Update (mise à jour)" suivi de "Dist-Upgrade (mise à jour de la distribution)" dans le menu <tt>Binary (binaire)</tt>.</p>
@@ -42,7 +42,6 @@ include "header.inc";
 <li>Exécutez "<tt>fink selfupdate</tt>" dans une fenêtre de Terminal, ou bien Source->selfupdate pour les utilisateurs de Fink Commander.</li>
 <li>Exécutez "<tt>fink update-all</tt>" dans une fenêtre de Terminal, ou bien Source->update-all pour les utilisateurs de Fink Commander.
 <p>Ceci est nécessaire pour s'assurer que tous les paquets tourneront effectivement sur la version de votre système Mac OS X. Il se peut que vous deviez relancer cette commande pour arriver à ce que tous les nouveaux paquets soient construits.</p></li></ol>
-<p>Note : il existe <a href=./upgrade-old.fr.php>ici</a> une version antérieure de ce document. Elle n'est valable que pour les anciennes versions de Fink.</p>
 
 <?php
 include "footer.inc";

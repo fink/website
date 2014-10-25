@@ -73,3 +73,5 @@ include_once "header.inc";
   baixo tráfego.</p>
 
 <?php include_once "../footer.inc"; ?>
+
+

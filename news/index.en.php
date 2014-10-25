@@ -1,7 +1,7 @@
 <?php
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/10/19 03:19:21';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2014/10/24 23:00:22';
 $metatags = '';
 
 include_once "header.inc";
@@ -721,7 +721,7 @@ rsync://master.us.finkmirrors.net/finkinfo/.  Unfortunately, other choices
 might not be available to you if you are in the U.S.
 </p><p>
 Finally, to use the package database during the outage, you can connect
-to <a href="<?php print $root; ?>pdb/">this backup copy of the
+to <a href="http://pdb.finkproject.org/pdb/">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
         <a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
@@ -1050,7 +1050,7 @@ You may upgrade your existing Fink to the latest Fink using your current install
 
 A full list of the differences between 0.7.0 and 0.7.1 can be viewed by visiting this
 
-<a href="<?php print $root; ?>pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</a>
+<a href="http://pdb.finkproject.org/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</a>
 </p>
       <p>
 If you have questions or problems, please try the Fink mailing lists.  You can learn more about them
@@ -1986,7 +1986,7 @@ software before using Fink.
     for anyone, not just Fink users.
     </p>
     <a name="2001-07-13%20Package%20database%20now%20online"><span class="news-date">2001-07-13: </span><span class="news-headline">Package database now online</span></a><?php gray_line(); ?>
-      <p>A prototype of the <a href="<?php print $root; ?>pdb/index.php">package database</a>
+      <p>A prototype of the <a href="http://pdb.finkproject.org/pdb/index.php">package database</a>
     is now online.
     </p>
     <a name="2001-07-09%20Version%200.2.3%20is%20released"><span class="news-date">2001-07-09: </span><span class="news-headline">Version 0.2.3 is released</span></a><?php gray_line(); ?>
@@ -2008,7 +2008,7 @@ software before using Fink.
     about X11 in the INSTALL file.
     </p>
     <a name="2001-05-19%20CVS%20instructions%20updated"><span class="news-date">2001-05-19: </span><span class="news-headline">CVS instructions updated</span></a><?php gray_line(); ?>
-      <p>The <a href="<?php print $root; ?>fink/cvs.php">CVS instructions</a> have
+      <p>The <a href="<?php print $root; ?>doc/cvsaccess/index.php">CVS instructions</a> have
     been updated for Fink 0.2.x.
     </p>
     <a name="2001-04-26%20FAQ%20online"><span class="news-date">2001-04-26: </span><span class="news-headline">FAQ online</span></a><?php gray_line(); ?>
@@ -2029,7 +2029,7 @@ software before using Fink.
     </p>
     <a name="2001-03-30%20Porting%20notes%20updated"><span class="news-date">2001-03-30: </span><span class="news-headline">Porting notes updated</span></a><?php gray_line(); ?>
       <p>
-      The <a href="<?php print $root; ?>darwin/porting.php">porting notes</a> have been updated with information on Mac OS X Final. 
+      The <a href="<?php print $root; ?>doc/porting/index.php">porting notes</a> have been updated with information on Mac OS X Final. 
     </p>
     <a name="2001-03-30%20Version%200.1.7%20is%20out!"><span class="news-date">2001-03-30: </span><span class="news-headline">Version 0.1.7 is out!</span></a><?php gray_line(); ?>
       <p>
@@ -2041,7 +2041,7 @@ software before using Fink.
     </p>
     <a name="2001-03-15%20Libtool%20page%20updated"><span class="news-date">2001-03-15: </span><span class="news-headline">Libtool page updated</span></a><?php gray_line(); ?>
       <p>
-      Updated the <a href="<?php print $root; ?>darwin/libtool.php">libtool page</a> with a revised patch that does full shared library versioning. 
+      Updated the <a href="<?php print $root; ?>doc/porting/libtool.php">libtool page</a> with a revised patch that does full shared library versioning. 
     </p>
     <a name="2001-03-08%20Version%200.1.6%20is%20out"><span class="news-date">2001-03-08: </span><span class="news-headline">Version 0.1.6 is out</span></a><?php gray_line(); ?>
       <p>

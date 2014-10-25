@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
- <cvsid>$Id: news.es.xml,v 1.63 2014/10/24 23:00:22 gecko2 Exp $</cvsid>
+ <cvsid>$Id: news.es.xml,v 1.64 2014/10/25 08:18:51 gecko2 Exp $</cvsid>
 <newsitem>
  <date>2014-10-18</date>
  <headline>Yosemite: fink-0.38.0 publicado</headline>
@@ -898,9 +898,9 @@ rsync://master.us.finkmirrors.net/finkinfo/. Desafortunadamente,
 algunas opciones pueden no estar disponibles si usted esta fuera de los
 Estados Unidos.</p>
 <p>Finalmente, para usar la base de datos de los paquetes durante este
-periodo es posible conectarse a <varlink 
-url="pdb/">esta copia de respaldo de la base de
-datos</varlink> de los paquete que esta solo fuera de sincronia por unas 
+periodo es posible conectarse a <link 
+url="http://pdb.finkproject.org/pdb/">esta copia de respaldo de la base de
+datos</link> de los paquete que esta solo fuera de sincronia por unas 
 semanas.</p>
 		</body>
 	</newsitem>
@@ -1212,9 +1212,9 @@ En pocas semanas estará disponible un instalador binario, para aquellos que só
 Para usuarios de la rama estable, recomendamos borrar la instalación actual de
 fink con <code>sudo rm -Rf /sw</code> y "bootstrap" una instalación de 
 fink-0.23.9 utilizando 
-<varlink 
+<link 
 url="http://sourceforge.net/project/showfiles.php?group_id=17203">
-fink-0.23.9.tar.gz</varlink> -descargar el fichero y descomprimirlo mediante <code>tar -xvzf fink-0.23.9.tar.gz</code>. Tras ejecutar bootstrap.sh en el directorio <filename>fink-0.23.9</filename> resultante, necesitarás ejecutar <code>fink selfupdate</code>.
+fink-0.23.9.tar.gz</link> -descargar el fichero y descomprimirlo mediante <code>tar -xvzf fink-0.23.9.tar.gz</code>. Tras ejecutar bootstrap.sh en el directorio <filename>fink-0.23.9</filename> resultante, necesitarás ejecutar <code>fink selfupdate</code>.
 </li><li>
 Los usuarios de la rama inestable pueden actualizarse simplemente
 instalando fink-0.24.5, mediante <code>fink selfupdate</code> desde cualquier versión anterior. Tras actualizarse a 10.4, comprobad en primer lugar que se tiene la versión correcta mediante <code>fink --version</code>. Si el resultado del comando es menor que 0.24.5, ejéctuse <code>fink selfupdate</code> para obtener la versión correcta de fink. Y entonces reinstalar el paquete fink mediante <code>fink reinstall fink</code> y después <code>fink selfupdate</code>.
@@ -1283,7 +1283,7 @@ dando como resultado un gran total de 1650 binarios. Ésto incluye binarios para
 
 <p>
 Para realizar una primera instalación de Fink, hay que seguir los consejos 
-de <varlink url="download/index.php">esta página</varlink>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <varlink url="pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</varlink> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
+de <varlink url="download/index.php">esta página</varlink>. Es posible actualizar una instalación de Fink previa, utilizando la instalación previa de Fink. En <link url="http://pdb.finkproject.org/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">esta página</link> encontraras la lista de las diferencias entre las versiones 0.7.0 y 0.7.1.
 </p>
 
 <p>
@@ -2622,7 +2622,7 @@ software before using Fink.
   <date>2001-07-13</date>
   <headline>Package database now online</headline>
   <body>
-    <p>A prototype of the <varlink url="pdb/index.php">package database</varlink>
+    <p>A prototype of the <link url="http://pdb.finkproject.org/pdb/index.php">package database</link>
     is now online.
     </p>
   </body>
@@ -2675,7 +2675,7 @@ software before using Fink.
   <date>2001-05-19</date>
   <headline>CVS instructions updated</headline>
   <body>
-    <p>The <varlink url="fink/cvs.php">CVS instructions</varlink> have
+    <p>The <varlink url="doc/cvsaccess/index.php">CVS instructions</varlink> have
     been updated for Fink 0.2.x.
     </p>
   </body>
@@ -2726,7 +2726,7 @@ software before using Fink.
   <headline>Porting notes updated</headline>
   <body>
     <p>
-      The <varlink url="darwin/porting.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
+      The <varlink url="doc/porting/index.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
     </p>
   </body>
 </newsitem>
@@ -2756,7 +2756,7 @@ software before using Fink.
   <headline>Libtool page updated</headline>
   <body>
     <p>
-      Updated the <varlink url="darwin/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
+      Updated the <varlink url="doc/porting/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
     </p>
   </body>
 </newsitem>

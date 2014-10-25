@@ -1,7 +1,7 @@
 <?php
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/10/19 03:19:21';
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2014/10/24 23:00:22';
 $metatags = '';
 
 include_once "header.inc";
@@ -643,7 +643,7 @@ Une annonce sera postée ici même dès la correction effectuée.
 <a name="20/09/2004%20Fink%200.7.1%20est%20disponible"><span class="news-date">20/09/2004: </span><span class="news-headline">Fink 0.7.1 est disponible</span></a><?php gray_line(); ?>
 <p>La dernière version de Fink, 0.7.1 (pour 10.3) est maintenant disponible sous forme de sources ou de binaires. Cette tourne sur les versions Panther (10.3) de Mac OS X. La version 0.6.3 reste disponible pour les utilisateurs des versions Jaguar (10.2) de Mac OS X.</p>
 <p>Elle intégre diverses corrections du gestionnaire de paquets. De plus, de nombreux paquets, auparavant indisponibles sous forme binaire, ont été ajoutés, ce qui porte le total des binaires disponibles à 1650. Ils comprennent, en autres, les binaires de KDE 3.1.4 et ceux de GNOME 2.4.</p>
-<p>Pour installer Fink pour la première fois, veuillez suivre les instructions données <a href="<?php print $root; ?>download/index.php?phpLang=fr">ici</a>. Pour mettre à jour Fink, servez-vous de la version installée sur votre système. Vous trouverez la liste des différences entre les versions 0.7.0 et 0.7.1 sur cette <a href="<?php print $root; ?>pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</a></p>
+<p>Pour installer Fink pour la première fois, veuillez suivre les instructions données <a href="<?php print $root; ?>download/index.php?phpLang=fr">ici</a>. Pour mettre à jour Fink, servez-vous de la version installée sur votre système. Vous trouverez la liste des différences entre les versions 0.7.0 et 0.7.1 sur cette <a href="http://pdb.finkproject.org/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">page.</a></p>
 <p>Si vous vous posez des questions ou rencontrez des difficultés, n'hésitez pas à vous servir des listes de diffusion de Fink. Vous en trouverez le détail <a href="<?php print $root; ?>lists/index.php?phpLang=fr">ici</a>.</p>
 <p>Vérifiez que vous avez choisi le <b>bon installeur</b> pour votre plate-forme. Fink 0.6.3 n'est installable que sur Mac OS X 10.2.*, tandis que Fink 0.7.1 ne convient que pour Mac OS X 10.3.*.</p>
 <p>L'équipe Fink remercie toutes les personnes sans lesquelles cette version n'aurait pas vu le jour : ses nombreux contributeurs, toutes les personnes qui apportent leur aide régulièrement ainsi que les développeurs. Nous remercions aussi notre communauté d'avoir téléchargé la version 0.7.0 précédente plus de 130 000 fois. Sans son soutien constant et ses conseils judicieux, Fink n'en serait pas là aujourd'hui.</p>
@@ -1092,7 +1092,7 @@ collection at <a href="http://macosx.forked.net/">forked.net
 <a name="19/07/2001%20Nouveau%20document%20:%20X11%20sur%20Darwin%20et%20Mac%20OS%20X"><span class="news-date">19/07/2001: </span><span class="news-headline">Nouveau document : X11 sur Darwin et Mac OS X</span></a><?php gray_line(); ?>
 <p>Un document détaillé <a href="<?php print $root; ?>doc/x11/index.php">X11 sur Darwin et Mac OS X</a> est disponible maintenant. Il a été écrit dans le but d'être utile à tout le monde, non pas seulement aux utilisateurs de Fink.</p>
 <a name="13/07/2001%20La%20base%20de%20donn%C3%A9es%20des%20paquets%20est%20maintenant%20en%20ligne"><span class="news-date">13/07/2001: </span><span class="news-headline">La base de données des paquets est maintenant en ligne</span></a><?php gray_line(); ?>
-<p>Un prototype de la <a href="<?php print $root; ?>pdb/index.php">base de données des paquets</a> est maintenant en ligne.</p>
+<p>Un prototype de la <a href="http://pdb.finkproject.org/pdb/index.php">base de données des paquets</a> est maintenant en ligne.</p>
 <a name="09/07/2001%20La%20version%200.2.3%20a%20%C3%A9t%C3%A9%20publi%C3%A9e"><span class="news-date">09/07/2001: </span><span class="news-headline">La version 0.2.3 a été publiée</span></a><?php gray_line(); ?>
 <p>Vous la trouverez sur la <a href="<?php print $root; ?>download.php">page de téléchargement</a>. Cette version corrige les problèmes de téléchargement dpkg que nombre d'entre vous ont rencontrés.</p>
 <a name="03/07/2001%20Mise%20%C3%A0%20jour%20du%20manuel%20d'empaquetage"><span class="news-date">03/07/2001: </span><span class="news-headline">Mise à jour du manuel d'empaquetage</span></a><?php gray_line(); ?>
@@ -1102,7 +1102,7 @@ collection at <a href="http://macosx.forked.net/">forked.net
 <a name="24/06/2001%20La%20version%200.2.2%20a%20%C3%A9t%C3%A9%20publi%C3%A9e"><span class="news-date">24/06/2001: </span><span class="news-headline">La version 0.2.2 a été publiée</span></a><?php gray_line(); ?>
 <p>La version 0.2.2 a été publiée. Vous la trouverez sur la <a href="<?php print $root; ?>download.php">page de téléchargement</a>. Veuillez lire les notes à propos de X11 dans le fichier INSTALL.</p>
 <a name="19/05/2001%20Mise%20%C3%A0%20jour%20des%20instructions%20CVS"><span class="news-date">19/05/2001: </span><span class="news-headline">Mise à jour des instructions CVS</span></a><?php gray_line(); ?>
-<p>Les <a href="<?php print $root; ?>fink/cvs.php">instructions CVS</a> ont été mises à jour pour la version 0.2.x de Fink.</p>
+<p>Les <a href="<?php print $root; ?>doc/cvsaccess/index.php">instructions CVS</a> ont été mises à jour pour la version 0.2.x de Fink.</p>
 <a name="26/04/2001%20Les%20QFP%20sont%20en%20ligne"><span class="news-date">26/04/2001: </span><span class="news-headline">Les QFP sont en ligne</span></a><?php gray_line(); ?>
 <p>Le site a maintenant une <a href="<?php print $root; ?>faq/index.php">section QFP</a>. Le contenu est encore un peu maigre, mais elle est faite pour durer.</p>
 <a name="20/04/2001%20La%20version%200.2.0%20est%20sortie"><span class="news-date">20/04/2001: </span><span class="news-headline">La version 0.2.0 est sortie</span></a><?php gray_line(); ?>
@@ -1112,13 +1112,13 @@ collection at <a href="http://macosx.forked.net/">forked.net
 <a name="14/04/2001%20La%20version%200.1.8%20est%20sortie"><span class="news-date">14/04/2001: </span><span class="news-headline">La version 0.1.8 est sortie</span></a><?php gray_line(); ?>
 <p>Vous la trouverez sur la <a href="<?php print $root; ?>download.php">page de téléchargement</a>.</p>
 <a name="30/03/2001%20Mise%20%C3%A0%20jour%20des%20notes%20de%20portage"><span class="news-date">30/03/2001: </span><span class="news-headline">Mise à jour des notes de portage</span></a><?php gray_line(); ?>
-<p>Les <a href="<?php print $root; ?>darwin/porting.php">notes de portage</a> ont été enrichies d'informations concernant la version finale de Mac OS X.</p>
+<p>Les <a href="<?php print $root; ?>doc/porting/index.php">notes de portage</a> ont été enrichies d'informations concernant la version finale de Mac OS X.</p>
 <a name="30/03/2001%20La%20version%200.1.7%20est%20l%C3%A0%20!"><span class="news-date">30/03/2001: </span><span class="news-headline">La version 0.1.7 est là !</span></a><?php gray_line(); ?>
 <p>Vous la trouverez sur la <a href="<?php print $root; ?>download.php">page de téléchargement</a>. </p>
 <a name="24/03/2001%20Mac%20OS%20X%20est%20enfin%20l%C3%A0%20!"><span class="news-date">24/03/2001: </span><span class="news-headline">Mac OS X est enfin là !</span></a><?php gray_line(); ?>
 <p>Attendez-vous à l'adaptation des paquets de Fink à cette version finale dans les deux prochaines semaines.</p>
 <a name="15/03/2001%20Mise%20%C3%A0%20jour%20de%20la%20page%20de%20libtool"><span class="news-date">15/03/2001: </span><span class="news-headline">Mise à jour de la page de libtool</span></a><?php gray_line(); ?>
-<p>La <a href="<?php print $root; ?>darwin/libtool.php">page de libtool</a> a été mise à jour. Elle contient désormais une rustine modifiée qui utilise le numérotage de version des librairies partagées.</p>
+<p>La <a href="<?php print $root; ?>doc/porting/libtool.php">page de libtool</a> a été mise à jour. Elle contient désormais une rustine modifiée qui utilise le numérotage de version des librairies partagées.</p>
 <a name="08/03/2001%20Mise%20%C3%A0%20disposition%20de%20la%20version%200.1.6"><span class="news-date">08/03/2001: </span><span class="news-headline">Mise à disposition de la version 0.1.6</span></a><?php gray_line(); ?>
 <p>Vous la trouverez sur la <a href="<?php print $root; ?>download.php">page de téléchargement</a>.</p>
 

@@ -1,7 +1,7 @@
 <?php
 $title = "Help";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:12:46 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/10/25 08:18:51 $';
 
 include "header.inc";
 ?>
@@ -117,7 +117,7 @@ href="../lists/fink-users.php">fink-users</a>
 パッケージ記述を <a href="../doc/cvsaccess/index.php">CVS</a> から入手し、
 Fink を <a href="../faq/usage-fink.php#unstable">unstable を使う</a> 用に設定し、
 パッケージをテストします。
-パッケージデータベースには <a href="../pdb/testing.php">テストを要するパッケージ</a>ページがあります。
+パッケージデータベースには <a href="http://pdb.finkproject.org/pdb/testing.php">テストを要するパッケージ</a>ページがあります。
 成功しても失敗しても、パッケージのメンテナやメーリングリストに報告することができます。
 </p>
 

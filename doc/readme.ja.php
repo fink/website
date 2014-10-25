@@ -92,3 +92,5 @@ Fink に貢献をしたい場合、上記のヘルプページに、テストや
 </p>
 
 <?php include_once "../footer.inc"; ?>
+
+

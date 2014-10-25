@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
- <cvsid>$Id: news.ja.xml,v 1.71 2014/10/24 23:00:22 gecko2 Exp $</cvsid>
+ <cvsid>$Id: news.ja.xml,v 1.72 2014/10/25 08:18:51 gecko2 Exp $</cvsid>
 <newsitem>
  <date>2014-10-18</date>
  <headline>Yosemite support: fink-0.38.0 リリース</headline>
@@ -1066,7 +1066,7 @@ rsync://master.us.finkmirrors.net/finkinfo/
 米国にいる場合、残念ながら他には選択肢がないかもしれません。
 </p><p>
 最後に、パッケージデータベースを使うには、
-<varlink url="pdb/">データベースのバックアップ</varlink>
+<link url="http://pdb.finkproject.org/pdb/">データベースのバックアップ</link>
 を使いください。
 ただし、これは数週間遅れたデータになります。
 </p>
@@ -1419,7 +1419,7 @@ XCode 1.5 の利用者はこのアップデータをインストールしてく�
 		<body>
 			<p>最新版の Fink、バージョン0.7.1 (10.3用) がソースとバイナリユーザーを対象にリリースされました。このリリースは Panther (10.3) 系の Mac OS X 用です。 Jaguar (10.2) 系の Mac OS X バージョンには、今まで通り0.6.3 リリースをお使いください。</p>
 			<p>パッケージマネージャの修正と、多くのバイナリパッケージの追加によって1650のバイナリパッケージ化がこのリリースの内容です。KDE 3.1.4 と GNOME 2.4 のバイナリを含んでいます。</p>
-			<p>Fink を完全にインストールするには、<varlink url="download/index.php">ここ</varlink>に投稿された方法で行う必要があります。現在の Fink を最新の Fink にアップグレードすることもできます。0.7.0と0.7.1の変更一覧は<varlink url="pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">このページ</varlink>にあります。
+			<p>Fink を完全にインストールするには、<varlink url="download/index.php">ここ</varlink>に投稿された方法で行う必要があります。現在の Fink を最新の Fink にアップグレードすることもできます。0.7.0と0.7.1の変更一覧は<link url="http://pdb.finkproject.org/pdb/compare.php?tree1=0.7.1-stable&amp;cmp=0&amp;tree2=0.7.0-stable&amp;splitoffs=on&amp;sort=name">このページ</link>にあります。
 </p>
 			<p>疑問や問題がある場合、 Fink メーリングリストをご利用ください。リストについては<varlink url="lists/index.php">ここ</varlink>を参照してください。</p>
 			<p>自分のプラットフォーム用のインストーラを使用してください。
@@ -2726,7 +2726,7 @@ software before using Fink.
 		<date>2001-07-13</date>
 		<headline>Package database now online</headline>
 		<body>
-			<p>A prototype of the <varlink url="pdb/index.php">package database</varlink>
+			<p>A prototype of the <link url="http://pdb.finkproject.org/pdb/index.php">package database</link>
     is now online.
     </p>
 		</body>
@@ -2773,7 +2773,7 @@ software before using Fink.
 		<date>2001-05-19</date>
 		<headline>CVS instructions updated</headline>
 		<body>
-			<p>The <varlink url="fink/cvs.php">CVS instructions</varlink> have
+			<p>The <varlink url="doc/cvsaccess/index.php">CVS instructions</varlink> have
     been updated for Fink 0.2.x.
     </p>
 		</body>
@@ -2819,7 +2819,7 @@ software before using Fink.
 		<headline>Porting notes updated</headline>
 		<body>
 			<p>
-      The <varlink url="darwin/porting.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
+      The <varlink url="doc/porting/index.php">porting notes</varlink> have been updated with information on Mac OS X Final. 
     </p>
 		</body>
 	</newsitem>
@@ -2846,7 +2846,7 @@ software before using Fink.
 		<headline>Libtool page updated</headline>
 		<body>
 			<p>
-      Updated the <varlink url="darwin/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
+      Updated the <varlink url="doc/porting/libtool.php">libtool page</varlink> with a revised patch that does full shared library versioning. 
     </p>
 		</body>
 	</newsitem>
