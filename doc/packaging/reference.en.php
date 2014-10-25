@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging - Reference";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2014/02/14 18:22:26';
+$cvs_date = 'Date: 2014/10/25 01:52:35';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -223,7 +223,8 @@ various perl versions in the 10.3 through 10.9 distributions
     perl 5.10.0:             10.5, <b>10.6</b>
     perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>
 </pre>
 <p>A way to include all supported variants in a single finkinfo file is as follows.
 </p>
