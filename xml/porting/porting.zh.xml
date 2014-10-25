@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 	<title>移植 Unix 软件到 Darwin 和 Mac OS X 上</title>
 	<shorttitle>移植</shorttitle>
-	<cvsid>$Id: porting.zh.xml,v 1.8 2012/11/11 15:20:16 gecko2 Exp $</cvsid> 
+	<cvsid>$Id: porting.zh.xml,v 1.9 2014/10/25 09:21:47 gecko2 Exp $</cvsid> 
 
 	<preface>
 		<p>本文档包含如何移植 Unix 软件到 Darwin 和 Mac OS X 平台上的提示。
@@ -546,7 +546,7 @@ url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html"
     creation since each perl executable knows where to find its own modules.
     Maintainers of perl-module (&quot;-pm&quot;) packages who follow the current
     <link
-    url="/packaging/policy.php#perlmods">Perl
+    url="/doc/packaging/policy.php#perlmods">Perl
     Modules packaging policy</link> and are careful to follow the
     <code>CompileScript</code> and <code>InstallScript</code>
     documentation will already have things set up correctly.

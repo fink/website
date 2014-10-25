@@ -17,7 +17,7 @@ include_once "header.ja.inc";
     OS X 10.2 では， <code>/usr/bin/perl</code> は perl 5.6.0 であり， architecture 文字列は "darwin" でした．
   	OS X 10.3 では， <code>/usr/bin/perl</code> は perl 5.8.1 にアップグレードされ， architecture 文字列が "darwin-thread-multi-2level" に変更されました．
   	この変更は， それぞれの perl 実行ファイルはモジュールを探す場所を知っているので，パッケージ作成時に perl 実行ファイルを使用する分には<b>おそらく</b>影響がないでしょう．
-  	perl モジュール ("-pm") パッケージのメンテナは，<a href="/packaging/policy.php#perlmods">Perl
+  	perl モジュール ("-pm") パッケージのメンテナは，<a href="/doc/packaging/policy.php#perlmods">Perl
     モジュールのパッケージ化ポリシー</a>に従い，<code>CompileScript</code> と <code>InstallScript</code>
     が適切に作成されるようにしてください。
   </p>

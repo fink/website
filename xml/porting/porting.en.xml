@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 	<title>Porting Unix software to Darwin and Mac OS X</title>
 	<shorttitle>Porting</shorttitle>
-	<cvsid>$Id: porting.en.xml,v 1.9 2012/11/11 15:20:16 gecko2 Exp $</cvsid> 
+	<cvsid>$Id: porting.en.xml,v 1.10 2014/10/25 09:21:47 gecko2 Exp $</cvsid> 
 
 	<preface>
 		<p>This document contains hints for porting Unix applications to Darwin and Mac OS X. Much of the information here applies to both Mac OS X version 10.x.x and &quot;pure&quot; Darwin systems. Both systems will be referred to as Darwin, since Mac OS X is actually a superset of Darwin.</p>
@@ -510,8 +510,8 @@ with gcc3 cannot link to libraries compiled with gcc2.</p>
     not affect ordinary uses of the perl executable for package
     creation since each perl executable knows where to find its own modules.
     Maintainers of perl-module (&quot;-pm&quot;) packages who follow the current
-    <link
-    url="/packaging/policy.php#perlmods">Perl
+    <link 
+    url="/doc/packaging/policy.php#perlmods">Perl
     Modules packaging policy</link> and are careful to follow the
     <code>CompileScript</code> and <code>InstallScript</code>
     documentation will already have things set up correctly.

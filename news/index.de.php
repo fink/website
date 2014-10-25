@@ -1,7 +1,7 @@
 <?php
 $title = "News";
 $cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2014/10/24 23:00:22';
+$cvs_date = 'Date: 2014/10/25 08:18:51';
 $metatags = '';
 
 include_once "header.inc";
@@ -1756,7 +1756,7 @@ CDs. Read Christoph's <a href="<?php print $root; ?>pr/openosx.php">public state
 on the issue.
 </p>
 <a name="2001-08-22%20New%20help%20page"><span class="news-date">2001-08-22: </span><span class="news-headline">New help page</span></a><?php gray_line(); ?>
-<p>The new <a href="help/index.php">help page</a> lists various ways
+<p>The new <a href="<?php print $root; ?>help/index.php">help page</a> lists various ways
 to get help using Fink. It also lists some ideas how you can give back to
 the project.
 </p>

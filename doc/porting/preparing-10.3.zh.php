@@ -21,7 +21,7 @@ include_once "header.zh.inc";
     not affect ordinary uses of the perl executable for package
     creation since each perl executable knows where to find its own modules.
     Maintainers of perl-module ("-pm") packages who follow the current
-    <a href="/packaging/policy.php#perlmods">Perl
+    <a href="/doc/packaging/policy.php#perlmods">Perl
     Modules packaging policy</a> and are careful to follow the
     <code>CompileScript</code> and <code>InstallScript</code>
     documentation will already have things set up correctly.

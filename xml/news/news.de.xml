@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
- <cvsid>$Id: news.de.xml,v 1.61 2014/10/25 08:18:51 gecko2 Exp $</cvsid>
+ <cvsid>$Id: news.de.xml,v 1.62 2014/10/25 09:21:46 gecko2 Exp $</cvsid>
 <newsitem>
  <date>2014-10-18</date>
  <headline>Yosemite support:  fink-0.38.0 released.</headline>
@@ -2510,7 +2510,7 @@ on the issue.
 <date>2001-08-22</date>
 <headline>New help page</headline>
 <body>
-<p>The new <link url="help/index.php">help page</link> lists various ways
+<p>The new <varlink url="help/index.php">help page</varlink> lists various ways
 to get help using Fink. It also lists some ideas how you can give back to
 the project.
 </p>

@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Portage de logiciel sur Darwin et Mac OS X</title>
 <shorttitle>Portage</shorttitle>
-<cvsid>$Id: porting.fr.xml,v 1.14 2012/11/11 15:20:16 gecko2 Exp $</cvsid> 
+<cvsid>$Id: porting.fr.xml,v 1.15 2014/10/25 09:21:47 gecko2 Exp $</cvsid> 
 <preface>
 <p>Ce document contient quelques conseils pour réaliser le portage d'applications Unix vers Darwin et Mac OS X. Ces informations s'appliquent aux systèmes d'exploitation Mac OS X versions 10.x.x et Darwin &quot;pur&quot;. Nous ferons référence aux deux systèmes sous le nom de Darwin, puisque Mac OS X est, en fait, un sur-ensemble de Darwin.</p>
 </preface>
@@ -256,7 +256,7 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 <title>Préparation pour la version 10.3</title>
 <shorttitle>Préparation pour 10.3</shorttitle>
 <section name="perl"><title>Perl</title>
-<p>Sous Mac OS X 10.2, <filename>/usr/bin/perl</filename> correspondait à la version 5.6.0 de perl et l'architecture était représentée par la chaîne de caractères &quot;darwin&quot;. Sous Mac OS X 10.3, <filename>/usr/bin/perl</filename> correspond à la version 5.8.1 de perl, et l'architecture est représentée par la chaîne de caractères &quot;darwin-thread-multi-2level&quot;. Ces changements n'affectent <em>probablement</em> pas l'utilisation courante de l'exécutable perl lors de la création de paquets, car chaque exécutable perl sait où trouver ses propres modules. Les mainteneurs de paquets de module perl (&quot;-pm&quot;) qui suivent les <link url="/packaging/policy.php#perlmods">règles d'empaquetage des modules perl</link> en vigueur et celles des scripts <code>CompileScript</code> et <code>InstallScript</code> n'ont pas de souci à se faire.</p>
+<p>Sous Mac OS X 10.2, <filename>/usr/bin/perl</filename> correspondait à la version 5.6.0 de perl et l'architecture était représentée par la chaîne de caractères &quot;darwin&quot;. Sous Mac OS X 10.3, <filename>/usr/bin/perl</filename> correspond à la version 5.8.1 de perl, et l'architecture est représentée par la chaîne de caractères &quot;darwin-thread-multi-2level&quot;. Ces changements n'affectent <em>probablement</em> pas l'utilisation courante de l'exécutable perl lors de la création de paquets, car chaque exécutable perl sait où trouver ses propres modules. Les mainteneurs de paquets de module perl (&quot;-pm&quot;) qui suivent les <link url="/doc/packaging/policy.php#perlmods">règles d'empaquetage des modules perl</link> en vigueur et celles des scripts <code>CompileScript</code> et <code>InstallScript</code> n'ont pas de souci à se faire.</p>
 </section>
 <section name="typedef"><title>Nouvelles définitions de symboles</title>
 <p>À partir de Mac OS X 10.3, il existe une définition complète du type <code>socklen_t</code> type. Pour l'utiliser, il faut ajouter au programme :</p>

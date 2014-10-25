@@ -3,7 +3,7 @@
 <document filename="index" lang="ja">
   <title>Unix ソフトウェアの Darwin と Mac OS X への移植</title>
   <shorttitle>移植</shorttitle>
-  <cvsid>$Id: porting.ja.xml,v 1.10 2012/11/11 15:20:16 gecko2 Exp $</cvsid>
+  <cvsid>$Id: porting.ja.xml,v 1.11 2014/10/25 09:21:47 gecko2 Exp $</cvsid>
   <preface>
     <p>
 		この文書は Unix アプリケーションを Darwin や Mac OS X へ移植する際に有用な情報を集めています．
@@ -495,7 +495,7 @@ gcc2 でコンパイルされたライブラリに gcc3 でコンパイルされ
   	OS X 10.3 では， <filename>/usr/bin/perl</filename> は perl 5.8.1 にアップグレードされ， architecture 文字列が &quot;darwin-thread-multi-2level&quot; に変更されました．
   	この変更は， それぞれの perl 実行ファイルはモジュールを探す場所を知っているので，パッケージ作成時に perl 実行ファイルを使用する分には<em>おそらく</em>影響がないでしょう．
   	perl モジュール (&quot;-pm&quot;) パッケージのメンテナは，<link
-    url="/packaging/policy.php#perlmods">Perl
+    url="/doc/packaging/policy.php#perlmods">Perl
     モジュールのパッケージ化ポリシー</link>に従い，<code>CompileScript</code> と <code>InstallScript</code>
     が適切に作成されるようにしてください。
   </p>
