@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.128 2014/02/14 18:22:26 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.129 2014/10/25 01:52:35 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -1838,7 +1838,8 @@ various perl versions in the 10.3 through 10.9 distributions
     perl 5.10.0:             10.5, <em>10.6</em>
     perl 5.12.3:                         <em>10.7</em>, 10.8, 10.9
     perl 5.12.4:                         10.7, <em>10.8</em>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <em>10.9</em>
+    perl 5.16.2:                         10.7, 10.8, <em>10.9</em>, 10.10
+    perl 5.18.2:                         10.7, 10.8, 10.9, <em>10.10</em>
 </codeblock>
 <p>A way to include all supported variants in a single finkinfo file is as follows.
 </p>
