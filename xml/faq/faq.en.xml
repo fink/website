@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.123 2013/06/23 22:49:28 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.124 2014/10/25 19:09:28 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1464,6 +1464,20 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
 <codeblock> libtool: unrecognized option `-dynamic'</codeblock>
 <p>typically means that you've replaced Apple's <filename>/usr/bin/libtool</filename> with a GNU <filename>libtool</filename>.  Unfortunately, the two <code>libtools</code> <em>do not</em> do the same thing.</p>
 <p>The only way to solve this is to get a working Apple <filename>libtool</filename> from somewhere.  It is installed as part of the <filename>DeveloperTools.pkg</filename> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <filename>/Library/Receipts</filename> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></answer>
+</faqentry>
+<faqentry name="missing-usr-include-headers">
+  <question><p>I get a message about missing headers in <filename>/usr/include</filename></p></question>
+  <answer><p>If you see messages on 10.9 or 10.10 like</p>
+<codeblock>The directory that should contain system headers does not exist:
+  /usr/include
+</codeblock>
+    <p>or</p>
+<codeblock>cp: /usr/include/lber*.h: No such file or directory</codeblock>
+    <p>when doing a build, this usually means that you are using a version of the Xcode 
+       command-line tools which is for a previous OS X version.  Try to get a new version from 
+       the App Store, or by running <code>sudo xcode-select -install</code>, or by downloading
+       them from developer.apple.com.</p>
+  </answer>
 </faqentry>
   </chapter>
   <chapter filename="comp-packages">
