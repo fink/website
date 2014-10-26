@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/06/23 22:49:28';
+$cvs_date = 'Date: 2014/10/25 19:09:28';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -307,6 +307,15 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
 <a name="libtool-unrecognized-dynamic">
   <div class="question"><p><b><?php echo FINK_Q ; ?>6.24: I get <q>unrecognized option `-dynamic'</q> errors from <code>libtool</code>.</b></p></div>
 <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This error:</p><pre> libtool: unrecognized option `-dynamic'</pre><p>typically means that you've replaced Apple's <code>/usr/bin/libtool</code> with a GNU <code>libtool</code>.  Unfortunately, the two <code>libtools</code> <b>do not</b> do the same thing.</p><p>The only way to solve this is to get a working Apple <code>libtool</code> from somewhere.  It is installed as part of the <code>DeveloperTools.pkg</code> package of the XCode Tools, and you can reinstall that whole package if you first clear out its receipt in <code>/Library/Receipts</code> (drag it to the Trash for OS 10.4 and later, or use <code>sudo rm -rf /Library/Receipts/DeveloperTools.pkg</code> for 10.3).</p></div>
+</a>
+<a name="missing-usr-include-headers">
+  <div class="question"><p><b><?php echo FINK_Q ; ?>6.25: I get a message about missing headers in <code>/usr/include</code></b></p></div>
+  <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If you see messages on 10.9 or 10.10 like</p><pre>The directory that should contain system headers does not exist:
+  /usr/include
+</pre><p>or</p><pre>cp: /usr/include/lber*.h: No such file or directory</pre><p>when doing a build, this usually means that you are using a version of the Xcode 
+       command-line tools which is for a previous OS X version.  Try to get a new version from 
+       the App Store, or by running <code>sudo xcode-select -install</code>, or by downloading
+       them from developer.apple.com.</p></div>
 </a>
   <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=en">7. Compile Problems - Specific Packages</a></p>
