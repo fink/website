@@ -1,12 +1,12 @@
 <?php
-/* $Id: header.inc,v 1.30 2014/10/23 22:04:57 thesin Exp $ */
+/* $Id: header.inc,v 1.31 2014/10/27 19:49:38 thesin Exp $ */
 
-$linkroot  = "http://www.finkproject.org/";
-$localroot = "http://pdb.finkproject.org/";
+$linkroot  = "http://localhost/~justin/fink/"; //"http://www.finkproject.org/";
+$localroot = "http://localhost/~justin/fink/"; //"http://pdb.finkproject.org/";
 $pdbroot   = $localroot . "pdb/";
 
 $section   = 'packages';
-$navloc = "http://pdb.finkproject.org";
+$navloc = "http://localhost/~justin/fink"; //"http://pdb.finkproject.org";
 $disabled = false;
 
 $server = $_SERVER['SERVER_NAME'];

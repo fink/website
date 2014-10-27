@@ -131,7 +131,25 @@ function fetch_package($_name, $_version = null, $_distribution = null, $_releas
 	}
 }
 
+require('pdbconfig.inc');
+
+if ($pdbdb == 'sql') {
+	require_once("adodb/adodb-exceptions.inc.php");
+	require_once("adodb/adodb.inc.php");
+
+	if (empty($db)) {
+		$db = NewADOConnection($sqldriver);
+		$db->Connect($sqlhost, $sqluser, $sqlpass, $sqldb);
+		$db->Execute("set names 'utf8'");
+		$db->SetFetchMode(ADODB_FETCH_ASSOC);
+	}
+}
+global $db, $pdbdb;
+
 class pdbQuery {
+	protected $db      = false;
+	protected $pdbdb   = 'solr';
+
 	protected $action;
 	protected $url;
 	protected $type;
@@ -145,6 +163,11 @@ class pdbQuery {
 	protected $query   = array();
 
 	public function __construct($action = 'select', $url = 'http://localhost:8082/solr', $type = 'json') {
+		global $db, $pdbdb;
+
+		$this->db = $db;
+		$this->pdbdb = $pdbdb;
+
 		$this->setAction($action);
 		$this->setUrl($url);
 		$this->setType($type);
@@ -189,25 +212,65 @@ class pdbQuery {
 	public function setQuery($query)     { $this->query = $query; return $this; }
 
 	public function addQuery($query, $required = false, $exclude = false) {
-		if ($required) {
-			array_push($this->query, '+' . $query);
-		} elseif ($exclude) {
-			array_push($this->query, '-' . $query);
-		} else {
+		if ($this->pdbdb == 'sql') {
+			$query = preg_replace("/:true/", ":1 ", $query);
+			$query = preg_replace("/:false/", ":0 ", $query);
+
+			if (preg_match('/^text:"(.*)"/', $query, $matches)) {
+				if ($exclude)
+					$query = '`name` NOT LIKE "%' . $matches[1] . '%"';
+				else
+					$query = '`name` LIKE "%' . $matches[1] . '%"';
+			}
+
+			if (preg_match('/^name:"(.*)"/', $query, $matches)) {
+				if ($exclude) {
+					if (!empty($_GET['name_exact']) && $_GET['name_exact'] == 'on')
+						$query = '`name` != "' . $matches[1] . '"';
+					else
+						$query = '`name` NOT LIKE "%' . $matches[1] . '%"';
+				} else {
+					if (!empty($_GET['name_exact']) && $_GET['name_exact'] == 'on')
+						$query = '`name` = "' . $matches[1] . '"';
+					else
+						$query = '`name` LIKE "%' . $matches[1] . '%"';
+				}
+			}
+
+			if (preg_match('/^maintainer:"(.*)"/', $query, $matches)) {
+				if ($exclude)
+					$query = '`maintainer` NOT LIKE "%' . $matches[1] . '%"';
+				else
+					$query = '`maintainer` LIKE "%' . $matches[1] . '%"';
+			}
+
+			if ($exclude)
+				$query = preg_replace("/([a-zA-Z_]+):/", "`$1` != ", $query);
+			else
+				$query = preg_replace("/([a-zA-Z_]+):/", "`$1` = ", $query);
+
 			array_push($this->query, $query);
+		} else {
+			if ($required) {
+				array_push($this->query, '+' . $query);
+			} elseif ($exclude) {
+				array_push($this->query, '-' . $query);
+			} else {
+				array_push($this->query, $query);
+			}
 		}
+
 		return $this;
 	}
 
 	public function fetch() {
 		global $cache_threshold;
-		require('pdbconfig.inc');
 
 		$key    = $this->uniqueId();
 		$result = memcache_get_key($key);
 
 		if ($result == null || $result == false) {
-			if ($pdbdb == 'sql')
+			if ($this->pdbdb == 'sql')
 				$result = $this->fetch_sql_uncached($this->unique);
 			else
 				$result = $this->fetch_solr_uncached($this->unique);
@@ -223,58 +286,41 @@ class pdbQuery {
 		$results = array();
 
 		$sorts = array();
-		foreach ($this->getSort() as $sort)
-			$sorts[] = $sort;
+		foreach ($this->getSort() as $sort) {
+			$collation = "ASC";
+			if (preg_match('/ desc$/', $sort))
+				$collation = "DESC";
 
-		$fields = array();
-		foreach ($this->getFields() as $field)
-			$fields[] = $field;
+			$sort = preg_replace('/ (desc|asc)$/', '', $sort);
 
-		$query  = "SELECT ";
-		$query .= implode(',', $fields);
-		$query .= " FROM `pdb`";
-
-		// Parse $this->query and convert to sql
-		$where = array();
-		foreach ($this->query as $q) {
-			if (preg_match("/^-/", $q))
-				$q = str_replace(":", "!=", $q);
-			else
-				$q = str_replace(":", "=", $q);
-
-			$q = preg_replace("/^[+-]/", "", $q);
-			$q = preg_replace("/=true/", "=1 ", $q);
-			$q = preg_replace("/=false/", "=0 ", $q);
-
-			if (preg_match('/^text="(.*)"/', $q, $matches))
-				$q = 'name LIKE "%' . $matches[1] . '%"';
-			if (preg_match('/^name="(.*)"/', $q, $matches)) {
-				if (!empty($_GET['name_exact']) && $_GET['name_exact'] == 'on')
-					$q = 'name="' . $matches[1] . '"';
-				else
-					$q = 'name LIKE "%' . $matches[1] . '%"';
-			}
-			if (preg_match('/^maintainer="(.*)"/', $q, $matches))
-				$q = 'maintainer LIKE "%' . $matches[1] . '%"';
-
-			$where[] = $q;
+			$sorts[] = '`' . $sort . '` ' . $collation;
 		}
 
+		$fields = array();
+		foreach ($this->getFields() as $field) {
+			if ($field == '*')
+				$fields[] = $field;
+			else
+				$fields[] = '`' . $field . '`';
+		}
+
+		$query  = "SELECT ";
+		$query .= implode(', ', $fields);
+		$query .= " FROM `pdb`";
+
+		// Get query parameters
+		$where = $this->getQuery();
 		if (!empty($where))
 			$query .= " WHERE " . implode(' AND ', $where);
 		if ($this->getUnique())
-			$query .= " GROUP BY name";
+			$query .= " GROUP BY `name`";
 		if (!empty($sorts))
-			$query .= " ORDER BY " . implode(',', $this->getSort());
+			$query .= " ORDER BY " . implode(', ', $sorts);
 		$query .= " LIMIT " . $this->rows;
-
-		/* Requires ADOdb for all SQL transactions */
-		require('pdbconfig.inc');
 
 		// Get query
 		try {
-var_dump($query);
-			$results = $db->getArray($query);
+			$results = $this->db->getArray($query);
 		} catch (exception $e) {
 			$results = "DBerror: $e";
 		}
