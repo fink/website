@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:04:57 $';
+$cvs_date = '$Date: 2014/10/27 17:31:50 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -359,6 +359,7 @@ unset($result);
 	}
 
 	$sq = new pdbQuery();
+	$sq->setRows(1);
 	$sq->addQuery('rel_id:"' . $pobj['rel_id'] . '"', true);
 	$sq->addQuery('parentname_e:"' . $pobj['pkg_id'] . '"', true);
 	$splitoffs = $sq->fetch();

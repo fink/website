@@ -106,6 +106,7 @@ function parse_version($version) {
 function fetch_package($_name, $_version = null, $_distribution = null, $_release = null, $_architecture = null, $_showall = false) {
 	$_query = new pdbQuery();
 
+	$_query->setRows(1);
 	$_query->addQuery("name_e:\"$_name\"", true);
 	if ($_version != null)
 		$_query->addQuery("version_e:\"$_version\"", true);
@@ -268,20 +269,11 @@ class pdbQuery {
 		$query .= " LIMIT " . $this->rows;
 
 		/* Requires ADOdb for all SQL transactions */
-		require_once("adodb/adodb-exceptions.inc.php");
-		require_once("adodb/adodb.inc.php");
-
-		if (empty($db)) {
-			require('pdbconfig.inc');
-
-			$db = NewADOConnection($sqldriver);
-			$db->Connect($sqlhost, $sqluser, $sqlpass, $sqldb);
-			$db->Execute("set names 'utf8'");
-			$db->SetFetchMode(ADODB_FETCH_ASSOC);
-		}
+		require('pdbconfig.inc');
 
 		// Get query
 		try {
+var_dump($query);
 			$results = $db->getArray($query);
 		} catch (exception $e) {
 			$results = "DBerror: $e";
