@@ -1,5 +1,5 @@
 <?php
-/* $Id: header.inc,v 1.31 2014/10/27 19:49:38 thesin Exp $ */
+/* $Id: header.inc,v 1.32 2014/10/27 20:15:07 thesin Exp $ */
 
 $linkroot  = "http://localhost/~justin/fink/"; //"http://www.finkproject.org/";
 $localroot = "http://localhost/~justin/fink/"; //"http://pdb.finkproject.org/";
@@ -75,6 +75,9 @@ if (substr($root,0,1) == "-") {
 } else {
   $root = $fsroot;
 }
+
+$metaindex = 'noindex';
+
 include_once "hostlogo.inc";
 include_once $fsroot."header.inc";
 

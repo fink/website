@@ -1,5 +1,5 @@
 <?php
-/* $Id: header.inc,v 1.134 2014/10/23 22:09:49 thesin Exp $ */
+/* $Id: header.inc,v 1.135 2014/10/27 20:15:07 thesin Exp $ */
 // +--------------------------------------------------------------------------+
 // | header.inc                                                               |
 // +--------------------------------------------------------------------------+
@@ -47,6 +47,10 @@ if (isset($_REQUEST['phpLang']))
 
 if (is_readable (dirname(__FILE__) . "/constants." . $lang_code . ".inc"))
 	include_once dirname(__FILE__) . "/constants." . $lang_code . ".inc";
+
+/* set index option for the meta tag */
+if (empty($metaindex))
+	$metaindex = 'all';
 
 /* The Sections.  Used in Menu Navigation Bar */
 if (!defined('FINK_LC_ALL')) { define ("FINK_LC_ALL", 'en_US'); }
@@ -237,7 +241,7 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="keywords" content="<?php echo META_KEYWORDS; ?>">
 	<meta name="description" content="<?php echo META_DESCRIPTION; ?>">
-	<meta name="robots" content="all">
+	<meta name="robots" content="<?php echo $metaindex; ?>">
 <?php
 	if (!isset($link_alternate)) {
 		$rdf_file = dirname(__FILE__) .'/news/news.' . $lang_code . '.rdf';
