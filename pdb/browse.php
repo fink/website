@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:04:57 $';
+$cvs_date = '$Date: 2014/10/27 20:21:59 $';
 
 ini_set("memory_limit", "48M");
 
@@ -122,7 +122,7 @@ Summary:
 <br>
 
 <span class="expand_adv_options">
-<a href="javascript:switchMenu('advancedsearch','triangle');" title="Advanced search options"><img src="<?php echo $root ?>img/collapse.png" alt="" id="triangle" width="9" height="8">&nbsp;Advanced search options</a>
+<a href="javascript:switchMenu('advancedsearch','triangle');" title="Advanced search options"><img src="<?php echo $linkroot ?>img/collapse.png" alt="" id="triangle" width="9" height="8">&nbsp;Advanced search options</a>
 </span>
 <br>
 
