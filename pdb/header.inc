@@ -1,5 +1,5 @@
 <?php
-/* $Id: header.inc,v 1.32 2014/10/27 20:15:07 thesin Exp $ */
+/* $Id: header.inc,v 1.33 2014/10/27 20:29:36 thesin Exp $ */
 
 $linkroot  = "http://localhost/~justin/fink/"; //"http://www.finkproject.org/";
 $localroot = "http://localhost/~justin/fink/"; //"http://pdb.finkproject.org/";
@@ -80,6 +80,8 @@ $metaindex = 'noindex';
 
 include_once "hostlogo.inc";
 include_once $fsroot."header.inc";
+
+echo "<script>var linkroot = '" . $linkroot . "'; </script>";
 
 $solrurl = 'http://localhost:8983/solr';
 

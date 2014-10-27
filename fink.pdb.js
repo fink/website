@@ -22,11 +22,11 @@ function switchMenu(obj, img) {
   var el = document.getElementById(obj);
   if (el.style.display != 'none') {
     el.style.display = 'none';
-    document.getElementById(img).src = "../img/expand.png";
+    document.getElementById(img).src = linkroot + "img/expand.png";
   }
   else {
     el.style.display = '';
-    document.getElementById(img).src = "../img/collapse.png";
+    document.getElementById(img).src = linkroot + "img/collapse.png";
   }
 }
 
