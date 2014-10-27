@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/27 17:31:50 $';
+$cvs_date = '$Date: 2014/10/27 19:48:40 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -188,8 +188,8 @@ unset($result);
 
 	print '<tr bgcolor="#ffecbf">';
 	print '<th width="100" align="center" valign="bottom" rowspan="2">System</th>';
-	print '<th width="202" align="center" colspan="2">CVS/rsync Source Distributions</th>';
-	print '<th width="150" align="center" colspan="2">Debian Binary Distributions</th>';
+	print '<th width="202" align="center" colspan="2">Source Distributions</th>';
+	print '<th width="150" align="center" colspan="2">Binary Distributions</th>';
 	print "</tr>\n";
 
 	print '<tr bgcolor="#ffecbf">';
