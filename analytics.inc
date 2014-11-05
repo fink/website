@@ -17,23 +17,24 @@ function analytics_print($virtual_page=null, $account=null) {
 
 	// next, google analytics
 	print "<script type=\"text/javascript\">\n";
-	print "  var gaJsHost = ((\"https:\" == document.location.protocol)? \"https://ssl.\":\"http://www.\");\n";
-	print "  document.write(\"\\<script src='\" + gaJsHost + \"google-analytics.com/ga.js' type='text/javascript'>\\<\\/script>\");\n";
-	print "</script>\n";
+	print "(function ga_init() {\n";
+	print "    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;\n";
+	print "    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';\n";
+	print "    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);\n";
+	print "})();\n\n";
 
-	print "<script type=\"text/javascript\">\n";
-	print "  var pageTracker = _gat._getTracker(\"$account\");\n";
-	print "  pageTracker._initData();\n";
+	print "var _gaq = _gaq || [];\n";
+	print "  _gaq.push(['_setAccount', '$account']);\n";
+	print "  _gaq.push(['_initData']);\n";
 	if ($virtual_page != null) {
-		print "  pageTracker._trackPageview(\"$virtual_page\");\n";
+		print "  _gaq.push(['_trackPageview', '$virtual_page']);\n";
 	} else {
-		print "  pageTracker._trackPageview();\n";
+		print "  _gaq.push(['_trackPageview']);\n";
 	}
 	print "</script>\n";
 }
 
 function analytics_download_link($href, $contents, $analytics_name) {
-	print "<a href=\"$href\" onClick=\"pageTracker._trackPageview('" . str_replace(array("'", "\""), array("\\'", "\&quot;"), $analytics_name) . "');\">" . $contents . '</a>';
+	print "<a href=\"$href\" onClick=\"_gaq.push(['_trackPageview', '" . str_replace(array("'", "\""), array("\\'", "\&quot;"), $analytics_name) . "']);\">" . $contents . '</a>';
 }
-
 ?>
