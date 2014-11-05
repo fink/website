@@ -134,18 +134,23 @@ function fetch_package($_name, $_version = null, $_distribution = null, $_releas
 require('pdbconfig.inc');
 
 if ($pdbdb == 'sql') {
-	@require_once("adodb/adodb-exceptions.inc.php");
-	@require_once("adodb/adodb.inc.php");
+	@include_once("adodb/adodb-exceptions.inc.php");
+	@include_once("adodb/adodb.inc.php");
 	if(class_exists('ADODB_Exception') && class_exists('ADOConnection')) {
 		true;
 	} else {
-		error_log('Adodb: not installed (libphp-adodb)', 0);
+		print 'Unable to connect to database. See logs for more details.';
+		trigger_error('Adodb: not installed (libphp-adodb)', E_USER_ERROR);
 		exit(1);
 	}
 
 	if (empty($db)) {
 		$db = NewADOConnection($sqldriver);
-		$db->Connect($sqlhost, $sqluser, $sqlpass, $sqldb);
+		if (!@$db->Connect($sqlhost, $sqluser, $sqlpass, $sqldb)) {
+			print 'Unable to connect to database. See logs for more details.';
+			trigger_error('Adodb_' . $db->ErrorNo() . ': ' . $db->ErrorMsg(), E_USER_ERROR);
+			exit(1);
+		}
 		$db->Execute("set names 'utf8'");
 		$db->SetFetchMode(ADODB_FETCH_ASSOC);
 	}
