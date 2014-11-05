@@ -134,8 +134,14 @@ function fetch_package($_name, $_version = null, $_distribution = null, $_releas
 require('pdbconfig.inc');
 
 if ($pdbdb == 'sql') {
-	require_once("adodb/adodb-exceptions.inc.php");
-	require_once("adodb/adodb.inc.php");
+	@require_once("adodb/adodb-exceptions.inc.php");
+	@require_once("adodb/adodb.inc.php");
+	if(class_exists('ADODB_Exception') && class_exists('ADOConnection')) {
+		true;
+	} else {
+		error_log('Adodb: not installed (libphp-adodb)', 0);
+		exit(1);
+	}
 
 	if (empty($db)) {
 		$db = NewADOConnection($sqldriver);
