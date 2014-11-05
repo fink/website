@@ -148,7 +148,7 @@ if ($pdbdb == 'sql') {
 		$db = NewADOConnection($sqldriver);
 		if (!@$db->Connect($sqlhost, $sqluser, $sqlpass, $sqldb)) {
 			print 'Unable to connect to database. See logs for more details.';
-			trigger_error('Adodb_' . $db->ErrorNo() . ': ' . $db->ErrorMsg(), E_USER_ERROR);
+			trigger_error('Adodb: driver:' . $sqldriver . ' Code:' . $db->ErrorNo() . ': ' . $db->ErrorMsg(), E_USER_ERROR);
 			exit(1);
 		}
 		$db->Execute("set names 'utf8'");

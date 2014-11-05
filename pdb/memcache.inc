@@ -10,7 +10,7 @@ if(class_exists('Memcache')) {
 		$memcache->setCompressThreshold(15000, 0.2);
 	}
 } else {
-	error_log('Memcache: not installed (php5-memcache)', 0);
+	trigger_error('Memcache: not installed (php5-memcache)', E_USER_NOTICE);
 }
 
 ?>
