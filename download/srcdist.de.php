@@ -1,7 +1,7 @@
 <?php
 $title = "Quelltext Version Download";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:32:38 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/11/05 10:07:40 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -27,28 +27,20 @@ und zu installieren.</p>
 
 <ul>
   <li>
-Nehmen sie für OS X 10.7-10.9 
-<a href="http://downloads.sourceforge.net/fink/fink-<?php print $fink_tool_version; ?>.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-<?php print $fink_tool_version; ?></a>
-- <?php print $fink_tool_tarball_k; ?>, .tar.gz Format
+Nehmen sie für OS X 10.7-10.10
+ <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
   </li>
   <li>
-Nehmen sie für OS X 10.6 
-<a href="http://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.36.5</a>
-- 1176K, .tar.gz Format
+Nehmen sie für OS X 10.6
+ <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz", "fink-0.36.5.tar.gz", "/downloads/FinkSOURCE") ?> - 1176K<br>
      </li>
      <li>
-Nehmen sie für OS X 10.5 
-<a href="http://downloads.sourceforge.net/fink/fink-0.34.10.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.34.10</a>
-- 1268K, .tar.gz Format
+Nehmen sie für OS X 10.5
+  <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.34.10.tar.gz", "fink-0.34.10.tar.gz", "/downloads/FinkSOURCE") ?> - 1268K<br>
      </li>
      <li>
-Nehmen sie für OS X 10.4 
-<a href="http://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz"
-onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');"> fink-0.30.2</a>
-- 1188K, .tar.gz Format
+Nehmen sie für OS X 10.4
+ <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz", "fink-0.30.2.tar.gz", "/downloads/FinkSOURCE") ?> - 1188K<br>
      </li>
 </ul>
 
@@ -138,9 +130,8 @@ Distributionsseite und erstellt sie auf ihrem lokalen Computer.
 <p><em>Fink <?php print $fink_version; ?></em> wurde am  
 <?php print $release_date; ?> offiziell veröffentlicht.</p>
 
-<ul><li><a
-href="http://prdownloads.sourceforge.net/fink/fink-<?php print $fink_version; ?>-full.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkFullSOURCE');">Fink
-<?php print $fink_version; ?></a> - 3521K, .tar.gz Format</li>
+<ul><li>
+<?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_version . "-full.tar.gz", "fink-" . $fink_version . "-full.tar.gz", "/downloads/FinkFullSOURCE") ?> - 3524k<br>
 </ul>
 
 <p>Sie müssen auch für ihr System die entsprechenden Command-Line-Tools für 

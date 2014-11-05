@@ -1,7 +1,7 @@
 <?php
 $title = "ソースリリースのダウンロード";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:32:38 $';
+$cvs_author = '$Author: gecko2 $';
+$cvs_date = '$Date: 2014/11/05 10:07:40 $';
 
 include "header.inc";
 ?>
@@ -27,7 +27,7 @@ Fink <?php print $fink_version; ?> は公式に
 -->
 <p><EM>fink-0.28.0</EM> は、2007年11月2日 にリリースされました。</p>
 <ul>
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz" onClick="pageTracker._trackPageview('/downloads/FinkSOURCE');">fink-0.28.0</a> - 1308K, .tar.gz format</li>
+<li><?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz", "fink-0.28.0.tar.gz", "/downloads/FinkSOURCE") ?> - 1308K<br></li>
 </ul>
 
 <p>
