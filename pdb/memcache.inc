@@ -3,7 +3,7 @@
 if(class_exists('Memcache')) {
 	$memcache = new Memcache();
 	if (!$memcache->connect('localhost', 11211)) {
-		error_log('Memcache: not running (localhost:11211)', 0);
+		trigger_error('Memcache: not running (localhost:11211)', E_USER_WARNING);
 		unset($memcache);
 	}
 	if (isset($memcache)) {
