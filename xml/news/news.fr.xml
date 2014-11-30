@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
- <cvsid>$Id: news.fr.xml,v 1.90 2014/11/30 17:33:32 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.fr.xml,v 1.91 2014/11/30 17:36:40 alexkhansen Exp $</cvsid>
 <newsitem>
  <date>2014-11-29</date>
  <headline>fink-0.38.0 released.</headline>
@@ -9,7 +9,7 @@
   <p>
   <code>fink-0.38.3</code> was released on 29 November, 2014.  This release enables the
   official 10.10 binary distribution by default, along with official OS X 10.10.1 support
-  and other fixes and enhancements.</code>.
+  and other fixes and enhancements.
   </p>
   </body>
 </newsitem> 
