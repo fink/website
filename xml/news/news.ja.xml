@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
- <cvsid>$Id: news.ja.xml,v 1.73 2014/10/25 09:21:46 gecko2 Exp $</cvsid>
+ <cvsid>$Id: news.ja.xml,v 1.74 2014/11/30 17:33:32 alexkhansen Exp $</cvsid>
+<newsitem>
+ <date>2014-11-29</date>
+ <headline>fink-0.38.0 released.</headline>
+ <body>
+  <p>
+  <code>fink-0.38.3</code> was released on 29 November, 2014.  This release enables the
+  official 10.10 binary distribution by default, along with official OS X 10.10.1 support
+  and other fixes and enhancements.</code>.
+  </p>
+  </body>
+</newsitem> 
 <newsitem>
  <date>2014-10-18</date>
  <headline>Yosemite support: fink-0.38.0 リリース</headline>
