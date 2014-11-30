@@ -1,4 +1,10 @@
-<a name="2014-10-18%20Yosemite:%20fink-0.38.0%20publicado"><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite: fink-0.38.0 publicado</span></a><?php gray_line(); ?>
+<a name="2014-11-29%20fink-0.38.0%20released."><span class="news-date">2014-11-29: </span><span class="news-headline">fink-0.38.0 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.38.3</code> was released on 29 November, 2014.  This release enables the
+  official 10.10 binary distribution by default, along with official OS X 10.10.1 support
+  and other fixes and enhancements.
+  </p>
+  <a name="2014-10-18%20Yosemite:%20fink-0.38.0%20publicado"><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite: fink-0.38.0 publicado</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.38.0</code> fue publicado el 18 octubre de 2014.
   El projecto Fink anuncia soporte oficial para Yosemite (OS X 10.10) con el 
@@ -15,17 +21,5 @@
   Esta versión corrige bootstrapping bajo Xcode 6.x é incluye otras correcciones 
   y mejoras.
   Aparte, <code>fink-0.37.1</code> incluye soporte para 10.9.4 and 10.9.5.
-  </p>
- <a name="2014-06-04%20fink-0.36.5%20y%20fink-0.37.0%20publicados.%20Ultima%20versi%C3%B3n%20para%2010.6"><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 y fink-0.37.0 publicados. Ultima versión para 10.6</span></a><?php gray_line(); ?>
-  <p>
-  <code>fink-0.37.0</code> and <code>fink-0.37.0</code> fueron publicados el 4 
-  de junio de 2014.  Estas versiones corrigen errores en la detección de de Java 
-  en Snow Leopard si el usuario está usando una versión antigua del Java SDK.  
-  <code>fink-0.37.0</code> reconoce OS X 10.9.3.
-  </p>
-  <p>
-  <code>fink-0.36.5</code> marca la ultima versión con soporte para OS X 10.6. 
-  La lista de paquetes seguira activa, pero el sistema ya no recibira nuevas 
-  versiones.
   </p>
  

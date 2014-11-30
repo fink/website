@@ -1,4 +1,10 @@
-<a name="2014-10-18%20Yosemite%20support:%20%20fink-0.38.0%20released."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite support:  fink-0.38.0 released.</span></a><?php gray_line(); ?>
+<a name="2014-11-29%20fink-0.38.0%20released."><span class="news-date">2014-11-29: </span><span class="news-headline">fink-0.38.0 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.38.3</code> was released on 29 November, 2014.  This release enables the
+  official 10.10 binary distribution by default, along with official OS X 10.10.1 support
+  and other fixes and enhancements.
+  </p>
+  <a name="2014-10-18%20Yosemite%20support:%20%20fink-0.38.0%20released."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite support:  fink-0.38.0 released.</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.38.0</code> was released on 18 October, 2014.
   The Fink Project announces official support for Yosemite (OS X 10.10) with
@@ -15,18 +21,5 @@
   This release fixes bootstrapping on 10.9 under Xcode 6.x, among other fixes and
   enhancements.
   In addition, this release adds official 10.9.4 and 10.9.5 support.
-  </p>
- <a name="2014-06-04%20fink-0.36.5%20and%20fink-0.37.0%20released.%20End%20of%20official%20support%20for%2010.6."><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 and fink-0.37.0 released. End of official support for 10.6.</span></a><?php gray_line(); ?>
-  <p>
-  <code>fink-0.37.0</code> and <code>fink-0.37.0</code> were released on 4 June, 2014.
-  These <code>fink</code> releases contain fixes for Java detection on 10.6 if older
-  versions of Apple's Java SDK are installed.  <code>fink-0.37.0</code> officially 
-  recognizes OS 10.9.3.  In addition, Fink's compiler wrappers are 
-  now installed directly by the fink package to make for easier modifications.
-  </p>
-  <p>
-  <code>fink-0.36.5</code> marks the end of 10.6 support by the Fink Project.  Users
-  who want package updates should contact the maintainers of the respective packages.
-  Unmaintained packages can be updated by request as well.
   </p>
  

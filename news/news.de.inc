@@ -1,4 +1,10 @@
-<a name="2014-10-18%20Yosemite%20support:%20%20fink-0.38.0%20released."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite support:  fink-0.38.0 released.</span></a><?php gray_line(); ?>
+<a name="2014-11-29%20fink-0.38.0%20released."><span class="news-date">2014-11-29: </span><span class="news-headline">fink-0.38.0 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.38.3</code> was released on 29 November, 2014.  This release enables the
+  official 10.10 binary distribution by default, along with official OS X 10.10.1 support
+  and other fixes and enhancements.
+  </p>
+  <a name="2014-10-18%20Yosemite%20support:%20%20fink-0.38.0%20released."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite support:  fink-0.38.0 released.</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.38.0</code> was released on 18 October, 2014.
   The Fink Project announces official support for Yosemite (OS X 10.10) with
@@ -25,19 +31,4 @@
 	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
 	können auch auf Anfrage aktualisiert werden.
   </p>
- <a name="2014-04-06%20fink-0.36.4%20ver%C3%B6ffentlicht"><span class="news-date">2014-04-06: </span><span class="news-headline">fink-0.36.4 veröffentlicht</span></a><?php gray_line(); ?>
-  <p>
-  <code>fink-0.36.4</code> wurde am 6.  April 2014 veröffentlicht.  Diese
-  Ausgabe von <code>fink</code> stellt die Benutzung einer offiziellen
-  binären Distribution als Voreinstellung für 10.8 und 10.9 wieder her.
-  (Sollten Distributionen für 10.6 und 10.7 erstellt werden, werden auch
-  diese unterstützt).  Außerdem wurden mehrere Probleme behoben, die mit
-  Xcode 5.1 auf 10.8 und 10.9 eingeführt wurden.  Diese Ausgabe enthält
-  auch die offizielle Unterstützung für OS 10.9.2, behebt die
-  bootstrap-Prozedur, wenn Xcode.app nicht vorhanden ist und macht x86_64
-  zur voreingestellten Architektur für 10.6 bootstraps.
-  </p>
-  <p>Nutzern wird empfohlen, <code>fink selfupdate</code> auszuführen, um diese
-  Version von fink zu installieren, insbesondere vor dem Hintergrund der
-  build-Probleme mit Xcode 5.1.</p>
  
