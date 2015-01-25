@@ -1,7 +1,7 @@
 <?php
 $title = "Anleitung zur Aktualisierung unter Mac OS X 10.7";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:32:37 $';
+$cvs_author = '$Author: k-m_schindler $';
+$cvs_date = '$Date: 2015/01/25 21:13:57 $';
 
 include "header.inc";
 ?>
@@ -15,7 +15,7 @@ include "header.inc";
 der aktualisierte Fink Baum korrekt funktioniert. Eine Aktualisierung von 
 10.6/i386 funktioniert definitiv nicht.</p>
 
-<p>Die Anleitung hier ist eine Übertragung der auf dem  
+<p>Die Anleitung hier ist eine Übertragung der Anleitung auf dem  
 <a href="http://finkers.wordpress.com/2011/09/26/fink-and-lion/">Fink blog</a>. 
 Die Einträge dort beschreiben die Aktualisierung mit mehr Details.</p>
 
