@@ -1,7 +1,7 @@
 <?php
 $title = "Links";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:09:50 $';
+$cvs_author = '$Author: k-m_schindler $';
+$cvs_date = '$Date: 2015/01/25 21:15:10 $';
 
 include "header.inc";
 ?>
@@ -9,13 +9,13 @@ include "header.inc";
 
 <h1>Links</h1>
 
-<p>Eine Liste all derer Ressourcen, die wir guten Gewissens an unsere Nutzer weiter empfehlen können.
-Alle Links öffnen eine neue Seite.</p>
+<p>Eine Liste all der Ressourcen, die wir guten Gewissens unseren Nutzern weiter 
+empfehlen können. Alle Links öffnen eine neue Seite.</p>
 
 <p>Links mit direktem Bezug zu Fink</p>
 <ul>
 <li><a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors" target="_blank">Fink Mirrors</a> 
-- Wie werde ich ein Fink-Mirror, welche Mirror gibt es und wie ist deren Status?</li>
+- Wie werde ich ein Fink-Mirror, welche Mirror gibt es und wie ist ihr Status?</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 ein graphisches Frontend für Fink</li>
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - Ein weiteres graphisches Frontend für Fink (noch alpha).</li>
