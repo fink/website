@@ -1,7 +1,7 @@
 <?php
 $title = "Anleitung zur Aktualisierung unter Mac OS X 10.10";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2015/01/26 09:52:50 $';
+$cvs_date = '$Date: 2015/01/26 12:12:00 $';
 
 include "header.inc";
 ?>
@@ -46,8 +46,8 @@ include "header.inc";
 </ol>
 <p>
 	Aktualisiert man von 10.9 nach 10.10 mit einer fink Version, die 10.10 nicht 
-	unterstützt, geht es nicht weiter. Der einfachste Option ist den Anweisungen unten zu 
-	folgen und eine binäre Distribution zu verwenden, um Zeit zum erstellen der Pakete zu 
+	unterstützt, geht es nicht weiter. Die einfachste Option ist den Anweisungen unten zu 
+	folgen und eine binäre Distribution zu verwenden, um Zeit zum Erstellen der Pakete zu 
 	sparen.
 </p>
 
@@ -56,8 +56,8 @@ include "header.inc";
 
 <p>Die Anleitung hier ist eine Übertragung der Anleitung auf dem <a
   href="http://finkers.wordpress.com/2011/09/26/fink-and-lion/">Fink blog</a>. 
-  Die Einträge dort beschreiben die Aktualisierung mit mehr Details.</p>
-
+  Die Einträge dort beschreiben die Aktualisierung mit mehr Details.
+</p>
 <p>
   Dieser Prozess sammelt eine Liste der Pakete, die auf aktuell installiert sind und 
   speichert sie für die spätere Verwendung bei der Installation von Fink auf 10.10.
@@ -91,8 +91,8 @@ include "header.inc";
 </ol>
 <p>
   Nicht alle Pakete, die unter 10.8 und früher zur Verfügung standen, gibt es auch
-  für 10.10, weil es einige Änderungen im System gibt.  Es wird daran
-  gearbeitet, möglichst viele der Pakete wieder verfügbar zu machen.  Ist
+  für 10.10, weil es einige Änderungen im System gibt. Es wird daran
+  gearbeitet, möglichst viele der Pakete wieder verfügbar zu machen. Ist
   ihr Lieblingspaket auf 10.10 noch nicht verfügbar, kontaktieren sie den
   Maintainer des Pakets und fragen sie ihn, ob es nach 10.10 übernommen
   werden kann.
