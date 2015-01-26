@@ -1,7 +1,7 @@
 <?php
 $title = "Anleitung zur Aktualisierung unter Mac OS X 10.10";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2015/01/25 21:13:57 $';
+$cvs_date = '$Date: 2015/01/26 09:52:03 $';
 
 include "header.inc";
 ?>
@@ -28,9 +28,9 @@ include "header.inc";
 		ist dies nicht nötig.
 	</li>
 	<li>
-		Führen sie das Kommando <pre>fink configure</pre> aus, um den Finks
-		Nutzer "build" zu reaktivieren.  Apple löscht unsere Nutzer, aber aus
-	    unerfindlichen Gründen nicht unsere Gruppen.
+		Führen sie das Kommando <pre>fink configure</pre> aus, um den Fink-Nutzer "build" 
+		zu reaktivieren.  Apple löscht unsere Nutzer, aber aus unerfindlichen Gründen 
+		nicht unsere Gruppen.
 	</li>
 	<li>
 		Führen sie das Kommando <pre>fink reinstall fink</pre> aus, um auf die 
@@ -40,8 +40,8 @@ include "header.inc";
 		Optional: 
 		<p>Führen sie das Kommando <pre>fink install perl5162-core</pre> aus, wenn sie 
 		<code>-pm5162</code>-Pakete installiert haben.</p>
-		<p>Führen sie das Kommando <pre>fink list -it passwd | cut -f2 | xargs fink 
-		reinstall</pre> aus, wenn sie <code>passwd-*</code>-Pakete installiert haben.
+		<p>Führen sie das Kommando <pre>fink list -it passwd | cut -f2 | xargs fink reinstall</pre> 
+		aus, wenn sie <code>passwd-*</code>-Pakete installiert haben.
 	</li>
 </ol>
 <p>
