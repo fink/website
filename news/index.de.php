@@ -1,28 +1,31 @@
 <?php
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/11/30 17:36:40';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/01/25 21:17:41';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2014-11-29%20fink-0.38.0%20released."><span class="news-date">2014-11-29: </span><span class="news-headline">fink-0.38.0 released.</span></a><?php gray_line(); ?>
+<a name="2014-11-29%20fink-0.38.0%20ver%C3%B6ffentlicht."><span class="news-date">2014-11-29: </span><span class="news-headline">fink-0.38.0 veröffentlicht.</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.38.3</code> was released on 29 November, 2014.  This release enables the
-  official 10.10 binary distribution by default, along with official OS X 10.10.1 support
-  and other fixes and enhancements.
+	<code>fink-0.38.3</code> wurde am 29. November 2014 veröffentlicht.
+	Diese Ausgabe aktiviert die offizielle, binäre Distribution für 10.10
+  als Voreinstellung zusammen mit der offiziellen Unterstützung von OS X
+	10.10.1 sowie anderen Korrekturen und Erweiterungen.
   </p>
-  <a name="2014-10-18%20Yosemite%20support:%20%20fink-0.38.0%20released."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite support:  fink-0.38.0 released.</span></a><?php gray_line(); ?>
+  <a name="2014-10-18%20Yosemite%20Unterst%C3%BCtzung:%20fink-0.38.0%20ver%C3%B6ffentlicht."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite Unterstützung: fink-0.38.0 veröffentlicht.</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.38.0</code> was released on 18 October, 2014.
-  The Fink Project announces official support for Yosemite (OS X 10.10) with
-  the release of <code>fink-0.38.0</code>.
+	<code>fink-0.38.0</code> wurde am 18. Oktober 2014 veröffentlicht. Mit
+	der Ausgabe von <code>fink-0.38.0</code> kündigt das Fink-Projekt die
+	offizielle Unterstützung von Yosemite (OS X 10.10) an.
   </p>
   <p>
-  10.9 users who want to upgrade their Fink installations in place from 10.9 to 10.10
-  may do so.  To do so, you must install <code>fink-0.38.0</code> (or later) on 10.9 
-  before updating to 10.10.  We don't support upgrading Fink on 10.8 or earlier to 10.10.
+	Nutzer von 10.9, die ihre Fink-Installation von 10.9 auf 10.10
+	aktualisieren wollen, können dies tun. Dafür muss man
+	<code>fink-0.38.0</code> (oder neuer) auf 10.9 installieren, bevor man
+	auf 10.10 aktualisiert. Eine Aktualisierung von Fink von 10.8 oder
+	früher auf 10.10 wird nicht unterstützt.
   </p>
  <a name="2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%C3%B6ffentlicht.%20Ende%20der%20offiziellen%20%0A%20%20%20Unterst%C3%BCtzung%20von%2010.6."><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 und fink-0.37.0 veröffentlicht. Ende der offiziellen 
    Unterstützung von 10.6.</span></a><?php gray_line(); ?>
@@ -32,7 +35,7 @@ include_once "header.inc";
 	bei der Bestimmung von Java auf 10.6, wenn eine ältere Version des Apple
 	Java SDK installiert ist. <code>fink-0.37.0</code> erkennt offiziell OS
 	10.9.3. Außerdem werden Finks "compiler wrapper" jetzt direkt vom Paket
-	"fink" installiert.  Modifikationen werden dadurch einfacher.
+	"fink" installiert. Modifikationen werden dadurch einfacher.
   </p>
   <p>
 	<code>fink-0.36.5</code> markiert das Ende der Unterstützung von 10.6
@@ -42,24 +45,24 @@ include_once "header.inc";
   </p>
  <a name="2014-04-06%20fink-0.36.4%20ver%C3%B6ffentlicht"><span class="news-date">2014-04-06: </span><span class="news-headline">fink-0.36.4 veröffentlicht</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.36.4</code> wurde am 6.  April 2014 veröffentlicht.  Diese
-  Ausgabe von <code>fink</code> stellt die Benutzung einer offiziellen
+  <code>fink-0.36.4</code> wurde am 6. April 2014 veröffentlicht. Diese
+  Ausgabe von <code>fink</code> stellt die Benutzung einer offiziellen,
   binären Distribution als Voreinstellung für 10.8 und 10.9 wieder her.
   (Sollten Distributionen für 10.6 und 10.7 erstellt werden, werden auch
-  diese unterstützt).  Außerdem wurden mehrere Probleme behoben, die mit
-  Xcode 5.1 auf 10.8 und 10.9 eingeführt wurden.  Diese Ausgabe enthält
+  diese unterstützt). Außerdem wurden mehrere Probleme behoben, die mit
+  Xcode 5.1 auf 10.8 und 10.9 eingeführt wurden. Diese Ausgabe enthält
   auch die offizielle Unterstützung für OS 10.9.2, behebt die
   bootstrap-Prozedur, wenn Xcode.app nicht vorhanden ist und macht x86_64
-  zur voreingestellten Architektur für 10.6 bootstraps.
+  zur voreingestellten Architektur für 10.6 Bootstraps.
   </p>
   <p>Nutzern wird empfohlen, <code>fink selfupdate</code> auszuführen, um diese
-  Version von fink zu installieren, insbesondere vor dem Hintergrund der
+  Ausgabe von fink zu installieren, insbesondere vor dem Hintergrund der
   build-Probleme mit Xcode 5.1.</p>
  <a name="2014-04-06%20Probleme%20mit%20rsync"><span class="news-date">2014-04-06: </span><span class="news-headline">Probleme mit rsync</span></a><?php gray_line(); ?>
   <p>
   Es gab Probleme mit dem master rsync server, die bisher nicht behoben
-  werden konnten.  Unglücklicherweise betrifft das bis auf zwei auch alle
-  anderen Server.  Als vorläufige Abhilfe müssen sie die Datei
+  werden konnten. Unglücklicherweise betrifft das bis auf zwei auch alle
+  anderen Server. Als vorläufige Abhilfe müssen sie die Datei
   <code>/sw/etc/fink.conf</code> als Administrator editieren und die
   Einstellung für <code>Mirror-rsync</code> zu einer der folgenden
   ändern:</p>
