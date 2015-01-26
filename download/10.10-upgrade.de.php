@@ -1,7 +1,7 @@
 <?php
 $title = "Anleitung zur Aktualisierung unter Mac OS X 10.10";
 $cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2015/01/26 09:52:03 $';
+$cvs_date = '$Date: 2015/01/26 09:52:50 $';
 
 include "header.inc";
 ?>
@@ -86,7 +86,7 @@ include "header.inc";
     vorher unter 10.8 oder früher installiert waren.
   </li>
   <li>
-    Löschen sie das Fink-Verzeichnis, z. B. mit <pre>sudo rm -rf /sw.old</pre>.
+    Löschen sie das Fink-Verzeichnis, z. B. mit: <pre>sudo rm -rf /sw.old</pre>
   </li>
 </ol>
 <p>
