@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article SYSTEM "../finkdoc.dtd">
+<article filename="index" lang="de">
+  <title>Fink - Dokumentation</title>
+  <shorttitle>Dokumentation</shorttitle>
+  <cvsid>$Id: doc.de.xml,v 1.1 2015/02/17 21:14:26 k-m_schindler Exp $</cvsid>
+  <preface>
+    <p>
+Dies ist eine Sammlung verschiedener Dokumente für Fink. Einige der
+Dokumente sind auch dann interessant, wenn man Fink nicht nutzt, aber
+lernen möchte, wie man Unix-Software nach Mac OS X oder Darwin portiert.
+    </p>
+  </preface>
+  <section name="userdoc">
+    <title>Nutzer-Dokumentation</title>
+    <p>
+Die aktuelle Nutzer-Dokumentation für Fink:
+    </p>
+    <ul>
+      <li>
+<varlink url="users-guide/index.php"
+varurl="users-guide/uguide.de.html">Fink-Benutzerhandbuch</varlink> - Hier
+wird beschrieben, wie man Fink und Pakete installiert und auf eine neue
+Version von Fink aktualisiert. Das Handbuch behandelt sowohl die
+Quelltext- als auch die Binär-Distribution.
+      </li>
+      <li>
+<varlink url="advanced/index.php"
+varurl="advanced/advanced.de.html">Fortgeschrittene Fink Themen</varlink> -
+beschreibt weiter fortgeschrittene Konzepte als die des Benutzerhandbuchs.
+      </li>
+      <li>
+<varlink url="x11/index.php" varurl="x11/x11.de.html">X11 auf Darwin und
+Mac OS X laufen lassen</varlink> - Hier werden die Konzepte, die
+Installation und der Start von X11 beschrieben (auch generell für Darwin
+und Mac OS X Nutzer)
+      </li>
+    </ul>
+    <p>
+Ein Bündel von Dokumenten, die zwar vollständiger, aber auch mehr oder
+weniger veraltet sind und nicht mehr gepflegt werden:
+    </p>
+    <ul>
+      <li>
+<varlink url="bundled/install.php"
+varurl="bundled/install.html">Installation und Aktualisierung</varlink> -
+Wie installiert man Fink und wie aktualisiert man auf eine neue Version
+      </li>
+      <li>
+<varlink url="bundled/usage.php"
+varurl="bundled/usage.html">Nutzung</varlink> - Wie benutzt man Fink und
+die installierte Software
+      </li>
+      <li>
+<varlink url="readme.php" varurl="readme.de.html">Fink Lies-Mich</varlink>
+- Die Lies-Mich Datei für die Quelltext-Distribution
+      </li>
+      <li>
+<varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.de.html">CVS
+Zugang</varlink> - Wie greift man auf das CVS-Repository von Fink zu, wenn
+man zwischen bestimmten Versionen von Fink die neuesten Quelltext-Pakete 
+haben möchte.
+      </li>
+    </ul>
+  </section>
+  <section name="developerdoc">
+    <title>Entwickler-Dokumentationen</title>
+    <ul>
+      <li>
+<varlink url="security/index.php"
+varurl="security/sec-policy.de.html">Handbuch über die
+Sicherheitspolitik</varlink> - Eine Pflichtlektüre für alle, die selbst
+Pakete in Fink pflegen oder neu erstellen wollen.
+      </li>
+      <li>
+<link url="/doc/UsingFink.pdf">Using Fink: A Developer's How To</link> (2MB
+pdf file) - Folien eines Vortrags auf der <link
+url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X
+Conference</link> (auch als <link
+url="http://conferences.oreillynet.com/presentations/macosx02/morrison_david.ppt">PowerPoint
+Folien</link> erhältlich)
+      </li>
+      <li>
+<varlink url="porting/index.php" varurl="porting/porting.de.html">Porting
+Tipps</varlink> - Notizen für die Portierung von Unix Programmen nach
+Darwin
+      </li>
+      <li>
+<varlink url="quick-start-pkg/index.php"
+varurl="quick-start-pkg/quick-start-pkg.de.html">Paket erstellen -
+Tutorial</varlink> - eine Ergänzung zum Handbuch für die Paketerstellung,
+die auf sich auf reale Beispiele konzentriert und eine Einführung über
+das Paketerstellen für Anfänger bietet.
+      </li>
+      <li>
+<varlink url="packaging/index.php"
+varurl="packaging/packaging.de.html">Handbuch für die
+Paketerstellung</varlink> - Wie erstellt und pflegt man Pakete für Fink
+      </li>
+      <li>
+<link url="http://wiki.finkproject.org/index.php/Fink">Das Fink Entwickler
+Wiki</link> - enthält auch Material für Entwickler, das noch in
+Bearbeitung ist.
+      </li>
+    </ul>
+  </section>
+  <section name="otherdoc">
+    <title>Andere Dokumente</title>
+    <ul>
+      <li>
+<varlink url="multilingual/index.php"
+varurl="multilingual/multilingual.de.html">Anleitung für die
+Internationalisierung</varlink> - Material für die fortlaufende Arbeiten,
+um die Webseiten zu internationalisieren.
+      </li>
+      <li>
+<varlink url="netiquette/index.php"
+varurl="netiquette/netiquette.de.html">Mailing List Netiquette</varlink> -
+Wie setzt man die Fink Mailing-Listen am besten ein.
+      </li>
+    </ul>
+  </section>
+</article>
