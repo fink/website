@@ -1,6 +1,6 @@
 <?php
 $title = "Benutzerhandbuch - Aktualisieren";
-$cvs_author = 'Author: nieder';
+$cvs_author = 'Author: kms';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="conf.php?phpLang=de" title="Die Fink-Konfigurationsdatei"><link rel="prev" href="packages.php?phpLang=de" title="Pakete Installieren">';
 
@@ -57,18 +57,12 @@ Um die Source-Distribution mit dem Fink Commander zu aktualisieren, wählen Sie 
       <p>
 Wenn Sie einige Pakete als vorkompilierte Binärdateien herunterladen und andere von Quellcode kompilieren, werden Sie beide oben erklärten Vorgehensweisen befolgen müssen, um Ihre Fink-Installation zu aktualisieren.  Das heißt, Sie verwenden erst <code>dselect</code> oder <code>apt-get</code>, um die aktuellsten Versionen der Pakete zu bekommen, die als Binärdateien verfügbar sind, und dann <code>fink selfupdate</code> und <code>fink update-all</code>, um die aktuellen Beschreibungen für die übrigen Pakete herunterzuladen. Wenn Sie den Fink Commander verwenden, folgen Sie den Erklärungen zur <a href="#bin">Binary-</a>- und dann zur <a href="#src">Source</a>-Distribution.
  </p>
-
-<p>Starting with fink 0.23.0 using the UseBinaryDist option (settable via the
-<a href="usage.php?phpLang=de#options">--use-binary-dist (or -b) option</a>
-or in the <a href="conf.php?phpLang=de">Fink configuration file</a>) both source and
-binary descriptions will be updated if you call <code>fink selfupdate</code>.
-In this case you don't need a separate <code>apt-get</code> call anymore.</p>
-<p>If you are using Fink Commander select Binary-&gt;Update descriptions to update
-the package list, and then Binary-&gt;Dist-Upgrade packages to update to new
-versions. After that do Source-&gt;Selfupdate to download new package
-information files, and then Source-&gt;Update-all (see previous sections for
-details).</p>
-
+<p>
+Ab der Version 0.23.0 von Fink werden mit der Option UseBinaryDist sowohl die binäre als auch die Quell-Distribution aktualisiert, wenn man <code>fink selfupdate</code> aufruft. Die Option UseBinaryDist kann man mittels der <a href="usage.php?phpLang=de#options">Option --use-binary-dist (oder -b)</a> setzen oder in der <a href="conf.php?phpLang=de">Konfigurationsdatei von Fink</a>. Der zusätzliche Aufruf von <code>apt-get</code> ist nicht mehr nötig.
+</p>
+<p>
+Benutzen sie Fink Commander, dann wählen sie für die Aktualisierung der Paketlisten den Menüpunkt Binary-&gt;Update descriptions aus und dann für die Aktualisierung der Pakete Binary-&gt;Dist-Upgrade packages. Danach lädt man die neuen Paketbeschreibungen mit Source-&gt;Selfupdate herunter und aktualisiert mit Source-&gt;Update-all (Details dazu stehen in den Abschnitten weiter oben).
+</p>
     
   <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="conf.php?phpLang=de">5. Die Fink-Konfigurationsdatei</a></p>

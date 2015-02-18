@@ -1,6 +1,6 @@
 <?php
 $title = "Benutzerhandbuch - Pakete";
-$cvs_author = 'Author: nieder';
+$cvs_author = 'Author: kms';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="upgrade.php?phpLang=de" title="Fink Aktualisieren"><link rel="prev" href="install.php?phpLang=de" title="Erste Installation">';
 
@@ -88,6 +88,7 @@ Falls apt-get feststellt, dass das Paket die Installation anderer Pakete vorauss
       <pre>sudo apt-get remove lynx</pre>
       <p>
       </p>
+
     
     <h2><a name="bin-exceptions">3.3 Paketabhängigkeiten ohne verfügbares Binary-Paket</a></h2>
       
@@ -99,13 +100,12 @@ einpaket: Depends: anderespaket (&gt;= version) but it is
 not installable
 E: Sorry, broken packages</pre>
       <p>
-Was hier passiert ist folgendes: ein Paket, welches Sie versuchen zu installieren, hängt von einem anderen Paket ab, welche aber aus Lizenzgründen nicht in Form eines Binary also vorkompilierten Pakets verbreitet werden darf. Sie müssen das vorausgesetzte Paket ("dependency") von Quellcode installieren, also kompilieren (siehe nächsten Abschnitt).</p>
+Was hier passiert, ist folgendes: ein Paket, das Sie versuchen zu installieren, hängt von einem anderen Paket ab, das aber aus Lizenzgründen nicht in Form eines Binary also vorkompilierten Pakets verbreitet werden darf. Sie müssen das vorausgesetzte Paket ("dependency") von Quellcode installieren, also kompilieren (siehe nächsten Abschnitt).</p>
     
-    <h2><a name="src">3.4 Installing Binary and Source Packages with fink</a></h2>
+    <h2><a name="src">3.4 Binäre und Quellcode-Pakete mit fink installieren</a></h2>
       
-
-<p>The <code>fink</code> tool will allow you to install packages that are not yet available in the <a href="intro.php?phpLang=de#src-vs-bin">binary distribution</a>.</p>
-
+      <p>
+ Mit <code>fink</code> kann man auch Pakete installieren, die noch nicht in der <a href="intro.php?phpLang=de#src-vs-bin">binären  Distribution</a> zur Verfügung stehen.</p>
       <p>
 Zu erst benötigen Sie eine geeignete Version der Development Tools für Ihr System. Sie können diese kostenlos nach einer Registration von <a href="http://connect.apple.com">http://connect.apple.com</a> herunterladen.</p>
       <p>
@@ -115,34 +115,26 @@ Um eine Liste der verfügbaren Pakete, die vom Quellcode ("from source") install
 Die erste Spalte listet den Installationszustand an (leer für nicht installiert,  <code>i</code> für installiert, <code>(i)</code> für installiert, aber nicht die aktuellste Version), gefolgt vom Paketname, die aktuelle Version und eine kurze Beschreibung. Sie können nach mehr Informationen über ein spezielles Paket fragen, indem Sie den "describe"-Befehl verwenden ("info" ist ein alias dafür ):</p>
       <pre>fink describe xmms</pre>
       <p>
-Sobald Sie ein Paket gefunden haben, welches Sie installieren wollen, benutzen Sie den "install"-Befehl:
+Sobald Sie ein Paket gefunden haben, das Sie installieren wollen, benutzen Sie den "install"-Befehl:
 </p>
       <pre>fink install wget-ssl</pre>
       <p>
 Der <code>fink</code>-Befehl wird erst prüfen, ob alle Grundvoraussetzungen ("dependencies") vorhanden sind, und wird Sie dann fragen, ob Sie damit einverstanden sind, dass diese installiert werden, falls sie noch nicht da sind. Dann beginnt der Installationsprozess: die Quellen werden heruntergeladen, ausgepackt, gepatcht, kompiliert und schlussendlich an die richtige Stelle auf der Festplatt Ihres Computers geschoben. Dieser Vorgang kann eine lange Zeit dauern. Falls währenddessen Fehler auftreten, schauen Sie sich bitte erst die <a href="/faq/">FAQ</a> an.
 </p>
-
       <p>
-For <code>fink</code> versions since 0.23.0 you can tell it to try to download
-pre-compiled binary packages, if available, instead of building them. Just pass
-the <a href="usage.php?phpLang=de#options">--use-binary-dist (or -b)
-option</a> to <code>fink</code>. This can save you a lot of time. E.g.
-calling
+Ab der <code>fink</code> Version 0.23.0 kann man auch einstellen, dass bereits übersetzte, binäre Pakete herunter geladen werden, so weit sie vorhanden sind. Einfach die <a href="usage.php?phpLang=de#options">--Option use-binary-dist (oder -b) </a> an <code>fink</code> übergeben. Das kann sehr viel Zeit sparen. Zum Beispiel: Ruft man
       </p>
       <pre>fink --use-binary-dist install wget-ssl</pre>
-      <p>or</p>
+      <p>auf oder</p>
       <pre>fink -b install wget-ssl</pre>
-      <p>
-will first download all dependencies for wget-ssl that are available from the
-binary distribution and only build the remainder from source. This option can
-also be enabled permanently in the <a href="conf.php?phpLang=de">Fink configuration
-file</a> (fink.conf) or by running the command <code>fink configure</code>.
+ <p>
+werden zuerst alle Pakete, von denen wget-ssl abhängt und die aus der binären Distribution zur Verfügung stehen, herunter geladen und nur der Rest aus den Quellen erstellt. Diese Option kann auch dauerhaft in der <a href="conf.php?phpLang=de">Konfigurationsdatei von Fink</a> (fink.conf) gesetzt werden oder mit dem Kommando:
+<code>fink configure</code>.
       </p>
       <p>
-More details about the <code>fink</code> tool are available in the chapter 
-<a href="usage.php?phpLang=de">"Using the fink Tool from the Command Line"</a>.
+Weitere Details zu <code>fink</code> stehen im Kapitel
+<a href="usage.php?phpLang=de">"Fink in der Kommandozeile benutzen"</a>.
       </p>
-
     
     <h2><a name="fink-commander">3.5 Fink Commander</a></h2>
       
@@ -154,19 +146,17 @@ More details about the <code>fink</code> tool are available in the chapter
 <p>Wenn Sie ein Paket installieren möchten, sollten Sie zuerst die <a href="http://pdb.finkproject.org/pdb/index.php">Paketdatenbank</a> überprüfen und nachsehen, ob es überhaupt via Fink verfügbar ist. Die verfügbare(n) Version(en) des Pakets werden in mehreren Zeilen einer Tabelle angezeigt. Diese sind:</p>
       <ul>
         <li>Binary Distribution
-		  
 		  <ol>
             <li><p>
-            <b>0.4.1:</b> das ist die Version, die als Binary-Paket für OS 10.1 installiert werden kann.</p></li>
-            <li><p><b>0.6.4:</b>  this is the version that can be installed from binaries for OS 10.2.</p></li>
+            <b>0.4.1:</b> das ist die Version, die als Binär-Paket für OS 10.1 installiert werden kann.</p></li>
+            <li><p><b>0.6.4:</b> das ist die Version, die als Binär-Paket für OS 10.2 installiert werden kann.</p></li>
             <li><p><b>0.7.2:</b>
-  This is the base version that can be installed from binaries for OS 10.3.  If you <a href="install.php?phpLang=de#bin">update</a> Fink, later versions of some packages may be available.</p> 
+  das ist die Basis-Version, die als Binär-Paket für OS 10.3 installiert werden kann.  Mit <a href="install.php?phpLang=de#bin">update</a> Fink, stehen für manche Pakete neuere Versionen zur Verfügung</p>
         </li>
-            <li><p><b>0.9.0:</b>  This is the base version that can be installed from binaries for OS 10.5.  If you <a href="install.php?phpLang=de#bin">update</a> Fink, later versions of some packages may be available.</p></li>
+            <li><p><b>0.9.0:</b> Das ist die Basis-Version , die als Binär-Paket für OS 10.5 installiert werden kann.  Mit <a href="install.php?phpLang=de#bin">update</a> Fink, stehen für manche Pakete neuere Versionen zur Verfügung</p></li>
           </ol>
-          
         </li>
-        <li>CVS/rsync Distributions
+        <li>CVS/rsync Distributionen
 <ol>
             <li>
           <p>
@@ -176,24 +166,15 @@ More details about the <code>fink</code> tool are available in the chapter
         </li>
         <li><p><b>10.3 stable:</b>  Das ist die aktuellste Version, die von Quellcode installiert werden unter OS 10.3.</p>
 </li>
-
-            <li><p><b>10.4/powerpc stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users 
-on PowerPC hardware.</p></li>
-            <li><p><b>10.4/intel stable:</b>  This is the most recent version that can be installed from the stable source tree for OS 10.4 users
-on intel hardware.</p></li>
-
+            <li><p><b>10.4/powerpc stable:</b> Dies ist die neueste Version, die aus dem stable Baum von 10.4 Nutzern auf PowerPC Hardare installiert werden kann.</p></li>
+            <li><p><b>10.4/intel stable:</b> Dies ist die neueste Version, die aus dem stable Baum von 10.4 Nutzern auf Intel Hardare installiert werden kann.</p></li>
         <li>
           <p>
             <b>10.2-gcc3.3 unstable:</b> Das ist die aktuellste unstable-Version, die von Quellcode unter 10.2 mit <code>gcc 3.3</code> installiert werden kann. Um diese Version zu installieren, folgen Sie den <a href="/faq/usage-fink.php#unstable">Erklärungen</a> über die Installation der unstable-Pakete.</p>
           <p>Anmerkung: <b>unstable</b> heißt nicht unbedingt <b>unbenutzbar</b>, allerdings installieren Sie diese Pakete auf eigene Gefahr.</p>
         </li>
         <li><b>10.3 unstable:</b>  Das ist die aktuellste unstable-Version, die von Quellcode unter 10.3 installiert werden kann. Aktivieren Sie den unstable-Baum wie <a href="/faq/usage-fink.php#unstable">oben</a> erwähnt.</li>
-
-            <li><p><b>10.4/powerpc unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
-on PowerPC hardware.</p></li>
-            <li><p><b>10.4/intel unstable:</b>  This is the most recent version that can be installed from the unstable source tree for OS 10.4 users
-on intel hardware.</p></li>
-
+            <li><p><b>10.4/powerpc unstable:</b> Dies ist die neueste Version, die aus dem unstable Baum von 10.4 Nutzern auf PowerPC Hardare installiert werden kann.</p></li>
           </ol></li>
       </ul>
     
@@ -203,32 +184,29 @@ on intel hardware.</p></li>
       <p>
 Da es für Mac OS X mehrere X11-Implementationen verfügbar sind (Apple X11, XFree86, Tenon Xtools, eXodus) und es ebenso viele Wege gibt, diese zu installieren (manuell oder via Fink), gibt es verschiedene alternative Pakete - eins für jedes Setup.
 Hier ist eine Auflistung der verfügbaren Pakete und die Installationsmethoden:</p>
-      
       <ul>
         <li>
           <p>
             <b>xfree86, xfree86-shlibs:</b>
-Install both of these packages for XFree86 4.3.0 (OS 10.2 only), 4.4.0 (10.2 or 10.3), or 4.5.0 (10.3 or 10.4).  
+Installieren sie beide Pakete für XFree86 4.3.0 (nur OS 10.2), 4.4.0 (10.2 oder 10.3), oder 4.5.0 (10.3 oder 10.4).
 </p>
         </li>
-        <li><p><b>xorg, xorg-shlibs</b>(10.3 or 10.4)  Install these packages to get the 6.8.2 release of the X.org X11 distribution.</p></li>
+        <li><p><b>xorg, xorg-shlibs</b>(10.3 oder 10.4) installieren sie diese Pakete für die Version 6.8.2  der X.org X11 Distribution.</p></li>
         <li>
           <p>
 <b>system-xfree86 + -shlibs, -dev:</b>
-These packages are automatically generated (for Fink 0.6.2 or later) if you install Apple's X11, or manually installed XFree86 or X.org.  
-They will then act as
-dependency placeholders.
-</p>
+Diese Pakete werden automatisch erzeugt (für Fink 0.6.2 oder neuer), wenn man Apple's X11, XFree86 oder X.org installiert. Sie dienen als Platzhalter für Abhängigkeiten.
+          </p>
         </li>
         <li>
           <p>
             <b>xfree86-base, xfree86-rootless [-threaded] + -shlibs, -dev</b>
-(10.1 or 10.2 only) These packages install all of XFree86 4.2.1.1 (4.2.0 on 10.1).  The <code>-threaded</code> variant was provided for applications that required it, and this functionality is standard in later XFree86 versions.  The <code>-rootless</code> packages include the XDarwin display server--the name is historical.
-</p><p>You must install all six packages to build X11-based packages from source.
+            (nur 10.1 oder 10.2) Diese Pakete die komplette Version 4.2.1.1 (4.2.0 auf 10.1) von XFree86.  Die <code>-threaded</code> Variante für speziell für einige Programme, die dies benötigen; sie ist Standard in neueren Versionen von XFree86.  Das <code>-rootless</code> paket enhält den XDarwin display server - der Name ist historisch.
+</p>
+          <p>Sie müssen alle sechs Pakete installieren, wenn man X11-basierte Pakete aus Quellcode erstellen will.
 </p>
         </li>
       </ul>
-      
       <p>
       Für mehr Informationen über die Installation und die Nutzung von X11, schlagen Sie weiter im <a href="/doc/x11/">X11 unter Darwin und Mac OS X</a>-Dokument nach.
 </p>

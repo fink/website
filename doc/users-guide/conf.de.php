@@ -1,6 +1,6 @@
 <?php
 $title = "Benutzerhandbuch - fink.conf";
-$cvs_author = 'Author: nieder';
+$cvs_author = 'Author: kms';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="usage.php?phpLang=de" title="Das fink-Tool über die Kommandozeile benutzen"><link rel="prev" href="upgrade.php?phpLang=de" title="Fink Aktualisieren">';
 
@@ -77,18 +77,14 @@ unstable/main   - weitere instabile Pakete
           <p>
 Sie können auch Ihre eigenen Bäume in das Verzeichnis <code>/sw/fink/dists</code> für Ihre Bedürfnisse hinzufügen, dies ist aber nicht notwendig in den meisten Situationen. Die Standardbäume sind "local/main local/bootstrap
 stable/main". Diese Liste sollte mit der Datei <code>/sw/etc/apt/sources.list</code> synchronisiert sein. (Ab <code>fink</code> 0.21.0 wird das für Sie automatisch gemacht.)</p>
-
-<p>Die Reihenfolge im Baum ist wichtig, weil Pakete an späteren Positionen in 
+<p>Die Reihenfolge im Baum ist wichtig, weil Pakete an späteren Positionen in
 der Liste solche an früheren Positionen überschreiben können.</p>
-
         </li>
         <li>
           <p>
             <b>Distribution:</b> 10.1, 10.2, 10.2-gcc3.3, 10.3 oder 10.4</p>
           <p>Fink muss wissen, welche Version Sie von Mac OS X laufen haben. MaxcOS X 10.0 und frühere Versionen werden nicht und 10.1 und 10.2 wird nicht länger von der dieser Version von Fink unterstützt. 
-          
-          Mac OS X 10.2 users are restricted to fink-0.24.7, released in June 2005.
-          
+          Mac OS X 10.2 Nutzer müssen sich mit fink-0.24.7 begnügen, im Juni 2005 heraus gegeben.
           Dieses Feld wird mit dem Skript <code>/sw/lib/fink/postinstall.pl</code> gesetzt. Sie sollten diesen Wert nicht manuell verändern.
 </p>
         </li>
@@ -114,7 +110,6 @@ der Liste solche an früheren Positionen überschreiben können.</p>
 Der Standardwert ist 1.
 </p>
         </li>
-        
         <li><p><b>SkipPrompts:</b> Eine Komma-separierte Liste</p>
             <p>(<code>fink-0.25</code> und später) Diese Option instruiert 
             <code>fink</code> von der Nachfrage abzusehen, wenn der Nutzer keine 
@@ -127,7 +122,6 @@ Der Standardwert ist 1.
             <p><b>virtualdep</b> - Wahl zwischen alternativen Paketen</p>
             <p>Die Voreinstellung ist, dass kein Prompts übersprungen wird.</p>
         </li>
-        
         <li>
           <p>
             <b>NoAutoIndex:</b> boolean</p>
@@ -146,14 +140,11 @@ selfupdate-cvs</code> gesetzt, so dass Sie ihn nicht per Hand ändern brauchen.<
 	  <p>Fink muss mehrere temporäre Verzeichnisse für jedes Paket, welches von Quellcode kompiliert wird, erstellen. Der voreingestellte Ort wäre <code>/sw/src</code> on Panther and earlier, and 
 <code>/sw/src/fink.build</code> on Tiger. Wenn Sie es möchten, können Sie den Pfad hier einstellen. Für mehr Informationen über diese temporären Verzeichnisse lesen Sie die Beschreibungen über die Felder <code>KeepRootDir</code> und <code>KeepBuildDir</code> später in diesem Dokument.
 	    </p>
-	    
 	    <p>Unter Tiger wird empfohlen, dass Buildpath mit <code>.noindex</code>
 or <code>.build</code> endet. Andernfalls versucht Spotlight, die temporären 
 Dateien im Buildpath zu indizieren. Dieses verzögert die Erstellung von Paketen.
     	</p>
-    	
 	</li>
-
         <li><p><b>Bzip2Path:</b> Der Pfad zu ihrem <code>bzip2</code> (oder kompatiblen) Programm
           </p>
           <p>(<code>fink-0.25</code> und später) Mit der Option Bzip2Path kann 
@@ -165,7 +156,6 @@ Dateien im Buildpath zu indizieren. Dieses verzögert die Erstellung von Paketen
            <code>pbzip2</code>.
            </p>
         </li>
-
       </ul>
     
     <h2><a name="downloading">5.5 Download Einstellungen</a></h2>
@@ -196,15 +186,12 @@ Dateien im Buildpath zu indizieren. Dieses verzögert die Erstellung von Paketen
           <p>
             <b>DownloadMethod:</b> wget, curl, axel oder axelautomirror</p>
           <p>Fink kann drei verschiedene Programme nutzen, um Dateien vom Internet herunterzuladen: <b>wget</b>, <b>curl</b> oder <b>axel</b>. Der Wert <b>axelautomirror</b> führt zur Verwendung eines experimentellen Modus des Programms <b>axel</b>, so dass der Server, der sich am nähesten befindet und eine bestimmte Datei hat, bestimmt wird. Das Verwendung weder von <b>axel</b> noch von <b>axelautomirror</b> ist zu diesem Zeitpunkt empfohlen. Der Standardwert ist <b>curl</b>. <b>Das Programm, welches Sie als DownloadMethod angeben, MUSS installiert sein.</b>
-          
-          (i.e. <code>fink</code> won't fall back to <b>curl</b> if you try to use a download application that isn't present.
-          
+          (d. h. <code>fink</code> wird nicht auf <b>curl</b> zurück fallen, wenn man ein Programm einstellt, das nicht vorhanden ist.
           </p>
         </li>
-
         <li>
           <p>
-            <b>SelfUpdateMethod:</b> point, rsync or cvs</p>
+            <b>SelfUpdateMethod:</b> point, rsync oder cvs</p>
           <p>
 <code>fink</code> nutzt verschiedene Methoden, um info-Dateien der Pakete zu 
 aktualisieren. <b>rsync</b> ist die empfohlene Einstellung; mit rsync werden nur 
@@ -255,7 +242,6 @@ von <code>fink</code> aus seinen Quellen übersetzt.
            auf jeden Fall die Version nimmt, die binär zur Verfügung steht.
 </p>
         </li>
-
       </ul>
     
     <h2><a name="mirrors">5.6 Mirror Einstellungen</a></h2>
@@ -290,7 +276,6 @@ MasterNever - Nutzt "Master"-Mirrors nie.
 ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors in einen Satz).
 </pre>
         </li>
-        
         <li><p><b>Mirror-rsync:</b>
            </p>
            <p>(<code>fink-0.25.2</code> und später) Wird 
@@ -300,7 +285,6 @@ ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors i
            "anonymous rsync url" sein, die auf ein Verzeichnis zeigt, das alle 
            Distributionen und Bäume von fink enthält.
 </p></li>
-        
       </ul>
     
     <h2><a name="developer">5.7 Entwicklereinstellungen</a></h2>
@@ -339,7 +323,6 @@ ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors i
           Falls das Fink-Paket <code>ccache-default</code> installiert ist, werden die Cache-Dateien, die beim Erstellen von Fink-Paketen anfallen, hier zwischengespeichert. Standardwert ist <code>/sw/var/ccache</code>. Wenn es auf <code>none</code> gesetzt ist, wird Fink nicht die Umgebungsvariable CCACHE_DIR setzen und ccache wird <code>$HOME/.ccache</code> nutzen - wobei Dateien womöglich mit Root als Eigentümer in Ihr Home-Verzeichis abgelegt werden.
           <b>Nur in fink-Version ab 0.21.0 verfügbar</b>.</p>
         </li>
-        
         <li><p><b>NotifyPlugin:</b> plugin</p>
           <p>
            Geben sie ein Benachrichtigungs-plugin an, mit dem sie informiert 
@@ -374,7 +357,6 @@ ClosestFirst - Durchsucht den nächsten Mirror zuerst (kombiniert alle Mirrors i
            gesetzt, lässt Fink diese Pakete aus.
            </p>
         </li>
-        
       </ul>
     
     <h2><a name="sourceslist">5.9 Verwaltung von apts sources.list</a></h2>

@@ -1,6 +1,6 @@
 <?php
 $title = "Benutzerhandbuch - Installation";
-$cvs_author = 'Author: nieder';
+$cvs_author = 'Author: kms';
 $cvs_date = 'Date: 2014/10/20 11:41:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="packages.php?phpLang=de" title="Pakete Installieren"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
@@ -65,11 +65,9 @@ entpackt hat, löschen sie den Ordner, welchen er erstellt hat.
 </p>
       <p>
 Die Source-Version muss über die Kommandozeile installiert werden. Also öffnen Sie Terminal.app und wechseln Sie zu dem Verzeichnis, wo Sie das fink-0.x.x-full.tar.gz-Archiv gespeichert haben. 
-
 (Notiz: Haben Sie OS X 10.4 und XCode 2.1, sollten sie statt dessen
 <code>fink-0.8.0-full-XCode-2.1.tar.gz</code> verwenden und die Änderungen
 von weiter unten machen.)
-
 Der folgende Befehl entpackt das Archiv:
 </p>
       <pre>tar -xzf fink-0.x.x-full.tar.gz</pre>
