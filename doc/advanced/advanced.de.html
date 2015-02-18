@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--
+Generated from $Fink: advanced.de.xml,v 1.6 2012/11/11 15:20:12 MiSchi Exp $
+-->
+<title>Fink Documentation - Fortgeschrittene Fink Themen</title></head><body>
+<table width="100%" cellspacing="0">
+<tr valign="bottom">
+<td align="center">
+Available Languages:  | 
+Deutsch | 
+<a href="advanced.en.html">English</a> | 
+<a href="advanced.fr.html">Fran&ccedil;ais</a> | 
+<a href="advanced.ja.html">&#26085;&#26412;&#35486; (Nihongo)</a> | 
+<a href="advanced.pt.html">Portugu&ecirc;s</a> | 
+</td>
+</tr>
+</table>
+<h1 style="text-align: center;">Fortgeschrittene Fink Themen</h1>
+    <p>
+Diese Dokument beschreibt fortgeschrittene Themen, die nicht im
+<a href="/doc/users-guide/">User's Guide</a> beschrieben werden.
+    </p>
+  <h2>Contents</h2><ul><li><a href="#bindist"><b>1 Betrieb eines eigenen Servers für eine binäre Distribution</b></a><ul><li><a href="#bindist.intro">1.1 Einführung</a></li><li><a href="#bindist.master">1.2 Schritte auf dem "Master"-(Build)-Server</a></li><li><a href="#bindist.client">1.3 Schritte auf den Klienten-Rechnern</a></li><li><a href="#bindist.remarks">1.4 Bemerkungen</a></li></ul></li></ul><h2><a name="bindist">1 Betrieb eines eigenen Servers für eine binäre Distribution</a></h2>
+    
+    
+    <h3><a name="bindist.intro">1.1 Einführung</a></h3>
+      
+      <p>
+Dieser Abschnitt beschreibt eine Methode für Arbeitsgruppen mit mehreren
+Fink Installationen, bei der ein zentraler Build_Server (der Master)
+benutzt wird, der die binären Pakete an alle Klienten der Gruppe verteilt.
+      </p>
+      <p>
+Die Methode erfordert die folgenden Schritte auf dem
+<a href="#bindist.master">"Master"-Server</a> und den
+<a href="#bindist.client">Klienten-Rechnern</a>:
+      </p>
+    
+    <h3><a name="bindist.master">1.2 Schritte auf dem "Master"-(Build)-Server</a></h3>
+      
+      <ol>
+        <li>
+Installieren sie Fink unter <tt style="white-space: nowrap;">/sw</tt> (Der voreingestellte
+Basis-Pfad; wenn erforderlich, einen Symlink verwenden).
+        </li>
+        <li>
+Pakete wie üblich erstellen. Sie müssen nicht unbedingt installiert
+werden, erstellen reicht aus.
+        </li>
+        <li>
+          <p>
+Führen sie das Kommando <tt style="white-space: nowrap;">fink scanpackages</tt> aus, wenn sich ihr
+Satz an erstellten Paketen geändert hat. Dadurch erstellt Fink die
+apt-Indizes für alle eingeschalteten Bäume (trees) neu.
+          </p>
+          <p>
+Alternativ können sie auch das Kommando <tt style="white-space: nowrap;">fink cleanup</tt>
+ausführen. Dieses entfernt alle obsoleten Quell- und Binär-Pakete. Am Ende
+des Entfernens wird auch das Kommando <tt style="white-space: nowrap;">scanpackages</tt>
+ausgeführt.
+          </p>
+        </li>
+        <li>
+Starten sie einen Webserver: z.B. schalten sie "Personal Web Sharing" in
+der Kategorie "Freigaben" in den Systemeinstellungen ein. Richten sie
+dann httpd ein, dass es ihr Verzeichnis <tt style="white-space: nowrap;">/sw/fink</tt> zur
+Verfügung stellt, in dem sie folgende Zeilen in der Datei
+<tt style="white-space: nowrap;">/etc/httpd/httpd.conf</tt> hinzufügen:
+          <pre>
+Alias /fink /sw/fink
+&lt;Directory /sw/fink&gt;
+  Options Indexes FollowSymLinks
+&lt;/Directory&gt;
+          </pre>
+        </li>
+        <li>
+Führen sie dann das Kommando <tt style="white-space: nowrap;">sudo /usr/sbin/apachectl graceful</tt> 
+aus, um den Webserver (neu) zu starten.
+        </li>
+      </ol>
+      <p>
+Bitte denken sie daran, das Kommando <tt style="white-space: nowrap;">fink scanpackages</tt> (oder
+<tt style="white-space: nowrap;">fink cleanup</tt>) immer dann erneut auszuführen, wenn sie Pakete
+auf dem "Master"-Server neu erstellt oder aktualisiert haben, damit sie den
+Klienten-Rechnern zur Verfügung gestellt werden.
+      </p>
+      <p>
+<b>Notizen:</b>
+      </p>
+      <p>
+Sie sollten auch einen Nutzer 'fink' erstellen und die folgende Zeile in
+der Datei <tt style="white-space: nowrap;">/etc/httpd/users/fink.conf</tt> hinzufügen.
+      </p>
+      <p>
+Sollten sie das Paket apache2 aus Fink benutzen, müssen sie die Pfade
+entsprechend anpassen.
+      </p>
+    
+    <h3><a name="bindist.client">1.3 Schritte auf den Klienten-Rechnern</a></h3>
+      
+      <ol>
+        <li>
+Installieren sie Fink unter <tt style="white-space: nowrap;">/sw</tt> (voreingestellter
+Basis-Pfad).
+        </li>
+        <li>
+Führen sie das Kommando <tt style="white-space: nowrap;">fink configure</tt> aus und schalten sie
+die Option ein, die Pakete aus einer binären Distribution zu beziehen.
+("UseBinaryDist: true" in der Datei <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt>.)
+        </li>
+        <li>
+Editieren sie die Datei <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt>, and
+fügen sie die Zeilen dazu, die ihren Fink-Baum repräsentieren. Wenn zum
+Beipsiel ihre IP-Adresse des Build-Servers 192.168.42.7 lautet, müssen sie
+folgendes hinzufügen:
+          <pre>
+deb http://192.168.42.7/fink stable main crypto
+deb http://192.168.42.7/fink unstable main crypto
+deb http://192.168.42.7/fink local main
+          </pre>
+        </li>
+        <li>
+Führen sie das Kommando <tt style="white-space: nowrap;">fink selfupdate</tt> aus. Sie sollten
+am Ende der Aktualisierung (wenn das "verbose"-Level &gt;= 1 ist)
+etwas in der Art sehen:
+          <pre>
+...
+Hit http://192.168.42.7 stable/main Packages
+Hit http://192.168.42.7 stable/main Release
+Hit http://192.168.42.7 stable/crypto Packages
+...
+          </pre>
+        </li>
+      </ol>
+      <p>
+Führt man das Kommando <tt style="white-space: nowrap;">fink update-all</tt> oder <tt style="white-space: nowrap;">fink
+install &lt;package&gt;</tt> aus, werden alle benötigten Pakete falls
+vorhanden in binärer Form vom "Master"-Server bezogen.
+      </p>
+    
+    <h3><a name="bindist.remarks">1.4 Bemerkungen</a></h3>
+      
+      <ul>
+        <li>
+Ihr "Master"-Server muss die niedrigste Version von X11 benutzen, die auf
+einem ihrer Klienten-Rechner installiert ist. Mit anderen Worten: Benutzt
+einer ihrer Klienten-Rechner Apples X11, muss auch ihre "Master"-Server
+Apples X11 benutzen.
+        </li>
+        <li>
+Will man Platz auf dem Build-Server sparen, kann man alle Pakete
+entfernen, die lediglich Build-Abhängigkeiten sind (d.h. sie werden nicht
+für das Laufen des Programms benötigt). Das Paket <tt style="white-space: nowrap;">debfoster</tt>
+ermöglicht dies in schöner Form. Bitte achten sie darauf, keine
+essentiellen Pakete wie z. B. <tt style="white-space: nowrap;">apt</tt> zu löschen.
+        </li>
+       </ul>
+      <p>
+Diese Dokumentation ist teilweise adaptiert von
+<a href="http://ranger.befunk.com/blog/archives/000258.html">"Sharing the Fink"</a>
+von RangerRick. Vielen Dank!
+      </p>
+    
+  <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
+Copyright (c) 2001-2015 The Fink Project.
+You may distribute this document in print for private purposes,
+provided the document and this copyright notice remain complete and
+unmodified. Any commercial reproduction and any online publication
+requires the explicit consent of the author.</p><hr>
+<p>Generated from <i>$Fink: advanced.de.xml,v 1.6 2012/11/11 15:20:12 MiSchi Exp $</i></p></body></html>
