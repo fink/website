@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--
+Generated from $Fink: cvs.de.xml,v 1.7 2012/11/11 15:20:13 MiSchi Exp $
+-->
+<title>Fink Documentation - CVS Zugang für Fink aufsetzen</title></head><body>
+<table width="100%" cellspacing="0">
+<tr valign="bottom">
+<td align="center">
+Available Languages:  | 
+Deutsch | 
+<a href="cvs.en.html">English</a> | 
+<a href="cvs.es.html">Espa&ntilde;ol</a> | 
+<a href="cvs.fr.html">Fran&ccedil;ais</a> | 
+<a href="cvs.ja.html">&#26085;&#26412;&#35486; (Nihongo)</a> | 
+<a href="cvs.pt.html">Portugu&ecirc;s</a> | 
+<a href="cvs.ru.html">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russkiy)</a> | 
+<a href="cvs.zh.html">&#20013;&#25991; (&#31616;) (Simplified Chinese)</a> | 
+</td>
+</tr>
+</table>
+<h1 align="center">CVS Zugang für Fink aufsetzen</h1>
+<p>
+Fink wird über CVS entwickelt. Dies bedeutet, dass sie zwischen den
+Releases aktuell bleiben und die jeweils neuesten Sachen bekommen können.
+Diese Seite beschreibt, wie man eine existierende Installation von Fink
+aufsetzt, damit man sie mittels CVS aktualisieren kann. Die Informationen
+auf dieser Seite gelten für Fink 0.3.x und darüber.
+</p>
+<h3><a name="index.">Fink CVS Struktur</a></h3>
+<p>
+Fink hat mehrere CVS-Module. Das Modul <tt style="white-space: nowrap;">dists</tt> (<a href="http://fink.cvs.sourceforge.net/fink/">ViewCVS</a>) enthält die
+Paketbeschreibungen und die Korrekturen für OS X 10.2 und darüber. Es
+gibt noch weitere Module, die von Fink-Entwicklern benutzt werden und von
+jedem eingesehen werden könnnen, aber sie sind für die meisten Nutzer
+uninteressant.
+</p>
+<h3><a name="index.">Paketbeschreibungen aktualisieren</a></h3>
+<p>
+In der Vergangenheit war dies eine recht umständliche Prozedur, aber in
+der aktuellen Version von Fink ist es sehr einfach. Führen sie einfach
+folgendes Kommando aus:
+</p>
+<pre>fink selfupdate-cvs</pre>
+<p>
+Fink wird automatisch alle notwendigen Schreitte für die Aktualisierung
+ausführen. Dazu gehört das Empfangen der neuesten Paketbeschreibungen
+und die Aktualisierung einiger essentieller Kern-Pakete (Darunter auch des
+Fink Paket-Managers).
+</p>
+<p>
+Sind sie hinter einer Firewall, lesen sie <a href="/faq/usage-fink.php#proxy">FAQ 3.2</a>.
+</p>
+<p>
+Nachdem die Paketbeschreibungen wie oben beschrieben aktualisiert sind,
+werden sie normalerweise die installierten Pakete auf die neueste Version
+aktualisieren wollen. Führen sie dazu folgendes Kommando aus:
+</p>
+<pre>fink update-all</pre>
+<h3><a name="index.">Den Paket-Manager aktualisieren</a></h3>
+<p>
+<b>Notiz:</b> Ab dem 20. September 2001 ist es nicht mehr notwendig, den
+Paket-Manager separat zu aktualisieren. Er wird wie alle anderen Paket
+behandelt. Es ist aber immer noch möglich, ihn direkt aus CVS zu
+aktualisieren. Dies ist aber auch nur dann interessant, wenn man Paket
+erstellt, aber nicht als normaler Nutzer von Fink.
+</p>
+<p>
+Den Paket-Manager muss man über ein separates Verzeichnis aktualisieren
+und über das Skript <tt style="white-space: nowrap;">inject.pl</tt>. Dieses Skript kopiert die
+Paketbeschreibungen und die Tarballs für die Pakete Fink und die
+Base-Files in ihren Baum und erstellt die Pakete.
+</p>
+<p>
+Beim ersten Mal muss man ein temporäres Verzeichnis erstellen (im
+Beispiel <tt style="white-space: nowrap;">tempdir</tt> genannt), das leer ist, bzw. auf keinen Fall
+ein Unterverzeichnis 'fink' enthält. Die gesamte Prozedur besteht aus
+folgenden Kommandos:'
+</p>
+<pre>cd tempdir
+cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login
+cvs -z3 -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co fink
+cd fink
+./inject.pl</pre>
+<p>
+Das login-Kommando fragt nach einem Passwort. Drücken sie einfach die
+Return-Taste. Man kann dieses Verzeichnis nach der Aktualisierung
+löschen, aber es ist auch ganz praktisch, es für die nächste
+Aktualisierung auf zu heben. Die gesamte Prozedur besteht dann nur noch
+aus diesen Kommandos:
+</p>
+<pre>cd tempdir/fink
+cvs -z3 update -d
+./inject.pl</pre>
+<hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
+Copyright (c) 2001-2015 The Fink Project.
+You may distribute this document in print for private purposes,
+provided the document and this copyright notice remain complete and
+unmodified. Any commercial reproduction and any online publication
+requires the explicit consent of the author.</p><hr>
+<p>Generated from <i>$Fink: cvs.de.xml,v 1.7 2012/11/11 15:20:13 MiSchi Exp $</i></p></body></html>
