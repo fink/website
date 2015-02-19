@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--
+Generated from $Fink: netiquette.de.xml,v 1.5 2012/11/11 15:20:15 KMS Exp $
+-->
+<title>Fink Documentation - Beiträge für Fink Mailing-List erstellen</title></head><body>
+<table width="100%" cellspacing="0">
+<tr valign="bottom">
+<td align="center">
+Available Languages:  | 
+Deutsch | 
+<a href="netiquette.en.html">English</a> | 
+<a href="netiquette.es.html">Espa&ntilde;ol</a> | 
+<a href="netiquette.fr.html">Fran&ccedil;ais</a> | 
+<a href="netiquette.ja.html">&#26085;&#26412;&#35486; (Nihongo)</a> | 
+<a href="netiquette.ru.html">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russkiy)</a> | 
+<a href="netiquette.zh.html">&#20013;&#25991; (&#31616;) (Simplified Chinese)</a> | 
+</td>
+</tr>
+</table>
+<h1 style="text-align: center;">Beiträge für Fink Mailing-List erstellen</h1>
+    <p>Dieses Dokument ist der Leitfaden für neue Benutzer der Fink Mailing-Listen. Der Leitfaden soll zeigen wie man Anfragen in der Mailing-Liste effektiv gestaltet, damit Probleme umgehend und kompetent gelöst werden.
+    </p>
+    <p>Vielleicht wurde in der Antwort auf eine Anfrage auf diese Seite verwiesen. Nehmen sie dies bitte nicht persönlich, denn wahrscheinlich werden für die Lösung ihres Problems weitere Informationen benötigt und im folgenden ist aufgezählt, welche Informationen benötigt werden.
+    </p>
+  <h2>Contents</h2><ul><li><a href="#before-post"><b>1 Vorbereitung einer Anfrage</b></a><ul><li><a href="#before-post.research">1.1 Suchen sie selbst nach Lösungen für ihr Problem.</a></li></ul></li><li><a href="#first-post"><b>2 Erste Anfrage</b></a><ul><li><a href="#first-post.system">2.1 Was haben sie installiert?</a></li><li><a href="#first-post.problem-description">2.2 Was geht schief?</a></li><li><a href="#first-post.remedies">2.3 Was haben sie genau versucht?</a></li><li><a href="#first-post.future-plans">2.4 Wie geht es weiter?</a></li></ul></li><li><a href="#reply"><b>3 Antworten auf eine Nachricht</b></a><ul><li><a href="#reply.reply-to-list">3.1 Vergewissern sie sich, dass sie in der Mailing-Liste antworten</a></li></ul></li><li><a href="#unsubscribe"><b>4 Abonnement kündigen</b></a><ul><li><a href="#unsubscribe.unsubscribing">4.1 Wie kündige ich das Abonnement einer Mailing-Liste?</a></li></ul></li></ul><h2><a name="before-post">1 Vorbereitung einer Anfrage</a></h2>
+    
+    
+    <h3><a name="before-post.research">1.1 Suchen sie selbst nach Lösungen für ihr Problem.</a></h3>
+      
+      <p>Geben sie sich ein wenig Mühe und suchen sie zunächst selbst, ob die Lösung für ihr Problem bereits beschrieben ist. Beispielsweise:
+      </p>
+      <ul>
+        <li>in der Onnline-Dokumentation von Fink</li>
+        <li>in den Archiven der Mailing-Listen</li>
+        <li>Suchmaschinen wie Google oder andere</li>
+      </ul>
+    
+  <h2><a name="first-post">2 Erste Anfrage</a></h2>
+    
+    
+    <h3><a name="first-post.system">2.1 Was haben sie installiert?</a></h3>
+      
+      <p>Taucht das Problem bei der Installation eines Pakets auf, dann werden folgende Informationen benötigt:
+      </p>
+      <ul>
+        <li>Die Version von Mac OS X.</li>
+        <li>Die Version von Fink. Man erhält die Version als Terminal-Ausgabe wenn man folgendes Kommando eingibt:<pre>fink --version</pre>
+        </li>
+        <li>Geben sie bitte auch an, ob sie Binärpakete installlieren, z. B. mittels <tt style="white-space: nowrap;">apt-get</tt>, oder die Pakete aus Quellcode erstellen, z. B. mittels <tt style="white-space: nowrap;">fink install</tt>.
+          <p>Im letzten Fall, sollten sie auch angeben, welche Version der Developer Tools sie verwenden.</p>
+        </li>
+        <li><p>Installieren sie ein Paket, das X11 benötigt, sollten sie angeben, ob sie Apple's X11, XFree86 oder Xorg verwenden und in den letzten beiden Fällen welche Version.
+            </p>
+            <p>Ist das nicht ganz klar, am besten einfach die Versionen angeben.</p>
+        </li>
+      </ul>
+    
+    <h3><a name="first-post.problem-description">2.2 Was geht schief?</a></h3>
+      
+      <ul>
+        <li><b>Geben sie Namen UND Version des Pakets an, das Schwierigkeiten macht.</b>
+          <p>Diese Information sollte auch in der Betreffzeile ihrer Nachricht stehen.</p>
+          <p>Mit anderen Worten: Gibt es Probleme mit <tt style="white-space: nowrap;">foo-3.141-6</tt>, dann im Betreff nicht nur Problem mit <tt style="white-space: nowrap;">foo</tt> erwähnen.
+          </p>
+          <p>Installiert man ein Paket (z. B. <tt style="white-space: nowrap;">baz-2.18-1</tt>), das von anderen Paketen abhängt (z. B. <tt style="white-space: nowrap;">foo-3.141-6</tt>, <tt style="white-space: nowrap;">bar-16.0-9</tt>, ...) und es gibt ein Problem bei der Installation von <tt style="white-space: nowrap;">foo</tt>, dann verfassen sie bitte einen Problembericht über <tt style="white-space: nowrap;">foo-3.141-6</tt> und nicht über <tt style="white-space: nowrap;">baz-2.18-1</tt>.
+          </p>
+        </li>
+        <li><b>Beschreiben sie das Problem.</b>
+          <p>Das heisst, dass man den Fehlerbericht mit sendet. Bei langen Protokollen genügt oft der letzte Teil.
+          </p>
+          <ol>
+            <li>Für Probleme bei der binären Installation, beginnen sie ihren Fehlerbericht da, wo das problematische Oaket ausgepackt wird:
+<pre>...
+Selecting previously deselected package foo
+error unpacking foo
+...</pre> und von da an bis and Ende.
+            <p></p>
+            </li>
+            <li>Einige typische Probleme bei der Installation aus Quellcode:
+              <ol>
+              <li>Tritt das Problem bei der Konfiguration am Anfang auf, erfolgt die Fehlermeldung und der Abbruch meistens prompt. Ihr Fehlerbericht sollte die letzten paar Tests enthalten:
+<pre>....
+Checking for bar-config...no
+Error:  bar-config not found
+....</pre>
+                <p>Denken sie, dass es helfen könnte, dann können sie auf den entsprechende Teil der Log-Datei der Konfiguration aufnehmen, z. B. <tt style="white-space: nowrap;">/sw/src/foo-3.141-6/foo-3.141/config.log</tt>. <b>Aber bitte nicht die gesamte Datei; sie ist meistens sehr lang.</b>
+                </p>
+                </li>
+                <li>Tritt der Fehler gleich nach Beginn der Paketerstellung auf, dann wird die letzte Zeile benötigt, die der Compiler versuchte auszuführen:
+<pre>...
+gcc &lt;flags, files etc.&gt;
+&lt;error messages&gt;
+...</pre></li>
+                <li>Bekamen sie die verflixte Fehlermeldung <tt style="white-space: nowrap;">execution of mv failed</tt>, dann müssen sie ihr Protokoll der Paketerstellung nach einem früheren Fehler absuchen. Ohne ein Protokoll des tatsächlichen Fehlers wird man ihnen meistens nicht helfen können.
+                </li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+      </ul>
+    
+    <h3><a name="first-post.remedies">2.3 Was haben sie genau versucht?</a></h3>
+      
+      <p>Bitte beschreiben sie genau, was sie bereits versucht haben, das Problem zu beheben, z. B.</p>
+      <ul>
+        <li>Instruktionen in FAQs oder anderen Dokumentationen ausgeführt</li>
+        <li>Pakete entfernt, die möglicherweise einen Konflikt verursachen</li>
+        <li>Neu erstellen und neu installieren</li>
+        <li>Erneute Aktualisierung der Paketbeschreibungen</li>
+        <li>etc.</li>
+      </ul>
+      <p>Hierbei geht es darum, dass man ihnen keine Vorschläge macht, die sie bereits selbst probiert haben.</p>
+    
+    <h3><a name="first-post.future-plans">2.4 Wie geht es weiter?</a></h3>
+      
+      <p>In dieser Kategorie gibt es verschiedene Wege:</p>
+      <ul>
+        <li>Beschreiben sie, was sie tun werden, wenn sie keine Antwort erhalten.</li>
+        <li>Fragen sie nach, was andere von ihren Plänen für die Lösung des Problems halten.</li>
+      </ul>
+    
+  <h2><a name="reply">3 Antworten auf eine Nachricht</a></h2>
+    
+    
+    
+      <p>Hier wird beschrieben, wie sie auf Nachrichten antworten sollen.</p>
+    
+    <h3><a name="reply.reply-to-list">3.1 Vergewissern sie sich, dass sie in der Mailing-Liste antworten</a></h3>
+      
+      <p>Im Gegensatz zu anderen sind die Einstellungen bei den Fink Mailing-Listen so, dass eine direkte Antowrt nur zu dem Verfasser der Nachricht geht, aber <b>nicht</b> an die Mailing-Liste selbst. Passen sie also auf, dass sie die Nachricht auch an die Mailing-Liste geht:
+      </p>
+      <ul>
+        <li>Mehr Leute schauen sich ihr Problem an.</li>
+        <li>Aber nehmen sie andere nicht vollständig in Beschlag. Bedenken sie, dass alle nur freiwillige Helfer sind.</li>
+        <li>Andere können auch vom Austausch der Nachrichten profitieren. Liegt der komplette Austausch öffentlich vor, landet er so im Archiv der entsprechenden Mailing-Liste und kann von da in die generelle Dokumentation einfließen.
+        </li>
+      </ul>
+      <p>Am einfachsten kann man das mit einem <q>An alle antworten</q> erreichen:</p>
+      <ul>
+        <li>Es ist auch nicht komplizierter als ein "Antworten".</li>
+        <li>Obwohl das auch eine extra Mail an den urspünglichen Verfasser schickt, ist das sogar oft erwünscht, weil die Post der Mailing-Listen manchmal verzögert verschickt wird, z. B. wegen Überprüfung auf Viren und die Nachricht wird den urspünglichen Verfasser schneller erreichen.
+        </li>
+      </ul>
+      <p>Allerdings sollte man andere, zusätzliche Empfänger streichen, z. B. die aus Cross-Posts oder von früheren Antworten.
+      </p>
+    
+  <h2><a name="unsubscribe">4 Abonnement kündigen</a></h2>
+    
+    
+    <h3><a name="unsubscribe.unsubscribing">4.1 Wie kündige ich das Abonnement einer Mailing-Liste?</a></h3>
+      
+      <p>Für eine Kündigung schickt man <b>keine</b> Nachricht an die Mailing-Liste.</p>
+      <ol>
+        <li>Gehen sie auf die Seite <a href="/lists/index.php">Mailing Lists</a>.
+          <p>Notiz:  Aber nicht mit der Mac OS X Version des Internet Explorer.</p>
+        </li>
+        <li>Wählen sie den Link für die Liste aus, deren Abonnement sie kündigen wollen.</li>
+        <li>Gehen sie auf der Seite ganz nach unten, wo folgendes steht:  <q>To change your subscription (set options like digest and delivery modes, get a reminder of your password, or unsubscribe), enter your subscription email address:</q>. Geben sie ihre Email-Adresse ein, auf der sie die Fink Mail erhalten und klicken sie auf <q>Edit Options</q> .
+        </li>
+        <li>Auf der Seite, die sich öffnet, gibt es oben links ein Feld, wo sie kündigen (unsubscribe) können.</li>
+      </ol>
+    
+  <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
+Copyright (c) 2001-2015 The Fink Project.
+You may distribute this document in print for private purposes,
+provided the document and this copyright notice remain complete and
+unmodified. Any commercial reproduction and any online publication
+requires the explicit consent of the author.</p><hr>
+<p>Generated from <i>$Fink: netiquette.de.xml,v 1.5 2012/11/11 15:20:15 KMS Exp $</i></p></body></html>
