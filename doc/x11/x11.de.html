@@ -1,0 +1,1065 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--
+Generated from $Fink: x11.de.xml,v 1.25 2013/01/03 18:17:34 KMS Exp $
+-->
+<title>Fink Documentation - Running X11 on Darwin and Mac OS X</title></head><body>
+<table width="100%" cellspacing="0">
+<tr valign="bottom">
+<td align="center">
+Available Languages:  | 
+Deutsch | 
+<a href="x11.en.html">English</a> | 
+<a href="x11.es.html">Espa&ntilde;ol</a> | 
+<a href="x11.fr.html">Fran&ccedil;ais</a> | 
+<a href="x11.ja.html">&#26085;&#26412;&#35486; (Nihongo)</a> | 
+<a href="x11.pt.html">Portugu&ecirc;s</a> | 
+<a href="x11.ru.html">&#1056;&#1091;&#1089;&#1089;&#1082;&#1080;&#1081; (Russkiy)</a> | 
+<a href="x11.zh.html">&#20013;&#25991; (&#31616;) (Simplified Chinese)</a> | 
+</td>
+</tr>
+</table>
+<h1 style="text-align: center;">Running X11 on Darwin and Mac OS X</h1>
+    <p>
+      Diese Dokument beschreibt, wie man X11 auf Apples Mac OS X und Darwin
+      laufen lässt. Nach einer Einführung wird die Geschichte
+      beschrieben und dann die derzeitige Situation und die X11 Optionen,
+      die zur Verfügung stehen.
+    </p>
+  <h2>Contents</h2><ul><li><a href="#intro"><b>1 Einführung</b></a><ul><li><a href="#intro.def-x11">1.1 Was ist X11?</a></li><li><a href="#intro.def-macosx">1.2 Was ist Mac OS X?</a></li><li><a href="#intro.def-darwin">1.3 Was ist Darwin?</a></li><li><a href="#intro.def-xfree86">1.4 Was ist XFree86?</a></li><li><a href="#intro.def-xorg">1.5 Was ist X.org?</a></li><li><a href="#intro.def-xquartx">1.6 Was ist XQuartz?</a></li><li><a href="#intro.client-server">1.7 Klient und Server</a></li><li><a href="#intro.rootless">1.8 Was bedeutet rootless?</a></li><li><a href="#intro.wm">1.9 Was ist die Fensterverwaltung?</a></li><li><a href="#intro.desktop">1.10 Was sind Quartz/Aqua, Gnome und KDE?</a></li></ul></li><li><a href="#history"><b>2 Geschichte</b></a><ul><li><a href="#history.early">2.1 Die frühen Tage</a></li><li><a href="#history.xonx-forms">2.2 XonX Formulare</a></li><li><a href="#history.root-or-not">2.3 To root or not to root</a></li><li><a href="#history.apple-x11-distros">2.4 Apples X11-Distributionen</a></li></ul></li><li><a href="#inst-xfree86"><b>3 X11 beziehen und installieren</b></a><ul><li><a href="#inst-xfree86.apple-binary">3.1 Apples Distributionen</a></li><li><a href="#inst-xfree86.fink">3.2 Benutzung von X11 unter Fink</a></li></ul></li><li><a href="#run-xfree86"><b>4 X11 starten</b></a><ul><li><a href="#run-xfree86.display-server">4.1 Den Display-Server starten</a></li><li><a href="#run-xfree86.xinitrc-d">4.2 Modifikationen des Starts über das .xinitrc.d Verzeichnis</a></li><li><a href="#run-xfree86.xinitrc">4.3 Die Datei .xinitrc</a></li><li><a href="#run-xfree86.xinitrc-pkg">4.4 Das Fink-Paket 'xinitrc'</a></li></ul></li><li><a href="#other"><b>5 Andere Möglichkeiten mit X11 </b></a><ul><li><a href="#other.vnc">5.1 VNC</a></li><li><a href="#other.weirdx">5.2 WeirdX</a></li></ul></li><li><a href="#trouble"><b>6 Probleme mit XFree86 beheben</b></a><ul><li><a href="#trouble.immediate-quit">6.1 Starte ich X11, wird es sofort beendet oder es stürzt ab.</a></li><li><a href="#trouble.locale">6.2 "Warning: locale not supported by C library"</a></li></ul></li><li><a href="#tips"><b>7 Tipps für die Benutzung</b></a><ul><li><a href="#tips.menu-items">7.1 X11-Programme aus dem Menu "Programme" starten</a></li><li><a href="#tips.terminal-app">7.2 X11-Programme aus Terminal.app starten</a></li><li><a href="#tips.open">7.3 Aqua-Programme aus xterm starten</a></li><li><a href="#tips.copy-n-paste">7.4 Kopieren und Einfügen</a></li></ul></li></ul><h2><a name="intro">1 Einführung</a></h2>
+    
+    
+    <h3><a name="intro.def-x11">1.1 Was ist X11?</a></h3>
+      
+      <p>
+        Das <a href="http://www.x.org/">X Window System</a> Version 11
+        oder kurz X11 ist ein System für die grafische Darstellung mit
+        einer netzwerktauglichen Klienten-Server-Architektur. Mit X11
+        können Programme einzelne Pixel, Linien, Texte, Bilder usw. auf
+        einem Bildschirm darstellen. X11 enthält darüber hinaus auch
+        Bibliotheken, um Elemente von Nutzerschnittstellen, wie
+        Schaltknöpfe, Textfelder, usw. darzustellen.
+      </p>
+      <p>
+        X11 ist quasi das Standard-Grafiksystem in der Unixwelt. Es ist
+        bei Linux, den *BSDs und den meisten kommerziellen Unix-Varianten
+        dabei. Auch die Desktopumgebungen wie CDE, KDE und Gnome bauen auf
+        X11 auf.
+      </p>
+    
+    <h3><a name="intro.def-macosx">1.2 Was ist Mac OS X?</a></h3>
+      
+      <p>
+        <a href="http://www.apple.com/macosx/">Mac OS X</a> ist ein
+        Betriebsystem von <a href="http://www.apple.com/">Apple</a>.
+        Wie sein Vorläufer (NeXTStep und OpenStep) basiert es auf BSD und
+        ist damit auch eine Unix-Variante. Allerdings hat es sein eigenes
+        System für die grafische Darstellung, namens Quartz. Sein
+        Aussehen und Verhalten wird als Aqua bezeichnet, wobei die beiden
+        Namen oft wechselseitig verwendet werden.
+      </p>
+    
+    <h3><a name="intro.def-darwin">1.3 Was ist Darwin?</a></h3>
+      
+      <p>
+        <a href="http://opendarwin.org/">Darwin</a> ist die
+        "abgespeckte" Version von Mac OS X, kostenlos und mit komplettem
+        Quellcode. Quartz, Aqua und noch einge weitere Technologien
+        gehören nicht dazu und es hat auch nur die Text-Konsole.
+      </p>
+    
+    <h3><a name="intro.def-xfree86">1.4 Was ist XFree86?</a></h3>
+      
+      <p>
+        <a href="http://www.xfree86.org/">XFree86</a> ist eine
+        Open-Source Implementation von X11. Ursprünglich wurde es für
+        Intel x86 PCs entwickelt. So erhielt es auch seinen Namen. Jetzt
+        läuft es aber auf vielen Architekturen und Betriebsystemen,
+        einschließlich OS/2, Darwin, Mac OS X und Windows.
+      </p>
+      <p>
+        Die X11-Distributionen von Apple auf OS 10.2, 10.3 und 10.4 leiten
+        sich von XFree86 ab.
+      </p>
+    
+    <h3><a name="intro.def-xorg">1.5 Was ist X.org?</a></h3>
+      
+      <p>
+        <a href="http://www.x.org/wiki/">X.org</a> ist eine
+        Open-Source Implementation von X11 und der Nachfolger von XFree86
+        und hat es auch fast überall ersetzt.
+      </p>
+      <p>
+        Die X11-Distributionen von Apple auf OS 10.5 und 10.6 leiten sich
+        von X.org ab, ebenso <a href="http://xquartz.macosforge.org/trac/wiki">XQuartz</a>. Die
+        X11-Distributionen von Apple auf OS 10.7 leitet sich wiederum von
+        XQuartz ab.
+      </p>
+    
+    <h3><a name="intro.def-xquartx">1.6 Was ist XQuartz?</a></h3>
+      
+      <p>
+        <a href="http://xquartz.macosforge.org/trac/wiki">XQuartz</a>
+        ist eine X11-Distributionen für OS 10.5 und neuer, das einige
+        Features mehr enthält, als das normale X11 auf 10.5-10.7. Auf
+        10.5 ersetzt XQuartz die X11-Distribution des Systems, während auf
+        10.6 and 10.7 Xquartz und die X11-Distribution des Systems
+        koexistieren, indem sie in verschiedenen Pfaden installiert werden.
+        Auf 10.8 <b>ist</b> Xquartz die Standard X11-Distribution.
+      </p>
+    
+    <h3><a name="intro.client-server">1.7 Klient und Server</a></h3>
+      
+      <p>
+        X11 hat eine Klienten-Server-Architektur. Ein zentrales Program
+        erledigt das tatäschliche Zeichnen und koordiniert den Zugriff von
+        mehreren Programmen - der Server. Ein Programm, das über X11
+        zeichnen möchte, verbindet sich mit dem Server und teilt ihm mit,
+        was gezeichnet werden soll. Die Programme werden folglich in der
+        X11-Umgebung Klienten genannt.
+      </p>
+      <p>
+        Bei X11 können Server und Klienten auf verschiedenen Rechnern
+        laufen, wobei es dann häufig zu Missverständnissen kommt. In
+        einer Umgebung mit Arbeitsplatzrechner und Serverrechnern läuft
+        der X11-Display-Server auf dem Arbeitsplatzrechner und das Programm
+        (und damit der Klient) auf dem Serverrechner. Wenn also vom
+        "Server" die Rede ist, geht es um den X11-Display-Server und nicht
+        um den Serverrechner, der im Schrank versteckt ist.
+      </p>
+    
+    <h3><a name="intro.rootless">1.8 Was bedeutet rootless?</a></h3>
+      
+      <p>
+        Etwas Hintergrund:
+        X11 modelliert den Bildschirm als eine Hierarchie von Fenster, die
+        sich gegenseitig enthalten. An der Spitze steht ein spezielles
+        Fenster von der Größe des Bildschirms und enthält alle anderen
+        Fenster. Dieses Fenster enthält den Hintergrund und wird
+        Wurzelfenster oder "root window" genannt.
+      </p>
+      <p>
+        Zurück zum Thema:
+        Wie jede grafische Umgebung wurde X11 so geschrieben, dass es
+        vollständige und ausschließliche Kontrolle über den Bildschirm
+        hat. In Mac OS X hat aber bereits Quartz die Kontrolle über den
+        Bildschirm. Deshalb müssen einige Vorkehrungen getroffen werden,
+        damit die beiden neben einander laufen können.
+      </p>
+      <p>
+        Eine Variante ist, dass sich die beiden abwechseln. Jede Umgebung
+        hat vollständige Kontrolle über Bildschirm, aber es ist immer nur
+        eine der beiden sichtbar und der Benutzer schaltet zwischen den
+        beiden um. Diese Lösung nennt man Vollbild- oder "rooted" Modus,
+        weil in diesem Modus X11 ein ganz normales Wurzelfenster ("root
+        window") hat, das sich genau wie auf anderen Unix-Systemen
+        verhält.
+      </p>
+      <p>
+        Die andere Variante ist eine Fenster-für-Fenster-Mischung der
+        beiden Umgebungen. Dadurch muss man nich zwischen den beiden hin
+        und her schalten. Damit gibt es auch kein X11 Wurzelfenster, weil
+        Quartz bereits den Hintergrund verwaltet. Da es kein sichtbares
+        Wurzelfenster gibt, nennt man diesen Modus wurzellos ("rootless").
+        Dies ist der komfortabelste Modus, um X11 auf Mac OS X zu benutzen.
+      </p>
+    
+    <h3><a name="intro.wm">1.9 Was ist die Fensterverwaltung?</a></h3>
+      
+      <p>
+        Bei den meisten grafischen Umgebungen bestimmt das System das
+        Aussehen der Fenster (Titelzeile, Schaltknöpfe, usw.). X11 ist da
+        anders. Bei X11 werden die Fensterrahmen (auch Dekoration genannt)
+        von einem separaten Programm erstellt, der Fensterverwaltung. In
+        vielerlei Hinsicht ist die Fensterverwaltung auch nur ein weiterer
+        Klient. Sie wird genau so gestartet und sendet über die gleichen
+        Kanäle Mitteilungen an den X11-Server.
+      </p>
+      <p>
+        Man kann aus einer großen Anzahl von Fensterverwaltungen
+        auswählen. <a href="http://www.xwinman.org/">xwinman.org</a>
+        ist eine sehr umfassende Liste. Bei den beliebtesten kann man das
+        Aussehen über <a href="http://www.themes.org/">themes</a>
+        verändern. Bei vielen Fensterverwaltungen gibt es noch
+        zusätzlich Funktionen, wie PopUp-Menus im Wurzelfenster, ein Dock
+        oder Startknöpfe.
+      </p>
+      <p>
+        Viele Fensterverwaltungen gibt es als Pakete in Fink. Die folgende
+        Seite zeigt die <a href="http://pdb.finkproject.org/pdb/browse.php?sec=x11-wm">aktuelle
+        Liste</a>.
+      </p>
+    
+    <h3><a name="intro.desktop">1.10 Was sind Quartz/Aqua, Gnome und KDE?</a></h3>
+      
+      <p>
+        Alle sind Schreibtischumgebungen und es gibt noch viele andere.
+        Sie stellen den Programmen Frameworks zur Verfügung, so dass ihr
+        Aussehen, ihre Bedienung und Verhalten visuell konsistent ist.
+        Ein Beispiel:
+      </p>
+      <p>Grafiksystem: X11</p>
+      <p>Fensterverwaltung: <a href="http://sawmill.sourceforge.net/">sawfish</a></p>
+      <p>Schreibtischumgebung: <a href="http://www.gnome.org/">Gnome</a></p>
+      <p>
+        Die Grenze zwischen Grafiksystem, Fensterverwaltung und
+        Schreibtisch sind fließend, weil die gleichen oder zumindest
+        ähnliche Funktionen in dem einem oder anderen oder sogar in
+        mehreren realisiert sein kann. Deshalb kann es durchaus sein,
+        dass eine Fensterverwaltung nicht zusammen mit einer bestimmten
+        Schreibtischumgebung benutzt werden kann.
+      </p>
+      <p>
+        Viele Programme sind für eine bestimmte Schreitischumgebung
+        geschrieben. Meistens reicht es deshalb aus, die Bibliotheken
+        für die Schreibtischumgebung zu installieren. Das Programm
+        funktioniert dann mit keinen oder nur geringen Einschränkungen.
+        Ein Beispiel ist die zunehmende <a href="http://pdb.finkproject.org/pdb/section.php/gnome">Auswahl an
+        GNOME-Programmen</a>, die auch ohne die Schreibtischumgebung
+        GNOME verwendet werden können. Unglücklicherweise ist man bei
+        den <a href="http://www.kde.org/">KDE-Programmen</a> noch
+        nicht <a href="/faq/usage-fink.php#kde">ganz so weit</a>.
+      </p>
+    
+  <h2><a name="history">2 Geschichte</a></h2>
+    
+    
+    
+      <p>[Entschuldigen bitte den epischen Tonfall.]</p>
+    
+    <h3><a name="history.early">2.1 Die frühen Tage</a></h3>
+      
+      <p>
+        Am Anfang war die Leere. Darwin war noch in seinen Kindertagen,
+        Mac OS X noch sehr in Entwicklung und es gab keine Implementierung
+        von X11.
+      </p>
+      <p>
+        Dann trat John Carmack auf und portierte XFree86 auf Mac OS X
+        Server, zu der Zeit das einzige Betriebsystem der Darwin-Familie.
+        Später wurde der Port von Dave Zarzycki auf XFree86 4.0 und Darwin
+        1.0 aktualisiert. Die Patches wurden in das CVS-Repository von
+        Darwin übernommen und wo sie in eine Art Dornröschenschlaf
+        fielen.
+      </p>
+    
+    <h3><a name="history.xonx-forms">2.2 XonX Formulare</a></h3>
+      
+      <p>
+        Eines schönen Tages kam ein Prinz namens Torrey T. Lyons, küsste
+        die Darwin-Patches und erweckte sie so aus ihrem
+        Dornröschenschlaf. Schließlich gab er ihnen im offiziellen
+        XFree86 CVS-Repository eine neue Heimat. Das geschah zur Zeit von
+        Mac OS X Public Beta und Darwin 1.2. XFree86 4.0.2 funktionierte
+        einwandfrei auf Darwin, aber auf Mac OS X mussten sich die Nutzer aus
+        Aqua ausloggen und es von der Konsole aus starten. Deshalb versammelte
+        Torrey das <a href="http://mrcla.com/XonX/">XonX-Team</a> um
+        sich und begann, XFree86 auf Mac OS X zu portieren.
+      </p>
+      <p>
+        Zur selben Zeit begann Tenon, mit XFree86 4.0 als Ausgangsbasis
+        ihre Xtools zu erstellen.
+      </p>
+    
+    <h3><a name="history.root-or-not">2.3 To root or not to root</a></h3>
+      
+      <p>
+        Bald gelang es dem XonX-Team, dass XFree86 im Vollbildmodus
+        parallel zu Quartz läuft und veröffentlichten Testversionen für
+        risikofreudige Nutzer. Die Testversionen wurde XFree86-Aqua
+        genannt oder kurz XAqua. Mit Torrey in der Führung wurden
+        Änderungen direkt in das CVS-Repository von XFree86 übernommen,
+        was zur Version 4.1.0 führte.
+      </p>
+      <p>
+        Am Anfang wurde die Schnittstelle zu Quartz mit einem kleinen
+        Programm namens Xmaster.app realisiert. Es war zunächst in Carbon
+        geschrieben, später dann in Cocoa. Dieser Code wurde dann in den
+        tatsächlichen X-Server integriert und XDarin.app war geboren. Ab
+        diesem Zeitpunkt wurden auch "shared" Bilbiotheken unterstützt und
+        Tenon konnte überzeugt werden, die gleichen Patches statt eigener
+        zu verwenden, um binäre Kompatibilität zu erreichen. Sogar im
+        Hinblick auf einen "rootless" Modus wurden unter Verwendung der
+        Carbon API große Fortschritte erreicht, aber war es zu spät für
+        XFree86 4.1.0. Aber der "rootless" Patch war da und kursierte im
+        Internet. Als XFree86 4.1.0 heraus kam und nur den Vollbild Modus
+        hatte, wurde die Arbeit am "rootless" Modus fortgesetzt, aber jetzt
+        unter Verwendung der Cocoa API. Ein experimenteller "rootless"
+        Modus fand so seinen Weg in das CVS-Repository von XFree86.
+      </p>
+      <p>
+        Inzwischen wurden von Apple Mac OS X 10.0 und Darwin 1.3
+        veröffentlicht. Einige Wochen später folgte Tenon mit Xtools
+        1.0.
+      </p>
+      <p>
+        Die Entwicklung schritt fort und der "rootless" Modus wurde in
+        XFree86 integriert, so dass bei der Veröffentlichung von XFree86
+        4.2.0 im Januar 2002, die Darwin/Mac OS X Version vollständig in
+        die offizielle Distribution von XFree86 integriert war.
+      </p>
+    
+    <h3><a name="history.apple-x11-distros">2.4 Apples X11-Distributionen</a></h3>
+      
+      <p>
+        Am 7. Januar 2003 gab Apple eine Beta-Version ihrer eigenen
+        X11-Implementation für OS 10.2 heraus. Sie basierte auf
+        XFree86-4.2 und hatte Quartz-Rendering und beschleunigtes OpenGL.
+        Am 10. Februar 2003 wurde eine neue Version mit zusätzlichen
+        Features und Bugfixes heraus gegeben. Die dritte Version, also
+        Beta 3, folgte am 17. März 2003 mit weiteren Features und
+        Bugfixes.
+      </p>
+      <p>
+        Am 24. Oktober 2003 gab Apple Panther (Mac OS X 10.3) heraus, das
+        als erste Version Apples eigene X11-Distribution enthielt, die auf
+        XFree86-4.3 basierte.
+      </p>
+      <p>
+        Am 29. April 2005 gab Apple Tiger (Mac OS X 10.4) heraus, das eine
+        X11-Distribution enthielt, die auf XFree86-4.4 basierte.
+      </p>
+      <p>
+        Am 26. Oktober 2007 gab Apple Leopard (Mac OS X 10.5) heraus, das
+        eine X11-Distribution enthielt, die auf X.org-7.2 basierte.
+      </p>
+      <p>
+        Am 28. August 2009 gab Apple Snow Leopard (Mac OS X 10.6) heraus,
+        das eine X11-Distribution enthielt, die auf X.org-7.2 basierte.
+      </p>
+      <p>
+        Am 20. Juli 2011 gab Apple Lion (Mac OS X 10.7) heraus, das eine
+        X11-Distribution enthielt, die auf XQuartz-2.6.4 basierte.
+      </p>
+      <p>
+        Am 25. Juli 2012 gab Apple Mountain Lion (Mac OS X 10.8) heraus.
+        Für diese Version ist XQuartz-2.7.2 oder später die richtige
+        X11-Distribution.
+      </p>
+    
+  <h2><a name="inst-xfree86">3 X11 beziehen und installieren</a></h2>
+    
+    
+    <h3><a name="inst-xfree86.apple-binary">3.1 Apples Distributionen</a></h3>
+      
+      <p>
+        Alle Version von OS X, die derzeit von Fink unterstützt werden,
+        benutzen eine X11-Distribution von Apple. Die unterstützten
+        Konfigurationen sind: </p>
+      <ul>
+        <li>
+          <p>
+            <b>10.5:</b> Fink unterstützt das eingebaute X11 und
+            XQuartz-2.6.3 oder früher.
+          </p>
+          <p>
+            <b>Beachte:</b> Apples X11 auf 10.6 hat Bibliotheken mit
+            älteren Versionen als bei XQuartz-2.4. Eine Installation von
+            XQuartz macht deshalb eine Aktualisierung von 10.5 auf 10.6
+            kompliziert.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>10.6:</b> Fink unterstützt nur das eingebaute X11. Man
+            muss davon ausgehen, dass die Fink-Pakete nur mit dem
+            eingebauten X11 erstellt werden können. Deshalb muss man bei
+            der Installation von XQuartz dafür sorgen, dass das eingebaute
+            X11 installiert bleibt.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>10.7:</b> Fink unterstützt nur das eingebaute X11. Man
+            muss davon ausgehen, dass die Fink-Pakete nur mit dem
+            eingebauten X11 erstellt werden können. Deshalb muss man bei
+            der Installation von XQuartz dafür sorgen, dass das eingebaute
+            X11 installiert bleibt.
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>10.8:</b> Fink unterstützt nur XQuartz-2.7.2 und neuer.
+          </p>
+        </li>
+      </ul>
+      <p>
+        Will man Pakete mit dem eingebauten X11 auf 10.5-10.7 und Xcode
+        &lt;= 4.2.1 erstellen, muss man sicher stellen, dass auch das X11
+        SDK installiert ist (auch wenn das normalerweise der Fall ist.).
+        XQuartz-Nutzer auf 10.5 sollten es aber <b>auf keinen Fall</b>
+        installieren, weil XQuartz bereits alles enthält. Auf 10.7
+        enthalten die Command Line Tools für Xcode &gt;= 4.3 das X11 SDK.
+        Auf 10.8 muss man nur XQuartz installieren.
+      </p>
+      <p>
+        Alle X11 Pakete bieten Vollbild- und "rootless" Modus und
+        unterstützen OpenGL.
+      </p>
+      <p>
+        Weitere Informationen zur Benutzung von Apples X11 stehen in diesem
+        <a href="http://developer.apple.com/darwin/runningx11.html">Artikel</a>
+        der Apple Developer Connection.
+      </p>
+    
+    <h3><a name="inst-xfree86.fink">3.2 Benutzung von X11 unter Fink</a></h3>
+      
+      <p>
+        Fink verfolgt the Status von X11 über einige virtuelle Pakete.
+        Die wichtigsten sind:
+      </p>
+      <ul>
+        <li><tt style="white-space: nowrap;">system-xfree86-shlibs</tt>, "shared" Bibliotheken</li>
+        <li><tt style="white-space: nowrap;">system-xfree86</tt>, ausführbare Programme</li>
+        <li><tt style="white-space: nowrap;">x11-shlibs</tt>, ebenfalls "shared" Bibliotheken</li>
+        <li><tt style="white-space: nowrap;">x11</tt>, ebenfalls ausführbare Programme</li>
+        <li><tt style="white-space: nowrap;">system-xfree86-dev</tt>, Header-Dateien</li>
+        <li><tt style="white-space: nowrap;">x11-dev</tt>, ebenfalls Header-Dateien</li>
+      </ul>
+      <p>
+        Notiz: Die Existenz separater
+        <tt style="white-space: nowrap;">system-xfree86*</tt>- und <tt style="white-space: nowrap;">x11*</tt>-Familien ist
+        ein Erbe aus Zeiten vor 10.5, als Fink noch seine eigenen
+        X11-Pakete enthielt, die ebenfalls die <tt style="white-space: nowrap;">x11</tt>-Familie zur
+        Verfügung stellten. </p>
+      <p>
+        Fehlt eines dieser Pakete, dann fehlen Dateien aus der X11
+        Installation, die sie (nach-)installieren müssen. Fehlen zum
+        Beispiel <tt style="white-space: nowrap;">x11-dev</tt> oder <tt style="white-space: nowrap;">system-xfree86-dev</tt>,
+        wurde meistens vergessen, das X11 SDK zu installieren.
+      </p>
+    
+  <h2><a name="run-xfree86">4 X11 starten</a></h2>
+    
+    
+    <h3><a name="run-xfree86.display-server">4.1 Den Display-Server starten</a></h3>
+      
+      <p>X11 kann unter Mac OS X auf drei Arten gestartet werden.</p>
+      <p>
+        Die erste Art ist die X11-Applikation zu starten, d. h. ein
+        Doppelklick auf das Programm im Finder. Unter 10.5-10.7 ist das
+        typischerweise
+        <tt style="white-space: nowrap;">/Applications/Utilities/X11(.app)</tt>, oder
+        <tt style="white-space: nowrap;">/Applications/Utilities/XQuartz(.app)</tt>, wenn
+        man Xquartz benutzt (also unter 10.8).
+      </p>
+      <p>
+        Die zweite Art ist die Eingabe des Kommandos <tt style="white-space: nowrap;">startx</tt> in
+        einem Terminalfenster.
+      </p>
+      <p>
+        Die dritte Art ist, einfach ein Programm in einem Terminalfenster
+        zu starten, das X11 benötigt. Ab 10.5 startet dies automatisch
+        einen X11-Server.
+      </p>
+    
+    <h3><a name="run-xfree86.xinitrc-d">4.2 Modifikationen des Starts über das .xinitrc.d Verzeichnis</a></h3>
+      
+      <p>
+        Für derzeitige Versionen von X11 ist die bevorzugte Methode seinen
+        Start zu modifizieren, ein Verzeichnis
+        <tt style="white-space: nowrap;">.xinitrc.d</tt> im $HOME Verzeichnis anzulegen und
+        mit ausführbaren Skripten zu füllen, die die Programme starten,
+        die man beim Start haben möchte, einschließlich
+        Fensterverwaltungen.
+      </p>
+      <p>
+        <b>Wichtig:</b> Hinter Programmen, die keine Fensterverwaltungen
+        sind, muss ein '&amp;'stehen. Andernfalls blockieren sie die
+        Ausführung anderer Programme, auch Fensterverwaltungen.
+        Fensterverwaltungen dürfen <b>kein</b> '&amp;' hinter ihrem
+        Namen haben, ansonsten bleiben sie nicht laufen, außer es gibt
+        eine Sessionverwaltung, die nach ihr startet. Das Programm
+        <tt style="white-space: nowrap;">xinit</tt> interpretiert diese Situation so, dass
+        nach dem Ende der Session auch der X-Server beendet werden soll.
+      </p>
+      <p>
+        Beispiel: Soll die Fensterverwaltung
+        <tt style="white-space: nowrap;">WindowMaker</tt> mit dem Start des X11-Server
+        starten, geben sie folgende Komanndos ein:
+      </p>
+<pre>mkdir -p $HOME/.xinitrc.d
+nano $HOME/.xinitrc.d/94-wmaker.sh</pre>
+      <p>
+        Sie können auch ihren Lieblingseditor statt nano verwenden.
+        Tragen sie folgenden Inhalt in <tt style="white-space: nowrap;">94-wmaker.sh</tt>
+        ein:
+      </p>
+<pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+exec wmaker
+</pre>
+      <p>Speichern sie die Datei und führen sie folgendes Kommando aus:</p>
+<pre>chmod a+x 94-wmaker.sh</pre>
+      <p>
+        Damit wird das Skript ausführbar. (<tt style="white-space: nowrap;">quartz-wm
+        --only-proxy</tt> wird in einem späteren Abschnitt diskutiert).
+      </p>
+      <p>
+        Beispiel: Soll das Programm <tt style="white-space: nowrap;">xlogo</tt> mit dem
+        Start des X11-Server starten, geben sie folgende Komanndos ein:
+      </p>
+<pre>mkdir -p $HOME/.xinitrc.d
+nano $HOME/.xinitrc.d/74-xlogo.sh</pre>
+      <p>
+        (wie oben: wenn sie wollen, nehmen sie ihren Lieblingseditor).
+        Tragen sie folgenden Inhalt in <tt style="white-space: nowrap;">74-xlogo.sh</tt>
+        ein:
+      </p>
+<pre>. /sw/bin/init.sh
+xlogo &amp;</pre>
+      <p>Speichern sie die Datei und führen sie folgendes Kommando aus:</p>
+<pre>chmod a+x 74-xlogo.sh</pre>
+      <p>Damit wird das Skript ausführbar.</p>
+      <p>
+        Erstellen sie die beiden Skripts, resultiert daraus, dass beim
+        Start von X11 das Programm <tt style="white-space: nowrap;">xlogo</tt> ausgeführt
+        wird und dann die Fensterverwaltung<tt style="white-space: nowrap;">wmaker</tt>.
+      </p>
+      <p>
+        Beispiel: Vollständige GNOME-Session. Erzeugen sie die
+        ausführbare Datei <tt style="white-space: nowrap;">94-gnome-session.sh</tt> mit
+        folgendem Inhalt:
+      </p>
+<pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+metacity &amp;
+exec gnome-session</pre>
+      <p>
+        Beispiel: "rootless" GNOME-Session. Erzeugen sie die ausführbare
+        Datei <tt style="white-space: nowrap;">94-gnome-panel.sh</tt> mit folgendem Inhalt:
+      </p>
+<pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+metacity &amp;
+exec gnome-panel</pre>
+      <p>
+        Beispiel: KDE3. Erzeugen sie die ausführbare Datei
+        <tt style="white-space: nowrap;">94-startkde.sh</tt> mit folgendem Inhalt:
+      </p>
+<pre>. /sw/bin/init.sh
+exec startkde</pre>
+      <p>
+        (startkde startet automatisch eine Fensterverwaltung und nutzt
+        <tt style="white-space: nowrap;">quartz-wm --only-proxy</tt>)
+      </p>
+      <p>
+        Beispiel: KDE4. Erzeugen sie die ausführbare Datei
+        <tt style="white-space: nowrap;">94-startkde.sh</tt> mit folgendem Inhalt:
+      </p>
+<pre>. /sw/bin/init.sh
+exec /sw/opt/kde4/x11/bin/startkde</pre>
+      <p><b>Beachte:</b></p>
+      <ul>
+        <li>
+          Beginnen sie jedes Skript mit <tt style="white-space: nowrap;">. /sw/bin/init.sh</tt>.
+          Damit wird sicher gestellt, dass auch Programme aus dem Fink-Baum
+          gefunden werden.
+        </li>
+        <li>
+          Die Skirpte werden in ASCII Reihenfolge ausgeführt. Benutzen
+          sie Prefixes, um die Reihenfolge zu ändern, wie oben mit '74'und
+          '94'.
+        </li>
+        <li>
+          Die Skripte müssen ausführbar sein und die Datei-Endung
+          <tt style="white-space: nowrap;">.sh</tt> haben. Mit einer Änderung der "execute
+          permissions" kann man die Ausführung der Skripte und Programme
+          steuern, ohne die Skripte zu löschen.
+        </li>
+        <li>
+          Fink's <tt style="white-space: nowrap;">xinitrc</tt> Paket, das in den
+          Abhängigkeitsketten von GNOME und KDE ist, überschreibt das
+          voreingestellte Verhalten von X11, zum Beispiel das für
+          Nutzer-Modifikationen. Wir empfehlen, dieses Verhalten wieder
+          einzuschalten, wie im Abschnitt über das <a href="#run-xfree86.xinitrc-pkg">Fink Paket 'xinitrc'</a> beschrieben.
+        </li>
+      </ul>
+    
+    <h3><a name="run-xfree86.xinitrc">4.3 Die Datei .xinitrc</a></h3>
+      
+      <p>
+        <b>Notiz:</b> Es ist besser, mit Skripten im Verzeichnis
+        <a href="#run-xfree86.xinitrc-d">$HOME/.xinitrc.d</a> zu arbeiten.
+      </p>
+      <p>
+        Existiert eine Datei mit dem Namen <tt style="white-space: nowrap;">.xinitrc</tt> im
+        Heimatverzeichnis, wird sie benutzt, um X-Klienten zu starten, eine
+        Fensterverwaltung, einige xterm Terminals oder eine
+        Schreibtischumgebung wie GNOME. Die Datei
+        <tt style="white-space: nowrap;">.xinitrc</tt> ist ein
+        <tt style="white-space: nowrap;">/bin/sh</tt>-Skript mit den Kommandos dafür. Das
+        übliche <tt style="white-space: nowrap;">#!/bin/sh</tt> in der ersten Zeile wird nicht
+        benötigt; die Datei muss auch nicht ausführbar sein.
+        <tt style="white-space: nowrap;">xinit</tt> wird die Datei immer mit der Shell
+        <tt style="white-space: nowrap;">/bin/sh</tt> ausführen.
+      </p>
+      <p>
+        Gibt es keine Datei <tt style="white-space: nowrap;">.xinitrc</tt> im
+        Heimat-Verzeichnis und auch kein Verzeichnis <a href="#run-xfree86.xinitrc-d">$HOME/.xinitrc.d</a>, dann benutzt X11 die
+        Voreinstellungen in der Datei
+        <tt style="white-space: nowrap;">/usr/X11/lib/X11/xinit/xinitrc</tt>. Die
+        Voreinstellungen kann man auch gut als Ausgangspunkt für eine
+        eigene Datei .xinitrc verwenden: </p>
+<pre>cp /usr/X11/lib/X11/xinit/xinitrc ~/.xinitrc</pre>
+      <p>
+        Damit auch Fink-Programme in <tt style="white-space: nowrap;">.xinitrc</tt>
+        funktionieren, sollte gleich am Anfang der Datei die Zeile <tt style="white-space: nowrap;">.
+        /sw/bin/init.sh</tt> stehen, damit die Umgebung korrekt
+        aufgesetzt wird.
+      </p>
+      <p>
+        Man kann so ziemlich alles in die Datei
+        <tt style="white-space: nowrap;">.xinitrc</tt> schreiben, aber einiges sollte man
+        dabei doch beachten. Erstens: Die Shell, die die Datei abarbeitet,
+        wartet bis bei jedem Programm bis es beendet wird, bevor das
+        nächste Programm gestartet wird. Sollen mehrere Programme
+        parallel laufen, muss man der Shell mitteilen, sie in den
+        Hintergrund zu verschieben, indem man am Ende der Zeile ein
+        <tt style="white-space: nowrap;">&amp;</tt> anhängt.
+      </p>
+      <p>
+        Zweitens: <tt style="white-space: nowrap;">xinit</tt> Wartet bis das Skript in
+        <tt style="white-space: nowrap;">.xinitrc</tt> beendet ist und inerpretiert diese
+        Situation, dass die Session beendet ist und der X-Server jetzt auch
+        beendet werden soll. Dies bedeutet, dass das letzte Kommando in
+        <tt style="white-space: nowrap;">.xinitrc</tt> nicht im Hintergrund ablaufen sollte
+        und ein langlebiges Programm sein sollte. Üblicherweise ist es
+        die Fensterverwaltung oder die Schreibtischumgebung. Tatsächlich
+        gehen die meisten Fensterverwaltungen und Schreibtischumgebungen
+        davon aus, dass <tt style="white-space: nowrap;">xinit</tt> auf ihr Ende wartet und dies
+        für den "Log Out" Eintrag in ihren Menus nutzen. (Notiz: Man kann
+        etwas Speicher und CPU-Last zu sparen, wenn man <tt style="white-space: nowrap;">exec</tt>
+        an den Anfang der letzten Zeile schreibt, so wie in den folgenden
+        Beispielen.)
+      </p>
+      <p>
+        Beispiel: Schalte die X11-Klingel aus, starte einige Klienten und
+        zum Schluss die Fensterverwaltung "Enlightenment":
+      </p>
+<pre>. /sw/bin/init.sh
+
+xset b off
+
+xclock -geometry -0+0 &amp;
+xterm &amp;
+xterm &amp;
+
+exec enlightenment</pre>
+      <p>Beispiel: GNOME starten:</p>
+<pre>. /sw/bin/init.sh
+quartz-wm --only-proxy &amp;
+metacity &amp;
+exec gnome-session</pre>
+<p>Zum Schluss: KDE3 starten:</p>
+<pre>. /sw/bin/init.sh
+exec startkde</pre>
+    
+    <h3><a name="run-xfree86.xinitrc-pkg">4.4 Das Fink-Paket 'xinitrc'</a></h3>
+      
+      <p>
+        Manche Fink-Pakete müssen beim Start von X11 einige Aktionen
+        ausführen. Dafür gibt es ein Paket namens <tt style="white-space: nowrap;">xinitrc</tt>
+        (zugegebenermaßen etwas verwirrend). Eine Nebenwirkung bei der
+        Installation dieses Pakets, das in der Abhängigkeitskette von
+        GNOME und KDE ist, dass die <a href="#run-xfree86.xinitrc-d">voreingestellte</a> Ausführung der Skripte
+        in <tt style="white-space: nowrap;">$HOME/.xinitrc.d</tt>. Es gibt einige Methoden,
+        mit denen man den Start von X11 modifizieren kann <b>und</b>
+        Fink-Paketen erlauben kann, ihre Start-Aktionen auszuführen:
+      </p>
+      <ul>
+        <li>
+          <p>
+            Das Paket <tt style="white-space: nowrap;">xinitrc</tt> enthält Einsprungspunkte für
+            Administratoren. Erzeugen sie die Datei
+            <tt style="white-space: nowrap;">/sw/etc/xinitrc-last-hook</tt> als
+            Administrator mit folgendem Inhalt:
+          </p>
+<pre>#!/bin/sh
+. /usr/X11/lib/X11/xinit/xinitrc.d/98-user.sh</pre>
+          <p>
+            Damit hat man das <a href="#run-xfree86.xinitrc-d">urspüngliche</a> Verhalten, dass im
+            Verzeichnis <tt style="white-space: nowrap;">$HOME/.xinitrc.d</tt> nach
+            ausführbaren Skripten gesucht wird.
+          </p>
+        </li>
+        <li>
+          <p>
+            Erzeugen sie die Datei <tt style="white-space: nowrap;">$HOME/.xinitrc</tt> wie
+            im Abschnitt <a href="#run-xfree86.xinitrc">.xinitrc</a>
+            beschrieben. Finks Paket <tt style="white-space: nowrap;">xinitrc</tt> überschreibt
+            die Voreinstellung des Systems mit seiner eigenen Version und
+            damit nutzt man die Version von Fink.
+          </p>
+          <p>
+            Der richtige Platz für zusätzliche Programme, die sofort
+            ausgeführt werden sollen, ist vor folgender Zeile:
+          </p>
+<pre># start the window manager</pre>
+        </li>
+      </ul>
+    
+  <h2><a name="other">5 Andere Möglichkeiten mit X11 </a></h2>
+    
+    
+    <h3><a name="other.vnc">5.1 VNC</a></h3>
+      
+      <p>
+        VNC ist eine netzwerktransparentes System für grafische
+        Darstellungen mit Ähnlichkeiten zu X11. Allerdings arbeitet es
+        auf einem niedrigeren Ebene, was die Implementierung vereinfacht.
+        Mit dem Xvnc-Server und einem Mac OS X Display-Klienten kann man
+        X11-Programme mit Mac OS X ausführen. Fink hat ein X11-basiertes
+        Paket für einige Platformen. Lesen sie die Einträge auf
+        folgender <a href="http://pdb.finkproject.org/pdb/browse.php?summary=vnc">Seite</a>
+        durch.
+      </p>
+      <p></p>
+    
+    <h3><a name="other.weirdx">5.2 WeirdX</a></h3>
+      
+      <p>
+        <a href="http://www.jcraft.com/weirdx/">WeirdX</a> ist ein in
+        Java geschriebener X11-Server. Es unterstützt auch den "rootless"
+        Modus. Quellcode und eine java jar-Datei gibt es auf der Webseite.
+      </p>
+    
+  <h2><a name="trouble">6 Probleme mit XFree86 beheben</a></h2>
+    
+    
+    <h3><a name="trouble.immediate-quit">6.1 Starte ich X11, wird es sofort beendet oder es stürzt ab.</a></h3>
+      
+      <p>
+        Zu allererst: Nur keine Panik!  Bei X11 kann einiges schief gehen
+        und vieles davon führt zu einem Abbruch beim Start. Es ist also
+        nicht wirklich ungewöhnlich. In diesem Abschnitt werden
+        möglichst alle Fälle beschrieben, mit denen man rechnen muss.
+        Als erstes muss man sich um folgende zwei Informationen kümmern:
+      </p>
+      <p>
+        <b>Die version des Display-Server.</b> Die Version des
+        Display-Server findet man im Finder, wenn man <b>einmal</b> auf
+        das Symbol von X11 oder XQuartz klickt und dann "Informationen" aus
+        dem Menu "Ablage" auswählt. Dasselbe erreicht man auch mit
+        Command-I.
+      </p>
+      <p>
+        <b>Fehlermeldungen.</b>
+        Fehlermeldungen sind von enormer Bedeutung, um das jeweilige
+        Problem einzugrenzen. Wie die Fehlermeldungen ausgegeben werden,
+        hängt davon ab, wie sie X11 gestartet haben. Haben sie
+        <tt style="white-space: nowrap;">startx</tt> in einem Terminalfenster eingegeben, werden
+        Fehlermeldungen direkt in gleichen Fenster ausgegeben. Oft muss
+        man zum Lesen nach oben blättern. Haben sie X11 durch einen
+        Doppleklick von X11 or XQuartz gestartet, landen die
+        Fehlermeldungen im System-Log, den man mit dem Programm "Konsole"
+        aus dem Ordner "Dienstprogramme" lesen kann. Man muss aufpassen,
+        dass man die richtigen Meldungen liest, also die letzten.
+      </p>
+      <p>
+        Im folgenden einige Fehlermeldungen. In vielen Fällen ist die
+        deutsche Übersetzung nicht bekannt, weshalb normalerweise das
+        englische Original beschrieben wird.
+      </p>
+<pre>_XSERVTransmkdir: Owner of /tmp/.X11-unix should be set to root</pre>
+<pre>_IceTransmkdir: Owner of /tmp/.ICE-unix should be set to root</pre>
+      <p>
+        Klassifizierung: Harmlos.
+        X11 erzeugt versteckte Verzeichniss in /tmp, um "Socket-Dateien"
+        für lokale Verbindungen zu speichern. Aus Sicherheitsgründen
+        gibt X11 diesen Verzeichnissen den Eigentümer "root". Sie haben
+        aber sowieso Schreibzugriff für alle, so dass X11 ohne Probleme
+        läuft. (Notiz: Es ist recht schwierig, diesen Verzeichnissen den
+        Eigentümer "root" zu geben, weil Mac OS X bei einem Neustart /tmp
+        löscht und X11 nicht mit "root"-Rechten läuft und auch nicht
+        muss.)
+      </p>
+<pre>cat: /Users/chrisp/.Xauthority: No such file or directory</pre>
+      <p>
+        Klassifizierung: Meistens harmlos.
+        Dieser Fehler hat anscheinend keinerlei Auswirkungen. Sie können
+        den Fehler durch Eingabe des Kommandos <tt style="white-space: nowrap;">touch
+        .Xauthority</tt> im Heimatverzeichnis los werden.
+      </p>
+<pre>Gdk-WARNING **: locale not supported by C library</pre>
+      <p>
+        Klassifizierung: Harmlos.
+        Es bedeutet genau das, was es sagt und verhindert nicht das normale
+        Funktionieren eines Programms. Weitere Information dazu finden sie
+        weiter unten im Agbschnitt <a href="#trouble.locale">Locale</a>.
+      </p>
+<pre>Warning: no access to tty (Inappropriate ioctl for device).
+Thus no job control in this shell.</pre>
+      <p>
+        Klassifizierung: Meistens harmlos.
+        X11 startet im Hintergrund eine interaktive Shell, um die
+        Startdatei des Klienten (.xinitrc) auszuführen. Dadurch braucht
+        man keine Kommandos um den Pfad "PATH" zu setzen. Einige Shells
+        beschweren sich, dass es keine Verbindung zu einem echten Terminal
+        gibt, was aber ignoriert werden kann, weil diese Shell keine
+        Job-Kontrolle durch Eingabe oder ähnliches benötigt.
+      </p>
+<pre>The XKEYBOARD keymap compiler (xkbcomp) reports:
+&gt; Error:            Can't find file "unknown" for geometry include
+&gt;                   Exiting
+&gt;                   Abandoning geometry file "(null)"
+Errors from xkbcomp are not fatal to the X server</pre>
+      <p>
+        Klassifizierung: Meistens harmlos.
+        Wie die Nachricht sagt, ist der Fehler nicht fatal. So weit
+        bekannt, nutzt X11 auf Mac OS X keine XKB-Erweiterungen. Einige
+        Klienten-Programme können aber dennoch versuchen, diese
+        Erweiterungen zu verwenden ...
+      </p>
+<pre>startx: Command not found.</pre>
+      <p>
+        Klassifizierung: Fatal.
+        Dieser Fehler kann auftreten, wenn Initialisierungsdateien nicht so
+        aufgesetzt sind, dass das Verzeichnis mit den X11-Programmen, also
+        <tt style="white-space: nowrap;">/usr/X11/bin</tt> nicht in der Pfad-Variablen PATH
+        eingetragen ist. Die Einstellung in Fink is normalerweise so, dass
+        dies automatisch der Fall ist. Deshalb ist dieser Fehler ein
+        Hinweis darauf, dass die Fink-Umgebung noch nicht richtig
+        aufgesetzt ist. Führt man das Kommando
+      </p>
+<pre>/sw/bin/pathsetup.sh</pre>
+      <p>
+        in einem Terminalfenster aus und startet ein neues Fenster, ist der
+        Fehler meistens behoben.
+      </p>
+<pre>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
+_XSERVTransMakeAllCOTSServerListeners: server already running</pre>
+<pre>Fatal server error:
+Cannot establish any listening sockets - Make sure an X server isn't already
+running</pre>
+      <p>
+        Klassifizierung: Fatal.
+        Dieser Fehler tritt auf, wenn zufällig mehrere Instanzen von X11
+        zur selben Zeit laufen oder wenn X11 durch einen Absturz nicht
+        sauber beendet wurde. Es kann auch an einem Problem mit
+        Zugriffsrechten auf Sockets für lokale Verbindungen liegen. Sie
+        können versuchen, das Problem mit dem Kommando <tt style="white-space: nowrap;">rm -rf
+        /tmp/.X11-unix</tt> zu beheben. Ansonsten bleibt noch ein
+        Neustart von Mac OS X, bei dem /tmp automatisch aufgeräumt und der
+        Netzwerk-Stack zurückgesetzt wird.
+      </p>
+<pre>Xlib: connection to ":0.0" refused by server
+Xlib: Client is not authorized to connect to Server</pre>
+      <p>
+        Klassifizierung: Fatal.
+        Das Klienten-Programm bekommt keine Verbindung mit dem
+        Display-Server (X11 oder XQuartz), weil die Daten für die
+        Authentifizierung nicht stimmen. Dies wird durch einige
+        Installationen von VNC verursacht, indem sie X11-basierte Programme
+        mittels <tt style="white-space: nowrap;">sudo</tt> laufen lassen oder auch durch sonstige
+        schräge Einstellungen. Normalerweise lässt sich dieser Fehler
+        dadurch beheben, im Homeverzeichnis die Datei
+        <tt style="white-space: nowrap;">.Xauthority</tt> zu löschen (in ihr werden die
+        Daten für die Authentifizierung abgespeichert) und eine neue,
+        leere Datei zu erzeugen:
+      </p>
+<pre>cd
+rm .Xauthority
+touch .Xauthority</pre>
+      <p></p>
+      <p><b>Kein offensichtlicher Fehler:</b></p>
+      <p>
+        Klassifizierung: Fatal.
+        Der wohl häufigste Fehler beim Start von X11 ist eine fehlerhafte
+        Start-Datei. Typischerweise ist eine Fensterverwaltung aus
+        <tt style="white-space: nowrap;">$HOME/.xinitrc</tt> oder
+        <tt style="white-space: nowrap;">$HOME/.xinitrc.d</tt> nicht installiert, nicht im
+        PATH, läuft im Hintergrund statt im Vordergrund, weil ein '&amp;'
+        am Ende der Zeile steht. Wie auch immer läuft <tt style="white-space: nowrap;">xinit</tt>
+        bis zum Ende der Datei und interpretiert dies als Ende der
+        Nutzer-Session und beendet X11. Wird eine Programm nicht gefunden,
+        gibt es dazu eine Fehlermeldung im Terminalfenster oder dem
+        Konsolen-Log. Hat aber die letzte Datei ein '&amp;', gibt es keine
+        Fehlermeldung, sondern X11 hört einfach auf. In den Abschnitten
+        <a href="#run-xfree86.xinitrc-d">.xinitrc.d</a>
+        und <a href="#run-xfree86.xinitrc">Die Datei
+        .xinitrc</a> stehen weitere Details dazu.
+      </p>
+      <p>
+        Wollen sie das verhindern, vergessen sie nicht in der Start-Datei
+        die Pfad-Variable PATH mit folgendem Kommando zu setzen:
+      </p>
+<pre>. /sw/bin/init.sh</pre>
+      <p>
+        Außerdem sollte die Start-Datei mit einem langlebigen Programm
+        enden, das nicht im Hintergrund läuft, z. B. einer Fenster- oder
+        Sessionverwaltung ohne '&amp;'. Zur Sicherheit kann man auch ein
+        <tt style="white-space: nowrap;">exec xterm</tt> als Rückfalloption hinzu fügen, falls die
+        Fensterverwaltung nicht gefunden wird, weil sie sie z. B. selbst
+        entfernt haben.
+      </p>
+    
+    <h3><a name="trouble.locale">6.2 "Warning: locale not supported by C library"</a></h3>
+      
+      <p>
+        Diese Warnungen sind recht häufig, aber harmlos. Sie bedeuten
+        genau das, was sie sagen - Internationalisierung wird nicht durch
+        Standard C-Bibliotheken unterstützt und das Programm wird die
+        normalen englischen Text, Datumsformate und so weiter benutzen. Es
+        gibt mehrere Möglichkeiten damit umzugehen:
+      </p>
+      <ul>
+        <li><p>Ignorieren sie einfach die Meldung.</p></li>
+        <li>
+          <p>
+            Verhindern sie die Meldungen in dem sie die
+            Environment-Variable LANG löschen. Beachten sie, dass dies
+            auch die Internationalisierung in Programmen ausschaltet, die
+            sie über gettext/libintl unterstützen. Ein Beispiel für
+            .xinitrc:
+          </p>
+<pre>unset LANG</pre>
+          <p>Ein Beispiel für .cshrc:</p>
+<pre>unsetenv LANG</pre>
+        </li>
+        <li>
+          <p>
+            Bitten sie Apple, dass sie eine zukünftige Version von Mac OS
+            X um eine ordentliche Unterstützung von locale ergänzen.
+          </p>
+        </li>
+      </ul>
+    
+  <h2><a name="tips">7 Tipps für die Benutzung</a></h2>
+    
+    
+    <h3><a name="tips.menu-items">7.1 X11-Programme aus dem Menu "Programme" starten</a></h3>
+      
+      <p>
+        Programme, die andere Fink-Programme für Teilaufgaben aufrufen,
+        brauchen eine Ergänzung, wenn man sie aus dem Menu "Programme"
+        starten möchte. Anstatt den ganzen Pfad zu der Datei anzugeben,
+        also
+      </p>
+<pre>/sw/bin/emacs</pre>
+      <p>sollte man z. B. bei bash besser folgendes eintragen:</p>
+<pre>. /sw/bin/init.sh ; emacs</pre>
+      <p>und bei tcsh:</p>
+<pre>source /sw/bin/init.csh ; emacs</pre>
+      <p>
+        Damit ist sicher gestellt, dass das Programm die korrekte
+        PATH-Information hat. Diese Syntax kann man für jedes Programm
+        verwenden, das mit Fink installiert wurde.
+      </p>
+      <p>
+        <b>Beachte:</b> Anscheinend kann man doch nicht alle Programme so
+        starten.
+      </p>
+    
+    <h3><a name="tips.terminal-app">7.2 X11-Programme aus Terminal.app starten</a></h3>
+      
+      <p>
+        Der Start von X11-Programmen aus einem Fenster der Terminal(.app)
+        (oder jedem anderen nicht-X11-Terminal) erfolgt bei den aktuellen
+        Version von X11 ab 10.5 direkt. Geben sie den Namen des Programms
+        genau so ein, wie für ein Kommandozeilenprogramm und OS X wird
+        fall nötig X11 starten und dann ihre Programm.
+      </p>
+      <p>
+        <b>Wichtig:</b> Vor OS X 10.5 musste man die Environment-Variable
+        <tt style="white-space: nowrap;">DISPLAY</tt> in der Terminalsession setzen, damit sie mit
+        X11 Verbindung aufnimmt. Tun sie das <b>auf keinen Fall</b> auf
+        OS X 10.5 und neuer, denn OS X setzt dies automatisch auf den
+        richtigen Wert.
+      </p>
+    
+    <h3><a name="tips.open">7.3 Aqua-Programme aus xterm starten</a></h3>
+      
+      <p>
+        Wollen sie Aqua-Programme aus <tt style="white-space: nowrap;">xterm</tt> oder jeder anderen
+        Shell starten, geben sie das Kommando <tt style="white-space: nowrap;">open</tt> ein.
+        Einige Beispiele:
+      </p>
+<pre>open /Applications/TextEdit.app
+open SomeDocument.rtf
+open -a /Applications/TextEdit.app index.html</pre>
+      <p>
+        Das zweite Beispiel öffnet das Dokument mit dem Programm, das mit
+        ihm assoziiert ist; im dritten Beispiel wird das Programm explizit
+        angegeben.
+      </p>
+      <p>
+        Das Kommando <tt style="white-space: nowrap;">launch</tt> aus dem Fink-Paket <b>launch</b>
+        funktioniert genauso, bietet aber noch einige zusätzliche
+        Funktionen.
+      </p>
+    
+    <h3><a name="tips.copy-n-paste">7.4 Kopieren und Einfügen</a></h3>
+      
+      <p>
+        Im allgemeinen funktionieren Kopieren und Einfügen zwischen der
+        Aqua- und der X11- Umgebung, wenn auch nicht zu 100%. Emacs ist
+        dafür bekannt, dass es hinsichtlich der aktuellen Auswahl
+        "wählerisch" ist. Aus der Classic-Umgebung funktionieren Kopieren
+        und Einfügen nicht.
+      </p>
+      <p>
+        In jedem Fall muss man die jeweiligen Methoden der Umgebung nutzen,
+        in der man gerade ist. Will man Text aus Aqua nach X11
+        transferieren, drücken sie Command-C in Aqua, bringen das
+        Zielfenster ganz nach vorne und drücken den "mittleren" Maustaste,
+        d. h. Option-Klick auf einer Maus mit nur einer Taste, für das
+        Einfügen (Dazu muss "Emulate three button mouse" in den
+        X11-Einstellungen eingeschaltet sein). Will man Text aus X11 nach
+        Aqua transferieren, wählen sie den Text in X11 aus und drücken
+        sie Command-C für das Kopieren und dann Command-V in Aqua für das
+        Einfügen. Je nach Version von OS X und X11, funktioniert auch die
+        Kopieren-Funktionen, um eine Auswahl zu kopieren.
+      </p>
+      <p>
+        Das X11-System hat tatsächlich mehrere Clipboards (Eigentlich in
+        X11 "cut buffers" genannt) und einige Programme haben etwas
+        seltsame Vorstellungen, welche man nehmen soll. Deshalb hat z. B.
+        Einfügen in GNU Emacs oder XEmacs nicht funktioniert. Die
+        Fensterverwaltung <tt style="white-space: nowrap;">quartz-wm</tt> von Apple bügelt einige
+        der Synchronisationsprobleme zwischen den Puffern aus. Wollen sie
+        eine andere Fensterverwaltung verwenden, können sie die Vorteile
+        von <tt style="white-space: nowrap;">quartz-wm</tt> auf 10.5-10.7 immer noch ausnutzen, in
+        dem sie die Option <tt style="white-space: nowrap;">--only-proxy</tt> verwenden:
+      </p>
+<pre>...
+quartz-wm --only proxy &amp;
+exec &lt;your window manager here&gt;
+</pre>
+      <p>
+        Beachte: Diese Option wird von <tt style="white-space: nowrap;">quartz-wm</tt> ab
+        Xquartz-2.7.x nicht mehr unterstützt.
+      </p>
+      <p>
+        Das Programm <tt style="white-space: nowrap;">autocutsel</tt> ist veraltet, steht aber auf
+        10.5 und 10.6 immer noch zur Verfügung, wenn sie <tt style="white-space: nowrap;">quartz-wm
+        --only proxy</tt> nicht verwenden wollen. Es synchronisiert
+        automatisch zwischen den beiden Ausschneide-Puffern. Wenn sie es
+        benutzen wollen, installieren sie das Fink-Paket
+        <b>autocutsel</b> und ergänzen sie ihre Datei
+        <tt style="white-space: nowrap;">.xinitrc</tt> oder seine eigene in
+        <tt style="white-space: nowrap;">.xinitrc.d</tt> um diese Shellskript:
+      </p>
+<pre>autocutsel &amp;</pre>
+      <p>
+        Beachten sie, dass das Programm läuft, <b>bevor</b> die
+        Fensterverwaltung gestartet wird und nicht beendet wird, also nicht
+        einfach am Ende dazu schreiben. Dort wird es nie ausgeführt.
+      </p>
+      <p>
+        Wenn es Probleme mit Kopieren und Einfügen von Aqua nach X11 und
+        anders herum gibt sollten sie es einfach noch einmal probieren.
+        Manchmal erfolgt das Kopieren nicht sofort. Klappt das immer noch
+        nicht, dann probieren sie es über ein drittes Programm, z. B.
+        TextEdit oder Terminal auf der Seite von Aqua und nedit oder xterm
+        auf der Seite von X11. Nach allgemeiner Erfahrung gibt es immer
+        eine Lösung.
+      </p>
+    
+  <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
+Copyright (c) 2001-2015 The Fink Project.
+You may distribute this document in print for private purposes,
+provided the document and this copyright notice remain complete and
+unmodified. Any commercial reproduction and any online publication
+requires the explicit consent of the author.</p><hr>
+<p>Generated from <i>$Fink: x11.de.xml,v 1.25 2013/01/03 18:17:34 KMS Exp $</i></p></body></html>
