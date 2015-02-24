@@ -1,11 +1,11 @@
 <?php
-/* $Id: nav.de.inc,v 1.5 2015/02/23 17:56:58 k-m_schindler Exp $ */
+/* $Id: nav.de.inc,v 1.6 2015/02/24 00:15:19 k-m_schindler Exp $ */
 
 $section = "documentation";
 $navbox = array(
   "doc/index.php?phpLang=de", "Übersicht",
   "doc/users-guide/index.php?phpLang=de", "Nutzerhandbuch",
-  "doc/advanced/index.php?phpLang=de", "F�r Fortgeschrittene",
+  "doc/advanced/index.php?phpLang=de", "Für Fortgeschrittene",
   "doc/x11/index.php?phpLang=de", "Nutzung von X11",
   "doc/bundled/install.php?phpLang=de", "Installation",
   "doc/bundled/usage.php?phpLang=de", "Nutzung",
