@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--
+Generated from $Fink: sec-policy.de.xml,v 1.16 2009/03/31 01:41:35 Nachteule Exp $
+-->
+<title>Fink Documentation - Allgemeine Sicherheitspolitik für akzeptierte Pakete.</title></head><body>
+<table width="100%" cellspacing="0">
+<tr valign="bottom">
+<td align="center">
+Available Languages:  | 
+Deutsch | 
+<a href="sec-policy.en.html">English</a> | 
+<a href="sec-policy.fr.html">Fran&ccedil;ais</a> | 
+<a href="sec-policy.ja.html">&#26085;&#26412;&#35486; (Nihongo)</a> | 
+<a href="sec-policy.pt.html">Portugu&ecirc;s</a> | 
+<a href="sec-policy.zh.html">&#20013;&#25991; (&#31616;) (Simplified Chinese)</a> | 
+</td>
+</tr>
+</table>
+<h1 style="text-align: center;">Allgemeine Sicherheitspolitik für akzeptierte Pakete.</h1>
+    <p>Dieses Dokument beschreibt die Behandlung von Sicherheitslücken bei
+      Paketen, die für Fink akzeptiert wurden. Obwohl die
+      Hauptverantwortung für jedes akzeptierte Paket beim jeweiligen
+      Betreuer liegt, erkennt Fink die Notwendigkeit an, eine einheitliche
+      Politik zu erstellen, wie auf Sicherheitslücken bei Software
+      reagiert wird, die als Fink-Paket angeboten wird. Jeder Betreuer von
+      Fink-Paketen ist verpflichtet, sich an diese Politik zu halten.</p>
+  <h2>Contents</h2><ul><li><a href="#respo"><b>1 Verantwortung</b></a><ul><li><a href="#respo.who">1.1 Wer ist verantwortlich?</a></li><li><a href="#respo.contact">1.2 Wen soll ich kontaktieren?</a></li><li><a href="#respo.prenotifications">1.3 Im-Voraus-Benachrichtigung</a></li><li><a href="#respo.response">1.4 Antwort</a></li></ul></li><li><a href="#severity"><b>2 Antwortzeiten und sofortige Aktionen</b></a><ul><li><a href="#severity.resptimes">2.1 Antwortzeiten</a></li><li><a href="#severity.forced">2.2 Erzwungene Aktualisierungen</a></li></ul></li><li><a href="#sources"><b>3 Quellen für Sicherheitslücken</b></a><ul><li><a href="#sources.sources">3.1 Akzeptierte Quellen für Sicherheitslücken.</a></li></ul></li><li><a href="#updating"><b>4 Sicherheitsaktualisierungen</b></a><ul><li><a href="#updating.procedure">4.1 Sicherheitsrelevante Aktualisierungen durchführen.</a></li><li><a href="#updating.moving">4.2 Verschieben von unstable nach stable.</a></li></ul></li><li><a href="#notification"><b>5 Benachrichtigungen verschicken</b></a><ul><li><a href="#notification.who">5.1 Wer darf verschicken?</a></li><li><a href="#notification.how">5.2 Wie ankündigen?</a></li></ul></li></ul><h2><a name="respo">1 Verantwortung</a></h2>
+    
+    
+    <h3><a name="respo.who">1.1 Wer ist verantwortlich?</a></h3>
+      
+      <p>Jedes Fink-Paket hat einen Betreuer. Man findet ihn, indem man
+        das Kommando <tt style="white-space: nowrap;">fink info packagename</tt> eingibt. Man erhält
+        eine Liste, die in etwa so aussieht: Maintainer: Fink Core Group
+        &lt;fink-core@lists.sourceforge.net&gt;. Dieser Betreuer hat
+        die volle Verantwortung für seine Pakete.</p>
+    
+    <h3><a name="respo.contact">1.2 Wen soll ich kontaktieren?</a></h3>
+      
+      <p>Treten bei der Software eines Fink-Pakets Sicherheitslücken
+        auf, sollten sie den Paket-Betreuer und das <b>Fink Core Team</b>
+        informieren. Die Email-Adresse des Betreuers steht im Paket-Info,
+        die des <b>Fink Core Team</b> ist fink-core@lists.sourceforge.net
+        </p>
+    
+    <h3><a name="respo.prenotifications">1.3 Im-Voraus-Benachrichtigung</a></h3>
+      
+      <p>Bei schwerwiegenden Sicherheitslücken kann es erforderlich sein,
+        den Paket-Betreuer im voraus zu benachrichtigen. Da es vorkommen
+        kann, dass der Betreuer nicht rechtzeitig erreicht wird, sollte das
+        <b>Fink Security Team</b> ebenfalls im voraus benachrichtigt
+        werden. Die Email-Adressen der Teammitglieder sind weiter unten
+        aufgeführt. Bitte beachten sie, dass
+        fink-core@lists.sourceforge.net eine öffentlich archivierte
+        Mailing-Liste ist und private Im-Voraus-Benachrichtigungen deshalb
+        <b>nie</b> an diese Adresse geschickt werden dürfen.</p>
+    
+    <h3><a name="respo.response">1.4 Antwort</a></h3>
+      
+      <p>Eingeschickte Berichte über Sicherheitslücken werden vom
+        <b>Fink Core Team</b> beantwortet. Von jedem Betreuer wird von
+        Fink verlangt, jede einzelne Sicherheitslücke zu bestätigen. In
+        dem unwahrscheinlichen Fall, dass der Betreuer nicht erreichbar ist
+        und der Betreuer den Bericht nicht innnerhalb von 24 Stunden
+        bestätigt, soll eine Notiz an das <b>Fink Core Team</b> gehen,
+        in dem das Team informiert wird, dass der Betreuer nicht
+        antwortet.</p>
+      <p>In dem Fall, dass sie versuchten, den Paket-Betreuer zu erreichen,
+        aber das Mail-System einen Fehler bei der Zustellung meldet,
+        sollten sie sofort das <b>Fink Core Team</b> darüber
+        informieren, dass der Paket-Betreuer nicht erreicht werden konnte
+        und dass das Paket unabhängig vom Betreuer aktualisiert werden
+        muss.</p>
+    
+  <h2><a name="severity">2 Antwortzeiten und sofortige Aktionen</a></h2>
+    
+    
+    
+      <p>Antwortzeiten und Aktionen hängen in großem Maße von der
+        Schwere der Sicherheitslücke ab, das die Software in einem
+        Fink-Paket verursacht. Das <b>Fink Core Team</b> wird sofort
+        aktiv werden, wenn es zum Schluss kommt, dass die Gemeinschaft der
+        Fink-Nutzer geschützt werden muss.</p>
+    
+    <h3><a name="severity.resptimes">2.1 Antwortzeiten</a></h3>
+      
+      <p>Für jedes Paket sollte versucht werden, die folgenden
+        Antwortzeiten einzuhalten. Bei entsprechenden Sicherheitslücken
+        behält sich das <b>Fink Core Team</b> das Recht vor, sofort
+        aktiv zu werden. In solchen Fällen wird dann ein Mitglied des
+        Core Teams den Paket-Betreuer informieren. Beachten sie aber
+        bitte, dass Fink ein Projekt ist, das von Freiwilligen getragen
+        wird und deshalb letztlich keine Garantien gegeben werden
+        können.</p>
+      <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Sicherheitslücken</th><th align="left">Antwortzeit</th></tr><tr valign="top"><td>remote Root-Exploit</td><td>
+            <p>minimal: <b>sofort</b>; maximal: <b>12</b> Stunden.</p>
+          </td></tr><tr valign="top"><td>lokaler Root-Exploit</td><td>
+            <p>minimal: <b>12</b> Stunden; maximal: <b>36</b> Stunden.</p>
+          </td></tr><tr valign="top"><td>remote DOS</td><td>
+            <p>minimal: <b>6</b> Stunden; maximal: <b>12</b> Stunden.</p>
+          </td></tr><tr valign="top"><td>lokaler DOS</td><td>
+            <p>minimal: <b>24</b> Stunden; maximal: <b>72</b> Stunden.</p>
+          </td></tr><tr valign="top"><td>remote Datenverlust</td><td>
+            <p>minimal: <b>12</b> Stunden; maximal: <b>24</b> Stunden.</p>
+          </td></tr><tr valign="top"><td>lokaler Datenverlust</td><td>
+            <p>minimal: <b>24</b> Stunden; maximal: <b>72</b> Stunden.</p>
+          </td></tr></table>
+    
+    <h3><a name="severity.forced">2.2 Erzwungene Aktualisierungen</a></h3>
+      
+      <p>Ein Mitglied des <b>Fink Core Team</b> kann entscheiden, dass
+        ein Paket aktualisiert werden muss, ohne dass eine Reaktion des
+        Paket-Betreuers abgewartet wird. Dies wird erzwungenge
+        Aktualisierung genannt. Wird die maximale Antwortzeit
+        für eine bestimmte Sicherheitslücke in einem Fink-Paket
+        überschritten, führt dies ebenfalls zu einer erzwungengen
+        Aktualisierung.</p>
+    
+  <h2><a name="sources">3 Quellen für Sicherheitslücken</a></h2>
+    
+    
+    <h3><a name="sources.sources">3.1 Akzeptierte Quellen für Sicherheitslücken.</a></h3>
+      
+      <p>Wer eine Sicherheitslücke für ein Fink-Paket meldet, muss auch
+        sicher stellen, dass die Sicherheitslücke auch auf Mac OS X
+        existiert. Es ist die Pflicht des Melders, von einer der folgenden
+        Quellen eine Bestätigung der Sicherheitslücke einzuholen.</p>
+      <ol>
+        <li><b>AIXAPAR</b>: AIX APAR (Authorised Problem Analysis Report)</li>
+        <li><b>APPLE</b>: Apple Security Update</li>
+        <li><b>ATSTAKE</b>: @stake security advisory</li>
+        <li><b>AUSCERT</b>: AUSCERT advisory</li>
+        <li><b>BID</b>: Eintrag auf der Security Focus Bugtraq ID Datenbank</li>
+        <li><b>BINDVIEW</b>: BindView security advisory</li>
+        <li><b>BUGTRAQ</b>: Posting in der Bugtraq Mailing-Liste</li>
+        <li><b>CALDERA</b>: Caldera security advisory</li>
+        <li><b>CERT</b>: CERT/CC Advisories</li>
+        <li><b>CERT-VN</b>: CERT/CC vulnerability note</li>
+        <li><b>CIAC</b>: DOE CIAC (Computer Incident Advisory Center) bulletins</li>
+        <li><b>CONECTIVA</b>: Conectiva Linux advisory</li>
+        <li><b>CONFIRM:</b> URL zum Hersteller, der die Sicherheitslücke bestätigt</li>
+        <li><b>DEBIAN</b>: Debian Linux Security Information</li>
+        <li><b>EEYE</b>: eEye security advisory</li>
+        <li><b>EL8</b>: EL8 advisory</li>
+        <li><b>ENGARDE</b>: En Garde Linux advisory</li>
+        <li><b>FEDORA</b>: Fedora Project security advisory</li>
+        <li><b>FULLDISC</b>: Full-Disclosure Mailing-Liste</li>
+        <li><b>FreeBSD</b>: FreeBSD security advisory</li>
+        <li><b>GENTOO</b>: Gentoo Linux security advisory</li>
+        <li><b>HERT</b>: HERT security advisory</li>
+        <li><b>HP</b>: HP security advisories</li>
+        <li><b>IBM</b>: IBM ERS/BRS advisories</li>
+        <li><b>IMMUNIX</b>: Immunix Linux advisory</li>
+        <li><b>INFOWAR</b>: INFOWAR security advisory</li>
+        <li><b>ISS</b>: ISS Security Advisory</li>
+        <li><b>KSRT</b>: KSR[T] Security Advisory</li>
+        <li><b>L0PHT</b>: L0pht Security Advisory</li>
+        <li><b>MANDRAKE</b>: Linux-Mandrake advisory</li>
+        <li><b>MISC</b>: generelle Referenz zu einer URL </li>
+        <li><b>MLIST</b>: generelle Referenz für verschiedene Mailing-Listen</li>
+        <li><b>NAI</b>: NAI Labs security advisory</li>
+        <li><b>NETECT</b>: Netect security advisory</li>
+        <li><b>NetBSD</b>: NetBSD Security Advisory</li>
+        <li><b>OPENBSD</b>: OpenBSD Security Advisory</li>
+        <li><b>REDHAT</b>: Security advisories</li>
+        <li><b>RSI</b>: Repent Security, Inc. security advisory</li>
+        <li><b>SEKURE</b>: Sekure security advisory</li>
+        <li><b>SF-INCIDENTS</b>: Posting in der Security Focus Incidents Mailing-Liste</li>
+        <li><b>SGI</b>: SGI Security Advisory</li>
+        <li><b>SLACKWARE</b>: Slackware security advisory</li>
+        <li><b>SNI</b>: Secure Networks, Inc. security advisory</li>
+        <li><b>SUN</b>: Sun security bulletin</li>
+        <li><b>SUNALERT</b>: Sun security alert</li>
+        <li><b>SUNBUG</b>: Sun bug ID</li>
+        <li><b>SUSE</b>: SuSE Linux: Security Announcements</li>
+        <li><b>TRUSTIX</b>: Trustix Security Advisory</li>
+        <li><b>TURBO</b>: TurboLinux advisory</li>
+        <li><b>VULN-DEV</b>: Posting in der VULN-DEV Mailing-Liste</li>
+        <li><b>VULNWATCH</b>: VulnWatch Mailing-Liste</li>
+        <li><b>XF</b>: X-Force Vulnerability Databank</li>
+        <li><b>CVE</b>: CVE Candidates </li>
+      </ol>
+      <p>Die obigen Schlüsselworte stimmen mit der Empfehlung des CVE
+        überein, wie man <a href="http://www.cve.mitre.org/data/refs/index.html">hier</a>
+        nachlesen kann.</p>
+    
+  <h2><a name="updating">4 Sicherheitsaktualisierungen</a></h2>
+    
+    
+    <h3><a name="updating.procedure">4.1 Sicherheitsrelevante Aktualisierungen durchführen.</a></h3>
+      
+      <p>Sicherheitsrelevante Aktualisierungen sollen nur angewandt werden,
+        wenn sie vom ursprünglichen Autor, der die Software erstellt hat,
+        bestätigt werden. Vor einer Aktualisierung <b>müssen</b>
+        folgende Bedingungen erfüllt sein:</p>
+      <ul>
+        <li>Der ursprüngliche Autor der Software kontaktierte den
+          Paket-Betreuer oder das <b>Fink Core Team</b> direkt und teilt
+          einen Patch oder anderen Workaround für die Sicherheitslücke
+          mit.</li>
+        <li>Eine der obigen Quellen hat ein Sicherheits-Bulletin mit
+          aktualisierten Quellen für die Software eines Fink-Pakets heraus
+          gegeben.</li>
+        <li>Ein Patch wurde von einer der folgenden Quellen heraus gegeben:
+          BUGTRAQ, FULLDISC, SF-INCIDENTS, VULN-DEV.</li>
+        <li>Ein offizielles Sicherheits-Bulletin wurde veröffentlicht und
+          erhielt CVE Candidate status, das die CVE Sicherheitslücke
+          beschreibt und einen Workaround, Patch oder Link zu
+          aktualisierten Quellen enthält.</li>
+        <li>Der Paket-Betreuer oder das <b>Fink Core Team</b> wurde im
+          voraus benachrichtigt und erhielt direkt einen Patch oder
+          Workaround für die Sicherheitslücke mit der Bitte, aktiv zu
+          werden.</li>
+      </ul>
+    
+    <h3><a name="updating.moving">4.2 Verschieben von unstable nach stable.</a></h3>
+      
+      <p>Sicherheitsrelevante Aktualisierungen für ein bestimmtes Paket
+        werden zuerst im unstable Baum durchgeführt. Nach einer Wartezeit
+        von weniger als <b>12</b> Stunden werden die .info und .patch
+        Dateien des Pakets auch in den stable Baum kopiert. Die Wartezeit
+        soll für eine Überprüfung genutzt werden, ob das aktualisierte
+        Paket funktioniert und die Sicherheitsaktualisierung keine neuen
+        Probleme mit sich bringt.</p>
+    
+  <h2><a name="notification">5 Benachrichtigungen verschicken</a></h2>
+    
+    
+    
+      <p>Manche Nutzer aktualisieren ihre Software nicht sehr häufig.
+        Damit möglichst schnell alle Nutzer aktualisierte Versionen der
+        Pakete mit Sicherheitslücken installieren und benutzen, kann ein
+        Paketbetreuer darum bitten, dass eine entsprechende Ankündigung
+        über die Mailing-Liste "Fink announcement" verschickt wird.</p>
+    
+    <h3><a name="notification.who">5.1 Wer darf verschicken?</a></h3>
+      
+      <p>Diese Ankündigung darf nur vom <b>Fink Security Team</b>
+        verschickt werden. Meistens wird das von
+        dmalloc@users.sourceforge.net erledigt und einem PGP-Schlüssel mit
+        folgender Signatur:</p>
+      <ul>
+        <li>FD77 F0B7 5C65 F546 EB08 A4EC 3CCA 1A32 7E24 291E.</li>
+        <li>zu finden bei
+          http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0x7E24291E</li>
+      </ul>
+      <p>Das obige ist absichtlich nicht als Link formatiert.</p>
+      <p>Weitere autorisierte Mitglieder des Teams sind: (fügen sie hier
+        ihre Email-Adresse und den öffentlichen Schlüssel ein.)</p>
+      <p>peter@pogma.com signiert durch einen PGP-Schlüssel mit der Signatur:</p>
+      <ul>
+        <li>4D67 1997 DD32 AE8E D7ED  9C79 8491 2AB7 DF3B 6004.</li>
+        <li>
+          zu finden bei http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xDF3B6004
+        </li>
+      </ul>
+      <p>ranger@befunk.com signiert durch einen PGP-Schlüssel mit der Signatur:</p>
+      <ul>
+        <li> 6401 D02A A35F 55E9 D7DD  71C5 52EF A366 D3F6 65FE.</li>
+        <li>
+          zu finden bei http://pgp.mit.edu:11371/pks/lookup?op=get&amp;search=0xD3F665FE
+        </li>
+      </ul>
+    
+    <h3><a name="notification.how">5.2 Wie ankündigen?</a></h3>
+      
+      <p>Damit sicher gestellt ist, dass Sicherheitsankündigungen ein
+        einheitliches Aussehen haben, <b>müssen</b> sich alle an die
+        folgende Vorlage halten.</p>
+<pre> ID: FINK-YYYY-MMDD-NN
+ Reported: YYYY-MM-DD
+ Updated:  YYYY-MM-DD
+ Package:  package-name
+ Affected: &lt;= versionid
+ Maintainer: maintainer-name
+ Tree(s): 10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable
+ Mac OS X version: 10.3, 10.2
+ Fix: patch|upstream
+ Updated by: maintainer|forced update (Email)
+ Description: A short description describing the issue.
+ References: KEYWORD (see above)
+ Ref-URL: URL
+</pre>
+      <p>Ein Beispielsbericht könnte so aussehen:</p>
+<pre> ID: FINK-2004-06-01
+ Reported:         2004-06-09
+ Updated:          2004-06-09
+ Package:          cvs
+ Affected:         &lt;= 1.11.16, &lt;= 1.12.8
+ Maintainer:       Sylvain Cuaz
+ Tree(s):          10.3/stable, 10.3/unstable, 10.2-gcc3.3/stable,10.2-gcc3.3/unstable
+ Mac OS X version: 10.3, 10.2
+ Fix:              upstream
+ Updated by: forced update (dmalloc@users.sourceforge.net)
+ Description: Multiple vulnerabilities in CVS found by Ematters Security.
+ References: BID
+ Ref-URL:    http://www.securityfocus.com/bid/10499
+ References: CVE
+ Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0414
+ References: CVE
+ Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0416
+ References: CVE
+ Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0417
+ References: CVE
+ Ref-URL:    http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CAN-2004-0418
+ References: FULLDISCURL
+ Ref-URL:    http://lists.netsys.com/pipermail/full-disclosure/2004-June/022441.html
+ References: MISC
+ Ref-URL:    http://security.e-matters.de/advisories/092004.html
+</pre>
+      <p>Beachten sie bitte, dass sich das Schlüsselwort <b>Affected</b>
+        auf alle Versionen der Software bezieht, die Sicherheitslücken
+        aufweisen, nicht nur auf die, für die es Fink-Pakete gibt. Das
+        Beispiel zeigt dies sehr deutlich.</p>
+    
+  <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
+Copyright (c) 2001-2015 The Fink Project.
+You may distribute this document in print for private purposes,
+provided the document and this copyright notice remain complete and
+unmodified. Any commercial reproduction and any online publication
+requires the explicit consent of the author.</p><hr>
+<p>Generated from <i>$Fink: sec-policy.de.xml,v 1.16 2009/03/31 01:41:35 Nachteule Exp $</i></p></body></html>
