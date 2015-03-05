@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+
+<document filename="index" lang="de" >
+  <title>Wie erstelle ich ein Fink-Paket? - eine Einführung</title>
+  <shorttitle>Packaging Tutorial</shorttitle>
+  <cvsid>$Id: quick-start-pkg.de.xml,v 1.1 2015/03/05 23:40:46 k-m_schindler Exp $</cvsid>
+  
+  <preface>
+    <p>
+      Dieses Dokument richtet sich an die, die eine Paket für <code>Fink</code> erstellen
+      wollen. Es ergänzt die detailierte und umfassende Dokumentation in der
+      <link url="/doc/packaging/index.php">Anleitung für die Paketerstellung</link>.
+    </p>
+    <p>
+      Sie werden Schritt für Schritt durch den Prozess geführt, eine Fink-Paket zu erstellen.
+      <!--  The second example is not ready yet... -->
+      <!-- First we explain the general procedure. Then we show the creation of two example Fink -->
+      <!-- packages. The first one will be <link url="http://maxwell.sourceforge.net"> -->
+      <!-- maxwell</link> and the second  -->
+      <!-- <link url="http://www.gnu.org/software/stow/stow.html">GNU Stow</link>. -->
+      Nach einer allgemeinen Einführung, wird an einem Beispielpaket namens
+      <link url="http://maxwell.sourceforge.net">maxwell</link> gezeigt, wie man ein
+      Paket erstellt.
+    </p>
+  </preface>
+  <chapter filename="howtostart">
+    <title>Der Anfang</title>
+    <shorttitle>Der Anfang</shorttitle>
+    <section name="Learn">
+      <title>Grundlagen</title>
+      <p>
+        <em>Beachten sie:</em> In diesem Dokument wird davon ausgegangen, dass
+        <code>fink</code> im Verzeichnis <filename>/sw</filename> installiert ist,
+        entsprechend der Voreinstellungen. Ein Block mit Code wie dieser
+      </p>
+<codeblock>
+finkdev% somecommand
+</codeblock>
+      <p>
+        bedeutet, dass sie das Kommando <code>somecommand</code> in einem Fenster von
+        Terminal.app oder einem anderen Terminalprogramm ihres Macs eingeben müssen.
+      </p>
+      <p>
+        Zuerst müssen sie einige grundlegende Konzepte über das Erstellen von Fink-Paketen
+        verstehen. Wir schlagen folgendes vor:
+      </p>
+      <ul>
+        <li>
+          Lesen sie folgende Folien
+          <link url="/doc/UsingFink.pdf">Using Fink: A Developer's How To</link>
+          (2 MB pdf-Datei) durch. die auf der
+          <link url="http://conferences.oreillynet.com/macosx2002/">O'Reilly Mac OS X Conference</link>
+          präsentiert wurden.
+        </li>
+        <li>
+          <!--  The second example is not ready yet... -->
+          <!-- Read and try to understand the two examples  -->
+          <!-- (<link url="example.php">Example 1</link>, <link url="example2.php">Example 2</link>) -->
+          <!-- provided here. -->
+          Lesen sie <xref chapter="example" section="basics">folgendes Beispiel</xref>
+          durch und versuchen sie es auch zu verstehen.
+        </li>
+        <li>
+          Schauen sie in andere, ähnliche Pakete im Verzeichnis
+          <filename>/sw/fink/dists/stable/main/finkinfo/</filename> oder
+          im
+          <link url="http://fink.cvs.sourceforge.net/fink/dists/">online CVS-Repository</link>.
+          Nehmen sie eine oder mehrere Dateien als Ausgangspunkt für ihr eigenes Paket.
+        </li>
+        <li>
+          Durchsuchen sie den
+          <link url="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Package Submission Tracker</link>,
+          ob bereits jemand anderer bereits versuchte, das Paket zu erstellen oder ob jemand im
+          <link url="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Package Request Tracker</link>
+          darum gebeten hat, es zu erstellen. Oft findet man wertvolle Informationen.
+        </li>
+        <li>
+          Schauen sie vielleicht in der
+          <link url="/doc/packaging/index.php">Anleitung für die Paketerstellung</link>
+          nach, wenn sie denken, dass sie weitere Details brauchen.
+        </li>
+      </ul>
+    </section>
+    <section name="Make">
+      <title>Paket erstellen</title>
+      <p>
+        Speichern sie ihre info-Datei (falls benötigt auch die patch-Datei) im Verzeichnis
+        <filename>/sw/fink/dists/local/main/finkinfo/</filename>. Der Name der Datei sollte
+        <filename>paketname.info</filename> sein (und <filename>paketname.patch</filename>).
+        paketname ist der Name ihres Pakets. Existiert das Verzeichnis nicht, müssen sie
+        es erzeugen. Paketname sollte klein geschrieben sein.
+      </p>
+      <p>
+        <em>Beachten sie bitte:</em>
+        Versichern sie sich, dass <code>fink</code> aktuell ist, indem sie folgende
+        Kommandos ausführen:
+      </p>
+<codeblock>
+finkdev% fink selfupdate
+</codeblock>
+      <p>Danach:</p>
+<codeblock>
+finkdev% fink configure
+</codeblock>
+      <p>
+        Setzen sie dabei die Ausführlichkeits-Stufe auf den höchsten Wert. Aktivieren
+        sie Mac OS X - Versionen bis 10.6 den unstable Baum. Danach sollten sie mit dem
+        folgenden Kommando überprüfen, ob <code>fink</code> ihr Paket findet:
+      </p>
+<codeblock>
+finkdev% fink list paketname
+</codeblock>
+      <p>
+        Sollte ihr Paket nicht aufgeführt werden, müssen sie die
+        <link url="/doc/users-guide/conf.php#optional">Konfigurationsdatei von Fink</link>
+        ergänzen, so dass ihr lokaler Baum berücksichtigt wird.
+      </p>
+      <p>Vielleicht müssen sie auch den Index der Pakete mit folgendem Kommando
+        aktualisieren:</p>
+<codeblock>
+finkdev% fink index
+</codeblock>
+      <p>
+        Benötigen sie mehr Details, schauen sie bitte in der
+        <link url="/doc/packaging/index.php">Anleitung für die Paketerstellung</link>
+        nach oder nutzen sie eine der folgenden
+        <link url="/help/index.php">Hilfequellen</link>.
+        Sie sollten auch die <link url="/lists/index.php">fink-devel</link>
+        Mailing-Liste abonnieren.
+      </p>
+    </section>
+    <section name="Validate">
+      <title>Validieren sie ihr Paket</title>
+      <p>
+        Während der Validierung sollten sie die Ausführlichkeits-Stufe von
+        <code>fink</code> auf den höchsten Wert setzen. Schauen sie im Abschnitt
+        <link url="/doc/users-guide/conf.php#optional">Konfigurationsdatei von Fink</link>
+        nach, wie man die Ausführlichkeits-Stufe verändert.
+      </p>
+      <p>Überprüfen sie mit folgendem Kommando, ob ihr Paket validiert werden kann:</p>
+<codeblock>
+finkdev% fink validate /sw/fink/dists/local/main/finkinfo/paketname.info
+</codeblock>
+      <p>Ist ihr Paket validiert, versuchen sie es mit diesem Kommando zu erstellen:</p>
+<codeblock>
+finkdev% fink -m --build-as-nobody rebuild paketname
+</codeblock>
+      <p>
+        Durchsuchen sie die Ausgabe des Prozesses sorgfältig nach Fehlern und Warnungen.
+        Achten sie insbesondere darauf, dass alles in das richtige Zielverzeichnis
+        installiert wird, nämlich <filename>/sw/src/root-paketname-%v-%r/sw</filename>.
+        Von dort erstellt <code>fink</code> das binäre Paket. Nichts darf direkt in das
+        Verzeichnis <filename>/sw</filename> installiert werden.
+      </p>
+      <p>
+        Mit der <code>fink</code>-Option <code>--keep-build-dir</code> oder
+        <code>-k</code> wird das Verzeichnis, in dem das Paket erstellt wurde, nicht
+        gelöscht, sondern bleibt erhalten. Hierhin hat <code>fink</code> den Quelltext
+        entpackt und das Paket erstellt. Dies kann dabei helfen, Fehler bei der
+        Erstellung zu beheben. Geben sie das Kommando <code>man fink</code> für weitere
+        Details ein.
+      </p>
+      <p>
+        Mit der <code>fink</code>-Option <code>--keep-root-dir</code> or <code>-K</code>
+        wird auch das Zielverzeichnis nicht gelöscht, sondern bleibt erhalten.
+        hier erstellt <code>fink</code> den Installations-Baum des Pakets. Fehler
+        während der Installation kommt man oft durch einen Vergleich des Verzeichnisses
+        für das Erstellen und dem Zielverzeichnis auf die Spur.
+      </p>
+      <p>
+        Wird das Paket erfolgreich erstellt, überprüfen sie das Binärpaket mit folgendem
+        Kommando:
+      </p>
+<codeblock>
+finkdev% dpkg -c /sw/fink/dists/local/main/binary-darwin-powerpc/paketname.deb
+</codeblock>
+      <p>
+        Überprüfen sie, dass alle Dateien auch tatsächlich in der .deb Datei sind.
+        Ein weiteres Mal: Nichts darf direkt in das Verezichnis <filename>/sw</filename>
+        installiert werden.
+      </p>
+      <p>Jetzt kann man auch das binäre Paket mit diesem Kommando validieren:</p>
+<codeblock>
+finkdev% fink validate /sw/fink/dists/local/main/binary-darwin-powerpc/paketname.deb
+</codeblock>
+      <p>Ist alles in Ordnung, können sie das Paket installieren</p>
+<codeblock>
+finkdev% fink install paketname
+</codeblock>
+      <p>und die Funktionalität ihres Paket überprüfen.</p>
+      <p>
+        Klappt einer der Schritte nicht, versuchen sie, den Fehler zu beheben und
+        beginnen sie noch einmal von vorne mit dem Schritt <code>fink validate</code>.
+      </p>
+    </section>
+    <section name="Submit">
+      <title>Paket einreichen</title>
+      <p>
+        Hat ihr Paket alle überprüfungen überstanden, können sie ihre info-Datei
+        (falls benötigt auch die patch-Datei) im
+        <link url="http://sourceforge.net/tracker/?func=add&amp;group_id=17203&amp;atid=414256">Package Submission Tracker</link>
+        einreichen.
+      </p>
+      <p>
+        Einer der Paket-Reviewer wird sich ihr Paket anschauen und es zu dem
+        entsprechenden Paket-Baum hinzufügen (bis 10.6: unstable-Baum), wenn er es
+        als in Ordnung einschätzt. Falls nicht, werden sie gebeten, das Paket Fehler zu
+        beheben und es in Einklang mit der Paket-Politik zu bringen.
+      </p>
+      <p><em>Wichtig:</em></p>
+      <ul>
+        <li>
+          Wenn irgendwie praktikabel, laden sie mehrere Dateien (also info- und patch-Datei)
+          eine nach der anderen in den selben Trackereintrag hoch.
+        </li>
+        <li>
+          Vermerken für welchen Baum oder Bäume (10.x) das Paket eingereicht wird.
+        </li>
+        <li>
+          Vermerken sie, in welche <code>Kategorie</code> (graphics, sci, etc.) ihrer Meinung
+          nach das Paket gehört.
+        </li>
+        <li>
+          Geben sie an, ob sie das Kommando <code>fink validate</code> mit ihren info- und
+          deb-Dateien ausgeführt haben.
+        </li>
+        <li>
+          Setzen sie das Feld <code>Group</code> des Trackereintrags auf
+          <code>Undergoing Validation</code>, wenn sie einen neuen Eintrag erstellen.
+          Vergessen sie nicht, es auch dann wieder auf <code>Undergoing Validation</code>
+          zurück zu stellen, wenn sie ein Problem behoben haben, das von einem Reviewer
+          gefunden und bemängelt wurde.
+        </li>
+        <li>
+          Setzen sie das Feld <code>Category</code> des Trackereintrags auf den korrekten Wert.
+        </li>
+      </ul>
+    </section>
+  </chapter>
+  <chapter filename="example">
+    <!--  The second example is not ready yet... -->
+    <!-- <title>Example 1 - the Maxwell Package</title> -->
+    <!-- <shorttitle>Example 1</shorttitle> -->
+    <title>Beispiel - das Maxwell Paket</title>
+    <shorttitle>Beispiel</shorttitle>
+    <section name="Basics">
+      <title>Grundlagen</title>
+      <p>
+        Als erstes Maxwell. Öffnen sei einen Editor und es kann lso gehen. Sie wissen den
+        Namen des Pakets, seine Version und wo man den Quellcode-Tarball bekommt. Tragen
+        sie dies in ihr Editorfenster ein:
+      </p>
+<codeblock>
+Package: maxwell
+Version: 0.5.1
+Revision: 1
+Source: mirror:sourceforge:%n/%n-%v.tar.gz
+</codeblock>
+      <p>
+        Package und Version sind offensichtlich, aber welche Bedeutung haben die
+        beiden anderen Felder. Revision ist die &quot;version&quot; des Fink-Pakets
+        während Version die Upstream-Version des Quellcodes ist. Da es der erste
+        Versuch ist, ein Paket für maxwell-0.5.1 zu erstellen, bekommt das Paket die
+        Revisionsnummer 1.
+      </p>
+      <p>
+        Das Feld Source gibt an, wo <code>fink</code> den Quellcode-Tarball abholen soll.
+        <link url="http://sourceforge.net">Sourceforge</link> hat ein weltweites System
+        von Spiegelservern, das auch von <code>fink</code> benutzt werden kann. Deshalb
+        lautet der Eintrag <filename>mirror:sourceforge:</filename>. <code>%n</code>
+        wird zum Namen des Pakets erweitert, also maxwell, und <code>%v</code> zur
+        Upstream-Version des Quellcodes, also 0.5.1.
+      </p>
+      <p>
+        Jetzt können sie die Datei als <filename>maxwell.info</filename> im Verzeichnis
+        <filename>/sw/fink/dists/local/main/finkinfo/</filename> soeichern. Danach können
+        sie mit <code>fink validate</code> schauen, wie weit sie gekommen sind.
+      </p>
+<codeblock>
+finkdev% fink validate maxwell.info
+Validating package file maxwell.info...
+Error: Required field "Maintainer" missing. (maxwell.info)
+</codeblock>
+      <p>
+        Oha. Sieht also so aus, dass wohl noch einige Felder fehlen. Fügen sie folgendes
+        hinzu:
+      </p>
+<codeblock>
+Maintainer: John Doe &lt;jdoe@example.com&gt;
+HomePage: http://maxwell.sourceforge.net
+License: MIT
+</codeblock>
+      <p>
+        Tragen sie sich als Betreuer des Fink-Pakets maxwell ein, ebenso seine
+        Homepage. Auf der Projektseite bei sourceforge können sie heraus finden,
+        dass der Quellcode unter MIT-Lizenz vertrieben wird. Machen sie den
+        entsprechenden Eintrag. Der nächste Versuch ergibt:
+      </p>
+<codeblock>
+finkdev% fink validate maxwell.info
+Validating package file maxwell.info...
+Warning: Unknown license "MIT". (maxwell.info)
+Error: No MD5 checksum specified for "source". (maxwell.info)
+Error: No package description supplied. (maxwell.info)
+</codeblock>
+      <p>
+        Mist. Es scheint eher schlechter als besser zu werden, aber geben sie nicht
+        auf und schauen sie in der <link
+        url="/doc/packaging/policy.php#licenses">Anleitung für die Paketerstellung</link>
+        nach, welche Lizensen erlaubt sind. Eine MIT-Lizenz wird mit OSI-Approved
+        abgedeckt, wie man bei dem Link <link url="http://www.opensource.org/">OSI</link>
+        nachschauen kann. Den Einzeiler für die Beschreibung des Pakets kann man sich
+        auch von der Homeoage bei sourceforge holen. Machen sie folgende Einträge:
+      </p>
+<codeblock>
+License: OSI-Approved
+Description: Mac OS X S.M.A.R.T. Tool
+</codeblock>
+      <p>
+        Aber wie löst man das Problem mit der MD5-Prüfsumme? Dazu kann man einfach
+        mit <code>fink</code> den Quellcode holen:
+      </p>
+<codeblock>
+finkdev% fink fetch maxwell
+/usr/bin/sudo /sw/bin/fink  fetch maxwell
+Reading package info...
+Updating package index... done.
+Information about 3377 packages read in 30 seconds.
+WARNING: No MD5 specified for Source of package maxwell-0.5.1-1 \
+Maintainer: John Doe &lt;jdoe@example.com&gt;
+curl -f -L -O http://distfiles.opendarwin.org/maxwell-0.5.1.tar.gz
+% Total    % Received % Xferd  Average Speed          Time             Curr.
+Dload  Upload Total    Current  Left    Speed
+0     0    0     0    0     0      0      0 --:--:--  0:00:00 --:--:--     0
+curl: (22) The requested URL returned error: 404
+### execution of curl failed, exit code 22
+Downloading the file "maxwell-0.5.1.tar.gz" failed.
+
+(1)      Give up
+(2)      Retry the same mirror
+(3)      Retry another mirror from your continent
+(4)      Retry another mirror
+(5)      Retry using next mirror set "sourceforge"
+
+How do you want to proceed? [3] 5
+curl -f -L -O http://west.dl.sourceforge.net/sourceforge/maxwell/maxwell-0.5.1.tar.gz
+% Total    % Received % Xferd  Average Speed          Time             Curr.
+Dload  Upload Total    Current  Left    Speed
+100  7856  100  7856    0     0  19838      0  0:00:00  0:00:00  0:00:00 6511k
+</codeblock>
+      <p>
+        Der Tarball konnte noch nicht von den Fink-Spiegeln geholt werden, weil
+        das Paket noch nicht akzeptiert wurde. Deshalb müssen sie auf den nächsten
+        Satz von Spiegeln wechseln. Weitere Information dazu stehen in der
+        <link url="/faq/comp-general.php#master-problems">FAQ</link>.
+      </p>
+      <p>
+        Jetzt kann man die md5-Prüfsumme mit dem Kommando
+        <code>md5sum /sw/src/maxwell-0.5.1.tar.gz</code> erhalten und in der
+        .info-Datei eintragen:
+      </p>
+<codeblock>
+Source-MD5: ce5c354b2fed4e237524ad0bc59997a3
+</codeblock>
+      <p>Und jetzt klappt es auch mit <code>fink validate</code>, yippee!</p>
+    </section>
+    <section name="build">
+      <title>Paket erstellen</title>
+      <p>Jetzt können sie einfach versuchen, das Paket zu erstellen:</p>
+<codeblock>
+finkdev% fink -m --build-as-nobody rebuild maxwell
+/usr/bin/sudo /sw/bin/fink  build maxwell
+Reading package info...
+Updating package index... done.
+Information about 3498 packages read in 32 seconds.
+The following package will be built:
+maxwell
+gzip -dc /sw/src/maxwell-0.5.1.tar.gz | /sw/bin/tar -xvf -  \
+--no-same-owner --no-same-permissions
+maxwell-0.5.1/
+maxwell-0.5.1/LICENSE
+maxwell-0.5.1/Makefile
+maxwell-0.5.1/maxwell.8
+maxwell-0.5.1/maxwell.c
+maxwell-0.5.1/README
+./configure --prefix=/sw
+Can't exec "./configure": No such file or directory at \
+/sw/lib/perl5/Fink/Services.pm line 403.
+</codeblock>
+      <p>
+        Das hat wohl noch nicht so gut geklappt. Lesen sie bitte nach, was in der
+        Datei <filename>/sw/src/maxwell-0.5.1-1/maxwell-0.5.1/README</filename>
+        steht. Üblicherweise steht da in etwa:
+      </p>
+<codeblock>
+To build type 'make'.
+
+To install in /usr/local type 'sudo make install', to install elsewhere, type
+'sudo make install prefix=/elsewhere'
+</codeblock>
+      <p>
+        Mit anderen Worten: Man kann nicht die voreingestellten Skripte nehmen,
+        sondern muss eigene version von CompileScript und InstallScript eintragen:
+      </p>
+<codeblock>
+CompileScript: make
+InstallScript: &lt;&lt;
+#! /bin/sh -ev
+make install prefix=%i
+&lt;&lt;
+</codeblock>
+      <p>
+        Man muss <code>prefix=%i</code> verwenden, denn <code>fink</code> erstellt
+        die binäre .deb-Datei aus den Dateien in <code>%i</code>. Später werden diese
+        Dateien mit dem Befehl <code>fink install maxwell</code> in <code>%p</code>
+        installiert. Die Voreinstellung für <code>%p</code> ist
+        <filename>/sw</filename>. Weitere Details über <code>%p</code> und
+        <code>%i</code> stehen in der <link
+        url="/doc/packaging/format.php#percent">Anleitung für die Paketerstellung</link>.
+      </p>
+      <p>
+        Normalerweise werden die Zeilen in den Skriptfeldern Zeile für Zeile an die
+        Shell übergeben, aber mit der Zeile <code>#! /bin/sh -ev</code> lässt
+        <code>fink</code> das Ganze als ein separates Skript ausführen.
+        Der Parameter <code>-e</code> bedeutet &quot;die on error&quot; und
+        <code>-v</code> bedeutet &quot;verbose&quot;.
+      </p>
+      <p>Ein erneuter Versuch, das Paket zu erstellen und zu validieren:</p>
+<codeblock>
+finkdev% fink validate maxwell.info
+Validating package file maxwell.info...
+Package looks good!
+finkdev% fink -m --build-as-nobody rebuild maxwell
+/usr/bin/sudo /sw/bin/fink  build maxwell
+Reading package info...
+Updating package index... done.
+Information about 3498 packages read in 32 seconds.
+The following package will be built:
+maxwell
+gzip -dc /sw/src/maxwell-0.5.1.tar.gz | /sw/bin/tar -xvf -  \
+--no-same-owner --no-same-permissions
+maxwell-0.5.1/
+maxwell-0.5.1/LICENSE
+maxwell-0.5.1/Makefile
+maxwell-0.5.1/maxwell.8
+maxwell-0.5.1/maxwell.c
+maxwell-0.5.1/README
+make
+cc  -L/sw/lib -c -o maxwell.o maxwell.c
+cc  -I/sw/include -o maxwell -framework IOKit -framework CoreFoundation maxwell.o
+/bin/rm -rf /sw/src/root-maxwell-0.5.1-1
+/bin/mkdir -p /sw/src/root-maxwell-0.5.1-1/sw
+/bin/mkdir -p /sw/src/root-maxwell-0.5.1-1/DEBIAN
+/var/tmp/tmp.1.A3sRc2
+#! /bin/sh -ev
+make install prefix=/sw/src/root-maxwell-0.5.1-1/sw
+/usr/bin/install -d -m 755 /sw/src/root-maxwell-0.5.1-1/sw/doc/maxwell
+/usr/bin/install -m 644 LICENSE /sw/src/root-maxwell-0.5.1-1/sw/doc/maxwell/LICENSE
+/usr/bin/install -m 644 README /sw/src/root-maxwell-0.5.1-1/sw/doc/maxwell/README
+/usr/bin/install -d -m 755 /sw/src/root-maxwell-0.5.1-1/sw/bin
+/usr/bin/install -m 755 maxwell /sw/src/root-maxwell-0.5.1-1/sw/bin/maxwell
+/usr/bin/install -d -m 755 /sw/src/root-maxwell-0.5.1-1/sw/man/man8
+/usr/bin/install -m 644 maxwell.8 /sw/src/root-maxwell-0.5.1-1/sw/man/man8/maxwell.8
+/bin/rm -f /sw/src/root-maxwell-0.5.1-1/sw/info/dir \
+/sw/src/root-maxwell-0.5.1-1/sw/info/dir.old \
+/sw/src/root-maxwell-0.5.1-1/sw/share/info/dir \
+/sw/src/root-maxwell-0.5.1-1/sw/share/info/dir.old
+Writing control file...
+Finding prebound objects...
+Writing dependencies...
+Writing package script postinst...
+dpkg-deb -b root-maxwell-0.5.1-1 /sw/fink/dists/local/main/binary-darwin-powerpc
+dpkg-deb: building package `maxwell' in \
+`/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb'.
+</codeblock>
+      <p>
+        Anscheinend hat Fink alles am korrekten Platz installiert:
+        <filename>/sw/src/root-maxwell-0.5.1-1</filename>, von wo aus das Binärpaket
+        <filename>maxwell_0.5.1-1_darwin-powerpc.deb</filename> erstellt wurde.
+      </p>
+      <p>
+        Bitte beachten sie auch, wie <code>fink</code> automatisch einige Optionen
+        für den Compiler setzt, wie den Zugang zu anderen Fink-Paketen
+        (also <code>-I/sw/include</code>).
+      </p>
+      <p>Schauen sie noch nach, was das binäre Paket enthält:</p>
+<codeblock>
+finkdev% dpkg -c \
+/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
+drwxr-xr-x root/admin        0 2004-07-15 09:40:38 ./
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/bin/
+-rwxr-xr-x root/admin    29508 2004-07-15 09:40:39 ./sw/bin/maxwell
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/doc/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/doc/maxwell/
+-rw-r--r-- root/admin     1076 2004-07-15 09:40:39 ./sw/doc/maxwell/LICENSE
+-rw-r--r-- root/admin     1236 2004-07-15 09:40:39 ./sw/doc/maxwell/README
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/man/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/man/man8/
+-rw-r--r-- root/admin     1759 2004-07-15 09:40:39 ./sw/man/man8/maxwell.8
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/fink/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/fink/prebound/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/fink/prebound/files/
+-rw-r--r-- root/admin       16 2004-07-15 09:40:39 ./sw/var/lib/fink/prebound/files/maxwell.pblist
+</codeblock>
+      <p>
+        Sieht gut aus, oder? Aber es bleibt noch zu verifizieren, ob das Paket die
+        Regeln von Fink für Pakete einhält. Validieren sie das Paket mit dem Kommando:
+      </p>
+<codeblock>
+finkdev% fink validate \
+/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
+Validating .deb file \
+/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb...
+Warning: File installed into deprecated directory /sw/doc/
+Offender is /sw/doc/
+Warning: File installed into deprecated directory /sw/doc/
+Offender is /sw/doc/maxwell/
+Warning: File installed into deprecated directory /sw/doc/
+Offender is /sw/doc/maxwell/LICENSE
+Warning: File installed into deprecated directory /sw/doc/
+Offender is /sw/doc/maxwell/README
+Warning: File installed into deprecated directory /sw/man/
+Offender is /sw/man/
+Warning: File installed into deprecated directory /sw/man/
+Offender is /sw/man/man8/
+Warning: File installed into deprecated directory /sw/man/
+Offender is /sw/man/man8/maxwell.8
+</codeblock>
+      <p>
+        Oha. Noch stimmt etwas nicht. Schauen sie noch einmal in der
+        <link url="/doc/packaging/fslayout.php#fhs">Anleitung für die Paketerstellung</link>
+        nach. Da steht, dass Seiten für man in <filename>/sw/share/man</filename>
+        installiert werden müssen und Dateien wie <filename>README</filename> in
+        <filename>/sw/share/doc/%n</filename>. Schaut man sich den
+        <filename>Makefile</filename> von maxwell an, sieht man, dass mandir und datadir
+        gesetzt werden können:
+      </p>
+<codeblock>
+prefix = /usr/local
+mandir = ${prefix}/man
+man8dir = ${mandir}/man8
+bindir = ${prefix}/bin
+datadir = ${prefix}/doc/maxwell
+</codeblock>
+      <p>Das einfachste ist es, den InstallScript abzuändern:</p>
+<codeblock>
+make install prefix=%i mandir=%i/share/man datadir=%i/share/doc/%n
+</codeblock>
+      <p>und das Paket neu zu erstellen:</p>
+<codeblock>
+finkdev% fink -m --build-as-nobody rebuild maxwell
+</codeblock>
+      <p>
+        (Man muss <code>fink rebuild</code> nehmen, weil <code>fink build</code>
+        nichts bewirken würde, weil das Paket bereits erfolgreich erstellt wurde.)
+      </p>
+      <p>
+        Überprüfen sie den Inhalt der .deb-Datei (mit <code>dpkg -c</code>) und
+        und schauen wie, wo die Dateien jetzt installiert werden. Dann validieren die
+        .deb-Datei mit <code>fink validate</code>. Ist alles in Ordnung, können sie das
+        Paket mit diesem Kommando installieren:
+      </p>
+<codeblock>
+finkdev% fink install maxwell
+/usr/bin/sudo /sw/bin/fink  install maxwell
+Information about 3377 packages read in 30 seconds.
+The following package will be installed or updated:
+maxwell
+dpkg -i /sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
+Selecting previously deselected package maxwell.
+(Reading database ... 56046 files and directories currently installed.)
+Unpacking maxwell (from .../maxwell_0.5.1-1_darwin-powerpc.deb) ...
+Setting up maxwell (0.5.1-1) ...
+</codeblock>
+      <p>Jetzt kann man das Programm mit diesem Kommando ausführen:</p>
+<codeblock>
+finkdev% maxwell
+</codeblock>
+      <p>
+        Gratuliere. Sie haben ihr erstes Fink-Paket erstellt! Jetzt können sie
+        es selbst versuchen, indem sie dieser
+        <link url="/doc/quick-start-pkg/index.php">Einführung</link> vom Anfang
+        an folgen.
+      </p>
+      <p>Wir sind auf ihre Beiträge zu Fink gespannt!</p>
+    </section>
+  </chapter>
+  
+  <!--  The second example is not ready yet... -->
+  <!-- <chapter filename="example2"> -->
+  <!-- <title>Example 2 - the Stow Package</title> -->
+  <!-- <shorttitle>Example 2</shorttitle> -->
+  <!--  -->
+  <!--  -->
+  <!-- <section name="Basics"><title>Basics</title> -->
+  <!-- <p> -->
+  <!-- bla bla -->
+  <!-- </p> -->
+  <!-- </section> -->
+  <!--  -->
+  <!--  -->
+  <!-- <section name="build"><title>Build</title> -->
+  <!-- <p> -->
+  <!-- Now we can build the package, let's just try it: -->
+  <!-- </p> -->
+  <!-- </section> -->
+  <!-- </chapter> -->
+  
+</document>
