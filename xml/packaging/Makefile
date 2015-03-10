@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.16 2011/10/25 01:55:44 fingolfin Exp $
+# $Id: Makefile,v 1.17 2015/03/10 22:52:23 k-m_schindler Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -9,7 +9,7 @@ TARGET = index.php intro.php format.php policy.php fslayout.php compilers.php re
 WANT_HTML = 1
 DESTDIR = doc/packaging
 
-LANGUAGES_AVAILABLE = en fr zh ja
+LANGUAGES_AVAILABLE = en de fr ja zh
 LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.common
 
