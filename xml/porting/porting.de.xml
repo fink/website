@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+<document filename="index" lang="de" >
+  <title>Unix Programme nach Darwin und Mac OS X portieren</title>
+  <shorttitle>Porting</shorttitle>
+  <cvsid>$Id: porting.de.xml,v 1.1 2015/03/10 22:48:59 k-m_schindler Exp $</cvsid>
+  <preface>
+    <p>
+			Dieses Dokument gibt Tipps, wie man ein Unix Programm nach Darwin und
+			Mac OS X portiert. Das meiste trifft sowohl for die Mac OS X Version
+			10.x.x und &quot;reine&quot; Darwin-Systeme zu. Der Einfachheit
+			halber wird deshalb nur noch Darwin genannt; letztlich ist Mac OS X
+			ja auch ein Obermenge von Darwin.
+      Viele Detailinformationen sind leider nicht mehr aktuell, sondern
+      beziehen sich auf ältere Versionen. Mit einer Aktualisierung sollte aber
+      in der englischen Version begonnen werden.
+    </p>
+  </preface>
+  <chapter filename="basics">
+    <title>Grundlagen</title>
+    <shorttitle>Grundlagen</shorttitle>
+    <section name="heritage">
+      <title>Der Ursprung von Darwin</title>
+      <p>
+				Darwin ist ein unixoides Betriebsystem das sich aus NeXTStep /
+				OpenStep entwickelte. Der Legende nach entstammt es ursprünglich
+				von 4.4BSD Lite. Das BSD-Erbe ist immer noch spürbar.
+				Tatsächlich wurde Darwin mit Code aus FreeBSD und NetBSD
+				modernisiert.
+      </p>
+      <p>
+				Darwins kernel basiert auf einer Kombination aus Mach 3.0, BSD und
+				proprietären Funktionen wie die objekt-orientiert Treiberschicht
+				IOKit. Obwohl Mach ursprünglich ein Micro-Kernel-Design hat, ist
+				der darüber liegende BSD-Kernel monolithisch. Die beiden sind
+				jetzt so ineinander verwoben, dass man sie wohl als einen einzigen
+				monolithischen Kernel bezeichnen muss.
+      </p>
+      <p>
+				Die Tools und Bibliotheken der Nutzerebene von Darwin sind meistens
+				BSD-Varianten, im Gegensatz zu den GNU-Varianten von Linux.
+				Allerdings is Apple nicht ganz so streng wie die anderen BSDs und
+				macht auch häufig Kompromisse. Apple vertreibt beispielsweise
+				sowohl BSD make als auch GNU make, mit GNU make als Voreinstellung.
+      </p>
+    </section>
+    <section name="compiler">
+      <title>Der Compiler und andere Tools</title>
+      <p>
+				Kurzfassung: Der Compiler is eine gcc Variante, aber installiert
+				als <code>cc</code>. Dementsprechend muss man Makefiles anpassen.
+				Die meisten Pakete erstellen keine gemeinsam genutzten
+				Bibliotheken. Treten Fehler bei Makros auf, setzen sie die Option
+				<code>-no-cpp-precomp</code>.
+      </p>
+      <p>
+				Langfassung: Die Compiler-Tool-Chain in den Mac OS X Developer
+				Tools ist ein seltsames Ungeheuer. Der Compiler basiert auf der
+				gcc 2.95.2 Suite und hat Modifikationen für die Unterstützung der
+				Sprache Objective C und noch einige Darwin-Spezialitäten. Vom
+				Precompiler (<code>cpp</code>) gibt es zwei Versionen. Die eine
+				ist der Standard-Precompiler (aus gcc 2.95.2), die andere wurde
+				eigens von Apple entwickelt und unterstützt vorkompilierte Header.
+				Die letzte Version ist die Voreinstellung, weil sie schneller ist.
+				Allerdings kompiliert nicht jedes Programm mit Apples Precompiler
+				und man muss die Option <code>-no-cpp-precomp</code> für den
+				Standard-Precompiler einschalten. (Beachte: Die frühere
+				Empfehlung war, die Option <code>-traditional-cpp</code> zu
+				verwenden. Die Semantik dieser Option hat sich aber mit GCC 3
+				geändert, so dass ihre Verwendung zu Abbrüchen führt. Die
+				Option <code>-no-cpp-precomp</code> hingegen funktioniert sowohl
+				mit den derzeitigen Developer Tools als auch mit zukünftigen
+				Compilers, die auf GCC 3.0 basieren.)
+      </p>
+      <p>
+				Der Assembler basiert auf gas 1.38, aber der Linker basiert nicht
+				auf GNU Tools. Das ist ein Problem bei der Erstellung von
+				gemeinsam benutzten Bibliotheken, weil GNU-libtools und configure-
+				Skripte den Apple-Linker nicht korrekt aufrufen können.
+      </p>
+    </section>
+    <section name="host-type">
+      <title>Wirtsystem</title>
+      <p>
+				Kurzfassung: Bricht configure mit dem Meldung 'Can't determine host
+				type' ab, dann kopieren sie die Dateien config.guess und config.sub
+				aus dem Verzeichnis /usr/share/libtool (/usr/libexec für OS X 
+				Versionen vor 10.2) in das derzeitige Verzeichnis.
+      </p>
+      <p>
+				Langfassung: In der GNU-Welt wird ein kanonisches Format für die
+				Angabe von Systemen verwendet, das aus folgenden drei Teilen
+				besteht: CPU-Typ, Hersteller und Betriebsystem. Manchmal folgt
+				noch ein vierter Teil. Dann beschreibt der dritte Teil den Kernel
+				und der vierte Teil das Betriebsystem. Alle Teile werden klein
+				geschrieben und mit Bindestrichen verbunden. Einige Beispiele:
+				<code>i586-pc-linux-gnu</code>, <code>hppa1.1-hp-hpux10.20</code>,
+				<code>sparc-sun-solaris2.6</code>. Für Mac OS X 10.0 lautet die
+				Angabe <code>powerpc-apple-darwin1.3</code>, Mac OS X 10.2
+				Versionen sind <code>powerpc-apple-darwin6.x.0</code> und 10.3
+				<code>powerpc-apple-darwin7.x.0</code>, wobei &quot;x&quot; von der
+				genauen Version abhängt.
+      </p>
+      <p>
+				Viele Pakete, die autoconf benutzen, wollen wissen, für welches
+				System kompiliert wird. (Randnotiz: für die Unterstützung von
+				Cross-Compiling und Portierung, gibt es tatsächlich 3 Systeme: das
+				Wirtsystem, das Erstellungsystem und das Zielsystem. Meistens sind
+				sie das selbe.)  Man kann das Wirtsystem dem configure-Skript
+				übergeben oder man kann es raten lassen.
+      </p>
+      <p>
+				Das configure-Skript benutzt zwei Partnerskripte, um das Wirtsystem
+				zu bestimmen. <filename>config.guess</filename> versucht, das
+				Wirtsystem zu bestimmen. <filename>config.sub</filename> wird
+				benutzt, um das Wirtsystem zu validieren und kanonisch zu machen.
+				Diese Skripte werden als separate Einheiten gepflegt, aber sind in
+				jedem Paket enthalten, das sie benutzt. Bis vor kurzem erkannten
+				diese Skripte Darwin oder Mac OS X nicht. Liegt so ein Paket vor,
+				muss man config.guess und config.sub ersetzen. Glücklicherweise
+				hat Apple funktionierende Versionen im Verzeichnis
+				/usr/share/libtool (/usr/libexec für Mac OS X vor 10.2), so dass
+				man sie einfach von dort kopieren kann.
+      </p>
+      <p>
+				Wenn sie ein Fink-Paket erstellen, können sie die Felder
+				<code>UpdateConfigGuess</code> und/oder
+				<code>UpdateConfigGuessInDirs</code> in ihrer
+				<filename>.info</filename> Paketbeschreibung für eine automatische
+				Aktualisierung benutzen.
+      </p>
+    </section>
+    <section name="libraries">
+      <title>Bibliotheken</title>
+      <p>
+				Kurzfassung: Man kann, muss aber nicht, die Option <code>-lm</code>
+				aus Makefiles entfernen.
+      </p>
+      <p>
+				Langfassung: Mac OS X hat keine separaten libc, libm, libcurses,
+				libpthread oder ähnliche Bibliotheken. Statt dessen sind sie alle
+				Teil der Systembibliothek libsystem. (In früheren Versionen war
+				es tatsächlich das Framework System.)  Darüber hinaus hat Apple
+				entsprechende Symlinks im Verzeichnis /usr/lib angelegt, sodass
+				auch die Option -lm funktioniert. Die einzige Ausnahme ist
+				<code>-lutil</code>. Auf anderen Systemen enthält libutil
+				Funktionen für Pseudoterminals und die Abrechnung von Logins. Diese
+				Funktionen sind in libSystem, aber es gibt einfach keinen Symlink für
+        für ein libutil.dylib.
+      </p>
+    </section>
+    <section name="other-sources">
+      <title>Andere Informationsquellen</title>
+      <p>
+        Eine weitere Quelle für die Portierung ist das Wiki bei
+        <link url="http://www.metapkg.org/wiki">MetaPkg Wiki</link>.
+      </p>
+      <p>
+        Sie können auch die Apple Technical Note
+        <link url="http://developer.apple.com/technotes/tn2002/tn2071.html">TN2071</link>
+        mit dem Titel "Porting Command Line Unix Tools to Mac OS X" lesen.
+      </p>
+    </section>
+  </chapter>
+  <chapter filename="shared">
+    <title>Gemeinsam benutzter Code</title>
+    <shorttitle>Gemeinsam benutzter Code</shorttitle>
+    <section name="lib-and-mod">
+      <title>Gemeinsam benutzte Bibliotheken vs. Ladbare Module</title>
+      <p>
+        Ein Mach-O Feature erwischt viele ganz kalt: Die strikte Unterscheidung
+        zwischen gemeinsam genutzten Bibliotheken und dynamisch ladbaren
+        Modulen. Auf ELF-Systemen sind die beiden gleich; jeder gemeinsam
+        benutzter Code kann als Bibliothek und als ladbares Mudol genutzt
+        werden. Benutzen sie das Kommando
+        <code>otool -hv <em>some_file</em></code>, um den Dateityp der Datei
+        <filename>some_file</filename> heraus zu finden.
+      </p>
+      <p>
+        Gemeinsam genutzte Mach-O Bibliotheken haben den Dateityp MH_DYLIB und
+        die Dateiendung <code>.dylib</code>. Gegen sie kann ein programm mit
+        den üblichen Linkeroptionen gelinkt werden, also <code>-lfoo</code> für
+        libfoo.dylib. Sie können jedoch nicht als Modul geladen werden.
+        (Randnotiz: Gemeinsam genutzte Bibliotheken können dynamisch über eine
+        API geladen werden. Aber die API unterscheidet sich von der API für
+        Bundles und die Semantik machen sie nutzlos for eine Emulation von
+        <code>dlopen()</code>. Vor allem können gemeinsam genutzte Bibliotheken
+        nicht wieder ausgeladen werden.)
+      </p>
+      <p>
+        Ladbare Module heißen in Mach-O-Sprech Bundles. Ihr Dateityp ist
+        MH_BUNDLE. Da sich keine Komponente  darum kümmert, ist die
+        Dateierweiterung beliebig wählbar. Die Erweiterung <code>.bundle</code>
+        wird von Apple empfohlen, aber die meisten portierten Programme benutzen
+        aus Kompatibilitätsgründen <code>.so</code>. Bundles können dynamisch
+        über die dyld API geladen und wieder ausgeladen werden. Ein Wrapper um
+        diese API emuliert <code>dlopen()</code>. Gegen Bundles kann man nicht
+        linken wie wenn sie gemeinsame genutzte Bibliotheken wären. Aber ein
+        Bundle kann gegen vorhandene, gemeinsam genutzte Bibliotheken gelinkt
+        werden; diese werden dann automatisch mit dem Bundle geladen.
+      </p>
+    </section>
+    <section name="version">
+      <title>Versionsnummerierung</title>
+      <p>
+        Auf Elf-Systemen wird normalerweise die Versionsnummer am Ende des
+        Dateinamens der gemeinsame genutzten Bibliothek nach der Erweiterung
+        angehängt, z. B. <filename>libqt.so.2.3.0</filename>. Bei Darwin steht
+        die Versionsnummer zwischen Bibliotheksnamen und Erweiterung, also
+        <filename>libqt.2.3.0.dylib</filename>. Beachten sie, dass sie deshalb
+        beim Linken eine bestimmte Version der Bibliothek angeben können, im
+        obigen Beispiel mit <code>-lqt.2.3.0</code>.
+      </p>
+      <p>
+        Bei der Erstellung einer gemeinsam genutzten Bibliothek kann man einen
+        Namen vergeben, mit dem zur Laufzeit nach der Bibliothek gesucht werden
+        kann. Dies ist gängige Praxis und ermöglicht es, dass mehrere
+        Haupt-Versionen einer Bibliothek gleichzeitig installiert sind. AUf
+        ELF-Systemen nennt man diesen Namen <code>soname</code>. Unter Darwin
+        kommt dazu, dass man den vollständigen Pfad zu der Bibliothek angeben
+        kann und auch sollte. Die "rpath"-Optionen und das
+        ldconfig/ld.so.cache-System werden dadurch überflüssig. Soll eine
+        Bibliothek benutzt werden, die noch nicht installiert ist, kann man die
+        Umgebungsvariable DYLD_LIBRARY_PATH. Details dazu stehen in der
+        man-Seite von dyld.
+      </p>
+      <p>
+        Im Gegensatz zu ELF-Systemen erlaubt das Mach-O Format erlaubt auch die
+        tatsächliche Überprüfung der Nebenversion. Jede Mach-O Bibliothek hat
+        zwei Versionsnummern, die "aktuelle" Version und die "kompatible". Beide
+        Nummern bestehen aus drei durch Punkte getrennte Zahlen. z. B. 1.4.2.
+        Die erste Zahl darf nicht Null sein. Die zweite und dritte Zahl können
+        ausgelassen werden und werden dann als Null angenommen. Ist überhaupt
+        keine Zahl angegeben, wird die Version auf 0.0.0 gesetzt. Dies ist
+        quasi ein Joker und passt auf alles.
+      </p>
+      <p>
+        Die "aktuelle" Version dient nur zur Information; während die
+        "kompatible" Version für die Überprüfung wie folgt verwendet wird: Wird
+        ein Program gelinkt, wird die Versionsinformation der Bibliothek in das
+        Programm kopiert. Wird das Programm ausgeführt, wird die Version im
+        Programm mit der aus der Bibliothek verglichen, die geladen wird.
+        Die Version der Bibliothek muss mit der aus dem Programm übereinstimmen
+        oder höher sein. Ist dies nicht der Fall, bricht dyld das Programm ab
+        und erzeugt einen Laufzeit-Fehler.
+      </p>
+    </section>
+    <section name="cflags">
+      <title>Compiler-Optionen</title>
+      <p>
+        Auf Darwin ist die Voreinstellung so, dass positionsunabhängiger Code
+        (PIC) erzeugt wird. Tatsächlich ist PowerPC-Code so entworfen, dass er
+        von vorne herein positionsunabhängig ist und damit keine Leistungs- oder
+        Speicherplatz-Nachteil verbunden ist. Man muss deshalb nicht extra eine
+        Option PIC angeben, wenn man eine gemeinsam genutzte Bibliothek oder
+        ein Modul compiliert. Allerdings erlaubt der Linker keine
+        &quot;common&quot; Symbole in gemeinsam genutzten Bibliotheken. Man
+        muss also die Compiler-Option <code>-fno-common</code> angeben.
+      </p>
+    </section>
+    <section name="build-lib">
+      <title>Eine gemeinsam genutzte Bibliothek erzeugen</title>
+      <p>
+        Will man eine gemeinsam genutzte Bibliothek erzeugen, ruft man den
+        Compilertreiber mit der Option <code>-dynamiclib</code> auf. Am besten
+        versteht man dies an einem ausführlichen Beispiel. Es wird eine
+        Bibliotheknamen libfoo aus den Quellcode-Dateien
+        <filename>source.c</filename> und <filename>code.c</filename> erzeugt.
+        Die Versionsnummer ist 2.4.5, mit 2 als der Hauptversionsnummer (wegen
+        inkompatiblen Änderungen der API), 4 die Nebenversionsnummer (wegen
+        aufwärtskompatiblen Änderungen der API) und 5 ist die Revisionsnummer
+        für die Behebung von Fehlern (manchmal wird dies auch die
+        &quot;teeny&quot; Revisionsnummer genannt, für vollkompatible
+        Änderungen.). Die Bibliothek hängt von keiner anderen ab und wird in
+        <filename>/usr/local/lib</filename> installiert.
+      </p>
+<codeblock>cc -fno-common -c source.c
+cc -fno-common -c code.c
+cc -dynamiclib -install_name /usr/local/lib/libfoo.2.dylib \
+-compatibility_version 2.4 -current_version 2.4.5 \
+-o libfoo.2.4.5.dylib source.o code.o
+rm -f libfoo.2.dylib libfoo.dylib
+ln -s libfoo.2.4.5.dylib libfoo.2.dylib
+ln -s libfoo.2.4.5.dylib libfoo.dylib</codeblock>
+      <p>
+        Beachten sie bitte, welche Teile der Versionsnummer an welcher Stelle
+        verwendet werden. Linkt man gegen die Bibliothek, verwendet man
+        normalerweise die Option <code>-lfoo</code>, die auf den Symlink
+        <filename>libfoo.dylib</filename> zugreift. Unabhängig welcher Symlink
+        oder welche tatsächliche Datei angegeben wird, wird der
+        <code>install_name</code> in das Programm eingetragen. Dies bedeutet,
+        dass der der &quot;höhere&quot; (weniger versionsspezifische) Symlink
+        <filename>libfoo.dylib</filename> nach dem Kompilieren gelöscht werden
+        kann. In einer Aktualisierung der Bibliothek auf dem Niveau der
+        Nebenversion, muss man nur das Ziel des Symlinks
+        <filename>libfoo.2.dylib</filename> ändern, dass von dynamischen
+        Laufzeitlinker benutzt wird.
+      </p>
+    </section>
+    <section name="build-mod">
+      <title>Ein Modul erzeugen</title>
+      <p>
+        Will man ein ladbares Modul erzeugen, ruft man den Compilertreiber mit
+        der Option <code>-bundle</code> auf. Benutzt das Modul Symbole des
+        Wirtprogramms muss auch die Option <code>-undefined suppress</code>
+        angegeben werden, damit undefinierte Symbole erlaubt sind und auch die
+        Option <code>-flat_namespace</code>, damit der neue Linker ab Mac OS X
+        10.1 zufrieden ist. Ein ausführliches Beispiel:
+      </p>
+<codeblock>cc -fno-common -c source.c
+cc -fno-common -c code.c
+cc -bundle -flat_namespace -undefined suppress \
+-o mymodule.so source.o code.o</codeblock>
+      <p>
+        Beachten sie, dass es keine Versionsnummerierung gibt. Theoretisch kann
+        dies gemacht werden, in der Praxis ist das aber unbedeutend. Beachten
+        sie außerdem, dass es keine Einschränkungen für den Namen des Bundle
+        gibt. Einige Pakete ziehen es vor, dem Namen ein &quot;lib&quot; voran
+        zu stellen, weil das z. B. auf anderen Systemen verlangt wird. Dies ist 
+        alles unkritisch, weil ein Programm den vollständigen Namen benutzt, 
+        wenn das Modul geladen wird.
+      </p>
+    </section>
+  </chapter>
+  <chapter filename="libtool">
+    <title>GNU libtool</title>
+    <shorttitle>libtool</shorttitle>
+    <preface>
+      <p>
+        GNU Pakete, die Bibliotheken erstellen, nutzen GNU libtool, um die
+        platformspezifischen Prozeduren für das Erstellen und die Installation
+        der Bibliotheken zu verbergen.
+      </p>
+    </preface>
+    <section name="situation">
+      <title>Die Situation</title>
+      <p>Derzeit gibt es vier verschiedene Stränge von libtool:</p>
+      <ul>
+        <li><p>
+          <em>libtool 1.3</em>:
+          Der häufigste Strang. Die letzte Version dieses Strangs ist 1.3.5.
+          Es kennt Darwin nicht und erzeugt nur statische Bibliotheken. Man
+          kann es an der Präsenz der Dateien <filename>ltconfig</filename> und
+          <filename>ltmain.sh</filename>im Quelltextbaum erkennen.
+        </p></li>
+        <li><p>
+          <em>libtool 1.4</em>:
+          Lange bearbeitet und vor kurzem als die neue stabile Version heraus
+          gegeben. Dieser Strang hat eine bessere Integration von autoconf.
+          Unglücklicherweise wird dadurch die Migration von 1.3 basierten
+          Paketen nicht trivial. Es unterstützt Darwin 1.3 / Mac OS X 10.0
+          und benötigt nur geringfügige Patches für Mac OS X 10.1.
+          Man kann es daran erkennen, dass die  Datei
+          <filename>ltconfig</filename> nicht vorkommt. Versionen, die sich als
+          1.3b oder 1.3d ausgeben, sind tatsächlich Schnappschüsse aus der
+          Entwicklung von 1.4 und mit Vorsicht zu genießen.
+        </p></li>
+        <li><p>
+          <em>Der multi-Sprachen-Zweig</em>:
+          Auch MLB genannt. Diese Version von libtool erhielt parallel die
+          Unterstützung für C++ und Java (mittels gcj). Es wurde in den
+          Hauptzweig der Entwicklung integriert. Aktuelle Versionen
+          unterstützen Darwin 1.3 and Mac OS X 10.0. Den MLB Zweigkann man an
+          der Präsenz der Dateien <filename>ltcf-c.sh</filename>,
+          <filename>ltcf-cxx.sh</filename> und <filename>ltcf-gcj.sh</filename>
+          erkennen.
+        </p></li>
+        <li><p>
+          <em>Der aktuelle Zweig der Entwicklung</em>:
+          Diese Version wird irgendwann als libtool 1.5 heraus gegeben werden.
+          Sie resultiert aus der Integration des MLB Zweigs in 1.4 und
+          unterstützt C, C++ and Java (mittels gcj). Unglücklicherweise, kann
+          man diese Version nicht so einfach von der Version 1.4 unterscheiden.
+          Leider muss man die Versionsnummer in der Datei
+          <filename>ltmain.sh</filename> überprüfen.
+        </p></li>
+      </ul>
+      <p>
+        Zusammenfassend ist zu sagen, dass libtool 1.3.x und Pakete, die es
+        nutzen (und das sind die meisten Pakete da draußen), einen Patch
+        benötigen, wenn sie gemeinsam genutzte Bibliotheken auf Darwin erstellen
+        wollen. Apples libtool in Mac OS X ist eine 1.3.5 Version mit Patches,
+        das aber meistens nicht korrekt funktioniert. Christoph Pfisterer
+        verbesserte den Patch mit fest eingestelltem, aber korrektem Pfad und
+        mit voller Versionierung. Die Änderungen worden in die Upstream-Version
+        von libtool übernommen und sind Teil der Version 1.4. Mitglieder des
+        Fink-Teams machen weitere Verbesserungen und geben sie an die Betreuer
+        von libtool weiter. Das Schema für die Versionierung ist über alle
+        Versionen von libtool kompatibel.
+      </p>
+      <p>
+        Randnotiz:
+        Alle libtool Versionen enthalten die Bibliothek libltdl, die nur
+        funktioniert, wenn auch dlcompat installiert ist. Ab Version 10.3 ist
+        es in Mac OS X enthalten. Für frühere Versionen, kann man die
+        &quot;dlcompat&quot; Familie an Paketen in Fink installieren.
+      </p>
+    </section>
+    <section name="patch-135">
+      <title>Der 1.3.5 Patch</title>
+      <p>
+        Erstellen sie libtool 1.3.5 selbst, müssen sie den folgenden
+        <link url="/files/libtool-1.3.5-darwin.patch">Patch</link>
+        <em>[aktualiisert am 9. 6. 2002]</em> auf den Quellcode von
+        1.3.5 anwenden und dann die Dateien ltconfig und ltmain.sh löschen.
+        (Sie werden aus den entsprechenden .in Dateien wieder erstellt, wenn
+        man ./configure und make ausführt). Dies wird übrigens im aktuellen
+        Fink-Paket von libtool 1.3.5 automatisch gemacht.
+      </p>
+      <p>
+        Dies ist allerdings nur die halbe Arbeit - jedes Paket, das libtool
+        verwendet kommt mit seinen eigenen Kopien von
+        <filename>ltconfig</filename> und <filename>ltmain.sh</filename>. Man
+        muss also auch diese in jedem paket ersetzen, wenn man es als
+        gemeinsam genutzte Bibliothek erstellen will. Beachte sie bitte, dass
+        dies vor dem Lauf von ./configure erfolgen muss. Zur Vereinfachung
+        können sie die beiden Dateien hier bekommen:
+        <link url="/files/ltconfig">ltconfig</link> (98K) und
+        <link url="/files/ltmain.sh">ltmain.sh</link> (110K)
+        <em>[beide aktualisiert am 9. 6. 2002]</em>.
+      </p>
+    </section>
+    <section name="fixing-14x">
+      <title>1.4.x reparieren</title>
+      <p>
+        Es sind mindestens drei Versionen von libtool 1.4.x im Umlauf (1.4.1,
+        1.4.2 und spätere Schnappschüsse aus der Entwicklung). Sie haben auf
+        Darwin alle Probleme, auch wenn die Details der Fixes unterschiedlich
+        sind. Das &quot;libtool14&quot; Paket aus Fink hat alle notwendigen
+        Änderungen. Sie müssen aber immer noch die Dateien
+        <filename>ltmain.sh</filename> und <filename>configure</filename> in
+        ihren Paketen ersetzen, damit sie erstellt werden können.
+      </p>
+      <ol>
+        <li>
+          <em>Das Problem mit flat_namespace </em>:
+          Dieses Problem tritt nur auf, wenn sie libtool auf Mac OS X 10.1 oder
+          später verwenden. Libtool versucht da die Option
+          <code>-undefined suppress</code> zu verwenden, um nicht deklarierte
+          Symbole zu erlauben. Dies kollidiert aber mit der Option
+          <code>-flat_namespace</code>. Beginnend mit 10.1 funktioniert dies
+          nicht mehr. Ein typischer Patch sieht so aus:
+<codeblock>
+diff -Naur gdk-pixbuf-0.16.0.old/configure gdk-pixbuf-0.16.0.new/configure
+--- gdk-pixbuf-0.16.0.old/configure	Wed Jan 23 10:11:48 2002
++++ gdk-pixbuf-0.16.0.new/configure	Thu Jan 31 03:19:54 2002
+@@ -3334,7 +3334,7 @@
+;;
+
+darwin* | rhapsody*)
+-    allow_undefined_flag='-undefined suppress'
++    allow_undefined_flag='-flat_namespace -undefined suppress'
+# FIXME: Relying on posixy $() will cause problems for
+#        cross-compilation, but unfortunately the echo tests do not
+#        yet detect zsh echo's removal of \ escapes.
+</codeblock>
+        </li>
+        <li>
+          <em>Das Problem mit ladbaren Modulen</em>:
+          Dieses Problem entsteht durch nicht-Standard Verhalten von zsh (Das
+          ist die voreingestellte Shell in 10.0 und 10.1; mit 10.2 ist es bash).
+          Die Behandlung von Anführungszeichen verhindert, dass unter zsh
+          ladbare Module korrekt erstellt werden. Statt dessen werden gemeinsam
+          genutzte Bibliotheken erstellt (im Gegensatz zu Linux sind diese unter
+          Darwin völlig unterschiedlich). Ein typischer Fix ist (kann aber nicht
+          unmodifiziert verwendet werden):
+<codeblock>
+diff -Naur gnome-core-1.4.0.6.old/configure gnome-core-1.4.0.6.new/configure
+--- gnome-core-1.4.0.6.old/configure	Sun Jan 27 08:19:48 2002
++++ gnome-core-1.4.0.6.new/configure	Fri Feb  8 01:10:21 2002
+@@ -4020,7 +4020,7 @@
+# FIXME: Relying on posixy $() will cause problems for
+#        cross-compilation, but unfortunately the echo tests do not
+#        yet detect zsh echo's removal of \ escapes.
+-    archive_cmds='$nonopt $(test "x$module" = xyes &amp;&amp; echo -bundle || echo -dynamiclib) ...'
++    archive_cmds='$nonopt $(test x$module = xyes &amp;&amp; echo -bundle || echo -dynamiclib) ...'
+# We need to add '_' to the symbols in $export_symbols first
+#archive_expsym_cmds="$archive_cmds"' &amp;&amp; strip -s $export_symbols'
+hardcode_direct=yes
+</codeblock>
+          <p>
+            Diese Problem ist in einigen post-1.4.2 Versionen von libtool
+            behoben.
+          </p>
+        </li>
+        <li>
+          <em>Das Problem der convenience-Bibliothek</em>:
+          Unter bestimmten Bedingungen, scheitert libtool
+          convenience-Bibliotheken zu linken und berichtet "multiple
+          definitions" Fehler. Anscheinenend wird dies durch einen
+          grundlegenden Fehler von libtool verursacht. Vorerst gibt es folgende
+          Lösung, auch wenn die nicht das tatsächliche Problem löst, sondern
+          nur die Symptome beseitigt (Dank an Dave Vasilevsky):
+<codeblock>
+--- ltmain.sh.old       2002-04-27 00:01:23.000000000 -0400
++++ ltmain.sh   2002-04-27 00:01:45.000000000 -0400
+@@ -2894,7 +2894,18 @@
+if test -n "$export_symbols" &amp;&amp; test -n "$archive_expsym_cmds"; then
+eval cmds=\"$archive_expsym_cmds\"
+else
++         save_deplibs="$deplibs"
++         for conv in $convenience; do
++       tmp_deplibs=
++       for test_deplib in $deplibs; do
++         if test "$test_deplib" != "$conv"; then
++           tmp_deplibs="$tmp_deplibs $test_deplib"
++         fi
++       done
++       deplibs="$tmp_deplibs"
++         done
+eval cmds=\"$archive_cmds\"
++         deplibs="$save_deplibs"
+fi
+save_ifs="$IFS"; IFS='~'
+for cmd in $cmds; do
+</codeblock>
+        </li>
+        <li>
+          <em>Das Problem mit DESTDIR</em>:
+          Bestimmte Pakete, die DESTDIR setzen und libtool 1.4.2 nutzen haben
+          Probleme beim relinken. Die Probleme werden in folgenden Emails
+          diskutiert:
+          <p>
+            <link
+            url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00019.html</link>
+          </p>
+          <p>
+            <link
+            url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00021.html</link>
+          </p>
+          <p>
+            <link
+            url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00025.html</link>,
+          </p>
+          <p>and a patch for the problem is discussed in:</p>
+          <p>
+            <link
+            url="http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html">http://mail.gnu.org/archive/html/libtool/2002-04/msg00043.html</link>.
+          </p>
+        </li>
+      </ol>
+    </section>
+    <section name="notes">
+      <title>Weitere Notizen</title>
+      <p>
+        Weitere Information über libtool und seine Funktionsweise gibt es auf
+        der
+        <link url="http://www.gnu.org/software/libtool/libtool.html">libtool Homepage</link>.
+      </p>
+      <p>
+        Randnotiz:
+        Apples Developer Tools enthalten auch ein Program namens libtool, das
+        vom Compiler benutzt wird, um gemeinsam genutzte Bibliotheken zu
+        erstellen. Dieses hat jedoch überhaupt keinen Bezug zu GNU libtool.
+        Das GNU libtool von Apple ist statt dessen als <code>glibtool</code>
+        installiert. Seine Verwendung kann man erreichen, indem man GNU libtool
+        mit <code>--program-transform-name=s/libtool/glibtool/</code>
+        konfiguriert.
+      </p>
+    </section>
+  </chapter>
+  <chapter filename="preparing-10.2">
+    <title>Vorbereitungen für 10.2</title>
+    <shorttitle>Vorbereitungen für 10.2</shorttitle>
+    <section name="bash">
+      <title>Die Shell bash</title>
+      <p>
+        Der Übergang von 10.0 nach OS X 10.1 war für Fink relativ leicht, nicht
+        zuletzt weil man für einige der Änderungen im voraus geplant hatte. Das
+        ist auch für die nächsten Übergänge geplant, aber viele Details sind
+        noch nicht bekannt.      </p>
+      <p>
+        So weit wir wissen, wird mit OS X 10.2 zsh von bash abgelöst, um die
+        Funktionalität von <code>/bin/sh</code> zu erhalten. Das wirkt sich
+        mindestens an drei Stellen für Fink aus.
+      </p>
+      <ul>
+        <li>
+          Bisher gab es einige Fink-Pakete, in deren CompileScript
+          (oder PatchScript oder InstallScript) nichts außer einem Semikolon
+          stand. Dies funktioniert mit bash nicht mehr und muss ersetzt werden,
+          z. B. durch:
+<codeblock>
+CompileScript: echo "nothing to do"
+</codeblock>
+        </li>
+        <li>
+          Bisher nutzten einige Fink-Pakete eine Konstruktion wie
+          <code>lib(foo|bar).dylib</code> für Referenzen auf zwei Bibliotheken
+          auf einmal. Dies geht unter bash nicht mehr und die bash-Alternative
+          <code>lib{foo,bar}.dylib</code> funktioniert nicht unter zsh. Als
+          Lösung daher bleibt nur, alle Namen komplett auszuschreiben.
+        </li>
+        <li>
+          In vielen Fällen wird unter bash ein Patch von libtool benötigt,
+          damit keine Bibliotheken ohne Version erstellt werden.
+          A libtool patch is needed in many cases, to prevent libraries from being
+          build unversioned under bash.
+          <em> Beachten sie: Dieser Patch wird für libtool-1.3.5 nicht benötigt,
+          wenn sie zum Beispiel UpdateLibtool: True verwenden. </em>
+          Unter bash bekommt man in diesem Fäälen folgende Fehlermeldung:
+<codeblock>
+../libtool: test: too many arguments
+</codeblock>
+          Passiert dies, enthält <code>configure</code>folgendes:
+<codeblock>
+archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo
+-dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts
+-install_name $rpath/$soname $(test -n "$verstring" -a x$verstring !=
+x0.0 &amp;&amp; echo $verstring)'
+</codeblock>
+          Es folgt ein Patch (Benutzen sie ihn aber vorsichtig, denn manchmal
+          gibt es mehrere Probleme mit libtool. Deshalb ist es besser, diesen
+          Patch von Hand umzusetzen):
+<codeblock>
+diff -Naur gdk-pixbuf-0.16.0/configure gp-new/configure
+--- gdk-pixbuf-0.16.0/configure 2002-01-22 20:11:48.000000000 -0500
++++ gp-new/configure    2002-05-10 03:02:44.000000000 -0400
+@@ -3338,7 +3338,7 @@
+# FIXME: Relying on posixy $() will cause problems for
+#        cross-compilation, but unfortunately the echo tests do not
+#        yet detect zsh echo's removal of \ escapes.
+-    archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo
+-dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts
+-install_name $rpath/$soname $(test -n "$verstring" -a x$verstring !=
+x0.0 &amp;&amp; echo $verstring)'
++    archive_cmds='$CC $(test .$module = .yes &amp;&amp; echo -bundle || echo
+-dynamiclib) $allow_undefined_flag -o $lib $libobjs $deplibs$linkopts
+-install_name $rpath/$soname $tmp_verstring'
+# We need to add '_' to the symbols in $export_symbols first
+#archive_expsym_cmds="$archive_cmds"' &amp;&amp; strip -s $export_symbols'
+hardcode_direct=yes
+diff -Naur gdk-pixbuf-0.16.0/ltmain.sh gp-new/ltmain.sh
+--- gdk-pixbuf-0.16.0/ltmain.sh 2002-01-22 20:11:43.000000000 -0500
++++ gp-new/ltmain.sh    2002-05-10 03:04:49.000000000 -0400
+@@ -2862,6 +2862,11 @@
+if test -n "$export_symbols" &amp;&amp; test -n "$archive_expsym_cmds";
+then
+eval cmds=\"$archive_expsym_cmds\"
+else
++         if test "x$verstring" = "x0.0"; then
++           tmp_verstring=
++         else
++           tmp_verstring="$verstring"
++         fi
+eval cmds=\"$archive_cmds\"
+fi
+IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
+</codeblock>
+        </li>
+      </ul>
+    </section>
+    <section name="gcc3">
+      <title>Der gcc3 Compiler</title>
+      <p>Mac OS X 10.2 nutzt den Compiler gcc3.</p>
+      <p>
+				Einige Paket mit ladbaren Modulen, die libtool benutzen, brechen 
+				mit einem install-name Fehler ab, weil libtool die Option 
+				-install_name auch zusammen mit der Option -bundle übergibt, wo 
+				sie nicht zwingend benötigt wird. Vom compiler gcc2 wurde dieses 
+				Verhalten akzeptiert, aber nicht vom Compiler gcc3. Die Lösung des 
+				Problems ist <link
+				url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg02025.html">hier</link>
+				beschrieben. Beachte sie, dass sie diesen Patch mit libtool-1.3.5 
+				nicht benötigen (Wenn sie z. B. das Feld <code>UpdateLibtool: 
+				True</code> gesetzt haben.), weil er bereits in die von Fink revidierte 
+				Version der Datei ltconfig enthalten ist (auch als Vorabversion 
+				von fink erhältlich):
+      </p>
+      <p>
+			  Ein anderes Problem mit dem Compiler gcc3 is eine Inkompatibilität 
+				der C++ ABIs von gcc2 und gcc3. In der Praxis bedeutet das, dass mit
+				gcc3 kompilierte C++ Programme keine Bibliotheken	linken können, die
+        mit gcc2 kompiliert wurden.
+      </p>
+    </section>
+  </chapter>
+  <chapter filename="preparing-10.3">
+    <title>Vorbereitungen für 10.3</title>
+    <shorttitle>Vorbereitungen für 10.3</shorttitle>
+    <section name="perl">
+      <title>Perl</title>
+      <p>
+        In OS X 10.2, <filename>/usr/bin/perl</filename> war perl 5.6.0
+        und der die Architektur hieß &quot;darwin&quot;. In OS X
+        10.3, <filename>/usr/bin/perl</filename> wurde auf perl 5.8.1
+        aktualisiert und die Architektur in
+        &quot;darwin-thread-multi-2level&quot; umbenannt. Diese Änderungen
+        <em>sollten</em> bei der normalen Verwendung von perl bei der
+        Erstellungen von Paketen keine Probleme verursachen, weil jede Version
+        von perl weiß, wo sie ihre eigenen Modulen findet. Paketbetreuer, die
+        diesen Regeln <link
+        url="/doc/packaging/policy.php#perlmods">Perl Modules packaging
+        policy</link> folgen und auch der Dokumentation zu
+        <code>CompileScript</code> und <code>InstallScript</code> folgen, haben
+        bereits alles richtig aufgesetzt.
+      </p>
+    </section>
+    <section name="typedef">
+      <title>Neue Definitionen von Symbolen</title>
+      <p>
+        Beginnend mit Mac OS X 10.3 gibt es jetzt eine vollständige Definition
+        des Typs <code>socklen_t</code>. FÜgen sie folgendes für eine
+        Typdefinition zu ihrem Programm hinzu:
+      </p>
+<codeblock>
+#include &lt;sys/types.h&gt;
+#include &lt;sys/socket.h&gt;
+</codeblock>
+    </section>
+    <section name="system-libs">
+      <title>Neue Systembibliotheken</title>
+      <p>
+        Mac OS X 10.3 enthält einige neue Bibliotheken, die vorher nicht
+        vorhanden waren und deshalb bisher als Fink-Pakete zur Verfügung
+        gestellt wurden:
+      </p>
+      <itemtable>
+        <item>
+          <itemt>libpoll</itemt>
+          <itemd>
+            <p>
+              Die Dateien <filename>/usr/lib/libpoll.dylib</filename> und
+              <filename>/usr/include/poll.h</filename> sind jetzt in Mac OS X
+              enthalten, aber die Implementation der Bibliothek ist
+              unvollständig. Reicht die Bibliothek dennoch für ihre Zwecke aus,
+              können sie die Abhängigkeiten in von den Fink-Paketen
+              &quot;libpoll&quot; und &quot;libpoll-shlibs&quot; entfernen. Der
+              Code der Bibliotheken wurde in libSystem gepackt, das automatisch
+              gelinkt wird. Deshalb wird <code>-lpoll</code> nicht mehr
+              benötigt, wenn sie die OS X Implementation benutzen wollen.
+              Beachten sie, dass OS X die Datei
+              <filename>libpoll.dylib</filename> enthält, so dass die Option
+              <code>-lpoll</code> zu unterschiedlichen Ergebnissen führen kann,
+              je nachdem ob das Fink Paket &quot;libpoll&quot; installiert ist
+              oder nicht.
+            </p>
+          </itemd>
+        </item>
+        <item>
+          <itemt>libdl</itemt>
+          <itemd>
+            <p>
+              Die Dateien <filename>/usr/lib/libdl.dylib</filename> und
+              <filename>/usr/include/dlfcn.h</filename> sind jetzt vorhanden und
+              man sollte die Abhängigkeiten von den Fink-Paketen
+              &quot;dlcompat&quot;, &quot;dlcompat-dev&quot; und
+              &quot;dlcompat-shlibs&quot; nicht mehr benötigen. Die Code der
+              Bibliotheken wurde in libSystem gepackt, das automatisch
+              gelinkt wird. Deshalb wird <code>-ldl</code> nicht mehr
+              benötigt, wenn sie die OS X Implementation benutzen wollen (Es
+              macht aber nichts, wenn sie es dennoch angeben).
+            </p>
+          </itemd>
+        </item>
+        <item>
+          <itemt>GNU getopt</itemt>
+          <itemd>
+            <p>
+              Diese Bibliothek wurde einschließlich der Funktion
+              <code>getopt_long()</code> in libSystem und
+              <filename>/usr/include/getopt.h</filename> realisiert, so dass man
+              die Fink-Pakete &quot;libgnugetopt&quot; und
+              &quot;libgnugetopt-shlibs&quot; nicht mehr als Abhängigkeiten
+              benötigt. LibSystem wird automatisch gelinkt und
+              <filename>/usr/include</filename> wird automatisch durchsucht, so
+              dass sie die Optionen <code>-lgnugetopt</code> und
+              <code>-I/sw/include/gnugetopt</code> nicht mehr benötigen. Sie
+              wurden bisher verwendet, um &quot;libgnugetopt&quot; aus Fink zu
+              verwenden.
+            </p>
+          </itemd>
+        </item>
+      </itemtable>
+      <p>
+        Migrieren sie ein Paket nach OS X 10.3, versuchen sie diese veralteten
+        Abhängigkeiten zu entfernen, denn diese Pakete werden vermutlich in der
+        Zukunft entfernt. Dies bedeutet, dass sie ja nach Baum verschiedene
+        Paketbeschreibungen anlegen müssen. Beachten sie auch, dass die
+        <code>Revision</code> immer erhöht werden muss, wenn sie Änderungen in
+        einem Paket vornehmen. Dadurch ist es für einen Nutzer, der von OS X
+        10.2 auf 10.3 aktualisiert, so, dass er ein 10.3-spezifissches Paket
+        als ein &quot;neueres&quot; als sein vorhandenes für 10.2 sehen wird.
+        Es ist Konvention, dass die <code>Revision</code> bei Änderungen im
+        Zusammenhang mit einer Migration zu einem höheren Baum um 10 erhöht wird
+        damit noch Platz für zukünftige Aktualisierungen im niedrigeren Baum
+        ist.
+      </p>
+      <p>
+        Beim Test eines migirierten Pakets müssen sie darauf achten, dass sie
+        alle Pakete löschen, deren <code>BuildDepends</code> sie entfernt haben.
+        Andernfalls kann es sein, dass der Compiler immer noch die Bibliotheken
+        aus Fink verlinkt.
+      </p>
+    </section>
+  </chapter>
+  <chapter filename="preparing-10.4">
+    <title>Vorbereitungen für 10.4</title>
+    <shorttitle>Vorbereitungen für 10.4</shorttitle>
+    <section name="perl">
+      <title>Perl</title>
+      <p>
+        <filename>/usr/bin/perl</filename> ist jetzt perl 5.8.6; die
+        Architektur ist immer noch &quot;darwin-thread-multi-2level&quot;.
+      </p>
+    </section>
+    <section name="typedef">
+      <title>Neue Definitionen von Symbolen</title>
+      <p>
+        Unter Mac OS X 10.4 hat sich der Typ vieler Symbole geändert. Haben sie
+        früher einen Typ explizit gesetzt, indem sie z. B.
+        <code>socklen_t</code> als <code>int</code> definierten, dann ist das
+        möglicherweise nicht mehr korrekt.
+      </p>
+    </section>
+    <section name="system-libs">
+      <title>Neue Systembibliotheken</title>
+      <p>
+        Die Funktion <code>poll()</code> war in Mac OS X 10.3 tatsächlich eine
+        emulation und mittels <code>select()</code> implementiert. In Mac OS X
+        10.4 ist <code>poll()</code> eine echte Funktion, die im Kernel
+        implementiert ist. Sie funktioniert aber nicht mit Sockets. Es ist deshalb
+        besser, die Funktion <code>poll()</code> des Systems komplett zu
+        ignorieren. Das Paket glib2 aus Fink wurde gepatched und enthält eine
+        voll funktionsfähige Emulation. Deshalb ist es bessser, die
+        poll-ähnlichen Funktionen aus dieser Bibliothek zu verwenden.
+      </p>
+    </section>
+  </chapter>
+</document>
