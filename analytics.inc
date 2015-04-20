@@ -25,7 +25,7 @@ function analytics_print($virtual_page=null, $account=null) {
 
 	print "var _gaq = _gaq || [];\n";
 	print "  _gaq.push(['_setAccount', '$account']);\n";
-	print "  _gaq.push(['_initData']);\n";
+	print "  _gaq.push(['_gat._anonymizeIp']);\n";
 	if ($virtual_page != null) {
 		print "  _gaq.push(['_trackPageview', '$virtual_page']);\n";
 	} else {
