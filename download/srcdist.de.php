@@ -1,7 +1,7 @@
 <?php
 $title = "Quelltext Version Download";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2014/11/05 10:07:40 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2015/04/28 14:39:48 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -75,9 +75,9 @@ entsprechend anpassen.):</p>
 
 <pre>cd $HOME/Downloads</pre>
 <p>gefolgt von</p>
-<pre>tar -xvf <?php print $fink_tool_version; ?>.tar.gz</pre>
+<pre>tar -xvf fink-<?php print $fink_tool_version; ?>.tar.gz</pre>
 <p>oder</p>
-<pre>tar -xvf <?php print $fink_tool_version; ?>.tar</pre>
+<pre>tar -xvf fink-<?php print $fink_tool_version; ?>.tar</pre>
 <p>wobei die Wahl davon abhängt, ob das Archiv zum Beispiel von Safari bereits 
 teilweise oder ganz ausgepackt wurde.</p>
 

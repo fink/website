@@ -1,7 +1,7 @@
 <?php
 $title = "Source Release Download";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2014/11/05 10:07:40 $';
+$cvs_author = '$Author: alexkhansen $';
+$cvs_date = '$Date: 2015/04/28 14:39:48 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -65,9 +65,9 @@ via running the following commands in a terminal window
 
 <pre>cd $HOME/Downloads</pre>
 <p>followed by</p>
-<pre>tar -xvf <?php print $fink_tool_version; ?>.tar.gz</pre>
+<pre>tar -xvf fink-<?php print $fink_tool_version; ?>.tar.gz</pre>
 <p>or</p>
-<pre>tar -xvf <?php print $fink_tool_version; ?>.tar</pre>
+<pre>tar -xvf fink-<?php print $fink_tool_version; ?>.tar</pre>
 <p>where the choice depends on whether the source has already been partially unpacked, 
 e.g. by Safari.</p>
 
