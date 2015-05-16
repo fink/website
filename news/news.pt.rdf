@@ -5,12 +5,53 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>pt</dc:language>
-    <dc:date>2014-11-30T09:36:51-08:00</dc:date>
+    <dc:date>2015-05-16T08:09:36-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-11-29%20fink-0.38.0%20released.">
-      <title>fink-0.38.0 released.</title>
-      <link>http://fink.sourceforge.net/news/#2014-11-29%20fink-0.38.0%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2014-11-29%20fink-0.38.0%20released.</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.">
+      <title>fink-0.38.5 released.</title>
+      <link>http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.5 was released on 14 May, 2016.  This release enables
+  official OS X 10.10.3 support, and reverts a change made in fink-0.38.4
+  to restore the requirement that the /usr/X11R6 convenience symlink be present for
+  the x11* virtual packages to be active.
+  </p>
+  <p>
+  It also downgrades building libraries with flat namespace from a fatal validation
+  error to a warning, since some packages require such a build.  There are a number
+  of additional validation enhancements as well.  Check the commit logs on fink's 
+  github site for additional information.
+  </p>
+  
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.5 was released on 14 May, 2016.  This release enables
+  official OS X 10.10.3 support, and reverts a change made in fink-0.38.4
+  to restore the requirement that the /usr/X11R6 convenience symlink be present for
+  the x11* virtual packages to be active.
+  </p>
+  <p>
+  It also downgrades building libraries with flat namespace from a fatal validation
+  error to a warning, since some packages require such a build.  There are a number
+  of additional validation enhancements as well.  Check the commit logs on fink's 
+  github site for additional information.
+  </p>
+  
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2014-11-29%20fink-0.38.3%20released.">
+      <title>fink-0.38.3 released.</title>
+      <link>http://fink.sourceforge.net/news/#2014-11-29%20fink-0.38.3%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2014-11-29%20fink-0.38.3%20released.</guid>
       <description>
 		<![CDATA[
 	
@@ -457,41 +498,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <p>fink-0.32.2 was released on 3 February, 2012.  This
       release contains a fix for a bug in the handling of multiple source
       archives in a package, and recognizes OS 10.7.3.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released">
-      <title>fink-0.32.1 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-01-26%20fink-0.32.1%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.32.1 was released on 26 January, 2012.  This
-      release introduces a number of new features.</p>
-      <p>Those that impact package maintainers include: RuntimeDepends,
-      which are dependencies that are only required when a package is installed,
-      improvements to the package validator, updated manpages, and direct support
-      for .xz archives.</p>
-      <p>Those that impact users include improvements in the bootstrap script and
-      additional helpful suggestions in the post-error output.
-      </p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.32.1 was released on 26 January, 2012.  This
-      release introduces a number of new features.</p>
-      <p>Those that impact package maintainers include: RuntimeDepends,
-      which are dependencies that are only required when a package is installed,
-      improvements to the package validator, updated manpages, and direct support
-      for .xz archives.</p>
-      <p>Those that impact users include improvements in the bootstrap script and
-      additional helpful suggestions in the post-error output.
-      </p>
     
 		]]>
 	</content:encoded>

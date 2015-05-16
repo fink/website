@@ -1,4 +1,17 @@
-<a name="2014-11-29%20fink-0.38.0%20ver%C3%B6ffentlicht."><span class="news-date">2014-11-29: </span><span class="news-headline">fink-0.38.0 veröffentlicht.</span></a><?php gray_line(); ?>
+<a name="2015-05-14%20fink-0.38.5%20released."><span class="news-date">2015-05-14: </span><span class="news-headline">fink-0.38.5 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.38.5</code> was released on 14 May, 2016.  This release enables
+  official OS X 10.10.3 support, and reverts a change made in <code>fink-0.38.4</code>
+  to restore the requirement that the /usr/X11R6 convenience symlink be present for
+  the <code>x11*</code> virtual packages to be active.
+  </p>
+  <p>
+  It also downgrades building libraries with flat namespace from a fatal validation
+  error to a warning, since some packages require such a build.  There are a number
+  of additional validation enhancements as well.  Check the commit logs on fink's 
+  github site for additional information.
+  </p>
+  <a name="2014-11-29%20fink-0.38.3%20ver%C3%B6ffentlicht."><span class="news-date">2014-11-29: </span><span class="news-headline">fink-0.38.3 veröffentlicht.</span></a><?php gray_line(); ?>
   <p>
 	<code>fink-0.38.3</code> wurde am 29. November 2014 veröffentlicht.
 	Diese Ausgabe aktiviert die offizielle, binäre Distribution für 10.10
@@ -17,21 +30,5 @@
 	<code>fink-0.38.0</code> (oder neuer) auf 10.9 installieren, bevor man
 	auf 10.10 aktualisiert. Eine Aktualisierung von Fink von 10.8 oder
 	früher auf 10.10 wird nicht unterstützt.
-  </p>
- <a name="2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%C3%B6ffentlicht.%20Ende%20der%20offiziellen%20%0A%20%20%20Unterst%C3%BCtzung%20von%2010.6."><span class="news-date">2014-06-04: </span><span class="news-headline">fink-0.36.5 und fink-0.37.0 veröffentlicht. Ende der offiziellen 
-   Unterstützung von 10.6.</span></a><?php gray_line(); ?>
-  <p>
-	<code>fink-0.37.0</code> und <code>fink-0.37.0</code> wurden am 4. Juni
-	2014 veröffentlicht. Diese Ausgabe von <code>fink</code> behebt Probleme
-	bei der Bestimmung von Java auf 10.6, wenn eine ältere Version des Apple
-	Java SDK installiert ist. <code>fink-0.37.0</code> erkennt offiziell OS
-	10.9.3. Außerdem werden Finks "compiler wrapper" jetzt direkt vom Paket
-	"fink" installiert. Modifikationen werden dadurch einfacher.
-  </p>
-  <p>
-	<code>fink-0.36.5</code> markiert das Ende der Unterstützung von 10.6
-	durch das Fink Projekt. Nutzer, die Paket-Updates benötigen, sollten den
-	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
-	können auch auf Anfrage aktualisiert werden.
   </p>
  
