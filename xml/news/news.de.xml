@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
- <cvsid>$Id: news.de.xml,v 1.66 2015/05/16 15:09:20 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.de.xml,v 1.67 2015/06/06 21:33:35 k-m_schindler Exp $</cvsid>
 <newsitem>
  <date>2015-05-14</date>
- <headline>fink-0.38.5 released.</headline>
+ <headline>fink-0.38.5 veröffentlicht.</headline>
  <body>
   <p>
-  <code>fink-0.38.5</code> was released on 14 May, 2016.  This release enables
-  official OS X 10.10.3 support, and reverts a change made in <code>fink-0.38.4</code>
-  to restore the requirement that the /usr/X11R6 convenience symlink be present for
-  the <code>x11*</code> virtual packages to be active.
+  <code>fink-0.38.5</code> wurde am 14. Mai 2016 veröffentlicht. Diese Ausgabe
+  aktiviert die offizielle Unterstützung von OS X 10.10.3 und macht eine
+  Änderung in <code>fink-0.38.4</code> in so fern rückgängig, dass bei den
+  virtuellen <code>x11*</code> Paketen wieder verlangt wird, dass der
+  /usr/X11R6 symlink vorhanden ist.
   </p>
   <p>
-  It also downgrades building libraries with flat namespace from a fatal validation
-  error to a warning, since some packages require such a build.  There are a number
-  of additional validation enhancements as well.  Check the commit logs on fink's 
-  github site for additional information.
+  Die Version stuft auch das Erstellen von Bibliotheken mit flachen Namensräumen
+  (flat namespaces) bei der Validierung von einem fatalen Fehler auf eine Warnung
+  herunter, weil es für einige Pakete erforderlich ist. Außerdem kamen einige
+  zusätzliche Ergänzungen bei der Validierung hinzu. Details dazu stehen in den
+  Logs der github-Seite von fink.
   </p>
   </body>
 </newsitem> 
@@ -65,7 +67,7 @@
   </p>
   <p>
 	<code>fink-0.36.5</code> markiert das Ende der Unterstützung von 10.6
-	durch das Fink Projekt. Nutzer, die Paket-Updates benötigen, sollten den
+	durch das Fink-Projekt. Nutzer, die Paket-Updates benötigen, sollten den
 	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
 	können auch auf Anfrage aktualisiert werden.
   </p>
@@ -112,6 +114,7 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
   </p>
  </body>
 </newsitem> 
+<!-- start translation -->
 <newsitem>
  <date>2013-12-30</date>
  <headline>fink-0.36.3.1 released</headline>
@@ -900,9 +903,8 @@ Finally, to use the package database during the outage, you can connect
 to <link url="http://pdb.finkproject.org/pdb/">this backup copy of the
 package database</link> which is a few weeks out of date.
 </p>
-<!-- start translation -->
 <p><em> Update: 2 June 2007.</em>  Due to changes to the behavior of <filename>sudo</filename> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
-<!-- end translation -->		</body>
+</body>
 	</newsitem>
 
 	<newsitem>
@@ -1287,7 +1289,7 @@ XCode version 1.2 until the problem has been resolved.
 </p>
 </body>
 </newsitem>
-
+<!-- end translation -->
 <newsitem>
 <date>2004-09-20</date>
 <headline>Fink 0.7.1 veröffentlich.</headline>
@@ -1326,6 +1328,7 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Sym
 </p>
 	</body>
 </newsitem>
+<!-- start translation -->
 <newsitem>
 	<date>2004-08-21</date>
 	<headline>Error in fink-0.22.0</headline>
@@ -1377,6 +1380,7 @@ teilen Sie uns dies auf der fink-devel Mailing-Liste mit. (Die gewöhnlichen Sym
 	</p>
 	</body>
 </newsitem>
+<!-- end translation -->
 
 <newsitem>
 <date>06.04.2004</date>
@@ -1458,6 +1462,7 @@ Hier ist ein Link zu detailierten
 </p>
 </body>
 </newsitem>
+<!-- start translation -->
 <newsitem>
 <date>2004-01-02</date>
 <headline>Whaaazaaap Dawgs, Two Zero Zero Four is on!</headline>
@@ -2743,5 +2748,6 @@ Get it from the <varlink url="download.php">download page</varlink>.
 </p>
 </body>
 </newsitem>
+<!-- end translation -->
 
 </news>

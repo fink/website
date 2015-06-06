@@ -5,26 +5,28 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2015-05-16T08:09:35-07:00</dc:date>
+    <dc:date>2015-06-06T23:29:55+02:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.">
-      <title>fink-0.38.5 released.</title>
-      <link>http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20ver%F6ffentlicht.">
+      <title>fink-0.38.5 veröffentlicht.</title>
+      <link>http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20ver%F6ffentlicht.</link>
+      <guid>http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20ver%F6ffentlicht.</guid>
       <description>
 		<![CDATA[
 	
   <p>
-  fink-0.38.5 was released on 14 May, 2016.  This release enables
-  official OS X 10.10.3 support, and reverts a change made in fink-0.38.4
-  to restore the requirement that the /usr/X11R6 convenience symlink be present for
-  the x11* virtual packages to be active.
+  fink-0.38.5 wurde am 14. Mai 2016 veröffentlicht. Diese Ausgabe
+  aktiviert die offizielle Unterstützung von OS X 10.10.3 und macht eine
+  Änderung in fink-0.38.4 in so fern rückgängig, dass bei den
+  virtuellen x11* Paketen wieder verlangt wird, dass der
+  /usr/X11R6 symlink vorhanden ist.
   </p>
   <p>
-  It also downgrades building libraries with flat namespace from a fatal validation
-  error to a warning, since some packages require such a build.  There are a number
-  of additional validation enhancements as well.  Check the commit logs on fink's 
-  github site for additional information.
+  Die Version stuft auch das Erstellen von Bibliotheken mit flachen Namensräumen
+  (flat namespaces) bei der Validierung von einem fatalen Fehler auf eine Warnung
+  herunter, weil es für einige Pakete erforderlich ist. Außerdem kamen einige
+  zusätzliche Ergänzungen bei der Validierung hinzu. Details dazu stehen in den
+  Logs der github-Seite von fink.
   </p>
   
 		]]>
@@ -33,16 +35,18 @@
 		<![CDATA[
 	
   <p>
-  fink-0.38.5 was released on 14 May, 2016.  This release enables
-  official OS X 10.10.3 support, and reverts a change made in fink-0.38.4
-  to restore the requirement that the /usr/X11R6 convenience symlink be present for
-  the x11* virtual packages to be active.
+  fink-0.38.5 wurde am 14. Mai 2016 veröffentlicht. Diese Ausgabe
+  aktiviert die offizielle Unterstützung von OS X 10.10.3 und macht eine
+  Änderung in fink-0.38.4 in so fern rückgängig, dass bei den
+  virtuellen x11* Paketen wieder verlangt wird, dass der
+  /usr/X11R6 symlink vorhanden ist.
   </p>
   <p>
-  It also downgrades building libraries with flat namespace from a fatal validation
-  error to a warning, since some packages require such a build.  There are a number
-  of additional validation enhancements as well.  Check the commit logs on fink's 
-  github site for additional information.
+  Die Version stuft auch das Erstellen von Bibliotheken mit flachen Namensräumen
+  (flat namespaces) bei der Validierung von einem fatalen Fehler auf eine Warnung
+  herunter, weil es für einige Pakete erforderlich ist. Außerdem kamen einige
+  zusätzliche Ergänzungen bei der Validierung hinzu. Details dazu stehen in den
+  Logs der github-Seite von fink.
   </p>
   
 		]]>
@@ -136,7 +140,7 @@
   </p>
   <p>
 	fink-0.36.5 markiert das Ende der Unterstützung von 10.6
-	durch das Fink Projekt. Nutzer, die Paket-Updates benötigen, sollten den
+	durch das Fink-Projekt. Nutzer, die Paket-Updates benötigen, sollten den
 	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
 	können auch auf Anfrage aktualisiert werden.
   </p>
@@ -156,7 +160,7 @@
   </p>
   <p>
 	fink-0.36.5 markiert das Ende der Unterstützung von 10.6
-	durch das Fink Projekt. Nutzer, die Paket-Updates benötigen, sollten den
+	durch das Fink-Projekt. Nutzer, die Paket-Updates benötigen, sollten den
 	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
 	können auch auf Anfrage aktualisiert werden.
   </p>

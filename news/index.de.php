@@ -1,24 +1,26 @@
 <?php
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
+$cvs_author = 'Author: mischi';
 $cvs_date = 'Date: 2015/05/16 15:09:20';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2015-05-14%20fink-0.38.5%20released."><span class="news-date">2015-05-14: </span><span class="news-headline">fink-0.38.5 released.</span></a><?php gray_line(); ?>
+<a name="2015-05-14%20fink-0.38.5%20ver%C3%B6ffentlicht."><span class="news-date">2015-05-14: </span><span class="news-headline">fink-0.38.5 veröffentlicht.</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.38.5</code> was released on 14 May, 2016.  This release enables
-  official OS X 10.10.3 support, and reverts a change made in <code>fink-0.38.4</code>
-  to restore the requirement that the /usr/X11R6 convenience symlink be present for
-  the <code>x11*</code> virtual packages to be active.
+  <code>fink-0.38.5</code> wurde am 14. Mai 2016 veröffentlicht. Diese Ausgabe
+  aktiviert die offizielle Unterstützung von OS X 10.10.3 und macht eine
+  Änderung in <code>fink-0.38.4</code> in so fern rückgängig, dass bei den
+  virtuellen <code>x11*</code> Paketen wieder verlangt wird, dass der
+  /usr/X11R6 symlink vorhanden ist.
   </p>
   <p>
-  It also downgrades building libraries with flat namespace from a fatal validation
-  error to a warning, since some packages require such a build.  There are a number
-  of additional validation enhancements as well.  Check the commit logs on fink's 
-  github site for additional information.
+  Die Version stuft auch das Erstellen von Bibliotheken mit flachen Namensräumen
+  (flat namespaces) bei der Validierung von einem fatalen Fehler auf eine Warnung
+  herunter, weil es für einige Pakete erforderlich ist. Außerdem kamen einige
+  zusätzliche Ergänzungen bei der Validierung hinzu. Details dazu stehen in den
+  Logs der github-Seite von fink.
   </p>
   <a name="2014-11-29%20fink-0.38.3%20ver%C3%B6ffentlicht."><span class="news-date">2014-11-29: </span><span class="news-headline">fink-0.38.3 veröffentlicht.</span></a><?php gray_line(); ?>
   <p>
@@ -52,7 +54,7 @@ include_once "header.inc";
   </p>
   <p>
 	<code>fink-0.36.5</code> markiert das Ende der Unterstützung von 10.6
-	durch das Fink Projekt. Nutzer, die Paket-Updates benötigen, sollten den
+	durch das Fink-Projekt. Nutzer, die Paket-Updates benötigen, sollten den
 	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
 	können auch auf Anfrage aktualisiert werden.
   </p>
@@ -618,9 +620,8 @@ Finally, to use the package database during the outage, you can connect
 to <a href="http://pdb.finkproject.org/pdb/">this backup copy of the
 package database</a> which is a few weeks out of date.
 </p>
-
 <p><b> Update: 2 June 2007.</b>  Due to changes to the behavior of <code>sudo</code> on 10.4.9, the update script needs a bit of assistance.  Switching to a superuser prompt first via <code>sudo -s</code> will suffice.</p>
-		<a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
+<a name="2006-07-24%20Reminder:%20%2210.4-transitional%22%20Tree%20Unsupported%20on%20August%201st,%202006"><span class="news-date">2006-07-24: </span><span class="news-headline">Reminder: "10.4-transitional" Tree Unsupported on August 1st, 2006</span></a><?php gray_line(); ?>
 			<p>
 				The "10.4-transitional" tree was created as an interim solution to the issues of
 				incompatibilities between binaries made using GCC 3.3 (the default Mac OS X 10.3
