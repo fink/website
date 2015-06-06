@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Compiling (1)";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/10/25 19:09:28';
+$cvs_date = 'Date: 2015/06/06 19:19:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages"><link rel="prev" href="usage-fink.php?phpLang=en" title="Installing, Using and Maintaining Fink">';
 
 
@@ -317,6 +317,14 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
        the App Store, or by running <code>sudo xcode-select -install</code>, or by downloading
        them from developer.apple.com.</p></div>
 </a>
+	<a name="pkginfo">
+  		<div class="question"><p><b><?php echo FINK_Q ; ?>6.26: When I try to update an app package on Yosemite, I see errors involving a PkgInfo file</b></p></div>
+  		<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> The error in question looks like</p><pre>Unpacking replacement wxmaxima-mac ...
+/sw/bin/dpkg: error processing /sw/fink/dists/stable/main/binary-darwin-x86_64/sci/wxmaxima-mac_15.04.0-1_darwin-x86_64.deb (--install):
+ unable to make backup link of `./sw/Applications/wxMaxima.app/Contents/PkgInfo' before installing new version: Operation not permitted
+/sw/bin/dpkg-deb: subprocess paste killed by signal (Broken pipe: 13)
+</pre><p>The current workaround is to remove the offending package, which removes the PkgInfo file, and then to install the updated version.</p></div>
+	</a>
   <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="comp-packages.php?phpLang=en">7. Compile Problems - Specific Packages</a></p>
 <?php include_once "../footer.inc"; ?>
