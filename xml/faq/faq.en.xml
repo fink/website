@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.124 2014/10/25 19:09:28 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.125 2015/06/06 19:19:29 alexkhansen Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -1479,6 +1479,17 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
        them from developer.apple.com.</p>
   </answer>
 </faqentry>
+	<faqentry name="pkginfo">
+  		<question><p>When I try to update an app package on Yosemite, I see errors involving a PkgInfo file</p></question>
+  		<answer><p>The error in question looks like</p>
+<codeblock>Unpacking replacement wxmaxima-mac ...
+/sw/bin/dpkg: error processing /sw/fink/dists/stable/main/binary-darwin-x86_64/sci/wxmaxima-mac_15.04.0-1_darwin-x86_64.deb (--install):
+ unable to make backup link of `./sw/Applications/wxMaxima.app/Contents/PkgInfo' before installing new version: Operation not permitted
+/sw/bin/dpkg-deb: subprocess paste killed by signal (Broken pipe: 13)
+</codeblock>
+    		<p>The current workaround is to remove the offending package, which removes the PkgInfo file, and then to install the updated version.</p>
+ 		</answer>
+	</faqentry>
   </chapter>
   <chapter filename="comp-packages">
     <title>Compile Problems - Specific Packages</title>
