@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2015-06-06T23:29:55+02:00</dc:date>
+    <dc:date>2015-06-13T16:23:10-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20ver%F6ffentlicht.">
       <title>fink-0.38.5 veröffentlicht.</title>
@@ -15,7 +15,7 @@
 		<![CDATA[
 	
   <p>
-  fink-0.38.5 wurde am 14. Mai 2016 veröffentlicht. Diese Ausgabe
+  fink-0.38.5 wurde am 14. Mai 2015 veröffentlicht. Diese Ausgabe
   aktiviert die offizielle Unterstützung von OS X 10.10.3 und macht eine
   Änderung in fink-0.38.4 in so fern rückgängig, dass bei den
   virtuellen x11* Paketen wieder verlangt wird, dass der
@@ -35,7 +35,7 @@
 		<![CDATA[
 	
   <p>
-  fink-0.38.5 wurde am 14. Mai 2016 veröffentlicht. Diese Ausgabe
+  fink-0.38.5 wurde am 14. Mai 2015 veröffentlicht. Diese Ausgabe
   aktiviert die offizielle Unterstützung von OS X 10.10.3 und macht eine
   Änderung in fink-0.38.4 in so fern rückgängig, dass bei den
   virtuellen x11* Paketen wieder verlangt wird, dass der

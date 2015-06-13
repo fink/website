@@ -5,8 +5,96 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2015-05-16T08:09:35-07:00</dc:date>
+    <dc:date>2015-06-13T16:23:10-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.">
+      <title>fink-0.38.6 and dpkg-base-files-0.4 released.</title>
+      <link>http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.</link>
+      <guid>http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.6 was released on 13 June, 2015.  This release fixes an
+  issue which prevented bootstrapping on Yosemite (or later) using Xcode newer
+  than 6.2 .
+  </p>
+  <p>
+  dpkg-base-files-0.4 was also released on 13 June, 2015.  This update
+  mitigates an issue in which packages with app bundles couldn't be updated on 
+  Yosemite:
+  </p>
+  
+ unable to make backup link of 
+ `.%p/Applications/FOO.app/Contents/PkgInfo' 
+ before installing new version: 
+ Operation not permitted
+
+  <p>
+  Users are encouraged to run fink selfupdate and install these new versions.
+  </p>
+  
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.6 was released on 13 June, 2015.  This release fixes an
+  issue which prevented bootstrapping on Yosemite (or later) using Xcode newer
+  than 6.2 .
+  </p>
+  <p>
+  dpkg-base-files-0.4 was also released on 13 June, 2015.  This update
+  mitigates an issue in which packages with app bundles couldn't be updated on 
+  Yosemite:
+  </p>
+  
+ unable to make backup link of 
+ `.%p/Applications/FOO.app/Contents/PkgInfo' 
+ before installing new version: 
+ Operation not permitted
+
+  <p>
+  Users are encouraged to run fink selfupdate and install these new versions.
+  </p>
+  
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2015-06-9%20fink%20development%20branch%20for%2010.11%20on%20github">
+      <title>fink development branch for 10.11 on github</title>
+      <link>http://fink.sourceforge.net/news/#2015-06-9%20fink%20development%20branch%20for%2010.11%20on%20github</link>
+      <guid>http://fink.sourceforge.net/news/#2015-06-9%20fink%20development%20branch%20for%2010.11%20on%20github</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+	If you are interested in helping us with the migration to 10.11, a current released
+	fink won't do the job.  A branch has been set up on 
+	<a href="https://github.com/fink/fink/tree/TheCaptain">fink's github site</a> for this.
+  </p>
+  <p>
+  Please note that right now we are in an alpha stage and you might need to wipe your 
+  Fink distribution out a as stuff gets changed around.</p>
+  
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+	If you are interested in helping us with the migration to 10.11, a current released
+	fink won't do the job.  A branch has been set up on 
+	<a href="https://github.com/fink/fink/tree/TheCaptain">fink's github site</a> for this.
+  </p>
+  <p>
+  Please note that right now we are in an alpha stage and you might need to wipe your 
+  Fink distribution out a as stuff gets changed around.</p>
+  
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.">
       <title>fink-0.38.5 released.</title>
       <link>http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.</link>
@@ -15,7 +103,7 @@
 		<![CDATA[
 	
   <p>
-  fink-0.38.5 was released on 14 May, 2016.  This release enables
+  fink-0.38.5 was released on 14 May, 2015.  This release enables
   official OS X 10.10.3 support, and reverts a change made in fink-0.38.4
   to restore the requirement that the /usr/X11R6 convenience symlink be present for
   the x11* virtual packages to be active.
@@ -33,7 +121,7 @@
 		<![CDATA[
 	
   <p>
-  fink-0.38.5 was released on 14 May, 2016.  This release enables
+  fink-0.38.5 was released on 14 May, 2015.  This release enables
   official OS X 10.10.3 support, and reverts a change made in fink-0.38.4
   to restore the requirement that the /usr/X11R6 convenience symlink be present for
   the x11* virtual packages to be active.
@@ -440,60 +528,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
       <p>fink-0.32.4.1 also enhances the checksumming operation under
       fink fetch.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released">
-      <title>fink-0.32.3 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-02-16%20fink-0.32.3%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.32.3 was released on 16 February, 2012.  This
-      release recognizes changes that were made for Xcode 4.3.</p>
-      <p>After installing Xcode 4.3 in /Applications (and only there)
-      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
-      install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</p>
-      <p>to make sure that everything is pointed in the right place.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.32.3 was released on 16 February, 2012.  This
-      release recognizes changes that were made for Xcode 4.3.</p>
-      <p>After installing Xcode 4.3 in /Applications (and only there)
-      , users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
-      install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</p>
-      <p>to make sure that everything is pointed in the right place.</p>
-    
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-02-03%20fink-0.32.2%20released">
-      <title>fink-0.32.2 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-02-03%20fink-0.32.2%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-02-03%20fink-0.32.2%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.32.2 was released on 3 February, 2012.  This
-      release contains a fix for a bug in the handling of multiple source
-      archives in a package, and recognizes OS 10.7.3.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.32.2 was released on 3 February, 2012.  This
-      release contains a fix for a bug in the handling of multiple source
-      archives in a package, and recognizes OS 10.7.3.</p>
     
 		]]>
 	</content:encoded>

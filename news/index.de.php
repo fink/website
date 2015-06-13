@@ -1,7 +1,7 @@
 <?php
 $title = "News";
-$cvs_author = 'Author: mischi';
-$cvs_date = 'Date: 2015/05/16 15:09:20';
+$cvs_author = 'Author: alexkhansen';
+$cvs_date = 'Date: 2015/06/13 23:23:02';
 $metatags = '';
 
 include_once "header.inc";
@@ -9,7 +9,7 @@ include_once "header.inc";
 
 <a name="2015-05-14%20fink-0.38.5%20ver%C3%B6ffentlicht."><span class="news-date">2015-05-14: </span><span class="news-headline">fink-0.38.5 veröffentlicht.</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.38.5</code> wurde am 14. Mai 2016 veröffentlicht. Diese Ausgabe
+  <code>fink-0.38.5</code> wurde am 14. Mai 2015 veröffentlicht. Diese Ausgabe
   aktiviert die offizielle Unterstützung von OS X 10.10.3 und macht eine
   Änderung in <code>fink-0.38.4</code> in so fern rückgängig, dass bei den
   virtuellen <code>x11*</code> Paketen wieder verlangt wird, dass der
