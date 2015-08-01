@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
- <cvsid>$Id: news.ja.xml,v 1.78 2015/08/01 02:21:08 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.ja.xml,v 1.79 2015/08/01 02:29:47 alexkhansen Exp $</cvsid>
 <newsitem>
  <date>2015-07-31</date>
  <headline>CVS access restored</headline>
@@ -10,6 +10,7 @@
   We now have CVS access back for services including selfupdate, package updates, and
   website updates.
   </p>
+ </body>
 </newsitem>
 <newsitem>
  <date>2015-06-13</date>
