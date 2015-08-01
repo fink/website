@@ -5,8 +5,33 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2015-06-13T16:23:10-07:00</dc:date>
+    <dc:date>2015-07-31T19:30:02-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored">
+      <title>CVS access restored</title>
+      <link>http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored</link>
+      <guid>http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  We now have CVS access back for services including selfupdate, package updates, and
+  website updates.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  We now have CVS access back for services including selfupdate, package updates, and
+  website updates.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.">
       <title>fink-0.38.6 and dpkg-base-files-0.4 released.</title>
       <link>http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.</link>
@@ -497,27 +522,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
 	
   <p>fink-0.34.7 &#12364;&#12289;2013&#24180;3&#26376;29&#26085;&#12395;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12414;&#12375;&#12383;&#12290;
   &#12371;&#12398;&#12522;&#12522;&#12540;&#12473;&#12391;&#12399;&#12289;root &#12450;&#12463;&#12475;&#12473;&#12391;&#31232;&#12395; tar &#12364;&#22266;&#12414;&#12387;&#12390;&#12375;&#12414;&#12358;&#21839;&#38988;&#12395;&#23550;&#20966;&#12375;&#12414;&#12375;&#12383;&#12290;</p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-03-16%20fink-0.34.6%20%3F%3F%3F%3F">
-      <title>fink-0.34.6 &#12522;&#12522;&#12540;&#12473;</title>
-      <link>http://fink.sourceforge.net/news/#2013-03-16%20fink-0.34.6%20%3F%3F%3F%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2013-03-16%20fink-0.34.6%20%3F%3F%3F%3F</guid>
-      <description>
-		<![CDATA[
-	
-  <p>fink-0.34.6 &#12364;&#12289;2013&#24180;3&#26376;16&#26085;&#12395;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12414;&#12375;&#12383;&#12290;
-  &#12371;&#12398;&#12522;&#12522;&#12540;&#12473;&#12399;&#12289;OS 10.8.3 &#12395;&#23550;&#24540;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;</p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>fink-0.34.6 &#12364;&#12289;2013&#24180;3&#26376;16&#26085;&#12395;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12414;&#12375;&#12383;&#12290;
-  &#12371;&#12398;&#12522;&#12522;&#12540;&#12473;&#12399;&#12289;OS 10.8.3 &#12395;&#23550;&#24540;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;</p>
  
 		]]>
 	</content:encoded>

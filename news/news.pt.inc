@@ -1,4 +1,9 @@
-<a name="2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released."><span class="news-date">2015-06-13: </span><span class="news-headline">fink-0.38.6 and dpkg-base-files-0.4 released.</span></a><?php gray_line(); ?>
+<a name="2015-07-31%20CVS%20access%20restored"><span class="news-date">2015-07-31: </span><span class="news-headline">CVS access restored</span></a><?php gray_line(); ?>
+  <p>
+  We now have CVS access back for services including selfupdate, package updates, and
+  website updates.
+  </p>
+ <a name="2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released."><span class="news-date">2015-06-13: </span><span class="news-headline">fink-0.38.6 and dpkg-base-files-0.4 released.</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.38.6</code> was released on 13 June, 2015.  This release fixes an
   issue which prevented bootstrapping on Yosemite (or later) using Xcode newer
@@ -27,17 +32,4 @@
   <p>
   Please note that right now we are in an alpha stage and you might need to wipe your 
   Fink distribution out a as stuff gets changed around.</p>
-  <a name="2015-05-14%20fink-0.38.5%20released."><span class="news-date">2015-05-14: </span><span class="news-headline">fink-0.38.5 released.</span></a><?php gray_line(); ?>
-  <p>
-  <code>fink-0.38.5</code> was released on 14 May, 2015.  This release enables
-  official OS X 10.10.3 support, and reverts a change made in <code>fink-0.38.4</code>
-  to restore the requirement that the /usr/X11R6 convenience symlink be present for
-  the <code>x11*</code> virtual packages to be active.
-  </p>
-  <p>
-  It also downgrades building libraries with flat namespace from a fatal validation
-  error to a warning, since some packages require such a build.  There are a number
-  of additional validation enhancements as well.  Check the commit logs on fink's 
-  github site for additional information.
-  </p>
   

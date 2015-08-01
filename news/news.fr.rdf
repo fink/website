@@ -5,8 +5,33 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2015-06-13T16:23:10-07:00</dc:date>
+    <dc:date>2015-07-31T19:30:02-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored">
+      <title>CVS access restored</title>
+      <link>http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored</link>
+      <guid>http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  We now have CVS access back for services including selfupdate, package updates, and
+  website updates.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  We now have CVS access back for services including selfupdate, package updates, and
+  website updates.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.">
       <title>fink-0.38.6 and dpkg-base-files-0.4 released.</title>
       <link>http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.</link>
@@ -500,39 +525,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
     actually require the full Xcode to build.
    </p>
   
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-03-27%20fink-0.32.4.1%20released">
-      <title>fink-0.32.4.1 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-03-27%20fink-0.32.4.1%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-03-27%20fink-0.32.4.1%20released</guid>
-      <description>
-		<![CDATA[
-	
-      <p>fink-0.32.4.1 was released on 27 March, 2012.  This
-      release allows users to install Xcode 4.3.x in an arbitrary location.</p>
-      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
-      install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</p>
-      <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
-      <p>fink-0.32.4.1 also enhances the checksumming operation under
-      fink fetch.</p>
-    
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-      <p>fink-0.32.4.1 was released on 27 March, 2012.  This
-      release allows users to install Xcode 4.3.x in an arbitrary location.</p>
-      <p>After installing Xcode 4.3.x, users should:  (1) Select the Components pane from Xcode-&gt;Preferences-&gt;Downloads and 
-      install the Command Line Tools, or install them via the separate installer from 
-      connect.apple.com, and (2) run</p><p>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</p>
-      <p>(replacing /path/to with the actual path to the Xcode app) to make sure that everything is pointed in the right place.</p>
-      <p>fink-0.32.4.1 also enhances the checksumming operation under
-      fink fetch.</p>
-    
 		]]>
 	</content:encoded>
     </item>

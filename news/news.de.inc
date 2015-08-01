@@ -1,36 +1,35 @@
-<a name="2015-05-14%20fink-0.38.5%20ver%C3%B6ffentlicht."><span class="news-date">2015-05-14: </span><span class="news-headline">fink-0.38.5 veröffentlicht.</span></a><?php gray_line(); ?>
+<a name="2015-07-31%20CVS%20access%20restored"><span class="news-date">2015-07-31: </span><span class="news-headline">CVS access restored</span></a><?php gray_line(); ?>
   <p>
-  <code>fink-0.38.5</code> wurde am 14. Mai 2015 veröffentlicht. Diese Ausgabe
-  aktiviert die offizielle Unterstützung von OS X 10.10.3 und macht eine
-  Änderung in <code>fink-0.38.4</code> in so fern rückgängig, dass bei den
-  virtuellen <code>x11*</code> Paketen wieder verlangt wird, dass der
-  /usr/X11R6 symlink vorhanden ist.
+  We now have CVS access back for services including selfupdate, package updates, and
+  website updates.
+  </p>
+ <a name="2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released."><span class="news-date">2015-06-13: </span><span class="news-headline">fink-0.38.6 and dpkg-base-files-0.4 released.</span></a><?php gray_line(); ?>
+  <p>
+  <code>fink-0.38.6</code> was released on 13 June, 2015.  This release fixes an
+  issue which prevented bootstrapping on Yosemite (or later) using Xcode newer
+  than 6.2 .
   </p>
   <p>
-  Die Version stuft auch das Erstellen von Bibliotheken mit flachen Namensräumen
-  (flat namespaces) bei der Validierung von einem fatalen Fehler auf eine Warnung
-  herunter, weil es für einige Pakete erforderlich ist. Außerdem kamen einige
-  zusätzliche Ergänzungen bei der Validierung hinzu. Details dazu stehen in den
-  Logs der github-Seite von fink.
+  <code>dpkg-base-files-0.4</code> was also released on 13 June, 2015.  This update
+  mitigates an issue in which packages with app bundles couldn't be updated on 
+  Yosemite:
   </p>
-  <a name="2014-11-29%20fink-0.38.3%20ver%C3%B6ffentlicht."><span class="news-date">2014-11-29: </span><span class="news-headline">fink-0.38.3 veröffentlicht.</span></a><?php gray_line(); ?>
+  <pre>
+ unable to make backup link of 
+ `.%p/Applications/FOO.app/Contents/PkgInfo' 
+ before installing new version: 
+ Operation not permitted
+</pre>
   <p>
-	<code>fink-0.38.3</code> wurde am 29. November 2014 veröffentlicht.
-	Diese Ausgabe aktiviert die offizielle, binäre Distribution für 10.10
-  als Voreinstellung zusammen mit der offiziellen Unterstützung von OS X
-	10.10.1 sowie anderen Korrekturen und Erweiterungen.
+  Users are encouraged to run <code>fink selfupdate</code> and install these new versions.
   </p>
-  <a name="2014-10-18%20Yosemite%20Unterst%C3%BCtzung:%20fink-0.38.0%20ver%C3%B6ffentlicht."><span class="news-date">2014-10-18: </span><span class="news-headline">Yosemite Unterstützung: fink-0.38.0 veröffentlicht.</span></a><?php gray_line(); ?>
+  <a name="2015-06-9%20fink%20development%20branch%20for%2010.11%20on%20github"><span class="news-date">2015-06-9: </span><span class="news-headline">fink development branch for 10.11 on github</span></a><?php gray_line(); ?>
   <p>
-	<code>fink-0.38.0</code> wurde am 18. Oktober 2014 veröffentlicht. Mit
-	der Ausgabe von <code>fink-0.38.0</code> kündigt das Fink-Projekt die
-	offizielle Unterstützung von Yosemite (OS X 10.10) an.
+	If you are interested in helping us with the migration to 10.11, a current released
+	fink won't do the job.  A branch has been set up on 
+	<a href="https://github.com/fink/fink/tree/TheCaptain">fink's github site</a> for this.
   </p>
   <p>
-	Nutzer von 10.9, die ihre Fink-Installation von 10.9 auf 10.10
-	aktualisieren wollen, können dies tun. Dafür muss man
-	<code>fink-0.38.0</code> (oder neuer) auf 10.9 installieren, bevor man
-	auf 10.10 aktualisiert. Eine Aktualisierung von Fink von 10.8 oder
-	früher auf 10.10 wird nicht unterstützt.
-  </p>
- 
+  Please note that right now we are in an alpha stage and you might need to wipe your 
+  Fink distribution out a as stuff gets changed around.</p>
+  

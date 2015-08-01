@@ -1,13 +1,18 @@
 <?php
 $title = "News";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2015/06/13 23:23:02';
+$cvs_date = 'Date: 2015/08/01 02:29:47';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released."><span class="news-date">2015-06-13: </span><span class="news-headline">fink-0.38.6 and dpkg-base-files-0.4 released.</span></a><?php gray_line(); ?>
+<a name="2015-07-31%20CVS%20access%20restored"><span class="news-date">2015-07-31: </span><span class="news-headline">CVS access restored</span></a><?php gray_line(); ?>
+  <p>
+  We now have CVS access back for services including selfupdate, package updates, and
+  website updates.
+  </p>
+ <a name="2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released."><span class="news-date">2015-06-13: </span><span class="news-headline">fink-0.38.6 and dpkg-base-files-0.4 released.</span></a><?php gray_line(); ?>
   <p>
   <code>fink-0.38.6</code> was released on 13 June, 2015.  This release fixes an
   issue which prevented bootstrapping on Yosemite (or later) using Xcode newer
