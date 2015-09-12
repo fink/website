@@ -5,8 +5,60 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2015-07-31T19:30:02-07:00</dc:date>
+    <dc:date>2015-09-12T11:18:52-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master">
+      <title>Beta support for OS X 10.11 now in fink master</title>
+      <link>http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master</link>
+      <guid>http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  Support for OSX 10.11 beta is now available in Fink master, but not yet in release.
+  This can be downloaded from <a href="https://github.com/fink/fink/"> fink's 
+  github site</a>.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  Support for OSX 10.11 beta is now available in Fink master, but not yet in release.
+  This can be downloaded from <a href="https://github.com/fink/fink/"> fink's 
+  github site</a>.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2008-08-15%20fink-0.38.7%20released">
+      <title>fink-0.38.7 released</title>
+      <link>http://fink.sourceforge.net/news/#2008-08-15%20fink-0.38.7%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2008-08-15%20fink-0.38.7%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.7 was released on 15 August, 2015.  This release supports
+  OS X up to 10.10.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>
+  fink-0.38.7 was released on 15 August, 2015.  This release supports
+  OS X up to 10.10.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored">
       <title>CVS access restored</title>
       <link>http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored</link>
@@ -473,58 +525,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
   We are currently in the process of making packages available.
   </p>
  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released">
-      <title>fink-0.32.5.5 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-04-09%20fink-0.32.5.5%20released</guid>
-      <description>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.5.5 was released on 9 April, 2012.  This bugfix release
-    fixes an issue with bootstrapping on 10.5/PowerPC.
-   </p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.5.5 was released on 9 April, 2012.  This bugfix release
-    fixes an issue with bootstrapping on 10.5/PowerPC.
-   </p>
-  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released">
-      <title>fink-0.32.5.4 released</title>
-      <link>http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2012-04-08%20fink-0.32.5.4%20released</guid>
-      <description>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.5.4 was released on 8 April, 2012.  This release allows users
-    on 10.7 to bootstrap against the Xcode Command Line Tools.  Note that some packages
-    actually require the full Xcode to build.
-   </p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-   <p>
-    fink-0.32.5.4 was released on 8 April, 2012.  This release allows users
-    on 10.7 to bootstrap against the Xcode Command Line Tools.  Note that some packages
-    actually require the full Xcode to build.
-   </p>
-  
 		]]>
 	</content:encoded>
     </item>
