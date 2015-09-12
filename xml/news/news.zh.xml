@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="zh">
- <cvsid>$Id: news.zh.xml,v 1.62 2015/08/01 02:29:47 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.zh.xml,v 1.63 2015/09/12 18:18:43 alexkhansen Exp $</cvsid>
+<newsitem>
+ <date>2015-09-12</date>
+ <headline>Beta support for OS X 10.11 now in fink master</headline>
+ <body>
+  <p>
+  Support for OSX 10.11 beta is now available in Fink master, but not yet in release.
+  This can be downloaded from <link url="https://github.com/fink/fink/"> fink's 
+  github site</link>.
+  </p>
+ </body>
+</newsitem>
+<newsitem>
+ <date>2008-08-15</date>
+ <headline>fink-0.38.7 released</headline>
+ <body>
+  <p>
+  <code>fink-0.38.7</code> was released on 15 August, 2015.  This release supports
+  OS X up to 10.10.
+  </p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2015-07-31</date>
  <headline>CVS access restored</headline>
