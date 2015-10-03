@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2015-10-03T10:44:12-07:00</dc:date>
+    <dc:date>2015-10-03T14:45:22-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released">
       <title>fink-0.39.0 released</title>
@@ -26,7 +26,7 @@
   <p>If you happen to have updated your OS X before updating Fink, you can download a
   <a href="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
   .deb  archive</a> , and install it using 
-  sudo dpkg -i fink-0.39.0-101_darwin-x86_64.deb from the directory where 
+  sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb from the directory where 
   you downloaded it.
   </p>
  
@@ -47,7 +47,7 @@
   <p>If you happen to have updated your OS X before updating Fink, you can download a
   <a href="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
   .deb  archive</a> , and install it using 
-  sudo dpkg -i fink-0.39.0-101_darwin-x86_64.deb from the directory where 
+  sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb from the directory where 
   you downloaded it.
   </p>
  

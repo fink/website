@@ -11,7 +11,7 @@
   <p>If you happen to have updated your OS X before updating Fink, you can download a
   <a href="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
   .deb  archive</a> , and install it using 
-  <code>sudo dpkg -i fink-0.39.0-101_darwin-x86_64.deb</code> from the directory where 
+  <code>sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb</code> from the directory where 
   you downloaded it.
   </p>
  <a name="2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master"><span class="news-date">2015-09-12: </span><span class="news-headline">Beta support for OS X 10.11 now in fink master</span></a><?php gray_line(); ?>
