@@ -5,8 +5,55 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>fr</dc:language>
-    <dc:date>2015-09-12T11:18:52-07:00</dc:date>
+    <dc:date>2015-10-03T10:44:12-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released">
+      <title>fink-0.39.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.0 to support OS X El Capitan 
+  (10.11).  
+  This release also switches the distribution tree used by fink on 10.9 and 10.10.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink-0.39.0-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.0 to support OS X El Capitan 
+  (10.11).  
+  This release also switches the distribution tree used by fink on 10.9 and 10.10.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink-0.39.0-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master">
       <title>Beta support for OS X 10.11 now in fink master</title>
       <link>http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master</link>
@@ -496,33 +543,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
   In addition, the bootstrap  script now validates whether the Mavericks 
   command-line build tools are installed on that OS version, and prevents 
   folks from bootstrapping with the wrong tools.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released">
-      <title>fink-0.36.0 released</title>
-      <link>http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2013-10-31%20fink-0.36.0%20released</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.0 was released on 31 October, 2013.
-  This is the first release to work with OS X 10.9 (Mavericks).
-  We are currently in the process of making packages available.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.0 was released on 31 October, 2013.
-  This is the first release to work with OS X 10.9 (Mavericks).
-  We are currently in the process of making packages available.
   </p>
  
 		]]>

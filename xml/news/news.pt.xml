@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="pt">
- <cvsid>$Id: news.pt.xml,v 1.31 2015/09/12 18:18:43 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.pt.xml,v 1.32 2015/10/03 17:43:58 alexkhansen Exp $</cvsid>
+<newsitem>
+ <date>2015-09-30</date>
+ <headline>fink-0.39.0 released</headline>
+ <body>
+  <p>The Fink Project has released <code>fink-0.39.0</code> to support OS X El Capitan 
+  (10.11).  
+  This release also switches the distribution tree used by fink on 10.9 and 10.10.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <link url="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
+  .deb  archive</link> , and install it using 
+  <code>sudo dpkg -i fink-0.39.0-101_darwin-x86_64.deb</code> from the directory where 
+  you downloaded it.
+  </p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2015-09-12</date>
  <headline>Beta support for OS X 10.11 now in fink master</headline>
