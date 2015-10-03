@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
- <cvsid>$Id: news.de.xml,v 1.71 2015/10/03 17:43:58 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.de.xml,v 1.72 2015/10/03 21:45:02 alexkhansen Exp $</cvsid>
 <newsitem>
  <date>2015-09-30</date>
  <headline>fink-0.39.0 released</headline>
@@ -18,7 +18,7 @@
   <p>If you happen to have updated your OS X before updating Fink, you can download a
   <link url="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
   .deb  archive</link> , and install it using 
-  <code>sudo dpkg -i fink-0.39.0-101_darwin-x86_64.deb</code> from the directory where 
+  <code>sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb</code> from the directory where 
   you downloaded it.
   </p>
  </body>
