@@ -4,12 +4,12 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.48 2014/10/19 03:25:17 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.49 2015/10/04 00:00:05 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
 These are the installation instructions for the "source" distribution
-based on <code>fink-&fink_tool_version;</code>, intended for use with OS X v.10.7 and later.</p>
+based on <code>fink-&fink_tool_version;</code>, intended for use with OS X v.10.9 and later.</p>
 <p>
 This document does not apply to the "<link url="/download/index.php">binary</link>" distribution.
 </p>
@@ -44,21 +44,23 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.7 or later.
+An installed Mac OS X system, version 10.9 or later.
 </p></li>
 <li><p>
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
-downloading it directly via developer.apple.com, through the Xcode application, on
-via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
-or on 10.9 and 10.10 by running the</p>
+downloading it directly via developer.apple.com, or by running the</p>
 <codeblock>xcode-select --install</codeblock>
 <p>command and choosing the   
 <em>Install</em> button in the window that pops up, or you can install the full
 Xcode if you prefer.  You may also need to use this command to update the tools,
 especially if you're having build problems.</p>
 <p>If you're doing a manual download, make sure that the tools you install match your
- Mac OS X version as well as your Xcode app version (if that is present).
-</p></li>
+OS X version as well as your Xcode app version (if that is present).</p>
+<p>You will need to accept the Xcode license as root.  To do that, run<p>
+<codeblock>sudo xcodebuild -license</codeblock>
+<p>then scroll to the bottom of the text and type<p>
+<codeblock>agree</codeblock>
+</li>
 <li><p>Java.  Entering</p>
 <codeblock>javac</codeblock>
 <p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
@@ -90,7 +92,7 @@ Computer output is in <code>normal face</code>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<code>...</code>).
 </p>
-<p>Note:  on 10.8, 10.9, and 10.10, after you start the install process you may see
+<p>Note:  after you start the install process you may see
 dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
