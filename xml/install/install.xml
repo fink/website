@@ -4,7 +4,7 @@
 <document filename="install">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.49 2015/10/04 00:00:05 alexkhansen Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.50 2015/11/01 02:12:02 alexkhansen Exp $</cvsid>
 
 <preface>
 <p>
@@ -51,15 +51,16 @@ The Xcode Command Line Tools are mandatory. This package can be installed either
 downloading it directly via developer.apple.com, or by running the</p>
 <codeblock>xcode-select --install</codeblock>
 <p>command and choosing the   
-<em>Install</em> button in the window that pops up, or you can install the full
-Xcode if you prefer.  You may also need to use this command to update the tools,
+<em>Install</em> button in the window that pops up.
+You may also need to use this command to update the tools,
 especially if you're having build problems.</p>
 <p>If you're doing a manual download, make sure that the tools you install match your
 OS X version as well as your Xcode app version (if that is present).</p>
-<p>You will need to accept the Xcode license as root.  To do that, run<p>
+<p>You will need to accept the Xcode license as root.  To do that, run</p>
 <codeblock>sudo xcodebuild -license</codeblock>
-<p>then scroll to the bottom of the text and type<p>
+<p>then scroll to the bottom of the text and type</p>
 <codeblock>agree</codeblock>
+<p>Some packages require the full Xcode.</p>
 </li>
 <li><p>Java.  Entering</p>
 <codeblock>javac</codeblock>
@@ -80,6 +81,17 @@ I'm talking hours or even days here.
 </ul>
 </section>
 
+<section name="scripted-install"><title>First Time Installation Very Fast
+Track</title>
+<p>
+Download the <link url="https://raw.githubusercontent.com/fink/scripts/master/srcinstaller/Install%20Fink.tool">
+Install Fink.tool</link> script and double-click on it.  This will automate the downloads
+in the steps below.
+</p>
+<p>
+The script may have to stop for you to do something.  If so, run it again.
+</p>
+</section>
 <section name="install"><title>First Time Installation Fast
 Track</title>
 <p>
@@ -216,15 +228,6 @@ Logging in to :pserver:anonymous@fink.cvs.sourceforge.net:2401/cvsroot/fink
 especially if you are using a proxy.    
 </p>
 <p>
-If you are using Xcode 4.3 or later, you should also run
-</p>
-<codeblock>
-sudo xcodebuild -license
-</codeblock>
-<p>
-and enter <em>agree</em> so that Fink's unprivileged user can build packages that need more than just the basic tools.
-</p>
-<p>
 You can now install packages with the <code>fink</code>
 command, like this:
 </p>
@@ -328,21 +331,24 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.7 or later.
+An installed Mac OS X system, version 10.9 or later.
 </p></li>
 <li><p>
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
-downloading it directly via developer.apple.com, through the Xcode application, on
-via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
-or on 10.9 and 10.10 by running the</p>
+downloading it directly via developer.apple.com, or by running the</p>
 <codeblock>xcode-select --install</codeblock>
 <p>command and choosing the   
-<em>Install</em> button in the window that pops up, or you can install the full
-Xcode if you prefer.  You may also need to use this command to update the tools,
+<em>Install</em> button in the window that pops up.
+You may also need to use this command to update the tools,
 especially if you're having build problems.</p>
 <p>If you're doing a manual download, make sure that the tools you install match your
- Mac OS X version as well as your Xcode app version (if that is present).
-</p></li>
+OS X version as well as your Xcode app version (if that is present).</p>
+<p>You will need to accept the Xcode license as root.  To do that, run</p>
+<codeblock>sudo xcodebuild -license</codeblock>
+<p>then scroll to the bottom of the text and type</p>
+<codeblock>agree</codeblock>q
+<p>Some packages require the full Xcode.</p>
+</li>
 <li><p>Java.  Entering</p>
 <codeblock>javac</codeblock>
 <p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
@@ -475,15 +481,6 @@ will pass its information along to cvs.  Note: you can only use anonymous cvs (p
 through a proxy.
 </p>
 <p>
-If you are using Xcode 4.3 or later, you should also run
-</p>
-<codeblock>
-sudo xcodebuild -license
-</codeblock>
-<p>
-and enter <em>agree</em> so that Fink's unprivileged user can build packages that need more than just the basic tools.
-</p>
-<p>
 You can now use <code>fink</code> commands to install packages.
 </p>
 <codeblock>fink --help</codeblock>
@@ -498,10 +495,8 @@ Fink uses virtual packages to declare dependencies on X11.  As of
 OS 10.6, we don't provide any packages of our own.  The supported options are:
 </p>
 <ul>
-<li><p>10.7:  Only Apple's standard X11.</p></li>
-<li><p>10.8:  Only XQuartz 2.7.2 and later.</p></li>
 <li><p>10.9:  Only XQuartz 2.7.4 and later.</p></li>
-<li><p>10.9:  Only XQuartz 2.7.7 and later.</p></li>
+<li><p>10.10-11:  Only XQuartz 2.7.7 and later.</p></li>
 </ul>
 <p>
 For more information on installing and running X11, refer to the
