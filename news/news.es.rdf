@@ -5,8 +5,53 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2015-10-03T14:45:22-07:00</dc:date>
+    <dc:date>2015-11-15T13:00:18-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released">
+      <title>fink-0.39.2 released</title>
+      <link>http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.2 for 10.9-10.11.  This 
+  incorporates bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.2 for 10.9-10.11.  This 
+  incorporates bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released">
       <title>fink-0.39.0 released</title>
       <link>http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released</link>
@@ -502,45 +547,6 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
   donde Fink no podría acceder las distribuciones binarias en plataformas
   de 64-bits.  También corrige un problema en plataformas de 32-bits que
   fue introducido con fink-0.36.3.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20publicado">
-      <title>fink-0.36.1 publicado</title>
-      <link>http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20publicado</link>
-      <guid>http://fink.sourceforge.net/news/#2013-11-17%20fink-0.36.1%20publicado</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.1 fue publicado el 17 de noviembre 2013.
-  Esta versión corrige un error en la construcción de módulos de Perl
-  que fue introducido con fink-0.36.0.  Animamos a nuestros usuarios que
-  instalen fink-0.36.1 para arreglar ese problema.  
-  </p>
-  <p>
-  Esta versión también revisa durante el proceso de bootstrap si 
-  el usuario tiene instalado la versión correcta de las herramientas de la
-  linea de comandos.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.1 fue publicado el 17 de noviembre 2013.
-  Esta versión corrige un error en la construcción de módulos de Perl
-  que fue introducido con fink-0.36.0.  Animamos a nuestros usuarios que
-  instalen fink-0.36.1 para arreglar ese problema.  
-  </p>
-  <p>
-  Esta versión también revisa durante el proceso de bootstrap si 
-  el usuario tiene instalado la versión correcta de las herramientas de la
-  linea de comandos.
   </p>
  
 		]]>

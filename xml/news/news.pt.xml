@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="pt">
- <cvsid>$Id: news.pt.xml,v 1.33 2015/10/03 21:45:02 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.pt.xml,v 1.34 2015/11/15 21:00:05 alexkhansen Exp $</cvsid>
+<newsitem>
+ <date>2015-10-31</date>
+ <headline>fink-0.39.2 released</headline>
+ <body>
+  <p>The Fink Project has released <code>fink-0.39.2</code> for 10.9-10.11.  This 
+  incorporates bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <link url="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
+  .deb  archive</link> , and install it using 
+  <code>sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb</code> from the directory where 
+  you downloaded it.
+  </p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2015-09-30</date>
  <headline>fink-0.39.0 released</headline>
