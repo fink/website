@@ -1,7 +1,7 @@
 <?php
 $title = "Source Release Download";
 $cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2015/11/01 02:12:03 $';
+$cvs_date = '$Date: 2015/12/10 23:00:38 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -29,10 +29,13 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 For OS X 10.9-10.11, you can use a <a href="https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool">helper script</a>
 which automates the download and build steps below.
 	 </li>
-     <li>
+	 <li>
+For a manual install on OS X 10.9-10.11, <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
+     </li>     
+	 <li>
 For OS X 10.7-8, use
  <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.38.7.tar.gz", "fink-0.38.7.tar.gz", "/downloads/FinkSOURCE") ?> - 1185K<br>
-     </li>
+	 </li>
      <li>
 For OS X 10.6, use
  <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz", "fink-0.36.5.tar.gz", "/downloads/FinkSOURCE") ?> - 1176K<br>
