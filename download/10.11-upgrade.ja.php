@@ -1,79 +1,78 @@
 <?php
 $title = "Upgrade Instructions for Mac OS X 10.10";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2015/11/15 21:18:57 $';
+$cvs_author = '$Author: babayoshihiko $';
+$cvs_date = '$Date: 2016/01/12 13:21:34 $';
 
 include "header.inc";
 ?>
 
-<h1>Upgrade Instructions for Mac OS X 10.11</h1>
-<h2>10.9 to 10.11</h2>
+<h1>Mac OS X 10.11 向けのアップグレード</h1>
+<h2>10.9 から 10.11</h2>
 <ol>
 	<li>
-		Before installing 10.11, use <pre>fink selfupdate</pre> (with rsync or CVS) to get
-		the latest version of <code>fink</code>.
+		10.11 をインストールする前に <pre>fink selfupdate</pre> (rsync or CVS) をして
+		最新版の <code>fink</code> にする。
 	</li>
 	<li>
-		Update the OS.
+		OS をアップデート。
 	</li>
 	<li>
-		Install Xcode 7.1 if you haven't already, or at least its Command Line Tools
-		for Yosemite.
-		If already have Xcode 7.1, you will still need to reinstall the Command Line Tools,
-		even if you had those installed under Mavericks or Yosemite already.
+		まだインストールしていなければ、Xcode 7.1 をインストールするか、Yosemite 用のコマンドラインツールをインストール。
+		Xcode 7.1 をインストール済みなら、Marvericks か Yosemite でインストールしていても、
+		コマンドラインツールを再インストールする必要があります。
 	</li>
 	<li>
-		If you have Xcode 7.1, run <pre>sudo xcodebuild -license</pre> to accept the 
-		terms of the Xcode license.  This is not required if you are using only the 
-		command-line tools.
+		Xcode 7.1 があるなら、 <pre>sudo xcodebuild -license</pre> を実行し、
+		Xcode ライセンス条項を受け入れます。
+		これは、コマンドラインツールだけを使うのであれば必要ありません。
 	</li>
 	<li>
-		Use <pre>fink configure</pre> to reactivate Fink's build user, since Apple wipes
-		out our users (but not groups for some reason).
+		<pre>fink configure</pre> を使い、Fink のビルドユーザーをアクティベートします。
+		Apple が、user を消し去るためです (なぜか group は消さないようです)。
 	</li>
 	<li>
-		Use <pre>fink reinstall fink</pre> to point to the 10.11 distribution.
+		<pre>fink reinstall fink</pre> を使い、10.11 を指定します。
 	</li>
 	<li>
-		Optional: 
-		<p>Use <pre>fink install perl5162-core</pre> if you had any <code>-pm5162</code>
-		packages installed.</p>
-		<p>Use <pre>fink list -it passwd | cut -f2 | xargs fink reinstall</pre> if you 
-		had any <code>passwd-*</code> packages installed.
+		オプション: 
+		<p><code>-pm5162</code> なパッケージをインストール済みであれば、
+		<pre>fink install perl5162-core</pre> を使います。</p>
+		<p><code>passwd-*</code>  なパッケージをインストール済みであれば、
+		<pre>fink list -it passwd | cut -f2 | xargs fink reinstall</pre> を使います。
 	</li>
 </ol>
 <p>
-	If you updated from 10.9 or 10.10 to 10.11 with a fink which doesn't know about 10.10, 
-	you won't be able to proceed.  You can download a compatible 
-	<link url="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
-   pre-built fink"</link> and install it via the terminal by running
-   <pre>sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb</pre> in the folder where you 
-   downloaded it.
+   fink を 10.10 用にせずに 10.9 から 10.10 または 10.11 にアップデートした場合、
+   これ以上は進めません。
+   互換性のある<link url="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">ビルド済み fink</link> 
+   をダウンロードし、ターミナルで、ダウンロードしたフォルダで
+   <pre>sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb</pre> とインストールします。
 </p>
 
-<h2>10.8 and earlier to 10.11:</h2>
-<p>There is no supported upgrade path for Fink from 10.8 (or earlier) to 10.11.</p>
+<h2>10.8 以前から 10.11:</h2>
+<p>10.8 (以前) から 10.11 へ Fink をアップグレードする方法はありません。</p>
 
-<p>The instructions here are an abridged version of those found in the 
-<a href="http://finkers.wordpress.com/2011/09/26/fink-and-lion/">Fink blog</a>. 
-The entries there provide a more detailed upgrade explanation.</p>
+<p>ここの手順は、
+<a href="http://finkers.wordpress.com/2011/09/26/fink-and-lion/">Fink blog</a>
+の要約版です。
+ここの情報はより詳しい説明があります。</p>
 
-<p>This process collects the list of packages that you have installed on your current Fink
-and saves them for later use during the Fink install on 10.11</p>
-<p>To collect the list of packages, follow the sequence below:</p>
+<p>このプロセスは、現在の Fink でインストールしているパッケージ一覧を集め、
+10.11 上で Fink インストール中に使うために保存します。</p>
+<p>パッケージ一覧を集めるには、以下のようにしてください:</p>
 <ol>
-    <li>Use <pre>grep -B1 "install ok installed" /sw/var/lib/dpkg/status | grep Package | cut -d: -f2 > fink_packages.txt</pre> to dump your package information to a file.</li>
-    <li>Rename your Fink tree by using <pre>sudo mv /sw /sw.old</pre>, for example.</li>
-    <li>Install OS X 10.11, as well as Xcode 7.1, or the Command Line Tools at minimum.</li>
-    <li><a href="./srcdist.php">Install Fink</a> on your new 10.11 system.</li>
-    <li>Run the command: <pre>cat fink_packages.txt | xargs fink install</pre> to have your
-     new Fink setup install as many of the packages that you previously had installed on 10.8 or earlier as are available.</li>
-	<li>Remove your /sw.old directory.</li>
+    <li><pre>grep -B1 &quot;install ok installed&quot; /sw/var/lib/dpkg/status | grep Package | cut -d: -f2 &gt; fink_packages.txt</pre>
+    を使い、パッケージ情報をファイルに保存します。</li>
+    <li><pre>sudo mv /sw /sw.old</pre> の Fink ツリーを移動します。</li>
+    <li>最低限、OS X 10.11, Xcode 7.1、コマンドラインツールをインストールします。</li>
+    <li>10.11 をインストール後、<a href="./srcdist.php">Fink をインストール</a>します。</li>
+    <li>コマンド <pre>cat fink_packages.txt | xargs fink install</pre> を実行し、
+    可能な限り、10.8 上でインストールしたパッケージを、新しい Fink がインストールします。</li>
+	<li>/sw.old ディレクトリを削除します。</li>
 </ol>
-<p>Not all of the packages available on 10.8 and earlier OS X versions are available on 10.11 due to several 
-underlying changes in the system. Work is ongoing to make as many packages available 
-as possible. If your favorite package is not available on 10.11, please contact the 
-package maintainer and ask if it can be migrated.</p>
+<p>システムの変化により、10.8以前で得られるパッケージの全てが 10.11 で利用できるわけではありません。
+現在、可能な限り多くのパッケージを利用できるように作業中です。
+利用したいパッケージが 10.11 で利用できない場合、パッケージメンテなに連絡し、統合できるか尋ねてください。</p>
 
 <?php
 include "footer.inc";
