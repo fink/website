@@ -1,7 +1,7 @@
 <?php
 $title = "Upgrade Instructions for Mac OS X 10.10";
 $cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2016/01/12 13:21:34 $';
+$cvs_date = '$Date: 2016/01/14 00:43:23 $';
 
 include "header.inc";
 ?>
@@ -10,7 +10,7 @@ include "header.inc";
 <h2>10.9 から 10.11</h2>
 <ol>
 	<li>
-		10.11 をインストールする前に <pre>fink selfupdate</pre> (rsync or CVS) をして
+		10.11 をインストールする前に <pre>fink selfupdate</pre> (rsync または CVS) をして
 		最新版の <code>fink</code> にする。
 	</li>
 	<li>
@@ -72,7 +72,7 @@ include "header.inc";
 </ol>
 <p>システムの変化により、10.8以前で得られるパッケージの全てが 10.11 で利用できるわけではありません。
 現在、可能な限り多くのパッケージを利用できるように作業中です。
-利用したいパッケージが 10.11 で利用できない場合、パッケージメンテなに連絡し、統合できるか尋ねてください。</p>
+利用したいパッケージが 10.11 で利用できない場合、パッケージメンテナに連絡し、利用できるように依頼してください。</p>
 
 <?php
 include "footer.inc";
