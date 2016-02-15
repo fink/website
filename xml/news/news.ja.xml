@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="ja">
- <cvsid>$Id: news.ja.xml,v 1.83 2015/11/15 21:00:05 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.ja.xml,v 1.84 2016/02/15 01:41:52 babayoshihiko Exp $</cvsid>
 <newsitem>
  <date>2015-10-31</date>
- <headline>fink-0.39.2 released</headline>
+ <headline>fink-0.39.2 リリース</headline>
  <body>
-  <p>The Fink Project has released <code>fink-0.39.2</code> for 10.9-10.11.  This 
-  incorporates bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
+  <p>The Fink Project は、10.9-10.11 向けに <code>fink-0.39.2</code> をリリースしました。
+  これは、バグ修正と機能向上を含みます。
+  10.9 または 10.10 から 10.11 に更新する最善の方法は、以下の通りです:</p>
+  <p>0) 10.9 または 10.10 をスタート</p>
   <p>1) fink cleanup --deb</p>
   <p>2) fink selfupdate</p>
   <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <p>4) 10.11 にアップグレード</p>
+  <p>もし Fink を更新する前に OS X をアップグレードしてしまった場合、
   <link url="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
-  .deb  archive</link> , and install it using 
-  <code>sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb</code> from the directory where 
-  you downloaded it.
+  .deb  archive</link> をダウンロードし、ダウンロードしたディレクトリで
+  <code>sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb</code>
+  と実行し、インストールすることができます。
   </p>
  </body>
 </newsitem>
 <newsitem>
  <date>2015-09-30</date>
- <headline>fink-0.39.0 released</headline>
+ <headline>fink-0.39.0 リリース</headline>
  <body>
-  <p>The Fink Project has released <code>fink-0.39.0</code> to support OS X El Capitan 
-  (10.11).  
+  <p>The Fink Project は、 <code>fink-0.39.0</code>  OS X El Capitan 
+  (10.11) 向けにリリースしました。
+  このリリースは、 10.9 と 10.10 で fink が使用するディストリビューションツリーを変更します。
   This release also switches the distribution tree used by fink on 10.9 and 10.10.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
+  10.9 または 10.10 から 10.11 に更新する最善の方法は、以下の通りです:</p>
+  <p>0) 10.9 または 10.10 をスタート</p>
   <p>1) fink cleanup --deb</p>
   <p>2) fink selfupdate</p>
   <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <p>4) 10.11 にアップグレード</p>
+  <p>もし Fink を更新する前に OS X をアップグレードしてしまった場合、
   <link url="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
-  .deb  archive</link> , and install it using 
-  <code>sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb</code> from the directory where 
-  you downloaded it.
+  .deb  archive</link> をダウンロードし、ダウンロードしたディレクトリで
+  <code>sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb</code>
+  と実行し、インストールすることができます。
   </p>
  </body>
 </newsitem>
