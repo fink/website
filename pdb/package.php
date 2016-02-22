@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/02/22 20:18:19 $';
+$cvs_date = '$Date: 2016/02/22 21:38:32 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -103,7 +103,7 @@ unset($result);
 <?php
 } else {
 
-	$pobj = array_pop($result);
+	$pobj = array_shift($result);
 	$fullversion = get_full_version($pobj);
 
 ?>
