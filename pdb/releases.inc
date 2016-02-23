@@ -59,7 +59,7 @@ foreach(array(
 	new Release($distributions["10.5-powerpc"],         "stable",           "current", 27, TRUE),
 	new Release($distributions["10.5-powerpc"],         "unstable",         "current", 28, TRUE),
 	new Release($distributions["10.5-i386"],            "bindist",          "0.9.0",   29, TRUE),
-	new Release($distributions["10.5-i386"],            "bindis-unstablet", "current", 30, TRUE),
+	new Release($distributions["10.5-i386"],            "bindis-unstable",  "current", 30, TRUE),
 	new Release($distributions["10.5-i386"],            "stable",           "current", 31, TRUE),
 	new Release($distributions["10.5-i386"],            "unstable",         "current", 32, TRUE),
 	new Release($distributions["10.5-x86_64"],          "bindist",          "current", 33, TRUE),
