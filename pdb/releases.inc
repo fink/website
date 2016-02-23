@@ -75,11 +75,10 @@ foreach(array(
 	new Release($distributions["10.8-x86_64"],          "stable",           "current", 43, TRUE),
 	new Release($distributions["10.9-x86_64"],          "bindist",          "current", 44, TRUE),
 	new Release($distributions["10.9-x86_64"],          "stable",           "current", 45, TRUE),
-	new Release($distributions["10.9-x86_64"],          "unstable",         "current", 46, TRUE),
-	new Release($distributions["10.10-x86_64"],         "bindist",          "current", 47, TRUE),
-	new Release($distributions["10.10-x86_64"],         "stable",           "current", 48, TRUE),
-	new Release($distributions["10.11-x86_64"],         "bindist",          "current", 49, TRUE),
-	new Release($distributions["10.11-x86_64"],         "stable",           "current", 50, TRUE),
+	new Release($distributions["10.10-x86_64"],         "bindist",          "current", 46, TRUE),
+	new Release($distributions["10.10-x86_64"],         "stable",           "current", 47, TRUE),
+	new Release($distributions["10.11-x86_64"],         "bindist",          "current", 48, TRUE),
+	new Release($distributions["10.11-x86_64"],         "stable",           "current", 49, TRUE),
 ) as $_rel) {
 	$releases[$_rel->getId()] = $_rel;
 }
