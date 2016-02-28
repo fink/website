@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/10/19 03:25:17';
+$cvs_date = 'Date: 2015/11/01 02:12:02';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-first.php" title="First Time Installation"><link rel="prev" href="install.php" title="Installation Contents">';
 
 include_once "header.inc";
@@ -29,21 +29,24 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.7 or later.
+An installed Mac OS X system, version 10.9 or later.
 </p></li>
 <li><p>
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
-downloading it directly via developer.apple.com, through the Xcode application, on
-via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
-or on 10.9 and 10.10 by running the</p>
+downloading it directly via developer.apple.com, or by running the</p>
 <pre>xcode-select --install</pre>
 <p>command and choosing the   
-<b>Install</b> button in the window that pops up, or you can install the full
-Xcode if you prefer.  You may also need to use this command to update the tools,
+<b>Install</b> button in the window that pops up.
+You may also need to use this command to update the tools,
 especially if you're having build problems.</p>
 <p>If you're doing a manual download, make sure that the tools you install match your
- Mac OS X version as well as your Xcode app version (if that is present).
-</p></li>
+OS X version as well as your Xcode app version (if that is present).</p>
+<p>You will need to accept the Xcode license as root.  To do that, run</p>
+<pre>sudo xcodebuild -license</pre>
+<p>then scroll to the bottom of the text and type</p>
+<pre>agree</pre>
+<p>Some packages require the full Xcode.</p>
+</li>
 <li><p>Java.  Entering</p>
 <pre>javac</pre>
 <p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
@@ -63,11 +66,22 @@ I'm talking hours or even days here.
 </ul>
 
 
-<h2><a name="install">1.2 First Time Installation Fast
+<h2><a name="scripted-install">1.2 First Time Installation Very Fast
 Track</a></h2>
 <p>
-Start out by copying the <code>fink-0.38.6.tar.gz</code>
-file to your home folder (it might also show up as <code>fink-0.38.6.tar</code> if you
+Download the <a href="https://raw.githubusercontent.com/fink/scripts/master/srcinstaller/Install%20Fink.tool">
+Install Fink.tool</a> script and double-click on it.  This will automate the downloads
+in the steps below.
+</p>
+<p>
+The script may have to stop for you to do something.  If so, run it again.
+</p>
+
+<h2><a name="install">1.3 First Time Installation Fast
+Track</a></h2>
+<p>
+Start out by copying the <code>fink-0.39.3.tar.gz</code>
+file to your home folder (it might also show up as <code>fink-0.39.3.tar</code> if you
 used Safari to download it).
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
@@ -75,19 +89,19 @@ Computer output is in <code>normal face</code>, your input is in
 The actual input prompts from the shell may vary, and some chunks of
 the output have been omitted (<code>...</code>).
 </p>
-<p>Note:  on 10.8, 10.9, and 10.10, after you start the install process you may see
+<p>Note:  after you start the install process you may see
 dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
-<pre>[frodo:~] testuser% <b>tar xf fink-0.38.6.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.38.6</b>
-[frodo:~/fink-0.38.6] testuser% <b>./bootstrap</b>
+<pre>[frodo:~] testuser% <b>tar xf fink-0.39.3.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.39.3</b>
+[frodo:~/fink-0.39.3] testuser% <b>./bootstrap</b>
 
 Fink must be installed and run with superuser (root) privileges
 ...
 Choose a method: [1] <b>1</b>
 
-sudo /Users/testuser/fink-0.38.6/bootstrap .sudo '/sw'
+sudo /Users/testuser/fink-0.39.3/bootstrap .sudo '/sw'
 Password: <b>(your normal password here)</b>
 ...
 OK, I'll ask you some questions and update the configuration file in
@@ -133,8 +147,8 @@ Bootstrapping a base system via /sw/bootstrap.
 ...
 
 You should now have a working Fink installation in '/sw'.
-[frodo:~/fink-0.38.6] testuser% <b>cd</b>
-[frodo:~] testuser% <b>rm -r fink-0.38.6</b>
+[frodo:~/fink-0.39.3] testuser% <b>cd</b>
+[frodo:~] testuser% <b>rm -r fink-0.39.3</b>
 [frodo:~] testuser% <b>/sw/bin/pathsetup.sh</b></pre>
 <p>
 The last command runs a little script to help set up your Unix paths
@@ -197,15 +211,6 @@ Logging in to :pserver:anonymous@fink.cvs.sourceforge.net:2401/cvsroot/fink
 <b>(wait for the downloads to finish)</b></pre>
 <p>
 especially if you are using a proxy.    
-</p>
-<p>
-If you are using Xcode 4.3 or later, you should also run
-</p>
-<pre>
-sudo xcodebuild -license
-</pre>
-<p>
-and enter <b>agree</b> so that Fink's unprivileged user can build packages that need more than just the basic tools.
 </p>
 <p>
 You can now install packages with the <code>fink</code>

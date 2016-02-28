@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - First Time";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/10/19 03:25:17';
+$cvs_date = 'Date: 2015/11/01 02:12:02';
 $metatags = '<link rel="contents" href="install.php" title="Installation Contents"><link rel="next" href="install-up03.php" title="Upgrading Fink"><link rel="prev" href="install-fast.php" title="The Fast Track">';
 
 include_once "header.inc";
@@ -17,21 +17,24 @@ You need:
 </p>
 <ul>
 <li><p>
-An installed Mac OS X system, version 10.7 or later.
+An installed Mac OS X system, version 10.9 or later.
 </p></li>
 <li><p>
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
-downloading it directly via developer.apple.com, through the Xcode application, on
-via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
-or on 10.9 and 10.10 by running the</p>
+downloading it directly via developer.apple.com, or by running the</p>
 <pre>xcode-select --install</pre>
 <p>command and choosing the   
-<b>Install</b> button in the window that pops up, or you can install the full
-Xcode if you prefer.  You may also need to use this command to update the tools,
+<b>Install</b> button in the window that pops up.
+You may also need to use this command to update the tools,
 especially if you're having build problems.</p>
 <p>If you're doing a manual download, make sure that the tools you install match your
- Mac OS X version as well as your Xcode app version (if that is present).
-</p></li>
+OS X version as well as your Xcode app version (if that is present).</p>
+<p>You will need to accept the Xcode license as root.  To do that, run</p>
+<pre>sudo xcodebuild -license</pre>
+<p>then scroll to the bottom of the text and type</p>
+<pre>agree</pre>q
+<p>Some packages require the full Xcode.</p>
+</li>
 <li><p>Java.  Entering</p>
 <pre>javac</pre>
 <p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
@@ -69,19 +72,19 @@ Using symlinks to trick the bootstrap script simply won't work.
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-First, you need to unpack the fink-0.38.6.tar.gz tarball (it might also show up as <code>fink-0.38.6.tar</code> if you
+First, you need to unpack the fink-0.39.3.tar.gz tarball (it might also show up as <code>fink-0.39.3.tar</code> if you
 used Safari to download it).  So, in a terminal window, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xf fink-0.38.6.tar.gz</pre>
+<pre>tar xf fink-0.39.3.tar.gz</pre>
 <p>
-You now have a directory named fink-0.38.6.
-Change to it with <code>cd fink-0.38.6</code>.
+You now have a directory named fink-0.39.3.
+Change to it with <code>cd fink-0.39.3</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
 bootstrap.
-So, to start installation, go to the fink-0.38.6 directory and run
+So, to start installation, go to the fink-0.39.3 directory and run
 this command:
 </p>
 <pre>./bootstrap</pre>
@@ -164,15 +167,6 @@ will pass its information along to cvs.  Note: you can only use anonymous cvs (p
 through a proxy.
 </p>
 <p>
-If you are using Xcode 4.3 or later, you should also run
-</p>
-<pre>
-sudo xcodebuild -license
-</pre>
-<p>
-and enter <b>agree</b> so that Fink's unprivileged user can build packages that need more than just the basic tools.
-</p>
-<p>
 You can now use <code>fink</code> commands to install packages.
 </p>
 <pre>fink --help</pre>
@@ -187,10 +181,8 @@ Fink uses virtual packages to declare dependencies on X11.  As of
 OS 10.6, we don't provide any packages of our own.  The supported options are:
 </p>
 <ul>
-<li><p>10.7:  Only Apple's standard X11.</p></li>
-<li><p>10.8:  Only XQuartz 2.7.2 and later.</p></li>
 <li><p>10.9:  Only XQuartz 2.7.4 and later.</p></li>
-<li><p>10.9:  Only XQuartz 2.7.7 and later.</p></li>
+<li><p>10.10-11:  Only XQuartz 2.7.7 and later.</p></li>
 </ul>
 <p>
 For more information on installing and running X11, refer to the
