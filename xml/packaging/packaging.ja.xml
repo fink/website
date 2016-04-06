@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.53 2014/09/09 03:41:02 babayoshihiko Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.54 2016/04/06 22:11:13 babayoshihiko Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1715,7 +1715,8 @@ foo-pm5124 は空欄であることになります。
     perl 5.10.0:             10.5, <em>10.6</em>
     perl 5.12.3:                         <em>10.7</em>
     perl 5.12.4:                         10.7, <em>10.8</em>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <em>10.9</em>
+    perl 5.16.2:                         10.7, 10.8, <em>10.9</em>, 10.10
+    perl 5.16.2:                         10.7, 10.8, 10.9, <em>10.10</em>
 </codeblock>
 <p>
 すべての variant をひとつの finkinfo ファイルに含める方法は、以下の通りです。

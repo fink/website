@@ -1,7 +1,7 @@
 <?php
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2014/09/09 03:41:02';
+$cvs_date = 'Date: 2016/04/06 22:11:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -201,7 +201,8 @@ foo-pm5124 は空欄であることになります。
     perl 5.10.0:             10.5, <b>10.6</b>
     perl 5.12.3:                         <b>10.7</b>
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
+    perl 5.16.2:                         10.7, 10.8, 10.9, <b>10.10</b>
 </pre>
 <p>
 すべての variant をひとつの finkinfo ファイルに含める方法は、以下の通りです。
