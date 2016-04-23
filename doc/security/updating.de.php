@@ -1,7 +1,7 @@
 <?php
 $title = "Sicherheitspolitik - Aktualisierungen";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2009/03/31 01:41:35';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/24 00:08:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Sicherheitspolitik Contents"><link rel="next" href="notification.php?phpLang=de" title="Benachrichtigungen verschicken"><link rel="prev" href="sources.php?phpLang=de" title="Quellen für Sicherheitslücken">';
 
 
@@ -10,7 +10,7 @@ include_once "header.de.inc";
 <h1>Sicherheitspolitik - 4. Sicherheitsaktualisierungen</h1>
     
     
-    <h2><a name="procedure">4.1 Sicherheitsrelevante Aktualisierungen durchführen.</a></h2>
+    <h2><a name="procedure">4.1 Sicherheitsrelevante Aktualisierungen durchführen</a></h2>
       
       <p>Sicherheitsrelevante Aktualisierungen sollen nur angewandt werden,
         wenn sie vom ursprünglichen Autor, der die Software erstellt hat,
@@ -36,7 +36,7 @@ include_once "header.de.inc";
           werden.</li>
       </ul>
     
-    <h2><a name="moving">4.2 Verschieben von unstable nach stable.</a></h2>
+    <h2><a name="moving">4.2 Verschieben von unstable nach stable</a></h2>
       
       <p>Sicherheitsrelevante Aktualisierungen für ein bestimmtes Paket
         werden zuerst im unstable Baum durchgeführt. Nach einer Wartezeit

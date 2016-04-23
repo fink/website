@@ -1,7 +1,7 @@
 <?php
 $title = "Sicherheitspolitik - Quellen";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2009/03/31 01:41:35';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/24 00:08:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Sicherheitspolitik Contents"><link rel="next" href="updating.php?phpLang=de" title="Sicherheitsaktualisierungen"><link rel="prev" href="severity.php?phpLang=de" title="Antwortzeiten und sofortige Aktionen">';
 
 
@@ -10,7 +10,7 @@ include_once "header.de.inc";
 <h1>Sicherheitspolitik - 3. Quellen für Sicherheitslücken</h1>
     
     
-    <h2><a name="sources">3.1 Akzeptierte Quellen für Sicherheitslücken.</a></h2>
+    <h2><a name="sources">3.1 Akzeptierte Quellen für Sicherheitslücken</a></h2>
       
       <p>Wer eine Sicherheitslücke für ein Fink-Paket meldet, muss auch
         sicher stellen, dass die Sicherheitslücke auch auf Mac OS X
