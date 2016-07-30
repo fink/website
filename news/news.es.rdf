@@ -5,8 +5,76 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2015-11-15T13:00:18-08:00</dc:date>
+    <dc:date>2016-07-30T11:14:26-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12">
+      <title>Development support for 10.12</title>
+      <link>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</link>
+      <guid>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has created a github branch named sierra-alpha-bravo
+  for 10.12 development.  This is accessible via git as well as through the 
+  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has created a github branch named sierra-alpha-bravo
+  for 10.12 development.  This is accessible via git as well as through the 
+  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released">
+      <title>fink-0.39.4 released</title>
+      <link>http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.4 for 10.9-10.11.  This 
+  officially supports 10.9.0-10.11.5 and incorporates bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.4 for 10.9-10.11.  This 
+  officially supports 10.9.0-10.11.5 and incorporates bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released">
       <title>fink-0.39.2 released</title>
       <link>http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released</link>
@@ -473,80 +541,6 @@
   <p>
   Se anima a los usuarios que usen fink selfupdate para instalar esta
   versión, principalmente a causa de los problemas introducidos por Xcode 5.1.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-04-06%20Problemas%20con%20el%20sistema%20de%20rsync">
-      <title>Problemas con el sistema de rsync</title>
-      <link>http://fink.sourceforge.net/news/#2014-04-06%20Problemas%20con%20el%20sistema%20de%20rsync</link>
-      <guid>http://fink.sourceforge.net/news/#2014-04-06%20Problemas%20con%20el%20sistema%20de%20rsync</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  El projecto ha estado teniendo problemas con el servidor maestro de rsync. Este
-  problema afecta a casi todos los servidores espejo.  Para resolver el problema,
-  se puede editar el fichero /sw/etc/fink.conf y ajustar la
-  opción de Mirror-rsync a uno de estos dos servidores:</p> 
-
-rsync://ber.de.eu.finkmirrors.net/finkinfo/
-rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
-
-  <p>
-  También se puede usar el comando fink selfupdate-cvs para cambiar el
-  sistema de actualización.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  El projecto ha estado teniendo problemas con el servidor maestro de rsync. Este
-  problema afecta a casi todos los servidores espejo.  Para resolver el problema,
-  se puede editar el fichero /sw/etc/fink.conf y ajustar la
-  opción de Mirror-rsync a uno de estos dos servidores:</p> 
-
-rsync://ber.de.eu.finkmirrors.net/finkinfo/
-rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
-
-  <p>
-  También se puede usar el comando fink selfupdate-cvs para cambiar el
-  sistema de actualización.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20publicado">
-      <title>fink-0.36.3.1 publicado</title>
-      <link>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20publicado</link>
-      <guid>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20publicado</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.3.1 fue publicado el 30 de diciembre, 2013.
-  Esta versión incluye soporte para OS X 10.9.1, y corrige un problema
-  donde Fink no podría acceder las distribuciones binarias en plataformas
-  de 64-bits.  También corrige un problema en plataformas de 32-bits que
-  fue introducido con fink-0.36.3.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.3.1 fue publicado el 30 de diciembre, 2013.
-  Esta versión incluye soporte para OS X 10.9.1, y corrige un problema
-  donde Fink no podría acceder las distribuciones binarias en plataformas
-  de 64-bits.  También corrige un problema en plataformas de 32-bits que
-  fue introducido con fink-0.36.3.
   </p>
  
 		]]>

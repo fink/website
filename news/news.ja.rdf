@@ -5,8 +5,76 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2016-02-15T10:44:18+09:00</dc:date>
+    <dc:date>2016-07-30T11:14:26-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12">
+      <title>Development support for 10.12</title>
+      <link>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</link>
+      <guid>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has created a github branch named sierra-alpha-bravo
+  for 10.12 development.  This is accessible via git as well as through the 
+  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has created a github branch named sierra-alpha-bravo
+  for 10.12 development.  This is accessible via git as well as through the 
+  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released">
+      <title>fink-0.39.4 released</title>
+      <link>http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.4 for 10.9-10.11.  This 
+  officially supports 10.9.0-10.11.5 and incorporates bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.4 for 10.9-10.11.  This 
+  officially supports 10.9.0-10.11.5 and incorporates bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20%3F%3F%3F%3F">
       <title>fink-0.39.2 &#12522;&#12522;&#12540;&#12473;</title>
       <link>http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20%3F%3F%3F%3F</link>
@@ -480,78 +548,6 @@
   Xcode 5.1 &#12499;&#12523;&#12489;&#21839;&#38988;&#12394;&#12393;&#12398;&#12383;&#12417;&#12289;
   &#12518;&#12540;&#12470;&#12398;&#30342;&#12373;&#12435;&#12364; fink selfupdate &#12434;&#12377;&#12427;&#12371;&#12392;&#12434;&#25512;&#22888;&#12375;&#12414;&#12377;&#12290;
   </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-04-06%20rsync%20%3F%3F%3F">
-      <title>rsync &#12398;&#21839;&#38988;</title>
-      <link>http://fink.sourceforge.net/news/#2014-04-06%20rsync%20%3F%3F%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2014-04-06%20rsync%20%3F%3F%3F</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  &#12510;&#12473;&#12479;&#12540; rsync &#12469;&#12540;&#12496;&#12395;&#21839;&#38988;&#12364;&#30330;&#29983;&#12375;&#12390;&#12362;&#12426;&#12289;&#12414;&#12384;&#35299;&#27770;&#12373;&#12428;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;
-  &#27531;&#24565;&#12394;&#12371;&#12392;&#12395;&#12289;&#12411;&#12363;&#12398;&#12469;&#12540;&#12496;&#12395;&#12418;&#24433;&#38911;&#12375;&#12390;&#12362;&#12426;&#12289;&#65298;&#12388;&#12384;&#12369;&#21205;&#20316;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;
-  /sw/etc/fink.conf &#12434;&#31649;&#29702;&#32773;&#27177;&#38480;&#12391;&#38283;&#12365;&#12289;
-  Mirror-rsync &#12434;&#19979;&#35352;&#12398;&#12356;&#12378;&#12428;&#12363;&#12395;&#35373;&#23450;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-  </p>
-
-rsync://ber.de.eu.finkmirrors.net/finkinfo/
-rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
-
-  <p>
-  &#12414;&#12383;&#12399; fink selfupdate-cvs &#12434;&#23455;&#34892;&#12375;&#12390;&#12289;&#26356;&#26032;&#26041;&#27861;&#12434;&#22793;&#12360;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  &#12510;&#12473;&#12479;&#12540; rsync &#12469;&#12540;&#12496;&#12395;&#21839;&#38988;&#12364;&#30330;&#29983;&#12375;&#12390;&#12362;&#12426;&#12289;&#12414;&#12384;&#35299;&#27770;&#12373;&#12428;&#12390;&#12356;&#12414;&#12379;&#12435;&#12290;
-  &#27531;&#24565;&#12394;&#12371;&#12392;&#12395;&#12289;&#12411;&#12363;&#12398;&#12469;&#12540;&#12496;&#12395;&#12418;&#24433;&#38911;&#12375;&#12390;&#12362;&#12426;&#12289;&#65298;&#12388;&#12384;&#12369;&#21205;&#20316;&#12375;&#12390;&#12356;&#12414;&#12377;&#12290;
-  /sw/etc/fink.conf &#12434;&#31649;&#29702;&#32773;&#27177;&#38480;&#12391;&#38283;&#12365;&#12289;
-  Mirror-rsync &#12434;&#19979;&#35352;&#12398;&#12356;&#12378;&#12428;&#12363;&#12395;&#35373;&#23450;&#12375;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-  </p>
-
-rsync://ber.de.eu.finkmirrors.net/finkinfo/
-rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
-
-  <p>
-  &#12414;&#12383;&#12399; fink selfupdate-cvs &#12434;&#23455;&#34892;&#12375;&#12390;&#12289;&#26356;&#26032;&#26041;&#27861;&#12434;&#22793;&#12360;&#12390;&#12367;&#12384;&#12373;&#12356;&#12290;
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20%3F%3F%3F%3F">
-      <title>fink-0.36.3.1 &#12522;&#12522;&#12540;&#12473;</title>
-      <link>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20%3F%3F%3F%3F</link>
-      <guid>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20%3F%3F%3F%3F</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.3.1 &#12399;&#12289;2013&#24180;12&#26376;30&#26085;&#12395;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12414;&#12375;&#12383;&#12290;
-  &#12371;&#12398;&#12522;&#12522;&#12540;&#12473;&#12399;&#12289;OS X 10.9.1 &#12408;&#12398;&#20844;&#24335;&#12469;&#12509;&#12540;&#12488;&#12434;&#21547;&#12415;&#12289;
-  &#12414;&#12383; 64 bit &#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&#19978;&#12391;&#12289;
-  &#20844;&#24335;&#12414;&#12383;&#12399;&#38750;&#20844;&#24335;&#12398;&#12496;&#12452;&#12490;&#12522;&#12487;&#12451;&#12473;&#12488;&#12522;&#12499;&#12517;&#12540;&#12471;&#12519;&#12531;&#12408;&#30452;&#25509;&#12450;&#12463;&#12475;&#12473;&#12391;&#12365;&#12394;&#12356;&#21839;&#38988;&#12434;&#20462;&#27491;&#12375;&#12414;&#12377;&#12290;
-  &#12373;&#12425;&#12395;&#12289;fink-0.36.3 &#12391;&#23566;&#20837;&#12373;&#12428;&#12383; 32 bit &#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&#12398;&#21839;&#38988;&#12418;&#20462;&#27491;&#12375;&#12414;&#12377;&#12290;  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.3.1 &#12399;&#12289;2013&#24180;12&#26376;30&#26085;&#12395;&#12522;&#12522;&#12540;&#12473;&#12373;&#12428;&#12414;&#12375;&#12383;&#12290;
-  &#12371;&#12398;&#12522;&#12522;&#12540;&#12473;&#12399;&#12289;OS X 10.9.1 &#12408;&#12398;&#20844;&#24335;&#12469;&#12509;&#12540;&#12488;&#12434;&#21547;&#12415;&#12289;
-  &#12414;&#12383; 64 bit &#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&#19978;&#12391;&#12289;
-  &#20844;&#24335;&#12414;&#12383;&#12399;&#38750;&#20844;&#24335;&#12398;&#12496;&#12452;&#12490;&#12522;&#12487;&#12451;&#12473;&#12488;&#12522;&#12499;&#12517;&#12540;&#12471;&#12519;&#12531;&#12408;&#30452;&#25509;&#12450;&#12463;&#12475;&#12473;&#12391;&#12365;&#12394;&#12356;&#21839;&#38988;&#12434;&#20462;&#27491;&#12375;&#12414;&#12377;&#12290;
-  &#12373;&#12425;&#12395;&#12289;fink-0.36.3 &#12391;&#23566;&#20837;&#12373;&#12428;&#12383; 32 bit &#12503;&#12521;&#12483;&#12488;&#12501;&#12457;&#12540;&#12512;&#12398;&#21839;&#38988;&#12418;&#20462;&#27491;&#12375;&#12414;&#12377;&#12290;  </p>
  
 		]]>
 	</content:encoded>

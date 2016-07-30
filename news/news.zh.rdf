@@ -5,8 +5,76 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2015-11-15T13:00:19-08:00</dc:date>
+    <dc:date>2016-07-30T11:14:26-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12">
+      <title>Development support for 10.12</title>
+      <link>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</link>
+      <guid>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has created a github branch named sierra-alpha-bravo
+  for 10.12 development.  This is accessible via git as well as through the 
+  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has created a github branch named sierra-alpha-bravo
+  for 10.12 development.  This is accessible via git as well as through the 
+  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released">
+      <title>fink-0.39.4 released</title>
+      <link>http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.4 for 10.9-10.11.  This 
+  officially supports 10.9.0-10.11.5 and incorporates bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.39.4 for 10.9-10.11.  This 
+  officially supports 10.9.0-10.11.5 and incorporates bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>3) fink selfupdate</p>
+  <p>4) Update to 10.11</p>
+  <p>If you happen to have updated your OS X before updating Fink, you can download a
+  <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
+  .deb  archive</a> , and install it using 
+  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  you downloaded it.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released">
       <title>fink-0.39.2 released</title>
       <link>http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released</link>
@@ -474,78 +542,6 @@
   </p>
   <p>Users are encouraged to run fink selfupdate to install this version of
   fink, particularly in view of the Xcode 5.1 build issues.</p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-04-06%20rsync%20issue">
-      <title>rsync issue</title>
-      <link>http://fink.sourceforge.net/news/#2014-04-06%20rsync%20issue</link>
-      <guid>http://fink.sourceforge.net/news/#2014-04-06%20rsync%20issue</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  We've been having issues with the master rsync server, which haven't been
-  resolved as of yet.  Unfortunately, this affects all but two of the other
-  servers.  To work around this problem, edit /sw/etc/fink.conf
-  as an administrator and change your Mirror-rsync setting to one of</p>
-
-rsync://ber.de.eu.finkmirrors.net/finkinfo/
-rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
-
-  <p>
-  or use fink selfupdate-cvs to switch your update method.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  We've been having issues with the master rsync server, which haven't been
-  resolved as of yet.  Unfortunately, this affects all but two of the other
-  servers.  To work around this problem, edit /sw/etc/fink.conf
-  as an administrator and change your Mirror-rsync setting to one of</p>
-
-rsync://ber.de.eu.finkmirrors.net/finkinfo/
-rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
-
-  <p>
-  or use fink selfupdate-cvs to switch your update method.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released">
-      <title>fink-0.36.3.1 released</title>
-      <link>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2013-12-30%20fink-0.36.3.1%20released</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.3.1 was released on 30 December, 2013.
-  This release includes official support for OS X 10.9.1, and fixes an 
-  issue in which the fink couldn't directly access official or unofficial 
-  binary distributions on 64-bit platforms.  It also fixes an issue with 
-  32-bit platforms which was introduced in fink-0.36.3.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.3.1 was released on 30 December, 2013.
-  This release includes official support for OS X 10.9.1, and fixes an 
-  issue in which the fink couldn't directly access official or unofficial 
-  binary distributions on 64-bit platforms.  It also fixes an issue with 
-  32-bit platforms which was introduced in fink-0.36.3.
-  </p>
  
 		]]>
 	</content:encoded>
