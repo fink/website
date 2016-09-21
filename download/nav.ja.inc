@@ -1,5 +1,5 @@
 <?php
-/* $Id: nav.ja.inc,v 1.15 2015/11/15 21:18:58 alexkhansen Exp $ */
+/* $Id: nav.ja.inc,v 1.16 2016/09/21 14:53:37 thesin Exp $ */
 
 $section = "download";
 $navbox = array(
@@ -15,7 +15,8 @@ $navbox = array(
   $hostlink . "download/10.10-upgrade.php?phpLang=ja", "10.10 アップグレード",
   $hostlink . "download/10.11-upgrade.php?phpLang=ja", "10.11 アップグレード",
   $hostlink . "download/sources_for_binaries.php?phpLang=ja", "バイナリ用ソース",
-  "http://bindist.finkmirrors.net/", "Archive Browser"
+  $hostlink . "download/archive.php?phpLang=ja", "Archive Browser"
+  //"http://bindist.finkmirrors.net/", "Archive Browser"
 );
 
 ?>

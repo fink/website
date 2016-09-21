@@ -1,5 +1,5 @@
 <?php
-/* $Id: nav.zh.inc,v 1.11 2015/11/15 21:18:58 alexkhansen Exp $ */
+/* $Id: nav.zh.inc,v 1.12 2016/09/21 14:53:37 thesin Exp $ */
 
 $section = "download";
 $navbox = array(
@@ -15,6 +15,7 @@ $navbox = array(
   $hostlink . "download/10.10-upgrade.php?phpLang=zh", "10.10 升级",
   $hostlink . "download/10.11-upgrade.php?phpLang=zh", "10.11 升级",
   $hostlink . "download/sources_for_binaries.php?phpLang=en", "Sources for Binaries",
+  $hostlink . "download/archive.php?phpLang=en", "旧文档"
   "http://bindist.finkmirrors.net/", "旧文档"
 );
 
