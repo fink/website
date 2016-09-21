@@ -1,13 +1,12 @@
 <?php
 $title = "Upgrade Instructions for Mac OS X 10.10";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2015/11/15 21:18:57 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2016/09/21 18:17:38 $';
 
 include "header.inc";
 ?>
 
-<h1>Upgrade Instructions for Mac OS X 10.11</h1>
-<h2>10.9 to 10.11</h2>
+<h2>10.9 to 10.11 or 10.10 to 10.11</h2>
 <ol>
 	<li>
 		Before installing 10.11, use <pre>fink selfupdate</pre> (with rsync or CVS) to get
@@ -17,8 +16,7 @@ include "header.inc";
 		Update the OS.
 	</li>
 	<li>
-		Install Xcode 7.1 if you haven't already, or at least its Command Line Tools
-		for Yosemite.
+		Install Xcode 7.1 if you haven't already, or at least its Command Line Tools.
 		If already have Xcode 7.1, you will still need to reinstall the Command Line Tools,
 		even if you had those installed under Mavericks or Yosemite already.
 	</li>
