@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/02/22 19:29:06 $';
+$cvs_date = '$Date: 2016/09/21 13:31:26 $';
 
 ini_set("memory_limit", "48M");
 
@@ -57,7 +57,7 @@ $type_values = array(
 // Distribution values
 $dist_values = array(
 	'any'     => 'Any',
-	'default' => 'Supported (10.9 through 10.11)',
+	'default' => 'Supported (10.9 through 10.12)',
 );
 foreach ($distributions as $d) {
 	if (!$d->isVisible()) {
@@ -180,6 +180,7 @@ function fink_file_search($get, $dists, $trees, $archs) {
 		$dists['10.9'] = '10.9';
 		$dists['10.10'] = '10.10';
 		$dists['10.11'] = '10.11';
+		$dists['10.12'] = '10.12';
 	} else {
 		unset($dists);
 		$dists[$get['dist_name']] = $get['dist_name'];
