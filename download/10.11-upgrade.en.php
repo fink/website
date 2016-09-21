@@ -1,11 +1,12 @@
 <?php
 $title = "Upgrade Instructions for Mac OS X 10.11";
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 18:23:15 $';
+$cvs_date = '$Date: 2016/09/21 19:03:02 $';
 
 include "header.inc";
 ?>
 
+<h1>Upgrade Instructions for Mac OS X 10.11</h1>
 <h2>10.9/10 to 10.11</h2>
 <ol>
 	<li>
