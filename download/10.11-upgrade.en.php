@@ -1,12 +1,12 @@
 <?php
 $title = "Upgrade Instructions for Mac OS X 10.11";
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 18:18:26 $';
+$cvs_date = '$Date: 2016/09/21 18:23:15 $';
 
 include "header.inc";
 ?>
 
-<h2>10.9 to 10.11 or 10.10 to 10.11</h2>
+<h2>10.9/10 to 10.11</h2>
 <ol>
 	<li>
 		Before installing 10.11, use <pre>fink selfupdate</pre> (with rsync or CVS) to get
@@ -41,7 +41,7 @@ include "header.inc";
 	</li>
 </ol>
 <p>
-	If you updated from 10.9 or 10.10 to 10.11 with a fink which doesn't know about 10.10, 
+	If you updated from 10.9/10 to 10.11 with a fink which doesn't know about 10.11, 
 	you won't be able to proceed.  You can download a compatible 
 	<link url="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
    pre-built fink"</link> and install it via the terminal by running
