@@ -286,11 +286,11 @@ if (!empty($builddepends))
 
 
 $query->addSort("name_e $sort");
-$query->addSort("epoch asc");
-$query->addSort("version_e asc");
-$query->addSort("revision_e asc");
-$query->addSort("dist_id asc");
-$query->addSort("dist_architecture asc");
+$query->addSort("epoch desc");
+$query->addSort("version_e desc");
+$query->addSort("revision_e desc");
+$query->addSort("dist_id desc");
+$query->addSort("dist_architecture desc");
 
 if ($tree != "testing") {
 	$query->setUnique(true);
