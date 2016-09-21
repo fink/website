@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2016/04/23 01:09:44 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2016/09/21 15:16:02 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -25,7 +25,7 @@ Fink をインストール、アップグレードする方法はたくさんあ
 <ol>
 <li>
 <p>
-10.6, 10.7, 10.8, 10.9, 10.10, and 10.11 ユーザ: まだバイナリインストーラはありません。<A href="srcdist.php">ソースインストール</A>をご覧ください。<br>
+10.6, 10.7, 10.8, 10.9, 10.10, 10.11, and 10.12 ユーザ: まだバイナリインストーラはありません。<A href="srcdist.php">ソースインストール</A>をご覧ください。<br>
 
 10.5 ユーザ: インストーラディスクイメージをダウンロード:<br>
 <?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " バイナリインストーラ (PowerPC)", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>

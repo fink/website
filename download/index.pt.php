@@ -1,7 +1,7 @@
 <?php
 $title = "Guia rápido para download";
-$cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2016/04/23 01:09:44 $';
+$cvs_author = '$Author: thesin $';
+$cvs_date = '$Date: 2016/09/21 15:16:02 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -20,7 +20,7 @@ href="upgrade.php?phpLang=pt">matriz de atualização</a>.</p>
 versão de binários.</p>
 
 <ol>
-  <li><p>Usuários 10.6, 10.7, 10.8, 10.9, 10.10, e 10.11: no momento não há um instalador binário. Siga as
+  <li><p>Usuários 10.6, 10.7, 10.8, 10.9, 10.10, 10.11, e 10.12: no momento não há um instalador binário. Siga as
   instruções para <a href="srcdist.php">instalação a partir do código
   fonte</a>.<br/>
   Usuários 10.5: Baixe a imagem de disco contendo o instalador:<br>
