@@ -1,5 +1,5 @@
 <?php
-/* $Id: nav.fr.inc,v 1.13 2016/09/21 14:53:37 thesin Exp $ */
+/* $Id: nav.fr.inc,v 1.14 2016/09/21 18:27:06 thesin Exp $ */
 
 $section = "download";
 $navbox = array(
@@ -14,8 +14,9 @@ $navbox = array(
   $hostlink . "download/10.9-upgrade.php?phpLang=fr", "Mise à niveau 10.9",
   $hostlink . "download/10.10-upgrade.php?phpLang=fr", "Mise à niveau 10.10",
   $hostlink . "download/10.11-upgrade.php?phpLang=fr", "Mise à niveau 10.11",
+  $hostlink . "download/10.12-upgrade.php?phpLang=en", "Mise à niveau 10.12",
   $hostlink . "download/sources_for_binaries.php?phpLang=fr", "Sources des binaires",
-  $hostlink . "download/archive.php?phpLang=fr", "Répertoires archives"
+  $hostlink . "download/archive.php?phpLang=en", "Répertoires archives"
   //"http://bindist.finkmirrors.net/", "Répertoires archives"
 );
 
