@@ -1,6 +1,6 @@
 <?php
 $cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/02/22 21:38:32 $';
+$cvs_date = '$Date: 2016/09/26 13:59:26 $';
 
 $uses_pathinfo = 1;
 include_once "memcache.inc";
@@ -56,7 +56,16 @@ if ($doc_id) {
 	$fullQuery->addQuery("rel_id:\"$rel_id\"", true);
 } else { // no need to parse the other parameters
 	if ($distribution) {
-		$fullQuery->addQuery("dist_name:\"$distribution\"", true);
+		if (preg_match('/^([0-9\.]+)\-(.*)$/', $distribution, $matches)) {
+			if ($matches[2] == 'gcc3.3') {
+				$newdist = $distribution;
+			} else {
+				$newdist = $matches[1];
+			}
+		} else {
+			$newdist = $distribution;
+		}
+		$fullQuery->addQuery("dist_name:\"$newdist\"", true);
 	}
 	if ($release) {
 		if ($release == 'unstable' || $release == 'stable') {
@@ -103,7 +112,18 @@ unset($result);
 <?php
 } else {
 
-	$pobj = array_shift($result);
+	$pver = 0;
+	$pkey = 0;
+	foreach ($result as $k => $v) {
+		if ($v['sort_version'] > $pver) {
+			$pver = $v['sort_version'];
+			$pkey = $k;
+		}
+	}
+	$pobj = $result[$pkey];
+	unset($result[$pkey]);
+	unset($pver);
+	unset($pkey);
 	$fullversion = get_full_version($pobj);
 
 ?>
