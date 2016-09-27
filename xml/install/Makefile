@@ -14,7 +14,8 @@ DESTDIR = doc/bundled
 include $(basedir)/Makefile.common
 
 install-hook:
-	cp install.html INSTALL.htm
-	cp install.txt INSTALL
+	mkdir -p $(basedir)/fink/
+	cp install.html $(basedir)/fink/INSTALL.htm
+	cp install.txt $(basedir)/fink/INSTALL
 
 # eof

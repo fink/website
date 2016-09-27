@@ -15,6 +15,7 @@ LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.common
 
 install-hook:
+	mkdir -p $(basedir)/fink/
 	cp readme.en.html $(basedir)/fink/README.html
 	cp readme.*.html $(basedir)/fink/
 	cp readme.en.txt $(basedir)/fink/README
