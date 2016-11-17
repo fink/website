@@ -5,8 +5,82 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2016-07-30T11:14:26-07:00</dc:date>
+    <dc:date>2016-11-17T08:19:24-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-09-20%20fink-0.41.0%20released">
+      <title>fink-0.41.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2016-09-20%20fink-0.41.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2016-09-20%20fink-0.41.0%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.41.0 to provide Sierra (10.12) support.
+  This release officially supports 10.9.0-10.12.0 and incorporates other bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.12 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>4) Update to 10.12</p>
+  <p>5) fink reinstall fink</p>
+  <p>If you happen to have updated your OS X before updating fink, see if you can install
+  fink-0.41.0 for your former distribution by using  sudo apt-get update ; sudo apt-get install fink  
+  and then use fink reinstall fink to switch your distribution.</p>
+  <p>Otherwise you can download a <a href="http://bindist.finkmirrors.net/10.12/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.0-111_darwin-x86_64.deb">
+  .deb  archive</a> manually, and install it using 
+  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  you downloaded it, then use fink reinstall fink to update the distribution.
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.41.0 to provide Sierra (10.12) support.
+  This release officially supports 10.9.0-10.12.0 and incorporates other bug fixes and enhancements.  
+  The best update sequence from going to 10.9 or 10.10 to 10.12 is as follows:</p>
+  <p>0) Start on 10.9 or 10.10.</p>
+  <p>1) fink cleanup --deb</p>
+  <p>2) fink selfupdate</p>
+  <p>4) Update to 10.12</p>
+  <p>5) fink reinstall fink</p>
+  <p>If you happen to have updated your OS X before updating fink, see if you can install
+  fink-0.41.0 for your former distribution by using  sudo apt-get update ; sudo apt-get install fink  
+  and then use fink reinstall fink to switch your distribution.</p>
+  <p>Otherwise you can download a <a href="http://bindist.finkmirrors.net/10.12/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.0-111_darwin-x86_64.deb">
+  .deb  archive</a> manually, and install it using 
+  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  you downloaded it, then use fink reinstall fink to update the distribution.
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-08-13%20fink-0.39.5%20released">
+      <title>fink-0.39.5 released</title>
+      <link>http://fink.sourceforge.net/news/#2016-08-13%20fink-0.39.5%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2016-08-13%20fink-0.39.5%20released</guid>
+      <description>
+		<![CDATA[
+	
+   <p>The Fink Project has released fink-0.39.5 for 10.9-10.11.  This 
+  officially supports 10.9.0-10.11.6, and among other fixes and enhancements it
+  switches from using otool to otool-classic to maintain
+  compatibility with Xcode 8.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+   <p>The Fink Project has released fink-0.39.5 for 10.9-10.11.  This 
+  officially supports 10.9.0-10.11.6, and among other fixes and enhancements it
+  switches from using otool to otool-classic to maintain
+  compatibility with Xcode 8.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12">
       <title>Development support for 10.12</title>
       <link>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</link>
@@ -461,86 +535,6 @@
   Esta versión corrige bootstrapping bajo Xcode 6.x é incluye otras correcciones 
   y mejoras.
   Aparte, fink-0.37.1 incluye soporte para 10.9.4 and 10.9.5.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20y%20fink-0.37.0%20publicados.%20Ultima%20versi%F3n%20para%2010.6">
-      <title>fink-0.36.5 y fink-0.37.0 publicados. Ultima versión para 10.6</title>
-      <link>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20y%20fink-0.37.0%20publicados.%20Ultima%20versi%F3n%20para%2010.6</link>
-      <guid>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20y%20fink-0.37.0%20publicados.%20Ultima%20versi%F3n%20para%2010.6</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.37.0 and fink-0.37.0 fueron publicados el 4 
-  de junio de 2014.  Estas versiones corrigen errores en la detección de de Java 
-  en Snow Leopard si el usuario está usando una versión antigua del Java SDK.  
-  fink-0.37.0 reconoce OS X 10.9.3.
-  </p>
-  <p>
-  fink-0.36.5 marca la ultima versión con soporte para OS X 10.6. 
-  La lista de paquetes seguira activa, pero el sistema ya no recibira nuevas 
-  versiones.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.37.0 and fink-0.37.0 fueron publicados el 4 
-  de junio de 2014.  Estas versiones corrigen errores en la detección de de Java 
-  en Snow Leopard si el usuario está usando una versión antigua del Java SDK.  
-  fink-0.37.0 reconoce OS X 10.9.3.
-  </p>
-  <p>
-  fink-0.36.5 marca la ultima versión con soporte para OS X 10.6. 
-  La lista de paquetes seguira activa, pero el sistema ya no recibira nuevas 
-  versiones.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20publicado">
-      <title>fink-0.36.4 publicado</title>
-      <link>http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20publicado</link>
-      <guid>http://fink.sourceforge.net/news/#2014-04-06%20fink-0.36.4%20publicado</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.4 fue publicado el 6 de abril, 2014.
-  Esta versión activa el uso de la distribución binaria oficial en 10.8 y 
-  10.9 (con soporte provisional en el futuro para 10.6 y 10.7).  Adicionalmente, 
-  esta versión funciona en torno a problemas introducidos por Xcode 5.1 en 10.8 
-  y 10.9, corrige problemas en bootstrap cuando Xcode.app no ha sido instalado, y 
-  activa la arquitectura x86_64 como el standard durante bootstrap en 10.6.
-  </p>
-  <p>
-  Se anima a los usuarios que usen fink selfupdate para instalar esta
-  versión, principalmente a causa de los problemas introducidos por Xcode 5.1.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.36.4 fue publicado el 6 de abril, 2014.
-  Esta versión activa el uso de la distribución binaria oficial en 10.8 y 
-  10.9 (con soporte provisional en el futuro para 10.6 y 10.7).  Adicionalmente, 
-  esta versión funciona en torno a problemas introducidos por Xcode 5.1 en 10.8 
-  y 10.9, corrige problemas en bootstrap cuando Xcode.app no ha sido instalado, y 
-  activa la arquitectura x86_64 como el standard durante bootstrap en 10.6.
-  </p>
-  <p>
-  Se anima a los usuarios que usen fink selfupdate para instalar esta
-  versión, principalmente a causa de los problemas introducidos por Xcode 5.1.
   </p>
  
 		]]>
