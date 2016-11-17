@@ -120,9 +120,9 @@ install: $(INSTALL_FILES) install-hook
 
 ifdef DESTDIR
 	@echo "Installing PHP files"
-	mkdir -p $(basedir)/web/$(DESTDIR)/
-	cp -a $(INSTALL_FILES) $(basedir)/web/$(DESTDIR)/
-	if ls header*.inc &> /dev/null; then cp -a header*.inc $(basedir)/web/$(DESTDIR)/ ; fi
+	mkdir -p $(basedir)/../$(DESTDIR)/
+	cp -a $(INSTALL_FILES) $(basedir)/../$(DESTDIR)/
+	if ls header*.inc &> /dev/null; then cp -a header*.inc $(basedir)/../$(DESTDIR)/ ; fi
 else
 	@echo "DESTDIR not defined, can't install"
 endif
