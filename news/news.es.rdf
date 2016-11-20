@@ -5,8 +5,33 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2016-11-17T08:19:24-08:00</dc:date>
+    <dc:date>2016-11-20T13:36:04-08:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20released">
+      <title>fink-0.41.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.41.1 to help us deal with adjustments
+  to the libXt library from XQuartz via the use of the XQuartz version in the system-xfree86*
+  packages, and to support OS X 10.12.1 .
+  </p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.41.1 to help us deal with adjustments
+  to the libXt library from XQuartz via the use of the XQuartz version in the system-xfree86*
+  packages, and to support OS X 10.12.1 .
+  </p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2016-09-20%20fink-0.41.0%20released">
       <title>fink-0.41.0 released</title>
       <link>http://fink.sourceforge.net/news/#2016-09-20%20fink-0.41.0%20released</link>
@@ -27,7 +52,7 @@
   and then use fink reinstall fink to switch your distribution.</p>
   <p>Otherwise you can download a <a href="http://bindist.finkmirrors.net/10.12/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.0-111_darwin-x86_64.deb">
   .deb  archive</a> manually, and install it using 
-  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  sudo dpkg -i fink_0.41.1-111_darwin-x86_64.deb from the directory where 
   you downloaded it, then use fink reinstall fink to update the distribution.
   </p>
  
@@ -49,7 +74,7 @@
   and then use fink reinstall fink to switch your distribution.</p>
   <p>Otherwise you can download a <a href="http://bindist.finkmirrors.net/10.12/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.0-111_darwin-x86_64.deb">
   .deb  archive</a> manually, and install it using 
-  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
+  sudo dpkg -i fink_0.41.1-111_darwin-x86_64.deb from the directory where 
   you downloaded it, then use fink reinstall fink to update the distribution.
   </p>
  
@@ -506,35 +531,6 @@
   Usuarios con 10.9 que quieren instalar 10.10 necesitan primero instalar 
   fink-0.38.0 (or mayor) en 10.9 antes de instalar 10.10.  Fink no 
   se puede actualizar directamente a 10.10 desde 10.7 ó 10.8.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-9-20%20fink-0.37.1%20publicado">
-      <title>fink-0.37.1 publicado</title>
-      <link>http://fink.sourceforge.net/news/#2014-9-20%20fink-0.37.1%20publicado</link>
-      <guid>http://fink.sourceforge.net/news/#2014-9-20%20fink-0.37.1%20publicado</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.37.1 fue publicado el 20 de septiembre de 2014.
-  Esta versión corrige bootstrapping bajo Xcode 6.x é incluye otras correcciones 
-  y mejoras.
-  Aparte, fink-0.37.1 incluye soporte para 10.9.4 and 10.9.5.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.37.1 fue publicado el 20 de septiembre de 2014.
-  Esta versión corrige bootstrapping bajo Xcode 6.x é incluye otras correcciones 
-  y mejoras.
-  Aparte, fink-0.37.1 incluye soporte para 10.9.4 and 10.9.5.
   </p>
  
 		]]>
