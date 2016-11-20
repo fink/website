@@ -3,6 +3,16 @@
 <news lang="en">
  <cvsid>$Id: news.en.xml,v 1.215 2016/07/30 18:14:16 alexkhansen Exp $</cvsid>
 <newsitem>
+ <date>2016-11-12</date>
+ <headline>fink-0.41.0 released</headline>
+ <body>
+  <p>The Fink Project has released <code>fink-0.41.1</code> to help us deal with adjustments
+  to the libXt library from XQuartz via the use of the XQuartz version in the <code>system-xfree86*</code>
+  packages, and to support OS X 10.12.1 .
+  </p>
+ </body>
+</newsitem>
+<newsitem>
  <date>2016-09-20</date>
  <headline>fink-0.41.0 released</headline>
  <body>

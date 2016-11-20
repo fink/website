@@ -3,6 +3,16 @@
 <news lang="pt">
  <cvsid>$Id: news.pt.xml,v 1.35 2016/07/30 18:14:16 alexkhansen Exp $</cvsid>
 <newsitem>
+ <date>2016-11-12</date>
+ <headline>fink-0.41.0 released</headline>
+ <body>
+  <p>The Fink Project has released <code>fink-0.41.1</code> to help us deal with adjustments
+  to the libXt library from XQuartz via the use of the XQuartz version in the <code>system-xfree86*</code>
+  packages, and to support OS X 10.12.1 .
+  </p>
+ </body>
+</newsitem>
+<newsitem>
  <date>2016-09-20</date>
  <headline>fink-0.41.0 released</headline>
  <body>
@@ -19,7 +29,7 @@
   and then use <code>fink reinstall fink</code> to switch your distribution.</p>
   <p>Otherwise you can download a <link url="http://bindist.finkmirrors.net/10.12/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.0-111_darwin-x86_64.deb">
   .deb  archive</link> manually, and install it using 
-  <code>sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb</code> from the directory where 
+  <code>sudo dpkg -i fink_0.41.1-111_darwin-x86_64.deb</code> from the directory where 
   you downloaded it, then use <code>fink reinstall fink</code> to update the distribution.
   </p>
  </body>
