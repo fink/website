@@ -1,6 +1,6 @@
 <?php
 $title = "Anleitung zur Aktualisierung unter Mac OS X 10.10";
-$cvs_author = '$Author: k-m_schindler $';
+$cvs_author = '$Author: kamischi $';
 $cvs_date = '$Date: 2015/01/26 12:12:00 $';
 
 include "header.inc";

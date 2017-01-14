@@ -5,7 +5,7 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2017-01-13T22:48:26+01:00</dc:date>
+    <dc:date>2017-01-14T01:13:13+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
     <item rdf:about="http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20ver%F6ffentlicht">
       <title>fink-0.41.0 veröffentlicht</title>
@@ -16,7 +16,7 @@
 	
   <p>Das Fink-Projekt veröffentlichte fink-0.41.1. Es hilft bei
   Anpassungen and die libXt Bibliothek aus XQuartz, indem die Quartz-Version aus
-  system-xfree86* Paketen verwendet wird, und auch OS X 10.12.1
+  system-xfree86* Paketen verwendet wird und auch OS X 10.12.1
   unterstützt.
   </p>
  
@@ -27,7 +27,7 @@
 	
   <p>Das Fink-Projekt veröffentlichte fink-0.41.1. Es hilft bei
   Anpassungen and die libXt Bibliothek aus XQuartz, indem die Quartz-Version aus
-  system-xfree86* Paketen verwendet wird, und auch OS X 10.12.1
+  system-xfree86* Paketen verwendet wird und auch OS X 10.12.1
   unterstützt.
   </p>
  
@@ -102,7 +102,7 @@
 	
    <p>Das Fink-Projekt veröffentlichte fink-0.39.5 für 10.9-10.11.
    Diese Ausgabe unterstützt offiziell 10.9.0 - 10.11.6. Wie immer wurden mehrere
-   Fehler behoben und Verbesserungen vorgenommen. Darüber hinaus wird von
+   Fehler behoben und Verbesserungen vorgenommen. Darüber hinaus wurde von
    otool auf otool-classic umgestellt, um mit Xcode 8
    kompatibel zu sein.</p>
  
@@ -113,7 +113,7 @@
 	
    <p>Das Fink-Projekt veröffentlichte fink-0.39.5 für 10.9-10.11.
    Diese Ausgabe unterstützt offiziell 10.9.0 - 10.11.6. Wie immer wurden mehrere
-   Fehler behoben und Verbesserungen vorgenommen. Darüber hinaus wird von
+   Fehler behoben und Verbesserungen vorgenommen. Darüber hinaus wurde von
    otool auf otool-classic umgestellt, um mit Xcode 8
    kompatibel zu sein.</p>
  
@@ -163,7 +163,7 @@
   <p>1) fink cleanup --deb</p>
   <p>2) fink selfupdate</p>
   <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
+  <p>4) Aktualisierung auf 10.11</p>
   <p>Sollten sie OS X vor Fink aktualisiert haben, können sie dieses
   <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
   .deb Archiv</a> herunter laden und aus ihrem Download-Ordner mit folgendem
@@ -185,7 +185,7 @@
   <p>1) fink cleanup --deb</p>
   <p>2) fink selfupdate</p>
   <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
+  <p>4) Aktualisierung auf 10.11</p>
   <p>Sollten sie OS X vor Fink aktualisiert haben, können sie dieses
   <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
   .deb Archiv</a> herunter laden und aus ihrem Download-Ordner mit folgendem
@@ -350,7 +350,8 @@
  Operation not permitted
 
   <p>
-  Users are encouraged to run fink selfupdate and install these new versions.
+  Nutzern wird empfohlen, fink selfupdate auszuführen und diese
+  neue Versionen zu installieren.
   </p>
   
 		]]>
@@ -375,7 +376,8 @@
  Operation not permitted
 
   <p>
-  Users are encouraged to run fink selfupdate and install these new versions.
+  Nutzern wird empfohlen, fink selfupdate auszuführen und diese
+  neue Versionen zu installieren.
   </p>
   
 		]]>

@@ -1,6 +1,6 @@
 <?php
 $title = "News";
-$cvs_author = 'Author: alexkhansen';
+$cvs_author = 'Author: kamischi';
 $cvs_date = 'Date: 2016/07/30 18:14:16';
 $metatags = '';
 
@@ -10,7 +10,7 @@ include_once "header.inc";
 <a name="2016-11-12%20fink-0.41.0%20ver%C3%B6ffentlicht"><span class="news-date">2016-11-12: </span><span class="news-headline">fink-0.41.0 veröffentlicht</span></a><?php gray_line(); ?>
   <p>Das Fink-Projekt veröffentlichte <code>fink-0.41.1</code>. Es hilft bei
   Anpassungen and die libXt Bibliothek aus XQuartz, indem die Quartz-Version aus
-  <code>system-xfree86*</code> Paketen verwendet wird, und auch OS X 10.12.1
+  <code>system-xfree86*</code> Paketen verwendet wird und auch OS X 10.12.1
   unterstützt.
   </p>
  <a name="2016-09-20%20fink-0.41.0%20ver%C3%B6ffentlicht"><span class="news-date">2016-09-20: </span><span class="news-headline">fink-0.41.0 veröffentlicht</span></a><?php gray_line(); ?>
@@ -38,7 +38,7 @@ include_once "header.inc";
  <a name="2016-08-13%20fink-0.39.5%20ver%C3%B6ffentlicht"><span class="news-date">2016-08-13: </span><span class="news-headline">fink-0.39.5 veröffentlicht</span></a><?php gray_line(); ?>
    <p>Das Fink-Projekt veröffentlichte <code>fink-0.39.5</code> für 10.9-10.11.
    Diese Ausgabe unterstützt offiziell 10.9.0 - 10.11.6. Wie immer wurden mehrere
-   Fehler behoben und Verbesserungen vorgenommen. Darüber hinaus wird von
+   Fehler behoben und Verbesserungen vorgenommen. Darüber hinaus wurde von
    <code>otool</code> auf <code>otool-classic</code> umgestellt, um mit Xcode 8
    kompatibel zu sein.</p>
  <a name="2016-07-30%20Development-Unterst%C3%BCtzung%20f%C3%BCr%2010.12"><span class="news-date">2016-07-30: </span><span class="news-headline">Development-Unterstützung für 10.12</span></a><?php gray_line(); ?>
@@ -57,7 +57,7 @@ include_once "header.inc";
   <p>1) fink cleanup --deb</p>
   <p>2) fink selfupdate</p>
   <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
+  <p>4) Aktualisierung auf 10.11</p>
   <p>Sollten sie OS X vor Fink aktualisiert haben, können sie dieses
   <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
   .deb Archiv</a> herunter laden und aus ihrem Download-Ordner mit folgendem
@@ -117,7 +117,8 @@ include_once "header.inc";
  Operation not permitted
 </pre>
   <p>
-  Users are encouraged to run <code>fink selfupdate</code> and install these new versions.
+  Nutzern wird empfohlen, <code>fink selfupdate</code> auszuführen und diese
+  neue Versionen zu installieren.
   </p>
   <a name="2015-06-9%20fink%20Entwicklungs-Zweig%20f%C3%BCr%2010.11%20auf%20github"><span class="news-date">2015-06-9: </span><span class="news-headline">fink Entwicklungs-Zweig für 10.11 auf github</span></a><?php gray_line(); ?>
   <p>

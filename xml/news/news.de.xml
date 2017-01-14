@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
- <cvsid>$Id: news.de.xml,v 1.73 2016/07/30 18:14:16 alexkhansen Exp $</cvsid>
+ <cvsid>$Id: news.de.xml,v 1.73 2016/07/30 18:14:16 kamischi Exp $</cvsid>
 <newsitem>
  <date>2016-11-12</date>
  <headline>fink-0.41.0 veröffentlicht</headline>
  <body>
   <p>Das Fink-Projekt veröffentlichte <code>fink-0.41.1</code>. Es hilft bei
   Anpassungen and die libXt Bibliothek aus XQuartz, indem die Quartz-Version aus
-  <code>system-xfree86*</code> Paketen verwendet wird, und auch OS X 10.12.1
+  <code>system-xfree86*</code> Paketen verwendet wird und auch OS X 10.12.1
   unterstützt.
   </p>
  </body>
@@ -46,7 +46,7 @@
  <body>
    <p>Das Fink-Projekt veröffentlichte <code>fink-0.39.5</code> für 10.9-10.11.
    Diese Ausgabe unterstützt offiziell 10.9.0 - 10.11.6. Wie immer wurden mehrere
-   Fehler behoben und Verbesserungen vorgenommen. Darüber hinaus wird von
+   Fehler behoben und Verbesserungen vorgenommen. Darüber hinaus wurde von
    <code>otool</code> auf <code>otool-classic</code> umgestellt, um mit Xcode 8
    kompatibel zu sein.</p>
  </body>
@@ -75,7 +75,7 @@
   <p>1) fink cleanup --deb</p>
   <p>2) fink selfupdate</p>
   <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
+  <p>4) Aktualisierung auf 10.11</p>
   <p>Sollten sie OS X vor Fink aktualisiert haben, können sie dieses
   <link url="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
   .deb Archiv</link> herunter laden und aus ihrem Download-Ordner mit folgendem
@@ -160,7 +160,8 @@
  Operation not permitted
 </codeblock>
   <p>
-  Users are encouraged to run <code>fink selfupdate</code> and install these new versions.
+  Nutzern wird empfohlen, <code>fink selfupdate</code> auszuführen und diese
+  neue Versionen zu installieren.
   </p>
   </body>
 </newsitem> 
