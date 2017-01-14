@@ -59,7 +59,7 @@ include "header.inc";
   Die Einträge dort beschreiben die Aktualisierung mit mehr Details.
 </p>
 <p>
-  Dieser Prozess sammelt eine Liste der Pakete, die auf aktuell installiert sind und 
+  Dieser Prozess sammelt eine Liste der Pakete, die aktuell installiert sind und 
   speichert sie für die spätere Verwendung bei der Installation von Fink auf 10.10.
 </p>
 <p>
