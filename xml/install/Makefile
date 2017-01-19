@@ -6,7 +6,7 @@ basedir = ..
 
 SOURCE = install
 TARGET = install.php install-fast.php install-first.php \
-	 install-up03.php install-up02.php
+	 install-up03.php install-up02.php install.en.txt
 WANT_TEXT = 1
 WANT_HTML = 1
 DESTDIR = doc/bundled
@@ -15,9 +15,10 @@ LANGUAGES_AVAILABLE = en de
 LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.common
 
-#install-hook:
-#	mkdir -p $(basedir)/fink/
-#	cp install.html $(basedir)/fink/INSTALL.htm
-#	cp install.txt $(basedir)/fink/INSTALL
+install-hook:
+	mkdir -p $(basedir)/fink/
+	cp install.en.html $(basedir)/fink/INSTALL.html
+	cp install.*.html $(basedir)/fink/
+	cp install.en.txt $(basedir)/fink/INSTALL
 
 # eof
