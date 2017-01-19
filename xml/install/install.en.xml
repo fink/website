@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE document SYSTEM "../finkdoc.dtd">
 
-<document filename="install">
+<document filename="install" lang="en">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
 <cvsid>$Id: install.xml,v 1.50 2015/11/01 02:12:02 alexkhansen Exp $</cvsid>

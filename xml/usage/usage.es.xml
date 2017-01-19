@@ -29,9 +29,8 @@
    <section>
    <title>Usando Fink</title>
 
-   <p>Fink tiene muchos comandos que trabajan en los paquetes. Todos de esos paquetes necesitan por los menos un nombre, también todos pueden usar varios nombres al mismo tiempo. Usted puede especificar el nombre del paquete (ejemplo gimp), o un nombre completamente titulado por la versión (ejemplo gimp-1.2.1 o gimp-1.2.1-3).</p>
-
-   Fink automáticamente escojera versión y revisión mas reciente que esta disponible cuando no has sido especificado. 
+   <p>Fink tiene muchos comandos que trabajan en los paquetes. Todos de esos paquetes necesitan por los menos un nombre, también todos pueden usar varios nombres al mismo tiempo. Usted puede especificar el nombre del paquete (ejemplo gimp), o un nombre completamente titulado por la versión (ejemplo gimp-1.2.1 o gimp-1.2.1-3). Fink automáticamente escojera versión y revisión mas reciente que esta disponible cuando no has sido especificado.</p>
+   
    <p>Lo que sigue es una lista de comandos que Fink entiende:</p>
    </section>
 

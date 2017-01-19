@@ -1,14 +1,14 @@
 <?php
 $title = "Dokumentation";
-$cvs_author = 'Author: MiSchi';
-$cvs_date = 'Date: 2012/11/11 15:20:13';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/17 21:14:26';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Dokumentation</h1>
-<!--Generated from $Fink: doc.de.xml,v 1.19 2012/11/11 15:20:13 MiSchi Exp $-->
+<!--Generated from $Fink: doc.de.xml,v 1.1 2015/02/17 21:14:26 k-m_schindler Exp $-->
     <p>
 Dies ist eine Sammlung verschiedener Dokumente für Fink. Einige der
 Dokumente sind auch dann interessant, wenn man Fink nicht nutzt, aber

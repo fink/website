@@ -1,9 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!--
-Generated from $Fink: usage.xml,v 1.16 2012/11/11 15:20:17 gecko2 Exp $
--->
-<title>Fink Documentation - Fink Usage</title></head><body><h1 align="center">Fink Usage</h1><h3><a name="usage.">Setting The Paths</a></h3>
+<?php
+$title = "Usage";
+$cvs_author = 'Author: gecko2';
+$cvs_date = 'Date: 2012/11/11 15:20:17';
+$metatags = '';
+
+
+include_once "header.inc";
+?>
+<h1>Fink Usage</h1>
+<!--Generated from $Fink: usage.xml,v 1.16 2012/11/11 15:20:17 gecko2 Exp $--><h2><a name="">Setting The Paths</a></h2>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable
@@ -16,7 +21,7 @@ If you use tcsh, add the following to your .cshrc:
 Editing .cshrc will only affect new shells (i.e. newly opened Terminal
 windows), so you should also run this command in all Terminal windows
 that you opened before you edited the file.
-You'll also need to run <tt style="white-space: nowrap;">rehash</tt> because tcsh caches the
+You'll also need to run <code>rehash</code> because tcsh caches the
 list of available commands internally.
 </p>
 <p>
@@ -29,7 +34,7 @@ your path so you can use X11 when it is installed.
 Packages have the ability to add settings of their own, e.g. the qt
 package sets the QTDIR environment variable.
 </p>
-<h3><a name="usage.">Using Fink</a></h3>
+<h2><a name="">Using Fink</a></h2>
 <p>Fink has several commands that work on packages. All of them need at
 least one package name, and all can handle several package names at
 once. You can specify just the package name (e.g. gimp), or a fully
@@ -37,7 +42,7 @@ qualified name with a version number (e.g. gimp-1.2.1 or
 gimp-1.2.1-3). Fink will automatically choose the latest available
 version and revision when they are not specified.</p>
 <p>What follows is a list of commands that Fink understands:</p>
-<h3><a name="usage.">install</a></h3>
+<h2><a name="">install</a></h2>
 <p>The install command is used to install packages. It downloads,
 configure, builds and installs the packages you name. It will also
 install required dependencies automatically, but will ask you for
@@ -51,7 +56,7 @@ The following additional package will be installed:
 Do you want to continue? [Y/n]</pre>
 <p>Aliases for the install command: update, enable, activate, use. (Most
 of these for historic reasons.)</p>
-<h3><a name="usage.">remove</a></h3>
+<h2><a name="">remove</a></h2>
 <p>The remove command removes packages from the system by calling 'dpkg
 --remove'. The current implementation has some flaws: It only works on
 packages Fink knows about (i.e. where an .info file is present); and it
@@ -63,11 +68,11 @@ re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the .deb from the
 /sw/fink/dists tree.</p>
 <p>Aliases: disable, deactivate, unuse, delete, purge.</p>
-<h3><a name="usage.">update-all</a></h3>
+<h2><a name="">update-all</a></h2>
 <p>This command updates all installed packages to the latest version. It
 does not need a package list, so you just type:</p>
 <pre>fink update-all</pre>
-<h3><a name="usage.">list</a></h3>
+<h2><a name="">list</a></h2>
 <p>
 This command produces a list of available packages, listing
 installation status, the latest version and a short description.
@@ -93,7 +98,7 @@ fink list "gnome*"   - list all packages that start with 'gnome'</pre>
 The quotes in the last example are necessary to stop the shell from
 interpreting the pattern itself.
 </p>
-<h3><a name="usage.">describe</a></h3>
+<h2><a name="">describe</a></h2>
 <p>
 This command displays a description of the package you name on the
 command line.
@@ -103,39 +108,39 @@ description.
 <p>
 Aliases: desc, description, info
 </p>
-<h3><a name="usage.">fetch</a></h3>
+<h2><a name="">fetch</a></h2>
 <p>Downloads the named packages, but does not install it. This command
 will download the tarballs even if they were downloaded before.</p>
-<h3><a name="usage.">fetch-all</a></h3>
+<h2><a name="">fetch-all</a></h2>
 <p>Downloads <b>all</b> package source files. Like fetch, this downloads the
 tarballs even when they were downloaded before.</p>
-<h3><a name="usage.">fetch-missing</a></h3>
+<h2><a name="">fetch-missing</a></h2>
 <p>Downloads <b>all</b> package source files. This command will only download
 files that are not present on the system.</p>
-<h3><a name="usage.">build</a></h3>
+<h2><a name="">build</a></h2>
 <p>Builds a package, but does not install it. As usual, the source
 tarballs are downloaded if they can not be found. The result of this
 command is an installable .deb package file, which you can quickly
 install later with the install command. This command will do nothing
 if the .deb already exists. Note that dependencies are still
 <b>installed</b>, not just built.</p>
-<h3><a name="usage.">rebuild</a></h3>
+<h2><a name="">rebuild</a></h2>
 <p>Builds a package (like the build command), but ignores and overwrites
 the existing .deb file. If the package is installed, the newly created
 .deb file will also be installed in the system via dpkg. Very useful
 during package development.</p>
-<h3><a name="usage.">reinstall</a></h3>
+<h2><a name="">reinstall</a></h2>
 <p>Same as install, but will install the package via dpkg even when it is
 already installed. You can use this when you accidentally deleted
 package files or changed configuration files and want to get the
 default settings back.</p>
-<h3><a name="usage.">configure</a></h3>
+<h2><a name="">configure</a></h2>
 <p>
 Reruns the Fink configuration process.
 This will let you change your mirror sites and proxy settings, among
 others.
 </p>
-<h3><a name="usage.">selfupdate</a></h3>
+<h2><a name="">selfupdate</a></h2>
 <p>
 This command automates the process of upgrading to a new Fink
 release.
@@ -147,7 +152,7 @@ to upgrade from a CVS version to a later regular release.
 It will refuse to run if you have /sw/fink set up to get package
 descriptions directly from CVS.
 </p>
-<h3><a name="usage.">Further Questions</a></h3>
+<h2><a name="">Further Questions</a></h2>
 <p>
 If your questions are not answered by this document, read the FAQ at
 the Fink website:
@@ -156,10 +161,7 @@ If that still doesn't answer your questions, subscribe to the
 fink-users mailing list via <a href="/lists/fink-users.php">/lists/fink-users.php</a>
 and ask there.
 </p>
-<hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2015 The Fink Project.
-You may distribute this document in print for private purposes,
-provided the document and this copyright notice remain complete and
-unmodified. Any commercial reproduction and any online publication
-requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: usage.xml,v 1.16 2012/11/11 15:20:17 gecko2 Exp $</i></p></body></html>
+
+<?php include_once "../footer.inc"; ?>
+
+
