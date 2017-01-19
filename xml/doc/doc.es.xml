@@ -29,8 +29,8 @@ cubre conceptos como la instalación y ejecución (tambien dedicado a los usuari
 Un grupo de documentos que son más completos, pero ligeramente desactualizados y no frecuentemente actualizados son los que siguen:
 </p>
     <ul>
-      <li><varlink url="bundled/install.php" varurl="bundled/install.html">Instalación y Actualización</varlink> - cubre la instalación de Fink así como las actualizaciones</li>
-      <li><varlink url="bundled/usage.php" varurl="bundled/usage.html">Uso</varlink> - como usar Fink e instalar programas</li>
+      <li><varlink url="bundled/install.php" varurl="bundled/install.en.html">Instalación y Actualización</varlink> - cubre la instalación de Fink así como las actualizaciones</li>
+      <li><varlink url="bundled/usage.php" varurl="bundled/usage.en.html">Uso</varlink> - como usar Fink e instalar programas</li>
       <li><varlink url="readme.php" varurl="readme.en.html">Fink ReadMe</varlink> - El archivo Leeme de la distribución fuente</li>
       <li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.es.html">Acceso a CVS</varlink> - Como acccesar al deposito CVS de Fink para obtener las últimas version de código fuente de los paquetes, aun entre liberaciones del Fink</li>
     </ul>

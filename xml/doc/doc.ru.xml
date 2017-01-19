@@ -33,11 +33,11 @@
         <ul>
             <li>
                 <varlink url="bundled/install.php"
-                    varurl="bundled/install.html">Инсталляция и
+                    varurl="bundled/install.en.html">Инсталляция и
                 обновление</varlink> - инсталляция Fink и обновление до новой версии</li>
             <li>
                 <varlink url="bundled/usage.php"
-                varurl="bundled/usage.html">Использование</varlink> - использование Fink
+                varurl="bundled/usage.en.html">Использование</varlink> - использование Fink
                 и инсталлированного ПО</li>
             <li>
                 <varlink url="readme.php" varurl="readme.en.html">Fink

@@ -45,14 +45,14 @@
     <ul>
       <li>
         <varlink url="bundled/install.php"
-        varurl="bundled/install.html">Installation and Upgrading</varlink> -
+        varurl="bundled/install.en.html">Installation and Upgrading</varlink> -
         como instalar o Fink ou atualizá-lo para uma versão nova
         <em>(em inglês)</em>
       </li>
 
       <li>
         <varlink url="bundled/usage.php"
-        varurl="bundled/usage.html">Usage</varlink> - como usar o Fink e os
+        varurl="bundled/usage.en.html">Usage</varlink> - como usar o Fink e os
         softwares instalados
         <em>(em inglês)</em>
       </li>

@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document SYSTEM "../finkdoc.dtd">
+
+<document filename="install" lang="de">
+<title>Fink &fink_tool_version; Installation</title>
+<shorttitle>Installation</shorttitle>
+<cvsid>$Id: install.xml,v 1.50 2015/11/01 02:12:02 kamischi Exp $</cvsid>
+
+<preface>
+<p>
+Diese Installationsanleitung ist für die "Quellcode"-Distribution, die auf
+<code>fink-&fink_tool_version;</code> aufbaut und unter OS X v.10.9 oder später
+verwendet wird.
+</p>
+<p>
+Diese Dokument bezieht sich nicht auf die
+"<link url="/download/index.php">binäre</link>" Distribution.
+</p>
+<p>
+Die Anleitungen beschreiben sowohl die erstmalige Installation als auch die
+Aktualisierung einer früheren Version.
+Eine Schnellanleitung für die ungeduldigen stehen am Anfang.
+</p>
+</preface>
+
+<chapter filename="install-fast">
+<title>Schnellanleitung</title>
+<shorttitle>Schnellanleitung</shorttitle>
+
+<preface>
+<p>
+Dieser Abschnitt ist für die ungeduldigen, die keine Zeit haben, alles über die
+Welt der Kommandozeile zu erlernen und denen es egal ist, wenn sie nicht
+verstehen, was sie eigentlich tun.
+</p>
+<p>
+Wenn sie die eigentliche Anleitung suchen, springen sie zum
+<xref chapter="install-first">nächsten Abschnitt</xref>.
+(Sie können diesen Abschnitt immer noch als Beispiel verwenden.)
+</p>
+</preface>
+
+<section name="req"><title>Voraussetzungen</title>
+<p>
+Sie brauchen:
+</p>
+<ul>
+<li><p>
+Ein installiertes Mac OS X, Version 10.9 oder später.
+</p></li>
+<li><p>
+Als nächstes brauchen sie die Xcode Command Line Tools. Dieses Paket wird
+installiert, indem man es entweder direkt von developer.apple.com herunter lädt,
+oder das Kommando</p>
+<codeblock>xcode-select --install</codeblock>
+<p>ausführt und den Button <em>Install</em> in dem Fenster auswählt, das
+aufgemacht wird. Mit diesem Kommando kann man die Tools auch aktualisieren,
+insbesondere wenn es Probleme gibt.</p>
+<p>Bei einem manuellen Download, achten sie darauf, dass die Tools zur Version
+von OS X und Xcode (falls vorhanden) passen.</p>
+<p>Sie müssen die Xcode-Lizenz als Administrator akzeptieren. Führen sie
+dazu folgendes Kommando aus:</p>
+<codeblock>sudo xcodebuild -license</codeblock>
+<p>blättern sie ans Ende des Texts und geben sie</p>
+<codeblock>agree</codeblock>
+<p>ein.</p>
+<p>Einige Pakete erfordern ein vollständige Installation von Xcode.</p>
+</li>
+<li><p>Java. Geben sie das Kommando</p>
+<codeblock>javac</codeblock>
+<p>in einem Fenster der Terminal.app. Das sollte ausreichen, damit das System
+alles herunter lädt.</p></li>
+<li><p>
+Viele andere Tools kommen mit OS X, beispielsweise perl und curl.
+</p></li>
+<li><p>
+Internet-Zugang.
+Alle Quellcodes werden von Spiegel-Servern herunter geladen.
+</p></li>
+<li><p>
+Geduld. Das Erstellen von einige großen Paketen braucht Zeit. Das kann Stunden
+oder sogar Tage dauern.
+</p></li>
+</ul>
+</section>
+
+<section name="scripted-install"><title>Erstmalige Installation:
+Super-Schnellanleitung</title>
+<p>
+Laden sie das
+<link url="https://raw.githubusercontent.com/fink/scripts/master/srcinstaller/Install%20Fink.tool">
+Install Fink.tool</link> Skript herunter und starten sie es mit einem
+Doppelklick. Das wird das Herunterladen der nächsten Schritten automatisieren.
+</p>
+<p>
+Das Skript muss manchmal anhalten, damit sie etwas erledigen. Sollte das der Fall
+sein, starten sie das Skript erneut.
+</p>
+</section>
+<section name="install"><title>Erstmalige Installation: Schnellanleitung</title>
+<p>
+Beginnen sie, indem sie die Datei
+<filename>fink-&fink_tool_version;.tar.gz</filename> in ihr Heimatverzeichnis
+kopieren (Möglicherweise wird sie als
+<filename>fink-&fink_tool_version;.tar</filename> angezeigt, falls sie die Datei
+mit Safari herunter geladen haben).
+Starten sie dann das Programm Terminal.app und folgen sie der Sitzung weiter
+unten. Die Computer-Ausgabe ist in <code>normal face</code> angezeigt, ihre
+Eingabe in <code><em>bold face</em></code> (oder auf andere Weise hervor
+gehoben). Die tatsächlichen Eingabe-Prompts der Shell mag variieren und einige
+Teile der Ausgabe wurden weg gelassen (<code>...</code>).
+</p>
+<p>Bemerkung: Nachdem sie die Installation gestartet haben, erscheint
+möglicherweise ein Dialogfenster, in dem sie gefragt werden, ob sie XQartz
+installieren wollen. Wenn sie das wollen, dann machen sie das. Sie werden dazu
+die Installation von Fink nicht unterbrechen werden müssen.</p>
+<codeblock>[frodo:~] testuser% <em>tar xf fink-&fink_tool_version;.tar.gz</em>
+[frodo:~] testuser% <em>cd fink-&fink_tool_version;</em>
+[frodo:~/fink-&fink_tool_version;] testuser% <em>./bootstrap</em>
+
+Fink must be installed and run with superuser (root) privileges
+...
+Choose a method: [1] <em>1</em>
+
+sudo /Users/testuser/fink-&fink_tool_version;/bootstrap .sudo '/sw'
+Password: <em>(your normal password here)</em>
+...
+OK, I'll ask you some questions and update the configuration file in
+'/sw/etc/fink.conf'.
+
+In what additional directory should Fink look for downloaded tarballs? [] <em>(press return)</em>
+
+Which directory should Fink use to build packages? (If you don't know what this
+means, it is safe to leave it at its default.) [] <em>(press return)</em>
+
+"Fink can set the UID and GID of its build user dynamically...
+...Allow Fink to set the UID/GID dynamically? [Y] <em>(press return)</em>
+
+(1)	Quiet (do not show download statistics)
+(2)	Low (do not show tarballs being expanded)
+(3)	Medium (will show almost everything)
+(4)	High (will show everything)
+
+How verbose should Fink be? [2] <em>(press return)</em>
+
+Proxy/Firewall settings
+Enter the URL of the HTTP proxy to use, or 'none' for no proxy. The URL
+should start with http:// and may contain username, password or port
+specifications. [none] <em>(press return)</em>
+Enter the URL of the proxy to use for FTP, or 'none' for no proxy. The URL
+should start with http:// and may contain username, password or port
+specifications. [none] <em>(press return)</em>
+Use passive mode FTP transfers (to get through a firewall)? [Y/n] <em>(press return)</em>
+
+Enter the maximum number of simultaneous build jobs.
+...
+Maximum number of simultaneous build jobs: [&lt;number of cpus&gt;] <em>(press return)</em>
+
+Mirror selection
+Choose a continent:
+...
+<em>(enter the numbers corresponding to your location)</em>
+...
+Writing updated configuration to '/sw/etc/fink.conf'...
+Bootstrapping a base system via /sw/bootstrap.
+...
+<em>(take a coffee break while Fink downloads and compiles the base packages)</em>
+...
+
+You should now have a working Fink installation in '/sw'.
+[frodo:~/fink-&fink_tool_version;] testuser% <em>cd</em>
+[frodo:~] testuser% <em>rm -r fink-&fink_tool_version;</em>
+[frodo:~] testuser% <em>/sw/bin/pathsetup.sh</em></codeblock>
+<p>
+Das letzte Kommando führt ein kleines Skript aus, das Unix-Pfade (und anderes)
+einrichtet. Nach der Abfrage Änderungen vornehmen zu dürfen läuft es in den
+meisten Fällen voll automatisch. Tritt ein Fehler auf, müssen sie die Dinge
+selbst einrichten (siehe weiter unten).
+</p>
+<p>
+(Wenn sie die Dinge selbst einrichten und csh oder tcsh nutzen, versichern sie
+sich, dass das Kommando <code>source /sw/bin/init.csh</code> beim Start der
+Shellausgeführt wird, entweder durch .login, .cshrc, .tcshrc oder was sonst auch
+immer angemessen ist. Benutzen sie bash oder eine ähnliche Shell, brauchen sie
+<code>. /sw/bin/init.sh</code> und legen sie es da ab, wo es ausgeführt wird wie
+.bashrc oder .profile.)
+</p>
+<p>
+Haben sie die Pfade gesetzt, öffnen sie ein neues Fenster in Terminal.app und
+schließen sie alle anderen. Das ist alles. Sie haben ein minimales Fink-System
+installiert.
+</p>
+<p>
+Bevor sie weitere Pakete installieren können, müssen sie ihre Beschreibungen
+herunter laden. Geben sie dafür in dem neuen Fenster von Terminal.app folgenden
+Befehl ein:
+</p>
+<codeblock>[frodo:~] testuser% <em>fink selfupdate-rsync</em>
+Password: <em>(your normal password here)</em>
+Please note: the simple command 'fink selfupdate' should be used for routine
+updating; you only need to use a command like 'fink selfupdate-cvs' or 'fink
+selfupdate --method=rsync' if you are changing your update method.
+...
+<em>(wait for the downloads to finish)</em></codeblock>
+<p>oder auch</p>
+<codeblock>[frodo:~] testuser% <em>fink selfupdate-cvs</em>
+Password: <em>(your normal password here)</em>
+
+Please note: the simple command 'fink selfupdate' should be used for routine
+updating; you only need to use a command like 'fink selfupdate-cvs' or 'fink
+selfupdate --method=rsync' if you are changing your update method. 
+
+fink is setting your default update method to cvs
+
+Fink has the capability to run the CVS commands as a normal user. That has some
+advantages - it uses that user's CVS settings files and allows the package
+descriptions to be edited and updated without becoming root. Please specify the
+user login name that should be used: [&lt;your username&gt;] <em>(press return)</em>
+
+For Fink developers only: Enter your SourceForge login name to set up full CVS
+access. Other users, just press return to set up anonymous read-only access.
+[anonymous] <em>(press return)</em>
+
+Checking to see if we can use hard links to merge the existing tree. Please
+ignore errors on the next few lines.
+Now logging into the CVS server. When CVS asks you for a password, just press
+return (i.e. the password is empty).
+/usr/bin/su hansen -c 'cvs -d":pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink" login'
+Logging in to :pserver:anonymous@fink.cvs.sourceforge.net:2401/cvsroot/fink
+CVS password: <em>(press return)</em>
+Logging in to :pserver:anonymous@fink.cvs.sourceforge.net:2401/cvsroot/fink
+...
+<em>(wait for the downloads to finish)</em></codeblock>
+<p>
+vor allem, wenn sie einen Proxy nutzen.
+</p>
+<p>
+Sie können jetzt Pakete mit dem Kommando <code>fink</code> installieren, zum
+Beispiel:
+</p>
+<codeblock>[frodo:~] testuser% <em>fink install gimp2</em>
+Password:
+Scanning package description files..........
+Information about 6230 packages read in 1 seconds.
+
+fink needs help picking an alternative to satisfy a virtual dependency. The
+candidates:
+
+(1)	db51-aes: Berkeley DB embedded database - crypto
+(2)	db51: Berkeley DB embedded database - non crypto
+
+Pick one: [1] 
+The following package will be installed or updated:
+ gimp2
+The following 308 additional packages will be installed:
+ aalib aalib-bin aalib-shlibs asciidoc atk1 atk1-shlibs autoconf2.6
+ automake1.11 automake1.11-core blt-dev blt-shlibs boost1.46.1.cmake
+ boost1.46.1.cmake-shlibs cairo cairo-shlibs celt-dev celt-shlibs cmake
+ cpan-meta-pm5124 cpan-meta-requirements-pm5124 cpan-meta-yaml-pm
+ cyrus-sasl2-dev cyrus-sasl2-shlibs daemonic db51-aes db51-aes-shlibs db53-aes
+ db53-aes-shlibs dbus dbus-glib1.2-dev dbus-glib1.2-shlibs dbus1.3-dev
+ dbus1.3-shlibs dirac-dev dirac-shlibs docbook-bundle docbook-dsssl-ldp
+ docbook-dsssl-nwalsh docbook-dtd docbook-xsl doxygen expat1 expat1-shlibs
+ exporter-pm extutils-cbuilder-pm extutils-command-pm extutils-install-pm
+ extutils-makemaker-pm extutils-makemaker-pm5124 extutils-manifest-pm
+ file-copy-recursive-pm file-temp-pm5124 fink-package-precedence flag-sort
+ fltk-x11 fltk-x11-shlibs fontconfig-config fontconfig2-dev fontconfig2-shlibs
+ freeglut freeglut-shlibs freetype219 freetype219-shlibs gawk gconf2-dev
+ gconf2-shlibs gd2 gd2-bin gd2-shlibs gdbm3 gdbm3-shlibs getoptbin
+ gettext-tools ghostscript ghostscript-fonts giflib giflib-bin giflib-shlibs
+ gimp2-shlibs glib2-dev glib2-shlibs glitz glitz-shlibs gmp5 gmp5-shlibs
+ gnome-doc-utils gnutls-2.12 gnutls-2.12-shlibs graphviz graphviz-shlibs grep
+ gtk+2 gtk+2-dev gtk+2-shlibs gtk-doc gtkglext1 gtkglext1-shlibs gts75
+ gts75-shlibs guile18 guile18-dev guile18-libs guile18-shlibs ilmbase
+ ilmbase-shlibs intltool40 iso-codes jack-dev jack-shlibs json-pp-pm lame-dev
+ lame-shlibs lcms lcms-shlibs libavcodec52-shlibs libavformat52-shlibs
+ libavutil50-shlibs libbabl0.1.0-dev libbabl0.1.0-shlibs libbonobo2
+ libbonobo2-dev libbonobo2-shlibs libcelt0.2-dev libcelt0.2-shlibs libcroco3
+ libcroco3-shlibs libdatrie1 libdatrie1-shlibs libexif12 libexif12-shlibs
+ libflac8 libflac8-dev libgcrypt libgcrypt-shlibs libgegl0.1.0-dev
+ libgegl0.1.0-shlibs libgettext3-dev libgettext3-shlibs libgettextpo2-dev
+ libgettextpo2-shlibs libglade2 libglade2-shlibs libgmpxx5-shlibs libgpg-error
+ libgpg-error-shlibs libgsf1.114-dev libgsf1.114-shlibs libgsm1-dev
+ libgsm1-shlibs libhogweed-shlibs libidl2 libidl2-shlibs libidn libidn-shlibs
+ libjasper.1 libjasper.1-shlibs libjpeg libjpeg-bin libjpeg-shlibs libjpeg8
+ libjpeg8-shlibs liblzma5 liblzma5-shlibs libming1-dev libming1-shlibs libmng2
+ libmng2-shlibs libncursesw5 libncursesw5-shlibs libogg libogg-shlibs
+ liboil-0.3 liboil-0.3-shlibs libopencore-amr0 libopencore-amr0-shlibs
+ libopenexr6-shlibs libopenjpeg libopenjpeg-shlibs libopenraw1-dev
+ libopenraw1-shlibs libpaper1-dev libpaper1-shlibs libpcre1 libpcre1-shlibs
+ libpng14 libpng14-shlibs libpng15 libpng15-shlibs libpng3 libpng3-shlibs
+ librarian.08-shlibs librsvg2 librsvg2-shlibs libschroedinger
+ libschroedinger-shlibs libsigsegv2 libsigsegv2-shlibs libsndfile1-dev
+ libsndfile1-shlibs libsoup2.4.1-ssl libsoup2.4.1-ssl-shlibs libspeex1
+ libspeex1-shlibs libspiro0 libspiro0-shlibs libtasn1-3 libtasn1-3-shlibs
+ libthai libthai-dev libthai-shlibs libtheora0 libtheora0-shlibs
+ libtheoradec1-shlibs libtheoraenc1-shlibs libtiff libtiff-bin libtiff-shlibs
+ libtool2 libtool2-shlibs libvorbis0 libvorbis0-shlibs libvpx libwmf
+ libwmf-shlibs libx264-115-dev libx264-115-shlibs libxml2 libxml2-bin
+ libxml2-py27 libxml2-shlibs libxslt libxslt-bin libxslt-shlibs lua51 lua51-dev
+ lua51-shlibs lynx m4 nasm netpbm10 netpbm10-shlibs nettle4a nettle4a-shlibs
+ ocaml openexr openexr-dev openjade openldap24-dev openldap24-shlibs opensp-bin
+ opensp5-dev opensp5-shlibs openssl100-dev openssl100-shlibs orbit2 orbit2-dev
+ orbit2-shlibs pango1-xft2-ft219 pango1-xft2-ft219-dev pango1-xft2-ft219-shlibs
+ parse-cpan-meta-pm passwd-core passwd-messagebus pixman pixman-shlibs
+ pkgconfig poppler-data poppler4 poppler4-glib poppler4-glib-shlibs
+ poppler4-shlibs popt popt-shlibs python27 python27-shlibs rarian rarian-compat
+ readline5 readline5-shlibs readline6 readline6-shlibs sdl sdl-shlibs
+ sgml-entities-iso8879 shared-mime-info sqlite3-dev sqlite3-shlibs swig
+ system-openssl-dev tcltk tcltk-dev tcltk-shlibs test-harness-pm5124
+ test-simple-pm5124 texi2html texinfo version-pm5124
+ version-requirements-pm5124 xdg-base xft2-dev xft2-shlibs xinitrc
+ xml-parser-pm5124 xmlto xvidcore xvidcore-shlibs xz yasm
+The following 2 packages might be temporarily removed:
+ lcms tcltk-dev
+Do you want to continue? [Y/n]
+...</codeblock>
+<p>
+Sollte diese Anleitung nicht funktionieren, müssen sie sich die Zeit nehmen, den
+Rest dieses Dokuments durchlesen sowie die <link url="/faq/">online FAQ</link>.
+Sie können auch Fragen auf der
+<link url="/lists/fink-users.php">fink-users mailing list</link> stellen.
+Rechnen sie aber damit, dass sie auf diese Dokumentation verwiesen werden, vor
+allem wenn ihr Problem und seine Lösung hier ausführlich beschrieben ist.
+</p>
+</section>
+
+</chapter>
+
+<chapter filename="install-first">
+<title>Erst-Installation</title>
+<shorttitle>Zum ersten Mal</shorttitle>
+
+<section name="req"><title>Voraussetzungen</title>
+<p>
+Sie brauchen:
+</p>
+<ul>
+<li><p>
+Ein installiertes Mac OS X, Version 10.9 oder später.
+</p></li>
+<li><p>
+Als nächstes brauchen sie die Xcode Command Line Tools. Dieses Paket wird
+installiert, indem man es entweder direkt von developer.apple.com herunter lädt,
+oder das Kommando</p>
+<codeblock>xcode-select --install</codeblock>
+<p>ausführt und den Button <em>Install</em> in dem Fenster auswählt, das
+aufgemacht wird. Mit diesem Kommando kann man die Tools auch aktualisieren,
+insbesondere wenn es Probleme gibt.</p>
+<p>Bei einem manuellen Download, achten sie darauf, dass die Tools zur Version
+von OS X und Xcode (falls vorhanden) passen.</p>
+<p>Sie müssen die Xcode-Lizenz als Administrator akzeptieren. Führen sie
+dazu folgendes Kommando aus:</p>
+<codeblock>sudo xcodebuild -license</codeblock>
+<p>blättern sie ans Ende des Texts und geben sie</p>
+<codeblock>agree</codeblock>
+<p>ein.</p>
+<p>Einige Pakete erfordern ein vollständige Installation von Xcode.</p>
+</li>
+<li><p>Java. Geben sie das Kommando</p>
+<codeblock>javac</codeblock>
+<p>in einem Fenster der Terminal.app. Das sollte ausreichen, damit das System
+alles herunter lädt.</p></li>
+<li><p>
+Viele andere Tools kommen mit OS X, beispielsweise perl und curl.
+</p></li>
+<li><p>
+Internet-Zugang.
+Alle Quellcodes werden von Spiegel-Servern herunter geladen.
+</p></li>
+<li><p>
+Geduld. Das Erstellen von einige großen Paketen braucht Zeit. Das kann Stunden
+oder sogar Tage dauern.
+</p></li>
+</ul>
+</section>
+
+<section name="directory"><title>Verzeichnis auswählen</title>
+<p>
+Vor der Installation müssen sie sich entscheiden, wo das Verzeichnis für Fink
+sein soll. Die Empfehlung ist /sw und alle Beispiele in dieser Dokumentation
+wird davon ausgehen. Jedes andere Verzeichnis sollte auch in Ordnung sein, so
+lange es keine bereits existierendes ist, wie zum Beispiel /usr/local oder gar
+/usr. Tatsächlich versucht das Bootstrap-Skript solche Fälle abzufangen.
+</p>
+<p>
+Der Name des Verzeichnis ihrer Wahl sollte keine Leerzeichen oder ähnliche
+Buchstaben enthalten. Unix selbst und der Großteil der Unix-Software wurde unter
+dieser Prämisse erstellt. Das Bootstrap-Skript mit Sym-Links auszutricksen, wird
+einfach nicht funktionieren.
+</p>
+</section>
+
+<section name="install"><title>Installation</title>
+<p>
+Als erstes müssen sie den Fink-&fink_tool_version;.tar.gz Tarball auspacken
+(Wenn sie es mit Safari herunter geladen haben, wird es als
+<filename>fink-&fink_tool_version;.tar</filename> dargestellt werden).
+Dafür gehen sie in einem Terminal-Fenster in das Verzeichnis, in dem sich der
+Tarball befindet und führen folgendes Kommando aus:
+</p>
+<codeblock>tar xf fink-&fink_tool_version;.tar.gz</codeblock>
+<p>
+Das erzeugt ein Verzeichnis mit dem Namen fink-&fink_tool_version;. Wechseln sie
+in dieses Verzeichnis mit dem Kommando <code>cd fink-&fink_tool_version;</code>.
+</p>
+<p>
+Die eigentliche Installation erfolgt durch das Perl-Skript bootstrap. Um die
+Installation zu starten, gehen sie in das Verzeichnis fink-&fink_tool_version;
+und führen sie folgendes Kommando aus:
+</p>
+<codeblock>./bootstrap</codeblock>
+<p>
+Nach dem einige Test durch gelaufen sind, wird sie das Skript nach der Methode
+fragen, um root-Rechte zu erhalten. Die sinnvollste Wahl ist 'sudo'. Auf einer
+üblichen Installation von OS X steht sudo für den Nutzer, der bei der
+Installation eingerichtet wurde, bereits zur Verfügung. Das Skript wird sofort
+die ausgewählte Methode nutzen. Nur so kann die Installation erfolgen.
+</p>
+<p>
+Als nächstes wird das Skript nach dem Installationspfad abfragen. Lesen sie den
+Abschnitt „Verzeichnis auswählen“ für weitere Hinweise dazu. Das Skript wird das
+Verzeichnis erstellen und für den späteren Bootstrap einrichten.
+</p>
+<p>
+Als nächste erfolgt die Konfiguration von Fink. Der Prozess sollte
+selbsterklärend sein. Sie werden gefragt, wie das Konto für den Fink-Nutzer
+„build“ erstelt wird. Nutzen sie ein vernetztes System mit einem zentralen
+Server für Nutzer und Gruppen, können sie die Parameter manuell auswählen.
+Möglicherweise müssen sie sich an ihren Netzwerker-Administrator wenden.
+Sie werden erneut nach Proxies gefragt werden. Auch dazu müssen sie sich im
+Zweifelsfall an ihren Netzwerk-Administrator wenden. Danach wählen sie die
+Spiegelserver für Downloads aus. Wenn sie sich nicht sicher sind, drücken sie
+einfach Return und Fink wird eine vernünftige Voreinstellung auswählen.
+</p>
+<p>
+Zu guter Letzt hat das Skript alle Informationen für den Bootstrap-Prozess.
+Das heißt, dass Fink einige essentielle Pakete herunter laden, erstellen und
+installieren wird.
+Machen sie sich keine Sorgen, wenn einige Pakete anscheinend zweimal kompiliert
+wird. Das ist notwendig, weil man für das Erstellen eins binären Pakets des
+Paketmanagers zuerst den Paketmanager braucht.
+</p>
+<p>
+Anmerkung: Auf 10.8, 10.9 und 10.10 erscheinen nach dem Start des
+Installationsprozesses ein Dialogfenster, in dem sie gefragt werden, ob sie
+XQuartz installieren wollen. Wenn sie das wollen, dann können sie das beruhigt
+tun, denn die Installation von Fink wird dadurch nicht unterbrochen.
+</p>
+<p>
+Nach dem Ende des Bootstrap-Prozesses, führen sie das Kommando
+<code>/sw/bin/pathsetup.sh</code> aus. Dieses hilft ihre Shell-Umgebung für
+Fink einzurichten. In den meisten Fällen wird es automatisch durchlaufen und sie
+einfach nur der Erlaubnis fragen, Änderungen vorzunehmen. Sollte das Skript
+in einen Fehler laufen, müssen sie die Umgebung von hand einrichten (siehe
+weiter unten).
+</p>
+<p>
+(Wenn sie die Dinge selbst einrichten und csh oder tcsh nutzen, versichern sie
+sich, dass das Kommando <code>source /sw/bin/init.csh</code> beim Start der
+Shellausgeführt wird, entweder durch .login, .cshrc, .tcshrc oder was sonst auch
+immer angemessen ist. Benutzen sie bash oder eine ähnliche Shell, brauchen sie
+<code>. /sw/bin/init.sh</code> und legen sie es da ab, wo es ausgeführt wird wie
+.bashrc oder .profile.)
+</p>
+<p>
+Sobald ihre Umgebung eingerichtet ist, öffnen sie ein neues Terminal-Fenster,
+damit die Änderungen auch wirklich greifen. Jetzt müssen sie mit Fink
+Paketbeschreibungen für sie herunter laden.
+</p>
+<p>
+Mit folgendem Befehl
+</p>
+<codeblock>fink selfupdate-rsync</codeblock>
+<p>
+können sie Paketbeschreibungen mit rsync herunter laden. Das ist die bevorzugte
+Option für die meisten Nutzer, denn es ist schnell und es stehen mehrere
+Spiegelserver zur Verfügung.
+</p>
+<p>
+Allerdings ist rsync oft von Netzwerk-Administratoren blockiert. Wenn ihre
+Firewall rsync nicht erlaubt, können sie cvs für das Herunterladen von
+Paketbeschreibungen probieren:
+</p>
+<codeblock>fink selfupdate-cvs</codeblock>
+<p>
+Wenn sie einen HTTP-Proxy verwenden, wird Fink diese Information an cvs
+weitergeben. Anmerkung: Sie können nur anonymes cvs (pserver) über einen Proxy
+benutzen.
+</p>
+<p>
+Sie können jetzt <code>fink</code> Kommandos benutzen, um Pakete zu installieren.
+</p>
+<codeblock>fink --help</codeblock>
+<p>
+ist ein nützliches Kommando für weitere Informationen, wie man <code>fink</code>
+benutzt.
+</p>
+</section>
+
+<section name="x11"><title>X11-Probleme klären</title>
+<p>
+Fink verwendet virtuelle Pakete, um Abhängigkeiten von X11 zu deklarieren. Ab
+OS 10.6 stellt Fink keine eigenen Pakete mehr zur Verfügung. Die Optionen sind:
+</p>
+<ul>
+<li><p>10.9: Nur XQuartz 2.7.4 und später.</p></li>
+<li><p>10.10 - 11: Nur XQuartz 2.7.7 und später.</p></li>
+</ul>
+<p>
+Weitere Informationen über die Installation und den Betrieb von X11 gibt es
+online bei <link url="/doc/x11/">X11 on Darwin and Mac OS X document</link>.
+</p>
+</section>
+
+</chapter>
+
+<chapter filename="install-up03">
+<title>Fink aktualisieren</title>
+<shorttitle>Aktualisieren</shorttitle>
+
+<preface>
+<p>
+Sie können Fink mit dem Kommando „selfupdate“ aktualisieren. Anmerkung: Es gibt
+<em>keine</em> Garantie, dass es ausreicht, wenn sie OS X aktualisierten.
+</p>
+</preface>
+
+<section name="packman"><title>Paketmanager aktualisieren</title>
+<p>
+Führen sie folgendes Kommando aus, um Fink zu aktualisieren:
+</p>
+<codeblock>fink selfupdate</codeblock>
+<p>
+Dies wird ihre vorhandene Fink-Installation so aktualisieren, dass sie den
+neuesten Paketmanager benutzt und sowieso alle essentiellen Pakete. Es wird aber
+keine anderen Pakete aktualisieren.
+</p>
+</section>
+
+<section name="update-all"><title>Pakete aktualisieren</title>
+<p>
+Die obigen Schritte aktualisieren keine Pakete. Sie stellen nur alles bereit,
+was sie dazu brauchen. Der einfachste Weg, die neuen Pakete zu erhalten, ist das
+Kommando „update-all“:
+</p>
+<codeblock>fink update-all</codeblock>
+<p>
+Die aktualisiert alle Paketbeschreibungen auf die neueste Version.
+Wenn sie das nicht wollen (z. B. weil es ganz schön lange dauert), dann können
+sie einzelne Pakete mit dem Kommando „update“ aktualiseren.
+</p>
+</section>
+
+</chapter>
+
+<chapter filename="install-up02">
+<title>Sauberes Aktualisieren</title>
+<shorttitle>Sauber</shorttitle>
+
+<preface>
+<p>
+	Es gibt Situationen, die normalerweise nicht jeden Tag auftreten, in denen man
+  Fink ein zweites Mal installieren muss.
+</p>
+</preface>
+
+<section name="cleaninst"><title>Situationen, die ein sauberes Reinstall erfordern</title>
+<ul>
+  <li>
+    <p>Sie wollen Fink in einen anderen Pfad verschieben.</p>
+  </li>
+  <li>
+    <p>
+      Sie wollen oder haben bereits OS X auf eine Version aktualisiert, für die
+      Fink keinen Aktualisierungsweg anbietet
+    </p>
+    <p>- 10.4 -> 10.6+</p>
+    <p>- 10.5 -> 10.7+</p>
+    <p>- 10.6 -> 10.7+</p>
+    <p>- 10.8- -> 10.9+</p>
+  </li>
+  <li>
+    <p>
+      Ihre Fink-Installation hat Bibliotheken verlinkt, z. B. mit MacPorts oder
+      in <filename>/usr/local</filename>, die auf ihrem Rechner gelöscht wurden
+      und infolge davon Bibliotheken oder Programme zerstört sind.
+    </p>
+  </li>
+</ul>
+</section>
+
+<section name="backup"><title>Sicherungskopie für Zeitersparnis</title>
+<p>
+Will man nach einer Re-Installation von Fink Zeit sparen, kann man eine Liste
+der installierten Pakete erhalten. Folgende Kommandos in ein Terminal-Fenster
+eingegeben funktionieren, sogar wenn die Fink-Tools nicht vorhanden sind.
+</p>
+<codeblock>grep -B1 "install ok installed" /sw/var/lib/dpkg/status \
+| grep "^Package:" | cut -d: -f2 | cut -d\  -f2 > finkinst.txt</codeblock>
+<p>
+Dies wird die Liste ihrer Pakete in der Datei <filename>finkinst.txt</filename>
+im aktuellen Arbeitsverzeichnis abspeichern.
+</p>
+<p>
+Sie können auch die Quellen in <filename>/sw/src</filename> in ein anderes
+Verzeichnis verschieben oder kopieren, so dass sie die Zeit für das Herunterladen
+der Quellen sparen können, wenn sie ihre Fink-Distribution wieder einrichten.
+</p>
+<p>
+Sollten sie globale Änderungen in einem ihrer Pakete gemacht haben, in dem sie
+Konfigurationsdateien in <filename>/sw/etc</filename>, geändert haben, dann
+können sie diese Dateien sichern.
+</p>
+</section>
+
+<section name="removing"><title>Ein altes Fink löschen</title>
+<p>
+Haben sie alles in einer <xref section="backup">Sicherungskopie</xref>
+gesichert, können sie ihre Fink-Distribution entfernen. Löschen sie
+<filename>/sw</filename> sowie alles in <filename>/Applications/Fink</filename>
+entweder im Finder oder in der Kommandozeile:
+</p>
+<codeblock>sudo rm -rf /sw /Applications/Fink/*</codeblock>
+<p>
+(Ersetzen sie <filename>/sw</filename> durch ihren aktuellen Fink-Baum).
+</p>
+</section>
+
+<section name="reinstalling"><title>Fink erneut installieren</title>
+<p>
+Folgen sie als erstes den Anweisungen im Abschnitt
+<xref chapter="install-first">Erst-Installation</xref>.
+</p>
+<p>
+  Nachdem sie die Paketbeschreibungen herunter geladen haben, verschieben sie
+  die Quellen, die sie <xref section="backup">gesichert</xref> haben in
+  <filename>/sw/src</filename> entweder mit dem Finder oder in der Kommandozeile:
+</p>
+<codeblock>sudo cp /path/to/backup/* /sw/src</codeblock>
+<p>
+  (Wie üblich, ersetzen sie <filename>/sw</filename> mit ihrem tatsächlichen
+  Fink-Baum). Wenn sie wollen, können sie <code>fink configure</code> verwenden,
+  um den Pfad zu ihrem Sicherungsverzeichnis anzugeben:
+</p>
+<codeblock>In what additional directory should Fink look for downloaded tarballs? [] 
+<em>(enter your backup directory at the prompt)</em>. 
+</codeblock>
+<p>
+  Anmerkung: Dies erfordert, dass der gesamte Pfad zum Sicherungsverzeichnis und
+  das Verzeichnis selbst von allen (world) gelesen werden kann.
+</p>
+<p>
+  Sie können zu diesem Zeitpunkt auch die globalen Konfigurationsdateien
+  einspielen. Anmerkung: Wir raten dringend die Datei
+  <filename>/sw/etc/fink.conf</filename> aus einer früheren Installation wegen
+  Inkompatibilitäten <em>nicht</em> zurück zu spielen. Sie können die Datei
+  mit einem Texteditor öffnen und entsprechende Werte nach
+  <code>fink configure</code> eingeben.
+</p>
+
+</section>
+
+</chapter>
+
+</document>

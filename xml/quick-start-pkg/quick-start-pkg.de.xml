@@ -247,7 +247,7 @@ finkdev% fink install paketname
     <section name="Basics">
       <title>Grundlagen</title>
       <p>
-        Als erstes Maxwell. Öffnen sei einen Editor und es kann lso gehen. Sie wissen den
+        Als erstes Maxwell. Öffnen sie einen Editor und es kann los gehen. Sie wissen den
         Namen des Pakets, seine Version und wo man den Quellcode-Tarball bekommt. Tragen
         sie dies in ihr Editorfenster ein:
       </p>
@@ -259,7 +259,7 @@ Source: mirror:sourceforge:%n/%n-%v.tar.gz
 </codeblock>
       <p>
         Package und Version sind offensichtlich, aber welche Bedeutung haben die
-        beiden anderen Felder. Revision ist die &quot;version&quot; des Fink-Pakets
+        beiden anderen Felder? Revision ist die &quot;version&quot; des Fink-Pakets
         während Version die Upstream-Version des Quellcodes ist. Da es der erste
         Versuch ist, ein Paket für maxwell-0.5.1 zu erstellen, bekommt das Paket die
         Revisionsnummer 1.

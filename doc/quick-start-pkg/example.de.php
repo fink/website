@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging Tutorial - Beispiel";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/03/05 23:40:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Packaging Tutorial Contents"><link rel="prev" href="howtostart.php?phpLang=de" title="Der Anfang">';
 
 
@@ -16,7 +16,7 @@ include_once "header.de.inc";
     <h2><a name="Basics">2.1 Grundlagen</a></h2>
       
       <p>
-        Als erstes Maxwell. Öffnen sei einen Editor und es kann lso gehen. Sie wissen den
+        Als erstes Maxwell. Öffnen sie einen Editor und es kann los gehen. Sie wissen den
         Namen des Pakets, seine Version und wo man den Quellcode-Tarball bekommt. Tragen
         sie dies in ihr Editorfenster ein:
       </p>
@@ -28,7 +28,7 @@ Source: mirror:sourceforge:%n/%n-%v.tar.gz
 </pre>
       <p>
         Package und Version sind offensichtlich, aber welche Bedeutung haben die
-        beiden anderen Felder. Revision ist die "version" des Fink-Pakets
+        beiden anderen Felder? Revision ist die "version" des Fink-Pakets
         während Version die Upstream-Version des Quellcodes ist. Da es der erste
         Versuch ist, ein Paket für maxwell-0.5.1 zu erstellen, bekommt das Paket die
         Revisionsnummer 1.
