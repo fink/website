@@ -43,13 +43,13 @@ include_once "header.inc";
 
     <ul>
       <li>
-        <a href="bundled/install.php">Installation and Upgrading</a> -
+        <a href="install/index.php">Installation and Upgrading</a> -
         como instalar o Fink ou atualizá-lo para uma versão nova
         <b>(em inglês)</b>
       </li>
 
       <li>
-        <a href="bundled/usage.php">Usage</a> - como usar o Fink e os
+        <a href="usage/index.php">Usage</a> - como usar o Fink e os
         softwares instalados
         <b>(em inglês)</b>
       </li>

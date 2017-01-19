@@ -43,11 +43,11 @@ weniger veraltet sind und nicht mehr gepflegt werden:
     </p>
     <ul>
       <li>
-<a href="bundled/install.php">Installation und Aktualisierung</a> -
+<a href="install/index.php">Installation und Aktualisierung</a> -
 Wie installiert man Fink und wie aktualisiert man auf eine neue Version
       </li>
       <li>
-<a href="bundled/usage.php">Nutzung</a> - Wie benutzt man Fink und
+<a href="usage/index.php">Nutzung</a> - Wie benutzt man Fink und
 die installierte Software
       </li>
       <li>

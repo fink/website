@@ -36,9 +36,9 @@ A bunch of documents that are more complete, but slightly outdated and
 no longer maintained:
 </p>
     <ul>
-      <li><a href="bundled/install.php">Installation and Upgrading</a> - how
+      <li><a href="install/index.php">Installation and Upgrading</a> - how
 to install Fink or upgrade to a new version</li>
-      <li><a href="bundled/usage.php">Usage</a> - how to use Fink
+      <li><a href="usage/index.php">Usage</a> - how to use Fink
 and the installed software</li>
       <li><a href="readme.php">Fink ReadMe</a> - the ReadMe for the
 source distribution</li>

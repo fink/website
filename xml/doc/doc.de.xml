@@ -42,13 +42,13 @@ weniger veraltet sind und nicht mehr gepflegt werden:
     </p>
     <ul>
       <li>
-<varlink url="bundled/install.php"
-varurl="bundled/install.de.html">Installation und Aktualisierung</varlink> -
+<varlink url="install/index.php"
+varurl="install/install.de.html">Installation und Aktualisierung</varlink> -
 Wie installiert man Fink und wie aktualisiert man auf eine neue Version
       </li>
       <li>
-<varlink url="bundled/usage.php"
-varurl="bundled/usage.de.html">Nutzung</varlink> - Wie benutzt man Fink und
+<varlink url="usage/index.php"
+varurl="usage/usage.de.html">Nutzung</varlink> - Wie benutzt man Fink und
 die installierte Software
       </li>
       <li>
