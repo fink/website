@@ -32,12 +32,12 @@
             устаревших и более не поддерживаемых:</p>
         <ul>
             <li>
-                <varlink url="bundled/install.php"
-                    varurl="bundled/install.en.html">Инсталляция и
+                <varlink url="install/index.php"
+                    varurl="install/install.en.html">Инсталляция и
                 обновление</varlink> - инсталляция Fink и обновление до новой версии</li>
             <li>
-                <varlink url="bundled/usage.php"
-                varurl="bundled/usage.en.html">Использование</varlink> - использование Fink
+                <varlink url="usage/index.php"
+                varurl="usage/usage.en.html">Использование</varlink> - использование Fink
                 и инсталлированного ПО</li>
             <li>
                 <varlink url="readme.php" varurl="readme.en.html">Fink

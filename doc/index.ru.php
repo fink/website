@@ -34,10 +34,10 @@ include_once "header.inc";
             устаревших и более не поддерживаемых:</p>
         <ul>
             <li>
-                <a href="bundled/install.php">Инсталляция и
+                <a href="install/index.php">Инсталляция и
                 обновление</a> - инсталляция Fink и обновление до новой версии</li>
             <li>
-                <a href="bundled/usage.php">Использование</a> - использование Fink
+                <a href="usage/index.php">Использование</a> - использование Fink
                 и инсталлированного ПО</li>
             <li>
                 <a href="readme.php">Fink

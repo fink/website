@@ -5,10 +5,10 @@
 basedir = ..
 
 SOURCE = usage
-TARGET = usage.php usage.en.txt
+TARGET = index.php usage.en.txt
 WANT_TEXT = 1
 WANT_HTML = 1
-DESTDIR = doc/bundled
+DESTDIR = doc/usage
 
 LANGUAGES_AVAILABLE = en de es
 LANGUAGES = $(LANGUAGES_AVAILABLE)

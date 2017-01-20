@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <!DOCTYPE article SYSTEM "../finkdoc.dtd">
 
-<article filename="usage" lang="de">
+<article filename="index" lang="de">
 <title>Fink Nutzung</title>
 <shorttitle>Nutzung</shorttitle>
 <cvsid>$Id: usage.xml,v 1.16 2012/11/11 15:20:17 kamischi Exp $</cvsid>

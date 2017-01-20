@@ -5,11 +5,11 @@
 basedir = ..
 
 SOURCE = install
-TARGET = install.php install-fast.php install-first.php \
+TARGET = index.php install-fast.php install-first.php \
 	 install-up03.php install-up02.php install.en.txt
 WANT_TEXT = 1
 WANT_HTML = 1
-DESTDIR = doc/bundled
+DESTDIR = doc/install
 
 LANGUAGES_AVAILABLE = en de
 LANGUAGES = $(LANGUAGES_AVAILABLE)

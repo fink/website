@@ -2,7 +2,7 @@
 $title = "Installation";
 $cvs_author = 'Author: kamischi';
 $cvs_date = 'Date: 2015/11/01 02:12:02';
-$metatags = '<link rel="contents" href="install.php?phpLang=de" title="Installation Contents"><link rel="next" href="install-fast.php?phpLang=de" title="Schnellanleitung">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Installation Contents"><link rel="next" href="install-fast.php?phpLang=de" title="Schnellanleitung">';
 
 
 include_once "header.de.inc";
