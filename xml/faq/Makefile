@@ -13,7 +13,7 @@ TARGET = index.php general.php relations.php \
 WANT_HTML = 1
 DESTDIR = faq
 
-LANGUAGES_AVAILABLE = en fr ja zh es ru pt
+LANGUAGES_AVAILABLE = en de es fr ja pt ru zh
 LANGUAGES = $(LANGUAGES_AVAILABLE)
 include $(basedir)/Makefile.common
 
