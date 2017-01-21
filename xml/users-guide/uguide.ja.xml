@@ -8,8 +8,8 @@
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
 (以下のドキュメントはより広範囲なことについて書かれています:
-<link url="/doc/bundled/install.php" >インストール</link>,
-<link url="/doc/bundled/usage.php" >使用方法</link>
+<link url="/doc/install/index.php" >インストール</link>,
+<link url="/doc/usage/index.php" >使用方法</link>
 およびバイナリのディスクイメージにある ReadMe.rtf 。)
 ウェブサイト中の <link url="/doc/" >文書 セクション</link> も併せて参照ください。
 ここに書かれていること以上の内容を含んでいます。

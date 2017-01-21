@@ -11,8 +11,8 @@ include_once "header.en.inc";
     <p>
 This document gives an overview over all features of Fink.
 (The following older documents may offer a broader view:
-<a href="/doc/bundled/install.php">Installation</a>,
-<a href="/doc/bundled/usage.php">Usage</a>
+<a href="/doc/install/index.php">Installation</a>,
+<a href="/doc/usage/index.php">Usage</a>
 and the ReadMe.rtf included in the binary distribution disk image.)
 Also check out the
 <a href="/doc/">documentation

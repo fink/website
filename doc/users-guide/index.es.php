@@ -11,8 +11,8 @@ include_once "header.es.inc";
   <p>Atención: la versión española de este documento no se sincroniza con la versión inglesa.</p>
     <p>This document gives an overview over all features of Fink.
 (The following older documents may offer a broader view:
-<a href="/doc/bundled/install.php">Instalación</a>,
-<a href="/doc/bundled/usage.php">Uso</a>
+<a href="/doc/install/index.php">Instalación</a>,
+<a href="/doc/usage/index.php">Uso</a>
 y el ReadMe.rtf incluido en la imagen de disco de la distribución binaria.)
 También revise:<a href="/doc/">Sección de
 Documentación</a> en el sitio web, tiene algunos otros documentos útiles.
