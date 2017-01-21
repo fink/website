@@ -9,8 +9,8 @@ include_once "header.pt.inc";
 ?>
 <h1>Guia do usuário do Fink</h1>
     <p>Este documento provê uma visão geral de todas as características do
-    Fink. Os documentos a seguir podem oferecer uma visão mais ampla: <a href="/doc/bundled/install.php">Instalação</a>,
-    <a href="/doc/bundled/usage.php">Formas de
+    Fink. Os documentos a seguir podem oferecer uma visão mais ampla: <a href="/doc/install/index.php">Instalação</a>,
+    <a href="/doc/usage/index.php">Formas de
     uso</a> e o arquivo LeiaMe.rtf (incluído na imagem de disco da
     distribuição de binários).  Verifique também a <a href="/doc/">seção de documentação</a> do site;
     ela contém alguns outros documentos úteis.</p>

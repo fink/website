@@ -8,8 +8,8 @@
   <p>Atención: la versión española de este documento no se sincroniza con la versión inglesa.</p>
     <p translated="no">This document gives an overview over all features of Fink.
 (The following older documents may offer a broader view:
-<link url="/doc/bundled/install.php">Instalación</link>,
-<link url="/doc/bundled/usage.php">Uso</link>
+<link url="/doc/install/index.php">Instalación</link>,
+<link url="/doc/usage/index.php">Uso</link>
 y el ReadMe.rtf incluido en la imagen de disco de la distribución binaria.)
 También revise:<link url="/doc/">Sección de
 Documentación</link> en el sitio web, tiene algunos otros documentos útiles.

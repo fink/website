@@ -8,8 +8,8 @@
   <p>Achtung: die deutsche Version dieses Dokuments ist nicht mit der Englische Version synchron.</p>
     <p>Dieses Dokument gibt einen Überblick über alle Features von Fink.
 (Die folgenden, älteren Dokumente geben einen etwas breiteren Blick auf Fink
-<link url="/doc/bundled/install.php">Installation</link>,
-<link url="/doc/bundled/usage.php">Nutzung</link>
+<link url="/doc/install/index.php">Installation</link>,
+<link url="/doc/usage/index.php">Nutzung</link>
 und die ReadMe.rtf, welche sich auf dem Medium der Binärdistribution befindet.)
 Überprüfen Sie außerdem den
 <link url="/doc/">Dokumentationsteil</link> der Webseite, er hat auch einige nützliche Dokumente.</p>

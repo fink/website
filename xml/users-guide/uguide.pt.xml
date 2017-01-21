@@ -8,8 +8,8 @@
   <preface>
     <p>Este documento provê uma visão geral de todas as características do
     Fink. Os documentos a seguir podem oferecer uma visão mais ampla: <link
-    url="/doc/bundled/install.php">Instalação</link>,
-    <link url="/doc/bundled/usage.php">Formas de
+    url="/doc/install/index.php">Instalação</link>,
+    <link url="/doc/usage/index.php">Formas de
     uso</link> e o arquivo LeiaMe.rtf (incluído na imagem de disco da
     distribuição de binários).  Verifique também a <link
     url="/doc/">seção de documentação</link> do site;

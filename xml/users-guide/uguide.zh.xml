@@ -10,8 +10,8 @@
       This document gives an overview over all features of Fink.
       <!-- end translation -->
 (下面的旧文档可以给你更详尽的概念：
-<link url="/doc/bundled/install.php" >安装</link>,
-<link url="/doc/bundled/usage.php" >使用</link>
+<link url="/doc/install/index.php" >安装</link>,
+<link url="/doc/usage/index.php" >使用</link>
 以及包括在发行安装版本的磁盘映象中的 ReadMe.rtf 文件。)
 同时也可以查阅本网站的
 <link url="/doc/" >文档部分</link> ，它包括一些其它的有用资讯。
