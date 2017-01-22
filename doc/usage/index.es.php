@@ -125,6 +125,6 @@ include_once "header.inc";
 
       pregunte ahí.</p>
    
-<?php include_once "../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 
