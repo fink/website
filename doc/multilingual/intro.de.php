@@ -1,7 +1,7 @@
 <?php
 $title = "i18n - Intro";
-$cvs_author = 'Author: KMS';
-$cvs_date = 'Date: 2012/11/11 15:20:15';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/19 15:28:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="i18n Contents"><link rel="next" href="files.php?phpLang=de" title="Die Dokumentationsdateien"><link rel="prev" href="index.php?phpLang=de" title="i18n Contents">';
 
 
@@ -19,7 +19,7 @@ include_once "header.de.inc";
       hat, in dem mehrere Sprachen verwendet werden können.
       </p>
     
-    <h2><a name="languages">1.2 Sprache</a></h2>
+    <h2><a name="languages">1.2 Sprachen</a></h2>
       
       <p>Für folgende Sprachen gibt es Freiwillige:</p>
       <ul>
@@ -49,7 +49,7 @@ include_once "header.de.inc";
       </p>
       <ul>
         <li>
-        Beteiligen sie sich an Diskussionen auf den Mailing-Liste <a href="/lists/fink-i18n.php">fink-i18n</a>. Hier werden
+        Beteiligen sie sich an Diskussionen auf der Mailing-Liste <a href="/lists/fink-i18n.php">fink-i18n</a>. Hier werden
         Mechanismen der Internationalisierung diskutiert, neue Versionen
         von Dokumenten angekündigt und vieles anderes mehr.
         </li>
@@ -60,7 +60,7 @@ include_once "header.de.inc";
         </li>
         <li>
         Werden sie selbst ein Übersetzer. Wenn ihre Sprache noch nicht
-        vorhanden ist (baer auch wenn sie es ist), und sie denken, dass sie
+        vorhanden ist (aber auch wenn sie es ist), und sie denken, dass sie
         gute Übersetzungen liefern können, können sie gerne als
         freiwilliger Übersetzer für ihre Sprache mitarbeiten.
         <p>

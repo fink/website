@@ -1,7 +1,7 @@
 <?php
 $title = "i18n - Dateien";
-$cvs_author = 'Author: KMS';
-$cvs_date = 'Date: 2012/11/11 15:20:15';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/19 15:28:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="i18n Contents"><link rel="next" href="procedure.php?phpLang=de" title="Dokumente aktualisieren"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
 
@@ -13,7 +13,7 @@ include_once "header.de.inc";
     
       <p>
       In diesem Kapitel werden die Dokumentationsdateien von Fink erklärt,
-      wie man auf sie zugreift, wie man Änderungen an die Fink Webseiten
+      wie man auf sie zugreift, wie man Änderungen an die Fink-Webseiten
       sendet und sie aktiviert.
       </p>
     
@@ -29,7 +29,7 @@ include_once "header.de.inc";
         </li>
         <li>
         Einen UTF-8 kompatibler Text-Editor. Ein spezieller XML-Editor ist
-        von Vorteil, weil viele Dateien der Fink Webseite aus XML-Dateien
+        von Vorteil, weil viele Dateien der Fink-Webseite aus XML-Dateien
         erzeugt werden.
         </li>
         <li>
@@ -42,7 +42,7 @@ include_once "header.de.inc";
       <p>
       <b>Notiz:</b> Als "Team-Mitglied" bezeichnet man Übersetzer, die
       aber letztlich nicht dafür verantwortlich sind, die Dateien auf die
-      Fink Webseiten hoch zu laden.
+      Fink-Webseiten hoch zu laden.
       </p>
       <p>
       "Team-Leiter" müssen die obigen Voraussetzungen erfüllen. Darüber
@@ -53,16 +53,16 @@ include_once "header.de.inc";
         Ein Konto bei SourceForge (kostenlose Registrierung).
         </li>
         <li>
-        "Commit"-Zugriff auf den Fink Dokumentationsbaum. Senden sie
-        dafür eine Nachricht an die fink-18n Mailing-Liste, in der sie
+        "Commit"-Zugriff auf den Fink-Dokumentationsbaum. Senden sie
+        dafür eine Nachricht an die Mailing-Liste fink-18n, in der sie
         ihren SourceForge-Nutzernamen mitteilen. Sobald jemand aus dem
-        i18n Kern-Team es einrichtet, haben sie CVS-Zugang zum
+        i18n-Kern-Team es einrichtet, haben sie CVS-Zugang zur
         Dokumentation.
         </li>
       </ul>
       <p>
       <b>Notiz: </b>Als "Team-Leiter" werden die bezeichnet, die
-      tatsächlich für das Hochladen geänderter Dateien auf die Fink
+      tatsächlich für das Hochladen geänderter Dateien auf die Fink-
       Webseite verantwortlich sind und diese Änderungen aktivieren.
       </p>
     
@@ -72,7 +72,7 @@ include_once "header.de.inc";
       Es ist ratsam, einige Einstellungen in der Umgebung vorzunehmen, um
       sich später Tipparbeit zu sparen. Es wird im folgenden davon
       ausgegangen, dass man die eingebauten Kommandozeilen-Tools von Mac OS
-      X oder einem anderen Unix-ähnlichem System benutzt.
+      X oder einem anderen Unix-ähnlichen System benutzt.
       </p>
       <ol>
         <li>
@@ -81,8 +81,8 @@ include_once "header.de.inc";
           <ol>
             <li>
             Benutzen sie <code>bash</code> oder
-            <code>zsh</code> fügen sie folgendes <pre>export
-            CVS_RSH=ssh</pre> in ihrer Datei
+            <code>zsh</code>, fügen sie folgendes
+            <pre>export CVS_RSH=ssh</pre> in ihrer Datei
             <code>.profile</code> hinzu.
             </li>
             <li>
@@ -98,9 +98,9 @@ include_once "header.de.inc";
         </li>
         <li>
         <b>Alle Mitgleider</b>: Erzeugen sie eine Datei namens .cvsrc in
-        ihrem Heimatordner mit der folgenden Zeile: <pre>cvs
-        -z3</pre> Damit arbeitet CVS mit Kompression der Stufe 3 als
-        Voreinstellung (Das ist gut so!)
+        ihrem Heimatordner mit der folgenden Zeile:
+        <pre>cvs -z3</pre> Damit arbeitet CVS mit Kompression der
+        Stufe 3 als Voreinstellung (Das ist gut so!)
         </li>
       </ol>
       <p>
@@ -109,7 +109,7 @@ include_once "header.de.inc";
       eingeschaltet ist.
       </p>
     
-    <h2><a name="acquiring">2.3 Dateien für die Bearbeitung abholen</a></h2>
+    <h2><a name="acquiring">2.3 Dateien für die Bearbeitung herunter laden</a></h2>
       
       <p>
       Als erstes benötigt man den xml-Ast der Webseiten:
@@ -132,27 +132,24 @@ include_once "header.de.inc";
         fink.cvs.sourceforge.net:
           <ol>
             <li>
-            <pre>cvs
-            -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink
-            login</pre>
+            <pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink login</pre>
             </li>
             <li>
             Drücken sie die Enter-Taste (kein Passwort, anonym als 
             Voreinstellung)
             </li>
             <li>
-            "Check out" der xml-Module: <pre>cvs
-            -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co
-            xml</pre>
+            "Check out" der xml-Module:
+            <pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink co xml</pre>
             </li>
           </ol>
           <b>Team-Leiter: </b>"Check out" unter Benutzung des Nutzernamens:
           <ol>
             <li>
             Man muss den obigen Login-Schritt nicht machen, sondern kann
-            gleich folgendes ausführen: <pre>cvs
-            -d:ext:yourusername@fink.cvs.sourceforge.net:/cvsroot/fink co
-            xml</pre> wobei <b>yourusername</b> natürlich ihr
+            gleich folgendes ausführen:
+            <pre>cvs -d:ext:yourusername@fink.cvs.sourceforge.net:/cvsroot/fink co xml</pre>
+            wobei <b>yourusername</b> natürlich ihr
             Nutzername bei SourceForge ist. Möglicherweise bekommen sie
             eine Meldung, dass der DSA-Schlüssel des Servers unbekannt
             ist. Einfach weiter machen und mit "yes" beantworten.
@@ -216,9 +213,9 @@ include_once "header.de.inc";
         B.: <pre>cd ~/Documents/Fink-i18n/xml</pre>
         </li>
         <li>
-        Aktualisieren sie: <pre>cvs
-        -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink update
-        -dP</pre> für Team-Mitgleider ohne "Commit"-Zugang. oder
+        Aktualisieren sie:
+        <pre>cvs -d:pserver:anonymous@fink.cvs.sourceforge.net:/cvsroot/fink update -dP</pre>
+        für Team-Mitgleider ohne "Commit"-Zugang. oder
         <pre>cvs update -dP</pre> für Teamleiter.
         </li>
       </ol>
@@ -270,7 +267,7 @@ include_once "header.de.inc";
       <p>
       Die Dateien <code>constants.*.inc</code> und
       <code>nav.*.inc</code> dienen dazu, hart Kodiertes in den php
-      include Dateien zu behandlen. Es dreht sich vor allem um
+      include-Dateien zu behandlen. Es dreht sich vor allem um
       Menu-Einträge und ähnliches, die oben und links auf den Seiten
       stehen. Sie sollten sie von den Skripten lösen und entsprechende
       "constants.xx.inc"-Dateien in ihrer Sprache erstellen. Dafür geben
@@ -351,16 +348,15 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
         </li>
         <li>
         Ändern sie die Zeile, dass die Datei in Französisch ist und seine
-        Kodierung UTF-8 <pre>&lt;?xml version='1.0' encoding='utf-8'
-        ?&gt; ... &lt;document filename="index" lang="fr" &gt;
-        ...</pre>
+        Kodierung UTF-8
+        <pre>&lt;?xml version='1.0' encoding='utf-8' ?&gt; ... &lt;document filename="index" lang="fr" &gt; ...</pre>
         </li>
         <li>
         <b>Sehr wichtige Notiz:</b> Überprüfen sie, dass die Zeile mit
         "cvsid" am Anfang der Datei nicht geteilt ist.
         </li>
         <li>
-        Speichern mit utf-8 Kodierung. Beachten sie, dass die Kodierung
+        Speichern mit utf-8-Kodierung. Beachten sie, dass die Kodierung
         utf-8 sein muss und dass wirklich nur tatsächlicher Text und
         nichts anderes geändert wird.
         </li>
@@ -377,7 +373,7 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
       </ol>
       <p>
       Notiz: Sollten sie Fehler in der englischen Datei finden, dann nicht
-      ändern, sondern einen Bericht auf der <a href="/lists/fink-i18n.php">fink-i18n Mailing-Liste</a> erstellen,
+      ändern, sondern einen Bericht auf der <a href="/lists/fink-i18n.php">Mailing-Liste fink-i18n</a> erstellen,
       damit die englische "Master"-Datei geändert wird.
       </p>
     
@@ -389,14 +385,14 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
       </p>
       <ul>
         <li>
-        <b>Der einfache Weg: </b>Öffnen sie die HMTL- und PHP-Dateienin
+        <b>Der einfache Weg: </b>Öffnen sie die HMTL- und PHP-Dateien in
         ihrem Web-Browser. PHP-Dateien sehen allerdings nicht exakt so aus
         wie auf der Webseite.
         </li>
         <li>
           <b>Der beste Weg: </b>Sie können ihren eingebauten Webserver
           dazu benutzen, sich die Seiten so anzeigen zu lassen, wie sie auf
-          der Fink Webseite aussehen. Angenommen sie benutzen den
+          der Fink-Webseite aussehen. Angenommen sie benutzen den
           vorhandenen Server:
           <ol>
             <li>
@@ -404,19 +400,21 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
             mittels: <pre>sudo pico /etc/httpd/httpd.conf</pre>
             </li>
             <li>
-            Suchen sie diese Zeile: <pre>#LoadModule php
-            libexec/httpd/libphp4.so</pre> und entfernen sie "#"
+            Suchen sie diese Zeile:
+            <pre>#LoadModule php libexec/httpd/libphp4.so</pre>
+            und entfernen sie "#"
             </li>
             <li>
-            Suchen sie diese Zeile: <pre>#AddModule
-            mod_php4.c</pre> und entfernen sie "#"
+            Suchen sie diese Zeile:
+            <pre>#AddModule mod_php4.c</pre>
+            und entfernen sie "#"
             </li>
             <li>
             Haben sie eine Version von Apache, die älter is als die
             built-in Version auf Panther, dann suchen sie nach einer Zeile,
-            die so oder so ähnlich aussieht: <pre>AddType
-            application/x-httpd-php .php</pre> und stellen sie ein
-            "#" an den Anfang.
+            die so oder so ähnlich aussieht:
+            <pre>AddType application/x-httpd-php .php</pre>
+            und stellen sie ein "#" an den Anfang.
             </li>
             <li>
             Speichern sie die Datei und beenden sie den Editor.
@@ -454,11 +452,11 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
             von SourceForge folgen.
             </li>
             <li>
-            Geben sie folgendes Kommando im Terminal ein: <pre>cat
-            ~/.ssh/id_dsa.pub | pbcopy</pre> Damit wird der Inhalt
-            der Datei direkt und ohne Zeilenenden in ihr Pasteboard
-            kopiert. Versichern sie sich, dass sie nichts anderes in ihr
-            Pasteboard kopieren bis sie fertig sind.
+            Geben sie folgendes Kommando im Terminal ein:
+            <pre>cat ~/.ssh/id_dsa.pub | pbcopy</pre>
+            Damit wird der Inhalt der Datei direkt und ohne Zeilenenden in ihr
+            Pasteboard kopiert. Versichern sie sich, dass sie nichts anderes in
+            ihr Pasteboard kopieren bis sie fertig sind.
             </li>
             <li>
             Login mit ihrem Konto bei SourceForge.
@@ -492,11 +490,10 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
             <pre>cd ~/Documents/Fink-i18n</pre>
             </li>
             <li>
-            Machen sie den "Checkout" des xml-Baums: <pre>cvs
-            -d:ext:yourusername@fink.cvs.sourceforge.net:/cvsroot/fink co
-            xml</pre> wobei <b>yourusername</b> natürlich ihr
-            Nutzername bei SourceForge ist. Geben sie auf nachfrage ihr
-            Passwort ein.
+            Machen sie den "Checkout" des xml-Baums:
+            <pre>cvs -d:ext:yourusername@fink.cvs.sourceforge.net:/cvsroot/fink co xml</pre>
+            wobei <b>yourusername</b> natürlich ihr Nutzername bei SourceForge
+            ist. Geben sie auf Nachfrage ihr Passwort ein.
             </li>
             <li>
             Kopieren sie die bearbeiteten Dateien aus ihrem alten Baum in
@@ -512,9 +509,9 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
       
       <p>
       Jetzt muss man die Änderungen auf den Hauptserver übertragen,
-      wofür man "Commit" Zugang benötigt. Achten sie darauf, dass sie
+      wofür man "Commit"-Zugang benötigt. Achten sie darauf, dass sie
       die neueste Version von XSLT installiert haben, derzeit
-      <code>libxslt-1.1.28-2</code> von Fink.
+      <code>libxslt-1.1.29-1</code> von Fink.
       </p>
       <p>
       Das Vorgehen unterscheidet sich, je nachdem, ob es statische oder
@@ -530,8 +527,8 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
             </li>
             <li>
             Wechseln sie in den Ordner mit den Dateien, die sie hoch laden
-            wollen, z. B.: <pre>cd
-            ~/Documents/Fink-i18n/xml/web</pre>
+            wollen, z. B.:
+            <pre>cd ~/Documents/Fink-i18n/xml/web</pre>
             <p>
             Haben sie ihren <code>xml</code>-Baum unter
             <code>Documents/Fink-i18n/</code> in ihrem Heimatordner
@@ -540,9 +537,9 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
             </li>
             <li>
             Ist die Datei neu von ihnen erstellt, müssen sie diese zuerst
-            zur Liste der Dateien hinzufügen: <pre>cvs add
-            download.ru.php</pre> Geben sie nach dem Prompt ihr
-            SourceForge-Passwort ein.
+            zur Liste der Dateien hinzufügen:
+            <pre>cvs add download.ru.php</pre>
+            Geben sie nach dem Prompt ihr SourceForge-Passwort ein.
             <p>
             Existierte die Datei bereits, können sie zum nächsten Schritt
             springen.
@@ -568,45 +565,46 @@ define (FOOTER_LAST_CHANGED, 'Last changed by {author} on %a, %d %B %Y,  %R %Z')
             </li>
             <li>
             Wechseln sie in den Ordner mit den Dateien, die sie geändert
-            oder hinzugefügt haben. Z. B.: <pre>cd
-            ~/Documents/Fink-i18n/xml/faq</pre>, wenn sie die FAQs
-            bearbeitet haben.
+            oder hinzugefügt haben, z. B.:
+            <pre>cd ~/Documents/Fink-i18n/xml/faq</pre>
+            , wenn sie die FAQs bearbeitet haben.
             </li>
             <li>
-            Geben sie nun folgendes Kommando ein: <pre>make
-            check</pre> Dies stellt sicher, dass die Datei korrekt
-            ist.
+            Geben sie nun folgendes Kommando ein:
+            <pre>make check</pre>
+            Dies stellt sicher, dass die Datei korrekt ist.
             </li>
             <li>
             Haben sie die xml-Datei neu erstellt, müssen sie die xml-Datei
             und ihr Makefile zur Liste der Dateien hinzufügen (unter der
             Annahme, dass den Makefile geändert haben, um ihre Sprache
-            hinzu zu fügen.): <pre>cvs add faq.ru.xml
-            Makefile</pre> Geben sie nach dem Prompt ihr
-            SourceForge-Passwort ein.
+            hinzu zu fügen.):
+            <pre>cvs add faq.ru.xml Makefile</pre>
+            Geben sie nach dem Prompt ihr SourceForge-Passwort ein.
             <p>
             Existierte die Datei bereits, können sie zum nächsten Schritt
             springen.
             </p>
             </li>
             <li>
-            Laden sie die Dateien hoch (commit): <pre>cvs ci -m
-            "message" faq.ru.xml Makefile</pre> wobei
-            <b>message</b> beschreiben sollte, was sie geändert haben.
+            Laden sie die Dateien hoch (commit):
+            <pre>cvs ci -m "message" faq.ru.xml Makefile</pre>
+            wobei <b>message</b> beschreiben sollte, was sie geändert haben.
             Geben sie nach dem Prompt ihr SourceForge-Passwort ein.
             </li>
             <li>
-            Führen sie nun folgende Kommandos aus: <pre>make
-            &amp;&amp; make install</pre>
+            Führen sie nun folgende Kommandos aus:
+            <pre>make &amp;&amp; make install</pre>
             </li>
             <li>
             Erhalten sie eine Fehlermeldung, dass ihr Ordner
             <code>foo</code> bei
             <code>xml/scripts/installer/dmg</code> nicht vorhanden
-            ist, wechseln sie dort hin mit: <pre>cd
-            ../scripts/installer/dmg</pre> und erzeugen sie den
-            Ordner mit: <pre>mkdir -p foo</pre>. Kehren sie
-            dann zurück in den vorigen Ordner und wiederholen sie
+            ist, wechseln sie dort hin mit:
+            <pre>cd ../scripts/installer/dmg</pre>
+            und erzeugen sie den Ordner mit:
+            <pre>mkdir -p foo</pre>
+            . Kehren sie dann zurück in den vorigen Ordner und wiederholen sie
             <pre>make &amp;&amp; make install</pre>.
             </li>
             <li>
@@ -630,8 +628,8 @@ web/faq/upgrade-fink.ru.php web/faq/mirrors.ru.php \
 web/faq/faq.ru.html web/faq/header.ru.inc \ 
 scripts/installer/dmg/faq.ru.html</pre>
             Für andere Dokumente heißen die Dateien natürlich anders.
-            Verwenden sie alle Dateien, die mittels <code>make
-            install</code> erzeugt wurden.
+            Verwenden sie alle Dateien, die mittels
+            <code>make install</code> erzeugt wurden.
             </li>
             <li>
             Vergessen sie nicht, Dateien, die sie erzeugt haben (z. B.
@@ -675,7 +673,7 @@ scripts/installer/dmg/faq.ru.html</pre>
         <li>
         Anmelden auf dem Webserver mittels ssh:
         <pre>ssh username@shell.sourceforge.net</pre>
-        Sie müüsen ihr SourceForge-Passwort eingeben.
+        Sie müssen ihr SourceForge-Passwort eingeben.
         </li>
         <li>
         Wechseln sie in den Ordner, der die Webseiten enthält:
@@ -685,7 +683,7 @@ scripts/installer/dmg/faq.ru.html</pre>
         Aktualisieren sie die Webseiten aus dem cvs:
         <pre>./update.sh</pre>
         <b>Wichtige Notiz:</b> Wenn sie dies machen, aktivieren sie
-        <b>alles</b> das in den Ordner <code>web/xml</code> geschoben
+        <b>alles</b>, das in den Ordner <code>web/xml</code> geschoben
         wurde.
         </li>
         <li>

@@ -1,7 +1,7 @@
 <?php
 $title = "i18n - Aktualisierung";
-$cvs_author = 'Author: KMS';
-$cvs_date = 'Date: 2012/11/11 15:20:15';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/19 15:28:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="i18n Contents"><link rel="next" href="resources.php?phpLang=de" title="Zusätzliche Quellen"><link rel="prev" href="files.php?phpLang=de" title="Die Dokumentationsdateien">';
 
 
@@ -25,9 +25,9 @@ include_once "header.de.inc";
       
       <p>
       Wird ein neues Dokument erstellt oder erfolgen Änderungen der
-      englischen Dokumentation, sollte eine Nachricht in der fink-18n
-      Mailing-Liste verfasst werden, die alle Übersetzer darüber
-      informiert. Die Nachricht sollte folgendes enthalten:
+      englischen Dokumentation, sollte eine Nachricht in der Mailing-Liste
+      fink-18n verfasst werden, die alle Übersetzer darüber informiert.
+      Die Nachricht sollte folgendes enthalten:
       </p>
       <ul>
         <li>
@@ -96,7 +96,7 @@ include_once "header.de.inc";
       immer die xml-Datei ändern.
       </p>
       <p>
-      <b>Überprüfe</b> das die Zeile mit cvsid am Anfang der xml-Datei
+      <b>Überprüfen</b>, dass die Zeile mit cvsid am Anfang der xml-Datei
       nicht aufgeteilt ist.
       </p>
       <p>
@@ -122,9 +122,9 @@ include_once "header.de.inc";
       In diesem Fall wird die englische Version der xml-Datei <a href="files.php?phpLang=de#committing">hoch geladen</a>, aber
       <b>nicht</b> die php- und html-Dateien, d.h. Stopp nach Schritt 5
       unter Dynamisch in Kapitel <a href="files.php?phpLang=de#committing">2.9</a>. Alle Übersetzer erledigen ihre
-      ARbeit und <a href="files.php?phpLang=de#committing">laden</a>
-      <b>nur</b> ihre xml-Datei hoch (d.h. genau wie für Englisch)
-      innerhalb eines vereinbarten Zeitraums. Alle php- und html-Dateien
+      Arbeit und <a href="files.php?phpLang=de#committing">laden</a>
+      innerhalb eines vereinbarten Zeitraums <b>nur</b> ihre xml-Datei hoch
+      (d.h. genau wie für Englisch). Alle php- und html-Dateien
       werden erzeugt, hoch geladen und gleichzeitig von einer Person,
       sprich jemand aus dem i18n-Core-Team, zu einem vereinbarten Zeitpunkt
       <a href="files.php?phpLang=de#website">aktiviert</a>.
