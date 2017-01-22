@@ -1,7 +1,7 @@
 <?php
 $title = "i18n - Quellen";
-$cvs_author = 'Author: KMS';
-$cvs_date = 'Date: 2012/11/11 15:20:15';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/19 15:28:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="i18n Contents"><link rel="next" href="appendix.php?phpLang=de" title="Anhang"><link rel="prev" href="procedure.php?phpLang=de" title="Dokumente aktualisieren">';
 
 
@@ -46,12 +46,12 @@ include_once "header.de.inc";
       </p>
       <ul>
         <li>
-        <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a> - Ein
-        moderner grafoscher Editor für Mac OS X, der Rendezvous beherrscht.
+        <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a>
+        - Ein moderner grafischer Editor für Mac OS X, der Rendezvous beherrscht.
         </li>
         <li>
         <a href="http://www.barebones.com/products/bbedit/index.shtml">BBEdit</a>
-        - Eine vielseitiger und gut bekannter Editor, aber kostenplichtig.
+        - Ein vielseitiger und gut bekannter Editor, aber kostenpflichtig.
         </li>
         <li>
         <a href="http://www.morphon.com/xmleditor/index.shtml">Morphon
