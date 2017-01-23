@@ -1,7 +1,7 @@
 <?php
 $title = "Fortgeschrittenes - Binärer Distro Server";
-$cvs_author = 'Author: MiSchi';
-$cvs_date = 'Date: 2012/11/11 15:20:12';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/18 23:50:43';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Fortgeschrittenes Contents"><link rel="prev" href="index.php?phpLang=de" title="Fortgeschrittenes Contents">';
 
 
@@ -14,7 +14,7 @@ include_once "header.de.inc";
       
       <p>
 Dieser Abschnitt beschreibt eine Methode für Arbeitsgruppen mit mehreren
-Fink Installationen, bei der ein zentraler Build_Server (der Master)
+Fink Installationen, bei der ein zentraler Build-Server (der Master)
 benutzt wird, der die binären Pakete an alle Klienten der Gruppe verteilt.
       </p>
       <p>
@@ -96,9 +96,9 @@ die Option ein, die Pakete aus einer binären Distribution zu beziehen.
 ("UseBinaryDist: true" in der Datei <code>/sw/etc/fink.conf</code>.)
         </li>
         <li>
-Editieren sie die Datei <code>/sw/etc/apt/sources.list</code>, and
+Editieren sie die Datei <code>/sw/etc/apt/sources.list</code> und
 fügen sie die Zeilen dazu, die ihren Fink-Baum repräsentieren. Wenn zum
-Beipsiel ihre IP-Adresse des Build-Servers 192.168.42.7 lautet, müssen sie
+Beipsiel die IP-Adresse ihres Build-Servers 192.168.42.7 lautet, müssen sie
 folgendes hinzufügen:
           <pre>
 deb http://192.168.42.7/fink stable main crypto
@@ -131,7 +131,7 @@ vorhanden in binärer Form vom "Master"-Server bezogen.
         <li>
 Ihr "Master"-Server muss die niedrigste Version von X11 benutzen, die auf
 einem ihrer Klienten-Rechner installiert ist. Mit anderen Worten: Benutzt
-einer ihrer Klienten-Rechner Apples X11, muss auch ihre "Master"-Server
+einer ihrer Klienten-Rechner Apples X11, muss auch ihr "Master"-Server
 Apples X11 benutzen.
         </li>
         <li>
