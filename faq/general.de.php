@@ -1,48 +1,96 @@
 <?php
-$title = "F.A.Q. - General";
+$title = "F.A.Q. - Allgemeines";
 $cvs_author = 'Author: kamischi';
 $cvs_date = 'Date: 2015/06/06 19:19:29';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=de" title="Relations with Other Projects"><link rel="prev" href="index.php?phpLang=de" title="F.A.Q. Contents">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=de" title="Verbindungen zu anderen Projekten"><link rel="prev" href="index.php?phpLang=de" title="F.A.Q. Contents">';
 
 
 include_once "header.de.inc";
 ?>
-<h1>F.A.Q. - 1. General Questions</h1>
+<h1>F.A.Q. - 1. Allgemeine Fragen</h1>
     
     
     <a name="what">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.1: What is Fink?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fink wants to bring more Unix software to Mac OS X, which results in two main goals:</p><p>Goal number one is porting software to Mac OS X. That means we take commodity Open Source Unix software and fix whatever is necessary so that it will compile and run on Mac OS X. Sometimes that's easy, but it can also be very hard or even impossible for some packages. We're trying to provide tools and documentation to make this easier.</p><p>Goal number two is making the results available to casual users.  For this, we build a distribution using package management tools ported over from Linux, namely <code>dpkg</code> and <code>apt-get</code>, written by and for the  <a href="http://www.debian.org/">Debian GNU/Linux</a> project. The binary distribution uses the <code>.deb</code> package format. For building packages from source, we have our own tool, named <code>fink</code>, which creates those <code>.deb</code> package files.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.1: Was ist Fink?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fink will mehr Unix-Programme auf Mac OS X zur Verfügung stellen.
+          Daraus ergeben sich zwei Ziele:</p><p>Das erste Ziel ist Programme nach Mac OS X zu portieren. Das bedeutet,
+          dass wir Open-Source Unix-Programme hernehmen und alles korrigieren,
+          damit sie auf Mac OS X übersetzt werden kann und lauft. Das ist bei
+          manchen Paketen ganz leicht, bei anderen aber sehr schwierig oder gar
+          unmöglich. Wo immer möglich, versucht Fink dies durch Hilfsmittel und
+          Dokumentation zu erleichtern.</p><p>Das zweite Ziel ist, die Ergebnisse für normale Nutzer zur Verfügung
+          stellen. Dazu wird eine sogenannte Distribution mit
+          Paket-Management-Tools erzeugt, die von Linux nach Mac OS X portiert
+          wurden, insbesondere <code>dpkg</code> und <code>apt-get</code>, die
+          von und für das Projekt
+          <a href="http://www.debian.org/">Debian GNU/Linux</a>
+          geschrieben wurden. Die binäre Distribution benutzt das
+          <code>.deb</code> Paketformat. Für die Erstellung der Pakete aus den
+          Quellen verwenden wir unser eigene Tool, <code>fink</code>, das die
+          <code>.deb</code> Paketdateien erzeugt.</p></div>
     </a>
     <a name="naming">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.2: What does the name Fink stand for?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 	Nothing, it's just a name. It's not even an acronym.</p><p>	Well, actually Fink is the German name for Finch, a kind of bird. I was looking for a name for the project, and the name of the OS, Darwin, led me to think about Charles Darwin, the Galapagos Islands and evolution. I remembered a piece about the so-called Darwin Finches and their beaks from school, and well, that's it...</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.2: Welche Bedeutung hat der Name Fink?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Keine. Es ist nicht einmal ein Akronym.</p><p>Wie sie wissen, ist ein Fink ein Vogel. Ausgehend vom Namen des
+          Betriebssystem, Darwin, dachten die Gründer von Fink an Charles
+          Darwin, die Galapagos-Inseln, Evolution, die Darwin-Finken und ihre
+          Schnäbel im Schulbuch. Das ist alles.</p></div>
     </a>
     <a name="bsd-ports">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.3: 	How is Fink different from the BSD port mechanism (this includes OpenPackages and GNU-Darwin)?
-		</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 	Some main advantages:</p><ul>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.3: Wie unterscheidet sich Fink vom BSD-Port-Mechanismus, einschließlich
+          OpenPackages und GNU-Darwin?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Die wichtigsten Vorteil:</p><ul>
           <li>
-            <p> It's written in Perl, not make/shell. Thus it  doesn't rely on special features only found in BSD make. There is no need to flag packages that need GNU make to build.</p>
+            <p>Fink ist in Perl geschrieben und nicht mit make/shell. Es
+              verlässt sich folglich nicht auf Besonderheiten in BSD make und
+              braucht keine Kennzeichen für Pakete, die GNU make benötigen.</p>
           </li>
           <li>
-            <p> dpkg provides sophisticated management for binary packages - smooth updating, special handling for configuration files, virtual packages and other advanced dependencies. </p>
+            <p>dpkg ist ein mächtiges Hilfsmittel für die Verwaltung binärer
+              Pakete - einfache Updates, separate Behandlung von
+              Konfigurationsdateien, virtuelle Pakete und weitere anspruchsvolle
+              Abhängigkeiten.</p>
           </li>
           <li>
-            <p> Fink doesn't install into /usr/local unless explicitly requested and doesn't require fiddling with /usr/bin/make or other system-provided commands. That makes it safer to use and reduces interference with Mac OS X and third-party packages to a minimum.</p>
+            <p>Fink installiert nichts in /usr/local außer es wird explizit
+              verlangt. Es kommt ohne Tricksereien mit /usr/bin/make oder
+              anderen Systemtools aus. Dadurch ist Fink sicherer zu benutzen und
+              verringert Konflikte mit Mac OS X und Dritt-Software auf ein
+              Minimum.</p>
           </li>
         </ul></div>
     </a>
     <a name="usr-local">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.4: Why doesn't Fink install into /usr/local?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 	There are several reasons, but the common line is "because breakage will occur".</p><p>	Reason One: Third-party software. /usr/local is the well-established place to put software that is not part of the system shipped by the original vendor. This means that it is a good place to put stuff. However, it also means that other people will put stuff there, too. Most install routines will just overwrite what's there - this also applies to dpkg. One can, of course, choose not to install third-party software in /usr/local. Unfortunately, most installers don't tell you beforehand what they will install where.</p><p>	Reason Two: /usr/local/bin is in the default PATH. This means that your shell will find the installed programs without additional measures. But it also means that you do have to take additional measures if you do not want to use the programs. In extreme cases, this can also affect the system itself - many parts depend on shell scripts.</p><p>	Reason Three: The compiler tool chain searches /usr/local by default. The compiler searches /usr/local/include for header files and the linker searches /usr/local/lib for libraries. Again, this is sometimes a welcome convenience, but it's very hard to disable should the need arise. You can easily disable the compiler by putting a garbage file called <code>stdio.h</code> into /usr/local/include.</p><p>	All that said, it is possible to install Fink into /usr/local. The installation script will warn you explicitly, but proceed once you acknowledge that you're doing this at your own risk.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.4: Warum installiert Fink nichts in /usr/local?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Es gibt mehrere Gründe, aber das gemeinsame für alle ist, dass sonst
+          mehr oder weniger schlimme Abstürze passieren.</p><p>1. Grund: Dritt-Software. In /usr/local wird üblicherweise Software
+          installiert, die nicht zum Ursprungs-System gehört. Deshalb sieht es
+          zunächst wie ein guter Platz aus, aber Software von anderen wird
+          ebenfalls dort installiert, dabei wird meistens einfach überschrieben,
+          wenn etwas schon vorhanden ist, auch von dpkg. Man könnte natürlich
+          auch irgendwo anders installieren, aber meistens wird dies bei der
+          Installation nicht abgefragt.</p><p>2. Grund: /usr/local/bin ist Teil des Standard-PATH. Der Vorteil ist,
+          dass alles von einer Shell gefunden wird. Es wird aber aufwändig, wenn
+          man etwas ausschalten möchte und kann sich im Extremfall über
+          Shell-Skripte sogar im System auswirken.</p><p>3. Grund: Die Compiler-Tools suchen standardmäßig in /usr/local. Der
+          Compiler sucht in /usr/local/include nach Header-Dateien und der
+          Linker in /usr/local/lib nach Bibliotheken. Das hört sich zunächst als
+          sehr praktisch an, aber ausschalten ist sehr schwierig. Man kann den
+          Compiler sehr leicht durcheinander bringen, indem man eine Datei mit
+          Müll und dem Namen <code>stdio.h</code> in /usr/local/include
+          ablegt.</p><p>Sie wurden gewarnt! Es ist möglich, dass Fink in /usr/local
+          installiert. Das Installations-Skript wird sie ausdrücklich warnen,
+          aber fortfahren, nachdem sie bestätigt haben, dass es auf ihr eigenes
+          Risiko weiter machen soll.</p></div>
     </a>
     <a name="why-sw">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Then why did you choose /sw?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b>  That choice is quite arbitrary, but is likely to stay for the foreseeable future for practical (upgrade) issues as well as the fact that it's safe from conflicting with other packaging systems.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Wieso /sw?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Die Wahl war ziemlich willkürlich, aber es sieht danach aus, dass es
+          in absehbarer Zukunft für updates so bleiben kann und vor Konflikten
+          mit anderer Software sicher ist.</p></div>
     </a>
   <p align="right"><?php echo FINK_NEXT ; ?>:
-<a href="relations.php?phpLang=de">2. Relations with Other Projects</a></p>
+<a href="relations.php?phpLang=de">2. Verbindungen zu anderen Projekten</a></p>
 <?php include_once "../footer.inc"; ?>
 
 

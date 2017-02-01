@@ -1,47 +1,62 @@
 <?php
-$title = "F.A.Q. - Mirrors";
+$title = "F.A.Q. - Spiegelserver";
 $cvs_author = 'Author: kamischi';
 $cvs_date = 'Date: 2015/06/06 19:19:29';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="upgrade-fink.php?phpLang=de" title="Upgrading Fink (version-specific troubleshooting)"><link rel="prev" href="relations.php?phpLang=de" title="Relations with Other Projects">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="upgrade-fink.php?phpLang=de" title="Fink aktualisieren(versions-spezifische Probleme)"><link rel="prev" href="relations.php?phpLang=de" title="Verbindungen zu anderen Projekten">';
 
 
 include_once "header.de.inc";
 ?>
-<h1>F.A.Q. - 3. Fink mirrors</h1>
+<h1>F.A.Q. - 3. Fink-Spiegelserver</h1>
     
     
     <a name="when-use">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>3.1: What are Fink Mirrors?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fink mirrors are rsync servers mirroring the current and stable description files that Fink uses to build packages from source.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>3.1: Was sind Fink-Spiegelserver?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fink-Spiegelserver sind rsync-Server, die die laufenden und stabilen
+          Beschreibungsdateien spiegeln, mit denen Fink die Pakete aus den
+          Quellen erstellt.</p></div>
     </a>
     <a name="why">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>3.2: Why should I use rsync mirrors?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Rsync is a very fast protocol. It will update the description files faster than the old CVS update method. Furthermore, CVS updates are  always done from sourceforge.net while rsync updates can be done from a mirror close to you.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>3.2: Warum sollte ich rsync-Spiegelserver nutzen?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Rsync ist ein sehr schnelles Protokoll. Es aktualisiert die
+          Paketbeschreibungen schneller als die alte Aktualisierung mit CVS.
+          Darüber hinaus werden Aktualisierungen mit CVS immer sourceforge.net
+          nutzen, während die Aktualisierung mit rsync von einem Spiegelserver
+          in ihrer Nähe gemacht werden können.</p></div>
     </a>
     <a name="where">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>3.3: Where can I find more information about Fink mirrors?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> All Fink mirrors are consolidated under the finkmirrors.net domain. The Web-Site at http://finkmirrors.net/ has more information.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>3.3: Wo finde ich mehr über Fink-Spiegelserver?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Alle Fink-Spiegelserver werden unter der Domäne finkmirrors.net
+          zusammen geführt. Die Webseite
+          <a href="http://finkmirrors.net/">finkmirrors.net</a>
+          hat weitere Informationen.</p></div>
     </a>
     <a name="when-not">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>3.4: I cannot connect to rsync server, what should I do?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Sometimes very strict firewalls forbid you to connect to rsync services. If that is the case simply continue using the CVS  method</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>3.4: Ich bekomme keine Verbindung zu einem rsync-Spiegelserver. Was soll
+          ich tun?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Manchmal verbieten sehr strenge Firewall-Regeln eine Verbindung zu
+          rsync-Spiegelservern. In solchen Fällen verwenden sie einfach die
+          CVS-Methode.</p></div>
     </a>
     <a name="otherinfogone">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>3.5: I have switched to the rsync method now all info files from the unused trees are gone</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This is normal. The rsync update method will only update your active tree, e.g. 10.3, and it will also delete the CVS subdirectories.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>3.5: Nach der Umstellung auf rsync sind alle info-Dateien aus dem
+          unbenutzten Baum weg.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Das ist normal. Die Aktualisierung mit rsync bearbeitet nur den
+          aktiven Baum und wird alle Unterverzeichnisse von CVS löschen.</p></div>
     </a>
     <a name="howswitch">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>3.6: How can I switch back and forth between methods?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> By using fink selfupdate-rsync or fink selfupdate-cvs to switch to rsync or CVS, respectively.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>3.6: Wie kann ich zwischen den beiden Methoden hin- und herschalten?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Einfach mit den Kommandos <code>fink selfupdate-rsync</code>
+          und <code>fink selfupdate-cvs</code>.</p></div>
     </a>
     <a name="Master">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>3.7: What is a Distfiles mirror?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Sometimes it is hard to fetch a certain version of sources from the
-		Internet. Distfile mirrors hold and mirror the source packages needed
-		by fink to build its source packages.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>3.7: Was ist ein Spiegelserver für Distfiles?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Manchmal sind bestimmte Versionen von Quellen schwer zu erhalten.
+          Spiegelserver für Distfiles behalten und spiegeln die Quellen, die
+          Fink für seine Quell-Pakete benötigt.</p></div>
     </a>
   <p align="right"><?php echo FINK_NEXT ; ?>:
-<a href="upgrade-fink.php?phpLang=de">4. Upgrading Fink (version-specific troubleshooting)</a></p>
+<a href="upgrade-fink.php?phpLang=de">4. Fink aktualisieren(versions-spezifische Probleme)</a></p>
 <?php include_once "../footer.inc"; ?>
 
 
