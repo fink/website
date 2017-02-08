@@ -1793,7 +1793,7 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
           z. B. mit "<code>echo Hello</code>" oder <code>xttitle</code>. Man
           kann den Fehler beheben, in dem man die Zeile auskommentiert oder
           löscht.</p>
-        <p>Wollen sie das echo aber unbedingt behalten, können sie den Fehler
+        <p>Wollen sie das Echo aber unbedingt behalten, können sie den Fehler
           so abfangen:</p>
 <codeblock>if ( $?prompt) then
 	echo Hello 
@@ -1823,7 +1823,7 @@ endif</codeblock>
         mit <code>_Perl_Gthr_key_ptr</code>.</p>
     </question>
     <answer>
-      <p>If you get an error that looks similar to:</p>
+      <p>Sieht der Fehler so oder so ähnlich aus:</p>
 <codeblock>update-perl5123-sax-parsers: adding Perl SAX parser
 module info file of XML::SAX::Expat...
 dyld: lazy symbol binding failed: Symbol not found:
@@ -1831,47 +1831,49 @@ _Perl_Gthr_key_ptr
   Referenced from: /sw/lib/perl5/5.12.3/darwin-
   thread-multi-2level/auto/XML/Parser/Expat/Expat.bundle
   Expected in: flat namespace</codeblock>
-      <p>this is usually due to a build picking up a different
-        <filename>perl5.12</filename> executable than the system's (or
-        <filename>perl5.10.0</filename>, or <filename>perl5.8.8</filename>,
-        depending on your OS version).</p>
-      <p>You can verify this by running:</p>
+      <p>wird meistens ein anderes <filename>perl5.12</filename> statt das des
+        Systems ausgewählt (oder je nach System
+        <filename>perl5.10.0</filename> oder <filename>perl5.8.8</filename>).</p>
+      <p>Sie können dies mit folgendem Befehl überprüfen:</p>
 <codeblock>type -a perl5.12</codeblock>
-	    <p>if you're using the <filename>bash</filename> shell, or</p>
+	    <p>wenn sie die Shell <filename>bash</filename> verwenden oder</p>
 <codeblock>where perl5.12</codeblock>
-	    <p>if you're using <filename>tcsh</filename> (and replace
-        <filename>perl5.12</filename> appropriately for your situation).</p>
-	    <p>To work around this issue, temporarily rename the non-system
-        <filename>perl5.12</filename> while you are building with Fink.</p>
+	    <p>wenn sie die Shell <filename>tcsh</filename> verwenden (und ersetzen
+        sie <filename>perl5.12</filename> entsprechend ihrer Situation).</p>
+	    <p>Ein temporäre Lösung ist <filename>perl5.12</filename> umzubenennen,
+        solange sie mit Fink Pakete erstellen.</p>
     </answer>
   </faqentry>
   <faqentry name="malloc-symlink">
     <question>
-      <p>I can't build a Fink <code>gcc</code> package due to "conflicting types
-        for 'pointer_t'"</p>
+      <p>Ich kann das Finkpaket <code>gcc</code> wegen "conflicting types for
+        'pointer_t'" nicht erstellen.</p>
     </question>
     <answer>
-      <p>Such errors typically look like:</p>
+      <p>Der Fehler sieht meistens so aus:</p>
 <codeblock>../../gcc-4.6.3/gcc/fortran/module.c:110:1:
 error: conflicting types for 'pointer_t'
 /usr/include/mach/vm_types.h:40:26:
 note: previous declaration of 'pointer_t' was here
 make[3]: *** [fortran/module.o] Error 1</codeblock>
-      <p>This is associated with someone having unnecessarily added a
+      <p>Das kommt meistens davon, dass unnötigerweise ein Symlink
       <filename>/usr/include/malloc.h</filename><code>-&gt;</code><filename>/usr/include/malloc/malloc.h</filename>
-      symlink.  Get rid of that.</p>
-      <p>On OS X, <code>#include &lt;stdlib.h&gt;</code> should normally be used
-        in place of <code>#include &lt;malloc.h&gt;.</code></p>
+      eingerichtet wurde. Löschen sie den Symlink.</p>
+      <p>Auf OS X sollte normalerweise statt
+        <code>#include &lt;malloc.h&gt;.</code>
+        <code>#include &lt;stdlib.h&gt;</code> verwendet werden.</p>
     </answer>
   </faqentry>
     <faqentry name="all-others">
       <question>
-        <p>I'm having issues with a package that isn't listed here.</p>
+        <p>Ich habe mit Paketen Probleme, die hier nicht aufgeführt sind.</p>
       </question>
       <answer>
-        <p>Since package problems tend to be transient, we've decided to put
-          them up on the Fink wiki.  Check the
-          <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</link>.</p>
+        <p>Da Probleme mit Paketen oft nur vorübergehend sind, haben wir uns
+          entsschieden, sie auf der Fink Wiki-Seite einzutragen. Schauen sie auf
+          der Seite
+          <link url="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</link>
+          nach.</p>
       </answer>
     </faqentry>
   </chapter>
