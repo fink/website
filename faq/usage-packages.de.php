@@ -1,174 +1,190 @@
 <?php
-$title = "F.A.Q. - Usage (2)";
+$title = "F.A.Q. - Benutzung (2)";
 $cvs_author = 'Author: kamischi';
 $cvs_date = 'Date: 2015/06/06 19:19:29';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=de" title="Package Usage Problems - General">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="prev" href="usage-general.php?phpLang=de" title="Benutzung von Paketen - Allgemein">';
 
 
 include_once "header.de.inc";
 ?>
-<h1>F.A.Q. - 9. Package Usage Problems - Specific Packages</h1>
+<h1>F.A.Q. - 9. Benutzung von Paketen - Bestimmte Pakete</h1>
     
     
     
     <a name="xmms-quiet">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.1: I get no sound from XMMS</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Make sure you have the "eSound Output Plugin" selected in the XMMS
-        preferences. For some strange reason, it selects the disk writer
-        plugin as the default.</p><p>If you still get no sound output or XMMS complains that it can't
-        find your sound card try this:</p><ul>
-          <li>Make sure you haven't muted sound output in Mac OS X.</li>
-          <li>Run <code>esdcat /usr/libexec/config.guess</code> (or any other
-          file of a decent size). If you hear a short noise, eSound works and
-          XMMS should work too if it's configured correctly. If you don't hear
-          anything, esd isn't working for some reason. You can try to start it
-          up manually with <code>esd &amp;</code> and watch the messages.</li>
-          <li>If it still doesn't work, check the permissions on
-          <code>/tmp/.esd</code> and <code>/tmp/.esd/socket</code>. Those
-          should have your normal user account as the owner. If they aren't
-          owned by you, kill esd if it's running, remove the directory as root
-          (<code>sudo rm -rf /tmp/.esd</code>), then start esd again (as a
-          normal user, not as root).</li>
-        </ul><p>Note that esd is designed to be run by a normal user, not by root.
-        It usually communicates via the file system socket
-        <code>/tmp/.esd/socket</code>. You only need the <code>-tcp</code> and
-        <code>-port</code> switches if you want to run esd clients on another
-        machine over the network.</p><p>There have also been reports of XMMS crashing or freezing on 10.1.
-        We don't have an analysis or a fix yet.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.1: Ich bekommen keinen Ton von XMMS</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Überprüfen sie, dass in den Einstellungen von XMMS das "eSound
+          Output Plugin" ausgewählt ist. Aus unerfindlichem Grund wird der
+          disk writer als Voreinstellung eingestellt.</p><p>Ist immer noch kein Ton zu hören oder wenn sich XMMS beklagt, dass es
+          die Soundkarte nicht finden kann, können sie folgendes probieren:</p><ul>
+          <li>Überprüfen sie zuerst, ob nicht der Ton in OS X ausgestellt
+            ist.</li>
+          <li>Führen sie das Kommando <code>esdcat
+            /usr/libexec/config.guess</code> (oder irgendeine andere Datei von
+          normaler Größe) aus. Hören sie ein kurzes Geräusch, dann funktioniert
+          eSound und XMMS sollte auch funktionieren, wenn es richtig konfiguriert
+          ist. Hören sie überhaupt nichts, funktioniert esd aus irgendeinem
+          Grund nicht. Sie können versuchen, es manuell mit dem Kommando
+          <code>esd &amp;</code> zu starten und die Meldungen abwarten.</li>
+          <li>Wenn es immer noch nicht funktioniert, überprüfen sie die
+            Zugriffsrechte der Dateien <code>/tmp/.esd</code> und
+            <code>/tmp/.esd/socket</code>. Sie sollten normalen Nutzern
+            gehören. Gehören sie nicht ihnen, brechen sie esd ab, wenn es läuft,
+            löschen sie das Verzeichnis als root (<code>sudo
+            rm -rf /tmp/.esd</code>), starten esd noch einmal (als normaler
+            Nutzer, nicht als root).</li>
+        </ul><p>Beachten sie, dass esd entworfen wurde, um unter einem normalen
+          Nutzerkonto und nicht unter root zu laufen. Normalerweise kommuniziert
+          es über den file system socket <code>/tmp/.esd/socket</code>. Sie
+          brauchen die Optionen <code>-tcp</code> und <code>-port</code> nur,
+          wenn sie esd-Klienten auf anderen Rechnern über ein Netzwerk laufen
+          lassen wollen.</p><p>Es gab auch Berichte, dass XMMS auf OS X 10.1 abstürzt oder
+          einfriert. Dieses Problem ist weder analysiert noch behoben.</p></div>
     </a>
     <a name="nedit-window-locks">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.2: If I am editing a file in nedit, when I open another file its
-        window pops up but is unresponsive.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This is a known problem that occurs with recent versions of
-        <code>nedit</code> and <code>lesstif</code> on all
-        platforms. The workaround is to open a new window with File--&gt;New,
-        then open the next file you want to work on.</p><p>This is now fixed in <code>nedit-5.3-6</code>, which
-        depends on <code>openmotif3</code> rather than
-        <code>lesstif</code>.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.2: Wenn ich eine Datei mit nedit editiere und eine weitere Datei öffne,
+          erscheint ein Fenster, das aber nicht auf Eingaben reagiert.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Dies ist ein bekanntes Problem, das mit neueren Version von
+          <code>nedit</code> und <code>lesstif</code> auf allen
+          Plattformen auftritt. Die Lösung ist, ein neues Fenster mit
+          File--&gt;New zu öffnen und dann die nächste Datei, die man bearbeiten
+          will, zu öffnen.</p><p>Das ist in der Version <code>nedit-5.3-6</code> behoben, das
+          von <code>openmotif3</code> und nicht von
+          <code>lesstif</code> abhängt.</p></div>
     </a>
     <a name="xdarwin-start">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.3: Help! When I start XDarwin, it immediately quits!</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Don't Panic. The Running X11 document now has an extensive
-          <a href="/doc/x11/trouble.php#immediate-quit">troubleshooting
-        section</a> for this common problem.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.3: Hilfe! Wenn ich XDarwin starte, bricht es sofort ab!</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Nur keine Panik. Das Dokument über X11 hat ein ausführliches
+          Kapitel über
+          <a href="/doc/x11/trouble.php#immediate-quit">ausführliches Kapitel</a>
+          zu diesem Problem.</p></div>
     </a>
     <a name="no-server">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.4: When I try to start XDarwin I get the message "xinit: No such file
-        or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> First, make sure you are sourcing init.sh in your X startup
-        <code>~/.xinitrc</code>.</p><p>In Jaguar, sometimes all of the <code>xfree86</code> packages get
-        built, but only <code>xfree86-base</code> and
-        <code>xfree86-base-shlibs</code> are installed. Check whether you have
-        <code>xfree86-rootless</code> and <code>xfree86-rootless-shlibs</code>
-        installed. If not, then <code>fink install xfree86-rootless</code>
-        should do the trick.</p><p>If you do have it installed, then try <code>fink rebuild
-        xfree86-rootless</code>. If that doesn't work, verify that you have
-        <code>/usr/bin/X11R6</code> in your PATH.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.4: Wenn ich versuche, XDarwin zu starten, erhalte ich die Fehlermeldung
+          "xinit: No such file or directory (errno 2): no server
+          "/usr/X11R6/bin/X" in PATH".</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Überprüfen sie zuerst, dass source init.sh in ihrem X startup
+          <code>~/.xinitrc</code> steht.</p><p>Unter Jaguar werden manchmal alle <code>xfree86</code> Pakete
+          erstellt, aber nur <code>xfree86-base</code> und
+          <code>xfree86-base-shlibs</code> installiert. Überprüfen sie, ob die
+          Pakete <code>xfree86-rootless</code> und
+          <code>xfree86-rootless-shlibs</code> installiert sind. Wenn nicht,
+          sollte das Kommando <code>fink install xfree86-rootless</code> die
+          Probleme beheben.</p><p>Sind die Pakete installiert, dann versuchen sie ein <code>fink
+          rebuild xfree86-rootless</code>. Sollte das auch nicht funktionieren,
+          überprüfen sie ob sie <code>/usr/bin/X11R6</code> in ihrer
+          Umgebungsvariable PATH steht.</p></div>
     </a>
     <a name="apple-x-delete">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.5: I want the delete key in Apple's X11.app to behave like that in
-        XDarwin.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Some users have reported that the behavior of the
-        <code>delete</code> key is different between XDarwin and Apple X11.
-        This can be rectified by adding lines to the appropriate X startup
-        files:</p><p><b>.Xmodmap:</b></p><pre>keycode 59 = Delete</pre><p><b>.Xresources:</b></p><pre>xterm*.deleteIsDEL: true
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.5: Ich möchte, dass die Löschen-Taste in Apples X11.app sich so wie in
+          XDarwin verhält.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Einige Nutzer berichteten, dass sich die <code>Löschen</code>-Taste
+          in XDarwin und Apples X11 unterschiedlich verhalten. Dies kann so
+          behoben werden, indem man folgende Zeilen in die entsprechende
+          X Startup-Datei einfügt:</p><p><b>.Xmodmap:</b></p><pre>keycode 59 = Delete</pre><p><b>.Xresources:</b></p><pre>xterm*.deleteIsDEL: true
 xterm*.backarrowKey: false
 xterm*.ttyModes: erase ^?</pre><p><b>.xinitrc</b></p><pre>xrdb -load $HOME/.Xresources
-xmodmap $HOME/.Xmodmap</pre><p></p></div>
+xmodmap $HOME/.Xmodmap</pre></div>
     </a>
     <a name="apple-x11-wants-xfree86">
       
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.6: I'm having problems with X11 and Fink.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> There are two possibilities to consider.</p><ul>
-          <li>
-            <b>You are installing from binaries:</b>
-            <p>Typically what you need to do is reinstall the X11User package,
-	    since the installer application occasionally misses installing a file.
-	    You may need to repeat this multiple times. Running</p>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.6: Ich habe Probleme mit X11 und Fink.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Es könnte zwei verschieden Ursachen haben.</p><ul>
+          <li><b>Sie installieren binäre Dateien:</b>
+            <p>Normalerweise müssen sie das Paket X11User erneut installieren,
+              denn der Installer vergisst manchmal eine Datei zu installieren.
+              Man muss dies manchmal mehrmals wiederholen. Das Kommando</p>
 <pre>fink list -i system-xfree86</pre>
-       	    <p>should show that the <code>system-xfree86</code> and
-	    <code>system-xfree86-shlibs</code> packages are installed, and</p>
+       	    <p>sollte zeigen, dass die Pakete <code>system-xfree86</code> und
+              <code>system-xfree86-shlibs</code> installier sind, und</p>
 <pre>fink list x11</pre>
-      	    <p>should indicate that the <code>x11-shlibs</code> and
-              <code>x11</code> virtual packages are present.</p>
-	          <p>If reinstalling the X11User package doesn't work, then consult the
-	    <a href="#special-x11-debug">special debug</a> instructions,
-	    below.</p>
+      	    <p>sollte zeigen dass die virtuellen Pakete <code>x11-shlibs</code>
+              und <code>x11</code> installiert sind.</p>
+	          <p>Sollte die erneute Installation des Pakete X11User nicht
+              funktionieren, lesen sie untern das Kapitel mit den
+              <a href="#special-x11-debug">special debug</a>
+              Instruktionen.</p>
           </li>
-          <li>
-            <b>You are installing from source:</b>
-            <p>Typically this error means that you need to (re)install the X11SDK,
-	    which is <b>mandatory</b> if you want to build packages from source.
-            It is in the Xcode Tools folder of a Tiger DVD, or (Optional
-            Installs/)Xcode Tools/Packages on your Leopard DVD(s). If you
-            run</p>
+          <li><b>Sie installieren aus Quell-Code:</b>
+            <p>Normalerweise bedeutet dieser Fehler, dass sie X11SDK (erneut)
+              installieren müssen, wenn sie Pakete aus Quell-Code erstellen
+              wollen. Es ist in dem Ordner Xcode Tools der Tiger DVD oder
+              (Optional Installs/)Xcode Tools/Packages auf der Leopard DVD(s).
+              Das Kommando</p>
 <pre>fink list -i system-xfree86  </pre>
-            <p>it should show the <code>system-xfree86</code>,
-	    <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code>
-	    packages as installed.  If the <code>-dev</code> package is missing,
-	    reinstall the X11SDK, since sometimes the Apple Installer misses a
-	    file.  You may need to keep doing this.  If either of the other two
-	    are missing, then reinstall the X11User package (same reason).  At
-	    this point</p>
+            <p>sollte die Pakete <code>system-xfree86</code>,
+              <code>system-xfree86-shlibs</code> und
+              <code>system-xfree86-dev</code> als installiert anzeiten. Fehlt
+              das Paket <code>-dev</code>, installieren sie die X11SDK erneut,
+              denn der Apple Installer vergisst eine Datei. Manchmal muss dies
+              wiederholt werden. Fehlt eines der beiden anderen, dann
+              installieren sie aus demselben Grund das Paket X11User. Jetzt
+              sollte das Kommando</p>
 <pre>fink list x11</pre>
-      	    <p>should indicate that the <code>x11-dev</code>, <code>x11-shlibs</code>,
-	    and <code>x11</code> virtual packages are present.</p>
-	          <p>If reinstalling the X11SDK or X11User package doesn't work, then consult the
-	    <a href="#special-x11-debug">special debug</a> instructions,
-	    below.</p>
+      	    <p>anzeigen, dass die virtuellen Pakete <code>x11-dev</code>,
+              <code>x11-shlibs</code> und <code>x11</code> installiert sind.</p>
+	          <p>Führt die erneute Installation der Pakete X11SDK oder X11User
+              nicht zum Erfolg, lesen sie unten die ausführlichen
+              <a href="#special-x11-debug">special debug</a>
+              Instruktionen.</p>
            </li>
         </ul></div>
     </a>
     <a name="special-x11-debug">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.7: I'm still having problems with X11 and Fink.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If the hints in the  <a href="#apple-x11-wants-xfree86">Fink
-          tries to install XFree86 or X.org</a> entry don't help, or aren't
-          applicable to your situation, you may need to flush out your X11
-          installation and remove any old placeholders and partially/fully
-          installed X11-related packages:</p><p>On Leopard, use</p><pre>sudo pkgutil --forget com.apple.pkg.X11User
-sudo pkgutil --forget com.apple.pkg.X11SDKLeo</pre><p>Then, on either 10.4 or 10.5, run</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.7: Ich habe immer noch Probleme mit X11 und Fink.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Wenn die Hinweise im Kapitel <a href="#apple-x11-wants-xfree86">Ich habe Probleme mit X11 und
+          Fink</a> nicht helfen oder nicht zu den Problemen passen, kann es
+          sein, dass sie die gesamte X11-Installation löschen müssen und ebenso
+          alte Platzhalter-Pakete und teilweise oder vollständig installierte
+          Pakete mit X11-Bezug:</p><p>Benutzen sie unter Leopard diese Kommandos:</p><pre>sudo pkgutil --forget com.apple.pkg.X11User
+sudo pkgutil --forget com.apple.pkg.X11SDKLeo</pre><p>Dann auf 10.4 oder 10.5 führen sie diese Sequenz aus:</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
 xfree86-rootless-threaded xfree86-rootless-threaded-shlibs
 rm -rf /Library/Receipts/X11SDK.pkg /Library/Receipts/X11User.pkg \
  /Library/Receipts/X11Update*.pkg
-fink selfupdate; fink index</pre><p>(the first line may give you warnings about trying to remove
-	nonexistent packages).  Then, reinstall Apple's X11 (and the X11SDK, if
-	needed), or,
-	if you're on 10.4, an alternative X11 implementation, like XFree86 or X.org.</p><p>If you are still having problems then you can run</p><pre>fink-virtual-pkgs --debug</pre><p>to get information about what's missing.</p><p>If you are running an earlier version of <code>fink</code>, then
-        there is a Perl script (courtesy of Martin Costabel) that you can
-        download and run to get the same information.</p><ul>
-          <li>Get it here: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
+fink selfupdate; fink index</pre><p>(Die erste Zeile kann Warnungen zur Folge haben, dass sie versuchen,
+          Pakete zu löschen, die nicht installiert sind.) Installieren sie dann
+          erneut Apples X11 und, wenn benötigt auch X11SDK oder auf 10.4
+          eine alternative X11 Implementation wie XFree86 oder X.org.</p><p>Wenn sie immer noch Probleme haben, können sie folgendes Kommando
+          ausführen</p><pre>fink-virtual-pkgs --debug</pre><p>um Informationen zu erhalten, was fehlt.</p><p>Benutzen sie eine frühere Version von <code>fink</code>, dann gibt es
+          dafür ein Perl-Skript (Dank an Martin Costabel), das sie herunter
+          laden und dann ausführen können.</p><ul>
+          <li>Laden sie es von hier herunter:
+            <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
           </li>
-          <li>Save it wherever you like.</li>
-          <li>Run it in a terminal window via
+          <li>Speichern sie es, wo immer sie es wollen.</li>
+          <li>Führen sie das Skript im Terminal aus:
 <pre>perl fink-x11-debug</pre>
           </li>
         </ul></div>
     </a>
     <a name="tiger-gtk">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.8: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get
-          errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current
-          as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a
-          workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p><p>If you haven't updated Tiger and/or <code>base-files</code> yet, you
-          can work around this issue by prefixing the name of the software you
-          want to run as follows:</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the
-          Application Menu in Apple's X11 as well as a terminal.</p><p>You may find it preferable to set this globally (e.g. in your startup
-          script, and/or in your <code>.xinitrc</code>, which you may need to do
-          to run GNOME).  Put</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in your <code>.xinitrc</code> (regardless of your login shell) or
-          your <code>.profile</code> (or other startup script) for <b>bash</b>
-          users and:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>is the corresponding command to use in e.g. your <code>.cshrc</code>
-          file for <b>tcsh</b> users.</p><p>Note:  this will automatically be done if you install a recent enough
-          <code>base-files</code>.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.8: Nach der Aktualisierung auf Tiger (OS 10.4), bekomme ich immer
+          Fehlermeldung mit <code>_EVP_idea_cbc</code>, sobald ich ein GTK-
+          Programm starte.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Die Ursache ist ein Fehler in Tigers dynamic linker (aktuell bis
+          10.4.1), der aber in 10.4.3 behoben ist. Fink hat eine Lösung im Paket
+          <code>base-files-1.9.7-1</code> oder später.</p><p>Wenn sie Tiger und/oder das Paket <code>base-files</code> noch nicht
+          aktualisiert haben, können sie das Problem umgehen, in dem sie dem
+          Namen der Programme folgendes voranstellen:</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>Wenn sie also <code>gnucash</code> starten wollen, verwenden sie:</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>Diese Methode funktioniert bei Programmen, egal ob sie im
+          Programme-Menu in Apples X11 oder in einem Terminal gestartet
+          werden.</p><p>Vielleicht finden sie es besser, dies global zu setzen (z. B. in
+          ihrem Startup-Skript und/oder ihrem <code>.xinitrc</code>, das beim
+          Start von GNOME verwendet wird). Fügen sie</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in ihrer Datei <code>.xinitrc</code> dazu (unabhängig von ihrer
+          Login-Shell) oder der Datei <code>.profile</code> (oder andere
+          Startup-Skripte) für <b>bash</b>-Nutzer und:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>ist das entsprechende Kommando für die Datei <code>.cshrc</code>
+          für <b>tcsh</b>-Nutzer.</p><p>Anmerkung: This wird automatisch erledigt, wenn sie ein ausreichend
+          aktuelles <code>base-files</code> installieren.</p></div>
     </a>
     <a name="yelp">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.9: I can't get the help to work for any GNOME application.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> You need to install the <code>yelp</code> package.  This package was
-          not placed within the GNOME bundle because it uses cryptography, and
-          it was decided not to place all of GNOME in the crypto tree just to
-          use the help system.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.9: Ich erhalte in GNOME-Programmen keine Hilfe.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Sie müssen das Paket <code>yelp</code> installieren. Diese Paket
+          wurde nicht in das GNOME-Bundle aufgenommen, weil es Kryptographie
+          enthält und man nicht das gesamte GNOME-Bundle in den crypto-Baum
+          verschieben wollte, nur damit man das Hilfe-System von GNOME nutzen
+          kann.</p></div>
     </a>
   
 <?php include_once "../footer.inc"; ?>

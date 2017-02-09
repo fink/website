@@ -56,53 +56,61 @@ include_once "header.de.inc";
         environment seems to be correctly set up for Fink already.", and it
         logs out.</a></li><li><a href="usage-fink.php?phpLang=de#ext-drive">5.27 Ich habe Fink nicht auf der Haupt-Partition installiert und ich kann
           das Paket Fink nicht aus dem Quellen aktualisieren. Die
-          Fehlermeldungen enthalten <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=de#mirror-gnu">5.28 Fink weigert sich, meine Pakete zu aktualisieren, weil es den 'gnu'
-          Spiegelserver nicht finden kann.</a></li><li><a href="usage-fink.php?phpLang=de#cant-move-fink">5.29 Ich kannn Fink nicht aktualisieren, weil ich /sw/fink nicht aus dem
+          Fehlermeldungen enthalten <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=de#mirror-gnu">5.28 Fink weigert sich, meine Pakete zu aktualisieren, weil es den
+          'gnu'-Spiegelserver nicht finden kann.</a></li><li><a href="usage-fink.php?phpLang=de#cant-move-fink">5.29 Ich kannn Fink nicht aktualisieren, weil ich /sw/fink nicht aus dem
           Weg räumen kann.</a></li><li><a href="usage-fink.php?phpLang=de#fc-cache">5.30 Ich erhalte diese Fehlermeldung: "No fonts found".</a></li><li><a href="usage-fink.php?phpLang=de#non-admin-installer">5.31 Ich kann Fink nicht mit dem Installerpaket installieren, weil ich den
-          Fehler "volume doesn't support symlinks" erhalte.</a></li><li><a href="usage-fink.php?phpLang=de#wrong-arch">5.32 Ich kann Fink nicht aktualisieren, weil <q>package architecture
-          (darwin-i386) does not match system (darwin-powerpc).</q></a></li></ul></li><li><a href="comp-general.php?phpLang=de"><b>6 Compile Problems - General</b></a><ul><li><a href="comp-general.php?phpLang=de#compiler">6.1 A configure script complains that it can't find an "acceptable cc".
-        What's that?</a></li><li><a href="comp-general.php?phpLang=de#cvs">6.2 When I try a "fink selfupdate-cvs" I get this message: "cvs:
-        Command not found."</a></li><li><a href="comp-general.php?phpLang=de#missing-make">6.3 I'm getting an error message involving <code>make</code>
-        </a></li><li><a href="comp-general.php?phpLang=de#head">6.4 I'm getting a strange usage message from the head command. What's
-        broken?</a></li><li><a href="comp-general.php?phpLang=de#also_in">6.5 When I try to install a package I get an error message about trying
-        to overwrite a file that is in another package.</a></li><li><a href="comp-general.php?phpLang=de#mv-failed">6.6 What does "execution of mv failed, exit code 1" mean when I try to
-        build a package?</a></li><li><a href="comp-general.php?phpLang=de#node-exists">6.7 I can't install a package | update because I get a message that a
-        "node" already exists.</a></li><li><a href="comp-general.php?phpLang=de#usr-local-libs">6.8 I've heard that libraries and headers installed under /usr/local
-          sometimes cause build problems for Fink. Is this true?</a></li><li><a href="comp-general.php?phpLang=de#toc-out-of-date">6.9 When I try to build a package, I get a message that a "table of
-        contents" is out of date. What do I need to do?</a></li><li><a href="comp-general.php?phpLang=de#fc-atlas">6.10 Fink Commander hangs when I try to install atlas.</a></li><li><a href="comp-general.php?phpLang=de#basic-headers">6.11 I get messages saying that I'm missing <code>stddef.h</code>
-          | <code>wchar.h</code> | <code>stdlib.h</code> |
-          <code>crt1.o</code>, or that my <q>C compiler cannot
-            create executables</q>.</a></li><li><a href="comp-general.php?phpLang=de#multiple-dependencies">6.12 I can't update, because Fink is "unable to resolve version conflict
-        on multiple dependencies".</a></li><li><a href="comp-general.php?phpLang=de#dpkg-parse-error">6.13 I can't install anything because I get "dpkg: parse error, in file
-        `/sw/var/lib/dpkg/status'"!</a></li><li><a href="comp-general.php?phpLang=de#freetype-problems">6.14 I get errors involving freetype.</a></li><li><a href="comp-general.php?phpLang=de#dlfcn-from-oo">6.15 I get build errors involving `Dl_info'.</a></li><li><a href="comp-general.php?phpLang=de#gcc2">6.16 Fink says I'm missing <code>gcc2</code> or
-          <code>gcc3.1</code> but I can't seem to
-        install it.</a></li><li><a href="comp-general.php?phpLang=de#system-java">6.17 Fink says <code>Failed: Can't resolve dependency
-          "system-java-dev"</code>, but there's no such package.</a></li><li><a href="comp-general.php?phpLang=de#dpkg-split">6.18 When I try to install anything, I get <q>dpkg (subprocess):
-          failed to exec dpkg-split to see if it's part of a multiparter: No
-          such file or directory</q>.  How do I fix this?</a></li><li><a href="comp-general.php?phpLang=de#xml-parser">6.19 I get the following message: <q>configure: error: XML::Parser
-          perl module is required for intltool</q>.  What do I do about it?</a></li><li><a href="comp-general.php?phpLang=de#master-problems">6.20 I'm trying to download a package, but Fink goes to some weird site
-          with <q>distfiles</q> in its name, and the file isn't there.</a></li><li><a href="comp-general.php?phpLang=de#compile-options">6.21 I want Fink to use different options in building a package.</a></li><li><a href="comp-general.php?phpLang=de#alternates">6.22 Whenever I try to build from source, Fink keeps waffling between
-          alternate versions of the same library.</a></li><li><a href="comp-general.php?phpLang=de#python-mods">6.23 I get errors involving <code>MACOSX_DEPLOYMENT_TARGET </code>when I
-          try to build a Python module.</a></li><li><a href="comp-general.php?phpLang=de#libtool-unrecognized-dynamic">6.24 I get <q>unrecognized option `-dynamic'</q> errors from
-      <code>libtool</code>.</a></li><li><a href="comp-general.php?phpLang=de#missing-usr-include-headers">6.25 I get a message about missing headers in <code>/usr/include</code></a></li><li><a href="comp-general.php?phpLang=de#pkginfo">6.26 When I try to update an app package on Yosemite, I see errors
-          involving a PkgInfo file</a></li></ul></li><li><a href="comp-packages.php?phpLang=de"><b>7 Compile Problems - Specific Packages</b></a><ul><li><a href="comp-packages.php?phpLang=de#libgtop">7.1 A package fails to build with errors involving
-        <code>sed</code>.</a></li><li><a href="comp-packages.php?phpLang=de#Leopard-libXrandr">7.2 I can't install <b>gtk+2</b> on OS 10.5</a></li><li><a href="comp-packages.php?phpLang=de#xml-sax-expat">7.3 I get errors involving <code>_Perl_Gthr_key_ptr</code> when installing
-        an xml-sax-pm package</a></li><li><a href="comp-packages.php?phpLang=de#malloc-symlink">7.4 I can't build a Fink <code>gcc</code> package due to "conflicting types
-        for 'pointer_t'"</a></li><li><a href="comp-packages.php?phpLang=de#all-others">7.5 I'm having issues with a package that isn't listed here.</a></li></ul></li><li><a href="usage-general.php?phpLang=de"><b>8 Package Usage Problems - General</b></a><ul><li><a href="usage-general.php?phpLang=de#xlocale">8.1 I'm getting lots of messages like "locale not supported by C
-          library". Is that bad?</a></li><li><a href="usage-general.php?phpLang=de#passwd">8.2 There are suddenly a number of strange users on my system, with
-        names like "mysql", "pgsql", and "games". Where did they come
-        from?</a></li><li><a href="usage-general.php?phpLang=de#compile-myself">8.3 How do I compile something myself using Fink-installed
-        software?</a></li><li><a href="usage-general.php?phpLang=de#apple-x11-applications-menu">8.4 I can't run any of my Fink-installed applications using the
-        Applications menu in Apple X11.</a></li><li><a href="usage-general.php?phpLang=de#x-options">8.5 I'm bewildered by the X11 options: Apple X11, XFree86, etc. What
-        should I install?</a></li><li><a href="usage-general.php?phpLang=de#no-display">8.6 When I try to run an application, I get a message that says "cannot
-        open display:". What do I need to do?</a></li><li><a href="usage-general.php?phpLang=de#suggest-package">8.7 I don't see my favorite program in Fink. How do I suggest a new
-        package for inclusion in Fink?</a></li><li><a href="usage-general.php?phpLang=de#virtpackage">8.8 What are all these <code>system-*</code> "virtual
-	  packages" that are sometimes present, but that I can't
-	  seem to install or remove myself?</a></li></ul></li><li><a href="usage-packages.php?phpLang=de"><b>9 Package Usage Problems - Specific Packages</b></a><ul><li><a href="usage-packages.php?phpLang=de#xmms-quiet">9.1 I get no sound from XMMS</a></li><li><a href="usage-packages.php?phpLang=de#nedit-window-locks">9.2 If I am editing a file in nedit, when I open another file its
-        window pops up but is unresponsive.</a></li><li><a href="usage-packages.php?phpLang=de#xdarwin-start">9.3 Help! When I start XDarwin, it immediately quits!</a></li><li><a href="usage-packages.php?phpLang=de#no-server">9.4 When I try to start XDarwin I get the message "xinit: No such file
-        or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=de#apple-x-delete">9.5 I want the delete key in Apple's X11.app to behave like that in
-        XDarwin.</a></li><li><a href="usage-packages.php?phpLang=de#apple-x11-wants-xfree86">9.6 I'm having problems with X11 and Fink.</a></li><li><a href="usage-packages.php?phpLang=de#special-x11-debug">9.7 I'm still having problems with X11 and Fink.</a></li><li><a href="usage-packages.php?phpLang=de#tiger-gtk">9.8 After updating to Tiger (OS 10.4), whenever I use a GTK app, I get
-          errors involving <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=de#yelp">9.9 I can't get the help to work for any GNOME application.</a></li></ul></li></ul>
+          Fehler "volume doesn't support symlinks" erhalte.</a></li><li><a href="usage-fink.php?phpLang=de#wrong-arch">5.32 Ich kann Fink nicht aktualisieren. Es bricht mit
+          <q>package architecture (darwin-i386) does not match system
+          (darwin-powerpc)</q> ab.</a></li></ul></li><li><a href="comp-general.php?phpLang=de"><b>6 Probleme beim Übersetzen - Allgemein</b></a><ul><li><a href="comp-general.php?phpLang=de#compiler">6.1 Ein configure-Skript beklagt sich, dass es keinen "acceptable cc"
+          findet. Was bedeutet das?</a></li><li><a href="comp-general.php?phpLang=de#cvs">6.2 Nach dem Kommando "fink selfupdate-cvs" erhalte ich die Nachricht:
+          "cvs: Command not found."</a></li><li><a href="comp-general.php?phpLang=de#missing-make">6.3 Ich erhalte Fehlermeldungen mit <code>make</code>
+        </a></li><li><a href="comp-general.php?phpLang=de#head">6.4 Das Kommando head erzeugt seltsame Fehlermeldungen. Was ist
+          kaputt?</a></li><li><a href="comp-general.php?phpLang=de#also_in">6.5 Wenn ich versuche, ein Paket zu installieren, erhalte ich eine
+          Fehlermeldung, dass versucht wird, eine Datei zu überschreiben, die
+          zu einem anderen Paket gehört.</a></li><li><a href="comp-general.php?phpLang=de#mv-failed">6.6 Was bedeutet "execution of mv failed, exit code 1", wenn ich
+          versuche, ein Paket zu installiere?</a></li><li><a href="comp-general.php?phpLang=de#node-exists">6.7 Ich kann ein Paket nicht installieren oder aktualisieren, weil ich
+          die Fehlermeldung erhalte, dass ein "node" bereits existiert.</a></li><li><a href="comp-general.php?phpLang=de#usr-local-libs">6.8 Ich habe gehört, dass Bibliotheken und Header-Dateien, die in
+          /usr/local installiert sind, manchmal Probleme machen. Stimmt das?</a></li><li><a href="comp-general.php?phpLang=de#toc-out-of-date">6.9 Wenn ich versuche, ein Paket zu erzeugen, bekomme ich die
+          Fehlermeldung, "table of contents" ist veraltet. Was muss ich tun?</a></li><li><a href="comp-general.php?phpLang=de#fc-atlas">6.10 Fink Commander bleibt hängen, wenn ich versuche das Paket atlas zu
+          installieren.</a></li><li><a href="comp-general.php?phpLang=de#basic-headers">6.11 Ich erhalte Fehlermeldungen, dass die Dateien
+          <code>stddef.h</code>, <code>wchar.h</code>,
+          <code>stdlib.h</code> oder <code>crt1.o</code> fehlen
+          oder dass der <q>C compiler cannot create executables</q>.</a></li><li><a href="comp-general.php?phpLang=de#multiple-dependencies">6.12 Ich kann nicht aktualisieren, denn Fink meldet "unable to resolve
+          version conflict on multiple dependencies".</a></li><li><a href="comp-general.php?phpLang=de#dpkg-parse-error">6.13 Ich kann gar nichts installieren und bekommen nur die Fehlermeldung:
+          "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</a></li><li><a href="comp-general.php?phpLang=de#freetype-problems">6.14 Ich erhalte einen Fehler mit freetype.</a></li><li><a href="comp-general.php?phpLang=de#dlfcn-from-oo">6.15 Ich bekommen Fehler mit 'Dl_info'.</a></li><li><a href="comp-general.php?phpLang=de#gcc2">6.16 Fink behauptet, dass <code>gcc2</code> oder
+          <code>gcc3.1</code> fehlen, es sieht nicht so aus, dass ich
+          sie installieren kann.</a></li><li><a href="comp-general.php?phpLang=de#system-java">6.17 Fink beklagt sich mit: <code>Failed: Can't resolve dependency
+          "system-java-dev"</code>, aber das Paket gibt es gar nicht.</a></li><li><a href="comp-general.php?phpLang=de#dpkg-split">6.18 Wenn ich ein Paket installieren möchte, bekomme ich
+          <q>dpkg (subprocess): failed to exec dpkg-split to see if it's
+          part of a multiparter: No such file or directory</q>. Wie behebe
+          ich diesen Fehler?</a></li><li><a href="comp-general.php?phpLang=de#xml-parser">6.19 Ich bekommen folgende Fehler-Meldung: <q>configure: error:
+          XML::Parser perl module is required for intltool</q>.  Was soll
+          ich machen?</a></li><li><a href="comp-general.php?phpLang=de#master-problems">6.20 Wenn ich versuche, ein Paket herunter zu laden, geht Fink auf eine
+          merkwürdige Seite mit <q>distfiles</q> im Namen und die Datei
+          gibt es dort nicht.</a></li><li><a href="comp-general.php?phpLang=de#compile-options">6.21 Ich möchte, dass Fink andere Optionen beim Erstellen eines Pakets
+        verwendet.</a></li><li><a href="comp-general.php?phpLang=de#alternates">6.22 Immer wenn ich Pakete aus Quellen erzeugen möchte, fragt Fink immer
+        wieder nach alternativen Versionen der selben Bibliothek.</a></li><li><a href="comp-general.php?phpLang=de#python-mods">6.23 Versuche ich, ein Python-Modul zu erstellen, bekomme ich eine Fehlermeldung mit <code>MACOSX_DEPLOYMENT_TARGET </code>.</a></li><li><a href="comp-general.php?phpLang=de#libtool-unrecognized-dynamic">6.24 Ich bekomme von <code>libtool</code>den Fehler
+        <q>unrecognized option `-dynamic'</q>.</a></li><li><a href="comp-general.php?phpLang=de#missing-usr-include-headers">6.25 Ich erhalte eine Fehlermeldung über fehlende Header in
+        <code>/usr/include</code></a></li><li><a href="comp-general.php?phpLang=de#pkginfo">6.26 Wenn ich ein Paket mit app-Bundle unter Yosemite aktualisieren
+          möchte, erhalte ich Fehler mit einer Datei PkgInfo.</a></li></ul></li><li><a href="comp-packages.php?phpLang=de"><b>7 Probleme beim Übersetzen - Bestimmte Pakete</b></a><ul><li><a href="comp-packages.php?phpLang=de#libgtop">7.1 Das Übersetzen eines Pakets bricht mit einer Fehlermeldung ab, in der
+          <code>sed</code> vorkommmt.</a></li><li><a href="comp-packages.php?phpLang=de#Leopard-libXrandr">7.2 Ich kann <b>gtk+2</b> auf OS X 10.5 nicht installieren.</a></li><li><a href="comp-packages.php?phpLang=de#xml-sax-expat">7.3 Wenn ich ein Paket xml-sax-pm installiere, bekomme ich Fehlermeldungen
+        mit <code>_Perl_Gthr_key_ptr</code>.</a></li><li><a href="comp-packages.php?phpLang=de#malloc-symlink">7.4 Ich kann das Finkpaket <code>gcc</code> wegen "conflicting types for
+        'pointer_t'" nicht erstellen.</a></li><li><a href="comp-packages.php?phpLang=de#all-others">7.5 Ich habe mit Paketen Probleme, die hier nicht aufgeführt sind.</a></li></ul></li><li><a href="usage-general.php?phpLang=de"><b>8 Benutzung von Paketen - Allgemein</b></a><ul><li><a href="usage-general.php?phpLang=de#xlocale">8.1 Ich erhalte viele Meldungen der Art "locale not supported by C
+          library". Ist das schlimm?</a></li><li><a href="usage-general.php?phpLang=de#passwd">8.2 Plötzlich gibt es eine ganze Reihe von seltsamen Nutzern auf meinem
+          System. Die Namen sind "mysql", "pgsql" und "games". Wo kommen die
+          denn her?</a></li><li><a href="usage-general.php?phpLang=de#compile-myself">8.3 Wie übersetze ich ein Program selbst, das Pakete aus Fink benutzt?</a></li><li><a href="usage-general.php?phpLang=de#apple-x11-applications-menu">8.4 Ich kann keines der Programme, die ich in Fink installiert habe, über
+          das Programme-Menu (Applications) in Apples X11 starten.</a></li><li><a href="usage-general.php?phpLang=de#x-options">8.5 Ich durch die vielen Optionen für X11 (Apple X11, XFree86,
+          etc. )verwirrt. Welche soll ich installieren?</a></li><li><a href="usage-general.php?phpLang=de#no-display">8.6 Wenn ich versuche, ein Programm zu starten, erhalte ich die
+          Fehlermeldung: "cannot open display:". Was mucss ich tun?</a></li><li><a href="usage-general.php?phpLang=de#suggest-package">8.7 Ich finde mein Lieblingsprogramm nicht in Fink. Wie kann ich ein
+          neues Programm für Fink vorschlagen?</a></li><li><a href="usage-general.php?phpLang=de#virtpackage">8.8 Was bedeuten all diese virtuellen Pakete <code>system-*</code>,
+          die zwar immer mal wieder auftauchen, die ich aber selbst nicht
+          installieren oder löschen kann?</a></li></ul></li><li><a href="usage-packages.php?phpLang=de"><b>9 Benutzung von Paketen - Bestimmte Pakete</b></a><ul><li><a href="usage-packages.php?phpLang=de#xmms-quiet">9.1 Ich bekommen keinen Ton von XMMS</a></li><li><a href="usage-packages.php?phpLang=de#nedit-window-locks">9.2 Wenn ich eine Datei mit nedit editiere und eine weitere Datei öffne,
+          erscheint ein Fenster, das aber nicht auf Eingaben reagiert.</a></li><li><a href="usage-packages.php?phpLang=de#xdarwin-start">9.3 Hilfe! Wenn ich XDarwin starte, bricht es sofort ab!</a></li><li><a href="usage-packages.php?phpLang=de#no-server">9.4 Wenn ich versuche, XDarwin zu starten, erhalte ich die Fehlermeldung
+          "xinit: No such file or directory (errno 2): no server
+          "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=de#apple-x-delete">9.5 Ich möchte, dass die Löschen-Taste in Apples X11.app sich so wie in
+          XDarwin verhält.</a></li><li><a href="usage-packages.php?phpLang=de#apple-x11-wants-xfree86">9.6 Ich habe Probleme mit X11 und Fink.</a></li><li><a href="usage-packages.php?phpLang=de#special-x11-debug">9.7 Ich habe immer noch Probleme mit X11 und Fink.</a></li><li><a href="usage-packages.php?phpLang=de#tiger-gtk">9.8 Nach der Aktualisierung auf Tiger (OS 10.4), bekomme ich immer
+          Fehlermeldung mit <code>_EVP_idea_cbc</code>, sobald ich ein GTK-
+          Programm starte.</a></li><li><a href="usage-packages.php?phpLang=de#yelp">9.9 Ich erhalte in GNOME-Programmen keine Hilfe.</a></li></ul></li></ul>
 <!--Generated from $Fink: faq.de.xml,v 1.125 2015/06/06 19:19:29 kamischi Exp $-->
 <?php include_once "../footer.inc"; ?>
 

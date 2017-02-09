@@ -2,7 +2,7 @@
 $title = "F.A.Q. - Fink Benutzung";
 $cvs_author = 'Author: kamischi';
 $cvs_date = 'Date: 2015/06/06 19:19:29';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=de" title="Compile Problems - General"><link rel="prev" href="upgrade-fink.php?phpLang=de" title="Fink aktualisieren(versions-spezifische Probleme)">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=de" title="Probleme beim Übersetzen - Allgemein"><link rel="prev" href="upgrade-fink.php?phpLang=de" title="Fink aktualisieren(versions-spezifische Probleme)">';
 
 
 include_once "header.de.inc";
@@ -503,20 +503,20 @@ Failed test (./Command/chowname.t at line 27)
           "Ignore ownership" ab.</p></div>
     </a>
     <a name="mirror-gnu">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.28: Fink weigert sich, meine Pakete zu aktualisieren, weil es den 'gnu'
-          Spiegelserver nicht finden kann.</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.28: Fink weigert sich, meine Pakete zu aktualisieren, weil es den
+          'gnu'-Spiegelserver nicht finden kann.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Erhalten sie eine Fehlermeldung, die so aufhört:</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>, dann muss man meistens das Paket <code>fink-mirrors</code>
           aktualisieren, sprich folgendes Kommando ausführen:</p><pre>fink install fink-mirrors</pre></div>
     </a>
     <a name="cant-move-fink">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.29: Ich kannn Fink nicht aktualisieren, weil ich /sw/fink nicht aus dem
           Weg räumen kann.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Der folgende Fehler:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>Obwohl die Fehlermeldun etwas anderes behauptet, wird der Fehler
-          meistens dadurch verursacht, dass die Zugriffsrechte in einen
-          temporären Ordner es verhindern, die während eines
-          <code>selfupdate</code> angelegt werden. Entferen sie diese Ordner:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Der folgende Fehler:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>wird der Fehler meistens dadurch verursacht, dass die Zugriffsrechte
+          temporärer Ordner es verhindern, die während eines
+          <code>selfupdate</code> angelegt werden, auch wenn die Fehlermeldung
+          etwas anderes behauptet. Entfernen sie diese Ordner mit:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
     </a>
-     <a name="fc-cache">
+    <a name="fc-cache">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.30: Ich erhalte diese Fehlermeldung: "No fonts found".</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Sehen eine der folgenden Fehlermelungen (bisher nur bei OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
@@ -527,29 +527,29 @@ page and on http://fontconfig.org.</pre><p>können sie das so beheben:</p><pre>s
     <a name="non-admin-installer">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.31: Ich kann Fink nicht mit dem Installerpaket installieren, weil ich den
           Fehler "volume doesn't support symlinks" erhalte.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This message commonly means that you've tried to run the Fink
-          installer as user who doesn't have administrative privileges.  Make
-          sure to log in at the login screen as such a user or switch to such a
-          user in the Finder (i.e. fast user switching) before starting the Fink
-          installer.</p><p>If you're having trouble even when using an admin account, then it's
-          likely a problem with the permissions on your top-level directory.
-          Use Apple's Disk Utility (from the Utilities sub-folder in your
-          Applications folder), select the hard drive in question, choose the
-          <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.
-          If that doesn't work, then you may need to set your permissions
-          manually via:</p><pre>sudo chmod 1775 /</pre></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Diese Fehlermeldung bedeutet, dass sie versuchten Fink als Nutzer zu
+          installieren, der keine Administratorrechte hat. Melden sie sich ab
+          und als Nutzer mit Administratorrechten wieder an, oder wechseln sie
+          im Finder zu so einem Nutzer bevor sie den Fink-Installer starten.</p><p>Treten diese Probleme auf, obwohl sie Administratorrechte haben, ist
+          es wahrscheinlich ein Problem mit den Zugriffsrechten für das oberste
+          Verzeichnis. Starten sie Apples Festplatten-Dienstprogramm (aus dem
+          Unterordner Hilfsprogramme im Ordner Programme), wählen sie die
+          fragliche Platte oder Partition aus, gehen sie zu <b>Erste Hilfe</b>
+          und drücken sie <b>Zugriffsrechte Reparieren</b>. Sollte das nicht
+          helfen, müssen sie die Zugriffsrechte manuell setzen:</p><pre>sudo chmod 1775 /</pre></div>
     </a>
     <a name="wrong-arch">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.32: Ich kann Fink nicht aktualisieren, weil <q>package architecture
-          (darwin-i386) does not match system (darwin-powerpc).</q></b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.32: Ich kann Fink nicht aktualisieren. Es bricht mit
+          <q>package architecture (darwin-i386) does not match system
+          (darwin-powerpc)</q> ab.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Dieser Fehler tritt auf, wenn sie das PowerPC-Installerpaket auf
           einem Intel-MacIntosh ausführen. Sie müssen ihre Fink-Installation
           löschen, d. h. dieses Kommando ausführen:</p><pre>sudo rm -rf /sw</pre><p>und dann das Disk-Image für Intel-MacIntosh von den
-          <a href="/download/index.php">downloads Webseiten</a>
+          <a href="/download/index.php">downloads-Webseiten</a>
           herunter laden.</p></div>
     </a>
    <p align="right"><?php echo FINK_NEXT ; ?>:
-<a href="comp-general.php?phpLang=de">6. Compile Problems - General</a></p>
+<a href="comp-general.php?phpLang=de">6. Probleme beim Übersetzen - Allgemein</a></p>
 <?php include_once "../footer.inc"; ?>
 
 

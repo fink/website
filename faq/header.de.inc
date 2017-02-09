@@ -10,10 +10,10 @@ $navbox = array(
   "faq/mirrors.php?phpLang=de", "Spiegelserver",
   "faq/upgrade-fink.php?phpLang=de", "Fink aktualisieren",
   "faq/usage-fink.php?phpLang=de", "Fink Benutzung",
-  "faq/comp-general.php?phpLang=de", "Compiling (1)",
-  "faq/comp-packages.php?phpLang=de", "Compiling (2)",
-  "faq/usage-general.php?phpLang=de", "Usage (1)",
-  "faq/usage-packages.php?phpLang=de", "Usage (2)",
+  "faq/comp-general.php?phpLang=de", "Übersetzen (1)",
+  "faq/comp-packages.php?phpLang=de", "Übersetzen (2)",
+  "faq/usage-general.php?phpLang=de", "Benutzung (1)",
+  "faq/usage-packages.php?phpLang=de", "Benutzung (2)",
 );
 $printlink = "faq/faq.de.html";
 
