@@ -1,70 +1,72 @@
 <?php
-$title = "F.A.Q. - Compiling (2)";
+$title = "F.A.Q. - Übersetzen (2)";
 $cvs_author = 'Author: kamischi';
 $cvs_date = 'Date: 2015/06/06 19:19:29';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=de" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=de" title="Compile Problems - General">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=de" title="Benutzung von Paketen - Allgemein"><link rel="prev" href="comp-general.php?phpLang=de" title="Probleme beim Übersetzen - Allgemein">';
 
 
 include_once "header.de.inc";
 ?>
-<h1>F.A.Q. - 7. Compile Problems - Specific Packages</h1>
+<h1>F.A.Q. - 7. Probleme beim Übersetzen - Bestimmte Pakete</h1>
     
     
     <a name="libgtop">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>7.1: A package fails to build with errors involving
-        <code>sed</code>.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This can happen if your login script (e.g. <code>~/.cshrc</code>)
-        does something that writes to the terminal, e.g "<code>echo
-        Hello</code>" or <code>xttitle</code>. To get rid of the problem, the
-        easy solution is to comment out the offending lines.</p><p>If you want to keep the echo, then you can do something like the
-        following:</p><pre>if ( $?prompt) then
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.1: Das Übersetzen eines Pakets bricht mit einer Fehlermeldung ab, in der
+          <code>sed</code> vorkommmt.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Dieser Fehler kann auftreten, wenn das Login-Skript (also
+          <code>~/.cshrc</code>) etwas in ein Terminalfenster schreiben möchte,
+          z. B. mit "<code>echo Hello</code>" oder <code>xttitle</code>. Man
+          kann den Fehler beheben, in dem man die Zeile auskommentiert oder
+          löscht.</p><p>Wollen sie das Echo aber unbedingt behalten, können sie den Fehler
+          so abfangen:</p><pre>if ( $?prompt) then
 	echo Hello 
 endif</pre></div>
     </a>
   <a name="Leopard-libXrandr">
-    <div class="question"><p><b><?php echo FINK_Q ; ?>7.2: I can't install <b>gtk+2</b> on OS 10.5</b></p></div>
-    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Typically this involves missing libraries, such as:
-        <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> or
-    <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (or other versions
-    of libraries in <code>/usr/X11/lib/</code>).</p><p>The current wisdom on the best fix for such an issue is to install
-        Xcode 3.1.3 or later.</p></div>
+    <div class="question"><p><b><?php echo FINK_Q ; ?>7.2: Ich kann <b>gtk+2</b> auf OS X 10.5 nicht installieren.</b></p></div>
+    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Dieser Fehler geht meistens auf fehlende Bibliotheken zurück, z. B.:
+        <code>/usr/X11/lib/libXrandr.2.0.0.dylib</code> oder
+        <code>/usr/X11/lib/libXdamage.1.1.0.dylib</code> (oder andere
+        Versionen der Bibliotheken in <code>/usr/X11/lib/</code>).</p><p>Derzeit ist die beste Lösung Xcode 3.1.3 oder später zu installieren.</p></div>
   </a>
   <a name="xml-sax-expat">
-    <div class="question"><p><b><?php echo FINK_Q ; ?>7.3: I get errors involving <code>_Perl_Gthr_key_ptr</code> when installing
-        an xml-sax-pm package</b></p></div>
-    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If you get an error that looks similar to:</p><pre>update-perl5123-sax-parsers: adding Perl SAX parser
+    <div class="question"><p><b><?php echo FINK_Q ; ?>7.3: Wenn ich ein Paket xml-sax-pm installiere, bekomme ich Fehlermeldungen
+        mit <code>_Perl_Gthr_key_ptr</code>.</b></p></div>
+    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Sieht der Fehler so oder so ähnlich aus</p><pre>update-perl5123-sax-parsers: adding Perl SAX parser
 module info file of XML::SAX::Expat...
 dyld: lazy symbol binding failed: Symbol not found:
 _Perl_Gthr_key_ptr
   Referenced from: /sw/lib/perl5/5.12.3/darwin-
   thread-multi-2level/auto/XML/Parser/Expat/Expat.bundle
-  Expected in: flat namespace</pre><p>this is usually due to a build picking up a different
-        <code>perl5.12</code> executable than the system's (or
-        <code>perl5.10.0</code>, or <code>perl5.8.8</code>,
-        depending on your OS version).</p><p>You can verify this by running:</p><pre>type -a perl5.12</pre><p>if you're using the <code>bash</code> shell, or</p><pre>where perl5.12</pre><p>if you're using <code>tcsh</code> (and replace
-        <code>perl5.12</code> appropriately for your situation).</p><p>To work around this issue, temporarily rename the non-system
-        <code>perl5.12</code> while you are building with Fink.</p></div>
+  Expected in: flat namespace</pre><p>wird meistens ein anderes <code>perl5.12</code> statt das des
+        Systems ausgewählt (oder je nach System
+        <code>perl5.10.0</code> oder <code>perl5.8.8</code>).</p><p>Sie können dies mit folgendem Befehl überprüfen:</p><pre>type -a perl5.12</pre><p>wenn sie die Shell <code>bash</code> verwenden oder</p><pre>where perl5.12</pre><p>wenn sie die Shell <code>tcsh</code> verwenden (und ersetzen
+        sie <code>perl5.12</code> entsprechend ihrer Situation).</p><p>Ein temporäre Lösung ist <code>perl5.12</code> umzubenennen,
+        solange sie mit Fink Pakete erstellen.</p></div>
   </a>
   <a name="malloc-symlink">
-    <div class="question"><p><b><?php echo FINK_Q ; ?>7.4: I can't build a Fink <code>gcc</code> package due to "conflicting types
-        for 'pointer_t'"</b></p></div>
-    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Such errors typically look like:</p><pre>../../gcc-4.6.3/gcc/fortran/module.c:110:1:
+    <div class="question"><p><b><?php echo FINK_Q ; ?>7.4: Ich kann das Finkpaket <code>gcc</code> wegen "conflicting types for
+        'pointer_t'" nicht erstellen.</b></p></div>
+    <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Der Fehler sieht meistens so aus:</p><pre>../../gcc-4.6.3/gcc/fortran/module.c:110:1:
 error: conflicting types for 'pointer_t'
 /usr/include/mach/vm_types.h:40:26:
 note: previous declaration of 'pointer_t' was here
-make[3]: *** [fortran/module.o] Error 1</pre><p>This is associated with someone having unnecessarily added a
+make[3]: *** [fortran/module.o] Error 1</pre><p>Das kommt meistens davon, dass unnötigerweise ein Symlink
       <code>/usr/include/malloc.h</code><code>-&gt;</code><code>/usr/include/malloc/malloc.h</code>
-      symlink.  Get rid of that.</p><p>On OS X, <code>#include &lt;stdlib.h&gt;</code> should normally be used
-        in place of <code>#include &lt;malloc.h&gt;.</code></p></div>
+      eingerichtet wurde. Löschen sie den Symlink.</p><p>Auf OS X sollte normalerweise statt
+        <code>#include &lt;malloc.h&gt;.</code>
+        <code>#include &lt;stdlib.h&gt;</code> verwendet werden.</p></div>
   </a>
     <a name="all-others">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>7.5: I'm having issues with a package that isn't listed here.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Since package problems tend to be transient, we've decided to put
-          them up on the Fink wiki.  Check the
-          <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>7.5: Ich habe mit Paketen Probleme, die hier nicht aufgeführt sind.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Da Probleme mit Paketen oft nur vorübergehend sind, haben wir uns
+          entschieden, sie auf der Fink Wiki-Seite einzutragen. Schauen sie auf
+          der Seite
+          <a href="http://wiki.finkproject.org/index.php/Fink:Package_issues"> Package issues page</a>
+          nach.</p></div>
     </a>
   <p align="right"><?php echo FINK_NEXT ; ?>:
-<a href="usage-general.php?phpLang=de">8. Package Usage Problems - General</a></p>
+<a href="usage-general.php?phpLang=de">8. Benutzung von Paketen - Allgemein</a></p>
 <?php include_once "../footer.inc"; ?>
 
 
