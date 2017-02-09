@@ -1,52 +1,66 @@
 <?php
-$title = "F.A.Q. - Upgrading Fink";
+$title = "F.A.Q. - Fink aktualisieren";
 $cvs_author = 'Author: kamischi';
 $cvs_date = 'Date: 2015/06/06 19:19:29';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=de" title="Installing, Using and Maintaining Fink"><link rel="prev" href="mirrors.php?phpLang=de" title="Fink mirrors">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=de" title="Fink installieren, benutzen und pflegen"><link rel="prev" href="mirrors.php?phpLang=de" title="Fink-Spiegelserver">';
 
 
 include_once "header.de.inc";
 ?>
-<h1>F.A.Q. - 4. Upgrading Fink (version-specific troubleshooting)</h1>
+<h1>F.A.Q. - 4. Fink aktualisieren(versions-spezifische Probleme)</h1>
     
     
     <a name="leopard-bindist1">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>4.1: Fink doesn't see new packages even after I've run an rsync or cvs selfupdate.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This is a current issue for people on OS 10.5 using the binary installer. Check your version:</p><pre>fink --version</pre><p>If you currently have <code>fink-0.27.13-41</code>, which is the version that comes
-	with the installer, or <code>fink-0.27.16-41</code>, then there are a couple of options.</p><ul>
-	  <li>
-	    <b>rsync (preferred):</b>  Run the sequence below
-	    <pre>fink selfupdate
+      <div class="question"><p><b><?php echo FINK_Q ; ?>4.1: Fink erkennt keine neuen Pakete, selbst nach einem selfupdate mit
+          rsync oder cvs.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Das ist ein gängiges Problem, wenn man auf OS X 10.5 den binären
+          Installer benutzt. Überprüfen sie die Version von Fink:</p><pre>fink --version</pre><p>Wenn sie derzeit die Version <code>fink-0.27.13-41</code> haben, das
+          die Version ist, den der Installer verwendet, oder die Version
+          <code>fink-0.27.16-41</code>, gibt es eine Reihe von Optionen.</p><ul>
+          <li>
+            <b>rsync (vorzugsweise):</b> Führen sie folgende Befehlssequenz
+            aus:
+<pre>fink selfupdate
 fink selfupdate-rsync
 fink index -f
 fink selfupdate</pre>
-	  </li>
-	  <li>
-	    <b>cvs (alternate):</b>  Run
-	    <pre>fink selfupdate-cvs
+	        </li>
+	        <li>
+	          <b>cvs (alternativ):</b> Führen sie folgende Befehlssequenz aus:
+<pre>fink selfupdate-cvs
 fink index -f
 fink selfupdate</pre>
-	  </li>
-	</ul><p>Either will bring you the newest <code>fink</code> version.</p></div>
+	        </li>
+	      </ul><p>Beides wird die neueste Version von <code>fink</code>
+          installieren.</p></div>
     </a>
     <a name="leopard-bindist2">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>4.2: When I try to install stuff I get 'Can't resolve dependency "fink (&gt;= 0.28.0)"'</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Apply the fix from <a href="#leopard-bindist1">the prior entry.</a></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>4.2: Wenn ich versuche etwas zu installiere, bekommen ich die Meldung
+          'Can't resolve dependency "fink (&gt;= 0.28.0)"'</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Aktualisieren sie Fink wie im
+          <a href="#leopard-bindist1">vorigen Abschnitt</a>
+          beschrieben.</p></div>
     </a>
     <a name="stuck-gettext">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>4.3: Fink tells me to run 'sudo apt-get install libgettext3-dev=0.14.5-2' to clear up inconsistent dependencies but I'm still stuck.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> There is a timestamp issue with the <b>libgettext3</b> package description:  0.14.5-2 is an outdated version.  Run</p><pre>fink index -f
-fink update libgettext3-dev	
-	</pre><p>to update the package description cache and then the package.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>4.3: Fink verlangt, das Kommando 'sudo apt-get install
+          libgettext3-dev=0.14.5-2' auszuführen, um inkonsistente Abhängigkeiten
+          aufzulösen, aber alles steckt fest.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Die Paketbeschreibung von <b>libgettext3</b> hat ein
+          Zeitstempel-Problem. Version 0.14.5-2 ist veraltet. Führen sie
+          folgende Kommandos aus:</p><pre>fink index -f
+fink update libgettext3-dev</pre><p>Dies aktualisiert zuerst den Paketbeschreibungs-Cache und dann das
+          Paket.</p></div>
     </a>
     <a name="stuck-dpkg">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>4.4: Fink tells me 'Can't resolve dependency "dpkg (&gt;= 1.10.21-1229)" for package "dpkg-base-files-0.3-1"'.  How do I solve this?</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> There is a timestamp issue with the updated <b>dpkg</b> package description.  Run</p><pre>fink index -f
-fink selfupdate
-	</pre><p>to update the package description cache and then to install <code>dpkg</code> and <code>dpkg-base-files</code>.</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>4.4: Fink meldet 'Can't resolve dependency "dpkg (&gt;= 1.10.21-1229)" für
+          das Paket "dpkg-base-files-0.3-1"'. Wie löse ich das Problem?</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Die aktualisierte Paketbeschreibung von <b>dpkg</b> hat ein
+          Zeitstempel-Problem. Führen sie folgende Kommandos aus:</p><pre>fink index -f
+fink selfupdate</pre><p>Dies aktualisiert zuerst den Paketbeschreibungs-Cache und installiert
+          dann <code>dpkg</code> und <code>dpkg-base-files</code>.</p></div>
     </a>
   <p align="right"><?php echo FINK_NEXT ; ?>:
-<a href="usage-fink.php?phpLang=de">5. Installing, Using and Maintaining Fink</a></p>
+<a href="usage-fink.php?phpLang=de">5. Fink installieren, benutzen und pflegen</a></p>
 <?php include_once "../footer.inc"; ?>
 
 

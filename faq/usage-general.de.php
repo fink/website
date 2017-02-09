@@ -13,10 +13,11 @@ include_once "header.de.inc";
     
     <a name="xlocale">
       <div class="question"><p><b><?php echo FINK_Q ; ?>8.1: I'm getting lots of messages like "locale not supported by C
-        library". Is that bad?</b></p></div>
+          library". Is that bad?</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> It's not bad, it just means that the program will use the default
         English messages, date formats, etc. The program will function
-        normally otherwise. The Running X11 document has <a href="/doc/x11/trouble.php#locale">details</a>.</p></div>
+        normally otherwise. The Running X11 document has
+          <a href="/doc/x11/trouble.php#locale">details</a>.</p></div>
     </a>
     <a name="passwd">
       <div class="question"><p><b><?php echo FINK_Q ; ?>8.2: There are suddenly a number of strange users on my system, with
@@ -32,7 +33,8 @@ include_once "header.de.inc";
         compromised and suddenly had write permission to all files on the
         system). Thus, the passwd package takes the work out of setting up
         these extra users for Fink packages that require this.</p><p>It can be alarming to discover suddenly a number of unexpected
-        users in your "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x), but suppress the urge 
+        users in your "System Preferences: Users" pane (on 10.2.x) or "System
+        Preferences: Accounts" pane (on 10.3.x), but suppress the urge
         to delete them:</p><ul>
           <li>First of all, you have obviously chosen to install a package
           which requires their use, so deleting the user doesn't make much
@@ -43,10 +45,11 @@ include_once "header.de.inc";
           Unix convention for running certain services; the passwd package
           simply adds a couple of extra that Apple did not provide. You can
           see these Apple-installed users in NetInfo Manager.app, or by
-          running <code>niutil -list . /users</code>
-          </li>
+          running <code>niutil -list . /users</code></li>
           <li>If you do decide to delete these users, be very careful of how
-          you go about it. Using the "System Preferences: Users" pane (on 10.2.x) or "System Preferences: Accounts" pane (on 10.3.x) will assign all of their files to a random administrator account, and
+          you go about it. Using the "System Preferences: Users" pane (on
+          10.2.x) or "System Preferences: Accounts" pane (on 10.3.x) will assign
+          all of their files to a random administrator account, and
           there have been reports of havoc played with the administrator
           account's permissions. This is a bug with System Preferences, and
           has been submitted to Apple. A safer way to remove these users from
@@ -64,7 +67,7 @@ include_once "header.de.inc";
         linker need to be told where to find the Fink-installed libraries and
 		headers.  It is also necessary to tell the compiler to use the
 		appropriate target architecture.  For a package that uses standard
-		configure/make process, you need to set some environment variables:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
+		configure/make process, you need to set some environment variables:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include
 export LDFLAGS=-L/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
@@ -105,17 +108,17 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
         code), but have some slight differences between them. There are
   different options under Panther and under Jaguar.</p><p>Under Panther you have the choice between:</p><ul>
           <li>
-            <p>     Apple's X11 (on the third disk). Don't forget to install the
+            <p>Apple's X11 (on the third disk). Don't forget to install the
   X11 SDK
   (on the XCode disk) if you want to compile programs or if you plan to
   install other X11-related Fink packages from source.</p>
           </li>
           <li>
-            <p>        4.4.x built via Fink: install the <code>xfree86</code> and
+            <p>4.4.x built via Fink: install the <code>xfree86</code> and
   <code>xfree86-shlibs</code> packages </p>
           </li>
           <li>
-            <p>       X.org built via Fink: install the <code>xorg</code> and
+            <p>X.org built via Fink: install the <code>xorg</code> and
   <code>xorg-shlibs</code> packages </p>
           </li>
         </ul><p>Under Jaguar, the most popular choices, and the Fink packages to
@@ -159,8 +162,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
 	  Packages with names like <code>system-perl</code> are
 	  placeholder packages. These do not contain actual files, but
 	  merely serve as a mechanism for fink to know about programs
-	  that have been installed manually outside of fink.
-	</p><p>
+	  that have been installed manually outside of fink.</p><p>
 	  Starting with the 10.3 distribution, most placeholders
 	  aren't even real packages that you can install and remove.
 	  Instead, they are "Virtual Packages", package data
@@ -168,43 +170,41 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
 	  to a preconfigured list of manually installed programs. For
 	  each virtual package, fink checks for certain files in
 	  certain locations, and if they are found, considers that
-	  virtual package "installed".
-	</p><p>
+	  virtual package "installed".</p><p>
 	  You can run the program <code>fink-virtual-pkgs</code>
 	  (part of the fink package) to get a listing of exactly what
 	  fink thinks is installed. Adding the <code>--debug</code>
 	  flag will give lots of diagnostic information about exactly
-	  what files fink is checking.
-	</p><p>
+	  what files fink is checking.</p><p>
 	  Unfortunately, there is no mechanism by which you can
 	  install an arbitrary program yourself (outside of fink) and
 	  have fink recognize that program rather than trying to
 	  install its own version of it. It's just too difficult in
 	  the general case to be able to check configure and compiler
-	  flags, pathnames, etc.
-	</p><p>
+	  flags, pathnames, etc.</p><p>
 	  Here are the most important virtual packages that fink
-	  defines (as of fink-0.19.2):
-	</p><ul>
-          <li>system-perl: [virtual package representing perl]
-	    <p>
+	  defines (as of fink-0.19.2):</p><ul>
+          <li>
+            system-perl: [virtual package representing perl]
+            <p>
 	      Represents <code>/usr/bin/perl</code>, which is
 	      part of the default OS X installation. This package also
 	      provides <code>system-perlXXX</code> and
 	      <code>perlXXX-core</code> according to the version X.X.X
-	      of that perl interpreter.
-	    </p>
+	      of that perl interpreter.</p>
           </li>
-          <li>system-javaXXX: [virtual package representing Java X.X.X]
-	    <p>
+          <li>
+            system-javaXXX: [virtual package representing Java X.X.X]
+            <p>
 	      Represents the Java Runtime Environment, which is part of OS
 	      X (and Apple's Software Update). See
 	      <a href="http://www.apple.com/java">Apple's Java
-	      page</a> for more information.
-	    </p>
+	      page</a> for more information.</p>
           </li>
-          <li>system-javaXXX-dev: [virtual package representing Java X.X.X development headers]
-	    <p>
+          <li>
+            system-javaXXX-dev: [virtual package representing Java X.X.X
+            development headers]
+            <p>
 	      Represents the Java SDK, which must be manually
 	      downloaded from <a href="http://connect.apple.com">connect.apple.com</a>
 	      (free registration required) and installed. If you have
@@ -213,33 +213,37 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is 
 	      Remember to check for (and download and install if
 	      necessary) the SDK after installing or upgrading your
 	      Runtime Environment. See also <a href="comp-general.php?phpLang=de#system-java">this FAQ
-	      entry</a>.
-	    </p>
+	      entry</a>.</p>
           </li>
-          <li>system-java3d: [virtual package representing Java3D]</li>
-          <li>system-javaai: [virtual package representing Java Advanced Imaging]
-	    <p>
+          <li>
+            system-java3d: [virtual package representing Java3D]
+          </li>
+          <li>
+            system-javaai: [virtual package representing Java Advanced Imaging]
+            <p>
 	      Represent Java extensions for 3D graphics and image
 	      processing, which must be manually downloaded from Apple
 	      and installed. See <a href="http://docs.info.apple.com/article.html?artnum=120289">Apple'
-	      webpage</a> for more information.
-	    </p>
+	      webpage</a> for more information.</p>
           </li>
-          <li>system-xfree86: [placeholder for user installed x11]</li>
-          <li>system-xfree86-shlibs: [placeholder for user installed x11 shared libraries]
-	    <p>
+          <li>
+            system-xfree86: [placeholder for user installed x11]
+          </li>
+          <li>
+            system-xfree86-shlibs: [placeholder for user installed x11 shared
+            libraries]
+            <p>
 	      Represent Apple's X11/XDarwin, an optional part of OS X
 	      (X11User.pkg). These packages provide <code>x11</code>
 	      and <code>x11-shlibs</code>, respectively. See
-	      also <a href="comp-packages.php?phpLang=de#cant-install-xfree">this FAQ entry</a>.
-	    </p>
+	      also <a href="comp-packages.php?phpLang=de#cant-install-xfree">this FAQ entry</a>.</p>
           </li>
-          <li>system-xfree86-dev [placeholder for user installed x11 development tools]
-	    <p>
+          <li>
+            system-xfree86-dev [placeholder for user installed x11 development tools]
+            <p>
 	      Represents Apple's X11/XDarwin SDK, an optional part of
 	      OS X (X11SDK.pkg). This package provides
-	      <code>x11-dev</code>. See also <a href="comp-packages.php?phpLang=de#cant-install-xfree">this FAQ entry</a>.
-	    </p>
+	      <code>x11-dev</code>. See also <a href="comp-packages.php?phpLang=de#cant-install-xfree">this FAQ entry</a>.</p>
           </li>
         </ul></div>
     </a>

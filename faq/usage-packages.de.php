@@ -48,7 +48,8 @@ include_once "header.de.inc";
     </a>
     <a name="xdarwin-start">
       <div class="question"><p><b><?php echo FINK_Q ; ?>9.3: Help! When I start XDarwin, it immediately quits!</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Don't Panic. The Running X11 document now has an extensive <a href="/doc/x11/trouble.php#immediate-quit">troubleshooting
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Don't Panic. The Running X11 document now has an extensive
+          <a href="/doc/x11/trouble.php#immediate-quit">troubleshooting
         section</a> for this common problem.</p></div>
     </a>
     <a name="no-server">
@@ -70,15 +71,9 @@ include_once "header.de.inc";
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Some users have reported that the behavior of the
         <code>delete</code> key is different between XDarwin and Apple X11.
         This can be rectified by adding lines to the appropriate X startup
-        files:</p><p>
-          <b>.Xmodmap:</b>
-        </p><pre>keycode 59 = Delete</pre><p>
-          <b>.Xresources:</b>
-        </p><pre>xterm*.deleteIsDEL: true 
+        files:</p><p><b>.Xmodmap:</b></p><pre>keycode 59 = Delete</pre><p><b>.Xresources:</b></p><pre>xterm*.deleteIsDEL: true
 xterm*.backarrowKey: false
-xterm*.ttyModes: erase ^?</pre><p>
-          <b>.xinitrc</b>
-        </p><pre>xrdb -load $HOME/.Xresources 
+xterm*.ttyModes: erase ^?</pre><p><b>.xinitrc</b></p><pre>xrdb -load $HOME/.Xresources
 xmodmap $HOME/.Xmodmap</pre><p></p></div>
     </a>
     <a name="apple-x11-wants-xfree86">
@@ -90,24 +85,24 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
             <p>Typically what you need to do is reinstall the X11User package,
 	    since the installer application occasionally misses installing a file.
 	    You may need to repeat this multiple times. Running</p>
-	    <pre>fink list -i system-xfree86</pre>
-	    <p>should show that the <code>system-xfree86</code> and
+<pre>fink list -i system-xfree86</pre>
+       	    <p>should show that the <code>system-xfree86</code> and
 	    <code>system-xfree86-shlibs</code> packages are installed, and</p>
-	    <pre>fink list x11</pre>
-	    <p>should indicate that the <code>x11-shlibs</code> and <code>x11</code> virtual
-	    packages are present.</p>
-	    <p>If reinstalling the X11User package doesn't work, then consult the
+<pre>fink list x11</pre>
+      	    <p>should indicate that the <code>x11-shlibs</code> and
+              <code>x11</code> virtual packages are present.</p>
+	          <p>If reinstalling the X11User package doesn't work, then consult the
 	    <a href="#special-x11-debug">special debug</a> instructions,
 	    below.</p>
           </li>
           <li>
             <b>You are installing from source:</b>
-	    <p>Typically this error means that you need to (re)install the X11SDK,
+            <p>Typically this error means that you need to (re)install the X11SDK,
 	    which is <b>mandatory</b> if you want to build packages from source.
             It is in the Xcode Tools folder of a Tiger DVD, or (Optional
             Installs/)Xcode Tools/Packages on your Leopard DVD(s). If you
             run</p>
-            <pre>fink list -i system-xfree86  </pre>
+<pre>fink list -i system-xfree86  </pre>
             <p>it should show the <code>system-xfree86</code>,
 	    <code>system-xfree86-shlibs</code>, and <code>system-xfree86-dev</code>
 	    packages as installed.  If the <code>-dev</code> package is missing,
@@ -115,10 +110,10 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
 	    file.  You may need to keep doing this.  If either of the other two
 	    are missing, then reinstall the X11User package (same reason).  At
 	    this point</p>
-	    <pre>fink list x11</pre>
-	    <p>should indicate that the <code>x11-dev</code>, <code>x11-shlibs</code>,
+<pre>fink list x11</pre>
+      	    <p>should indicate that the <code>x11-dev</code>, <code>x11-shlibs</code>,
 	    and <code>x11</code> virtual packages are present.</p>
-	    <p>If reinstalling the X11SDK or X11User package doesn't work, then consult the
+	          <p>If reinstalling the X11SDK or X11User package doesn't work, then consult the
 	    <a href="#special-x11-debug">special debug</a> instructions,
 	    below.</p>
            </li>
@@ -126,10 +121,12 @@ xmodmap $HOME/.Xmodmap</pre><p></p></div>
     </a>
     <a name="special-x11-debug">
       <div class="question"><p><b><?php echo FINK_Q ; ?>9.7: I'm still having problems with X11 and Fink.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If the hints in the  <a href="#apple-x11-wants-xfree86">Fink tries to install XFree86 or X.org</a> entry don't help, or aren't applicable to your situation, you may need to flush out your X11 installation and remove any old placeholders and partially/fully installed X11-related packages:</p><p>On Leopard, use</p><pre>
-sudo pkgutil --forget com.apple.pkg.X11User
-sudo pkgutil --forget com.apple.pkg.X11SDKLeo
-</pre><p>Then, on either 10.4 or 10.5, run</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If the hints in the  <a href="#apple-x11-wants-xfree86">Fink
+          tries to install XFree86 or X.org</a> entry don't help, or aren't
+          applicable to your situation, you may need to flush out your X11
+          installation and remove any old placeholders and partially/fully
+          installed X11-related packages:</p><p>On Leopard, use</p><pre>sudo pkgutil --forget com.apple.pkg.X11User
+sudo pkgutil --forget com.apple.pkg.X11SDKLeo</pre><p>Then, on either 10.4 or 10.5, run</p><pre>sudo dpkg -r --force-all system-xfree86 system-xfree86-42 system-xfree86-43 \
 xorg xorg-shlibs xfree86 xfree86-shlibs \
 xfree86-base xfree86-base-shlibs xfree86-rootless xfree86-rootless-shlibs \
 xfree86-base-threaded xfree86-base-threaded-shlibs \
@@ -145,19 +142,33 @@ fink selfupdate; fink index</pre><p>(the first line may give you warnings about 
           <li>Get it here: <a href="http://perso.wanadoo.fr/costabel/fink-x11-debug">http://perso.wanadoo.fr/costabel/fink-x11-debug</a>
           </li>
           <li>Save it wherever you like.</li>
-          <li>Run it in a terminal window via <pre>perl fink-x11-debug</pre>
+          <li>Run it in a terminal window via
+<pre>perl fink-x11-debug</pre>
           </li>
         </ul></div>
     </a>
     <a name="tiger-gtk">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>9.8: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p><p>If you haven't updated Tiger and/or <code>base-files</code> yet, you can work around this issue by prefixing the name of the software you want to run as follows:
-</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the Application Menu in Apple's X11 as well as a terminal.</p><p>You may find it preferable to set this globally (e.g. in your startup script, and/or in your <code>.xinitrc</code>, which you may need to do to run GNOME).  Put</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in your <code>.xinitrc</code> (regardless of your login shell) or your <code>.profile</code> (or other startup script) for <b>bash</b> users and:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>is the corresponding command to use in e.g. your <code>.cshrc</code> file for <b>tcsh</b> users.</p><p>Note:  this will automatically be done if you install a recent enough <code>base-files</code>.
-	</p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>9.8: After updating to Tiger (OS 10.4), whenever I use a GTK app, I get
+          errors involving <code>_EVP_idea_cbc</code>.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This is caused by an apparent bug in Tiger's dynamic linker (current
+          as of 10.4.1), but looks to be fixed in 10.4.3, and Fink has had a
+          workaround in the guise of <code>base-files-1.9.7-1</code> or later.</p><p>If you haven't updated Tiger and/or <code>base-files</code> yet, you
+          can work around this issue by prefixing the name of the software you
+          want to run as follows:</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: </pre><p>E.g., if you want to use <code>gnucash</code>, you'd use</p><pre>env DYLD_FALLBACK_LIBRARY_PATH=: gnucash</pre><p>This method works for applications that are launched via the
+          Application Menu in Apple's X11 as well as a terminal.</p><p>You may find it preferable to set this globally (e.g. in your startup
+          script, and/or in your <code>.xinitrc</code>, which you may need to do
+          to run GNOME).  Put</p><pre>export DYLD_FALLBACK_LIBRARY_PATH=:</pre><p>in your <code>.xinitrc</code> (regardless of your login shell) or
+          your <code>.profile</code> (or other startup script) for <b>bash</b>
+          users and:</p><pre>setenv DYLD_FALLBACK_LIBRARY_PATH :</pre><p>is the corresponding command to use in e.g. your <code>.cshrc</code>
+          file for <b>tcsh</b> users.</p><p>Note:  this will automatically be done if you install a recent enough
+          <code>base-files</code>.</p></div>
     </a>
     <a name="yelp">
       <div class="question"><p><b><?php echo FINK_Q ; ?>9.9: I can't get the help to work for any GNOME application.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> You need to install the <code>yelp</code> package.  This package was not placed within the GNOME bundle because it uses cryptography, and it was decided not to place all of GNOME in the crypto tree just to use the help system.</p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> You need to install the <code>yelp</code> package.  This package was
+          not placed within the GNOME bundle because it uses cryptography, and
+          it was decided not to place all of GNOME in the crypto tree just to
+          use the help system.</p></div>
     </a>
   
 <?php include_once "../footer.inc"; ?>

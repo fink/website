@@ -162,6 +162,6 @@ fink-users mailing list via <a href="/lists/fink-users.php">/lists/fink-users.ph
 and ask there.
 </p>
 
-<?php include_once "../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 

@@ -192,6 +192,6 @@ Email-Liste für Fink-Nutzer
 und fragen sie dort.
 </p>
 
-<?php include_once "../footer.inc"; ?>
+<?php include_once "../../footer.inc"; ?>
 
 
