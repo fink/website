@@ -5,19 +5,19 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2017-01-14T01:13:13+01:00</dc:date>
+    <dc:date>2017-02-10T19:00:58+01:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20ver%F6ffentlicht">
-      <title>fink-0.41.0 veröffentlicht</title>
-      <link>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20ver%F6ffentlicht</link>
-      <guid>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20ver%F6ffentlicht</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.1%20ver%F6ffentlicht">
+      <title>fink-0.41.1 veröffentlicht</title>
+      <link>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.1%20ver%F6ffentlicht</link>
+      <guid>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.1%20ver%F6ffentlicht</guid>
       <description>
 		<![CDATA[
 	
-  <p>Das Fink-Projekt veröffentlichte fink-0.41.1. Es hilft bei
-  Anpassungen and die libXt Bibliothek aus XQuartz, indem die Quartz-Version aus
-  system-xfree86* Paketen verwendet wird und auch OS X 10.12.1
-  unterstützt.
+   <p>Das Fink-Projekt veröffentlichte fink-0.41.1. Es unterstützt
+     OS X 10.12.1 und hilft bei Anpassungen der libXt-Bibliothek aus XQuartz,
+     indem die Quartz-Version aus system-xfree86* Paketen verwendet
+     wird.
   </p>
  
 		]]>
@@ -25,10 +25,10 @@
       <content:encoded>
 		<![CDATA[
 	
-  <p>Das Fink-Projekt veröffentlichte fink-0.41.1. Es hilft bei
-  Anpassungen and die libXt Bibliothek aus XQuartz, indem die Quartz-Version aus
-  system-xfree86* Paketen verwendet wird und auch OS X 10.12.1
-  unterstützt.
+   <p>Das Fink-Projekt veröffentlichte fink-0.41.1. Es unterstützt
+     OS X 10.12.1 und hilft bei Anpassungen der libXt-Bibliothek aus XQuartz,
+     indem die Quartz-Version aus system-xfree86* Paketen verwendet
+     wird.
   </p>
  
 		]]>
