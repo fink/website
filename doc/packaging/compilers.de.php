@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Compilers";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2014/10/25 01:52:35';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/03/10 22:52:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="reference.php?phpLang=de" title="Reference"><link rel="prev" href="fslayout.php?phpLang=de" title="Filesystem Layout">';
 
 
@@ -16,9 +16,11 @@ include_once "header.de.inc";
 Fink uses the gcc family of compilers, as provided by Apple computer
 through the Apple Developer Connection. Different versions of gcc exist,
 and usually more than one is available on a Mac OS X system.
-</p><p>
+</p>
+<p>
 This section explains some of the ways Fink deals with these different versions
-of gcc. An email to the Fink mailing list has <a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html">more explanation</a>.
+of gcc. An email to the Fink mailing list has
+<a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html">more explanation</a>.
 </p>
 
 
@@ -40,7 +42,8 @@ and <code>SetCXX</code> fink fields can be used for this purpose.
 For example, you might change the g++ compiler to version 3.3 by the setting
 <code>SetCXX: g++-3.3</code>.  Examine the output when building your
 package to make sure that the correct compiler is being used.
-</p><p>
+</p>
+<p>
 The 10.1 distribution assumes that the compiler version is 2.95; the
 10.2 distribution assumes that the compiler version is 3.1; the 10.2-gcc3.3
 and 10.3 distributions assume that the compiler version is 3.3.   The compiler
@@ -51,7 +54,8 @@ distributions use clang and clang++ as the default compilers.  The 10.9
 distribution has a further change in that it has migrated from libstdc++ to 
 libc++.
 </p>
-<p>A new method for ensuring the correct g++ compiler was introduced with the 
+<p>
+A new method for ensuring the correct g++ compiler was introduced with the
 10.4-transitional distribution.  During compilation, a directory
 <code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
 number) is added to the PATH during compilation.  This directory contains

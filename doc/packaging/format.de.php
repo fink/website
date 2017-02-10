@@ -1,84 +1,76 @@
 <?php
-$title = "Paket erstellen - Package Descriptions";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2014/10/25 01:52:35';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="policy.php?phpLang=de" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=de" title="Introduction">';
+$title = "Paket erstellen - Paketbeschreibungen";
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/03/10 22:52:23';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="policy.php?phpLang=de" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
 
 include_once "header.de.inc";
 ?>
-<h1>Paket erstellen - 2. Package Descriptions</h1>
+<h1>Paket erstellen - 2. Paketbeschreibungen</h1>
 
 
 
-<h2><a name="trees">2.1 Tree Layout</a></h2>
+<h2><a name="trees">2.1 Baum Layout</a></h2>
 <p>
-Package descriptions are read from the <code>finkinfo</code>
-directories below the <code>/sw/fink/dists</code> directory.
-The "Trees" setting in <code>/sw/etc/fink.conf</code> controls
-which directories are read.
-The name of package description files must be the full package name
-plus the extension ".info".
-As of fink 0.26.0, there are several different ways to specify the
-filename: it is recommended to use the shortest version which is
-consistent with other needed package files.  The filename takes
-the form: the invariant packagename, optionally 
-followed by the architecture, optionally followed by the
-distribution, 
-optionally followed by either version or version-revision, each delimited by 
-hyphens, concluding with ".info".  
-The "architecture" and "distribution" components are only allowed
-if the corresponding field is present in the package, and if it specifies
-exactly one value.
+Paketbeschreibungen werden aus dem Verzeichnis <code>finkinfo</code> gelesen,
+der sich im Verzeichnis <code>/sw/fink/dists</code> befindet. Die
+Einstellung "Trees" in der Datei <code>/sw/etc/fink.conf</code>
+bestimmt, welche Verzeichnisse gelesen werden.
+Der Name der Paketbeschreibungsdatei besteht aus dem vollständigen Paketnamen
+und dem Suffix ".info".
+Ab fink 0.26.0 gibt es mehre Möglichkeiten für den Dateinamen: Empfohlen wird
+der kürzeste Name, der konsistent mit anderen Paketen ist, die benötigt werden.
+Der Dateiname hat folgende Form: der unveränderliche Paketname, optional die
+Architektur, optional die Distribution, optional Version oder Version-Revision,
+alle durch Bindestriche getrennt und abgeschlossen mit ".info".
+Die Komponenten "Architektur" und "Distribution" sind nur erlaubt, wenn die
+entsprechenden Felder auch in der Beschreibung vorkommen und exakt einen Wert
+zugewiesen haben.
 </p>
 <p>
-The package description tree is organized with several levels of
-directories.
-The directories in top-down order:
+Der Baum der Paketveschreibungen ist in mehreren Ebenen von Verzeichnissen
+organisiert. Die Verzeichnisse von oben nach unten:
 </p>
 <ul>
-<li><code>dists</code> is where it starts. The <code>dists</code>
-directory is necessary for the Debian tools.  In recent versions
-of fink, this is a symlink to a directory with a distribution-inspired
-name.</li>
-<li>The distribution. There is <code>stable</code>,
-<code>unstable</code> and <code>local</code>. The <code>local</code>
-directory is under the control of the local administrator/user. The
-<code>stable</code> and <code>unstable</code> directories are part of
-Fink.</li>
-<li>The tree. The <code>main</code> tree contains the bulk of the
-packages. Prior to July 1, 2010, the
-Cryptographic software was kept in a separate tree,
-<code>crypto</code>, but this is now a section of the <code>main</code>
-tree.</li>
-<li><code>finkinfo</code>
-vs. <code>binary-darwin-powerpc</code>. <code>finkinfo</code> contains
-the Fink package descriptions and patches, while
-<code>binary-darwin-powerpc</code> contains the <code>.deb</code>
-binary packages.</li>
-<li>Sections. The <code>main</code> tree is subdivided into thematic
-sections to make it manageable. </li>
+<li><code>dists</code> ist der Anfang. Das Verzeichnis <code>dists</code>
+  wird für die Debian Tools benötigt. In neueren Version von fink ist dies ein
+  Symlink zu einem Verzeichnis mit einem distributionsbezogenem Namen.</li>
+<li>Die Distributionen. Es gibt <code>stable</code>, <code>unstable</code> und
+  <code>local</code>. Das Verzeichnis <code>local</code> wird vom lokalen
+  Administrator/Nutzer verwaltet. Die Verzeichnisse <code>stable</code> und
+  <code>unstable</code> gehören Fink.</li>
+<li>Der Baum. Der Baum enthält die meisten Pakete. Vor dem 1. Juli 2010 wurde
+  cryptographische Software in einem separaten Baum namens <code>crypto</code>
+  gehalten. Aber jetzt sind diese Pakete auch im Baum <code>main</code>.</li>
+<li><code>finkinfo</code>vs. <code>binary-darwin-powerpc</code>.
+  <code>finkinfo</code> enthält die Fink-Paketbeschreibungen und Patch-Dateien,
+  während das Verzeichnis <code>binary-darwin-powerpc</code> die binären
+  <code>.deb</code> Pakete enthält.</li>
+<li>Sections. Das Verzeichnis <code>main</code> ist weiter thematisch
+  unterteilt, damit es handhabbar bleibt.</li>
 </ul>
 
 
-<h2><a name="format">2.2 File Format</a></h2>
+<h2><a name="format">2.2 Datei-Format</a></h2>
 <p>
-The description files are simple lists of key-value pairs, also called
-'fields'.
-Each line starts with a key, terminated by a colon (:) and followed by
-the value, like this:
+Die Paketbeschreibungsdateien sind einfache Listen von Schlüssel-Wert-Paaren,
+auch Felder genannt.
+Jede Zeile beginnt mit einem Schlüssel, der mit einem Doppelpunkt (:)
+abgeschlossen wird. Darauf folgt direkt der Wert, also so:
 </p>
-<pre>Key: Value</pre>
+<pre>Schlüssel: Wert</pre>
 <p>
-There are two notations for fields that must span multiple lines.
-</p><p>
-The preferred notation is based on the here-document
-syntax in shell scripts.
-In this syntax, the first line consists of the key, followed by <code>&lt;&lt;</code>
-as the value.
-All following lines are treated as the actual value, until a line with
-just <code>&lt;&lt;</code> on it is encountered.
-The example from above now looks like this:
+Es gibt zwei Schreibweisen für Felder, die sich über mehrere Zeilen
+erstrecken.
+</p>
+<p>
+Die bevorzugte Schreibweise is so wie die here-document-Syntax in
+Shell-Skripten. Bei dieser Syntax beginnt die erste Zeile mit dem Schlüssel,
+gefolgt von <code>&lt;&lt;</code> als Wert.
+Alle nachfolgenden Zeilen werden als eigentlicher Wert behandelt bis eine Zeile
+folgt, die nur <code>&lt;&lt;</code> enthält.
+Das Beispiel von oben sieht nun so aus:
 </p>
 <pre>InstallScript: &lt;&lt;
 mkdir -p %i/share/man
@@ -87,215 +79,212 @@ mkdir -p %i/share/doc/%n
 install -m 644 COPYING %i/share/doc/%n
 &lt;&lt;</pre>
 <p>
-Indentation using this format is optional, but it can be used to
-improve readability.
-</p><p>
-The here-document syntax can be nested. This is often used in
-a <code>SplitOff</code> or <code>SplitOff<b>N</b></code> field.
-These fields contain other fields (multiple lines), and this syntax
-allows these sub-fields to have multiple lines themselves.  The same
-terminator <code>&lt;&lt;</code> is used for the sub-here-document.
-Here is an example:
+Einrückungen in diesem Format sind optional, können aber für eine erhöhte
+Lesbarkeit verwendet werden.
 </p>
-<pre>
-SplitOff: &lt;&lt;
+<p>
+Die here-document-Syntax kann verschachtelt sein. Dies wird oft in den Feldern
+<code>SplitOff</code> oder <code>SplitOff<b>N</b></code> verwendet.
+Diese Felder enthalten weitere Felder (mehrere Zeilen) und diese Syntax erlaubt,
+dass auch diese Unterfelder ihrerseits mehrere Zeilen hat. Derselbe Abschluss
+mit <code>&lt;&lt;</code> wird bei dem sub-here-document benutzt.
+Hier ein Beispiel:
+</p>
+<pre>SplitOff: &lt;&lt;
   Package: %N-shlibs
   InstallScript: &lt;&lt;
     ln -s %p/lib/libfoo.2.dylib %i/lib/libfoo.%v.dylib
   &lt;&lt;
-&lt;&lt;
-</pre>
+&lt;&lt;</pre>
 <p>
-In this format, empty lines and lines starting with a hash (#) are ignored.
-Keys (field names) are case-insensitive in Fink, so you can write
-<code>InstallScript</code>, <code>installscript</code> or
-<code>INSTALLSCRIPT</code> as you please.
-The first capitalization form is preferred for readability, though.
-Some fields take a boolean value - any of "true", "yes", "on", "1"
-(case-insensitive) are treated as true, all other values are treated
-as false.
+In diesem Format werden Leerzeilen und Zeilen mit einem Hash (#) am Zeilenanfang
+ignoriert. Groß-und Kleinschreibung wird beim Schlüssel (Feldnamen) nicht
+beachtet, d. h. man kann <code>InstallScript</code>, <code>installscript</code>
+oder <code>INSTALLSCRIPT</code>schreiben, wie man will. Allerdings wird die
+erste Form mit Großbuchstaben wegen Lesbarkeit empfohlen.
+Einige Felder akzeptieren boolesche Werte. Hier werden "true", "yes", "on" und
+"1" (auch in Großschreibung) als wahr interpretiert, alle anderen Werte als
+falsch.
 </p>
 
 
-<h2><a name="percent">2.3 Percent Expansion</a></h2>
+<h2><a name="percent">2.3 Prozent-Erweiterungen</a></h2>
 <p>
-To make life easier, Fink supports a set of expansions that are
-performed on some fields.
-In order to prevent ambiguity, you can use curly-braces to denote
-exactly what character(s) should be considered for a percent
-expansion. For example, <code>%{n}</code> has the same meaning
-as <code>%n</code>.
-The available expansions are:
+Zur Vereinfachung unterstützt Fink einen Satz an Erweiterungen, die in einigen
+Feldern angewendet werden.
+Mehrdeutigkeiten kann man verhinder, indem man mit geschweiften Klammern genau
+anzeigt, welche Buchstaben für eine Prozent-Erweiterung genommen werden sollen.
+<code>%{n}</code> hat zum Beispiel die gleiche Bedeutung wie <code>%n</code>.
+Folgende Erweiterungen stehen zur Verfügung:
 </p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left"></th><th align="left"></th></tr><tr valign="top"><td>%n</td><td>
-<p>
-the <b>n</b>ame of the current package
-</p>
+<p>Der <b>n</b>ame des Pakets</p>
 </td></tr><tr valign="top"><td>%N</td><td>
 <p>
-the <b>N</b>ame of the parent package (the same as %n unless within a
+Der <b>N</b>ame des Elternpakets (der selbe wie %n außer innerhalb eines
 <code>SplitOff</code>)
 </p>
 <p>
-Note: If a parent <code>Package</code> field contains %type_*[], those
-percent expansion values <b>will</b> be included in %N in
-a <code>SplitOff</code> block (since they are included in %n in the
-parent).
+Anmerkung: Wenn ein Eltern-<code>Paket</code>-Feld %type_*[] enthält, dann
+<b>werden</b> die Werte der Prozent-Erweiterung in %N in einem
+<code>SplitOff</code>-Block mit eingeschlossen. (Schließlich sind sie Teil von
+%n bei den Eltern.)
 </p>
 </td></tr><tr valign="top"><td>%e</td><td>
-<p>
-the package <b>e</b>poch
-</p>
+<p>Die <b>e</b>poche des Pakets</p>
 </td></tr><tr valign="top"><td>%v</td><td>
 <p>
-the package <b>v</b>ersion. Note that the Epoch is not part
-of <code>%v</code>.
+Die <b>v</b>ersion des Pakets. Beachten sie, dass die Epoche nicht zu
+<code>%v</code> gehört.
 </p>
 </td></tr><tr valign="top"><td>%V</td><td>
 <p>
-the full package <b>V</b>ersion, which automatically includes the Epoch
-if present.  Note that this percent expansion is only available for
-packages whose <code>InfoN</code> level is at least 4.
+Die vollständige <b>V</b>ersion des Pakets, die automatisch die Epoche
+enthält, wenn vorhanden. Beachten sie, dass diese Prozent-Erweiterung nur für
+Pakete zur Verfügung steht, deren <code>InfoN</code>-Ebene mindestens 4 ist.
 </p>
 </td></tr><tr valign="top"><td>%r</td><td>
-<p>
-the package <b>r</b>evision
-</p>
+<p>Die <b>r</b>evision des Pakets</p>
 </td></tr><tr valign="top"><td>%f</td><td>
 <p>
-the <b>f</b>ull package name (%n-%v-%r). Note that the Epoch is not
-part of <code>%f</code>.
+Der vollständige (<b>f</b>ull) Paketname (%n-%v-%r). Beachten sie, dass die
+Epoche nicht zu <code>%f</code> gehört.
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not assume all users have Fink installed in <code>/sw</code>; use <code>%p</code> to get the correct path.
+Der <b>p</b>refix wo fink installiert ist, also <code>/sw</code>.
+Sie dürfen nicht annehmen, dass alle Nutzer Fink in <code>/sw</code>
+installiert haben, nutzen sie immer <code>%p</code> für den korrekten Pfad.
 </p>
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
-the <b>d</b>estination directory where the tree to be packaged is built, e.g.
-<code>/sw/src/fink.build/root-gimp-1.2.1-1</code>. This temporary directory serves
-as root during the installation phase of compiling a package. You must not assume that
-<code>root-%f</code> will be in <code>%p/src</code> since
-a user can change that directory using the <code>Buildpath</code> field
-in <code>/sw/etc/fink.conf</code>.
+Im Verzeichnis <b>d</b>estination wird der Baum für ein Paket erstellt, z. B.
+in <code>/sw/src/fink.build/root-gimp-1.2.1-1</code>. Dieses
+temporäre Verzeichnis dient als Wurzelverzeichnis während der Installationsphase
+beim Compilieren eines Pakets. Sie sollten nicht annehmen, dass
+<code>root-%f</code> in <code>%p/src</code> ist, denn ein Nutzer
+kann dieses Verzeichnis mit dem Feld <code>Buildpath</code> in der Datei
+<code>/sw/etc/fink.conf</code> ändern.
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
-the <b>D</b>estination for the parent package (the same as %d unless within a
-<code>SplitOff</code>)
+Das Verzeichnis <b>D</b>estination für das Elternpaket (das selbe wie %d außer
+innerhalb eines <code>SplitOff</code>)
 </p>
 </td></tr><tr valign="top"><td>%i</td><td>
-<p>
-the full <b>i</b>nstall-phase prefix, equivalent to %d%p
-</p>
+<p>Der vollständige <b>i</b>nstall-phase-Präfix, äquivalent zu %d%p</p>
 </td></tr><tr valign="top"><td>%I</td><td>
 <p>
-the <b>I</b>nstall prefix of the parent package, equivalent to %D%P (the same
-as %i unless within a <code>SplitOff</code>)
+Der <b>I</b>nstall-Präfix des Elternpakets, äquivalent zu %D%P (das selbe wie
+%i außer innerhalb eines <code>SplitOff</code>)
 </p>
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>
-the path where the p<b>a</b>tches can be found. As of fink-0.29.0, this variable should not be used. Use <code>%{PatchFile}</code> to access the <code>.patch</code> file. Support for <code>%a</code> will be removed in the future.
+Der Pfad, wo sich die P<b>a</b>tches befinden. Ab fink-0.29.0 sollte diese
+Variable nicht mehr benutzt werden. Nutzen sie <code>%{PatchFile}</code>, um auf
+die <code>.patch</code>-Datei zuzugreifen. Die Unterstützung für
+<code>%a</code> wird in der Zukunft entfernt werden.
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-the <b>b</b>uild directory, e.g. <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>.
-You must not assume that
-<code>%f</code> will be in <code>%p/src</code> since
-a user can change that directory using the <code>Buildpath</code> field
-in <code>/sw/etc/fink.conf</code>.
-The innermost directory is named based on the <code>Source</code>
-filename, or is the value of the <code>SourceDirectory</code> field
-(if present), or is not used if <code>NoSourceDirectory</code>
-is <code>true</code>.
+Das Verzeichnis <b>b</b>uild, also
+<code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>.
+Sie sollten nicht annehmen, dass sich <code>%f</code> in
+<code>%p/src</code> befindent, denn ein Nutzer kann dieses Verzeichnis
+über das Feld <code>Buildpath</code> in der Datei
+<code>/sw/etc/fink.conf</code> ändern.
+Das innerste Verzeichnis wird nach dem Dateinamen der
+<code>Quelle</code> benannt oder dem Wert des Felds <code>SourceDirectory</code>
+(falls vorhanden) oder wird nicht verwendet wenn das Feld
+<code>NoSourceDirectory</code> auf <code>true</code> gesetzt ist.
 </p>
 <p>
-Note: Use this only when there is no other way. The build directory is the
-current directory when scripts are executed; you should use relative path names
-in commands.
+Anmerkung: Nutzen sie dies nur, wenn es gar nicht anders geht. Das Verzeichnis
+build ist das aktuelle Verzeichnis, wenn Skripte ausgeführt werden; sie sollten
+in Kommandos relative Pfadnamen verwenden.
 </p>
 </td></tr><tr valign="top"><td>%c</td><td>
 <p>
-the parameters for <b>c</b>onfigure: <code>--prefix=%p</code> plus anything
-specified with ConfigureParams.  (The behavior is different when the package
-has <code>Type: perl</code>; in that case, the default flags for
-building a perl package are used instead of <code>--prefix=%p</code>
-in the definition of <code>%c</code>.)
+Die <b>c</b>onfigure Parameter: <code>--prefix=%p</code> plus alles, was mit
+ConfigureParams angegeben wurde. (Das Verhalten ist anders, wenn das Paket das
+Feld <code>Type: perl</code> gesetzt hat. In diesem Fall werden die
+Voreinstellungen für das Erstellen von Perl-Paketen anstatt von
+<code>--prefix=%p</code> in der Definition von <code>%c</code> verwendet.)
 </p>
 </td></tr><tr valign="top"><td>%m</td><td>
 <p>
-the <b>m</b>achine architecture string.  This is no longer strictly
-dictated by the type of machine, but is rather a choice made by the
-user upon fink installation among those architectures which will run
-on the user's hardware.  Current possible values are
-'powerpc' for ppc machines
-and either 'i386' or 'x86_64' for x86 machines. The choice 'x86_64'
-is only available if the machine is capable of running 64-bit libraries
-and executables.  (This item was introduced in the fink-0.12 era; the
-current description is valid for fink-0.29.5 and later.)
+Die Zeichenfolge für die Architektur der <b>m</b>achine. Dies ist nicht länger
+durch den Typ der Maschine bestimmt, sondern eine Wahl des Nutzers bei der
+Installation zwischen den Architekturen, die auf der Hardware des Nutzers
+laufen können. Mögliche Werte sind 'powerpc' für PowerPC-Macs und 'i386' oder
+'x86_64' für Intel-Macs. Die Auswahl 'x86_64' steht auf Intel-Macs nur zur
+Verfügung, wenn der Mac 64-bit Bibliotheken und Programme ausführen kann.
+(Dieser Werf wurde etwa in fink-0.12 eingeführt, die aktuellen Beschreibung gilt
+für fink-0.29.5 und später.)
 </p>
 </td></tr><tr valign="top"><td>%%</td><td>
 <p>
-the percent character (one that will not be expanded according to whatever follows it).  Expansion occurs strictly
-left-to-right, so %%n is not anything related to the package name, but
-rather is the string %n.  (Introduced in fink-0.18.0)
+Das Zeichen Prozent (Ein Zeichen, das nicht erweitert wird, was auch immer
+danach folgt). Die Erweiterung erfolgt streng von links nach rechts. Damit hat
+%%n nichts mit dem Paketnamen zu tun, sondern bedeutet die Zeichenfolge %n. (In
+fink-0.18.0 eingeführt)
 </p>
 </td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>],
 %type_num[<b>type</b>]</td><td>
 <p>
-pseudo-hashes returning the subtype for the given <b>type</b>. See
-documentation for the <code>Type</code> field later in this document.
-The _raw form is the exact subtype string, while the _pkg form has all
-period characters removed (as per Fink's language-version package naming
-convention and for other clever uses). (Introduced in a post-0.19.2
-CVS version of fink.)  The _num form was introduced in fink-0.26.0
-and removes all non-digits from the <code>Type</code> field.
+pseudo-hashes, die den Subtyp für den angegebenen <b>type</b> zurückgeben.
+Lesen sie die Dokumentation für das Feld <code>Type</code> weiter unten in
+diesem Dokument. Die Form _raw ist die exakte Zeichenfolge des Subtyps, während
+bei der Form _pkg alle Punkte entfernt wurden (entsprechend Finks Konventionen
+für Paketnamen mit Sprachversionen und andere kluge Verwendungen). (Eingeführt
+in einer post-0.19.2 CVS-Version von Fink.) Die Form -num wurde in fink-0.26.0
+eingeführt und entfernt alle Zeichen außer Zahlen aus dem Feld <code>Type</code>.
 </p>
 <p>
-Note that when the <code>Type</code> field defines <b>type</b> to
-be "Boolean", then <code>(%type_pkg[type])</code> can be used directly
-in conditional expressions.  (Its boolean value is true or false,
-corresponding to the subtype is being evaluated.)
+Beachten sie, dass <code>(%type_pkg[type])</code> direkt als Bedingung verwendet
+werden kann, wenn das Feld <code>Type</code> den <b>type</b> als "Boolean"
+deklariert. (Der boolesche Wert ist wahr oder falsch, je nachdem wie der
+Subtype ausgerechnet wird.)
 </p>
 </td></tr><tr valign="top"><td>%{ni}, %{Ni}</td><td>
 <p>
-the package <b>n</b>ame <b>i</b>nvariant portion. These are like
-%n and %N, except all %type_pkg[] and %type_raw[] are blanked out.
-(Introduced in a post-0.19.2 CVS version of fink) You should use %{ni}
-and %{Ni} to avoid confusion with the %n and %N expansions.
+Der <b>i</b>nvariante Teil des Paket<b>n</b>amens. Sie sind wie %n and %N,
+außer dass alle Teile von %type_pkg[] und %type_raw[] gelöscht sind.
+(Eingeführt in einer post-0.19.2 CVS-Version von fink) Sie sollten %{ni} und
+%{Ni} verwenden, um Verwechslungen mit den Erweiterungen %n und %N zu verhindern.
 </p>
 </td></tr><tr valign="top"><td>%{default_script}</td><td>
 <p>
-Valid only in <code>PatchScript</code>, <code>CompileScript</code>, and <code>InstallScript</code> fields, the default contents of
-that type of field. The value is often dependent on
-the <code>Type</code> field, and is always defined (though it may be
-blank). When used in the <code>InstallScript</code> of a <code>SplitOff</code> (or <code>SplitOff<b>N</b></code>), this
-expansion will yield the <b>parent's</b> default, even though the
-default for <code>InstallScript</code> in a <code>SplitOff</code>
-package is blank. (Introduced in fink-0.20.6)
+Nur in den Feldern <code>PatchScript</code>, <code>CompileScript</code> und
+<code>InstallScript</code> gültig. Es enthält den voreingestellten Inhalt dieser
+Felder. Der Wert hängt oft vom Feld <code>Type</code> ab und ist immer definiert
+(Er kann aber leer sein). Wird diese Erweiterung im <code>InstallScript</code>
+eines <code>SplitOff</code> (oder <code>SplitOff<b>N</b></code>) verwendet,
+gibt sie die Voreinstellung der Eltern zurück, selbst wenn die Voreinstellung
+für das <code>InstallScript</code> in einem <code>SplitOff</code>-Paket leer
+ist. (Eingeführt in fink-0.20.6)
 </p>
 </td></tr><tr valign="top"><td>%{PatchFile}</td><td>
 <p>
-The full path to the file given in the <code>PatchFile</code> field.
-(Introduced in fink-0.24.12)
+Der vollständige Pfad zu der Datei, die im Feld <code>PatchFile</code> angegeben
+ist. (Eingeführt in fink-0.24.12)
 </p>
 </td></tr><tr valign="top"><td>%{PatchFile<b>N</b>}</td><td>
 <p>
-The full path to the file given in the <code>PatchFile<b>N</b></code> field.
-(Introduced in fink-0.30.0)
+Der vollständige Pfad zu der Datei, die im Feld <code>PatchFile<b>N</b></code>
+angegeben ist. (Eingeführt in fink-0.30.0)
 </p>
 </td></tr><tr valign="top"><td>%lib</td><td>
 <p>
-If <code>Type: -64bit</code> is defined to be <code>-64bit</code>,
-this expands to <b>lib/ppc64</b> under the powerpc architecture, and to
-<b>lib/x86_64</b> under the i386 architecture (the proper storage locations
-for 64-bit libraries on 32-bit systems); 
-otherwise, this expands to <b>lib</b>.
-(Introduced in fink-0.26.0)
+Ist der <code>Type: -64bit</code> als <code>-64bit</code> definiert, wird dies
+unter der PowerPC-Architektur zu <b>lib/ppc64</b> erweitert und zu
+<b>lib/x86_64</b> unter der i386-Architektur (Der korrekte Speicherort für
+64-bit Bibliotheken auf einem 32-bit System); anderfalls wird es zu <b>lib</b>
+erweitert. (Eingeführt in fink-0.26.0)
 </p>
-<p>Note that <code>%lib</code> is not permitted in the
-<code>ConfigureParams</code> field unless the <code>InfoN</code>
- level is at least 4.
+<p>
+Beachten sie, dass <code>%lib</code> im Feld <code>ConfigureParams</code>
+nicht erlaubt ist, außer wenn die <code>InfoN</code>-Ebene mindestens 4 ist.
 </p>
 </td></tr></table>
 

@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - FS Layout";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2014/10/25 01:52:35';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/03/10 22:52:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="compilers.php?phpLang=de" title="Compilers"><link rel="prev" href="policy.php?phpLang=de" title="Packaging Policy">';
 
 
@@ -12,18 +12,17 @@ include_once "header.de.inc";
 
 
 
-
 <p>
 The following file system layout guidelines are part of the Fink
 packaging policy.
 </p>
 
 
-
 <h2><a name="fhs">4.1 The Filesystem Hierarchy Standard</a></h2>
 <p>
-Fink follows the spirit of the <a href="http://www.pathname.com/fhs/">Filesystem Hierarchy
-Standard</a>, or FHS for short.
+Fink follows the spirit of the
+<a href="http://www.pathname.com/fhs/">Filesystem Hierarchy Standard</a>
+, or FHS for short.
 It can only follow it in spirit because the FHS was created for system
 vendors that have control over the <code>/</code> and
 <code>/usr</code> hierarchies.
@@ -179,7 +178,6 @@ used by OS X-style applications.
 </td></tr></table>
 
 
-
 <h2><a name="avoid">4.3 Things to Avoid</a></h2>
 <p>
 No other directories than the ones mentioned above should exist in
@@ -189,7 +187,6 @@ In particular, the following should not be used:
 <code>/sw/doc</code>, <code>/sw/libexec</code>,
 <code>/sw/lib/locale</code>.
 </p>
-
 
 
 <p align="right"><?php echo FINK_NEXT ; ?>:
