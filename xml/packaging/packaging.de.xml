@@ -57,6 +57,7 @@ Inhalts, weil alles bereits vorbereitet ist.
 Fink nutzt den Paketmanager dpkg. Deshalb haben die binären Paket-Datei das
 Format dpkg und den Datei-Suffix .deb.
 </p>
+
 </section>
 
 <section name="ident"><title>Identifikation eines Pakets</title>
@@ -81,6 +82,7 @@ Die Revision darf keine Bindestriche enthalten.
 Der vollständige Name ergibt sich aus der Verkettung der drei mit Bindestrichen
 dazwischen, z. B. openssh-2.9p1-2.
 </p>
+
 </section>
 
 </chapter>
@@ -128,6 +130,7 @@ organisiert. Die Verzeichnisse von oben nach unten:
 <li>Sections. Das Verzeichnis <code>main</code> ist weiter thematisch
   unterteilt, damit es handhabbar bleibt.</li>
 </ul>
+
 </section>
 
 <section name="format"><title>Datei-Format</title>
@@ -184,6 +187,7 @@ Einige Felder akzeptieren boolesche Werte. Hier werden "true", "yes", "on" und
 "1" (auch in Großschreibung) als wahr interpretiert, alle anderen Werte als
 falsch.
 </p>
+
 </section>
 
 <section name="percent"><title>Prozent-Erweiterungen</title>
@@ -568,6 +572,7 @@ entfernt wird oder dass sie keinen Schaden verursachen, wenn sie verbleiben (d.
 h., dass sie die Präsenz von Programmen überprüfen müssen, bevor sie sie
 aufrufen und ähnliches).
 </p>
+
 </section>
 
 <section name="sharedlibs"><title>Dynamische Bibliotheken</title>
@@ -733,13 +738,13 @@ ebenso mit den Abfragen <code>otool -L</code> oder <code>otool64 -L</code> für
 </p>
 <p>Die Dateien wird wie folgt zwischen den beiden Paketen aufgeteilt:</p>
 <ul>
-<li>  im Paket barN-shlibs:
+<li>im Paket barN-shlibs:
 <codeblock>  %i/lib/libbar.N.x.y.dylib
   %i/lib/libbar.N.dylib -> %p/lib/libbar.N.x.y.dylib
   %i/lib/bar/N/*
   %i/share/bar/N/*
   %i/share/doc/barN-shlibs/*</codeblock></li>
-<li>  im Paket barN:
+<li>im Paket barN:
 <codeblock>  %i/include/*
   %i/lib/libbar.dylib -> %p/lib/libbar.N.x.y.dylib
   %i/lib/libbar.a
@@ -948,13 +953,13 @@ Systemen, solange bis die anderen Paketbetreuer ihre Pakete, die von
 </p>
 <p>
 Ab fink 0.28.0 (veröffentlich im Januar 2008) hat sich das Format für einen
-Eintrag im Feld <code>Shlibs</code> für private dynamische Bibliotheken geändert
+Eintrag im Feld <code>Shlibs</code> für private dynamische Bibliotheken geändert.
 (Beachten sie bitte die obigen Erläuterungen zu den Unterschieden zwischen
 privaten und öffentlichn dynamischen Bibliotheken.) Die Richtlinien für
 dynamische Bibliotheken war schon immer so, dass alle dynamische Bibliotheken
 aufgezählt werden müssen. Die Änderung betrifft nur das Feld
 <code>Shlibs</code>. Da private Bibliotheken nicht von anderen Paketen benutzt
-werden, ist es auch nicht notwendig die Kompatibilitätsversion oder andere
+werden, ist es auch nicht notwendig, die Kompatibilitätsversion oder andere
 Versionsinformationen anzugeben. Statt dessen wird ein Ausrufungszeichen
 verwendet. Ist z. B. <filename>libquux.3.dylib</filename> der
 <code>install_name</code> einer privaten dynamischen Bibliothek, würde sie so
@@ -968,117 +973,110 @@ aufgelistet werden:
 
 <section name="perlmods"><title>Perl-Module</title>
 <p>
-Fink's policy about perl modules, originally implemented in
-May 2003,  has been revised as of April 2004.
+Die erste Version von Finks Richtlinien zu Perl-Modulen wurde im Mai 2003
+implementiert und erhielt im April 2004 die erste Revision.
 </p>
 <p>
-Traditionally, the Fink packages for perl modules had the suffix 
-<code>-pm</code>, and were built using the <code>Type: perl</code> 
-directive, which stores the perl module's files in
-<filename>/sw/lib/perl5</filename> and/or
-<filename>/sw/lib/perl5/darwin</filename>.  Under the policy
-now in place, this storage location is only 
-permitted for perl modules which are independent of the version of perl 
-being used to compile them (and which do not depend on other perl modules
-that lack this independence-of-version).
+Ursprünglich hatten Fink-Pakete für Perl-Module den Suffix <code>-pm</code> und
+wurden mit der Direktive <code>Type: perl</code> erstellt. Damit wurden die
+Dateien der Module in <filename>/sw/lib/perl5</filename> und/oder
+<filename>/sw/lib/perl5/darwin</filename> abgespeichert.
+Nach den aktuellen Richtlinien gilt dies nur noch für Module, die unabhängig von
+der Perlversion übersetzt wurden und die auch nicht von anderen
+versionsabhängigen Modulen abhängen.
 </p>
 <p>
-The perl modules which are version-dependent are the so-called XS modules,
-which frequently contain compiled C code as well as pure perl routines.
-There are a number of ways of recognizing these, including the presence
-of a file with a suffix <code>.bundle</code>.
+Versionsabhängige Perl-Module sind die sogenannten XS-Module, die oft
+übersetzten C Code und Perl-Routinen enthalten. Man kann sie auf verschiedene
+Weisen erkennen, z. B. daran, die sie eine datei mit dem Suffix
+<code>.bundle</code> enthalten.
 </p>
 <p>
-A version-dependent perl module must be built using a versioned binary
-of perl, such as <code>perl5.12.3</code>, and must store its files in
-versioned subdirectories of the standard perl directories, such as
-<filename>/sw/lib/perl5/5.12.3</filename> and
-<filename>/sw/lib/perl5/5.12.3/darwin</filename>.  By convention, package names
-use the suffix <code>-pm5123</code> for
-a perl module of version 5.12.3.  Similar storage and naming conventions
-are in force for other versions of perl, which include 
-perl 5.10.0 (in the 10.6 tree only), perl 5.12.4 (in the 10.7 tree only), and 
-perl 5.16.2 (in the 10.7 tree only).
+Ein versionsabhängiges Perl-Modul muss mit einer bestimmten binären Version von
+Perl erstellt werden, z. B. <code>perl5.12.3</code>. Die erzeugten Dateien
+müssen dann in einem versionierten Unterverzeichnis des
+Standard-Perlverzeichnisses abgespeichert werden, z. B.
+<filename>/sw/lib/perl5/5.12.3</filename> und
+<filename>/sw/lib/perl5/5.12.3/darwin</filename>. Es ist Konvention, die Pakete
+mit dem Suffix <code>-pm5123</code> zu benennen, wenn sie für die Version 5.12.3
+von Perl erstellt wurden. Entsprechende Konventionen für das Abspeichern und
+die Namen von Modulen sind perl 5.10.0 (nur für 10.6), perl 5.12.4 (but für
+10.7) und perl 5.16.2 (nur für 10.7).
 </p>
 <p>
-The directive <code>Type: perl 5.12.3</code> automatically uses the
-versioned perl binary and stores the files in the correct subdirectories. 
-(This directive is available starting with version 0.13.0 of fink.)
+Die Direktive <code>Type: perl 5.12.3</code> führt automatisch dazu, dass
+das versionierte binäre Perl verwendet wird und speichert die Dateien in den
+richtigen Unterverzeichnissen ab. (Diese Direktive steht in Fink ab der Version
+0.13.0 zur Verfügung.)
 </p>
 <p>
-Under the May 2003 policy, it was permitted to create a 
-<code>-pm</code> package which is essentially 
-a "bundle" package that loads the <code>-pm560</code> variant or any
-others which may be exist.  Under the April 2004 policy this is discouraged,
-and after a transitional period was outlawed entirely.
+Die Richtlinien vom Mai 2003 erlaubten es, ein Paket <code>-pm</code> zu
+erstellen, das eigentlich ein Paket-"Bündel" ist, das die Variante
+<code>-pm560</code> oder je nach Verfügbarkeit eine andere lädt. Die Richtlinien
+vom April 2004 raten davon ab und nach einer Übergangsphase wurde diese
+Möglichkeit komplett verboten.
 </p>
 <p>
-As of fink 0.20.2, the system-perl virtual package automatically
-"Provides" certain perl modules depending on the system-perl version. The
-code generating the list of provided perl modules is found in the 
-<code>VirtPackage.pm</code> file that is part of the <code>fink</code> package.
+Ab der Version 0.20.2 von Fink stellt das Paket system-perl automatisch
+bestimmte Perl-Module zur Verfügung, je nach Version von system-perl. Der Code,
+mit der die Liste erstellt wird, steht in der Datei <code>VirtPackage.pm</code>,
+die Bestandteil des Pakets <code>fink</code> ist.
 </p>
 <p>
-As different system perls provide different modules, package maintainers are
-encouraged to check to be sure that they are assuming the correct list when
-using provided perl modules.
+Da verschiedene system-perl unterschiedliche Module zur Verfügung stellen, wird
+Paketbetreuern empfohlen, dass sie die Liste überprüfen, wenn sie eines der
+Perl-Module verwerden.
 </p>
 <p>
-Effective with version 0.13.0 of fink, the <code>fink validate</code>
-command when applied to a <code>.deb</code> file will check to see if
-the fink package is an XS module which has been installed in a non-versioned 
-directory, and will issue a warning if so.
+Ab der Version 0.13.0 von Fink überprüft das Kommando
+<code>fink validate</code> bei einer <code>.deb</code>-Datei, ob das Finkpaket
+ein XS-Module ist, das in einem nichtversionierten Verzeichnis abgespeichert ist
+und gibt eine entsprechende Warnung aus.
 </p>
 <p>
-Users may have more than one version of perl installed at a time, so
-any perl-versioned module packages must be written to allow more than
-one version of themselves to be installed concurrently. One must use
-care when installing manpages and binary or other script executables
-in these packages in order to prevent installation conflicts due to
-filename collisions. 
-You are not allowed to have any files in a package whose name ends
-with -pm<em>XYZ</em> that would have an identical pathname across
-different <em>XYZ</em>. Using <code>Replaces</code> to allow the
-same-named files to overwrite each other in different perl-versions of
-these perl-module packages is no longer acceptable.
-As a simple solution for manpages, starting in
-March 2005, Fink has defined alternate locations in MANPATH:
-<filename>%p/lib/perl5/X.Y.Z/man</filename> for each perl-X.Y.Z. You
-no longer need to create mutually-exclusive -man or -doc SplitOff
-packages. For
-example, to avoid conflicts between uri-pm5124 and uri-pm5162, the
-same-named <filename>URI.3pm</filename> manpage is installed
-as <filename>%p/lib/perl5/5.12.4/man/man3/URI.3pm</filename> and
-<filename>%p/lib/perl5/5.16.2/man/man3/URI.3pm</filename>,
-respectively. Note that the default scripts provided by <code>Type:
-perl X.Y.Z</code> have not changed, so you will have to locate the
-manpages here manually in your <code>InstallScript</code>. If you
-don't have a highly customized script, you can still use the default
-one, and then simply move the files manually:
+Nutzer können mehrere Versionen von Perl gleichzeitig installiert haben. Deshalb
+müssen versionsabhängige Modulpakete so geschireben sein, dass mehrere Versionen
+des Pakets installiert sein können. Besondere aufpassen muss man bei der
+Installation von man-Pages und binären oder anderen Programmen, damit wegen
+Namenskollissionen keine Installationskonflikte auftreten.
+Man darf in einem Paket, dessen Namen auf -pm<em>XYZ</em> endet, keine Dateien
+haben, die für verschiedene <em>XYZ</em> die gleichen Pfadnamen haben. Auch ein
+<code>Replaces</code> für das einfache Überschreiben der Dateien wird nicht mehr
+akzeptiert. Ab März 2005 definiert Fink als einfache Lösung zusätzliche Plätze
+im MANPATH: <filename>%p/lib/perl5/X.Y.Z/man</filename> für jedes perl-X.Y.Z.
+Deshalb muss man keine extra SplitOff-Pakete -man oder -doc mehr erstellen, die
+sich jeweils gegenseitig ausschließen. Die Konflikte zwischen uri-pm5124 und
+uri-pm5162 werden z. B. so aufgelöst, dass die gleich man-Page
+<filename>URI.3pm</filename> jeweils unter
+<filename>%p/lib/perl5/5.12.4/man/man3/URI.3pm</filename> oder
+<filename>%p/lib/perl5/5.16.2/man/man3/URI.3pm</filename> abgespeichert wird.
+Beachten sie bitte, dass sich die Standard-Skripte für
+<code>Type: perl X.Y.Z</code> nicht geändert haben und man deshalb die man-Pages
+selbst im <code>InstallScript</code> suchen muss. Ist das Skript nicht
+hochgradig kompliziert, dann kann man das Standard-Skript verwenden und die
+Dateien einfach mit mv verschieben:
 </p>
 <codeblock>%{default_script}
 mv %i/share/man %i/lib/perl5/5.12.4</codeblock>
 <p>
-That will move all manpages. If you wish to move only one section of
-manpages (for example, only section 3, the module manpages, not script
-manpages in section 1), a similar approach works:
+Dies verschiebt alle man-Pages. Will man nur einen Abschnitt der man-Pages
+verschieben (z. B. nur Abschnitt 3, die man-Pages für die Module und nicht die
+man-Pages für Skripte in Abschnitt 1), funktioniert folgendes:
 </p>
 <codeblock>%{default_script}
 mkdir -p %i/lib/perl5/5.12.4/man
 mv %i/share/man/man3 %i/lib/perl5/5.12.4/man</codeblock>
 <p>
-If you have executables, for example, demo or utility scripts
-in <filename>%p/bin</filename>, you have several options. One example
-is to put these files (and their associated manpages and/or other
-related files) in a %N-bin splitoff package. Use of
-<code>Conflicts</code> and <code>Replaces</code> fields ensures that
-installation of different perl-version forms of these packages, which
-contain files of the same name, is mutually exclusive. The user can
-install many different perl-versions of the runtime modules, and then
-choose whichever one perl-version of the scripts he wants at a given
-time. For example, Tk.pm comes with an
-executable <filename>ptksh</filename>, so the set of tk-pm* packages
-could be constructed as follows:
+Hat man Programme, z. B.Demo- und Hilfs-Skripte, in <filename>%p/bin</filename>,
+gibt es mehrere Optionen. Eine ist, die Dateien zusammen mit den dazugehörigen
+man-Pages und so weiter in ein SplitOff-Paket %N-bin zu packen. Mit den Feldern
+<code>Conflicts</code> und <code>Replaces</code> muss man für den gegenseitigen
+Austausch bei der Installation der Dateien für verschiedene Perlversionen
+sorgen. Der Nutzer kann viele verschiedene Perlversionen der Laufzeit-Module
+installieren und dann zu einer bestimmten Zeit die gewünschte Perlversion des
+Skripts auswählen. Das Paket Tk.pm kommt z. B. mit dem Programm
+<filename>ptksh</filename>. Der Satz an tk-pm* Paketen kann man wie folgt
+erzeugen:
 </p>
 <codeblock>Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
@@ -1097,10 +1095,10 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 &lt;&lt;</codeblock>
 <p>
-An alternative arrangement is to rename the scripts and their manpages
-to include perl-version information. This method means there is no
-naming conflict at all, so one does not need the mutually-exclusive
-%N-bin splitoffs:
+Die andere Option ist die Skripte und ihre man-Pages so umzubenennen, dass
+die Namen die Perlversion enthalten. Bei dieser Optione kommt es erst gar nicht
+zu einem Namenskonflikt, so dass die %N-bin SplitOffs sich nicht gegenseitig
+ausschließen müssen:
 </p>
 <codeblock>Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
@@ -1114,27 +1112,27 @@ InstallScript: &lt;&lt;
 &lt;&lt;
 &lt;&lt;</codeblock>
 <p>
-The user accesses ptksh for whichever perl she wants. For convenience,
-one could use <code>update-alternatives</code> to allow users to be
-able to access these by their generic (no perl-version) names as well.
+Der Nutzer kann jederzeit das ptksh für ein bestimmtes Perl benutzen. Besonders
+komfortabel für die Nutzer ist es, mit <code>update-alternatives</code> den
+Aufruf auch mit dem allgemeinen Namen ohne Perlversion zu ermöglichen.
 </p>
 <p>
-Also as of March 2005, the location of manpages and modules installed
-by fink packages for perl itself (packages perlXYZ and perlXYZ-core
-other than the perl-version provided by Apple) has changed. As a
-result of this relocation, other fink packages that supply updated
-versions of core perl modules should not list any perlXYZ or
-perlXYZ-core packages in the <code>Replaces</code> field.
+Ab März 2005 wurde auch der Platz für die man-Pages und die Module, die vom
+fink-Paket für Perl selbst (also die Pakete perlXYZ und perlXYZ-core mit
+Versionen, die vom der von Apple abweichen) geändert. Deshalb sollten andere
+Finkpakete die aktualisierte Versionen von core-Perl-Modulen anbieten, die
+Pakete perlXYZ oder perlXYZ-core nicht in ihrem Feld <code>Replaces</code>
+auflisten.
 </p>
 
 </section>
+
 <section name="emacs"><title>Emacs Policy</title>
 <p>
 The Fink project has chosen to follow the Debian project's policy
 regarding emacs, with a few small differences.
 (The Debian policy document can be found at
-<link 
-url="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
+<link url="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</link>.)
 There are two differences in the Fink policy.  First, this policy only applies
 to the <filename>emacs21</filename>, <filename>emacs22</filename>, and
@@ -1147,63 +1145,66 @@ Debian policy, Fink packages are allowed to install things directly into
 </section>
 
 <section name="sources"><title>Source Policy</title>
-    <p>
-    Sources should normally be downloaded from the location(s) that the upstream
-    developer(s) use, and any modifications for Fink should be done through the use
-    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
-    source archive as a <code>Source</code> in your Fink packaging.
-    </p>
-    <p>
-    If a VCS checkout (e.g. from <em>git</em> or <em>svn</em>) is to be used, e.g.
-    because a project doesn't do formal releases, or a fix for a particular issue has
-    been added between releases of a package, an acceptable source can be generated
-    via the following method:
-    </p>
-    <ol>
-        <li>Check out the package, preferably at a definite revision of the VCS.</li>
-        <li>Make an archive from the VCS checkout (e.g. <em>zip</em>,
-          <em>tar</em>, <em>tar.gz</em>, or <em>tar.bz2</em>).
-            <p>Give the tarball a unique version.  For example, you can include
-              the VCS revision in the archive name, e.g.
-            <filename>foo-0svn1234.tar.gz</filename> for a package that doesn't
-            make releases, or <filename>bar-1.2.3+svn4567.tar.bz2</filename> for
-            a Fink package which is between upstream releases.</p></li>
-        <li>Use the same <code>Version</code> in your <filename>.info</filename> file.</li>
-        <li>It is also useful to put the commands that you ran to generate the
-          source tarball in the <code>DescPackaging</code> field.</li>
-        <li>Upload the tarball to a public download site where users can use
-          <code>fink</code> to download it. If you don't have ready access to
-          one, ask on the
-        <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</link>
-        or <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
-        and someone should be able to help.</li>
-    </ol>
+<p>
+Sources should normally be downloaded from the location(s) that the upstream
+developer(s) use, and any modifications for Fink should be done through the use
+of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
+source archive as a <code>Source</code> in your Fink packaging.
+</p>
+<p>
+If a VCS checkout (e.g. from <em>git</em> or <em>svn</em>) is to be used, e.g.
+because a project doesn't do formal releases, or a fix for a particular issue has
+been added between releases of a package, an acceptable source can be generated
+via the following method:
+</p>
+<ol>
+<li>Check out the package, preferably at a definite revision of the VCS.</li>
+<li>Make an archive from the VCS checkout (e.g. <em>zip</em>,
+  <em>tar</em>, <em>tar.gz</em>, or <em>tar.bz2</em>).
+  <p>Give the tarball a unique version.  For example, you can include
+    the VCS revision in the archive name, e.g.
+  <filename>foo-0svn1234.tar.gz</filename> for a package that doesn't
+  make releases, or <filename>bar-1.2.3+svn4567.tar.bz2</filename> for
+  a Fink package which is between upstream releases.</p></li>
+<li>Use the same <code>Version</code> in your <filename>.info</filename> file.</li>
+<li>It is also useful to put the commands that you ran to generate the
+  source tarball in the <code>DescPackaging</code> field.</li>
+<li>Upload the tarball to a public download site where users can use
+  <code>fink</code> to download it. If you don't have ready access to
+  one, ask on the
+  <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing
+  list</link>
+  or <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
+  and someone should be able to help.</li>
+</ol>
+
 </section>
 
 <section name="downloading"><title>File Download Policy</title>
-    <p>
-      Packages are not to download any files during the unpack, patch, compile,
-      install, or build phases of the
-      <xref chapter="reference" section="build">build process</xref>.  Any large
-      patches (i.e. larger than can be accommodated conveniently in a PatchFile)
-      that need to be applied should
-    set up as additional Sources in accordance with the
-    <xref chapter="policy" section="sources"> Source Policy.</xref>
-    </p>
-    <p>
-      Packages may download data in a PostInstScript after they have been
-      installed on the system, under some limited circumstances:
-    </p>
-    <ul>
-        <li>No updates to the package itself are allowed.</li>
-        <li>The nature of the data is such that it couldn't easily be packaged
-          for Fink.  E.g. virus definitions for <filename>clamav</filename> can
-          be downloaded during this phase, because they change continually.</li>
-    </ul>
-    <p>
-    If you are unsure, contact
-      <link url="mailto:fink-core@lists.sourceforge.net">the Fink Core Team</link>
-      .</p>
+<p>
+  Packages are not to download any files during the unpack, patch, compile,
+  install, or build phases of the
+  <xref chapter="reference" section="build">build process</xref>.  Any large
+  patches (i.e. larger than can be accommodated conveniently in a PatchFile)
+  that need to be applied should
+set up as additional Sources in accordance with the
+<xref chapter="policy" section="sources"> Source Policy.</xref>
+</p>
+<p>
+  Packages may download data in a PostInstScript after they have been
+  installed on the system, under some limited circumstances:
+</p>
+<ul>
+<li>No updates to the package itself are allowed.</li>
+<li>The nature of the data is such that it couldn't easily be packaged
+  for Fink.  E.g. virus definitions for <filename>clamav</filename> can
+  be downloaded during this phase, because they change continually.</li>
+</ul>
+<p>
+If you are unsure, contact
+<link url="mailto:fink-core@lists.sourceforge.net">the Fink Core Team</link>.
+</p>
+
 </section>
 
 </chapter>
@@ -1231,6 +1232,7 @@ Fink is an add-on distribution that controls only its install
 directory (or prefix).
 The examples use the default prefix of <filename>/sw</filename>.
 </p>
+
 </section>
 
 <section name="dirs"><title>The Directories</title>
@@ -1427,6 +1429,7 @@ used by OS X-style applications.
 </itemd></item>
 
 </itemtable>
+
 </section>
 
 <section name="avoid"><title>Things to Avoid</title>
@@ -1438,6 +1441,7 @@ In particular, the following should not be used:
 <filename>/sw/doc</filename>, <filename>/sw/libexec</filename>,
 <filename>/sw/lib/locale</filename>.
 </p>
+
 </section>
 
 </chapter>
@@ -1500,6 +1504,7 @@ shell scripts which ensure that the correct compiler and version of g++ is used.
 </p>
 
 </section>
+
 <section name="abi"><title>The g++ ABI</title>
 <p>
 The g++ ABI has changed 3 times during the lifetime of OS X: the ABI is
@@ -1596,10 +1601,10 @@ from the temporary directory. You can't influence this step directly,
 but various information from the package description is used to
 generate a <filename>control</filename> file for dpkg.
 </p>
+
 </section>
 
 <section name="fields"><title>Fields</title>
-
 <p>
 We have divided the list of fields into several categories.
 The list of fields is not necessarily complete. <code>:-)</code>
@@ -1669,18 +1674,18 @@ Revision numbers start at 1.
 Required field.
 </p>
 <p>
-  Fink's policy is that <em>any</em> time you make a change to the
-  <filename>.info</filename> file that results in changes to the
-  binary (compiled) form of a package (the <filename>.deb</filename>
-  file), you <em>must</em> increase <code>Revision</code>. This
-  includes changing the <code>Depends</code> or other package lists,
-  and adding,
-  removing, or renaming splitoff packages or shifting files among
-  them. When migrating a package to a new tree (from 10.2 to 10.3, for
-  example) involves such changes, you should
-  increase <code>Revision</code> by 10 (or some other large number) in the newer
-  tree in order to leave space for future updates to the package in the older
-  tree.
+Fink's policy is that <em>any</em> time you make a change to the
+<filename>.info</filename> file that results in changes to the
+binary (compiled) form of a package (the <filename>.deb</filename>
+file), you <em>must</em> increase <code>Revision</code>. This
+includes changing the <code>Depends</code> or other package lists,
+and adding,
+removing, or renaming splitoff packages or shifting files among
+them. When migrating a package to a new tree (from 10.2 to 10.3, for
+example) involves such changes, you should
+increase <code>Revision</code> by 10 (or some other large number) in the newer
+tree in order to leave space for future updates to the package in the older
+tree.
 </p>
 </itemd></item>
 
@@ -1994,22 +1999,16 @@ Here are the features added for each InfoN level, along with the
 earliest version of fink that supports it:
 </p>
 <ul>
-<li>
-<code>Info2</code> (fink>=0.20.0): Ability to use percent-expansions
-in the main <code>Package</code> field of the .info file and the
-ability to use the <code>%type_*</code> percent-expansions in
-the <code>Package</code> field of <code>SplitOff</code>
-(and <code>SplitOff<em>N</em></code>) packages.
-</li>
-<li>
-<code>Info3</code> (fink>=0.25.0): Can indent nicely in .info files,
-no more support for RFC-822 multi-lines, and can put comments in
-pkglist fields.
-</li>
-<li>
-<code>Info4</code> (fink>=0.26.2): adds %V expansion, and permits
-<code>%lib</code> in <code>ConfigureParams</code> field.
-</li>
+<li><code>Info2</code> (fink>=0.20.0): Ability to use percent-expansions
+  in the main <code>Package</code> field of the .info file and the
+  ability to use the <code>%type_*</code> percent-expansions in
+  the <code>Package</code> field of <code>SplitOff</code>
+  (and <code>SplitOff<em>N</em></code>) packages.</li>
+<li><code>Info3</code> (fink>=0.25.0): Can indent nicely in .info files,
+  no more support for RFC-822 multi-lines, and can put comments in
+  pkglist fields.</li>
+<li><code>Info4</code> (fink>=0.26.2): adds %V expansion, and permits
+  <code>%lib</code> in <code>ConfigureParams</code> field.</li>
 </ul>
 </itemd></item>
 
@@ -2091,29 +2090,29 @@ would set the package x11 as a dependency for the nethack-x11 variant
 but not for the nethack variant.
 </p>
 <p>
-  Note that when using Depends/BuildDepends for shared library packages
-  for which more than one major-version is available, you must
-  <em>not</em> do the following:
+Note that when using Depends/BuildDepends for shared library packages
+for which more than one major-version is available, you must
+<em>not</em> do the following:
 </p>
 <codeblock>  Package: foo
   Depends: id3lib3.7-shlibs | id3lib4-shlibs
   BuildDepends: id3lib3.7-dev | id3lib4-dev</codeblock>
 <p>
-  even if your package could work with either library. Pick one
-  (preferably the highest version that can be used successfully) and
-  use it consistently in your package.
+even if your package could work with either library. Pick one
+(preferably the highest version that can be used successfully) and
+use it consistently in your package.
 </p>
 <p>
-  As explained in the <xref chapter="policy"
-  section="sharedlibs">Shared Library Policy</xref>, only one of the
-  -dev packages can be installed at a time, and each has links of the
-  same name that could point to different filenames in the associated
-  -shlibs package. When compiling package foo, the actual filename (in
-  the -shlibs package) gets hard-coded into the foo binary. That means
-  the resulting package needs the specific -shlibs package associated
-  with the -dev that was installed at compile-time. As a result, one
-  cannot have a <code>Depends</code> that indicates that either one
-  will suffice.
+As explained in the <xref chapter="policy"
+section="sharedlibs">Shared Library Policy</xref>, only one of the
+-dev packages can be installed at a time, and each has links of the
+same name that could point to different filenames in the associated
+-shlibs package. When compiling package foo, the actual filename (in
+the -shlibs package) gets hard-coded into the foo binary. That means
+the resulting package needs the specific -shlibs package associated
+with the -dev that was installed at compile-time. As a result, one
+cannot have a <code>Depends</code> that indicates that either one
+will suffice.
 </p>
 <p>
 In the past, non-essential packages implicitly depended on the
@@ -2299,9 +2298,9 @@ eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</codeblock>
 <p>
-  The standard continent and country codes are listed in
-  <filename>/sw/lib/fink/mirror/_keys</filename>, which is part of the
-  fink or fink-mirrors package.
+The standard continent and country codes are listed in
+<filename>/sw/lib/fink/mirror/_keys</filename>, which is part of the
+fink or fink-mirrors package.
 </p>
 </itemd></item>
 
@@ -2741,7 +2740,8 @@ blank, the default is <code>True</code>.
 <itemd>
 <p>
 In fink &gt;= 0.33.0, when set to a <code>false</code> value, causes fink
-to build as <code>root</code> rather than as the underprivileged <code>fink-bld</code> user.
+to build as <code>root</code> rather than as the underprivileged
+<code>fink-bld</code> user.
 If this field is not present, its value defaults to <code>true</code>, indicating
 that the package should be built as <code>fink-bld</code>.
 </p>
@@ -2765,17 +2765,17 @@ with test suites enabled, the value of the <code>TestConfigureParams</code>
 field will be appended to the normal <code>ConfigureParams</code> value.
 </p>
 <p>
-  Starting in fink-0.22.0, this field supports conditionals. The
-  syntax is the same as that used in the <code>Depends</code> and
-  other package-list fields. The conditional expression only applies
-  to the whitespace-delimited &quot;word&quot; immediately following
-  it. For example
+Starting in fink-0.22.0, this field supports conditionals. The
+syntax is the same as that used in the <code>Depends</code> and
+other package-list fields. The conditional expression only applies
+to the whitespace-delimited &quot;word&quot; immediately following
+it. For example
 </p>
 <codeblock>Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared</codeblock>
 <p>
-  will always pass the <code>--mandir</code> and <code>--disable-shared</code>
-  flags, but only pass <code>--with-x11</code> in the -x11 variant.
+will always pass the <code>--mandir</code> and <code>--disable-shared</code>
+flags, but only pass <code>--with-x11</code> in the -x11 variant.
 </p>
 <p>
 This field supports placing parameters into multiple lines using multi-line
@@ -2804,9 +2804,7 @@ you are currently using.)
 </p>
 <p>
 The allowed values are:
-<code>2.95.2</code> (or <code>2.95</code>),
- <code>3.1</code>,
- <code>3.3</code>,
+<code>2.95.2</code> (or <code>2.95</code>), <code>3.1</code>, <code>3.3</code>,
 and <code>4.0</code>.
 Our understanding is that the GCC authors intend to stabilize the GCC-ABI
 at some point; we can hope that it won't change again.
@@ -3212,12 +3210,12 @@ removing a package in favor of another one.
 <p>The scripts are called at the following times:</p>
 <ul>
 <li>PreInstScript: When the package is installed for the first time
-and before upgrading the package to this version.</li>
+  and before upgrading the package to this version.</li>
 <li>PostInstScript: After unpacking and setting up the package.</li>
 <li>PreRmScript: Before the package is removed or upgraded to a later
-version.</li>
+  version.</li>
 <li>PostRmScript: After the package was removed or upgraded to a later
-version.</li>
+  version.</li>
 </ul>
 <p>
 To make it more clear, an upgrade invokes both the ...Inst scripts of
@@ -3345,6 +3343,7 @@ is necessary" goes here. Multiple lines allowed.
 </itemd></item>
 
 </itemtable>
+
 </section>
 
 <section name="splitoffs"><title>SplitOffs</title>
@@ -3370,19 +3369,19 @@ certain fields missing.  Here is what belongs in the sub-description
 </p>
 <ul>
 <li>Initial Data: Only the <code>Package</code> needs to be specified,
-everything else is inherited from the parent package.  You may modify
-<code>Type</code> and <code>License</code> by declaring the field
-within the <code>SplitOff</code> or <code>SplitOff<em>N</em></code>.  Percent
-expansion can be used, and
-it is often convenient to refer to the name %N of the parent
-package.</li>
+  everything else is inherited from the parent package.  You may modify
+  <code>Type</code> and <code>License</code> by declaring the field
+  within the <code>SplitOff</code> or <code>SplitOff<em>N</em></code>.  Percent
+  expansion can be used, and
+  it is often convenient to refer to the name %N of the parent
+  package.</li>
 <li>Dependencies: All of these are allowed.</li>
 <li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
-and will be ignored.</li>
+  and will be ignored.</li>
 <li>Install Phase, Build Phase: Any of these fields are allowed (except
-that SplitOffs cannot themselves contain additional SplitOffs).</li>
+  that SplitOffs cannot themselves contain additional SplitOffs).</li>
 <li>Additional Data: These are inherited from the parent package but may
-be modified by declaring the field within the <code>SplitOff</code> or
+  be modified by declaring the field within the <code>SplitOff</code> or
   <code>SplitOff<em>N</em></code>.</li>
 </ul>
 <p>
@@ -3448,7 +3447,6 @@ of the packages by using <code>DocFiles</code> several times.
 </section>
 
 <section name="scripts"><title>Scripts</title>
-
 <p>
 The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. The build directory
@@ -3474,10 +3472,10 @@ the interpreter and any needed flags (e.g., <code>#!/bin/csh</code>,
 <code>#!/bin/bash -ev</code>, etc.). In this situation, the whole
 *Script field is dumped into a temporary file that is then executed.
 </p>
+
 </section>
 
 <section name="patches"><title>Patches</title>
-
 <p>
 If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the same name as the package description,
@@ -3493,7 +3491,6 @@ You must also give the MD5 sum of the patchfile in the
 <code>PatchFile-MD5</code> field, and specify 
 <code>BuildDepends: fink (&gt;= 0.24.12)</code> (or a later version of fink).
 </p>
-
 <p>
 When a <code>PatchFile<em>N</em></code> field is used, general custom
 is to name the file <filename>%n-purpose-of-patch.patch</filename> to make it
@@ -3502,7 +3499,6 @@ track of. You must also use the field <code>PatchFile<em>N</em>-MD5</code>
 and specify <code>BuildDepends: fink (&gt;= 0.30.0)</code> (or a later 
 version of fink).
 </p>
-
 <p>
 When a <code>PatchFile</code> declaration is present, there is a
 default <code>PatchScript</code> equivalent to:
@@ -3538,10 +3534,10 @@ admins can make the file available from fink's own website. If your
 patch is larger than about 30Kb, you should consider making it a
 separate download.
 </p>
+
 </section>
 
 <section name="profile.d"><title>Profile.d scripts</title>
-
 <p>
 If your package needs some run-time initialization  (e.g. to setup environment
 variables), you can use profile.d scripts.
@@ -3560,6 +3556,7 @@ If you just need to set some environment variables (for example, QTDIR to
 '/sw'), you can use the RuntimeVars field which is provided as a convenient way
 to achieve exactly this.
 </p>
+
 </section>
 
 </chapter>
