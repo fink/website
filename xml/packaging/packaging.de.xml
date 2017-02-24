@@ -1127,82 +1127,85 @@ auflisten.
 
 </section>
 
-<section name="emacs"><title>Emacs Policy</title>
+<section name="emacs"><title>Emacs-Richtlinien</title>
 <p>
-The Fink project has chosen to follow the Debian project's policy
-regarding emacs, with a few small differences.
-(The Debian policy document can be found at
+Das Finkprojekt hat entschieden, den Richtlinien des Debianprojekts zu Emacs zu
+folgen mit wenigen kleinen Unterschieden.
+(Das Dokument zu den Debian-Richtlinien gibt es hier:
 <link url="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</link>.)
-There are two differences in the Fink policy.  First, this policy only applies
-to the <filename>emacs21</filename>, <filename>emacs22</filename>, and
-<filename>emacs23</filename> packages in fink at the moment, not to the xemacs
-package.  (This may change some day in the future.)    And second, unlike the
-Debian policy, Fink packages are allowed to install things directly into
-/sw/share/emacs/site-lisp.
+Es gibt zwei Unterschiede bei den Richtlinien von Fink. Erstens gelten die
+Richtlinien derzeit nur für die Pakete <filename>emacs21</filename>,
+<filename>emacs22</filename> und <filename>emacs23</filename> und nicht für das
+Paket xemacs. (Dies kann sich eines Tages ändern.) Zweitens dürfen Finkpakete im
+Gegensatz zu den Debian-Richtlinien Dateien direkt im Verzeichnis
+/sw/share/emacs/site-lisp installieren
 </p>
 
 </section>
 
-<section name="sources"><title>Source Policy</title>
+<section name="sources"><title>Quelldateien-Richtlinien</title>
 <p>
-Sources should normally be downloaded from the location(s) that the upstream
-developer(s) use, and any modifications for Fink should be done through the use
-of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
-source archive as a <code>Source</code> in your Fink packaging.
+Quelldateien sollen normalerweise von da herunter geladen werden, wo
+Upstream-Entwickler sie anbieten. Jegliche Modifikation für das Finkpaket sollte
+mit Patch-Dateien und/oder Patch-Skripten erfolgen. Man sollte also nicht die
+Quelldateien abändern und im Finkpaket ein Archiv mit den geänderten Dateien
+als <code>Source</code> verwenden.
 </p>
 <p>
-If a VCS checkout (e.g. from <em>git</em> or <em>svn</em>) is to be used, e.g.
-because a project doesn't do formal releases, or a fix for a particular issue has
-been added between releases of a package, an acceptable source can be generated
-via the following method:
+Wird ein vcs Checkout verwendet (z. B. <em>git</em> oder <em>svn</em>), weil
+z. B. das Projekt keine formalen Releases veröffentlicht oder eine wichtige
+Problemlösung zwischen den Releases eingepflegt wurde, kann eine akzeptable
+Quelle auf folgende Art und Weise erzeugt werden:
 </p>
 <ol>
-<li>Check out the package, preferably at a definite revision of the VCS.</li>
-<li>Make an archive from the VCS checkout (e.g. <em>zip</em>,
-  <em>tar</em>, <em>tar.gz</em>, or <em>tar.bz2</em>).
-  <p>Give the tarball a unique version.  For example, you can include
-    the VCS revision in the archive name, e.g.
-  <filename>foo-0svn1234.tar.gz</filename> for a package that doesn't
-  make releases, or <filename>bar-1.2.3+svn4567.tar.bz2</filename> for
-  a Fink package which is between upstream releases.</p></li>
-<li>Use the same <code>Version</code> in your <filename>.info</filename> file.</li>
-<li>It is also useful to put the commands that you ran to generate the
-  source tarball in the <code>DescPackaging</code> field.</li>
-<li>Upload the tarball to a public download site where users can use
-  <code>fink</code> to download it. If you don't have ready access to
-  one, ask on the
-  <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing
-  list</link>
-  or <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
-  and someone should be able to help.</li>
+<li>Führen sie ein Checkout des Pakets durch, vorzugsweise zu einer dezidierten
+  Revision des VCS.</li>
+<li>Erstellen sie ein Archiv aus dem VCS-Checkout (z. B. ein <em>zip</em>,
+  <em>tar</em>, <em>tar.gz</em> oder <em>tar.bz2</em>).
+  <p>Geben sie dem Tarball eine eindeutige Version. Sie können die
+    VCS-Revision verwenden, wenn es überhaupt keine Releases des Pakets gibt,
+    z. B. <filename>foo-0svn1234.tar.gz</filename> oder
+    <filename>bar-1.2.3+svn4567.tar.bz2</filename> für eine Version zwischen
+    zwei Releases.</p></li>
+<li>Nutzen sie die gleiche <code>Version</code> in ihrer
+  <filename>.info</filename>-Datei.</li>
+<li>Es ist äußerst hilfreich, die Kommandos für die Erzeugung des
+  Quelldatei-Tarballs im Feld <code>DescPackaging</code> zu dokumnetieren.</li>
+<li>Laden sie den Tarball auf eine öffentliche Download-Seite hoch, wo Nutzer
+  sie mit <code>fink</code> herunter laden können. Haben sie keinen
+  entsprechenden Zugang, fragen sie in der
+  <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers
+  Mailing-Liste</link> oder im
+  <link url="http://webchat.freenode.net">IRC channel #fink</link>.
+  nach und ihnen wird sicher geholfen werden.</li>
 </ol>
 
 </section>
 
-<section name="downloading"><title>File Download Policy</title>
+<section name="downloading"><title>Datei-Download-Richtlinien</title>
 <p>
-  Packages are not to download any files during the unpack, patch, compile,
-  install, or build phases of the
-  <xref chapter="reference" section="build">build process</xref>.  Any large
-  patches (i.e. larger than can be accommodated conveniently in a PatchFile)
-  that need to be applied should
-set up as additional Sources in accordance with the
-<xref chapter="policy" section="sources"> Source Policy.</xref>
+Pakete dürfen in den Phasen unpack, patch, compile, install oder den build
+Phasen während des <xref chapter="reference"
+section="build">build-Prozess</xref> keinerlei Dateien herunter laden. Alle
+größeren Patches (also alles, was man nicht in einer üblichen Patchdatei
+unterbringen kann) sollten als zusätzliche Quelldateien entsprechend den
+<xref chapter="policy" section="sources">Quelldatei-Richtlinien</xref>
+aufgesetzt werden.
 </p>
 <p>
-  Packages may download data in a PostInstScript after they have been
-  installed on the system, under some limited circumstances:
+Unter bestimmten, eng umrissenen Umständen dürfen Pakete im PostInstScript
+Dateien herunter laden, nachdem sie installiert sind:
 </p>
 <ul>
-<li>No updates to the package itself are allowed.</li>
-<li>The nature of the data is such that it couldn't easily be packaged
-  for Fink.  E.g. virus definitions for <filename>clamav</filename> can
-  be downloaded during this phase, because they change continually.</li>
+<li>Aktualisierungen der Pakete sind verboten.</li>
+<li>Die Daten/Dateien sind so, dass sie nicht leicht in ein Finkpaket zu packen
+  sind, z. B. Virusdefinitionen für <filename>clamav</filename> können im
+  PostInstScript herunter geladen werden, weil sie sich laufend ändern.</li>
 </ul>
 <p>
-If you are unsure, contact
-<link url="mailto:fink-core@lists.sourceforge.net">the Fink Core Team</link>.
+Sind sie sich nicht sicher, dann schicken sie eine Email an das
+<link url="mailto:fink-core@lists.sourceforge.net">Fink Core Team</link>.
 </p>
 
 </section>
