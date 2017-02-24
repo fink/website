@@ -10,7 +10,7 @@
 <p>
 Diese Anleitung beschreibt, wie man eine Paketbeschreibung für den Paketmanager
 Fink erstellt.
-Es beschreibt ebenso die Politik und Richtlinien für die Fink Distribution.
+Es beschreibt ebenso die Richtlinien für die Fink-Distribution.
 Sowohl das Format der Paketbeschreibung als auch die Distributionspolitik sind
 in Entwicklung. Achten sie also auf "Last changed"-Informationen und CVS Tipps
 zu dieser Seite, wenn es um Aktualisierungen geht.
@@ -440,344 +440,319 @@ nicht erlaubt ist, außer wenn die <code>InfoN</code>-Ebene mindestens 4 ist.
 </chapter>
 
 <chapter filename="policy">
-<title>Packaging Policy</title>
-<shorttitle>Policy</shorttitle>
+<title>Richtlinien zur Estellung von Paketen</title>
+<shorttitle>Richtlinien</shorttitle>
 
-<section name="licenses"><title>Package Licenses</title>
+<section name="licenses"><title>Paket-Lizenzen</title>
 <p>
-The packages included in Fink come with a wide variety of licenses.
-Most of them place restrictions on redistributing the full source and
-especially on distributing binaries.
-Some packages can not be included in the binary distribution of Fink
-because of these license restrictions.
-Thus it is very important that package maintainers check the license
-of their package carefully.
+Die Pakete in Fink stehen unter sehr verschiedenen Lizenzen.
+Die meisten beinhalten Restriktionen im Hinblick auf Weiterverteilung der
+kompletten Quellen und vor allem der Binärprogramme.
+Einige Pakete können wegen solcher Restriktionen nicht Teil von Finks
+Binär-Distribution sein.
+Deshalb ist es sehr wichtig, dass man als Betreuer eines Pakets die Lizenzen
+seines Pakets sorgfältig prüft.
 </p>
 <p>
-Every package that is to be distributed as a binary package must
-contain a copy of the license.
-It must be installed in the doc directory,
-i.e. in <filename>%p/share/doc/%n</filename>.
-(In the InstallScript, %i must be used instead of %p, of course.
-The DocFiles field takes care of the details automatically.)
-If there is no explicit license in the original source, include a
-small text file with a note about the status of the package.
-Most licenses require that the license accompanies any distribution.
-Fink's policy is to always do this, even if it is not explicitly
-required.
+Jedes Paket, das als Binärpaket verteilt werden soll, muss eine Kopie der Lizenz
+enthalten.
+Die Kopie muss im Verzeichnis doc installiert werden,
+also in <filename>%p/share/doc/%n</filename>.
+(Im InstallScript muss natürlich %i anstelle von %p verwendet werden.
+Das Feld DocFiles erledigt dies automatisch.)
+Gibt es keine explizite Lizenz in den originalen Quellen, fügen sie eine
+kleine Textdatei bei, in der sie die Situation des pakets beschreiben.
+Die meisten Lizenzen verlangen, dass jede Distribution die Lizenz enthält.
+Finks Richtlinien ist, dies immer zu tun, auch wenn es nicht explizit verlangt
+wird.
 </p>
 <p>
-To make an automated maintenance of the binary distribution possible,
-any package that is to be distributed must have a <code>License</code>
-field.
-This field denotes the nature of the license and is used to decide
-which packages make it into the binary distribution and which must be
-held back.
-The field may only be present if the actual license terms are included
-in the binary package, as explained above.
+Für die automatische Verwaltung der binären Distributions ist es erforderlich,
+dass jedes Paket, das damit verteilt werden soll, auch das Feld
+<code>License</code> gesetzt hat.
+Dieses Feld beschreibt die Art der Lizenz und entscheidet darüber, ob ein
+Paket in die binäre Distribution aufgenommen wird oder zurück gehalten wird.
+Das Feld soll auch nur präsent sein, wenn das binäre Paket auch den eigentlichen
+Text der Lizenz enthält, wie oben beschrieben.
 </p>
 <p>
-To make the <code>License</code> field useful, only one of the
-following pre-defined values may be used.
-If you're packaging something that doesn't fit into these categories,
-ask for help on the developer mailing list.
+Das Feld <code>License</code> ist nur brauchbar, wenn einer der folgenden
+vordefinierten Werte benutzt wird.
+Erstellen sie ein Paket, das nicht in eine dieser Kategorien fällt, dann fragen
+sie auf der developer Mailing-Liste um Hilfe.
 </p>
 <ul>
-
-<li><code>GPL</code> - the GNU General Public License.
-This license requires that the source is available from the same place
-as the binary.</li>
-<li><code>LGPL</code> - the GNU Lesser General Public License.
-This license requires that the source is available from the same place
-as the binary.</li>
-<li><code>GPL/LGPL</code> - this if a special case for packages where
-one part is licensed under the GPL (e.g. the executables) and another
-part is licensed under the LGPL (e.g. the libraries).</li>
-
-<li><code>BSD</code> - for BSD-style licenses.
-This includes the so-called "original" BSD license, the "modified" BSD
-license and the MIT license. The Apache license also counts as
-BSD. With these licenses the distribution of source code is
-optional.</li>
-
-<li><code>Artistic</code> - for the Artistic license and
-derivatives.</li>
-
-<li><code>Artistic/GPL</code> - dual-licensed under the Artistic and GPL
-licenses.</li> 
-
-<li><code>GNU Free Documentation License</code> and <code>Linux
-Documentation Project</code> - if the documentation included in a package
-is explicitly included under one of the licenses, then this is indicated by
-appending <code>/GFDL</code> or <code>/LDP</code>, giving one of the
-allowed combinations: "GFDL",
-"GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", or "GPL/LGPL/LDP".
+<li><code>GPL</code> - die GNU General Public Lizenz.
+  Diese Lizenz verlangt, dass der Quell-Code am selben Ort wie das Programm
+  zur Verfügung steht.</li>
+<li><code>LGPL</code> - die GNU Lesser General Public Lizenz.
+  Diese Lizenz verlangt, dass der Quell-Code am selben Ort wie das Programm
+  zur Verfügung steht.</li>
+<li><code>GPL/LGPL</code> - Dies ist ein Spezialfall für Pakete, bei denen ein
+  Teil (z. B. das Programm) unter der GPL steht und ein anderer Teil (z. B. die
+  Bibliothek) unter der LGPL steht.</li>
+<li><code>BSD</code> - für Lizenzen im BSD-Stil.
+  Sie umfasst die sogenannte "originale" BSD-Lizenz, die "modifizierte"
+  BSD-Lizenz und die MIT-Lizenz. Auch die Apache-Lizenz zählt als BSD-Lizenz.
+  Die Distribution der Quellen ist bei diesen Lizenzen optional.</li>
+<li><code>Artistic</code> - für die Artistic-Lizenz und davon abgeleitete.</li>
+<li><code>Artistic/GPL</code> - Duale Lizenz nach Artistic und GPL.</li>
+<li><code>GNU Free Documentation Lizenz</code> und <code>Linux Documentation
+  Project</code> - steht die Dokumentation zu einem Paket explizit unter einer
+  dieser Lizenzen, dann hängen sie <code>/GFDL</code> oder <code>/LDP</code> an.
+  Das ergibt eine der folgenden Kombinationen: "GFDL", "GPL/GFDL", "LGPL/GFDL",
+  "GPL/LGPL/GFDL", "LDP" oder "GPL/LGPL/LDP".
 </li>
-
-<li><code>DFSG-Approved</code> - for software that meets the guidelines
-of the
-<link url="http://www.debian.org/social_contract">Debian Social Contract</link>.
+<li><code>DFSG-Approved</code> - für Software, die folgende Richtlinien einhält:
+  <link url="http://www.debian.org/social_contract">Debian Social
+  Contract</link>.
 </li>
-
-<li><code>OSI-Approved</code> - for other Open Source licenses
-approved by the
-<link url="http://www.opensource.org/">Open Source Initiative</link>
-. One of OSI's requirements is that free distribution
-of binaries and sources is allowed. This value can also be used as an
-umbrella for dual-licensed packages.</li>
-
-<li><code>Restrictive</code> - for restrictive licenses.
-Use this for packages that are available from the author in source
-form for free use, but don't allow free redistribution.</li>
-
-<li><code>Restrictive/Distributable</code> - for restrictive licenses which
-permit distribution of source and binaries.
-Use this for packages that are available from the author in source
-form, permit distribution of source and binaries, but have restrictions which
-make them non-open source licenses.</li>
-
-<li><code>Commercial</code> - for restrictive, commercial licenses.
-Use this for commercial packages (e.g. Freeware, Shareware) that do
-not allow free redistribution of source or binaries.</li>
-
-<li><code>Public Domain</code> - for packages that are in the Public
-Domain, i.e. the author has given up his copyright on the code. These
-packages don't have licenses at all and anyone can do anything with
-them.</li>
-
+<li><code>OSI-Approved</code> - für andere Open-Source-Lizenzen, die von
+  folgender Initiative akzeptiert wurde:
+  <link url="http://www.opensource.org/">Open Source Initiative</link>
+  Eine der Bedingungen von OSI ist, dass die Verteilung von Binärprogrammen und
+  Quellen frei erlaubt ist. Dieser Wert kann auch als Schirm für Pakete mit
+  Doppellizenz verwendet werden.</li>
+<li><code>Restrictive</code> - für einschränkende Lizenzen.
+  Benutzen sie diese Lizenz für Pakete, die man von ihren Autoren als Quell-Code
+  zur freien Benutzung erhalten kann, aber nicht frei verteilen darf.</li>
+<li><code>Restrictive/Distributable</code> - für einschränkende Lizenzen, die
+  aber die Verteilung von Quellen und Binärprogrammen erlauben.
+  Benutzen sie diese Lizenz für Pakete, die man von ihren Autoren als Quell-Code
+  zur freien Benutzung erhalten kann und auch die Verteilung von Quell-Code und
+  Binärprogramm erlauben, aber sonstige Einschränkungen haben, die sie zu
+  non-open-source-Lizenzen machen.</li>
+<li><code>Commercial</code> - für einschränkende, kommerzielle Lizenzen.
+  Benutzen sie diese Lizenz für kommerzielle Pakete (z. B. Freeware oder
+  Shareware), die die freie Verteilung von Quell-Code oder BinärProgrammen
+  nicht zulassen.</li>
+<li><code>Public Domain</code> - für Pakete, die Gemeingut sind, d. h. deren
+  Autoren ihr Urheberrecht an dem Code aufgegeben haben. Diese Pakete haben
+  überhaupt keine Lizenz und jeder kann damit machen, was er will.</li>
 </ul>
 
 </section>
 
-<section name="openssl"><title>The GPL and OpenSSL</title>
-<p>(Policy change effective April, 2005.)</p>
+<section name="openssl"><title>Die GPL und OpenSSL</title>
+<p>(Änderung der Richtlinien ab April 2005.)</p>
 <p>
-Due to the apparent incompatibility of the OpenSSL license with the GPL and 
-LGPL licenses, fink packages which link to openssl but are licensed under 
-the GPL or LGPL are marked as "Restrictive."  As a consequence, the Fink 
-project will not distribute binaries of such packages, although users are 
-free to compile them from source at their discretion.
+Wegen einer offensichtlichen Inkompatibilität zwischen der OpenSSL-Lizenz und
+den GPL- und LGPL-Lizenzen werden Pakete, die OpenSSL-Bibliotheken linken aber
+unter der GPL- oder LGPL-Lizenz stehen, als "Restrictive" klassiert. Als
+Konsequenz davon wird das Fink-Projekt solche Pakete nicht als Binär-Pakete
+anbieten, obwohl es Nutzern frei steht, die Pakete aus den Quellen zu erstellen.
 </p>
 <p>
-Package maintainers are encouraged to record the original package license in 
-the <code>DescPackaging</code> field.
+Paket-Betreuer sind aufgefordert, die Original-Lizenz des Pakets im Feld
+<code>DescPackaging</code> zu vermerken.
 </p>
 
 </section>
 
-<section name="prefix"><title>Base System Interference</title>
+<section name="prefix"><title>Störungen des Basis-Systems</title>
 <p>
-Fink is an add-on distribution that is installed in a directory
-separate from the base system.
-It is crucial that a package does not install files outside of Fink's
-directory.
+Fink ist eine zusätzliche Distribution, die in einem extra Verzeichnis, getrennt
+vom Basis-System (OS X) installiert wird.
+Es ist von von entscheidender Bedeutung, dass ein Paket keine Dateien außerhalb
+von Finks Verzeichnis installiert.
 </p>
 <p>
-Exceptions can be made when there is no other possibility, e.g. with
-XFree86.
-In this case the package must check for existing files before
-installation and refuse to install if it would overwrite existing
-files.
-The package must make sure that all files it installed outside of the
-Fink directory are deleted when the package is removed, or that they
-cause no harm if they are left there (i.e. they need to check binaries
-for existence before calling them and the like).
+Ausnahmen können nur dann gemacht werden, wenn es wirklich nicht anders möglich
+ist, z. B. bei XFree86.
+In diesen Fällen muss das Paket vor der Installation überprüfen, ob Dateien
+vorhanden sind und die Installation verweigern, wenn es vorhandene Dateien
+überschreiben würde.
+Das Paket muss auch sicher stellen, dass alle Dateien, die außerhalb von Finks
+Verzeichnis installiert werden, auch wieder gelöscht werden, wenn das Paket
+entfernt wird oder dass sie keinen Schaden verursachen, wenn sie verbleiben (d.
+h., dass sie die Präsenz von Programmen überprüfen müssen, bevor sie sie
+aufrufen und ähnliches).
 </p>
 </section>
 
-<section name="sharedlibs"><title>Shared Libraries</title>
+<section name="sharedlibs"><title>Dynamische Bibliotheken</title>
 <p>
-Fink's policy about shared libraries became effective in February 2002.
-This section of the documentation discusses version 4
-of the policy (which coincides with the release of Fink's 0.5.0 distribution),
-as modified in December, 2006 to handle 64-bit libraries
-and from January, 2008 to handle private shared libraries. (In addition,
-the discussion was updated in June, 2008 to eliminate obsolete references to a
-transitional period for implementing the shared libraries policy.)
-We begin with a quick summary, and then discuss things in more detail.
+Im Februar 2002 traten Finks Richtlinien zu dynamischen Bibliotheken in Kraft.
+Dieser Abschnitt der Dokumentation beschreibt die Version 4 dieser Richtlinien
+(die mit der Veröffentlichung von Finks 0.5.0 Distribution zusammen fällt.), wie
+im Dezember 2006 modifiziert um 64-bit Bibliotheken und im Januar 2008 um
+private Bibliotheken zu behandeln. (Außerdem wurde die Diskussion im Juni 2008
+aktualisiert, um veraltete Referenzen zu löschen, die aus einer Übergangszeit
+stammte, in der die Richtlinien zu dynamischen Bibliotheken implementiert
+wurde.) Wir beginnen mit einer kurzen Zusammenfassung und werden die Details
+danach diskutieren.
 </p>
 <p>
-Any package which builds shared libraries should treat its shared
-  libraries according to Fink's policy.  This means:</p>
+Jedes Paket, das dynamische Bibliotheken erstellt, sollte Finks Richtlinien dazu
+einhalten. Das bedeutet:
+</p>
 <ul>
-<li>   verify, using <code>otool -L</code> (or <code>otool64 -L</code> for
-64-bit libraries on 10.4), that 
-       the install_name of each library and
-       its compatibility and current version numbers are correct </li>
-<li>   put the public shared libraries in a separate package (except for the
-       links from libfoo.dylib to the install_name), and include
-       the <code>Shlibs</code> field in that package</li>
-<li>   put the headers and the final links from libfoo.dylib into a package
-       which is classified as <code>BuildDependsOnly: True</code>, and plan
-        to have
-       no other package depend on this one.</li>
+<li>Überprüfen sie mit <code>otool -L</code> (oder <code>otool64 -L</code> für
+    64-bit Bibliotheken auf 10.4) dass der install_name jeder Bibliothek und die
+    aktuelle Versionsnummer korrekt sind.</li>
+<li>Verschieben sie alle öffentlichen dynamischen Bibliotheken gehören in ein
+  extra Paket (außer den Links von der libfoo.dylib auf den install_name) und
+  fügen sie in diesem Paket das Feld <code>Shlibs</code> hinzu.</li>
+<li>Verschieben die Header-Dateien und die finalen Links von der libfoo.dylib in
+  ein Paket, das als <code>BuildDependsOnly: True</code> klassifiziert ist und
+  planen sie, dass kein anderes Paket von diesem abhängt.</li>
 </ul>
 <p>
-Note that a package may also install private shared libraries, which
-are not intended to be linked from any other package.  In this case, the
-libraries need not go into a separate package, but a <code>Shlibs</code>
-field must still be part of the package containing shared libraries.  Also,
-maintainers should try to avoid storing a final link from libfoo.dylib
-in the main library directory <filename>%i/lib</filename> 
-(or its 64-bit equivalent), to prevent
-other programs from accidentally linking to this library.
+Beachten sie bitte, dass ein Paket auch private dynamische Bibliotheken
+installieren kann, die nicht von andern Paketen verlinkt werden sollen. In
+diesem Fall müssen die Bibliotheken in ein extra Paket, das aver ebenfalls
+das Feld <code>Shlibs</code> haben muss. Außerdem sollte man vermeiden, einen
+finalen Link von der libfoo.dylib in das Haupt-Bibliotheksverszeichnis
+<filename>%i/lib</filename> (oder seinem 64-bit Äquivalenz) zu legen. So soll
+verhindert werden, dass diese Bibliothek unabsichtlich verlinkt wird.
 </p>
 <p>
-  A maintainer who has reasons to deviate from this policy and not split the
-  package should explain the reasons in the DescPackaging field.
+Sollte ein Paketbetreuer gute Gründe haben, von dieser Richtlinie abzuweichen,
+sollten diese im Feld <code>DescPackaging:</code> eingetragen werden.
 </p>
 <p>
-For some packages, everything can be accomplished with a main package and a
--shlibs package; in other cases you also need a third package.  The new
-<code>SplitOff</code> field actually makes this quite easy.
+Für einige Pakete kann alles mit einem Hauptpaket und einem -shlibs-Paket gelöst
+werden. In anderen Fällen braucht man noch mindestens ein drittes Paket. Mit dem
+neuen Feld <code>SplitOff</code> geht das recht leicht.
 </p>
 <p>
-When three packages are needed, there are two different ways they could be
-named, depending on whether the libraries (option 1) or the binaries (option 2)
-are the most important feature of the package.  For option 1,
-use the layout:
+Werden drei Pakete benötigt, kann man sie auf zwei Arten benennen, je nachdem ob
+die Bibliotheken (Option 1) oder die Binärprogramme (Option 2) das wichtigste am
+Paket sind. Bei Option 1 sieht das Layout so aus:
 </p>
 <itemtable labeld="Contents" labelt="Package">
 <item><itemt><code>foo-shlibs</code></itemt>
-<itemd><p>Shared libraries</p></itemd></item>
+<itemd><p>Dynamische Bibliotheken</p></itemd></item>
 <item><itemt><code>foo</code></itemt>
-<itemd><p>Headers</p></itemd></item>
+<itemd><p>Header-Dateien</p></itemd></item>
 <item><itemt><code>foo-bin</code></itemt>
-<itemd><p>Binaries, etc.</p></itemd></item>
+<itemd><p>Binärprogramme, usw.</p></itemd></item>
 </itemtable>
 
-<p>while for option 2, use the layout:</p>
+<p>während bei Option 2 das Layout so aussieht:</p>
 <itemtable labeld="Contents" labelt="Package">
 <item><itemt><code>foo-shlibs</code></itemt>
-<itemd><p>Shared libraries</p></itemd></item>
+<itemd><p>Dynamische Bibliotheken</p></itemd></item>
 <item><itemt><code>foo-dev</code></itemt>
-<itemd><p>Headers</p></itemd></item>
+<itemd><p>Header-Dateien</p></itemd></item>
 <item><itemt><code>foo</code></itemt>
-<itemd><p>Binaries, etc.</p></itemd></item>
+<itemd><p>Binärprogramme, usw.</p></itemd></item>
 </itemtable>
 
-<p><em>The policy in detail</em></p>
+<p><em>Die Richtlinien im Detail</em></p>
 <p>
-We now discuss things in more detail; for
-examples of the policy in action, see the  libpng, libjpeg  and 
-libtiff packages.
+Wir werden nun die Dinge im Detail diskutieren. Als Beispiel können sie sich
+die Pakete libpng, libjpeg und libtiff anschauen.
 </p>
 <p>
-Software which has been ported to Darwin should build shared libraries 
-whenever possible.  (Package maintainers
-are also free to build static libraries as well, if appropriate
-for their packages; or they may submit packages containing only static
-libraries if they wish.)
-Whenever shared libraries are being built that are expected to be used by other
-packages, <em>two</em> closely related fink packages should be made, named foo
-and foo-shlibs.  The shared libraries go in foo-shlibs, and the header
-files go in foo.  These two packages
-can be made with a single .info file, using
-the <code>SplitOff</code> field, as described below.  
-(In fact, it is often necessary
-to make more than two packages from the source, and this can be done
-using <code>SplitOff2</code>, <code>SplitOff3</code>, etc.)
+Software, die nach Darwin oder OS X portiert wird, sollte wenn immer auch
+möglich dynamische Bibliotheken erstellen. (Paketbetreuern steht es frei, auch
+statische Bibliotheken zu erstellen, wenn das für ihr Paket angemessen ist oder
+auch ein Paket zu erstellen, das nur statische Bibliotheken enthält.)
+Immer wenn dynamische Bibliotheken erzeugt werden, von denen man erwartet, dass
+sie von anderen Paketen benutzt werden, sollten <em>zwei</em> Pakete mit den
+Namen foo und foo-shlibs erstellt werden. Die dynamische Bibliotheke gehört in
+foo-shlibs und die Header-Dateien in foo. Beide Pakete können in einer Datei
+foo.info mit Hilfe des Felds <code>SplitOff</code> erzeugt werden, wie weiter
+unten beschrieben.
+(Tatsächlich müssen oft mehr als zwei Pakete aus den Quellen erzeugt werden. Das
+kann leicht über die Felder <code>SplitOff2</code>, <code>SplitOff3</code> usw.
+erreicht werden.)
 </p>
 <p>
-Each software package for which public shared libraries are built must have
-a <em>major version number</em> N, which is included in the shared
-library's filename (for example, <filename>libbar.N.dylib</filename>).
-The major version number is only supposed
-to change when a backwards-incompatible change in the library's API has been
-made.  Fink uses the following naming convention: if the upstream name
-of the package is bar, then the fink packages are called barN and 
-barN-shlibs.  (This is only strictly applied to new packages, or when the 
-major version number changes.)  For example, the major version number for
-the pre-existing libpng package was 2, but recent versions of the
-library have major version number 3.  So there are now four fink packages
-to handle this: libpng, libpng-shlibs, libpng3, libpng3-shlibs.
-Only one of libpng and libpng3 can be installed at any given time,
-but libpng-shlibs and libpng3-shlibs can be installed at the same time.
-(Note that only two .info files are required to build these four packages.)
+Jedes Softwarepaket mit dynamischen Bibliotheken braucht eine
+<em>Hauptversionsnummer</em> N, die in den Namen der Bibliothek eingefügt wird
+(z. B. <filename>libbar.N.dylib</filename>).
+Diese Hauptversionsnummer soll sich nur ändern, wenn sich die API der
+Bibliothek so ändert, dass sie nicht mehr rückwärts-kompatibel ist. Fink benutzt
+folgende Konvention für die Namensgebung: Ist der Upstream-Name bar, erhalten
+die Fink-Pakete die namen barN und barN-shlibs. (Diese Regel gilt streng nur für
+neue Pakete und Pakete, bei denen sich die Hauptversionsnummer ändert.) Ist z.
+B. die Hauptversionsnummer des vorliegenden Pakets libpng eine 2 und die Nummer
+der neuen Version eine 3, dann macht man daraus folgende vier Pakete: libpng,
+libpng-shlibs, libpng3 und libpng3-shlibs.
+Nur jeweils eines der Pakete libpng oder libpng3 kann installiert sein.
+(Beachte, dass nur zwei2 .info-Dateien für die vier Pakete benötigt werden.)
 </p>
 <p>
-The shared library itself and certain related files will be put into 
-the package barN-shlibs; the "include" files and certain other files will
-be put into the package barN.  There can be no overlapping files
-between these two packages, and everything stored in barN-shlibs must have
-a pathname which somehow includes the major version number N.  In many
-instances, your package will need some files at runtime which are
-typically installed into <filename>%i/lib/bar/</filename> or 
-<filename>%i/share/bar/</filename> ; you should adjust the installation
-paths to <filename>%i/lib/bar/N/</filename> or
-<filename>%i/share/bar/N/</filename>.
+Die eigentliche dynamische Bibliothek und einige dazu gehörige Dateien kommen
+in das Paket barN-shlibs. Die "include" und andere Dateien kommen in das Paket
+barN. Diese beiden Paketen haben keine gemeinsamen Dateien und alle Dateien in
+barN-shlibs müssen die Hauptversionsnummer in Namen ihres Pfades haben. In
+vielen Fällen braucht das Paket zur Laufzeit Dateien, die typischerweise in
+<filename>%i/lib/bar/</filename> oder <filename>%i/share/bar/</filename>
+installiert sind. Sie sollten deshalb die Installationspfade auf
+<filename>%i/lib/bar/N/</filename> oder <filename>%i/share/bar/N/</filename>
+einstellen.
 </p>
 <p>
-All other packages which depend on bar, major version N, will be asked to
-use the dependencies
+Alle anderen Pakete, die von bar mit der Hauptversionsnummer N abhängen,
+brauchen folgende Felder:
 </p>
 <codeblock>  Depends: barN-shlibs
   BuildDepends: barN</codeblock>
 <p>
-It is not be permitted for 
-another package to depend on barN itself.  (Although there may still be
-a few such dependencies involving packages which were in place prior to 
-February, 2002.)  This is
-signaled to other developers by a boolean field
+Es ist für andere Pakete nicht erlaubt, direkt von barN abzuhängen. (Auch wenn
+es noch einige Pakete mit solchen Abhängigkeiten aus der Zeit vor Februar 2002
+geben kann). Dies wird in der Paketbeschreibung von barN mit dem boolschen Feld
+BuildDependsOnly an die Betreuer anderer Pakete signalisiert:
 </p>
 <codeblock>  BuildDependsOnly: True</codeblock>
-<p>within the package description for barN.</p>
 <p>
-If your package includes both shared libraries and binary files, and
-if the binary files need to be present at runtime (not just at build
-time), then the binaries must be split off into a third package, which
-could be called barN-bin.  Other packages are allowed to depend on
-barN-bin as well as barN-shlibs.
+Enthält ihr Paket sowohl dynamische Bibliotheken und Binärdateien und die
+Binärdateien werden zur Laufzeit benötigt und nicht nur bei der Erzeugung des
+Pakets, dann müssen die Binärdateien zusätzlich zum Paket barN-shlibs in ein
+drittes Paket mit dem Namen barN-bin gepackt werden.
 </p>
 <p>
-When building shared libraries under major version N, it is important that
-the "install_name" of the library be <filename>%p/lib/libbar.N.dylib</filename>.  
-(You can
-find the install_name by running <code>otool -L</code> on your library,
-or <code>otool64 -L</code> for 64-bit libraries on 10.4.)  The
-actual library file may be installed at another location, such as
+Erstellt man eine dynamische Bibliothek mit der Hauptversionsnummer N, ist es
+wichtig, dass der "install_name" der Bibliothek
+<filename>%p/lib/libbar.N.dylib</filename> ist. (Sie können den "install_name"
+mit dem Befehl <code>otool -L</code> oder <code>otool64 -L</code> für 64-bit
+Bibliotheken auf 10.4 heraus finden.) Die tatsächliche Bibliothek kann an einer
+anderen Stelle installiert sein.
 </p>
 <codeblock>  %i/lib/libbar.N.x.y.dylib</codeblock>
-<p>and your packages should create symbolic links</p>
+<p>und ihr Paket erzeugt symbolische Links:</p>
 <codeblock>  %i/lib/libbar.N.dylib -> %p/lib/libbar.N.x.y.dylib
   %i/lib/libbar.dylib -> %p/lib/libbar.N.x.y.dylib</codeblock>
-<p>from the install_name path and from the linking path to the actual
-library.  (The first will not be needed if the library is in fact
-installed at the install_name path, which is becoming more common.)
+<p>
+aus dem install_name-Pfad und vom linking-Pfad zu der tatsächlichen
+Bibliothek. (Das erste wird nicht benötigt, wenn die Bibliotheke tatsächlich
+beim install_name-Pfad installiert ist, was zunehmend der Fall ist.)
 </p>
-<p>If the static library is also built, then it will be installed at</p>
+<p>Wird auch eine statische Bibliothek erzeugt, wird sie hier installiert:</p>
 <codeblock>  %i/lib/libbar.a</codeblock>
 <p>
-If the package uses libtool, these things are usually handled automatically,
-but in any event you should
-check that they have been done correctly in your case.  You should also
-check that current_version and compatibility_version were defined 
-appropriately for your shared libraries.  (These are also shown with the 
-<code>otool -L</code> query, or <code>otool64 -L</code> for 64-bit libraries.)
+Verwendet das Paket libtool, wird dies alles automatisch erledigt, aber man
+sollte auf jeden Fall überprüfen, dass dies auch korrekt gemacht wurde. Sie
+sollten auch überprüfen, ob die current_version und die compatibility_version
+für ihre dynamischen Bibliotheken richtig definiert wurden. (Diese werden
+ebenso mit den Abfragen <code>otool -L</code> oder <code>otool64 -L</code> für
+64-bit Bibliotheken angezeigt.)
 </p>
-<p>Files are then divided between the two packages as follows</p>
+<p>Die Dateien wird wie folgt zwischen den beiden Paketen aufgeteilt:</p>
 <ul>
-<li>  in package barN-shlibs:
+<li>  im Paket barN-shlibs:
 <codeblock>  %i/lib/libbar.N.x.y.dylib
   %i/lib/libbar.N.dylib -> %p/lib/libbar.N.x.y.dylib
   %i/lib/bar/N/*
   %i/share/bar/N/*
   %i/share/doc/barN-shlibs/*</codeblock></li>
-<li>  in package barN:
+<li>  im Paket barN:
 <codeblock>  %i/include/*
   %i/lib/libbar.dylib -> %p/lib/libbar.N.x.y.dylib
   %i/lib/libbar.a
   %i/share/doc/barN/*
-  other files, if needed</codeblock></li></ul>
+  andere Dateien, falls vorhanden</codeblock></li>
+</ul>
 <p>
-Notice that both packages are required to have some documentation about
-the license, but that the directories containing the DocFiles will be
-different.
+Beachten sie, dass beide Pakete die Dokumentation zu ihren Lizenzen benötigen,
+die Verzeichnisse mit den DocFiles aber unterschiedlich sind.
 </p>
 <p>
-Doing this is quite easy in practice, using the 
-<code>SplitOff</code> field.  Here is
-how the example above would be implemented (in part):
+Das macht man in der Praxis am einfachsten mit dem Feld <code>SplitOff</code>.
+Das folgende Beispiel zeigt die wichtigsten Teile:
 </p>
 <codeblock>Package: barN
 Version: N.x.y
@@ -792,203 +767,198 @@ SplitOff: &lt;&lt;
   DocFiles: COPYING
 &lt;&lt;</codeblock>
 <p>
-During the execution of the <code>SplitOff</code>
-field, the specified files and directories are moved from the 
-install directory %I of the main package to the install directory %i of the
-splitoff package.  (There is a similar convention for names: %N is the
-name of the main package, and %n is the name of the current package.)
-The <code>DocFiles</code> command then puts a copy of the documentation into 
-<filename>%i/share/doc/barN-shlibs</filename>.
+Bei der Bearbeitung des Felds <code>SplitOff</code> werden die angegebenen
+Dateien und Verzeichnisse aus dem Installationsverzeichnis %I des Hauptpakets in
+das Installationsverzeichnis %i des SplitOff-Pakets verschoben. (Die Konvention
+für Namen ist ähnlich: %N ist der Name des Hauptpakets und %n der Name des
+aktuellen Pakets.)
+Das Feld/Kommando <code>DocFiles</code> kopiert die Dokumentationsdateien in das
+Verzeichnis <filename>%i/share/doc/barN-shlibs</filename>.
 </p>
 <p>
-Notice that we have included the exact current version of barN-shlibs as a 
-dependency of the main package barN (which can be abbreviated 
-%N-shlibs (= %v-%r) ).
-This ensures that the versions match, and also guarantees that barN
-automatically "inherits" all the dependencies of barN-shlibs.
+Beachten sie, dass die exakte Version von barN-shlibs als Abhängigkeit im
+Hauptpaket barN steht (das mit %N-shlibs (= %v-%r) abgekürzt werden kann).
+Damit wird sicher gestellt, dass die Versionen passen und dass das Paket barN
+automatisch alle Abhängigkeiten von barN-shlibs "erbt".
 </p>
-<p><em>The BuildDependsOnly field</em></p>
+<p><em>Das Feld BuildDependsOnly</em></p>
 <p>
-When libraries are being upgraded over time, it is often necessary to have
-two versions of the header files available during a transition period,
-with one version used for compiling some things and the other version
-used for compiling others.  For this reason, the packages containing
-header files must be constructed with some care.  If both foo-dev and
-bar-dev contain overlapping headers, then foo-dev should declare
+Werden Bibliotheken im Laufe der Zeit aktualisiert, ist es oft notwendig, zwei
+Versionen der Header-Dateien während der Übergangsphase zur Verfügung zu haben.
+Eine Version für das Übersetzen von dem einen und eine für das Übersetzen von
+etwas anderem. Deshalb muss man bei der Erstellung der Pakete etwas aufpassen.
+Enthalten die Pakete foo-dev und bar-dev überlappende Header, dann muss in
+foo-dev folgendes deklariert werden:
 </p>
 <codeblock>  Conflicts: bar-dev
   Replaces: bar-dev</codeblock>
-<p>and similarly bar-dev declares Conflicts/Replaces on foo-dev.</p>
-<p>In addition, both packages should declare</p>
+<p>und genau so, aber umgekehrt, in bar-dev.</p>
+<p>Darüber hinaus sollten beide Pakete das Feld BuildDependsOnly gesetzt haben</p>
 <codeblock>  BuildDependsOnly: True</codeblock>
-<p>This inhibits others from writing packages which depend on foo-dev or
-bar-dev, since any such dependency will prevent the smooth operation of the
-Conflicts/Replaces method.
+<p>
+Dies verhindert, dass man Pakete erstellt, die von foo-dev oder bar-dev
+abhängen, denn so etwas würde das problemlose Funktionieren des Methode
+Conflicts/Replaces verhindern.
 </p>
 <p>
-There are some packages containing header files for which it's not
-appropriate to declare BuildDependsOnly to be true.  In that case,
-the package should declare
+Es gibt manche Pakete mit Header-Dateien, für die es nicht in Ordnung ist,
+BuildDependsOnly als wahr zu setzen. In diesen Fällen sollten sie das Feld
+explizit auf falsch setzen:
 </p>
 <codeblock>  BuildDependsOnly: False</codeblock>
-<p>and the reason must be given in the DescPackaging field.
+<p>und den Grund dafür im Feld DescPackaging angeben.</p>
+<p>
+Das Feld BuildDependsOnly sollte nur bei solchen Paketen stehen, die
+Header-Dateien in <filename>%i/include</filename> (oder einem Unterverzeichnis)
+installieren.
 </p>
 <p>
-The BuildDependsOnly field should only be mentioned in the package's .info
-file if the package contains header files, installed into 
-<filename>%i/include</filename> (or subdirectories thereof).
+Ab fink 0.20.5 erzeugt der Befehl "fink validate" eine Warnung für jede
+.deb-Datei, die Header-Dateien und mindestens eine dynamische Bibliothek
+enthält und das Feld BuildDependsOnly weder auf wahr noch falsch setzt.
+(Es ist durchaus möglich, dass fink in Zukunft dies auf Fälle von
+.deb-Dateien ausdehnt, die Header-Dateien und statische Bibliotheken
+enthält.)
 </p>
 <p>
-As of fink 0.20.5, "fink validate" will issue a warning for any .deb
-which contains header files and at least one dylib, and does not declare
-BuildDependsOnly to be either true or false.  (It is possible that in
-future versions of fink, this warning will be expanded to cover the case of
-a .deb with header files and a static library as well.)
+Das Ziel der Reichtlinien über dynamische Bibiliotheken ist, dass die
+Kompatibilität zwischen den Bibliotheken un dProgrammen in verschiedenen
+Paketen gewährleistet ist.  Manche Pakete können Bibliotheken enthalten,
+die gar nicht dafür gedacht sind, von anderne Programmen benutzt zu
+werden.  Ein häufige Situation ist, dass eine Gruppe von Programmen eine
+Backend-Bibliothek mit Hilfsprogrammen haben oder ein Programm, das mehrere
+Plugins für bestimmte Features hat.  Da diese Bibliotheken quasi privat
+für das Paket sind, braucht man dafür kein extra SplitOff -shlibs und auch
+kein <code>BuildDependsOnly</code>.
 </p>
-
+<p><em>Das Feld Shlibs</em></p>
 <p>
-  The goal of the Shared Library Policy is to allow assure
-  compatibility between libraries supplied by one package and
-  libraries or programs that use them in a different package. Some
-  packages may have shared libraries that are not designed to be used
-  by other packages. Common situations include a suite of programs
-  that come with a back-end library of utility functions or a program
-  that comes with plugins to handle various features. Because these
-  libraries are "private" to the package that has them, they do not
-  require being packaged with separate -shlibs
-  or <code>BuildDependsOnly</code> SplitOffs.
-</p>
-<p><em>The Shlibs field</em>
-</p>
-<p>
-In addition to putting the shared libraries in the correct package, as of
-version 4 of this policy, you must also declare all of the shared libraries
-using the <code>Shlibs</code> field.  This field has one line for each
-shared library, which contains the <code>-install_name</code> of the
-library. If the library is public, its <code>Shlibs</code> entry also
-lists the <code>-compatibility_version</code>, versioned
-dependency information specifying the Fink package which provides
-this library at this compatibility version, and the library
-architecture.  (The library architecture may either be "32", "64", or
-"32-64", and may be absent. If the library architecture is not
-explicitly listed, it defaults to the standard value for the current
-architecture of Fink; these standard values are "32" for the powerpc 
-and i386 architectures, and "64"
-for the x86_64 architecture.)
-The dependency should
-be stated in the form <code> foo (>= version-revision)</code> where 
-<code>version-revision</code> refers to
-the <em>first</em> version of a Fink package which made
-this library (with this compatibility version) available.  For example,
-a declaration
+Zusätzlich dazu, dass dynamische Bibliotheken in ein extra Paket gehören,
+müssen ab Version 4 dieser Richtlinien alle dynamische Bibliotheken im
+Feld <code>Shlibs</code> eingetragen werden. Dieses Feld hat für jede dynamische
+Bibliothek nur eine Zeile mit dem <code>-install_name</code> der Bibliothek.
+Ist die Bibliothek öffentlich, steht in der Zeile auch die
+<code>-compatibility_version</code>, Informationen zur Abhängigkeit mit Version
+darüber welches Fink-Paket die Bibliothek mit dieser
+<code>-compatibility_version</code> enthält und die Architektur der Bibliothek.
+(Die Architektur der Bibliothek kann "32", "64" oder "32-64" sein oder ganz
+fehlen. Ist sie nicht explizit angegeben, wird die Voreinstellung genommen, d.h.
+"32" für PowerPC und i386 und "64" für x86_64.) Die Abhängigkeit sollte in der
+Form <code>foo (>= version-revision)</code> angegeben sein, wobei sich
+<code>foo (>= version-revision)</code> auf die <em>erste</em> Version des
+Finkpakets bezieht, das diese Bibliothek (mit der compatibility version) zur
+Verfügung stellte. Das folgende Beispiel
 </p>
 <codeblock>  Shlibs: &lt;&lt;
-    %p/lib/libbar.1.dylib 2.1.0 bar1 (>= 1.1-2) 32
+  %p/lib/libbar.1.dylib 2.1.0 bar1 (>= 1.1-2) 32
   &lt;&lt;</codeblock>
 <p>
-indicates that a (32-bit)
-library with <code>-install_name</code> %p/lib/libbar.1.dylib
-and <code>-compatibility_version</code> 2.1.0 has been installed since
-version 1.1-2 of the <em>bar1</em> package.  In addition, this declaration
-amounts to  a promise
-from the maintainer that a 32-bit
-library with this name and a compatibility-version
-of at least 2.1.0 will always be found in later versions of the <em>bar1</em> 
-package.
+ist eine (32-bit) Bibliothek mit dem <code>-install_name</code>
+%p/lib/libbar.1.dylib und der <code>-compatibility_version</code> 2.1.0, die
+in der Version 1.1-2 des Pakets <em>bar1</em> zum ersten Mal angeboten wurde.
+Außerdem impliziert die Deklaration, dass der Betreuer versichert, dass auch in
+späteren Versionen des Pakets <em>bar1</em> eine 32-bit Bibliothek mit diesem
+Namen und einer Kompatibilitätsversion von mindestens 2.1.0 angeboten wird.
 </p>
 <p>
-Note the use of %p in the name of the library, which allows the correct
-<code>-install_name</code> to be found by all users of Fink, no matter
-what prefix they have chosen.
+Beachten sie die Verwendung von %p im Pfad der Bibliothek. Dadurch wird der
+richtige <code>-install_name</code> von allen Finknutzern gefunden, egal ob sie
+/sw oder einen anderen Präfix für Fink ausgewählt haben.
 </p>
 <p>
-When a package is updated, usually the <code>Shlibs</code> field can simply
-be copied to the next version/revision of the package.  The exception to
-this is if the <code>-compatibility_version</code> increases: in that
-case, the version number in the dependency information should be changed
-to the current version/revision (which is the first version/revision to
-provide the library with the new compatibility version number).
+Wird ein Paket aktualisiert, kann meistens das Feld <code>Shlibs</code> einfach
+in die nächste Version/Revision des Pakets kopiert werden. Nur wenn sich die
+Kompatibilitätsversion erhöht, muss die Versionsnummer in der Abhängigkeit
+auf die aktuelle Version/Revision geändert werden, denn hier muss die
+Version/Revision stehen, in der die neue Kompatibilitätsversion der Bibliothek
+zum ersten Mal angeboten wird.
 </p>
 <p>
-The <code>Shlibs</code> entry for a private library uses a different syntax:
+Für private Bibliotheken ist die Syntax für den Eintrag im Feld
+<code>Shlibs</code> eine andere:
 </p>
 <codeblock>  Shlibs: &lt;&lt;
     !%p/lib/%N/libbar.1.dylib
   &lt;&lt;</codeblock>
 <p>
-The leading exclamation point indicates that this is a private library,
-and since the other information is not relevant in this case, it is 
-not included.
+Das Ausrufungszeichen am Anfang steht für private Bibliothek. Weitere
+Informationen über die Bibliothek sind nicht relevant und werden deshalb weg
+gelassen.
 </p>
 <p>
-Note that in this example, the private shared library has been placed
-in its own subdirectory <filename>%N</filename> of the 
-<filename>%i/lib</filename> directory (which was named after the
-package).  This is a recommended procedure for private libraries,
-as an additional safety measure, to prevent other packages from accidentally
-linking to this library.
+Beachten sie, dass in diesem Beispiel die private Bibliothek in ein eigenes
+Unterverzeichnis <filename>%N</filename> (das nach dem Namen des Pakets benannt
+wurde) des Verzeichnisses <filename>%i/lib</filename> verschoben wird. Dies ist
+unsere Empfehlung als zusätzlicher Schutzmechanismus, der verhindert, dass
+andere Pakete diese Bibliothek aus Versehen verlinken.
 </p>
-<p><em>What to do when the major version number changes:</em></p>
+<p><em>Was muss ich machen, wenn siech die Nummer der Hauptversion ändert?</em></p>
 <p>
-If the major version number changes from N to M, you will create two new
-packages barM and barM-shlibs.  The package barM-shlibs can have no
-overlap with the package barN-shlibs, since many users will have both of
-these installed simultaneously.  In package barM, you should use dependencies
+Ändert sich die Nummer der Hauptversion von N auf M, muss man zwei neue Pakete
+barM und barM-shlibs erstellen. Das Paket barM-shlibs darf keine gemeinsamen
+Dateien mit dem Paket barN-shlibs haben, weil viele Nutzer die beiden Pakete
+gleichzeitig installieren werden. Im Paket barM sollte man folgende
+Abhängigkeiten deklarieren:
 </p>
 <codeblock>  Conflicts: barN
   Replaces: barN</codeblock>
-<p>and similarly, you should revise barN to include dependencies</p>
+<p>
+Im Paket barN muss man in entsprechender Weise, also umgekehrt, folgendes
+einfügen
+</p>
 <codeblock>  Conflicts: barM
   Replaces: barM</codeblock>
 <p>
-Users will then see barN and barM shuffling in and out as various other
-packages are built which depend on one version or another of the shared
-library, while barN-shlibs and barM-shlibs remain permanently installed.
+Bei der Erstellung von anderen Paketen werden die Pakete barN und barM
+ausgetauscht, je nachdem, welches von den beiden benötigt wird. Die Pakete
+barN-shlibs und barM-shlibs bleiben hingegen die ganze Zeit installiert.
 </p>
-<p><em>Packages containing both binary files and libraries:</em></p>
+<p><em>Pakete mit Bibliotheken und Binärdateien:</em></p>
 <p>
-When an upstream package contains both binary files and public libraries, some
-care must be exercised in constructing fink packages.  In some cases,
-the only binary files will be things like <code>foo-config</code> which
-are presumably only used at build time and never at run time.  In these
-cases, the binaries can go with the header files in the <code>foo</code>
-package.
+Enthält eine Upstream-Paket gleichzeitig Binärdateien und öffentliche
+Bibliotheken, muss man bei der Erstellung der Finkpakete aufpassen. Manchmal
+sind die Binärdateien lediglich <code>foo-config</code>, die nur in der
+Build-Phase des Pakets benötigt werden und nie zur Laufzeit. In solchen Fällen
+können diese Dateien zusammen mit den Header-Dateien in das Paket
+<code>foo</code>.
 </p>
 <p>
-In other cases, the binary files will be needed by other packages at
-runtime, and they must be split off into a separate fink package with
-a name something like <code>foo-bin</code>.  The <code>foo-bin</code>
-package should depend on the <code>foo-shlibs</code> package, and
-maintainers of other packages should be encouraged to use
+In anderen Fällen werden die Binärdateien von anderen Paketen auch zur Laufzeit
+benutzt. Dann müssen sie in ein separates Finkpaket abgetrennt werden, das man
+z. B. <code>foo-bin</code> nennen kann. Das Paket <code>foo-bin</code> sollte
+vom Paket <code>foo-shlibs</code> abhängen. Betreuer anderer Pakete sollten
+aufgefordert werden, die Abhängigkeit von <code>foo-bin</code> in ihrem Paket
+zu deklarieren:
 </p>
 <codeblock>  Depends: foo-bin
   BuildDepends: foo</codeblock>
-<p>which will take care of foo-shlibs implicitly.</p>
+<p>Damit ist die Abhängigkeit von foo-shlibs implizit enthalten.</p>
 <p>
-Upgrading presents a problem in this situation, however, since users won't
-be prompted to install <code>foo-bin</code>.  To work around this, until
-all other package maintainers have revised their packages as above,
-your <code>foo</code> package can say
+Allerdings ist die Aktualisierung in dieser Situation ein Problem, denn ein
+Nutzer wird nicht aufgefordert werden, das Paket <code>foo-bin</code> zu
+installieren. Eine Lösung, bis alle anderen Paketbetreuer ihre Pakete
+wie oben beschrieben aktualisiert haben, können sie folgende Abhängigkeit in
+ihrem Paket <code>foo</code> deklarieren:
 </p>
 <codeblock>  Depends: foo-shlibs (= exact.version), foo-bin</codeblock>
 <p>
-This will force the installation of foo-bin on most users' systems, until
-such time as the other package maintainers have upgraded their packages
-which depend on <code>foo</code>.
+Dies erzwingt die Installation des Paket <code>foo-bin</code> auf den meisten
+Systemen, solange bis die anderen Paketbetreuer ihre Pakete, die von
+<code>foo</code> abhängen, aktualisiert haben.
 </p>
 <p>
-  As of fink-0.28.0 (released in January 2008), the format of
-  the <code>Shlibs</code> entry for a "private" shared library has
-  changed (see earlier discussion of the difference between a public
-  and a private shared library). Note that the Shared Library Policy
-  has always required all shared libraries to be listed; the change
-  here is only in the syntax of the <code>Shlibs</code> field. Because
-  this type of shared library is not designed to be used by external
-  packages, there is no need to document its compatilibity or other
-  versioning. Instead, an exclamation-mark is used.  For example,
-  if <filename>libquux.3.dylib</filename> is
-  the <code>install_name</code> of a private shared library, it would
-  be listed as follows:
+Ab fink 0.28.0 (veröffentlich im Januar 2008) hat sich das Format für einen
+Eintrag im Feld <code>Shlibs</code> für private dynamische Bibliotheken geändert
+(Beachten sie bitte die obigen Erläuterungen zu den Unterschieden zwischen
+privaten und öffentlichn dynamischen Bibliotheken.) Die Richtlinien für
+dynamische Bibliotheken war schon immer so, dass alle dynamische Bibliotheken
+aufgezählt werden müssen. Die Änderung betrifft nur das Feld
+<code>Shlibs</code>. Da private Bibliotheken nicht von anderen Paketen benutzt
+werden, ist es auch nicht notwendig die Kompatibilitätsversion oder andere
+Versionsinformationen anzugeben. Statt dessen wird ein Ausrufungszeichen
+verwendet. Ist z. B. <filename>libquux.3.dylib</filename> der
+<code>install_name</code> einer privaten dynamischen Bibliothek, würde sie so
+aufgelistet werden:
 </p>
 <codeblock>  Shlibs: &lt;&lt;
     !%p/lib/libquux.3.dylib
@@ -996,7 +966,7 @@ which depend on <code>foo</code>.
 
 </section>
 
-<section name="perlmods"><title>Perl Modules</title>
+<section name="perlmods"><title>Perl-Module</title>
 <p>
 Fink's policy about perl modules, originally implemented in
 May 2003,  has been revised as of April 2004.
