@@ -2,7 +2,7 @@
 $title = "Paket erstellen - Paketbeschreibungen";
 $cvs_author = 'Author: k-m_schindler';
 $cvs_date = 'Date: 2015/03/10 22:52:23';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="policy.php?phpLang=de" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="policy.php?phpLang=de" title="Richtlinien zur Estellung von Paketen"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
 
 include_once "header.de.inc";
@@ -11,7 +11,7 @@ include_once "header.de.inc";
 
 
 
-<h2><a name="trees">2.1 Baum Layout</a></h2>
+<h2><a name="trees">2.1 Verzeichnis-Layout</a></h2>
 <p>
 Paketbeschreibungen werden aus dem Verzeichnis <code>finkinfo</code> gelesen,
 der sich im Verzeichnis <code>/sw/fink/dists</code> befindet. Die
@@ -50,6 +50,7 @@ organisiert. Die Verzeichnisse von oben nach unten:
 <li>Sections. Das Verzeichnis <code>main</code> ist weiter thematisch
   unterteilt, damit es handhabbar bleibt.</li>
 </ul>
+
 
 
 <h2><a name="format">2.2 Datei-Format</a></h2>
@@ -106,6 +107,7 @@ Einige Felder akzeptieren boolesche Werte. Hier werden "true", "yes", "on" und
 "1" (auch in Großschreibung) als wahr interpretiert, alle anderen Werte als
 falsch.
 </p>
+
 
 
 <h2><a name="percent">2.3 Prozent-Erweiterungen</a></h2>
@@ -291,7 +293,7 @@ nicht erlaubt ist, außer wenn die <code>InfoN</code>-Ebene mindestens 4 ist.
 
 
 <p align="right"><?php echo FINK_NEXT ; ?>:
-<a href="policy.php?phpLang=de">3. Packaging Policy</a></p>
+<a href="policy.php?phpLang=de">3. Richtlinien zur Estellung von Paketen</a></p>
 <?php include_once "../../footer.inc"; ?>
 
 

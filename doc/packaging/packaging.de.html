@@ -20,7 +20,7 @@ Deutsch |
 <p>
 Diese Anleitung beschreibt, wie man eine Paketbeschreibung für den Paketmanager
 Fink erstellt.
-Es beschreibt ebenso die Politik und Richtlinien für die Fink Distribution.
+Es beschreibt ebenso die Richtlinien für die Fink-Distribution.
 Sowohl das Format der Paketbeschreibung als auch die Distributionspolitik sind
 in Entwicklung. Achten sie also auf "Last changed"-Informationen und CVS Tipps
 zu dieser Seite, wenn es um Aktualisierungen geht.
@@ -35,7 +35,7 @@ Wenn sie einfach bei Fink mithelfen wollen und sie sich fit fühlen, können sie
 <a href="http://pdb.finkproject.org/pdb/nomaintainer.php">ein Paket aus dieser
 Liste übernehmen</a>, das derzeit ohne Betreuer ist.
 </p>
-<h2>Contents</h2><ul><li><a href="#intro"><b>1 Einführung</b></a><ul><li><a href="#intro.def1">1.1 Was ist ein Paket?</a></li><li><a href="#intro.ident">1.2 Identifikation eines Pakets</a></li></ul></li><li><a href="#format"><b>2 Paketbeschreibungen</b></a><ul><li><a href="#format.trees">2.1 Baum Layout</a></li><li><a href="#format.format">2.2 Datei-Format</a></li><li><a href="#format.percent">2.3 Prozent-Erweiterungen</a></li></ul></li><li><a href="#policy"><b>3 Packaging Policy</b></a><ul><li><a href="#policy.licenses">3.1 Package Licenses</a></li><li><a href="#policy.openssl">3.2 The GPL and OpenSSL</a></li><li><a href="#policy.prefix">3.3 Base System Interference</a></li><li><a href="#policy.sharedlibs">3.4 Shared Libraries</a></li><li><a href="#policy.perlmods">3.5 Perl Modules</a></li><li><a href="#policy.emacs">3.6 Emacs Policy</a></li><li><a href="#policy.sources">3.7 Source Policy</a></li><li><a href="#policy.downloading">3.8 File Download Policy</a></li></ul></li><li><a href="#fslayout"><b>4 Filesystem Layout</b></a><ul><li><a href="#fslayout.fhs">4.1 The Filesystem Hierarchy Standard</a></li><li><a href="#fslayout.dirs">4.2 The Directories</a></li><li><a href="#fslayout.avoid">4.3 Things to Avoid</a></li></ul></li><li><a href="#compilers"><b>5 Compilers</b></a><ul><li><a href="#compilers.versions">5.1 Compiler Versions</a></li><li><a href="#compilers.abi">5.2 The g++ ABI</a></li></ul></li><li><a href="#reference"><b>6 Reference</b></a><ul><li><a href="#reference.build">6.1 The Build Process</a></li><li><a href="#reference.fields">6.2 Fields</a></li><li><a href="#reference.splitoffs">6.3 SplitOffs</a></li><li><a href="#reference.scripts">6.4 Scripts</a></li><li><a href="#reference.patches">6.5 Patches</a></li><li><a href="#reference.profile.d">6.6 Profile.d scripts</a></li></ul></li></ul><h2><a name="intro">1 Einführung</a></h2>
+<h2>Contents</h2><ul><li><a href="#intro"><b>1 Einführung</b></a><ul><li><a href="#intro.def1">1.1 Was ist ein Paket?</a></li><li><a href="#intro.ident">1.2 Identifikation eines Pakets</a></li></ul></li><li><a href="#format"><b>2 Paketbeschreibungen</b></a><ul><li><a href="#format.trees">2.1 Verzeichnis-Layout</a></li><li><a href="#format.format">2.2 Datei-Format</a></li><li><a href="#format.percent">2.3 Prozent-Erweiterungen</a></li></ul></li><li><a href="#policy"><b>3 Richtlinien zur Estellung von Paketen</b></a><ul><li><a href="#policy.licenses">3.1 Paket-Lizenzen</a></li><li><a href="#policy.openssl">3.2 Die GPL und OpenSSL</a></li><li><a href="#policy.prefix">3.3 Störungen des Basis-Systems</a></li><li><a href="#policy.sharedlibs">3.4 Dynamische Bibliotheken</a></li><li><a href="#policy.perlmods">3.5 Perl-Module</a></li><li><a href="#policy.emacs">3.6 Emacs-Richtlinien</a></li><li><a href="#policy.sources">3.7 Quelldateien-Richtlinien</a></li><li><a href="#policy.downloading">3.8 Datei-Download-Richtlinien</a></li></ul></li><li><a href="#fslayout"><b>4 Dateisystem-Layout</b></a><ul><li><a href="#fslayout.fhs">4.1 Hierarchie-Standard für Dateiverzeichnisse</a></li><li><a href="#fslayout.dirs">4.2 Die Verzeichnisse</a></li><li><a href="#fslayout.avoid">4.3 Was sollte man vermeiden?</a></li></ul></li><li><a href="#compilers"><b>5 Compiler</b></a><ul><li><a href="#compilers.versions">5.1 Compilerversionen</a></li><li><a href="#compilers.abi">5.2 Die g++ ABI</a></li></ul></li><li><a href="#reference"><b>6 Reference</b></a><ul><li><a href="#reference.build">6.1 The Build Process</a></li><li><a href="#reference.fields">6.2 Fields</a></li><li><a href="#reference.splitoffs">6.3 SplitOffs</a></li><li><a href="#reference.scripts">6.4 Scripts</a></li><li><a href="#reference.patches">6.5 Patches</a></li><li><a href="#reference.profile.d">6.6 Profile.d scripts</a></li></ul></li></ul><h2><a name="intro">1 Einführung</a></h2>
 
 
 
@@ -67,6 +67,7 @@ Format dpkg und den Datei-Suffix .deb.
 </p>
 
 
+
 <h3><a name="intro.ident">1.2 Identifikation eines Pakets</a></h3>
 <p>
 Die Identifikation eines Pakets ergibt sich aus drei Zeichnfolgen: Paketname,
@@ -91,11 +92,12 @@ dazwischen, z. B. openssh-2.9p1-2.
 </p>
 
 
+
 <h2><a name="format">2 Paketbeschreibungen</a></h2>
 
 
 
-<h3><a name="format.trees">2.1 Baum Layout</a></h3>
+<h3><a name="format.trees">2.1 Verzeichnis-Layout</a></h3>
 <p>
 Paketbeschreibungen werden aus dem Verzeichnis <tt style="white-space: nowrap;">finkinfo</tt> gelesen,
 der sich im Verzeichnis <tt style="white-space: nowrap;">/sw/fink/dists</tt> befindet. Die
@@ -134,6 +136,7 @@ organisiert. Die Verzeichnisse von oben nach unten:
 <li>Sections. Das Verzeichnis <tt style="white-space: nowrap;">main</tt> ist weiter thematisch
   unterteilt, damit es handhabbar bleibt.</li>
 </ul>
+
 
 
 <h3><a name="format.format">2.2 Datei-Format</a></h3>
@@ -190,6 +193,7 @@ Einige Felder akzeptieren boolesche Werte. Hier werden "true", "yes", "on" und
 "1" (auch in Großschreibung) als wahr interpretiert, alle anderen Werte als
 falsch.
 </p>
+
 
 
 <h3><a name="format.percent">2.3 Prozent-Erweiterungen</a></h3>
@@ -374,331 +378,307 @@ nicht erlaubt ist, außer wenn die <tt style="white-space: nowrap;">InfoN</tt>-E
 
 
 
-<h2><a name="policy">3 Packaging Policy</a></h2>
+<h2><a name="policy">3 Richtlinien zur Estellung von Paketen</a></h2>
 
 
 
-<h3><a name="policy.licenses">3.1 Package Licenses</a></h3>
+<h3><a name="policy.licenses">3.1 Paket-Lizenzen</a></h3>
 <p>
-The packages included in Fink come with a wide variety of licenses.
-Most of them place restrictions on redistributing the full source and
-especially on distributing binaries.
-Some packages can not be included in the binary distribution of Fink
-because of these license restrictions.
-Thus it is very important that package maintainers check the license
-of their package carefully.
+Die Pakete in Fink stehen unter sehr verschiedenen Lizenzen.
+Die meisten beinhalten Restriktionen im Hinblick auf Weiterverteilung der
+kompletten Quellen und vor allem der Binärprogramme.
+Einige Pakete können wegen solcher Restriktionen nicht Teil von Finks
+Binär-Distribution sein.
+Deshalb ist es sehr wichtig, dass man als Betreuer eines Pakets die Lizenzen
+seines Pakets sorgfältig prüft.
 </p>
 <p>
-Every package that is to be distributed as a binary package must
-contain a copy of the license.
-It must be installed in the doc directory,
-i.e. in <tt style="white-space: nowrap;">%p/share/doc/%n</tt>.
-(In the InstallScript, %i must be used instead of %p, of course.
-The DocFiles field takes care of the details automatically.)
-If there is no explicit license in the original source, include a
-small text file with a note about the status of the package.
-Most licenses require that the license accompanies any distribution.
-Fink's policy is to always do this, even if it is not explicitly
-required.
+Jedes Paket, das als Binärpaket verteilt werden soll, muss eine Kopie der Lizenz
+enthalten.
+Die Kopie muss im Verzeichnis doc installiert werden,
+also in <tt style="white-space: nowrap;">%p/share/doc/%n</tt>.
+(Im InstallScript muss natürlich %i anstelle von %p verwendet werden.
+Das Feld DocFiles erledigt dies automatisch.)
+Gibt es keine explizite Lizenz in den originalen Quellen, fügen sie eine
+kleine Textdatei bei, in der sie die Situation des pakets beschreiben.
+Die meisten Lizenzen verlangen, dass jede Distribution die Lizenz enthält.
+Finks Richtlinien ist, dies immer zu tun, auch wenn es nicht explizit verlangt
+wird.
 </p>
 <p>
-To make an automated maintenance of the binary distribution possible,
-any package that is to be distributed must have a <tt style="white-space: nowrap;">License</tt>
-field.
-This field denotes the nature of the license and is used to decide
-which packages make it into the binary distribution and which must be
-held back.
-The field may only be present if the actual license terms are included
-in the binary package, as explained above.
+Für die automatische Verwaltung der binären Distributions ist es erforderlich,
+dass jedes Paket, das damit verteilt werden soll, auch das Feld
+<tt style="white-space: nowrap;">License</tt> gesetzt hat.
+Dieses Feld beschreibt die Art der Lizenz und entscheidet darüber, ob ein
+Paket in die binäre Distribution aufgenommen wird oder zurück gehalten wird.
+Das Feld soll auch nur präsent sein, wenn das binäre Paket auch den eigentlichen
+Text der Lizenz enthält, wie oben beschrieben.
 </p>
 <p>
-To make the <tt style="white-space: nowrap;">License</tt> field useful, only one of the
-following pre-defined values may be used.
-If you're packaging something that doesn't fit into these categories,
-ask for help on the developer mailing list.
+Das Feld <tt style="white-space: nowrap;">License</tt> ist nur brauchbar, wenn einer der folgenden
+vordefinierten Werte benutzt wird.
+Erstellen sie ein Paket, das nicht in eine dieser Kategorien fällt, dann fragen
+sie auf der developer Mailing-Liste um Hilfe.
 </p>
 <ul>
-
-<li><tt style="white-space: nowrap;">GPL</tt> - the GNU General Public License.
-This license requires that the source is available from the same place
-as the binary.</li>
-<li><tt style="white-space: nowrap;">LGPL</tt> - the GNU Lesser General Public License.
-This license requires that the source is available from the same place
-as the binary.</li>
-<li><tt style="white-space: nowrap;">GPL/LGPL</tt> - this if a special case for packages where
-one part is licensed under the GPL (e.g. the executables) and another
-part is licensed under the LGPL (e.g. the libraries).</li>
-
-<li><tt style="white-space: nowrap;">BSD</tt> - for BSD-style licenses.
-This includes the so-called "original" BSD license, the "modified" BSD
-license and the MIT license. The Apache license also counts as
-BSD. With these licenses the distribution of source code is
-optional.</li>
-
-<li><tt style="white-space: nowrap;">Artistic</tt> - for the Artistic license and
-derivatives.</li>
-
-<li><tt style="white-space: nowrap;">Artistic/GPL</tt> - dual-licensed under the Artistic and GPL
-licenses.</li> 
-
-<li><tt style="white-space: nowrap;">GNU Free Documentation License</tt> and <tt style="white-space: nowrap;">Linux
-Documentation Project</tt> - if the documentation included in a package
-is explicitly included under one of the licenses, then this is indicated by
-appending <tt style="white-space: nowrap;">/GFDL</tt> or <tt style="white-space: nowrap;">/LDP</tt>, giving one of the
-allowed combinations: "GFDL",
-"GPL/GFDL", "LGPL/GFDL", "GPL/LGPL/GFDL", "LDP", or "GPL/LGPL/LDP".
+<li><tt style="white-space: nowrap;">GPL</tt> - die GNU General Public Lizenz.
+  Diese Lizenz verlangt, dass der Quell-Code am selben Ort wie das Programm
+  zur Verfügung steht.</li>
+<li><tt style="white-space: nowrap;">LGPL</tt> - die GNU Lesser General Public Lizenz.
+  Diese Lizenz verlangt, dass der Quell-Code am selben Ort wie das Programm
+  zur Verfügung steht.</li>
+<li><tt style="white-space: nowrap;">GPL/LGPL</tt> - Dies ist ein Spezialfall für Pakete, bei denen ein
+  Teil (z. B. das Programm) unter der GPL steht und ein anderer Teil (z. B. die
+  Bibliothek) unter der LGPL steht.</li>
+<li><tt style="white-space: nowrap;">BSD</tt> - für Lizenzen im BSD-Stil.
+  Sie umfasst die sogenannte "originale" BSD-Lizenz, die "modifizierte"
+  BSD-Lizenz und die MIT-Lizenz. Auch die Apache-Lizenz zählt als BSD-Lizenz.
+  Die Distribution der Quellen ist bei diesen Lizenzen optional.</li>
+<li><tt style="white-space: nowrap;">Artistic</tt> - für die Artistic-Lizenz und davon abgeleitete.</li>
+<li><tt style="white-space: nowrap;">Artistic/GPL</tt> - Duale Lizenz nach Artistic und GPL.</li>
+<li><tt style="white-space: nowrap;">GNU Free Documentation Lizenz</tt> und <tt style="white-space: nowrap;">Linux Documentation
+  Project</tt> - steht die Dokumentation zu einem Paket explizit unter einer
+  dieser Lizenzen, dann hängen sie <tt style="white-space: nowrap;">/GFDL</tt> oder <tt style="white-space: nowrap;">/LDP</tt> an.
+  Das ergibt eine der folgenden Kombinationen: "GFDL", "GPL/GFDL", "LGPL/GFDL",
+  "GPL/LGPL/GFDL", "LDP" oder "GPL/LGPL/LDP".
 </li>
-
-<li><tt style="white-space: nowrap;">DFSG-Approved</tt> - for software that meets the guidelines
-of the
-<a href="http://www.debian.org/social_contract">Debian Social Contract</a>.
+<li><tt style="white-space: nowrap;">DFSG-Approved</tt> - für Software, die folgende Richtlinien einhält:
+  <a href="http://www.debian.org/social_contract">Debian Social
+  Contract</a>.
 </li>
-
-<li><tt style="white-space: nowrap;">OSI-Approved</tt> - for other Open Source licenses
-approved by the
-<a href="http://www.opensource.org/">Open Source Initiative</a>
-. One of OSI's requirements is that free distribution
-of binaries and sources is allowed. This value can also be used as an
-umbrella for dual-licensed packages.</li>
-
-<li><tt style="white-space: nowrap;">Restrictive</tt> - for restrictive licenses.
-Use this for packages that are available from the author in source
-form for free use, but don't allow free redistribution.</li>
-
-<li><tt style="white-space: nowrap;">Restrictive/Distributable</tt> - for restrictive licenses which
-permit distribution of source and binaries.
-Use this for packages that are available from the author in source
-form, permit distribution of source and binaries, but have restrictions which
-make them non-open source licenses.</li>
-
-<li><tt style="white-space: nowrap;">Commercial</tt> - for restrictive, commercial licenses.
-Use this for commercial packages (e.g. Freeware, Shareware) that do
-not allow free redistribution of source or binaries.</li>
-
-<li><tt style="white-space: nowrap;">Public Domain</tt> - for packages that are in the Public
-Domain, i.e. the author has given up his copyright on the code. These
-packages don't have licenses at all and anyone can do anything with
-them.</li>
-
+<li><tt style="white-space: nowrap;">OSI-Approved</tt> - für andere Open-Source-Lizenzen, die von
+  folgender Initiative akzeptiert wurde:
+  <a href="http://www.opensource.org/">Open Source Initiative</a>
+  Eine der Bedingungen von OSI ist, dass die Verteilung von Binärprogrammen und
+  Quellen frei erlaubt ist. Dieser Wert kann auch als Schirm für Pakete mit
+  Doppellizenz verwendet werden.</li>
+<li><tt style="white-space: nowrap;">Restrictive</tt> - für einschränkende Lizenzen.
+  Benutzen sie diese Lizenz für Pakete, die man von ihren Autoren als Quell-Code
+  zur freien Benutzung erhalten kann, aber nicht frei verteilen darf.</li>
+<li><tt style="white-space: nowrap;">Restrictive/Distributable</tt> - für einschränkende Lizenzen, die
+  aber die Verteilung von Quellen und Binärprogrammen erlauben.
+  Benutzen sie diese Lizenz für Pakete, die man von ihren Autoren als Quell-Code
+  zur freien Benutzung erhalten kann und auch die Verteilung von Quell-Code und
+  Binärprogramm erlauben, aber sonstige Einschränkungen haben, die sie zu
+  non-open-source-Lizenzen machen.</li>
+<li><tt style="white-space: nowrap;">Commercial</tt> - für einschränkende, kommerzielle Lizenzen.
+  Benutzen sie diese Lizenz für kommerzielle Pakete (z. B. Freeware oder
+  Shareware), die die freie Verteilung von Quell-Code oder BinärProgrammen
+  nicht zulassen.</li>
+<li><tt style="white-space: nowrap;">Public Domain</tt> - für Pakete, die Gemeingut sind, d. h. deren
+  Autoren ihr Urheberrecht an dem Code aufgegeben haben. Diese Pakete haben
+  überhaupt keine Lizenz und jeder kann damit machen, was er will.</li>
 </ul>
 
 
 
-<h3><a name="policy.openssl">3.2 The GPL and OpenSSL</a></h3>
-<p>(Policy change effective April, 2005.)</p>
+<h3><a name="policy.openssl">3.2 Die GPL und OpenSSL</a></h3>
+<p>(Änderung der Richtlinien ab April 2005.)</p>
 <p>
-Due to the apparent incompatibility of the OpenSSL license with the GPL and 
-LGPL licenses, fink packages which link to openssl but are licensed under 
-the GPL or LGPL are marked as "Restrictive."  As a consequence, the Fink 
-project will not distribute binaries of such packages, although users are 
-free to compile them from source at their discretion.
+Wegen einer offensichtlichen Inkompatibilität zwischen der OpenSSL-Lizenz und
+den GPL- und LGPL-Lizenzen werden Pakete, die OpenSSL-Bibliotheken linken aber
+unter der GPL- oder LGPL-Lizenz stehen, als "Restrictive" klassiert. Als
+Konsequenz davon wird das Fink-Projekt solche Pakete nicht als Binär-Pakete
+anbieten, obwohl es Nutzern frei steht, die Pakete aus den Quellen zu erstellen.
 </p>
 <p>
-Package maintainers are encouraged to record the original package license in 
-the <tt style="white-space: nowrap;">DescPackaging</tt> field.
+Paket-Betreuer sind aufgefordert, die Original-Lizenz des Pakets im Feld
+<tt style="white-space: nowrap;">DescPackaging</tt> zu vermerken.
+</p>
+
+
+
+<h3><a name="policy.prefix">3.3 Störungen des Basis-Systems</a></h3>
+<p>
+Fink ist eine zusätzliche Distribution, die in einem extra Verzeichnis, getrennt
+vom Basis-System (OS X) installiert wird.
+Es ist von von entscheidender Bedeutung, dass ein Paket keine Dateien außerhalb
+von Finks Verzeichnis installiert.
+</p>
+<p>
+Ausnahmen können nur dann gemacht werden, wenn es wirklich nicht anders möglich
+ist, z. B. bei XFree86.
+In diesen Fällen muss das Paket vor der Installation überprüfen, ob Dateien
+vorhanden sind und die Installation verweigern, wenn es vorhandene Dateien
+überschreiben würde.
+Das Paket muss auch sicher stellen, dass alle Dateien, die außerhalb von Finks
+Verzeichnis installiert werden, auch wieder gelöscht werden, wenn das Paket
+entfernt wird oder dass sie keinen Schaden verursachen, wenn sie verbleiben (d.
+h., dass sie die Präsenz von Programmen überprüfen müssen, bevor sie sie
+aufrufen und ähnliches).
 </p>
 
 
 
-<h3><a name="policy.prefix">3.3 Base System Interference</a></h3>
+<h3><a name="policy.sharedlibs">3.4 Dynamische Bibliotheken</a></h3>
 <p>
-Fink is an add-on distribution that is installed in a directory
-separate from the base system.
-It is crucial that a package does not install files outside of Fink's
-directory.
+Im Februar 2002 traten Finks Richtlinien zu dynamischen Bibliotheken in Kraft.
+Dieser Abschnitt der Dokumentation beschreibt die Version 4 dieser Richtlinien
+(die mit der Veröffentlichung von Finks 0.5.0 Distribution zusammen fällt.), wie
+im Dezember 2006 modifiziert um 64-bit Bibliotheken und im Januar 2008 um
+private Bibliotheken zu behandeln. (Außerdem wurde die Diskussion im Juni 2008
+aktualisiert, um veraltete Referenzen zu löschen, die aus einer Übergangszeit
+stammte, in der die Richtlinien zu dynamischen Bibliotheken implementiert
+wurde.) Wir beginnen mit einer kurzen Zusammenfassung und werden die Details
+danach diskutieren.
 </p>
 <p>
-Exceptions can be made when there is no other possibility, e.g. with
-XFree86.
-In this case the package must check for existing files before
-installation and refuse to install if it would overwrite existing
-files.
-The package must make sure that all files it installed outside of the
-Fink directory are deleted when the package is removed, or that they
-cause no harm if they are left there (i.e. they need to check binaries
-for existence before calling them and the like).
+Jedes Paket, das dynamische Bibliotheken erstellt, sollte Finks Richtlinien dazu
+einhalten. Das bedeutet:
 </p>
-
-
-<h3><a name="policy.sharedlibs">3.4 Shared Libraries</a></h3>
-<p>
-Fink's policy about shared libraries became effective in February 2002.
-This section of the documentation discusses version 4
-of the policy (which coincides with the release of Fink's 0.5.0 distribution),
-as modified in December, 2006 to handle 64-bit libraries
-and from January, 2008 to handle private shared libraries. (In addition,
-the discussion was updated in June, 2008 to eliminate obsolete references to a
-transitional period for implementing the shared libraries policy.)
-We begin with a quick summary, and then discuss things in more detail.
-</p>
-<p>
-Any package which builds shared libraries should treat its shared
-  libraries according to Fink's policy.  This means:</p>
 <ul>
-<li>   verify, using <tt style="white-space: nowrap;">otool -L</tt> (or <tt style="white-space: nowrap;">otool64 -L</tt> for
-64-bit libraries on 10.4), that 
-       the install_name of each library and
-       its compatibility and current version numbers are correct </li>
-<li>   put the public shared libraries in a separate package (except for the
-       links from libfoo.dylib to the install_name), and include
-       the <tt style="white-space: nowrap;">Shlibs</tt> field in that package</li>
-<li>   put the headers and the final links from libfoo.dylib into a package
-       which is classified as <tt style="white-space: nowrap;">BuildDependsOnly: True</tt>, and plan
-        to have
-       no other package depend on this one.</li>
+<li>Überprüfen sie mit <tt style="white-space: nowrap;">otool -L</tt> (oder <tt style="white-space: nowrap;">otool64 -L</tt> für
+    64-bit Bibliotheken auf 10.4) dass der install_name jeder Bibliothek und die
+    aktuelle Versionsnummer korrekt sind.</li>
+<li>Verschieben sie alle öffentlichen dynamischen Bibliotheken gehören in ein
+  extra Paket (außer den Links von der libfoo.dylib auf den install_name) und
+  fügen sie in diesem Paket das Feld <tt style="white-space: nowrap;">Shlibs</tt> hinzu.</li>
+<li>Verschieben die Header-Dateien und die finalen Links von der libfoo.dylib in
+  ein Paket, das als <tt style="white-space: nowrap;">BuildDependsOnly: True</tt> klassifiziert ist und
+  planen sie, dass kein anderes Paket von diesem abhängt.</li>
 </ul>
 <p>
-Note that a package may also install private shared libraries, which
-are not intended to be linked from any other package.  In this case, the
-libraries need not go into a separate package, but a <tt style="white-space: nowrap;">Shlibs</tt>
-field must still be part of the package containing shared libraries.  Also,
-maintainers should try to avoid storing a final link from libfoo.dylib
-in the main library directory <tt style="white-space: nowrap;">%i/lib</tt> 
-(or its 64-bit equivalent), to prevent
-other programs from accidentally linking to this library.
+Beachten sie bitte, dass ein Paket auch private dynamische Bibliotheken
+installieren kann, die nicht von andern Paketen verlinkt werden sollen. In
+diesem Fall müssen die Bibliotheken in ein extra Paket, das aver ebenfalls
+das Feld <tt style="white-space: nowrap;">Shlibs</tt> haben muss. Außerdem sollte man vermeiden, einen
+finalen Link von der libfoo.dylib in das Haupt-Bibliotheksverszeichnis
+<tt style="white-space: nowrap;">%i/lib</tt> (oder seinem 64-bit Äquivalenz) zu legen. So soll
+verhindert werden, dass diese Bibliothek unabsichtlich verlinkt wird.
 </p>
 <p>
-  A maintainer who has reasons to deviate from this policy and not split the
-  package should explain the reasons in the DescPackaging field.
+Sollte ein Paketbetreuer gute Gründe haben, von dieser Richtlinie abzuweichen,
+sollten diese im Feld <tt style="white-space: nowrap;">DescPackaging:</tt> eingetragen werden.
 </p>
 <p>
-For some packages, everything can be accomplished with a main package and a
--shlibs package; in other cases you also need a third package.  The new
-<tt style="white-space: nowrap;">SplitOff</tt> field actually makes this quite easy.
+Für einige Pakete kann alles mit einem Hauptpaket und einem -shlibs-Paket gelöst
+werden. In anderen Fällen braucht man noch mindestens ein drittes Paket. Mit dem
+neuen Feld <tt style="white-space: nowrap;">SplitOff</tt> geht das recht leicht.
 </p>
 <p>
-When three packages are needed, there are two different ways they could be
-named, depending on whether the libraries (option 1) or the binaries (option 2)
-are the most important feature of the package.  For option 1,
-use the layout:
+Werden drei Pakete benötigt, kann man sie auf zwei Arten benennen, je nachdem ob
+die Bibliotheken (Option 1) oder die Binärprogramme (Option 2) das wichtigste am
+Paket sind. Bei Option 1 sieht das Layout so aus:
 </p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-shlibs</tt></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo</tt></td><td><p>Headers</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-bin</tt></td><td><p>Binaries, etc.</p></td></tr></table>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-shlibs</tt></td><td><p>Dynamische Bibliotheken</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo</tt></td><td><p>Header-Dateien</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-bin</tt></td><td><p>Binärprogramme, usw.</p></td></tr></table>
 
-<p>while for option 2, use the layout:</p>
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-shlibs</tt></td><td><p>Shared libraries</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-dev</tt></td><td><p>Headers</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo</tt></td><td><p>Binaries, etc.</p></td></tr></table>
+<p>während bei Option 2 das Layout so aussieht:</p>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-shlibs</tt></td><td><p>Dynamische Bibliotheken</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-dev</tt></td><td><p>Header-Dateien</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo</tt></td><td><p>Binärprogramme, usw.</p></td></tr></table>
 
-<p><b>The policy in detail</b></p>
+<p><b>Die Richtlinien im Detail</b></p>
 <p>
-We now discuss things in more detail; for
-examples of the policy in action, see the  libpng, libjpeg  and 
-libtiff packages.
+Wir werden nun die Dinge im Detail diskutieren. Als Beispiel können sie sich
+die Pakete libpng, libjpeg und libtiff anschauen.
 </p>
 <p>
-Software which has been ported to Darwin should build shared libraries 
-whenever possible.  (Package maintainers
-are also free to build static libraries as well, if appropriate
-for their packages; or they may submit packages containing only static
-libraries if they wish.)
-Whenever shared libraries are being built that are expected to be used by other
-packages, <b>two</b> closely related fink packages should be made, named foo
-and foo-shlibs.  The shared libraries go in foo-shlibs, and the header
-files go in foo.  These two packages
-can be made with a single .info file, using
-the <tt style="white-space: nowrap;">SplitOff</tt> field, as described below.  
-(In fact, it is often necessary
-to make more than two packages from the source, and this can be done
-using <tt style="white-space: nowrap;">SplitOff2</tt>, <tt style="white-space: nowrap;">SplitOff3</tt>, etc.)
+Software, die nach Darwin oder OS X portiert wird, sollte wenn immer auch
+möglich dynamische Bibliotheken erstellen. (Paketbetreuern steht es frei, auch
+statische Bibliotheken zu erstellen, wenn das für ihr Paket angemessen ist oder
+auch ein Paket zu erstellen, das nur statische Bibliotheken enthält.)
+Immer wenn dynamische Bibliotheken erzeugt werden, von denen man erwartet, dass
+sie von anderen Paketen benutzt werden, sollten <b>zwei</b> Pakete mit den
+Namen foo und foo-shlibs erstellt werden. Die dynamische Bibliotheke gehört in
+foo-shlibs und die Header-Dateien in foo. Beide Pakete können in einer Datei
+foo.info mit Hilfe des Felds <tt style="white-space: nowrap;">SplitOff</tt> erzeugt werden, wie weiter
+unten beschrieben.
+(Tatsächlich müssen oft mehr als zwei Pakete aus den Quellen erzeugt werden. Das
+kann leicht über die Felder <tt style="white-space: nowrap;">SplitOff2</tt>, <tt style="white-space: nowrap;">SplitOff3</tt> usw.
+erreicht werden.)
 </p>
 <p>
-Each software package for which public shared libraries are built must have
-a <b>major version number</b> N, which is included in the shared
-library's filename (for example, <tt style="white-space: nowrap;">libbar.N.dylib</tt>).
-The major version number is only supposed
-to change when a backwards-incompatible change in the library's API has been
-made.  Fink uses the following naming convention: if the upstream name
-of the package is bar, then the fink packages are called barN and 
-barN-shlibs.  (This is only strictly applied to new packages, or when the 
-major version number changes.)  For example, the major version number for
-the pre-existing libpng package was 2, but recent versions of the
-library have major version number 3.  So there are now four fink packages
-to handle this: libpng, libpng-shlibs, libpng3, libpng3-shlibs.
-Only one of libpng and libpng3 can be installed at any given time,
-but libpng-shlibs and libpng3-shlibs can be installed at the same time.
-(Note that only two .info files are required to build these four packages.)
+Jedes Softwarepaket mit dynamischen Bibliotheken braucht eine
+<b>Hauptversionsnummer</b> N, die in den Namen der Bibliothek eingefügt wird
+(z. B. <tt style="white-space: nowrap;">libbar.N.dylib</tt>).
+Diese Hauptversionsnummer soll sich nur ändern, wenn sich die API der
+Bibliothek so ändert, dass sie nicht mehr rückwärts-kompatibel ist. Fink benutzt
+folgende Konvention für die Namensgebung: Ist der Upstream-Name bar, erhalten
+die Fink-Pakete die namen barN und barN-shlibs. (Diese Regel gilt streng nur für
+neue Pakete und Pakete, bei denen sich die Hauptversionsnummer ändert.) Ist z.
+B. die Hauptversionsnummer des vorliegenden Pakets libpng eine 2 und die Nummer
+der neuen Version eine 3, dann macht man daraus folgende vier Pakete: libpng,
+libpng-shlibs, libpng3 und libpng3-shlibs.
+Nur jeweils eines der Pakete libpng oder libpng3 kann installiert sein.
+(Beachte, dass nur zwei2 .info-Dateien für die vier Pakete benötigt werden.)
 </p>
 <p>
-The shared library itself and certain related files will be put into 
-the package barN-shlibs; the "include" files and certain other files will
-be put into the package barN.  There can be no overlapping files
-between these two packages, and everything stored in barN-shlibs must have
-a pathname which somehow includes the major version number N.  In many
-instances, your package will need some files at runtime which are
-typically installed into <tt style="white-space: nowrap;">%i/lib/bar/</tt> or 
-<tt style="white-space: nowrap;">%i/share/bar/</tt> ; you should adjust the installation
-paths to <tt style="white-space: nowrap;">%i/lib/bar/N/</tt> or
-<tt style="white-space: nowrap;">%i/share/bar/N/</tt>.
+Die eigentliche dynamische Bibliothek und einige dazu gehörige Dateien kommen
+in das Paket barN-shlibs. Die "include" und andere Dateien kommen in das Paket
+barN. Diese beiden Paketen haben keine gemeinsamen Dateien und alle Dateien in
+barN-shlibs müssen die Hauptversionsnummer in Namen ihres Pfades haben. In
+vielen Fällen braucht das Paket zur Laufzeit Dateien, die typischerweise in
+<tt style="white-space: nowrap;">%i/lib/bar/</tt> oder <tt style="white-space: nowrap;">%i/share/bar/</tt>
+installiert sind. Sie sollten deshalb die Installationspfade auf
+<tt style="white-space: nowrap;">%i/lib/bar/N/</tt> oder <tt style="white-space: nowrap;">%i/share/bar/N/</tt>
+einstellen.
 </p>
 <p>
-All other packages which depend on bar, major version N, will be asked to
-use the dependencies
+Alle anderen Pakete, die von bar mit der Hauptversionsnummer N abhängen,
+brauchen folgende Felder:
 </p>
 <pre>  Depends: barN-shlibs
   BuildDepends: barN</pre>
 <p>
-It is not be permitted for 
-another package to depend on barN itself.  (Although there may still be
-a few such dependencies involving packages which were in place prior to 
-February, 2002.)  This is
-signaled to other developers by a boolean field
+Es ist für andere Pakete nicht erlaubt, direkt von barN abzuhängen. (Auch wenn
+es noch einige Pakete mit solchen Abhängigkeiten aus der Zeit vor Februar 2002
+geben kann). Dies wird in der Paketbeschreibung von barN mit dem boolschen Feld
+BuildDependsOnly an die Betreuer anderer Pakete signalisiert:
 </p>
 <pre>  BuildDependsOnly: True</pre>
-<p>within the package description for barN.</p>
 <p>
-If your package includes both shared libraries and binary files, and
-if the binary files need to be present at runtime (not just at build
-time), then the binaries must be split off into a third package, which
-could be called barN-bin.  Other packages are allowed to depend on
-barN-bin as well as barN-shlibs.
+Enthält ihr Paket sowohl dynamische Bibliotheken und Binärdateien und die
+Binärdateien werden zur Laufzeit benötigt und nicht nur bei der Erzeugung des
+Pakets, dann müssen die Binärdateien zusätzlich zum Paket barN-shlibs in ein
+drittes Paket mit dem Namen barN-bin gepackt werden.
 </p>
 <p>
-When building shared libraries under major version N, it is important that
-the "install_name" of the library be <tt style="white-space: nowrap;">%p/lib/libbar.N.dylib</tt>.  
-(You can
-find the install_name by running <tt style="white-space: nowrap;">otool -L</tt> on your library,
-or <tt style="white-space: nowrap;">otool64 -L</tt> for 64-bit libraries on 10.4.)  The
-actual library file may be installed at another location, such as
+Erstellt man eine dynamische Bibliothek mit der Hauptversionsnummer N, ist es
+wichtig, dass der "install_name" der Bibliothek
+<tt style="white-space: nowrap;">%p/lib/libbar.N.dylib</tt> ist. (Sie können den "install_name"
+mit dem Befehl <tt style="white-space: nowrap;">otool -L</tt> oder <tt style="white-space: nowrap;">otool64 -L</tt> für 64-bit
+Bibliotheken auf 10.4 heraus finden.) Die tatsächliche Bibliothek kann an einer
+anderen Stelle installiert sein.
 </p>
 <pre>  %i/lib/libbar.N.x.y.dylib</pre>
-<p>and your packages should create symbolic links</p>
+<p>und ihr Paket erzeugt symbolische Links:</p>
 <pre>  %i/lib/libbar.N.dylib -&gt; %p/lib/libbar.N.x.y.dylib
   %i/lib/libbar.dylib -&gt; %p/lib/libbar.N.x.y.dylib</pre>
-<p>from the install_name path and from the linking path to the actual
-library.  (The first will not be needed if the library is in fact
-installed at the install_name path, which is becoming more common.)
+<p>
+aus dem install_name-Pfad und vom linking-Pfad zu der tatsächlichen
+Bibliothek. (Das erste wird nicht benötigt, wenn die Bibliotheke tatsächlich
+beim install_name-Pfad installiert ist, was zunehmend der Fall ist.)
 </p>
-<p>If the static library is also built, then it will be installed at</p>
+<p>Wird auch eine statische Bibliothek erzeugt, wird sie hier installiert:</p>
 <pre>  %i/lib/libbar.a</pre>
 <p>
-If the package uses libtool, these things are usually handled automatically,
-but in any event you should
-check that they have been done correctly in your case.  You should also
-check that current_version and compatibility_version were defined 
-appropriately for your shared libraries.  (These are also shown with the 
-<tt style="white-space: nowrap;">otool -L</tt> query, or <tt style="white-space: nowrap;">otool64 -L</tt> for 64-bit libraries.)
+Verwendet das Paket libtool, wird dies alles automatisch erledigt, aber man
+sollte auf jeden Fall überprüfen, dass dies auch korrekt gemacht wurde. Sie
+sollten auch überprüfen, ob die current_version und die compatibility_version
+für ihre dynamischen Bibliotheken richtig definiert wurden. (Diese werden
+ebenso mit den Abfragen <tt style="white-space: nowrap;">otool -L</tt> oder <tt style="white-space: nowrap;">otool64 -L</tt> für
+64-bit Bibliotheken angezeigt.)
 </p>
-<p>Files are then divided between the two packages as follows</p>
+<p>Die Dateien wird wie folgt zwischen den beiden Paketen aufgeteilt:</p>
 <ul>
-<li>  in package barN-shlibs:
+<li>im Paket barN-shlibs:
 <pre>  %i/lib/libbar.N.x.y.dylib
   %i/lib/libbar.N.dylib -&gt; %p/lib/libbar.N.x.y.dylib
   %i/lib/bar/N/*
   %i/share/bar/N/*
   %i/share/doc/barN-shlibs/*</pre></li>
-<li>  in package barN:
+<li>im Paket barN:
 <pre>  %i/include/*
   %i/lib/libbar.dylib -&gt; %p/lib/libbar.N.x.y.dylib
   %i/lib/libbar.a
   %i/share/doc/barN/*
-  other files, if needed</pre></li></ul>
+  andere Dateien, falls vorhanden</pre></li>
+</ul>
 <p>
-Notice that both packages are required to have some documentation about
-the license, but that the directories containing the DocFiles will be
-different.
+Beachten sie, dass beide Pakete die Dokumentation zu ihren Lizenzen benötigen,
+die Verzeichnisse mit den DocFiles aber unterschiedlich sind.
 </p>
 <p>
-Doing this is quite easy in practice, using the 
-<tt style="white-space: nowrap;">SplitOff</tt> field.  Here is
-how the example above would be implemented (in part):
+Das macht man in der Praxis am einfachsten mit dem Feld <tt style="white-space: nowrap;">SplitOff</tt>.
+Das folgende Beispiel zeigt die wichtigsten Teile:
 </p>
 <pre>Package: barN
 Version: N.x.y
@@ -713,203 +693,198 @@ SplitOff: &lt;&lt;
   DocFiles: COPYING
 &lt;&lt;</pre>
 <p>
-During the execution of the <tt style="white-space: nowrap;">SplitOff</tt>
-field, the specified files and directories are moved from the 
-install directory %I of the main package to the install directory %i of the
-splitoff package.  (There is a similar convention for names: %N is the
-name of the main package, and %n is the name of the current package.)
-The <tt style="white-space: nowrap;">DocFiles</tt> command then puts a copy of the documentation into 
-<tt style="white-space: nowrap;">%i/share/doc/barN-shlibs</tt>.
+Bei der Bearbeitung des Felds <tt style="white-space: nowrap;">SplitOff</tt> werden die angegebenen
+Dateien und Verzeichnisse aus dem Installationsverzeichnis %I des Hauptpakets in
+das Installationsverzeichnis %i des SplitOff-Pakets verschoben. (Die Konvention
+für Namen ist ähnlich: %N ist der Name des Hauptpakets und %n der Name des
+aktuellen Pakets.)
+Das Feld/Kommando <tt style="white-space: nowrap;">DocFiles</tt> kopiert die Dokumentationsdateien in das
+Verzeichnis <tt style="white-space: nowrap;">%i/share/doc/barN-shlibs</tt>.
 </p>
 <p>
-Notice that we have included the exact current version of barN-shlibs as a 
-dependency of the main package barN (which can be abbreviated 
-%N-shlibs (= %v-%r) ).
-This ensures that the versions match, and also guarantees that barN
-automatically "inherits" all the dependencies of barN-shlibs.
+Beachten sie, dass die exakte Version von barN-shlibs als Abhängigkeit im
+Hauptpaket barN steht (das mit %N-shlibs (= %v-%r) abgekürzt werden kann).
+Damit wird sicher gestellt, dass die Versionen passen und dass das Paket barN
+automatisch alle Abhängigkeiten von barN-shlibs "erbt".
 </p>
-<p><b>The BuildDependsOnly field</b></p>
+<p><b>Das Feld BuildDependsOnly</b></p>
 <p>
-When libraries are being upgraded over time, it is often necessary to have
-two versions of the header files available during a transition period,
-with one version used for compiling some things and the other version
-used for compiling others.  For this reason, the packages containing
-header files must be constructed with some care.  If both foo-dev and
-bar-dev contain overlapping headers, then foo-dev should declare
+Werden Bibliotheken im Laufe der Zeit aktualisiert, ist es oft notwendig, zwei
+Versionen der Header-Dateien während der Übergangsphase zur Verfügung zu haben.
+Eine Version für das Übersetzen von dem einen und eine für das Übersetzen von
+etwas anderem. Deshalb muss man bei der Erstellung der Pakete etwas aufpassen.
+Enthalten die Pakete foo-dev und bar-dev überlappende Header, dann muss in
+foo-dev folgendes deklariert werden:
 </p>
 <pre>  Conflicts: bar-dev
   Replaces: bar-dev</pre>
-<p>and similarly bar-dev declares Conflicts/Replaces on foo-dev.</p>
-<p>In addition, both packages should declare</p>
+<p>und genau so, aber umgekehrt, in bar-dev.</p>
+<p>Darüber hinaus sollten beide Pakete das Feld BuildDependsOnly gesetzt haben</p>
 <pre>  BuildDependsOnly: True</pre>
-<p>This inhibits others from writing packages which depend on foo-dev or
-bar-dev, since any such dependency will prevent the smooth operation of the
-Conflicts/Replaces method.
+<p>
+Dies verhindert, dass man Pakete erstellt, die von foo-dev oder bar-dev
+abhängen, denn so etwas würde das problemlose Funktionieren des Methode
+Conflicts/Replaces verhindern.
 </p>
 <p>
-There are some packages containing header files for which it's not
-appropriate to declare BuildDependsOnly to be true.  In that case,
-the package should declare
+Es gibt manche Pakete mit Header-Dateien, für die es nicht in Ordnung ist,
+BuildDependsOnly als wahr zu setzen. In diesen Fällen sollten sie das Feld
+explizit auf falsch setzen:
 </p>
 <pre>  BuildDependsOnly: False</pre>
-<p>and the reason must be given in the DescPackaging field.
+<p>und den Grund dafür im Feld DescPackaging angeben.</p>
+<p>
+Das Feld BuildDependsOnly sollte nur bei solchen Paketen stehen, die
+Header-Dateien in <tt style="white-space: nowrap;">%i/include</tt> (oder einem Unterverzeichnis)
+installieren.
 </p>
 <p>
-The BuildDependsOnly field should only be mentioned in the package's .info
-file if the package contains header files, installed into 
-<tt style="white-space: nowrap;">%i/include</tt> (or subdirectories thereof).
+Ab fink 0.20.5 erzeugt der Befehl "fink validate" eine Warnung für jede
+.deb-Datei, die Header-Dateien und mindestens eine dynamische Bibliothek
+enthält und das Feld BuildDependsOnly weder auf wahr noch falsch setzt.
+(Es ist durchaus möglich, dass fink in Zukunft dies auf Fälle von
+.deb-Dateien ausdehnt, die Header-Dateien und statische Bibliotheken
+enthält.)
 </p>
 <p>
-As of fink 0.20.5, "fink validate" will issue a warning for any .deb
-which contains header files and at least one dylib, and does not declare
-BuildDependsOnly to be either true or false.  (It is possible that in
-future versions of fink, this warning will be expanded to cover the case of
-a .deb with header files and a static library as well.)
+Das Ziel der Reichtlinien über dynamische Bibiliotheken ist, dass die
+Kompatibilität zwischen den Bibliotheken un dProgrammen in verschiedenen
+Paketen gewährleistet ist.  Manche Pakete können Bibliotheken enthalten,
+die gar nicht dafür gedacht sind, von anderne Programmen benutzt zu
+werden.  Ein häufige Situation ist, dass eine Gruppe von Programmen eine
+Backend-Bibliothek mit Hilfsprogrammen haben oder ein Programm, das mehrere
+Plugins für bestimmte Features hat.  Da diese Bibliotheken quasi privat
+für das Paket sind, braucht man dafür kein extra SplitOff -shlibs und auch
+kein <tt style="white-space: nowrap;">BuildDependsOnly</tt>.
 </p>
-
+<p><b>Das Feld Shlibs</b></p>
 <p>
-  The goal of the Shared Library Policy is to allow assure
-  compatibility between libraries supplied by one package and
-  libraries or programs that use them in a different package. Some
-  packages may have shared libraries that are not designed to be used
-  by other packages. Common situations include a suite of programs
-  that come with a back-end library of utility functions or a program
-  that comes with plugins to handle various features. Because these
-  libraries are "private" to the package that has them, they do not
-  require being packaged with separate -shlibs
-  or <tt style="white-space: nowrap;">BuildDependsOnly</tt> SplitOffs.
-</p>
-<p><b>The Shlibs field</b>
-</p>
-<p>
-In addition to putting the shared libraries in the correct package, as of
-version 4 of this policy, you must also declare all of the shared libraries
-using the <tt style="white-space: nowrap;">Shlibs</tt> field.  This field has one line for each
-shared library, which contains the <tt style="white-space: nowrap;">-install_name</tt> of the
-library. If the library is public, its <tt style="white-space: nowrap;">Shlibs</tt> entry also
-lists the <tt style="white-space: nowrap;">-compatibility_version</tt>, versioned
-dependency information specifying the Fink package which provides
-this library at this compatibility version, and the library
-architecture.  (The library architecture may either be "32", "64", or
-"32-64", and may be absent. If the library architecture is not
-explicitly listed, it defaults to the standard value for the current
-architecture of Fink; these standard values are "32" for the powerpc 
-and i386 architectures, and "64"
-for the x86_64 architecture.)
-The dependency should
-be stated in the form <tt style="white-space: nowrap;"> foo (&gt;= version-revision)</tt> where 
-<tt style="white-space: nowrap;">version-revision</tt> refers to
-the <b>first</b> version of a Fink package which made
-this library (with this compatibility version) available.  For example,
-a declaration
+Zusätzlich dazu, dass dynamische Bibliotheken in ein extra Paket gehören,
+müssen ab Version 4 dieser Richtlinien alle dynamische Bibliotheken im
+Feld <tt style="white-space: nowrap;">Shlibs</tt> eingetragen werden. Dieses Feld hat für jede dynamische
+Bibliothek nur eine Zeile mit dem <tt style="white-space: nowrap;">-install_name</tt> der Bibliothek.
+Ist die Bibliothek öffentlich, steht in der Zeile auch die
+<tt style="white-space: nowrap;">-compatibility_version</tt>, Informationen zur Abhängigkeit mit Version
+darüber welches Fink-Paket die Bibliothek mit dieser
+<tt style="white-space: nowrap;">-compatibility_version</tt> enthält und die Architektur der Bibliothek.
+(Die Architektur der Bibliothek kann "32", "64" oder "32-64" sein oder ganz
+fehlen. Ist sie nicht explizit angegeben, wird die Voreinstellung genommen, d.h.
+"32" für PowerPC und i386 und "64" für x86_64.) Die Abhängigkeit sollte in der
+Form <tt style="white-space: nowrap;">foo (&gt;= version-revision)</tt> angegeben sein, wobei sich
+<tt style="white-space: nowrap;">foo (&gt;= version-revision)</tt> auf die <b>erste</b> Version des
+Finkpakets bezieht, das diese Bibliothek (mit der compatibility version) zur
+Verfügung stellte. Das folgende Beispiel
 </p>
 <pre>  Shlibs: &lt;&lt;
-    %p/lib/libbar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
+  %p/lib/libbar.1.dylib 2.1.0 bar1 (&gt;= 1.1-2) 32
   &lt;&lt;</pre>
 <p>
-indicates that a (32-bit)
-library with <tt style="white-space: nowrap;">-install_name</tt> %p/lib/libbar.1.dylib
-and <tt style="white-space: nowrap;">-compatibility_version</tt> 2.1.0 has been installed since
-version 1.1-2 of the <b>bar1</b> package.  In addition, this declaration
-amounts to  a promise
-from the maintainer that a 32-bit
-library with this name and a compatibility-version
-of at least 2.1.0 will always be found in later versions of the <b>bar1</b> 
-package.
+ist eine (32-bit) Bibliothek mit dem <tt style="white-space: nowrap;">-install_name</tt>
+%p/lib/libbar.1.dylib und der <tt style="white-space: nowrap;">-compatibility_version</tt> 2.1.0, die
+in der Version 1.1-2 des Pakets <b>bar1</b> zum ersten Mal angeboten wurde.
+Außerdem impliziert die Deklaration, dass der Betreuer versichert, dass auch in
+späteren Versionen des Pakets <b>bar1</b> eine 32-bit Bibliothek mit diesem
+Namen und einer Kompatibilitätsversion von mindestens 2.1.0 angeboten wird.
 </p>
 <p>
-Note the use of %p in the name of the library, which allows the correct
-<tt style="white-space: nowrap;">-install_name</tt> to be found by all users of Fink, no matter
-what prefix they have chosen.
+Beachten sie die Verwendung von %p im Pfad der Bibliothek. Dadurch wird der
+richtige <tt style="white-space: nowrap;">-install_name</tt> von allen Finknutzern gefunden, egal ob sie
+/sw oder einen anderen Präfix für Fink ausgewählt haben.
 </p>
 <p>
-When a package is updated, usually the <tt style="white-space: nowrap;">Shlibs</tt> field can simply
-be copied to the next version/revision of the package.  The exception to
-this is if the <tt style="white-space: nowrap;">-compatibility_version</tt> increases: in that
-case, the version number in the dependency information should be changed
-to the current version/revision (which is the first version/revision to
-provide the library with the new compatibility version number).
+Wird ein Paket aktualisiert, kann meistens das Feld <tt style="white-space: nowrap;">Shlibs</tt> einfach
+in die nächste Version/Revision des Pakets kopiert werden. Nur wenn sich die
+Kompatibilitätsversion erhöht, muss die Versionsnummer in der Abhängigkeit
+auf die aktuelle Version/Revision geändert werden, denn hier muss die
+Version/Revision stehen, in der die neue Kompatibilitätsversion der Bibliothek
+zum ersten Mal angeboten wird.
 </p>
 <p>
-The <tt style="white-space: nowrap;">Shlibs</tt> entry for a private library uses a different syntax:
+Für private Bibliotheken ist die Syntax für den Eintrag im Feld
+<tt style="white-space: nowrap;">Shlibs</tt> eine andere:
 </p>
 <pre>  Shlibs: &lt;&lt;
     !%p/lib/%N/libbar.1.dylib
   &lt;&lt;</pre>
 <p>
-The leading exclamation point indicates that this is a private library,
-and since the other information is not relevant in this case, it is 
-not included.
+Das Ausrufungszeichen am Anfang steht für private Bibliothek. Weitere
+Informationen über die Bibliothek sind nicht relevant und werden deshalb weg
+gelassen.
 </p>
 <p>
-Note that in this example, the private shared library has been placed
-in its own subdirectory <tt style="white-space: nowrap;">%N</tt> of the 
-<tt style="white-space: nowrap;">%i/lib</tt> directory (which was named after the
-package).  This is a recommended procedure for private libraries,
-as an additional safety measure, to prevent other packages from accidentally
-linking to this library.
+Beachten sie, dass in diesem Beispiel die private Bibliothek in ein eigenes
+Unterverzeichnis <tt style="white-space: nowrap;">%N</tt> (das nach dem Namen des Pakets benannt
+wurde) des Verzeichnisses <tt style="white-space: nowrap;">%i/lib</tt> verschoben wird. Dies ist
+unsere Empfehlung als zusätzlicher Schutzmechanismus, der verhindert, dass
+andere Pakete diese Bibliothek aus Versehen verlinken.
 </p>
-<p><b>What to do when the major version number changes:</b></p>
+<p><b>Was muss ich machen, wenn siech die Nummer der Hauptversion ändert?</b></p>
 <p>
-If the major version number changes from N to M, you will create two new
-packages barM and barM-shlibs.  The package barM-shlibs can have no
-overlap with the package barN-shlibs, since many users will have both of
-these installed simultaneously.  In package barM, you should use dependencies
+Ändert sich die Nummer der Hauptversion von N auf M, muss man zwei neue Pakete
+barM und barM-shlibs erstellen. Das Paket barM-shlibs darf keine gemeinsamen
+Dateien mit dem Paket barN-shlibs haben, weil viele Nutzer die beiden Pakete
+gleichzeitig installieren werden. Im Paket barM sollte man folgende
+Abhängigkeiten deklarieren:
 </p>
 <pre>  Conflicts: barN
   Replaces: barN</pre>
-<p>and similarly, you should revise barN to include dependencies</p>
+<p>
+Im Paket barN muss man in entsprechender Weise, also umgekehrt, folgendes
+einfügen
+</p>
 <pre>  Conflicts: barM
   Replaces: barM</pre>
 <p>
-Users will then see barN and barM shuffling in and out as various other
-packages are built which depend on one version or another of the shared
-library, while barN-shlibs and barM-shlibs remain permanently installed.
+Bei der Erstellung von anderen Paketen werden die Pakete barN und barM
+ausgetauscht, je nachdem, welches von den beiden benötigt wird. Die Pakete
+barN-shlibs und barM-shlibs bleiben hingegen die ganze Zeit installiert.
 </p>
-<p><b>Packages containing both binary files and libraries:</b></p>
+<p><b>Pakete mit Bibliotheken und Binärdateien:</b></p>
 <p>
-When an upstream package contains both binary files and public libraries, some
-care must be exercised in constructing fink packages.  In some cases,
-the only binary files will be things like <tt style="white-space: nowrap;">foo-config</tt> which
-are presumably only used at build time and never at run time.  In these
-cases, the binaries can go with the header files in the <tt style="white-space: nowrap;">foo</tt>
-package.
+Enthält eine Upstream-Paket gleichzeitig Binärdateien und öffentliche
+Bibliotheken, muss man bei der Erstellung der Finkpakete aufpassen. Manchmal
+sind die Binärdateien lediglich <tt style="white-space: nowrap;">foo-config</tt>, die nur in der
+Build-Phase des Pakets benötigt werden und nie zur Laufzeit. In solchen Fällen
+können diese Dateien zusammen mit den Header-Dateien in das Paket
+<tt style="white-space: nowrap;">foo</tt>.
 </p>
 <p>
-In other cases, the binary files will be needed by other packages at
-runtime, and they must be split off into a separate fink package with
-a name something like <tt style="white-space: nowrap;">foo-bin</tt>.  The <tt style="white-space: nowrap;">foo-bin</tt>
-package should depend on the <tt style="white-space: nowrap;">foo-shlibs</tt> package, and
-maintainers of other packages should be encouraged to use
+In anderen Fällen werden die Binärdateien von anderen Paketen auch zur Laufzeit
+benutzt. Dann müssen sie in ein separates Finkpaket abgetrennt werden, das man
+z. B. <tt style="white-space: nowrap;">foo-bin</tt> nennen kann. Das Paket <tt style="white-space: nowrap;">foo-bin</tt> sollte
+vom Paket <tt style="white-space: nowrap;">foo-shlibs</tt> abhängen. Betreuer anderer Pakete sollten
+aufgefordert werden, die Abhängigkeit von <tt style="white-space: nowrap;">foo-bin</tt> in ihrem Paket
+zu deklarieren:
 </p>
 <pre>  Depends: foo-bin
   BuildDepends: foo</pre>
-<p>which will take care of foo-shlibs implicitly.</p>
+<p>Damit ist die Abhängigkeit von foo-shlibs implizit enthalten.</p>
 <p>
-Upgrading presents a problem in this situation, however, since users won't
-be prompted to install <tt style="white-space: nowrap;">foo-bin</tt>.  To work around this, until
-all other package maintainers have revised their packages as above,
-your <tt style="white-space: nowrap;">foo</tt> package can say
+Allerdings ist die Aktualisierung in dieser Situation ein Problem, denn ein
+Nutzer wird nicht aufgefordert werden, das Paket <tt style="white-space: nowrap;">foo-bin</tt> zu
+installieren. Eine Lösung, bis alle anderen Paketbetreuer ihre Pakete
+wie oben beschrieben aktualisiert haben, können sie folgende Abhängigkeit in
+ihrem Paket <tt style="white-space: nowrap;">foo</tt> deklarieren:
 </p>
 <pre>  Depends: foo-shlibs (= exact.version), foo-bin</pre>
 <p>
-This will force the installation of foo-bin on most users' systems, until
-such time as the other package maintainers have upgraded their packages
-which depend on <tt style="white-space: nowrap;">foo</tt>.
+Dies erzwingt die Installation des Paket <tt style="white-space: nowrap;">foo-bin</tt> auf den meisten
+Systemen, solange bis die anderen Paketbetreuer ihre Pakete, die von
+<tt style="white-space: nowrap;">foo</tt> abhängen, aktualisiert haben.
 </p>
 <p>
-  As of fink-0.28.0 (released in January 2008), the format of
-  the <tt style="white-space: nowrap;">Shlibs</tt> entry for a "private" shared library has
-  changed (see earlier discussion of the difference between a public
-  and a private shared library). Note that the Shared Library Policy
-  has always required all shared libraries to be listed; the change
-  here is only in the syntax of the <tt style="white-space: nowrap;">Shlibs</tt> field. Because
-  this type of shared library is not designed to be used by external
-  packages, there is no need to document its compatilibity or other
-  versioning. Instead, an exclamation-mark is used.  For example,
-  if <tt style="white-space: nowrap;">libquux.3.dylib</tt> is
-  the <tt style="white-space: nowrap;">install_name</tt> of a private shared library, it would
-  be listed as follows:
+Ab fink 0.28.0 (veröffentlich im Januar 2008) hat sich das Format für einen
+Eintrag im Feld <tt style="white-space: nowrap;">Shlibs</tt> für private dynamische Bibliotheken geändert.
+(Beachten sie bitte die obigen Erläuterungen zu den Unterschieden zwischen
+privaten und öffentlichn dynamischen Bibliotheken.) Die Richtlinien für
+dynamische Bibliotheken war schon immer so, dass alle dynamische Bibliotheken
+aufgezählt werden müssen. Die Änderung betrifft nur das Feld
+<tt style="white-space: nowrap;">Shlibs</tt>. Da private Bibliotheken nicht von anderen Paketen benutzt
+werden, ist es auch nicht notwendig, die Kompatibilitätsversion oder andere
+Versionsinformationen anzugeben. Statt dessen wird ein Ausrufungszeichen
+verwendet. Ist z. B. <tt style="white-space: nowrap;">libquux.3.dylib</tt> der
+<tt style="white-space: nowrap;">install_name</tt> einer privaten dynamischen Bibliothek, würde sie so
+aufgelistet werden:
 </p>
 <pre>  Shlibs: &lt;&lt;
     !%p/lib/libquux.3.dylib
@@ -917,119 +892,112 @@ which depend on <tt style="white-space: nowrap;">foo</tt>.
 
 
 
-<h3><a name="policy.perlmods">3.5 Perl Modules</a></h3>
+<h3><a name="policy.perlmods">3.5 Perl-Module</a></h3>
 <p>
-Fink's policy about perl modules, originally implemented in
-May 2003,  has been revised as of April 2004.
+Die erste Version von Finks Richtlinien zu Perl-Modulen wurde im Mai 2003
+implementiert und erhielt im April 2004 die erste Revision.
 </p>
 <p>
-Traditionally, the Fink packages for perl modules had the suffix 
-<tt style="white-space: nowrap;">-pm</tt>, and were built using the <tt style="white-space: nowrap;">Type: perl</tt> 
-directive, which stores the perl module's files in
-<tt style="white-space: nowrap;">/sw/lib/perl5</tt> and/or
-<tt style="white-space: nowrap;">/sw/lib/perl5/darwin</tt>.  Under the policy
-now in place, this storage location is only 
-permitted for perl modules which are independent of the version of perl 
-being used to compile them (and which do not depend on other perl modules
-that lack this independence-of-version).
+Ursprünglich hatten Fink-Pakete für Perl-Module den Suffix <tt style="white-space: nowrap;">-pm</tt> und
+wurden mit der Direktive <tt style="white-space: nowrap;">Type: perl</tt> erstellt. Damit wurden die
+Dateien der Module in <tt style="white-space: nowrap;">/sw/lib/perl5</tt> und/oder
+<tt style="white-space: nowrap;">/sw/lib/perl5/darwin</tt> abgespeichert.
+Nach den aktuellen Richtlinien gilt dies nur noch für Module, die unabhängig von
+der Perlversion übersetzt wurden und die auch nicht von anderen
+versionsabhängigen Modulen abhängen.
 </p>
 <p>
-The perl modules which are version-dependent are the so-called XS modules,
-which frequently contain compiled C code as well as pure perl routines.
-There are a number of ways of recognizing these, including the presence
-of a file with a suffix <tt style="white-space: nowrap;">.bundle</tt>.
+Versionsabhängige Perl-Module sind die sogenannten XS-Module, die oft
+übersetzten C Code und Perl-Routinen enthalten. Man kann sie auf verschiedene
+Weisen erkennen, z. B. daran, die sie eine datei mit dem Suffix
+<tt style="white-space: nowrap;">.bundle</tt> enthalten.
 </p>
 <p>
-A version-dependent perl module must be built using a versioned binary
-of perl, such as <tt style="white-space: nowrap;">perl5.12.3</tt>, and must store its files in
-versioned subdirectories of the standard perl directories, such as
-<tt style="white-space: nowrap;">/sw/lib/perl5/5.12.3</tt> and
-<tt style="white-space: nowrap;">/sw/lib/perl5/5.12.3/darwin</tt>.  By convention, package names
-use the suffix <tt style="white-space: nowrap;">-pm5123</tt> for
-a perl module of version 5.12.3.  Similar storage and naming conventions
-are in force for other versions of perl, which include 
-perl 5.10.0 (in the 10.6 tree only), perl 5.12.4 (in the 10.7 tree only), and 
-perl 5.16.2 (in the 10.7 tree only).
+Ein versionsabhängiges Perl-Modul muss mit einer bestimmten binären Version von
+Perl erstellt werden, z. B. <tt style="white-space: nowrap;">perl5.12.3</tt>. Die erzeugten Dateien
+müssen dann in einem versionierten Unterverzeichnis des
+Standard-Perlverzeichnisses abgespeichert werden, z. B.
+<tt style="white-space: nowrap;">/sw/lib/perl5/5.12.3</tt> und
+<tt style="white-space: nowrap;">/sw/lib/perl5/5.12.3/darwin</tt>. Es ist Konvention, die Pakete
+mit dem Suffix <tt style="white-space: nowrap;">-pm5123</tt> zu benennen, wenn sie für die Version 5.12.3
+von Perl erstellt wurden. Entsprechende Konventionen für das Abspeichern und
+die Namen von Modulen sind perl 5.10.0 (nur für 10.6), perl 5.12.4 (but für
+10.7) und perl 5.16.2 (nur für 10.7).
 </p>
 <p>
-The directive <tt style="white-space: nowrap;">Type: perl 5.12.3</tt> automatically uses the
-versioned perl binary and stores the files in the correct subdirectories. 
-(This directive is available starting with version 0.13.0 of fink.)
+Die Direktive <tt style="white-space: nowrap;">Type: perl 5.12.3</tt> führt automatisch dazu, dass
+das versionierte binäre Perl verwendet wird und speichert die Dateien in den
+richtigen Unterverzeichnissen ab. (Diese Direktive steht in Fink ab der Version
+0.13.0 zur Verfügung.)
 </p>
 <p>
-Under the May 2003 policy, it was permitted to create a 
-<tt style="white-space: nowrap;">-pm</tt> package which is essentially 
-a "bundle" package that loads the <tt style="white-space: nowrap;">-pm560</tt> variant or any
-others which may be exist.  Under the April 2004 policy this is discouraged,
-and after a transitional period was outlawed entirely.
+Die Richtlinien vom Mai 2003 erlaubten es, ein Paket <tt style="white-space: nowrap;">-pm</tt> zu
+erstellen, das eigentlich ein Paket-"Bündel" ist, das die Variante
+<tt style="white-space: nowrap;">-pm560</tt> oder je nach Verfügbarkeit eine andere lädt. Die Richtlinien
+vom April 2004 raten davon ab und nach einer Übergangsphase wurde diese
+Möglichkeit komplett verboten.
 </p>
 <p>
-As of fink 0.20.2, the system-perl virtual package automatically
-"Provides" certain perl modules depending on the system-perl version. The
-code generating the list of provided perl modules is found in the 
-<tt style="white-space: nowrap;">VirtPackage.pm</tt> file that is part of the <tt style="white-space: nowrap;">fink</tt> package.
+Ab der Version 0.20.2 von Fink stellt das Paket system-perl automatisch
+bestimmte Perl-Module zur Verfügung, je nach Version von system-perl. Der Code,
+mit der die Liste erstellt wird, steht in der Datei <tt style="white-space: nowrap;">VirtPackage.pm</tt>,
+die Bestandteil des Pakets <tt style="white-space: nowrap;">fink</tt> ist.
 </p>
 <p>
-As different system perls provide different modules, package maintainers are
-encouraged to check to be sure that they are assuming the correct list when
-using provided perl modules.
+Da verschiedene system-perl unterschiedliche Module zur Verfügung stellen, wird
+Paketbetreuern empfohlen, dass sie die Liste überprüfen, wenn sie eines der
+Perl-Module verwerden.
 </p>
 <p>
-Effective with version 0.13.0 of fink, the <tt style="white-space: nowrap;">fink validate</tt>
-command when applied to a <tt style="white-space: nowrap;">.deb</tt> file will check to see if
-the fink package is an XS module which has been installed in a non-versioned 
-directory, and will issue a warning if so.
+Ab der Version 0.13.0 von Fink überprüft das Kommando
+<tt style="white-space: nowrap;">fink validate</tt> bei einer <tt style="white-space: nowrap;">.deb</tt>-Datei, ob das Finkpaket
+ein XS-Module ist, das in einem nichtversionierten Verzeichnis abgespeichert ist
+und gibt eine entsprechende Warnung aus.
 </p>
 <p>
-Users may have more than one version of perl installed at a time, so
-any perl-versioned module packages must be written to allow more than
-one version of themselves to be installed concurrently. One must use
-care when installing manpages and binary or other script executables
-in these packages in order to prevent installation conflicts due to
-filename collisions. 
-You are not allowed to have any files in a package whose name ends
-with -pm<b>XYZ</b> that would have an identical pathname across
-different <b>XYZ</b>. Using <tt style="white-space: nowrap;">Replaces</tt> to allow the
-same-named files to overwrite each other in different perl-versions of
-these perl-module packages is no longer acceptable.
-As a simple solution for manpages, starting in
-March 2005, Fink has defined alternate locations in MANPATH:
-<tt style="white-space: nowrap;">%p/lib/perl5/X.Y.Z/man</tt> for each perl-X.Y.Z. You
-no longer need to create mutually-exclusive -man or -doc SplitOff
-packages. For
-example, to avoid conflicts between uri-pm5124 and uri-pm5162, the
-same-named <tt style="white-space: nowrap;">URI.3pm</tt> manpage is installed
-as <tt style="white-space: nowrap;">%p/lib/perl5/5.12.4/man/man3/URI.3pm</tt> and
-<tt style="white-space: nowrap;">%p/lib/perl5/5.16.2/man/man3/URI.3pm</tt>,
-respectively. Note that the default scripts provided by <tt style="white-space: nowrap;">Type:
-perl X.Y.Z</tt> have not changed, so you will have to locate the
-manpages here manually in your <tt style="white-space: nowrap;">InstallScript</tt>. If you
-don't have a highly customized script, you can still use the default
-one, and then simply move the files manually:
+Nutzer können mehrere Versionen von Perl gleichzeitig installiert haben. Deshalb
+müssen versionsabhängige Modulpakete so geschireben sein, dass mehrere Versionen
+des Pakets installiert sein können. Besondere aufpassen muss man bei der
+Installation von man-Pages und binären oder anderen Programmen, damit wegen
+Namenskollissionen keine Installationskonflikte auftreten.
+Man darf in einem Paket, dessen Namen auf -pm<b>XYZ</b> endet, keine Dateien
+haben, die für verschiedene <b>XYZ</b> die gleichen Pfadnamen haben. Auch ein
+<tt style="white-space: nowrap;">Replaces</tt> für das einfache Überschreiben der Dateien wird nicht mehr
+akzeptiert. Ab März 2005 definiert Fink als einfache Lösung zusätzliche Plätze
+im MANPATH: <tt style="white-space: nowrap;">%p/lib/perl5/X.Y.Z/man</tt> für jedes perl-X.Y.Z.
+Deshalb muss man keine extra SplitOff-Pakete -man oder -doc mehr erstellen, die
+sich jeweils gegenseitig ausschließen. Die Konflikte zwischen uri-pm5124 und
+uri-pm5162 werden z. B. so aufgelöst, dass die gleich man-Page
+<tt style="white-space: nowrap;">URI.3pm</tt> jeweils unter
+<tt style="white-space: nowrap;">%p/lib/perl5/5.12.4/man/man3/URI.3pm</tt> oder
+<tt style="white-space: nowrap;">%p/lib/perl5/5.16.2/man/man3/URI.3pm</tt> abgespeichert wird.
+Beachten sie bitte, dass sich die Standard-Skripte für
+<tt style="white-space: nowrap;">Type: perl X.Y.Z</tt> nicht geändert haben und man deshalb die man-Pages
+selbst im <tt style="white-space: nowrap;">InstallScript</tt> suchen muss. Ist das Skript nicht
+hochgradig kompliziert, dann kann man das Standard-Skript verwenden und die
+Dateien einfach mit mv verschieben:
 </p>
 <pre>%{default_script}
 mv %i/share/man %i/lib/perl5/5.12.4</pre>
 <p>
-That will move all manpages. If you wish to move only one section of
-manpages (for example, only section 3, the module manpages, not script
-manpages in section 1), a similar approach works:
+Dies verschiebt alle man-Pages. Will man nur einen Abschnitt der man-Pages
+verschieben (z. B. nur Abschnitt 3, die man-Pages für die Module und nicht die
+man-Pages für Skripte in Abschnitt 1), funktioniert folgendes:
 </p>
 <pre>%{default_script}
 mkdir -p %i/lib/perl5/5.12.4/man
 mv %i/share/man/man3 %i/lib/perl5/5.12.4/man</pre>
 <p>
-If you have executables, for example, demo or utility scripts
-in <tt style="white-space: nowrap;">%p/bin</tt>, you have several options. One example
-is to put these files (and their associated manpages and/or other
-related files) in a %N-bin splitoff package. Use of
-<tt style="white-space: nowrap;">Conflicts</tt> and <tt style="white-space: nowrap;">Replaces</tt> fields ensures that
-installation of different perl-version forms of these packages, which
-contain files of the same name, is mutually exclusive. The user can
-install many different perl-versions of the runtime modules, and then
-choose whichever one perl-version of the scripts he wants at a given
-time. For example, Tk.pm comes with an
-executable <tt style="white-space: nowrap;">ptksh</tt>, so the set of tk-pm* packages
-could be constructed as follows:
+Hat man Programme, z. B.Demo- und Hilfs-Skripte, in <tt style="white-space: nowrap;">%p/bin</tt>,
+gibt es mehrere Optionen. Eine ist, die Dateien zusammen mit den dazugehörigen
+man-Pages und so weiter in ein SplitOff-Paket %N-bin zu packen. Mit den Feldern
+<tt style="white-space: nowrap;">Conflicts</tt> und <tt style="white-space: nowrap;">Replaces</tt> muss man für den gegenseitigen
+Austausch bei der Installation der Dateien für verschiedene Perlversionen
+sorgen. Der Nutzer kann viele verschiedene Perlversionen der Laufzeit-Module
+installieren und dann zu einer bestimmten Zeit die gewünschte Perlversion des
+Skripts auswählen. Das Paket Tk.pm kommt z. B. mit dem Programm
+<tt style="white-space: nowrap;">ptksh</tt>. Der Satz an tk-pm* Paketen kann man wie folgt
+erzeugen:
 </p>
 <pre>Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
@@ -1048,10 +1016,10 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 &lt;&lt;</pre>
 <p>
-An alternative arrangement is to rename the scripts and their manpages
-to include perl-version information. This method means there is no
-naming conflict at all, so one does not need the mutually-exclusive
-%N-bin splitoffs:
+Die andere Option ist die Skripte und ihre man-Pages so umzubenennen, dass
+die Namen die Perlversion enthalten. Bei dieser Optione kommt es erst gar nicht
+zu einem Namenskonflikt, so dass die %N-bin SplitOffs sich nicht gegenseitig
+ausschließen müssen:
 </p>
 <pre>Info2: &lt;&lt;
 Package: tk-pm%type_pkg[perl]
@@ -1065,368 +1033,375 @@ InstallScript: &lt;&lt;
 &lt;&lt;
 &lt;&lt;</pre>
 <p>
-The user accesses ptksh for whichever perl she wants. For convenience,
-one could use <tt style="white-space: nowrap;">update-alternatives</tt> to allow users to be
-able to access these by their generic (no perl-version) names as well.
+Der Nutzer kann jederzeit das ptksh für ein bestimmtes Perl benutzen. Besonders
+komfortabel für die Nutzer ist es, mit <tt style="white-space: nowrap;">update-alternatives</tt> den
+Aufruf auch mit dem allgemeinen Namen ohne Perlversion zu ermöglichen.
 </p>
 <p>
-Also as of March 2005, the location of manpages and modules installed
-by fink packages for perl itself (packages perlXYZ and perlXYZ-core
-other than the perl-version provided by Apple) has changed. As a
-result of this relocation, other fink packages that supply updated
-versions of core perl modules should not list any perlXYZ or
-perlXYZ-core packages in the <tt style="white-space: nowrap;">Replaces</tt> field.
+Ab März 2005 wurde auch der Platz für die man-Pages und die Module, die vom
+fink-Paket für Perl selbst (also die Pakete perlXYZ und perlXYZ-core mit
+Versionen, die vom der von Apple abweichen) geändert. Deshalb sollten andere
+Finkpakete die aktualisierte Versionen von core-Perl-Modulen anbieten, die
+Pakete perlXYZ oder perlXYZ-core nicht in ihrem Feld <tt style="white-space: nowrap;">Replaces</tt>
+auflisten.
 </p>
 
 
-<h3><a name="policy.emacs">3.6 Emacs Policy</a></h3>
+
+<h3><a name="policy.emacs">3.6 Emacs-Richtlinien</a></h3>
 <p>
-The Fink project has chosen to follow the Debian project's policy
-regarding emacs, with a few small differences.
-(The Debian policy document can be found at
+Das Finkprojekt hat entschieden, den Richtlinien des Debianprojekts zu Emacs zu
+folgen mit wenigen kleinen Unterschieden.
+(Das Dokument zu den Debian-Richtlinien gibt es hier:
 <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>.)
-There are two differences in the Fink policy.  First, this policy only applies
-to the <tt style="white-space: nowrap;">emacs21</tt>, <tt style="white-space: nowrap;">emacs22</tt>, and
-<tt style="white-space: nowrap;">emacs23</tt> packages in fink at the moment, not to the xemacs
-package.  (This may change some day in the future.)    And second, unlike the
-Debian policy, Fink packages are allowed to install things directly into
-/sw/share/emacs/site-lisp.
+Es gibt zwei Unterschiede bei den Richtlinien von Fink. Erstens gelten die
+Richtlinien derzeit nur für die Pakete <tt style="white-space: nowrap;">emacs21</tt>,
+<tt style="white-space: nowrap;">emacs22</tt> und <tt style="white-space: nowrap;">emacs23</tt> und nicht für das
+Paket xemacs. (Dies kann sich eines Tages ändern.) Zweitens dürfen Finkpakete im
+Gegensatz zu den Debian-Richtlinien Dateien direkt im Verzeichnis
+/sw/share/emacs/site-lisp installieren
 </p>
 
 
 
-<h3><a name="policy.sources">3.7 Source Policy</a></h3>
-    <p>
-    Sources should normally be downloaded from the location(s) that the upstream
-    developer(s) use, and any modifications for Fink should be done through the use
-    of a PatchFile and/or a PatchScript.  Do not make changes manually and use a changed
-    source archive as a <tt style="white-space: nowrap;">Source</tt> in your Fink packaging.
-    </p>
-    <p>
-    If a VCS checkout (e.g. from <b>git</b> or <b>svn</b>) is to be used, e.g.
-    because a project doesn't do formal releases, or a fix for a particular issue has
-    been added between releases of a package, an acceptable source can be generated
-    via the following method:
-    </p>
-    <ol>
-        <li>Check out the package, preferably at a definite revision of the VCS.</li>
-        <li>Make an archive from the VCS checkout (e.g. <b>zip</b>,
-          <b>tar</b>, <b>tar.gz</b>, or <b>tar.bz2</b>).
-            <p>Give the tarball a unique version.  For example, you can include
-              the VCS revision in the archive name, e.g.
-            <tt style="white-space: nowrap;">foo-0svn1234.tar.gz</tt> for a package that doesn't
-            make releases, or <tt style="white-space: nowrap;">bar-1.2.3+svn4567.tar.bz2</tt> for
-            a Fink package which is between upstream releases.</p></li>
-        <li>Use the same <tt style="white-space: nowrap;">Version</tt> in your <tt style="white-space: nowrap;">.info</tt> file.</li>
-        <li>It is also useful to put the commands that you ran to generate the
-          source tarball in the <tt style="white-space: nowrap;">DescPackaging</tt> field.</li>
-        <li>Upload the tarball to a public download site where users can use
-          <tt style="white-space: nowrap;">fink</tt> to download it. If you don't have ready access to
-          one, ask on the
-        <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a>
-        or <a href="http://webchat.freenode.net">the #fink IRC channel</a>,
-        and someone should be able to help.</li>
-    </ol>
+<h3><a name="policy.sources">3.7 Quelldateien-Richtlinien</a></h3>
+<p>
+Quelldateien sollen normalerweise von da herunter geladen werden, wo
+Upstream-Entwickler sie anbieten. Jegliche Modifikation für das Finkpaket sollte
+mit Patch-Dateien und/oder Patch-Skripten erfolgen. Man sollte also nicht die
+Quelldateien abändern und im Finkpaket ein Archiv mit den geänderten Dateien
+als <tt style="white-space: nowrap;">Source</tt> verwenden.
+</p>
+<p>
+Wird ein vcs Checkout verwendet (z. B. <b>git</b> oder <b>svn</b>), weil
+z. B. das Projekt keine formalen Releases veröffentlicht oder eine wichtige
+Problemlösung zwischen den Releases eingepflegt wurde, kann eine akzeptable
+Quelle auf folgende Art und Weise erzeugt werden:
+</p>
+<ol>
+<li>Führen sie ein Checkout des Pakets durch, vorzugsweise zu einer dezidierten
+  Revision des VCS.</li>
+<li>Erstellen sie ein Archiv aus dem VCS-Checkout (z. B. ein <b>zip</b>,
+  <b>tar</b>, <b>tar.gz</b> oder <b>tar.bz2</b>).
+  <p>Geben sie dem Tarball eine eindeutige Version. Sie können die
+    VCS-Revision verwenden, wenn es überhaupt keine Releases des Pakets gibt,
+    z. B. <tt style="white-space: nowrap;">foo-0svn1234.tar.gz</tt> oder
+    <tt style="white-space: nowrap;">bar-1.2.3+svn4567.tar.bz2</tt> für eine Version zwischen
+    zwei Releases.</p></li>
+<li>Nutzen sie die gleiche <tt style="white-space: nowrap;">Version</tt> in ihrer
+  <tt style="white-space: nowrap;">.info</tt>-Datei.</li>
+<li>Es ist äußerst hilfreich, die Kommandos für die Erzeugung des
+  Quelldatei-Tarballs im Feld <tt style="white-space: nowrap;">DescPackaging</tt> zu dokumnetieren.</li>
+<li>Laden sie den Tarball auf eine öffentliche Download-Seite hoch, wo Nutzer
+  sie mit <tt style="white-space: nowrap;">fink</tt> herunter laden können. Haben sie keinen
+  entsprechenden Zugang, fragen sie in der
+  <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers
+  Mailing-Liste</a> oder im
+  <a href="http://webchat.freenode.net">IRC channel #fink</a>.
+  nach und ihnen wird sicher geholfen werden.</li>
+</ol>
 
 
-<h3><a name="policy.downloading">3.8 File Download Policy</a></h3>
-    <p>
-      Packages are not to download any files during the unpack, patch, compile,
-      install, or build phases of the
-      <a href="#reference.build">build process</a>.  Any large
-      patches (i.e. larger than can be accommodated conveniently in a PatchFile)
-      that need to be applied should
-    set up as additional Sources in accordance with the
-    <a href="#policy.sources"> Source Policy.</a>
-    </p>
-    <p>
-      Packages may download data in a PostInstScript after they have been
-      installed on the system, under some limited circumstances:
-    </p>
-    <ul>
-        <li>No updates to the package itself are allowed.</li>
-        <li>The nature of the data is such that it couldn't easily be packaged
-          for Fink.  E.g. virus definitions for <tt style="white-space: nowrap;">clamav</tt> can
-          be downloaded during this phase, because they change continually.</li>
-    </ul>
-    <p>
-    If you are unsure, contact
-      <a href="mailto:fink-core@lists.sourceforge.net">the Fink Core Team</a>
-      .</p>
+
+<h3><a name="policy.downloading">3.8 Datei-Download-Richtlinien</a></h3>
+<p>
+Pakete dürfen in den Phasen unpack, patch, compile, install oder den build
+Phasen während des <a href="#reference.build">build-Prozess</a> keinerlei Dateien herunter laden. Alle
+größeren Patches (also alles, was man nicht in einer üblichen Patchdatei
+unterbringen kann) sollten als zusätzliche Quelldateien entsprechend den
+<a href="#policy.sources">Quelldatei-Richtlinien</a>
+aufgesetzt werden.
+</p>
+<p>
+Unter bestimmten, eng umrissenen Umständen dürfen Pakete im PostInstScript
+Dateien herunter laden, nachdem sie installiert sind:
+</p>
+<ul>
+<li>Aktualisierungen der Pakete sind verboten.</li>
+<li>Die Daten/Dateien sind so, dass sie nicht leicht in ein Finkpaket zu packen
+  sind. Die Virusdefinitionen für <tt style="white-space: nowrap;">clamav</tt> können z. B. im
+  PostInstScript herunter geladen werden, weil sie sich laufend ändern.</li>
+</ul>
+<p>
+Sind sie sich nicht sicher, dann schicken sie eine Email an das
+<a href="mailto:fink-core@lists.sourceforge.net">Fink Core Team</a>.
+</p>
 
 
-<h2><a name="fslayout">4 Filesystem Layout</a></h2>
+
+<h2><a name="fslayout">4 Dateisystem-Layout</a></h2>
 
 
 
 
 <p>
-The following file system layout guidelines are part of the Fink
-packaging policy.
+Die folgenden Richtlinien für das Layout der Dateiverzeichnisse sind Bestandteil
+der Paket-Richtlinien von Fink.
 </p>
 
 
-<h3><a name="fslayout.fhs">4.1 The Filesystem Hierarchy Standard</a></h3>
+<h3><a name="fslayout.fhs">4.1 Hierarchie-Standard für Dateiverzeichnisse</a></h3>
 <p>
-Fink follows the spirit of the
-<a href="http://www.pathname.com/fhs/">Filesystem Hierarchy Standard</a>
-, or FHS for short.
-It can only follow it in spirit because the FHS was created for system
-vendors that have control over the <tt style="white-space: nowrap;">/</tt> and
-<tt style="white-space: nowrap;">/usr</tt> hierarchies.
-Fink is an add-on distribution that controls only its install
-directory (or prefix).
-The examples use the default prefix of <tt style="white-space: nowrap;">/sw</tt>.
+Fink folgt dem Geist des
+<a href="http://www.pathname.com/fhs/">Hierarchie-Standards für
+Dateiverzeichnisse</a>, abgekürzt als FHS (Filesystem Hierarchy Standard).
+Es kann diesen Standard nur nachempfinden, denn er setzt die Kontralle über
+<tt style="white-space: nowrap;">/</tt> und <tt style="white-space: nowrap;">/usr</tt> voraus.
+Fink ist aber ein Zusatz, der nur die Kontrolle über sein eigenes
+Installationsverzeichnis hat. Die Beispiele verwenden den voreingestellten
+Präfix <tt style="white-space: nowrap;">/sw</tt>.
 </p>
 
 
-<h3><a name="fslayout.dirs">4.2 The Directories</a></h3>
+
+<h3><a name="fslayout.dirs">4.2 Die Verzeichnisse</a></h3>
 <p>
-Files should go into the following subdirectories of the hierarchy:
+Dateien sollten in den Verzeichnissen wie folgt abgespeichert werden:
 </p>
 
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/bin</tt></td><td>
 <p>
-This directory is for general executable programs.
-There are no subdirectories.
+Dieses Verzeichnis ist für allgemeine ausführbare Programme.
+Es hat keine weiteren Unterverzeichnisse.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/sbin</tt></td><td>
 <p>
-This directory is for executable programs that are intended to be used
-by administrators only.
-Background daemons go here.
-There are no subdirectories.
+Dieses Verzeichnis ist für Programme, die nur von Administratoren ausgeführt
+werden.
+Daemon-Programme, die im Hintergrund laufen, gehören hier her.
+Es hat keine weiteren Unterverzeichnisse.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/include</tt></td><td>
 <p>
-This directory is for C and C++ header files.
-Subdirectories can be created as necessary.
-If a package installs header files that can be confused with standard
-C headers, those headers <b>must</b> go to a subdirectory.
+Dieses Verzeichnis ist für C und C++ Header-Dateien.
+Unterverzeichnisse können je nach Bedarf angelegt werden.
+Installiert ein Paket Header-Dateien, die mit Standard C Header-Dateien
+verwechselt werden könnten, <b>müssen</b> diese Header-Dateien in ein
+Unterverzeichnis.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/lib</tt></td><td>
 <p>
-This directory is for architecture-dependent data files and
-libraries.
-Static and shared libraries should be placed directly in
-<tt style="white-space: nowrap;">/sw/lib</tt> unless there is a good reason not to.
-This is also the place for executables that should not be executed
-directly by the user (which would otherwise be placed in libexec).
+Dieses Verzeichnis ist für Daten-Dateien und Bibliotheken, die von der
+Architektur abhängen.
+Statische und dynamische Bibliotheken gehören direkt in
+<tt style="white-space: nowrap;">/sw/lib</tt>, außer es gibt sehr gute Gründe.
+Ebenso gehören Programme hierher, die nicht direkt vom Nutzer ausgeführt werden
+(üblicherweise befinden sich solche Programme in libexec).
 </p>
 <p>
-A package is free to create a subdirectory to store private data or
-loadable modules.
-Make sure to use directory names that make sense for compatibility.
-It is wise to use the package major version in the directory name or
-as an additional hierarchy level, e.g. <tt style="white-space: nowrap;">/sw/lib/perl5</tt>
-or <tt style="white-space: nowrap;">/sw/lib/apache/1.3</tt>.
-Care should be taken when the host type is used to create
-directories.
-A <tt style="white-space: nowrap;">powerpc-apple-darwin1.3.3</tt> directory is bad for
-compatibility, <tt style="white-space: nowrap;">powerpc-apple-darwin1.3</tt> or just
-<tt style="white-space: nowrap;">powerpc-apple-darwin</tt> are better choices.
+Ein Paket darf Unterverzeichnisse für private Daten oder ladbare Module anlegen.
+Achten sie darauf, dass die Namen der Unterverzeichnisse sinnvoll sind und der
+Kompatibilität dienen.
+Es ist durchaus sinnvoll, den Namen des Verzeichnisses umd die Hauptversion des
+Pakets zu erweitern oder zusätzliche Unterverzeichnisse einzufügen, z. B.
+<tt style="white-space: nowrap;">/sw/lib/perl5</tt> oder <tt style="white-space: nowrap;">/sw/lib/apache/1.3</tt>.
+Aufpassen muss man, wenn der Typ des Rechners im Namen verwendet wird.
+Ein Verzeichnis mit dem Namen <tt style="white-space: nowrap;">powerpc-apple-darwin1.3.3</tt> kann leicht
+zu Kompatibilitätsproblemen führen, die sich durch
+<tt style="white-space: nowrap;">powerpc-apple-darwin1.3</tt> oder <tt style="white-space: nowrap;">powerpc-apple-darwin</tt>
+leicht vermeiden lassen.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/lib/ppc64</tt>
 <tt style="white-space: nowrap;">/sw/lib/x86_64</tt></td><td>
 <p>
-This directory is for 64-bit libraries on 32-bit systems, 
-with <tt style="white-space: nowrap;">/sw/lib/ppc64</tt>
-being used under powerpc architecture, and
-<tt style="white-space: nowrap;">/sw/lib/x86_64</tt> being used under i386 architecture.
-Libraries which have been built 'fat' should be stored in
-<tt style="white-space: nowrap;">/sw/lib</tt> instead, and should be so indicated by
-using '32-64' in the corresponding Shlibs entry.  Note that under
-the x86_64 architecture, 64-bit
-libraries are to be stored in <tt style="white-space: nowrap;">/sw/lib</tt>.
+Dieses Verzeichnis ist für 64-bit-Bibliotheken auf 32-bit-Systemen, mit
+<tt style="white-space: nowrap;">/sw/lib/ppc64</tt> für die PowerPC-Architektur und
+<tt style="white-space: nowrap;">/sw/lib/x86_64</tt> für die i386-Architektur.
+Bibliotheken, die als "fat" erzeugt wurden, sollten aber in
+<tt style="white-space: nowrap;">/sw/lib</tt> abgespeichert werden und ein '32-64' in ihrem
+Feld Shlibs eingetragen haben. Beachten sie, dass unter der x86_64-Architektur
+64-bit-Bibliotheken in  <tt style="white-space: nowrap;">/sw/lib</tt> werden.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share</tt></td><td>
 <p>
-This directory is for architecture-independent data files.
-The same rules as for <tt style="white-space: nowrap;">/sw/lib</tt> apply.
-Some common subdirectories are described below.
+Dieses Verzeichnis ist für architektur-unabhängige Daten-Dateien. Es gelten
+die selben Regeln wie für <tt style="white-space: nowrap;">/sw/lib</tt>.
+Einige Unterverzeichnisse werden im folgenden beschrieben.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/man</tt></td><td>
 <p>
-This directory contains manual pages.
-It is organized into the usual section tree.
-Every program in <tt style="white-space: nowrap;">/sw/bin</tt> and
-<tt style="white-space: nowrap;">/sw/sbin</tt> should have an associated manual page here.
+Dieses Verzeichnis enthält Dokumentationen als man-Pages.
+Es ist weiter in die üblichen Abschnitte unterteilt.
+Zu jedem Programm in  <tt style="white-space: nowrap;">/sw/bin</tt> und
+<tt style="white-space: nowrap;">/sw/sbin</tt> sollte es hier eine entsprechende man-Page geben.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/info</tt></td><td>
 <p>
-This directory contains documentation in the Info format (produced
-from Texinfo sources).
-Maintenance of the <tt style="white-space: nowrap;">dir</tt> file is automated through Debian's
-version of <tt style="white-space: nowrap;">install-info</tt> (part of the <tt style="white-space: nowrap;">dpkg</tt>
-package).
-Use the <tt style="white-space: nowrap;">InfoDocs</tt> description field to automatically
-generate appropriate code for the <tt style="white-space: nowrap;">postinst</tt> and
-<tt style="white-space: nowrap;">prerm</tt> package scripts.
-Fink makes sure that no package installs a <tt style="white-space: nowrap;">dir</tt> file of
-its own.
-There are no subdirectories.
+Dieses Verzeichnis enthält Dokumentationen im Info format (erstellt aus
+Texinfo Quellen).
+Die Pflege der Datei <tt style="white-space: nowrap;">dir</tt> ist automatisiert und erfolgt mit
+Debians Version von <tt style="white-space: nowrap;">install-info</tt> (Teil des Pakets
+<tt style="white-space: nowrap;">dpkg</tt>).
+Verwenden sie das Feld <tt style="white-space: nowrap;">InfoDocs</tt>, um entsprechenden Code für die
+Skripte <tt style="white-space: nowrap;">postinst</tt> und <tt style="white-space: nowrap;">prerm</tt> automatisch zu erzeugen.
+Fink kümmert sich darum, dass kein Paket eine eigene Datei <tt style="white-space: nowrap;">dir</tt>
+erzeugt.
+Es gibt keine Unterverzeichnisse.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/doc</tt></td><td>
 <p>
-This directory contains documentation that is neither a man page nor
-an Info document.
-README, LICENSE and COPYING files go here.
-Every package must create a subdirectory here, named after the
-package.
-The subdirectory name must not contain any version numbers (unless
-they are a part of the package name proper).
-Hint: Just use <tt style="white-space: nowrap;">%n</tt>.
+Dieses Verzeichnis enthält Dokumentationen, die weder als man-Page noch als
+Info-Dokument vorliegen.
+Die Dateien README, LICENSE und COPYING gehören z. B. hier her.
+Jedes Paket muss hier sein eigenes Unterverzeichnis anlegen, das wie das Paket
+benannt wird.
+Die Namen der Unterverzeichnisse dürfen keine Versionsnummern enthalten, außer
+wenn diese Nummern Teil des tatsächlichen Paketnamens sind.
+Tipp: Verwenden sie einfach <tt style="white-space: nowrap;">%n</tt>.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/locale</tt></td><td>
 <p>
-This directory contains message catalogs for internationalization.
+Dieses Verzeichnis enthält Kataloge mit Meldungen für die Internationalisierung.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/opt</tt></td><td>
 <p>
-The <tt style="white-space: nowrap;">opt</tt> directory stores "add-on" software packages,
-which for some reason cannot use the standard <tt style="white-space: nowrap;">/sw/bin</tt>,
-<tt style="white-space: nowrap;">/sw/lib</tt>, <tt style="white-space: nowrap;">/sw/include</tt>, etc. 
-directories.
-A package to be installed in <tt style="white-space: nowrap;">/sw/opt</tt>
- must locate its static files in a separate 
-<tt style="white-space: nowrap;">/sw/opt/&lt;package&gt;</tt>
- directory tree, where <tt style="white-space: nowrap;">&lt;package&gt;</tt> 
-is a name that describes the software package.
-(Available in fink 0.29.7 or later.)
+In Verzeichnis <tt style="white-space: nowrap;">opt</tt> werden "add-on" Programmpakete
+abgespeichert, die aus irgendeinem Grund nicht die Standard-Verzeichnisse
+<tt style="white-space: nowrap;">/sw/bin</tt>, <tt style="white-space: nowrap;">/sw/lib</tt>,
+<tt style="white-space: nowrap;">/sw/include</tt>, usw. nicht verwenden können.
+Ein Paket, das in <tt style="white-space: nowrap;">/sw/opt</tt> installiert wird, muss seine
+statischen Dateien in einem separaten Unterverzeichnis
+<tt style="white-space: nowrap;">/sw/opt/&lt;package&gt;</tt> abspeichern, wobei
+<tt style="white-space: nowrap;">&lt;package&gt;</tt> ein Name ist, der das Programmpaket
+beschreibt.
+(Verfügbar ab fink 0.29.7 oder später.)
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/var</tt></td><td>
 <p>
-The <tt style="white-space: nowrap;">var</tt> directory stores variable data.
-This includes spool directories, lock files, state databases, game
-high scores and log files.
+Im Verzeichnis <tt style="white-space: nowrap;">var</tt> werden veränderliche Daten gespeichert.
+Das umfasst Spool-Verzeichnisse, Lock-Dateien, Status-Datenbanken, Punktestände
+von Spielen und Log-Dateien.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/etc</tt></td><td>
 <p>
-This directory holds configuration files.
-For packages that have more than one or two files here a subdirectory
-should be made.
-The subdirectory must have the name of the package or program in it so
-that it is identifiable.
+Diese Verzeichnis enthält Konfigurationsdateien.
+Gehören zu einem Paket mehr als ein oder zwei Dateien, sollte ein
+Unterverzeichnis angelegt werden.
+Der Name des Unterverzeichnis muss den Namen des Pakets oder Programms
+enthalten, damit es zugeordnet werden kann.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/src</tt></td><td>
 <p>
-This directory is for storing and building source code.
-Nothing should be installed here by a package.
+In diesem Verzeichnis werden die Quell-Dateien gespeichert und erfolgt die
+Codeerstellung. Vom den Paketen sollte hier nicht weiter installiert werden.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/Applications</tt></td><td>
 <p>
-This directory is for storing OS X-style applications which are
-launched by double-clicking rather than from the command line.
+In diesem Verzeichnis werden Programm mit einer graphischen Oberfläche im Stil
+von OS X abgespeichert, die man normalerweise mit einem Doppelklick startet und
+nicht von der Kommandozeile.
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/Library/Frameworks</tt></td><td>
 <p>
-This directory is for storing OS X-style frameworks, sometimes
-used by OS X-style applications.
+In diesem Verzeichnis werden Frameworks im OS X-Stil abgespeichert. Sie werden
+manchmal von Programmen im OS X-Stil genutzt.
 </p>
 </td></tr></table>
 
 
-<h3><a name="fslayout.avoid">4.3 Things to Avoid</a></h3>
+
+<h3><a name="fslayout.avoid">4.3 Was sollte man vermeiden?</a></h3>
 <p>
-No other directories than the ones mentioned above should exist in
-<tt style="white-space: nowrap;">/sw</tt>.
-In particular, the following should not be used:
+Außer den oben genannten Unterverzeichnissen sollte es keine anderen im
+Verzeichnis <tt style="white-space: nowrap;">/sw</tt> geben.
+Insbesondere die folgenden sind explizit nicht erlaubt:
 <tt style="white-space: nowrap;">/sw/man</tt>, <tt style="white-space: nowrap;">/sw/info</tt>,
-<tt style="white-space: nowrap;">/sw/doc</tt>, <tt style="white-space: nowrap;">/sw/libexec</tt>,
+<tt style="white-space: nowrap;">/sw/doc</tt>, <tt style="white-space: nowrap;">/sw/libexec</tt> und
 <tt style="white-space: nowrap;">/sw/lib/locale</tt>.
 </p>
 
 
-<h2><a name="compilers">5 Compilers</a></h2>
+
+<h2><a name="compilers">5 Compiler</a></h2>
 
 
 
 
 <p>
-Fink uses the gcc family of compilers, as provided by Apple computer
-through the Apple Developer Connection. Different versions of gcc exist,
-and usually more than one is available on a Mac OS X system.
+Fink verwendet die gcc-Familie an Compilers wie sie Apple durch die
+Apple Developer Connection zur Verfügung stellt. Es gibt mehrere Versionen von
+gcc und normalerweise stehen auf einem Mac OS X System mehr als eine Version
+zur Verfügung.
 </p>
 <p>
-This section explains some of the ways Fink deals with these different versions
-of gcc. An email to the Fink mailing list has
-<a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html">more explanation</a>.
-</p>
-
-
-<h3><a name="compilers.versions">5.1 Compiler Versions</a></h3>
-<p>
-As GCC has evolved,
-there have been different fink "distributions" to cope with the changes.
-</p>
-<p>
-Each Fink distribution has had certain default values for the gcc and g++
-compilers, which any user compiling from source is expected to have
-installed.  You can expect that direct calls to "gcc" and "g++" from
-within your package will use these default values.  If you need to use
-a different value (for example, during a transition to a new distribution,
-your packages .info file must specify this using the versioned binaries
-provided by Apple.  Exactly how you will do this depends on the build
-system of your software, but for many packages, the <tt style="white-space: nowrap;">SetCC</tt>
-and <tt style="white-space: nowrap;">SetCXX</tt> fink fields can be used for this purpose.
-For example, you might change the g++ compiler to version 3.3 by the setting
-<tt style="white-space: nowrap;">SetCXX: g++-3.3</tt>.  Examine the output when building your
-package to make sure that the correct compiler is being used.
-</p>
-<p>
-The 10.1 distribution assumes that the compiler version is 2.95; the
-10.2 distribution assumes that the compiler version is 3.1; the 10.2-gcc3.3
-and 10.3 distributions assume that the compiler version is 3.3.   The compiler
-for the 10.4-transitional distribution is complicated: g++-3.3 is being
-used along with gcc-4.0.  The 10.4 and 10.5 distributions use both gcc-4.0 
-and g++-4.0.  The 10.6 distribution uses gcc-4.2, while the 10.7 through 10.9 
-distributions use clang and clang++ as the default compilers.  The 10.9 
-distribution has a further change in that it has migrated from libstdc++ to 
-libc++.
-</p>
-<p>
-A new method for ensuring the correct g++ compiler was introduced with the
-10.4-transitional distribution.  During compilation, a directory
-<tt style="white-space: nowrap;">/sw/var/lib/fink/path-prefix-g++-XXX</tt> (where XXX is the version
-number) is added to the PATH during compilation.  This directory contains
-shell scripts which ensure that the correct compiler and version of g++ is used.
+Dieses Kapitel erläutert, wie Fink mit den verschiedenen Versionen von gcc
+umgeht. Weitere Details können in dieser
+<a href="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html">
+Email</a>
+an die Fink mailing list nachgelesen werden.
 </p>
 
 
-<h3><a name="compilers.abi">5.2 The g++ ABI</a></h3>
+<h3><a name="compilers.versions">5.1 Compilerversionen</a></h3>
 <p>
-The g++ ABI has changed 3 times during the lifetime of OS X: the ABI is
-different for versions 2.95, 3.1, 3.3 and 4.0.  These different ABIs
-are not compatible with each other, and any libraries which use C++
-code and are linked to by your project must be compiled with the same
-ABI as the one currently being used.
+So wie sich gcc entwickelt hat, gab es verschiedene "Distributionen" von Fink,
+um die damit verbundenen Änderungen und Probleme abzufangen.
 </p>
 <p>
-Fink keeps track of the g++ ABI by means of the GCC field.  This field
-should be defined for any package which invokes the g++ or c++ compilers.
-(It should NOT be defined for packages which don't invoke those compilers.)
-Whenever an ABI upgrade occurs, all the dependencies of the packages must
-be checked for their own GCC field.  When all of the dependencies have
-been upgraded, the package itself may be upgraded.  The versions of the
-dependencies must be changed to guarantee that users will have the correct,
-updated, dependencies in place before they attempt to build the new version
-of your package.
+Jede Fink-Distribution hat eine Voreinstellung für die gcc und g++ Compiler, von
+denen jeder Nutzer normalerweise erwartet, dass sie installiert sind. Jeder kann
+erwarten, dass bei einem direkten Aufruf von "gcc" und "g++" diese Versionen
+starten. Benötigt man andere Version (z. B. beim Übergang auf eine neue
+Distribution) muss das Paket in der .info-Datei die benötigte Version des
+Apple-Compiler explizit angeben. Im Details hängt das von dem Build-System des
+Pakets ab, aber in dem meisten Fällen können dafür die Felder <tt style="white-space: nowrap;">SetCC</tt>
+und <tt style="white-space: nowrap;">SetCXX</tt> verwendet werden.
+Will man z. B. auf die Version 3.3 des Compiler g++ wechseln dann muss man
+<tt style="white-space: nowrap;">SetCXX: g++-3.3</tt> eintragen. Überprüfen sie die Ausgabe beim
+Erstellen des Pakets, ob die richtige Version verwendet wird.
 </p>
 <p>
-A small group of packages which depend only on each other can be left 
-at the previous version of the ABI when the distribution changes, if they
-are not ready to be upgraded.  When the upgrade is eventually done, they
-must be all upgraded together with the correct versioning on all the
-packages.  For this reason, it is best to upgrade most packages at
-the time the distribution changes.
+Die Distribution 10.1 geht von der Version 2.95 des Compiler aus, die
+Distribution 10.2 von der Version 3.2, die Distributionen 10.2-gcc3.3 und 10.3
+von der Version 3.3. Für die Distribution 10.4-transitional ist es kompliziert,
+weil g++-3.3 zusammen mit gcc-4.0 verwendet wird. Die Distributionen 10.4 und
+10.5 verwenden gcc-4.0 und g++-4.0. Die Distribution 10.6 verwendet gcc-4.2,
+während 10.7 bis 10.9  clang and clang++ als Voreinstellung verwenden. Bei 10.9
+kommt eine weitere Änderung durch den Übergang von libstdc++ nach libc++ dazu.
 </p>
 <p>
-Fink uses the GCC field to ensure that users have the correct version of
-the g++ compiler installed.  If the GCC field is defined by the package,
-fink checks to see if the value matches that expected for the OS X version.
-The correct value is 3.3 for the 10.2 and 10.3 versions of OS X, and 4.0 
-for OS X 10.4 through OS X 10.9.
+Mit der Distribution 10.4-transitional wurde eine neute Methode eingeführt, mit
+der sicher gestellt wird, dass der richtige g++ Compiler verwendet wird.
+Während des Compilierens wird das Verzeichnis
+<tt style="white-space: nowrap;">/sw/var/lib/fink/path-prefix-g++-XXX</tt> (wobei xxx die Versionsnummer
+ist) in der Pfadvariablen PATH eingetragen. In diesem Verzeichnis befinden sich
+Shellskripte, die dafür sorgen, dass die richtige Version des g++ Compiler
+aufgerufen wird.
+</p>
+
+
+
+<h3><a name="compilers.abi">5.2 Die g++ ABI</a></h3>
+<p>
+Die g++ Abi hat sich in der Zeit von OS X dreimal geändert: Sie ist für die
+Versionen 2.95, 3.1, 3.3 and 4.0 unterschiedlich. Sie sind untereinander nicht
+kompatibel und jede Bibliothek mit C++ Code, die sie in ihrem Projekt verlinken,
+muss mit der selben ABI compiliert sein, wie das, was sie gerade compilieren.
+</p>
+<p>
+Fink dokumentiert die g++ ABI mit dem Feld GCC. Dieses Feld sollte in allen
+Paketen definiert sein, die die g++ oder c++ Compiler aufrufen.
+(Es sollte NICHT in Paketen definiert sein, die diese Compiler nicht aufrufen.)
+Sobald es eine Aktualisierung in der ABI gibt, müssen alle abhängigen Pakete auf
+ihr GCC Feld überprüft werden. Erst wenn die alle aktualisiert sind, kann auch
+das Paket selbst aktualisiert werden. Die Versionen der Pakete müssen erhöht
+werden, damit Nutzer wirklich die richtige, aktualisierten Abhängigkeiten
+installieren, bevor sie versuchen ihr Paket zu erstellen.
+</p>
+<p>
+Eine kleine Gruppe an Paketen, die nur von sich selbst abhängen, können auch bei
+einer Änderung der ABI bei der alten Version bleiben, wenn sie z. B. noch nicht
+aktualisiert werdden. Werden sie dann aktualisiert, müssen sie alle zusammen mit
+der richtigen Version der ABI ersetzt werden. Deshalb ist es am besten, dass man
+die meisten Pakete sofort dann aktualisiert, wenn sich die Distribution ändert.
+</p>
+<p>
+Fink benutzt das Feld GCC um sicher zu stellen, dass die richtiger Version des
+g++ Compiler installiert ist. Ist das Feld GCC in einem Paket definiert,
+überprüft Fink ob der Wert dazu passt, was man für die Version von OS X
+erwartet, aso 3.3 für die OS X Versionen 10.2 und 10.3 und 4.0 für OS X 10.4 bis
+OS X 10.9.
 </p>
 
 
@@ -1490,8 +1465,8 @@ generate a <tt style="white-space: nowrap;">control</tt> file for dpkg.
 </p>
 
 
-<h3><a name="reference.fields">6.2 Fields</a></h3>
 
+<h3><a name="reference.fields">6.2 Fields</a></h3>
 <p>
 We have divided the list of fields into several categories.
 The list of fields is not necessarily complete. <tt style="white-space: nowrap;">:-)</tt>
@@ -1553,18 +1528,18 @@ Revision numbers start at 1.
 Required field.
 </p>
 <p>
-  Fink's policy is that <b>any</b> time you make a change to the
-  <tt style="white-space: nowrap;">.info</tt> file that results in changes to the
-  binary (compiled) form of a package (the <tt style="white-space: nowrap;">.deb</tt>
-  file), you <b>must</b> increase <tt style="white-space: nowrap;">Revision</tt>. This
-  includes changing the <tt style="white-space: nowrap;">Depends</tt> or other package lists,
-  and adding,
-  removing, or renaming splitoff packages or shifting files among
-  them. When migrating a package to a new tree (from 10.2 to 10.3, for
-  example) involves such changes, you should
-  increase <tt style="white-space: nowrap;">Revision</tt> by 10 (or some other large number) in the newer
-  tree in order to leave space for future updates to the package in the older
-  tree.
+Fink's policy is that <b>any</b> time you make a change to the
+<tt style="white-space: nowrap;">.info</tt> file that results in changes to the
+binary (compiled) form of a package (the <tt style="white-space: nowrap;">.deb</tt>
+file), you <b>must</b> increase <tt style="white-space: nowrap;">Revision</tt>. This
+includes changing the <tt style="white-space: nowrap;">Depends</tt> or other package lists,
+and adding,
+removing, or renaming splitoff packages or shifting files among
+them. When migrating a package to a new tree (from 10.2 to 10.3, for
+example) involves such changes, you should
+increase <tt style="white-space: nowrap;">Revision</tt> by 10 (or some other large number) in the newer
+tree in order to leave space for future updates to the package in the older
+tree.
 </p>
 </td></tr><tr valign="top"><td>Architecture</td><td>
 <p>
@@ -1852,22 +1827,16 @@ Here are the features added for each InfoN level, along with the
 earliest version of fink that supports it:
 </p>
 <ul>
-<li>
-<tt style="white-space: nowrap;">Info2</tt> (fink&gt;=0.20.0): Ability to use percent-expansions
-in the main <tt style="white-space: nowrap;">Package</tt> field of the .info file and the
-ability to use the <tt style="white-space: nowrap;">%type_*</tt> percent-expansions in
-the <tt style="white-space: nowrap;">Package</tt> field of <tt style="white-space: nowrap;">SplitOff</tt>
-(and <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>) packages.
-</li>
-<li>
-<tt style="white-space: nowrap;">Info3</tt> (fink&gt;=0.25.0): Can indent nicely in .info files,
-no more support for RFC-822 multi-lines, and can put comments in
-pkglist fields.
-</li>
-<li>
-<tt style="white-space: nowrap;">Info4</tt> (fink&gt;=0.26.2): adds %V expansion, and permits
-<tt style="white-space: nowrap;">%lib</tt> in <tt style="white-space: nowrap;">ConfigureParams</tt> field.
-</li>
+<li><tt style="white-space: nowrap;">Info2</tt> (fink&gt;=0.20.0): Ability to use percent-expansions
+  in the main <tt style="white-space: nowrap;">Package</tt> field of the .info file and the
+  ability to use the <tt style="white-space: nowrap;">%type_*</tt> percent-expansions in
+  the <tt style="white-space: nowrap;">Package</tt> field of <tt style="white-space: nowrap;">SplitOff</tt>
+  (and <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>) packages.</li>
+<li><tt style="white-space: nowrap;">Info3</tt> (fink&gt;=0.25.0): Can indent nicely in .info files,
+  no more support for RFC-822 multi-lines, and can put comments in
+  pkglist fields.</li>
+<li><tt style="white-space: nowrap;">Info4</tt> (fink&gt;=0.26.2): adds %V expansion, and permits
+  <tt style="white-space: nowrap;">%lib</tt> in <tt style="white-space: nowrap;">ConfigureParams</tt> field.</li>
 </ul>
 </td></tr></table>
 <p><b>Dependencies:</b></p>
@@ -1944,28 +1913,28 @@ would set the package x11 as a dependency for the nethack-x11 variant
 but not for the nethack variant.
 </p>
 <p>
-  Note that when using Depends/BuildDepends for shared library packages
-  for which more than one major-version is available, you must
-  <b>not</b> do the following:
+Note that when using Depends/BuildDepends for shared library packages
+for which more than one major-version is available, you must
+<b>not</b> do the following:
 </p>
 <pre>  Package: foo
   Depends: id3lib3.7-shlibs | id3lib4-shlibs
   BuildDepends: id3lib3.7-dev | id3lib4-dev</pre>
 <p>
-  even if your package could work with either library. Pick one
-  (preferably the highest version that can be used successfully) and
-  use it consistently in your package.
+even if your package could work with either library. Pick one
+(preferably the highest version that can be used successfully) and
+use it consistently in your package.
 </p>
 <p>
-  As explained in the <a href="#policy.sharedlibs">Shared Library Policy</a>, only one of the
-  -dev packages can be installed at a time, and each has links of the
-  same name that could point to different filenames in the associated
-  -shlibs package. When compiling package foo, the actual filename (in
-  the -shlibs package) gets hard-coded into the foo binary. That means
-  the resulting package needs the specific -shlibs package associated
-  with the -dev that was installed at compile-time. As a result, one
-  cannot have a <tt style="white-space: nowrap;">Depends</tt> that indicates that either one
-  will suffice.
+As explained in the <a href="#policy.sharedlibs">Shared Library Policy</a>, only one of the
+-dev packages can be installed at a time, and each has links of the
+same name that could point to different filenames in the associated
+-shlibs package. When compiling package foo, the actual filename (in
+the -shlibs package) gets hard-coded into the foo binary. That means
+the resulting package needs the specific -shlibs package associated
+with the -dev that was installed at compile-time. As a result, one
+cannot have a <tt style="white-space: nowrap;">Depends</tt> that indicates that either one
+will suffice.
 </p>
 <p>
 In the past, non-essential packages implicitly depended on the
@@ -2115,9 +2084,9 @@ eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 <p>
-  The standard continent and country codes are listed in
-  <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>, which is part of the
-  fink or fink-mirrors package.
+The standard continent and country codes are listed in
+<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>, which is part of the
+fink or fink-mirrors package.
 </p>
 </td></tr><tr valign="top"><td>Source</td><td>
 <p>
@@ -2473,7 +2442,8 @@ blank, the default is <tt style="white-space: nowrap;">True</tt>.
 </td></tr><tr valign="top"><td>BuildAsNobody</td><td>
 <p>
 In fink &gt;= 0.33.0, when set to a <tt style="white-space: nowrap;">false</tt> value, causes fink
-to build as <tt style="white-space: nowrap;">root</tt> rather than as the underprivileged <tt style="white-space: nowrap;">fink-bld</tt> user.
+to build as <tt style="white-space: nowrap;">root</tt> rather than as the underprivileged
+<tt style="white-space: nowrap;">fink-bld</tt> user.
 If this field is not present, its value defaults to <tt style="white-space: nowrap;">true</tt>, indicating
 that the package should be built as <tt style="white-space: nowrap;">fink-bld</tt>.
 </p>
@@ -2494,17 +2464,17 @@ with test suites enabled, the value of the <tt style="white-space: nowrap;">Test
 field will be appended to the normal <tt style="white-space: nowrap;">ConfigureParams</tt> value.
 </p>
 <p>
-  Starting in fink-0.22.0, this field supports conditionals. The
-  syntax is the same as that used in the <tt style="white-space: nowrap;">Depends</tt> and
-  other package-list fields. The conditional expression only applies
-  to the whitespace-delimited "word" immediately following
-  it. For example
+Starting in fink-0.22.0, this field supports conditionals. The
+syntax is the same as that used in the <tt style="white-space: nowrap;">Depends</tt> and
+other package-list fields. The conditional expression only applies
+to the whitespace-delimited "word" immediately following
+it. For example
 </p>
 <pre>Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared</pre>
 <p>
-  will always pass the <tt style="white-space: nowrap;">--mandir</tt> and <tt style="white-space: nowrap;">--disable-shared</tt>
-  flags, but only pass <tt style="white-space: nowrap;">--with-x11</tt> in the -x11 variant.
+will always pass the <tt style="white-space: nowrap;">--mandir</tt> and <tt style="white-space: nowrap;">--disable-shared</tt>
+flags, but only pass <tt style="white-space: nowrap;">--with-x11</tt> in the -x11 variant.
 </p>
 <p>
 This field supports placing parameters into multiple lines using multi-line
@@ -2530,9 +2500,7 @@ you are currently using.)
 </p>
 <p>
 The allowed values are:
-<tt style="white-space: nowrap;">2.95.2</tt> (or <tt style="white-space: nowrap;">2.95</tt>),
- <tt style="white-space: nowrap;">3.1</tt>,
- <tt style="white-space: nowrap;">3.3</tt>,
+<tt style="white-space: nowrap;">2.95.2</tt> (or <tt style="white-space: nowrap;">2.95</tt>), <tt style="white-space: nowrap;">3.1</tt>, <tt style="white-space: nowrap;">3.3</tt>,
 and <tt style="white-space: nowrap;">4.0</tt>.
 Our understanding is that the GCC authors intend to stabilize the GCC-ABI
 at some point; we can hope that it won't change again.
@@ -2887,12 +2855,12 @@ removing a package in favor of another one.
 <p>The scripts are called at the following times:</p>
 <ul>
 <li>PreInstScript: When the package is installed for the first time
-and before upgrading the package to this version.</li>
+  and before upgrading the package to this version.</li>
 <li>PostInstScript: After unpacking and setting up the package.</li>
 <li>PreRmScript: Before the package is removed or upgraded to a later
-version.</li>
+  version.</li>
 <li>PostRmScript: After the package was removed or upgraded to a later
-version.</li>
+  version.</li>
 </ul>
 <p>
 To make it more clear, an upgrade invokes both the ...Inst scripts of
@@ -2991,6 +2959,7 @@ is necessary" goes here. Multiple lines allowed.
 </td></tr></table>
 
 
+
 <h3><a name="reference.splitoffs">6.3 SplitOffs</a></h3>
 <p>
 Beginning with fink 0.9.9, a single .info file can be used to build
@@ -3014,19 +2983,19 @@ certain fields missing.  Here is what belongs in the sub-description
 </p>
 <ul>
 <li>Initial Data: Only the <tt style="white-space: nowrap;">Package</tt> needs to be specified,
-everything else is inherited from the parent package.  You may modify
-<tt style="white-space: nowrap;">Type</tt> and <tt style="white-space: nowrap;">License</tt> by declaring the field
-within the <tt style="white-space: nowrap;">SplitOff</tt> or <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>.  Percent
-expansion can be used, and
-it is often convenient to refer to the name %N of the parent
-package.</li>
+  everything else is inherited from the parent package.  You may modify
+  <tt style="white-space: nowrap;">Type</tt> and <tt style="white-space: nowrap;">License</tt> by declaring the field
+  within the <tt style="white-space: nowrap;">SplitOff</tt> or <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>.  Percent
+  expansion can be used, and
+  it is often convenient to refer to the name %N of the parent
+  package.</li>
 <li>Dependencies: All of these are allowed.</li>
 <li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
-and will be ignored.</li>
+  and will be ignored.</li>
 <li>Install Phase, Build Phase: Any of these fields are allowed (except
-that SplitOffs cannot themselves contain additional SplitOffs).</li>
+  that SplitOffs cannot themselves contain additional SplitOffs).</li>
 <li>Additional Data: These are inherited from the parent package but may
-be modified by declaring the field within the <tt style="white-space: nowrap;">SplitOff</tt> or
+  be modified by declaring the field within the <tt style="white-space: nowrap;">SplitOff</tt> or
   <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>.</li>
 </ul>
 <p>
@@ -3092,7 +3061,6 @@ of the packages by using <tt style="white-space: nowrap;">DocFiles</tt> several 
 
 
 <h3><a name="reference.scripts">6.4 Scripts</a></h3>
-
 <p>
 The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. The build directory
@@ -3120,8 +3088,8 @@ the interpreter and any needed flags (e.g., <tt style="white-space: nowrap;">#!/
 </p>
 
 
-<h3><a name="reference.patches">6.5 Patches</a></h3>
 
+<h3><a name="reference.patches">6.5 Patches</a></h3>
 <p>
 If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the same name as the package description,
@@ -3137,7 +3105,6 @@ You must also give the MD5 sum of the patchfile in the
 <tt style="white-space: nowrap;">PatchFile-MD5</tt> field, and specify 
 <tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.24.12)</tt> (or a later version of fink).
 </p>
-
 <p>
 When a <tt style="white-space: nowrap;">PatchFile<b>N</b></tt> field is used, general custom
 is to name the file <tt style="white-space: nowrap;">%n-purpose-of-patch.patch</tt> to make it
@@ -3146,7 +3113,6 @@ track of. You must also use the field <tt style="white-space: nowrap;">PatchFile
 and specify <tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.30.0)</tt> (or a later 
 version of fink).
 </p>
-
 <p>
 When a <tt style="white-space: nowrap;">PatchFile</tt> declaration is present, there is a
 default <tt style="white-space: nowrap;">PatchScript</tt> equivalent to:
@@ -3184,8 +3150,8 @@ separate download.
 </p>
 
 
-<h3><a name="reference.profile.d">6.6 Profile.d scripts</a></h3>
 
+<h3><a name="reference.profile.d">6.6 Profile.d scripts</a></h3>
 <p>
 If your package needs some run-time initialization  (e.g. to setup environment
 variables), you can use profile.d scripts.
@@ -3204,6 +3170,7 @@ If you just need to set some environment variables (for example, QTDIR to
 '/sw'), you can use the RuntimeVars field which is provided as a convenient way
 to achieve exactly this.
 </p>
+
 
 
 <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,

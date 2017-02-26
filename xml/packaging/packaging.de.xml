@@ -29,7 +29,7 @@ Liste übernehmen</link>, das derzeit ohne Betreuer ist.
 
 <chapter filename="intro">
 <title>Einführung</title>
-<shorttitle>Intro</shorttitle>
+<shorttitle>Einführung</shorttitle>
 
 <section name="def1"><title>Was ist ein Paket?</title>
 <p>
@@ -91,7 +91,7 @@ dazwischen, z. B. openssh-2.9p1-2.
 <title>Paketbeschreibungen</title>
 <shorttitle>Paketbeschreibungen</shorttitle>
 
-<section name="trees"><title>Baum Layout</title>
+<section name="trees"><title>Verzeichnis-Layout</title>
 <p>
 Paketbeschreibungen werden aus dem Verzeichnis <code>finkinfo</code> gelesen,
 der sich im Verzeichnis <filename>/sw/fink/dists</filename> befindet. Die
@@ -1213,8 +1213,8 @@ Sind sie sich nicht sicher, dann schicken sie eine Email an das
 </chapter>
 
 <chapter filename="fslayout">
-<title>Dateisystem Layout</title>
-<shorttitle>FS Layout</shorttitle>
+<title>Dateisystem-Layout</title>
+<shorttitle>Dateisystem-Layout</shorttitle>
 
 <preface>
 <p>
@@ -1433,13 +1433,13 @@ manchmal von Programmen im OS X-Stil genutzt.
 
 </section>
 
-<section name="avoid"><title>Things to Avoid</title>
+<section name="avoid"><title>Was sollte man vermeiden?</title>
 <p>
-No other directories than the ones mentioned above should exist in
-<filename>/sw</filename>.
-In particular, the following should not be used:
+Außer den oben genannten Unterverzeichnissen sollte es keine anderen im
+Verzeichnis <filename>/sw</filename> geben.
+Insbesondere die folgenden sind explizit nicht erlaubt:
 <filename>/sw/man</filename>, <filename>/sw/info</filename>,
-<filename>/sw/doc</filename>, <filename>/sw/libexec</filename>,
+<filename>/sw/doc</filename>, <filename>/sw/libexec</filename> und
 <filename>/sw/lib/locale</filename>.
 </p>
 
@@ -1448,97 +1448,95 @@ In particular, the following should not be used:
 </chapter>
 
 <chapter filename="compilers">
-<title>Compilers</title>
-<shorttitle>Compilers</shorttitle>
+<title>Compiler</title>
+<shorttitle>Compiler</shorttitle>
 
 <preface>
 <p>
-Fink uses the gcc family of compilers, as provided by Apple computer
-through the Apple Developer Connection. Different versions of gcc exist,
-and usually more than one is available on a Mac OS X system.
+Fink verwendet die gcc-Familie an Compilers wie sie Apple durch die
+Apple Developer Connection zur Verfügung stellt. Es gibt mehrere Versionen von
+gcc und normalerweise stehen auf einem Mac OS X System mehr als eine Version
+zur Verfügung.
 </p>
 <p>
-This section explains some of the ways Fink deals with these different versions
-of gcc. An email to the Fink mailing list has
+Dieses Kapitel erläutert, wie Fink mit den verschiedenen Versionen von gcc
+umgeht. Weitere Details können in dieser
 <link
-url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html"
->more explanation</link>.
+url="http://www.mail-archive.com/fink-devel@lists.sourceforge.net/msg11877.html">
+Email</link>
+an die Fink mailing list nachgelesen werden.
 </p>
 </preface>
 
-<section name="versions"><title>Compiler Versions</title>
+<section name="versions"><title>Compilerversionen</title>
 <p>
-As GCC has evolved,
-there have been different fink "distributions" to cope with the changes.
+So wie sich gcc entwickelt hat, gab es verschiedene "Distributionen" von Fink,
+um die damit verbundenen Änderungen und Probleme abzufangen.
 </p>
 <p>
-Each Fink distribution has had certain default values for the gcc and g++
-compilers, which any user compiling from source is expected to have
-installed.  You can expect that direct calls to "gcc" and "g++" from
-within your package will use these default values.  If you need to use
-a different value (for example, during a transition to a new distribution,
-your packages .info file must specify this using the versioned binaries
-provided by Apple.  Exactly how you will do this depends on the build
-system of your software, but for many packages, the <code>SetCC</code>
-and <code>SetCXX</code> fink fields can be used for this purpose.
-For example, you might change the g++ compiler to version 3.3 by the setting
-<code>SetCXX: g++-3.3</code>.  Examine the output when building your
-package to make sure that the correct compiler is being used.
+Jede Fink-Distribution hat eine Voreinstellung für die gcc und g++ Compiler, von
+denen jeder Nutzer normalerweise erwartet, dass sie installiert sind. Jeder kann
+erwarten, dass bei einem direkten Aufruf von "gcc" und "g++" diese Versionen
+starten. Benötigt man andere Version (z. B. beim Übergang auf eine neue
+Distribution) muss das Paket in der .info-Datei die benötigte Version des
+Apple-Compiler explizit angeben. Im Details hängt das von dem Build-System des
+Pakets ab, aber in dem meisten Fällen können dafür die Felder <code>SetCC</code>
+und <code>SetCXX</code> verwendet werden.
+Will man z. B. auf die Version 3.3 des Compiler g++ wechseln dann muss man
+<code>SetCXX: g++-3.3</code> eintragen. Überprüfen sie die Ausgabe beim
+Erstellen des Pakets, ob die richtige Version verwendet wird.
 </p>
 <p>
-The 10.1 distribution assumes that the compiler version is 2.95; the
-10.2 distribution assumes that the compiler version is 3.1; the 10.2-gcc3.3
-and 10.3 distributions assume that the compiler version is 3.3.   The compiler
-for the 10.4-transitional distribution is complicated: g++-3.3 is being
-used along with gcc-4.0.  The 10.4 and 10.5 distributions use both gcc-4.0 
-and g++-4.0.  The 10.6 distribution uses gcc-4.2, while the 10.7 through 10.9 
-distributions use clang and clang++ as the default compilers.  The 10.9 
-distribution has a further change in that it has migrated from libstdc++ to 
-libc++.
+Die Distribution 10.1 geht von der Version 2.95 des Compiler aus, die
+Distribution 10.2 von der Version 3.2, die Distributionen 10.2-gcc3.3 und 10.3
+von der Version 3.3. Für die Distribution 10.4-transitional ist es kompliziert,
+weil g++-3.3 zusammen mit gcc-4.0 verwendet wird. Die Distributionen 10.4 und
+10.5 verwenden gcc-4.0 und g++-4.0. Die Distribution 10.6 verwendet gcc-4.2,
+während 10.7 bis 10.9  clang and clang++ als Voreinstellung verwenden. Bei 10.9
+kommt eine weitere Änderung durch den Übergang von libstdc++ nach libc++ dazu.
 </p>
 <p>
-A new method for ensuring the correct g++ compiler was introduced with the
-10.4-transitional distribution.  During compilation, a directory
-<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
-number) is added to the PATH during compilation.  This directory contains
-shell scripts which ensure that the correct compiler and version of g++ is used.
+Mit der Distribution 10.4-transitional wurde eine neute Methode eingeführt, mit
+der sicher gestellt wird, dass der richtige g++ Compiler verwendet wird.
+Während des Compilierens wird das Verzeichnis
+<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (wobei xxx die Versionsnummer
+ist) in der Pfadvariablen PATH eingetragen. In diesem Verzeichnis befinden sich
+Shellskripte, die dafür sorgen, dass die richtige Version des g++ Compiler
+aufgerufen wird.
 </p>
 
 </section>
 
-<section name="abi"><title>The g++ ABI</title>
+<section name="abi"><title>Die g++ ABI</title>
 <p>
-The g++ ABI has changed 3 times during the lifetime of OS X: the ABI is
-different for versions 2.95, 3.1, 3.3 and 4.0.  These different ABIs
-are not compatible with each other, and any libraries which use C++
-code and are linked to by your project must be compiled with the same
-ABI as the one currently being used.
+Die g++ Abi hat sich in der Zeit von OS X dreimal geändert: Sie ist für die
+Versionen 2.95, 3.1, 3.3 and 4.0 unterschiedlich. Sie sind untereinander nicht
+kompatibel und jede Bibliothek mit C++ Code, die sie in ihrem Projekt verlinken,
+muss mit der selben ABI compiliert sein, wie das, was sie gerade compilieren.
 </p>
 <p>
-Fink keeps track of the g++ ABI by means of the GCC field.  This field
-should be defined for any package which invokes the g++ or c++ compilers.
-(It should NOT be defined for packages which don't invoke those compilers.)
-Whenever an ABI upgrade occurs, all the dependencies of the packages must
-be checked for their own GCC field.  When all of the dependencies have
-been upgraded, the package itself may be upgraded.  The versions of the
-dependencies must be changed to guarantee that users will have the correct,
-updated, dependencies in place before they attempt to build the new version
-of your package.
+Fink dokumentiert die g++ ABI mit dem Feld GCC. Dieses Feld sollte in allen
+Paketen definiert sein, die die g++ oder c++ Compiler aufrufen.
+(Es sollte NICHT in Paketen definiert sein, die diese Compiler nicht aufrufen.)
+Sobald es eine Aktualisierung in der ABI gibt, müssen alle abhängigen Pakete auf
+ihr GCC Feld überprüft werden. Erst wenn die alle aktualisiert sind, kann auch
+das Paket selbst aktualisiert werden. Die Versionen der Pakete müssen erhöht
+werden, damit Nutzer wirklich die richtige, aktualisierten Abhängigkeiten
+installieren, bevor sie versuchen ihr Paket zu erstellen.
 </p>
 <p>
-A small group of packages which depend only on each other can be left 
-at the previous version of the ABI when the distribution changes, if they
-are not ready to be upgraded.  When the upgrade is eventually done, they
-must be all upgraded together with the correct versioning on all the
-packages.  For this reason, it is best to upgrade most packages at
-the time the distribution changes.
+Eine kleine Gruppe an Paketen, die nur von sich selbst abhängen, können auch bei
+einer Änderung der ABI bei der alten Version bleiben, wenn sie z. B. noch nicht
+aktualisiert werdden. Werden sie dann aktualisiert, müssen sie alle zusammen mit
+der richtigen Version der ABI ersetzt werden. Deshalb ist es am besten, dass man
+die meisten Pakete sofort dann aktualisiert, wenn sich die Distribution ändert.
 </p>
 <p>
-Fink uses the GCC field to ensure that users have the correct version of
-the g++ compiler installed.  If the GCC field is defined by the package,
-fink checks to see if the value matches that expected for the OS X version.
-The correct value is 3.3 for the 10.2 and 10.3 versions of OS X, and 4.0 
-for OS X 10.4 through OS X 10.9.
+Fink benutzt das Feld GCC um sicher zu stellen, dass die richtiger Version des
+g++ Compiler installiert ist. Ist das Feld GCC in einem Paket definiert,
+überprüft Fink ob der Wert dazu passt, was man für die Version von OS X
+erwartet, aso 3.3 für die OS X Versionen 10.2 und 10.3 und 4.0 für OS X 10.4 bis
+OS X 10.9.
 </p>
 
 </section>

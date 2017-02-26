@@ -2,7 +2,7 @@
 $title = "Paket erstellen - Reference";
 $cvs_author = 'Author: k-m_schindler';
 $cvs_date = 'Date: 2015/03/10 22:52:23';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="prev" href="compilers.php?phpLang=de" title="Compilers">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="prev" href="compilers.php?phpLang=de" title="Compiler">';
 
 
 include_once "header.de.inc";
@@ -66,8 +66,8 @@ generate a <code>control</code> file for dpkg.
 </p>
 
 
-<h2><a name="fields">6.2 Fields</a></h2>
 
+<h2><a name="fields">6.2 Fields</a></h2>
 <p>
 We have divided the list of fields into several categories.
 The list of fields is not necessarily complete. <code>:-)</code>
@@ -129,18 +129,18 @@ Revision numbers start at 1.
 Required field.
 </p>
 <p>
-  Fink's policy is that <b>any</b> time you make a change to the
-  <code>.info</code> file that results in changes to the
-  binary (compiled) form of a package (the <code>.deb</code>
-  file), you <b>must</b> increase <code>Revision</code>. This
-  includes changing the <code>Depends</code> or other package lists,
-  and adding,
-  removing, or renaming splitoff packages or shifting files among
-  them. When migrating a package to a new tree (from 10.2 to 10.3, for
-  example) involves such changes, you should
-  increase <code>Revision</code> by 10 (or some other large number) in the newer
-  tree in order to leave space for future updates to the package in the older
-  tree.
+Fink's policy is that <b>any</b> time you make a change to the
+<code>.info</code> file that results in changes to the
+binary (compiled) form of a package (the <code>.deb</code>
+file), you <b>must</b> increase <code>Revision</code>. This
+includes changing the <code>Depends</code> or other package lists,
+and adding,
+removing, or renaming splitoff packages or shifting files among
+them. When migrating a package to a new tree (from 10.2 to 10.3, for
+example) involves such changes, you should
+increase <code>Revision</code> by 10 (or some other large number) in the newer
+tree in order to leave space for future updates to the package in the older
+tree.
 </p>
 </td></tr><tr valign="top"><td>Architecture</td><td>
 <p>
@@ -428,22 +428,16 @@ Here are the features added for each InfoN level, along with the
 earliest version of fink that supports it:
 </p>
 <ul>
-<li>
-<code>Info2</code> (fink&gt;=0.20.0): Ability to use percent-expansions
-in the main <code>Package</code> field of the .info file and the
-ability to use the <code>%type_*</code> percent-expansions in
-the <code>Package</code> field of <code>SplitOff</code>
-(and <code>SplitOff<b>N</b></code>) packages.
-</li>
-<li>
-<code>Info3</code> (fink&gt;=0.25.0): Can indent nicely in .info files,
-no more support for RFC-822 multi-lines, and can put comments in
-pkglist fields.
-</li>
-<li>
-<code>Info4</code> (fink&gt;=0.26.2): adds %V expansion, and permits
-<code>%lib</code> in <code>ConfigureParams</code> field.
-</li>
+<li><code>Info2</code> (fink&gt;=0.20.0): Ability to use percent-expansions
+  in the main <code>Package</code> field of the .info file and the
+  ability to use the <code>%type_*</code> percent-expansions in
+  the <code>Package</code> field of <code>SplitOff</code>
+  (and <code>SplitOff<b>N</b></code>) packages.</li>
+<li><code>Info3</code> (fink&gt;=0.25.0): Can indent nicely in .info files,
+  no more support for RFC-822 multi-lines, and can put comments in
+  pkglist fields.</li>
+<li><code>Info4</code> (fink&gt;=0.26.2): adds %V expansion, and permits
+  <code>%lib</code> in <code>ConfigureParams</code> field.</li>
 </ul>
 </td></tr></table>
 <p><b>Dependencies:</b></p>
@@ -520,28 +514,28 @@ would set the package x11 as a dependency for the nethack-x11 variant
 but not for the nethack variant.
 </p>
 <p>
-  Note that when using Depends/BuildDepends for shared library packages
-  for which more than one major-version is available, you must
-  <b>not</b> do the following:
+Note that when using Depends/BuildDepends for shared library packages
+for which more than one major-version is available, you must
+<b>not</b> do the following:
 </p>
 <pre>  Package: foo
   Depends: id3lib3.7-shlibs | id3lib4-shlibs
   BuildDepends: id3lib3.7-dev | id3lib4-dev</pre>
 <p>
-  even if your package could work with either library. Pick one
-  (preferably the highest version that can be used successfully) and
-  use it consistently in your package.
+even if your package could work with either library. Pick one
+(preferably the highest version that can be used successfully) and
+use it consistently in your package.
 </p>
 <p>
-  As explained in the <a href="policy.php?phpLang=de#sharedlibs">Shared Library Policy</a>, only one of the
-  -dev packages can be installed at a time, and each has links of the
-  same name that could point to different filenames in the associated
-  -shlibs package. When compiling package foo, the actual filename (in
-  the -shlibs package) gets hard-coded into the foo binary. That means
-  the resulting package needs the specific -shlibs package associated
-  with the -dev that was installed at compile-time. As a result, one
-  cannot have a <code>Depends</code> that indicates that either one
-  will suffice.
+As explained in the <a href="policy.php?phpLang=de#sharedlibs">Shared Library Policy</a>, only one of the
+-dev packages can be installed at a time, and each has links of the
+same name that could point to different filenames in the associated
+-shlibs package. When compiling package foo, the actual filename (in
+the -shlibs package) gets hard-coded into the foo binary. That means
+the resulting package needs the specific -shlibs package associated
+with the -dev that was installed at compile-time. As a result, one
+cannot have a <code>Depends</code> that indicates that either one
+will suffice.
 </p>
 <p>
 In the past, non-essential packages implicitly depended on the
@@ -691,9 +685,9 @@ eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 <p>
-  The standard continent and country codes are listed in
-  <code>/sw/lib/fink/mirror/_keys</code>, which is part of the
-  fink or fink-mirrors package.
+The standard continent and country codes are listed in
+<code>/sw/lib/fink/mirror/_keys</code>, which is part of the
+fink or fink-mirrors package.
 </p>
 </td></tr><tr valign="top"><td>Source</td><td>
 <p>
@@ -1049,7 +1043,8 @@ blank, the default is <code>True</code>.
 </td></tr><tr valign="top"><td>BuildAsNobody</td><td>
 <p>
 In fink &gt;= 0.33.0, when set to a <code>false</code> value, causes fink
-to build as <code>root</code> rather than as the underprivileged <code>fink-bld</code> user.
+to build as <code>root</code> rather than as the underprivileged
+<code>fink-bld</code> user.
 If this field is not present, its value defaults to <code>true</code>, indicating
 that the package should be built as <code>fink-bld</code>.
 </p>
@@ -1070,17 +1065,17 @@ with test suites enabled, the value of the <code>TestConfigureParams</code>
 field will be appended to the normal <code>ConfigureParams</code> value.
 </p>
 <p>
-  Starting in fink-0.22.0, this field supports conditionals. The
-  syntax is the same as that used in the <code>Depends</code> and
-  other package-list fields. The conditional expression only applies
-  to the whitespace-delimited "word" immediately following
-  it. For example
+Starting in fink-0.22.0, this field supports conditionals. The
+syntax is the same as that used in the <code>Depends</code> and
+other package-list fields. The conditional expression only applies
+to the whitespace-delimited "word" immediately following
+it. For example
 </p>
 <pre>Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared</pre>
 <p>
-  will always pass the <code>--mandir</code> and <code>--disable-shared</code>
-  flags, but only pass <code>--with-x11</code> in the -x11 variant.
+will always pass the <code>--mandir</code> and <code>--disable-shared</code>
+flags, but only pass <code>--with-x11</code> in the -x11 variant.
 </p>
 <p>
 This field supports placing parameters into multiple lines using multi-line
@@ -1106,9 +1101,7 @@ you are currently using.)
 </p>
 <p>
 The allowed values are:
-<code>2.95.2</code> (or <code>2.95</code>),
- <code>3.1</code>,
- <code>3.3</code>,
+<code>2.95.2</code> (or <code>2.95</code>), <code>3.1</code>, <code>3.3</code>,
 and <code>4.0</code>.
 Our understanding is that the GCC authors intend to stabilize the GCC-ABI
 at some point; we can hope that it won't change again.
@@ -1463,12 +1456,12 @@ removing a package in favor of another one.
 <p>The scripts are called at the following times:</p>
 <ul>
 <li>PreInstScript: When the package is installed for the first time
-and before upgrading the package to this version.</li>
+  and before upgrading the package to this version.</li>
 <li>PostInstScript: After unpacking and setting up the package.</li>
 <li>PreRmScript: Before the package is removed or upgraded to a later
-version.</li>
+  version.</li>
 <li>PostRmScript: After the package was removed or upgraded to a later
-version.</li>
+  version.</li>
 </ul>
 <p>
 To make it more clear, an upgrade invokes both the ...Inst scripts of
@@ -1567,6 +1560,7 @@ is necessary" goes here. Multiple lines allowed.
 </td></tr></table>
 
 
+
 <h2><a name="splitoffs">6.3 SplitOffs</a></h2>
 <p>
 Beginning with fink 0.9.9, a single .info file can be used to build
@@ -1590,19 +1584,19 @@ certain fields missing.  Here is what belongs in the sub-description
 </p>
 <ul>
 <li>Initial Data: Only the <code>Package</code> needs to be specified,
-everything else is inherited from the parent package.  You may modify
-<code>Type</code> and <code>License</code> by declaring the field
-within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.  Percent
-expansion can be used, and
-it is often convenient to refer to the name %N of the parent
-package.</li>
+  everything else is inherited from the parent package.  You may modify
+  <code>Type</code> and <code>License</code> by declaring the field
+  within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.  Percent
+  expansion can be used, and
+  it is often convenient to refer to the name %N of the parent
+  package.</li>
 <li>Dependencies: All of these are allowed.</li>
 <li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
-and will be ignored.</li>
+  and will be ignored.</li>
 <li>Install Phase, Build Phase: Any of these fields are allowed (except
-that SplitOffs cannot themselves contain additional SplitOffs).</li>
+  that SplitOffs cannot themselves contain additional SplitOffs).</li>
 <li>Additional Data: These are inherited from the parent package but may
-be modified by declaring the field within the <code>SplitOff</code> or
+  be modified by declaring the field within the <code>SplitOff</code> or
   <code>SplitOff<b>N</b></code>.</li>
 </ul>
 <p>
@@ -1668,7 +1662,6 @@ of the packages by using <code>DocFiles</code> several times.
 
 
 <h2><a name="scripts">6.4 Scripts</a></h2>
-
 <p>
 The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. The build directory
@@ -1696,8 +1689,8 @@ the interpreter and any needed flags (e.g., <code>#!/bin/csh</code>,
 </p>
 
 
-<h2><a name="patches">6.5 Patches</a></h2>
 
+<h2><a name="patches">6.5 Patches</a></h2>
 <p>
 If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the same name as the package description,
@@ -1713,7 +1706,6 @@ You must also give the MD5 sum of the patchfile in the
 <code>PatchFile-MD5</code> field, and specify 
 <code>BuildDepends: fink (&gt;= 0.24.12)</code> (or a later version of fink).
 </p>
-
 <p>
 When a <code>PatchFile<b>N</b></code> field is used, general custom
 is to name the file <code>%n-purpose-of-patch.patch</code> to make it
@@ -1722,7 +1714,6 @@ track of. You must also use the field <code>PatchFile<b>N</b>-MD5</code>
 and specify <code>BuildDepends: fink (&gt;= 0.30.0)</code> (or a later 
 version of fink).
 </p>
-
 <p>
 When a <code>PatchFile</code> declaration is present, there is a
 default <code>PatchScript</code> equivalent to:
@@ -1760,8 +1751,8 @@ separate download.
 </p>
 
 
-<h2><a name="profile.d">6.6 Profile.d scripts</a></h2>
 
+<h2><a name="profile.d">6.6 Profile.d scripts</a></h2>
 <p>
 If your package needs some run-time initialization  (e.g. to setup environment
 variables), you can use profile.d scripts.
@@ -1780,6 +1771,7 @@ If you just need to set some environment variables (for example, QTDIR to
 '/sw'), you can use the RuntimeVars field which is provided as a convenient way
 to achieve exactly this.
 </p>
+
 
 
 

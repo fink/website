@@ -1,5 +1,5 @@
 <?php
-$title = "Paket erstellen - Intro";
+$title = "Paket erstellen - Einführung";
 $cvs_author = 'Author: k-m_schindler';
 $cvs_date = 'Date: 2015/03/10 22:52:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="format.php?phpLang=de" title="Paketbeschreibungen"><link rel="prev" href="index.php?phpLang=de" title="Paket erstellen Contents">';
@@ -39,6 +39,7 @@ Format dpkg und den Datei-Suffix .deb.
 </p>
 
 
+
 <h2><a name="ident">1.2 Identifikation eines Pakets</a></h2>
 <p>
 Die Identifikation eines Pakets ergibt sich aus drei Zeichnfolgen: Paketname,
@@ -61,6 +62,7 @@ Die Revision darf keine Bindestriche enthalten.
 Der vollständige Name ergibt sich aus der Verkettung der drei mit Bindestrichen
 dazwischen, z. B. openssh-2.9p1-2.
 </p>
+
 
 
 <p align="right"><?php echo FINK_NEXT ; ?>:
