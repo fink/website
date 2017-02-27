@@ -4,12 +4,12 @@
  <cvsid>$Id: news.de.xml,v 1.73 2016/07/30 18:14:16 kamischi Exp $</cvsid>
 <newsitem>
  <date>2016-11-12</date>
- <headline>fink-0.41.0 veröffentlicht</headline>
+ <headline>fink-0.41.1 veröffentlicht</headline>
  <body>
-  <p>Das Fink-Projekt veröffentlichte <code>fink-0.41.1</code>. Es hilft bei
-  Anpassungen and die libXt Bibliothek aus XQuartz, indem die Quartz-Version aus
-  <code>system-xfree86*</code> Paketen verwendet wird und auch OS X 10.12.1
-  unterstützt.
+   <p>Das Fink-Projekt veröffentlichte <code>fink-0.41.1</code>. Es unterstützt
+     OS X 10.12.1 und hilft bei Anpassungen der libXt-Bibliothek aus XQuartz,
+     indem die Quartz-Version aus <code>system-xfree86*</code> Paketen verwendet
+     wird.
   </p>
  </body>
 </newsitem>

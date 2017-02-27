@@ -1,8 +1,8 @@
-<a name="2016-11-12%20fink-0.41.0%20ver%C3%B6ffentlicht"><span class="news-date">2016-11-12: </span><span class="news-headline">fink-0.41.0 veröffentlicht</span></a><?php gray_line(); ?>
-  <p>Das Fink-Projekt veröffentlichte <code>fink-0.41.1</code>. Es hilft bei
-  Anpassungen and die libXt Bibliothek aus XQuartz, indem die Quartz-Version aus
-  <code>system-xfree86*</code> Paketen verwendet wird und auch OS X 10.12.1
-  unterstützt.
+<a name="2016-11-12%20fink-0.41.1%20ver%C3%B6ffentlicht"><span class="news-date">2016-11-12: </span><span class="news-headline">fink-0.41.1 veröffentlicht</span></a><?php gray_line(); ?>
+   <p>Das Fink-Projekt veröffentlichte <code>fink-0.41.1</code>. Es unterstützt
+     OS X 10.12.1 und hilft bei Anpassungen der libXt-Bibliothek aus XQuartz,
+     indem die Quartz-Version aus <code>system-xfree86*</code> Paketen verwendet
+     wird.
   </p>
  <a name="2016-09-20%20fink-0.41.0%20ver%C3%B6ffentlicht"><span class="news-date">2016-09-20: </span><span class="news-headline">fink-0.41.0 veröffentlicht</span></a><?php gray_line(); ?>
   <p>Das Fink-Projekt veröffentlichte <code>fink-0.41.0</code> für die

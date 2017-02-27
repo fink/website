@@ -17,15 +17,13 @@ Fink hat es sich zur Aufgabe gemacht, ein System zur Verfügung zu stellen, das 
 <a href="http://www.opensource.org/">Open Source</a> Software auf
 <a href="http://www.opensource.apple.com/">Darwin</a> und
 <a href="http://www.apple.com/macosx/">Mac OS X</a> zu verwalten und zu installieren.
-Hierzu kommen bekannte <a href="http://www.debian.org/">Debian</a> Tools wie dpkg und apt-get zum Einsatz.
-Die freiwilligen Mitarbeiter dieses Projektes kümmern sich auch um die Anpassung von Software, damit diese ohne Probleme auf Mac OS X nutzbar wird.
-Dabei überlassen wir es dem Nutzer, ob er die Software selber kompiliert oder schon fertige Pakete installiert.
+Hierzu kommen bekannte <a href="http://www.debian.org/">Debian</a> Tools wie
+dpkg und apt-get zum Einsatz. Die freiwilligen Mitarbeiter dieses Projektes
+kümmern sich auch um die Anpassung von Software, damit diese ohne Probleme auf
+Mac OS X nutzbar wird. Dabei überlassen wir es dem Nutzer, ob er die Software
+selber kompiliert oder schon fertige Pakete installiert.
 <a href="about.php">Mehr zum Thema...</a>
 </p>
-
-
-
-
 
 <table border="0" cellpadding="0" cellspacing="0" width="100%">
 <tr valign="top"><td width="50%">
@@ -37,7 +35,6 @@ Dabei überlassen wir es dem Nutzer, ob er die Software selber kompiliert oder s
 require dirname(__FILE__) . "/news/news.de.inc";
 ?>
 <div align="right"><a href="<?php print $root; ?>news/index.php?phpLang=de">Ältere News...</a></div>
-
 
 </td><td>&nbsp;&nbsp;&nbsp;</td><td width="50%">
 
@@ -54,13 +51,41 @@ require dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
-Derzeit unterstützt Fink OS X 10.9 (Mavericks), 10.8 (Mountain Lion), 10.7 (Lion), und 10.6 (Snow Leopard).
+Derzeit unterstützt Fink OS X 10.12 (Sierra), 10.11 (El Capitan), 10.10
+(Yosemite), und 10.9 (Mavericks).
 Es läuft auch weiterhin auf älteren Versionen von OS X, obwohl
 dafür keine offiziellen Updates mehr bereit gestellt werden.
-Die Installationsanweisung befindet sich auf der <a href="download/srcdist.php">source
-release page</a>.
+Die Installationsanweisung befindet sich auf der
+<a href="download/srcdist.php">source release page</a>.
 </p>
 <p>Xcode muss vor Fink installiert werden.</p>
+<p>
+<strong>Unterstützung von 10.12:</strong>
+Nutzer von 10.12 müssen Xcode, Version 8.0 oder später installieren
+(über den kostenlosen Download aus dem AppStore).
+Alternativ können auch die Command Line Tools aus
+Xcode 6.0 für Sierra verwendet werden (mittels <i>xcode-select --install</i> installieren,
+oder von <a href="http://developer.apple.com">Apple</a>) herunter laden.</p>
+<p>Wird X11 benötigt, sollte Xquartz-2.7.7 oder später von
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a> installiert werden.</p>
+<p>
+<strong>Unterstützung von 10.11:</strong>
+Nutzer von 10.11 müssen Xcode, Version 7.0 oder später installieren
+(über den kostenlosen Download aus dem AppStore).
+Alternativ können auch die Command Line Tools aus
+Xcode 7.0 für El Capitan verwendet werden (mittels <i>xcode-select --install</i> installieren,
+oder von <a href="http://developer.apple.com">Apple</a>) herunter laden.</p>
+<p>Wird X11 benötigt, sollte Xquartz-2.7.7 oder später von
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a> installiert werden.</p>
+<p>
+<strong>10.10 Support:</strong>
+Nutzer von 10.10 müssen Xcode, Version 6.0 oder später installieren
+(über den kostenlosen Download aus dem AppStore).
+Alternativ können auch die Command Line Tools aus
+Xcode 6.0 für Yosemite verwendet werden (mittels <i>xcode-select --install</i> installieren,
+oder von <a href="http://developer.apple.com">Apple</a>) herunter laden.</p>
+<p>Wird X11 benötigt, sollte Xquartz-2.7.7 oder später von
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a> installiert werden.</p>
 <p>
 <strong>Unterstützung von 10.9:</strong>
 Nutzer von 10.9 müssen Xcode, Version 5.0.1 oder später installieren 

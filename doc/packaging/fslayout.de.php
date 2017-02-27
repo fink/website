@@ -1,199 +1,197 @@
 <?php
-$title = "Paket erstellen - FS Layout";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2014/10/25 01:52:35';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="compilers.php?phpLang=de" title="Compilers"><link rel="prev" href="policy.php?phpLang=de" title="Packaging Policy">';
+$title = "Paket erstellen - Dateisystem-Layout";
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/03/10 22:52:23';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="compilers.php?phpLang=de" title="Compiler"><link rel="prev" href="policy.php?phpLang=de" title="Richtlinien zur Estellung von Paketen">';
 
 
 include_once "header.de.inc";
 ?>
-<h1>Paket erstellen - 4. Filesystem Layout</h1>
-
+<h1>Paket erstellen - 4. Dateisystem-Layout</h1>
 
 
 
 
 <p>
-The following file system layout guidelines are part of the Fink
-packaging policy.
+Die folgenden Richtlinien für das Layout der Dateiverzeichnisse sind Bestandteil
+der Paket-Richtlinien von Fink.
+</p>
+
+
+<h2><a name="fhs">4.1 Hierarchie-Standard für Dateiverzeichnisse</a></h2>
+<p>
+Fink folgt dem Geist des
+<a href="http://www.pathname.com/fhs/">Hierarchie-Standards für
+Dateiverzeichnisse</a>, abgekürzt als FHS (Filesystem Hierarchy Standard).
+Es kann diesen Standard nur nachempfinden, denn er setzt die Kontralle über
+<code>/</code> und <code>/usr</code> voraus.
+Fink ist aber ein Zusatz, der nur die Kontrolle über sein eigenes
+Installationsverzeichnis hat. Die Beispiele verwenden den voreingestellten
+Präfix <code>/sw</code>.
 </p>
 
 
 
-<h2><a name="fhs">4.1 The Filesystem Hierarchy Standard</a></h2>
+<h2><a name="dirs">4.2 Die Verzeichnisse</a></h2>
 <p>
-Fink follows the spirit of the <a href="http://www.pathname.com/fhs/">Filesystem Hierarchy
-Standard</a>, or FHS for short.
-It can only follow it in spirit because the FHS was created for system
-vendors that have control over the <code>/</code> and
-<code>/usr</code> hierarchies.
-Fink is an add-on distribution that controls only its install
-directory (or prefix).
-The examples use the default prefix of <code>/sw</code>.
-</p>
-
-
-<h2><a name="dirs">4.2 The Directories</a></h2>
-<p>
-Files should go into the following subdirectories of the hierarchy:
+Dateien sollten in den Verzeichnissen wie folgt abgespeichert werden:
 </p>
 
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td><code>/sw/bin</code></td><td>
 <p>
-This directory is for general executable programs.
-There are no subdirectories.
+Dieses Verzeichnis ist für allgemeine ausführbare Programme.
+Es hat keine weiteren Unterverzeichnisse.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/sbin</code></td><td>
 <p>
-This directory is for executable programs that are intended to be used
-by administrators only.
-Background daemons go here.
-There are no subdirectories.
+Dieses Verzeichnis ist für Programme, die nur von Administratoren ausgeführt
+werden.
+Daemon-Programme, die im Hintergrund laufen, gehören hier her.
+Es hat keine weiteren Unterverzeichnisse.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/include</code></td><td>
 <p>
-This directory is for C and C++ header files.
-Subdirectories can be created as necessary.
-If a package installs header files that can be confused with standard
-C headers, those headers <b>must</b> go to a subdirectory.
+Dieses Verzeichnis ist für C und C++ Header-Dateien.
+Unterverzeichnisse können je nach Bedarf angelegt werden.
+Installiert ein Paket Header-Dateien, die mit Standard C Header-Dateien
+verwechselt werden könnten, <b>müssen</b> diese Header-Dateien in ein
+Unterverzeichnis.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/lib</code></td><td>
 <p>
-This directory is for architecture-dependent data files and
-libraries.
-Static and shared libraries should be placed directly in
-<code>/sw/lib</code> unless there is a good reason not to.
-This is also the place for executables that should not be executed
-directly by the user (which would otherwise be placed in libexec).
+Dieses Verzeichnis ist für Daten-Dateien und Bibliotheken, die von der
+Architektur abhängen.
+Statische und dynamische Bibliotheken gehören direkt in
+<code>/sw/lib</code>, außer es gibt sehr gute Gründe.
+Ebenso gehören Programme hierher, die nicht direkt vom Nutzer ausgeführt werden
+(üblicherweise befinden sich solche Programme in libexec).
 </p>
 <p>
-A package is free to create a subdirectory to store private data or
-loadable modules.
-Make sure to use directory names that make sense for compatibility.
-It is wise to use the package major version in the directory name or
-as an additional hierarchy level, e.g. <code>/sw/lib/perl5</code>
-or <code>/sw/lib/apache/1.3</code>.
-Care should be taken when the host type is used to create
-directories.
-A <code>powerpc-apple-darwin1.3.3</code> directory is bad for
-compatibility, <code>powerpc-apple-darwin1.3</code> or just
-<code>powerpc-apple-darwin</code> are better choices.
+Ein Paket darf Unterverzeichnisse für private Daten oder ladbare Module anlegen.
+Achten sie darauf, dass die Namen der Unterverzeichnisse sinnvoll sind und der
+Kompatibilität dienen.
+Es ist durchaus sinnvoll, den Namen des Verzeichnisses umd die Hauptversion des
+Pakets zu erweitern oder zusätzliche Unterverzeichnisse einzufügen, z. B.
+<code>/sw/lib/perl5</code> oder <code>/sw/lib/apache/1.3</code>.
+Aufpassen muss man, wenn der Typ des Rechners im Namen verwendet wird.
+Ein Verzeichnis mit dem Namen <code>powerpc-apple-darwin1.3.3</code> kann leicht
+zu Kompatibilitätsproblemen führen, die sich durch
+<code>powerpc-apple-darwin1.3</code> oder <code>powerpc-apple-darwin</code>
+leicht vermeiden lassen.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/lib/ppc64</code>
 <code>/sw/lib/x86_64</code></td><td>
 <p>
-This directory is for 64-bit libraries on 32-bit systems, 
-with <code>/sw/lib/ppc64</code>
-being used under powerpc architecture, and
-<code>/sw/lib/x86_64</code> being used under i386 architecture.
-Libraries which have been built 'fat' should be stored in
-<code>/sw/lib</code> instead, and should be so indicated by
-using '32-64' in the corresponding Shlibs entry.  Note that under
-the x86_64 architecture, 64-bit
-libraries are to be stored in <code>/sw/lib</code>.
+Dieses Verzeichnis ist für 64-bit-Bibliotheken auf 32-bit-Systemen, mit
+<code>/sw/lib/ppc64</code> für die PowerPC-Architektur und
+<code>/sw/lib/x86_64</code> für die i386-Architektur.
+Bibliotheken, die als "fat" erzeugt wurden, sollten aber in
+<code>/sw/lib</code> abgespeichert werden und ein '32-64' in ihrem
+Feld Shlibs eingetragen haben. Beachten sie, dass unter der x86_64-Architektur
+64-bit-Bibliotheken in  <code>/sw/lib</code> werden.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share</code></td><td>
 <p>
-This directory is for architecture-independent data files.
-The same rules as for <code>/sw/lib</code> apply.
-Some common subdirectories are described below.
+Dieses Verzeichnis ist für architektur-unabhängige Daten-Dateien. Es gelten
+die selben Regeln wie für <code>/sw/lib</code>.
+Einige Unterverzeichnisse werden im folgenden beschrieben.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share/man</code></td><td>
 <p>
-This directory contains manual pages.
-It is organized into the usual section tree.
-Every program in <code>/sw/bin</code> and
-<code>/sw/sbin</code> should have an associated manual page here.
+Dieses Verzeichnis enthält Dokumentationen als man-Pages.
+Es ist weiter in die üblichen Abschnitte unterteilt.
+Zu jedem Programm in  <code>/sw/bin</code> und
+<code>/sw/sbin</code> sollte es hier eine entsprechende man-Page geben.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share/info</code></td><td>
 <p>
-This directory contains documentation in the Info format (produced
-from Texinfo sources).
-Maintenance of the <code>dir</code> file is automated through Debian's
-version of <code>install-info</code> (part of the <code>dpkg</code>
-package).
-Use the <code>InfoDocs</code> description field to automatically
-generate appropriate code for the <code>postinst</code> and
-<code>prerm</code> package scripts.
-Fink makes sure that no package installs a <code>dir</code> file of
-its own.
-There are no subdirectories.
+Dieses Verzeichnis enthält Dokumentationen im Info format (erstellt aus
+Texinfo Quellen).
+Die Pflege der Datei <code>dir</code> ist automatisiert und erfolgt mit
+Debians Version von <code>install-info</code> (Teil des Pakets
+<code>dpkg</code>).
+Verwenden sie das Feld <code>InfoDocs</code>, um entsprechenden Code für die
+Skripte <code>postinst</code> und <code>prerm</code> automatisch zu erzeugen.
+Fink kümmert sich darum, dass kein Paket eine eigene Datei <code>dir</code>
+erzeugt.
+Es gibt keine Unterverzeichnisse.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share/doc</code></td><td>
 <p>
-This directory contains documentation that is neither a man page nor
-an Info document.
-README, LICENSE and COPYING files go here.
-Every package must create a subdirectory here, named after the
-package.
-The subdirectory name must not contain any version numbers (unless
-they are a part of the package name proper).
-Hint: Just use <code>%n</code>.
+Dieses Verzeichnis enthält Dokumentationen, die weder als man-Page noch als
+Info-Dokument vorliegen.
+Die Dateien README, LICENSE und COPYING gehören z. B. hier her.
+Jedes Paket muss hier sein eigenes Unterverzeichnis anlegen, das wie das Paket
+benannt wird.
+Die Namen der Unterverzeichnisse dürfen keine Versionsnummern enthalten, außer
+wenn diese Nummern Teil des tatsächlichen Paketnamens sind.
+Tipp: Verwenden sie einfach <code>%n</code>.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/share/locale</code></td><td>
 <p>
-This directory contains message catalogs for internationalization.
+Dieses Verzeichnis enthält Kataloge mit Meldungen für die Internationalisierung.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/opt</code></td><td>
 <p>
-The <code>opt</code> directory stores "add-on" software packages,
-which for some reason cannot use the standard <code>/sw/bin</code>,
-<code>/sw/lib</code>, <code>/sw/include</code>, etc. 
-directories.
-A package to be installed in <code>/sw/opt</code>
- must locate its static files in a separate 
-<code>/sw/opt/&lt;package&gt;</code>
- directory tree, where <code>&lt;package&gt;</code> 
-is a name that describes the software package.
-(Available in fink 0.29.7 or later.)
+In Verzeichnis <code>opt</code> werden "add-on" Programmpakete
+abgespeichert, die aus irgendeinem Grund nicht die Standard-Verzeichnisse
+<code>/sw/bin</code>, <code>/sw/lib</code>,
+<code>/sw/include</code>, usw. nicht verwenden können.
+Ein Paket, das in <code>/sw/opt</code> installiert wird, muss seine
+statischen Dateien in einem separaten Unterverzeichnis
+<code>/sw/opt/&lt;package&gt;</code> abspeichern, wobei
+<code>&lt;package&gt;</code> ein Name ist, der das Programmpaket
+beschreibt.
+(Verfügbar ab fink 0.29.7 oder später.)
 </p>
 </td></tr><tr valign="top"><td><code>/sw/var</code></td><td>
 <p>
-The <code>var</code> directory stores variable data.
-This includes spool directories, lock files, state databases, game
-high scores and log files.
+Im Verzeichnis <code>var</code> werden veränderliche Daten gespeichert.
+Das umfasst Spool-Verzeichnisse, Lock-Dateien, Status-Datenbanken, Punktestände
+von Spielen und Log-Dateien.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/etc</code></td><td>
 <p>
-This directory holds configuration files.
-For packages that have more than one or two files here a subdirectory
-should be made.
-The subdirectory must have the name of the package or program in it so
-that it is identifiable.
+Diese Verzeichnis enthält Konfigurationsdateien.
+Gehören zu einem Paket mehr als ein oder zwei Dateien, sollte ein
+Unterverzeichnis angelegt werden.
+Der Name des Unterverzeichnis muss den Namen des Pakets oder Programms
+enthalten, damit es zugeordnet werden kann.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/src</code></td><td>
 <p>
-This directory is for storing and building source code.
-Nothing should be installed here by a package.
+In diesem Verzeichnis werden die Quell-Dateien gespeichert und erfolgt die
+Codeerstellung. Vom den Paketen sollte hier nicht weiter installiert werden.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/Applications</code></td><td>
 <p>
-This directory is for storing OS X-style applications which are
-launched by double-clicking rather than from the command line.
+In diesem Verzeichnis werden Programm mit einer graphischen Oberfläche im Stil
+von OS X abgespeichert, die man normalerweise mit einem Doppelklick startet und
+nicht von der Kommandozeile.
 </p>
 </td></tr><tr valign="top"><td><code>/sw/Library/Frameworks</code></td><td>
 <p>
-This directory is for storing OS X-style frameworks, sometimes
-used by OS X-style applications.
+In diesem Verzeichnis werden Frameworks im OS X-Stil abgespeichert. Sie werden
+manchmal von Programmen im OS X-Stil genutzt.
 </p>
 </td></tr></table>
 
 
 
-<h2><a name="avoid">4.3 Things to Avoid</a></h2>
+<h2><a name="avoid">4.3 Was sollte man vermeiden?</a></h2>
 <p>
-No other directories than the ones mentioned above should exist in
-<code>/sw</code>.
-In particular, the following should not be used:
+Außer den oben genannten Unterverzeichnissen sollte es keine anderen im
+Verzeichnis <code>/sw</code> geben.
+Insbesondere die folgenden sind explizit nicht erlaubt:
 <code>/sw/man</code>, <code>/sw/info</code>,
-<code>/sw/doc</code>, <code>/sw/libexec</code>,
+<code>/sw/doc</code>, <code>/sw/libexec</code> und
 <code>/sw/lib/locale</code>.
 </p>
 
 
 
 <p align="right"><?php echo FINK_NEXT ; ?>:
-<a href="compilers.php?phpLang=de">5. Compilers</a></p>
+<a href="compilers.php?phpLang=de">5. Compiler</a></p>
 <?php include_once "../../footer.inc"; ?>
 
 

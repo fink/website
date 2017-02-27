@@ -1,8 +1,8 @@
 <?php
 $title = "Paket erstellen - Reference";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2014/10/25 01:52:35';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="prev" href="compilers.php?phpLang=de" title="Compilers">';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/03/10 22:52:23';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="prev" href="compilers.php?phpLang=de" title="Compiler">';
 
 
 include_once "header.de.inc";
@@ -11,51 +11,67 @@ include_once "header.de.inc";
 
 
 
-
 <h2><a name="build">6.1 The Build Process</a></h2>
-
-<p>To understand some of the fields, you need some knowledge of the
+<p>
+To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
 compile, install and build. The example paths below are for an
-installation in <code>/sw</code> and the package gimp-1.2.1-1.</p>
-<p>In the <b>unpack phase</b> the directory <code>/sw/src/fink.build/gimp-1.2.1-1</code> is created
+installation in <code>/sw</code> and the package gimp-1.2.1-1.
+</p>
+<p>
+In the <b>unpack phase</b> the directory
+  <code>/sw/src/fink.build/gimp-1.2.1-1</code> is created
 and the source tarball(s) are unpacked there. In most cases, this will
 create a directory gimp-1.2.1 with the source in it; all following
 steps will be executed in that directory
-(i.e. <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>). Details can be controlled with
-the SourceDirectory, NoSourceDirectory and Source<b>N</b>ExtractDir
-fields.</p>
-<p>In the <b>patch phase</b> the source is patched so that it will
+(i.e. <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>). Details
+can be controlled with the SourceDirectory, NoSourceDirectory and
+Source<b>N</b>ExtractDir fields.
+</p>
+<p>
+In the <b>patch phase</b> the source is patched so that it will
 build on Darwin. The actions specified by the UpdateConfigGuess,
 UpdateLibtool, Patch and PatchScript fields will be executed, in that
-order.</p>
-<p>In the <b>compile phase</b> the source is configured and
+order.
+</p>
+<p>
+In the <b>compile phase</b> the source is configured and
 compiled. Usually this means calling the <code>configure</code> script
 with some parameters and then issuing a <code>make</code> command. See the
 CompileScript field description for details.  If test suites are enabled
 for the build (a new feature in fink 0.25, currently achieved by building in
 maintainer mode), the TestScript will be run immediately after the
-CompileScript.</p>
-<p>In the <b>install phase</b> the package is installed to a temporary
-directory, <code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d). (Note the "root-" part.)
-All files that would normally be installed to <code>/sw</code> are installed in
-<code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (= %i = %d%p) instead. See the
-InstallScript field description for details.</p>
-<p>(<b>Introduced in fink 0.9.9.</b> It is possible to generate several
+CompileScript.
+</p>
+<p>
+In the <b>install phase</b> the package is installed to a temporary
+directory, <code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d).
+(Note the "root-" part.) All files that would normally be installed to
+<code>/sw</code> are installed in
+<code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (= %i = %d%p)
+instead. See the InstallScript field description for details.
+</p>
+<p>
+(<b>Introduced in fink 0.9.9.</b> It is possible to generate several
 packages from a single package description using the <code>SplitOff</code>
 field.  Towards the end of the install phase, separate install directories
 are created for each package being created, and files are moved to
-the appropriate directory.)</p>
-<p>In the <b>build phase</b> a binary package file (.deb) is built
+the appropriate directory.)
+</p>
+<p>
+In the <b>build phase</b> a binary package file (.deb) is built
 from the temporary directory. You can't influence this step directly,
 but various information from the package description is used to
-generate a <code>control</code> file for dpkg.</p>
+generate a <code>control</code> file for dpkg.
+</p>
+
 
 
 <h2><a name="fields">6.2 Fields</a></h2>
-
-<p>We have divided the list of fields into several categories.
-The list of fields is not necessarily complete. <code>:-)</code></p>
+<p>
+We have divided the list of fields into several categories.
+The list of fields is not necessarily complete. <code>:-)</code>
+</p>
 <p><b>Initial Data:</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Package</td><td>
 <p>
@@ -65,8 +81,10 @@ May contain lowercase letters, numbers and the special characters '.',
 No underscores ('_'), no capital letters.
 Required field.
 </p>
-<p>Percent expansion is applied to this field for %N, %{Ni}, %type_raw[],
-and %type_pkg[] only.</p>
+<p>
+Percent expansion is applied to this field for %N, %{Ni}, %type_raw[],
+and %type_pkg[] only.
+</p>
 <p>
 As per Fink packaging policy, a given package must always
 compile with the same options enabled. If you have multiple variants
@@ -96,9 +114,7 @@ Required field.
   sorted, you can use the <code>dpkg</code> command at a shell
   prompt. For example,
 </p>
-<pre>
-  dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "true"
-</pre>
+<pre>  dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "true"</pre>
 <p>
   will print "true" because version string "1.2.1"
   is less than "1.3". See the <code>dpkg</code> manpage for
@@ -113,18 +129,18 @@ Revision numbers start at 1.
 Required field.
 </p>
 <p>
-  Fink's policy is that <b>any</b> time you make a change to the
-  <code>.info</code> file that results in changes to the
-  binary (compiled) form of a package (the <code>.deb</code>
-  file), you <b>must</b> increase <code>Revision</code>. This
-  includes changing the <code>Depends</code> or other package lists,
-  and adding,
-  removing, or renaming splitoff packages or shifting files among
-  them. When migrating a package to a new tree (from 10.2 to 10.3, for
-  example) involves such changes, you should
-  increase <code>Revision</code> by 10 (or some other large number) in the newer tree in order to
-  leave space for future updates to the package in the older
-  tree.
+Fink's policy is that <b>any</b> time you make a change to the
+<code>.info</code> file that results in changes to the
+binary (compiled) form of a package (the <code>.deb</code>
+file), you <b>must</b> increase <code>Revision</code>. This
+includes changing the <code>Depends</code> or other package lists,
+and adding,
+removing, or renaming splitoff packages or shifting files among
+them. When migrating a package to a new tree (from 10.2 to 10.3, for
+example) involves such changes, you should
+increase <code>Revision</code> by 10 (or some other large number) in the newer
+tree in order to leave space for future updates to the package in the older
+tree.
 </p>
 </td></tr><tr valign="top"><td>Architecture</td><td>
 <p>
@@ -150,11 +166,9 @@ the <code>Depends</code> field for more information). In this manner,
 certain variants can be restricted to certain architectures. For
 example:
 </p>
-<pre>
-  Package: foo-pm%type_pkg[perl]
+<pre>  Package: foo-pm%type_pkg[perl]
   Type: perl (5.8.8 5.10.0)
-  Architecture: (%type_pkg[perl] = 5100) x86_64
-</pre>
+  Architecture: (%type_pkg[perl] = 5100) x86_64</pre>
 <p>
 will result in the field for the foo-pm5100 variant
 being <code>x86_64</code> and the field being blank for the foo-pm588
@@ -185,10 +199,10 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.7</code>, <code>10.8</code>, and <code>10.9</code> distributions share
-a common set of finkinfo files, the most common use of this field will be for 
-packages which are suitable for one of those distributions but not the
-other.
+Since Fink's <code>10.7</code>, <code>10.8</code>, and <code>10.9</code>
+distributions share a common set of finkinfo files, the most common use of this
+field will be for packages which are suitable for one of those distributions
+but not the other.
 </p>
 <p>
 This field supports the standard conditional syntax for any value in
@@ -197,11 +211,9 @@ the <code>Depends</code> field for more information). In this manner,
 certain variants can be restricted to certain distributions. For
 example:
 </p>
-<pre>
-  Package: foo-pm%type_pkg[perl]
+<pre>  Package: foo-pm%type_pkg[perl]
   Type: perl (5.12.3 5.12.4)
-  Distribution: (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8
-</pre>
+  Distribution: (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8</pre>
 <p>
 will result in the <code>Distribution</code> field for the foo-pm5123 variant
 being <code>10.7, 10.8</code> and the field being blank for the 
@@ -213,8 +225,7 @@ a common use of this field.  For reference, we note the availabilty of
 various perl versions in the 10.3 through 10.9 distributions
 (<b>bolded</b> systems indicate system-perl at that version):
 </p>
-<pre>
-    perl 5.6.0:  10.3
+<pre>    perl 5.6.0:  10.3
     perl 5.8.0:  10.3
     perl 5.8.1:  <b>10.3</b>, 10.4
     perl 5.8.4:  10.3, 10.4
@@ -224,12 +235,11 @@ various perl versions in the 10.3 through 10.9 distributions
     perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
     perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
-    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>
-</pre>
-<p>A way to include all supported variants in a single finkinfo file is as follows.
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b></pre>
+<p>
+A way to include all supported variants in a single finkinfo file is as follows.
 </p>
-<pre>
-  Package: foo-pm%type_pkg[perl]
+<pre>  Package: foo-pm%type_pkg[perl]
   Type: perl (5.8.8 5.10.0 5.12.3 5.12.4 5.16.2)
   Distribution: &lt;&lt;
    (%type_pkg[perl] = 588) 10.6,
@@ -237,8 +247,7 @@ various perl versions in the 10.3 through 10.9 distributions
    (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8, (%type_pkg[perl] = 5123) 10.9,
    (%type_pkg[perl] = 5124) 10.7, (%type_pkg[perl] = 5124) 10.8, (%type_pkg[perl] = 5124) 10.9,
    (%type_pkg[perl] = 5162) 10.7, (%type_pkg[perl] = 5162) 10.8, (%type_pkg[perl] = 5162) 10.9
-  &lt;&lt;
-</pre>
+  &lt;&lt;</pre>
 <p>Note that we do not include old
 distributions, such as 10.2 or 10.4-transitional, since the versions of
 fink which are relevant for them do not recognize this field.
@@ -248,7 +257,8 @@ fink which are relevant for them do not recognize this field.
 <b>Introduced in fink 0.12.0.</b>
 This optional field can be used to specify the epoch of the package
 (which defaults to 0 if not specified). For more information refer to
-the <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian
+the
+<a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian
 Policy Manual</a>.
 Because Fink and some of the underlying Debian tools use
 name-version-revision as the unique identifier of a package, you must
@@ -300,7 +310,8 @@ consisting of three numbers separated by periods, e.g.,
 <code>perl 5.6.0</code>.
 </p>
 <p>
-Beginning in a CVS version of fink after fink-0.19.2, the language/language-version use has
+Beginning in a CVS version of fink after fink-0.19.2, the
+language/language-version use has
 been generalized to allow any Maintainer-defined types and associated
 subtypes and more than a single type for a given package. The type and
 subtype are each arbitrary strings of non-whitespace characters (but
@@ -326,10 +337,8 @@ perl 5.12.3</code> and the other <code>Type: perl 5.12.4</code>. The special
 subtype list "(boolean)" stands for a list containing the
 type itself and a period, so the following two forms are identical:
 </p>
-<pre>
-Type: -x11 (boolean)
-Type: -x11 (-x11 .)
-</pre>
+<pre>Type: -x11 (boolean)
+Type: -x11 (-x11 .)</pre>
 <p>
 Subtype list expansion/package cloning is recursive; if there are
 multiple types with subtype lists, you will get all combinations:
@@ -340,15 +349,12 @@ One can access the specific variant subtype in other fields using the
 %type_raw[] and %type_pkg[] pseudo-hashes. Here are two example .info
 fragments:
 </p>
-<pre>
-Info2: &lt;&lt;
+<pre>Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
 Type: perl (5.12.3 5.12.4)
 Depends: perl%type_pkg[perl]-core
- &lt;&lt;
-</pre>
-<pre>
-Info2: &lt;&lt;
+ &lt;&lt;</pre>
+<pre>Info2: &lt;&lt;
 Package: bar%type_pkg[-x11]
 Type: -x11 (boolean)
 Depends: (%type_raw[-x11] = -x11) x11
@@ -361,8 +367,7 @@ CompileScript:  &lt;&lt;
   fi
   make
 &lt;&lt;
-&lt;&lt;
-</pre>
+&lt;&lt;</pre>
 <p>
 Starting in fink 0.26.0, there is a special <code>Type: -64bit</code>
 which controls a new percent expansion <code>%lib</code> and also
@@ -371,8 +376,7 @@ with the new construction %type_num[], this allows a single .info file
 to build both a 32-bit version of a library and a 64-bit version.
 Here's some sample code:
 </p>
-<pre>
-Info2: &lt;&lt;
+<pre>Info2: &lt;&lt;
 Package: foo%type_pkg[-64bit]
 Type: -64bit (boolean)
 Depends: (%type_raw[-64bit] = -64bit) 64bit-cpu
@@ -384,9 +388,9 @@ SplitOff: &lt;&lt;
     %p/%lib/libfoo.1.dylib 1.0.0 %n (&gt;= 1.0-1) %type_num[-64bit]
   &lt;&lt;
 &lt;&lt;
-&lt;&lt;
-</pre>
-<p>Note that <code>Type: -64bit</code> is generally not appropriate for
+&lt;&lt;</pre>
+<p>
+Note that <code>Type: -64bit</code> is generally not appropriate for
 the x86_64 architecture, since in that case
 libraries are being built 64-bit by default
 and stored in <code>%i/lib</code>.
@@ -424,22 +428,16 @@ Here are the features added for each InfoN level, along with the
 earliest version of fink that supports it:
 </p>
 <ul>
-<li>
-<code>Info2</code> (fink&gt;=0.20.0): Ability to use percent-expansions
-in the main <code>Package</code> field of the .info file and the
-ability to use the <code>%type_*</code> percent-expansions in
-the <code>Package</code> field of <code>SplitOff</code>
-(and <code>SplitOff<b>N</b></code>) packages.
-</li>
-<li>
-<code>Info3</code> (fink&gt;=0.25.0): Can indent nicely in .info files,
-no more support for RFC-822 multi-lines, and can put comments in
-pkglist fields.
-</li>
-<li>
-<code>Info4</code> (fink&gt;=0.26.2): adds %V expansion, and permits
-<code>%lib</code> in <code>ConfigureParams</code> field.
-</li>
+<li><code>Info2</code> (fink&gt;=0.20.0): Ability to use percent-expansions
+  in the main <code>Package</code> field of the .info file and the
+  ability to use the <code>%type_*</code> percent-expansions in
+  the <code>Package</code> field of <code>SplitOff</code>
+  (and <code>SplitOff<b>N</b></code>) packages.</li>
+<li><code>Info3</code> (fink&gt;=0.25.0): Can indent nicely in .info files,
+  no more support for RFC-822 multi-lines, and can put comments in
+  pkglist fields.</li>
+<li><code>Info4</code> (fink&gt;=0.26.2): adds %V expansion, and permits
+  <code>%lib</code> in <code>ConfigureParams</code> field.</li>
 </ul>
 </td></tr></table>
 <p><b>Dependencies:</b></p>
@@ -472,7 +470,8 @@ either make sure that the other package is not used even when it is
 present or add it to the Depends field.
 If you want to offer the user both options, make two separate
 packages, e.g. wget and wget-ssl.
-</p><p>
+</p>
+<p>
 Order of operations: logical "OR" (list of alternatives) has
 a higher precedence (binds more tightly) than the logical
 "AND" between each package (or set of alternatives) in the
@@ -480,7 +479,8 @@ comma-separated list. Unlike the use of parentheses in arithmetic,
 there is no way to specify alternative groups of packages or otherwise
 change the order of operations in <code>Depends</code> and related
 fields.
-</p><p>
+</p>
+<p>
 Starting with a post-0.18.2 CVS version of fink, you can have
 conditional dependencies. These are specified by placing
 <code>(string1 op string2)</code> before a package name. Percent
@@ -489,7 +489,8 @@ expansion is performed as usual and then the two strings
 according to the <code>op</code> operator: &lt;&lt;, &lt;=, =, !=,
 &gt;&gt;, &gt;=. The immediately-following package is only considered
 as a dependency if the comparison is true.
-</p><p>
+</p>
+<p>
 You can use this format to simplify maintaining several similar
 packages. For example, the packages elinks and elinks-ssl could both list:
 </p>
@@ -497,52 +498,44 @@ packages. For example, the packages elinks and elinks-ssl could both list:
 	expat-shlibs,
 	(%n = elinks-ssl) openssl097-shlibs
 &lt;&lt;</pre>
-<p>
-would have the same effect as having elinks list:
-</p>
+<p>would have the same effect as having elinks list:</p>
 <pre>Depends: expat-shlibs</pre>
-<p>
-and elinks-ssl list:
-</p>
+<p>and elinks-ssl list:</p>
 <pre>Depends: expat-shlibs, openssl097-shlibs</pre>
 <p>
 As an alternative syntax, you can also specify <code>(string)</code>,
 which is "true" if <code>string</code> is non-null. For example:
 </p>
-<pre>
-Package: nethack%type_pkg[-x11]
+<pre>Package: nethack%type_pkg[-x11]
 Type: -x11 (boolean)
-Depends: (%type_pkg[-x11]) x11
-</pre>
+Depends: (%type_pkg[-x11]) x11</pre>
 <p>
 would set the package x11 as a dependency for the nethack-x11 variant
 but not for the nethack variant.
 </p>
 <p>
-  Note that when using Depends/BuildDepends for shared library packages
-  for which more than one major-version is available, you must
-  <b>not</b> do the following:
+Note that when using Depends/BuildDepends for shared library packages
+for which more than one major-version is available, you must
+<b>not</b> do the following:
 </p>
-<pre>
-  Package: foo
+<pre>  Package: foo
   Depends: id3lib3.7-shlibs | id3lib4-shlibs
-  BuildDepends: id3lib3.7-dev | id3lib4-dev
-</pre>
+  BuildDepends: id3lib3.7-dev | id3lib4-dev</pre>
 <p>
-  even if your package could work with either library. Pick one
-  (preferably the highest version that can be used successfully) and
-  use it consistently in your package.
+even if your package could work with either library. Pick one
+(preferably the highest version that can be used successfully) and
+use it consistently in your package.
 </p>
 <p>
-  As explained in the <a href="policy.php?phpLang=de#sharedlibs">Shared Library Policy</a>, only one of the
-  -dev packages can be installed at a time, and each has links of the
-  same name that could point to different filenames in the associated
-  -shlibs package. When compiling package foo, the actual filename (in
-  the -shlibs package) gets hard-coded into the foo binary. That means
-  the resulting package needs the specific -shlibs package associated
-  with the -dev that was installed at compile-time. As a result, one
-  cannot have a <code>Depends</code> that indicates that either one
-  will suffice.
+As explained in the <a href="policy.php?phpLang=de#sharedlibs">Shared Library Policy</a>, only one of the
+-dev packages can be installed at a time, and each has links of the
+same name that could point to different filenames in the associated
+-shlibs package. When compiling package foo, the actual filename (in
+the -shlibs package) gets hard-coded into the foo binary. That means
+the resulting package needs the specific -shlibs package associated
+with the -dev that was installed at compile-time. As a result, one
+cannot have a <code>Depends</code> that indicates that either one
+will suffice.
 </p>
 <p>
 In the past, non-essential packages implicitly depended on the
@@ -583,7 +576,10 @@ items. They do not inherit from the parent package that contains the
 Provides list nor is there a syntax for specifying an arbitrary version
 in the Provides field itself. Further, a dependency that contains a
 version specification is not satisfied by a package that Provides that
-needed package name. As a result, having many variants provide a common surrogate package may be harmful, because it precludes the use of versioned dependencies. For example, if foo-gnome and foo-nognome both have "Provides: foo", another package with "Depends: foo (&gt; 1.1)" will not work.
+needed package name. As a result, having many variants provide a common
+surrogate package may be harmful, because it precludes the use of versioned
+dependencies. For example, if foo-gnome and foo-nognome both have "Provides:
+foo", another package with "Depends: foo (&gt; 1.1)" will not work.
 </p>
 </td></tr><tr valign="top"><td>Conflicts</td><td>
 <p>
@@ -689,9 +685,9 @@ eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 <p>
-  The standard continent and country codes are listed in
-  <code>/sw/lib/fink/mirror/_keys</code>, which is part of the
-  fink or fink-mirrors package.
+The standard continent and country codes are listed in
+<code>/sw/lib/fink/mirror/_keys</code>, which is part of the
+fink or fink-mirrors package.
 </p>
 </td></tr><tr valign="top"><td>Source</td><td>
 <p>
@@ -702,8 +698,8 @@ supports a special URL scheme for mirrors:
 look up the mirror setting for <b>mirror-name</b> in Fink's
 configuration, append the <b>relative-path</b> part and use that as
 the actual URL. The known <b>mirror-name</b>s are listed in
-<code>/sw/lib/fink/mirror/_list</code>, which is part of the fink or fink-mirrors
-package. Alternatively, using <code>custom</code> as the
+<code>/sw/lib/fink/mirror/_list</code>, which is part of the fink or
+fink-mirrors package. Alternatively, using <code>custom</code> as the
 <b>mirror-name</b> will cause Fink to use the <code>CustomMirror</code>
 field.
 Before the URL is used, percent expansion takes place. Remember that
@@ -721,7 +717,8 @@ default is <code>%n-%v.tar.gz</code> (i.e. a manual
 download).
 This implicitly-defined <code>Source</code> form is deprecated
 (explicitly-stated simple filename/manual download is still okay).
-</p><p>
+</p>
+<p>
 Sources that are only needed in order to run test suites should
 use <code>TestSource</code> and related fields, inside the
 <code>InfoTest</code> block.
@@ -768,8 +765,8 @@ expect. See ghostscript, vim and tetex for examples of usage.
 This field can rename a source tarball on the fly. This is useful
 if for example the version of the source is encoded in the directory name on
 the server, but the tarball itself has the same name for all versions, e.g.
-<code>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</code>. To circumvent the problems
-caused by this, you would then use something like
+<code>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</code>. To
+circumvent the problems caused by this, you would then use something like
 </p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>
@@ -778,9 +775,10 @@ In the above example this would result in the tarball being stored under
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
-This is just the same as the <code>SourceRename</code> field, except that it
-is used to rename the tarball specified by the corresponding <code>Source<b>N</b></code>
-field. See context or hyperref for examples of usage.
+This is just the same as the <code>SourceRename</code> field, except that it is
+used to rename the tarball specified by the corresponding
+<code>Source<b>N</b></code> field. See context or hyperref for examples of
+usage.
 </p>
 </td></tr><tr valign="top"><td>Source-MD5</td><td>
 <p>
@@ -791,20 +789,17 @@ tarballs not matching the one the package creator used. Common causes for this
 problem include: incompletely downloaded tarballs; upstream maintainers silently
 replaced a tarball; a trojan or similar attacks; and so on.
 </p>
-<p>
-A typical usage example looks like this:
-</p>
+<p>A typical usage example looks like this:</p>
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 <p>
 To compute the checksum, the <code>md5sum</code> tool is used. If you want to
-determine the checksum of the tarball <code>/sw/src/apache_1.3.23.tar.gz</code>,
+determine the checksum of the tarball
+<code>/sw/src/apache_1.3.23.tar.gz</code>,
 you run the following command (displayed with output here):
 </p>
 <pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
 4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
-<p>
-As you can see, the value to the left is exactly the value you need.
-</p>
+<p>As you can see, the value to the left is exactly the value you need.</p>
 </td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
@@ -876,8 +871,9 @@ build directory will be replaced with versions that know about
 Darwin. This happens in the patch phase and before the PatchScript
 is run. <b>Only</b> use this when you know that the package needs
 it. Some packages can be broken by overwriting the libtool scripts
-with mismatching versions. See the <a href="/doc/porting/libtool.php">libtool
-page</a> for further information.
+with mismatching versions. See the
+<a href="/doc/porting/libtool.php">libtool page</a>
+for further information.
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
 <p>
@@ -931,7 +927,6 @@ Use <code>PatchFile</code> instead. Support for <code>Patch</code>
 will be removed in the future.
 </p>
 
-
 </td></tr><tr valign="top"><td>PatchFile</td><td>
 <p>
 The same syntax as the <code>Patch</code> field. The full path to this
@@ -980,16 +975,12 @@ below. Before the commands are executed, <a href="format.php?phpLang=de#percent"
 a <code>PatchFile</code> field exists, the
 default <code>PatchScript</code> is:
 </p>
-<pre>
-patch -p1 &lt; %{PatchFile}
-</pre>
+<pre>patch -p1 &lt; %{PatchFile}</pre>
 <p>
 If one or more <code>PatchFile<b>N</b></code> fields are used, the 
 following is appended as needed to the default script:
 </p>
-<pre>
-patch -p1 &lt; %{PatchFile<b>N</b>}
-</pre>
+<pre>patch -p1 &lt; %{PatchFile<b>N</b>}</pre>
 <p>
 If there is no <code>PatchFile</code>, the default is blank. If you
 have an explicit <code>PatchScript</code>, you must apply
@@ -1018,11 +1009,10 @@ If you specify a value for one of these, it will be
 prepended to the default value.
 The preset variables (and their default values) are:
 </p>
-<pre>
-CPPFLAGS: -I%p/include
-LDFLAGS: -L%p/lib
-</pre>
-<p> Starting in fink 0.26.0, there is one exception to these defaults:
+<pre>CPPFLAGS: -I%p/include
+LDFLAGS: -L%p/lib</pre>
+<p>
+Starting in fink 0.26.0, there is one exception to these defaults:
 if <code>Type: -64bit</code> is set to <code>-64bit</code>, then the
 default value of <code>LDFLAGS</code> is <code>-L%p/%lib -L%p/lib</code> 
 instead.
@@ -1053,7 +1043,8 @@ blank, the default is <code>True</code>.
 </td></tr><tr valign="top"><td>BuildAsNobody</td><td>
 <p>
 In fink &gt;= 0.33.0, when set to a <code>false</code> value, causes fink
-to build as <code>root</code> rather than as the underprivileged <code>fink-bld</code> user.
+to build as <code>root</code> rather than as the underprivileged
+<code>fink-bld</code> user.
 If this field is not present, its value defaults to <code>true</code>, indicating
 that the package should be built as <code>fink-bld</code>.
 </p>
@@ -1067,38 +1058,39 @@ For packages not of <code>Type: Perl</code>, the parameter
 As of fink &gt; 0.13.7, this field will also work with perl modules
 <code>Type: Perl</code>; the default perl Makefile.PL
 string is prepended to the value supplied for <code>ConfigureParams</code>.
-</p><p>
+</p>
+<p>
 If a build is being done
 with test suites enabled, the value of the <code>TestConfigureParams</code>
 field will be appended to the normal <code>ConfigureParams</code> value.
-
 </p>
 <p>
-  Starting in fink-0.22.0, this field supports conditionals. The
-  syntax is the same as that used in the <code>Depends</code> and
-  other package-list fields. The conditional expression only applies
-  to the whitespace-delimited "word" immediately following
-  it. For example
+Starting in fink-0.22.0, this field supports conditionals. The
+syntax is the same as that used in the <code>Depends</code> and
+other package-list fields. The conditional expression only applies
+to the whitespace-delimited "word" immediately following
+it. For example
 </p>
-<pre>
-Type: -x11 (boolean)
-ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared
-</pre>
+<pre>Type: -x11 (boolean)
+ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared</pre>
 <p>
-  will always pass the <code>--mandir</code> and <code>--disable-shared</code> flags, but only pass <code>--with-x11</code> in the -x11 variant.
+will always pass the <code>--mandir</code> and <code>--disable-shared</code>
+flags, but only pass <code>--with-x11</code> in the -x11 variant.
 </p>
 <p>
-This field supports placing parameters into multiple lines using multi-line field declarators. The field is handled as a shell command line and uses <code>\</code> to separate lines:
+This field supports placing parameters into multiple lines using multi-line
+field declarators. The field is handled as a shell command line and uses
+<code>\</code> to separate lines:
 </p>
-<pre>
-ConfigureParams: &lt;&lt;
+<pre>ConfigureParams: &lt;&lt;
 	--mandir=%p/share/man \
 	(%type_pkg[-x11]) --with-x11 \
 	--disable-shared
-&lt;&lt;
-</pre>
+&lt;&lt;</pre>
 <p>
-Note: do not place conditional parameters as the last line when using the multi-line field format. In instances when the conditional evaluates as false, the parameter immediately following is not evaluated and this breaks the shell.
+Note: do not place conditional parameters as the last line when using the
+multi-line field format. In instances when the conditional evaluates as false,
+the parameter immediately following is not evaluated and this breaks the shell.
 </p>
 </td></tr><tr valign="top"><td>GCC</td><td>
 <p>
@@ -1106,15 +1098,15 @@ This field specifies the GCC-ABI used by C++ code in this package.
 (It is needed because that ABI has changed twice, and any libraries
 which you link to containing C++ code must be compiled with the same ABI
 you are currently using.)
-</p><p>
+</p>
+<p>
 The allowed values are:
-<code>2.95.2</code> (or <code>2.95</code>),
- <code>3.1</code>,
- <code>3.3</code>,
+<code>2.95.2</code> (or <code>2.95</code>), <code>3.1</code>, <code>3.3</code>,
 and <code>4.0</code>.
 Our understanding is that the GCC authors intend to stabilize the GCC-ABI
 at some point; we can hope that it won't change again.
-</p><p>
+</p>
+<p>
 The GCC field does not have a default value, per se, since it is ignored
 if it is not set.  However, for each tree, there is an expected value
 for GCC corresponding to the default g++ compiler for that tree.
@@ -1122,13 +1114,15 @@ The expected values for the various package trees are:
 <code>2.95</code> in the 10.1 tree, <code>3.1</code> in the 10.2 tree,
  <code>3.3</code> in the 10.2-gcc3.3, 10.3, and 10.4-transitional
 trees, and <code>4.0</code> in the 10.4 and 10.7 trees.
-</p><p>
+</p>
+<p>
 Note that when the GCC value is different from the expected value, the compiler
 must be specified within the package (typically by setting the CC or CXX
 flags), and a dependency on one of the (virtual) gcc packages should be
 specified.
 </p>
-<p>As of fink 0.13.8, when this flag is present, the version of gcc
+<p>
+As of fink 0.13.8, when this flag is present, the version of gcc
 is tested using <code>gcc_select</code>, and fink exits with an error
 if the wrong version is present.
 </p>
@@ -1169,7 +1163,8 @@ the default instead (as of fink 0.13.4) is:
  INSTALLSCRIPT=%p/bin
 make
 make test</pre>
-<p>If the type is <code>perl $version</code> with the version specified
+<p>
+If the type is <code>perl $version</code> with the version specified
 (e.g., <code>$version</code> might be 5.6.0),
 then the default becomes:
 </p>
@@ -1188,9 +1183,11 @@ then the default becomes:
  INSTALLSCRIPT=%p/bin
 make
 make test</pre>
-<p>where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and 
+<p>
+where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and
 earlier, and is 
-"darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
+"darwin-thread-multi-2level" for versions 5.8.1 and later.
+</p>
 </td></tr><tr valign="top"><td>NoPerlTests</td><td> 
 <p>
 <b>Introduced in fink &gt; 0.13.7.</b>
@@ -1209,29 +1206,37 @@ a build with test suites enabled.  It contains other fields.
 If present, this field <b>must</b> contain a <code>TestScript</code>.
 All other fields are optional.  The following fields are allowed inside
 <code>InfoTest</code>:
-</p><ul>
-<li><code>TestScript</code>: A script which runs the test suite.  This script should exit
+</p>
+<ul>
+<li><code>TestScript</code>: A script which runs the test suite.  This script
+  should exit
     with status 0 if the suite passes, 1 to indicate warnings, or any other
     value to indicate failures serious enough to be considered fatal.
     Because of this tri-state logic, you should explicitly set an exit value in
     this script.  For instance, <code>make check</code> is a bad script,
     since it will exit with status 1 if the check target doesn't exist.
     <code>make check || exit 2</code> would be a better script.</li>
-<li><code>TestConfigureParams</code>: A value which will be appended to <code>ConfigureParams</code>.</li>
-<li><code>TestDepends</code> and <code>TestConflicts</code>: Lists of packages that will be added to the <code>BuildDepends</code> or <code>BuildConflicts</code> lists.</li>
-<li><code>TestSource</code>: Extra sources necessary to run the test suite.  All of the
+<li><code>TestConfigureParams</code>: A value which will be appended to
+  <code>ConfigureParams</code>.</li>
+<li><code>TestDepends</code> and <code>TestConflicts</code>: Lists of packages
+  that will be added to the <code>BuildDepends</code> or
+  <code>BuildConflicts</code> lists.</li>
+<li><code>TestSource</code>: Extra sources necessary to run the test suite.
+  All of the
     affiliated fields are also supported, so you <b>must</b> also specify
     <code>TestSource-MD5</code>, and you may also have
     <code>TestSourceN</code> and corresponding <code>TestSourceN-MD5</code>,
     <code>TestTarFilesRename</code>, etc.</li>
-<li><code>TestSuiteSize</code>: Describes approximately how long the test suite takes to
-    run.  Valid values are <code>small</code>, <code>medium</code>, and <code>large</code>.
+<li><code>TestSuiteSize</code>: Describes approximately how long the test suite
+  takes to
+    run.  Valid values are <code>small</code>, <code>medium</code>, and
+    <code>large</code>.
     This field is currently ignored.</li>
 <li>Any other standard field.  If a field is specified both inside and outside
 <code>InfoTest</code>, the value inside <code>InfoTest</code> will replace
 the other value when test suites are active.</li>
-</ul><p>Here's an example:
-</p><pre>InfoTest: &lt;&lt;
+</ul><p>Here's an example:</p>
+<pre>InfoTest: &lt;&lt;
     TestScript: make check || exit 2
     TestConfigureParams: --enable-tests
 &lt;&lt;</pre>
@@ -1275,9 +1280,9 @@ the default instead (as of fink 0.13.4) is:
  INSTALLSITEMAN3DIR=%i/share/man/man3 \
  INSTALLBIN=%i/bin \
  INSTALLSITEBIN=%i/bin \
- INSTALLSCRIPT=%i/bin
-</pre>
-<p>If the type is <code>perl $version</code> with the version specified
+ INSTALLSCRIPT=%i/bin</pre>
+<p>
+If the type is <code>perl $version</code> with the version specified
 (e.g., <code>$version</code> might be 5.6.0),
 then the default becomes:
 </p>
@@ -1291,11 +1296,12 @@ then the default becomes:
  INSTALLSITEMAN3DIR=%i/share/man/man3 \
  INSTALLBIN=%i/bin \
  INSTALLSITEBIN=%i/bin \
- INSTALLSCRIPT=%i/bin
-</pre>
-<p>where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and 
+ INSTALLSCRIPT=%i/bin</pre>
+<p>
+where <code>$perlarchdir</code> is "darwin" for versions 5.8.0 and
 earlier, and is 
-"darwin-thread-multi-2level" for versions 5.8.1 and later.</p>
+"darwin-thread-multi-2level" for versions 5.8.1 and later.
+</p>
 <p>
 If the package supports it, it is preferably to use <code>make install
 DESTDIR=%d</code> instead.
@@ -1372,13 +1378,19 @@ Shared libraries that are "private" are denoted by an exclamation mark
 preceeding the filename, and no compatilibity or versioning
 information is given. See the <a href="policy.php?phpLang=de#sharedlibs">Shared Library Policy</a> for more
 information.
-</p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
+</p>
+</td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
-This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <a href="#profile.d">profile.d scripts section</a>). As long as your package is installed, these variables will be set via the <code>/sw/bin/init.[c]sh</code> scripts.
+This field provides a convenient way to set environment variables to some static
+value at runtime (if you need more flexibility, refer to the
+<a href="#profile.d">profile.d scripts section</a>). As long as your
+package is installed, these variables will be set via the
+<code>/sw/bin/init.[c]sh</code> scripts.
 </p>
 <p>
-The value of your variable can contain spaces (trailing ones are trimmed); also, percent expansion takes place. For example:
+The value of your variable can contain spaces (trailing ones are trimmed); also,
+percent expansion takes place. For example:
 </p>
 <pre>RuntimeVars: &lt;&lt;
  SomeVar: %p/Value
@@ -1390,14 +1402,18 @@ will be respectively '/sw/Value' (or whatever your prefix is) and 'foo bar'.
 </p>
 <p>
 This field works by appending appropriate commands to the InstallScript.
-These commands add a setenv/export line for each variable to the package profile.d scripts, so you can provide your own ones, they won't be overwritten. The lines are prepended to the scripts, you can thus use these variables in your scripts.
+These commands add a setenv/export line for each variable to the package
+profile.d scripts, so you can provide your own ones, they won't be overwritten.
+The lines are prepended to the scripts, you can thus use these variables in your
+scripts.
 </p>
 </td></tr><tr valign="top"><td>SplitOff</td><td>
 <p>
 <b>Introduced in fink 0.9.9.</b>
 Generate a second package from the same compile/install run.
 For details about how this works, see the separate
-<a href="#splitoffs">splitoff section</a> below.
+<a href="#splitoffs">splitoff section</a>
+below.
 </p>
 </td></tr><tr valign="top"><td>SplitOff<b>N</b></td><td>
 <p>
@@ -1437,17 +1453,15 @@ Some possible values are <code>install</code>, <code>upgrade</code>,
 Note that there are more values, used during error rollback or when
 removing a package in favor of another one.
 </p>
-<p>
-The scripts are called at the following times:
-</p>
+<p>The scripts are called at the following times:</p>
 <ul>
 <li>PreInstScript: When the package is installed for the first time
-and before upgrading the package to this version.</li>
+  and before upgrading the package to this version.</li>
 <li>PostInstScript: After unpacking and setting up the package.</li>
 <li>PreRmScript: Before the package is removed or upgraded to a later
-version.</li>
+  version.</li>
 <li>PostRmScript: After the package was removed or upgraded to a later
-version.</li>
+  version.</li>
 </ul>
 <p>
 To make it more clear, an upgrade invokes both the ...Inst scripts of
@@ -1479,19 +1493,19 @@ Only a "purge" also removes the configuration files.
 Lists the names of Info documents that the package installs in
 %p/share/info.
 This will add appropriate code to the postinst and prerm scripts to
-maintain the Info directory file, <code>dir</code>.</p>
-<p><b>Note:</b>  Only use the un-numbered file in the case of split Info
-documents. E.g. if a package has:</p>
-<pre>
-foo.info
+maintain the Info directory file, <code>dir</code>.
+</p>
+<p>
+<b>Note:</b>  Only use the un-numbered file in the case of split Info
+documents. E.g. if a package has:
+</p>
+<pre>foo.info
 foo.info-1
-foo.info-2
-</pre>
+foo.info-2</pre>
 <p>you should only use:</p>
-<pre>
-InfoDocs:  foo.info
-</pre>
-<p>This feature is still in flux, more fields for finer control may be
+<pre>InfoDocs:  foo.info</pre>
+<p>
+This feature is still in flux, more fields for finer control may be
 added in the future.
 </p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>
@@ -1515,9 +1529,7 @@ See the description of DaemonicFile for details.
 </td></tr></table>
 <p><b>Additional Data:</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Homepage</td><td>
-<p>
-The URL of the upstream home page of the package.
-</p>
+<p>The URL of the upstream home page of the package.</p>
 </td></tr><tr valign="top"><td>DescDetail</td><td>
 <p>
 A more detailed description than the one in the <code>Description</code>
@@ -1548,38 +1560,44 @@ is necessary" goes here. Multiple lines allowed.
 </td></tr></table>
 
 
+
 <h2><a name="splitoffs">6.3 SplitOffs</a></h2>
-<p>Beginning with fink 0.9.9, a single .info file can be used to build
+<p>
+Beginning with fink 0.9.9, a single .info file can be used to build
 multiple packages.  
 The install phase begins as usual, with the execution of the 
 <code>InstallScript</code> and <code>DocFiles</code> commands.
-A <code>SplitOff</code> or <code>SplitOff<b>N</b></code> field, if present, then triggers the
-creation of an
+A <code>SplitOff</code> or <code>SplitOff<b>N</b></code> field, if present,
+then triggers the creation of an
 additional install directory.  Within the 
-<code>SplitOff</code> or <code>SplitOff<b>N</b></code> field, the new install directory is referred to as %i,
+<code>SplitOff</code> or <code>SplitOff<b>N</b></code> field, the new install
+directory is referred to as %i,
 while the original install directory of the parent 
 package is referred to as %I.
 </p>
 <p>
-Each <code>SplitOff</code> and <code>SplitOff<b>N</b></code> field must contain a number of fields of its
+Each <code>SplitOff</code> and <code>SplitOff<b>N</b></code> field must
+contain a number of fields of its
 own.  In fact, it resembles a complete package description, but with
 certain fields missing.  Here is what belongs in the sub-description
 (by category):
 </p>
 <ul>
 <li>Initial Data: Only the <code>Package</code> needs to be specified,
-everything else is inherited from the parent package.  You may modify
-<code>Type</code> and <code>License</code> by declaring the field
-within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.  Percent expansion can be used, and
-it is often convenient to refer to the name %N of the parent
-package.</li>
+  everything else is inherited from the parent package.  You may modify
+  <code>Type</code> and <code>License</code> by declaring the field
+  within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.  Percent
+  expansion can be used, and
+  it is often convenient to refer to the name %N of the parent
+  package.</li>
 <li>Dependencies: All of these are allowed.</li>
 <li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
-and will be ignored.</li>
+  and will be ignored.</li>
 <li>Install Phase, Build Phase: Any of these fields are allowed (except
-that SplitOffs cannot themselves contain additional SplitOffs).</li>
+  that SplitOffs cannot themselves contain additional SplitOffs).</li>
 <li>Additional Data: These are inherited from the parent package but may
-be modified by declaring the field within the <code>SplitOff</code> or <code>SplitOff<b>N</b></code>.</li>
+  be modified by declaring the field within the <code>SplitOff</code> or
+  <code>SplitOff<b>N</b></code>.</li>
 </ul>
 <p>
 Because %n-%v-%r is treated as the unique identifier of a package, you
@@ -1590,13 +1608,11 @@ multiple packages. If you use variants, remember that each variant is
 considered an independent package, so the following package layout is
 forbidden:
 </p>
-<pre>
-Package: mime-base64-pm%type_pkg[perl]
+<pre>Package: mime-base64-pm%type_pkg[perl]
 Type: perl (5.12.3 5.12.4)
 SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
-&lt;&lt;
-</pre>
+&lt;&lt;</pre>
 <p>
 During the install phase, the <code>InstallScript</code> and 
 <code>DocFiles</code> of the parent package are executed first.
@@ -1609,31 +1625,32 @@ current installation directory %i.  Then the <code>DocFiles</code>
 and other Installation Phase fields of the given <code>SplitOff</code>
 or <code>SplitOff<b>N</b></code> package are
 executed.  
-</p><p>
+</p>
+<p>
 At this time, the <code>SplitOff</code> is processed first (if
 present), followed by each <code>SplitOff<b>N</b></code> in
 numerical order by N. However, this may change in the future, so, for
 example, instead of:
 </p>
-<pre>
-SplitOff: &lt;&lt;
+<pre>SplitOff: &lt;&lt;
   Description: Some header files
   Files: include/foo.h include/bar.h
 &lt;&lt;
 SplitOff2: &lt;&lt;
   Description: All other header files
   Files: include/*
-&lt;&lt;
-</pre>
+&lt;&lt;</pre>
 <p>
 which only works correctly if <code>SplitOff</code> is processed
 before <code>SplitOff2</code> it's safer to list explicitly the files
 for each (or use more specific filename globs).
-</p><p>
+</p>
+<p>
 During the build phase, the pre/post install/remove scripts for each of
 the packages is constructed by using the build phase commands which
 were specified for that package.
-</p><p>
+</p>
+<p>
 Each package being built is required
 to document the licensing arrangement in %i/share/doc/%n (and of course
 %n takes a different value for each package).  Note that
@@ -1644,16 +1661,16 @@ of the packages by using <code>DocFiles</code> several times.
 
 
 
-
 <h2><a name="scripts">6.4 Scripts</a></h2>
-
-<p>The PatchScript, CompileScript and InstallScript fields allow you
+<p>
+The PatchScript, CompileScript and InstallScript fields allow you
 to specify shell commands to be executed. The build directory
 (<code>%b</code>) is the current directory when scripts are
 executed. You should always use relative pathnames or
 percent-expansions for files and directories in the fink hierarchy,
 not complete absolute pathnames. Two forms are supported.
-</p><p>
+</p>
+<p>
 This field can be a simple list of commands. This is sort of like a
 shell script. However, the commands are executed via system(), one
 line at a time, so setting variables or changing the directory only
@@ -1661,7 +1678,8 @@ affects commands on that same line. Starting in a CVS version of fink
 after 0.18.2, you can wrap long lines similar to normal shell scripts:
 a backslash (<code>\</code>) at the end of a line indicates that the
 next line is a continuation.
-</p><p>
+</p>
+<p>
 Alternately, you can embed a complete script here, using the
 interpreter of your choice. As with any Unix script, the first line
 must begin with <code>#!</code> followed by the full pathname of to
@@ -1671,45 +1689,60 @@ the interpreter and any needed flags (e.g., <code>#!/bin/csh</code>,
 </p>
 
 
-<h2><a name="patches">6.5 Patches</a></h2>
 
-<p>If your package needs a patch to compile on Darwin (or to work with
+<h2><a name="patches">6.5 Patches</a></h2>
+<p>
+If your package needs a patch to compile on Darwin (or to work with
 fink), name the patch with the same name as the package description,
 using the extension ".patch" instead of ".info" and put it in the same
 directory as the .info file. 
-Specify the filename of the patchfile with a line such as:</p>
+Specify the filename of the patchfile with a line such as:
+</p>
 <pre>PatchFile: %n.patch</pre>
-<p>(For packages with variants, it may be better to use 
+<p>
+(For packages with variants, it may be better to use
 <code>%{ni}.patch</code> .)
 You must also give the MD5 sum of the patchfile in the 
 <code>PatchFile-MD5</code> field, and specify 
 <code>BuildDepends: fink (&gt;= 0.24.12)</code> (or a later version of fink).
 </p>
-
-<p>When a <code>PatchFile<b>N</b></code> field is used, general custom 
-is to name the file <code>%n-purpose-of-patch.patch</code> to make it easy to keep 
+<p>
+When a <code>PatchFile<b>N</b></code> field is used, general custom
+is to name the file <code>%n-purpose-of-patch.patch</code> to make it
+easy to keep
 track of. You must also use the field <code>PatchFile<b>N</b>-MD5</code> 
 and specify <code>BuildDepends: fink (&gt;= 0.30.0)</code> (or a later 
 version of fink).
 </p>
-
-<p>When a <code>PatchFile</code> declaration is present, there is a
-default <code>PatchScript</code> equivalent to:</p>
+<p>
+When a <code>PatchFile</code> declaration is present, there is a
+default <code>PatchScript</code> equivalent to:
+</p>
 <pre>PatchScript: patch -p1 &lt; %{PatchFile}</pre>
-<p>Using <code>PatchFile<b>N</b></code> appends the following to the 
-default <code>PatchScript</code> above:</p>
+<p>
+Using <code>PatchFile<b>N</b></code> appends the following to the
+default <code>PatchScript</code> above:
+</p>
 <pre>patch -p1 &lt; %{PatchFile<b>N</b>}</pre>
-<p>This will be overridden if you supply a <code>PatchScript</code>
+<p>
+This will be overridden if you supply a <code>PatchScript</code>
 of your own (for example, to perform a substitution on the patch file
-before applying it).</p>
-<p>If you  need to have the user's chosen prefix in the patch file
+before applying it).
+</p>
+<p>
+If you  need to have the user's chosen prefix in the patch file
 it is recommended that you have a variable such as <code>@PREFIX@</code> 
-instead of <code>/sw</code> in the patch and then use:</p>
+instead of <code>/sw</code> in the patch and then use:
+</p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</pre>
 <p>Patches should be in unidiff format and are normally generated by using:</p>
 <pre>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</pre>
-<p>If you have used emacs to edit files, you can add <code>-x'*~'</code> to the diff command above in order to exclude automatically-generated backup files.</p>
-<p>It must also be noted that extremely large patches should not be put in cvs.
+<p>
+If you have used emacs to edit files, you can add <code>-x'*~'</code> to the
+diff command above in order to exclude automatically-generated backup files.
+</p>
+<p>
+It must also be noted that extremely large patches should not be put in cvs.
 They should be put on a web/ftp server and specified using the
 <code>SourceN:</code> field. If you don't have a website, fink project
 admins can make the file available from fink's own website. If your
@@ -1718,16 +1751,25 @@ separate download.
 </p>
 
 
-<h2><a name="profile.d">6.6 Profile.d scripts</a></h2>
 
+<h2><a name="profile.d">6.6 Profile.d scripts</a></h2>
 <p>
-If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
-These script fragments are sourced by the <code>/sw/bin/init.[c]sh</code> scripts. Normally, all fink users will load these scripts in their shell startup files (<code>.cshrc</code> and comparable files).
-Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <code>/sw/etc/profile.d/%n.[c]sh</code> (where %n as usual stands for the package name).
-Also, their executable and read bits have to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
+If your package needs some run-time initialization  (e.g. to setup environment
+variables), you can use profile.d scripts.
+These script fragments are sourced by the <code>/sw/bin/init.[c]sh</code>
+scripts. Normally, all fink users will load these scripts in their shell startup
+files (<code>.cshrc</code> and comparable files).
+Your package must provide each script in two variants: one for sh compatible
+shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh).
+They have to be installed as <code>/sw/etc/profile.d/%n.[c]sh</code>
+(where %n as usual stands for the package name).
+Also, their executable and read bits have to be set (i.e. install them with -m
+755), otherwise they will not be loaded correctly.
 </p>
 <p>
-If you just need to set some environment variables (for example, QTDIR to '/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
+If you just need to set some environment variables (for example, QTDIR to
+'/sw'), you can use the RuntimeVars field which is provided as a convenient way
+to achieve exactly this.
 </p>
 
 
