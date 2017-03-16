@@ -189,9 +189,11 @@ Werden drei Pakete benötigt, kann man sie auf zwei Arten benennen, je nachdem o
 die Bibliotheken (Option 1) oder die Binärprogramme (Option 2) das wichtigste am
 Paket sind. Bei Option 1 sieht das Layout so aus:
 </p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Dynamische Bibliotheken</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Header-Dateien</p></td></tr><tr valign="top"><td><code>foo-bin</code></td><td><p>Binärprogramme, usw.</p></td></tr></table>
 
 <p>während bei Option 2 das Layout so aussieht:</p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><code>foo-shlibs</code></td><td><p>Dynamische Bibliotheken</p></td></tr><tr valign="top"><td><code>foo-dev</code></td><td><p>Header-Dateien</p></td></tr><tr valign="top"><td><code>foo</code></td><td><p>Binärprogramme, usw.</p></td></tr></table>
 
 <p><b>Die Richtlinien im Detail</b></p>
@@ -348,7 +350,9 @@ foo-dev folgendes deklariert werden:
 <pre>  Conflicts: bar-dev
   Replaces: bar-dev</pre>
 <p>und genau so, aber umgekehrt, in bar-dev.</p>
-<p>Darüber hinaus sollten beide Pakete das Feld BuildDependsOnly gesetzt haben</p>
+<p>
+Darüber hinaus sollten beide Pakete das Feld BuildDependsOnly gesetzt haben.
+</p>
 <pre>  BuildDependsOnly: True</pre>
 <p>
 Dies verhindert, dass man Pakete erstellt, die von foo-dev oder bar-dev
@@ -368,10 +372,10 @@ Header-Dateien in <code>%i/include</code> (oder einem Unterverzeichnis)
 installieren.
 </p>
 <p>
-Ab fink 0.20.5 erzeugt der Befehl "fink validate" eine Warnung für jede
+Ab Fink 0.20.5 erzeugt der Befehl "fink validate" eine Warnung für jede
 .deb-Datei, die Header-Dateien und mindestens eine dynamische Bibliothek
 enthält und das Feld BuildDependsOnly weder auf wahr noch falsch setzt.
-(Es ist durchaus möglich, dass fink in Zukunft dies auf Fälle von
+(Es ist durchaus möglich, dass Fink in Zukunft dies auf Fälle von
 .deb-Dateien ausdehnt, die Header-Dateien und statische Bibliotheken
 enthält.)
 </p>
@@ -394,7 +398,7 @@ Feld <code>Shlibs</code> eingetragen werden. Dieses Feld hat für jede dynamisch
 Bibliothek nur eine Zeile mit dem <code>-install_name</code> der Bibliothek.
 Ist die Bibliothek öffentlich, steht in der Zeile auch die
 <code>-compatibility_version</code>, Informationen zur Abhängigkeit mit Version
-darüber welches Fink-Paket die Bibliothek mit dieser
+darüber, welches Fink-Paket die Bibliothek mit dieser
 <code>-compatibility_version</code> enthält und die Architektur der Bibliothek.
 (Die Architektur der Bibliothek kann "32", "64" oder "32-64" sein oder ganz
 fehlen. Ist sie nicht explizit angegeben, wird die Voreinstellung genommen, d.h.
@@ -447,7 +451,9 @@ wurde) des Verzeichnisses <code>%i/lib</code> verschoben wird. Dies ist
 unsere Empfehlung als zusätzlicher Schutzmechanismus, der verhindert, dass
 andere Pakete diese Bibliothek aus Versehen verlinken.
 </p>
-<p><b>Was muss ich machen, wenn siech die Nummer der Hauptversion ändert?</b></p>
+<p>
+<b>Was muss ich machen, wenn sich die Nummer der Hauptversion ändert?</b>
+</p>
 <p>
 Ändert sich die Nummer der Hauptversion von N auf M, muss man zwei neue Pakete
 barM und barM-shlibs erstellen. Das Paket barM-shlibs darf keine gemeinsamen
@@ -473,8 +479,8 @@ barN-shlibs und barM-shlibs bleiben hingegen die ganze Zeit installiert.
 Enthält eine Upstream-Paket gleichzeitig Binärdateien und öffentliche
 Bibliotheken, muss man bei der Erstellung der Finkpakete aufpassen. Manchmal
 sind die Binärdateien lediglich <code>foo-config</code>, die nur in der
-Build-Phase des Pakets benötigt werden und nie zur Laufzeit. In solchen Fällen
-können diese Dateien zusammen mit den Header-Dateien in das Paket
+Erstellungs-Phase des Pakets benötigt werden und nie zur Laufzeit. In solchen
+Fällen können diese Dateien zusammen mit den Header-Dateien in das Paket
 <code>foo</code>.
 </p>
 <p>
@@ -502,10 +508,10 @@ Systemen, solange bis die anderen Paketbetreuer ihre Pakete, die von
 <code>foo</code> abhängen, aktualisiert haben.
 </p>
 <p>
-Ab fink 0.28.0 (veröffentlich im Januar 2008) hat sich das Format für einen
-Eintrag im Feld <code>Shlibs</code> für private dynamische Bibliotheken geändert.
-(Beachten sie bitte die obigen Erläuterungen zu den Unterschieden zwischen
-privaten und öffentlichn dynamischen Bibliotheken.) Die Richtlinien für
+Ab Fink 0.28.0 (veröffentlich im Januar 2008) hat sich das Format für einen
+Eintrag im Feld <code>Shlibs</code> für private dynamische Bibliotheken
+geändert. (Beachten sie bitte die obigen Erläuterungen zu den Unterschieden
+zwischen privaten und öffentlichn dynamischen Bibliotheken.) Die Richtlinien für
 dynamische Bibliotheken war schon immer so, dass alle dynamische Bibliotheken
 aufgezählt werden müssen. Die Änderung betrifft nur das Feld
 <code>Shlibs</code>. Da private Bibliotheken nicht von anderen Paketen benutzt
@@ -668,7 +674,7 @@ Aufruf auch mit dem allgemeinen Namen ohne Perlversion zu ermöglichen.
 </p>
 <p>
 Ab März 2005 wurde auch der Platz für die man-Pages und die Module, die vom
-fink-Paket für Perl selbst (also die Pakete perlXYZ und perlXYZ-core mit
+Finkpaket für Perl selbst (also die Pakete perlXYZ und perlXYZ-core mit
 Versionen, die vom der von Apple abweichen) geändert. Deshalb sollten andere
 Finkpakete die aktualisierte Versionen von core-Perl-Modulen anbieten, die
 Pakete perlXYZ oder perlXYZ-core nicht in ihrem Feld <code>Replaces</code>
