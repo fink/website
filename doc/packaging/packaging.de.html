@@ -25,7 +25,7 @@ Sowohl das Format der Paketbeschreibung als auch die Distributionspolitik sind
 in Entwicklung. Achten sie also auf "Last changed"-Informationen und CVS Tipps
 zu dieser Seite, wenn es um Aktualisierungen geht.
 Diese Beschreibung hier bezieht sich auf Formate und Richtlinien für Version
-0.9.0 und höher des Paketmanagers fink.
+0.9.0 und höher des Paketmanagers Fink.
 </p>
 <p>
 Beabsichtigen sie Pakete für Fink zu erstellen, ist es sinnvoll die Mailing-Liste
@@ -35,7 +35,7 @@ Wenn sie einfach bei Fink mithelfen wollen und sie sich fit fühlen, können sie
 <a href="http://pdb.finkproject.org/pdb/nomaintainer.php">ein Paket aus dieser
 Liste übernehmen</a>, das derzeit ohne Betreuer ist.
 </p>
-<h2>Contents</h2><ul><li><a href="#intro"><b>1 Einführung</b></a><ul><li><a href="#intro.def1">1.1 Was ist ein Paket?</a></li><li><a href="#intro.ident">1.2 Identifikation eines Pakets</a></li></ul></li><li><a href="#format"><b>2 Paketbeschreibungen</b></a><ul><li><a href="#format.trees">2.1 Verzeichnis-Layout</a></li><li><a href="#format.format">2.2 Datei-Format</a></li><li><a href="#format.percent">2.3 Prozent-Erweiterungen</a></li></ul></li><li><a href="#policy"><b>3 Richtlinien zur Estellung von Paketen</b></a><ul><li><a href="#policy.licenses">3.1 Paket-Lizenzen</a></li><li><a href="#policy.openssl">3.2 Die GPL und OpenSSL</a></li><li><a href="#policy.prefix">3.3 Störungen des Basis-Systems</a></li><li><a href="#policy.sharedlibs">3.4 Dynamische Bibliotheken</a></li><li><a href="#policy.perlmods">3.5 Perl-Module</a></li><li><a href="#policy.emacs">3.6 Emacs-Richtlinien</a></li><li><a href="#policy.sources">3.7 Quelldateien-Richtlinien</a></li><li><a href="#policy.downloading">3.8 Datei-Download-Richtlinien</a></li></ul></li><li><a href="#fslayout"><b>4 Dateisystem-Layout</b></a><ul><li><a href="#fslayout.fhs">4.1 Hierarchie-Standard für Dateiverzeichnisse</a></li><li><a href="#fslayout.dirs">4.2 Die Verzeichnisse</a></li><li><a href="#fslayout.avoid">4.3 Was sollte man vermeiden?</a></li></ul></li><li><a href="#compilers"><b>5 Compiler</b></a><ul><li><a href="#compilers.versions">5.1 Compilerversionen</a></li><li><a href="#compilers.abi">5.2 Die g++ ABI</a></li></ul></li><li><a href="#reference"><b>6 Reference</b></a><ul><li><a href="#reference.build">6.1 The Build Process</a></li><li><a href="#reference.fields">6.2 Fields</a></li><li><a href="#reference.splitoffs">6.3 SplitOffs</a></li><li><a href="#reference.scripts">6.4 Scripts</a></li><li><a href="#reference.patches">6.5 Patches</a></li><li><a href="#reference.profile.d">6.6 Profile.d scripts</a></li></ul></li></ul><h2><a name="intro">1 Einführung</a></h2>
+<h2>Contents</h2><ul><li><a href="#intro"><b>1 Einführung</b></a><ul><li><a href="#intro.def1">1.1 Was ist ein Paket?</a></li><li><a href="#intro.ident">1.2 Identifikation eines Pakets</a></li></ul></li><li><a href="#format"><b>2 Paketbeschreibungen</b></a><ul><li><a href="#format.trees">2.1 Verzeichnis-Layout</a></li><li><a href="#format.format">2.2 Datei-Format</a></li><li><a href="#format.percent">2.3 Prozent-Erweiterungen</a></li></ul></li><li><a href="#policy"><b>3 Richtlinien zur Estellung von Paketen</b></a><ul><li><a href="#policy.licenses">3.1 Paket-Lizenzen</a></li><li><a href="#policy.openssl">3.2 Die GPL und OpenSSL</a></li><li><a href="#policy.prefix">3.3 Störungen des Basis-Systems</a></li><li><a href="#policy.sharedlibs">3.4 Dynamische Bibliotheken</a></li><li><a href="#policy.perlmods">3.5 Perl-Module</a></li><li><a href="#policy.emacs">3.6 Emacs-Richtlinien</a></li><li><a href="#policy.sources">3.7 Quelldateien-Richtlinien</a></li><li><a href="#policy.downloading">3.8 Datei-Download-Richtlinien</a></li></ul></li><li><a href="#fslayout"><b>4 Dateisystem-Layout</b></a><ul><li><a href="#fslayout.fhs">4.1 Hierarchie-Standard für Dateiverzeichnisse</a></li><li><a href="#fslayout.dirs">4.2 Die Verzeichnisse</a></li><li><a href="#fslayout.avoid">4.3 Was sollte man vermeiden?</a></li></ul></li><li><a href="#compilers"><b>5 Compiler</b></a><ul><li><a href="#compilers.versions">5.1 Compilerversionen</a></li><li><a href="#compilers.abi">5.2 Die g++ ABI</a></li></ul></li><li><a href="#reference"><b>6 Referenz</b></a><ul><li><a href="#reference.build">6.1 Der Build-Prozess</a></li><li><a href="#reference.fields">6.2 Felder</a></li><li><a href="#reference.splitoffs">6.3 SplitOffs</a></li><li><a href="#reference.scripts">6.4 Skripte</a></li><li><a href="#reference.patches">6.5 Patches</a></li><li><a href="#reference.profile.d">6.6 Profile.d scripts</a></li></ul></li></ul><h2><a name="intro">1 Einführung</a></h2>
 
 
 
@@ -81,7 +81,7 @@ Der Paketname is einfach der Name der Software, z. B. openssh.
 Die Version, auch Upstream-Version genannt, ist die Version des ursprünglichen
 Software-Pakets.
 Buchstaben sind in der Version erlaubt, z. B. 2.9p1.
-Sowohl fink als auch dpkg wissen, wie man diese richtig sortiert.
+Sowohl Fink als auch dpkg wissen, wie man diese richtig sortiert.
 Die Revision ist ein Zähler, der erhöht wird, wenn sich die Paketbeschreibung
 ändert.
 Sie beginnt mit 1 und sollte auf 1 zurückgesetzt werden, wenn sich die
@@ -105,7 +105,7 @@ Einstellung "Trees" in der Datei <tt style="white-space: nowrap;">/sw/etc/fink.c
 bestimmt, welche Verzeichnisse gelesen werden.
 Der Name der Paketbeschreibungsdatei besteht aus dem vollständigen Paketnamen
 und dem Suffix ".info".
-Ab fink 0.26.0 gibt es mehre Möglichkeiten für den Dateinamen: Empfohlen wird
+Ab Fink 0.26.0 gibt es mehre Möglichkeiten für den Dateinamen: Empfohlen wird
 der kürzeste Name, der konsistent mit anderen Paketen ist, die benötigt werden.
 Der Dateiname hat folgende Form: der unveränderliche Paketname, optional die
 Architektur, optional die Distribution, optional Version oder Version-Revision,
@@ -120,7 +120,7 @@ organisiert. Die Verzeichnisse von oben nach unten:
 </p>
 <ul>
 <li><tt style="white-space: nowrap;">dists</tt> ist der Anfang. Das Verzeichnis <tt style="white-space: nowrap;">dists</tt>
-  wird für die Debian Tools benötigt. In neueren Version von fink ist dies ein
+  wird für die Debian Tools benötigt. In neueren Version von Fink ist dies ein
   Symlink zu einem Verzeichnis mit einem distributionsbezogenem Namen.</li>
 <li>Die Distributionen. Es gibt <tt style="white-space: nowrap;">stable</tt>, <tt style="white-space: nowrap;">unstable</tt> und
   <tt style="white-space: nowrap;">local</tt>. Das Verzeichnis <tt style="white-space: nowrap;">local</tt> wird vom lokalen
@@ -205,6 +205,7 @@ anzeigt, welche Buchstaben für eine Prozent-Erweiterung genommen werden sollen.
 <tt style="white-space: nowrap;">%{n}</tt> hat zum Beispiel die gleiche Bedeutung wie <tt style="white-space: nowrap;">%n</tt>.
 Folgende Erweiterungen stehen zur Verfügung:
 </p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left"></th><th align="left"></th></tr><tr valign="top"><td>%n</td><td>
 <p>Der <b>n</b>ame des Pakets</p>
 </td></tr><tr valign="top"><td>%N</td><td>
@@ -240,7 +241,7 @@ Epoche nicht zu <tt style="white-space: nowrap;">%f</tt> gehört.
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-Der <b>p</b>refix wo fink installiert ist, also <tt style="white-space: nowrap;">/sw</tt>.
+Der <b>p</b>refix wo Fink installiert ist, also <tt style="white-space: nowrap;">/sw</tt>.
 Sie dürfen nicht annehmen, dass alle Nutzer Fink in <tt style="white-space: nowrap;">/sw</tt>
 installiert haben, nutzen sie immer <tt style="white-space: nowrap;">%p</tt> für den korrekten Pfad.
 </p>
@@ -260,7 +261,7 @@ Das Verzeichnis <b>D</b>estination für das Elternpaket (das selbe wie %d außer
 innerhalb eines <tt style="white-space: nowrap;">SplitOff</tt>)
 </p>
 </td></tr><tr valign="top"><td>%i</td><td>
-<p>Der vollständige <b>i</b>nstall-phase-Präfix, äquivalent zu %d%p</p>
+<p>Der vollständige <b>i</b>nstallationsphase-Präfix, äquivalent zu %d%p</p>
 </td></tr><tr valign="top"><td>%I</td><td>
 <p>
 Der <b>I</b>nstall-Präfix des Elternpakets, äquivalent zu %D%P (das selbe wie
@@ -268,7 +269,7 @@ Der <b>I</b>nstall-Präfix des Elternpakets, äquivalent zu %D%P (das selbe wie
 </p>
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>
-Der Pfad, wo sich die P<b>a</b>tches befinden. Ab fink-0.29.0 sollte diese
+Der Pfad, wo sich die P<b>a</b>tches befinden. Ab Fink-0.29.0 sollte diese
 Variable nicht mehr benutzt werden. Nutzen sie <tt style="white-space: nowrap;">%{PatchFile}</tt>, um auf
 die <tt style="white-space: nowrap;">.patch</tt>-Datei zuzugreifen. Die Unterstützung für
 <tt style="white-space: nowrap;">%a</tt> wird in der Zukunft entfernt werden.
@@ -307,15 +308,15 @@ Installation zwischen den Architekturen, die auf der Hardware des Nutzers
 laufen können. Mögliche Werte sind 'powerpc' für PowerPC-Macs und 'i386' oder
 'x86_64' für Intel-Macs. Die Auswahl 'x86_64' steht auf Intel-Macs nur zur
 Verfügung, wenn der Mac 64-bit Bibliotheken und Programme ausführen kann.
-(Dieser Werf wurde etwa in fink-0.12 eingeführt, die aktuellen Beschreibung gilt
-für fink-0.29.5 und später.)
+(Dieser Werf wurde etwa in Fink-0.12 eingeführt, die aktuellen Beschreibung gilt
+für Fink-0.29.5 und später.)
 </p>
 </td></tr><tr valign="top"><td>%%</td><td>
 <p>
 Das Zeichen Prozent (Ein Zeichen, das nicht erweitert wird, was auch immer
 danach folgt). Die Erweiterung erfolgt streng von links nach rechts. Damit hat
 %%n nichts mit dem Paketnamen zu tun, sondern bedeutet die Zeichenfolge %n. (In
-fink-0.18.0 eingeführt)
+Fink-0.18.0 eingeführt)
 </p>
 </td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>],
 %type_num[<b>type</b>]</td><td>
@@ -325,7 +326,7 @@ Lesen sie die Dokumentation für das Feld <tt style="white-space: nowrap;">Type<
 diesem Dokument. Die Form _raw ist die exakte Zeichenfolge des Subtyps, während
 bei der Form _pkg alle Punkte entfernt wurden (entsprechend Finks Konventionen
 für Paketnamen mit Sprachversionen und andere kluge Verwendungen). (Eingeführt
-in einer post-0.19.2 CVS-Version von Fink.) Die Form -num wurde in fink-0.26.0
+in einer post-0.19.2 CVS-Version von Fink.) Die Form -num wurde in Fink-0.26.0
 eingeführt und entfernt alle Zeichen außer Zahlen aus dem Feld <tt style="white-space: nowrap;">Type</tt>.
 </p>
 <p>
@@ -338,7 +339,7 @@ Subtype ausgerechnet wird.)
 <p>
 Der <b>i</b>nvariante Teil des Paket<b>n</b>amens. Sie sind wie %n and %N,
 außer dass alle Teile von %type_pkg[] und %type_raw[] gelöscht sind.
-(Eingeführt in einer post-0.19.2 CVS-Version von fink) Sie sollten %{ni} und
+(Eingeführt in einer post-0.19.2 CVS-Version von Fink) Sie sollten %{ni} und
 %{Ni} verwenden, um Verwechslungen mit den Erweiterungen %n und %N zu verhindern.
 </p>
 </td></tr><tr valign="top"><td>%{default_script}</td><td>
@@ -350,17 +351,17 @@ Felder. Der Wert hängt oft vom Feld <tt style="white-space: nowrap;">Type</tt> 
 eines <tt style="white-space: nowrap;">SplitOff</tt> (oder <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>) verwendet,
 gibt sie die Voreinstellung der Eltern zurück, selbst wenn die Voreinstellung
 für das <tt style="white-space: nowrap;">InstallScript</tt> in einem <tt style="white-space: nowrap;">SplitOff</tt>-Paket leer
-ist. (Eingeführt in fink-0.20.6)
+ist. (Eingeführt in Fink-0.20.6)
 </p>
 </td></tr><tr valign="top"><td>%{PatchFile}</td><td>
 <p>
 Der vollständige Pfad zu der Datei, die im Feld <tt style="white-space: nowrap;">PatchFile</tt> angegeben
-ist. (Eingeführt in fink-0.24.12)
+ist. (Eingeführt in Fink-0.24.12)
 </p>
 </td></tr><tr valign="top"><td>%{PatchFile<b>N</b>}</td><td>
 <p>
 Der vollständige Pfad zu der Datei, die im Feld <tt style="white-space: nowrap;">PatchFile<b>N</b></tt>
-angegeben ist. (Eingeführt in fink-0.30.0)
+angegeben ist. (Eingeführt in Fink-0.30.0)
 </p>
 </td></tr><tr valign="top"><td>%lib</td><td>
 <p>
@@ -368,7 +369,7 @@ Ist der <tt style="white-space: nowrap;">Type: -64bit</tt> als <tt style="white-
 unter der PowerPC-Architektur zu <b>lib/ppc64</b> erweitert und zu
 <b>lib/x86_64</b> unter der i386-Architektur (Der korrekte Speicherort für
 64-bit Bibliotheken auf einem 32-bit System); anderfalls wird es zu <b>lib</b>
-erweitert. (Eingeführt in fink-0.26.0)
+erweitert. (Eingeführt in Fink-0.26.0)
 </p>
 <p>
 Beachten sie, dass <tt style="white-space: nowrap;">%lib</tt> im Feld <tt style="white-space: nowrap;">ConfigureParams</tt>
@@ -560,9 +561,11 @@ Werden drei Pakete benötigt, kann man sie auf zwei Arten benennen, je nachdem o
 die Bibliotheken (Option 1) oder die Binärprogramme (Option 2) das wichtigste am
 Paket sind. Bei Option 1 sieht das Layout so aus:
 </p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-shlibs</tt></td><td><p>Dynamische Bibliotheken</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo</tt></td><td><p>Header-Dateien</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-bin</tt></td><td><p>Binärprogramme, usw.</p></td></tr></table>
 
 <p>während bei Option 2 das Layout so aussieht:</p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Package</th><th align="left">Contents</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-shlibs</tt></td><td><p>Dynamische Bibliotheken</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo-dev</tt></td><td><p>Header-Dateien</p></td></tr><tr valign="top"><td><tt style="white-space: nowrap;">foo</tt></td><td><p>Binärprogramme, usw.</p></td></tr></table>
 
 <p><b>Die Richtlinien im Detail</b></p>
@@ -719,7 +722,9 @@ foo-dev folgendes deklariert werden:
 <pre>  Conflicts: bar-dev
   Replaces: bar-dev</pre>
 <p>und genau so, aber umgekehrt, in bar-dev.</p>
-<p>Darüber hinaus sollten beide Pakete das Feld BuildDependsOnly gesetzt haben</p>
+<p>
+Darüber hinaus sollten beide Pakete das Feld BuildDependsOnly gesetzt haben.
+</p>
 <pre>  BuildDependsOnly: True</pre>
 <p>
 Dies verhindert, dass man Pakete erstellt, die von foo-dev oder bar-dev
@@ -739,10 +744,10 @@ Header-Dateien in <tt style="white-space: nowrap;">%i/include</tt> (oder einem U
 installieren.
 </p>
 <p>
-Ab fink 0.20.5 erzeugt der Befehl "fink validate" eine Warnung für jede
+Ab Fink 0.20.5 erzeugt der Befehl "fink validate" eine Warnung für jede
 .deb-Datei, die Header-Dateien und mindestens eine dynamische Bibliothek
 enthält und das Feld BuildDependsOnly weder auf wahr noch falsch setzt.
-(Es ist durchaus möglich, dass fink in Zukunft dies auf Fälle von
+(Es ist durchaus möglich, dass Fink in Zukunft dies auf Fälle von
 .deb-Dateien ausdehnt, die Header-Dateien und statische Bibliotheken
 enthält.)
 </p>
@@ -765,7 +770,7 @@ Feld <tt style="white-space: nowrap;">Shlibs</tt> eingetragen werden. Dieses Fel
 Bibliothek nur eine Zeile mit dem <tt style="white-space: nowrap;">-install_name</tt> der Bibliothek.
 Ist die Bibliothek öffentlich, steht in der Zeile auch die
 <tt style="white-space: nowrap;">-compatibility_version</tt>, Informationen zur Abhängigkeit mit Version
-darüber welches Fink-Paket die Bibliothek mit dieser
+darüber, welches Fink-Paket die Bibliothek mit dieser
 <tt style="white-space: nowrap;">-compatibility_version</tt> enthält und die Architektur der Bibliothek.
 (Die Architektur der Bibliothek kann "32", "64" oder "32-64" sein oder ganz
 fehlen. Ist sie nicht explizit angegeben, wird die Voreinstellung genommen, d.h.
@@ -818,7 +823,9 @@ wurde) des Verzeichnisses <tt style="white-space: nowrap;">%i/lib</tt> verschobe
 unsere Empfehlung als zusätzlicher Schutzmechanismus, der verhindert, dass
 andere Pakete diese Bibliothek aus Versehen verlinken.
 </p>
-<p><b>Was muss ich machen, wenn siech die Nummer der Hauptversion ändert?</b></p>
+<p>
+<b>Was muss ich machen, wenn sich die Nummer der Hauptversion ändert?</b>
+</p>
 <p>
 Ändert sich die Nummer der Hauptversion von N auf M, muss man zwei neue Pakete
 barM und barM-shlibs erstellen. Das Paket barM-shlibs darf keine gemeinsamen
@@ -844,8 +851,8 @@ barN-shlibs und barM-shlibs bleiben hingegen die ganze Zeit installiert.
 Enthält eine Upstream-Paket gleichzeitig Binärdateien und öffentliche
 Bibliotheken, muss man bei der Erstellung der Finkpakete aufpassen. Manchmal
 sind die Binärdateien lediglich <tt style="white-space: nowrap;">foo-config</tt>, die nur in der
-Build-Phase des Pakets benötigt werden und nie zur Laufzeit. In solchen Fällen
-können diese Dateien zusammen mit den Header-Dateien in das Paket
+Erstellungs-Phase des Pakets benötigt werden und nie zur Laufzeit. In solchen
+Fällen können diese Dateien zusammen mit den Header-Dateien in das Paket
 <tt style="white-space: nowrap;">foo</tt>.
 </p>
 <p>
@@ -873,10 +880,10 @@ Systemen, solange bis die anderen Paketbetreuer ihre Pakete, die von
 <tt style="white-space: nowrap;">foo</tt> abhängen, aktualisiert haben.
 </p>
 <p>
-Ab fink 0.28.0 (veröffentlich im Januar 2008) hat sich das Format für einen
-Eintrag im Feld <tt style="white-space: nowrap;">Shlibs</tt> für private dynamische Bibliotheken geändert.
-(Beachten sie bitte die obigen Erläuterungen zu den Unterschieden zwischen
-privaten und öffentlichn dynamischen Bibliotheken.) Die Richtlinien für
+Ab Fink 0.28.0 (veröffentlich im Januar 2008) hat sich das Format für einen
+Eintrag im Feld <tt style="white-space: nowrap;">Shlibs</tt> für private dynamische Bibliotheken
+geändert. (Beachten sie bitte die obigen Erläuterungen zu den Unterschieden
+zwischen privaten und öffentlichn dynamischen Bibliotheken.) Die Richtlinien für
 dynamische Bibliotheken war schon immer so, dass alle dynamische Bibliotheken
 aufgezählt werden müssen. Die Änderung betrifft nur das Feld
 <tt style="white-space: nowrap;">Shlibs</tt>. Da private Bibliotheken nicht von anderen Paketen benutzt
@@ -1039,7 +1046,7 @@ Aufruf auch mit dem allgemeinen Namen ohne Perlversion zu ermöglichen.
 </p>
 <p>
 Ab März 2005 wurde auch der Platz für die man-Pages und die Module, die vom
-fink-Paket für Perl selbst (also die Pakete perlXYZ und perlXYZ-core mit
+Finkpaket für Perl selbst (also die Pakete perlXYZ und perlXYZ-core mit
 Versionen, die vom der von Apple abweichen) geändert. Deshalb sollten andere
 Finkpakete die aktualisierte Versionen von core-Perl-Modulen anbieten, die
 Pakete perlXYZ oder perlXYZ-core nicht in ihrem Feld <tt style="white-space: nowrap;">Replaces</tt>
@@ -1265,7 +1272,7 @@ statischen Dateien in einem separaten Unterverzeichnis
 <tt style="white-space: nowrap;">/sw/opt/&lt;package&gt;</tt> abspeichern, wobei
 <tt style="white-space: nowrap;">&lt;package&gt;</tt> ein Name ist, der das Programmpaket
 beschreibt.
-(Verfügbar ab fink 0.29.7 oder später.)
+(Verfügbar ab Fink 0.29.7 oder später.)
 </p>
 </td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/var</tt></td><td>
 <p>
@@ -1406,223 +1413,215 @@ OS X 10.9.
 
 
 
-<h2><a name="reference">6 Reference</a></h2>
+<h2><a name="reference">6 Referenz</a></h2>
 
 
 
-<h3><a name="reference.build">6.1 The Build Process</a></h3>
+<h3><a name="reference.build">6.1 Der Build-Prozess</a></h3>
 <p>
-To understand some of the fields, you need some knowledge of the
-build process Fink uses. It consists of five phases: unpack, patch,
-compile, install and build. The example paths below are for an
-installation in <tt style="white-space: nowrap;">/sw</tt> and the package gimp-1.2.1-1.
+Für das Verständnis einiger Felder, muss man einige Details über den
+Build-Prozess von Fink wissen: Der Build-Prozess besteht aus fünf Phasen:
+Auspacken, patchen, compilieren, installieren und erstellen (build). Die
+Pfade des nachfolgenden Beispiel sind für eine Installation in
+<tt style="white-space: nowrap;">/sw</tt> und für das Paket gimp-1.2.1-1.
 </p>
 <p>
-In the <b>unpack phase</b> the directory
-  <tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1</tt> is created
-and the source tarball(s) are unpacked there. In most cases, this will
-create a directory gimp-1.2.1 with the source in it; all following
-steps will be executed in that directory
-(i.e. <tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>). Details
-can be controlled with the SourceDirectory, NoSourceDirectory and
-Source<b>N</b>ExtractDir fields.
+In der <b>Auspack-Phase</b> wird das Verzeichnis
+<tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1</tt> erzeugt und der
+Quell-Tarball oder mehrere darin ausgepackt. Das erzeugt meistens ein
+Verzeichnis gimp-1.2.1, das die Quellen enthält. Alle folgenden Schritte
+erfolgen in diesem Verzeichnis, also in
+<tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>. Details
+dieser Phase können über die Felder SourceDirectory, NoSourceDirectory und
+Source<b>N</b>ExtractDir kontrolliert werden.
 </p>
 <p>
-In the <b>patch phase</b> the source is patched so that it will
-build on Darwin. The actions specified by the UpdateConfigGuess,
-UpdateLibtool, Patch and PatchScript fields will be executed, in that
-order.
+In der <b>Patch-Phase</b> werden die Quelldateien gepacht, so dass das Paket
+auf Darwin/Mac OS X erstellt werden kann. Die Aktionen werden über die Felder
+UpdateConfigGuess, UpdateLibtool, Patch und PatchScript genau in dieser
+Reihenfolge ausgeführt.
 </p>
 <p>
-In the <b>compile phase</b> the source is configured and
-compiled. Usually this means calling the <tt style="white-space: nowrap;">configure</tt> script
-with some parameters and then issuing a <tt style="white-space: nowrap;">make</tt> command. See the
-CompileScript field description for details.  If test suites are enabled
-for the build (a new feature in fink 0.25, currently achieved by building in
-maintainer mode), the TestScript will be run immediately after the
-CompileScript.
+In der <b>Compile-Phase</b> werden die Quelldateien konfiguriert und
+compiliert. Normalerweise bedeutet dies, dass das Skript <tt style="white-space: nowrap;">configure</tt>
+mit einigen Parametern und dann das Kommando <tt style="white-space: nowrap;">make</tt> ausgeführt
+werden. Details dazu stehen in der Beschreibung des Felds CompileScript.
+Sind Tests für die Erstellung aktiviert (ein neues Feature in Fink 0.25, derzeit
+wird es im Betreuer-Modus aktiviert), wird das Test-Skript direkt nach dem
+Compile-Skript ausgeführt.
 </p>
 <p>
-In the <b>install phase</b> the package is installed to a temporary
-directory, <tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1</tt> (= %d).
-(Note the "root-" part.) All files that would normally be installed to
-<tt style="white-space: nowrap;">/sw</tt> are installed in
-<tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1/sw</tt> (= %i = %d%p)
-instead. See the InstallScript field description for details.
+In der <b>Installationsphase</b> wird das Paket in einem temporären
+Verzeichnis, <tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1</tt> (= %d),
+installiert. (Beachten sie den Teil "root-" im Namen.) Alle Dateien, die
+normalerweise in <tt style="white-space: nowrap;">/sw</tt> installiert würden, werden stattdessen
+in <tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1/sw</tt> (= %i = %d%p)
+installiert. Weitere Details stehen in der Beschreibung des Felds InstallScript.
 </p>
 <p>
-(<b>Introduced in fink 0.9.9.</b> It is possible to generate several
-packages from a single package description using the <tt style="white-space: nowrap;">SplitOff</tt>
-field.  Towards the end of the install phase, separate install directories
-are created for each package being created, and files are moved to
-the appropriate directory.)
+(<b>In Fink 0.9.9 eingeführt.</b>
+Man kann mit einer einzigen Paketbeschreibung mehrere Pakete erzeugen, indem man
+das Feld <tt style="white-space: nowrap;">SplitOff</tt> benutzt. Gegen Ende der Installationsphase wird
+für jedes Paket ein separates Installationsverzeichnis erzeugt und die Dateien
+dann in das jeweilige Verzeichnis verschoben.)
 </p>
 <p>
-In the <b>build phase</b> a binary package file (.deb) is built
-from the temporary directory. You can't influence this step directly,
-but various information from the package description is used to
-generate a <tt style="white-space: nowrap;">control</tt> file for dpkg.
+In der <b>Erstellungsphase</b> wird eine binäre Datei (.deb) aus dem
+temporären Installationsverzeichnis erzeugt. Diese Phase kann nicht direkt
+beeinflusst werden, aber diverse Informationen aus der Paketbeschreibung werden
+verwendet um eine Datei <tt style="white-space: nowrap;">control</tt> für dpkg zu erstellen.
 </p>
 
 
 
-<h3><a name="reference.fields">6.2 Fields</a></h3>
+<h3><a name="reference.fields">6.2 Felder</a></h3>
 <p>
-We have divided the list of fields into several categories.
-The list of fields is not necessarily complete. <tt style="white-space: nowrap;">:-)</tt>
+Die Felder wurden in mehrere Kategorien eingeteilt. Es kann auch sein, dass
+das eine oder andere Feld nicht beschrieben ist. <tt style="white-space: nowrap;">:-)</tt>
 </p>
-<p><b>Initial Data:</b></p>
+<p><b>Start Daten:</b></p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Package</td><td>
 <p>
-The package name.
-May contain lowercase letters, numbers and the special characters '.',
-'+' and '-'.
-No underscores ('_'), no capital letters.
-Required field.
+Der Paketname.
+Er kann Kleinbuchstaben, Zahlen und die Sonderzeichen '.', '+' und '-'
+enthalten, aber keine Unterstriche ('_') oder Grossbuchstaben.
+Ein Pflichtfeld.
 </p>
 <p>
-Percent expansion is applied to this field for %N, %{Ni}, %type_raw[],
-and %type_pkg[] only.
+Eine Prozenterweiterung wird in diesem Feld nur für %N, %{Ni}, %type_raw[],
+und %type_pkg[] vorgenommen.
 </p>
 <p>
-As per Fink packaging policy, a given package must always
-compile with the same options enabled. If you have multiple variants
-for a package (see documentation for the <tt style="white-space: nowrap;">Type</tt> field), you
-must encode the specific variant info into the <tt style="white-space: nowrap;">Package</tt>
-field (see documentation for the %type_pkg[] percent expansion). That
-way each variant has a unique name the package name indicates which
-variant option(s) are included. Note that use of the %type_pkg[] and
-%type_raw[] percent expansions in the <tt style="white-space: nowrap;">Package</tt> field is
-new and severely incompatible with older versions of fink, so such
-package descriptions must be embedded in a <tt style="white-space: nowrap;">InfoN</tt> field
-with N&gt;=2.
+Gemäß den Richtlinien für Finkpakete, muss ein Paket immer mit den gleichen
+Optionen übersetzt werden. Bei verschiedenen Varianten eines Pakets (siehe die
+Dokumentation zum Feld <tt style="white-space: nowrap;">Type</tt>) muss man die jeweilige Variante in das
+Feld <tt style="white-space: nowrap;">Package</tt> einpflegen (siehe die Dokumentation für die
+Prozenterweiterung %type_pkg[]). Auf diese Weise erhält jede Variante einen
+eindeutigen Namen und die Namen zeigen, welche Varianten zur Verfügung stehen.
+Beachten sie, dass die Prozenterweiterung %type_pkg[] und %type_raw[] relativ
+neu sind und total inkompatibel mit älteren Versionen von Fink. Deshalb müssen
+solche Paketbeschreibungen in ein Feld <tt style="white-space: nowrap;">InfoN</tt> mit N ≥ 2 eingebettet
+werden.
 </p>
 </td></tr><tr valign="top"><td>Version</td><td>
 <p>
-The upstream version number.
-Same limitations as the Package field.
-Required field.
+Die upstream-Versionsnummer.
+Es gelten die gleichen Einschränkungen wie für das Feld Package
+Ein Pflichtfeld.
 </p>
 <p>
-  Note that some programs use nonstandard version numbering schemes
-  that may cause sorting confusion or that contain characters that are
-  not allowed in this field. In these situations, when writing the
-  Fink package, you must convert the upstream value to one that is
-  acceptable and that allows the versions to be arranged in the
-  correct order. When in doubt about how version strings will be
-  sorted, you can use the <tt style="white-space: nowrap;">dpkg</tt> command at a shell
-  prompt. For example,
+Beachten sie, dass einige Programm seltsame Schemen für ihre Versionsnummern
+verwenden, die die Sortierung durcheinander bringen oder Zeichen enthalten, die
+nicht erlaubt sind. In diesen Fällen muss sie den upstream-Wert so umwandeln,
+dass er nur erlaubte Zeichen enthält und eine korrekte Sortierung ermöglicht.
+Wenn sie sich über die Sortierung von Zeichenketten nicht sicher sind, können
+sie das Kommando <tt style="white-space: nowrap;">dpkg</tt> für einen Test verwenden. Im folgenden
+Beispiel
 </p>
 <pre>  dpkg --compare-versions 1.2.1 lt 1.3 &amp;&amp; echo "true"</pre>
 <p>
-  will print "true" because version string "1.2.1"
-  is less than "1.3". See the <tt style="white-space: nowrap;">dpkg</tt> manpage for
-  more details.
+wird "true" ausgegeben, weil die Zeichenkette "1.2.1" vor
+"1.3" kommt. Mehr Details gibt es auf der man-Page von
+<tt style="white-space: nowrap;">dpkg</tt>.
 </p>
 </td></tr><tr valign="top"><td>Revision</td><td>
 <p>
-The package revision.
-Increase this when you make a new description for the same upstream
-version.
-Revision numbers start at 1.
-Required field.
+Die Revision des Pakets.
+Erhöhen sie diese Zahl, wenn sie eine neue Paketbeschreibung für dieselbe
+upstream-Version erstellen.
+Revisionsnummern beginnen mit 1.
+Ein Pflichtfeld.
 </p>
 <p>
-Fink's policy is that <b>any</b> time you make a change to the
-<tt style="white-space: nowrap;">.info</tt> file that results in changes to the
-binary (compiled) form of a package (the <tt style="white-space: nowrap;">.deb</tt>
-file), you <b>must</b> increase <tt style="white-space: nowrap;">Revision</tt>. This
-includes changing the <tt style="white-space: nowrap;">Depends</tt> or other package lists,
-and adding,
-removing, or renaming splitoff packages or shifting files among
-them. When migrating a package to a new tree (from 10.2 to 10.3, for
-example) involves such changes, you should
-increase <tt style="white-space: nowrap;">Revision</tt> by 10 (or some other large number) in the newer
-tree in order to leave space for future updates to the package in the older
-tree.
+Finks Richtlinien verlangen, dass die Revisionsnummer <b>jedes</b> Mal erhöht
+werden muss, wenn Änderungen in der Datei <tt style="white-space: nowrap;">.info</tt> Änderungen
+in der binären (kompilierten) Form des Pakets (die Datei
+<tt style="white-space: nowrap;">.deb</tt>) zur Folge haben. Beispiele sind Änderungen im
+Feld <tt style="white-space: nowrap;">Depends</tt> oder in anderen Paketlisten, Hinzufügen, Entfernen
+oder Umbenennen von SplitOff-Paketen oder Dateien zwischen diesen hin und her
+schieben. Erfordert die Migration eines Paket in einen neuen Baum (z. B. von
+10.2 nach 10.3) solche Änderungen, sollten sie die Revision um 10 oder mehr
+im neuen Baum erhöhen, damit noch Platz für Änderungen im alten Baum bleibt.
 </p>
 </td></tr><tr valign="top"><td>Architecture</td><td>
 <p>
-A comma-separated list of fink architecture(s) for which the package
-(and any splitoff packages) are intended.
-As of fink-0.29.5, the valid values for architecture are <tt style="white-space: nowrap;">powerpc</tt>,
-<tt style="white-space: nowrap;">i386</tt>, and <tt style="white-space: nowrap;">x86_64</tt>. 
-If this field is present and not blank after
-conditional handling, fink will ignore the package description(s) if
-the local fink architecture is not listed. If the field is omitted
-or the value is blank, all architectures are assumed.
+Dies ist Komma-separierte Liste der Architekturen, für die das Paket (und jedes
+SplitOff-Paket in der Beschreibung) vorgesehen ist.
+Die gültigen Architekturen sind ab Fink-0.29.5 <tt style="white-space: nowrap;">powerpc</tt>,
+<tt style="white-space: nowrap;">i386</tt> und <tt style="white-space: nowrap;">x86_64</tt>.
+Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
+ignoriert Fink die Paketbeschreibung, wenn die lokal vorhandene Architektur
+nicht aufgelistet ist. Ist das Feld weg gelassen oder der Wert leer, werden
+alle Architekturen akzeptiert.
 </p>
 <p>
-One common use of this field will be for packages which
-require a compiler earlier than gcc-4.0 (or packages which depend on such
-packages), which should be declared to have architecture 
-<tt style="white-space: nowrap;">powerpc</tt>.
+Ein häufiger Grund für dieses Feld ist, dass ein Paket einen Compiler vor
+gcc-4.0 benötigt (oder auch Pakete, die von solchen Paketen abhängen) und für
+die Architektur <tt style="white-space: nowrap;">powerpc</tt> ist.
 </p>
 <p>
-This field supports the standard conditional syntax for any value in
-the value list and percent-expansions can be used (see
-the <tt style="white-space: nowrap;">Depends</tt> field for more information). In this manner,
-certain variants can be restricted to certain architectures. For
-example:
+Diese Feld unterstützt auch die Standardsyntax für Bedingungen für jeden Wert in
+der Werteliste. Ebenso können Prozenterweiterungen verwendet werden (Beim Feld
+<tt style="white-space: nowrap;">Depends</tt> werden weitere Details beschrieben). Damit können bestimmte
+Varianten auf bestimmte Architekturen beschränkt werden. Im folgenden Beispiel:
 </p>
 <pre>  Package: foo-pm%type_pkg[perl]
   Type: perl (5.8.8 5.10.0)
   Architecture: (%type_pkg[perl] = 5100) x86_64</pre>
 <p>
-will result in the field for the foo-pm5100 variant
-being <tt style="white-space: nowrap;">x86_64</tt> and the field being blank for the foo-pm588
-variant. Remember that when the field is blank, all architectures
-are permitted.
+ist die Variante foo-pm5100 für <tt style="white-space: nowrap;">x86_64</tt> und bei der Varianten
+foo-pm588 bleibt das Feld leer, d. h. diese Variante ist für alle Architekturen.
 </p>
 <p>
-The example above gives a very common use of this field: since
-some modules for system-perl 5.10.0 on 10.6 do not build as 32-bit (i386), 
-this field allows limiting multiple-type perl packages to specific
-systems.
+Das Beispiel oben zeigt eine recht verbreitete Verwendung des Felds: Da einige
+Module auf 10.6 nicht mit dem System-Perl 5.10.0 als 32-bit (i386) erstellt
+werden können, schränkt dieses Feld die Perl-Pakete mit mehreren Typen auf
+bestimmte Systeme ein.
 </p>
 </td></tr><tr valign="top"><td>Distribution</td><td>
 <p>
-A comma-separated list of distribution(s) for which the package
-(and any splitoff packages) are intended.
-At present, the only valid values for distribution are
+Dies ist Komma-separierte Liste der Distributionen für die das Paket (und jedes
+SplitOff-Paket in der Beschreibung) vorgesehen ist.
+Derzeit sind die gültigen Distributionen
 <tt style="white-space: nowrap;">10.4</tt>,
 <tt style="white-space: nowrap;">10.5</tt>,
 <tt style="white-space: nowrap;">10.6</tt>,
 <tt style="white-space: nowrap;">10.7</tt>,
-<tt style="white-space: nowrap;">10.8</tt>,
-and <tt style="white-space: nowrap;">10.9</tt>
-. If this field is present and not blank after
-conditional handling, fink will ignore the package description(s) if
-the local machine distribution is not listed. If the field is omitted
-or the value is blank, all distributions are assumed.
-(Introduced in fink 0.26.0.)
+<tt style="white-space: nowrap;">10.8</tt>
+und <tt style="white-space: nowrap;">10.9</tt>.
+Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
+ignoriert Fink die Paketbeschreibung, wenn die lokal vorhandene Distribution
+nicht aufgelistet ist. Ist das Feld weg gelassen oder der Wert leer, werden
+alle Distributionen akzeptiert.
+(Eingeführt in Fink 0.26.0.)
 </p>
 <p>
-Since Fink's <tt style="white-space: nowrap;">10.7</tt>, <tt style="white-space: nowrap;">10.8</tt>, and <tt style="white-space: nowrap;">10.9</tt>
-distributions share a common set of finkinfo files, the most common use of this
-field will be for packages which are suitable for one of those distributions
-but not the other.
+Seit den Fink-Distributionen für <tt style="white-space: nowrap;">10.7</tt>, <tt style="white-space: nowrap;">10.8</tt> und
+<tt style="white-space: nowrap;">10.9</tt> teilen sie sich ein gemeinsames Set an finkinfo-Dateien. Eine
+übliche Verwendung des Felds ist, die Distributionen auszuklammern, für die
+das Paket nicht erstellt werden kann.
 </p>
 <p>
-This field supports the standard conditional syntax for any value in
-the value list and percent-expansions can be used (see
-the <tt style="white-space: nowrap;">Depends</tt> field for more information). In this manner,
-certain variants can be restricted to certain distributions. For
-example:
+Diese Feld unterstützt auch die Standardsyntax für Bedingungen für jeden Wert in
+der Werteliste. Ebenso können Prozenterweiterungen verwendet werden (Beim Feld
+<tt style="white-space: nowrap;">Depends</tt> werden weitere Details beschrieben). Damit können bestimmte
+Varianten auf bestimmte Distributionen beschränkt werden. Im folgenden Beispiel:
 </p>
 <pre>  Package: foo-pm%type_pkg[perl]
   Type: perl (5.12.3 5.12.4)
   Distribution: (%type_pkg[perl] = 5123) 10.7, (%type_pkg[perl] = 5123) 10.8</pre>
 <p>
-will result in the <tt style="white-space: nowrap;">Distribution</tt> field for the foo-pm5123 variant
-being <tt style="white-space: nowrap;">10.7, 10.8</tt> and the field being blank for the 
-foo-pm5124 variant.
+ist die Variante foo-pm5123 für die Distributionen <tt style="white-space: nowrap;">10.7, 10.8</tt>
+und bei der Varianten foo-pm5124 bleibt das Feld leer, d. h. diese Variante ist
+für alle Distributionen.
 </p>
-<p>Since python 2.5 is not available in the 10.7+ distributions, and the
-available perl versions vary by distribution, these package types provide
-a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3 through 10.9 distributions
-(<b>bolded</b> systems indicate system-perl at that version):
+<p>
+Da die Python-Version 2.5 für die Distributionen 10.7+ nicht zur Verfügung steht
+und die Perl-Versionen von Distrivution zu Distribution variieren, wird diese
+Feld in diesen Paketen häufig vor. Als Referenz beschreiben wir hier die
+Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.9
+(<b>Fett</b>-gedruckte Systeme zeigen die Version von Sytem-Perl an):
 </p>
 <pre>    perl 5.6.0:  10.3
     perl 5.8.0:  10.3
@@ -1636,7 +1635,8 @@ various perl versions in the 10.3 through 10.9 distributions
     perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
     perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b></pre>
 <p>
-A way to include all supported variants in a single finkinfo file is as follows.
+Eine Möglichkeit, alle unterstützten Varianten in einer einzigen finkinfo-Datei
+einzuschließen, ist diese:
 </p>
 <pre>  Package: foo-pm%type_pkg[perl]
   Type: perl (5.8.8 5.10.0 5.12.3 5.12.4 5.16.2)
@@ -1647,106 +1647,106 @@ A way to include all supported variants in a single finkinfo file is as follows.
    (%type_pkg[perl] = 5124) 10.7, (%type_pkg[perl] = 5124) 10.8, (%type_pkg[perl] = 5124) 10.9,
    (%type_pkg[perl] = 5162) 10.7, (%type_pkg[perl] = 5162) 10.8, (%type_pkg[perl] = 5162) 10.9
   &lt;&lt;</pre>
-<p>Note that we do not include old
-distributions, such as 10.2 or 10.4-transitional, since the versions of
-fink which are relevant for them do not recognize this field.
+<p>
+Beachten sie, dass wir alte Distributionen, wie 10.2 oder 10.4-transitional,
+nicht einschließen, denn die Finkversionen für diese Distributionen unterstützen
+dieses Feld nicht.
 </p>
 </td></tr><tr valign="top"><td>Epoch</td><td>
 <p>
-<b>Introduced in fink 0.12.0.</b>
-This optional field can be used to specify the epoch of the package
-(which defaults to 0 if not specified). For more information refer to
-the
+<b>Eingeführt in Fink 0.12.0.</b>
+Diese optionale Feld kann dazu benutzt werden, die Epoche eines Pakets zu
+beschreiben. (Ist es nicht angegeben, ist die Voreinstellung 0). Weitere Details
+stehen im
 <a href="http://www.debian.org/doc/debian-policy/ch-controlfields.html#s-f-Version">Debian
 Policy Manual</a>.
-Because Fink and some of the underlying Debian tools use
-name-version-revision as the unique identifier of a package, you must
-not create a package that differs from another solely by its epoch.
+Da Fink und die dahinter stehenden Debian-Tools als eindeutigen Bezeichner für
+ein Paket die Abfolge Name-Version-Revision nehmen, darf man keine Pakete
+definieren, die sich lediglich in der Epoche unterscheiden.
 </p>
 <p>
-When used in a version string, the Epoch appears before the Version
-value, separated by a colon (1:3.14-2). Note that the Epoch is not part 
-of <tt style="white-space: nowrap;">%v</tt> (or (<tt style="white-space: nowrap;">%f</tt>). If you add an Epoch field to
-a package description file, you may have to adjust versioned
-dependencies on the packages in it. For example, if you
-add <tt style="white-space: nowrap;">Epoch: 1</tt> and foo-dev declares <tt style="white-space: nowrap;">Depends:
-foo-shlibs (= %v-%r)</tt>, you will need to rewrite that
-as <tt style="white-space: nowrap;">Depends: foo-shlibs (= %e:%v-%r)</tt>.
+In einer Zeichenkette für die Version kommt die Epoche vor der Version,
+abgetrennt durch ein Semikolon (1:3.14-2). Beachten sie, dass das Feld Epoche
+weder in <tt style="white-space: nowrap;">%v</tt> noch in <tt style="white-space: nowrap;">%f</tt> enthalten ist. Fügt man das
+Feld Epoche in einer Paketbeschreibung hinzu, muss man auch die Abhängigkeiten
+aktualisieren. Fügt man z. B. in einem Paket <tt style="white-space: nowrap;">Epoch: 1</tt> hinzu und das
+Splitoff foo-dev deklariert <tt style="white-space: nowrap;">Depends: foo-shlibs (= %v-%r)</tt>, muss man
+das zu <tt style="white-space: nowrap;">Depends: foo-shlibs (= %e:%v-%r)</tt> aktualisieren.
 </p>
 </td></tr><tr valign="top"><td>Description</td><td>
 <p>
-A short description of the package (what is it?). This is a one-line
-description that will be displayed in lists, so it must be short and
-informative. It should be less than 45 chars and must be less than
-60. It is not necessary to repeat the package name in this field - it
-will always be displayed in proper context. Required field.
+Eine kurze Beschreibung des Pakets (Was ist es?). Diese Beschreibung ist
+einzeilig und wird in Überscihtslisten verwendet. Deshalb muss es kurz und
+informativ sein. Die Becshreibung soll kürzer als 45 Zeichen sein und muss
+kürzer als 60 Zeichen sein. Der Paketname muss in diesem Feld nicht vorkommen -
+diese Beschreibung wird immer im entsprechenden Kontext verwendet.
+Ein Pflichtfeld.
 </p>
 </td></tr><tr valign="top"><td>Type</td><td>
 <p>
-This can be set to <tt style="white-space: nowrap;">bundle</tt>.
-Bundle packages are used to group a set of related packages together.
-They only have dependencies, but no code and no installed files.
-The fields Source, PatchScript, CompileScript, InstallScript and
-related ones are ignored for bundle packages.
+Dieses Feld kann auf <tt style="white-space: nowrap;">bundle</tt> gesetzt werden.
+Bundle-Pakete werden dazu benutzt, einen Satz von Paketen in einer Gruppe
+zusammen zu fassen. Ein Bundle-Paket hat nur Abhängigkeiten, aber keinen Code
+oder installierte Dateien. Die Felder Source, PatchScript, CompileScript,
+InstallScript und verwandte Felder werden für Bundle-Pakete ignoriert.
 </p>
 <p>
-<tt style="white-space: nowrap;">nosource</tt> is a very similar type.
-It indicates that there is no source tarball, so nothing is fetched
-and the unpack phase creates just an empty directory.
-However, the patch, compile and install phases are executed normally.
-This way you can bring in all the code with a patch, or just create
-some directories in the InstallScript.
-Since fink 0.18.0, you can get the same behavior by setting
-<tt style="white-space: nowrap;">Source: none</tt>. This allows you to use "Type" for other
-purposes (<tt style="white-space: nowrap;">Type: perl</tt>, etc.)
+Das Feld <tt style="white-space: nowrap;">nosource</tt> ist ähnlich. Es bedeutet, dass es keinen
+Quellcode-Tarball gibt, nichts herunter geladen wird und die Auspack-Phase nur
+ein leeres Verzeichnis erzeugt.
+Die Phasen Patch, Compile und Install werden aber normal ausgeführt.
+Man kannn also den ganzen Code in der Patchphase erzeugen und im InstallSkript
+einige Verzeichnisse erzeugen.
+Ab Fink 0.18.0 kann man das selbe Verhalten auch mit den Feld
+<tt style="white-space: nowrap;">Source: none</tt> erzeugen. Dann kann man ds Feld Type für andere
+Zwecke benutzen(<tt style="white-space: nowrap;">Type: perl</tt>, usw.)
 </p>
 <p>
-Since fink 0.9.5 there is type <tt style="white-space: nowrap;">perl</tt> which causes
-alternate default values for the compile and install scripts to be used. 
-Beginning in fink 0.13.0, there is a new variant of this type,
-<tt style="white-space: nowrap;">perl $version</tt>, where $version is a specific version of perl 
-consisting of three numbers separated by periods, e.g., 
+Ab Fink 0.9.5 gibt es den Typ <tt style="white-space: nowrap;">perl</tt>, durch den alternative
+Voreinstellungen in den Compile- und Install-Skripten verwendet werden.
+Ab Fink 0.13.0 gibt es eine weitere Variante diesen Typs
+<tt style="white-space: nowrap;">perl $version</tt>, bei dem $version ein bestimmte Version von Perl ist
+die aus 3 Zahlen besteht, die mit Punkten getrennt werden, z. B.
 <tt style="white-space: nowrap;">perl 5.6.0</tt>.
 </p>
 <p>
-Beginning in a CVS version of fink after fink-0.19.2, the
-language/language-version use has
-been generalized to allow any Maintainer-defined types and associated
-subtypes and more than a single type for a given package. The type and
-subtype are each arbitrary strings of non-whitespace characters (but
-parentheses, commas, braces, and percent signs should not be used); no
-percent-expansion is performed, and the type (not subtype) values
-are converted to all-lowercase.  Multiple type values (each with an
-optional whitespace-separated subtype) are specified in a
-comma-separated list.
+Seit einer CVS-Version von Fink nach Fink-0.19.2 wurde die Verwendung von
+Sprache/Sprachenversion verallgemeinert, so dass Paketbetreuer Typen und
+Subtypen definieren können und ein Paket mehr als einen Typ haben können.
+Typ und Subtyp sind beliebige Zeichenketten ohne Leerzeichen (Klammern,
+Kommata und Prozentzeichen sollten ebenfalls nicht benutzt werden);
+die Prozenterweiterung wird NICHT angewendet und der Typ (aber nicht der Subtyp)
+wird in Kleinbuchstaben konvertiert. Mehrere Typen (jeder mit einem optionalen,
+leerzeichen-separierten Subtyp) werden komma-separiert aufgelistet.
 </p>
 <p>
-In addition, the concept of "variants" exists, where a
-single .info file describes a family of related packages with various
-options enabled. The key to this whole process is the use of a list of
-subtypes. Instead of a single string, one uses a space-separated list
-of strings in parentheses. Fink clones the package description file
-for each subtype in the list and replaces this list with that single
-subtype. For example:
+Zusätzlich existiert das Konzept von "variants", bei dem in einer
+einzigen .info-Datei eine Familie von Paketen beschrieben werden, bei denen
+verschiedene Optionen eingeschaltet sind. Der Schlüssel zu dem ganzen Prozess
+ist eine Liste von Subtypen. Statt einer einzigen Zeichenkette nutzt man eine
+Leerzeichen-separierte Liste von Zeichenketten in Klammern. Fink erzeugt für
+jeden Subtyp in der Liste einen Klon und ersetzt die Liste mit dem jeweiligen
+Subtyp, z. B.:
 </p>
 <pre>Type: perl (5.12.3 5.12.4)</pre>
 <p>
-yields two package descriptions, one that behaves as if <tt style="white-space: nowrap;">Type:
-perl 5.12.3</tt> and the other <tt style="white-space: nowrap;">Type: perl 5.12.4</tt>. The special
-subtype list "(boolean)" stands for a list containing the
-type itself and a period, so the following two forms are identical:
+ergibt zwei Paketbeschreibungen, eine die sich verhält als ob
+<tt style="white-space: nowrap;">Type: perl 5.12.3</tt> und eine andere als ob
+<tt style="white-space: nowrap;">Type: perl 5.12.4</tt> gesetzt ist. Die spezielle Subtypliste
+"(boolean)" steht für eine Liste, die den Typ selbst und einen Punkt
+enthält. Folgende zwei Formen sind identisch:
 </p>
 <pre>Type: -x11 (boolean)
 Type: -x11 (-x11 .)</pre>
 <p>
-Subtype list expansion/package cloning is recursive; if there are
-multiple types with subtype lists, you will get all combinations:
+Die Erweiterung der Subtyp-Liste und das Klonieren der Pakete ist rekursiv.
+Stehen mehrere Typen in der Subtyp-Liste erhält man alle Kombinationen:
 </p>
 <pre>Type: -ssl (boolean), perl (5.12.3 5.12.4)</pre>
 <p>
-One can access the specific variant subtype in other fields using the
-%type_raw[] and %type_pkg[] pseudo-hashes. Here are two example .info
-fragments:
+Man kann eine bestimmte Subtyp-Variante in anderen Felder mit
+%type_raw[] und %type_pkg[] verwenden. Im folgenden zwei Beispiele mit
+.info-Fragmenten:
 </p>
 <pre>Info2: &lt;&lt;
 Package: foo-pm%type_pkg[perl]
@@ -1768,12 +1768,12 @@ CompileScript:  &lt;&lt;
 &lt;&lt;
 &lt;&lt;</pre>
 <p>
-Starting in fink 0.26.0, there is a special <tt style="white-space: nowrap;">Type: -64bit</tt>
-which controls a new percent expansion <tt style="white-space: nowrap;">%lib</tt> and also
-changes the default value of <tt style="white-space: nowrap;">LDFLAGS</tt>.  When combined
-with the new construction %type_num[], this allows a single .info file
-to build both a 32-bit version of a library and a 64-bit version.
-Here's some sample code:
+Ab Fink 0.26.0 gibt es den speziellen <tt style="white-space: nowrap;">Type: -64bit</tt>, der die
+neue Prozenterweiterung <tt style="white-space: nowrap;">%lib</tt> einführt und auch die Voreinstellung
+für <tt style="white-space: nowrap;">LDFLAGS</tt> ändert. Kombiniert mit der neuen Konstruktion
+%type_num[] kann man so in einer einzigen .info-Datei sowohl 32-bit als auch
+64-bit Versionen einer Bibliothek erzeugen.
+Hier ein Beispiel:
 </p>
 <pre>Info2: &lt;&lt;
 Package: foo%type_pkg[-64bit]
@@ -1789,293 +1789,299 @@ SplitOff: &lt;&lt;
 &lt;&lt;
 &lt;&lt;</pre>
 <p>
-Note that <tt style="white-space: nowrap;">Type: -64bit</tt> is generally not appropriate for
-the x86_64 architecture, since in that case
-libraries are being built 64-bit by default
-and stored in <tt style="white-space: nowrap;">%i/lib</tt>.
+Beachten sie, dass <tt style="white-space: nowrap;">Type: -64bit</tt> für die x86_64-Architektur nicht
+angemessen ist, denn dafür ist die Voreinstellung, dass 64-bit Bibliotheken
+erstellt und in <tt style="white-space: nowrap;">%i/lib</tt> abgespeichert werden.
 </p>
 
 </td></tr><tr valign="top"><td>License</td><td>
 <p>
-This field gives the nature of the license under which the package is
-distributed.
-The value must be one of the values described in <a href="#policy.licenses">Package Licenses</a> earlier in
-this document.
-Additionally, this field must only be given if the package actually
-complies to the packaging policy in these respects, i.e. a copy of the
-license is installed in the doc directory for the package.
+Dieses Feld spezifiziert die Lizenz, unter der das Paket vertrieben werden kann.
+Der Wert muss einer aus dem Kapitel
+<a href="#policy.licenses">Packet-Lizensen</a>
+weiter oben in diesem Dokument sein.
+Zusätzlich darf dieses Feld nun verwendet werden, wenn das Paket auch
+tatsächlich die Richtlinien dafür einhält, d. h. eine Kopie der Lizenz im
+Verzeichnis doc des Pakets installiert.
 </p>
 </td></tr><tr valign="top"><td>Maintainer</td><td>
 <p>
-The name and e-mail address of the person responsible for the package.
-This field is required, and there must be exactly one name and address
-in the following format:
+Name und Email-Adresse der Person, die für das Paket verantwortlich ist
+Das Feld ist ein pflichtfeld und es darf nue ein Name und eine Adresse im
+folgenden Format angegeben werden:
 </p>
-<pre>Firstname Lastname &lt;user@host.domain.com&gt;</pre>
+<pre>Vorname Familienname &lt;Nutzer@host.domain.com&gt;</pre>
 </td></tr><tr valign="top"><td>InfoN</td><td>
 <p>
-This field allows fink to implement backward-incompatible syntax
-changes in package description files. A given version of fink is
-configured with the maximum integer "N" that it can handle. Any
-package in a higher InfoN field will be ignored, so this mechanism
-should only be used when necessary, lest people with older versions of
-fink be needlessly alienated. To use this mechanism, embed
-the entire package description in the desired InfoN field. See the
-"File Format" section earlier in this document for a description of
-the syntax for multiline fields.
-Here are the features added for each InfoN level, along with the
-earliest version of fink that supports it:
+Diese Feld erlaubt Fink Syntaxänderungen in den Paketbeschreibungen zu
+implementieren, die nicht rückwärtskompatibel sind. Eine gegebene Version von
+Fink ist auf die maximale Zahl "N" gesetzt, die für sie machbar ist. Pakete
+mit einem höheren N werden ignoriert. Deshalb sollte dieser Mechanismus nur
+verwendet werden, wenn es notwendig ist. Ansonsten werden Nutzer mit älteren
+Finkversionen unnötigerweise ausgeschlossen. Verwenden sie diesen Mechanismus,
+indem sie die gesamte Paketbeschreibung in das Feld InfoN einschließen.
+Sie können bei Datei-Format weiter oben nachschauen, wie die Syntax für
+mehrzeilige Felder aussieht.
+Es folgen die Features des jeweiligen InfoN-Niveau und die erste Version von
+Fink, die es unterstützt:
 </p>
 <ul>
-<li><tt style="white-space: nowrap;">Info2</tt> (fink&gt;=0.20.0): Ability to use percent-expansions
-  in the main <tt style="white-space: nowrap;">Package</tt> field of the .info file and the
-  ability to use the <tt style="white-space: nowrap;">%type_*</tt> percent-expansions in
-  the <tt style="white-space: nowrap;">Package</tt> field of <tt style="white-space: nowrap;">SplitOff</tt>
-  (and <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>) packages.</li>
-<li><tt style="white-space: nowrap;">Info3</tt> (fink&gt;=0.25.0): Can indent nicely in .info files,
-  no more support for RFC-822 multi-lines, and can put comments in
-  pkglist fields.</li>
-<li><tt style="white-space: nowrap;">Info4</tt> (fink&gt;=0.26.2): adds %V expansion, and permits
-  <tt style="white-space: nowrap;">%lib</tt> in <tt style="white-space: nowrap;">ConfigureParams</tt> field.</li>
+<li><tt style="white-space: nowrap;">Info2</tt> (fink ≥ 0.20.0): Die Möglichkeit, Prozenterweiterung im
+  Hauptfeld <tt style="white-space: nowrap;">Package</tt> der .info-Datei und die Prozenterweiterung
+  <tt style="white-space: nowrap;">%type_*</tt> im Feld <tt style="white-space: nowrap;">Package</tt> von <tt style="white-space: nowrap;">SplitOff</tt>-
+  (und <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>-)Paketen zu nutzen.</li>
+<li><tt style="white-space: nowrap;">Info3</tt> (fink ≥ 0.25.0): Schönes Einrücken in .info-Dateien,
+  keine Unterstützung für Mehrfachzeilen nach RFC-822 und Kommentare in den
+  Feldern pkglist.</li>
+<li><tt style="white-space: nowrap;">Info4</tt> (fink ≥ 0.26.2): fügt die Erweiterung %V hinzu und
+  erlaubt <tt style="white-space: nowrap;">%lib</tt> im Feld <tt style="white-space: nowrap;">ConfigureParams</tt>.</li>
 </ul>
 </td></tr></table>
-<p><b>Dependencies:</b></p>
+
+<p><b>Abhängigkeiten:</b></p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Depends</td><td>
 <p>
-A list of packages which must be installed before this package can be
-built. Percent expansion is performed on this field (as well as the
-other package list fields in this section: BuildDepends, RuntimeDepends, 
-Provides, Conflicts, Replaces, Recommends, Suggests, and Enhances.
-Usually, this is just a comma-separated list for plain package names,
-but Fink now supports alternatives and version clauses with the same
-syntax as dpkg.
-A fully featured example:
+Dieses Feld enthält die Liste der Pakete, die installiert werden müssen, bevor
+das Paket erstellt werden kann. Die Prozenterweiterung kann in diesem Feld
+verwendet werden (genau wie auch in den anderen Feldern dieser Sektion:
+BuildDepends, RuntimeDepends, Provides, Conflicts, Replaces, Recommends,
+Suggests und Enhances). Normalerweise ist es eine Komma-separierte Liste mit
+den Paketnamen, aber Fink unterstützt in der gleichen Syntax wie dpkg auch
+Alternativen und Versionen.
+Ein Beispiel mit allen Varianten:
 </p>
 <pre>Depends: &lt;&lt;
 	daemonic (&gt;= 20010902-1),
 	emacs | xemacs
 &lt;&lt;</pre>
 <p>
-The layout above is the preferred format for the <tt style="white-space: nowrap;">Depends</tt>
-and similar fields. The field uses the multi-line field declarators
-<tt style="white-space: nowrap;">&lt;&lt;</tt> and each package is placed in alphabetical order
-on its own indented line. If the field only has a single entry, the
-simplified <tt style="white-space: nowrap;">Field: value</tt> format may be used.
+Das Layout ist das bevorzugte Format für das Feld <tt style="white-space: nowrap;">Depends</tt> und
+ähnliche Felder. Das Feld benutzt die Zeichen <tt style="white-space: nowrap;">&lt;&lt;</tt> für
+Mehrfachzeilen. Jedes Paket steht in alphabetischer Ordnung in einer separaten,
+eingerückten Zeile. Hat das Feld nur einen einzigen Eintrag, kann auch das
+vereinfachte Format <tt style="white-space: nowrap;">Field: value</tt> verwendet werden.
 </p>
 <p>
-Note that there is no way to express real optional dependencies.
-If a package works both with and without another package, you must
-either make sure that the other package is not used even when it is
-present or add it to the Depends field.
-If you want to offer the user both options, make two separate
-packages, e.g. wget and wget-ssl.
+Beachten sie, dass es keine Möglichkeit für optionale Abhängigkeiten gibt.
+Funktioniert ein Paket sowohl mit als auch ohne ein anderes Paket, dann müssen
+sie sicher stellen, dass das Paket auch nicht verwendet wird, auch wenn es
+vorhanden ist. Andernfalls müssen sie das Paket in das Feld <tt style="white-space: nowrap;">Depends</tt>
+aufnehmen.
+Wollen sie beide Optionen anbieten, müssen sie zwei separate Pakete erstellen,
+z. B. wget und wget-ssl.
 </p>
 <p>
-Order of operations: logical "OR" (list of alternatives) has
-a higher precedence (binds more tightly) than the logical
-"AND" between each package (or set of alternatives) in the
-comma-separated list. Unlike the use of parentheses in arithmetic,
-there is no way to specify alternative groups of packages or otherwise
-change the order of operations in <tt style="white-space: nowrap;">Depends</tt> and related
-fields.
+Ausführungsreihenfolge der Operationen: Ein logisches "OR" (Liste der
+Alternativen) hat höhere Priorität (verknüpft enger) als ein logisches
+"AND" zwischen den Paketen (oder einem Satz an Alternativen) in der
+Komma-separierten Liste. Anders als die Verwendung von Klammern in
+arithmetischen Ausdrücken gibt es im Feld <tt style="white-space: nowrap;">Depends</tt> und verwandten
+Feldern keine Möglichkeit für alternative Paketgruppen oder für die eine
+Änderungen der Ausführungsreihenfolge der Operationen.
 </p>
 <p>
-Starting with a post-0.18.2 CVS version of fink, you can have
-conditional dependencies. These are specified by placing
-<tt style="white-space: nowrap;">(string1 op string2)</tt> before a package name. Percent
-expansion is performed as usual and then the two strings
-(neither of which can be null) are compared
-according to the <tt style="white-space: nowrap;">op</tt> operator: &lt;&lt;, &lt;=, =, !=,
-&gt;&gt;, &gt;=. The immediately-following package is only considered
-as a dependency if the comparison is true.
+Beginnend mit einer post-0.18.2 CVS-Version of Fink kann man bedingte
+Abhängigkeiten verwenden. Diese kann man dadurch ausdrücken, dass man
+<tt style="white-space: nowrap;">(Zeichenkette1 op Zeichenkette2)</tt> vor den Paketnamen platziert. Die
+Prozenterweiterung wird wie gewohnt ausgeführt und dann werden die beiden
+Zeichenketten, von denen keine leer sein kann, mit Hilfe eines der Operatoren
+<tt style="white-space: nowrap;">op</tt> (&lt;&lt;, &lt;=, =, !=, &gt;&gt;, &gt;=) verglichen. Das
+folgende Paket wird nur berücksichigt, wenn der Vergleich wahr ist.
 </p>
 <p>
-You can use this format to simplify maintaining several similar
-packages. For example, the packages elinks and elinks-ssl could both list:
+Sie können dieses Format nutzen, um die Pflege mehrerer ähnlicher Pakete zu
+vereinfachen. Beide Pakete elinks und elinks-ssl könnten z. B. folgendes
+auflisten:
 </p>
 <pre>Depends: &lt;&lt;
 	expat-shlibs,
 	(%n = elinks-ssl) openssl097-shlibs
 &lt;&lt;</pre>
-<p>would have the same effect as having elinks list:</p>
+<p>Das hätte den gleichen Effekt, wie wenn elinks folgendes auflisten würde:</p>
 <pre>Depends: expat-shlibs</pre>
-<p>and elinks-ssl list:</p>
+<p>und elinks-ssl dieses:</p>
 <pre>Depends: expat-shlibs, openssl097-shlibs</pre>
 <p>
-As an alternative syntax, you can also specify <tt style="white-space: nowrap;">(string)</tt>,
-which is "true" if <tt style="white-space: nowrap;">string</tt> is non-null. For example:
+In einer alternativen Syntax, könnenten sie auch eine
+<tt style="white-space: nowrap;">(Zeichenkette)</tt> angeben, womit sie wahr ist, wenn die
+<tt style="white-space: nowrap;">Zeichenkette</tt> nicht leer ist, z. B.:
 </p>
 <pre>Package: nethack%type_pkg[-x11]
 Type: -x11 (boolean)
 Depends: (%type_pkg[-x11]) x11</pre>
 <p>
-would set the package x11 as a dependency for the nethack-x11 variant
-but not for the nethack variant.
+Dies würde das Paket x11 als Abhängigkeit für die Variante nethack-x11 setzen,
+aber nicht die Variante nethack.
 </p>
 <p>
-Note that when using Depends/BuildDepends for shared library packages
-for which more than one major-version is available, you must
-<b>not</b> do the following:
+Beachten sie folgendes: Verwenden sie die Felder Depends/BuildDepends für
+dynamische Bibliothekspakete, für die es mehrere Hauptversionen gibt, dürfen
+sie folgendes <b>nicht</b> deklarieren:
 </p>
 <pre>  Package: foo
   Depends: id3lib3.7-shlibs | id3lib4-shlibs
   BuildDepends: id3lib3.7-dev | id3lib4-dev</pre>
 <p>
-even if your package could work with either library. Pick one
-(preferably the highest version that can be used successfully) and
-use it consistently in your package.
+auch wenn ihr Paket mit jeder Bibliothek funktionieren sollte. Sie müssen eine
+auswählen (vorzugsweise die mit der höchsten Version, die verwendet werden kann)
+und verwenden sie in ihrem Paket diese Version durchgängig.
 </p>
 <p>
-As explained in the <a href="#policy.sharedlibs">Shared Library Policy</a>, only one of the
--dev packages can be installed at a time, and each has links of the
-same name that could point to different filenames in the associated
--shlibs package. When compiling package foo, the actual filename (in
-the -shlibs package) gets hard-coded into the foo binary. That means
-the resulting package needs the specific -shlibs package associated
-with the -dev that was installed at compile-time. As a result, one
-cannot have a <tt style="white-space: nowrap;">Depends</tt> that indicates that either one
-will suffice.
+Wie im Kapitel über die Richtlinien über
+<a href="#policy.sharedlibs">dynamische Bibliotheken</a>
+erklärt, kann immer nur ein Paket -dev installiert sein und jedes hat Links
+mit dem gleichen Namen, die auf verschiedene Dateinamen im zugehörigen Paket
+-shlibs zeigen können. Kompiliert man das Paket foo, wird der tatsächliche
+Dateiname (im Paket -shlibs) fest in das Binärprogramm foo übernommen. Dies
+bedeutet, dass das Paket genau dieses bestimmte Paket -shlibs benötigt, das zu
+dem Paket -dev gehört, das zur Compile-Zeit installiert war. Deshalb kann
+das Feld <tt style="white-space: nowrap;">Depends</tt> nicht so aussehen, dass irgendeines ausreicht.
 </p>
 <p>
-In the past, non-essential packages implicitly depended on the
-essential ones; this is no longer true.
+In der Vergangenheit hingen nicht-eseentielle Pakete implizit von essentiellen
+ab; dies ist nicht mehr der Fall.
 </p>
 </td></tr><tr valign="top"><td>BuildDepends</td><td>
 <p>
-<b>Introduced in fink 0.9.0.</b>
-A list of dependencies that is applied at build time only.
-This can be used to list tools (e.g. flex) that must be present to
-build the package, but which are not used at run time.
-Supports the same syntax as Depends.  If a build is being done
-with test suites enabled, the dependencies in the <tt style="white-space: nowrap;">TestDepends</tt>
-field will be added to this list.
+<b>Eingeführt in Fink 0.9.0.</b>
+Eine Liste mit Abhängigkeiten, die nur für die Erstellungsphase gilt.
+Man kann sie nutzen, um Tools aufzulisten (z. B. flex), die man für das
+Erstellen des Pakets benötigt, aber nicht zur Laufzeit.
+Es hat die gleiche Syntax wie das Feld <tt style="white-space: nowrap;">Depends</tt>. Sind die
+Test-Suites beim Erstellen eines Pakets aktiviert, werden die Abhängigkeiten
+des Felds <tt style="white-space: nowrap;">TestDepends</tt> dem Feld <tt style="white-space: nowrap;">BuildDepends</tt> hinzu
+gefügt.
 </p>
 </td></tr><tr valign="top"><td>RuntimeDepends</td><td>
 <p>
-<b>Introduced in fink 0.32.0.</b>
-A list of dependencies that is applied at run time only,
-that is, when the package is being installed.
-This can be used to list packages that must be present to
-run the package, but which are not used at build time.
-Supports the same syntax as Depends.
+<b>Eingeführt in Fink 0.32.0.</b>
+Eine Liste mit Abhängigkeiten, die nur für die Laufzeit gilt, also wenn
+das Paket installiert ist.
+Dieses Feld kann genutzt werden, um Pakete aufzulisten, die man zur Laufzeit
+benötigt, aber nicht beim Erstellen des Pakets.
+Es hat die gleiche Syntax wie das Feld <tt style="white-space: nowrap;">Depends</tt>.
 </p>
 </td></tr><tr valign="top"><td>Provides</td><td>
 <p>
-A comma-separated list of package names that this package is
-considered to "provide".
-If a package named "pine" specifies <tt style="white-space: nowrap;">Provides: mailer</tt>,
-then any dependency on "mailer" is considered satisfied when "pine" is
-installed.
-You'll usually also want to name these packages in the "Conflicts" and
-the "Replaces" field.
+Eine komma-separierte Liste von Paketnamen, die dieses Paket zur Verfügung
+stellt.
+Wenn ein Paket namens "pine" <tt style="white-space: nowrap;">Provides: mailer</tt> deklariert, dann ist
+jede Abhängigkeit von einem Paket "mailer" erfüllt, wenn "pine" installiert ist.
+Meisten wird man diese Pakete auch in den Feldern <tt style="white-space: nowrap;">Conflicts</tt>
+und <tt style="white-space: nowrap;">Replaces</tt> auflisten.
 </p>
 <p>
-Note that there is no versioning data associated with Provides
-items. They do not inherit from the parent package that contains the
-Provides list nor is there a syntax for specifying an arbitrary version
-in the Provides field itself. Further, a dependency that contains a
-version specification is not satisfied by a package that Provides that
-needed package name. As a result, having many variants provide a common
-surrogate package may be harmful, because it precludes the use of versioned
-dependencies. For example, if foo-gnome and foo-nognome both have "Provides:
-foo", another package with "Depends: foo (&gt; 1.1)" will not work.
+Beachten sie bitte, dass im Feld <tt style="white-space: nowrap;">Provides</tt> keine Versionen verwendet
+werden können. Die Pakete erben weder die Version des Elternpakets noch ist eine
+Syntax für die Angabe einer Version definiert. Darüber hinaus gilt eine
+Abhängigkeit mit einer bestimmten Version als nicht erfüllt. Damit ist es
+relativ gefährlich, wenn mehrere Varianten dasselbe Paket in
+<tt style="white-space: nowrap;">Provides</tt> deklarieren, weil die Versionsabhängigkeit nicht
+berücksichtigt werden kann. Deklarieren z. B. sowohl das Paket foo-gnome als
+auch das Paket foo-nognome ein <tt style="white-space: nowrap;">Provides: foo</tt>, ist die Abhängigkeit
+<tt style="white-space: nowrap;">Depends: foo (&gt; 1.1)</tt> in einem anderen Paket nicht erfüllt.
 </p>
 </td></tr><tr valign="top"><td>Conflicts</td><td>
 <p>
-A comma-separated list of package names that must not be installed at
-the same time as this package.
-For virtual packages it is allowed to list the names of the provided
-packages here; they will be handled appropriately.
-This fields also supports versioned dependencies like the Depends
-field, but not alternatives (wouldn't make sense).
-If a package is listed in its own Conflicts, it will be (silently)
-removed from that list. (Introduced in a post-0.18.2 CVS version of
-fink.)
+Eine komma-separierte Liste von Paketnamen, die nicht gleichzeitig mit diesem
+Paket installiert sein dürfen.
+Virtuellen Pakete ist es erlaubt, Pakete aufzulisten, die auch im Feld
+<tt style="white-space: nowrap;">Provides</tt> stehen; sie werden entsprechend behandelt.
+Dieses Feld unterstützt auch versionierte Abhängigkeiten wie das Feld
+<tt style="white-space: nowrap;">Depends</tt>, aber keine Alternativen (das wäre auch nicht sinnvoll).
+Ist ein Paket in seinem eigenen Feld <tt style="white-space: nowrap;">Conflicts</tt> aufgelistet,
+wird es ohne eine Meldung aus der Liste entfernt (eingeführt in einer
+post-0.18.2 CVS-Version von Fink.).
 </p>
 <p>
-<b>Note:</b> Fink itself currently ignores this field.
-However, it is passed on to dpkg and will be handled accordingly.
-In summary, it only effects run-time, not build-time.
+<b>Bitte beachten:</b> Fink selbst ignoriert dieses Feld, aber es wird an dpkg
+weitergegeben und entsprechend ausgewertet. Damit gilt es nur für die Laufzeit
+und nicht während der Erstellungszeit von Fink.
 </p>
 </td></tr><tr valign="top"><td>BuildConflicts</td><td>
 <p>
-A list of packages that must not be installed while this package is
-being compiled. This can be used to prevent <tt style="white-space: nowrap;">./configure</tt>
-or the compiler from seeing undesired library headers or to avoid use
-of a version of a tool that is known to be broken (for example, a bug
-in a certain version of sed).  If a build is being done
-with test suites enabled, the packages in the <tt style="white-space: nowrap;">TestConflicts</tt>
-field will be added to this list.
+Eine Liste von Paketnamen, die nicht installiert sein dürfen, während dieses
+Paket compiliert wird. Man kann es dazu benutzten, dass <tt style="white-space: nowrap;">./configure</tt>
+oder der Compiler unerwünschte Bibliotheks-Header erkennt oder um zu
+verhindern, dass eine Version eines Tools verwendet wird, von dem bekannt ist,
+dass es fehlerhaft ist (z. B. ein Fehler in einer bestimmten Version von sed).
+Sind bei der Erstellung eines Pakets die Test-Suites aktiviert, werden zu dieser
+Liste die Pakete vom Feld <tt style="white-space: nowrap;">TestConflicts</tt> hinzugefügt.
 </p>
 </td></tr><tr valign="top"><td>Replaces</td><td>
 <p>
-This is used together with "Conflicts", when this package not only
-takes over the function of the conflicting package, but also has some
-common files.
-Without this field, dpkg may generate errors when installing the
-package because files are still owned by the other package.
-It is also a hint that the two packages involved are genuine
-alternatives and one can be removed in favor of the other.
-If a package is listed in its own Replaces, it will be (silently)
-removed from that list. (Introduced in a post-0.18.2 CVS version of
-fink.)
+Dieses Feld wird zusammen mit dem Feld <tt style="white-space: nowrap;">Conflicts</tt> benutzt, wenn ein
+Paket nicht nur die Funktion eines anderen Pakets übernimmt, sondern auch einige
+gemeinsamen Dateien hat.
+Ohne dieses Feld erzeugt dpkg bei der Installation einen Fehler, weil die
+Dateien immer noch Besitz eines anderen Pakets sind.
+Es ist auch ein Hinweis, dass die zwei Pakete echte Alternativen sind und eines
+gegen das andere ausgetauscht werden kann.
+Ist ein Paket in seinem eigenen Feld<tt style="white-space: nowrap;">Replaces</tt> aufgelistet,
+wird es ohne eine Meldung aus der Liste entfernt (eingeführt in einer
+post-0.18.2 CVS-Version von Fink.).
 </p>
 <p>
-<b>Note:</b> Fink itself currently ignores this field.
-However, it is passed on to dpkg and will be handled accordingly.
-In summary, it only effects run-time, not build-time.
+<b>Bitte beachten:</b> Fink selbst ignoriert dieses Feld, aber es wird an dpkg
+weitergegeben und entsprechend ausgewertet. Damit gilt es nur für die Laufzeit
+und nicht während der Erstellungszeit von Fink.
 </p>
 </td></tr><tr valign="top"><td>Recommends, Suggests, Enhances</td><td>
 <p>
-These fields specify additional package relations in the same style as
-the other dependency fields.
-These three relations don't affect actual installation via
-<tt style="white-space: nowrap;">dpkg</tt> or <tt style="white-space: nowrap;">apt-get</tt>.
-However, they are used by <tt style="white-space: nowrap;">dselect</tt> and other frontends to
-help the user make sensible choices.
+Diese Felder deklarieren zusätzliche Beziehungen im selben Stil wie die anderen
+Felder.
+Diese drei Beziehungen haben auf die tatsächliche Installation mit
+<tt style="white-space: nowrap;">dpkg</tt> oder <tt style="white-space: nowrap;">apt-get</tt> keinen Einfluss.
+Sie werden aber von <tt style="white-space: nowrap;">dselect</tt> und ähnlichen Frontends genutzt, um
+dem Nutzer sinnvolle Vorschäge anzubieten.
 </p>
 </td></tr><tr valign="top"><td>Pre-Depends</td><td>
 <p>
-A special variation of the Depends field with more strict semantics.
-This field must only be used after the case has been discussed on the
-developer mailing list and a consensus has been reached that it is
-necessary.
+Eine spezielle Variante des Felds <tt style="white-space: nowrap;">Depends</tt> mit strengerer Semantik.
+Dieses Feld darf nur benutzt werden, wenn der Fall auf der
+Developer-Email-Liste diskutiert wurde und Konsens erreicht wurde, dass es
+wirklich notwendig ist.
 </p>
 </td></tr><tr valign="top"><td>Essential</td><td>
 <p>
-A boolean value that denotes essential packages. Essential
-packages are installed as part of the bootstrap process. <tt style="white-space: nowrap;">dpkg</tt>
-will refuse to remove essential packages from the system unless
-special flags are used to override this.
-In the past, non-essential packages implicitly depended on the
-essential ones; this is no longer true.
+Ein boolscher Wert, der essentielle Pakete markiert. Essentielle Pakete werden
+im Bootstrap-Prozess installiert. <tt style="white-space: nowrap;">dpkg</tt> weigert sich essentielle
+Pakete von dem System zu entfernen, so lange keine speziellen Flags gesetzt
+sind, um dies zu übergehen.
+In der Vergangenheit hingen nicht-essentielle Pakete implizit von den
+essentiellen ab; dies ist aber nicht mehr der Fall.
 </p>
 </td></tr><tr valign="top"><td>BuildDependsOnly</td><td>
 <p>
-<b>Introduced in fink 0.9.9.</b>
-A boolean value which indicates that no other packages should Depend on
-this one, they should only BuildDepend.
-Unlike usual boolean fields, <tt style="white-space: nowrap;">BuildDependsOnly</tt> is
-tri-state: leaving it undefined (not specifying it at all) is
-different than defining it as logically false. See the <a href="#policy.sharedlibs">Shared Library Policy</a> for
-more information.
+<b>Eingeführt in Fink 0.9.9.</b>
+Ein boolscher Wert, der anzeigt, dass kein anderes Paket von diesem abhängen
+darf, zulässig ist nur ein BuildDepend.
+Im Unterschied zu den üblichen boolschen Feldern, gibt es für
+<tt style="white-space: nowrap;">BuildDependsOnly</tt> drei Zustände. Undefiniert (überhaupt nicht
+angegeben) unterscheidet sich von einer Deklarierung als falsch. Weitere Details
+sind im Kapitel
+<a href="#policy.sharedlibs">Dynamische Bibliotheken</a>
+beschrieben.
 </p>
-<p>As of fink 0.20.5, the presence or absence of this field, and its value
-if present, are recorded into the .deb
-file when the package is built.  Therefore, <b>if you change the value of
-BuildDependsOnly or if you add or remove it,
-you must increase the revision number</b> of the package.
+<p>
+Ab Fink 0.20.5 werden die Präsenz/Absenz des Felds und wenn der Wert gesetzt
+ist, der Wert in die .deb Datei aufgenommen, wenn das Paket erstellt wird.
+<b>Deshalb muss man die Revisionsnummer des Pakets erhöhen, wenn man den Wert
+von BuildDependsOnly ändert oder das Feld hinzufügt oder löscht.</b>
 </p>
 </td></tr></table>
-<p><b>Unpack Phase:</b></p>
+
+<p><b>Auspack-Phase:</b></p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>CustomMirror</td><td>
 <p>
-A list of mirror sites. Each mirror site appears on a separate line,
-in the following format: <tt style="white-space: nowrap;">&lt;location&gt;: &lt;url&gt;</tt>.
-<b>location</b> can be a continent code (e.g. <tt style="white-space: nowrap;">nam</tt>), a
-country code (e.g. <tt style="white-space: nowrap;">nam-us</tt>), or anything else;
-mirrors are tried in that order.
-Example:
+Eine Liste der Spiegelserver: Jeder Spiegelserver steht im folgenden Format in
+einer separaten Zeile: <tt style="white-space: nowrap;">&lt;location&gt;: &lt;url&gt;</tt>.
+<b>location</b> kann ein Kontinent-Code (z. B. <tt style="white-space: nowrap;">nam</tt>), ein
+Länder-Code (z. B. <tt style="white-space: nowrap;">nam-us</tt>) oder irgendetwas anderes sein; Die
+Spiegelserver werden in der gegebenen Reihenfolge ausprobiert.
+Ein Beispiel:
 </p>
 <pre>CustomMirror: &lt;&lt;
 nam-US: ftp://ftp.fooquux.com/pub/bar
@@ -2084,402 +2090,406 @@ eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 <p>
-The standard continent and country codes are listed in
-<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>, which is part of the
-fink or fink-mirrors package.
+Die Standard-Codes für Kontinent und Land stehen in der Datei
+<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>, Teil der Pakete fink oder
+fink-mirrors.
 </p>
 </td></tr><tr valign="top"><td>Source</td><td>
 <p>
-An URL to the source tarball. It should be a HTTP or FTP URL, but
-Fink doesn't really care - it just passes the URL to wget. This field
-supports a special URL scheme for mirrors:
-<tt style="white-space: nowrap;">mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</tt>. This will
-look up the mirror setting for <b>mirror-name</b> in Fink's
-configuration, append the <b>relative-path</b> part and use that as
-the actual URL. The known <b>mirror-name</b>s are listed in
-<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_list</tt>, which is part of the fink or
-fink-mirrors package. Alternatively, using <tt style="white-space: nowrap;">custom</tt> as the
-<b>mirror-name</b> will cause Fink to use the <tt style="white-space: nowrap;">CustomMirror</tt>
-field.
-Before the URL is used, percent expansion takes place. Remember that
-%n includes all %type_ variant data, so you may want to use %{ni} here
-(perhaps with some specific %type_ expansions).
+Eine URL zu dem Quell-Tarball. Es sollte eine HTTP- oder eine FTP-URL sein, aber
+Fink kümmert sich nicht weiter darum, sondern reicht die URL an wget weiter.
+Diese Feld unterstützt ein spezielles URL-Schema für Spiegelserver:
+<tt style="white-space: nowrap;">mirror:&lt;Spiegelname&gt;:&lt;Relativpfad&gt;</tt>. Daraufhin wird
+der <b>Spiegelname</b> in Finks Konfiguration nachgeschaut, der Teil
+<b>Relativpfad</b> angehängt und als tatsächliche URL verwendet. Die bekannten
+<b>Spiegelnamen</b> sind in der Datei
+<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_list</tt> aufgelistet, die Teil des Pakets
+fink oder fink-mirrors ist. Alternative dazu kann auch <tt style="white-space: nowrap;">custom</tt> als
+<b>Spiegelname</b> verwendet werden und dann wird Fink das Feld
+<tt style="white-space: nowrap;">CustomMirror</tt> dazu auswerten.
+Bevor die URL verwendet wird, kommt die Prozenterweiterung zum Tragen. Bedenken
+sie, dass %n alle Datenvarianten %type_ einschließt. Es kann deshalb günstiger
+sein, hier %{ni} zu verwenden (eventuell mit einigen spezifischen %type_
+Erweiterungen).
 </p>
 <p>
-Since fink 0.18.0, <tt style="white-space: nowrap;">Source: none</tt> has the special meaning
-that there is no source to fetch. See the description of the
-<tt style="white-space: nowrap;">Type</tt> field for more information.
-The value <tt style="white-space: nowrap;">gnu</tt> is a shorthand for
-<tt style="white-space: nowrap;">mirror:gnu:%n/%n-%v.tar.gz</tt>; <tt style="white-space: nowrap;">gnome</tt> is a shorthand for
-<tt style="white-space: nowrap;">mirror:gnome:stable/sources/%n/%n-%v.tar.gz</tt>. The
-default is <tt style="white-space: nowrap;">%n-%v.tar.gz</tt> (i.e. a manual
-download).
-This implicitly-defined <tt style="white-space: nowrap;">Source</tt> form is deprecated
-(explicitly-stated simple filename/manual download is still okay).
+Ab Fink 0.18.0 hat <tt style="white-space: nowrap;">Source: none</tt> die spezielle Bedeutung, dass es
+keine Quelldateien zum Herunterladen gibt. Weitere Details dazu stehen in der
+Beschreibung des Felds <tt style="white-space: nowrap;">Type</tt>.
+Der Wert <tt style="white-space: nowrap;">gnu</tt> ist eine Abkürzung für
+<tt style="white-space: nowrap;">mirror:gnu:%n/%n-%v.tar.gz</tt> und <tt style="white-space: nowrap;">gnome</tt> für
+<tt style="white-space: nowrap;">mirror:gnome:stable/sources/%n/%n-%v.tar.gz</tt>. Die Voreinstellung
+ist <tt style="white-space: nowrap;">%n-%v.tar.gz</tt> (also manuelles Herunterladen).
+Diese Form einer implizit-definierten <tt style="white-space: nowrap;">Source</tt> is obsolet (explizit
+angegebene einfach Namen für manuelles herunterladen ist immer noch in Ordnung).
 </p>
 <p>
-Sources that are only needed in order to run test suites should
-use <tt style="white-space: nowrap;">TestSource</tt> and related fields, inside the
-<tt style="white-space: nowrap;">InfoTest</tt> block.
+Quellen, die nur für die Testsuite benötigt werden, sollten im Feld
+<tt style="white-space: nowrap;">TestSource</tt> und verwandten Felder im Block <tt style="white-space: nowrap;">InfoTest</tt>
+aufgelistet werden.
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
 <p>
-If a package consists of several tarballs, name them with these
-additional fields, starting with N = 2. So, the first tarball (which
-should be some kind of "main" tarball) goes into <tt style="white-space: nowrap;">Source</tt>, the
-second tarball in <tt style="white-space: nowrap;">Source2</tt> and so on. The rules are the same
-as for Source, only that the "gnu" and "gnome" shortcuts are not
-expanded - that would be useless anyway. Starting with a CVS version
-of fink after 0.19.2, you may use arbitrary (not necessarily
-consecutive) integer values of N &gt;= 2. However, you still may not have
-duplicates.
+Enthält ein Paket mehrere Tarballs, muss man sie mit diesen zusätzlichen Feldern
+aufführen, beginnend mit N = 2. Der erste Tarball (der auch als der
+Haupt-Tarball betrachtet werden kann) steht also im Feld <tt style="white-space: nowrap;">Source</tt>,
+der 2. im Feld <tt style="white-space: nowrap;">Source2</tt> und so weiter. Die Regeln sind die gleichen
+wie für Source, nur dass die Abkürzungen "gnu" und "gnome" nicht ausgewertet
+werden, denn das wäre sowieso nutzlos. Beginnend mit einer CVS-Version von Fink
+nach 0.19.2 können sie beliebige (und nicht notwendigerweise aufeinander
+folgende) Werte mit N ≥ 2 verwenden, aber keine Dubletten.
 </p>
 </td></tr><tr valign="top"><td>SourceDirectory</td><td>
 <p>
-Must be used when the tarball expands to a single directory, but
-the directory's name is different from the basename of the tarball.
-Usually, a tarball named "foo-1.0.tar.gz" will produce a directory
-named "foo-1.0". If it produces a directory with a different name,
-specify it with this parameter. Percent expansion is performed on this
-field.
+Diese Feld wird benötigt, wenn der Tarball in ein einziges Verzeichnis
+ausgepackt wird, dessen Namen sich aber vom Rumpf des Tarball-Namens
+unterscheidet. Ein Tarball mit dem Namen "foo-1.0.tar.gz" wird normalerweise in
+ein Verzeichnis "foo-1.0" ausgepackt. Ist das nicht der Fall, so kann man den
+Namen mit diesem Feld angeben. Prozenterweiterung wird in diesem Feld
+ausgeführt.
 </p>
 </td></tr><tr valign="top"><td>NoSourceDirectory</td><td>
 <p>
-Set this boolean parameter to a true value if the tarball does not
-expand to a single directory. Usually, a tarball named "foo-1.0.tar.gz"
-will produce a directory named "foo-1.0". If it just unpacks the files
-to the current directory, use this parameter and set it to a boolean
-true value.
+Setzen sie diesen boolschen Parameter auf wahr (true), wenn der Tarball nicht in
+ein einziges Verzeichnis ausgepackt wird. Ein Tarball mit dem Namen
+"foo-1.0.tar.gz" wird normalerweise in ein Verzeichnis "foo-1.0" ausgepackt.
+Werden aber die Dateien des Tarballs nur in das aktuelle Verzeichnis ausgepackt,
+nutzen sie dieses Feld und setzen sie den Wert auf wahr (true).
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>ExtractDir</td><td>
 <p>
-Normally, an auxiliary tarball will be extracted in the same
-directory as the main tarball. If you need to extract it in a
-specific subdirectory instead, use this field to specify
-it. Source2ExtractDir corresponds to the Source2 tarball, as one would
-expect. See ghostscript, vim and tetex for examples of usage.
+Normalerweise wird ein zusätzlicher Tarball in dasselbe Verzeichnis wie der
+Haupt-Tarball ausgepackt. Muss er aber in ein spezifisches Unterverzeichnis
+ausgepackt werden, können sie dies in diesem Fald angeben. Source2ExtractDir
+bezieht sich erwartungsgemäß auf den Tarball in Source2. Beispiele dafür sind in
+den Paketen ghostscript, vim und tetex.
 </p>
 </td></tr><tr valign="top"><td>SourceRename</td><td>
 <p>
-This field can rename a source tarball on the fly. This is useful
-if for example the version of the source is encoded in the directory name on
-the server, but the tarball itself has the same name for all versions, e.g.
-<tt style="white-space: nowrap;">http://www.foobar.org/coolapp/1.2.3/source.tar.gz</tt>. To
-circumvent the problems caused by this, you would then use something like
+Mit diesem Feld kann man eine Quell-Tarball umbenennen. Das ist vor allem dann
+nützlich, wenn die Version der Quelle im Namen des Verzeichnis des Servers
+steht, der Tarball aber für alle Versionen gleich heißt, z. B.
+<tt style="white-space: nowrap;">http://www.foobar.org/coolapp/1.2.3/source.tar.gz</tt>. Die
+damit verbundenen Probleme kann man wie folgt umgehen:
 </p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>
-In the above example this would result in the tarball being stored under
-<tt style="white-space: nowrap;">/sw/src/coolapp-1.2.3.tar.gz</tt> as one would expect.
+In diesem Beispiel würde z. B. der Tarball unter dem Namen
+<tt style="white-space: nowrap;">/sw/src/coolapp-1.2.3.tar.gz</tt> abgespeichert werden, genau so
+wie man es erwarten würde.
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
-This is just the same as the <tt style="white-space: nowrap;">SourceRename</tt> field, except that it is
-used to rename the tarball specified by the corresponding
-<tt style="white-space: nowrap;">Source<b>N</b></tt> field. See context or hyperref for examples of
-usage.
+Dieses Feld erfüllt die gleiche Funktion, nur dass es sich auf Tarballs bezieht,
+die in den entsprechenden Feldern <tt style="white-space: nowrap;">Source<b>N</b></tt> stehen.
+Beispiele dafür finden sie in den Paketbeschreibungen context oder hyperref.
 </p>
 </td></tr><tr valign="top"><td>Source-MD5</td><td>
 <p>
-<b>Introduced in fink 0.10.0.</b>
-With this field you can specify the MD5 checksum of the source file. This
-information is then used by Fink to detect incorrect source files, that is,
-tarballs not matching the one the package creator used. Common causes for this
-problem include: incompletely downloaded tarballs; upstream maintainers silently
-replaced a tarball; a trojan or similar attacks; and so on.
+<b>Eingeführt in Fink 0.10.0.</b>
+In diesem Feld müssen sie die MD5 Checksum der Quelldatei eintragen. Fink
+benutzt diese Information um falsche Quelldateien zu entdecken, d. h. Tarballs,
+die nicht mit denen übereinstimmen, die der Paket-Betreuer verwendet hat.
+Häufige Ursachen für dieses Problem sind: unvollständig herunter geladene
+Dateien, Austausch des Tarball Upstream ohne Ankündigung, Trojanerangriff oder
+ähnliches und alles mögliche andere.
 </p>
-<p>A typical usage example looks like this:</p>
+<p>Ein typisches Beispiel sieht so aus:</p>
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 <p>
-To compute the checksum, the <tt style="white-space: nowrap;">md5sum</tt> tool is used. If you want to
-determine the checksum of the tarball
-<tt style="white-space: nowrap;">/sw/src/apache_1.3.23.tar.gz</tt>,
-you run the following command (displayed with output here):
+Für die Berechnung der Checksum kann man das Tool <tt style="white-space: nowrap;">md5sum</tt> verwenden.
+Die Checksum des Tarball <tt style="white-space: nowrap;">/sw/src/apache_1.3.23.tar.gz</tt> kann
+man mit dem folgenden Kommando berechnen (einschließlich der Ausgabe):
 </p>
 <pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
 4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
-<p>As you can see, the value to the left is exactly the value you need.</p>
+<p>Wie man sieht ist der Wert links genau die Summe, die man braucht.</p>
 </td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
 <p>
-<b>Introduced in fink 0.10.0.</b>
-This is just the same as the <tt style="white-space: nowrap;">Source-MD5</tt> field, except that it
-is used to specify the MD5 checksum of the tarball specified by the
-corresponding <tt style="white-space: nowrap;">Source<b>N</b></tt> field.
+<b>Eingeführt in Fink 0.10.0.</b>
+Dieses Feld hat denselben Zweck wie das Feld <tt style="white-space: nowrap;">Source-MD5</tt>, mit dem
+Unterschied, dass es für die MD5 Checksum der Tarballs der entsprechenden Felder
+<tt style="white-space: nowrap;">Source<b>N</b></tt> ist.
 </p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p>
-<b>Introduced in fink 0.10.0.</b>
-This field only applies to source files that are using the tar format
+<b>Eingeführt in Fink 0.10.0.</b>
+Dieses Feld bezieht sich nur auf Quelldateien im tar-Format.
 </p>
 <p>
-With this field you can rename files in the given source tarball during
-the extraction of the tarball. This is very useful to work around
-the fact that the HFS+ file system is not case sensitive, as files like
-<tt style="white-space: nowrap;">install</tt> and <tt style="white-space: nowrap;">INSTALL</tt> will
-collide on a standard Mac OS X system. With this field you can avoid
-these issues without having to repackage the tarball (as was done in
-the past in such cases).
+Mit diesem Feld kann man Dateien in einem gegebenen Quell-Tarball während des
+Auspackens umbenennen. Dies behebt die Probleme, die damit zusammenhängen, dass
+das HFS+ Dateisystem Groß- und Kleinschreibung nicht unterscheidet und z. B.
+die Dateien <tt style="white-space: nowrap;">install</tt> und <tt style="white-space: nowrap;">INSTALL</tt> auf
+dem Standard Mac OS X eine Kollission verursachen. Mit diesem Feld kann man
+dieses Problem beheben ohne dass man einen neuen Tarball erstellen muss (was
+in der Vergangenheit die einzige Lösung war.).
 </p>
 <p>
-In this field you simply specify a list of files that are to be renamed. You
-can make use of wildcards. By default any given file will be renamed to its
-current name with <tt style="white-space: nowrap;">_tmp</tt> appended. You can override this default
-by using the same syntax as in the <tt style="white-space: nowrap;">Files</tt> and <tt style="white-space: nowrap;">DocFiles</tt>
-fields, namely by writing the old filename followed by a : and then followed by
-the new filename.
-Example:
+In diesem Feld können sie einfach eine Liste an Dateien aufführen, die umbenannt
+werden sollen. Man kann auch Wildcards benutzen. Standard ist einfach eine
+Umbennung mit angehängtem <tt style="white-space: nowrap;">_tmp</tt>. Dies kann man mit derselben
+Syntax wie in den Feldern <tt style="white-space: nowrap;">Files</tt> und <tt style="white-space: nowrap;">DocFiles</tt>
+überschreiben, nämlich mit dem alten Dateinamen, gefolgt von einem : und dann
+dem neuen Dateinamen.
+Ein Beispiel:
 </p>
 <pre>TarFilesRename: foo bar.* qux:quux
 Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 </td></tr><tr valign="top"><td>Tar<b>N</b>FilesRename</td><td>
 <p>
-<b>Introduced in fink 0.10.0.</b>
-This is just the same as the <tt style="white-space: nowrap;">TarFilesRename</tt> field, except that it
-is used for the tarball specified by the corresponding
-<tt style="white-space: nowrap;">Source<b>N</b></tt> field.
+<b>Eingeführt in Fink 0.10.0.</b>
+Dieses Feld ist genau wie das Feld <tt style="white-space: nowrap;">TarFilesRename</tt> mit dem
+Unterschied, dass es auf den Tarball angewendet wird, der im entsprechenden
+Feld <tt style="white-space: nowrap;">Source<b>N</b></tt> steht.
 </p>
 </td></tr></table>
 
 
-<p><b>Patch Phase:</b></p>
+<p><b>Patch-Phase:</b></p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>UpdateConfigGuess</td><td>
 <p>
-A boolean value. If true, the files config.guess and config.sub
-in the build directory will be replaced with versions that know about
-Darwin. This happens in the patch phase and before the PatchScript
-is run. <b>Only</b> use this when you know it is necessary,
-i.e. when the configure script fails with a "unknown host"
-message.
+Ein boolscher Wert. Ist er auf wahr (true) gesetzt, werden die Dateien
+config.guess und config.sub im Verzeichnis build durch Versionen ersetzt, die
+Darwin kennen. Dies erfolgt in der Patch-Phase bevor das PatchSkript ausgeführt
+wird. Benutzen sie dies <b>NUR</b>, wenn sie sich sicher sind, dass es
+benötigt wird, d. h. wenn das configure-Skript mit der Fehlermeldung "unknown
+host" abbricht.
 </p>
 </td></tr><tr valign="top"><td>UpdateConfigGuessInDirs</td><td>
 <p>
-<b>Introduced in a post-0.9.0 CVS version.</b>
-A list of subdirectories.
-This does the same as UpdateConfigGuess, but is useful for packages
-that have outdated config.guess files in several directories
-throughout the source tree.
-Previously you had to copy/move the files there manually in the
-PatchScript.
-With this new field you can just list the directories.
-Use <tt style="white-space: nowrap;">.</tt> to update files in the build directory itself.
+<b>Eingeführt in einer post-0.9.0 CVS-Version.</b>
+Eine Liste von Unterverzeichnissen.
+Es macht das gleiche wie das Feld UpdateConfigGuess, aber für Pakete mit
+veralteten config.guess-Dateien in mehreren Verzeichnissen überall im Baum der
+Quellen.
+Früher musste man die Dateien von Hand im Patchskript an die richtigen Stellen
+kopieren.
+Mit diesem Feld muss man nur noch die Verzeichnisse auflisten.
+Benutzen sie <tt style="white-space: nowrap;">.</tt>, um auch die Dateien im Verzeichnis build zu
+ersetzen.
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtool</td><td>
 <p>
-A boolean value. If true, the files ltconfig and ltmain.sh in the
-build directory will be replaced with versions that know about
-Darwin. This happens in the patch phase and before the PatchScript
-is run. <b>Only</b> use this when you know that the package needs
-it. Some packages can be broken by overwriting the libtool scripts
-with mismatching versions. See the
-<a href="/doc/porting/libtool.php">libtool page</a>
-for further information.
+Ein boolscher Wert. Ist er auf wahr (true) gesetzt, werden die Dateien ltconfig
+und ltmain.sh im Verzeichnis build durch Versionen ersetzt, die Darwin kennen.
+Dies erfolgt in der Patch-Phase bevor das PatchSkript ausgeführt wird. Benutzen
+sie dies <b>NUR</b>, wenn sie sich sicher sind, dass es benötigt wird. Einige
+Pakete kann man beschädigen, wenn man die libtool-Skripte mit unpassenden
+Versionen überschreibt. Für weitere Details lesen sie die Seiten über
+<a href="/doc/porting/libtool.php">libtool</a>.
 </p>
 </td></tr><tr valign="top"><td>UpdateLibtoolInDirs</td><td>
 <p>
-<b>Introduced in a post-0.9.0 CVS version.</b>
-A list of subdirectories.
-This does the same as UpdateLibtool, but is useful for packages
-that have outdated libtool 1.3.x scripts in several directories
-throughout the source tree.
-Previously you had to copy/move the files there manually in the
-PatchScript.
-With this new field you can just list the directories.
-Use <tt style="white-space: nowrap;">.</tt> to update files in the build directory itself.
+<b>Eingeführt in einer post-0.9.0 CVS-Version.</b>
+Eine Liste von Unterverzeichnissen.
+Es macht das gleiche wie das Feld UpdateLibtool, aber für Pakete mit veralteten
+libtool-1.3.x-Skripten in mehreren Verzeichnissen überall im Baum der
+Quellen.
+Früher musste man die Dateien von Hand im Patchskript an die richtigen Stellen
+kopieren.
+Mit diesem Feld muss man nur noch die Verzeichnisse auflisten.
+Benutzen sie <tt style="white-space: nowrap;">.</tt>, um auch die Dateien im Verzeichnis build zu
+ersetzen.
 </p>
 </td></tr><tr valign="top"><td>UpdatePoMakefile</td><td>
 <p>
-A boolean value.
-If true, the file <tt style="white-space: nowrap;">Makefile.in.in</tt> in the
-subdirectory <tt style="white-space: nowrap;">po</tt> is replaced with a patched version.
-This happens in the patch phase and before the PatchScript is run.
+Ein boolscher Wert.
+Ist er auf wahr (true) gesetzt, wird die Datei
+<tt style="white-space: nowrap;">Makefile.in.in</tt> im Unterverzeichnis <tt style="white-space: nowrap;">po</tt>
+durch eine angepasste Version ersetzt.
+Dies erfolgt in der Patch-Phase bevor das PatchSkript ausgeführt wird.
 </p>
 <p>
-The patched version respects DESTDIR and makes sure that message
-catalogs end up in <tt style="white-space: nowrap;">/sw/share/locale</tt>, not
-<tt style="white-space: nowrap;">/sw/lib/locale</tt>.
-Before using this field, make sure that you won't break the package
-and that it's really required.
-You can run <tt style="white-space: nowrap;">diff</tt> to find the differences between the
-package's version and Fink's version (in
-<tt style="white-space: nowrap;">/sw/lib/fink/update</tt>).
+Die angepasste Version respektiert DESTDIR sorgt dafür, dass Kataloge mit
+Meldungen im Verzeichnis <tt style="white-space: nowrap;">/sw/share/locale</tt> landen und nicht
+in <tt style="white-space: nowrap;">/sw/lib/locale</tt>.
+Bevor sie dieses Feld benutzen, überprüfen sie, dass das Paket nicht beschädigt
+wird und überhaupt notwendig ist.
+Sie können sich mit dem Tool <tt style="white-space: nowrap;">diff</tt> die Unterschiede zwischen der V
+ersion des Pakets und der in Fink (in <tt style="white-space: nowrap;">/sw/lib/fink/update</tt>)
+anzeigen lassen.
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>
-The filename of a patch to be applied with <tt style="white-space: nowrap;">patch -p1
-&lt;<b>patch-file</b></tt>. This should be just a filename; the
-appropriate path (the same directory where the <tt style="white-space: nowrap;">.info</tt> file
-is located) will be prepended automatically. Percent expansion is
-performed on this field, so a typical value is simply
-<tt style="white-space: nowrap;">%f.patch</tt> or <tt style="white-space: nowrap;">%n.patch</tt>. The patch is applied
-in a separate step before the PatchScript is run (if any).
+Der Dateiname eines Patch, der mit dem Kommando
+<tt style="white-space: nowrap;">patch -p1 &lt;<b>patch-file</b></tt> angewendet wird. Dies sollte
+einfach ein Dateiname sein. Der zugehörige Pfad (das gleiche Verzeichniss, in
+dem die .info-Datei steht) wird automatisch davor gestellt. Prozenterweiterung
+wird in diesem Feld ausgeführt. Ein typischer Wert ist einfach
+<tt style="white-space: nowrap;">%f.patch</tt> oder <tt style="white-space: nowrap;">%n.patch</tt>. Der Patch wird in einem
+separaten Schritt angewandt, bevor das Patch-Skript (wenn vorhanden) ausgeführt
+wird.
 </p>
 <p>
-Remember that %n includes all %type_ variant data, so you may want to
-use %{ni} here (perhaps with some specific %type_ expansions). It's
-easier to maintain a single patchfile and then make variant-specific
-changes in <tt style="white-space: nowrap;">PatchScript</tt> than to have a separate patchfile
-for each variant.
+Beachten sie, dass %n allen Datenvarianten %type_ einschließt. Es kann deshalb
+günstiger sein, hier %{ni} zu verwenden (eventuell mit einigen spezifischen
+%type_ Erweiterungen). Es ist einfacher, eine einzige Patchdatei zu pflegen und
+dann variantenspezifische Änderungen im Patch-Skript zu machen als separate
+Patchdateien für jede Variante zu pflegen.
 </p>
 <p>
-As of fink-0.29.0, this field should not be used.
-Use <tt style="white-space: nowrap;">PatchFile</tt> instead. Support for <tt style="white-space: nowrap;">Patch</tt>
-will be removed in the future.
+Ab Fink-0.29.0 sollte dieses Feld nicht benutzt werden. Nutzen sie statt dessen
+das Feld <tt style="white-space: nowrap;">PatchFile</tt>. Die Unterstützung für das Feld
+<tt style="white-space: nowrap;">Patch</tt> wird in Zukunft entfernt werden.
 </p>
 
 </td></tr><tr valign="top"><td>PatchFile</td><td>
 <p>
-The same syntax as the <tt style="white-space: nowrap;">Patch</tt> field. The full path to this
-file is available using the <tt style="white-space: nowrap;">%{PatchFile}</tt> percent
-expansion--do not use <tt style="white-space: nowrap;">%a</tt> to access this file.
-Unlike <tt style="white-space: nowrap;">Patch</tt>, <tt style="white-space: nowrap;">PatchFile</tt> is applied as part
-of <tt style="white-space: nowrap;">PatchScript</tt>. Fink checks that the listed file exists,
-is readable, and that its checksum matches
-the <tt style="white-space: nowrap;">PatchFile-MD5</tt> field.
+Syntax für dieses Feld ist die gleiche wie für das Feld <tt style="white-space: nowrap;">Patch</tt>.
+Der komplette Pfad für diese Datei erhält man über die Prozenterweiterung
+<tt style="white-space: nowrap;">%{PatchFile}</tt>. Sie sollten <tt style="white-space: nowrap;">%a</tt> nicht verwenden.
+Im Unterschied zum Feld <tt style="white-space: nowrap;">Patch</tt>, wird <tt style="white-space: nowrap;">PatchFile</tt> im
+Patch-Skript verwendet. Fink überprüft, ob die Datei existiert, lesbar ist und
+seine Checksum mit dem Wert im Feld <tt style="white-space: nowrap;">PatchFile-MD5</tt> übereinstimmt.
 </p>
 <p>
-You may not use both <tt style="white-space: nowrap;">Patch</tt> and <tt style="white-space: nowrap;">PatchFile</tt> in
-the same package description. Any package that
-uses <tt style="white-space: nowrap;">PatchFile</tt> must declare at least
-<tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.24.12)</tt>. Giving a higher version
-requirement is allowed if it is necessary for other reasons.
+Man kann die Felder <tt style="white-space: nowrap;">Patch</tt> und <tt style="white-space: nowrap;">PatchFile</tt> in der
+gleichen Paketbeschreibung verwenden. Jedes Paket, das das Feld
+<tt style="white-space: nowrap;">PatchFile</tt> verwendet, muss auch wenigstens
+<tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.24.12)</tt> deklarieren. Muss man aus
+anderen Gründen eine höhere Version angeben, ist dies auch in Ordnung.
 </p>
 </td></tr><tr valign="top"><td>PatchFile<b>N</b></td><td>
 <p>
-If a package has several patch files, name them with these additional 
-fields, starting with N = 2. So, the first patch file goes into 
-<tt style="white-space: nowrap;">PatchFile</tt>, the second patch file in <tt style="white-space: nowrap;">PatchFile2</tt> 
-and so on.  Any package that uses <tt style="white-space: nowrap;">PatchFile<b>N</b></tt> must 
-declare at least <tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.30.0)</tt>. Giving 
-a higher version requirement is allowed if it is necessary for other 
-reasons.
+Hat ein Paket mehrere Patch-Dateien, muss man sie in zusätzlichen Feldern
+deklarieren, mit N = 2 anfangend. Die erste Patch-Datei steht als in
+<tt style="white-space: nowrap;">PatchFile</tt>, die zweite in <tt style="white-space: nowrap;">PatchFile2</tt> uns so weiter.
+Jedes Paket, das das Feld <tt style="white-space: nowrap;">PatchFile<b>N</b></tt> verwendet, muss auch
+wenigstens <tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.30.0)</tt> deklarieren.  Muss
+man aus anderen Gründen eine höhere Version angeben, ist dies auch in Ordnung.
 </p>
 </td></tr><tr valign="top"><td>PatchFile-MD5</td><td>
 <p>
-The MD5 checksum of the file given in the <tt style="white-space: nowrap;">PatchFile</tt>
-field. This field is required if <tt style="white-space: nowrap;">PatchFile</tt> is used.
-(Introduced in fink-0.24.12)
+Hier steht die MD5-Checksum einer Datei des Felds <tt style="white-space: nowrap;">PatchFile</tt>.
+Dieses Feld ist obligatorisch, wenn man das Feld <tt style="white-space: nowrap;">PatchFile</tt> benutzt.
+(Eingeführt in Fink-0.24.12)
 </p>
 </td></tr><tr valign="top"><td>PatchFile<b>N</b>-MD5</td><td>
 <p>
-The MD5 checksum of the file given in the <tt style="white-space: nowrap;">PatchFile<b>N</b></tt>
-field. This field is required if <tt style="white-space: nowrap;">PatchFile<b>N</b></tt> is used.
-(Introduced in fink-0.30.0)
+Hier steht die MD5-Checksum einer Datei des Felds
+<tt style="white-space: nowrap;">PatchFile<b>N</b></tt>. Dieses Feld ist obligatorisch, wenn man das
+Feld <tt style="white-space: nowrap;">PatchFile</tt> benutzt.
+(Eingeführt in Fink-0.30.0)
 </p>
 </td></tr><tr valign="top"><td>PatchScript</td><td>
 <p>
-A list of commands that are run in the patch phase. This is the place
-to put commands that patch or otherwise modify the package source. See
-the <a href="#reference.scripts">note on scripts</a>
-below. Before the commands are executed, <a href="#format.percent">percent expansion</a> takes place. If
-a <tt style="white-space: nowrap;">PatchFile</tt> field exists, the
-default <tt style="white-space: nowrap;">PatchScript</tt> is:
+Eine Liste von Kommandos, die in der Patch-Phase ausgeführt werden. Hierhin
+gehören Kommandos, mit denen man die Paketquellen patched oder irgendwie
+modifiziert. Weitere Details dazu stehen weiter unten im Abschnitt
+<a href="#reference.scripts">Anmerkungen zu Skripten</a>.
+Bevor die Kommandos ausgeführt werden, wird die
+<a href="#format.percent">Prozenterweiterung</a> ausgeführt.
+Existiert das Feld <tt style="white-space: nowrap;">PatchFile</tt>, ist das
+Standard-<tt style="white-space: nowrap;">PatchScript</tt>:
 </p>
 <pre>patch -p1 &lt; %{PatchFile}</pre>
 <p>
-If one or more <tt style="white-space: nowrap;">PatchFile<b>N</b></tt> fields are used, the 
-following is appended as needed to the default script:
+Bei einem oder mehreren Feldern <tt style="white-space: nowrap;">PatchFile<b>N</b></tt>, wird
+entsprechend dem Bedarf folgendes an das Skript angehängt:
 </p>
 <pre>patch -p1 &lt; %{PatchFile<b>N</b>}</pre>
 <p>
-If there is no <tt style="white-space: nowrap;">PatchFile</tt>, the default is blank. If you
-have an explicit <tt style="white-space: nowrap;">PatchScript</tt>, you must apply
-the <tt style="white-space: nowrap;">PatchFile(s)</tt> explicitly.
+Gibt es kein Feld <tt style="white-space: nowrap;">PatchFile</tt>, ist das Standardskript leer. Bei einem
+expliziten Feld <tt style="white-space: nowrap;">PatchScript</tt> muss man auch die
+<tt style="white-space: nowrap;">PatchFile(s)</tt> explizit anwenden.
 </p>
 </td></tr></table>
-<p><b>Compile Phase:</b></p>
+
+<p><b>Compile-Phase:</b></p>
+
 
 
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Set<b>ENVVAR</b></td><td>
 <p>
-Causes certain environment variables to be set in the
-compile and install phases. This can be used to pass compiler flags
-etc. to configure scripts and Makefiles. Currently supported variables
-are:
+Hiermit kann man Umgebungsvariablen für die Compile- und Installations-Phase
+setzen. Damit kann man Compiler-Flags z. B. an Configure-Skripte und Makefiles
+übergeben. Derzeit werden folgende Variablen unterstützt:
 CC, CFLAGS, CPP, CPPFLAGS, CXX, CXXFLAGS, DYLD_LIBRARY_PATH, JAVA_HOME,
 LD, LDFLAGS, LIBRARY_PATH, LIBS, MACOSX_DEPLOYMENT_TARGET, MAKE, 
 MFLAGS, MAKEFLAGS.
-The value you specify is subject to the
-percent expansion described in the last section. A common example:
+Für den angegebenen Wert kann die Prozenterweiterung aus dem letzten Kapitel
+genutzt werden: Ein häufiges Beispiel:
 </p>
 <pre>SetLDFLAGS: -Wl,-strip_dead_dylibs</pre>
 <p>
-Some environment variables have default preset values.
-If you specify a value for one of these, it will be
-prepended to the default value.
-The preset variables (and their default values) are:
+Einige Umgebungsvariablen haben einen Standardwert. Gibt man für diese einen
+Wert an, werden sie dem Standardwert voran gestellt.
+Die vorbesetzten  Variablen und ihre Standardwerte sind:
 </p>
 <pre>CPPFLAGS: -I%p/include
 LDFLAGS: -L%p/lib</pre>
 <p>
-Starting in fink 0.26.0, there is one exception to these defaults:
-if <tt style="white-space: nowrap;">Type: -64bit</tt> is set to <tt style="white-space: nowrap;">-64bit</tt>, then the
-default value of <tt style="white-space: nowrap;">LDFLAGS</tt> is <tt style="white-space: nowrap;">-L%p/%lib -L%p/lib</tt> 
-instead.
+Beginnend mit Fink 0.26.0, gibt es eine Ausnahme von diesen Standards:
+Ist der <tt style="white-space: nowrap;">Type: -64bit</tt> auf <tt style="white-space: nowrap;">-64bit</tt> gesetzt, dann ist der
+Standardwert von <tt style="white-space: nowrap;">LDFLAGS</tt> auf <tt style="white-space: nowrap;">-L%p/%lib -L%p/lib</tt>
+gesetzt.
 </p>
 <p>
-Finally, MACOSX_DEPLOYMENT_TARGET is set to a default value depending
-on which version of OSX is being run, but setting a value for it for 
-a package will override (rather than prepend to) the default value.
+MACOSX_DEPLOYMENT_TARGET ist auf einen Standardwert gesetzt, der von der
+Version von OS X abhängt, aber setzt man es für ein Paket auf einen anderen
+Wert, so wird der Standardwert überschrieben.
 </p>
 
 </td></tr><tr valign="top"><td>NoSet<b>ENVVAR</b></td><td>
 <p>
-When set to a true value, deactivates the default values for the preset
-variables (such as
-CPPFLAGS, LDFLAGS, CXXFLAGS  mentioned above). For 
-example, if you want LDFLAGS to
-remain unset, specify <tt style="white-space: nowrap;">NoSetLDFLAGS: true</tt> .
+Setzt man dies auf wahr (true), dann werden die Standardwerte für die Variablen
+mit Voreinstellungen (wie CPPFLAGS, LDFLAGS, CXXFLAGS) nicht gesetzt. Soll zum
+Beispiel LDFLAGS nicht gesetzt werden, erreicht man dies mit
+<tt style="white-space: nowrap;">NoSetLDFLAGS: true</tt> .
 </p>
 </td></tr><tr valign="top"><td>UseMaxBuildJobs</td><td>
 <p>
-When set to a true value, appends <tt style="white-space: nowrap;">-j<b>N</b></tt>, where <b>N</b> 
-is the value from the <tt style="white-space: nowrap;">fink.conf</tt> field MaxBuildJobs, 
-to the environment variable MAKEFLAGS during CompileScript and TestScript. 
-This value is added to MAKEFLAGS even if the field <tt style="white-space: nowrap;">NoSetMAKEFLAGS: 
-true</tt> is used. As of fink &gt; 0.31.2, if the field is not present or 
-blank, the default is <tt style="white-space: nowrap;">True</tt>.
+Wenn auf wahr (true) gesetzt, wird <tt style="white-space: nowrap;">-j<b>N</b></tt> für das
+Compile-Skript und das Test-Skript an die Umgebungsvariable MAKEFLAGS angehängt.
+N ist der Wert des Felds MaxBuildJobs in der Datei
+<tt style="white-space: nowrap;">fink.conf</tt>. Dieser Wert wird an die Variable MAKEFLAGS auch
+angehängt, wenn das Feld <tt style="white-space: nowrap;">NoSetMAKEFLAGS: true</tt> gesetzt ist. Ab der
+Fink-Version 0.31.2 ist die Voreinstellung <tt style="white-space: nowrap;">True</tt>, wenn das Feld
+nicht angegeben oder leer ist.
 </p>
 </td></tr><tr valign="top"><td>BuildAsNobody</td><td>
 <p>
-In fink &gt;= 0.33.0, when set to a <tt style="white-space: nowrap;">false</tt> value, causes fink
-to build as <tt style="white-space: nowrap;">root</tt> rather than as the underprivileged
-<tt style="white-space: nowrap;">fink-bld</tt> user.
-If this field is not present, its value defaults to <tt style="white-space: nowrap;">true</tt>, indicating
-that the package should be built as <tt style="white-space: nowrap;">fink-bld</tt>.
+Ab Version 0.33.0 wird Fink als <tt style="white-space: nowrap;">root</tt> und nicht als Nutzer
+<tt style="white-space: nowrap;">fink-bld</tt> mit wenigen Privilegien ausgeführt, wenn das Feld
+<tt style="white-space: nowrap;">BuildAsNobody</tt> auf <tt style="white-space: nowrap;">false</tt> gesetzt ist.
+Ist das Feld nicht vorhanden, ist die Voreinstellunge für den Wert wahr
+<tt style="white-space: nowrap;">true</tt>, das Paket wird also als Nutzer <tt style="white-space: nowrap;">fink-bld</tt>
+erstellt.
 </p>
-<p>In earlier fink versions, this field does nothing.</p>
+<p>In früheren Versionen von Fink bleibt dieses Feld folgenloss.</p>
 </td></tr><tr valign="top"><td>ConfigureParams</td><td>
 <p>
-Additional parameters to pass to the configure script. (See
-CompileScript for details.)  
-For packages not of <tt style="white-space: nowrap;">Type: Perl</tt>, the parameter
-<tt style="white-space: nowrap;">--prefix=%p</tt> is prepended to this value.
-As of fink &gt; 0.13.7, this field will also work with perl modules
-<tt style="white-space: nowrap;">Type: Perl</tt>; the default perl Makefile.PL
-string is prepended to the value supplied for <tt style="white-space: nowrap;">ConfigureParams</tt>.
+Zusätzliche Parameter, die an das Configure-Skript durchgereicht werden.
+(Weitere Details dazu gibt es beim Compile-Skript)
+Außer für Pakete des Typs <tt style="white-space: nowrap;">Type: Perl</tt> wird der Parameter
+<tt style="white-space: nowrap;">--prefix=%p</tt> dem Wert vorangestellt.
+Ab Fink &gt; 0.13.7 funktioniert dieses Feld auch für Perlmodule mit dem Feld
+<tt style="white-space: nowrap;">Type: Perl</tt>; der Perl-Standard Makefile.PL wird dem Wert des Felds
+<tt style="white-space: nowrap;">ConfigureParams</tt> voran gestellt.
 </p>
 <p>
-If a build is being done
-with test suites enabled, the value of the <tt style="white-space: nowrap;">TestConfigureParams</tt>
-field will be appended to the normal <tt style="white-space: nowrap;">ConfigureParams</tt> value.
+Sind bei der Paketserstellung die Test-Suites aktiviert wird der Wert des Felds
+<tt style="white-space: nowrap;">TestConfigureParams</tt> den normalen <tt style="white-space: nowrap;">ConfigureParams</tt>
+Werten angehängt.
 </p>
 <p>
-Starting in fink-0.22.0, this field supports conditionals. The
-syntax is the same as that used in the <tt style="white-space: nowrap;">Depends</tt> and
-other package-list fields. The conditional expression only applies
-to the whitespace-delimited "word" immediately following
-it. For example
+Beginnend mit Fink-0.22.0 unterstützt dieses Feld auch Bedingungen. Die Syntax
+ist die gleiche wie im Feld <tt style="white-space: nowrap;">Depends</tt> und anderen Feldern mit
+Paketlisten. Die Bedingungen gilt nur für das leerzeichenbegrenzte
+"Wort" hinter der Bedingung. Ein Beispiel:
 </p>
 <pre>Type: -x11 (boolean)
 ConfigureParams: --mandir=%p/share/man (%type_pkg[-x11]) --with-x11 --disable-shared</pre>
 <p>
-will always pass the <tt style="white-space: nowrap;">--mandir</tt> and <tt style="white-space: nowrap;">--disable-shared</tt>
-flags, but only pass <tt style="white-space: nowrap;">--with-x11</tt> in the -x11 variant.
+reicht die Parameter <tt style="white-space: nowrap;">--mandir</tt> und <tt style="white-space: nowrap;">--disable-shared</tt>
+immer weiter, <tt style="white-space: nowrap;">--with-x11</tt> aber nur für die -x11 Variante.
 </p>
 <p>
-This field supports placing parameters into multiple lines using multi-line
-field declarators. The field is handled as a shell command line and uses
-<tt style="white-space: nowrap;">\</tt> to separate lines:
+Dieses Feld unterstützt, Parameter in mehreren Zeilen mit einer
+Mehrzeilen-Deklaration zu schreiben. Dieses Feld wird wie eine
+Shell-Kommandozeile behandelt und benutzt <tt style="white-space: nowrap;">\</tt>, um Zeilen zu trennen:
 </p>
 <pre>ConfigureParams: &lt;&lt;
 	--mandir=%p/share/man \
@@ -2487,474 +2497,477 @@ field declarators. The field is handled as a shell command line and uses
 	--disable-shared
 &lt;&lt;</pre>
 <p>
-Note: do not place conditional parameters as the last line when using the
-multi-line field format. In instances when the conditional evaluates as false,
-the parameter immediately following is not evaluated and this breaks the shell.
+Beachten sie: Stellen sie bei mehreren Zeilen bedingte Parameter nicht in die
+letzte Zeile. Ist die Bedingung falsch, dann wird der darauf folgende Parameter
+nicht ausgewertet. Dieses führt dann zum Absturz der Shell.
 </p>
 </td></tr><tr valign="top"><td>GCC</td><td>
 <p>
-This field specifies the GCC-ABI used by C++ code in this package.
-(It is needed because that ABI has changed twice, and any libraries
-which you link to containing C++ code must be compiled with the same ABI
-you are currently using.)
+Dieses Feld deklariert die GCC-ABI, die in diesem Paket von C++ Code genutzt
+wird. (Es ist notwendig, weil sich die ABI zweimal änderte und jede Bibliothek,
+die sie in ihrem C++ Code verlinken, muss mit der selben ABI kompiliert werden
+wie ihr Code.)
 </p>
 <p>
-The allowed values are:
-<tt style="white-space: nowrap;">2.95.2</tt> (or <tt style="white-space: nowrap;">2.95</tt>), <tt style="white-space: nowrap;">3.1</tt>, <tt style="white-space: nowrap;">3.3</tt>,
-and <tt style="white-space: nowrap;">4.0</tt>.
-Our understanding is that the GCC authors intend to stabilize the GCC-ABI
-at some point; we can hope that it won't change again.
+Die erlaubten Werte sind:
+<tt style="white-space: nowrap;">2.95.2</tt> (oder <tt style="white-space: nowrap;">2.95</tt>), <tt style="white-space: nowrap;">3.1</tt>, <tt style="white-space: nowrap;">3.3</tt>
+und <tt style="white-space: nowrap;">4.0</tt>.
+So weit uns bekannt, wollen die Autoren von GCC die GCC-ABI irgendwann stabil
+halten; wir können nur hoffen, dass sie sich nicht erneut ändert.
 </p>
 <p>
-The GCC field does not have a default value, per se, since it is ignored
-if it is not set.  However, for each tree, there is an expected value
-for GCC corresponding to the default g++ compiler for that tree.
-The expected values for the various package trees are:
-<tt style="white-space: nowrap;">2.95</tt> in the 10.1 tree, <tt style="white-space: nowrap;">3.1</tt> in the 10.2 tree,
- <tt style="white-space: nowrap;">3.3</tt> in the 10.2-gcc3.3, 10.3, and 10.4-transitional
-trees, and <tt style="white-space: nowrap;">4.0</tt> in the 10.4 and 10.7 trees.
+Das Feld GCC hat keine Voreinstellung an sich, denn es wird ignoriert, wenn es
+nicht gesetzt ist. Es gibt aber für jeden Baum einen erwarteten Wert für GCC,
+der dem g++ Compiler für diesem Baum entspricht.
+Die erwarteten Werte für die verschiedenen Paketbäume sind:
+<tt style="white-space: nowrap;">2.95</tt> im Baum 10.1, <tt style="white-space: nowrap;">3.1</tt> im Baum 10.2,
+<tt style="white-space: nowrap;">3.3</tt> in den Bäumen 10.2-gcc3.3, 10.3 und 10.4-transitional und
+<tt style="white-space: nowrap;">4.0</tt> in den Bäumen 10.4 und 10.7.
 </p>
 <p>
-Note that when the GCC value is different from the expected value, the compiler
-must be specified within the package (typically by setting the CC or CXX
-flags), and a dependency on one of the (virtual) gcc packages should be
-specified.
+Beachten sie, dass der Compiler im Paket angegeben werden muss, wenn er von dem
+erwarteten abweicht. Typischerweise wird der Compiler durch Setzen der Flags
+CC oder CXX geändert. Es sollte auch eine Abhängigkeit von einem der
+(virtuellen) gcc-Pakete angegeben werden.
 </p>
 <p>
-As of fink 0.13.8, when this flag is present, the version of gcc
-is tested using <tt style="white-space: nowrap;">gcc_select</tt>, and fink exits with an error
-if the wrong version is present.
+Ab Version 0.13.8 von Fink wird die Version von gcc mit <tt style="white-space: nowrap;">gcc_select</tt>
+überprüft, wenn dieses Feld gesetzt ist. Liegt eine falsche Version vor, bricht
+Fink mit einem Fehler ab.
 </p>
 <p>
-This field was added to fink to aid maintainers
-in tracking the transition between the gcc
-compilers, which introduced a binary incompatibility between libraries
-that involve C++ code which is not reflected in the versioning
-scheme.
+Dieses Feld wurde in Fink eingerichtet, um Betreuern zu helfen, den Übergängen
+zwischen den gcc Compilern zu folgen, die binäre Inkompatibilitäten zwischen
+Bibliotheken einführte, die C++ Code enthalten, die aber nicht durch aus
+Versionen erkannt werden kann.
 </p>
 </td></tr><tr valign="top"><td>CompileScript</td><td>
 <p>
-A list of commands that are run in the compile phase. This is the
-place to put commands that configure and compile the package. See
-the <a href="#reference.scripts">note on scripts</a>
-below. Before the commands are executed, <a href="#format.percent">percent expansion</a> takes place. Normally the
-default is:
+Eine Liste von Kommandos, die in der Compile-Phase ausgeführt wird. Hierhin
+gehören Kommandos, die ein Paket konfigurieren und compilieren. Weitere Details
+dazu stehen weiter unten im Abschnitt
+<a href="#reference.scripts">Anmerkungen zu Skripten</a>.
+Bevor die Kommandos ausgeführt werden, wird die
+<a href="#format.percent">Prozenterweiterung</a> ausgeführt.
+Der Standard ist:
 </p>
 <pre>./configure %c
 make</pre>
 <p>
-This is appropriate for packages that use GNU autoconf.
-For packages with of type perl (as specified via the Type field)
-with the perl version not specified,
-the default instead (as of fink 0.13.4) is:
+Dies ist für Pakete angemessen, die GNU autoconf benutzen. Für Pakete des Typs
+perl (deklariert über das Feld Type) ohne Angabe der Perl-Version ist der
+Standard ab Fink 0.13.4 folgender:
 </p>
 <pre>perl Makefile.PL PREFIX=%p \
- INSTALLPRIVLIB=%p/lib/perl5 \
- INSTALLARCHLIB=%p/lib/perl5/darwin \
- INSTALLSITELIB=%p/lib/perl5 \
- INSTALLSITEARCH=%p/lib/perl5/darwin \
- INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3 \
- INSTALLSITEMAN1DIR=%p/share/man/man1 \
- INSTALLSITEMAN3DIR=%p/share/man/man3 \
- INSTALLBIN=%p/bin \
- INSTALLSITEBIN=%p/bin \
- INSTALLSCRIPT=%p/bin
+  INSTALLPRIVLIB=%p/lib/perl5 \
+  INSTALLARCHLIB=%p/lib/perl5/darwin \
+  INSTALLSITELIB=%p/lib/perl5 \
+  INSTALLSITEARCH=%p/lib/perl5/darwin \
+  INSTALLMAN1DIR=%p/share/man/man1 \
+  INSTALLMAN3DIR=%p/share/man/man3 \
+  INSTALLSITEMAN1DIR=%p/share/man/man1 \
+  INSTALLSITEMAN3DIR=%p/share/man/man3 \
+  INSTALLBIN=%p/bin \
+  INSTALLSITEBIN=%p/bin \
+  INSTALLSCRIPT=%p/bin
 make
 make test</pre>
 <p>
-If the type is <tt style="white-space: nowrap;">perl $version</tt> with the version specified
-(e.g., <tt style="white-space: nowrap;">$version</tt> might be 5.6.0),
-then the default becomes:
+Ist der Typ <tt style="white-space: nowrap;">perl $version</tt> mit angegebener Perl-Version
+(<tt style="white-space: nowrap;">$version</tt> könnte beispielsweise 5.6.0 sein), dann wird der Standard
+dieses:
 </p>
 <pre>perl$version Makefile.PL \
- PERL=perl$version PREFIX=%p \
- INSTALLPRIVLIB=%p/lib/perl5/$version \
- INSTALLARCHLIB=%p/lib/perl5/$version/$perlarchdir \
- INSTALLSITELIB=%p/lib/perl5/$version \
- INSTALLSITEARCH=%p/lib/perl5/$version/$perlarchdir \
- INSTALLMAN1DIR=%p/share/man/man1 \
- INSTALLMAN3DIR=%p/share/man/man3 \
- INSTALLSITEMAN1DIR=%p/share/man/man1 \
- INSTALLSITEMAN3DIR=%p/share/man/man3 \
- INSTALLBIN=%p/bin \
- INSTALLSITEBIN=%p/bin \
- INSTALLSCRIPT=%p/bin
+  PERL=perl$version PREFIX=%p \
+  INSTALLPRIVLIB=%p/lib/perl5/$version \
+  INSTALLARCHLIB=%p/lib/perl5/$version/$perlarchdir \
+  INSTALLSITELIB=%p/lib/perl5/$version \
+  INSTALLSITEARCH=%p/lib/perl5/$version/$perlarchdir \
+  INSTALLMAN1DIR=%p/share/man/man1 \
+  INSTALLMAN3DIR=%p/share/man/man3 \
+  INSTALLSITEMAN1DIR=%p/share/man/man1 \
+  INSTALLSITEMAN3DIR=%p/share/man/man3 \
+  INSTALLBIN=%p/bin \
+  INSTALLSITEBIN=%p/bin \
+  INSTALLSCRIPT=%p/bin
 make
 make test</pre>
 <p>
-where <tt style="white-space: nowrap;">$perlarchdir</tt> is "darwin" for versions 5.8.0 and
-earlier, and is 
-"darwin-thread-multi-2level" for versions 5.8.1 and later.
+wobei <tt style="white-space: nowrap;">$perlarchdir</tt> für Versionen 5.8.0 und früher "darwin" ist und
+"darwin-thread-multi-2level" für Versionen 5.8.1 und später.
 </p>
 </td></tr><tr valign="top"><td>NoPerlTests</td><td> 
 <p>
-<b>Introduced in fink &gt; 0.13.7.</b>
-A boolean value, specific for perl module packages.
-If true, the <tt style="white-space: nowrap;">make test</tt> portion
-of the <tt style="white-space: nowrap;">CompileScript</tt> will be ignored
-for that specific perl module package.
+<b>Eingeführt in Fink &gt; 0.13.7.</b>
+Ein boolscher Wert speziell für Pakete mit Perl-Modulen. Wenn auf wahr gesetzt,
+wird der Teil <tt style="white-space: nowrap;">make test</tt> im <tt style="white-space: nowrap;">CompileScript</tt> für dieses
+bestimmte Perl-Modul-Paket ignoriert.
 </p>
 </td></tr></table>
-<p><b>Test Suites:</b></p>
+
+<p><b>Test-Suites:</b></p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>InfoTest</td><td>
 <p>
-<b>Introduced in fink 0.25.</b>
-This field encapsulates information that will only be used when performing
-a build with test suites enabled.  It contains other fields.
-If present, this field <b>must</b> contain a <tt style="white-space: nowrap;">TestScript</tt>.
-All other fields are optional.  The following fields are allowed inside
-<tt style="white-space: nowrap;">InfoTest</tt>:
+<b>Eingeführt in Fink 0.25.</b>
+Dieses Feld umfasst Informationen, die nur ausgeführt werden, wenn bei der
+Erstellung eines Pakets die Test-Suites aktiviert sind. Es enthält andere
+Felder. Ist es vorhanden, muss das Feld <tt style="white-space: nowrap;">TestScript</tt> enthalten sein.
+Alle anderen Felder sind optional. Die folgenden Felder sind innerhalb
+<tt style="white-space: nowrap;">InfoTest</tt> erlaubt:
 </p>
 <ul>
-<li><tt style="white-space: nowrap;">TestScript</tt>: A script which runs the test suite.  This script
-  should exit
-    with status 0 if the suite passes, 1 to indicate warnings, or any other
-    value to indicate failures serious enough to be considered fatal.
-    Because of this tri-state logic, you should explicitly set an exit value in
-    this script.  For instance, <tt style="white-space: nowrap;">make check</tt> is a bad script,
-    since it will exit with status 1 if the check target doesn't exist.
-    <tt style="white-space: nowrap;">make check || exit 2</tt> would be a better script.</li>
-<li><tt style="white-space: nowrap;">TestConfigureParams</tt>: A value which will be appended to
-  <tt style="white-space: nowrap;">ConfigureParams</tt>.</li>
-<li><tt style="white-space: nowrap;">TestDepends</tt> and <tt style="white-space: nowrap;">TestConflicts</tt>: Lists of packages
-  that will be added to the <tt style="white-space: nowrap;">BuildDepends</tt> or
-  <tt style="white-space: nowrap;">BuildConflicts</tt> lists.</li>
-<li><tt style="white-space: nowrap;">TestSource</tt>: Extra sources necessary to run the test suite.
-  All of the
-    affiliated fields are also supported, so you <b>must</b> also specify
-    <tt style="white-space: nowrap;">TestSource-MD5</tt>, and you may also have
-    <tt style="white-space: nowrap;">TestSourceN</tt> and corresponding <tt style="white-space: nowrap;">TestSourceN-MD5</tt>,
-    <tt style="white-space: nowrap;">TestTarFilesRename</tt>, etc.</li>
-<li><tt style="white-space: nowrap;">TestSuiteSize</tt>: Describes approximately how long the test suite
-  takes to
-    run.  Valid values are <tt style="white-space: nowrap;">small</tt>, <tt style="white-space: nowrap;">medium</tt>, and
-    <tt style="white-space: nowrap;">large</tt>.
-    This field is currently ignored.</li>
-<li>Any other standard field.  If a field is specified both inside and outside
-<tt style="white-space: nowrap;">InfoTest</tt>, the value inside <tt style="white-space: nowrap;">InfoTest</tt> will replace
-the other value when test suites are active.</li>
-</ul><p>Here's an example:</p>
+<li><tt style="white-space: nowrap;">TestScript</tt>: Ein Skript, das die Test-Suite ausführt. Dieses
+  Skript sollte mit einem Status 0 enden, wenn die Suite erfolgreich endet, mit
+  einem Status 1 um Warnungen anzuzeigen oder jeder andere Wert, der Fehler
+  anzeigt, die ernst genug für einen fatalen Abbruch sind. Wegen der
+  Dreifach-Logik des Ausgangswert sollte er auf jeden Fall gesetzt werden.
+  <tt style="white-space: nowrap;">make check</tt> ist zum Beispiel ein schlechtes Skript, weil es mit
+  dem Status 1 endet, wenn das Check-Ziel nicht existiert.
+  <tt style="white-space: nowrap;">make check || exit 2</tt> wäre schon ein besseres Skript.</li>
+<li><tt style="white-space: nowrap;">TestConfigureParams</tt>: Ein Wert, der an die
+  <tt style="white-space: nowrap;">ConfigureParams</tt> angehängt wird.</li>
+<li><tt style="white-space: nowrap;">TestDepends</tt> und <tt style="white-space: nowrap;">TestConflicts</tt>: Listen der Pakete,
+  die an Listen in <tt style="white-space: nowrap;">BuildDepends</tt> oder <tt style="white-space: nowrap;">BuildConflicts</tt>
+  angehängt wird.</li>
+<li><tt style="white-space: nowrap;">TestSource</tt>: Extra Quellen, die für die Test-Suites benötigt
+  werden. Alle verwandten Felder werden auch unterstützt. Man muss also auch
+  <tt style="white-space: nowrap;">TestSource-MD5</tt> deklarieren. Die Felder <tt style="white-space: nowrap;">TestSourceN</tt>
+  und die entsprechenden Felder <tt style="white-space: nowrap;">TestSourceN-MD5</tt>,
+  <tt style="white-space: nowrap;">TestTarFilesRename</tt> usw. können ebenfalls vorhanden sein.</li>
+<li><tt style="white-space: nowrap;">TestSuiteSize</tt>: Beschreibt ungefähr wie lange das Ausführen der
+  Test-Suites dauern wird. Erlaubte Werte sind <tt style="white-space: nowrap;">small</tt>,
+  <tt style="white-space: nowrap;">medium</tt> und <tt style="white-space: nowrap;">large</tt>. Gegenwärtig wird dieses Feld
+  ignoriert.</li>
+<li>Jedes andere Standardfeld. Ist ein Feld sowohl innerhalb als auch außerhalb
+  von <tt style="white-space: nowrap;">InfoTest</tt> deklariert, wird der Werte innerhalb von
+  <tt style="white-space: nowrap;">InfoTest</tt> den Wert von außerhalb ersetzen, wenn die Test-Suites
+  aktiviert sind.</li>
+</ul>
+<p>Hier ein Beispiel:</p>
 <pre>InfoTest: &lt;&lt;
     TestScript: make check || exit 2
     TestConfigureParams: --enable-tests
 &lt;&lt;</pre>
 </td></tr></table>
-<p><b>Install Phase:</b></p>
+
+<p><b>Installationsphase:</b></p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>UpdatePOD</td><td>
 <p>
-<b>Introduced in fink 0.9.5.</b>
-A boolean value, specific for perl module packages.
-If true, this will add code to the install, postrm and postinst
-scripts that maintains the .pod files provided by perl packages.
-This includes adding and removing the .pod date from the central
-<tt style="white-space: nowrap;">/sw/lib/perl5/darwin/perllocal.pod</tt> file.
-(If the type has been given as <tt style="white-space: nowrap;">perl $version</tt> with a
-specific version of perl such as 5.6.0,
-then these scripts are adapted to deal with the central .pod file
-<tt style="white-space: nowrap;">/sw/lib/perl5/$version/perllocal.pod</tt>.)
+<b>Eingeführt in Fink 0.9.5.</b>
+Ein boolscher Wert speziell Perl-Modul-Pakete.
+Ist er auf wahr (true) gesetzt, wird Code zu den Skripten install, postrm und
+postinst hinzu gefügt, der die .pod-Dateien aus den Perl-Paketen pflegt.
+Dies schließt ein, das .pod-Datum in der zentralen Datei
+<tt style="white-space: nowrap;">/sw/lib/perl5/darwin/perllocal.pod</tt> hinzu zu fügen oder
+zu entfernen.
+(Ist der Typ als <tt style="white-space: nowrap;">perl $version</tt> mit einer bestimmten Perl-Version
+wie 5.6.0 deklariert, werden diese Skripte angepasst, um die zentrale
+.pod-Datei <tt style="white-space: nowrap;">/sw/lib/perl5/$version/perllocal.pod</tt> zu
+bearbeiten.)
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
-A list of commands that are run in the install phase. This is the
-place to put commands that copy all the necessary files into the
-temporary dpkg directory for the package. See the <a href="#reference.scripts">note on scripts</a>
-below. Before the commands are executed, <a href="#format.percent">percent expansion</a> takes place. Normally the
-default is:
+Die Liste der Kommandos, die in der Installationsphase ausgeführt werden. Hier
+stehen die Kommandos, die alle notwendigen Dateien in das temporäre
+dpkg-Verzeichnis für das Paket kopieren. Weitere Details dazu stehen weiter
+unten im Abschnitt
+<a href="#reference.scripts">Anmerkungen zu Skripten</a>.
+Bevor die Kommandos ausgeführt werden, wird die
+<a href="#format.percent">Prozenterweiterung</a> ausgeführt.
+Normalerweise ist der Standard:
 </p>
 <pre>make install prefix=%i</pre>
 <p>
-The default is appropriate for packages that use GNU autoconf.
-For packages with of type perl (as specified via the Type field)
-with the perl version not specified,
-the default instead (as of fink 0.13.4) is:
+Dies ist für Pakete angemessen, die GNU autoconf benutzen. Für Pakete des Typs
+perl (deklariert über das Feld Type) ohne Angabe der Perl-Version ist der
+Standard ab Fink 0.13.4 folgender:
 </p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5 \
- INSTALLARCHLIB=%i/lib/perl5/darwin \
- INSTALLSITELIB=%i/lib/perl5 \
- INSTALLSITEARCH=%i/lib/perl5/darwin \
- INSTALLMAN1DIR=%i/share/man/man1 \
- INSTALLMAN3DIR=%i/share/man/man3 \
- INSTALLSITEMAN1DIR=%i/share/man/man1 \
- INSTALLSITEMAN3DIR=%i/share/man/man3 \
- INSTALLBIN=%i/bin \
- INSTALLSITEBIN=%i/bin \
- INSTALLSCRIPT=%i/bin</pre>
+  INSTALLARCHLIB=%i/lib/perl5/darwin \
+  INSTALLSITELIB=%i/lib/perl5 \
+  INSTALLSITEARCH=%i/lib/perl5/darwin \
+  INSTALLMAN1DIR=%i/share/man/man1 \
+  INSTALLMAN3DIR=%i/share/man/man3 \
+  INSTALLSITEMAN1DIR=%i/share/man/man1 \
+  INSTALLSITEMAN3DIR=%i/share/man/man3 \
+  INSTALLBIN=%i/bin \
+  INSTALLSITEBIN=%i/bin \
+  INSTALLSCRIPT=%i/bin</pre>
 <p>
-If the type is <tt style="white-space: nowrap;">perl $version</tt> with the version specified
-(e.g., <tt style="white-space: nowrap;">$version</tt> might be 5.6.0),
-then the default becomes:
+Ist der Typ <tt style="white-space: nowrap;">perl $version</tt> mit angegebener Perl-Version
+(<tt style="white-space: nowrap;">$version</tt> könnte beispielsweise 5.6.0 sein), dann wird der Standard
+dieses:
 </p>
 <pre>make install INSTALLPRIVLIB=%i/lib/perl5/$version \
- INSTALLARCHLIB=%i/lib/perl5/$version/$perlarchdir \
- INSTALLSITELIB=%i/lib/perl5/$version \
- INSTALLSITEARCH=%i/lib/perl5/$version/$perlarchdir \
- INSTALLMAN1DIR=%i/share/man/man1 \
- INSTALLMAN3DIR=%i/share/man/man3 \
- INSTALLSITEMAN1DIR=%i/share/man/man1 \
- INSTALLSITEMAN3DIR=%i/share/man/man3 \
- INSTALLBIN=%i/bin \
- INSTALLSITEBIN=%i/bin \
- INSTALLSCRIPT=%i/bin</pre>
+  INSTALLARCHLIB=%i/lib/perl5/$version/$perlarchdir \
+  INSTALLSITELIB=%i/lib/perl5/$version \
+  INSTALLSITEARCH=%i/lib/perl5/$version/$perlarchdir \
+  INSTALLMAN1DIR=%i/share/man/man1 \
+  INSTALLMAN3DIR=%i/share/man/man3 \
+  INSTALLSITEMAN1DIR=%i/share/man/man1 \
+  INSTALLSITEMAN3DIR=%i/share/man/man3 \
+  INSTALLBIN=%i/bin \
+  INSTALLSITEBIN=%i/bin \
+  INSTALLSCRIPT=%i/bin</pre>
 <p>
-where <tt style="white-space: nowrap;">$perlarchdir</tt> is "darwin" for versions 5.8.0 and
-earlier, and is 
-"darwin-thread-multi-2level" for versions 5.8.1 and later.
+wobei <tt style="white-space: nowrap;">$perlarchdir</tt> für Versionen 5.8.0 und früher "darwin" ist und
+"darwin-thread-multi-2level" für Versionen 5.8.1 und später.
 </p>
 <p>
-If the package supports it, it is preferably to use <tt style="white-space: nowrap;">make install
-DESTDIR=%d</tt> instead.
+Wenn das Paket es unterstützt, ist es besser, stattdessen
+<tt style="white-space: nowrap;">make install DESTDIR=%d</tt> auzuführen.
 </p>
 </td></tr><tr valign="top"><td>AppBundles</td><td>
 <p>
-<b>Introduced in a post-0.23.1 version.</b>
-This field installs the specified application bundle(s) into
-<tt style="white-space: nowrap;">%p/Applications</tt>.  It will also create a
-symlink to the <tt style="white-space: nowrap;">/Applications/Fink</tt> directory.
-Example:
+<b>Eingeführt in einer Version nach 0.23.1.</b>
+Dieses Feld installiert das angegebene Applicationbundle bzw. mehrere im
+Verzeichnis <tt style="white-space: nowrap;">%p/Applications</tt>. Es wird auch ein Symlink im
+Verzeichnis <tt style="white-space: nowrap;">/Applications/Fink</tt> erzeugt.
+Beispiel:
 </p>
 <pre>AppBundles: build/*.app Foo.app</pre>
 </td></tr><tr valign="top"><td>JarFiles</td><td>
 <p>
-<b>Introduced in fink 0.10.0.</b>
-This field is somewhat similar to DocFiles. It installs the specified jar
-files into <tt style="white-space: nowrap;">%p/share/java/%n</tt>.
-Example:
+<b>Eingeführt in Fink 0.10.0.</b>
+Das Feld ist irgendwie ähnlich wie das Feld DocFiles. Damit werden die
+angegebenen jar-Dateien ins Verzeichnis <tt style="white-space: nowrap;">%p/share/java/%n</tt>
+installiert.
+Beispiel:
 </p>
 <pre>JarFiles: lib/*.jar foo.jar:fooBar.jar</pre>
 <p>
-This will install all the jars that were in the lib directory and will install
-foo.jar as fooBar.jar.
+Damit werden alle jars im Verzeichnis lib installiert; die Datei foo.jar als
+fooBar.jar.
 </p>
 <p>
-It also ensures that these jar files (specifically: all files in
-<tt style="white-space: nowrap;">%p/share/java/%n</tt> that end in .jar)
-are added to the CLASSPATH environment variable. This allows tools like
-configure or ant to properly detect the installed jar files.
+Es bewirkt auch, dass diese jar-Dateien (genau: alle Dateien in
+<tt style="white-space: nowrap;">%p/share/java/%n</tt> mit der Endung .jar) an die
+Umgebungsvariable CLASSPATH angehängt werden. Damit können Tools wie configure
+oder ant die installierten jar-Dateien feststellen.
 </p>
 </td></tr><tr valign="top"><td>DocFiles</td><td>
 <p>
-This field provides a convenient way to install README or COPYING
-files in the doc directory for the package,
-<tt style="white-space: nowrap;">%p/share/doc/%n</tt>.
-The value is a space-separated list of files.
-You can copy files from subdirectories of the build directory, but
-they will end up in the doc directory itself, not in a subdirectory.
-Shell wildcards are allowed.
-It is also possible to rename single files on the fly by appending the
-new name separated by a colon (:),
-e.g. <tt style="white-space: nowrap;">libgimp/COPYING:COPYING.libgimp</tt>.
-This field works by appending appropriate <tt style="white-space: nowrap;">install</tt>
-commands to the InstallScript.
+Dieses Feld deklariert eine bequehme Art, Dateien wie README oder COPYING für
+das Paket im doc-Verzeichnis <tt style="white-space: nowrap;">%p/share/doc/%n</tt> zu
+installieren. Der Wert ist eine leerzeichenseparierte Liste der Dateien. Man
+kann Dateien aus Unterverzeichnissen des build-Verzeichnisses kopieren, aber sie
+werden im doc-Verzeichnis und nicht einem Unterverzeichnis stehen. Shell
+Wildcards sind erlaubt.
+Es ist auch möglich, einzelne Dateien umzubenennen, indem man den neuen Namen
+mit einem Doppelpunkt (:) anhängt, z. B.
+<tt style="white-space: nowrap;">libgimp/COPYING:COPYING.libgimp</tt>. Dieses Feld funktioniert, indem
+entsprechende <tt style="white-space: nowrap;">install</tt>-Kommandos im Installations-Skript angehängt
+werden.
 </p>
 </td></tr><tr valign="top"><td>Shlibs</td><td>
 <p>
-<b>Introduced in fink 0.11.0.</b>
-This field declares the shared libraries which are installed in the
-package.  There is one line for each
-shared library, which contains the <tt style="white-space: nowrap;">-install_name</tt> of the
-library and information about its binary compatibility. Shared
-libraries that are "public" (i.e., provided for use by other packages)
-have, separated by whitespace after the filename,
-the <tt style="white-space: nowrap;">-compatibility_version</tt>, versioned package
-dependency information specifying the Fink package which provides
-this library at this compatibility version, and the
-library architecture.  (The library architecture may either be "32", "64", or
-"32-64", and may be absent; if absent, 
-the value defaults to "32" under the powerpc and i386 machine architectures,
-and to "64" under the x86_64 machine architecture.)  
-The dependency should
-be stated in the form <tt style="white-space: nowrap;"> foo (&gt;= version-revision)</tt> where 
-<tt style="white-space: nowrap;">version-revision</tt> refers to
-the <b>first</b> version of a Fink package which made
-this library (with this compatibility version) available.
-The Shlibs declaration amounts to a promise
-from the maintainer that a library with this name and a 
-<tt style="white-space: nowrap;">-compatibility_version</tt>
-of at least this number will always be found in later versions of this
-Fink package.
-Shared libraries that are "private" are denoted by an exclamation mark
-preceeding the filename, and no compatilibity or versioning
-information is given. See the <a href="#policy.sharedlibs">Shared Library Policy</a> for more
-information.
+<b>Eingeführt in Fink 0.11.0.</b>
+Diess Feld deklariert dynamische Bibliotheken, die in dem Paket installiert
+werden. Jede Bibliotheke steht in einer separaten Zeile die den
+<tt style="white-space: nowrap;">install_name</tt> der Bibliothek und Informationen über ihre binäre
+Kompatibilität enthalten. Ist die Bibliothek öffentlich, steht in der Zeile auch
+die <tt style="white-space: nowrap;">-compatibility_version</tt>, Informationen zur Abhängigkeit mit
+Version darüber, welches Fink-Paket die Bibliothek mit dieser
+<tt style="white-space: nowrap;">compatibility_version</tt> enthält und die Architektur der Bibliothek.
+(Die Architektur der Bibliothek kann "32", "64" oder "32-64" sein oder ganz
+fehlen. Ist sie nicht explizit angegeben, wird die Voreinstellung genommen, d.h.
+"32" für PowerPC und i386 und "64" für x86_64.) Die Abhängigkeit sollte in der
+Form <tt style="white-space: nowrap;">foo (&gt;= version-revision)</tt> angegeben sein, wobei sich
+<tt style="white-space: nowrap;">foo (&gt;= version-revision)</tt> auf die <b>erste</b> Version des
+Finkpakets bezieht, das diese Bibliothek (mit der compatibility version) zur
+Verfügung stellte. Außerdem impliziert die Deklaration, dass der Betreuer
+versichert, dass auch in späteren Versionen des Pakets eine Bibliothek mit
+diesem Namen und dieser <tt style="white-space: nowrap;">-compatibility_version</tt> angeboten wird.
+Dem Namen von dynamischen Bibliotheken, die "privat" sein sollen, wird ein
+Ausrufezeichen vorangestellt und keine Informationen zu Kompatibilität oder
+Version werden angegeben. Weitere Details dazu stehen im Abschnitt
+<a href="#policy.sharedlibs">dynamische Bibliotheken</a>.
 </p>
 </td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
-<b>Introduced in fink 0.10.0.</b>
-This field provides a convenient way to set environment variables to some static
-value at runtime (if you need more flexibility, refer to the
-<a href="#reference.profile.d">profile.d scripts section</a>). As long as your
-package is installed, these variables will be set via the
-<tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt> scripts.
+<b>Eingeführt in Fink 0.10.0.</b>
+Dieses Feld deklariert eine bequehme Art, Umgebungsvariablen für die Laufzeit
+einen statischen Wert zuzuweisen (Benötigen sie mehr Flexibilität, schauen sie
+im Abschnitt <a href="#reference.profile.d">profile.d Skripte</a> nach). Solange
+das Paket installiert ist, werden diese Variablen im Skript
+<tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt> gesetzt.
 </p>
 <p>
-The value of your variable can contain spaces (trailing ones are trimmed); also,
-percent expansion takes place. For example:
+Der Wert ihrer Variablen kann Leerzeichen enthalten (Leerzeichen am Ende werden
+abgeschnitten); Prozenterweiterung wird ausgeführt. In diesem Beispiel
 </p>
 <pre>RuntimeVars: &lt;&lt;
- SomeVar: %p/Value
- AnotherVar: foo bar
+  SomeVar: %p/Value
+  AnotherVar: foo bar
 &lt;&lt;</pre>
 <p>
-will set two environment variables 'SomeVar' and 'AnotherVar' and their values
-will be respectively '/sw/Value' (or whatever your prefix is) and 'foo bar'.
+werden zwei Umgebungsvariablen 'SomeVar' und 'AnotherVar' erzeugt und ihre Werte
+auf '/sw/Value' (oder wasauch immer ihr Präfix ist) und 'foo bar' gesetzt.
 </p>
 <p>
-This field works by appending appropriate commands to the InstallScript.
-These commands add a setenv/export line for each variable to the package
-profile.d scripts, so you can provide your own ones, they won't be overwritten.
-The lines are prepended to the scripts, you can thus use these variables in your
-scripts.
+Dieses Feld funktioniert, in dem es die entsprechenden Kommandos im
+Installations-Skript angehängt. Diese Kommandos fügen eine Zeile mit
+setenv/export im Paket-Skript profile.d hinzu, so dass sie ihre eigenen
+hinzufügen können, ohne dass sie überschrieben werden. Die Zeilen werden den
+Skripten voran gestellt, so dass man die Variablen auch in den Skripten
+verwenden kann.
 </p>
 </td></tr><tr valign="top"><td>SplitOff</td><td>
 <p>
-<b>Introduced in fink 0.9.9.</b>
-Generate a second package from the same compile/install run.
-For details about how this works, see the separate
-<a href="#splitoffs">splitoff section</a>
-below.
+<b>Eingeführt in Fink 0.9.9.</b>
+Erzeugen sie ein zweites Paket vom selben compile/install-Lauf. Schauen sie für
+weitere Details im separaten Abschnitt
+<a href="#splitoffs">Splitoff</a>
+nach.
 </p>
 </td></tr><tr valign="top"><td>SplitOff<b>N</b></td><td>
 <p>
-<b>Introduced in fink 0.9.9.</b>
-This is the same as <tt style="white-space: nowrap;">SplitOff</tt>, used to generate a third,
-fourth, etc. package from the same compile/install run. Starting with a
-CVS version of fink after 0.19.2, you may use arbitrary (not
-necessarily consecutive) integer values of N &gt;= 2. However, you still
-may not have duplicates.
+<b>Eingeführt in Fink 0.9.9.</b>
+Dies ist genau so wie <tt style="white-space: nowrap;">SplitOff</tt>, um dritte, vierte usw. Pakete vom
+selben compile/install-Lauf zu erzeugen. Beginnend mit einer CVS-Version von
+Fink nach 0.19.2 können sie beliebige (und nicht notwendigerweise aufeinander
+folgende) Werte mit N ≥ 2 verwenden, aber keine Dubletten.
 </p>
 </td></tr><tr valign="top"><td>Files</td><td>
 <p>
-<b>Introduced in fink 0.9.9.</b>
-Used <b>only</b>
-within a <tt style="white-space: nowrap;">SplitOff</tt> or <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> field,
-this designates which files and directories
-should be moved from the parent package's  installation
-directory %I to the current installation directory %i.  Note that this
-is executed after the InstallScript and the DocFiles of the parent package,
-but before the InstallScript and Docfiles of the current package.
+<b>Eingeführt in Fink 0.9.9.</b>
+Dieses Feld wird <b>nur</b> in den Feldern <tt style="white-space: nowrap;">SplitOff</tt> oder
+<tt style="white-space: nowrap;">SplitOff<b>N</b></tt> verwendet. Es deklariert die Dateien und
+Verzeichnisse, die vom Installationsverzeichnis des Pakets %I in das aktuelle
+Installationsverzeichnis %i verschoben werden. Beachten sie, dass dies nach dem
+Installations-Skript und dem Feld DocFiles des Elternpakets ausgeführt wird, aber
+vor dem Installations-Skript und dem Feld DocFiles des aktuellen Pakets.
 </p>
 </td></tr></table>
-<p><b>Build Phase:</b></p>
+
+<p><b>Erstellungsphase:</b></p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>PreInstScript, PostInstScript, PreRmScript, PostRmScript</td><td>
 <p>
-These fields specify pieces of shell scripts that will be called when
-the package is installed, upgraded or removed.
-Fink automatically adds the shell script header
-<tt style="white-space: nowrap;">#!/bin/sh</tt>, and calls <tt style="white-space: nowrap;">set -e</tt> so any command
-that fails will result in instant termination of the script.
-Fink also adds an <tt style="white-space: nowrap;">exit 0</tt> at the end.
-To indicate an error, exit from the script with a non-zero exit code.
-The first parameter (<tt style="white-space: nowrap;">$1</tt>) is set to a value indicating
-what action is being performed.
-Some possible values are <tt style="white-space: nowrap;">install</tt>, <tt style="white-space: nowrap;">upgrade</tt>,
-<tt style="white-space: nowrap;">remove</tt> and <tt style="white-space: nowrap;">purge</tt>.
-Note that there are more values, used during error rollback or when
-removing a package in favor of another one.
+Diese Felder enthalten Shell-Skripte, die ausgeführt werden, wenn ein Paket
+installiert, aktualisiert oder entfernt wird.
+Fink fügt automatisch den Shell-Skript-Header
+<tt style="white-space: nowrap;">#!/bin/sh</tt> ein und ruft <tt style="white-space: nowrap;">set -e</tt> auf, so dass ein Fehler
+eines Kommandos zum sofortigen Abbruch des Skripts führt.
+Fink fügt auch ein <tt style="white-space: nowrap;">exit 0</tt> am Ende ein.
+Will man einen Fehler anzeigen, sollte man das Skript mit einem anderen Wert als
+Null beenden.
+Der erste Parameter (<tt style="white-space: nowrap;">$1</tt>) ist auf einen Wert gesetzt, der anzeigt,
+welche Aktion ausgeführt wird.
+einige der möglichen Werte sind <tt style="white-space: nowrap;">install</tt>, <tt style="white-space: nowrap;">upgrade</tt>,
+<tt style="white-space: nowrap;">remove</tt> und <tt style="white-space: nowrap;">purge</tt>.
+Beachten sie, dass es noch andere Werte gibt, die benutzt werden, um Fehler
+zurück zu verfolgen und wenn Pakete gegenseitig ausgetauscht werden müssen.
 </p>
-<p>The scripts are called at the following times:</p>
+<p>Die Skripte werden zu folgenden Zeitpunkten ausgerufen:</p>
 <ul>
-<li>PreInstScript: When the package is installed for the first time
-  and before upgrading the package to this version.</li>
-<li>PostInstScript: After unpacking and setting up the package.</li>
-<li>PreRmScript: Before the package is removed or upgraded to a later
-  version.</li>
-<li>PostRmScript: After the package was removed or upgraded to a later
-  version.</li>
+<li>PreInstScript: Wenn das Paket zum ersten mal installiert wird und bevor es
+  auf diese Version aktualisiert wird.</li>
+<li>PostInstScript: Nach dem Auspacken und Einrichten des Pakets.</li>
+<li>PreRmScript: Bevor das Paket entfernt oder auf eine neue Version
+  aktualisiert wird.</li>
+<li>PostRmScript: Nachdem das Paket entfernt oder auf eine neue Version
+  aktualisiert wird.</li>
 </ul>
 <p>
+Klarstellung: Bei einer Aktualisierung werden sowohl die ...Inst-Skripte der
+neuen Version als auch die ...Rm-Skripte der alten Version ausgeführt.
+Details dazu kann man im Debian Policy Manual nachlesen, im
 To make it more clear, an upgrade invokes both the ...Inst scripts of
 the new version and the ...Rm scripts of the old version.
-Details can be found in the Debian Policy Manual,
-<a href="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">Chapter 6</a>.
+<a href="http://www.debian.org/doc/debian-policy/ch-maintainerscripts.html">Kapitel 6</a>.
 </p>
 <p>
-Percent expansion is performed on the scripts.
-Commands can generally be called without giving a full path.
+Prozenterweiterungen werden in diesen Skripten ausgeführt. Kommandos können ohne
+den kompletten Pfad ausgeführt werden.
 </p>
 </td></tr><tr valign="top"><td>ConfFiles</td><td>
 <p>
-A space-separated list of files that are user-modifiable configuration
-files.
-Percent expansion  is performed on this field.
-The files must be specified with an absolute path,
-e.g. <tt style="white-space: nowrap;">%p/etc/%n.conf</tt>. 
-The named files will receive special treatment by dpkg.
-When a package is upgraded and the file has changed both on disk and
-in the package, the user is asked which version to use and backups
-of the file will be made.
-When a package is "remove"d, the configuration files will remain on
-disk.
-Only a "purge" also removes the configuration files.
+Eine leerzeichengetrennte list an Dateien von Konfigurationsdateien, die vom
+Nutzer geändert werden können.
+Prozenterweiterungen werden ausgeführt.
+Die Dateien müssen mit einem absoluten Pfad angegeben werden,
+d. h. <tt style="white-space: nowrap;">%p/etc/%n.conf</tt>.
+Die genannten Dateien werden von dpkg besonders behandelt.
+Wird ein Paket aktualisiert und die Datei wurde sowohl auf der Festplatte als
+auch im Paket geändert, wird der Nutzer gefragt, welche Version genutzt werden
+soll. Von den Dateien werden Sicherungskopien (backups) angelegt.
+Wird ein Paket entfernt (removed), bleiben die Konfigurationsdateien auf der
+Festplatte erhalten.
+Nur ein "purge" entfernt auch die Konfigurationsdateien.
 </p>
 </td></tr><tr valign="top"><td>InfoDocs</td><td>
 <p>
-Lists the names of Info documents that the package installs in
-%p/share/info.
-This will add appropriate code to the postinst and prerm scripts to
-maintain the Info directory file, <tt style="white-space: nowrap;">dir</tt>.
+Listet die Namen der Info-Dokumente, die das Paket in %p/share/info installiert.
+Es wird entsprechender Code zu den Skripten postinst und prerm hinzugefügt, um
+die Info-Verzeichnis-Datei <tt style="white-space: nowrap;">dir</tt> zu aktualisieren.
 </p>
 <p>
-<b>Note:</b>  Only use the un-numbered file in the case of split Info
-documents. E.g. if a package has:
+<b>Anmerkung:</b> Nutzen sie nur die nicht-numerierten Dateien, wenn
+Info-Dokumente ausgespalten werden. Hat z. B. ein Paket die Dateien
 </p>
 <pre>foo.info
 foo.info-1
 foo.info-2</pre>
-<p>you should only use:</p>
-<pre>InfoDocs:  foo.info</pre>
+<p>sollten sie nur diese aufführen:</p>
+<pre>InfoDocs: foo.info</pre>
 <p>
-This feature is still in flux, more fields for finer control may be
-added in the future.
+Dieses Feature ist immer noch im Fluss. Es können in Zukunft durchaus weitere
+Felder für eine feinere Steuerung hinzu gefügt werden.
 </p>
 </td></tr><tr valign="top"><td>DaemonicFile</td><td>
 <p>
-Gives a service description for <tt style="white-space: nowrap;">daemonic</tt>.
-<tt style="white-space: nowrap;">daemonic</tt> is used by Fink to create and remove
-StartupItems for daemon processes (e.g. web servers).
-The description will be added to the package as a file named
-<tt style="white-space: nowrap;">%p/etc/daemons/<b>name</b>.xml</tt>, where <b>name</b> is
-specified by the DaemonicName field and defaults to the package
-name.
-Percent expansion is performed on the contents of this field.
-Note that you must add <tt style="white-space: nowrap;">daemonic</tt> to the dependency list if
-your package uses it.
+Liefert Service-beschreibungen für <tt style="white-space: nowrap;">daemonic</tt>.
+<tt style="white-space: nowrap;">daemonic</tt> wird von Fink benutzt, um StartupItems für daemon-Prozesse
+(z. B. Web-Server) einzurichten oder zu entfernen.
+Die Beschreibung wird dem Paket als Datei mit dem Namen
+<tt style="white-space: nowrap;">%p/etc/daemons/<b>Name</b>.xml</tt> hinzu gefügt, wobei <b>Name</b>
+im Feld DaemonicName angegeben wird und als Standard den Paketnamen hat.
+Prozenterweiterungen werden für dieses Feld ausgeführt.
+Beachten sie, dass sie <tt style="white-space: nowrap;">daemonic</tt> zur Liste im Feld dependency
+hinzu fügen müssen, wenn ihr Paket es benutzt.
 </p>
 </td></tr><tr valign="top"><td>DaemonicName</td><td>
 <p>
-A name for the <tt style="white-space: nowrap;">daemonic</tt> service description file.
-See the description of DaemonicFile for details.
+Ein Name für die Datei der <tt style="white-space: nowrap;">daemonic</tt>-Service-Beschreibung.
+Weitere Details stehen in der Beschreibung ders Felds DaemonicFile.
 </p>
 </td></tr></table>
-<p><b>Additional Data:</b></p>
+
+<p><b>Zusätzliche Angaben:</b></p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>Homepage</td><td>
-<p>The URL of the upstream home page of the package.</p>
+<p>Die URL der Upstream-Homepage des Pakets.</p>
 </td></tr><tr valign="top"><td>DescDetail</td><td>
 <p>
-A more detailed description than the one in the <tt style="white-space: nowrap;">Description</tt>
-field (what is it, what can I use it for?).
-Multiple lines allowed. Because this field will be displayed without
-the benefit of word-wrap, you should manually insert line breaks in
-order to keep lines less than 79 chars (if possible).
+Eine ausführlichere Beschreibung des Pakets als im Feld <tt style="white-space: nowrap;">Description</tt>
+(was ist es und für was kann man es benutzen?).
+Mehrfachzeilen sind hier erlaubt. Dieses Feld wird ohne Zeilenumbruch
+dargestellt. Deshalb sollten sie manuell Zeilenenden einführen, um die
+Zeilenlänge, wenn möglich, unter 79 Zeichen zu halten.
 </p>
 </td></tr><tr valign="top"><td>DescUsage</td><td>
 <p>
-This is for information that is needed to use the package (how do
-I use it?). As in "run wmaker.inst once before using WindowMaker".
-Multiple lines allowed. Because this field will be displayed without
-the benefit of word-wrap, you should manually insert line breaks in
-order to keep lines less than 79 chars (if possible).
+Dieses Feld ist für Informationen, die man für die Benutzung des Pakets benötigt
+(Wie benutze ich es?), z. B. "Führen sie wmaker.inst einmal aus, bevor sie
+WindowMaker benutzen".
+Mehrfachzeilen sind hier erlaubt. Dieses Feld wird ohne Zeilenumbruch
+dargestellt. Deshalb sollten sie manuell Zeilenenden einführen, um die
+Zeilenlänge, wenn möglich, unter 79 Zeichen zu halten.
 </p>
 </td></tr><tr valign="top"><td>DescPackaging</td><td>
 <p>
-Notes about the packaging. Stuff like "patches the Makefile to put
-everything in place" goes here. Multiple lines allowed.
+Anmerkungen zum Erstellen der Paketbeschreibung. Sachen wie "Patches im
+Makefile, damit alles an die richtige Stelle gepackt wird." kommen in dieses
+Feld. Mehrfachzeilen sind hier erlaubt.
 </p>
 </td></tr><tr valign="top"><td>DescPort</td><td>
 <p>
-Notes that are specific to porting the package to Darwin. Stuff
-like "config.guess and libtool scripts are updated, -no-cpp-precomp
-is necessary" goes here. Multiple lines allowed.
+Anmerkungen spezifisch für die Portierung des Pakets nach Darwin. Sachen, wie
+"config.guess und libtool Skripte aktualisiert, -no-cpp-precomp ist nötig"
+gehören hier her. Mehrfachzeilen sind hier erlaubt.
 </p>
 </td></tr></table>
 
@@ -2962,50 +2975,45 @@ is necessary" goes here. Multiple lines allowed.
 
 <h3><a name="reference.splitoffs">6.3 SplitOffs</a></h3>
 <p>
-Beginning with fink 0.9.9, a single .info file can be used to build
-multiple packages.  
-The install phase begins as usual, with the execution of the 
-<tt style="white-space: nowrap;">InstallScript</tt> and <tt style="white-space: nowrap;">DocFiles</tt> commands.
-A <tt style="white-space: nowrap;">SplitOff</tt> or <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> field, if present,
-then triggers the creation of an
-additional install directory.  Within the 
-<tt style="white-space: nowrap;">SplitOff</tt> or <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> field, the new install
-directory is referred to as %i,
-while the original install directory of the parent 
-package is referred to as %I.
+Ab Fink 0.9.9 kann eine einzige .info-Datei benutzt werden, um mehrere Pakete zu
+erstellen.
+Die Installationsphase beginnt wie üblich mit der Ausführung der Kommandos
+<tt style="white-space: nowrap;">InstallScript</tt> und <tt style="white-space: nowrap;">DocFiles</tt>.
+Ist ein Feld <tt style="white-space: nowrap;">SplitOff</tt> oder <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>
+vorhanden, werden weitere Installationsverzeichnisse angelegt. In den Feldern
+<tt style="white-space: nowrap;">SplitOff</tt> oder <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> werden die neuen
+Installationsverzeichnisse mit %i abgekürzt, das Installationsverzeichnis des
+Elternpakets mit %I.
 </p>
 <p>
-Each <tt style="white-space: nowrap;">SplitOff</tt> and <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> field must
-contain a number of fields of its
-own.  In fact, it resembles a complete package description, but with
-certain fields missing.  Here is what belongs in the sub-description
-(by category):
+In jedem Feld <tt style="white-space: nowrap;">SplitOff</tt> und <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> müssen
+bestimmte Felder vorhanden sein. Tatsächlich wird eine komplette Beschreibung
+gespiegelt, bei der nur wenige Felder fehlen. Im folgenden die Felder, die in
+den Unterbeschreibungen vorkommen können, nach Kategorien sortiert:
 </p>
 <ul>
-<li>Initial Data: Only the <tt style="white-space: nowrap;">Package</tt> needs to be specified,
-  everything else is inherited from the parent package.  You may modify
-  <tt style="white-space: nowrap;">Type</tt> and <tt style="white-space: nowrap;">License</tt> by declaring the field
-  within the <tt style="white-space: nowrap;">SplitOff</tt> or <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>.  Percent
-  expansion can be used, and
-  it is often convenient to refer to the name %N of the parent
-  package.</li>
-<li>Dependencies: All of these are allowed.</li>
-<li>Unpack Phase, Patch Phase, Compile Phase: These fields are irrelevant
-  and will be ignored.</li>
-<li>Install Phase, Build Phase: Any of these fields are allowed (except
-  that SplitOffs cannot themselves contain additional SplitOffs).</li>
-<li>Additional Data: These are inherited from the parent package but may
-  be modified by declaring the field within the <tt style="white-space: nowrap;">SplitOff</tt> or
-  <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>.</li>
+<li>Start-Daten: Nur das Feld <tt style="white-space: nowrap;">Package</tt> muss angegeben werden. Alle
+  anderen Felder werden vom Elternpaket übernommen. Die Werte der Felder
+  <tt style="white-space: nowrap;">Type</tt> und <tt style="white-space: nowrap;">License</tt> können innerhalb von
+  <tt style="white-space: nowrap;">SplitOff</tt> or <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> überschrieben werden.
+  Prozenterweiterungen können benutzt werden. Oft ist es bequehm, für den Namen
+  des Elternpakets %N zu verwenden.</li>
+<li>Abhängigkeiten: Alle felder sind erlaubt.</li>
+<li>Auspackphase, Patch-Phase und Compile-Phase: Diese Felder sind irrelevant
+  und werden ignoriert.</li>
+<li>Installationsphase und Build-Phase: Alle Felder sind erlaubt (außer dass
+  SplitOffs keine weiteren SplitOffs enthalten können).</li>
+<li>Zusätzliche Angaben: Sie werden vom Elternpaket geerbt. Die Werte können
+  aber durch Deklaration des Felds in <tt style="white-space: nowrap;">SplitOff</tt> oder
+  <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> überschrieben werden.</li>
 </ul>
 <p>
-Because %n-%v-%r is treated as the unique identifier of a package, you
-must not have the same <tt style="white-space: nowrap;">Package</tt> (at the
-same <tt style="white-space: nowrap;">Version</tt> and <tt style="white-space: nowrap;">Revision</tt>) listed as
-a <tt style="white-space: nowrap;">SplitOff</tt> (or <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>) of
-multiple packages. If you use variants, remember that each variant is
-considered an independent package, so the following package layout is
-forbidden:
+%n-%v-%r wird als eindeutiger Bezeichner für ein Paket interpretiert. Deshalb
+kann man das selbe <tt style="white-space: nowrap;">Paket</tt> (mit der gleichen <tt style="white-space: nowrap;">Version</tt> und
+<tt style="white-space: nowrap;">Revision</tt>) nicht als <tt style="white-space: nowrap;">SplitOff</tt> (oder
+<tt style="white-space: nowrap;">SplitOff<b>N</b></tt>) deklarieren. Benutzen sie Varianten, müssen sie
+beachten, dass jede Variante als unabhängiges Paket betrachtet wird. Die
+folgende Konstruktion ist deshalb verboten:
 </p>
 <pre>Package: mime-base64-pm%type_pkg[perl]
 Type: perl (5.12.3 5.12.4)
@@ -3013,23 +3021,21 @@ SplitOff: &lt;&lt;
   Package: mime-base64-pm-bin
 &lt;&lt;</pre>
 <p>
-During the install phase, the <tt style="white-space: nowrap;">InstallScript</tt> and 
-<tt style="white-space: nowrap;">DocFiles</tt> of the parent package are executed first.
-Next comes processing of the <tt style="white-space: nowrap;">SplitOff</tt> and
-<tt style="white-space: nowrap;">SplitOff<b>N</b></tt> fields. For each such field in turn,
-the <tt style="white-space: nowrap;">InstallScript</tt> of that field is run, and then the
-<tt style="white-space: nowrap;">Files</tt> command causes the listed files and directories
-to be moved from the parent's installation directory %I to the
-current installation directory %i.  Then the <tt style="white-space: nowrap;">DocFiles</tt>
-and other Installation Phase fields of the given <tt style="white-space: nowrap;">SplitOff</tt>
-or <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> package are
-executed.  
+Während der Installationsphase werden zuerst die Felder
+<tt style="white-space: nowrap;">InstallScript</tt> und <tt style="white-space: nowrap;">DocFiles</tt> des Elternpakets
+ausgeführt. Danach werden die Felder <tt style="white-space: nowrap;">SplitOff</tt> und
+<tt style="white-space: nowrap;">SplitOff<b>N</b></tt> prozessiert. In jedem SplitOff wird seinerseits
+das Installscript ausgeführt. Das Feld <tt style="white-space: nowrap;">Files</tt> bewirkt dann, dass die
+aufgelisteteten Dateien und Verzeichnisse vom Installationsverzeichnis %I des
+Elternpakets in das Installationsverzeichnis %i des SplitOff-Pakets. Danach
+werden die Felder <tt style="white-space: nowrap;">DocFiles</tt> und andere Installationsphasen-Felder
+der <tt style="white-space: nowrap;">SplitOff</tt> oder <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> Pakete
+ausgeführt.
 </p>
 <p>
-At this time, the <tt style="white-space: nowrap;">SplitOff</tt> is processed first (if
-present), followed by each <tt style="white-space: nowrap;">SplitOff<b>N</b></tt> in
-numerical order by N. However, this may change in the future, so, for
-example, instead of:
+Zu diesem Zeitpunkt wird <tt style="white-space: nowrap;">SplitOff</tt> ausgeführt (falls vorhanden) und
+dann jedes Feld <tt style="white-space: nowrap;">SplitOff<b>N</b></tt>, in der Reihenfolge der Zahl N.
+Dies kann sich aber in Zukunft ändern. Folgendes Beispiel
 </p>
 <pre>SplitOff: &lt;&lt;
   Description: Some header files
@@ -3040,135 +3046,139 @@ SplitOff2: &lt;&lt;
   Files: include/*
 &lt;&lt;</pre>
 <p>
-which only works correctly if <tt style="white-space: nowrap;">SplitOff</tt> is processed
-before <tt style="white-space: nowrap;">SplitOff2</tt> it's safer to list explicitly the files
-for each (or use more specific filename globs).
+funktioniert nur weil <tt style="white-space: nowrap;">SplitOff</tt> vor <tt style="white-space: nowrap;">SplitOff2</tt>
+ausgeführt wird. Es ist deshalb besser, die Dateien explizit auf zu listen
+(oder detailiertere Wildcards benutzen).
 </p>
 <p>
-During the build phase, the pre/post install/remove scripts for each of
-the packages is constructed by using the build phase commands which
-were specified for that package.
+Während der Erstellungsphase werden die pre/post install/remove Skripte für
+jedes SplitOff während der Erstellungsphase des jeweiligen SplitOff konstruiert,
+je nachdem wie die Skripte für das SplitOff deklariert wurden.
 </p>
 <p>
-Each package being built is required
-to document the licensing arrangement in %i/share/doc/%n (and of course
-%n takes a different value for each package).  Note that
-<tt style="white-space: nowrap;">DocFiles</tt> copies files rather than moving them, so it is
-possible to install identical copies of the documentation into each 
-of the packages by using <tt style="white-space: nowrap;">DocFiles</tt> several times.
+Von jedem erstellten Paket wird verlangt, dass seine Lizenzierung im Verzeichnis
+%i/share/doc/%n (das %n nimmt für jedes Paket einen anderen Wert an)
+dokumentiert wird. Beachten sie, dass <tt style="white-space: nowrap;">DocFiles</tt> die Dateien kopiert
+und nicht verschiebt, so dass man identische Kopien der Dokumentation in jedes
+Paket mehrfach installieren kann.
 </p>
 
 
 
-<h3><a name="reference.scripts">6.4 Scripts</a></h3>
+<h3><a name="reference.scripts">6.4 Skripte</a></h3>
 <p>
-The PatchScript, CompileScript and InstallScript fields allow you
-to specify shell commands to be executed. The build directory
-(<tt style="white-space: nowrap;">%b</tt>) is the current directory when scripts are
-executed. You should always use relative pathnames or
-percent-expansions for files and directories in the fink hierarchy,
-not complete absolute pathnames. Two forms are supported.
+In den Feldern PatchScript, CompileScript und InstallScript kann man
+Shell-Skripte deklarieren, die dann ausgeführt werden. Das build-Verzeichnis
+(<tt style="white-space: nowrap;">%b</tt>) ist das aktuelle Verzeichnis, in dem die Skripte
+ausgeführt werden. Sie sollten immer relative Pfadnamen oder
+Prozenterweiterungen für  Dateien und Verzeichnisse in der Fink-Hierarchie
+angeben und keine absoluten Pfadnamen. Zwei Formen werden unterstützt.
 </p>
 <p>
-This field can be a simple list of commands. This is sort of like a
-shell script. However, the commands are executed via system(), one
-line at a time, so setting variables or changing the directory only
-affects commands on that same line. Starting in a CVS version of fink
-after 0.18.2, you can wrap long lines similar to normal shell scripts:
-a backslash (<tt style="white-space: nowrap;">\</tt>) at the end of a line indicates that the
-next line is a continuation.
+Dieses Feld kann ein einfache List von Kommandos sein, ähnlich zu einem
+Shell-Skripte. Die Kommandos werden jedoch mit system() Zeile für Zeile
+ausgeführt. Setzt man Variablen oder wechselt das Verzeichnis, wirkt sich dies
+nur für eben diese eine Zeile aus. Beginnend mit einer CVS-Version nach
+Fink-0.18.2 kann man lange Zeilen wie in Shell-Skripten auf mehrere umbrechen:
+Ein Backslash (<tt style="white-space: nowrap;">\</tt>) am Ende der Zeile ist das Zeichen für die
+Fortsetzung in der nächsten Zeile.
 </p>
 <p>
-Alternately, you can embed a complete script here, using the
-interpreter of your choice. As with any Unix script, the first line
-must begin with <tt style="white-space: nowrap;">#!</tt> followed by the full pathname of to
-the interpreter and any needed flags (e.g., <tt style="white-space: nowrap;">#!/bin/csh</tt>,
-<tt style="white-space: nowrap;">#!/bin/bash -ev</tt>, etc.). In this situation, the whole
-*Script field is dumped into a temporary file that is then executed.
+Alternativ dazu kann man ein komplettes Skript mit einem Interpreter eigener
+Wahl hier einfügen. Wie in jedem Unix-Skript muss die erste Zeile mit
+<tt style="white-space: nowrap;">#!</tt> anfangen, gefolgt vom kompletten Pfadnamen für den Interpreter
+und alle benötigten Flags (z. B. <tt style="white-space: nowrap;">#!/bin/csh</tt>,
+<tt style="white-space: nowrap;">#!/bin/bash -ev</tt>, usw.). In diesen Fällen wird das komplette Feld
+*Script in eine temporäre Datei kopiert und dann ausgeführt.
 </p>
 
 
 
 <h3><a name="reference.patches">6.5 Patches</a></h3>
 <p>
-If your package needs a patch to compile on Darwin (or to work with
-fink), name the patch with the same name as the package description,
-using the extension ".patch" instead of ".info" and put it in the same
-directory as the .info file. 
-Specify the filename of the patchfile with a line such as:
+Braucht das Paket einen Patch, um für Darwin kompiliert zu werden (oder um mit
+Fink zu funktionieren), benennen sie die Patch-Datei so wie die
+Paketbeschreibung nur mit der Extension ".patch" statt ".info" und speichern sie
+im gleichen Verzeichnis wie der .info-Datei.
+Geben sie den Namen der Patch-Datei mit einer Zeile wie die folgende an:
 </p>
 <pre>PatchFile: %n.patch</pre>
 <p>
-(For packages with variants, it may be better to use
-<tt style="white-space: nowrap;">%{ni}.patch</tt> .)
-You must also give the MD5 sum of the patchfile in the 
-<tt style="white-space: nowrap;">PatchFile-MD5</tt> field, and specify 
-<tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.24.12)</tt> (or a later version of fink).
+(Für Pakette mit Varianten, kann es günstiger sein, <tt style="white-space: nowrap;">%{ni}.patch</tt> zu
+verwenden.)
+Sie müssen auch die MD5-Summe der Patch-Datei im Feld <tt style="white-space: nowrap;">PatchFile-MD5</tt>
+angeben und folgendes deklarieren:
+<tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.24.12)</tt> (oder eine spätere Finkversion).
 </p>
 <p>
-When a <tt style="white-space: nowrap;">PatchFile<b>N</b></tt> field is used, general custom
-is to name the file <tt style="white-space: nowrap;">%n-purpose-of-patch.patch</tt> to make it
-easy to keep
-track of. You must also use the field <tt style="white-space: nowrap;">PatchFile<b>N</b>-MD5</tt> 
-and specify <tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.30.0)</tt> (or a later 
-version of fink).
+Wird das Feld <tt style="white-space: nowrap;">PatchFile<b>N</b></tt> verwendet, ist es üblich, die
+Datei <tt style="white-space: nowrap;">%n-Zweck-des-Patch.patch</tt> zu benennen, damit man das
+leichter verfolgen kann. Man muss auch das Feld
+<tt style="white-space: nowrap;">PatchFile<b>N</b>-MD5</tt> angeben und folgendes deklarieren:
+<tt style="white-space: nowrap;">BuildDepends: fink (&gt;= 0.30.0)</tt> (oder eine spätere Finkversion).
 </p>
 <p>
-When a <tt style="white-space: nowrap;">PatchFile</tt> declaration is present, there is a
-default <tt style="white-space: nowrap;">PatchScript</tt> equivalent to:
+Gibt es das Feld <tt style="white-space: nowrap;">PatchFile</tt>, wird folgendes
+Standard-<tt style="white-space: nowrap;">PatchScript</tt>Skript ausgeführt:
 </p>
 <pre>PatchScript: patch -p1 &lt; %{PatchFile}</pre>
 <p>
-Using <tt style="white-space: nowrap;">PatchFile<b>N</b></tt> appends the following to the
-default <tt style="white-space: nowrap;">PatchScript</tt> above:
+Mit <tt style="white-space: nowrap;">PatchFile<b>N</b></tt> wird folgendes an das obige
+Standard-<tt style="white-space: nowrap;">PatchScript</tt> angehängt:
 </p>
 <pre>patch -p1 &lt; %{PatchFile<b>N</b>}</pre>
 <p>
-This will be overridden if you supply a <tt style="white-space: nowrap;">PatchScript</tt>
-of your own (for example, to perform a substitution on the patch file
-before applying it).
+Dieses Standard-<tt style="white-space: nowrap;">PatchScript</tt> wird überschrieben, wenn man ein
+eigenes <tt style="white-space: nowrap;">PatchScript</tt> deklariert (z. B. um eine Änderung in der
+Patchdatei vorzunehmen, bevor sie angewandt wird).
 </p>
 <p>
-If you  need to have the user's chosen prefix in the patch file
-it is recommended that you have a variable such as <tt style="white-space: nowrap;">@PREFIX@</tt> 
-instead of <tt style="white-space: nowrap;">/sw</tt> in the patch and then use:
+Benötigt man in der Patch-Datei den vom Nutzer gewählten Präfix, wird empfohlen,
+statt <tt style="white-space: nowrap;">/sw</tt> eine Variable wie <tt style="white-space: nowrap;">@PREFIX@</tt> zu deklarieren
+und so zu verwenden:
 </p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</pre>
-<p>Patches should be in unidiff format and are normally generated by using:</p>
+<p>
+Patches sollten im unidiff-Format sein und werden normalerweise mit folgendem
+Kommandoerzeugt:
+</p>
 <pre>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</pre>
 <p>
-If you have used emacs to edit files, you can add <tt style="white-space: nowrap;">-x'*~'</tt> to the
-diff command above in order to exclude automatically-generated backup files.
+Verwendet man emacs zum Edditieren der Dateien, kann man die Option
+<tt style="white-space: nowrap;">-x'*~'</tt> an das diff-Kommando anhängen, um automatisch erzeugte
+Backup-Dateien zu unterdrücken.
 </p>
 <p>
-It must also be noted that extremely large patches should not be put in cvs.
-They should be put on a web/ftp server and specified using the
-<tt style="white-space: nowrap;">SourceN:</tt> field. If you don't have a website, fink project
-admins can make the file available from fink's own website. If your
-patch is larger than about 30Kb, you should consider making it a
-separate download.
+Beachten sie bitte, dass sehr große Patches nicht in das CVS-Repository hoch
+geladen werden sollten. Sie sollten auf einen web/ftp-Server hoch geladen und
+in einem Feld <tt style="white-space: nowrap;">SourceN:</tt> deklariert werden. Haben sie keinen
+Webserver, können Administratoren von Fink die Datei auf der eigenen Seite von
+Fink zur Verfügung stellen. Auch wenn ihr Patch größer als 30 KB ist, sollten
+sie überlegen, einen separaten Downlaod zu erstellen.
 </p>
 
 
 
 <h3><a name="reference.profile.d">6.6 Profile.d scripts</a></h3>
 <p>
-If your package needs some run-time initialization  (e.g. to setup environment
-variables), you can use profile.d scripts.
-These script fragments are sourced by the <tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt>
-scripts. Normally, all fink users will load these scripts in their shell startup
-files (<tt style="white-space: nowrap;">.cshrc</tt> and comparable files).
-Your package must provide each script in two variants: one for sh compatible
-shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh).
-They have to be installed as <tt style="white-space: nowrap;">/sw/etc/profile.d/%n.[c]sh</tt>
-(where %n as usual stands for the package name).
-Also, their executable and read bits have to be set (i.e. install them with -m
-755), otherwise they will not be loaded correctly.
+Benötigt ihr Paket einige Initialisierungen zur Laufzeit (z. B. Setzen von
+Umgebungsvariablen), können sie profile.d-Skripte verwenden.
+Diese Skript-Fragmente werden durch die Skripte
+<tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt> "sourced". Normalerweise werden alle
+Fink-Nutzer diese Skripte in ihren Shell-Startup-Skripte
+(<tt style="white-space: nowrap;">.cshrc</tt> und ähnliche Dateien) laden.
+Ihr Paket muss jedes Skript in zwei Varianten zur Verfügung stellen: Eine für
+sh-kompatible Shells (sh, zsh, bash, ksh, ...) und eine für csh-kompatible
+Shells (csh, tcsh). Sie müssen als
+<tt style="white-space: nowrap;">/sw/etc/profile.d/%n.[c]sh</tt> installiert werden (wobei %n wie
+üblich für den Paketnamen steht).
+Es müssen auch ihre executable und read Bits gesetzt werden (d. h. sie müssen
+mit -m 755 installiert werden). Ansonsten werden sie nicht korrekt geladen
+werden.
 </p>
 <p>
-If you just need to set some environment variables (for example, QTDIR to
-'/sw'), you can use the RuntimeVars field which is provided as a convenient way
-to achieve exactly this.
+Muss man nur einige Umgebungsvariablen setzen (z. B. QTDIR auf '/sw'), kann man
+das Feld RuntimeVars benutzen; eine bequehme Art, genau dies zu erreichen.
 </p>
 
 

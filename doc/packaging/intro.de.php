@@ -53,7 +53,7 @@ Der Paketname is einfach der Name der Software, z. B. openssh.
 Die Version, auch Upstream-Version genannt, ist die Version des ursprünglichen
 Software-Pakets.
 Buchstaben sind in der Version erlaubt, z. B. 2.9p1.
-Sowohl fink als auch dpkg wissen, wie man diese richtig sortiert.
+Sowohl Fink als auch dpkg wissen, wie man diese richtig sortiert.
 Die Revision ist ein Zähler, der erhöht wird, wenn sich die Paketbeschreibung
 ändert.
 Sie beginnt mit 1 und sollte auf 1 zurückgesetzt werden, wenn sich die

@@ -10,7 +10,7 @@ $navbox = array(
   "doc/packaging/policy.php?phpLang=de", "Richtlinien",
   "doc/packaging/fslayout.php?phpLang=de", "Dateisystem-Layout",
   "doc/packaging/compilers.php?phpLang=de", "Compiler",
-  "doc/packaging/reference.php?phpLang=de", "Reference",
+  "doc/packaging/reference.php?phpLang=de", "Referenz",
 );
 $printlink = "doc/packaging/packaging.de.html";
 

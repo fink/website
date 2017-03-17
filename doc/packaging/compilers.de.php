@@ -2,7 +2,7 @@
 $title = "Paket erstellen - Compiler";
 $cvs_author = 'Author: k-m_schindler';
 $cvs_date = 'Date: 2015/03/10 22:52:23';
-$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="reference.php?phpLang=de" title="Reference"><link rel="prev" href="fslayout.php?phpLang=de" title="Dateisystem-Layout">';
+$metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="reference.php?phpLang=de" title="Referenz"><link rel="prev" href="fslayout.php?phpLang=de" title="Dateisystem-Layout">';
 
 
 include_once "header.de.inc";
@@ -101,7 +101,7 @@ OS X 10.9.
 
 
 <p align="right"><?php echo FINK_NEXT ; ?>:
-<a href="reference.php?phpLang=de">6. Reference</a></p>
+<a href="reference.php?phpLang=de">6. Referenz</a></p>
 <?php include_once "../../footer.inc"; ?>
 
 

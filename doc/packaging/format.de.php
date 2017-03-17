@@ -19,7 +19,7 @@ Einstellung "Trees" in der Datei <code>/sw/etc/fink.conf</code>
 bestimmt, welche Verzeichnisse gelesen werden.
 Der Name der Paketbeschreibungsdatei besteht aus dem vollständigen Paketnamen
 und dem Suffix ".info".
-Ab fink 0.26.0 gibt es mehre Möglichkeiten für den Dateinamen: Empfohlen wird
+Ab Fink 0.26.0 gibt es mehre Möglichkeiten für den Dateinamen: Empfohlen wird
 der kürzeste Name, der konsistent mit anderen Paketen ist, die benötigt werden.
 Der Dateiname hat folgende Form: der unveränderliche Paketname, optional die
 Architektur, optional die Distribution, optional Version oder Version-Revision,
@@ -34,7 +34,7 @@ organisiert. Die Verzeichnisse von oben nach unten:
 </p>
 <ul>
 <li><code>dists</code> ist der Anfang. Das Verzeichnis <code>dists</code>
-  wird für die Debian Tools benötigt. In neueren Version von fink ist dies ein
+  wird für die Debian Tools benötigt. In neueren Version von Fink ist dies ein
   Symlink zu einem Verzeichnis mit einem distributionsbezogenem Namen.</li>
 <li>Die Distributionen. Es gibt <code>stable</code>, <code>unstable</code> und
   <code>local</code>. Das Verzeichnis <code>local</code> wird vom lokalen
@@ -119,6 +119,7 @@ anzeigt, welche Buchstaben für eine Prozent-Erweiterung genommen werden sollen.
 <code>%{n}</code> hat zum Beispiel die gleiche Bedeutung wie <code>%n</code>.
 Folgende Erweiterungen stehen zur Verfügung:
 </p>
+
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left"></th><th align="left"></th></tr><tr valign="top"><td>%n</td><td>
 <p>Der <b>n</b>ame des Pakets</p>
 </td></tr><tr valign="top"><td>%N</td><td>
@@ -154,7 +155,7 @@ Epoche nicht zu <code>%f</code> gehört.
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-Der <b>p</b>refix wo fink installiert ist, also <code>/sw</code>.
+Der <b>p</b>refix wo Fink installiert ist, also <code>/sw</code>.
 Sie dürfen nicht annehmen, dass alle Nutzer Fink in <code>/sw</code>
 installiert haben, nutzen sie immer <code>%p</code> für den korrekten Pfad.
 </p>
@@ -174,7 +175,7 @@ Das Verzeichnis <b>D</b>estination für das Elternpaket (das selbe wie %d außer
 innerhalb eines <code>SplitOff</code>)
 </p>
 </td></tr><tr valign="top"><td>%i</td><td>
-<p>Der vollständige <b>i</b>nstall-phase-Präfix, äquivalent zu %d%p</p>
+<p>Der vollständige <b>i</b>nstallationsphase-Präfix, äquivalent zu %d%p</p>
 </td></tr><tr valign="top"><td>%I</td><td>
 <p>
 Der <b>I</b>nstall-Präfix des Elternpakets, äquivalent zu %D%P (das selbe wie
@@ -182,7 +183,7 @@ Der <b>I</b>nstall-Präfix des Elternpakets, äquivalent zu %D%P (das selbe wie
 </p>
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>
-Der Pfad, wo sich die P<b>a</b>tches befinden. Ab fink-0.29.0 sollte diese
+Der Pfad, wo sich die P<b>a</b>tches befinden. Ab Fink-0.29.0 sollte diese
 Variable nicht mehr benutzt werden. Nutzen sie <code>%{PatchFile}</code>, um auf
 die <code>.patch</code>-Datei zuzugreifen. Die Unterstützung für
 <code>%a</code> wird in der Zukunft entfernt werden.
@@ -221,15 +222,15 @@ Installation zwischen den Architekturen, die auf der Hardware des Nutzers
 laufen können. Mögliche Werte sind 'powerpc' für PowerPC-Macs und 'i386' oder
 'x86_64' für Intel-Macs. Die Auswahl 'x86_64' steht auf Intel-Macs nur zur
 Verfügung, wenn der Mac 64-bit Bibliotheken und Programme ausführen kann.
-(Dieser Werf wurde etwa in fink-0.12 eingeführt, die aktuellen Beschreibung gilt
-für fink-0.29.5 und später.)
+(Dieser Werf wurde etwa in Fink-0.12 eingeführt, die aktuellen Beschreibung gilt
+für Fink-0.29.5 und später.)
 </p>
 </td></tr><tr valign="top"><td>%%</td><td>
 <p>
 Das Zeichen Prozent (Ein Zeichen, das nicht erweitert wird, was auch immer
 danach folgt). Die Erweiterung erfolgt streng von links nach rechts. Damit hat
 %%n nichts mit dem Paketnamen zu tun, sondern bedeutet die Zeichenfolge %n. (In
-fink-0.18.0 eingeführt)
+Fink-0.18.0 eingeführt)
 </p>
 </td></tr><tr valign="top"><td>%type_raw[<b>type</b>], %type_pkg[<b>type</b>],
 %type_num[<b>type</b>]</td><td>
@@ -239,7 +240,7 @@ Lesen sie die Dokumentation für das Feld <code>Type</code> weiter unten in
 diesem Dokument. Die Form _raw ist die exakte Zeichenfolge des Subtyps, während
 bei der Form _pkg alle Punkte entfernt wurden (entsprechend Finks Konventionen
 für Paketnamen mit Sprachversionen und andere kluge Verwendungen). (Eingeführt
-in einer post-0.19.2 CVS-Version von Fink.) Die Form -num wurde in fink-0.26.0
+in einer post-0.19.2 CVS-Version von Fink.) Die Form -num wurde in Fink-0.26.0
 eingeführt und entfernt alle Zeichen außer Zahlen aus dem Feld <code>Type</code>.
 </p>
 <p>
@@ -252,7 +253,7 @@ Subtype ausgerechnet wird.)
 <p>
 Der <b>i</b>nvariante Teil des Paket<b>n</b>amens. Sie sind wie %n and %N,
 außer dass alle Teile von %type_pkg[] und %type_raw[] gelöscht sind.
-(Eingeführt in einer post-0.19.2 CVS-Version von fink) Sie sollten %{ni} und
+(Eingeführt in einer post-0.19.2 CVS-Version von Fink) Sie sollten %{ni} und
 %{Ni} verwenden, um Verwechslungen mit den Erweiterungen %n und %N zu verhindern.
 </p>
 </td></tr><tr valign="top"><td>%{default_script}</td><td>
@@ -264,17 +265,17 @@ Felder. Der Wert hängt oft vom Feld <code>Type</code> ab und ist immer definier
 eines <code>SplitOff</code> (oder <code>SplitOff<b>N</b></code>) verwendet,
 gibt sie die Voreinstellung der Eltern zurück, selbst wenn die Voreinstellung
 für das <code>InstallScript</code> in einem <code>SplitOff</code>-Paket leer
-ist. (Eingeführt in fink-0.20.6)
+ist. (Eingeführt in Fink-0.20.6)
 </p>
 </td></tr><tr valign="top"><td>%{PatchFile}</td><td>
 <p>
 Der vollständige Pfad zu der Datei, die im Feld <code>PatchFile</code> angegeben
-ist. (Eingeführt in fink-0.24.12)
+ist. (Eingeführt in Fink-0.24.12)
 </p>
 </td></tr><tr valign="top"><td>%{PatchFile<b>N</b>}</td><td>
 <p>
 Der vollständige Pfad zu der Datei, die im Feld <code>PatchFile<b>N</b></code>
-angegeben ist. (Eingeführt in fink-0.30.0)
+angegeben ist. (Eingeführt in Fink-0.30.0)
 </p>
 </td></tr><tr valign="top"><td>%lib</td><td>
 <p>
@@ -282,7 +283,7 @@ Ist der <code>Type: -64bit</code> als <code>-64bit</code> definiert, wird dies
 unter der PowerPC-Architektur zu <b>lib/ppc64</b> erweitert und zu
 <b>lib/x86_64</b> unter der i386-Architektur (Der korrekte Speicherort für
 64-bit Bibliotheken auf einem 32-bit System); anderfalls wird es zu <b>lib</b>
-erweitert. (Eingeführt in fink-0.26.0)
+erweitert. (Eingeführt in Fink-0.26.0)
 </p>
 <p>
 Beachten sie, dass <code>%lib</code> im Feld <code>ConfigureParams</code>

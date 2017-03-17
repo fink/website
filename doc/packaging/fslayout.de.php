@@ -142,7 +142,7 @@ statischen Dateien in einem separaten Unterverzeichnis
 <code>/sw/opt/&lt;package&gt;</code> abspeichern, wobei
 <code>&lt;package&gt;</code> ein Name ist, der das Programmpaket
 beschreibt.
-(Verfügbar ab fink 0.29.7 oder später.)
+(Verfügbar ab Fink 0.29.7 oder später.)
 </p>
 </td></tr><tr valign="top"><td><code>/sw/var</code></td><td>
 <p>
