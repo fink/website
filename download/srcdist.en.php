@@ -58,7 +58,7 @@ For OS X 10.4, use
 <li><p><em>10.6-:  </em>Install the full Xcode.</p></li>
 </ul>
 <p>If you install the full Xcode on 10.7-10.12, you will also want to run:</p>
-<pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
+<pre>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
 <p>where you should replace <em>/path/to</em> with the actual path to the Xcode app.</p>
 <p>You will need to run <pre>sudo xcodebuild -license</pre> to accept the terms of the Xcode license in order for fink's build user to work.</p> 
 <p></p>
