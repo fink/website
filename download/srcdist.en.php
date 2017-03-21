@@ -52,8 +52,8 @@ For OS X 10.4, use
 
 <p>You will need to install the proper Command Line Tools for Xcode for your system, (cf. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) which can be done as follows:</p>
 <ul>
-<li><p><em>10.9-10.12:  </em>Run <code>xcode-select --install</code> from the Terminal and select the Install button.</p></li>
-<li><p><em>10.7-10.0:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
+<li><p><em>10.9-10.12:  </em>Run <code>sudo xcode-select --install</code> from the Terminal and select the Install button.</p></li>
+<li><p><em>10.7-10.12:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
 <li><p><em>10.7-10.8:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
 <li><p><em>10.6-:  </em>Install the full Xcode.</p></li>
 </ul>
