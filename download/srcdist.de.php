@@ -60,8 +60,8 @@ Command-Line-Tools über den <em>Downloads</em>-Reiter in den
 </ul>
 <p>Installieren sie das komplette Xcode auf 10.7-10.9, indem sie folgende 
 Befehle ausführen:</p>
-<pre>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
-<p>wobei sie <em>/path/to</em> mit dem tatsächlichen Pfad zur Xcode-App 
+<pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
+<p>wobei sie <em>/Applications</em> mit dem tatsächlichen Pfad zur Xcode-App 
 ersetzen müssen.</p>
 <p>Sie müssen auch <pre>sudo xcodebuild -license</pre> ausführen, um die 
 Lizenzbedingungen für Xcode zu akzeptieren. Nur so funktioniert der Nutzer 

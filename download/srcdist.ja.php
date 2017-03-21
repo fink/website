@@ -66,8 +66,8 @@ OS X 10.4 は、
 <li><p><em>10.6-:  </em> XCode をインストールする。</p></li>
 </ul>
 <p>10.7-10.12 で Xcode をフルインストールした場合、医家も実行します。</p>
-<pre>sudo xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
-<p>ここで、 <em>/path/to</em> は実際のパスに置き換えます。</p>
+<pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
+<p>ここで、 <em>/Applications</em> は実際のパスに置き換えます。</p>
 <p><pre>sudo xcodebuild -license</pre> を実行し、Xcode ライセンスに同意します。
 これをしないと、 fink のビルド用ユーザーが機能しません。</p> 
 <p>(訳註: このほか、 JRE と XQuartz も必要になります。)</p>
