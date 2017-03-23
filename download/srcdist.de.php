@@ -49,7 +49,7 @@ Xcode installieren, (siehe:
 <a href="./index.de.php#additionaldownloads">Schnellanleitung</a>),  
 das wie folgt gemacht werden kann:</p>
 <ul>
-<li><p><em>nur 10.9:  </em>Führen sie <code>xcode-select --install</code> im 
+<li><p><em>nur 10.9:  </em>Führen sie <code>sudo xcode-select --install</code> im 
 Terminal aus und wählen sie den Install-Knopf aus.</p></li>
 <li><p><em>10.9-10.7:  </em>Manueller Download von developer.apple.com.  Achten 
 sie auf die richtige Version für ihre Version von Mac OS X.</p></li>
@@ -60,8 +60,8 @@ Command-Line-Tools über den <em>Downloads</em>-Reiter in den
 </ul>
 <p>Installieren sie das komplette Xcode auf 10.7-10.9, indem sie folgende 
 Befehle ausführen:</p>
-<pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
-<p>wobei sie <em>/path/to</em> mit dem tatsächlichen Pfad zur Xcode-App 
+<pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
+<p>wobei sie <em>/Applications</em> mit dem tatsächlichen Pfad zur Xcode-App 
 ersetzen müssen.</p>
 <p>Sie müssen auch <pre>sudo xcodebuild -license</pre> ausführen, um die 
 Lizenzbedingungen für Xcode zu akzeptieren. Nur so funktioniert der Nutzer 

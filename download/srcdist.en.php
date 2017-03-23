@@ -52,14 +52,14 @@ For OS X 10.4, use
 
 <p>You will need to install the proper Command Line Tools for Xcode for your system, (cf. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) which can be done as follows:</p>
 <ul>
-<li><p><em>10.9-10.12:  </em>Run <code>xcode-select --install</code> from the Terminal and select the Install button.</p></li>
-<li><p><em>10.7-10.0:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
+<li><p><em>10.9-10.12:  </em>Run <code>sudo xcode-select --install</code> from the Terminal and select the Install button.</p></li>
+<li><p><em>10.7-10.12:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
 <li><p><em>10.7-10.8:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
 <li><p><em>10.6-:  </em>Install the full Xcode.</p></li>
 </ul>
 <p>If you install the full Xcode on 10.7-10.12, you will also want to run:</p>
-<pre>xcode-select -switch /path/to/Xcode.app/Contents/Developer</pre>
-<p>where you should replace <em>/path/to</em> with the actual path to the Xcode app.</p>
+<pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
+<p>where you should replace <em>/Applications</em> with the actual path to the Xcode app.</p>
 <p>You will need to run <pre>sudo xcodebuild -license</pre> to accept the terms of the Xcode license in order for fink's build user to work.</p> 
 <p></p>
 <p>Now unpack the <?php print $fink_tool_version; ?>.tar.gz archive if this hasn't been done automatically, e.g.
