@@ -57,7 +57,7 @@ $type_values = array(
 // Distribution values
 $dist_values = array(
 	'any'     => 'Any',
-	'default' => 'Supported (10.9 through 10.12)',
+	'default' => 'Supported (10.9 through 10.13)',
 );
 foreach ($distributions as $d) {
 	if (!$d->isVisible()) {
@@ -181,6 +181,7 @@ function fink_file_search($get, $dists, $trees, $archs) {
 		$dists['10.10'] = '10.10';
 		$dists['10.11'] = '10.11';
 		$dists['10.12'] = '10.12';
+		$dists['10.13'] = '10.13';
 	} else {
 		unset($dists);
 		$dists[$get['dist_name']] = $get['dist_name'];
