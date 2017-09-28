@@ -5,8 +5,79 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2017-02-10T19:00:58+01:00</dc:date>
+    <dc:date>2017-09-28T12:24:21-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2017-09-28%20Fink%20for%20High%20Sierra%20(10.13)">
+      <title>Fink for High Sierra (10.13)</title>
+      <link>http://fink.sourceforge.net/news/#2017-09-28%20Fink%20for%20High%20Sierra%20(10.13)</link>
+      <guid>http://fink.sourceforge.net/news/#2017-09-28%20Fink%20for%20High%20Sierra%20(10.13)</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Because of a recent Sourceforge outage, we haven't been able to do a proper fink 
+  release that supports High Sierra.  However, since the fink source on 
+  Github isn't affected by this, it is possible to get a pre-release version out of our
+  git repository and install that.</p>
+  <p>The following sequence of steps should allow you to update your Fink installation
+  on 10.9 (Mavericks) or later for High Sierra.  10.8 (Mountain Lion) or earlier 
+  have no supported upgrade path.</p>
+  <p>0) Don't update your OS yet!</p>
+  <p>1) Download a copy of the 
+  <a href="https://github.com/fink/fink/archive/master.zip">repository archive</a> and
+  uncompress it if your browser doesn't do that automatically.</p>
+  <p>2) Open a Terminal window and change to the resulting fink-master directory
+  e.g. cd ~/Downloads/fink-master .</p>
+  <p>3) Run the command sudo ./inject.pl to update fink.</p>
+  <p>4) Update your OS to High Sierra.</p>
+  <p>5) Open a Terminal window and run fink reinstall fink to reset your distribution.</p>
+  <p/>
+  <p>For new installs on High Sierra:</p>
+  <p>1) Install the Xcode 9 command-line tools by running sudo xcode-select --install 
+  in a Terminal window.</p>
+  <p>2) Install the latest JDK from Oracle, e.g. by running javac in a Terminal 
+  window.</p>
+  <p>3) Follow steps 1-2) from the upgrade instructions above.</p>
+  <p>4) Run sudo ./bootstrap</p>
+  <p>5) The default bootstrap operation will error out at the end for the time being, until 
+  an official High Sierra binary distribution has been uploaded.  Go ahead and run 
+  /sw/bin/pathsetup.sh as usual, however.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Because of a recent Sourceforge outage, we haven't been able to do a proper fink 
+  release that supports High Sierra.  However, since the fink source on 
+  Github isn't affected by this, it is possible to get a pre-release version out of our
+  git repository and install that.</p>
+  <p>The following sequence of steps should allow you to update your Fink installation
+  on 10.9 (Mavericks) or later for High Sierra.  10.8 (Mountain Lion) or earlier 
+  have no supported upgrade path.</p>
+  <p>0) Don't update your OS yet!</p>
+  <p>1) Download a copy of the 
+  <a href="https://github.com/fink/fink/archive/master.zip">repository archive</a> and
+  uncompress it if your browser doesn't do that automatically.</p>
+  <p>2) Open a Terminal window and change to the resulting fink-master directory
+  e.g. cd ~/Downloads/fink-master .</p>
+  <p>3) Run the command sudo ./inject.pl to update fink.</p>
+  <p>4) Update your OS to High Sierra.</p>
+  <p>5) Open a Terminal window and run fink reinstall fink to reset your distribution.</p>
+  <p/>
+  <p>For new installs on High Sierra:</p>
+  <p>1) Install the Xcode 9 command-line tools by running sudo xcode-select --install 
+  in a Terminal window.</p>
+  <p>2) Install the latest JDK from Oracle, e.g. by running javac in a Terminal 
+  window.</p>
+  <p>3) Follow steps 1-2) from the upgrade instructions above.</p>
+  <p>4) Run sudo ./bootstrap</p>
+  <p>5) The default bootstrap operation will error out at the end for the time being, until 
+  an official High Sierra binary distribution has been uploaded.  Go ahead and run 
+  /sw/bin/pathsetup.sh as usual, however.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.1%20ver%F6ffentlicht">
       <title>fink-0.41.1 veröffentlicht</title>
       <link>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.1%20ver%F6ffentlicht</link>
@@ -532,52 +603,6 @@
 	fink-0.38.0 (oder neuer) auf 10.9 installieren, bevor man
 	auf 10.10 aktualisiert. Eine Aktualisierung von Fink von 10.8 oder
 	früher auf 10.10 wird nicht unterstützt.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%F6ffentlicht.%20Ende%20der%20offiziellen%20%3F%20%20%20Unterst%FCtzung%20von%2010.6.">
-      <title>fink-0.36.5 und fink-0.37.0 veröffentlicht. Ende der offiziellen 
-   Unterstützung von 10.6.</title>
-      <link>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%F6ffentlicht.%20Ende%20der%20offiziellen%20%3F%20%20%20Unterst%FCtzung%20von%2010.6.</link>
-      <guid>http://fink.sourceforge.net/news/#2014-06-04%20fink-0.36.5%20und%20fink-0.37.0%20ver%F6ffentlicht.%20Ende%20der%20offiziellen%20%3F%20%20%20Unterst%FCtzung%20von%2010.6.</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-	fink-0.37.0 und fink-0.37.0 wurden am 4. Juni
-	2014 veröffentlicht. Diese Ausgabe von fink behebt Probleme
-	bei der Bestimmung von Java auf 10.6, wenn eine ältere Version des Apple
-	Java SDK installiert ist. fink-0.37.0 erkennt offiziell OS
-	10.9.3. Außerdem werden Finks "compiler wrapper" jetzt direkt vom Paket
-	"fink" installiert. Modifikationen werden dadurch einfacher.
-  </p>
-  <p>
-	fink-0.36.5 markiert das Ende der Unterstützung von 10.6
-	durch das Fink-Projekt. Nutzer, die Paket-Updates benötigen, sollten den
-	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
-	können auch auf Anfrage aktualisiert werden.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-	fink-0.37.0 und fink-0.37.0 wurden am 4. Juni
-	2014 veröffentlicht. Diese Ausgabe von fink behebt Probleme
-	bei der Bestimmung von Java auf 10.6, wenn eine ältere Version des Apple
-	Java SDK installiert ist. fink-0.37.0 erkennt offiziell OS
-	10.9.3. Außerdem werden Finks "compiler wrapper" jetzt direkt vom Paket
-	"fink" installiert. Modifikationen werden dadurch einfacher.
-  </p>
-  <p>
-	fink-0.36.5 markiert das Ende der Unterstützung von 10.6
-	durch das Fink-Projekt. Nutzer, die Paket-Updates benötigen, sollten den
-	Maintainer des jeweiligen Pakets kontaktieren. Pakete ohne Maintainer
-	können auch auf Anfrage aktualisiert werden.
   </p>
  
 		]]>
