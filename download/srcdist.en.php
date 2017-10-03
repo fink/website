@@ -26,7 +26,7 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 
 <ul>
 	 <li>
-For OS X 10.9-10.12, you can use a <a href="https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool">helper script</a>
+For OS X 10.9-10.12, you can use a <a href="https://github.com/fink/scripts/releases/latest">helper script</a>
 which automates the download and build steps below.
 	 </li>
 	 <li>

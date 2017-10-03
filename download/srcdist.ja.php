@@ -25,7 +25,7 @@ include "header.inc";
 <ul>
 	 <li>
 OS X 10.9-10.12 では、
-<a href="https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool">helper script</a>
+<a href="https://github.com/fink/scripts/releases/latest">helper script</a>
 を使うことができます。
 これは、下のダウンロードとビルドを自動化したものです。
 	 </li>
