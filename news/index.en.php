@@ -7,7 +7,12 @@ $metatags = '';
 include_once "header.inc";
 ?>
 
-<a name="2017-09-28%20Fink%20for%20High%20Sierra%20(10.13)"><span class="news-date">2017-09-28: </span><span class="news-headline">Fink for High Sierra (10.13)</span></a><?php gray_line(); ?>
+<a name="2017-10-03%20Fixing%20updates%20when%20you%20have%20installed%20High%20Sierra%20before%20updating%20fink"><span class="news-date">2017-10-03: </span><span class="news-headline">Fixing updates when you have installed High Sierra before updating fink</span></a><?php gray_line(); ?>
+  <p>If you have updated to High Sierra before updating fink, your <code>fink</code> command 
+  won't be able to function any more.  Fortunately, a workaround is now available.</p>
+  <p>1) Download an updated <a href="http://bindist.finkproject.org/10.13/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.999.git-20171001.2306_darwin-x86_64.deb">fink</a>.</p>
+  <p>2) In a terminal window, run <code>sudo dpkg -i fink_0.41.999.git-20171001.2306_darwin-x86_64.deb</code> from the directory where you downloaded the file.</p>
+ <a name="2017-09-28%20Fink%20for%20High%20Sierra%20(10.13)"><span class="news-date">2017-09-28: </span><span class="news-headline">Fink for High Sierra (10.13)</span></a><?php gray_line(); ?>
   <p>Because of a recent Sourceforge outage, we haven't been able to do a proper <code>fink</code> 
   release that supports High Sierra.  However, since the <code>fink</code> source on 
   Github isn't affected by this, it is possible to get a pre-release version out of our

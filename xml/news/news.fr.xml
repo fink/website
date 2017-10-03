@@ -3,6 +3,16 @@
 <news lang="fr">
  <cvsid>$Id: news.fr.xml,v 1.100 2016/07/30 18:14:16 alexkhansen Exp $</cvsid>
 <newsitem>
+ <date>2017-10-03</date>
+ <headline>Fixing updates when you have installed High Sierra before updating fink</headline>
+ <body>
+  <p>If you have updated to High Sierra before updating fink, your <code>fink</code> command 
+  won't be able to function any more.  Fortunately, a workaround is now available.</p>
+  <p>1) Download an updated <link url="http://bindist.finkproject.org/10.13/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.999.git-20171001.2306_darwin-x86_64.deb">fink</link>.</p>
+  <p>2) In a terminal window, run <code>sudo dpkg -i fink_0.41.999.git-20171001.2306_darwin-x86_64.deb</code> from the directory where you downloaded the file.</p>
+ </body>
+</newsitem>
+<newsitem>
  <date>2017-09-28</date>
  <headline>Fink for High Sierra (10.13)</headline>
  <body>

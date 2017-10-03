@@ -1,4 +1,9 @@
-<a name="2016-11-12%20fink-0.41.0%20released"><span class="news-date">2016-11-12: </span><span class="news-headline">fink-0.41.0 released</span></a><?php gray_line(); ?>
+<a name="2017-10-03%20Fixing%20updates%20when%20you%20have%20installed%20High%20Sierra%20before%20updating%20fink"><span class="news-date">2017-10-03: </span><span class="news-headline">Fixing updates when you have installed High Sierra before updating fink</span></a><?php gray_line(); ?>
+  <p>If you have updated to High Sierra before updating fink, your <code>fink</code> command 
+  won't be able to function any more.  Fortunately, a workaround is now available.</p>
+  <p>1) Download an updated <a href="http://bindist.finkproject.org/10.13/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.999.git-20171001.2306_darwin-x86_64.deb">fink</a>.</p>
+  <p>2) In a terminal window, run <code>sudo dpkg -i fink_0.41.999.git-20171001.2306_darwin-x86_64.deb</code> from the directory where you downloaded the file.</p>
+ <a name="2016-11-12%20fink-0.41.0%20released"><span class="news-date">2016-11-12: </span><span class="news-headline">fink-0.41.0 released</span></a><?php gray_line(); ?>
   <p>The Fink Project has released <code>fink-0.41.1</code> to help us deal with adjustments
   to the libXt library from XQuartz via the use of the XQuartz version in the <code>system-xfree86*</code>
   packages, and to support OS X 10.12.1 .
@@ -20,9 +25,4 @@
   <code>sudo dpkg -i fink_0.41.1-111_darwin-x86_64.deb</code> from the directory where 
   you downloaded it, then use <code>fink reinstall fink</code> to update the distribution.
   </p>
- <a name="2016-08-13%20fink-0.39.5%20released"><span class="news-date">2016-08-13: </span><span class="news-headline">fink-0.39.5 released</span></a><?php gray_line(); ?>
-   <p>The Fink Project has released <code>fink-0.39.5</code> for 10.9-10.11.  This 
-  officially supports 10.9.0-10.11.6, and among other fixes and enhancements it
-  switches from using <code>otool</code> to <code>otool-classic</code> to maintain
-  compatibility with Xcode 8.</p>
  
