@@ -26,11 +26,11 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 
 <ul>
 	 <li>
-For OS X 10.9-10.12, you can use a <a href="https://github.com/fink/scripts/releases/latest">helper script</a>
+For OS X 10.9-10.13, you can use a <a href="https://github.com/fink/scripts/releases/latest">helper script</a>
 which automates the download and build steps below.
 	 </li>
 	 <li>
-For a manual install on OS X 10.9-10.12, <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
+For a manual install on OS X 10.9-10.13, <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
      </li>     
 	 <li>
 For OS X 10.7-8, use
