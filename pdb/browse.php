@@ -49,7 +49,7 @@ function genFormSelect($var_name, $cur_val, $values, $description = '') {
 	echo "<select NAME='$var_name'>\n";
 	foreach ($values as $key => $val) {
 		echo "  <option value='$key' ";
-		if ($cur_val == $key) echo "selected";
+		if ($cur_val === $key) echo "selected";
 		echo ">$val</option>\n";
 	}
 	echo "</select>\n";
