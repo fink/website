@@ -362,8 +362,8 @@ unset($result);
 		# where the info file sits on a local Fink installation
 		$git_file_path = preg_replace('/^dists\//', '', $pobj['rcspath']);
 		$git_base_path = 'https://github.com/fink/fink-distributions';
-		$infofile_html  = '<a href="'.$git_base_path.'/blob/master/'.$git_file_path.'" title="' . $pobj['name'] . ' info file">'.$pobj['rcspath'].'</a><br>';
-		$infofile_html .= '<a href="'.$git_base_path.'/commits/master/'.$git_file_path.'" title="' . $pobj['name'] . ' Commit log">Commit log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
+		$infofile_html  = '<a target="_blank" href="'.$git_base_path.'/blob/master/'.$git_file_path.'" title="' . $pobj['name'] . ' info file">'.$pobj['rcspath'].'</a><br>';
+		$infofile_html .= '<a target="_blank" href="'.$git_base_path.'/commits/master/'.$git_file_path.'" title="' . $pobj['name'] . ' Commit log">Commit log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
 		it_item("Info-File:", $infofile_html);
 	}
 	if (isset($pobj['debarchive']) && $pobj['debarchive'] && $pobj['rel_type'] == 'bindist') {
