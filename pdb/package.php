@@ -360,14 +360,10 @@ unset($result);
 	}
 	if ($pobj['infofile'] && $pobj['rel_type'] != 'bindist') {
 		# where the info file sits on a local Fink installation
-		$infofile_path = $pobj['rcspath'];
-		$infofile_cvs_url = 'http://fink.cvs.sourceforge.net/fink/'.$pobj['rcspath'];
-		if ($pobj['rel_type'] == 'bindist')
-			$infofile_tag = '?pathrev=' . $pobj['tag'];
-		else
-			$infofile_tag = '';
-		$infofile_html  = '<a href="'.$infofile_cvs_url.$infofile_tag.($infofile_tag ? '&amp;' : '?').'view=markup" title="' . $pobj['name'] . ' info file">'.$infofile_path.'</a><br>';
-		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'?view=log" title="' . $pobj['name'] . ' CVS log">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
+		$git_file_path = preg_replace('/^dists\//', '', $pobj['rcspath']);
+		$git_base_path = 'https://github.com/fink/fink-distributions';
+		$infofile_html  = '<a href="'.$git_base_path.'/blob/master/'.$git_file_path.'" title="' . $pobj['name'] . ' info file">'.$infofile_path.'</a><br>';
+		$infofile_html .= '<a href="'.$git_base_path.'/commits/master/'.$git_file_path.'" title="' . $pobj['name'] . ' Commit log">Commit log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
 		it_item("Info-File:", $infofile_html);
 	}
 	if (isset($pobj['debarchive']) && $pobj['debarchive'] && $pobj['rel_type'] == 'bindist') {
