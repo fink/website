@@ -9,7 +9,7 @@
   <p>The Fink Project has released <code>fink-0.42.0</code> to provide High Sierra (10.13) support.
   This release officially supports 10.9.0-10.13.0.  It also adds support for Oracle's Java 9.  
   In addition, it incorporates other bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.12 is as follows:</p>
+  The best update sequence from going to 10.9-10.12 to 10.13 is as follows:</p>
   <p>0) Start on 10.9-10.12.  Don't update your OS yet.</p>
   <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.42.0</code></p>
   <p>2) Update to High Sierra.</p>
