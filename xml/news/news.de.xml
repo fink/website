@@ -3,6 +3,25 @@
 <news lang="de">
  <cvsid>$Id: news.de.xml,v 1.73 2016/07/30 18:14:16 kamischi Exp $</cvsid>
 <newsitem>
+ <date>2017-03-28</date>
+ <headline>fink-0.43.0 released</headline>
+ <body>
+  <p>The Fink Project has released <code>fink-0.43.0</code>.  This release supports using
+  <code>git</code> or <code>svn</code> to update packages instead of cvs, particularly to 
+  work through firewalls via HTTPS.  Use <code>fink selfupdate-git</code> or 
+  <code>fink selfupdate-svn</code> to switch to one of those methods.  
+  This release officially supports 10.9.0-10.13.4.  It also enhances support for Oracle's
+  Java 9 as well as the 2017 release of Apple's legacy Java.
+  In addition, it incorporates other bug fixes and enhancements.  
+  The best update sequence from going to 10.9-10.12 to 10.13 is as follows:</p>
+  <p>0) Start on 10.9-10.12.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.42.0</code></p>
+  <p>2) Update to High Sierra.</p>
+  <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the instructions below, and then run "fink selfupdate" again.</p>
+ </body>
+</newsitem>
+<newsitem>
  <date>2017-10-07</date>
  <headline>fink-0.42.0 released</headline>
  <body>
