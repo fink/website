@@ -18,7 +18,7 @@
   <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.42.0</code></p>
   <p>2) Update to High Sierra.</p>
   <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
-  <p>If you happen to have updated your OS X before updating fink, follow the instructions below, and then run "fink selfupdate" again.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run <code>fink selfupdate</code> again.</p>
  </body>
 </newsitem>
 <newsitem>
@@ -33,7 +33,7 @@
   <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.42.0</code></p>
   <p>2) Update to High Sierra.</p>
   <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
-  <p>If you happen to have updated your OS X before updating fink, follow the instructions below, and then run "fink selfupdate" again.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run <code>fink selfupdate</code> again.</p>
  </body>
 </newsitem>
 <newsitem>
