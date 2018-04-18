@@ -3,6 +3,14 @@
 <news lang="pt">
  <cvsid>$Id: news.pt.xml,v 1.35 2016/07/30 18:14:16 alexkhansen Exp $</cvsid>
 <newsitem>
+ <date>2017-04-18</date>
+ <headline>fink-0.43.10 released</headline>
+ <body>
+  <p>The Fink Project has released <code>fink-0.43.1</code>.  This is a bugfix release.  Use<code>fink selfupdate</code> to install it.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run <code>fink selfupdate</code> again.</p>
+ </body>
+</newsitem>
+<newsitem>
  <date>2017-03-28</date>
  <headline>fink-0.43.0 released</headline>
  <body>
