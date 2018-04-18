@@ -7,7 +7,10 @@ $metatags = '';
 include_once "header.inc";
 ?>
 
-<a name="2017-03-28%20fink-0.43.0%20released"><span class="news-date">2017-03-28: </span><span class="news-headline">fink-0.43.0 released</span></a><?php gray_line(); ?>
+<a name="2017-04-18%20fink-0.43.10%20released"><span class="news-date">2017-04-18: </span><span class="news-headline">fink-0.43.10 released</span></a><?php gray_line(); ?>
+  <p>The Fink Project has released <code>fink-0.43.1</code>.  This is a bugfix release.  Use<code>fink selfupdate</code> to install it.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run <code>fink selfupdate</code> again.</p>
+ <a name="2017-03-28%20fink-0.43.0%20released"><span class="news-date">2017-03-28: </span><span class="news-headline">fink-0.43.0 released</span></a><?php gray_line(); ?>
   <p>The Fink Project has released <code>fink-0.43.0</code>.  This release supports using
   <code>git</code> or <code>svn</code> to update packages instead of cvs, particularly to 
   work through firewalls via HTTPS.  Use <code>fink selfupdate-git</code> or 
@@ -20,7 +23,7 @@ include_once "header.inc";
   <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.42.0</code></p>
   <p>2) Update to High Sierra.</p>
   <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
-  <p>If you happen to have updated your OS X before updating fink, follow the instructions below, and then run "fink selfupdate" again.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run <code>fink selfupdate</code> again.</p>
  <a name="2017-10-07%20fink-0.42.0%20released"><span class="news-date">2017-10-07: </span><span class="news-headline">fink-0.42.0 released</span></a><?php gray_line(); ?>
   <p>The Fink Project has released <code>fink-0.42.0</code> to provide High Sierra (10.13) support.
   This release officially supports 10.9.0-10.13.0.  It also adds support for Oracle's Java 9.  
@@ -30,7 +33,7 @@ include_once "header.inc";
   <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.42.0</code></p>
   <p>2) Update to High Sierra.</p>
   <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
-  <p>If you happen to have updated your OS X before updating fink, follow the instructions below, and then run "fink selfupdate" again.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run <code>fink selfupdate</code> again.</p>
  <a name="2017-10-03%20Fixing%20updates%20when%20you%20have%20installed%20High%20Sierra%20before%20updating%20fink"><span class="news-date">2017-10-03: </span><span class="news-headline">Fixing updates when you have installed High Sierra before updating fink</span></a><?php gray_line(); ?>
   <p>If you have updated to High Sierra before updating fink, your <code>fink</code> command 
   won't be able to function any more.  Fortunately, a workaround is now available.</p>
