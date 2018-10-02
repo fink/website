@@ -26,6 +26,7 @@ foreach(array(
 	new Distribution("10.11",       "x86_64",  "10.11/x86_64",       "dists/10.9-libcxx",  16, TRUE, TRUE, TRUE),
 	new Distribution("10.12",       "x86_64",  "10.12/x86_64",       "dists/10.9-libcxx",  17, TRUE, TRUE, TRUE),
 	new Distribution("10.13",       "x86_64",  "10.13/x86_64",       "dists/10.9-libcxx",  18, TRUE, TRUE, TRUE),
+	new Distribution("10.14",       "x86_64",  "10.14/x86_64",       "dists/10.9-libcxx",  19, TRUE, TRUE, TRUE),
 ) as $_dist) {
 	$distributions[$_dist->getId()] = $_dist;
 }
@@ -85,6 +86,8 @@ foreach(array(
 	new Release($distributions["10.12-x86_64"],         "stable",           "current", 51, TRUE),
 	new Release($distributions["10.13-x86_64"],         "bindist",          "current", 52, TRUE),
 	new Release($distributions["10.13-x86_64"],         "stable",           "current", 53, TRUE),
+	new Release($distributions["10.14-x86_64"],         "bindist",          "current", 54, TRUE),
+	new Release($distributions["10.14-x86_64"],         "stable",           "current", 55, TRUE),
 ) as $_rel) {
 	$releases[$_rel->getId()] = $_rel;
 }
