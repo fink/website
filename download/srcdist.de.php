@@ -27,10 +27,13 @@ und zu installieren.</p>
 
 <ul>
   <li>
-Nehmen sie für OS X 10.7-10.10
+Nehmen sie für macOS 10.9-10.14
  <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
   </li>
-  <li>
+Nehmen sie für OS X 10.7-8, use
+ <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.38.7.tar.gz", "fink-0.38.7.tar.gz", "/downloads/FinkSOURCE") ?> - 1185K<br>
+	 </li>
+     <li>
 Nehmen sie für OS X 10.6
  <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz", "fink-0.36.5.tar.gz", "/downloads/FinkSOURCE") ?> - 1176K<br>
      </li>
@@ -49,16 +52,16 @@ Xcode installieren, (siehe:
 <a href="./index.de.php#additionaldownloads">Schnellanleitung</a>),  
 das wie folgt gemacht werden kann:</p>
 <ul>
-<li><p><em>nur 10.9:  </em>Führen sie <code>sudo xcode-select --install</code> im 
+<li><p><em>10.9-10.14:  </em>Führen sie <code>sudo xcode-select --install</code> im 
 Terminal aus und wählen sie den Install-Knopf aus.</p></li>
-<li><p><em>10.9-10.7:  </em>Manueller Download von developer.apple.com.  Achten 
+<li><p><em>10.9-10.14:  </em>Manueller Download von developer.apple.com.  Achten 
 sie auf die richtige Version für ihre Version von Mac OS X.</p></li>
-<li><p><em>10.9-10.7:  </em>Installieren sie das komplette Xcode. Man kann die 
+<li><p><em>10.7-10.8:  </em>Installieren sie das komplette Xcode. Man kann die 
 Command-Line-Tools über den <em>Downloads</em>-Reiter in den 
 <strong>Voreinstellungen</strong> von Xcode installieren.</p></li>
-<li><p><em>10.6-:  </em>Installieren sie das komplette Xcode.</p></li>
+<li><p><em>10.6:  </em>Installieren sie das komplette Xcode.</p></li>
 </ul>
-<p>Installieren sie das komplette Xcode auf 10.7-10.9, indem sie folgende 
+<p>Installieren sie das komplette Xcode auf 10.7-10.14, indem sie folgende 
 Befehle ausführen:</p>
 <pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
 <p>wobei sie <em>/Applications</em> mit dem tatsächlichen Pfad zur Xcode-App 

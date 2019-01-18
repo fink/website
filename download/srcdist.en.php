@@ -26,11 +26,11 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 
 <ul>
 	 <li>
-For OS X 10.9-10.13, you can use a <a href="https://github.com/fink/scripts/releases/latest">helper script</a>
+For OS X 10.9-10.14, you can use a <a href="https://github.com/fink/scripts/releases/latest">helper script</a>
 which automates the download and build steps below.
 	 </li>
 	 <li>
-For a manual install on OS X 10.9-10.13, <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
+For a manual install on OS X 10.9-10.14, <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
      </li>     
 	 <li>
 For OS X 10.7-8, use
@@ -52,12 +52,12 @@ For OS X 10.4, use
 
 <p>You will need to install the proper Command Line Tools for Xcode for your system, (cf. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) which can be done as follows:</p>
 <ul>
-<li><p><em>10.9-10.12:  </em>Run <code>sudo xcode-select --install</code> from the Terminal and select the Install button.</p></li>
-<li><p><em>10.7-10.12:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
+<li><p><em>10.9-10.14:  </em>Run <code>sudo xcode-select --install</code> from the Terminal and select the Install button.</p></li>
+<li><p><em>10.7-10.14:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
 <li><p><em>10.7-10.8:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
-<li><p><em>10.6-:  </em>Install the full Xcode.</p></li>
+<li><p><em>10.6:  </em>Install the full Xcode.</p></li>
 </ul>
-<p>If you install the full Xcode on 10.7-10.12, you will also want to run:</p>
+<p>If you install the full Xcode on 10.7-10.14, you will also want to run:</p>
 <pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
 <p>where you should replace <em>/Applications</em> with the actual path to the Xcode app.</p>
 <p>You will need to run <pre>sudo xcodebuild -license</pre> to accept the terms of the Xcode license in order for fink's build user to work.</p> 

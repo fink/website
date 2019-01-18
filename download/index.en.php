@@ -22,7 +22,7 @@ with the binary release.
 </p>
 <ol>
 <li>
-<p>10.6, 10.7, 10.8, 10.9, 10.10, 10.11, and 10.12 users:  There is not currently a binary installer, and you will
+<p>10.6 to 10.14 users:  There is not currently a binary installer, and you will
 need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 10.5 users:  
 Download the installer disk image:<br>
@@ -105,13 +105,38 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
   <caption>Recommended Developer Tools versions by OS</caption>
   <tbody>
     <tr>
+        <td>10.14</td>
+        <td>The Command Line Tools for Mojave, optionally Xcode 10.1<br>
+        The Command Line Tools can be downloaded via the <code>xcode-select --install</code> command or in a separate package.</td>
+    </tr>
+    <tr>
+        <td>10.13</td>
+        <td>The Command Line Tools for High Sierra, optionally Xcode 10.1<br>
+        The Command Line Tools can be downloaded via the <code>xcode-select --install</code> command or in a separate package.</td>
+    </tr>
+    <tr>
+        <td>10.12</td>
+        <td>The Command Line Tools for Sierra, optionally Xcode 9.2<br>
+        The Command Line Tools can be downloaded via the <code>xcode-select --install</code> command or in a separate package.</td>
+    </tr>
+    <tr>
+        <td>10.11</td>
+        <td>The Command Line Tools for El Capitan, optionally Xcode 8.2.1<br>
+        The Command Line Tools can be downloaded via the <code>xcode-select --install</code> command or in a separate package.</td>
+    </tr>
+    <tr>
+        <td>10.10</td>
+        <td>The Command Line Tools for Yosemite, optionally Xcode 7.2.1<br>
+        The Command Line Tools can be downloaded via the <code>xcode-select --install</code> command or in a separate package.</td>
+    </tr>
+    <tr>
         <td>10.9</td>
-        <td>The Command Line Tools for Mavericks - Late October 2013; optionally Xcode 5.0.1<br>
+        <td>The Command Line Tools for Mavericks - Late October 2013; optionally Xcode 6.2<br>
         The Command Line Tools can be downloaded via the <code>xcode-select --install</code> command, Xcode's Preferences or in a separate package.</td>
     </tr>
     <tr>
         <td>10.8</td>
-        <td>The Command Line Tools for Mountain Lion - October 2013 ; optionally Xcode 5.0.1<br>
+        <td>The Command Line Tools for Mountain Lion - October 2013 ; optionally Xcode 5.1.1<br>
         The Command Line Tools can be downloaded via Xcode's Preferences or in a separate package.</td>
     </tr>
     <tr>
