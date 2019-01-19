@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 2015/03/05 23:40:46 k-m_schindler Exp $
+# $Id: Makefile,v 1.7 2019/01/19 11:22:33 nieder Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -7,7 +7,11 @@ basedir = ..
 SOURCE = quick-start-pkg
 # The second example is not ready yet...
 #TARGET = index.php howtostart.php example.php example2.php
-TARGET = index.php howtostart.php example.php
+TARGET = \
+	index.php \
+	howtostart.php \
+	example.php
+
 WANT_HTML = 1
 DESTDIR = doc/quick-start-pkg
 

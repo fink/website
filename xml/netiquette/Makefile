@@ -1,11 +1,17 @@
-# $Id: Makefile,v 1.10 2015/02/19 17:20:27 k-m_schindler Exp $
+# $Id: Makefile,v 1.11 2019/01/19 11:22:33 nieder Exp $
 
 # process XML files with stylesheet to produce HTML
 
 basedir = ..
 
 SOURCE = netiquette
-TARGET = index.php before-post.php first-post.php reply.php unsubscribe.php 
+TARGET = \
+	index.php \
+	before-post.php \
+	first-post.php \
+	reply.php \
+	unsubscribe.php 
+
 WANT_HTML = 1
 DESTDIR = doc/netiquette
 
