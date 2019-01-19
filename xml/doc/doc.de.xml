@@ -3,7 +3,7 @@
 <article filename="index" lang="de">
   <title>Fink - Dokumentation</title>
   <shorttitle>Dokumentation</shorttitle>
-  <cvsid>$Id: doc.de.xml,v 1.1 2015/02/17 21:14:26 k-m_schindler Exp $</cvsid>
+  <cvsid>$Id: doc.de.xml,v 1.2 2019/01/19 10:11:12 nieder Exp $</cvsid>
   <preface>
     <p>
 Dies ist eine Sammlung verschiedener Dokumente für Fink. Einige der
@@ -56,8 +56,8 @@ die installierte Software
 - Die Lies-Mich Datei für die Quelltext-Distribution
       </li>
       <li>
-<varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.de.html">CVS
-Zugang</varlink> - Wie greift man auf das CVS-Repository von Fink zu, wenn
+<varlink url="gitaccess/index.php" varurl="gitaccess/git.en.html">Git
+Zugang</varlink> - Wie greift man auf das Git-Repository von Fink zu, wenn
 man zwischen bestimmten Versionen von Fink die neuesten Quelltext-Pakete 
 haben möchte.
       </li>

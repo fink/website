@@ -3,7 +3,7 @@
 <document filename="index" lang="de">
   <title>Fink Benutzerhandbuch</title>
   <shorttitle>Benutzerhandbuch</shorttitle>
-  <cvsid>$Id: uguide.de.xml,v 1.11 2015/02/18 23:41:07 k-m_schindler Exp $</cvsid>
+  <cvsid>$Id: uguide.de.xml,v 1.12 2019/01/19 10:11:12 nieder Exp $</cvsid>
   <preface>
   <p>Achtung: die deutsche Version dieses Dokuments ist nicht mit der Englische Version synchron.</p>
     <p>Dieses Dokument gibt einen Überblick über alle Features von Fink.
@@ -532,7 +532,7 @@ Für mehr Informationen, speziell über das Aktualisieren unter Fink Versionen �
 Aktualisieren ist ein wenig komplizierter, wenn Sie die Source-Distribution verwenden. Die Verfahrensweise besteht aus zwei Schritten. Im ersten Schritt, laden Sie die aktuellsten Paketbeschreibungen auf Ihren Computer. Im zweiten Schritt werden diese Paketbeschreibungen genutzt, um neue Pakete zu kompilieren; der eigentliche Quellcode wird dann bei Bedarf heruntergeladen.
 </p>
       <p>
-Falls Sie Fink 0.2.5 oder neuer haben, kann der erste Schritt mit dem Ausführen von <code>fink selfupdate</code> vollbracht werden. Dieser Befehl wird die Fink-Webseite überprüfen, ob ein neues Punkt-Release verfügbar ist, und gegebenenfalls die Paketbeschreibungen herunterladen. In kürzlichen Versionen des Befehls <code>fink</code> haben Sie die Möglichkeit die Paketbeschreibungen direkt via CVS oder rsync herunterzuladen. CVS ist ein versionsgesteuertes Behältnis, wo die Paketbeschreibungen gespeichert und verwaltet werden. Der Einsatz von CVS hat den Vorteil, dass es kontinuierlich aktualisiert wird, aber der Nachteil ist, dass es nur einen einzigen CVS-Server für Fink gibt, so kann es sein, dass dieser manchmal nicht erreichbar ist, wenn es viel Traffic gibt. Deshalb empfehlen wir, dass die Benutzer im allgemeinen rsync nutzen. Für rsync gibt es zahlreiche Spiegelserver, und der einzige Nachteil ist, dass die Paketbeschreibungen mit einer Verzögerung von etwa einer Stunde auf die rsync-Server gespiegelt werden, nachdem sie zum CVS hinzugefügt worden.
+Falls Sie Fink 0.2.5 oder neuer haben, kann der erste Schritt mit dem Ausführen von <code>fink selfupdate</code> vollbracht werden. Dieser Befehl wird die Fink-Webseite überprüfen, ob ein neues Punkt-Release verfügbar ist, und gegebenenfalls die Paketbeschreibungen herunterladen. In kürzlichen Versionen des Befehls <code>fink</code> haben Sie die Möglichkeit die Paketbeschreibungen direkt via Git oder rsync herunterzuladen. Git ist ein versionsgesteuertes Behältnis, wo die Paketbeschreibungen gespeichert und verwaltet werden. Der Einsatz von Git hat den Vorteil, dass es kontinuierlich aktualisiert wird, aber der Nachteil ist, dass es nur einen einzigen Git-Server für Fink gibt, so kann es sein, dass dieser manchmal nicht erreichbar ist, wenn es viel Traffic gibt. Deshalb empfehlen wir, dass die Benutzer im allgemeinen rsync nutzen. Für rsync gibt es zahlreiche Spiegelserver, und der einzige Nachteil ist, dass die Paketbeschreibungen mit einer Verzögerung von etwa einer Stunde auf die rsync-Server gespiegelt werden, nachdem sie zum Git hinzugefügt worden.
 </p>
       <p>(Falls Sie Probleme haben, die Source-Installation zu aktualisieren, werfen Sie einen Blick in <link url="/download/fix-upgrade.php">diese speziellen Anweisungen</link>.)</p>
       <p>
@@ -744,7 +744,7 @@ Dateien im Buildpath zu indizieren. Dieses verzögert die Erstellung von Paketen
         </li>
         <li>
           <p>
-            <em>SelfUpdateMethod:</em> point, rsync oder cvs</p>
+            <em>SelfUpdateMethod:</em> point, rsync oder git</p>
           <p>
 <code>fink</code> nutzt verschiedene Methoden, um info-Dateien der Pakete zu 
 aktualisieren. <em>rsync</em> ist die empfohlene Einstellung; mit rsync werden nur 
@@ -752,8 +752,8 @@ geänderte Dateien aus den <xref section="optional">Bäumen</xref> herunter gela
 sie eingeschaltet haben. Beachten sie, dass geänderte oder hinzugefügte Dateien 
 in den Bäumen <code>stable</code> und <code>unstable</code> bei der Benutzung 
 von rsync gelöscht werden. Machen sie zuerst einen Backup in ihren eigenen Baum, 
-d. h. <code>local</code>. <em>cvs</em> lädt aus dem Fink Repository mittels 
-anonymous oder :ext: cvs-Zugang herunter. Dies hat den Nachteil, dass cvs den 
+d. h. <code>local</code>. <em>git</em> lädt aus dem Fink Repository mittels 
+anonymous oder Github-Zugang herunter. Dies hat den Nachteil, dass git den 
 Mirror nicht wechseln kann. Wenn der Server nicht verfügbar ist, kann man nicht 
 aktualisieren. <em>point</em> lädt nur die neueste Version der Pakete herunter. 
 Dies wird nicht empfohlen, weil ihre Pakete ziemlich veraltet sein können.
@@ -1208,7 +1208,7 @@ Führt den Konfigurationsprozess noch einmal aus. So können Sie unter anderen I
     <section name="selfupdate">
       <title>selfupdate</title>
       <p>
-      Dieser Befehl automatisiert die Aktualisierung von Fink auf eine neues Release. Es überprüft die Fink-Webseite, um zu sehen, ob eine neue Version verfügbar ist. Wenn dies so ist, lädt es die Paketbeschreibungen und Updates der core-Pakete einschließlich von <code>fink</code> selber. Dieser Befehl kann auf reguläre Releases aktualisieren, es kann aber auch Ihren <filename>/sw/fink/dists</filename>-Verzeichnisbaum für direktes CVS einrichten. Das bedeutet, dass Sie dann auf die aktuellsten Versionen aller Pakete zugreifen können.</p>
+      Dieser Befehl automatisiert die Aktualisierung von Fink auf eine neues Release. Es überprüft die Fink-Webseite, um zu sehen, ob eine neue Version verfügbar ist. Wenn dies so ist, lädt es die Paketbeschreibungen und Updates der core-Pakete einschließlich von <code>fink</code> selber. Dieser Befehl kann auf reguläre Releases aktualisieren, es kann aber auch Ihren <filename>/sw/fink/dists</filename>-Verzeichnisbaum für direktes Git einrichten. Das bedeutet, dass Sie dann auf die aktuellsten Versionen aller Pakete zugreifen können.</p>
       <p>Ist die <xref section="options">Option --use-binary-dist</xref> eingeschaltet, wird auch die Liste der verfügbaren Pakete in der binären Distribution aktualisiert.</p>
     </section>
     <section name="selfupdate-rsync">
@@ -1217,10 +1217,10 @@ Führt den Konfigurationsprozess noch einmal aus. So können Sie unter anderen I
       <p>Das ist die Empfehlung, um Fink aus den Quellen zu aktualisieren.</p>
       <p><em>Beachte:</em>  rsync aktualisiert nur die aktiven <xref chapter="conf" section="optional">Bäume</xref> (d.h. ist unstable in <code>fink.conf</code> nicht eingeschaltet, wird die Liste der unstable Pakete nicht aktualisiert.</p>
     </section>
-    <section name="selfupdate-cvs">
-      <title>selfupdate-cvs</title>
-      <p>Mit diesem Kommando verwendet <code>fink selfupdate</code> CVS, um die Paketliste zu aktualisieren.</p>
-      <p>Von der Aktualisierung mit CVS wird abgeraten. Ausnahmen sind Entwickler und Situationen, in denen eine Firewall den Zugriff mit rsync verhindert.</p>
+    <section name="selfupdate-git">
+      <title>selfupdate-git</title>
+      <p>Mit diesem Kommando verwendet <code>fink selfupdate</code> Git, um die Paketliste zu aktualisieren.</p>
+      <p>Von der Aktualisierung mit Git wird abgeraten. Ausnahmen sind Entwickler und Situationen, in denen eine Firewall den Zugriff mit rsync verhindert.</p>
     </section>
     <section name="index">
       <title>index</title>

@@ -1,7 +1,7 @@
 <?php
 $title = "Download: Distribuição de código fonte";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2014/11/05 10:07:40 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/19 10:11:12 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -57,7 +57,7 @@ os outros pacotes bases, o comando:</p>
 
 <p>baixará os arquivos de descrições e ajustes de pacotes desde que você
 <strong>não</strong> tenha escolhido o método "point release". O rsync é
-geralmente preferível ao cvs para a maior parte das pessoas.</p>
+geralmente preferível ao git para a maior parte das pessoas.</p>
 
 <p>Instruções de instalação e formas de uso estão dentro do tarball da
 distribuição. Por favor, leia-os - o Fink não é algo que você possa clicar uma
@@ -113,7 +113,7 @@ usará essa configuração de ambiente. Uma vez que você haja instalado o
 
 <pre>fink selfupdate</pre>
 
-<p>usando qualquer das opções <em>point</em>, <em>rsync</em> ou <em>cvs</em>,
+<p>usando qualquer das opções <em>point</em>, <em>rsync</em> ou <em>git</em>,
 seguido por</p>
 
 <pre>fink index -f</pre>
@@ -124,11 +124,11 @@ seguido por</p>
 
 <p>ou</p>
 
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 
 <p>baixará os arquivos de descrições e ajustes de pacotes desde que você
 <strong>não</strong> tenha escolhido o método "point release". O rsync é
-geralmente preferível ao cvs para a maior parte das pessoas.</p>
+geralmente preferível ao git para a maior parte das pessoas.</p>
 
 <p><strong>Outras versões do OS X com suporte oficial</strong></p>
 
@@ -178,7 +178,7 @@ os outros pacotes bases, o comando:</p>
 
 <p>baixará os arquivos de descrições e ajustes de pacotes desde que você
 <strong>não</strong> tenha escolhido o método "point release". O rsync é
-geralmente preferível ao cvs para a maior parte das pessoas.</p>
+geralmente preferível ao git para a maior parte das pessoas.</p>
 
 <p>Instruções de instalação e formas de uso estão dentro do tarball da
 distribuição. Por favor, leia-os - o Fink não é algo que você possa clicar uma

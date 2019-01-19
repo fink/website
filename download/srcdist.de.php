@@ -1,7 +1,7 @@
 <?php
 $title = "Quelltext Version Download";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2015/04/28 14:39:48 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/19 10:11:22 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -105,10 +105,10 @@ Patches herunter:</p>
 <pre>fink selfupdate-rsync</pre>
 <pre>fink index -f</pre>
 <p>oder</p>
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 <pre>fink index -f</pre>
 
-<p><code>rsync</code> ist für die meisten die bessere Wahl als <code>cvs</code>.</p>
+<p><code>rsync</code> ist für die meisten die bessere Wahl als <code>git</code>.</p>
 
 <p>In obiger Datei finden sie umfangreiche Anleitungen zur Installation und Nutzung.
 Bitte lesen sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.
@@ -176,7 +176,7 @@ Patches herunter:</p>
 
 <pre>fink selfupdate</pre>
 
-<p>entweder mit der Option <em>rsync</em> oder <em>cvs</em> gefolgt von</p>
+<p>entweder mit der Option <em>rsync</em> oder <em>git</em> gefolgt von</p>
 
 <pre>fink index -f</pre>
 
@@ -186,11 +186,11 @@ Patches herunter:</p>
 
 <p>oder</p>
 
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 
 <p>Alles aber unter der Voraussetzung, dass sie ursprünglich 
 <strong>nicht</strong> die Methode "point release" ausgewählt haben. 
-<code>rsync</code> ist für die meisten die bessere Wahl als <code>cvs</code>.</p>
+<code>rsync</code> ist für die meisten die bessere Wahl als <code>git</code>.</p>
 
 <p>In obiger Datei finden sie umfangreiche Anleitungen zur Installation und Nutzung.
 Bitte lesen sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.

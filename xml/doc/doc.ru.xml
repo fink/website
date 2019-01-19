@@ -3,7 +3,7 @@
 <article filename="index" lang="ru">
     <title>Fink - Документация  </title>
     <shorttitle>Документация</shorttitle>
-    <cvsid>$Id: doc.ru.xml,v 1.8 2012/11/11 15:20:14 gecko2 Exp $</cvsid>
+    <cvsid>$Id: doc.ru.xml,v 1.9 2019/01/19 10:11:22 nieder Exp $</cvsid>
     <preface>
         <p> Это комплект различных документов, составленных для Fink. Некоторые
             из них могут быть также полезны тем, кто использует Mac OS X или
@@ -43,9 +43,9 @@
                 <varlink url="readme.php" varurl="readme.en.html">Fink
                 ReadMe</varlink> - файл ReadMe для дистрибуции на основе исходного кода </li>
             <li>
-                <varlink url="cvsaccess/index.php"
-                    varurl="cvsaccess/cvs.en.html">Доступ CVS </varlink> - доступ к
-                хранилищу Fink CVS для получения последних исходных пакетов 
+                <varlink url="gitaccess/index.php"
+                    varurl="gitaccess/git.en.html">Доступ Git </varlink> - доступ к
+                хранилищу Fink Git для получения последних исходных пакетов 
                 между выпусками версий</li>
         </ul>
     </section>

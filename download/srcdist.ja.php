@@ -1,7 +1,7 @@
 <?php
 $title = "ソースリリースのダウンロード";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 17:41:33 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/19 10:11:12 $';
 
 include "header.inc";
 ?>
@@ -105,11 +105,11 @@ Safari などでは、すでに部分的に開かれているため、後者に�
 <pre>fink selfupdate-rsync</pre>
 <pre>fink index -f</pre>
 <p>または</p>
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 <pre>fink index -f</pre>
 
 <p>とすることで、パッケージ記述ファイルをパッチをダウンロードします。
-ほとんどの場合、<code>rsync</code> の方を <code>cvs</code> よりも勧めます。</p>
+ほとんどの場合、<code>rsync</code> の方を <code>git</code> よりも勧めます。</p>
 
 <p>インストール方法と使用方法は、配布 tarball にも含まれています。
 どうぞこれらを読んでください。
@@ -177,7 +177,7 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>
 
 <pre>fink selfupdate</pre>
 
-<p><em>rsync</em> または <em>cvs</em> のどちらかを選択し、</p>
+<p><em>rsync</em> または <em>git</em> のどちらかを選択し、</p>
 
 <pre>fink index -f</pre>
 
@@ -187,10 +187,10 @@ href="../lists/fink-announce.php">fink-announce mailinglist</a>
 
 <p>または</p>
 
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 
 <p>とすることで、パッケージ記述ファイルをパッチをダウンロードします。
-ほとんどの場合、<code>rsync</code> の方を <code>cvs</code> よりも勧めます。</p>
+ほとんどの場合、<code>rsync</code> の方を <code>git</code> よりも勧めます。</p>
 
 
 <p>インストール方法と使用方法は、配布 tarball にも含まれています。

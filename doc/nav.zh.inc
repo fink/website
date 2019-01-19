@@ -1,5 +1,5 @@
 <?php
-/* $Id: nav.zh.inc,v 1.8 2014/10/23 22:05:37 thesin Exp $ */
+/* $Id: nav.zh.inc,v 1.9 2019/01/19 10:11:12 nieder Exp $ */
 
 $section = "documentation";
 $navbox = array(
@@ -10,7 +10,7 @@ $navbox = array(
   "doc/install/index.php?phpLang=zh", "安装",
   "doc/usage/index.php?phpLang=zh", "使用",
   "doc/readme.php?phpLang=zh", "自述",
-  "doc/cvsaccess/index.php?phpLang=zh", "CVS 访问",
+  "doc/gitaccess/index.php?phpLang=zh", "Git 访问",
   "doc/security/index.php?phpLang=zh", "网络安全",
   "doc/porting/index.php?phpLang=zh", "移植",
   "doc/quick-start-pkg/index.php?phpLang=zh", "Packaging Tutorial",

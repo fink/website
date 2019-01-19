@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.15 2005/03/02 05:47:20 michga Exp $
+# $Id: Makefile,v 1.16 2019/01/19 10:11:12 nieder Exp $
 
 # generate all documents
 
@@ -8,6 +8,7 @@ SUBDIRS = \
 	doc \
 	faq \
 	fink-readme \
+	gitaccess \
 	install \
 	multilingual \
 	netiquette \

@@ -1,7 +1,7 @@
 <?php
 $title = "Source Release Download";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:32:38 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/19 10:11:12 $';
 
 include "header.inc";
 ?>
@@ -49,7 +49,7 @@ You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >th
 <p>After you have installed <em>fink</em> and the other base packages, the commands</p>
 <pre>fink selfupdate-rsync</pre>
 <p>or</p>
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 
 <p>will download the package description files and patches.</p>
 <!-- end translation -->
@@ -67,7 +67,7 @@ href="../doc/index.php">documentazione</a>.
 <p>After you have installed <em>fink</em> and the other base packages, the commands</p>
 <pre>fink selfupdate-rsync</pre>
 <p>or</p>
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 <p>will download the package description files and patches.</p>
 <!-- end translation -->
 <p>

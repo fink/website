@@ -1,7 +1,7 @@
 <?php
 $title = "Source Release Download";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 17:41:33 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/19 10:11:12 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -95,11 +95,11 @@ packages, the command sequences:</p>
 <pre>fink selfupdate-rsync</pre>
 <pre>fink index -f</pre>
 <p>or</p>
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 <pre>fink index -f</pre>
 
 <p>will download the package description files and patches. <code>rsync</code> is
-generally preferable to <code>cvs</code> for most people.</p>
+generally preferable to <code>git</code> for most people.</p>
 
 <p>Installation and usage instructions are inside the distribution tarball.
 Please read them - Fink is not a one-click-and-done thing.  The documents
@@ -164,7 +164,7 @@ packages, the command sequence:</p>
 
 <pre>fink selfupdate</pre>
 
-<p>using any either the <em>rsync</em> or <em>cvs</em> options,
+<p>using any either the <em>rsync</em> or <em>git</em> options,
 followed by</p>
 
 <pre>fink index -f</pre>
@@ -175,11 +175,11 @@ followed by</p>
 
 <p>or</p>
 
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 
 <p>will download the package description files and patches, provided that you
 <strong>do not</strong> select the "point release" method initially.  <em>rsync</em> is generally
-preferable to <em>cvs</em> for most people.</p>
+preferable to <em>git</em> for most people.</p>
 
 <p>Installation and usage instructions are inside the distribution tarball.
 Please read them - Fink is not a one-click-and-done thing.  The documents
