@@ -1,7 +1,7 @@
 <?php
 $title = "Guia do usuário - Atualização";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="conf.php?phpLang=pt" title="O arquivo de configuração do Fink"><link rel="prev" href="packages.php?phpLang=pt" title="Instalando pacotes">';
 
 
@@ -55,15 +55,15 @@ include_once "header.pt.inc";
       <code>fink selfupdate</code>. Este comando verificará no site do Fink se
       há uma nova versão pontual disponível e irá automaticamente baixar e
       instalar as descrições de pacotes associadas. Você também tem a opção de
-      obter as descrições de pacotes diretamente do CVS ou através do rsync. O
-      CVS é um repositório com versionamento onde as descrições de pacotes são
-      armazenadas e gerenciadas. A vantagem do CVS é que ele é atualizado
-      continuamente. A desvantagem é que há um único servidor CVS para o Fink e
+      obter as descrições de pacotes diretamente do git ou através do rsync. O
+      Git é um repositório com versionamento onde as descrições de pacotes são
+      armazenadas e gerenciadas. A vantagem do Git é que ele é atualizado
+      continuamente. A desvantagem é que há um único servidor Git para o Fink e
       ele pode não ser muito confiável quando há tráfego intenso.  Por esta
       razão, recomenda-se que usuários em geral usem o rsync. Existem vários
       espelhos disponíveis para o rsync e a única desvantagem é que as
       descrições de pacotes levam por volta de uma hora para migrar aos
-      espelhos rsync depois de terem sido adicionadas ao CVS.</p>
+      espelhos rsync depois de terem sido adicionadas ao Git.</p>
 
       <p>Caso você encontre problemas na atualização de uma instalação a partir
       de códigos fontes, consulte <a href="/download/fix-upgrade.php">estas

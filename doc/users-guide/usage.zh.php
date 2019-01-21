@@ -1,7 +1,7 @@
 <?php
 $title = "用户指南 - fink 工具";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="prev" href="conf.php?phpLang=zh" title="Fink 配置文件">';
 
 
@@ -358,7 +358,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       
       
       <p>
-	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <code>/sw/fink/dists</code> 目录树来使用直接 CVS 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
+	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <code>/sw/fink/dists</code> 目录树来使用直接 git 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
 </p>
       
       
@@ -373,10 +373,10 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       <p>This is the recommended way to update Fink when building from source.</p>
       <p><b>Note:</b>  rsync updates only update the active <a href="conf.php?phpLang=zh#optional">trees</a> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
     
-    <h2><a name="selfupdate-cvs">6.20 selfupdate-cvs</a></h2>
+    <h2><a name="selfupdate-git">6.20 selfupdate-git</a></h2>
       
-      <p>Use this command to make <code>fink selfupdate</code> use CVS access to update its package list.</p>
-      <p>CVS updating is deprecated, except for developers and those people who are behind firewalls that disallow rsync.</p>
+      <p>Use this command to make <code>fink selfupdate</code> use Git access to update its package list.</p>
+      <p>Rsync updating is preferred, except for developers and those people who are behind firewalls that disallow rsync.</p>
     
 
     <h2><a name="index">6.21 index</a></h2>

@@ -1,14 +1,14 @@
 <?php
 $title = "Документация";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:22';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Документация  </h1>
-<!--Generated from $Fink: doc.ru.xml,v 1.8 2012/11/11 15:20:14 gecko2 Exp $-->
+<!--Generated from $Fink: doc.ru.xml,v 1.9 2019/01/19 10:11:22 nieder Exp $-->
         <p> Это комплект различных документов, составленных для Fink. Некоторые
             из них могут быть также полезны тем, кто использует Mac OS X или
             Darwin без Fink и хочет узнать о переносе ПО Unix.</p>
@@ -43,8 +43,8 @@ include_once "header.inc";
                 <a href="readme.php">Fink
                 ReadMe</a> - файл ReadMe для дистрибуции на основе исходного кода </li>
             <li>
-                <a href="cvsaccess/index.php">Доступ CVS </a> - доступ к
-                хранилищу Fink CVS для получения последних исходных пакетов 
+                <a href="gitaccess/index.php">Доступ Git </a> - доступ к
+                хранилищу Fink Git для получения последних исходных пакетов 
                 между выпусками версий</li>
         </ul>
     <h2><a name="developerdoc">Документация разработчика</a></h2>

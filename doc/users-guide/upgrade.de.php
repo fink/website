@@ -1,7 +1,7 @@
 <?php
 $title = "Benutzerhandbuch - Aktualisieren";
-$cvs_author = 'Author: kms';
-$cvs_date = 'Date: 2014/10/20 11:41:47';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="conf.php?phpLang=de" title="Die Fink-Konfigurationsdatei"><link rel="prev" href="packages.php?phpLang=de" title="Pakete Installieren">';
 
 
@@ -37,7 +37,7 @@ Für mehr Informationen, speziell über das Aktualisieren unter Fink Versionen �
 Aktualisieren ist ein wenig komplizierter, wenn Sie die Source-Distribution verwenden. Die Verfahrensweise besteht aus zwei Schritten. Im ersten Schritt, laden Sie die aktuellsten Paketbeschreibungen auf Ihren Computer. Im zweiten Schritt werden diese Paketbeschreibungen genutzt, um neue Pakete zu kompilieren; der eigentliche Quellcode wird dann bei Bedarf heruntergeladen.
 </p>
       <p>
-Falls Sie Fink 0.2.5 oder neuer haben, kann der erste Schritt mit dem Ausführen von <code>fink selfupdate</code> vollbracht werden. Dieser Befehl wird die Fink-Webseite überprüfen, ob ein neues Punkt-Release verfügbar ist, und gegebenenfalls die Paketbeschreibungen herunterladen. In kürzlichen Versionen des Befehls <code>fink</code> haben Sie die Möglichkeit die Paketbeschreibungen direkt via CVS oder rsync herunterzuladen. CVS ist ein versionsgesteuertes Behältnis, wo die Paketbeschreibungen gespeichert und verwaltet werden. Der Einsatz von CVS hat den Vorteil, dass es kontinuierlich aktualisiert wird, aber der Nachteil ist, dass es nur einen einzigen CVS-Server für Fink gibt, so kann es sein, dass dieser manchmal nicht erreichbar ist, wenn es viel Traffic gibt. Deshalb empfehlen wir, dass die Benutzer im allgemeinen rsync nutzen. Für rsync gibt es zahlreiche Spiegelserver, und der einzige Nachteil ist, dass die Paketbeschreibungen mit einer Verzögerung von etwa einer Stunde auf die rsync-Server gespiegelt werden, nachdem sie zum CVS hinzugefügt worden.
+Falls Sie Fink 0.2.5 oder neuer haben, kann der erste Schritt mit dem Ausführen von <code>fink selfupdate</code> vollbracht werden. Dieser Befehl wird die Fink-Webseite überprüfen, ob ein neues Punkt-Release verfügbar ist, und gegebenenfalls die Paketbeschreibungen herunterladen. In kürzlichen Versionen des Befehls <code>fink</code> haben Sie die Möglichkeit die Paketbeschreibungen direkt via Git oder rsync herunterzuladen. Git ist ein versionsgesteuertes Behältnis, wo die Paketbeschreibungen gespeichert und verwaltet werden. Der Einsatz von Git hat den Vorteil, dass es kontinuierlich aktualisiert wird, aber der Nachteil ist, dass es nur einen einzigen Git-Server für Fink gibt, so kann es sein, dass dieser manchmal nicht erreichbar ist, wenn es viel Traffic gibt. Deshalb empfehlen wir, dass die Benutzer im allgemeinen rsync nutzen. Für rsync gibt es zahlreiche Spiegelserver, und der einzige Nachteil ist, dass die Paketbeschreibungen mit einer Verzögerung von etwa einer Stunde auf die rsync-Server gespiegelt werden, nachdem sie zum Git hinzugefügt worden.
 </p>
       <p>(Falls Sie Probleme haben, die Source-Installation zu aktualisieren, werfen Sie einen Blick in <a href="/download/fix-upgrade.php">diese speziellen Anweisungen</a>.)</p>
       <p>

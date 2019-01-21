@@ -1,14 +1,14 @@
 <?php
 $title = "Lies-Mich";
-$cvs_author = 'Author: MiSchi';
-$cvs_date = 'Date: 2014/10/19 03:24:37';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/17 21:14:26';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink Lies-Mich</h1>
-<!--Generated from $Fink: readme.de.xml,v 1.12 2014/10/19 03:24:37 MiSchi Exp $-->
+<!--Generated from $Fink: readme.de.xml,v 1.1 2015/02/17 21:14:26 k-m_schindler Exp $-->
 <p>
 Dies ist Fink, ein Paketmanager, der die ganze Welt an
 Open-Source-Programmen auf Darwin und Mac OS X zur Verfügung stellt.

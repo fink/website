@@ -1,7 +1,7 @@
 <?php
 $title = "用户指南 - 升级";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="conf.php?phpLang=zh" title="Fink 配置文件"><link rel="prev" href="packages.php?phpLang=zh" title="安装软件包">';
 
 
@@ -46,7 +46,7 @@ include_once "header.zh.inc";
 这个命令会检查 Fink 网站看是否有一个新的版本发布，如果有的话，会自动下载和安装软件包描述文件。
 在最新的 <code>fink</code> 版本的命令中，你可以选择直接从 CVS 或通过 rsync 来直接获取软件包描述。
 CVS 是一个具有版本控制功能的储存库，它保存和管理软件包描述文件。
-使用 CVS 的优点是它是不断更新的，缺点是对 Fink 只有一个 CVS 服务器，如果访问量太大，它会变得不稳定。因此，对通常用户，我们推荐使用 rsync。对于 rsync，我们有多个镜像站点。唯一得缺点是新得版本在 CVS 发布以后会大约需要一个小时后才会更新到 rsync 镜像站点上。
+使用 CVS 的优点是它是不断更新的，缺点是对 Fink 只有一个 Git 服务器，如果访问量太大，它会变得不稳定。因此，对通常用户，我们推荐使用 rsync。对于 rsync，我们有多个镜像站点。唯一得缺点是新得版本在 Git 发布以后会大约需要一个小时后才会更新到 rsync 镜像站点上。
 </p>
       <p>（如果你在升级从源码安装得版本中碰到问题，请查阅　
 <a href="/download/fix-upgrade.php">一些特殊指引</a>。）</p>

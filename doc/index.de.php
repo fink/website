@@ -1,14 +1,14 @@
 <?php
 $title = "Dokumentation";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/02/17 21:14:26';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Dokumentation</h1>
-<!--Generated from $Fink: doc.de.xml,v 1.1 2015/02/17 21:14:26 k-m_schindler Exp $-->
+<!--Generated from $Fink: doc.de.xml,v 1.2 2019/01/19 10:11:12 nieder Exp $-->
     <p>
 Dies ist eine Sammlung verschiedener Dokumente für Fink. Einige der
 Dokumente sind auch dann interessant, wenn man Fink nicht nutzt, aber
@@ -55,8 +55,8 @@ die installierte Software
 - Die Lies-Mich Datei für die Quelltext-Distribution
       </li>
       <li>
-<a href="cvsaccess/index.php">CVS
-Zugang</a> - Wie greift man auf das CVS-Repository von Fink zu, wenn
+<a href="gitaccess/index.php">Git
+Zugang</a> - Wie greift man auf das Git-Repository von Fink zu, wenn
 man zwischen bestimmten Versionen von Fink die neuesten Quelltext-Pakete 
 haben möchte.
       </li>

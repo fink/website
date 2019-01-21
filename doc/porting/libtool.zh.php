@@ -1,7 +1,7 @@
 <?php
 $title = "移植 - libtool";
 $cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_date = 'Date: 2014/10/25 09:21:47';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="preparing-10.2.php?phpLang=zh" title="为 10.2 做准备"><link rel="prev" href="shared.php?phpLang=zh" title="共享代码">';
 
 

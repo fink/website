@@ -1,7 +1,7 @@
 <?php
 $title = "User's Guide - fink Tool";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -382,7 +382,7 @@ others.
 	available. It then downloads the package descriptions and updates
 	the core packages, including <code>fink</code> itself. This command can upgrade
 	to regular releases, but it can also setup your <code>/sw/fink/dists</code>
-	directory tree for direct CVS or rsync updates, if you select one of those options the first time this command is run.  This means that you then
+	directory tree for direct git or rsync updates, if you select one of those options the first time this command is run.  This means that you then
 	will be able to access the very latest revisions of all packages.
 </p>
       <p>
@@ -396,10 +396,10 @@ the list of available packages in the binary distribution is also updated.
       <p>This is the recommended way to update Fink when building from source.</p>
       <p><b>Note:</b>  rsync updates only update the active <a href="conf.php?phpLang=en#optional">trees</a> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
     
-    <h2><a name="selfupdate-cvs">6.20 selfupdate-cvs</a></h2>
+    <h2><a name="selfupdate-git">6.20 selfupdate-git</a></h2>
       
-      <p>Use this command to make <code>fink selfupdate</code> use CVS access to update its package list.</p>
-      <p>CVS updating is deprecated, except for developers and those people who are behind firewalls that disallow rsync.</p>
+      <p>Use this command to make <code>fink selfupdate</code> use Git access to update its package list.</p>
+      <p>Rsync updating is preferred, except for developers and those people who are behind firewalls that disallow rsync.</p>
     
     <h2><a name="index">6.21 index</a></h2>
       

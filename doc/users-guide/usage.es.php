@@ -1,7 +1,7 @@
 <?php
 $title = "Guía del Usuario - Herramienta fink ";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="prev" href="conf.php?phpLang=es" title="El archivo de configuración de Fink">';
 
 
@@ -353,7 +353,7 @@ Re-ejecuta el procesos de configuración de <code>fink</code>. Este comando te p
       
       <p>
 	Este comando automatiza el proceso de actualización del Fink. Revisa el sitio web, verifica si existe una versión nueva disonible y en caso de haberla, decarga las descripciones del paquete y actualiza los paquetes centrales, incluyendo al propio<code>fink</code> . Este comando actualiza las versiones regulares, pero puedes modificar el directorio  <code>/sw/fink/dists</code>
-	para obtener actualizaciones directamente del CVS, accediendo así a las actualizaciones m��s recientes de todos los paquetes.
+	para obtener actualizaciones directamente del Git, accediendo así a las actualizaciones m��s recientes de todos los paquetes.
 </p>
 
       <p>If the <a href="#options">--use-binary-dist option</a> is enabled, the list of available packages in the binary distribution is also updated.</p>
@@ -364,10 +364,10 @@ Re-ejecuta el procesos de configuración de <code>fink</code>. Este comando te p
       <p>This is the recommended way to update Fink when building from source.</p>
       <p><b>Note:</b>  rsync updates only update the active <a href="conf.php?phpLang=es#optional">trees</a> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
     
-    <h2><a name="selfupdate-cvs">6.20 selfupdate-cvs</a></h2>
+    <h2><a name="selfupdate-git">6.20 selfupdate-git</a></h2>
       
-      <p>Use this command to make <code>fink selfupdate</code> use CVS access to update its package list.</p>
-      <p>CVS updating is deprecated, except for developers and those people who are behind firewalls that disallow rsync.</p>
+      <p>Use this command to make <code>fink selfupdate</code> use Git access to update its package list.</p>
+      <p>Rsync updating is preferred, except for developers and those people who are behind firewalls that disallow rsync.</p>
     
 
     <h2><a name="index">6.21 index</a></h2>

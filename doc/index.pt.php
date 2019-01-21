@@ -1,14 +1,14 @@
 <?php
 $title = "Documentação";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentação</h1>
-<!--Generated from $Fink: doc.pt.xml,v 1.6 2012/11/11 15:20:14 gecko2 Exp $-->
+<!--Generated from $Fink: doc.pt.xml,v 1.7 2019/01/19 10:11:12 nieder Exp $-->
     <p>Este é um conjunto de vários documentos escritos para o Fink. Alguns
     destes documentos também podem ser úteis a pessoas que usam o Mac OS X sem
     o Fink mas que desejam aprender a portar software Unix.</p>
@@ -60,8 +60,8 @@ include_once "header.inc";
       </li>
 
       <li>
-        <a href="cvsaccess/index.php">Acesso via CVS</a> - como acessar
-        o repositório CVS do Fink para obter os fontes dos pacotes mais
+        <a href="gitaccess/index.php">Acesso via Git</a> - como acessar
+        o repositório git do Fink para obter os fontes dos pacotes mais
         recentes antes da liberação de uma nova versão
       </li>
     </ul>

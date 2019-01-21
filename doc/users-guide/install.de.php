@@ -1,7 +1,7 @@
 <?php
 $title = "Benutzerhandbuch - Installation";
-$cvs_author = 'Author: kms';
-$cvs_date = 'Date: 2014/10/20 11:41:47';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="packages.php?phpLang=de" title="Pakete Installieren"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
 

@@ -1,7 +1,7 @@
 <?php
 $title = "ユーザーガイド - fink ツール";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 
@@ -351,7 +351,7 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <p>
 このコマンドは、自動的に Fink の新リリースにアップグレードします。
 Fink のウェブサイトへ新しいバージョンがあるか確認し、 <code>fink</code> 自体を含めたコアパッケージを更新します。
-各種リリースのアップグレードの他、このコマンドを初めて実行した際に CVS または rsync を選択した場合、<code>/sw/fink/dists</code> を、直接 CVS または rsync でアップグレードすることもできます。
+各種リリースのアップグレードの他、このコマンドを初めて実行した際に Git または rsync を選択した場合、<code>/sw/fink/dists</code> を、直接 Git または rsync でアップグレードすることもできます。
 これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
 </p>
 <p>

@@ -1,14 +1,14 @@
 <?php
 $title = "文档";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink－文档</h1>
-<!--Generated from $Fink: doc.zh.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $-->
+<!--Generated from $Fink: doc.zh.xml,v 1.18 2019/01/19 10:11:12 nieder Exp $-->
 <p>
 这里收集了为 Fink 编写的各种文档。
 有些文档可能会对使用 Mac OS X 的用户有用，或那些没有使用 Fink 但又向学习如何移植 Unix 软件的 Darwin 用户有用。
@@ -33,7 +33,7 @@ covers more advanced concepts than those covered in the User's Guide.</li>
 <li><a href="install/index.php">安装和升级</a> －　如何安装 Fink 或升级到新的版本</li>
 <li><a href="usage/index.php">使用</a>  － 如何使用 Fink 及其安装的软件</li>
 <li><a href="readme.php">Fink 自述</a> － 源代码发布版本的自述文件</li>
-<li><a href="cvsaccess/index.php">CVS 访问</a> － 如何访问 Fink CVS 库来在新版本发布前获取最新源代码包。</li>
+<li><a href="gitaccess/index.php">Git 访问</a> － 如何访问 Fink Git 库来在新版本发布前获取最新源代码包。</li>
 </ul>
 
 <h2><a name="developerdoc">开发者文档</a></h2>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: uguide.ja.xml,v 1.30 2012/11/11 15:20:17 gecko2 Exp $
+Generated from $Fink: uguide.ja.xml,v 1.31 2019/01/19 10:11:12 nieder Exp $
 -->
 <title>Fink Documentation - Fink ユーザーガイド</title></head><body>
 <table width="100%" cellspacing="0">
@@ -974,14 +974,14 @@ FTP サーバーやネットワークによっては、このオプションが 
 </li>
 <li>
 <p>
-<b>SelfUpdateMethod:</b> point, rsync または cvs</p>
+<b>SelfUpdateMethod:</b> point, rsync または git</p>
 <p>
 <tt style="white-space: nowrap;">fink</tt> は、数種類の手段でパッケージ情報ファイルを更新することができます。
 <b>rsync</b> が推奨される設定で、 rsync を用いて、ユーザーにより指定されたツリー中の、変更されたファイルだけをダウンロードします。
 <tt style="white-space: nowrap;">stable</tt> や <tt style="white-space: nowrap;">unstable</tt> <a href="#conf.optional">trees</a> 中のファイルを編集したり、新たに追加していた場合、削除されることに注意してください。
 これらのファイルを必ず事前にバックアップしてください。
-<b>cvs</b> では、 anonymous か :ext: cvs アクセスを使用して fink レポジトリから ダウンロードします。
-cvs はミラーを使えないという欠点があるため、 CVS サーバーに接続することができない時は更新できません。
+<b>git</b> では、 anonymous か Github アクセスを使用して fink レポジトリから ダウンロードします。
+git はミラーを使えないという欠点があるため、 git サーバーに接続することができない時は更新できません。
 <b>point</b> は最近リリースされたものだけをダウンロードします。
 ユーザのパッケージがかなり古い場合は更新されないので、おすすめはできません。
 </p>
@@ -1530,7 +1530,7 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <p>
 このコマンドは、自動的に Fink の新リリースにアップグレードします。
 Fink のウェブサイトへ新しいバージョンがあるか確認し、 <tt style="white-space: nowrap;">fink</tt> 自体を含めたコアパッケージを更新します。
-各種リリースのアップグレードの他、このコマンドを初めて実行した際に CVS または rsync を選択した場合、<tt style="white-space: nowrap;">/sw/fink/dists</tt> を、直接 CVS または rsync でアップグレードすることもできます。
+各種リリースのアップグレードの他、このコマンドを初めて実行した際に Git または rsync を選択した場合、<tt style="white-space: nowrap;">/sw/fink/dists</tt> を、直接 Git または rsync でアップグレードすることもできます。
 これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
 </p>
 <p>
@@ -1629,9 +1629,9 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <t
       </p>
     
 <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2015 The Fink Project.
+Copyright (c) 2001-2019 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: uguide.ja.xml,v 1.30 2012/11/11 15:20:17 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: uguide.ja.xml,v 1.31 2019/01/19 10:11:12 nieder Exp $</i></p></body></html>

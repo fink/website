@@ -5,12 +5,41 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2018-04-17T21:04:07-07:00</dc:date>
+    <dc:date>2019-01-21T05:54:05-06:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2017-04-18%20fink-0.43.10%20released">
-      <title>fink-0.43.10 released</title>
-      <link>http://fink.sourceforge.net/news/#2017-04-18%20fink-0.43.10%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2017-04-18%20fink-0.43.10%20released</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-01-16%20fink-0.44.0%20released">
+      <title>fink-0.44.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2019-01-16%20fink-0.44.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2019-01-16%20fink-0.44.0%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.44.0.  This release now supports macOS 10.14 (Mojave), as well as Java 10.  Usefink selfupdate to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.44.0</p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.44.0.  This release now supports macOS 10.14 (Mojave), as well as Java 10.  Usefink selfupdate to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.44.0</p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2017-04-18%20fink-0.43.1%20released">
+      <title>fink-0.43.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2017-04-18%20fink-0.43.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2017-04-18%20fink-0.43.1%20released</guid>
       <description>
 		<![CDATA[
 	
@@ -464,61 +493,6 @@
   website updates.
   </p>
  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.">
-      <title>fink-0.38.6 and dpkg-base-files-0.4 released.</title>
-      <link>http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.6 was released on 13 June, 2015.  This release fixes an
-  issue which prevented bootstrapping on Yosemite (or later) using Xcode newer
-  than 6.2 .
-  </p>
-  <p>
-  dpkg-base-files-0.4 was also released on 13 June, 2015.  This update
-  mitigates an issue in which packages with app bundles couldn't be updated on 
-  Yosemite:
-  </p>
-  
- unable to make backup link of 
- `.%p/Applications/FOO.app/Contents/PkgInfo' 
- before installing new version: 
- Operation not permitted
-
-  <p>
-  Users are encouraged to run fink selfupdate and install these new versions.
-  </p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.6 was released on 13 June, 2015.  This release fixes an
-  issue which prevented bootstrapping on Yosemite (or later) using Xcode newer
-  than 6.2 .
-  </p>
-  <p>
-  dpkg-base-files-0.4 was also released on 13 June, 2015.  This update
-  mitigates an issue in which packages with app bundles couldn't be updated on 
-  Yosemite:
-  </p>
-  
- unable to make backup link of 
- `.%p/Applications/FOO.app/Contents/PkgInfo' 
- before installing new version: 
- Operation not permitted
-
-  <p>
-  Users are encouraged to run fink selfupdate and install these new versions.
-  </p>
-  
 		]]>
 	</content:encoded>
     </item>

@@ -1,7 +1,7 @@
 <?php
 $title = "Porting - Grundlagen";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2014/10/25 09:21:47';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/03/10 22:48:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Porting Contents"><link rel="next" href="shared.php?phpLang=de" title="Gemeinsam benutzter Code"><link rel="prev" href="index.php?phpLang=de" title="Porting Contents">';
 
 

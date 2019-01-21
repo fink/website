@@ -1,7 +1,7 @@
 <?php
 $title = "Руководство пользователя - Пакеты";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="upgrade.php?phpLang=ru" title="Обновление Fink"><link rel="prev" href="install.php?phpLang=ru" title="Первоначальная инсталляция">';
 
 

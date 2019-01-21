@@ -1,7 +1,7 @@
 <?php
 $title = "User's Guide - Upgrade";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="conf.php?phpLang=en" title="The Fink Configuration File"><link rel="prev" href="packages.php?phpLang=en" title="Installing Packages">';
 
 
@@ -56,10 +56,10 @@ That command will check with the Fink website to see if a new point
 release is available, and will automatically download and install the
 package descriptions in that case.
 You also have the
-option to pull package descriptions directly from CVS or via rsync.
-CVS is a version-controlled repository where the package descriptions
+option to pull package descriptions directly from Git or via rsync.
+Git is a version-controlled repository where the package descriptions
 are stored and managed.
-Using CVS has the advantage that it is updated continuously, but the disadvantage that there is a single CVS server for Fink, and it can be unreliable if there is a lot of traffic.  For this reason, it is recommended that general users go with rsync.  There are multiple mirrors available for rsync, and the only disadvantage is that package descriptions take an hour or so to migrate to the rsync mirrors after they've been added to CVS.
+Using Git has the advantage that it is updated continuously, but the disadvantage that there is a single Git server for Fink, and it can be unreliable if there is a lot of traffic.  For this reason, it is recommended that general users go with rsync.  There are multiple mirrors available for rsync, and the only disadvantage is that package descriptions take an hour or so to migrate to the rsync mirrors after they've been added to Git.
 </p>
       <p>(If you are having trouble upgrading a source installation, consult
 <a href="/download/fix-upgrade.php">these

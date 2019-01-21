@@ -1,7 +1,7 @@
 <?php
 $title = "Netiquette";
-$cvs_author = 'Author: KMS';
-$cvs_date = 'Date: 2012/11/11 15:20:15';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/19 17:20:27';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Netiquette Contents"><link rel="next" href="before-post.php?phpLang=de" title="Vorbereitung einer Anfrage">';
 
 
@@ -14,7 +14,7 @@ include_once "header.de.inc";
     </p>
   <h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="before-post.php?phpLang=de"><b>1 Vorbereitung einer Anfrage</b></a><ul><li><a href="before-post.php?phpLang=de#research">1.1 Suchen sie selbst nach Lösungen für ihr Problem.</a></li></ul></li><li><a href="first-post.php?phpLang=de"><b>2 Erste Anfrage</b></a><ul><li><a href="first-post.php?phpLang=de#system">2.1 Was haben sie installiert?</a></li><li><a href="first-post.php?phpLang=de#problem-description">2.2 Was geht schief?</a></li><li><a href="first-post.php?phpLang=de#remedies">2.3 Was haben sie genau versucht?</a></li><li><a href="first-post.php?phpLang=de#future-plans">2.4 Wie geht es weiter?</a></li></ul></li><li><a href="reply.php?phpLang=de"><b>3 Antworten auf eine Nachricht</b></a><ul><li><a href="reply.php?phpLang=de#reply-to-list">3.1 Vergewissern sie sich, dass sie in der Mailing-Liste antworten</a></li></ul></li><li><a href="unsubscribe.php?phpLang=de"><b>4 Abonnement kündigen</b></a><ul><li><a href="unsubscribe.php?phpLang=de#unsubscribing">4.1 Wie kündige ich das Abonnement einer Mailing-Liste?</a></li></ul></li></ul>
-<!--Generated from $Fink: netiquette.de.xml,v 1.5 2012/11/11 15:20:15 KMS Exp $-->
+<!--Generated from $Fink: netiquette.de.xml,v 1.1 2015/02/19 17:20:27 k-m_schindler Exp $-->
 <?php include_once "../../footer.inc"; ?>
 
 

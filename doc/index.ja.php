@@ -1,14 +1,14 @@
 <?php
 $title = "Documentation";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentation</h1>
-<!--Generated from $Fink: doc.ja.xml,v 1.21 2012/11/11 15:20:14 gecko2 Exp $-->
+<!--Generated from $Fink: doc.ja.xml,v 1.22 2019/01/19 10:11:12 nieder Exp $-->
 <p>
 このページは、 Fink 用に書かれたドキュメントの一覧です。
 ドキュメントの中には、 Fink を使わずに Mac OS X や Darwin だけを使う人、 Unix ソフトウェアのポートの仕方を知りたい人にも有用な情報もあります。
@@ -40,8 +40,8 @@ to install Fink or upgrade to a new version</li>
 and the installed software</li>
 <li><a href="readme.php">Fink ReadMe</a> - the ReadMe for the
 source distribution</li>
-<li><a href="cvsaccess/index.php">CVS Access</a> - how to access the
-Fink CVS repository to get the latest source packages between
+<li><a href="gitaccess/index.php">Git Access</a> - how to access the
+Fink Git repository to get the latest source packages between
 releases</li>
 </ul>
 
