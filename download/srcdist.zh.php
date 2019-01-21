@@ -27,7 +27,7 @@ Fink <?php print $fink_version; ?> 已经于
 -->
 <p><em>fink-0.28.0</em> 已经于 2007-11-02 正式发布。</p>
 <ul>
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
+<li><a href="https://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
 </ul>
 
 <p>

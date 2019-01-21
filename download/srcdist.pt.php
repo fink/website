@@ -21,7 +21,7 @@ máquina local.</p>
 2009.</p>
 
 <ul>
-  <li><?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.29.10.tar.gz", "fink-0.29.10.tar.gz", "/downloads/FinkSOURCE") ?> - 1172K<br>
+  <li><?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.29.10.tar.gz", "fink-0.29.10.tar.gz", "/downloads/FinkSOURCE") ?> - 1172K<br>
 </ul>
 
 <p>Você também precisará instalar o Xcode Tools (conforme
@@ -79,7 +79,7 @@ de distribuição originais e os compilará localmente em sua máquina.</p>
 <?php print $release_date; ?>.
 
 <ul>
-  <li><?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_version . "-full.tar.gz", "fink-" . $fink_version . "-full.tar.gz", "/downloads/FinkFullSOURCE") ?> - 3524k<br></li>
+  <li><?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_version . "-full.tar.gz", "fink-" . $fink_version . "-full.tar.gz", "/downloads/FinkFullSOURCE") ?> - 3524k<br></li>
 </ul>
 
 <p>Você também precisará instalar o Xcode Tools (conforme <a
@@ -142,7 +142,7 @@ máquina local.</p>
 2009.</p>
 
 <ul>
-  <li><?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.29.10.tar.gz", "fink-0.29.10.tar.gz", "/downloads/FinkSOURCE") ?> - 1172K<br></li>
+  <li><?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.29.10.tar.gz", "fink-0.29.10.tar.gz", "/downloads/FinkSOURCE") ?> - 1172K<br></li>
 </ul>
 
 <p>Você também precisará instalar o Xcode Tools (conforme

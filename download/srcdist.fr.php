@@ -30,7 +30,7 @@ La version <?php print $fink_version; ?> de Fink a été officiellement mise à 
 <!--<li><a
 href="http://prdownloads.sourceforge.net/fink/fink-<?php print $fink_version; ?>-full.tar.gz">Fink
 <?php print $fink_version; ?></a>- 6786K, format .tar.gz</li>-->
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
+<li><a href="https://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
 </ul>
 
 <p>
