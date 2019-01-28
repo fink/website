@@ -1,7 +1,7 @@
 <?php
 $title = "Links";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:09:50 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/27 23:10:05 $';
 
 include "header.inc";
 ?>
@@ -17,7 +17,7 @@ include "header.inc";
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 un GUI per Fink</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Valuta Fink @ O'Reilly's OSDir.com</a> - Valutate e aiutateci a promuovere Fink.</li>
-<li><a href="http://www.opennms.org/~ranger/irc_logs/public/" target="_blank">IRC logs</a> -
+<li><a href="http://www.echelog.com/logs/browse/fink/" target="_blank">IRC logs</a> -
 il canale IRC #fink, logs & statistiche</li>
 </ul>
 

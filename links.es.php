@@ -1,7 +1,7 @@
 <?php
 $title = "Links";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:09:50 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/27 23:10:05 $';
 
 include "header.inc";
 ?>
@@ -17,12 +17,10 @@ nueva ventana de su navegador.</p>
 <li><a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors" target="_blank">Espejos de Fink</a>
 - Instrucciones sobre como convertirse en un espejo de Fink así como 
 mensajes de estado acerca de los espejos actuales.</li>
-<li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
-una GUI para Fink</li>
 <li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - otra interface gráfica para Fink (aún alfa).</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Plugin de busqueda para la base de Paquetes. Para navegadores basados en Mozilla exclusivamente (busqueda para Fink)!</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Califica Fink @ O'Reilly's OSDir.com</a> - Calificanos y ayudanos apromover Fink.</li>
-<li><a href="http://www.opennms.org/~ranger/irc_logs/public/" target="_blank">IRC logs</a> -
+<li><a href="http://www.echelog.com/logs/browse/fink/" target="_blank">IRC logs</a> -
 estadísticas y logs del canal de IRC #fink</li>
 </ul>
 

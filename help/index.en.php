@@ -1,7 +1,7 @@
 <?php
 $title = "Help";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2014/10/25 08:18:51 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/27 23:10:05 $';
 
 include "header.inc";
 ?>
@@ -61,7 +61,7 @@ You can chat with other Fink users and some of the developers there.
 <p>
 <b>Other Sites.</b>
 Some links to web discussion forums:
-<a href="http://sourceforge.net/forum/?group_id=18034">XonX forums at
+<a href="https://www.xquartz.org/Mailing-Lists.html">XQuartz forums at
 SourceForge</a> -
 <a href="http://www.xdarwin.org/forum/">xdarwin.org forums</a> -
 <a href="http://forums.macnn.com/forumdisplay.php?forumid=54">MacNN
@@ -71,8 +71,7 @@ forums there)
 </p>
 <p>
 Some links to sites with more or less useful information:
-<a href="http://mrcla.com/XonX/">XonX</a> -
-<a href="http://macgimp.org/">macgimp.org</a> -
+<a href="https://www.xquartz.org/">XQuartz</a> -
 <a href="http://macosx.org/">macosx.org</a> -
 <a href="http://macosxhints.com/">macosxhints.com</a>
 </p>
@@ -110,7 +109,7 @@ and it helps the Unix world in general, because it helps the
 recognition of Mac OS X as a Unix OS worth supporting.
 </p>
 <p>
-You can also <a href="http://www.apple.com/macosx/feedback/">tell Apple</a> that you like the path they have taken with
+You can also <a href="https://www.apple.com/feedback/macos.html">tell Apple</a> that you like the path they have taken with
 the BSD underpinnings of Mac OS X and you would like them to further
 improve the BSD layer.
 </p>
@@ -125,7 +124,7 @@ solve the problems posted there by other users.
 <p>
 <b>Test packages.</b>
 Grab the latest package descriptions from <a
-href="../doc/cvsaccess/index.php">CVS</a>, configure Fink to <a
+href="../doc/gitaccess/index.php">Git</a>, configure Fink to <a
 href="../faq/usage-fink.php#unstable">use unstable</a> and test the
 packages.
 The package database lists <a href="http://pdb.finkproject.org/pdb/testing.php">packages that

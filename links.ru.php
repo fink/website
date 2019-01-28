@@ -1,7 +1,7 @@
 <?php
 $title = "Links";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:09:50 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/27 23:10:05 $';
 
 include "header.inc";
 ?>
@@ -15,11 +15,10 @@ include "header.inc";
 <ul>
 <li><a href="http://wiki.finkproject.org/index.php/Fink:FinkMirrors" target="_blank">Fink Mirrors</a> - Инструкции, каким образом стать зеркалом Fink и сообщения о статусе текущих зеркал.</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> - Графический интерфейс пользователя для Fink</li>
-<li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - Другой графический интерфейс пользователя для Fink (все еще альфа-версия).</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Поисковый плагин для базы данных по пакетам. Только браузеры на базе Mozilla (поиск для Fink)!</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a>-
  Дайте нам оценку и окажите содействие в развитии Fink.</li>
- <li><a href="http://www.opennms.org/~ranger/irc_logs/public/" target="_blank">IRC logs</a>-
+ <li><a href="http://www.echelog.com/logs/browse/fink/" target="_blank">IRC logs</a>-
  Журналы и статистика канала IRC #fink</li>
 </ul>
 
