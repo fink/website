@@ -1,7 +1,7 @@
 <?php
 $title = "Mailing Lists - fink-beginners";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:15:12 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/27 23:10:05 $';
 
 include "header.inc";
 ?>
@@ -26,9 +26,9 @@ Before posting a call for help on the list, please make an attempt to
 resolve your problem using the
 <a href="../doc/index.php">documentation</a>, the
 <a href="../faq/index.php">FAQ</a>, the
-<a href="http://news.gmane.org/gmane.os.apple.fink.beginners">fink-beginners
+<a href="https://sourceforge.net/p/fink/mailman/fink-beginners">fink-beginners
 archives</a> and the
-<a href="http://news.gmane.org/gmane.os.apple.fink.general">fink-users
+<a href="https://sourceforge.net/p/fink/mailman/fink-users">fink-users
 archives</a> first.
 If you ask for help for a well-known problem, expect to be pointed
 back at these resources.
