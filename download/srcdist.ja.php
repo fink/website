@@ -31,7 +31,7 @@ OS X 10.9-10.14 では、
 	 </li>
 	 <li>
 OS X 10.9-10.14 で手動でインストールするには、
-<?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
+<?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?>K<br>
 をお使いください。
      </li>     
 	 <li>

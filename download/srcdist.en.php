@@ -30,7 +30,7 @@ For OS X 10.9-10.14, you can use a <a href="https://github.com/fink/scripts/rele
 which automates the download and build steps below.
 	 </li>
 	 <li>
-For a manual install on OS X 10.9-10.14, <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
+For a manual install on OS X 10.9-10.14, <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?>K<br>
      </li>     
 	 <li>
 For OS X 10.7-8, use
