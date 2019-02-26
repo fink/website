@@ -5,8 +5,39 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>ja</dc:language>
-    <dc:date>2019-01-21T05:54:05-06:00</dc:date>
+    <dc:date>2019-02-25T22:35:58-06:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-02-25%20Mirrors%20currently%20down">
+      <title>Mirrors currently down</title>
+      <link>http://fink.sourceforge.net/news/#2019-02-25%20Mirrors%20currently%20down</link>
+      <guid>http://fink.sourceforge.net/news/#2019-02-25%20Mirrors%20currently%20down</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Fink's mirroring infrastructure is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+  <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
+  
+    Run fink selfupdate-git to change your update method from rsync to git.
+    Run fink configure to turn off using the binary to download pre-compiled packages.
+  
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Fink's mirroring infrastructure is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+  <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
+  
+    Run fink selfupdate-git to change your update method from rsync to git.
+    Run fink configure to turn off using the binary to download pre-compiled packages.
+  
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2019-01-16%20fink-0.44.0%20released">
       <title>fink-0.44.0 released</title>
       <link>http://fink.sourceforge.net/news/#2019-01-16%20fink-0.44.0%20released</link>
@@ -514,31 +545,6 @@
   Support for OSX 10.11 beta is now available in Fink master, but not yet in release.
   This can be downloaded from <a href="https://github.com/fink/fink/"> fink's 
   github site</a>.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-08-15%20fink-0.38.7%20released">
-      <title>fink-0.38.7 released</title>
-      <link>http://fink.sourceforge.net/news/#2008-08-15%20fink-0.38.7%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2008-08-15%20fink-0.38.7%20released</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.7 was released on 15 August, 2015.  This release supports
-  OS X up to 10.10.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.7 was released on 15 August, 2015.  This release supports
-  OS X up to 10.10.
   </p>
  
 		]]>
