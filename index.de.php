@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date   = '$Date: 2014/07/19 22:37:01 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date   = '$Date: 2019/02/25 22:41:00 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -51,14 +51,23 @@ require dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
-Derzeit unterstützt Fink OS X 10.12 (Sierra), 10.11 (El Capitan), 10.10
-(Yosemite), und 10.9 (Mavericks).
+Derzeit unterstützt Fink macOS 10.14 (Mojave), macOS 10.13 (High Sierra), 
+macOS 10.12 (Sierra), OS X 10.11 (El Capitan), OS X 10.10 (Yosemite), und OS X 10.9 (Mavericks).
 Es läuft auch weiterhin auf älteren Versionen von OS X, obwohl
 dafür keine offiziellen Updates mehr bereit gestellt werden.
 Die Installationsanweisung befindet sich auf der
 <a href="download/srcdist.php">source release page</a>.
 </p>
 <p>Xcode muss vor Fink installiert werden.</p>
+<p>
+<strong>Unterstützung von 10.13 and 10.14:</strong> 
+10.13 and 10.14 users must install Xcode version 10.1 or later 
+(via a free download from the AppStore, 
+or must at least install the Command Line Tools for 
+Xcode 10.1 (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.11 or later from 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>Unterstützung von 10.12:</strong>
 Nutzer von 10.12 müssen Xcode, Version 8.0 oder später installieren
