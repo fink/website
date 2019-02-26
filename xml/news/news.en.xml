@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.216 2019/01/16 10:11:12 nieder Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.217 2019/02/25 20:35:00 nieder Exp $</cvsid>
+<newsitem>
+ <date>2019-02-25</date>
+ <headline>Mirrors currently down</headline>
+ <body>
+  <p>Fink's mirroring infrastructure is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+  <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
+  <ul>
+    <li>Run <code>fink selfupdate-git</code> to change your update method from rsync to git.</li>
+    <li>Run <code>fink configure</code> to turn off using the binary to download pre-compiled packages.</li>
+  </ul>
+  <p>We apologize for the inconvenience.</p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2019-01-16</date>
  <headline>fink-0.44.0 released</headline>
