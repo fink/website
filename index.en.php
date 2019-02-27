@@ -158,24 +158,24 @@ instructions.
 <p>
 The Fink project is hosted by
 <a href="http://sourceforge.net/">SourceForge</a>.
-In addition to hosting this site and the downloads, SourceForge
-provides the following resources for the project:
+In addition to hosting this site and the downloads, SourceForge and GitHub
+provide the following resources for the project:
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">SourceForge project summary page</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Report or view bugs</a></li>
+href="https://github.com/fink/fink/issues">Report or view bugs</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Submit a new Fink package (non-core developers)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">Submit a new Fink package (non-core developers)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Request a package that's not in Fink</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">Request a package that's not in Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Submit a patch for fink (the program)</a></li>
+href="https://github.com/fink/fink/pulls">Submit a patch for fink (the program)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Request a feature that's not in fink (the program)</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">Request a feature that's not in fink (the program)</a></li>
 <li><a href="lists/index.php">Mailing lists</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">browse
-online</a>, <a href="doc/cvsaccess/index.php">access instructions</a>)</li>
+<li>Git (<a href="https://github.com/fink/">browse
+online</a>, <a href="doc/gitaccess/index.php">access instructions</a>)</li>
 </ul>
 <p>
 Please note that to use some of these resources (ie, to report a bug or request a new Fink package), you

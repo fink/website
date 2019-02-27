@@ -149,23 +149,23 @@ href="help/index.php">帮助页面</a>。
 <p>
 Fink 项目建立于
 <a href="http://sourceforge.net/">SourceForge</a>中。
-除了提供本网站的主机服务以及下载支持外，SourceForge
+除了提供本网站的主机服务以及下载支持外，SourceForge和GitHub
 还为本项目提供下面的资源：
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">SourceForge 项目概述页面</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">汇报和检视软件缺陷</a></li>
+href="https://github.com/fink/fink/issues">汇报和检视软件缺陷</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">请求一个还不在 Fink 中的软件包</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">请求一个还不在 Fink 中的软件包</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">请求一个 fink（程序）中还没有的功能</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">请求一个 fink（程序）中还没有的功能</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">提交一个新的 Fink 软件包（非核心开发者）</a></li>
+href="https://github.com/fink/fink-distributions/pulls">提交一个新的 Fink 软件包（非核心开发者）</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">提交 fink（程序）的一个补丁。</a></li>
+href="https://github.com/fink/fink/pulls">提交 fink（程序）的一个补丁。</a></li>
 <li><a href="lists/index.php">邮件列表</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">在线浏览</a>, <a href="doc/cvsaccess/index.php">如何访问</a>)</li>
+<li>Git (<a href="https://github.com/fink/">在线浏览</a>, <a href="doc/gitaccess/index.php">如何访问</a>)</li>
 </ul>
 <p>
 请注意：要使用其中的一些资源（比如，汇报一个软件缺陷或请求一个新的 Fink 软件包），你需要先登录进你的 SourceForge 帐号。如果你现在还没有帐号，你可以在 <a href="http://sourceforge.net/">SourceForge 网站</a>免费注册一个。

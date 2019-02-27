@@ -159,23 +159,23 @@ Apple の公式 X11 を削除しないよう注意してください。</p>
 Fink プロジェクトは
 <a href="http://sourceforge.net/">SourceForge</a>
 でホストされています。
-サイトホスティングとダウンロードの他、 SourceForge は以下のサービスを提供しています。
+サイトホスティングとダウンロードの他、 SourceForge と GitHub は以下のサービスを提供しています。
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">SourceForge プロジェクト Summary ページ</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">バグレポート</a></li>
+href="https://github.com/fink/fink/issues">バグレポート</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">パッケージ化の要求</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">パッケージ化の要求</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">fink への機能追加の要求</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">fink への機能追加の要求</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">新パッケージの投稿 (コア開発者以外)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">新パッケージの投稿 (コア開発者以外)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">fink へのパッチを送る</a></li>
+href="https://github.com/fink/fink/pulls">fink へのパッチを送る</a></li>
 <li><a href="lists/index.php">メーリングリスト</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">オンライン
-ブラウザ</a>, <a href="doc/cvsaccess/index.php">アクセスの仕方</a>)</li>
+<li>Git (<a href="https://github.com/fink/">オンライン
+ブラウザ</a>, <a href="doc/gitaccess/index.php">アクセスの仕方</a>)</li>
 </ul>
 <p>
 上記のサービスの中には SourceForge アカウントにログインして使う機能 (バグレポートやパッケージ化の要望など) もあります。

@@ -158,24 +158,24 @@ mette a disposizione le seguenti risorse per il progetto:
 <p>
 The Fink project is hosted by
 <a href="http://sourceforge.net/">SourceForge</a>.
-In addition to hosting this site and the downloads, SourceForge
-provides the following resources for the project:
+In addition to hosting this site and the downloads, SourceForge and GitHub
+provide the following resources for the project:
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">SourceForge sommario del progetto</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Repertorio dei bug</a></li>
+href="https://github.com/fink/fink/issues">Repertorio dei bug</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Richiesta di pacchetti che non sono presenti in Fink</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">Richiesta di pacchetti che non sono presenti in Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Richiesta di caratteristiche non presenti fink (il programma)</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">Richiesta di caratteristiche non presenti fink (il programma)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Invio di un nuovo pacchetto Fink (sviluppatori non-core)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">Invio di un nuovo pacchetto Fink (sviluppatori non-core)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Invio di patch per Fink (il programma)</a></li>
+href="https://github.com/fink/fink/pulls">Invio di patch per Fink (il programma)</a></li>
 <li><a href="lists/index.php">Mailing lists</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">guarda
-online</a>, <a href="doc/cvsaccess/index.php">istruzioni di accesso</a>)</li>
+<li>Git (<a href="https://github.com/fink/">guarda
+online</a>, <a href="doc/gitaccess/index.php">istruzioni di accesso</a>)</li>
 </ul>
 <p>
 Per favore ricorda che per usufruire di queste risorse (es., segnalare un bug o richiedere un nuovo pacchetto Fink),

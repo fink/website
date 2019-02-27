@@ -159,23 +159,23 @@ binaires distribués par le projet Fink est expliqué sur
 Le projet Fink est hébergé par
 <a href="http://sourceforge.net/">SourceForge</a>.
 Outre l'hébergement du site et des fichiers de téléchargement,
-SourceForge fournit au projet les ressources suivantes:
+SourceForge et GitHub fournit au projet les ressources suivantes:
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">Page de sommaire du projet SourceForge</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Soumission ou affichage de bogues</a></li>
+href="https://github.com/fink/fink/issues">Soumission ou affichage de bogues</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Demande d'intégration d'un nouveau paquet dans Fink</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">Demande d'intégration d'un nouveau paquet dans Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Demande d'intégration d'une nouvelle fonctionnalité dans le programme fink</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">Demande d'intégration d'une nouvelle fonctionnalité dans le programme fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Soumission d'un nouveau paquet Fink (pour les développeurs occasionnels)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">Soumission d'un nouveau paquet Fink (pour les développeurs occasionnels)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Soumission d'une rustine pour le programme fink</a></li>
+href="https://github.com/fink/fink/pulls">Soumission d'une rustine pour le programme fink</a></li>
 <li><a href="lists/index.php">Listes de diffusion</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">navigation
-en ligne</a>, <a href="doc/cvsaccess/index.php">instructions d'accès</a>)</li>
+<li>Git (<a href="https://github.com/fink/">navigation
+en ligne</a>, <a href="doc/gitaccess/index.php">instructions d'accès</a>)</li>
 </ul>
 <p>
 Veuillez noter que pour utiliser certaines de ces ressources (par exemple, envoyer un rapport de bogue ou demander l'intégration d'un nouveau paquet dans Fink),

@@ -135,24 +135,24 @@ instructions.
 <p>
 El proyecto Fink es albergado por
 <a href="http://sourceforge.net/">SourceForge</a>.
-Además de albergar el sitio y las descargas, SourceForge
+Además de albergar el sitio y las descargas, SourceForge y GitHub
 provee los siguientes recursos al proyecto:
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">página de SourceForge del resúmen del proyecto </a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Reporte o revisión de bugs</a></li>
+href="https://github.com/fink/fink/issues">Reporte o revisión de bugs</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Solicitudes de un paquete que no esta en Fink</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">Solicitudes de un paquete que no esta en Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Solicitar una caracteristica que no tenga Fink (el programa en sí)</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">Solicitar una caracteristica que no tenga Fink (el programa en sí)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Someter un nuevo paquete a Fink (desarrolladores non-core)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">Someter un nuevo paquete a Fink (desarrolladores non-core)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Someter un patch para fink (el programa)</a></li>
+href="https://github.com/fink/fink/pulls">Someter un patch para fink (el programa)</a></li>
 <li><a href="lists/index.php">Listas de Correo</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">de
-navegación en línea</a>, <a href="doc/cvsaccess/index.php">Instrucciones de acceso</a>)</li>
+<li>Git (<a href="https://github.com/fink/">de
+navegación en línea</a>, <a href="doc/gitaccess/index.php">Instrucciones de acceso</a>)</li>
 </ul>
 <p>
 Por favor, note que para hacer uso de algunos de estos recursos (ie. para

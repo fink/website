@@ -151,23 +151,23 @@ binários distribuídos pelo projeto Fink, por favor consulte <a
 href="download/sources_for_binaries.php">esta página</a> para instruções.</p>
 <p>O projeto Fink é hospedado pelo
 <a href="http://sourceforge.net/">SourceForge</a>.
-Além de hospedar este site e os downloads, o SourceForge fornece os seguintes
+Além de hospedar este site e os downloads, o SourceForge e o GitHub fornecem os seguintes
 recursos para o projeto:</p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">Página de resumo do projeto no SourceForge</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Relatar ou visualizar erros</a></li>
+href="https://github.com/fink/fink/issues">Relatar ou visualizar erros</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Solicitar um pacote que não esteja no Fink</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">Solicitar um pacote que não esteja no Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Solicitar uma funcionalidade que não esteja no Fink (o programa)</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">Solicitar uma funcionalidade que não esteja no Fink (o programa)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Submeter um novo pacote para o Fink (desenvolvedores avulsos)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">Submeter um novo pacote para o Fink (desenvolvedores avulsos)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Submeter uma correção para o fink (o programa)</a></li>
+href="https://github.com/fink/fink/pulls">Submeter uma correção para o fink (o programa)</a></li>
 <li><a href="lists/index.php">Listas de Discussão</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">navegue
-online</a>, <a href="doc/cvsaccess/index.php">instruções de acesso</a>)</li>
+<li>Git (<a href="https://github.com/fink/">navegue
+online</a>, <a href="doc/gitaccess/index.php">instruções de acesso</a>)</li>
 </ul>
 <p>Por favor observe que alguns destes recursos (isto é, relatar um erro ou
 solicitar um novo pacote para o Fink) necessitam de que você tenha uma conta no

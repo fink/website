@@ -150,24 +150,24 @@ href="help/index.php">помощь</a>.
 <p>
 Хостинг проекта Fink осуществляет
 <a href="http://sourceforge.net/">SourceForge</a>.
-Помимо хостинга данного веб-сайта и скачивания, SourceForge
-обеспечивает для проекта следующие ресурсы:
+Помимо хостинга данного веб-сайта и скачивания, SourceForge и GitHub
+предоставить для проекта следующие ресурсы:
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">Обзорная страница проекта SourceForge </a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Отчет об ошибках или обзор ошибок</a></li>
+href="https://github.com/fink/fink/issues">Отчет об ошибках или обзор ошибок</a></li>
 <li>
-<a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Запрос о пакете, который находится вне Fink</a> </li>
+<a href="https://sourceforge.net/p/fink/package-requests/">Запрос о пакете, который находится вне Fink</a> </li>
  <li> <a
- href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Запрос о параметре, который находится вне fink (программа)</a></li>
+ href="https://sourceforge.net/p/fink/feature-requests/">Запрос о параметре, который находится вне fink (программа)</a></li>
  <li><a
- href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Предоставление нового пакета Fink (неосновные разработчики)</a></li>
+ href="https://github.com/fink/fink-distributions/pulls">Предоставление нового пакета Fink (неосновные разработчики)</a></li>
  <li><a
- href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Предоставление патча для fink (программа)</a></li>
+ href="https://github.com/fink/fink/pulls">Предоставление патча для fink (программа)</a></li>
 <li><a href="lists/index.php">Списки рассылки</a> </li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">онлайновый просмотр</a>,
-<a href="doc/cvsaccess/index.php">инструкции доступа</a>) </li>
+<li>Git (<a href="https://github.com/fink/">онлайновый просмотр</a>,
+<a href="doc/gitaccess/index.php">инструкции доступа</a>) </li>
 </ul>
 <p>
 Просим иметь в виду, что для использования некоторых из этих ресурсов (н-р, отчет об ошибках или запрос о

@@ -155,23 +155,23 @@ nach einer Anleitung.
 Das Fink-Projekt wird gehostet von 
 <a href="http://sourceforge.net/">SourceForge</a>.
 Zusätzlich zum Hosten dieser Webseite und den Downloads
-stellt SourceForge folgende Dienste für das Projekt bereit:
+stellt SourceForge und GitHub folgenden Dienste für das Projekt bereit:
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">SourceForge Projekt-Übersicht</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Bugs anschauen oder mitteilen</a></li>
+href="https://github.com/fink/fink/issues">Bugs anschauen oder mitteilen</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Eine bestimmte Software fehlt in Fink</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">Eine bestimmte Software fehlt in Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Funktionalität fehlt in Fink (das Programm)</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">Funktionalität fehlt in Fink (das Programm)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Ein neues Fink-Paket abgeben (für nicht Kernentwickler)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">Ein neues Fink-Paket abgeben (für nicht Kernentwickler)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Einen Patch für Fink (das Programm) abgeben</a></li>
+href="https://github.com/fink/fink/pulls">Einen Patch für Fink (das Programm) abgeben</a></li>
 <li><a href="lists/index.php">Mailing Listen</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">online
-lesen</a>, <a href="doc/cvsaccess/index.php">Zugangsdaten</a>)</li>
+<li>Git (<a href="https://github.com/fink/">online
+lesen</a>, <a href="doc/gitaccess/index.php">Zugangsdaten</a>)</li>
 </ul>
 <p>
 Bitte beachten Sie, dass die Verwendung einiger dieser Dienste (z.B. Fehler melden oder neue Fink-Pakete
