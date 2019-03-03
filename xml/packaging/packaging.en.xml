@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.129 2014/10/25 01:52:35 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.130 2019/03/03 15:39:00 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -1792,7 +1792,12 @@ At present, the only valid values for distribution are
 <code>10.6</code>,
 <code>10.7</code>,
 <code>10.8</code>,
-and <code>10.9</code>
+<code>10.9</code>,
+<code>10.10</code>,
+<code>10.11</code>,
+<code>10.12</code>,
+<code>10.13</code>,
+and <code>10.14</code>
 . If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
 the local machine distribution is not listed. If the field is omitted
@@ -1800,7 +1805,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.7</code>, <code>10.8</code>, and <code>10.9</code> distributions share
+Since Fink's <code>10.9</code> through <code>10.14</code> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -1825,7 +1830,7 @@ foo-pm5124 variant.
 <p>Since python 2.5 is not available in the 10.7+ distributions, and the
 available perl versions vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3 through 10.9 distributions
+various perl versions in the 10.3 through 10.14 distributions
 (<em>bolded</em> systems indicate system-perl at that version):
 </p>
 <codeblock>
@@ -1838,8 +1843,8 @@ various perl versions in the 10.3 through 10.9 distributions
     perl 5.10.0:             10.5, <em>10.6</em>
     perl 5.12.3:                         <em>10.7</em>, 10.8, 10.9
     perl 5.12.4:                         10.7, <em>10.8</em>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <em>10.9</em>, 10.10
-    perl 5.18.2:                         10.7, 10.8, 10.9, <em>10.10</em>
+    perl 5.16.2:                         10.7, 10.8, <em>10.9</em>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <em>10.10</em>, <em>10.11</em>, <em>10.12</em>, <em>10.13</em>, <em>10.14</em>
 </codeblock>
 <p>A way to include all supported variants in a single finkinfo file is as follows.
 </p>
