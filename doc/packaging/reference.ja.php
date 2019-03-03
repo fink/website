@@ -1,7 +1,7 @@
 <?php
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2016/04/06 22:11:13';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/03/03 15:39:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -159,6 +159,11 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 <code>10.7</code>,
 <code>10.8</code>,
 <code>10.9</code>,
+<code>10.10</code>,
+<code>10.11</code>,
+<code>10.12</code>,
+<code>10.13</code>,
+<code>10.14</code>
 です。
 このフィールドがあり、条件式判定で空欄でなければ、
 マシンのディストリビューションが書かれていなければ、
@@ -167,7 +172,7 @@ fink はパッケージ記述を無視します。
 (fink 0.26.0　で導入。)
 </p>
 <p>
-<code>10.7</code>, <code>10.8</code>, <code>10.9</code> ディストリビューションは、
+<code>10.9</code>, <code>10.10</code>, <code>10.11</code>, <code>10.12</code>, <code>10.13</code>, <code>10.14</code> ディストリビューションは、
 finkinfo ファイルが同じであるため、
 これらのディストリビューションの一つに有効だが他ではそうでない場合が、このフィールドを使います。
 </p>
@@ -199,10 +204,10 @@ foo-pm5124 は空欄であることになります。
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
-    perl 5.12.3:                         <b>10.7</b>
+    perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
-    perl 5.16.2:                         10.7, 10.8, 10.9, <b>10.10</b>
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>
 </pre>
 <p>
 すべての variant をひとつの finkinfo ファイルに含める方法は、以下の通りです。

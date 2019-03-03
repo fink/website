@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Referenz";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/03/10 22:52:23';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/03/03 15:39:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="prev" href="compilers.php?phpLang=de" title="Compiler">';
 
 
@@ -182,17 +182,21 @@ Derzeit sind die gültigen Distributionen
 <code>10.5</code>,
 <code>10.6</code>,
 <code>10.7</code>,
-<code>10.8</code>
-und <code>10.9</code>.
-Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
+<code>10.8</code>,
+<code>10.9</code>,
+<code>10.10</code>,
+<code>10.11</code>,
+<code>10.12</code>,
+<code>10.13</code>,
+und <code>10.14</code>
+. Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
 ignoriert Fink die Paketbeschreibung, wenn die lokal vorhandene Distribution
 nicht aufgelistet ist. Ist das Feld weg gelassen oder der Wert leer, werden
 alle Distributionen akzeptiert.
 (Eingeführt in Fink 0.26.0.)
 </p>
 <p>
-Seit den Fink-Distributionen für <code>10.7</code>, <code>10.8</code> und
-<code>10.9</code> teilen sie sich ein gemeinsames Set an finkinfo-Dateien. Eine
+Seit den Fink-Distributionen für <code>10.9</code> durch <code>10.14</code> teilen sie sich ein gemeinsames Set an finkinfo-Dateien. Eine
 übliche Verwendung des Felds ist, die Distributionen auszuklammern, für die
 das Paket nicht erstellt werden kann.
 </p>
@@ -217,7 +221,8 @@ Feld in diesen Paketen häufig vor. Als Referenz beschreiben wir hier die
 Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.9
 (<b>Fett</b>-gedruckte Systeme zeigen die Version von Sytem-Perl an):
 </p>
-<pre>    perl 5.6.0:  10.3
+<pre>
+    perl 5.6.0:  10.3
     perl 5.8.0:  10.3
     perl 5.8.1:  <b>10.3</b>, 10.4
     perl 5.8.4:  10.3, 10.4
@@ -226,8 +231,9 @@ Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.
     perl 5.10.0:             10.5, <b>10.6</b>
     perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
-    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b></pre>
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>
+</pre>
 <p>
 Eine Möglichkeit, alle unterstützten Varianten in einer einzigen finkinfo-Datei
 einzuschließen, ist diese:

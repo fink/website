@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.de.xml,v 1.1 2015/03/10 22:52:23 k-m_schindler Exp $
+Generated from $Fink: packaging.de.xml,v 1.2 2019/03/03 15:39:00 nieder Exp $
 -->
 <title>Fink Documentation - Ein Fink-Paket erstellen</title></head><body>
 <table width="100%" cellspacing="0">
@@ -1588,17 +1588,21 @@ Derzeit sind die gültigen Distributionen
 <tt style="white-space: nowrap;">10.5</tt>,
 <tt style="white-space: nowrap;">10.6</tt>,
 <tt style="white-space: nowrap;">10.7</tt>,
-<tt style="white-space: nowrap;">10.8</tt>
-und <tt style="white-space: nowrap;">10.9</tt>.
-Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
+<tt style="white-space: nowrap;">10.8</tt>,
+<tt style="white-space: nowrap;">10.9</tt>,
+<tt style="white-space: nowrap;">10.10</tt>,
+<tt style="white-space: nowrap;">10.11</tt>,
+<tt style="white-space: nowrap;">10.12</tt>,
+<tt style="white-space: nowrap;">10.13</tt>,
+und <tt style="white-space: nowrap;">10.14</tt>
+. Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
 ignoriert Fink die Paketbeschreibung, wenn die lokal vorhandene Distribution
 nicht aufgelistet ist. Ist das Feld weg gelassen oder der Wert leer, werden
 alle Distributionen akzeptiert.
 (Eingeführt in Fink 0.26.0.)
 </p>
 <p>
-Seit den Fink-Distributionen für <tt style="white-space: nowrap;">10.7</tt>, <tt style="white-space: nowrap;">10.8</tt> und
-<tt style="white-space: nowrap;">10.9</tt> teilen sie sich ein gemeinsames Set an finkinfo-Dateien. Eine
+Seit den Fink-Distributionen für <tt style="white-space: nowrap;">10.9</tt> durch <tt style="white-space: nowrap;">10.14</tt> teilen sie sich ein gemeinsames Set an finkinfo-Dateien. Eine
 übliche Verwendung des Felds ist, die Distributionen auszuklammern, für die
 das Paket nicht erstellt werden kann.
 </p>
@@ -1623,7 +1627,8 @@ Feld in diesen Paketen häufig vor. Als Referenz beschreiben wir hier die
 Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.9
 (<b>Fett</b>-gedruckte Systeme zeigen die Version von Sytem-Perl an):
 </p>
-<pre>    perl 5.6.0:  10.3
+<pre>
+    perl 5.6.0:  10.3
     perl 5.8.0:  10.3
     perl 5.8.1:  <b>10.3</b>, 10.4
     perl 5.8.4:  10.3, 10.4
@@ -1632,8 +1637,9 @@ Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.
     perl 5.10.0:             10.5, <b>10.6</b>
     perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
-    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b></pre>
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>
+</pre>
 <p>
 Eine Möglichkeit, alle unterstützten Varianten in einer einzigen finkinfo-Datei
 einzuschließen, ist diese:
@@ -3189,4 +3195,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.de.xml,v 1.1 2015/03/10 22:52:23 k-m_schindler Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.de.xml,v 1.2 2019/03/03 15:39:00 nieder Exp $</i></p></body></html>

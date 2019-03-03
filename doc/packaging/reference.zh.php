@@ -1,7 +1,7 @@
 <?php
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/03/03 15:39:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -146,7 +146,15 @@ A comma-separated list of distribution(s) for which the package
 At present, the only valid values for distribution are
 <code>10.4</code>,
 <code>10.5</code>,
-and <code>10.6</code>
+<code>10.6</code>,
+<code>10.7</code>,
+<code>10.8</code>,
+<code>10.9</code>,
+<code>10.10</code>,
+<code>10.11</code>,
+<code>10.12</code>,
+<code>10.13</code>,
+and <code>10.14</code>
 . If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
 the local machine distribution is not listed. If the field is omitted
@@ -154,7 +162,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
+Since Fink's <code>10.9</code> through <code>10.14</code> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -189,7 +197,10 @@ various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
-    perl 5.12.3:                         <b>10.7</b>
+    perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
+    perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>
 </pre>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>

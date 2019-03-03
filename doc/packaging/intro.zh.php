@@ -1,7 +1,7 @@
 <?php
 $title = "打包 - 介绍";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/03/03 15:39:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="format.php?phpLang=zh" title="软件包描述文件"><link rel="prev" href="index.php?phpLang=zh" title="打包 Contents">';
 
 

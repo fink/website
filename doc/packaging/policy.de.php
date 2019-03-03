@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Richtlinien";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/03/10 22:52:23';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/03/03 15:39:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="fslayout.php?phpLang=de" title="Dateisystem-Layout"><link rel="prev" href="format.php?phpLang=de" title="Paketbeschreibungen">';
 
 

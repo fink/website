@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.ja.xml,v 1.54 2016/04/06 22:11:13 babayoshihiko Exp $
+Generated from $Fink: packaging.ja.xml,v 1.55 2019/03/03 15:39:00 nieder Exp $
 -->
 <title>Fink Documentation - Fink パッケージの作成方法</title></head><body>
 <table width="100%" cellspacing="0">
@@ -1479,6 +1479,11 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 <tt style="white-space: nowrap;">10.7</tt>,
 <tt style="white-space: nowrap;">10.8</tt>,
 <tt style="white-space: nowrap;">10.9</tt>,
+<tt style="white-space: nowrap;">10.10</tt>,
+<tt style="white-space: nowrap;">10.11</tt>,
+<tt style="white-space: nowrap;">10.12</tt>,
+<tt style="white-space: nowrap;">10.13</tt>,
+<tt style="white-space: nowrap;">10.14</tt>
 です。
 このフィールドがあり、条件式判定で空欄でなければ、
 マシンのディストリビューションが書かれていなければ、
@@ -1487,7 +1492,7 @@ fink はパッケージ記述を無視します。
 (fink 0.26.0　で導入。)
 </p>
 <p>
-<tt style="white-space: nowrap;">10.7</tt>, <tt style="white-space: nowrap;">10.8</tt>, <tt style="white-space: nowrap;">10.9</tt> ディストリビューションは、
+<tt style="white-space: nowrap;">10.9</tt>, <tt style="white-space: nowrap;">10.10</tt>, <tt style="white-space: nowrap;">10.11</tt>, <tt style="white-space: nowrap;">10.12</tt>, <tt style="white-space: nowrap;">10.13</tt>, <tt style="white-space: nowrap;">10.14</tt> ディストリビューションは、
 finkinfo ファイルが同じであるため、
 これらのディストリビューションの一つに有効だが他ではそうでない場合が、このフィールドを使います。
 </p>
@@ -1519,10 +1524,10 @@ foo-pm5124 は空欄であることになります。
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
-    perl 5.12.3:                         <b>10.7</b>
+    perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
-    perl 5.16.2:                         10.7, 10.8, 10.9, <b>10.10</b>
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>
 </pre>
 <p>
 すべての variant をひとつの finkinfo ファイルに含める方法は、以下の通りです。
@@ -2924,4 +2929,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.ja.xml,v 1.54 2016/04/06 22:11:13 babayoshihiko Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.ja.xml,v 1.55 2019/03/03 15:39:00 nieder Exp $</i></p></body></html>
