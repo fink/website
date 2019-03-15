@@ -7,8 +7,15 @@ $metatags = '';
 include_once "header.inc";
 ?>
 
-<a name="2019-02-25%20Mirrors%20currently%20down"><span class="news-date">2019-02-25: </span><span class="news-headline">Mirrors currently down</span></a><?php gray_line(); ?>
-  <p>Fink's mirroring infrastructure is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+<a name="2019-03-14%20fink-0.44.1%20released"><span class="news-date">2019-03-14: </span><span class="news-headline">fink-0.44.1 released</span></a><?php gray_line(); ?>
+  <p>The Fink Project has released <code>fink-0.44.1</code>.  This is primarily a bugfix release to fix bootstrapping or using the <code>Install Fink.tool</code> script, but with some additional optimization updates behind the scenes.  Use<code>fink selfupdate</code> to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.44.1</code></p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
+ <a name="2019-02-25%20Mirrors%20currently%20down"><span class="news-date">2019-02-25: </span><span class="news-headline">Mirrors currently down</span></a><?php gray_line(); ?>
+  <p>Fink's finkmirrors.net domain is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
   <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
   <ul>
     <li>Run <code>fink selfupdate-git</code> to change your update method from rsync to git.</li>
@@ -54,6 +61,34 @@ include_once "header.inc";
   won't be able to function any more.  Fortunately, a workaround is now available.</p>
   <p>1) Download an updated <a href="http://bindist.finkproject.org/10.13/dists/stable/main/binary-darwin-x86_64/base/fink_0.42.0-121_darwin-x86_64.deb">fink</a>.</p>
   <p>2) In a terminal window, run <code>sudo dpkg -i fink_0.42.0-121_darwin-x86_64.deb</code> from the directory where you downloaded the file.</p>
+ <a name="2017-09-28%20Fink%20for%20High%20Sierra%20(10.13)"><span class="news-date">2017-09-28: </span><span class="news-headline">Fink for High Sierra (10.13)</span></a><?php gray_line(); ?>
+  <p>Because of a recent Sourceforge outage, we haven't been able to do a proper <code>fink</code> 
+  release that supports High Sierra.  However, since the <code>fink</code> source on 
+  Github isn't affected by this, it is possible to get a pre-release version out of our
+  <code>git</code> repository and install that.</p>
+  <p>The following sequence of steps should allow you to update your Fink installation
+  on 10.9 (Mavericks) or later for High Sierra.  10.8 (Mountain Lion) or earlier 
+  have no supported upgrade path.</p>
+  <p>0) Don't update your OS yet!</p>
+  <p>1) Download a copy of the 
+  <a href="https://github.com/fink/fink/archive/master.zip">repository archive</a> and
+  uncompress it if your browser doesn't do that automatically.</p>
+  <p>2) Open a Terminal window and change to the resulting <code>fink-master</code> directory
+  e.g. <code>cd ~/Downloads/fink-master</code> .</p>
+  <p>3) Run the command <code>sudo ./inject.pl</code> to update <code>fink</code>.</p>
+  <p>4) Update your OS to High Sierra.</p>
+  <p>5) Open a Terminal window and run <code>fink reinstall fink</code> to reset your distribution.</p>
+  <p></p>
+  <p>For new installs on High Sierra:</p>
+  <p>1) Install the Xcode 9 command-line tools by running <code>sudo xcode-select --install</code> 
+  in a Terminal window.</p>
+  <p>2) Install the latest JDK from Oracle, e.g. by running <code>javac</code> in a Terminal 
+  window.</p>
+  <p>3) Follow steps 1-2) from the upgrade instructions above.</p>
+  <p>4) Run <code>sudo ./bootstrap</code></p>
+  <p>5) The default bootstrap operation will error out at the end for the time being, until 
+  an official High Sierra binary distribution has been uploaded.  Go ahead and run <code>
+  /sw/bin/pathsetup.sh</code> as usual, however.</p>
  <a name="2016-11-12%20fink-0.41.0%20released"><span class="news-date">2016-11-12: </span><span class="news-headline">fink-0.41.0 released</span></a><?php gray_line(); ?>
   <p>The Fink Project has released <code>fink-0.41.1</code> to help us deal with adjustments
   to the libXt library from XQuartz via the use of the XQuartz version in the <code>system-xfree86*</code>
@@ -279,7 +314,136 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
   This is the first release to work with OS X 10.9 (Mavericks).
   We are currently in the process of making packages available.
   </p>
- <a name="2012-04-09%20fink-0.32.5.5%20released"><span class="news-date">2012-04-09: </span><span class="news-headline">fink-0.32.5.5 released</span></a><?php gray_line(); ?>
+ <a name="2013-09-27%20fink-0.35.2%20released"><span class="news-date">2013-09-27: </span><span class="news-headline">fink-0.35.2 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.35.2</code> was released on 27 September, 2013.
+  This release provides support for Xcode 5 on 10.8, and other 
+  bugfixes </p>
+ <a name="2013-07-05%20fink-0.34.9%20and%20fink-0.35.0%20released.%20%20EOL%20for%20OS%2010.5."><span class="news-date">2013-07-05: </span><span class="news-headline">fink-0.34.9 and fink-0.35.0 released.  EOL for OS 10.5.</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.9</code> and <code>fink-0.35.0</code> were released on 5 July, 2013.
+  These releases contain improvements to tar file extraction and Java detection., along
+  with other fixes and enhancements.  <code>fink-0.35.0</code> also formally recognizes
+  OS 10.8.4.</p>
+  <p><code>fink-0.34.9</code> is the last version that supports OS 10.5 (Leopard).  The
+  Fink Project has officially discontinued support for that OS version.</p>
+ <a name="2013-05-08%20fink-0.34.8%20released"><span class="news-date">2013-05-08: </span><span class="news-headline">fink-0.34.8 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.8</code> was released on 8 May, 2013.  This release expands upon
+  the fix from 0.34.7, improves <code>fink list --format=dotty-build</code>, along with
+  other improvements.</p>
+ <a name="2013-03-29%20fink-0.34.7%20released"><span class="news-date">2013-03-29: </span><span class="news-headline">fink-0.34.7 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.7</code> was released on 29 March, 2013.  This release addresses
+  an issue in which <code>tar</code> hangs for certain root access methods.</p>
+ <a name="2013-03-16%20fink-0.34.6%20released"><span class="news-date">2013-03-16: </span><span class="news-headline">fink-0.34.6 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.6</code> was released on 16 March, 2013.  This release supports
+  OS 10.8.3.</p>
+ <a name="2013-01-28%20fink-0.34.5%20released"><span class="news-date">2013-01-28: </span><span class="news-headline">fink-0.34.5 released</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.5</code> was released on 28 January, 2013.  In addition to some
+  other improvements, this release addresses an issue with detecting the version of
+  the <code>clang</code> compiler from Xcode 4.6 and later.</p>
+ <a name="2012-12-10%20Issues%20with%20all%20SourceForge%20Services"><span class="news-date">2012-12-10: </span><span class="news-headline">Issues with all SourceForge Services</span></a><?php gray_line(); ?>
+  <p>Sourceforge is currently down.  Check <a href="https://twitter.com/sfnet_ops">
+  the SF.net Operations Twitter feed</a> and 
+<a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage/">
+  the Finkers blog</a> for status updates.</p>
+  <p>For folks who aren't behind firewalls, the best recommendation is to use
+  <code>fink selfupdate-rsync</code> since that is currently functional.  If you are
+  behind a firewall, the best short-term workaround is probably to ask for specific
+  updated package description files by contacting the maintainer
+  directly.</p>
+ <p>The mailing lists and bug tracker are also down, so as an interim solution
+    please file bug reports for unmaintained packages (only) as comments to 
+    <a href="http://finkers.wordpress.com/2012/12/10/general-sourceforge-outage">
+    the Finkers entry</a>.  For maintained packages, send reports to the maintainer. ‎</p>
+  <p><b>Addendum: 2012-12-12:</b> Anonymous CVS is working again.</p>
+ <a name="2012-11-30%20Issues%20with%20sourceforge%20CVS"><span class="news-date">2012-11-30: </span><span class="news-headline">Issues with sourceforge CVS</span></a><?php gray_line(); ?>
+  <p>Sourceforge's anonymous CVS is currently down.  It is not currently clear
+  when it is going to be restored.  In addition, the 
+  <a href="http://fink.cvs.sourceforge.net/viewvc/fink/">web interface</a> is
+  not being updated.</p>
+  <p>For folks who aren't behind firewalls, the best recommendation is to use
+  <code>fink selfupdate-rsync</code> since that is currently functional.  If you're
+  behind a firewall, the best short-term workaround is probably to ask for specific
+  updated package description files on the mailing lists or by contacting the maintainer
+  directly.</p>
+  <p><b>Addendum: 2012-12-07:</b> Anonymous CVS is working again.</p>
+ <a name="2012-09-25%20fink-0.34.4%20relased"><span class="news-date">2012-09-25: </span><span class="news-headline">fink-0.34.4 relased</span></a><?php gray_line(); ?>
+  <p><code>fink-0.34.4</code> was released on 25 September, 2012.  This release adds diagnostics to make
+  sure that the permissions of directories that <code>fink</code> uses when building packages are appropriate.
+  Additionally, OS X versions 10.7.5 and 10.8.2 are recognized.</p>
+ <a name="2012-07-25%20Mountain%20Lion%20released"><span class="news-date">2012-07-25: </span><span class="news-headline">Mountain Lion released</span></a><?php gray_line(); ?>
+   <p>Mountain Lion is now available to the general public.  Ideally, users should update
+ to <code>fink-0.34.0</code> or later before updating their OS.  In addition, Xcode 4.4 
+ (or at least its command line tools) is required--it can be installed under Lion, but 
+ there is a separate version of the Command Line Tools for Mountain Lion, so make sure
+ to install those.  Use </p><p><code>fink list xcode</code></p><p>to verify that you have the
+ Xcode 4.4 command-line tools installed, and that Fink knows where your Xcode.app is.
+ If the CLI tools are missing or not for Xcode 4.4, reinstall them, e.g. via the Xcode 
+ Preferences.  If <code>fink</code> isn't finding your Xcode.app, use</p>
+ <p><code>sudo xcode-select -switch /path/to/Xcode.app</code></p>
+ <p>to make sure that your system's tools are pointing to the right place.  Also run</p>
+ <p><code>sudo xcodebuild -license</code></p><p>to make sure that the Xcode license is accepted
+ globally on your system, especially for fink's build user.</p>
+ <p>Once you have updated the OS, use</p>
+ <p><code>fink reinstall fink</code></p><p>to point it to the 10.8 distribution, and run</p>
+ <p><code>fink install perl5123-core</code></p><p>to make sure any Perl modules you have
+ from Lion will still work.</p>
+ <p>If you updated the OS first,
+  and have an earlier version of <code>fink</code> which doesn't know about Mountain Lion, you
+  have probably found that it doesn't work.  To work around this issue, do the 
+  following: (1) download an updated copy of 
+  <a href="https://raw.github.com/fink/fink/master/perlmod/Fink/Services.pm">
+  Services.pm</a>, (2) move the downloaded file into /sw/lib/perl5/Fink, such as
+  via</p><p><code>sudo mv /path/to/Services.pm /sw/lib/perl5/Fink</code></p><p>; 
+  (change <code>/sw</code> and <code>/path/to</code> to match 
+  your particular setup); (3) run</p><p><code>fink selfupdate</code></p><p>, which should
+  download and install <code>fink-0.34.0</code>; (4) use </p><p><code>fink reinstall fink</code></p>
+  <p>to ensure that <code>fink</code> is pointing at the 10.8 distribution, 
+  and (5) install <code>perl5123-core</code>
+  as above.</p>
+  <p><b>Addendum, 2012-07-26:</b>  It appears that the OS update wipes out the
+  users that Fink creates (but not the groups).  After following the steps above, you should
+  (1) Run</p><p><code>fink configure</code></p><p> to set the Fink build user back up, and 
+  (2) use </p><p><code>fink list -it passwd | cut -f2 | xargs fink reinstall</code></p><p> to reinstall
+  the various <code>passwd*</code> packages and their users.</p> 
+  <a name="2012-07-16%20fink-0.34.0%20released"><span class="news-date">2012-07-16: </span><span class="news-headline">fink-0.34.0 released</span></a><?php gray_line(); ?>
+   <p><code>fink-0.34.0</code> was released on 16 July, 2012.  This is the first 
+   release to support Mountain Lion (OS 10.8).</p>
+   <p>Until Mountain Lion is available to the general public, we ask that users
+   submit bug reports to the <a href="mailto:fink-seed@lists.sourceforge.net">
+   Fink Seed List</a>, which has been set up in such a manner as to to avoid 
+   violating the NDA.</p>
+  <a name="2012-07-05%20fink-0.33.3%20released"><span class="news-date">2012-07-05: </span><span class="news-headline">fink-0.33.3 released</span></a><?php gray_line(); ?>
+   <p><code>fink-0.33.3</code> was released on 5 July, 2012.  This release fixes a bug
+   whereby <code>fink</code> wouldn't build packages as the <code>fink-bld</code> user
+   (i.e. most packages) if certain <code>su</code> or <code>sudo</code> options were 
+   chosen.  In addition, packages now log the md5 sums of all of their files for diagnostic
+   purposes.  And users who are only using the Xcode Command-Line Tools will enjoy not
+   seeing frequent messages that Xcode.app can't be found.</p>
+  <a name="2012-06-11%20fink-0.33.0%20released"><span class="news-date">2012-06-11: </span><span class="news-headline">fink-0.33.0 released</span></a><?php gray_line(); ?>
+   <p><code>fink-0.33.0</code> was released on 6 June, 2012.  This release introduces some new
+    features:</p>
+   <p>Starting with this version of <code>fink</code>, packages will be built as an unprivileged
+   user by default, which prevents the build process from installing files in the rest of the
+   filesystem. (Prior to <code>fink-0.33.0</code> we relied on maintainers to test their packages
+   using this method).  Users may find that some packages don't build in this mode, so we appreciate
+   feedback, as always, to help us find and correct problems.</p>
+   <p>In addition, we have added some additional options for maintainers in this Fink version.
+   <b>/sw/Library/Python</b> has been added to the list of valid directories in a package, to
+   provide a unified location to install modules built against a built-in Python.  There is
+   now an <code>xcode.app</code> virtual package for packages that use <code>xcodebuild</code>
+   to BuildDepend upon.  Its version is the version of Xcode.app.  The <code>xcode</code>
+   virtual package has always been based on the presence of the command-line tools, and now its
+   version is the version of those.  Note that <code>xcode</code> and <code>xcode.app</code>
+   are the same for Xcodes prior to 4.3.</p>
+  <a name="2012-04-14%20fink-0.32.6%20released"><span class="news-date">2012-04-14: </span><span class="news-headline">fink-0.32.6 released</span></a><?php gray_line(); ?>
+   <p>
+    <code>fink-0.32.6</code> was released on 14 April, 2012.  This release introduces
+    a new package description field, <code>BuildAsNobody: false</code>, to mark packages which
+    cannot built using <code>fink --build-as-nobody</code>.  Currently, this does not
+    have any effect, but in <code>fink-0.33.0</code> and later we will begin building packages
+    as an unprivileged user by default, and this field will allow packages to be built
+    as root.
+   </p>
+  <a name="2012-04-09%20fink-0.32.5.5%20released"><span class="news-date">2012-04-09: </span><span class="news-headline">fink-0.32.5.5 released</span></a><?php gray_line(); ?>
    <p>
     <code>fink-0.32.5.5</code> was released on 9 April, 2012.  This bugfix release
     fixes an issue with bootstrapping on <b>10.5/PowerPC</b>.
@@ -370,12 +534,13 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
       users know what to expect if updating.</p>
 <p>First, the <code>fink</code> 
 program itself will not run  on a system which has
-been upgraded to Lion.  However, it will be possible to use the
+been upgraded to Lion, so it is not possible currently to update a Fink
+installation in place.  However, is possible to use the
 <code>dpkg</code> program to extract a list of the Fink packages
 which had been installed under 10.6, so that they can be reinstalled
 under 10.7.  Use</p>
 <p><code>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</code></p>
-<p>to extract the packages, and</p>
+<p>before updating to 10.7 to dump the package names to a text file, and</p>
 <p><code>cat fink_packages.txt | xargs fink install</code></p>
 <p>once you have installed Fink for 10.7.</p>
 <p>To upgrade Fink after upgrading to Lion, one will have to bootstrap

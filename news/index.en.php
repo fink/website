@@ -7,8 +7,15 @@ $metatags = '';
 include_once "header.inc";
 ?>
 
-<a name="2019-02-25%20Mirrors%20currently%20down"><span class="news-date">2019-02-25: </span><span class="news-headline">Mirrors currently down</span></a><?php gray_line(); ?>
-  <p>Fink's mirroring infrastructure is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+<a name="2019-03-14%20fink-0.44.1%20released"><span class="news-date">2019-03-14: </span><span class="news-headline">fink-0.44.1 released</span></a><?php gray_line(); ?>
+  <p>The Fink Project has released <code>fink-0.44.1</code>.  This is primarily a bugfix release to fix bootstrapping or using the <code>Install Fink.tool</code> script, but with some additional optimization updates behind the scenes.  Use<code>fink selfupdate</code> to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.44.1</code></p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
+ <a name="2019-02-25%20Mirrors%20currently%20down"><span class="news-date">2019-02-25: </span><span class="news-headline">Mirrors currently down</span></a><?php gray_line(); ?>
+  <p>Fink's finkmirrors.net domain is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
   <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
   <ul>
     <li>Run <code>fink selfupdate-git</code> to change your update method from rsync to git.</li>
@@ -109,6 +116,10 @@ include_once "header.inc";
   officially supports 10.9.0-10.11.6, and among other fixes and enhancements it
   switches from using <code>otool</code> to <code>otool-classic</code> to maintain
   compatibility with Xcode 8.</p>
+ <a name="2016-07-30%20Development%20support%20for%2010.12"><span class="news-date">2016-07-30: </span><span class="news-headline">Development support for 10.12</span></a><?php gray_line(); ?>
+  <p>The Fink Project has created a github branch named <code>sierra-alpha-bravo</code>
+  for 10.12 development.  This is accessible via <code>git</code> as well as through the 
+  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
  <a name="2016-07-30%20fink-0.39.4%20released"><span class="news-date">2016-07-30: </span><span class="news-headline">fink-0.39.4 released</span></a><?php gray_line(); ?>
   <p>The Fink Project has released <code>fink-0.39.4</code> for 10.9-10.11.  This 
   officially supports 10.9.0-10.11.5 and incorporates bug fixes and enhancements.  
@@ -524,9 +535,9 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
 <p>First, the <code>fink</code> 
 program itself will not run  on a system which has
 been upgraded to Lion, so it is not possible currently to update a Fink
-installation in place.However, is possible to use the
+installation in place.  However, is possible to use the
 <code>dpkg</code> program to extract a list of the Fink packages
-which are current installed so that they can be reinstalled
+which had been installed under 10.6, so that they can be reinstalled
 under 10.7.  Use</p>
 <p><code>dpkg --get-selections | cut -f1 &gt; fink_packages.txt</code></p>
 <p>before updating to 10.7 to dump the package names to a text file, and</p>

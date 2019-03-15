@@ -5,8 +5,37 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2019-02-25T22:35:58-06:00</dc:date>
+    <dc:date>2019-03-14T18:52:02-07:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released">
+      <title>fink-0.44.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.44.1.  This is primarily a bugfix release to fix bootstrapping or using the Install Fink.tool script, but with some additional optimization updates behind the scenes.  Usefink selfupdate to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.44.1</p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.44.1.  This is primarily a bugfix release to fix bootstrapping or using the Install Fink.tool script, but with some additional optimization updates behind the scenes.  Usefink selfupdate to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.44.1</p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2019-02-25%20Mirrors%20currently%20down">
       <title>Mirrors currently down</title>
       <link>http://fink.sourceforge.net/news/#2019-02-25%20Mirrors%20currently%20down</link>
@@ -14,7 +43,7 @@
       <description>
 		<![CDATA[
 	
-  <p>Fink's mirroring infrastructure is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+  <p>Fink's finkmirrors.net domain is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
   <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
   
     Run fink selfupdate-git to change your update method from rsync to git.
@@ -27,7 +56,7 @@
       <content:encoded>
 		<![CDATA[
 	
-  <p>Fink's mirroring infrastructure is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+  <p>Fink's finkmirrors.net domain is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
   <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
   
     Run fink selfupdate-git to change your update method from rsync to git.
@@ -516,33 +545,6 @@
   .deb  archive</a> , and install it using 
   sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb from the directory where 
   you downloaded it.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master">
-      <title>Beta support for OS X 10.11 now in fink master</title>
-      <link>http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master</link>
-      <guid>http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  Support for OSX 10.11 beta is now available in Fink master, but not yet in release.
-  This can be downloaded from <a href="https://github.com/fink/fink/"> fink's 
-  github site</a>.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  Support for OSX 10.11 beta is now available in Fink master, but not yet in release.
-  This can be downloaded from <a href="https://github.com/fink/fink/"> fink's 
-  github site</a>.
   </p>
  
 		]]>
