@@ -156,6 +156,15 @@
 </newsitem>
 <newsitem>
  <date>2016-07-30</date>
+ <headline>Development support for 10.12</headline>
+ <body>
+  <p>The Fink Project has created a github branch named <code>sierra-alpha-bravo</code>
+  for 10.12 development.  This is accessible via <code>git</code> as well as through the 
+  <link url="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</link>.</p>
+ </body>
+</newsitem>
+<newsitem>
+ <date>2016-07-30</date>
  <headline>fink-0.39.4 released</headline>
  <body>
   <p>The Fink Project has released <code>fink-0.39.4</code> for 10.9-10.11.  This 
@@ -797,9 +806,9 @@ rsync://hnd.jp.asi.finkmirrors.net/finkinfo/
 <p>First, the <code>fink</code> 
 program itself will not run  on a system which has
 been upgraded to Lion, so it is not possible currently to update a Fink
-installation in place.However, is possible to use the
+installation in place.  However, is possible to use the
 <code>dpkg</code> program to extract a list of the Fink packages
-which are current installed so that they can be reinstalled
+which had been installed under 10.6, so that they can be reinstalled
 under 10.7.  Use</p>
 <p><code>dpkg --get-selections | cut -f1 > fink_packages.txt</code></p>
 <p>before updating to 10.7 to dump the package names to a text file, and</p>
