@@ -6,7 +6,7 @@
  <date>2019-02-25</date>
  <headline>Mirrors currently down</headline>
  <body>
-  <p>Fink's mirroring infrastructure is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+  <p>Fink's finkmirrors.net domain is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
   <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
   <ul>
     <li>Run <code>fink selfupdate-git</code> to change your update method from rsync to git.</li>
