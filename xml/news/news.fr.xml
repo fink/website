@@ -3,6 +3,18 @@
 <news lang="fr">
  <cvsid>$Id: news.fr.xml,v 1.102 2019/02/25 20:35:00 nieder Exp $</cvsid>
 <newsitem>
+ <date>2019-03-14</date>
+ <headline>fink-0.44.1 released</headline>
+ <body>
+  <p>The Fink Project has released <code>fink-0.44.1</code>.  This is primarily a bugfix release to fix bootstrapping or using the <code>Install Fink.tool</code> script, but with some additional optimization updates behind the scenes.  Use<code>fink selfupdate</code> to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.44.1</code></p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
+ </body>
+</newsitem>
+<newsitem>
  <date>2019-02-25</date>
  <headline>Mirrors currently down</headline>
  <body>
