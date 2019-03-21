@@ -4,39 +4,45 @@
  <cvsid>$Id: news.ja.xml,v 1.87 2019/02/25 20:35:00 nieder Exp $</cvsid>
 <newsitem>
  <date>2019-03-14</date>
- <headline>fink-0.44.1 released</headline>
+ <headline>fink-0.44.1 リリース</headline>
  <body>
-  <p>The Fink Project has released <code>fink-0.44.1</code>.  This is primarily a bugfix release to fix bootstrapping or using the <code>Install Fink.tool</code> script, but with some additional optimization updates behind the scenes.  Use<code>fink selfupdate</code> to install it.</p>
-  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
-  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
-  <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.44.1</code></p>
-  <p>2) Update to Mojave.</p>
-  <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
+  <p>Fink プロジェクトは、 <code>fink-0.44.1</code> をリリースしました。
+  これは、基本的にバグ修正リリースで、 bootstrap と <code>Install Fink.tool</code> スクリプトを修正しています。
+  さらに、バックグラウンドで最適化アップデートも追加されています。
+  <code>fink selfupdate</code> を使用してインストールしてください。</p>
+  <p>10.9-10.13 から 10.14 へアップデートする最適な方法は、以下の通りです:</p>
+  <p>0) 10.9-10.13 を開始。まだ OS のアップデートをしないでください。</p>
+  <p>1) ターミナルで、 <code>fink selfupdate</code> を実行し、 <code>fink-0.44.1</code> をインストールします。</p>
+  <p>2) Mojave にアップデート。</p>
+  <p>3) ターミナルで、 <code>fink reinstall fink</code> を実行します。</p>
  </body>
 </newsitem>
 <newsitem>
  <date>2019-02-25</date>
- <headline>Mirrors currently down</headline>
+ <headline>ミラーが現在ダウン</headline>
  <body>
-  <p>Fink's finkmirrors.net domain is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
-  <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
+  <p>Fink の finkmirrors.net ドメインは現在ダウンしています。
+  これは、rsync で selfupdate しているユーザーとバイナリ配布を利用しているユーザーに影響しています。</p>
+  <p>Fink ディストリビューションを最新にするには、以下のコマンドを実行してください:</p>
   <ul>
-    <li>Run <code>fink selfupdate-git</code> to change your update method from rsync to git.</li>
-    <li>Run <code>fink configure</code> to turn off using the binary to download pre-compiled packages.</li>
+    <li>rsync から git に更新方法を変えるため、 <code>fink selfupdate-git</code> を実行し、</li>
+    <li>コンパイル済みパッケージのダウンロードを停止するため <code>fink configure</code> を実行します。</li>
   </ul>
-  <p>We apologize for the inconvenience.</p>
+  <p>ご迷惑をおかけして申し訳ございません。</p>
  </body>
 </newsitem>
 <newsitem>
  <date>2019-01-16</date>
- <headline>fink-0.44.0 released</headline>
+ <headline>fink-0.44.0 リリース</headline>
  <body>
-  <p>The Fink Project has released <code>fink-0.44.0</code>.  This release now supports macOS 10.14 (Mojave), as well as Java 10.  Use<code>fink selfupdate</code> to install it.</p>
-  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
-  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
-  <p>1) In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.44.0</code></p>
-  <p>2) Update to Mojave.</p>
-  <p>3) In a terminal window, run <code>fink reinstall fink</code>.</p>
+  <p>Fink プロジェクトは、 <code>fink-0.44.0</code> をリリースしました。
+  このリリースは、 macOS 10.14 (Mojave) 及び Java 10 をサポートします。
+  <code>fink selfupdate</code> を使用してインストールしてください。</p>
+  <p>10.9-10.13 から 10.14 へ更新する最適な方法は、以下の通りです:</p>
+  <p>0) 10.9-10.13. を実行します。まだ OS はアップデートしないでください。</p>
+  <p>1) ターミナルで、 <code>fink selfupdate</code> を実行し、 <code>fink-0.44.0</code> をインストールします。</p>
+  <p>2) Mojave にアップデート。</p>
+  <p>3) ターミナルで、 <code>fink reinstall fink</code> を実行します。</p>
  </body>
 </newsitem>
 <newsitem>
