@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
- <cvsid>$Id: news.de.xml,v 1.75 2019/02/25 20:35:00 nieder Exp $</cvsid>
+ <cvsid>$Id: news.de.xml,v 1.76 2019/02/25 20:35:00 nieder Exp $</cvsid>
+<newsitem>
+ <date>2019-05-30</date>
+ <headline>Issues with macOS 10.14.5</headline>
+ <body>
+  <p>Apple's release of macOS 10.14.5 updated the system perl version from 5.18.2 to 5.18.4. This update broke bootstrapping fresh installs, as well as existing perl modules dependent on perl-5.18.2.</p>
+  <p>Fixes for Fink working on macOS 10.14.5 are tracked <link url="https://github.com/fink/fink/pull/190">on GitHub</link>. </p>
+  <p>We apologize for the inconvenience.</p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2019-03-14</date>
  <headline>fink-0.44.1 released</headline>
