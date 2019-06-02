@@ -5,8 +5,31 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>de</dc:language>
-    <dc:date>2019-03-14T18:52:02-07:00</dc:date>
+    <dc:date>2019-06-02T06:55:46-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5">
+      <title>Issues with macOS 10.14.5</title>
+      <link>http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5</link>
+      <guid>http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Apple's release of macOS 10.14.5 updated the system perl version from 5.18.2 to 5.18.4. This update broke bootstrapping fresh installs, as well as existing perl modules dependent on perl-5.18.2.</p>
+  <p>Fixes for Fink working on macOS 10.14.5 are tracked <a href="https://github.com/fink/fink/pull/190">on GitHub</a>. </p>
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Apple's release of macOS 10.14.5 updated the system perl version from 5.18.2 to 5.18.4. This update broke bootstrapping fresh installs, as well as existing perl modules dependent on perl-5.18.2.</p>
+  <p>Fixes for Fink working on macOS 10.14.5 are tracked <a href="https://github.com/fink/fink/pull/190">on GitHub</a>. </p>
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released">
       <title>fink-0.44.1 released</title>
       <link>http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released</link>
@@ -526,35 +549,6 @@
   .deb Archiv</a> herunter laden und aus ihrem Download-Ordner mit folgendem
   Befehl installieren:
   sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-09-12%20Jetzt%20in%20fink%20master%3A%20Beta-Unterst%FCtzung%20f%FCr%20OS%20X%2010.11">
-      <title>Jetzt in fink master: Beta-Unterstützung für OS X 10.11</title>
-      <link>http://fink.sourceforge.net/news/#2015-09-12%20Jetzt%20in%20fink%20master%3A%20Beta-Unterst%FCtzung%20f%FCr%20OS%20X%2010.11</link>
-      <guid>http://fink.sourceforge.net/news/#2015-09-12%20Jetzt%20in%20fink%20master%3A%20Beta-Unterst%FCtzung%20f%FCr%20OS%20X%2010.11</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  Beta-Unterstützung für OS X 10.11 steht jetzt in fink master zur Verfügung,
-  aber noch nicht in release. Es kann von
-  <a href="https://github.com/fink/fink/"> finks github Webseite</a>
-  herunter geladen werden.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  Beta-Unterstützung für OS X 10.11 steht jetzt in fink master zur Verfügung,
-  aber noch nicht in release. Es kann von
-  <a href="https://github.com/fink/fink/"> finks github Webseite</a>
-  herunter geladen werden.
   </p>
  
 		]]>

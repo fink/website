@@ -5,8 +5,31 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>zh</dc:language>
-    <dc:date>2019-03-14T18:52:03-07:00</dc:date>
+    <dc:date>2019-06-02T06:55:46-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5">
+      <title>Issues with macOS 10.14.5</title>
+      <link>http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5</link>
+      <guid>http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Apple's release of macOS 10.14.5 updated the system perl version from 5.18.2 to 5.18.4. This update broke bootstrapping fresh installs, as well as existing perl modules dependent on perl-5.18.2.</p>
+  <p>Fixes for Fink working on macOS 10.14.5 are tracked <a href="https://github.com/fink/fink/pull/190">on GitHub</a>. </p>
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Apple's release of macOS 10.14.5 updated the system perl version from 5.18.2 to 5.18.4. This update broke bootstrapping fresh installs, as well as existing perl modules dependent on perl-5.18.2.</p>
+  <p>Fixes for Fink working on macOS 10.14.5 are tracked <a href="https://github.com/fink/fink/pull/190">on GitHub</a>. </p>
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released">
       <title>fink-0.44.1 released</title>
       <link>http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released</link>
@@ -497,53 +520,6 @@
   <a href="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
   .deb  archive</a> , and install it using 
   sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released">
-      <title>fink-0.39.0 released</title>
-      <link>http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released</guid>
-      <description>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.39.0 to support OS X El Capitan 
-  (10.11).  
-  This release also switches the distribution tree used by fink on 10.9 and 10.10.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.39.0 to support OS X El Capitan 
-  (10.11).  
-  This release also switches the distribution tree used by fink on 10.9 and 10.10.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb from the directory where 
   you downloaded it.
   </p>
  
