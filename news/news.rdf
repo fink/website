@@ -5,8 +5,31 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2019-06-02T06:55:46-05:00</dc:date>
+    <dc:date>2019-06-02T07:10:24-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-06-02%20Fink%20mirrors%20are%20back">
+      <title>Fink mirrors are back</title>
+      <link>http://fink.sourceforge.net/news/#2019-06-02%20Fink%20mirrors%20are%20back</link>
+      <guid>http://fink.sourceforge.net/news/#2019-06-02%20Fink%20mirrors%20are%20back</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Thanks to the work of Fink members Chris Z and Justin H, the finkmirrors.net domain is operational once again.</p>
+  <p>We are looking for new mirror owners to extend our mirroring service. If you can host a Fink mirror, see <a href="http://finkmirrors.net/">the main Fink Mirrors site</a> for instructions and requirements.</p>
+  <p>Thank you for your patience.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Thanks to the work of Fink members Chris Z and Justin H, the finkmirrors.net domain is operational once again.</p>
+  <p>We are looking for new mirror owners to extend our mirroring service. If you can host a Fink mirror, see <a href="http://finkmirrors.net/">the main Fink Mirrors site</a> for instructions and requirements.</p>
+  <p>Thank you for your patience.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5">
       <title>Issues with macOS 10.14.5</title>
       <link>http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5</link>
@@ -475,51 +498,6 @@
   <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
   .deb  archive</a> , and install it using 
   sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released">
-      <title>fink-0.39.2 released</title>
-      <link>http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released</guid>
-      <description>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.39.2 for 10.9-10.11.  This 
-  incorporates bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.39.2 for 10.9-10.11.  This 
-  incorporates bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb from the directory where 
   you downloaded it.
   </p>
  
