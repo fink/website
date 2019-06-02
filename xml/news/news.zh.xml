@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="zh">
- <cvsid>$Id: news.zh.xml,v 1.71 2019/02/25 20:35:00 nieder Exp $</cvsid>
+ <cvsid>$Id: news.zh.xml,v 1.71 2019/06/02 20:35:00 nieder Exp $</cvsid>
+<newsitem>
+ <date>2019-06-02</date>
+ <headline>Fink mirrors are back</headline>
+ <body>
+  <p>Thanks to the work of Fink members Chris Z and Justin H, the finkmirrors.net domain is operational once again.</p>
+  <p>We are looking for new mirror owners to extend our mirroring service. If you can host a Fink mirror, see <link url="http://finkmirrors.net/">the main Fink Mirrors site</link> for instructions and requirements.</p>
+  <p>Thank you for your patience.</p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2019-05-30</date>
  <headline>Issues with macOS 10.14.5</headline>
