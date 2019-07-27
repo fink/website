@@ -1,7 +1,7 @@
 <?php
 $title = "Paquets - Organisation des fichiers";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/03/03 15:39:00';
+$cvs_date = 'Date: 2019/07/27 6:50:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="compilers.php?phpLang=fr" title="Compilateurs"><link rel="prev" href="policy.php?phpLang=fr" title="Règles de distribution des paquets">';
 
 
