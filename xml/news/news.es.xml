@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
- <cvsid>$Id: news.es.xml,v 1.78 2019/06/02 20:35:00 nieder Exp $</cvsid>
+ <cvsid>$Id: news.es.xml,v 1.79 2019/08/06 7:10:00 nieder Exp $</cvsid>
 <newsitem>
  <date>2019-08-05</date>
  <headline>fink-0.45.0 released</headline>
