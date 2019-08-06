@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="pt">
- <cvsid>$Id: news.pt.xml,v 1.38 2019/02/25 2019/06/02 20:35:00 nieder Exp $</cvsid>
+ <cvsid>$Id: news.pt.xml,v 1.39 2019/08/06 7:10:00 nieder Exp $</cvsid>
+<newsitem>
+ <date>2019-08-05</date>
+ <headline>fink-0.45.0 released</headline>
+ <body>
+  <p>The Fink Project has released fink-0.45.0. This release provides support for macOS 10.14.5 and up, including preliminary support for macOS 10.15beta. This release also provides full support for .app bundles in APFS volumes.</p>
+  <p>If your system is still on macOS 10.14.4 or earlier:</p>
+  <ol>
+    <li>In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.45.0</code>.</li>
+    <li>Update to the latest version of Mojave.</li>
+    <li>In a terminal window, run <code>fink reinstall fink</code>.</li>
+  </ol>
+  <p>If you have already updated to macOS 10.14.5:</p>
+  <ol>
+    <li>In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.45.0</code>.</li>
+  </ol>
+ </body>
+</newsitem>
 <newsitem>
  <date>2019-06-02</date>
  <headline>Fink mirrors are back</headline>
