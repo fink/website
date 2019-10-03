@@ -84,9 +84,9 @@ sein, starten sie das Skript erneut.
 <h2><a name="install">1.3 Erstmalige Installation: Schnellanleitung</a></h2>
 <p>
 Beginnen sie, indem sie die Datei
-<code>fink-0.44.0.tar.gz</code> in ihr Heimatverzeichnis
+<code>fink-0.45.0.tar.gz</code> in ihr Heimatverzeichnis
 kopieren (Möglicherweise wird sie als
-<code>fink-0.44.0.tar</code> angezeigt, falls sie die Datei
+<code>fink-0.45.0.tar</code> angezeigt, falls sie die Datei
 mit Safari herunter geladen haben).
 Starten sie dann das Programm Terminal.app und folgen sie der Sitzung weiter
 unten. Die Computer-Ausgabe ist in <code>normal face</code> angezeigt, ihre
@@ -98,15 +98,15 @@ Teile der Ausgabe wurden weg gelassen (<code>...</code>).
 möglicherweise ein Dialogfenster, in dem sie gefragt werden, ob sie XQartz
 installieren wollen. Wenn sie das wollen, dann machen sie das. Sie werden dazu
 die Installation von Fink nicht unterbrechen werden müssen.</p>
-<pre>[frodo:~] testuser% <b>tar xf fink-0.44.0.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.44.0</b>
-[frodo:~/fink-0.44.0] testuser% <b>./bootstrap</b>
+<pre>[frodo:~] testuser% <b>tar xf fink-0.45.0.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.45.0</b>
+[frodo:~/fink-0.45.0] testuser% <b>./bootstrap</b>
 
 Fink must be installed and run with superuser (root) privileges
 ...
 Choose a method: [1] <b>1</b>
 
-sudo /Users/testuser/fink-0.44.0/bootstrap .sudo '/sw'
+sudo /Users/testuser/fink-0.45.0/bootstrap .sudo '/sw'
 Password: <b>(your normal password here)</b>
 ...
 OK, I'll ask you some questions and update the configuration file in
@@ -152,8 +152,8 @@ Bootstrapping a base system via /sw/bootstrap.
 ...
 
 You should now have a working Fink installation in '/sw'.
-[frodo:~/fink-0.44.0] testuser% <b>cd</b>
-[frodo:~] testuser% <b>rm -r fink-0.44.0</b>
+[frodo:~/fink-0.45.0] testuser% <b>cd</b>
+[frodo:~] testuser% <b>rm -r fink-0.45.0</b>
 [frodo:~] testuser% <b>/sw/bin/pathsetup.sh</b></pre>
 <p>
 Das letzte Kommando führt ein kleines Skript aus, das Unix-Pfade (und anderes)
