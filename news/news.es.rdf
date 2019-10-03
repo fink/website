@@ -5,8 +5,41 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2019-08-06T07:14:51-05:00</dc:date>
+    <dc:date>2019-10-02T22:37:49-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-10-02%2010.15%20(Catalina)%20and%20Xcode11%20information">
+      <title>10.15 (Catalina) and Xcode11 information</title>
+      <link>http://fink.sourceforge.net/news/#2019-10-02%2010.15%20(Catalina)%20and%20Xcode11%20information</link>
+      <guid>http://fink.sourceforge.net/news/#2019-10-02%2010.15%20(Catalina)%20and%20Xcode11%20information</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Fink 0.45.0 and up support the upcoming 10.15 release, but there are some important things to note:</p>
+  
+    Apple locked down the / (root) directory where Fink normally installs (in /sw by default), so existing Fink installs may become read-only upon updating to 10.15.
+    Xcode11 introduces some known breakages (with no known fixes at this time) to important packages like gcc, so not everything will build yet.
+  
+  <p>Once macOS 10.15 is officially released, we suggest waiting to upgrade until we know how the system will treat existing installs and we can determine the best upgrade path.</p>
+  <p>For anyone installing Fink for the first time (on 10.15beta or an earlier macOS version), we now recommend using /opt/sw as the install location, since that's known to work. The next Fink release after macOS 10.15 is out will use /opt/sw as the default install location.</p>
+  <p>Xcode11 is known to currently break building the gccX and several other important packages. If possible (especially 10.14 users), hold off on upgrading to Xcode11 unless you need something specific from it. If you do upgrade to Xcode11, make sure that the Command Line Tools are also upgraded to version 11 for your macOS release.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Fink 0.45.0 and up support the upcoming 10.15 release, but there are some important things to note:</p>
+  
+    Apple locked down the / (root) directory where Fink normally installs (in /sw by default), so existing Fink installs may become read-only upon updating to 10.15.
+    Xcode11 introduces some known breakages (with no known fixes at this time) to important packages like gcc, so not everything will build yet.
+  
+  <p>Once macOS 10.15 is officially released, we suggest waiting to upgrade until we know how the system will treat existing installs and we can determine the best upgrade path.</p>
+  <p>For anyone installing Fink for the first time (on 10.15beta or an earlier macOS version), we now recommend using /opt/sw as the install location, since that's known to work. The next Fink release after macOS 10.15 is out will use /opt/sw as the default install location.</p>
+  <p>Xcode11 is known to currently break building the gccX and several other important packages. If possible (especially 10.14 users), hold off on upgrading to Xcode11 unless you need something specific from it. If you do upgrade to Xcode11, make sure that the Command Line Tools are also upgraded to version 11 for your macOS release.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2019-08-05%20fink-0.45.0%20released">
       <title>fink-0.45.0 released</title>
       <link>http://fink.sourceforge.net/news/#2019-08-05%20fink-0.45.0%20released</link>
@@ -471,29 +504,6 @@
   officially supports 10.9.0-10.11.6, and among other fixes and enhancements it
   switches from using otool to otool-classic to maintain
   compatibility with Xcode 8.</p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12">
-      <title>Development support for 10.12</title>
-      <link>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</link>
-      <guid>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</guid>
-      <description>
-		<![CDATA[
-	
-  <p>The Fink Project has created a github branch named sierra-alpha-bravo
-  for 10.12 development.  This is accessible via git as well as through the 
-  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>The Fink Project has created a github branch named sierra-alpha-bravo
-  for 10.12 development.  This is accessible via git as well as through the 
-  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
  
 		]]>
 	</content:encoded>
