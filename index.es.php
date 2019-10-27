@@ -54,7 +54,7 @@ require dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
-Actualmente, Fink admite soporte para macOS 10.14 (Mojave), macOS 10.13 (High Sierra), 
+Actualmente, Fink admite soporte para macOS 10.15 (Catalina), macOS 10.14 (Mojave), macOS 10.13 (High Sierra), 
 macOS 10.12 (Sierra), OS X 10.11 (El Capitan), OS X 10.10 (Yosemite), 10.9 (Mavericks), 
 y continua funcionando en versiones mas 
 antiguas, aunque ya no recibe actualizaciones en esos sistemas.  Instructiones de 
@@ -62,6 +62,15 @@ instalación están disponibles desde nuestra <a href="download/srcdist.php">pá
 de liberación del código fuente</a>.
 </p>
 <p>XCode necesita ser instalado antes de instalar Fink.</p>
+<p>
+<strong>Soporte para 10.15:</strong> 
+Usuarios en 10.15 deberián instalar Xcode 10.3 (a través de descarga 
+gratuita del AppStore).  Al minimo necesitan 
+instalar las herramientas de la linea de comandos para "Xcode 10.3 for Catalina" 
+(instalable a través de <i>xcode-select --install</i> o 
+descargable desde <a href="http://developer.apple.com">Apple</a>).</p>
+<p>Si necesita X11, debe de instalar Xquartz-2.7.11 o posterior desde 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>Soporte para 10.13 and 10.14:</strong> 
 Usuarios en 10.13 y 10.14 deberián instalar Xcode 10.1 (a través de descarga 
