@@ -5,8 +5,43 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>pt</dc:language>
-    <dc:date>2019-10-02T22:37:49-05:00</dc:date>
+    <dc:date>2019-10-29T04:01:05-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details">
+      <title>Further 10.15 (Catalina) and Xcode11 upgrade details</title>
+      <link>http://fink.sourceforge.net/news/#2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details</link>
+      <guid>http://fink.sourceforge.net/news/#2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details</guid>
+      <description>
+		<![CDATA[
+	
+  <p>If upgrading to macOS 10.15 (Catalina) from an earlier macOS release, your existing Fink install will cease to work if installed outside /opt (such as to the previous default /sw) and must be reinstalled from scratch using Fink release 0.45.0 or later.</p>
+  <p>The old Fink install is archived into /Users/Shared/Relocated Items. It's possible to manually recover downloaded source archives and configuration files from there to use in a new Fink install. However, it's not possible to reuse built .deb packages because they hardcode the original path that contained Fink.</p>
+  <p>Upgrade and installation hints if existing Fink install is outside /opt:</p>
+  
+    If doing a fresh Fink install on any macOS version, install Fink into /opt/sw.
+    If you haven't yet updated to macOS 10.15, run this command to capture the list of your currently installed packages: for i in `/bin/ls -1 /sw/var/lib/dpkg/info/*.list`; do basename -s .list $i &gt;&gt; ~/my_fink_packages.txt; done.
+    If you have already updated to macOS 10.15 but had Fink installed somewhere outside /opt before your system upgrade, use the above command (with modified path to the "Relocated Items" location as necessary) to capture the packages you previously had installed on your older macOS release. For example: for i in `/bin/ls -1 "/Users/Shared/Relocated Items/sw/var/lib/dpkg/info/"*.list`; do basename -s .list $i &gt;&gt; ~/my_fink_packages.txt; done
+    Once you have captured your list of previous packages, upgraded to macOS 10.15, and installed Fink into /opt, run the following command to batch build and reinstall your previous Fink packages: cat ~/my_fink_packages.txt | xargs fink reinstall. Note that some packages do not exist on macOS 10.15, so you might need to hand edit the file my_fink_packages.txt to remove the missing packages before trying to reinstall.
+  
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>If upgrading to macOS 10.15 (Catalina) from an earlier macOS release, your existing Fink install will cease to work if installed outside /opt (such as to the previous default /sw) and must be reinstalled from scratch using Fink release 0.45.0 or later.</p>
+  <p>The old Fink install is archived into /Users/Shared/Relocated Items. It's possible to manually recover downloaded source archives and configuration files from there to use in a new Fink install. However, it's not possible to reuse built .deb packages because they hardcode the original path that contained Fink.</p>
+  <p>Upgrade and installation hints if existing Fink install is outside /opt:</p>
+  
+    If doing a fresh Fink install on any macOS version, install Fink into /opt/sw.
+    If you haven't yet updated to macOS 10.15, run this command to capture the list of your currently installed packages: for i in `/bin/ls -1 /sw/var/lib/dpkg/info/*.list`; do basename -s .list $i &gt;&gt; ~/my_fink_packages.txt; done.
+    If you have already updated to macOS 10.15 but had Fink installed somewhere outside /opt before your system upgrade, use the above command (with modified path to the "Relocated Items" location as necessary) to capture the packages you previously had installed on your older macOS release. For example: for i in `/bin/ls -1 "/Users/Shared/Relocated Items/sw/var/lib/dpkg/info/"*.list`; do basename -s .list $i &gt;&gt; ~/my_fink_packages.txt; done
+    Once you have captured your list of previous packages, upgraded to macOS 10.15, and installed Fink into /opt, run the following command to batch build and reinstall your previous Fink packages: cat ~/my_fink_packages.txt | xargs fink reinstall. Note that some packages do not exist on macOS 10.15, so you might need to hand edit the file my_fink_packages.txt to remove the missing packages before trying to reinstall.
+  
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2019-10-02%2010.15%20(Catalina)%20and%20Xcode11%20information">
       <title>10.15 (Catalina) and Xcode11 information</title>
       <link>http://fink.sourceforge.net/news/#2019-10-02%2010.15%20(Catalina)%20and%20Xcode11%20information</link>
@@ -479,31 +514,6 @@
   sudo dpkg -i fink_0.41.1-111_darwin-x86_64.deb from the directory where 
   you downloaded it, then use fink reinstall fink to update the distribution.
   </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2016-08-13%20fink-0.39.5%20released">
-      <title>fink-0.39.5 released</title>
-      <link>http://fink.sourceforge.net/news/#2016-08-13%20fink-0.39.5%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2016-08-13%20fink-0.39.5%20released</guid>
-      <description>
-		<![CDATA[
-	
-   <p>The Fink Project has released fink-0.39.5 for 10.9-10.11.  This 
-  officially supports 10.9.0-10.11.6, and among other fixes and enhancements it
-  switches from using otool to otool-classic to maintain
-  compatibility with Xcode 8.</p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-   <p>The Fink Project has released fink-0.39.5 for 10.9-10.11.  This 
-  officially supports 10.9.0-10.11.6, and among other fixes and enhancements it
-  switches from using otool to otool-classic to maintain
-  compatibility with Xcode 8.</p>
  
 		]]>
 	</content:encoded>
