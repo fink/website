@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="fr">
- <cvsid>$Id: news.fr.xml,v 1.105 2019/10/02 22:10:00 nieder Exp $</cvsid>
+ <cvsid>$Id: news.fr.xml,v 1.106 2019/10/27 9:08:43 nieder Exp $</cvsid>
+<newsitem>
+ <date>2019-10-27</date>
+ <headline>Further 10.15 (Catalina) and Xcode11 upgrade details</headline>
+ <body>
+  <p>If upgrading to macOS 10.15 (Catalina) from an earlier macOS release, your existing Fink install will cease to work if installed outside <code>/opt</code> (such as to the previous default <code>/sw</code>) and must be reinstalled from scratch using Fink release 0.45.0 or later.</p>
+  <p>The old Fink install is archived into <code>/Users/Shared/Relocated Items</code>. It's possible to manually recover downloaded source archives and configuration files from there to use in a new Fink install. However, it's not possible to reuse built .deb packages because they hardcode the original path that contained Fink.</p>
+  <p>Upgrade and installation hints if existing Fink install is outside <code>/opt</code>:</p>
+  <ul>
+    <li>If doing a fresh Fink install on any macOS version, install Fink into <code>/opt/sw</code>.</li>
+    <li>If you haven't yet updated to macOS 10.15, run this command to capture the list of your currently installed packages: <code>for i in `/bin/ls -1 /sw/var/lib/dpkg/info/*.list`; do basename -s .list $i >> ~/my_fink_packages.txt; done</code>.</li>
+    <li>If you have already updated to macOS 10.15 but had Fink installed somewhere outside <code>/opt</code> before your system upgrade, use the above command (with modified path to the "Relocated Items" location as necessary) to capture the packages you previously had installed on your older macOS release. For example: <code>for i in `/bin/ls -1 "/Users/Shared/Relocated Items/sw/var/lib/dpkg/info/"*.list`; do basename -s .list $i >> ~/my_fink_packages.txt; done</code></li>
+    <li>Once you have captured your list of previous packages, upgraded to macOS 10.15, and installed Fink into <code>/opt</code>, run the following command to batch build and reinstall your previous Fink packages: <code>cat ~/my_fink_packages.txt | xargs fink reinstall</code>. Note that some packages do not exist on macOS 10.15, so you might need to hand edit the file <code>my_fink_packages.txt</code> to remove the missing packages before trying to reinstall.</li>
+  </ul>
+ </body>
+</newsitem>
 <newsitem>
  <date>2019-10-02</date>
  <headline>10.15 (Catalina) and Xcode11 information</headline>
