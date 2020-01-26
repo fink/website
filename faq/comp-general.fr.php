@@ -57,7 +57,14 @@ Failed: installing toto-0.1.2-3 failed</pre><p>vous devez rechercher <code>libta
 </a>
 <a name="usr-local-libs">
 <div class="question"><p><b><?php echo FINK_Q ; ?>6.8: Des problèmes de compilation de paquet Fink apparaissent quand des bibliothèques ou des headers sont installés dans le répertoire /usr/local. Que faire ?</b></p></div>
-<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les bibliothèques et les headers installés dans le répertoire <code>/usr/local</code> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des bibliothèques installées dans le répertoire <code>/usr/local/lib</code> ou des headers installés dans le répertoire <code>/usr/local/include</code>. Si c'est le cas, déplacez temporairement le répertoire <code>/usr/local</code> via la commande :</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>construisez le paquet, puis remettez en place le répertoire <code>/usr/local</code> via la commande :</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> C'est une source fréquente de problèmes, car le script de configuration du paquet trouve les bibliothèques et les headers installés dans le répertoire <code>/usr/local</code> avant ceux installés dans l'arborescence de Fink. Si vous rencontrez des problèmes lors de la construction d'un paquet, et que vous ne trouvez pas de solution à ce problème dans les QFP, regardez si vous avez des bibliothèques installées dans le répertoire <code>/usr/local/lib</code> ou des headers installés dans le répertoire <code>/usr/local/include</code>. Si c'est le cas, déplacez temporairement le répertoire <code>/usr/local</code> via la commande :</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>construisez le paquet, puis remettez en place le répertoire <code>/usr/local</code> via la commande :</p><pre>sudo mv /usr/local.moved /usr/local</pre><p>Starting with macOS 10.14, it's sometimes not possible to rename <code>/usr/local</code>. If you get an error when renaming <code>/usr/local</code> directly, then rename the subdirectories inside it instead:</p><pre>
+sudo mv /usr/local/include /usr/local/include.moved
+sudo mv /usr/local/lib /usr/local/lib.moved
+</pre><p>do your build, and then you can put <code>/usr/local/include</code> and <code>/usr/local/lib</code>
+back:</p><pre>
+sudo mv /usr/local/include.moved /usr/local/include
+sudo mv /usr/local/lib.moved /usr/local/lib
+</pre></div>
 </a>
 <a name="toc-out-of-date">
 <div class="question"><p><b><?php echo FINK_Q ; ?>6.9: Lors de la construction d'un paquet, un message indique que la "table des matières" n'est pas à jour (message en anglais "table of contents out of date"). Que faire ?</b></p></div>

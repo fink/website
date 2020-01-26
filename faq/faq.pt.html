@@ -1011,7 +1011,14 @@ Failed: installing foo-0.1.2-3 failed</pre><p>então você deve procurar por <tt
         <tt style="white-space: nowrap;">/usr/local/include</tt>. Em caso afirmativo, tente
         renomear <tt style="white-space: nowrap;">/usr/local</tt> para algum outro nome, por
         exemplo</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>proceda sua compilação e então volte ao nome original de
-        <tt style="white-space: nowrap;">/usr/local</tt>:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+        <tt style="white-space: nowrap;">/usr/local</tt>:</p><pre>sudo mv /usr/local.moved /usr/local</pre><p>Starting with macOS 10.14, it's sometimes not possible to rename <tt style="white-space: nowrap;">/usr/local</tt>. If you get an error when renaming <tt style="white-space: nowrap;">/usr/local</tt> directly, then rename the subdirectories inside it instead:</p><pre>
+        sudo mv /usr/local/include /usr/local/include.moved
+        sudo mv /usr/local/lib /usr/local/lib.moved
+        </pre><p>do your build, and then you can put <tt style="white-space: nowrap;">/usr/local/include</tt> and <tt style="white-space: nowrap;">/usr/local/lib</tt>
+        back:</p><pre>
+        sudo mv /usr/local/include.moved /usr/local/include
+        sudo mv /usr/local/lib.moved /usr/local/lib
+        </pre></div>
     </a>
     <a name="comp-general.toc-out-of-date">
       <div class="question"><p><b>Q6.9: Quando tento compilar um pacote, recebo uma mensagem dizendo que um
