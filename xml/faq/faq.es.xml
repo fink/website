@@ -1130,6 +1130,17 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
         <p>do your build, and then put <filename>/usr/local</filename>
         back:</p>
         <codeblock>sudo mv /usr/local.moved /usr/local</codeblock>
+        <p>Starting with macOS 10.14, it's sometimes not possible to rename <filename>/usr/local</filename>. If you get an error when renaming <filename>/usr/local</filename> directly, then rename the subdirectories inside it instead:</p>
+        <codeblock>
+        sudo mv /usr/local/include /usr/local/include.moved
+        sudo mv /usr/local/lib /usr/local/lib.moved
+        </codeblock>
+        <p>do your build, and then you can put <filename>/usr/local/include</filename> and <filename>/usr/local/lib</filename>
+        back:</p>
+        <codeblock>
+        sudo mv /usr/local/include.moved /usr/local/include
+        sudo mv /usr/local/lib.moved /usr/local/lib
+        </codeblock>
       </answer>
     </faqentry>
     <faqentry name="toc-out-of-date">
