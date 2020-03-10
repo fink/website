@@ -1209,7 +1209,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
       反対は <em>--verbose</em>。<filename>fink.conf</filename> 中の <xref chapter="conf" section="optional">Verbose</xref> フラグを無視します。 </p>
       <p><em>-V, --version</em> - バージョン情報を表示します。</p>
       <p><em>-v, --verbose</em> - <code>fink</code> をウルサくさせます。
-      反対は <em>--verbose</em>。<filename>fink.conf</filename> 中の <xref chapter="conf" section="optional">Verbose</xref> フラグを無視します。 </p>
+      反対は <em>--quiet</em>。<filename>fink.conf</filename> 中の <xref chapter="conf" section="optional">Verbose</xref> フラグを無視します。 </p>
       <p><em>-y, --yes</em> - 全ての質問に自動的に既定のオプションを適用します。</p>
       <p><em>-K, --keep-root-dir</em>   - 
                 <code>fink</code> は、パッケージをビルド後に <xref chapter="conf" section="optional">Buildpath</xref> 中の <filename>root-[name]-[version]-[revision]</filename>
