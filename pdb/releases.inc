@@ -27,6 +27,8 @@ foreach(array(
 	new Distribution("10.12",       "x86_64",  "10.12/x86_64",       "dists/10.9-libcxx",  17, TRUE, TRUE, TRUE),
 	new Distribution("10.13",       "x86_64",  "10.13/x86_64",       "dists/10.9-libcxx",  18, TRUE, TRUE, TRUE),
 	new Distribution("10.14",       "x86_64",  "10.14/x86_64",       "dists/10.9-libcxx",  19, TRUE, TRUE, TRUE),
+	new Distribution("10.14.5",     "x86_64",  "10.14.5/x86_64",     "dists/10.9-libcxx",  20, TRUE, TRUE, TRUE),
+	new Distribution("10.15",       "x86_64",  "10.15/x86_64",       "dists/10.9-libcxx",  21, TRUE, TRUE, TRUE),
 ) as $_dist) {
 	$distributions[$_dist->getId()] = $_dist;
 }
