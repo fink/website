@@ -90,6 +90,8 @@ foreach(array(
 	new Release($distributions["10.13-x86_64"],         "stable",           "current", 53, TRUE),
 	new Release($distributions["10.14-x86_64"],         "bindist",          "current", 54, TRUE),
 	new Release($distributions["10.14-x86_64"],         "stable",           "current", 55, TRUE),
+	new Release($distributions["10.14.5-x86_64"],         "stable",           "current", 56, TRUE),
+	new Release($distributions["10.15-x86_64"],         "stable",           "current", 57, TRUE),
 ) as $_rel) {
 	$releases[$_rel->getId()] = $_rel;
 }
