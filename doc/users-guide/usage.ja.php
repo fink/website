@@ -32,7 +32,7 @@ include_once "header.ja.inc";
       反対は <b>--verbose</b>。<code>fink.conf</code> 中の <a href="conf.php?phpLang=ja#optional">Verbose</a> フラグを無視します。 </p>
       <p><b>-V, --version</b> - バージョン情報を表示します。</p>
       <p><b>-v, --verbose</b> - <code>fink</code> をウルサくさせます。
-      反対は <b>--verbose</b>。<code>fink.conf</code> 中の <a href="conf.php?phpLang=ja#optional">Verbose</a> フラグを無視します。 </p>
+      反対は <b>--quiet</b>。<code>fink.conf</code> 中の <a href="conf.php?phpLang=ja#optional">Verbose</a> フラグを無視します。 </p>
       <p><b>-y, --yes</b> - 全ての質問に自動的に既定のオプションを適用します。</p>
       <p><b>-K, --keep-root-dir</b>   - 
                 <code>fink</code> は、パッケージをビルド後に <a href="conf.php?phpLang=ja#optional">Buildpath</a> 中の <code>root-[name]-[version]-[revision]</code>
