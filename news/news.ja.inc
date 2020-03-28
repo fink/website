@@ -1,4 +1,6 @@
-<a name="2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details"><span class="news-date">2019-10-27: </span><span class="news-headline">Further 10.15 (Catalina) and Xcode11 upgrade details</span></a><?php gray_line(); ?>
+<a name="2020-03-28%20fink-0.45.1%20released"><span class="news-date">2020-03-28: </span><span class="news-headline">fink-0.45.1 released</span></a><?php gray_line(); ?>
+  <p>The Fink Project has released fink-0.45.1. This release provides support for all macOS releases up to and including 10.15.4, as well as support for users running the zsh shell. Run <code>fink selfupdate</code> to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
+ <a name="2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details"><span class="news-date">2019-10-27: </span><span class="news-headline">Further 10.15 (Catalina) and Xcode11 upgrade details</span></a><?php gray_line(); ?>
   <p>If upgrading to macOS 10.15 (Catalina) from an earlier macOS release, your existing Fink install will cease to work if installed outside <code>/opt</code> (such as to the previous default <code>/sw</code>) and must be reinstalled from scratch using Fink release 0.45.0 or later.</p>
   <p>The old Fink install is archived into <code>/Users/Shared/Relocated Items</code>. It's possible to manually recover downloaded source archives and configuration files from there to use in a new Fink install. However, it's not possible to reuse built .deb packages because they hardcode the original path that contained Fink.</p>
   <p>Upgrade and installation hints if existing Fink install is outside <code>/opt</code>:</p>
@@ -17,16 +19,4 @@
   <p>Once macOS 10.15 is officially released, we suggest waiting to upgrade until we know how the system will treat existing installs and we can determine the best upgrade path.</p>
   <p>For anyone installing Fink for the first time (on 10.15beta or an earlier macOS version), we now recommend using <code>/opt/sw</code> as the install location, since that's known to work. The next Fink release after macOS 10.15 is out will use <code>/opt/sw</code> as the default install location.</p>
   <p>Xcode11 is known to currently break building the gccX and several other important packages. If possible (especially 10.14 users), hold off on upgrading to Xcode11 unless you need something specific from it. If you do upgrade to Xcode11, make sure that the Command Line Tools are also upgraded to version 11 for your macOS release.</p>
- <a name="2019-08-05%20fink-0.45.0%20released"><span class="news-date">2019-08-05: </span><span class="news-headline">fink-0.45.0 released</span></a><?php gray_line(); ?>
-  <p>The Fink Project has released fink-0.45.0. This release provides support for macOS 10.14.5 and up, including preliminary support for macOS 10.15beta. This release also provides full support for .app bundles in APFS volumes.</p>
-  <p>If your system is still on macOS 10.14.4 or earlier:</p>
-  <ol>
-    <li>In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.45.0</code>.</li>
-    <li>Update to the latest version of Mojave.</li>
-    <li>In a terminal window, run <code>fink reinstall fink</code>.</li>
-  </ol>
-  <p>If you have already updated to macOS 10.14.5:</p>
-  <ol>
-    <li>In a terminal window, run <code>fink selfupdate</code> and install <code>fink-0.45.0</code>.</li>
-  </ol>
  

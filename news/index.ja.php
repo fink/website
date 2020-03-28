@@ -1,13 +1,15 @@
 <?php
 $title = "News";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/10/27 9:08:43';
+$cvs_date = 'Date: 2020/03/28 8:45:00';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details"><span class="news-date">2019-10-27: </span><span class="news-headline">Further 10.15 (Catalina) and Xcode11 upgrade details</span></a><?php gray_line(); ?>
+<a name="2020-03-28%20fink-0.45.1%20released"><span class="news-date">2020-03-28: </span><span class="news-headline">fink-0.45.1 released</span></a><?php gray_line(); ?>
+  <p>The Fink Project has released fink-0.45.1. This release provides support for all macOS releases up to and including 10.15.4, as well as support for users running the zsh shell. Run <code>fink selfupdate</code> to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
+ <a name="2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details"><span class="news-date">2019-10-27: </span><span class="news-headline">Further 10.15 (Catalina) and Xcode11 upgrade details</span></a><?php gray_line(); ?>
   <p>If upgrading to macOS 10.15 (Catalina) from an earlier macOS release, your existing Fink install will cease to work if installed outside <code>/opt</code> (such as to the previous default <code>/sw</code>) and must be reinstalled from scratch using Fink release 0.45.0 or later.</p>
   <p>The old Fink install is archived into <code>/Users/Shared/Relocated Items</code>. It's possible to manually recover downloaded source archives and configuration files from there to use in a new Fink install. However, it's not possible to reuse built .deb packages because they hardcode the original path that contained Fink.</p>
   <p>Upgrade and installation hints if existing Fink install is outside <code>/opt</code>:</p>
