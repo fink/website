@@ -1798,7 +1798,8 @@ At present, the only valid values for distribution are
 <code>10.12</code>,
 <code>10.13</code>,
 <code>10.14</code>,
-and <code>10.14.5</code>
+<code>10.14.5</code>,
+and <code>10.15</code>
 . If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
 the local machine distribution is not listed. If the field is omitted
@@ -1845,8 +1846,8 @@ various perl versions in the 10.3 through 10.14.5 distributions
     perl 5.12.3:                         <em>10.7</em>, 10.8, 10.9
     perl 5.12.4:                         10.7, <em>10.8</em>, 10.9
     perl 5.16.2:                         10.7, 10.8, <em>10.9</em>, 10.10, 10.11, 10.12, 10.13
-    perl 5.18.2:                         10.7, 10.8, 10.9, <em>10.10</em>, <em>10.11</em>, <em>10.12</em>, <em>10.13</em>, <em>10.14</em>, 10.14.5
-    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <em>10.14.5</em>
+    perl 5.18.2:                         10.7, 10.8, 10.9, <em>10.10</em>, <em>10.11</em>, <em>10.12</em>, <em>10.13</em>, <em>10.14</em>, 10.14.5, 10.15
+    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <em>10.14.5</em>, <em>10.15</em>
 </codeblock>
 <p>A way to include all supported variants in a single finkinfo file is as follows.
 </p>
