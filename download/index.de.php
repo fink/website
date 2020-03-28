@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 15:16:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 10:24:00 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -154,8 +154,14 @@ registrieren sie sich kostenlos und laden sie Xcode über den Mac App Store.</p>
   <caption>Empfohlene Version der Developer Tools (Xcode)</caption>
   <tbody>
     <tr>
+        <td>10.15</td>
+        <td>Die Command Line Tools für Catalina, optionally Xcode 11.3.1<br>
+        Die Command Line Tools kann man mit dem Kommando
+        <code>xcode-select --install</code> oder in einem separaten Paket.</td>
+    </tr>
+    <tr>
         <td>10.14</td>
-        <td>Die Command Line Tools für Mojave, optionally Xcode 10.1<br>
+        <td>Die Command Line Tools für Mojave, optionally Xcode 11.3.1<br>
         Die Command Line Tools kann man mit dem Kommando
         <code>xcode-select --install</code> oder in einem separaten Paket.</td>
     </tr>

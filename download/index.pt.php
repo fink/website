@@ -1,7 +1,7 @@
 <?php
 $title = "Guia rápido para download";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 15:16:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 10:24:00 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -150,8 +150,12 @@ atualizações) após registrar-se gratuitamente.</p>
   Mac OS</caption>
   <tbody>
     <tr>
+      <td>10.15</td>
+      <td>Xcode 11.3.1</td>
+    </tr>
+    <tr>
       <td>10.14</td>
-      <td>Xcode 10.1</td>
+      <td>Xcode 11.3.1</td>
     </tr>
     <tr>
       <td>10.13</td>

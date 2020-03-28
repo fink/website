@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 15:16:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 10:24:00 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -105,8 +105,13 @@ To update <code>fink</code> run <code>fink selfupdate</code>.  When prompted, se
   <caption>Recommended Developer Tools versions by OS</caption>
   <tbody>
     <tr>
+        <td>10.15</td>
+        <td>The Command Line Tools for Catalina, optionally Xcode 11.3.1<br>
+        The Command Line Tools can be downloaded via the <code>xcode-select --install</code> command or in a separate package.</td>
+    </tr>
+    <tr>
         <td>10.14</td>
-        <td>The Command Line Tools for Mojave, optionally Xcode 10.1<br>
+        <td>The Command Line Tools for Mojave, optionally Xcode 11.3.1<br>
         The Command Line Tools can be downloaded via the <code>xcode-select --install</code> command or in a separate package.</td>
     </tr>
     <tr>
