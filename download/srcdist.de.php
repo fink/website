@@ -27,7 +27,7 @@ und zu installieren.</p>
 
 <ul>
   <li>
-Nehmen sie für macOS 10.9-10.14
+Nehmen sie für macOS 10.9-10.15
  <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?>K<br>
   </li>
 Nehmen sie für OS X 10.7-8, use

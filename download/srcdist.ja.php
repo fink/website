@@ -24,7 +24,7 @@ include "header.inc";
 
 <ul>
 	 <li>
-OS X 10.9-10.14 では、
+macOS 10.9-10.15 では、
 <a href="https://github.com/fink/scripts/releases/latest">helper script</a>
 を使うことができます。
 これは、下のダウンロードとビルドを自動化したものです。
