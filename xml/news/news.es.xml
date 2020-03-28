@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
- <cvsid>$Id: news.es.xml,v 1.81 2019/10/27 9:08:43 nieder Exp $</cvsid>
+ <cvsid>$Id: news.es.xml,v 1.82 2020/03/28 8:45:00 nieder Exp $</cvsid>
+<newsitem>
+ <date>2020-03-28</date>
+ <headline>fink-0.45.1 released</headline>
+ <body>
+  <p>The Fink Project has released fink-0.45.1. This release provides support for all macOS releases up to and including 10.15.4, as well as support for users running the zsh shell. Run <code>fink selfupdate</code> to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2019-10-27</date>
  <headline>Further 10.15 (Catalina) and Xcode11 upgrade details</headline>
