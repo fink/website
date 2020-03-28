@@ -1,7 +1,7 @@
 <?php
-$title = "Anleitung zur Aktualisierung unter Mac OS 10.12";
-$cvs_author = '$Author: kamischi $';
-$cvs_date = '$Date: 2016/09/21 19:03:02 $';
+$title = "Anleitung zur Aktualisierung unter macOS 10.12";
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 11:36:00 $';
 
 include "header.inc";
 ?>
@@ -17,13 +17,13 @@ include "header.inc";
 		Aktualisieren sie das Betriebssystem.
 	</li>
 	<li>
-		Wenn noch nicht erfolgt, installieren sie Xcode 8.x oder zumindest seine Command 
+		Wenn noch nicht erfolgt, installieren sie Xcode 9.2 oder zumindest seine Command 
 		Line Tools.
-		Ist Xcode 8.x installiert, muss man immer noch die Command Line Tools erneut 
+		Ist Xcode 9.2 installiert, muss man immer noch die Command Line Tools erneut 
 		installieren, selbst wenn sie bereits installiert waren.
 	</li>
 	<li>
-		Haben sie Xcode 8.x, führen sie <pre>sudo xcodebuild -license</pre> aus, um die
+		Haben sie Xcode 9.2, führen sie <pre>sudo xcodebuild -license</pre> aus, um die
 		Lizenz für Xcode zu akzeptieren. Wenn man nur die Command Line Tools verwendet, 
 		ist dies nicht nötig.
 	</li>

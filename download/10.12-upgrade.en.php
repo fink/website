@@ -1,7 +1,7 @@
 <?php
 $title = "Upgrade Instructions for macOS 10.12";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 19:03:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 11:36:00 $';
 
 include "header.inc";
 ?>
@@ -17,12 +17,12 @@ include "header.inc";
 		Update the OS.
 	</li>
 	<li>
-		Install Xcode 8.x if you haven't already, or at least its Command Line Tools.
-		If already have Xcode 8.x, you will still need to reinstall the Command Line Tools,
+		Install Xcode 9.2 if you haven't already, or at least its Command Line Tools.
+		If already have Xcode 9.2, you will still need to reinstall the Command Line Tools,
 		even if you had those installed already.
 	</li>
 	<li>
-		If you have Xcode 8.x, run <pre>sudo xcodebuild -license</pre> to accept the 
+		If you have Xcode 9.2, run <pre>sudo xcodebuild -license</pre> to accept the 
 		terms of the Xcode license.  This is not required if you are using only the 
 		command-line tools.
 	</li>

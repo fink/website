@@ -1,7 +1,7 @@
 <?php
-$title = "Upgrade Instructions for Mac OS X 10.10";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2015/11/15 21:18:57 $';
+$title = "Upgrade Instructions for Mac OS X 10.11";
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 11:39:00 $';
 
 include "header.inc";
 ?>
@@ -17,13 +17,13 @@ include "header.inc";
 		Update the OS.
 	</li>
 	<li>
-		Install Xcode 7.1 if you haven't already, or at least its Command Line Tools
+		Install Xcode 8.2.1 if you haven't already, or at least its Command Line Tools
 		for Yosemite.
-		If already have Xcode 7.1, you will still need to reinstall the Command Line Tools,
+		If already have Xcode 8.2.1, you will still need to reinstall the Command Line Tools,
 		even if you had those installed under Mavericks or Yosemite already.
 	</li>
 	<li>
-		If you have Xcode 7.1, run <pre>sudo xcodebuild -license</pre> to accept the 
+		If you have Xcode 8.2.1, run <pre>sudo xcodebuild -license</pre> to accept the 
 		terms of the Xcode license.  This is not required if you are using only the 
 		command-line tools.
 	</li>
@@ -64,7 +64,7 @@ and saves them for later use during the Fink install on 10.11</p>
 <ol>
     <li>Use <pre>grep -B1 "install ok installed" /sw/var/lib/dpkg/status | grep Package | cut -d: -f2 > fink_packages.txt</pre> to dump your package information to a file.</li>
     <li>Rename your Fink tree by using <pre>sudo mv /sw /sw.old</pre>, for example.</li>
-    <li>Install OS X 10.11, as well as Xcode 7.1, or the Command Line Tools at minimum.</li>
+    <li>Install OS X 10.11, as well as Xcode 8.2.1, or the Command Line Tools at minimum.</li>
     <li><a href="./srcdist.php">Install Fink</a> on your new 10.11 system.</li>
     <li>Run the command: <pre>cat fink_packages.txt | xargs fink install</pre> to have your
      new Fink setup install as many of the packages that you previously had installed on 10.8 or earlier as are available.</li>

@@ -1,7 +1,7 @@
 <?php
-$title = "Upgrade Instructions for Mac OS X 10.10";
-$cvs_author = '$Author: babayoshihiko $';
-$cvs_date = '$Date: 2016/01/14 00:43:23 $';
+$title = "Upgrade Instructions for Mac OS X 10.11";
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 11:39:00 $';
 
 include "header.inc";
 ?>
@@ -17,12 +17,12 @@ include "header.inc";
 		OS をアップデート。
 	</li>
 	<li>
-		まだインストールしていなければ、Xcode 7.1 をインストールするか、Yosemite 用のコマンドラインツールをインストール。
-		Xcode 7.1 をインストール済みなら、Marvericks か Yosemite でインストールしていても、
+		まだインストールしていなければ、Xcode 8.2.1 をインストールするか、Yosemite 用のコマンドラインツールをインストール。
+		Xcode 8.2.1 をインストール済みなら、Marvericks か Yosemite でインストールしていても、
 		コマンドラインツールを再インストールする必要があります。
 	</li>
 	<li>
-		Xcode 7.1 があるなら、 <pre>sudo xcodebuild -license</pre> を実行し、
+		Xcode 8.2.1 があるなら、 <pre>sudo xcodebuild -license</pre> を実行し、
 		Xcode ライセンス条項を受け入れます。
 		これは、コマンドラインツールだけを使うのであれば必要ありません。
 	</li>
@@ -64,7 +64,7 @@ include "header.inc";
     <li><pre>grep -B1 &quot;install ok installed&quot; /sw/var/lib/dpkg/status | grep Package | cut -d: -f2 &gt; fink_packages.txt</pre>
     を使い、パッケージ情報をファイルに保存します。</li>
     <li><pre>sudo mv /sw /sw.old</pre> の Fink ツリーを移動します。</li>
-    <li>最低限、OS X 10.11, Xcode 7.1、コマンドラインツールをインストールします。</li>
+    <li>最低限、OS X 10.11, Xcode 8.2.1、コマンドラインツールをインストールします。</li>
     <li>10.11 をインストール後、<a href="./srcdist.php">Fink をインストール</a>します。</li>
     <li>コマンド <pre>cat fink_packages.txt | xargs fink install</pre> を実行し、
     可能な限り、10.8 上でインストールしたパッケージを、新しい Fink がインストールします。</li>
