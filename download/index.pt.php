@@ -20,7 +20,7 @@ href="upgrade.php?phpLang=pt">matriz de atualização</a>.</p>
 versão de binários.</p>
 
 <ol>
-  <li><p>Usuários 10.6, 10.7, 10.8, 10.9, 10.10, 10.11, 10.12, 10.13, e 10.14: no momento não há um instalador binário. Siga as
+  <li><p>Usuários 10.6, 10.7, 10.8, 10.9, 10.10, 10.11, 10.12, 10.13, 10.14, e 10.15: no momento não há um instalador binário. Siga as
   instruções para <a href="srcdist.php">instalação a partir do código
   fonte</a>.<br/>
   Usuários 10.5: Baixe a imagem de disco contendo o instalador:<br>

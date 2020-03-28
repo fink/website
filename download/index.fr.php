@@ -15,7 +15,7 @@ include "../fink_version.inc";
 <ol>
 <li>
 <p>
-10.6 - 10.14 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
+10.6 - 10.15 users: There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 
 10.5 users: Téléchargez l'image disque de l'installeur :<br>
 <?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Installeur binaire Fink " . $fink_version . " pour PowerPC", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>

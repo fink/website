@@ -22,7 +22,7 @@ with the binary release.
 </p>
 <ol>
 <li>
-<p>10.6 to 10.14 users:  There is not currently a binary installer, and you will
+<p>10.6 to 10.15 users: There is not currently a binary installer, and you will
 need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 10.5 users:  
 Download the installer disk image:<br>

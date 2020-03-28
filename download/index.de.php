@@ -24,7 +24,7 @@ Ihnen, einen schnellen Einstieg zu finden.
 <ol>
 <li>
 <p>
-10.6, 10.7, 10.8 10.9, 10.10, 10.11, 10.12, 10.13, und 10.14 Nutzer: Derzeit gibt es keine binäre Installation und 
+10.6, 10.7, 10.8 10.9, 10.10, 10.11, 10.12, 10.13, 10.14, und 10.15 Nutzer: Derzeit gibt es keine binäre Installation und 
 sie müssen statt dessen der Anleitung 
 <A href="srcdist.php">Quellcode-Installation</A> folgen.<br>
 

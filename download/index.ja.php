@@ -25,7 +25,7 @@ Fink をインストール、アップグレードする方法はたくさんあ
 <ol>
 <li>
 <p>
-10.6, 10.7, 10.8, 10.9, 10.10, 10.11, 10.12, 10.13 and 10.14 ユーザ: まだバイナリインストーラはありません。<A href="srcdist.php">ソースインストール</A>をご覧ください。<br>
+10.6, 10.7, 10.8, 10.9, 10.10, 10.11, 10.12, 10.13, 10.14, and 10.15 ユーザ: まだバイナリインストーラはありません。<A href="srcdist.php">ソースインストール</A>をご覧ください。<br>
 
 10.5 ユーザ: インストーラディスクイメージをダウンロード:<br>
 <?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " バイナリインストーラ (PowerPC)", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>
