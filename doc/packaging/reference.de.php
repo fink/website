@@ -189,7 +189,8 @@ Derzeit sind die gültigen Distributionen
 <code>10.12</code>,
 <code>10.13</code>,
 <code>10.14</code>,
-und <code>10.14.5</code>
+<code>10.14.5</code>,
+and <code>10.15</code>
 . Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
 ignoriert Fink die Paketbeschreibung, wenn die lokal vorhandene Distribution
 nicht aufgelistet ist. Ist das Feld weg gelassen oder der Wert leer, werden
@@ -233,8 +234,8 @@ Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.
     perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
     perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
-    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>, 10.14.5
-    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <b>10.14.5</b>
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>, 10.14.5, 10.15
+    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <b>10.14.5</b>, <b>10.15</b>
 </pre>
 <p>
 Eine Möglichkeit, alle unterstützten Varianten in einer einzigen finkinfo-Datei
