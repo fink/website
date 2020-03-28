@@ -6,6 +6,10 @@ $cvs_date = '$Date: 2020/03/28 11:36:00 $';
 include "header.inc";
 ?>
 
+<?php
+$xcode_ver = "9.2"
+?>
+
 <h1>Upgrade Instructions for macOS 10.12</h1>
 <h2>10.9/10/11 to 10.12</h2>
 <ol>
@@ -17,12 +21,12 @@ include "header.inc";
 		Update the OS.
 	</li>
 	<li>
-		Install Xcode 9.2 if you haven't already, or at least its Command Line Tools.
-		If already have Xcode 9.2, you will still need to reinstall the Command Line Tools,
+		Install Xcode <?php echo $xcode_ver ?> if you haven't already, or at least its Command Line Tools.
+		If already have Xcode <?php echo $xcode_ver ?>, you will still need to reinstall the Command Line Tools,
 		even if you had those installed already.
 	</li>
 	<li>
-		If you have Xcode 9.2, run <pre>sudo xcodebuild -license</pre> to accept the 
+		If you have Xcode <?php echo $xcode_ver ?>, run <pre>sudo xcodebuild -license</pre> to accept the 
 		terms of the Xcode license.  This is not required if you are using only the 
 		command-line tools.
 	</li>
