@@ -16,6 +16,7 @@ $navbox = array(
   $hostlink . "download/10.11-upgrade.php?phpLang=en", "Aggiornamento 10.11",
   $hostlink . "download/10.12-upgrade.php?phpLang=en", "Aggiornamento 10.12",
   $hostlink . "download/10.13-upgrade.php?phpLang=en", "Aggiornamento 10.13",
+  $hostlink . "download/10.14-upgrade.php?phpLang=en", "Aggiornamento 10.14",
   $hostlink . "download/sources_for_binaries.php?phpLang=en", "Sources for Binaries",
   $hostlink . "download/archive.php?phpLang=en", "Browser archivio"
   //"http://bindist.finkmirrors.net/", "Browser archivio"
