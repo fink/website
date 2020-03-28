@@ -48,7 +48,7 @@ include "header.inc";
   Aktualisiert man von 10.9 oder 10.10 nach 10.11 mit einer fink Version, die 10.11 nicht 
   unterstützt, geht es nicht weiter. Sie können ein kompatibles  
   <link url="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
-  pre-built fink"</link> herunter laden und mit folgendem Kommando im Terminal aus dem 
+  pre-built fink</link> herunter laden und mit folgendem Kommando im Terminal aus dem 
   Ordner installieren, in dem sie es herunter geladen haben:
   <pre>sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb</pre>
 </p>

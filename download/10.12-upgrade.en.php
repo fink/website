@@ -45,7 +45,7 @@ include "header.inc";
 	If you updated from 10.9/10/11 to 10.12 with a fink which doesn't know about 10.12, 
 	you won't be able to proceed.  You can download a compatible 
 	<link url="http://downloads.sourceforge.net/fink/fink_0.41.0-101_darwin-x86_64.deb">
-   pre-built fink"</link> and install it via the terminal by running
+   pre-built fink</link> and install it via the terminal by running
    <pre>sudo dpkg -i fink_0.41.0-101_darwin-x86_64.deb</pre> in the folder where you 
    downloaded it.
 </p>
