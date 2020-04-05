@@ -585,7 +585,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
     </faqentry>
     <faqentry name="kernel-panics">
       <question>
-        <p>Cuando uso Fink, my equipo se congela /  se produce un kernel panic / muere. Ayuda!</p>
+        <p>Cuando uso Fink, my equipo se congela / se produce un kernel panic / muere. Ayuda!</p>
       </question>
       <answer translated="no">
         <p>A number of recent reports on the <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
