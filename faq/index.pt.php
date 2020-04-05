@@ -1,7 +1,7 @@
 <?php
 $title = "Perguntas frequentes";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/04/05 5:48:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="general.php?phpLang=pt" title="Perguntas gerais">';
 
 
@@ -53,17 +53,17 @@ include_once "header.pt.inc";
         espaço em branco?</a></li><li><a href="usage-fink.php?phpLang=pt#packages-gz">5.23 Quando tento fazer uma atualização de binários, surgem várias
         mensagens com "File not found" ("Arquivo não encontrado") ou "Couldn't
         stat package source list file." ("Não foi possível acessar o arquivo
-        com a lista de códigos fontes do pacote.").</a></li><li><a href="usage-fink.php?phpLang=pt#wrong-tree">5.24 Eu mudei meu OS | Xcode mas o Fink não reconhece a mudança.</a></li><li><a href="usage-fink.php?phpLang=pt#seg-fault">5.25 Estou recebendo erros com os aplicativos <code>gzip</code> |
-        <code>dpkg-deb</code> do pacote <code>fileutils</code>.</a></li><li><a href="usage-fink.php?phpLang=pt#pathsetup-keeps-running">5.26 Quando abro uma janela do Terminal, recebo a mensagem "Your
+        com a lista de códigos fontes do pacote.").</a></li><li><a href="usage-fink.php?phpLang=pt#wrong-tree">5.24 Eu mudei meu OS mas o Fink não reconhece a mudança.</a></li><li><a href="usage-fink.php?phpLang=pt#lost-command-line-tools">5.25 After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</a></li><li><a href="usage-fink.php?phpLang=pt#seg-fault">5.26 Estou recebendo erros com os aplicativos <code>gzip</code> |
+        <code>dpkg-deb</code> do pacote <code>fileutils</code>.</a></li><li><a href="usage-fink.php?phpLang=pt#pathsetup-keeps-running">5.27 Quando abro uma janela do Terminal, recebo a mensagem "Your
         environment seems to be correctly set up for Fink already." ("Seu
         ambiente aparenta já estar corretamente configurado para o Fink") e em
-        seguida a sessão é encerrada.</a></li><li><a href="usage-fink.php?phpLang=pt#ext-drive">5.27 Eu instalei o Fink em um volume que não o do sistema e agora não
+        seguida a sessão é encerrada.</a></li><li><a href="usage-fink.php?phpLang=pt#ext-drive">5.28 Eu instalei o Fink em um volume que não o do sistema e agora não
         consigo atualizar o pacote Fink a partir do código fonte. Aparecem
-        alguns erros envolvendo <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#mirror-gnu">5.28 O Fink não consegue atualizar meus pacotes porque não pode encontrar
-        o espelho 'gnu'.</a></li><li><a href="usage-fink.php?phpLang=pt#cant-move-fink">5.29 Não consigo atualizar o Fink porque ele não consegue mover o
-        diretório <code>/sw/fink</code>.</a></li><li><a href="usage-fink.php?phpLang=pt#fc-cache">5.30 Recebo uma mensagem dizendo <q>No fonts found</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#non-admin-installer">5.31 Não consigo instalar o Fink através do pacote de instalação porque
+        alguns erros envolvendo <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#mirror-gnu">5.29 O Fink não consegue atualizar meus pacotes porque não pode encontrar
+        o espelho 'gnu'.</a></li><li><a href="usage-fink.php?phpLang=pt#cant-move-fink">5.30 Não consigo atualizar o Fink porque ele não consegue mover o
+        diretório <code>/sw/fink</code>.</a></li><li><a href="usage-fink.php?phpLang=pt#fc-cache">5.31 Recebo uma mensagem dizendo <q>No fonts found</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#non-admin-installer">5.32 Não consigo instalar o Fink através do pacote de instalação porque
         recebo mensage de erro <q>volume doesn't support
-        symlinks</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#wrong-arch">5.32 Não consigo atualizar o Fink por causa do erro <q>package
+        symlinks</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#wrong-arch">5.33 Não consigo atualizar o Fink por causa do erro <q>package
         architecture (darwin-i386) does not match system
         (darwin-powerpc).</q></a></li></ul></li><li><a href="comp-general.php?phpLang=pt"><b>6 Problemas de Compilação - Geral</b></a><ul><li><a href="comp-general.php?phpLang=pt#compiler">6.1 Um script de configuração reclama que não consegue encontrar um
         "acceptable cc". O que é isso?</a></li><li><a href="comp-general.php?phpLang=pt#cvs">6.2 Quando tento executar o comando <code>fink selfupdate-cvs</code> eu
@@ -119,7 +119,7 @@ include_once "header.pt.inc";
         file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x-delete">9.5 Quero que a tecla Delete no X11.app da Apple comporte-se como no
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-wants-xfree86">9.6 Estou tendo problemas com X11 e Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#special-x11-debug">9.7 Ainda estou tendo problemas com o X11 e o Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#tiger-gtk">9.8 Sempre que uso um aplicativo GTK, recebo mensagens de erro em
         relação a <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=pt#yelp">9.9 Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.pt.xml,v 1.10 2012/11/11 15:20:14 gecko2 Exp $-->
+<!--Generated from $Fink: faq.pt.xml,v 1.11 2020/04/05 5:48:20 nieder Exp $-->
 <?php include_once "../footer.inc"; ?>
 
 

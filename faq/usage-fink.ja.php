@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Fink の使用方法";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/04/05 5:48:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=ja" title="コンパイルの問題 - 一般"><link rel="prev" href="upgrade-fink.php?phpLang=ja" title="Fink のアップグレード (バージョン固有の問題対処法)">';
 
 
@@ -371,13 +371,17 @@ powerpc_Packages) - stat (2 No such file or directory)</pre><p><code>fink scanpa
 これによって見つからなかったファイルを作成します。</p></div>
 </a>
 <a name="wrong-tree"> 
-<div class="question"><p><b><?php echo FINK_Q ; ?>5.24: OS | Developer Tools を変えたら、 Fink が認識してくれません。</b></p></div> 
+<div class="question"><p><b><?php echo FINK_Q ; ?>5.24: OS を変えたら、 Fink が認識してくれません。</b></p></div> 
 <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fink ディストリビューション（ソースとバイナリはそのサブセットです）を変更するには、 Fink に指示する必要があります。
 これは Fink の新規インストール時に実行するスクリプトを実行します:
 </p><pre>/sw/lib/fink/postinstall.pl</pre><p>これにより、 Fink は正しく場所を指示されます。</p></div> 
 </a> 
+<a name="lost-command-line-tools">
+<div class="question"><p><b><?php echo FINK_Q ; ?>5.25: After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</b></p></div>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p><pre>Can't resolve dependency "xcode (&gt;= 6.2)"</pre><p>Fink has lost track of Apple's Command Line Tools.</p><p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <a href="https://developer.apple.com/">https://developer.apple.com/</a>.</p><p>Another possible solution is to run the following command:</p><pre>xcode-select --install</pre><p>but this often reports back that no installation is needed because the Command Line Tools are already installed. However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection.</p><p>Finally, you may need to run the command:</p><pre>sudo xcodebuild -license</pre><p>to agree to the software license.</p></div>
+</a>
 <a name="seg-fault"> 
-<div class="question"><p><b><?php echo FINK_Q ; ?>5.25: 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</b></p></div> 
+<div class="question"><p><b><?php echo FINK_Q ; ?>5.26: 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</b></p></div> 
 <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 以下の形式のエラー:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
 ### execution of gzip failed, exit code 139</pre><p>あるいは</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf - 
 gzip: stdout: Broken pipe 
@@ -387,7 +391,7 @@ gzip: stdout: Broken pipe
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>であれば、バイナリにおけるプリバインドのエラーです。修正するには:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre><p>と実行します。</p></div> 
 </a> 
 <a name="pathsetup-keeps-running"> 
-<div class="question"><p><b><?php echo FINK_Q ; ?>5.26: ターミナルウィンドウを開くと、
+<div class="question"><p><b><?php echo FINK_Q ; ?>5.27: ターミナルウィンドウを開くと、
 "Your environment seems to be correctly set up for Fink already."
 というメッセージが出てログアウトします。</b></p></div> 
 <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
@@ -399,7 +403,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 と書かれている部分を削除します。</p></div> 
 </a>
 <a name="ext-drive">
-<div class="question"><p><b><?php echo FINK_Q ; ?>5.27: 
+<div class="question"><p><b><?php echo FINK_Q ; ?>5.28: 
 	メインパーティション以外に Fink をインストールしていますが、
 	ソースからの更新ができません。
 	<q>chowname</q> を含んだエラーが出ます。
@@ -421,7 +425,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 </p></div>
 </a>
 <a name="mirror-gnu">
-<div class="question"><p><b><?php echo FINK_Q ; ?>5.28: 
+<div class="question"><p><b><?php echo FINK_Q ; ?>5.29: 
 	Fink がパッケージを更新しません。
 	'gnu' ミラーが見つからないと言っています。
 	</b></p></div>
@@ -432,7 +436,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 	</p><pre>fink install fink-mirrors</pre></div>
 </a>
 <a name="cant-move-fink">
-<div class="question"><p><b><?php echo FINK_Q ; ?>5.29: 
+<div class="question"><p><b><?php echo FINK_Q ; ?>5.30: 
 	Fink を更新できません。
 	/sw/fink を移動できないからです。
 	</b></p></div>
@@ -444,7 +448,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 </a>
 
     <a name="fc-cache">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.30: "No fonts found" というメッセージが出ます。</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.31: "No fonts found" というメッセージが出ます。</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 次のようであれば (OS 10.4 のみ):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
@@ -452,7 +456,7 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>次のように実行します:</p><pre>sudo fc-cache</pre></div>
     </a>
     <a name="non-admin-installer">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.31: インストーラから Fink をインストールできません。"volume doesn't support symlinks" エラーが出ます。</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.32: インストーラから Fink をインストールできません。"volume doesn't support symlinks" エラーが出ます。</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
         	このメッセージは、 Fink インストーラを管理者権限のないユーザーで実行すると発生します。
         	ログイン時に権限のあるユーザーにログインするか、Finder でユーザーを切り替えてください。
@@ -466,7 +470,7 @@ sudo chmod 1775 /
 	</pre></div>
     </a>
     <a name="wrong-arch">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.32: Fink を更新できない。 <q>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</q>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.33: Fink を更新できない。 <q>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</q>
 </b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> このエラーは、PPC インストーラで Intel マシンにインストールした際に発生します。  
         現在のインストールを、例えば次のように削除してください:</p><pre>sudo rm -rf /sw</pre><p>Intel マシン用のインストーラを、<a href="/download/index.php">ダウンロードページ</a>から入手してください。</p></div>

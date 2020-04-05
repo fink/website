@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: faq.zh.xml,v 1.34 2012/11/11 15:20:14 gecko2 Exp $
+Generated from $Fink: faq.zh.xml,v 1.35 2020/04/05 5:48:20 nieder Exp $
 -->
 <title>Fink Documentation - Fink 常见疑问（F.A.Q.）</title></head><body>
 <table width="100%" cellspacing="0">
@@ -24,8 +24,8 @@ Available Languages:  |
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
   <h2>Contents</h2><ul><li><a href="#general"><b>1 一般性问题</b></a><ul><li><a href="#general.what">1.1 什么是 Fink？</a></li><li><a href="#general.naming">1.2 Fink 是什么意思？</a></li><li><a href="#general.bsd-ports">1.3 Fink 和 BSD port 机制有什么区别（它被包括在 OpenPackages 和 GNU-Darwin 中）？</a></li><li><a href="#general.usr-local">1.4 为什么 Fink 不安装在 /usr/local？</a></li><li><a href="#general.why-sw">1.5 为什么选择 /sw？</a></li></ul></li><li><a href="#relations"><b>2 与其它项目的关系</b></a><ul><li><a href="#relations.upstream">2.1 你是否会把你的补丁反馈给上游维护者？</a></li><li><a href="#relations.debian">2.2 你们和 Debian 项目的关系是什么？你们在把 Debian Linux 移植到 Mac OS X 上吗？</a></li><li><a href="#relations.apple">2.3 你们和苹果公司的关系是什么？</a></li><li><a href="#relations.darwinports">2.4 你们和 Darwinports 的关系是什么？</a></li></ul></li><li><a href="#mirrors"><b>3 Fink 镜像</b></a><ul><li><a href="#mirrors.when-use">3.1 什么是 Fink 镜像？</a></li><li><a href="#mirrors.why">3.2 为什么我需要使用 rsync 镜像服务器？</a></li><li><a href="#mirrors.where">3.3 在哪里我可以找到关于 Fink 镜像的更多信息？</a></li><li><a href="#mirrors.when-not">3.4 我不能连接 rsync 服务器，我应该怎么办？</a></li><li><a href="#mirrors.otherinfogone">3.5 我现在已经改换到 rsync 方法，但所有没有用到的代码树都消失了？</a></li><li><a href="#mirrors.howswitch">3.6 我怎么在这两种方法中切换？</a></li><li><a href="#mirrors.Master">3.7 什么是 Distfiles 镜像？</a></li></ul></li><li><a href="#upgrade-fink"><b>4 升级 Fink （解决特定版本的问题）</b></a><ul><li><a href="#upgrade-fink.leopard-bindist1">4.1 Fink doesn't see new packages even after I've run an rsync or cvs selfupdate.</a></li><li><a href="#upgrade-fink.leopard-bindist2">4.2 When I try to install stuff I get 'Can't resolve dependency "fink (&gt;= 0.28.0)"'</a></li><li><a href="#upgrade-fink.stuck-gettext">4.3 Fink tells me to run 'sudo apt-get install libgettext3-dev=0.14.5-2' to clear up inconsistent dependencies but I'm still stuck.</a></li><li><a href="#upgrade-fink.stuck-dpkg">4.4 Fink tells me 'Can't resolve dependency "dpkg (&gt;= 1.10.21-1229)" for package "dpkg-base-files-0.3-1"'.  How do I solve this?</a></li></ul></li><li><a href="#usage-fink"><b>5 安装，使用和维护 Fink</b></a><ul><li><a href="#usage-fink.what-packages">5.1 我怎么知道 Fink 支持那些软件包？</a></li><li><a href="#usage-fink.proxy">5.2 我在防火墙后面，我怎么配置 Fink 使用 HTTP 代理？</a></li><li><a href="#usage-fink.firewalled-cvs">5.3 我在防火墙后面，我怎么用 CVS 方式升级已安装的软件包？</a></li><li><a href="#usage-fink.moving">5.4 我可以在安装后把 fink 移动到其它位置吗？</a></li><li><a href="#usage-fink.moving-symlink">5.5 如果我安装 Fink 以后把它移动到其它地方，但在原来的地方提供一个符号连接，可以吗？</a></li><li><a href="#usage-fink.removing">5.6 我怎么彻底反安装 Fink？</a></li><li><a href="#usage-fink.bindist">5.7 网站上的软件包数据库列有 xxx 软件包，但 apt-get 和 dselect 则没有任何显示。哪个有问题？</a></li><li><a href="#usage-fink.unstable">5.8 我想安装一个未稳定版本，但 fink 说 'no package found'。我怎么才能安装它？</a></li><li><a href="#usage-fink.unstable-onepackage">5.9 Do I <b>really</b> need to enable all of unstable just to install
         one unstable package that I want?</a></li><li><a href="#usage-fink.sudo">5.10 每次运行 sudo 都要输入密码，这很麻烦。有办法解决吗？</a></li><li><a href="#usage-fink.exec-init-csh">5.11 当我尝试运行 init.csh 或 init.sh 时，我碰到一个 "Permission denied" 错误。我做错了什么？</a></li><li><a href="#usage-fink.dselect-access">5.12 救命！我选择了 dselect 的
-"[A]ccess" 菜单，现在我不能下载软件包了！</a></li><li><a href="#usage-fink.cvs-busy">5.13 当我试图运行 <q>fink selfupdate</q> 或 "fink selfupdate-cvs" 时，我碰到了 "<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>"这个错误信息。</a></li><li><a href="#usage-fink.kernel-panics">5.14 当我使用 Fink 的时候，碰到整个机器没有反应/核心恐慌/死机。救命！</a></li><li><a href="#usage-fink.not-found">5.15 我试图安装一个软件包，但 Fink 不能下载它。下载的网站显示一个比 Fink 里面更新的版本号。我该怎么办？</a></li><li><a href="#usage-fink.fink-not-found">5.16 当我运行 Fink 或我用 Fink 安装的东西的时候，我碰到一个 "command not found" 错误。</a></li><li><a href="#usage-fink.invisible-sw">5.17 我希望在 Finder 里面隐藏 /sw 而避免用户破坏 Fink 的设置。</a></li><li><a href="#usage-fink.install-info-bad">5.18 我不能安装任何软件，因为我碰到下面的错误信息："install-info: unrecognized option `--infodir=/sw/share/info'"。</a></li><li><a href="#usage-fink.bad-list-file">5.19 我不能安装或删除任何东西，因为一个 "files list file" 问题。</a></li><li><a href="#usage-fink.dselect-garbage">5.20 当我在 <tt style="white-space: nowrap;">dselect</tt> 中选择软件包时，屏幕显示一堆乱七八糟的东西。怎么办？</a></li><li><a href="#usage-fink.cant-upgrade">5.21 我看不到要升级的 Fink 版本。</a></li><li><a href="#usage-fink.spaces-in-directory">5.22 我可以把 Fink 放到一个名字里面有空格的目录或宗卷里面吗？</a></li><li><a href="#usage-fink.packages-gz">5.23 当我进行二进制升级的时候，有很多 "File not found" 和 "Couldn't stat package source list file" 错误。</a></li><li><a href="#usage-fink.wrong-tree">5.24 我更改了我的错误系统或开发工具，但 Fink 没有认出这些改动。</a></li><li><a href="#usage-fink.seg-fault">5.25 当我运行<tt style="white-space: nowrap;"> fileutils </tt>中的 <tt style="white-space: nowrap;">gzip</tt> 或 <tt style="white-space: nowrap;">dpkg-deb</tt> 程序时出现错误！救命！</a></li><li><a href="#usage-fink.pathsetup-keeps-running">5.26 当我打开终端程序窗口时，我看到下面的信息 "Your environment seems to be correctly
-set up for Fink already."，然后它就退出登录了。</a></li><li><a href="#usage-fink.ext-drive">5.27 我把 Fink 安装到主分区之外的地方，然后我不能从源代码更新 fink 软件包了。现在出现类似 <q>chowname</q> 的错误。</a></li><li><a href="#usage-fink.mirror-gnu">5.28 Fink won't update my packages because it says it can't find the 'gnu' mirror.</a></li><li><a href="#usage-fink.cant-move-fink">5.29 I can't update Fink, because it can't move /sw/fink out of the way.</a></li><li><a href="#usage-fink.fc-cache">5.30 I get a message that says "No fonts found".</a></li><li><a href="#usage-fink.non-admin-installer">5.31  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</a></li><li><a href="#usage-fink.wrong-arch">5.32 I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
+"[A]ccess" 菜单，现在我不能下载软件包了！</a></li><li><a href="#usage-fink.cvs-busy">5.13 当我试图运行 <q>fink selfupdate</q> 或 "fink selfupdate-cvs" 时，我碰到了 "<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>"这个错误信息。</a></li><li><a href="#usage-fink.kernel-panics">5.14 当我使用 Fink 的时候，碰到整个机器没有反应/核心恐慌/死机。救命！</a></li><li><a href="#usage-fink.not-found">5.15 我试图安装一个软件包，但 Fink 不能下载它。下载的网站显示一个比 Fink 里面更新的版本号。我该怎么办？</a></li><li><a href="#usage-fink.fink-not-found">5.16 当我运行 Fink 或我用 Fink 安装的东西的时候，我碰到一个 "command not found" 错误。</a></li><li><a href="#usage-fink.invisible-sw">5.17 我希望在 Finder 里面隐藏 /sw 而避免用户破坏 Fink 的设置。</a></li><li><a href="#usage-fink.install-info-bad">5.18 我不能安装任何软件，因为我碰到下面的错误信息："install-info: unrecognized option `--infodir=/sw/share/info'"。</a></li><li><a href="#usage-fink.bad-list-file">5.19 我不能安装或删除任何东西，因为一个 "files list file" 问题。</a></li><li><a href="#usage-fink.dselect-garbage">5.20 当我在 <tt style="white-space: nowrap;">dselect</tt> 中选择软件包时，屏幕显示一堆乱七八糟的东西。怎么办？</a></li><li><a href="#usage-fink.cant-upgrade">5.21 我看不到要升级的 Fink 版本。</a></li><li><a href="#usage-fink.spaces-in-directory">5.22 我可以把 Fink 放到一个名字里面有空格的目录或宗卷里面吗？</a></li><li><a href="#usage-fink.packages-gz">5.23 当我进行二进制升级的时候，有很多 "File not found" 和 "Couldn't stat package source list file" 错误。</a></li><li><a href="#usage-fink.wrong-tree">5.24 我改变了系统，但 Fink 没有认出这些改动。</a></li><li><a href="#usage-fink.lost-command-line-tools">5.25 After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</a></li><li><a href="#usage-fink.seg-fault">5.26 当我运行<tt style="white-space: nowrap;"> fileutils </tt>中的 <tt style="white-space: nowrap;">gzip</tt> 或 <tt style="white-space: nowrap;">dpkg-deb</tt> 程序时出现错误！救命！</a></li><li><a href="#usage-fink.pathsetup-keeps-running">5.27 当我打开终端程序窗口时，我看到下面的信息 "Your environment seems to be correctly
+set up for Fink already."，然后它就退出登录了。</a></li><li><a href="#usage-fink.ext-drive">5.28 我把 Fink 安装到主分区之外的地方，然后我不能从源代码更新 fink 软件包了。现在出现类似 <q>chowname</q> 的错误。</a></li><li><a href="#usage-fink.mirror-gnu">5.29 Fink won't update my packages because it says it can't find the 'gnu' mirror.</a></li><li><a href="#usage-fink.cant-move-fink">5.30 I can't update Fink, because it can't move /sw/fink out of the way.</a></li><li><a href="#usage-fink.fc-cache">5.31 I get a message that says "No fonts found".</a></li><li><a href="#usage-fink.non-admin-installer">5.32  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</a></li><li><a href="#usage-fink.wrong-arch">5.33 I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </a></li></ul></li><li><a href="#comp-general"><b>6 一般性编译问题</b></a><ul><li><a href="#comp-general.compiler">6.1 一个配置脚本出错说找不到一个 "acceptable cc"。什么意思？</a></li><li><a href="#comp-general.cvs">6.2 我运行 "fink selfupdate-cvs"，但出现这个错误："cvs: Command not found."。</a></li><li><a href="#comp-general.missing-make">6.3 我碰到一个涉及 <tt style="white-space: nowrap;">make</tt> 的错误。
         </a></li><li><a href="#comp-general.head">6.4 我碰到 head 命令的一个奇怪的错误信息。什么出问题了？</a></li><li><a href="#comp-general.also_in">6.5 当我安装一个软件包的时候，我碰到一个错误信息说我试图覆盖另外一个软件包的文件。</a></li><li><a href="#comp-general.mv-failed">6.6 当我构建一个软件包时，"execution of mv failed, exit code 1" 错误是什么意思？</a></li><li><a href="#comp-general.node-exists">6.7 我无法安装软件包或更新它，因为我碰到一个错误说一个 "node" 已经存在。</a></li><li><a href="#comp-general.usr-local-libs">6.8 我听说安装在 /usr/local/lib 的库有时会引起 Fink 构建的问题。是这样吗？</a></li><li><a href="#comp-general.toc-out-of-date">6.9 当我构建一个软件包的时候，我碰到一个消息说 "table of contents" 已经过时。我需要怎么办？</a></li><li><a href="#comp-general.fc-atlas">6.10 当我安装 atlas 时 Fink Commander 挂了。</a></li><li><a href="#comp-general.basic-headers">6.11 I get messages saying that I'm missing <tt style="white-space: nowrap;">stddef.h</tt> | <tt style="white-space: nowrap;">wchar.h</tt> | <tt style="white-space: nowrap;">stdlib.h</tt> | <tt style="white-space: nowrap;">crt1.o</tt>, or that my <q>C compiler cannot create executables</q>.</a></li><li><a href="#comp-general.multiple-dependencies">6.12 我无法升级，因为 Fink "unable to resolve version conflict on multiple dependencies"。</a></li><li><a href="#comp-general.dpkg-parse-error">6.13 我不能安装任何东西，因为我碰到 "dpkg: parse error, in file `/sw/var/lib/dpkg/status'" 错误！</a></li><li><a href="#comp-general.freetype-problems">6.14 我碰到一个涉及 freetype 的错误。</a></li><li><a href="#comp-general.dlfcn-from-oo">6.15 我碰到一个涉及 `Dl_info' 的编译错误。</a></li><li><a href="#comp-general.gcc2">6.16 Fink says I'm missing <tt style="white-space: nowrap;">gcc2</tt> or <tt style="white-space: nowrap;">gcc3.1</tt> but I can't seem to
         install it.</a></li><li><a href="#comp-general.system-java">6.17 Fink 提示说 <tt style="white-space: nowrap;">Failed: Can't resolve dependency "system-java14-dev"</tt>，但我却找不到有这个软件包。</a></li><li><a href="#comp-general.dpkg-split">6.18 当我尝试安装东西的时候，我碰到 <q>dpkg (subprocess): failed to exec dpkg-split to see if it's part of a multiparter: No such file or directory</q> 这样的错误。我怎么修复它？</a></li><li><a href="#comp-general.xml-parser">6.19 我碰到这个 <q>configure: error: XML::Parser perl module is required for intltool</q> 错误信息。我应该怎么办？</a></li><li><a href="#comp-general.master-problems">6.20 I'm trying to download a package, but Fink goes to some weird site with <q>distfiles</q> in its name, and the file isn't there.</a></li><li><a href="#comp-general.compile-options">6.21 I want Fink to use different options in building a package.</a></li><li><a href="#comp-general.alternates">6.22 Whenever I try to build from source, Fink keeps waffling between alternate versions of the same library.</a></li><li><a href="#comp-general.python-mods">6.23 I get errors involving <tt style="white-space: nowrap;">MACOSX_DEPLOYMENT_TARGET </tt>when I try to build a Python module.</a></li><li><a href="#comp-general.libtool-unrecognized-dynamic">6.24 I get <q>unrecognized option `-dynamic'</q> errors from <tt style="white-space: nowrap;">libtool</tt>.</a></li></ul></li><li><a href="#comp-packages"><b>7 编译问题－特定软件包</b></a><ul><li><a href="#comp-packages.libgtop">7.1 一个软件包构建失败，错误和 <tt style="white-space: nowrap;">sed</tt> 有关。</a></li><li><a href="#comp-packages.cant-install-xfree">7.2 我想改用 Fink　的 XFree86 软件包，但我不能安装 <tt style="white-space: nowrap;">xfree86-base</tt> 或 <tt style="white-space: nowrap;">xfree86</tt>，因为它和 <tt style="white-space: nowrap;">system-xfree86</tt> 冲突。</a></li><li><a href="#comp-packages.change-thread-nothread">7.3 怎么把 Fink 的 XFree86 从非线程化的版本改为线程化的版本（或相反）？</a></li><li><a href="#comp-packages.cctools">7.4 "当我安装 KDE 的时候，我碰到下面的信息：'Can't resolve dependency "cctools (&gt;= 446-1)"'</a></li><li><a href="#comp-packages.libiconv-gettext">7.5 I can't update <tt style="white-space: nowrap;">libiconv</tt>.</a></li><li><a href="#comp-packages.cplusplus-filt">7.6 i can't install a package because <tt style="white-space: nowrap;">c++filt</tt> is missing.  Where do I get it?</a></li><li><a href="#comp-packages.gettext-tools">7.7 Fink refuses to update the <tt style="white-space: nowrap;">gettext</tt> package,
@@ -535,11 +535,15 @@ update available list script returned error exit status 1.
 powerpc_Packages) - stat (2 No such file or directory)</pre><p>那么你需要做的是运行 <tt style="white-space: nowrap;">fink scanpackages</tt>。这会生成那些找不到的文件。</p></div>
     </a>
     <a name="usage-fink.wrong-tree">
-      <div class="question"><p><b>Q5.24: 我更改了我的错误系统或开发工具，但 Fink 没有认出这些改动。</b></p></div>
+      <div class="question"><p><b>Q5.24: 我改变了系统，但 Fink 没有认出这些改动。</b></p></div>
       <div class="answer"><p><b>A:</b> 在改动 Fink 的安装环境（源代码或二进制安装都是它的子集），需要告诉 Fink 发生了这些变动。要这样做，我们要运行一个通常是在首次安装的时候才运行的脚本：</p><pre>/sw/lib/fink/postinstall.pl</pre><p>运行完这个脚本以后，Fink 应该能够适应改动的结果。</p></div>
     </a>
+    <a name="usage-fink.lost-command-line-tools">
+      <div class="question"><p><b>Q5.25: After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</b></p></div>
+      <div class="answer"><p><b>A:</b> Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p><pre>Can't resolve dependency "xcode (&gt;= 6.2)"</pre><p>Fink has lost track of Apple's Command Line Tools.</p><p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <a href="https://developer.apple.com/">https://developer.apple.com/</a>.</p><p>Another possible solution is to run the following command:</p><pre>xcode-select --install</pre><p>but this often reports back that no installation is needed because the Command Line Tools are already installed. However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection.</p><p>Finally, you may need to run the command:</p><pre>sudo xcodebuild -license</pre><p>to agree to the software license.</p></div>
+    </a>
     <a name="usage-fink.seg-fault">
-      <div class="question"><p><b>Q5.25: 当我运行<tt style="white-space: nowrap;"> fileutils </tt>中的 <tt style="white-space: nowrap;">gzip</tt> 或 <tt style="white-space: nowrap;">dpkg-deb</tt> 程序时出现错误！救命！</b></p></div>
+      <div class="question"><p><b>Q5.26: 当我运行<tt style="white-space: nowrap;"> fileutils </tt>中的 <tt style="white-space: nowrap;">gzip</tt> 或 <tt style="white-space: nowrap;">dpkg-deb</tt> 程序时出现错误！救命！</b></p></div>
       <div class="answer"><p><b>A:</b> 出错的形式：</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
 ### execution of gzip failed, exit code 139</pre><p>或</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
 gzip: stdout: Broken pipe
@@ -549,12 +553,12 @@ gzip: stdout: Broken pipe
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>或在运行<tt style="white-space: nowrap;"> fileutils</tt> 中的工具时出现 segmentation faults 错误。比如：<tt style="white-space: nowrap;">ls</tt> 或 <tt style="white-space: nowrap;">mv</tt>，这很可能时因为某个库的预绑定错误，这可以通过运行下面命令来修正：</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
     </a>
     <a name="usage-fink.pathsetup-keeps-running">
-      <div class="question"><p><b>Q5.26: 当我打开终端程序窗口时，我看到下面的信息 "Your environment seems to be correctly
+      <div class="question"><p><b>Q5.27: 当我打开终端程序窗口时，我看到下面的信息 "Your environment seems to be correctly
 set up for Fink already."，然后它就退出登录了。</b></p></div>
       <div class="answer"><p><b>A:</b> 发生这个现象的原因是 OS X 的终端程序被告知每次登录的时候需要运行 <tt style="white-space: nowrap;">/sw/bin/pathsetup.command</tt> 命令。你可以通过删除下面的文件 <tt style="white-space: nowrap;">~/Library/Preferences/com.apple.Terminal.plist</tt> 来修正这一点。</p><p>如果这个配置文件里面有你需要保留的配置信息（所以你不能删除它），你可以用纯文本编辑器来编辑它，删除包含 <tt style="white-space: nowrap;">/sw/bin/pathsetup.command</tt> 的一行。</p></div>
     </a>
     <a name="usage-fink.ext-drive">
-    <div class="question"><p><b>Q5.27: 我把 Fink 安装到主分区之外的地方，然后我不能从源代码更新 fink 软件包了。现在出现类似 <q>chowname</q> 的错误。</b></p></div>
+    <div class="question"><p><b>Q5.28: 我把 Fink 安装到主分区之外的地方，然后我不能从源代码更新 fink 软件包了。现在出现类似 <q>chowname</q> 的错误。</b></p></div>
       <div class="answer"><p><b>A:</b> 如果你的错误信息是象这样的：</p><pre>This first test is designed to die, so please ignore the error
 message on the next line.
 # Looks like your test died before it could output anything.
@@ -570,18 +574,18 @@ Failed test (./Command/chowname.t at line 27)
     </a>
     
     <a name="usage-fink.mirror-gnu">
-      <div class="question"><p><b>Q5.28: Fink won't update my packages because it says it can't find the 'gnu' mirror.</b></p></div>
+      <div class="question"><p><b>Q5.29: Fink won't update my packages because it says it can't find the 'gnu' mirror.</b></p></div>
       <div class="answer"><p><b>A:</b> If you get an error that ends with</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>then most likely you need to update the <tt style="white-space: nowrap;">fink-mirrors</tt> package, e.g. via:</p><pre>fink install fink-mirrors</pre></div>
     </a>
     
     
     <a name="usage-fink.cant-move-fink">
-      <div class="question"><p><b>Q5.29: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
+      <div class="question"><p><b>Q5.30: I can't update Fink, because it can't move /sw/fink out of the way.</b></p></div>
       <div class="answer"><p><b>A:</b> This error:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <tt style="white-space: nowrap;">selfupdate</tt>.  Remove these:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
     </a>
 
     <a name="usage-fink.fc-cache">
-      <div class="question"><p><b>Q5.30: I get a message that says "No fonts found".</b></p></div>
+      <div class="question"><p><b>Q5.31: I get a message that says "No fonts found".</b></p></div>
       <div class="answer"><p><b>A:</b> If you see the following (so far only seen on OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
@@ -589,13 +593,13 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div>
     </a>
     <a name="usage-fink.non-admin-installer">
-      <div class="question"><p><b>Q5.31:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
+      <div class="question"><p><b>Q5.32:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
       <div class="answer"><p><b>A:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility (from the Utilities sub-folder in your Applications folder), select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.  If that doesn't work, then you may need to set your permissions manually via:</p><pre>
 sudo chmod 1775 /	  
 	</pre></div>
     </a>
     <a name="usage-fink.wrong-arch">
-      <div class="question"><p><b>Q5.32: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
+      <div class="question"><p><b>Q5.33: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
       <div class="answer"><p><b>A:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="/download/index.php">the downloads page</a>.</p></div>
     </a>
@@ -949,15 +953,15 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.5</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
+export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.9</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
-setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>
+setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv MACOSX_DEPLOYMENT_TARGET 10.9</pre><p>(assuming that the build system is running OS 10.9 or later)</p><p>
 通常最简单的办法是把这些东西加到你的启动脚本文件（比如 <tt style="white-space: nowrap;">.cshrc</tt> 或 <tt style="white-space: nowrap;">.profile</tt>），这样他们就可以自动被设置。
 如果一个软件包不使用这些环境变量，你需要自己添加
 "-I/sw/include" (对头文件) 和 "-L/sw/lib" (对库文件) 到编译指令的一行。有些软件包会使用类似 EXTRA_CFLAGS 或 --with-qt-dir= 这样的非标准配置选项。
@@ -1204,9 +1208,9 @@ fink selfupdate; fink index</pre><p>(the first line may give you warnings about 
     </a>
     
   <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2019 The Fink Project.
+Copyright (c) 2001-2020 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: faq.zh.xml,v 1.34 2012/11/11 15:20:14 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: faq.zh.xml,v 1.35 2020/04/05 5:48:20 nieder Exp $</i></p></body></html>

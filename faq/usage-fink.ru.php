@@ -1,7 +1,7 @@
 <?php
 $title = "Ч.З.В. - Использование Fink";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/04/05 5:48:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы"><link rel="prev" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)">';
 
 
@@ -458,15 +458,19 @@ fink scanpackages
 </pre><p>to fix it.</p></div>
         </a>
         <a name="wrong-tree">
-            <div class="question"><p><b><?php echo FINK_Q ; ?>5.24: Я изменил OS | Developer Tools, но Fink не
+            <div class="question"><p><b><?php echo FINK_Q ; ?>5.24: Я изменил OS, но Fink не
                     признает изменение.</b></p></div>
             <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> При изменении дистрибуции Fink (подмножествами которой являются исходные и
                     бинарные distros), Fink нуждается в получении информации о том,
                     что произошло. Для этого вы можете выполнить скрипт, который обычно
                     запускается при первоначальной инсталляции Fink:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Выполнив это, вы укажете Fink правильное место.</p></div>
         </a>
+		<a name="lost-command-line-tools">
+			<div class="question"><p><b><?php echo FINK_Q ; ?>5.25: After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</b></p></div>
+			<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p><pre>Can't resolve dependency "xcode (&gt;= 6.2)"</pre><p>Fink has lost track of Apple's Command Line Tools.</p><p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <a href="https://developer.apple.com/">https://developer.apple.com/</a>.</p><p>Another possible solution is to run the following command:</p><pre>xcode-select --install</pre><p>but this often reports back that no installation is needed because the Command Line Tools are already installed. However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection.</p><p>Finally, you may need to run the command:</p><pre>sudo xcodebuild -license</pre><p>to agree to the software license.</p></div>
+		</a>
         <a name="seg-fault">
-            <div class="question"><p><b><?php echo FINK_Q ; ?>5.25: Получаю сообщения об ошибках с приложениями <code>gzip</code> | <code>dpkg-deb</code>I
+            <div class="question"><p><b><?php echo FINK_Q ; ?>5.26: Получаю сообщения об ошибках с приложениями <code>gzip</code> | <code>dpkg-deb</code>I
                     из пакета <code> fileutils </code>! Помогите!</b></p></div>
             <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Ошибки типа:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
 ### execution of gzip failed, exit code 139</pre><p>или</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
@@ -480,7 +484,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ил�
                     могут быть устранены следующим образом:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
         </a>
         <a name="pathsetup-keeps-running">
-            <div class="question"><p><b><?php echo FINK_Q ; ?>5.26: Когда я открываю окно Terminal, получаю сообщение "Your
+            <div class="question"><p><b><?php echo FINK_Q ; ?>5.27: Когда я открываю окно Terminal, получаю сообщение "Your
                     environment seems to be correctly set up for Fink already.",
                     и сеанс завершается.</b></p></div>
             <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Дело в том, что каким-то образом программе OSX Terminal поступило указание
@@ -490,7 +494,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ил�
                     файл при помощи текстового редактора и убрать ссылку на <code>/sw/bin/pathsetup.command</code>.</p></div>
         </a>
         <a name="ext-drive">
-            <div class="question"><p><b><?php echo FINK_Q ; ?>5.27: Мой Fink инсталлирован отдельно от главного сегмента и я не могу
+            <div class="question"><p><b><?php echo FINK_Q ; ?>5.28: Мой Fink инсталлирован отдельно от главного сегмента и я не могу
                     обновить пакет fink на основе исходного кода. Появляются сообщения об ошибках
                     с упоминанием <q>chowname</q>.</b></p></div>
             <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Если сообщение об ошибке выглядит так:</p><pre>This first test is designed to die, so please ignore the error
@@ -508,13 +512,13 @@ Failed test (./Command/chowname.t at line 27)
                     где Fink инсталлирован, и отменить выбор "Ignore ownership".</p></div>
         </a>
         <a name="mirror-gnu">
-            <div class="question"><p><b><?php echo FINK_Q ; ?>5.28: Fink не хочет обновлять мои пакеты, т.к. утверждает, что
+            <div class="question"><p><b><?php echo FINK_Q ; ?>5.29: Fink не хочет обновлять мои пакеты, т.к. утверждает, что
                     не может найти зеркало 'gnu'.</b></p></div>
             <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Если вы получили сообщение об ошибке, которое оканчивается на </p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>то наиболее вероятно вам надо обновить пакет
                     <code>fink-mirrors</code> , н-р через:</p><pre>fink install fink-mirrors</pre></div>
         </a>
         <a name="cant-move-fink">
-            <div class="question"><p><b><?php echo FINK_Q ; ?>5.29: Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</b></p></div>
+            <div class="question"><p><b><?php echo FINK_Q ; ?>5.30: Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</b></p></div>
             <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Эта ошибка:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>обычно обусловлена, хотя и утверждает иное, ошибками
                     разрешений в одном из временных каталогов, создаваемых
                     в процессе автообновления - <code>selfupdate</code>. Удалите</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
@@ -522,7 +526,7 @@ Failed test (./Command/chowname.t at line 27)
         
     
     <a name="fc-cache">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.30: I get a message that says "No fonts found".</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.31: I get a message that says "No fonts found".</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> If you see the following (so far only seen on OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
@@ -530,13 +534,13 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div>
     </a>
     <a name="non-admin-installer">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.31:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.32:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility (from the Utilities sub-folder in your Applications folder), select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.  If that doesn't work, then you may need to set your permissions manually via:</p><pre>
 sudo chmod 1775 /	  
 	</pre></div>
     </a>
     <a name="wrong-arch">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.32: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.33: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="/download/index.php">the downloads page</a>.</p></div>
     </a>

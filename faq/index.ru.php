@@ -1,7 +1,7 @@
 <?php
 $title = "Ч.З.В.";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/04/05 5:48:20';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="general.php?phpLang=ru" title="Общие вопросы">';
 
 
@@ -38,14 +38,14 @@ include_once "header.ru.inc";
                     "install-info: unrecognized option `--infodir=/sw/share/info'"</a></li><li><a href="usage-fink.php?phpLang=ru#bad-list-file">5.19 Ничего не могу инсталлировать или удалить из-за проблемы с
                     файлом списка файлов ("files list file").</a></li><li><a href="usage-fink.php?phpLang=ru#dselect-garbage">5.20 Я получил кучу мусора, когда выбирал пакеты в 
                     <code>dselect</code>. Как теперь можно его использовать?</a></li><li><a href="usage-fink.php?phpLang=ru#cant-upgrade">5.21 Не получается обновить версию Fink.</a></li><li><a href="usage-fink.php?phpLang=ru#spaces-in-directory">5.22 Можно ли разместить Fink в томе или каталоге с пробелом в его имени?</a></li><li><a href="usage-fink.php?phpLang=ru#packages-gz">5.23 При попытке бинарного обновления появляется много сообщений
-                    со словами "File not found"</a></li><li><a href="usage-fink.php?phpLang=ru#wrong-tree">5.24 Я изменил OS | Developer Tools, но Fink не
-                    признает изменение.</a></li><li><a href="usage-fink.php?phpLang=ru#seg-fault">5.25 Получаю сообщения об ошибках с приложениями <code>gzip</code> | <code>dpkg-deb</code>I
-                    из пакета <code> fileutils </code>! Помогите!</a></li><li><a href="usage-fink.php?phpLang=ru#pathsetup-keeps-running">5.26 Когда я открываю окно Terminal, получаю сообщение "Your
+                    со словами "File not found"</a></li><li><a href="usage-fink.php?phpLang=ru#wrong-tree">5.24 Я изменил OS, но Fink не
+                    признает изменение.</a></li><li><a href="usage-fink.php?phpLang=ru#lost-command-line-tools">5.25 After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</a></li><li><a href="usage-fink.php?phpLang=ru#seg-fault">5.26 Получаю сообщения об ошибках с приложениями <code>gzip</code> | <code>dpkg-deb</code>I
+                    из пакета <code> fileutils </code>! Помогите!</a></li><li><a href="usage-fink.php?phpLang=ru#pathsetup-keeps-running">5.27 Когда я открываю окно Terminal, получаю сообщение "Your
                     environment seems to be correctly set up for Fink already.",
-                    и сеанс завершается.</a></li><li><a href="usage-fink.php?phpLang=ru#ext-drive">5.27 Мой Fink инсталлирован отдельно от главного сегмента и я не могу
+                    и сеанс завершается.</a></li><li><a href="usage-fink.php?phpLang=ru#ext-drive">5.28 Мой Fink инсталлирован отдельно от главного сегмента и я не могу
                     обновить пакет fink на основе исходного кода. Появляются сообщения об ошибках
-                    с упоминанием <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=ru#mirror-gnu">5.28 Fink не хочет обновлять мои пакеты, т.к. утверждает, что
-                    не может найти зеркало 'gnu'.</a></li><li><a href="usage-fink.php?phpLang=ru#cant-move-fink">5.29 Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</a></li><li><a href="usage-fink.php?phpLang=ru#fc-cache">5.30 I get a message that says "No fonts found".</a></li><li><a href="usage-fink.php?phpLang=ru#non-admin-installer">5.31  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</a></li><li><a href="usage-fink.php?phpLang=ru#wrong-arch">5.32 I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
+                    с упоминанием <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=ru#mirror-gnu">5.29 Fink не хочет обновлять мои пакеты, т.к. утверждает, что
+                    не может найти зеркало 'gnu'.</a></li><li><a href="usage-fink.php?phpLang=ru#cant-move-fink">5.30 Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</a></li><li><a href="usage-fink.php?phpLang=ru#fc-cache">5.31 I get a message that says "No fonts found".</a></li><li><a href="usage-fink.php?phpLang=ru#non-admin-installer">5.32  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</a></li><li><a href="usage-fink.php?phpLang=ru#wrong-arch">5.33 I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </a></li></ul></li><li><a href="comp-general.php?phpLang=ru"><b>6 Проблемы компиляции  - Общие вопросы</b></a><ul><li><a href="comp-general.php?phpLang=ru#compiler">6.1 Скрипт конфигурации жалуется, что не может найти
                     "acceptable cc". Что это значит?</a></li><li><a href="comp-general.php?phpLang=ru#cvs">6.2 При попытке выполнения "fink selfupdate-cvs" получаю сообщение: "cvs:
                     Command not found."</a></li><li><a href="comp-general.php?phpLang=ru#missing-make">6.3 Получил сообщение об ошибке, которое упоминает <code>make</code>
@@ -86,7 +86,7 @@ complaining that the dependencies are in an inconsistent state.</a></li><li><a h
                     XDarwin.</a></li><li><a href="usage-packages.php?phpLang=ru#gnome-two">9.6 Я сделал обновление от GNOME 1.x дo GNOME 2.x и теперь
                     <code>gnome-session</code> не открывает менеджер окон. </a></li><li><a href="usage-packages.php?phpLang=ru#apple-x11-no-windowbar">9.7 Я сделал обновление до Apple X11 в Panther и теперь у меня не хватает
                     строк заголовков в окнах.</a></li><li><a href="usage-packages.php?phpLang=ru#apple-x11-wants-xfree86">9.8 I'm having problems with X11 and Fink.</a></li><li><a href="usage-packages.php?phpLang=ru#special-x11-debug">9.9 Я меня остались проблемы с X11и Fink.</a></li><li><a href="usage-packages.php?phpLang=ru#tiger-gtk">9.10 After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=ru#yelp">9.11 I can't get the help to work for any GNOME application.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ru.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $-->
+<!--Generated from $Fink: faq.ru.xml,v 1.18 2020/04/05 5:48:20 nieder Exp $-->
 <?php include_once "../footer.inc"; ?>
 
 
