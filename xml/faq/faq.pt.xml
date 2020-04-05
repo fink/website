@@ -1014,7 +1014,7 @@ fink scanpackages</codeblock>
     </faqentry>
     <faqentry name="wrong-tree">
       <question>
-        <p>Eu mudei meu OS | Xcode mas o Fink não reconhece a mudança.</p>
+        <p>Eu mudei meu OS mas o Fink não reconhece a mudança.</p>
       </question>
       <answer>
         <p>Ao trocar a distribuição do Fink (da qual as distribuições de

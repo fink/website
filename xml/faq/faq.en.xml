@@ -837,7 +837,7 @@ fink scanpackages
     </faqentry>
     <faqentry name="wrong-tree">
       <question>
-        <p>I've changed my OS | Developer Tools, but Fink doesn't recognize
+        <p>I've changed my OS, but Fink doesn't recognize
         the change.</p>
       </question>
       <answer>

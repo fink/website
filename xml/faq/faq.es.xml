@@ -846,7 +846,7 @@ fink scanpackages
     </faqentry>
     <faqentry name="wrong-tree">
       <question>
-        <p>Cambie mi sistema OS y las herramientas de desarrollo, pero Fink no reconoce el cambio.</p>
+        <p>Cambie mi sistema OS, pero Fink no reconoce el cambio.</p>
       </question>
       <answer translated="no">
         <p>When changing the Fink distribution (of which the source and binary

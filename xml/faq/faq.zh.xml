@@ -823,7 +823,7 @@ powerpc_Packages) - stat (2 No such file or directory)</codeblock>
     </faqentry>
     <faqentry name="wrong-tree" >
       <question>
-        <p>我更改了我的错误系统或开发工具，但 Fink 没有认出这些改动。</p>
+        <p>我改变了系统，但 Fink 没有认出这些改动。</p>
       </question>
       <answer>
         <p>在改动 Fink 的安装环境（源代码或二进制安装都是它的子集），需要告诉 Fink 发生了这些变动。要这样做，我们要运行一个通常是在首次安装的时候才运行的脚本：</p>

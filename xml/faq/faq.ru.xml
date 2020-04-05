@@ -1016,7 +1016,7 @@ fink scanpackages
         </faqentry>
         <faqentry name="wrong-tree">
             <question>
-                <p>Я изменил OS | Developer Tools, но Fink не
+                <p>Я изменил OS, но Fink не
                     признает изменение.</p>
             </question>
             <answer>

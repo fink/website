@@ -682,7 +682,7 @@ fink scanpackages
 </faqentry>
 <faqentry name="wrong-tree">
 <question>
-<p>Après mise à jour du système ou des Developer Tools, Fink ne reconnaît pas les changements apportés par ces mises à jour. Que faire ?</p>
+<p>Après mise à jour du système, Fink ne reconnaît pas les changements apportés par ces mises à jour. Que faire ?</p>
 </question>
 <answer>
 <p>Lorsque vous changez la distribution de Fink (dont la distribution source et la distribution binaire sont des sous-ensembles), il faut le préciser à Fink. Pour cela, vous pouvez lancer le script qui est généralement exécuté lors de la première installation de Fink :</p>

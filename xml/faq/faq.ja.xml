@@ -870,7 +870,7 @@ powerpc_Packages) - stat (2 No such file or directory)</codeblock>
 </faqentry>
 <faqentry name="wrong-tree"> 
 <question> 
-<p>OS | Developer Tools を変えたら、 Fink が認識してくれません。</p> 
+<p>OS を変えたら、 Fink が認識してくれません。</p> 
 </question> 
 <answer> 
 <p>Fink ディストリビューション（ソースとバイナリはそのサブセットです）を変更するには、 Fink に指示する必要があります。
