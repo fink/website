@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.18 2020/04/05 5:48:20 nieder Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -855,6 +855,23 @@ fink scanpackages
         install Fink:</p>
         <codeblock>/sw/lib/fink/postinstall.pl</codeblock>
         <p>Doing this will point Fink to the correct place.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="lost-command-line-tools">
+      <question>
+        <p>After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</p>
+      </question>
+      <answer>
+        <p>Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p>
+        <codeblock>Can't resolve dependency "xcode (>= 6.2)"</codeblock>
+        <p>Fink has lost track of Apple's Command Line Tools.</p>
+        <p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <link url="https://developer.apple.com/">https://developer.apple.com/</link>.</p>
+        <p>Another possible solution is to run the following command:</p>
+        <codeblock>xcode-select --install</codeblock>
+        <p>but this often reports back that no installation is needed because the Command Line Tools are already installed. However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection.</p>
+        <p>Finally, you may need to run the command:</p>
+        <codeblock>sudo xcodebuild -license</codeblock>
+        <p>to agree to the software license.</p>
       </answer>
     </faqentry>
     <faqentry name="seg-fault">
