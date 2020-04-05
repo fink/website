@@ -1771,8 +1771,8 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
 export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
-export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.5</codeblock>
+export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.9</codeblock>
         <p>-tcsh-</p>
         <codeblock>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
@@ -1780,9 +1780,9 @@ setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS 
 setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
 setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
-setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
-setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
-	<p>(実行 OS が 10.5 以降の場合)</p>
+setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv MACOSX_DEPLOYMENT_TARGET 10.9</codeblock>
+	<p>(実行 OS が 10.9 以降の場合)</p>
         <p>
 	  これを起動ファイル (e.g. <filename>.cshrc</filename> | <filename>.profile</filename>) に入れておくと、自動的に設定され、最も簡単です。
 	  これらの環境設定を使用しないパッケージの場合、コンパイル行に

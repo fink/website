@@ -1957,8 +1957,8 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
 export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
-export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.5</codeblock>
+export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.9</codeblock>
         <p>-tcsh-</p>
         <codeblock>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
@@ -1966,9 +1966,9 @@ setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS 
 setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
 setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
-setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
-setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
-	<p>(assuming that the build system is running OS 10.5 or later)</p>
+setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv MACOSX_DEPLOYMENT_TARGET 10.9</codeblock>
+	<p>(assuming that the build system is running OS 10.9 or later)</p>
         <p>It is often easiest just to add these to your startup files (e.g.
         <filename>.cshrc</filename> | <filename>.profile</filename>) so they
         are set automatically. If a package does not use these variables, you
