@@ -230,7 +230,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 </pre><p>this is because of a restructuring of the CVS servers at sourceforge.net in 2006.  Fink files are now at <b>fink.cvs.sourceforge.net</b>.</p><p>Check your Distribution version, e.g. via</p><pre>fink --version</pre><p>If that shows <code>10.4-transitional</code>, then you need to update to the regular 10.4 distribution.  An <a href="http://prdownloads.sourceforge.net/fink/scripts-10.4-update-0.4.tar.gz?download">update script</a> has been created to assist with that.</p></div>
     </a>
     <a name="kernel-panics">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.14: Cuando uso Fink, my equipo se congela /  se produce un kernel panic / muere. Ayuda!</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.14: Cuando uso Fink, my equipo se congela / se produce un kernel panic / muere. Ayuda!</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> A number of recent reports on the <a href="http://sourceforge.net/mailarchive/forum.php?forum=fink-users">fink-users
         mailing list</a> have indicated problems (including kernel panics
         and infinite hangs during patching) when using Fink to compile
