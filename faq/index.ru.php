@@ -1,7 +1,7 @@
 <?php
 $title = "Ч.З.В.";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/04/05 5:48:20';
+$cvs_date = 'Date: 2020/05/31 13:43:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="general.php?phpLang=ru" title="Общие вопросы">';
 
 
@@ -86,7 +86,7 @@ complaining that the dependencies are in an inconsistent state.</a></li><li><a h
                     XDarwin.</a></li><li><a href="usage-packages.php?phpLang=ru#gnome-two">9.6 Я сделал обновление от GNOME 1.x дo GNOME 2.x и теперь
                     <code>gnome-session</code> не открывает менеджер окон. </a></li><li><a href="usage-packages.php?phpLang=ru#apple-x11-no-windowbar">9.7 Я сделал обновление до Apple X11 в Panther и теперь у меня не хватает
                     строк заголовков в окнах.</a></li><li><a href="usage-packages.php?phpLang=ru#apple-x11-wants-xfree86">9.8 I'm having problems with X11 and Fink.</a></li><li><a href="usage-packages.php?phpLang=ru#special-x11-debug">9.9 Я меня остались проблемы с X11и Fink.</a></li><li><a href="usage-packages.php?phpLang=ru#tiger-gtk">9.10 After updating to Tiger (OS 10.4), whenever I use a GTK app, I get errors involving <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=ru#yelp">9.11 I can't get the help to work for any GNOME application.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ru.xml,v 1.18 2020/04/05 5:48:20 nieder Exp $-->
+<!--Generated from $Fink: faq.ru.xml,v 1.19 2020/05/31 13:43:40 nieder Exp $-->
 <?php include_once "../footer.inc"; ?>
 
 

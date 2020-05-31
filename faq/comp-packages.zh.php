@@ -1,7 +1,7 @@
 <?php
 $title = "常见疑问（F.A.Q.） - 编译（２）";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/04/05 5:48:20';
+$cvs_date = 'Date: 2020/05/31 13:43:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-general.php?phpLang=zh" title="一般性软件包使用问题"><link rel="prev" href="comp-general.php?phpLang=zh" title="一般性编译问题">';
 
 

@@ -1,7 +1,7 @@
 <?php
 $title = "Ч.З.В. - Общие вопросы";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/04/05 5:48:20';
+$cvs_date = 'Date: 2020/05/31 13:43:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="relations.php?phpLang=ru" title="Связь с другими проектами"><link rel="prev" href="index.php?phpLang=ru" title="Ч.З.В. Contents">';
 
 
