@@ -3,7 +3,7 @@
 <document filename="index" lang="de">
   <title>Die Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.de.xml,v 1.125 2015/06/06 19:19:29 kamischi Exp $</cvsid>
+  <cvsid>$Id: faq.de.xml,v 1.126 2020/05/31 13:43:40 nieder Exp $</cvsid>
   <preface>
     <p>Die ist eine Liste der häufig gestellten Fragen über Fink. Wie in den
       meisten FAQs wurden einige tatsächlich gestellt, andere wurden ausgedacht.
@@ -1008,6 +1008,25 @@ fink scanpackages</codeblock>
           Erst-Installation ausgeführt wird:</p>
 <codeblock>/sw/lib/fink/postinstall.pl</codeblock>
         <p>Führt man dieses Skript aus, wird alles zurecht gerückt.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="lost-command-line-tools">
+      <question>
+        <p>After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</p>
+      </question>
+      <answer>
+        <p>Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p>
+        <codeblock>Can't resolve dependency "xcode (>= 6.2)"</codeblock>
+        <p>Fink has lost track of Apple's Command Line Tools.</p>
+        <p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <link url="https://developer.apple.com/">https://developer.apple.com/</link>.</p>
+        <p>Another possible solution is to run the following command:</p>
+        <codeblock>xcode-select --install</codeblock>
+        <p>but this often reports the following:</p>
+        <codeblock>xcode-select: error: command line tools are already installed, use "Software Update" to install updates</codeblock>
+        <p>However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection with Fink.</p>
+        <p>Finally, you may need to run the command:</p>
+        <codeblock>sudo xcodebuild -license</codeblock>
+        <p>to agree to the software license.</p>
       </answer>
     </faqentry>
     <faqentry name="seg-fault">

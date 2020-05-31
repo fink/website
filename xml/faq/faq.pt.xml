@@ -3,7 +3,7 @@
 <document filename="index" lang="pt">
   <title>Perguntas frequentes sobre o Fink</title>
   <shorttitle>Perguntas frequentes</shorttitle>
-  <cvsid>$Id: faq.pt.xml,v 1.11 2020/04/05 5:48:20 nieder Exp $</cvsid>
+  <cvsid>$Id: faq.pt.xml,v 1.12 2020/05/31 13:43:40 nieder Exp $</cvsid>
   <preface>
     <p>Esta é a lista das perguntas frequentes sobre o Fink. Como na maior
     parte das listas de perguntas frqeuentes, algumas perguntas foram tiradas
@@ -1036,7 +1036,9 @@ fink scanpackages</codeblock>
         <p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <link url="https://developer.apple.com/">https://developer.apple.com/</link>.</p>
         <p>Another possible solution is to run the following command:</p>
         <codeblock>xcode-select --install</codeblock>
-        <p>but this often reports back that no installation is needed because the Command Line Tools are already installed. However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection.</p>
+        <p>but this often reports the following:</p>
+        <codeblock>xcode-select: error: command line tools are already installed, use "Software Update" to install updates</codeblock>
+        <p>However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection with Fink.</p>
         <p>Finally, you may need to run the command:</p>
         <codeblock>sudo xcodebuild -license</codeblock>
         <p>to agree to the software license.</p>

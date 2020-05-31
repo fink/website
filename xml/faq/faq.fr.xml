@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Fink - Q.F.P.</title>
 <shorttitle>Q.F.P.</shorttitle>
-<cvsid>$Id: faq.fr.xml,v 1.84 2020/04/05 5:48:20 nieder Exp $</cvsid>
+<cvsid>$Id: faq.fr.xml,v 1.85 2020/05/31 13:43:40 nieder Exp $</cvsid>
 <preface>
 <p>Voici la liste des questions fréquemment posées sur Fink. Comme la plupart des QFP, une partie correspond à des questions réelles, d'autres ont été élaborées spécialement pour ces QFP. Il s'agit en fait d'un document écrit dans le style question-réponse.</p>
 <p>Ces QFP comprennent plusieurs pages, une par chapitre. Le sommaire ci-dessous donne la liste de toutes les questions ainsi qu'un lien pour chacune d'elles.</p>
@@ -690,23 +690,25 @@ fink scanpackages
 <p>Fink pointera alors à l'endroit approprié.</p>
 </answer>
 </faqentry>
-<faqentry name="lost-command-line-tools">
-<question>
-<p>After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</p>
-</question>
-<answer>
-<p>Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p>
-<codeblock>Can't resolve dependency "xcode (>= 6.2)"</codeblock>
-<p>Fink has lost track of Apple's Command Line Tools.</p>
-<p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <link url="https://developer.apple.com/">https://developer.apple.com/</link>.</p>
-<p>Another possible solution is to run the following command:</p>
-<codeblock>xcode-select --install</codeblock>
-<p>but this often reports back that no installation is needed because the Command Line Tools are already installed. However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection.</p>
-<p>Finally, you may need to run the command:</p>
-<codeblock>sudo xcodebuild -license</codeblock>
-<p>to agree to the software license.</p>
-</answer>
-</faqentry>
+    <faqentry name="lost-command-line-tools">
+      <question>
+        <p>After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</p>
+      </question>
+      <answer>
+        <p>Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p>
+        <codeblock>Can't resolve dependency "xcode (>= 6.2)"</codeblock>
+        <p>Fink has lost track of Apple's Command Line Tools.</p>
+        <p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <link url="https://developer.apple.com/">https://developer.apple.com/</link>.</p>
+        <p>Another possible solution is to run the following command:</p>
+        <codeblock>xcode-select --install</codeblock>
+        <p>but this often reports the following:</p>
+        <codeblock>xcode-select: error: command line tools are already installed, use "Software Update" to install updates</codeblock>
+        <p>However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection with Fink.</p>
+        <p>Finally, you may need to run the command:</p>
+        <codeblock>sudo xcodebuild -license</codeblock>
+        <p>to agree to the software license.</p>
+      </answer>
+    </faqentry>
 <faqentry name="seg-fault">
 <question>
 <p>Des erreurs apparaissent lors de l'utilisation de <code>gzip</code> ou de <code>dpkg-deb</code> inclus dans le paquet <code>fileutils</code>. Que faire ?</p>
