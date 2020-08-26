@@ -15,7 +15,7 @@ include $fsroot."hostlogo.inc";
 
 $title = "Fink Archive Browser";
 
-$linkroot = "http://www.finkproject.org/";
+$linkroot = "https://www.finkproject.org/";
 include $fsroot."download/nav.inc";
 include $fsroot."header.inc";
 
