@@ -218,7 +218,7 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 			// For testing locally at my machine
 			// (also: allows some navbox items to link to other
 			// websites)
-			if (substr($navbox[$i ], 0, 8) != 'https://') {
+			if (substr($navbox[$i ], 0, 8) != 'https://' && substr($navbox[$i ], 0, 7) != 'http://') {
 				$_link = $linkroot . $navbox[$i ];
 			} else {
 				$_link = $navbox[$i ];
