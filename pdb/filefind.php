@@ -137,7 +137,7 @@ if (empty($_GET['search']) || $invalid_param || $count < 1) {
 	if (!empty($_GET['search']) && $count < 1) {
 ?>
 <br>
-No Matches found, please try again <a href="http://pdb.finkproject.org/pdb/filefind.php">Search</a><br/>
+No Matches found, please try again <a href="https://pdb.finkproject.org/pdb/filefind.php">Search</a><br/>
 <?php
 	}
 

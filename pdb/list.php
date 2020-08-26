@@ -8,7 +8,7 @@ if (isset($_SERVER['SERVER_NAME'])) {
 } else {
 	$server = "localhost";
 }
-$location = "http://$server/pdb/browse.php";
+$location = "https://$server/pdb/browse.php";
 
 // This page is obsolete. We redirect to browse.php
 header("Location: $location");

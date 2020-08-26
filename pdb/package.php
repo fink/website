@@ -159,7 +159,7 @@ unset($result);
 		$text = htmlentities($text);
 		if ($text) {
 			# Try to detect urls
-			$text = preg_replace('/http:\/\/[^ &:]+/', '<a href="${0}">${0}</a>', $text);
+			$text = preg_replace('/https:\/\/[^ &:]+/', '<a href="${0}">${0}</a>', $text);
 			$text = str_replace("\\n", "\n", $text);
 			$text = '<div class="desc">' . $text . '</div>';
 			if ($label)
@@ -369,7 +369,7 @@ unset($result);
 	if (isset($pobj['debarchive']) && $pobj['debarchive'] && $pobj['rel_type'] == 'bindist') {
 		# where the deb archive file sits on a local Fink installation
 		$debarchive_path = $pobj['debarchive'];
-		$debarchive_url = 'http://bindist.finkmirrors.net/'.$pobj['debarchive'];
+		$debarchive_url = 'https://bindist.finkmirrors.net/'.$pobj['debarchive'];
 		$debarchive_html  = '<a href="'.$debarchive_url.'" title="' . $pobj['name'] . ' deb archive">'.$debarchive_path.'</a><br>';
 		it_item("Deb Archive:", $debarchive_html);
 	}

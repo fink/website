@@ -239,7 +239,7 @@ package<?php echo ($count==1 ? '' : 's')?><?php echo ($maintainer=='None' ? ' wi
 	if (!is_array($packages)) {
 		print '<tr class="package">';
 		print 'Invalid query: ';
-		print 'Please try again: <a href="http://pdb.finkproject.org/pdb/browse.php?nolist=on">Search</a></tr><br/>';
+		print 'Please try again: <a href="https://pdb.finkproject.org/pdb/browse.php?nolist=on">Search</a></tr><br/>';
 	} else {
 		foreach ($packages as $id => $package) {
 			if (!isset($package['version_stable'])) $package['version_stable'] = "";

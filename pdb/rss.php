@@ -19,7 +19,7 @@ include_once "feedcreator.inc";
 
 $rss = new UniversalFeedCreator();
 
-$url_root = "http://pdb.finkproject.org/pdb";
+$url_root = "https://pdb.finkproject.org/pdb";
 $rss->title = "Fink PDB";
 $rss->description = "Fink Package Database RSS";
 $rss->link = $url_root . "/browse.php?" . get_query_params();
