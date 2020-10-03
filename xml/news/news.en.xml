@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="en">
- <cvsid>$Id: news.en.xml,v 1.222 2020/03/28 8:45:00 nieder Exp $</cvsid>
+ <cvsid>$Id: news.en.xml,v 1.223 2020/10/03 3:59:00 nieder Exp $</cvsid>
+<newsitem>
+ <date>2020-10-02</date>
+ <headline>fink-0.45.2 released</headline>
+ <body>
+  <p>The Fink Project has released fink-0.45.2. This release provides support for all macOS releases up to and including 10.15.7. Most importantly, it changes the default install path location to <code>/opt/sw</code> for all supported macOS releases. This release also fixes bootstrapping problems when installing on macOS 10.15 with Xcode12. Run <code>fink selfupdate</code> to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
+  <p>This release does not yet support macOS 11 (Big Sur).</p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2020-03-28</date>
  <headline>fink-0.45.1 released</headline>
