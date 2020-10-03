@@ -1,7 +1,7 @@
 <?php
 $title = "Source Release Download";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2019/01/19 10:11:12 $';
+$cvs_date = '$Date: 2020/10/02 21:25:00 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -30,7 +30,7 @@ For macOS 10.9-10.15, you can use a <a href="https://github.com/fink/scripts/rel
 which automates the download and build steps below.
 	 </li>
 	 <li>
-For a manual install on OS X 10.9-10.14, <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?>K<br>
+For a manual install on OS X 10.9-10.15, <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?>K<br>
      </li>     
 	 <li>
 For OS X 10.7-8, use
@@ -52,8 +52,8 @@ For OS X 10.4, use
 
 <p>You will need to install the proper Command Line Tools for Xcode for your system, (cf. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) which can be done as follows:</p>
 <ul>
-<li><p><em>10.9-10.14:  </em>Run <code>sudo xcode-select --install</code> from the Terminal and select the Install button.</p></li>
-<li><p><em>10.7-10.14:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
+<li><p><em>10.9-10.15:  </em>Run <code>sudo xcode-select --install</code> from the Terminal and select the Install button.</p></li>
+<li><p><em>10.7-10.15:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
 <li><p><em>10.7-10.8:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
 <li><p><em>10.6:  </em>Install the full Xcode.</p></li>
 </ul>

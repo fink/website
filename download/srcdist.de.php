@@ -1,7 +1,7 @@
 <?php
 $title = "Quelltext Version Download";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2019/01/19 10:11:22 $';
+$cvs_date = '$Date: 2020/10/02 21:25:00 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -52,9 +52,9 @@ Xcode installieren, (siehe:
 <a href="./index.de.php#additionaldownloads">Schnellanleitung</a>),  
 das wie folgt gemacht werden kann:</p>
 <ul>
-<li><p><em>10.9-10.14:  </em>Führen sie <code>sudo xcode-select --install</code> im 
+<li><p><em>10.9-10.15:  </em>Führen sie <code>sudo xcode-select --install</code> im 
 Terminal aus und wählen sie den Install-Knopf aus.</p></li>
-<li><p><em>10.9-10.14:  </em>Manueller Download von developer.apple.com.  Achten 
+<li><p><em>10.9-10.15:  </em>Manueller Download von developer.apple.com.  Achten 
 sie auf die richtige Version für ihre Version von Mac OS X.</p></li>
 <li><p><em>10.7-10.8:  </em>Installieren sie das komplette Xcode. Man kann die 
 Command-Line-Tools über den <em>Downloads</em>-Reiter in den 

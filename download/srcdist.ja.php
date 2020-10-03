@@ -1,7 +1,7 @@
 <?php
 $title = "ソースリリースのダウンロード";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2019/01/19 10:11:12 $';
+$cvs_date = '$Date: 2020/10/02 21:25:00 $';
 
 include "header.inc";
 ?>
@@ -30,7 +30,7 @@ macOS 10.9-10.15 では、
 これは、下のダウンロードとビルドを自動化したものです。
 	 </li>
 	 <li>
-OS X 10.9-10.14 で手動でインストールするには、
+OS X 10.9-10.15 で手動でインストールするには、
 <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?>K<br>
 をお使いください。
      </li>     
@@ -60,8 +60,8 @@ OS X 10.4 は、
 以下の手順で、適切なコマンドラインツールをする必要があります。
 (参考 <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) :</p>
 <ul>
-<li><p><em>10.9-10.14:  </em>ターミナルで <code>sudo xcode-select --install</code> を実行し、Install をクリックする。</p></li>
-<li><p><em>10.7-10.14:  </em>developer.apple.com から手動でダウンロードする。OS のバージョンにあったものを選ぶこと。</p></li>
+<li><p><em>10.9-10.15:  </em>ターミナルで <code>sudo xcode-select --install</code> を実行し、Install をクリックする。</p></li>
+<li><p><em>10.7-10.15:  </em>developer.apple.com から手動でダウンロードする。OS のバージョンにあったものを選ぶこと。</p></li>
 <li><p><em>10.7-10.8:  </em> XCode をインストールし、 <strong>初期設定</strong> の <em>Downloads</em>タブからコマンドラインツールをインストールする。</p></li>
 <li><p><em>10.6:  </em> XCode をインストールする。</p></li>
 </ul>
