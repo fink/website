@@ -5,8 +5,29 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2020-05-31T13:47:50-05:00</dc:date>
+    <dc:date>2020-10-03T04:44:50-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2020-10-02%20fink-0.45.2%20released">
+      <title>fink-0.45.2 released</title>
+      <link>http://fink.sourceforge.net/news/#2020-10-02%20fink-0.45.2%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2020-10-02%20fink-0.45.2%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.45.2. This release provides support for all macOS releases up to and including 10.15.7. Most importantly, it changes the default install path location to /opt/sw for all supported macOS releases. This release also fixes bootstrapping problems when installing on macOS 10.15 with Xcode12. Run fink selfupdate to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
+  <p>This release does not yet support macOS 11 (Big Sur).</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.45.2. This release provides support for all macOS releases up to and including 10.15.7. Most importantly, it changes the default install path location to /opt/sw for all supported macOS releases. This release also fixes bootstrapping problems when installing on macOS 10.15 with Xcode12. Run fink selfupdate to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
+  <p>This release does not yet support macOS 11 (Big Sur).</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2020-03-28%20fink-0.45.1%20released">
       <title>fink-0.45.1 released</title>
       <link>http://fink.sourceforge.net/news/#2020-03-28%20fink-0.45.1%20released</link>
@@ -459,31 +480,6 @@
   <p>5) The default bootstrap operation will error out at the end for the time being, until 
   an official High Sierra binary distribution has been uploaded.  Go ahead and run 
   /sw/bin/pathsetup.sh as usual, however.</p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20released">
-      <title>fink-0.41.0 released</title>
-      <link>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20released</guid>
-      <description>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.41.1 to help us deal with adjustments
-  to the libXt library from XQuartz via the use of the XQuartz version in the system-xfree86*
-  packages, and to support OS X 10.12.1 .
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.41.1 to help us deal with adjustments
-  to the libXt library from XQuartz via the use of the XQuartz version in the system-xfree86*
-  packages, and to support OS X 10.12.1 .
-  </p>
  
 		]]>
 	</content:encoded>
