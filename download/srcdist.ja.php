@@ -65,7 +65,7 @@ OS X 10.4 は、
 <li><p><em>10.7-10.8:  </em> XCode をインストールし、 <strong>初期設定</strong> の <em>Downloads</em>タブからコマンドラインツールをインストールする。</p></li>
 <li><p><em>10.6:  </em> XCode をインストールする。</p></li>
 </ul>
-<p>10.7-10.14 で Xcode をフルインストールした場合、医家も実行します。</p>
+<p>10.7-10.15 で Xcode をフルインストールした場合、医家も実行します。</p>
 <pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
 <p>ここで、 <em>/Applications</em> は実際のパスに置き換えます。</p>
 <p><pre>sudo xcodebuild -license</pre> を実行し、Xcode ライセンスに同意します。

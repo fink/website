@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="zh">
- <cvsid>$Id: news.zh.xml,v 1.76 2020/10/03 3:59:00 nieder Exp $</cvsid>
+ <cvsid>$Id: news.zh.xml,v 1.77 2021/03/06 10:13:00 nieder Exp $</cvsid>
+<newsitem>
+ <date>2021-03-06</date>
+ <headline>fink-0.45.3 released</headline>
+ <body>
+  <p>The Fink Project has released fink-0.45.3. This is a minor behavioral fix for an issue introduced in 0.45.2. With this release, the default prefix for new installs is reverted to <code>/sw</code> for all macOS versions from 10.14 and earlier. Newer releases still default to <code>/opt/sw</code>. This will allow installs on macOS 10.14 and earlier to continue to use any available binary distributions. There are no other functional changes in this release compared to fink-0.45.2.</p>
+  <p>This release does not yet support macOS 11 (Big Sur).</p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2020-10-02</date>
  <headline>fink-0.45.2 released</headline>

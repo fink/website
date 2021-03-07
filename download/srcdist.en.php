@@ -57,7 +57,7 @@ For OS X 10.4, use
 <li><p><em>10.7-10.8:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
 <li><p><em>10.6:  </em>Install the full Xcode.</p></li>
 </ul>
-<p>If you install the full Xcode on 10.7-10.14, you will also want to run:</p>
+<p>If you install the full Xcode on 10.7-10.15, you will also want to run:</p>
 <pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
 <p>where you should replace <em>/Applications</em> with the actual path to the Xcode app.</p>
 <p>You will need to run <pre>sudo xcodebuild -license</pre> to accept the terms of the Xcode license in order for fink's build user to work.</p> 

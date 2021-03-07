@@ -61,7 +61,7 @@ Command-Line-Tools über den <em>Downloads</em>-Reiter in den
 <strong>Voreinstellungen</strong> von Xcode installieren.</p></li>
 <li><p><em>10.6:  </em>Installieren sie das komplette Xcode.</p></li>
 </ul>
-<p>Installieren sie das komplette Xcode auf 10.7-10.14, indem sie folgende 
+<p>Installieren sie das komplette Xcode auf 10.7-10.15, indem sie folgende 
 Befehle ausführen:</p>
 <pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
 <p>wobei sie <em>/Applications</em> mit dem tatsächlichen Pfad zur Xcode-App 
