@@ -73,20 +73,20 @@ einfach nicht funktionieren.
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-Als erstes müssen sie den Fink-0.45.2.tar.gz Tarball auspacken
+Als erstes müssen sie den Fink-0.45.3.tar.gz Tarball auspacken
 (Wenn sie es mit Safari herunter geladen haben, wird es als
-<code>fink-0.45.2.tar</code> dargestellt werden).
+<code>fink-0.45.3.tar</code> dargestellt werden).
 Dafür gehen sie in einem Terminal-Fenster in das Verzeichnis, in dem sich der
 Tarball befindet und führen folgendes Kommando aus:
 </p>
-<pre>tar xf fink-0.45.2.tar.gz</pre>
+<pre>tar xf fink-0.45.3.tar.gz</pre>
 <p>
-Das erzeugt ein Verzeichnis mit dem Namen fink-0.45.2. Wechseln sie
-in dieses Verzeichnis mit dem Kommando <code>cd fink-0.45.2</code>.
+Das erzeugt ein Verzeichnis mit dem Namen fink-0.45.3. Wechseln sie
+in dieses Verzeichnis mit dem Kommando <code>cd fink-0.45.3</code>.
 </p>
 <p>
 Die eigentliche Installation erfolgt durch das Perl-Skript bootstrap. Um die
-Installation zu starten, gehen sie in das Verzeichnis fink-0.45.2
+Installation zu starten, gehen sie in das Verzeichnis fink-0.45.3
 und führen sie folgendes Kommando aus:
 </p>
 <pre>./bootstrap</pre>

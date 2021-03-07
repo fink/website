@@ -7,10 +7,10 @@ $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Installatio
 
 include_once "header.de.inc";
 ?>
-<h1>Fink 0.45.2 Installation</h1>
+<h1>Fink 0.45.3 Installation</h1>
 <p>
 Diese Installationsanleitung ist für die "Quellcode"-Distribution, die auf
-<code>fink-0.45.2</code> aufbaut und unter OS X v.10.9 oder später
+<code>fink-0.45.3</code> aufbaut und unter OS X v.10.9 oder später
 verwendet wird.
 </p>
 <p>

@@ -72,19 +72,19 @@ Using symlinks to trick the bootstrap script simply won't work.
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-First, you need to unpack the fink-0.45.2.tar.gz tarball (it might also show up as <code>fink-0.45.2.tar</code> if you
+First, you need to unpack the fink-0.45.3.tar.gz tarball (it might also show up as <code>fink-0.45.3.tar</code> if you
 used Safari to download it).  So, in a terminal window, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xf fink-0.45.2.tar.gz</pre>
+<pre>tar xf fink-0.45.3.tar.gz</pre>
 <p>
-You now have a directory named fink-0.45.2.
-Change to it with <code>cd fink-0.45.2</code>.
+You now have a directory named fink-0.45.3.
+Change to it with <code>cd fink-0.45.3</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
 bootstrap.
-So, to start installation, go to the fink-0.45.2 directory and run
+So, to start installation, go to the fink-0.45.3 directory and run
 this command:
 </p>
 <pre>./bootstrap</pre>
