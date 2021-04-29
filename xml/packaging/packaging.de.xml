@@ -4,7 +4,7 @@
 <document filename="index" lang="de" >
 <title>Ein Fink-Paket erstellen</title>
 <shorttitle>Paket erstellen</shorttitle>
-<cvsid>$Id: packaging.de.xml,v 1.3 2019/07/27 6:50:00 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.de.xml,v 1.4 2021/04/28 19:08:00 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -2470,6 +2470,37 @@ Unterschied, dass es für die MD5 Checksum der Tarballs der entsprechenden Felde
 </p>
 </itemd></item>
 
+<item><itemt>Source-Checksum</itemt>
+<itemd>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<codeblock>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</codeblock>
+<p>
+Current valid checksums are <code>MD5</code>, <code>SHA1</code>, and
+<code>SHA256</code>. The <code>shasum</code> tool can be used to
+calculate SHA checksums:</p>
+<codeblock>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</codeblock>
+<p>
+The <code>Source-Checksum</code> field should only be used once per
+.info file. If both the <code>Source-MD5</code> and
+<code>Source-Checksum</code> fields are present,
+<code>Source-Checksum</code> takes precedence.
+</p>
+</itemd></item>
+
+<item><itemt>Source<em>N</em>-Checksum</itemt>
+<itemd>
+<p>
+This is just the same as the <code>Source-Checksum</code> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <code>Source<em>N</em></code> field.
+</p>
+</itemd></item>
+
 <item><itemt>TarFilesRename</itemt>
 <itemd>
 <p>
@@ -2960,8 +2991,8 @@ Alle anderen Felder sind optional. Die folgenden Felder sind innerhalb
   angehängt wird.</li>
 <li><code>TestSource</code>: Extra Quellen, die für die Test-Suites benötigt
   werden. Alle verwandten Felder werden auch unterstützt. Man muss also auch
-  <code>TestSource-MD5</code> deklarieren. Die Felder <code>TestSourceN</code>
-  und die entsprechenden Felder <code>TestSourceN-MD5</code>,
+  <code>TestSource-MD5</code> oder <code>TestSource-Checksum</code> deklarieren. Die Felder <code>TestSourceN</code>
+  und die entsprechenden Felder <code>TestSourceN-MD5</code>, <code>TestSourceN-Checksum</code>, 
   <code>TestTarFilesRename</code> usw. können ebenfalls vorhanden sein.</li>
 <li><code>TestSuiteSize</code>: Beschreibt ungefähr wie lange das Ausführen der
   Test-Suites dauern wird. Erlaubte Werte sind <code>small</code>,

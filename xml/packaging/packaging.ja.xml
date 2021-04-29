@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.56 2019/07/27 6:50:00 nieder Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.57 2021/04/28 19:08:00 nieder Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -2363,6 +2363,36 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 					</itemd>
 				</item>
+<item><itemt>Source-Checksum</itemt>
+<itemd>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<codeblock>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</codeblock>
+<p>
+Current valid checksums are <code>MD5</code>, <code>SHA1</code>, and
+<code>SHA256</code>. The <code>shasum</code> tool can be used to
+calculate SHA checksums:</p>
+<codeblock>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</codeblock>
+<p>
+The <code>Source-Checksum</code> field should only be used once per
+.info file. If both the <code>Source-MD5</code> and
+<code>Source-Checksum</code> fields are present,
+<code>Source-Checksum</code> takes precedence.
+</p>
+</itemd></item>
+
+<item><itemt>Source<em>N</em>-Checksum</itemt>
+<itemd>
+<p>
+This is just the same as the <code>Source-Checksum</code> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <code>Source<em>N</em></code> field.
+</p>
+</itemd></item>
 				<item>
 					<itemt>TarFilesRename</itemt>
 					<itemd>
@@ -2829,8 +2859,8 @@ make test</codeblock>
 <li><code>TestConfigureParams</code>: 
     テストスイートを実行するために必要な追加ソースです．
     関連する全てのフィールドもサポートされています．
-    <code>TestSource-MD5</code>は指定されなければ<em>なりません</em>．
-    <code>TestSourceN</code> や対応する <code>TestSourceN-MD5</code> , <code>TestTarFilesRename</code> などを追加することも可能です．</li>
+    <code>TestSource-MD5</code> または <code>TestSource-Checksum</code> は指定されなければ<em>なりません</em>．
+    <code>TestSourceN</code> や対応する <code>TestSourceN-MD5</code> , <code>TestSourceN-Checksum</code> , <code>TestTarFilesRename</code> などを追加することも可能です．</li>
 <li><code>TestSuiteSize</code>: 
     テストスイートどの程度かかるかのおよその時間を示します．
     値は，<code>small</code>, <code>medium</code>, と <code>large</code> です．

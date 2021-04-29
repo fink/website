@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.82 2019/07/27 6:50:00 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.83 2021/04/28 19:08:00 nieder Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://pdb.finkproject.org/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -1085,6 +1085,35 @@ Primary: ftp://ftp.barbarorg/pub/
 <itemd>
 <p><em>Introduit dans fink 0.10.0.</em> Ce champ est semblable au champ <code>Source-MD5</code>, mais il est utilisé pour indiquer la somme de contrôle MD5 de l'archive tar correspondant au champ <code>Source<em>N</em></code>.</p>
 </itemd></item>
+<item><itemt>Source-Checksum</itemt>
+<itemd>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<codeblock>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</codeblock>
+<p>
+Current valid checksums are <code>MD5</code>, <code>SHA1</code>, and
+<code>SHA256</code>. The <code>shasum</code> tool can be used to
+calculate SHA checksums:</p>
+<codeblock>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</codeblock>
+<p>
+The <code>Source-Checksum</code> field should only be used once per
+.info file. If both the <code>Source-MD5</code> and
+<code>Source-Checksum</code> fields are present,
+<code>Source-Checksum</code> takes precedence.
+</p>
+</itemd></item>
+<item><itemt>Source<em>N</em>-Checksum</itemt>
+<itemd>
+<p>
+This is just the same as the <code>Source-Checksum</code> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <code>Source<em>N</em></code> field.
+</p>
+</itemd></item>
 <item><itemt>TarFilesRename</itemt>
 <itemd>
 <p><em>Introduit dans fink 0.10.0.</em> Ce champ ne s'applique qu'aux fichiers sources utilisant le format tar.</p>
@@ -1221,7 +1250,7 @@ make test</codeblock>
 <li><code>TestScript</code> : script d'exécution de la série de tests. Ce script doit retourner un statut de valeur 0 si la série de tests s'est déroulée sans incident, de 1 s'il y a des messages d'attention, et de n'importe quelle autre valeur si les incidents sont suffisamment sévères pour les considérer comme fatals. Du fait de cette logique à trois états, la valeur du statut doit être explicitement indiquée. Par exemple, <code>make check</code> n'est pas conforme à cette logique, puisqu'il retourne un statut de 1 si la cible à vérifier n'existe pas ; par contre, <code>make check || exit 2</code> respecte la logique à trois états.</li>
 <li><code>TestConfigureParams</code> : valeur ajoutée au champ <code>ConfigureParams</code>.</li>
 <li><code>TestDepends</code> et <code>TestConflicts</code> : liste des paquets à ajouter respectivement aux champs <code>BuildDepends</code> et <code>BuildConflicts</code>.</li>
-<li><code>TestSource</code> : sources supplémentaires nécessaires pour exécuter la série de tests. Tous les champs liés à ce champ sont autorisés. On <em>doit</em> donc aussi utiliser le champ <code>TestSource-MD5</code>. On peut aussi se servir des champs <code>TestSourceN</code> et <code>TestSourceN-MD5</code>, <code>TestTarFilesRename</code>, etc...</li>
+<li><code>TestSource</code> : sources supplémentaires nécessaires pour exécuter la série de tests. Tous les champs liés à ce champ sont autorisés. On <em>doit</em> donc aussi utiliser le champ <code>TestSource-MD5</code> ou <code>TestSource-Checksum</code>. On peut aussi se servir des champs <code>TestSourceN</code> et <code>TestSourceN-MD5</code>, <code>TestSourceN-Checksum</code>, <code>TestTarFilesRename</code>, etc...</li>
 <li><code>TestSuiteSize</code> : donne une idée approximative de la durée d'exécution de la série de tests. Les valeurs permises sont les suivantes : <code>small</code>, <code>medium</code> et <code>large</code>. Ce champ est pour l'instant ignoré.</li>
 <li>Tout autre champ standard. Si un champ est indiqué à la fois à l'intérieur et à l'extérieur du bloc <code>InfoTest</code>, c'est sa valeur à l'intérieur du bloc <code>InfoTest</code> qui sera utilisée si la suite de tests est activée.</li>
 </ul>
