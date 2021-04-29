@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.ja.xml,v 1.56 2019/07/27 6:50:00 nieder Exp $
+Generated from $Fink: packaging.ja.xml,v 1.57 2021/04/28 19:08:00 nieder Exp $
 -->
 <title>Fink Documentation - Fink パッケージの作成方法</title></head><body>
 <table width="100%" cellspacing="0">
@@ -2052,7 +2052,32 @@ Primary: ftp://ftp.barbarorg/pub/
 							フィールド <tt style="white-space: nowrap;">Source-MD5</tt> と同様ですが，
 							フィールド <tt style="white-space: nowrap;">Source<b>N</b></tt> に対応する N 番目の tarball の MD5 チェックサムを指定します．
 						</p>
-					</td></tr><tr valign="top"><td>TarFilesRename</td><td>
+					</td></tr><tr valign="top"><td>Source-Checksum</td><td>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<pre>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</pre>
+<p>
+Current valid checksums are <tt style="white-space: nowrap;">MD5</tt>, <tt style="white-space: nowrap;">SHA1</tt>, and
+<tt style="white-space: nowrap;">SHA256</tt>. The <tt style="white-space: nowrap;">shasum</tt> tool can be used to
+calculate SHA checksums:</p>
+<pre>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</pre>
+<p>
+The <tt style="white-space: nowrap;">Source-Checksum</tt> field should only be used once per
+.info file. If both the <tt style="white-space: nowrap;">Source-MD5</tt> and
+<tt style="white-space: nowrap;">Source-Checksum</tt> fields are present,
+<tt style="white-space: nowrap;">Source-Checksum</tt> takes precedence.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-Checksum</td><td>
+<p>
+This is just the same as the <tt style="white-space: nowrap;">Source-Checksum</tt> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <tt style="white-space: nowrap;">Source<b>N</b></tt> field.
+</p>
+</td></tr><tr valign="top"><td>TarFilesRename</td><td>
 						<p>
 							<b>Fink 0.10.0 で導入:</b>
 							このフィールドは tar 形式を使うソースファイルにのみ適用されます．
@@ -2432,8 +2457,8 @@ make test</pre>
 <li><tt style="white-space: nowrap;">TestConfigureParams</tt>: 
     テストスイートを実行するために必要な追加ソースです．
     関連する全てのフィールドもサポートされています．
-    <tt style="white-space: nowrap;">TestSource-MD5</tt>は指定されなければ<b>なりません</b>．
-    <tt style="white-space: nowrap;">TestSourceN</tt> や対応する <tt style="white-space: nowrap;">TestSourceN-MD5</tt> , <tt style="white-space: nowrap;">TestTarFilesRename</tt> などを追加することも可能です．</li>
+    <tt style="white-space: nowrap;">TestSource-MD5</tt> または <tt style="white-space: nowrap;">TestSource-Checksum</tt> は指定されなければ<b>なりません</b>．
+    <tt style="white-space: nowrap;">TestSourceN</tt> や対応する <tt style="white-space: nowrap;">TestSourceN-MD5</tt> , <tt style="white-space: nowrap;">TestSourceN-Checksum</tt> , <tt style="white-space: nowrap;">TestTarFilesRename</tt> などを追加することも可能です．</li>
 <li><tt style="white-space: nowrap;">TestSuiteSize</tt>: 
     テストスイートどの程度かかるかのおよその時間を示します．
     値は，<tt style="white-space: nowrap;">small</tt>, <tt style="white-space: nowrap;">medium</tt>, と <tt style="white-space: nowrap;">large</tt> です．
@@ -2932,4 +2957,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.ja.xml,v 1.56 2019/07/27 6:50:00 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.ja.xml,v 1.57 2021/04/28 19:08:00 nieder Exp $</i></p></body></html>

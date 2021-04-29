@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.fr.xml,v 1.82 2019/07/27 6:50:00 nieder Exp $
+Generated from $Fink: packaging.fr.xml,v 1.83 2021/04/28 19:08:00 nieder Exp $
 -->
 <title>Fink Documentation - Création de paquets Fink</title></head><body>
 <table width="100%" cellspacing="0">
@@ -921,6 +921,31 @@ Primary: ftp://ftp.barbarorg/pub/
 <p>La valeur affichée à gauche correspond à la valeur recherchée.</p>
 </td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
 <p><b>Introduit dans fink 0.10.0.</b> Ce champ est semblable au champ <tt style="white-space: nowrap;">Source-MD5</tt>, mais il est utilisé pour indiquer la somme de contrôle MD5 de l'archive tar correspondant au champ <tt style="white-space: nowrap;">Source<b>N</b></tt>.</p>
+</td></tr><tr valign="top"><td>Source-Checksum</td><td>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<pre>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</pre>
+<p>
+Current valid checksums are <tt style="white-space: nowrap;">MD5</tt>, <tt style="white-space: nowrap;">SHA1</tt>, and
+<tt style="white-space: nowrap;">SHA256</tt>. The <tt style="white-space: nowrap;">shasum</tt> tool can be used to
+calculate SHA checksums:</p>
+<pre>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</pre>
+<p>
+The <tt style="white-space: nowrap;">Source-Checksum</tt> field should only be used once per
+.info file. If both the <tt style="white-space: nowrap;">Source-MD5</tt> and
+<tt style="white-space: nowrap;">Source-Checksum</tt> fields are present,
+<tt style="white-space: nowrap;">Source-Checksum</tt> takes precedence.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-Checksum</td><td>
+<p>
+This is just the same as the <tt style="white-space: nowrap;">Source-Checksum</tt> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <tt style="white-space: nowrap;">Source<b>N</b></tt> field.
+</p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p><b>Introduit dans fink 0.10.0.</b> Ce champ ne s'applique qu'aux fichiers sources utilisant le format tar.</p>
 <p>Avec ce champ, vous pouvez renommer les fichiers d'une archive tar donnée durant l'extraction. Ceci est très utile pour gérer les problèmes dus au fait que le système de fichiers HFS+ ne tient pas compte de la casse. En effet, sur un système standard Mac OS X, les fichiers <tt style="white-space: nowrap;">install</tt> et <tt style="white-space: nowrap;">INSTALL</tt> ne sont pas distinguables. L'utilisation de ce champ permet d'éviter ces problèmes sans avoir à changer l'archive tar (comme on le faisait auparavant dans de tels cas).</p>
@@ -1024,7 +1049,7 @@ make test</pre>
 <li><tt style="white-space: nowrap;">TestScript</tt> : script d'exécution de la série de tests. Ce script doit retourner un statut de valeur 0 si la série de tests s'est déroulée sans incident, de 1 s'il y a des messages d'attention, et de n'importe quelle autre valeur si les incidents sont suffisamment sévères pour les considérer comme fatals. Du fait de cette logique à trois états, la valeur du statut doit être explicitement indiquée. Par exemple, <tt style="white-space: nowrap;">make check</tt> n'est pas conforme à cette logique, puisqu'il retourne un statut de 1 si la cible à vérifier n'existe pas ; par contre, <tt style="white-space: nowrap;">make check || exit 2</tt> respecte la logique à trois états.</li>
 <li><tt style="white-space: nowrap;">TestConfigureParams</tt> : valeur ajoutée au champ <tt style="white-space: nowrap;">ConfigureParams</tt>.</li>
 <li><tt style="white-space: nowrap;">TestDepends</tt> et <tt style="white-space: nowrap;">TestConflicts</tt> : liste des paquets à ajouter respectivement aux champs <tt style="white-space: nowrap;">BuildDepends</tt> et <tt style="white-space: nowrap;">BuildConflicts</tt>.</li>
-<li><tt style="white-space: nowrap;">TestSource</tt> : sources supplémentaires nécessaires pour exécuter la série de tests. Tous les champs liés à ce champ sont autorisés. On <b>doit</b> donc aussi utiliser le champ <tt style="white-space: nowrap;">TestSource-MD5</tt>. On peut aussi se servir des champs <tt style="white-space: nowrap;">TestSourceN</tt> et <tt style="white-space: nowrap;">TestSourceN-MD5</tt>, <tt style="white-space: nowrap;">TestTarFilesRename</tt>, etc...</li>
+<li><tt style="white-space: nowrap;">TestSource</tt> : sources supplémentaires nécessaires pour exécuter la série de tests. Tous les champs liés à ce champ sont autorisés. On <b>doit</b> donc aussi utiliser le champ <tt style="white-space: nowrap;">TestSource-MD5</tt> ou <tt style="white-space: nowrap;">TestSource-Checksum</tt>. On peut aussi se servir des champs <tt style="white-space: nowrap;">TestSourceN</tt> et <tt style="white-space: nowrap;">TestSourceN-MD5</tt>, <tt style="white-space: nowrap;">TestSourceN-Checksum</tt>, <tt style="white-space: nowrap;">TestTarFilesRename</tt>, etc...</li>
 <li><tt style="white-space: nowrap;">TestSuiteSize</tt> : donne une idée approximative de la durée d'exécution de la série de tests. Les valeurs permises sont les suivantes : <tt style="white-space: nowrap;">small</tt>, <tt style="white-space: nowrap;">medium</tt> et <tt style="white-space: nowrap;">large</tt>. Ce champ est pour l'instant ignoré.</li>
 <li>Tout autre champ standard. Si un champ est indiqué à la fois à l'intérieur et à l'extérieur du bloc <tt style="white-space: nowrap;">InfoTest</tt>, c'est sa valeur à l'intérieur du bloc <tt style="white-space: nowrap;">InfoTest</tt> qui sera utilisée si la suite de tests est activée.</li>
 </ul>
@@ -1216,4 +1241,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.fr.xml,v 1.82 2019/07/27 6:50:00 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.fr.xml,v 1.83 2021/04/28 19:08:00 nieder Exp $</i></p></body></html>

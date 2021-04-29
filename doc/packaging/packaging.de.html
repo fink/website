@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.de.xml,v 1.3 2019/07/27 6:50:00 nieder Exp $
+Generated from $Fink: packaging.de.xml,v 1.4 2021/04/28 19:08:00 nieder Exp $
 -->
 <title>Fink Documentation - Ein Fink-Paket erstellen</title></head><body>
 <table width="100%" cellspacing="0">
@@ -2220,6 +2220,31 @@ Dieses Feld hat denselben Zweck wie das Feld <tt style="white-space: nowrap;">So
 Unterschied, dass es für die MD5 Checksum der Tarballs der entsprechenden Felder
 <tt style="white-space: nowrap;">Source<b>N</b></tt> ist.
 </p>
+</td></tr><tr valign="top"><td>Source-Checksum</td><td>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<pre>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</pre>
+<p>
+Current valid checksums are <tt style="white-space: nowrap;">MD5</tt>, <tt style="white-space: nowrap;">SHA1</tt>, and
+<tt style="white-space: nowrap;">SHA256</tt>. The <tt style="white-space: nowrap;">shasum</tt> tool can be used to
+calculate SHA checksums:</p>
+<pre>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</pre>
+<p>
+The <tt style="white-space: nowrap;">Source-Checksum</tt> field should only be used once per
+.info file. If both the <tt style="white-space: nowrap;">Source-MD5</tt> and
+<tt style="white-space: nowrap;">Source-Checksum</tt> fields are present,
+<tt style="white-space: nowrap;">Source-Checksum</tt> takes precedence.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-Checksum</td><td>
+<p>
+This is just the same as the <tt style="white-space: nowrap;">Source-Checksum</tt> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <tt style="white-space: nowrap;">Source<b>N</b></tt> field.
+</p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p>
 <b>Eingeführt in Fink 0.10.0.</b>
@@ -2641,8 +2666,8 @@ Alle anderen Felder sind optional. Die folgenden Felder sind innerhalb
   angehängt wird.</li>
 <li><tt style="white-space: nowrap;">TestSource</tt>: Extra Quellen, die für die Test-Suites benötigt
   werden. Alle verwandten Felder werden auch unterstützt. Man muss also auch
-  <tt style="white-space: nowrap;">TestSource-MD5</tt> deklarieren. Die Felder <tt style="white-space: nowrap;">TestSourceN</tt>
-  und die entsprechenden Felder <tt style="white-space: nowrap;">TestSourceN-MD5</tt>,
+  <tt style="white-space: nowrap;">TestSource-MD5</tt> oder <tt style="white-space: nowrap;">TestSource-Checksum</tt> deklarieren. Die Felder <tt style="white-space: nowrap;">TestSourceN</tt>
+  und die entsprechenden Felder <tt style="white-space: nowrap;">TestSourceN-MD5</tt>, <tt style="white-space: nowrap;">TestSourceN-Checksum</tt>, 
   <tt style="white-space: nowrap;">TestTarFilesRename</tt> usw. können ebenfalls vorhanden sein.</li>
 <li><tt style="white-space: nowrap;">TestSuiteSize</tt>: Beschreibt ungefähr wie lange das Ausführen der
   Test-Suites dauern wird. Erlaubte Werte sind <tt style="white-space: nowrap;">small</tt>,
@@ -3198,4 +3223,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.de.xml,v 1.3 2019/07/27 6:50:00 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.de.xml,v 1.4 2021/04/28 19:08:00 nieder Exp $</i></p></body></html>

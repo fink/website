@@ -1,7 +1,7 @@
 <?php
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/07/27 6:50:00';
+$cvs_date = 'Date: 2021/04/28 19:08:00';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -654,6 +654,31 @@ use <code>TestSource</code> and related fields, inside the
 <b>从 fink 0.10.0 开始。</b>
 这个字段和 <code>Source-MD5</code> 字段完全一样，除了它是指定与 <code>Source<b>N</b></code> 字段对应的压缩档的 MD5 校验值。
 </p>
+</td></tr><tr valign="top"><td>Source-Checksum</td><td>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<pre>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</pre>
+<p>
+Current valid checksums are <code>MD5</code>, <code>SHA1</code>, and
+<code>SHA256</code>. The <code>shasum</code> tool can be used to
+calculate SHA checksums:</p>
+<pre>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</pre>
+<p>
+The <code>Source-Checksum</code> field should only be used once per
+.info file. If both the <code>Source-MD5</code> and
+<code>Source-Checksum</code> fields are present,
+<code>Source-Checksum</code> takes precedence.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-Checksum</td><td>
+<p>
+This is just the same as the <code>Source-Checksum</code> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <code>Source<b>N</b></code> field.
+</p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p>
 <b>从 fink 0.10.0 开始。</b>
@@ -960,8 +985,8 @@ All other fields are optional.  The following fields are allowed inside
 <li><code>TestDepends</code> and <code>TestConflicts</code>: Lists of packages that will be added to the <code>BuildDepends</code> or <code>BuildConflicts</code> lists.</li>
 <li><code>TestSource</code>: Extra sources necessary to run the test suite.  All of the
     affiliated fields are also supported, so you <b>must</b> also specify
-    <code>TestSource-MD5</code>, and you may also have
-    <code>TestSourceN</code> and corresponding <code>TestSourceN-MD5</code>,
+    <code>TestSource-MD5</code> or <code>TestSource-Checksum</code>, and you may also have
+    <code>TestSourceN</code> and corresponding <code>TestSourceN-MD5</code>, <code>TestSourceN-Checksum</code>, 
     <code>TestTarFilesRename</code>, etc.</li>
 <li><code>TestSuiteSize</code>: Describes approximately how long the test suite takes to
     run.  Valid values are <code>small</code>, <code>medium</code>, and <code>large</code>.
