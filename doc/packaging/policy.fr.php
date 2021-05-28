@@ -1,7 +1,7 @@
 <?php
 $title = "Paquets - Règles";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/04/28 19:08:00';
+$cvs_date = 'Date: 2021/05/27 20:26:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Organisation des fichiers"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
 
 
@@ -381,7 +381,7 @@ InstallScript: &lt;&lt;
         <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
         If you don't have ready access to one, ask on the
         <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a> or
-        <a href="http://webchat.freenode.net">the #fink IRC channel</a>,
+        <a href="https://web.libera.chat/">the #fink IRC channel</a>,
         and someone should be able to help.</li>
     </ol>
 

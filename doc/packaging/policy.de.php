@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Richtlinien";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/04/28 19:08:00';
+$cvs_date = 'Date: 2021/05/27 20:26:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="fslayout.php?phpLang=de" title="Dateisystem-Layout"><link rel="prev" href="format.php?phpLang=de" title="Paketbeschreibungen">';
 
 
@@ -733,7 +733,7 @@ Quelle auf folgende Art und Weise erzeugt werden:
   entsprechenden Zugang, fragen sie in der
   <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers
   Mailing-Liste</a> oder im
-  <a href="http://webchat.freenode.net">IRC channel #fink</a>.
+  <a href="https://web.libera.chat/">IRC channel #fink</a>.
   nach und ihnen wird sicher geholfen werden.</li>
 </ol>
 
