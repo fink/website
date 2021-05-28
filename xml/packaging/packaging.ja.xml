@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.57 2021/04/28 19:08:00 nieder Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.58 2021/05/27 20:26:32 nieder Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -1179,7 +1179,7 @@ InstallScript: &lt;&lt;
         <li>ユーザが <code>fink</code> を使ってダウンロードできる公開ダウンロードサイトにアーカイブをアップロードする。
         もし、そのようなサイトがない場合は、
         <link url="mailto:fink-devel@lists.sourceforge.net">Fink 開発者メーリングリスト</link> または
-        <link url="http://webchat.freenode.net">#fink IRC チャンネル</link>,
+        <link url="https://web.libera.chat/">#fink IRC チャンネル</link>,
         に連絡してください。だれかが助けてくれるでしょう。</li>
     </ol>
 </section>

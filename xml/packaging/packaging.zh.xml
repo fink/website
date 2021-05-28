@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.41 2021/04/28 19:08:00 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.42 2021/05/27 20:26:32 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -1017,7 +1017,7 @@ http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</link> 找到）
         <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
         If you don't have ready access to one, ask on the
         <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</link> or
-        <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
+        <link url="https://web.libera.chat/">the #fink IRC channel</link>,
         and someone should be able to help.</li>
     </ol>
 </section>

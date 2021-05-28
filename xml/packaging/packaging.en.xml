@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.1312 2021/04/28 19:08:00 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.1313 2021/05/27 20:26:32 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -1250,7 +1250,7 @@ may change some day in the future.)    And second, unlike the Debian policy,
         <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
         If you don't have ready access to one, ask on the
         <link url="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</link> or
-        <link url="http://webchat.freenode.net">the #fink IRC channel</link>,
+        <link url="https://web.libera.chat/">the #fink IRC channel</link>,
         and someone should be able to help.</li>
     </ol>
 </section>
