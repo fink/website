@@ -1,7 +1,7 @@
 <?php
 $title = "Ajuda";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2019/01/27 23:10:05 $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
@@ -41,7 +41,7 @@ terceiros instalado em /usr/local ou se usa um compilador customizado (e.g. gcc
 3).</p>
 
 <p><b>O canal IRC.</b> Existe um canal <tt>#fink</tt> na rede de IRC
-<a href="http://freenode.net">freenode</a>. Lá você pode conversar com outros
+<a href="https://libera.chat/">Libera.chat</a>. Lá você pode conversar com outros
 usuários do Fink e alguns dos desenvolvedores.</p>
 
 <p><b>Outros sites.</b> Alguns links para fóruns de discussão na Web:

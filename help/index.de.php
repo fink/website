@@ -1,7 +1,7 @@
 <?php
 $title = "Hilfe";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2019/01/27 23:10:05 $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
@@ -30,7 +30,7 @@ Der <a href="../doc/index.php">Dokumentationsteil</a> dieser Webseite hat jede M
 
 <p>
 <b>Der IRC-Kanal.</b>
-Es gibt einen <tt>#fink</tt>-Kanal auf dem <a href="http://freenode.net">freenode</a>-IRC-Netzwerk. Hier können Sie mit anderen Finknutzern und einigen Entwicklern chatten.</p>
+Es gibt einen <tt>#fink</tt>-Kanal auf dem <a href="https://libera.chat/">Libera.chat</a>-IRC-Netzwerk. Hier können Sie mit anderen Finknutzern und einigen Entwicklern chatten.</p>
 
 <p>
 <b>Andere Seiten.</b>

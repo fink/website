@@ -1,14 +1,14 @@
 <?php
 $title = "Contributors";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:09:50 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
 
 <h1>Mitwirkende</h1>
 
-<p>Fink wird von vielen freiwilligen Mitarbeitern betreut. Jedes Paket in Fink wir von einem sogenannten 'Maintainer' verwaltet. Diese Person kümmert sich darum, dass dieses Paket so arbeitet, wie man es erwarten würde. Außerdem kümmert sich diese Person auch um Fehler, die berichtigt werden müssen. Es gibt Menschen, die sich um das Programm 'fink' kümmern, dieser Web-Auftritt muss betreut werden und viele Fink Nutzer brauchen Hilfe im täglichen Umgang mit Fink. Ein Großteil dieser Hilfe wird über unsere Mailing-Listen und dem IRC-Chat im Kanal #fink auf irc.freenode.net geleistet.
+<p>Fink wird von vielen freiwilligen Mitarbeitern betreut. Jedes Paket in Fink wir von einem sogenannten 'Maintainer' verwaltet. Diese Person kümmert sich darum, dass dieses Paket so arbeitet, wie man es erwarten würde. Außerdem kümmert sich diese Person auch um Fehler, die berichtigt werden müssen. Es gibt Menschen, die sich um das Programm 'fink' kümmern, dieser Web-Auftritt muss betreut werden und viele Fink Nutzer brauchen Hilfe im täglichen Umgang mit Fink. Ein Großteil dieser Hilfe wird über unsere Mailing-Listen und dem IRC-Chat im Kanal #fink auf Libera.chat geleistet.
 Die oben genannten Aufgaben, aber auch viele andere, benötigen eine Menge Zeit und Aufmerksamkeit. Diese Seite dient dazu, sich genau bei diesen Personen zu bedanken, denn ohne unsere fleißigen freiwilligen Helfer wäre es nicht möglich, dieses Projekt am Leben zu erhalten.
 </p>
 

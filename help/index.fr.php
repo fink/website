@@ -1,7 +1,7 @@
 <?php
 $title = "Aide";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2019/01/27 23:10:05 $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
@@ -37,7 +37,7 @@ Quand vous signalez un problème, n'oubliez pas d'inclure toute information util
 
 <p>
 <b>Canal IRC.</b>
-Il y a un canal <tt>#fink</tt> sur le réseau IRC <a href="http://freenode.net">freenode</a>. Vous pouvez y discuter avec d'autres utilisateurs et développeurs de Fink.
+Il y a un canal <tt>#fink</tt> sur le réseau IRC <a href="https://libera.chat/">Libera.chat</a>. Vous pouvez y discuter avec d'autres utilisateurs et développeurs de Fink.
 </p>
 
 <p>

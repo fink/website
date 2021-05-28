@@ -1,7 +1,7 @@
 <?php
 $title = "Contributors";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:09:50 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
@@ -12,7 +12,7 @@ include "header.inc";
 Fink package has a Maintainer who works hard to ensure the package works as
 desired. Furthermore there is the <a href="organization.php#core">fink core team</a> that works on the fink program itself.
 The web site has to be kept current. Users need support, provided via our mailing lists
-and our IRC channel. These and many more tasks require a lot of work, thus we would
+and our IRC channel #fink on the Libera.chat network. These and many more tasks require a lot of work, thus we would
 like to say "Thank you" to all these people who sacrifice their spare time to help
 the community. As such, this page contains a list of people that have contributed
 to Fink in some way.

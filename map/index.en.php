@@ -1,13 +1,13 @@
 <?php
 $title = "Fink Developer Map";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:07:22 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
 <h1>Fink Developer Map</h1>
 <p>Ever wonder where some of the <a href="../people.php">contributors</a> to Fink live? Even if you have not, you are in the right place to find that information.</p>
-<p>Each person on the map has a number. Look on the list, then on the map to find out where each person lives. The name in quotes is the nick used on #fink at irc.freenode.net.</p>
+<p>Each person on the map has a number. Look on the list, then on the map to find out where each person lives. The name in quotes is the nick used on #fink at irc.libera.chat:6697.</p>
 <img src="finkmap_world.png" height="750" width="750" alt="">
 <table summary="Listings for the Fink Developer Map">
 <tr><td>Number</td><td>Name</td><td>Location</td></tr>

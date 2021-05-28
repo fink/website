@@ -1,7 +1,7 @@
 <?php
 $title = "Help";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2019/01/27 23:10:05 $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
@@ -49,7 +49,7 @@ include "header.inc";
 <p>
 <b>IRC チャンネル</b>
 <tt>#fink</tt> チャンネルは、
-<a href="http://freenode.net">freenode</a> という IRC ネットワーク上にあります。
+<a href="https://libera.chat/">Libera.chat</a> という IRC ネットワーク上にあります。
 他の Fink ユーザーや、開発者も少なからずいます。
 </p>
 
