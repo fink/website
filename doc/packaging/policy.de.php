@@ -733,7 +733,7 @@ Quelle auf folgende Art und Weise erzeugt werden:
   entsprechenden Zugang, fragen sie in der
   <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers
   Mailing-Liste</a> oder im
-  <a href="https://web.libera.chat/">IRC channel #fink</a>.
+  <a href="https://web.libera.chat/#fink">IRC channel #fink</a>.
   nach und ihnen wird sicher geholfen werden.</li>
 </ol>
 

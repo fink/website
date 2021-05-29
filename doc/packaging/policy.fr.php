@@ -381,7 +381,7 @@ InstallScript: &lt;&lt;
         <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
         If you don't have ready access to one, ask on the
         <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a> or
-        <a href="https://web.libera.chat/">the #fink IRC channel</a>,
+        <a href="https://web.libera.chat/#fink">the #fink IRC channel</a>,
         and someone should be able to help.</li>
     </ol>
 

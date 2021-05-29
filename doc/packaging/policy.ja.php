@@ -733,7 +733,7 @@ InstallScript: &lt;&lt;
         <li>ユーザが <code>fink</code> を使ってダウンロードできる公開ダウンロードサイトにアーカイブをアップロードする。
         もし、そのようなサイトがない場合は、
         <a href="mailto:fink-devel@lists.sourceforge.net">Fink 開発者メーリングリスト</a> または
-        <a href="https://web.libera.chat/">#fink IRC チャンネル</a>,
+        <a href="https://web.libera.chat/#fink">#fink IRC チャンネル</a>,
         に連絡してください。だれかが助けてくれるでしょう。</li>
     </ol>
 
