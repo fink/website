@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="de">
- <cvsid>$Id: news.de.xml,v 1.81 2021/03/06 10:13:00 nieder Exp $</cvsid>
+ <cvsid>$Id: news.de.xml,v 1.82 2021/11/03 5:08:00 nieder Exp $</cvsid>
+<newsitem>
+ <date>2021-11-03</date>
+ <headline>fink-0.45.4 released</headline>
+ <body>
+  <p>The Fink Project has released fink-0.45.4. This is a minor upgrade to support XQuartz 2.8.</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2021-03-06</date>
  <headline>fink-0.45.3 released</headline>
