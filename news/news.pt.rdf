@@ -5,8 +5,29 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>pt</dc:language>
-    <dc:date>2021-03-07T10:15:19-06:00</dc:date>
+    <dc:date>2021-11-03T05:11:01-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2021-11-03%20fink-0.45.4%20released">
+      <title>fink-0.45.4 released</title>
+      <link>http://fink.sourceforge.net/news/#2021-11-03%20fink-0.45.4%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2021-11-03%20fink-0.45.4%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.45.4. This is a minor upgrade to support XQuartz 2.8.</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.45.4. This is a minor upgrade to support XQuartz 2.8.</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2021-03-06%20fink-0.45.3%20released">
       <title>fink-0.45.3 released</title>
       <link>http://fink.sourceforge.net/news/#2021-03-06%20fink-0.45.3%20released</link>
@@ -405,31 +426,6 @@
   <p>2) Update to High Sierra.</p>
   <p>3) In a terminal window, run fink reinstall fink.</p>
   <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run fink selfupdate again.</p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2017-10-03%20Fixing%20updates%20when%20you%20have%20installed%20High%20Sierra%20before%20updating%20fink">
-      <title>Fixing updates when you have installed High Sierra before updating fink</title>
-      <link>http://fink.sourceforge.net/news/#2017-10-03%20Fixing%20updates%20when%20you%20have%20installed%20High%20Sierra%20before%20updating%20fink</link>
-      <guid>http://fink.sourceforge.net/news/#2017-10-03%20Fixing%20updates%20when%20you%20have%20installed%20High%20Sierra%20before%20updating%20fink</guid>
-      <description>
-		<![CDATA[
-	
-  <p>If you have updated to High Sierra before updating fink, your fink command 
-  won't be able to function any more.  Fortunately, a workaround is now available.</p>
-  <p>1) Download an updated <a href="http://bindist.finkproject.org/10.13/dists/stable/main/binary-darwin-x86_64/base/fink_0.42.0-121_darwin-x86_64.deb">fink</a>.</p>
-  <p>2) In a terminal window, run sudo dpkg -i fink_0.42.0-121_darwin-x86_64.deb from the directory where you downloaded the file.</p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>If you have updated to High Sierra before updating fink, your fink command 
-  won't be able to function any more.  Fortunately, a workaround is now available.</p>
-  <p>1) Download an updated <a href="http://bindist.finkproject.org/10.13/dists/stable/main/binary-darwin-x86_64/base/fink_0.42.0-121_darwin-x86_64.deb">fink</a>.</p>
-  <p>2) In a terminal window, run sudo dpkg -i fink_0.42.0-121_darwin-x86_64.deb from the directory where you downloaded the file.</p>
  
 		]]>
 	</content:encoded>
