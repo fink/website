@@ -3,7 +3,7 @@
 <document filename="index" lang="fr" >
 <title>Création de paquets Fink</title>
 <shorttitle>Paquets</shorttitle>
-<cvsid>$Id: packaging.fr.xml,v 1.84 2021/05/27 20:26:32 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.fr.xml,v 1.85 2021/12/15 20:53:06 nieder Exp $</cvsid>
 <preface>
 <p>Ce document explique comment créer des descriptions de paquets pour le gestionnaire de paquets de Fink. Il fournit aussi des règles et un fil conducteur pour la distribution Fink. Le format des fichiers de description et les règles de distribution sont en constante évolution. Il faut donc regarder en bas de page la ligne "Dernière mise à jour..." et la balise cvs pour détecter les changements. Les informations contenues dans ce document correspondent à la description du format et des règles utilisées dans les versions de développement postérieures à la version 0.9.0 du gestionnaire de paquets <tt>fink</tt>.</p>
 <p>Si vous créez des paquets pour Fink, vous avez tout intérêt à vous abonner à la liste de diffusion <link url="http://lists.sourceforge.net/lists/listinfo/fink-devel">fink-devel</link>. Si vous cherchez un moyen d'aider Fink et que vous avez des compétences dans ce domaine, vous pouvez aussi adopter un <link url="http://pdb.finkproject.org/pdb/nomaintainer.php">paquet sans mainteneur</link>.</p>
@@ -820,8 +820,11 @@ various perl versions in the 10.3 through 10.14.5 distributions
     perl 5.12.3:                         <em>10.7</em>, 10.8, 10.9
     perl 5.12.4:                         10.7, <em>10.8</em>, 10.9
     perl 5.16.2:                         10.7, 10.8, <em>10.9</em>, 10.10, 10.11, 10.12, 10.13
-    perl 5.18.2:                         10.7, 10.8, 10.9, <em>10.10</em>, <em>10.11</em>, <em>10.12</em>, <em>10.13</em>, <em>10.14</em>, 10.14.5, 10.15
-    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <em>10.14.5</em>, <em>10.15</em>
+    perl 5.18.2:                         10.7, 10.8, 10.9, <em>10.10</em>, <em>10.11</em>, <em>10.12</em>, <em>10.13</em>, <em>10.14</em>, 10.14.5, 10.15, 11.0, 11.3, 12.0
+    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <em>10.14.5</em>, <em>10.15</em>, 11.0, 11.3, 12.0
+    perl 5.28.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, <em>11.0</em>, 11.3, 12.0
+    perl 5.30.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, <em>11.3</em>, 12.0
+    perl 5.30.3:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, 11.3, <em>12.0</em>
 </codeblock>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>
