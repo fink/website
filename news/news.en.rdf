@@ -5,8 +5,29 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>en</dc:language>
-    <dc:date>2021-11-03T05:11:01-05:00</dc:date>
+    <dc:date>2022-04-09T18:47:52-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
+    <item rdf:about="http://fink.sourceforge.net/news/#2022-02-19%20fink-0.45.6%20released">
+      <title>fink-0.45.6 released</title>
+      <link>http://fink.sourceforge.net/news/#2022-02-19%20fink-0.45.6%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2022-02-19%20fink-0.45.6%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.45.6. This is a quick release to fix a bug introduced in fink-0.45.5 (issue #240).</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.45.6. This is a quick release to fix a bug introduced in fink-0.45.5 (issue #240).</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
     <item rdf:about="http://fink.sourceforge.net/news/#2021-11-03%20fink-0.45.4%20released">
       <title>fink-0.45.4 released</title>
       <link>http://fink.sourceforge.net/news/#2021-11-03%20fink-0.45.4%20released</link>
@@ -384,41 +405,6 @@
   fink selfupdate-svn to switch to one of those methods.  
   This release officially supports 10.9.0-10.13.4.  It also enhances support for Oracle's
   Java 9 as well as the 2017 release of Apple's legacy Java.
-  In addition, it incorporates other bug fixes and enhancements.  
-  The best update sequence from going to 10.9-10.12 to 10.13 is as follows:</p>
-  <p>0) Start on 10.9-10.12.  Don't update your OS yet.</p>
-  <p>1) In a terminal window, run fink selfupdate and install fink-0.42.0</p>
-  <p>2) Update to High Sierra.</p>
-  <p>3) In a terminal window, run fink reinstall fink.</p>
-  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run fink selfupdate again.</p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2017-10-07%20fink-0.42.0%20released">
-      <title>fink-0.42.0 released</title>
-      <link>http://fink.sourceforge.net/news/#2017-10-07%20fink-0.42.0%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2017-10-07%20fink-0.42.0%20released</guid>
-      <description>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.42.0 to provide High Sierra (10.13) support.
-  This release officially supports 10.9.0-10.13.0.  It also adds support for Oracle's Java 9.  
-  In addition, it incorporates other bug fixes and enhancements.  
-  The best update sequence from going to 10.9-10.12 to 10.13 is as follows:</p>
-  <p>0) Start on 10.9-10.12.  Don't update your OS yet.</p>
-  <p>1) In a terminal window, run fink selfupdate and install fink-0.42.0</p>
-  <p>2) Update to High Sierra.</p>
-  <p>3) In a terminal window, run fink reinstall fink.</p>
-  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run fink selfupdate again.</p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.42.0 to provide High Sierra (10.13) support.
-  This release officially supports 10.9.0-10.13.0.  It also adds support for Oracle's Java 9.  
   In addition, it incorporates other bug fixes and enhancements.  
   The best update sequence from going to 10.9-10.12 to 10.13 is as follows:</p>
   <p>0) Start on 10.9-10.12.  Don't update your OS yet.</p>

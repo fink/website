@@ -1,13 +1,16 @@
 <?php
 $title = "News";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/11/03 5:08:00';
+$cvs_date = 'Date: 2022/04/09 18:46:00';
 $metatags = '';
 
 include_once "header.inc";
 ?>
 
-<a name="2021-11-03%20fink-0.45.4%20released"><span class="news-date">2021-11-03: </span><span class="news-headline">fink-0.45.4 released</span></a><?php gray_line(); ?>
+<a name="2022-02-19%20fink-0.45.6%20released"><span class="news-date">2022-02-19: </span><span class="news-headline">fink-0.45.6 released</span></a><?php gray_line(); ?>
+  <p>The Fink Project has released fink-0.45.6. This is a quick release to fix a bug introduced in fink-0.45.5 (issue #240).</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
+ <a name="2021-11-03%20fink-0.45.4%20released"><span class="news-date">2021-11-03: </span><span class="news-headline">fink-0.45.4 released</span></a><?php gray_line(); ?>
   <p>The Fink Project has released fink-0.45.4. This is a minor upgrade to support XQuartz 2.8.</p>
   <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
  <a name="2021-03-06%20fink-0.45.3%20released"><span class="news-date">2021-03-06: </span><span class="news-headline">fink-0.45.3 released</span></a><?php gray_line(); ?>
