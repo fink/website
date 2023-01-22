@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Referenz";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/12/15 20:53:06';
+$cvs_date = 'Date: 2023/01/22 6:40:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="prev" href="compilers.php?phpLang=de" title="Compiler">';
 
 
@@ -220,7 +220,7 @@ für alle Distributionen.
 Da die Python-Version 2.5 für die Distributionen 10.7+ nicht zur Verfügung steht
 und die Perl-Versionen von Distrivution zu Distribution variieren, wird diese
 Feld in diesen Paketen häufig vor. Als Referenz beschreiben wir hier die
-Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.14.5
+Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 13.0
 (<b>Fett</b>-gedruckte Systeme zeigen die Version von Sytem-Perl an):
 </p>
 <pre>
@@ -234,11 +234,11 @@ Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.
     perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
     perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
-    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>, 10.14.5, 10.15, 11.0, 11.3, 12.0
-    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <b>10.14.5</b>, <b>10.15</b>, 11.0, 11.3, 12.0
-    perl 5.28.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, <b>11.0</b>, 11.3, 12.0
-    perl 5.30.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, <b>11.3</b>, 12.0
-    perl 5.30.3:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, 11.3, <b>12.0</b>
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>, 10.14.5, 10.15, 11.0, 11.3, 12.0, 13.0
+    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <b>10.14.5</b>, <b>10.15</b>, 11.0, 11.3, 12.0, 13.0
+    perl 5.28.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, <b>11.0</b>, 11.3, 12.0, 13.0
+    perl 5.30.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, <b>11.3</b>, 12.0, 13.0
+    perl 5.30.3:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, 11.3, <b>12.0</b>, <b>13.0</b>
 </pre>
 <p>
 Eine Möglichkeit, alle unterstützten Varianten in einer einzigen finkinfo-Datei
