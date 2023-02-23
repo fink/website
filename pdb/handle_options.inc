@@ -224,7 +224,7 @@ $query->addField("rel_type");
 if ($dist)
 	$query->addQuery("dist_id:\"$dist\"", true);
 if ($dist_name == $default_dist)
-	$query->addQuery("+(dist_name:\"10.9\" OR dist_name:\"10.10\" OR dist_name:\"10.11\" OR dist_name:\"10.12\" OR dist_name:\"10.13\" OR dist_name:\"10.14\" OR dist_name:\"10.14.5\" OR dist_name:\"10.15\")");
+	$query->addQuery("+(dist_name:\"10.9\" OR dist_name:\"10.10\" OR dist_name:\"10.11\" OR dist_name:\"10.12\" OR dist_name:\"10.13\" OR dist_name:\"10.14\" OR dist_name:\"10.14.5\" OR dist_name:\"10.15\" OR dist_name:\"11.0\" OR dist_name:\"11.3\" OR dist_name:\"12.0\" OR dist_name:\"13.0\")");
 elseif ($dist_name != 'any')
 	$query->addQuery("dist_name:\"$dist_name\"", true);
 if ($architecture)

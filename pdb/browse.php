@@ -60,7 +60,7 @@ function genFormSelect($var_name, $cur_val, $values, $description = '') {
 // Distribution values
 $dist_values = array(
 	'any'     => 'Any',
-	'default' => 'Supported (10.9 through 10.15)',
+	'default' => 'Supported (10.9 through 13.0)',
 );
 foreach ($distributions as $d) {
 	if (!$showall and !$d->isVisible()) {
