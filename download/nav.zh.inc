@@ -19,7 +19,7 @@ $navbox = array(
   $hostlink . "download/10.14-upgrade.php?phpLang=en", "10.14 升级",
   $hostlink . "download/sources_for_binaries.php?phpLang=en", "Sources for Binaries",
   $hostlink . "download/archive.php?phpLang=en", "旧文档"
-  "http://bindist.finkmirrors.net/", "旧文档"
+  //"http://bindist.finkmirrors.net/", "旧文档"
 );
 
 ?>
