@@ -4,6 +4,7 @@ $cvs_author = '$Author: nieder $';
 $cvs_date = '$Date: 2020/10/02 21:25:00 $';
 
 include "header.inc";
+include "../fink_version.inc";
 ?>
 
 <h1>Fink ソースリリースのダウンロード</h1>
