@@ -26,14 +26,18 @@ und zu installieren.</p>
 <?php print $fink_tool_release_date; ?> offiziell veröffentlicht.</p>
 
 <ul>
-  <li>
-Nehmen sie für macOS 10.9-10.15
- <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?>K<br>
-  </li>
-Nehmen sie für OS X 10.7-8, use
- <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.38.7.tar.gz", "fink-0.38.7.tar.gz", "/downloads/FinkSOURCE") ?> - 1185K<br>
+	 <li>
+Für OS X 10.9-10.15 können sie dieses <a href="https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool">Helferskript</a> verwenden, 
+das die Schritte zum Herunterladen und Erstellen automatisiert ausführen.
 	 </li>
-     <li>
+	 <li>
+Nehmen sie für eine manuelle Installation auf OS X 10.9-10.15 <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
+     </li>     
+	 <li>
+Nehmen sie für OS X 10.7-8
+ <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.38.7.tar.gz", "fink-0.38.7.tar.gz", "/downloads/FinkSOURCE") ?> - 1185K<br>
+	 </li>
+  <li>
 Nehmen sie für OS X 10.6
  <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz", "fink-0.36.5.tar.gz", "/downloads/FinkSOURCE") ?> - 1176K<br>
      </li>
@@ -47,21 +51,21 @@ Nehmen sie für OS X 10.4
      </li>
 </ul>
 
-<p>Sie müssen auch für ihr System die entsprechenden Command-Line-Tools für 
+<p>Sie müssen auch die für ihr System entsprechenden Command-Line-Tools von 
 Xcode installieren, (siehe: 
 <a href="./index.de.php#additionaldownloads">Schnellanleitung</a>),  
 das wie folgt gemacht werden kann:</p>
 <ul>
-<li><p><em>10.9-10.15:  </em>Führen sie <code>sudo xcode-select --install</code> im 
-Terminal aus und wählen sie den Install-Knopf aus.</p></li>
-<li><p><em>10.9-10.15:  </em>Manueller Download von developer.apple.com.  Achten 
+<li><p><em>10.9-10.15: </em>Führen sie <code>sudo xcode-select --install</code> 
+im Terminal aus und wählen sie den Install-Knopf aus.</p></li>
+<li><p><em>10.9-10.15: </em>Manueller Download von developer.apple.com.  Achten 
 sie auf die richtige Version für ihre Version von Mac OS X.</p></li>
-<li><p><em>10.7-10.8:  </em>Installieren sie das komplette Xcode. Man kann die 
+<li><p><em>10.7-10.8: </em>Installieren sie das komplette Xcode. Man kann die 
 Command-Line-Tools über den <em>Downloads</em>-Reiter in den 
 <strong>Voreinstellungen</strong> von Xcode installieren.</p></li>
-<li><p><em>10.6:  </em>Installieren sie das komplette Xcode.</p></li>
+<li><p><em>10.6-: </em>Installieren sie das komplette Xcode.</p></li>
 </ul>
-<p>Installieren sie das komplette Xcode auf 10.7-10.15, indem sie folgende 
+<p>Installieren sie das komplette Xcode auf 10.7-10.15, sollten sie folgende 
 Befehle ausführen:</p>
 <pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
 <p>wobei sie <em>/Applications</em> mit dem tatsächlichen Pfad zur Xcode-App 
@@ -70,11 +74,11 @@ ersetzen müssen.</p>
 Lizenzbedingungen für Xcode zu akzeptieren. Nur so funktioniert der Nutzer 
 'build', der von Fink eingerichtet und verwendet wird.</p> 
 <p></p>
-<p>Packen sie nun das Archiv <?php print $fink_tool_version; ?>.tar.gz aus, falls 
-es nicht automatisch erfolgte, mit anderen Worten, führen sie folgende Befehle 
-in einem Terminalfenster aus (Ab hier wird angenommen, dass der Download in 
-das übliche Verzeichnis erfolgte. Wenn nicht, müssen sie die Befehle 
-entsprechend anpassen.):</p>
+<p>Packen sie nun das Archiv <?php print $fink_tool_version; ?>.tar.gz aus,
+falls es nicht automatisch erfolgte.  Mit anderen Worten, führen sie
+folgende Befehle in einem Terminalfenster aus (Ab hier wird angenommen,
+dass der Download in das übliche Verzeichnis erfolgte.  Wenn nicht,
+müssen sie die Befehle entsprechend anpassen.):</p>
 
 <pre>cd $HOME/Downloads</pre>
 <p>gefolgt von</p>
@@ -82,7 +86,7 @@ entsprechend anpassen.):</p>
 <p>oder</p>
 <pre>tar -xvf fink-<?php print $fink_tool_version; ?>.tar</pre>
 <p>wobei die Wahl davon abhängt, ob das Archiv zum Beispiel von Safari bereits 
-teilweise oder ganz ausgepackt wurde.</p>
+teilweise oder komplett ausgepackt wurde.</p>
 
 <p>Führen sie dann folgende Befehle:</p>
 
@@ -96,9 +100,9 @@ anderes Verzeichnis als die Voreinstellung <em>/sw</em> verwenden, geht das mit<
 
 <pre>/sw/bin/pathsetup.sh</pre>
 
-<p>Dies setzt die Umgebung (environment) für Fink (unter der Annahme, dass Fink 
+<p>Dies setzt die Umgebungsvariablen für Fink (unter der Annahme, dass Fink 
 in /sw installiert ist).  Öffnet man ein neues Terminalfenster, benutzt die 
-Sitzung die neuen Einstellungen der Umgebung. Sind <em>fink</em> und die anderen 
+Sitzung die neuen Umgebungsvariablen. Sind <em>fink</em> und die anderen 
 Basis-Pakete installiert, laden folgende Kommandos Paketbeschreibungen und 
 Patches herunter:</p>
 
@@ -142,7 +146,7 @@ Xcode installieren, (siehe:
 <a href="./index.de.php#additionaldownloads">Schnellanleitung</a>)</p>
 
 <p>Packen sie nun das Archiv tar.gz mit folgendem Kommando aus, falls es nicht 
-bereits automatisch erfolgte:</p>
+bereits automatisch erledigt wurde</p>
 
 <pre>tar -xvzf fink-<?php print $fink_version; ?>-full.tar.gz</pre>
 
@@ -168,9 +172,9 @@ verwenden, geht das mit</p>
 
 <pre>/sw/bin/pathsetup.sh</pre>
 
-<p>Dies setzt die Umgebung (environment) für Fink (unter der Annahme, dass Fink 
+<p>Dies setzt die Umgebungsvariablen für Fink (unter der Annahme, dass Fink 
 in /sw installiert ist).  Öffnet man ein neues Terminalfenster, benutzt die 
-Sitzung die neuen Einstellungen der Umgebung. Sind <em>fink</em> und die anderen 
+Sitzung die neuen Umgebungsvariablen. Sind <em>fink</em> und die anderen 
 Basis-Pakete installiert, laden folgende Kommandos Paketbeschreibungen und 
 Patches herunter:</p>
 
@@ -190,12 +194,12 @@ Patches herunter:</p>
 
 <p>Alles aber unter der Voraussetzung, dass sie ursprünglich 
 <strong>nicht</strong> die Methode "point release" ausgewählt haben. 
-<code>rsync</code> ist für die meisten die bessere Wahl als <code>git</code>.</p>
+<code>rsync</code> ist für die meisten eine bessere Wahl als <code>cvs</code>.</p>
 
 <p>In obiger Datei finden sie umfangreiche Anleitungen zur Installation und Nutzung.
-Bitte lesen sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.
-Die Dokumente README, INSTALL und USAGE stehen sowohl als reine Textdokumente 
-(zum Lesen in der Kommandozeile) als auch in Form von HTML (zum Lesen im Browser 
+Bitte lesen - Fink ist keine ein-Klick-und-fertig-Geschichte.
+Die Dokumente README, INSTALL und USAGE stehen sowohl als Textdokumente 
+(zum Lesen in der Kommandozeile) als auch in Form von HTML-Dateien (zum Lesen im Browser 
 und zum Ausdrucken) zur Verfügung. Die Dokumente finden sie auch online im 
 <a href="../doc/index.php">Bereich Dokumentation</a>.
 </p>
