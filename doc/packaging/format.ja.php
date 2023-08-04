@@ -1,7 +1,7 @@
 <?php
 $title = "パッケージ作成 - パッケージ記述";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="policy.php?phpLang=ja" title="パッケージ化ポリシー"><link rel="prev" href="intro.php?phpLang=ja" title="始めに">';
 
 
@@ -13,8 +13,8 @@ include_once "header.ja.inc";
 		<h2><a name="trees">2.1 ツリーレイアウト</a></h2>
 			
 			<p>
-				パッケージ記述はディレクトリ <code>/sw/fink/dists</code> 下のディレクトリ <code>finkinfo</code> から読み込まれます．
-				「ツリー」の設定はファイル <code>/sw/etc/fink.conf</code> にあり，これでどのディレクトリを読むかを指定します．
+				パッケージ記述はディレクトリ <code>/opt/sw/fink/dists</code> 下のディレクトリ <code>finkinfo</code> から読み込まれます．
+				「ツリー」の設定はファイル <code>/opt/sw/etc/fink.conf</code> にあり，これでどのディレクトリを読むかを指定します．
 				パッケージ記述ファイルの名前は，Fink パッケージの正式名称に拡張子 ".info" を付けたものです．
 				Fink 0.13.0 以降では，パッケージのアップデートの手間を省くための，
 				「パッケージ名」に拡張子 ".info" を付けただけの簡略形式が便利です．
@@ -146,17 +146,17 @@ SplitOff: &lt;&lt;
 						</p>
 					</td></tr><tr valign="top"><td>%p, %P</td><td>
 						<p>
-							<b>p</b>refix．Fink のインストール場所．例: <code>/sw</code>．
-							全てのユーザーが <code>/sw</code> に Fink をインストールしているわけではない．
+							<b>p</b>refix．Fink のインストール場所．例: <code>/opt/sw</code>．
+							全てのユーザーが <code>/opt/sw</code> に Fink をインストールしているわけではない．
 							<code>%p</code> で正しいパスを取得する．
 						</p>
 					</td></tr><tr valign="top"><td>%d</td><td>
 						<p>
 							<b>d</b>estination．パッケージ化するツリーのビルド先．
-							例:<code>/sw/src/fink.build/root-gimp-1.2.1-1</code>
+							例:<code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code>
 							この一時ディレクトリはパッケージをコンパイルする際のインストール段階でルートディレクトリの役を果たす．
 							<code>root-%f</code> が <code>%p/src</code> の中にあることを当てにしてはいけない．
-							ユーザが設定ファイル <code>/sw/etc/fink.conf</code> でフィールド <code>Buildpath</code>
+							ユーザが設定ファイル <code>/opt/sw/etc/fink.conf</code> でフィールド <code>Buildpath</code>
 							を指定すればこの場所は変わってしまう．
 						</p>
 					</td></tr><tr valign="top"><td>%D</td><td>
@@ -182,9 +182,9 @@ SplitOff: &lt;&lt;
 					</td></tr><tr valign="top"><td>%b</td><td>
 						<p>
 							<b>b</b>uild．
-							ビルドディレクトリ．例: <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>
+							ビルドディレクトリ．例: <code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>
 							<code>%f</code> が <code>%p/src</code> の中にあることを当てにしてはいけない．
-							ユーザが設定ファイル <code>/sw/etc/fink.conf</code> でフィールド <code>Buildpath</code>
+							ユーザが設定ファイル <code>/opt/sw/etc/fink.conf</code> でフィールド <code>Buildpath</code>
 							を指定すればこの場所は変わってしまう．
 							最も内側のディレクトリ名は， <code>Source</code> ファイル名か， (もしあれば) <code>SourceDirectory</code> 
 							フィールドの値となります．

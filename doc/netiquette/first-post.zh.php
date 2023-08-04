@@ -1,7 +1,7 @@
 <?php
 $title = "网络礼仪 - 初始";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="网络礼仪 Contents"><link rel="next" href="reply.php?phpLang=zh" title="回应一个帖子"><link rel="prev" href="before-post.php?phpLang=zh" title="在张贴前需要做些什么">';
 
 
@@ -46,7 +46,7 @@ error unpacking foo
 Checking for bar-config...no
 Error:  bar-config not found
 ....</pre>
-						<p>如果你认为可能有帮助的话，你可以张贴配置日志文件的相应部分，例如： <code>/sw/src/foo-3.141-6/foo-3.141/config.log</code>。<b>请不要张贴整个文件，因为它会非常巨大。</b></p>
+						<p>如果你认为可能有帮助的话，你可以张贴配置日志文件的相应部分，例如： <code>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</code>。<b>请不要张贴整个文件，因为它会非常巨大。</b></p>
 						</li>
                 <li><p>或者，错误在你实际开始构建软件包时立即发生。
                 这种情况下，可以张贴从编译尝试运行到结束的几行：</p>

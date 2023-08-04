@@ -1,7 +1,7 @@
 <?php
 $title = "P.M.F. - Upgrading Fink";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="usage-fink.php?phpLang=es" title="Installing, Using and Maintaining Fink"><link rel="prev" href="mirrors.php?phpLang=es" title="Espejos de distribución">';
 
 

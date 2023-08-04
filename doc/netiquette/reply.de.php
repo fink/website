@@ -1,7 +1,7 @@
 <?php
 $title = "Netiquette - Antworten";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/02/19 17:20:27';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Netiquette Contents"><link rel="next" href="unsubscribe.php?phpLang=de" title="Abonnement kündigen"><link rel="prev" href="first-post.php?phpLang=de" title="Erste Anfrage">';
 
 

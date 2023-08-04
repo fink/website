@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - Fast Track";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2015/11/01 02:12:02';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/03 20:24:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Installation Contents"><link rel="next" href="install-first.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="Installation Contents">';
 
 
@@ -80,8 +80,8 @@ The script may have to stop for you to do something.  If so, run it again.
 <h2><a name="install">1.3 First Time Installation Fast
 Track</a></h2>
 <p>
-Start out by copying the <code>fink-0.45.4.tar.gz</code>
-file to your home folder (it might also show up as <code>fink-0.45.4.tar</code> if you
+Start out by copying the <code>fink-0.45.6.tar.gz</code>
+file to your home folder (it might also show up as <code>fink-0.45.6.tar</code> if you
 used Safari to download it).
 Then, open Terminal.app and follow the session below.
 Computer output is in <code>normal face</code>, your input is in
@@ -93,19 +93,19 @@ the output have been omitted (<code>...</code>).
 dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
-<pre>[frodo:~] testuser% <b>tar xf fink-0.45.4.tar.gz</b>
-[frodo:~] testuser% <b>cd fink-0.45.4</b>
-[frodo:~/fink-0.45.4] testuser% <b>./bootstrap</b>
+<pre>[frodo:~] testuser% <b>tar xf fink-0.45.6.tar.gz</b>
+[frodo:~] testuser% <b>cd fink-0.45.6</b>
+[frodo:~/fink-0.45.6] testuser% <b>./bootstrap</b>
 
 Fink must be installed and run with superuser (root) privileges
 ...
 Choose a method: [1] <b>1</b>
 
-sudo /Users/testuser/fink-0.45.4/bootstrap .sudo '/sw'
+sudo /Users/testuser/fink-0.45.6/bootstrap .sudo '/opt/sw'
 Password: <b>(your normal password here)</b>
 ...
 OK, I'll ask you some questions and update the configuration file in
-'/sw/etc/fink.conf'.
+'/opt/sw/etc/fink.conf'.
 
 In what additional directory should Fink look for downloaded tarballs? [] <b>(press return)</b>
 
@@ -140,16 +140,16 @@ Choose a continent:
 ...
 <b>(enter the numbers corresponding to your location)</b>
 ...
-Writing updated configuration to '/sw/etc/fink.conf'...
-Bootstrapping a base system via /sw/bootstrap.
+Writing updated configuration to '/opt/sw/etc/fink.conf'...
+Bootstrapping a base system via /opt/sw/bootstrap.
 ...
 <b>(take a coffee break while Fink downloads and compiles the base packages)</b>
 ...
 
-You should now have a working Fink installation in '/sw'.
-[frodo:~/fink-0.45.4] testuser% <b>cd</b>
-[frodo:~] testuser% <b>rm -r fink-0.45.4</b>
-[frodo:~] testuser% <b>/sw/bin/pathsetup.sh</b></pre>
+You should now have a working Fink installation in '/opt/sw'.
+[frodo:~/fink-0.45.6] testuser% <b>cd</b>
+[frodo:~] testuser% <b>rm -r fink-0.45.6</b>
+[frodo:~] testuser% <b>/opt/sw/bin/pathsetup.sh</b></pre>
 <p>
 The last command runs a little script to help set up your Unix paths
 (and other things) for use with Fink.  In most cases, it will run
@@ -159,10 +159,10 @@ the script fails, you'll have to do things by hand (see below).
 <p>
 (If you need to do things by hand, and you are using csh or tcsh,
 you need to make sure that the command 
-<code>source /sw/bin/init.csh</code> is executed during startup of
+<code>source /opt/sw/bin/init.csh</code> is executed during startup of
 your shell, either by .login, .cshrc, .tcshrc, or something else
-appropriate.  If you are using bash or similar shells, the command
-you need is <code>. /sw/bin/init.sh</code>, and places where it
+appropriate.  If you are using bash, zsh or similar shells, the command
+you need is <code>. /opt/sw/bin/init.sh</code>, and places where it
 might get executed include .bashrc and .profile.)
 </p>
 <p>

@@ -1,7 +1,7 @@
 <?php
 $title = "常见疑问（F.A.Q.） - 编译（１）";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包"><link rel="prev" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink">';
 
 
@@ -25,7 +25,7 @@ include_once "header.zh.inc";
     <a name="missing-make">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.3: 我碰到一个涉及 <code>make</code> 的错误。
         </b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 如果错误信息是这种形式</p><pre>make: command not found</pre><p>或</p><pre>Can't exec "make": No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>它表示你需要安装开发工具。</p><p>如果你的错误信息是这样的</p><pre>make: illegal option -- C</pre><p>那是因为你把开发工具包里面 GNU 版本的 <code>make</code> 工具换成了 BSD 版本。许多软件包依赖于 GNU Make 的特有功能。
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 如果错误信息是这种形式</p><pre>make: command not found</pre><p>或</p><pre>Can't exec "make": No such file or directory at /opt/sw/lib/perl5/Fink/Services.pm line 190.</pre><p>它表示你需要安装开发工具。</p><p>如果你的错误信息是这样的</p><pre>make: illegal option -- C</pre><p>那是因为你把开发工具包里面 GNU 版本的 <code>make</code> 工具换成了 BSD 版本。许多软件包依赖于 GNU Make 的特有功能。
 确定 <code>/usr/bin/make</code> 是一个指向
 <code>gnumake</code>的符号链接，而不是指向 <code>bsdmake</code>。另外，确定 <code>/usr/local/bin/</code> 中没有另外一个 <code>make</code>。
 </p></div>
@@ -40,7 +40,7 @@ Usage: head [-options] &lt;url&gt;...</pre><p>后面是一列选项描述，你�
 如果你想使用 Fink，你需要装回原来的 <code>head</code> 程序。
 </p><p>
 现在源代码发布版的 bootstrap 脚本会检查这一点，但你仍然会碰到这个问题，如果你使用二进制安装或在安装 Fink 以后又安装 libwww。
-</p><p>也曾经有报告说发生这个问题是因为安装了 <code>/sw/bin/HEAD</code>（这不是 Fink 软件包安装的）。这种情况很容易解决：重命名 <code>/sw/bin/HEAD</code>。</p></div>
+</p><p>也曾经有报告说发生这个问题是因为安装了 <code>/opt/sw/bin/HEAD</code>（这不是 Fink 软件包安装的）。这种情况很容易解决：重命名 <code>/opt/sw/bin/HEAD</code>。</p></div>
     </a>
     <a name="also_in">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.5: 当我安装一个软件包的时候，我碰到一个错误信息说我试图覆盖另外一个软件包的文件。</b></p></div>
@@ -50,9 +50,9 @@ Usage: head [-options] &lt;url&gt;...</pre><p>后面是一列选项描述，你�
 
     <a name="mv-failed">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.6: 当我构建一个软件包时，"execution of mv failed, exit code 1" 错误是什么意思？</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 如果你安装了 StuffIt Pro，这可能是因为你使用了 "Archive Via Real Name" 模式。在系统预置中检查 StuffIt 面板，禁用 "ArchiveViaRealName"。它包括对一些重要的系统调用的不正确的替代，从而引起一些古怪的错误。</p><p>否则，一个 <code>mv</code> 错误通常意味着构建过程更早期发生了错误，但是构建过程并没有因为那个错误而终止。要找到发生的问题的文件，可以搜索那个不存在文件构建时候的输出。比如，如果你碰到这样的错误：</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
- /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
- mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 如果你安装了 StuffIt Pro，这可能是因为你使用了 "Archive Via Real Name" 模式。在系统预置中检查 StuffIt 面板，禁用 "ArchiveViaRealName"。它包括对一些重要的系统调用的不正确的替代，从而引起一些古怪的错误。</p><p>否则，一个 <code>mv</code> 错误通常意味着构建过程更早期发生了错误，但是构建过程并没有因为那个错误而终止。要找到发生的问题的文件，可以搜索那个不存在文件构建时候的输出。比如，如果你碰到这样的错误：</p><pre>mv /opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib \
+ /opt/sw/src/root-foo-shlibs-0.1.2-3/opt/sw/lib/
+ mv: cannot stat `/opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib': 
  No such file or directory
 ### execution of mv failed, exit code 1
 Failed: installing foo-0.1.2-3 failed</pre><p>那么你应该在你构建输出信息的更前面的地方寻找有关 <code>libbar</code> 的信息。</p></div>
@@ -88,7 +88,7 @@ Failed: installing foo-0.1.2-3 failed</pre><p>那么你应该在你构建输出�
     </a>
     <a name="toc-out-of-date">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.9: 当我构建一个软件包的时候，我碰到一个消息说 "table of contents" 已经过时。我需要怎么办？</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 输出已经提示了该怎么办。消息通常是这样的：</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</pre><p>你需要（以 root 权限）运行 ranlib 处理引起问题的库。例如对上面的情况，你可以运行：</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 输出已经提示了该怎么办。消息通常是这样的：</p><pre>ld: table of contents for archive: /opt/sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</pre><p>你需要（以 root 权限）运行 ranlib 处理引起问题的库。例如对上面的情况，你可以运行：</p><pre>sudo ranlib /opt/sw/lib/libintl.a</pre></div>
     </a>
     <a name="fc-atlas">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.10: 当我安装 atlas 时 Fink Commander 挂了。</b></p></div>
@@ -109,22 +109,22 @@ Failed: installing foo-0.1.2-3 failed</pre><p>那么你应该在你构建输出�
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 要回避这个问题，尝试升级一个单独的软件包，然后再次尝试使用 "fink update-all"。如果你还碰到这个信息，重复这个过程。</p></div>
     </a>
     <a name="dpkg-parse-error">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>6.13: 我不能安装任何东西，因为我碰到 "dpkg: parse error, in file `/sw/var/lib/dpkg/status'" 错误！</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>6.13: 我不能安装任何东西，因为我碰到 "dpkg: parse error, in file `/opt/sw/var/lib/dpkg/status'" 错误！</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This means that somehow your dpkg database got damaged, usually
-        from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>(of course, replace <code>foo-1.2.3-4</code> with the package name you are seeing).</p><p>When this happens, you should edit <code>/sw/var/lib/dpkg/status</code> as a superuser.
+        from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>(of course, replace <code>foo-1.2.3-4</code> with the package name you are seeing).</p><p>When this happens, you should edit <code>/opt/sw/var/lib/dpkg/status</code> as a superuser.
 	Then go near the line number which shows up in the error message.
 	You should see a <code>fink-buildlock-foo-1.2.3-4</code>
         package whose <code>Status</code> field is marked</p><pre>install ok installed</pre><p>Change that to</p><pre>purge ok not-installed</pre><p>Under other circumstances, there may be garbage in the file.  You can fix this situation by
-        copying the previous version of the database, like so:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>You may need to re-install the last couple of packages you
+        copying the previous version of the database, like so:</p><pre>sudo cp /opt/sw/var/lib/dpkg/status-old /opt/sw/var/lib/dpkg/status</pre><p>You may need to re-install the last couple of packages you
         installed before the problem started occurring.</p></div>
     </a>
     <a name="freetype-problems">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.14: 我碰到一个涉及 freetype 的错误。</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 这个错误有几种形式。If you get the following:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>check whether you have an extraneous <code>freetype-config</code> excutable by running</p><pre>where freetype-config</pre><p>if you're using <code>tcsh</code>, or</p><pre>type -a freetype-config</pre><p>if you're using <code>bash</code>.  The Mono Framework has been known to install a <code>/usr/bin/freetype-config</code> that is a symbolic link to a file in that framework.</p><p>如果你的错误是这样的：</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token
-/sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token
-/sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token
-/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
-/sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 这个错误有几种形式。If you get the following:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>check whether you have an extraneous <code>freetype-config</code> excutable by running</p><pre>where freetype-config</pre><p>if you're using <code>tcsh</code>, or</p><pre>type -a freetype-config</pre><p>if you're using <code>bash</code>.  The Mono Framework has been known to install a <code>/usr/bin/freetype-config</code> that is a symbolic link to a file in that framework.</p><p>如果你的错误是这样的：</p><pre>/opt/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token
+/opt/sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token
+/opt/sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class
 make[2]: *** [rsvg-gz.lo] Error 1
 make[1]: *** [all-recursive] Error 1
 make: *** [all-recursive-am] Error 2
@@ -228,9 +228,9 @@ running build_ext
 Traceback (most recent call last):
   File "setup_socket_ssl.py", line 21, in ?
     depends = ['socketmodule.h'] )
-  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+  File "/opt/sw/src/root-python24-2.4.1-1/opt/sw/lib/python2.4/distutils/core.py", line 166, in setup
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
-### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <b>10.4-transitional</b> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p><p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p></div>
+### execution of /opt/sw/bin/python2.4 failed, exit code 1</pre><p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <b>10.4-transitional</b> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p><p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p></div>
     </a>
 <a name="libtool-unrecognized-dynamic">
   <div class="question"><p><b><?php echo FINK_Q ; ?>6.24: I get <q>unrecognized option `-dynamic'</q> errors from <code>libtool</code>.</b></p></div>

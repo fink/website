@@ -1,7 +1,7 @@
 <?php
 $title = "Guía del Usuario - fink.conf";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="usage.php?phpLang=es" title="Usando el Fink desde la línea de comando"><link rel="prev" href="upgrade.php?phpLang=es" title="Actualizando Fink">';
 
 
@@ -23,7 +23,7 @@ general, estas opciones son solamente para usuarios avanzados.
 </p>
       <p>
 El archivo <b>fink.conf</b> se localiza en el directorio
-<code>/sw/etc/fink.conf</code>, y puede ser editado con tu editor de texts favorito. Pero se necesitaran derechos de superusuario.
+<code>/opt/sw/etc/fink.conf</code>, y puede ser editado con tu editor de texts favorito. Pero se necesitaran derechos de superusuario.
 </p>
     
     <h2><a name="syntax">5.2 Sintaxis del fink.conf</a></h2>
@@ -51,7 +51,7 @@ Algunas de las configuraciones del  <b>fink.conf</b> son requeridas. Sin ellas, 
           <p>
             <b>Basepath:</b> path</p>
           <p>
-Le dice a Fink donde esta instalado, por omisión<b>/sw</b> a menos que lo hayas cambiado durante la Instalación. Este valor  
+Le dice a Fink donde esta instalado, por omisión<b>/opt/sw</b> a menos que lo hayas cambiado durante la Instalación. Este valor  
 <b>no</b> debe cambiar después de la Instalación, ya que solo confundira al <b>fink</b>
 </p>
         </li>
@@ -82,10 +82,10 @@ unstable/crypto - paquetes criptograficos inestables
 unstable/main   - otros paquetes inestables
 </pre>
           <p>
-También puedes agregar tus propios arboles en el directorio <code>/sw/fink/dists</code>
+También puedes agregar tus propios arboles en el directorio <code>/opt/sw/fink/dists</code>
 aunque esto no es necesario en muchos casos. Los arboles por defecto son "local/main local/bootstrap
 stable/main". Esta lista debermantenerse sincronizada con el archivo
-<code>/sw/etc/apt/sources.list</code> .
+<code>/opt/sw/etc/apt/sources.list</code> .
 
 (As of fink 0.21.0, <code>fink</code>does this for you automatically.)
 
@@ -106,7 +106,7 @@ Mac OS X 10.0 y previos no son soportados. No es necesario modificar este valor.
           <p>
             <b>FetchAltDir:</b> path</p>
           <p>usualmente <code>fink</code> almacenará el código fuente que descarge en el directorio
-<code>/sw/src</code>. Con esta opción se puede seleccionar un directorio alterno para buscar el código fuente. Por ejemplo:
+<code>/opt/sw/src</code>. Con esta opción se puede seleccionar un directorio alterno para buscar el código fuente. Por ejemplo:
 </p>
           <pre>FetchAltDir: /usr/src</pre>
         </li>
@@ -136,7 +136,7 @@ el valor por omisión es 1.
         <li>
           <p>
             <b>NoAutoIndex:</b> boolean</p>
-          <p>Fink almacena su propia descripción en los archivos del folder  /sw/var/db/fink.db para evitar el leerla cada vez que es ejecutado. Fink
+          <p>Fink almacena su propia descripción en los archivos del folder /opt/sw/var/db/fink.db para evitar el leerla cada vez que es ejecutado. Fink
 revisa si el indice de paquetes necesita ser actualizado, a menos que esta opción este indicada como "True". El valor por omisión es "False" y no es recomendado cambiarlo. Si lo cambias, es posible que sea necesarioejecutar el comando 
 <code>fink index</code> para actualizar el indice.</p>
         </li>
@@ -153,8 +153,8 @@ selfupdate-cvs</code> es ejecutado, así que no es necesario cambiarlo manualmen
 	    <b>Buildpath:</b> path</p>
 	  <p>Fink needs to create several temporary directories for
 each package it compiles from source. By default, they are placed
-in <code>/sw/src</code> on Panther and earlier, and 
-<code>/sw/src/fink.build</code> on Tiger. If you want them to be
+in <code>/opt/sw/src</code> on Panther and earlier, and 
+<code>/opt/sw/src/fink.build</code> on Tiger. If you want them to be
 somewhere else, specify the path here. See the descriptions of
 the <code>KeepRootDir</code> and <code>KeepBuildDir</code> fields
  in the <a href="#developer">Developer Settings</a> section of this document for more information about these temporary
@@ -266,7 +266,7 @@ but only operates on that single <code>fink</code> invocation.  Passing <code>fi
             <b>MirrorContinent:</b> Un código de tres letras</p>
           <p>Este valor lo debes cambiar usando el comando <code>fink configure</code>
 . El código de tres letras puede ser encontrado en el archivo
-<code>/sw/lib/fink/mirror/_keys</code>.
+<code>/opt/sw/lib/fink/mirror/_keys</code>.
 Por ejemplo, si resides en Europa:</p>
           <pre>MirrorContinent: eur</pre>
         </li>
@@ -275,7 +275,7 @@ Por ejemplo, si resides en Europa:</p>
             <b>MirrorCountry:</b> Código de seis letras</p>
           <p>Este valor debes cambiarlo usando el comando <code>fink configure</code>
 El código puedes encontrarlo en 
-<code>/sw/lib/fink/mirror/_keys</code>.
+<code>/opt/sw/lib/fink/mirror/_keys</code>.
 Por ejemplo, si vives en Austria:</p>
           <pre>MirrorCountry: eur-AT</pre>
         </li>
@@ -337,7 +337,7 @@ ClosestFirst - Buca la lista de espejos más cercanos (combina todos los espejos
           <p>
             <b>CCacheDir:</b> path</p>
           <p>If the Fink package <code>ccache-default</code> is installed, the cache files it makes
-while building Fink packages will be placed here. Defaults to <code>/sw/var/ccache</code>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <code>$HOME/.ccache</code>, potentially putting root-owned files into your home directory.
+while building Fink packages will be placed here. Defaults to <code>/opt/sw/var/ccache</code>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <code>$HOME/.ccache</code>, potentially putting root-owned files into your home directory.
 <b>Only available in fink newer than version 0.21.0</b>.
           </p>
         </li>
@@ -345,7 +345,7 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
            Specify a notification plugin to tell you when packages have been
            installed/uninstalled.  Defaults to Growl (requires <code>Mac::Growl</code> to
            operate).  Other plugins can be found in the
-           <code>/sw/lib/perl5/Fink/Notify</code> directory.  On <code>fink-0.25</code> and later they are listed in the output of <code>fink plugins</code>.  See the <a href="http://wiki.finkproject.org/index.php/Fink:Notificati%20on_Plugins">Fink Developer Wiki</a> for more information.
+           <code>/opt/sw/lib/perl5/Fink/Notify</code> directory.  On <code>fink-0.25</code> and later they are listed in the output of <code>fink plugins</code>.  See the <a href="http://wiki.finkproject.org/index.php/Fink:Notificati%20on_Plugins">Fink Developer Wiki</a> for more information.
 </p></li>
         <li><p><b>AutoScanpackages:</b> boolean
            </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
@@ -367,7 +367,7 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
     <h2><a name="sourceslist">5.9 Managing apt's sources.list file</a></h2>
       
       <p>Starting with fink 0.21.0, fink actively manages the file
-<code>/sw/etc/apt/sources.list</code> which is used by apt to locate
+<code>/opt/sw/etc/apt/sources.list</code> which is used by apt to locate
 binary files for installation.  The default sources.list file looks 
 something like this, adjusted to match your Distribution and Trees:
 </p>
@@ -377,10 +377,10 @@ something like this, adjusted to match your Distribution and Trees:
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in 
-# /sw/etc/fink.conf
+# /opt/sw/etc/fink.conf
 # NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
-deb file:/sw/fink local main
-deb file:/sw/fink stable main crypto
+deb file:/opt/sw/fink local main
+deb file:/opt/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release
@@ -405,8 +405,8 @@ modifications to the top of the file (above the first default line) and
 the bottom of the file (below the last default line).
 </p>
       <p>
-Note: If you had modified <code>/sw/etc/apt/sources.list</code> prior to upgrading
-to fink 0.21.0, you will find your former file stored at <code>/sw/etc/apt/sources.list.finkbak</code> .
+Note: If you had modified <code>/opt/sw/etc/apt/sources.list</code> prior to upgrading
+to fink 0.21.0, you will find your former file stored at <code>/opt/sw/etc/apt/sources.list.finkbak</code> .
 </p>
     
     

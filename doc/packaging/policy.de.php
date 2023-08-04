@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Richtlinien";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="fslayout.php?phpLang=de" title="Dateisystem-Layout"><link rel="prev" href="format.php?phpLang=de" title="Paketbeschreibungen">';
 
 
@@ -422,7 +422,7 @@ Namen und einer Kompatibilitätsversion von mindestens 2.1.0 angeboten wird.
 <p>
 Beachten sie die Verwendung von %p im Pfad der Bibliothek. Dadurch wird der
 richtige <code>-install_name</code> von allen Finknutzern gefunden, egal ob sie
-/sw oder einen anderen Präfix für Fink ausgewählt haben.
+/opt/sw oder einen anderen Präfix für Fink ausgewählt haben.
 </p>
 <p>
 Wird ein Paket aktualisiert, kann meistens das Feld <code>Shlibs</code> einfach
@@ -535,8 +535,8 @@ implementiert und erhielt im April 2004 die erste Revision.
 <p>
 Ursprünglich hatten Fink-Pakete für Perl-Module den Suffix <code>-pm</code> und
 wurden mit der Direktive <code>Type: perl</code> erstellt. Damit wurden die
-Dateien der Module in <code>/sw/lib/perl5</code> und/oder
-<code>/sw/lib/perl5/darwin</code> abgespeichert.
+Dateien der Module in <code>/opt/sw/lib/perl5</code> und/oder
+<code>/opt/sw/lib/perl5/darwin</code> abgespeichert.
 Nach den aktuellen Richtlinien gilt dies nur noch für Module, die unabhängig von
 der Perlversion übersetzt wurden und die auch nicht von anderen
 versionsabhängigen Modulen abhängen.
@@ -552,8 +552,8 @@ Ein versionsabhängiges Perl-Modul muss mit einer bestimmten binären Version vo
 Perl erstellt werden, z. B. <code>perl5.12.3</code>. Die erzeugten Dateien
 müssen dann in einem versionierten Unterverzeichnis des
 Standard-Perlverzeichnisses abgespeichert werden, z. B.
-<code>/sw/lib/perl5/5.12.3</code> und
-<code>/sw/lib/perl5/5.12.3/darwin</code>. Es ist Konvention, die Pakete
+<code>/opt/sw/lib/perl5/5.12.3</code> und
+<code>/opt/sw/lib/perl5/5.12.3/darwin</code>. Es ist Konvention, die Pakete
 mit dem Suffix <code>-pm5123</code> zu benennen, wenn sie für die Version 5.12.3
 von Perl erstellt wurden. Entsprechende Konventionen für das Abspeichern und
 die Namen von Modulen sind perl 5.10.0 (nur für 10.6), perl 5.12.4 (but für
@@ -695,7 +695,7 @@ Richtlinien derzeit nur für die Pakete <code>emacs21</code>,
 <code>emacs22</code> und <code>emacs23</code> und nicht für das
 Paket xemacs. (Dies kann sich eines Tages ändern.) Zweitens dürfen Finkpakete im
 Gegensatz zu den Debian-Richtlinien Dateien direkt im Verzeichnis
-/sw/share/emacs/site-lisp installieren
+/opt/sw/share/emacs/site-lisp installieren
 </p>
 
 

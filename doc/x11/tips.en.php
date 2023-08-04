@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - Tips";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/01/03 18:17:34';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=en" title="Troubleshooting XFree86">';
 
 
@@ -17,13 +17,13 @@ include_once "header.en.inc";
         within your Fink tree for
         some of their functions may need special treatment to get them to work when called from the
         Application menu.  Instead of putting just the full path to the filename, e.g.</p>
-        <pre>/sw/bin/emacs</pre>
+        <pre>/opt/sw/bin/emacs</pre>
           <p>
             you'll want to use something like the following, if you're using bash as your
             default shell:</p>
-          <pre>. /sw/bin/init.sh ; emacs</pre>
+          <pre>. /opt/sw/bin/init.sh ; emacs</pre>
           <p>and if you're using tcsh:</p>
-          <pre>source /sw/bin/init.csh ; emacs</pre>
+          <pre>source /opt/sw/bin/init.csh ; emacs</pre>
           <p>
             This makes sure that the application has the correct PATH information.  You can use this
             syntax for any Fink-installed application.

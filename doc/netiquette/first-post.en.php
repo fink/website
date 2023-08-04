@@ -1,7 +1,7 @@
 <?php
 $title = "netiquette - Initial";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:15';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="next" href="reply.php?phpLang=en" title="Replying to Posts"><link rel="prev" href="before-post.php?phpLang=en" title="What to do Before You Post">';
 
 
@@ -33,7 +33,7 @@ error unpacking foo
                 <li>If the failure is during the initial configuration, this is usually immediate.  Post from the last couple of tests that were run before the error message on to the end:<pre>....
 Checking for bar-config...no
 Error:  bar-config not found
-....</pre><p>If you think it might help, then you can post the relevant section of the configuration log file, e.g. <code>/sw/src/foo-3.141-6/foo-3.141/config.log</code>.  <b>Please don't post the whole file, since it can be large.</b></p></li>
+....</pre><p>If you think it might help, then you can post the relevant section of the configuration log file, e.g. <code>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</code>.  <b>Please don't post the whole file, since it can be large.</b></p></li>
                 <li>Or, the error can show up immediately when you've actually started building the package.  In this case, post from the last line the compiler tried to run to the end:<pre>...
 gcc &lt;flags, files etc.&gt;
 &lt;error messages&gt;

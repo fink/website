@@ -1,7 +1,7 @@
 <?php
 $title = "Ejecución de X11 - Historia";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="inst-xfree86.php?phpLang=es" title="Cómo obtener e instalar XFree86"><link rel="prev" href="intro.php?phpLang=es" title="Introducción">';
 
 

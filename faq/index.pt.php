@@ -1,7 +1,7 @@
 <?php
 $title = "Perguntas frequentes";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="general.php?phpLang=pt" title="Perguntas gerais">';
 
 
@@ -18,7 +18,7 @@ include_once "header.pt.inc";
     seção contendo a pergunta e a resposta correspondente.</p>
   <h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="general.php?phpLang=pt"><b>1 Perguntas gerais</b></a><ul><li><a href="general.php?phpLang=pt#what">1.1 O que é o Fink?</a></li><li><a href="general.php?phpLang=pt#naming">1.2 O que significa o nome Fink?</a></li><li><a href="general.php?phpLang=pt#bsd-ports">1.3 Qual a diferença entre o Fink e o mecanismo de ports do BSD
-        (incluindo OpenPackages e GNU-Darwin)?</a></li><li><a href="general.php?phpLang=pt#usr-local">1.4 Por que o Fink não instala no /usr/local?</a></li><li><a href="general.php?phpLang=pt#why-sw">1.5 Por que vocês escolheram /sw?</a></li></ul></li><li><a href="relations.php?phpLang=pt"><b>2 Relacionamentos com outros projetos</b></a><ul><li><a href="relations.php?phpLang=pt#upstream">2.1 Vocês repassam suas correções e ajustes para os mantenedores
+        (incluindo OpenPackages e GNU-Darwin)?</a></li><li><a href="general.php?phpLang=pt#usr-local">1.4 Por que o Fink não instala no /usr/local?</a></li><li><a href="general.php?phpLang=pt#why-sw">1.5 Por que vocês escolheram /opt/sw?</a></li></ul></li><li><a href="relations.php?phpLang=pt"><b>2 Relacionamentos com outros projetos</b></a><ul><li><a href="relations.php?phpLang=pt#upstream">2.1 Vocês repassam suas correções e ajustes para os mantenedores
         oficiais?</a></li><li><a href="relations.php?phpLang=pt#debian">2.2 Qual o seu relacionamento com o projeto Debian? Vocês estão portando
         o Debian Linux para rodar no Mac OS X?</a></li><li><a href="relations.php?phpLang=pt#apple">2.3 Qual o seu relacionamento com a Apple</a></li><li><a href="relations.php?phpLang=pt#darwinports">2.4 Qual o seu relacionamento com o Darwinports?</a></li></ul></li><li><a href="mirrors.php?phpLang=pt"><b>3 Espelhos do Fink</b></a><ul><li><a href="mirrors.php?phpLang=pt#when-use">3.1 O que são os espelhos do Fink?</a></li><li><a href="mirrors.php?phpLang=pt#why">3.2 Por que eu deveria usar espelhos rsync?</a></li><li><a href="mirrors.php?phpLang=pt#where">3.3 Onde posso encontrar mais informações sobre espelhos do Fink?</a></li><li><a href="mirrors.php?phpLang=pt#when-not">3.4 Não consigo conectar-me a um servidor rsync, o que devo fazer?</a></li><li><a href="mirrors.php?phpLang=pt#otherinfogone">3.5 Eu mudei para o método rsync e agora todos os arquivos das árvores
         que não eram usadas foram eliminados</a></li><li><a href="mirrors.php?phpLang=pt#howswitch">3.6 Como posso alternar entre os métodos?</a></li><li><a href="mirrors.php?phpLang=pt#Master">3.7 O que é um espelho de distfiles (arquivos de distribuição)?</a></li></ul></li><li><a href="upgrade-fink.php?phpLang=pt"><b>4 Atualizando o Fink (resolução de problemas específicos a uma
@@ -44,10 +44,10 @@ include_once "header.pt.inc";
         O site de download mostra uma versão do pacote que é mais recente do
         que a versão que o Fink possui. O que devo fazer?</a></li><li><a href="usage-fink.php?phpLang=pt#fink-not-found">5.16 Quando eu executo o Fink ou qualquer coisa que tenha instalado
         através do Fink, recebo o erro <q>command not found</q>
-        (<q>comando não encontrado</q>).</a></li><li><a href="usage-fink.php?phpLang=pt#invisible-sw">5.17 Eu quero esconder o diretório /sw no Finder para que os usuários não
+        (<q>comando não encontrado</q>).</a></li><li><a href="usage-fink.php?phpLang=pt#invisible-sw">5.17 Eu quero esconder o diretório /opt/sw no Finder para que os usuários não
         danifiquem a configuração do Fink.</a></li><li><a href="usage-fink.php?phpLang=pt#install-info-bad">5.18 Não consigo instalar nada porque recebo a seguinte mensagem de erro:
         "install-info: unrecognized option
-        `--infodir=/sw/share/info'"</a></li><li><a href="usage-fink.php?phpLang=pt#bad-list-file">5.19 Não consigo instalar ou remover nada por causa de um problema com um
+        `--infodir=/opt/sw/share/info'"</a></li><li><a href="usage-fink.php?phpLang=pt#bad-list-file">5.19 Não consigo instalar ou remover nada por causa de um problema com um
         "files list file" ("arquivo com lista de arquivos").</a></li><li><a href="usage-fink.php?phpLang=pt#dselect-garbage">5.20 Quando eu escolho pacotes no <code>dselect</code> aparece um
         monte de lixo. Como faço para usá-lo?</a></li><li><a href="usage-fink.php?phpLang=pt#cant-upgrade">5.21 Não consigo atualizar a versão do Fink.</a></li><li><a href="usage-fink.php?phpLang=pt#spaces-in-directory">5.22 Posso colocar o Fink em um volume ou um diretório cujo nome tenha um
         espaço em branco?</a></li><li><a href="usage-fink.php?phpLang=pt#packages-gz">5.23 Quando tento fazer uma atualização de binários, surgem várias
@@ -61,7 +61,7 @@ include_once "header.pt.inc";
         consigo atualizar o pacote Fink a partir do código fonte. Aparecem
         alguns erros envolvendo <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#mirror-gnu">5.29 O Fink não consegue atualizar meus pacotes porque não pode encontrar
         o espelho 'gnu'.</a></li><li><a href="usage-fink.php?phpLang=pt#cant-move-fink">5.30 Não consigo atualizar o Fink porque ele não consegue mover o
-        diretório <code>/sw/fink</code>.</a></li><li><a href="usage-fink.php?phpLang=pt#fc-cache">5.31 Recebo uma mensagem dizendo <q>No fonts found</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#non-admin-installer">5.32 Não consigo instalar o Fink através do pacote de instalação porque
+        diretório <code>/opt/sw/fink</code>.</a></li><li><a href="usage-fink.php?phpLang=pt#fc-cache">5.31 Recebo uma mensagem dizendo <q>No fonts found</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#non-admin-installer">5.32 Não consigo instalar o Fink através do pacote de instalação porque
         recebo mensage de erro <q>volume doesn't support
         symlinks</q>.</a></li><li><a href="usage-fink.php?phpLang=pt#wrong-arch">5.33 Não consigo atualizar o Fink por causa do erro <q>package
         architecture (darwin-i386) does not match system
@@ -84,7 +84,7 @@ include_once "header.pt.inc";
         (<q>C compiler cannot create executables</q>).</a></li><li><a href="comp-general.php?phpLang=pt#multiple-dependencies">6.12 Não consigo fazer uma atualização porque o Fink não consegue
         resolver conflito de versão ou dependências múltiplas ("unable to
         resolve version conflict on multiple dependencies").</a></li><li><a href="comp-general.php?phpLang=pt#dpkg-parse-error">6.13 Não consigo instalar nada porque recebo a mensagem "dpkg: parse
-        error, in file `/sw/var/lib/dpkg/status'"!</a></li><li><a href="comp-general.php?phpLang=pt#freetype-problems">6.14 Estou recebendo erros envolvendo o freetype.</a></li><li><a href="comp-general.php?phpLang=pt#dlfcn-from-oo">6.15 Estou recebendo erros de compilação envolvendo "Dl_info".</a></li><li><a href="comp-general.php?phpLang=pt#gcc2">6.16 O Fink diz que está faltando <code>gcc2</code> ou
+        error, in file `/opt/sw/var/lib/dpkg/status'"!</a></li><li><a href="comp-general.php?phpLang=pt#freetype-problems">6.14 Estou recebendo erros envolvendo o freetype.</a></li><li><a href="comp-general.php?phpLang=pt#dlfcn-from-oo">6.15 Estou recebendo erros de compilação envolvendo "Dl_info".</a></li><li><a href="comp-general.php?phpLang=pt#gcc2">6.16 O Fink diz que está faltando <code>gcc2</code> ou
         <code>gcc3.1</code> mas não consigo instalá-lo.</a></li><li><a href="comp-general.php?phpLang=pt#system-java">6.17 O Fink apresenta a mensagem <code>Failed: Can't resolve dependency
         "system-java14-dev"</code> mas esse pacote não existe.</a></li><li><a href="comp-general.php?phpLang=pt#dpkg-split">6.18 Quando tento instalar qualquer pacote, recebo a mensagem <q>dpkg
         (subprocess): failed to exec dpkg-split to see if it's part of a
@@ -119,7 +119,7 @@ include_once "header.pt.inc";
         file or directory (errno 2): no server "/usr/X11R6/bin/X" in PATH".</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x-delete">9.5 Quero que a tecla Delete no X11.app da Apple comporte-se como no
         XDarwin.</a></li><li><a href="usage-packages.php?phpLang=pt#apple-x11-wants-xfree86">9.6 Estou tendo problemas com X11 e Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#special-x11-debug">9.7 Ainda estou tendo problemas com o X11 e o Fink.</a></li><li><a href="usage-packages.php?phpLang=pt#tiger-gtk">9.8 Sempre que uso um aplicativo GTK, recebo mensagens de erro em
         relação a <code>_EVP_idea_cbc</code>.</a></li><li><a href="usage-packages.php?phpLang=pt#yelp">9.9 Não consigo fazer funcionar a ajuda de nenhum aplicativo GNOME.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.pt.xml,v 1.12 2020/05/31 13:43:40 nieder Exp $-->
+<!--Generated from $Fink: faq.pt.xml,v 1.13 2023/08/04 04:42:29 nieder Exp $-->
 <?php include_once "../footer.inc"; ?>
 
 

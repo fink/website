@@ -1,7 +1,7 @@
 <?php
 $title = "常见疑问（F.A.Q.） - 升级 Fink";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink"><link rel="prev" href="mirrors.php?phpLang=zh" title="Fink 镜像">';
 
 

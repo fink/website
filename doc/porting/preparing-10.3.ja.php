@@ -1,7 +1,7 @@
 <?php
 $title = "移植 - 10.3 に向けて";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2014/10/25 09:21:47';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="移植 Contents"><link rel="next" href="preparing-10.4.php?phpLang=ja" title="10.4 に向けて"><link rel="prev" href="preparing-10.2.php?phpLang=ja" title="10.2 に向けて">';
 
 
@@ -69,7 +69,7 @@ include_once "header.ja.inc";
 	  を使用する必要はありません．
 	  libSystem は自動的にリンクされ， <code>/usr/include</code> 
 	  も自動的に検索されるため， Fink の "libgnugetopt" へアクセスするために手動で追加していた
-	  <code>-lgnugetopt</code> と <code>-I/sw/include/gnugetopt</code> を削除することができます．
+	  <code>-lgnugetopt</code> と <code>-I/opt/sw/include/gnugetopt</code> を削除することができます．
 	</p>
       </td></tr></table>
 

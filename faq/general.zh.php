@@ -1,7 +1,7 @@
 <?php
 $title = "常见疑问（F.A.Q.） - 一般性问题";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="relations.php?phpLang=zh" title="与其它项目的关系"><link rel="prev" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents">';
 
 
@@ -57,7 +57,7 @@ dpkg 提供完善的二进制包管理机制－平滑升级，对配置文件的
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 有几个原因，总括来说是 "可能会被损坏"。</p><p>原因一：第三方软件。/usr/local 是存放不是由系统提供的第三方软件的地方。这意味着这是一个放杂七杂八东西的好地方。同时，这也意味着其它人也会放杂七杂八的东西到那里。多数的安装流程只是简单地覆盖那里的东西——对 dpkg 也是这样。当然，用户可以选择不安装第三方软件到 /usr/local。不幸的是，多数的安装程序并不事先告诉你它会安装到哪里。</p><p>原因二：/usr/local/bin 在默认的 PATH 设置中。这意味着你的 shell 程序不需要什么其它设置就可以找到你安装的程序。但这意味着如果你不想使用这个程序，你需要进行额外的设置。极端情况下，它会影响系统本身——由需要部分依赖于 shell 脚本。</p><p>原因三：编译工具默认搜索 /usr/local 目录。编译器会在 /usr/local/include 寻找头文件，连接器会在 /usr/local/lib 寻找连接库。同样，有些时候这会显得方便些，但在有需要的时候会很难禁用这个特性。通过把一个错误的 <code>stdio.h</code> 文件放到 /usr/local/include 目录中，你就很容易使得编译器出错。</p><p>总的来说，把 Fink 安装到 /usr/local 是可能的。安装程序会明确警告你，但如果你确认你同意这样做的风险，它会按你的要求去做。</p></div>
     </a>
     <a name="why-sw">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: 为什么选择 /sw？</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: 为什么选择 /opt/sw？</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 这个选择基本上是很随意的，但是基于实践（升级）的理由以及它在避免于其它软件包系统冲突方面是足够安全的，在可以遇见的将来仍然会保持这样。</p></div>
     </a>
   <p align="right"><?php echo FINK_NEXT ; ?>:

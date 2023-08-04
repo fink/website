@@ -1,7 +1,7 @@
 <?php
 $title = "用户指南 - fink 工具";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="prev" href="conf.php?phpLang=zh" title="Fink 配置文件">';
 
 
@@ -179,7 +179,7 @@ the dpkg tool (usually this poses no problem, though).</p>
 the <code>.deb</code> compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the <code>.deb</code> from the
-<code>/sw/fink/dists</code> tree.</p>
+<code>/opt/sw/fink/dists</code> tree.</p>
       <p>These flags can be used with the <b>fink remove</b> command
 </p>
       <pre>-h,--help             - Show the options which are available.
@@ -358,7 +358,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       
       
       <p>
-	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <code>/sw/fink/dists</code> 目录树来使用直接 git 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
+	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <code>/opt/sw/fink/dists</code> 目录树来使用直接 git 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
 </p>
       
       
@@ -430,7 +430,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
 --all                - All of the above modes. (new in fink-0.26.0)</pre>
       <p>If no mode is specified, <code>--debs --sources</code> is the default action. </p>
       <p>In addition, the following options may be used:</p>
-      <pre>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
+      <pre>-k,--keep-src        - Move old source files to /opt/sw/src/old/ instead of deleting them.
 -d,--dry-run         - Print the names of the files that would be deleted, but
                        do not actually delete them.
 -h,--help            - Show the modes and options which are available.</pre>

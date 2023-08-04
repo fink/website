@@ -1,7 +1,7 @@
 <?php
 $title = "ユーザーガイド - fink ツール";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="prev" href="conf.php?phpLang=ja" title="Fink 設定ファイル">';
 
 
@@ -162,7 +162,7 @@ remove コマンドは、 'dpkg --remove' を呼び出してシステムから�
 <p>
 <b>remove</b> コマンドは実際のパッケージファイル (設定ファイルは除く) を削除するだけですが、 <code>.deb</code> 圧縮パッケージファイルはそのままにします。
 これは、後で再インストールする際にコンパイルしなくても良いことを意味します。
-ディスク容量が必要であれば、 <code>/sw/fink/dists</code> ツリーから <code>.deb</code> ファイルを取り除いてもかまいません。
+ディスク容量が必要であれば、 <code>/opt/sw/fink/dists</code> ツリーから <code>.deb</code> ファイルを取り除いてもかまいません。
 </p>
 <p><b>fink remove</b> 時に、以下のフラグを使用することができます。</p>
 <pre>-h,--help             使用できるオプションを表示
@@ -351,7 +351,7 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <p>
 このコマンドは、自動的に Fink の新リリースにアップグレードします。
 Fink のウェブサイトへ新しいバージョンがあるか確認し、 <code>fink</code> 自体を含めたコアパッケージを更新します。
-各種リリースのアップグレードの他、このコマンドを初めて実行した際に Git または rsync を選択した場合、<code>/sw/fink/dists</code> を、直接 Git または rsync でアップグレードすることもできます。
+各種リリースのアップグレードの他、このコマンドを初めて実行した際に Git または rsync を選択した場合、<code>/opt/sw/fink/dists</code> を、直接 Git または rsync でアップグレードすることもできます。
 これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
 </p>
 <p>
@@ -418,7 +418,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
       <p>モードが指定されていない場合、<code>--debs --sources</code> が既定のオプションとなります。</p>
       <p>これらに加え、以下のオプションも使うことができます:</p>
       <pre>
--k,--keep-src        - 古いソースファイルを、削除するのではなく /sw/src/old/ に移します。
+-k,--keep-src        - 古いソースファイルを、削除するのではなく /opt/sw/src/old/ に移します。
 -d,--dry-run         - 削除対象のファイルを一覧表示し、実際には削除しません。
 -h,--help            - 使用可能なモードとオプションを表示します。</pre>
 

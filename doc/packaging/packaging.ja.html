@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.ja.xml,v 1.60 2023/01/22 6:40:32 nieder Exp $
+Generated from $Fink: packaging.ja.xml,v 1.61 2023/08/04 4:54:31 nieder nieder Exp $
 -->
 <title>Fink Documentation - Fink パッケージの作成方法</title></head><body>
 <table width="100%" cellspacing="0">
@@ -85,8 +85,8 @@ Available Languages:  |
 		<h3><a name="format.trees">2.1 ツリーレイアウト</a></h3>
 			
 			<p>
-				パッケージ記述はディレクトリ <tt style="white-space: nowrap;">/sw/fink/dists</tt> 下のディレクトリ <tt style="white-space: nowrap;">finkinfo</tt> から読み込まれます．
-				「ツリー」の設定はファイル <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> にあり，これでどのディレクトリを読むかを指定します．
+				パッケージ記述はディレクトリ <tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> 下のディレクトリ <tt style="white-space: nowrap;">finkinfo</tt> から読み込まれます．
+				「ツリー」の設定はファイル <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> にあり，これでどのディレクトリを読むかを指定します．
 				パッケージ記述ファイルの名前は，Fink パッケージの正式名称に拡張子 ".info" を付けたものです．
 				Fink 0.13.0 以降では，パッケージのアップデートの手間を省くための，
 				「パッケージ名」に拡張子 ".info" を付けただけの簡略形式が便利です．
@@ -218,17 +218,17 @@ SplitOff: &lt;&lt;
 						</p>
 					</td></tr><tr valign="top"><td>%p, %P</td><td>
 						<p>
-							<b>p</b>refix．Fink のインストール場所．例: <tt style="white-space: nowrap;">/sw</tt>．
-							全てのユーザーが <tt style="white-space: nowrap;">/sw</tt> に Fink をインストールしているわけではない．
+							<b>p</b>refix．Fink のインストール場所．例: <tt style="white-space: nowrap;">/opt/sw</tt>．
+							全てのユーザーが <tt style="white-space: nowrap;">/opt/sw</tt> に Fink をインストールしているわけではない．
 							<tt style="white-space: nowrap;">%p</tt> で正しいパスを取得する．
 						</p>
 					</td></tr><tr valign="top"><td>%d</td><td>
 						<p>
 							<b>d</b>estination．パッケージ化するツリーのビルド先．
-							例:<tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1</tt>
+							例:<tt style="white-space: nowrap;">/opt/sw/src/fink.build/root-gimp-1.2.1-1</tt>
 							この一時ディレクトリはパッケージをコンパイルする際のインストール段階でルートディレクトリの役を果たす．
 							<tt style="white-space: nowrap;">root-%f</tt> が <tt style="white-space: nowrap;">%p/src</tt> の中にあることを当てにしてはいけない．
-							ユーザが設定ファイル <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> でフィールド <tt style="white-space: nowrap;">Buildpath</tt>
+							ユーザが設定ファイル <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> でフィールド <tt style="white-space: nowrap;">Buildpath</tt>
 							を指定すればこの場所は変わってしまう．
 						</p>
 					</td></tr><tr valign="top"><td>%D</td><td>
@@ -254,9 +254,9 @@ SplitOff: &lt;&lt;
 					</td></tr><tr valign="top"><td>%b</td><td>
 						<p>
 							<b>b</b>uild．
-							ビルドディレクトリ．例: <tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>
+							ビルドディレクトリ．例: <tt style="white-space: nowrap;">/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>
 							<tt style="white-space: nowrap;">%f</tt> が <tt style="white-space: nowrap;">%p/src</tt> の中にあることを当てにしてはいけない．
-							ユーザが設定ファイル <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> でフィールド <tt style="white-space: nowrap;">Buildpath</tt>
+							ユーザが設定ファイル <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> でフィールド <tt style="white-space: nowrap;">Buildpath</tt>
 							を指定すればこの場所は変わってしまう．
 							最も内側のディレクトリ名は， <tt style="white-space: nowrap;">Source</tt> ファイル名か， (もしあれば) <tt style="white-space: nowrap;">SourceDirectory</tt> 
 							フィールドの値となります．
@@ -734,7 +734,7 @@ SplitOff: &lt;&lt;
 </pre>
 			<p>と宣言し，その理由を DescPackaging に記述します．</p>
 			<p>
-				BuildDependsOnly フィールドは，パッケージがヘッダファイルを含み /sw/include にインストールされる場合，
+				BuildDependsOnly フィールドは，パッケージがヘッダファイルを含み /opt/sw/include にインストールされる場合，
 				パッケージの .info ファイルに記述されていなければなりません．
 			</p>
 			<p>
@@ -893,7 +893,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				伝統的に，perl モジュールの Fink パッケージには <tt style="white-space: nowrap;">-pm</tt> が後置され，
 				ディレクティブ <tt style="white-space: nowrap;">Type: perl</tt> を使ってビルドされていました．
 				このディレクティブは Perl モジュールのファイルを
-				<tt style="white-space: nowrap;">/sw/lib/perl5</tt> 及び/または <tt style="white-space: nowrap;">/sw/lib/perl5/darwin</tt> に格納していました．
+				<tt style="white-space: nowrap;">/opt/sw/lib/perl5</tt> 及び/または <tt style="white-space: nowrap;">/opt/sw/lib/perl5/darwin</tt> に格納していました．
 				現在のポリシーでは，それらのディレクトリには，コンパイルに使われる Perl のバージョンに依存しない 
 				(また，このバージョン非依存性を欠いた Perl モジュールに依存しない)
 				Perl モジュールのみを格納します．
@@ -907,7 +907,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				Perl のバージョンに依存する Perl モジュールは該当バージョンの付いた Perl の実行可能プログラム (perl5.6.0 など)
 				を使ってビルドされなければいけません．
 				また，モジュールの含むファイルは，標準の Perl のディレクトリ内の，バージョンの付いたサブディレクトリ
-				(<tt style="white-space: nowrap;">/sw/lib/perl5/5.12.3</tt> や <tt style="white-space: nowrap;">/sw/lib/perl5/5.12.3/darwin</tt> など) に格納しなければいけません．
+				(<tt style="white-space: nowrap;">/opt/sw/lib/perl5/5.12.3</tt> や <tt style="white-space: nowrap;">/opt/sw/lib/perl5/5.12.3/darwin</tt> など) に格納しなければいけません．
 				命名規約により，バージョン 5.12.3 に依存する Perl モジュールに <tt style="white-space: nowrap;">-pm5123</tt> を後置します．
 				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，
 				perl 5.10.0 (10.6 ツリーのみ), 
@@ -1035,7 +1035,7 @@ InstallScript: &lt;&lt;
 				まず，このポリシーは Fink では現在のところパッケージ <tt style="white-space: nowrap;">emacs21</tt>, <tt style="white-space: nowrap;">emacs22</tt>, <tt style="white-space: nowrap;">emacs23</tt> にのみ適用され，パッケージ xemacs には適用されません．
 				(この点は将来変わるかも知れません．)
 				次に Debian のポリシーと異なり， Fink パッケージはどれもファイルを直接
-				<tt style="white-space: nowrap;">/sw/share/emacs/site-lisp</tt> にインストールして構いません．
+				<tt style="white-space: nowrap;">/opt/sw/share/emacs/site-lisp</tt> にインストールして構いません．
 			</p>
 		
 
@@ -1112,7 +1112,7 @@ InstallScript: &lt;&lt;
 				しかし従えるのは飽くまでも精神のみです．
 				それは FHS が <tt style="white-space: nowrap;">/</tt> 以下と <tt style="white-space: nowrap;">/usr</tt> 以下の階層を管理できるシステムベンダ向けに作られたからです．
 				Fink はインストールディレクトリ (別名「プリフィクス」) 以下のみを管理するアドオン・ディストリビューションです．
-				以降の例ではデフォルトの「プリフィクス」 <tt style="white-space: nowrap;">/sw</tt> を使います．
+				以降の例ではデフォルトの「プリフィクス」 <tt style="white-space: nowrap;">/opt/sw</tt> を使います．
 			</p>
 		
 		<h3><a name="fslayout.dirs">4.2 ディレクトリ</a></h3>
@@ -1121,14 +1121,14 @@ InstallScript: &lt;&lt;
 				ファイルは以下のサブディレクトリに保存します:
 			</p>
 			<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/bin</tt>
+						<tt style="white-space: nowrap;">/opt/sw/bin</tt>
 					</td><td>
 						<p>
 							一般的な実行可能プログラム用．
 							サブディレクトリはなし．
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/sbin</tt>
+						<tt style="white-space: nowrap;">/opt/sw/sbin</tt>
 					</td><td>
 						<p>
 							管理者のみが使うことを意図した実行可能プログラム用．
@@ -1136,7 +1136,7 @@ InstallScript: &lt;&lt;
 							サブディレクトリはなし．
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/include</tt>
+						<tt style="white-space: nowrap;">/opt/sw/include</tt>
 					</td><td>
 						<p>
 							C と C++ のヘッダファイル用．
@@ -1144,11 +1144,11 @@ InstallScript: &lt;&lt;
 							標準の C ヘッダファイルと混同しそうなヘッダファイルをインストールする場合は<b>必ず</b>サブディレクトリに入れること．
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/lib</tt>
+						<tt style="white-space: nowrap;">/opt/sw/lib</tt>
 					</td><td>
 						<p>
 							アーキテクチャ依存のデータファイルやライブラリ用．
-							静的および共有ライブラリは，避ける理由が特にない限り <tt style="white-space: nowrap;">/sw/lib</tt> 直下に置きます．
+							静的および共有ライブラリは，避ける理由が特にない限り <tt style="white-space: nowrap;">/opt/sw/lib</tt> 直下に置きます．
 							ユーザが直接起動することのない実行可能プログラム
 							(普通なら <tt style="white-space: nowrap;">libexec</tt> 下に置かれるはずのもの) もここに置きます．
 						</p>
@@ -1157,37 +1157,37 @@ InstallScript: &lt;&lt;
 							必ず互換性を考慮したディレクトリ名を使って下さい．
 							賢明な方法は，そのサブディレクトリの名前にパッケージの「メジャーバージョン」を含めたり，
 							「メジャーバージョン」をディレクトリ名にしたさらに深い階層を作ることです
-							(<tt style="white-space: nowrap;">/sw/lib/perl5</tt> や <tt style="white-space: nowrap;">/sw/lib/apache/1.3</tt> など)．
+							(<tt style="white-space: nowrap;">/opt/sw/lib/perl5</tt> や <tt style="white-space: nowrap;">/opt/sw/lib/apache/1.3</tt> など)．
 							ディレクトリにホストの種類を使うときには注意が必要です．
 							<tt style="white-space: nowrap;">powerpc-apple-darwin1.3.3</tt> は，互換性の観点から問題があります．
 							<tt style="white-space: nowrap;">powerpc-apple-darwin1.3</tt> または単に <tt style="white-space: nowrap;">powerpc-apple-darwin</tt> とします．
 						</p>
-					</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/lib/ppc64</tt>
-<tt style="white-space: nowrap;">/sw/lib/x86_64</tt></td><td>
+					</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/lib/ppc64</tt>
+<tt style="white-space: nowrap;">/opt/sw/lib/x86_64</tt></td><td>
 <p>
 このディレクトリは 64-bit ライブラリ用で，
-powerpc アーチテクチャーでは <tt style="white-space: nowrap;">/sw/lib/ppc64</tt> が，
-i386 アーチテクチャーでは <tt style="white-space: nowrap;">/sw/lib/x86_64</tt> が用いられます．
-'fat' としてビルドされたライブラリは， <tt style="white-space: nowrap;">/sw/lib</tt> に保存されます．
+powerpc アーチテクチャーでは <tt style="white-space: nowrap;">/opt/sw/lib/ppc64</tt> が，
+i386 アーチテクチャーでは <tt style="white-space: nowrap;">/opt/sw/lib/x86_64</tt> が用いられます．
+'fat' としてビルドされたライブラリは， <tt style="white-space: nowrap;">/opt/sw/lib</tt> に保存されます．
 </p>
 </td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/share</tt>
+						<tt style="white-space: nowrap;">/opt/sw/share</tt>
 					</td><td>
 						<p>
-							アーキテクチャに依存しないデータファイル用で， <tt style="white-space: nowrap;">/sw/lib</tt> と同じルールが当てはまります．
+							アーキテクチャに依存しないデータファイル用で， <tt style="white-space: nowrap;">/opt/sw/lib</tt> と同じルールが当てはまります．
 							よく使われるサブディレクトリについては後述します．
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/share/man</tt>
+						<tt style="white-space: nowrap;">/opt/sw/share/man</tt>
 					</td><td>
 						<p>
 							man ページ用．
 							この中は man のセクションに従って分類されます．
-							<tt style="white-space: nowrap;">/sw/bin</tt> と <tt style="white-space: nowrap;">/sw/sbin</tt> の中の全てのプログラムには，
+							<tt style="white-space: nowrap;">/opt/sw/bin</tt> と <tt style="white-space: nowrap;">/opt/sw/sbin</tt> の中の全てのプログラムには，
 							対応した man ページがここになければいけません．
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/share/info</tt>
+						<tt style="white-space: nowrap;">/opt/sw/share/info</tt>
 					</td><td>
 						<p>
 							Texinfo ソースから生成される Info 形式のドキュメント用．
@@ -1199,7 +1199,7 @@ i386 アーチテクチャーでは <tt style="white-space: nowrap;">/sw/lib/x86
 							サブディレクトリはなし．
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/share/doc</tt>
+						<tt style="white-space: nowrap;">/opt/sw/share/doc</tt>
 					</td><td>
 						<p>
 							man でも Info でもないドキュメント用．
@@ -1209,20 +1209,20 @@ i386 アーチテクチャーでは <tt style="white-space: nowrap;">/sw/lib/x86
 							単に <tt style="white-space: nowrap;">%n</tt> を使うとよいでしょう．
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/share/locale</tt>
+						<tt style="white-space: nowrap;">/opt/sw/share/locale</tt>
 					</td><td>
 						<p>
 							国際化で使うメッセージカタログ用．
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/var</tt>
+						<tt style="white-space: nowrap;">/opt/sw/var</tt>
 					</td><td>
 						<p>
 							ディレクトリ <tt style="white-space: nowrap;">var</tt> には変化するデータを保存する．
 							(スプールディレクトリ，ロックファイル，状態のデータベース，ゲームのハイスコアやログファイルなど)
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/etc</tt>
+						<tt style="white-space: nowrap;">/opt/sw/etc</tt>
 					</td><td>
 						<p>
 							設定ファイル用．
@@ -1230,25 +1230,25 @@ i386 アーチテクチャーでは <tt style="white-space: nowrap;">/sw/lib/x86
 							区別のため，そのサブディレクトリにはパッケージまたはその中のプログラムの名前を付けなければいけない．
 						</p>
 					</td></tr><tr valign="top"><td>
-						<tt style="white-space: nowrap;">/sw/src</tt>
+						<tt style="white-space: nowrap;">/opt/sw/src</tt>
 					</td><td>
 						<p>
 							ソースコードを保存，ビルドするディレクトリ．
 							パッケージはここに何もインストールしてはいけない．
 						</p>
-					</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/Applications</tt></td><td>
+					</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/Applications</tt></td><td>
 <p>このディレクトリには，コマンドラインから実行するのではなく，ダブルクリックで実行する OS X 型のアプリケーションを保存する．</p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/Library/Frameworks</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/Library/Frameworks</tt></td><td>
 <p>このディレクトリには，OS X 型のアプリケーションが使用する，OS X 型のフレームワークを保存する．</p>
 </td></tr></table>
 		
 		<h3><a name="fslayout.avoid">4.3 避けるべきこと</a></h3>
 			
 			<p>
-				<tt style="white-space: nowrap;">/sw</tt> 下には，上述のもの以外ディレクトリを作ってはいけません．
+				<tt style="white-space: nowrap;">/opt/sw</tt> 下には，上述のもの以外ディレクトリを作ってはいけません．
 				特に以下のディレクトリを作らないこと:
-				<tt style="white-space: nowrap;">/sw/man</tt>, <tt style="white-space: nowrap;">/sw/info</tt>, <tt style="white-space: nowrap;">/sw/doc</tt>,
-				<tt style="white-space: nowrap;">/sw/libexec</tt>, <tt style="white-space: nowrap;">/sw/lib/locale</tt>
+				<tt style="white-space: nowrap;">/opt/sw/man</tt>, <tt style="white-space: nowrap;">/opt/sw/info</tt>, <tt style="white-space: nowrap;">/opt/sw/doc</tt>,
+				<tt style="white-space: nowrap;">/opt/sw/libexec</tt>, <tt style="white-space: nowrap;">/opt/sw/lib/locale</tt>
 			</p>
 		
 	<h2><a name="compilers">5 コンパイラ</a></h2>
@@ -1292,7 +1292,7 @@ Apple 提供の特定バージョンのバイナリを指定しなければな�
 </p>
 <p>
 正しい g++ コンパイラが使用されるよう新手法が 10.4-transitional ディストリビューションから採用されました．
-コンパイル時に，<tt style="white-space: nowrap;">/sw/var/lib/fink/path-prefix-g++-XXX</tt> (XXX はバージョン番号) 
+コンパイル時に，<tt style="white-space: nowrap;">/opt/sw/var/lib/fink/path-prefix-g++-XXX</tt> (XXX はバージョン番号) 
 ディレクトリが PATH に追加されます．
 このディレクトリには正しいコンパイラと正しいバージョンの g++ が使われるようなシェルスクリプトが入っています．
 </p>
@@ -1335,12 +1335,12 @@ GCC フィールドがパッケージによって定義されている場合，
 			<p>
 				各フィールドの意味を理解するには， Fink のビルドプロセスに関する知識がある程度必要です．
 				このプロセスは 5 段階になっていて，それぞれ解凍段階，パッチ段階，コンパイル段階，インストール段階，ビルド段階 と呼ばれます．
-				下記の例では <tt style="white-space: nowrap;">/sw</tt> にパッケージ gimp-1.2.1-1 をインストールするものとします．
+				下記の例では <tt style="white-space: nowrap;">/opt/sw</tt> にパッケージ gimp-1.2.1-1 をインストールするものとします．
 			</p>
 			<p>
-				<b>解凍段階</b>では，ディレクトリ <tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1</tt> が作成されてソースの tarball がそこに解凍されます．
+				<b>解凍段階</b>では，ディレクトリ <tt style="white-space: nowrap;">/opt/sw/src/fink.build/gimp-1.2.1-1</tt> が作成されてソースの tarball がそこに解凍されます．
 				大抵，解凍によりソースを含むディレクトリ <tt style="white-space: nowrap;">gimp-1.2.1</tt> が作られます．
-				これ以降のステップはすべてこの中 (すなわち <tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>) で行われます．
+				これ以降のステップはすべてこの中 (すなわち <tt style="white-space: nowrap;">/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>) で行われます．
 				詳細はフィールド SourceDirectory, NoSourceDirectory や Source<b>N</b>ExtractDir (Nは数字) で変更できます．
 			</p>
 			<p>
@@ -1356,10 +1356,10 @@ GCC フィールドがパッケージによって定義されている場合，
 			</p>
 			<p>
 				<b>インストール段階</b>では，パッケージは仮ディレクトリ
-				<tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1</tt> (%d と同じ) にインストールされます
+				<tt style="white-space: nowrap;">/opt/sw/src/fink.build/root-gimp-1.2.1-1</tt> (%d と同じ) にインストールされます
 				("root-" が付いていることに注意)．
-				ディレクトリ <tt style="white-space: nowrap;">/sw</tt> にインストールされる予定のファイルは全て，
-				<tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1/sw</tt> (%i すなわち %d%p に同じ) にインストールされます．
+				ディレクトリ <tt style="white-space: nowrap;">/opt/sw</tt> にインストールされる予定のファイルは全て，
+				<tt style="white-space: nowrap;">/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</tt> (%i すなわち %d%p に同じ) にインストールされます．
 				詳細はフィールド InstallScript を参照して下さい．
 			</p>
 			<p>
@@ -1944,7 +1944,7 @@ eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 						<p>
-							大陸及び国のコードは  <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt> にある．
+							大陸及び国のコードは  <tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_keys</tt> にある．
 							これは， fink および fink-mirrors パッケージの一部である．
 						</p>
 					</td></tr><tr valign="top"><td>Source</td><td>
@@ -1955,7 +1955,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							すなわち <tt style="white-space: nowrap;">mirror:&lt;ミラー名称&gt;:&lt;相対パス&gt;</tt> だ．
 							こうすると Fink に <b>ミラー名称</b> として設定された URL を探し，
 							その後ろに <b>相対パス</b> を付け加え，それを実際の URL として使う．
-							Fink の認識する <b>ミラー名称</b> の一覧は <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_list</tt>
+							Fink の認識する <b>ミラー名称</b> の一覧は <tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_list</tt>
 							(パッケージ fink または fink-mirrors の一部) に記される．
 							または <b>ミラー名称</b> に <tt style="white-space: nowrap;">custom</tt> と書くことで，
 							Fink にフィールド <tt style="white-space: nowrap;">CustomMirror</tt> を使わせることもできる．
@@ -2018,7 +2018,7 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
 						<p>
-							この例では，ご想像の通り， tarball は <tt style="white-space: nowrap;">/sw/src/coolapp-1.2.3.tar.gz</tt> として格納されることになる．
+							この例では，ご想像の通り， tarball は <tt style="white-space: nowrap;">/opt/sw/src/coolapp-1.2.3.tar.gz</tt> として格納されることになる．
 						</p>
 					</td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 						<p>
@@ -2041,11 +2041,11 @@ Primary: ftp://ftp.barbarorg/pub/
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 						<p>
 							チェックサムの算出にはツール <tt style="white-space: nowrap;">md5sum</tt> を使います．
-							tarball  <tt style="white-space: nowrap;">/sw/src/apache_1.3.23.tar.gz</tt> のチェックサムが知りたいときには，
+							tarball  <tt style="white-space: nowrap;">/opt/sw/src/apache_1.3.23.tar.gz</tt> のチェックサムが知りたいときには，
 							次のコマンドを実行します (出力も一緒に示した)．
 						</p>
-<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
+<pre>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</pre>
 						<p>
 							左に表示された値がここで必要なものです．
 						</p>
@@ -2161,10 +2161,10 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 						</p>
 						<p>
 							パッチの当たった <tt style="white-space: nowrap;">Makefile.in.in</tt> は DESTDIR の指定を優先し，メッセージカタログを，
-							<tt style="white-space: nowrap;">/sw/lib/locale</tt> ではなく，確実に <tt style="white-space: nowrap;">/sw/share/locale</tt> に格納します．
+							<tt style="white-space: nowrap;">/opt/sw/lib/locale</tt> ではなく，確実に <tt style="white-space: nowrap;">/opt/sw/share/locale</tt> に格納します．
 							このフィールドを利用する前に，入れ換えによってパッケージを破壊していないこと，また入れ換えが本当に必要かどうかを確認すること．
 							<tt style="white-space: nowrap;">diff</tt> を実行すれば，パッケージ付属のものと Fink 向けのもの
-							(<tt style="white-space: nowrap;">/sw/lib/fink/update</tt> 内にある) との違いが分かります．
+							(<tt style="white-space: nowrap;">/opt/sw/lib/fink/update</tt> 内にある) との違いが分かります．
 						</p>
 					</td></tr><tr valign="top"><td>Patch</td><td>
 						<p>
@@ -2487,10 +2487,10 @@ make test</pre>
 							Perl モジュールのパッケージでのみ指定します．
 							"true" にすると， install, postrm および postinst スクリプトに，
 							perl パッケージの提供する .pod ファイルを管理するためのコードを追加します．
-							これには，中央のファイル <tt style="white-space: nowrap;">/sw/lib/perl5/darwin/perllocal.pod</tt> に .pod ファイルのデータを追加したり，
+							これには，中央のファイル <tt style="white-space: nowrap;">/opt/sw/lib/perl5/darwin/perllocal.pod</tt> に .pod ファイルのデータを追加したり，
 							そこから削除することも含まれます．
 							(<tt style="white-space: nowrap;">perl $version</tt> のように，5.6.0 などの perl の特定のバージョンと共にタイプが指定された場合は，
-							それらのスクリプトが扱う中央 .pod ファイルは <tt style="white-space: nowrap;">/sw/lib/perl5/$version/perllocal.pod</tt> になる．)
+							それらのスクリプトが扱う中央 .pod ファイルは <tt style="white-space: nowrap;">/opt/sw/lib/perl5/$version/perllocal.pod</tt> になる．)
 						</p>
 					</td></tr><tr valign="top"><td>InstallScript</td><td>
 						<p>
@@ -2607,7 +2607,7 @@ INSTALLSCRIPT=%i/bin
 							このフィールドにより，実行時に環境変数を何らかの固定された値に設定できます．
 							(柔軟性が必要なら<a href="#reference.profile.d">profile.d スクリプトの節</a>を参照．)
 							そのパッケージがインストールされる限り，
-							ここに指定した環境変数はスクリプト <tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt> によって設定されます．
+							ここに指定した環境変数はスクリプト <tt style="white-space: nowrap;">/opt/sw/bin/init.[c]sh</tt> によって設定されます．
 						</p>
 						<p>
 							環境変数の値にはブランクが使えます (値の末尾に来ると取り除かれます)．
@@ -2620,7 +2620,7 @@ AnotherVar: foo bar
 &lt;&lt;</pre>
 						<p>
 							これは2つの環境変数 'SomeVar' および 'AnotherVar' を，
-							それぞれ '/sw/Value' (環境のインストールディレクトリの値による) および 'foo bar' に設定します．
+							それぞれ '/opt/sw/Value' (環境のインストールディレクトリの値による) および 'foo bar' に設定します．
 						</p>
 						<p>
 							このフィールドは InstallScript に適切なコマンドを追加することで機能します．
@@ -2918,7 +2918,7 @@ SplitOff2: &lt;&lt;
 これらのデフォルトは書き換えられます。
 </p>
 <p>パッチファイルに、ユーザの選択した prefix を含める必要がある場合、
-<tt style="white-space: nowrap;">/sw</tt> をパッチで使うのではなく、
+<tt style="white-space: nowrap;">/opt/sw</tt> をパッチで使うのではなく、
 <tt style="white-space: nowrap;">@PREFIX@</tt> などを使い:</p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</pre>
 <p>とします。
@@ -2940,17 +2940,17 @@ fink プロジェクトの管理者が fink サイトから提供できるよう
 			
 			<p>
 				パッケージが実行時に何らかの初期化 (環境変数の設定など) を必要とするなら， profile.d スクリプトを使えばよいでしょう．
-				これらのスクリプト断片はスクリプト <tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt> によって読み込まれます．
+				これらのスクリプト断片はスクリプト <tt style="white-space: nowrap;">/opt/sw/bin/init.[c]sh</tt> によって読み込まれます．
 				通常，全ての Fink ユーザがシェルのスタートアップファイル (<tt style="white-space: nowrap;">.cshrc</tt> またはそれと互換なファイル) でそれを読み込むようになっています．
 				パッケージの方では，どのスクリプトにも2種類を用意しなければいけません:
 				sh 互換シェル (sh, zsh, bash, ksh, ...) 用と， csh 互換シェル (csh, tcsh) 用です．
-				両スクリプトとも <tt style="white-space: nowrap;">/sw/etc/profile.d/%n.[c]sh</tt> としてインストールされる必要があります．
+				両スクリプトとも <tt style="white-space: nowrap;">/opt/sw/etc/profile.d/%n.[c]sh</tt> としてインストールされる必要があります．
 				(ここで %n は，他と同様に「パッケージ名」を表す．)
 				また，正しく読み込まれるためには，それらのパーミッションは実行，読み込みが共に可能でなければいけません．
 				(すなわち，それらのインストールには引数 <tt style="white-space: nowrap;">-m 755</tt> を付ける．)
 			</p>
 			<p>
-				環境変数をいくつか設定したいだけなら (QTDIR を '/sw' にする，など)，フィールド RuntimeVars を使えばよいでしょう．
+				環境変数をいくつか設定したいだけなら (QTDIR を '/opt/sw' にする，など)，フィールド RuntimeVars を使えばよいでしょう．
 				このフィールドはまさにその作業を簡略化するために用意されたものです．
 			</p>
 		
@@ -2960,4 +2960,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.ja.xml,v 1.60 2023/01/22 6:40:32 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.ja.xml,v 1.61 2023/08/04 4:54:31 nieder nieder Exp $</i></p></body></html>

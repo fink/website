@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Übersetzen (1)";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=de" title="Probleme beim Übersetzen - Bestimmte Pakete"><link rel="prev" href="usage-fink.php?phpLang=de" title="Fink installieren, benutzen und pflegen">';
 
 
@@ -27,7 +27,7 @@ include_once "header.de.inc";
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.3: Ich erhalte Fehlermeldungen mit <code>make</code>
         </b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Die Fehlermeldung</p><pre>make: command not found</pre><p>oder</p><pre>Can't exec "make":
-No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>bedeuten, dass sie die Apple Developer Tools installieren müssen.</p><p>Lautet die Fehlermeldung</p><pre>make: illegal option -- C</pre><p>, dann haben sie die GNU-Version von <code>make</code> aus den
+No such file or directory at /opt/sw/lib/perl5/Fink/Services.pm line 190.</pre><p>bedeuten, dass sie die Apple Developer Tools installieren müssen.</p><p>Lautet die Fehlermeldung</p><pre>make: illegal option -- C</pre><p>, dann haben sie die GNU-Version von <code>make</code> aus den
           Developer Tools durch die BSD-Version ersetzt. Viele Pakete benötigen
           aber spezielle Optionen der GNU-Version. Überprüfen sie, dass
           <code>/usr/bin/make</code> ein Symlink auf <code>gnumake</code>, und
@@ -49,7 +49,7 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>be
           Benutzung von Fink benötigen sie das originale <code>head</code>.</p><p>Das Boot-Skript überprüft das, aber der Fehler kann auch dann
           auftreten, wenn sie die binäre Distribution für die erstmalige
           Installation verwenden oder libwww nach Fink installieren.</p><p>Es wurde auch schon berichtet, dass das Problem bei der Installation
-          von <code>/sw/bin/HEAD</code> (Nicht durch ein Fink-Paket)
+          von <code>/opt/sw/bin/HEAD</code> (Nicht durch ein Fink-Paket)
           auftritt. Das kann leicht durch Umbenennen behoben werden.</p></div>
     </a>
     <a name="also_in">
@@ -74,9 +74,9 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>be
           Folge haben.</p><p>Andernfalls bedeutet ein Fehler mit <code>mv</code> meistens
           dass schon vorher ein Fehler aufgetreten ist, der Prozess aber nicht
           abgebrochen wurde. Suchen sie im Protokoll nach den Dateien, die zum
-          Fehler führen, z. B. so etwas:</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
-/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ 
-mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+          Fehler führen, z. B. so etwas:</p><pre>mv /opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib \
+/opt/sw/src/root-foo-shlibs-0.1.2-3/opt/sw/lib/ 
+mv: cannot stat `/opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib': 
 No such file or directory 
 ### execution of mv failed, exit code 1 
 Failed: installing foo-0.1.2-3 failed</pre><p>In diesen Fällen, suchen sie nach der Datei
@@ -130,9 +130,9 @@ Please fix build process to get consistent use of fink's headers.</pre><p>Treten
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.9: Wenn ich versuche, ein Paket zu erzeugen, bekomme ich die
           Fehlermeldung, "table of contents" ist veraltet. Was muss ich tun?</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Das Protokoll gibt Hinweise darauf, was zu tun ist, z. B.:</p><pre>ld: table of contents for archive:
-/sw/lib/libintl.a is out of date; 
+/opt/sw/lib/libintl.a is out of date; 
 rerun ranlib(1) (can't load from it)</pre><p>Sie müssen also (als root) ranlib mit der Bibliothek ausführen, die
-          Probleme macht. Im obigen Beispiel wäre das:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
+          Probleme macht. Im obigen Beispiel wäre das:</p><pre>sudo ranlib /opt/sw/lib/libintl.a</pre></div>
     </a>
     <a name="fc-atlas">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.10: Fink Commander bleibt hängen, wenn ich versuche das Paket atlas zu
@@ -166,17 +166,17 @@ rerun ranlib(1) (can't load from it)</pre><p>Sie müssen also (als root) ranlib 
     </a>
     <a name="dpkg-parse-error">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.13: Ich kann gar nichts installieren und bekommen nur die Fehlermeldung:
-          "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"!</b></p></div>
+          "dpkg: parse error, in file `/opt/sw/var/lib/dpkg/status'"!</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Dies bedeutet, dass die dpkg-Datenbank irgendwie beschädigt wurde,
           meist durch einen Absturz oder ähnlich schlimmes. Häufig ist ein
           Buildlock damit verbunden, z. B.:</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>(selbstverständlich muss der Name <code>foo-1.2.3-4</code>
           durch den ersetzt werden, für den der Fehler auftritt).</p><p>Sollte dies passieren, müssen sie die Datei
-          <code>/sw/var/lib/dpkg/status</code> als root editieren.
+          <code>/opt/sw/var/lib/dpkg/status</code> als root editieren.
           Gehen sie zu der Zeile, die in der Fehlermeldung steht. Dort sollte
           ein Paket mit dem Namen <code>fink-buildlock-foo-1.2.3-4</code>
           stehen, dessen Feld <code>Status</code> markiert ist</p><pre>install ok installed</pre><p>Ändern sie dies zu</p><pre>purge ok not-installed</pre><p>Unter Umständen steht auch Müll in diesem Fall. Dies können sie
           beheben, in dem sie die Datei mit ihrer vorigen Version
-          überschreiben:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>Sie müssen allerdings die Pakete, die sie kurz vorher installiert
+          überschreiben:</p><pre>sudo cp /opt/sw/var/lib/dpkg/status-old /opt/sw/var/lib/dpkg/status</pre><p>Sie müssen allerdings die Pakete, die sie kurz vorher installiert
           haben, erneut installieren.</p></div>
     </a>
     <a name="freetype-problems">
@@ -186,15 +186,15 @@ rerun ranlib(1) (can't load from it)</pre><p>Sie müssen also (als root) ranlib 
           ausführen:</p><pre>where freetype-config</pre><p>wenn sie <code>tcsh</code> benutzen, oder</p><pre>type -a freetype-config</pre><p>wenn sie <code>bash</code> benutzen. Man weiß, dass das
           Framework Mono <code>/usr/bin/freetype-config</code>
           installiert, das ein Symlink auf eine Datei in diesem Framework
-          ist.</p><p>Sieht ihr Fehler so aus:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52:
+          ist.</p><p>Sieht ihr Fehler so aus:</p><pre>/opt/sw/include/pango-1.0/pango/pangoft2.h:52:
 error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:57:
+/opt/sw/include/pango-1.0/pango/pangoft2.h:57:
 error: parse error before '*' token
-/sw/include/pango-1.0/pango/pangoft2.h:61: 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:61: 
 error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:86: 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: 
 error: parse error before "pango_ft2_font_get_face"
-/sw/include/pango-1.0/pango/pangoft2.h:86: 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: 
 warning: data definition has no type or storage class 
 make[2]: *** [rsvg-gz.lo] Error 1
 make[1]: *** [all-recursive] Error 1 
@@ -290,8 +290,8 @@ allversions:
    	0.29.21-51
  bi	0.29.99.cvs-20110408.1821</pre><p>Wählen sie letzte Release-Version (eine ohne <b>.cvs</b>, z. B.
           die <b>0.29.21-51</b> von oben) und führen sie diese Kommando aus:</p><pre>fink install fink-version-revision</pre><p>Zum Beispiel:</p><pre>fink install fink-0.29.21-51</pre><p>um <code>fink-0.29.51</code> zu installieren.</p><p>Den Speicherplatz der CVS checkouts von <code>fink</code>
-          bekommt man mit folgendem Befehl zurück:</p><pre>sudo rm /sw/fink/10.4/local/injected/binary-darwin-&lt;architecture&gt;/*;
-sudo rm /sw/fink/10.4/local/injected/finkinfo/*;
+          bekommt man mit folgendem Befehl zurück:</p><pre>sudo rm /opt/sw/fink/10.4/local/injected/binary-darwin-&lt;architecture&gt;/*;
+sudo rm /opt/sw/fink/10.4/local/injected/finkinfo/*;
 fink index -f
 fink scanpackages
 sudo apt-get update
@@ -375,9 +375,9 @@ running build_ext
 Traceback (most recent call last):
   File "setup_socket_ssl.py", line 21, in ?
     depends = ['socketmodule.h'] )
-  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+  File "/opt/sw/src/root-python24-2.4.1-1/opt/sw/lib/python2.4/distutils/core.py", line 166, in setup
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
-### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>liegt das Problem daran, dass das Paket <code>python2*</code> das
+### execution of /opt/sw/bin/python2.4 failed, exit code 1</pre><p>liegt das Problem daran, dass das Paket <code>python2*</code> das
         aktuelle <code>MACOSX_DEPLOYMENT_TARGET</code> in eine
         Konfigurationsdatei schreibt, wenn es erzeugt wird und die python build
         utilities diesen Wert nehmen, wenn sie Module erstellen. Dadurch können
@@ -419,9 +419,9 @@ SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" dur
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.26: Wenn ich ein Paket mit app-Bundle unter Yosemite aktualisieren
           möchte, erhalte ich Fehler mit einer Datei PkgInfo.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Die Fehlermeldung sieht vermutlich so aus:</p><pre>Unpacking replacement wxmaxima-mac ...
-/sw/bin/dpkg: error processing /sw/fink/dists/stable/main/binary-darwin-x86_64/sci/wxmaxima-mac_15.04.0-1_darwin-x86_64.deb (--install):
- unable to make backup link of `./sw/Applications/wxMaxima.app/Contents/PkgInfo' before installing new version: Operation not permitted
-/sw/bin/dpkg-deb: subprocess paste killed by signal (Broken pipe: 13)</pre><p>Gegenwärtig muss man das problematische Paket entfernen (remove),
+/opt/sw/bin/dpkg: error processing /opt/sw/fink/dists/stable/main/binary-darwin-x86_64/sci/wxmaxima-mac_15.04.0-1_darwin-x86_64.deb (--install):
+ unable to make backup link of `./opt/sw/Applications/wxMaxima.app/Contents/PkgInfo' before installing new version: Operation not permitted
+/opt/sw/bin/dpkg-deb: subprocess paste killed by signal (Broken pipe: 13)</pre><p>Gegenwärtig muss man das problematische Paket entfernen (remove),
           womit auch die Datei PkgInfo gelöscht wird und dann die aktualisierte
           Version installieren.</p></div>
     </a>

@@ -1,7 +1,7 @@
 <?php
 $title = "ネチケット - 最初";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ネチケット Contents"><link rel="next" href="reply.php?phpLang=ja" title="投稿への返信"><link rel="prev" href="before-post.php?phpLang=ja" title="投稿の前に">';
 
 
@@ -52,7 +52,7 @@ Checking for bar-config...no
 Error:  bar-config not found
 ....</pre>
 					<p>configure ログファイルに関連情報があると思った場合，
-					<code>/sw/src/foo-3.141-6/foo-3.141/config.log</code> の該当部分も投稿します．
+					<code>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</code> の該当部分も投稿します．
 					<b>ファイルは，サイズが巨大になるときがあるので送らないでください．</b>
 					</p></li>
                 <li>パッケージのビルドを開始した直後にエラーが発生する場合，

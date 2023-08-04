@@ -1,7 +1,7 @@
 <?php
 $title = "Использование X11 - Запуск XFree86";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Использование X11 Contents"><link rel="next" href="xtools.php?phpLang=ru" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=ru" title="Получение и инсталляция XFree86">';
 
 
@@ -110,24 +110,24 @@ include_once "header.ru.inc";
                 циклов ОЗУ и центрального процессора можно указать <code>exec</code> перед
                 последней строкой, как в примере ниже.)</p>
             <p> Простой пример запуска GNOME:</p>
-            <pre>. /sw/bin/init.sh exec gnome-session</pre>
+            <pre>. /opt/sw/bin/init.sh exec gnome-session</pre>
             <p>Более сложный пример для пользователей bash, который отключает X11,
                 делает запуск некоторых клиентов и в конце концов менеджера окон Enlightenment:
                 </p>
-            <pre>. /sw/bin/init.sh xset b off xclock -geometry -0+0
+            <pre>. /opt/sw/bin/init.sh xset b off xclock -geometry -0+0
                 &amp; xterm &amp; xterm &amp; exec enlightenment</pre>
             <p>Для запуска GNOME 2.2 в X11 Apple используйте следующую последовательность:</p>
-            <pre>. /sw/bin/init.sh quartz-wm --only-proxy &amp;
+            <pre>. /opt/sw/bin/init.sh quartz-wm --only-proxy &amp;
                 metacity &amp; exec gnome-session</pre>
             <p>При запуске GNOME 2.4 в X11 Apple metacity запускается автоматически,
                 и таким образом последовательность следующая:</p>
-            <pre>. /sw/bin/init.sh quartz-wm --only-proxy &amp; exec gnome-session</pre>
+            <pre>. /opt/sw/bin/init.sh quartz-wm --only-proxy &amp; exec gnome-session</pre>
             <p>Для запуска KDE 3.2 (версия &lt; 3.2.2-21) в X11 Apple используйте</p>
-            <pre>. /sw/bin/init.sh export KDEWM=kwin quartz-wm
-                --only-proxy &amp; /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
+            <pre>. /opt/sw/bin/init.sh export KDEWM=kwin quartz-wm
+                --only-proxy &amp; /opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
             <p>Наконец, для запуска последней нестабильной версии KDE в
                 X11 Apple:</p>
-            <pre>. /sw/bin/init.sh /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
+            <pre>. /opt/sw/bin/init.sh /opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
         
     <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="xtools.php?phpLang=ru">5. Xtools</a></p>

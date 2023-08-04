@@ -1,7 +1,7 @@
 <?php
 $title = "Paquets - Règles";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="fslayout.php?phpLang=fr" title="Organisation des fichiers"><link rel="prev" href="format.php?phpLang=fr" title="Descriptions de paquets">';
 
 
@@ -192,7 +192,7 @@ SplitOff: &lt;&lt;
   BuildDependsOnly: False
 </pre>
 <p>et la raison pour laquelle cela est fait doit être mentionnée dans le champ DescPackaging.</p>
-<p>Le champ BuildDependsOnly ne doit être mentionné dans le fichier .info du paquet que si ce paquet contient des headers installés dans /sw/include.</p>
+<p>Le champ BuildDependsOnly ne doit être mentionné dans le fichier .info du paquet que si ce paquet contient des headers installés dans /opt/sw/include.</p>
 <p>À partir de la version 0.20.5 de fink, "fink validate" affichage un message pour tout .deb qui contient des headers et au moins une dylib, et qui ne donne pas la valeur "true" ou "false" au champ BuildDependsOnly. (Il est possible que, dans les versions postérieures de fink, ce message soit étendu aux cas des .deb contenant des headers et une bibliothèque statique). </p>
 <p>
   The goal of the Shared Library Policy is to allow assure
@@ -294,9 +294,9 @@ linking to this library.
 
 <h2><a name="perlmods">3.5 Modules Perl</a></h2>
 <p>La réglementation de Fink pour les modules perl, effective à partir de mai 2003, a été modifiée en avril 2004.</p>
-<p>Traditionnellement, les paquets Fink pour les modules Perl avaient un suffixe <code>-pm</code>, et étaient compilés en utilisant la directive <code>Type: perl</code>, qui place les modules Perl dans <code>/sw/lib/perl5</code> et/ou dans <code>/sw/lib/perl5/darwin</code>. Avec la nouvelle réglementation, cet emplacement n'est autorisé que pour les modules perl qui sont indépendants de la version de perl utilisée pour les compiler (et qui ne dépendent pas d'autres modules perl dépendants des versions).</p>
+<p>Traditionnellement, les paquets Fink pour les modules Perl avaient un suffixe <code>-pm</code>, et étaient compilés en utilisant la directive <code>Type: perl</code>, qui place les modules Perl dans <code>/opt/sw/lib/perl5</code> et/ou dans <code>/opt/sw/lib/perl5/darwin</code>. Avec la nouvelle réglementation, cet emplacement n'est autorisé que pour les modules perl qui sont indépendants de la version de perl utilisée pour les compiler (et qui ne dépendent pas d'autres modules perl dépendants des versions).</p>
 <p>Les modules Perl qui sont dépendants des versions sont les modules dits XS, qui contiennent fréquemment du code C compilé ainsi que des routines écrites en langage Perl. Il y a de nombreuses façons de les reconnaître, notamment par la présence d'un fichier avec un suffixe <code>.bundle</code>.</p>
-<p>Un module perl qui dépend des versions doit être construit en utilisant un binaire dont le nom comporte le numéro de version de perl, comme <code>perl5.6.0</code>, et doit stocker ses fichiers dans des sous-répertoires des répertoires standards de perl ; les noms de ces sous-répertoires doivent comporter le numéro de version de perl, comme <code>/sw/lib/perl5/5.6.0</code> et <code>/sw/lib/perl5/5.6.0/darwin</code>. Par convention, les noms des paquets utilisent le suffixe <code>-pm560</code> pour un module Perl de version 5.6.0. Des conventions de stockage et de nommage similaires s'imposent pour les autres versions de perl, qui incluent perl 5.6.1 (dans les seules branches 10.2), perl 5.8.0 (dans les seules branches 10.3), perl 5.8.1, perl 5.8.4 et perl 5.8.6.</p>
+<p>Un module perl qui dépend des versions doit être construit en utilisant un binaire dont le nom comporte le numéro de version de perl, comme <code>perl5.6.0</code>, et doit stocker ses fichiers dans des sous-répertoires des répertoires standards de perl ; les noms de ces sous-répertoires doivent comporter le numéro de version de perl, comme <code>/opt/sw/lib/perl5/5.6.0</code> et <code>/opt/sw/lib/perl5/5.6.0/darwin</code>. Par convention, les noms des paquets utilisent le suffixe <code>-pm560</code> pour un module Perl de version 5.6.0. Des conventions de stockage et de nommage similaires s'imposent pour les autres versions de perl, qui incluent perl 5.6.1 (dans les seules branches 10.2), perl 5.8.0 (dans les seules branches 10.3), perl 5.8.1, perl 5.8.4 et perl 5.8.6.</p>
 <p>La directive <code>Type: perl 5.6.0</code> utilise automatiquement le binaire dont le nom comporte le numéro de version de perl et stocke les fichiers dans les bons sous-répertoires. (Cette directive est disponible à partir de la version 0.13.0 de fink).</p>
 <p>Sous la réglementation de mai 2003, il était permis de créer un paquet <code>-pm</code>, qui est essentiellement un paquet "lot", qui charge la variante <code>-pm560</code> ou une autre variante existante. Cette stratégie est déconseillée sous la réglementation d'avril 2004, et sera complètement interdite après une période de transition. (La seule exception sera le paquet <code>storable-pm</code> qui doit se présenter sous cette forme pour le bootstrap).</p>
 <p>À partir de la version 0.20.2 de fink, le paquet virtuel system-perl "fournit" automatiquement certains modules perl quand la version de Perl présente sur le système est supérieure ou égale à 5.8.0. Dans le cas de system-perl-5.8.1-1, ces modules sont les suivants : <b>attribute-handlers-pm581, cgi-pm581, digest-md5-pm581, file-spec-pm581, file-temp-pm581, filter-simple-pm581, filter-util-pm581, getopt-long-pm581, i18n-langtags-pm581, libnet-pm581, locale-maketext-pm581, memoize-pm581, mime-base64-pm581, scalar-list-utils-pm581, test-harness-pm581, test-simple-pm581, time-hires-pm581.</b> (Cette liste était légèrement différente dans la version 0.20.1 de fink ; les mainteneurs de paquet sont invités à vérifier que c'est bien sur la nouvelle liste qu'ils se basent).</p>
@@ -352,7 +352,7 @@ InstallScript: &lt;&lt;
 
 <h2><a name="emacs">3.6 Règles Emacs</a></h2>
 <p>Le projet Fink a choisi de suivre les règles du projet Debian en ce qui concerne emacs, avec quelques différences. (Vous trouverez les règles Debian sur <a href="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a>). Il existe deux différences dans les règles de Fink. Premièrement, ces règles ne s'appliquent, à l'heure actuelle, qu'aux paquets 
-<code>emacs21</code>, <code>emacs22</code> et <code>emacs21</code> de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /sw/share/emacs/site-lisp.</p>
+<code>emacs21</code>, <code>emacs22</code> et <code>emacs21</code> de fink. (Ceci pourra changer à l'avenir). Deuxièmement, contrairement aux règles Debian, les paquets Fink peuvent installer des objets directement dans /opt/sw/share/emacs/site-lisp.</p>
 
 
 

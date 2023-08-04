@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Compiler";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="reference.php?phpLang=de" title="Referenz"><link rel="prev" href="fslayout.php?phpLang=de" title="Dateisystem-Layout">';
 
 
@@ -58,7 +58,7 @@ kommt eine weitere Änderung durch den Übergang von libstdc++ nach libc++ dazu.
 Mit der Distribution 10.4-transitional wurde eine neute Methode eingeführt, mit
 der sicher gestellt wird, dass der richtige g++ Compiler verwendet wird.
 Während des Compilierens wird das Verzeichnis
-<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (wobei xxx die Versionsnummer
+<code>/opt/sw/var/lib/fink/path-prefix-g++-XXX</code> (wobei xxx die Versionsnummer
 ist) in der Pfadvariablen PATH eingetragen. In diesem Verzeichnis befinden sich
 Shellskripte, die dafür sorgen, dass die richtige Version des g++ Compiler
 aufgerufen wird.

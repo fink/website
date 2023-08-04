@@ -1,7 +1,7 @@
 <?php
 $title = "Сетевой этикет";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Сетевой этикет Contents"><link rel="next" href="before-post.php?phpLang=ru" title="Что надо сделать до размещения объявления">';
 
 
@@ -20,7 +20,7 @@ include_once "header.ru.inc";
             больше информации для отражения проблемы и здесь поясняется, что именно надо сделать.</p>
     <h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="before-post.php?phpLang=ru"><b>1 Что надо сделать до размещения объявления</b></a><ul><li><a href="before-post.php?phpLang=ru#research">1.1 Поиск уже имеющегося ответа на свой вопрос.</a></li></ul></li><li><a href="first-post.php?phpLang=ru"><b>2 Первоначальное размещение объявления</b></a><ul><li><a href="first-post.php?phpLang=ru#system">2.1 Что у вас инсталлировано?</a></li><li><a href="first-post.php?phpLang=ru#problem-description">2.2 Что не получается?</a></li><li><a href="first-post.php?phpLang=ru#remedies">2.3 Что вы пробовали сделать?</a></li><li><a href="first-post.php?phpLang=ru#future-plans">2.4 Что еще надо попытаться сделать?</a></li></ul></li><li><a href="reply.php?phpLang=ru"><b>3 Ответы на объявления</b></a><ul><li><a href="reply.php?phpLang=ru#reply-to-list">3.1 Надо убедиться, что вы отвечаете всему списку</a></li></ul></li><li><a href="unsubscribe.php?phpLang=ru"><b>4 Отказ от подписки на списки рассылки</b></a><ul><li><a href="unsubscribe.php?phpLang=ru#unsubscribing">4.1 Как можно отказаться от подписки на списки рассылки?</a></li></ul></li></ul>
-<!--Generated from $Fink: netiquette.ru.xml,v 1.3 2012/11/11 15:20:16 gecko2 Exp $-->
+<!--Generated from $Fink: netiquette.ru.xml,v 1.4 2023/08/04 5:23:15 nieder Exp $-->
 <?php include_once "../../footer.inc"; ?>
 
 

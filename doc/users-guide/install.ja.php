@@ -1,7 +1,7 @@
 <?php
 $title = "ユーザーガイド - インストール";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="packages.php?phpLang=ja" title="パッケージのインストール"><link rel="prev" href="intro.php?phpLang=ja" title="はじめに">';
 
 
@@ -71,7 +71,7 @@ StuffIt Expander が解凍してしまっている場合、作成されたフォ
 スクリプトがシステムをチェックし、 sudo を使って root になります。
 この時、パスワードを聞いてきます。
 次に、インストールパスを聞いてきます。
-特に理由がない限り、デフォルトのパス /sw を使ってください。
+特に理由がない限り、デフォルトのパス /opt/sw を使ってください。
 このドキュメントでは、このパスを例として使いますので、パスを換えた場合は適宜置き換えてください。
 </p>
 <p>
@@ -96,11 +96,11 @@ StuffIt Expander が解凍してしまっている場合、作成されたフォ
 Fink ディレクトリ階層にインストールされたソフトウェア、パッケージ管理プログラムを含めて、を使用するには、 PATH 環境変数などをそれぞれ設定しなければなりません。
 これはターミナル上で、
 </p>
-<pre>/sw/bin/pathsetup.sh</pre>
+<pre>/opt/sw/bin/pathsetup.sh</pre>
 <p>
 と入力します。
 古いバージョンの fink の場合、ファイル名が <code>pathsetup.command</code> ですので、次のように入力します。
-<code>open /sw/bin/pathsetup.command</code>
+<code>open /opt/sw/bin/pathsetup.command</code>
 として下さい。
 これが効かない場合は手動で設定することができますが、シェルによってやり方が異なります。
 現在のシェルを知るには、ターミナルを開き:
@@ -117,14 +117,14 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   <p>
    Bourne シェル系 (sh, bash, zsh など) を使っている場合、以下の行をホームディレクトリ内の <code>.profile</code> ファイルに追加して下さい (あるいは、 <code>.bash_profile</code> がある場合、こちらを使って下さい):
   </p>
-  <pre>. /sw/bin/init.sh</pre>
+  <pre>. /opt/sw/bin/init.sh</pre>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
   <pre>cd pico .profile</pre>
 <p>
 フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
-<code>. /sw/bin/init.sh</code> 行をタイプできるようになります。
+<code>. /opt/sw/bin/init.sh</code> 行をタイプできるようになります。
 "New file" という文字が出ていても大丈夫です。
 行を追加したら、最低一回はリターンキーを押して下さい。
 その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
@@ -136,7 +136,7 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
    tcsh を使っている場合、以下の行をホームディレクトリ内の 
    <code>.cshrc</code> ファイルに追加して下さい:
   </p>
-  <pre>source /sw/bin/init.csh</pre>
+  <pre>source /opt/sw/bin/init.csh</pre>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
@@ -144,7 +144,7 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
 pico .profile</pre>
 <p>
 フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
-<code>source /sw/bin/init.csh</code> 行をタイプできるようになります。
+<code>source /opt/sw/bin/init.csh</code> 行をタイプできるようになります。
 "New file" という文字が出ていても大丈夫です。
 行を追加したら、最低一回はリターンキーを押して下さい。
 その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。

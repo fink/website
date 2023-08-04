@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging Tutorial";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/03/05 23:40:46';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:18:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Packaging Tutorial Contents"><link rel="next" href="howtostart.php?phpLang=de" title="Der Anfang">';
 
 
@@ -26,7 +26,7 @@ include_once "header.de.inc";
     </p>
   <h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="howtostart.php?phpLang=de"><b>1 Der Anfang</b></a><ul><li><a href="howtostart.php?phpLang=de#Learn">1.1 Grundlagen</a></li><li><a href="howtostart.php?phpLang=de#Make">1.2 Paket erstellen</a></li><li><a href="howtostart.php?phpLang=de#Validate">1.3 Validieren sie ihr Paket</a></li><li><a href="howtostart.php?phpLang=de#Submit">1.4 Paket einreichen</a></li></ul></li><li><a href="example.php?phpLang=de"><b>2 Beispiel - das Maxwell Paket</b></a><ul><li><a href="example.php?phpLang=de#Basics">2.1 Grundlagen</a></li><li><a href="example.php?phpLang=de#build">2.2 Paket erstellen</a></li></ul></li></ul>
-<!--Generated from $Fink: quick-start-pkg.de.xml,v 1.1 2015/03/05 23:40:46 k-m_schindler Exp $-->
+<!--Generated from $Fink: quick-start-pkg.de.xml,v 1.2 2023/08/04 5:18:11 nieder Exp $-->
 <?php include_once "../../footer.inc"; ?>
 
 

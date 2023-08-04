@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - X11 starten";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/02/23 16:32:58';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Running X11 Contents"><link rel="next" href="other.php?phpLang=de" title="Andere Möglichkeiten mit X11 "><link rel="prev" href="inst-xfree86.php?phpLang=de" title="X11 beziehen und installieren">';
 
 
@@ -63,7 +63,7 @@ nano $HOME/.xinitrc.d/94-wmaker.sh</pre>
         Tragen sie folgenden Inhalt in <code>94-wmaker.sh</code>
         ein:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec wmaker
 </pre>
@@ -84,7 +84,7 @@ nano $HOME/.xinitrc.d/74-xlogo.sh</pre>
         Tragen sie folgenden Inhalt in <code>74-xlogo.sh</code>
         ein:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 xlogo &amp;</pre>
       <p>Speichern sie die Datei und führen sie folgendes Kommando aus:</p>
 <pre>chmod a+x 74-xlogo.sh</pre>
@@ -99,7 +99,7 @@ xlogo &amp;</pre>
         ausführbare Datei <code>94-gnome-session.sh</code> mit
         folgendem Inhalt:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</pre>
@@ -107,7 +107,7 @@ exec gnome-session</pre>
         Beispiel: "rootless" GNOME-Session. Erzeugen sie die ausführbare
         Datei <code>94-gnome-panel.sh</code> mit folgendem Inhalt:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-panel</pre>
@@ -115,7 +115,7 @@ exec gnome-panel</pre>
         Beispiel: KDE3. Erzeugen sie die ausführbare Datei
         <code>94-startkde.sh</code> mit folgendem Inhalt:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 exec startkde</pre>
       <p>
         (startkde startet automatisch eine Fensterverwaltung und nutzt
@@ -125,12 +125,12 @@ exec startkde</pre>
         Beispiel: KDE4. Erzeugen sie die ausführbare Datei
         <code>94-startkde.sh</code> mit folgendem Inhalt:
       </p>
-<pre>. /sw/bin/init.sh
-exec /sw/opt/kde4/x11/bin/startkde</pre>
+<pre>. /opt/sw/bin/init.sh
+exec /opt/sw/opt/kde4/x11/bin/startkde</pre>
       <p><b>Beachte:</b></p>
       <ul>
         <li>
-          Beginnen sie jedes Skript mit <code>. /sw/bin/init.sh</code>.
+          Beginnen sie jedes Skript mit <code>. /opt/sw/bin/init.sh</code>.
           Damit wird sicher gestellt, dass auch Programme aus dem Fink-Baum
           gefunden werden.
         </li>
@@ -183,7 +183,7 @@ exec /sw/opt/kde4/x11/bin/startkde</pre>
       <p>
         Damit auch Fink-Programme in <code>.xinitrc</code>
         funktionieren, sollte gleich am Anfang der Datei die Zeile <code>.
-        /sw/bin/init.sh</code> stehen, damit die Umgebung korrekt
+        /opt/sw/bin/init.sh</code> stehen, damit die Umgebung korrekt
         aufgesetzt wird.
       </p>
       <p>
@@ -215,7 +215,7 @@ exec /sw/opt/kde4/x11/bin/startkde</pre>
         Beispiel: Schalte die X11-Klingel aus, starte einige Klienten und
         zum Schluss die Fensterverwaltung "Enlightenment":
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -225,12 +225,12 @@ xterm &amp;
 
 exec enlightenment</pre>
       <p>Beispiel: GNOME starten:</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</pre>
 <p>Zum Schluss: KDE3 starten:</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 exec startkde</pre>
     
     <h2><a name="xinitrc-pkg">4.4 Das Fink-Paket 'xinitrc'</a></h2>
@@ -250,7 +250,7 @@ exec startkde</pre>
           <p>
             Das Paket <code>xinitrc</code> enthält Einsprungspunkte für
             Administratoren. Erzeugen sie die Datei
-            <code>/sw/etc/xinitrc-last-hook</code> als
+            <code>/opt/sw/etc/xinitrc-last-hook</code> als
             Administrator mit folgendem Inhalt:
           </p>
 <pre>#!/bin/sh

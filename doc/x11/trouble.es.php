@@ -1,7 +1,7 @@
 <?php
 $title = "Ejecución de X11 - Resolviendo problemas";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="tips.php?phpLang=es" title="Consejos de uso"><link rel="prev" href="other.php?phpLang=es" title="Otras posibilidades X11">';
 
 
@@ -192,7 +192,7 @@ Tipo: Fatal.
 Ocurre con XDarwin 1.0a2 y 1.0a3 cuando los ficheros 
 de  inicialización del shell no han tienen nigún comando para añadir /usr/X11R6/bin a la variable PATH.
 Si usas Fink y no has cambiado tu shell por defecto, debería ser suficiente 
-añadir la línea <code>source /sw/bin/init.csh</code> al fichero 
+añadir la línea <code>source /opt/sw/bin/init.csh</code> al fichero 
 <code>.cshrc</code> en tu directorio de usuario.
 </p>
       <pre>_XSERVTransSocketUNIXCreateListener: 

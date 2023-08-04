@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.zh.xml,v 1.44 2023/01/22 6:40:32 nieder nieder Exp $
+Generated from $Fink: packaging.zh.xml,v 1.45 2023/08/04 4:54:31 nieder nieder Exp $
 -->
 <title>Fink Documentation - 创建 Fink 软件包</title></head><body>
 <table width="100%" cellspacing="0">
@@ -79,8 +79,8 @@ fink 和 dpkg 都知道如何正确地给它们排序。
 
 <h3><a name="format.trees">2.1 文件树结构</a></h3>
 <p>
-软件包描述文件保存在 <tt style="white-space: nowrap;">/sw/fink/dists</tt> 目录树内的 <tt style="white-space: nowrap;">finkinfo</tt> 目录中。
-<tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> 中的 "Trees" 设置控制会控制应该读取那个目录。
+软件包描述文件保存在 <tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> 目录树内的 <tt style="white-space: nowrap;">finkinfo</tt> 目录中。
+<tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> 中的 "Trees" 设置控制会控制应该读取那个目录。
 软件包描述文件的名字必须要软件包全名加上 ".info" 扩展名组成。
 从 fink 0.13.0 开始，为了简化软件包的升级，也可以允许简单地使用软件包加 ".info" 来组成。
 
@@ -225,15 +225,15 @@ Note that the Epoch is not part of <tt style="white-space: nowrap;">%f</tt>.
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 
 <p>
-the <b>p</b>refix where Fink is installed, e.g. <tt style="white-space: nowrap;">/sw</tt>. You must not assume all users have Fink installed in <tt style="white-space: nowrap;">/sw</tt>; use <tt style="white-space: nowrap;">%p</tt> to ge the correct path.
+the <b>p</b>refix where Fink is installed, e.g. <tt style="white-space: nowrap;">/opt/sw</tt>. You must not assume all users have Fink installed in <tt style="white-space: nowrap;">/opt/sw</tt>; use <tt style="white-space: nowrap;">%p</tt> to ge the correct path.
 </p>
 
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 要打包的全套文件将被构建于的目标（<b>d</b>estination）目录，例如：
-<tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1</tt>。
+<tt style="white-space: nowrap;">/opt/sw/src/fink.build/root-gimp-1.2.1-1</tt>。
 这个临时目录在编译过程的安装阶段将作为根目录位置。
-你不应该假设 <tt style="white-space: nowrap;">root-%f</tt> 会在 <tt style="white-space: nowrap;">%p/src</tt> 中，因为用户可以通过 <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> 文件中的 <tt style="white-space: nowrap;">Buildpath</tt> 字段来改变它的位置。
+你不应该假设 <tt style="white-space: nowrap;">root-%f</tt> 会在 <tt style="white-space: nowrap;">%p/src</tt> 中，因为用户可以通过 <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> 文件中的 <tt style="white-space: nowrap;">Buildpath</tt> 字段来改变它的位置。
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -253,8 +253,8 @@ the <b>p</b>refix where Fink is installed, e.g. <tt style="white-space: nowrap;"
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-构建（<b>b</b>uild）过程所在的目录，例如：<tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>。
-你不应该假设 <tt style="white-space: nowrap;">%f</tt> 一定在 <tt style="white-space: nowrap;">%p/src</tt> 中，因为用户可以通过 <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> 文件中的 <tt style="white-space: nowrap;">Buildpath</tt> 字段来改变它。
+构建（<b>b</b>uild）过程所在的目录，例如：<tt style="white-space: nowrap;">/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>。
+你不应该假设 <tt style="white-space: nowrap;">%f</tt> 一定在 <tt style="white-space: nowrap;">%p/src</tt> 中，因为用户可以通过 <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> 文件中的 <tt style="white-space: nowrap;">Buildpath</tt> 字段来改变它。
 最内部的目录根据 <tt style="white-space: nowrap;">Source</tt> 文件名来命名，或是 <tt style="white-space: nowrap;">SourceDirectory</tt> 字段(如果存在的话)的值，或在 <tt style="white-space: nowrap;">NoSourceDirectory</tt> 为 <tt style="white-space: nowrap;">true</tt> 的时候不使用它。
 </p>
 <p>
@@ -629,7 +629,7 @@ the package should declare
 <p>and the reason must be given in the DescPackaging field.
 </p><p>
 The BuildDependsOnly field should only be mentioned in the package's .info
-file if the package contains header files, installed into /sw/include.
+file if the package contains header files, installed into /opt/sw/include.
 </p><p>
 As of fink 0.20.5, "fink validate" will issue a warning for any .deb
 which contains header files and at least one dylib, and does not declare
@@ -764,14 +764,14 @@ linking to this library.
 </p><p>
 传统上，关于 perl 模块的 Fink 软件包具有
 <tt style="white-space: nowrap;">-pm</tt> 后缀，并使用 <tt style="white-space: nowrap;">Type: perl</tt> 
-指令来构建，它把 perl 模块的文件保存在 <tt style="white-space: nowrap;">/sw/lib/perl5</tt> 和/或
-<tt style="white-space: nowrap;">/sw/lib/perl5/darwin</tt>中。按照现行规则，这个存储位置仅允许用于那些与编译它们的 perl 程序版本无关的 perl 模块(同时也不应该依赖于那些不具备版本无关性的其它模块)。
+指令来构建，它把 perl 模块的文件保存在 <tt style="white-space: nowrap;">/opt/sw/lib/perl5</tt> 和/或
+<tt style="white-space: nowrap;">/opt/sw/lib/perl5/darwin</tt>中。按照现行规则，这个存储位置仅允许用于那些与编译它们的 perl 程序版本无关的 perl 模块(同时也不应该依赖于那些不具备版本无关性的其它模块)。
 </p><p>
 那些版本相关的 perl 模块称为 XS 模块，
 通常除了纯粹的 perl 子程序外，还包括编译好的 C 代码。有很多办法可以识别这个情况，包括存在带有 <tt style="white-space: nowrap;">.bundle</tt> 后缀的文件等。
 </p><p>
 版本相关的 perl 模块必须使用标明版本号的 perl 程序来编译，比方说 <tt style="white-space: nowrap;">perl5.6.0</tt>，而且必须把它的文件标准 perl 目录下面的一个标明版本号的子目录中，例如
-<tt style="white-space: nowrap;">/sw/lib/perl5/5.6.0</tt> 和 <tt style="white-space: nowrap;">/sw/lib/perl5/5.6.0/darwin</tt>。习惯上，使用后缀 <tt style="white-space: nowrap;">-pm560</tt> 的命名约定来代表针对 5.6.0 的 perl 模块。类似的存储和命名约定也会用于其它版本的 perl，包括 perl 5.6.1 (仅用于 10.2 代码树), perl 5.8.0 (仅用于 10.3 代码树), perl 5.8.1, perl 5.8.4, 和 perl 5.8.6。
+<tt style="white-space: nowrap;">/opt/sw/lib/perl5/5.6.0</tt> 和 <tt style="white-space: nowrap;">/opt/sw/lib/perl5/5.6.0/darwin</tt>。习惯上，使用后缀 <tt style="white-space: nowrap;">-pm560</tt> 的命名约定来代表针对 5.6.0 的 perl 模块。类似的存储和命名约定也会用于其它版本的 perl，包括 perl 5.6.1 (仅用于 10.2 代码树), perl 5.8.0 (仅用于 10.3 代码树), perl 5.8.1, perl 5.8.4, 和 perl 5.8.6。
 </p><p>
 <tt style="white-space: nowrap;">Type: perl 5.6.0</tt> 指令会自动使用相应标定版本的 perl 程序，并把文件存储在正确的子目录中。
 (这个指令从 fink 0.13.0 版本开始提供)。</p>
@@ -904,7 +904,7 @@ perlXYZ-core packages in the <tt style="white-space: nowrap;">Replaces</tt> fiel
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a> 找到）。
 在 Fink 的规则中有两点区别。
 首先，在 fink 中这个规则目前仅应用于 <tt style="white-space: nowrap;">emacs21</tt>, <tt style="white-space: nowrap;">emacs22</tt> 和 <tt style="white-space: nowrap;">emacs23</tt> 软件包，而不应用于 xemacs。（这在将来可能会有改变）。
-第二，不象 Debian 的规则，Fink 软件包允许安装东西到 /sw/share/emacs/site-lisp 目录中。
+第二，不象 Debian 的规则，Fink 软件包允许安装东西到 /opt/sw/share/emacs/site-lisp 目录中。
 </p>
 
 
@@ -979,7 +979,7 @@ Fink 遵循<a href="http://www.pathname.com/fhs/">《文件系统层次结构标
 Standard)</a>，简称 FHS 的精神。
 我们只能说遵循它的精神，是因为 FHS 是为操作系统提供者所涉及的，因此它是在 <tt style="white-space: nowrap;">/</tt> 和
 <tt style="white-space: nowrap;">/usr</tt> 层次级别上来控制。而 Fink 只是一个附加的系统，它指控制它自己的安装目录(或安装前缀指定的目录)。
-本章的例子使用默认的前缀 <tt style="white-space: nowrap;">/sw</tt>。
+本章的例子使用默认的前缀 <tt style="white-space: nowrap;">/opt/sw</tt>。
 </p>
 
 
@@ -988,62 +988,62 @@ Standard)</a>，简称 FHS 的精神。
 文件应该分类存放在层次结构中下列子目录中：
 </p>
 
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/bin</tt></td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/bin</tt></td><td>
 <p>
 这个目录存放通常的可执行程序。里面没有子目录。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/sbin</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/sbin</tt></td><td>
 <p>
 这个目录存放那些应该只由系统管理员使用的命令。
 后台守护进程程序会放在这里。
 里面没有子目录。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/include</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/include</tt></td><td>
 <p>
 这个目录存放 C 和 C++ 头文件。
 如果需要的话，可以创建子目录。
 如果软件包安装的头文件可能与标准的 C 头文件发生混淆的话，这些头文件<b>必须</b>放到子目录中。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/lib</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/lib</tt></td><td>
 <p>
 这个目录存放那些系统架构相关的数据文件和函数库。
-除非有特别的理由，否则静态和动态连接库应该直接保存在 <tt style="white-space: nowrap;">/sw/lib</tt>。
+除非有特别的理由，否则静态和动态连接库应该直接保存在 <tt style="white-space: nowrap;">/opt/sw/lib</tt>。
 这里通常还保存那些不应该由用户直接运行的可执行程序(否则的话，应该放在 libexec)。
 </p>
 <p>
 软件包可以创建子目录来存放私有数据或可加载模块。
 请确定使用那些对保持兼容性有利的目录名。
-在目录名或目录层次中使用主版本号是个好办法，例如：<tt style="white-space: nowrap;">/sw/lib/perl5</tt>
-或 <tt style="white-space: nowrap;">/sw/lib/apache/1.3</tt>。
+在目录名或目录层次中使用主版本号是个好办法，例如：<tt style="white-space: nowrap;">/opt/sw/lib/perl5</tt>
+或 <tt style="white-space: nowrap;">/opt/sw/lib/apache/1.3</tt>。
 Care should be taken when the host type is used to create
 directories.
 <tt style="white-space: nowrap;">powerpc-apple-darwin1.3.3</tt> 这样的目录对兼容性是不利的，<tt style="white-space: nowrap;">powerpc-apple-darwin1.3</tt> 或仅仅是
 <tt style="white-space: nowrap;">powerpc-apple-darwin</tt> 是个好些的选择。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/lib/ppc64</tt>
-<tt style="white-space: nowrap;">/sw/lib/x86_64</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/lib/ppc64</tt>
+<tt style="white-space: nowrap;">/opt/sw/lib/x86_64</tt></td><td>
 
 <p>
-This directory is for 64-bit libraries, with <tt style="white-space: nowrap;">/sw/lib/ppc64</tt>
+This directory is for 64-bit libraries, with <tt style="white-space: nowrap;">/opt/sw/lib/ppc64</tt>
 being used under powerpc architecture, and
-<tt style="white-space: nowrap;">/sw/lib/x86_64</tt> being used under i386 architecture.
+<tt style="white-space: nowrap;">/opt/sw/lib/x86_64</tt> being used under i386 architecture.
 Libraries which have been built 'fat' should be stored in
-<tt style="white-space: nowrap;">/sw/lib</tt> instead.
+<tt style="white-space: nowrap;">/opt/sw/lib</tt> instead.
 </p>
 
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share</tt></td><td>
 <p>
 这个目录是存放那些系统体系架构无关的数据文件。
-那些 <tt style="white-space: nowrap;">/sw/lib</tt> 中的规则也适用于这里。
+那些 <tt style="white-space: nowrap;">/opt/sw/lib</tt> 中的规则也适用于这里。
 下面描述一些通常的子目录。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/man</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share/man</tt></td><td>
 <p>
 这些目录中包括帮助页。它按照通常的分类方法进行组织。
-在 <tt style="white-space: nowrap;">/sw/bin</tt> 和
-<tt style="white-space: nowrap;">/sw/sbin</tt> 中的每个程序都应该有一个对应的帮助页。
+在 <tt style="white-space: nowrap;">/opt/sw/bin</tt> 和
+<tt style="white-space: nowrap;">/opt/sw/sbin</tt> 中的每个程序都应该有一个对应的帮助页。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/info</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share/info</tt></td><td>
 <p>
 这个目录包含 Info 格式(从 Texinfo 源文件产生)的文档。
 <tt style="white-space: nowrap;">dir</tt> 文件的维护是通过 Debian 版本的 <tt style="white-space: nowrap;">install-info</tt> (<tt style="white-space: nowrap;">dpkg</tt> 软件包的一部分) 来自动进行的。
@@ -1051,7 +1051,7 @@ Libraries which have been built 'fat' should be stored in
 Fink 确保不会有软件包会安装它自己的 <tt style="white-space: nowrap;">dir</tt> 文件。
 这里不会有子目录。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/doc</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share/doc</tt></td><td>
 <p>
 这个目录包括那些既不是帮助页，也不是 Info 的文档。
 例如 README，LICENSE 和 COPYING 文件等。
@@ -1059,29 +1059,29 @@ Fink 确保不会有软件包会安装它自己的 <tt style="white-space: nowra
 目录名不能包括版本号(除非它正好是软件包名的一部分)。
 提示：使用 <tt style="white-space: nowrap;">%n</tt> 就好了。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/locale</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share/locale</tt></td><td>
 <p>
 这个目录包含国际化所需要的信息目录。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/var</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/var</tt></td><td>
 <p>
 <tt style="white-space: nowrap;">var</tt> 目录保存可变数据。
 它包括队列目录，访问锁文件，状态数据库，游戏最高分和日志文件。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/etc</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/etc</tt></td><td>
 <p>
 这个目录保存配置文件。
 对于那些需要在这里保存比较多文件(比方超过一两个的数目)的软件包，应该建立一个子目录。
 子目录应该和软件包或者里面的程序同名，以方便识别。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/src</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/src</tt></td><td>
 <p>
 这个目录用于保存和构建源代码。
 软件包不应该在这个目录里面安装任何东西。
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/Applications</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/Applications</tt></td><td>
 <p>This directory is for storing OS X-style applications which are launched by double-clicking rather than from the command line.</p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/Library/Frameworks</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/Library/Frameworks</tt></td><td>
 <p>This directory is for storing OS X-style frameworks, sometimes used by OS X-style applications.</p>
 </td></tr></table>
 
@@ -1089,11 +1089,11 @@ Fink 确保不会有软件包会安装它自己的 <tt style="white-space: nowra
 
 <h3><a name="fslayout.avoid">4.3 应该避免的事情</a></h3>
 <p>
-除了上面提到的以外，在 <tt style="white-space: nowrap;">/sw</tt> 中不应该有其它的目录。
+除了上面提到的以外，在 <tt style="white-space: nowrap;">/opt/sw</tt> 中不应该有其它的目录。
 特别地，不应该使用下面这些目录：
-<tt style="white-space: nowrap;">/sw/man</tt>，<tt style="white-space: nowrap;">/sw/info</tt>，
-<tt style="white-space: nowrap;">/sw/doc</tt>，<tt style="white-space: nowrap;">/sw/libexec</tt>，
-<tt style="white-space: nowrap;">/sw/lib/locale</tt>。
+<tt style="white-space: nowrap;">/opt/sw/man</tt>，<tt style="white-space: nowrap;">/opt/sw/info</tt>，
+<tt style="white-space: nowrap;">/opt/sw/doc</tt>，<tt style="white-space: nowrap;">/opt/sw/libexec</tt>，
+<tt style="white-space: nowrap;">/opt/sw/lib/locale</tt>。
 </p>
 
 
@@ -1141,7 +1141,7 @@ which will use both gcc-4.0 and g++-4.0.
 </p>
 <p>A new method was introduced for ensuring the correct g++ compiler starting
 with the 10.4-transitional distribution.  During compilation, a directory
-<tt style="white-space: nowrap;">/sw/var/lib/fink/path-prefix-g++-XXX</tt> (where XXX is the version
+<tt style="white-space: nowrap;">/opt/sw/var/lib/fink/path-prefix-g++-XXX</tt> (where XXX is the version
 number) is added to the PATH during compilation.  This directory contains
 shell scripts which ensure that the correct version of g++ is used.
 </p>
@@ -1192,8 +1192,8 @@ and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The
 
 <h3><a name="reference.build">6.1 构建过程</a></h3>
 
-<p>要理解一些字段的含义，你需要有对 Fink 所采用的构建过程有些了解。它由五个阶段组成：解压，补丁，编译，安装和构建。下面的示例路径是关于安装在 <tt style="white-space: nowrap;">/sw</tt> 的 gimp-1.2.1-1 软件包的。</p>
-<p>在<b>解压阶段</b>，<tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1</tt> 这个目录会被创建，源代码压缩档会被在这里解压。多数情况下，这会创建一个名为 gimp-1.2.1 的目录，里面包括源代码；下面的操作步骤会在那个目录里面执行(即 <tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>)。我们可以使用 SourceDirectory，NoSourceDirectory 和 Source<b>N</b>ExtractDir
+<p>要理解一些字段的含义，你需要有对 Fink 所采用的构建过程有些了解。它由五个阶段组成：解压，补丁，编译，安装和构建。下面的示例路径是关于安装在 <tt style="white-space: nowrap;">/opt/sw</tt> 的 gimp-1.2.1-1 软件包的。</p>
+<p>在<b>解压阶段</b>，<tt style="white-space: nowrap;">/opt/sw/src/fink.build/gimp-1.2.1-1</tt> 这个目录会被创建，源代码压缩档会被在这里解压。多数情况下，这会创建一个名为 gimp-1.2.1 的目录，里面包括源代码；下面的操作步骤会在那个目录里面执行(即 <tt style="white-space: nowrap;">/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>)。我们可以使用 SourceDirectory，NoSourceDirectory 和 Source<b>N</b>ExtractDir
 这三个字段来控制有关细节。</p>
 <p>在<b>补丁阶段</b>，源代码会被打上补丁，以使得可以在 Darwin 下面编译。由 UpdateConfigGuess，UpdateLibtool，Patch 和 PatchScrip 这几个字段所指明的操作将被按照顺序执行。</p>
 <p>在<b>编译阶段</b>，源代码被配置和编译。通常这会以某些参数来调用 <tt style="white-space: nowrap;">configure</tt> 脚本，然后执行一个 <tt style="white-space: nowrap;">make</tt> 命令。
@@ -1205,9 +1205,9 @@ maintainer mode), the TestScript will be run immediately after the
 CompileScript.
 
 </p>
-<p>在<b>安装阶段</b>，软件包被安装到一个临时目录，<tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1</tt> (= %d)。(注意 "root-" 部分。)
-所有通常应该安装到 <tt style="white-space: nowrap;">/sw</tt> 的文件现在被安装在
-<tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1/sw</tt> (= %i = %d%p)。 
+<p>在<b>安装阶段</b>，软件包被安装到一个临时目录，<tt style="white-space: nowrap;">/opt/sw/src/fink.build/root-gimp-1.2.1-1</tt> (= %d)。(注意 "root-" 部分。)
+所有通常应该安装到 <tt style="white-space: nowrap;">/opt/sw</tt> 的文件现在被安装在
+<tt style="white-space: nowrap;">/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</tt> (= %i = %d%p)。 
 详细信息请查看 InstallScript 字段的描述。</p>
 <p>(<b>从 fink 0.9.9 开始，</b>可以通过 <tt style="white-space: nowrap;">SplitOff</tt> 字段从一个软件包描述文件生成几个软件包。在安装阶段的尾段，会为每个软件包建立一个单独的安装目录，文件会被移到相应的目录中，)</p>
 <p>在<b>构建阶段</b>，会根据临时文件夹的内容构建一个二进制安装包(.deb)文件。你不能直接影响这个步骤，但软件包描述里面的许多字段会用于生成 dpkg 的 <tt style="white-space: nowrap;">control</tt> 文件。</p>
@@ -1748,7 +1748,7 @@ Primary: ftp://ftp.barbarorg/pub/
 
 <p>
   The standard continent and country codes are listed in
-  <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>, which is part of the
+  <tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_keys</tt>, which is part of the
   fink or fink-mirrors package.
 </p>
 
@@ -1756,7 +1756,7 @@ Primary: ftp://ftp.barbarorg/pub/
 <p>
 源代码压缩档的 URL。它应该是一个 HTTP 或 FTP URL，但 Fink 本身并不关心这一点-它只是把它传递给 wget。这个字段对镜像站点的 URL 标记模式：
 <tt style="white-space: nowrap;">mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</tt>。
-这会在 Fink 的配置中寻找 <b>mirror-name</b> 镜像的设置，然后添加  <b>relative-path</b> 部分，并把结果作为实际的 URL。已知的 <b>mirror-name</b> 被列在 <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_list</tt> 中。它是 fink 或 fink-mirror 软件包的一部分。另一方面，使用 <tt style="white-space: nowrap;">custom</tt> 作为 <b>mirror-name</b> 会使 Fink 使用 <tt style="white-space: nowrap;">CustomMirror</tt>
+这会在 Fink 的配置中寻找 <b>mirror-name</b> 镜像的设置，然后添加  <b>relative-path</b> 部分，并把结果作为实际的 URL。已知的 <b>mirror-name</b> 被列在 <tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_list</tt> 中。它是 fink 或 fink-mirror 软件包的一部分。另一方面，使用 <tt style="white-space: nowrap;">custom</tt> 作为 <b>mirror-name</b> 会使 Fink 使用 <tt style="white-space: nowrap;">CustomMirror</tt>
 字段。
 在 URL 使用前，会进行百分号展开。
 记住 %n 包括所有 %type_ 变种数据，所以你可能会希望在这里使用 %{ni}(也许还包括一些特定的 %type_ 展开)。
@@ -1804,7 +1804,7 @@ use <tt style="white-space: nowrap;">TestSource</tt> and related fields, inside 
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>
 对于上面的例子，这会使得下载的源代码压缩档保存在
-<tt style="white-space: nowrap;">/sw/src/coolapp-1.2.3.tar.gz</tt>，以满足我们的一般命名约定。
+<tt style="white-space: nowrap;">/opt/sw/src/coolapp-1.2.3.tar.gz</tt>，以满足我们的一般命名约定。
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
@@ -1822,11 +1822,11 @@ use <tt style="white-space: nowrap;">TestSource</tt> and related fields, inside 
 </p>
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 <p>
-要计算校验值，可以使用 <tt style="white-space: nowrap;">md5sum</tt> 工具。如果你希望检查压缩档 <tt style="white-space: nowrap;">/sw/src/apache_1.3.23.tar.gz</tt> 的校验值，
+要计算校验值，可以使用 <tt style="white-space: nowrap;">md5sum</tt> 工具。如果你希望检查压缩档 <tt style="white-space: nowrap;">/opt/sw/src/apache_1.3.23.tar.gz</tt> 的校验值，
 你可以运行下面的命令(下面还包括命令的输出结果)：
 </p>
-<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
+<pre>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</pre>
 <p>
 正如你所看见的一样，靠左边的数值就是你需要的结果。
 </p>
@@ -1925,10 +1925,10 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 这发生在补丁阶段，并在 PatchScript 脚本运行之前。
 </p>
 <p>
-打过补丁的版本可以识别 DESTDIR 并确保信息目录是在 <tt style="white-space: nowrap;">/sw/share/locale</tt>，而不是 <tt style="white-space: nowrap;">/sw/lib/locale</tt>。
+打过补丁的版本可以识别 DESTDIR 并确保信息目录是在 <tt style="white-space: nowrap;">/opt/sw/share/locale</tt>，而不是 <tt style="white-space: nowrap;">/opt/sw/lib/locale</tt>。
 在使用这个字段之前，确定你不会破坏软件包以及的确有这个必要。
 你可以运行 <tt style="white-space: nowrap;">diff</tt> 命令来找出软件包的版本和 Fink 的版本的区别(在
-<tt style="white-space: nowrap;">/sw/lib/fink/update</tt>)。
+<tt style="white-space: nowrap;">/opt/sw/lib/fink/update</tt>)。
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 
@@ -2190,9 +2190,9 @@ the other value when test suites are active.</li>
 一个针对 perl 模块软件包的布尔值。
 为真的话，它会添加代码到 install，postrm 和 postinst
 脚本来维护 perl 软件包所提供的 .pod 文件。
-这包括在中央的<tt style="white-space: nowrap;">/sw/lib/perl5/darwin/perllocal.pod</tt>文件中添加和删除 .pod 数据。
+这包括在中央的<tt style="white-space: nowrap;">/opt/sw/lib/perl5/darwin/perllocal.pod</tt>文件中添加和删除 .pod 数据。
 (如果类型是以 <tt style="white-space: nowrap;">perl $version</tt> 这样包括特定版本的形式给出，例如 5.6.0，那么这些脚本会被用于处理在
-<tt style="white-space: nowrap;">/sw/lib/perl5/$version/perllocal.pod</tt> 的中央 .pod 文件。)
+<tt style="white-space: nowrap;">/opt/sw/lib/perl5/$version/perllocal.pod</tt> 的中央 .pod 文件。)
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
@@ -2288,7 +2288,7 @@ Shared libraries that are "private" are denoted by an exclamation mark preceedin
 </p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
 <b>从 fink 0.10.0 开始。</b>
-这个字段提供设置运行时环境变量为一些静态值的简便方法(如果你需要更灵活的方式，参考 <a href="#reference.profile.d">profile.d 脚本部分</a>)。在你的软件包安装以后，这些变量会通过 <tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt> 脚本设置。
+这个字段提供设置运行时环境变量为一些静态值的简便方法(如果你需要更灵活的方式，参考 <a href="#reference.profile.d">profile.d 脚本部分</a>)。在你的软件包安装以后，这些变量会通过 <tt style="white-space: nowrap;">/opt/sw/bin/init.[c]sh</tt> 脚本设置。
 </p>
 <p>
 你的环境的值可以包括空格(尾部的连续空格会被截断)；另外，百分号展开也会进行。例如：
@@ -2298,7 +2298,7 @@ Shared libraries that are "private" are denoted by an exclamation mark preceedin
  AnotherVar: foo bar
 &lt;&lt;</pre>
 <p>
-会设置两个环境变量 "SomeVar" 和 "AnotherVar"，它们的值相应地被设置为 "/sw/Value" (或你选择的前缀)以及 "foo bar"。
+会设置两个环境变量 "SomeVar" 和 "AnotherVar"，它们的值相应地被设置为 "/opt/sw/Value" (或你选择的前缀)以及 "foo bar"。
 </p>
 <p>
 这个字段通过添加合适的命令到 InstallScript 来实现。
@@ -2536,7 +2536,7 @@ and <tt style="white-space: nowrap;">PatchScript</tt> fields for more informatio
 
 </p>
 
-<p>因为你可能会在补丁文件中允许用户选择安装前缀，建议在补丁文件中使用类似 <tt style="white-space: nowrap;">@PREFIX@</tt> 的变量来代替 <tt style="white-space: nowrap;">/sw</tt>，然后使用：</p>
+<p>因为你可能会在补丁文件中允许用户选择安装前缀，建议在补丁文件中使用类似 <tt style="white-space: nowrap;">@PREFIX@</tt> 的变量来代替 <tt style="white-space: nowrap;">/opt/sw</tt>，然后使用：</p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</pre>
 <p>补丁文件应该是 unidiff 格式，而且一般应该通过：</p>
 <pre>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</pre>
@@ -2552,12 +2552,12 @@ and <tt style="white-space: nowrap;">PatchScript</tt> fields for more informatio
 
 <p>
 如果你的软件包需要一些运行时的初始化(例如，设置环境变量)，你可以使用 profile.d 脚本。
-这些脚本片段由 <tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt> 脚本所运行。通常，所有 fink 的用户都会把这些脚本放到它们的起动文件(<tt style="white-space: nowrap;">.cshrc</tt> 或类似的文件)中。
-你的软件包必须为两个变种都提供脚本：一个给 sh 兼容的 shells (sh, zsh, bash, ksh, ...) 而另一个给 csh 兼容的 shells (csh, tcsh)。它们应该被安装在 <tt style="white-space: nowrap;">/sw/etc/profile.d/%n.[c]sh</tt> (和往常一样，%n 代表软件包名)。
+这些脚本片段由 <tt style="white-space: nowrap;">/opt/sw/bin/init.[c]sh</tt> 脚本所运行。通常，所有 fink 的用户都会把这些脚本放到它们的起动文件(<tt style="white-space: nowrap;">.cshrc</tt> 或类似的文件)中。
+你的软件包必须为两个变种都提供脚本：一个给 sh 兼容的 shells (sh, zsh, bash, ksh, ...) 而另一个给 csh 兼容的 shells (csh, tcsh)。它们应该被安装在 <tt style="white-space: nowrap;">/opt/sw/etc/profile.d/%n.[c]sh</tt> (和往常一样，%n 代表软件包名)。
 另外，它们的可读和可执行属性都应该被设置(即，用 -m 755 参数安装它们)，否则它们不能被正确加载。
 </p>
 <p>
-如果你只需要设置一些环境变量(例如，把 QTDIR 设置为 '/sw')，你可以使用 RuntimeVars 字段来比较方便地实现这个所说的功能。
+如果你只需要设置一些环境变量(例如，把 QTDIR 设置为 '/opt/sw')，你可以使用 RuntimeVars 字段来比较方便地实现这个所说的功能。
 </p>
 
 
@@ -2568,4 +2568,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.zh.xml,v 1.44 2023/01/22 6:40:32 nieder nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.zh.xml,v 1.45 2023/08/04 4:54:31 nieder nieder Exp $</i></p></body></html>

@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Compiling (2)";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-general.php?phpLang=en" title="Package Usage Problems - General"><link rel="prev" href="comp-general.php?phpLang=en" title="Compile Problems - General">';
 
 
@@ -35,7 +35,7 @@ update-perl5123-sax-parsers: adding Perl SAX parser
 module info file of XML::SAX::Expat...
 dyld: lazy symbol binding failed: Symbol not found:
 _Perl_Gthr_key_ptr
-  Referenced from: /sw/lib/perl5/5.12.3/darwin-
+  Referenced from: /opt/sw/lib/perl5/5.12.3/darwin-
   thread-multi-2level/auto/XML/Parser/Expat/Expat.bundle
   Expected in: flat namespace
 	</pre><p>this is usually due to a build picking up a different <code>perl5.12</code> executable

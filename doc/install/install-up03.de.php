@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - Aktualisieren";
-$cvs_author = 'Author: kamischi';
-$cvs_date = 'Date: 2015/11/01 02:12:02';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Installation Contents"><link rel="next" href="install-up02.php?phpLang=de" title="Sauberes Aktualisieren"><link rel="prev" href="install-first.php?phpLang=de" title="Erst-Installation">';
 
 

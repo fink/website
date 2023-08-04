@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging Tutorial - Example";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:18:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Tutorial Contents"><link rel="prev" href="howtostart.php?phpLang=en" title="How to Start">';
 
 
@@ -42,7 +42,7 @@ maxwell, and <code>%v</code> expands to the package version, 0.5.1.
 </p>
 <p>
 Now we can save this as <code>maxwell.info</code> in 
-<code>/sw/fink/dists/local/main/finkinfo/</code>. That done, we can see how we
+<code>/opt/sw/fink/dists/local/main/finkinfo/</code>. That done, we can see how we
 are doing by using <code>fink validate</code>.
 </p>
 <pre>
@@ -88,7 +88,7 @@ ask <code>fink</code> to fetch the source?
 </p>
 <pre>
 finkdev% fink fetch maxwell
-/usr/bin/sudo /sw/bin/fink  fetch maxwell
+/usr/bin/sudo /opt/sw/bin/fink  fetch maxwell
 Reading package info...
 Updating package index... done.
 Information about 3377 packages read in 30 seconds.
@@ -121,7 +121,7 @@ change to the next mirror set. More information about this problem is in the
 <a href="/faq/comp-general.php#master-problems">FAQ</a>.
 </p>
 <p>
-So we can now get the md5 by running <code>md5sum /sw/src/maxwell-0.5.1.tar.gz</code>,
+So we can now get the md5 by running <code>md5sum /opt/sw/src/maxwell-0.5.1.tar.gz</code>,
 and add it to the .info file:
 </p>
 <pre>
@@ -139,13 +139,13 @@ Now we can build the package, let's just try it:
 </p>
 <pre>
 finkdev% fink -m --build-as-nobody rebuild maxwell
-/usr/bin/sudo /sw/bin/fink  build maxwell
+/usr/bin/sudo /opt/sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
 Information about 3498 packages read in 32 seconds.
 The following package will be built:
  maxwell
-gzip -dc /sw/src/maxwell-0.5.1.tar.gz | /sw/bin/tar -xvf -  \
+gzip -dc /opt/sw/src/maxwell-0.5.1.tar.gz | /opt/sw/bin/tar -xvf -  \
 --no-same-owner --no-same-permissions 
 maxwell-0.5.1/
 maxwell-0.5.1/LICENSE
@@ -153,13 +153,13 @@ maxwell-0.5.1/Makefile
 maxwell-0.5.1/maxwell.8
 maxwell-0.5.1/maxwell.c
 maxwell-0.5.1/README
-./configure --prefix=/sw 
+./configure --prefix=/opt/sw 
 Can't exec "./configure": No such file or directory at \
-/sw/lib/perl5/Fink/Services.pm line 403.
+/opt/sw/lib/perl5/Fink/Services.pm line 403.
 </pre>
 <p>
 Hmm, well that did not go all that well. Let's read the README 
-(which you can find at <code>/sw/src/maxwell-0.5.1-1/maxwell-0.5.1/README</code>)
+(which you can find at <code>/opt/sw/src/maxwell-0.5.1-1/maxwell-0.5.1/README</code>)
 and see what it says...
 </p>
 <pre>
@@ -182,7 +182,7 @@ make install prefix=%i
 <p>
 We need to use <code>prefix=%i</code> since <code>fink</code> builds the binary deb file
 from the files in <code>%i</code>. These files are later installed into 
-<code>%p</code> (which is <code>/sw</code> by default) when you use 
+<code>%p</code> (which is <code>/opt/sw</code> by default) when you use 
 <code>fink install maxwell</code>. For more details about <code>%p</code> and
 <code>%i</code> please consult the 
 <a href="/doc/packaging/format.php#percent">
@@ -202,13 +202,13 @@ finkdev% fink validate maxwell.info
 Validating package file maxwell.info...
 Package looks good!
 finkdev% fink -m --build-as-nobody rebuild maxwell
-/usr/bin/sudo /sw/bin/fink  build maxwell
+/usr/bin/sudo /opt/sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
 Information about 3498 packages read in 32 seconds.
 The following package will be built:
  maxwell
-gzip -dc /sw/src/maxwell-0.5.1.tar.gz | /sw/bin/tar -xvf -  \
+gzip -dc /opt/sw/src/maxwell-0.5.1.tar.gz | /opt/sw/bin/tar -xvf -  \
 --no-same-owner --no-same-permissions 
 maxwell-0.5.1/
 maxwell-0.5.1/LICENSE
@@ -217,65 +217,65 @@ maxwell-0.5.1/maxwell.8
 maxwell-0.5.1/maxwell.c
 maxwell-0.5.1/README
 make
-cc  -L/sw/lib -c -o maxwell.o maxwell.c
-cc  -I/sw/include -o maxwell -framework IOKit -framework CoreFoundation maxwell.o
-/bin/rm -rf /sw/src/root-maxwell-0.5.1-1
-/bin/mkdir -p /sw/src/root-maxwell-0.5.1-1/sw
-/bin/mkdir -p /sw/src/root-maxwell-0.5.1-1/DEBIAN
+cc  -L/opt/sw/lib -c -o maxwell.o maxwell.c
+cc  -I/opt/sw/include -o maxwell -framework IOKit -framework CoreFoundation maxwell.o
+/bin/rm -rf /opt/sw/src/root-maxwell-0.5.1-1
+/bin/mkdir -p /opt/sw/src/root-maxwell-0.5.1-1/opt/sw
+/bin/mkdir -p /opt/sw/src/root-maxwell-0.5.1-1/DEBIAN
 /var/tmp/tmp.1.A3sRc2
 #! /bin/sh -ev
-make install prefix=/sw/src/root-maxwell-0.5.1-1/sw
-/usr/bin/install -d -m 755 /sw/src/root-maxwell-0.5.1-1/sw/doc/maxwell
-/usr/bin/install -m 644 LICENSE /sw/src/root-maxwell-0.5.1-1/sw/doc/maxwell/LICENSE
-/usr/bin/install -m 644 README /sw/src/root-maxwell-0.5.1-1/sw/doc/maxwell/README
-/usr/bin/install -d -m 755 /sw/src/root-maxwell-0.5.1-1/sw/bin
-/usr/bin/install -m 755 maxwell /sw/src/root-maxwell-0.5.1-1/sw/bin/maxwell
-/usr/bin/install -d -m 755 /sw/src/root-maxwell-0.5.1-1/sw/man/man8
-/usr/bin/install -m 644 maxwell.8 /sw/src/root-maxwell-0.5.1-1/sw/man/man8/maxwell.8
-/bin/rm -f /sw/src/root-maxwell-0.5.1-1/sw/info/dir \
-/sw/src/root-maxwell-0.5.1-1/sw/info/dir.old \
-/sw/src/root-maxwell-0.5.1-1/sw/share/info/dir \
-/sw/src/root-maxwell-0.5.1-1/sw/share/info/dir.old
+make install prefix=/opt/sw/src/root-maxwell-0.5.1-1/opt/sw
+/usr/bin/install -d -m 755 /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/doc/maxwell
+/usr/bin/install -m 644 LICENSE /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/doc/maxwell/LICENSE
+/usr/bin/install -m 644 README /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/doc/maxwell/README
+/usr/bin/install -d -m 755 /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/bin
+/usr/bin/install -m 755 maxwell /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/bin/maxwell
+/usr/bin/install -d -m 755 /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/man/man8
+/usr/bin/install -m 644 maxwell.8 /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/man/man8/maxwell.8
+/bin/rm -f /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/info/dir \
+/opt/sw/src/root-maxwell-0.5.1-1/opt/sw/info/dir.old \
+/opt/sw/src/root-maxwell-0.5.1-1/opt/sw/share/info/dir \
+/opt/sw/src/root-maxwell-0.5.1-1/opt/sw/share/info/dir.old
 Writing control file...
 Finding prebound objects...
 Writing dependencies...
 Writing package script postinst...
-dpkg-deb -b root-maxwell-0.5.1-1 /sw/fink/dists/local/main/binary-darwin-powerpc
+dpkg-deb -b root-maxwell-0.5.1-1 /opt/sw/fink/dists/local/main/binary-darwin-powerpc
 dpkg-deb: building package `maxwell' in \
-`/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb'.
+`/opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb'.
 </pre>
 <p>
 Fink seems to have installed everything into the correct place: 
-<code>/sw/src/root-maxwell-0.5.1-1</code> from where the binary package 
+<code>/opt/sw/src/root-maxwell-0.5.1-1</code> from where the binary package 
 <code>maxwell_0.5.1-1_darwin-powerpc.deb</code> was built.
 </p>
 <p>
 Also note how <code>fink</code> automatically included some compiler flags to enable it to
-access other Fink packages (e.g. <code>-I/sw/include</code>).
+access other Fink packages (e.g. <code>-I/opt/sw/include</code>).
 </p>
 <p>
 Let's have a look at what is in the binary package:
 </p>
 <pre>
 finkdev% dpkg -c \
-/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
+/opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
 drwxr-xr-x root/admin        0 2004-07-15 09:40:38 ./
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/bin/
--rwxr-xr-x root/admin    29508 2004-07-15 09:40:39 ./sw/bin/maxwell
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/doc/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/doc/maxwell/
--rw-r--r-- root/admin     1076 2004-07-15 09:40:39 ./sw/doc/maxwell/LICENSE
--rw-r--r-- root/admin     1236 2004-07-15 09:40:39 ./sw/doc/maxwell/README
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/man/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/man/man8/
--rw-r--r-- root/admin     1759 2004-07-15 09:40:39 ./sw/man/man8/maxwell.8
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/fink/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/fink/prebound/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/fink/prebound/files/
--rw-r--r-- root/admin       16 2004-07-15 09:40:39 ./sw/var/lib/fink/prebound/files/maxwell.pblist
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/bin/
+-rwxr-xr-x root/admin    29508 2004-07-15 09:40:39 ./opt/sw/bin/maxwell
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/doc/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/doc/maxwell/
+-rw-r--r-- root/admin     1076 2004-07-15 09:40:39 ./opt/sw/doc/maxwell/LICENSE
+-rw-r--r-- root/admin     1236 2004-07-15 09:40:39 ./opt/sw/doc/maxwell/README
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/man/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/man/man8/
+-rw-r--r-- root/admin     1759 2004-07-15 09:40:39 ./opt/sw/man/man8/maxwell.8
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/lib/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/lib/fink/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/lib/fink/prebound/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/lib/fink/prebound/files/
+-rw-r--r-- root/admin       16 2004-07-15 09:40:39 ./opt/sw/var/lib/fink/prebound/files/maxwell.pblist
 </pre>
 <p>
 Seems ok, right? But we have to verify that it complies with the Fink
@@ -283,29 +283,29 @@ packaging policy. So let's validate it with:
 </p>
 <pre>
 finkdev% fink validate \
-/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb 
+/opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb 
 Validating .deb file \
-/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb...
-Warning: File installed into deprecated directory /sw/doc/
-                                        Offender is /sw/doc/
-Warning: File installed into deprecated directory /sw/doc/
-                                        Offender is /sw/doc/maxwell/
-Warning: File installed into deprecated directory /sw/doc/
-                                        Offender is /sw/doc/maxwell/LICENSE
-Warning: File installed into deprecated directory /sw/doc/
-                                        Offender is /sw/doc/maxwell/README
-Warning: File installed into deprecated directory /sw/man/
-                                        Offender is /sw/man/
-Warning: File installed into deprecated directory /sw/man/
-                                        Offender is /sw/man/man8/
-Warning: File installed into deprecated directory /sw/man/
-                                        Offender is /sw/man/man8/maxwell.8
+/opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb...
+Warning: File installed into deprecated directory /opt/sw/doc/
+                                        Offender is /opt/sw/doc/
+Warning: File installed into deprecated directory /opt/sw/doc/
+                                        Offender is /opt/sw/doc/maxwell/
+Warning: File installed into deprecated directory /opt/sw/doc/
+                                        Offender is /opt/sw/doc/maxwell/LICENSE
+Warning: File installed into deprecated directory /opt/sw/doc/
+                                        Offender is /opt/sw/doc/maxwell/README
+Warning: File installed into deprecated directory /opt/sw/man/
+                                        Offender is /opt/sw/man/
+Warning: File installed into deprecated directory /opt/sw/man/
+                                        Offender is /opt/sw/man/man8/
+Warning: File installed into deprecated directory /opt/sw/man/
+                                        Offender is /opt/sw/man/man8/maxwell.8
 </pre>
 <p>
 Oops... something is wrong. Let's consult the 
 <a href="/doc/packaging/fslayout.php#fhs">Packaging Manual</a>
-again. It tells us to install man pages into <code>/sw/share/man</code> and files such
-as <code>README</code> into <code>/sw/share/doc/%n</code>. If we look into the 
+again. It tells us to install man pages into <code>/opt/sw/share/man</code> and files such
+as <code>README</code> into <code>/opt/sw/share/doc/%n</code>. If we look into the 
 <code>Makefile</code> of maxwell we see that the mandir and datadir can be set:
 </p>
 <pre>
@@ -338,11 +338,11 @@ the files got installed now. Then validate the deb file again with
 </p>
 <pre>
 finkdev% fink install maxwell
-/usr/bin/sudo /sw/bin/fink  install maxwell
+/usr/bin/sudo /opt/sw/bin/fink  install maxwell
 Information about 3377 packages read in 30 seconds.
 The following package will be installed or updated:
  maxwell
-dpkg -i /sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
+dpkg -i /opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
 Selecting previously deselected package maxwell.
 (Reading database ... 56046 files and directories currently installed.)
 Unpacking maxwell (from .../maxwell_0.5.1-1_darwin-powerpc.deb) ...

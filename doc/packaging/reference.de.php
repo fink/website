@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Referenz";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/01/22 6:40:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="prev" href="compilers.php?phpLang=de" title="Compiler">';
 
 
@@ -17,15 +17,15 @@ Für das Verständnis einiger Felder, muss man einige Details über den
 Build-Prozess von Fink wissen: Der Build-Prozess besteht aus fünf Phasen:
 Auspacken, patchen, compilieren, installieren und erstellen (build). Die
 Pfade des nachfolgenden Beispiel sind für eine Installation in
-<code>/sw</code> und für das Paket gimp-1.2.1-1.
+<code>/opt/sw</code> und für das Paket gimp-1.2.1-1.
 </p>
 <p>
 In der <b>Auspack-Phase</b> wird das Verzeichnis
-<code>/sw/src/fink.build/gimp-1.2.1-1</code> erzeugt und der
+<code>/opt/sw/src/fink.build/gimp-1.2.1-1</code> erzeugt und der
 Quell-Tarball oder mehrere darin ausgepackt. Das erzeugt meistens ein
 Verzeichnis gimp-1.2.1, das die Quellen enthält. Alle folgenden Schritte
 erfolgen in diesem Verzeichnis, also in
-<code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>. Details
+<code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>. Details
 dieser Phase können über die Felder SourceDirectory, NoSourceDirectory und
 Source<b>N</b>ExtractDir kontrolliert werden.
 </p>
@@ -46,10 +46,10 @@ Compile-Skript ausgeführt.
 </p>
 <p>
 In der <b>Installationsphase</b> wird das Paket in einem temporären
-Verzeichnis, <code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d),
+Verzeichnis, <code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d),
 installiert. (Beachten sie den Teil "root-" im Namen.) Alle Dateien, die
-normalerweise in <code>/sw</code> installiert würden, werden stattdessen
-in <code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (= %i = %d%p)
+normalerweise in <code>/opt/sw</code> installiert würden, werden stattdessen
+in <code>/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</code> (= %i = %d%p)
 installiert. Weitere Details stehen in der Beschreibung des Felds InstallScript.
 </p>
 <p>
@@ -697,7 +697,7 @@ Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 <p>
 Die Standard-Codes für Kontinent und Land stehen in der Datei
-<code>/sw/lib/fink/mirror/_keys</code>, Teil der Pakete fink oder
+<code>/opt/sw/lib/fink/mirror/_keys</code>, Teil der Pakete fink oder
 fink-mirrors.
 </p>
 </td></tr><tr valign="top"><td>Source</td><td>
@@ -709,7 +709,7 @@ Diese Feld unterstützt ein spezielles URL-Schema für Spiegelserver:
 der <b>Spiegelname</b> in Finks Konfiguration nachgeschaut, der Teil
 <b>Relativpfad</b> angehängt und als tatsächliche URL verwendet. Die bekannten
 <b>Spiegelnamen</b> sind in der Datei
-<code>/sw/lib/fink/mirror/_list</code> aufgelistet, die Teil des Pakets
+<code>/opt/sw/lib/fink/mirror/_list</code> aufgelistet, die Teil des Pakets
 fink oder fink-mirrors ist. Alternative dazu kann auch <code>custom</code> als
 <b>Spiegelname</b> verwendet werden und dann wird Fink das Feld
 <code>CustomMirror</code> dazu auswerten.
@@ -781,7 +781,7 @@ damit verbundenen Probleme kann man wie folgt umgehen:
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>
 In diesem Beispiel würde z. B. der Tarball unter dem Namen
-<code>/sw/src/coolapp-1.2.3.tar.gz</code> abgespeichert werden, genau so
+<code>/opt/sw/src/coolapp-1.2.3.tar.gz</code> abgespeichert werden, genau so
 wie man es erwarten würde.
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
@@ -804,11 +804,11 @@ Dateien, Austausch des Tarball Upstream ohne Ankündigung, Trojanerangriff oder
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 <p>
 Für die Berechnung der Checksum kann man das Tool <code>md5sum</code> verwenden.
-Die Checksum des Tarball <code>/sw/src/apache_1.3.23.tar.gz</code> kann
+Die Checksum des Tarball <code>/opt/sw/src/apache_1.3.23.tar.gz</code> kann
 man mit dem folgenden Kommando berechnen (einschließlich der Ausgabe):
 </p>
-<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
+<pre>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</pre>
 <p>Wie man sieht ist der Wert links genau die Summe, die man braucht.</p>
 </td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
 <p>
@@ -934,12 +934,12 @@ Dies erfolgt in der Patch-Phase bevor das PatchSkript ausgeführt wird.
 </p>
 <p>
 Die angepasste Version respektiert DESTDIR sorgt dafür, dass Kataloge mit
-Meldungen im Verzeichnis <code>/sw/share/locale</code> landen und nicht
-in <code>/sw/lib/locale</code>.
+Meldungen im Verzeichnis <code>/opt/sw/share/locale</code> landen und nicht
+in <code>/opt/sw/lib/locale</code>.
 Bevor sie dieses Feld benutzen, überprüfen sie, dass das Paket nicht beschädigt
 wird und überhaupt notwendig ist.
 Sie können sich mit dem Tool <code>diff</code> die Unterschiede zwischen der V
-ersion des Pakets und der in Fink (in <code>/sw/lib/fink/update</code>)
+ersion des Pakets und der in Fink (in <code>/opt/sw/lib/fink/update</code>)
 anzeigen lassen.
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
@@ -1291,11 +1291,11 @@ Ein boolscher Wert speziell Perl-Modul-Pakete.
 Ist er auf wahr (true) gesetzt, wird Code zu den Skripten install, postrm und
 postinst hinzu gefügt, der die .pod-Dateien aus den Perl-Paketen pflegt.
 Dies schließt ein, das .pod-Datum in der zentralen Datei
-<code>/sw/lib/perl5/darwin/perllocal.pod</code> hinzu zu fügen oder
+<code>/opt/sw/lib/perl5/darwin/perllocal.pod</code> hinzu zu fügen oder
 zu entfernen.
 (Ist der Typ als <code>perl $version</code> mit einer bestimmten Perl-Version
 wie 5.6.0 deklariert, werden diese Skripte angepasst, um die zentrale
-.pod-Datei <code>/sw/lib/perl5/$version/perllocal.pod</code> zu
+.pod-Datei <code>/opt/sw/lib/perl5/$version/perllocal.pod</code> zu
 bearbeiten.)
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
@@ -1423,7 +1423,7 @@ Dieses Feld deklariert eine bequehme Art, Umgebungsvariablen für die Laufzeit
 einen statischen Wert zuzuweisen (Benötigen sie mehr Flexibilität, schauen sie
 im Abschnitt <a href="#profile.d">profile.d Skripte</a> nach). Solange
 das Paket installiert ist, werden diese Variablen im Skript
-<code>/sw/bin/init.[c]sh</code> gesetzt.
+<code>/opt/sw/bin/init.[c]sh</code> gesetzt.
 </p>
 <p>
 Der Wert ihrer Variablen kann Leerzeichen enthalten (Leerzeichen am Ende werden
@@ -1435,7 +1435,7 @@ abgeschnitten); Prozenterweiterung wird ausgeführt. In diesem Beispiel
 &lt;&lt;</pre>
 <p>
 werden zwei Umgebungsvariablen 'SomeVar' und 'AnotherVar' erzeugt und ihre Werte
-auf '/sw/Value' (oder wasauch immer ihr Präfix ist) und 'foo bar' gesetzt.
+auf '/opt/sw/Value' (oder wasauch immer ihr Präfix ist) und 'foo bar' gesetzt.
 </p>
 <p>
 Dieses Feld funktioniert, in dem es die entsprechenden Kommandos im
@@ -1765,7 +1765,7 @@ Patchdatei vorzunehmen, bevor sie angewandt wird).
 </p>
 <p>
 Benötigt man in der Patch-Datei den vom Nutzer gewählten Präfix, wird empfohlen,
-statt <code>/sw</code> eine Variable wie <code>@PREFIX@</code> zu deklarieren
+statt <code>/opt/sw</code> eine Variable wie <code>@PREFIX@</code> zu deklarieren
 und so zu verwenden:
 </p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</pre>
@@ -1795,20 +1795,20 @@ sie überlegen, einen separaten Downlaod zu erstellen.
 Benötigt ihr Paket einige Initialisierungen zur Laufzeit (z. B. Setzen von
 Umgebungsvariablen), können sie profile.d-Skripte verwenden.
 Diese Skript-Fragmente werden durch die Skripte
-<code>/sw/bin/init.[c]sh</code> "sourced". Normalerweise werden alle
+<code>/opt/sw/bin/init.[c]sh</code> "sourced". Normalerweise werden alle
 Fink-Nutzer diese Skripte in ihren Shell-Startup-Skripte
 (<code>.cshrc</code> und ähnliche Dateien) laden.
 Ihr Paket muss jedes Skript in zwei Varianten zur Verfügung stellen: Eine für
 sh-kompatible Shells (sh, zsh, bash, ksh, ...) und eine für csh-kompatible
 Shells (csh, tcsh). Sie müssen als
-<code>/sw/etc/profile.d/%n.[c]sh</code> installiert werden (wobei %n wie
+<code>/opt/sw/etc/profile.d/%n.[c]sh</code> installiert werden (wobei %n wie
 üblich für den Paketnamen steht).
 Es müssen auch ihre executable und read Bits gesetzt werden (d. h. sie müssen
 mit -m 755 installiert werden). Ansonsten werden sie nicht korrekt geladen
 werden.
 </p>
 <p>
-Muss man nur einige Umgebungsvariablen setzen (z. B. QTDIR auf '/sw'), kann man
+Muss man nur einige Umgebungsvariablen setzen (z. B. QTDIR auf '/opt/sw'), kann man
 das Feld RuntimeVars benutzen; eine bequehme Art, genau dies zu erreichen.
 </p>
 

@@ -1,11 +1,10 @@
-Generated from $Fink: install.en.xml,v 1.50 2015/11/01 02:12:02 alexkhansen
-Exp $
+Generated from $Fink: install.en.xml,v 1.51 2023/08/03 20:24:10 nieder Exp $
 
- Fink 0.45.4 Installation
+ Fink 0.45.6 Installation
 ==========================
 
 These are the installation instructions for the "source" distribution based
-on "fink-0.45.4" , intended for use with OS X v.10.9 and later.
+on "fink-0.45.6" , intended for use with OS X v.10.9 and later.
 
 This document does not apply to the "binary [/download/index.php]"
 distribution.
@@ -82,8 +81,8 @@ The script may have to stop for you to do something. If so, run it again.
 
  First Time Installation Fast Track
 ------------------------------------
-Start out by copying the "fink-0.45.4.tar.gz" file to your home folder (it
-might also show up as "fink-0.45.4.tar" if you used Safari to download it).
+Start out by copying the "fink-0.45.6.tar.gz" file to your home folder (it
+might also show up as "fink-0.45.6.tar" if you used Safari to download it).
 Then, open Terminal.app and follow the session below. Computer output is in
 "normal face" , your input is in "bold_face" (or otherwise highlighted). The
 actual input prompts from the shell may vary, and some chunks of the output
@@ -93,19 +92,19 @@ Note: after you start the install process you may see dialog windows asking
 whether you want to install XQuartz. If you want to do so, go ahead. You
 won't have to stop the Fink install to do that.
 
-   [frodo:~] testuser% tar_xf_fink-0.45.4.tar.gz
-   [frodo:~] testuser% cd_fink-0.45.4
-   [frodo:~/fink-0.45.4] testuser% ./bootstrap
+   [frodo:~] testuser% tar_xf_fink-0.45.6.tar.gz
+   [frodo:~] testuser% cd_fink-0.45.6
+   [frodo:~/fink-0.45.6] testuser% ./bootstrap
    
    Fink must be installed and run with superuser (root) privileges
    ...
    Choose a method: [1] 1
    
-   sudo /Users/testuser/fink-0.45.4/bootstrap .sudo '/sw'
+   sudo /Users/testuser/fink-0.45.6/bootstrap .sudo '/opt/sw'
    Password: (your_normal_password_here)
    ...
    OK, I'll ask you some questions and update the configuration file in
-   '/sw/etc/fink.conf'.
+   '/opt/sw/etc/fink.conf'.
    
    In what additional directory should Fink look for downloaded tarballs? [] (press_return)
    
@@ -140,16 +139,16 @@ won't have to stop the Fink install to do that.
    ...
    (enter_the_numbers_corresponding_to_your_location)
    ...
-   Writing updated configuration to '/sw/etc/fink.conf'...
-   Bootstrapping a base system via /sw/bootstrap.
+   Writing updated configuration to '/opt/sw/etc/fink.conf'...
+   Bootstrapping a base system via /opt/sw/bootstrap.
    ...
    (take_a_coffee_break_while_Fink_downloads_and_compiles_the_base_packages)
    ...
    
-   You should now have a working Fink installation in '/sw'.
-   [frodo:~/fink-0.45.4] testuser% cd
-   [frodo:~] testuser% rm_-r_fink-0.45.4
-   [frodo:~] testuser% /sw/bin/pathsetup.sh
+   You should now have a working Fink installation in '/opt/sw'.
+   [frodo:~/fink-0.45.6] testuser% cd
+   [frodo:~] testuser% rm_-r_fink-0.45.6
+   [frodo:~] testuser% /opt/sw/bin/pathsetup.sh
 
 The last command runs a little script to help set up your Unix paths (and
 other things) for use with Fink. In most cases, it will run automatically,
@@ -157,11 +156,11 @@ and prompt you for permission to make changes. If the script fails, you'll
 have to do things by hand (see below).
 
 (If you need to do things by hand, and you are using csh or tcsh, you need
-to make sure that the command "source /sw/bin/init.csh" is executed during
-startup of your shell, either by .login, .cshrc, .tcshrc, or something else
-appropriate. If you are using bash or similar shells, the command you need
-is ". /sw/bin/init.sh" , and places where it might get executed include
-.bashrc and .profile.)
+to make sure that the command "source /opt/sw/bin/init.csh" is executed
+during startup of your shell, either by .login, .cshrc, .tcshrc, or
+something else appropriate. If you are using bash, zsh or similar shells,
+the command you need is ". /opt/sw/bin/init.sh" , and places where it might
+get executed include .bashrc and .profile.)
 
 Once you have set up the paths, open a new Terminal.app window, and close
 all other ones. That's it, you now have a base Fink system installed.
@@ -349,10 +348,10 @@ You need:
  Choosing A Directory
 ----------------------
 Before you install, you must decide where Fink's directory hierarchy will
-live. The recommended place is /sw, and all examples in this document will
-use that. Any other directory should be fine as well, as long as you don't
-use existing directories like /usr/local or /usr. The bootstrap script tries
-to catch these.
+live. The recommended place is /opt/sw, and all examples in this document
+will use that. Any other directory should be fine as well, as long as you
+don't use existing directories like /usr/local or /usr. The bootstrap script
+tries to catch these.
 
 The directory that you choose must not contain any spaces or similar
 characters. Both Unix itself and the bulk of Unix software were written
@@ -362,18 +361,18 @@ won't work.
 
  Installation
 --------------
-First, you need to unpack the fink-0.45.4.tar.gz tarball (it might also show
-up as "fink-0.45.4.tar" if you used Safari to download it). So, in a
+First, you need to unpack the fink-0.45.6.tar.gz tarball (it might also show
+up as "fink-0.45.6.tar" if you used Safari to download it). So, in a
 terminal window, go to the directory where you put the tarball, and run this
 command:
 
-   tar xf fink-0.45.4.tar.gz
+   tar xf fink-0.45.6.tar.gz
 
-You now have a directory named fink-0.45.4. Change to it with "cd
-fink-0.45.4" .
+You now have a directory named fink-0.45.6. Change to it with "cd
+fink-0.45.6" .
 
 The actual installation is performed by the perl script bootstrap. So, to
-start installation, go to the fink-0.45.4 directory and run this command:
+start installation, go to the fink-0.45.6 directory and run this command:
 
    ./bootstrap
 
@@ -406,17 +405,17 @@ Note: on 10.8, 10.9, and 10.10, after you start the install process you may
 see dialog windows asking whether you want to install XQuartz. If you want
 to do so, go ahead. You won't have to stop the Fink install to do that.
 
-After the bootstrap procedure finishes, run "/sw/bin/pathsetup.sh" to help
-set up your shell environment for use with Fink. In most cases, it will run
-automatically, and prompt you for permission to make changes. If the script
-fails, you'll have to do things by hand (see below).
+After the bootstrap procedure finishes, run "/opt/sw/bin/pathsetup.sh" to
+help set up your shell environment for use with Fink. In most cases, it will
+run automatically, and prompt you for permission to make changes. If the
+script fails, you'll have to do things by hand (see below).
 
 (If you need to do things by hand, and you are using csh or tcsh, you need
-to make sure that the command "source /sw/bin/init.csh" is executed during
-startup of your shell, either by .login, .cshrc, .tcshrc, or something else
-appropriate. If you are using bash or similar shells, the command you need
-is ". /sw/bin/init.sh" , and places where it might get executed include
-.bashrc and .profile.)
+to make sure that the command "source /opt/sw/bin/init.csh" is executed
+during startup of your shell, either by .login, .cshrc, .tcshrc, or
+something else appropriate. If you are using bash or similar shells, the
+command you need is ". /opt/sw/bin/init.sh" , and places where it might get
+executed include .bashrc and .profile.)
 
 Once your environment is set up, start a new terminal window to ensure that
 the changes get implemented. You will now need to have Fink download package
@@ -523,30 +522,30 @@ To save time after you have reinstalled Fink, you can get a transcript of
 your installed packages. The following command in a terminal window will
 work, even if for some reason the Fink tools aren't functioning:
 
-   grep -B1 "install ok installed" /sw/var/lib/dpkg/status \
+   grep -B1 "install ok installed" /opt/sw/var/lib/dpkg/status \
    | grep "^Package:" | cut -d: -f2 | cut -d\  -f2 &gt; finkinst.txt
 
 This will save the list of your packages in the file "finkinst.txt" in the
 current working directory.
 
-You may also want to copy or move the sources in "/sw/src" to another
+You may also want to copy or move the sources in "/opt/sw/src" to another
 location so that you don't have to spend time downloading them when you
 begin restoring your Fink distribution.
 
 In addition, if you have made global configuration changes to any of your
-packages by editing configuration files in "/sw/etc" , then you may wish to
-back those up.
+packages by editing configuration files in "/opt/sw/etc" , then you may wish
+to back those up.
 
 
  Removing Your Old Fink
 ------------------------
 Once you've backed everything up, you are ready to remove your Fink
-distribution. You can remove "/sw" as well as anything in
+distribution. You can remove "/opt/sw" as well as anything in
 "/Applications/Fink" using the Finder or the command line:
 
-   sudo rm -rf /sw /Applications/Fink/*
+   sudo rm -rf /opt/sw /Applications/Fink/*
 
-(Replace "/sw" by your actual Fink tree).
+(Replace "/opt/sw" by your actual Fink tree).
 
 
  Installing Fink Again
@@ -554,12 +553,13 @@ distribution. You can remove "/sw" as well as anything in
 First, follow the first-time install instructions.
 
  Once you have downloaded package descriptions, you can put the sources that
-you backed up into "/sw/src" either using the Finder or the command line:
+you backed up into "/opt/sw/src" either using the Finder or the command
+line:
 
-   sudo cp /path/to/backup/* /sw/src
+   sudo cp /path/to/backup/* /opt/sw/src
 
- (As usual, replace "/sw" with your Fink tree). If you prefer, you can use
-"fink configure" to specify your backup location:
+ (As usual, replace "/opt/sw" with your Fink tree). If you prefer, you can
+use "fink configure" to specify your backup location:
 
    In what additional directory should Fink look for downloaded tarballs? [] 
    (enter_your_backup_directory_at_the_prompt). 
@@ -568,7 +568,7 @@ you backed up into "/sw/src" either using the Finder or the command line:
 directory is world-readable.
 
  You can also restore your global configuration files at this time. Note: we
-recommend that you not restore "/sw/etc/fink.conf" from your prior
+recommend that you not restore "/opt/sw/etc/fink.conf" from your prior
 installation of Fink, to avoid incompatibilities. You can open it up in a
 text editor and enter the correponding values into "fink configure" .
 

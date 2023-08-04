@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: x11.pt.xml,v 1.2 2012/11/11 15:20:18 gecko2 Exp $
+Generated from $Fink: x11.pt.xml,v 1.3 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - Executando o X11 no Darwin e no Mac OS X</title></head><body>
 <table width="100%" cellspacing="0">
@@ -372,7 +372,7 @@ Portugu&ecirc;s |
           seguinte exemplo:</p>
 
           <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</pre>
+exec /opt/sw/bin/fvwm2</pre>
 
           <p>Você pode obviamente chamar outro gerenciador de janela,
           <tt style="white-space: nowrap;">startkde</tt> etc.</p>
@@ -390,12 +390,12 @@ exec /sw/bin/fvwm2</pre>
           ambientes do Fink. Para chamar aplicativos que sejam carregados no
           início do X e que você haja instalado pelo fink (por exemplo,
           gerenciadores de janelas, gnome-session, outros aplicativos em
-          <tt style="white-space: nowrap;">/sw/bin</tt>), coloque a seguinte linha próxima ao
+          <tt style="white-space: nowrap;">/opt/sw/bin</tt>), coloque a seguinte linha próxima ao
           início de <tt style="white-space: nowrap;">~/.xinitrc</tt> (isto é, depois da linha
           "<tt style="white-space: nowrap;">#!/bin/sh</tt>" mas antes que você execute quaisquer
           programas):</p>
 
-          <pre>. /sw/bin/init.sh </pre>
+          <pre>. /opt/sw/bin/init.sh </pre>
 
           <p>tal que o ambiente do Fink seja inicializado. Observação
           <tt style="white-space: nowrap;">init.sh</tt> é usado no lugar de
@@ -411,16 +411,16 @@ exec /sw/bin/fvwm2</pre>
           Application. No lugar de apenas colocar o caminho completo do
           arquivo, por exemplo</p>
 
-          <pre>/sw/bin/emacs</pre>
+          <pre>/opt/sw/bin/emacs</pre>
 
           <p>você deverá usar algo como o seguinte caso bash seja seu shell
           padrão:</p>
 
-          <pre>. /sw/bin/init.sh ; emacs</pre>
+          <pre>. /opt/sw/bin/init.sh ; emacs</pre>
 
           <p>e se você estiver usando tcsh:</p>
 
-          <pre>source /sw/bin/init.csh ; emacs</pre>
+          <pre>source /opt/sw/bin/init.csh ; emacs</pre>
 
           <p>Isto faz com que o aplicativo tenha a informação de PATH correta.
           Você pode usar essa sintaxe para qualquer aplicativo instalado via
@@ -748,7 +748,7 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
       <pre>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</pre>
 
       <p>Caso esteja usando o Fink, você precisa incluir (através do comando
-      <tt style="white-space: nowrap;">.</tt>) o script <tt style="white-space: nowrap;">/sw/bin/init.sh</tt> bem no
+      <tt style="white-space: nowrap;">.</tt>) o script <tt style="white-space: nowrap;">/opt/sw/bin/init.sh</tt> bem no
       começo para garantir que o ambiente seja configurado corretamente.</p>
 
       <p>Você pode colocar comandos arbitrários em um
@@ -773,14 +773,14 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
 
       <p>Um exemplo simples que inicia o GNOME no XFree86 ou X.org:</p>
 
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec gnome-session</pre>
 
       <p>Um exemplo mais complexo para usuários bash que desliga a campainha do
       X11, inicia alguns clientes e finalmente executa o gerenciador de janelas
       Enlightenment:</p>
 
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -793,22 +793,22 @@ exec enlightenment</pre>
 
       <p>Para iniciar o GNOME 2.4 e mais recentes no X11 da Apple:</p>
 
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session</pre>
 
       <p>Para iniciar o KDE 3.2 (versão &lt; 3.2.2-21) no X11 da Aple:</p>
 
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
 
       <p>E finalmente para iniciar a versão instável mais recente do KDE no X11
       da Apple:</p>
 
-      <pre>. /sw/bin/init.sh
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
+      <pre>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
     
 
     <h3><a name="run-xfree86.oroborosx">4.7 OroborOSX</a></h3>
@@ -1075,7 +1075,7 @@ Errors from xkbcomp are not fatal to the X server</pre>
       seus arquivos de inicialização do shell não foram configurados para
       adicionar <tt style="white-space: nowrap;">/usr/X11R6/bin</tt> à variável PATH. Caso você
       use o Fink e não haja mudado seu shell padrão, adicionar a linha
-      <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt> ao arquivo
+      <tt style="white-space: nowrap;">source /opt/sw/bin/init.csh</tt> ao arquivo
       <tt style="white-space: nowrap;">.cshrc</tt> em seu diretório home (conforme recomendado
       pelas instruções do Fink) deve ser suficiente.</p>
 
@@ -1333,4 +1333,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: x11.pt.xml,v 1.2 2012/11/11 15:20:18 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: x11.pt.xml,v 1.3 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

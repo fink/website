@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - Zum ersten Mal";
-$cvs_author = 'Author: kamischi';
-$cvs_date = 'Date: 2015/11/01 02:12:02';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Installation Contents"><link rel="next" href="install-up03.php?phpLang=de" title="Fink aktualisieren"><link rel="prev" href="install-fast.php?phpLang=de" title="Schnellanleitung">';
 
 
@@ -58,7 +58,7 @@ oder sogar Tage dauern.
 <h2><a name="directory">2.2 Verzeichnis auswählen</a></h2>
 <p>
 Vor der Installation müssen sie sich entscheiden, wo das Verzeichnis für Fink
-sein soll. Die Empfehlung ist /sw und alle Beispiele in dieser Dokumentation
+sein soll. Die Empfehlung ist /opt/sw und alle Beispiele in dieser Dokumentation
 wird davon ausgehen. Jedes andere Verzeichnis sollte auch in Ordnung sein, so
 lange es keine bereits existierendes ist, wie zum Beispiel /usr/local oder gar
 /usr. Tatsächlich versucht das Bootstrap-Skript solche Fälle abzufangen.
@@ -73,20 +73,20 @@ einfach nicht funktionieren.
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-Als erstes müssen sie den Fink-0.45.4.tar.gz Tarball auspacken
+Als erstes müssen sie den Fink-0.45.6.tar.gz Tarball auspacken
 (Wenn sie es mit Safari herunter geladen haben, wird es als
-<code>fink-0.45.4.tar</code> dargestellt werden).
+<code>fink-0.45.6.tar</code> dargestellt werden).
 Dafür gehen sie in einem Terminal-Fenster in das Verzeichnis, in dem sich der
 Tarball befindet und führen folgendes Kommando aus:
 </p>
-<pre>tar xf fink-0.45.4.tar.gz</pre>
+<pre>tar xf fink-0.45.6.tar.gz</pre>
 <p>
-Das erzeugt ein Verzeichnis mit dem Namen fink-0.45.4. Wechseln sie
-in dieses Verzeichnis mit dem Kommando <code>cd fink-0.45.4</code>.
+Das erzeugt ein Verzeichnis mit dem Namen fink-0.45.6. Wechseln sie
+in dieses Verzeichnis mit dem Kommando <code>cd fink-0.45.6</code>.
 </p>
 <p>
 Die eigentliche Installation erfolgt durch das Perl-Skript bootstrap. Um die
-Installation zu starten, gehen sie in das Verzeichnis fink-0.45.4
+Installation zu starten, gehen sie in das Verzeichnis fink-0.45.6
 und führen sie folgendes Kommando aus:
 </p>
 <pre>./bootstrap</pre>
@@ -129,7 +129,7 @@ tun, denn die Installation von Fink wird dadurch nicht unterbrochen.
 </p>
 <p>
 Nach dem Ende des Bootstrap-Prozesses, führen sie das Kommando
-<code>/sw/bin/pathsetup.sh</code> aus. Dieses hilft ihre Shell-Umgebung für
+<code>/opt/sw/bin/pathsetup.sh</code> aus. Dieses hilft ihre Shell-Umgebung für
 Fink einzurichten. In den meisten Fällen wird es automatisch durchlaufen und sie
 einfach nur der Erlaubnis fragen, Änderungen vorzunehmen. Sollte das Skript
 in einen Fehler laufen, müssen sie die Umgebung von hand einrichten (siehe
@@ -137,10 +137,10 @@ weiter unten).
 </p>
 <p>
 (Wenn sie die Dinge selbst einrichten und csh oder tcsh nutzen, versichern sie
-sich, dass das Kommando <code>source /sw/bin/init.csh</code> beim Start der
+sich, dass das Kommando <code>source /opt/sw/bin/init.csh</code> beim Start der
 Shellausgeführt wird, entweder durch .login, .cshrc, .tcshrc oder was sonst auch
 immer angemessen ist. Benutzen sie bash oder eine ähnliche Shell, brauchen sie
-<code>. /sw/bin/init.sh</code> und legen sie es da ab, wo es ausgeführt wird wie
+<code>. /opt/sw/bin/init.sh</code> und legen sie es da ab, wo es ausgeführt wird wie
 .bashrc oder .profile.)
 </p>
 <p>

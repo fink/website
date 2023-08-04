@@ -1,7 +1,7 @@
 <?php
 $title = "Etiquette net - Réponses";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Etiquette net Contents"><link rel="next" href="unsubscribe.php?phpLang=fr" title="Résiliation d\'abonnement aux listes de diffusion"><link rel="prev" href="first-post.php?phpLang=fr" title="Premier message">';
 
 

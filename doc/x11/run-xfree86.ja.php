@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - X11 の起動";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="xtools.php?phpLang=ja" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=ja" title="X11 の入手とインストール">';
 
 
@@ -154,12 +154,12 @@ Fink を使っている場合、 source <code>init.sh</code>
 <p>
 以下の簡単な例では、XFree86 または Xorg　上で GNOME を起動しています:
 </p>
-<pre>source /sw/bin/init.csh
+<pre>source /opt/sw/bin/init.csh
 exec gnome-session</pre>
 <p>
 より複雑に、 bell をオフにし、クライアントをいくつか起動してから Enlightenment ウィンドウマネージャを起動するには:
 </p>
-<pre>source /sw/bin/init.sh
+<pre>source /opt/sw/bin/init.sh
 
 xset b off
 
@@ -170,19 +170,19 @@ xterm &amp;
 exec enlightenment</pre>
 
 <p>GNOME2.4 以降を Apple X11 下で起動するには:</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </pre>
 <p>KDE 3.2 (version &lt; 3.2.2-21) を Apple X11 下で起動するには</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
 <p>最後に、最新版の unstable な KDE を Apple X11 下で起動するには:</p>
-<pre>. /sw/bin/init.sh
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+<pre>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
 
     <h2><a name="oroborosx">4.7 OroborOSX</a></h2>

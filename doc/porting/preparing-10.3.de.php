@@ -1,7 +1,7 @@
 <?php
 $title = "Porting - Vorbereitungen für 10.3";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/03/10 22:48:59';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Porting Contents"><link rel="next" href="preparing-10.4.php?phpLang=de" title="Vorbereitungen für 10.4"><link rel="prev" href="preparing-10.2.php?phpLang=de" title="Vorbereitungen für 10.2">';
 
 
@@ -85,7 +85,7 @@ include_once "header.de.inc";
               benötigt. LibSystem wird automatisch gelinkt und
               <code>/usr/include</code> wird automatisch durchsucht, so
               dass sie die Optionen <code>-lgnugetopt</code> und
-              <code>-I/sw/include/gnugetopt</code> nicht mehr benötigen. Sie
+              <code>-I/opt/sw/include/gnugetopt</code> nicht mehr benötigen. Sie
               wurden bisher verwendet, um "libgnugetopt" aus Fink zu
               verwenden.
             </p>

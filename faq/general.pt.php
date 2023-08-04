@@ -1,7 +1,7 @@
 <?php
 $title = "Perguntas frequentes - Generalidades";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="relations.php?phpLang=pt" title="Relacionamentos com outros projetos"><link rel="prev" href="index.php?phpLang=pt" title="Perguntas frequentes Contents">';
 
 
@@ -93,7 +93,7 @@ include_once "header.pt.inc";
         risco.</p></div>
     </a>
     <a name="why-sw">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Por que vocês escolheram /sw?</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Por que vocês escolheram /opt/sw?</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Essa escolha é arbitrária e deverá continuar desta forma por motivos
         práticos (atualização) e também pelo fato de que é uma escolha segura
         no tocante ao conflito com outros sistemas de empacotamento.</p></div>

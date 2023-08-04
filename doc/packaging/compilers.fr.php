@@ -1,7 +1,7 @@
 <?php
 $title = "Paquets - Compilateurs";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="reference.php?phpLang=fr" title="Référence"><link rel="prev" href="fslayout.php?phpLang=fr" title="Organisation des fichiers">';
 
 
@@ -17,7 +17,7 @@ include_once "header.fr.inc";
 <p>Comme ces compilateurs évoluent, il y a plusieurs "distributions" de fink différentes pour s'adapter à ces changements.</p>
 <p>Chaque distribution comporte certaines valeurs par défaut pour les compilateurs gcc et g++, qui correspondent à ceux qu'un utilisateur compilant à partir des sources est censé avoir installés. Vous pouvez donc compter sur le fait qu'un appel direct à "gcc" ou "g++" à partir d'un paquet utilisera ces valeurs par défaut. Si vous avez besoin d'utiliser une valeur différente (par exemple, durant la transition vers une nouvelle distribution), le fichier .info du paquet doit le spécifier en utilisant les versions binaires fournies par Apple. La façon exacte de le faire dépend du système de compilation du logiciel, mais pour de nombreux paquets, on peut utiliser les champs fink <code>SetCC</code> et <code>SetCXX</code> à cette fin. Par exemple, vous pouvez passer à la version 3.3 du compilateur g++ avec le champ <code>SetCXX: g++-3.3</code>. Vérifiez le résultat lors de la compilation afin de vous assurer que le bon compilateur est utilisé.</p>
 <p>La distribution 10.1 part du principe que la version du compilateur est la version 2.95 ; la distribution 10.2 que la version du compilateur est la version 3.1 ; les distributions 10.2-gcc3.3 et 10.3 que la version du compilateur est la version 3.3. Pour la distribution 10.4-transitional, c'est un peu plus compliqué : g++-3.3 est utilisé avec gcc-4.0. Cela changera de nouveau dans la distribution 10.4 où l'on utilisera gcc-4.0 et g++-4.0.</p>
-<p>À partir de la distribution 10.4-transitional, une nouvelle méthode a été introduite pour assurer la sélection du bon compilateur g++. Durant la compilation, un répertoire <code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (où XXX est le numéro de version) est ajouté au PATH. Ce répertoire contient des scripts shell qui se charge de sélectionner la bonne version de g++.</p>
+<p>À partir de la distribution 10.4-transitional, une nouvelle méthode a été introduite pour assurer la sélection du bon compilateur g++. Durant la compilation, un répertoire <code>/opt/sw/var/lib/fink/path-prefix-g++-XXX</code> (où XXX est le numéro de version) est ajouté au PATH. Ce répertoire contient des scripts shell qui se charge de sélectionner la bonne version de g++.</p>
 
 <h2><a name="abi">5.2 L'ABI g++</a></h2>
 <p>L'ABI g++ a changé trois fois depuis la naissance de Mac OS X : elle est différente pour les versions 2.95, 3.1, 3.3 et 4.0. Ces différentes ABI ne sont pas compatibles entre elles, et toute bibliothèque utilisant du code C++ et liée à un projet doit être compilée avec la même ABI que celle en cours d'utilisation.</p>

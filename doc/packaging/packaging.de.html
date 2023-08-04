@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.de.xml,v 1.7 2023/01/22 6:40:32 nieder Exp $
+Generated from $Fink: packaging.de.xml,v 1.8 2023/08/04 4:54:31 nieder nieder Exp $
 -->
 <title>Fink Documentation - Ein Fink-Paket erstellen</title></head><body>
 <table width="100%" cellspacing="0">
@@ -100,8 +100,8 @@ dazwischen, z. B. openssh-2.9p1-2.
 <h3><a name="format.trees">2.1 Verzeichnis-Layout</a></h3>
 <p>
 Paketbeschreibungen werden aus dem Verzeichnis <tt style="white-space: nowrap;">finkinfo</tt> gelesen,
-der sich im Verzeichnis <tt style="white-space: nowrap;">/sw/fink/dists</tt> befindet. Die
-Einstellung "Trees" in der Datei <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt>
+der sich im Verzeichnis <tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> befindet. Die
+Einstellung "Trees" in der Datei <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt>
 bestimmt, welche Verzeichnisse gelesen werden.
 Der Name der Paketbeschreibungsdatei besteht aus dem vollständigen Paketnamen
 und dem Suffix ".info".
@@ -241,19 +241,19 @@ Epoche nicht zu <tt style="white-space: nowrap;">%f</tt> gehört.
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-Der <b>p</b>refix wo Fink installiert ist, also <tt style="white-space: nowrap;">/sw</tt>.
-Sie dürfen nicht annehmen, dass alle Nutzer Fink in <tt style="white-space: nowrap;">/sw</tt>
+Der <b>p</b>refix wo Fink installiert ist, also <tt style="white-space: nowrap;">/opt/sw</tt>.
+Sie dürfen nicht annehmen, dass alle Nutzer Fink in <tt style="white-space: nowrap;">/opt/sw</tt>
 installiert haben, nutzen sie immer <tt style="white-space: nowrap;">%p</tt> für den korrekten Pfad.
 </p>
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 Im Verzeichnis <b>d</b>estination wird der Baum für ein Paket erstellt, z. B.
-in <tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1</tt>. Dieses
+in <tt style="white-space: nowrap;">/opt/sw/src/fink.build/root-gimp-1.2.1-1</tt>. Dieses
 temporäre Verzeichnis dient als Wurzelverzeichnis während der Installationsphase
 beim Compilieren eines Pakets. Sie sollten nicht annehmen, dass
 <tt style="white-space: nowrap;">root-%f</tt> in <tt style="white-space: nowrap;">%p/src</tt> ist, denn ein Nutzer
 kann dieses Verzeichnis mit dem Feld <tt style="white-space: nowrap;">Buildpath</tt> in der Datei
-<tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> ändern.
+<tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> ändern.
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -277,11 +277,11 @@ die <tt style="white-space: nowrap;">.patch</tt>-Datei zuzugreifen. Die Unterst�
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
 Das Verzeichnis <b>b</b>uild, also
-<tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>.
+<tt style="white-space: nowrap;">/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>.
 Sie sollten nicht annehmen, dass sich <tt style="white-space: nowrap;">%f</tt> in
 <tt style="white-space: nowrap;">%p/src</tt> befindent, denn ein Nutzer kann dieses Verzeichnis
 über das Feld <tt style="white-space: nowrap;">Buildpath</tt> in der Datei
-<tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> ändern.
+<tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> ändern.
 Das innerste Verzeichnis wird nach dem Dateinamen der
 <tt style="white-space: nowrap;">Quelle</tt> benannt oder dem Wert des Felds <tt style="white-space: nowrap;">SourceDirectory</tt>
 (falls vorhanden) oder wird nicht verwendet wenn das Feld
@@ -794,7 +794,7 @@ Namen und einer Kompatibilitätsversion von mindestens 2.1.0 angeboten wird.
 <p>
 Beachten sie die Verwendung von %p im Pfad der Bibliothek. Dadurch wird der
 richtige <tt style="white-space: nowrap;">-install_name</tt> von allen Finknutzern gefunden, egal ob sie
-/sw oder einen anderen Präfix für Fink ausgewählt haben.
+/opt/sw oder einen anderen Präfix für Fink ausgewählt haben.
 </p>
 <p>
 Wird ein Paket aktualisiert, kann meistens das Feld <tt style="white-space: nowrap;">Shlibs</tt> einfach
@@ -907,8 +907,8 @@ implementiert und erhielt im April 2004 die erste Revision.
 <p>
 Ursprünglich hatten Fink-Pakete für Perl-Module den Suffix <tt style="white-space: nowrap;">-pm</tt> und
 wurden mit der Direktive <tt style="white-space: nowrap;">Type: perl</tt> erstellt. Damit wurden die
-Dateien der Module in <tt style="white-space: nowrap;">/sw/lib/perl5</tt> und/oder
-<tt style="white-space: nowrap;">/sw/lib/perl5/darwin</tt> abgespeichert.
+Dateien der Module in <tt style="white-space: nowrap;">/opt/sw/lib/perl5</tt> und/oder
+<tt style="white-space: nowrap;">/opt/sw/lib/perl5/darwin</tt> abgespeichert.
 Nach den aktuellen Richtlinien gilt dies nur noch für Module, die unabhängig von
 der Perlversion übersetzt wurden und die auch nicht von anderen
 versionsabhängigen Modulen abhängen.
@@ -924,8 +924,8 @@ Ein versionsabhängiges Perl-Modul muss mit einer bestimmten binären Version vo
 Perl erstellt werden, z. B. <tt style="white-space: nowrap;">perl5.12.3</tt>. Die erzeugten Dateien
 müssen dann in einem versionierten Unterverzeichnis des
 Standard-Perlverzeichnisses abgespeichert werden, z. B.
-<tt style="white-space: nowrap;">/sw/lib/perl5/5.12.3</tt> und
-<tt style="white-space: nowrap;">/sw/lib/perl5/5.12.3/darwin</tt>. Es ist Konvention, die Pakete
+<tt style="white-space: nowrap;">/opt/sw/lib/perl5/5.12.3</tt> und
+<tt style="white-space: nowrap;">/opt/sw/lib/perl5/5.12.3/darwin</tt>. Es ist Konvention, die Pakete
 mit dem Suffix <tt style="white-space: nowrap;">-pm5123</tt> zu benennen, wenn sie für die Version 5.12.3
 von Perl erstellt wurden. Entsprechende Konventionen für das Abspeichern und
 die Namen von Modulen sind perl 5.10.0 (nur für 10.6), perl 5.12.4 (but für
@@ -1067,7 +1067,7 @@ Richtlinien derzeit nur für die Pakete <tt style="white-space: nowrap;">emacs21
 <tt style="white-space: nowrap;">emacs22</tt> und <tt style="white-space: nowrap;">emacs23</tt> und nicht für das
 Paket xemacs. (Dies kann sich eines Tages ändern.) Zweitens dürfen Finkpakete im
 Gegensatz zu den Debian-Richtlinien Dateien direkt im Verzeichnis
-/sw/share/emacs/site-lisp installieren
+/opt/sw/share/emacs/site-lisp installieren
 </p>
 
 
@@ -1157,7 +1157,7 @@ Es kann diesen Standard nur nachempfinden, denn er setzt die Kontralle über
 <tt style="white-space: nowrap;">/</tt> und <tt style="white-space: nowrap;">/usr</tt> voraus.
 Fink ist aber ein Zusatz, der nur die Kontrolle über sein eigenes
 Installationsverzeichnis hat. Die Beispiele verwenden den voreingestellten
-Präfix <tt style="white-space: nowrap;">/sw</tt>.
+Präfix <tt style="white-space: nowrap;">/opt/sw</tt>.
 </p>
 
 
@@ -1167,19 +1167,19 @@ Präfix <tt style="white-space: nowrap;">/sw</tt>.
 Dateien sollten in den Verzeichnissen wie folgt abgespeichert werden:
 </p>
 
-<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/bin</tt></td><td>
+<table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Field</th><th align="left">Value</th></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/bin</tt></td><td>
 <p>
 Dieses Verzeichnis ist für allgemeine ausführbare Programme.
 Es hat keine weiteren Unterverzeichnisse.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/sbin</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/sbin</tt></td><td>
 <p>
 Dieses Verzeichnis ist für Programme, die nur von Administratoren ausgeführt
 werden.
 Daemon-Programme, die im Hintergrund laufen, gehören hier her.
 Es hat keine weiteren Unterverzeichnisse.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/include</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/include</tt></td><td>
 <p>
 Dieses Verzeichnis ist für C und C++ Header-Dateien.
 Unterverzeichnisse können je nach Bedarf angelegt werden.
@@ -1187,12 +1187,12 @@ Installiert ein Paket Header-Dateien, die mit Standard C Header-Dateien
 verwechselt werden könnten, <b>müssen</b> diese Header-Dateien in ein
 Unterverzeichnis.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/lib</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/lib</tt></td><td>
 <p>
 Dieses Verzeichnis ist für Daten-Dateien und Bibliotheken, die von der
 Architektur abhängen.
 Statische und dynamische Bibliotheken gehören direkt in
-<tt style="white-space: nowrap;">/sw/lib</tt>, außer es gibt sehr gute Gründe.
+<tt style="white-space: nowrap;">/opt/sw/lib</tt>, außer es gibt sehr gute Gründe.
 Ebenso gehören Programme hierher, die nicht direkt vom Nutzer ausgeführt werden
 (üblicherweise befinden sich solche Programme in libexec).
 </p>
@@ -1202,38 +1202,38 @@ Achten sie darauf, dass die Namen der Unterverzeichnisse sinnvoll sind und der
 Kompatibilität dienen.
 Es ist durchaus sinnvoll, den Namen des Verzeichnisses umd die Hauptversion des
 Pakets zu erweitern oder zusätzliche Unterverzeichnisse einzufügen, z. B.
-<tt style="white-space: nowrap;">/sw/lib/perl5</tt> oder <tt style="white-space: nowrap;">/sw/lib/apache/1.3</tt>.
+<tt style="white-space: nowrap;">/opt/sw/lib/perl5</tt> oder <tt style="white-space: nowrap;">/opt/sw/lib/apache/1.3</tt>.
 Aufpassen muss man, wenn der Typ des Rechners im Namen verwendet wird.
 Ein Verzeichnis mit dem Namen <tt style="white-space: nowrap;">powerpc-apple-darwin1.3.3</tt> kann leicht
 zu Kompatibilitätsproblemen führen, die sich durch
 <tt style="white-space: nowrap;">powerpc-apple-darwin1.3</tt> oder <tt style="white-space: nowrap;">powerpc-apple-darwin</tt>
 leicht vermeiden lassen.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/lib/ppc64</tt>
-<tt style="white-space: nowrap;">/sw/lib/x86_64</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/lib/ppc64</tt>
+<tt style="white-space: nowrap;">/opt/sw/lib/x86_64</tt></td><td>
 <p>
 Dieses Verzeichnis ist für 64-bit-Bibliotheken auf 32-bit-Systemen, mit
-<tt style="white-space: nowrap;">/sw/lib/ppc64</tt> für die PowerPC-Architektur und
-<tt style="white-space: nowrap;">/sw/lib/x86_64</tt> für die i386-Architektur.
+<tt style="white-space: nowrap;">/opt/sw/lib/ppc64</tt> für die PowerPC-Architektur und
+<tt style="white-space: nowrap;">/opt/sw/lib/x86_64</tt> für die i386-Architektur.
 Bibliotheken, die als "fat" erzeugt wurden, sollten aber in
-<tt style="white-space: nowrap;">/sw/lib</tt> abgespeichert werden und ein '32-64' in ihrem
+<tt style="white-space: nowrap;">/opt/sw/lib</tt> abgespeichert werden und ein '32-64' in ihrem
 Feld Shlibs eingetragen haben. Beachten sie, dass unter der x86_64-Architektur
-64-bit-Bibliotheken in  <tt style="white-space: nowrap;">/sw/lib</tt> werden.
+64-bit-Bibliotheken in  <tt style="white-space: nowrap;">/opt/sw/lib</tt> werden.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share</tt></td><td>
 <p>
 Dieses Verzeichnis ist für architektur-unabhängige Daten-Dateien. Es gelten
-die selben Regeln wie für <tt style="white-space: nowrap;">/sw/lib</tt>.
+die selben Regeln wie für <tt style="white-space: nowrap;">/opt/sw/lib</tt>.
 Einige Unterverzeichnisse werden im folgenden beschrieben.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/man</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share/man</tt></td><td>
 <p>
 Dieses Verzeichnis enthält Dokumentationen als man-Pages.
 Es ist weiter in die üblichen Abschnitte unterteilt.
-Zu jedem Programm in  <tt style="white-space: nowrap;">/sw/bin</tt> und
-<tt style="white-space: nowrap;">/sw/sbin</tt> sollte es hier eine entsprechende man-Page geben.
+Zu jedem Programm in  <tt style="white-space: nowrap;">/opt/sw/bin</tt> und
+<tt style="white-space: nowrap;">/opt/sw/sbin</tt> sollte es hier eine entsprechende man-Page geben.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/info</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share/info</tt></td><td>
 <p>
 Dieses Verzeichnis enthält Dokumentationen im Info format (erstellt aus
 Texinfo Quellen).
@@ -1246,7 +1246,7 @@ Fink kümmert sich darum, dass kein Paket eine eigene Datei <tt style="white-spa
 erzeugt.
 Es gibt keine Unterverzeichnisse.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/doc</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share/doc</tt></td><td>
 <p>
 Dieses Verzeichnis enthält Dokumentationen, die weder als man-Page noch als
 Info-Dokument vorliegen.
@@ -1257,30 +1257,30 @@ Die Namen der Unterverzeichnisse dürfen keine Versionsnummern enthalten, außer
 wenn diese Nummern Teil des tatsächlichen Paketnamens sind.
 Tipp: Verwenden sie einfach <tt style="white-space: nowrap;">%n</tt>.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/share/locale</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/share/locale</tt></td><td>
 <p>
 Dieses Verzeichnis enthält Kataloge mit Meldungen für die Internationalisierung.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/opt</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/opt</tt></td><td>
 <p>
 In Verzeichnis <tt style="white-space: nowrap;">opt</tt> werden "add-on" Programmpakete
 abgespeichert, die aus irgendeinem Grund nicht die Standard-Verzeichnisse
-<tt style="white-space: nowrap;">/sw/bin</tt>, <tt style="white-space: nowrap;">/sw/lib</tt>,
-<tt style="white-space: nowrap;">/sw/include</tt>, usw. nicht verwenden können.
-Ein Paket, das in <tt style="white-space: nowrap;">/sw/opt</tt> installiert wird, muss seine
+<tt style="white-space: nowrap;">/opt/sw/bin</tt>, <tt style="white-space: nowrap;">/opt/sw/lib</tt>,
+<tt style="white-space: nowrap;">/opt/sw/include</tt>, usw. nicht verwenden können.
+Ein Paket, das in <tt style="white-space: nowrap;">/opt/sw/opt</tt> installiert wird, muss seine
 statischen Dateien in einem separaten Unterverzeichnis
-<tt style="white-space: nowrap;">/sw/opt/&lt;package&gt;</tt> abspeichern, wobei
+<tt style="white-space: nowrap;">/opt/sw/opt/&lt;package&gt;</tt> abspeichern, wobei
 <tt style="white-space: nowrap;">&lt;package&gt;</tt> ein Name ist, der das Programmpaket
 beschreibt.
 (Verfügbar ab Fink 0.29.7 oder später.)
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/var</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/var</tt></td><td>
 <p>
 Im Verzeichnis <tt style="white-space: nowrap;">var</tt> werden veränderliche Daten gespeichert.
 Das umfasst Spool-Verzeichnisse, Lock-Dateien, Status-Datenbanken, Punktestände
 von Spielen und Log-Dateien.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/etc</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/etc</tt></td><td>
 <p>
 Diese Verzeichnis enthält Konfigurationsdateien.
 Gehören zu einem Paket mehr als ein oder zwei Dateien, sollte ein
@@ -1288,18 +1288,18 @@ Unterverzeichnis angelegt werden.
 Der Name des Unterverzeichnis muss den Namen des Pakets oder Programms
 enthalten, damit es zugeordnet werden kann.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/src</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/src</tt></td><td>
 <p>
 In diesem Verzeichnis werden die Quell-Dateien gespeichert und erfolgt die
 Codeerstellung. Vom den Paketen sollte hier nicht weiter installiert werden.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/Applications</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/Applications</tt></td><td>
 <p>
 In diesem Verzeichnis werden Programm mit einer graphischen Oberfläche im Stil
 von OS X abgespeichert, die man normalerweise mit einem Doppelklick startet und
 nicht von der Kommandozeile.
 </p>
-</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/sw/Library/Frameworks</tt></td><td>
+</td></tr><tr valign="top"><td><tt style="white-space: nowrap;">/opt/sw/Library/Frameworks</tt></td><td>
 <p>
 In diesem Verzeichnis werden Frameworks im OS X-Stil abgespeichert. Sie werden
 manchmal von Programmen im OS X-Stil genutzt.
@@ -1311,11 +1311,11 @@ manchmal von Programmen im OS X-Stil genutzt.
 <h3><a name="fslayout.avoid">4.3 Was sollte man vermeiden?</a></h3>
 <p>
 Außer den oben genannten Unterverzeichnissen sollte es keine anderen im
-Verzeichnis <tt style="white-space: nowrap;">/sw</tt> geben.
+Verzeichnis <tt style="white-space: nowrap;">/opt/sw</tt> geben.
 Insbesondere die folgenden sind explizit nicht erlaubt:
-<tt style="white-space: nowrap;">/sw/man</tt>, <tt style="white-space: nowrap;">/sw/info</tt>,
-<tt style="white-space: nowrap;">/sw/doc</tt>, <tt style="white-space: nowrap;">/sw/libexec</tt> und
-<tt style="white-space: nowrap;">/sw/lib/locale</tt>.
+<tt style="white-space: nowrap;">/opt/sw/man</tt>, <tt style="white-space: nowrap;">/opt/sw/info</tt>,
+<tt style="white-space: nowrap;">/opt/sw/doc</tt>, <tt style="white-space: nowrap;">/opt/sw/libexec</tt> und
+<tt style="white-space: nowrap;">/opt/sw/lib/locale</tt>.
 </p>
 
 
@@ -1371,7 +1371,7 @@ kommt eine weitere Änderung durch den Übergang von libstdc++ nach libc++ dazu.
 Mit der Distribution 10.4-transitional wurde eine neute Methode eingeführt, mit
 der sicher gestellt wird, dass der richtige g++ Compiler verwendet wird.
 Während des Compilierens wird das Verzeichnis
-<tt style="white-space: nowrap;">/sw/var/lib/fink/path-prefix-g++-XXX</tt> (wobei xxx die Versionsnummer
+<tt style="white-space: nowrap;">/opt/sw/var/lib/fink/path-prefix-g++-XXX</tt> (wobei xxx die Versionsnummer
 ist) in der Pfadvariablen PATH eingetragen. In diesem Verzeichnis befinden sich
 Shellskripte, die dafür sorgen, dass die richtige Version des g++ Compiler
 aufgerufen wird.
@@ -1423,15 +1423,15 @@ Für das Verständnis einiger Felder, muss man einige Details über den
 Build-Prozess von Fink wissen: Der Build-Prozess besteht aus fünf Phasen:
 Auspacken, patchen, compilieren, installieren und erstellen (build). Die
 Pfade des nachfolgenden Beispiel sind für eine Installation in
-<tt style="white-space: nowrap;">/sw</tt> und für das Paket gimp-1.2.1-1.
+<tt style="white-space: nowrap;">/opt/sw</tt> und für das Paket gimp-1.2.1-1.
 </p>
 <p>
 In der <b>Auspack-Phase</b> wird das Verzeichnis
-<tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1</tt> erzeugt und der
+<tt style="white-space: nowrap;">/opt/sw/src/fink.build/gimp-1.2.1-1</tt> erzeugt und der
 Quell-Tarball oder mehrere darin ausgepackt. Das erzeugt meistens ein
 Verzeichnis gimp-1.2.1, das die Quellen enthält. Alle folgenden Schritte
 erfolgen in diesem Verzeichnis, also in
-<tt style="white-space: nowrap;">/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>. Details
+<tt style="white-space: nowrap;">/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</tt>. Details
 dieser Phase können über die Felder SourceDirectory, NoSourceDirectory und
 Source<b>N</b>ExtractDir kontrolliert werden.
 </p>
@@ -1452,10 +1452,10 @@ Compile-Skript ausgeführt.
 </p>
 <p>
 In der <b>Installationsphase</b> wird das Paket in einem temporären
-Verzeichnis, <tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1</tt> (= %d),
+Verzeichnis, <tt style="white-space: nowrap;">/opt/sw/src/fink.build/root-gimp-1.2.1-1</tt> (= %d),
 installiert. (Beachten sie den Teil "root-" im Namen.) Alle Dateien, die
-normalerweise in <tt style="white-space: nowrap;">/sw</tt> installiert würden, werden stattdessen
-in <tt style="white-space: nowrap;">/sw/src/fink.build/root-gimp-1.2.1-1/sw</tt> (= %i = %d%p)
+normalerweise in <tt style="white-space: nowrap;">/opt/sw</tt> installiert würden, werden stattdessen
+in <tt style="white-space: nowrap;">/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</tt> (= %i = %d%p)
 installiert. Weitere Details stehen in der Beschreibung des Felds InstallScript.
 </p>
 <p>
@@ -2103,7 +2103,7 @@ Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 <p>
 Die Standard-Codes für Kontinent und Land stehen in der Datei
-<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>, Teil der Pakete fink oder
+<tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_keys</tt>, Teil der Pakete fink oder
 fink-mirrors.
 </p>
 </td></tr><tr valign="top"><td>Source</td><td>
@@ -2115,7 +2115,7 @@ Diese Feld unterstützt ein spezielles URL-Schema für Spiegelserver:
 der <b>Spiegelname</b> in Finks Konfiguration nachgeschaut, der Teil
 <b>Relativpfad</b> angehängt und als tatsächliche URL verwendet. Die bekannten
 <b>Spiegelnamen</b> sind in der Datei
-<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_list</tt> aufgelistet, die Teil des Pakets
+<tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_list</tt> aufgelistet, die Teil des Pakets
 fink oder fink-mirrors ist. Alternative dazu kann auch <tt style="white-space: nowrap;">custom</tt> als
 <b>Spiegelname</b> verwendet werden und dann wird Fink das Feld
 <tt style="white-space: nowrap;">CustomMirror</tt> dazu auswerten.
@@ -2187,7 +2187,7 @@ damit verbundenen Probleme kann man wie folgt umgehen:
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>
 In diesem Beispiel würde z. B. der Tarball unter dem Namen
-<tt style="white-space: nowrap;">/sw/src/coolapp-1.2.3.tar.gz</tt> abgespeichert werden, genau so
+<tt style="white-space: nowrap;">/opt/sw/src/coolapp-1.2.3.tar.gz</tt> abgespeichert werden, genau so
 wie man es erwarten würde.
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
@@ -2210,11 +2210,11 @@ Dateien, Austausch des Tarball Upstream ohne Ankündigung, Trojanerangriff oder
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 <p>
 Für die Berechnung der Checksum kann man das Tool <tt style="white-space: nowrap;">md5sum</tt> verwenden.
-Die Checksum des Tarball <tt style="white-space: nowrap;">/sw/src/apache_1.3.23.tar.gz</tt> kann
+Die Checksum des Tarball <tt style="white-space: nowrap;">/opt/sw/src/apache_1.3.23.tar.gz</tt> kann
 man mit dem folgenden Kommando berechnen (einschließlich der Ausgabe):
 </p>
-<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
+<pre>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</pre>
 <p>Wie man sieht ist der Wert links genau die Summe, die man braucht.</p>
 </td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
 <p>
@@ -2340,12 +2340,12 @@ Dies erfolgt in der Patch-Phase bevor das PatchSkript ausgeführt wird.
 </p>
 <p>
 Die angepasste Version respektiert DESTDIR sorgt dafür, dass Kataloge mit
-Meldungen im Verzeichnis <tt style="white-space: nowrap;">/sw/share/locale</tt> landen und nicht
-in <tt style="white-space: nowrap;">/sw/lib/locale</tt>.
+Meldungen im Verzeichnis <tt style="white-space: nowrap;">/opt/sw/share/locale</tt> landen und nicht
+in <tt style="white-space: nowrap;">/opt/sw/lib/locale</tt>.
 Bevor sie dieses Feld benutzen, überprüfen sie, dass das Paket nicht beschädigt
 wird und überhaupt notwendig ist.
 Sie können sich mit dem Tool <tt style="white-space: nowrap;">diff</tt> die Unterschiede zwischen der V
-ersion des Pakets und der in Fink (in <tt style="white-space: nowrap;">/sw/lib/fink/update</tt>)
+ersion des Pakets und der in Fink (in <tt style="white-space: nowrap;">/opt/sw/lib/fink/update</tt>)
 anzeigen lassen.
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
@@ -2697,11 +2697,11 @@ Ein boolscher Wert speziell Perl-Modul-Pakete.
 Ist er auf wahr (true) gesetzt, wird Code zu den Skripten install, postrm und
 postinst hinzu gefügt, der die .pod-Dateien aus den Perl-Paketen pflegt.
 Dies schließt ein, das .pod-Datum in der zentralen Datei
-<tt style="white-space: nowrap;">/sw/lib/perl5/darwin/perllocal.pod</tt> hinzu zu fügen oder
+<tt style="white-space: nowrap;">/opt/sw/lib/perl5/darwin/perllocal.pod</tt> hinzu zu fügen oder
 zu entfernen.
 (Ist der Typ als <tt style="white-space: nowrap;">perl $version</tt> mit einer bestimmten Perl-Version
 wie 5.6.0 deklariert, werden diese Skripte angepasst, um die zentrale
-.pod-Datei <tt style="white-space: nowrap;">/sw/lib/perl5/$version/perllocal.pod</tt> zu
+.pod-Datei <tt style="white-space: nowrap;">/opt/sw/lib/perl5/$version/perllocal.pod</tt> zu
 bearbeiten.)
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
@@ -2829,7 +2829,7 @@ Dieses Feld deklariert eine bequehme Art, Umgebungsvariablen für die Laufzeit
 einen statischen Wert zuzuweisen (Benötigen sie mehr Flexibilität, schauen sie
 im Abschnitt <a href="#reference.profile.d">profile.d Skripte</a> nach). Solange
 das Paket installiert ist, werden diese Variablen im Skript
-<tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt> gesetzt.
+<tt style="white-space: nowrap;">/opt/sw/bin/init.[c]sh</tt> gesetzt.
 </p>
 <p>
 Der Wert ihrer Variablen kann Leerzeichen enthalten (Leerzeichen am Ende werden
@@ -2841,7 +2841,7 @@ abgeschnitten); Prozenterweiterung wird ausgeführt. In diesem Beispiel
 &lt;&lt;</pre>
 <p>
 werden zwei Umgebungsvariablen 'SomeVar' und 'AnotherVar' erzeugt und ihre Werte
-auf '/sw/Value' (oder wasauch immer ihr Präfix ist) und 'foo bar' gesetzt.
+auf '/opt/sw/Value' (oder wasauch immer ihr Präfix ist) und 'foo bar' gesetzt.
 </p>
 <p>
 Dieses Feld funktioniert, in dem es die entsprechenden Kommandos im
@@ -3171,7 +3171,7 @@ Patchdatei vorzunehmen, bevor sie angewandt wird).
 </p>
 <p>
 Benötigt man in der Patch-Datei den vom Nutzer gewählten Präfix, wird empfohlen,
-statt <tt style="white-space: nowrap;">/sw</tt> eine Variable wie <tt style="white-space: nowrap;">@PREFIX@</tt> zu deklarieren
+statt <tt style="white-space: nowrap;">/opt/sw</tt> eine Variable wie <tt style="white-space: nowrap;">@PREFIX@</tt> zu deklarieren
 und so zu verwenden:
 </p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</pre>
@@ -3201,20 +3201,20 @@ sie überlegen, einen separaten Downlaod zu erstellen.
 Benötigt ihr Paket einige Initialisierungen zur Laufzeit (z. B. Setzen von
 Umgebungsvariablen), können sie profile.d-Skripte verwenden.
 Diese Skript-Fragmente werden durch die Skripte
-<tt style="white-space: nowrap;">/sw/bin/init.[c]sh</tt> "sourced". Normalerweise werden alle
+<tt style="white-space: nowrap;">/opt/sw/bin/init.[c]sh</tt> "sourced". Normalerweise werden alle
 Fink-Nutzer diese Skripte in ihren Shell-Startup-Skripte
 (<tt style="white-space: nowrap;">.cshrc</tt> und ähnliche Dateien) laden.
 Ihr Paket muss jedes Skript in zwei Varianten zur Verfügung stellen: Eine für
 sh-kompatible Shells (sh, zsh, bash, ksh, ...) und eine für csh-kompatible
 Shells (csh, tcsh). Sie müssen als
-<tt style="white-space: nowrap;">/sw/etc/profile.d/%n.[c]sh</tt> installiert werden (wobei %n wie
+<tt style="white-space: nowrap;">/opt/sw/etc/profile.d/%n.[c]sh</tt> installiert werden (wobei %n wie
 üblich für den Paketnamen steht).
 Es müssen auch ihre executable und read Bits gesetzt werden (d. h. sie müssen
 mit -m 755 installiert werden). Ansonsten werden sie nicht korrekt geladen
 werden.
 </p>
 <p>
-Muss man nur einige Umgebungsvariablen setzen (z. B. QTDIR auf '/sw'), kann man
+Muss man nur einige Umgebungsvariablen setzen (z. B. QTDIR auf '/opt/sw'), kann man
 das Feld RuntimeVars benutzen; eine bequehme Art, genau dies zu erreichen.
 </p>
 
@@ -3226,4 +3226,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.de.xml,v 1.7 2023/01/22 6:40:32 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.de.xml,v 1.8 2023/08/04 4:54:31 nieder nieder Exp $</i></p></body></html>

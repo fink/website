@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging - Package Descriptions";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="policy.php?phpLang=en" title="Packaging Policy"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -14,8 +14,8 @@ include_once "header.en.inc";
 <h2><a name="trees">2.1 Tree Layout</a></h2>
 <p>
 Package descriptions are read from the <code>finkinfo</code>
-directories below the <code>/sw/fink/dists</code> directory.
-The "Trees" setting in <code>/sw/etc/fink.conf</code> controls
+directories below the <code>/opt/sw/fink/dists</code> directory.
+The "Trees" setting in <code>/opt/sw/etc/fink.conf</code> controls
 which directories are read.
 The name of package description files must be the full package name
 plus the extension ".info".
@@ -168,16 +168,16 @@ part of <code>%f</code>.
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not assume all users have Fink installed in <code>/sw</code>; use <code>%p</code> to get the correct path.
+the <b>p</b>refix where Fink is installed, e.g. <code>/opt/sw</code>. You must not assume all users have Fink installed in <code>/opt/sw</code>; use <code>%p</code> to get the correct path.
 </p>
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 the <b>d</b>estination directory where the tree to be packaged is built, e.g.
-<code>/sw/src/fink.build/root-gimp-1.2.1-1</code>. This temporary directory serves
+<code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code>. This temporary directory serves
 as root during the installation phase of compiling a package. You must not assume that
 <code>root-%f</code> will be in <code>%p/src</code> since
 a user can change that directory using the <code>Buildpath</code> field
-in <code>/sw/etc/fink.conf</code>.
+in <code>/opt/sw/etc/fink.conf</code>.
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -199,11 +199,11 @@ the path where the p<b>a</b>tches can be found. As of fink-0.29.0, this variable
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-the <b>b</b>uild directory, e.g. <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>.
+the <b>b</b>uild directory, e.g. <code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>.
 You must not assume that
 <code>%f</code> will be in <code>%p/src</code> since
 a user can change that directory using the <code>Buildpath</code> field
-in <code>/sw/etc/fink.conf</code>.
+in <code>/opt/sw/etc/fink.conf</code>.
 The innermost directory is named based on the <code>Source</code>
 filename, or is the value of the <code>SourceDirectory</code> field
 (if present), or is not used if <code>NoSourceDirectory</code>

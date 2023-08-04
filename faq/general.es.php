@@ -1,7 +1,7 @@
 <?php
 $title = "P.M.F. - Generales";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="P.M.F. Contents"><link rel="next" href="relations.php?phpLang=es" title="Relaciones con Otros Proyectos"><link rel="prev" href="index.php?phpLang=es" title="P.M.F. Contents">';
 
 
@@ -37,7 +37,7 @@ include_once "header.es.inc";
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Hay varias razones, pero la línea común es que 'podría ocurrir una falla en el sistema'.</p><p>Razón Uno: Software de una Tercera parte. /usr/local es el lugar mas establecido donde colocar software que no es parte del sistema distribuido por el vendedor original. Esto quiere decir que es un buen lugar para poner cosas. Sin embargo, significa que otras personas también pueden poner cosas allí. La mayoría de las rutinas de instalación simplemente van a sobreescribir lo que ahí está – esto también aplica a dpkg. Uno puede, claro, escoger el no instalar software de una Tercera parte en /usr/local. Desafortunadamente, la mayoría de los instaladores, no dicen de antemano qué es lo que van a instalar y adónde.</p><p>Razón Dos: /usr/local/bin esta en el default PATH. Esto quiere decir que tu shell encontrará los programas instalados sin medidas adicionales. Pero también quiere decir que tienes que tener medidas adicionales si no quieres usar estos programas. En casos extremos, esto también puede afectar al sistema mismo – muchas partes dependen de shell scripts.</p><p>Razón Tres:  La cadena de herramientas del compilador busca /usr/local por default. El compilador busca los headers en /usr/local/include y el linker busca las librerías en /usr/local/lib. Nuevamente, esto a veces es una conveniencia bienvenida, pero es muy difícil de anular si surge la necesidad. Es muy fácil incapacitar al compilador poniendo un archivo de basura llamado <code>stdio.h</code> en /usr/local/include.</p><p>Después de todo lo dicho, es posible instalar Fink en /usr/local. El script de instalación te advertirá explícitamente, pero continua una vez que reconozcas que lo estas haciendo bajo tu propio riesgo.</p></div>
     </a>
     <a name="why-sw">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Entonces ¿por qué escogieron /sw?</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Entonces ¿por qué escogieron /opt/sw?</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Esa elección es bastante arbitraria, pero se puede decir que por razones prácticas (de actualización) quedará así en un futuro cercano y además existe el hecho de que es un lugar seguro para evitar conflictos con otros sistemas de empaquetamiento.</p></div>
     </a>
   <p align="right"><?php echo FINK_NEXT ; ?>:

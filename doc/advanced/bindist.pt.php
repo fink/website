@@ -1,7 +1,7 @@
 <?php
 $title = "Avançado - Servidor de Distr. de Binários";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:12';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Avançado Contents"><link rel="prev" href="index.php?phpLang=pt" title="Avançado Contents">';
 
 
@@ -27,7 +27,7 @@ include_once "header.pt.inc";
 
       <ol>
         <li>
-          Instale o Fink em <code>/sw</code> (diretório padrão, use um
+          Instale o Fink em <code>/opt/sw</code> (diretório padrão, use um
           link simbólico se for necessário).
         </li>
 
@@ -51,11 +51,11 @@ include_once "header.pt.inc";
           Inicie um servidor Web. Por exemplo, habilite o "Compartilhamento Web
           Pessoal" na seção Compartilhamento das Preferências do Sistema.
           Configure então o httpd para publicar seu diretório
-          <code>/sw/fink</code> através da adição das seguintes linhas
+          <code>/opt/sw/fink</code> através da adição das seguintes linhas
           ao seu arquivo <code>/etc/httpd/httpd.conf</code>:
 
-          <pre>Alias /fink /sw/fink
-&lt;Directory /sw/fink&gt;
+          <pre>Alias /fink /opt/sw/fink
+&lt;Directory /opt/sw/fink&gt;
   Options Indexes FollowSymLinks
 &lt;/Directory&gt;</pre>
         </li>
@@ -85,18 +85,18 @@ include_once "header.pt.inc";
 
       <ol>
         <li>
-          Instale o Fink no diretório <code>/sw</code> (diretório
+          Instale o Fink no diretório <code>/opt/sw</code> (diretório
           padrão).
         </li>
 
         <li>
           Execute o comando <code>fink configure</code> e habilite a opção para
           baixar pacotes da distribuição de binários.  ("UseBinaryDist: true"
-          no arquivo <code>/sw/etc/fink.conf</code>).
+          no arquivo <code>/opt/sw/etc/fink.conf</code>).
         </li>
 
         <li>
-          Edite o arquivo <code>/sw/etc/apt/sources.list</code> e
+          Edite o arquivo <code>/opt/sw/etc/apt/sources.list</code> e
           adicione as linhas que representam suas árvores do Fink. Por exemplo,
           se o endereço IP do servidor mestre for 192.168.42.7, você deve
           adicionar:

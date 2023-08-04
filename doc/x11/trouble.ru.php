@@ -1,7 +1,7 @@
 <?php
 $title = "Использование X11 - Устранение проблем";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Использование X11 Contents"><link rel="next" href="tips.php?phpLang=ru" title="Подсказки по использованию"><link rel="prev" href="other.php?phpLang=ru" title="Другие возможности X11">';
 
 
@@ -149,7 +149,7 @@ include_once "header.ru.inc";
                 ваши файлы инциализации оболочки не содержат настроек для добавления
                 /usr/X11R6/bin к переменной величине PATH. Если вы используете Fink и не изменили
                 настройки оболочки по умолчанию, для исправления должно быть достаточно добавления строки <code>source
-                /sw/bin/init.csh</code> к <code>.cshrc</code> в базовом каталоге
+                /opt/sw/bin/init.csh</code> к <code>.cshrc</code> в базовом каталоге
                 (как рекомендуется в инструкциях Fink).
                 </p>
             <pre>_XSERVTransSocketUNIXCreateListener:

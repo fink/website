@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - X11 のインストール";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=ja" title="X11 の起動"><link rel="prev" href="history.php?phpLang=ja" title="歴史">';
 
 
@@ -131,7 +131,7 @@ Quartz を完全に生かしたい場合、ウィンドウマネージャに <co
 他のウィンドウマネージャを使いたいけれどカットアンドペーストも使いたい場合、以下の例のようにして下さい:
 </p>
 <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</pre>
+exec /opt/sw/bin/fvwm2</pre>
 <p>
 もちろん、 <code>startkde</code> のようなウィンドウマネージャ起動も書く必要があります。
 </p>
@@ -145,10 +145,10 @@ exec /sw/bin/fvwm2</pre>
 <li>
 <p>
 Apple X11 は Fink の環境設定をデフォルトでは認識しません。
-Fink でインストールした起動アプリケーション (例 ウィンドウマネージャ, gnome-session, その他の<code>/sw/bin</code> 内のアプリケーション) 
+Fink でインストールした起動アプリケーション (例 ウィンドウマネージャ, gnome-session, その他の<code>/opt/sw/bin</code> 内のアプリケーション) 
 を呼び出すには、 <code>~/.xinitrc</code> の上の方 ("<code>#!/bin/sh</code>" より下、他のプログラムより上) に以下の行を追加します;
 </p>
-<pre> . /sw/bin/init.sh
+<pre> . /opt/sw/bin/init.sh
 </pre>
 <p>
 これにより Fink 環境が初期化されます。
@@ -161,11 +161,11 @@ Fink でインストールした起動アプリケーション (例 ウィンド
 Fink ツリー下にあるプログラムをアプリケーションメニューから呼び出すときに、そのプログラムが他のプログラムを呼ぶようなものの場合、特別な処置が必要です。
 このような場合、フルパスを追加するのではなく、例えば
 </p>
-<pre>/sw/bin/emacs</pre>
+<pre>/opt/sw/bin/emacs</pre>
 <p>ではなく、 bash であれば:</p>
-<pre>. /sw/bin/init.sh ; emacs</pre>
+<pre>. /opt/sw/bin/init.sh ; emacs</pre>
 <p>tcsh であれば:</p>
-<pre>source /sw/bin/init.sh ; emacs</pre>
+<pre>source /opt/sw/bin/init.sh ; emacs</pre>
 <p>
 これにより PATH 情報が正しく伝わります。
 Fink でインストールしたアプリケーションなら、どれでもこの方法が使えます。

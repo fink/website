@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Fink Benutzung";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=de" title="Probleme beim Übersetzen - Allgemein"><link rel="prev" href="upgrade-fink.php?phpLang=de" title="Fink aktualisieren(versions-spezifische Probleme)">';
 
 
@@ -30,8 +30,8 @@ include_once "header.de.inc";
           <code>fink configure</code> ausführen, um es einzurichten. Es kann
           jederzeit ausgeführt werden, um die Einstellungen von Fink zu ändern.
           Sind sie der Anleitung für die Installation gefolgt sind und
-          <code>/sw/bin/init.csh</code> (oder
-          <code>/sw/bin/init.sh</code>) benutzen, dann werden auch
+          <code>/opt/sw/bin/init.csh</code> (oder
+          <code>/opt/sw/bin/init.sh</code>) benutzen, dann werden auch
           <code>apt-get</code> und <code>dselect</code> die Proxy-Einstellungen
           nutzen. Beachten sie, dass sie das Protokoll vor die Adresse stellen,
           zum Beispiel:</p><pre>ftp://proxy.yoursite.somewhere</pre><p>Gibt es immer noch Probleme, öffnen sie die Systemeinstellungen,
@@ -73,12 +73,12 @@ include_once "header.de.inc";
     <a name="removing">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.6: Wie kann ich Fink komplett deinstallieren?</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fast alle von Fink installierten Dateien sind in
-          <code>/sw</code> (oder eben da, wo sie es installiert haben).
+          <code>/opt/sw</code> (oder eben da, wo sie es installiert haben).
           Es gibt nur wenige Ausnahmen. Geben sie folgende Befehle ein:</p><pre>fink remove --recursive daemonic xinitrc
-sudo rm -rf /sw</pre><p>Wenn sie nicht vorhaben, Fink erneut zu installieren, sollten sie die
-          Zeile "<code>source /sw/bin/init.csh</code>" in ihrer Datei
+sudo rm -rf /opt/sw</pre><p>Wenn sie nicht vorhaben, Fink erneut zu installieren, sollten sie die
+          Zeile "<code>source /opt/sw/bin/init.csh</code>" in ihrer Datei
           <code>.cshrc</code> löschen mit einem Texteditor oder die
-          Zeile "<code>source /sw/bin/init.sh</code>" in der Datei
+          Zeile "<code>source /opt/sw/bin/init.sh</code>" in der Datei
           <code>.bashrc</code>, je nach ihrem Setup.
           Haben sie das Paket <code>xinitrc</code> installiert, sollten sie die
           originale Datei <code>/usr/X11/lib/X11/xinit/xinitrc</code>
@@ -128,7 +128,7 @@ sudo rm -rf /sw</pre><p>Wenn sie nicht vorhaben, Fink erneut zu installieren, so
           mit dem Kommando <code>fink info <b>packagename</b></code>.</p><p>Für <code>fink-0.26</code> und später: Wenn sie das Kommando
           <code>fink configure</code> ausführen, ist eine der Fragen an sie, ob
           der "unstable" Baum eingeschaltet werden soll.</p><p>Bei Fink-Versionen früher als <b>0.26</b> editieren sie die Datei
-          <code>/sw/etc/fink.conf</code> und fügen sie
+          <code>/opt/sw/etc/fink.conf</code> und fügen sie
           <code>unstable/main</code> und <code>unstable/crypto</code> in der
           Zeile <code>Trees:</code> ein.</p><p>Im Fink Commander gibt es eine Einstellung Pakete aus dem "unstable"
           Baum zu zu benutzen.</p><p>Keine dieser Optionen lädt die Paketbeschreibungen des "unstable"
@@ -159,15 +159,15 @@ fink scanpackages</pre><p>Sind sie sich nicht sicher, welche Aktualisierungsmeth
           Aktualisierung mit <code>fink selfupdate-cvs</code> auf CVS
           umschalten, weil rsync nur die Bäume aktualisiert, die in der Datei
           <code>fink.conf</code> aktiviert sind. Editieren sie die Datei
-          <code>/sw/etc/fink.conf</code> und fügen sie
+          <code>/opt/sw/etc/fink.conf</code> und fügen sie
           <code>local/main</code> in der Zeile <code>Trees:</code> ein. Danach
           müssen sie das Kommando <code>fink selfupdate</code>, damit die
           Paketbeschreibungen herunter geladen werden. Dann kopieren sie die
           entsprechenden <code>.info</code> (und zugehörige <code>.patch</code>)
           Dateien aus
-          <code>/sw/fink/dists/unstable/main/finkinfo</code> (oder
-          <code>/sw/fink/dists/unstable/crypto/finkinfo</code>) nach
-          <code>/sw/fink/dists/local/main/finkinfo</code>.
+          <code>/opt/sw/fink/dists/unstable/main/finkinfo</code> (oder
+          <code>/opt/sw/fink/dists/unstable/crypto/finkinfo</code>) nach
+          <code>/opt/sw/fink/dists/local/main/finkinfo</code>.
           Denken sie aber daran, dass die Pakete von anderen Paketen (oder
           bestimmten Versionen) abhängen können, die ebenfalls nur im "unstable"
           Baum sind. Dann müssen sie auch diese <code>.info</code> und
@@ -194,7 +194,7 @@ fink scanpackages</pre><p>Sind sie sich nicht sicher, welche Aktualisierungsmeth
           PATH und MANPATH. Damit die Änderungen in der Shell bleibend sind,
           müssen sie für csh/tcsh über das Kommando <code>source</code> und für
           bash/zsh über <code>.</code> ausgeführt werden. Das sieht dann so
-          aus:</p><p>für csh/tcsh:</p><pre>source /sw/bin/init.csh</pre><p>für bash/zsh:</p><pre>. /sw/bin/init.sh</pre></div>
+          aus:</p><p>für csh/tcsh:</p><pre>source /opt/sw/bin/init.csh</pre><p>für bash/zsh:</p><pre>. /opt/sw/bin/init.sh</pre></div>
     </a>
     <a name="dselect-access">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.12: Hilfe! Ich habe den Menue-Eintrag "[A]ccess" in dselect ausgewählt
@@ -213,7 +213,7 @@ fink scanpackages</pre><p>Sind sie sich nicht sicher, welche Aktualisierungsmeth
           "<code>Updating using CVS failed. Check the error messages above.</code>"
         </b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Ist die Meldung</p><pre>Can't exec "cvs": No such file or directory at
-/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
+/opt/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</pre><p>müssen sie die Developer Tools installieren.</p><p>Lautet aber die letzte Zeile</p><pre>### execution of su failed, exit code 1</pre><p>müssen sie weiter oben nach dem Fehler suchen. Lautet die Meldung,
           dass ihre Verbindung abgelehnt wurde:</p><pre>(Logging in to anonymous@fink.cvs.sourceforge.net)
 CVS password:
@@ -233,9 +233,9 @@ cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo:
 No such file or directory 
 ### execution of su failed, exit code 1 Failed: 
 Updating using CVS failed. Check the error messages above.</pre><p>In diesem Fall sollten sie die Rechte mit folgendem Kommando zurück
-          setzen:</p><pre>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {}\
+          setzen:</p><pre>sudo find /opt/sw/fink -type d -name 'CVS' -exec rm -rf {}\
 ; fink selfupdate-cvs</pre><p>Ist es keine dieser Meldungen, bedeutet das fast immer, dass sie
-          eine Datei in ihrem /sw/fink/dists Baum geändert haben und jetzt der
+          eine Datei in ihrem /opt/sw/fink/dists Baum geändert haben und jetzt der
           Autor etwas ändern möchte. Suchen sie weiter oben in der Ausgabe nach
           dem Kommando selfupdate-cvs nach Zeilen, die mit "C"
           anfangen, wie z. B.:</p><pre>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
@@ -245,7 +245,7 @@ Failed: Updating using CVS failed. Check the error messages above.</pre><p>Das "
           letzte Version einen Konflikt hat, der so behoben wird. Löschen sie
           jede Datei, die mit "C" in der Ausgabe nach dem Kommando
           <code>selfupdate-cvs</code> aufgelistet wird und versuchen sie es
-          erneut:</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+          erneut:</p><pre>sudo rm /opt/sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</pre><p>Bei Fehlermeldungen mit <b>cvs.sourceforge.net</b>:</p><pre>cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 2401 failed: Operation timed out</pre><p>geht das auf Umstrukturierungen der CVS-Server im Jahr 2006 bei
           sourceforge.net zurück. Die Dateien von Fink sind jetzt hier:
@@ -295,7 +295,7 @@ fink selfupdate-cvs</pre><p>Bei Fehlermeldungen mit <b>cvs.sourceforge.net</b>:<
           nachfragen, ob jemand die Quellen noch hat.</p><p>Haben sie den Tarball mit den Quellen gefunden, dann laden sie ihn
           herunter und verschieben sie ihn dahin, wo Fink die Quellen speichert
           (bei einer üblichen Fink-Installation mit dem Befehl:
-          "<code>sudo mv <b>package-source.tar.gz</b> /sw/src/</code>").
+          "<code>sudo mv <b>package-source.tar.gz</b> /opt/sw/src/</code>").
           Danach können sie das Paket ganz normal mit
           '<code>fink install <b>packagename</b></code>' installieren.</p><p>Sollten sie die Quelldatei nicht bekommen, müssen sie leider warten
           bis der Paket-Autor das Problem behoben hat, also entweder die URL
@@ -306,7 +306,7 @@ fink selfupdate-cvs</pre><p>Bei Fehlermeldungen mit <b>cvs.sourceforge.net</b>:<
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.16: Führe ich Fink aus oder ein Programm, das ich mit Fink installiert,
           habe, kommt nur die Fehlermeldung "command not found".</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Möglicherweise haben sie aus Versehen die Startup-Skripte geändert.
-          Führen sie das Skript <code>/sw/bin/pathsetup.sh</code> in
+          Führen sie das Skript <code>/opt/sw/bin/pathsetup.sh</code> in
           einem Terminalfenster aus. Das Skript detektiert die voreingestellte
           Shell und fügt Finks Initialisierungs-Skript in seine Konfiguration
           ein. Damit dies wirksam wird, müssen sie ein neues Terminalfenster
@@ -319,33 +319,33 @@ fink selfupdate-cvs</pre><p>Bei Fehlermeldungen mit <b>cvs.sourceforge.net</b>:<
           Option <b>Applications-&gt;Customize Menu ...</b>zu ändern. Ändern
           sie das Kommando-Feld von</p><pre>xterm</pre><p>auf</p><pre>xterm -ls</pre><p><code>ls</code> bedeutet hier <q>login shell</q>. Dadurch
           werden ihr komplette Anmelde-Einstsellungen benutzt (genau wie das
-          OS X Terminal).</p><p>Die Skripte <code>/sw/bin/init.*</code> machen noch weit mehr
-          als nur <code>/sw/bin</code> im PATH hinzu fügen. Viele Pakete
+          OS X Terminal).</p><p>Die Skripte <code>/opt/sw/bin/init.*</code> machen noch weit mehr
+          als nur <code>/opt/sw/bin</code> im PATH hinzu fügen. Viele Pakete
           laufen ansonsten nicht korrekt.</p></div>
     </a>
     <a name="invisible-sw">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.17: Ich möchte den Ordner /sw im Finder verstecken, damit Nutzer die
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.17: Ich möchte den Ordner /opt/sw im Finder verstecken, damit Nutzer die
           Fink-Installation nicht so leicht beschädigen können.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Das geht. Hat man die Development Tools installiert, kann man
-          folgendes Kommando ausführen:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>Damit wird der Ordner /sw genau so unsichtbar wie die normalen
+          folgendes Kommando ausführen:</p><pre>sudo /Developer/Tools/SetFile -a V /opt/sw</pre><p>Damit wird der Ordner /opt/sw genau so unsichtbar wie die normalen
           System-Ordner (/usr, usw.). Ohne die Developer Tools kann man auch
           Programme von Drittanbietern nehmen, mit denen man die Datei-Attribute
-          manipulieren kann, damit /sw unsichtbar wird.</p></div>
+          manipulieren kann, damit /opt/sw unsichtbar wird.</p></div>
     </a>
     <a name="install-info-bad">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.18: Ich kann nichts installieren, weil ich immer den folgenden Fehler
           bekomme: "install-info: unrecognized option
-          `--infodir=/sw/share/info'"</b></p></div>
+          `--infodir=/opt/sw/share/info'"</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Normalerweise ist das ein Problem im PATH. Geben sie folgendes in
-          einem Terminalfenster ein:</p><pre>printenv PATH</pre><p>Wenn <code>/sw/sbin</code> da überhaupt nicht auftaucht, muss
+          einem Terminalfenster ein:</p><pre>printenv PATH</pre><p>Wenn <code>/opt/sw/sbin</code> da überhaupt nicht auftaucht, muss
           man die Umgebung so einrichten, wie in den
           <a href="/doc/users-guide/install.php#setup">Instruktionen</a>
-          im Users Guide beschrieben. Ist <code>/sw/sbin</code>
+          im Users Guide beschrieben. Ist <code>/opt/sw/sbin</code>
           vorhanden, aber noch andere Einträge davor gibt (z. B.
           <code>/usr/local/bin</code>), können sie die Abfolge der
-          Einträge im PATH so ändern, dass <code>/sw/sbin</code> weiter
+          Einträge im PATH so ändern, dass <code>/opt/sw/sbin</code> weiter
           vorne steht. Muss der andere Ordner wirklich vor
-          <code>/sw/sbin</code> stehen und enthält der Ordner ebenfalls
+          <code>/opt/sw/sbin</code> stehen und enthält der Ordner ebenfalls
           einen Unterordner <code>install-info</code>, dann benennen sie
           diesen Unterordner um, sobald sie Fink benutzen..</p></div>
     </a>
@@ -354,7 +354,7 @@ fink selfupdate-cvs</pre><p>Bei Fehlermeldungen mit <b>cvs.sourceforge.net</b>:<
           mit dem Text: "files list file".</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Typische Formen dieses Fehlers sind:</p><pre>files list file for package <b>packagename</b> contains empty filename</pre><p>oder</p><pre>files list file for package <b>packagename</b> is missing final newline</pre><p>Der Fehler ist leicht zu beheben. Liegt die .deb-Datei für das
           problematische Paket auf ihrem System vor, dann überprüfen sie die
-          Datei mit folgendem Kommando:</p><pre>dpkg --contents <b>full-path-to-debfile</b></pre><p>zum Beispiel:</p><pre>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>Erhalten sie eine Liste von Verzeichnissen und Dateien, dann ist die
+          Datei mit folgendem Kommando:</p><pre>dpkg --contents <b>full-path-to-debfile</b></pre><p>zum Beispiel:</p><pre>dpkg --contents /opt/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>Erhalten sie eine Liste von Verzeichnissen und Dateien, dann ist die
           .deb-Datei in Ordnung. Enthält die Liste aber auch etwas anderes oder
           es liegt keine .deb-Datei vor, dann können sie weiter machen, weil der
           Fehler das Erstellen anderer Pakete nicht verhindert.</p><p>Installieren sie die binäre Distribution oder sind sie sich sicher,
@@ -374,12 +374,12 @@ fink selfupdate-cvs</pre><p>Bei Fehlermeldungen mit <b>cvs.sourceforge.net</b>:<
 else if (substr($6, length($6), 1) == "/")\
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}'\ 
-&gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>z. B.</p><pre>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
+&gt; /opt/sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>z. B.</p><pre>dpkg -c /opt/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
 '{if ($6 == "./") { print "/."; } \
 else if (substr($6, length($6), 1) == "/") \
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}' \ 
-&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>Dies extrahiert den Inhalt der .deb-Datei, löscht alles außer den
+&gt; /opt/sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>Dies extrahiert den Inhalt der .deb-Datei, löscht alles außer den
           Dateinamen und schreibt diese in die .list-Datei.</p></div>
     </a>
     <a name="dselect-garbage">
@@ -432,11 +432,11 @@ Err file: stable/crypto Packages
 File not found 
 Ign file: stable/crypto Release 
 ...
-Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
+Failed to fetch file:/opt/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found 
-Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
+Failed to fetch file:/opt/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
 File not found
-Failed to fetch file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
+Failed to fetch file:/opt/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
 File not found 
 Reading Package Lists... Done 
 Building Dependency Tree...Done 
@@ -444,7 +444,7 @@ E: Some index files failed to download,
 they have been ignored, or old ones used instead. 
 update available list script returned error exit status 1.</pre><p>, dann führen sie das Kommand <code>fink scanpackages</code>aus.
           Damit werden die Dateien erzeugt, die nicht gefunden wurden..</p><p>Wenn sie Fehlermeldungen folgender Art erhalten:</p><pre>W: Couldn't stat source package list file: unstable/main Packages
-(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+(/opt/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)</pre><p>, sollten sie diese Kommandos ausführen, damit die Fehler behoben
           werden:</p><pre>sudo apt-get update
 fink scanpackages</pre></div>
@@ -455,7 +455,7 @@ fink scanpackages</pre></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Wird die Fink-Distribution geändert (Quell-Distribution und binäre
           Distribution sind Untermengen.), muss das Fink mitgeteilt werden.
           Führen sie dazu ein Skript aus, das normalerweise bei der
-          Erst-Installation ausgeführt wird:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Führt man dieses Skript aus, wird alles zurecht gerückt.</p></div>
+          Erst-Installation ausgeführt wird:</p><pre>/opt/sw/lib/fink/postinstall.pl</pre><p>Führt man dieses Skript aus, wird alles zurecht gerückt.</p></div>
     </a>
     <a name="lost-command-line-tools">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.25: After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</b></p></div>
@@ -465,27 +465,27 @@ fink scanpackages</pre></div>
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.26: Ich erhalte Fehlermeldungen von <code>gzip</code>,
           <code>dpkg-deb</code> oder anderen Programmen aus dem Paket
           <code>fileutils</code>! Hilfe!</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fehlermeldungen der Art:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
-### execution of gzip failed, exit code 139</pre><p>oder</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fehlermeldungen der Art:</p><pre>gzip -dc /opt/sw/src/dpkg-1.10.9.tar.gz | /opt/sw/bin/tar -xf -
+### execution of gzip failed, exit code 139</pre><p>oder</p><pre>gzip -dc /opt/sw/src/aquaterm-0.3.0a.tar.gz | /opt/sw/bin/tar -xf -
 gzip: stdout: Broken pipe 
-### execution of gzip failed, exit code 138</pre><p>oder</p><pre>dpkg-deb -b root-base-files-1.9.0-1 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
+### execution of gzip failed, exit code 138</pre><p>oder</p><pre>dpkg-deb -b root-base-files-1.9.0-1 /opt/sw/fink/dists/unstable/main/binary-darwin-powerpc/base
 
 ### execution of dpkg-deb failed, exit code 1
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>oder "segmentation faults" wenn man Programme aus dem Paket
           <code>fileutils</code>, z. B. <code>ls</code> oder <code>mv</code>,
           werden wahrscheinlich durch "prebinding"-Fehler in eine Bibliothek
-          verursacht und können mit folgendem Kommando behoben werden:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
+          verursacht und können mit folgendem Kommando behoben werden:</p><pre>sudo /opt/sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
     </a>
     <a name="pathsetup-keeps-running">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.27: When I open a Terminal window, I get a message that "Your
         environment seems to be correctly set up for Fink already.", and it
         logs out.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> What happened is that somehow the OSX Terminal program has been
-        told to run <code>/sw/bin/pathsetup.command</code> every time you log
+        told to run <code>/opt/sw/bin/pathsetup.sh</code> every time you log
         in. You can fix this by removing the Preferences file,
         <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p><p>If you have other preferences that you want to keep, you can edit
         the file with a text editor and remove the reference to
-        <code>/sw/bin/pathsetup.command</code>.</p></div>
+        <code>/opt/sw/bin/pathsetup.sh</code>.</p></div>
     </a>
     <a name="ext-drive">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.28: Ich habe Fink nicht auf der Haupt-Partition installiert und ich kann
@@ -513,12 +513,12 @@ Failed test (./Command/chowname.t at line 27)
           aktualisieren, sprich folgendes Kommando ausführen:</p><pre>fink install fink-mirrors</pre></div>
     </a>
     <a name="cant-move-fink">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.30: Ich kannn Fink nicht aktualisieren, weil ich /sw/fink nicht aus dem
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.30: Ich kannn Fink nicht aktualisieren, weil ich /opt/sw/fink nicht aus dem
           Weg räumen kann.</b></p></div>
-      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Der folgende Fehler:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>wird der Fehler meistens dadurch verursacht, dass die Zugriffsrechte
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Der folgende Fehler:</p><pre>Failed: Can't move "/opt/sw/fink" out of the way.</pre><p>wird der Fehler meistens dadurch verursacht, dass die Zugriffsrechte
           temporärer Ordner es verhindern, die während eines
           <code>selfupdate</code> angelegt werden, auch wenn die Fehlermeldung
-          etwas anderes behauptet. Entfernen sie diese Ordner mit:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
+          etwas anderes behauptet. Entfernen sie diese Ordner mit:</p><pre>sudo rm -rf /opt/sw/fink.tmp /opt/sw/fink.old</pre></div>
     </a>
     <a name="fc-cache">
       <div class="question"><p><b><?php echo FINK_Q ; ?>5.31: Ich erhalte diese Fehlermeldung: "No fonts found".</b></p></div>
@@ -548,7 +548,7 @@ page and on http://fontconfig.org.</pre><p>können sie das so beheben:</p><pre>s
           (darwin-powerpc)</q> ab.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Dieser Fehler tritt auf, wenn sie das PowerPC-Installerpaket auf
           einem Intel-MacIntosh ausführen. Sie müssen ihre Fink-Installation
-          löschen, d. h. dieses Kommando ausführen:</p><pre>sudo rm -rf /sw</pre><p>und dann das Disk-Image für Intel-MacIntosh von den
+          löschen, d. h. dieses Kommando ausführen:</p><pre>sudo rm -rf /opt/sw</pre><p>und dann das Disk-Image für Intel-MacIntosh von den
           <a href="/download/index.php">downloads-Webseiten</a>
           herunter laden.</p></div>
     </a>

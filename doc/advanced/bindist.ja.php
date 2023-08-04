@@ -1,7 +1,7 @@
 <?php
 $title = "Advanced - Binary Distro Server";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:12';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Advanced Contents"><link rel="prev" href="index.php?phpLang=ja" title="Advanced Contents">';
 
 
@@ -28,7 +28,7 @@ include_once "header.ja.inc";
       
       <ol>
         <li>
-Fink を <code>/sw</code> にインストール (既定のパス、あるいは必要に応じて symlink を作成)。
+Fink を <code>/opt/sw</code> にインストール (既定のパス、あるいは必要に応じて symlink を作成)。
         </li>
         <li>
 パッケージを通常通りビルド。
@@ -46,9 +46,9 @@ Fink を <code>/sw</code> にインストール (既定のパス、あるいは�
         </li>
         <li>
 ウェブサーバーを開始: 例えば、システム環境設定中のネットワーク共有で、"パーソナルWeb共有" を開始する。
-<code>/etc/httpd/httpd.conf</code> ファイルを以下のように編集し、 <code>/sw/fink</code> を提供するように設定する。
-<pre>Alias /fink /sw/fink
-&lt;Directory /sw/fink&gt;
+<code>/etc/httpd/httpd.conf</code> ファイルを以下のように編集し、 <code>/opt/sw/fink</code> を提供するように設定する。
+<pre>Alias /fink /opt/sw/fink
+&lt;Directory /opt/sw/fink&gt;
   Options Indexes FollowSymLinks
 &lt;/Directory&gt;</pre>
         </li>
@@ -77,15 +77,15 @@ Fink の apache2 パッケージを使用している場合は、上記のパス
       
       <ol>
         <li>
-Fink を <code>/sw</code> (既定のパス) にインストール
+Fink を <code>/opt/sw</code> (既定のパス) にインストール
         </li>
         <li>
 <code>fink configure</code> を実行し、
 バイナリ・ディストリビューションからパッケージをダウンロードするようオプション設定します。
- (<code>/sw/etc/fink.conf</code> ファイル中で "UseBinaryDist: true")
+ (<code>/opt/sw/etc/fink.conf</code> ファイル中で "UseBinaryDist: true")
         </li>
         <li>
-<code>/sw/etc/apt/sources.list</code> を編集し、 Fink ツリーを表す行を追加します。
+<code>/opt/sw/etc/apt/sources.list</code> を編集し、 Fink ツリーを表す行を追加します。
 例えば、ビルドボックスの IP アドレスが 192.168.42.7 であれば、以下のように追加します:
 <pre>deb http://192.168.42.7/fink stable main crypto
 deb http://192.168.42.7/fink unstable main crypto

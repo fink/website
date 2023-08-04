@@ -1,7 +1,7 @@
 <?php
 $title = "打包 - 操作手册";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/01/22 6:40:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -14,8 +14,8 @@ include_once "header.zh.inc";
 
 <h2><a name="build">6.1 构建过程</a></h2>
 
-<p>要理解一些字段的含义，你需要有对 Fink 所采用的构建过程有些了解。它由五个阶段组成：解压，补丁，编译，安装和构建。下面的示例路径是关于安装在 <code>/sw</code> 的 gimp-1.2.1-1 软件包的。</p>
-<p>在<b>解压阶段</b>，<code>/sw/src/fink.build/gimp-1.2.1-1</code> 这个目录会被创建，源代码压缩档会被在这里解压。多数情况下，这会创建一个名为 gimp-1.2.1 的目录，里面包括源代码；下面的操作步骤会在那个目录里面执行(即 <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>)。我们可以使用 SourceDirectory，NoSourceDirectory 和 Source<b>N</b>ExtractDir
+<p>要理解一些字段的含义，你需要有对 Fink 所采用的构建过程有些了解。它由五个阶段组成：解压，补丁，编译，安装和构建。下面的示例路径是关于安装在 <code>/opt/sw</code> 的 gimp-1.2.1-1 软件包的。</p>
+<p>在<b>解压阶段</b>，<code>/opt/sw/src/fink.build/gimp-1.2.1-1</code> 这个目录会被创建，源代码压缩档会被在这里解压。多数情况下，这会创建一个名为 gimp-1.2.1 的目录，里面包括源代码；下面的操作步骤会在那个目录里面执行(即 <code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>)。我们可以使用 SourceDirectory，NoSourceDirectory 和 Source<b>N</b>ExtractDir
 这三个字段来控制有关细节。</p>
 <p>在<b>补丁阶段</b>，源代码会被打上补丁，以使得可以在 Darwin 下面编译。由 UpdateConfigGuess，UpdateLibtool，Patch 和 PatchScrip 这几个字段所指明的操作将被按照顺序执行。</p>
 <p>在<b>编译阶段</b>，源代码被配置和编译。通常这会以某些参数来调用 <code>configure</code> 脚本，然后执行一个 <code>make</code> 命令。
@@ -27,9 +27,9 @@ maintainer mode), the TestScript will be run immediately after the
 CompileScript.
 
 </p>
-<p>在<b>安装阶段</b>，软件包被安装到一个临时目录，<code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d)。(注意 "root-" 部分。)
-所有通常应该安装到 <code>/sw</code> 的文件现在被安装在
-<code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (= %i = %d%p)。 
+<p>在<b>安装阶段</b>，软件包被安装到一个临时目录，<code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d)。(注意 "root-" 部分。)
+所有通常应该安装到 <code>/opt/sw</code> 的文件现在被安装在
+<code>/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</code> (= %i = %d%p)。 
 详细信息请查看 InstallScript 字段的描述。</p>
 <p>(<b>从 fink 0.9.9 开始，</b>可以通过 <code>SplitOff</code> 字段从一个软件包描述文件生成几个软件包。在安装阶段的尾段，会为每个软件包建立一个单独的安装目录，文件会被移到相应的目录中，)</p>
 <p>在<b>构建阶段</b>，会根据临时文件夹的内容构建一个二进制安装包(.deb)文件。你不能直接影响这个步骤，但软件包描述里面的许多字段会用于生成 dpkg 的 <code>control</code> 文件。</p>
@@ -570,7 +570,7 @@ Primary: ftp://ftp.barbarorg/pub/
 
 <p>
   The standard continent and country codes are listed in
-  <code>/sw/lib/fink/mirror/_keys</code>, which is part of the
+  <code>/opt/sw/lib/fink/mirror/_keys</code>, which is part of the
   fink or fink-mirrors package.
 </p>
 
@@ -578,7 +578,7 @@ Primary: ftp://ftp.barbarorg/pub/
 <p>
 源代码压缩档的 URL。它应该是一个 HTTP 或 FTP URL，但 Fink 本身并不关心这一点-它只是把它传递给 wget。这个字段对镜像站点的 URL 标记模式：
 <code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>。
-这会在 Fink 的配置中寻找 <b>mirror-name</b> 镜像的设置，然后添加  <b>relative-path</b> 部分，并把结果作为实际的 URL。已知的 <b>mirror-name</b> 被列在 <code>/sw/lib/fink/mirror/_list</code> 中。它是 fink 或 fink-mirror 软件包的一部分。另一方面，使用 <code>custom</code> 作为 <b>mirror-name</b> 会使 Fink 使用 <code>CustomMirror</code>
+这会在 Fink 的配置中寻找 <b>mirror-name</b> 镜像的设置，然后添加  <b>relative-path</b> 部分，并把结果作为实际的 URL。已知的 <b>mirror-name</b> 被列在 <code>/opt/sw/lib/fink/mirror/_list</code> 中。它是 fink 或 fink-mirror 软件包的一部分。另一方面，使用 <code>custom</code> 作为 <b>mirror-name</b> 会使 Fink 使用 <code>CustomMirror</code>
 字段。
 在 URL 使用前，会进行百分号展开。
 记住 %n 包括所有 %type_ 变种数据，所以你可能会希望在这里使用 %{ni}(也许还包括一些特定的 %type_ 展开)。
@@ -626,7 +626,7 @@ use <code>TestSource</code> and related fields, inside the
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>
 对于上面的例子，这会使得下载的源代码压缩档保存在
-<code>/sw/src/coolapp-1.2.3.tar.gz</code>，以满足我们的一般命名约定。
+<code>/opt/sw/src/coolapp-1.2.3.tar.gz</code>，以满足我们的一般命名约定。
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
@@ -644,11 +644,11 @@ use <code>TestSource</code> and related fields, inside the
 </p>
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 <p>
-要计算校验值，可以使用 <code>md5sum</code> 工具。如果你希望检查压缩档 <code>/sw/src/apache_1.3.23.tar.gz</code> 的校验值，
+要计算校验值，可以使用 <code>md5sum</code> 工具。如果你希望检查压缩档 <code>/opt/sw/src/apache_1.3.23.tar.gz</code> 的校验值，
 你可以运行下面的命令(下面还包括命令的输出结果)：
 </p>
-<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
+<pre>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</pre>
 <p>
 正如你所看见的一样，靠左边的数值就是你需要的结果。
 </p>
@@ -747,10 +747,10 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 这发生在补丁阶段，并在 PatchScript 脚本运行之前。
 </p>
 <p>
-打过补丁的版本可以识别 DESTDIR 并确保信息目录是在 <code>/sw/share/locale</code>，而不是 <code>/sw/lib/locale</code>。
+打过补丁的版本可以识别 DESTDIR 并确保信息目录是在 <code>/opt/sw/share/locale</code>，而不是 <code>/opt/sw/lib/locale</code>。
 在使用这个字段之前，确定你不会破坏软件包以及的确有这个必要。
 你可以运行 <code>diff</code> 命令来找出软件包的版本和 Fink 的版本的区别(在
-<code>/sw/lib/fink/update</code>)。
+<code>/opt/sw/lib/fink/update</code>)。
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 
@@ -1012,9 +1012,9 @@ the other value when test suites are active.</li>
 一个针对 perl 模块软件包的布尔值。
 为真的话，它会添加代码到 install，postrm 和 postinst
 脚本来维护 perl 软件包所提供的 .pod 文件。
-这包括在中央的<code>/sw/lib/perl5/darwin/perllocal.pod</code>文件中添加和删除 .pod 数据。
+这包括在中央的<code>/opt/sw/lib/perl5/darwin/perllocal.pod</code>文件中添加和删除 .pod 数据。
 (如果类型是以 <code>perl $version</code> 这样包括特定版本的形式给出，例如 5.6.0，那么这些脚本会被用于处理在
-<code>/sw/lib/perl5/$version/perllocal.pod</code> 的中央 .pod 文件。)
+<code>/opt/sw/lib/perl5/$version/perllocal.pod</code> 的中央 .pod 文件。)
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
@@ -1110,7 +1110,7 @@ Shared libraries that are "private" are denoted by an exclamation mark preceedin
 </p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
 <b>从 fink 0.10.0 开始。</b>
-这个字段提供设置运行时环境变量为一些静态值的简便方法(如果你需要更灵活的方式，参考 <a href="#profile.d">profile.d 脚本部分</a>)。在你的软件包安装以后，这些变量会通过 <code>/sw/bin/init.[c]sh</code> 脚本设置。
+这个字段提供设置运行时环境变量为一些静态值的简便方法(如果你需要更灵活的方式，参考 <a href="#profile.d">profile.d 脚本部分</a>)。在你的软件包安装以后，这些变量会通过 <code>/opt/sw/bin/init.[c]sh</code> 脚本设置。
 </p>
 <p>
 你的环境的值可以包括空格(尾部的连续空格会被截断)；另外，百分号展开也会进行。例如：
@@ -1120,7 +1120,7 @@ Shared libraries that are "private" are denoted by an exclamation mark preceedin
  AnotherVar: foo bar
 &lt;&lt;</pre>
 <p>
-会设置两个环境变量 "SomeVar" 和 "AnotherVar"，它们的值相应地被设置为 "/sw/Value" (或你选择的前缀)以及 "foo bar"。
+会设置两个环境变量 "SomeVar" 和 "AnotherVar"，它们的值相应地被设置为 "/opt/sw/Value" (或你选择的前缀)以及 "foo bar"。
 </p>
 <p>
 这个字段通过添加合适的命令到 InstallScript 来实现。
@@ -1358,7 +1358,7 @@ and <code>PatchScript</code> fields for more information.
 
 </p>
 
-<p>因为你可能会在补丁文件中允许用户选择安装前缀，建议在补丁文件中使用类似 <code>@PREFIX@</code> 的变量来代替 <code>/sw</code>，然后使用：</p>
+<p>因为你可能会在补丁文件中允许用户选择安装前缀，建议在补丁文件中使用类似 <code>@PREFIX@</code> 的变量来代替 <code>/opt/sw</code>，然后使用：</p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</pre>
 <p>补丁文件应该是 unidiff 格式，而且一般应该通过：</p>
 <pre>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</pre>
@@ -1374,12 +1374,12 @@ and <code>PatchScript</code> fields for more information.
 
 <p>
 如果你的软件包需要一些运行时的初始化(例如，设置环境变量)，你可以使用 profile.d 脚本。
-这些脚本片段由 <code>/sw/bin/init.[c]sh</code> 脚本所运行。通常，所有 fink 的用户都会把这些脚本放到它们的起动文件(<code>.cshrc</code> 或类似的文件)中。
-你的软件包必须为两个变种都提供脚本：一个给 sh 兼容的 shells (sh, zsh, bash, ksh, ...) 而另一个给 csh 兼容的 shells (csh, tcsh)。它们应该被安装在 <code>/sw/etc/profile.d/%n.[c]sh</code> (和往常一样，%n 代表软件包名)。
+这些脚本片段由 <code>/opt/sw/bin/init.[c]sh</code> 脚本所运行。通常，所有 fink 的用户都会把这些脚本放到它们的起动文件(<code>.cshrc</code> 或类似的文件)中。
+你的软件包必须为两个变种都提供脚本：一个给 sh 兼容的 shells (sh, zsh, bash, ksh, ...) 而另一个给 csh 兼容的 shells (csh, tcsh)。它们应该被安装在 <code>/opt/sw/etc/profile.d/%n.[c]sh</code> (和往常一样，%n 代表软件包名)。
 另外，它们的可读和可执行属性都应该被设置(即，用 -m 755 参数安装它们)，否则它们不能被正确加载。
 </p>
 <p>
-如果你只需要设置一些环境变量(例如，把 QTDIR 设置为 '/sw')，你可以使用 RuntimeVars 字段来比较方便地实现这个所说的功能。
+如果你只需要设置一些环境变量(例如，把 QTDIR 设置为 '/opt/sw')，你可以使用 RuntimeVars 字段来比较方便地实现这个所说的功能。
 </p>
 
 

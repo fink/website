@@ -1,7 +1,7 @@
 <?php
 $title = "netiquette - Unsubscribing";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:15';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="netiquette Contents"><link rel="prev" href="reply.php?phpLang=en" title="Replying to Posts">';
 
 

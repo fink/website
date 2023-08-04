@@ -1,7 +1,7 @@
 <?php
 $title = "Netiquette - Anfang";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/02/19 17:20:27';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Netiquette Contents"><link rel="next" href="reply.php?phpLang=de" title="Antworten auf eine Nachricht"><link rel="prev" href="before-post.php?phpLang=de" title="Vorbereitung einer Anfrage">';
 
 
@@ -55,7 +55,7 @@ error unpacking foo
 Checking for bar-config...no
 Error:  bar-config not found
 ....</pre>
-                <p>Denken sie, dass es helfen könnte, dann können sie auf den entsprechende Teil der Log-Datei der Konfiguration aufnehmen, z. B. <code>/sw/src/foo-3.141-6/foo-3.141/config.log</code>. <b>Aber bitte nicht die gesamte Datei; sie ist meistens sehr lang.</b>
+                <p>Denken sie, dass es helfen könnte, dann können sie auf den entsprechende Teil der Log-Datei der Konfiguration aufnehmen, z. B. <code>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</code>. <b>Aber bitte nicht die gesamte Datei; sie ist meistens sehr lang.</b>
                 </p>
                 </li>
                 <li>Tritt der Fehler gleich nach Beginn der Paketerstellung auf, dann wird die letzte Zeile benötigt, die der Compiler versuchte auszuführen:

@@ -1,7 +1,7 @@
 <?php
 $title = "Tutoriel d'empaquetage - Préliminaires";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:18:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents"><link rel="next" href="example.php?phpLang=fr" title="Exemple - le paquet Maxwell"><link rel="prev" href="index.php?phpLang=fr" title="Tutoriel d\'empaquetage Contents">';
 
 
@@ -12,7 +12,7 @@ include_once "header.fr.inc";
 
 
 <h2><a name="Learn">1.1 Apprentissage des bases</a></h2>
-<p><b>Note :</b> dans ce document, nous supposons que <code>fink</code> est installé dans <code>/sw</code> - son emplacement par défaut. Quand vous verrez un bloc de code semblable à celui-ci :</p>
+<p><b>Note :</b> dans ce document, nous supposons que <code>fink</code> est installé dans <code>/opt/sw</code> - son emplacement par défaut. Quand vous verrez un bloc de code semblable à celui-ci :</p>
 <pre>
 finkdev% unecommandequelconque
 </pre>
@@ -27,13 +27,13 @@ finkdev% unecommandequelconque
 
 
 de lire et de tenter de comprendre l'<a href="example.php?phpLang=fr#basics">exemple donné ici</a>.</li>
-<li>d'étudier d'autres paquets situés dans le répertoire <code>/sw/fink/dists/unstable/main/finkinfo/</code> ou dans le <a href="http://fink.cvs.sourceforge.net/fink/dists/">répertoire central CVS en ligne</a> et de prendre un (ou plusieurs) fichier(s) info comme point de départ.</li>
+<li>d'étudier d'autres paquets situés dans le répertoire <code>/opt/sw/fink/dists/unstable/main/finkinfo/</code> ou dans le <a href="http://fink.cvs.sourceforge.net/fink/dists/">répertoire central CVS en ligne</a> et de prendre un (ou plusieurs) fichier(s) info comme point de départ.</li>
 <li>de rechercher dans le <a href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Traqueur de soumissions de paquets</a> si quelqu'un a déjà essayé de construire le même paquet ou dans le <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Traqueur de demandes de paquets</a> s'il existe déjà une requête pour ce paquet. Vous y trouverez une mine de renseignements.</li>
 <li>de feuilleter le <a href="/doc/packaging/index.php">Guide de création de paquets</a> si vous souhaitez de plus amples informations sur un sujet particulier.</li>
 </ul>
 
 <h2><a name="Make">1.2 Création d'un paquet</a></h2>
-<p>Sauvegardez le nouveau fichier info (et le fichier rustine si nécessaire) dans le répertoire <code>/sw/fink/dists/local/main/finkinfo/</code>. Le fichier doit avoir pour nom <code>nomdupaquet.info</code> (et la rustine doit s'appeler <code>nomdupaquet.patch</code>), où <code>nomdupaquet</code> est le nom de votre paquet. Si ce répertoire n'existe pas, vous devez le créer.</p>
+<p>Sauvegardez le nouveau fichier info (et le fichier rustine si nécessaire) dans le répertoire <code>/opt/sw/fink/dists/local/main/finkinfo/</code>. Le fichier doit avoir pour nom <code>nomdupaquet.info</code> (et la rustine doit s'appeler <code>nomdupaquet.patch</code>), où <code>nomdupaquet</code> est le nom de votre paquet. Si ce répertoire n'existe pas, vous devez le créer.</p>
 <p><b>Note importante :</b> vérifiez que <code>fink</code> est à jour en exécutant la commande :</p>
 <pre>
 finkdev% fink selfupdate
@@ -58,23 +58,23 @@ finkdev% fink index
 <p>Pendant le processus de validation de votre paquet, vous devez régler le niveau de verbosité de <code>fink</code> à la plus haute valeur possible. Voir la section <a href="/doc/users-guide/conf.php#optional">fichier de configuration de fink</a> pour savoir comment le changer.</p>
 <p>Vérifiez que votre paquet est valide en exécutant :</p>
 <pre>
-finkdev% fink validate /sw/fink/dists/local/main/finkinfo/nomdupaquet.info
+finkdev% fink validate /opt/sw/fink/dists/local/main/finkinfo/nomdupaquet.info
 </pre>
 <p>Si c'est le cas, essayez de construire le paquet en exécutant :</p>
 <pre>
 finkdev% fink -m --build-as-nobody rebuild nomdupaquet
 </pre>
-<p>Observez attentivement les messages d'erreur or d'attention du processus de construction. Assurez-vous, en particulier, que tout s'installe dans le répertoire de destination (qui est <code>/sw/src/root-nomdupaquet-%v-%r/sw</code>) à partir duquel <code>fink</code> construit le paquet binaire. Rien ne doit être installé directement dans <code>/sw</code>.</p>
+<p>Observez attentivement les messages d'erreur or d'attention du processus de construction. Assurez-vous, en particulier, que tout s'installe dans le répertoire de destination (qui est <code>/opt/sw/src/root-nomdupaquet-%v-%r/opt/sw</code>) à partir duquel <code>fink</code> construit le paquet binaire. Rien ne doit être installé directement dans <code>/opt/sw</code>.</p>
 <p>Si vous utilisez l'option <code>--keep-build-dir</code> ou <code>-k</code> de <code>fink</code>, le répertoire de construction sera conservé. C'est là que <code>fink</code> décompresse le fichier source téléchargé et que le paquet est construit. Cela vous aidera à déboguer le processus de construction. Voir <code>man fink</code> pour de plus amples informations.</p>
 <p>Vous pouvez aussi utiliser l'option <code>--keep-root-dir</code> ou <code>-K</code>, elle permet de conserver le répertoire de destination. C'est là que <code>fink</code> construit l'arborescence d'installation du paquet. La comparaison entre les répertoires de construction et d'installation peut aider à déboguer la phase d'installation.</p>
 <p>Si la construction du paquet se passe bien, vérifiez le contenu du paquet binaire en exécutant :</p>
 <pre>
-finkdev% dpkg -c /sw/fink/dists/local/main/binary-darwin-powerpc/nomdupaquet.deb
+finkdev% dpkg -c /opt/sw/fink/dists/local/main/binary-darwin-powerpc/nomdupaquet.deb
 </pre>
-<p>Vérifiez que tous les fichiers qui sont censés être dans le paquet se trouvent bien dans le fichier .deb. Rappel : assurez-vous que rien n'est installé directement dans <code>/sw</code>.</p>
+<p>Vérifiez que tous les fichiers qui sont censés être dans le paquet se trouvent bien dans le fichier .deb. Rappel : assurez-vous que rien n'est installé directement dans <code>/opt/sw</code>.</p>
 <p>Vous pouvez maintenant valider le paquet binaire en exécutant :</p>
 <pre>
-finkdev% fink validate /sw/fink/dists/local/main/binary-darwin-powerpc/nomdupaquet.deb
+finkdev% fink validate /opt/sw/fink/dists/local/main/binary-darwin-powerpc/nomdupaquet.deb
 </pre>
 <p>Si tout est correct, installez le paquet avec :</p>
 <pre>

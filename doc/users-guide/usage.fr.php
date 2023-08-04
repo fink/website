@@ -1,7 +1,7 @@
 <?php
 $title = "Guide utilisateur - Outil fink";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -76,7 +76,7 @@ Do you want to continue? [Y/n]</pre>
 <h2><a name="remove">6.4 remove - suppression</a></h2>
 
 <p>La commande remove supprime les paquets du système en appelant la commande '<code>dpkg --remove</code>'. L'implantation actuelle de cette commande a un défaut : elle ne vérifie pas elle-même les dépendances, mais délègue ce travail à l'outil dpkg (en général, cela ne pose pas de problèmes).</p>
-<p>La commande <b>remove</b> ne supprime que le paquet lui-même (à l'exclusion des fichiers de configuration). Le paquet compressé <code>.deb</code> reste sur le système. Ceci signifie que vous pouvez réinstaller le paquet plus tard, sans avoir à le recompiler. Si vous avez besoin de libérer de l'espace disque, vous pouvez supprimer les fichiers <code>.deb</code> de l'arborescence <code>/sw/fink/dists</code>.</p>
+<p>La commande <b>remove</b> ne supprime que le paquet lui-même (à l'exclusion des fichiers de configuration). Le paquet compressé <code>.deb</code> reste sur le système. Ceci signifie que vous pouvez réinstaller le paquet plus tard, sans avoir à le recompiler. Si vous avez besoin de libérer de l'espace disque, vous pouvez supprimer les fichiers <code>.deb</code> de l'arborescence <code>/opt/sw/fink/dists</code>.</p>
 <p>Les options suivantes peuvent être utilisées avec la command <code>fink remove</code> :</p>
 <pre>
 -h, --help
@@ -245,7 +245,7 @@ fink apropos -s=kde irc
 
 <h2><a name="selfupdate">6.18 selfupdate - mise à jour automatique</a></h2>
 
-<p>Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <code>/sw/fink/dists</code> de telle sorte qu'elle soit mise à jour directement via Git, ou avec rsync, si vous choisissez l'une de ces options lors de la première utilisation de cette commande. Vous avez alors accès aux toutes dernières versions des paquets.</p>
+<p>Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <code>/opt/sw/fink/dists</code> de telle sorte qu'elle soit mise à jour directement via Git, ou avec rsync, si vous choisissez l'une de ces options lors de la première utilisation de cette commande. Vous avez alors accès aux toutes dernières versions des paquets.</p>
 <p>Si l'option <a href="#options">--use-binary-dist option</a> est activée, la liste des paquets disponibles dans la distribution binaire est, elle aussi, mise à jour.</p>
 
 <h2><a name="selfupdate-rsync">6.19 selfupdate-rsync</a></h2>
@@ -320,7 +320,7 @@ fink apropos -s=kde irc
 <pre>
 -k,--keep-src
     Déplace les anciens fichiers sources
-    dans le répertoire /sw/src/old/
+    dans le répertoire /opt/sw/src/old/
     au lieu de les supprimer.
 -d,--dry-run
     Affiche le nom des fichiers à supprimer,

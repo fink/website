@@ -1,7 +1,7 @@
 <?php
 $title = "パッケージ作成 - コンパイラ";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="reference.php?phpLang=ja" title="リファレンスマニュアル"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 
@@ -48,7 +48,7 @@ Apple 提供の特定バージョンのバイナリを指定しなければな�
 </p>
 <p>
 正しい g++ コンパイラが使用されるよう新手法が 10.4-transitional ディストリビューションから採用されました．
-コンパイル時に，<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (XXX はバージョン番号) 
+コンパイル時に，<code>/opt/sw/var/lib/fink/path-prefix-g++-XXX</code> (XXX はバージョン番号) 
 ディレクトリが PATH に追加されます．
 このディレクトリには正しいコンパイラと正しいバージョンの g++ が使われるようなシェルスクリプトが入っています．
 </p>

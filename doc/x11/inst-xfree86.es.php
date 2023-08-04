@@ -1,7 +1,7 @@
 <?php
 $title = "Ejecución de X11 - Instalación de XFree86";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=es" title="El arranque de XFree86"><link rel="prev" href="history.php?phpLang=es" title="Historia">';
 
 
@@ -112,7 +112,7 @@ completamente.</p>
 un gestor de ventanas diferente, puedes hacer como en el siguiente ejemplo: 
 </p>
           <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</pre>
+exec /opt/sw/bin/fvwm2</pre>
           <p>Es posible, por supuesto, llamar a cualquier otro gestor de 
 ventanas, a <code>startkde</code>, etc.</p>
         </li>
@@ -128,11 +128,11 @@ pero a pesar de ello la tienen.</p>
 entornos de Fink.  
 Para arrancar aplicaciones instaladas a través de Fink 
 (p.e. gestores de ventana, sesiones de gnome, otras de 
-<code>/sw/bin</code>) ponga lo que sigue cerca 
+<code>/opt/sw/bin</code>) ponga lo que sigue cerca 
 del principio de <code>~/.xinitrc</code> (i.e. después del 
 "<code>#!/bin/sh</code>" inicial pero antes de ejecutar 
 ningún programa):</p>
-          <pre> . /sw/bin/init.sh
+          <pre> . /opt/sw/bin/init.sh
 </pre>
           <p>para inicializar el entorno de Fink.  
 Nota:  Se usa <code>init.sh</code> en lugar de 
@@ -144,12 +144,12 @@ por <code>sh</code> y no por <code>tcsh</code>.</p>
 de Fink para algunas de sus funciones requieren un tratamiento 
 especial cuando son invocadas desde el menú Aplicaciones.  En lugar de colocar la 
 ruta completa hasta el fichero, p.e.</p>
-          <pre>/sw/bin/emacs</pre>
+          <pre>/opt/sw/bin/emacs</pre>
           <p>hay que usar algo como lo siguiente, si usas bash 
 como shell por defecto:</p>
-          <pre>. /sw/bin/init.sh ; emacs</pre>
+          <pre>. /opt/sw/bin/init.sh ; emacs</pre>
           <p>o, si usas tcsh:</p>
-          <pre>source /sw/bin/init.csh ; emacs</pre>
+          <pre>source /opt/sw/bin/init.csh ; emacs</pre>
           <p>Así nos aseguramos que la aplicación tiene la información correcta
 en PATH. Se debe usar esta sintaxis para cualquier aplicación instalada vía Fink.</p>
         </li>

@@ -1,7 +1,7 @@
 <?php
 $title = "运行 X11 - 启动 X11";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="xtools.php?phpLang=zh" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=zh" title="获取和安装 X11">';
 
 
@@ -124,12 +124,12 @@ include_once "header.zh.inc";
 A simple example that starts up GNOME on XFree86 or Xorg:
 
 </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec gnome-session</pre>
       <p>
 一个稍微复杂一点的针对 bash 用户的例子会关闭 X11 响铃，启动一些客户程序，最后运行 Enlightenment 窗口管理器：
 </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -143,21 +143,21 @@ exec enlightenment</pre>
 
 <p>To start GNOME 2.4 and later under Apple's X11:</p>
 
- <pre>. /sw/bin/init.sh
+ <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </pre>
  
 <p>在苹果的 X11 下启动 KDE 3.2 (版本大于 3.2.2-21)：</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
+/opt/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
 </pre>
 
 <p>最后，在苹果的 X11 下启动最新的非稳定版 KDE：</p>
-<pre>. /sw/bin/init.sh
-/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
+<pre>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
 </pre>
     
     

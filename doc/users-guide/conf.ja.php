@@ -1,7 +1,7 @@
 <?php
 $title = "ユーザーガイド - fink.conf";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 
@@ -25,7 +25,7 @@ include_once "header.ja.inc";
 一般的に、こういった設定は上級者専用のオプションです。
 </p>
 <p>
-<b>fink.conf</b> ファイルは <code>/sw/etc/fink.conf</code> にあります。
+<b>fink.conf</b> ファイルは <code>/opt/sw/etc/fink.conf</code> にあります。
 自分の好きなテキストエディタで編集することができますが、スーパーユーザー権限が必要です。
 </p>
 
@@ -57,7 +57,7 @@ ListOption: Option1 Option2 Option3
 <b>Basepath:</b> path</p>
 <p>
 Fink がインストールされている場所を知らせます。
-Fink の最初のインストール時に変更していない限り、デフォルトでは <b>/sw</b> です。
+Fink の最初のインストール時に変更していない限り、デフォルトでは <b>/opt/sw</b> です。
 この値を変更しては<b>いけません</b>。
 <b>fink</b> が混乱します。
 </p>
@@ -91,10 +91,10 @@ unstable/crypto - 非安定版の暗号パッケージ
 unstable/main   - 他の非安定版パッケージ
 </pre>
 <p>
-独自のツリーを <code>/sw/fink/dists</code> ディレクトリに追加することもできますが、通常は必要ありません。
+独自のツリーを <code>/opt/sw/fink/dists</code> ディレクトリに追加することもできますが、通常は必要ありません。
 デフォルトのツリーは "local/main local/bootstrap
 stable/main" です。
-この一覧は <code>/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
+この一覧は <code>/opt/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
 (fink 0.21.0 より、 <code>fink</code> が自動的に行うようになりました)
 </p>
 <p>ツリーの順序には意味があります。後のツリーにあるパッケージが前のツリーのパッケージを書き換えます。</p>
@@ -106,14 +106,14 @@ stable/main" です。
 10.0 以前はサポートされていません。
 10.1 は現バージョンからサポート対象外となりました。
 10.2 は August 2003 Developer Tools に更新している場合のみサポートされています。
-このフィールドは <code>/sw/lib/fink/postinstall.pl</code> を実行することで設定されます。
+このフィールドは <code>/opt/sw/lib/fink/postinstall.pl</code> を実行することで設定されます。
 ユーザーがこの値を変えてはいけません。
 </p>
 </li>
 <li>
 <p>
 <b>FetchAltDir:</b> path</p>
-<p><code>fink</code> は通常、ソースを <code>/sw/src</code> に保存します。
+<p><code>fink</code> は通常、ソースを <code>/opt/sw/src</code> に保存します。
 この値を変えることで、他の場所にダウンロードしたソースコードを探させることもできます。
 例えば:
 </p>
@@ -148,7 +148,7 @@ High (全て報告する)
 <li>
 <p>
 <b>NoAutoIndex:</b> ブール値</p>
-<p>Fink は、パッケージ記述ファイルを /sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
+<p>Fink は、パッケージ記述ファイルを /opt/sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
 この値が "True" でない限り、 Fink はパッケージインデックスを更新する必要があるか確認します。
 デフォルト値は "False" で、変更することは勧めません。
 変更した場合、 <code>fink index</code> コマンドを手動で実行してインデックスを更新する必要があります。
@@ -167,7 +167,7 @@ High (全て報告する)
 <b>Buildpath:</b> パス</p>
 <p>
 Fink はソースからコンパイルする場合、パッケージごとに仮ディレクトリを作成します。
-デフォルトでは Panther 以前では <code>/sw/src</code> 内に、Tiger からは <code>/sw/src/fink.build</code> 内に、
+デフォルトでは Panther 以前では <code>/opt/sw/src</code> 内に、Tiger からは <code>/opt/sw/src/fink.build</code> 内に、
 置かれていますが、別の場所を使いたい場合はここでパスを指定します。
 仮ディレクトリについては、本文書中<a href="#developer">Developer Settings</a> 節の
 の <code>KeepRootDir</code> と <code>KeepBuildDir</code> のフィールドの解説をご覧下さい。
@@ -271,7 +271,7 @@ git はミラーを使えないという欠点があるため、 git サーバ�
 <p>
 <b>MirrorContinent:</b> 3 字のコード</p>
 <p>この値を変えるには、 <code>fink configure</code> コマンドを使います。
-3 字のコードは <code>/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
+3 字のコードは <code>/opt/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
 例えば、アジアの場合:
 </p>
 <pre>MirrorContinent: asi</pre>
@@ -280,7 +280,7 @@ git はミラーを使えないという欠点があるため、 git サーバ�
 <p>
 <b>MirrorCountry:</b> 6 字のコード</p>
 <p>この値を変えるには、 <code>fink configure</code> コマンドを使います。
-6 字のコードは <code>/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
+6 字のコードは <code>/opt/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
 例えば、日本の場合:</p>
 <pre>MirrorCountry: asi-JP</pre>
 </li>
@@ -356,7 +356,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 				<p>
 					Fink パッケージ <code>ccache-default</code> がインストールされている場合、
 					Fink パッケージを作成中にこれがつくるキャッシュがここに保存される。
-					規定値は <code>/sw/var/ccache</code> 。
+					規定値は <code>/opt/sw/var/ccache</code> 。
 					<code>none</code> と設定された場合、 fink は CCACHE_DIR 環境変数を設定せず、
 					ccache は <code>$HOME/.ccache</code> を使用する。
 					ルートに所有されているファイルを自分のホームディレクトリに保存することもあり得る。
@@ -366,7 +366,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
         	<li><p><b>NotifyPlugin:</b> プラグイン</p><p>
            			パッケージがいつインストール/アンインストールされたかを答える告知プラグインを指定する。
            			規定値は Growl (<code>Mac::Growl</code> が必要)。
-           			他のプラグインは、 <code>/sw/lib/perl5/Fink/Notify</code> にある。
+           			他のプラグインは、 <code>/opt/sw/lib/perl5/Fink/Notify</code> にある。
 				</p>
 			</li>
         <li><p><b>AutoScanpackages:</b> ブール値</p>
@@ -394,7 +394,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 		
 		<p>
 			fink 0.21.0 より、 fink は apt がバイナリファイルをインストールする際に使う
-			<code>/sw/etc/apt/sources.list</code> ファイルを積極的に管理します。
+			<code>/opt/sw/etc/apt/sources.list</code> ファイルを積極的に管理します。
 			デフォルトの sources.list ファイルは、以下の形式で、 Distribution と Trees が調整されています
 		</p>
 <pre># Local modifications should either go above this line, or at the end.
@@ -403,10 +403,10 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in
-# /sw/etc/fink.conf
+# /opt/sw/etc/fink.conf
 # NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
-deb file:/sw/fink local main
-deb file:/sw/fink stable main crypto
+deb file:/opt/sw/fink local main
+deb file:/opt/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release
@@ -429,8 +429,8 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 			変更がファイルの先頭か末尾であれば、 Fink は、ファイルの変更をそのままにします。
 		</p>
 		<p>
-			注記: fink 0.21.0 にアップグレードする前に <code>/sw/etc/apt/sources.list</code> を変更した場合、
-			<code>/sw/etc/apt/sources.list.finkbak</code> として保存されます。
+			注記: fink 0.21.0 にアップグレードする前に <code>/opt/sw/etc/apt/sources.list</code> を変更した場合、
+			<code>/opt/sw/etc/apt/sources.list.finkbak</code> として保存されます。
 		</p>
 	
 <p align="right"><?php echo FINK_NEXT ; ?>:

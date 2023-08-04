@@ -1,7 +1,7 @@
 <?php
 $title = "Ejecución de X11 - Arrancando XFree86";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="xtools.php?phpLang=es" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=es" title="Cómo obtener e instalar XFree86">';
 
 
@@ -145,13 +145,13 @@ que sigue)
       <p>
 Un simple ejemplo que arranca GNOME:
 </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec gnome-session</pre>
       <p>Un ejemplo más complejo para usuarios de bash que apaga las alertas 
 de X11, arranca algunos clientes y finalmente ejecuta el gestor de 
 ventanas 
 Enlightenment:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -162,27 +162,27 @@ xterm &amp;
 exec enlightenment</pre>
       <p>Para arrancar GNOME 2.2 bajo X11 de Apple, usa la siguiente secuencia:
 </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </pre>
       <p>Para GNOME 2.4 bajo X11 de Apple, metacity arranca automáticamente y 
 por lo tanto la secuencia se reduce a:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </pre>
       <p>Para arrancar KDE 3.2 (version &lt; 3.2.2-21) bajo X11 de Apple:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
       <p>Y finalmente, para arrancar la última versión inestable de KDE 
 bajo X11 de Apple:</p>
-      <pre>. /sw/bin/init.sh
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+      <pre>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
     
   <p align="right"><?php echo FINK_NEXT ; ?>:

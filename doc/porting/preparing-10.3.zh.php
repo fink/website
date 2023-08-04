@@ -1,7 +1,7 @@
 <?php
 $title = "移植 - 为 10.3 做准备";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2014/10/25 09:21:47';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="移植 Contents"><link rel="next" href="preparing-10.4.php?phpLang=zh" title="为 10.4 做准备"><link rel="prev" href="preparing-10.2.php?phpLang=zh" title="为 10.2 做准备">';
 
 
@@ -86,7 +86,7 @@ include_once "header.zh.inc";
 	  automatically linked and <code>/usr/include</code>
 	  is automatically searched for headers, you could remove any
 	  <code>-lgnugetopt</code>
-	  and <code>-I/sw/include/gnugetopt</code> flags that were
+	  and <code>-I/opt/sw/include/gnugetopt</code> flags that were
 	  manually added in order to access Fink's
 	  "libgnugetopt".
 	</p>

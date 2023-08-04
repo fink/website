@@ -1,19 +1,19 @@
 <?php
 $title = "Uso";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:20:38';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Uso de Fink</h1>
-<!--Generated from $Fink: usage.es.xml,v 1.3 2012/11/11 15:20:17 gecko2 Exp $--><h2><a name="">Configurando PATH</a></h2>
+<!--Generated from $Fink: usage.es.xml,v 1.4 2023/08/04 5:20:38 nieder Exp $--><h2><a name="">Configurando PATH</a></h2>
       
 
       <p>Para usar el software que esta instalado en jerarquía del directorio de Fink, incluyendo el comando fink, debe de configurar el ambiente del inconstante PATH. Para facilitarles esto, shell scripts han sido incluidos. Si usa tcsh, agregue en .chrc:</p>
 
-      <pre>source /sw/bin/init.csh</pre>
+      <pre>source /opt/sw/bin/init.csh</pre>
 
       <p>Revisando su .cshrc solo afectara sus nuevas shells (ejemplo, abriendo nuevas terminales), so debe de correr este comando en todas las terminales que tenía abiertas antes de haber modificado .cshrc. También necesitara correr el comando 
       <code>rehash</code>
@@ -22,7 +22,7 @@ include_once "header.inc";
 
       <p>si usa Bourne shell (ejemplo: sh, bash, zsh), use:</p>
 
-      <pre>source /sw/bin/init.sh</pre>
+      <pre>source /opt/sw/bin/init.sh</pre>
 
       <p>Fíjese en que los scripts también agregan /usr/X11R6/bin y /usr/X11R6/man a su PATH parqué puedo usa X11 cuando este instalado. Los paquetes tienes la habilidad de agregar sus propias configuraciones, por ejemplo el paquete de establece el QTDIR enviornment variable.</p>
    <h2><a name="">Usando Fink</a></h2>
@@ -44,7 +44,7 @@ include_once "header.inc";
 
       <p>El comando remove quita los paquetes que están en su sistema, hace esto usando el comando ‘dpkg –remove’. La implementación corriente tiene unos problemas: Solo trabaja con paquetes que Fink sabe de (ejemplo cuando el file .info esta presente); y tampoco no busca los paquetes que dependen en ese paquete, envés los deja para el programa dpkg (regularmente esto no causa problema).</p>
 
-      <p>El comando remove quita los paquetes, pero deja los programas que son compressed en .deb. EEsto significa que podrá instalar renuevo el paquete sin hacer el proceso de compilar el paquete. Si necesita el espacio, pueda borrar los paquetes .deb del directorio /sw/fink/dists.</p>
+      <p>El comando remove quita los paquetes, pero deja los programas que son compressed en .deb. EEsto significa que podrá instalar renuevo el paquete sin hacer el proceso de compilar el paquete. Si necesita el espacio, pueda borrar los paquetes .deb del directorio /opt/sw/fink/dists.</p>
 
       <p>Aliases: disable, deactivate, unuse, delete, purge.</p>
    <h2><a name="">update-all</a></h2>
@@ -113,7 +113,7 @@ include_once "header.inc";
    <h2><a name="">selfupdate</a></h2>
       
 
-      <p>Este comando solo le ara upgrade ha fink que han sido hechos libre, pero puede usar el comando para hacer un upgrade de la versión CVS a una versión regular. El comando no correrá si usted ha puesto /sw/fink que obtenga paquetes directamente de CVS.</p>
+      <p>Este comando solo le ara upgrade ha fink que han sido hechos libre, pero puede usar el comando para hacer un upgrade de la versión CVS a una versión regular. El comando no correrá si usted ha puesto /opt/sw/fink que obtenga paquetes directamente de CVS.</p>
    <h2><a name="">Preguntas adiccionales</a></h2>
       
 

@@ -1,7 +1,7 @@
 <?php
 $title = "Advanced - Binary Distro Server";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:12';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Advanced Contents"><link rel="prev" href="index.php?phpLang=en" title="Advanced Contents">';
 
 
@@ -27,7 +27,7 @@ The method involves the following steps on the
       
       <ol>
         <li>
-Install Fink at <code>/sw</code> (default basepath, use a
+Install Fink at <code>/opt/sw</code> (default basepath, use a
 symlink if necessary).
         </li>
         <li>
@@ -48,12 +48,12 @@ will be called at the end of the cleaning process.
         </li>
         <li>
 Start a web server:  E.g. enable "Personal Web Sharing" in the Sharing section
-of System Preferences. Then set up httpd to serve your <code>/sw/fink</code>
+of System Preferences. Then set up httpd to serve your <code>/opt/sw/fink</code>
 directory by adding the following lines to your
 <code>/etc/httpd/httpd.conf</code> file. 
           <pre>
-Alias /fink /sw/fink
-&lt;Directory /sw/fink&gt;
+Alias /fink /opt/sw/fink
+&lt;Directory /opt/sw/fink&gt;
   Options Indexes FollowSymLinks
 &lt;/Directory&gt;
           </pre>
@@ -83,15 +83,15 @@ If you use the apache2 package from Fink adjust the paths above accordingly.
       
       <ol>
         <li>
-Install Fink at <code>/sw</code> (default basepath).
+Install Fink at <code>/opt/sw</code> (default basepath).
         </li>
         <li>
 Run <code>fink configure</code> and enable the option to download
 packages from the binary distribution. ("UseBinaryDist: true" in the
-<code>/sw/etc/fink.conf</code> file.)
+<code>/opt/sw/etc/fink.conf</code> file.)
         </li>
         <li>
-Edit <code>/sw/etc/apt/sources.list</code>, and add the lines
+Edit <code>/opt/sw/etc/apt/sources.list</code>, and add the lines
 representing your Fink trees. For example, if the IP address of your build box
 is 192.168.42.7, you need to add:
           <pre>

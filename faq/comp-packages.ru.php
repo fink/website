@@ -1,7 +1,7 @@
 <?php
 $title = "Ч.З.В. - Компиляция (2)";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="usage-general.php?phpLang=ru" title="Проблемы использования пакетов - Общие вопросы"><link rel="prev" href="comp-general.php?phpLang=ru" title="Проблемы компиляции  - Общие вопросы">';
 
 
@@ -83,7 +83,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>В FinkCom
         
         <a name="libiconv-gettext">
             <div class="question"><p><b><?php echo FINK_Q ; ?>7.5: Не могу обновить <code>libiconv</code>.</b></p></div>
-            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Если вы получили сообщение об ошибке в таком виде:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>можно решить проблему при помощи</p><pre>fink remove gettext-dev 
+            <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Если вы получили сообщение об ошибке в таком виде:</p><pre>libtool: link: cannot find the library `/opt/sw/lib/libiconv.la'</pre><p>можно решить проблему при помощи</p><pre>fink remove gettext-dev 
 fink install libiconv</pre></div>
         </a>
     

@@ -1,7 +1,7 @@
 <?php
 $title = "打包 - 规则";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="fslayout.php?phpLang=zh" title="文件系统布局"><link rel="prev" href="format.php?phpLang=zh" title="软件包描述文件">';
 
 
@@ -305,7 +305,7 @@ the package should declare
 <p>and the reason must be given in the DescPackaging field.
 </p><p>
 The BuildDependsOnly field should only be mentioned in the package's .info
-file if the package contains header files, installed into /sw/include.
+file if the package contains header files, installed into /opt/sw/include.
 </p><p>
 As of fink 0.20.5, "fink validate" will issue a warning for any .deb
 which contains header files and at least one dylib, and does not declare
@@ -440,14 +440,14 @@ linking to this library.
 </p><p>
 传统上，关于 perl 模块的 Fink 软件包具有
 <code>-pm</code> 后缀，并使用 <code>Type: perl</code> 
-指令来构建，它把 perl 模块的文件保存在 <code>/sw/lib/perl5</code> 和/或
-<code>/sw/lib/perl5/darwin</code>中。按照现行规则，这个存储位置仅允许用于那些与编译它们的 perl 程序版本无关的 perl 模块(同时也不应该依赖于那些不具备版本无关性的其它模块)。
+指令来构建，它把 perl 模块的文件保存在 <code>/opt/sw/lib/perl5</code> 和/或
+<code>/opt/sw/lib/perl5/darwin</code>中。按照现行规则，这个存储位置仅允许用于那些与编译它们的 perl 程序版本无关的 perl 模块(同时也不应该依赖于那些不具备版本无关性的其它模块)。
 </p><p>
 那些版本相关的 perl 模块称为 XS 模块，
 通常除了纯粹的 perl 子程序外，还包括编译好的 C 代码。有很多办法可以识别这个情况，包括存在带有 <code>.bundle</code> 后缀的文件等。
 </p><p>
 版本相关的 perl 模块必须使用标明版本号的 perl 程序来编译，比方说 <code>perl5.6.0</code>，而且必须把它的文件标准 perl 目录下面的一个标明版本号的子目录中，例如
-<code>/sw/lib/perl5/5.6.0</code> 和 <code>/sw/lib/perl5/5.6.0/darwin</code>。习惯上，使用后缀 <code>-pm560</code> 的命名约定来代表针对 5.6.0 的 perl 模块。类似的存储和命名约定也会用于其它版本的 perl，包括 perl 5.6.1 (仅用于 10.2 代码树), perl 5.8.0 (仅用于 10.3 代码树), perl 5.8.1, perl 5.8.4, 和 perl 5.8.6。
+<code>/opt/sw/lib/perl5/5.6.0</code> 和 <code>/opt/sw/lib/perl5/5.6.0/darwin</code>。习惯上，使用后缀 <code>-pm560</code> 的命名约定来代表针对 5.6.0 的 perl 模块。类似的存储和命名约定也会用于其它版本的 perl，包括 perl 5.6.1 (仅用于 10.2 代码树), perl 5.8.0 (仅用于 10.3 代码树), perl 5.8.1, perl 5.8.4, 和 perl 5.8.6。
 </p><p>
 <code>Type: perl 5.6.0</code> 指令会自动使用相应标定版本的 perl 程序，并把文件存储在正确的子目录中。
 (这个指令从 fink 0.13.0 版本开始提供)。</p>
@@ -580,7 +580,7 @@ perlXYZ-core packages in the <code>Replaces</code> field.
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a> 找到）。
 在 Fink 的规则中有两点区别。
 首先，在 fink 中这个规则目前仅应用于 <code>emacs21</code>, <code>emacs22</code> 和 <code>emacs23</code> 软件包，而不应用于 xemacs。（这在将来可能会有改变）。
-第二，不象 Debian 的规则，Fink 软件包允许安装东西到 /sw/share/emacs/site-lisp 目录中。
+第二，不象 Debian 的规则，Fink 软件包允许安装东西到 /opt/sw/share/emacs/site-lisp 目录中。
 </p>
 
 

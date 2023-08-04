@@ -1,7 +1,7 @@
 <?php
 $title = "Guide utilisateur - Installation";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="packages.php?phpLang=fr" title="Installation de paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -30,7 +30,7 @@ Ouvrez l'icône disque "Fink 0.x.x Installer" qui apparaît sur votre bureau (ou
 <p>Elle crée un répertoire qui porte le même nom que l'archive. Ici, nous l'appellerons <code>fink-0.x.x-full</code>. Déplacez-vous dans ce répertoire et lancez le script bootstrap :</p>
 <pre>cd fink-0.x.x-full
 ./bootstrap.sh</pre>
-<p>Le script effectue quelques vérifications sur votre système et utilise sudo pour acquérir les privilèges de super-utilisateur - pour ce faire, vous devrez fournir votre mot de passe. Ensuite, vous devrez indiquer le chemin d'installation. Vous devez utiliser le chemin par défaut, <code>/sw</code>, sauf si vous avez de bonnes raisons de faire autrement. Seul le chemin par défaut vous permettra d'installer des paquets binaires ultérieurement. C'est pourquoi tous les exemples de ce guide utilise ce chemin ; modifiez le chemin en conséquence si vous utilisez un autre chemin.</p>
+<p>Le script effectue quelques vérifications sur votre système et utilise sudo pour acquérir les privilèges de super-utilisateur - pour ce faire, vous devrez fournir votre mot de passe. Ensuite, vous devrez indiquer le chemin d'installation. Vous devez utiliser le chemin par défaut, <code>/opt/sw</code>, sauf si vous avez de bonnes raisons de faire autrement. Seul le chemin par défaut vous permettra d'installer des paquets binaires ultérieurement. C'est pourquoi tous les exemples de ce guide utilise ce chemin ; modifiez le chemin en conséquence si vous utilisez un autre chemin.</p>
 <p>Ensuite, vous devrez configurer Fink. Vous devrez répondre à des questions concernant votre proxy, les miroirs et la verbosité des messages. Si vous ne comprenez pas une question, appuyez sur la touche retour chariot pour accepter le choix par défaut. Vous pourrez ultérieurement changer la configuration en utilisant la commande <code>fink configure</code>.</p>
 <p>Quand le script bootstrap aura toutes les informations nécessaires, il commencera à télécharger le code source du système de base et le compilera. Le processus continuera sans interaction de votre part. Ne vous inquiétez pas si vous voyez que certains paquets sont compilés deux fois. Ceci est nécessaire car, pour construire un paquet binaire du gestionnaire de paquets, il faut d'abord que le gestionnaire de paquets existe.</p>
 <p>À la fin du bootstrap, enchaînez sur la section <a href="#setup">Définition de votre environnement</a>.</p>
@@ -38,9 +38,9 @@ Ouvrez l'icône disque "Fink 0.x.x Installer" qui apparaît sur votre bureau (ou
 <h2><a name="setup">2.3 Définition de votre environnement</a></h2>
 
 <p>Pour pouvoir utiliser les logiciels installés dans l'arborescence de répertoires de Fink, y compris les programmes de gestion de paquets, vous devez définir la variable d'environnement PATH (et quelques autres variables). Dans la plupart des cas, vous le ferez à l'aide de la commande :</p>
-<pre>/sw/bin/pathsetup.sh</pre>
+<pre>/opt/sw/bin/pathsetup.sh</pre>
 <p>exécutée dans une fenêtre de terminal. Notez que dans certaines anciennes versions de Fink, cette commande s'appelle <code>pathsetup.command</code>. Il suffit alors de la lancer de la façon suivante :</p>
-<pre>open /sw/bin/pathsetup.command</pre>
+<pre>open /opt/sw/bin/pathsetup.command</pre>
 <p>Néanmoins, si cela ne fonctionne pas, vous pouvez configurer ces paramètres vous-même. La façon de le faire dépend du shell que vous utilisez. Vous déterminerez le shell utilisé en ouvrant un terminal et en utilisant la commande :</p>
 <pre>echo $SHELL</pre>
 <p> Si le résultat est "csh" ou "tcsh", c'est que vous utilisez le shell C. Si le résultat est bash, zsh, sh, ou quelque chose de similaire, vous utilisez vraisemblablement une variante du shell Bourne.</p>
@@ -49,23 +49,23 @@ Ouvrez l'icône disque "Fink 0.x.x Installer" qui apparaît sur votre bureau (ou
 <p>Shell Bourne (par défaut sur Mac OS X 10.3 et versions suivantes) </p>
 <p>Si vous utilisez un shell de type Bourne (sh, bash, zsh), ajoutez la ligne suivante au fichier <code>.profile</code> de votre répertoire utilisateur (s'il existe déjà un fichier <code>.bash_profile</code> dans ce répertoire, vous devez l'utiliser au lieu du fichier <code>.profile</code>) :
 </p>
-<pre>. /sw/bin/init.sh</pre>
+<pre>. /opt/sw/bin/init.sh</pre>
 <p>Si vous ne savez pas comment ajouter la ligne, utilisez ces commandes :
 </p>
 <pre>cd
 pico .profile</pre>
-<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>. /sw/bin/init.sh</code>. Ne vous inquiétez pas si vous voyez une note disant "New file". N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
+<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>. /opt/sw/bin/init.sh</code>. Ne vous inquiétez pas si vous voyez une note disant "New file". N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
 </li>
 <li>
 <p>Shell C (défaut sur Mac OS X 10.2 et versions antérieures) </p>
 <p>Si vous utilisez tcsh, ajoutez la ligne suivante au fichier <code>.cshrc</code> de votre répertoire utilisateur :
 </p>
-<pre>source /sw/bin/init.csh</pre>
+<pre>source /opt/sw/bin/init.csh</pre>
 <p>Si vous ne savez pas comment ajouter la ligne, utilisez les commandes suivantes :
 </p>
 <pre>cd
 pico .cshrc</pre>
-<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>source /sw/bin/init.csh</code>. Ne vous inquiétez pas si vous voyez une note disant "New file". N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
+<p>Vous serez alors dans un éditeur de texte plein-écran (une fenêtre plein-écran de terminal), et il vous suffira de saisir la ligne <code>source /opt/sw/bin/init.csh</code>. Ne vous inquiétez pas si vous voyez une note disant "New file". N'oubliez pas d'appuyer au moins une fois sur la touche retour chariot après la ligne saisie, puis appuyez successivement sur les touches Ctrl-O, Retour chariot et Ctrl-X pour sortir de l'éditeur.</p>
 <p>Vous devrez éditer d'autres fichiers dans les cas suivants :</p>
 <ol>
 <li>

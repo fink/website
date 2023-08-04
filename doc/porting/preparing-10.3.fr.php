@@ -1,7 +1,7 @@
 <?php
 $title = "Portage - Préparation pour 10.3";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2014/10/25 09:21:47';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Portage Contents"><link rel="next" href="preparing-10.4.php?phpLang=fr" title="Préparation pour la version 10.4"><link rel="prev" href="preparing-10.2.php?phpLang=fr" title="Préparation pour la version 10.2">';
 
 
@@ -27,7 +27,7 @@ include_once "header.fr.inc";
 </td></tr><tr valign="top"><td>libdl</td><td>
 <p>Les fichiers <code>/usr/lib/libdl.dylib</code> et <code>/usr/include/dlfcn.h</code> sont inclus maintenant ; il n'y a donc plus besoin de dépendre des paquets Fink "dlcompat", "dlcompat-dev" et "dlcompat-shlibs". Le code de la librairie est incorporé dans libSystem ; cette librairie est toujours liée automatiquement. Cela signifie que le drapeau <code>-ldl</code> n'est plus nécessaire (mais son utilisation n'a aucun effet).</p>
 </td></tr><tr valign="top"><td>GNU getopt</td><td>
-<p>Cette librairie, qui comprend la fonction <code>getopt_long()</code>, a été incorporée dans libSystem et <code>/usr/include/getopt.h</code> ; vous n'avez donc pas besoin d'utiliser les paquets Fink "libgnugetopt" et "libgnugetopt-shlibs". Comme libSystem est automatiquement liée et que le répertoire <code>/usr/include</code> fait partie des répertoires automatiques de recherche des headers, vous pouvez supprimer tous les drapeaux <code>-lgnugetopt</code> et <code>-I/sw/include/gnugetopt</code> qui avaient été ajoutés pour permettre d'accéder au paquet Fink "libgnugetopt".</p>
+<p>Cette librairie, qui comprend la fonction <code>getopt_long()</code>, a été incorporée dans libSystem et <code>/usr/include/getopt.h</code> ; vous n'avez donc pas besoin d'utiliser les paquets Fink "libgnugetopt" et "libgnugetopt-shlibs". Comme libSystem est automatiquement liée et que le répertoire <code>/usr/include</code> fait partie des répertoires automatiques de recherche des headers, vous pouvez supprimer tous les drapeaux <code>-lgnugetopt</code> et <code>-I/opt/sw/include/gnugetopt</code> qui avaient été ajoutés pour permettre d'accéder au paquet Fink "libgnugetopt".</p>
 </td></tr></table>
 <p>Lors de la migration d'un paquet vers Mac OS X 10.3, essayez de supprimer ces dépendances obsolètes, car il se peut que ces paquets soient supprimés des arborescences futures. Cela signifie qu'il faut un fichier de description différent pour chaque arborescence. Comme toujours, le champ <code>Revision</code> doit être incrémenté lors de changements faits sur un paquet. De cette façon, les utilisateurs qui passent de Mac OS X 10.2 à Mac OS X 10.3 voient les paquets spécifiques à la branche 10.3 comme "plus récents" que les paquets de l'arborescence 10.2. Par convention, le champ <code>Revision</code> doit être incrémenté de 10 unités lors d'une migration vers un arbre plus récent de façon à laisser une marge pour pouvoir mettre à jour les paquets des branches moins récentes.</p>
 <p>Lors du test d'un paquet en migration, n'oubliez pas de désinstaller les paquets que vous avez supprimé du champ <code>BuildDepends</code>, pour éviter que le compilateur lie avec les librairies Fink installées.</p>

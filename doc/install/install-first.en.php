@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - First Time";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2015/11/01 02:12:02';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/03 20:24:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Installation Contents"><link rel="next" href="install-up03.php?phpLang=en" title="Upgrading Fink"><link rel="prev" href="install-fast.php?phpLang=en" title="The Fast Track">';
 
 
@@ -57,7 +57,7 @@ I'm talking hours or even days here.
 <h2><a name="directory">2.2 Choosing A Directory</a></h2>
 <p>
 Before you install, you must decide where Fink's directory hierarchy
-will live. The recommended place is /sw, and all examples in this
+will live. The recommended place is /opt/sw, and all examples in this
 document will use that. Any other directory should be fine as well, as
 long as you don't use existing directories like /usr/local or
 /usr. The bootstrap script tries to catch these.
@@ -72,19 +72,19 @@ Using symlinks to trick the bootstrap script simply won't work.
 
 <h2><a name="install">2.3 Installation</a></h2>
 <p>
-First, you need to unpack the fink-0.45.4.tar.gz tarball (it might also show up as <code>fink-0.45.4.tar</code> if you
+First, you need to unpack the fink-0.45.6.tar.gz tarball (it might also show up as <code>fink-0.45.6.tar</code> if you
 used Safari to download it).  So, in a terminal window, go to the directory where you put the tarball, and run this
 command:
 </p>
-<pre>tar xf fink-0.45.4.tar.gz</pre>
+<pre>tar xf fink-0.45.6.tar.gz</pre>
 <p>
-You now have a directory named fink-0.45.4.
-Change to it with <code>cd fink-0.45.4</code>.
+You now have a directory named fink-0.45.6.
+Change to it with <code>cd fink-0.45.6</code>.
 </p>
 <p>
 The actual installation is performed by the perl script
 bootstrap.
-So, to start installation, go to the fink-0.45.4 directory and run
+So, to start installation, go to the fink-0.45.6 directory and run
 this command:
 </p>
 <pre>./bootstrap</pre>
@@ -130,17 +130,17 @@ dialog windows asking whether you want to install XQuartz.
 If you want to do so, go ahead.  You won't have to stop the Fink install
 to do that.</p>
 <p>
-After the bootstrap procedure finishes, run<code>/sw/bin/pathsetup.sh</code>
+After the bootstrap procedure finishes, run<code>/opt/sw/bin/pathsetup.sh</code>
 to help set up your shell environment for use with Fink.  In most cases, it will run
 automatically, and prompt you for permission to make changes.  If
 the script fails, you'll have to do things by hand (see below).</p>
 <p>
 (If you need to do things by hand, and you are using csh or tcsh,
 you need to make sure that the command 
-<code>source /sw/bin/init.csh</code> is executed during startup of
+<code>source /opt/sw/bin/init.csh</code> is executed during startup of
 your shell, either by .login, .cshrc, .tcshrc, or something else
 appropriate.  If you are using bash or similar shells, the command
-you need is <code>. /sw/bin/init.sh</code>, and places where it
+you need is <code>. /opt/sw/bin/init.sh</code>, and places where it
 might get executed include .bashrc and .profile.)
 </p>
 <p>

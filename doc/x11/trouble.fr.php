@@ -1,7 +1,7 @@
 <?php
 $title = "Utilisation de X11 - Résolution de problèmes";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="tips.php?phpLang=fr" title="Conseils d\'utilisation"><link rel="prev" href="other.php?phpLang=fr" title="Autres possibilités pour X11">';
 
 
@@ -56,7 +56,7 @@ failed to connect as window server!</pre>
 Errors from xkbcomp are not fatal to the X server</pre>
 <p>Sévérité : quasi inoffensif. Cette erreur n'est pas fatale. À ma connaissance, XDarwin n'utilise pas du tout l'extension XKB. Il est probable qu'un programme client tente, malgré tout, de l'utiliser...</p>
 <pre>startx: Command not found.</pre>
-<p>Sévérité : fatal. Ceci arrive avec XDarwin 1.0a2 et 1.0a3 quand les fichiers d'initialisation de votre shell ne comprennent aucune commande pour ajouter le chemin /usr/X11R6/bin à la variable d'environnement PATH. Si vous utilisez Fink et que vous n'avez pas changer votre shell par défaut, il vous suffit d'ajouter la ligne <code>source /sw/bin/init.csh</code> au fichier <code>.cshrc</code> situé dans votre répertoire utilisateur, comme indiqué dans les instructions de Fink.</p>
+<p>Sévérité : fatal. Ceci arrive avec XDarwin 1.0a2 et 1.0a3 quand les fichiers d'initialisation de votre shell ne comprennent aucune commande pour ajouter le chemin /usr/X11R6/bin à la variable d'environnement PATH. Si vous utilisez Fink et que vous n'avez pas changer votre shell par défaut, il vous suffit d'ajouter la ligne <code>source /opt/sw/bin/init.csh</code> au fichier <code>.cshrc</code> situé dans votre répertoire utilisateur, comme indiqué dans les instructions de Fink.</p>
 <pre>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
 _XSERVTransMakeAllCOTSServerListeners: server already running</pre>
 <pre>Fatal server error:

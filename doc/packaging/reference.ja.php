@@ -1,7 +1,7 @@
 <?php
 $title = "パッケージ作成 - リファレンス";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/01/22 6:40:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -15,12 +15,12 @@ include_once "header.ja.inc";
 			<p>
 				各フィールドの意味を理解するには， Fink のビルドプロセスに関する知識がある程度必要です．
 				このプロセスは 5 段階になっていて，それぞれ解凍段階，パッチ段階，コンパイル段階，インストール段階，ビルド段階 と呼ばれます．
-				下記の例では <code>/sw</code> にパッケージ gimp-1.2.1-1 をインストールするものとします．
+				下記の例では <code>/opt/sw</code> にパッケージ gimp-1.2.1-1 をインストールするものとします．
 			</p>
 			<p>
-				<b>解凍段階</b>では，ディレクトリ <code>/sw/src/fink.build/gimp-1.2.1-1</code> が作成されてソースの tarball がそこに解凍されます．
+				<b>解凍段階</b>では，ディレクトリ <code>/opt/sw/src/fink.build/gimp-1.2.1-1</code> が作成されてソースの tarball がそこに解凍されます．
 				大抵，解凍によりソースを含むディレクトリ <code>gimp-1.2.1</code> が作られます．
-				これ以降のステップはすべてこの中 (すなわち <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>) で行われます．
+				これ以降のステップはすべてこの中 (すなわち <code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>) で行われます．
 				詳細はフィールド SourceDirectory, NoSourceDirectory や Source<b>N</b>ExtractDir (Nは数字) で変更できます．
 			</p>
 			<p>
@@ -36,10 +36,10 @@ include_once "header.ja.inc";
 			</p>
 			<p>
 				<b>インストール段階</b>では，パッケージは仮ディレクトリ
-				<code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (%d と同じ) にインストールされます
+				<code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code> (%d と同じ) にインストールされます
 				("root-" が付いていることに注意)．
-				ディレクトリ <code>/sw</code> にインストールされる予定のファイルは全て，
-				<code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (%i すなわち %d%p に同じ) にインストールされます．
+				ディレクトリ <code>/opt/sw</code> にインストールされる予定のファイルは全て，
+				<code>/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</code> (%i すなわち %d%p に同じ) にインストールされます．
 				詳細はフィールド InstallScript を参照して下さい．
 			</p>
 			<p>
@@ -624,7 +624,7 @@ eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 						<p>
-							大陸及び国のコードは  <code>/sw/lib/fink/mirror/_keys</code> にある．
+							大陸及び国のコードは  <code>/opt/sw/lib/fink/mirror/_keys</code> にある．
 							これは， fink および fink-mirrors パッケージの一部である．
 						</p>
 					</td></tr><tr valign="top"><td>Source</td><td>
@@ -635,7 +635,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							すなわち <code>mirror:&lt;ミラー名称&gt;:&lt;相対パス&gt;</code> だ．
 							こうすると Fink に <b>ミラー名称</b> として設定された URL を探し，
 							その後ろに <b>相対パス</b> を付け加え，それを実際の URL として使う．
-							Fink の認識する <b>ミラー名称</b> の一覧は <code>/sw/lib/fink/mirror/_list</code>
+							Fink の認識する <b>ミラー名称</b> の一覧は <code>/opt/sw/lib/fink/mirror/_list</code>
 							(パッケージ fink または fink-mirrors の一部) に記される．
 							または <b>ミラー名称</b> に <code>custom</code> と書くことで，
 							Fink にフィールド <code>CustomMirror</code> を使わせることもできる．
@@ -698,7 +698,7 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
 						<p>
-							この例では，ご想像の通り， tarball は <code>/sw/src/coolapp-1.2.3.tar.gz</code> として格納されることになる．
+							この例では，ご想像の通り， tarball は <code>/opt/sw/src/coolapp-1.2.3.tar.gz</code> として格納されることになる．
 						</p>
 					</td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 						<p>
@@ -721,11 +721,11 @@ Primary: ftp://ftp.barbarorg/pub/
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 						<p>
 							チェックサムの算出にはツール <code>md5sum</code> を使います．
-							tarball  <code>/sw/src/apache_1.3.23.tar.gz</code> のチェックサムが知りたいときには，
+							tarball  <code>/opt/sw/src/apache_1.3.23.tar.gz</code> のチェックサムが知りたいときには，
 							次のコマンドを実行します (出力も一緒に示した)．
 						</p>
-<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
+<pre>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</pre>
 						<p>
 							左に表示された値がここで必要なものです．
 						</p>
@@ -841,10 +841,10 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</pre>
 						</p>
 						<p>
 							パッチの当たった <code>Makefile.in.in</code> は DESTDIR の指定を優先し，メッセージカタログを，
-							<code>/sw/lib/locale</code> ではなく，確実に <code>/sw/share/locale</code> に格納します．
+							<code>/opt/sw/lib/locale</code> ではなく，確実に <code>/opt/sw/share/locale</code> に格納します．
 							このフィールドを利用する前に，入れ換えによってパッケージを破壊していないこと，また入れ換えが本当に必要かどうかを確認すること．
 							<code>diff</code> を実行すれば，パッケージ付属のものと Fink 向けのもの
-							(<code>/sw/lib/fink/update</code> 内にある) との違いが分かります．
+							(<code>/opt/sw/lib/fink/update</code> 内にある) との違いが分かります．
 						</p>
 					</td></tr><tr valign="top"><td>Patch</td><td>
 						<p>
@@ -1167,10 +1167,10 @@ make test</pre>
 							Perl モジュールのパッケージでのみ指定します．
 							"true" にすると， install, postrm および postinst スクリプトに，
 							perl パッケージの提供する .pod ファイルを管理するためのコードを追加します．
-							これには，中央のファイル <code>/sw/lib/perl5/darwin/perllocal.pod</code> に .pod ファイルのデータを追加したり，
+							これには，中央のファイル <code>/opt/sw/lib/perl5/darwin/perllocal.pod</code> に .pod ファイルのデータを追加したり，
 							そこから削除することも含まれます．
 							(<code>perl $version</code> のように，5.6.0 などの perl の特定のバージョンと共にタイプが指定された場合は，
-							それらのスクリプトが扱う中央 .pod ファイルは <code>/sw/lib/perl5/$version/perllocal.pod</code> になる．)
+							それらのスクリプトが扱う中央 .pod ファイルは <code>/opt/sw/lib/perl5/$version/perllocal.pod</code> になる．)
 						</p>
 					</td></tr><tr valign="top"><td>InstallScript</td><td>
 						<p>
@@ -1287,7 +1287,7 @@ INSTALLSCRIPT=%i/bin
 							このフィールドにより，実行時に環境変数を何らかの固定された値に設定できます．
 							(柔軟性が必要なら<a href="#profile.d">profile.d スクリプトの節</a>を参照．)
 							そのパッケージがインストールされる限り，
-							ここに指定した環境変数はスクリプト <code>/sw/bin/init.[c]sh</code> によって設定されます．
+							ここに指定した環境変数はスクリプト <code>/opt/sw/bin/init.[c]sh</code> によって設定されます．
 						</p>
 						<p>
 							環境変数の値にはブランクが使えます (値の末尾に来ると取り除かれます)．
@@ -1300,7 +1300,7 @@ AnotherVar: foo bar
 &lt;&lt;</pre>
 						<p>
 							これは2つの環境変数 'SomeVar' および 'AnotherVar' を，
-							それぞれ '/sw/Value' (環境のインストールディレクトリの値による) および 'foo bar' に設定します．
+							それぞれ '/opt/sw/Value' (環境のインストールディレクトリの値による) および 'foo bar' に設定します．
 						</p>
 						<p>
 							このフィールドは InstallScript に適切なコマンドを追加することで機能します．
@@ -1598,7 +1598,7 @@ SplitOff2: &lt;&lt;
 これらのデフォルトは書き換えられます。
 </p>
 <p>パッチファイルに、ユーザの選択した prefix を含める必要がある場合、
-<code>/sw</code> をパッチで使うのではなく、
+<code>/opt/sw</code> をパッチで使うのではなく、
 <code>@PREFIX@</code> などを使い:</p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</pre>
 <p>とします。
@@ -1620,17 +1620,17 @@ fink プロジェクトの管理者が fink サイトから提供できるよう
 			
 			<p>
 				パッケージが実行時に何らかの初期化 (環境変数の設定など) を必要とするなら， profile.d スクリプトを使えばよいでしょう．
-				これらのスクリプト断片はスクリプト <code>/sw/bin/init.[c]sh</code> によって読み込まれます．
+				これらのスクリプト断片はスクリプト <code>/opt/sw/bin/init.[c]sh</code> によって読み込まれます．
 				通常，全ての Fink ユーザがシェルのスタートアップファイル (<code>.cshrc</code> またはそれと互換なファイル) でそれを読み込むようになっています．
 				パッケージの方では，どのスクリプトにも2種類を用意しなければいけません:
 				sh 互換シェル (sh, zsh, bash, ksh, ...) 用と， csh 互換シェル (csh, tcsh) 用です．
-				両スクリプトとも <code>/sw/etc/profile.d/%n.[c]sh</code> としてインストールされる必要があります．
+				両スクリプトとも <code>/opt/sw/etc/profile.d/%n.[c]sh</code> としてインストールされる必要があります．
 				(ここで %n は，他と同様に「パッケージ名」を表す．)
 				また，正しく読み込まれるためには，それらのパーミッションは実行，読み込みが共に可能でなければいけません．
 				(すなわち，それらのインストールには引数 <code>-m 755</code> を付ける．)
 			</p>
 			<p>
-				環境変数をいくつか設定したいだけなら (QTDIR を '/sw' にする，など)，フィールド RuntimeVars を使えばよいでしょう．
+				環境変数をいくつか設定したいだけなら (QTDIR を '/opt/sw' にする，など)，フィールド RuntimeVars を使えばよいでしょう．
 				このフィールドはまさにその作業を簡略化するために用意されたものです．
 			</p>
 		

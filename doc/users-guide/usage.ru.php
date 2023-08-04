@@ -1,7 +1,7 @@
 <?php
 $title = "Руководство пользователя - Инструмент fink";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="prev" href="conf.php?phpLang=ru" title="Конфигурационный файл Fink">';
 
 
@@ -199,7 +199,7 @@ Do you want to continue? [Y/n]</pre>
                 Это значит, что вы можете реинсталлировать пакет впоследствии
                 без повторного прохождения всего процесса компиляции.
                 Если вам нужно место на диске, можно удалить <code>.deb</code> в дереве
-                <code>/sw/fink/dists</code>.</p>
+                <code>/opt/sw/fink/dists</code>.</p>
             <p>Вместе с командой fink remove можно использовать следующие опции:
             </p>
             <pre>-h,--help             - показывает существующие опции.
@@ -393,7 +393,7 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
                 затем скачивает описание пакетов и обновляет базовые пакеты,
                 в т.ч. сам <code>fink</code>.
                 Эта команда может делать обновление до регулярных выпусков версий, но также
-                может настроить ваше дерево каталогов <code>/sw/fink/dists</code> для
+                может настроить ваше дерево каталогов <code>/opt/sw/fink/dists</code> для
                 прямого обновления через Git. Это значит, что вы затем сможете иметь доступ
                 к самым последним модификациям всех пакетов.</p>
             <p> Если активирована опция <a href="#options">--use-binary-dist</a>,
@@ -459,7 +459,7 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
 --all                - All of the above modes. (new in fink-0.26.0)</pre>
       <p>If no mode is specified, <code>--debs --sources</code> is the default action. </p>
       <p>In addition, the following options may be used:</p>
-      <pre>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
+      <pre>-k,--keep-src        - Move old source files to /opt/sw/src/old/ instead of deleting them.
 -d,--dry-run         - Print the names of the files that would be deleted, but
                        do not actually delete them.
 -h,--help            - Show the modes and options which are available.</pre>

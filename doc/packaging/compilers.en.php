@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging - Compilers";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="reference.php?phpLang=en" title="Reference"><link rel="prev" href="fslayout.php?phpLang=en" title="Filesystem Layout">';
 
 
@@ -53,7 +53,7 @@ libc++.
 </p>
 <p>A new method for ensuring the correct g++ compiler was introduced with the 
 10.4-transitional distribution.  During compilation, a directory
-<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
+<code>/opt/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
 number) is added to the PATH during compilation.  This directory contains
 shell scripts which ensure that the correct compiler and version of g++ is used.
 </p>

@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: x11.en.xml,v 1.25 2013/01/03 18:17:34 alexkhansen Exp $
+Generated from $Fink: x11.en.xml,v 1.26 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - Running X11 on Darwin and Mac OS X</title></head><body>
 <table width="100%" cellspacing="0">
@@ -456,7 +456,7 @@ nano $HOME/.xinitrc.d/94-wmaker.sh</pre>
       <p>
         (or use your favorite editor).  Then put the following contents in
         <tt style="white-space: nowrap;">94-wmaker.sh</tt>:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec wmaker
       </pre>
@@ -473,7 +473,7 @@ nano $HOME/.xinitrc.d/74-xlogo.sh</pre>
       <p>
         (again, feel free to use your favorite editor).  Then put the following contents in
         <tt style="white-space: nowrap;">74-xlogo.sh</tt>:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 xlogo &amp;</pre>
       <p>Save the file, then use</p>
       <pre>chmod a+x 74-xlogo.sh</pre>
@@ -486,7 +486,7 @@ xlogo &amp;</pre>
         Example: full GNOME session.  Create an executable <tt style="white-space: nowrap;">94-gnome-session.sh</tt>
         with the following contents:
       </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</pre>
@@ -494,7 +494,7 @@ exec gnome-session</pre>
         Example: rootless GNOME session.  Create an executable <tt style="white-space: nowrap;">94-gnome-panel.sh</tt>
         with the following contents:
       </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-panel</pre>
@@ -502,7 +502,7 @@ exec gnome-panel</pre>
         Example: KDE3.  Create an executable <tt style="white-space: nowrap;">94-startkde.sh</tt> with the following
         contents:
       </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec startkde</pre>
       <p>
         (startkde automatically starts a window manager and uses <tt style="white-space: nowrap;">quartz-wm --only-proxy</tt>)
@@ -511,12 +511,12 @@ exec startkde</pre>
         Example: KDE4.  Create an executable <tt style="white-space: nowrap;">94-startkde.sh</tt> with the following
         contents:
       </p>
-      <pre>. /sw/bin/init.sh
-exec /sw/opt/kde4/x11/bin/startkde</pre>
+      <pre>. /opt/sw/bin/init.sh
+exec /opt/sw/opt/kde4/x11/bin/startkde</pre>
       <p><b>Notes:</b></p>
       <ul>
         <li>
-          Starting each script with <tt style="white-space: nowrap;">. /sw/bin/init.sh</tt> ensures that programs which require
+          Starting each script with <tt style="white-space: nowrap;">. /opt/sw/bin/init.sh</tt> ensures that programs which require
           other items from the Fink tree can find them.
         </li>
         <li>
@@ -563,7 +563,7 @@ exec /sw/opt/kde4/x11/bin/startkde</pre>
       <pre>cp /usr/X11/lib/X11/xinit/xinitrc ~/.xinitrc</pre>
       <p>
         To ensure reliable operation of Fink programs in <tt style="white-space: nowrap;">.xinitrc</tt>, you should
-        put <tt style="white-space: nowrap;">. /sw/bin/init.sh</tt> right at the beginning of the file to make sure the
+        put <tt style="white-space: nowrap;">. /opt/sw/bin/init.sh</tt> right at the beginning of the file to make sure the
         environment is set up correctly.
       </p>
       <p>
@@ -591,7 +591,7 @@ exec /sw/opt/kde4/x11/bin/startkde</pre>
       <p>
         Example:  turn the X11 bell off, starts some clients and finally execute the Enlightenment
         window manager:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -601,12 +601,12 @@ xterm &amp;
 
 exec enlightenment</pre>
       <p>Example: start GNOME:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</pre>
       <p>Finally, to start KDE3:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec startkde
 </pre>
     
@@ -625,7 +625,7 @@ exec startkde
         <li>
           <p>
             The <tt style="white-space: nowrap;">xinitrc</tt> package provides adminstrator entry points. Create the file
-            <tt style="white-space: nowrap;">/sw/etc/xinitrc-last-hook</tt> as a superuser, and
+            <tt style="white-space: nowrap;">/opt/sw/etc/xinitrc-last-hook</tt> as a superuser, and
             give it the following contents:
           </p>
           <pre>#!/bin/sh
@@ -770,7 +770,7 @@ Probably some client program tries to use it anyway...
         <tt style="white-space: nowrap;">/usr/X11/bin</tt>, to the PATH variable.  Fink is normally set
         up to do this automatically, so this may indicate that your Fink environment
         isn't being loaded.  Running</p>
-      <pre>/sw/bin/pathsetup.sh</pre>
+      <pre>/opt/sw/bin/pathsetup.sh</pre>
       <p>
         in a terminal window, and then starting a new window, will typically resolve this.
       </p>
@@ -823,7 +823,7 @@ if the last file has an '&amp;', there will be no error, but X11 will quit.
 See the sections on <a href="#run-xfree86.xinitrc-d">.xinitrc.d</a> and
 <a href="#run-xfree86.xinitrc">the .xinitrc file </a> for more details.</p>      
 <p>To avoid this, remember to set up the PATH using</p>
-<pre>. /sw/bin/init.sh</pre>
+<pre>. /opt/sw/bin/init.sh</pre>
 <p>in your startup files, 
 and also to end with a long-lived program that is
 not started in the background, e.g. a window manager or session manager with no '&amp;'.
@@ -877,13 +877,13 @@ OS X.
         within your Fink tree for
         some of their functions may need special treatment to get them to work when called from the
         Application menu.  Instead of putting just the full path to the filename, e.g.</p>
-        <pre>/sw/bin/emacs</pre>
+        <pre>/opt/sw/bin/emacs</pre>
           <p>
             you'll want to use something like the following, if you're using bash as your
             default shell:</p>
-          <pre>. /sw/bin/init.sh ; emacs</pre>
+          <pre>. /opt/sw/bin/init.sh ; emacs</pre>
           <p>and if you're using tcsh:</p>
-          <pre>source /sw/bin/init.csh ; emacs</pre>
+          <pre>source /opt/sw/bin/init.csh ; emacs</pre>
           <p>
             This makes sure that the application has the correct PATH information.  You can use this
             syntax for any Fink-installed application.
@@ -985,4 +985,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: x11.en.xml,v 1.25 2013/01/03 18:17:34 alexkhansen Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: x11.en.xml,v 1.26 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

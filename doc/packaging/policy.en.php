@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging - Policy";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="next" href="fslayout.php?phpLang=en" title="Filesystem Layout"><link rel="prev" href="format.php?phpLang=en" title="Package Descriptions">';
 
 
@@ -582,8 +582,8 @@ May 2003,  has been revised as of April 2004.
 <p>
 Traditionally, the Fink packages for perl modules had the suffix 
 <code>-pm</code>, and were built using the <code>Type: perl</code> 
-directive, which stores the perl module's files in <code>/sw/lib/perl5</code> and/or
-<code>/sw/lib/perl5/darwin</code>.  Under the policy
+directive, which stores the perl module's files in <code>/opt/sw/lib/perl5</code> and/or
+<code>/opt/sw/lib/perl5/darwin</code>.  Under the policy
 now in place, this storage location is only 
 permitted for perl modules which are independent of the version of perl 
 being used to compile them (and which do not depend on other perl modules
@@ -599,7 +599,7 @@ of a file with a suffix <code>.bundle</code>.
 A version-dependent perl module must be built using a versioned binary
 of perl, such as <code>perl5.12.3</code>, and must store its files in
 versioned subdirectories of the standard perl directories, such as
-<code>/sw/lib/perl5/5.12.3</code> and <code>/sw/lib/perl5/5.12.3/darwin</code>.  By convention, package names
+<code>/opt/sw/lib/perl5/5.12.3</code> and <code>/opt/sw/lib/perl5/5.12.3/darwin</code>.  By convention, package names
 use the suffix <code>-pm5123</code> for
 a perl module of version 5.12.3.  Similar storage and naming conventions
 are in force for other versions of perl, which include 
@@ -754,7 +754,7 @@ this policy only applies to the <code>emacs21</code>, <code>emacs22</code>, and
 <code>emacs23</code> packages in fink at the moment, not to the xemacs package.  (This
 may change some day in the future.)    And second, unlike the Debian policy,
  Fink packages are allowed to install things directly into 
-/sw/share/emacs/site-lisp.
+/opt/sw/share/emacs/site-lisp.
 </p>
 
 

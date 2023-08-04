@@ -1,7 +1,7 @@
 <?php
 $title = "Benutzerhandbuch - fink-Tool";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="prev" href="conf.php?phpLang=de" title="Die Fink-Konfigurationsdatei">';
 
 
@@ -114,7 +114,7 @@ Do you want to continue? [Y/n]</pre>
     <h2><a name="remove">6.4 remove</a></h2>
       
       <p>Der remove-Befehl entfernt Pakete von Ihrem System, wenn Sie '<code>dpkg --remove</code>' aufrufen. Die aktuelle Implementation hat einige Schwachstellen: es überprüft nicht die Abhängigkeiten selbst, sondern überlässt dies dem dpkg-Tool (allerdings sollte das kein Problem darstellen).</p>
-      <p>Der <b>remove</b>-Befehl entfernt nur die eigentlichen Dateien, lässt aber die  <code>.deb</code>-Datei der komprimierten Pakete unberührt. Das bedeutet, dass Sie die Pakete später wieder installieren können, ohne diese neu kompilieren zu müssen. Wenn Sie den Plattenplatz benötigen, können Sie die <code>.deb</code>-Datei vom <code>/sw/fink/dists</code>-Baum löschen.</p>
+      <p>Der <b>remove</b>-Befehl entfernt nur die eigentlichen Dateien, lässt aber die  <code>.deb</code>-Datei der komprimierten Pakete unberührt. Das bedeutet, dass Sie die Pakete später wieder installieren können, ohne diese neu kompilieren zu müssen. Wenn Sie den Plattenplatz benötigen, können Sie die <code>.deb</code>-Datei vom <code>/opt/sw/fink/dists</code>-Baum löschen.</p>
       <p>Diese Optionen können mit dem Kommando <b>fink remove</b> verwendet werden.
 </p>
       <pre>-h,--help             - zeige die verfügbaren Optionen.
@@ -272,7 +272,7 @@ Führt den Konfigurationsprozess noch einmal aus. So können Sie unter anderen I
     <h2><a name="selfupdate">6.18 selfupdate</a></h2>
       
       <p>
-      Dieser Befehl automatisiert die Aktualisierung von Fink auf eine neues Release. Es überprüft die Fink-Webseite, um zu sehen, ob eine neue Version verfügbar ist. Wenn dies so ist, lädt es die Paketbeschreibungen und Updates der core-Pakete einschließlich von <code>fink</code> selber. Dieser Befehl kann auf reguläre Releases aktualisieren, es kann aber auch Ihren <code>/sw/fink/dists</code>-Verzeichnisbaum für direktes Git einrichten. Das bedeutet, dass Sie dann auf die aktuellsten Versionen aller Pakete zugreifen können.</p>
+      Dieser Befehl automatisiert die Aktualisierung von Fink auf eine neues Release. Es überprüft die Fink-Webseite, um zu sehen, ob eine neue Version verfügbar ist. Wenn dies so ist, lädt es die Paketbeschreibungen und Updates der core-Pakete einschließlich von <code>fink</code> selber. Dieser Befehl kann auf reguläre Releases aktualisieren, es kann aber auch Ihren <code>/opt/sw/fink/dists</code>-Verzeichnisbaum für direktes Git einrichten. Das bedeutet, dass Sie dann auf die aktuellsten Versionen aller Pakete zugreifen können.</p>
       <p>Ist die <a href="#options">Option --use-binary-dist</a> eingeschaltet, wird auch die Liste der verfügbaren Pakete in der binären Distribution aktualisiert.</p>
     
     <h2><a name="selfupdate-rsync">6.19 selfupdate-rsync</a></h2>
@@ -324,7 +324,7 @@ Führt den Konfigurationsprozess noch einmal aus. So können Sie unter anderen I
 --all                - Alle obigen Modi. (neu in fink-0.26.0)</pre>
       <p>Ohne Angabe eines Modus ist <code>--debs --sources</code> die Voreinstellung. </p>
       <p>Zusätzlich können folgende Modi benutzt werden:</p>
-      <pre>-k,--keep-src        - Verschiebe alte Quelldateien nach /sw/src/old/ anstatt sie zu löschen.
+      <pre>-k,--keep-src        - Verschiebe alte Quelldateien nach /opt/sw/src/old/ anstatt sie zu löschen.
 -d,--dry-run         - Gib die namen der Dateien aus, die gelöscht werden würden, aber lösche sie nicht.
 -h,--help            - Zeige die verfügbaren Modi und Optionen.</pre>
     

@@ -1,7 +1,7 @@
 <?php
 $title = "Q.F.P. - Compilation (2)";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="usage-general.php?phpLang=fr" title="Problèmes généraux d\'utilisation de paquets"><link rel="prev" href="comp-general.php?phpLang=fr" title="Problèmes généraux de compilation">';
 
 
@@ -37,7 +37,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 </a>
 <a name="libiconv-gettext">
 <div class="question"><p><b><?php echo FINK_Q ; ?>7.5: Il est impossible de mettre à jour <code>libiconv</code>. Que faire ?</b></p></div>
-<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Si vous voyez apparaître des messages d'erreur semblables au suivant :</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>vous pouvez résoudre le problème en exécutant la commande :</p><pre>fink remove gettext-dev
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Si vous voyez apparaître des messages d'erreur semblables au suivant :</p><pre>libtool: link: cannot find the library `/opt/sw/lib/libiconv.la'</pre><p>vous pouvez résoudre le problème en exécutant la commande :</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
 </a>
  <a name="cplusplus-filt">

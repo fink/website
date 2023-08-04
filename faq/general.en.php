@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - General";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=en" title="Relations with Other Projects"><link rel="prev" href="index.php?phpLang=en" title="F.A.Q. Contents">';
 
 
@@ -38,7 +38,7 @@ include_once "header.en.inc";
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 	There are several reasons, but the common line is "because breakage will occur".</p><p>	Reason One: Third-party software. /usr/local is the well-established place to put software that is not part of the system shipped by the original vendor. This means that it is a good place to put stuff. However, it also means that other people will put stuff there, too. Most install routines will just overwrite what's there - this also applies to dpkg. One can, of course, choose not to install third-party software in /usr/local. Unfortunately, most installers don't tell you beforehand what they will install where.</p><p>	Reason Two: /usr/local/bin is in the default PATH. This means that your shell will find the installed programs without additional measures. But it also means that you do have to take additional measures if you do not want to use the programs. In extreme cases, this can also affect the system itself - many parts depend on shell scripts.</p><p>	Reason Three: The compiler tool chain searches /usr/local by default. The compiler searches /usr/local/include for header files and the linker searches /usr/local/lib for libraries. Again, this is sometimes a welcome convenience, but it's very hard to disable should the need arise. You can easily disable the compiler by putting a garbage file called <code>stdio.h</code> into /usr/local/include.</p><p>	All that said, it is possible to install Fink into /usr/local. The installation script will warn you explicitly, but proceed once you acknowledge that you're doing this at your own risk.</p></div>
     </a>
     <a name="why-sw">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Then why did you choose /sw?</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Then why did you choose /opt/sw?</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b>  That choice is quite arbitrary, but is likely to stay for the foreseeable future for practical (upgrade) issues as well as the fact that it's safe from conflicting with other packaging systems.</p></div>
     </a>
   <p align="right"><?php echo FINK_NEXT ; ?>:

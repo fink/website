@@ -1,7 +1,7 @@
 <?php
 $title = "Guia do usuário - Instalação";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="packages.php?phpLang=pt" title="Instalando pacotes"><link rel="prev" href="intro.php?phpLang=pt" title="Introdução">';
 
 
@@ -87,7 +87,7 @@ tar -xf fink-0.27.x.tar</pre>
       se tornar root, o que fará com que sua senha seja solicitada. Depois
       disso, o script lhe perguntará o diretório de instalação. A menos que
       você possua uma boa razão, use o diretório padrão
-      <code>/sw</code>.  Somente essa escolha de diretório lhe
+      <code>/opt/sw</code>.  Somente essa escolha de diretório lhe
       permitirá baixar posteriormente pacotes binários. Além disso, todos os
       exemplos usam esse diretório; esteja certo de fazer a substituição
       apropriada caso você use um diretório diferente.</p>
@@ -124,13 +124,13 @@ tar -xf fink-0.27.x.tar</pre>
       <p>Na maior parte dos casos, você pode fazê-lo através da execução do
       comando</p>
 
-      <pre>/sw/bin/pathsetup.sh</pre>
+      <pre>/opt/sw/bin/pathsetup.sh</pre>
 
       <p>em uma janela de terminal.</p>
 
       <p>Observe que em algumas versões antigas do Fink o programa era
       denominado <code>pathsetup.command</code>, o qual poderia ser
-      executado através de <code>open /sw/bin/pathsetup.command</code>.</p>
+      executado através de <code>open /opt/sw/bin/pathsetup.command</code>.</p>
 
       <p>Entretanto, se isto não funcionar por algum motivo, você pode
       configurá-lo manualmente. Isto dependerá do shell que você estiver
@@ -154,7 +154,7 @@ tar -xf fink-0.27.x.tar</pre>
           <code>.bash_profile</code> existente, use esse no lugar do
           <code>.profile</code>):</p>
 
-          <pre>. /sw/bin/init.sh</pre>
+          <pre>. /opt/sw/bin/init.sh</pre>
 
           <p>Se você não sabe como adicionar a linha, execute estes
           comandos:</p>
@@ -163,7 +163,7 @@ tar -xf fink-0.27.x.tar</pre>
 pico .profile</pre>
 
           <p>Você está agora em um editor de textos e pode começar a digitar a
-          linha <code>. /sw/bin/init.sh</code>. Não há problema caso o editor
+          linha <code>. /opt/sw/bin/init.sh</code>. Não há problema caso o editor
           indique que seja um novo arquivo. Tenha certeza de haver teclado
           Return pelo menos uma vez após digitar a linha e tecle Control-O,
           Return, Control-X para sair do editor.</p>
@@ -176,7 +176,7 @@ pico .profile</pre>
           <p>Se você usa tcsh, adicione a linha seguinte ao arquivo
           <code>.cshrc</code> no seu diretório home:</p>
 
-          <pre>source /sw/bin/init.csh</pre>
+          <pre>source /opt/sw/bin/init.csh</pre>
 
           <p>Se você não sabe como adicionar a linha, execute estes
           comandos:</p>
@@ -185,7 +185,7 @@ pico .profile</pre>
 pico .cshrc</pre>
 
           <p>Você está agora em um editor de textos e pode começar a digitar a
-          linha <code>. /sw/bin/init.sh</code>. Não há problema caso o editor
+          linha <code>. /opt/sw/bin/init.sh</code>. Não há problema caso o editor
           indique que seja um novo arquivo. Tenha certeza de haver teclado
           Return pelo menos uma vez após digitar a linha e tecle Control-O,
           Return, Control-X para sair do editor.</p>

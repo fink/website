@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: uguide.en.xml,v 1.57 2019/01/19 10:11:12 nieder Exp $
+Generated from $Fink: uguide.en.xml,v 1.58 2023/08/04 4:49:23 nieder Exp $
 -->
 <title>Fink Documentation - Fink User's Guide</title></head><body>
 <table width="100%" cellspacing="0">
@@ -229,7 +229,7 @@ The script will run some checks on your system and use sudo to become
 root - that will prompt you for your password.
 Then, the script will ask you for the installation path.
 Unless you have a good reason, you should use the default -
-<tt style="white-space: nowrap;">/sw</tt>.
+<tt style="white-space: nowrap;">/opt/sw</tt>.
 Only that will allow you to install downloaded binary packages later
 on.
 Also, all examples use that path; be sure to substitute your actual
@@ -265,12 +265,12 @@ the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.  Current Fink versions do this automatically, and typically you will just need to open a new Terminal.app window to ensure that these settings are applied.  However, in some instances you will need to proceed manually.</p>
 <p>In most cases, you can do this by entering the command
       </p>
-      <pre>/sw/bin/pathsetup.sh</pre>
+      <pre>/opt/sw/bin/pathsetup.sh</pre>
       <p>
 	in a terminal window. </p>
       <p>Note that for some older versions of
 	fink the program was called  <tt style="white-space: nowrap;">pathsetup.command</tt>, and one could
-	run it via <tt style="white-space: nowrap;">open /sw/bin/pathsetup.command</tt>.      </p>
+	run it via <tt style="white-space: nowrap;">open /opt/sw/bin/pathsetup.command</tt>.</p>
       <p>However, if this doesn't work for some reason, you can configure it
 manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and
@@ -292,7 +292,7 @@ running the command:
    you have an existing <tt style="white-space: nowrap;">.bash_profile</tt> file, you should use that
    instead):
   </p>
-          <pre>. /sw/bin/init.sh</pre>
+          <pre>. /opt/sw/bin/init.sh</pre>
           <p>
    If you don't know how to add the line, run these commands:
   </p>
@@ -300,7 +300,7 @@ running the command:
 pico .profile</pre>
           <p>
    You are now in a full-screen (well, full terminal window) text editor and
-   can simply start typing the <tt style="white-space: nowrap;">. /sw/bin/init.sh</tt> line.  It's
+   can simply start typing the <tt style="white-space: nowrap;">. /opt/sw/bin/init.sh</tt> line.  It's
    okay if there is a note that says "New file".  Be sure that you pressed
    Return at least once after the line, then press Control-O, Return,
    Control-X to get out of the editor.
@@ -313,7 +313,7 @@ pico .profile</pre>
    If you use tcsh, add the following line to
    the file <tt style="white-space: nowrap;">.cshrc</tt> in your home directory:
   </p>
-          <pre>source /sw/bin/init.csh</pre>
+          <pre>source /opt/sw/bin/init.csh</pre>
           <p>
    If you don't know how to add the line, run these commands:
   </p>
@@ -321,7 +321,7 @@ pico .profile</pre>
 pico .cshrc</pre>
           <p>
    You are now in a full-screen (well, full terminal window) text editor
-   and can simply start typing the <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt>
+   and can simply start typing the <tt style="white-space: nowrap;">source /opt/sw/bin/init.csh</tt>
    line.
    It's okay if there is a note that says "New file".
    Be sure that you pressed Return at least once after the line, then
@@ -761,7 +761,7 @@ general, these options are meant for advanced users only.
 </p>
       <p>
 The <b>fink.conf</b> file is located at
-<tt style="white-space: nowrap;">/sw/etc/fink.conf</tt>, and can be edited in your favourite
+<tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt>, and can be edited in your favourite
 text editor. You will need super-user rights to edit it.
 </p>
     
@@ -794,7 +794,7 @@ this category.
           <p>
             <b>Basepath:</b> path</p>
           <p>
-Tells <b>fink</b> where it was installed. Defaults to <b>/sw</b> unless you
+Tells <b>fink</b> where it was installed. Defaults to <b>/opt/sw</b> unless you
 changed it during the initial installation of the Fink distribution. You should
 <b>not</b> change this value after installation, it will confuse <b>fink</b>.
 </p>
@@ -830,10 +830,10 @@ unstable/crypto - unstable cryptographic packages
 unstable/main   - other unstable packages
 </pre>
           <p>
-You may also add your own trees in <tt style="white-space: nowrap;">/sw/fink/dists</tt> for your own purposes, but this is not necessary in most
+You may also add your own trees in <tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> for your own purposes, but this is not necessary in most
 circumstances. The default trees are "local/main local/bootstrap
 stable/main". This list is automatically kept in sync with the
-<tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> file.</p><p>The order of the trees is meaningful, as packages from later trees in the list may
+<tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> file.</p><p>The order of the trees is meaningful, as packages from later trees in the list may
            override packages from earlier ones.</p>
         -</li>
         <li>
@@ -843,7 +843,7 @@ stable/main". This list is automatically kept in sync with the
 running. Mac OS X 10.0 and earlier are not supported, and 10.1 and 10.2 are no
 longer supported by current versions of <tt style="white-space: nowrap;">fink</tt>. Mac OS X 10.2 users are 
 restricted to fink-0.24.7, released in June 2005.  This
-field is set by running the <tt style="white-space: nowrap;">/sw/lib/fink/postinstall.pl</tt>
+field is set by running the <tt style="white-space: nowrap;">/opt/sw/lib/fink/postinstall.pl</tt>
 script. You should not need to alter this value manually.
 </p>
         </li>
@@ -851,7 +851,7 @@ script. You should not need to alter this value manually.
           <p>
             <b>FetchAltDir:</b> path</p>
           <p>usually <tt style="white-space: nowrap;">fink</tt> will store the sources it fetches in
-<tt style="white-space: nowrap;">/sw/src</tt>. You can specify an alternate directory to look for
+<tt style="white-space: nowrap;">/opt/sw/src</tt>. You can specify an alternate directory to look for
 downloaded source code in using this option. For example:
 </p>
           <pre>FetchAltDir: /usr/src</pre>
@@ -881,7 +881,7 @@ The default value is 1.
         <li>
           <p>
             <b>NoAutoIndex:</b> boolean</p>
-          <p>Fink caches its package description files in /sw/var/db/fink.db to
+          <p>Fink caches its package description files in /opt/sw/var/db/fink.db to
 save it having to read and parse them all every time it runs. Fink
 checks whether or not the package index needs to be updated unless this
 option is set to "True". It defaults to "False" and it is not
@@ -903,8 +903,8 @@ manually.</p>
 	    <b>Buildpath:</b> path</p>
 	  <p>Fink needs to create several temporary directories for
 each package it compiles from source. By default, they are placed
-in <tt style="white-space: nowrap;">/sw/src</tt> on Panther and earlier, and 
-<tt style="white-space: nowrap;">/sw/src/fink.build</tt> on Tiger. If you want them to be
+in <tt style="white-space: nowrap;">/opt/sw/src</tt> on Panther and earlier, and 
+<tt style="white-space: nowrap;">/opt/sw/src/fink.build</tt> on Tiger. If you want them to be
 somewhere else, specify the path here. See the descriptions of
 the <tt style="white-space: nowrap;">KeepRootDir</tt> and <tt style="white-space: nowrap;">KeepBuildDir</tt> fields
  in the <a href="#conf.developer">Developer Settings</a> section of this document for more information about these temporary
@@ -1028,7 +1028,7 @@ would like to use.</p>
             <b>MirrorContinent:</b> three letter code</p>
           <p>You should change this value using the <tt style="white-space: nowrap;">fink configure</tt>
 command. The three letter code is one found in
-<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>.
+<tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_keys</tt>.
 For example, if you live in Europe:</p>
           <pre>MirrorContinent: eur</pre>
         </li>
@@ -1037,7 +1037,7 @@ For example, if you live in Europe:</p>
             <b>MirrorCountry:</b> six letter code</p>
           <p>You should change this value using the <tt style="white-space: nowrap;">fink configure</tt>
 command. The three letter code is one found in
-<tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt>.
+<tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_keys</tt>.
 For example, if you live in Austria:</p>
           <pre>MirrorCountry: eur-AT</pre>
         </li>
@@ -1112,7 +1112,7 @@ only operates on that single <tt style="white-space: nowrap;">fink</tt> invocati
           <p>
             <b>CCacheDir:</b> path</p>
           <p>If the Fink package <tt style="white-space: nowrap;">ccache-default</tt> is installed, the cache files it makes
-while building Fink packages will be placed here. Defaults to <tt style="white-space: nowrap;">/sw/var/ccache</tt>. If set to <tt style="white-space: nowrap;">none</tt>, fink will not set the CCACHE_DIR environment variable and ccache will use <tt style="white-space: nowrap;">$HOME/.ccache</tt>, potentially putting root-owned files into your home directory.
+while building Fink packages will be placed here. Defaults to <tt style="white-space: nowrap;">/opt/sw/var/ccache</tt>. If set to <tt style="white-space: nowrap;">none</tt>, fink will not set the CCACHE_DIR environment variable and ccache will use <tt style="white-space: nowrap;">$HOME/.ccache</tt>, potentially putting root-owned files into your home directory.
 <b>Only available in fink newer than version 0.21.0</b>.
           </p>
         </li>
@@ -1120,7 +1120,7 @@ while building Fink packages will be placed here. Defaults to <tt style="white-s
            Specify a notification plugin to tell you when packages have been
            installed/uninstalled.  Defaults to Growl (requires <tt style="white-space: nowrap;">Mac::Growl</tt> to
            operate).  Other plugins can be found in the
-           <tt style="white-space: nowrap;">/sw/lib/perl5/Fink/Notify</tt> directory.  On <tt style="white-space: nowrap;">fink-0.25</tt> and later they are listed in the output of <tt style="white-space: nowrap;">fink plugins</tt>.  See the <a href="http://wiki.finkproject.org/index.php/Fink:Notificati%20on_Plugins">Fink Developer Wiki</a> for more information.
+           <tt style="white-space: nowrap;">/opt/sw/lib/perl5/Fink/Notify</tt> directory.  On <tt style="white-space: nowrap;">fink-0.25</tt> and later they are listed in the output of <tt style="white-space: nowrap;">fink plugins</tt>.  See the <a href="http://wiki.finkproject.org/index.php/Fink:Notificati%20on_Plugins">Fink Developer Wiki</a> for more information.
 </p></li>
         <li><p><b>AutoScanpackages:</b> boolean
            </p><p>When <tt style="white-space: nowrap;">fink</tt> builds new packages, <tt style="white-space: nowrap;">apt-get</tt> does not immediately know about
@@ -1142,7 +1142,7 @@ while building Fink packages will be placed here. Defaults to <tt style="white-s
     <h3><a name="conf.sourceslist">5.9 Managing apt's sources.list file</a></h3>
       
       <p>Fink actively manages the file
-<tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> which is used by apt to locate
+<tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> which is used by apt to locate
 binary files for installation.  The default sources.list file looks 
 something like this, adjusted to match your Distribution and Trees:
 </p>
@@ -1152,10 +1152,10 @@ something like this, adjusted to match your Distribution and Trees:
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in 
-# /sw/etc/fink.conf
+# /opt/sw/etc/fink.conf
 # NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
-deb file:/sw/fink local main
-deb file:/sw/fink stable main crypto
+deb file:/opt/sw/fink local main
+deb file:/opt/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release
@@ -1354,7 +1354,7 @@ the dpkg tool (usually this poses no problem, though).</p>
 the <tt style="white-space: nowrap;">.deb</tt> compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the <tt style="white-space: nowrap;">.deb</tt> from the
-<tt style="white-space: nowrap;">/sw/fink/dists</tt> tree.</p>
+<tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> tree.</p>
       <p>These flags can be used with the <b>fink remove</b> command
 </p>
       <pre>-h,--help             - Show the options which are available.
@@ -1554,7 +1554,7 @@ others.
 	release. It checks the Fink website to see if a new version is
 	available. It then downloads the package descriptions and updates
 	the core packages, including <tt style="white-space: nowrap;">fink</tt> itself. This command can upgrade
-	to regular releases, but it can also setup your <tt style="white-space: nowrap;">/sw/fink/dists</tt>
+	to regular releases, but it can also setup your <tt style="white-space: nowrap;">/opt/sw/fink/dists</tt>
 	directory tree for direct git or rsync updates, if you select one of those options the first time this command is run.  This means that you then
 	will be able to access the very latest revisions of all packages.
 </p>
@@ -1624,7 +1624,7 @@ the list of available packages in the binary distribution is also updated.
 --all                - All of the above modes. (new in fink-0.26.0)</pre>
       <p>If no mode is specified, <tt style="white-space: nowrap;">--debs --sources</tt> is the default action. </p>
       <p>In addition, the following options may be used:</p>
-      <pre>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
+      <pre>-k,--keep-src        - Move old source files to /opt/sw/src/old/ instead of deleting them.
 -d,--dry-run         - Print the names of the files that would be deleted, but
                        do not actually delete them.
 -h,--help            - Show the modes and options which are available.</pre>
@@ -1659,4 +1659,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: uguide.en.xml,v 1.57 2019/01/19 10:11:12 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: uguide.en.xml,v 1.58 2023/08/04 4:49:23 nieder Exp $</i></p></body></html>

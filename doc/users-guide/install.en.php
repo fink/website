@@ -1,7 +1,7 @@
 <?php
 $title = "User's Guide - Install";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="packages.php?phpLang=en" title="Installing Packages"><link rel="prev" href="intro.php?phpLang=en" title="Introduction">';
 
 
@@ -86,7 +86,7 @@ The script will run some checks on your system and use sudo to become
 root - that will prompt you for your password.
 Then, the script will ask you for the installation path.
 Unless you have a good reason, you should use the default -
-<code>/sw</code>.
+<code>/opt/sw</code>.
 Only that will allow you to install downloaded binary packages later
 on.
 Also, all examples use that path; be sure to substitute your actual
@@ -122,12 +122,12 @@ the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.  Current Fink versions do this automatically, and typically you will just need to open a new Terminal.app window to ensure that these settings are applied.  However, in some instances you will need to proceed manually.</p>
 <p>In most cases, you can do this by entering the command
       </p>
-      <pre>/sw/bin/pathsetup.sh</pre>
+      <pre>/opt/sw/bin/pathsetup.sh</pre>
       <p>
 	in a terminal window. </p>
       <p>Note that for some older versions of
 	fink the program was called  <code>pathsetup.command</code>, and one could
-	run it via <code>open /sw/bin/pathsetup.command</code>.      </p>
+	run it via <code>open /opt/sw/bin/pathsetup.command</code>.</p>
       <p>However, if this doesn't work for some reason, you can configure it
 manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and
@@ -149,7 +149,7 @@ running the command:
    you have an existing <code>.bash_profile</code> file, you should use that
    instead):
   </p>
-          <pre>. /sw/bin/init.sh</pre>
+          <pre>. /opt/sw/bin/init.sh</pre>
           <p>
    If you don't know how to add the line, run these commands:
   </p>
@@ -157,7 +157,7 @@ running the command:
 pico .profile</pre>
           <p>
    You are now in a full-screen (well, full terminal window) text editor and
-   can simply start typing the <code>. /sw/bin/init.sh</code> line.  It's
+   can simply start typing the <code>. /opt/sw/bin/init.sh</code> line.  It's
    okay if there is a note that says "New file".  Be sure that you pressed
    Return at least once after the line, then press Control-O, Return,
    Control-X to get out of the editor.
@@ -170,7 +170,7 @@ pico .profile</pre>
    If you use tcsh, add the following line to
    the file <code>.cshrc</code> in your home directory:
   </p>
-          <pre>source /sw/bin/init.csh</pre>
+          <pre>source /opt/sw/bin/init.csh</pre>
           <p>
    If you don't know how to add the line, run these commands:
   </p>
@@ -178,7 +178,7 @@ pico .profile</pre>
 pico .cshrc</pre>
           <p>
    You are now in a full-screen (well, full terminal window) text editor
-   and can simply start typing the <code>source /sw/bin/init.csh</code>
+   and can simply start typing the <code>source /opt/sw/bin/init.csh</code>
    line.
    It's okay if there is a note that says "New file".
    Be sure that you pressed Return at least once after the line, then

@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - Sauber";
-$cvs_author = 'Author: kamischi';
-$cvs_date = 'Date: 2015/11/01 02:12:02';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Installation Contents"><link rel="prev" href="install-up03.php?phpLang=de" title="Fink aktualisieren">';
 
 
@@ -49,20 +49,20 @@ Will man nach einer Re-Installation von Fink Zeit sparen, kann man eine Liste
 der installierten Pakete erhalten. Folgende Kommandos in ein Terminal-Fenster
 eingegeben funktionieren, sogar wenn die Fink-Tools nicht vorhanden sind.
 </p>
-<pre>grep -B1 "install ok installed" /sw/var/lib/dpkg/status \
+<pre>grep -B1 "install ok installed" /opt/sw/var/lib/dpkg/status \
 | grep "^Package:" | cut -d: -f2 | cut -d\  -f2 &gt; finkinst.txt</pre>
 <p>
 Dies wird die Liste ihrer Pakete in der Datei <code>finkinst.txt</code>
 im aktuellen Arbeitsverzeichnis abspeichern.
 </p>
 <p>
-Sie können auch die Quellen in <code>/sw/src</code> in ein anderes
+Sie können auch die Quellen in <code>/opt/sw/src</code> in ein anderes
 Verzeichnis verschieben oder kopieren, so dass sie die Zeit für das Herunterladen
 der Quellen sparen können, wenn sie ihre Fink-Distribution wieder einrichten.
 </p>
 <p>
 Sollten sie globale Änderungen in einem ihrer Pakete gemacht haben, in dem sie
-Konfigurationsdateien in <code>/sw/etc</code>, geändert haben, dann
+Konfigurationsdateien in <code>/opt/sw/etc</code>, geändert haben, dann
 können sie diese Dateien sichern.
 </p>
 
@@ -71,12 +71,12 @@ können sie diese Dateien sichern.
 <p>
 Haben sie alles in einer <a href="#backup">Sicherungskopie</a>
 gesichert, können sie ihre Fink-Distribution entfernen. Löschen sie
-<code>/sw</code> sowie alles in <code>/Applications/Fink</code>
+<code>/opt/sw</code> sowie alles in <code>/Applications/Fink</code>
 entweder im Finder oder in der Kommandozeile:
 </p>
-<pre>sudo rm -rf /sw /Applications/Fink/*</pre>
+<pre>sudo rm -rf /opt/sw /Applications/Fink/*</pre>
 <p>
-(Ersetzen sie <code>/sw</code> durch ihren aktuellen Fink-Baum).
+(Ersetzen sie <code>/opt/sw</code> durch ihren aktuellen Fink-Baum).
 </p>
 
 
@@ -88,11 +88,11 @@ Folgen sie als erstes den Anweisungen im Abschnitt
 <p>
   Nachdem sie die Paketbeschreibungen herunter geladen haben, verschieben sie
   die Quellen, die sie <a href="#backup">gesichert</a> haben in
-  <code>/sw/src</code> entweder mit dem Finder oder in der Kommandozeile:
+  <code>/opt/sw/src</code> entweder mit dem Finder oder in der Kommandozeile:
 </p>
-<pre>sudo cp /path/to/backup/* /sw/src</pre>
+<pre>sudo cp /path/to/backup/* /opt/sw/src</pre>
 <p>
-  (Wie üblich, ersetzen sie <code>/sw</code> mit ihrem tatsächlichen
+  (Wie üblich, ersetzen sie <code>/opt/sw</code> mit ihrem tatsächlichen
   Fink-Baum). Wenn sie wollen, können sie <code>fink configure</code> verwenden,
   um den Pfad zu ihrem Sicherungsverzeichnis anzugeben:
 </p>
@@ -106,7 +106,7 @@ Folgen sie als erstes den Anweisungen im Abschnitt
 <p>
   Sie können zu diesem Zeitpunkt auch die globalen Konfigurationsdateien
   einspielen. Anmerkung: Wir raten dringend die Datei
-  <code>/sw/etc/fink.conf</code> aus einer früheren Installation wegen
+  <code>/opt/sw/etc/fink.conf</code> aus einer früheren Installation wegen
   Inkompatibilitäten <b>nicht</b> zurück zu spielen. Sie können die Datei
   mit einem Texteditor öffnen und entsprechende Werte nach
   <code>fink configure</code> eingeben.

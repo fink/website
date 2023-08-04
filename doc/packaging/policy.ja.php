@@ -1,7 +1,7 @@
 <?php
 $title = "パッケージ作成 - ポリシー";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト"><link rel="prev" href="format.php?phpLang=ja" title="パッケージ記述">';
 
 
@@ -402,7 +402,7 @@ SplitOff: &lt;&lt;
 </pre>
 			<p>と宣言し，その理由を DescPackaging に記述します．</p>
 			<p>
-				BuildDependsOnly フィールドは，パッケージがヘッダファイルを含み /sw/include にインストールされる場合，
+				BuildDependsOnly フィールドは，パッケージがヘッダファイルを含み /opt/sw/include にインストールされる場合，
 				パッケージの .info ファイルに記述されていなければなりません．
 			</p>
 			<p>
@@ -561,7 +561,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				伝統的に，perl モジュールの Fink パッケージには <code>-pm</code> が後置され，
 				ディレクティブ <code>Type: perl</code> を使ってビルドされていました．
 				このディレクティブは Perl モジュールのファイルを
-				<code>/sw/lib/perl5</code> 及び/または <code>/sw/lib/perl5/darwin</code> に格納していました．
+				<code>/opt/sw/lib/perl5</code> 及び/または <code>/opt/sw/lib/perl5/darwin</code> に格納していました．
 				現在のポリシーでは，それらのディレクトリには，コンパイルに使われる Perl のバージョンに依存しない 
 				(また，このバージョン非依存性を欠いた Perl モジュールに依存しない)
 				Perl モジュールのみを格納します．
@@ -575,7 +575,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				Perl のバージョンに依存する Perl モジュールは該当バージョンの付いた Perl の実行可能プログラム (perl5.6.0 など)
 				を使ってビルドされなければいけません．
 				また，モジュールの含むファイルは，標準の Perl のディレクトリ内の，バージョンの付いたサブディレクトリ
-				(<code>/sw/lib/perl5/5.12.3</code> や <code>/sw/lib/perl5/5.12.3/darwin</code> など) に格納しなければいけません．
+				(<code>/opt/sw/lib/perl5/5.12.3</code> や <code>/opt/sw/lib/perl5/5.12.3/darwin</code> など) に格納しなければいけません．
 				命名規約により，バージョン 5.12.3 に依存する Perl モジュールに <code>-pm5123</code> を後置します．
 				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，
 				perl 5.10.0 (10.6 ツリーのみ), 
@@ -703,7 +703,7 @@ InstallScript: &lt;&lt;
 				まず，このポリシーは Fink では現在のところパッケージ <code>emacs21</code>, <code>emacs22</code>, <code>emacs23</code> にのみ適用され，パッケージ xemacs には適用されません．
 				(この点は将来変わるかも知れません．)
 				次に Debian のポリシーと異なり， Fink パッケージはどれもファイルを直接
-				<code>/sw/share/emacs/site-lisp</code> にインストールして構いません．
+				<code>/opt/sw/share/emacs/site-lisp</code> にインストールして構いません．
 			</p>
 		
 

@@ -1,7 +1,7 @@
 <?php
 $title = "运行 X11 - 故障排除";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="tips.php?phpLang=zh" title="使用提示"><link rel="prev" href="other.php?phpLang=zh" title="其它 X11 可能">';
 
 
@@ -147,7 +147,7 @@ Errors from xkbcomp are not fatal to the X server</pre>
       <p>
 分类：致命错误。
 这在 XDarwin 1.0a2 和 1.0a3 下可能会发生，如果你的 shell 初始化文件没有把 /usr/X11R6/bin 加入到 PATH 变量中。
-如果你使用 Fink 而且没有改变你的默认 shell，把 <code>source /sw/bin/init.csh</code> 这一行添加到你主目录下的 <code>.cshrc</code>
+如果你使用 Fink 而且没有改变你的默认 shell，把 <code>source /opt/sw/bin/init.csh</code> 这一行添加到你主目录下的 <code>.cshrc</code>
 文件中（这也是 Fink 使用指南所推荐的）应该就足够了。
 </p>
       <pre>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed

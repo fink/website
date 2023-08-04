@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: quick-start-pkg.fr.xml,v 1.11 2012/11/11 15:20:17 gecko2 Exp $
+Generated from $Fink: quick-start-pkg.fr.xml,v 1.12 2023/08/04 5:18:11 nieder Exp $
 -->
 <title>Fink Documentation - Création d'un paquet pour Fink - Tutoriel</title></head><body>
 <table width="100%" cellspacing="0">
@@ -28,7 +28,7 @@ Nous commencerons par les généralités, puis nous verrons en détail la créat
 
 
 <h3><a name="howtostart.Learn">1.1 Apprentissage des bases</a></h3>
-<p><b>Note :</b> dans ce document, nous supposons que <tt style="white-space: nowrap;">fink</tt> est installé dans <tt style="white-space: nowrap;">/sw</tt> - son emplacement par défaut. Quand vous verrez un bloc de code semblable à celui-ci :</p>
+<p><b>Note :</b> dans ce document, nous supposons que <tt style="white-space: nowrap;">fink</tt> est installé dans <tt style="white-space: nowrap;">/opt/sw</tt> - son emplacement par défaut. Quand vous verrez un bloc de code semblable à celui-ci :</p>
 <pre>
 finkdev% unecommandequelconque
 </pre>
@@ -43,13 +43,13 @@ finkdev% unecommandequelconque
 
 
 de lire et de tenter de comprendre l'<a href="#example.basics">exemple donné ici</a>.</li>
-<li>d'étudier d'autres paquets situés dans le répertoire <tt style="white-space: nowrap;">/sw/fink/dists/unstable/main/finkinfo/</tt> ou dans le <a href="http://fink.cvs.sourceforge.net/fink/dists/">répertoire central CVS en ligne</a> et de prendre un (ou plusieurs) fichier(s) info comme point de départ.</li>
+<li>d'étudier d'autres paquets situés dans le répertoire <tt style="white-space: nowrap;">/opt/sw/fink/dists/unstable/main/finkinfo/</tt> ou dans le <a href="http://fink.cvs.sourceforge.net/fink/dists/">répertoire central CVS en ligne</a> et de prendre un (ou plusieurs) fichier(s) info comme point de départ.</li>
 <li>de rechercher dans le <a href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Traqueur de soumissions de paquets</a> si quelqu'un a déjà essayé de construire le même paquet ou dans le <a href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Traqueur de demandes de paquets</a> s'il existe déjà une requête pour ce paquet. Vous y trouverez une mine de renseignements.</li>
 <li>de feuilleter le <a href="/doc/packaging/index.php">Guide de création de paquets</a> si vous souhaitez de plus amples informations sur un sujet particulier.</li>
 </ul>
 
 <h3><a name="howtostart.Make">1.2 Création d'un paquet</a></h3>
-<p>Sauvegardez le nouveau fichier info (et le fichier rustine si nécessaire) dans le répertoire <tt style="white-space: nowrap;">/sw/fink/dists/local/main/finkinfo/</tt>. Le fichier doit avoir pour nom <tt style="white-space: nowrap;">nomdupaquet.info</tt> (et la rustine doit s'appeler <tt style="white-space: nowrap;">nomdupaquet.patch</tt>), où <tt style="white-space: nowrap;">nomdupaquet</tt> est le nom de votre paquet. Si ce répertoire n'existe pas, vous devez le créer.</p>
+<p>Sauvegardez le nouveau fichier info (et le fichier rustine si nécessaire) dans le répertoire <tt style="white-space: nowrap;">/opt/sw/fink/dists/local/main/finkinfo/</tt>. Le fichier doit avoir pour nom <tt style="white-space: nowrap;">nomdupaquet.info</tt> (et la rustine doit s'appeler <tt style="white-space: nowrap;">nomdupaquet.patch</tt>), où <tt style="white-space: nowrap;">nomdupaquet</tt> est le nom de votre paquet. Si ce répertoire n'existe pas, vous devez le créer.</p>
 <p><b>Note importante :</b> vérifiez que <tt style="white-space: nowrap;">fink</tt> est à jour en exécutant la commande :</p>
 <pre>
 finkdev% fink selfupdate
@@ -74,23 +74,23 @@ finkdev% fink index
 <p>Pendant le processus de validation de votre paquet, vous devez régler le niveau de verbosité de <tt style="white-space: nowrap;">fink</tt> à la plus haute valeur possible. Voir la section <a href="/doc/users-guide/conf.php#optional">fichier de configuration de fink</a> pour savoir comment le changer.</p>
 <p>Vérifiez que votre paquet est valide en exécutant :</p>
 <pre>
-finkdev% fink validate /sw/fink/dists/local/main/finkinfo/nomdupaquet.info
+finkdev% fink validate /opt/sw/fink/dists/local/main/finkinfo/nomdupaquet.info
 </pre>
 <p>Si c'est le cas, essayez de construire le paquet en exécutant :</p>
 <pre>
 finkdev% fink -m --build-as-nobody rebuild nomdupaquet
 </pre>
-<p>Observez attentivement les messages d'erreur or d'attention du processus de construction. Assurez-vous, en particulier, que tout s'installe dans le répertoire de destination (qui est <tt style="white-space: nowrap;">/sw/src/root-nomdupaquet-%v-%r/sw</tt>) à partir duquel <tt style="white-space: nowrap;">fink</tt> construit le paquet binaire. Rien ne doit être installé directement dans <tt style="white-space: nowrap;">/sw</tt>.</p>
+<p>Observez attentivement les messages d'erreur or d'attention du processus de construction. Assurez-vous, en particulier, que tout s'installe dans le répertoire de destination (qui est <tt style="white-space: nowrap;">/opt/sw/src/root-nomdupaquet-%v-%r/opt/sw</tt>) à partir duquel <tt style="white-space: nowrap;">fink</tt> construit le paquet binaire. Rien ne doit être installé directement dans <tt style="white-space: nowrap;">/opt/sw</tt>.</p>
 <p>Si vous utilisez l'option <tt style="white-space: nowrap;">--keep-build-dir</tt> ou <tt style="white-space: nowrap;">-k</tt> de <tt style="white-space: nowrap;">fink</tt>, le répertoire de construction sera conservé. C'est là que <tt style="white-space: nowrap;">fink</tt> décompresse le fichier source téléchargé et que le paquet est construit. Cela vous aidera à déboguer le processus de construction. Voir <tt style="white-space: nowrap;">man fink</tt> pour de plus amples informations.</p>
 <p>Vous pouvez aussi utiliser l'option <tt style="white-space: nowrap;">--keep-root-dir</tt> ou <tt style="white-space: nowrap;">-K</tt>, elle permet de conserver le répertoire de destination. C'est là que <tt style="white-space: nowrap;">fink</tt> construit l'arborescence d'installation du paquet. La comparaison entre les répertoires de construction et d'installation peut aider à déboguer la phase d'installation.</p>
 <p>Si la construction du paquet se passe bien, vérifiez le contenu du paquet binaire en exécutant :</p>
 <pre>
-finkdev% dpkg -c /sw/fink/dists/local/main/binary-darwin-powerpc/nomdupaquet.deb
+finkdev% dpkg -c /opt/sw/fink/dists/local/main/binary-darwin-powerpc/nomdupaquet.deb
 </pre>
-<p>Vérifiez que tous les fichiers qui sont censés être dans le paquet se trouvent bien dans le fichier .deb. Rappel : assurez-vous que rien n'est installé directement dans <tt style="white-space: nowrap;">/sw</tt>.</p>
+<p>Vérifiez que tous les fichiers qui sont censés être dans le paquet se trouvent bien dans le fichier .deb. Rappel : assurez-vous que rien n'est installé directement dans <tt style="white-space: nowrap;">/opt/sw</tt>.</p>
 <p>Vous pouvez maintenant valider le paquet binaire en exécutant :</p>
 <pre>
-finkdev% fink validate /sw/fink/dists/local/main/binary-darwin-powerpc/nomdupaquet.deb
+finkdev% fink validate /opt/sw/fink/dists/local/main/binary-darwin-powerpc/nomdupaquet.deb
 </pre>
 <p>Si tout est correct, installez le paquet avec :</p>
 <pre>
@@ -128,7 +128,7 @@ Source: mirror:sourceforge:%n/%n-%v.tar.gz
 </pre>
 <p>Les champs nom (Package) et version sont faciles à comprendre, mais qu'en est-il des autres champs ? Le champ Revision correspond à la "version" du paquet dans Fink, tandis que le champ Version correspond à la version du source en amont. Comme c'est la première fois que nous tentons de construire un paquet maxwell-0.5.1 dans Fink, son numéro de révision est 1.</p>
 <p>Le champ Source donne l'adresse à partir de laquelle <tt style="white-space: nowrap;">fink</tt> téléchargera l'archive tar source. Comme <a href="http://sourceforge.net">Sourceforge</a> comprend un système mondial de miroirs pour les paquets et que <tt style="white-space: nowrap;">fink</tt> le connaît, on utilise <tt style="white-space: nowrap;">mirror:sourceforge:</tt>. <tt style="white-space: nowrap;">%n</tt> est un raccourci pour le nom du paquet, maxwell, et <tt style="white-space: nowrap;">%v</tt> un raccourci pour la version du paquet, 0.5.1.</p>
-<p>Nous pouvons maintenant sauvegarder ceci sous le nom <tt style="white-space: nowrap;">maxwell.info</tt> dans le répertoire <tt style="white-space: nowrap;">/sw/fink/dists/local/main/finkinfo/</tt>. Ceci fait, voyons ce que cela donne avec <tt style="white-space: nowrap;">fink validate</tt>.</p>
+<p>Nous pouvons maintenant sauvegarder ceci sous le nom <tt style="white-space: nowrap;">maxwell.info</tt> dans le répertoire <tt style="white-space: nowrap;">/opt/sw/fink/dists/local/main/finkinfo/</tt>. Ceci fait, voyons ce que cela donne avec <tt style="white-space: nowrap;">fink validate</tt>.</p>
 <pre>
 finkdev% fink validate maxwell.info 
 Validating package file maxwell.info...
@@ -156,7 +156,7 @@ Description: Mac OS X S.M.A.R.T. Tool
 <p>Mais que faire de l'erreur concernant les sommes de contrôle MD5 ? Pourquoi ne pas tout simplement demander à <tt style="white-space: nowrap;">fink</tt> de récupérer le source ?</p>
 <pre>
 finkdev% fink fetch maxwell
-/usr/bin/sudo /sw/bin/fink  fetch maxwell
+/usr/bin/sudo /opt/sw/bin/fink  fetch maxwell
 Reading package info...
 Updating package index... done.
 Information about 3377 packages read in 30 seconds.
@@ -183,7 +183,7 @@ curl -f -L -O http://west.dl.sourceforge.net/sourceforge/maxwell/maxwell-0.5.1.t
 100  7856  100  7856    0     0  19838      0  0:00:00  0:00:00  0:00:00 6511k
 </pre>
 <p>L'archive tar ne peut être téléchargée à partir des miroirs de Fink, car le paquet n'a pas encore été ajouté à la distribution. C'est pourquoi il faut changer de miroir et sélectionner l'option 5. Voir les <a href="/faq/comp-general.php#master-problems">Q.F.P.</a> pour de plus amples informations à ce sujet.</p>
-<p>Maintenant nous pouvons calculer la somme de contrôle md5 en exécutant <tt style="white-space: nowrap;">md5sum /sw/src/maxwell-0.5.1.tar.gz</tt>, et l'ajouter à notre fichier .info</p>
+<p>Maintenant nous pouvons calculer la somme de contrôle md5 en exécutant <tt style="white-space: nowrap;">md5sum /opt/sw/src/maxwell-0.5.1.tar.gz</tt>, et l'ajouter à notre fichier .info</p>
 <pre>
 Source-MD5: ce5c354b2fed4e237524ad0bc59997a3
 </pre>
@@ -193,13 +193,13 @@ Source-MD5: ce5c354b2fed4e237524ad0bc59997a3
 <p>Désormais, nous pouvons construire le paquet, essayons :</p>
 <pre>
 finkdev% fink -m --build-as-nobody rebuild maxwell
-/usr/bin/sudo /sw/bin/fink  build maxwell
+/usr/bin/sudo /opt/sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
 Information about 3498 packages read in 32 seconds.
 The following package will be built:
  maxwell
-gzip -dc /sw/src/maxwell-0.5.1.tar.gz | /sw/bin/tar -xvf -  \
+gzip -dc /opt/sw/src/maxwell-0.5.1.tar.gz | /opt/sw/bin/tar -xvf -  \
 --no-same-owner --no-same-permissions 
 maxwell-0.5.1/
 maxwell-0.5.1/LICENSE
@@ -207,11 +207,11 @@ maxwell-0.5.1/Makefile
 maxwell-0.5.1/maxwell.8
 maxwell-0.5.1/maxwell.c
 maxwell-0.5.1/README
-./configure --prefix=/sw 
+./configure --prefix=/opt/sw 
 Can't exec "./configure": No such file or directory at \
-/sw/lib/perl5/Fink/Services.pm line 403.
+/opt/sw/lib/perl5/Fink/Services.pm line 403.
 </pre>
-<p>Hum ! Ça ne marche pas très bien. Lisons le README (situé dans <tt style="white-space: nowrap;">/sw/src/maxwell-0.5.1-1/maxwell-0.5.1/README</tt>) et voyons ce qu'il dit...</p>
+<p>Hum ! Ça ne marche pas très bien. Lisons le README (situé dans <tt style="white-space: nowrap;">/opt/sw/src/maxwell-0.5.1-1/maxwell-0.5.1/README</tt>) et voyons ce qu'il dit...</p>
 <pre>
 To build type 'make'.
 
@@ -226,7 +226,7 @@ InstallScript: &lt;&lt;
 make install prefix=%i
 &lt;&lt;
 </pre>
-<p>Nous devons utiliser <tt style="white-space: nowrap;">prefix=%i</tt> car <tt style="white-space: nowrap;">fink</tt> construit le fichier binaire à partir des fichiers se trouvant dans <tt style="white-space: nowrap;">%i</tt>. Ces fichiers seront ensuite installés dans <tt style="white-space: nowrap;">%p</tt> (qui correspond par défaut à <tt style="white-space: nowrap;">/sw</tt>) quand on exécutera <tt style="white-space: nowrap;">fink install maxwell</tt>. Pour de plus amples informations sur <tt style="white-space: nowrap;">%p</tt> et <tt style="white-space: nowrap;">%i</tt>, consultez le <a href="/doc/packaging/format.php#percent">Guide de construction des paquets</a>.</p>
+<p>Nous devons utiliser <tt style="white-space: nowrap;">prefix=%i</tt> car <tt style="white-space: nowrap;">fink</tt> construit le fichier binaire à partir des fichiers se trouvant dans <tt style="white-space: nowrap;">%i</tt>. Ces fichiers seront ensuite installés dans <tt style="white-space: nowrap;">%p</tt> (qui correspond par défaut à <tt style="white-space: nowrap;">/opt/sw</tt>) quand on exécutera <tt style="white-space: nowrap;">fink install maxwell</tt>. Pour de plus amples informations sur <tt style="white-space: nowrap;">%p</tt> et <tt style="white-space: nowrap;">%i</tt>, consultez le <a href="/doc/packaging/format.php#percent">Guide de construction des paquets</a>.</p>
 <p>Normalement, les lignes des champs Script sont passées au shell ligne après ligne. Mais la ligne  <tt style="white-space: nowrap;">#! /bin/sh -ev</tt> permet à <tt style="white-space: nowrap;">fink</tt> d'exécuter l'ensemble comme un script séparé. Le paramètre <tt style="white-space: nowrap;">-e</tt> correspond à  "die on error" et <tt style="white-space: nowrap;">-v</tt> à "verbose".</p>
 <p>Validons de nouveau le paquet et tentons de le construire :</p>
 <pre>
@@ -234,13 +234,13 @@ finkdev% fink validate maxwell.info
 Validating package file maxwell.info...
 Package looks good!
 finkdev% fink -m --build-as-nobody rebuild maxwell
-/usr/bin/sudo /sw/bin/fink  build maxwell
+/usr/bin/sudo /opt/sw/bin/fink  build maxwell
 Reading package info...
 Updating package index... done.
 Information about 3498 packages read in 32 seconds.
 The following package will be built:
  maxwell
-gzip -dc /sw/src/maxwell-0.5.1.tar.gz | /sw/bin/tar -xvf -  \
+gzip -dc /opt/sw/src/maxwell-0.5.1.tar.gz | /opt/sw/bin/tar -xvf -  \
 --no-same-owner --no-same-permissions 
 maxwell-0.5.1/
 maxwell-0.5.1/LICENSE
@@ -249,79 +249,79 @@ maxwell-0.5.1/maxwell.8
 maxwell-0.5.1/maxwell.c
 maxwell-0.5.1/README
 make
-cc  -L/sw/lib -c -o maxwell.o maxwell.c
-cc  -I/sw/include -o maxwell -framework IOKit -framework CoreFoundation maxwell.o
-/bin/rm -rf /sw/src/root-maxwell-0.5.1-1
-/bin/mkdir -p /sw/src/root-maxwell-0.5.1-1/sw
-/bin/mkdir -p /sw/src/root-maxwell-0.5.1-1/DEBIAN
+cc  -L/opt/sw/lib -c -o maxwell.o maxwell.c
+cc  -I/opt/sw/include -o maxwell -framework IOKit -framework CoreFoundation maxwell.o
+/bin/rm -rf /opt/sw/src/root-maxwell-0.5.1-1
+/bin/mkdir -p /opt/sw/src/root-maxwell-0.5.1-1/opt/sw
+/bin/mkdir -p /opt/sw/src/root-maxwell-0.5.1-1/DEBIAN
 /var/tmp/tmp.1.A3sRc2
 #! /bin/sh -ev
-make install prefix=/sw/src/root-maxwell-0.5.1-1/sw
-/usr/bin/install -d -m 755 /sw/src/root-maxwell-0.5.1-1/sw/doc/maxwell
-/usr/bin/install -m 644 LICENSE /sw/src/root-maxwell-0.5.1-1/sw/doc/maxwell/LICENSE
-/usr/bin/install -m 644 README /sw/src/root-maxwell-0.5.1-1/sw/doc/maxwell/README
-/usr/bin/install -d -m 755 /sw/src/root-maxwell-0.5.1-1/sw/bin
-/usr/bin/install -m 755 maxwell /sw/src/root-maxwell-0.5.1-1/sw/bin/maxwell
-/usr/bin/install -d -m 755 /sw/src/root-maxwell-0.5.1-1/sw/man/man8
-/usr/bin/install -m 644 maxwell.8 /sw/src/root-maxwell-0.5.1-1/sw/man/man8/maxwell.8
-/bin/rm -f /sw/src/root-maxwell-0.5.1-1/sw/info/dir \
-/sw/src/root-maxwell-0.5.1-1/sw/info/dir.old \
-/sw/src/root-maxwell-0.5.1-1/sw/share/info/dir \
-/sw/src/root-maxwell-0.5.1-1/sw/share/info/dir.old
+make install prefix=/opt/sw/src/root-maxwell-0.5.1-1/opt/sw
+/usr/bin/install -d -m 755 /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/doc/maxwell
+/usr/bin/install -m 644 LICENSE /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/doc/maxwell/LICENSE
+/usr/bin/install -m 644 README /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/doc/maxwell/README
+/usr/bin/install -d -m 755 /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/bin
+/usr/bin/install -m 755 maxwell /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/bin/maxwell
+/usr/bin/install -d -m 755 /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/man/man8
+/usr/bin/install -m 644 maxwell.8 /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/man/man8/maxwell.8
+/bin/rm -f /opt/sw/src/root-maxwell-0.5.1-1/opt/sw/info/dir \
+/opt/sw/src/root-maxwell-0.5.1-1/opt/sw/info/dir.old \
+/opt/sw/src/root-maxwell-0.5.1-1/opt/sw/share/info/dir \
+/opt/sw/src/root-maxwell-0.5.1-1/opt/sw/share/info/dir.old
 Writing control file...
 Finding prebound objects...
 Writing dependencies...
 Writing package script postinst...
-dpkg-deb -b root-maxwell-0.5.1-1 /sw/fink/dists/local/main/binary-darwin-powerpc
+dpkg-deb -b root-maxwell-0.5.1-1 /opt/sw/fink/dists/local/main/binary-darwin-powerpc
 dpkg-deb: building package `maxwell' in \
-`/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb'.
+`/opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb'.
 </pre>
-<p>Fink semble avoir tout installé au bon endroit : <tt style="white-space: nowrap;">/sw/src/root-maxwell-0.5.1-1</tt> à partir de l'emplacement où le paquet binaire <tt style="white-space: nowrap;">maxwell_0.5.1-1_darwin-powerpc.deb</tt> a été construit.</p>
-<p>Notez aussi que <tt style="white-space: nowrap;">fink</tt> inclut automatiquement certains drapeaux de compilation pour lui permettre d'accéder à d'autres paquets <tt style="white-space: nowrap;">fink</tt> (par exemple <tt style="white-space: nowrap;">-I/sw/include</tt>).</p>
+<p>Fink semble avoir tout installé au bon endroit : <tt style="white-space: nowrap;">/opt/sw/src/root-maxwell-0.5.1-1</tt> à partir de l'emplacement où le paquet binaire <tt style="white-space: nowrap;">maxwell_0.5.1-1_darwin-powerpc.deb</tt> a été construit.</p>
+<p>Notez aussi que <tt style="white-space: nowrap;">fink</tt> inclut automatiquement certains drapeaux de compilation pour lui permettre d'accéder à d'autres paquets <tt style="white-space: nowrap;">fink</tt> (par exemple <tt style="white-space: nowrap;">-I/opt/sw/include</tt>).</p>
 <p>Regardons ce qu'il y a à l'intérieur du paquet binaire :</p>
 <pre>
 finkdev% dpkg -c \
-/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
+/opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
 drwxr-xr-x root/admin        0 2004-07-15 09:40:38 ./
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/bin/
--rwxr-xr-x root/admin    29508 2004-07-15 09:40:39 ./sw/bin/maxwell
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/doc/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/doc/maxwell/
--rw-r--r-- root/admin     1076 2004-07-15 09:40:39 ./sw/doc/maxwell/LICENSE
--rw-r--r-- root/admin     1236 2004-07-15 09:40:39 ./sw/doc/maxwell/README
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/man/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/man/man8/
--rw-r--r-- root/admin     1759 2004-07-15 09:40:39 ./sw/man/man8/maxwell.8
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/fink/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/fink/prebound/
-drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./sw/var/lib/fink/prebound/files/
--rw-r--r-- root/admin       16 2004-07-15 09:40:39 ./sw/var/lib/fink/prebound/files/maxwell.pblist
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/bin/
+-rwxr-xr-x root/admin    29508 2004-07-15 09:40:39 ./opt/sw/bin/maxwell
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/doc/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/doc/maxwell/
+-rw-r--r-- root/admin     1076 2004-07-15 09:40:39 ./opt/sw/doc/maxwell/LICENSE
+-rw-r--r-- root/admin     1236 2004-07-15 09:40:39 ./opt/sw/doc/maxwell/README
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/man/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/man/man8/
+-rw-r--r-- root/admin     1759 2004-07-15 09:40:39 ./opt/sw/man/man8/maxwell.8
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/lib/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/lib/fink/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/lib/fink/prebound/
+drwxr-xr-x root/admin        0 2004-07-15 09:40:39 ./opt/sw/var/lib/fink/prebound/files/
+-rw-r--r-- root/admin       16 2004-07-15 09:40:39 ./opt/sw/var/lib/fink/prebound/files/maxwell.pblist
 </pre>
 <p>Cela semble correct, non ? Mais il faut vérifier que les règles de construction des paquets dans Fink sont respectées. Validons le paquet avec :</p>
 <pre>
 finkdev% fink validate \
-/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb 
+/opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb 
 Validating .deb file \
-/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb...
-Warning: File installed into deprecated directory /sw/doc/
-                                        Offender is /sw/doc/
-Warning: File installed into deprecated directory /sw/doc/
-                                        Offender is /sw/doc/maxwell/
-Warning: File installed into deprecated directory /sw/doc/
-                                        Offender is /sw/doc/maxwell/LICENSE
-Warning: File installed into deprecated directory /sw/doc/
-                                        Offender is /sw/doc/maxwell/README
-Warning: File installed into deprecated directory /sw/man/
-                                        Offender is /sw/man/
-Warning: File installed into deprecated directory /sw/man/
-                                        Offender is /sw/man/man8/
-Warning: File installed into deprecated directory /sw/man/
-                                        Offender is /sw/man/man8/maxwell.8
+/opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb...
+Warning: File installed into deprecated directory /opt/sw/doc/
+                                        Offender is /opt/sw/doc/
+Warning: File installed into deprecated directory /opt/sw/doc/
+                                        Offender is /opt/sw/doc/maxwell/
+Warning: File installed into deprecated directory /opt/sw/doc/
+                                        Offender is /opt/sw/doc/maxwell/LICENSE
+Warning: File installed into deprecated directory /opt/sw/doc/
+                                        Offender is /opt/sw/doc/maxwell/README
+Warning: File installed into deprecated directory /opt/sw/man/
+                                        Offender is /opt/sw/man/
+Warning: File installed into deprecated directory /opt/sw/man/
+                                        Offender is /opt/sw/man/man8/
+Warning: File installed into deprecated directory /opt/sw/man/
+                                        Offender is /opt/sw/man/man8/maxwell.8
 </pre>
-<p>Heu ! Quelque chose ne va pas. Consultons encore le <a href="/doc/packaging/fslayout.php#fhs">Guide de construction des paquets</a>. On y voit que les pages man doivent être installées dans <tt style="white-space: nowrap;">/sw/share/man</tt> et les fichiers <tt style="white-space: nowrap;">README</tt> dans <tt style="white-space: nowrap;">/sw/share/doc/%n</tt>. Si nous ouvrons le <tt style="white-space: nowrap;">Makefile</tt> de maxwell, nous voyons que nous pouvons définir les répertoires mandir et datadir :</p>
+<p>Heu ! Quelque chose ne va pas. Consultons encore le <a href="/doc/packaging/fslayout.php#fhs">Guide de construction des paquets</a>. On y voit que les pages man doivent être installées dans <tt style="white-space: nowrap;">/opt/sw/share/man</tt> et les fichiers <tt style="white-space: nowrap;">README</tt> dans <tt style="white-space: nowrap;">/opt/sw/share/doc/%n</tt>. Si nous ouvrons le <tt style="white-space: nowrap;">Makefile</tt> de maxwell, nous voyons que nous pouvons définir les répertoires mandir et datadir :</p>
 <pre>
 prefix = /usr/local
 mandir = ${prefix}/man
@@ -341,11 +341,11 @@ finkdev% fink -m --build-as-nobody rebuild maxwell
 <p>Revérifiez le contenu du fichier .deb (avec <tt style="white-space: nowrap;">dpkg -c</tt>) pour voir où les fichiers sont installés maintenant. Puis validez de nouveau le fichier .deb avec <tt style="white-space: nowrap;">fink validate</tt>. Si tout se passe bien, vous pouvez installer le nouveau paquet avec :</p>
 <pre>
 finkdev% fink install maxwell
-/usr/bin/sudo /sw/bin/fink  install maxwell
+/usr/bin/sudo /opt/sw/bin/fink  install maxwell
 Information about 3377 packages read in 30 seconds.
 The following package will be installed or updated:
  maxwell
-dpkg -i /sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
+dpkg -i /opt/sw/fink/dists/local/main/binary-darwin-powerpc/maxwell_0.5.1-1_darwin-powerpc.deb
 Selecting previously deselected package maxwell.
 (Reading database ... 56046 files and directories currently installed.)
 Unpacking maxwell (from .../maxwell_0.5.1-1_darwin-powerpc.deb) ...
@@ -364,4 +364,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: quick-start-pkg.fr.xml,v 1.11 2012/11/11 15:20:17 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: quick-start-pkg.fr.xml,v 1.12 2023/08/04 5:18:11 nieder Exp $</i></p></body></html>

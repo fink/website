@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - Starting X11";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/01/03 18:17:34';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="other.php?phpLang=en" title="Other X11 Possibilities"><link rel="prev" href="inst-xfree86.php?phpLang=en" title="Getting and Installing X11">';
 
 
@@ -56,7 +56,7 @@ nano $HOME/.xinitrc.d/94-wmaker.sh</pre>
       <p>
         (or use your favorite editor).  Then put the following contents in
         <code>94-wmaker.sh</code>:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec wmaker
       </pre>
@@ -73,7 +73,7 @@ nano $HOME/.xinitrc.d/74-xlogo.sh</pre>
       <p>
         (again, feel free to use your favorite editor).  Then put the following contents in
         <code>74-xlogo.sh</code>:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 xlogo &amp;</pre>
       <p>Save the file, then use</p>
       <pre>chmod a+x 74-xlogo.sh</pre>
@@ -86,7 +86,7 @@ xlogo &amp;</pre>
         Example: full GNOME session.  Create an executable <code>94-gnome-session.sh</code>
         with the following contents:
       </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</pre>
@@ -94,7 +94,7 @@ exec gnome-session</pre>
         Example: rootless GNOME session.  Create an executable <code>94-gnome-panel.sh</code>
         with the following contents:
       </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-panel</pre>
@@ -102,7 +102,7 @@ exec gnome-panel</pre>
         Example: KDE3.  Create an executable <code>94-startkde.sh</code> with the following
         contents:
       </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec startkde</pre>
       <p>
         (startkde automatically starts a window manager and uses <code>quartz-wm --only-proxy</code>)
@@ -111,12 +111,12 @@ exec startkde</pre>
         Example: KDE4.  Create an executable <code>94-startkde.sh</code> with the following
         contents:
       </p>
-      <pre>. /sw/bin/init.sh
-exec /sw/opt/kde4/x11/bin/startkde</pre>
+      <pre>. /opt/sw/bin/init.sh
+exec /opt/sw/opt/kde4/x11/bin/startkde</pre>
       <p><b>Notes:</b></p>
       <ul>
         <li>
-          Starting each script with <code>. /sw/bin/init.sh</code> ensures that programs which require
+          Starting each script with <code>. /opt/sw/bin/init.sh</code> ensures that programs which require
           other items from the Fink tree can find them.
         </li>
         <li>
@@ -163,7 +163,7 @@ exec /sw/opt/kde4/x11/bin/startkde</pre>
       <pre>cp /usr/X11/lib/X11/xinit/xinitrc ~/.xinitrc</pre>
       <p>
         To ensure reliable operation of Fink programs in <code>.xinitrc</code>, you should
-        put <code>. /sw/bin/init.sh</code> right at the beginning of the file to make sure the
+        put <code>. /opt/sw/bin/init.sh</code> right at the beginning of the file to make sure the
         environment is set up correctly.
       </p>
       <p>
@@ -191,7 +191,7 @@ exec /sw/opt/kde4/x11/bin/startkde</pre>
       <p>
         Example:  turn the X11 bell off, starts some clients and finally execute the Enlightenment
         window manager:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -201,12 +201,12 @@ xterm &amp;
 
 exec enlightenment</pre>
       <p>Example: start GNOME:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</pre>
       <p>Finally, to start KDE3:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec startkde
 </pre>
     
@@ -225,7 +225,7 @@ exec startkde
         <li>
           <p>
             The <code>xinitrc</code> package provides adminstrator entry points. Create the file
-            <code>/sw/etc/xinitrc-last-hook</code> as a superuser, and
+            <code>/opt/sw/etc/xinitrc-last-hook</code> as a superuser, and
             give it the following contents:
           </p>
           <pre>#!/bin/sh

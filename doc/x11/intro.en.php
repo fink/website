@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - Intro";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/01/03 18:17:34';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
 

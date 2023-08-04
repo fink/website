@@ -1,7 +1,7 @@
 <?php
 $title = "Executando o X11 - Resolução de problemas";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Executando o X11 Contents"><link rel="next" href="tips.php?phpLang=pt" title="Dicas de uso"><link rel="prev" href="other.php?phpLang=pt" title="Outras possibilidades de X11">';
 
 
@@ -182,7 +182,7 @@ Errors from xkbcomp are not fatal to the X server</pre>
       seus arquivos de inicialização do shell não foram configurados para
       adicionar <code>/usr/X11R6/bin</code> à variável PATH. Caso você
       use o Fink e não haja mudado seu shell padrão, adicionar a linha
-      <code>source /sw/bin/init.csh</code> ao arquivo
+      <code>source /opt/sw/bin/init.csh</code> ao arquivo
       <code>.cshrc</code> em seu diretório home (conforme recomendado
       pelas instruções do Fink) deve ser suficiente.</p>
 

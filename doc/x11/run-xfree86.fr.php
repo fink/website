@@ -1,7 +1,7 @@
 <?php
 $title = "Utilisation de X11 - Lancement de X11";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="xtools.php?phpLang=fr" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=fr" title="Récupération et installation de X11">';
 
 
@@ -58,10 +58,10 @@ include_once "header.fr.inc";
 <p>Vous pouvez mettre à peu près n'importe quelle commande dans un fichier <code>.xinitrc</code>, mais il faut tenir compte des éléments suivants. Tout d'abord, le shell qui interprète le fichier attend, par défaut, que chaque programme lancé soit terminé avant de lancer le suivant. Si vous voulez lancer plusieurs programmes en parallèle, vous devez indiquer au shell qu'il doit les faire tourner en "arrière-plan", en ajoutant un <code>&amp;</code> à la fin de la ligne.</p>
 <p>Ensuite, <code>xinit</code> attend que le script <code>.xinitrc</code> se termine et interprète sa fin ainsi : "la session est terminée, je dois aussi tuer le serveur X maintenant". Cela signifie que la dernière commande du fichier <code>.xinitrc</code> ne doit pas tourner en arrière-plan et que cette commande doit être un programme de longue durée. En général, on utilise le gestionnaire de gestionnaire comme dernière commande. En fait, la plupart des gestionnaires de fenêtres partent du principe que <code>xinit</code> attend qu'ils se terminent et utilisent cela pour faire fonctionner l'article de menu  "Fin de session". (<b>Note</b> : pour restreindre l'usage de la mémoire et le nombre de cycles CPU, vous pouvez mettre un <code>exec</code> au début de la dernière ligne comme dans les exemples ci-dessous.)</p>
 <p> Exemple de démarrage de GNOME :</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 exec gnome-session</pre>
 <p>Exemple plus complexe pour les utilisateurs de bash qui suppriment les alertes X11, lance un certain nombre de clients et le gestionnaire de fenêtres Enlightenment :</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -71,25 +71,25 @@ xterm &amp;
 
 exec enlightenment</pre>
 <p>Pour démarrer GNOME 2.2 sous X11 d'Apple, utilisez les commandes suivantes :</p>    
- <pre>. /sw/bin/init.sh
+ <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </pre> 
 <p>Pour GNOME 2.4 sous X11 d'Apple, metacity est lancée automatiquement, les commandes sont donc réduites à :</p>    
- <pre>. /sw/bin/init.sh
+ <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </pre> 
 <p>Pour lancer KDE 3.2 (version &lt; 3.2.2-21) sous X11 d'Apple :</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
 <p>Et enfin pour lancer la toute dernière version de KDE sous X11 d'Apple :</p>
-<pre>. /sw/bin/init.sh
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+<pre>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
 
 <h2><a name="oroborosx">4.7 OroborOSX</a></h2>

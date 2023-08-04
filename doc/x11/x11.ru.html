@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: x11.ru.xml,v 1.5 2012/11/11 15:20:18 gecko2 Exp $
+Generated from $Fink: x11.ru.xml,v 1.6 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - Использование X11 в Darwin и Mac OS X</title></head><body>
 <table width="100%" cellspacing="0">
@@ -316,7 +316,7 @@ Available Languages:  |
                         использовать другой менеджер окон, можно сделать как в
                         следующем примере:</p>
                     <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-                        exec /sw/bin/fvwm2</pre>
+                        exec /opt/sw/bin/fvwm2</pre>
                     <p>Разумеется, можно сделать вызов другого менеджера окон, н-р,
                         <tt style="white-space: nowrap;">startkde</tt> и т.д.</p>
                 </li>
@@ -332,12 +332,12 @@ Available Languages:  |
                         умолчанию. Для вызова приложений запуска, инсталлированных
                         при помощи fink (н-р, менеджеров окон,
                         gnome-session и других в
-                        <tt style="white-space: nowrap;">/sw/bin</tt>), внесите следующее
+                        <tt style="white-space: nowrap;">/opt/sw/bin</tt>), внесите следующее
                         в верхней части <tt style="white-space: nowrap;">~/.xinitrc</tt> (т.е.
                         после
                         "<tt style="white-space: nowrap;">#!/bin/sh</tt>", но
                         перед запуском любой программы):</p>
-                    <pre> . /sw/bin/init.sh</pre>
+                    <pre> . /opt/sw/bin/init.sh</pre>
                     <p>чтобы запустить среду Fink. Примечание: лучше использовать
                         <tt style="white-space: nowrap;">init.sh</tt>, чем
                         <tt style="white-space: nowrap;">init.csh</tt>, поскольку
@@ -350,12 +350,12 @@ Available Languages:  |
                         требуют особого обращения при их вовлечении в работу путем вызова
                         из меню приложений. Вместо добавления одного только
                         полного маршрута к имени файла, н-р:</p>
-                    <pre>/sw/bin/emacs</pre>
+                    <pre>/opt/sw/bin/emacs</pre>
                     <p>лучше использовать что-то вроде следующего, если
                         вы используете bash в качестве оболочки по умолчанию:</p>
-                    <pre>. /sw/bin/init.sh ; emacs</pre>
+                    <pre>. /opt/sw/bin/init.sh ; emacs</pre>
                     <p>или, если вы используете tcsh:</p>
-                    <pre>source /sw/bin/init.csh ; emacs</pre>
+                    <pre>source /opt/sw/bin/init.csh ; emacs</pre>
                     <p>Это обеспечивает правильный PATH
                         приложения. Можно использовать этот синтаксис для любого
                         приложения, инсталлированного при помощи Fink.</p>
@@ -645,24 +645,24 @@ Available Languages:  |
                 циклов ОЗУ и центрального процессора можно указать <tt style="white-space: nowrap;">exec</tt> перед
                 последней строкой, как в примере ниже.)</p>
             <p> Простой пример запуска GNOME:</p>
-            <pre>. /sw/bin/init.sh exec gnome-session</pre>
+            <pre>. /opt/sw/bin/init.sh exec gnome-session</pre>
             <p>Более сложный пример для пользователей bash, который отключает X11,
                 делает запуск некоторых клиентов и в конце концов менеджера окон Enlightenment:
                 </p>
-            <pre>. /sw/bin/init.sh xset b off xclock -geometry -0+0
+            <pre>. /opt/sw/bin/init.sh xset b off xclock -geometry -0+0
                 &amp; xterm &amp; xterm &amp; exec enlightenment</pre>
             <p>Для запуска GNOME 2.2 в X11 Apple используйте следующую последовательность:</p>
-            <pre>. /sw/bin/init.sh quartz-wm --only-proxy &amp;
+            <pre>. /opt/sw/bin/init.sh quartz-wm --only-proxy &amp;
                 metacity &amp; exec gnome-session</pre>
             <p>При запуске GNOME 2.4 в X11 Apple metacity запускается автоматически,
                 и таким образом последовательность следующая:</p>
-            <pre>. /sw/bin/init.sh quartz-wm --only-proxy &amp; exec gnome-session</pre>
+            <pre>. /opt/sw/bin/init.sh quartz-wm --only-proxy &amp; exec gnome-session</pre>
             <p>Для запуска KDE 3.2 (версия &lt; 3.2.2-21) в X11 Apple используйте</p>
-            <pre>. /sw/bin/init.sh export KDEWM=kwin quartz-wm
-                --only-proxy &amp; /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
+            <pre>. /opt/sw/bin/init.sh export KDEWM=kwin quartz-wm
+                --only-proxy &amp; /opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
             <p>Наконец, для запуска последней нестабильной версии KDE в
                 X11 Apple:</p>
-            <pre>. /sw/bin/init.sh /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
+            <pre>. /opt/sw/bin/init.sh /opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
         
     <h2><a name="xtools">5 Xtools</a></h2>
         
@@ -864,7 +864,7 @@ Available Languages:  |
                 ваши файлы инциализации оболочки не содержат настроек для добавления
                 /usr/X11R6/bin к переменной величине PATH. Если вы используете Fink и не изменили
                 настройки оболочки по умолчанию, для исправления должно быть достаточно добавления строки <tt style="white-space: nowrap;">source
-                /sw/bin/init.csh</tt> к <tt style="white-space: nowrap;">.cshrc</tt> в базовом каталоге
+                /opt/sw/bin/init.csh</tt> к <tt style="white-space: nowrap;">.cshrc</tt> в базовом каталоге
                 (как рекомендуется в инструкциях Fink).
                 </p>
             <pre>_XSERVTransSocketUNIXCreateListener:
@@ -1075,4 +1075,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: x11.ru.xml,v 1.5 2012/11/11 15:20:18 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: x11.ru.xml,v 1.6 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

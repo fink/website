@@ -1,7 +1,7 @@
 <?php
 $title = "Utilisation de X11 - Installation de X11";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Utilisation de X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=fr" title="Lancement de X11"><link rel="prev" href="history.php?phpLang=fr" title="Historique">';
 
 
@@ -53,25 +53,25 @@ include_once "header.fr.inc";
 <p>X11 d'Apple utilise votre fichier de configuration <code>~/.xinitrc</code>, s'il existe. Si vous voulez profiter au maximum de l'intégration Quartz, utilisez <code>/usr/X11R6/bin/quartz-wm</code> comme gestionnaire de fenêtres, ou supprimez complètement votre fichier <code>~/.xinitrc</code>.</p>
 <p>Si vous voulez simplement pouvoir copier-coller, mais désirez utiliser un autre gestionnaire de fenêtres, vous pouvez vous baser sur l'exemple suivant :</p>
 <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</pre>
+exec /opt/sw/bin/fvwm2</pre>
 <p>Vous pouvez, bien entendu, utiliser un autre gestionnaire de fenêtres, <code>startkde</code>, etc...</p>
 </li>
 <li>
 <p><code>quartz-wm</code> ne gère pas complètement les astuces des gestionnaires de fenêtres Gnome/KDE. Vous observerez peut-être des comportements étranges dans des fenêtres qui ne devraient pas avoir d'ornements, mais en ont pourtant.</p>
 </li>
 <li>
-<p>X11 d'Apple ne respecte pas, par défaut, les configurations d'environnement de Fink. Pour démarrer des applications installées via Fink (par exemple : gestionnaires de fenêtres,  gnome-session ou d'autres applications situées dans le répertoire <code>/sw/bin</code>), placez la ligne suivante dans les premières lignes du fichier <code>~/.xinitrc</code> (c'est-à-dire après l'initialisation "<code>#!/bin/sh</code>", mais avant de démarrer tout autre programme) :</p>
-<pre> . /sw/bin/init.sh
+<p>X11 d'Apple ne respecte pas, par défaut, les configurations d'environnement de Fink. Pour démarrer des applications installées via Fink (par exemple : gestionnaires de fenêtres,  gnome-session ou d'autres applications situées dans le répertoire <code>/opt/sw/bin</code>), placez la ligne suivante dans les premières lignes du fichier <code>~/.xinitrc</code> (c'est-à-dire après l'initialisation "<code>#!/bin/sh</code>", mais avant de démarrer tout autre programme) :</p>
+<pre> . /opt/sw/bin/init.sh
 </pre>
 <p>de façon à ce que votre environnement Fink soit initialisé. <b>Note</b> : <code>init.sh</code> est utilisé au lieu de <code>init.csh</code>, car <code>.xinitrc</code> est lancé par <code>sh</code> au lieu de <code>tcsh</code>.</p>
 </li>
 <li>
 <p>Les applications qui appellent d'autres programmes situés dans l'arborescence de Fink pour réaliser certaines de leurs fonctions doivent subir un traitement spécial pour que l'on puisse les appeler à partir du menu Applications. Au lieu de mettre le chemin complet du fichier, par exemple :</p>
-<pre>/sw/bin/emacs</pre>
+<pre>/opt/sw/bin/emacs</pre>
 <p>vous devez utiliser une commande semblable à la suivante, si vous utilisez le shell bash :</p>
-<pre>. /sw/bin/init.sh ; emacs</pre>
+<pre>. /opt/sw/bin/init.sh ; emacs</pre>
 <p>et si vous utilisez le shell tcsh, une commande semblable à celle-ci :</p>
-<pre>source /sw/bin/init.csh ; emacs</pre>
+<pre>source /opt/sw/bin/init.csh ; emacs</pre>
 <p>Ceci garantit que l'application aura un PATH correct. Vous pouvez utiliser cette syntaxe pour toute application installée via Fink.</p>
 </li>
 <li>

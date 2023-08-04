@@ -1,7 +1,7 @@
 <?php
 $title = "打包 - 软件包描述文件";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="policy.php?phpLang=zh" title="打包相关规则"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 
@@ -13,8 +13,8 @@ include_once "header.zh.inc";
 
 <h2><a name="trees">2.1 文件树结构</a></h2>
 <p>
-软件包描述文件保存在 <code>/sw/fink/dists</code> 目录树内的 <code>finkinfo</code> 目录中。
-<code>/sw/etc/fink.conf</code> 中的 "Trees" 设置控制会控制应该读取那个目录。
+软件包描述文件保存在 <code>/opt/sw/fink/dists</code> 目录树内的 <code>finkinfo</code> 目录中。
+<code>/opt/sw/etc/fink.conf</code> 中的 "Trees" 设置控制会控制应该读取那个目录。
 软件包描述文件的名字必须要软件包全名加上 ".info" 扩展名组成。
 从 fink 0.13.0 开始，为了简化软件包的升级，也可以允许简单地使用软件包加 ".info" 来组成。
 
@@ -159,15 +159,15 @@ Note that the Epoch is not part of <code>%f</code>.
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 
 <p>
-the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not assume all users have Fink installed in <code>/sw</code>; use <code>%p</code> to ge the correct path.
+the <b>p</b>refix where Fink is installed, e.g. <code>/opt/sw</code>. You must not assume all users have Fink installed in <code>/opt/sw</code>; use <code>%p</code> to ge the correct path.
 </p>
 
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 要打包的全套文件将被构建于的目标（<b>d</b>estination）目录，例如：
-<code>/sw/src/fink.build/root-gimp-1.2.1-1</code>。
+<code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code>。
 这个临时目录在编译过程的安装阶段将作为根目录位置。
-你不应该假设 <code>root-%f</code> 会在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它的位置。
+你不应该假设 <code>root-%f</code> 会在 <code>%p/src</code> 中，因为用户可以通过 <code>/opt/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它的位置。
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -187,8 +187,8 @@ the <b>p</b>refix where Fink is installed, e.g. <code>/sw</code>. You must not a
 </p>
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
-构建（<b>b</b>uild）过程所在的目录，例如：<code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>。
-你不应该假设 <code>%f</code> 一定在 <code>%p/src</code> 中，因为用户可以通过 <code>/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它。
+构建（<b>b</b>uild）过程所在的目录，例如：<code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>。
+你不应该假设 <code>%f</code> 一定在 <code>%p/src</code> 中，因为用户可以通过 <code>/opt/sw/etc/fink.conf</code> 文件中的 <code>Buildpath</code> 字段来改变它。
 最内部的目录根据 <code>Source</code> 文件名来命名，或是 <code>SourceDirectory</code> 字段(如果存在的话)的值，或在 <code>NoSourceDirectory</code> 为 <code>true</code> 的时候不使用它。
 </p>
 <p>

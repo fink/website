@@ -1,7 +1,7 @@
 <?php
 $title = "Ч.З.В. - Общие вопросы";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="relations.php?phpLang=ru" title="Связь с другими проектами"><link rel="prev" href="index.php?phpLang=ru" title="Ч.З.В. Contents">';
 
 
@@ -91,7 +91,7 @@ include_once "header.ru.inc";
                     делаете это на свой страх и риск.</p></div>
         </a>
         <a name="why-sw">
-            <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Тогда почему вы выбрали /sw?</b></p></div>
+            <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Тогда почему вы выбрали /opt/sw?</b></p></div>
             <div class="answer"><p><b><?php echo FINK_A ; ?>:</b>  Данный выбор совершенно произвольный, но возможно, мы на нем остановимся
                     в обозримом будущем по практическим соображениям (обновление),
                    а также потому, что это безопасно, т.к. предотвращается конфликт  с другими

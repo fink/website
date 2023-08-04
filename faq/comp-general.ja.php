@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - コンパイル (1)";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン"><link rel="prev" href="usage-fink.php?phpLang=ja" title="Fink のインストール、使用、メンテナンス">';
 
 
@@ -26,7 +26,7 @@ include_once "header.ja.inc";
 </a>
 <a name="missing-make">
 <div class="question"><p><b><?php echo FINK_Q ; ?>6.3: <code>make</code> に関連したエラーがでました。</b></p></div>
-<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> もしメッセージが以下のようであれば</p><pre>make: command not found</pre><p>あるいは</p><pre>Can't exec "make": No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Developer Tools をインストールする必要があります。</p><p>もしメッセージが以下のようであれば</p><pre>make: illegal option -- C</pre><p>
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> もしメッセージが以下のようであれば</p><pre>make: command not found</pre><p>あるいは</p><pre>Can't exec "make": No such file or directory at /opt/sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Developer Tools をインストールする必要があります。</p><p>もしメッセージが以下のようであれば</p><pre>make: illegal option -- C</pre><p>
 Developer Tools に入っていた GNU 版の <code>make</code> ユーティリティーを、 BSD 版の make に換えてしまったようです。
 パッケージの中には GNU 版の make でのみサポートされている特殊機能に依存しているものも多いので、 
 <code>/usr/bin/make</code> が <code>gnumake</code> のシンボリックリンクであることを確認してください。
@@ -42,8 +42,8 @@ Usage: head [-options] &lt;url&gt;...</pre><p>(後にオプションの説明リ
 これは Perl libwww ライブラリを HFS+ システムボリュームにインストールすると起こります。
 この時 <code>/usr/bin/HEAD</code> をインストールしようとするのですが、このファイルシステムは大文字と小文字を区別しないので、 <code>head</code> を上書きしてしまいます。
 <code>head</code> の方はシェルスクリプトや Makefile で良く使われる標準的なコマンドです。
-Fink を使うには、オリジナルの方の <code>head</code> に戻す必要があります。</p><p>ソースリリースのブートストラップスクリプトは、現在はこれを確認しますが、最初のインストールにバイナリリリースを使う場合、あるいは Fink をインストールした後で libwww をインストールする場合、まだこの問題に当たります。</p><p>この問題は、 <code>/sw/bin/HEAD</code> をインストールした場合も起こることが報告されています (Fink のパッケージではありません)。
-これは簡単に解決できます: rename <code>/sw/bin/HEAD</code> </p></div>
+Fink を使うには、オリジナルの方の <code>head</code> に戻す必要があります。</p><p>ソースリリースのブートストラップスクリプトは、現在はこれを確認しますが、最初のインストールにバイナリリリースを使う場合、あるいは Fink をインストールした後で libwww をインストールする場合、まだこの問題に当たります。</p><p>この問題は、 <code>/opt/sw/bin/HEAD</code> をインストールした場合も起こることが報告されています (Fink のパッケージではありません)。
+これは簡単に解決できます: rename <code>/opt/sw/bin/HEAD</code> </p></div>
 </a>
 <a name="also_in">
 <div class="question"><p><b><?php echo FINK_Q ; ?>6.5: あるパッケージをインストールしようとすると、他のパッケージのファイルを上書きしようとしているというエラーメッセージが出ました。
@@ -61,9 +61,9 @@ Fink を使うには、オリジナルの方の <code>head</code> に戻す必�
 これはいくつかの重要なシステムコールのバ再実装のバグで、この件のような不思議なエラーをたくさん出します。</p><p>この問題でない場合、 <code>mv</code> のエラーは通常、ビルドの前の方で発生した別のエラーを意味しています。
 エラーは発生したもののビルドは続行したものです。
 問題のあったファイルを追跡するには、ビルドの出力中の存在しないファイルを探します。
-例えば:</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
-/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
-mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib':
+例えば:</p><pre>mv /opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib \
+/opt/sw/src/root-foo-shlibs-0.1.2-3/opt/sw/lib/
+mv: cannot stat `/opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib':
 No such file or directory
 ### execution of mv failed, exit code 1
 Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <code>libbar</code> ファイルをビルド出力の前の方で探します。</p></div>
@@ -106,9 +106,9 @@ sudo mv /usr/local/lib.moved /usr/local/lib
 <div class="question"><p><b><?php echo FINK_Q ; ?>6.9: パッケージをビルドしようとしたら、 "table of contents" が古いというメッセージが出ました。何をしたらいいですか?
 </b></p></div>
 <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> このメッセージは重要なヒントです。
-メッセージはこのようなものだと思われます:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; 
+メッセージはこのようなものだと思われます:</p><pre>ld: table of contents for archive: /opt/sw/lib/libintl.a is out of date; 
 rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしているライブラリに (root で) ranlib を実行する必要があります。
-例えば、この例では:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
+例えば、この例では:</p><pre>sudo ranlib /opt/sw/lib/libintl.a</pre></div>
 </a>
 <a name="fc-atlas">
 <div class="question"><p><b><?php echo FINK_Q ; ?>6.10: atlas をインストールしようとすると、 Fink Commander がハングアップします。</b></p></div>
@@ -130,7 +130,7 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 </p></div>
 </a>
 <a name="dpkg-parse-error">
-<div class="question"><p><b><?php echo FINK_Q ; ?>6.13: "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
+<div class="question"><p><b><?php echo FINK_Q ; ?>6.13: "dpkg: parse error, in file `/opt/sw/var/lib/dpkg/status'"
 というメッセージが出て、何もインストールできません!</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 	  これは、クラッシュや回復不可能なエラーなど、何らかの理由で dpkg データベースが壊れたことを意味します。
@@ -138,7 +138,7 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 	</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>
 	  (もちろん、<code>foo-1.2.3-4</code> はあなたが見ようとしているパッケージ名)
 	</p><p>
-	  この問題が発生した場合、superuser で <code>/sw/var/lib/dpkg/status</code> を編集します。
+	  この問題が発生した場合、superuser で <code>/opt/sw/var/lib/dpkg/status</code> を編集します。
 	  エラーメッセージにある行の近くにいきます。
 	  <code>fink-buildlock-foo-1.2.3-4</code> で、 <code>Status</code> フィールドが、
 	</p><pre>install ok installed</pre><p>となっていますが、これを</p><pre>purge ok not-installed</pre><p>
@@ -146,17 +146,17 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 	</p><p>
 	  また、これとは異なり、ファイル中にゴミがある場合があります。
 	  この場合は、旧バージョンのデータベースをコピーします:
-	</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>
+	</p><pre>sudo cp /opt/sw/var/lib/dpkg/status-old /opt/sw/var/lib/dpkg/status</pre><p>
 	  問題が起きる前にインストールしていたパッケージをいくつか再インストールする必要があるかもしれません。
 	</p></div>
 </a>
 <a name="freetype-problems"> 
 <div class="question"><p><b><?php echo FINK_Q ; ?>6.14: freetype に関係したエラーが出ます。</b></p></div> 
-<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> freetype に関係したエラーにはいくつかありますが、以下のものであれば:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>外来の <code>freetype-config</code> があるかどうか、以下のコマンドを実行して確認します。</p><pre>where freetype-config</pre><p>(<code>tcsh</code> の場合)</p><pre>type -a freetype-config</pre><p>(<code>bash</code> の場合)。 Mono フレームワークは、 <code>/usr/bin/freetype-config</code> をインストールし、フレームワーク内へのシンボリックリンクを作ることが知られています。</p><p>もしこのようなものであれば:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
-/sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class 
+<div class="answer"><p><b><?php echo FINK_A ; ?>:</b> freetype に関係したエラーにはいくつかありますが、以下のものであれば:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>外来の <code>freetype-config</code> があるかどうか、以下のコマンドを実行して確認します。</p><pre>where freetype-config</pre><p>(<code>tcsh</code> の場合)</p><pre>type -a freetype-config</pre><p>(<code>bash</code> の場合)。 Mono フレームワークは、 <code>/usr/bin/freetype-config</code> をインストールし、フレームワーク内へのシンボリックリンクを作ることが知られています。</p><p>もしこのようなものであれば:</p><pre>/opt/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class 
 make[2]: *** [rsvg-gz.lo] Error 1 
 make[1]: *** [all-recursive] Error 1 
 make: *** [all-recursive-am] Error 2 
@@ -304,9 +304,9 @@ running build_ext
 Traceback (most recent call last):
   File "setup_socket_ssl.py", line 21, in ?
     depends = ['socketmodule.h'] )
-  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+  File "/opt/sw/src/root-python24-2.4.1-1/opt/sw/lib/python2.4/distutils/core.py", line 166, in setup
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
-### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>
+### execution of /opt/sw/bin/python2.4 failed, exit code 1</pre><p>
         	<code>python2*</code> パッケージは、ビルド時に <code>MACOSX_DEPLOYMENT_TARGET</code> 
         	をある設定ファイルに書き、Python ビルドユーティリティはモジュールをコンパイルする際に
         	この値を使っています。

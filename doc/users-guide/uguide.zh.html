@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: uguide.zh.xml,v 1.22 2019/01/19 10:11:12 nieder Exp $
+Generated from $Fink: uguide.zh.xml,v 1.23 2023/08/04 4:49:23 nieder Exp $
 -->
 <title>Fink Documentation - Fink 用户指南</title></head><body>
 <table width="100%" cellspacing="0">
@@ -207,7 +207,7 @@ the appropriate changes below.)
 ./bootstrap.sh</pre>
       <p>
 这个脚本会对你的系统进行一些检查，然后使用 sudo 把你提升到 root 权限——这时会提示你输入你的密码。然后，脚本会询问你安装的路径，除非你有一个很好的理由，否则你应该使用默认的——
-<tt style="white-space: nowrap;">/sw</tt>。
+<tt style="white-space: nowrap;">/opt/sw</tt>。
 只有这样，以后你才可以顺利安装下载的二进制方式提供的安装包。另外，我们全部的例子都使用这个路径，所以如果你使用其它的安装路径，你要记住进行相应的替换。
 </p>
       <p>
@@ -235,11 +235,11 @@ the appropriate changes below.)
 In most cases, you can do this by entering the command
 
       </p>
-      <pre>/sw/bin/pathsetup.sh</pre>
+      <pre>/opt/sw/bin/pathsetup.sh</pre>
       
       <p>Note that for some older versions of
 	fink the program was called  <tt style="white-space: nowrap;">pathsetup.command</tt>, and one could
-	run it via <tt style="white-space: nowrap;">open /sw/bin/pathsetup.command</tt>.      </p>
+	run it via <tt style="white-space: nowrap;">open /opt/sw/bin/pathsetup.command</tt>.      </p>
       
       <p>
 如果由于某种情况这种方法不奏效，你可以手工配置它。不过，这会随你使用的 Shell 程序不同而不同。
@@ -256,14 +256,14 @@ In most cases, you can do this by entering the command
           <p>
    如果你使用 Bourne 风格的 shell （比如 sh，bash，zsh），把下面的几行添加到你的主目录下的 <tt style="white-space: nowrap;">.profile</tt> 文件中（或者，如果你已经有一个 <tt style="white-space: nowrap;">.bash_profile</tt> 文件，你也可以添加到那里）：
   </p>
-          <pre>. /sw/bin/init.sh</pre>
+          <pre>. /opt/sw/bin/init.sh</pre>
           <p>
    如果你不知道如何添加，运行下面的命令：
   </p>
           <pre>cd
 pico .profile</pre>
           <p>
-   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <tt style="white-space: nowrap;">. /sw/bin/init.sh</tt> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
+   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <tt style="white-space: nowrap;">. /opt/sw/bin/init.sh</tt> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
   </p>
         </li>
         <li>
@@ -272,14 +272,14 @@ pico .profile</pre>
           <p>
    如果你使用 tcsh，在你主目录下的<tt style="white-space: nowrap;">.cshrc</tt>文件中添加下面一行：
   </p>
-          <pre>source /sw/bin/init.csh</pre>
+          <pre>source /opt/sw/bin/init.csh</pre>
           <p>
    如果你不懂怎么添加，运行下面的命令：
   </p>
           <pre>cd
 pico .cshrc</pre>
           <p>
-   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <tt style="white-space: nowrap;">source /sw/bin/init.sh</tt> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
+   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <tt style="white-space: nowrap;">source /opt/sw/bin/init.sh</tt> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
   </p>
           <p>有些情况下你需要编辑更多的文件：</p>
           <ol>
@@ -682,7 +682,7 @@ details).
 </p>
       <p>
 <b>fink.conf</b> 文件的位置在
-<tt style="white-space: nowrap;">/sw/etc/fink.conf</tt>，它可以用你喜欢的纯文本编辑器来编辑它。要编辑它，你需要超级用户的权限。
+<tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt>，它可以用你喜欢的纯文本编辑器来编辑它。要编辑它，你需要超级用户的权限。
 </p>
     
     <h3><a name="conf.syntax">5.2 fink.conf 文件的语法</a></h3>
@@ -709,7 +709,7 @@ ListOption: Option1 Option2 Option3
           <p>
             <b>Basepath:</b> 路径</p>
           <p>
-它告诉 Fink 它被安装在什么位置。默认的情况是 <b>/sw</b>，除非你在第一次安装的时候更改了它的位置。安装以后，你<b>决不能</b>再更改这个设置，否则会使 <b>fink</b> 陷入混乱中。
+它告诉 Fink 它被安装在什么位置。默认的情况是 <b>/opt/sw</b>，除非你在第一次安装的时候更改了它的位置。安装以后，你<b>决不能</b>再更改这个设置，否则会使 <b>fink</b> 陷入混乱中。
 </p>
         </li>
       </ul>
@@ -739,7 +739,7 @@ unstable/crypto - 未稳定的可靠（经过数字签名）软件包
 unstable/main   - 其它未稳定软件包
 </pre>
           <p>
-你可以根据需要在　<tt style="white-space: nowrap;">/sw/fink/dists</tt>　目录中加入你自己的代码树，但通常来说不需要这样做。默认的代码树是 "local/main local/bootstrap　stable/main"。这个设置清单应该与 <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> 文件内容保持一致。
+你可以根据需要在　<tt style="white-space: nowrap;">/opt/sw/fink/dists</tt>　目录中加入你自己的代码树，但通常来说不需要这样做。默认的代码树是 "local/main local/bootstrap　stable/main"。这个设置清单应该与 <tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> 文件内容保持一致。
 
 (As of fink 0.21.0, <tt style="white-space: nowrap;">fink</tt> does this for you automatically.)
 
@@ -756,14 +756,14 @@ override packages from earlier ones.</p>
           
           Mac OS X 10.2 users are restricted to fink-0.24.7, released in June 2005.
           
-          这个字段是通过运行 <tt style="white-space: nowrap;">/sw/lib/fink/postinstall.pl</tt> 来设置的。你不应该手工改变这个设置值。
+          这个字段是通过运行 <tt style="white-space: nowrap;">/opt/sw/lib/fink/postinstall.pl</tt> 来设置的。你不应该手工改变这个设置值。
 </p>
         </li>
         <li>
           <p>
             <b>FetchAltDir:</b> 路径</p>
           <p>通常来说 <tt style="white-space: nowrap;">fink</tt> 会保存它下载的源代码到
-<tt style="white-space: nowrap;">/sw/src</tt>　目录中。你可以用这个选项来更换保存下载源程序的目录。例如：
+<tt style="white-space: nowrap;">/opt/sw/src</tt>　目录中。你可以用这个选项来更换保存下载源程序的目录。例如：
 </p>
           <pre>FetchAltDir: /usr/src</pre>
         </li>
@@ -793,7 +793,7 @@ override packages from earlier ones.</p>
         <li>
           <p>
             <b>NoAutoIndex:</b> 布尔值</p>
-          <p>Fink 会缓存它的软件包描述文件在 /sw/var/db/fink.db 中，这会减少每次运行时读取和解析这些文件的时间。除非这个值被设成 "True"，否则 Fink 会每次都检查软件包的索引时候需要更新。默认情况下它被设成 "False"。我们不推荐你更改它。如果你真的改动了它，你需要手工运行　<tt style="white-space: nowrap;">fink index</tt> 命令来更新索引。</p>
+          <p>Fink 会缓存它的软件包描述文件在 /opt/sw/var/db/fink.db 中，这会减少每次运行时读取和解析这些文件的时间。除非这个值被设成 "True"，否则 Fink 会每次都检查软件包的索引时候需要更新。默认情况下它被设成 "False"。我们不推荐你更改它。如果你真的改动了它，你需要手工运行　<tt style="white-space: nowrap;">fink index</tt> 命令来更新索引。</p>
         </li>
         <li>
           <p>
@@ -803,7 +803,7 @@ override packages from earlier ones.</p>
         <li>
         		<p><b>Buildpath:</b> 路径</p>
         		
-        		<p>Fink 在从源代码编译的时候，需要创建几个临时的目录。默认情况下，它们被放置在 <tt style="white-space: nowrap;">/sw/src</tt> (on Panther and earlier) 下， <tt style="white-space: nowrap;">/sw/src/fink.build</tt> (on Tiger) 下，不过，如果你想把它们放在其它地方的话，可以在这里指明路径。查阅本文档后面关于 <tt style="white-space: nowrap;">KeepRootDir</tt> 和 <tt style="white-space: nowrap;">KeepBuildDir</tt> 字段的描述获取关于这个临时目录的更多信息 (<a href="#conf.developer">Developer Settings</a>)。</p>
+        		<p>Fink 在从源代码编译的时候，需要创建几个临时的目录。默认情况下，它们被放置在 <tt style="white-space: nowrap;">/opt/sw/src</tt> (on Panther and earlier) 下， <tt style="white-space: nowrap;">/opt/sw/src/fink.build</tt> (on Tiger) 下，不过，如果你想把它们放在其它地方的话，可以在这里指明路径。查阅本文档后面关于 <tt style="white-space: nowrap;">KeepRootDir</tt> 和 <tt style="white-space: nowrap;">KeepBuildDir</tt> 字段的描述获取关于这个临时目录的更多信息 (<a href="#conf.developer">Developer Settings</a>)。</p>
 	    <p>On Tiger, it is recommended that the Buildpath end with <tt style="white-space: nowrap;">.noindex</tt>
 or <tt style="white-space: nowrap;">.build</tt>. Otherwise, Spotlight will attempt to index the temporary files in
 the Buildpath, slowing down builds.
@@ -908,7 +908,7 @@ but only operates on that single <tt style="white-space: nowrap;">fink</tt> invo
           <p>
             <b>MirrorContinent:</b> 三个字母的代号</p>
           <p>你应该使用 <tt style="white-space: nowrap;">fink configure</tt>
-命令来更改这些取值。三个字母的代号可以在 <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt> 文件中找到。
+命令来更改这些取值。三个字母的代号可以在 <tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_keys</tt> 文件中找到。
 例如，如果你住在亚洲：</p>
           <pre>MirrorContinent: asi</pre>
         </li>
@@ -916,7 +916,7 @@ but only operates on that single <tt style="white-space: nowrap;">fink</tt> invo
           <p>
             <b>MirrorCountry:</b> 六个字母代号</p>
           <p>你应该使用 <tt style="white-space: nowrap;">fink configure</tt>
-命令来更改这些取值。六个字母由三个字母的洲代号（见上面的描述），一个减号，以及两个字母的国家代号组成。你可以在 <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt> 文件中找到它们。
+命令来更改这些取值。六个字母由三个字母的洲代号（见上面的描述），一个减号，以及两个字母的国家代号组成。你可以在 <tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_keys</tt> 文件中找到它们。
 例如，如果你住在中国：</p>
           <pre>MirrorCountry: asi-CN</pre>
         </li>
@@ -980,7 +980,7 @@ ClosestFirst - 优先搜索最近的镜像服务器（把所有镜像服务器�
           <p>
             <b>CCacheDir:</b> path</p>
           <p>If the Fink package <tt style="white-space: nowrap;">ccache-default</tt> is installed, the cache files it makes
-while building Fink packages will be placed here. Defaults to <tt style="white-space: nowrap;">/sw/var/ccache</tt>. If set to <tt style="white-space: nowrap;">none</tt>, fink will not set the CCACHE_DIR environment variable and ccache will use <tt style="white-space: nowrap;">$HOME/.ccache</tt>, potentially putting root-owned files into your home directory.
+while building Fink packages will be placed here. Defaults to <tt style="white-space: nowrap;">/opt/sw/var/ccache</tt>. If set to <tt style="white-space: nowrap;">none</tt>, fink will not set the CCACHE_DIR environment variable and ccache will use <tt style="white-space: nowrap;">$HOME/.ccache</tt>, potentially putting root-owned files into your home directory.
 <b>Only available in fink newer than version 0.21.0</b>.
           </p>
         </li>
@@ -988,7 +988,7 @@ while building Fink packages will be placed here. Defaults to <tt style="white-s
            Specify a notification plugin to tell you when packages have been
            installed/uninstalled.  Defaults to Growl (requires <tt style="white-space: nowrap;">Mac::Growl</tt> to
            operate).  Other plugins can be found in the
-           <tt style="white-space: nowrap;">/sw/lib/perl5/Fink/Notify</tt> directory.
+           <tt style="white-space: nowrap;">/opt/sw/lib/perl5/Fink/Notify</tt> directory.
 </p></li>
         
         <li><p><b>AutoScanpackages:</b> boolean
@@ -1013,7 +1013,7 @@ while building Fink packages will be placed here. Defaults to <tt style="white-s
     <h3><a name="conf.sourceslist">5.9 Managing apt's sources.list file</a></h3>
       
       <p>Starting with fink 0.21.0, fink actively manages the file
-<tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> which is used by apt to locate
+<tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> which is used by apt to locate
 binary files for installation.  The default sources.list file looks 
 something like this, adjusted to match your Distribution and Trees:
 </p>
@@ -1023,10 +1023,10 @@ something like this, adjusted to match your Distribution and Trees:
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in 
-# /sw/etc/fink.conf
+# /opt/sw/etc/fink.conf
 # NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
-deb file:/sw/fink local main
-deb file:/sw/fink stable main crypto
+deb file:/opt/sw/fink local main
+deb file:/opt/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release
@@ -1051,8 +1051,8 @@ modifications to the top of the file (above the first default line) and
 the bottom of the file (below the last default line).
 </p>
       <p>
-Note: If you had modified <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> prior to upgrading
-to fink 0.21.0, you will find your former file stored at <tt style="white-space: nowrap;">/sw/etc/apt/sources.list.finkbak</tt> .
+Note: If you had modified <tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> prior to upgrading
+to fink 0.21.0, you will find your former file stored at <tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list.finkbak</tt> .
 </p>
     
     
@@ -1228,7 +1228,7 @@ the dpkg tool (usually this poses no problem, though).</p>
 the <tt style="white-space: nowrap;">.deb</tt> compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the <tt style="white-space: nowrap;">.deb</tt> from the
-<tt style="white-space: nowrap;">/sw/fink/dists</tt> tree.</p>
+<tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> tree.</p>
       <p>These flags can be used with the <b>fink remove</b> command
 </p>
       <pre>-h,--help             - Show the options which are available.
@@ -1407,7 +1407,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       
       
       <p>
-	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <tt style="white-space: nowrap;">fink</tt> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <tt style="white-space: nowrap;">/sw/fink/dists</tt> 目录树来使用直接 git 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
+	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <tt style="white-space: nowrap;">fink</tt> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> 目录树来使用直接 git 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
 </p>
       
       
@@ -1479,7 +1479,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
 --all                - All of the above modes. (new in fink-0.26.0)</pre>
       <p>If no mode is specified, <tt style="white-space: nowrap;">--debs --sources</tt> is the default action. </p>
       <p>In addition, the following options may be used:</p>
-      <pre>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
+      <pre>-k,--keep-src        - Move old source files to /opt/sw/src/old/ instead of deleting them.
 -d,--dry-run         - Print the names of the files that would be deleted, but
                        do not actually delete them.
 -h,--help            - Show the modes and options which are available.</pre>
@@ -1517,4 +1517,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: uguide.zh.xml,v 1.22 2019/01/19 10:11:12 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: uguide.zh.xml,v 1.23 2023/08/04 4:49:23 nieder Exp $</i></p></body></html>

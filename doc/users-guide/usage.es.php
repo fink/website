@@ -1,7 +1,7 @@
 <?php
 $title = "Guía del Usuario - Herramienta fink ";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="prev" href="conf.php?phpLang=es" title="El archivo de configuración de Fink">';
 
 
@@ -172,7 +172,7 @@ Do you want to continue? [Y/n]</pre>
       
       <p>Este comando remueve los paquetes del sistema invocando el comando '<code>dpkg --remove</code>'. La actual implementación tiene algunas fallas: no revisa las dependencias sino que se lo deja por completo a la herramienta dpkg tool (aunque esto rara vez causa problemas).</p>
       <p>El comando <b>remove</b> solo remueve los archivos del paquete, pero deja el archivo <code>.deb</code> comprimiro del paquete intacto. Esto significa que puedes reinstalar el paquete despues sin tener que pasar por el proceso de compilación. Si necesitas el espacio de disco, puedes remover el archivo <code>.deb</code> del directorio
-<code>/sw/fink/dists</code> .</p>
+<code>/opt/sw/fink/dists</code> .</p>
       
       <p>These flags can be used with the <b>fink remove</b> command
 </p>
@@ -352,7 +352,7 @@ Re-ejecuta el procesos de configuración de <code>fink</code>. Este comando te p
     <h2><a name="selfupdate">6.18 selfupdate</a></h2>
       
       <p>
-	Este comando automatiza el proceso de actualización del Fink. Revisa el sitio web, verifica si existe una versión nueva disonible y en caso de haberla, decarga las descripciones del paquete y actualiza los paquetes centrales, incluyendo al propio<code>fink</code> . Este comando actualiza las versiones regulares, pero puedes modificar el directorio  <code>/sw/fink/dists</code>
+	Este comando automatiza el proceso de actualización del Fink. Revisa el sitio web, verifica si existe una versión nueva disonible y en caso de haberla, decarga las descripciones del paquete y actualiza los paquetes centrales, incluyendo al propio<code>fink</code> . Este comando actualiza las versiones regulares, pero puedes modificar el directorio  <code>/opt/sw/fink/dists</code>
 	para obtener actualizaciones directamente del Git, accediendo así a las actualizaciones m��s recientes de todos los paquetes.
 </p>
 
@@ -421,7 +421,7 @@ Re-ejecuta el procesos de configuración de <code>fink</code>. Este comando te p
 --all                - All of the above modes. (new in fink-0.26.0)</pre>
       <p>If no mode is specified, <code>--debs --sources</code> is the default action. </p>
       <p>In addition, the following options may be used:</p>
-      <pre>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
+      <pre>-k,--keep-src        - Move old source files to /opt/sw/src/old/ instead of deleting them.
 -d,--dry-run         - Print the names of the files that would be deleted, but
                        do not actually delete them.
 -h,--help            - Show the modes and options which are available.</pre>

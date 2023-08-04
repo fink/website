@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Benutzung (1)";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=de" title="Benutzung von Paketen - Bestimmte Pakete"><link rel="prev" href="comp-packages.php?phpLang=de" title="Probleme beim Übersetzen - Bestimmte Pakete">';
 
 
@@ -71,26 +71,26 @@ include_once "header.de.inc";
           installierten Header-Dateien und Bibliotheken sind. Man muss dem
           Compiler die erforderliche Architektur mitteilen. Wird ein Programm
           mit dem üblichen configure/make Prozess erzeugt, muss man folgende
-          Umgebungsvariablen setzen:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include
-export LDFLAGS=-L/sw/lib 
+          Umgebungsvariablen setzen:</p><p>-bash-</p><pre>export CFLAGS=-I/opt/sw/include
+export LDFLAGS=-L/opt/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS="-I /sw/share/aclocal"
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.5</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
-setenv LDFLAGS -L/sw/lib 
+export ACLOCAL_FLAGS="-I /opt/sw/share/aclocal"
+export PKG_CONFIG_PATH="/opt/sw/lib/pkgconfig"
+export PATH=/opt/sw/var/lib/fink/path-prefix-10.6:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.5</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/opt/sw/include 
+setenv LDFLAGS -L/opt/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
+setenv ACLOCAL_FLAGS "-I /opt/sw/share/aclocal"
+setenv PKG_CONFIG_PATH "/opt/sw/lib/pkgconfig"
+setenv PATH /opt/sw/var/lib/fink/path-prefix-10.6:$PATH
 setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(Dies gilt für Systeme ab 10.5)</p><p>Es ist oft am einfachsten, die Umgebungsvariablen in den
           Startup-Dateien (also <code>.cshrc</code> oder
           <code>.profile</code>) einzutragen, so dass sie automatisch
           gesetzt werden. Verwendet ein Paket diese Variablen nicht, dann müssen
-          sie die Optionen "-I/sw/include" (für Header-Dateien) und
-          "-L/sw/lib" (für Bibliotheken) selbst in die Kommandos für das
+          sie die Optionen "-I/opt/sw/include" (für Header-Dateien) und
+          "-L/opt/sw/lib" (für Bibliotheken) selbst in die Kommandos für das
           Übersetzen hinzufügen. Einige Pakete nutzen extra Variablen
           außerhalb des üblichen, wie die configure-Optionen EXTRA_CFLAGS oder
           --with-qt-dir=. "./configure --help" erzeugt normalerweise eine Liste
@@ -105,9 +105,9 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(Dies gilt für Systeme ab 10.5)</p
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Apples X11 protokolliert die Änderungen in der Fink-Umgebung nicht
           mit. Dies bedeutet, dass the Pfad im Programme-Menu nicht so gesetzt
           ist, dass Fink-Programme gefunden werden. Die Lösung ist dem Namen des
-          Fink-Programms ein</p><pre>source /sw/bin/init.sh ;</pre><p>voran zu stellen. Wenn sie z. B. das mit fink installierte Gimp
-          starten wollen, schreiben sie in den Eintrag für Gimp:</p><pre>source /sw/bin/init.sh ; gimp</pre><p>Sie können auch die Datei .xinitrc (in ihrem Nutzer-Verzeichnis)
-          editieren und folgendes nach der ersten Zeile hinzufügen:</p><pre>source /sw/bin/init.sh</pre></div>
+          Fink-Programms ein</p><pre>source /opt/sw/bin/init.sh ;</pre><p>voran zu stellen. Wenn sie z. B. das mit fink installierte Gimp
+          starten wollen, schreiben sie in den Eintrag für Gimp:</p><pre>source /opt/sw/bin/init.sh ; gimp</pre><p>Sie können auch die Datei .xinitrc (in ihrem Nutzer-Verzeichnis)
+          editieren und folgendes nach der ersten Zeile hinzufügen:</p><pre>source /opt/sw/bin/init.sh</pre></div>
     </a>
     <a name="x-options">
       <div class="question"><p><b><?php echo FINK_Q ; ?>8.5: Ich durch die vielen Optionen für X11 (Apple X11, XFree86,

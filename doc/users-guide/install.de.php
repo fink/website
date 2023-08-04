@@ -1,7 +1,7 @@
 <?php
 $title = "Benutzerhandbuch - Installation";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="packages.php?phpLang=de" title="Pakete Installieren"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
 
@@ -82,7 +82,7 @@ in das Verzeichnis und führen Sie das bootstrap-Script aus:
 Das Skript wird eine paar Kontrollen auf Ihrem System und sudo ausführen, 
 um root zu werden - dies wird Sie nach Ihrem Passwort fragen. Dann wird 
 Sie das Script nach dem Installationspfad fragen. Sofern Sie keinen guten 
-Grund haben, sollten sie den Standardpfad wählen- <code>/sw</code>. Nur 
+Grund haben, sollten sie den Standardpfad wählen- <code>/opt/sw</code>. Nur 
 so können Sie später auch Binärpakete installieren. Außerdem nutzen 
 alle Beispiele diesen Pfad; achten Sie darauf diesen dann mit Ihren 
 Installationspfad zu ersetzen, sollten Sie einen anderen gewählt haben.
@@ -115,11 +115,11 @@ einschließlich der Paketverwaltung selber zu nutzen, müssen Sie die
 Umgebungsvariable PATH (und einige andere) entsprechend setzen.  In den
 meisten Fällen können Sie das mit diesem Befehl tun:
 </p>
-      <pre>/sw/bin/pathsetup.sh</pre>
+      <pre>/opt/sw/bin/pathsetup.sh</pre>
 <p>
 Bitte beachten sie, dass das Programm in einigen älteren Versionen von
 fink <code>pathsetup.command</code> genannt wird und man es mittels
-<code>open /sw/bin/pathsetup.command</code> laufen lassen muss.
+<code>/opt/sw/bin/pathsetup.sh</code> laufen lassen muss.
 </p>
 <p>
 Falls es dennoch aus irgendeinen Grund nicht funktionieren sollte, können
@@ -146,7 +146,7 @@ wahrscheinlich eine Variante der Bourne-Shell.
        <code>.bash_profile</code>-Datei haben, sollte Sie diese
        stattdessen nutzen).
           </p>
-          <pre>. /sw/bin/init.sh</pre>
+          <pre>. /opt/sw/bin/init.sh</pre>
           <p>
 Wenn Sie nicht wissen, wie Sie die Zeile hinzufügen können, führen Sie diese Befehle aus:
   </p>
@@ -155,7 +155,7 @@ pico .profile</pre>
           <p>
 Sie befinden sich nun in einem Vollbildschirm- (naja, 
 Vollterminalfenster-) Texteditor und können einfach beginnen, die 
-<code>. /sw/bin/init.sh</code>-Zeile einzutippen. Es ist in 
+<code>. /opt/sw/bin/init.sh</code>-Zeile einzutippen. Es ist in 
 Ordnung, wenn eine Meldung erscheint, die "New file" ausgibt. Gehen 
 Sie sicher, dass Sie nach der Zeile mindestens einmal Return 
 gedrückt haben; dann drücken Sie ctrl-O, Return und ctrl-X, um aus 
@@ -169,7 +169,7 @@ dem Editor zu kommen.
           <p>
 Wenn Sie tcsh verwenden, fügen Sie die folgende Zeile in die Datei <code>.cshrc</code> in Ihrem Home-Verzeichnis ein:
   </p>
-          <pre>source /sw/bin/init.csh</pre>
+          <pre>source /opt/sw/bin/init.csh</pre>
          
          <p>
 Wenn Sie nicht wissen, wie Sie die Zeile hinzufügen können, führen Sie diese Befehle aus:
@@ -179,7 +179,7 @@ pico .cshrc</pre>
           <p>
           Sie befinden sich nun in einem Vollbildschirm- (naja,
           Vollterminalfenster-) Texteditor und können einfach beginnen, die
-          <code>source /sw/bin/init.csh</code>-Zeile einzutippen.  Es ist okay,
+          <code>source /opt/sw/bin/init.csh</code>-Zeile einzutippen.  Es ist okay,
           wenn eine Meldung erscheint, die "New file" ausgibt.  Gehen Sie
           sicher, dass Sie nach der Zeile mindestens einmal Return gedrückt
           haben; dann drücken Sie ctrl-O, Return und ctrl-X, um aus dem Editor

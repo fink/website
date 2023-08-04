@@ -1,7 +1,7 @@
 <?php
 $title = "User's Guide - fink Tool";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="prev" href="conf.php?phpLang=en" title="The Fink Configuration File">';
 
 
@@ -181,7 +181,7 @@ the dpkg tool (usually this poses no problem, though).</p>
 the <code>.deb</code> compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the <code>.deb</code> from the
-<code>/sw/fink/dists</code> tree.</p>
+<code>/opt/sw/fink/dists</code> tree.</p>
       <p>These flags can be used with the <b>fink remove</b> command
 </p>
       <pre>-h,--help             - Show the options which are available.
@@ -381,7 +381,7 @@ others.
 	release. It checks the Fink website to see if a new version is
 	available. It then downloads the package descriptions and updates
 	the core packages, including <code>fink</code> itself. This command can upgrade
-	to regular releases, but it can also setup your <code>/sw/fink/dists</code>
+	to regular releases, but it can also setup your <code>/opt/sw/fink/dists</code>
 	directory tree for direct git or rsync updates, if you select one of those options the first time this command is run.  This means that you then
 	will be able to access the very latest revisions of all packages.
 </p>
@@ -451,7 +451,7 @@ the list of available packages in the binary distribution is also updated.
 --all                - All of the above modes. (new in fink-0.26.0)</pre>
       <p>If no mode is specified, <code>--debs --sources</code> is the default action. </p>
       <p>In addition, the following options may be used:</p>
-      <pre>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
+      <pre>-k,--keep-src        - Move old source files to /opt/sw/src/old/ instead of deleting them.
 -d,--dry-run         - Print the names of the files that would be deleted, but
                        do not actually delete them.
 -h,--help            - Show the modes and options which are available.</pre>

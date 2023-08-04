@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - Troubleshooting";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2013/01/03 18:17:34';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=en" title="Usage Tips"><link rel="prev" href="other.php?phpLang=en" title="Other X11 Possibilities">';
 
 
@@ -103,7 +103,7 @@ Probably some client program tries to use it anyway...
         <code>/usr/X11/bin</code>, to the PATH variable.  Fink is normally set
         up to do this automatically, so this may indicate that your Fink environment
         isn't being loaded.  Running</p>
-      <pre>/sw/bin/pathsetup.sh</pre>
+      <pre>/opt/sw/bin/pathsetup.sh</pre>
       <p>
         in a terminal window, and then starting a new window, will typically resolve this.
       </p>
@@ -156,7 +156,7 @@ if the last file has an '&amp;', there will be no error, but X11 will quit.
 See the sections on <a href="run-xfree86.php?phpLang=en#xinitrc-d">.xinitrc.d</a> and
 <a href="run-xfree86.php?phpLang=en#xinitrc">the .xinitrc file </a> for more details.</p>      
 <p>To avoid this, remember to set up the PATH using</p>
-<pre>. /sw/bin/init.sh</pre>
+<pre>. /opt/sw/bin/init.sh</pre>
 <p>in your startup files, 
 and also to end with a long-lived program that is
 not started in the background, e.g. a window manager or session manager with no '&amp;'.

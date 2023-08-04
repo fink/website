@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - Tipps";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/02/23 16:32:58';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Running X11 Contents"><link rel="prev" href="trouble.php?phpLang=de" title="Probleme mit XFree86 beheben">';
 
 
@@ -18,11 +18,11 @@ include_once "header.de.inc";
         starten möchte. Anstatt den ganzen Pfad zu der Datei anzugeben,
         also
       </p>
-<pre>/sw/bin/emacs</pre>
+<pre>/opt/sw/bin/emacs</pre>
       <p>sollte man z. B. bei bash besser folgendes eintragen:</p>
-<pre>. /sw/bin/init.sh ; emacs</pre>
+<pre>. /opt/sw/bin/init.sh ; emacs</pre>
       <p>und bei tcsh:</p>
-<pre>source /sw/bin/init.csh ; emacs</pre>
+<pre>source /opt/sw/bin/init.csh ; emacs</pre>
       <p>
         Damit ist sicher gestellt, dass das Programm die korrekte
         PATH-Information hat. Diese Syntax kann man für jedes Programm

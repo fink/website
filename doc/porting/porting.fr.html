@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: porting.fr.xml,v 1.15 2014/10/25 09:21:47 gecko2 Exp $
+Generated from $Fink: porting.fr.xml,v 1.16 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - Portage de logiciel sur Darwin et Mac OS X</title></head><body>
 <table width="100%" cellspacing="0">
@@ -279,7 +279,7 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 </td></tr><tr valign="top"><td>libdl</td><td>
 <p>Les fichiers <tt style="white-space: nowrap;">/usr/lib/libdl.dylib</tt> et <tt style="white-space: nowrap;">/usr/include/dlfcn.h</tt> sont inclus maintenant ; il n'y a donc plus besoin de dépendre des paquets Fink "dlcompat", "dlcompat-dev" et "dlcompat-shlibs". Le code de la librairie est incorporé dans libSystem ; cette librairie est toujours liée automatiquement. Cela signifie que le drapeau <tt style="white-space: nowrap;">-ldl</tt> n'est plus nécessaire (mais son utilisation n'a aucun effet).</p>
 </td></tr><tr valign="top"><td>GNU getopt</td><td>
-<p>Cette librairie, qui comprend la fonction <tt style="white-space: nowrap;">getopt_long()</tt>, a été incorporée dans libSystem et <tt style="white-space: nowrap;">/usr/include/getopt.h</tt> ; vous n'avez donc pas besoin d'utiliser les paquets Fink "libgnugetopt" et "libgnugetopt-shlibs". Comme libSystem est automatiquement liée et que le répertoire <tt style="white-space: nowrap;">/usr/include</tt> fait partie des répertoires automatiques de recherche des headers, vous pouvez supprimer tous les drapeaux <tt style="white-space: nowrap;">-lgnugetopt</tt> et <tt style="white-space: nowrap;">-I/sw/include/gnugetopt</tt> qui avaient été ajoutés pour permettre d'accéder au paquet Fink "libgnugetopt".</p>
+<p>Cette librairie, qui comprend la fonction <tt style="white-space: nowrap;">getopt_long()</tt>, a été incorporée dans libSystem et <tt style="white-space: nowrap;">/usr/include/getopt.h</tt> ; vous n'avez donc pas besoin d'utiliser les paquets Fink "libgnugetopt" et "libgnugetopt-shlibs". Comme libSystem est automatiquement liée et que le répertoire <tt style="white-space: nowrap;">/usr/include</tt> fait partie des répertoires automatiques de recherche des headers, vous pouvez supprimer tous les drapeaux <tt style="white-space: nowrap;">-lgnugetopt</tt> et <tt style="white-space: nowrap;">-I/opt/sw/include/gnugetopt</tt> qui avaient été ajoutés pour permettre d'accéder au paquet Fink "libgnugetopt".</p>
 </td></tr></table>
 <p>Lors de la migration d'un paquet vers Mac OS X 10.3, essayez de supprimer ces dépendances obsolètes, car il se peut que ces paquets soient supprimés des arborescences futures. Cela signifie qu'il faut un fichier de description différent pour chaque arborescence. Comme toujours, le champ <tt style="white-space: nowrap;">Revision</tt> doit être incrémenté lors de changements faits sur un paquet. De cette façon, les utilisateurs qui passent de Mac OS X 10.2 à Mac OS X 10.3 voient les paquets spécifiques à la branche 10.3 comme "plus récents" que les paquets de l'arborescence 10.2. Par convention, le champ <tt style="white-space: nowrap;">Revision</tt> doit être incrémenté de 10 unités lors d'une migration vers un arbre plus récent de façon à laisser une marge pour pouvoir mettre à jour les paquets des branches moins récentes.</p>
 <p>Lors du test d'un paquet en migration, n'oubliez pas de désinstaller les paquets que vous avez supprimé du champ <tt style="white-space: nowrap;">BuildDepends</tt>, pour éviter que le compilateur lie avec les librairies Fink installées.</p>
@@ -302,4 +302,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: porting.fr.xml,v 1.15 2014/10/25 09:21:47 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: porting.fr.xml,v 1.16 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

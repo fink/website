@@ -1,7 +1,7 @@
 <?php
 $title = "Guia do usuário - A ferramenta fink";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="prev" href="conf.php?phpLang=pt" title="O arquivo de configuração do Fink">';
 
 
@@ -238,7 +238,7 @@ Do you want to continue? [Y/n]</pre>
       reinstalar um pacote mais tarde sem precisar passar novamente pelo
       processo de compilação. Se você precisar liberar espaço em disco, você
       pode remover os arquivos <code>.deb</code> na árvore
-      <code>/sw/fink/dists</code>.</p>
+      <code>/opt/sw/fink/dists</code>.</p>
 
       <p>As opções a seguir podem ser usadas em conjunto com o comando <b>fink
       remove</b>.</p>
@@ -480,7 +480,7 @@ fink apropos -s=kde irc   - o mesmo que acima, mas restrito a pacotes que
       disponível. Em seguida, ele baixa as descrições de pacotes e atualiza os
       pacotes básicos incluindo o próprio <code>fink</code>. Este comando pode
       fazer a atualização para versões regulares e também configurar seu
-      diretório <code>/sw/fink/dists</code> para atualizações diretas
+      diretório <code>/opt/sw/fink/dists</code> para atualizações diretas
       por meio de git ou rsync caso você tenha selecionado uma destas opções na
       primeira vez em que o comando for executado. Isto significa que você
       poderá portanto acessar as últimas versões de todos os pacotes.</p>
@@ -575,7 +575,7 @@ fink apropos -s=kde irc   - o mesmo que acima, mas restrito a pacotes que
 
       <p>Além disso, as seguintes opções podem ser usadas:</p>
 
-      <pre>-k,--keep-src        - Move arquivos antigos com código fonte para /sw/src/old no
+      <pre>-k,--keep-src        - Move arquivos antigos com código fonte para /opt/sw/src/old no
                                         lugar de os remover.
 -d,--dry-run         - Imprime os nomes dos arquivos que seriam removidos mas
                        não os remove de fato.

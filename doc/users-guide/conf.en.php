@@ -1,7 +1,7 @@
 <?php
 $title = "User's Guide - fink.conf";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="User\'s Guide Contents"><link rel="next" href="usage.php?phpLang=en" title="Using the fink Tool from the Command Line"><link rel="prev" href="upgrade.php?phpLang=en" title="Upgrading Fink">';
 
 
@@ -28,7 +28,7 @@ general, these options are meant for advanced users only.
 </p>
       <p>
 The <b>fink.conf</b> file is located at
-<code>/sw/etc/fink.conf</code>, and can be edited in your favourite
+<code>/opt/sw/etc/fink.conf</code>, and can be edited in your favourite
 text editor. You will need super-user rights to edit it.
 </p>
     
@@ -61,7 +61,7 @@ this category.
           <p>
             <b>Basepath:</b> path</p>
           <p>
-Tells <b>fink</b> where it was installed. Defaults to <b>/sw</b> unless you
+Tells <b>fink</b> where it was installed. Defaults to <b>/opt/sw</b> unless you
 changed it during the initial installation of the Fink distribution. You should
 <b>not</b> change this value after installation, it will confuse <b>fink</b>.
 </p>
@@ -97,10 +97,10 @@ unstable/crypto - unstable cryptographic packages
 unstable/main   - other unstable packages
 </pre>
           <p>
-You may also add your own trees in <code>/sw/fink/dists</code> for your own purposes, but this is not necessary in most
+You may also add your own trees in <code>/opt/sw/fink/dists</code> for your own purposes, but this is not necessary in most
 circumstances. The default trees are "local/main local/bootstrap
 stable/main". This list is automatically kept in sync with the
-<code>/sw/etc/apt/sources.list</code> file.</p><p>The order of the trees is meaningful, as packages from later trees in the list may
+<code>/opt/sw/etc/apt/sources.list</code> file.</p><p>The order of the trees is meaningful, as packages from later trees in the list may
            override packages from earlier ones.</p>
         -</li>
         <li>
@@ -110,7 +110,7 @@ stable/main". This list is automatically kept in sync with the
 running. Mac OS X 10.0 and earlier are not supported, and 10.1 and 10.2 are no
 longer supported by current versions of <code>fink</code>. Mac OS X 10.2 users are 
 restricted to fink-0.24.7, released in June 2005.  This
-field is set by running the <code>/sw/lib/fink/postinstall.pl</code>
+field is set by running the <code>/opt/sw/lib/fink/postinstall.pl</code>
 script. You should not need to alter this value manually.
 </p>
         </li>
@@ -118,7 +118,7 @@ script. You should not need to alter this value manually.
           <p>
             <b>FetchAltDir:</b> path</p>
           <p>usually <code>fink</code> will store the sources it fetches in
-<code>/sw/src</code>. You can specify an alternate directory to look for
+<code>/opt/sw/src</code>. You can specify an alternate directory to look for
 downloaded source code in using this option. For example:
 </p>
           <pre>FetchAltDir: /usr/src</pre>
@@ -148,7 +148,7 @@ The default value is 1.
         <li>
           <p>
             <b>NoAutoIndex:</b> boolean</p>
-          <p>Fink caches its package description files in /sw/var/db/fink.db to
+          <p>Fink caches its package description files in /opt/sw/var/db/fink.db to
 save it having to read and parse them all every time it runs. Fink
 checks whether or not the package index needs to be updated unless this
 option is set to "True". It defaults to "False" and it is not
@@ -170,8 +170,8 @@ manually.</p>
 	    <b>Buildpath:</b> path</p>
 	  <p>Fink needs to create several temporary directories for
 each package it compiles from source. By default, they are placed
-in <code>/sw/src</code> on Panther and earlier, and 
-<code>/sw/src/fink.build</code> on Tiger. If you want them to be
+in <code>/opt/sw/src</code> on Panther and earlier, and 
+<code>/opt/sw/src/fink.build</code> on Tiger. If you want them to be
 somewhere else, specify the path here. See the descriptions of
 the <code>KeepRootDir</code> and <code>KeepBuildDir</code> fields
  in the <a href="#developer">Developer Settings</a> section of this document for more information about these temporary
@@ -295,7 +295,7 @@ would like to use.</p>
             <b>MirrorContinent:</b> three letter code</p>
           <p>You should change this value using the <code>fink configure</code>
 command. The three letter code is one found in
-<code>/sw/lib/fink/mirror/_keys</code>.
+<code>/opt/sw/lib/fink/mirror/_keys</code>.
 For example, if you live in Europe:</p>
           <pre>MirrorContinent: eur</pre>
         </li>
@@ -304,7 +304,7 @@ For example, if you live in Europe:</p>
             <b>MirrorCountry:</b> six letter code</p>
           <p>You should change this value using the <code>fink configure</code>
 command. The three letter code is one found in
-<code>/sw/lib/fink/mirror/_keys</code>.
+<code>/opt/sw/lib/fink/mirror/_keys</code>.
 For example, if you live in Austria:</p>
           <pre>MirrorCountry: eur-AT</pre>
         </li>
@@ -379,7 +379,7 @@ only operates on that single <code>fink</code> invocation.
           <p>
             <b>CCacheDir:</b> path</p>
           <p>If the Fink package <code>ccache-default</code> is installed, the cache files it makes
-while building Fink packages will be placed here. Defaults to <code>/sw/var/ccache</code>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <code>$HOME/.ccache</code>, potentially putting root-owned files into your home directory.
+while building Fink packages will be placed here. Defaults to <code>/opt/sw/var/ccache</code>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <code>$HOME/.ccache</code>, potentially putting root-owned files into your home directory.
 <b>Only available in fink newer than version 0.21.0</b>.
           </p>
         </li>
@@ -387,7 +387,7 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
            Specify a notification plugin to tell you when packages have been
            installed/uninstalled.  Defaults to Growl (requires <code>Mac::Growl</code> to
            operate).  Other plugins can be found in the
-           <code>/sw/lib/perl5/Fink/Notify</code> directory.  On <code>fink-0.25</code> and later they are listed in the output of <code>fink plugins</code>.  See the <a href="http://wiki.finkproject.org/index.php/Fink:Notificati%20on_Plugins">Fink Developer Wiki</a> for more information.
+           <code>/opt/sw/lib/perl5/Fink/Notify</code> directory.  On <code>fink-0.25</code> and later they are listed in the output of <code>fink plugins</code>.  See the <a href="http://wiki.finkproject.org/index.php/Fink:Notificati%20on_Plugins">Fink Developer Wiki</a> for more information.
 </p></li>
         <li><p><b>AutoScanpackages:</b> boolean
            </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
@@ -409,7 +409,7 @@ while building Fink packages will be placed here. Defaults to <code>/sw/var/ccac
     <h2><a name="sourceslist">5.9 Managing apt's sources.list file</a></h2>
       
       <p>Fink actively manages the file
-<code>/sw/etc/apt/sources.list</code> which is used by apt to locate
+<code>/opt/sw/etc/apt/sources.list</code> which is used by apt to locate
 binary files for installation.  The default sources.list file looks 
 something like this, adjusted to match your Distribution and Trees:
 </p>
@@ -419,10 +419,10 @@ something like this, adjusted to match your Distribution and Trees:
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in 
-# /sw/etc/fink.conf
+# /opt/sw/etc/fink.conf
 # NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
-deb file:/sw/fink local main
-deb file:/sw/fink stable main crypto
+deb file:/opt/sw/fink local main
+deb file:/opt/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release

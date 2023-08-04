@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: x11.de.xml,v 1.1 2015/02/23 16:32:58 k-m_schindler Exp $
+Generated from $Fink: x11.de.xml,v 1.2 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - Running X11 on Darwin and Mac OS X</title></head><body>
 <table width="100%" cellspacing="0">
@@ -485,7 +485,7 @@ nano $HOME/.xinitrc.d/94-wmaker.sh</pre>
         Tragen sie folgenden Inhalt in <tt style="white-space: nowrap;">94-wmaker.sh</tt>
         ein:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec wmaker
 </pre>
@@ -506,7 +506,7 @@ nano $HOME/.xinitrc.d/74-xlogo.sh</pre>
         Tragen sie folgenden Inhalt in <tt style="white-space: nowrap;">74-xlogo.sh</tt>
         ein:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 xlogo &amp;</pre>
       <p>Speichern sie die Datei und führen sie folgendes Kommando aus:</p>
 <pre>chmod a+x 74-xlogo.sh</pre>
@@ -521,7 +521,7 @@ xlogo &amp;</pre>
         ausführbare Datei <tt style="white-space: nowrap;">94-gnome-session.sh</tt> mit
         folgendem Inhalt:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</pre>
@@ -529,7 +529,7 @@ exec gnome-session</pre>
         Beispiel: "rootless" GNOME-Session. Erzeugen sie die ausführbare
         Datei <tt style="white-space: nowrap;">94-gnome-panel.sh</tt> mit folgendem Inhalt:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-panel</pre>
@@ -537,7 +537,7 @@ exec gnome-panel</pre>
         Beispiel: KDE3. Erzeugen sie die ausführbare Datei
         <tt style="white-space: nowrap;">94-startkde.sh</tt> mit folgendem Inhalt:
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 exec startkde</pre>
       <p>
         (startkde startet automatisch eine Fensterverwaltung und nutzt
@@ -547,12 +547,12 @@ exec startkde</pre>
         Beispiel: KDE4. Erzeugen sie die ausführbare Datei
         <tt style="white-space: nowrap;">94-startkde.sh</tt> mit folgendem Inhalt:
       </p>
-<pre>. /sw/bin/init.sh
-exec /sw/opt/kde4/x11/bin/startkde</pre>
+<pre>. /opt/sw/bin/init.sh
+exec /opt/sw/opt/kde4/x11/bin/startkde</pre>
       <p><b>Beachte:</b></p>
       <ul>
         <li>
-          Beginnen sie jedes Skript mit <tt style="white-space: nowrap;">. /sw/bin/init.sh</tt>.
+          Beginnen sie jedes Skript mit <tt style="white-space: nowrap;">. /opt/sw/bin/init.sh</tt>.
           Damit wird sicher gestellt, dass auch Programme aus dem Fink-Baum
           gefunden werden.
         </li>
@@ -605,7 +605,7 @@ exec /sw/opt/kde4/x11/bin/startkde</pre>
       <p>
         Damit auch Fink-Programme in <tt style="white-space: nowrap;">.xinitrc</tt>
         funktionieren, sollte gleich am Anfang der Datei die Zeile <tt style="white-space: nowrap;">.
-        /sw/bin/init.sh</tt> stehen, damit die Umgebung korrekt
+        /opt/sw/bin/init.sh</tt> stehen, damit die Umgebung korrekt
         aufgesetzt wird.
       </p>
       <p>
@@ -637,7 +637,7 @@ exec /sw/opt/kde4/x11/bin/startkde</pre>
         Beispiel: Schalte die X11-Klingel aus, starte einige Klienten und
         zum Schluss die Fensterverwaltung "Enlightenment":
       </p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -647,12 +647,12 @@ xterm &amp;
 
 exec enlightenment</pre>
       <p>Beispiel: GNOME starten:</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</pre>
 <p>Zum Schluss: KDE3 starten:</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 exec startkde</pre>
     
     <h3><a name="run-xfree86.xinitrc-pkg">4.4 Das Fink-Paket 'xinitrc'</a></h3>
@@ -672,7 +672,7 @@ exec startkde</pre>
           <p>
             Das Paket <tt style="white-space: nowrap;">xinitrc</tt> enthält Einsprungspunkte für
             Administratoren. Erzeugen sie die Datei
-            <tt style="white-space: nowrap;">/sw/etc/xinitrc-last-hook</tt> als
+            <tt style="white-space: nowrap;">/opt/sw/etc/xinitrc-last-hook</tt> als
             Administrator mit folgendem Inhalt:
           </p>
 <pre>#!/bin/sh
@@ -822,7 +822,7 @@ Errors from xkbcomp are not fatal to the X server</pre>
         Hinweis darauf, dass die Fink-Umgebung noch nicht richtig
         aufgesetzt ist. Führt man das Kommando
       </p>
-<pre>/sw/bin/pathsetup.sh</pre>
+<pre>/opt/sw/bin/pathsetup.sh</pre>
       <p>
         in einem Terminalfenster aus und startet ein neues Fenster, ist der
         Fehler meistens behoben.
@@ -884,7 +884,7 @@ touch .Xauthority</pre>
         Wollen sie das verhindern, vergessen sie nicht in der Start-Datei
         die Pfad-Variable PATH mit folgendem Kommando zu setzen:
       </p>
-<pre>. /sw/bin/init.sh</pre>
+<pre>. /opt/sw/bin/init.sh</pre>
       <p>
         Außerdem sollte die Start-Datei mit einem langlebigen Programm
         enden, das nicht im Hintergrund läuft, z. B. einer Fenster- oder
@@ -936,11 +936,11 @@ touch .Xauthority</pre>
         starten möchte. Anstatt den ganzen Pfad zu der Datei anzugeben,
         also
       </p>
-<pre>/sw/bin/emacs</pre>
+<pre>/opt/sw/bin/emacs</pre>
       <p>sollte man z. B. bei bash besser folgendes eintragen:</p>
-<pre>. /sw/bin/init.sh ; emacs</pre>
+<pre>. /opt/sw/bin/init.sh ; emacs</pre>
       <p>und bei tcsh:</p>
-<pre>source /sw/bin/init.csh ; emacs</pre>
+<pre>source /opt/sw/bin/init.csh ; emacs</pre>
       <p>
         Damit ist sicher gestellt, dass das Programm die korrekte
         PATH-Information hat. Diese Syntax kann man für jedes Programm
@@ -1062,4 +1062,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: x11.de.xml,v 1.1 2015/02/23 16:32:58 k-m_schindler Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: x11.de.xml,v 1.2 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

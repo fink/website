@@ -1,7 +1,7 @@
 <?php
 $title = "用户指南 - 升级";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="conf.php?phpLang=zh" title="Fink 配置文件"><link rel="prev" href="packages.php?phpLang=zh" title="安装软件包">';
 
 

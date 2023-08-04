@@ -1,7 +1,7 @@
 <?php
 $title = "用户指南 - 安装";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="packages.php?phpLang=zh" title="安装软件包"><link rel="prev" href="intro.php?phpLang=zh" title="介绍">';
 
 
@@ -71,7 +71,7 @@ the appropriate changes below.)
 ./bootstrap.sh</pre>
       <p>
 这个脚本会对你的系统进行一些检查，然后使用 sudo 把你提升到 root 权限——这时会提示你输入你的密码。然后，脚本会询问你安装的路径，除非你有一个很好的理由，否则你应该使用默认的——
-<code>/sw</code>。
+<code>/opt/sw</code>。
 只有这样，以后你才可以顺利安装下载的二进制方式提供的安装包。另外，我们全部的例子都使用这个路径，所以如果你使用其它的安装路径，你要记住进行相应的替换。
 </p>
       <p>
@@ -99,11 +99,11 @@ the appropriate changes below.)
 In most cases, you can do this by entering the command
 
       </p>
-      <pre>/sw/bin/pathsetup.sh</pre>
+      <pre>/opt/sw/bin/pathsetup.sh</pre>
       
       <p>Note that for some older versions of
 	fink the program was called  <code>pathsetup.command</code>, and one could
-	run it via <code>open /sw/bin/pathsetup.command</code>.      </p>
+	run it via <code>open /opt/sw/bin/pathsetup.command</code>.      </p>
       
       <p>
 如果由于某种情况这种方法不奏效，你可以手工配置它。不过，这会随你使用的 Shell 程序不同而不同。
@@ -120,14 +120,14 @@ In most cases, you can do this by entering the command
           <p>
    如果你使用 Bourne 风格的 shell （比如 sh，bash，zsh），把下面的几行添加到你的主目录下的 <code>.profile</code> 文件中（或者，如果你已经有一个 <code>.bash_profile</code> 文件，你也可以添加到那里）：
   </p>
-          <pre>. /sw/bin/init.sh</pre>
+          <pre>. /opt/sw/bin/init.sh</pre>
           <p>
    如果你不知道如何添加，运行下面的命令：
   </p>
           <pre>cd
 pico .profile</pre>
           <p>
-   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <code>. /sw/bin/init.sh</code> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
+   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <code>. /opt/sw/bin/init.sh</code> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
   </p>
         </li>
         <li>
@@ -136,14 +136,14 @@ pico .profile</pre>
           <p>
    如果你使用 tcsh，在你主目录下的<code>.cshrc</code>文件中添加下面一行：
   </p>
-          <pre>source /sw/bin/init.csh</pre>
+          <pre>source /opt/sw/bin/init.csh</pre>
           <p>
    如果你不懂怎么添加，运行下面的命令：
   </p>
           <pre>cd
 pico .cshrc</pre>
           <p>
-   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <code>source /sw/bin/init.sh</code> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
+   你现在进入到一个全屏幕（准确地说，全终端窗口）文本编辑器，应该很容易能够输入 <code>source /opt/sw/bin/init.sh</code> 这一行。如果有个提示说 "New file"，这不是什么问题。确定在这行的末尾你至少输入了回车，然后按 Control-O，再回车，最后　Control-X 退出编辑器。
   </p>
           <p>有些情况下你需要编辑更多的文件：</p>
           <ol>

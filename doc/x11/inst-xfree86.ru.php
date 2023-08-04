@@ -1,7 +1,7 @@
 <?php
 $title = "Использование X11 - Инсталляция XFree86";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Использование X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=ru" title="Запуск XFree86"><link rel="prev" href="history.php?phpLang=ru" title="История создания продукта">';
 
 
@@ -104,7 +104,7 @@ include_once "header.ru.inc";
                         использовать другой менеджер окон, можно сделать как в
                         следующем примере:</p>
                     <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-                        exec /sw/bin/fvwm2</pre>
+                        exec /opt/sw/bin/fvwm2</pre>
                     <p>Разумеется, можно сделать вызов другого менеджера окон, н-р,
                         <code>startkde</code> и т.д.</p>
                 </li>
@@ -120,12 +120,12 @@ include_once "header.ru.inc";
                         умолчанию. Для вызова приложений запуска, инсталлированных
                         при помощи fink (н-р, менеджеров окон,
                         gnome-session и других в
-                        <code>/sw/bin</code>), внесите следующее
+                        <code>/opt/sw/bin</code>), внесите следующее
                         в верхней части <code>~/.xinitrc</code> (т.е.
                         после
                         "<code>#!/bin/sh</code>", но
                         перед запуском любой программы):</p>
-                    <pre> . /sw/bin/init.sh</pre>
+                    <pre> . /opt/sw/bin/init.sh</pre>
                     <p>чтобы запустить среду Fink. Примечание: лучше использовать
                         <code>init.sh</code>, чем
                         <code>init.csh</code>, поскольку
@@ -138,12 +138,12 @@ include_once "header.ru.inc";
                         требуют особого обращения при их вовлечении в работу путем вызова
                         из меню приложений. Вместо добавления одного только
                         полного маршрута к имени файла, н-р:</p>
-                    <pre>/sw/bin/emacs</pre>
+                    <pre>/opt/sw/bin/emacs</pre>
                     <p>лучше использовать что-то вроде следующего, если
                         вы используете bash в качестве оболочки по умолчанию:</p>
-                    <pre>. /sw/bin/init.sh ; emacs</pre>
+                    <pre>. /opt/sw/bin/init.sh ; emacs</pre>
                     <p>или, если вы используете tcsh:</p>
-                    <pre>source /sw/bin/init.csh ; emacs</pre>
+                    <pre>source /opt/sw/bin/init.csh ; emacs</pre>
                     <p>Это обеспечивает правильный PATH
                         приложения. Можно использовать этот синтаксис для любого
                         приложения, инсталлированного при помощи Fink.</p>

@@ -1,7 +1,7 @@
 <?php
 $title = "Ч.З.В. - Зеркала";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="upgrade-fink.php?phpLang=ru" title="Обновление Fink (проблемы, связанные с версиями)"><link rel="prev" href="relations.php?phpLang=ru" title="Связь с другими проектами">';
 
 

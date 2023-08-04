@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Allgemeines";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=de" title="Verbindungen zu anderen Projekten"><link rel="prev" href="index.php?phpLang=de" title="F.A.Q. Contents">';
 
 
@@ -84,7 +84,7 @@ include_once "header.de.inc";
           Risiko weiter machen soll.</p></div>
     </a>
     <a name="why-sw">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Wieso /sw?</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Wieso /opt/sw?</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Die Wahl war ziemlich willkürlich, aber es sieht danach aus, dass es
           in absehbarer Zukunft für updates so bleiben kann und vor Konflikten
           mit anderer Software sicher ist.</p></div>

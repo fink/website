@@ -1,7 +1,7 @@
 <?php
 $title = "Q.F.P. - Généralités";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Q.F.P. Contents"><link rel="next" href="relations.php?phpLang=fr" title="Relations avec d\'autres projets"><link rel="prev" href="index.php?phpLang=fr" title="Q.F.P. Contents">';
 
 
@@ -37,7 +37,7 @@ include_once "header.fr.inc";
 <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Il y a plusieurs raisons à cela, mais toutes reposent sur le fait que "cela occasionnerait des failles dans le système".</p><p>Première raison : les logiciels de tierce partie. Le répertoire /usr/local est réservé à l'installation des logiciels qui ne font pas partie du système fourni par le vendeur initial. C'est donc l'endroit idéal pour installer quelque chose. Mais, c'est aussi là que d'autres vendeurs installeront leurs logiciels. La plupart des routines d'installation viendront écraser ce qui y est déjà - cela est vrai aussi pour dpkg. On peut, bien sûr, choisir de ne pas installer de logiciels de tierce partie dans le répertoire /usr/local. Malheureusement, la plupart des routines d'installation ne signalent pas à l'avance ce qu'elles installent ni où elles l'installent.</p><p>Deuxième raison : la variable d'environnement PATH contient par défaut le répertoire /usr/local/bin. Il s'ensuit que votre shell trouve les programmes qui y sont installés sans que vous ayez à intervenir. A contrario, vous devrez intervenir si vous ne souhaitez pas utiliser ces programmes. Au pire, cela affecte le système lui-même - de nombreuses parties du système reposent sur des scripts shell.</p><p>Troisième raison : l'ensemble des outils de compilation effectuent par défaut leurs recherches dans le répertoire /usr/local. Le compilateur cherche les headers dans le répertoire /usr/local/include et l'éditeur de liens cherche les bibliothèques dans le répertoire /usr/local/lib. C'est quelquefois très pratique, mais très difficile à désactiver si le besoin s'en fait sentir. On peut facilement désactiver le compilateur en mettant dans le répertoire /usr/local/include un fichier parasite auquel on donne le nom de <code>stdio.h</code>.</p><p>Ceci dit, il est possible d'installer Fink dans le répertoire /usr/local. Le script d'installation vous avertira que, si vous le faites, ce sera à vos risques et périls, mais continuera l'installation après votre accord.</p></div>
 </a>
 <a name="why-sw">
-<div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Pourquoi avoir choisi le répertoire /sw ?</b></p></div>
+<div class="question"><p><b><?php echo FINK_Q ; ?>1.5: Pourquoi avoir choisi le répertoire /opt/sw ?</b></p></div>
 <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Ce choix est tout-à-fait arbitraire, mais il est vraisemblable qu'il demeure le même, au moins dans un avenir prévisible, tant pour des raisons pratiques (mise à niveau) que par le fait qu'il n'entre en conflit avec aucun autre système de paquets.</p></div>
 </a>
 <p align="right"><?php echo FINK_NEXT ; ?>:

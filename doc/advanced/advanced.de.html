@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: advanced.de.xml,v 1.1 2015/02/18 23:50:43 k-m_schindler Exp $
+Generated from $Fink: advanced.de.xml,v 1.2 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - Fortgeschrittene Fink Themen</title></head><body>
 <table width="100%" cellspacing="0">
@@ -41,7 +41,7 @@ Die Methode erfordert die folgenden Schritte auf dem
       
       <ol>
         <li>
-Installieren sie Fink unter <tt style="white-space: nowrap;">/sw</tt> (Der voreingestellte
+Installieren sie Fink unter <tt style="white-space: nowrap;">/opt/sw</tt> (Der voreingestellte
 Basis-Pfad; wenn erforderlich, einen Symlink verwenden).
         </li>
         <li>
@@ -64,12 +64,12 @@ ausgeführt.
         <li>
 Starten sie einen Webserver: z.B. schalten sie "Personal Web Sharing" in
 der Kategorie "Freigaben" in den Systemeinstellungen ein. Richten sie
-dann httpd ein, dass es ihr Verzeichnis <tt style="white-space: nowrap;">/sw/fink</tt> zur
+dann httpd ein, dass es ihr Verzeichnis <tt style="white-space: nowrap;">/opt/sw/fink</tt> zur
 Verfügung stellt, in dem sie folgende Zeilen in der Datei
 <tt style="white-space: nowrap;">/etc/httpd/httpd.conf</tt> hinzufügen:
           <pre>
-Alias /fink /sw/fink
-&lt;Directory /sw/fink&gt;
+Alias /fink /opt/sw/fink
+&lt;Directory /opt/sw/fink&gt;
   Options Indexes FollowSymLinks
 &lt;/Directory&gt;
           </pre>
@@ -101,16 +101,16 @@ entsprechend anpassen.
       
       <ol>
         <li>
-Installieren sie Fink unter <tt style="white-space: nowrap;">/sw</tt> (voreingestellter
+Installieren sie Fink unter <tt style="white-space: nowrap;">/opt/sw</tt> (voreingestellter
 Basis-Pfad).
         </li>
         <li>
 Führen sie das Kommando <tt style="white-space: nowrap;">fink configure</tt> aus und schalten sie
 die Option ein, die Pakete aus einer binären Distribution zu beziehen.
-("UseBinaryDist: true" in der Datei <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt>.)
+("UseBinaryDist: true" in der Datei <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt>.)
         </li>
         <li>
-Editieren sie die Datei <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> und
+Editieren sie die Datei <tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> und
 fügen sie die Zeilen dazu, die ihren Fink-Baum repräsentieren. Wenn zum
 Beipsiel die IP-Adresse ihres Build-Servers 192.168.42.7 lautet, müssen sie
 folgendes hinzufügen:
@@ -168,4 +168,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: advanced.de.xml,v 1.1 2015/02/18 23:50:43 k-m_schindler Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: advanced.de.xml,v 1.2 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

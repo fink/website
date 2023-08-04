@@ -1,7 +1,7 @@
 <?php
 $title = "Perguntas frequentes - Compilação (1)";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Perguntas frequentes Contents"><link rel="next" href="comp-packages.php?phpLang=pt" title="Problemas de compilação - Pacotes específicos"><link rel="prev" href="usage-fink.php?phpLang=pt" title="Instalação, uso e manutenção do Fink">';
 
 
@@ -28,7 +28,7 @@ include_once "header.pt.inc";
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.3: Estou recebendo uma mensagem de erro envolvendo o
         <code>make</code>.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Caso sua mensagem seja do formato</p><pre>make: command not found</pre><pre>(make: comando não encontrado)</pre><p>ou</p><pre>Can't exec "make": 
-No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Isso significa que você precisa instalar o Xcode.</p><p>Por outro lado, se sua mensagem de erro se parece com</p><pre>make: illegal option -- C</pre><pre>(make: opção ilegal -- C)</pre><p>então você substituiu a versão GNU do utilitário <code>make</code>
+No such file or directory at /opt/sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Isso significa que você precisa instalar o Xcode.</p><p>Por outro lado, se sua mensagem de erro se parece com</p><pre>make: illegal option -- C</pre><pre>(make: opção ilegal -- C)</pre><p>então você substituiu a versão GNU do utilitário <code>make</code>
         que veio com o Xcode por uma versão BSD do make. Vários pacotes
         dependem de características especiais que são suportadas apenas pelo
         GNU make. Assegure-se de que <code>/usr/bin/make</code> é um link
@@ -51,8 +51,8 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Is
         verifica isso mas ainda assim é possível caso você use a instalação
         binária na primeira instalação ou instale libwww depois de haver
         instalado o Fink.</p><p>Este problema também já foi relatado devido à instalação de
-        <code>/sw/bin/HEAD</code> (mas não por um pacote do Fink). Isto
-        é fácil de resolver: renomeie <code>/sw/bin/HEAD</code>.</p></div>
+        <code>/opt/sw/bin/HEAD</code> (mas não por um pacote do Fink). Isto
+        é fácil de resolver: renomeie <code>/opt/sw/bin/HEAD</code>.</p></div>
     </a>
     <a name="also_in">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.5: Quando tento instalar um pacote, recebo uma mensagem de erro sobre
@@ -77,9 +77,9 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Is
         significa que outro erro anterior ocorreu durante a compilação mas a
         compilação não foi interrompiada. Para rastrear os arquivos que
         causaram o erro, procure na saída pela compilação de um arquivo que não
-        exista. Por exemplo, se você tiver algo parecido com:</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
-/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ 
-mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+        exista. Por exemplo, se você tiver algo parecido com:</p><pre>mv /opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib \
+/opt/sw/src/root-foo-shlibs-0.1.2-3/opt/sw/lib/ 
+mv: cannot stat `/opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib': 
 No such file or directory 
 ### execution of mv failed, exit code 1 
 Failed: installing foo-0.1.2-3 failed</pre><p>então você deve procurar por <code>libbar</code> em algum
@@ -134,10 +134,10 @@ Failed: installing foo-0.1.2-3 failed</pre><p>então você deve procurar por <co
         preciso fazer?</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> A saída dá uma dica de o que fazer. A mensagem é geralmente parecida
         com:</p><pre>ld: table of contents for archive: 
-/sw/lib/libintl.a is out of date; 
+/opt/sw/lib/libintl.a is out of date; 
 rerun ranlib(1) (can't load from it)</pre><p>O que você precisa fazer é executar o comando ranlib como root em
         qualquer biblioteca que esteja causando o problema. Por exemplo, para o
-        caso acima, você executaria:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
+        caso acima, você executaria:</p><pre>sudo ranlib /opt/sw/lib/libintl.a</pre></div>
     </a>
     <a name="fc-atlas">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.10: O Fink Commander trava quando tento instalar o pacote atlas.</b></p></div>
@@ -170,13 +170,13 @@ rerun ranlib(1) (can't load from it)</pre><p>O que você precisa fazer é execut
     </a>
     <a name="dpkg-parse-error">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.13: Não consigo instalar nada porque recebo a mensagem "dpkg: parse
-        error, in file `/sw/var/lib/dpkg/status'"!</b></p></div>
+        error, in file `/opt/sw/var/lib/dpkg/status'"!</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> This means that somehow your dpkg database got damaged, usually
-        from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>(of course, replace <code>foo-1.2.3-4</code> with the package name you are seeing).</p><p>When this happens, you should edit <code>/sw/var/lib/dpkg/status</code> as a superuser.
+        from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>(of course, replace <code>foo-1.2.3-4</code> with the package name you are seeing).</p><p>When this happens, you should edit <code>/opt/sw/var/lib/dpkg/status</code> as a superuser.
 	Then go near the line number which shows up in the error message.
 	You should see a <code>fink-buildlock-foo-1.2.3-4</code>
         package whose <code>Status</code> field is marked</p><pre>install ok installed</pre><p>Change that to</p><pre>purge ok not-installed</pre><p>Under other circumstances, there may be garbage in the file.  You can fix this situation by
-        copying the previous version of the database, like so:</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>You may need to re-install the last couple of packages you
+        copying the previous version of the database, like so:</p><pre>sudo cp /opt/sw/var/lib/dpkg/status-old /opt/sw/var/lib/dpkg/status</pre><p>You may need to re-install the last couple of packages you
         installed before the problem started occurring.</p></div>
     </a>
     <a name="freetype-problems">
@@ -185,15 +185,15 @@ rerun ranlib(1) (can't load from it)</pre><p>O que você precisa fazer é execut
         seguinte:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>verifique se você tem um executável
         <code>freetype-config</code> perdido através do comando</p><pre>type -a freetype-config</pre><p>caso esteja usando <code>bash</code> ou</p><pre>where freetype-config</pre><p>caso esteja usando <code>tcsh</code>. Sabe-se que o
         framework Mono instala um <code>/usr/bin/freetype-config</code>
-        que é um link simbólico para o arquivo que está nesse framework.</p><p>Caso seu erro se pareça com o seguinte:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: 
+        que é um link simbólico para o arquivo que está nesse framework.</p><p>Caso seu erro se pareça com o seguinte:</p><pre>/opt/sw/include/pango-1.0/pango/pangoft2.h:52: 
 error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:57:
+/opt/sw/include/pango-1.0/pango/pangoft2.h:57:
 error: parse error before '*' token
-/sw/include/pango-1.0/pango/pangoft2.h:61: 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:61: 
 error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:86: 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: 
 error: parse error before "pango_ft2_font_get_face"
-/sw/include/pango-1.0/pango/pangoft2.h:86: 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: 
 warning: data definition has no type or storage class 
 make[2]: *** [rsvg-gz.lo] Error 1
 make[1]: *** [all-recursive] Error 1 
@@ -353,9 +353,9 @@ running build_ext
 Traceback (most recent call last):
   File "setup_socket_ssl.py", line 21, in ?
     depends = ['socketmodule.h'] )
-  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+  File "/opt/sw/src/root-python24-2.4.1-1/opt/sw/lib/python2.4/distutils/core.py", line 166, in setup
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
-### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>o problema ocorre porque os pacotes <code>python2*</code> gravam o
+### execution of /opt/sw/bin/python2.4 failed, exit code 1</pre><p>o problema ocorre porque os pacotes <code>python2*</code> gravam o
         <code>MACOSX_DEPLOYMENT_TARGET</code> atual em um arquivo de
         configuração quando são compilados e os utilitários de compilação do
         python usam esse valor quando compilam módulos. Isto significa que você

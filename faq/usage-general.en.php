@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Usage (1)";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=en" title="Package Usage Problems - Specific Packages"><link rel="prev" href="comp-packages.php?phpLang=en" title="Compile Problems - Specific Packages">';
 
 
@@ -64,24 +64,24 @@ include_once "header.en.inc";
         linker need to be told where to find the Fink-installed libraries and
 		headers.  It is also necessary to tell the compiler to use the
 		appropriate target architecture.  For a package that uses standard
-		configure/make process, you need to set some environment variables:</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
-export LDFLAGS=-L/sw/lib 
+		configure/make process, you need to set some environment variables:</p><p>-bash-</p><pre>export CFLAGS=-I/opt/sw/include 
+export LDFLAGS=-L/opt/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS="-I /sw/share/aclocal"
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.9</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
-setenv LDFLAGS -L/sw/lib 
+export ACLOCAL_FLAGS="-I /opt/sw/share/aclocal"
+export PKG_CONFIG_PATH="/opt/sw/lib/pkgconfig"
+export PATH=/opt/sw/var/lib/fink/path-prefix-clang:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.9</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/opt/sw/include 
+setenv LDFLAGS -L/opt/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv ACLOCAL_FLAGS "-I /opt/sw/share/aclocal"
+setenv PKG_CONFIG_PATH "/opt/sw/lib/pkgconfig"
+setenv PATH /opt/sw/var/lib/fink/path-prefix-clang:$PATH
 setenv MACOSX_DEPLOYMENT_TARGET 10.9</pre><p>(assuming that the build system is running OS 10.9 or later)</p><p>It is often easiest just to add these to your startup files (e.g.
         <code>.cshrc</code> | <code>.profile</code>) so they
         are set automatically. If a package does not use these variables, you
-        may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
+        may need to add the "-I/opt/sw/include" (for headers) and "-L/opt/sw/lib" (for
         libraries) to the compile lines yourself. Some packages may use
         similar non-standard variables such as EXTRA_CFLAGS or --with-qt-dir=
         configure options. "./configure --help" will usually give you a list
@@ -95,8 +95,8 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.9</pre><p>(assuming that the build system is 
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Apple X11 doesn't keep track of the Fink environment settings,
         which means that the Applications menu doesn't have the PATH set
         correctly to find your Fink applications. The solution is to preface
-        the name of a Fink-installed application with</p><pre>source /sw/bin/init.sh ;</pre><p>For example, if you want to run a Fink-installed GIMP, then put</p><pre>source /sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p><p>You can also edit your .xinitrc file (in your user directory) and
-        add:</p><pre>source /sw/bin/init.sh</pre><p>after the first line.</p></div>
+        the name of a Fink-installed application with</p><pre>source /opt/sw/bin/init.sh ;</pre><p>For example, if you want to run a Fink-installed GIMP, then put</p><pre>source /opt/sw/bin/init.sh ; gimp</pre><p>in the Command field of your GIMP entry.</p><p>You can also edit your .xinitrc file (in your user directory) and
+        add:</p><pre>source /opt/sw/bin/init.sh</pre><p>after the first line.</p></div>
     </a>
     <a name="x-options">
       <div class="question"><p><b><?php echo FINK_Q ; ?>8.5: I'm bewildered by the X11 options: Apple X11, XFree86, etc. What

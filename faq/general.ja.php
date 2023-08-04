@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - 一般";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="relations.php?phpLang=ja" title="他のプロジェクトとの関係"><link rel="prev" href="index.php?phpLang=ja" title="F.A.Q. Contents">';
 
 
@@ -69,7 +69,7 @@ dpkg のバイナリパッケージ管理は洗練されています。
 この場合は自己責任で行なって下さい。</p></div>
 </a>
 <a name="why-sw">
-<div class="question"><p><b><?php echo FINK_Q ; ?>1.5: ではなぜ /sw を選んだのですか?</b></p></div>
+<div class="question"><p><b><?php echo FINK_Q ; ?>1.5: ではなぜ /opt/sw を選んだのですか?</b></p></div>
 <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> 
 この選択にあまり意味はありませんが、実用上の（アップグレードの）問題と、他のパッケージング・システムとのコンフリクト問題を避けるため、近い将来に変更することはないと思われます。</p></div>
 </a>

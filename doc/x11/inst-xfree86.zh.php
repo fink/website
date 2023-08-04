@@ -1,7 +1,7 @@
 <?php
 $title = "运行 X11 - 安装 X11";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="运行 X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=zh" title="启动 X11"><link rel="prev" href="history.php?phpLang=zh" title="历史">';
 
 
@@ -67,7 +67,7 @@ operation, and have OpenGL support.</li>
 作为你的窗口管理器，或者删除 <code>~/.xinitrc</code> 文件。</p>
           <p>如果你只需要拷贝粘贴支持，但希望使用另外一个窗口管理器，你可以按照下面的例子做：</p>
           <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</pre>
+exec /opt/sw/bin/fvwm2</pre>
           <p>当然，你也可以使用其它的窗口管理器，<code>startkde</code>，等等。</p>
         </li>
         <li>
@@ -76,17 +76,17 @@ exec /sw/bin/fvwm2</pre>
         </li>
         <li>
           <p>默认情况下，苹果的 X11 不理会 Fink 的环境变量设置。为了启动你通过 fink 安装的程序（例如窗口管理器，gnome-session，其它在
-<code>/sw/bin</code> 下的应用程序），把下面移行放在 <code>~/.xinitrc</code> 文件比较靠前的地方（比如，在最初的 "<code>#!/bin/sh</code>" 的这一行之后，但在运行其它程序以前）：</p>
-          <pre> . /sw/bin/init.sh</pre>
+<code>/opt/sw/bin</code> 下的应用程序），把下面移行放在 <code>~/.xinitrc</code> 文件比较靠前的地方（比如，在最初的 "<code>#!/bin/sh</code>" 的这一行之后，但在运行其它程序以前）：</p>
+          <pre> . /opt/sw/bin/init.sh</pre>
           <p>这样 Fink 的环境就被初始化了。注意：我们使用 <code>init.sh</code> 文件而不是 <code>init.csh</code> 文件是因为<code>.xinitrc</code> 是使用 <code>sh</code> 来做解释器，而不是 <code>tcsh</code>。</p>
         </li>
         <li>
           <p>有些程序需要调用 Fink 目录下的其它程序，如果这些程序是通过应用程序菜单启动的话，还需要另外的专门处理。而不仅仅是使用全路径名这个简单。例如：</p>
-          <pre>/sw/bin/emacs</pre>
+          <pre>/opt/sw/bin/emacs</pre>
           <p>如果你使用 bash 作为你的默认 shell 程序，你需要象下面这样设置：</p>
-          <pre>. /sw/bin/init.sh ; emacs</pre>
+          <pre>. /opt/sw/bin/init.sh ; emacs</pre>
           <p>如果你用 tcsh：</p>
-          <pre>source /sw/bin/init.csh ; emacs</pre>
+          <pre>source /opt/sw/bin/init.csh ; emacs</pre>
           <p>这个确保程序有一个正确的 PATH 环境。你可以对任何 Fink 安装的程序使用这个语法。</p>
         </li>
         <li>

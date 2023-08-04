@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: x11.es.xml,v 1.6 2012/11/11 15:20:18 gecko2 Exp $
+Generated from $Fink: x11.es.xml,v 1.7 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - Ejecutando X11 en Darwin y Mac OS X</title></head><body>
 <table width="100%" cellspacing="0">
@@ -374,7 +374,7 @@ completamente.</p>
 un gestor de ventanas diferente, puedes hacer como en el siguiente ejemplo: 
 </p>
           <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</pre>
+exec /opt/sw/bin/fvwm2</pre>
           <p>Es posible, por supuesto, llamar a cualquier otro gestor de 
 ventanas, a <tt style="white-space: nowrap;">startkde</tt>, etc.</p>
         </li>
@@ -390,11 +390,11 @@ pero a pesar de ello la tienen.</p>
 entornos de Fink.  
 Para arrancar aplicaciones instaladas a través de Fink 
 (p.e. gestores de ventana, sesiones de gnome, otras de 
-<tt style="white-space: nowrap;">/sw/bin</tt>) ponga lo que sigue cerca 
+<tt style="white-space: nowrap;">/opt/sw/bin</tt>) ponga lo que sigue cerca 
 del principio de <tt style="white-space: nowrap;">~/.xinitrc</tt> (i.e. después del 
 "<tt style="white-space: nowrap;">#!/bin/sh</tt>" inicial pero antes de ejecutar 
 ningún programa):</p>
-          <pre> . /sw/bin/init.sh
+          <pre> . /opt/sw/bin/init.sh
 </pre>
           <p>para inicializar el entorno de Fink.  
 Nota:  Se usa <tt style="white-space: nowrap;">init.sh</tt> en lugar de 
@@ -406,12 +406,12 @@ por <tt style="white-space: nowrap;">sh</tt> y no por <tt style="white-space: no
 de Fink para algunas de sus funciones requieren un tratamiento 
 especial cuando son invocadas desde el menú Aplicaciones.  En lugar de colocar la 
 ruta completa hasta el fichero, p.e.</p>
-          <pre>/sw/bin/emacs</pre>
+          <pre>/opt/sw/bin/emacs</pre>
           <p>hay que usar algo como lo siguiente, si usas bash 
 como shell por defecto:</p>
-          <pre>. /sw/bin/init.sh ; emacs</pre>
+          <pre>. /opt/sw/bin/init.sh ; emacs</pre>
           <p>o, si usas tcsh:</p>
-          <pre>source /sw/bin/init.csh ; emacs</pre>
+          <pre>source /opt/sw/bin/init.csh ; emacs</pre>
           <p>Así nos aseguramos que la aplicación tiene la información correcta
 en PATH. Se debe usar esta sintaxis para cualquier aplicación instalada vía Fink.</p>
         </li>
@@ -766,13 +766,13 @@ que sigue)
       <p>
 Un simple ejemplo que arranca GNOME:
 </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec gnome-session</pre>
       <p>Un ejemplo más complejo para usuarios de bash que apaga las alertas 
 de X11, arranca algunos clientes y finalmente ejecuta el gestor de 
 ventanas 
 Enlightenment:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -783,27 +783,27 @@ xterm &amp;
 exec enlightenment</pre>
       <p>Para arrancar GNOME 2.2 bajo X11 de Apple, usa la siguiente secuencia:
 </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </pre>
       <p>Para GNOME 2.4 bajo X11 de Apple, metacity arranca automáticamente y 
 por lo tanto la secuencia se reduce a:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </pre>
       <p>Para arrancar KDE 3.2 (version &lt; 3.2.2-21) bajo X11 de Apple:</p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
       <p>Y finalmente, para arrancar la última versión inestable de KDE 
 bajo X11 de Apple:</p>
-      <pre>. /sw/bin/init.sh
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+      <pre>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
     
   <h2><a name="xtools">5 Xtools</a></h2>
@@ -1066,7 +1066,7 @@ Tipo: Fatal.
 Ocurre con XDarwin 1.0a2 y 1.0a3 cuando los ficheros 
 de  inicialización del shell no han tienen nigún comando para añadir /usr/X11R6/bin a la variable PATH.
 Si usas Fink y no has cambiado tu shell por defecto, debería ser suficiente 
-añadir la línea <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt> al fichero 
+añadir la línea <tt style="white-space: nowrap;">source /opt/sw/bin/init.csh</tt> al fichero 
 <tt style="white-space: nowrap;">.cshrc</tt> en tu directorio de usuario.
 </p>
       <pre>_XSERVTransSocketUNIXCreateListener: 
@@ -1330,4 +1330,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: x11.es.xml,v 1.6 2012/11/11 15:20:18 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: x11.es.xml,v 1.7 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging - Reference";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/01/22 6:40:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Packaging Contents"><link rel="prev" href="compilers.php?phpLang=en" title="Compilers">';
 
 
@@ -17,12 +17,12 @@ include_once "header.en.inc";
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
 compile, install and build. The example paths below are for an
-installation in <code>/sw</code> and the package gimp-1.2.1-1.</p>
-<p>In the <b>unpack phase</b> the directory <code>/sw/src/fink.build/gimp-1.2.1-1</code> is created
+installation in <code>/opt/sw</code> and the package gimp-1.2.1-1.</p>
+<p>In the <b>unpack phase</b> the directory <code>/opt/sw/src/fink.build/gimp-1.2.1-1</code> is created
 and the source tarball(s) are unpacked there. In most cases, this will
 create a directory gimp-1.2.1 with the source in it; all following
 steps will be executed in that directory
-(i.e. <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>). Details can be controlled with
+(i.e. <code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>). Details can be controlled with
 the SourceDirectory, NoSourceDirectory and Source<b>N</b>ExtractDir
 fields.</p>
 <p>In the <b>patch phase</b> the source is patched so that it will
@@ -37,9 +37,9 @@ for the build (a new feature in fink 0.25, currently achieved by building in
 maintainer mode), the TestScript will be run immediately after the
 CompileScript.</p>
 <p>In the <b>install phase</b> the package is installed to a temporary
-directory, <code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d). (Note the "root-" part.)
-All files that would normally be installed to <code>/sw</code> are installed in
-<code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (= %i = %d%p) instead. See the
+directory, <code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d). (Note the "root-" part.)
+All files that would normally be installed to <code>/opt/sw</code> are installed in
+<code>/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</code> (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
 <p>(<b>Introduced in fink 0.9.9.</b> It is possible to generate several
 packages from a single package description using the <code>SplitOff</code>
@@ -701,7 +701,7 @@ Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
 <p>
   The standard continent and country codes are listed in
-  <code>/sw/lib/fink/mirror/_keys</code>, which is part of the
+  <code>/opt/sw/lib/fink/mirror/_keys</code>, which is part of the
   fink or fink-mirrors package.
 </p>
 </td></tr><tr valign="top"><td>Source</td><td>
@@ -713,7 +713,7 @@ supports a special URL scheme for mirrors:
 look up the mirror setting for <b>mirror-name</b> in Fink's
 configuration, append the <b>relative-path</b> part and use that as
 the actual URL. The known <b>mirror-name</b>s are listed in
-<code>/sw/lib/fink/mirror/_list</code>, which is part of the fink or fink-mirrors
+<code>/opt/sw/lib/fink/mirror/_list</code>, which is part of the fink or fink-mirrors
 package. Alternatively, using <code>custom</code> as the
 <b>mirror-name</b> will cause Fink to use the <code>CustomMirror</code>
 field.
@@ -785,7 +785,7 @@ caused by this, you would then use something like
 <pre>SourceRename: %n-%v.tar.gz</pre>
 <p>
 In the above example this would result in the tarball being stored under
-<code>/sw/src/coolapp-1.2.3.tar.gz</code> as one would expect.
+<code>/opt/sw/src/coolapp-1.2.3.tar.gz</code> as one would expect.
 </p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>
@@ -808,11 +808,11 @@ A typical usage example looks like this:
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
 <p>
 To compute the checksum, the <code>md5sum</code> tool is used. If you want to
-determine the checksum of the tarball <code>/sw/src/apache_1.3.23.tar.gz</code>,
+determine the checksum of the tarball <code>/opt/sw/src/apache_1.3.23.tar.gz</code>,
 you run the following command (displayed with output here):
 </p>
-<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
+<pre>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</pre>
 <p>
 As you can see, the value to the left is exactly the value you need.
 </p>
@@ -936,13 +936,13 @@ This happens in the patch phase and before the PatchScript is run.
 </p>
 <p>
 The patched version respects DESTDIR and makes sure that message
-catalogs end up in <code>/sw/share/locale</code>, not
-<code>/sw/lib/locale</code>.
+catalogs end up in <code>/opt/sw/share/locale</code>, not
+<code>/opt/sw/lib/locale</code>.
 Before using this field, make sure that you won't break the package
 and that it's really required.
 You can run <code>diff</code> to find the differences between the
 package's version and Fink's version (in
-<code>/sw/lib/fink/update</code>).
+<code>/opt/sw/lib/fink/update</code>).
 </p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>
@@ -1280,11 +1280,11 @@ A boolean value, specific for perl module packages.
 If true, this will add code to the install, postrm and postinst
 scripts that maintains the .pod files provided by perl packages.
 This includes adding and removing the .pod date from the central
-<code>/sw/lib/perl5/darwin/perllocal.pod</code> file.
+<code>/opt/sw/lib/perl5/darwin/perllocal.pod</code> file.
 (If the type has been given as <code>perl $version</code> with a
 specific version of perl such as 5.6.0,
 then these scripts are adapted to deal with the central .pod file
-<code>/sw/lib/perl5/$version/perllocal.pod</code>.)
+<code>/opt/sw/lib/perl5/$version/perllocal.pod</code>.)
 </p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>
@@ -1411,7 +1411,7 @@ information.
 </p></td></tr><tr valign="top"><td>RuntimeVars</td><td>
 <p>
 <b>Introduced in fink 0.10.0.</b>
-This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <a href="#profile.d">profile.d scripts section</a>). As long as your package is installed, these variables will be set via the <code>/sw/bin/init.[c]sh</code> scripts.
+This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <a href="#profile.d">profile.d scripts section</a>). As long as your package is installed, these variables will be set via the <code>/opt/sw/bin/init.[c]sh</code> scripts.
 </p>
 <p>
 The value of your variable can contain spaces (trailing ones are trimmed); also, percent expansion takes place. For example:
@@ -1422,7 +1422,7 @@ The value of your variable can contain spaces (trailing ones are trimmed); also,
 &lt;&lt;</pre>
 <p>
 will set two environment variables 'SomeVar' and 'AnotherVar' and their values
-will be respectively '/sw/Value' (or whatever your prefix is) and 'foo bar'.
+will be respectively '/opt/sw/Value' (or whatever your prefix is) and 'foo bar'.
 </p>
 <p>
 This field works by appending appropriate commands to the InstallScript.
@@ -1740,7 +1740,7 @@ of your own (for example, to perform a substitution on the patch file
 before applying it).</p>
 <p>If you  need to have the user's chosen prefix in the patch file
 it is recommended that you have a variable such as <code>@PREFIX@</code> 
-instead of <code>/sw</code> in the patch and then use:</p>
+instead of <code>/opt/sw</code> in the patch and then use:</p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</pre>
 <p>Patches should be in unidiff format and are normally generated by using:</p>
 <pre>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</pre>
@@ -1758,12 +1758,12 @@ separate download.
 
 <p>
 If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
-These script fragments are sourced by the <code>/sw/bin/init.[c]sh</code> scripts. Normally, all fink users will load these scripts in their shell startup files (<code>.cshrc</code> and comparable files).
-Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <code>/sw/etc/profile.d/%n.[c]sh</code> (where %n as usual stands for the package name).
+These script fragments are sourced by the <code>/opt/sw/bin/init.[c]sh</code> scripts. Normally, all fink users will load these scripts in their shell startup files (<code>.cshrc</code> and comparable files).
+Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <code>/opt/sw/etc/profile.d/%n.[c]sh</code> (where %n as usual stands for the package name).
 Also, their executable and read bits have to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
 </p>
 <p>
-If you just need to set some environment variables (for example, QTDIR to '/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
+If you just need to set some environment variables (for example, QTDIR to '/opt/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
 </p>
 
 

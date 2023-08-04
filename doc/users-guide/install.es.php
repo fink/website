@@ -1,7 +1,7 @@
 <?php
 $title = "Guía del Usuario - Instalar";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="packages.php?phpLang=es" title="Instalando Paquetes"><link rel="prev" href="intro.php?phpLang=es" title="Introducción">';
 
 
@@ -77,7 +77,7 @@ Ahora cambiemos a ese directorio recién creado y ejecutemos el script de bootst
 Este script ejecutara algunas revisiones de tu sistema y usará el comando sudo para tener acceso de root - por lo tanto pedirá tu contraseña.
 Entonces , el script solicitara el directorio de Instalación.
 Lo más facíl es usar el directorio por omisión -
-<code>/sw</code>.
+<code>/opt/sw</code>.
 Solo así se podrán instalar más tarde paquetes binarios descargados.
 Todos los ejemplos usan ese directorio; así que sí lo cambias,  asegurate de sustituir el directorio en los lugares adecuados.
 </p>
@@ -103,7 +103,7 @@ Cuando el bootstrap termine, proceda a la
 Para usar el software instalado en la jerarquia de directorios de Fink, incluyendo el manejador de paquetes, hay que ajustar la variable de ambiente PATH (y lagunas otras variables).
 En la mayoría de los casos, esto se puede hacer usando el comando
 </p>
-      <pre>open /sw/bin/pathsetup.command</pre>
+      <pre>/opt/sw/bin/pathsetup.sh</pre>
       <p>
 Sin embargo, si esto no funciona, se puede configurar manualmente. La configuración manual dependera del shell que se este usando. Para determinar el shell que se esta usando, se debe ejecutar en una terminal el comando:
 </p>
@@ -119,14 +119,14 @@ Sin embargo, si esto no funciona, se puede configurar manualmente. La configurac
           <p>
    Si usas el Bourne style shell (e.g. sh, bash, zsh), agrega las siguientes líneas al archivo<code>.profile</code> en tu directorio de home (o, si ienes un archivo<code>.bash_profile</code> debes usar el siguiente comando):
   </p>
-          <pre>./sw/bin/init.sh</pre>
+          <pre>. /opt/sw/bin/init.sh</pre>
           <p>
    Si no sabes como agregar esta línea, ejecuta los siguientes comandos:
   </p>
           <pre>cd
 pico .profile</pre>
           <p>
-  Ahora debes ver una pantalla de terminal con un editor de textos y simplemente hay que escribir la línea <code>source /sw/bin/init.sh</code> .  Si aparece una nota que indique "New file" no hay que preocuparse.  Solo asegurese de presionar Return al meno suna ve después de la línea antes mencionada, luego Control-O, Return, y Control-X para salir del editor.
+  Ahora debes ver una pantalla de terminal con un editor de textos y simplemente hay que escribir la línea <code>source /opt/sw/bin/init.sh</code> .  Si aparece una nota que indique "New file" no hay que preocuparse.  Solo asegurese de presionar Return al meno suna ve después de la línea antes mencionada, luego Control-O, Return, y Control-X para salir del editor.
   </p>
         </li>
         <li>
@@ -135,11 +135,11 @@ pico .profile</pre>
           <p>
    Si usted usa tcsh (por omisión en  Mac OS X), agrege la siguiente línea al archivo<code>.cshrc</code> en tu directorio home:
   </p>
-          <pre>source /sw/bin/init.csh</pre>
+          <pre>source /opt/sw/bin/init.csh</pre>
           <p>
      Ahora debes ver una pantalla de terminal con un editor de textos y simplemente hay que escribir la línea 
 
-source /sw/bin/init.sh .  
+source /opt/sw/bin/init.sh .  
 
 Si aparece una nota que indique"New file" no hay que preocuparse.  Solo asegurese de presionar Return al meno suna ve después de la línea antes mencionada, luego Control-O, Return, y Control-X para salir del editor.</p><p>
   </p>

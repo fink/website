@@ -1,14 +1,14 @@
 <?php
 $title = "Nutzung";
-$cvs_author = 'Author: kamischi';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:20:38';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink Nutzung</h1>
-<!--Generated from $Fink: usage.xml,v 1.16 2012/11/11 15:20:17 kamischi Exp $--><h2><a name="">Pfade setzen</a></h2>
+<!--Generated from $Fink: usage.xml,v 1.17 2023/08/04 5:20:38 nieder Exp $--><h2><a name="">Pfade setzen</a></h2>
 <p>
 Damit man die Programme, die in Finks Verzeichnis-Hierarchie installiert sind,
 und auch fink selbst benutzen kann muss die Umgebungvariable PATH (und einige
@@ -16,7 +16,7 @@ andere) entsprechend gesetzt werden.
 Dies wird für sie mit Shell-Skripts erledigt.
 Benutzen sie die Shell tcsh, fügen sie folgendes in die Datei .cshrc ein:
 </p>
-<pre>source /sw/bin/init.csh</pre>
+<pre>source /opt/sw/bin/init.csh</pre>
 <p>
 Änderungen in der Datei .cshrc wirken sich nur bei einer neuen Shell aus (d. h.
 in einem neu geöffneten Terminalfenster). Deshalb sollten sie das Kommando auch
@@ -29,7 +29,7 @@ der vorhandenen Kommmando intern zwischenspeichert.
 Nutzen wie eine Art Bourne shell (z. B. sh, bash, zsh) führen sie statt dessen
 folgendes Kommando aus:
 </p>
-<pre>source /sw/bin/init.sh</pre>
+<pre>source /opt/sw/bin/init.sh</pre>
 <p>
 Anmerkung: Die Skripte fügen auch /usr/X11R6/bin und /usr/X11R6/man zu ihrem
 Pfad hinzu, so dass sie X11 benutzen können, falls installiert.
@@ -78,7 +78,7 @@ Das Kommando remove löscht nur die installierten Dateien des Pakets, lässt abe
 die komprimierte Paketdatei .deb intakt. Das heißt, dass sie das Paket später
 erneut installieren können ohne erneut durch den Übersetzungsprozess gehen zu
 müssen. Wird Plattenplatz benötigt, können sie die .deb-Dateien im
-Verzeichnisbaum /sw/fink/dists löschen.
+Verzeichnisbaum /opt/sw/fink/dists löschen.
 </p>
 <p>
 Aliase für das Kommando remove: disable, deactivate, unuse, delete und purge.
@@ -178,7 +178,7 @@ Dann lädt es die Paketbeschreibungen herunter und aktualisiert die zentralen
 Kernpakete, einschließlich fink selbst.
 Mit diesem Kommando kann man nur auf reguläre Versionen aktualisieren. Sie
 können es aber verwenden, um von einer cvs-Version auf eine spätere reguläre
-Version zu aktualisieren. Es wird sich weigern, abzulaufen, wenn sie /sw/fink so
+Version zu aktualisieren. Es wird sich weigern, abzulaufen, wenn sie /opt/sw/fink so
 aufgesetzt haben, dass es Paketbeschreibungen direkt von CVS herunter lädt.
 </p>
 <h2><a name="">Weitere Fragen</a></h2>

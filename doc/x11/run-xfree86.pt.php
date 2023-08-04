@@ -1,7 +1,7 @@
 <?php
 $title = "Executando o X11 - Iniciando o X11";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Executando o X11 Contents"><link rel="next" href="xtools.php?phpLang=pt" title="Xtools"><link rel="prev" href="inst-xfree86.php?phpLang=pt" title="Obtendo e instalando o X11">';
 
 
@@ -155,7 +155,7 @@ include_once "header.pt.inc";
       <pre>cp /private/etc/X11/xinit/xinitrc ~/.xinitrc</pre>
 
       <p>Caso esteja usando o Fink, você precisa incluir (através do comando
-      <code>.</code>) o script <code>/sw/bin/init.sh</code> bem no
+      <code>.</code>) o script <code>/opt/sw/bin/init.sh</code> bem no
       começo para garantir que o ambiente seja configurado corretamente.</p>
 
       <p>Você pode colocar comandos arbitrários em um
@@ -180,14 +180,14 @@ include_once "header.pt.inc";
 
       <p>Um exemplo simples que inicia o GNOME no XFree86 ou X.org:</p>
 
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec gnome-session</pre>
 
       <p>Um exemplo mais complexo para usuários bash que desliga a campainha do
       X11, inicia alguns clientes e finalmente executa o gerenciador de janelas
       Enlightenment:</p>
 
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -200,22 +200,22 @@ exec enlightenment</pre>
 
       <p>Para iniciar o GNOME 2.4 e mais recentes no X11 da Apple:</p>
 
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session</pre>
 
       <p>Para iniciar o KDE 3.2 (versão &lt; 3.2.2-21) no X11 da Aple:</p>
 
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
 
       <p>E finalmente para iniciar a versão instável mais recente do KDE no X11
       da Apple:</p>
 
-      <pre>. /sw/bin/init.sh
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
+      <pre>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</pre>
     
 
     <h2><a name="oroborosx">4.7 OroborOSX</a></h2>

@@ -1,7 +1,7 @@
 <?php
 $title = "ネチケット - 投稿前";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ネチケット Contents"><link rel="next" href="first-post.php?phpLang=ja" title="最初の投稿"><link rel="prev" href="index.php?phpLang=ja" title="ネチケット Contents">';
 
 

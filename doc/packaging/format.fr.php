@@ -1,7 +1,7 @@
 <?php
 $title = "Paquets - Descriptions de paquets";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="next" href="policy.php?phpLang=fr" title="Règles de distribution des paquets"><link rel="prev" href="intro.php?phpLang=fr" title="Introduction">';
 
 
@@ -11,7 +11,7 @@ include_once "header.fr.inc";
 
 
 <h2><a name="trees">2.1 Arborescence</a></h2>
-<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <code>/sw/fink/dists</code>. La valeur de la variable "Trees" dans <code>/sw/etc/fink.conf</code> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". 
+<p>Les descriptions de paquets sont lues à partir des répertoires <code>finkinfo</code> situés dans le répertoire <code>/opt/sw/fink/dists</code>. La valeur de la variable "Trees" dans <code>/opt/sw/etc/fink.conf</code> contrôle quels répertoires sont lus. Le nom des fichiers de description de paquets doit être identique au nom complet du paquet suivi de l'extension ".info". 
 À partir de fink 0.26.0, il existe plusieurs façons de spécifier le nom du fichier ; il est recommandé d'utiliser le nom le plus court compatible avec les autres paquets nécessaires. 
 Le nom du fichier est de la forme : nom invariant du paquet, suivi éventuellement d'un tiret et de l'architecture, suivi éventuellement d'un tiret et de la distribution, suivi éventuellement d'un tiret et de la version ou du couple version-révision, et terminé par ".info". 
 Les éléments "architecture" et "distributtion" ne sont autorisés que si leurs champs sont présents dans le paquet et qu'ils fournissent une seule et unique valeur.
@@ -85,9 +85,9 @@ packages whose <code>InfoN</code> level is at least 4.
 </td></tr><tr valign="top"><td>%f</td><td>
 <p>nom complet du paquet, c'est-à-dire : %n-%v-%r. Notez que l'ère ne fait partie de <code>%f</code>.</p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
-<p><b>p</b>réfixe d'installation de Fink, par exemple : <code>/sw</code>. Vous ne devez pas partir du principe que Fink est installé dans <code>/sw</code>, utilisez <code>%p</code> pour obtenir le bon chemin.</p>
+<p><b>p</b>réfixe d'installation de Fink, par exemple : <code>/opt/sw</code>. Vous ne devez pas partir du principe que Fink est installé dans <code>/opt/sw</code>, utilisez <code>%p</code> pour obtenir le bon chemin.</p>
 </td></tr><tr valign="top"><td>%d</td><td>
-<p>répertoire <b>d</b>ans lequel le paquet est construit, par exemple : <code>/sw/src/fink.build/root-gimp-1.2.1-1</code>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que <code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>.</p>
+<p>répertoire <b>d</b>ans lequel le paquet est construit, par exemple : <code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code>. Ce répertoire temporaire sert de racine d'arborescence lors de la phase d'installation de la compilation d'un paquet. Vous ne devez pas partir du principe que <code>root-%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/opt/sw/etc/fink.conf</code>.</p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>répertoire <b>D</b>ans lequel le paquet parent est construit (le même que %d à moins d'être dans un <code>SplitOff</code>)</p>
 </td></tr><tr valign="top"><td>%i</td><td>
@@ -97,7 +97,7 @@ packages whose <code>InfoN</code> level is at least 4.
 </td></tr><tr valign="top"><td>%a</td><td>
 <p>chemin des rustines</p>
 </td></tr><tr valign="top"><td>%b</td><td>
-<p>répertoire de compilation, exemple : <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>. Vous ne devez pas partir du principe que <code>%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/sw/etc/fink.conf</code>. Le dernier sous-répertoire tire son nom du champ <code>Source</code>, ou du champ <code>SourceDirectory</code> (si ce champ existe), ou bien n'existe pas si le champ <code>NoSourceDirectory</code> a pour valeur <code>true</code> (vrai).</p>
+<p>répertoire de compilation, exemple : <code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>. Vous ne devez pas partir du principe que <code>%f</code> est dans <code>%p/src</code>, car l'utilisateur peut changer ce répertoire en utilisant le champ <code>Buildpath</code> de <code>/opt/sw/etc/fink.conf</code>. Le dernier sous-répertoire tire son nom du champ <code>Source</code>, ou du champ <code>SourceDirectory</code> (si ce champ existe), ou bien n'existe pas si le champ <code>NoSourceDirectory</code> a pour valeur <code>true</code> (vrai).</p>
 <p>Note : ne l'utilisez que s'il n'y a pas d'autres possibilités. Le répertoire de compilation est
 le répertoire actif lorsque les scripts sont exécutés ; vous devez utiliser des chemins relatifs dans les commandes.</p>
 </td></tr><tr valign="top"><td>%c</td><td>

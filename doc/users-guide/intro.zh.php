@@ -1,7 +1,7 @@
 <?php
 $title = "用户指南 - 介绍";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="用户指南 Contents"><link rel="next" href="install.php?phpLang=zh" title="首次安装"><link rel="prev" href="index.php?phpLang=zh" title="用户指南 Contents">';
 
 

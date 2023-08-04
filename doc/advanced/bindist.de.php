@@ -1,7 +1,7 @@
 <?php
 $title = "Fortgeschrittenes - Binärer Distro Server";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/02/18 23:50:43';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Fortgeschrittenes Contents"><link rel="prev" href="index.php?phpLang=de" title="Fortgeschrittenes Contents">';
 
 
@@ -27,7 +27,7 @@ Die Methode erfordert die folgenden Schritte auf dem
       
       <ol>
         <li>
-Installieren sie Fink unter <code>/sw</code> (Der voreingestellte
+Installieren sie Fink unter <code>/opt/sw</code> (Der voreingestellte
 Basis-Pfad; wenn erforderlich, einen Symlink verwenden).
         </li>
         <li>
@@ -50,12 +50,12 @@ ausgeführt.
         <li>
 Starten sie einen Webserver: z.B. schalten sie "Personal Web Sharing" in
 der Kategorie "Freigaben" in den Systemeinstellungen ein. Richten sie
-dann httpd ein, dass es ihr Verzeichnis <code>/sw/fink</code> zur
+dann httpd ein, dass es ihr Verzeichnis <code>/opt/sw/fink</code> zur
 Verfügung stellt, in dem sie folgende Zeilen in der Datei
 <code>/etc/httpd/httpd.conf</code> hinzufügen:
           <pre>
-Alias /fink /sw/fink
-&lt;Directory /sw/fink&gt;
+Alias /fink /opt/sw/fink
+&lt;Directory /opt/sw/fink&gt;
   Options Indexes FollowSymLinks
 &lt;/Directory&gt;
           </pre>
@@ -87,16 +87,16 @@ entsprechend anpassen.
       
       <ol>
         <li>
-Installieren sie Fink unter <code>/sw</code> (voreingestellter
+Installieren sie Fink unter <code>/opt/sw</code> (voreingestellter
 Basis-Pfad).
         </li>
         <li>
 Führen sie das Kommando <code>fink configure</code> aus und schalten sie
 die Option ein, die Pakete aus einer binären Distribution zu beziehen.
-("UseBinaryDist: true" in der Datei <code>/sw/etc/fink.conf</code>.)
+("UseBinaryDist: true" in der Datei <code>/opt/sw/etc/fink.conf</code>.)
         </li>
         <li>
-Editieren sie die Datei <code>/sw/etc/apt/sources.list</code> und
+Editieren sie die Datei <code>/opt/sw/etc/apt/sources.list</code> und
 fügen sie die Zeilen dazu, die ihren Fink-Baum repräsentieren. Wenn zum
 Beipsiel die IP-Adresse ihres Build-Servers 192.168.42.7 lautet, müssen sie
 folgendes hinzufügen:

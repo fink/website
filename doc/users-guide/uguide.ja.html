@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: uguide.ja.xml,v 1.31 2019/01/19 10:11:12 nieder Exp $
+Generated from $Fink: uguide.ja.xml,v 1.32 2023/08/04 4:49:23 nieder Exp $
 -->
 <title>Fink Documentation - Fink ユーザーガイド</title></head><body>
 <table width="100%" cellspacing="0">
@@ -214,7 +214,7 @@ StuffIt Expander が解凍してしまっている場合、作成されたフォ
 スクリプトがシステムをチェックし、 sudo を使って root になります。
 この時、パスワードを聞いてきます。
 次に、インストールパスを聞いてきます。
-特に理由がない限り、デフォルトのパス /sw を使ってください。
+特に理由がない限り、デフォルトのパス /opt/sw を使ってください。
 このドキュメントでは、このパスを例として使いますので、パスを換えた場合は適宜置き換えてください。
 </p>
 <p>
@@ -239,11 +239,11 @@ StuffIt Expander が解凍してしまっている場合、作成されたフォ
 Fink ディレクトリ階層にインストールされたソフトウェア、パッケージ管理プログラムを含めて、を使用するには、 PATH 環境変数などをそれぞれ設定しなければなりません。
 これはターミナル上で、
 </p>
-<pre>/sw/bin/pathsetup.sh</pre>
+<pre>/opt/sw/bin/pathsetup.sh</pre>
 <p>
 と入力します。
 古いバージョンの fink の場合、ファイル名が <tt style="white-space: nowrap;">pathsetup.command</tt> ですので、次のように入力します。
-<tt style="white-space: nowrap;">open /sw/bin/pathsetup.command</tt>
+<tt style="white-space: nowrap;">open /opt/sw/bin/pathsetup.command</tt>
 として下さい。
 これが効かない場合は手動で設定することができますが、シェルによってやり方が異なります。
 現在のシェルを知るには、ターミナルを開き:
@@ -260,14 +260,14 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   <p>
    Bourne シェル系 (sh, bash, zsh など) を使っている場合、以下の行をホームディレクトリ内の <tt style="white-space: nowrap;">.profile</tt> ファイルに追加して下さい (あるいは、 <tt style="white-space: nowrap;">.bash_profile</tt> がある場合、こちらを使って下さい):
   </p>
-  <pre>. /sw/bin/init.sh</pre>
+  <pre>. /opt/sw/bin/init.sh</pre>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
   <pre>cd pico .profile</pre>
 <p>
 フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
-<tt style="white-space: nowrap;">. /sw/bin/init.sh</tt> 行をタイプできるようになります。
+<tt style="white-space: nowrap;">. /opt/sw/bin/init.sh</tt> 行をタイプできるようになります。
 "New file" という文字が出ていても大丈夫です。
 行を追加したら、最低一回はリターンキーを押して下さい。
 その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
@@ -279,7 +279,7 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
    tcsh を使っている場合、以下の行をホームディレクトリ内の 
    <tt style="white-space: nowrap;">.cshrc</tt> ファイルに追加して下さい:
   </p>
-  <pre>source /sw/bin/init.csh</pre>
+  <pre>source /opt/sw/bin/init.csh</pre>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
@@ -287,7 +287,7 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
 pico .profile</pre>
 <p>
 フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
-<tt style="white-space: nowrap;">source /sw/bin/init.csh</tt> 行をタイプできるようになります。
+<tt style="white-space: nowrap;">source /opt/sw/bin/init.csh</tt> 行をタイプできるようになります。
 "New file" という文字が出ていても大丈夫です。
 行を追加したら、最低一回はリターンキーを押して下さい。
 その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
@@ -778,7 +778,7 @@ Source-&gt;Update-all を行います(詳細は前の節を参照)。
 一般的に、こういった設定は上級者専用のオプションです。
 </p>
 <p>
-<b>fink.conf</b> ファイルは <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> にあります。
+<b>fink.conf</b> ファイルは <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> にあります。
 自分の好きなテキストエディタで編集することができますが、スーパーユーザー権限が必要です。
 </p>
 
@@ -810,7 +810,7 @@ ListOption: Option1 Option2 Option3
 <b>Basepath:</b> path</p>
 <p>
 Fink がインストールされている場所を知らせます。
-Fink の最初のインストール時に変更していない限り、デフォルトでは <b>/sw</b> です。
+Fink の最初のインストール時に変更していない限り、デフォルトでは <b>/opt/sw</b> です。
 この値を変更しては<b>いけません</b>。
 <b>fink</b> が混乱します。
 </p>
@@ -844,10 +844,10 @@ unstable/crypto - 非安定版の暗号パッケージ
 unstable/main   - 他の非安定版パッケージ
 </pre>
 <p>
-独自のツリーを <tt style="white-space: nowrap;">/sw/fink/dists</tt> ディレクトリに追加することもできますが、通常は必要ありません。
+独自のツリーを <tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> ディレクトリに追加することもできますが、通常は必要ありません。
 デフォルトのツリーは "local/main local/bootstrap
 stable/main" です。
-この一覧は <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> ファイルと同期を保つようにして下さい。
+この一覧は <tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> ファイルと同期を保つようにして下さい。
 (fink 0.21.0 より、 <tt style="white-space: nowrap;">fink</tt> が自動的に行うようになりました)
 </p>
 <p>ツリーの順序には意味があります。後のツリーにあるパッケージが前のツリーのパッケージを書き換えます。</p>
@@ -859,14 +859,14 @@ stable/main" です。
 10.0 以前はサポートされていません。
 10.1 は現バージョンからサポート対象外となりました。
 10.2 は August 2003 Developer Tools に更新している場合のみサポートされています。
-このフィールドは <tt style="white-space: nowrap;">/sw/lib/fink/postinstall.pl</tt> を実行することで設定されます。
+このフィールドは <tt style="white-space: nowrap;">/opt/sw/lib/fink/postinstall.pl</tt> を実行することで設定されます。
 ユーザーがこの値を変えてはいけません。
 </p>
 </li>
 <li>
 <p>
 <b>FetchAltDir:</b> path</p>
-<p><tt style="white-space: nowrap;">fink</tt> は通常、ソースを <tt style="white-space: nowrap;">/sw/src</tt> に保存します。
+<p><tt style="white-space: nowrap;">fink</tt> は通常、ソースを <tt style="white-space: nowrap;">/opt/sw/src</tt> に保存します。
 この値を変えることで、他の場所にダウンロードしたソースコードを探させることもできます。
 例えば:
 </p>
@@ -901,7 +901,7 @@ High (全て報告する)
 <li>
 <p>
 <b>NoAutoIndex:</b> ブール値</p>
-<p>Fink は、パッケージ記述ファイルを /sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
+<p>Fink は、パッケージ記述ファイルを /opt/sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
 この値が "True" でない限り、 Fink はパッケージインデックスを更新する必要があるか確認します。
 デフォルト値は "False" で、変更することは勧めません。
 変更した場合、 <tt style="white-space: nowrap;">fink index</tt> コマンドを手動で実行してインデックスを更新する必要があります。
@@ -920,7 +920,7 @@ High (全て報告する)
 <b>Buildpath:</b> パス</p>
 <p>
 Fink はソースからコンパイルする場合、パッケージごとに仮ディレクトリを作成します。
-デフォルトでは Panther 以前では <tt style="white-space: nowrap;">/sw/src</tt> 内に、Tiger からは <tt style="white-space: nowrap;">/sw/src/fink.build</tt> 内に、
+デフォルトでは Panther 以前では <tt style="white-space: nowrap;">/opt/sw/src</tt> 内に、Tiger からは <tt style="white-space: nowrap;">/opt/sw/src/fink.build</tt> 内に、
 置かれていますが、別の場所を使いたい場合はここでパスを指定します。
 仮ディレクトリについては、本文書中<a href="#conf.developer">Developer Settings</a> 節の
 の <tt style="white-space: nowrap;">KeepRootDir</tt> と <tt style="white-space: nowrap;">KeepBuildDir</tt> のフィールドの解説をご覧下さい。
@@ -1024,7 +1024,7 @@ git はミラーを使えないという欠点があるため、 git サーバ�
 <p>
 <b>MirrorContinent:</b> 3 字のコード</p>
 <p>この値を変えるには、 <tt style="white-space: nowrap;">fink configure</tt> コマンドを使います。
-3 字のコードは <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt> にあるものから選択します。
+3 字のコードは <tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_keys</tt> にあるものから選択します。
 例えば、アジアの場合:
 </p>
 <pre>MirrorContinent: asi</pre>
@@ -1033,7 +1033,7 @@ git はミラーを使えないという欠点があるため、 git サーバ�
 <p>
 <b>MirrorCountry:</b> 6 字のコード</p>
 <p>この値を変えるには、 <tt style="white-space: nowrap;">fink configure</tt> コマンドを使います。
-6 字のコードは <tt style="white-space: nowrap;">/sw/lib/fink/mirror/_keys</tt> にあるものから選択します。
+6 字のコードは <tt style="white-space: nowrap;">/opt/sw/lib/fink/mirror/_keys</tt> にあるものから選択します。
 例えば、日本の場合:</p>
 <pre>MirrorCountry: asi-JP</pre>
 </li>
@@ -1109,7 +1109,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 				<p>
 					Fink パッケージ <tt style="white-space: nowrap;">ccache-default</tt> がインストールされている場合、
 					Fink パッケージを作成中にこれがつくるキャッシュがここに保存される。
-					規定値は <tt style="white-space: nowrap;">/sw/var/ccache</tt> 。
+					規定値は <tt style="white-space: nowrap;">/opt/sw/var/ccache</tt> 。
 					<tt style="white-space: nowrap;">none</tt> と設定された場合、 fink は CCACHE_DIR 環境変数を設定せず、
 					ccache は <tt style="white-space: nowrap;">$HOME/.ccache</tt> を使用する。
 					ルートに所有されているファイルを自分のホームディレクトリに保存することもあり得る。
@@ -1119,7 +1119,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
         	<li><p><b>NotifyPlugin:</b> プラグイン</p><p>
            			パッケージがいつインストール/アンインストールされたかを答える告知プラグインを指定する。
            			規定値は Growl (<tt style="white-space: nowrap;">Mac::Growl</tt> が必要)。
-           			他のプラグインは、 <tt style="white-space: nowrap;">/sw/lib/perl5/Fink/Notify</tt> にある。
+           			他のプラグインは、 <tt style="white-space: nowrap;">/opt/sw/lib/perl5/Fink/Notify</tt> にある。
 				</p>
 			</li>
         <li><p><b>AutoScanpackages:</b> ブール値</p>
@@ -1147,7 +1147,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 		
 		<p>
 			fink 0.21.0 より、 fink は apt がバイナリファイルをインストールする際に使う
-			<tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> ファイルを積極的に管理します。
+			<tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> ファイルを積極的に管理します。
 			デフォルトの sources.list ファイルは、以下の形式で、 Distribution と Trees が調整されています
 		</p>
 <pre># Local modifications should either go above this line, or at the end.
@@ -1156,10 +1156,10 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in
-# /sw/etc/fink.conf
+# /opt/sw/etc/fink.conf
 # NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
-deb file:/sw/fink local main
-deb file:/sw/fink stable main crypto
+deb file:/opt/sw/fink local main
+deb file:/opt/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release
@@ -1182,8 +1182,8 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 			変更がファイルの先頭か末尾であれば、 Fink は、ファイルの変更をそのままにします。
 		</p>
 		<p>
-			注記: fink 0.21.0 にアップグレードする前に <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> を変更した場合、
-			<tt style="white-space: nowrap;">/sw/etc/apt/sources.list.finkbak</tt> として保存されます。
+			注記: fink 0.21.0 にアップグレードする前に <tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> を変更した場合、
+			<tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list.finkbak</tt> として保存されます。
 		</p>
 	
 <h2><a name="usage">6 コマンドライン fink ツールの使用方法</a></h2>
@@ -1341,7 +1341,7 @@ remove コマンドは、 'dpkg --remove' を呼び出してシステムから�
 <p>
 <b>remove</b> コマンドは実際のパッケージファイル (設定ファイルは除く) を削除するだけですが、 <tt style="white-space: nowrap;">.deb</tt> 圧縮パッケージファイルはそのままにします。
 これは、後で再インストールする際にコンパイルしなくても良いことを意味します。
-ディスク容量が必要であれば、 <tt style="white-space: nowrap;">/sw/fink/dists</tt> ツリーから <tt style="white-space: nowrap;">.deb</tt> ファイルを取り除いてもかまいません。
+ディスク容量が必要であれば、 <tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> ツリーから <tt style="white-space: nowrap;">.deb</tt> ファイルを取り除いてもかまいません。
 </p>
 <p><b>fink remove</b> 時に、以下のフラグを使用することができます。</p>
 <pre>-h,--help             使用できるオプションを表示
@@ -1530,7 +1530,7 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <p>
 このコマンドは、自動的に Fink の新リリースにアップグレードします。
 Fink のウェブサイトへ新しいバージョンがあるか確認し、 <tt style="white-space: nowrap;">fink</tt> 自体を含めたコアパッケージを更新します。
-各種リリースのアップグレードの他、このコマンドを初めて実行した際に Git または rsync を選択した場合、<tt style="white-space: nowrap;">/sw/fink/dists</tt> を、直接 Git または rsync でアップグレードすることもできます。
+各種リリースのアップグレードの他、このコマンドを初めて実行した際に Git または rsync を選択した場合、<tt style="white-space: nowrap;">/opt/sw/fink/dists</tt> を、直接 Git または rsync でアップグレードすることもできます。
 これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
 </p>
 <p>
@@ -1597,7 +1597,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <t
       <p>モードが指定されていない場合、<tt style="white-space: nowrap;">--debs --sources</tt> が既定のオプションとなります。</p>
       <p>これらに加え、以下のオプションも使うことができます:</p>
       <pre>
--k,--keep-src        - 古いソースファイルを、削除するのではなく /sw/src/old/ に移します。
+-k,--keep-src        - 古いソースファイルを、削除するのではなく /opt/sw/src/old/ に移します。
 -d,--dry-run         - 削除対象のファイルを一覧表示し、実際には削除しません。
 -h,--help            - 使用可能なモードとオプションを表示します。</pre>
 
@@ -1634,4 +1634,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: uguide.ja.xml,v 1.31 2019/01/19 10:11:12 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: uguide.ja.xml,v 1.32 2023/08/04 4:49:23 nieder Exp $</i></p></body></html>

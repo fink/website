@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - トラブルシューティング";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=ja" title="使用上の Tips"><link rel="prev" href="other.php?phpLang=ja" title="その他の X11">';
 
 
@@ -162,7 +162,7 @@ Class: Fatal.
 これは XDarwin 1.0a2 と 1.0a3 で シェルの初期かファイルが /usr/X11R6/bin 
 を PATH 変数に追加しない場合に発生します。
 Fink を使っていてデフォルトのシェルを変えていない場合、 (Fink の解説の通り)
-<code>source /sw/bin/init.csh</code> という一行をホームディレクトリ内の 
+<code>source /opt/sw/bin/init.csh</code> という一行をホームディレクトリ内の 
 <code>.cshrc</code> に追加すれば十分です。
 </p>
 <pre>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed

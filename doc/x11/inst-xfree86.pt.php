@@ -1,7 +1,7 @@
 <?php
 $title = "Executando o X11 - Instalando o  X11";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:18';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Executando o X11 Contents"><link rel="next" href="run-xfree86.php?phpLang=pt" title="Iniciando o X11"><link rel="prev" href="history.php?phpLang=pt" title="História">';
 
 
@@ -120,7 +120,7 @@ include_once "header.pt.inc";
           seguinte exemplo:</p>
 
           <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</pre>
+exec /opt/sw/bin/fvwm2</pre>
 
           <p>Você pode obviamente chamar outro gerenciador de janela,
           <code>startkde</code> etc.</p>
@@ -138,12 +138,12 @@ exec /sw/bin/fvwm2</pre>
           ambientes do Fink. Para chamar aplicativos que sejam carregados no
           início do X e que você haja instalado pelo fink (por exemplo,
           gerenciadores de janelas, gnome-session, outros aplicativos em
-          <code>/sw/bin</code>), coloque a seguinte linha próxima ao
+          <code>/opt/sw/bin</code>), coloque a seguinte linha próxima ao
           início de <code>~/.xinitrc</code> (isto é, depois da linha
           "<code>#!/bin/sh</code>" mas antes que você execute quaisquer
           programas):</p>
 
-          <pre>. /sw/bin/init.sh </pre>
+          <pre>. /opt/sw/bin/init.sh </pre>
 
           <p>tal que o ambiente do Fink seja inicializado. Observação
           <code>init.sh</code> é usado no lugar de
@@ -159,16 +159,16 @@ exec /sw/bin/fvwm2</pre>
           Application. No lugar de apenas colocar o caminho completo do
           arquivo, por exemplo</p>
 
-          <pre>/sw/bin/emacs</pre>
+          <pre>/opt/sw/bin/emacs</pre>
 
           <p>você deverá usar algo como o seguinte caso bash seja seu shell
           padrão:</p>
 
-          <pre>. /sw/bin/init.sh ; emacs</pre>
+          <pre>. /opt/sw/bin/init.sh ; emacs</pre>
 
           <p>e se você estiver usando tcsh:</p>
 
-          <pre>source /sw/bin/init.csh ; emacs</pre>
+          <pre>source /opt/sw/bin/init.csh ; emacs</pre>
 
           <p>Isto faz com que o aplicativo tenha a informação de PATH correta.
           Você pode usar essa sintaxe para qualquer aplicativo instalado via

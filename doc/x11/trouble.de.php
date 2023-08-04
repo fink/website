@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - Probleme beheben";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/02/23 16:32:58';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:08:13';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=de" title="Tipps für die Benutzung"><link rel="prev" href="other.php?phpLang=de" title="Andere Möglichkeiten mit X11 ">';
 
 
@@ -105,7 +105,7 @@ Errors from xkbcomp are not fatal to the X server</pre>
         Hinweis darauf, dass die Fink-Umgebung noch nicht richtig
         aufgesetzt ist. Führt man das Kommando
       </p>
-<pre>/sw/bin/pathsetup.sh</pre>
+<pre>/opt/sw/bin/pathsetup.sh</pre>
       <p>
         in einem Terminalfenster aus und startet ein neues Fenster, ist der
         Fehler meistens behoben.
@@ -167,7 +167,7 @@ touch .Xauthority</pre>
         Wollen sie das verhindern, vergessen sie nicht in der Start-Datei
         die Pfad-Variable PATH mit folgendem Kommando zu setzen:
       </p>
-<pre>. /sw/bin/init.sh</pre>
+<pre>. /opt/sw/bin/init.sh</pre>
       <p>
         Außerdem sollte die Start-Datei mit einem langlebigen Programm
         enden, das nicht im Hintergrund läuft, z. B. einer Fenster- oder

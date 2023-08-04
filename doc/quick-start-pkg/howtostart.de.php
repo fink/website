@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging Tutorial - Der Anfang";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/03/05 23:40:46';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:18:11';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=de" title="Beispiel - das Maxwell Paket"><link rel="prev" href="index.php?phpLang=de" title="Packaging Tutorial Contents">';
 
 
@@ -14,7 +14,7 @@ include_once "header.de.inc";
       
       <p>
         <b>Beachten sie:</b> In diesem Dokument wird davon ausgegangen, dass
-        <code>fink</code> im Verzeichnis <code>/sw</code> installiert ist,
+        <code>fink</code> im Verzeichnis <code>/opt/sw</code> installiert ist,
         entsprechend der Voreinstellungen. Ein Block mit Code wie dieser
       </p>
 <pre>
@@ -46,7 +46,7 @@ finkdev% somecommand
         </li>
         <li>
           Schauen sie in andere, ähnliche Pakete im Verzeichnis
-          <code>/sw/fink/dists/stable/main/finkinfo/</code> oder
+          <code>/opt/sw/fink/dists/stable/main/finkinfo/</code> oder
           im
           <a href="http://fink.cvs.sourceforge.net/fink/dists/">online CVS-Repository</a>.
           Nehmen sie eine oder mehrere Dateien als Ausgangspunkt für ihr eigenes Paket.
@@ -69,7 +69,7 @@ finkdev% somecommand
       
       <p>
         Speichern sie ihre info-Datei (falls benötigt auch die patch-Datei) im Verzeichnis
-        <code>/sw/fink/dists/local/main/finkinfo/</code>. Der Name der Datei sollte
+        <code>/opt/sw/fink/dists/local/main/finkinfo/</code>. Der Name der Datei sollte
         <code>paketname.info</code> sein (und <code>paketname.patch</code>).
         paketname ist der Name ihres Pakets. Existiert das Verzeichnis nicht, müssen sie
         es erzeugen. Paketname sollte klein geschrieben sein.
@@ -123,7 +123,7 @@ finkdev% fink index
       </p>
       <p>Überprüfen sie mit folgendem Kommando, ob ihr Paket validiert werden kann:</p>
 <pre>
-finkdev% fink validate /sw/fink/dists/local/main/finkinfo/paketname.info
+finkdev% fink validate /opt/sw/fink/dists/local/main/finkinfo/paketname.info
 </pre>
       <p>Ist ihr Paket validiert, versuchen sie es mit diesem Kommando zu erstellen:</p>
 <pre>
@@ -132,9 +132,9 @@ finkdev% fink -m --build-as-nobody rebuild paketname
       <p>
         Durchsuchen sie die Ausgabe des Prozesses sorgfältig nach Fehlern und Warnungen.
         Achten sie insbesondere darauf, dass alles in das richtige Zielverzeichnis
-        installiert wird, nämlich <code>/sw/src/root-paketname-%v-%r/sw</code>.
+        installiert wird, nämlich <code>/opt/sw/src/root-paketname-%v-%r/opt/sw</code>.
         Von dort erstellt <code>fink</code> das binäre Paket. Nichts darf direkt in das
-        Verzeichnis <code>/sw</code> installiert werden.
+        Verzeichnis <code>/opt/sw</code> installiert werden.
       </p>
       <p>
         Mit der <code>fink</code>-Option <code>--keep-build-dir</code> oder
@@ -156,16 +156,16 @@ finkdev% fink -m --build-as-nobody rebuild paketname
         Kommando:
       </p>
 <pre>
-finkdev% dpkg -c /sw/fink/dists/local/main/binary-darwin-powerpc/paketname.deb
+finkdev% dpkg -c /opt/sw/fink/dists/local/main/binary-darwin-powerpc/paketname.deb
 </pre>
       <p>
         Überprüfen sie, dass alle Dateien auch tatsächlich in der .deb Datei sind.
-        Ein weiteres Mal: Nichts darf direkt in das Verezichnis <code>/sw</code>
+        Ein weiteres Mal: Nichts darf direkt in das Verezichnis <code>/opt/sw</code>
         installiert werden.
       </p>
       <p>Jetzt kann man auch das binäre Paket mit diesem Kommando validieren:</p>
 <pre>
-finkdev% fink validate /sw/fink/dists/local/main/binary-darwin-powerpc/paketname.deb
+finkdev% fink validate /opt/sw/fink/dists/local/main/binary-darwin-powerpc/paketname.deb
 </pre>
       <p>Ist alles in Ordnung, können sie das Paket installieren</p>
 <pre>

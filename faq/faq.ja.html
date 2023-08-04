@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: faq.ja.xml,v 1.49 2020/05/31 13:43:40 nieder Exp $
+Generated from $Fink: faq.ja.xml,v 1.50 2023/08/04 04:42:29 nieder Exp $
 -->
 <title>Fink Documentation - The Fink F.A.Q.</title></head><body>
 <table width="100%" cellspacing="0">
@@ -28,7 +28,7 @@ Available Languages:  |
 それぞれリンクされていますので、辿っていってください。</p>
 <h2>Contents</h2><ul><li><a href="#general"><b>1 一般的な質問</b></a><ul><li><a href="#general.what">1.1 Fink とは何ですか?</a></li><li><a href="#general.naming">1.2 Fink とはどういう意味ですか?</a></li><li><a href="#general.bsd-ports">1.3 
 Fink と BSD の port メカニズムはどう違うのですか (OpenPackages や GNU-Darwin も含めて)?
-</a></li><li><a href="#general.usr-local">1.4 なぜ Fink は /usr/local にインストールしないのですか?</a></li><li><a href="#general.why-sw">1.5 ではなぜ /sw を選んだのですか?</a></li></ul></li><li><a href="#relations"><b>2 他のプロジェクトとの関係</b></a><ul><li><a href="#relations.upstream">2.1 パッチを送るなど、本家のメンテナに貢献していますか?</a></li><li><a href="#relations.debian">2.2 Debian プロジェクトとは関係がありますか。 Debian Linux を Mac OS X に移植しようとしているのですか?</a></li><li><a href="#relations.apple">2.3 Apple とは関係がありますか?</a></li><li><a href="#relations.darwinports">2.4 Darwinports とは関係がありますか?</a></li></ul></li><li><a href="#mirrors"><b>3 Fink ミラー</b></a><ul><li><a href="#mirrors.when-use">3.1 Fink ミラーとは何ですか?</a></li><li><a href="#mirrors.why">3.2 なぜ rsync ミラーを使わないといけないのですか?</a></li><li><a href="#mirrors.where">3.3 Fink ミラーの情報はどこにありますか?</a></li><li><a href="#mirrors.when-not">3.4 rsync サーバーに接続できません。どうしたら良いですか?</a></li><li><a href="#mirrors.otherinfogone">3.5 rsync 方式に変えたら、unused ツリーの info ファイルが全て消えてしまいました。</a></li><li><a href="#mirrors.howswitch">3.6 どのように方式を切り替えるのですか?</a></li><li><a href="#mirrors.Master">3.7 Distfiles ミラーとは何ですか?</a></li></ul></li><li><a href="#upgrade-fink"><b>4 Fink のアップグレード (バージョン固有の問題対処法)</b></a><ul><li><a href="#upgrade-fink.leopard-bindist1">4.1 rsync や cvs の selfupdate を実行しても、Fink が新しいパッケージを読み込んでくれません。</a></li><li><a href="#upgrade-fink.leopard-bindist2">4.2 何かをインストールしようとすると、'Can't resolve dependency "fink (&gt;= 0.28.0)"' というエラーが出ます。</a></li><li><a href="#upgrade-fink.stuck-gettext">4.3 Fink が、'sudo apt-get install libgettext3-dev=0.14.5-2' を実行して問題のある依存性を解消するように言ってきますが、まだおかしいです。</a></li><li><a href="#upgrade-fink.stuck-dpkg">4.4 Fink が 'Can't resolve dependency "dpkg (&gt;= 1.10.21-1229)" for package "dpkg-base-files-0.3-1"' って言うてはりますけど、  
+</a></li><li><a href="#general.usr-local">1.4 なぜ Fink は /usr/local にインストールしないのですか?</a></li><li><a href="#general.why-sw">1.5 ではなぜ /opt/sw を選んだのですか?</a></li></ul></li><li><a href="#relations"><b>2 他のプロジェクトとの関係</b></a><ul><li><a href="#relations.upstream">2.1 パッチを送るなど、本家のメンテナに貢献していますか?</a></li><li><a href="#relations.debian">2.2 Debian プロジェクトとは関係がありますか。 Debian Linux を Mac OS X に移植しようとしているのですか?</a></li><li><a href="#relations.apple">2.3 Apple とは関係がありますか?</a></li><li><a href="#relations.darwinports">2.4 Darwinports とは関係がありますか?</a></li></ul></li><li><a href="#mirrors"><b>3 Fink ミラー</b></a><ul><li><a href="#mirrors.when-use">3.1 Fink ミラーとは何ですか?</a></li><li><a href="#mirrors.why">3.2 なぜ rsync ミラーを使わないといけないのですか?</a></li><li><a href="#mirrors.where">3.3 Fink ミラーの情報はどこにありますか?</a></li><li><a href="#mirrors.when-not">3.4 rsync サーバーに接続できません。どうしたら良いですか?</a></li><li><a href="#mirrors.otherinfogone">3.5 rsync 方式に変えたら、unused ツリーの info ファイルが全て消えてしまいました。</a></li><li><a href="#mirrors.howswitch">3.6 どのように方式を切り替えるのですか?</a></li><li><a href="#mirrors.Master">3.7 Distfiles ミラーとは何ですか?</a></li></ul></li><li><a href="#upgrade-fink"><b>4 Fink のアップグレード (バージョン固有の問題対処法)</b></a><ul><li><a href="#upgrade-fink.leopard-bindist1">4.1 rsync や cvs の selfupdate を実行しても、Fink が新しいパッケージを読み込んでくれません。</a></li><li><a href="#upgrade-fink.leopard-bindist2">4.2 何かをインストールしようとすると、'Can't resolve dependency "fink (&gt;= 0.28.0)"' というエラーが出ます。</a></li><li><a href="#upgrade-fink.stuck-gettext">4.3 Fink が、'sudo apt-get install libgettext3-dev=0.14.5-2' を実行して問題のある依存性を解消するように言ってきますが、まだおかしいです。</a></li><li><a href="#upgrade-fink.stuck-dpkg">4.4 Fink が 'Can't resolve dependency "dpkg (&gt;= 1.10.21-1229)" for package "dpkg-base-files-0.3-1"' って言うてはりますけど、  
           どないしたらよろしいですやろ？
           </a></li></ul></li><li><a href="#usage-fink"><b>5 Fink のインストール、使用、メンテナンス</b></a><ul><li><a href="#usage-fink.what-packages">5.1 Fink がサポートしているパッケージはどのように探せますか?</a></li><li><a href="#usage-fink.proxy">5.2 ファイヤーウォールの内側にいます。どう設定したら Fink で HTTP プロキシが使えますか?</a></li><li><a href="#usage-fink.firewalled-cvs">5.3 ファイヤーウォールの内側から CVS でパッケージをアップデートするにはどうしたらいいですか?</a></li><li><a href="#usage-fink.moving">5.4 インストール後に Fink を他の場所に移動できますか?</a></li><li><a href="#usage-fink.moving-symlink">5.5 Fink をインストール後、他の場所に移動してシンボリックリンクを張ったら、動きますか?</a></li><li><a href="#usage-fink.removing">5.6 Fink を全てアンインストールするには?</a></li><li><a href="#usage-fink.bindist">5.7 ウェブのパッケージデータベースは、パッケージ xxx を表示しているのに、 apt-get と dselect は何もしない。どっちが嘘をついてるのですか?
 </a></li><li><a href="#usage-fink.unstable">5.8 unstable にあるパッケージをインストールしようとすると、 fink が 'no package found' といいます。どうしたらインストールできるのですか?</a></li><li><a href="#usage-fink.unstable-onepackage">5.9 
@@ -37,8 +37,8 @@ Fink と BSD の port メカニズムはどう違うのですか (OpenPackages �
 何がおかしいのですか?</a></li><li><a href="#usage-fink.dselect-access">5.12 うぎゃ! dselect で "[A]ccess" メニューを使ったら、パッケージをダウンロードできなくなった!</a></li><li><a href="#usage-fink.cvs-busy">5.13 <q>fink selfupdate</q> か "fink selfupdate-cvs" を実行しようとした時、  "<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>" エラーが出ました。</a></li><li><a href="#usage-fink.kernel-panics">5.14 Fink を使うと、マシンがフリーズする/カーネルパニックする/固まる。助けて!</a></li><li><a href="#usage-fink.not-found">5.15 パッケージをインストールしようとすると、 Fink がダウンロードできません。
 ダウンロードサイトとは Fink よりも新しいバージョンを示しています。
 何をしたらいいですか?</a></li><li><a href="#usage-fink.fink-not-found">5.16 Fink や Fink でインストールしたものを実行しようとすると
-"command not found" エラーが出ます。</a></li><li><a href="#usage-fink.invisible-sw">5.17 Finder で /sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</a></li><li><a href="#usage-fink.install-info-bad">5.18 何もインストールできません。
-"install-info: unrecognized option `--infodir=/sw/share/info'"
+"command not found" エラーが出ます。</a></li><li><a href="#usage-fink.invisible-sw">5.17 Finder で /opt/sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</a></li><li><a href="#usage-fink.install-info-bad">5.18 何もインストールできません。
+"install-info: unrecognized option `--infodir=/opt/sw/share/info'"
 のエラーが出るだけです。</a></li><li><a href="#usage-fink.bad-list-file">5.19 何もインストールできないし、削除もできません。 "files list file" と出るだけです。</a></li><li><a href="#usage-fink.dselect-garbage">5.20 <tt style="white-space: nowrap;">dselect</tt> でパッケージを選択すると、大量のゴミがでてきます。
 これはどうやったら使えますか?</a></li><li><a href="#usage-fink.cant-upgrade">5.21 Fink のバージョンをアップデートできないようです。</a></li><li><a href="#usage-fink.spaces-in-directory">5.22 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</a></li><li><a href="#usage-fink.packages-gz">5.23 バイナリアップデートをしようとすると、 "File not found" または "Couldn't stat package source list file" というメッセージが大量に出ます。</a></li><li><a href="#usage-fink.wrong-tree">5.24 OS を変えたら、 Fink が認識してくれません。</a></li><li><a href="#usage-fink.lost-command-line-tools">5.25 After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</a></li><li><a href="#usage-fink.seg-fault">5.26 何かをインストールしようとしたら <tt style="white-space: nowrap;">gzip</tt> | <tt style="white-space: nowrap;">dpkg-deb</tt> のエラーが出る! 助けて!</a></li><li><a href="#usage-fink.pathsetup-keeps-running">5.27 ターミナルウィンドウを開くと、
 "Your environment seems to be correctly set up for Fink already."
@@ -51,7 +51,7 @@ Fink と BSD の port メカニズムはどう違うのですか (OpenPackages �
 	'gnu' ミラーが見つからないと言っています。
 	</a></li><li><a href="#usage-fink.cant-move-fink">5.30 
 	Fink を更新できません。
-	/sw/fink を移動できないからです。
+	/opt/sw/fink を移動できないからです。
 	</a></li><li><a href="#usage-fink.fc-cache">5.31 "No fonts found" というメッセージが出ます。</a></li><li><a href="#usage-fink.non-admin-installer">5.32 インストーラから Fink をインストールできません。"volume doesn't support symlinks" エラーが出ます。</a></li><li><a href="#usage-fink.wrong-arch">5.33 Fink を更新できない。 <q>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</q>
 </a></li></ul></li><li><a href="#comp-general"><b>6 コンパイルの問題 - 一般</b></a><ul><li><a href="#comp-general.compiler">6.1 configure スクリプトが "acceptable cc" が見つからないといってきます。
 これは何ですか?</a></li><li><a href="#comp-general.cvs">6.2 "fink selfupdate-cvs" をしようとしたら、このメッセージが出てきました: "cvs: Command not found."
@@ -60,7 +60,7 @@ Fink と BSD の port メカニズムはどう違うのですか (OpenPackages �
 	Fink のビルドの問題を起こすことがあると聞いたけど、本当ですか?</a></li><li><a href="#comp-general.toc-out-of-date">6.9 パッケージをビルドしようとしたら、 "table of contents" が古いというメッセージが出ました。何をしたらいいですか?
 </a></li><li><a href="#comp-general.fc-atlas">6.10 atlas をインストールしようとすると、 Fink Commander がハングアップします。</a></li><li><a href="#comp-general.basic-headers">6.11 <tt style="white-space: nowrap;">stddef.h</tt> | <tt style="white-space: nowrap;">wchar.h</tt> | <tt style="white-space: nowrap;">stdlib.h</tt> | <tt style="white-space: nowrap;">crt1.o</tt> が見つからない、
 あるいは、"C compiler cannot create executables" というメッセージが出ます。
-これはどこにありますか?</a></li><li><a href="#comp-general.multiple-dependencies">6.12 Fink が "unable to resolve version conflict on multiple dependencies" と言って、アップデートできません。</a></li><li><a href="#comp-general.dpkg-parse-error">6.13 "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
+これはどこにありますか?</a></li><li><a href="#comp-general.multiple-dependencies">6.12 Fink が "unable to resolve version conflict on multiple dependencies" と言って、アップデートできません。</a></li><li><a href="#comp-general.dpkg-parse-error">6.13 "dpkg: parse error, in file `/opt/sw/var/lib/dpkg/status'"
 というメッセージが出て、何もインストールできません!</a></li><li><a href="#comp-general.freetype-problems">6.14 freetype に関係したエラーが出ます。</a></li><li><a href="#comp-general.dlfcn-from-oo">6.15 `Dl_info' のエラーが出ます。</a></li><li><a href="#comp-general.gcc2">6.16 Fink が <tt style="white-space: nowrap;">gcc2</tt> がないと言っていますが、インストールも出来ないようです。</a></li><li><a href="#comp-general.system-java">6.17 Fink が <tt style="white-space: nowrap;">Failed: Can't resolve dependency "system-java14-dev"</tt>
 と言っていますが、そのようなパッケージはありません。
 </a></li><li><a href="#comp-general.dpkg-split">6.18 
@@ -160,7 +160,7 @@ dpkg のバイナリパッケージ管理は洗練されています。
 この場合は自己責任で行なって下さい。</p></div>
 </a>
 <a name="general.why-sw">
-<div class="question"><p><b>Q1.5: ではなぜ /sw を選んだのですか?</b></p></div>
+<div class="question"><p><b>Q1.5: ではなぜ /opt/sw を選んだのですか?</b></p></div>
 <div class="answer"><p><b>A:</b> 
 この選択にあまり意味はありませんが、実用上の（アップグレードの）問題と、他のパッケージング・システムとのコンフリクト問題を避けるため、近い将来に変更することはないと思われます。</p></div>
 </a>
@@ -304,7 +304,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 <tt style="white-space: nowrap;">fink</tt> コマンドは、明示的にプロキシを設定できます。
 この設定は <tt style="white-space: nowrap;">wget</tt>/<tt style="white-space: nowrap;">curl</tt> に渡されます。
 新規インストール時に聞かれなかった場合、または設定し直したい場合、 <tt style="white-space: nowrap;">fink configure</tt> を実行することができます。
-もしインストールガイドを読み、 <tt style="white-space: nowrap;">/sw/bin/init.csh</tt> (または <tt style="white-space: nowrap;">/sw/bin/init.sh</tt>) を使ったなら、次のようにプロキシの前にプロトコルをつけるようにして下さい。</p><pre>ftp://proxy.yoursite.somewhere</pre><p>もしこれでも問題があるようなら、システム環境設定からネットワークを選択し、プロキシのタブをクリックし、 "Use Passive FTP Mode (PASV)" がチェックされているか確認して下さい。</p></div>
+もしインストールガイドを読み、 <tt style="white-space: nowrap;">/opt/sw/bin/init.csh</tt> (または <tt style="white-space: nowrap;">/opt/sw/bin/init.sh</tt>) を使ったなら、次のようにプロキシの前にプロトコルをつけるようにして下さい。</p><pre>ftp://proxy.yoursite.somewhere</pre><p>もしこれでも問題があるようなら、システム環境設定からネットワークを選択し、プロキシのタブをクリックし、 "Use Passive FTP Mode (PASV)" がチェックされているか確認して下さい。</p></div>
 </a>
 <a name="usage-fink.firewalled-cvs">
 <div class="question"><p><b>Q5.3: ファイヤーウォールの内側から CVS でパッケージをアップデートするにはどうしたらいいですか?</b></p></div>
@@ -312,7 +312,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 <li>
 <p>
 まず、 <a href="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</a>
-ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /sw/fink/dists/local/main/finkinfo/) に入れる。
+ファイル (.info と a .patch) をダウンロードし、ローカルツリー ( /opt/sw/fink/dists/local/main/finkinfo/) に入れる。
 </p>
 </li>
 <li>
@@ -351,10 +351,10 @@ dselect からパッケージを選択してインストールする場合、 ro
 </a>
 <a name="usage-fink.removing">
 <div class="question"><p><b>Q5.6: Fink を全てアンインストールするには?</b></p></div>
-<div class="answer"><p><b>A:</b> Fink でインストールしたファイルはほとんど /sw (あるいはインストール時に選択した場所) にあります。
-なので、 Fink を削除するには、通常このコマンドを入力します:</p><pre>sudo rm -rf /sw</pre><p>唯一の例外は XFree86 または X.org です。もし X サーバを Fink でインストールした (<tt style="white-space: nowrap;">xfree86</tt> 、
+<div class="answer"><p><b>A:</b> Fink でインストールしたファイルはほとんど /opt/sw (あるいはインストール時に選択した場所) にあります。
+なので、 Fink を削除するには、通常このコマンドを入力します:</p><pre>sudo rm -rf /opt/sw</pre><p>唯一の例外は XFree86 または X.org です。もし X サーバを Fink でインストールした (<tt style="white-space: nowrap;">xfree86</tt> 、
 <tt style="white-space: nowrap;">xfree86-rootless</tt> または <tt style="white-space: nowrap;">xorg</tt> パッケージ) なら、次のコマンドも必要です:
-</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>Fink をインストールし直すことがないのでしたら、テキストエディタを使い、 <tt style="white-space: nowrap;">.cshrc</tt> ファイルの中の "<tt style="white-space: nowrap;">source /sw/bin/init.csh</tt>" と書かれている行、あるいは <tt style="white-space: nowrap;">.bashrc</tt> ファイルの中の "<tt style="white-space: nowrap;">source /sw/bin/init.sh</tt>" と書かれている行を削除して下さい。</p></div>
+</p><pre>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</pre><p>Fink をインストールし直すことがないのでしたら、テキストエディタを使い、 <tt style="white-space: nowrap;">.cshrc</tt> ファイルの中の "<tt style="white-space: nowrap;">source /opt/sw/bin/init.csh</tt>" と書かれている行、あるいは <tt style="white-space: nowrap;">.bashrc</tt> ファイルの中の "<tt style="white-space: nowrap;">source /opt/sw/bin/init.sh</tt>" と書かれている行を削除して下さい。</p></div>
 </a>
 <a name="usage-fink.bindist">
 <div class="question"><p><b>Q5.7: ウェブのパッケージデータベースは、パッケージ xxx を表示しているのに、 apt-get と dselect は何もしない。どっちが嘘をついてるのですか?
@@ -386,7 +386,7 @@ dselect からパッケージを選択してインストールする場合、 ro
 	  <tt style="white-space: nowrap;">fink configure</tt> を実行すれば、たくさんある質問の中で unstable tree を on にするかという質問があります。
 	</p><p>
 	  <b>0.26</b> よりも古いバージョンの Fink が unstable を使うよう設定するには、
-	  <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> を編集し、<tt style="white-space: nowrap;">Trees:</tt> 行に <tt style="white-space: nowrap;">unstable/main</tt>
+	  <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> を編集し、<tt style="white-space: nowrap;">Trees:</tt> 行に <tt style="white-space: nowrap;">unstable/main</tt>
 	  と <tt style="white-space: nowrap;">unstable/crypto</tt> to the <tt style="white-space: nowrap;">Trees:</tt> を追加してください。
 	</p><p>
 	  Fink Commander を使っている場合、Preference から unstable パッケージを使うことができます。
@@ -420,13 +420,13 @@ fink scanpackages
           もし、unstable からひとつかふたつのパッケージが欲しく、他はいらないのであれば、
           (<tt style="white-space: nowrap;">fink selfupdate-cvs</tt> で) CVS 更新に変更する必要があります。
           これは、 rsync では <tt style="white-space: nowrap;">fink.conf</tt> でアクティブなツリーしか更新しないためです。
-          <tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> を編集し、 <tt style="white-space: nowrap;">Trees:</tt> 行に
+          <tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> を編集し、 <tt style="white-space: nowrap;">Trees:</tt> 行に
           <tt style="white-space: nowrap;">local/main</tt> がなければ追加してください。
           その後、 <tt style="white-space: nowrap;">fink selfupdate</tt> を実行して、パッケージ記述ファイルをダウンロードしてください。
           次に、関連する <tt style="white-space: nowrap;">.info</tt> ファイル (および対応する <tt style="white-space: nowrap;">.patch</tt> ファイル) を、
-          <tt style="white-space: nowrap;">/sw/fink/dists/unstable/main/finkinfo</tt> (または
-          <tt style="white-space: nowrap;">/sw/fink/dists/unstable/crypto/finkinfo</tt>) から
-          <tt style="white-space: nowrap;">/sw/fink/dists/local/main/finkinfo</tt> へコピーします。
+          <tt style="white-space: nowrap;">/opt/sw/fink/dists/unstable/main/finkinfo</tt> (または
+          <tt style="white-space: nowrap;">/opt/sw/fink/dists/unstable/crypto/finkinfo</tt>) から
+          <tt style="white-space: nowrap;">/opt/sw/fink/dists/local/main/finkinfo</tt> へコピーします。
           しかし、このパッケージは、 unstable にある他のパッケージ (またはバージョン) に依存していることもあります。
           この場合、これらの <tt style="white-space: nowrap;">.info</tt> と <tt style="white-space: nowrap;">.patch</tt> ファイルも同様にコピーします。
           全てのファイルをコピーしたら、 <tt style="white-space: nowrap;">fink index</tt> を実行することで、 Fink は
@@ -444,7 +444,7 @@ root 権限で <tt style="white-space: nowrap;">visudo</tt> を開き、次の�
 何がおかしいのですか?</b></p></div>
 <div class="answer"><p><b>A:</b> init.csh と init.sh は通常のコマンドのように実行するものではありません。
 これらのファイルは環境変数の PATH や MANPATH を設定するものです。
-これをシェルに保持させるには、csh/tcsh では <tt style="white-space: nowrap;">source</tt> コマンド、bash/zsh では <tt style="white-space: nowrap;">.</tt> コマンドを使い:</p><p> csh/tcsh の場合:</p><pre>source /sw/bin/init.csh</pre><p> bash の場合:</p><pre>. /sw/bin/init.sh</pre><p>と入力します。</p></div>
+これをシェルに保持させるには、csh/tcsh では <tt style="white-space: nowrap;">source</tt> コマンド、bash/zsh では <tt style="white-space: nowrap;">.</tt> コマンドを使い:</p><p> csh/tcsh の場合:</p><pre>source /opt/sw/bin/init.csh</pre><p> bash の場合:</p><pre>. /opt/sw/bin/init.sh</pre><p>と入力します。</p></div>
 </a>
 <a name="usage-fink.dselect-access">
 <div class="question"><p><b>Q5.12: うぎゃ! dselect で "[A]ccess" メニューを使ったら、パッケージをダウンロードできなくなった!</b></p></div>
@@ -452,7 +452,7 @@ root 権限で <tt style="white-space: nowrap;">visudo</tt> を開き、次の�
 おそらく、 apt を Debian ミラーを指定したのでしょう。
 当然、 Debian ミラーには Fink ファイルはありません。
 これを直す方法には、手動と dselect を通す二通りがあります。
-手動では、 root 権限で <tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> ファイルを開き、 debian.org の行を削除して:
+手動では、 root 権限で <tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> ファイルを開き、 debian.org の行を削除して:
 </p><pre>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</pre><p>に置き換えます (日本では <tt style="white-space: nowrap;">jp.dl.sourceforge.net</tt>) 。</p><p>dselect を通すには、再度 "[A]ccess" を実行し、 "apt" を選択して:</p><p>
 URL: http://us.dl.sourceforge.net/fink/direct_download -
@@ -465,7 +465,7 @@ Components: main crypto
 <a name="usage-fink.cvs-busy">
 <div class="question"><p><b>Q5.13: <q>fink selfupdate</q> か "fink selfupdate-cvs" を実行しようとした時、  "<tt style="white-space: nowrap;">Updating using CVS failed. Check the error messages above.</tt>" エラーが出ました。</b></p></div>
 <div class="answer"><p><b>A:</b> メッセージが、</p><pre>Can't exec "cvs": No such file or directory at
-/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
+/opt/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</pre><p>であれば、 Developer Tools をインストールする必要があります。</p><p>もし最後の行が、</p><pre>### execution of su failed, exit code 1</pre><p>であれば、エラーを詳細に見る必要があります。
 もし接続が拒否されたとあれば:</p><pre>(Logging in to anonymous@fink.cvs.sourceforge.net)
 CVS password:
@@ -484,15 +484,15 @@ cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: No
 such file or directory
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.
-</pre><p>が出ます。この場合は cvs ディレクトリをリセットする必要があります。コマンド:</p><pre>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
-fink selfupdate-cvs</pre><p>を入力して下さい。</p><p>以上のいずれのメッセージとも異なる場合、おそらく /sw/fink/dists 内のファイルを、あなたとメンテナの双方が書き換えたためです。
+</pre><p>が出ます。この場合は cvs ディレクトリをリセットする必要があります。コマンド:</p><pre>sudo find /opt/sw/fink -type d -name 'CVS' -exec rm -rf {} \;
+fink selfupdate-cvs</pre><p>を入力して下さい。</p><p>以上のいずれのメッセージとも異なる場合、おそらく /opt/sw/fink/dists 内のファイルを、あなたとメンテナの双方が書き換えたためです。
 selfupdate-cvs の出力で、 "C" から始まる行で:</p><pre>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 ...
 (other info and patch files)
 ...
 ### execution of su failed, exit code 1
 Failed: Updating using CVS failed. Check the error messages above.</pre><p>のようになっている箇所を探して下さい。
-"C" というのは CVS で最新版へ更新時にコンフリクトがあったことを意味しています。</p><p>これを修正するには、 selfupdate-cvs の出力にでてきたファイルを一つずつ削除して、コマンドを再実行します。</p><pre>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+"C" というのは CVS で最新版へ更新時にコンフリクトがあったことを意味しています。</p><p>これを修正するには、 selfupdate-cvs の出力にでてきたファイルを一つずつ削除して、コマンドを再実行します。</p><pre>sudo rm /opt/sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</pre><p>もし、<b>cvs.sourceforge.net</b> と述べているエラーが発生した場合:</p><pre>
 cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 2401 failed: Operation timed out
@@ -535,7 +535,7 @@ Fink が自動的にここを探しにいきます。
 で古いソースをもっている人を探してみて下さい。
 </p><p>
   もしソースの tarball が見つかったら、手動でダウンロードし、 Fink ソース保存先に移して下さい:
-  "<tt style="white-space: nowrap;">sudo mv <b>package-source.tar.gz</b> /sw/src/</tt>"
+  "<tt style="white-space: nowrap;">sudo mv <b>package-source.tar.gz</b> /opt/sw/src/</tt>"
   この後、通常通り '<tt style="white-space: nowrap;">fink install <b>packagename</b></tt>' して下さい。
 </p><p>ソースファイルが見つからない場合、メンテナが問題に対処するまで待つしかありません。
 古いソースか、新しいバージョン用の .info と .patch ファイルへのリンクが投稿されることでしょう。</p></div>
@@ -544,30 +544,30 @@ Fink が自動的にここを探しにいきます。
 <div class="question"><p><b>Q5.16: Fink や Fink でインストールしたものを実行しようとすると
 "command not found" エラーが出ます。</b></p></div>
 <div class="answer"><p><b>A:</b> 常にこのエラーが出るようでしたら、誤ってスタートアップスクリプトを書き換えてしまった(か、書き換えに失敗した)と思われます。
-<tt style="white-space: nowrap;">/sw/bin/pathsetup.sh</tt> スクリプトを実行してください。
+<tt style="white-space: nowrap;">/opt/sw/bin/pathsetup.sh</tt> スクリプトを実行してください。
 このプログラムは、デフォルトシェルを判定し、シェルの設定に Fink のシェル初期化スクリプトを読み込むコマンドを追加します。
-<b>注記:</b> 古いバージョンの fink では、スクリプト名が <tt style="white-space: nowrap;">/sw/bin/pathsetup.sh</tt> ではなく <tt style="white-space: nowrap;">/sw/bin/pathsetup.command</tt> となっていることがあります。
+<b>注記:</b> 古いバージョンの fink では、スクリプト名が <tt style="white-space: nowrap;">/opt/sw/bin/pathsetup.sh</tt> ではなく <tt style="white-space: nowrap;">/opt/sw/bin/pathsetup.command</tt> となっていることがあります。
 あるいは、 Fink バイナリディストリビューションのディスクイメージ内にある <tt style="white-space: nowrap;">pathsetup.app</tt> を実行する方法もあります。
 </p><p>
 Apple X11 terminal でのみこの問題が発生するのであれば、
 簡単な解決方法は X11　アプリケーションメニューの"ターミナル"を、<b>アプリケーション-&gt;メニューをカスタマイズ...</b>から変更します。
-</p><pre>xterm</pre><p>cコマンドの欄を</p><pre>xterm -ls</pre><p>とします。ここで<tt style="white-space: nowrap;">ls</tt> は <q>login shell</q> を意味し、ログインセットアップが (OS X ターミナルと同様に) 使用されることになります。</p><p><tt style="white-space: nowrap;">/sw/bin/init.*</tt> スクリプトは、<tt style="white-space: nowrap;">/sw/bin</tt> をパスに追加する以外にも様々なことをしています。
+</p><pre>xterm</pre><p>cコマンドの欄を</p><pre>xterm -ls</pre><p>とします。ここで<tt style="white-space: nowrap;">ls</tt> は <q>login shell</q> を意味し、ログインセットアップが (OS X ターミナルと同様に) 使用されることになります。</p><p><tt style="white-space: nowrap;">/opt/sw/bin/init.*</tt> スクリプトは、<tt style="white-space: nowrap;">/opt/sw/bin</tt> をパスに追加する以外にも様々なことをしています。
 	多くのパッケージは、この追加処理がなくては正常に動作しません。</p><pre>source ~/.cshrc</pre></div>
 </a>
 <a name="usage-fink.invisible-sw">
-<div class="question"><p><b>Q5.17: Finder で /sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</b></p></div>
+<div class="question"><p><b>Q5.17: Finder で /opt/sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</b></p></div>
 <div class="answer"><p><b>A:</b> できます。
-Development Tools がインストールされていれば、次のコマンドを実行してください:</p><pre>sudo /Developer/Tools/SetFile -a V /sw</pre><p>これで /sw が標準的なシステムのフォルダ (/usr など) のように不可視になります。
-Developer Tools がない場合はサードパーティー製のアプリケーションで /sw が不可視になるよう、属性値を変更してください。</p></div>
+Development Tools がインストールされていれば、次のコマンドを実行してください:</p><pre>sudo /Developer/Tools/SetFile -a V /opt/sw</pre><p>これで /opt/sw が標準的なシステムのフォルダ (/usr など) のように不可視になります。
+Developer Tools がない場合はサードパーティー製のアプリケーションで /opt/sw が不可視になるよう、属性値を変更してください。</p></div>
 </a>
 <a name="usage-fink.install-info-bad">
 <div class="question"><p><b>Q5.18: 何もインストールできません。
-"install-info: unrecognized option `--infodir=/sw/share/info'"
+"install-info: unrecognized option `--infodir=/opt/sw/share/info'"
 のエラーが出るだけです。</b></p></div>
-<div class="answer"><p><b>A:</b> これは普通、 PATH の問題です。ターミナルで:</p><pre>printenv PATH</pre><p>と入力し、 <tt style="white-space: nowrap;">/sw/sbin</tt> が出てこないなら、環境変数を
+<div class="answer"><p><b>A:</b> これは普通、 PATH の問題です。ターミナルで:</p><pre>printenv PATH</pre><p>と入力し、 <tt style="white-space: nowrap;">/opt/sw/sbin</tt> が出てこないなら、環境変数を
 <a href="/doc/users-guide/install.php#setup">instructions</a>
 内の Users Guide を参照してください。
-<tt style="white-space: nowrap;">/sw/sbin</tt> があるが、他のディレクトリ (例えば /usr/local/bin) 
+<tt style="white-space: nowrap;">/opt/sw/sbin</tt> があるが、他のディレクトリ (例えば /usr/local/bin) 
 がそれより前にある場合、 PATH の順序を変えて先頭近くに移動してください。
 どうしても順序を変えられない理由があるならば、 Fink を使う時に Fink ではない方の <tt style="white-space: nowrap;">install-info</tt> のディレクトリ名を一時的に変える必要があります。</p></div>
 </a>
@@ -578,7 +578,7 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
   エラーメッセージ中のパッケージの .deb ファイルがシステム上にあれば、その状態を確認します:
 </p><pre>dpkg --contents <b>full-path-to-debfile</b>
 </pre><p>例えば</p><pre>dpkg --contents
-/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>ディレクトリやファイルの一覧が表示されたら、 .deb ファイルは大丈夫です。
+/opt/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</pre><p>ディレクトリやファイルの一覧が表示されたら、 .deb ファイルは大丈夫です。
 もし出力されたのがファイルやディレクトリ以外であるか、 .deb ファイルがなくても、このエラーはビルドに影響しないので、次に進んでください。
 </p><p>バイナリインストールを試みている場合、あるいはインストールしたバージョンと現在のバイナリバージョンが一致する場合
 (例えば、 <a href="http://pdb.finkproject.org/pdb/index.php">パッケージデータベース</a> で調べたなら)、
@@ -593,12 +593,12 @@ Developer Tools がない場合はサードパーティー製のアプリケー�
 else if (substr($6, length($6), 1) == "/") \
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}' \
-&gt; /sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>例えば、</p><pre>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
+&gt; /opt/sw/var/lib/dpkg/info/<b>packagename</b>.list</pre><p>例えば、</p><pre>dpkg -c /opt/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
 '{if ($6 == "./") { print "/."; } \
 else if (substr($6, length($6), 1) == "/") \
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}' \
-&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p></div>
+&gt; /opt/sw/var/lib/dpkg/info/libgnomeui2-dev.list</pre><p>このコマンドは、 .deb ファイルの中身を解凍して、ファイル名以外を除いて .list ファイルに書き込んでいます。</p></div>
 </a>
 <a name="usage-fink.dselect-garbage">
 <div class="question"><p><b>Q5.20: <tt style="white-space: nowrap;">dselect</tt> でパッケージを選択すると、大量のゴミがでてきます。
@@ -630,13 +630,13 @@ File not found
 Ign file: stable/crypto Release
 ...
 Failed to fetch
-file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
+file:/opt/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found
 Failed to fetch
-file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
+file:/opt/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
 File not found
 Failed to fetch
-file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
+file:/opt/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
 File not found
 Reading Package Lists... Done
 Building Dependency Tree... Done
@@ -645,7 +645,7 @@ ones used instead.
 
 update available list script returned error exit status 1.
 </pre><p>あるいは</p><pre>W: Couldn't stat source package list file: unstable/main Packages
-(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+(/opt/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)</pre><p><tt style="white-space: nowrap;">fink scanpackages</tt> をするだけです。
 これによって見つからなかったファイルを作成します。</p></div>
 </a>
@@ -653,7 +653,7 @@ powerpc_Packages) - stat (2 No such file or directory)</pre><p><tt style="white-
 <div class="question"><p><b>Q5.24: OS を変えたら、 Fink が認識してくれません。</b></p></div> 
 <div class="answer"><p><b>A:</b> Fink ディストリビューション（ソースとバイナリはそのサブセットです）を変更するには、 Fink に指示する必要があります。
 これは Fink の新規インストール時に実行するスクリプトを実行します:
-</p><pre>/sw/lib/fink/postinstall.pl</pre><p>これにより、 Fink は正しく場所を指示されます。</p></div> 
+</p><pre>/opt/sw/lib/fink/postinstall.pl</pre><p>これにより、 Fink は正しく場所を指示されます。</p></div> 
 </a> 
     <a name="usage-fink.lost-command-line-tools">
       <div class="question"><p><b>Q5.25: After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</b></p></div>
@@ -661,13 +661,13 @@ powerpc_Packages) - stat (2 No such file or directory)</pre><p><tt style="white-
     </a>
 <a name="usage-fink.seg-fault"> 
 <div class="question"><p><b>Q5.26: 何かをインストールしようとしたら <tt style="white-space: nowrap;">gzip</tt> | <tt style="white-space: nowrap;">dpkg-deb</tt> のエラーが出る! 助けて!</b></p></div> 
-<div class="answer"><p><b>A:</b> 以下の形式のエラー:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
-### execution of gzip failed, exit code 139</pre><p>あるいは</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf - 
+<div class="answer"><p><b>A:</b> 以下の形式のエラー:</p><pre>gzip -dc /opt/sw/src/dpkg-1.10.9.tar.gz | /opt/sw/bin/tar -xf - 
+### execution of gzip failed, exit code 139</pre><p>あるいは</p><pre>gzip -dc /opt/sw/src/aquaterm-0.3.0a.tar.gz | /opt/sw/bin/tar -xf - 
 gzip: stdout: Broken pipe 
 ### execution of gzip failed, exit code 138</pre><p>あるいは</p><pre>dpkg-deb -b root-base-files-1.9.0-1 
-/sw/fink/dists/unstable/main/binary-darwin-powerpc/base 
+/opt/sw/fink/dists/unstable/main/binary-darwin-powerpc/base 
 ### execution of dpkg-deb failed, exit code 10 
-Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>であれば、バイナリにおけるプリバインドのエラーです。修正するには:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre><p>と実行します。</p></div> 
+Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>であれば、バイナリにおけるプリバインドのエラーです。修正するには:</p><pre>sudo /opt/sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre><p>と実行します。</p></div> 
 </a> 
 <a name="usage-fink.pathsetup-keeps-running"> 
 <div class="question"><p><b>Q5.27: ターミナルウィンドウを開くと、
@@ -675,10 +675,10 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 というメッセージが出てログアウトします。</b></p></div> 
 <div class="answer"><p><b>A:</b> 
 これは、何らかの理由で OSX ターミナルがログインする度に
-<tt style="white-space: nowrap;">/sw/bin/pathsetup.command</tt>
+<tt style="white-space: nowrap;">/opt/sw/bin/pathsetup.command</tt>
 を実行するように設定されているからです。
 修正するには、 初期設定ファイル <tt style="white-space: nowrap;">~/Library/Preferences/com.apple.Terminal.plist</tt> を削除します。</p><p>他の設定を失いたくない場合、削除する代わりにテキストエディタでこのファイルを開き、
-<tt style="white-space: nowrap;">/sw/bin/pathsetup.command</tt>
+<tt style="white-space: nowrap;">/opt/sw/bin/pathsetup.command</tt>
 と書かれている部分を削除します。</p></div> 
 </a>
 <a name="usage-fink.ext-drive">
@@ -717,13 +717,13 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>で�
 <a name="usage-fink.cant-move-fink">
 <div class="question"><p><b>Q5.30: 
 	Fink を更新できません。
-	/sw/fink を移動できないからです。
+	/opt/sw/fink を移動できないからです。
 	</b></p></div>
-<div class="answer"><p><b>A:</b> このエラー:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>
+<div class="answer"><p><b>A:</b> このエラー:</p><pre>Failed: Can't move "/opt/sw/fink" out of the way.</pre><p>
 	は通常、エラーメッセージと異なり、パーミッションの問題で、
 	<tt style="white-space: nowrap;">selfupdate</tt> の作成した仮フォルダのひとつにあります。
 	これを削除するには:
-	</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
+	</p><pre>sudo rm -rf /opt/sw/fink.tmp /opt/sw/fink.old</pre></div>
 </a>
 
     <a name="usage-fink.fc-cache">
@@ -752,7 +752,7 @@ sudo chmod 1775 /
       <div class="question"><p><b>Q5.33: Fink を更新できない。 <q>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</q>
 </b></p></div>
       <div class="answer"><p><b>A:</b> このエラーは、PPC インストーラで Intel マシンにインストールした際に発生します。  
-        現在のインストールを、例えば次のように削除してください:</p><pre>sudo rm -rf /sw</pre><p>Intel マシン用のインストーラを、<a href="/download/index.php">ダウンロードページ</a>から入手してください。</p></div>
+        現在のインストールを、例えば次のように削除してください:</p><pre>sudo rm -rf /opt/sw</pre><p>Intel マシン用のインストーラを、<a href="/download/index.php">ダウンロードページ</a>から入手してください。</p></div>
     </a>
 
 <h2><a name="comp-general">6 コンパイルの問題 - 一般</a></h2>
@@ -774,7 +774,7 @@ sudo chmod 1775 /
 </a>
 <a name="comp-general.missing-make">
 <div class="question"><p><b>Q6.3: <tt style="white-space: nowrap;">make</tt> に関連したエラーがでました。</b></p></div>
-<div class="answer"><p><b>A:</b> もしメッセージが以下のようであれば</p><pre>make: command not found</pre><p>あるいは</p><pre>Can't exec "make": No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Developer Tools をインストールする必要があります。</p><p>もしメッセージが以下のようであれば</p><pre>make: illegal option -- C</pre><p>
+<div class="answer"><p><b>A:</b> もしメッセージが以下のようであれば</p><pre>make: command not found</pre><p>あるいは</p><pre>Can't exec "make": No such file or directory at /opt/sw/lib/perl5/Fink/Services.pm line 190.</pre><p>Developer Tools をインストールする必要があります。</p><p>もしメッセージが以下のようであれば</p><pre>make: illegal option -- C</pre><p>
 Developer Tools に入っていた GNU 版の <tt style="white-space: nowrap;">make</tt> ユーティリティーを、 BSD 版の make に換えてしまったようです。
 パッケージの中には GNU 版の make でのみサポートされている特殊機能に依存しているものも多いので、 
 <tt style="white-space: nowrap;">/usr/bin/make</tt> が <tt style="white-space: nowrap;">gnumake</tt> のシンボリックリンクであることを確認してください。
@@ -790,8 +790,8 @@ Usage: head [-options] &lt;url&gt;...</pre><p>(後にオプションの説明リ
 これは Perl libwww ライブラリを HFS+ システムボリュームにインストールすると起こります。
 この時 <tt style="white-space: nowrap;">/usr/bin/HEAD</tt> をインストールしようとするのですが、このファイルシステムは大文字と小文字を区別しないので、 <tt style="white-space: nowrap;">head</tt> を上書きしてしまいます。
 <tt style="white-space: nowrap;">head</tt> の方はシェルスクリプトや Makefile で良く使われる標準的なコマンドです。
-Fink を使うには、オリジナルの方の <tt style="white-space: nowrap;">head</tt> に戻す必要があります。</p><p>ソースリリースのブートストラップスクリプトは、現在はこれを確認しますが、最初のインストールにバイナリリリースを使う場合、あるいは Fink をインストールした後で libwww をインストールする場合、まだこの問題に当たります。</p><p>この問題は、 <tt style="white-space: nowrap;">/sw/bin/HEAD</tt> をインストールした場合も起こることが報告されています (Fink のパッケージではありません)。
-これは簡単に解決できます: rename <tt style="white-space: nowrap;">/sw/bin/HEAD</tt> </p></div>
+Fink を使うには、オリジナルの方の <tt style="white-space: nowrap;">head</tt> に戻す必要があります。</p><p>ソースリリースのブートストラップスクリプトは、現在はこれを確認しますが、最初のインストールにバイナリリリースを使う場合、あるいは Fink をインストールした後で libwww をインストールする場合、まだこの問題に当たります。</p><p>この問題は、 <tt style="white-space: nowrap;">/opt/sw/bin/HEAD</tt> をインストールした場合も起こることが報告されています (Fink のパッケージではありません)。
+これは簡単に解決できます: rename <tt style="white-space: nowrap;">/opt/sw/bin/HEAD</tt> </p></div>
 </a>
 <a name="comp-general.also_in">
 <div class="question"><p><b>Q6.5: あるパッケージをインストールしようとすると、他のパッケージのファイルを上書きしようとしているというエラーメッセージが出ました。
@@ -809,9 +809,9 @@ Fink を使うには、オリジナルの方の <tt style="white-space: nowrap;"
 これはいくつかの重要なシステムコールのバ再実装のバグで、この件のような不思議なエラーをたくさん出します。</p><p>この問題でない場合、 <tt style="white-space: nowrap;">mv</tt> のエラーは通常、ビルドの前の方で発生した別のエラーを意味しています。
 エラーは発生したもののビルドは続行したものです。
 問題のあったファイルを追跡するには、ビルドの出力中の存在しないファイルを探します。
-例えば:</p><pre>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
-/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
-mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib':
+例えば:</p><pre>mv /opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib \
+/opt/sw/src/root-foo-shlibs-0.1.2-3/opt/sw/lib/
+mv: cannot stat `/opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib':
 No such file or directory
 ### execution of mv failed, exit code 1
 Failed: installing foo-0.1.2-3 failed</pre><p>この場合、 <tt style="white-space: nowrap;">libbar</tt> ファイルをビルド出力の前の方で探します。</p></div>
@@ -854,9 +854,9 @@ sudo mv /usr/local/lib.moved /usr/local/lib
 <div class="question"><p><b>Q6.9: パッケージをビルドしようとしたら、 "table of contents" が古いというメッセージが出ました。何をしたらいいですか?
 </b></p></div>
 <div class="answer"><p><b>A:</b> このメッセージは重要なヒントです。
-メッセージはこのようなものだと思われます:</p><pre>ld: table of contents for archive: /sw/lib/libintl.a is out of date; 
+メッセージはこのようなものだと思われます:</p><pre>ld: table of contents for archive: /opt/sw/lib/libintl.a is out of date; 
 rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしているライブラリに (root で) ranlib を実行する必要があります。
-例えば、この例では:</p><pre>sudo ranlib /sw/lib/libintl.a</pre></div>
+例えば、この例では:</p><pre>sudo ranlib /opt/sw/lib/libintl.a</pre></div>
 </a>
 <a name="comp-general.fc-atlas">
 <div class="question"><p><b>Q6.10: atlas をインストールしようとすると、 Fink Commander がハングアップします。</b></p></div>
@@ -878,7 +878,7 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 </p></div>
 </a>
 <a name="comp-general.dpkg-parse-error">
-<div class="question"><p><b>Q6.13: "dpkg: parse error, in file `/sw/var/lib/dpkg/status'"
+<div class="question"><p><b>Q6.13: "dpkg: parse error, in file `/opt/sw/var/lib/dpkg/status'"
 というメッセージが出て、何もインストールできません!</b></p></div>
       <div class="answer"><p><b>A:</b> 
 	  これは、クラッシュや回復不可能なエラーなど、何らかの理由で dpkg データベースが壊れたことを意味します。
@@ -886,7 +886,7 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 	</p><pre>package `fink-buildlock-foo-1.2.3-4':  missing version</pre><p>
 	  (もちろん、<tt style="white-space: nowrap;">foo-1.2.3-4</tt> はあなたが見ようとしているパッケージ名)
 	</p><p>
-	  この問題が発生した場合、superuser で <tt style="white-space: nowrap;">/sw/var/lib/dpkg/status</tt> を編集します。
+	  この問題が発生した場合、superuser で <tt style="white-space: nowrap;">/opt/sw/var/lib/dpkg/status</tt> を編集します。
 	  エラーメッセージにある行の近くにいきます。
 	  <tt style="white-space: nowrap;">fink-buildlock-foo-1.2.3-4</tt> で、 <tt style="white-space: nowrap;">Status</tt> フィールドが、
 	</p><pre>install ok installed</pre><p>となっていますが、これを</p><pre>purge ok not-installed</pre><p>
@@ -894,17 +894,17 @@ rerun ranlib(1) (can't load from it)</pre><p>この問題を起こしている�
 	</p><p>
 	  また、これとは異なり、ファイル中にゴミがある場合があります。
 	  この場合は、旧バージョンのデータベースをコピーします:
-	</p><pre>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</pre><p>
+	</p><pre>sudo cp /opt/sw/var/lib/dpkg/status-old /opt/sw/var/lib/dpkg/status</pre><p>
 	  問題が起きる前にインストールしていたパッケージをいくつか再インストールする必要があるかもしれません。
 	</p></div>
 </a>
 <a name="comp-general.freetype-problems"> 
 <div class="question"><p><b>Q6.14: freetype に関係したエラーが出ます。</b></p></div> 
-<div class="answer"><p><b>A:</b> freetype に関係したエラーにはいくつかありますが、以下のものであれば:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>外来の <tt style="white-space: nowrap;">freetype-config</tt> があるかどうか、以下のコマンドを実行して確認します。</p><pre>where freetype-config</pre><p>(<tt style="white-space: nowrap;">tcsh</tt> の場合)</p><pre>type -a freetype-config</pre><p>(<tt style="white-space: nowrap;">bash</tt> の場合)。 Mono フレームワークは、 <tt style="white-space: nowrap;">/usr/bin/freetype-config</tt> をインストールし、フレームワーク内へのシンボリックリンクを作ることが知られています。</p><p>もしこのようなものであれば:</p><pre>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
-/sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class 
+<div class="answer"><p><b>A:</b> freetype に関係したエラーにはいくつかありますが、以下のものであれば:</p><pre>/usr/bin/ld: can't locate file for: -lfreetype</pre><p>外来の <tt style="white-space: nowrap;">freetype-config</tt> があるかどうか、以下のコマンドを実行して確認します。</p><pre>where freetype-config</pre><p>(<tt style="white-space: nowrap;">tcsh</tt> の場合)</p><pre>type -a freetype-config</pre><p>(<tt style="white-space: nowrap;">bash</tt> の場合)。 Mono フレームワークは、 <tt style="white-space: nowrap;">/usr/bin/freetype-config</tt> をインストールし、フレームワーク内へのシンボリックリンクを作ることが知られています。</p><p>もしこのようなものであれば:</p><pre>/opt/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before "pango_ft2_font_get_face"
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class 
 make[2]: *** [rsvg-gz.lo] Error 1 
 make[1]: *** [all-recursive] Error 1 
 make: *** [all-recursive-am] Error 2 
@@ -1052,9 +1052,9 @@ running build_ext
 Traceback (most recent call last):
   File "setup_socket_ssl.py", line 21, in ?
     depends = ['socketmodule.h'] )
-  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+  File "/opt/sw/src/root-python24-2.4.1-1/opt/sw/lib/python2.4/distutils/core.py", line 166, in setup
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
-### execution of /sw/bin/python2.4 failed, exit code 1</pre><p>
+### execution of /opt/sw/bin/python2.4 failed, exit code 1</pre><p>
         	<tt style="white-space: nowrap;">python2*</tt> パッケージは、ビルド時に <tt style="white-space: nowrap;">MACOSX_DEPLOYMENT_TARGET</tt> 
         	をある設定ファイルに書き、Python ビルドユーティリティはモジュールをコンパイルする際に
         	この値を使っています。
@@ -1131,7 +1131,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</pre><p>FinkComman
 </a>
 <a name="comp-packages.libiconv-gettext">
 <div class="question"><p><b>Q7.4: <tt style="white-space: nowrap;">libiconv</tt> が更新できません。</b></p></div>
-<div class="answer"><p><b>A:</b> 下記の形式のエラーでしたら:</p><pre>libtool: link: cannot find the library `/sw/lib/libiconv.la'</pre><p>以下のように実行して直すことが出来ます</p><pre>fink remove gettext-dev
+<div class="answer"><p><b>A:</b> 下記の形式のエラーでしたら:</p><pre>libtool: link: cannot find the library `/opt/sw/lib/libiconv.la'</pre><p>以下のように実行して直すことが出来ます</p><pre>fink remove gettext-dev
 fink install libiconv</pre></div>
 </a>
     <a name="comp-packages.cplusplus-filt">
@@ -1231,24 +1231,24 @@ NetInfo の詳細については、 <tt style="white-space: nowrap;">niutil</tt>
 	  また、コンパイラにターゲットのアーキテクチャーを使うよう伝える必要もあります。
 	  標準的な configure/make を使用するパッケージの場合、
 	  以下の環境変数を設定する必要があります:
-	</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
-export LDFLAGS=-L/sw/lib 
+	</p><p>-bash-</p><pre>export CFLAGS=-I/opt/sw/include 
+export LDFLAGS=-L/opt/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS="-I /sw/share/aclocal"
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.9</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
-setenv LDFLAGS -L/sw/lib 
+export ACLOCAL_FLAGS="-I /opt/sw/share/aclocal"
+export PKG_CONFIG_PATH="/opt/sw/lib/pkgconfig"
+export PATH=/opt/sw/var/lib/fink/path-prefix-clang:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.9</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/opt/sw/include 
+setenv LDFLAGS -L/opt/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv ACLOCAL_FLAGS "-I /opt/sw/share/aclocal"
+setenv PKG_CONFIG_PATH "/opt/sw/lib/pkgconfig"
+setenv PATH /opt/sw/var/lib/fink/path-prefix-clang:$PATH
 setenv MACOSX_DEPLOYMENT_TARGET 10.9</pre><p>(実行 OS が 10.9 以降の場合)</p><p>
 	  これを起動ファイル (e.g. <tt style="white-space: nowrap;">.cshrc</tt> | <tt style="white-space: nowrap;">.profile</tt>) に入れておくと、自動的に設定され、最も簡単です。
 	  これらの環境設定を使用しないパッケージの場合、コンパイル行に
-	  "-I/sw/include" (ヘッダファイル) と "-L/sw/lib" (ライブラリ) を追加する必要があるでしょう。
+	  "-I/opt/sw/include" (ヘッダファイル) と "-L/opt/sw/lib" (ライブラリ) を追加する必要があるでしょう。
 	  パッケージによっては、同様だが非標準な EXTRA_CFLAGS or --with-qt-dir= などのオプションを使っているかもしれません。
 	  "./configure --help" をすることで、こうした configure オプションを知ることができます。
 	</p><p>
@@ -1261,7 +1261,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.9</pre><p>(実行 OS が 10.9 以降の場合
 <div class="answer"><p><b>A:</b> Apple X11 は Fink の環境設定を認識しません。
 このため、Applications メニューも PATH を認識せず、 Fink アプリケーションを探すことができません。
 解決するには、 Fink からインストールしたアプリケーションに:
-</p><pre>source /sw/bin/init.sh ; </pre><p>と追加します。例えば、 Fink からインストールした GIMP の場合、 GIMP の Command 欄に:</p><pre>source /sw/bin/init.sh ; gimp</pre><p>と入力します。</p><p>あるいは、 .xinitrc ファイル (自分のディレクトリ内の) の一行目に:</p><pre>source /sw/bin/init.sh</pre><p>と追加します。</p></div>
+</p><pre>source /opt/sw/bin/init.sh ; </pre><p>と追加します。例えば、 Fink からインストールした GIMP の場合、 GIMP の Command 欄に:</p><pre>source /opt/sw/bin/init.sh ; gimp</pre><p>と入力します。</p><p>あるいは、 .xinitrc ファイル (自分のディレクトリ内の) の一行目に:</p><pre>source /opt/sw/bin/init.sh</pre><p>と追加します。</p></div>
 </a>
 <a name="usage-general.x-options">
 <div class="question"><p><b>Q8.5: X11 の種類が多くて迷っています。
@@ -1594,4 +1594,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: faq.ja.xml,v 1.49 2020/05/31 13:43:40 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: faq.ja.xml,v 1.50 2023/08/04 04:42:29 nieder Exp $</i></p></body></html>

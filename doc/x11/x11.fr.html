@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: x11.fr.xml,v 1.27 2012/11/11 15:20:18 gecko2 Exp $
+Generated from $Fink: x11.fr.xml,v 1.28 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - Utilisation de X11 sous Darwin et Mac OS X</title></head><body>
 <table width="100%" cellspacing="0">
@@ -142,25 +142,25 @@ Fran&ccedil;ais |
 <p>X11 d'Apple utilise votre fichier de configuration <tt style="white-space: nowrap;">~/.xinitrc</tt>, s'il existe. Si vous voulez profiter au maximum de l'intégration Quartz, utilisez <tt style="white-space: nowrap;">/usr/X11R6/bin/quartz-wm</tt> comme gestionnaire de fenêtres, ou supprimez complètement votre fichier <tt style="white-space: nowrap;">~/.xinitrc</tt>.</p>
 <p>Si vous voulez simplement pouvoir copier-coller, mais désirez utiliser un autre gestionnaire de fenêtres, vous pouvez vous baser sur l'exemple suivant :</p>
 <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</pre>
+exec /opt/sw/bin/fvwm2</pre>
 <p>Vous pouvez, bien entendu, utiliser un autre gestionnaire de fenêtres, <tt style="white-space: nowrap;">startkde</tt>, etc...</p>
 </li>
 <li>
 <p><tt style="white-space: nowrap;">quartz-wm</tt> ne gère pas complètement les astuces des gestionnaires de fenêtres Gnome/KDE. Vous observerez peut-être des comportements étranges dans des fenêtres qui ne devraient pas avoir d'ornements, mais en ont pourtant.</p>
 </li>
 <li>
-<p>X11 d'Apple ne respecte pas, par défaut, les configurations d'environnement de Fink. Pour démarrer des applications installées via Fink (par exemple : gestionnaires de fenêtres,  gnome-session ou d'autres applications situées dans le répertoire <tt style="white-space: nowrap;">/sw/bin</tt>), placez la ligne suivante dans les premières lignes du fichier <tt style="white-space: nowrap;">~/.xinitrc</tt> (c'est-à-dire après l'initialisation "<tt style="white-space: nowrap;">#!/bin/sh</tt>", mais avant de démarrer tout autre programme) :</p>
-<pre> . /sw/bin/init.sh
+<p>X11 d'Apple ne respecte pas, par défaut, les configurations d'environnement de Fink. Pour démarrer des applications installées via Fink (par exemple : gestionnaires de fenêtres,  gnome-session ou d'autres applications situées dans le répertoire <tt style="white-space: nowrap;">/opt/sw/bin</tt>), placez la ligne suivante dans les premières lignes du fichier <tt style="white-space: nowrap;">~/.xinitrc</tt> (c'est-à-dire après l'initialisation "<tt style="white-space: nowrap;">#!/bin/sh</tt>", mais avant de démarrer tout autre programme) :</p>
+<pre> . /opt/sw/bin/init.sh
 </pre>
 <p>de façon à ce que votre environnement Fink soit initialisé. <b>Note</b> : <tt style="white-space: nowrap;">init.sh</tt> est utilisé au lieu de <tt style="white-space: nowrap;">init.csh</tt>, car <tt style="white-space: nowrap;">.xinitrc</tt> est lancé par <tt style="white-space: nowrap;">sh</tt> au lieu de <tt style="white-space: nowrap;">tcsh</tt>.</p>
 </li>
 <li>
 <p>Les applications qui appellent d'autres programmes situés dans l'arborescence de Fink pour réaliser certaines de leurs fonctions doivent subir un traitement spécial pour que l'on puisse les appeler à partir du menu Applications. Au lieu de mettre le chemin complet du fichier, par exemple :</p>
-<pre>/sw/bin/emacs</pre>
+<pre>/opt/sw/bin/emacs</pre>
 <p>vous devez utiliser une commande semblable à la suivante, si vous utilisez le shell bash :</p>
-<pre>. /sw/bin/init.sh ; emacs</pre>
+<pre>. /opt/sw/bin/init.sh ; emacs</pre>
 <p>et si vous utilisez le shell tcsh, une commande semblable à celle-ci :</p>
-<pre>source /sw/bin/init.csh ; emacs</pre>
+<pre>source /opt/sw/bin/init.csh ; emacs</pre>
 <p>Ceci garantit que l'application aura un PATH correct. Vous pouvez utiliser cette syntaxe pour toute application installée via Fink.</p>
 </li>
 <li>
@@ -294,10 +294,10 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
 <p>Vous pouvez mettre à peu près n'importe quelle commande dans un fichier <tt style="white-space: nowrap;">.xinitrc</tt>, mais il faut tenir compte des éléments suivants. Tout d'abord, le shell qui interprète le fichier attend, par défaut, que chaque programme lancé soit terminé avant de lancer le suivant. Si vous voulez lancer plusieurs programmes en parallèle, vous devez indiquer au shell qu'il doit les faire tourner en "arrière-plan", en ajoutant un <tt style="white-space: nowrap;">&amp;</tt> à la fin de la ligne.</p>
 <p>Ensuite, <tt style="white-space: nowrap;">xinit</tt> attend que le script <tt style="white-space: nowrap;">.xinitrc</tt> se termine et interprète sa fin ainsi : "la session est terminée, je dois aussi tuer le serveur X maintenant". Cela signifie que la dernière commande du fichier <tt style="white-space: nowrap;">.xinitrc</tt> ne doit pas tourner en arrière-plan et que cette commande doit être un programme de longue durée. En général, on utilise le gestionnaire de gestionnaire comme dernière commande. En fait, la plupart des gestionnaires de fenêtres partent du principe que <tt style="white-space: nowrap;">xinit</tt> attend qu'ils se terminent et utilisent cela pour faire fonctionner l'article de menu  "Fin de session". (<b>Note</b> : pour restreindre l'usage de la mémoire et le nombre de cycles CPU, vous pouvez mettre un <tt style="white-space: nowrap;">exec</tt> au début de la dernière ligne comme dans les exemples ci-dessous.)</p>
 <p> Exemple de démarrage de GNOME :</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 exec gnome-session</pre>
 <p>Exemple plus complexe pour les utilisateurs de bash qui suppriment les alertes X11, lance un certain nombre de clients et le gestionnaire de fenêtres Enlightenment :</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -307,25 +307,25 @@ xterm &amp;
 
 exec enlightenment</pre>
 <p>Pour démarrer GNOME 2.2 sous X11 d'Apple, utilisez les commandes suivantes :</p>    
- <pre>. /sw/bin/init.sh
+ <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </pre> 
 <p>Pour GNOME 2.4 sous X11 d'Apple, metacity est lancée automatiquement, les commandes sont donc réduites à :</p>    
- <pre>. /sw/bin/init.sh
+ <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </pre> 
 <p>Pour lancer KDE 3.2 (version &lt; 3.2.2-21) sous X11 d'Apple :</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
 <p>Et enfin pour lancer la toute dernière version de KDE sous X11 d'Apple :</p>
-<pre>. /sw/bin/init.sh
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+<pre>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </pre>
 
 <h3><a name="run-xfree86.oroborosx">4.7 OroborOSX</a></h3>
@@ -414,7 +414,7 @@ failed to connect as window server!</pre>
 Errors from xkbcomp are not fatal to the X server</pre>
 <p>Sévérité : quasi inoffensif. Cette erreur n'est pas fatale. À ma connaissance, XDarwin n'utilise pas du tout l'extension XKB. Il est probable qu'un programme client tente, malgré tout, de l'utiliser...</p>
 <pre>startx: Command not found.</pre>
-<p>Sévérité : fatal. Ceci arrive avec XDarwin 1.0a2 et 1.0a3 quand les fichiers d'initialisation de votre shell ne comprennent aucune commande pour ajouter le chemin /usr/X11R6/bin à la variable d'environnement PATH. Si vous utilisez Fink et que vous n'avez pas changer votre shell par défaut, il vous suffit d'ajouter la ligne <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt> au fichier <tt style="white-space: nowrap;">.cshrc</tt> situé dans votre répertoire utilisateur, comme indiqué dans les instructions de Fink.</p>
+<p>Sévérité : fatal. Ceci arrive avec XDarwin 1.0a2 et 1.0a3 quand les fichiers d'initialisation de votre shell ne comprennent aucune commande pour ajouter le chemin /usr/X11R6/bin à la variable d'environnement PATH. Si vous utilisez Fink et que vous n'avez pas changer votre shell par défaut, il vous suffit d'ajouter la ligne <tt style="white-space: nowrap;">source /opt/sw/bin/init.csh</tt> au fichier <tt style="white-space: nowrap;">.cshrc</tt> situé dans votre répertoire utilisateur, comme indiqué dans les instructions de Fink.</p>
 <pre>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
 _XSERVTransMakeAllCOTSServerListeners: server already running</pre>
 <pre>Fatal server error:
@@ -518,4 +518,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: x11.fr.xml,v 1.27 2012/11/11 15:20:18 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: x11.fr.xml,v 1.28 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

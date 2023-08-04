@@ -1,7 +1,7 @@
 <?php
 $title = "Netiquette - Respondiendo";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2013/02/02 14:16:41';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Netiquette Contents"><link rel="next" href="unsubscribe.php?phpLang=es" title="¿Cómo desuscribirse de las Listas?"><link rel="prev" href="first-post.php?phpLang=es" title=\'Primer "Post"\'>';
 
 

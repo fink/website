@@ -1,7 +1,7 @@
 <?php
 $title = "网络礼仪 - 回应";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="网络礼仪 Contents"><link rel="next" href="unsubscribe.php?phpLang=zh" title="如何取消订阅？"><link rel="prev" href="first-post.php?phpLang=zh" title="初始张贴">';
 
 

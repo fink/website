@@ -1,7 +1,7 @@
 <?php
 $title = "Руководство пользователя - fink.conf";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2019/01/19 10:11:12';
+$cvs_date = 'Date: 2023/08/04 4:49:23';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="next" href="usage.php?phpLang=ru" title="Использование инструмента fink в командной строке"><link rel="prev" href="upgrade.php?phpLang=ru" title="Обновление Fink">';
 
 
@@ -27,7 +27,7 @@ include_once "header.ru.inc";
                 <b>fink.conf</b> вручную. В целом эти опции предназначены только для
                 продвинутых пользователей.</p>
             <p> Файл <b>fink.conf</b> находится в
-                <code>/sw/etc/fink.conf</code> и вы можете его редактировать в своем любимом
+                <code>/opt/sw/etc/fink.conf</code> и вы можете его редактировать в своем любимом
                 текстовом редакторе. Для редактирования требуются права суперпользователя.</p>
         
         <h2><a name="syntax">5.2 Синтаксис fink.conf</a></h2>
@@ -55,7 +55,7 @@ ListOption: Option1 Option2 Option3
                     <p>
                         <b>Basepath:</b> маршрут (path)</p>
                     <p> Сообщите Fink, где маршрут инсталлирован.  По умолчанию это
-                        <b>/sw</b>, если вы не сделали изменений в процессе первоначальной
+                        <b>/opt/sw</b>, если вы не сделали изменений в процессе первоначальной
                         инсталляции Fink. Вы <b>не</b> должны менять эту настройку
                         после инсталляции, иначе <b>fink</b> запутается.</p>
                 </li>
@@ -88,11 +88,11 @@ unstable/crypto - нестабильные криптографические п
 unstable/main   - другие нестабильные пакеты
 </pre>                    
                     <p> Также вы можете добавить собственные деревья в каталог
-                        <code>/sw/fink/dists</code> для личных целей, но
+                        <code>/opt/sw/fink/dists</code> для личных целей, но
                         в большинстве случаев это не
                         требуется. Деревьями по умолчанию являются "local/main
                         local/bootstrap stable/main". Данный список всегда должен быть идентичен
-                        списку в файле <code>/sw/etc/apt/sources.list</code>.
+                        списку в файле <code>/opt/sw/etc/apt/sources.list</code>.
                         (Начиная со своей версии 0.21.0, <code>fink</code> делает это за вас автоматически.)</p>
 
 <p>The order of the trees is meaningful, as packages from later trees in the list may
@@ -109,14 +109,14 @@ override packages from earlier ones.</p>
           Mac OS X 10.2 users are restricted to fink-0.24.7, released in June 2005.
           
                         Данная опция настраивается
-                        при помощи скрипта <code>/sw/lib/fink/postinstall.pl</code>.
+                        при помощи скрипта <code>/opt/sw/lib/fink/postinstall.pl</code>.
                         Вам не надо изменять эту настройку вручную.</p>
                 </li>
                 <li>
                     <p>
                         <b>FetchAltDir:</b> маршрут</p>
                     <p>Обычно <code>fink</code> хранит исходные коды, которые он распаковывает, в
-                        <code>/sw/src</code>. При помощи этой опции вы можете указать альтернативный каталог
+                        <code>/opt/sw/src</code>. При помощи этой опции вы можете указать альтернативный каталог
                         для скачанного исходного кода. 
                         Н-р:</p>
                     <pre>FetchAltDir: /usr/src</pre>
@@ -148,7 +148,7 @@ override packages from earlier ones.</p>
                     <p>
                         <b>NoAutoIndex:</b> булево выражение</p>
                     <p>Fink кэширует свои файлы описания пакетов в
-                        /sw/var/db/fink.db для сохранения в целях их чтения и синтаксического анализа
+                        /opt/sw/var/db/fink.db для сохранения в целях их чтения и синтаксического анализа
                         при каждом выполнении. Если не выбрана опция
                          "True" ("Правда"), Fink проверяет, нуждается ли указатель пакетов в 
                         обновлении. По умолчанию установлена опция "False" ("Ложь") и не 
@@ -171,8 +171,8 @@ override packages from earlier ones.</p>
                         <b>Buildpath:</b> маршрут</p>
                     <p>Fink необходимо создать несколько временных каталогов для
                         каждого пакета, который он компилирует от исходного кода. По умолчанию
-                        они размещаются в <code>/sw/src</code> on Panther and earlier, а 
-<code>/sw/src/fink.build</code> on Tiger, но если вы
+                        они размещаются в <code>/opt/sw/src</code> on Panther and earlier, а 
+<code>/opt/sw/src/fink.build</code> on Tiger, но если вы
                         хотите, чтобы они были в другом месте, укажите маршрут.
                         См. описание областей <code>KeepRootDir</code> и
                         <code>KeepBuildDir</code> далее в данном документе для
@@ -312,7 +312,7 @@ the Buildpath, slowing down builds.
                         <b>MirrorContinent:</b> трехбуквенный код</p>
                     <p>Это значение изменяется при помощи <code>fink
                     configure</code>. Необходимый трехбуквенный код
-                        можно найти в <code>/sw/lib/fink/mirror/_keys</code>.
+                        можно найти в <code>/opt/sw/lib/fink/mirror/_keys</code>.
                         Н-р, если вы живете в Европе, код будет следующий:</p>
                     <pre>MirrorContinent: eur</pre>
                 </li>
@@ -321,7 +321,7 @@ the Buildpath, slowing down builds.
                         <b>MirrorCountry:</b> шестибуквенный код</p>
                     <p>Это значение изменяется при помощи <code>fink
                         configure</code>. Необходимый код можно
-                        найти в <code>/sw/lib/fink/mirror/_keys</code>.
+                        найти в <code>/opt/sw/lib/fink/mirror/_keys</code>.
                         Н-р, если вы живете в Австрии, код будет следующий:</p>
                     <pre>MirrorCountry: eur-AT</pre>
                 </li>
@@ -411,7 +411,7 @@ ClosestFirst - для поиска ближайших зеркал в перву
                     <p>Если инсталлирован пакет Fink <code>ccache-default</code>, кэш-файлы,
                         создаваемые им при построении пакетов Fink, будут размещены здесь.
                         Настройка по умолчанию:
-                        <code>/sw/var/ccache</code>. При настройке
+                        <code>/opt/sw/var/ccache</code>. При настройке
                         <code>none</code> fink не настраивает переменную величину среды CCACHE_DIR
                         и ccache будет использовать
                         <code>$HOME/.ccache</code>, потенциально размещая
@@ -422,7 +422,7 @@ ClosestFirst - для поиска ближайших зеркал в перву
                     Здесь указывается плагин уведомления о моменте инсталляции/деинсталляции
                     пакетов. Настройка по умолчанию: Growl (для работы требуется <code>Mac::Growl</code>).
                     Другие плагины можно найти в каталоге
-                    <code>/sw/lib/perl5/Fink/Notify</code>.
+                    <code>/opt/sw/lib/perl5/Fink/Notify</code>.
                 </p></li>
         
         <li><p><b>AutoScanpackages:</b> boolean
@@ -444,7 +444,7 @@ ClosestFirst - для поиска ближайших зеркал в перву
         <h2><a name="sourceslist">5.9 Управление файлом sources.list в apt</a></h2>
             
             <p>Начиная с 0.21.0, fink активно управляет
-                файлом<code>/sw/etc/apt/sources.list</code>, который используется apt
+                файлом<code>/opt/sw/etc/apt/sources.list</code>, который используется apt
                 с целью нахождения бинарных пакетов для инсталляции. Файл по умолчанию
                 sources.list выглядит примерно следующим образом (с корректировками для соответствия вашему дистрибутиву и деревьям):</p>
              <pre># Local modifications should either go above this line, or at the end.
@@ -453,10 +453,10 @@ ClosestFirst - для поиска ближайших зеркал в перву
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in 
-# /sw/etc/fink.conf
+# /opt/sw/etc/fink.conf
 # NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
-deb file:/sw/fink local main
-deb file:/sw/fink stable main crypto
+deb file:/opt/sw/fink local main
+deb file:/opt/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release
@@ -480,9 +480,9 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
                 вы ограничите их верхней частью файла (выше
                 первой строки по умолчанию) и его нижней частью (ниже последней строки
                 по умолчанию).</p>
-            <p> Прим.: Если вы модифицировали <code>/sw/etc/apt/sources.list</code>
+            <p> Прим.: Если вы модифицировали <code>/opt/sw/etc/apt/sources.list</code>
                 перед обновлением до fink 0.21.0, то найдете свои предыдущие файлы сохраненными в
-                 <code>/sw/etc/apt/sources.list.finkbak</code> .</p>
+                 <code>/opt/sw/etc/apt/sources.list.finkbak</code> .</p>
         
     <p align="right"><?php echo FINK_NEXT ; ?>:
 <a href="usage.php?phpLang=ru">6. Использование инструмента fink в командной строке</a></p>

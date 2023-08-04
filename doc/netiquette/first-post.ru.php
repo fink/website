@@ -1,7 +1,7 @@
 <?php
 $title = "Сетевой этикет - Первоначальное объявление";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Сетевой этикет Contents"><link rel="next" href="reply.php?phpLang=ru" title="Ответы на объявления"><link rel="prev" href="before-post.php?phpLang=ru" title="Что надо сделать до размещения объявления">';
 
 
@@ -73,7 +73,7 @@ include_once "header.ru.inc";
                                     <p>Если вы считаете, что это поможет, можно
                                         включить соответствующий раздел
                                         регистрационного файла конфигурации, н-р
-                                        <code>/sw/src/foo-3.141-6/foo-3.141/config.log</code>.
+                                        <code>/opt/opt/sw/src/foo-3.141-6/foo-3.141/config.log</code>.
                                         <b>Не надо включать весь файл,
                                         т.к. он может быть большим.</b>
                                     </p>

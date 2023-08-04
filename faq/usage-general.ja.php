@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - 使用法 (1)";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=ja" title="パッケージ使用上の問題 - 特定のパッケージ"><link rel="prev" href="comp-packages.php?phpLang=ja" title="コンパイルの問題 - 特定のバージョン">';
 
 
@@ -60,24 +60,24 @@ NetInfo の詳細については、 <code>niutil</code> の man ページを読�
 	  また、コンパイラにターゲットのアーキテクチャーを使うよう伝える必要もあります。
 	  標準的な configure/make を使用するパッケージの場合、
 	  以下の環境変数を設定する必要があります:
-	</p><p>-bash-</p><pre>export CFLAGS=-I/sw/include 
-export LDFLAGS=-L/sw/lib 
+	</p><p>-bash-</p><pre>export CFLAGS=-I/opt/sw/include 
+export LDFLAGS=-L/opt/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS="-I /sw/share/aclocal"
-export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.9</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
-setenv LDFLAGS -L/sw/lib 
+export ACLOCAL_FLAGS="-I /opt/sw/share/aclocal"
+export PKG_CONFIG_PATH="/opt/sw/lib/pkgconfig"
+export PATH=/opt/sw/var/lib/fink/path-prefix-clang:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.9</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/opt/sw/include 
+setenv LDFLAGS -L/opt/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
-setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv ACLOCAL_FLAGS "-I /opt/sw/share/aclocal"
+setenv PKG_CONFIG_PATH "/opt/sw/lib/pkgconfig"
+setenv PATH /opt/sw/var/lib/fink/path-prefix-clang:$PATH
 setenv MACOSX_DEPLOYMENT_TARGET 10.9</pre><p>(実行 OS が 10.9 以降の場合)</p><p>
 	  これを起動ファイル (e.g. <code>.cshrc</code> | <code>.profile</code>) に入れておくと、自動的に設定され、最も簡単です。
 	  これらの環境設定を使用しないパッケージの場合、コンパイル行に
-	  "-I/sw/include" (ヘッダファイル) と "-L/sw/lib" (ライブラリ) を追加する必要があるでしょう。
+	  "-I/opt/sw/include" (ヘッダファイル) と "-L/opt/sw/lib" (ライブラリ) を追加する必要があるでしょう。
 	  パッケージによっては、同様だが非標準な EXTRA_CFLAGS or --with-qt-dir= などのオプションを使っているかもしれません。
 	  "./configure --help" をすることで、こうした configure オプションを知ることができます。
 	</p><p>
@@ -90,7 +90,7 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.9</pre><p>(実行 OS が 10.9 以降の場合
 <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Apple X11 は Fink の環境設定を認識しません。
 このため、Applications メニューも PATH を認識せず、 Fink アプリケーションを探すことができません。
 解決するには、 Fink からインストールしたアプリケーションに:
-</p><pre>source /sw/bin/init.sh ; </pre><p>と追加します。例えば、 Fink からインストールした GIMP の場合、 GIMP の Command 欄に:</p><pre>source /sw/bin/init.sh ; gimp</pre><p>と入力します。</p><p>あるいは、 .xinitrc ファイル (自分のディレクトリ内の) の一行目に:</p><pre>source /sw/bin/init.sh</pre><p>と追加します。</p></div>
+</p><pre>source /opt/sw/bin/init.sh ; </pre><p>と追加します。例えば、 Fink からインストールした GIMP の場合、 GIMP の Command 欄に:</p><pre>source /opt/sw/bin/init.sh ; gimp</pre><p>と入力します。</p><p>あるいは、 .xinitrc ファイル (自分のディレクトリ内の) の一行目に:</p><pre>source /opt/sw/bin/init.sh</pre><p>と追加します。</p></div>
 </a>
 <a name="x-options">
 <div class="question"><p><b><?php echo FINK_Q ; ?>8.5: X11 の種類が多くて迷っています。

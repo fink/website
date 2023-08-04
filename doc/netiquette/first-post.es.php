@@ -1,7 +1,7 @@
 <?php
 $title = "Netiquette - Inicial";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2013/02/02 14:16:41';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Netiquette Contents"><link rel="next" href="reply.php?phpLang=es" title=\'Respondiendo a los "posts"\'><link rel="prev" href="before-post.php?phpLang=es" title="¿Qué hacer antes de \'postear\'?">';
 
 
@@ -48,7 +48,7 @@ error unpacking foo
                 mensaje:<pre>....
 Checking for bar-config...no
 Error:  bar-config not found
-....</pre><p>Si crees que el dato puede ayudar, entonces puedes "postear" la sección relevante del log del archivo de configuración, e.g. <code>/sw/src/foo-3.141-6/foo-3.141/config.log</code>.  <b>Por favor, no pongas TODO el archivo, podría se bastante grande.</b></p></li>
+....</pre><p>Si crees que el dato puede ayudar, entonces puedes "postear" la sección relevante del log del archivo de configuración, e.g. <code>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</code>.  <b>Por favor, no pongas TODO el archivo, podría se bastante grande.</b></p></li>
                 <li>O, el error puede aparecer hasta que se inicía la construcción del
                 paquete. En este caso, "postea" la última línea que el compilador trato 
                 de ejecutar hasta el mensaje de error:<pre>...

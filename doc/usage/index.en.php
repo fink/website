@@ -1,14 +1,14 @@
 <?php
 $title = "Usage";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:20:38';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink Usage</h1>
-<!--Generated from $Fink: usage.xml,v 1.16 2012/11/11 15:20:17 gecko2 Exp $--><h2><a name="">Setting The Paths</a></h2>
+<!--Generated from $Fink: usage.xml,v 1.17 2023/08/04 5:20:38 nieder Exp $--><h2><a name="">Setting The Paths</a></h2>
 <p>
 To use the software installed in Fink's directory hierarchy, including
 the fink command itself, you must set your PATH environment variable
@@ -16,7 +16,7 @@ the fink command itself, you must set your PATH environment variable
 Shell scripts are provided to do this for you.
 If you use tcsh, add the following to your .cshrc:
 </p>
-<pre>source /sw/bin/init.csh</pre>
+<pre>source /opt/sw/bin/init.csh</pre>
 <p>
 Editing .cshrc will only affect new shells (i.e. newly opened Terminal
 windows), so you should also run this command in all Terminal windows
@@ -27,7 +27,7 @@ list of available commands internally.
 <p>
 If you use a Bourne type shell (e.g. sh, bash, zsh), use instead:
 </p>
-<pre>source /sw/bin/init.sh</pre>
+<pre>source /opt/sw/bin/init.sh</pre>
 <p>
 Note that the scripts also add /usr/X11R6/bin and /usr/X11R6/man to
 your path so you can use X11 when it is installed.
@@ -66,7 +66,7 @@ the dpkg tool (usually this poses no problem, though).</p>
 the .deb compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the .deb from the
-/sw/fink/dists tree.</p>
+/opt/sw/fink/dists tree.</p>
 <p>Aliases: disable, deactivate, unuse, delete, purge.</p>
 <h2><a name="">update-all</a></h2>
 <p>This command updates all installed packages to the latest version. It
@@ -149,7 +149,7 @@ It then downloads the package descriptions and updates the core
 packages, including fink itself.
 This command can only upgrade to regular releases, but you can use it
 to upgrade from a CVS version to a later regular release.
-It will refuse to run if you have /sw/fink set up to get package
+It will refuse to run if you have /opt/sw/fink set up to get package
 descriptions directly from CVS.
 </p>
 <h2><a name="">Further Questions</a></h2>

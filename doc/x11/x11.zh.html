@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: x11.zh.xml,v 1.11 2012/11/11 15:20:18 gecko2 Exp $
+Generated from $Fink: x11.zh.xml,v 1.12 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - 在 Darwin 和 Mac OS X 上运行 X11</title></head><body>
 <table width="100%" cellspacing="0">
@@ -281,7 +281,7 @@ operation, and have OpenGL support.</li>
 作为你的窗口管理器，或者删除 <tt style="white-space: nowrap;">~/.xinitrc</tt> 文件。</p>
           <p>如果你只需要拷贝粘贴支持，但希望使用另外一个窗口管理器，你可以按照下面的例子做：</p>
           <pre>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</pre>
+exec /opt/sw/bin/fvwm2</pre>
           <p>当然，你也可以使用其它的窗口管理器，<tt style="white-space: nowrap;">startkde</tt>，等等。</p>
         </li>
         <li>
@@ -290,17 +290,17 @@ exec /sw/bin/fvwm2</pre>
         </li>
         <li>
           <p>默认情况下，苹果的 X11 不理会 Fink 的环境变量设置。为了启动你通过 fink 安装的程序（例如窗口管理器，gnome-session，其它在
-<tt style="white-space: nowrap;">/sw/bin</tt> 下的应用程序），把下面移行放在 <tt style="white-space: nowrap;">~/.xinitrc</tt> 文件比较靠前的地方（比如，在最初的 "<tt style="white-space: nowrap;">#!/bin/sh</tt>" 的这一行之后，但在运行其它程序以前）：</p>
-          <pre> . /sw/bin/init.sh</pre>
+<tt style="white-space: nowrap;">/opt/sw/bin</tt> 下的应用程序），把下面移行放在 <tt style="white-space: nowrap;">~/.xinitrc</tt> 文件比较靠前的地方（比如，在最初的 "<tt style="white-space: nowrap;">#!/bin/sh</tt>" 的这一行之后，但在运行其它程序以前）：</p>
+          <pre> . /opt/sw/bin/init.sh</pre>
           <p>这样 Fink 的环境就被初始化了。注意：我们使用 <tt style="white-space: nowrap;">init.sh</tt> 文件而不是 <tt style="white-space: nowrap;">init.csh</tt> 文件是因为<tt style="white-space: nowrap;">.xinitrc</tt> 是使用 <tt style="white-space: nowrap;">sh</tt> 来做解释器，而不是 <tt style="white-space: nowrap;">tcsh</tt>。</p>
         </li>
         <li>
           <p>有些程序需要调用 Fink 目录下的其它程序，如果这些程序是通过应用程序菜单启动的话，还需要另外的专门处理。而不仅仅是使用全路径名这个简单。例如：</p>
-          <pre>/sw/bin/emacs</pre>
+          <pre>/opt/sw/bin/emacs</pre>
           <p>如果你使用 bash 作为你的默认 shell 程序，你需要象下面这样设置：</p>
-          <pre>. /sw/bin/init.sh ; emacs</pre>
+          <pre>. /opt/sw/bin/init.sh ; emacs</pre>
           <p>如果你用 tcsh：</p>
-          <pre>source /sw/bin/init.csh ; emacs</pre>
+          <pre>source /opt/sw/bin/init.csh ; emacs</pre>
           <p>这个确保程序有一个正确的 PATH 环境。你可以对任何 Fink 安装的程序使用这个语法。</p>
         </li>
         <li>
@@ -552,12 +552,12 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</pre>
 A simple example that starts up GNOME on XFree86 or Xorg:
 
 </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 exec gnome-session</pre>
       <p>
 一个稍微复杂一点的针对 bash 用户的例子会关闭 X11 响铃，启动一些客户程序，最后运行 Enlightenment 窗口管理器：
 </p>
-      <pre>. /sw/bin/init.sh
+      <pre>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -571,21 +571,21 @@ exec enlightenment</pre>
 
 <p>To start GNOME 2.4 and later under Apple's X11:</p>
 
- <pre>. /sw/bin/init.sh
+ <pre>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </pre>
  
 <p>在苹果的 X11 下启动 KDE 3.2 (版本大于 3.2.2-21)：</p>
-<pre>. /sw/bin/init.sh
+<pre>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
+/opt/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
 </pre>
 
 <p>最后，在苹果的 X11 下启动最新的非稳定版 KDE：</p>
-<pre>. /sw/bin/init.sh
-/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
+<pre>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &lt;/tmp/kde.log 2&lt;&amp;1
 </pre>
     
     
@@ -800,7 +800,7 @@ Errors from xkbcomp are not fatal to the X server</pre>
       <p>
 分类：致命错误。
 这在 XDarwin 1.0a2 和 1.0a3 下可能会发生，如果你的 shell 初始化文件没有把 /usr/X11R6/bin 加入到 PATH 变量中。
-如果你使用 Fink 而且没有改变你的默认 shell，把 <tt style="white-space: nowrap;">source /sw/bin/init.csh</tt> 这一行添加到你主目录下的 <tt style="white-space: nowrap;">.cshrc</tt>
+如果你使用 Fink 而且没有改变你的默认 shell，把 <tt style="white-space: nowrap;">source /opt/sw/bin/init.csh</tt> 这一行添加到你主目录下的 <tt style="white-space: nowrap;">.cshrc</tt>
 文件中（这也是 Fink 使用指南所推荐的）应该就足够了。
 </p>
       <pre>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
@@ -999,4 +999,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: x11.zh.xml,v 1.11 2012/11/11 15:20:18 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: x11.zh.xml,v 1.12 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

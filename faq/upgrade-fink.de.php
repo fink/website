@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Fink aktualisieren";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2020/05/31 13:43:40';
+$cvs_date = 'Date: 2023/08/04 04:42:29';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="usage-fink.php?phpLang=de" title="Fink installieren, benutzen und pflegen"><link rel="prev" href="mirrors.php?phpLang=de" title="Fink-Spiegelserver">';
 
 

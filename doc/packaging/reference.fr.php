@@ -1,7 +1,7 @@
 <?php
 $title = "Paquets - Référence";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/01/22 6:40:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -11,11 +11,11 @@ include_once "header.fr.inc";
 
 
 <h2><a name="build">6.1 Construction d'un paquet</a></h2>
-<p>Pour comprendre l'utilité de certains des champs, vous devez d'abord savoir comment Fink construit un paquet. La construction se déroule en cinq phases : décompression, application des rustines, compilation, installation et construction proprement dite. L'exemple ci-dessous correspond à une installation dans <code>/sw</code> du paquet gimp-1.2.1-1.</p>
-<p>Lors de la <b>phase de décompression</b>, le répertoire <code>/sw/src/fink.build/gimp-1.2.1-1</code> est créé et l'archive tar y est décompressée (il peut y avoir plusieurs archives tar). Dans la plupart des cas, un répertoire gimp-1.2.1, contenant le source, sera créé ; toutes les étapes suivantes seront exécutées dans ce répertoire (par exemple <code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>). Les champs SourceDirectory, NoSourceDirectory et Source<b>N</b>ExtractDir permettent de contrôler quels sont les répertoires à utiliser.</p>
+<p>Pour comprendre l'utilité de certains des champs, vous devez d'abord savoir comment Fink construit un paquet. La construction se déroule en cinq phases : décompression, application des rustines, compilation, installation et construction proprement dite. L'exemple ci-dessous correspond à une installation dans <code>/opt/sw</code> du paquet gimp-1.2.1-1.</p>
+<p>Lors de la <b>phase de décompression</b>, le répertoire <code>/opt/sw/src/fink.build/gimp-1.2.1-1</code> est créé et l'archive tar y est décompressée (il peut y avoir plusieurs archives tar). Dans la plupart des cas, un répertoire gimp-1.2.1, contenant le source, sera créé ; toutes les étapes suivantes seront exécutées dans ce répertoire (par exemple <code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>). Les champs SourceDirectory, NoSourceDirectory et Source<b>N</b>ExtractDir permettent de contrôler quels sont les répertoires à utiliser.</p>
 <p>Lors de la <b>phase d'application des rustines</b>, le code source est modifié par les rustines, pour qu'il compile sous Darwin. Les actions dérivées des champs UpdateConfigGuess, UpdateLibtool, Patch et PatchScript sont exécutées dans l'ordre d'énumération de ces champs.</p>
 <p>Lors de la <b>phase de compilation</b>, le source est configuré et compilé. En général, cela correspond au lancement du script <code>configure</code> avec certains paramètres, puis à l'exécution de la commande <code>make</code>. Voir la description du champ CompileScript pour de plus amples informations. Si les séries de tests sont activées (nouvelle fonctionnalité accessible en mode mainteneur dans la version 0.25 de fink), le script TestScript est lancé juste après le script CompileScript.</p>
-<p>Lors de la <b>phase d'installation</b>, le paquet est installé dans un répertoire temporaire, <code>/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d). (Notez la partie "root-"). Tous les fichiers qui sont normalement installés dans <code>/sw</code> sont installés dans <code>/sw/src/fink.build/root-gimp-1.2.1-1/sw</code> (= %i = %d%p). Voir la description du champ InstallScript pour de plus amples informations.</p>
+<p>Lors de la <b>phase d'installation</b>, le paquet est installé dans un répertoire temporaire, <code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code> (= %d). (Notez la partie "root-"). Tous les fichiers qui sont normalement installés dans <code>/opt/sw</code> sont installés dans <code>/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</code> (= %i = %d%p). Voir la description du champ InstallScript pour de plus amples informations.</p>
 <p>(<b>À partir de fink 0.9.9.</b>, il est possible de générer plusieurs paquets à partir d'une seule description de paquet en utilisant le champ <code>SplitOff</code>. À la fin de la phase d'installation, des répertoires d'installation distincts sont créés pour chaque paquet à construire et les fichiers sont placés dans le répertoire approprié).</p>
 <p>Lors de la <b>phase de construction</b>, un fichier binaire (.deb) est construit à partir du répertoire temporaire. On ne peut agir directement sur cette étape, néanmoins différentes informations issues de la description du paquet sont utilisées afin de générer un fichier de <code>contrôle</code> pour dpkg.</p>
 
@@ -288,9 +288,9 @@ asi-JP: ftp://ftp.qiixbar.jp/pub/mirror/bar
 eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</pre>
-<p>Les codes des continents et des pays se trouvent dans le fichier <code>/sw/lib/fink/mirror/_keys</code>, qui est partie intégrante des paquets fink et fink-mirrors.</p>
+<p>Les codes des continents et des pays se trouvent dans le fichier <code>/opt/sw/lib/fink/mirror/_keys</code>, qui est partie intégrante des paquets fink et fink-mirrors.</p>
 </td></tr><tr valign="top"><td>Source</td><td>
-<p>URL de l'archive tar du source. Ce doit être une URL HTTP ou FTP, mais Fink ne fait pas de vérification - il se contente de passer l'URL à wget. Ce champ gère un type spécial d'URL pour les miroirs : <code>miroir:&lt;nom-miroir&gt;:&lt;chemin-relatif&gt;</code>. Ainsi, la définition du miroir <b>nom-miroir</b> est récupérée dans le fichier de configuration de Fink, la partie <b>chemin-relatif</b> y est ajoutée, et c'est l'ensemble qui est utilisé comme réelle URL. Chaque <b>nom-miroir</b> reconnu est stocké dans le fichier <code>/sw/lib/fink/mirror/_list</code>, qui fait partie du paquet fink ou du paquet fink-mirrors. Par ailleurs, l'utilisation de <code>custom</code> comme <b>nom-miroir</b> oblige Fink à utiliser le champ <code>CustomMirror</code>. L'interprétation des raccourcis a lieu avant utilisation de l'URL. N'oubliez pas que %n correspond à toutes les variantes du champ %type_, il est donc conseillé d'utiliser ici %{ni} (avec, éventuellement, des spécifications de %type_).</p>
+<p>URL de l'archive tar du source. Ce doit être une URL HTTP ou FTP, mais Fink ne fait pas de vérification - il se contente de passer l'URL à wget. Ce champ gère un type spécial d'URL pour les miroirs : <code>miroir:&lt;nom-miroir&gt;:&lt;chemin-relatif&gt;</code>. Ainsi, la définition du miroir <b>nom-miroir</b> est récupérée dans le fichier de configuration de Fink, la partie <b>chemin-relatif</b> y est ajoutée, et c'est l'ensemble qui est utilisé comme réelle URL. Chaque <b>nom-miroir</b> reconnu est stocké dans le fichier <code>/opt/sw/lib/fink/mirror/_list</code>, qui fait partie du paquet fink ou du paquet fink-mirrors. Par ailleurs, l'utilisation de <code>custom</code> comme <b>nom-miroir</b> oblige Fink à utiliser le champ <code>CustomMirror</code>. L'interprétation des raccourcis a lieu avant utilisation de l'URL. N'oubliez pas que %n correspond à toutes les variantes du champ %type_, il est donc conseillé d'utiliser ici %{ni} (avec, éventuellement, des spécifications de %type_).</p>
 <p>À partir de fink 0.18.0, <code>Source: none</code> indique qu'il n'y a pas de source à récupérer. Voir la description du champ <code>Type</code> pour de plus amples informations. La valeur <code>gnu</code> est un raccourci pour <code>mirror:gnu:%n/%n-%v.tar.gz</code> ; de même, <code>gnome</code> est un raccourci pour <code>mirror:gnome:stable/sources/%n/%n-%v.tar.gz</code>. La valeur par défaut est <code>%n-%v.tar.gz</code> (correspond à un téléchargement ordinaire). Cette forme de définition implicite pour <code>Source</code> est obsolète (il est toujours possible de fournir un nom de fichier explicite ou d'opérer un téléchargement manuel).</p>
 <p>Les sources nécessaires à la seule exécution des séries de tests doivent être placés à l'intérieur d'un bloc <code>InfoTest</code> et utilisés les champs de type <code>TestSource</code>.</p>
 </td></tr><tr valign="top"><td>Source<b>N</b></td><td>
@@ -304,16 +304,16 @@ Primary: ftp://ftp.barbarorg/pub/
 </td></tr><tr valign="top"><td>SourceRename</td><td>
 <p>Ce champ renomme une archive tar à la volée. Ceci est utile, par exemple, lorsque la version du source est encodée dans le nom du répertoire du serveur, mais que l'archive elle-même porte le même nom pour toutes les versions, comme <code>http://www.foobar.org/coolapp/1.2.3/source.tar.gz</code>. Pour résoudre les problèmes que cela cause, vous pouvez utiliser quelque chose de similaire à :</p>
 <pre>SourceRename: %n-%v.tar.gz</pre>
-<p>Dans l'exemple ci-dessus, l'archive tar sera sauvegardée sous <code>/sw/src/coolapp-1.2.3.tar.gz</code>.</p>
+<p>Dans l'exemple ci-dessus, l'archive tar sera sauvegardée sous <code>/opt/sw/src/coolapp-1.2.3.tar.gz</code>.</p>
 </td></tr><tr valign="top"><td>Source<b>N</b>Rename</td><td>
 <p>Ce champ est semblable au champ <code>SourceRename</code>, mais il est utilisé pour renommer l'archive tar correspondant au champ <code>Source<b>N</b></code>. Voir context ou hyperref comme exemples d'utilisation de ce champ.</p>
 </td></tr><tr valign="top"><td>Source-MD5</td><td>
 <p><b>Introduit dans fink 0.10.0.</b> Vous pouvez indiquer dans ce champ la somme de contrôle MD5 du fichier source. La valeur sera alors utilisée par Fink pour détecter les fichiers sources incorrects, c'est-à-dire les archives tar qui ne correspondent pas à celles que le créateur du paquet a utilisées. Les causes les plus courantes de ce type de problème sont : téléchargement incomplet de l'archive, mainteneurs en amont ayant changé l'archive sans le signaler, chevaux de Troie ou attaques similaires, etc... </p>
 <p>Exemple :</p>
 <pre>Source-MD5: 4499443fa1d604243467afe64522abac</pre>
-<p>La somme de contrôle est calculée avec l'outil <code>md5sum</code>. Si vous voulez calculer la somme de contrôle de l'archive tar <code>/sw/src/apache_1.3.23.tar.gz</code>, exécutez la commande suivante (le résultat est affiché au-dessous) :</p>
-<pre>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</pre>
+<p>La somme de contrôle est calculée avec l'outil <code>md5sum</code>. Si vous voulez calculer la somme de contrôle de l'archive tar <code>/opt/sw/src/apache_1.3.23.tar.gz</code>, exécutez la commande suivante (le résultat est affiché au-dessous) :</p>
+<pre>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</pre>
 <p>La valeur affichée à gauche correspond à la valeur recherchée.</p>
 </td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
 <p><b>Introduit dans fink 0.10.0.</b> Ce champ est semblable au champ <code>Source-MD5</code>, mais il est utilisé pour indiquer la somme de contrôle MD5 de l'archive tar correspondant au champ <code>Source<b>N</b></code>.</p>
@@ -362,7 +362,7 @@ Tar2FilesRename: directory/INSTALL:directory/INSTALL.txt</pre>
 <p><b>Introduit dans une version CVS postérieure à la version 0.9.0.</b> Liste de sous-répertoires. A le même effet que UpdateLibtool ; utile lorsque plusieurs fichiers scripts libtool 1.3.x sont présents dans différents répertoires de l'arborescence du source. Auparavant, il fallait copier ou déplacer les fichiers dans le script PatchScript. Avec ce nouveau champ, il suffit de donner la liste des répertoires. Utilisez <code>.</code> pour mettre à jour les fichiers dans le répertoire de compilation.</p>
 </td></tr><tr valign="top"><td>UpdatePoMakefile</td><td>
 <p>Valeur booléenne. Si elle est vraie ("true"), le fichier <code>Makefile.in.in</code> présent dans le sous-répertoire <code>po</code> est remplacé par une version modifiée. Ce remplacement se produit lors de la phase d'application des rustines avant que le script PatchScript soit exécuté.</p>
-<p>La version modifiée prend en compte DESTDIR et garantit que les catalogues de messages seront placés dans <code>/sw/share/locale</code>, et non pas dans <code>/sw/lib/locale</code>. Assurez-vous, avant d'utiliser ce champ, qu'il est absolument nécessaire et que le paquet continuera à fonctionner. Vous pouvez exécuter <code>diff</code> pour trouver les différences entre la version du paquet et celle de Fink (située dans <code>/sw/lib/fink/update</code>).</p>
+<p>La version modifiée prend en compte DESTDIR et garantit que les catalogues de messages seront placés dans <code>/opt/sw/share/locale</code>, et non pas dans <code>/opt/sw/lib/locale</code>. Assurez-vous, avant d'utiliser ce champ, qu'il est absolument nécessaire et que le paquet continuera à fonctionner. Vous pouvez exécuter <code>diff</code> pour trouver les différences entre la version du paquet et celle de Fink (située dans <code>/opt/sw/lib/fink/update</code>).</p>
 </td></tr><tr valign="top"><td>Patch</td><td>
 <p>Le nom d'une rustine à appliquer avec <code>patch -p1 &lt;<b>nom-rustine</b></code>. Ne donnez que le nom du fichier ; le chemin est ajouté automatiquement devant le nom du fichier. L'interprétation des raccourcis y est effectuée, si bien qu'on trouve, en général : <code>%f.patch</code> ou <code>%n.patch</code>. La rustine est appliquée avant que le script PatchScript soit exécuté (s'il existe).</p>
 <p>N'oubliez pas que %n inclut implicitement toutes les variantes %type_. Le cas échéant, utilisez %{ni} (éventuellement avec des variantes spécifiques %type_). Il est plus facile de gérer une seule rustine et de faire des changements spécifiques à certaines variantes dans le script <code>PatchScript</code> que de gérer une rustine par variante.</p>
@@ -457,7 +457,7 @@ make test</pre>
 </td></tr></table>
 <p><b>Phase d'installation :</b></p>
 <table border="0" cellpadding="0" cellspacing="10"><tr valign="bottom"><th align="left">Champ</th><th align="left">Utilisation</th></tr><tr valign="top"><td>UpdatePOD</td><td>
-<p><b>Introduit dans la version 0.9.5 de fink.</b> Valeur booléenne réservée aux paquets de module perl. Si sa valeur est true (vraie), du code est ajouté aux scripts install, postrm et postinst, qui gèrent les fichiers .pod fournis par les paquets perl. En particulier, la date .pod est ajoutée et ôtée du fichier central <code>/sw/lib/perl5/darwin/perllocal.pod</code>. (Si le type est du style <code>perl $version</code>, où $version est, par exemple, 5.6.0, les scripts sont adaptés pour gérer le fichier central .pod <code>/sw/lib/perl5/$version/perllocal.pod</code>).</p>
+<p><b>Introduit dans la version 0.9.5 de fink.</b> Valeur booléenne réservée aux paquets de module perl. Si sa valeur est true (vraie), du code est ajouté aux scripts install, postrm et postinst, qui gèrent les fichiers .pod fournis par les paquets perl. En particulier, la date .pod est ajoutée et ôtée du fichier central <code>/opt/sw/lib/perl5/darwin/perllocal.pod</code>. (Si le type est du style <code>perl $version</code>, où $version est, par exemple, 5.6.0, les scripts sont adaptés pour gérer le fichier central .pod <code>/opt/sw/lib/perl5/$version/perllocal.pod</code>).</p>
 </td></tr><tr valign="top"><td>InstallScript</td><td>
 <p>Liste de commandes à exécuter durant la phase d'installation. C'est là où il faut mettre les commandes qui copient tous les fichiers requis dans le répertoire de construction du paquet. Voir plus loin la <a href="reference.php?phpLang=fr#scripts">note au sujet des scripts</a>. L'<a href="format.php?phpLang=fr#percent">interprétation des raccourcis</a> a lieu avant que les commandes ne soient exécutées. Normalement, on utilise :</p>
 <pre>make install prefix=%i</pre>
@@ -509,13 +509,13 @@ Shared libraries that are "private" are denoted by an exclamation mark preceedin
 
 </p>
 </td></tr><tr valign="top"><td>RuntimeVars</td><td>
-<p><b>Introduit dans fink 0.10.0.</b> Ce champ fournit un moyen pratique de donner une valeur statique à des variables d'environnement pendant l'exécution (si vous voulez avoir plus de latitude dans ce domaine, voir la <a href="#profile.d">section scripts profile.d</a>). À partir du moment où le paquet est installé, ces variables sont définies par les scripts <code>/sw/bin/init.[c]sh</code>.</p>
+<p><b>Introduit dans fink 0.10.0.</b> Ce champ fournit un moyen pratique de donner une valeur statique à des variables d'environnement pendant l'exécution (si vous voulez avoir plus de latitude dans ce domaine, voir la <a href="#profile.d">section scripts profile.d</a>). À partir du moment où le paquet est installé, ces variables sont définies par les scripts <code>/opt/sw/bin/init.[c]sh</code>.</p>
 <p>La valeur de la variable peut contenir des espaces (seuls les espaces de fin de chaîne sont supprimés) ; l'interprétation des raccourcis a eu lieu sur ce champ. Exemple :</p>
 <pre>RuntimeVars: &lt;&lt;
  UneVariable: %p/Valeur
  UneAutreVariable: toto tata
 &lt;&lt;</pre>
-<p>définit deux variables d'environnement 'UneVariable' et 'UneAutreVariable' ; leurs valeurs seront respectivement '/sw/Valeur' (si votre préfixe est /sw) et 'toto tata'.</p>
+<p>définit deux variables d'environnement 'UneVariable' et 'UneAutreVariable' ; leurs valeurs seront respectivement '/opt/sw/Valeur' (si votre préfixe est /opt/sw) et 'toto tata'.</p>
 <p>Ce champ ajoute les commandes appropriées au script InstallScript. Ces commandes ajoutent une ligne setenv/export pour chaque variable aux scripts profile.d du paquet ; vous pouvez donc spécifier vos propres commandes, elles ne seront pas remplacées. Les lignes sont ajoutées en début de scripts, vous pouvez donc utiliser ces variables dans vos scripts.</p>
 </td></tr><tr valign="top"><td>SplitOff</td><td>
 <p><b>Introduit dans fink 0.9.9.</b> Génère un second paquet à partir d'une seule exécution du couple compilation/installation. Pour avoir de plus amples informations sur la façon dont ce champ fonctionne, voir la <a href="#splitoffs">section splitoff</a> ci-dessous.</p>
@@ -620,7 +620,7 @@ SplitOff2: &lt;&lt;
 <pre>Patch: %f.patch</pre>
 <pre>PatchScript: patch -p1 &lt;%a/%f.patch</pre>
 <p>Si vous utilisez les nouvelles conventions de nommage d'un paquet unique, utilisez %n au lieu de %f. Ces deux champs ne sont pas exclusifs l'un de l'autre ; vous pouvez utiliser les deux et ils seront tous deux exécutés. Dans ce cas, le script PatchScript sera exécuté en dernier.</p>
-<p>Comme il se peut que vous ayez besoin du préfixe choisi par l'utilisateur dans le fichier rustine, il est conseillé d'utiliser une variable telle <code>@PREFIX@</code> au lieu de <code>/sw</code> dans la rustine et d'utiliser ensuite :</p>
+<p>Comme il se peut que vous ayez besoin du préfixe choisi par l'utilisateur dans le fichier rustine, il est conseillé d'utiliser une variable telle <code>@PREFIX@</code> au lieu de <code>/opt/sw</code> dans la rustine et d'utiliser ensuite :</p>
 <pre>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</pre>
 <p>Les rustines doivent être en format unidiff et sont, en général, créées en utilisant :</p>
 <pre>diff -urN &lt;répertoiredusourceoriginel&gt; &lt;répertoiredusourcemodifié&gt;</pre>
@@ -628,8 +628,8 @@ SplitOff2: &lt;&lt;
 <p>Il faut aussi noter que les très grosses rustines ne doivent pas être mises dans cvs. Elles doivent être placées sur un serveur web/ftp et référencées en utilisant le champ <code>SourceN:</code>. Si vous n'avez pas de site web, les administrateurs du projet fink peuvent mettre le fichier à disposition à partir du site web de fink. Si votre rustine fait plus de 30Kb, vous devez la traiter comme un téléchargement distinct.</p>
 
 <h2><a name="profile.d">6.6 Scripts profile.d</a></h2>
-<p>Si votre paquet nécessite une initialisation à l'exécution (par exemple, pour définir des variables d'environnement), vous pouvez utiliser des scripts profile.d. Ces scripts sont sourcés par les scripts <code>/sw/bin/init.[c]sh</code>. Normalement, tout utilisateur de fink charge ces scripts dans ses fichiers de démarrage de shell (<code>.cshrc</code> et équivalents). Votre paquet doit fournir deux variantes de scripts : l'une pour les shells compatibles avec sh (sh, zsh, bash, ksh, ...), l'autre pour les shells compatibles avec csh (csh, tcsh). Elles doivent être installées sous la forme <code>/sw/etc/profile.d/%n.[c]sh</code> (où %n représente le nom du paquet). Il faut aussi positionner leurs bits de lecture et d'exécution (c'est-à-dire les installer avec -m 755), autrement elles ne seront pas chargées correctement.</p>
-<p>Si vous n'avez besoin que d'initialiser certaines variables d'environnement (par exemple, définir QTDIR comme '/sw'), vous pouvez utiliser le champ RuntimeVars, qui a été conçu exactement pour ce faire.</p>
+<p>Si votre paquet nécessite une initialisation à l'exécution (par exemple, pour définir des variables d'environnement), vous pouvez utiliser des scripts profile.d. Ces scripts sont sourcés par les scripts <code>/opt/sw/bin/init.[c]sh</code>. Normalement, tout utilisateur de fink charge ces scripts dans ses fichiers de démarrage de shell (<code>.cshrc</code> et équivalents). Votre paquet doit fournir deux variantes de scripts : l'une pour les shells compatibles avec sh (sh, zsh, bash, ksh, ...), l'autre pour les shells compatibles avec csh (csh, tcsh). Elles doivent être installées sous la forme <code>/opt/sw/etc/profile.d/%n.[c]sh</code> (où %n représente le nom du paquet). Il faut aussi positionner leurs bits de lecture et d'exécution (c'est-à-dire les installer avec -m 755), autrement elles ne seront pas chargées correctement.</p>
+<p>Si vous n'avez besoin que d'initialiser certaines variables d'environnement (par exemple, définir QTDIR comme '/opt/sw'), vous pouvez utiliser le champ RuntimeVars, qui a été conçu exactement pour ce faire.</p>
 
 
 <?php include_once "../../footer.inc"; ?>

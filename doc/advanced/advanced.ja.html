@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: advanced.ja.xml,v 1.3 2012/11/11 15:20:12 gecko2 Exp $
+Generated from $Fink: advanced.ja.xml,v 1.4 2023/08/04 5:08:13 nieder Exp $
 -->
 <title>Fink Documentation - Fink 上級者向けトピックガイド</title></head><body>
 <table width="100%" cellspacing="0">
@@ -42,7 +42,7 @@ Available Languages:  |
       
       <ol>
         <li>
-Fink を <tt style="white-space: nowrap;">/sw</tt> にインストール (既定のパス、あるいは必要に応じて symlink を作成)。
+Fink を <tt style="white-space: nowrap;">/opt/sw</tt> にインストール (既定のパス、あるいは必要に応じて symlink を作成)。
         </li>
         <li>
 パッケージを通常通りビルド。
@@ -60,9 +60,9 @@ Fink を <tt style="white-space: nowrap;">/sw</tt> にインストール (既定
         </li>
         <li>
 ウェブサーバーを開始: 例えば、システム環境設定中のネットワーク共有で、"パーソナルWeb共有" を開始する。
-<tt style="white-space: nowrap;">/etc/httpd/httpd.conf</tt> ファイルを以下のように編集し、 <tt style="white-space: nowrap;">/sw/fink</tt> を提供するように設定する。
-<pre>Alias /fink /sw/fink
-&lt;Directory /sw/fink&gt;
+<tt style="white-space: nowrap;">/etc/httpd/httpd.conf</tt> ファイルを以下のように編集し、 <tt style="white-space: nowrap;">/opt/sw/fink</tt> を提供するように設定する。
+<pre>Alias /fink /opt/sw/fink
+&lt;Directory /opt/sw/fink&gt;
   Options Indexes FollowSymLinks
 &lt;/Directory&gt;</pre>
         </li>
@@ -91,15 +91,15 @@ Fink の apache2 パッケージを使用している場合は、上記のパス
       
       <ol>
         <li>
-Fink を <tt style="white-space: nowrap;">/sw</tt> (既定のパス) にインストール
+Fink を <tt style="white-space: nowrap;">/opt/sw</tt> (既定のパス) にインストール
         </li>
         <li>
 <tt style="white-space: nowrap;">fink configure</tt> を実行し、
 バイナリ・ディストリビューションからパッケージをダウンロードするようオプション設定します。
- (<tt style="white-space: nowrap;">/sw/etc/fink.conf</tt> ファイル中で "UseBinaryDist: true")
+ (<tt style="white-space: nowrap;">/opt/sw/etc/fink.conf</tt> ファイル中で "UseBinaryDist: true")
         </li>
         <li>
-<tt style="white-space: nowrap;">/sw/etc/apt/sources.list</tt> を編集し、 Fink ツリーを表す行を追加します。
+<tt style="white-space: nowrap;">/opt/sw/etc/apt/sources.list</tt> を編集し、 Fink ツリーを表す行を追加します。
 例えば、ビルドボックスの IP アドレスが 192.168.42.7 であれば、以下のように追加します:
 <pre>deb http://192.168.42.7/fink stable main crypto
 deb http://192.168.42.7/fink unstable main crypto
@@ -153,4 +153,4 @@ You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: advanced.ja.xml,v 1.3 2012/11/11 15:20:12 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: advanced.ja.xml,v 1.4 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>

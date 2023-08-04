@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Paketbeschreibungen";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2021/05/27 20:26:32';
+$cvs_date = 'Date: 2023/08/04 4:54:31';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="next" href="policy.php?phpLang=de" title="Richtlinien zur Estellung von Paketen"><link rel="prev" href="intro.php?phpLang=de" title="Einführung">';
 
 
@@ -14,8 +14,8 @@ include_once "header.de.inc";
 <h2><a name="trees">2.1 Verzeichnis-Layout</a></h2>
 <p>
 Paketbeschreibungen werden aus dem Verzeichnis <code>finkinfo</code> gelesen,
-der sich im Verzeichnis <code>/sw/fink/dists</code> befindet. Die
-Einstellung "Trees" in der Datei <code>/sw/etc/fink.conf</code>
+der sich im Verzeichnis <code>/opt/sw/fink/dists</code> befindet. Die
+Einstellung "Trees" in der Datei <code>/opt/sw/etc/fink.conf</code>
 bestimmt, welche Verzeichnisse gelesen werden.
 Der Name der Paketbeschreibungsdatei besteht aus dem vollständigen Paketnamen
 und dem Suffix ".info".
@@ -155,19 +155,19 @@ Epoche nicht zu <code>%f</code> gehört.
 </p>
 </td></tr><tr valign="top"><td>%p, %P</td><td>
 <p>
-Der <b>p</b>refix wo Fink installiert ist, also <code>/sw</code>.
-Sie dürfen nicht annehmen, dass alle Nutzer Fink in <code>/sw</code>
+Der <b>p</b>refix wo Fink installiert ist, also <code>/opt/sw</code>.
+Sie dürfen nicht annehmen, dass alle Nutzer Fink in <code>/opt/sw</code>
 installiert haben, nutzen sie immer <code>%p</code> für den korrekten Pfad.
 </p>
 </td></tr><tr valign="top"><td>%d</td><td>
 <p>
 Im Verzeichnis <b>d</b>estination wird der Baum für ein Paket erstellt, z. B.
-in <code>/sw/src/fink.build/root-gimp-1.2.1-1</code>. Dieses
+in <code>/opt/sw/src/fink.build/root-gimp-1.2.1-1</code>. Dieses
 temporäre Verzeichnis dient als Wurzelverzeichnis während der Installationsphase
 beim Compilieren eines Pakets. Sie sollten nicht annehmen, dass
 <code>root-%f</code> in <code>%p/src</code> ist, denn ein Nutzer
 kann dieses Verzeichnis mit dem Feld <code>Buildpath</code> in der Datei
-<code>/sw/etc/fink.conf</code> ändern.
+<code>/opt/sw/etc/fink.conf</code> ändern.
 </p>
 </td></tr><tr valign="top"><td>%D</td><td>
 <p>
@@ -191,11 +191,11 @@ die <code>.patch</code>-Datei zuzugreifen. Die Unterstützung für
 </td></tr><tr valign="top"><td>%b</td><td>
 <p>
 Das Verzeichnis <b>b</b>uild, also
-<code>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>.
+<code>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</code>.
 Sie sollten nicht annehmen, dass sich <code>%f</code> in
 <code>%p/src</code> befindent, denn ein Nutzer kann dieses Verzeichnis
 über das Feld <code>Buildpath</code> in der Datei
-<code>/sw/etc/fink.conf</code> ändern.
+<code>/opt/sw/etc/fink.conf</code> ändern.
 Das innerste Verzeichnis wird nach dem Dateinamen der
 <code>Quelle</code> benannt oder dem Wert des Felds <code>SourceDirectory</code>
 (falls vorhanden) oder wird nicht verwendet wenn das Feld

@@ -1,7 +1,7 @@
 <?php
 $title = "Etiquette net - Premier message";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 5:23:15';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Etiquette net Contents"><link rel="next" href="reply.php?phpLang=fr" title="Réponses aux messages"><link rel="prev" href="before-post.php?phpLang=fr" title="Phase de préparation">';
 
 
@@ -34,7 +34,7 @@ error unpacking foo
                 <li>si la compilation échoue pendant la phase initiale de configuration, c'est en général assez rapide. Postez des derniers tests juste avant le message d'erreur jusqu'à la fin :<pre>....
 Checking for bar-config...no
 Error:  bar-config not found
-....</pre><p>Si vous pensez que cela peut aider, vous pouvez poster la partie correspondante du fichier log de configuration, par exemple <code>/sw/src/foo-3.141-6/foo-3.141/config.log</code>. <b>Ne postez pas le fichier dans son entier, car il peut être très gros.</b></p></li>
+....</pre><p>Si vous pensez que cela peut aider, vous pouvez poster la partie correspondante du fichier log de configuration, par exemple <code>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</code>. <b>Ne postez pas le fichier dans son entier, car il peut être très gros.</b></p></li>
                 <li>Ou l'erreur peut apparaître immédiatement après le début de la construction du paquet. Dans ce cas, postez de la dernière ligne de compilation jusqu'à la fin :<pre>...
 gcc &lt;drapeaux, fichiers, etc...&gt;
 &lt;messages d'erreur&gt;
