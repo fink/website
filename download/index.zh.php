@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 15:16:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2023/08/03 20:24:10 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -47,7 +47,7 @@ include_once "../fink_version.inc";
 </p></li>
 <li><p>
 如果在此过程中发生了什么错误，你可以尝试重新运行一次安装程序宗卷里面的 pathsetup.command 文件（需要在终端窗口里面运行）。 
-</p><pre>open /sw/bin/pathsetup.command </pre><p>
+</p><pre>/sw/bin/pathsetup.sh</pre><p>
 （这个过程应该对你机器的每个帐号都运行一次：每个用户应该登录到自己的帐号运行一次 pathsetup.command 脚本）。
 </p><p>
 如果 pathsetup.command 产生了错误信息，请参考文档，

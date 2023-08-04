@@ -4,7 +4,7 @@
 <document filename="index" lang="ja" >
 	<title>Fink パッケージの作成方法</title>
 	<shorttitle>パッケージ作成</shorttitle>
-	<cvsid>$Id: packaging.ja.xml,v 1.60 2023/01/22 6:40:32 nieder Exp $</cvsid>
+	<cvsid>$Id: packaging.ja.xml,v 1.61 2023/08/04 4:54:31 nieder nieder Exp $</cvsid>
 	<preface>
 		<p>
 			このマニュアルではパッケージ管理システム Fink 用のパッケージ記述 (Package Description) の作成方法を解説します．
@@ -76,8 +76,8 @@
 		<section name="trees">
 			<title>ツリーレイアウト</title>
 			<p>
-				パッケージ記述はディレクトリ <filename>/sw/fink/dists</filename> 下のディレクトリ <code>finkinfo</code> から読み込まれます．
-				「ツリー」の設定はファイル <filename>/sw/etc/fink.conf</filename> にあり，これでどのディレクトリを読むかを指定します．
+				パッケージ記述はディレクトリ <filename>/opt/sw/fink/dists</filename> 下のディレクトリ <code>finkinfo</code> から読み込まれます．
+				「ツリー」の設定はファイル <filename>/opt/sw/etc/fink.conf</filename> にあり，これでどのディレクトリを読むかを指定します．
 				パッケージ記述ファイルの名前は，Fink パッケージの正式名称に拡張子 &quot;.info&quot; を付けたものです．
 				Fink 0.13.0 以降では，パッケージのアップデートの手間を省くための，
 				「パッケージ名」に拡張子 &quot;.info&quot; を付けただけの簡略形式が便利です．
@@ -243,8 +243,8 @@ SplitOff: &lt;&lt;
 					<itemt>%p, %P</itemt>
 					<itemd>
 						<p>
-							<em>p</em>refix．Fink のインストール場所．例: <filename>/sw</filename>．
-							全てのユーザーが <filename>/sw</filename> に Fink をインストールしているわけではない．
+							<em>p</em>refix．Fink のインストール場所．例: <filename>/opt/sw</filename>．
+							全てのユーザーが <filename>/opt/sw</filename> に Fink をインストールしているわけではない．
 							<code>%p</code> で正しいパスを取得する．
 						</p>
 					</itemd>
@@ -255,10 +255,10 @@ SplitOff: &lt;&lt;
 					<itemd>
 						<p>
 							<em>d</em>estination．パッケージ化するツリーのビルド先．
-							例:<filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename>
+							例:<filename>/opt/sw/src/fink.build/root-gimp-1.2.1-1</filename>
 							この一時ディレクトリはパッケージをコンパイルする際のインストール段階でルートディレクトリの役を果たす．
 							<filename>root-%f</filename> が <filename>%p/src</filename> の中にあることを当てにしてはいけない．
-							ユーザが設定ファイル <filename>/sw/etc/fink.conf</filename> でフィールド <code>Buildpath</code>
+							ユーザが設定ファイル <filename>/opt/sw/etc/fink.conf</filename> でフィールド <code>Buildpath</code>
 							を指定すればこの場所は変わってしまう．
 						</p>
 					</itemd>
@@ -305,9 +305,9 @@ SplitOff: &lt;&lt;
 					<itemd>
 						<p>
 							<em>b</em>uild．
-							ビルドディレクトリ．例: <filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>
+							ビルドディレクトリ．例: <filename>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>
 							<filename>%f</filename> が <filename>%p/src</filename> の中にあることを当てにしてはいけない．
-							ユーザが設定ファイル <filename>/sw/etc/fink.conf</filename> でフィールド <code>Buildpath</code>
+							ユーザが設定ファイル <filename>/opt/sw/etc/fink.conf</filename> でフィールド <code>Buildpath</code>
 							を指定すればこの場所は変わってしまう．
 							最も内側のディレクトリ名は， <code>Source</code> ファイル名か， (もしあれば) <code>SourceDirectory</code> 
 							フィールドの値となります．
@@ -848,7 +848,7 @@ SplitOff: &lt;&lt;
 </codeblock>
 			<p>と宣言し，その理由を DescPackaging に記述します．</p>
 			<p>
-				BuildDependsOnly フィールドは，パッケージがヘッダファイルを含み /sw/include にインストールされる場合，
+				BuildDependsOnly フィールドは，パッケージがヘッダファイルを含み /opt/sw/include にインストールされる場合，
 				パッケージの .info ファイルに記述されていなければなりません．
 			</p>
 			<p>
@@ -1007,7 +1007,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				伝統的に，perl モジュールの Fink パッケージには <code>-pm</code> が後置され，
 				ディレクティブ <code>Type: perl</code> を使ってビルドされていました．
 				このディレクティブは Perl モジュールのファイルを
-				<filename>/sw/lib/perl5</filename> 及び/または <filename>/sw/lib/perl5/darwin</filename> に格納していました．
+				<filename>/opt/sw/lib/perl5</filename> 及び/または <filename>/opt/sw/lib/perl5/darwin</filename> に格納していました．
 				現在のポリシーでは，それらのディレクトリには，コンパイルに使われる Perl のバージョンに依存しない 
 				(また，このバージョン非依存性を欠いた Perl モジュールに依存しない)
 				Perl モジュールのみを格納します．
@@ -1021,7 +1021,7 @@ Depends: foo-shlibs (= 正確な.バージョン), foo-bin
 				Perl のバージョンに依存する Perl モジュールは該当バージョンの付いた Perl の実行可能プログラム (perl5.6.0 など)
 				を使ってビルドされなければいけません．
 				また，モジュールの含むファイルは，標準の Perl のディレクトリ内の，バージョンの付いたサブディレクトリ
-				(<filename>/sw/lib/perl5/5.12.3</filename> や <filename>/sw/lib/perl5/5.12.3/darwin</filename> など) に格納しなければいけません．
+				(<filename>/opt/sw/lib/perl5/5.12.3</filename> や <filename>/opt/sw/lib/perl5/5.12.3/darwin</filename> など) に格納しなければいけません．
 				命名規約により，バージョン 5.12.3 に依存する Perl モジュールに <code>-pm5123</code> を後置します．
 				格納場所と命名方法に関する同様の規約が他のバージョンの Perl に対しても有効で，
 				perl 5.10.0 (10.6 ツリーのみ), 
@@ -1149,7 +1149,7 @@ InstallScript: &lt;&lt;
 				まず，このポリシーは Fink では現在のところパッケージ <filename>emacs21</filename>, <filename>emacs22</filename>, <filename>emacs23</filename> にのみ適用され，パッケージ xemacs には適用されません．
 				(この点は将来変わるかも知れません．)
 				次に Debian のポリシーと異なり， Fink パッケージはどれもファイルを直接
-				<filename>/sw/share/emacs/site-lisp</filename> にインストールして構いません．
+				<filename>/opt/sw/share/emacs/site-lisp</filename> にインストールして構いません．
 			</p>
 		</section>
 
@@ -1227,7 +1227,7 @@ InstallScript: &lt;&lt;
 				しかし従えるのは飽くまでも精神のみです．
 				それは FHS が <filename>/</filename> 以下と <filename>/usr</filename> 以下の階層を管理できるシステムベンダ向けに作られたからです．
 				Fink はインストールディレクトリ (別名「プリフィクス」) 以下のみを管理するアドオン・ディストリビューションです．
-				以降の例ではデフォルトの「プリフィクス」 <filename>/sw</filename> を使います．
+				以降の例ではデフォルトの「プリフィクス」 <filename>/opt/sw</filename> を使います．
 			</p>
 		</section>
 		<section name="dirs">
@@ -1238,7 +1238,7 @@ InstallScript: &lt;&lt;
 			<itemtable>
 				<item>
 					<itemt>
-						<filename>/sw/bin</filename>
+						<filename>/opt/sw/bin</filename>
 					</itemt>
 					<itemd>
 						<p>
@@ -1249,7 +1249,7 @@ InstallScript: &lt;&lt;
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/sbin</filename>
+						<filename>/opt/sw/sbin</filename>
 					</itemt>
 					<itemd>
 						<p>
@@ -1261,7 +1261,7 @@ InstallScript: &lt;&lt;
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/include</filename>
+						<filename>/opt/sw/include</filename>
 					</itemt>
 					<itemd>
 						<p>
@@ -1273,12 +1273,12 @@ InstallScript: &lt;&lt;
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/lib</filename>
+						<filename>/opt/sw/lib</filename>
 					</itemt>
 					<itemd>
 						<p>
 							アーキテクチャ依存のデータファイルやライブラリ用．
-							静的および共有ライブラリは，避ける理由が特にない限り <filename>/sw/lib</filename> 直下に置きます．
+							静的および共有ライブラリは，避ける理由が特にない限り <filename>/opt/sw/lib</filename> 直下に置きます．
 							ユーザが直接起動することのない実行可能プログラム
 							(普通なら <filename>libexec</filename> 下に置かれるはずのもの) もここに置きます．
 						</p>
@@ -1287,50 +1287,50 @@ InstallScript: &lt;&lt;
 							必ず互換性を考慮したディレクトリ名を使って下さい．
 							賢明な方法は，そのサブディレクトリの名前にパッケージの「メジャーバージョン」を含めたり，
 							「メジャーバージョン」をディレクトリ名にしたさらに深い階層を作ることです
-							(<filename>/sw/lib/perl5</filename> や <filename>/sw/lib/apache/1.3</filename> など)．
+							(<filename>/opt/sw/lib/perl5</filename> や <filename>/opt/sw/lib/apache/1.3</filename> など)．
 							ディレクトリにホストの種類を使うときには注意が必要です．
 							<code>powerpc-apple-darwin1.3.3</code> は，互換性の観点から問題があります．
 							<code>powerpc-apple-darwin1.3</code> または単に <code>powerpc-apple-darwin</code> とします．
 						</p>
 					</itemd>
 				</item>
-<item><itemt><filename>/sw/lib/ppc64</filename>
-<filename>/sw/lib/x86_64</filename></itemt>
+<item><itemt><filename>/opt/sw/lib/ppc64</filename>
+<filename>/opt/sw/lib/x86_64</filename></itemt>
 <itemd>
 <p>
 このディレクトリは 64-bit ライブラリ用で，
-powerpc アーチテクチャーでは <filename>/sw/lib/ppc64</filename> が，
-i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用いられます．
-'fat' としてビルドされたライブラリは， <filename>/sw/lib</filename> に保存されます．
+powerpc アーチテクチャーでは <filename>/opt/sw/lib/ppc64</filename> が，
+i386 アーチテクチャーでは <filename>/opt/sw/lib/x86_64</filename> が用いられます．
+'fat' としてビルドされたライブラリは， <filename>/opt/sw/lib</filename> に保存されます．
 </p>
 </itemd></item>
 				<item>
 					<itemt>
-						<filename>/sw/share</filename>
+						<filename>/opt/sw/share</filename>
 					</itemt>
 					<itemd>
 						<p>
-							アーキテクチャに依存しないデータファイル用で， <filename>/sw/lib</filename> と同じルールが当てはまります．
+							アーキテクチャに依存しないデータファイル用で， <filename>/opt/sw/lib</filename> と同じルールが当てはまります．
 							よく使われるサブディレクトリについては後述します．
 						</p>
 					</itemd>
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/share/man</filename>
+						<filename>/opt/sw/share/man</filename>
 					</itemt>
 					<itemd>
 						<p>
 							man ページ用．
 							この中は man のセクションに従って分類されます．
-							<filename>/sw/bin</filename> と <filename>/sw/sbin</filename> の中の全てのプログラムには，
+							<filename>/opt/sw/bin</filename> と <filename>/opt/sw/sbin</filename> の中の全てのプログラムには，
 							対応した man ページがここになければいけません．
 						</p>
 					</itemd>
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/share/info</filename>
+						<filename>/opt/sw/share/info</filename>
 					</itemt>
 					<itemd>
 						<p>
@@ -1346,7 +1346,7 @@ i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用�
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/share/doc</filename>
+						<filename>/opt/sw/share/doc</filename>
 					</itemt>
 					<itemd>
 						<p>
@@ -1360,7 +1360,7 @@ i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用�
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/share/locale</filename>
+						<filename>/opt/sw/share/locale</filename>
 					</itemt>
 					<itemd>
 						<p>
@@ -1370,7 +1370,7 @@ i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用�
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/var</filename>
+						<filename>/opt/sw/var</filename>
 					</itemt>
 					<itemd>
 						<p>
@@ -1381,7 +1381,7 @@ i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用�
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/etc</filename>
+						<filename>/opt/sw/etc</filename>
 					</itemt>
 					<itemd>
 						<p>
@@ -1393,7 +1393,7 @@ i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用�
 				</item>
 				<item>
 					<itemt>
-						<filename>/sw/src</filename>
+						<filename>/opt/sw/src</filename>
 					</itemt>
 					<itemd>
 						<p>
@@ -1402,11 +1402,11 @@ i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用�
 						</p>
 					</itemd>
 				</item>
-<item><itemt><filename>/sw/Applications</filename></itemt>
+<item><itemt><filename>/opt/sw/Applications</filename></itemt>
 <itemd>
 <p>このディレクトリには，コマンドラインから実行するのではなく，ダブルクリックで実行する OS X 型のアプリケーションを保存する．</p>
 </itemd></item>
-<item><itemt><filename>/sw/Library/Frameworks</filename></itemt>
+<item><itemt><filename>/opt/sw/Library/Frameworks</filename></itemt>
 <itemd>
 <p>このディレクトリには，OS X 型のアプリケーションが使用する，OS X 型のフレームワークを保存する．</p>
 </itemd></item>
@@ -1415,10 +1415,10 @@ i386 アーチテクチャーでは <filename>/sw/lib/x86_64</filename> が用�
 		<section name="avoid">
 			<title>避けるべきこと</title>
 			<p>
-				<filename>/sw</filename> 下には，上述のもの以外ディレクトリを作ってはいけません．
+				<filename>/opt/sw</filename> 下には，上述のもの以外ディレクトリを作ってはいけません．
 				特に以下のディレクトリを作らないこと:
-				<filename>/sw/man</filename>, <filename>/sw/info</filename>, <filename>/sw/doc</filename>,
-				<filename>/sw/libexec</filename>, <filename>/sw/lib/locale</filename>
+				<filename>/opt/sw/man</filename>, <filename>/opt/sw/info</filename>, <filename>/opt/sw/doc</filename>,
+				<filename>/opt/sw/libexec</filename>, <filename>/opt/sw/lib/locale</filename>
 			</p>
 		</section>
 	</chapter>
@@ -1465,7 +1465,7 @@ Apple 提供の特定バージョンのバイナリを指定しなければな�
 </p>
 <p>
 正しい g++ コンパイラが使用されるよう新手法が 10.4-transitional ディストリビューションから採用されました．
-コンパイル時に，<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (XXX はバージョン番号) 
+コンパイル時に，<code>/opt/sw/var/lib/fink/path-prefix-g++-XXX</code> (XXX はバージョン番号) 
 ディレクトリが PATH に追加されます．
 このディレクトリには正しいコンパイラと正しいバージョンの g++ が使われるようなシェルスクリプトが入っています．
 </p>
@@ -1510,12 +1510,12 @@ GCC フィールドがパッケージによって定義されている場合，
 			<p>
 				各フィールドの意味を理解するには， Fink のビルドプロセスに関する知識がある程度必要です．
 				このプロセスは 5 段階になっていて，それぞれ解凍段階，パッチ段階，コンパイル段階，インストール段階，ビルド段階 と呼ばれます．
-				下記の例では <filename>/sw</filename> にパッケージ gimp-1.2.1-1 をインストールするものとします．
+				下記の例では <filename>/opt/sw</filename> にパッケージ gimp-1.2.1-1 をインストールするものとします．
 			</p>
 			<p>
-				<em>解凍段階</em>では，ディレクトリ <filename>/sw/src/fink.build/gimp-1.2.1-1</filename> が作成されてソースの tarball がそこに解凍されます．
+				<em>解凍段階</em>では，ディレクトリ <filename>/opt/sw/src/fink.build/gimp-1.2.1-1</filename> が作成されてソースの tarball がそこに解凍されます．
 				大抵，解凍によりソースを含むディレクトリ <filename>gimp-1.2.1</filename> が作られます．
-				これ以降のステップはすべてこの中 (すなわち <filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>) で行われます．
+				これ以降のステップはすべてこの中 (すなわち <filename>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>) で行われます．
 				詳細はフィールド SourceDirectory, NoSourceDirectory や Source<em>N</em>ExtractDir (Nは数字) で変更できます．
 			</p>
 			<p>
@@ -1531,10 +1531,10 @@ GCC フィールドがパッケージによって定義されている場合，
 			</p>
 			<p>
 				<em>インストール段階</em>では，パッケージは仮ディレクトリ
-				<filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename> (%d と同じ) にインストールされます
+				<filename>/opt/sw/src/fink.build/root-gimp-1.2.1-1</filename> (%d と同じ) にインストールされます
 				(&quot;root-&quot; が付いていることに注意)．
-				ディレクトリ <filename>/sw</filename> にインストールされる予定のファイルは全て，
-				<filename>/sw/src/fink.build/root-gimp-1.2.1-1/sw</filename> (%i すなわち %d%p に同じ) にインストールされます．
+				ディレクトリ <filename>/opt/sw</filename> にインストールされる予定のファイルは全て，
+				<filename>/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</filename> (%i すなわち %d%p に同じ) にインストールされます．
 				詳細はフィールド InstallScript を参照して下さい．
 			</p>
 			<p>
@@ -2217,7 +2217,7 @@ eur-DE: ftp://ftp.barfoo.de/bar
 Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</codeblock>
 						<p>
-							大陸及び国のコードは  <filename>/sw/lib/fink/mirror/_keys</filename> にある．
+							大陸及び国のコードは  <filename>/opt/sw/lib/fink/mirror/_keys</filename> にある．
 							これは， fink および fink-mirrors パッケージの一部である．
 						</p>
 					</itemd>
@@ -2232,7 +2232,7 @@ Primary: ftp://ftp.barbarorg/pub/
 							すなわち <code>mirror:&lt;ミラー名称&gt;:&lt;相対パス&gt;</code> だ．
 							こうすると Fink に <em>ミラー名称</em> として設定された URL を探し，
 							その後ろに <em>相対パス</em> を付け加え，それを実際の URL として使う．
-							Fink の認識する <em>ミラー名称</em> の一覧は <filename>/sw/lib/fink/mirror/_list</filename>
+							Fink の認識する <em>ミラー名称</em> の一覧は <filename>/opt/sw/lib/fink/mirror/_list</filename>
 							(パッケージ fink または fink-mirrors の一部) に記される．
 							または <em>ミラー名称</em> に <code>custom</code> と書くことで，
 							Fink にフィールド <code>CustomMirror</code> を使わせることもできる．
@@ -2315,7 +2315,7 @@ Primary: ftp://ftp.barbarorg/pub/
 						</p>
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
 						<p>
-							この例では，ご想像の通り， tarball は <filename>/sw/src/coolapp-1.2.3.tar.gz</filename> として格納されることになる．
+							この例では，ご想像の通り， tarball は <filename>/opt/sw/src/coolapp-1.2.3.tar.gz</filename> として格納されることになる．
 						</p>
 					</itemd>
 				</item>
@@ -2346,11 +2346,11 @@ Primary: ftp://ftp.barbarorg/pub/
 <codeblock>Source-MD5: 4499443fa1d604243467afe64522abac</codeblock>
 						<p>
 							チェックサムの算出にはツール <code>md5sum</code> を使います．
-							tarball  <filename>/sw/src/apache_1.3.23.tar.gz</filename> のチェックサムが知りたいときには，
+							tarball  <filename>/opt/sw/src/apache_1.3.23.tar.gz</filename> のチェックサムが知りたいときには，
 							次のコマンドを実行します (出力も一緒に示した)．
 						</p>
-<codeblock>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</codeblock>
+<codeblock>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</codeblock>
 						<p>
 							左に表示された値がここで必要なものです．
 						</p>
@@ -2505,10 +2505,10 @@ Tar2FilesRename: direcory/INSTALL:directory/INSTALL.txt</codeblock>
 						</p>
 						<p>
 							パッチの当たった <filename>Makefile.in.in</filename> は DESTDIR の指定を優先し，メッセージカタログを，
-							<filename>/sw/lib/locale</filename> ではなく，確実に <filename>/sw/share/locale</filename> に格納します．
+							<filename>/opt/sw/lib/locale</filename> ではなく，確実に <filename>/opt/sw/share/locale</filename> に格納します．
 							このフィールドを利用する前に，入れ換えによってパッケージを破壊していないこと，また入れ換えが本当に必要かどうかを確認すること．
 							<code>diff</code> を実行すれば，パッケージ付属のものと Fink 向けのもの
-							(<filename>/sw/lib/fink/update</filename> 内にある) との違いが分かります．
+							(<filename>/opt/sw/lib/fink/update</filename> 内にある) との違いが分かります．
 						</p>
 					</itemd>
 				</item>
@@ -2893,10 +2893,10 @@ make test</codeblock>
 							Perl モジュールのパッケージでのみ指定します．
 							&quot;true&quot; にすると， install, postrm および postinst スクリプトに，
 							perl パッケージの提供する .pod ファイルを管理するためのコードを追加します．
-							これには，中央のファイル <filename>/sw/lib/perl5/darwin/perllocal.pod</filename> に .pod ファイルのデータを追加したり，
+							これには，中央のファイル <filename>/opt/sw/lib/perl5/darwin/perllocal.pod</filename> に .pod ファイルのデータを追加したり，
 							そこから削除することも含まれます．
 							(<code>perl $version</code> のように，5.6.0 などの perl の特定のバージョンと共にタイプが指定された場合は，
-							それらのスクリプトが扱う中央 .pod ファイルは <filename>/sw/lib/perl5/$version/perllocal.pod</filename> になる．)
+							それらのスクリプトが扱う中央 .pod ファイルは <filename>/opt/sw/lib/perl5/$version/perllocal.pod</filename> になる．)
 						</p>
 					</itemd>
 				</item>
@@ -3037,7 +3037,7 @@ INSTALLSCRIPT=%i/bin
 							このフィールドにより，実行時に環境変数を何らかの固定された値に設定できます．
 							(柔軟性が必要なら<xref section="profile.d">profile.d スクリプトの節</xref>を参照．)
 							そのパッケージがインストールされる限り，
-							ここに指定した環境変数はスクリプト <filename>/sw/bin/init.[c]sh</filename> によって設定されます．
+							ここに指定した環境変数はスクリプト <filename>/opt/sw/bin/init.[c]sh</filename> によって設定されます．
 						</p>
 						<p>
 							環境変数の値にはブランクが使えます (値の末尾に来ると取り除かれます)．
@@ -3050,7 +3050,7 @@ AnotherVar: foo bar
 &lt;&lt;</codeblock>
 						<p>
 							これは2つの環境変数 'SomeVar' および 'AnotherVar' を，
-							それぞれ '/sw/Value' (環境のインストールディレクトリの値による) および 'foo bar' に設定します．
+							それぞれ '/opt/sw/Value' (環境のインストールディレクトリの値による) および 'foo bar' に設定します．
 						</p>
 						<p>
 							このフィールドは InstallScript に適切なコマンドを追加することで機能します．
@@ -3405,7 +3405,7 @@ SplitOff2: &lt;&lt;
 これらのデフォルトは書き換えられます。
 </p>
 <p>パッチファイルに、ユーザの選択した prefix を含める必要がある場合、
-<code>/sw</code> をパッチで使うのではなく、
+<code>/opt/sw</code> をパッチで使うのではなく、
 <code>@PREFIX@</code> などを使い:</p>
 <codeblock>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</codeblock>
 <p>とします。
@@ -3427,17 +3427,17 @@ fink プロジェクトの管理者が fink サイトから提供できるよう
 			<title>Profile.d スクリプト</title>
 			<p>
 				パッケージが実行時に何らかの初期化 (環境変数の設定など) を必要とするなら， profile.d スクリプトを使えばよいでしょう．
-				これらのスクリプト断片はスクリプト <filename>/sw/bin/init.[c]sh</filename> によって読み込まれます．
+				これらのスクリプト断片はスクリプト <filename>/opt/sw/bin/init.[c]sh</filename> によって読み込まれます．
 				通常，全ての Fink ユーザがシェルのスタートアップファイル (<filename>.cshrc</filename> またはそれと互換なファイル) でそれを読み込むようになっています．
 				パッケージの方では，どのスクリプトにも2種類を用意しなければいけません:
 				sh 互換シェル (sh, zsh, bash, ksh, ...) 用と， csh 互換シェル (csh, tcsh) 用です．
-				両スクリプトとも <filename>/sw/etc/profile.d/%n.[c]sh</filename> としてインストールされる必要があります．
+				両スクリプトとも <filename>/opt/sw/etc/profile.d/%n.[c]sh</filename> としてインストールされる必要があります．
 				(ここで %n は，他と同様に「パッケージ名」を表す．)
 				また，正しく読み込まれるためには，それらのパーミッションは実行，読み込みが共に可能でなければいけません．
 				(すなわち，それらのインストールには引数 <code>-m 755</code> を付ける．)
 			</p>
 			<p>
-				環境変数をいくつか設定したいだけなら (QTDIR を '/sw' にする，など)，フィールド RuntimeVars を使えばよいでしょう．
+				環境変数をいくつか設定したいだけなら (QTDIR を '/opt/sw' にする，など)，フィールド RuntimeVars を使えばよいでしょう．
 				このフィールドはまさにその作業を簡略化するために用意されたものです．
 			</p>
 		</section>

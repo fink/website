@@ -3,7 +3,7 @@
 <document lang="zh" filename="index" >
   <title>Fink 常见疑问（F.A.Q.）</title>
   <shorttitle>常见疑问（F.A.Q.）</shorttitle>
-  <cvsid>$Id: faq.zh.xml,v 1.36 2020/05/31 13:43:40 nieder Exp $</cvsid>
+  <cvsid>$Id: faq.zh.xml,v 1.37 2023/08/04 04:42:29 nieder Exp $</cvsid>
   <preface>
     <p>这是一个关于 Fink 经常被问到的问题的清单。和多数的 FAQs 一样，其中一些问题来自于实际的问题，而另外一些则是假设存在的。它更接近于一份专门以问答形式编写的文档。</p>
     <p>本 FAQ 由几页组成，每部分一页。所有的问题都会在下面的目录中列出并链接到合适的位置。</p>
@@ -83,7 +83,7 @@ dpkg 提供完善的二进制包管理机制－平滑升级，对配置文件的
     </faqentry>
     <faqentry name="why-sw" >
       <question>
-        <p>为什么选择 /sw？</p>
+        <p>为什么选择 /opt/sw？</p>
       </question>
       <answer>
         <p>这个选择基本上是很随意的，但是基于实践（升级）的理由以及它在避免于其它软件包系统冲突方面是足够安全的，在可以遇见的将来仍然会保持这样。</p>
@@ -311,7 +311,7 @@ fink selfupdate
         <p><code>fink</code> 命令可以设定代理服务器，并把它传递给 <code>wget</code>/<code>curl</code>。
 如果在首次安装的时候没有向你询问代理服务器设置，你可以运行 <code>fink configure</code> 来进行设置。
 你可以随时运行这个命令来重新配置 <code>fink</code> 命令。
-如果你按照安装指南进行安装，并使用 <filename>/sw/bin/init.csh</filename>（或 <filename>/sw/bin/init.sh</filename>），那么 <code>apt-get</code> 和 <code>dselect</code> 也可以使用这些设置。请确认你已经把协议名放在代理服务器域名之前，例如：</p>
+如果你按照安装指南进行安装，并使用 <filename>/opt/sw/bin/init.csh</filename>（或 <filename>/opt/sw/bin/init.sh</filename>），那么 <code>apt-get</code> 和 <code>dselect</code> 也可以使用这些设置。请确认你已经把协议名放在代理服务器域名之前，例如：</p>
         <codeblock>ftp://proxy.yoursite.somewhere</codeblock>
         <p>如果你仍然碰到问题，那么打开系统预置，选择网络设置面板，确认 &quot;使用被动 FTP 模式 (PASV)&quot; 选项已被选中。</p>
       </answer>
@@ -324,7 +324,7 @@ fink selfupdate
         <p><em>cvs-proxy</em> 这个软件包可以通过 HTTP 代理穿透防火墙。</p>
         <ul>
           <li>
-            <p>首先下载 <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> 文件（一个 .info 文件和一个 .patch 文件）并把它放到你的本地代码树中（即 /sw/fink/dists/local/main/finkinfo/）。</p>
+            <p>首先下载 <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/" >cvs-proxy</link> 文件（一个 .info 文件和一个 .patch 文件）并把它放到你的本地代码树中（即 /opt/sw/fink/dists/local/main/finkinfo/）。</p>
           </li>
           <li>
             <p>使用下面命令安装 <em>cvs-proxy</em> 软件包：</p>
@@ -376,9 +376,9 @@ fink selfupdate
       </question>
       <answer>
         <p>
-Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。因此，如果你想删除 Fink，输入下面的命令：
+Fink 的所有文件几乎都安装在 /opt/sw （或你选择安装的地方）。因此，如果你想删除 Fink，输入下面的命令：
 </p>
-        <codeblock>sudo rm -rf /sw</codeblock>
+        <codeblock>sudo rm -rf /opt/sw</codeblock>
         <p>
 这个规则的唯一例外是 XFree86。如果你通过 Fink 安装（也就是说，你安装了 <code>xfree86</code>， 或 
 <code>xfree86-rootless</code> 或 <code>xorg</code> 软件包，
@@ -386,7 +386,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
 </p>
         <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
         <p>如果你不是打算重安装 Fink 的话，根据你的配置方式你还要使用一个纯文本编辑器，从你的 <filename>.cshrc</filename> 文件中删除 &quot;<code>source 
-/sw/bin/init.csh</code>&quot; 这一行；或从 <filename>.bashrc</filename> 文件中删除 &quot;<code>source /sw/bin/init.sh</code>&quot; 这一行。</p>
+/opt/sw/bin/init.csh</code>&quot; 这一行；或从 <filename>.bashrc</filename> 文件中删除 &quot;<code>source /opt/sw/bin/init.sh</code>&quot; 这一行。</p>
       </answer>
     </faqentry>
     <faqentry name="bindist" >
@@ -433,7 +433,7 @@ Fink 的所有文件几乎都安装在 /sw （或你选择安装的地方）。�
 	<p>To configure Fink to use unstable
 	when you have an earlier version of the <code>fink</code> tool than
 	<em>0.26</em>, edit
-        <filename>/sw/etc/fink.conf</filename>, and add <code>unstable/main</code>
+        <filename>/opt/sw/etc/fink.conf</filename>, and add <code>unstable/main</code>
         and <code>unstable/crypto</code> to the <code>Trees:</code> line.</p>
 	<p>If you use Fink Commander, then there is a Preference to use unstable
 	packages.</p>
@@ -484,14 +484,14 @@ fink scanpackages
         else from unstable, then you need to switch over to CVS updating (i.e.
         use <code>fink selfupdate-cvs</code>), because rsync only updates the
         trees that are active in your <filename>fink.conf</filename>. Edit
-        <filename>/sw/etc/fink.conf</filename> and add <code>local/main</code>
+        <filename>/opt/sw/etc/fink.conf</filename> and add <code>local/main</code>
         to the <code>Trees:</code> line, if not present. Then you'll need to
         run <code>fink selfupdate</code> to download the package description
         files. Now copy the relevant <code>.info</code> files (and their
         associated <code>.patch</code> files, if there are any) from
-        <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (or
-        <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) to
-        <filename>/sw/fink/dists/local/main/finkinfo</filename>. However, note
+        <filename>/opt/sw/fink/dists/unstable/main/finkinfo</filename> (or
+        <filename>/opt/sw/fink/dists/unstable/crypto/finkinfo</filename>) to
+        <filename>/opt/sw/fink/dists/local/main/finkinfo</filename>. However, note
         that your package may depend on other packages (or particular
         versions) which are also only in unstable. You will have to move their
         <code>.info</code> and <code>.patch</code> files as well. After you
@@ -519,9 +519,9 @@ fink scanpackages
       <answer>
         <p>init.csh 和 init.sh 并不能象普通命令一样运行。这些文件会设置象 PATH 和 MANPATH 这样的环境变量到你的 shell 程序中。要对 shell 一直起作用的话，对于 csh/tcsh，它需要由一个 <code>source</code> 命令来运行；或对于 bash/zsh，使用&quot;<code> . </code>&quot;命令，象这样：</p>
         <p>对 csh/tcsh：</p>
-        <codeblock>source /sw/bin/init.csh</codeblock>
+        <codeblock>source /opt/sw/bin/init.csh</codeblock>
         <p>或对 bash/zsh：</p>
-        <codeblock>. /sw/bin/init.sh</codeblock>
+        <codeblock>. /opt/sw/bin/init.sh</codeblock>
       </answer>
     </faqentry>
     <faqentry name="dselect-access" >
@@ -534,7 +534,7 @@ fink scanpackages
 你也许把 apt 指向了一个 Debian 的镜像服务器，当然那里没有任何 Fink 文件。
 你可以手工或通过 dselect 来修复。
 要手工修复，使用 root 权限用纯文本编辑器编辑
-<code>/sw/etc/apt/sources.list</code> 文件。删除包含 debian.org 的行，并换成：
+<code>/opt/sw/etc/apt/sources.list</code> 文件。删除包含 debian.org 的行，并换成：
 </p>
         <codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeblock>
@@ -567,7 +567,7 @@ Components: main crypto
       <answer translated="no">
         <p>如果错误信息是：</p>
         <codeblock>Can't exec &quot;cvs&quot;: No such file or directory at 
-/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
+/opt/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</codeblock>
         <p>那么你需要安装开发工具包。</p>
         <p>如果最后一行是：</p>
@@ -599,9 +599,9 @@ cvs [update aborted]: cannot make directory 10.2/stable/main/finkinfo: No such f
 Failed: Updating using CVS failed. Check the error messages above.
 </codeblock>
         <p>这时你需要重置你的 CVS 目录。使用命令：</p>
-        <codeblock>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {} \;
+        <codeblock>sudo find /opt/sw/fink -type d -name 'CVS' -exec rm -rf {} \;
 fink selfupdate-cvs</codeblock>
-        <p>如果你看不到上面这些错误信息，那么很可能是你自己修改过 /sw/fink/dists 树里面的文件，而现在维护者又改动了它。查看以前的 selfupdate-cvs 输出，寻找以 &quot;C&quot; 开始的行，象这样：
+        <p>如果你看不到上面这些错误信息，那么很可能是你自己修改过 /opt/sw/fink/dists 树里面的文件，而现在维护者又改动了它。查看以前的 selfupdate-cvs 输出，寻找以 &quot;C&quot; 开始的行，象这样：
 </p>
         <codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 ...
@@ -611,7 +611,7 @@ fink selfupdate-cvs</codeblock>
 Failed: Updating using CVS failed. Check the error messages above.</codeblock>
         <p>&quot;C&quot; 指 CVS 在更新最新版本的时候出现冲突。</p>
         <p>解决办法是删除在 selfupdate-cvs 命令的输出中 &quot;C&quot; 开头的错误信息所涉及的文件，然后重新试一次。</p>
-        <codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+        <codeblock>sudo rm /opt/sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</codeblock>
 <!-- start translation -->
 		<p>If you get errors that mention <em>cvs.sourceforge.net</em>:</p>
@@ -649,7 +649,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
           </code>&quot; 获得）) 下载链接已经失效；并不是所有维护者总是阅读邮件列表的消息的。</p>
         <p>要获得一个可用的源程序包，首先尝试在原来的站点的其它目录寻找 Fink 所要的相同版本文件（例如，在一个名为 &quot;old&quot; 的目录里面）。记住，虽然一些站点可能已经扔掉了旧版本的软件包。但是如果官方站点上找不到的话，你可以尝试一个互联网上的搜索——仍然会有一些非官方的站点保存有你所需要的压缩档。另外一个寻找的地方是 <link url="http://us.dl.sourceforge.net/fink/direct_download/source/" >http://us.dl.sourceforge.net/fink/direct_download/source/</link>，这是 Fink 存放它们已经以二进制发布过的软件包的源文件的地方。如果这些都不成功，你可以考虑在
 <link url="http://sourceforge.net/mailarchive/forum.php?forum=fink-users" >fink 用户邮件列表</link> 里面发信询问是否有人会有旧的源代码压缩档可以给你。</p>
-        <p>一旦你找到合适的源程序压缩档，手工下载它，然后把它移到 Fink 的源程序文件目录里面（对默认安装，可以使用 &quot;<code>sudo mv <em>package-source.tar.gz</em> /sw/src/</code>&quot;命令）。然后和平常一样用 '<code>fink install <em>软件包名</em>
+        <p>一旦你找到合适的源程序压缩档，手工下载它，然后把它移到 Fink 的源程序文件目录里面（对默认安装，可以使用 &quot;<code>sudo mv <em>package-source.tar.gz</em> /opt/sw/src/</code>&quot;命令）。然后和平常一样用 '<code>fink install <em>软件包名</em>
           </code>' 安装。</p>
         <p>如果你没有办法找到源程序文件，那么你只能等待维护者来处理这个问题。它们可能会发布一个到旧源文件的链接，或升级 .info 和 .patch 文件来使用新的版本。
 </p>
@@ -663,7 +663,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
       	<!-- start translation -->
         <p>If this always happens, then you may have inadvertently
         modified (or failed to modify) your startup scripts. Run the
-        <filename>/sw/bin/pathsetup.sh</filename> script in a terminal
+        <filename>/opt/sw/bin/pathsetup.sh</filename> script in a terminal
         window. This program will attempt to detect your default shell
         and add a command to load Fink's shell initialization script
         into your shell's configuration. You'll then need to open a
@@ -679,8 +679,8 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
         <p>change the command field to read</p>
         <codeblock>xterm -ls</codeblock>
         <p><code>ls</code> here means <quote>login shell</quote>, and the result is that your full login setup gets used (just like the OS X Terminal).</p>
-		<p>These <filename>/sw/bin/init.*</filename> scripts do much
-		more than just add <filename>/sw/bin</filename> to your PATH.
+		<p>These <filename>/opt/sw/bin/init.*</filename> scripts do much
+		more than just add <filename>/opt/sw/bin</filename> to your PATH.
 		Many packages will not work correctly without these additional
 		actions.</p>
 		<!-- end translation -->
@@ -688,22 +688,22 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
     </faqentry>
     <faqentry name="invisible-sw" >
       <question>
-        <p>我希望在 Finder 里面隐藏 /sw 而避免用户破坏 Fink 的设置。</p>
+        <p>我希望在 Finder 里面隐藏 /opt/sw 而避免用户破坏 Fink 的设置。</p>
       </question>
       <answer>
         <p>如果你安装了开发工具包，你可以做到这一点。你可以运行下面的命令：</p>
-        <codeblock>sudo /Developer/Tools/SetFile -a V /sw</codeblock>
-        <p>这会使得 /sw 象其它标准系统文件夹一样（比如 /usr），在 Finder 中不可见。如果你没有开发工具包，也有其它第三方程序可以让你修改文件属性-你需要把 /sw 设为隐藏。</p>
+        <codeblock>sudo /Developer/Tools/SetFile -a V /opt/sw</codeblock>
+        <p>这会使得 /opt/sw 象其它标准系统文件夹一样（比如 /usr），在 Finder 中不可见。如果你没有开发工具包，也有其它第三方程序可以让你修改文件属性-你需要把 /opt/sw 设为隐藏。</p>
       </answer>
     </faqentry>
     <faqentry name="install-info-bad" >
       <question>
-        <p>我不能安装任何软件，因为我碰到下面的错误信息：&quot;install-info: unrecognized option `--infodir=/sw/share/info'&quot;。</p>
+        <p>我不能安装任何软件，因为我碰到下面的错误信息：&quot;install-info: unrecognized option `--infodir=/opt/sw/share/info'&quot;。</p>
       </question>
       <answer>
         <p>这通常是由于你的 PATH 环境变量的原因。在终端窗口输入：</p>
         <codeblock>printenv PATH</codeblock>
-        <p>如果输出里面没有 <filename>/sw/sbin</filename>，那么你需要按照用户指南中的<link url="/doc/users-guide/install.php#setup" >方法</link>来设置你的环境变量。如果有 <filename>/sw/sbin</filename>，但有其它目录在它前面（比如 <filename>/usr/local/bin</filename>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <filename>/sw/sbin</filename> 排在前面。或者如果你的确需要把其它目录放在 <filename>/sw/sbin</filename> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <filename>install-info</filename> 子目录。</p>
+        <p>如果输出里面没有 <filename>/opt/sw/sbin</filename>，那么你需要按照用户指南中的<link url="/doc/users-guide/install.php#setup" >方法</link>来设置你的环境变量。如果有 <filename>/opt/sw/sbin</filename>，但有其它目录在它前面（比如 <filename>/usr/local/bin</filename>），那么你要么需要重新安排你 PATH 里面的顺序，使得 <filename>/opt/sw/sbin</filename> 排在前面。或者如果你的确需要把其它目录放在 <filename>/opt/sw/sbin</filename> 之前，而且这个放在前面的目录包括另一个 install-info 目录，这时也许你需要在使用 Fink 的时候临时重命名这个 <filename>install-info</filename> 子目录。</p>
       </answer>
     </faqentry>
     <faqentry name="bad-list-file" >
@@ -719,7 +719,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
         <codeblock>dpkg --contents <em>deb文件的完整路径</em>
         </codeblock>
         <p>例如</p>
-        <codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
+        <codeblock>dpkg --contents /opt/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
         <p>如果你获得了一列目录和文件，那么你的 .deb 是正确的。如果输出是目录和文件以外的其它东西，或者你没有 .deb 文件，你仍然可以继续操作，因为这个错误不会影响构建。</p>
         <p>如果你是从二进制包进行安装或你肯定知道二进制包里面的版本和你已经安装的版本一致（比如，通过检查<link url="http://pdb.finkproject.org/pdb/index.php" >软件包数据库</link>），你可以用下面的办法获取一个 .deb 文件： <code>sudo apt-get install --reinstall --download-only <em>软件包名</em>
           </code>。否则你也可以用下面的办法自己从源代码重新构建一个：<code>fink rebuild <em>软件包名</em>
@@ -728,12 +728,12 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
         <codeblock>dpkg -c <em>deb文件的完整路径</em>
   | awk '{if ($6 == &quot;./&quot;){ print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
     {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}' 
-  &gt; /sw/var/lib/dpkg/info/<em>软件包名</em>.list</codeblock>
+  &gt; /opt/sw/var/lib/dpkg/info/<em>软件包名</em>.list</codeblock>
         <p>例如：</p>
-        <codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
+        <codeblock>dpkg -c /opt/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb
   | awk '{if ($6 == &quot;./&quot;) { print &quot;/.&quot;; } else if (substr($6, length($6), 1) == &quot;/&quot;)
    {print substr($6, 2, length($6) - 2); } else { print substr($6, 2, length($6) - 1);}}'
-  &gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+  &gt; /opt/sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
         <p>这里做的事情是抽取 .deb 文件的内容，删掉除文件名以外的所有信息，并把文件名信息写回到 .list 文件中。</p>
       </answer>
     </faqentry>
@@ -799,13 +799,13 @@ Err file: stable/crypto Packages
 Ign file: stable/crypto Release
 ...
 Failed to fetch
-file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
+file:/opt/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found
 Failed to fetch
-file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
+file:/opt/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
 File not found
 Failed to fetch
-file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
+file:/opt/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
 File not found
 Reading Package Lists... Done
 Building Dependency Tree... Done
@@ -816,7 +816,7 @@ update available list script returned error exit status 1.
 </codeblock>
         <p>或</p>
         <codeblock>W: Couldn't stat source package list file: unstable/main Packages
-(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+(/opt/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)</codeblock>
         <p>那么你需要做的是运行 <code>fink scanpackages</code>。这会生成那些找不到的文件。</p>
       </answer>
@@ -827,7 +827,7 @@ powerpc_Packages) - stat (2 No such file or directory)</codeblock>
       </question>
       <answer>
         <p>在改动 Fink 的安装环境（源代码或二进制安装都是它的子集），需要告诉 Fink 发生了这些变动。要这样做，我们要运行一个通常是在首次安装的时候才运行的脚本：</p>
-        <codeblock>/sw/lib/fink/postinstall.pl</codeblock>
+        <codeblock>/opt/sw/lib/fink/postinstall.pl</codeblock>
         <p>运行完这个脚本以后，Fink 应该能够适应改动的结果。</p>
       </answer>
     </faqentry>
@@ -856,19 +856,19 @@ powerpc_Packages) - stat (2 No such file or directory)</codeblock>
       </question>
       <answer>
         <p>出错的形式：</p>
-        <codeblock>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
+        <codeblock>gzip -dc /opt/sw/src/dpkg-1.10.9.tar.gz | /opt/sw/bin/tar -xf -
 ### execution of gzip failed, exit code 139</codeblock>
         <p>或</p>
-        <codeblock>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
+        <codeblock>gzip -dc /opt/sw/src/aquaterm-0.3.0a.tar.gz | /opt/sw/bin/tar -xf -
 gzip: stdout: Broken pipe
 ### execution of gzip failed, exit code 138</codeblock>
         <p>或</p>
         <codeblock>dpkg-deb -b root-base-files-1.9.0-1
-/sw/fink/dists/unstable/main/binary-darwin-powerpc/base
+/opt/sw/fink/dists/unstable/main/binary-darwin-powerpc/base
 ### execution of dpkg-deb failed, exit code 1
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
         <p>或在运行<code> fileutils</code> 中的工具时出现 segmentation faults 错误。比如：<code>ls</code> 或 <code>mv</code>，这很可能时因为某个库的预绑定错误，这可以通过运行下面命令来修正：</p>
-        <codeblock>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
+        <codeblock>sudo /opt/sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
       </answer>
     </faqentry>
     <faqentry name="pathsetup-keeps-running" >
@@ -877,8 +877,8 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
 set up for Fink already.&quot;，然后它就退出登录了。</p>
       </question>
       <answer>
-        <p>发生这个现象的原因是 OS X 的终端程序被告知每次登录的时候需要运行 <code>/sw/bin/pathsetup.command</code> 命令。你可以通过删除下面的文件 <code>~/Library/Preferences/com.apple.Terminal.plist</code> 来修正这一点。</p>
-        <p>如果这个配置文件里面有你需要保留的配置信息（所以你不能删除它），你可以用纯文本编辑器来编辑它，删除包含 <code>/sw/bin/pathsetup.command</code> 的一行。</p>
+        <p>发生这个现象的原因是 OS X 的终端程序被告知每次登录的时候需要运行 <code>/opt/sw/bin/pathsetup.command</code> 命令。你可以通过删除下面的文件 <code>~/Library/Preferences/com.apple.Terminal.plist</code> 来修正这一点。</p>
+        <p>如果这个配置文件里面有你需要保留的配置信息（所以你不能删除它），你可以用纯文本编辑器来编辑它，删除包含 <code>/opt/sw/bin/pathsetup.command</code> 的一行。</p>
       </answer>
     </faqentry>
     <faqentry name="ext-drive">
@@ -918,13 +918,13 @@ Failed test (./Command/chowname.t at line 27)
     <!-- start translation -->
     <faqentry name="cant-move-fink">
       <question translated="no">
-        <p>I can't update Fink, because it can't move /sw/fink out of the way.</p>
+        <p>I can't update Fink, because it can't move /opt/sw/fink out of the way.</p>
       </question>
       <answer translated="no">
         <p>This error:</p>
-        <codeblock>Failed: Can't move "/sw/fink" out of the way.</codeblock>
+        <codeblock>Failed: Can't move "/opt/sw/fink" out of the way.</codeblock>
         <p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p>
-        <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
+        <codeblock>sudo rm -rf /opt/sw/fink.tmp /opt/sw/fink.old</codeblock>
       </answer>
     </faqentry>
 
@@ -961,7 +961,7 @@ sudo chmod 1775 /
       </question>
       <answer translated="no">
         <p>This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p>
-        <codeblock>sudo rm -rf /sw</codeblock>
+        <codeblock>sudo rm -rf /opt/sw</codeblock>
         <p>and then download the disk image for Intel machines from <link url="/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
@@ -1001,7 +1001,7 @@ sudo chmod 1775 /
         <p>如果错误信息是这种形式</p>
         <codeblock>make: command not found</codeblock>
         <p>或</p>
-        <codeblock>Can't exec &quot;make&quot;: No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
+        <codeblock>Can't exec &quot;make&quot;: No such file or directory at /opt/sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
         <p>它表示你需要安装开发工具。</p>
         <p>如果你的错误信息是这样的</p>
         <codeblock>make: illegal option -- C</codeblock>
@@ -1028,7 +1028,7 @@ Usage: head [-options] &lt;url&gt;...</codeblock>
         <p>
 现在源代码发布版的 bootstrap 脚本会检查这一点，但你仍然会碰到这个问题，如果你使用二进制安装或在安装 Fink 以后又安装 libwww。
 </p>
-        <p>也曾经有报告说发生这个问题是因为安装了 <filename>/sw/bin/HEAD</filename>（这不是 Fink 软件包安装的）。这种情况很容易解决：重命名 <filename>/sw/bin/HEAD</filename>。</p>
+        <p>也曾经有报告说发生这个问题是因为安装了 <filename>/opt/sw/bin/HEAD</filename>（这不是 Fink 软件包安装的）。这种情况很容易解决：重命名 <filename>/opt/sw/bin/HEAD</filename>。</p>
       </answer>
     </faqentry>
     <faqentry name="also_in" >
@@ -1050,9 +1050,9 @@ Usage: head [-options] &lt;url&gt;...</codeblock>
       <answer>
         <p>如果你安装了 StuffIt Pro，这可能是因为你使用了 &quot;Archive Via Real Name&quot; 模式。在系统预置中检查 StuffIt 面板，禁用 &quot;ArchiveViaRealName&quot;。它包括对一些重要的系统调用的不正确的替代，从而引起一些古怪的错误。</p>
         <p>否则，一个 <filename>mv</filename> 错误通常意味着构建过程更早期发生了错误，但是构建过程并没有因为那个错误而终止。要找到发生的问题的文件，可以搜索那个不存在文件构建时候的输出。比如，如果你碰到这样的错误：</p>
-        <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
- /sw/src/root-foo-shlibs-0.1.2-3/sw/lib/
- mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+        <codeblock>mv /opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib \
+ /opt/sw/src/root-foo-shlibs-0.1.2-3/opt/sw/lib/
+ mv: cannot stat `/opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib': 
  No such file or directory
 ### execution of mv failed, exit code 1
 Failed: installing foo-0.1.2-3 failed</codeblock>
@@ -1114,9 +1114,9 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
       </question>
       <answer>
         <p>输出已经提示了该怎么办。消息通常是这样的：</p>
-        <codeblock>ld: table of contents for archive: /sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</codeblock>
+        <codeblock>ld: table of contents for archive: /opt/sw/lib/libintl.a is out of date; rerun ranlib(1) (can't load from it)</codeblock>
         <p>你需要（以 root 权限）运行 ranlib 处理引起问题的库。例如对上面的情况，你可以运行：</p>
-        <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
+        <codeblock>sudo ranlib /opt/sw/lib/libintl.a</codeblock>
       </answer>
     </faqentry>
     <faqentry name="fc-atlas" >
@@ -1152,14 +1152,14 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
     </faqentry>
     <faqentry name="dpkg-parse-error" >
       <question>
-        <p>我不能安装任何东西，因为我碰到 &quot;dpkg: parse error, in file `/sw/var/lib/dpkg/status'&quot; 错误！</p>
+        <p>我不能安装任何东西，因为我碰到 &quot;dpkg: parse error, in file `/opt/sw/var/lib/dpkg/status'&quot; 错误！</p>
       </question>
       <answer translated="no">
         <p>This means that somehow your dpkg database got damaged, usually
         from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p>
 	<codeblock>package `fink-buildlock-foo-1.2.3-4':  missing version</codeblock>
 	<p>(of course, replace <filename>foo-1.2.3-4</filename> with the package name you are seeing).</p>
-	<p>When this happens, you should edit <filename>/sw/var/lib/dpkg/status</filename> as a superuser.
+	<p>When this happens, you should edit <filename>/opt/sw/var/lib/dpkg/status</filename> as a superuser.
 	Then go near the line number which shows up in the error message.
 	You should see a <code>fink-buildlock-foo-1.2.3-4</code>
         package whose <code>Status</code> field is marked</p>
@@ -1168,7 +1168,7 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 	<codeblock>purge ok not-installed</codeblock>
 	<p>Under other circumstances, there may be garbage in the file.  You can fix this situation by
         copying the previous version of the database, like so:</p>
-        <codeblock>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</codeblock>
+        <codeblock>sudo cp /opt/sw/var/lib/dpkg/status-old /opt/sw/var/lib/dpkg/status</codeblock>
         <p>You may need to re-install the last couple of packages you
         installed before the problem started occurring.</p>
       </answer>
@@ -1187,11 +1187,11 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
 <p>if you're using <filename>bash</filename>.  The Mono Framework has been known to install a <filename>/usr/bin/freetype-config</filename> that is a symbolic link to a file in that framework.</p>
 <!-- end translation -->
 <p>如果你的错误是这样的：</p>
-        <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token
-/sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token
-/sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token
-/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before &quot;pango_ft2_font_get_face&quot;
-/sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class
+        <codeblock>/opt/sw/include/pango-1.0/pango/pangoft2.h:52: error: parse error before '*' token
+/opt/sw/include/pango-1.0/pango/pangoft2.h:57: error: parse error before '*' token
+/opt/sw/include/pango-1.0/pango/pangoft2.h:61: error: parse error before '*' token
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: error: parse error before &quot;pango_ft2_font_get_face&quot;
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: warning: data definition has no type or storage class
 make[2]: *** [rsvg-gz.lo] Error 1
 make[1]: *** [all-recursive] Error 1
 make: *** [all-recursive-am] Error 2
@@ -1356,9 +1356,9 @@ running build_ext
 Traceback (most recent call last):
   File "setup_socket_ssl.py", line 21, in ?
     depends = ['socketmodule.h'] )
-  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+  File "/opt/sw/src/root-python24-2.4.1-1/opt/sw/lib/python2.4/distutils/core.py", line 166, in setup
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
-### execution of /sw/bin/python2.4 failed, exit code 1</codeblock>
+### execution of /opt/sw/bin/python2.4 failed, exit code 1</codeblock>
         <p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <em>10.4-transitional</em> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p>
         <p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p>
       </answer>
@@ -1466,7 +1466,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs
       </question>
       <answer translated="no">
         <p>If you get errors of the form:</p>
-        <codeblock>libtool: link: cannot find the library `/sw/lib/libiconv.la'</codeblock>
+        <codeblock>libtool: link: cannot find the library `/opt/sw/lib/libiconv.la'</codeblock>
         <p>you can solve this problem by running</p>
         <codeblock>fink remove gettext-dev
 fink install libiconv</codeblock>
@@ -1581,28 +1581,28 @@ X11 文档有更多的<link url="/doc/x11/trouble.php#locale" >细节</link>。
 		appropriate target architecture.  For a package that uses standard
 		configure/make process, you need to set some environment variables:</p>
         <p>-bash-</p>
-        <codeblock>export CFLAGS=-I/sw/include 
-export LDFLAGS=-L/sw/lib 
+        <codeblock>export CFLAGS=-I/opt/sw/include 
+export LDFLAGS=-L/opt/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
-export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
-export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
+export ACLOCAL_FLAGS=&quot;-I /opt/sw/share/aclocal&quot;
+export PKG_CONFIG_PATH=&quot;/opt/sw/lib/pkgconfig&quot;
+export PATH=/opt/sw/var/lib/fink/path-prefix-clang:$PATH
 export MACOSX_DEPLOYMENT_TARGET=10.9</codeblock>
         <p>-tcsh-</p>
-        <codeblock>setenv CFLAGS -I/sw/include 
-setenv LDFLAGS -L/sw/lib 
+        <codeblock>setenv CFLAGS -I/opt/sw/include 
+setenv LDFLAGS -L/opt/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
-setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
-setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv ACLOCAL_FLAGS &quot;-I /opt/sw/share/aclocal&quot;
+setenv PKG_CONFIG_PATH &quot;/opt/sw/lib/pkgconfig&quot;
+setenv PATH /opt/sw/var/lib/fink/path-prefix-clang:$PATH
 setenv MACOSX_DEPLOYMENT_TARGET 10.9</codeblock>
 	<p>(assuming that the build system is running OS 10.9 or later)</p>
         <p>
 通常最简单的办法是把这些东西加到你的启动脚本文件（比如 <filename>.cshrc</filename> 或 <filename>.profile</filename>），这样他们就可以自动被设置。
 如果一个软件包不使用这些环境变量，你需要自己添加
-&quot;-I/sw/include&quot; (对头文件) 和 &quot;-L/sw/lib&quot; (对库文件) 到编译指令的一行。有些软件包会使用类似 EXTRA_CFLAGS 或 --with-qt-dir= 这样的非标准配置选项。
+&quot;-I/opt/sw/include&quot; (对头文件) 和 &quot;-L/opt/sw/lib&quot; (对库文件) 到编译指令的一行。有些软件包会使用类似 EXTRA_CFLAGS 或 --with-qt-dir= 这样的非标准配置选项。
 通常 &quot;./configure --help&quot; 会告诉你额外的编译选项。
 </p>
         <p>另外，你也许需要安装那些你使用的软件包的开发版的头文件（例如 <em>foo-1.0-1-dev</em>），如果你还没有安装它们的话）。</p>
@@ -1614,12 +1614,12 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.9</codeblock>
       </question>
       <answer>
         <p>苹果的 X11 不使用 Fink 的环境变量设置，这意味着应用程序菜单没有正确的环境变量设置来找到你的 Fink 程序。解决办法是在 Fink 安装的程序前面加上：</p>
-        <codeblock>source /sw/bin/init.sh ; </codeblock>
+        <codeblock>source /opt/sw/bin/init.sh ; </codeblock>
         <p>例如，如果你希望运行 Fink 安装的 GIMP，那么填入</p>
-        <codeblock>source /sw/bin/init.sh ; gimp</codeblock>
+        <codeblock>source /opt/sw/bin/init.sh ; gimp</codeblock>
         <p>到你 GIMP 项的命令一栏。</p>
         <p>你也可以编辑你的 .xinitrc 文件（在你的用户目录中）并添加：</p>
-        <codeblock>source /sw/bin/init.sh</codeblock>
+        <codeblock>source /opt/sw/bin/init.sh</codeblock>
         <p>到第一行之后。</p>
       </answer>
     </faqentry>

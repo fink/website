@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Portage de logiciel sur Darwin et Mac OS X</title>
 <shorttitle>Portage</shorttitle>
-<cvsid>$Id: porting.fr.xml,v 1.15 2014/10/25 09:21:47 gecko2 Exp $</cvsid> 
+<cvsid>$Id: porting.fr.xml,v 1.16 2023/08/04 5:08:13 nieder Exp $</cvsid> 
 <preface>
 <p>Ce document contient quelques conseils pour réaliser le portage d'applications Unix vers Darwin et Mac OS X. Ces informations s'appliquent aux systèmes d'exploitation Mac OS X versions 10.x.x et Darwin &quot;pur&quot;. Nous ferons référence aux deux systèmes sous le nom de Darwin, puisque Mac OS X est, en fait, un sur-ensemble de Darwin.</p>
 </preface>
@@ -283,7 +283,7 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
 <item>
 <itemt>GNU getopt</itemt>
 <itemd>
-<p>Cette librairie, qui comprend la fonction <code>getopt_long()</code>, a été incorporée dans libSystem et <filename>/usr/include/getopt.h</filename> ; vous n'avez donc pas besoin d'utiliser les paquets Fink &quot;libgnugetopt&quot; et &quot;libgnugetopt-shlibs&quot;. Comme libSystem est automatiquement liée et que le répertoire <filename>/usr/include</filename> fait partie des répertoires automatiques de recherche des headers, vous pouvez supprimer tous les drapeaux <code>-lgnugetopt</code> et <code>-I/sw/include/gnugetopt</code> qui avaient été ajoutés pour permettre d'accéder au paquet Fink &quot;libgnugetopt&quot;.</p>
+<p>Cette librairie, qui comprend la fonction <code>getopt_long()</code>, a été incorporée dans libSystem et <filename>/usr/include/getopt.h</filename> ; vous n'avez donc pas besoin d'utiliser les paquets Fink &quot;libgnugetopt&quot; et &quot;libgnugetopt-shlibs&quot;. Comme libSystem est automatiquement liée et que le répertoire <filename>/usr/include</filename> fait partie des répertoires automatiques de recherche des headers, vous pouvez supprimer tous les drapeaux <code>-lgnugetopt</code> et <code>-I/opt/sw/include/gnugetopt</code> qui avaient été ajoutés pour permettre d'accéder au paquet Fink &quot;libgnugetopt&quot;.</p>
 </itemd>
 </item>
 </itemtable>

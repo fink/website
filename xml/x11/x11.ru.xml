@@ -3,7 +3,7 @@
 <document filename="index" lang="ru">
     <title>Использование X11 в Darwin и Mac OS X</title>
     <shorttitle>Использование X11</shorttitle>
-    <cvsid>$Id: x11.ru.xml,v 1.5 2012/11/11 15:20:18 gecko2 Exp $</cvsid>
+    <cvsid>$Id: x11.ru.xml,v 1.6 2023/08/04 5:08:13 nieder Exp $</cvsid>
     <preface>
         <p> Данный документ посвящен использованию X11 / XFree86 / Xtools в Mac
             OS X и Darwin Apple. В нем вы найдете введение, историю создания продукта, а также отражение
@@ -313,7 +313,7 @@
                         использовать другой менеджер окон, можно сделать как в
                         следующем примере:</p>
                     <codeblock>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-                        exec /sw/bin/fvwm2</codeblock>
+                        exec /opt/sw/bin/fvwm2</codeblock>
                     <p>Разумеется, можно сделать вызов другого менеджера окон, н-р,
                         <code>startkde</code> и т.д.</p>
                 </li>
@@ -329,12 +329,12 @@
                         умолчанию. Для вызова приложений запуска, инсталлированных
                         при помощи fink (н-р, менеджеров окон,
                         gnome-session и других в
-                        <filename>/sw/bin</filename>), внесите следующее
+                        <filename>/opt/sw/bin</filename>), внесите следующее
                         в верхней части <filename>~/.xinitrc</filename> (т.е.
                         после
                         &quot;<filename>#!/bin/sh</filename>&quot;, но
                         перед запуском любой программы):</p>
-                    <codeblock> . /sw/bin/init.sh</codeblock>
+                    <codeblock> . /opt/sw/bin/init.sh</codeblock>
                     <p>чтобы запустить среду Fink. Примечание: лучше использовать
                         <filename>init.sh</filename>, чем
                         <filename>init.csh</filename>, поскольку
@@ -347,12 +347,12 @@
                         требуют особого обращения при их вовлечении в работу путем вызова
                         из меню приложений. Вместо добавления одного только
                         полного маршрута к имени файла, н-р:</p>
-                    <codeblock>/sw/bin/emacs</codeblock>
+                    <codeblock>/opt/sw/bin/emacs</codeblock>
                     <p>лучше использовать что-то вроде следующего, если
                         вы используете bash в качестве оболочки по умолчанию:</p>
-                    <codeblock>. /sw/bin/init.sh ; emacs</codeblock>
+                    <codeblock>. /opt/sw/bin/init.sh ; emacs</codeblock>
                     <p>или, если вы используете tcsh:</p>
-                    <codeblock>source /sw/bin/init.csh ; emacs</codeblock>
+                    <codeblock>source /opt/sw/bin/init.csh ; emacs</codeblock>
                     <p>Это обеспечивает правильный PATH
                         приложения. Можно использовать этот синтаксис для любого
                         приложения, инсталлированного при помощи Fink.</p>
@@ -721,24 +721,24 @@ this should not be a desirable way to install XFree86.
                 циклов ОЗУ и центрального процессора можно указать <code>exec</code> перед
                 последней строкой, как в примере ниже.)</p>
             <p> Простой пример запуска GNOME:</p>
-            <codeblock>. /sw/bin/init.sh exec gnome-session</codeblock>
+            <codeblock>. /opt/sw/bin/init.sh exec gnome-session</codeblock>
             <p>Более сложный пример для пользователей bash, который отключает X11,
                 делает запуск некоторых клиентов и в конце концов менеджера окон Enlightenment:
                 </p>
-            <codeblock>. /sw/bin/init.sh xset b off xclock -geometry -0+0
+            <codeblock>. /opt/sw/bin/init.sh xset b off xclock -geometry -0+0
                 &amp; xterm &amp; xterm &amp; exec enlightenment</codeblock>
             <p>Для запуска GNOME 2.2 в X11 Apple используйте следующую последовательность:</p>
-            <codeblock>. /sw/bin/init.sh quartz-wm --only-proxy &amp;
+            <codeblock>. /opt/sw/bin/init.sh quartz-wm --only-proxy &amp;
                 metacity &amp; exec gnome-session</codeblock>
             <p>При запуске GNOME 2.4 в X11 Apple metacity запускается автоматически,
                 и таким образом последовательность следующая:</p>
-            <codeblock>. /sw/bin/init.sh quartz-wm --only-proxy &amp; exec gnome-session</codeblock>
+            <codeblock>. /opt/sw/bin/init.sh quartz-wm --only-proxy &amp; exec gnome-session</codeblock>
             <p>Для запуска KDE 3.2 (версия &lt; 3.2.2-21) в X11 Apple используйте</p>
-            <codeblock>. /sw/bin/init.sh export KDEWM=kwin quartz-wm
-                --only-proxy &amp; /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</codeblock>
+            <codeblock>. /opt/sw/bin/init.sh export KDEWM=kwin quartz-wm
+                --only-proxy &amp; /opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</codeblock>
             <p>Наконец, для запуска последней нестабильной версии KDE в
                 X11 Apple:</p>
-            <codeblock>. /sw/bin/init.sh /sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</codeblock>
+            <codeblock>. /opt/sw/bin/init.sh /opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1</codeblock>
         </section>
     </chapter>
     <chapter filename="xtools">
@@ -946,7 +946,7 @@ this should not be a desirable way to install XFree86.
                 ваши файлы инциализации оболочки не содержат настроек для добавления
                 /usr/X11R6/bin к переменной величине PATH. Если вы используете Fink и не изменили
                 настройки оболочки по умолчанию, для исправления должно быть достаточно добавления строки <code>source
-                /sw/bin/init.csh</code> к <filename>.cshrc</filename> в базовом каталоге
+                /opt/sw/bin/init.csh</code> к <filename>.cshrc</filename> в базовом каталоге
                 (как рекомендуется в инструкциях Fink).
                 </p>
             <codeblock>_XSERVTransSocketUNIXCreateListener:
@@ -1004,8 +1004,8 @@ The app that should run in the foreground can't be found.
 This can happen when you give just the name without the path
 (e.g. <code>xterm</code>), but forget to set the shell's search path
 (environment variable PATH).
-Neither /usr/X11R6/bin nor /sw/bin are in the default path.
-If you use Fink, just add an <code>source /sw/bin/init.sh</code> to
+Neither /usr/X11R6/bin nor /opt/sw/bin are in the default path.
+If you use Fink, just add an <code>source /opt/sw/bin/init.sh</code> to
 the start of the <code>.xinitrc</code>.
 To set the path manually, use this piece:
 </p>

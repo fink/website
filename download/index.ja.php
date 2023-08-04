@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 15:16:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2023/08/03 20:24:10 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -59,7 +59,7 @@ Fink をインストール、アップグレードする方法はたくさんあ
 pathsetup アプリケーションを再実行することができます。
 あるいは、以下のコマンドでも (ターミナル.app からコマンドラインで) 実行されます。
 </p>
-<pre>open /sw/bin/pathsetup.command &lt;RETURN&gt;</pre>
+<pre>/opt/sw/bin/pathsetup.sh &lt;RETURN&gt;</pre>
 <p>
 (このステップはシステム上のほかのユーザーも実行する必要があります。
 各ユーザーは自分のアカウントで pathsetup を実行しなければなりません。)

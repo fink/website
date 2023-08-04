@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Running X11 on Darwin and Mac OS X</title>
 <shorttitle>Running X11</shorttitle>
-<cvsid>$Id: x11.ja.xml,v 1.16 2012/11/11 15:20:18 gecko2 Exp $</cvsid>
+<cvsid>$Id: x11.ja.xml,v 1.17 2023/08/04 5:08:13 nieder Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Apple の Mac OS X および Darwin システム上で X11 / XFree86 / Xtools を使用するためのものです。
@@ -334,7 +334,7 @@ Quartz を完全に生かしたい場合、ウィンドウマネージャに <fi
 他のウィンドウマネージャを使いたいけれどカットアンドペーストも使いたい場合、以下の例のようにして下さい:
 </p>
 <codeblock>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</codeblock>
+exec /opt/sw/bin/fvwm2</codeblock>
 <p>
 もちろん、 <code>startkde</code> のようなウィンドウマネージャ起動も書く必要があります。
 </p>
@@ -348,10 +348,10 @@ exec /sw/bin/fvwm2</codeblock>
 <li>
 <p>
 Apple X11 は Fink の環境設定をデフォルトでは認識しません。
-Fink でインストールした起動アプリケーション (例 ウィンドウマネージャ, gnome-session, その他の<filename>/sw/bin</filename> 内のアプリケーション) 
+Fink でインストールした起動アプリケーション (例 ウィンドウマネージャ, gnome-session, その他の<filename>/opt/sw/bin</filename> 内のアプリケーション) 
 を呼び出すには、 <filename>~/.xinitrc</filename> の上の方 (&quot;<filename>#!/bin/sh</filename>&quot; より下、他のプログラムより上) に以下の行を追加します;
 </p>
-<codeblock> . /sw/bin/init.sh
+<codeblock> . /opt/sw/bin/init.sh
 </codeblock>
 <p>
 これにより Fink 環境が初期化されます。
@@ -364,11 +364,11 @@ Fink でインストールした起動アプリケーション (例 ウィンド
 Fink ツリー下にあるプログラムをアプリケーションメニューから呼び出すときに、そのプログラムが他のプログラムを呼ぶようなものの場合、特別な処置が必要です。
 このような場合、フルパスを追加するのではなく、例えば
 </p>
-<codeblock>/sw/bin/emacs</codeblock>
+<codeblock>/opt/sw/bin/emacs</codeblock>
 <p>ではなく、 bash であれば:</p>
-<codeblock>. /sw/bin/init.sh ; emacs</codeblock>
+<codeblock>. /opt/sw/bin/init.sh ; emacs</codeblock>
 <p>tcsh であれば:</p>
-<codeblock>source /sw/bin/init.sh ; emacs</codeblock>
+<codeblock>source /opt/sw/bin/init.sh ; emacs</codeblock>
 <p>
 これにより PATH 情報が正しく伝わります。
 Fink でインストールしたアプリケーションなら、どれでもこの方法が使えます。
@@ -733,12 +733,12 @@ Fink を使っている場合、 source <filename>init.sh</filename>
 <p>
 以下の簡単な例では、XFree86 または Xorg　上で GNOME を起動しています:
 </p>
-<codeblock>source /sw/bin/init.csh
+<codeblock>source /opt/sw/bin/init.csh
 exec gnome-session</codeblock>
 <p>
 より複雑に、 bell をオフにし、クライアントをいくつか起動してから Enlightenment ウィンドウマネージャを起動するには:
 </p>
-<codeblock>source /sw/bin/init.sh
+<codeblock>source /opt/sw/bin/init.sh
 
 xset b off
 
@@ -748,25 +748,25 @@ xterm &amp;
 
 exec enlightenment</codeblock>
 <!-- ><p>GNOME2.2 を Apple X11 下で起動するには、以下の通りです:</p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 quartz-wm -only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </codeblock>< -->
 <p>GNOME2.4 以降を Apple X11 下で起動するには:</p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </codeblock>
 <p>KDE 3.2 (version &lt; 3.2.2-21) を Apple X11 下で起動するには</p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde >/tmp/kde.log 2>&amp;1
+/opt/sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
 <p>最後に、最新版の unstable な KDE を Apple X11 下で起動するには:</p>
-<codeblock>. /sw/bin/init.sh
-/sw/bin/startkde >/tmp/kde.log 2>&amp;1
+<codeblock>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
 </section>
     <section name="oroborosx">
@@ -1003,7 +1003,7 @@ Class: Fatal.
 これは XDarwin 1.0a2 と 1.0a3 で シェルの初期かファイルが /usr/X11R6/bin 
 を PATH 変数に追加しない場合に発生します。
 Fink を使っていてデフォルトのシェルを変えていない場合、 (Fink の解説の通り)
-<code>source /sw/bin/init.csh</code> という一行をホームディレクトリ内の 
+<code>source /opt/sw/bin/init.csh</code> という一行をホームディレクトリ内の 
 <filename>.cshrc</filename> に追加すれば十分です。
 </p>
 <codeblock>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed

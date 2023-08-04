@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>How to Post to a Fink Mailing List</title>
   <shorttitle>netiquette</shorttitle>
-  <cvsid>$Id: netiquette.en.xml,v 1.5 2012/11/11 15:20:15 gecko2 Exp $</cvsid>
+  <cvsid>$Id: netiquette.en.xml,v 1.6 2023/08/04 5:23:15 nieder Exp $</cvsid>
   <preface>
     <p><em>This document is under construction.</em></p>
     <p>This document is intended to be a guideline for new posters to a Fink mailing list.  The idea is to educate users of the lists on how to post effectively, in order to promote efficient solutions to problems.  </p>
@@ -48,7 +48,7 @@ error unpacking foo
                 <li>If the failure is during the initial configuration, this is usually immediate.  Post from the last couple of tests that were run before the error message on to the end:<codeblock>....
 Checking for bar-config...no
 Error:  bar-config not found
-....</codeblock><p>If you think it might help, then you can post the relevant section of the configuration log file, e.g. <filename>/sw/src/foo-3.141-6/foo-3.141/config.log</filename>.  <em>Please don't post the whole file, since it can be large.</em></p></li>
+....</codeblock><p>If you think it might help, then you can post the relevant section of the configuration log file, e.g. <filename>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</filename>.  <em>Please don't post the whole file, since it can be large.</em></p></li>
                 <li>Or, the error can show up immediately when you've actually started building the package.  In this case, post from the last line the compiler tried to run to the end:<codeblock>...
 gcc &lt;flags, files etc.&gt;
 &lt;error messages&gt;

@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2020/03/28 10:24:00 $';
+$cvs_date = '$Date: 2023/08/03 20:24:10 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -59,7 +59,7 @@ Fenster und sie können loslegen!
 Sollte während dessen irgendetwas schief laufen, können sie versuchen, das 
 Skript erneut auszuführen, indem sie entweder das pathsetup Programm auf der 
 Installations-Disc starten oder indem sie im Terminal folgenden Befehl eingeben:
-</p><pre>open /sw/bin/pathsetup.sh </pre><p>
+</p><pre>/opt/sw/bin/pathsetup.sh</pre><p>
 (Diese Eingabe sollte im Übrigen von jedem Benutzer ihres Systems durchgeführt 
 werden: Jeder Benutzer muss pathsetup unter seinem Nutzerkonto ausführen.)
 </p><p>

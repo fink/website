@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 15:16:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2023/08/03 20:24:10 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -51,7 +51,7 @@ Vi verranno chiesti i permessi di root prima che la vostra configurazione di she
 <li><p>
 Se qualcosa andasse storto durante questo processo, potete riprovare lanciando l'applicazione 
 pathsetup posizionata nel disco di installazione, o lanciando il comando (nella finestra di Terminal.app) 
-</p><pre>/sw/bin/pathsetup.sh</pre><p>
+</p><pre>/opt/sw/bin/pathsetup.sh</pre><p>
 (Questo passaggio dovrebbe essere effettuato da tutti gli utenti del computer: 
 ogn utente deve effettuare questo comando per usare Fink.)
 </p><p>

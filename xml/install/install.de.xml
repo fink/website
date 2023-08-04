@@ -4,7 +4,7 @@
 <document filename="index" lang="de">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.xml,v 1.50 2015/11/01 02:12:02 kamischi Exp $</cvsid>
+<cvsid>$Id: install.xml,v 1.51 2023/08/04 5:08:13 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -122,11 +122,11 @@ Fink must be installed and run with superuser (root) privileges
 ...
 Choose a method: [1] <em>1</em>
 
-sudo /Users/testuser/fink-&fink_tool_version;/bootstrap .sudo '/sw'
+sudo /Users/testuser/fink-&fink_tool_version;/bootstrap .sudo '/opt/sw'
 Password: <em>(your normal password here)</em>
 ...
 OK, I'll ask you some questions and update the configuration file in
-'/sw/etc/fink.conf'.
+'/opt/sw/etc/fink.conf'.
 
 In what additional directory should Fink look for downloaded tarballs? [] <em>(press return)</em>
 
@@ -161,16 +161,16 @@ Choose a continent:
 ...
 <em>(enter the numbers corresponding to your location)</em>
 ...
-Writing updated configuration to '/sw/etc/fink.conf'...
-Bootstrapping a base system via /sw/bootstrap.
+Writing updated configuration to '/opt/sw/etc/fink.conf'...
+Bootstrapping a base system via /opt/sw/bootstrap.
 ...
 <em>(take a coffee break while Fink downloads and compiles the base packages)</em>
 ...
 
-You should now have a working Fink installation in '/sw'.
+You should now have a working Fink installation in '/opt/sw'.
 [frodo:~/fink-&fink_tool_version;] testuser% <em>cd</em>
 [frodo:~] testuser% <em>rm -r fink-&fink_tool_version;</em>
-[frodo:~] testuser% <em>/sw/bin/pathsetup.sh</em></codeblock>
+[frodo:~] testuser% <em>/opt/sw/bin/pathsetup.sh</em></codeblock>
 <p>
 Das letzte Kommando führt ein kleines Skript aus, das Unix-Pfade (und anderes)
 einrichtet. Nach der Abfrage Änderungen vornehmen zu dürfen läuft es in den
@@ -179,10 +179,10 @@ selbst einrichten (siehe weiter unten).
 </p>
 <p>
 (Wenn sie die Dinge selbst einrichten und csh oder tcsh nutzen, versichern sie
-sich, dass das Kommando <code>source /sw/bin/init.csh</code> beim Start der
+sich, dass das Kommando <code>source /opt/sw/bin/init.csh</code> beim Start der
 Shellausgeführt wird, entweder durch .login, .cshrc, .tcshrc oder was sonst auch
 immer angemessen ist. Benutzen sie bash oder eine ähnliche Shell, brauchen sie
-<code>. /sw/bin/init.sh</code> und legen sie es da ab, wo es ausgeführt wird wie
+<code>. /opt/sw/bin/init.sh</code> und legen sie es da ab, wo es ausgeführt wird wie
 .bashrc oder .profile.)
 </p>
 <p>
@@ -378,7 +378,7 @@ oder sogar Tage dauern.
 <section name="directory"><title>Verzeichnis auswählen</title>
 <p>
 Vor der Installation müssen sie sich entscheiden, wo das Verzeichnis für Fink
-sein soll. Die Empfehlung ist /sw und alle Beispiele in dieser Dokumentation
+sein soll. Die Empfehlung ist /opt/sw und alle Beispiele in dieser Dokumentation
 wird davon ausgehen. Jedes andere Verzeichnis sollte auch in Ordnung sein, so
 lange es keine bereits existierendes ist, wie zum Beispiel /usr/local oder gar
 /usr. Tatsächlich versucht das Bootstrap-Skript solche Fälle abzufangen.
@@ -449,7 +449,7 @@ tun, denn die Installation von Fink wird dadurch nicht unterbrochen.
 </p>
 <p>
 Nach dem Ende des Bootstrap-Prozesses, führen sie das Kommando
-<code>/sw/bin/pathsetup.sh</code> aus. Dieses hilft ihre Shell-Umgebung für
+<code>/opt/sw/bin/pathsetup.sh</code> aus. Dieses hilft ihre Shell-Umgebung für
 Fink einzurichten. In den meisten Fällen wird es automatisch durchlaufen und sie
 einfach nur der Erlaubnis fragen, Änderungen vorzunehmen. Sollte das Skript
 in einen Fehler laufen, müssen sie die Umgebung von hand einrichten (siehe
@@ -457,10 +457,10 @@ weiter unten).
 </p>
 <p>
 (Wenn sie die Dinge selbst einrichten und csh oder tcsh nutzen, versichern sie
-sich, dass das Kommando <code>source /sw/bin/init.csh</code> beim Start der
+sich, dass das Kommando <code>source /opt/sw/bin/init.csh</code> beim Start der
 Shellausgeführt wird, entweder durch .login, .cshrc, .tcshrc oder was sonst auch
 immer angemessen ist. Benutzen sie bash oder eine ähnliche Shell, brauchen sie
-<code>. /sw/bin/init.sh</code> und legen sie es da ab, wo es ausgeführt wird wie
+<code>. /opt/sw/bin/init.sh</code> und legen sie es da ab, wo es ausgeführt wird wie
 .bashrc oder .profile.)
 </p>
 <p>
@@ -596,20 +596,20 @@ Will man nach einer Re-Installation von Fink Zeit sparen, kann man eine Liste
 der installierten Pakete erhalten. Folgende Kommandos in ein Terminal-Fenster
 eingegeben funktionieren, sogar wenn die Fink-Tools nicht vorhanden sind.
 </p>
-<codeblock>grep -B1 "install ok installed" /sw/var/lib/dpkg/status \
+<codeblock>grep -B1 "install ok installed" /opt/sw/var/lib/dpkg/status \
 | grep "^Package:" | cut -d: -f2 | cut -d\  -f2 > finkinst.txt</codeblock>
 <p>
 Dies wird die Liste ihrer Pakete in der Datei <filename>finkinst.txt</filename>
 im aktuellen Arbeitsverzeichnis abspeichern.
 </p>
 <p>
-Sie können auch die Quellen in <filename>/sw/src</filename> in ein anderes
+Sie können auch die Quellen in <filename>/opt/sw/src</filename> in ein anderes
 Verzeichnis verschieben oder kopieren, so dass sie die Zeit für das Herunterladen
 der Quellen sparen können, wenn sie ihre Fink-Distribution wieder einrichten.
 </p>
 <p>
 Sollten sie globale Änderungen in einem ihrer Pakete gemacht haben, in dem sie
-Konfigurationsdateien in <filename>/sw/etc</filename>, geändert haben, dann
+Konfigurationsdateien in <filename>/opt/sw/etc</filename>, geändert haben, dann
 können sie diese Dateien sichern.
 </p>
 </section>
@@ -618,12 +618,12 @@ können sie diese Dateien sichern.
 <p>
 Haben sie alles in einer <xref section="backup">Sicherungskopie</xref>
 gesichert, können sie ihre Fink-Distribution entfernen. Löschen sie
-<filename>/sw</filename> sowie alles in <filename>/Applications/Fink</filename>
+<filename>/opt/sw</filename> sowie alles in <filename>/Applications/Fink</filename>
 entweder im Finder oder in der Kommandozeile:
 </p>
-<codeblock>sudo rm -rf /sw /Applications/Fink/*</codeblock>
+<codeblock>sudo rm -rf /opt/sw /Applications/Fink/*</codeblock>
 <p>
-(Ersetzen sie <filename>/sw</filename> durch ihren aktuellen Fink-Baum).
+(Ersetzen sie <filename>/opt/sw</filename> durch ihren aktuellen Fink-Baum).
 </p>
 </section>
 
@@ -635,11 +635,11 @@ Folgen sie als erstes den Anweisungen im Abschnitt
 <p>
   Nachdem sie die Paketbeschreibungen herunter geladen haben, verschieben sie
   die Quellen, die sie <xref section="backup">gesichert</xref> haben in
-  <filename>/sw/src</filename> entweder mit dem Finder oder in der Kommandozeile:
+  <filename>/opt/sw/src</filename> entweder mit dem Finder oder in der Kommandozeile:
 </p>
-<codeblock>sudo cp /path/to/backup/* /sw/src</codeblock>
+<codeblock>sudo cp /path/to/backup/* /opt/sw/src</codeblock>
 <p>
-  (Wie üblich, ersetzen sie <filename>/sw</filename> mit ihrem tatsächlichen
+  (Wie üblich, ersetzen sie <filename>/opt/sw</filename> mit ihrem tatsächlichen
   Fink-Baum). Wenn sie wollen, können sie <code>fink configure</code> verwenden,
   um den Pfad zu ihrem Sicherungsverzeichnis anzugeben:
 </p>
@@ -653,7 +653,7 @@ Folgen sie als erstes den Anweisungen im Abschnitt
 <p>
   Sie können zu diesem Zeitpunkt auch die globalen Konfigurationsdateien
   einspielen. Anmerkung: Wir raten dringend die Datei
-  <filename>/sw/etc/fink.conf</filename> aus einer früheren Installation wegen
+  <filename>/opt/sw/etc/fink.conf</filename> aus einer früheren Installation wegen
   Inkompatibilitäten <em>nicht</em> zurück zu spielen. Sie können die Datei
   mit einem Texteditor öffnen und entsprechende Werte nach
   <code>fink configure</code> eingeben.

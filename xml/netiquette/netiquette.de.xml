@@ -3,7 +3,7 @@
 <document filename="index" lang="de">
   <title>Beiträge für Fink Mailing-List erstellen</title>
   <shorttitle>Netiquette</shorttitle>
-  <cvsid>$Id: netiquette.de.xml,v 1.1 2015/02/19 17:20:27 k-m_schindler Exp $</cvsid>
+  <cvsid>$Id: netiquette.de.xml,v 1.2 2023/08/04 5:23:15 nieder Exp $</cvsid>
   <preface>
     <p>Dieses Dokument ist der Leitfaden für neue Benutzer der Fink Mailing-Listen. Der Leitfaden soll zeigen wie man Anfragen in der Mailing-Liste effektiv gestaltet, damit Probleme umgehend und kompetent gelöst werden.
     </p>
@@ -72,7 +72,7 @@ error unpacking foo
 Checking for bar-config...no
 Error:  bar-config not found
 ....</codeblock>
-                <p>Denken sie, dass es helfen könnte, dann können sie auf den entsprechende Teil der Log-Datei der Konfiguration aufnehmen, z. B. <filename>/sw/src/foo-3.141-6/foo-3.141/config.log</filename>. <em>Aber bitte nicht die gesamte Datei; sie ist meistens sehr lang.</em>
+                <p>Denken sie, dass es helfen könnte, dann können sie auf den entsprechende Teil der Log-Datei der Konfiguration aufnehmen, z. B. <filename>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</filename>. <em>Aber bitte nicht die gesamte Datei; sie ist meistens sehr lang.</em>
                 </p>
                 </li>
                 <li>Tritt der Fehler gleich nach Beginn der Paketerstellung auf, dann wird die letzte Zeile benötigt, die der Compiler versuchte auszuführen:

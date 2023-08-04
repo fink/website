@@ -3,7 +3,7 @@
 <document filename="index" lang="de" >
   <title>Unix Programme nach Darwin und Mac OS X portieren</title>
   <shorttitle>Porting</shorttitle>
-  <cvsid>$Id: porting.de.xml,v 1.1 2015/03/10 22:48:59 k-m_schindler Exp $</cvsid>
+  <cvsid>$Id: porting.de.xml,v 1.2 2023/08/04 5:08:13 nieder Exp $</cvsid>
   <preface>
     <p>
 			Dieses Dokument gibt Tipps, wie man ein Unix Programm nach Darwin und
@@ -765,7 +765,7 @@ IFS="${IFS=     }"; save_ifs="$IFS"; IFS='~'
               benötigt. LibSystem wird automatisch gelinkt und
               <filename>/usr/include</filename> wird automatisch durchsucht, so
               dass sie die Optionen <code>-lgnugetopt</code> und
-              <code>-I/sw/include/gnugetopt</code> nicht mehr benötigen. Sie
+              <code>-I/opt/sw/include/gnugetopt</code> nicht mehr benötigen. Sie
               wurden bisher verwendet, um &quot;libgnugetopt&quot; aus Fink zu
               verwenden.
             </p>

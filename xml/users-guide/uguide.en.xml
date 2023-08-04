@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Fink User's Guide</title>
   <shorttitle>User's Guide</shorttitle>
-  <cvsid>$Id: uguide.en.xml,v 1.57 2019/01/19 10:11:12 nieder Exp $</cvsid>
+  <cvsid>$Id: uguide.en.xml,v 1.58 2023/08/04 4:49:23 nieder Exp $</cvsid>
   <preface>
     <p>
 This document gives an overview over all features of Fink.
@@ -217,7 +217,7 @@ The script will run some checks on your system and use sudo to become
 root - that will prompt you for your password.
 Then, the script will ask you for the installation path.
 Unless you have a good reason, you should use the default -
-<filename>/sw</filename>.
+<filename>/opt/sw</filename>.
 Only that will allow you to install downloaded binary packages later
 on.
 Also, all examples use that path; be sure to substitute your actual
@@ -253,12 +253,12 @@ the package management programs themselves, you must set your PATH
 environment variable (and some others) accordingly.  Current Fink versions do this automatically, and typically you will just need to open a new Terminal.app window to ensure that these settings are applied.  However, in some instances you will need to proceed manually.</p>
 <p>In most cases, you can do this by entering the command
       </p>
-      <codeblock>/sw/bin/pathsetup.sh</codeblock>
+      <codeblock>/opt/sw/bin/pathsetup.sh</codeblock>
       <p>
 	in a terminal window. </p>
       <p>Note that for some older versions of
 	fink the program was called  <filename>pathsetup.command</filename>, and one could
-	run it via <code>open /sw/bin/pathsetup.command</code>.      </p>
+	run it via <code>open /opt/sw/bin/pathsetup.command</code>.</p>
       <p>However, if this doesn't work for some reason, you can configure it
 manually.  This will depend on the shell you are using, however.
 You can determine the shell you are using by opening a terminal and
@@ -280,7 +280,7 @@ running the command:
    you have an existing <code>.bash_profile</code> file, you should use that
    instead):
   </p>
-          <codeblock>. /sw/bin/init.sh</codeblock>
+          <codeblock>. /opt/sw/bin/init.sh</codeblock>
           <p>
    If you don't know how to add the line, run these commands:
   </p>
@@ -288,7 +288,7 @@ running the command:
 pico .profile</codeblock>
           <p>
    You are now in a full-screen (well, full terminal window) text editor and
-   can simply start typing the <code>. /sw/bin/init.sh</code> line.  It's
+   can simply start typing the <code>. /opt/sw/bin/init.sh</code> line.  It's
    okay if there is a note that says "New file".  Be sure that you pressed
    Return at least once after the line, then press Control-O, Return,
    Control-X to get out of the editor.
@@ -301,7 +301,7 @@ pico .profile</codeblock>
    If you use tcsh, add the following line to
    the file <filename>.cshrc</filename> in your home directory:
   </p>
-          <codeblock>source /sw/bin/init.csh</codeblock>
+          <codeblock>source /opt/sw/bin/init.csh</codeblock>
           <p>
    If you don't know how to add the line, run these commands:
   </p>
@@ -309,7 +309,7 @@ pico .profile</codeblock>
 pico .cshrc</codeblock>
           <p>
    You are now in a full-screen (well, full terminal window) text editor
-   and can simply start typing the <code>source /sw/bin/init.csh</code>
+   and can simply start typing the <code>source /opt/sw/bin/init.csh</code>
    line.
    It's okay if there is a note that says "New file".
    Be sure that you pressed Return at least once after the line, then
@@ -752,7 +752,7 @@ general, these options are meant for advanced users only.
 </p>
       <p>
 The <em>fink.conf</em> file is located at
-<code>/sw/etc/fink.conf</code>, and can be edited in your favourite
+<code>/opt/sw/etc/fink.conf</code>, and can be edited in your favourite
 text editor. You will need super-user rights to edit it.
 </p>
     </section>
@@ -785,7 +785,7 @@ this category.
           <p>
             <em>Basepath:</em> path</p>
           <p>
-Tells <em>fink</em> where it was installed. Defaults to <em>/sw</em> unless you
+Tells <em>fink</em> where it was installed. Defaults to <em>/opt/sw</em> unless you
 changed it during the initial installation of the Fink distribution. You should
 <em>not</em> change this value after installation, it will confuse <em>fink</em>.
 </p>
@@ -821,10 +821,10 @@ unstable/crypto - unstable cryptographic packages
 unstable/main   - other unstable packages
 </codeblock>
           <p>
-You may also add your own trees in <code>/sw/fink/dists</code> for your own purposes, but this is not necessary in most
+You may also add your own trees in <code>/opt/sw/fink/dists</code> for your own purposes, but this is not necessary in most
 circumstances. The default trees are "local/main local/bootstrap
 stable/main". This list is automatically kept in sync with the
-<code>/sw/etc/apt/sources.list</code> file.</p><p>The order of the trees is meaningful, as packages from later trees in the list may
+<code>/opt/sw/etc/apt/sources.list</code> file.</p><p>The order of the trees is meaningful, as packages from later trees in the list may
            override packages from earlier ones.</p>
         -</li>
         <li>
@@ -834,7 +834,7 @@ stable/main". This list is automatically kept in sync with the
 running. Mac OS X 10.0 and earlier are not supported, and 10.1 and 10.2 are no
 longer supported by current versions of <code>fink</code>. Mac OS X 10.2 users are 
 restricted to fink-0.24.7, released in June 2005.  This
-field is set by running the <code>/sw/lib/fink/postinstall.pl</code>
+field is set by running the <code>/opt/sw/lib/fink/postinstall.pl</code>
 script. You should not need to alter this value manually.
 </p>
         </li>
@@ -842,7 +842,7 @@ script. You should not need to alter this value manually.
           <p>
             <em>FetchAltDir:</em> path</p>
           <p>usually <code>fink</code> will store the sources it fetches in
-<code>/sw/src</code>. You can specify an alternate directory to look for
+<code>/opt/sw/src</code>. You can specify an alternate directory to look for
 downloaded source code in using this option. For example:
 </p>
           <codeblock>FetchAltDir: /usr/src</codeblock>
@@ -872,7 +872,7 @@ The default value is 1.
         <li>
           <p>
             <em>NoAutoIndex:</em> boolean</p>
-          <p>Fink caches its package description files in /sw/var/db/fink.db to
+          <p>Fink caches its package description files in /opt/sw/var/db/fink.db to
 save it having to read and parse them all every time it runs. Fink
 checks whether or not the package index needs to be updated unless this
 option is set to "True". It defaults to "False" and it is not
@@ -894,8 +894,8 @@ manually.</p>
 	    <em>Buildpath:</em> path</p>
 	  <p>Fink needs to create several temporary directories for
 each package it compiles from source. By default, they are placed
-in <filename>/sw/src</filename> on Panther and earlier, and 
-<filename>/sw/src/fink.build</filename> on Tiger. If you want them to be
+in <filename>/opt/sw/src</filename> on Panther and earlier, and 
+<filename>/opt/sw/src/fink.build</filename> on Tiger. If you want them to be
 somewhere else, specify the path here. See the descriptions of
 the <code>KeepRootDir</code> and <code>KeepBuildDir</code> fields
  in the <xref section="developer">Developer Settings</xref> section of this document for more information about these temporary
@@ -1019,7 +1019,7 @@ would like to use.</p>
             <em>MirrorContinent:</em> three letter code</p>
           <p>You should change this value using the <code>fink configure</code>
 command. The three letter code is one found in
-<code>/sw/lib/fink/mirror/_keys</code>.
+<code>/opt/sw/lib/fink/mirror/_keys</code>.
 For example, if you live in Europe:</p>
           <codeblock>MirrorContinent: eur</codeblock>
         </li>
@@ -1028,7 +1028,7 @@ For example, if you live in Europe:</p>
             <em>MirrorCountry:</em> six letter code</p>
           <p>You should change this value using the <code>fink configure</code>
 command. The three letter code is one found in
-<code>/sw/lib/fink/mirror/_keys</code>.
+<code>/opt/sw/lib/fink/mirror/_keys</code>.
 For example, if you live in Austria:</p>
           <codeblock>MirrorCountry: eur-AT</codeblock>
         </li>
@@ -1103,7 +1103,7 @@ only operates on that single <code>fink</code> invocation.
           <p>
             <em>CCacheDir:</em> path</p>
           <p>If the Fink package <code>ccache-default</code> is installed, the cache files it makes
-while building Fink packages will be placed here. Defaults to <filename>/sw/var/ccache</filename>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <filename>$HOME/.ccache</filename>, potentially putting root-owned files into your home directory.
+while building Fink packages will be placed here. Defaults to <filename>/opt/sw/var/ccache</filename>. If set to <code>none</code>, fink will not set the CCACHE_DIR environment variable and ccache will use <filename>$HOME/.ccache</filename>, potentially putting root-owned files into your home directory.
 <em>Only available in fink newer than version 0.21.0</em>.
           </p>
         </li>
@@ -1111,7 +1111,7 @@ while building Fink packages will be placed here. Defaults to <filename>/sw/var/
            Specify a notification plugin to tell you when packages have been
            installed/uninstalled.  Defaults to Growl (requires <code>Mac::Growl</code> to
            operate).  Other plugins can be found in the
-           <filename>/sw/lib/perl5/Fink/Notify</filename> directory.  On <code>fink-0.25</code> and later they are listed in the output of <code>fink plugins</code>.  See the <link url="http://wiki.finkproject.org/index.php/Fink:Notificati on_Plugins">Fink Developer Wiki</link> for more information.
+           <filename>/opt/sw/lib/perl5/Fink/Notify</filename> directory.  On <code>fink-0.25</code> and later they are listed in the output of <code>fink plugins</code>.  See the <link url="http://wiki.finkproject.org/index.php/Fink:Notificati on_Plugins">Fink Developer Wiki</link> for more information.
 </p></li>
         <li><p><em>AutoScanpackages:</em> boolean
            </p><p>When <code>fink</code> builds new packages, <code>apt-get</code> does not immediately know about
@@ -1133,7 +1133,7 @@ while building Fink packages will be placed here. Defaults to <filename>/sw/var/
     <section name="sourceslist">
       <title>Managing apt's sources.list file</title>
       <p>Fink actively manages the file
-<code>/sw/etc/apt/sources.list</code> which is used by apt to locate
+<code>/opt/sw/etc/apt/sources.list</code> which is used by apt to locate
 binary files for installation.  The default sources.list file looks 
 something like this, adjusted to match your Distribution and Trees:
 </p>
@@ -1143,10 +1143,10 @@ something like this, adjusted to match your Distribution and Trees:
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in 
-# /sw/etc/fink.conf
+# /opt/sw/etc/fink.conf
 # NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
-deb file:/sw/fink local main
-deb file:/sw/fink stable main crypto
+deb file:/opt/sw/fink local main
+deb file:/opt/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release
@@ -1346,7 +1346,7 @@ the dpkg tool (usually this poses no problem, though).</p>
 the <filename>.deb</filename> compressed package file intact. This means that you can
 re-install the package later without going through the compile process
 again. If you need the disk space, you can remove the <filename>.deb</filename> from the
-<filename>/sw/fink/dists</filename> tree.</p>
+<filename>/opt/sw/fink/dists</filename> tree.</p>
       <p>These flags can be used with the <em>fink remove</em> command
 </p>
       <codeblock>-h,--help             - Show the options which are available.
@@ -1546,7 +1546,7 @@ others.
 	release. It checks the Fink website to see if a new version is
 	available. It then downloads the package descriptions and updates
 	the core packages, including <code>fink</code> itself. This command can upgrade
-	to regular releases, but it can also setup your <filename>/sw/fink/dists</filename>
+	to regular releases, but it can also setup your <filename>/opt/sw/fink/dists</filename>
 	directory tree for direct git or rsync updates, if you select one of those options the first time this command is run.  This means that you then
 	will be able to access the very latest revisions of all packages.
 </p>
@@ -1616,7 +1616,7 @@ the list of available packages in the binary distribution is also updated.
 --all                - All of the above modes. (new in fink-0.26.0)</codeblock>
       <p>If no mode is specified, <code>--debs --sources</code> is the default action. </p>
       <p>In addition, the following options may be used:</p>
-      <codeblock>-k,--keep-src        - Move old source files to /sw/src/old/ instead of deleting them.
+      <codeblock>-k,--keep-src        - Move old source files to /opt/sw/src/old/ instead of deleting them.
 -d,--dry-run         - Print the names of the files that would be deleted, but
                        do not actually delete them.
 -h,--help            - Show the modes and options which are available.</codeblock>

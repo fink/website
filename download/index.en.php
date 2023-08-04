@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2020/03/28 10:24:00 $';
+$cvs_date = '$Date: 2023/08/03 20:24:10 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -47,7 +47,7 @@ are edited. When the utility has finished, you are set to go!
 If anything goes wrong during this process, you can try again by launching 
 the pathsetup application which appears on the installer disk, or by
 running (from the command line in a Terminal.app window) 
-</p><pre>/sw/bin/pathsetup.sh</pre><p>
+</p><pre>/opt/sw/bin/pathsetup.sh</pre><p>
 (This step should also be repeated by any other users on your system: 
 each user must run pathsetup in his or her own account.)
 </p><p>

@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.en.xml,v 1.25 2013/01/03 18:17:34 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: x11.en.xml,v 1.26 2023/08/04 5:08:13 nieder Exp $</cvsid>
   <preface>
     <p>
       This document is about running X11  on Apple's Mac
@@ -444,7 +444,7 @@ nano $HOME/.xinitrc.d/94-wmaker.sh</codeblock>
       <p>
         (or use your favorite editor).  Then put the following contents in
         <filename>94-wmaker.sh</filename>:</p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec wmaker
       </codeblock>
@@ -461,7 +461,7 @@ nano $HOME/.xinitrc.d/74-xlogo.sh</codeblock>
       <p>
         (again, feel free to use your favorite editor).  Then put the following contents in
         <filename>74-xlogo.sh</filename>:</p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 xlogo &amp;</codeblock>
       <p>Save the file, then use</p>
       <codeblock>chmod a+x 74-xlogo.sh</codeblock>
@@ -474,7 +474,7 @@ xlogo &amp;</codeblock>
         Example: full GNOME session.  Create an executable <filename>94-gnome-session.sh</filename>
         with the following contents:
       </p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</codeblock>
@@ -482,7 +482,7 @@ exec gnome-session</codeblock>
         Example: rootless GNOME session.  Create an executable <filename>94-gnome-panel.sh</filename>
         with the following contents:
       </p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-panel</codeblock>
@@ -490,7 +490,7 @@ exec gnome-panel</codeblock>
         Example: KDE3.  Create an executable <filename>94-startkde.sh</filename> with the following
         contents:
       </p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 exec startkde</codeblock>
       <p>
         (startkde automatically starts a window manager and uses <code>quartz-wm --only-proxy</code>)
@@ -499,12 +499,12 @@ exec startkde</codeblock>
         Example: KDE4.  Create an executable <filename>94-startkde.sh</filename> with the following
         contents:
       </p>
-      <codeblock>. /sw/bin/init.sh
-exec /sw/opt/kde4/x11/bin/startkde</codeblock>
+      <codeblock>. /opt/sw/bin/init.sh
+exec /opt/sw/opt/kde4/x11/bin/startkde</codeblock>
       <p><em>Notes:</em></p>
       <ul>
         <li>
-          Starting each script with <code>. /sw/bin/init.sh</code> ensures that programs which require
+          Starting each script with <code>. /opt/sw/bin/init.sh</code> ensures that programs which require
           other items from the Fink tree can find them.
         </li>
         <li>
@@ -551,7 +551,7 @@ exec /sw/opt/kde4/x11/bin/startkde</codeblock>
       <codeblock>cp /usr/X11/lib/X11/xinit/xinitrc ~/.xinitrc</codeblock>
       <p>
         To ensure reliable operation of Fink programs in <filename>.xinitrc</filename>, you should
-        put <code>. /sw/bin/init.sh</code> right at the beginning of the file to make sure the
+        put <code>. /opt/sw/bin/init.sh</code> right at the beginning of the file to make sure the
         environment is set up correctly.
       </p>
       <p>
@@ -579,7 +579,7 @@ exec /sw/opt/kde4/x11/bin/startkde</codeblock>
       <p>
         Example:  turn the X11 bell off, starts some clients and finally execute the Enlightenment
         window manager:</p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -589,12 +589,12 @@ xterm &amp;
 
 exec enlightenment</codeblock>
       <p>Example: start GNOME:</p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</codeblock>
       <p>Finally, to start KDE3:</p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 exec startkde
 </codeblock>
     </section>
@@ -613,7 +613,7 @@ exec startkde
         <li>
           <p>
             The <code>xinitrc</code> package provides adminstrator entry points. Create the file
-            <filename>/sw/etc/xinitrc-last-hook</filename> as a superuser, and
+            <filename>/opt/sw/etc/xinitrc-last-hook</filename> as a superuser, and
             give it the following contents:
           </p>
           <codeblock>#!/bin/sh
@@ -760,7 +760,7 @@ Probably some client program tries to use it anyway...
         <filename>/usr/X11/bin</filename>, to the PATH variable.  Fink is normally set
         up to do this automatically, so this may indicate that your Fink environment
         isn't being loaded.  Running</p>
-      <codeblock>/sw/bin/pathsetup.sh</codeblock>
+      <codeblock>/opt/sw/bin/pathsetup.sh</codeblock>
       <p>
         in a terminal window, and then starting a new window, will typically resolve this.
       </p>
@@ -813,7 +813,7 @@ if the last file has an '&amp;', there will be no error, but X11 will quit.
 See the sections on <xref chapter="run-xfree86" section="xinitrc-d">.xinitrc.d</xref> and
 <xref chapter="run-xfree86" section="xinitrc">the .xinitrc file </xref> for more details.</p>      
 <p>To avoid this, remember to set up the PATH using</p>
-<codeblock>. /sw/bin/init.sh</codeblock>
+<codeblock>. /opt/sw/bin/init.sh</codeblock>
 <p>in your startup files, 
 and also to end with a long-lived program that is
 not started in the background, e.g. a window manager or session manager with no '&amp;'.
@@ -868,13 +868,13 @@ OS X.
         within your Fink tree for
         some of their functions may need special treatment to get them to work when called from the
         Application menu.  Instead of putting just the full path to the filename, e.g.</p>
-        <codeblock>/sw/bin/emacs</codeblock>
+        <codeblock>/opt/sw/bin/emacs</codeblock>
           <p>
             you'll want to use something like the following, if you're using bash as your
             default shell:</p>
-          <codeblock>. /sw/bin/init.sh ; emacs</codeblock>
+          <codeblock>. /opt/sw/bin/init.sh ; emacs</codeblock>
           <p>and if you're using tcsh:</p>
-          <codeblock>source /sw/bin/init.csh ; emacs</codeblock>
+          <codeblock>source /opt/sw/bin/init.csh ; emacs</codeblock>
           <p>
             This makes sure that the application has the correct PATH information.  You can use this
             syntax for any Fink-installed application.

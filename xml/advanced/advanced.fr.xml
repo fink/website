@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Notions complexes dans Fink</title>
 <shorttitle>Notions complexes</shorttitle>
-<cvsid>$Id: advanced.fr.xml,v 1.6 2012/11/11 15:20:12 gecko2 Exp $</cvsid>
+<cvsid>$Id: advanced.fr.xml,v 1.7 2023/08/04 5:08:13 nieder Exp $</cvsid>
 <preface>
 <p>Ce document aborde quelques notions complexes qui ne se trouvent pas dans le <link url="/doc/users-guide/">Guide de l'utilisateur</link>.</p>
 </preface>
@@ -19,14 +19,14 @@
 <section name="master">
 <title>Étapes sur le serveur "maître" (serveur de compilation) </title>
 <ol>
-<li>Installez Fink dans le répertoire <filename>/sw</filename> (chemin par défaut, utilisez un lien symbolique si nécessaire).</li>
+<li>Installez Fink dans le répertoire <filename>/opt/sw</filename> (chemin par défaut, utilisez un lien symbolique si nécessaire).</li>
 <li>Construisez les paquets comme d'habitude. Il n'est pas nécessaire de les installer.</li>
 <li><p>Exécutez <code>fink scanpackages</code> chaque fois que le jeu de paquets construits change. Fink générera alors des index apt pour tous les arbres activés.</p>
 <p>Au lieu de la commande précédente, vous pouvez exécuter <code>fink cleanup</code>. Les paquets sources et binaires obsolètes seront alors supprimés. La commande <code>scanpackages</code> est appelée automatiquement à la fin du processus de nettoyage.</p></li>
-<li>Démarrez un serveur web : vous pouvez, par exemple, activer "Partage Web personnel" dans la section Partage des Préférences Système, puis configurer <code>httpd</code> de telle sorte qu'il serve le répertoire <filename>/sw/fink</filename> en ajoutant les lignes suivantes au fichier <filename>/etc/httpd/httpd.conf</filename> :
+<li>Démarrez un serveur web : vous pouvez, par exemple, activer "Partage Web personnel" dans la section Partage des Préférences Système, puis configurer <code>httpd</code> de telle sorte qu'il serve le répertoire <filename>/opt/sw/fink</filename> en ajoutant les lignes suivantes au fichier <filename>/etc/httpd/httpd.conf</filename> :
 <codeblock>
-Alias /fink /sw/fink
-&lt;Directory /sw/fink&gt;
+Alias /fink /opt/sw/fink
+&lt;Directory /opt/sw/fink&gt;
   Options Indexes FollowSymLinks
 &lt;/Directory&gt;
 </codeblock></li>
@@ -40,9 +40,9 @@ Alias /fink /sw/fink
 <section name="client">
 <title>Étapes sur les machines clientes</title>
 <ol>
-<li>Installez Fink sur <filename>/sw</filename> (chemin de base par défaut).</li>
-<li>Exécutez <code>fink configure</code> et activez l'option de téléchargement des paquets à partir de la distribution binaire : "UseBinaryDist: true" dans le fichier <filename>/sw/etc/fink.conf</filename>.</li>
-<li>Ouvrez le fichier <filename>/sw/etc/apt/sources.list</filename> et ajoutez-y les lignes correspondant à vos arbres Fink. Par exemple, si l'adresse IP de votre machine de compilation est 192.168.42.7, vous devez ajouter les lignes suivantes :
+<li>Installez Fink sur <filename>/opt/sw</filename> (chemin de base par défaut).</li>
+<li>Exécutez <code>fink configure</code> et activez l'option de téléchargement des paquets à partir de la distribution binaire : "UseBinaryDist: true" dans le fichier <filename>/opt/sw/etc/fink.conf</filename>.</li>
+<li>Ouvrez le fichier <filename>/opt/sw/etc/apt/sources.list</filename> et ajoutez-y les lignes correspondant à vos arbres Fink. Par exemple, si l'adresse IP de votre machine de compilation est 192.168.42.7, vous devez ajouter les lignes suivantes :
 <codeblock>
 deb http://192.168.42.7/fink stable main crypto
 deb http://192.168.42.7/fink unstable main crypto

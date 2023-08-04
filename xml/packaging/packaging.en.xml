@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 <title>Creating Fink Packages</title>
 <shorttitle>Packaging</shorttitle>
-<cvsid>$Id: packaging.en.xml,v 1.1315 2023/01/22 6:40:32 nieder Exp $</cvsid>
+<cvsid>$Id: packaging.en.xml,v 1.1316 2023/08/04 4:54:31 nieder nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -101,8 +101,8 @@ dashes in between, e.g. openssh-2.9p1-2.
 <section name="trees"><title>Tree Layout</title>
 <p>
 Package descriptions are read from the <code>finkinfo</code>
-directories below the <filename>/sw/fink/dists</filename> directory.
-The "Trees" setting in <filename>/sw/etc/fink.conf</filename> controls
+directories below the <filename>/opt/sw/fink/dists</filename> directory.
+The "Trees" setting in <filename>/opt/sw/etc/fink.conf</filename> controls
 which directories are read.
 The name of package description files must be the full package name
 plus the extension ".info".
@@ -278,7 +278,7 @@ part of <code>%f</code>.
 <item><itemt>%p, %P</itemt>
 <itemd>
 <p>
-the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You must not assume all users have Fink installed in <filename>/sw</filename>; use <code>%p</code> to get the correct path.
+the <em>p</em>refix where Fink is installed, e.g. <filename>/opt/sw</filename>. You must not assume all users have Fink installed in <filename>/opt/sw</filename>; use <code>%p</code> to get the correct path.
 </p>
 </itemd></item>
 
@@ -286,11 +286,11 @@ the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You 
 <itemd>
 <p>
 the <em>d</em>estination directory where the tree to be packaged is built, e.g.
-<filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename>. This temporary directory serves
+<filename>/opt/sw/src/fink.build/root-gimp-1.2.1-1</filename>. This temporary directory serves
 as root during the installation phase of compiling a package. You must not assume that
 <filename>root-%f</filename> will be in <filename>%p/src</filename> since
 a user can change that directory using the <code>Buildpath</code> field
-in <filename>/sw/etc/fink.conf</filename>.
+in <filename>/opt/sw/etc/fink.conf</filename>.
 </p>
 </itemd></item>
 
@@ -327,11 +327,11 @@ the path where the p<em>a</em>tches can be found. As of fink-0.29.0, this variab
 <item><itemt>%b</itemt>
 <itemd>
 <p>
-the <em>b</em>uild directory, e.g. <filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>.
+the <em>b</em>uild directory, e.g. <filename>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>.
 You must not assume that
 <filename>%f</filename> will be in <filename>%p/src</filename> since
 a user can change that directory using the <code>Buildpath</code> field
-in <filename>/sw/etc/fink.conf</filename>.
+in <filename>/opt/sw/etc/fink.conf</filename>.
 The innermost directory is named based on the <code>Source</code>
 filename, or is the value of the <code>SourceDirectory</code> field
 (if present), or is not used if <code>NoSourceDirectory</code>
@@ -1049,8 +1049,8 @@ May 2003,  has been revised as of April 2004.
 <p>
 Traditionally, the Fink packages for perl modules had the suffix 
 <code>-pm</code>, and were built using the <code>Type: perl</code> 
-directive, which stores the perl module's files in <filename>/sw/lib/perl5</filename> and/or
-<filename>/sw/lib/perl5/darwin</filename>.  Under the policy
+directive, which stores the perl module's files in <filename>/opt/sw/lib/perl5</filename> and/or
+<filename>/opt/sw/lib/perl5/darwin</filename>.  Under the policy
 now in place, this storage location is only 
 permitted for perl modules which are independent of the version of perl 
 being used to compile them (and which do not depend on other perl modules
@@ -1066,7 +1066,7 @@ of a file with a suffix <code>.bundle</code>.
 A version-dependent perl module must be built using a versioned binary
 of perl, such as <code>perl5.12.3</code>, and must store its files in
 versioned subdirectories of the standard perl directories, such as
-<filename>/sw/lib/perl5/5.12.3</filename> and <filename>/sw/lib/perl5/5.12.3/darwin</filename>.  By convention, package names
+<filename>/opt/sw/lib/perl5/5.12.3</filename> and <filename>/opt/sw/lib/perl5/5.12.3/darwin</filename>.  By convention, package names
 use the suffix <code>-pm5123</code> for
 a perl module of version 5.12.3.  Similar storage and naming conventions
 are in force for other versions of perl, which include 
@@ -1222,7 +1222,7 @@ this policy only applies to the <filename>emacs21</filename>, <filename>emacs22<
 <filename>emacs23</filename> packages in fink at the moment, not to the xemacs package.  (This
 may change some day in the future.)    And second, unlike the Debian policy,
  Fink packages are allowed to install things directly into 
-/sw/share/emacs/site-lisp.
+/opt/sw/share/emacs/site-lisp.
 </p>
 
 </section>
@@ -1299,7 +1299,7 @@ vendors that have control over the <filename>/</filename> and
 <filename>/usr</filename> hierarchies.
 Fink is an add-on distribution that controls only its install
 directory (or prefix).
-The examples use the default prefix of <filename>/sw</filename>.
+The examples use the default prefix of <filename>/opt/sw</filename>.
 </p>
 </section>
 
@@ -1310,7 +1310,7 @@ Files should go into the following subdirectories of the hierarchy:
 
 <itemtable>
 
-<item><itemt><filename>/sw/bin</filename></itemt>
+<item><itemt><filename>/opt/sw/bin</filename></itemt>
 <itemd>
 <p>
 This directory is for general executable programs.
@@ -1318,7 +1318,7 @@ There are no subdirectories.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/sbin</filename></itemt>
+<item><itemt><filename>/opt/sw/sbin</filename></itemt>
 <itemd>
 <p>
 This directory is for executable programs that are intended to be used
@@ -1328,7 +1328,7 @@ There are no subdirectories.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/include</filename></itemt>
+<item><itemt><filename>/opt/sw/include</filename></itemt>
 <itemd>
 <p>
 This directory is for C and C++ header files.
@@ -1338,13 +1338,13 @@ C headers, those headers <em>must</em> go to a subdirectory.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/lib</filename></itemt>
+<item><itemt><filename>/opt/sw/lib</filename></itemt>
 <itemd>
 <p>
 This directory is for architecture-dependent data files and
 libraries.
 Static and shared libraries should be placed directly in
-<filename>/sw/lib</filename> unless there is a good reason not to.
+<filename>/opt/sw/lib</filename> unless there is a good reason not to.
 This is also the place for executables that should not be executed
 directly by the user (which would otherwise be placed in libexec).
 </p>
@@ -1353,8 +1353,8 @@ A package is free to create a subdirectory to store private data or
 loadable modules.
 Make sure to use directory names that make sense for compatibility.
 It is wise to use the package major version in the directory name or
-as an additional hierarchy level, e.g. <filename>/sw/lib/perl5</filename>
-or <filename>/sw/lib/apache/1.3</filename>.
+as an additional hierarchy level, e.g. <filename>/opt/sw/lib/perl5</filename>
+or <filename>/opt/sw/lib/apache/1.3</filename>.
 Care should be taken when the host type is used to create
 directories.
 A <code>powerpc-apple-darwin1.3.3</code> directory is bad for
@@ -1363,43 +1363,43 @@ compatibility, <code>powerpc-apple-darwin1.3</code> or just
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/lib/ppc64</filename>
-<filename>/sw/lib/x86_64</filename></itemt>
+<item><itemt><filename>/opt/sw/lib/ppc64</filename>
+<filename>/opt/sw/lib/x86_64</filename></itemt>
 <itemd>
 <p>
 This directory is for 64-bit libraries on 32-bit systems, 
-with <filename>/sw/lib/ppc64</filename>
+with <filename>/opt/sw/lib/ppc64</filename>
 being used under powerpc architecture, and
-<filename>/sw/lib/x86_64</filename> being used under i386 architecture.
+<filename>/opt/sw/lib/x86_64</filename> being used under i386 architecture.
 Libraries which have been built 'fat' should be stored in
-<filename>/sw/lib</filename> instead, and should be so indicated by
+<filename>/opt/sw/lib</filename> instead, and should be so indicated by
 using '32-64' in the corresponding Shlibs entry.  Note that under
 the x86_64 architecture, 64-bit
-libraries are to be stored in <filename>/sw/lib</filename>.
+libraries are to be stored in <filename>/opt/sw/lib</filename>.
 </p>
 </itemd></item>
 
 
-<item><itemt><filename>/sw/share</filename></itemt>
+<item><itemt><filename>/opt/sw/share</filename></itemt>
 <itemd>
 <p>
 This directory is for architecture-independent data files.
-The same rules as for <filename>/sw/lib</filename> apply.
+The same rules as for <filename>/opt/sw/lib</filename> apply.
 Some common subdirectories are described below.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/share/man</filename></itemt>
+<item><itemt><filename>/opt/sw/share/man</filename></itemt>
 <itemd>
 <p>
 This directory contains manual pages.
 It is organized into the usual section tree.
-Every program in <filename>/sw/bin</filename> and
-<filename>/sw/sbin</filename> should have an associated manual page here.
+Every program in <filename>/opt/sw/bin</filename> and
+<filename>/opt/sw/sbin</filename> should have an associated manual page here.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/share/info</filename></itemt>
+<item><itemt><filename>/opt/sw/share/info</filename></itemt>
 <itemd>
 <p>
 This directory contains documentation in the Info format (produced
@@ -1416,7 +1416,7 @@ There are no subdirectories.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/share/doc</filename></itemt>
+<item><itemt><filename>/opt/sw/share/doc</filename></itemt>
 <itemd>
 <p>
 This directory contains documentation that is neither a man page nor
@@ -1430,30 +1430,30 @@ Hint: Just use <code>%n</code>.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/share/locale</filename></itemt>
+<item><itemt><filename>/opt/sw/share/locale</filename></itemt>
 <itemd>
 <p>
 This directory contains message catalogs for internationalization.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/opt</filename></itemt>
+<item><itemt><filename>/opt/sw/opt</filename></itemt>
 <itemd>
 <p>
 The <filename>opt</filename> directory stores "add-on" software packages,
-which for some reason cannot use the standard <filename>/sw/bin</filename>,
-<filename>/sw/lib</filename>, <filename>/sw/include</filename>, etc. 
+which for some reason cannot use the standard <filename>/opt/sw/bin</filename>,
+<filename>/opt/sw/lib</filename>, <filename>/opt/sw/include</filename>, etc. 
 directories.
-A package to be installed in <filename>/sw/opt</filename>
+A package to be installed in <filename>/opt/sw/opt</filename>
  must locate its static files in a separate 
-<filename>/sw/opt/&lt;package&gt;</filename>
+<filename>/opt/sw/opt/&lt;package&gt;</filename>
  directory tree, where <filename>&lt;package&gt;</filename> 
 is a name that describes the software package.
 (Available in fink 0.29.7 or later.)
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/var</filename></itemt>
+<item><itemt><filename>/opt/sw/var</filename></itemt>
 <itemd>
 <p>
 The <filename>var</filename> directory stores variable data.
@@ -1462,7 +1462,7 @@ high scores and log files.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/etc</filename></itemt>
+<item><itemt><filename>/opt/sw/etc</filename></itemt>
 <itemd>
 <p>
 This directory holds configuration files.
@@ -1473,7 +1473,7 @@ that it is identifiable.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/src</filename></itemt>
+<item><itemt><filename>/opt/sw/src</filename></itemt>
 <itemd>
 <p>
 This directory is for storing and building source code.
@@ -1481,7 +1481,7 @@ Nothing should be installed here by a package.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/Applications</filename></itemt>
+<item><itemt><filename>/opt/sw/Applications</filename></itemt>
 <itemd>
 <p>
 This directory is for storing OS X-style applications which are
@@ -1489,7 +1489,7 @@ launched by double-clicking rather than from the command line.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/Library/Frameworks</filename></itemt>
+<item><itemt><filename>/opt/sw/Library/Frameworks</filename></itemt>
 <itemd>
 <p>
 This directory is for storing OS X-style frameworks, sometimes
@@ -1504,11 +1504,11 @@ used by OS X-style applications.
 <section name="avoid"><title>Things to Avoid</title>
 <p>
 No other directories than the ones mentioned above should exist in
-<filename>/sw</filename>.
+<filename>/opt/sw</filename>.
 In particular, the following should not be used:
-<filename>/sw/man</filename>, <filename>/sw/info</filename>,
-<filename>/sw/doc</filename>, <filename>/sw/libexec</filename>,
-<filename>/sw/lib/locale</filename>.
+<filename>/opt/sw/man</filename>, <filename>/opt/sw/info</filename>,
+<filename>/opt/sw/doc</filename>, <filename>/opt/sw/libexec</filename>,
+<filename>/opt/sw/lib/locale</filename>.
 </p>
 </section>
 
@@ -1563,7 +1563,7 @@ libc++.
 </p>
 <p>A new method for ensuring the correct g++ compiler was introduced with the 
 10.4-transitional distribution.  During compilation, a directory
-<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
+<code>/opt/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
 number) is added to the PATH during compilation.  This directory contains
 shell scripts which ensure that the correct compiler and version of g++ is used.
 </p>
@@ -1618,12 +1618,12 @@ for OS X 10.4 through OS X 10.9.
 <p>To understand some of the fields, you need some knowledge of the
 build process Fink uses. It consists of five phases: unpack, patch,
 compile, install and build. The example paths below are for an
-installation in <filename>/sw</filename> and the package gimp-1.2.1-1.</p>
-<p>In the <em>unpack phase</em> the directory <filename>/sw/src/fink.build/gimp-1.2.1-1</filename> is created
+installation in <filename>/opt/sw</filename> and the package gimp-1.2.1-1.</p>
+<p>In the <em>unpack phase</em> the directory <filename>/opt/sw/src/fink.build/gimp-1.2.1-1</filename> is created
 and the source tarball(s) are unpacked there. In most cases, this will
 create a directory gimp-1.2.1 with the source in it; all following
 steps will be executed in that directory
-(i.e. <filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>). Details can be controlled with
+(i.e. <filename>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>). Details can be controlled with
 the SourceDirectory, NoSourceDirectory and Source<em>N</em>ExtractDir
 fields.</p>
 <p>In the <em>patch phase</em> the source is patched so that it will
@@ -1638,9 +1638,9 @@ for the build (a new feature in fink 0.25, currently achieved by building in
 maintainer mode), the TestScript will be run immediately after the
 CompileScript.</p>
 <p>In the <em>install phase</em> the package is installed to a temporary
-directory, <filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename> (= %d). (Note the "root-" part.)
-All files that would normally be installed to <filename>/sw</filename> are installed in
-<filename>/sw/src/fink.build/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p) instead. See the
+directory, <filename>/opt/sw/src/fink.build/root-gimp-1.2.1-1</filename> (= %d). (Note the "root-" part.)
+All files that would normally be installed to <filename>/opt/sw</filename> are installed in
+<filename>/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</filename> (= %i = %d%p) instead. See the
 InstallScript field description for details.</p>
 <p>(<em>Introduced in fink 0.9.9.</em> It is possible to generate several
 packages from a single package description using the <code>SplitOff</code>
@@ -2378,7 +2378,7 @@ Primary: ftp://ftp.barbarorg/pub/
 &lt;&lt;</codeblock>
 <p>
   The standard continent and country codes are listed in
-  <filename>/sw/lib/fink/mirror/_keys</filename>, which is part of the
+  <filename>/opt/sw/lib/fink/mirror/_keys</filename>, which is part of the
   fink or fink-mirrors package.
 </p>
 </itemd></item>
@@ -2393,7 +2393,7 @@ supports a special URL scheme for mirrors:
 look up the mirror setting for <em>mirror-name</em> in Fink's
 configuration, append the <em>relative-path</em> part and use that as
 the actual URL. The known <em>mirror-name</em>s are listed in
-<filename>/sw/lib/fink/mirror/_list</filename>, which is part of the fink or fink-mirrors
+<filename>/opt/sw/lib/fink/mirror/_list</filename>, which is part of the fink or fink-mirrors
 package. Alternatively, using <code>custom</code> as the
 <em>mirror-name</em> will cause Fink to use the <code>CustomMirror</code>
 field.
@@ -2480,7 +2480,7 @@ caused by this, you would then use something like
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
 <p>
 In the above example this would result in the tarball being stored under
-<filename>/sw/src/coolapp-1.2.3.tar.gz</filename> as one would expect.
+<filename>/opt/sw/src/coolapp-1.2.3.tar.gz</filename> as one would expect.
 </p>
 </itemd></item>
 
@@ -2509,11 +2509,11 @@ A typical usage example looks like this:
 <codeblock>Source-MD5: 4499443fa1d604243467afe64522abac</codeblock>
 <p>
 To compute the checksum, the <code>md5sum</code> tool is used. If you want to
-determine the checksum of the tarball <filename>/sw/src/apache_1.3.23.tar.gz</filename>,
+determine the checksum of the tarball <filename>/opt/sw/src/apache_1.3.23.tar.gz</filename>,
 you run the following command (displayed with output here):
 </p>
-<codeblock>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</codeblock>
+<codeblock>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</codeblock>
 <p>
 As you can see, the value to the left is exactly the value you need.
 </p>
@@ -2670,13 +2670,13 @@ This happens in the patch phase and before the PatchScript is run.
 </p>
 <p>
 The patched version respects DESTDIR and makes sure that message
-catalogs end up in <filename>/sw/share/locale</filename>, not
-<filename>/sw/lib/locale</filename>.
+catalogs end up in <filename>/opt/sw/share/locale</filename>, not
+<filename>/opt/sw/lib/locale</filename>.
 Before using this field, make sure that you won't break the package
 and that it's really required.
 You can run <code>diff</code> to find the differences between the
 package's version and Fink's version (in
-<filename>/sw/lib/fink/update</filename>).
+<filename>/opt/sw/lib/fink/update</filename>).
 </p>
 </itemd></item>
 
@@ -3070,11 +3070,11 @@ A boolean value, specific for perl module packages.
 If true, this will add code to the install, postrm and postinst
 scripts that maintains the .pod files provided by perl packages.
 This includes adding and removing the .pod date from the central
-<filename>/sw/lib/perl5/darwin/perllocal.pod</filename> file.
+<filename>/opt/sw/lib/perl5/darwin/perllocal.pod</filename> file.
 (If the type has been given as <code>perl $version</code> with a
 specific version of perl such as 5.6.0,
 then these scripts are adapted to deal with the central .pod file
-<filename>/sw/lib/perl5/$version/perllocal.pod</filename>.)
+<filename>/opt/sw/lib/perl5/$version/perllocal.pod</filename>.)
 </p>
 </itemd></item>
 
@@ -3222,7 +3222,7 @@ information.
 <itemd>
 <p>
 <em>Introduced in fink 0.10.0.</em>
-This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <xref section="profile.d">profile.d scripts section</xref>). As long as your package is installed, these variables will be set via the <filename>/sw/bin/init.[c]sh</filename> scripts.
+This field provides a convenient way to set environment variables to some static value at runtime (if you need more flexibility, refer to the <xref section="profile.d">profile.d scripts section</xref>). As long as your package is installed, these variables will be set via the <filename>/opt/sw/bin/init.[c]sh</filename> scripts.
 </p>
 <p>
 The value of your variable can contain spaces (trailing ones are trimmed); also, percent expansion takes place. For example:
@@ -3233,7 +3233,7 @@ The value of your variable can contain spaces (trailing ones are trimmed); also,
 &lt;&lt;</codeblock>
 <p>
 will set two environment variables 'SomeVar' and 'AnotherVar' and their values
-will be respectively '/sw/Value' (or whatever your prefix is) and 'foo bar'.
+will be respectively '/opt/sw/Value' (or whatever your prefix is) and 'foo bar'.
 </p>
 <p>
 This field works by appending appropriate commands to the InstallScript.
@@ -3597,7 +3597,7 @@ of your own (for example, to perform a substitution on the patch file
 before applying it).</p>
 <p>If you  need to have the user's chosen prefix in the patch file
 it is recommended that you have a variable such as <code>@PREFIX@</code> 
-instead of <code>/sw</code> in the patch and then use:</p>
+instead of <code>/opt/sw</code> in the patch and then use:</p>
 <codeblock>PatchScript: sed 's|@PREFIX@|%p|g' &lt; %{PatchFile} | patch -p1</codeblock>
 <p>Patches should be in unidiff format and are normally generated by using:</p>
 <codeblock>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</codeblock>
@@ -3615,12 +3615,12 @@ separate download.
 
 <p>
 If your package needs some run-time initialization  (e.g. to setup environment variables), you can use profile.d scripts.
-These script fragments are sourced by the <filename>/sw/bin/init.[c]sh</filename> scripts. Normally, all fink users will load these scripts in their shell startup files (<filename>.cshrc</filename> and comparable files).
-Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <filename>/sw/etc/profile.d/%n.[c]sh</filename> (where %n as usual stands for the package name).
+These script fragments are sourced by the <filename>/opt/sw/bin/init.[c]sh</filename> scripts. Normally, all fink users will load these scripts in their shell startup files (<filename>.cshrc</filename> and comparable files).
+Your package must provide each script in two variants: one for sh compatible shells (sh, zsh, bash, ksh, ...) and one for csh compatible shells (csh, tcsh). They have to be installed as <filename>/opt/sw/etc/profile.d/%n.[c]sh</filename> (where %n as usual stands for the package name).
 Also, their executable and read bits have to be set (i.e. install them with -m 755), otherwise they will not be loaded correctly.
 </p>
 <p>
-If you just need to set some environment variables (for example, QTDIR to '/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
+If you just need to set some environment variables (for example, QTDIR to '/opt/sw'), you can use the RuntimeVars field which is provided as a convenient way to achieve exactly this.
 </p>
 </section>
 

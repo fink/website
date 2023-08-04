@@ -1,7 +1,7 @@
 <?php
 $title = "Téléchargement rapide";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 15:16:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2023/08/03 20:24:10 $';
 
 include_once "header.inc";
 include "../fink_version.inc";
@@ -27,7 +27,7 @@ Utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourcefo
 <li><p>Double-cliquez sur &quot;Fink-<?php print $fink_version; ?>-XYZ-Installer.dmg&quot; (où XYZ correspond à PowerPC ou Intel) pour monter l'image disque, puis double-cliquez sur le paquet "Fink <?php print $fink_version; ?> XYZ Installer.pkg" à l'intérieur de l'image. Suivez les instructions qui s'affichent sur l'écran.</p></li>
 <li><p>À la fin de l'installation, le script pathsetup s'exécutera. On vous demandera la permission d'éditer vos fichiers de configuration de shell. Quand le script aura terminé, la configuration sera terminée et vous pourrez continuer !</p></li>
 <li><p>Si quelque chose ne se passe pas bien durant le processus, vous pouvez relancer l'application pathsetup à partir de l'image disque de l'installeur, ou exécuter la commande suivante : </p>
-<pre>/sw/bin/pathsetup.sh </pre>
+<pre>/opt/sw/bin/pathsetup.sh</pre>
 <p>dans une fenêtre de Terminal.app. (Cette étape doit être répétée pour tout utilisateur de votre système : chaque utilisateur doit exécuter pathsetup dans son propre compte).</p>
 <p>Si pathsetup génère des messages d'erreur, consultez la documentation, en particulier la 
 <a href="../doc/users-guide/install.php#setup">section 2.3 "Définition de votre environnement"</a> du Guide de l'utilisateur.</p></li>

@@ -3,7 +3,7 @@
 <document filename="index" lang="de">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.de.xml,v 1.1 2015/02/23 16:32:58 k-m_schindler Exp $</cvsid>
+  <cvsid>$Id: x11.de.xml,v 1.2 2023/08/04 5:08:13 nieder Exp $</cvsid>
   <preface>
     <p>
       Diese Dokument beschreibt, wie man X11 auf Apples Mac OS X und Darwin
@@ -478,7 +478,7 @@ nano $HOME/.xinitrc.d/94-wmaker.sh</codeblock>
         Tragen sie folgenden Inhalt in <filename>94-wmaker.sh</filename>
         ein:
       </p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec wmaker
 </codeblock>
@@ -499,7 +499,7 @@ nano $HOME/.xinitrc.d/74-xlogo.sh</codeblock>
         Tragen sie folgenden Inhalt in <filename>74-xlogo.sh</filename>
         ein:
       </p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 xlogo &amp;</codeblock>
       <p>Speichern sie die Datei und führen sie folgendes Kommando aus:</p>
 <codeblock>chmod a+x 74-xlogo.sh</codeblock>
@@ -514,7 +514,7 @@ xlogo &amp;</codeblock>
         ausführbare Datei <filename>94-gnome-session.sh</filename> mit
         folgendem Inhalt:
       </p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</codeblock>
@@ -522,7 +522,7 @@ exec gnome-session</codeblock>
         Beispiel: "rootless" GNOME-Session. Erzeugen sie die ausführbare
         Datei <filename>94-gnome-panel.sh</filename> mit folgendem Inhalt:
       </p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-panel</codeblock>
@@ -530,7 +530,7 @@ exec gnome-panel</codeblock>
         Beispiel: KDE3. Erzeugen sie die ausführbare Datei
         <filename>94-startkde.sh</filename> mit folgendem Inhalt:
       </p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 exec startkde</codeblock>
       <p>
         (startkde startet automatisch eine Fensterverwaltung und nutzt
@@ -540,12 +540,12 @@ exec startkde</codeblock>
         Beispiel: KDE4. Erzeugen sie die ausführbare Datei
         <filename>94-startkde.sh</filename> mit folgendem Inhalt:
       </p>
-<codeblock>. /sw/bin/init.sh
-exec /sw/opt/kde4/x11/bin/startkde</codeblock>
+<codeblock>. /opt/sw/bin/init.sh
+exec /opt/sw/opt/kde4/x11/bin/startkde</codeblock>
       <p><em>Beachte:</em></p>
       <ul>
         <li>
-          Beginnen sie jedes Skript mit <code>. /sw/bin/init.sh</code>.
+          Beginnen sie jedes Skript mit <code>. /opt/sw/bin/init.sh</code>.
           Damit wird sicher gestellt, dass auch Programme aus dem Fink-Baum
           gefunden werden.
         </li>
@@ -600,7 +600,7 @@ exec /sw/opt/kde4/x11/bin/startkde</codeblock>
       <p>
         Damit auch Fink-Programme in <filename>.xinitrc</filename>
         funktionieren, sollte gleich am Anfang der Datei die Zeile <code>.
-        /sw/bin/init.sh</code> stehen, damit die Umgebung korrekt
+        /opt/sw/bin/init.sh</code> stehen, damit die Umgebung korrekt
         aufgesetzt wird.
       </p>
       <p>
@@ -632,7 +632,7 @@ exec /sw/opt/kde4/x11/bin/startkde</codeblock>
         Beispiel: Schalte die X11-Klingel aus, starte einige Klienten und
         zum Schluss die Fensterverwaltung "Enlightenment":
       </p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -642,12 +642,12 @@ xterm &amp;
 
 exec enlightenment</codeblock>
       <p>Beispiel: GNOME starten:</p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session</codeblock>
 <p>Zum Schluss: KDE3 starten:</p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 exec startkde</codeblock>
     </section>
     <section name="xinitrc-pkg">
@@ -668,7 +668,7 @@ exec startkde</codeblock>
           <p>
             Das Paket <code>xinitrc</code> enthält Einsprungspunkte für
             Administratoren. Erzeugen sie die Datei
-            <filename>/sw/etc/xinitrc-last-hook</filename> als
+            <filename>/opt/sw/etc/xinitrc-last-hook</filename> als
             Administrator mit folgendem Inhalt:
           </p>
 <codeblock>#!/bin/sh
@@ -822,7 +822,7 @@ Errors from xkbcomp are not fatal to the X server</codeblock>
         Hinweis darauf, dass die Fink-Umgebung noch nicht richtig
         aufgesetzt ist. Führt man das Kommando
       </p>
-<codeblock>/sw/bin/pathsetup.sh</codeblock>
+<codeblock>/opt/sw/bin/pathsetup.sh</codeblock>
       <p>
         in einem Terminalfenster aus und startet ein neues Fenster, ist der
         Fehler meistens behoben.
@@ -884,7 +884,7 @@ touch .Xauthority</codeblock>
         Wollen sie das verhindern, vergessen sie nicht in der Start-Datei
         die Pfad-Variable PATH mit folgendem Kommando zu setzen:
       </p>
-<codeblock>. /sw/bin/init.sh</codeblock>
+<codeblock>. /opt/sw/bin/init.sh</codeblock>
       <p>
         Außerdem sollte die Start-Datei mit einem langlebigen Programm
         enden, das nicht im Hintergrund läuft, z. B. einer Fenster- oder
@@ -937,11 +937,11 @@ touch .Xauthority</codeblock>
         starten möchte. Anstatt den ganzen Pfad zu der Datei anzugeben,
         also
       </p>
-<codeblock>/sw/bin/emacs</codeblock>
+<codeblock>/opt/sw/bin/emacs</codeblock>
       <p>sollte man z. B. bei bash besser folgendes eintragen:</p>
-<codeblock>. /sw/bin/init.sh ; emacs</codeblock>
+<codeblock>. /opt/sw/bin/init.sh ; emacs</codeblock>
       <p>und bei tcsh:</p>
-<codeblock>source /sw/bin/init.csh ; emacs</codeblock>
+<codeblock>source /opt/sw/bin/init.csh ; emacs</codeblock>
       <p>
         Damit ist sicher gestellt, dass das Programm die korrekte
         PATH-Information hat. Diese Syntax kann man für jedes Programm

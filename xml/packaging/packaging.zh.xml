@@ -4,7 +4,7 @@
 <document filename="index" lang="zh" >
 <title>创建 Fink 软件包</title>
 <shorttitle>打包</shorttitle>
-<cvsid>$Id: packaging.zh.xml,v 1.44 2023/01/22 6:40:32 nieder nieder Exp $</cvsid>
+<cvsid>$Id: packaging.zh.xml,v 1.45 2023/08/04 4:54:31 nieder nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -75,8 +75,8 @@ fink 和 dpkg 都知道如何正确地给它们排序。
 
 <section name="trees"><title>文件树结构</title>
 <p>
-软件包描述文件保存在 <filename>/sw/fink/dists</filename> 目录树内的 <code>finkinfo</code> 目录中。
-<filename>/sw/etc/fink.conf</filename> 中的 &quot;Trees&quot; 设置控制会控制应该读取那个目录。
+软件包描述文件保存在 <filename>/opt/sw/fink/dists</filename> 目录树内的 <code>finkinfo</code> 目录中。
+<filename>/opt/sw/etc/fink.conf</filename> 中的 &quot;Trees&quot; 设置控制会控制应该读取那个目录。
 软件包描述文件的名字必须要软件包全名加上 &quot;.info&quot; 扩展名组成。
 从 fink 0.13.0 开始，为了简化软件包的升级，也可以允许简单地使用软件包加 &quot;.info&quot; 来组成。
 <!-- start translation -->
@@ -246,7 +246,7 @@ Note that the Epoch is not part of <code>%f</code>.
 <itemd>
 <!-- start translation -->
 <p>
-the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You must not assume all users have Fink installed in <filename>/sw</filename>; use <code>%p</code> to ge the correct path.
+the <em>p</em>refix where Fink is installed, e.g. <filename>/opt/sw</filename>. You must not assume all users have Fink installed in <filename>/opt/sw</filename>; use <code>%p</code> to ge the correct path.
 </p>
 <!-- end translation -->
 </itemd></item>
@@ -255,9 +255,9 @@ the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You 
 <itemd>
 <p>
 要打包的全套文件将被构建于的目标（<em>d</em>estination）目录，例如：
-<filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename>。
+<filename>/opt/sw/src/fink.build/root-gimp-1.2.1-1</filename>。
 这个临时目录在编译过程的安装阶段将作为根目录位置。
-你不应该假设 <filename>root-%f</filename> 会在 <filename>%p/src</filename> 中，因为用户可以通过 <filename>/sw/etc/fink.conf</filename> 文件中的 <code>Buildpath</code> 字段来改变它的位置。
+你不应该假设 <filename>root-%f</filename> 会在 <filename>%p/src</filename> 中，因为用户可以通过 <filename>/opt/sw/etc/fink.conf</filename> 文件中的 <code>Buildpath</code> 字段来改变它的位置。
 </p>
 </itemd></item>
 
@@ -292,8 +292,8 @@ the <em>p</em>refix where Fink is installed, e.g. <filename>/sw</filename>. You 
 <item><itemt>%b</itemt>
 <itemd>
 <p>
-构建（<em>b</em>uild）过程所在的目录，例如：<filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>。
-你不应该假设 <filename>%f</filename> 一定在 <filename>%p/src</filename> 中，因为用户可以通过 <filename>/sw/etc/fink.conf</filename> 文件中的 <code>Buildpath</code> 字段来改变它。
+构建（<em>b</em>uild）过程所在的目录，例如：<filename>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>。
+你不应该假设 <filename>%f</filename> 一定在 <filename>%p/src</filename> 中，因为用户可以通过 <filename>/opt/sw/etc/fink.conf</filename> 文件中的 <code>Buildpath</code> 字段来改变它。
 最内部的目录根据 <code>Source</code> 文件名来命名，或是 <code>SourceDirectory</code> 字段(如果存在的话)的值，或在 <code>NoSourceDirectory</code> 为 <code>true</code> 的时候不使用它。
 </p>
 <p>
@@ -710,7 +710,7 @@ the package should declare
 <p>and the reason must be given in the DescPackaging field.
 </p><p>
 The BuildDependsOnly field should only be mentioned in the package's .info
-file if the package contains header files, installed into /sw/include.
+file if the package contains header files, installed into /opt/sw/include.
 </p><p>
 As of fink 0.20.5, "fink validate" will issue a warning for any .deb
 which contains header files and at least one dylib, and does not declare
@@ -845,14 +845,14 @@ linking to this library.
 </p><p>
 传统上，关于 perl 模块的 Fink 软件包具有
 <code>-pm</code> 后缀，并使用 <code>Type: perl</code> 
-指令来构建，它把 perl 模块的文件保存在 <filename>/sw/lib/perl5</filename> 和/或
-<filename>/sw/lib/perl5/darwin</filename>中。按照现行规则，这个存储位置仅允许用于那些与编译它们的 perl 程序版本无关的 perl 模块(同时也不应该依赖于那些不具备版本无关性的其它模块)。
+指令来构建，它把 perl 模块的文件保存在 <filename>/opt/sw/lib/perl5</filename> 和/或
+<filename>/opt/sw/lib/perl5/darwin</filename>中。按照现行规则，这个存储位置仅允许用于那些与编译它们的 perl 程序版本无关的 perl 模块(同时也不应该依赖于那些不具备版本无关性的其它模块)。
 </p><p>
 那些版本相关的 perl 模块称为 XS 模块，
 通常除了纯粹的 perl 子程序外，还包括编译好的 C 代码。有很多办法可以识别这个情况，包括存在带有 <code>.bundle</code> 后缀的文件等。
 </p><p>
 版本相关的 perl 模块必须使用标明版本号的 perl 程序来编译，比方说 <code>perl5.6.0</code>，而且必须把它的文件标准 perl 目录下面的一个标明版本号的子目录中，例如
-<filename>/sw/lib/perl5/5.6.0</filename> 和 <filename>/sw/lib/perl5/5.6.0/darwin</filename>。习惯上，使用后缀 <code>-pm560</code> 的命名约定来代表针对 5.6.0 的 perl 模块。类似的存储和命名约定也会用于其它版本的 perl，包括 perl 5.6.1 (仅用于 10.2 代码树), perl 5.8.0 (仅用于 10.3 代码树), perl 5.8.1, perl 5.8.4, 和 perl 5.8.6。
+<filename>/opt/sw/lib/perl5/5.6.0</filename> 和 <filename>/opt/sw/lib/perl5/5.6.0/darwin</filename>。习惯上，使用后缀 <code>-pm560</code> 的命名约定来代表针对 5.6.0 的 perl 模块。类似的存储和命名约定也会用于其它版本的 perl，包括 perl 5.6.1 (仅用于 10.2 代码树), perl 5.8.0 (仅用于 10.3 代码树), perl 5.8.1, perl 5.8.4, 和 perl 5.8.6。
 </p><p>
 <code>Type: perl 5.6.0</code> 指令会自动使用相应标定版本的 perl 程序，并把文件存储在正确的子目录中。
 (这个指令从 fink 0.13.0 版本开始提供)。</p>
@@ -986,7 +986,7 @@ url="http://www.debian.org/doc/packaging-manuals/debian-emacs-policy">
 http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</link> 找到）。
 在 Fink 的规则中有两点区别。
 首先，在 fink 中这个规则目前仅应用于 <filename>emacs21</filename>, <filename>emacs22</filename> 和 <filename>emacs23</filename> 软件包，而不应用于 xemacs。（这在将来可能会有改变）。
-第二，不象 Debian 的规则，Fink 软件包允许安装东西到 /sw/share/emacs/site-lisp 目录中。
+第二，不象 Debian 的规则，Fink 软件包允许安装东西到 /opt/sw/share/emacs/site-lisp 目录中。
 </p>
 
 </section>
@@ -1065,7 +1065,7 @@ url="http://www.pathname.com/fhs/">《文件系统层次结构标准》(Filesyst
 Standard)</link>，简称 FHS 的精神。
 我们只能说遵循它的精神，是因为 FHS 是为操作系统提供者所涉及的，因此它是在 <filename>/</filename> 和
 <filename>/usr</filename> 层次级别上来控制。而 Fink 只是一个附加的系统，它指控制它自己的安装目录(或安装前缀指定的目录)。
-本章的例子使用默认的前缀 <filename>/sw</filename>。
+本章的例子使用默认的前缀 <filename>/opt/sw</filename>。
 </p>
 </section>
 
@@ -1076,14 +1076,14 @@ Standard)</link>，简称 FHS 的精神。
 
 <itemtable>
 
-<item><itemt><filename>/sw/bin</filename></itemt>
+<item><itemt><filename>/opt/sw/bin</filename></itemt>
 <itemd>
 <p>
 这个目录存放通常的可执行程序。里面没有子目录。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/sbin</filename></itemt>
+<item><itemt><filename>/opt/sw/sbin</filename></itemt>
 <itemd>
 <p>
 这个目录存放那些应该只由系统管理员使用的命令。
@@ -1092,7 +1092,7 @@ Standard)</link>，简称 FHS 的精神。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/include</filename></itemt>
+<item><itemt><filename>/opt/sw/include</filename></itemt>
 <itemd>
 <p>
 这个目录存放 C 和 C++ 头文件。
@@ -1101,18 +1101,18 @@ Standard)</link>，简称 FHS 的精神。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/lib</filename></itemt>
+<item><itemt><filename>/opt/sw/lib</filename></itemt>
 <itemd>
 <p>
 这个目录存放那些系统架构相关的数据文件和函数库。
-除非有特别的理由，否则静态和动态连接库应该直接保存在 <filename>/sw/lib</filename>。
+除非有特别的理由，否则静态和动态连接库应该直接保存在 <filename>/opt/sw/lib</filename>。
 这里通常还保存那些不应该由用户直接运行的可执行程序(否则的话，应该放在 libexec)。
 </p>
 <p>
 软件包可以创建子目录来存放私有数据或可加载模块。
 请确定使用那些对保持兼容性有利的目录名。
-在目录名或目录层次中使用主版本号是个好办法，例如：<filename>/sw/lib/perl5</filename>
-或 <filename>/sw/lib/apache/1.3</filename>。
+在目录名或目录层次中使用主版本号是个好办法，例如：<filename>/opt/sw/lib/perl5</filename>
+或 <filename>/opt/sw/lib/apache/1.3</filename>。
 Care should be taken when the host type is used to create
 directories.
 <code>powerpc-apple-darwin1.3.3</code> 这样的目录对兼容性是不利的，<code>powerpc-apple-darwin1.3</code> 或仅仅是
@@ -1120,39 +1120,39 @@ directories.
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/lib/ppc64</filename>
-<filename>/sw/lib/x86_64</filename></itemt>
+<item><itemt><filename>/opt/sw/lib/ppc64</filename>
+<filename>/opt/sw/lib/x86_64</filename></itemt>
 <itemd>
 <!-- start translation -->
 <p>
-This directory is for 64-bit libraries, with <filename>/sw/lib/ppc64</filename>
+This directory is for 64-bit libraries, with <filename>/opt/sw/lib/ppc64</filename>
 being used under powerpc architecture, and
-<filename>/sw/lib/x86_64</filename> being used under i386 architecture.
+<filename>/opt/sw/lib/x86_64</filename> being used under i386 architecture.
 Libraries which have been built 'fat' should be stored in
-<filename>/sw/lib</filename> instead.
+<filename>/opt/sw/lib</filename> instead.
 </p>
 <!-- end translation -->
 </itemd></item>
 
-<item><itemt><filename>/sw/share</filename></itemt>
+<item><itemt><filename>/opt/sw/share</filename></itemt>
 <itemd>
 <p>
 这个目录是存放那些系统体系架构无关的数据文件。
-那些 <filename>/sw/lib</filename> 中的规则也适用于这里。
+那些 <filename>/opt/sw/lib</filename> 中的规则也适用于这里。
 下面描述一些通常的子目录。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/share/man</filename></itemt>
+<item><itemt><filename>/opt/sw/share/man</filename></itemt>
 <itemd>
 <p>
 这些目录中包括帮助页。它按照通常的分类方法进行组织。
-在 <filename>/sw/bin</filename> 和
-<filename>/sw/sbin</filename> 中的每个程序都应该有一个对应的帮助页。
+在 <filename>/opt/sw/bin</filename> 和
+<filename>/opt/sw/sbin</filename> 中的每个程序都应该有一个对应的帮助页。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/share/info</filename></itemt>
+<item><itemt><filename>/opt/sw/share/info</filename></itemt>
 <itemd>
 <p>
 这个目录包含 Info 格式(从 Texinfo 源文件产生)的文档。
@@ -1163,7 +1163,7 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/share/doc</filename></itemt>
+<item><itemt><filename>/opt/sw/share/doc</filename></itemt>
 <itemd>
 <p>
 这个目录包括那些既不是帮助页，也不是 Info 的文档。
@@ -1174,14 +1174,14 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/share/locale</filename></itemt>
+<item><itemt><filename>/opt/sw/share/locale</filename></itemt>
 <itemd>
 <p>
 这个目录包含国际化所需要的信息目录。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/var</filename></itemt>
+<item><itemt><filename>/opt/sw/var</filename></itemt>
 <itemd>
 <p>
 <filename>var</filename> 目录保存可变数据。
@@ -1189,7 +1189,7 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/etc</filename></itemt>
+<item><itemt><filename>/opt/sw/etc</filename></itemt>
 <itemd>
 <p>
 这个目录保存配置文件。
@@ -1198,7 +1198,7 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 </p>
 </itemd></item>
 
-<item><itemt><filename>/sw/src</filename></itemt>
+<item><itemt><filename>/opt/sw/src</filename></itemt>
 <itemd>
 <p>
 这个目录用于保存和构建源代码。
@@ -1206,11 +1206,11 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 </p>
 </itemd></item>
 <!-- start translation -->
-<item><itemt><filename>/sw/Applications</filename></itemt>
+<item><itemt><filename>/opt/sw/Applications</filename></itemt>
 <itemd>
 <p>This directory is for storing OS X-style applications which are launched by double-clicking rather than from the command line.</p>
 </itemd></item>
-<item><itemt><filename>/sw/Library/Frameworks</filename></itemt>
+<item><itemt><filename>/opt/sw/Library/Frameworks</filename></itemt>
 <itemd>
 <p>This directory is for storing OS X-style frameworks, sometimes used by OS X-style applications.</p>
 </itemd></item>
@@ -1221,11 +1221,11 @@ Fink 确保不会有软件包会安装它自己的 <code>dir</code> 文件。
 
 <section name="avoid"><title>应该避免的事情</title>
 <p>
-除了上面提到的以外，在 <filename>/sw</filename> 中不应该有其它的目录。
+除了上面提到的以外，在 <filename>/opt/sw</filename> 中不应该有其它的目录。
 特别地，不应该使用下面这些目录：
-<filename>/sw/man</filename>，<filename>/sw/info</filename>，
-<filename>/sw/doc</filename>，<filename>/sw/libexec</filename>，
-<filename>/sw/lib/locale</filename>。
+<filename>/opt/sw/man</filename>，<filename>/opt/sw/info</filename>，
+<filename>/opt/sw/doc</filename>，<filename>/opt/sw/libexec</filename>，
+<filename>/opt/sw/lib/locale</filename>。
 </p>
 </section>
 
@@ -1277,7 +1277,7 @@ which will use both gcc-4.0 and g++-4.0.
 </p>
 <p>A new method was introduced for ensuring the correct g++ compiler starting
 with the 10.4-transitional distribution.  During compilation, a directory
-<code>/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
+<code>/opt/sw/var/lib/fink/path-prefix-g++-XXX</code> (where XXX is the version
 number) is added to the PATH during compilation.  This directory contains
 shell scripts which ensure that the correct version of g++ is used.
 </p>
@@ -1330,8 +1330,8 @@ and 10.3 versions of OS X, and 4.0 for the 10.4 version of OS X.  The
 
 <section name="build"><title>构建过程</title>
 
-<p>要理解一些字段的含义，你需要有对 Fink 所采用的构建过程有些了解。它由五个阶段组成：解压，补丁，编译，安装和构建。下面的示例路径是关于安装在 <filename>/sw</filename> 的 gimp-1.2.1-1 软件包的。</p>
-<p>在<em>解压阶段</em>，<filename>/sw/src/fink.build/gimp-1.2.1-1</filename> 这个目录会被创建，源代码压缩档会被在这里解压。多数情况下，这会创建一个名为 gimp-1.2.1 的目录，里面包括源代码；下面的操作步骤会在那个目录里面执行(即 <filename>/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>)。我们可以使用 SourceDirectory，NoSourceDirectory 和 Source<em>N</em>ExtractDir
+<p>要理解一些字段的含义，你需要有对 Fink 所采用的构建过程有些了解。它由五个阶段组成：解压，补丁，编译，安装和构建。下面的示例路径是关于安装在 <filename>/opt/sw</filename> 的 gimp-1.2.1-1 软件包的。</p>
+<p>在<em>解压阶段</em>，<filename>/opt/sw/src/fink.build/gimp-1.2.1-1</filename> 这个目录会被创建，源代码压缩档会被在这里解压。多数情况下，这会创建一个名为 gimp-1.2.1 的目录，里面包括源代码；下面的操作步骤会在那个目录里面执行(即 <filename>/opt/sw/src/fink.build/gimp-1.2.1-1/gimp-1.2.1</filename>)。我们可以使用 SourceDirectory，NoSourceDirectory 和 Source<em>N</em>ExtractDir
 这三个字段来控制有关细节。</p>
 <p>在<em>补丁阶段</em>，源代码会被打上补丁，以使得可以在 Darwin 下面编译。由 UpdateConfigGuess，UpdateLibtool，Patch 和 PatchScrip 这几个字段所指明的操作将被按照顺序执行。</p>
 <p>在<em>编译阶段</em>，源代码被配置和编译。通常这会以某些参数来调用 <code>configure</code> 脚本，然后执行一个 <code>make</code> 命令。
@@ -1343,9 +1343,9 @@ maintainer mode), the TestScript will be run immediately after the
 CompileScript.
 <!-- end translation -->
 </p>
-<p>在<em>安装阶段</em>，软件包被安装到一个临时目录，<filename>/sw/src/fink.build/root-gimp-1.2.1-1</filename> (= %d)。(注意 &quot;root-&quot; 部分。)
-所有通常应该安装到 <filename>/sw</filename> 的文件现在被安装在
-<filename>/sw/src/fink.build/root-gimp-1.2.1-1/sw</filename> (= %i = %d%p)。 
+<p>在<em>安装阶段</em>，软件包被安装到一个临时目录，<filename>/opt/sw/src/fink.build/root-gimp-1.2.1-1</filename> (= %d)。(注意 &quot;root-&quot; 部分。)
+所有通常应该安装到 <filename>/opt/sw</filename> 的文件现在被安装在
+<filename>/opt/sw/src/fink.build/root-gimp-1.2.1-1/opt/sw</filename> (= %i = %d%p)。 
 详细信息请查看 InstallScript 字段的描述。</p>
 <p>(<em>从 fink 0.9.9 开始，</em>可以通过 <code>SplitOff</code> 字段从一个软件包描述文件生成几个软件包。在安装阶段的尾段，会为每个软件包建立一个单独的安装目录，文件会被移到相应的目录中，)</p>
 <p>在<em>构建阶段</em>，会根据临时文件夹的内容构建一个二进制安装包(.deb)文件。你不能直接影响这个步骤，但软件包描述里面的许多字段会用于生成 dpkg 的 <filename>control</filename> 文件。</p>
@@ -1969,7 +1969,7 @@ Primary: ftp://ftp.barbarorg/pub/
 <!-- start translation -->
 <p>
   The standard continent and country codes are listed in
-  <filename>/sw/lib/fink/mirror/_keys</filename>, which is part of the
+  <filename>/opt/sw/lib/fink/mirror/_keys</filename>, which is part of the
   fink or fink-mirrors package.
 </p>
 <!-- end translation -->
@@ -1980,7 +1980,7 @@ Primary: ftp://ftp.barbarorg/pub/
 <p>
 源代码压缩档的 URL。它应该是一个 HTTP 或 FTP URL，但 Fink 本身并不关心这一点-它只是把它传递给 wget。这个字段对镜像站点的 URL 标记模式：
 <code>mirror:&lt;mirror-name&gt;:&lt;relative-path&gt;</code>。
-这会在 Fink 的配置中寻找 <em>mirror-name</em> 镜像的设置，然后添加  <em>relative-path</em> 部分，并把结果作为实际的 URL。已知的 <em>mirror-name</em> 被列在 <filename>/sw/lib/fink/mirror/_list</filename> 中。它是 fink 或 fink-mirror 软件包的一部分。另一方面，使用 <code>custom</code> 作为 <em>mirror-name</em> 会使 Fink 使用 <code>CustomMirror</code>
+这会在 Fink 的配置中寻找 <em>mirror-name</em> 镜像的设置，然后添加  <em>relative-path</em> 部分，并把结果作为实际的 URL。已知的 <em>mirror-name</em> 被列在 <filename>/opt/sw/lib/fink/mirror/_list</filename> 中。它是 fink 或 fink-mirror 软件包的一部分。另一方面，使用 <code>custom</code> 作为 <em>mirror-name</em> 会使 Fink 使用 <code>CustomMirror</code>
 字段。
 在 URL 使用前，会进行百分号展开。
 记住 %n 包括所有 %type_ 变种数据，所以你可能会希望在这里使用 %{ni}(也许还包括一些特定的 %type_ 展开)。
@@ -2043,7 +2043,7 @@ use <code>TestSource</code> and related fields, inside the
 <codeblock>SourceRename: %n-%v.tar.gz</codeblock>
 <p>
 对于上面的例子，这会使得下载的源代码压缩档保存在
-<filename>/sw/src/coolapp-1.2.3.tar.gz</filename>，以满足我们的一般命名约定。
+<filename>/opt/sw/src/coolapp-1.2.3.tar.gz</filename>，以满足我们的一般命名约定。
 </p>
 </itemd></item>
 
@@ -2067,11 +2067,11 @@ use <code>TestSource</code> and related fields, inside the
 </p>
 <codeblock>Source-MD5: 4499443fa1d604243467afe64522abac</codeblock>
 <p>
-要计算校验值，可以使用 <code>md5sum</code> 工具。如果你希望检查压缩档 <filename>/sw/src/apache_1.3.23.tar.gz</filename> 的校验值，
+要计算校验值，可以使用 <code>md5sum</code> 工具。如果你希望检查压缩档 <filename>/opt/sw/src/apache_1.3.23.tar.gz</filename> 的校验值，
 你可以运行下面的命令(下面还包括命令的输出结果)：
 </p>
-<codeblock>fingolfin% md5sum /sw/src/apache_1.3.23.tar.gz 
-4499443fa1d604243467afe64522abac  /sw/src/apache_1.3.23.tar.gz</codeblock>
+<codeblock>fingolfin% md5sum /opt/sw/src/apache_1.3.23.tar.gz 
+4499443fa1d604243467afe64522abac  /opt/sw/src/apache_1.3.23.tar.gz</codeblock>
 <p>
 正如你所看见的一样，靠左边的数值就是你需要的结果。
 </p>
@@ -2203,10 +2203,10 @@ url="/doc/porting/libtool.php">libtool
 这发生在补丁阶段，并在 PatchScript 脚本运行之前。
 </p>
 <p>
-打过补丁的版本可以识别 DESTDIR 并确保信息目录是在 <filename>/sw/share/locale</filename>，而不是 <filename>/sw/lib/locale</filename>。
+打过补丁的版本可以识别 DESTDIR 并确保信息目录是在 <filename>/opt/sw/share/locale</filename>，而不是 <filename>/opt/sw/lib/locale</filename>。
 在使用这个字段之前，确定你不会破坏软件包以及的确有这个必要。
 你可以运行 <code>diff</code> 命令来找出软件包的版本和 Fink 的版本的区别(在
-<filename>/sw/lib/fink/update</filename>)。
+<filename>/opt/sw/lib/fink/update</filename>)。
 </p>
 </itemd></item>
 
@@ -2513,9 +2513,9 @@ the other value when test suites are active.</li>
 一个针对 perl 模块软件包的布尔值。
 为真的话，它会添加代码到 install，postrm 和 postinst
 脚本来维护 perl 软件包所提供的 .pod 文件。
-这包括在中央的<filename>/sw/lib/perl5/darwin/perllocal.pod</filename>文件中添加和删除 .pod 数据。
+这包括在中央的<filename>/opt/sw/lib/perl5/darwin/perllocal.pod</filename>文件中添加和删除 .pod 数据。
 (如果类型是以 <code>perl $version</code> 这样包括特定版本的形式给出，例如 5.6.0，那么这些脚本会被用于处理在
-<filename>/sw/lib/perl5/$version/perllocal.pod</filename> 的中央 .pod 文件。)
+<filename>/opt/sw/lib/perl5/$version/perllocal.pod</filename> 的中央 .pod 文件。)
 </p>
 </itemd></item>
 
@@ -2629,7 +2629,7 @@ Shared libraries that are &quot;private&quot; are denoted by an exclamation mark
 <itemd>
 <p>
 <em>从 fink 0.10.0 开始。</em>
-这个字段提供设置运行时环境变量为一些静态值的简便方法(如果你需要更灵活的方式，参考 <xref section="profile.d">profile.d 脚本部分</xref>)。在你的软件包安装以后，这些变量会通过 <filename>/sw/bin/init.[c]sh</filename> 脚本设置。
+这个字段提供设置运行时环境变量为一些静态值的简便方法(如果你需要更灵活的方式，参考 <xref section="profile.d">profile.d 脚本部分</xref>)。在你的软件包安装以后，这些变量会通过 <filename>/opt/sw/bin/init.[c]sh</filename> 脚本设置。
 </p>
 <p>
 你的环境的值可以包括空格(尾部的连续空格会被截断)；另外，百分号展开也会进行。例如：
@@ -2639,7 +2639,7 @@ Shared libraries that are &quot;private&quot; are denoted by an exclamation mark
  AnotherVar: foo bar
 &lt;&lt;</codeblock>
 <p>
-会设置两个环境变量 &quot;SomeVar&quot; 和 &quot;AnotherVar&quot;，它们的值相应地被设置为 &quot;/sw/Value&quot; (或你选择的前缀)以及 &quot;foo bar&quot;。
+会设置两个环境变量 &quot;SomeVar&quot; 和 &quot;AnotherVar&quot;，它们的值相应地被设置为 &quot;/opt/sw/Value&quot; (或你选择的前缀)以及 &quot;foo bar&quot;。
 </p>
 <p>
 这个字段通过添加合适的命令到 InstallScript 来实现。
@@ -2923,7 +2923,7 @@ and <code>PatchScript</code> fields for more information.
 <!-- end translation -->
 </p>
 
-<p>因为你可能会在补丁文件中允许用户选择安装前缀，建议在补丁文件中使用类似 <code>@PREFIX@</code> 的变量来代替 <code>/sw</code>，然后使用：</p>
+<p>因为你可能会在补丁文件中允许用户选择安装前缀，建议在补丁文件中使用类似 <code>@PREFIX@</code> 的变量来代替 <code>/opt/sw</code>，然后使用：</p>
 <codeblock>PatchScript: sed 's|@PREFIX@|%p|g' &lt;%a/%f.patch | patch -p1</codeblock>
 <p>补丁文件应该是 unidiff 格式，而且一般应该通过：</p>
 <codeblock>diff -urN &lt;originalsourcedir&gt; &lt;patchedsourcedir&gt;</codeblock>
@@ -2939,12 +2939,12 @@ and <code>PatchScript</code> fields for more information.
 
 <p>
 如果你的软件包需要一些运行时的初始化(例如，设置环境变量)，你可以使用 profile.d 脚本。
-这些脚本片段由 <filename>/sw/bin/init.[c]sh</filename> 脚本所运行。通常，所有 fink 的用户都会把这些脚本放到它们的起动文件(<filename>.cshrc</filename> 或类似的文件)中。
-你的软件包必须为两个变种都提供脚本：一个给 sh 兼容的 shells (sh, zsh, bash, ksh, ...) 而另一个给 csh 兼容的 shells (csh, tcsh)。它们应该被安装在 <filename>/sw/etc/profile.d/%n.[c]sh</filename> (和往常一样，%n 代表软件包名)。
+这些脚本片段由 <filename>/opt/sw/bin/init.[c]sh</filename> 脚本所运行。通常，所有 fink 的用户都会把这些脚本放到它们的起动文件(<filename>.cshrc</filename> 或类似的文件)中。
+你的软件包必须为两个变种都提供脚本：一个给 sh 兼容的 shells (sh, zsh, bash, ksh, ...) 而另一个给 csh 兼容的 shells (csh, tcsh)。它们应该被安装在 <filename>/opt/sw/etc/profile.d/%n.[c]sh</filename> (和往常一样，%n 代表软件包名)。
 另外，它们的可读和可执行属性都应该被设置(即，用 -m 755 参数安装它们)，否则它们不能被正确加载。
 </p>
 <p>
-如果你只需要设置一些环境变量(例如，把 QTDIR 设置为 '/sw')，你可以使用 RuntimeVars 字段来比较方便地实现这个所说的功能。
+如果你只需要设置一些环境变量(例如，把 QTDIR 设置为 '/opt/sw')，你可以使用 RuntimeVars 字段来比较方便地实现这个所说的功能。
 </p>
 </section>
 

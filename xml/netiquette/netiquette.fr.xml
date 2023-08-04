@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
   <title>Comment poster sur une liste de diffusion de Fink</title>
   <shorttitle>Etiquette net</shorttitle>
-  <cvsid>$Id: netiquette.fr.xml,v 1.4 2012/11/11 15:20:16 gecko2 Exp $</cvsid>
+  <cvsid>$Id: netiquette.fr.xml,v 1.5 2023/08/04 5:23:15 nieder Exp $</cvsid>
   <preface>
     <p><em>Ce document est en cours de rédaction.</em></p>
     <p>Ce document est un guide pour les nouveaux abonnés aux listes de diffusion de Fink. L'idée est de leur apprendre comment écrire des messages adéquats, de façon à susciter des réponses appropriées. </p>
@@ -49,7 +49,7 @@ error unpacking foo
                 <li>si la compilation échoue pendant la phase initiale de configuration, c'est en général assez rapide. Postez des derniers tests juste avant le message d'erreur jusqu'à la fin :<codeblock>....
 Checking for bar-config...no
 Error:  bar-config not found
-....</codeblock><p>Si vous pensez que cela peut aider, vous pouvez poster la partie correspondante du fichier log de configuration, par exemple <filename>/sw/src/foo-3.141-6/foo-3.141/config.log</filename>. <em>Ne postez pas le fichier dans son entier, car il peut être très gros.</em></p></li>
+....</codeblock><p>Si vous pensez que cela peut aider, vous pouvez poster la partie correspondante du fichier log de configuration, par exemple <filename>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</filename>. <em>Ne postez pas le fichier dans son entier, car il peut être très gros.</em></p></li>
                 <li>Ou l'erreur peut apparaître immédiatement après le début de la construction du paquet. Dans ce cas, postez de la dernière ligne de compilation jusqu'à la fin :<codeblock>...
 gcc &lt;drapeaux, fichiers, etc...&gt;
 &lt;messages d'erreur&gt;

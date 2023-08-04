@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Preguntas Más Frecuentes de Fink</title>
   <shorttitle>P.M.F.</shorttitle>
-  <cvsid>$Id: faq.es.xml,v 1.19 2020/05/31 13:43:40 nieder Exp $</cvsid>
+  <cvsid>$Id: faq.es.xml,v 1.20 2023/08/04 04:42:29 nieder Exp $</cvsid>
   <preface>
     <p>Esta es la lista de las preguntas más frecuentes de Fink. Como en la mayoría de las PMF, algunas preguntas son tomadas de la vida real y otras son creadas. En realidad, es mas como una documentación escrita en un estilo de pregunta y respuesta ad-hoc.</p>
     <p>La lista de PMF consiste de varias páginas, una para cada sección. Todas las preguntas están enlistadas y relacionadas en la tabla de contenidos siguiente.</p>
@@ -63,7 +63,7 @@
     </faqentry>
     <faqentry name="why-sw">
       <question>
-        <p>Entonces ¿por qué escogieron /sw?</p>
+        <p>Entonces ¿por qué escogieron /opt/sw?</p>
       </question>
       <answer>
         <p>Esa elección es bastante arbitraria, pero se puede decir que por razones prácticas (de actualización) quedará así en un futuro cercano y además existe el hecho de que es un lugar seguro para evitar conflictos con otros sistemas de empaquetamiento.</p>
@@ -259,7 +259,7 @@ fink selfupdate
         <p>Estoy atrás de un firewall, ¿cómo configuro Fink para usar un HTTP proxy?</p>
       </question>
       <answer translated="no">
-        <p>The <code>fink</code> command supports explicit proxy settings that are passed on to <code>wget</code>/<code>curl</code>. If you were not asked for proxies on first time installation, you can run <code>fink configure</code> to set it up. You can also run that command at any time to reconfigure the <code>fink</code> command. If you  followed the instructions in the installation guide, and use  <filename>/sw/bin/init.csh</filename> (or <filename>/sw/bin/init.sh</filename>), then <code>apt-get</code> and <code>dselect</code> also will use these proxy settings. Make sure that you put the protocol in front of the proxy, e.g.</p>
+        <p>The <code>fink</code> command supports explicit proxy settings that are passed on to <code>wget</code>/<code>curl</code>. If you were not asked for proxies on first time installation, you can run <code>fink configure</code> to set it up. You can also run that command at any time to reconfigure the <code>fink</code> command. If you  followed the instructions in the installation guide, and use  <filename>/opt/sw/bin/init.csh</filename> (or <filename>/opt/sw/bin/init.sh</filename>), then <code>apt-get</code> and <code>dselect</code> also will use these proxy settings. Make sure that you put the protocol in front of the proxy, e.g.</p>
         <codeblock>ftp://proxy.yoursite.somewhere</codeblock>
         <p>If you are still having problems, go into System Preferences, select the Network pane, select the Proxies tab, and make sure that the box labeled "Use Passive FTP Mode (PASV)" is checked.</p>
       </answer>
@@ -274,7 +274,7 @@ fink selfupdate
           <li>
             <p>First download the <link url="http://fink.cvs.sourceforge.net/fink/dists/10.2/unstable/main/finkinfo/devel/">cvs-proxy</link>
           files (an .info file and a .patch file) and place them into your
-          local tree (i.e. /sw/fink/dists/local/main/finkinfo/).</p>
+          local tree (i.e. /opt/sw/fink/dists/local/main/finkinfo/).</p>
           </li>
           <li>
             <p>Install the <em>cvs-proxy</em> package with the command:</p>
@@ -325,10 +325,10 @@ fink selfupdate
         <p>¿Cómo puedo desinstalar todo el Fink?</p>
       </question>
       <answer translated="no">
-        <p>Almost all files installed by Fink are in /sw (or wherever you
+        <p>Almost all files installed by Fink are in /opt/sw (or wherever you
         chose to install it). Thus in order to get rid of Fink, enter this
         command:</p>
-        <codeblock>sudo rm -rf /sw</codeblock>
+        <codeblock>sudo rm -rf /opt/sw</codeblock>
         <p>The only exception to this rule is XFree86. If you installed
         XFree86 through Fink (i.e., you installed the <code>xfree86</code> or
         <code>xfree86-rootless</code> packages, instead of using
@@ -336,9 +336,9 @@ fink selfupdate
         additionally to enter this:</p>
         <codeblock>sudo rm -rf /usr/X11R6 /etc/X11 /Applications/XDarwin.app</codeblock>
         <p>If you aren't planning to reinstall Fink you also will want to
-        remove the "<code>source /sw/bin/init.csh</code>" line you added to
+        remove the "<code>source /opt/sw/bin/init.csh</code>" line you added to
         your <filename>.cshrc</filename> file or the "<code>source
-        /sw/bin/init.sh</code>" line you added to your
+        /opt/sw/bin/init.sh</code>" line you added to your
         <filename>.bashrc</filename> file, whichever is appropriate to your
         setup, using a text editor.</p>
       </answer>
@@ -390,7 +390,7 @@ fink selfupdate
 	<p>To configure Fink to use unstable
 	when you have an earlier version of the <code>fink</code> tool than
 	<em>0.26</em>, edit
-        <filename>/sw/etc/fink.conf</filename>, and add <code>unstable/main</code>
+        <filename>/opt/sw/etc/fink.conf</filename>, and add <code>unstable/main</code>
         and <code>unstable/crypto</code> to the <code>Trees:</code> line.</p>
 	<p>If you use Fink Commander, then there is a Preference to use unstable
 	packages.</p>
@@ -440,14 +440,14 @@ fink scanpackages
         else from unstable, then you need to switch over to CVS updating (i.e.
         use <code>fink selfupdate-cvs</code>), because rsync only updates the
         trees that are active in your <filename>fink.conf</filename>. Edit
-        <filename>/sw/etc/fink.conf</filename> and add <code>local/main</code>
+        <filename>/opt/sw/etc/fink.conf</filename> and add <code>local/main</code>
         to the <code>Trees:</code> line, if not present. Then you'll need to
         run <code>fink selfupdate</code> to download the package description
         files. Now copy the relevant <code>.info</code> files (and their
         associated <code>.patch</code> files, if there are any) from
-        <filename>/sw/fink/dists/unstable/main/finkinfo</filename> (or
-        <filename>/sw/fink/dists/unstable/crypto/finkinfo</filename>) to
-        <filename>/sw/fink/dists/local/main/finkinfo</filename>. However, note
+        <filename>/opt/sw/fink/dists/unstable/main/finkinfo</filename> (or
+        <filename>/opt/sw/fink/dists/unstable/crypto/finkinfo</filename>) to
+        <filename>/opt/sw/fink/dists/local/main/finkinfo</filename>. However, note
         that your package may depend on other packages (or particular
         versions) which are also only in unstable. You will have to move their
         <code>.info</code> and <code>.patch</code> files as well. After you
@@ -481,9 +481,9 @@ fink scanpackages
         processed with the <code>source</code> command for csh/tcsh, or with
         the <code>.</code> command for bash/zsh, like this:</p>
         <p>for csh/tcsh:</p>
-        <codeblock>source /sw/bin/init.csh</codeblock>
+        <codeblock>source /opt/sw/bin/init.csh</codeblock>
         <p>for bash/zsh:</p>
-        <codeblock>. /sw/bin/init.sh</codeblock>
+        <codeblock>. /opt/sw/bin/init.sh</codeblock>
       </answer>
     </faqentry>
     <faqentry name="dselect-access">
@@ -494,7 +494,7 @@ fink scanpackages
         <p>You probably pointed apt at a Debian mirror, which of course
         doesn't have the Fink files. You can fix this manually or through
         dselect. To fix it manually, edit the file
-        <code>/sw/etc/apt/sources.list</code> in a text editor as root. Remove
+        <code>/opt/sw/etc/apt/sources.list</code> in a text editor as root. Remove
         lines that mention debian.org and replace them with these:</p>
         <codeblock>deb http://us.dl.sourceforge.net/fink/direct_download release main crypto
 deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeblock>
@@ -520,7 +520,7 @@ deb http://us.dl.sourceforge.net/fink/direct_download current main crypto</codeb
       <answer translated="no">
         <p>If the message is</p>
         <codeblock>Can't exec "cvs": No such file or directory at 
-/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
+/opt/sw/lib/perl5/Fink/Services.pm line 216, &lt;STDIN&gt; line 3.
 ### execution of cvs failed, exit code -1</codeblock>
         <p>then you need to install the Developer Tools.</p>
         <p>If, on the other hand, the last line is</p>
@@ -557,10 +557,10 @@ No such file or directory
 Updating using CVS failed. Check the error messages above.</codeblock>
         <p>In this case you need to reset your cvs directories. Use the
         command:</p>
-        <codeblock>sudo find /sw/fink -type d -name 'CVS' -exec rm -rf {}\
+        <codeblock>sudo find /opt/sw/fink -type d -name 'CVS' -exec rm -rf {}\
 ; fink selfupdate-cvs</codeblock>
         <p>If, you don't see either of the above messages, then this almost
-        always means you've modified a file in your /sw/fink/dists tree and
+        always means you've modified a file in your /opt/sw/fink/dists tree and
         now the maintainer has changed it. Look further back in the
         selfupdate-cvs output for lines that start with "C", like so:</p>
         <codeblock>C 10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info 
@@ -570,7 +570,7 @@ Failed: Updating using CVS failed. Check the error messages above.</codeblock>
         <p>The "C" means CVS had a conflict in trying to update the latest
         version.  The fix is to delete any files that show up as starting with "C" in
         the output of selfupdate-cvs, and try again:</p>
-        <codeblock>sudo rm /sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
+        <codeblock>sudo rm /opt/sw/fink/10.2/unstable/main/finkinfo/libs/db31-3.1.17-6.info
 fink selfupdate-cvs</codeblock>
 		<p>If you get errors that mention <em>cvs.sourceforge.net</em>:</p>
 		<codeblock>
@@ -630,7 +630,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
         <p>Once you locate the proper source tarball, download it manually,
         and then move the file into your Fink source location (i.e. for a
         default Fink install, "<code>sudo mv <em>package-source.tar.gz</em>
-        /sw/src/</code>". Then use '<code>fink install <em>packagename</em>
+        /opt/sw/src/</code>". Then use '<code>fink install <em>packagename</em>
           </code>' as normal.</p>
         <p>If you can't get the source file, then you'll have to wait for the
         maintainer to deal with the problem. They may either post a link to
@@ -645,7 +645,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
       <answer translated="no">
         <p>If this always happens, then you may have inadvertently
         modified (or failed to modify) your startup scripts. Run the
-        <filename>/sw/bin/pathsetup.sh</filename> script in a terminal
+        <filename>/opt/sw/bin/pathsetup.sh</filename> script in a terminal
         window. This program will attempt to detect your default shell
         and add a command to load Fink's shell initialization script
         into your shell's configuration. You'll then need to open a
@@ -661,8 +661,8 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
         <p>change the command field to read</p>
         <codeblock>xterm -ls</codeblock>
         <p><code>ls</code> here means <quote>login shell</quote>, and the result is that your full login setup gets used (just like the OS X Terminal).</p>
-        <p>These <filename>/sw/bin/init.*</filename> scripts do much
-	more than just add <filename>/sw/bin</filename> to your PATH.
+        <p>These <filename>/opt/sw/bin/init.*</filename> scripts do much
+	more than just add <filename>/opt/sw/bin</filename> to your PATH.
 	Many packages will not work correctly without these additional
 	actions.</p>
       </answer>
@@ -674,29 +674,29 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
       <answer translated="no">
         <p>You can indeed do this. If you have the Development Tools
         installed, then you can run the following command:</p>
-        <codeblock>sudo /Developer/Tools/SetFile -a V /sw</codeblock>
-        <p>This makes /sw invisible, just like the standard system folders
+        <codeblock>sudo /Developer/Tools/SetFile -a V /opt/sw</codeblock>
+        <p>This makes /opt/sw invisible, just like the standard system folders
         (/usr, etc.). If you don't have the Developer Tools, there are various
         third-party applications that let you manipulate file attributes--you
-        need to set /sw to be invisible.</p>
+        need to set /opt/sw to be invisible.</p>
       </answer>
     </faqentry>
     <faqentry name="install-info-bad">
       <question>
-        <p>No puedo instalar nada, porque me sale el siguiente error: "install-info: unrecognized option `--infodir=/sw/share/info"</p>
+        <p>No puedo instalar nada, porque me sale el siguiente error: "install-info: unrecognized option `--infodir=/opt/sw/share/info"</p>
       </question>
       <answer translated="no">
         <p>This usually is due to a problem in your PATH. In a terminal window
         type:</p>
         <codeblock>printenv PATH</codeblock>
-        <p>If <filename>/sw/sbin</filename> doesn't appear at all, then you
+        <p>If <filename>/opt/sw/sbin</filename> doesn't appear at all, then you
         need to set your environment up as per the <link url="/doc/users-guide/install.php#setup">instructions</link>
-        in the Users Guide. If <filename>/sw/sbin</filename> is there, but
+        in the Users Guide. If <filename>/opt/sw/sbin</filename> is there, but
         there are other directories ahead of it (e.g.
         <filename>/usr/local/bin</filename>), then you will either want to
-        reorder your PATH so that <filename>/sw/sbin</filename> is near the
+        reorder your PATH so that <filename>/opt/sw/sbin</filename> is near the
         beginning. Or if you really need the other directory to be before
-        <filename>/sw/sbin</filename>,  and this former directory includes another install-info directory, then you'll want to temporarily rename this <filename>install-info</filename> subdirectory when you use Fink.</p>
+        <filename>/opt/sw/sbin</filename>,  and this former directory includes another install-info directory, then you'll want to temporarily rename this <filename>install-info</filename> subdirectory when you use Fink.</p>
       </answer>
     </faqentry>
     <faqentry name="bad-list-file">
@@ -714,7 +714,7 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
         <codeblock>dpkg --contents <em>full-path-to-debfile</em>
         </codeblock>
         <p>e.g.</p>
-        <codeblock>dpkg --contents /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
+        <codeblock>dpkg --contents /opt/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb</codeblock>
         <p>If you get back a listing of directories and files, then your .deb
         is OK. If the output is something other than directories and files, or
         if you don't have the .deb file, you can still proceed because the
@@ -735,14 +735,14 @@ cvs [update aborted]: connect to cvs.sourceforge.net(66.35.250.207):
 else if (substr($6, length($6), 1) == "/")\
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}'\ 
-&gt; /sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
+&gt; /opt/sw/var/lib/dpkg/info/<em>packagename</em>.list</codeblock>
         <p>e.g.</p>
-        <codeblock>dpkg -c /sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
+        <codeblock>dpkg -c /opt/sw/fink/debs/libgnomeui2-dev_2.0.6-2_darwin-powerpc.deb | awk \
 '{if ($6 == "./") { print "/."; } \
 else if (substr($6, length($6), 1) == "/") \
 {print substr($6, 2, length($6) - 2); } \
 else { print substr($6, 2, length($6) - 1);}}' \ 
-&gt; /sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
+&gt; /opt/sw/var/lib/dpkg/info/libgnomeui2-dev.list</codeblock>
         <p>What this does is to extract the contents of the .deb file, remove
         everything but the filenames, and write these to the .list file.</p>
       </answer>
@@ -819,11 +819,11 @@ Hit http://us.dl.sourceforge.net 10.3/current/main Packages
 Hit http://us.dl.sourceforge.net 10.3/current/main Release 
 Hit http://us.dl.sourceforge.net 10.3/current/crypto Packages 
 Hit http://us.dl.sourceforge.net 10.3/current/crypto Release 
-Failed to fetch file:/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
+Failed to fetch file:/opt/sw/fink/dists/local/main/binary-darwin-powerpc/Packages
 File not found 
-Failed to fetch file:/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
+Failed to fetch file:/opt/sw/fink/dists/stable/main/binary-darwin-powerpc/Packages
 File not found
-Failed to fetch file:/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
+Failed to fetch file:/opt/sw/fink/dists/stable/crypto/binary-darwin-powerpc/Packages
 File not found 
 Reading Package Lists... Done 
 Building Dependency Tree...Done 
@@ -834,7 +834,7 @@ update available list script returned error exit status 1.</codeblock>
         generates the files that aren't being found.</p>
         <p>If you get an error of the following form:</p>
         <codeblock>W: Couldn't stat source package list file: unstable/main Packages
-(/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
+(/opt/sw/var/lib/apt/lists/_sw_fink_dists_unstable_main_binary-darwin-
 powerpc_Packages) - stat (2 No such file or directory)</codeblock>
         <p>then you should run</p>
 <codeblock>
@@ -853,7 +853,7 @@ fink scanpackages
         distros are subsets), Fink needs to be told that this has happened. To
         do this, you can run a script that normally gets run when you first
         install Fink:</p>
-        <codeblock>/sw/lib/fink/postinstall.pl</codeblock>
+        <codeblock>/opt/sw/lib/fink/postinstall.pl</codeblock>
         <p>Doing this will point Fink to the correct place.</p>
       </answer>
     </faqentry>
@@ -882,14 +882,14 @@ fink scanpackages
       </question>
       <answer translated="no">
         <p>Errors of the form:</p>
-        <codeblock>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
+        <codeblock>gzip -dc /opt/sw/src/dpkg-1.10.9.tar.gz | /opt/sw/bin/tar -xf - 
 ### execution of gzip failed, exit code 139</codeblock>
         <p>or</p>
-        <codeblock>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
+        <codeblock>gzip -dc /opt/sw/src/aquaterm-0.3.0a.tar.gz | /opt/sw/bin/tar -xf -
 gzip: stdout: Broken pipe 
 ### execution of gzip failed, exit code 138</codeblock>
         <p>or</p>
-        <codeblock>dpkg-deb -b root-base-files-1.9.0-1 /sw/fink/dists/unstable/main/binary-darwin-powerpc/base
+        <codeblock>dpkg-deb -b root-base-files-1.9.0-1 /opt/sw/fink/dists/unstable/main/binary-darwin-powerpc/base
 
 ### execution of dpkg-deb failed, exit code 1
 Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
@@ -897,7 +897,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
         fileutils</code>, e.g. <code>ls</code> or <code>mv</code>, are likely
         to be due to a prebinding error in a library, and can be fixed by
         running</p>
-        <codeblock>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
+        <codeblock>sudo /opt/sw/var/lib/fink/prebound/update-package-prebinding.pl -f</codeblock>
       </answer>
     </faqentry>
     <faqentry name="pathsetup-keeps-running">
@@ -906,12 +906,12 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</codeblock>
       </question>
       <answer translated="no">
         <p>What happened is that somehow the OSX Terminal program has been
-        told to run <code>/sw/bin/pathsetup.command</code> every time you log
+        told to run <code>/opt/sw/bin/pathsetup.command</code> every time you log
         in. You can fix this by removing the Preferences file,
         <code>~/Library/Preferences/com.apple.Terminal.plist</code>.</p>
         <p>If you have other preferences that you want to keep, you can edit
         the file with a text editor and remove the reference to
-        <code>/sw/bin/pathsetup.command</code>.</p>
+        <code>/opt/sw/bin/pathsetup.command</code>.</p>
       </answer>
     </faqentry>
     <faqentry name="ext-drive">
@@ -948,13 +948,13 @@ Failed test (./Command/chowname.t at line 27)
     </faqentry>
     <faqentry name="cant-move-fink">
       <question translated="no">
-        <p>I can't update Fink, because it can't move /sw/fink out of the way.</p>
+        <p>I can't update Fink, because it can't move /opt/sw/fink out of the way.</p>
       </question>
       <answer translated="no">
         <p>This error:</p>
-        <codeblock>Failed: Can't move &quot;/sw/fink&quot; out of the way.</codeblock>
+        <codeblock>Failed: Can't move &quot;/opt/sw/fink&quot; out of the way.</codeblock>
         <p>is usually due, in spite of what it says, to permissions errors in one of the temporary directories that get created during a <code>selfupdate</code>.  Remove these:</p>
-        <codeblock>sudo rm -rf /sw/fink.tmp /sw/fink.old</codeblock>
+        <codeblock>sudo rm -rf /opt/sw/fink.tmp /opt/sw/fink.old</codeblock>
       </answer>
     </faqentry>
 
@@ -992,7 +992,7 @@ sudo chmod 1775 /
       </question>
       <answer translated="no">
         <p>This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p>
-        <codeblock>sudo rm -rf /sw</codeblock>
+        <codeblock>sudo rm -rf /opt/sw</codeblock>
         <p>and then download the disk image for Intel machines from <link url="/download/index.php">the downloads page</link>.</p>
       </answer>
     </faqentry>
@@ -1029,7 +1029,7 @@ sudo chmod 1775 /
         <codeblock>make: command not found</codeblock>
         <p>or</p>
         <codeblock>Can't exec "make": 
-No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
+No such file or directory at /opt/sw/lib/perl5/Fink/Services.pm line 190.</codeblock>
         <p>It means you need to install the Developer Tools.</p>
         <p>On the other hand, if your error message looks like</p>
         <codeblock>make: illegal option -- C</codeblock>
@@ -1061,8 +1061,8 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock
         you can still run into it if you use the binary release for first-time
         installation or install libwww after you installed Fink.</p>
         <p>This problem has also been reported due to the installation of
-        <filename>/sw/bin/HEAD</filename> (not by any Fink package). This is
-        easier to solve: rename <filename>/sw/bin/HEAD</filename>.</p>
+        <filename>/opt/sw/bin/HEAD</filename> (not by any Fink package). This is
+        easier to solve: rename <filename>/opt/sw/bin/HEAD</filename>.</p>
       </answer>
     </faqentry>
     <faqentry name="also_in">
@@ -1099,9 +1099,9 @@ No such file or directory at /sw/lib/perl5/Fink/Services.pm line 190.</codeblock
         didn't stop. To track down the offending file(s), search in the output
         of the build for the nonexistent file, e.g. if you have something
         like:</p>
-        <codeblock>mv /sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib \
-/sw/src/root-foo-shlibs-0.1.2-3/sw/lib/ 
-mv: cannot stat `/sw/src/root-foo-0.1.2-3/sw/lib/libbar*.dylib': 
+        <codeblock>mv /opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib \
+/opt/sw/src/root-foo-shlibs-0.1.2-3/opt/sw/lib/ 
+mv: cannot stat `/opt/sw/src/root-foo-0.1.2-3/opt/sw/lib/libbar*.dylib': 
 No such file or directory 
 ### execution of mv failed, exit code 1 
 Failed: installing foo-0.1.2-3 failed</codeblock>
@@ -1170,12 +1170,12 @@ Failed: installing foo-0.1.2-3 failed</codeblock>
         <p>The output hints at what to do. The message is usually something
         like:</p>
         <codeblock>ld: table of contents for archive: 
-/sw/lib/libintl.a is out of date; 
+/opt/sw/lib/libintl.a is out of date; 
 rerun ranlib(1) (can't load from it)</codeblock>
         <p>What you need to do is run ranlib (as root) on whatever library is
         causing the problem. As an example, for the case above, you would
         run:</p>
-        <codeblock>sudo ranlib /sw/lib/libintl.a</codeblock>
+        <codeblock>sudo ranlib /opt/sw/lib/libintl.a</codeblock>
       </answer>
     </faqentry>
     <faqentry name="fc-atlas">
@@ -1214,14 +1214,14 @@ rerun ranlib(1) (can't load from it)</codeblock>
     </faqentry>
     <faqentry name="dpkg-parse-error">
       <question>
-        <p>No puedo instalar nada porque me aparece:  "dpkg: parse error, in file  `/sw/var/lib/dpkg/status'"!</p>
+        <p>No puedo instalar nada porque me aparece:  "dpkg: parse error, in file  `/opt/sw/var/lib/dpkg/status'"!</p>
       </question>
       <answer translated="no">
         <p>This means that somehow your dpkg database got damaged, usually
         from a crash or some other unrecoverable error.  This most often occurs with a buildlock, e.g:</p>
 	<codeblock>package `fink-buildlock-foo-1.2.3-4':  missing version</codeblock>
 	<p>(of course, replace <filename>foo-1.2.3-4</filename> with the package name you are seeing).</p>
-	<p>When this happens, you should edit <filename>/sw/var/lib/dpkg/status</filename> as a superuser.
+	<p>When this happens, you should edit <filename>/opt/sw/var/lib/dpkg/status</filename> as a superuser.
 	Then go near the line number which shows up in the error message.
 	You should see a <code>fink-buildlock-foo-1.2.3-4</code>
         package whose <code>Status</code> field is marked</p>
@@ -1230,7 +1230,7 @@ rerun ranlib(1) (can't load from it)</codeblock>
 	<codeblock>purge ok not-installed</codeblock>
 	<p>Under other circumstances, there may be garbage in the file.  You can fix this situation by
         copying the previous version of the database, like so:</p>
-        <codeblock>sudo cp /sw/var/lib/dpkg/status-old /sw/var/lib/dpkg/status</codeblock>
+        <codeblock>sudo cp /opt/sw/var/lib/dpkg/status-old /opt/sw/var/lib/dpkg/status</codeblock>
         <p>You may need to re-install the last couple of packages you
         installed before the problem started occurring.</p>
       </answer>
@@ -1249,15 +1249,15 @@ rerun ranlib(1) (can't load from it)</codeblock>
 <p>if you're using <filename>bash</filename>.  The Mono Framework has been known to install a <filename>/usr/bin/freetype-config</filename> that is a symbolic link to a file in that framework.</p>
 <p>If your error looks
         like:</p>
-        <codeblock>/sw/include/pango-1.0/pango/pangoft2.h:52: 
+        <codeblock>/opt/sw/include/pango-1.0/pango/pangoft2.h:52: 
 error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:57:
+/opt/sw/include/pango-1.0/pango/pangoft2.h:57:
 error: parse error before '*' token
-/sw/include/pango-1.0/pango/pangoft2.h:61: 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:61: 
 error: parse error before '*' token 
-/sw/include/pango-1.0/pango/pangoft2.h:86: 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: 
 error: parse error before "pango_ft2_font_get_face"
-/sw/include/pango-1.0/pango/pangoft2.h:86: 
+/opt/sw/include/pango-1.0/pango/pangoft2.h:86: 
 warning: data definition has no type or storage class 
 make[2]: *** [rsvg-gz.lo] Error 1
 make[1]: *** [all-recursive] Error 1 
@@ -1429,9 +1429,9 @@ running build_ext
 Traceback (most recent call last):
   File "setup_socket_ssl.py", line 21, in ?
     depends = ['socketmodule.h'] )
-  File "/sw/src/root-python24-2.4.1-1/sw/lib/python2.4/distutils/core.py", line 166, in setup
+  File "/opt/sw/src/root-python24-2.4.1-1/opt/sw/lib/python2.4/distutils/core.py", line 166, in setup
 SystemExit: error: $MACOSX_DEPLOYMENT_TARGET mismatch: now "10.4" but "10.3" during configure
-### execution of /sw/bin/python2.4 failed, exit code 1</codeblock>
+### execution of /opt/sw/bin/python2.4 failed, exit code 1</codeblock>
         <p>the problem occurs because the <code>python2*</code> packages write the current <code>MACOSX_DEPLOYMENT_TARGET</code> to a configuration file when they're built and the python build utilities use this value when compiling modules. This means that if you have, for example, a <code>python24</code> package on 10.4 that was built on 10.3, either by upgrading 10.3 =&gt; 10.4, or via the <em>10.4-transitional</em> binary distribution, in which <code>python24</code> wasn't rebuilt, there will be a mismatch between what python thinks <code>MACOSX_DEPLOYMENT_TARGET</code> should be (10.3) and what it actually is (10.4).</p>
         <p>The fix is to rebuild the offending <code>python</code> package, e.g. <code>fink rebuild python24</code> for the case above.</p>
         <p>For runtime errors that give the same type of error message as above, rebuild the module after rebuilding the appropriate <code>python2*</code> package.</p>
@@ -1569,7 +1569,7 @@ sudo dpkg -r --force-depends xfree86-rootless-threaded-shlibs</codeblock>
       </question>
       <answer translated="no">
         <p>If you get errors of the form:</p>
-        <codeblock>libtool: link: cannot find the library `/sw/lib/libiconv.la'</codeblock>
+        <codeblock>libtool: link: cannot find the library `/opt/sw/lib/libiconv.la'</codeblock>
         <p>you can solve this problem by running</p>
         <codeblock>fink remove gettext-dev
 fink install libiconv</codeblock>
@@ -1700,28 +1700,28 @@ preventing you from updating <code>gettext</code>.</p>
 		appropriate target architecture.  For a package that uses standard
 		configure/make process, you need to set some environment variables:</p>
         <p>-bash-</p>
-        <codeblock>export CFLAGS=-I/sw/include 
-export LDFLAGS=-L/sw/lib 
+        <codeblock>export CFLAGS=-I/opt/sw/include 
+export LDFLAGS=-L/opt/sw/lib 
 export CXXFLAGS=$CFLAGS 
 export CPPFLAGS=$CXXFLAGS 
-export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
-export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
-export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
+export ACLOCAL_FLAGS=&quot;-I /opt/sw/share/aclocal&quot;
+export PKG_CONFIG_PATH=&quot;/opt/sw/lib/pkgconfig&quot;
+export PATH=/opt/sw/var/lib/fink/path-prefix-clang:$PATH
 export MACOSX_DEPLOYMENT_TARGET=10.9</codeblock>
         <p>-tcsh-</p>
-        <codeblock>setenv CFLAGS -I/sw/include 
-setenv LDFLAGS -L/sw/lib 
+        <codeblock>setenv CFLAGS -I/opt/sw/include 
+setenv LDFLAGS -L/opt/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
-setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
-setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
-setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv ACLOCAL_FLAGS &quot;-I /opt/sw/share/aclocal&quot;
+setenv PKG_CONFIG_PATH &quot;/opt/sw/lib/pkgconfig&quot;
+setenv PATH /opt/sw/var/lib/fink/path-prefix-clang:$PATH
 setenv MACOSX_DEPLOYMENT_TARGET 10.9</codeblock>
 	<p>(assuming that the build system is running OS 10.9 or later)</p>
         <p>It is often easiest just to add these to your startup files (e.g.
         <filename>.cshrc</filename> | <filename>.profile</filename>) so they
         are set automatically. If a package does not use these variables, you
-        may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
+        may need to add the "-I/opt/sw/include" (for headers) and "-L/opt/sw/lib" (for
         libraries) to the compile lines yourself. Some packages may use
         similar non-standard variables such as EXTRA_CFLAGS or --with-qt-dir=
         configure options. "./configure --help" will usually give you a list
@@ -1740,13 +1740,13 @@ setenv MACOSX_DEPLOYMENT_TARGET 10.9</codeblock>
         which means that the Applications menu doesn't have the PATH set
         correctly to find your Fink applications. The solution is to preface
         the name of a Fink-installed application with</p>
-        <codeblock>source /sw/bin/init.sh ;</codeblock>
+        <codeblock>source /opt/sw/bin/init.sh ;</codeblock>
         <p>For example, if you want to run a Fink-installed GIMP, then put</p>
-        <codeblock>source /sw/bin/init.sh ; gimp</codeblock>
+        <codeblock>source /opt/sw/bin/init.sh ; gimp</codeblock>
         <p>in the Command field of your GIMP entry.</p>
         <p>You can also edit your .xinitrc file (in your user directory) and
         add:</p>
-        <codeblock>source /sw/bin/init.sh</codeblock>
+        <codeblock>source /opt/sw/bin/init.sh</codeblock>
         <p>after the first line.</p>
       </answer>
     </faqentry>

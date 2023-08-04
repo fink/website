@@ -3,7 +3,7 @@
 <document filename="index" lang="ja" >
 <title>Fink ユーザーガイド</title>
 <shorttitle>ユーザーガイド</shorttitle>
-<cvsid>$Id: uguide.ja.xml,v 1.31 2019/01/19 10:11:12 nieder Exp $</cvsid>
+<cvsid>$Id: uguide.ja.xml,v 1.32 2023/08/04 4:49:23 nieder Exp $</cvsid>
 <preface>
 <p>
 このドキュメントは、 Fink の全ての機能を概説します。
@@ -201,7 +201,7 @@ StuffIt Expander が解凍してしまっている場合、作成されたフォ
 スクリプトがシステムをチェックし、 sudo を使って root になります。
 この時、パスワードを聞いてきます。
 次に、インストールパスを聞いてきます。
-特に理由がない限り、デフォルトのパス /sw を使ってください。
+特に理由がない限り、デフォルトのパス /opt/sw を使ってください。
 このドキュメントでは、このパスを例として使いますので、パスを換えた場合は適宜置き換えてください。
 </p>
 <p>
@@ -226,11 +226,11 @@ StuffIt Expander が解凍してしまっている場合、作成されたフォ
 Fink ディレクトリ階層にインストールされたソフトウェア、パッケージ管理プログラムを含めて、を使用するには、 PATH 環境変数などをそれぞれ設定しなければなりません。
 これはターミナル上で、
 </p>
-<codeblock>/sw/bin/pathsetup.sh</codeblock>
+<codeblock>/opt/sw/bin/pathsetup.sh</codeblock>
 <p>
 と入力します。
 古いバージョンの fink の場合、ファイル名が <filename>pathsetup.command</filename> ですので、次のように入力します。
-<code>open /sw/bin/pathsetup.command</code>
+<code>open /opt/sw/bin/pathsetup.command</code>
 として下さい。
 これが効かない場合は手動で設定することができますが、シェルによってやり方が異なります。
 現在のシェルを知るには、ターミナルを開き:
@@ -247,14 +247,14 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
   <p>
    Bourne シェル系 (sh, bash, zsh など) を使っている場合、以下の行をホームディレクトリ内の <code>.profile</code> ファイルに追加して下さい (あるいは、 <code>.bash_profile</code> がある場合、こちらを使って下さい):
   </p>
-  <codeblock>. /sw/bin/init.sh</codeblock>
+  <codeblock>. /opt/sw/bin/init.sh</codeblock>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
   <codeblock>cd pico .profile</codeblock>
 <p>
 フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
-<code>. /sw/bin/init.sh</code> 行をタイプできるようになります。
+<code>. /opt/sw/bin/init.sh</code> 行をタイプできるようになります。
 &quot;New file&quot; という文字が出ていても大丈夫です。
 行を追加したら、最低一回はリターンキーを押して下さい。
 その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
@@ -266,7 +266,7 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
    tcsh を使っている場合、以下の行をホームディレクトリ内の 
    <filename>.cshrc</filename> ファイルに追加して下さい:
   </p>
-  <codeblock>source /sw/bin/init.csh</codeblock>
+  <codeblock>source /opt/sw/bin/init.csh</codeblock>
   <p>
    行追加の方法を知らない場合、以下のコマンドを実行して下さい:
   </p>
@@ -274,7 +274,7 @@ bash, zsh, sh または似たようなものであれば、 bourne シェルの�
 pico .profile</codeblock>
 <p>
 フルスクリーン (フル・ターミナルウィンドウ) テキストエディタになり、 
-<code>source /sw/bin/init.csh</code> 行をタイプできるようになります。
+<code>source /opt/sw/bin/init.csh</code> 行をタイプできるようになります。
 &quot;New file&quot; という文字が出ていても大丈夫です。
 行を追加したら、最低一回はリターンキーを押して下さい。
 その後、 Control-O, Return, Control-X と押して、エディタから抜けて下さい。
@@ -775,7 +775,7 @@ Source-&gt;Update-all を行います(詳細は前の節を参照)。
 一般的に、こういった設定は上級者専用のオプションです。
 </p>
 <p>
-<em>fink.conf</em> ファイルは <code>/sw/etc/fink.conf</code> にあります。
+<em>fink.conf</em> ファイルは <code>/opt/sw/etc/fink.conf</code> にあります。
 自分の好きなテキストエディタで編集することができますが、スーパーユーザー権限が必要です。
 </p>
 </section>
@@ -807,7 +807,7 @@ ListOption: Option1 Option2 Option3
 <em>Basepath:</em> path</p>
 <p>
 Fink がインストールされている場所を知らせます。
-Fink の最初のインストール時に変更していない限り、デフォルトでは <em>/sw</em> です。
+Fink の最初のインストール時に変更していない限り、デフォルトでは <em>/opt/sw</em> です。
 この値を変更しては<em>いけません</em>。
 <em>fink</em> が混乱します。
 </p>
@@ -841,10 +841,10 @@ unstable/crypto - 非安定版の暗号パッケージ
 unstable/main   - 他の非安定版パッケージ
 </codeblock>
 <p>
-独自のツリーを <code>/sw/fink/dists</code> ディレクトリに追加することもできますが、通常は必要ありません。
+独自のツリーを <code>/opt/sw/fink/dists</code> ディレクトリに追加することもできますが、通常は必要ありません。
 デフォルトのツリーは &quot;local/main local/bootstrap
 stable/main&quot; です。
-この一覧は <code>/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
+この一覧は <code>/opt/sw/etc/apt/sources.list</code> ファイルと同期を保つようにして下さい。
 (fink 0.21.0 より、 <code>fink</code> が自動的に行うようになりました)
 </p>
 <p>ツリーの順序には意味があります。後のツリーにあるパッケージが前のツリーのパッケージを書き換えます。</p>
@@ -856,14 +856,14 @@ stable/main&quot; です。
 10.0 以前はサポートされていません。
 10.1 は現バージョンからサポート対象外となりました。
 10.2 は August 2003 Developer Tools に更新している場合のみサポートされています。
-このフィールドは <code>/sw/lib/fink/postinstall.pl</code> を実行することで設定されます。
+このフィールドは <code>/opt/sw/lib/fink/postinstall.pl</code> を実行することで設定されます。
 ユーザーがこの値を変えてはいけません。
 </p>
 </li>
 <li>
 <p>
 <em>FetchAltDir:</em> path</p>
-<p><code>fink</code> は通常、ソースを <code>/sw/src</code> に保存します。
+<p><code>fink</code> は通常、ソースを <code>/opt/sw/src</code> に保存します。
 この値を変えることで、他の場所にダウンロードしたソースコードを探させることもできます。
 例えば:
 </p>
@@ -898,7 +898,7 @@ stable/main&quot; です。
 <li>
 <p>
 <em>NoAutoIndex:</em> ブール値</p>
-<p>Fink は、パッケージ記述ファイルを /sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
+<p>Fink は、パッケージ記述ファイルを /opt/sw/var/db/fink.db にキャッシュし、実行するたびに読み込んでパースする時間をセーブします。
 この値が &quot;True&quot; でない限り、 Fink はパッケージインデックスを更新する必要があるか確認します。
 デフォルト値は &quot;False&quot; で、変更することは勧めません。
 変更した場合、 <code>fink index</code> コマンドを手動で実行してインデックスを更新する必要があります。
@@ -917,7 +917,7 @@ stable/main&quot; です。
 <em>Buildpath:</em> パス</p>
 <p>
 Fink はソースからコンパイルする場合、パッケージごとに仮ディレクトリを作成します。
-デフォルトでは Panther 以前では <filename>/sw/src</filename> 内に、Tiger からは <filename>/sw/src/fink.build</filename> 内に、
+デフォルトでは Panther 以前では <filename>/opt/sw/src</filename> 内に、Tiger からは <filename>/opt/sw/src/fink.build</filename> 内に、
 置かれていますが、別の場所を使いたい場合はここでパスを指定します。
 仮ディレクトリについては、本文書中<xref section="developer">Developer Settings</xref> 節の
 の <code>KeepRootDir</code> と <code>KeepBuildDir</code> のフィールドの解説をご覧下さい。
@@ -1021,7 +1021,7 @@ git はミラーを使えないという欠点があるため、 git サーバ�
 <p>
 <em>MirrorContinent:</em> 3 字のコード</p>
 <p>この値を変えるには、 <code>fink configure</code> コマンドを使います。
-3 字のコードは <code>/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
+3 字のコードは <code>/opt/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
 例えば、アジアの場合:
 </p>
 <codeblock>MirrorContinent: asi</codeblock>
@@ -1030,7 +1030,7 @@ git はミラーを使えないという欠点があるため、 git サーバ�
 <p>
 <em>MirrorCountry:</em> 6 字のコード</p>
 <p>この値を変えるには、 <code>fink configure</code> コマンドを使います。
-6 字のコードは <code>/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
+6 字のコードは <code>/opt/sw/lib/fink/mirror/_keys</code> にあるものから選択します。
 例えば、日本の場合:</p>
 <codeblock>MirrorCountry: asi-JP</codeblock>
 </li>
@@ -1106,7 +1106,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 				<p>
 					Fink パッケージ <code>ccache-default</code> がインストールされている場合、
 					Fink パッケージを作成中にこれがつくるキャッシュがここに保存される。
-					規定値は <filename>/sw/var/ccache</filename> 。
+					規定値は <filename>/opt/sw/var/ccache</filename> 。
 					<code>none</code> と設定された場合、 fink は CCACHE_DIR 環境変数を設定せず、
 					ccache は <filename>$HOME/.ccache</filename> を使用する。
 					ルートに所有されているファイルを自分のホームディレクトリに保存することもあり得る。
@@ -1116,7 +1116,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
         	<li><p><em>NotifyPlugin:</em> プラグイン</p><p>
            			パッケージがいつインストール/アンインストールされたかを答える告知プラグインを指定する。
            			規定値は Growl (<code>Mac::Growl</code> が必要)。
-           			他のプラグインは、 <filename>/sw/lib/perl5/Fink/Notify</filename> にある。
+           			他のプラグインは、 <filename>/opt/sw/lib/perl5/Fink/Notify</filename> にある。
 				</p>
 			</li>
         <li><p><em>AutoScanpackages:</em> ブール値</p>
@@ -1144,7 +1144,7 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 		<title>apt の sources.list ファイルを管理</title>
 		<p>
 			fink 0.21.0 より、 fink は apt がバイナリファイルをインストールする際に使う
-			<code>/sw/etc/apt/sources.list</code> ファイルを積極的に管理します。
+			<code>/opt/sw/etc/apt/sources.list</code> ファイルを積極的に管理します。
 			デフォルトの sources.list ファイルは、以下の形式で、 Distribution と Trees が調整されています
 		</p>
 <codeblock># Local modifications should either go above this line, or at the end.
@@ -1153,10 +1153,10 @@ ClosestFirst - 最も近いソースミラーを最初に探す (全てのミラ
 
 # Local package trees - packages built from source locally
 # NOTE: this is automatically kept in sync with the Trees: line in
-# /sw/etc/fink.conf
+# /opt/sw/etc/fink.conf
 # NOTE: run 'fink scanpackages' to update the corresponding Packages.gz files
-deb file:/sw/fink local main
-deb file:/sw/fink stable main crypto
+deb file:/opt/sw/fink local main
+deb file:/opt/sw/fink stable main crypto
 
 # Official binary distribution: download location for packages
 # from the latest release
@@ -1179,8 +1179,8 @@ deb http://us.dl.sourceforge.net/fink/direct_download 10.3/current main crypto
 			変更がファイルの先頭か末尾であれば、 Fink は、ファイルの変更をそのままにします。
 		</p>
 		<p>
-			注記: fink 0.21.0 にアップグレードする前に <code>/sw/etc/apt/sources.list</code> を変更した場合、
-			<code>/sw/etc/apt/sources.list.finkbak</code> として保存されます。
+			注記: fink 0.21.0 にアップグレードする前に <code>/opt/sw/etc/apt/sources.list</code> を変更した場合、
+			<code>/opt/sw/etc/apt/sources.list.finkbak</code> として保存されます。
 		</p>
 	</section>
 </chapter>
@@ -1339,7 +1339,7 @@ remove コマンドは、 'dpkg --remove' を呼び出してシステムから�
 <p>
 <em>remove</em> コマンドは実際のパッケージファイル (設定ファイルは除く) を削除するだけですが、 <filename>.deb</filename> 圧縮パッケージファイルはそのままにします。
 これは、後で再インストールする際にコンパイルしなくても良いことを意味します。
-ディスク容量が必要であれば、 <filename>/sw/fink/dists</filename> ツリーから <filename>.deb</filename> ファイルを取り除いてもかまいません。
+ディスク容量が必要であれば、 <filename>/opt/sw/fink/dists</filename> ツリーから <filename>.deb</filename> ファイルを取り除いてもかまいません。
 </p>
 <p><em>fink remove</em> 時に、以下のフラグを使用することができます。</p>
 <codeblock>-h,--help             使用できるオプションを表示
@@ -1528,7 +1528,7 @@ fink apropos -s=kde irc   - 上と同様。ただし、 kde セクションに�
 <p>
 このコマンドは、自動的に Fink の新リリースにアップグレードします。
 Fink のウェブサイトへ新しいバージョンがあるか確認し、 <code>fink</code> 自体を含めたコアパッケージを更新します。
-各種リリースのアップグレードの他、このコマンドを初めて実行した際に Git または rsync を選択した場合、<filename>/sw/fink/dists</filename> を、直接 Git または rsync でアップグレードすることもできます。
+各種リリースのアップグレードの他、このコマンドを初めて実行した際に Git または rsync を選択した場合、<filename>/opt/sw/fink/dists</filename> を、直接 Git または rsync でアップグレードすることもできます。
 これを行なうと、全てのパッケージの最新版へアクセスできるようになります。
 </p>
 <p>
@@ -1595,7 +1595,7 @@ Fink のウェブサイトへ新しいバージョンがあるか確認し、 <c
       <p>モードが指定されていない場合、<code>--debs --sources</code> が既定のオプションとなります。</p>
       <p>これらに加え、以下のオプションも使うことができます:</p>
       <codeblock>
--k,--keep-src        - 古いソースファイルを、削除するのではなく /sw/src/old/ に移します。
+-k,--keep-src        - 古いソースファイルを、削除するのではなく /opt/sw/src/old/ に移します。
 -d,--dry-run         - 削除対象のファイルを一覧表示し、実際には削除しません。
 -h,--help            - 使用可能なモードとオプションを表示します。</codeblock>
 </section>

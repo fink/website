@@ -3,7 +3,7 @@
 <document filename="index" lang="zh">
   <title>如何在 Fink 邮件列表上张贴</title>
   <shorttitle>网络礼仪</shorttitle>
-  <cvsid>$Id: netiquette.zh.xml,v 1.3 2012/11/11 15:20:16 gecko2 Exp $</cvsid>
+  <cvsid>$Id: netiquette.zh.xml,v 1.4 2023/08/04 5:23:15 nieder Exp $</cvsid>
   <preface>
     <p><em>本文档正在编写当中。</em></p>
     <p>本文档是作为 Fink 邮件列表的新张贴者的一个使用规则。
@@ -65,7 +65,7 @@ error unpacking foo
 Checking for bar-config...no
 Error:  bar-config not found
 ....</codeblock>
-						<p>如果你认为可能有帮助的话，你可以张贴配置日志文件的相应部分，例如： <filename>/sw/src/foo-3.141-6/foo-3.141/config.log</filename>。<em>请不要张贴整个文件，因为它会非常巨大。</em></p>
+						<p>如果你认为可能有帮助的话，你可以张贴配置日志文件的相应部分，例如： <filename>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</filename>。<em>请不要张贴整个文件，因为它会非常巨大。</em></p>
 						</li>
                 <li><p>或者，错误在你实际开始构建软件包时立即发生。
                 这种情况下，可以张贴从编译尝试运行到结束的几行：</p>

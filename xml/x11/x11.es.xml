@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Ejecutando X11 en Darwin y Mac OS X</title>
   <shorttitle>Ejecución de X11</shorttitle>
-  <cvsid>$Id: x11.es.xml,v 1.6 2012/11/11 15:20:18 gecko2 Exp $</cvsid>
+  <cvsid>$Id: x11.es.xml,v 1.7 2023/08/04 5:08:13 nieder Exp $</cvsid>
   <preface>
     <p>
 Este documento trata sobre la ejecución de  X11 / XFree86 / Xtools en los sistemas 
@@ -362,7 +362,7 @@ completamente.</p>
 un gestor de ventanas diferente, puedes hacer como en el siguiente ejemplo: 
 </p>
           <codeblock>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</codeblock>
+exec /opt/sw/bin/fvwm2</codeblock>
           <p>Es posible, por supuesto, llamar a cualquier otro gestor de 
 ventanas, a <code>startkde</code>, etc.</p>
         </li>
@@ -378,11 +378,11 @@ pero a pesar de ello la tienen.</p>
 entornos de Fink.  
 Para arrancar aplicaciones instaladas a través de Fink 
 (p.e. gestores de ventana, sesiones de gnome, otras de 
-<filename>/sw/bin</filename>) ponga lo que sigue cerca 
+<filename>/opt/sw/bin</filename>) ponga lo que sigue cerca 
 del principio de <filename>~/.xinitrc</filename> (i.e. después del 
 "<filename>#!/bin/sh</filename>" inicial pero antes de ejecutar 
 ningún programa):</p>
-          <codeblock> . /sw/bin/init.sh
+          <codeblock> . /opt/sw/bin/init.sh
 </codeblock>
           <p>para inicializar el entorno de Fink.  
 Nota:  Se usa <filename>init.sh</filename> en lugar de 
@@ -394,12 +394,12 @@ por <filename>sh</filename> y no por <filename>tcsh</filename>.</p>
 de Fink para algunas de sus funciones requieren un tratamiento 
 especial cuando son invocadas desde el menú Aplicaciones.  En lugar de colocar la 
 ruta completa hasta el fichero, p.e.</p>
-          <codeblock>/sw/bin/emacs</codeblock>
+          <codeblock>/opt/sw/bin/emacs</codeblock>
           <p>hay que usar algo como lo siguiente, si usas bash 
 como shell por defecto:</p>
-          <codeblock>. /sw/bin/init.sh ; emacs</codeblock>
+          <codeblock>. /opt/sw/bin/init.sh ; emacs</codeblock>
           <p>o, si usas tcsh:</p>
-          <codeblock>source /sw/bin/init.csh ; emacs</codeblock>
+          <codeblock>source /opt/sw/bin/init.csh ; emacs</codeblock>
           <p>Así nos aseguramos que la aplicación tiene la información correcta
 en PATH. Se debe usar esta sintaxis para cualquier aplicación instalada vía Fink.</p>
         </li>
@@ -821,13 +821,13 @@ que sigue)
       <p>
 Un simple ejemplo que arranca GNOME:
 </p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 exec gnome-session</codeblock>
       <p>Un ejemplo más complejo para usuarios de bash que apaga las alertas 
 de X11, arranca algunos clientes y finalmente ejecuta el gestor de 
 ventanas 
 Enlightenment:</p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -838,27 +838,27 @@ xterm &amp;
 exec enlightenment</codeblock>
       <p>Para arrancar GNOME 2.2 bajo X11 de Apple, usa la siguiente secuencia:
 </p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </codeblock>
       <p>Para GNOME 2.4 bajo X11 de Apple, metacity arranca automáticamente y 
 por lo tanto la secuencia se reduce a:</p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </codeblock>
       <p>Para arrancar KDE 3.2 (version &lt; 3.2.2-21) bajo X11 de Apple:</p>
-      <codeblock>. /sw/bin/init.sh
+      <codeblock>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </codeblock>
       <p>Y finalmente, para arrancar la última versión inestable de KDE 
 bajo X11 de Apple:</p>
-      <codeblock>. /sw/bin/init.sh
-/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
+      <codeblock>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde &gt;/tmp/kde.log 2&gt;&amp;1
 </codeblock>
     </section>
   </chapter>
@@ -1124,7 +1124,7 @@ Tipo: Fatal.
 Ocurre con XDarwin 1.0a2 y 1.0a3 cuando los ficheros 
 de  inicialización del shell no han tienen nigún comando para añadir /usr/X11R6/bin a la variable PATH.
 Si usas Fink y no has cambiado tu shell por defecto, debería ser suficiente 
-añadir la línea <code>source /sw/bin/init.csh</code> al fichero 
+añadir la línea <code>source /opt/sw/bin/init.csh</code> al fichero 
 <filename>.cshrc</filename> en tu directorio de usuario.
 </p>
       <codeblock>_XSERVTransSocketUNIXCreateListener: 
@@ -1194,8 +1194,8 @@ The app that should run in the foreground can't be found.
 Este can happen when you give just the name without the path
 (e.g. <code>xterm</code>), but forget to set the shell's search path
 (environment variable PATH).
-Neither /usr/X11R6/bin nor /sw/bin are in the default path.
-If you use Fink, just add an <code>source /sw/bin/init.sh</code> to
+Neither /usr/X11R6/bin nor /opt/sw/bin are in the default path.
+If you use Fink, just add an <code>source /opt/sw/bin/init.sh</code> to
 the start of the <code>.xinitrc</code>.
 To set the path manually, use this piece:
 </p>

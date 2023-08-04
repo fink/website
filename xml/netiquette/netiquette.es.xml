@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Como mandar mensajes a las Listas de Correo de Fink</title>
   <shorttitle>Netiquette</shorttitle>
-  <cvsid>$Id: netiquette.es.xml,v 1.4 2013/02/02 14:16:41 gecko2 Exp $</cvsid>
+  <cvsid>$Id: netiquette.es.xml,v 1.5 2023/08/04 5:23:15 nieder Exp $</cvsid>
   <preface>
     <p><em>Este es un documento en construcción.</em></p>
     <p>Este documento pretende ser una guía para los nuevos miembros de las Listas de 
@@ -64,7 +64,7 @@ error unpacking foo
                 mensaje:<codeblock>....
 Checking for bar-config...no
 Error:  bar-config not found
-....</codeblock><p>Si crees que el dato puede ayudar, entonces puedes "postear" la sección relevante del log del archivo de configuración, e.g. <filename>/sw/src/foo-3.141-6/foo-3.141/config.log</filename>.  <em>Por favor, no pongas TODO el archivo, podría se bastante grande.</em></p></li>
+....</codeblock><p>Si crees que el dato puede ayudar, entonces puedes "postear" la sección relevante del log del archivo de configuración, e.g. <filename>/opt/sw/src/foo-3.141-6/foo-3.141/config.log</filename>.  <em>Por favor, no pongas TODO el archivo, podría se bastante grande.</em></p></li>
                 <li>O, el error puede aparecer hasta que se inicía la construcción del
                 paquete. En este caso, "postea" la última línea que el compilador trato 
                 de ejecutar hasta el mensaje de error:<codeblock>...

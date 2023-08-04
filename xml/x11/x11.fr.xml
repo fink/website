@@ -3,7 +3,7 @@
 <document filename="index" lang="fr">
 <title>Utilisation de X11 sous Darwin et Mac OS X</title>
 <shorttitle>Utilisation de X11</shorttitle>
-<cvsid>$Id: x11.fr.xml,v 1.27 2012/11/11 15:20:18 gecko2 Exp $</cvsid>
+<cvsid>$Id: x11.fr.xml,v 1.28 2023/08/04 5:08:13 nieder Exp $</cvsid>
 <preface>
 <p>Ce document traite de l'utilisation de X11, XFree86, et Xtools sur les systèmes Mac OS X et Darwin d'Apple. Il commence par une introduction et l'historique du développement, puis décrit la situation actuelle et les nombreuses options d'utilisation de X11 avec ou sans Fink.</p>
 </preface>
@@ -135,25 +135,25 @@ Irrelevant now?
 <p>X11 d'Apple utilise votre fichier de configuration <filename>~/.xinitrc</filename>, s'il existe. Si vous voulez profiter au maximum de l'intégration Quartz, utilisez <filename>/usr/X11R6/bin/quartz-wm</filename> comme gestionnaire de fenêtres, ou supprimez complètement votre fichier <filename>~/.xinitrc</filename>.</p>
 <p>Si vous voulez simplement pouvoir copier-coller, mais désirez utiliser un autre gestionnaire de fenêtres, vous pouvez vous baser sur l'exemple suivant :</p>
 <codeblock>/usr/X11R6/bin/quartz-wm --only-proxy &amp;
-exec /sw/bin/fvwm2</codeblock>
+exec /opt/sw/bin/fvwm2</codeblock>
 <p>Vous pouvez, bien entendu, utiliser un autre gestionnaire de fenêtres, <code>startkde</code>, etc...</p>
 </li>
 <li>
 <p><filename>quartz-wm</filename> ne gère pas complètement les astuces des gestionnaires de fenêtres Gnome/KDE. Vous observerez peut-être des comportements étranges dans des fenêtres qui ne devraient pas avoir d'ornements, mais en ont pourtant.</p>
 </li>
 <li>
-<p>X11 d'Apple ne respecte pas, par défaut, les configurations d'environnement de Fink. Pour démarrer des applications installées via Fink (par exemple : gestionnaires de fenêtres,  gnome-session ou d'autres applications situées dans le répertoire <filename>/sw/bin</filename>), placez la ligne suivante dans les premières lignes du fichier <filename>~/.xinitrc</filename> (c'est-à-dire après l'initialisation &quot;<filename>#!/bin/sh</filename>&quot;, mais avant de démarrer tout autre programme) :</p>
-<codeblock> . /sw/bin/init.sh
+<p>X11 d'Apple ne respecte pas, par défaut, les configurations d'environnement de Fink. Pour démarrer des applications installées via Fink (par exemple : gestionnaires de fenêtres,  gnome-session ou d'autres applications situées dans le répertoire <filename>/opt/sw/bin</filename>), placez la ligne suivante dans les premières lignes du fichier <filename>~/.xinitrc</filename> (c'est-à-dire après l'initialisation &quot;<filename>#!/bin/sh</filename>&quot;, mais avant de démarrer tout autre programme) :</p>
+<codeblock> . /opt/sw/bin/init.sh
 </codeblock>
 <p>de façon à ce que votre environnement Fink soit initialisé. <em>Note</em> : <filename>init.sh</filename> est utilisé au lieu de <filename>init.csh</filename>, car <filename>.xinitrc</filename> est lancé par <filename>sh</filename> au lieu de <filename>tcsh</filename>.</p>
 </li>
 <li>
 <p>Les applications qui appellent d'autres programmes situés dans l'arborescence de Fink pour réaliser certaines de leurs fonctions doivent subir un traitement spécial pour que l'on puisse les appeler à partir du menu Applications. Au lieu de mettre le chemin complet du fichier, par exemple :</p>
-<codeblock>/sw/bin/emacs</codeblock>
+<codeblock>/opt/sw/bin/emacs</codeblock>
 <p>vous devez utiliser une commande semblable à la suivante, si vous utilisez le shell bash :</p>
-<codeblock>. /sw/bin/init.sh ; emacs</codeblock>
+<codeblock>. /opt/sw/bin/init.sh ; emacs</codeblock>
 <p>et si vous utilisez le shell tcsh, une commande semblable à celle-ci :</p>
-<codeblock>source /sw/bin/init.csh ; emacs</codeblock>
+<codeblock>source /opt/sw/bin/init.csh ; emacs</codeblock>
 <p>Ceci garantit que l'application aura un PATH correct. Vous pouvez utiliser cette syntaxe pour toute application installée via Fink.</p>
 </li>
 <li>
@@ -363,10 +363,10 @@ xfree86-rootless-shlibs xfree86-base xfree86-base-shlibs</codeblock>
 <p>Vous pouvez mettre à peu près n'importe quelle commande dans un fichier <filename>.xinitrc</filename>, mais il faut tenir compte des éléments suivants. Tout d'abord, le shell qui interprète le fichier attend, par défaut, que chaque programme lancé soit terminé avant de lancer le suivant. Si vous voulez lancer plusieurs programmes en parallèle, vous devez indiquer au shell qu'il doit les faire tourner en &quot;arrière-plan&quot;, en ajoutant un <code>&amp;</code> à la fin de la ligne.</p>
 <p>Ensuite, <code>xinit</code> attend que le script <filename>.xinitrc</filename> se termine et interprète sa fin ainsi : &quot;la session est terminée, je dois aussi tuer le serveur X maintenant&quot;. Cela signifie que la dernière commande du fichier <filename>.xinitrc</filename> ne doit pas tourner en arrière-plan et que cette commande doit être un programme de longue durée. En général, on utilise le gestionnaire de gestionnaire comme dernière commande. En fait, la plupart des gestionnaires de fenêtres partent du principe que <code>xinit</code> attend qu'ils se terminent et utilisent cela pour faire fonctionner l'article de menu  &quot;Fin de session&quot;. (<em>Note</em> : pour restreindre l'usage de la mémoire et le nombre de cycles CPU, vous pouvez mettre un <code>exec</code> au début de la dernière ligne comme dans les exemples ci-dessous.)</p>
 <p> Exemple de démarrage de GNOME :</p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 exec gnome-session</codeblock>
 <p>Exemple plus complexe pour les utilisateurs de bash qui suppriment les alertes X11, lance un certain nombre de clients et le gestionnaire de fenêtres Enlightenment :</p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 
 xset b off
 
@@ -376,25 +376,25 @@ xterm &amp;
 
 exec enlightenment</codeblock>
 <p>Pour démarrer GNOME 2.2 sous X11 d'Apple, utilisez les commandes suivantes :</p>    
- <codeblock>. /sw/bin/init.sh
+ <codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 metacity &amp;
 exec gnome-session
 </codeblock> 
 <p>Pour GNOME 2.4 sous X11 d'Apple, metacity est lancée automatiquement, les commandes sont donc réduites à :</p>    
- <codeblock>. /sw/bin/init.sh
+ <codeblock>. /opt/sw/bin/init.sh
 quartz-wm --only-proxy &amp;
 exec gnome-session
 </codeblock> 
 <p>Pour lancer KDE 3.2 (version &lt; 3.2.2-21) sous X11 d'Apple :</p>
-<codeblock>. /sw/bin/init.sh
+<codeblock>. /opt/sw/bin/init.sh
 export KDEWM=kwin
 quartz-wm --only-proxy &amp;
-/sw/bin/startkde >/tmp/kde.log 2>&amp;1
+/opt/sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
 <p>Et enfin pour lancer la toute dernière version de KDE sous X11 d'Apple :</p>
-<codeblock>. /sw/bin/init.sh
-/sw/bin/startkde >/tmp/kde.log 2>&amp;1
+<codeblock>. /opt/sw/bin/init.sh
+/opt/sw/bin/startkde >/tmp/kde.log 2>&amp;1
 </codeblock>
 </section>
 <section name="oroborosx">
@@ -486,7 +486,7 @@ failed to connect as window server!</codeblock>
 Errors from xkbcomp are not fatal to the X server</codeblock>
 <p>Sévérité : quasi inoffensif. Cette erreur n'est pas fatale. À ma connaissance, XDarwin n'utilise pas du tout l'extension XKB. Il est probable qu'un programme client tente, malgré tout, de l'utiliser...</p>
 <codeblock>startx: Command not found.</codeblock>
-<p>Sévérité : fatal. Ceci arrive avec XDarwin 1.0a2 et 1.0a3 quand les fichiers d'initialisation de votre shell ne comprennent aucune commande pour ajouter le chemin /usr/X11R6/bin à la variable d'environnement PATH. Si vous utilisez Fink et que vous n'avez pas changer votre shell par défaut, il vous suffit d'ajouter la ligne <code>source /sw/bin/init.csh</code> au fichier <filename>.cshrc</filename> situé dans votre répertoire utilisateur, comme indiqué dans les instructions de Fink.</p>
+<p>Sévérité : fatal. Ceci arrive avec XDarwin 1.0a2 et 1.0a3 quand les fichiers d'initialisation de votre shell ne comprennent aucune commande pour ajouter le chemin /usr/X11R6/bin à la variable d'environnement PATH. Si vous utilisez Fink et que vous n'avez pas changer votre shell par défaut, il vous suffit d'ajouter la ligne <code>source /opt/sw/bin/init.csh</code> au fichier <filename>.cshrc</filename> situé dans votre répertoire utilisateur, comme indiqué dans les instructions de Fink.</p>
 <codeblock>_XSERVTransSocketUNIXCreateListener: ...SocketCreateListener() failed
 _XSERVTransMakeAllCOTSServerListeners: server already running</codeblock>
 <codeblock>Fatal server error:
@@ -516,8 +516,8 @@ Instead the last one must be started if the foreground (no
 This can happen when you give just the name without the path
 (e.g. <code>xterm</code>), but forget to set the shell's search path
 (environment variable PATH).
-Neither /usr/X11R6/bin nor /sw/bin are in the default path.
-If you use Fink, just add an <code>source /sw/bin/init.sh</code> to
+Neither /usr/X11R6/bin nor /opt/sw/bin are in the default path.
+If you use Fink, just add an <code>source /opt/sw/bin/init.sh</code> to
 the start of the <code>.xinitrc</code>.
 To set the path manually, use this piece:</p>
 <codeblock>PATH=$PATH:/usr/X11R6/bin

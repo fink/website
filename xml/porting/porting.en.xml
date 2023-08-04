@@ -4,7 +4,7 @@
 <document filename="index" lang="en" >
 	<title>Porting Unix software to Darwin and Mac OS X</title>
 	<shorttitle>Porting</shorttitle>
-	<cvsid>$Id: porting.en.xml,v 1.10 2014/10/25 09:21:47 gecko2 Exp $</cvsid> 
+	<cvsid>$Id: porting.en.xml,v 1.11 2023/08/04 5:08:13 nieder Exp $</cvsid> 
 
 	<preface>
 		<p>This document contains hints for porting Unix applications to Darwin and Mac OS X. Much of the information here applies to both Mac OS X version 10.x.x and &quot;pure&quot; Darwin systems. Both systems will be referred to as Darwin, since Mac OS X is actually a superset of Darwin.</p>
@@ -587,7 +587,7 @@ with gcc3 cannot link to libraries compiled with gcc2.</p>
 	  automatically linked and <filename>/usr/include</filename>
 	  is automatically searched for headers, you could remove any
 	  <code>-lgnugetopt</code>
-	  and <code>-I/sw/include/gnugetopt</code> flags that were
+	  and <code>-I/opt/sw/include/gnugetopt</code> flags that were
 	  manually added in order to access Fink's
 	  &quot;libgnugetopt&quot;.
 	</p>

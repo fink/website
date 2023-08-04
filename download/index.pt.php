@@ -1,7 +1,7 @@
 <?php
 $title = "Guia rápido para download";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2020/03/28 10:24:00 $';
+$cvs_date = '$Date: 2023/08/03 20:24:10 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -51,7 +51,7 @@ versão de binários.</p>
   <li></p>Caso algo dê errado durante este processo, você pode tentar novamente
   através do aplicativo pathsetup que aparece no disco do instalador ou
   executando o comando abaixo em uma janela do Terminal.app</p>
-  <pre>/sw/bin/pathsetup.sh</pre>
+  <pre>/opt/sw/bin/pathsetup.sh</pre>
   <p>(Este passo precisa ser repetido por quaisquer outros usuários em seu
   sistema: cada usuário precisa executar o pathsetup em sua conta.)</p>
   <p>Caso o pathsetup gere mensagens de erro, consulte a documentação, em

@@ -3,7 +3,7 @@
 <document filename="index" lang="de">
   <title>Fortgeschrittene Fink Themen</title>
   <shorttitle>Fortgeschrittenes</shorttitle>
-  <cvsid>$Id: advanced.de.xml,v 1.1 2015/02/18 23:50:43 k-m_schindler Exp $</cvsid>
+  <cvsid>$Id: advanced.de.xml,v 1.2 2023/08/04 5:08:13 nieder Exp $</cvsid>
   <preface>
     <p>
 Diese Dokument beschreibt fortgeschrittene Themen, die nicht im
@@ -30,7 +30,7 @@ Die Methode erfordert die folgenden Schritte auf dem
       <title>Schritte auf dem "Master"-(Build)-Server</title>
       <ol>
         <li>
-Installieren sie Fink unter <filename>/sw</filename> (Der voreingestellte
+Installieren sie Fink unter <filename>/opt/sw</filename> (Der voreingestellte
 Basis-Pfad; wenn erforderlich, einen Symlink verwenden).
         </li>
         <li>
@@ -53,12 +53,12 @@ ausgeführt.
         <li>
 Starten sie einen Webserver: z.B. schalten sie "Personal Web Sharing" in
 der Kategorie "Freigaben" in den Systemeinstellungen ein. Richten sie
-dann httpd ein, dass es ihr Verzeichnis <filename>/sw/fink</filename> zur
+dann httpd ein, dass es ihr Verzeichnis <filename>/opt/sw/fink</filename> zur
 Verfügung stellt, in dem sie folgende Zeilen in der Datei
 <filename>/etc/httpd/httpd.conf</filename> hinzufügen:
           <codeblock>
-Alias /fink /sw/fink
-&lt;Directory /sw/fink&gt;
+Alias /fink /opt/sw/fink
+&lt;Directory /opt/sw/fink&gt;
   Options Indexes FollowSymLinks
 &lt;/Directory&gt;
           </codeblock>
@@ -90,16 +90,16 @@ entsprechend anpassen.
       <title>Schritte auf den Klienten-Rechnern</title>
       <ol>
         <li>
-Installieren sie Fink unter <filename>/sw</filename> (voreingestellter
+Installieren sie Fink unter <filename>/opt/sw</filename> (voreingestellter
 Basis-Pfad).
         </li>
         <li>
 Führen sie das Kommando <code>fink configure</code> aus und schalten sie
 die Option ein, die Pakete aus einer binären Distribution zu beziehen.
-("UseBinaryDist: true" in der Datei <filename>/sw/etc/fink.conf</filename>.)
+("UseBinaryDist: true" in der Datei <filename>/opt/sw/etc/fink.conf</filename>.)
         </li>
         <li>
-Editieren sie die Datei <filename>/sw/etc/apt/sources.list</filename> und
+Editieren sie die Datei <filename>/opt/sw/etc/apt/sources.list</filename> und
 fügen sie die Zeilen dazu, die ihren Fink-Baum repräsentieren. Wenn zum
 Beipsiel die IP-Adresse ihres Build-Servers 192.168.42.7 lautet, müssen sie
 folgendes hinzufügen:
