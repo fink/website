@@ -47,7 +47,7 @@ include_once "../fink_version.inc";
 </p></li>
 <li><p>
 如果在此过程中发生了什么错误，你可以尝试重新运行一次安装程序宗卷里面的 pathsetup.command 文件（需要在终端窗口里面运行）。 
-</p><pre>/sw/bin/pathsetup.sh</pre><p>
+</p><pre>/opt/sw/bin/pathsetup.sh</pre><p>
 （这个过程应该对你机器的每个帐号都运行一次：每个用户应该登录到自己的帐号运行一次 pathsetup.command 脚本）。
 </p><p>
 如果 pathsetup.command 产生了错误信息，请参考文档，
