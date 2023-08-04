@@ -1,14 +1,14 @@
 <?php
 $title = "Lies-Mich";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/02/17 21:14:26';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 6:29:59';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink Lies-Mich</h1>
-<!--Generated from $Fink: readme.de.xml,v 1.1 2015/02/17 21:14:26 k-m_schindler Exp $-->
+<!--Generated from $Fink: readme.de.xml,v 1.2 2023/08/04 6:29:59 nieder Exp $-->
 <p>
 Dies ist Fink, ein Paketmanager, der die ganze Welt an
 Open-Source-Programmen auf Darwin und Mac OS X zur Verfügung stellt.
@@ -47,7 +47,7 @@ Ein installiertes Mac OS X, Version 10.7 oder höher.
 Ohne die Xcode Command Line Tools geht gar nichts. Unter Mac OS X 10.7 und
 10.8 kann man dieses Paket im Programm Xcode über dem Menüpunkt
 "Preferences" bei "Downloads" unter "Components" direkt von
-developer.apple.com herunter laden. Unter Mac OS X 10.9 und 10.10 muss man
+developer.apple.com/xcode/ herunter laden. Unter Mac OS X 10.9 und 10.10 muss man
 das Kommando
 </p>
 <pre>xcode-select --install</pre>
@@ -66,6 +66,10 @@ Tools und Mac OS X und falls installiert auch von Xcode zusammen passen.
 <p>
 in einem Fenster des Programms Terminal sollte ausreichen, damit das System
 Java für sie herunter lädt und installiert.
+</p></li>
+<li><p>
+XQuartz to satisfy <code>x11-dev</code> build dependencies. This package can be installed
+by downloading it directly via <a href="https://xquartz.org">https://xquartz.org</a>.
 </p></li>
 <li><p>
 Internet Zugang. Die Quellcodes werden von "Spiegel"-Seiten herunter

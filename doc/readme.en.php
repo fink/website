@@ -1,14 +1,14 @@
 <?php
 $title = "ReadMe";
-$cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2015/11/01 02:12:02';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/08/04 6:29:59';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink ReadMe</h1>
-<!--Generated from $Fink: readme.en.xml,v 1.13 2015/11/01 02:12:02 alexkhansen Exp $-->
+<!--Generated from $Fink: readme.en.xml,v 1.14 2023/08/04 6:29:59 nieder Exp $-->
 <p>
 This is Fink, a package management system that aims to bring the full
 world of Open Source software to Darwin and Mac OS X.
@@ -45,7 +45,8 @@ An installed Mac OS X system, version 10.7 or later.
 </p></li>
 <li><p>
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
-downloading it directly via developer.apple.com, or by running the</p>
+either by downloading it directly via developer.apple.com/xcode/, or by
+running the</p>
 <pre>xcode-select --install</pre>
 <p>command and choosing the   
 <b>Install</b> button in the window that pops up.
@@ -63,6 +64,10 @@ especially if you're having build problems.</p>
 <li><p>Java.  Entering</p>
 <pre>javac</pre>
 <p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
+<li><p>
+XQuartz to satisfy <code>x11-dev</code> build dependencies. This package can be installed
+by downloading it directly via <a href="https://xquartz.org">https://xquartz.org</a>.
+</p></li>
 <li><p>
 Internet access.
 All source code is downloaded from mirror sites.

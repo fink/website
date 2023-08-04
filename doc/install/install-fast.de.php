@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - Schnellanleitung";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/08/04 5:08:13';
+$cvs_date = 'Date: 2023/08/04 6:29:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Installation Contents"><link rel="next" href="install-first.php?phpLang=de" title="Erst-Installation"><link rel="prev" href="index.php?phpLang=de" title="Installation Contents">';
 
 
@@ -34,7 +34,7 @@ Ein installiertes Mac OS X, Version 10.9 oder später.
 </p></li>
 <li><p>
 Als nächstes brauchen sie die Xcode Command Line Tools. Dieses Paket wird
-installiert, indem man es entweder direkt von developer.apple.com herunter lädt,
+installiert, indem man es entweder direkt von developer.apple.com/xcode/ herunter lädt,
 oder das Kommando</p>
 <pre>xcode-select --install</pre>
 <p>ausführt und den Button <b>Install</b> in dem Fenster auswählt, das
@@ -56,6 +56,10 @@ dazu folgendes Kommando aus:</p>
 alles herunter lädt.</p></li>
 <li><p>
 Viele andere Tools kommen mit OS X, beispielsweise perl und curl.
+</p></li>
+<li><p>
+XQuartz to satisfy <code>x11-dev</code> build dependencies. This package can be installed
+by downloading it directly via <a href="https://xquartz.org">https://xquartz.org</a>.
 </p></li>
 <li><p>
 Internet-Zugang.

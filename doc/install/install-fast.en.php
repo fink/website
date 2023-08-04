@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - Fast Track";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/08/03 20:24:10';
+$cvs_date = 'Date: 2023/08/04 6:29:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Installation Contents"><link rel="next" href="install-first.php?phpLang=en" title="First Time Installation"><link rel="prev" href="index.php?phpLang=en" title="Installation Contents">';
 
 
@@ -33,7 +33,7 @@ An installed Mac OS X system, version 10.9 or later.
 </p></li>
 <li><p>
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
-downloading it directly via developer.apple.com, or by running the</p>
+downloading it directly via developer.apple.com/xcode/, or by running the</p>
 <pre>xcode-select --install</pre>
 <p>command and choosing the   
 <b>Install</b> button in the window that pops up.
@@ -51,8 +51,12 @@ OS X version as well as your Xcode app version (if that is present).</p>
 <pre>javac</pre>
 <p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
 <li><p>
-Many other things that come with Mac OS X.
+Many other things that come with Mac OS X and the Developer Tools.
 This includes perl and curl.
+</p></li>
+<li><p>
+XQuartz to satisfy <code>x11-dev</code> build dependencies. This package can be installed
+by downloading it directly via <a href="https://xquartz.org">https://xquartz.org</a>.
 </p></li>
 <li><p>
 Internet access.

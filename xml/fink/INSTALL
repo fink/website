@@ -1,4 +1,4 @@
-Generated from $Fink: install.en.xml,v 1.51 2023/08/03 20:24:10 nieder Exp $
+Generated from $Fink: install.en.xml,v 1.52 2023/08/04 6:29:59 nieder Exp $
 
  Fink 0.45.6 Installation
 ==========================
@@ -31,8 +31,8 @@ You need:
  * An installed Mac OS X system, version 10.9 or later.
 
  * The Xcode Command Line Tools are mandatory. This package can be installed
-   either by downloading it directly via developer.apple.com, or by running
-   the
+   either by downloading it directly via developer.apple.com/xcode/, or by
+   running the
 
       xcode-select --install
 
@@ -61,7 +61,11 @@ You need:
    from a Terminal.app window should suffice to make the system download it
    for you.
 
- * Many other things that come with Mac OS X. This includes perl and curl.
+ * Many other things that come with Mac OS X and the Developer Tools. This
+   includes perl and curl.
+
+ * XQuartz to satisfy "x11-dev" build dependencies. This package can be
+   installed by downloading it directly via <https://xquartz.org>.
 
  * Internet access. All source code is downloaded from mirror sites.
 
@@ -306,8 +310,8 @@ You need:
  * An installed Mac OS X system, version 10.9 or later.
 
  * The Xcode Command Line Tools are mandatory. This package can be installed
-   either by downloading it directly via developer.apple.com, or by running
-   the
+   either by downloading it directly via developer.apple.com/xcode/, or by
+   running the
 
       xcode-select --install
 
@@ -338,6 +342,9 @@ You need:
 
  * Many other things that come with Mac OS X and the Developer Tools. This
    includes perl and curl.
+
+ * XQuartz to satisfy "x11-dev" build dependencies. This package can be
+   installed by downloading it directly via <https://xquartz.org>.
 
  * Internet access. All source code is downloaded from mirror sites.
 

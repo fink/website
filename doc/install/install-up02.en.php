@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - Clean";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/08/03 20:24:10';
+$cvs_date = 'Date: 2023/08/04 6:29:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Installation Contents"><link rel="prev" href="install-up03.php?phpLang=en" title="Upgrading Fink">';
 
 

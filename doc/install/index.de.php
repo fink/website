@@ -1,7 +1,7 @@
 <?php
 $title = "Installation";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/08/04 5:08:13';
+$cvs_date = 'Date: 2023/08/04 6:29:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Installation Contents"><link rel="next" href="install-fast.php?phpLang=de" title="Schnellanleitung">';
 
 
@@ -25,7 +25,7 @@ Eine Schnellanleitung für die ungeduldigen stehen am Anfang.
 <h2><?php echo FINK_CONTENTS ; ?></h2><ul>
 	<li><a href="install-fast.php?phpLang=de"><b>1 Schnellanleitung</b></a><ul><li><a href="install-fast.php?phpLang=de#req">1.1 Voraussetzungen</a></li><li><a href="install-fast.php?phpLang=de#scripted-install">1.2 Erstmalige Installation:
 Super-Schnellanleitung</a></li><li><a href="install-fast.php?phpLang=de#install">1.3 Erstmalige Installation: Schnellanleitung</a></li></ul></li><li><a href="install-first.php?phpLang=de"><b>2 Erst-Installation</b></a><ul><li><a href="install-first.php?phpLang=de#req">2.1 Voraussetzungen</a></li><li><a href="install-first.php?phpLang=de#directory">2.2 Verzeichnis auswählen</a></li><li><a href="install-first.php?phpLang=de#install">2.3 Installation</a></li><li><a href="install-first.php?phpLang=de#x11">2.4 X11-Probleme klären</a></li></ul></li><li><a href="install-up03.php?phpLang=de"><b>3 Fink aktualisieren</b></a><ul><li><a href="install-up03.php?phpLang=de#packman">3.1 Paketmanager aktualisieren</a></li><li><a href="install-up03.php?phpLang=de#update-all">3.2 Pakete aktualisieren</a></li></ul></li><li><a href="install-up02.php?phpLang=de"><b>4 Sauberes Aktualisieren</b></a><ul><li><a href="install-up02.php?phpLang=de#cleaninst">4.1 Situationen, die ein sauberes Reinstall erfordern</a></li><li><a href="install-up02.php?phpLang=de#backup">4.2 Sicherungskopie für Zeitersparnis</a></li><li><a href="install-up02.php?phpLang=de#removing">4.3 Ein altes Fink löschen</a></li><li><a href="install-up02.php?phpLang=de#reinstalling">4.4 Fink erneut installieren</a></li></ul></li></ul>
-<!--Generated from $Fink: install.xml,v 1.51 2023/08/04 5:08:13 nieder Exp $-->
+<!--Generated from $Fink: install.xml,v 1.52 2023/08/04 6:29:59 nieder Exp $-->
 <?php include_once "../../footer.inc"; ?>
 
 

@@ -1,7 +1,7 @@
 <?php
 $title = "Installation - Sauber";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/08/04 5:08:13';
+$cvs_date = 'Date: 2023/08/04 6:29:59';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Installation Contents"><link rel="prev" href="install-up03.php?phpLang=de" title="Fink aktualisieren">';
 
 
