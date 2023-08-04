@@ -4,7 +4,7 @@
 <document filename="index" lang="en">
 <title>Fink &fink_tool_version; Installation</title>
 <shorttitle>Installation</shorttitle>
-<cvsid>$Id: install.en.xml,v 1.51 2023/08/03 20:24:10 nieder Exp $</cvsid>
+<cvsid>$Id: install.en.xml,v 1.52 2023/08/04 6:29:59 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -48,7 +48,7 @@ An installed Mac OS X system, version 10.9 or later.
 </p></li>
 <li><p>
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
-downloading it directly via developer.apple.com, or by running the</p>
+downloading it directly via developer.apple.com/xcode/, or by running the</p>
 <codeblock>xcode-select --install</codeblock>
 <p>command and choosing the   
 <em>Install</em> button in the window that pops up.
@@ -66,8 +66,12 @@ OS X version as well as your Xcode app version (if that is present).</p>
 <codeblock>javac</codeblock>
 <p>from a Terminal.app window should suffice to make the system download it for you.</p></li>
 <li><p>
-Many other things that come with Mac OS X.
+Many other things that come with Mac OS X and the Developer Tools.
 This includes perl and curl.
+</p></li>
+<li><p>
+XQuartz to satisfy <code>x11-dev</code> build dependencies. This package can be installed
+by downloading it directly via <link url="https://xquartz.org">https://xquartz.org</link>.
 </p></li>
 <li><p>
 Internet access.
@@ -335,7 +339,7 @@ An installed Mac OS X system, version 10.9 or later.
 </p></li>
 <li><p>
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
-downloading it directly via developer.apple.com, or by running the</p>
+downloading it directly via developer.apple.com/xcode/, or by running the</p>
 <codeblock>xcode-select --install</codeblock>
 <p>command and choosing the   
 <em>Install</em> button in the window that pops up.
@@ -346,7 +350,7 @@ OS X version as well as your Xcode app version (if that is present).</p>
 <p>You will need to accept the Xcode license as root.  To do that, run</p>
 <codeblock>sudo xcodebuild -license</codeblock>
 <p>then scroll to the bottom of the text and type</p>
-<codeblock>agree</codeblock>q
+<codeblock>agree</codeblock>
 <p>Some packages require the full Xcode.</p>
 </li>
 <li><p>Java.  Entering</p>
@@ -355,6 +359,10 @@ OS X version as well as your Xcode app version (if that is present).</p>
 <li><p>
 Many other things that come with Mac OS X and the Developer Tools.
 This includes perl and curl.
+</p></li>
+<li><p>
+XQuartz to satisfy <code>x11-dev</code> build dependencies. This package can be installed
+by downloading it directly via <link url="https://xquartz.org">https://xquartz.org</link>.
 </p></li>
 <li><p>
 Internet access.
