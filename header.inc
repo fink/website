@@ -19,9 +19,9 @@
 // +--------------------------------------------------------------------------+
 
 if (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME'] == "pdb.finkproject.org") {
-	if ($_SERVER['REQUEST_URI'] == "http://pdb.finkproject.org/") {
+	if ($_SERVER['REQUEST_URI'] == "https://pdb.finkproject.org/") {
 		header("HTTP/1.1: 301 Moved Permanently");
-		header("Location: http://pdb.finkproject.org/pdb");
+		header("Location: https://pdb.finkproject.org/pdb");
 		exit();
 	}
 }
@@ -108,13 +108,13 @@ $section_names = array(
 );
 
 $section_files = array(
-	'home' => 'http://www.finkproject.org/index.php?phpLang='. $lang_code,
-	'download' => 'http://www.finkproject.org/download/index.php?phpLang='. $lang_code,
-	'packages' => 'http://pdb.finkproject.org/pdb/index.php?phpLang='. $lang_code,
-	'help' => 'http://www.finkproject.org/help/index.php?phpLang='. $lang_code,
-	'faq' => 'http://www.finkproject.org/faq/index.php?phpLang='. $lang_code,
-	'documentation' => 'http://www.finkproject.org/doc/index.php?phpLang='. $lang_code, 
-	'mailing-lists' => 'http://www.finkproject.org/lists/index.php?phpLang='. $lang_code
+	'home' => 'https://www.finkproject.org/index.php?phpLang='. $lang_code,
+	'download' => 'https://www.finkproject.org/download/index.php?phpLang='. $lang_code,
+	'packages' => 'https://pdb.finkproject.org/pdb/index.php?phpLang='. $lang_code,
+	'help' => 'https://www.finkproject.org/help/index.php?phpLang='. $lang_code,
+	'faq' => 'https://www.finkproject.org/faq/index.php?phpLang='. $lang_code,
+	'documentation' => 'https://www.finkproject.org/doc/index.php?phpLang='. $lang_code, 
+	'mailing-lists' => 'https://www.finkproject.org/lists/index.php?phpLang='. $lang_code
 );
 
 if (!isset($section)) $section = "home";
@@ -218,7 +218,7 @@ function insert_sub($navbox, $active_page, $navloc = false) {
 			// For testing locally at my machine
 			// (also: allows some navbox items to link to other
 			// websites)
-			if (substr($navbox[$i ], 0, 7) != 'http://') {
+			if (substr($navbox[$i ], 0, 8) != 'https://' && substr($navbox[$i ], 0, 7) != 'http://') {
 				$_link = $linkroot . $navbox[$i ];
 			} else {
 				$_link = $navbox[$i ];

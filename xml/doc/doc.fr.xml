@@ -3,7 +3,7 @@
 <article filename="index" lang="fr">
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.fr.xml,v 1.20 2012/11/11 15:20:13 gecko2 Exp $</cvsid>
+<cvsid>$Id: doc.fr.xml,v 1.21 2019/01/19 10:11:12 nieder Exp $</cvsid>
 
 <preface>
 <p>Voici un ensemble de documents écrits pour Fink. Certains de ces documents peuvent également être utiles aux personnes qui ne se servent pas de Fink sous Mac OS X ou Darwin, mais souhaitent apprendre à porter des logiciels Unix sur ces systèmes.</p>
@@ -22,7 +22,7 @@ couvre des sujets plus complexes que ceux abordés dans le Guide de l'utilisateu
 <li><varlink url="install/index.php" varurl="install/install.en.html">Installation et Mise à jour</varlink> - comment installer Fink et le mettre à jour lors d'une nouvelle version</li>
 <li><varlink url="usage/index.php" varurl="usage/usage.en.html">Utilisation</varlink> - comment utiliser Fink et les logiciels installés</li>
 <li><varlink url="readme.php" varurl="readme.fr.html">Fink ReadMe</varlink> - le fichier ReadMe de la distribution source</li>
-<li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.fr.html">Accès CVS</varlink> - comment accéder au serveur CVS de Fink pour récupérer les paquets source les plus récents entre deux versions</li>
+<li><varlink url="gitaccess/index.php" varurl="gitaccess/git.en.html">Accès Git</varlink> - comment accéder au serveur Git de Fink pour récupérer les paquets source les plus récents entre deux versions</li>
 </ul>
 </section>
 <section name="developerdoc"><title>Documentation développeur</title>

@@ -1,7 +1,7 @@
 <?php
 $title = "Paquets - Référence";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/01/22 6:40:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Paquets Contents"><link rel="prev" href="compilers.php?phpLang=fr" title="Compilateurs">';
 
 
@@ -53,7 +53,17 @@ A comma-separated list of distribution(s) for which the package
 At present, the only valid values for distribution are
 <code>10.4</code>,
 <code>10.5</code>,
-and <code>10.6</code>
+<code>10.6</code>,
+<code>10.7</code>,
+<code>10.8</code>,
+<code>10.9</code>,
+<code>10.10</code>,
+<code>10.11</code>,
+<code>10.12</code>,
+<code>10.13</code>,
+<code>10.14</code>,
+<code>10.14.5</code>,
+and <code>10.15</code>
 . If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
 the local machine distribution is not listed. If the field is omitted
@@ -61,7 +71,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
+Since Fink's <code>10.9</code> through <code>10.14.5</code> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -83,10 +93,11 @@ will result in the field for the foo-pm581 variant
 being <code>10.3, 10.4</code> and the field being blank for the 
 foo-pm586 variant.
 </p>
-<p>Since python 2.3 is not available in the 10.5 distribution, and the
-available perl packages vary by distribution, these package types provide
+<p>Since python 2.5 is not available in the 10.7+ distributions, and the
+available perl versions vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
+various perl versions in the 10.3 through 13.0 distributions
+(<b>bolded</b> systems indicate system-perl at that version):
 </p>
 <pre>
     perl 5.6.0:  10.3
@@ -96,7 +107,14 @@ various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
-    perl 5.12.3:                         <b>10.7</b>
+    perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
+    perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>, 10.14.5, 10.15, 11.0, 11.3, 12.0, 13.0
+    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <b>10.14.5</b>, <b>10.15</b>, 11.0, 11.3, 12.0, 13.0
+    perl 5.28.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, <b>11.0</b>, 11.3, 12.0, 13.0
+    perl 5.30.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, <b>11.3</b>, 12.0, 13.0
+    perl 5.30.3:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, 11.3, <b>12.0</b>, <b>13.0</b>
 </pre>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>
@@ -299,6 +317,31 @@ Primary: ftp://ftp.barbarorg/pub/
 <p>La valeur affichée à gauche correspond à la valeur recherchée.</p>
 </td></tr><tr valign="top"><td>Source<b>N</b>-MD5</td><td>
 <p><b>Introduit dans fink 0.10.0.</b> Ce champ est semblable au champ <code>Source-MD5</code>, mais il est utilisé pour indiquer la somme de contrôle MD5 de l'archive tar correspondant au champ <code>Source<b>N</b></code>.</p>
+</td></tr><tr valign="top"><td>Source-Checksum</td><td>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<pre>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</pre>
+<p>
+Current valid checksums are <code>MD5</code>, <code>SHA1</code>, and
+<code>SHA256</code>. The <code>shasum</code> tool can be used to
+calculate SHA checksums:</p>
+<pre>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</pre>
+<p>
+The <code>Source-Checksum</code> field should only be used once per
+.info file. If both the <code>Source-MD5</code> and
+<code>Source-Checksum</code> fields are present,
+<code>Source-Checksum</code> takes precedence.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-Checksum</td><td>
+<p>
+This is just the same as the <code>Source-Checksum</code> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <code>Source<b>N</b></code> field.
+</p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p><b>Introduit dans fink 0.10.0.</b> Ce champ ne s'applique qu'aux fichiers sources utilisant le format tar.</p>
 <p>Avec ce champ, vous pouvez renommer les fichiers d'une archive tar donnée durant l'extraction. Ceci est très utile pour gérer les problèmes dus au fait que le système de fichiers HFS+ ne tient pas compte de la casse. En effet, sur un système standard Mac OS X, les fichiers <code>install</code> et <code>INSTALL</code> ne sont pas distinguables. L'utilisation de ce champ permet d'éviter ces problèmes sans avoir à changer l'archive tar (comme on le faisait auparavant dans de tels cas).</p>
@@ -402,7 +445,7 @@ make test</pre>
 <li><code>TestScript</code> : script d'exécution de la série de tests. Ce script doit retourner un statut de valeur 0 si la série de tests s'est déroulée sans incident, de 1 s'il y a des messages d'attention, et de n'importe quelle autre valeur si les incidents sont suffisamment sévères pour les considérer comme fatals. Du fait de cette logique à trois états, la valeur du statut doit être explicitement indiquée. Par exemple, <code>make check</code> n'est pas conforme à cette logique, puisqu'il retourne un statut de 1 si la cible à vérifier n'existe pas ; par contre, <code>make check || exit 2</code> respecte la logique à trois états.</li>
 <li><code>TestConfigureParams</code> : valeur ajoutée au champ <code>ConfigureParams</code>.</li>
 <li><code>TestDepends</code> et <code>TestConflicts</code> : liste des paquets à ajouter respectivement aux champs <code>BuildDepends</code> et <code>BuildConflicts</code>.</li>
-<li><code>TestSource</code> : sources supplémentaires nécessaires pour exécuter la série de tests. Tous les champs liés à ce champ sont autorisés. On <b>doit</b> donc aussi utiliser le champ <code>TestSource-MD5</code>. On peut aussi se servir des champs <code>TestSourceN</code> et <code>TestSourceN-MD5</code>, <code>TestTarFilesRename</code>, etc...</li>
+<li><code>TestSource</code> : sources supplémentaires nécessaires pour exécuter la série de tests. Tous les champs liés à ce champ sont autorisés. On <b>doit</b> donc aussi utiliser le champ <code>TestSource-MD5</code> ou <code>TestSource-Checksum</code>. On peut aussi se servir des champs <code>TestSourceN</code> et <code>TestSourceN-MD5</code>, <code>TestSourceN-Checksum</code>, <code>TestTarFilesRename</code>, etc...</li>
 <li><code>TestSuiteSize</code> : donne une idée approximative de la durée d'exécution de la série de tests. Les valeurs permises sont les suivantes : <code>small</code>, <code>medium</code> et <code>large</code>. Ce champ est pour l'instant ignoré.</li>
 <li>Tout autre champ standard. Si un champ est indiqué à la fois à l'intérieur et à l'extérieur du bloc <code>InfoTest</code>, c'est sa valeur à l'intérieur du bloc <code>InfoTest</code> qui sera utilisée si la suite de tests est activée.</li>
 </ul>

@@ -1,7 +1,7 @@
 <?php
 $title = "Packaging Tutorial - Der Anfang";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/03/05 23:40:46';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Packaging Tutorial Contents"><link rel="next" href="example.php?phpLang=de" title="Beispiel - das Maxwell Paket"><link rel="prev" href="index.php?phpLang=de" title="Packaging Tutorial Contents">';
 
 

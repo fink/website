@@ -1,7 +1,7 @@
 <?php
 $title = "Руководство пользователя - Инструмент fink";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Руководство пользователя Contents"><link rel="prev" href="conf.php?phpLang=ru" title="Конфигурационный файл Fink">';
 
 
@@ -394,7 +394,7 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
                 в т.ч. сам <code>fink</code>.
                 Эта команда может делать обновление до регулярных выпусков версий, но также
                 может настроить ваше дерево каталогов <code>/sw/fink/dists</code> для
-                прямого обновления через CVS. Это значит, что вы затем сможете иметь доступ
+                прямого обновления через Git. Это значит, что вы затем сможете иметь доступ
                 к самым последним модификациям всех пакетов.</p>
             <p> Если активирована опция <a href="#options">--use-binary-dist</a>,
                 список пакетов, имеющихся в бинарном дистрибутиве, также
@@ -407,10 +407,10 @@ fink apropos -s=kde irc   - то же, что и выше, но с ограни�
       <p>This is the recommended way to update Fink when building from source.</p>
       <p><b>Note:</b>  rsync updates only update the active <a href="conf.php?phpLang=ru#optional">trees</a> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
     
-    <h2><a name="selfupdate-cvs">6.20 selfupdate-cvs</a></h2>
+    <h2><a name="selfupdate-git">6.20 selfupdate-git</a></h2>
       
-      <p>Use this command to make <code>fink selfupdate</code> use CVS access to update its package list.</p>
-      <p>CVS updating is deprecated, except for developers and those people who are behind firewalls that disallow rsync.</p>
+      <p>Use this command to make <code>fink selfupdate</code> use Git access to update its package list.</p>
+      <p>Rsync updating is preferred, except for developers and those people who are behind firewalls that disallow rsync.</p>
     
 
         <h2><a name="index">6.21 index</a></h2>

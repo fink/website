@@ -1,8 +1,8 @@
 <?php
-$title = "Página inicial";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:09:50 $';
-$is_home = 1;
+$title      = "Página inicial";
+$cvs_author = '$Author: nieder $';
+$cvs_date   = '$Date: 2019/02/25 22:41:00 $';
+$is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, uma distribuição de software Unix para Mac OS X e Darwin">
 <meta name="keywords" content="Mac OS X, Darwin, GNU, Unix, GNOME, KDE, software, distribuição, Fink">
@@ -54,13 +54,59 @@ include dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
-Fink currently supports OS X 10.9 (Mavericks), 10.8 (Mountain Lion), 10.7 (Lion), and 10.6 (Snow Leopard),
+Fink currently supports macOS 10.15 (Catalina), macOS 10.14 (Mojave), macOS 10.13 (High Sierra), 
+macOS 10.12 (Sierra), OS X 10.11 (El Capitan), OS X 10.10 (Yosemite), OS X 10.9 (Mavericks), 
 and continues to run on older versions of OS X, although
 official updates are no longer available for the older versions.
 Installation instructions can be found  on our <a href="download/srcdist.php">source
 release page</a>.
 </p>
 <p>Xcode must be installed before Fink.</p>  
+<p>
+<strong>10.15 Support:</strong> 
+10.15 users must install Xcode version 10.3 or later 
+(via a free download from the AppStore, 
+or must at least install the Command Line Tools for 
+Xcode 10.3 (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.11 or later from 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
+<p>
+<strong>10.13 and 10.14 Support:</strong> 
+10.13 and 10.14 users must install Xcode version 10.1 or later 
+(via a free download from the AppStore, 
+or must at least install the Command Line Tools for 
+Xcode 10.1 (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.11 or later from 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
+<p>
+<strong>10.12 Support:</strong> 
+10.12 users must install Xcode version 8.0 or later 
+(via a free download from the AppStore, 
+or must at least install the Command Line Tools for 
+Xcode 6.0 for Sierra (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.7 or later from 
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<p>
+<strong>10.11 Support:</strong> 
+10.11 users must install Xcode version 7.0 or later 
+(via a free download from the AppStore, 
+or must at least install the Command Line Tools for 
+Xcode 7.0 for El Capitan (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.7 or later from 
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<p>
+<strong>10.10 Support:</strong> 
+10.10 users must install Xcode version 6.0 or later 
+(via a free download from the AppStore, 
+or must at least install the Command Line Tools for 
+Xcode 6.0 for Yosemite (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.7 or later from 
+<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
 <p>
 <strong>10.9 Support:</strong> 
 10.9 users must install Xcode version 5.0.1 or later 
@@ -114,23 +160,23 @@ binários distribuídos pelo projeto Fink, por favor consulte <a
 href="download/sources_for_binaries.php">esta página</a> para instruções.</p>
 <p>O projeto Fink é hospedado pelo
 <a href="http://sourceforge.net/">SourceForge</a>.
-Além de hospedar este site e os downloads, o SourceForge fornece os seguintes
+Além de hospedar este site e os downloads, o SourceForge e o GitHub fornecem os seguintes
 recursos para o projeto:</p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">Página de resumo do projeto no SourceForge</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Relatar ou visualizar erros</a></li>
+href="https://github.com/fink/fink/issues">Relatar ou visualizar erros</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Solicitar um pacote que não esteja no Fink</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">Solicitar um pacote que não esteja no Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Solicitar uma funcionalidade que não esteja no Fink (o programa)</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">Solicitar uma funcionalidade que não esteja no Fink (o programa)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Submeter um novo pacote para o Fink (desenvolvedores avulsos)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">Submeter um novo pacote para o Fink (desenvolvedores avulsos)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Submeter uma correção para o fink (o programa)</a></li>
+href="https://github.com/fink/fink/pulls">Submeter uma correção para o fink (o programa)</a></li>
 <li><a href="lists/index.php">Listas de Discussão</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">navegue
-online</a>, <a href="doc/cvsaccess/index.php">instruções de acesso</a>)</li>
+<li>Git (<a href="https://github.com/fink/">navegue
+online</a>, <a href="doc/gitaccess/index.php">instruções de acesso</a>)</li>
 </ul>
 <p>Por favor observe que alguns destes recursos (isto é, relatar um erro ou
 solicitar um novo pacote para o Fink) necessitam de que você tenha uma conta no

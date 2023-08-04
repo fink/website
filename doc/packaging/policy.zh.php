@@ -1,7 +1,7 @@
 <?php
 $title = "打包 - 规则";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2021/05/27 20:26:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="next" href="fslayout.php?phpLang=zh" title="文件系统布局"><link rel="prev" href="format.php?phpLang=zh" title="软件包描述文件">';
 
 
@@ -611,7 +611,7 @@ http://www.debian.org/doc/packaging-manuals/debian-emacs-policy</a> 找到）。
         <li>Upload the tarball to a public download site where users can use <code>fink</code> to download it.
         If you don't have ready access to one, ask on the
         <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers mailing list</a> or
-        <a href="http://webchat.freenode.net">the #fink IRC channel</a>,
+        <a href="https://web.libera.chat/#fink">the #fink IRC channel</a>,
         and someone should be able to help.</li>
     </ol>
 

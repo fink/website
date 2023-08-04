@@ -1,14 +1,14 @@
 <?php
 $title = "ReadMe";
 $cvs_author = 'Author: alexkhansen';
-$cvs_date = 'Date: 2014/10/19 03:24:37';
+$cvs_date = 'Date: 2015/11/01 02:12:02';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink ReadMe</h1>
-<!--Generated from $Fink: readme.en.xml,v 1.12 2014/10/19 03:24:37 alexkhansen Exp $-->
+<!--Generated from $Fink: readme.en.xml,v 1.13 2015/11/01 02:12:02 alexkhansen Exp $-->
 <p>
 This is Fink, a package management system that aims to bring the full
 world of Open Source software to Darwin and Mac OS X.
@@ -45,17 +45,21 @@ An installed Mac OS X system, version 10.7 or later.
 </p></li>
 <li><p>
 The Xcode Command Line Tools are mandatory. This package can be installed either by 
-downloading it directly via developer.apple.com, through the Xcode application, on
-via the Components page of the Downloads tab of the Preferences on 10.7 and 10.8, 
-or on 10.9 and 10.10 by running the</p>
+downloading it directly via developer.apple.com, or by running the</p>
 <pre>xcode-select --install</pre>
 <p>command and choosing the   
-<b>Install</b> button in the window that pops up, or you can install the full
-Xcode if you prefer.  You may also need to use this command to update the tools,
+<b>Install</b> button in the window that pops up.
+You may also need to use this command to update the tools,
 especially if you're having build problems.</p>
 <p>If you're doing a manual download, make sure that the tools you install match your
  Mac OS X version as well as your Xcode app version (if that is present).
-</p></li>
+</p>
+<p>You will need to accept the Xcode license as root.  To do that, run</p>
+<pre>sudo xcodebuild -license</pre>
+<p>then scroll to the bottom of the text and type</p>
+<pre>agree</pre>
+<p>Some packages require the full Xcode.</p>
+</li>
 <li><p>Java.  Entering</p>
 <pre>javac</pre>
 <p>from a Terminal.app window should suffice to make the system download it for you.</p></li>

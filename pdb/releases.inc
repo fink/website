@@ -25,6 +25,17 @@ foreach(array(
 	new Distribution("10.10",       "x86_64",  "10.10/x86_64",       "dists/10.9-libcxx",  15, TRUE, TRUE, TRUE),
 	new Distribution("10.11",       "x86_64",  "10.11/x86_64",       "dists/10.9-libcxx",  16, TRUE, TRUE, TRUE),
 	new Distribution("10.12",       "x86_64",  "10.12/x86_64",       "dists/10.9-libcxx",  17, TRUE, TRUE, TRUE),
+	new Distribution("10.13",       "x86_64",  "10.13/x86_64",       "dists/10.9-libcxx",  18, TRUE, TRUE, TRUE),
+	new Distribution("10.14",       "x86_64",  "10.14/x86_64",       "dists/10.9-libcxx",  19, TRUE, TRUE, TRUE),
+	new Distribution("10.14.5",     "x86_64",  "10.14.5/x86_64",     "dists/10.9-libcxx",  20, TRUE, TRUE, TRUE),
+	new Distribution("10.15",       "x86_64",  "10.15/x86_64",       "dists/10.9-libcxx",  21, TRUE, TRUE, TRUE),
+	new Distribution("11.0",       "x86_64",  "11.0/x86_64",       "dists/10.9-libcxx",  22, TRUE, TRUE, FALSE),
+	new Distribution("11.3",       "x86_64",  "11.3/x86_64",       "dists/10.9-libcxx",  23, TRUE, TRUE, FALSE),
+	new Distribution("11.3",       "arm64",  "11.3/arm64",       "dists/10.9-libcxx",  24, TRUE, TRUE, FALSE),
+	new Distribution("12.0",       "x86_64",  "12.0/x86_64",       "dists/10.9-libcxx",  25, TRUE, TRUE, FALSE),
+	new Distribution("12.0",       "arm64",  "12.0/arm64",       "dists/10.9-libcxx",  26, TRUE, TRUE, FALSE),
+	new Distribution("13.0",       "x86_64",  "13.0/x86_64",       "dists/10.9-libcxx",  27, TRUE, TRUE, FALSE),
+	new Distribution("13.0",       "arm64",  "13.0/arm64",       "dists/10.9-libcxx",  28, TRUE, TRUE, FALSE),
 ) as $_dist) {
 	$distributions[$_dist->getId()] = $_dist;
 }
@@ -82,6 +93,19 @@ foreach(array(
 	new Release($distributions["10.11-x86_64"],         "stable",           "current", 49, TRUE),
 	new Release($distributions["10.12-x86_64"],         "bindist",          "current", 50, TRUE),
 	new Release($distributions["10.12-x86_64"],         "stable",           "current", 51, TRUE),
+	new Release($distributions["10.13-x86_64"],         "bindist",          "current", 52, TRUE),
+	new Release($distributions["10.13-x86_64"],         "stable",           "current", 53, TRUE),
+	new Release($distributions["10.14-x86_64"],         "bindist",          "current", 54, TRUE),
+	new Release($distributions["10.14-x86_64"],         "stable",           "current", 55, TRUE),
+	new Release($distributions["10.14.5-x86_64"],         "stable",           "current", 56, TRUE),
+	new Release($distributions["10.15-x86_64"],         "stable",           "current", 57, TRUE),
+	new Release($distributions["11.0-x86_64"],         "stable",           "current", 58, TRUE),
+	new Release($distributions["11.3-x86_64"],         "stable",           "current", 59, TRUE),
+	new Release($distributions["11.3-arm64"],         "stable",           "current", 60, TRUE),
+	new Release($distributions["12.0-x86_64"],         "stable",           "current", 61, TRUE),
+	new Release($distributions["12.0-arm64"],         "stable",           "current", 62, TRUE),
+	new Release($distributions["13.0-x86_64"],         "stable",           "current", 63, TRUE),
+	new Release($distributions["13.0-arm64"],         "stable",           "current", 64, TRUE),
 ) as $_rel) {
 	$releases[$_rel->getId()] = $_rel;
 }

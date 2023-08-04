@@ -1,9 +1,13 @@
 <?php
 $title = "Upgrade Instructions for macOS 10.12";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 19:03:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 11:36:00 $';
 
 include "header.inc";
+?>
+
+<?php
+$xcode_ver = "9.2"
 ?>
 
 <h1>Upgrade Instructions for macOS 10.12</h1>
@@ -17,12 +21,12 @@ include "header.inc";
 		Update the OS.
 	</li>
 	<li>
-		Install Xcode 8.x if you haven't already, or at least its Command Line Tools.
-		If already have Xcode 8.x, you will still need to reinstall the Command Line Tools,
+		Install Xcode <?php echo $xcode_ver ?> if you haven't already, or at least its Command Line Tools.
+		If already have Xcode <?php echo $xcode_ver ?>, you will still need to reinstall the Command Line Tools,
 		even if you had those installed already.
 	</li>
 	<li>
-		If you have Xcode 8.x, run <pre>sudo xcodebuild -license</pre> to accept the 
+		If you have Xcode <?php echo $xcode_ver ?>, run <pre>sudo xcodebuild -license</pre> to accept the 
 		terms of the Xcode license.  This is not required if you are using only the 
 		command-line tools.
 	</li>
@@ -45,7 +49,7 @@ include "header.inc";
 	If you updated from 10.9/10/11 to 10.12 with a fink which doesn't know about 10.12, 
 	you won't be able to proceed.  You can download a compatible 
 	<link url="http://downloads.sourceforge.net/fink/fink_0.41.0-101_darwin-x86_64.deb">
-   pre-built fink"</link> and install it via the terminal by running
+   pre-built fink</link> and install it via the terminal by running
    <pre>sudo dpkg -i fink_0.41.0-101_darwin-x86_64.deb</pre> in the folder where you 
    downloaded it.
 </p>

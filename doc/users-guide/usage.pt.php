@@ -1,7 +1,7 @@
 <?php
 $title = "Guia do usuário - A ferramenta fink";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="prev" href="conf.php?phpLang=pt" title="O arquivo de configuração do Fink">';
 
 
@@ -481,7 +481,7 @@ fink apropos -s=kde irc   - o mesmo que acima, mas restrito a pacotes que
       pacotes básicos incluindo o próprio <code>fink</code>. Este comando pode
       fazer a atualização para versões regulares e também configurar seu
       diretório <code>/sw/fink/dists</code> para atualizações diretas
-      por meio de CVS ou rsync caso você tenha selecionado uma destas opções na
+      por meio de git ou rsync caso você tenha selecionado uma destas opções na
       primeira vez em que o comando for executado. Isto significa que você
       poderá portanto acessar as últimas versões de todos os pacotes.</p>
 
@@ -504,14 +504,14 @@ fink apropos -s=kde irc   - o mesmo que acima, mas restrito a pacotes que
       de pacotes instáveis não será atualizada.</p>
     
 
-    <h2><a name="selfupdate-cvs">6.20 selfupdate-cvs</a></h2>
+    <h2><a name="selfupdate-git">6.20 selfupdate-git</a></h2>
       
 
       <p>Use este comando para fazer com que <code>fink selfupdate</code> use
-      acesso CVS para atualizar sua listagem de pacotes.</p>
+      acesso Git para atualizar sua listagem de pacotes.</p>
 
-      <p>A atualização via CVS é obsoleta exceto para desenvolvedores e pessoas
-      que estejam atrás de firewalls que bloqueiam o rsync.</p>
+      <p>A atualização do Rsync é preferida, exceto para desenvolvedores e pessoas
+      que estão por trás de firewalls que não permitem o rsync.</p>
     
 
     <h2><a name="index">6.21 index</a></h2>

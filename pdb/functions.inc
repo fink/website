@@ -285,7 +285,7 @@ class pdbQuery {
 				$result = $this->fetch_sql_uncached($this->unique);
 			else
 				$result = $this->fetch_solr_uncached($this->unique);
-			if ($result != null && count($result) > $cache_threshold) {
+			if ($result != null && is_countable($result) && count($result) > $cache_threshold) {
 				memcache_set_key($key, $result, false, $this->getTimeout());
 			}
 		}

@@ -3,7 +3,7 @@
 <document filename="index" lang="en">
   <title>The Fink F.A.Q.</title>
   <shorttitle>F.A.Q.</shorttitle>
-  <cvsid>$Id: faq.en.xml,v 1.125 2015/06/06 19:19:29 alexkhansen Exp $</cvsid>
+  <cvsid>$Id: faq.en.xml,v 1.127 2020/05/31 13:43:40 nieder Exp $</cvsid>
   <preface>
     <p>This is the list of frequently asked questions about Fink. Like in most FAQs, some questions are taken from real life and some are made up. It's really more like a documentation written in an ad-hoc, question and answer style.</p>
     <p>The FAQ consists of several pages, one for each section. All questions are listed and linked in the table of contents below.</p>
@@ -837,7 +837,7 @@ fink scanpackages
     </faqentry>
     <faqentry name="wrong-tree">
       <question>
-        <p>I've changed my OS | Developer Tools, but Fink doesn't recognize
+        <p>I've changed my OS, but Fink doesn't recognize
         the change.</p>
       </question>
       <answer>
@@ -847,6 +847,25 @@ fink scanpackages
         install Fink:</p>
         <codeblock>/sw/lib/fink/postinstall.pl</codeblock>
         <p>Doing this will point Fink to the correct place.</p>
+      </answer>
+    </faqentry>
+    <faqentry name="lost-command-line-tools">
+      <question>
+        <p>After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</p>
+      </question>
+      <answer>
+        <p>Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p>
+        <codeblock>Can't resolve dependency "xcode (>= 6.2)"</codeblock>
+        <p>Fink has lost track of Apple's Command Line Tools.</p>
+        <p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <link url="https://developer.apple.com/">https://developer.apple.com/</link>.</p>
+        <p>Another possible solution is to run the following command:</p>
+        <codeblock>xcode-select --install</codeblock>
+        <p>but this often reports the following:</p>
+        <codeblock>xcode-select: error: command line tools are already installed, use "Software Update" to install updates</codeblock>
+        <p>However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection with Fink.</p>
+        <p>Finally, you may need to run the command:</p>
+        <codeblock>sudo xcodebuild -license</codeblock>
+        <p>to agree to the software license.</p>
       </answer>
     </faqentry>
     <faqentry name="seg-fault">
@@ -1140,6 +1159,17 @@ Please fix build process to get consistent use of fink's headers.
         <p>do your build, and then you can put <filename>/usr/local</filename>
         back:</p>
         <codeblock>sudo mv /usr/local.moved /usr/local</codeblock>
+        <p>Starting with macOS 10.14, it's sometimes not possible to rename <filename>/usr/local</filename>. If you get an error when renaming <filename>/usr/local</filename> directly, then rename the subdirectories inside it instead:</p>
+        <codeblock>
+        sudo mv /usr/local/include /usr/local/include.moved
+        sudo mv /usr/local/lib /usr/local/lib.moved
+        </codeblock>
+        <p>do your build, and then you can put <filename>/usr/local/include</filename> and <filename>/usr/local/lib</filename>
+        back:</p>
+        <codeblock>
+        sudo mv /usr/local/include.moved /usr/local/include
+        sudo mv /usr/local/lib.moved /usr/local/lib
+        </codeblock>
       </answer>
     </faqentry>
     <faqentry name="toc-out-of-date">
@@ -1669,8 +1699,8 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS=&quot;-I /sw/share/aclocal&quot;
 export PKG_CONFIG_PATH=&quot;/sw/lib/pkgconfig&quot;
-export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.5</codeblock>
+export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.9</codeblock>
         <p>-tcsh-</p>
         <codeblock>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
@@ -1678,9 +1708,9 @@ setenv CXXFLAGS $CFLAGS
 setenv CPPFLAGS $CXXFLAGS 
 setenv ACLOCAL_FLAGS &quot;-I /sw/share/aclocal&quot;
 setenv PKG_CONFIG_PATH &quot;/sw/lib/pkgconfig&quot;
-setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
-setenv MACOSX_DEPLOYMENT_TARGET 10.5</codeblock>
-	<p>(assuming that the build system is running OS 10.5 or later)</p>
+setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv MACOSX_DEPLOYMENT_TARGET 10.9</codeblock>
+	<p>(assuming that the build system is running OS 10.9 or later)</p>
         <p>It is often easiest just to add these to your startup files (e.g.
         <filename>.cshrc</filename> | <filename>.profile</filename>) so they
         are set automatically. If a package does not use these variables, you

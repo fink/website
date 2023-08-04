@@ -1,7 +1,7 @@
 <?php
 $title = "Guide utilisateur - fink.conf";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="next" href="usage.php?phpLang=fr" title="Utilisation de l\'outil fink en ligne de commande"><link rel="prev" href="upgrade.php?phpLang=fr" title="Mise à niveau de Fink">';
 
 
@@ -129,8 +129,8 @@ stable/main". Cette liste doit toujours être identique à celle figurant dans l
 <p>Fink peut utiliser diverses applications pour télécharger les fichiers à partir d'Internet - <b>wget</b>, <b>curl</b> ou <b>axel</b>. La valeur <b>axelautomirror</b> utilise un mode expérimental de l'application <b>axel</b> pour déterminer le serveur le plus proche ayant le fichier demandé. L'utilisation des deux méthodes <b>axel</b> et <b>axelautomirror</b> n'est pas recommandé actuellement. <b>L'application que vous choisissez comme méthode de téléchargement DOIT être installée !</b>, faute de quoi aucun téléchargement n'aura lieu, car <code>fink</code> ne reviendra pas alors à la valeur par défaut <b>curl</b>.</p>
 </li>
 <li>
-<p><b>SelfUpdateMethod:</b> point, rsync ou cvs</p>
-<p><code>fink</code> peut utiliser différentes méthodes pour mettre à jour les fichiers info des paquets. <b>rsync</b> est la méthode recommandée. Cette méthode utilise rsync pour télécharger les fichiers qui ont été modifiés dans les <a href="#optional">arborescences</a> activées. Notez qui si vous modifiez ou ajoutez des fichiers aux arborescences <code>stable</code> ou <code>instable</code>, le fait d'utiliser rsync les supprimera. Faites d'abord une sauvegarde, par exemple dans votre arborescence <code>locale</code>. <b>cvs</b> effectue le téléchargement à partir d'un accès anonyme ou d'un accès :ext: au serveur cvs de fink. Ceci présente l'inconvénient que cvs ne sait pas changer de miroirs, aussi, si le serveur n'est pas disponible, vous ne pouvez pas mettre à jour. <b>point</b> ne télécharge que la dernière version officielle des paquets. Cette méthode n'est pas recommandée car vos paquets risquent, alors, d'être obsolètes.</p>
+<p><b>SelfUpdateMethod:</b> point, rsync ou git</p>
+<p><code>fink</code> peut utiliser différentes méthodes pour mettre à jour les fichiers info des paquets. <b>rsync</b> est la méthode recommandée. Cette méthode utilise rsync pour télécharger les fichiers qui ont été modifiés dans les <a href="#optional">arborescences</a> activées. Notez qui si vous modifiez ou ajoutez des fichiers aux arborescences <code>stable</code> ou <code>instable</code>, le fait d'utiliser rsync les supprimera. Faites d'abord une sauvegarde, par exemple dans votre arborescence <code>locale</code>. <b>git</b> effectue le téléchargement à partir d'un accès anonyme ou d'un accès Github au serveur git de fink. Ceci présente l'inconvénient que git ne sait pas changer de miroirs, aussi, si le serveur n'est pas disponible, vous ne pouvez pas mettre à jour. <b>point</b> ne télécharge que la dernière version officielle des paquets. Cette méthode n'est pas recommandée car vos paquets risquent, alors, d'être obsolètes.</p>
 </li>
 <li>
 <p><b>SelfUpdateCVSTrees:</b> liste d'arborescences</p>

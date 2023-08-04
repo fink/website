@@ -24,7 +24,7 @@ l'avvio rapido con le binary release.
 <ol>
 <li>
 <p>
-10.6, 10.7, 10.8, 10.9, 10.10, 10.11, and 10.12 users:  There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
+10.6 - 10.15 users: There is not currently a binary installer, and you will need to follow the <A href="srcdist.php">source install</A> instructions instead.<br>
 
 10.5 users: Download dell' installer disk image:<br>
 <?php analytics_download_link("http://prdownloads.sourceforge.net/fink/Fink-" . $fink_version . "-PowerPC-Installer.dmg?download", "Fink " . $fink_version . " Binary Installer (PowerPC)", "/downloads/FinkPPC")   ?> - <?php echo $dmg_size ?><br>

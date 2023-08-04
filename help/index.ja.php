@@ -1,7 +1,7 @@
 <?php
 $title = "Help";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2014/10/25 08:18:51 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
@@ -49,15 +49,14 @@ include "header.inc";
 <p>
 <b>IRC チャンネル</b>
 <tt>#fink</tt> チャンネルは、
-<a href="http://freenode.net">freenode</a> という IRC ネットワーク上にあります。
+<a href="https://libera.chat/">Libera.chat</a> という IRC ネットワーク上にあります。
 他の Fink ユーザーや、開発者も少なからずいます。
 </p>
 
 <p>
 <b>他のサイト</b>
 ウェブ上のフォーラム:
-<a href="http://sourceforge.net/forum/?group_id=18034">XonX forums at
-SourceForge</a> -
+<a href="https://www.xquartz.org/Mailing-Lists.html">XQuartz</a> -
 <a href="http://www.xdarwin.org/forum/">xdarwin.org forums</a> -
 <a href="http://forums.macnn.com/forumdisplay.php?forumid=54">MacNN
 Unix forum</a> -
@@ -66,8 +65,7 @@ Unix forum</a> -
 </p>
 <p>
 多少とも有益な情報があるサイトへのリンク:
-<a href="http://mrcla.com/XonX/">XonX</a> -
-<a href="http://macgimp.org/">macgimp.org</a> -
+<a href="https://www.xquartz.org/">XQuartz</a> -
 <a href="http://macosx.org/">macosx.org</a> -
 <a href="http://macosxhints.com/">macosxhints.com</a>
 </p>
@@ -101,7 +99,7 @@ Fink が気に入ったなら、口コミで広げてください。
 これによって、Mac OS X と Unix OS を支持するという認識が広がります。
 </p>
 <p>
-また、<a href="http://www.apple.com/macosx/feedback/">Apple に</a>、
+また、<a href="https://www.apple.com/feedback/macos.html">Apple に</a>、
 Mac OS X の BSD パワーを利用したこと、もっと BSD レイヤに力を注いで欲しいことを伝えることもできます。
 </p>
 
@@ -114,7 +112,7 @@ href="../lists/fink-users.php">fink-users</a>
 
 <p>
 <b>パッケージをテスト</b>
-パッケージ記述を <a href="../doc/cvsaccess/index.php">CVS</a> から入手し、
+パッケージ記述を <a href="../doc/gitaccess/index.php">Git</a> から入手し、
 Fink を <a href="../faq/usage-fink.php#unstable">unstable を使う</a> 用に設定し、
 パッケージをテストします。
 パッケージデータベースには <a href="http://pdb.finkproject.org/pdb/testing.php">テストを要するパッケージ</a>ページがあります。

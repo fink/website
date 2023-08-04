@@ -1,7 +1,7 @@
 <?php
 $title = "KDE Support In Fink";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:09:29 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
@@ -98,9 +98,9 @@ remove all of the kdenetwork3 packages, run:
  <a href="http://fink.sourceforge.net/lists/index.php">list archives</a> and
  <a href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">bug tracker</a>
  before posting questions.  You can also try the
- <b><a href="http://www.aquaflux.org/~fink/">#fink</a></b> channel on
- The <a href="http://www.freenode.net/">Freenode IRC network</a>
- (<b>irc.freenode.net</b>).  A number of the people involved in the
+ <b>#fink</b> channel on
+ the <a href="https://libera.chat/">Libera Chat IRC network</a>
+ (<b>irc.libera.chat:6697</b>).  A number of the people involved in the
  KDE port usually hang out there.
 </p>
 

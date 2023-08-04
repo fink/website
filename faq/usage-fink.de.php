@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Fink Benutzung";
-$cvs_author = 'Author: kamischi';
-$cvs_date = 'Date: 2015/06/06 19:19:29';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/05/31 13:43:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="comp-general.php?phpLang=de" title="Probleme beim Übersetzen - Allgemein"><link rel="prev" href="upgrade-fink.php?phpLang=de" title="Fink aktualisieren(versions-spezifische Probleme)">';
 
 
@@ -457,8 +457,12 @@ fink scanpackages</pre></div>
           Führen sie dazu ein Skript aus, das normalerweise bei der
           Erst-Installation ausgeführt wird:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Führt man dieses Skript aus, wird alles zurecht gerückt.</p></div>
     </a>
+    <a name="lost-command-line-tools">
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.25: After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</b></p></div>
+      <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p><pre>Can't resolve dependency "xcode (&gt;= 6.2)"</pre><p>Fink has lost track of Apple's Command Line Tools.</p><p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <a href="https://developer.apple.com/">https://developer.apple.com/</a>.</p><p>Another possible solution is to run the following command:</p><pre>xcode-select --install</pre><p>but this often reports the following:</p><pre>xcode-select: error: command line tools are already installed, use "Software Update" to install updates</pre><p>However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection with Fink.</p><p>Finally, you may need to run the command:</p><pre>sudo xcodebuild -license</pre><p>to agree to the software license.</p></div>
+    </a>
     <a name="seg-fault">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.25: Ich erhalte Fehlermeldungen von <code>gzip</code>,
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.26: Ich erhalte Fehlermeldungen von <code>gzip</code>,
           <code>dpkg-deb</code> oder anderen Programmen aus dem Paket
           <code>fileutils</code>! Hilfe!</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Fehlermeldungen der Art:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf -
@@ -473,7 +477,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>oder 
           verursacht und können mit folgendem Kommando behoben werden:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
     </a>
     <a name="pathsetup-keeps-running">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.26: When I open a Terminal window, I get a message that "Your
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.27: When I open a Terminal window, I get a message that "Your
         environment seems to be correctly set up for Fink already.", and it
         logs out.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> What happened is that somehow the OSX Terminal program has been
@@ -484,7 +488,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>oder 
         <code>/sw/bin/pathsetup.command</code>.</p></div>
     </a>
     <a name="ext-drive">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.27: Ich habe Fink nicht auf der Haupt-Partition installiert und ich kann
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.28: Ich habe Fink nicht auf der Haupt-Partition installiert und ich kann
           das Paket Fink nicht aus dem Quellen aktualisieren. Die
           Fehlermeldungen enthalten <q>chowname</q>.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Sollten die Fehler so aussehen:</p><pre>This first test is designed to die, so please ignore the error
@@ -503,13 +507,13 @@ Failed test (./Command/chowname.t at line 27)
           "Ignore ownership" ab.</p></div>
     </a>
     <a name="mirror-gnu">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.28: Fink weigert sich, meine Pakete zu aktualisieren, weil es den
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.29: Fink weigert sich, meine Pakete zu aktualisieren, weil es den
           'gnu'-Spiegelserver nicht finden kann.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Erhalten sie eine Fehlermeldung, die so aufhört:</p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>, dann muss man meistens das Paket <code>fink-mirrors</code>
           aktualisieren, sprich folgendes Kommando ausführen:</p><pre>fink install fink-mirrors</pre></div>
     </a>
     <a name="cant-move-fink">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.29: Ich kannn Fink nicht aktualisieren, weil ich /sw/fink nicht aus dem
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.30: Ich kannn Fink nicht aktualisieren, weil ich /sw/fink nicht aus dem
           Weg räumen kann.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Der folgende Fehler:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>wird der Fehler meistens dadurch verursacht, dass die Zugriffsrechte
           temporärer Ordner es verhindern, die während eines
@@ -517,7 +521,7 @@ Failed test (./Command/chowname.t at line 27)
           etwas anderes behauptet. Entfernen sie diese Ordner mit:</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
     </a>
     <a name="fc-cache">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.30: Ich erhalte diese Fehlermeldung: "No fonts found".</b></p></div>
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.31: Ich erhalte diese Fehlermeldung: "No fonts found".</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Sehen eine der folgenden Fehlermelungen (bisher nur bei OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
@@ -525,7 +529,7 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>können sie das so beheben:</p><pre>sudo fc-cache</pre></div>
     </a>
     <a name="non-admin-installer">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.31: Ich kann Fink nicht mit dem Installerpaket installieren, weil ich den
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.32: Ich kann Fink nicht mit dem Installerpaket installieren, weil ich den
           Fehler "volume doesn't support symlinks" erhalte.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Diese Fehlermeldung bedeutet, dass sie versuchten Fink als Nutzer zu
           installieren, der keine Administratorrechte hat. Melden sie sich ab
@@ -539,7 +543,7 @@ page and on http://fontconfig.org.</pre><p>können sie das so beheben:</p><pre>s
           helfen, müssen sie die Zugriffsrechte manuell setzen:</p><pre>sudo chmod 1775 /</pre></div>
     </a>
     <a name="wrong-arch">
-      <div class="question"><p><b><?php echo FINK_Q ; ?>5.32: Ich kann Fink nicht aktualisieren. Es bricht mit
+      <div class="question"><p><b><?php echo FINK_Q ; ?>5.33: Ich kann Fink nicht aktualisieren. Es bricht mit
           <q>package architecture (darwin-i386) does not match system
           (darwin-powerpc)</q> ab.</b></p></div>
       <div class="answer"><p><b><?php echo FINK_A ; ?>:</b> Dieser Fehler tritt auf, wenn sie das PowerPC-Installerpaket auf

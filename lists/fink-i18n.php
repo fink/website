@@ -1,7 +1,7 @@
 <?php
 $title = "Mailing Lists - fink-devel";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:15:12 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/27 23:10:05 $';
 
 include "header.inc";
 ?>
@@ -19,7 +19,7 @@ Please don't use HTML or rich text mails.
 The list has a strict size limit of 40K.
 </p>
 <p>
-The <a href="http://news.gmane.org/gmane.os.apple.fink.i18n">list
+The <a href="https://sourceforge.net/p/fink/mailman/fink-i18n">list
 archives</a> are a valuable resource for interested users..
 </p>
 

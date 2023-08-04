@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date   = '$Date: 2014/10/19 20:37:56 $';
+$cvs_date   = '$Date: 2019/02/25 22:41:00 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -54,13 +54,32 @@ require dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
-Actualmente, Fink admite soporte para OS X 10.10 (Yosemite), 10.9 (Mavericks), 
-10.8 (Mountain Lion), y 10.7 (Lion), y continua funcionando en versiones mas 
+Actualmente, Fink admite soporte para macOS 10.15 (Catalina), macOS 10.14 (Mojave), macOS 10.13 (High Sierra), 
+macOS 10.12 (Sierra), OS X 10.11 (El Capitan), OS X 10.10 (Yosemite), 10.9 (Mavericks), 
+y continua funcionando en versiones mas 
 antiguas, aunque ya no recibe actualizaciones en esos sistemas.  Instructiones de 
 instalación están disponibles desde nuestra <a href="download/srcdist.php">página 
 de liberación del código fuente</a>.
 </p>
 <p>XCode necesita ser instalado antes de instalar Fink.</p>
+<p>
+<strong>Soporte para 10.15:</strong> 
+Usuarios en 10.15 deberián instalar Xcode 10.3 (a través de descarga 
+gratuita del AppStore).  Al minimo necesitan 
+instalar las herramientas de la linea de comandos para "Xcode 10.3 for Catalina" 
+(instalable a través de <i>xcode-select --install</i> o 
+descargable desde <a href="http://developer.apple.com">Apple</a>).</p>
+<p>Si necesita X11, debe de instalar Xquartz-2.7.11 o posterior desde 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
+<p>
+<strong>Soporte para 10.13 and 10.14:</strong> 
+Usuarios en 10.13 y 10.14 deberián instalar Xcode 10.1 (a través de descarga 
+gratuita del AppStore).  Al minimo necesitan 
+instalar las herramientas de la linea de comandos para "Xcode 10.1 for Mojave" ó  "Xcode 10.1 for High Sierra"
+(instalable a través de <i>xcode-select --install</i> o 
+descargable desde <a href="http://developer.apple.com">Apple</a>).</p>
+<p>Si necesita X11, debe de instalar Xquartz-2.7.11 o posterior desde 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>Soporte para 10.10:</strong> 
 Usuarios en 10.10 deberián instalar Xcode 6.0 (a través de descarga 
@@ -125,24 +144,24 @@ instructions.
 <p>
 El proyecto Fink es albergado por
 <a href="http://sourceforge.net/">SourceForge</a>.
-Además de albergar el sitio y las descargas, SourceForge
+Además de albergar el sitio y las descargas, SourceForge y GitHub
 provee los siguientes recursos al proyecto:
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">página de SourceForge del resúmen del proyecto </a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Reporte o revisión de bugs</a></li>
+href="https://github.com/fink/fink/issues">Reporte o revisión de bugs</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Solicitudes de un paquete que no esta en Fink</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">Solicitudes de un paquete que no esta en Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Solicitar una caracteristica que no tenga Fink (el programa en sí)</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">Solicitar una caracteristica que no tenga Fink (el programa en sí)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Someter un nuevo paquete a Fink (desarrolladores non-core)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">Someter un nuevo paquete a Fink (desarrolladores non-core)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Someter un patch para fink (el programa)</a></li>
+href="https://github.com/fink/fink/pulls">Someter un patch para fink (el programa)</a></li>
 <li><a href="lists/index.php">Listas de Correo</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">de
-navegación en línea</a>, <a href="doc/cvsaccess/index.php">Instrucciones de acceso</a>)</li>
+<li>Git (<a href="https://github.com/fink/">de
+navegación en línea</a>, <a href="doc/gitaccess/index.php">Instrucciones de acceso</a>)</li>
 </ul>
 <p>
 Por favor, note que para hacer uso de algunos de estos recursos (ie. para

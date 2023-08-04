@@ -1,7 +1,7 @@
 <?php
 $title = "Guia rápido para download";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 15:16:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 10:24:00 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -20,7 +20,7 @@ href="upgrade.php?phpLang=pt">matriz de atualização</a>.</p>
 versão de binários.</p>
 
 <ol>
-  <li><p>Usuários 10.6, 10.7, 10.8, 10.9, 10.10, 10.11, e 10.12: no momento não há um instalador binário. Siga as
+  <li><p>Usuários 10.6, 10.7, 10.8, 10.9, 10.10, 10.11, 10.12, 10.13, 10.14, e 10.15: no momento não há um instalador binário. Siga as
   instruções para <a href="srcdist.php">instalação a partir do código
   fonte</a>.<br/>
   Usuários 10.5: Baixe a imagem de disco contendo o instalador:<br>
@@ -150,8 +150,48 @@ atualizações) após registrar-se gratuitamente.</p>
   Mac OS</caption>
   <tbody>
     <tr>
+      <td>10.15</td>
+      <td>Xcode 11.3.1</td>
+    </tr>
+    <tr>
+      <td>10.14</td>
+      <td>Xcode 11.3.1</td>
+    </tr>
+    <tr>
+      <td>10.13</td>
+      <td>Xcode 10.1</td>
+    </tr>
+    <tr>
+      <td>10.12</td>
+      <td>Xcode 9.2</td>
+    </tr>
+    <tr>
+      <td>10.11</td>
+      <td>Xcode 8.2.1</td>
+    </tr>
+    <tr>
+      <td>10.10</td>
+      <td>Xcode 7.2.1</td>
+    </tr>
+    <tr>
+      <td>10.9</td>
+      <td>Xcode 6.2</td>
+    </tr>
+    <tr>
+      <td>10.8</td>
+      <td>Xcode 5.1.1</td>
+    </tr>
+    <tr>
+      <td>10.7</td>
+      <td>Xcode 4.6.3</td>
+    </tr>
+    <tr>
+      <td>10.6</td>
+      <td>Xcode 3.2.6</td>
+    </tr>
+    <tr>
       <td>10.5</td>
-      <td>Xcode 3.0 ou 3.1</td>
+      <td>Xcode 3.1.4</td>
     </tr>
     <tr>
       <td>10.4 (Intel)</td>

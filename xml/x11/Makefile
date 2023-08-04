@@ -1,13 +1,20 @@
-# $Id: Makefile,v 1.17 2015/02/23 16:32:58 k-m_schindler Exp $
+# $Id: Makefile,v 1.18 2019/01/19 11:22:33 nieder Exp $
 
 # process XML files with stylesheet to produce HTML
 
 basedir = ..
 
 SOURCE = x11
-TARGET = index.php intro.php history.php \
-	 inst-xfree86.php run-xfree86.php other.php \
-	 trouble.php tips.php
+TARGET = \
+	index.php \
+	intro.php \
+	history.php \
+	inst-xfree86.php \
+	run-xfree86.php \
+	other.php \
+	trouble.php \
+	tips.php
+
 WANT_HTML = 1
 DESTDIR = doc/x11
 

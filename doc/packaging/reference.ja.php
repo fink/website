@@ -1,7 +1,7 @@
 <?php
 $title = "パッケージ作成 - リファレンス";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2016/04/06 22:11:13';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/01/22 6:40:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="prev" href="compilers.php?phpLang=ja" title="コンパイラ">';
 
 
@@ -159,6 +159,13 @@ gcc-4.0 以前のコンパイラを使うパッケージ
 <code>10.7</code>,
 <code>10.8</code>,
 <code>10.9</code>,
+<code>10.10</code>,
+<code>10.11</code>,
+<code>10.12</code>,
+<code>10.13</code>,
+<code>10.14</code>,
+<code>10.14.5</code>,
+and <code>10.15</code>
 です。
 このフィールドがあり、条件式判定で空欄でなければ、
 マシンのディストリビューションが書かれていなければ、
@@ -167,7 +174,7 @@ fink はパッケージ記述を無視します。
 (fink 0.26.0　で導入。)
 </p>
 <p>
-<code>10.7</code>, <code>10.8</code>, <code>10.9</code> ディストリビューションは、
+<code>10.9</code>, <code>10.10</code>, <code>10.11</code>, <code>10.12</code>, <code>10.13</code>, <code>10.14</code>, <code>10.14.5</code> ディストリビューションは、
 finkinfo ファイルが同じであるため、
 これらのディストリビューションの一つに有効だが他ではそうでない場合が、このフィールドを使います。
 </p>
@@ -188,7 +195,7 @@ foo-pm5124 は空欄であることになります。
 <p>
 10.7 以降では python 2.5 がなく、 perl のバージョンがディストリビューションによって異なるため、
 これらのパッケージはこのフィールドをよく使います。
-参照のため、10.3 から 10.9 までの利用可能な perl バージョンを記します
+参照のため、10.3 から 13.0 までの利用可能な perl バージョンを記します
 (<b>太字の</b> system はそのバージョンの system-perl です)。
 </p>
 <pre>
@@ -199,10 +206,14 @@ foo-pm5124 は空欄であることになります。
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
-    perl 5.12.3:                         <b>10.7</b>
+    perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
-    perl 5.16.2:                         10.7, 10.8, 10.9, <b>10.10</b>
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>, 10.14.5, 10.15, 11.0, 11.3, 12.0, 13.0
+    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <b>10.14.5</b>, <b>10.15</b>, 11.0, 11.3, 12.0, 13.0
+    perl 5.28.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, <b>11.0</b>, 11.3, 12.0, 13.0
+    perl 5.30.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, <b>11.3</b>, 12.0, 13.0
+    perl 5.30.3:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, 11.3, <b>12.0</b>, <b>13.0</b>
 </pre>
 <p>
 すべての variant をひとつの finkinfo ファイルに含める方法は、以下の通りです。
@@ -724,7 +735,32 @@ Primary: ftp://ftp.barbarorg/pub/
 							フィールド <code>Source-MD5</code> と同様ですが，
 							フィールド <code>Source<b>N</b></code> に対応する N 番目の tarball の MD5 チェックサムを指定します．
 						</p>
-					</td></tr><tr valign="top"><td>TarFilesRename</td><td>
+					</td></tr><tr valign="top"><td>Source-Checksum</td><td>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<pre>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</pre>
+<p>
+Current valid checksums are <code>MD5</code>, <code>SHA1</code>, and
+<code>SHA256</code>. The <code>shasum</code> tool can be used to
+calculate SHA checksums:</p>
+<pre>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</pre>
+<p>
+The <code>Source-Checksum</code> field should only be used once per
+.info file. If both the <code>Source-MD5</code> and
+<code>Source-Checksum</code> fields are present,
+<code>Source-Checksum</code> takes precedence.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-Checksum</td><td>
+<p>
+This is just the same as the <code>Source-Checksum</code> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <code>Source<b>N</b></code> field.
+</p>
+</td></tr><tr valign="top"><td>TarFilesRename</td><td>
 						<p>
 							<b>Fink 0.10.0 で導入:</b>
 							このフィールドは tar 形式を使うソースファイルにのみ適用されます．
@@ -1104,8 +1140,8 @@ make test</pre>
 <li><code>TestConfigureParams</code>: 
     テストスイートを実行するために必要な追加ソースです．
     関連する全てのフィールドもサポートされています．
-    <code>TestSource-MD5</code>は指定されなければ<b>なりません</b>．
-    <code>TestSourceN</code> や対応する <code>TestSourceN-MD5</code> , <code>TestTarFilesRename</code> などを追加することも可能です．</li>
+    <code>TestSource-MD5</code> または <code>TestSource-Checksum</code> は指定されなければ<b>なりません</b>．
+    <code>TestSourceN</code> や対応する <code>TestSourceN-MD5</code> , <code>TestSourceN-Checksum</code> , <code>TestTarFilesRename</code> などを追加することも可能です．</li>
 <li><code>TestSuiteSize</code>: 
     テストスイートどの程度かかるかのおよその時間を示します．
     値は，<code>small</code>, <code>medium</code>, と <code>large</code> です．

@@ -159,7 +159,7 @@ unset($result);
 		$text = htmlentities($text);
 		if ($text) {
 			# Try to detect urls
-			$text = preg_replace('/http:\/\/[^ &:]+/', '<a href="${0}">${0}</a>', $text);
+			$text = preg_replace('/https:\/\/[^ &:]+/', '<a href="${0}">${0}</a>', $text);
 			$text = str_replace("\\n", "\n", $text);
 			$text = '<div class="desc">' . $text . '</div>';
 			if ($label)
@@ -360,20 +360,16 @@ unset($result);
 	}
 	if ($pobj['infofile'] && $pobj['rel_type'] != 'bindist') {
 		# where the info file sits on a local Fink installation
-		$infofile_path = $pobj['rcspath'];
-		$infofile_cvs_url = 'http://fink.cvs.sourceforge.net/fink/'.$pobj['rcspath'];
-		if ($pobj['rel_type'] == 'bindist')
-			$infofile_tag = '?pathrev=' . $pobj['tag'];
-		else
-			$infofile_tag = '';
-		$infofile_html  = '<a href="'.$infofile_cvs_url.$infofile_tag.($infofile_tag ? '&amp;' : '?').'view=markup" title="' . $pobj['name'] . ' info file">'.$infofile_path.'</a><br>';
-		$infofile_html .= '<a href="'.$infofile_cvs_url.$infofile_tag.'?view=log" title="' . $pobj['name'] . ' CVS log">CVS log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
+		$git_file_path = preg_replace('/^dists\//', '', $pobj['rcspath']);
+		$git_base_path = 'https://github.com/fink/fink-distributions';
+		$infofile_html  = '<a target="_blank" href="'.$git_base_path.'/blob/master/'.$git_file_path.'" title="' . $pobj['name'] . ' info file">'.$pobj['rcspath'].'</a><br>';
+		$infofile_html .= '<a target="_blank" href="'.$git_base_path.'/commits/master/'.$git_file_path.'" title="' . $pobj['name'] . ' Commit log">Commit log</a>, Last Changed: '. format_solr_date($pobj['infofilechanged']);
 		it_item("Info-File:", $infofile_html);
 	}
 	if (isset($pobj['debarchive']) && $pobj['debarchive'] && $pobj['rel_type'] == 'bindist') {
 		# where the deb archive file sits on a local Fink installation
 		$debarchive_path = $pobj['debarchive'];
-		$debarchive_url = 'http://bindist.finkmirrors.net/'.$pobj['debarchive'];
+		$debarchive_url = 'https://bindist.finkmirrors.net/'.$pobj['debarchive'];
 		$debarchive_html  = '<a href="'.$debarchive_url.'" title="' . $pobj['name'] . ' deb archive">'.$debarchive_path.'</a><br>';
 		it_item("Deb Archive:", $debarchive_html);
 	}

@@ -1,7 +1,7 @@
 <?php
 $title = "打包 - 操作手册";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:16';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/01/22 6:40:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="打包 Contents"><link rel="prev" href="compilers.php?phpLang=zh" title="Compilers">';
 
 
@@ -146,7 +146,17 @@ A comma-separated list of distribution(s) for which the package
 At present, the only valid values for distribution are
 <code>10.4</code>,
 <code>10.5</code>,
-and <code>10.6</code>
+<code>10.6</code>,
+<code>10.7</code>,
+<code>10.8</code>,
+<code>10.9</code>,
+<code>10.10</code>,
+<code>10.11</code>,
+<code>10.12</code>,
+<code>10.13</code>,
+<code>10.14</code>,
+<code>10.14.5</code>,
+and <code>10.15</code>
 . If this field is present and not blank after
 conditional handling, fink will ignore the package description(s) if
 the local machine distribution is not listed. If the field is omitted
@@ -154,7 +164,7 @@ or the value is blank, all distributions are assumed.
 (Introduced in fink 0.26.0.)
 </p>
 <p>
-Since Fink's <code>10.4</code>, <code>10.5</code>, and <code>10.6</code> distributions share
+Since Fink's <code>10.9</code> through <code>10.14.5</code> distributions share
 a common set of finkinfo files, the most common use of this field will be for 
 packages which are suitable for one of those distributions but not the
 other.
@@ -176,10 +186,11 @@ will result in the field for the foo-pm581 variant
 being <code>10.3, 10.4</code> and the field being blank for the 
 foo-pm586 variant.
 </p>
-<p>Since python 2.3 is not available in the 10.5 distribution, and the
-available perl packages vary by distribution, these package types provide
+<p>Since python 2.5 is not available in the 10.7+ distributions, and the
+available perl versions vary by distribution, these package types provide
 a common use of this field.  For reference, we note the availabilty of
-various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
+various perl versions in the 10.3 through 13.0 distributions
+(<b>bolded</b> systems indicate system-perl at that version):
 </p>
 <pre>
     perl 5.6.0:  10.3
@@ -189,7 +200,14 @@ various perl versions in the 10.3, 10.4, 10.5, 10.6, and 10.7 distributions:
     perl 5.8.6:  10.3, <b>10.4</b>, 10.5
     perl 5.8.8:        10.4, <b>10.5</b>, 10.6
     perl 5.10.0:             10.5, <b>10.6</b>
-    perl 5.12.3:                         <b>10.7</b>
+    perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
+    perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>, 10.14.5, 10.15, 11.0, 11.3, 12.0, 13.0
+    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <b>10.14.5</b>, <b>10.15</b>, 11.0, 11.3, 12.0, 13.0
+    perl 5.28.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, <b>11.0</b>, 11.3, 12.0, 13.0
+    perl 5.30.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, <b>11.3</b>, 12.0, 13.0
+    perl 5.30.3:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, 11.3, <b>12.0</b>, <b>13.0</b>
 </pre>
 <p>A way to include all variants in a single finkinfo file is as follows.
 </p>
@@ -639,6 +657,31 @@ use <code>TestSource</code> and related fields, inside the
 <b>从 fink 0.10.0 开始。</b>
 这个字段和 <code>Source-MD5</code> 字段完全一样，除了它是指定与 <code>Source<b>N</b></code> 字段对应的压缩档的 MD5 校验值。
 </p>
+</td></tr><tr valign="top"><td>Source-Checksum</td><td>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<pre>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</pre>
+<p>
+Current valid checksums are <code>MD5</code>, <code>SHA1</code>, and
+<code>SHA256</code>. The <code>shasum</code> tool can be used to
+calculate SHA checksums:</p>
+<pre>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</pre>
+<p>
+The <code>Source-Checksum</code> field should only be used once per
+.info file. If both the <code>Source-MD5</code> and
+<code>Source-Checksum</code> fields are present,
+<code>Source-Checksum</code> takes precedence.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-Checksum</td><td>
+<p>
+This is just the same as the <code>Source-Checksum</code> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <code>Source<b>N</b></code> field.
+</p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p>
 <b>从 fink 0.10.0 开始。</b>
@@ -945,8 +988,8 @@ All other fields are optional.  The following fields are allowed inside
 <li><code>TestDepends</code> and <code>TestConflicts</code>: Lists of packages that will be added to the <code>BuildDepends</code> or <code>BuildConflicts</code> lists.</li>
 <li><code>TestSource</code>: Extra sources necessary to run the test suite.  All of the
     affiliated fields are also supported, so you <b>must</b> also specify
-    <code>TestSource-MD5</code>, and you may also have
-    <code>TestSourceN</code> and corresponding <code>TestSourceN-MD5</code>,
+    <code>TestSource-MD5</code> or <code>TestSource-Checksum</code>, and you may also have
+    <code>TestSourceN</code> and corresponding <code>TestSourceN-MD5</code>, <code>TestSourceN-Checksum</code>, 
     <code>TestTarFilesRename</code>, etc.</li>
 <li><code>TestSuiteSize</code>: Describes approximately how long the test suite takes to
     run.  Valid values are <code>small</code>, <code>medium</code>, and <code>large</code>.

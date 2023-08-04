@@ -1,7 +1,7 @@
 <?php
 $title = "Benutzerhandbuch - fink.conf";
-$cvs_author = 'Author: kms';
-$cvs_date = 'Date: 2014/10/20 11:41:47';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="next" href="usage.php?phpLang=de" title="Das fink-Tool über die Kommandozeile benutzen"><link rel="prev" href="upgrade.php?phpLang=de" title="Fink Aktualisieren">';
 
 
@@ -191,7 +191,7 @@ Dateien im Buildpath zu indizieren. Dieses verzögert die Erstellung von Paketen
         </li>
         <li>
           <p>
-            <b>SelfUpdateMethod:</b> point, rsync oder cvs</p>
+            <b>SelfUpdateMethod:</b> point, rsync oder git</p>
           <p>
 <code>fink</code> nutzt verschiedene Methoden, um info-Dateien der Pakete zu 
 aktualisieren. <b>rsync</b> ist die empfohlene Einstellung; mit rsync werden nur 
@@ -199,8 +199,8 @@ geänderte Dateien aus den <a href="#optional">Bäumen</a> herunter geladen, die
 sie eingeschaltet haben. Beachten sie, dass geänderte oder hinzugefügte Dateien 
 in den Bäumen <code>stable</code> und <code>unstable</code> bei der Benutzung 
 von rsync gelöscht werden. Machen sie zuerst einen Backup in ihren eigenen Baum, 
-d. h. <code>local</code>. <b>cvs</b> lädt aus dem Fink Repository mittels 
-anonymous oder :ext: cvs-Zugang herunter. Dies hat den Nachteil, dass cvs den 
+d. h. <code>local</code>. <b>git</b> lädt aus dem Fink Repository mittels 
+anonymous oder Github-Zugang herunter. Dies hat den Nachteil, dass git den 
 Mirror nicht wechseln kann. Wenn der Server nicht verfügbar ist, kann man nicht 
 aktualisieren. <b>point</b> lädt nur die neueste Version der Pakete herunter. 
 Dies wird nicht empfohlen, weil ihre Pakete ziemlich veraltet sein können.

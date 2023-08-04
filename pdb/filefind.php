@@ -57,7 +57,7 @@ $type_values = array(
 // Distribution values
 $dist_values = array(
 	'any'     => 'Any',
-	'default' => 'Supported (10.9 through 10.12)',
+	'default' => 'Supported (10.9 through 13.0)',
 );
 foreach ($distributions as $d) {
 	if (!$d->isVisible()) {
@@ -137,7 +137,7 @@ if (empty($_GET['search']) || $invalid_param || $count < 1) {
 	if (!empty($_GET['search']) && $count < 1) {
 ?>
 <br>
-No Matches found, please try again <a href="http://pdb.finkproject.org/pdb/filefind.php">Search</a><br/>
+No Matches found, please try again <a href="https://pdb.finkproject.org/pdb/filefind.php">Search</a><br/>
 <?php
 	}
 
@@ -181,6 +181,14 @@ function fink_file_search($get, $dists, $trees, $archs) {
 		$dists['10.10'] = '10.10';
 		$dists['10.11'] = '10.11';
 		$dists['10.12'] = '10.12';
+		$dists['10.13'] = '10.13';
+		$dists['10.14'] = '10.14';
+		$dists['10.14.5'] = '10.14.5';
+		$dists['10.15'] = '10.15';
+		$dists['11.0'] = '11.0';
+		$dists['11.3'] = '11.3';
+		$dists['12.0'] = '12.0';
+		$dists['13.0'] = '13.0';
 	} else {
 		unset($dists);
 		$dists[$get['dist_name']] = $get['dist_name'];

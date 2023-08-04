@@ -1,7 +1,7 @@
 <?php
 $title = "Ajuda";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2014/10/25 08:18:51 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
@@ -41,12 +41,11 @@ terceiros instalado em /usr/local ou se usa um compilador customizado (e.g. gcc
 3).</p>
 
 <p><b>O canal IRC.</b> Existe um canal <tt>#fink</tt> na rede de IRC
-<a href="http://freenode.net">freenode</a>. Lá você pode conversar com outros
+<a href="https://libera.chat/">Libera.chat</a>. Lá você pode conversar com outros
 usuários do Fink e alguns dos desenvolvedores.</p>
 
 <p><b>Outros sites.</b> Alguns links para fóruns de discussão na Web:
-<a href="http://sourceforge.net/forum/?group_id=18034">Fórums XonX no
-SourceForge</a> -
+<a href="https://www.xquartz.org/Mailing-Lists.html">XQuartz</a> -
 <a href="http://www.xdarwin.org/forum/">fórums do xdarwin.org</a> -
 <a href="http://forums.macnn.com/forumdisplay.php?forumid=54">MacNN
 Unix forum</a> -
@@ -54,8 +53,7 @@ Unix forum</a> -
 
 <p>
 Alguns links para sites com informações que podem ser úteis:
-<a href="http://mrcla.com/XonX/">XonX</a> -
-<a href="http://macgimp.org/">macgimp.org</a> -
+<a href="https://www.xquartz.org/">XQuartz</a> -
 <a href="http://macosx.org/">macosx.org</a> -
 <a href="http://macosxhints.com/">macosxhints.com</a>
 </p>
@@ -82,7 +80,7 @@ são mais testados; e ajuda o mundo Unix de forma geral porque ajuda a
 reconhecer o Mac OS&nbsp;X como sendo um sistema operacional Unix para o qual
 vale a pena prover suporte.</p>
 
-<p>Você também pode <a href="http://www.apple.com/macosx/feedback/">informar à
+<p>Você também pode <a href="https://www.apple.com/feedback/macos.html">informar à
 Apple</a> que você gostou do caminho que eles tomaram com a base BSD do Mac OS
 X e que você gostaria de que eles melhorassem a camada BSD.</p>
 
@@ -91,7 +89,7 @@ assine a lista de discussão <a href="../lists/fink-users.php">fink-users</a> e
 ajude a resolver os problemas lá enviados por outros usuários.</p>
 
 <p><b>Teste pacotes.</b> Obtenha as descrições de pacotes mais recentes via <a
-href="../doc/cvsaccess/index.php">CVS</a>, configure o Fink para <a
+href="../doc/gitaccess/index.php">Git</a>, configure o Fink para <a
 href="../faq/usage-fink.php#unstable">usar a árvore unstable</a> e teste os
 pacotes. O banco de dados de pacotes lista os <a
 href="http://pdb.finkproject.org/pdb/testing.php">pacotes que precisam de teste</a> em uma página

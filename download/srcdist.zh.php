@@ -1,9 +1,10 @@
 <?php
 $title = "Source Release Download";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:32:38 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/19 10:11:12 $';
 
 include "header.inc";
+include "../fink_version.inc";
 ?>
 
 <h1>下载 Fink 源代码版本</h1>
@@ -27,7 +28,7 @@ Fink <?php print $fink_version; ?> 已经于
 -->
 <p><em>fink-0.28.0</em> 已经于 2007-11-02 正式发布。</p>
 <ul>
-<li><a href="http://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
+<li><a href="https://downloads.sourceforge.net/fink/fink-0.28.0.tar.gz">fink-0.28.0</a> - 1308K, .tar.gz format</li>
 </ul>
 
 <p>
@@ -47,7 +48,7 @@ You will also need to install the Xcode Tools (c.f. <a href="./index.en.php" >th
 <p>After you have installed <em>fink</em> and the other base packages, the commands</p>
 <pre>fink selfupdate-rsync</pre>
 <p>or</p>
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 
 <p>will download the package description files and patches.</p>
 <!-- end translation -->
@@ -62,7 +63,7 @@ href="../doc/index.php">文档部分</a>获得。
 <p>After you have installed <em>fink</em> and the other base packages, the commands</p>
 <pre>fink selfupdate-rsync</pre>
 <p>or</p>
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 <p>will download the package description files and patches.</p>
 <!-- end translation -->
 <p>

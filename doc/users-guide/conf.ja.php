@@ -1,7 +1,7 @@
 <?php
 $title = "ユーザーガイド - fink.conf";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="ユーザーガイド Contents"><link rel="next" href="usage.php?phpLang=ja" title="コマンドライン fink ツールの使用方法"><link rel="prev" href="upgrade.php?phpLang=ja" title="Fink のアップグレード">';
 
 
@@ -221,14 +221,14 @@ FTP サーバーやネットワークによっては、このオプションが 
 </li>
 <li>
 <p>
-<b>SelfUpdateMethod:</b> point, rsync または cvs</p>
+<b>SelfUpdateMethod:</b> point, rsync または git</p>
 <p>
 <code>fink</code> は、数種類の手段でパッケージ情報ファイルを更新することができます。
 <b>rsync</b> が推奨される設定で、 rsync を用いて、ユーザーにより指定されたツリー中の、変更されたファイルだけをダウンロードします。
 <code>stable</code> や <code>unstable</code> <a href="#optional">trees</a> 中のファイルを編集したり、新たに追加していた場合、削除されることに注意してください。
 これらのファイルを必ず事前にバックアップしてください。
-<b>cvs</b> では、 anonymous か :ext: cvs アクセスを使用して fink レポジトリから ダウンロードします。
-cvs はミラーを使えないという欠点があるため、 CVS サーバーに接続することができない時は更新できません。
+<b>git</b> では、 anonymous か Github アクセスを使用して fink レポジトリから ダウンロードします。
+git はミラーを使えないという欠点があるため、 git サーバーに接続することができない時は更新できません。
 <b>point</b> は最近リリースされたものだけをダウンロードします。
 ユーザのパッケージがかなり古い場合は更新されないので、おすすめはできません。
 </p>

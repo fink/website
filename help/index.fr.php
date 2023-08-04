@@ -1,7 +1,7 @@
 <?php
 $title = "Aide";
-$cvs_author = '$Author: gecko2 $';
-$cvs_date = '$Date: 2014/10/25 08:18:51 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2021/05/27 20:26:32 $';
 
 include "header.inc";
 ?>
@@ -37,20 +37,19 @@ Quand vous signalez un problème, n'oubliez pas d'inclure toute information util
 
 <p>
 <b>Canal IRC.</b>
-Il y a un canal <tt>#fink</tt> sur le réseau IRC <a href="http://freenode.net">freenode</a>. Vous pouvez y discuter avec d'autres utilisateurs et développeurs de Fink.
+Il y a un canal <tt>#fink</tt> sur le réseau IRC <a href="https://libera.chat/">Libera.chat</a>. Vous pouvez y discuter avec d'autres utilisateurs et développeurs de Fink.
 </p>
 
 <p>
 <b>Autres sites.</b>
 Quelques liens vers des forums de discussion :
-<a href="http://sourceforge.net/forum/?group_id=18034">Forums XonX sur SourceForge</a> -
+<a href="https://www.xquartz.org/Mailing-Lists.html">XQuartz</a> -
 <a href="http://www.xdarwin.org/forum/">forums xdarwin.org</a> -
 <a href="http://forums.macnn.com/forumdisplay.php?forumid=54">forum Unix MacNN</a> - <a href="http://macosx.com/">macosx.com</a> (il y a plusieurs forums Unix sur ce site).
 </p>
 <p>
 Quelques liens vers des sites contenant des informations plus ou moins utiles :
-<a href="http://mrcla.com/XonX/">XonX</a> -
-<a href="http://macgimp.org/">macgimp.org</a> -
+<a href="https://www.xquartz.org/">XQuartz</a> -
 <a href="http://macosx.org/">macosx.org</a> -
 <a href="http://macosxhints.com/">macosxhints.com</a>.
 </p>
@@ -76,7 +75,7 @@ Vous pouvez faire parvenir vos retours sur expérience via les <a href="../lists
 Si vous aimez Fink, parlez-en autour de vous. C'est utile pour vous, car cela permet de construire une communauté d'aide ; c'est utile pour le projet Fink, parce que les paquets sont mieux testés ; c'est utile pour le monde Unix en général, car cela permet la reconnaissance de Mac OS X en tant que système opératoire Unix digne de support.
 </p>
 <p>
-Vous pouvez aussi <a href="http://www.apple.com/macosx/feedback/">dire à Apple</a> que vous appréciez les bases BSD de Mac OS X et que vous aimeriez qu'il continue dans ce sens en améliorant la couche BSD.
+Vous pouvez aussi <a href="https://www.apple.com/feedback/macos.html">dire à Apple</a> que vous appréciez les bases BSD de Mac OS X et que vous aimeriez qu'il continue dans ce sens en améliorant la couche BSD.
 </p>
 
 <p>
@@ -86,7 +85,7 @@ Si vous avez quelque expérience à partager, abonnez-vous à la liste de diffus
 
 <p>
 <b>Test des paquets.</b>
-Téléchargez les descriptions de paquets les plus récentes à partir de <a href="../doc/cvsaccess/index.php">CVS</a>, configurez Fink pour <a
+Téléchargez les descriptions de paquets les plus récentes à partir de <a href="../doc/gitaccess/index.php">Git</a>, configurez Fink pour <a
 href="../faq/usage-fink.php#unstable">l'utilisation de la branche instable</a> et testez les paquets. La base de données des paquets donne la liste des <a href="http://pdb.finkproject.org/pdb/testing.php">paquets qui doivent être testés</a> sur une page à part. Vous pouvez envoyer des rapports de réussite ou d'échec au mainteneur du paquet ou à la liste de diffusion de votre choix.
 </p>
 

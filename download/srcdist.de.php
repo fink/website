@@ -1,7 +1,7 @@
 <?php
 $title = "Quelltext Version Download";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2015/04/28 14:39:48 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/10/02 21:25:00 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -27,11 +27,11 @@ und zu installieren.</p>
 
 <ul>
 	 <li>
-Für OS X 10.9-10.12 können sie dieses <a href="https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool">Helferskript</a> verwenden, 
+Für OS X 10.9-10.15 können sie dieses <a href="https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool">Helferskript</a> verwenden, 
 das die Schritte zum Herunterladen und Erstellen automatisiert ausführen.
 	 </li>
 	 <li>
-Nehmen sie für eine manuelle Installation auf OS X 10.9-10.12 <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
+Nehmen sie für eine manuelle Installation auf OS X 10.9-10.15 <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
      </li>     
 	 <li>
 Nehmen sie für OS X 10.7-8
@@ -39,15 +39,15 @@ Nehmen sie für OS X 10.7-8
 	 </li>
   <li>
 Nehmen sie für OS X 10.6
- <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz", "fink-0.36.5.tar.gz", "/downloads/FinkSOURCE") ?> - 1176K<br>
+ <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz", "fink-0.36.5.tar.gz", "/downloads/FinkSOURCE") ?> - 1176K<br>
      </li>
      <li>
 Nehmen sie für OS X 10.5
-  <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.34.10.tar.gz", "fink-0.34.10.tar.gz", "/downloads/FinkSOURCE") ?> - 1268K<br>
+  <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.34.10.tar.gz", "fink-0.34.10.tar.gz", "/downloads/FinkSOURCE") ?> - 1268K<br>
      </li>
      <li>
 Nehmen sie für OS X 10.4
- <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz", "fink-0.30.2.tar.gz", "/downloads/FinkSOURCE") ?> - 1188K<br>
+ <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz", "fink-0.30.2.tar.gz", "/downloads/FinkSOURCE") ?> - 1188K<br>
      </li>
 </ul>
 
@@ -56,16 +56,16 @@ Xcode installieren, (siehe:
 <a href="./index.de.php#additionaldownloads">Schnellanleitung</a>),  
 das wie folgt gemacht werden kann:</p>
 <ul>
-<li><p><em>10.9-10.12: </em>Führen sie <code>sudo xcode-select --install</code> 
+<li><p><em>10.9-10.15: </em>Führen sie <code>sudo xcode-select --install</code> 
 im Terminal aus und wählen sie den Install-Knopf aus.</p></li>
-<li><p><em>10.7-10.12: </em>Manueller Download von developer.apple.com.  Achten 
+<li><p><em>10.9-10.15: </em>Manueller Download von developer.apple.com.  Achten 
 sie auf die richtige Version für ihre Version von Mac OS X.</p></li>
 <li><p><em>10.7-10.8: </em>Installieren sie das komplette Xcode. Man kann die 
 Command-Line-Tools über den <em>Downloads</em>-Reiter in den 
 <strong>Voreinstellungen</strong> von Xcode installieren.</p></li>
 <li><p><em>10.6-: </em>Installieren sie das komplette Xcode.</p></li>
 </ul>
-<p>Installieren sie das komplette Xcode auf 10.7-10.12, sollten sie folgende 
+<p>Installieren sie das komplette Xcode auf 10.7-10.15, sollten sie folgende 
 Befehle ausführen:</p>
 <pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
 <p>wobei sie <em>/Applications</em> mit dem tatsächlichen Pfad zur Xcode-App 
@@ -109,10 +109,10 @@ Patches herunter:</p>
 <pre>fink selfupdate-rsync</pre>
 <pre>fink index -f</pre>
 <p>oder</p>
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 <pre>fink index -f</pre>
 
-<p><code>rsync</code> ist für die meisten die bessere Wahl als <code>cvs</code>.</p>
+<p><code>rsync</code> ist für die meisten die bessere Wahl als <code>git</code>.</p>
 
 <p>In obiger Datei finden sie umfangreiche Anleitungen zur Installation und Nutzung.
 Bitte lesen sie sie - Fink ist keine ein-Klick-und-fertig-Geschichte.
@@ -138,7 +138,7 @@ Distributionsseite und erstellt sie auf ihrem lokalen Computer.
 <?php print $release_date; ?> offiziell veröffentlicht.</p>
 
 <ul><li>
-<?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_version . "-full.tar.gz", "fink-" . $fink_version . "-full.tar.gz", "/downloads/FinkFullSOURCE") ?> - 3524k<br>
+<?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_version . "-full.tar.gz", "fink-" . $fink_version . "-full.tar.gz", "/downloads/FinkFullSOURCE") ?> - 3524k<br>
 </ul>
 
 <p>Sie müssen auch für ihr System die entsprechenden Command-Line-Tools für 
@@ -180,7 +180,7 @@ Patches herunter:</p>
 
 <pre>fink selfupdate</pre>
 
-<p>entweder mit der Option <em>rsync</em> oder <em>cvs</em> gefolgt von</p>
+<p>entweder mit der Option <em>rsync</em> oder <em>git</em> gefolgt von</p>
 
 <pre>fink index -f</pre>
 
@@ -190,7 +190,7 @@ Patches herunter:</p>
 
 <p>oder</p>
 
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 
 <p>Alles aber unter der Voraussetzung, dass sie ursprünglich 
 <strong>nicht</strong> die Methode "point release" ausgewählt haben. 

@@ -3,7 +3,7 @@
 <document filename="index" lang="zh" >
   <title>Fink 用户指南</title>
   <shorttitle>用户指南</shorttitle>
-  <cvsid>$Id: uguide.zh.xml,v 1.21 2012/11/11 15:20:17 gecko2 Exp $</cvsid>
+  <cvsid>$Id: uguide.zh.xml,v 1.22 2019/01/19 10:11:12 nieder Exp $</cvsid>
   <preface>
     <p translated="no">
       <!-- start translation -->
@@ -622,7 +622,7 @@ system-xtools:
 这个命令会检查 Fink 网站看是否有一个新的版本发布，如果有的话，会自动下载和安装软件包描述文件。
 在最新的 <code>fink</code> 版本的命令中，你可以选择直接从 CVS 或通过 rsync 来直接获取软件包描述。
 CVS 是一个具有版本控制功能的储存库，它保存和管理软件包描述文件。
-使用 CVS 的优点是它是不断更新的，缺点是对 Fink 只有一个 CVS 服务器，如果访问量太大，它会变得不稳定。因此，对通常用户，我们推荐使用 rsync。对于 rsync，我们有多个镜像站点。唯一得缺点是新得版本在 CVS 发布以后会大约需要一个小时后才会更新到 rsync 镜像站点上。
+使用 CVS 的优点是它是不断更新的，缺点是对 Fink 只有一个 Git 服务器，如果访问量太大，它会变得不稳定。因此，对通常用户，我们推荐使用 rsync。对于 rsync，我们有多个镜像站点。唯一得缺点是新得版本在 Git 发布以后会大约需要一个小时后才会更新到 rsync 镜像站点上。
 </p>
       <p>（如果你在升级从源码安装得版本中碰到问题，请查阅　
 <link url="/download/fix-upgrade.php" >一些特殊指引</link>。）</p>
@@ -853,14 +853,14 @@ the Buildpath, slowing down builds.
 <!-- start translation -->
         <li>
           <p>
-            <em>SelfUpdateMethod:</em> point, rsync or cvs</p>
+            <em>SelfUpdateMethod:</em> point, rsync or git</p>
           <p translated="no">
 <code>fink</code> can use some different methods to update the package info files.
 <em>rsync</em> is the recommended setting; it uses rsync to download only
 modified files in the <xref section="optional">trees</xref> that you have enabled. Note that if you have
 changed or added to files in the <code>stable</code> or <code>unstable</code> trees, using rsync will
-delete them. Make a backup first, e.g. in your <code>local</code> tree. <em>cvs</em> will download using anonymous or
-:ext: cvs access from the Fink repository. This has the disadvantage that cvs
+delete them. Make a backup first, e.g. in your <code>local</code> tree. <em>git</em> will download using anonymous or
+Github access from the Fink repository. This has the disadvantage that git
 can not switch mirrors; if the server is unavailable you will not be able to
 update. <em>point</em> will download only the latest released version of the
 packages. It is not recommended as your packages may be quite out of date.
@@ -1405,7 +1405,7 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       <title>selfupdate</title>
       <!-- start translation -->
       <p>
-	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <filename>/sw/fink/dists</filename> 目录树来使用直接 CVS 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
+	这个命令会自动更新到一个新的 Fink 版本。它检查 Fink 网站确定是否有新的版本。然后下载软件包描述并升级核心软件包，包括 <code>fink</code> 本身。这个命令可以升级标准的发布版本，但也可以设置你的 <filename>/sw/fink/dists</filename> 目录树来使用直接 git 或 rsync 进行升级, if you select one of those options the first time this command is run。这意味着你可以访问所有软件包的最新修订版。
 </p>
       <!-- end translation -->
       <!-- start translation -->
@@ -1420,10 +1420,10 @@ fink apropos -s=kde irc   - 同上，但只在 kde 部分寻找
       <p>This is the recommended way to update Fink when building from source.</p>
       <p><em>Note:</em>  rsync updates only update the active <xref chapter="conf" section="optional">trees</xref> (e.g. if unstable isn't turned on in <code>fink.conf</code> the list of unstable packages won't be updated.</p>
     </section>
-    <section name="selfupdate-cvs" translated="no">
-      <title>selfupdate-cvs</title>
-      <p>Use this command to make <code>fink selfupdate</code> use CVS access to update its package list.</p>
-      <p>CVS updating is deprecated, except for developers and those people who are behind firewalls that disallow rsync.</p>
+    <section name="selfupdate-git" translated="no">
+      <title>selfupdate-git</title>
+      <p>Use this command to make <code>fink selfupdate</code> use Git access to update its package list.</p>
+      <p>Rsync updating is preferred, except for developers and those people who are behind firewalls that disallow rsync.</p>
     </section>
 <!-- end translation -->
     <section name="index" translated="no">

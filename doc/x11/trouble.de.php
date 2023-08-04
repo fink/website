@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - Probleme beheben";
-$cvs_author = 'Author: KMS';
-$cvs_date = 'Date: 2013/01/03 18:17:34';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/23 16:32:58';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Running X11 Contents"><link rel="next" href="tips.php?phpLang=de" title="Tipps für die Benutzung"><link rel="prev" href="other.php?phpLang=de" title="Andere Möglichkeiten mit X11 ">';
 
 

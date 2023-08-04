@@ -4,7 +4,7 @@
 <article filename="index" lang="zh" >
 <title>Fink－文档</title>
 <shorttitle>文档</shorttitle>
-<cvsid>$Id: doc.zh.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $</cvsid>
+<cvsid>$Id: doc.zh.xml,v 1.18 2019/01/19 10:11:12 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -33,7 +33,7 @@ covers more advanced concepts than those covered in the User's Guide.</li>
 <li><varlink url="install/index.php" varurl="install/install.en.html">安装和升级</varlink> －　如何安装 Fink 或升级到新的版本</li>
 <li><varlink url="usage/index.php" varurl="usage/usage.en.html">使用</varlink>  － 如何使用 Fink 及其安装的软件</li>
 <li><varlink url="readme.php" varurl="readme.zh.html">Fink 自述</varlink> － 源代码发布版本的自述文件</li>
-<li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.zh.html">CVS 访问</varlink> － 如何访问 Fink CVS 库来在新版本发布前获取最新源代码包。</li>
+<li><varlink url="gitaccess/index.php" varurl="gitaccess/git.en.html">Git 访问</varlink> － 如何访问 Fink Git 库来在新版本发布前获取最新源代码包。</li>
 </ul>
 
 </section>

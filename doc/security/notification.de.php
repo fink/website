@@ -1,7 +1,7 @@
 <?php
 $title = "Sicherheitspolitik - Benachrichtigungen";
-$cvs_author = 'Author: Nachteule';
-$cvs_date = 'Date: 2009/03/31 01:41:35';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/24 00:08:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Sicherheitspolitik Contents"><link rel="prev" href="updating.php?phpLang=de" title="Sicherheitsaktualisierungen">';
 
 

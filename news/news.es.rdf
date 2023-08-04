@@ -5,533 +5,413 @@
     <link>http://fink.sourceforge.net/news/</link>
     <description>Fink Project News</description>
     <dc:language>es</dc:language>
-    <dc:date>2016-11-20T13:36:04-08:00</dc:date>
+    <dc:date>2022-04-09T18:47:52-05:00</dc:date>
     <admin:errorReportsTo rdf:resource="mailto:fink-core@lists.sourceforge.net"/>
-    <item rdf:about="http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20released">
-      <title>fink-0.41.0 released</title>
-      <link>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2016-11-12%20fink-0.41.0%20released</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2022-02-19%20fink-0.45.6%20released">
+      <title>fink-0.45.6 released</title>
+      <link>http://fink.sourceforge.net/news/#2022-02-19%20fink-0.45.6%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2022-02-19%20fink-0.45.6%20released</guid>
       <description>
 		<![CDATA[
 	
-  <p>The Fink Project has released fink-0.41.1 to help us deal with adjustments
-  to the libXt library from XQuartz via the use of the XQuartz version in the system-xfree86*
-  packages, and to support OS X 10.12.1 .
-  </p>
+  <p>The Fink Project has released fink-0.45.6. This is a quick release to fix a bug introduced in fink-0.45.5 (issue #240).</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
  
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
 	
-  <p>The Fink Project has released fink-0.41.1 to help us deal with adjustments
-  to the libXt library from XQuartz via the use of the XQuartz version in the system-xfree86*
-  packages, and to support OS X 10.12.1 .
-  </p>
+  <p>The Fink Project has released fink-0.45.6. This is a quick release to fix a bug introduced in fink-0.45.5 (issue #240).</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
  
 		]]>
 	</content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2016-09-20%20fink-0.41.0%20released">
-      <title>fink-0.41.0 released</title>
-      <link>http://fink.sourceforge.net/news/#2016-09-20%20fink-0.41.0%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2016-09-20%20fink-0.41.0%20released</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2021-11-03%20fink-0.45.4%20released">
+      <title>fink-0.45.4 released</title>
+      <link>http://fink.sourceforge.net/news/#2021-11-03%20fink-0.45.4%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2021-11-03%20fink-0.45.4%20released</guid>
       <description>
 		<![CDATA[
 	
-  <p>The Fink Project has released fink-0.41.0 to provide Sierra (10.12) support.
-  This release officially supports 10.9.0-10.12.0 and incorporates other bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.12 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>4) Update to 10.12</p>
-  <p>5) fink reinstall fink</p>
-  <p>If you happen to have updated your OS X before updating fink, see if you can install
-  fink-0.41.0 for your former distribution by using  sudo apt-get update ; sudo apt-get install fink  
-  and then use fink reinstall fink to switch your distribution.</p>
-  <p>Otherwise you can download a <a href="http://bindist.finkmirrors.net/10.12/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.0-111_darwin-x86_64.deb">
-  .deb  archive</a> manually, and install it using 
-  sudo dpkg -i fink_0.41.1-111_darwin-x86_64.deb from the directory where 
-  you downloaded it, then use fink reinstall fink to update the distribution.
-  </p>
+  <p>The Fink Project has released fink-0.45.4. This is a minor upgrade to support XQuartz 2.8.</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
  
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
 	
-  <p>The Fink Project has released fink-0.41.0 to provide Sierra (10.12) support.
-  This release officially supports 10.9.0-10.12.0 and incorporates other bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.12 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>4) Update to 10.12</p>
-  <p>5) fink reinstall fink</p>
-  <p>If you happen to have updated your OS X before updating fink, see if you can install
-  fink-0.41.0 for your former distribution by using  sudo apt-get update ; sudo apt-get install fink  
-  and then use fink reinstall fink to switch your distribution.</p>
-  <p>Otherwise you can download a <a href="http://bindist.finkmirrors.net/10.12/dists/stable/main/binary-darwin-x86_64/base/fink_0.41.0-111_darwin-x86_64.deb">
-  .deb  archive</a> manually, and install it using 
-  sudo dpkg -i fink_0.41.1-111_darwin-x86_64.deb from the directory where 
-  you downloaded it, then use fink reinstall fink to update the distribution.
-  </p>
+  <p>The Fink Project has released fink-0.45.4. This is a minor upgrade to support XQuartz 2.8.</p>
+  <p>This release does not yet support macOS 11 (Big Sur) or macOS 12 (Monterey). Support for those two releases is coming soon.</p>
  
 		]]>
 	</content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2016-08-13%20fink-0.39.5%20released">
-      <title>fink-0.39.5 released</title>
-      <link>http://fink.sourceforge.net/news/#2016-08-13%20fink-0.39.5%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2016-08-13%20fink-0.39.5%20released</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2021-03-06%20fink-0.45.3%20released">
+      <title>fink-0.45.3 released</title>
+      <link>http://fink.sourceforge.net/news/#2021-03-06%20fink-0.45.3%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2021-03-06%20fink-0.45.3%20released</guid>
       <description>
 		<![CDATA[
 	
-   <p>The Fink Project has released fink-0.39.5 for 10.9-10.11.  This 
-  officially supports 10.9.0-10.11.6, and among other fixes and enhancements it
-  switches from using otool to otool-classic to maintain
-  compatibility with Xcode 8.</p>
+  <p>The Fink Project has released fink-0.45.3. This is a minor behavioral fix for an issue introduced in 0.45.2. With this release, the default prefix for new installs is reverted to /sw for all macOS versions from 10.14 and earlier. Newer releases still default to /opt/sw. This will allow installs on macOS 10.14 and earlier to continue to use any available binary distributions. There are no other functional changes in this release compared to fink-0.45.2.</p>
+  <p>This release does not yet support macOS 11 (Big Sur).</p>
  
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
 	
-   <p>The Fink Project has released fink-0.39.5 for 10.9-10.11.  This 
-  officially supports 10.9.0-10.11.6, and among other fixes and enhancements it
-  switches from using otool to otool-classic to maintain
-  compatibility with Xcode 8.</p>
+  <p>The Fink Project has released fink-0.45.3. This is a minor behavioral fix for an issue introduced in 0.45.2. With this release, the default prefix for new installs is reverted to /sw for all macOS versions from 10.14 and earlier. Newer releases still default to /opt/sw. This will allow installs on macOS 10.14 and earlier to continue to use any available binary distributions. There are no other functional changes in this release compared to fink-0.45.2.</p>
+  <p>This release does not yet support macOS 11 (Big Sur).</p>
  
 		]]>
 	</content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12">
-      <title>Development support for 10.12</title>
-      <link>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</link>
-      <guid>http://fink.sourceforge.net/news/#2016-07-30%20Development%20support%20for%2010.12</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2020-10-02%20fink-0.45.2%20released">
+      <title>fink-0.45.2 released</title>
+      <link>http://fink.sourceforge.net/news/#2020-10-02%20fink-0.45.2%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2020-10-02%20fink-0.45.2%20released</guid>
       <description>
 		<![CDATA[
 	
-  <p>The Fink Project has created a github branch named sierra-alpha-bravo
-  for 10.12 development.  This is accessible via git as well as through the 
-  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
+  <p>The Fink Project has released fink-0.45.2. This release provides support for all macOS releases up to and including 10.15.7. Most importantly, it changes the default install path location to /opt/sw for all supported macOS releases. This release also fixes bootstrapping problems when installing on macOS 10.15 with Xcode12. Run fink selfupdate to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
+  <p>This release does not yet support macOS 11 (Big Sur).</p>
  
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
 	
-  <p>The Fink Project has created a github branch named sierra-alpha-bravo
-  for 10.12 development.  This is accessible via git as well as through the 
-  <a href="https://github.com/fink/fink/tree/sierra-alpha-bravo">branch webpage</a>.</p>
+  <p>The Fink Project has released fink-0.45.2. This release provides support for all macOS releases up to and including 10.15.7. Most importantly, it changes the default install path location to /opt/sw for all supported macOS releases. This release also fixes bootstrapping problems when installing on macOS 10.15 with Xcode12. Run fink selfupdate to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
+  <p>This release does not yet support macOS 11 (Big Sur).</p>
  
 		]]>
 	</content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released">
-      <title>fink-0.39.4 released</title>
-      <link>http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2016-07-30%20fink-0.39.4%20released</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2020-03-28%20fink-0.45.1%20released">
+      <title>fink-0.45.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2020-03-28%20fink-0.45.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2020-03-28%20fink-0.45.1%20released</guid>
       <description>
 		<![CDATA[
 	
-  <p>The Fink Project has released fink-0.39.4 for 10.9-10.11.  This 
-  officially supports 10.9.0-10.11.5 and incorporates bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
+  <p>The Fink Project has released fink-0.45.1. This release provides support for all macOS releases up to and including 10.15.4, as well as support for users running the zsh shell. Run fink selfupdate to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
  
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
 	
-  <p>The Fink Project has released fink-0.39.4 for 10.9-10.11.  This 
-  officially supports 10.9.0-10.11.5 and incorporates bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.4-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.4-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
+  <p>The Fink Project has released fink-0.45.1. This release provides support for all macOS releases up to and including 10.15.4, as well as support for users running the zsh shell. Run fink selfupdate to install the latest version. This release does not need any special preparation apart from those listed below if upgrading to macOS 10.15 from an earlier macOS release.</p>
  
 		]]>
 	</content:encoded>
     </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released">
-      <title>fink-0.39.2 released</title>
-      <link>http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2015-10-31%20fink-0.39.2%20released</guid>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details">
+      <title>Further 10.15 (Catalina) and Xcode11 upgrade details</title>
+      <link>http://fink.sourceforge.net/news/#2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details</link>
+      <guid>http://fink.sourceforge.net/news/#2019-10-27%20Further%2010.15%20(Catalina)%20and%20Xcode11%20upgrade%20details</guid>
       <description>
 		<![CDATA[
 	
-  <p>The Fink Project has released fink-0.39.2 for 10.9-10.11.  This 
-  incorporates bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.39.2 for 10.9-10.11.  This 
-  incorporates bug fixes and enhancements.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released">
-      <title>fink-0.39.0 released</title>
-      <link>http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2015-09-30%20fink-0.39.0%20released</guid>
-      <description>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.39.0 to support OS X El Capitan 
-  (10.11).  
-  This release also switches the distribution tree used by fink on 10.9 and 10.10.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>The Fink Project has released fink-0.39.0 to support OS X El Capitan 
-  (10.11).  
-  This release also switches the distribution tree used by fink on 10.9 and 10.10.  
-  The best update sequence from going to 10.9 or 10.10 to 10.11 is as follows:</p>
-  <p>0) Start on 10.9 or 10.10.</p>
-  <p>1) fink cleanup --deb</p>
-  <p>2) fink selfupdate</p>
-  <p>3) fink selfupdate</p>
-  <p>4) Update to 10.11</p>
-  <p>If you happen to have updated your OS X before updating Fink, you can download a
-  <a href="http://downloads.sourceforge.net/fink/fink_0.39.0-101_darwin-x86_64.deb">
-  .deb  archive</a> , and install it using 
-  sudo dpkg -i fink_0.39.0-101_darwin-x86_64.deb from the directory where 
-  you downloaded it.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master">
-      <title>Beta support for OS X 10.11 now in fink master</title>
-      <link>http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master</link>
-      <guid>http://fink.sourceforge.net/news/#2015-09-12%20Beta%20support%20for%20OS%20X%2010.11%20now%20in%20fink%20master</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  Support for OSX 10.11 beta is now available in Fink master, but not yet in release.
-  This can be downloaded from <a href="https://github.com/fink/fink/"> fink's 
-  github site</a>.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  Support for OSX 10.11 beta is now available in Fink master, but not yet in release.
-  This can be downloaded from <a href="https://github.com/fink/fink/"> fink's 
-  github site</a>.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2008-08-15%20fink-0.38.7%20released">
-      <title>fink-0.38.7 released</title>
-      <link>http://fink.sourceforge.net/news/#2008-08-15%20fink-0.38.7%20released</link>
-      <guid>http://fink.sourceforge.net/news/#2008-08-15%20fink-0.38.7%20released</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.7 was released on 15 August, 2015.  This release supports
-  OS X up to 10.10.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.7 was released on 15 August, 2015.  This release supports
-  OS X up to 10.10.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored">
-      <title>CVS access restored</title>
-      <link>http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored</link>
-      <guid>http://fink.sourceforge.net/news/#2015-07-31%20CVS%20access%20restored</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  We now have CVS access back for services including selfupdate, package updates, and
-  website updates.
-  </p>
- 
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  We now have CVS access back for services including selfupdate, package updates, and
-  website updates.
-  </p>
- 
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.">
-      <title>fink-0.38.6 and dpkg-base-files-0.4 released.</title>
-      <link>http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2015-06-13%20fink-0.38.6%20and%20dpkg-base-files-0.4%20released.</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.6 was released on 13 June, 2015.  This release fixes an
-  issue which prevented bootstrapping on Yosemite (or later) using Xcode newer
-  than 6.2 .
-  </p>
-  <p>
-  dpkg-base-files-0.4 was also released on 13 June, 2015.  This update
-  mitigates an issue in which packages with app bundles couldn't be updated on 
-  Yosemite:
-  </p>
+  <p>If upgrading to macOS 10.15 (Catalina) from an earlier macOS release, your existing Fink install will cease to work if installed outside /opt (such as to the previous default /sw) and must be reinstalled from scratch using Fink release 0.45.0 or later.</p>
+  <p>The old Fink install is archived into /Users/Shared/Relocated Items. It's possible to manually recover downloaded source archives and configuration files from there to use in a new Fink install. However, it's not possible to reuse built .deb packages because they hardcode the original path that contained Fink.</p>
+  <p>Upgrade and installation hints if existing Fink install is outside /opt:</p>
   
- unable to make backup link of 
- `.%p/Applications/FOO.app/Contents/PkgInfo' 
- before installing new version: 
- Operation not permitted
-
-  <p>
-  Users are encouraged to run fink selfupdate and install these new versions.
-  </p>
+    If doing a fresh Fink install on any macOS version, install Fink into /opt/sw.
+    If you haven't yet updated to macOS 10.15, run this command to capture the list of your currently installed packages: for i in `/bin/ls -1 /sw/var/lib/dpkg/info/*.list`; do basename -s .list $i &gt;&gt; ~/my_fink_packages.txt; done.
+    If you have already updated to macOS 10.15 but had Fink installed somewhere outside /opt before your system upgrade, use the above command (with modified path to the "Relocated Items" location as necessary) to capture the packages you previously had installed on your older macOS release. For example: for i in `/bin/ls -1 "/Users/Shared/Relocated Items/sw/var/lib/dpkg/info/"*.list`; do basename -s .list $i &gt;&gt; ~/my_fink_packages.txt; done
+    Once you have captured your list of previous packages, upgraded to macOS 10.15, and installed Fink into /opt, run the following command to batch build and reinstall your previous Fink packages: cat ~/my_fink_packages.txt | xargs fink reinstall. Note that some packages do not exist on macOS 10.15, so you might need to hand edit the file my_fink_packages.txt to remove the missing packages before trying to reinstall.
   
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.6 was released on 13 June, 2015.  This release fixes an
-  issue which prevented bootstrapping on Yosemite (or later) using Xcode newer
-  than 6.2 .
-  </p>
-  <p>
-  dpkg-base-files-0.4 was also released on 13 June, 2015.  This update
-  mitigates an issue in which packages with app bundles couldn't be updated on 
-  Yosemite:
-  </p>
-  
- unable to make backup link of 
- `.%p/Applications/FOO.app/Contents/PkgInfo' 
- before installing new version: 
- Operation not permitted
-
-  <p>
-  Users are encouraged to run fink selfupdate and install these new versions.
-  </p>
-  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-06-9%20fink%20development%20branch%20for%2010.11%20on%20github">
-      <title>fink development branch for 10.11 on github</title>
-      <link>http://fink.sourceforge.net/news/#2015-06-9%20fink%20development%20branch%20for%2010.11%20on%20github</link>
-      <guid>http://fink.sourceforge.net/news/#2015-06-9%20fink%20development%20branch%20for%2010.11%20on%20github</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-	If you are interested in helping us with the migration to 10.11, a current released
-	fink won't do the job.  A branch has been set up on 
-	<a href="https://github.com/fink/fink/tree/TheCaptain">fink's github site</a> for this.
-  </p>
-  <p>
-  Please note that right now we are in an alpha stage and you might need to wipe your 
-  Fink distribution out a as stuff gets changed around.</p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-	If you are interested in helping us with the migration to 10.11, a current released
-	fink won't do the job.  A branch has been set up on 
-	<a href="https://github.com/fink/fink/tree/TheCaptain">fink's github site</a> for this.
-  </p>
-  <p>
-  Please note that right now we are in an alpha stage and you might need to wipe your 
-  Fink distribution out a as stuff gets changed around.</p>
-  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.">
-      <title>fink-0.38.5 released.</title>
-      <link>http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2015-05-14%20fink-0.38.5%20released.</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.5 was released on 14 May, 2015.  This release enables
-  official OS X 10.10.3 support, and reverts a change made in fink-0.38.4
-  to restore the requirement that the /usr/X11R6 convenience symlink be present for
-  the x11* virtual packages to be active.
-  </p>
-  <p>
-  It also downgrades building libraries with flat namespace from a fatal validation
-  error to a warning, since some packages require such a build.  There are a number
-  of additional validation enhancements as well.  Check the commit logs on fink's 
-  github site for additional information.
-  </p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.5 was released on 14 May, 2015.  This release enables
-  official OS X 10.10.3 support, and reverts a change made in fink-0.38.4
-  to restore the requirement that the /usr/X11R6 convenience symlink be present for
-  the x11* virtual packages to be active.
-  </p>
-  <p>
-  It also downgrades building libraries with flat namespace from a fatal validation
-  error to a warning, since some packages require such a build.  There are a number
-  of additional validation enhancements as well.  Check the commit logs on fink's 
-  github site for additional information.
-  </p>
-  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-11-29%20fink-0.38.3%20released.">
-      <title>fink-0.38.3 released.</title>
-      <link>http://fink.sourceforge.net/news/#2014-11-29%20fink-0.38.3%20released.</link>
-      <guid>http://fink.sourceforge.net/news/#2014-11-29%20fink-0.38.3%20released.</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.3 was released on 29 November, 2014.  This release enables the
-  official 10.10 binary distribution by default, along with official OS X 10.10.1 support
-  and other fixes and enhancements.
-  </p>
-  
-		]]>
-	</description>
-      <content:encoded>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.3 was released on 29 November, 2014.  This release enables the
-  official 10.10 binary distribution by default, along with official OS X 10.10.1 support
-  and other fixes and enhancements.
-  </p>
-  
-		]]>
-	</content:encoded>
-    </item>
-    <item rdf:about="http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%3A%20fink-0.38.0%20publicado">
-      <title>Yosemite: fink-0.38.0 publicado</title>
-      <link>http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%3A%20fink-0.38.0%20publicado</link>
-      <guid>http://fink.sourceforge.net/news/#2014-10-18%20Yosemite%3A%20fink-0.38.0%20publicado</guid>
-      <description>
-		<![CDATA[
-	
-  <p>
-  fink-0.38.0 fue publicado el 18 octubre de 2014.
-  El projecto Fink anuncia soporte oficial para Yosemite (OS X 10.10) con el 
-  lanzamiento de fink-0.38.0.
-  </p>
-  <p>
-  Usuarios con 10.9 que quieren instalar 10.10 necesitan primero instalar 
-  fink-0.38.0 (or mayor) en 10.9 antes de instalar 10.10.  Fink no 
-  se puede actualizar directamente a 10.10 desde 10.7 ó 10.8.
-  </p>
  
 		]]>
 	</description>
       <content:encoded>
 		<![CDATA[
 	
-  <p>
-  fink-0.38.0 fue publicado el 18 octubre de 2014.
-  El projecto Fink anuncia soporte oficial para Yosemite (OS X 10.10) con el 
-  lanzamiento de fink-0.38.0.
-  </p>
-  <p>
-  Usuarios con 10.9 que quieren instalar 10.10 necesitan primero instalar 
-  fink-0.38.0 (or mayor) en 10.9 antes de instalar 10.10.  Fink no 
-  se puede actualizar directamente a 10.10 desde 10.7 ó 10.8.
-  </p>
+  <p>If upgrading to macOS 10.15 (Catalina) from an earlier macOS release, your existing Fink install will cease to work if installed outside /opt (such as to the previous default /sw) and must be reinstalled from scratch using Fink release 0.45.0 or later.</p>
+  <p>The old Fink install is archived into /Users/Shared/Relocated Items. It's possible to manually recover downloaded source archives and configuration files from there to use in a new Fink install. However, it's not possible to reuse built .deb packages because they hardcode the original path that contained Fink.</p>
+  <p>Upgrade and installation hints if existing Fink install is outside /opt:</p>
+  
+    If doing a fresh Fink install on any macOS version, install Fink into /opt/sw.
+    If you haven't yet updated to macOS 10.15, run this command to capture the list of your currently installed packages: for i in `/bin/ls -1 /sw/var/lib/dpkg/info/*.list`; do basename -s .list $i &gt;&gt; ~/my_fink_packages.txt; done.
+    If you have already updated to macOS 10.15 but had Fink installed somewhere outside /opt before your system upgrade, use the above command (with modified path to the "Relocated Items" location as necessary) to capture the packages you previously had installed on your older macOS release. For example: for i in `/bin/ls -1 "/Users/Shared/Relocated Items/sw/var/lib/dpkg/info/"*.list`; do basename -s .list $i &gt;&gt; ~/my_fink_packages.txt; done
+    Once you have captured your list of previous packages, upgraded to macOS 10.15, and installed Fink into /opt, run the following command to batch build and reinstall your previous Fink packages: cat ~/my_fink_packages.txt | xargs fink reinstall. Note that some packages do not exist on macOS 10.15, so you might need to hand edit the file my_fink_packages.txt to remove the missing packages before trying to reinstall.
+  
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-10-02%2010.15%20(Catalina)%20and%20Xcode11%20information">
+      <title>10.15 (Catalina) and Xcode11 information</title>
+      <link>http://fink.sourceforge.net/news/#2019-10-02%2010.15%20(Catalina)%20and%20Xcode11%20information</link>
+      <guid>http://fink.sourceforge.net/news/#2019-10-02%2010.15%20(Catalina)%20and%20Xcode11%20information</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Fink 0.45.0 and up support the upcoming 10.15 release, but there are some important things to note:</p>
+  
+    Apple locked down the / (root) directory where Fink normally installs (in /sw by default), so existing Fink installs may become read-only upon updating to 10.15.
+    Xcode11 introduces some known breakages (with no known fixes at this time) to important packages like gcc, so not everything will build yet.
+  
+  <p>Once macOS 10.15 is officially released, we suggest waiting to upgrade until we know how the system will treat existing installs and we can determine the best upgrade path.</p>
+  <p>For anyone installing Fink for the first time (on 10.15beta or an earlier macOS version), we now recommend using /opt/sw as the install location, since that's known to work. The next Fink release after macOS 10.15 is out will use /opt/sw as the default install location.</p>
+  <p>Xcode11 is known to currently break building the gccX and several other important packages. If possible (especially 10.14 users), hold off on upgrading to Xcode11 unless you need something specific from it. If you do upgrade to Xcode11, make sure that the Command Line Tools are also upgraded to version 11 for your macOS release.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Fink 0.45.0 and up support the upcoming 10.15 release, but there are some important things to note:</p>
+  
+    Apple locked down the / (root) directory where Fink normally installs (in /sw by default), so existing Fink installs may become read-only upon updating to 10.15.
+    Xcode11 introduces some known breakages (with no known fixes at this time) to important packages like gcc, so not everything will build yet.
+  
+  <p>Once macOS 10.15 is officially released, we suggest waiting to upgrade until we know how the system will treat existing installs and we can determine the best upgrade path.</p>
+  <p>For anyone installing Fink for the first time (on 10.15beta or an earlier macOS version), we now recommend using /opt/sw as the install location, since that's known to work. The next Fink release after macOS 10.15 is out will use /opt/sw as the default install location.</p>
+  <p>Xcode11 is known to currently break building the gccX and several other important packages. If possible (especially 10.14 users), hold off on upgrading to Xcode11 unless you need something specific from it. If you do upgrade to Xcode11, make sure that the Command Line Tools are also upgraded to version 11 for your macOS release.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-08-05%20fink-0.45.0%20released">
+      <title>fink-0.45.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2019-08-05%20fink-0.45.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2019-08-05%20fink-0.45.0%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.45.0. This release provides support for macOS 10.14.5 and up, including preliminary support for macOS 10.15beta. This release also provides full support for .app bundles in APFS volumes.</p>
+  <p>If your system is still on macOS 10.14.4 or earlier:</p>
+  
+    In a terminal window, run fink selfupdate and install fink-0.45.0.
+    Update to the latest version of Mojave.
+    In a terminal window, run fink reinstall fink.
+  
+  <p>If you have already updated to macOS 10.14.5:</p>
+  
+    In a terminal window, run fink selfupdate and install fink-0.45.0.
+  
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.45.0. This release provides support for macOS 10.14.5 and up, including preliminary support for macOS 10.15beta. This release also provides full support for .app bundles in APFS volumes.</p>
+  <p>If your system is still on macOS 10.14.4 or earlier:</p>
+  
+    In a terminal window, run fink selfupdate and install fink-0.45.0.
+    Update to the latest version of Mojave.
+    In a terminal window, run fink reinstall fink.
+  
+  <p>If you have already updated to macOS 10.14.5:</p>
+  
+    In a terminal window, run fink selfupdate and install fink-0.45.0.
+  
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-06-02%20Fink%20mirrors%20are%20back">
+      <title>Fink mirrors are back</title>
+      <link>http://fink.sourceforge.net/news/#2019-06-02%20Fink%20mirrors%20are%20back</link>
+      <guid>http://fink.sourceforge.net/news/#2019-06-02%20Fink%20mirrors%20are%20back</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Thanks to the work of Fink members Chris Z and Justin H, the finkmirrors.net domain is operational once again.</p>
+  <p>We are looking for new mirror owners to extend our mirroring service. If you can host a Fink mirror, see <a href="http://finkmirrors.net/">the main Fink Mirrors site</a> for instructions and requirements.</p>
+  <p>Thank you for your patience.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Thanks to the work of Fink members Chris Z and Justin H, the finkmirrors.net domain is operational once again.</p>
+  <p>We are looking for new mirror owners to extend our mirroring service. If you can host a Fink mirror, see <a href="http://finkmirrors.net/">the main Fink Mirrors site</a> for instructions and requirements.</p>
+  <p>Thank you for your patience.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5">
+      <title>Issues with macOS 10.14.5</title>
+      <link>http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5</link>
+      <guid>http://fink.sourceforge.net/news/#2019-05-30%20Issues%20with%20macOS%2010.14.5</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Apple's release of macOS 10.14.5 updated the system perl version from 5.18.2 to 5.18.4. This update broke bootstrapping fresh installs, as well as existing perl modules dependent on perl-5.18.2.</p>
+  <p>Fixes for Fink working on macOS 10.14.5 are tracked <a href="https://github.com/fink/fink/pull/190">on GitHub</a>. </p>
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Apple's release of macOS 10.14.5 updated the system perl version from 5.18.2 to 5.18.4. This update broke bootstrapping fresh installs, as well as existing perl modules dependent on perl-5.18.2.</p>
+  <p>Fixes for Fink working on macOS 10.14.5 are tracked <a href="https://github.com/fink/fink/pull/190">on GitHub</a>. </p>
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released">
+      <title>fink-0.44.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2019-03-14%20fink-0.44.1%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.44.1.  This is primarily a bugfix release to fix bootstrapping or using the Install Fink.tool script, but with some additional optimization updates behind the scenes.  Usefink selfupdate to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.44.1</p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.44.1.  This is primarily a bugfix release to fix bootstrapping or using the Install Fink.tool script, but with some additional optimization updates behind the scenes.  Usefink selfupdate to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.44.1</p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-02-25%20Mirrors%20currently%20down">
+      <title>Mirrors currently down</title>
+      <link>http://fink.sourceforge.net/news/#2019-02-25%20Mirrors%20currently%20down</link>
+      <guid>http://fink.sourceforge.net/news/#2019-02-25%20Mirrors%20currently%20down</guid>
+      <description>
+		<![CDATA[
+	
+  <p>Fink's finkmirrors.net domain is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+  <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
+  
+    Run fink selfupdate-git to change your update method from rsync to git.
+    Run fink configure to turn off using the binary to download pre-compiled packages.
+  
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>Fink's finkmirrors.net domain is currently down. This will affect users selfupdating via rsync, as well as those using the binary distribution.</p>
+  <p>In order to keep your Fink distribution up to date, please run the following commands:</p>
+  
+    Run fink selfupdate-git to change your update method from rsync to git.
+    Run fink configure to turn off using the binary to download pre-compiled packages.
+  
+  <p>We apologize for the inconvenience.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2019-01-16%20fink-0.44.0%20released">
+      <title>fink-0.44.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2019-01-16%20fink-0.44.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2019-01-16%20fink-0.44.0%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.44.0.  This release now supports macOS 10.14 (Mojave), as well as Java 10.  Usefink selfupdate to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.44.0</p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.44.0.  This release now supports macOS 10.14 (Mojave), as well as Java 10.  Usefink selfupdate to install it.</p>
+  <p>The best update sequence from going to 10.9-10.13 to 10.14 is as follows:</p>
+  <p>0) Start on 10.9-10.13.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.44.0</p>
+  <p>2) Update to Mojave.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2017-04-18%20fink-0.43.1%20released">
+      <title>fink-0.43.1 released</title>
+      <link>http://fink.sourceforge.net/news/#2017-04-18%20fink-0.43.1%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2017-04-18%20fink-0.43.1%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.43.1.  This is a bugfix release.  Usefink selfupdate to install it.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run fink selfupdate again.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.43.1.  This is a bugfix release.  Usefink selfupdate to install it.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run fink selfupdate again.</p>
+ 
+		]]>
+	</content:encoded>
+    </item>
+    <item rdf:about="http://fink.sourceforge.net/news/#2017-03-28%20fink-0.43.0%20released">
+      <title>fink-0.43.0 released</title>
+      <link>http://fink.sourceforge.net/news/#2017-03-28%20fink-0.43.0%20released</link>
+      <guid>http://fink.sourceforge.net/news/#2017-03-28%20fink-0.43.0%20released</guid>
+      <description>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.43.0.  This release supports using
+  git or svn to update packages instead of cvs, particularly to 
+  work through firewalls via HTTPS.  Use fink selfupdate-git or 
+  fink selfupdate-svn to switch to one of those methods.  
+  This release officially supports 10.9.0-10.13.4.  It also enhances support for Oracle's
+  Java 9 as well as the 2017 release of Apple's legacy Java.
+  In addition, it incorporates other bug fixes and enhancements.  
+  The best update sequence from going to 10.9-10.12 to 10.13 is as follows:</p>
+  <p>0) Start on 10.9-10.12.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.42.0</p>
+  <p>2) Update to High Sierra.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run fink selfupdate again.</p>
+ 
+		]]>
+	</description>
+      <content:encoded>
+		<![CDATA[
+	
+  <p>The Fink Project has released fink-0.43.0.  This release supports using
+  git or svn to update packages instead of cvs, particularly to 
+  work through firewalls via HTTPS.  Use fink selfupdate-git or 
+  fink selfupdate-svn to switch to one of those methods.  
+  This release officially supports 10.9.0-10.13.4.  It also enhances support for Oracle's
+  Java 9 as well as the 2017 release of Apple's legacy Java.
+  In addition, it incorporates other bug fixes and enhancements.  
+  The best update sequence from going to 10.9-10.12 to 10.13 is as follows:</p>
+  <p>0) Start on 10.9-10.12.  Don't update your OS yet.</p>
+  <p>1) In a terminal window, run fink selfupdate and install fink-0.42.0</p>
+  <p>2) Update to High Sierra.</p>
+  <p>3) In a terminal window, run fink reinstall fink.</p>
+  <p>If you happen to have updated your OS X before updating fink, follow the "Fixing updates when you have installed High Sierra before updating fink" instructions below, and then run fink selfupdate again.</p>
  
 		]]>
 	</content:encoded>

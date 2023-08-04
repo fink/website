@@ -1,7 +1,7 @@
 <?php
 $title = "常见疑问（F.A.Q.） - 编译（１）";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/05/31 13:43:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=zh" title="常见疑问（F.A.Q.） Contents"><link rel="next" href="comp-packages.php?phpLang=zh" title="编译问题－特定软件包"><link rel="prev" href="usage-fink.php?phpLang=zh" title="安装，使用和维护 Fink">';
 
 
@@ -77,7 +77,14 @@ Failed: installing foo-0.1.2-3 failed</pre><p>那么你应该在你构建输出�
         If you are having problems with a build that aren't covered by another
         FAQ entry, you should check whether you have libraries in
         <code>/usr/local/lib</code> or headers in /usr/local/include. If so, then try renaming
-        <code>/usr/local</code> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>完成你的构建，然后把 <code>/usr/local</code> 改回来：</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+        <code>/usr/local</code> to something else, e.g.:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>完成你的构建，然后把 <code>/usr/local</code> 改回来：</p><pre>sudo mv /usr/local.moved /usr/local</pre><p>Starting with macOS 10.14, it's sometimes not possible to rename <code>/usr/local</code>. If you get an error when renaming <code>/usr/local</code> directly, then rename the subdirectories inside it instead:</p><pre>
+        sudo mv /usr/local/include /usr/local/include.moved
+        sudo mv /usr/local/lib /usr/local/lib.moved
+        </pre><p>do your build, and then you can put <code>/usr/local/include</code> and <code>/usr/local/lib</code>
+        back:</p><pre>
+        sudo mv /usr/local/include.moved /usr/local/include
+        sudo mv /usr/local/lib.moved /usr/local/lib
+        </pre></div>
     </a>
     <a name="toc-out-of-date">
       <div class="question"><p><b><?php echo FINK_Q ; ?>6.9: 当我构建一个软件包的时候，我碰到一个消息说 "table of contents" 已经过时。我需要怎么办？</b></p></div>

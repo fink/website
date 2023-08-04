@@ -1,7 +1,7 @@
 <?php
 $title = "Ч.З.В. - Компиляция (1)";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/05/31 13:43:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ru" title="Ч.З.В. Contents"><link rel="next" href="comp-packages.php?phpLang=ru" title="Проблемы компиляции - специальные пакеты"><link rel="prev" href="usage-fink.php?phpLang=ru" title="Инсталляция, использование и поддержка Fink">';
 
 
@@ -115,7 +115,14 @@ Failed: installing foo-0.1.2-3 failed</pre><p>надо искать <code>libbar
                     надо проверить, есть ли у вас библиотеки в
                     <code>/usr/local/lib</code> или заголовки в
                     /usr/local/include. Если да, надо попытаться переименовать
-                    <code>/usr/local</code> во что-либо другое, н-р:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>сделать построение и затем поместить <code>/usr/local</code> обратно:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+                    <code>/usr/local</code> во что-либо другое, н-р:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>сделать построение и затем поместить <code>/usr/local</code> обратно:</p><pre>sudo mv /usr/local.moved /usr/local</pre><p>Starting with macOS 10.14, it's sometimes not possible to rename <code>/usr/local</code>. If you get an error when renaming <code>/usr/local</code> directly, then rename the subdirectories inside it instead:</p><pre>
+				sudo mv /usr/local/include /usr/local/include.moved
+				sudo mv /usr/local/lib /usr/local/lib.moved
+				</pre><p>do your build, and then you can put <code>/usr/local/include</code> and <code>/usr/local/lib</code>
+				back:</p><pre>
+				sudo mv /usr/local/include.moved /usr/local/include
+				sudo mv /usr/local/lib.moved /usr/local/lib
+				</pre></div>
         </a>
         <a name="toc-out-of-date">
             <div class="question"><p><b><?php echo FINK_Q ; ?>6.9: Когда я пытаюсь построить пакет, получаю сообщение, что содержание ("table

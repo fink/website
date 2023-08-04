@@ -1,7 +1,7 @@
 <?php
 $title = "Links";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date = '$Date: 2015/01/25 21:15:10 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/27 23:10:05 $';
 
 include "header.inc";
 ?>
@@ -18,10 +18,9 @@ empfehlen können. Alle Links öffnen eine neue Seite.</p>
 - Wie werde ich ein Fink-Mirror, welche Mirror gibt es und wie ist ihr Status?</li>
 <li><a href="http://finkcommander.sourceforge.net/" target="_blank">FinkCommander</a> -
 ein graphisches Frontend für Fink</li>
-<li><a href="http://sungnyemun.org/wdfink/" target="_blank">WDFink?</a> - Ein weiteres graphisches Frontend für Fink (noch alpha).</li>
 <li><a href="http://mycroft.mozdev.org/download.html" target="_blank">PDB Search plugin</a> - Ein Such-plugin für die Paket-Datenbank. Nur Mozilla basierte Browser (suche nach Fink)!</li>
 <li><a href="http://osdir.com/modules.php?op=modload&amp;name=Downloads&amp;file=index&amp;req=ratedownload&amp;lid=676">Rate Fink @ O'Reilly's OSDir.com</a> - Bewerte uns und werbe für Fink.</li>
-<li><a href="http://www.opennms.org/~ranger/irc_logs/public/" target="_blank">IRC logs</a> - Log und ausgewertete Daten des #fink IRC chat</li>
+<li><a href="http://www.echelog.com/logs/browse/fink/" target="_blank">IRC logs</a> - Log und ausgewertete Daten des #fink IRC chat</li>
 </ul>
 
 <p>Open Source Software</p>

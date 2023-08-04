@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q. - Benutzung (1)";
-$cvs_author = 'Author: kamischi';
-$cvs_date = 'Date: 2015/06/06 19:19:29';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/05/31 13:43:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="usage-packages.php?phpLang=de" title="Benutzung von Paketen - Bestimmte Pakete"><link rel="prev" href="comp-packages.php?phpLang=de" title="Probleme beim Übersetzen - Bestimmte Pakete">';
 
 

@@ -1,7 +1,7 @@
 <?php
 $title = "Source Release Download";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 17:41:33 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/10/02 21:25:00 $';
 
 include "header.inc";
 include "../fink_version.inc";
@@ -26,38 +26,38 @@ sites or the Fink project's mirrors and build them on your local machine.</p>
 
 <ul>
 	 <li>
-For OS X 10.9-10.12, you can use a <a href="https://github.com/fink/scripts/blob/master/srcinstaller/Install%20Fink.tool">helper script</a>
+For macOS 10.9-10.15, you can use a <a href="https://github.com/fink/scripts/releases/latest">helper script</a>
 which automates the download and build steps below.
 	 </li>
 	 <li>
-For a manual install on OS X 10.9-10.12, <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?><br>
+For a manual install on OS X 10.9-10.15, <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_tool_version . ".tar.gz", "fink-" . $fink_tool_version . ".tar.gz", "/downloads/FinkSOURCE") ?> - <?php echo $fink_tool_tarball_k ?>K<br>
      </li>     
 	 <li>
 For OS X 10.7-8, use
- <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.38.7.tar.gz", "fink-0.38.7.tar.gz", "/downloads/FinkSOURCE") ?> - 1185K<br>
+ <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.38.7.tar.gz", "fink-0.38.7.tar.gz", "/downloads/FinkSOURCE") ?> - 1185K<br>
 	 </li>
      <li>
 For OS X 10.6, use
- <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz", "fink-0.36.5.tar.gz", "/downloads/FinkSOURCE") ?> - 1176K<br>
+ <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.36.5.tar.gz", "fink-0.36.5.tar.gz", "/downloads/FinkSOURCE") ?> - 1176K<br>
      </li>
      <li>
 For OS X 10.5, use
-  <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.34.10.tar.gz", "fink-0.34.10.tar.gz", "/downloads/FinkSOURCE") ?> - 1268K<br>
+  <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.34.10.tar.gz", "fink-0.34.10.tar.gz", "/downloads/FinkSOURCE") ?> - 1268K<br>
      </li>
      <li>
 For OS X 10.4, use
- <?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz", "fink-0.30.2.tar.gz", "/downloads/FinkSOURCE") ?> - 1188K<br>
+ <?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-0.30.2.tar.gz", "fink-0.30.2.tar.gz", "/downloads/FinkSOURCE") ?> - 1188K<br>
      </li>
 </ul>
 
 <p>You will need to install the proper Command Line Tools for Xcode for your system, (cf. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>) which can be done as follows:</p>
 <ul>
-<li><p><em>10.9-10.12:  </em>Run <code>sudo xcode-select --install</code> from the Terminal and select the Install button.</p></li>
-<li><p><em>10.7-10.12:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
+<li><p><em>10.9-10.15:  </em>Run <code>sudo xcode-select --install</code> from the Terminal and select the Install button.</p></li>
+<li><p><em>10.7-10.15:  </em>Manually download them from developer.apple.com.  Make sure to get the right version for your OS.</p></li>
 <li><p><em>10.7-10.8:  </em>Install the full Xcode, and you can install the Command Line Tools via the <em>Downloads</em> tab of the Xcode <strong>Preferences</strong>.</p></li>
-<li><p><em>10.6-:  </em>Install the full Xcode.</p></li>
+<li><p><em>10.6:  </em>Install the full Xcode.</p></li>
 </ul>
-<p>If you install the full Xcode on 10.7-10.12, you will also want to run:</p>
+<p>If you install the full Xcode on 10.7-10.15, you will also want to run:</p>
 <pre>sudo xcode-select -switch /Applications/Xcode.app/Contents/Developer</pre>
 <p>where you should replace <em>/Applications</em> with the actual path to the Xcode app.</p>
 <p>You will need to run <pre>sudo xcodebuild -license</pre> to accept the terms of the Xcode license in order for fink's build user to work.</p> 
@@ -95,11 +95,11 @@ packages, the command sequences:</p>
 <pre>fink selfupdate-rsync</pre>
 <pre>fink index -f</pre>
 <p>or</p>
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 <pre>fink index -f</pre>
 
 <p>will download the package description files and patches. <code>rsync</code> is
-generally preferable to <code>cvs</code> for most people.</p>
+generally preferable to <code>git</code> for most people.</p>
 
 <p>Installation and usage instructions are inside the distribution tarball.
 Please read them - Fink is not a one-click-and-done thing.  The documents
@@ -126,7 +126,7 @@ distribution sites and build them on your local machine.
 <?php print $release_date; ?>.</p>
 
 <ul><li>
-<?php analytics_download_link("http://downloads.sourceforge.net/fink/fink-" . $fink_version . "-full.tar.gz", "fink-" . $fink_version . "-full.tar.gz", "/downloads/FinkFullSOURCE") ?> - 3524k<br>
+<?php analytics_download_link("https://downloads.sourceforge.net/fink/fink-" . $fink_version . "-full.tar.gz", "fink-" . $fink_version . "-full.tar.gz", "/downloads/FinkFullSOURCE") ?> - 3524k<br>
 </ul>
 
 <p>You will also need to install the Xcode Tools (c.f. <a href="./index.en.php#additionaldownloads">the Quick Start page</a>).</p>
@@ -164,7 +164,7 @@ packages, the command sequence:</p>
 
 <pre>fink selfupdate</pre>
 
-<p>using any either the <em>rsync</em> or <em>cvs</em> options,
+<p>using any either the <em>rsync</em> or <em>git</em> options,
 followed by</p>
 
 <pre>fink index -f</pre>
@@ -175,11 +175,11 @@ followed by</p>
 
 <p>or</p>
 
-<pre>fink selfupdate-cvs</pre>
+<pre>fink selfupdate-git</pre>
 
 <p>will download the package description files and patches, provided that you
 <strong>do not</strong> select the "point release" method initially.  <em>rsync</em> is generally
-preferable to <em>cvs</em> for most people.</p>
+preferable to <em>git</em> for most people.</p>
 
 <p>Installation and usage instructions are inside the distribution tarball.
 Please read them - Fink is not a one-click-and-done thing.  The documents

@@ -1,13 +1,13 @@
 <?php
 $title = "Fink Entwickler Karte";
-$cvs_author = '$Author: thesin $';
+$cvs_author = '$Author: nieder $';
 $cvs_date = '$Date: 2014/10/23 22:07:22 $';
 
 include "header.inc";
 ?>
 <h1>Fink Entwickler Karte</h1>
 <p>Haben sie sich schon einmal gefragt, wo die <a href="../people.php">Personen</a> leben, die zu Fink beitragen? Auch wenn nicht, genau hier findet man diese Information.</p>
-<p>Die Personen auf der Karte sind durch nummeriert. Schauen sie zuerst in der Liste und dann auf der Karte nach, um heraus zu finden, wo jemand lebt. Der Name in Anführungsstrichen ist der Spitzname ("nick") im irc-Kanal #fink auf irc.freenode.net.</p>
+<p>Die Personen auf der Karte sind durch nummeriert. Schauen sie zuerst in der Liste und dann auf der Karte nach, um heraus zu finden, wo jemand lebt. Der Name in Anführungsstrichen ist der Spitzname ("nick") im irc-Kanal #fink auf irc.libera.chat:6697.</p>
 <img src="finkmap_world.png" height="750" width="750" alt="">
 <table summary="Liste fuer die Fink Entwickler Karte">
 <tr><td>Nummer</td><td>Name</td><td>Ort</td></tr>

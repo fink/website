@@ -1,9 +1,13 @@
 <?php
-$title = "Anleitung zur Aktualisierung unter Mac OS 10.12";
-$cvs_author = '$Author: kamischi $';
-$cvs_date = '$Date: 2016/09/21 19:03:02 $';
+$title = "Anleitung zur Aktualisierung unter macOS 10.12";
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 11:36:00 $';
 
 include "header.inc";
+?>
+
+<?php
+$xcode_ver = "9.2"
 ?>
 
 <h1>Anleitung zur Aktualisierung unter Mac OS 10.12</h1>
@@ -17,13 +21,13 @@ include "header.inc";
 		Aktualisieren sie das Betriebssystem.
 	</li>
 	<li>
-		Wenn noch nicht erfolgt, installieren sie Xcode 8.x oder zumindest seine Command 
+		Wenn noch nicht erfolgt, installieren sie Xcode <?php echo $xcode_ver ?> oder zumindest seine Command 
 		Line Tools.
-		Ist Xcode 8.x installiert, muss man immer noch die Command Line Tools erneut 
+		Ist Xcode <?php echo $xcode_ver ?> installiert, muss man immer noch die Command Line Tools erneut 
 		installieren, selbst wenn sie bereits installiert waren.
 	</li>
 	<li>
-		Haben sie Xcode 8.x, führen sie <pre>sudo xcodebuild -license</pre> aus, um die
+		Haben sie Xcode <?php echo $xcode_ver ?>, führen sie <pre>sudo xcodebuild -license</pre> aus, um die
 		Lizenz für Xcode zu akzeptieren. Wenn man nur die Command Line Tools verwendet, 
 		ist dies nicht nötig.
 	</li>
@@ -48,7 +52,7 @@ include "header.inc";
   Aktualisiert man von 10.9/10/11 nach 10.12 mit einer fink Version, die 10.12 nicht 
   unterstützt, geht es nicht weiter. Sie können ein kompatibles
   <link url="http://downloads.sourceforge.net/fink/fink_0.41.0-101_darwin-x86_64.deb">
-  pre-built fink"</link> herunter laden und mit folgendem Kommando im Terminal aus dem 
+  pre-built fink</link> herunter laden und mit folgendem Kommando im Terminal aus dem 
   Ordner installieren, in dem sie es herunter geladen haben:
   <pre>sudo dpkg -i fink_0.41.0-101_darwin-x86_64.deb</pre>
 </p>

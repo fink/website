@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2016/09/21 15:16:02 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 10:24:00 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -24,7 +24,7 @@ Ihnen, einen schnellen Einstieg zu finden.
 <ol>
 <li>
 <p>
-10.6, 10.7, 10.8 10.9, 10.10, 10.11, und 10.12 Nutzer: Derzeit gibt es keine binäre Installation und 
+10.6, 10.7, 10.8 10.9, 10.10, 10.11, 10.12, 10.13, 10.14, und 10.15 Nutzer: Derzeit gibt es keine binäre Installation und 
 sie müssen statt dessen der Anleitung 
 <A href="srcdist.php">Quellcode-Installation</A> folgen.<br>
 
@@ -154,9 +154,45 @@ registrieren sie sich kostenlos und laden sie Xcode über den Mac App Store.</p>
   <caption>Empfohlene Version der Developer Tools (Xcode)</caption>
   <tbody>
     <tr>
+        <td>10.15</td>
+        <td>Die Command Line Tools für Catalina, optionally Xcode 11.3.1<br>
+        Die Command Line Tools kann man mit dem Kommando
+        <code>xcode-select --install</code> oder in einem separaten Paket.</td>
+    </tr>
+    <tr>
+        <td>10.14</td>
+        <td>Die Command Line Tools für Mojave, optionally Xcode 11.3.1<br>
+        Die Command Line Tools kann man mit dem Kommando
+        <code>xcode-select --install</code> oder in einem separaten Paket.</td>
+    </tr>
+    <tr>
+        <td>10.13</td>
+        <td>Die Command Line Tools für High Sierra, optionally Xcode 10.1<br>
+        Die Command Line Tools kann man mit dem Kommando
+        <code>xcode-select --install</code> oder in einem separaten Paket.</td>
+    </tr>
+    <tr>
+        <td>10.12</td>
+        <td>Die Command Line Tools für Sierra, optionally Xcode 9.2<br>
+        Die Command Line Tools kann man mit dem Kommando
+        <code>xcode-select --install</code> oder in einem separaten Paket.</td>
+    </tr>
+    <tr>
+        <td>10.11</td>
+        <td>Die Command Line Tools für El Capitan, optionally Xcode 8.2.1<br>
+        Die Command Line Tools kann man mit dem Kommando
+        <code>xcode-select --install</code> oder in einem separaten Paket.</td>
+    </tr>
+    <tr>
+        <td>10.10</td>
+        <td>Die Command Line Tools für Yosemite, optionally Xcode 7.2.1<br>
+        Die Command Line Tools kann man mit dem Kommando
+        <code>xcode-select --install</code> oder in einem separaten Paket.</td>
+    </tr>
+    <tr>
         <td>10.9</td>
         <td>Die Command Line Tools für Mavericks - spät im Oktober 2013; optional 
-        Xcode 5.0.1<br>
+        Xcode 6.2<br>
         Die Command Line Tools kann man mit dem Kommando
         <code>xcode-select --install</code> in den Voreinstellungen von Xcode 
         herunter laden oder in einem separaten Paket.</td>

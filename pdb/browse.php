@@ -49,7 +49,7 @@ function genFormSelect($var_name, $cur_val, $values, $description = '') {
 	echo "<select NAME='$var_name'>\n";
 	foreach ($values as $key => $val) {
 		echo "  <option value='$key' ";
-		if ($cur_val == $key) echo "selected";
+		if ($cur_val === $key) echo "selected";
 		echo ">$val</option>\n";
 	}
 	echo "</select>\n";
@@ -60,7 +60,7 @@ function genFormSelect($var_name, $cur_val, $values, $description = '') {
 // Distribution values
 $dist_values = array(
 	'any'     => 'Any',
-	'default' => 'Supported (10.9 through 10.12)',
+	'default' => 'Supported (10.9 through 13.0)',
 );
 foreach ($distributions as $d) {
 	if (!$showall and !$d->isVisible()) {
@@ -239,7 +239,7 @@ package<?php echo ($count==1 ? '' : 's')?><?php echo ($maintainer=='None' ? ' wi
 	if (!is_array($packages)) {
 		print '<tr class="package">';
 		print 'Invalid query: ';
-		print 'Please try again: <a href="http://pdb.finkproject.org/pdb/browse.php?nolist=on">Search</a></tr><br/>';
+		print 'Please try again: <a href="https://pdb.finkproject.org/pdb/browse.php?nolist=on">Search</a></tr><br/>';
 	} else {
 		foreach ($packages as $id => $package) {
 			if (!isset($package['version_stable'])) $package['version_stable'] = "";

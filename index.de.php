@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
-$cvs_author = '$Author: k-m_schindler $';
-$cvs_date   = '$Date: 2014/07/19 22:37:01 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date   = '$Date: 2019/02/25 22:41:00 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -51,14 +51,32 @@ require dirname(__FILE__) . "/fink_version.inc";
 ?>
 
 <p>
-Derzeit unterstützt Fink OS X 10.12 (Sierra), 10.11 (El Capitan), 10.10
-(Yosemite), und 10.9 (Mavericks).
+Derzeit unterstützt Fink macOS 10.15 (Catalina), macOS 10.14 (Mojave), macOS 10.13 (High Sierra), 
+macOS 10.12 (Sierra), OS X 10.11 (El Capitan), OS X 10.10 (Yosemite), und OS X 10.9 (Mavericks).
 Es läuft auch weiterhin auf älteren Versionen von OS X, obwohl
 dafür keine offiziellen Updates mehr bereit gestellt werden.
 Die Installationsanweisung befindet sich auf der
 <a href="download/srcdist.php">source release page</a>.
 </p>
 <p>Xcode muss vor Fink installiert werden.</p>
+<p>
+<strong>Unterstützung von 10.15:</strong> 
+10.13 and 10.14 users must install Xcode version 10.3 or later 
+(via a free download from the AppStore, 
+or must at least install the Command Line Tools for 
+Xcode 10.3 (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.11 or later from 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
+<p>
+<strong>Unterstützung von 10.13 and 10.14:</strong> 
+10.13 and 10.14 users must install Xcode version 10.1 or later 
+(via a free download from the AppStore, 
+or must at least install the Command Line Tools for 
+Xcode 10.1 (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.7.11 or later from 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>Unterstützung von 10.12:</strong>
 Nutzer von 10.12 müssen Xcode, Version 8.0 oder später installieren
@@ -146,23 +164,23 @@ nach einer Anleitung.
 Das Fink-Projekt wird gehostet von 
 <a href="http://sourceforge.net/">SourceForge</a>.
 Zusätzlich zum Hosten dieser Webseite und den Downloads
-stellt SourceForge folgende Dienste für das Projekt bereit:
+stellt SourceForge und GitHub folgenden Dienste für das Projekt bereit:
 </p>
 <ul>
 <li><a href="http://sourceforge.net/projects/fink/">SourceForge Projekt-Übersicht</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=117203&amp;group_id=17203">Bugs anschauen oder mitteilen</a></li>
+href="https://github.com/fink/fink/issues">Bugs anschauen oder mitteilen</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=371315&amp;group_id=17203">Eine bestimmte Software fehlt in Fink</a></li>
+href="https://sourceforge.net/p/fink/package-requests/">Eine bestimmte Software fehlt in Fink</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=367203&amp;group_id=17203">Funktionalität fehlt in Fink (das Programm)</a></li>
+href="https://sourceforge.net/p/fink/feature-requests/">Funktionalität fehlt in Fink (das Programm)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=414256&amp;group_id=17203">Ein neues Fink-Paket abgeben (für nicht Kernentwickler)</a></li>
+href="https://github.com/fink/fink-distributions/pulls">Ein neues Fink-Paket abgeben (für nicht Kernentwickler)</a></li>
 <li><a
-href="http://sourceforge.net/tracker/?atid=317203&amp;group_id=17203">Einen Patch für Fink (das Programm) abgeben</a></li>
+href="https://github.com/fink/fink/pulls">Einen Patch für Fink (das Programm) abgeben</a></li>
 <li><a href="lists/index.php">Mailing Listen</a></li>
-<li>CVS (<a href="http://fink.cvs.sourceforge.net/fink/">online
-lesen</a>, <a href="doc/cvsaccess/index.php">Zugangsdaten</a>)</li>
+<li>Git (<a href="https://github.com/fink/">online
+lesen</a>, <a href="doc/gitaccess/index.php">Zugangsdaten</a>)</li>
 </ul>
 <p>
 Bitte beachten Sie, dass die Verwendung einiger dieser Dienste (z.B. Fehler melden oder neue Fink-Pakete

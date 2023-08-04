@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q.";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:14';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/05/31 13:43:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=ja" title="一般的な質問">';
 
 
@@ -29,19 +29,19 @@ Fink と BSD の port メカニズムはどう違うのですか (OpenPackages �
 "command not found" エラーが出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#invisible-sw">5.17 Finder で /sw を隠して、ユーザーが Fink の構成を壊すのを防ぎたい。</a></li><li><a href="usage-fink.php?phpLang=ja#install-info-bad">5.18 何もインストールできません。
 "install-info: unrecognized option `--infodir=/sw/share/info'"
 のエラーが出るだけです。</a></li><li><a href="usage-fink.php?phpLang=ja#bad-list-file">5.19 何もインストールできないし、削除もできません。 "files list file" と出るだけです。</a></li><li><a href="usage-fink.php?phpLang=ja#dselect-garbage">5.20 <code>dselect</code> でパッケージを選択すると、大量のゴミがでてきます。
-これはどうやったら使えますか?</a></li><li><a href="usage-fink.php?phpLang=ja#cant-upgrade">5.21 Fink のバージョンをアップデートできないようです。</a></li><li><a href="usage-fink.php?phpLang=ja#spaces-in-directory">5.22 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</a></li><li><a href="usage-fink.php?phpLang=ja#packages-gz">5.23 バイナリアップデートをしようとすると、 "File not found" または "Couldn't stat package source list file" というメッセージが大量に出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#wrong-tree">5.24 OS | Developer Tools を変えたら、 Fink が認識してくれません。</a></li><li><a href="usage-fink.php?phpLang=ja#seg-fault">5.25 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</a></li><li><a href="usage-fink.php?phpLang=ja#pathsetup-keeps-running">5.26 ターミナルウィンドウを開くと、
+これはどうやったら使えますか?</a></li><li><a href="usage-fink.php?phpLang=ja#cant-upgrade">5.21 Fink のバージョンをアップデートできないようです。</a></li><li><a href="usage-fink.php?phpLang=ja#spaces-in-directory">5.22 名前に空白が入っているボリュームやディレクトリに Fink を入れることはできますか?</a></li><li><a href="usage-fink.php?phpLang=ja#packages-gz">5.23 バイナリアップデートをしようとすると、 "File not found" または "Couldn't stat package source list file" というメッセージが大量に出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#wrong-tree">5.24 OS を変えたら、 Fink が認識してくれません。</a></li><li><a href="usage-fink.php?phpLang=ja#lost-command-line-tools">5.25 After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</a></li><li><a href="usage-fink.php?phpLang=ja#seg-fault">5.26 何かをインストールしようとしたら <code>gzip</code> | <code>dpkg-deb</code> のエラーが出る! 助けて!</a></li><li><a href="usage-fink.php?phpLang=ja#pathsetup-keeps-running">5.27 ターミナルウィンドウを開くと、
 "Your environment seems to be correctly set up for Fink already."
-というメッセージが出てログアウトします。</a></li><li><a href="usage-fink.php?phpLang=ja#ext-drive">5.27 
+というメッセージが出てログアウトします。</a></li><li><a href="usage-fink.php?phpLang=ja#ext-drive">5.28 
 	メインパーティション以外に Fink をインストールしていますが、
 	ソースからの更新ができません。
 	<q>chowname</q> を含んだエラーが出ます。
-	</a></li><li><a href="usage-fink.php?phpLang=ja#mirror-gnu">5.28 
+	</a></li><li><a href="usage-fink.php?phpLang=ja#mirror-gnu">5.29 
 	Fink がパッケージを更新しません。
 	'gnu' ミラーが見つからないと言っています。
-	</a></li><li><a href="usage-fink.php?phpLang=ja#cant-move-fink">5.29 
+	</a></li><li><a href="usage-fink.php?phpLang=ja#cant-move-fink">5.30 
 	Fink を更新できません。
 	/sw/fink を移動できないからです。
-	</a></li><li><a href="usage-fink.php?phpLang=ja#fc-cache">5.30 "No fonts found" というメッセージが出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#non-admin-installer">5.31 インストーラから Fink をインストールできません。"volume doesn't support symlinks" エラーが出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#wrong-arch">5.32 Fink を更新できない。 <q>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</q>
+	</a></li><li><a href="usage-fink.php?phpLang=ja#fc-cache">5.31 "No fonts found" というメッセージが出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#non-admin-installer">5.32 インストーラから Fink をインストールできません。"volume doesn't support symlinks" エラーが出ます。</a></li><li><a href="usage-fink.php?phpLang=ja#wrong-arch">5.33 Fink を更新できない。 <q>package architecture (darwin-i386) がシステム (darwin-powerpc) に合っていない。</q>
 </a></li></ul></li><li><a href="comp-general.php?phpLang=ja"><b>6 コンパイルの問題 - 一般</b></a><ul><li><a href="comp-general.php?phpLang=ja#compiler">6.1 configure スクリプトが "acceptable cc" が見つからないといってきます。
 これは何ですか?</a></li><li><a href="comp-general.php?phpLang=ja#cvs">6.2 "fink selfupdate-cvs" をしようとしたら、このメッセージが出てきました: "cvs: Command not found."
 </a></li><li><a href="comp-general.php?phpLang=ja#missing-make">6.3 <code>make</code> に関連したエラーがでました。</a></li><li><a href="comp-general.php?phpLang=ja#head">6.4 head コマンドから変な使用方法メッセージが出ています。何がおかしいのですか?</a></li><li><a href="comp-general.php?phpLang=ja#also_in">6.5 あるパッケージをインストールしようとすると、他のパッケージのファイルを上書きしようとしているというエラーメッセージが出ました。
@@ -88,7 +88,7 @@ XDarwin を起動してもすぐ終了しちゃう!</a></li><li><a href="usage-p
         	Tiger (OS 10.4) にアップデート後、GTK アプリを使うと必ず
         	<code>_EVP_idea_cbc</code> に関連したエラーが出ます。
         </a></li><li><a href="usage-packages.php?phpLang=ja#yelp">9.11 どの GNOME アプリケーションでも、ヘルプ機能が使えません。</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.ja.xml,v 1.47 2012/11/11 15:20:14 gecko2 Exp $-->
+<!--Generated from $Fink: faq.ja.xml,v 1.49 2020/05/31 13:43:40 nieder Exp $-->
 <?php include_once "../footer.inc"; ?>
 
 

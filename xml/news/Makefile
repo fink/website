@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.15 2015/06/06 21:12:45 k-m_schindler Exp $
+# $Id: Makefile,v 1.16 2019/01/19 11:22:33 nieder Exp $
 
 # process XML files with stylesheet to produce HTML
 
@@ -8,7 +8,11 @@ W3CDTFDATE := `LANG=C date '+%Y-%m-%dT%H:%M:%S%z' | perl -pe 's,^(.*)(\d\d)$$,$$
 basedir = ..
 
 SOURCE = news
-TARGET = news.inc news.rdf index.php
+TARGET = \
+	news.inc \
+	news.rdf \
+	index.php
+
 #WANT_HTML = 1
 DESTDIR = news
 INC_BASENAME = news

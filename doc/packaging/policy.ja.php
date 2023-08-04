@@ -1,7 +1,7 @@
 <?php
 $title = "パッケージ作成 - ポリシー";
-$cvs_author = 'Author: babayoshihiko';
-$cvs_date = 'Date: 2016/04/06 22:11:13';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2021/05/27 20:26:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト"><link rel="prev" href="format.php?phpLang=ja" title="パッケージ記述">';
 
 
@@ -733,7 +733,7 @@ InstallScript: &lt;&lt;
         <li>ユーザが <code>fink</code> を使ってダウンロードできる公開ダウンロードサイトにアーカイブをアップロードする。
         もし、そのようなサイトがない場合は、
         <a href="mailto:fink-devel@lists.sourceforge.net">Fink 開発者メーリングリスト</a> または
-        <a href="http://webchat.freenode.net">#fink IRC チャンネル</a>,
+        <a href="https://web.libera.chat/#fink">#fink IRC チャンネル</a>,
         に連絡してください。だれかが助けてくれるでしょう。</li>
     </ol>
 

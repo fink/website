@@ -1,7 +1,7 @@
 <?php
 $title = "F.A.Q.";
-$cvs_author = 'Author: kamischi';
-$cvs_date = 'Date: 2015/06/06 19:19:29';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2020/05/31 13:43:40';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="F.A.Q. Contents"><link rel="next" href="general.php?phpLang=de" title="Allgemeine Fragen">';
 
 
@@ -50,16 +50,16 @@ include_once "header.de.inc";
           seinem Namen hat?</a></li><li><a href="usage-fink.php?phpLang=de#packages-gz">5.23 Wenn ich eine binäre Aktualisierung machen, erhalte ich viele
           Fehlermeldungen mit "File not found" oder "Couldn't stat package
           source list file".</a></li><li><a href="usage-fink.php?phpLang=de#wrong-tree">5.24 Ich habe mein System oder die Developer Tools gewechselt, aber Fink
-          erkennt den Wechsel nicht.</a></li><li><a href="usage-fink.php?phpLang=de#seg-fault">5.25 Ich erhalte Fehlermeldungen von <code>gzip</code>,
+          erkennt den Wechsel nicht.</a></li><li><a href="usage-fink.php?phpLang=de#lost-command-line-tools">5.25 After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</a></li><li><a href="usage-fink.php?phpLang=de#seg-fault">5.26 Ich erhalte Fehlermeldungen von <code>gzip</code>,
           <code>dpkg-deb</code> oder anderen Programmen aus dem Paket
-          <code>fileutils</code>! Hilfe!</a></li><li><a href="usage-fink.php?phpLang=de#pathsetup-keeps-running">5.26 When I open a Terminal window, I get a message that "Your
+          <code>fileutils</code>! Hilfe!</a></li><li><a href="usage-fink.php?phpLang=de#pathsetup-keeps-running">5.27 When I open a Terminal window, I get a message that "Your
         environment seems to be correctly set up for Fink already.", and it
-        logs out.</a></li><li><a href="usage-fink.php?phpLang=de#ext-drive">5.27 Ich habe Fink nicht auf der Haupt-Partition installiert und ich kann
+        logs out.</a></li><li><a href="usage-fink.php?phpLang=de#ext-drive">5.28 Ich habe Fink nicht auf der Haupt-Partition installiert und ich kann
           das Paket Fink nicht aus dem Quellen aktualisieren. Die
-          Fehlermeldungen enthalten <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=de#mirror-gnu">5.28 Fink weigert sich, meine Pakete zu aktualisieren, weil es den
-          'gnu'-Spiegelserver nicht finden kann.</a></li><li><a href="usage-fink.php?phpLang=de#cant-move-fink">5.29 Ich kannn Fink nicht aktualisieren, weil ich /sw/fink nicht aus dem
-          Weg räumen kann.</a></li><li><a href="usage-fink.php?phpLang=de#fc-cache">5.30 Ich erhalte diese Fehlermeldung: "No fonts found".</a></li><li><a href="usage-fink.php?phpLang=de#non-admin-installer">5.31 Ich kann Fink nicht mit dem Installerpaket installieren, weil ich den
-          Fehler "volume doesn't support symlinks" erhalte.</a></li><li><a href="usage-fink.php?phpLang=de#wrong-arch">5.32 Ich kann Fink nicht aktualisieren. Es bricht mit
+          Fehlermeldungen enthalten <q>chowname</q>.</a></li><li><a href="usage-fink.php?phpLang=de#mirror-gnu">5.29 Fink weigert sich, meine Pakete zu aktualisieren, weil es den
+          'gnu'-Spiegelserver nicht finden kann.</a></li><li><a href="usage-fink.php?phpLang=de#cant-move-fink">5.30 Ich kannn Fink nicht aktualisieren, weil ich /sw/fink nicht aus dem
+          Weg räumen kann.</a></li><li><a href="usage-fink.php?phpLang=de#fc-cache">5.31 Ich erhalte diese Fehlermeldung: "No fonts found".</a></li><li><a href="usage-fink.php?phpLang=de#non-admin-installer">5.32 Ich kann Fink nicht mit dem Installerpaket installieren, weil ich den
+          Fehler "volume doesn't support symlinks" erhalte.</a></li><li><a href="usage-fink.php?phpLang=de#wrong-arch">5.33 Ich kann Fink nicht aktualisieren. Es bricht mit
           <q>package architecture (darwin-i386) does not match system
           (darwin-powerpc)</q> ab.</a></li></ul></li><li><a href="comp-general.php?phpLang=de"><b>6 Probleme beim Übersetzen - Allgemein</b></a><ul><li><a href="comp-general.php?phpLang=de#compiler">6.1 Ein configure-Skript beklagt sich, dass es keinen "acceptable cc"
           findet. Was bedeutet das?</a></li><li><a href="comp-general.php?phpLang=de#cvs">6.2 Nach dem Kommando "fink selfupdate-cvs" erhalte ich die Nachricht:
@@ -111,7 +111,7 @@ include_once "header.de.inc";
           XDarwin verhält.</a></li><li><a href="usage-packages.php?phpLang=de#apple-x11-wants-xfree86">9.6 Ich habe Probleme mit X11 und Fink.</a></li><li><a href="usage-packages.php?phpLang=de#special-x11-debug">9.7 Ich habe immer noch Probleme mit X11 und Fink.</a></li><li><a href="usage-packages.php?phpLang=de#tiger-gtk">9.8 Nach der Aktualisierung auf Tiger (OS 10.4), bekomme ich immer
           Fehlermeldung mit <code>_EVP_idea_cbc</code>, sobald ich ein GTK-
           Programm starte.</a></li><li><a href="usage-packages.php?phpLang=de#yelp">9.9 Ich erhalte in GNOME-Programmen keine Hilfe.</a></li></ul></li></ul>
-<!--Generated from $Fink: faq.de.xml,v 1.125 2015/06/06 19:19:29 kamischi Exp $-->
+<!--Generated from $Fink: faq.de.xml,v 1.126 2020/05/31 13:43:40 nieder Exp $-->
 <?php include_once "../footer.inc"; ?>
 
 

@@ -1,7 +1,7 @@
 <?php
 $title = "Anleitung zur Aktualisierung unter Mac OS X 10.11";
-$cvs_author = '$Author: kamischi $';
-$cvs_date = '$Date: 2015/11/15 21:18:57 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 11:39:00 $';
 
 include "header.inc";
 ?>
@@ -17,13 +17,13 @@ include "header.inc";
 		Aktualisieren sie das Betriebssystem.
 	</li>
 	<li>
-		Wenn noch nicht erfolgt, installieren sie Xcode 7.1 oder zumindest seine Command 
+		Wenn noch nicht erfolgt, installieren sie Xcode 8.2.1 oder zumindest seine Command 
 		Line Tools für Yosemite.
-		Ist Xcode 7.1 installiert, muss man immer noch die Command Line Tools erneut 
+		Ist Xcode 8.2.1 installiert, muss man immer noch die Command Line Tools erneut 
 		installieren, selbst wenn sie bereits unter Mavericks oder Yosemite installiert waren.
 	</li>
 	<li>
-		Haben sie Xcode 7.1, führen sie <pre>sudo xcodebuild -license</pre> aus, um die
+		Haben sie Xcode 8.2.1, führen sie <pre>sudo xcodebuild -license</pre> aus, um die
 		Lizenz für Xcode zu akzeptieren. Wenn man nur die Command Line Tools verwendet, 
 		ist dies nicht nötig.
 	</li>
@@ -48,7 +48,7 @@ include "header.inc";
   Aktualisiert man von 10.9 oder 10.10 nach 10.11 mit einer fink Version, die 10.11 nicht 
   unterstützt, geht es nicht weiter. Sie können ein kompatibles  
   <link url="http://downloads.sourceforge.net/fink/fink_0.39.2-101_darwin-x86_64.deb">
-  pre-built fink"</link> herunter laden und mit folgendem Kommando im Terminal aus dem 
+  pre-built fink</link> herunter laden und mit folgendem Kommando im Terminal aus dem 
   Ordner installieren, in dem sie es herunter geladen haben:
   <pre>sudo dpkg -i fink_0.39.2-101_darwin-x86_64.deb</pre>
 </p>
@@ -77,7 +77,7 @@ include "header.inc";
     Bennen sie ihren Fink-Baum um, z. B. mit dem Kommando <pre>sudo mv /sw /sw.old</pre>.
   </li>
   <li>
-    Installieren sie OS X 10.11 und Xcode 7.1 oder zumindest die Command Line Tools.
+    Installieren sie OS X 10.11 und Xcode 8.2.1 oder zumindest die Command Line Tools.
   </li>
   <li>
     <a href="./srcdist.php">Installieren sie Fink</a> auf ihrem neuen 10.11 System.

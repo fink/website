@@ -1,7 +1,7 @@
 <?php
 $title = "Guía del Usuario - Actualizaciones";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="conf.php?phpLang=es" title="El archivo de configuración de Fink"><link rel="prev" href="packages.php?phpLang=es" title="Instalando Paquetes">';
 
 
@@ -43,9 +43,9 @@ En el segundo, estas descripciones son usadas para compilar los nuevos paquetes;
       <p>
 Si tienes Fink 0.2.5 o posterior instalado, el primer paso se logra ejecutando el comando<code>fink selfupdate</code>.
 Este comando revisara si el sitio web de Fink contiene alguna nueva versión puntual, y automaticamente descargara e instlara ls descripciones de los paquetes en caso de existir nuevas versiones. 
-En las versiones recientes del comando <code>fink</code> se te da la opción de obtener las descripciones de los paquetes directamente del CVS o via rsync. El CVS es un depósito de versiones controladas donde las descripciones de los paquetes son almacenadas. 
-Usando el CVS uno obtiene varias ventajas, como actualizaciones  continuas, pero desventajas como el hecho de que en el CVS hay solo una copia de los archivos- Por lo tanto, si hay mucho tráfico, el CVS no es confiable.
-Por esta razón, se recomienda que en general se use rsync (el cual tiene multiples espejos), cuyo única desventaja es que las descripciones son una hora más viejas que las disponibles para el CVS.
+En las versiones recientes del comando <code>fink</code> se te da la opción de obtener las descripciones de los paquetes directamente del git o via rsync. El Git es un depósito de versiones controladas donde las descripciones de los paquetes son almacenadas. 
+Usando el Git uno obtiene varias ventajas, como actualizaciones  continuas, pero desventajas como el hecho de que en el Git hay solo una copia de los archivos- Por lo tanto, si hay mucho tráfico, el Git no es confiable.
+Por esta razón, se recomienda que en general se use rsync (el cual tiene multiples espejos), cuyo única desventaja es que las descripciones son una hora más viejas que las disponibles para el Git.
 </p>
       <p>(Si enfrentas algun problema al actualizar la Instalación del código fuente, consultaIf you are having trouble upgrading a source installation, consult
 <a href="/download/fix-upgrade.php">las

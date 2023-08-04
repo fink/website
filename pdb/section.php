@@ -18,7 +18,7 @@ if ($PATH_INFO == "") {
 }
 
 $server = $_SERVER['SERVER_NAME'];
-$location = "http://$server/pdb/browse.php";
+$location = "https://$server/pdb/browse.php";
 
 if (isset($section)) {
 	$location .= "?sec=" . $section;

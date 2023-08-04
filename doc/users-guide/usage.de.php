@@ -1,7 +1,7 @@
 <?php
 $title = "Benutzerhandbuch - fink-Tool";
-$cvs_author = 'Author: kms';
-$cvs_date = 'Date: 2014/10/20 11:41:47';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Benutzerhandbuch Contents"><link rel="prev" href="conf.php?phpLang=de" title="Die Fink-Konfigurationsdatei">';
 
 
@@ -272,7 +272,7 @@ Führt den Konfigurationsprozess noch einmal aus. So können Sie unter anderen I
     <h2><a name="selfupdate">6.18 selfupdate</a></h2>
       
       <p>
-      Dieser Befehl automatisiert die Aktualisierung von Fink auf eine neues Release. Es überprüft die Fink-Webseite, um zu sehen, ob eine neue Version verfügbar ist. Wenn dies so ist, lädt es die Paketbeschreibungen und Updates der core-Pakete einschließlich von <code>fink</code> selber. Dieser Befehl kann auf reguläre Releases aktualisieren, es kann aber auch Ihren <code>/sw/fink/dists</code>-Verzeichnisbaum für direktes CVS einrichten. Das bedeutet, dass Sie dann auf die aktuellsten Versionen aller Pakete zugreifen können.</p>
+      Dieser Befehl automatisiert die Aktualisierung von Fink auf eine neues Release. Es überprüft die Fink-Webseite, um zu sehen, ob eine neue Version verfügbar ist. Wenn dies so ist, lädt es die Paketbeschreibungen und Updates der core-Pakete einschließlich von <code>fink</code> selber. Dieser Befehl kann auf reguläre Releases aktualisieren, es kann aber auch Ihren <code>/sw/fink/dists</code>-Verzeichnisbaum für direktes Git einrichten. Das bedeutet, dass Sie dann auf die aktuellsten Versionen aller Pakete zugreifen können.</p>
       <p>Ist die <a href="#options">Option --use-binary-dist</a> eingeschaltet, wird auch die Liste der verfügbaren Pakete in der binären Distribution aktualisiert.</p>
     
     <h2><a name="selfupdate-rsync">6.19 selfupdate-rsync</a></h2>
@@ -281,10 +281,10 @@ Führt den Konfigurationsprozess noch einmal aus. So können Sie unter anderen I
       <p>Das ist die Empfehlung, um Fink aus den Quellen zu aktualisieren.</p>
       <p><b>Beachte:</b>  rsync aktualisiert nur die aktiven <a href="conf.php?phpLang=de#optional">Bäume</a> (d.h. ist unstable in <code>fink.conf</code> nicht eingeschaltet, wird die Liste der unstable Pakete nicht aktualisiert.</p>
     
-    <h2><a name="selfupdate-cvs">6.20 selfupdate-cvs</a></h2>
+    <h2><a name="selfupdate-git">6.20 selfupdate-git</a></h2>
       
-      <p>Mit diesem Kommando verwendet <code>fink selfupdate</code> CVS, um die Paketliste zu aktualisieren.</p>
-      <p>Von der Aktualisierung mit CVS wird abgeraten. Ausnahmen sind Entwickler und Situationen, in denen eine Firewall den Zugriff mit rsync verhindert.</p>
+      <p>Mit diesem Kommando verwendet <code>fink selfupdate</code> Git, um die Paketliste zu aktualisieren.</p>
+      <p>Von der Aktualisierung mit Git wird abgeraten. Ausnahmen sind Entwickler und Situationen, in denen eine Firewall den Zugriff mit rsync verhindert.</p>
     
     <h2><a name="index">6.21 index</a></h2>
       

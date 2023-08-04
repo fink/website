@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: packaging.de.xml,v 1.1 2015/03/10 22:52:23 k-m_schindler Exp $
+Generated from $Fink: packaging.de.xml,v 1.7 2023/01/22 6:40:32 nieder Exp $
 -->
 <title>Fink Documentation - Ein Fink-Paket erstellen</title></head><body>
 <table width="100%" cellspacing="0">
@@ -1105,7 +1105,7 @@ Quelle auf folgende Art und Weise erzeugt werden:
   entsprechenden Zugang, fragen sie in der
   <a href="mailto:fink-devel@lists.sourceforge.net">Fink developers
   Mailing-Liste</a> oder im
-  <a href="http://webchat.freenode.net">IRC channel #fink</a>.
+  <a href="https://web.libera.chat/#fink">IRC channel #fink</a>.
   nach und ihnen wird sicher geholfen werden.</li>
 </ol>
 
@@ -1588,17 +1588,23 @@ Derzeit sind die gültigen Distributionen
 <tt style="white-space: nowrap;">10.5</tt>,
 <tt style="white-space: nowrap;">10.6</tt>,
 <tt style="white-space: nowrap;">10.7</tt>,
-<tt style="white-space: nowrap;">10.8</tt>
-und <tt style="white-space: nowrap;">10.9</tt>.
-Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
+<tt style="white-space: nowrap;">10.8</tt>,
+<tt style="white-space: nowrap;">10.9</tt>,
+<tt style="white-space: nowrap;">10.10</tt>,
+<tt style="white-space: nowrap;">10.11</tt>,
+<tt style="white-space: nowrap;">10.12</tt>,
+<tt style="white-space: nowrap;">10.13</tt>,
+<tt style="white-space: nowrap;">10.14</tt>,
+<tt style="white-space: nowrap;">10.14.5</tt>,
+and <tt style="white-space: nowrap;">10.15</tt>
+. Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
 ignoriert Fink die Paketbeschreibung, wenn die lokal vorhandene Distribution
 nicht aufgelistet ist. Ist das Feld weg gelassen oder der Wert leer, werden
 alle Distributionen akzeptiert.
 (Eingeführt in Fink 0.26.0.)
 </p>
 <p>
-Seit den Fink-Distributionen für <tt style="white-space: nowrap;">10.7</tt>, <tt style="white-space: nowrap;">10.8</tt> und
-<tt style="white-space: nowrap;">10.9</tt> teilen sie sich ein gemeinsames Set an finkinfo-Dateien. Eine
+Seit den Fink-Distributionen für <tt style="white-space: nowrap;">10.9</tt> durch <tt style="white-space: nowrap;">10.14.5</tt> teilen sie sich ein gemeinsames Set an finkinfo-Dateien. Eine
 übliche Verwendung des Felds ist, die Distributionen auszuklammern, für die
 das Paket nicht erstellt werden kann.
 </p>
@@ -1620,10 +1626,11 @@ für alle Distributionen.
 Da die Python-Version 2.5 für die Distributionen 10.7+ nicht zur Verfügung steht
 und die Perl-Versionen von Distrivution zu Distribution variieren, wird diese
 Feld in diesen Paketen häufig vor. Als Referenz beschreiben wir hier die
-Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.9
+Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 13.0
 (<b>Fett</b>-gedruckte Systeme zeigen die Version von Sytem-Perl an):
 </p>
-<pre>    perl 5.6.0:  10.3
+<pre>
+    perl 5.6.0:  10.3
     perl 5.8.0:  10.3
     perl 5.8.1:  <b>10.3</b>, 10.4
     perl 5.8.4:  10.3, 10.4
@@ -1632,8 +1639,13 @@ Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.
     perl 5.10.0:             10.5, <b>10.6</b>
     perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
-    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b></pre>
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>, 10.14.5, 10.15, 11.0, 11.3, 12.0, 13.0
+    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <b>10.14.5</b>, <b>10.15</b>, 11.0, 11.3, 12.0, 13.0
+    perl 5.28.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, <b>11.0</b>, 11.3, 12.0, 13.0
+    perl 5.30.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, <b>11.3</b>, 12.0, 13.0
+    perl 5.30.3:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, 11.3, <b>12.0</b>, <b>13.0</b>
+</pre>
 <p>
 Eine Möglichkeit, alle unterstützten Varianten in einer einzigen finkinfo-Datei
 einzuschließen, ist diese:
@@ -2211,6 +2223,31 @@ Dieses Feld hat denselben Zweck wie das Feld <tt style="white-space: nowrap;">So
 Unterschied, dass es für die MD5 Checksum der Tarballs der entsprechenden Felder
 <tt style="white-space: nowrap;">Source<b>N</b></tt> ist.
 </p>
+</td></tr><tr valign="top"><td>Source-Checksum</td><td>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<pre>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</pre>
+<p>
+Current valid checksums are <tt style="white-space: nowrap;">MD5</tt>, <tt style="white-space: nowrap;">SHA1</tt>, and
+<tt style="white-space: nowrap;">SHA256</tt>. The <tt style="white-space: nowrap;">shasum</tt> tool can be used to
+calculate SHA checksums:</p>
+<pre>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</pre>
+<p>
+The <tt style="white-space: nowrap;">Source-Checksum</tt> field should only be used once per
+.info file. If both the <tt style="white-space: nowrap;">Source-MD5</tt> and
+<tt style="white-space: nowrap;">Source-Checksum</tt> fields are present,
+<tt style="white-space: nowrap;">Source-Checksum</tt> takes precedence.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-Checksum</td><td>
+<p>
+This is just the same as the <tt style="white-space: nowrap;">Source-Checksum</tt> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <tt style="white-space: nowrap;">Source<b>N</b></tt> field.
+</p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p>
 <b>Eingeführt in Fink 0.10.0.</b>
@@ -2632,8 +2669,8 @@ Alle anderen Felder sind optional. Die folgenden Felder sind innerhalb
   angehängt wird.</li>
 <li><tt style="white-space: nowrap;">TestSource</tt>: Extra Quellen, die für die Test-Suites benötigt
   werden. Alle verwandten Felder werden auch unterstützt. Man muss also auch
-  <tt style="white-space: nowrap;">TestSource-MD5</tt> deklarieren. Die Felder <tt style="white-space: nowrap;">TestSourceN</tt>
-  und die entsprechenden Felder <tt style="white-space: nowrap;">TestSourceN-MD5</tt>,
+  <tt style="white-space: nowrap;">TestSource-MD5</tt> oder <tt style="white-space: nowrap;">TestSource-Checksum</tt> deklarieren. Die Felder <tt style="white-space: nowrap;">TestSourceN</tt>
+  und die entsprechenden Felder <tt style="white-space: nowrap;">TestSourceN-MD5</tt>, <tt style="white-space: nowrap;">TestSourceN-Checksum</tt>, 
   <tt style="white-space: nowrap;">TestTarFilesRename</tt> usw. können ebenfalls vorhanden sein.</li>
 <li><tt style="white-space: nowrap;">TestSuiteSize</tt>: Beschreibt ungefähr wie lange das Ausführen der
   Test-Suites dauern wird. Erlaubte Werte sind <tt style="white-space: nowrap;">small</tt>,
@@ -3184,9 +3221,9 @@ das Feld RuntimeVars benutzen; eine bequehme Art, genau dies zu erreichen.
 
 
 <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2015 The Fink Project.
+Copyright (c) 2001-2020 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: packaging.de.xml,v 1.1 2015/03/10 22:52:23 k-m_schindler Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: packaging.de.xml,v 1.7 2023/01/22 6:40:32 nieder Exp $</i></p></body></html>

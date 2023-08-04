@@ -1,7 +1,7 @@
 <?php
 $title = "Guide utilisateur - Outil fink";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=fr" title="Guide utilisateur Contents"><link rel="prev" href="conf.php?phpLang=fr" title="Fichier de Configuration de Fink">';
 
 
@@ -245,7 +245,7 @@ fink apropos -s=kde irc
 
 <h2><a name="selfupdate">6.18 selfupdate - mise à jour automatique</a></h2>
 
-<p>Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <code>/sw/fink/dists</code> de telle sorte qu'elle soit mise à jour directement via CVS, ou avec rsync, si vous choisissez l'une de ces options lors de la première utilisation de cette commande. Vous avez alors accès aux toutes dernières versions des paquets.</p>
+<p>Cette commande automatise le processus de mise à jour de Fink. Elle vérifie si une nouvelle version existe sur le site web de Fink, télécharge ensuite les descriptions de paquets et met à jour les paquets fondamentaux, y compris <code>fink</code>. Cette commande met à jour les versions standards, mais peut aussi configurer votre arborescence <code>/sw/fink/dists</code> de telle sorte qu'elle soit mise à jour directement via Git, ou avec rsync, si vous choisissez l'une de ces options lors de la première utilisation de cette commande. Vous avez alors accès aux toutes dernières versions des paquets.</p>
 <p>Si l'option <a href="#options">--use-binary-dist option</a> est activée, la liste des paquets disponibles dans la distribution binaire est, elle aussi, mise à jour.</p>
 
 <h2><a name="selfupdate-rsync">6.19 selfupdate-rsync</a></h2>
@@ -254,11 +254,13 @@ fink apropos -s=kde irc
 <p>Nous vous recommandons d'utiliser cette méthode quand vous compilez à partir des sources.</p>
 <p><b>Note : </b>les mises à jour via rsync ne mettent à jour que les <a href="conf.php?phpLang=fr#optional">arborescences</a> (par exemple, si instable n'est pas activé dans le fichier <code>fink.conf</code>, la liste des paquets instables ne sera pas mise à jour).</p>
 
-<h2><a name="selfupdate-cvs">6.20 selfupdate-cvs</a></h2>
 
-<p>Utilisez cette commande pour faire en sorte que la commande <code>fink selfupdate</code> utilise cvs pour mettre à jour la liste des paquets de fink.</p>
-<p>La mise à jour via cvs est obsolète, sauf pour les développeurs et les personnes dont les murs pare-feux interdisent l'utilisation de rsync.</p>
- 
+    <h2><a name="selfupdate-git">6.20 selfupdate-git</a></h2>
+      
+      <p>Use this command to make <code>fink selfupdate</code> use Git access to update its package list.</p>
+      <p>Rsync updating is preferred, except for developers and those people who are behind firewalls that disallow rsync.</p>
+    
+
 <h2><a name="index">6.21 index - indexer</a></h2>
 
 <p>Reconstruit le cache des paquets. Normalement, vous n'avez pas besoin d'exécuter cette commande manuellement, car <code>fink</code> est censé détecter automatiquement s'il est besoin de reconstruire le cache.</p>

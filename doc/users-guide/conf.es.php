@@ -1,7 +1,7 @@
 <?php
 $title = "Guía del Usuario - fink.conf";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Guía del Usuario Contents"><link rel="next" href="usage.php?phpLang=es" title="Usando el Fink desde la línea de comando"><link rel="prev" href="upgrade.php?phpLang=es" title="Actualizando Fink">';
 
 
@@ -213,14 +213,14 @@ la cual trata de determinar cual es el servidor más cercano para cierto archivo
 
         <li>
           <p>
-            <b>SelfUpdateMethod:</b> point, rsync or cvs</p>
+            <b>SelfUpdateMethod:</b> point, rsync or git</p>
           <p>
 <code>fink</code> can use some different methods to update the package info files.
 <b>rsync</b> is the recommended setting; it uses rsync to download only
 modified files in the <a href="#optional">trees</a> that you have enabled. Note that if you have
 changed or added to files in the <code>stable</code> or <code>unstable</code> trees, using rsync will
-delete them. Make a backup first, e.g. in your <code>local</code> tree. <b>cvs</b> will download using anonymous or
-:ext: cvs access from the Fink repository. This has the disadvantage that cvs
+delete them. Make a backup first, e.g. in your <code>local</code> tree. <b>git</b> will download using anonymous or
+Github access from the Fink repository. This has the disadvantage that git
 can not switch mirrors; if the server is unavailable you will not be able to
 update. <b>point</b> will download only the latest released version of the
 packages. It is not recommended as your packages may be quite out of date.

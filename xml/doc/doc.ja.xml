@@ -4,7 +4,7 @@
 <article filename="index" lang="ja" >
 <title>Fink - Documentation</title>
 <shorttitle>Documentation</shorttitle>
-<cvsid>$Id: doc.ja.xml,v 1.21 2012/11/11 15:20:14 gecko2 Exp $</cvsid>
+<cvsid>$Id: doc.ja.xml,v 1.22 2019/01/19 10:11:12 nieder Exp $</cvsid>
 
 <preface>
 <p>
@@ -40,8 +40,8 @@ to install Fink or upgrade to a new version</li>
 and the installed software</li>
 <li><varlink url="readme.php" varurl="readme.ja.html">Fink ReadMe</varlink> - the ReadMe for the
 source distribution</li>
-<li><varlink url="cvsaccess/index.php" varurl="cvsaccess/cvs.en.html">CVS Access</varlink> - how to access the
-Fink CVS repository to get the latest source packages between
+<li><varlink url="gitaccess/index.php" varurl="gitaccess/git.en.html">Git Access</varlink> - how to access the
+Fink Git repository to get the latest source packages between
 releases</li>
 </ul>
 

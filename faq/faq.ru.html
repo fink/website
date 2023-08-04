@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: faq.ru.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $
+Generated from $Fink: faq.ru.xml,v 1.19 2020/05/31 13:43:40 nieder Exp $
 -->
 <title>Fink Documentation - Часто задаваемые вопросы Fink </title></head><body>
 <table width="100%" cellspacing="0">
@@ -49,14 +49,14 @@ Available Languages:  |
                     "install-info: unrecognized option `--infodir=/sw/share/info'"</a></li><li><a href="#usage-fink.bad-list-file">5.19 Ничего не могу инсталлировать или удалить из-за проблемы с
                     файлом списка файлов ("files list file").</a></li><li><a href="#usage-fink.dselect-garbage">5.20 Я получил кучу мусора, когда выбирал пакеты в 
                     <tt style="white-space: nowrap;">dselect</tt>. Как теперь можно его использовать?</a></li><li><a href="#usage-fink.cant-upgrade">5.21 Не получается обновить версию Fink.</a></li><li><a href="#usage-fink.spaces-in-directory">5.22 Можно ли разместить Fink в томе или каталоге с пробелом в его имени?</a></li><li><a href="#usage-fink.packages-gz">5.23 При попытке бинарного обновления появляется много сообщений
-                    со словами "File not found"</a></li><li><a href="#usage-fink.wrong-tree">5.24 Я изменил OS | Developer Tools, но Fink не
-                    признает изменение.</a></li><li><a href="#usage-fink.seg-fault">5.25 Получаю сообщения об ошибках с приложениями <tt style="white-space: nowrap;">gzip</tt> | <tt style="white-space: nowrap;">dpkg-deb</tt>I
-                    из пакета <tt style="white-space: nowrap;"> fileutils </tt>! Помогите!</a></li><li><a href="#usage-fink.pathsetup-keeps-running">5.26 Когда я открываю окно Terminal, получаю сообщение "Your
+                    со словами "File not found"</a></li><li><a href="#usage-fink.wrong-tree">5.24 Я изменил OS, но Fink не
+                    признает изменение.</a></li><li><a href="#usage-fink.lost-command-line-tools">5.25 After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</a></li><li><a href="#usage-fink.seg-fault">5.26 Получаю сообщения об ошибках с приложениями <tt style="white-space: nowrap;">gzip</tt> | <tt style="white-space: nowrap;">dpkg-deb</tt>I
+                    из пакета <tt style="white-space: nowrap;"> fileutils </tt>! Помогите!</a></li><li><a href="#usage-fink.pathsetup-keeps-running">5.27 Когда я открываю окно Terminal, получаю сообщение "Your
                     environment seems to be correctly set up for Fink already.",
-                    и сеанс завершается.</a></li><li><a href="#usage-fink.ext-drive">5.27 Мой Fink инсталлирован отдельно от главного сегмента и я не могу
+                    и сеанс завершается.</a></li><li><a href="#usage-fink.ext-drive">5.28 Мой Fink инсталлирован отдельно от главного сегмента и я не могу
                     обновить пакет fink на основе исходного кода. Появляются сообщения об ошибках
-                    с упоминанием <q>chowname</q>.</a></li><li><a href="#usage-fink.mirror-gnu">5.28 Fink не хочет обновлять мои пакеты, т.к. утверждает, что
-                    не может найти зеркало 'gnu'.</a></li><li><a href="#usage-fink.cant-move-fink">5.29 Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</a></li><li><a href="#usage-fink.fc-cache">5.30 I get a message that says "No fonts found".</a></li><li><a href="#usage-fink.non-admin-installer">5.31  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</a></li><li><a href="#usage-fink.wrong-arch">5.32 I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
+                    с упоминанием <q>chowname</q>.</a></li><li><a href="#usage-fink.mirror-gnu">5.29 Fink не хочет обновлять мои пакеты, т.к. утверждает, что
+                    не может найти зеркало 'gnu'.</a></li><li><a href="#usage-fink.cant-move-fink">5.30 Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</a></li><li><a href="#usage-fink.fc-cache">5.31 I get a message that says "No fonts found".</a></li><li><a href="#usage-fink.non-admin-installer">5.32  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</a></li><li><a href="#usage-fink.wrong-arch">5.33 I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </a></li></ul></li><li><a href="#comp-general"><b>6 Проблемы компиляции  - Общие вопросы</b></a><ul><li><a href="#comp-general.compiler">6.1 Скрипт конфигурации жалуется, что не может найти
                     "acceptable cc". Что это значит?</a></li><li><a href="#comp-general.cvs">6.2 При попытке выполнения "fink selfupdate-cvs" получаю сообщение: "cvs:
                     Command not found."</a></li><li><a href="#comp-general.missing-make">6.3 Получил сообщение об ошибке, которое упоминает <tt style="white-space: nowrap;">make</tt>
@@ -779,15 +779,19 @@ fink scanpackages
 </pre><p>to fix it.</p></div>
         </a>
         <a name="usage-fink.wrong-tree">
-            <div class="question"><p><b>Q5.24: Я изменил OS | Developer Tools, но Fink не
+            <div class="question"><p><b>Q5.24: Я изменил OS, но Fink не
                     признает изменение.</b></p></div>
             <div class="answer"><p><b>A:</b> При изменении дистрибуции Fink (подмножествами которой являются исходные и
                     бинарные distros), Fink нуждается в получении информации о том,
                     что произошло. Для этого вы можете выполнить скрипт, который обычно
                     запускается при первоначальной инсталляции Fink:</p><pre>/sw/lib/fink/postinstall.pl</pre><p>Выполнив это, вы укажете Fink правильное место.</p></div>
         </a>
+    <a name="usage-fink.lost-command-line-tools">
+      <div class="question"><p><b>Q5.25: After installing a macOS update, Fink no longer recognizes my installed Command Line Tools.</b></p></div>
+      <div class="answer"><p><b>A:</b> Updates to macOS routinely break parts of Apple's Command Line Tools. If you get this error after updating your copy of macOS:</p><pre>Can't resolve dependency "xcode (&gt;= 6.2)"</pre><p>Fink has lost track of Apple's Command Line Tools.</p><p>The easiest solution is to download and reinstall the Command Line Tools specific to your macOS version from <a href="https://developer.apple.com/">https://developer.apple.com/</a>.</p><p>Another possible solution is to run the following command:</p><pre>xcode-select --install</pre><p>but this often reports the following:</p><pre>xcode-select: error: command line tools are already installed, use "Software Update" to install updates</pre><p>However, the Tools might be in a non-functional state such that Fink still can't recognize them. In that case, a clean reinstall as described above has always worked to fix their detection with Fink.</p><p>Finally, you may need to run the command:</p><pre>sudo xcodebuild -license</pre><p>to agree to the software license.</p></div>
+    </a>
         <a name="usage-fink.seg-fault">
-            <div class="question"><p><b>Q5.25: Получаю сообщения об ошибках с приложениями <tt style="white-space: nowrap;">gzip</tt> | <tt style="white-space: nowrap;">dpkg-deb</tt>I
+            <div class="question"><p><b>Q5.26: Получаю сообщения об ошибках с приложениями <tt style="white-space: nowrap;">gzip</tt> | <tt style="white-space: nowrap;">dpkg-deb</tt>I
                     из пакета <tt style="white-space: nowrap;"> fileutils </tt>! Помогите!</b></p></div>
             <div class="answer"><p><b>A:</b> Ошибки типа:</p><pre>gzip -dc /sw/src/dpkg-1.10.9.tar.gz | /sw/bin/tar -xf - 
 ### execution of gzip failed, exit code 139</pre><p>или</p><pre>gzip -dc /sw/src/aquaterm-0.3.0a.tar.gz | /sw/bin/tar -xf -
@@ -801,7 +805,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ил�
                     могут быть устранены следующим образом:</p><pre>sudo /sw/var/lib/fink/prebound/update-package-prebinding.pl -f</pre></div>
         </a>
         <a name="usage-fink.pathsetup-keeps-running">
-            <div class="question"><p><b>Q5.26: Когда я открываю окно Terminal, получаю сообщение "Your
+            <div class="question"><p><b>Q5.27: Когда я открываю окно Terminal, получаю сообщение "Your
                     environment seems to be correctly set up for Fink already.",
                     и сеанс завершается.</b></p></div>
             <div class="answer"><p><b>A:</b> Дело в том, что каким-то образом программе OSX Terminal поступило указание
@@ -811,7 +815,7 @@ Failed: can't create package base-files_1.9.0-1_darwin-powerpc.deb</pre><p>ил�
                     файл при помощи текстового редактора и убрать ссылку на <tt style="white-space: nowrap;">/sw/bin/pathsetup.command</tt>.</p></div>
         </a>
         <a name="usage-fink.ext-drive">
-            <div class="question"><p><b>Q5.27: Мой Fink инсталлирован отдельно от главного сегмента и я не могу
+            <div class="question"><p><b>Q5.28: Мой Fink инсталлирован отдельно от главного сегмента и я не могу
                     обновить пакет fink на основе исходного кода. Появляются сообщения об ошибках
                     с упоминанием <q>chowname</q>.</b></p></div>
             <div class="answer"><p><b>A:</b> Если сообщение об ошибке выглядит так:</p><pre>This first test is designed to die, so please ignore the error
@@ -829,13 +833,13 @@ Failed test (./Command/chowname.t at line 27)
                     где Fink инсталлирован, и отменить выбор "Ignore ownership".</p></div>
         </a>
         <a name="usage-fink.mirror-gnu">
-            <div class="question"><p><b>Q5.28: Fink не хочет обновлять мои пакеты, т.к. утверждает, что
+            <div class="question"><p><b>Q5.29: Fink не хочет обновлять мои пакеты, т.к. утверждает, что
                     не может найти зеркало 'gnu'.</b></p></div>
             <div class="answer"><p><b>A:</b> Если вы получили сообщение об ошибке, которое оканчивается на </p><pre>Failed: No mirror site list file found for mirror 'gnu'.</pre><p>то наиболее вероятно вам надо обновить пакет
                     <tt style="white-space: nowrap;">fink-mirrors</tt> , н-р через:</p><pre>fink install fink-mirrors</pre></div>
         </a>
         <a name="usage-fink.cant-move-fink">
-            <div class="question"><p><b>Q5.29: Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</b></p></div>
+            <div class="question"><p><b>Q5.30: Не могу обновить Fink, т.к. он не может убрать  /sw/fink..</b></p></div>
             <div class="answer"><p><b>A:</b> Эта ошибка:</p><pre>Failed: Can't move "/sw/fink" out of the way.</pre><p>обычно обусловлена, хотя и утверждает иное, ошибками
                     разрешений в одном из временных каталогов, создаваемых
                     в процессе автообновления - <tt style="white-space: nowrap;">selfupdate</tt>. Удалите</p><pre>sudo rm -rf /sw/fink.tmp /sw/fink.old</pre></div>
@@ -843,7 +847,7 @@ Failed test (./Command/chowname.t at line 27)
         
     
     <a name="usage-fink.fc-cache">
-      <div class="question"><p><b>Q5.30: I get a message that says "No fonts found".</b></p></div>
+      <div class="question"><p><b>Q5.31: I get a message that says "No fonts found".</b></p></div>
       <div class="answer"><p><b>A:</b> If you see the following (so far only seen on OS 10.4):</p><pre>No fonts found; this probably means that the fontconfig
 library is not correctly configured. You may need to
 edit the fonts.conf configuration file. More information
@@ -851,13 +855,13 @@ about fontconfig can be found in the fontconfig(3) manual
 page and on http://fontconfig.org.</pre><p>then you can fix it by running</p><pre>sudo fc-cache</pre></div>
     </a>
     <a name="usage-fink.non-admin-installer">
-      <div class="question"><p><b>Q5.31:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
+      <div class="question"><p><b>Q5.32:  I can't install Fink via the Installer package, because I get "volume doesn't support symlinks" errors.</b></p></div>
       <div class="answer"><p><b>A:</b> This message commonly means that you've tried to run the Fink installer as user who doesn't have administrative privileges.  Make sure to log in at the login screen as such a user or switch to such a user in the Finder (i.e. fast user switching) before starting the Fink installer.</p><p>If you're having trouble even when using an admin account, then it's likely a problem with the permissions on your top-level directory.  Use Apple's Disk Utility (from the Utilities sub-folder in your Applications folder), select the hard drive in question, choose the <b>First Aid</b> tab, and press <b>Repair Disk Permissions</b>.  If that doesn't work, then you may need to set your permissions manually via:</p><pre>
 sudo chmod 1775 /	  
 	</pre></div>
     </a>
     <a name="usage-fink.wrong-arch">
-      <div class="question"><p><b>Q5.32: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
+      <div class="question"><p><b>Q5.33: I can't update Fink, because <q>package architecture (darwin-i386) does not match system (darwin-powerpc).</q>
 </b></p></div>
       <div class="answer"><p><b>A:</b> This error occurs if you use a PowerPC installer package on an Intel machine.  You'll need to flush your Fink installation, e.g.:</p><pre>sudo rm -rf /sw</pre><p>and then download the disk image for Intel machines from <a href="/download/index.php">the downloads page</a>.</p></div>
     </a>
@@ -971,7 +975,14 @@ Failed: installing foo-0.1.2-3 failed</pre><p>надо искать <tt style="w
                     надо проверить, есть ли у вас библиотеки в
                     <tt style="white-space: nowrap;">/usr/local/lib</tt> или заголовки в
                     /usr/local/include. Если да, надо попытаться переименовать
-                    <tt style="white-space: nowrap;">/usr/local</tt> во что-либо другое, н-р:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>сделать построение и затем поместить <tt style="white-space: nowrap;">/usr/local</tt> обратно:</p><pre>sudo mv /usr/local.moved /usr/local</pre></div>
+                    <tt style="white-space: nowrap;">/usr/local</tt> во что-либо другое, н-р:</p><pre>sudo mv /usr/local /usr/local.moved</pre><p>сделать построение и затем поместить <tt style="white-space: nowrap;">/usr/local</tt> обратно:</p><pre>sudo mv /usr/local.moved /usr/local</pre><p>Starting with macOS 10.14, it's sometimes not possible to rename <tt style="white-space: nowrap;">/usr/local</tt>. If you get an error when renaming <tt style="white-space: nowrap;">/usr/local</tt> directly, then rename the subdirectories inside it instead:</p><pre>
+				sudo mv /usr/local/include /usr/local/include.moved
+				sudo mv /usr/local/lib /usr/local/lib.moved
+				</pre><p>do your build, and then you can put <tt style="white-space: nowrap;">/usr/local/include</tt> and <tt style="white-space: nowrap;">/usr/local/lib</tt>
+				back:</p><pre>
+				sudo mv /usr/local/include.moved /usr/local/include
+				sudo mv /usr/local/lib.moved /usr/local/lib
+				</pre></div>
         </a>
         <a name="comp-general.toc-out-of-date">
             <div class="question"><p><b>Q6.9: Когда я пытаюсь построить пакет, получаю сообщение, что содержание ("table
@@ -1382,15 +1393,15 @@ export CXXFLAGS=$CFLAGS
 export CPPFLAGS=$CXXFLAGS 
 export ACLOCAL_FLAGS="-I /sw/share/aclocal"
 export PKG_CONFIG_PATH="/sw/lib/pkgconfig"
-export PATH=/sw/var/lib/fink/path-prefix-10.6:$PATH
-export MACOSX_DEPLOYMENT_TARGET=10.5</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
+export PATH=/sw/var/lib/fink/path-prefix-clang:$PATH
+export MACOSX_DEPLOYMENT_TARGET=10.9</pre><p>-tcsh-</p><pre>setenv CFLAGS -I/sw/include 
 setenv LDFLAGS -L/sw/lib 
 setenv CXXFLAGS $CFLAGS 
 setenv CPPFLAGS $CXXFLAGS 
 setenv ACLOCAL_FLAGS "-I /sw/share/aclocal"
 setenv PKG_CONFIG_PATH "/sw/lib/pkgconfig"
-setenv PATH /sw/var/lib/fink/path-prefix-10.6:$PATH
-setenv MACOSX_DEPLOYMENT_TARGET 10.5</pre><p>(assuming that the build system is running OS 10.5 or later)</p><p>It is often easiest just to add these to your startup files (e.g.
+setenv PATH /sw/var/lib/fink/path-prefix-clang:$PATH
+setenv MACOSX_DEPLOYMENT_TARGET 10.9</pre><p>(assuming that the build system is running OS 10.9 or later)</p><p>It is often easiest just to add these to your startup files (e.g.
         <tt style="white-space: nowrap;">.cshrc</tt> | <tt style="white-space: nowrap;">.profile</tt>) so they
         are set automatically. If a package does not use these variables, you
         may need to add the "-I/sw/include" (for headers) and "-L/sw/lib" (for
@@ -1727,9 +1738,9 @@ fink selfupdate; fink index</pre><p>(the first line may give you warnings about 
     </a>
     
     <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2015 The Fink Project.
+Copyright (c) 2001-2020 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: faq.ru.xml,v 1.17 2012/11/11 15:20:14 gecko2 Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: faq.ru.xml,v 1.19 2020/05/31 13:43:40 nieder Exp $</i></p></body></html>

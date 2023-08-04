@@ -1,12 +1,12 @@
 <?php
 /* $Id: header.inc,v 1.34 2014/10/27 21:35:38 thesin Exp $ */
 
-$linkroot  = "http://www.finkproject.org/";
-$localroot = "http://pdb.finkproject.org/";
+$linkroot  = "https://www.finkproject.org/";
+$localroot = "https://pdb.finkproject.org/";
 $pdbroot   = $localroot . "pdb/";
 
 $section   = 'packages';
-$navloc = "http://pdb.finkproject.org";
+$navloc = "https://pdb.finkproject.org";
 $disabled = false;
 
 $server = $_SERVER['SERVER_NAME'];
@@ -14,7 +14,7 @@ $uri = $_SERVER['REQUEST_URI'];
 
 if ($server == "fink.sourceforge.net") { 
   header("HTTP/1.1: 301 Moved Permanently");
-  header("Location: http://pdb.finkproject.org$uri");
+  header("Location: https://pdb.finkproject.org$uri");
   exit();
 }
 

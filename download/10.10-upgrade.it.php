@@ -1,7 +1,7 @@
 <?php
 $title = "Upgrade Instructions for Mac OS X 10.10";
-$cvs_author = '$Author: alexkhansen $';
-$cvs_date = '$Date: 2014/11/30 18:43:46 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2020/03/28 15:33:33 $';
 
 include "header.inc";
 ?>
@@ -19,7 +19,7 @@ include "header.inc";
 	<li>
 		Install Xcode 6.1 if you haven't already, or at least its Command Line Tools
 		for Yosemite.
-		If already have Xcode 6.1, you will still need to reinstall the Command Line Tools,
+		If you already have Xcode 6.1, you will still need to reinstall the Command Line Tools,
 		even if you had those installed under Mavericks already.
 	</li>
 	<li>

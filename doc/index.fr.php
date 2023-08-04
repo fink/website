@@ -1,14 +1,14 @@
 <?php
 $title = "Documentation";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:13';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>Fink - Documentation</h1>
-<!--Generated from $Fink: doc.fr.xml,v 1.20 2012/11/11 15:20:13 gecko2 Exp $-->
+<!--Generated from $Fink: doc.fr.xml,v 1.21 2019/01/19 10:11:12 nieder Exp $-->
 <p>Voici un ensemble de documents écrits pour Fink. Certains de ces documents peuvent également être utiles aux personnes qui ne se servent pas de Fink sous Mac OS X ou Darwin, mais souhaitent apprendre à porter des logiciels Unix sur ces systèmes.</p>
 <h2><a name="userdoc">Documentation utilisateur</a></h2>
 
@@ -24,7 +24,7 @@ couvre des sujets plus complexes que ceux abordés dans le Guide de l'utilisateu
 <li><a href="install/index.php">Installation et Mise à jour</a> - comment installer Fink et le mettre à jour lors d'une nouvelle version</li>
 <li><a href="usage/index.php">Utilisation</a> - comment utiliser Fink et les logiciels installés</li>
 <li><a href="readme.php">Fink ReadMe</a> - le fichier ReadMe de la distribution source</li>
-<li><a href="cvsaccess/index.php">Accès CVS</a> - comment accéder au serveur CVS de Fink pour récupérer les paquets source les plus récents entre deux versions</li>
+<li><a href="gitaccess/index.php">Accès Git</a> - comment accéder au serveur Git de Fink pour récupérer les paquets source les plus récents entre deux versions</li>
 </ul>
 <h2><a name="developerdoc">Documentation développeur</a></h2>
 <ul>

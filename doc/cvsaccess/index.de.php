@@ -1,14 +1,14 @@
 <?php
 $title = "Fink CVS Zugang";
-$cvs_author = 'Author: MiSchi';
-$cvs_date = 'Date: 2012/11/11 15:20:13';
+$cvs_author = 'Author: k-m_schindler';
+$cvs_date = 'Date: 2015/02/19 15:21:03';
 $metatags = '';
 
 
 include_once "header.inc";
 ?>
 <h1>CVS Zugang für Fink aufsetzen</h1>
-<!--Generated from $Fink: cvs.de.xml,v 1.7 2012/11/11 15:20:13 MiSchi Exp $-->
+<!--Generated from $Fink: cvs.de.xml,v 1.1 2015/02/19 15:21:03 k-m_schindler Exp $-->
 <p>
 Fink wird über CVS entwickelt. Dies bedeutet, dass sie zwischen den
 Releases aktuell bleiben und die jeweils neuesten Sachen bekommen können.

@@ -1,11 +1,10 @@
 <?php
 $title = "邮件列表";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:15:12 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2019/01/27 23:10:05 $';
 
 include "header.inc";
 ?>
-
 
 <h1>邮件列表</h1>
 
@@ -23,33 +22,32 @@ include "header.inc";
 </p>
 <ul>
 <li><p><a href="fink-announce.php">fink-announce</a>
-(<a href="http://news.gmane.org/gmane.os.apple.fink.announce">旧帖</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.announce">NNTP</a>)<br>
+(<a href="https://sourceforge.net/p/fink/mailman/fink-announce">旧帖</a>)<br>
 新 Fink 发布版本的通知。(低流量)</p></li>
-<li><p><a href="fink-i18n.php">fink-i18n</a> (<a href="http://news.gmane.org/gmane.os.apple.fink.i18n">旧贴</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.i18n">NNTP</a>)<br>
+<li><p><a href="fink-i18n.php">fink-i18n</a> (<a href="https://sourceforge.net/p/fink/mailman/fink-i18n">旧贴</a>, NNTP)<br>
 关于 Fink 网站翻译的有关问题的讨论和支持。</p></li>
 <li><p><a href="fink-beginners.php">fink-beginners</a>
-(<a href="http://news.gmane.org/gmane.os.apple.fink.beginners">旧贴</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.beginners">NNTP</a>)<br>
+(<a href="https://sourceforge.net/p/fink/mailman/fink-beginners">旧贴</a>, NNTP)<br>
 针对 Fink 新用户的讨论和支持。</p></li>
 <li><p><a href="fink-users.php">fink-users</a>
-(<a href="http://news.gmane.org/gmane.os.apple.fink.general">旧贴</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.general">NNTP</a>)<br>
+(<a href="https://sourceforge.net/p/fink/mailman/fink-users">旧贴</a>, NNTP)<br>
 针对 Fink 熟练用户的讨论和支持。</p></li>
 <li><p><a href="fink-devel.php">fink-devel</a>
-(<a href="http://news.gmane.org/gmane.os.apple.fink.devel">旧贴</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.devel">NNTP</a>)<br>
+(<a href="https://sourceforge.net/p/fink/mailman/fink-devel">旧贴</a>, NNTP)<br>
 针对 Fink 软件包的维护者和开发者的讨论列表。</p></li>
 <li><p><a href="fink-core.php">fink-core</a>
-(<a href="http://news.gmane.org/gmane.os.apple.fink.core">旧贴</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.core">NNTP</a>)<br>
+(<a href="https://sourceforge.net/p/fink/mailman/fink-core">旧贴</a>, NNTP)<br>
 关于 Fink 基本软件包的讨论。</p></li>
 <li><p><a href="fink-gnome-core.php">fink-gnome-core</a>
-(<a href="http://news.gmane.org/gmane.os.apple.fink.gnome">旧贴</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.gnome">NNTP</a>)<br>
+(<a href="https://sourceforge.net/p/fink/mailman/fink-gnome-core">旧贴</a>, NNTP)<br>
 关于 Fink GNOME 软件包的讨论列表。</p></li>
 <li><p><a href="fink-commits.php">fink-commits</a>
-(<a href="http://news.gmane.org/gmane.os.apple.fink.cvs">旧贴</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.cvs">NNTP</a>)<br>
+(<a href="https://sourceforge.net/p/fink/mailman/fink-commits">旧贴</a>, NNTP)<br>
 自动生成的 cvs 提交情况报告的发布列表。</p></li>
 <li><p><a href="fink-tracker.php">fink-tracker</a>
-(<a href="http://news.gmane.org/gmane.os.apple.fink.tracker">旧贴</a>, <a href="nntp://news.gmane.org/gmane.os.apple.fink.tracker">NNTP</a>)<br>
+(<a href="https://sourceforge.net/p/fink/mailman/fink-tracker">旧贴</a>, NNTP)<br>
 Bug 报告和提交软件包情况的发布列表。</p></li>
 </ul>
-
 
 <?php
 include "footer.inc";

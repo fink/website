@@ -1,7 +1,7 @@
 <?php
 $title = "Guia do usuário - fink.conf";
-$cvs_author = 'Author: gecko2';
-$cvs_date = 'Date: 2012/11/11 15:20:17';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2019/01/19 10:11:12';
 $metatags = '<link rel="contents" href="index.php?phpLang=pt" title="Guia do usuário Contents"><link rel="next" href="usage.php?phpLang=pt" title="Usando a ferramenta fink a partir da linha de comando"><link rel="prev" href="upgrade.php?phpLang=pt" title="Atualizando o Fink">';
 
 
@@ -294,7 +294,7 @@ unstable/main   - outros pacotes instáveis
         </li>
 
         <li>
-          <p><b>SelfUpdateMethod:</b> point, rsync ou cvs</p>
+          <p><b>SelfUpdateMethod:</b> point, rsync ou git</p>
 
           <p>O <code>fink</code> pode usar diferentes métodos para atualizar os
           arquivos com informações sobre os pacotes. <b>rsync</b> é a
@@ -303,9 +303,9 @@ unstable/main   - outros pacotes instáveis
           você tenha habilitado. Observe que se você houver alterado ou
           adicionado arquivos nas árvores <code>stable</code> ou
           <code>unstable</code>, usar o rsync irá eliminá-los. Faça um backup
-          primeiro, por exemplo na sua árvore <code>local</code>. <b>cvs</b>
-          irá efetuar o download do repositório do Fink usando acesso CVS
-          anônimo ou :ext:. Esta configuração tem a desvantagem de que o CVS
+          primeiro, por exemplo na sua árvore <code>local</code>. <b>git</b>
+          irá efetuar o download do repositório do Fink usando acesso git
+          anônimo ou Github. Esta configuração tem a desvantagem de que o Git
           não pode trocar de espelhos; se o servidor não estiver disponível
           você não conseguirá fazer a atualização. <b>point</b> fará somente
           o download das últimas versões dos pacotes que tenham sido liberadas

@@ -1,7 +1,7 @@
 <?php
 $title = "Paket erstellen - Referenz";
-$cvs_author = 'Author: k-m_schindler';
-$cvs_date = 'Date: 2015/03/10 22:52:23';
+$cvs_author = 'Author: nieder';
+$cvs_date = 'Date: 2023/01/22 6:40:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Paket erstellen Contents"><link rel="prev" href="compilers.php?phpLang=de" title="Compiler">';
 
 
@@ -182,17 +182,23 @@ Derzeit sind die gültigen Distributionen
 <code>10.5</code>,
 <code>10.6</code>,
 <code>10.7</code>,
-<code>10.8</code>
-und <code>10.9</code>.
-Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
+<code>10.8</code>,
+<code>10.9</code>,
+<code>10.10</code>,
+<code>10.11</code>,
+<code>10.12</code>,
+<code>10.13</code>,
+<code>10.14</code>,
+<code>10.14.5</code>,
+and <code>10.15</code>
+. Ist dieses Feld vorhanden und auch nach Auswertungen von Bedingungen nicht leer,
 ignoriert Fink die Paketbeschreibung, wenn die lokal vorhandene Distribution
 nicht aufgelistet ist. Ist das Feld weg gelassen oder der Wert leer, werden
 alle Distributionen akzeptiert.
 (Eingeführt in Fink 0.26.0.)
 </p>
 <p>
-Seit den Fink-Distributionen für <code>10.7</code>, <code>10.8</code> und
-<code>10.9</code> teilen sie sich ein gemeinsames Set an finkinfo-Dateien. Eine
+Seit den Fink-Distributionen für <code>10.9</code> durch <code>10.14.5</code> teilen sie sich ein gemeinsames Set an finkinfo-Dateien. Eine
 übliche Verwendung des Felds ist, die Distributionen auszuklammern, für die
 das Paket nicht erstellt werden kann.
 </p>
@@ -214,10 +220,11 @@ für alle Distributionen.
 Da die Python-Version 2.5 für die Distributionen 10.7+ nicht zur Verfügung steht
 und die Perl-Versionen von Distrivution zu Distribution variieren, wird diese
 Feld in diesen Paketen häufig vor. Als Referenz beschreiben wir hier die
-Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.9
+Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 13.0
 (<b>Fett</b>-gedruckte Systeme zeigen die Version von Sytem-Perl an):
 </p>
-<pre>    perl 5.6.0:  10.3
+<pre>
+    perl 5.6.0:  10.3
     perl 5.8.0:  10.3
     perl 5.8.1:  <b>10.3</b>, 10.4
     perl 5.8.4:  10.3, 10.4
@@ -226,8 +233,13 @@ Verfügbarkeit verschiedener Perl-Versionen für die Distributionen 10.3 bis 10.
     perl 5.10.0:             10.5, <b>10.6</b>
     perl 5.12.3:                         <b>10.7</b>, 10.8, 10.9
     perl 5.12.4:                         10.7, <b>10.8</b>, 10.9
-    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10
-    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b></pre>
+    perl 5.16.2:                         10.7, 10.8, <b>10.9</b>, 10.10, 10.11, 10.12, 10.13
+    perl 5.18.2:                         10.7, 10.8, 10.9, <b>10.10</b>, <b>10.11</b>, <b>10.12</b>, <b>10.13</b>, <b>10.14</b>, 10.14.5, 10.15, 11.0, 11.3, 12.0, 13.0
+    perl 5.18.4:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, <b>10.14.5</b>, <b>10.15</b>, 11.0, 11.3, 12.0, 13.0
+    perl 5.28.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, <b>11.0</b>, 11.3, 12.0, 13.0
+    perl 5.30.2:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, <b>11.3</b>, 12.0, 13.0
+    perl 5.30.3:                                     10.9, 10.10, 10.11, 10.12, 10.13, 10.14, 10.14.5, 10.15, 11.0, 11.3, <b>12.0</b>, <b>13.0</b>
+</pre>
 <p>
 Eine Möglichkeit, alle unterstützten Varianten in einer einzigen finkinfo-Datei
 einzuschließen, ist diese:
@@ -805,6 +817,31 @@ Dieses Feld hat denselben Zweck wie das Feld <code>Source-MD5</code>, mit dem
 Unterschied, dass es für die MD5 Checksum der Tarballs der entsprechenden Felder
 <code>Source<b>N</b></code> ist.
 </p>
+</td></tr><tr valign="top"><td>Source-Checksum</td><td>
+<p>
+Alternative method to list the checksum for a source file. This field
+takes a hash type, followed by the actual checksum. For example:
+</p>
+<pre>Source-Checksum: SHA256(5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56)</pre>
+<p>
+Current valid checksums are <code>MD5</code>, <code>SHA1</code>, and
+<code>SHA256</code>. The <code>shasum</code> tool can be used to
+calculate SHA checksums:</p>
+<pre>$ shasum -a 256 /opt/sw/src/libexif-0.6.22.tar.xz 
+5048f1c8fc509cc636c2f97f4b40c293338b6041a5652082d5ee2cf54b530c56  /opt/sw/src/libexif-0.6.22.tar.xz
+</pre>
+<p>
+The <code>Source-Checksum</code> field should only be used once per
+.info file. If both the <code>Source-MD5</code> and
+<code>Source-Checksum</code> fields are present,
+<code>Source-Checksum</code> takes precedence.
+</p>
+</td></tr><tr valign="top"><td>Source<b>N</b>-Checksum</td><td>
+<p>
+This is just the same as the <code>Source-Checksum</code> field, except that it
+is used to specify the checksum of the tarball specified by the
+corresponding <code>Source<b>N</b></code> field.
+</p>
 </td></tr><tr valign="top"><td>TarFilesRename</td><td>
 <p>
 <b>Eingeführt in Fink 0.10.0.</b>
@@ -1226,8 +1263,8 @@ Alle anderen Felder sind optional. Die folgenden Felder sind innerhalb
   angehängt wird.</li>
 <li><code>TestSource</code>: Extra Quellen, die für die Test-Suites benötigt
   werden. Alle verwandten Felder werden auch unterstützt. Man muss also auch
-  <code>TestSource-MD5</code> deklarieren. Die Felder <code>TestSourceN</code>
-  und die entsprechenden Felder <code>TestSourceN-MD5</code>,
+  <code>TestSource-MD5</code> oder <code>TestSource-Checksum</code> deklarieren. Die Felder <code>TestSourceN</code>
+  und die entsprechenden Felder <code>TestSourceN-MD5</code>, <code>TestSourceN-Checksum</code>, 
   <code>TestTarFilesRename</code> usw. können ebenfalls vorhanden sein.</li>
 <li><code>TestSuiteSize</code>: Beschreibt ungefähr wie lange das Ausführen der
   Test-Suites dauern wird. Erlaubte Werte sind <code>small</code>,
