@@ -68,7 +68,7 @@ include_once "header.inc";
 <h2><a name="uptodate">Mantendo-se informado</a></h2>
   <p>O site do projeto está localizado em <a href="/">/</a>.</p>
 
-  <p>Para ser informado de novos lançamentos, vá à página <a href="/lists/fink-announce.php">http://www.finkproject.orgt/lists/fink-announce.php</a>
+  <p>Para ser informado de novos lançamentos, vá à página <a href="/lists/fink-announce.php">https://www.finkproject.org/lists/fink-announce.php</a>
   e assine a lista de discussão fink-announce. Esta lista é moderada e possui
   baixo tráfego.</p>
 
