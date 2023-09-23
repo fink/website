@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE news SYSTEM "finknews.dtd">
 <news lang="es">
- <cvsid>$Id: news.es.xml,v 1.86 2022/04/09 18:46:00 nieder Exp $</cvsid>
+ <cvsid>$Id: news.es.xml,v 1.87 2023/09/23 3:21:38 nieder Exp $</cvsid>
+<newsitem>
+ <date>2023-09-23</date>
+ <headline>Support for macOS 11 through macOS 13</headline>
+ <body>
+  <p>The main source branch for Fink development supports macOS 11 through macOS 13, under both intel (x86_64) and Apple's M1 and M2 (arm64) CPUs.</p>
+  <p>Final work on a full release is ongoing. As there isn't a full release tarball yet, you need to download and install the code from git with these commands in Terminal.app:</p>
+  <codeblock>
+  mkdir -p ~/src
+  cd src
+  git clone https://github.com/fink/fink fink-upstream
+  cd fink-upstream
+  </codeblock>
+  <p>If updating an existing Fink install, run <code>./inject.pl</code> from the Terminal prompt. If doing a fresh install, run <code>./bootstrap</code>.</p>
+ </body>
+</newsitem>
 <newsitem>
  <date>2022-02-19</date>
  <headline>fink-0.45.6 released</headline>
