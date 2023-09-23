@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date   = '$Date: 2019/02/25 22:41:00 $';
+$cvs_date   = '$Date: 2023/09/23 04:22:15 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -54,7 +54,7 @@ include "fink_version.inc";
 ?>
 
 <p>
-Fink currently supports macOS 10.15 (Catalina), macOS 10.14 (Mojave), macOS 10.13 (High Sierra), 
+Fink currently fully supports macOS 10.15 (Catalina), macOS 10.14 (Mojave), macOS 10.13 (High Sierra), 
 macOS 10.12 (Sierra), OS X 10.11 (El Capitan), OS X 10.10 (Yosemite), OS X 10.9 (Mavericks), 
 and continues to run on older versions of OS X, although
 official updates are no longer available for the older versions.
@@ -63,13 +63,27 @@ release page</a>.
 </p>
 <p>Xcode must be installed before Fink.</p>  
 <p>
+<strong>macOS 11 through macOS 13 Support:</strong> 
+Work in progress support is available for macOS 11 through macOS 13.
+Users must first install the following version of Xcode for their system version (newest available is generally preferred):</p>
+<ul>
+<li>macOS 11: Xcode 13 - Xcode 13.2.1</li>
+<li>macOS 12: Xcode 13.3 - Xcode Xcode 14.2</li>
+<li>macOS 13: Xcode 14.3 - Xcode 15.0</li>
+</ul> 
+<p>Xcode is available via a free download from the AppStore, 
+or must at least install the Command Line Tools (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.8.5 or later from 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
+<p>
 <strong>10.15 Support:</strong> 
 10.15 users must install Xcode version 10.3 or later 
 (via a free download from the AppStore, 
 or must at least install the Command Line Tools for 
 Xcode 10.3 (installable via <i>xcode-select --install</i>, 
 or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
-<p>If you need X11 you should install Xquartz-2.7.11 or later from 
+<p>If you need X11 you should install Xquartz-2.8.5 or later from 
 <a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>10.13 and 10.14 Support:</strong> 

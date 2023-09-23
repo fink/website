@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date   = '$Date: 2019/02/25 22:41:00 $';
+$cvs_date   = '$Date: 2023/09/23 04:22:15 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -62,6 +62,20 @@ instalación están disponibles desde nuestra <a href="download/srcdist.php">pá
 de liberación del código fuente</a>.
 </p>
 <p>XCode necesita ser instalado antes de instalar Fink.</p>
+<p>
+<strong>macOS 11 through macOS 13 Support:</strong> 
+Work in progress support is available for macOS 11 through macOS 13.
+Users must first install the following version of Xcode for their system version (newest available is generally preferred):</p>
+<ul>
+<li>macOS 11: Xcode 13 - Xcode 13.2.1</li>
+<li>macOS 12: Xcode 13.3 - Xcode Xcode 14.2</li>
+<li>macOS 13: Xcode 14.3 - Xcode 15.0</li>
+</ul> 
+<p>Xcode is available via a free download from the AppStore, 
+or must at least install the Command Line Tools (installable via <i>xcode-select --install</i>, 
+or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
+<p>If you need X11 you should install Xquartz-2.8.5 or later from 
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>Soporte para 10.15:</strong> 
 Usuarios en 10.15 deberián instalar Xcode 10.3 (a través de descarga 
