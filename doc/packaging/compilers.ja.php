@@ -1,7 +1,7 @@
 <?php
 $title = "パッケージ作成 - コンパイラ";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/08/04 4:54:31';
+$cvs_date = 'Date: 2024/11/12 10:05:32';
 $metatags = '<link rel="contents" href="index.php?phpLang=ja" title="パッケージ作成 Contents"><link rel="next" href="reference.php?phpLang=ja" title="リファレンスマニュアル"><link rel="prev" href="fslayout.php?phpLang=ja" title="ファイルシステムのレイアウト">';
 
 
