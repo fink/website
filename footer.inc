@@ -4,7 +4,7 @@
 </div>
 <div id="footer-left">
 		<a href="<?php print $linkroot ?>legal.php" style="text-decoration:none ; color:black ;">
-			Copyright &copy; 2001-2020<br>The&nbsp;Fink&nbsp;Project
+			Copyright &copy; 2001-2025<br>The&nbsp;Fink&nbsp;Project
 	 	</a>
 </div>
 <div id="footer">

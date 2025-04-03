@@ -1,7 +1,7 @@
 <?php
 $title = "Legal Stuff";
-$cvs_author = '$Author: thesin $';
-$cvs_date = '$Date: 2014/10/23 22:09:50 $';
+$cvs_author = '$Author: nieder $';
+$cvs_date = '$Date: 2025/04/03 05:50:15 $';
 
 include "header.inc";
 ?>
@@ -11,7 +11,7 @@ include "header.inc";
 
 <p class="legal">
 The material on this website is Copyright &copy; 2001 Christoph Pfisterer,
-Copyright &copy; 2001-2010 The Fink Project, unless noted otherwise.
+Copyright &copy; 2001-2025 The Fink Project, unless noted otherwise.
 If you want to reuse material from this website,
 <a href="mailto:fink-core@lists.sourceforge.net">talk to us</a> first.
 </p>
