@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date   = '$Date: 2023/09/23 04:22:15 $';
+$cvs_date   = '$Date: 2025/03/03 04:43:12 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, eine Distribution von Unix Software für den Mac OS X und Darwin">
@@ -99,7 +99,7 @@ Alternativ können auch die Command Line Tools aus
 Xcode 6.0 für Sierra verwendet werden (mittels <i>xcode-select --install</i> installieren,
 oder von <a href="http://developer.apple.com">Apple</a>) herunter laden.</p>
 <p>Wird X11 benötigt, sollte Xquartz-2.7.7 oder später von
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a> installiert werden.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a> installiert werden.</p>
 <p>
 <strong>Unterstützung von 10.11:</strong>
 Nutzer von 10.11 müssen Xcode, Version 7.0 oder später installieren
@@ -108,7 +108,7 @@ Alternativ können auch die Command Line Tools aus
 Xcode 7.0 für El Capitan verwendet werden (mittels <i>xcode-select --install</i> installieren,
 oder von <a href="http://developer.apple.com">Apple</a>) herunter laden.</p>
 <p>Wird X11 benötigt, sollte Xquartz-2.7.7 oder später von
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a> installiert werden.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a> installiert werden.</p>
 <p>
 <strong>10.10 Support:</strong>
 Nutzer von 10.10 müssen Xcode, Version 6.0 oder später installieren
@@ -117,7 +117,7 @@ Alternativ können auch die Command Line Tools aus
 Xcode 6.0 für Yosemite verwendet werden (mittels <i>xcode-select --install</i> installieren,
 oder von <a href="http://developer.apple.com">Apple</a>) herunter laden.</p>
 <p>Wird X11 benötigt, sollte Xquartz-2.7.7 oder später von
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a> installiert werden.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a> installiert werden.</p>
 <p>
 <strong>Unterstützung von 10.9:</strong>
 Nutzer von 10.9 müssen Xcode, Version 5.0.1 oder später installieren 
@@ -126,7 +126,7 @@ Alternativ können auch die Command Line Tools aus
 Xcode 5.0 für Mavericks verwendet werden (mittels <i>xcode-select --install</i> installieren,
 oder von <a href="http://developer.apple.com">Apple</a>) herunter laden.</p>
 <p>Wird X11 benötigt, sollte Xquartz-2.7.4 oder später von
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a> installiert werden.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a> installiert werden.</p>
 <p>
 <strong>Unterstützung von 10.8:</strong> 
 Nutzer von 10.8 müssen Xcode, Version 4.4 oder später installieren 
@@ -139,7 +139,7 @@ frühere Version als 4.3 von Xcode installiert, muss diese mittels
 Die Version des aktuell installierten Xcode erhält man mittels
 <i>xcodebuild -version</i> .</p>
 <p>Wird X11 benötigt, sollte Xquartz-2.7.2 oder später von 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a> installiert werden.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a> installiert werden.</p>
 <p>
 <strong>Unterstützung von 10.7:</strong> 
 Nutzer von 10.7 müssen Xcode, Version 4.1 oder später installieren 

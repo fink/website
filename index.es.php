@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date   = '$Date: 2023/09/23 04:22:15 $';
+$cvs_date   = '$Date: 2025/03/03 04:43:12 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, una distribución de software de Unix para Mac OS X y Darwin">
@@ -102,7 +102,7 @@ instalar las herramientas de la linea de comandos para "Xcode 6.0 for Yosemite"
 (instalable a través de <i>xcode-select --install</i> o 
 descargable desde <a href="http://developer.apple.com">Apple</a>).</p>
 <p>Si necesita X11, debe de instalar Xquartz-2.7.7 o posterior desde 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>Soporte para 10.9:</strong> 
 Usuarios en 10.9 deberián instalar Xcode 5.0.1 (a través de descarga 
@@ -111,7 +111,7 @@ instalar las herramientas de la linea de comandos para "Xcode 5.0 for Mavericks"
 (instalable a través de <i>xcode-select --install</i> o 
 descargable desde <a href="http://developer.apple.com">Apple</a>).</p>
 <p>Si necesita X11, debe de instalar Xquartz-2.7.4 o posterior desde 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>Soporte para 10.8:</strong> 
 Usuarios en 10.8 deberián instalar Xcode 4.4 o posterior (a través de descarga 
@@ -123,7 +123,7 @@ una versión de Xcode más antigua que 4.4, se necesita <b>desinstalar</b> prime
 usando <i>/Developer/Library/uninstall-devtools</i>.  Puede determinar la versión 
 actual con el comando <i>xcodebuild -version</i> .</p>
 <p>Si necesita X11, debe de instalar Xquartz-2.7.4 o posterior desde 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>Soporte para 10.7:</strong>
 Usuarios en 10.7 deberián instalar Xcode 4.1 o posterior (a través de descarga 

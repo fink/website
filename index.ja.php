@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date   = '$Date: 2023/09/23 04:22:15 $';
+$cvs_date   = '$Date: 2025/03/03 04:43:12 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, a distribution of Unix software for Mac OS X and Darwin">
@@ -109,7 +109,7 @@ or must at least install the Command Line Tools for
 Xcode 6.0 for Sierra (installable via <i>xcode-select --install</i>, 
 or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
 <p>If you need X11 you should install Xquartz-2.7.7 or later from 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>10.11 Support:</strong> 
 10.11 users must install Xcode version 7.0 or later 
@@ -118,7 +118,7 @@ or must at least install the Command Line Tools for
 Xcode 7.0 for El Capitan (installable via <i>xcode-select --install</i>, 
 or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
 <p>If you need X11 you should install Xquartz-2.7.7 or later from 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>10.10 Support:</strong> 
 10.10 users must install Xcode version 6.0 or later 
@@ -127,7 +127,7 @@ or must at least install the Command Line Tools for
 Xcode 6.0 for Yosemite (installable via <i>xcode-select --install</i>, 
 or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
 <p>If you need X11 you should install Xquartz-2.7.7 or later from 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>10.9 サポート:</strong> 
 10.9 ユーザは、Xcode 5.0.1 以降 (AppStore から無料。バージョン 5.0.2 推奨) 
@@ -135,7 +135,7 @@ or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
 (<i>xcode-select --install</i> でインストール可能、または <a href="http://developer.apple.com">Apple</a> からダウンロード可能)
 をインストールする必要があります。</p>
 <p>X11 が必要なら、
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>
+<a href="https://www.xquartz.org/">Xquartz.org</a>
 から Xquartz-2.7.4 以降をインストールしてください。</p>
 <p>
 <strong>10.8 サポート:</strong> 
@@ -151,7 +151,7 @@ Command Line Tools for Xcode 4.4 (<a href="http://connect.apple.com">Apple</a> �
 <i>xcodebuild -version</i>
 でわかります。</p>
 <p>X11 が必要なら、
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>
+<a href="https://www.xquartz.org/">Xquartz.org</a>
 から Xquartz-2.7.0 以降をインストールしてください。</p>
 <p>
 <strong>10.7 サポート:</strong> 

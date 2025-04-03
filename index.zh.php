@@ -1,7 +1,7 @@
 <?php
 $title      = "Home";
 $cvs_author = '$Author: nieder $';
-$cvs_date   = '$Date: 2023/09/23 04:22:15 $';
+$cvs_date   = '$Date: 2025/03/03 04:43:12 $';
 $is_home    = 1;
 
 $metatags = '<meta name="description" content="Fink, 一个 Mac OS X 和 Darwin 上的 Unix 软件发布系统">
@@ -99,7 +99,7 @@ or must at least install the Command Line Tools for
 Xcode 6.0 for Sierra (installable via <i>xcode-select --install</i>, 
 or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
 <p>If you need X11 you should install Xquartz-2.7.7 or later from 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>10.11 Support:</strong> 
 10.11 users must install Xcode version 7.0 or later 
@@ -108,7 +108,7 @@ or must at least install the Command Line Tools for
 Xcode 7.0 for El Capitan (installable via <i>xcode-select --install</i>, 
 or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
 <p>If you need X11 you should install Xquartz-2.7.7 or later from 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>10.10 Support:</strong> 
 10.10 users must install Xcode version 6.0 or later 
@@ -117,7 +117,7 @@ or must at least install the Command Line Tools for
 Xcode 6.0 for Yosemite (installable via <i>xcode-select --install</i>, 
 or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
 <p>If you need X11 you should install Xquartz-2.7.7 or later from 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>10.9 Support:</strong> 
 10.9 users must install Xcode version 5.0.1 or later 
@@ -126,7 +126,7 @@ or must at least install the Command Line Tools for
 Xcode 5.0 for Mavericks (installable via <i>xcode-select --install</i>, 
 or downloadable from  <a href="http://developer.apple.com">Apple</a>).</p>
 <p>If you need X11 you should install Xquartz-2.7.4 or later from 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>10.8 Support:</strong> 
 10.8 users must install Xcode version 4.4 or later 
@@ -140,7 +140,7 @@ to <b>uninstall</b> the old version first by running
 You can determine your current version of Xcode by running 
 <i>xcodebuild -version</i> .</p>
 <p>If you need X11 you should install Xquartz-2.7.2 or later from 
-<a href="http://xquartz.macosforge.org/landing/">macosforge.org</a>.</p>
+<a href="https://www.xquartz.org/">Xquartz.org</a>.</p>
 <p>
 <strong>10.7 Support:</strong> 
 10.7 users must install or update Xcode to version 4.1 or later 

@@ -3,7 +3,7 @@
 <document filename="index" lang="de">
   <title>Running X11 on Darwin and Mac OS X</title>
   <shorttitle>Running X11</shorttitle>
-  <cvsid>$Id: x11.de.xml,v 1.2 2023/08/04 5:08:13 nieder Exp $</cvsid>
+  <cvsid>$Id: x11.de.xml,v 1.3 2025/03/03 4:10:10 nieder Exp $</cvsid>
   <preface>
     <p>
       Diese Dokument beschreibt, wie man X11 auf Apples Mac OS X und Darwin
@@ -78,7 +78,7 @@
       <p>
         Die X11-Distributionen von Apple auf OS 10.5 und 10.6 leiten sich
         von X.org ab, ebenso <link
-        url="http://xquartz.macosforge.org/trac/wiki">XQuartz</link>. Die
+        url="https://www.xquartz.org/">XQuartz</link>. Die
         X11-Distributionen von Apple auf OS 10.7 leitet sich wiederum von
         XQuartz ab.
       </p>
@@ -86,7 +86,7 @@
     <section name="def-xquartx">
       <title>Was ist XQuartz?</title>
       <p>
-        <link url="http://xquartz.macosforge.org/trac/wiki">XQuartz</link>
+        <link url="https://www.xquartz.org/">XQuartz</link>
         ist eine X11-Distributionen für OS 10.5 und neuer, das einige
         Features mehr enthält, als das normale X11 auf 10.5-10.7. Auf
         10.5 ersetzt XQuartz die X11-Distribution des Systems, während auf

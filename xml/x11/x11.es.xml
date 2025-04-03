@@ -3,7 +3,7 @@
 <document filename="index" lang="es">
   <title>Ejecutando X11 en Darwin y Mac OS X</title>
   <shorttitle>Ejecución de X11</shorttitle>
-  <cvsid>$Id: x11.es.xml,v 1.7 2023/08/04 5:08:13 nieder Exp $</cvsid>
+  <cvsid>$Id: x11.es.xml,v 1.8 2025/03/03 4:10:10 nieder Exp $</cvsid>
   <preface>
     <p>
 Este documento trata sobre la ejecución de  X11 / XFree86 / Xtools en los sistemas 
@@ -60,14 +60,24 @@ nombre. Actualmente se ejecuta en muchas plataformas y en muchos sistemas
 operativos incluyend OS/2, Darwin, Mac OS X and Windows.
 </p>
     </section>
-    <section name="def-xtools">
-      <title>¿Qué es Xtools?</title>
-      <p>
-Xtools es un producto de <link url="http://www.tenon.com/">Tenon
-Intersystems</link>.
-Es una versión de X11 para Mac OS X, basada en XFree86.
-</p>
-    </section>
+<section name="def-xorg">
+  <title>¿Qué es X.org?</title>
+  <p>
+<link url ="http://www.x.org/wiki/">X.org</link> es una implementación
+de X11 con código libre (open source) y es la sucesora de XFree86.
+  </p>
+  <p>
+La distribuición de Apple's para X11 en Mac OS X 10.5 y 10.6 provienen de X.org, asi mismo como el proyecto
+ <link url="https://www.xquartz.org/">XQuartz</link>.
+En Mac OS X 10.7, el app X11 de Apple es derivado de XQuartz.</p>
+</section>
+<section name="def-xquartx">
+  <title>¿Qué es XQuartz?</title>
+  <p>
+<link url="https://www.xquartz.org/">
+XQuartz</link> es una versión de X11 para OS 10.5 que contiene características mas modernas que el X11 de Apple para 10.5-10.7. XQuartz suplanta a X11 de Apple en 10.8.
+  </p>
+</section>
     <section name="client-server">
       <title>Cliente y servidor</title>
       <p>
