@@ -1,7 +1,7 @@
 <?php
 $title = "Ejecución de X11 - Intro";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/08/04 5:08:13';
+$cvs_date = 'Date: 2025/03/03 4:10:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=es" title="Ejecución de X11 Contents"><link rel="next" href="history.php?phpLang=es" title="Historia"><link rel="prev" href="index.php?phpLang=es" title="Ejecución de X11 Contents">';
 
 
@@ -54,15 +54,25 @@ nombre. Actualmente se ejecuta en muchas plataformas y en muchos sistemas
 operativos incluyend OS/2, Darwin, Mac OS X and Windows.
 </p>
     
-    <h2><a name="def-xtools">1.5 ¿Qué es Xtools?</a></h2>
-      
-      <p>
-Xtools es un producto de <a href="http://www.tenon.com/">Tenon
-Intersystems</a>.
-Es una versión de X11 para Mac OS X, basada en XFree86.
-</p>
-    
-    <h2><a name="client-server">1.6 Cliente y servidor</a></h2>
+<h2><a name="def-xorg">1.5 ¿Qué es X.org?</a></h2>
+  
+  <p>
+<a href="http://www.x.org/wiki/">X.org</a> es una implementación
+de X11 con código libre (open source) y es la sucesora de XFree86.
+  </p>
+  <p>
+La distribuición de Apple's para X11 en Mac OS X 10.5 y 10.6 provienen de X.org, asi mismo como el proyecto
+ <a href="https://www.xquartz.org/">XQuartz</a>.
+En Mac OS X 10.7, el app X11 de Apple es derivado de XQuartz.</p>
+
+<h2><a name="def-xquartx">1.6 ¿Qué es XQuartz?</a></h2>
+  
+  <p>
+<a href="https://www.xquartz.org/">
+XQuartz</a> es una versión de X11 para OS 10.5 que contiene características mas modernas que el X11 de Apple para 10.5-10.7. XQuartz suplanta a X11 de Apple en 10.8.
+  </p>
+
+    <h2><a name="client-server">1.7 Cliente y servidor</a></h2>
       
       <p>
 X11 tiene una arquitectura cliente-servidor.
@@ -79,7 +89,7 @@ Debe quedar claro que cuando hablamos de "servidor" nos referimos al programa
 servidor de visualización X11, no a la máquina oculta en tu armario.
 </p>
     
-    <h2><a name="rootless">1.7 ¿Qué significa "rootless" (desarraigado)?</a></h2>
+    <h2><a name="rootless">1.8 ¿Qué significa "rootless" (desarraigado)?</a></h2>
       
       <p>
 Un pequeño inciso:
@@ -111,7 +121,7 @@ Como no hay ventana "raíz" (visible), este modo se llama "desarraigado"
 (rootless). Es el modo más cómodo de utilizar X11 en Mac OS X.
 </p>
     
-    <h2><a name="wm">1.8 ¿Qué es un gestor de ventanas (window manager)?</a></h2>
+    <h2><a name="wm">1.9 ¿Qué es un gestor de ventanas (window manager)?</a></h2>
       
       <p>
 En muchos entornos gráficos la apariencia de los marcos de las ventanas (barra de 
@@ -137,7 +147,7 @@ lista actualizada.
 </a>
       </p>
     
-    <h2><a name="desktop">1.9 ¿Qué son Quartz/Aqua, Gnome y KDE?</a></h2>
+    <h2><a name="desktop">1.10 ¿Qué son Quartz/Aqua, Gnome y KDE?</a></h2>
       
       <p>
 Son entornos de escritorio y hay muchos más. Su propósito es aportar marcos de 

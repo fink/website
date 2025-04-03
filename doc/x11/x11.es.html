@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--
-Generated from $Fink: x11.es.xml,v 1.7 2023/08/04 5:08:13 nieder Exp $
+Generated from $Fink: x11.es.xml,v 1.8 2025/03/03 4:10:10 nieder Exp $
 -->
 <title>Fink Documentation - Ejecutando X11 en Darwin y Mac OS X</title></head><body>
 <table width="100%" cellspacing="0">
@@ -27,7 +27,7 @@ Proporciona una introducción y una historia del desarrollo y, a partir de ahí,
 describe el estado actual del arte y las múltiples elecciones disponibles para 
 utilizar X11 con/sin  Fink.
 </p>
-  <h2>Contents</h2><ul><li><a href="#intro"><b>1 Introducción</b></a><ul><li><a href="#intro.def-x11">1.1 ¿Qué es X11?</a></li><li><a href="#intro.def-macosx">1.2 ¿Qué es Mac OS X?</a></li><li><a href="#intro.def-darwin">1.3 ¿Qué es Darwin?</a></li><li><a href="#intro.def-xfree86">1.4 ¿Qué es XFree86?</a></li><li><a href="#intro.def-xtools">1.5 ¿Qué es Xtools?</a></li><li><a href="#intro.client-server">1.6 Cliente y servidor</a></li><li><a href="#intro.rootless">1.7 ¿Qué significa "rootless" (desarraigado)?</a></li><li><a href="#intro.wm">1.8 ¿Qué es un gestor de ventanas (window manager)?</a></li><li><a href="#intro.desktop">1.9 ¿Qué son Quartz/Aqua, Gnome y KDE?</a></li></ul></li><li><a href="#history"><b>2 Historia</b></a><ul><li><a href="#history.early">2.1 Los primeros días de la creación</a></li><li><a href="#history.xonx-forms">2.2 XonX forms</a></li><li><a href="#history.root-or-not">2.3 To root or not to root</a></li></ul></li><li><a href="#inst-xfree86"><b>3 Cómo obtener e instalar XFree86</b></a><ul><li><a href="#inst-xfree86.fink">3.1 Instalación desde Fink</a></li><li><a href="#inst-xfree86.apple-binary">3.2 Binarios de Apple</a></li><li><a href="#inst-xfree86.official-binary">3.3 Binarios oficiales</a></li><li><a href="#inst-xfree86.official-source">3.4 Fuentes oficiales</a></li><li><a href="#inst-xfree86.latest-cvs">3.5 Versión para desarrolladores: lo último de lo último</a></li><li><a href="#inst-xfree86.macgimp">3.6 MacGimp</a></li><li><a href="#inst-xfree86.switching-x11">3.7 Cómo reemplazar X11</a></li><li><a href="#inst-xfree86.fink-summary">3.8 Índice de paquetes Fink</a></li></ul></li><li><a href="#run-xfree86"><b>4 El arranque de XFree86</b></a><ul><li><a href="#run-xfree86.darwin">4.1 Darwin</a></li><li><a href="#run-xfree86.macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></li><li><a href="#run-xfree86.xinitrc">4.3 El fichero .xinitrc</a></li></ul></li><li><a href="#xtools"><b>5 Xtools</b></a><ul><li><a href="#xtools.install">5.1 Instalación de Xtools</a></li><li><a href="#xtools.run">5.2 Ejecución de Xtools</a></li><li><a href="#xtools.opengl">5.3 Notas sobre OpenGL</a></li></ul></li><li><a href="#other"><b>6 Otras posibilidades X11</b></a><ul><li><a href="#other.vnc">6.1 VNC</a></li><li><a href="#other.wiredx">6.2 WiredX</a></li><li><a href="#other.exodus">6.3 eXodus</a></li></ul></li><li><a href="#trouble"><b>7 Resolución de problemas con XFree86</b></a><ul><li><a href="#trouble.immedate-quit">7.1 Cuando lanzo XDarwin, termina o se cuelga inmediatamente.</a></li><li><a href="#trouble.black">7.2 Iconos negros en el panel GNOME panel o en el menú de una aplicación GNOME</a></li><li><a href="#trouble.keyboard">7.3 El teclado no funciona en XFree86</a></li><li><a href="#trouble.delete-key">7.4 La tecla de borrar no funciona</a></li><li><a href="#trouble.locale">7.5 "Warning: locale not supported by C library"</a></li></ul></li><li><a href="#tips"><b>8 Consejos de uso</b></a><ul><li><a href="#tips.terminal-app">8.1 Arrancar aplicaciones X11 desde Terminal.app</a></li><li><a href="#tips.open">8.2 Lanzamiento de aplicaciones Aqua desde un xterm</a></li><li><a href="#tips.copy-n-paste">8.3 Copiar y Pegar</a></li></ul></li></ul><h2><a name="intro">1 Introducción</a></h2>
+  <h2>Contents</h2><ul><li><a href="#intro"><b>1 Introducción</b></a><ul><li><a href="#intro.def-x11">1.1 ¿Qué es X11?</a></li><li><a href="#intro.def-macosx">1.2 ¿Qué es Mac OS X?</a></li><li><a href="#intro.def-darwin">1.3 ¿Qué es Darwin?</a></li><li><a href="#intro.def-xfree86">1.4 ¿Qué es XFree86?</a></li><li><a href="#intro.def-xorg">1.5 ¿Qué es X.org?</a></li><li><a href="#intro.def-xquartx">1.6 ¿Qué es XQuartz?</a></li><li><a href="#intro.client-server">1.7 Cliente y servidor</a></li><li><a href="#intro.rootless">1.8 ¿Qué significa "rootless" (desarraigado)?</a></li><li><a href="#intro.wm">1.9 ¿Qué es un gestor de ventanas (window manager)?</a></li><li><a href="#intro.desktop">1.10 ¿Qué son Quartz/Aqua, Gnome y KDE?</a></li></ul></li><li><a href="#history"><b>2 Historia</b></a><ul><li><a href="#history.early">2.1 Los primeros días de la creación</a></li><li><a href="#history.xonx-forms">2.2 XonX forms</a></li><li><a href="#history.root-or-not">2.3 To root or not to root</a></li></ul></li><li><a href="#inst-xfree86"><b>3 Cómo obtener e instalar XFree86</b></a><ul><li><a href="#inst-xfree86.fink">3.1 Instalación desde Fink</a></li><li><a href="#inst-xfree86.apple-binary">3.2 Binarios de Apple</a></li><li><a href="#inst-xfree86.official-binary">3.3 Binarios oficiales</a></li><li><a href="#inst-xfree86.official-source">3.4 Fuentes oficiales</a></li><li><a href="#inst-xfree86.latest-cvs">3.5 Versión para desarrolladores: lo último de lo último</a></li><li><a href="#inst-xfree86.macgimp">3.6 MacGimp</a></li><li><a href="#inst-xfree86.switching-x11">3.7 Cómo reemplazar X11</a></li><li><a href="#inst-xfree86.fink-summary">3.8 Índice de paquetes Fink</a></li></ul></li><li><a href="#run-xfree86"><b>4 El arranque de XFree86</b></a><ul><li><a href="#run-xfree86.darwin">4.1 Darwin</a></li><li><a href="#run-xfree86.macosx-41">4.2 Mac OS X + XFree86 4.x.y</a></li><li><a href="#run-xfree86.xinitrc">4.3 El fichero .xinitrc</a></li></ul></li><li><a href="#xtools"><b>5 Xtools</b></a><ul><li><a href="#xtools.install">5.1 Instalación de Xtools</a></li><li><a href="#xtools.run">5.2 Ejecución de Xtools</a></li><li><a href="#xtools.opengl">5.3 Notas sobre OpenGL</a></li></ul></li><li><a href="#other"><b>6 Otras posibilidades X11</b></a><ul><li><a href="#other.vnc">6.1 VNC</a></li><li><a href="#other.wiredx">6.2 WiredX</a></li><li><a href="#other.exodus">6.3 eXodus</a></li></ul></li><li><a href="#trouble"><b>7 Resolución de problemas con XFree86</b></a><ul><li><a href="#trouble.immedate-quit">7.1 Cuando lanzo XDarwin, termina o se cuelga inmediatamente.</a></li><li><a href="#trouble.black">7.2 Iconos negros en el panel GNOME panel o en el menú de una aplicación GNOME</a></li><li><a href="#trouble.keyboard">7.3 El teclado no funciona en XFree86</a></li><li><a href="#trouble.delete-key">7.4 La tecla de borrar no funciona</a></li><li><a href="#trouble.locale">7.5 "Warning: locale not supported by C library"</a></li></ul></li><li><a href="#tips"><b>8 Consejos de uso</b></a><ul><li><a href="#tips.terminal-app">8.1 Arrancar aplicaciones X11 desde Terminal.app</a></li><li><a href="#tips.open">8.2 Lanzamiento de aplicaciones Aqua desde un xterm</a></li><li><a href="#tips.copy-n-paste">8.3 Copiar y Pegar</a></li></ul></li></ul><h2><a name="intro">1 Introducción</a></h2>
     
     
     <h3><a name="intro.def-x11">1.1 ¿Qué es X11?</a></h3>
@@ -74,15 +74,25 @@ nombre. Actualmente se ejecuta en muchas plataformas y en muchos sistemas
 operativos incluyend OS/2, Darwin, Mac OS X and Windows.
 </p>
     
-    <h3><a name="intro.def-xtools">1.5 ¿Qué es Xtools?</a></h3>
-      
-      <p>
-Xtools es un producto de <a href="http://www.tenon.com/">Tenon
-Intersystems</a>.
-Es una versión de X11 para Mac OS X, basada en XFree86.
-</p>
-    
-    <h3><a name="intro.client-server">1.6 Cliente y servidor</a></h3>
+<h3><a name="intro.def-xorg">1.5 ¿Qué es X.org?</a></h3>
+  
+  <p>
+<a href="http://www.x.org/wiki/">X.org</a> es una implementación
+de X11 con código libre (open source) y es la sucesora de XFree86.
+  </p>
+  <p>
+La distribuición de Apple's para X11 en Mac OS X 10.5 y 10.6 provienen de X.org, asi mismo como el proyecto
+ <a href="https://www.xquartz.org/">XQuartz</a>.
+En Mac OS X 10.7, el app X11 de Apple es derivado de XQuartz.</p>
+
+<h3><a name="intro.def-xquartx">1.6 ¿Qué es XQuartz?</a></h3>
+  
+  <p>
+<a href="https://www.xquartz.org/">
+XQuartz</a> es una versión de X11 para OS 10.5 que contiene características mas modernas que el X11 de Apple para 10.5-10.7. XQuartz suplanta a X11 de Apple en 10.8.
+  </p>
+
+    <h3><a name="intro.client-server">1.7 Cliente y servidor</a></h3>
       
       <p>
 X11 tiene una arquitectura cliente-servidor.
@@ -99,7 +109,7 @@ Debe quedar claro que cuando hablamos de "servidor" nos referimos al programa
 servidor de visualización X11, no a la máquina oculta en tu armario.
 </p>
     
-    <h3><a name="intro.rootless">1.7 ¿Qué significa "rootless" (desarraigado)?</a></h3>
+    <h3><a name="intro.rootless">1.8 ¿Qué significa "rootless" (desarraigado)?</a></h3>
       
       <p>
 Un pequeño inciso:
@@ -131,7 +141,7 @@ Como no hay ventana "raíz" (visible), este modo se llama "desarraigado"
 (rootless). Es el modo más cómodo de utilizar X11 en Mac OS X.
 </p>
     
-    <h3><a name="intro.wm">1.8 ¿Qué es un gestor de ventanas (window manager)?</a></h3>
+    <h3><a name="intro.wm">1.9 ¿Qué es un gestor de ventanas (window manager)?</a></h3>
       
       <p>
 En muchos entornos gráficos la apariencia de los marcos de las ventanas (barra de 
@@ -157,7 +167,7 @@ lista actualizada.
 </a>
       </p>
     
-    <h3><a name="intro.desktop">1.9 ¿Qué son Quartz/Aqua, Gnome y KDE?</a></h3>
+    <h3><a name="intro.desktop">1.10 ¿Qué son Quartz/Aqua, Gnome y KDE?</a></h3>
       
       <p>
 Son entornos de escritorio y hay muchos más. Su propósito es aportar marcos de 
@@ -1325,9 +1335,9 @@ ocurrir que la copia no se hubiera efectuado en el primer intento), y utilizar a
 nedit o un xterm en el lado X11. Según mi experiencia, siempre hay una solución.</p>
     
   <hr><h2>Copyright Notice</h2><p>Copyright (c) 2001 Christoph Pfisterer,
-Copyright (c) 2001-2020 The Fink Project.
+Copyright (c) 2001-2024 The Fink Project.
 You may distribute this document in print for private purposes,
 provided the document and this copyright notice remain complete and
 unmodified. Any commercial reproduction and any online publication
 requires the explicit consent of the author.</p><hr>
-<p>Generated from <i>$Fink: x11.es.xml,v 1.7 2023/08/04 5:08:13 nieder Exp $</i></p></body></html>
+<p>Generated from <i>$Fink: x11.es.xml,v 1.8 2025/03/03 4:10:10 nieder Exp $</i></p></body></html>

@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - Intro";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/08/04 5:08:13';
+$cvs_date = 'Date: 2025/03/03 4:10:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=en" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=en" title="History"><link rel="prev" href="index.php?phpLang=en" title="Running X11 Contents">';
 
 
@@ -70,13 +70,13 @@ of X11, and a successor to XFree86.  It has supplanted XFree86 in most places.
   </p>
   <p>
 Apple's X11 distributions on OS 10.5 and 10.6 are derived from X.org, as is
- <a href="http://xquartz.macosforge.org/trac/wiki">XQuartz</a>.
+ <a href="https://www.xquartz.org/">XQuartz</a>.
 Apple's X11 distribution on 10.7 is derived, in turn, from XQuartz.</p>
 
 <h2><a name="def-xquartx">1.6 What is XQuartz?</a></h2>
   
   <p>
-<a href="http://xquartz.macosforge.org/trac/wiki">
+<a href="https://www.xquartz.org/">
 XQuartz</a> is an X11 distribution for OS 10.5 and later which contains newer features
 than does the stock X11 on 10.5-10.7.  On 10.5, XQuartz replaces the system's X11 distribution,
 whereas on 10.6 and 10.7 Xquartz and the system's X11 distribution coexist by installing

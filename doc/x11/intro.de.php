@@ -1,7 +1,7 @@
 <?php
 $title = "Running X11 - Einführung";
 $cvs_author = 'Author: nieder';
-$cvs_date = 'Date: 2023/08/04 5:08:13';
+$cvs_date = 'Date: 2025/03/03 4:10:10';
 $metatags = '<link rel="contents" href="index.php?phpLang=de" title="Running X11 Contents"><link rel="next" href="history.php?phpLang=de" title="Geschichte"><link rel="prev" href="index.php?phpLang=de" title="Running X11 Contents">';
 
 
@@ -72,7 +72,7 @@ include_once "header.de.inc";
       </p>
       <p>
         Die X11-Distributionen von Apple auf OS 10.5 und 10.6 leiten sich
-        von X.org ab, ebenso <a href="http://xquartz.macosforge.org/trac/wiki">XQuartz</a>. Die
+        von X.org ab, ebenso <a href="https://www.xquartz.org/">XQuartz</a>. Die
         X11-Distributionen von Apple auf OS 10.7 leitet sich wiederum von
         XQuartz ab.
       </p>
@@ -80,7 +80,7 @@ include_once "header.de.inc";
     <h2><a name="def-xquartx">1.6 Was ist XQuartz?</a></h2>
       
       <p>
-        <a href="http://xquartz.macosforge.org/trac/wiki">XQuartz</a>
+        <a href="https://www.xquartz.org/">XQuartz</a>
         ist eine X11-Distributionen für OS 10.5 und neuer, das einige
         Features mehr enthält, als das normale X11 auf 10.5-10.7. Auf
         10.5 ersetzt XQuartz die X11-Distribution des Systems, während auf
