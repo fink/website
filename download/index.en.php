@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2023/08/03 20:24:10 $';
+$cvs_date = '$Date: 2025/04/03 05:26:33 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -176,8 +176,8 @@ package contains the development headers.  You need this if you want to build an
 <li>The <em>2006 X11 Update</em> for 10.4 (available via Software Update or manual download) is supported.</li>
 <li>All official updates for X11 on 10.5 - 10.7 are supported.</li>
 <li>The <em>Xquartz X11 distribution</em> from
-<a href="http://xquartz.macosforge.org">macosforge.org</a> is only supported on 10.5 (Xquartz version 2.6.3 and earlier), where it 
-replaces the official X11, and 10.8 and 10.9, where it <em>is</em> the official X11.  This does not have separate runtime and header packages.</li>
+<a href="https://www.xquartz.org/">XQuartz.org</a> is only supported on 10.5 (XQuartz version 2.6.3 and earlier), where it 
+replaces the official X11, and 10.8 and above, where it <em>is</em> the official X11.  This does not have separate runtime and header packages.</li>
 </ul>
 <p>Once you've installed X11 Fink should automatically register it.  If you're having problems check out the <a href="http://www.finkproject.org/faq/usage-packages.php?phpLang=en#apple-x11-wants-xfree86">FAQ entry</a> on X11 installation problems</p>
 <h2 id="furtherinfo">Further information</h2>

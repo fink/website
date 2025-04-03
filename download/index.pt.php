@@ -1,7 +1,7 @@
 <?php
 $title = "Guia rápido para download";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2023/08/03 20:24:10 $';
+$cvs_date = '$Date: 2025/04/03 05:26:33 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -239,7 +239,7 @@ partes:</p>
   (disponível via Atualização de Software ou download manual) é suportada.</li>
 
   <li>Todas as atualizações oficiais do X11 no 10.5 são suportadas, bem como a
-  <em>community X11 update</em> do macosxforge.org.</li>
+  <em>community X11 update</em> do XQuartz.org.</li>
 </ul>
 
 <p>Uma vez que você tenha instalado o X11, o Fink deverá reconhecê-lo

@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2023/08/03 20:24:10 $';
+$cvs_date = '$Date: 2025/04/03 05:26:33 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -244,9 +244,9 @@ registrieren sie sich kostenlos und laden sie Xcode über den Mac App Store.</p>
   manuelles Herunterladen) wird unterstützt.</li>
   <li>Alle offiziellen Updates für X11 auf 10.5 - 10.7 werden unterstützt.</li>
   <li>Die <em>Xquartz X11 Distribution</em> von
-  <a href="http://xquartz.macosforge.org">macosforge.org</a> wird nur 
+  <a href="https://www.xquartz.org/">XQuartz.org</a> wird nur 
   auf 10.5 (Xquartz version 2.6.3 und früher). Dort ersetzt es das offizielle 
-  X11. Auf 10.8 und 10.9 <em>ist</em> es das offizielle X11. Es hat keine 
+  X11. Auf 10.8 und höher <em>ist</em> es das offizielle X11. Es hat keine 
   separaten Pakete für Laufzeit- und Header-Pakete.</li>
 </ul>
 <p>Sobald X11 installiert ist, sollte Fink es automatische erkennen. Treten 

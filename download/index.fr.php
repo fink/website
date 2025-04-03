@@ -1,7 +1,7 @@
 <?php
 $title = "Téléchargement rapide";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2023/08/03 20:24:10 $';
+$cvs_date = '$Date: 2025/04/03 05:26:33 $';
 
 include_once "header.inc";
 include "../fink_version.inc";
@@ -98,6 +98,11 @@ Utilisateurs de la version 10.1  - utilisez <a href="http://prdownloads.sourcefo
 <ul>
   <li>Le paquet <em>X11User</em> contient ce qui est nécessaire pour faire tourner X11 d'Apple. Il est disponible en tant qu'installation optionnelle sur votre média d'installation pour Mac OS X 10.3 et Mac OS X 10.4.</li>
   <li>Le paquet <em>X11SDK</em> contient les headers de développement. Vous en avez besoin pour compiler à partir du source tout paquet qui utilise X11. Ce paquet est disponible en tant que partie des Outils de Développement. Il est installé par défaut lors de l'installation de XCode 2.x.</li>
+<li>The <em>2006 X11 Update</em> for 10.4 (available via Software Update or manual download) is supported.</li>
+<li>All official updates for X11 on 10.5 - 10.7 are supported.</li>
+<li>The <em>Xquartz X11 distribution</em> from
+<a href="https://www.xquartz.org/">XQuartz.org</a> is only supported on 10.5 (XQuartz version 2.6.3 and earlier), where it 
+replaces the official X11, and 10.8 and above, where it <em>is</em> the official X11.  This does not have separate runtime and header packages.</li>
 </ul>
 <p>Après que vous avez installé X11, Fink l'enregistre automatiquement. Si vous rencontrez des problèmes à ce sujet, voyez la <a href="http://fink.sourceforge.net/faq/usage-packages.php?phpLang=fr#apple-x11-wants-xfree86">Q.F.P.</a> au sujet des problèmes lors de l'installation de X11.</p>
 <p>Pour de plus amples informations, voyez les <a href="../faq/index.php">Questions fréquemment posées</a> et la <a href="../doc/index.php">section documentation</a>. Si vous ne trouvez pas réponse à vos questions dans ces documents, voyez la <a href="../help/index.php">page d'aide</a>.</p>

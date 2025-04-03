@@ -1,7 +1,7 @@
 <?php
 $title = "Download Quick Start";
 $cvs_author = '$Author: nieder $';
-$cvs_date = '$Date: 2023/08/03 20:24:10 $';
+$cvs_date = '$Date: 2025/04/03 05:26:33 $';
 
 include_once "header.inc";
 include_once "../fink_version.inc";
@@ -193,6 +193,11 @@ Fink では、グラフィカルユーザーインターフェイス (GUI) を�
         これは、 X11 を使うものをソースからビルドする場合に必要です。
         このパッケージは XCode Tools の一部として提供され、 XCode 2.x ではデフォルトでインストールされます。
         </li>
+		<li>The <em>2006 X11 Update</em> for 10.4 (available via Software Update or manual download) is supported.</li>
+		<li>All official updates for X11 on 10.5 - 10.7 are supported.</li>
+		<li>The <em>Xquartz X11 distribution</em> from
+		<a href="https://www.xquartz.org/">XQuartz.org</a> is only supported on 10.5 (XQuartz version 2.6.3 and earlier), where it 
+		replaces the official X11, and 10.8 and above, where it <em>is</em> the official X11.  This does not have separate runtime and header packages.</li>
 </ul>
 <p>
 X11 をインストールしたら、 Fink は自動的に登録します。
